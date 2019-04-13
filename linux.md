@@ -48,11 +48,10 @@ Bootloader like `grub` or `u-boot` turns on power supplies and scans buses and i
 `nice`
 : priorities range from 0-19 in `csh` (10 is default); higher values run at lower priority
 
-`ps -l` view priorities of jobs
-`nice -5 cmd &` run {cmd} at a higher priority
-
-### Signals
-
+`ps -l`
+: view priorities of jobs
+`nice -5 cmd &`
+: run {cmd} at a higher priority
 
 ## Control groups (cgroups)
 - allow you to allocate resources (CPU time, system memory, network bandwidth, or combinations thereof) among user-defined groups of processes
@@ -133,6 +132,9 @@ B-Tree Filesystem "butter fs" was adopted by SUSE Enterprise Linux, but support 
   - https://shapeshed.com/unix-shuf/
 - `useradd -m -g wheel luke` `wheel` is the group and `luke` is the username
 - `userdel`
+## Directories
+`/var/lib/pacman/`
+: directory where `db.lck` file will be stored, which must be deleted occasionally when pacman is interrupted unexpectedly. this file is created to ensure that only one instance of pacman runs at any time
 # Distributions
 ## Arch Linux
 ### Installation
