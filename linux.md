@@ -12,11 +12,11 @@ Bootloader like `grub` or `u-boot` turns on power supplies and scans buses and i
   - `init` or "SystemVinit" is a daemon process which was used by most distros until recently
     - processes started serially and synchronously, wasting system resources
     - for years, a common hack was to run services in the background, simulating a sort of parallel processing
-  - Upstart was developed in Ubuntu/GNU Linux
-  - Systemd starts processes in parallel, implemented in Fedora, arch, OpenSuSE, CentOS, and others
+  - Upstart was developed in Ubuntu/GNU Linux, but abandoned in 2014
+  - Systemd starts processes in parallel, has become de facto standard for all major Linux distributions
 
 ## Processes
-- every process has a parent; a process can _spawn_ children
+- every process has a parent; a process can *spawn* children
 - a process runs in its own _user address space_, a protected space which can't be disturbed by other users
 - all processes on a Linux system are child processes of a common parent: the `init` process which is executed by the kernel at boot time (PID 1)
 - every Linux process inherits the environment (PATH variable, etc) and other attributes of its parent process
