@@ -103,26 +103,42 @@ B-Tree Filesystem "butter fs" was adopted by SUSE Enterprise Linux, but support 
 - `ethtool` interrogate settings of an Ethernet interface
   - `sudo ethtool eth0`
   - source: https://opensource.com/article/18/1/analyzing-linux-boot-process
-- `groupadd`
-- `groupdel`
-- `pacman` package manager for Linux (src:`yt/-dEuXTMzRKs`)
-  `pacman Xx` commands typically come with uppercase major commands and lowercase subcommands
-  `pacman -Q` list all installed packages
-  `pacman -Q | wc -l` get number of total installed packages by counting the lines of output of `pacman -Q`
-  `pacman -Qe` list programs explicitly installed by user or program command
-  `pacman -Qeq` list only program names explicitly installed
-  `pacman -Qm` list programs only installed from AUR
-  `pacman -Qn` list programs only installed from main repositories
-  `pacman -Qdt` dependencies no longer needed (orphans)
-  `pacman -S emacs` typical syntax to install a package
-  `pacman -Sy` synchronize package database (equivalent to `apt-get update`)
-  `pacman -Su` update programs (equivalent to `apt-get upgrade`)
-  `pacman -Syu` sync package database (`Sy`) and upgrade all programs (`u`) (equivalent to `apt-get update && apt-get upgrade`)
-  `pacman -Syy` force double-check of repositories
-  `pacman -Syyuw` downloads programs but doesn't install them, for the option of manual installation
-  `pacman -R vidir` remove a package, but leaving dependencies
-  `pacman -Rs vidir` remove a package as well as its dependencies
-  `pacman -Rns vidir` remove a package, dependencies, as well as config files
+`groupadd`
+`groupdel`
+`pacman` package manager for Linux (src:`yt/-dEuXTMzRKs`)
+`pacman Xx` commands typically come with uppercase major commands and lowercase subcommands
+`pacman -Q`
+: list all installed packages
+`pacman -Q | wc -l`
+: get number of total installed packages by counting the lines of output of `pacman -Q`
+`pacman -Qe`
+: list programs explicitly installed by user or program command
+`pacman -Qeq`
+: list only program names explicitly installed
+`pacman -Qm`
+: list programs only installed from AUR
+`pacman -Qn`
+: list programs only installed from main repositories
+`pacman -Qdt`
+: dependencies no longer needed (orphans)
+`pacman -S emacs`
+: typical syntax to install a package
+`pacman -Sy`
+: synchronize package database (equivalent to `apt-get update`)
+`pacman -Su`
+: update programs (equivalent to `apt-get upgrade`)
+`pacman -Syu`
+: sync package database (`Sy`) and upgrade all programs (`u`) (equivalent to `apt-get update && apt-get upgrade`)
+`pacman -Syy`
+: force double-check of repositories
+`pacman -Syyuw`
+: downloads programs but doesn't install them, for the option of manual installation
+`pacman -R vidir`
+: remove a package, but leaving dependencies
+`pacman -Rs vidir`
+: remove a package as well as its dependencies
+`pacman -Rns vidir`
+: remove a package, dependencies, as well as config files
 `passwd` give a user a password
 - `shuf`
   - `passwd luke` giving user a password
@@ -287,3 +303,13 @@ commands: `type`, `man`, `info`, `whatis`, `apropos`, `less`, `more`
 #### 22. System Administration II - The General Duties
 #### 23. TCP/IP Network Administration
 #### 24. Going Further - Building the Internet Server
+
+# Manjaro
+## Dual boot issues
+### Changing boot
+`bcdedit /set {bootmgr} path \EFI\manjaro\grubx64.efi`
+: run this command as admin on Windows
+### Device driver update
+`sudo mhwd -a pci nonfree 0300`
+: command was run while troubleshooting black screen on startup
+## Device drivers
