@@ -39,16 +39,22 @@ Patterns can be:
 ## Predefined variables
 `$0`
 : current record
+
 `$n`
 : field number {n}
+
 `ARGC`
 : awk builtin variable that contains the number of arguments in command line
+
 `ARGV`
 : awk builtin variable that contains the list of arguments
+
 `FILENAME`
 : awk builtin variable that contains the current input filename
+
 `FNR`
 : awk builtin variable that contains the number of the current record relative to the current input file
+
 `FS`
 : awk builtin variable that contains the field separator (' ' by default)
 `NF`
