@@ -31,9 +31,9 @@ Bootloader like `grub` or `u-boot` turns on power supplies and scans buses and i
   - priority
 
 ### Phases of process creation
-1. FORK copy process invoking it (`fork()`)
-2. EXEC parent then overwrites this copy with the program that has to be executed which replaces or _overlays_ the text and data areas (`exec()` system call)
-3. WAIT parent waits for SIGTERM signal which the child will send upon completion (`wait()` system call)
+1. FORK copy process invoking it as `fork()`
+2. EXEC parent then overwrites this copy with the program that has to be executed which replaces or _overlays_ the text and data areas as `exec()` system call
+3. WAIT parent waits for SIGTERM signal which the child will send upon completion `wait()` system call
 
 ### Types of commands
 1. Internal commands (`cd`, `echo`, etc. and variable assignments) do not spawn child processes
@@ -50,8 +50,32 @@ Bootloader like `grub` or `u-boot` turns on power supplies and scans buses and i
 
 `ps -l`
 : view priorities of jobs
+
 `nice -5 cmd &`
 : run {cmd} at a higher priority
+
+## Runlevels
+`poweroff.target`
+: systemd equivalent to runlevel 0
+
+`rescue.target`
+: systemd equivalent to runlevel 1
+
+`multi-user.target`
+: systemd equivalent to runlevel 3
+
+`graphical.target`
+: systemd equivalent to runlevel 5
+
+`reboot.target`
+: systemd equivalent to runlevel 6
+
+`emergency.target`
+: systemd equivalent to runlevel emergency
+
+`systemctl isolate runlevel`
+: change target to {runlevel}
+
 
 ## Control groups (cgroups)
 - allow you to allocate resources (CPU time, system memory, network bandwidth, or combinations thereof) among user-defined groups of processes
@@ -63,96 +87,150 @@ Bootloader like `grub` or `u-boot` turns on power supplies and scans buses and i
   - good for limiting the resources available to a container
   - `systemd` uses cgroups
   - first heard about in Linux Unplugged 289, in the context of Fedora supporting v2 whereas most userspace applications support v1
+
 ## Graphical environments
 Fully-featured desktop environments are distinct from window managers, which are more focused in scope
+
 ## inodes
 "index node", data structure that stores all the information about a file except its name and data
+
 ## Filesystems
 Most modern Linux distributions use the `ext4` filesystem, which descends from `ext3` and `ext2`, and ultimately `ext`. Other filesystems in use include `btrfs`, `xfs`, and `zfs`
 Source: [OpenSource.com](https://opensource.com/article/18/4/ext4-filesystem)
-### `ext`
+
+### ext
   - developed by Remy Card to address limitations in the MINIX filesystem, which was used to develop the first Linux kernel
   - could address up to 2GB of storage and handle 255-character filenames
   - had only one timestap per file
-### `ext2`
+
+### ext2
   - developed by Remy Card only a year after `ext`'s release as a commercial-grade filesystem, influenced by BSD's Berkeley Fast File System
   - prone to corruption if the system crashed or lost power while data was being written; prone to performance losses due to fragmentation
   - quickly and widely adopted, and still used as a format for USB drives
-### `ext3`
+
+### ext3
   - adopted by mainline Linux in 2001
   - uses `journaling`, whereby disk writes are stored as transactions in a special allocation, which allows a rebooted system to roll back incomplete transactions
   - 3 levels of journaling: `journal`, `ordered`, and `writeback`
     - `journal` lowest risk, writes both data and metadata to journal before commiting it to filesystem
     - `ordered` default mode in most Linux distros, writes metadata to journal but commits data directly to the filesystem
     - `writeback` least safe, metadata is journaled but data is not
-### `ext4`
+
+### ext4
   - added to mainline Linux in 2008, developed by Theodore Ts'o
   - improves upon `ext3` but is still reliant on old technology
+
 ### ZFS
   - true next-generation filesystem with a problematic license
   - ZFS on Linux (ZOL) is considered the ugly stepchild of the ZFS community despite the fact that the Linux implementation has the most features and the most community support
   - ZFS is too tightly bound to the operation of the kernel to operate in true userspace, and that is why each implementation is different for operating systems 
   - LU: 284
+
 ### btrfs
 B-Tree Filesystem "butter fs" was adopted by SUSE Enterprise Linux, but support was dropped by Red Hat in 2017
+
 # Commands
-- `apt` Debian package manager
-  - `apt list --upgradable` see upgradable packages
-  - `apt update`
-  - `apt upgrade`
-- `ethtool` interrogate settings of an Ethernet interface
-  - `sudo ethtool eth0`
-  - source: https://opensource.com/article/18/1/analyzing-linux-boot-process
+`apt`
+: Debian package manager
+
+`apt list --upgradable`
+: see upgradable packages
+
+`apt update`
+:
+
+`apt upgrade`
+:
+
+`ethtool`
+: interrogate settings of an Ethernet interface [Source](https://opensource.com/article/18/1/analyzing-linux-boot-process)
+
 `groupadd`
+:
+
 `groupdel`
-`pacman` package manager for Linux (src:`yt/-dEuXTMzRKs`)
-`pacman Xx` commands typically come with uppercase major commands and lowercase subcommands
+:
+
+`pacman`
+: package manager for Linux (src:`yt/-dEuXTMzRKs`)
+
+`pacman Xx`
+: commands typically come with uppercase major commands and lowercase subcommands
+
 `pacman -Q`
 : list all installed packages
+
 `pacman -Q | wc -l`
 : get number of total installed packages by counting the lines of output of `pacman -Q`
+
 `pacman -Qe`
 : list programs explicitly installed by user or program command
+
 `pacman -Qeq`
 : list only program names explicitly installed
+
 `pacman -Qm`
 : list programs only installed from AUR
+
 `pacman -Qn`
 : list programs only installed from main repositories
+
 `pacman -Qdt`
 : dependencies no longer needed (orphans)
+
 `pacman -S emacs`
 : typical syntax to install a package
+
 `pacman -Sy`
 : synchronize package database (equivalent to `apt-get update`)
+
 `pacman -Su`
 : update programs (equivalent to `apt-get upgrade`)
+
 `pacman -Syu`
 : sync package database (`Sy`) and upgrade all programs (`u`) (equivalent to `apt-get update && apt-get upgrade`)
+
 `pacman -Syy`
 : force double-check of repositories
+
 `pacman -Syyuw`
 : downloads programs but doesn't install them, for the option of manual installation
-`pacman -R vidir`
-: remove a package, but leaving dependencies
-`pacman -Rs vidir`
+
+`pacman -R package`
+: remove {package}, but leaving dependencies
+
+`pacman -Rs package`
 : remove a package as well as its dependencies
-`pacman -Rns vidir`
+
+`pacman -Rns package`
 : remove a package, dependencies, as well as config files
-`passwd` give a user a password
-- `shuf`
-  - `passwd luke` giving user a password
-  - randomly permute input
-    - `shuf -e one two three` shuffle items separated by a space
-    - `shuf -n 1 cards.txt` shuffle items separated by newline
-  - https://shapeshed.com/unix-shuf/
-- `useradd -m -g wheel luke` `wheel` is the group and `luke` is the username
-- `userdel`
+
+`passwd`
+: give a user a password
+
+`passwd luke`
+: give user {luke} a password
+
+`shuf -e one two three`
+: shuffle items separated by a space
+
+`shuf -n 1 cards.txt`
+: shuffle items separated by newline [Source](https://shapeshed.com/unix-shuf/)
+
+`useradd -m -g wheel luke`
+: add user {luke} to group {wheel}
+
+`userdel`
+: 
+
 ## Directories
 `/var/lib/pacman/`
 : directory where `db.lck` file will be stored, which must be deleted occasionally when pacman is interrupted unexpectedly. this file is created to ensure that only one instance of pacman runs at any time
+
 # Distributions
+
 ## Arch Linux
+
 ### Installation
 1. `lsblk` inspect available drives and partitions before/after inserting USB drive
 2. `dd if=Downloads/archlinux-2018.03.01-x86_64.iso of=/dev/sdba status="progress"` mount ISO (`if`)to USB drive (`of`), with progress displayed
@@ -213,28 +291,29 @@ B-Tree Filesystem "butter fs" was adopted by SUSE Enterprise Linux, but support 
 ### Potential problems
   - Ctrl+Alt+F2|F3|F4... bring up another TTY
   - Alt+LeftArrow|RightArrow navigate to adjacent TTY
+
 ## _Your Unix: The Ultimate Guide_ by Sumitabha Das
-### Commands
-`passwd`
-`who`
-`tty`
-mkdir
-cd
-cat
+  commands: passwd who tty mkdir cd cat
 
 ### Definitions
 operating system
 : interacts with the applications that require access to the machine's hardware and with the user who passes commands to it
+
 command language interpreter
 : used by user to pass commands to the operating system
+
 <C-d>
-: log out of the session (`logout`)
-### Contents
-####  0. Intro
+: log out of shell (equivalent to `logout`)
+
+runlevel
+: current state of operating system on Unix-like systems [TecMint](https://www.tecmint.com/change-runlevels-targets-in-systemd/)
+
+###  0. Intro
 Unix can be broadly divided into two schools
   1. System V from AT&T Bell Laboratories (SVR4 last version release before being rolled up)
   2. Berkeley from the University of California, Berkeley (BSD) 
-####  1. Getting Started
+
+###  1. Getting Started
 - The Operating System
 - The UNIX Operating System
 - Knowing your machine
@@ -248,7 +327,8 @@ Unix can be broadly divided into two schools
 - How it all clicked
 - Linux and GNU
 - Inside UNIX
-####  2. Understanding the UNIX Command
+
+###  2. Understanding the UNIX Command
 commands: `type`, `man`, `info`, `whatis`, `apropos`, `less`, `more`
   1. General features of a command
     - case-insensitive
@@ -279,37 +359,39 @@ commands: `type`, `man`, `info`, `whatis`, `apropos`, `less`, `more`
   9. `whatis` and `apropos`
     - `whatis` provides a one-line answer to what a command does
     - `apropos` search for keywords within whatis descriptions
-####  3. General-purpose Utilities
+###  3. General-purpose Utilities
 `passwd`, `who`, `w`, `tty`, `lock`, `stty`, `script`, `clear`, `tput`, `uname`, `date`, `cal`, `calendar`, `bc`
 
-####  4. The vi/vim Editor
-####  5. The GNU emacs Editor
-####  6. The File System
-####  7. File Attributes
-####  8. The Shell
-####  9. Simple Filters
-#### 10. The Process
-#### 11. TCP/IP Networking Tools
-#### 12. The X Window System
-#### 13. Electronic Mail
-#### 14. The Internet
-#### 15. Filters Using Regular Expressions
-#### 16. Programming with awk
-#### 17. Customizing the Environment
-#### 18. Shell Programming
-#### 19. Advanced Shell Programming Including Korn and bash
-#### 20. perl - the Master Manipulator
-#### 21. System Administration I - The File System Revisited
-#### 22. System Administration II - The General Duties
-#### 23. TCP/IP Network Administration
-#### 24. Going Further - Building the Internet Server
+###  4. The vi/vim Editor
+###  5. The GNU emacs Editor
+###  6. The File System
+###  7. File Attributes
+###  8. The Shell
+###  9. Simple Filters
+### 10. The Process
+### 11. TCP/IP Networking Tools
+### 12. The X Window System
+### 13. Electronic Mail
+### 14. The Internet
+### 15. Filters Using Regular Expressions
+### 16. Programming with awk
+### 17. Customizing the Environment
+### 18. Shell Programming
+### 19. Advanced Shell Programming Including Korn and bash
+### 20. perl - the Master Manipulator
+### 21. System Administration I - The File System Revisited
+### 22. System Administration II - The General Duties
+### 23. TCP/IP Network Administration
+### 24. Going Further - Building the Internet Server
 
 # Manjaro
 ## Dual boot issues
 ### Changing boot
 `bcdedit /set {bootmgr} path \EFI\manjaro\grubx64.efi`
-: run this command as admin on Windows
+: change Windows bootloader to Manjaro, while dual booting
+
 ### Device driver update
 `sudo mhwd -a pci nonfree 0300`
 : command was run while troubleshooting black screen on startup
-## Device drivers
+
+ 
