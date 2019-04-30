@@ -40,6 +40,9 @@ Perl variables are of three types, associated with 3 corresponding sigils which 
 `my $animal = "camel"`
 : `my` keyword declares a variable
 
+`my Str $animal = "camel"`
+: variables can be typed by placing a type between `my` and the identifier [Python to Perl6 - nutshell](https://docs.perl6.org/language/py-nutshell)
+
 ### Predefined variables
 `$.`
 : current line number
@@ -199,6 +202,7 @@ These have been deprecated in Perl6 (PBX:51)
 : current package; default package is main
 
 ## Control flow
+
 ### Loops
 `for @array { action }` | deprecated: `foreach $var (@arr) { statements}` 
 : `foreach` loops have been replaced by `for` in Perl6
@@ -224,3 +228,11 @@ lvalue
 
 array slice
 : when the elements of one array are assigned values from another (PBX:84)
+
+
+## Object-oriented programming
+instance variables declared with `has` keyword: `has $.name;`
+class attributes are declard with `my` keyword, then a method is declared to allow it to be referenced 
+
+## Math
+Mathematical consonants have their own keywords in Perl6: `pi`, `e`, and `tau` (2*pi)

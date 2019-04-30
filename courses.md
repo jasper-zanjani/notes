@@ -1,7 +1,7 @@
 ## GNS3 Fundamentals (Official Course) Part 1
 author: Bombal
 GNS3: https://academy.gns3.com/p/gns3-fundamentals-official-course
-j
+
 ## GNS3 Fundamentals (Official Course) Part 2
 author: Bombal
 GNS3: https://academy.gns3.com/p/gns3-fundamentals-official-course2

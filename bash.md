@@ -7,84 +7,57 @@
   - long names are conventionally preceded by `--`, and they may be abbreviated by users if unique
 [GNU](https://www.gnu.org/software/libc/manual/html_node/Argument-Syntax.html)
 
+## Event designators
+`!^`
+: first argument from previous command
+
+`!$`
+: last argument from previous command
+
+`^string`
+: repeat last command, deleting the first instance of {string}
+
+`^string^substitute`
+: repeat last command, substituting the first instance of {string} with {substitute} (CLKF)
+
+`!!:n`
+: {n}th argument from previous command
+
+`!#:n`
+: {n}th word of _current_ command
+
 ## Configuration
 `C:\Program Files\Git\etc\profile.d\git-prompt.sh`
 : Git Bash `.bashrc` location
+
 `PS1`
 : environment variable accepting a string of escaped character sequences representing colors and strings
 
 ### Metacharacters
-`\a`
-: a bell character
-
-`\d`
-: the date (DDD MMM dd)
-
-`\D{format}`
-: format is passed to `strftime` and the result is inserted into the prompt string; empty format results in a locale-specific time representation.
-
-`\e`
-: escape character
-
-`\h`
-: hostname, up to the first '.'
-
-`\H`
-: hostname
-
-`\j`
-: number of jobs currently managed by the shell
-
-`\l`
-: basename of the shell's terminal device name
-
-`\n`
-: newline
-
-`\r`
-: carriage return
-
-`\s`
-: name of the shell, basename of `$0` (portion following the final slash)
-
-`\t`
-: time in 24 hour HH:MM:SS format
-
-`\T`
-: time in 12-hour HH:MM:SS format
-
-`\@`
-: time in 12-hour am/pm format
-
-`\A`
-: time in 24-hour HH:MM format
-
-`\W`
-: basename of `$PWD` with `$HOME` abbreviated with a tilde
-
-`\w`
-: current working directory, with `$HOME` abbreviated with a tilde (using `$PROMPT_DIRTRIM` variable)
-
-`\!`
-: history number of this command
-
-`\#`
-: command number of this command
-
-`\$`
-: if effective UID is 0, '#', otherwise '$'
-
-`\nnn`
-: character whose ASCII code is the octal value 'nnn'
-
-`\\`
-: backslash
-
-`\[`
-: begin a sequence of non-printing characters (used to embed a terminal control sequence)
-
-`\]`
-: end a sequence of non-printing characters
+`\a` : a bell character
+`\d` : the date (DDD MMM dd)
+`\Dformat` : {format} is passed to `strftime` and the result is inserted into the prompt string; empty format results in a locale-specific time representation.
+`\e` : escape character
+`\h` : hostname, up to the first '.'
+`\H` : hostname
+`\j` : number of jobs currently managed by the shell
+`\l` : basename of the shell's terminal device name
+`\n` : newline
+`\r` : carriage return
+`\s` : name of the shell, basename of `$0` (portion following the final slash)
+`\t` : time in 24 hour HH:MM:SS format
+`\T` : time in 12-hour HH:MM:SS format
+`\@` : time in 12-hour am/pm format
+`\A` : time in 24-hour HH:MM format
+`\W` : basename of `$PWD` with `$HOME` abbreviated with a tilde
+`\w` : current working directory, with `$HOME` abbreviated with a tilde (using `$PROMPT_DIRTRIM` variable)
+`\!` : history number of this command
+`\#` : command number of this command
+`\$` : if effective UID is 0, '#', otherwise '$'
+`\nnn` : character whose ASCII code is the octal value 'nnn'
+`\\` : backslash
+`\[` : begin a sequence of non-printing characters (used to embed a terminal control sequence)
+`\]` : end a sequence of non-printing characters
 
 ### Colors
 ANSI/VT100 terminals and emulators can display colors and formatted texts by using _escape sequences_ (_escape character_ followed by _format code_, terminated by _m_).
@@ -97,41 +70,27 @@ Windows traditionally does not support symlinks
 - `mklink /d {linkname} {directory}` use `mklink` command prompt command instead
 
 ## Syntax
-`$((...))`
-: arithmetic expansion
-
-`[[...]]`
-: alias for `test`
-
-`$(...)`
-: command substitution
-
-`${...}`
-: variable substitution
-
-`${var:start:size}`
-: variable slicing
+`$((...))` : arithmetic expansion
+`[...]` : alias for `test`
+`$(...)` : command substitution
+`${...}` : variable substitution
+`${var:start:size}` : variable slicing
+`filename{,.new}` : brace expansion makes multiple arguments from a single one
 
 ## Loops: `for i in ...`
 Content of all loops is bracketed by `do` and `done`
-  `for i in ... do ...; done;`
-    - `for i in {01..07}; do ...; done;`
-    - `for i in {000..100}; do ...; done;`
-    - `for i in 1 2 3 4 5; do ...; done;`
-  - `for ((i=0; i<N; i++)); do ...; done;`
+`for i in ... do ...; done;`
+    `for i in {01..07}; do cmd; done;`
+    `for i in {000..100}; do cmd; done;`
+    `for i in 1 2 3 4 5; do cmd; done;`
+
+`for ((i=0; i<N; i++)); do cmd; done;`
 
 ## Number bases `${radix}#${number}`
-`2#1111001110011010`
-: binary
-
-`0x32`
-: hex numbers
-
-`032`
-: octal
-
-`32#@_`
-: base-32: a range of ASCII characters can be used to define numbers with bases up to 64: 10 digits, 26 lowercase characters, 26 uppercase characters, '@', and '_'
+`2#1111001110011010` : binary 
+`0x32` : hex numbers 
+`032` : octal 
+`32#@_` : base-32: a range of ASCII characters can be used to define numbers with bases up to 64: 10 digits, 26 lowercase characters, 26 uppercase characters, '@', and '_' 
 
 ## Commands
 `echo "hello" | pbcopy`
@@ -141,18 +100,10 @@ Content of all loops is bracketed by `do` and `done`
 : send a random file from within the current directory to `bat` for display
 
 `open .`
-: open current directory in Finder (Mac OS X)
+: open current directory in Finder (osx)
 
 `open -a /Applications/application.app`
-: open {application} from Terminal (Mac OS X)
+: open {application} from Terminal (osx)
 
 `explorer.exe .`
-: open current directory in Explorer (Windows)
-
-
-### test
-`[[ $VAR =~ 'string1' | 'string2' ]]`
-: test if {VAR} has either the text "string1" or "string2" within it
-
-`[[ $VAR =~ pattern ]]`
-: test if {VAR} matches a regex {pattern} (must not be quoted, otherwise, {pattern} will be treated as a string literal)
+: open current directory in Explorer (win)
