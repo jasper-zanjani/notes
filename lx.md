@@ -125,8 +125,7 @@ Source: [OpenSource.com](https://opensource.com/article/18/4/ext4-filesystem)
 B-Tree Filesystem "butter fs" was adopted by SUSE Enterprise Linux, but support was dropped by Red Hat in 2017
 
 ## Filesystem access control lists
-_Filesystem access control lists (FACL)_ allow you to grant permissions to more than one group, i.e. in cases where more than one department of a corporation needs access to the same files.
-They are made up of _access control entries_ (ACE). FACL permissions will be indicated in a `ls -l` command by the presence of a "+" after the symbolic notation for the traditional UGO permissions. _Acl_ is a dependency of systemd.
+_Filesystem access control lists (FACL)_ allow you to grant permissions to more than one group, i.e. in cases where more than one department of a corporation needs access to the same files.  They are made up of _access control entries_ (ACE). FACL permissions will be indicated in a `ls -l` command by the presence of a "+" after the symbolic notation for the traditional UGO permissions. _Acl_ is a dependency of systemd.
 
 ### Enabling
 add ",acl" to options in `fstab` file, then mount/unmount disk. If enabling FACL on root partition, system has to be rebooted.
