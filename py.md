@@ -150,3 +150,9 @@ def shortest_first_name(names):
   return min(names, key=len)                          
 ```
 [Pybites 5](https://codechalleng.es/bites/5/)
+
+## Virtual environments
+Since Python3, the `venv` module, part of the Standard Library, can be used to set up virtual environments
+`python3 -m venv env` : set up virtual environment {env} in the current working directory
+`source env/bin/activate` : activate the virtual environment {env}
+`deactivate` : deactivate the virtual environment
