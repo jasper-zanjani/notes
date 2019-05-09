@@ -34,11 +34,20 @@ Basic Linux usage
 
 ##  3 Exploring Linux filesystems
 Linux directory structure
+  - Changing directories
 Viewing files and directories
+  - File types
+  - Filenames
+  - Listing files
+  - Wildcard metacharacters
 Displaying the contents of text files
 Displaying the contents of binary files
 Searching for text within files
+  - Regular expressions
+  - `grep`
 Editing text files
+  - `vi` editor
+  - Other common text editors
 Topics: cat, cd, grep, egrep, fgrep, file, less, ll, ls, more, nano, od, pwd, strings, tac, tail, vi
 
 ##  4 Linux filesystem management
@@ -56,9 +65,14 @@ Topics: chgrp, chmod, chown, cp, ln, locate, rm, rmdir, touch, umask
 ##  5 Linux filesystem administration
 /dev directory
 Filesystems
+  - Filesystem types
+  - Mounting
 Working with floppy disks
 Working with CDs, DVDs, and ISO images
 Working with hard disks
+  - Standard hard disk partitioning
+  - Working with standard hard disk partitions
+  - Working with the LVM
 Working with USB and FireWire-based storage devices
 Monitoring filesystems
 Hard disk quotas
@@ -67,23 +81,50 @@ Topics: /dev/MAKEDEV, cfdisk, df, du, edquota, fdisk, fsck, fuser, lvcreate, lvd
 
 ##  6 Advanced installation
 Advanced storage configuration
+  - SCSI hard disk configuration
+  - RAID configuration
 Installation methods
+  - CD Installation
+  - USB Flash Drive installation
+  - Hard disk installation
+  - Network-based installation
 Automating Linux installations
 Troubleshooting installations
+  - Problems starting the installation
+  - Problems during installation
+  - Problems after installation
 Topics: dd 
 
 ##  7 Working with the bash shell
 Command input and output
+  - Redirection
+  - Pipes
 Shell variables
+  - Environment variables
+  - User-defined variables
+  - Other variables
+  - Environment files
 Shell scripts
 Escape sequences
+  - Reading standard input
+  - Decision constructs
+  - Loop constructs
 Topics: alias, awk, echo, env, export, grep, read, sed, set, sort, tee, tr
 
 ##  8 System initialization and X Windows
 Boot process
 Boot loaders
+  - GRUB
+  - LILO
+  - Dual booting Linux
 Linux initialization
+  - Runlevels
+  - /etc/inittab file
+  - Runtime configuration scripts
+  - Configuring daemon startup
 X Windows system
+  - Linux GUI components
+  - Starting and stopping X Windows
 Configuring X Windows
 Topics: grub-install, grub-md5-crypt, init, lilo, runlevel, service, system-config-display, system-config-keyboard, telinit, .dmrc, .xinitrc, /boot/grub/grub.conf, /etc/inittab, /etc/lilo.conf, /etc/rc.d/rc.local, /etc/rc.d/rc.sysinit, /etc/rc.d/init.d, /etc/rc.d/rc*.d
 
@@ -95,44 +136,92 @@ Process execution
 Running processes in the background
 Process priorities
 Scheduling commands
+  - Scheduling commands with `atd`
+  - Scheduling commands with the `cron` daemon
 Topics: at, atd, bg, crontab, fg, jobs, killall, kill, nice, ps, pstree, renice, top, /etc/at.allow, /etc/at.deny, /etc/cron.allow, /etc/cron.d, /etc/cron.deny, /etc/crontab, /var/spool/at, /var/spool/cron
 
 ## 10 Common administrative tasks
 Printer administration
+  - Common Unix printing system
+  - Managing print jobs
+  - LPD Printing system
+  - Configuring printers
 Log file administration
+  - System log daemon
+  - Managing log files
 Administering users and groups
+  - Creating user accounts
+  - Modifying user accounts
+  - Deleting user accounts
+  - Managing groups
 Topics: cancel, chage, chfn, chsh, cupsaccept, cupsd, cupsdisable, cupsenable, cupsreject, groupadd, groupdel, groupmod, groups, id, logrotate, lpadmin, lpc, lp, lpq, lpr, lprm, lpstat, newgrp, passwd, pwconv, pwunconv, useradd, userdel, usermod, /etc/cups/cupsd.conf, /etc/cups/printers.conf, /etc/default/useradd, /etc/group, /etc/login.defs, /etc/logrotate.conf, /etc/passwd, /etc/shadow, /etc/skel, /etc/syslog.conf, /var/log 
 
 ## 11 Compression, system backup, and software installation
 Compression
+  - `compress` utility
+  - `gzip` utility
+  - `bzip2` utility
 System backup
+  - `tar` utility
+  - `cpio` utility
+  - `dump`/`restore` utility
+  - Burning software
 Software installation
+  - Compiling source code into programs
+  - Installing programs using RPM
 Topics: *sum (sha1sum, etc), bunzip2, bzcat, bzip2, bzless, bzmore, compress, cpio, dump, gcc, gzip, gunzip, restore, rpm, tar, uncompress, yum, zcat, zless, zmore, /etc/dumpdates
 
 ## 12 Network configuration
 Networks
 TCP/IP protocol
+  - IPv4 protocol
+  - IPv6 protocol
 Configuring a network interface
 Configuring a PPP interface
 Name resolution
 Routing
 Network services
 Remote administration
+  - Telnet
+  - Remote commands
+  - Secure shell (ssh)
+  - Remote X Windows
+  - Virtual Network Computing (VNC)
 Topics: hostname, ifconfig, insmod, ip, lsmod, modprobe, ping, rsh, rlogin, rcp, rmmod, route, ssh, telnet, traceroute, vncpasswd, vncviewer, whois
 
 ## 13 Configuring network services
 Infrastructure services
+  - DHCP
+  - DNS
+  - NTP
+  - NIS
 Web services
 File sharing services
+  - Samba
+  - NFS
+  - FTP
 E-mail services
+  - Working with `sendmail`
+  - Working with `postfix`
 Database services
+  - Configuring PostgreSQL
+  - Configuring PostgreSQL databases
 Topics: ab, apachectl, curl, ftp, hwclock, mail, newaliases, nmblookup, ntpdate, ntpq, smbclient, smbpasswd, tzselect
 
 ## 14 Troubleshooting, performance, and security
 Troubleshooting methodology
 Resolving common system problems
+  - Hardware-related problems
+  - Software-related problems
+  - User interface-related problems
 Performance monitoring
+  - Monitoring performance with `sysstat` utilities
+  - Other performance monitoring utilities
 Security
+  - Securing the local computer
+  - Protecting against network attacks
+  - Using encryption to protect network data
+  - Detecting intrusion
 Topics: /etc/ld.so.cache, /etc/ld.so.conf, free, gpg, iostat, iptables, ldconfig, ldd, logger, lsof, lspci, lsusb, mpstat, nmap, nohup, sestatus, ssh-add, sar, su, sudo, sudo, ulimit, vmstat
 
 ##  A Certification

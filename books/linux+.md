@@ -321,29 +321,58 @@ Regular expressions
 `awk`
 `sed`
 
-## xk0004-19 Managing kernel modules
-
+## xk0004-21 Managing kernel modules
+kernels interact with the hardware, including RAM and file storage, and manage resources
+kernelspace programs, such as systemd services, are privileged and have access to everything. But Linux's stability is thanks in large part to the Linux kernel's 
+monolithic kernels are fast
+Topics: modprobe, insmod, rmmod, lsmod, modinfo
 
 ## xk0004-20 Managing the Linux boot process
-## xk0004-21 Graphical user interfaces
+
+
+## xk0004-22 Graphical user interfaces
 X.org Server
+Alternatives to X include VNC and RDP, but X can be faster because the desktop is rendered natively on the client. But the connection is unencrypted, so typically the X session is built on top of an SSH tunnel when working remotely.
 Wayland combines X Server and Compositor, default in Fedora
-X Clients:
-  - GNOME
-  - MATE
-  - KDE Plasma
-
-## xk0004-22 Managing services with systemd
-
+X Clients include GNOME, MATE, and KDE Plasma
 
 ## xk0004-23 Managing services with sysvinit
-## xk0004-24 Troubleshooting services, 1
-## xk0004-25 Troubleshooting services, 2
-## xk0004-26 Configuring hardware
-## xk0004-27 Supporting printers
+## xk0004-23 Troubleshooting services, 1
+Topics: top, ps aux, systemd-analyze blame, lsof
+
+## xk0004-24 Troubleshooting services, 2
+Niceness values range from -20 to +19 (smaller or more negative numbers mean a higher priority)
+Topics: bg, fg, jobs, %1, ^z, ^c, nice, renice, pgrep, kill
+
+## xk0004-25 Managing services with systemd
+systemd replaces the old sysvinit init daemon, and all major distros use systemd by default, with the exception of Slackware
+
+the file /sbin/init is conventionally indicative of sysvinit, but in systemd systems, it is symlinked to /lib/systemd/systemd
+
+unit files, with filenames ending in ".target" (runlevels), ".socket" (network port that allows applications to talk to one another via network connections), ".mount" (mount locations of disks), etc are located in /lib/systemd/system and are text files. They can be changed, but when they are updated by the system, user changes will be overwritten. User modifications should be placed in /etc/systemd/system, because these files overwrite the versions in /lib
+
+unit files are needed for software that runs in the background, but even some services that don't start automatically may still not create them. 
+
+targets are like collections of files, they contain "Requires" and "Wants" fields which refer to other .target and .service files
+
+## xk0004-26 Supporting printers
+Most Linux distros handle printing the same way, a situation which was not always this way. When Apple switched to BSD, they open-sourced the printing solution (CUPS) which greatly benefited the situation for Linux printer drivers. CUPS is typically accessed through a web interface
+
+Printer driver files are PPD files 
+
+Topics: lpadmin
+
 ## xk0004-28 Understanding TCP/IP
-## xk0004-29 Configure networking
-## xk0004-30 Troubleshooting network connections
+## xk0004-27 Configure networking
+ifconfig is old and no longer even installed by default, `ip` is the successor
+restarting services locally is often the answer
+different distros store network configurations in various places, but generally one of two locations contain scripts that are run when interfaces go down:
+  1. /etc/sysconfig/network-scripts : Red HAt
+  2. /etc/sysconfig/network-scripts/ifcfg-eno1 : Ubuntu
+
+Topics: ip addr, sudo dhclient, sudo dhclient -r, sudo systemctl restart network[.service], sudo service network restart (sysvinit), nmcli
+
+## xk0004-28 Troubleshooting network connections
 ## xk0004-31 Managing software with apt
 ## xk0004-32 Managing software with yum/DNF
 ## xk0004-33 Building from source
