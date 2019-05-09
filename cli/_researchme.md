@@ -4,6 +4,9 @@
 - sc
 - espeak
 - visudo
+- fmt
+- paste
+
 
 ## Flags of existing commands
 - sort `-nk 3` (CKLF)

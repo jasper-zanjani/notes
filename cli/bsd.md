@@ -13,3 +13,9 @@ Work immediately began to reconstruct the remaining functionality of UNIX, which
 Unix System Laboratories (USL) sued BSDI after BSDI attempted to market its product as a real UNIX, and other BSD distributions were affected by disputed code. Ultimately 3 out of the 18,000 files that made up the Network Release 2 distribution were removed, which became known as 4.4BSD-lite, released in 1994. This legal dispute was partly to blame for Linux's rapid ascent in popularity.
 
 Source: [Article](https://web.archive.org/web/20060315152051/http://www.applelust.com/alust/terminal/archives/terminal041202.shtml)
+
+## Advantages
+`^t` : get information on what a stalled process is doing
+
+## Applications
+NetBSD is a lightweight option for Raspberry Pis (BSDNow:295)
