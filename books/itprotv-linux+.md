@@ -89,17 +89,12 @@ Two main choices for Linux:
   - `-t ext4` specify "type", ext4 or xfs
   - `mkfs.ext4 partition` format {partition} with the ext4 file system
   - /etc/mkfs
-`mkswap partition`
-: make swap partition out of {partition} (15:00)
-`swapon partition`
-: tell system to use {partition} as swap partition
+`mkswap partition` : make swap partition out of {partition} (15:00)
+`swapon partition` : tell system to use {partition} as swap partition
 ### Changing partitions after creation
-`e2label partition Storage` 
-: label ext {partition} "Storage" (18:40)
-`xfs_admin -L Storage partition` 
-: label xfs {partition} "Storage"
-`resize4fs` 
-: resize filesystems
+`e2label partition Storage` : label ext {partition} "Storage" (18:40)
+`xfs_admin -L Storage partition` : label xfs {partition} "Storage"
+`resize4fs` : resize filesystems
 `tune` commands in /usr/sbin
   - `tune2fs` change behaviors of ext file systems
 ### Making filesystems usable
@@ -121,7 +116,6 @@ Mount changes are made permanent by inclusion in /etc/fstab
 `lsblk -v` | `blkid`
 : find UUID of block devices
 
-
 ## xk0004-11 Logical volume manager (LVM)
 Procedure to create logical volums
   1. Create physical volumes (`pvcreate`)
@@ -134,8 +128,7 @@ Procedure to create logical volums
 `vgcreate vg1 /dev/sdb1`
 : create volume group {vg1} from {*devices}
 `vgdisplay` | `vgs`
-`lvcreate -L size vg -n name`
-: create logical volume of size {size} from volume group {vg} with the name {name}
+`lvcreate -L size vg -n name` : create logical volume of size {size} from volume group {vg} with the name {name}
 `lvdisplay` | `lvs`
 Logical volumes are formatted and mounted like regular disks
   - `mkfs.ext4 /dev/vg1/lv1`
@@ -181,58 +174,32 @@ Other key folders:
 `find`
 
 ## xk0004-13-14 Editing files with vi
-`:` 
-: command mode
-`i`
-: insert at current location
-`I`
-: insert at beginning of line
-`a`
-: append after cursor
-`A`
-: append to end of line
-`dw`
-: delete word
-`:d` | `dd`
-: delete line
-`nG` | `:n`
-: move to line {n}
-`m,ncmd`
-: execute {cmd} across lines {m} through {n}
-`:set number`
-: display line numbers
-`:set number!`
-: disable line numbers
-`vi +n file`
-: open {file} to line {n}
-`o`
-: open new line after current line
-`h|j|k|l`
-: motion commands
-`/string` | `:s/string`
-: search for {string}
-`:s/string/substitute`
-: replace {string} with {substitute}
-`:%s/string/substitute`
-: replace all instances of {string} with {substitute}
-`:n,ms/string/substitute`
-: replace {string} with {substitute} between lines {n} through {m}
-`yy`
-: copy current line
-`p`
-: put (paste) after current line
-`:w!`
-: save, overwriting file
-`:e`
-: switch to another file
-`:e!`
-: switch to another file without saving current file
-`:w` 
-: save file
-`:wq` | `:x` | `ZZ`
-: save and exit
-`:q!`
-: exit without saving
+`:` : command mode
+`i` : insert at current location
+`I` : insert at beginning of line
+`a` : append after cursor
+`A` : append to end of line
+`dw` : delete word
+`:d` | `dd` : delete line
+`nG` | `:n` : move to line {n}
+`m,ncmd` : execute {cmd} across lines {m} through {n}
+`:set number` : display line numbers
+`:set number!` : disable line numbers
+`vi +n file` : open {file} to line {n}
+`o` : open new line after current line
+`h|j|k|l` : motion commands
+`/string` | `:s/string` : search for {string}
+`:s/string/substitute` : replace {string} with {substitute}
+`:%s/string/substitute` : replace all instances of {string} with {substitute}
+`:n,ms/string/substitute` : replace {string} with {substitute} between lines {n} through {m}
+`yy` : copy current line
+`p` : put (paste) after current line
+`:w!` : save, overwriting file
+`:e` : switch to another file
+`:e!` : switch to another file without saving current file
+`:w` : save file
+`:wq` | `:x` | `ZZ` : save and exit
+`:q!` : exit without saving
 
 ## xk0004-15 Working with files
 `ls`
@@ -262,37 +229,23 @@ Other key folders:
   - `-group` `-gid` (e.g. `find / -group dpezet`)
   - `-user` `-uid` (e.g. `find /home/dpezet -user dpezet`)
   - `-maxdepth n` maximum search depth of {n} (e.g. `find / -maxdepth 6 -name README.txt`)
-`locate`
-: e.g. `locate README`
-`whereis`
-: `whereis ls`
-`which`
-: `which xterm`
-`type`
-: `type cat` | `type -a ls`
+`locate` : e.g. `locate README`
+`whereis` : `whereis ls`
+`which` : `which xterm`
+`type` : `type cat` | `type -a ls`
 
 ## xk0004-17 Searching with grep
 Regular expressions
-`[ ]`
-: list of possible values
-`-`
-: range of values
-`.`
-: any single character
-`*`
-: any number of characters
-`^`
-: beginning of line
-`$`
-: end of line
-`( )`
-: subexpression or slice
-`\`
-: escape character
-`grep -F` | `fgrep`
-: fixed strings
-`grep -E` | `egrep`
-: extended regular expressions
+`[ ]` : list of possible values
+`-` : range of values
+`.` : any single character
+`*` : any number of characters
+`^` : beginning of line
+`$` : end of line
+`( )` : subexpression or slice
+`\` : escape character
+`grep -F` | `fgrep` : fixed strings
+`grep -E` | `egrep` : extended regular expressions
 
 ## xk0004-18 Manipulating text
 `echo`
@@ -336,43 +289,115 @@ Alternatives to X include VNC and RDP, but X can be faster because the desktop i
 Wayland combines X Server and Compositor, default in Fedora
 X Clients include GNOME, MATE, and KDE Plasma
 
+## xk0004-25 Managing services with systemd
+Systemd replaces the old _sysvinit_ init daemon, and all major distros use systemd by default, with the exception of Slackware. Systemd systems can be identified by the presence of the `/lib/systemd/systemd` executable, although `/sbin/init` which is conventionally indicative of sysvinit, may be present as a symlink to the systemd executable to maintain backwards compatibility.
+`/lib/systemd/system/` contains _unit files_, text files with filenames ending in ".target" (runlevels), ".socket" (network port that allows applications to talk to one another via network connections), ".mount" (mount locations of disks, obviating the need for the `fstab` file, if so desired). They can be changed, but when they are updated by the system, user changes will be overwritten. User modifications should be placed in `/etc/systemd/system/` to override the settings in `/lib`.
+Targets are like collections of files, they contain "Requires" and "Wants" fields which refer to other .target and .service files. The "Wants" field indicates services which must be kept running as a dependency, while the "After" field specifies services to be run along with the service in question.
+When a package is removed, its unit file is also removed, when using a package file.  Unit files are needed for software that runs in the background and may not be created for software intended to be run interactively, but even some services that don't start automatically may still not create them. 
+`systemctl enable/disable` commands actually create symlinks in unit files for various runlevels
+
 ## xk0004-23 Managing services with sysvinit
+ysvinit is not a binary executable, but rather a system of scripts. Amazon Web Services uses Amazon Linux, which is based off of CentOS 6, which used Sysvinit. `/sbin/init` is typically the hallmark of sysvinit, but in modern systems it is actually symlinked to systemd
+settings. /sbin/init then launches a series of scripts in serial. `/etc/rc.d` contains `rc.sysinit`, which is the first script called by init, and this script spawns others, tied to runlevels. 
+Within `/etc/rc.d` there are other folders that correspond to runlevels, including `rc0.d`, `rc1.d` etc up to `rc6.d`. `rc.local` is also present, which historically would be run finally and would override the settings established by the runlevel defaults1
+`/etc/inittab` is the initialization table, which determines the OS's default runlevel (on the line that reads "id:n:initdefault:" where {n} is the runlevel
+`chkconfig` : turn services on or off for runlevels, defaulting to 3 or 5
+`sudo chkconfig mysqld on` : turn MySQL service on
+`sudo chkconfig mysqld off` : off
+`sudo chkconfig --level 35 mysqld on` : turn MySQL for runlevels 3, 5
+`chkconfig --list` display a table of all services with information on each runlevel, indicating whether or not it is enabled for that runlevel
+`sudo service mysqld status` : check status of service mysqld
+`init n` : immediately configure the system to runlevel {n}
+`cron` is recommended for executing a _scheduled_ change in runlevel (previously the `telinit` command had been used)
+
 ## xk0004-23 Troubleshooting services, 1
-Topics: top, ps aux, systemd-analyze blame, lsof
+`top`
+`ps aux`
+`systemd-analyze blame`
+`lsof`
 
 ## xk0004-24 Troubleshooting services, 2
 Niceness values range from -20 to +19 (smaller or more negative numbers mean a higher priority)
-Topics: bg, fg, jobs, %1, ^z, ^c, nice, renice, pgrep, kill
-
-## xk0004-25 Managing services with systemd
-systemd replaces the old sysvinit init daemon, and all major distros use systemd by default, with the exception of Slackware
-
-the file /sbin/init is conventionally indicative of sysvinit, but in systemd systems, it is symlinked to /lib/systemd/systemd
-
-unit files, with filenames ending in ".target" (runlevels), ".socket" (network port that allows applications to talk to one another via network connections), ".mount" (mount locations of disks), etc are located in /lib/systemd/system and are text files. They can be changed, but when they are updated by the system, user changes will be overwritten. User modifications should be placed in /etc/systemd/system, because these files overwrite the versions in /lib
-
-unit files are needed for software that runs in the background, but even some services that don't start automatically may still not create them. 
-
-targets are like collections of files, they contain "Requires" and "Wants" fields which refer to other .target and .service files
+`bg`
+`fg`
+`jobs`
+`%1`
+`^z`
+`^c`
+`nice`
+`renice`
+`pgrep`
+`kill`
 
 ## xk0004-26 Supporting printers
 Most Linux distros handle printing the same way, a situation which was not always this way. When Apple switched to BSD, they open-sourced the printing solution (CUPS) which greatly benefited the situation for Linux printer drivers. CUPS is typically accessed through a web interface
-
 Printer driver files are PPD files 
-
-Topics: lpadmin
+`lpadmin`
 
 ## xk0004-28 Understanding TCP/IP
+`ip addr` : newer command, replacing `ifconfig`, that shows network adapters and associated ip addresses
+DHCP IP assignment process (DORA):
+  - _Discover_
+  - _Offer_
+  - _Response_
+  - _Accept_
+Although fake IPs can be used privately by using a router that does Network Address Translation, hiding it from the Internet, but IEEE has reserved 3 ranges of IP addresses that can be used privately.
+  - Class C: 192.168.x.x/24
+  - Class B: 172.16.x.x - 172.31.x.x/16
+  - Class A: 10.x.x.x/8
+`nslookup site` : retrieve IP number of {site}
+`ss` : "socket statistics"
+`ss -an` : do _name_-lookups and display _all_ information
+
 ## xk0004-27 Configure networking
-ifconfig is old and no longer even installed by default, `ip` is the successor
+`ip` : is the successor to the old commands `ifconfig` and `route` which isn't even installed on newer systems by default
+`ip route` : see routing information
 restarting services locally is often the answer
 different distros store network configurations in various places, but generally one of two locations contain scripts that are run when interfaces go down:
   1. /etc/sysconfig/network-scripts : Red HAt
   2. /etc/sysconfig/network-scripts/ifcfg-eno1 : Ubuntu
-
-Topics: ip addr, sudo dhclient, sudo dhclient -r, sudo systemctl restart network[.service], sudo service network restart (sysvinit), nmcli
+`ip addr`
+`sudo dhclient` : turn on the DHCP client and get a new address from the server
+`sudo dhclient -r` : _release_ the IP address currently assigned and get a new one
+`sudo systemctl restart network[.service]` : restart networking stack
+`sudo service network restart` : restart networking stack (sysvinit)
+Network configuration files are stored in various places, depending on distribution:
+  - `/etc/sysconfig/network-scripts/` : directory containing various configuration files and scripts in Red Hat systemd
+  - `/etc/network/` or `/etc/netplan/` : file called `99_config.yaml` in Ubuntu
+  - `/etc/resolv.conf` : global DNS settings
+  - `/etc/network` : global network settings
+  - `/etc/hosts` : global hostnames
+`sudo netplan apply` : apply network configuration changes in Ubuntu
+`sudo hostnamectl set-hostname hostname` : permanently change hostname to {hostname} (stored in `/etc/hostname`)
+`nmcli` : NetworkManager provides a CLI for consistent network configuration across a system
+`nmcli device status` : display devices and status: "unmanaged" means NetworkManager isn't controlling it; on Ubuntu more devices may appear as unmanaged because Netplan is controlling them
+`nmcli device show ens01` : show settings for network interface {ens01}
+`nmcli connection edit ens01` : configure settings for network interface {ens01} in an interactive shell
+### NetworkManager commands
+`set connection.autoconnect yes`
+`set ipv4.method manual`
+`set ipv4.addr 192.168.0.2/24`
+`set ipv4.gateway 192.168.0.1`
+`save`
+`save persistent`
+`sudo nmcli connection reload`
 
 ## xk0004-28 Troubleshooting network connections
+`ping` : utility to check network connections
+`tracepath` : successor to `traceroute` which allows you to check IP addresses of each hop point on the way to a remote host. It is blocked by many ISPs because it is a newer tool, whereas traceroute is allowed because it is more established
+Pinging loopback device (`lo`) allows you to see if the network driver is working properly. Pinging gateway (hop #1 on `traceroute` output) allows you to check connection between network adapter and router.
+`nslookup host` : perform lookup on {host}, returning IP address
+`dig` : returns actual response returned from server
+`ip link` : show current link status (MAC addresses only)
+`ip route` : display routing table
+`ss -atp` : display all sessions, filtering to just TCP that are actively listening
+`ss -tp` : see any active connection
+`ss --route` : routing table, similar to `ip route`
+`ss --program` : show programs that have open ports
+`tcpdump` : allows inspection of actual IP packets, although WireShark is a better, GUI-based alternative (not installed on Manjaro by default)
+`nc` : netcat utility (GNU and OpenBSD versions available, not installed by default)
+`nc cnn.com 80` : connect to host cnn.com on port 80
+
 ## xk0004-31 Managing software with apt
 ## xk0004-32 Managing software with yum/DNF
 ## xk0004-33 Building from source
@@ -383,7 +408,20 @@ Topics: ip addr, sudo dhclient, sudo dhclient -r, sudo systemctl restart network
 ## xk0004-39 Filtering traffic with firewalld
 ## xk0004-40 Filtering traffic with iptables
 ## xk0004-41 Backup and restore data
+
 ## xk0004-42 Configuring bash
+Login scripts don't just apply to bash and will apply to all user logins, except for those in the user's home directory: 
+  - `/etc/bashrc` functions and aliases
+  - `/etc/profile` 
+  - `/etc/profile.d/*` 
+  - `~/.profile` 
+  - `~/.bash_profile`
+Bash configuration files:
+  - `/etc/bashrc`
+  - `~/.bashrc`
+`set -o allexport` : make all variables global (not recommended)
+Shell scripts can be refactored as functions in the .bashrc file. To make these functions available to all users, a function can be placed within the `/etc/bashrc` or in the `/etc/skel/.bashrc` which will be used as the template for all new users' profiles
+
 ## xk0004-43 Writing a bash script
 ## xk0004-44 Scheduling tasks, 1
 ## xk0004-45 Scheduling tasks, 2
