@@ -1,40 +1,16 @@
 # Command-Line Kung-Fu, by Jason Cannon
 
-#### Run the last command as root
-`sudo !!` `su -c "!!"`
-
-#### Repeat the last command that started with a given string
-`!<string>`
-
-#### Reuse the second word (first argument) from the previous command
-`!^`
-
-#### Reuse the last word (last argument) from the previous command
-`!$`
-
-#### Reuse the nth word from a previous command
-`!!:n`
-: n is 0-indexed, so `!!:0` would refer to the command itself, etc
-
-#### Repeat the previous command while substituting a string
-`^<string1>^<string2>^`
-: replace only the first occurrence of {string1}; trailing `^` is optional
-
-`^<string1>^<string2>^:&`
-: replace all occurrences; trailing `^` is required
-
-#### Reference a word of the current command and reuse it
-`!#:n`
-: zero-based word reference {n} (0 is the command, etc)
-
-#### Save a copy of your command line session
-`script`
-
-#### Find out which commands you use most often
-`history | awk '{print $2' | sort | uniq -c | sort -rn | head`
-
-#### Clear your shell history
-`history -c`
+`sudo !!` `su -c "!!"` : run the last command as root
+`!<string>` : repeat the last command that started with a given string
+`!^` : reuse the second word (first argument) from the previous command
+`!$` : reuse the last word (last argument) from the previous command
+`!!:n` : n is 0-indexed, so `!!:0` would refer to the command itself, etc
+`^<string1>^<string2>^` : replace only the first occurrence of {string1}; trailing `^` is optional
+`^<string1>^<string2>^:&` : replace all occurrences; trailing `^` is required
+`!#:n` : zero-based word reference {n} (0 is the command, etc)
+`script` : save a copy of your command line session
+`history | awk '{print $2' | sort | uniq -c | sort -rn | head` : find out which commands you use most often
+`history -c` : clear your shell history
 
 #### Strip out comments and blank lines
 `grep -E -v "^#|^$" file`
@@ -306,56 +282,25 @@ done
 : using brace expansion
 
 #### Create backups of files by date with ease
-`alias d='date +%F'`
-: using format "YYYY-MM-DD"
-`cp file{,.$(d)}`
-: append date to end of filename of copy using new alias
-
-#### Overwrite the contents of a file
-`cmd > file`
+`alias d='date +%F'` : using format "YYYY-MM-DD"
+`cp file{,.$(d)}` : append date to end of filename of copy using new alias
+`cmd > file` : overwrite the contents of a file
 
 #### Empty a file that is being written to
 `> file`
 `cat /dev/null > file`
 : if a process has a file open it will continue to write to the file if you try to delete it naively. This way the file is truncated and applications can continue writing to it.
 
-#### Append a string to a file
 `cmd >> file`
-
-#### Follow a file as it grows
-`tail -f file`
-: view tail of file in realtime
-
-#### Watch multiple log files at the same time
-`multitail files`
-: not available on BSD
-
-#### Delete empty directories
-`find . -type d -empty -delete`
-: `-type d` finds directories
-
-#### Print a list of files that contain a given string
-`grep -rl string a`
-: `-r` recursive; `-l` list files that match
-
-#### An easy-to-read recursive file listing
-`find . -type f -ls`
-
-#### View files and directories in a tree format
-`tree`
-`tree -d`
-: `-d` see only directories
-
-`tree -L n`
-: `-L` limit depth to {n}
-
-#### Replace a string in multiple files
-`find /path -type f -exec sed -i.bak`
-: 
-
-#### Extract the nth line from a file
-`awk 'NR==N'`
-
+`tail -f file` : view tail of file in realtime
+`multitail files` : watch multiple log files at the same time, not available on BSD
+`find . -type d -empty -delete` : `-type d` fine empty directories and delete them
+`grep -rl string a` : `-r` recursive; `-l` list files that match
+`find . -type f -ls` : easy-to-read recursive file listing
+`tree -d` : `-d` see only directories
+`tree -L n` : `-L` limit depth to {n}
+`find /path -type f -exec sed -i.bak` : replace a string in multiple files
+`awk 'NR==N'` : extract the nth line from a file 
 #### Convert text files from Windows format to Linux format and vice-versa
 `dos2unix` | `unix2dos` 
 
@@ -371,8 +316,7 @@ done
 : DNS returns Wikipedia article summaries as TXT records
 
 #### Make non-interactive shell sessions behave the same as interactive sessions
-`if [ -f ~/.bashrc ]; then source ~/.bashrc; fi`
-: make .bash_profile point to .bashrc so that non-interactive sessions (like SSH) behave the same as interactive sessions (login)
+`if [ -f ~/.bashrc ]; then source ~/.bashrc; fi` : make .bash_profile point to .bashrc so that non-interactive sessions (like SSH) behave the same as interactive sessions (login)
 
 #### Make your computer talk to you
 `espeak -f file`
@@ -394,20 +338,16 @@ TZ environment variable specifies timezone
 `tar xf archive -C /path/to/directory`
 
 #### Transform the directory structure of a tar file when extarcting it
-`tar xf archive --strip-components=n`
-: where {n} is a number that represents the level of the top directory from which to extract
+`tar xf archive --strip-components=n` : where {n} is a number that represents the level of the top directory from which to extract
 
 #### Use a spreadsheet from the command-line
-`sc`
-: not available on BSD
+`sc` : not available on BSD
 
 #### Rudimentary command-line stopwatch
-`time read`
-: will stop when you press enter, displaying how much time elapsed
+`time read` : will stop when you press enter, displaying how much time elapsed
 
 #### Repeat a command at regular intervals and watch its changing output
-`watch cmd -n n`
-: execute {cmd} at periods of {n} seconds, watching its output
+`watch cmd -n n` : execute {cmd} at periods of {n} seconds, watching its output
 
 #### Execute a command at a given time
 `echo "cmd" | at time`
@@ -417,9 +357,7 @@ TZ environment variable specifies timezone
 `screen -x user/session`
 
 #### Execute an unaliased version of an aliased command
-`\cmd`
-: if {cmd} is a command as well as an alias, use the backslash to run it as the original command
+`\cmd` : if {cmd} is a command as well as an alias, use the backslash to run it as the original command
 
 #### Save the output of a command as an image
-`cmd | convert label:@- image.png`
-: `convert` command from ImageMagick software suite
+`cmd | convert label:@- image.png` : `convert` command from ImageMagick software suite
