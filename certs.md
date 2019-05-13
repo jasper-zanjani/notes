@@ -38,6 +38,7 @@
   - SY0-101,2008
 ## Linux
 ### CompTIA Linux+
+- LX0-101 and LX0-102 were retired on August 2015
 - LX0-103 and LX0-104 were developed for CompTIA by LPI, both have 60 questions and cost $219 each
 - XK0-004
   - independently developed by CompTIA

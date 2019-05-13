@@ -157,18 +157,24 @@ Administering users and groups
 Topics: cancel, chage, chfn, chsh, cupsaccept, cupsd, cupsdisable, cupsenable, cupsreject, groupadd, groupdel, groupmod, groups, id, logrotate, lpadmin, lpc, lp, lpq, lpr, lprm, lpstat, newgrp, passwd, pwconv, pwunconv, useradd, userdel, usermod, /etc/cups/cupsd.conf, /etc/cups/printers.conf, /etc/default/useradd, /etc/group, /etc/login.defs, /etc/logrotate.conf, /etc/passwd, /etc/shadow, /etc/skel, /etc/syslog.conf, /var/log 
 
 ## 11 Compression, system backup, and software installation
-Compression
-  - `compress` utility
-  - `gzip` utility
-  - `bzip2` utility
-System backup
-  - `tar` utility
+### File compression
+`compress` : one of the oldest compression tools available to Unix-like systems, uses Adaptive Lempel-Ziv (LZW) coding with an average compression ratio of 40-50%, appends ".Z" to filenames of inputfiles
+`compress -v file1 file2`
+`zcat` : display contents of files compressed with `compress` or `gzip` (also `zmore`, `zless`)
+`uncompress` : decompress files compressed with `compressed`
+`gzip` : utility that uses Lempel-Ziv compression algorithm (LZ77) with an average compression ratio of 60-70%, appends ".gz" filename extension
+`gzip -d archive` : decompress {archive} (same as `gunzip archive`)
+`bzip2` :  utility that uses Burrows-Wheeler Block Sorting Huffman Coding algorithm, with an average compression ratio of 50-75% (`zcat`, `zmore`, and `zless` cannot be used with compressed archives), with a default filename extension of ".bz2"
+`bzcat` : display contents of bz2 files (also `bzmore`, `bzless`)
+`bunzip2`
+### System backup
+`tar` : one of the oldest backup utilities
   - `cpio` utility
   - `dump`/`restore` utility
   - Burning software
-Software installation
+### Software installation
   - Compiling source code into programs
-  - Installing programs using RPM
+  - Installing programs using RPM: `rpm` and `yum` package management tools (dpkg and apt are only tangentially covered in a single Note)
 Topics: *sum (sha1sum, etc), bunzip2, bzcat, bzip2, bzless, bzmore, compress, cpio, dump, gcc, gzip, gunzip, restore, rpm, tar, uncompress, yum, zcat, zless, zmore, /etc/dumpdates
 
 ## 12 Network configuration

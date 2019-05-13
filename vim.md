@@ -1,9 +1,36 @@
 # vim
-`:colorscheme <tab>` to select alternative color theme
-`v` `V` enter visual character, visual line modes
-`Ctrl+V` enter visual block mode
-  - `I<space>TEXT` enter `TEXT` on each line at the position
-  - `<Esc>` end insert
+## Color
+$HOME/.vim/colors : directory where custom colorschemes can be placed
+`:colo[rscheme] <tab>` : select alternative colorschemes
+`:colo <C-d>` : display all available colorschemes
+`:hi clear` : clear custom color commands
+`:hi[ghlight] Element ctermfg=color ctermbg=color` : set {Element} to {color}
+`:hi[ghlight] Element guifg=#abc123 guibg=#abc123` : hexadecimal color codes
+Elements:
+  - "LineNr" line numbers
+  - "Normal" normal, unhighlighted text
+  - "Title"  headings in markdown
+  - "String" code (text between backticks) in markdown
+  - "Identifier" bullets for ordered and unordered lists in markdown
+  - "NonText"
+  - "Cursor"
+  - "StatusLine"
+  - "StatusLineNC"
+  - "VertSplit"
+  - "Folded"
+  - "Visual"
+  - "SpecialKey"
+  - "Comment"
+  - "Todo"
+  - "Constant"
+  - "Function"
+  - "Type"
+  - "Statement"
+  - "Keyword"
+  - "PreProc"
+  - "Number"
+  - "Special"
+colors: "light", "dark", and unmodified versions of colors red, green, yellow, blue, magenta, cyan, as well as white and black
 
 ## Plugins
 Vim 8 supports native loading of plugins (put in `.vim/pack/xx/start/` where `xx` is an arbitrary directory name
