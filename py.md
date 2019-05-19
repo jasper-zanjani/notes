@@ -156,3 +156,6 @@ Since Python3, the `venv` module, part of the Standard Library, can be used to s
 `python3 -m venv env` : set up virtual environment {env} in the current working directory
 `source env/bin/activate` : activate the virtual environment {env}
 `deactivate` : deactivate the virtual environment
+
+## `key` parameter in functions like `sorted`
+The value of `key` is a function that takes a single argument and returns a key to use for sorting purposes.

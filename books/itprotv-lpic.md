@@ -222,12 +222,32 @@ Topics; ls, cp, mv, rm, touch, tar, cpio, dd, mkdir, rmdir
 Topics: find, cpio, |
 
 ## 20 Ownership and permissions
+Topics: chgrp, chown, chmod
 
-## 21 Disk quotas
+## 21 Disk quotas *
+2 types of quotas:
+  1. User quotas (`usrquota` in fstab)
+  2. Group quotas (`grpquota` in fstab)
+Quotas are usually assigned in block amounts (use `dumpe2fs` to find block size to estimate disk usage)
+### Commands
+`mount /dev/sdb1 /mnt/Sales -o defaults,usrquota,grpquota` remount the drive with usrquota and grpquota enabled (same as rebooting after changes to fstab)
+`quota user` check quota status of {uwer}
+`quotacheck` create the quota database
+`quotacheck -cug /mnt/Sales` : `-c` create the database, `-u` user database, `-g` group database; these create "aquota.group" and "aquota.user" at the mount location
+`quotaon -a` : turn on all quotas
+`quotaon -u user` : turn on quotas for {user}
+`quotacheck -avug`
+`edquota -g`
+`repquota -vsg /home` : `-s` human readable `-g` group
+`repquota -vsu /home`
+`quotaoff -a`
+Topics: edquota, repquota, quotaon, quotaoff
 
 ## 22 Locating files
+Topics: find, locate, whereis, which, type
 
 ## 23 Installing bootloaders, 1
+
 
 ## 24 Installing bootloaders, 2
 
@@ -453,18 +473,112 @@ When `ifconfig` and `traceroute` are not preinstalled on a system, they must be 
 ## 42 Writing scripts
 
 ## 43 Managing email
+Most distros come with services that will allow even desktop computers to become email servers
+MTA (message transfer agent, i.e. SMTP) and MUA (mail user agent, POP3 or IMAP client)
+### Commands
+`mail` (23:00) not user-friendly
+`mail -s "Test email" dpezet` : shell with prompt "& ", accepts message body interactively; `-s` subject; `.\n` ends the message
+`mail -u root` : retrieve root mail
+MTAs:
+`sendmail` : no longer run because development fell off long ago
+`postfix` : designed to replace `sendmail`
+`exim`
+`qmail`
+`dovecot` secure IMAP server
+`squirrelmail` `roundcube` webmail
+### Files
+/etc/postfix
 
 ## 44 Managing data with SQL
+### Installation and setup commands
+`yum install mariadb mariadb-server`
+`systemctl enable --now mariadbd` 
+`/usr/bin/mysql_secure_installation` configuration script settings: 
+  - asks to set root password
+  - remove anonymous users
+  - disallow remote root login
+  - remove test database
+`mysql -u root -p` start a mariadb share
+### MySQL commands
+commands are called queries in MySQL, the command itself is capitalized by convention, and every query is terminated by a semicolon
+`show databases;` : databases are collections of tables (like workbooks to sheets)
+`create database company;`
+`use company;` change database to be queried
+`create table employees (id int NOT NULL AUTO_INCREMENT PRIMARY KEY firstname varchar(50), lastname varchar(50), department int);` creating tables is involved
+`insert` add new row
+`insert into employees (firstname, lastname, department) values ('Bob', 'Smith', '1'), ('John', 'Doe', '2'), ('Alan', 'Johnson', '1'), ('Alice', 'Smith', '2');`
+`select` return values in a selected range of columns
+`SELECT * FROM employees` will display all values 
+`SELECT * FROM employees WHERE department LIKE 1;` => Bob Smith, Alan Johnson
+`SELECT * FROM employees WHERE lastname LIKE 'S%';` lastname begins with "S"
+`SELECT firstname,lastname FROM employees WHERE lastname LIKE 'S%';` : just first and last names of matches
+`SELECT employees.firstname, employees.lastname, departments.name FROM employees JOIN departments ON employees.department=departments.id;`
+`update` modify existing row
+`UPDATE employees SET department='1' WHERE id='4';` update Alice's record to change the department from 2 to 1
+`delete` remove a row
 
 ## 45 Printers and printing
+CUPS printing system; when installing on a headless server printers must be installed using the PPD driver (copy into /etc/cups/ppd/)
+### Commands:
+`lp` : "line printer", used to print files
+`lpadmin -h localhost -p Canon7065 -E -v socket://10.1.10.23 -P /etc/cups/ppd/CNADVC7055X1.PPD` create a virtual printer tied to an IP address that uses the specified PPD fileset up a network printer
+`LPDEST=Canon7065`
+`lpstat` view status of print job
+`cancel` kill print jobs
+### Files:
+/etc/cups/ppd/ : contains ppd drivers
+/etc/cups/cupsd.conf
+
 
 ## 46 Security administration, 1
+`find / -perm +4000` | `find / -perm -u+s` audit system for files with suid bit set
+`find / -perm +2000` | `find / -perm -g+s` audit system for files with sgid bit set
+`netstat -tp` : display ports that are being listened to and associated programs
+`netstat -atp`
+`nmap host` utility useful to audit open ports; scan {host} remotely
+`netstat -tp` examine programs and ports they are listening on
+`ulimit` useful to place limits on users' access to computing resources (no longer used as it once was)
+`ulimit -a` in order to be persistent, limits have to be stored in /etc/security/limits.confg
 
 ## 47 Security administration, 2
+`sudo` users must be added to /etc/sudoers
+`visudo`
+`xinetd` handles various outdated services associated with service; unused services need to be turned off (called "reducing the attack surface")
+`service --status-all` see status of all services (syvinit); turn off services
+### Files:
+/etc/xinetd.d/ : xinetd configs
+/etc/xinetd.conf  : master xinetd configuration
+/etc/cmd.allow /etc/cmd.deny : files that specify who is allowed to run a command/denied; they can be used to support/disallow TCP services
 
 ## 48 Securing data with GPG
+PGP was bought by Semantec, and GNU has since released GPG, an open-source replacement. It requires a private key (for decryption) as well as a public one (sufficient for encryption)
+`dd if=/dev/sda1 of=/dev/zero`: `/dev/null` won't actually do a disk write
+`gpg --export --output ~/jdoe.pub` : export GPG public key
+`gpg --import jdoe.pub` : import another person's public key
+`gpg --list-key` will list available GPG keys
+`gpg --encrypt -r jdoe@dplaptop.lab.itpro.tv ./file.txt` : email has to match that of the GPG key
+`gpg file.txt` : decrypt file
+### Files
+/proc/sys/kernel/random/entropy_avail : to generate more entropy do disk activity
 
 ## 49 Securing data with SSH
+Unencrypted shell sessions over telnet are no longer considered safe because the data is easily intercepted.
+### Commands
+`service --status-all | grep ssh` search for running SSH service on sysvinit
+`systemctl | grep ssh` search for running SSH service on SSH
+`ssh-keygen -t rsa1 -f /etc/ssh/ssh_host_key` generate private and public RSA keys for SSH
+`ssh-keygen -t rsa -f /etc/ssh/ssh_host_rsa_key` generate private and public RSA keys
+`ssh-keygen -t dsa -f /etc/ssh_ssh_host_dsa_key` generate private and public DSA keys
+### Files
+/etc/sysconfig/iptables : make sure SSH traffic is allowed through port 22
+/etc/ssh/ directory containing private and public SSH keys (.pub)
+/etc/.ssh/known_hosts contains IP address and alphanumeric public key
 
 ## 50 Securing data with SSH, 2
+SSH is actually a tunneling protocol that runs a shell by default
+`ssh -f dpezet@10.1.230.238 -L 60023:10.1.230.238:23 -N` 
+  `-f` go to background just before command execution
+  `-L` forward local port connections to a remote host
+  `-N` do not create an interactive shell (i.e. create a tunnel)
+`telnet 127.0.0.1 60023` : telnet to your own address at the given port
 

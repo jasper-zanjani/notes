@@ -308,12 +308,12 @@ Niceness values range from -20 to +19 (smaller or more negative numbers mean a h
 `pgrep`
 `kill`
 
-## 26 Supporting printers
+## 25 Supporting printers
 Most Linux distros handle printing the same way, a situation which was not always this way. When Apple switched to BSD, they open-sourced the printing solution (CUPS) which greatly benefited the situation for Linux printer drivers. CUPS is typically accessed through a web interface
 Printer driver files are PPD files 
 `lpadmin`
 
-## 28 Understanding TCP/IP
+## 26 Understanding TCP/IP
 `ip addr` : newer command, replacing `ifconfig`, that shows network adapters and associated ip addresses
 DHCP IP assignment process (DORA): Discover Offer Response Accept
 Although fake IPs can be used privately by using a router that does Network Address Translation, hiding it from the Internet, but IEEE has reserved 3 ranges of IP addresses that can be used privately.
@@ -351,11 +351,11 @@ Although fake IPs can be used privately by using a router that does Network Addr
 different distros store network configurations in various places, but generally one of two locations contain scripts that are run when interfaces go down:
   1. /etc/sysconfig/network-scripts : Red HAt
   2. /etc/sysconfig/network-scripts/ifcfg-eno1 : Ubuntu
-`/etc/sysconfig/network-scripts/` : directory containing various configuration files and scripts in Red Hat systemd
-`/etc/network/` or `/etc/netplan/` : file called `99_config.yaml` in Ubuntu
-`/etc/resolv.conf` : global DNS settings
-`/etc/network` : global network settings
-`/etc/hosts` : global hostnames
+/etc/sysconfig/network-scripts/ : directory containing various configuration files and scripts in Red Hat systemd
+/etc/network/ or /etc/netplan/ : file called `99_config.yaml` in Ubuntu
+/etc/resolv.conf : global DNS settings
+/etc/network : global network settings
+/etc/hosts : global hostnames
 
 ## 28 Troubleshooting network connections
 `ping` : utility to check network connections
@@ -387,7 +387,7 @@ Pinging loopback device (`lo`) allows you to see if the network driver is workin
 `apt dist-upgrade` : upgrade distribution (Ubuntu patches)
 `sudo apt-key add keyfile` : add GPG {keyfile} while adding a repo
 ### Files
-`/etc/apt/sources.list` : file containing information on repos
+/etc/apt/sources.list : file containing information on repos
 
 ## 32 Managing software with yum/DNF
 `yum` "Yellowdog Update Manager"
@@ -403,8 +403,8 @@ New repo definitions are added as text files. Use `yum` to install `rpm` package
 `yum erase package`
 `sudo rpm --import gpgkey.asc` : import {gpgkey}, adding it to GPG keychain
 ### Files
-`/etc/yum.repos.d/` : directory containing initial location of repository definitions ("webmin.repo")
-`/etc/dnf/dnf.conf` : eventual destination of repository definitions
+/etc/yum.repos.d/ : directory containing initial location of repository definitions ("webmin.repo")
+/etc/dnf/dnf.conf : eventual destination of repository definitions
 
 ## 33 Building from source
 The `make` utility compiles into a `/run` folder
@@ -494,28 +494,86 @@ SE Linux Modes:
 /var/log/audit/audit.log : SELinux's audit file
 
 ## 38 Securing apps with AppArmor
-
+AppArmor is a competitor to SELinux that creates profiles that focuses on individual apps.
+### Commands
+`apt install apparmor-utils`
+`apparmor_status`
+`apt policy apparmor`
+### Files
+/etc/apparmor.d/ contains files corresponsding to pathnames with slashes replaced by periods
 
 ## 39 Filtering traffic with firewalld
-
+firewalld took over from iptables during the transition from sysvinit to systemd in RH systems. Like iptables, firewalld uses the netfilter protocols. It works by placing network traffic into zones, and often commands have to be written twice: once to affect running configuration and again to store the change to disk.
+### Commands:
+`sudo firewall-cmd --state` confirm firewalld is running
+`firewall-cmd --get-default-zone` display the default zone
+`firewall-cmd --get-active-zones` zones that actually have an interface attached
+`firewall-cmd --new-zone=testlab` firewalld will demand the additional option `--permanent` meaning the change will be written to disk
+`firewall-cmd --reload` load running configuration from disk
+`firewall-cmd --get-services` display names of all available services
+`firewall-cmd --add-service=ftp --permanent; firewalld-cmd --add-service=ftp`
+`firewall-cmd --list-services` display services loaded in memory
+  `--remove-service`
+  `--add-port=8080/tcp` add nonstandard port
+  `--add-port=50000-60000/udp` add a range of nonstandard ports
+  `--list-ports` see approved port numbers
+### Files:
+/etc/sysconfig/network-scripts/ifcfg-ens33 : interface settings
+/usr/lib/firewalld/services : display .xml files that define services
+  - "ZONE=public" firewalld zone
 
 ## 40 Filtering traffic with iptables
-
+iptables is one of the most popular firewalls used in Linux. Like firewalld, it is really a frontend for the netfilters service. 
+Rules are defined by identification and one of 3 actions:
+  - ACCEPT
+  - REJECT
+  - DROP useful in DDoS attacks, to prevent profusion of outbound messages
+  - LOG is used in conjunction with one of the 3 main actions
+Chains: places where rules can be placed
+  - INPUT : best place to filter incoming traffic
+  - OUTPUT
+  - FORWARD
+### Commands:
+`iptables --list` can be deceiving because the iptables utilities will respond even if the service is not running
+`systemctl stop firewalld` firewalld has to be stopped before iptables can be started.
+`systemctl mask firewalld` prevent firewalld from being started inadvertently by another process; better than `disable`
+`systemctl enable --now iptables`
+`iptables --list-rules` display rules as written on disk
+`iptables -A INPUT -p tcp --dport 80 -j ACCEPT` accept TCP traffic to port 80; this rule will appear in the list of rules (`iptables --list`)
+`iptables -A INPUT -p tcp --dport ssh -s 10.0.222.222 -j ACCEPT` accept SSH traffic from a particular source
+`iptables-save` display what the running configuration would look like if written to disk; must be redirected to a file
+`iptables -F` reload configuration file
+`systemctl restart iptables`
+`iptables -vnL --line` show statistics for configuration lines
+`watch -n 0.5 iptables -vnL` will update twice a second, producing a sort of dashboard
+### Files:
+/etc/sysconfig/iptables : location of saved configu
 
 ## 41 Backup and restore data
-
+### Commands:
+`tar cvzf backup.tgz ~/Documents`
+`tar xvzf ~/Documents/ backup.tgz`
+`dar` "disk archiver", replaces `tar`
+`dar -R ~/Documents -c full.bak` create a full backup of {~/Documents}
+`dar -R ~/Documents -c diff1.bak -A full.bak` create a differential backup (every differential backup takes the full backup as reference
+`dar -R ~/Documents -c incr1.bak -A full.bak` create incremental backups
+`dar -x full.bak; dar -x incr1.bak -w` : restore backups
+`dd if=/dev/sda of=/dev/sdb`
+Topics: mirrorvg, scp, sftp, rsync
 
 ## 42 Configuring bash
-Login scripts don't just apply to bash and will apply to all user logins, except for those in the user's home directory: 
-  - `/etc/bashrc` functions and aliases
-  - `/etc/profile` 
-  - `/etc/profile.d/*` 
-  - `~/.profile` 
-  - `~/.bash_profile`
-Bash configuration files:
-  - `/etc/bashrc`
-  - `~/.bashrc`
+### Commands
 `set -o allexport` : make all variables global (not recommended)
+### Files
+Login scripts don't just apply to bash and will apply to all user logins, except for those in the user's home directory: 
+/etc/bashrc functions and aliases
+/etc/profile 
+/etc/profile.d/* 
+~/.profile 
+~/.bash_profile
+Bash configuration files:
+/etc/bashrc
+~/.bashrc
 Shell scripts can be refactored as functions in the .bashrc file. To make these functions available to all users, a function can be placed within the `/etc/bashrc` or in the `/etc/skel/.bashrc` which will be used as the template for all new users' profiles
 
 ## 43 Writing a bash script
@@ -536,22 +594,22 @@ Shell scripts can be refactored as functions in the .bashrc file. To make these 
 ### Files:
 #### at config files
 If the following two files don't exist, only root is allowed access to `cron`
-`/etc/at.allow` : any user listed will be allowed to use `at`
-`/etc/at.deny` : any user listed will _not_ be allowed to use `at`
+/etc/at.allow : any user listed will be allowed to use `at`
+/etc/at.deny : any user listed will _not_ be allowed to use `at`
 #### cron config files
 If the following two files don't exist, only root is allowed access to `cron`
-`/etc/cron.allow`
-`/etc/cron.deny`
-`/etc/crontab` : contains scheduling in a unique format (`m h d M D username command` where m is minute, h is hour, d is day of month (1-31), M is month (1-12), and D is day of week (0-6 where Sunday is 0, or sun, mon, tue, etc...)
+/etc/cron.allow
+/etc/cron.deny
+/etc/crontab : contains scheduling in a unique format (`m h d M D username command` where m is minute, h is hour, d is day of month (1-31), M is month (1-12), and D is day of week (0-6 where Sunday is 0, or sun, mon, tue, etc...)
   - `53 23 * * * root /usr/lib64/sa/sa2 -A` : run a task at 11:23
   - `*/10 * * * * root /usr/lib64/sa/sa1 1 1` : run a task every ten minutes
-`/etc/cron.d/`
-`/etc/cron.hourly/`
-`/etc/cron.daily/`
-`/etc/cron.weekly/`
-`/etc/cron.monthly/`
-`/var/spool/cron/` : directory containing user cron tables for individual users
-`/etc/anacrontab` : table of anacron jobs
+/etc/cron.d/
+/etc/cron.hourly/
+/etc/cron.daily/
+/etc/cron.weekly/
+/etc/cron.monthly/
+/var/spool/cron/ : directory containing user cron tables for individual users
+/etc/anacrontab : table of anacron jobs
 
 ## 45 Scheduling tasks, 2
 

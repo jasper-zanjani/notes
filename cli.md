@@ -5,6 +5,8 @@
 : (PGL:548)
 `[ -z "$1" ] && echo "Give either a pdf file or a DOI as an argument && exit`
 : [Luke Smith](https://youtu.be/ksAfmJfdub0) 
+`if [ ! -z "$2" ] ; then ...; fi`
+: [Yakuake scripting](https://coderwall.com/p/kq9ghg/yakuake-scripting)
 
 ## Looping based on user input
 ```bash
