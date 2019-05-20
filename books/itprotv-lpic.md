@@ -247,9 +247,29 @@ Topics: edquota, repquota, quotaon, quotaoff
 Topics: find, locate, whereis, which, type
 
 ## 23 Installing bootloaders, 1
+Lots of variance between distros. Unlike BIOS, EFI isn't entirely loaded on a chip, but rather somewhere on the HDD. "Grand Unified Bootloader" has taken the mantle from LILO "Linux Loader"
 
+### GRUB Legacy
+`default=0 ` refers to first OS in the list of options
+`timeout=n` number of seconds that allows for choice of alternative OS choice
+`splashimage=(hd0,0)/grub/splash.xpm.gz` because udev hasn't run when the bootloader runs, the (hd0,0) refers to the first hard drive found
+`hiddenmenu` menu only shown on keypress of Enter
+`title OS...` menu option in bootloader
+`rootnoverify (h1,0)` turn control over to another bootloader (for Windows)
+`makeactive`
+`chainloader +1`
+### Installation of GRUB
+#### BIOS
+`grub-install /dev/sda` install GRUB from a live key to HDD
+#### UEFI
+`efibootmgr -c -l \\EFI\\redhat\\grub.efi -L GRUB`
 
 ## 24 Installing bootloaders, 2
+GRUB2: biggest change is GRUB2 uses a different config file (grub.cfg); can be in /boot/grub/ or in /boot/grub/grub2; most importantly, in GRUB2 the user is dissuaded from manually editing the config file, but rather to use the `grub2-mkconfig` utility (also `grub-mkconfig` on some systems, including Manjaro, or also `update-grub` `update-grub2`)
+`menuentry` instead of "title" in GRUBv1
+### Files:
+/etc/default/grub default values for GRUB
+/etc/grub.d/ directory containing logic that grub-mkconfig will use for all the various sections of the config file; these should be edited instead of directly editing grub.cfg
 
 ## 25 SysV initialization process
 
