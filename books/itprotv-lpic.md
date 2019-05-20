@@ -228,6 +228,10 @@ Topics: find, cpio, |
 ## 22 Locating files
 
 ## 23 Installing bootloaders, 1
+Secure Boot requires a digitally signed bootloader; in practice this means bootloaders approved by Microsoft, Canonical and Red Hat. Fortunately, most hardware allows a user to disable Secure Boot. GRUB is the main bootloader used by most major distributions today, taking the mantle from LILO
+### Files:
+/boot/grub/grub2/grub.cfg config file used by GRUB2 (might also be in /boot/grub/)
+/boot/grub/grub.conf config file used by GRUB Legacy (also menu.lst)
 
 ## 24 Installing bootloaders, 2
 
