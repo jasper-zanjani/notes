@@ -279,7 +279,7 @@ GRUB2: biggest change is GRUB2 uses a different config file (grub.cfg); can be i
 GNOME is the most common desktop envirionment, used by Red Hat and Ubuntu. KDE was popular a few years ago, but distros have moved away from it despite the sponsorship of companies like Google. File managers are one of the key points of differentiation between DEs.
 Components of desktop environments
   - Window manager
-  - Compositor actually generates the graphics
+  - compositor actually generates the graphics
   - Windowing server, universally X
 If converting a headless system to one with a GUI, you have to make sure to edit initialization settings (edit inittab or `systemctl set-default graphical.target`) to boot to a GUI
 GDM and KDM are the login screens (23:00)
