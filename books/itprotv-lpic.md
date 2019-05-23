@@ -247,8 +247,10 @@ Topics: edquota, repquota, quotaon, quotaoff
 Topics: find, locate, whereis, which, type
 
 ## 23 Installing bootloaders, 1
-Lots of variance between distros. Unlike BIOS, EFI isn't entirely loaded on a chip, but rather somewhere on the HDD. "Grand Unified Bootloader" has taken the mantle from LILO "Linux Loader"
-
+Lots of variance between distros. Unlike BIOS, EFI isn't entirely loaded on a chip, but rather somewhere on the HDD. "Grand Unified Bootloader" has taken the mantle from LILO "Linux Loader". Secure Boot requires a digitally signed bootloader; in practice this means bootloaders approved by Microsoft, Canonical and Red Hat. Fortunately, most hardware allows a user to disable Secure Boot. GRUB is the main bootloader used by most major distributions today, taking the mantle from LILO
+### GRUB installation commands
+`grub-install /dev/sda` install GRUB from a live key to HDD (BIOS)
+`efibootmgr -c -l \\EFI\\redhat\\grub.efi -L GRUB` : UEFI
 ### GRUB Legacy
 `default=0 ` refers to first OS in the list of options
 `timeout=n` number of seconds that allows for choice of alternative OS choice
@@ -258,11 +260,9 @@ Lots of variance between distros. Unlike BIOS, EFI isn't entirely loaded on a ch
 `rootnoverify (h1,0)` turn control over to another bootloader (for Windows)
 `makeactive`
 `chainloader +1`
-### Installation of GRUB
-#### BIOS
-`grub-install /dev/sda` install GRUB from a live key to HDD
-#### UEFI
-`efibootmgr -c -l \\EFI\\redhat\\grub.efi -L GRUB`
+### Files:
+/boot/grub/grub2/grub.cfg config file used by GRUB2 (might also be in /boot/grub/)
+/boot/grub/grub.conf config file used by GRUB Legacy (also menu.lst)
 
 ## 24 Installing bootloaders, 2
 GRUB2: biggest change is GRUB2 uses a different config file (grub.cfg); can be in /boot/grub/ or in /boot/grub/grub2; most importantly, in GRUB2 the user is dissuaded from manually editing the config file, but rather to use the `grub2-mkconfig` utility (also `grub-mkconfig` on some systems, including Manjaro, or also `update-grub` `update-grub2`)
