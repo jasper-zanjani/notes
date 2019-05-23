@@ -19,8 +19,7 @@
 `vim scp://user@host/path/file`
 
 #### Display output in a table
-`| command -t`
-: space-delimited text is put into columns
+`| column -t` : pipe output of another command into `column -t`; space-delimited text is put into columns
 
 #### Grab the last word on a line of output
 `awk '{print $NF}' file`

@@ -141,19 +141,53 @@ Scheduling commands
 Topics: at, atd, bg, crontab, fg, jobs, killall, kill, nice, ps, pstree, renice, top, /etc/at.allow, /etc/at.deny, /etc/cron.allow, /etc/cron.d, /etc/cron.deny, /etc/crontab, /var/spool/at, /var/spool/cron
 
 ## 10 Common administrative tasks
-Printer administration
-  - Common Unix printing system
-  - Managing print jobs
-  - LPD Printing system
-  - Configuring printers
-Log file administration
-  - System log daemon
-  - Managing log files
-Administering users and groups
-  - Creating user accounts
-  - Modifying user accounts
-  - Deleting user accounts
-  - Managing groups
+### Printer administration
+#### Common Unix printing system
+#### Managing print jobs
+#### LPD Printing system
+#### Configuring printers
+### Log file administration
+Information and error messages recorded by daemons are called _log files__ and typically stored in _/var/log_
+#### System log daemon `rsyslogd`
+Creates a socket for other system processes to write to at /dev/log. Any information written there is saved in the appropriate log file according to entries in /etc/rsyslog.conf
+/etc/rsyslog.conf : whitespace-delimited config file that contains General Directives to control general logging behavior
+`facility.priority /var/log/logfile` : general pattern; whitespace delimited
+`kern.warning       /var/log/logfile` : log kernel messages with a priority of warning and higher
+`kern.=warning      /var/log/logfile` : log only kernel messages with a priority of warning
+`kern.*             /var/log/logfile` : log all error messages from the kernel
+`kern.*;kern.!=warn /var/log/logfile` : specify multiple facilities and priorities by delimiting each with a semicolon
+`facility.priority @hostname:portnumber` : also possible; remote host must have the UDP and TCP protocol listeners uncommented, to listen on port 514 (default syslogd port)
+`$ModLoad imuxsock.so` : provide support for local system logging (`logger` command)
+`$ModLoad imklog.so` : provide kernel logging support (previously done by `rklogd`)
+`$ModLoad immark.so` : provide --MARK-- message capability
+`$ModLoad imudp.so` \ `$UDPServerRun 514` : provide UDP syslog reception
+`$ModLoad imtcp.so` \ `$InputTCPServerRun 514` : provide TCP syslog reception
+`*.info;mail.none;news.none;authrpriv.none;cron.none /var/log/messages` : log anything of level info or higher
+`authpriv.*         /var/log/secure` : authpriv file has restricted access
+`mail.*             -/var/log/maillog` : log all mail messages in one place
+`cron.*             /var/log/cron`
+`*.emerg            *` : everybody gets emergency messages
+#### Managing log files
+`>/var/log/messages` clear a log without deleting it, in order to preserve pemrmissions
+/etc/logrotate.conf : config file for `logrotate`, overriden by files in /etc/logrotate.d/ 
+`weekly` : rotate log files weekly
+`monthly` : rotate log files monthly
+`rotate 4` : keep 4 weeks worth of backlogs
+`notifempty` : do not rotate if empty
+`create` : create new (empty) log files after rotating old ones
+`create 0664 root utmp` : new log file has permissions rw-rw-r-- with owner root and group utmp
+`minsize 1M` : rotation only occurs when log file has a size greater than 1MB
+`dateext` : use date as suffix of the rotated file
+`compress` : compress log files
+`delaycompress` : compress old files, but only on the next rotation
+`rotate 1` : only one old log file is kept
+`include /etc/logrotate.d` : RPM packages drop log rotation information into /etc/logrotate.d/
+`/var/log/btmp { ... }` : individual log files can have settings that override the general directives
+### Administering users and groups
+#### Creating user accounts
+#### Modifying user accounts
+#### Deleting user accounts
+#### Managing groups
 Topics: cancel, chage, chfn, chsh, cupsaccept, cupsd, cupsdisable, cupsenable, cupsreject, groupadd, groupdel, groupmod, groups, id, logrotate, lpadmin, lpc, lp, lpq, lpr, lprm, lpstat, newgrp, passwd, pwconv, pwunconv, useradd, userdel, usermod, /etc/cups/cupsd.conf, /etc/cups/printers.conf, /etc/default/useradd, /etc/group, /etc/login.defs, /etc/logrotate.conf, /etc/passwd, /etc/shadow, /etc/skel, /etc/syslog.conf, /var/log 
 
 ## 11 Compression, system backup, and software installation
