@@ -148,3 +148,5 @@ add ",acl" to options in `fstab` file, then mount/unmount disk. If enabling FACL
 ## Manjaro
 `bcdedit /set {bootmgr} path \EFI\manjaro\grubx64.efi` : change Windows bootloader to Manjaro, while dual booting
 `sudo mhwd -a pci nonfree 0300` : command was run while troubleshooting black screen on startup 
+/sys/class/net : contains network interface configuration files (or at least symlinks to them in other directories), similar to /etc/sysconfig/network-scripts/ in RHEL
+
