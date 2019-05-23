@@ -42,3 +42,6 @@ clean:
 `make clean`
   executes the `clean` section, removing the files
 
+## Targets
+`tinyconfig` smallest possible kernel configuration
+`allnoconfig` answer no to every question when creating a config file

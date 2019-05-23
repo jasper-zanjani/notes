@@ -135,3 +135,12 @@ CREDITS,EXPDATE,USER,GROUPS
 
 ### Arithmetic
 `awk '{sum += $1} END {print sum}' file` : add up all first records to {sum}, then print that number out at the end
+
+## Output redirection (HPR 2816)
+`> "file"` redirect output to {file} (note quotes; filenames are treated as strings); if a file is already open from a previous write, the new data is appended
+`>> "file"` {file} is expected to already exist, can be one of the special file names as well ("/dev/stderr", etc)
+`| "program"` piping to a command
+`close(cmd)` closing a file or command uses the exact same syntax, down to spaces, thus it is preferable to define the command as a string variable
+`sprintf` takes a string template and interpolated values as argument, it is useful to dynamically build a string which is then treated within the script as a command
+`|&` redirect to a coprocess, that is allows output to be read back with `getline`
+
