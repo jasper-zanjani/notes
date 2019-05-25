@@ -1,7 +1,5 @@
 # Python
-
-## Command-line
-`#!/usr/bin/env python` : shebang
+`#!/usr/bin/env python` : shebang 
 
 ## alternative data types
 
@@ -116,7 +114,6 @@ Pizza.prosciutto() # output: Pizza(['mozzarella', 'tomatoes', 'ham'])
 
 ### wxpython
 [Real Python](https://realpython.com/python-gui-with-wxpython/)
-
 ```py
 import wx
 
@@ -126,7 +123,7 @@ frame.Show()
 app.MainLoop()
 ```
 
-## lambas
+## lambdas
 ```py
 NAMES = ['arnold schwarzenegger', 'alec baldwin', 'bob belderbos', 'julian sequeira', 'sandra bullock', 'keanu reeves', 'julbob pybites', 'bob belderbos', 'julian sequeira', 'al pacino', 'brad pitt', 'matt damon', 'brad pitt'] 
 
@@ -159,3 +156,9 @@ Since Python3, the `venv` module, part of the Standard Library, can be used to s
 
 ## `key` parameter in functions like `sorted`
 The value of `key` is a function that takes a single argument and returns a key to use for sorting purposes.
+
+## Checking if a file exists
+`except FileNotFoundError` catch the FileNotFoundError (IOError in Python 2)
+`os.path.isfile(file)` will return True if exists
+`pathlib.Path(file).is_file()` will return True if exists
+[Linuxize.com](https://linuxize.com/post/python-check-if-file-exists/)
