@@ -4,6 +4,7 @@
 `crontab -u user -l` list {user}'s cron jobs
 `crontab -r` delete all cron jobs
 `crontab -u user -r` delete {user}'s cron jobs
+`crontab -u user newcrontab` replace {user}'s current cron job with newcrontab
 
 ## crontab syntax
 There are 2 types of crontab, taking similar syntax:

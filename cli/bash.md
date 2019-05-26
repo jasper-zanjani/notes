@@ -80,3 +80,6 @@ Content of all loops is bracketed by `do` and `done`: `for i in ... do ...; done
 `open .` : open current directory in Finder (osx)
 `open -a /Applications/application.app` : open {application} from Terminal (osx)
 `explorer.exe .` : open current directory in Explorer (win)
+
+## `case` statement
+
