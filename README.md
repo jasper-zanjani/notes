@@ -15,3 +15,5 @@
 - [ ] Research potential contributions to [Castero](https://github.com/xgi/castero)
   - [ ] Additional colors, bolding
   - [ ] Keys
+
+[Link to yaml.md](yaml.md)
