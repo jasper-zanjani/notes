@@ -106,7 +106,10 @@ Support _heaps_, which are data objects where each node is either greater than o
 `random.shuffle(iterable)` shuffle elements of an iterable in-place (FP:42)
 
 ## subprocess
+__subprocess__ modules allows you to spawn new processes, interact with file descriptors, and obtain exit codes. The recommended approach is to use the `run()` function as default, which runs a CLI command with options as a list of strings and returns a `CompletedProcess` instance.
 `subprocess.run('ls','-l,'.')` arguments and options are provided in a list
+`subprocess.run(['ls','-l','/dev/null'], capture_output=True` will return a CompletedProcess instance with the command's output stored under `stdout`
+`subprocess.run('exit 1', shell=True, check=True)` will raise a `CalledProcessError` exception because of the non-zero exit code
 
 ## sqlite3
 `import sqlite3`

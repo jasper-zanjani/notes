@@ -8,3 +8,8 @@
   - [ ] Color of border
 - [ ] better comments on what is going on
 - [x] clean up duplicate files (.bashrc)
+
+## FOSS
+- [ ] Research potential contributions to [Castero](https://github.com/xgi/castero)
+  - [ ] Additional colors, bolding
+  - [ ] Keys
