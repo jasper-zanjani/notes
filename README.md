@@ -1,3 +1,5 @@
+![LuchadortoCat](https://octodex.github.com/images/luchadortocat.png)
+
 # Coding study priorities
 ## Linux+ certification
 - [ ] Linux Academy video courses
