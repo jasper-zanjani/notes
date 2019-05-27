@@ -1,6 +1,6 @@
 # KDE Plasma desktop environment
 
-Appearance
+## Appearance
 - __Colors__ affects the appearance of text
 - __Workspace Theme__ opens up several dialogs
   - __Look and Feel__ allows selection of Look and Feel Themes that affect window appearance
@@ -24,3 +24,40 @@ The advanced tab allows you to select Mouse cursor theme and auto login of user 
 ## Default shortcuts
 Workspace > Shortcuts > Global Shortcuts
 "Run Command" refers to `krunner`, a single-line application launcher similar to the Run command on Windows.
+- __Alt-t__ : open a terminal window
+
+## Restarting KDE Plasma
+Source: [Lifewire](https://www.lifewire.com/kubuntu-p2-2202573)
+
+#### Restarting KDE Plasma 4
+```sh
+killall plasma-desktop
+kstart plasma-desktop
+```
+
+#### Restarting KDE Plasma 5
+```sh
+killall plasmashell
+kstart plasmashell
+```
+
+```sh
+kquitapp5 plasmashell
+kstart plasmashell
+```
+
+## Commands
+#### kquitapp
+Allows you to quit a dbus enabled application. Two options:
+##### Specify service to be stopped
+```sh
+kquitapp --service
+```
+##### Specify path to dbus interface 
+```sh
+kquitapp --path
+```
+#### kstart
+When used to launch an application, prevents the application from being tied to the terminal.
+#### krunner
+single-line application launcher, similar to dmenu or the Run command on Windows
