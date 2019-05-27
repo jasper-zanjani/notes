@@ -7,23 +7,25 @@
 
 ## 106.1 - Install and configure X11 (X Utilites for screen and window information)
 X11 and Xorg are often still used interchangeably, but strictly speaking Xorg is a newer system that replaced and improved upon the earlier X11. 
-`yum groupinstall "X Window System" "Desktop" "Desktop Platform"` installation of GUI for a headless server
-/etc/X11 primary location for configs, including xorg.conf
+  - `yum groupinstall "X Window System" "Desktop" "Desktop Platform"` installation of GUI for a headless server
 Xorg configuration can be generated in two ways
-`X` `Xorg` binary for X windows server
-`X -configure` `Xorg -configure` generate an Xorg configuration file for the user running the command
+  1. Automatically
+  2. Manually
+  - `X` `Xorg` binary for X windows server
+  - `X -configure` `Xorg -configure` generate an Xorg configuration file for the user running the command
+/etc/X11 primary location for configs, including xorg.conf
 Sections of xorg.conf.new
   - `Section "Title" ... EndSection`
   - Module, InputDevice, Monitor, Screen
 
 ## 106.2 - Set up a display manager
-`xwininfo` determine resolution by clicking on Desktop itself
-`xdpyinfo`
-`xhost` remotely run desktop applications
-`xhost +` disable access control (enabled by default), allowing clients to connect remotely and run desktop applications
-`xhost +192.168.1.119` add a host to list of authorized clients
-`xhost -192.168.1.119` remove a host from list of authorized clients
-`yum install xorg-x11-xdm` install X display manager
+  - `xwininfo` determine resolution by clicking on Desktop itself
+  - `xdpyinfo`
+  - `xhost` remotely run desktop applications
+  - `xhost +` disable access control (enabled by default), allowing clients to connect remotely and run desktop applications
+  - `xhost +192.168.1.119` add a host to list of authorized clients
+  - `xhost -192.168.1.119` remove a host from list of authorized clients
+  - `yum install xorg-x11-xdm` install X display manager
 /etc/X11/xdm config for X display manager
 lightdm replaces kdm, but configuration isn't typically necessary
 /etc/lightdm/lightdm.conf
@@ -39,21 +41,22 @@ Options are available under "Universal Access" or "Accesibility"
 ## 107.3 - Localization and internationalization
 
 ## 108.1 - Maintain system time (hardware clock, system clock, and NTP)
-`date` display or set the time/date
-`date +"%H"` display the current hours
-`date +"%s"` display seconds of current epoch
-`date MMDDHHmm` set date and time to MM/DD HH:mm; this causes a discrepancy with the hardware clock: "drift"
-`hwclock` allows you to interface directly with the hardware clock, which is unaware of time zones
+  - `date` display or set the time/date
+  - `date +"%H"` display the current hours
+  - `date +"%s"` display seconds of current epoch
+  - `date MMDDHHmm` set date and time to MM/DD HH:mm; this causes a discrepancy with the hardware clock: "drift"
+  - `hwclock` allows you to interface directly with the hardware clock, which is unaware of time zones
 Two ways to synchronize these clocks:
   1. `hwclock --systohc` set the system clock to the hardware clock
   2. `hwclock --hctosys` set the hardware clock to the system clock
-`ntpdate` : network time protocol, often not included by distros by default
-`start ntpd` : start NTP daemon
+  - `ntpdate` : network time protocol, often not included by distros by default
+  - `start ntpd` : start NTP daemon
 /etc/ntp.conf : configures the pool of servers used to synchronize via NTP: `server 0.centos.pool.ntp.org iburst`
 `ntpq` : produces a special prompt that allows you to get more information on NTP servers
   - `peers` servers
   - `associations` information on servers in pool
 `systemctl stop ntpd; ntpq; peers` this will produce a "read: Connection refused" error
+
 ## 108.2 - System logging
 syslog daemon logs system messages according to log "levels", but modern distros typically use systemd's logging utility, `journalctl`
 
@@ -75,11 +78,11 @@ syslog daemon logs system messages according to log "levels", but modern distros
 
 ## 108.4 - Mail Transfer Agent (MTA) Basics (Creating aliases)
 Routing root email is a problem because root is often more than a single user
-`mailq`
-`mail` enter mail shell interface which checks your new email
-`mail user` send new email to {user}
-`mail -u user` check another user's email, as root
-`d 1` delete first message (from within mail shell)
+  - `mailq`
+  - `mail` enter mail shell interface which checks your new email
+  - `mail user` send new email to {user}
+  - `mail -u user` check another user's email, as root
+  - `d 1` delete first message (from within mail shell)
 /etc/aliases : systemwide aliases
   - `root: user` redirect root mail to {user}
   - `root: user,newuser` redirect root mail to more than one account
@@ -125,31 +128,31 @@ $HOME/.forward file created within recipient's home directory which contains the
 
 ## 109.3 - Basic network troubleshooting
 ping, netstat, traceroute, and tracepath along with IPv6 equivalents.
-`ping` uses ICMP, which is often stopped at the firewall.
-`ping -c 5 -i 2 google.com` intervals of 2 seconds
-`traceroute` provides much more information when run with superuser privileges than tracepath
-`netstat -a` show all sockets on all active interfaces (8:40)
-`netstat -a | grep tcp | wc -l` find number of active tcp connections
-`netstat -c 5 -a` refresh every five seconds
-`netstat -a -p`
-`netstat -t` just tcp, omitting Unix sockets
-`netstat -r` generate routing table
-`netstat -rn` routing table with name resolution
-`ping6` IPv6 equivalent of `ping`, also `ping -6`, but many servers leave ICMP disabled for IPv6
-`tracepath6`, `traceroute6`
+  - `ping` uses ICMP, which is often stopped at the firewall.
+  - `ping -c 5 -i 2 google.com` intervals of 2 seconds
+  - `traceroute` provides much more information when run with superuser privileges than tracepath
+  - `netstat -a` show all sockets on all active interfaces (8:40)
+  - `netstat -a | grep tcp | wc -l` find number of active tcp connections
+  - `netstat -c 5 -a` refresh every five seconds
+  - `netstat -a -p`
+  - `netstat -t` just tcp, omitting Unix sockets
+  - `netstat -r` generate routing table
+  - `netstat -rn` routing table with name resolution
+  - `ping6` IPv6 equivalent of `ping`, also `ping -6`, but many servers leave ICMP disabled for IPv6
+  - `tracepath6`, `traceroute6`
 
 ## 109.4 - Configure client-side DNS
 3 files affect DNS behavior on clients:
   1. /etc/hosts overrides public DNS query results
   2. /etc/resolv.conf contains nameserver definitions
   3. /etc/nsswitch.conf : `hosts` section determines order of resolution of domain names
-`bind-utils` Berkeley Internet Naming Daemon
-`host www.linuxacademy.com`
-`ping www.linuxacademy.com` domain name is resolved to IP:W
-`getent hosts www.linuxacademy.com` gets effectively the same information, but in reverse order
-`dig www.linuxacademy.com`
-`dig www.linuxacademy.com NS` "name server" record
-  - `MX` email
+  - `bind-utils` Berkeley Internet Naming Daemon
+  - `host www.linuxacademy.com`
+  - `ping www.linuxacademy.com` domain name is resolved to IP:W
+  - `getent hosts www.linuxacademy.com` gets effectively the same information, but in reverse order
+  - `dig www.linuxacademy.com`
+  - `dig www.linuxacademy.com NS` "name server" record
+    - `MX` email
 
 
 ## 110.1 - Perform security administration tasks

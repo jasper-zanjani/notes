@@ -25,51 +25,51 @@ Five domains of exam
   - Tab auto-complete
 
 ## 04 Super user privileges
-`su` substitute user
-`su -` switch to root, including normal environment
-`su username` login as {username}
-`sudo cmd` execute {cmd} as root (password cached for 5 minutes by default)
-`visudo` view and edit sudoers
-`%techsupport localhost=/sbin/mount /mnt/cdrom, /sbin/umount /mnt/cdrom` example...
-`sudoedit`
+  - `su` substitute user
+  - `su -` switch to root, including normal environment
+  - `su username` login as {username}
+  - `sudo cmd` execute {cmd} as root (password cached for 5 minutes by default)
+  - `visudo` view and edit sudoers
+  - `%techsupport localhost=/sbin/mount /mnt/cdrom, /sbin/umount /mnt/cdrom` example...
+  - `sudoedit`
 
 ## 05 Managing users
-`useradd username` add {username}
-`useradd jdoe -c "John Doe" -e 2019/12/31 -s /bin/dash -d /home/john_doe` : `-c` add full name in the comment field ; `-e` expiration date ; `-a` default shell ; `-d` home directory
-`usermod`
-`usermod -l old new` rename user {old} to {new}
-`usermod -L` lock account
-`usermod -U` unlock account
-`usermod -a -G group` add to {group}
-`chsh` change shell
-`chsh /bin/nologin` prevent an account from logging in interactively
-`passwd username` set password for {username}
-`chage` view or modify expiration
-`chage -m days` minimum {days}
-`chage -M days` maximum {days}
-`chage -E date` expiry {date}
-`chage -W days` warn {days} before expiration
+  - `useradd username` add {username}
+  - `useradd jdoe -c "John Doe" -e 2019/12/31 -s /bin/dash -d /home/john_doe` : `-c` add full name in the comment field ; `-e` expiration date ; `-a` default shell ; `-d` home directory
+  - `usermod`
+  - `usermod -l old new` rename user {old} to {new}
+  - `usermod -L` lock account
+  - `usermod -U` unlock account
+  - `usermod -a -G group` add to {group}
+  - `chsh` change shell
+  - `chsh /bin/nologin` prevent an account from logging in interactively
+  - `passwd username` set password for {username}
+  - `chage` view or modify expiration
+  - `chage -m days` minimum {days}
+  - `chage -M days` maximum {days}
+  - `chage -E date` expiry {date}
+  - `chage -W days` warn {days} before expiration
 
 ## 06 Managing groups
-`groupadd`
-`groupdel`
-`groupmod -n group new` rename {group} to {new}
-`gpasswd -a user group` add {user} to {group}
-`gpasswd -d user group` remove {user} from {group}
-`gpasswd -A user group` add {user} as admin of {group}
-`newgrp group` change context temporarily
-`chgrp group`
-`chown group`
-`groups user` see group membership of {user}
-/etc/group
+  - `groupadd`
+  - `groupdel`
+  - `groupmod -n group new` rename {group} to {new}
+  - `gpasswd -a user group` add {user} to {group}
+  - `gpasswd -d user group` remove {user} from {group}
+  - `gpasswd -A user group` add {user} as admin of {group}
+  - `newgrp group` change context temporarily
+  - `chgrp group`
+  - `chown group`
+  - `groups user` see group membership of {user}
+  - /etc/group
 
 ## 07 Managing file permission
 ## 08 Advanced permissions
 Topics: getfacl setfacl
-`setfacl -m` : modify
-`setfacl -s` : set
-`setfacl -x` : remove
-`tune2fs`
+  - `setfacl -m` : modify
+  - `setfacl -s` : set
+  - `setfacl -x` : remove
+  - `tune2fs`
 
 ## 09  Partitioning disks
 `fdisk`
@@ -394,14 +394,14 @@ Pinging loopback device (`lo`) allows you to see if the network driver is workin
 `dnf` : "Dandified YUM", with basic syntax identical to `yum` but fully documented API and better dependency handling 
 New repo definitions are added as text files. Use `yum` to install `rpm` packages so that it installs missing dependencies from the repos. For security, download GPG public keys to the home drive and add them to your GPG keychain so that you can use them to verify packages downloaded from repo mirrors. Unlike `apt`, `yum`'s `update` command updates the package database, upgrades software, and upgrades distribution software all at the same time.
 ### Commands
-`yum list httpd` : list matching packages
-`yum search httpd` : search by keyword
-`yum info httpd` : display information about a package
-`sudo yum update -y` : upgrade installed packages
-`dnf remove httpd` : remove package
-`dnf autoremove`
-`yum erase package`
-`sudo rpm --import gpgkey.asc` : import {gpgkey}, adding it to GPG keychain
+  - `yum list httpd` : list matching packages
+  - `yum search httpd` : search by keyword
+  - `yum info httpd` : display information about a package
+  - `sudo yum update -y` : upgrade installed packages
+  - `dnf remove httpd` : remove package
+  - `dnf autoremove`
+  - `yum erase package`
+  - `sudo rpm --import gpgkey.asc` : import {gpgkey}, adding it to GPG keychain
 ### Files
 /etc/yum.repos.d/ : directory containing initial location of repository definitions ("webmin.repo")
 /etc/dnf/dnf.conf : eventual destination of repository definitions
@@ -409,10 +409,10 @@ New repo definitions are added as text files. Use `yum` to install `rpm` package
 ## 33 Building from source
 The `make` utility compiles into a `/run` folder
 ### Commands
-`make`
-`make config`
-`make clean linux-x86-64` : compile for particular architecture
-`sudo make install` : move executables and configuration folders into appropriate system folders
+  - `make`
+  - `make config`
+  - `make clean linux-x86-64` : compile for particular architecture
+  - `sudo make install` : move executables and configuration folders into appropriate system folders
 
 ## 35 Linux security best practices, 1
 CIA Triad: any security adjustment should improve at least one element
@@ -421,15 +421,15 @@ CIA Triad: any security adjustment should improve at least one element
   - Availability
 File and access auditing
 ### Commands:
-`yum install audit` install audit package
-`systemctl enable auditd` enable audit daemon
-`ausearch --start today --loginuid 500`
-`aureport --start 04/14/2019 00:00:00 --end 04/15/2019 00:00:00`
-`shred -v --iterations=n` : write random data to an unmounted disk, for {n} passes
-`cryptsetup --verbose --verify-passphrase luksFormat /dev/sdb1` : incorporate full-disk encryption on /dev/sdb1 `--verify-passphrase` forces it to ask for a passphrase twice
-`cryptsetup luksOpen /dev/sdb1 storage1` : assign virtual name "storage1' to encrypted disk /dev/sdb1
-`mkfs.xfs /dev/mapper/storage1`
-`mount /dev/mapper/storage1 /mnt/storage1`
+  - `yum install audit` install audit package
+  - `systemctl enable auditd` enable audit daemon
+  - `ausearch --start today --loginuid 500`
+  - `aureport --start 04/14/2019 00:00:00 --end 04/15/2019 00:00:00`
+  - `shred -v --iterations=n` : write random data to an unmounted disk, for {n} passes
+  - `cryptsetup --verbose --verify-passphrase luksFormat /dev/sdb1` : incorporate full-disk encryption on /dev/sdb1 `--verify-passphrase` forces it to ask for a passphrase twice
+  - `cryptsetup luksOpen /dev/sdb1 storage1` : assign virtual name "storage1' to encrypted disk /dev/sdb1
+  - `mkfs.xfs /dev/mapper/storage1`
+  - `mount /dev/mapper/storage1 /mnt/storage1`
 ### Files
 /etc/audit/audit.rules
 /var/log/audit/audit.log
@@ -447,16 +447,16 @@ Hardening SSH; default installs neglect some security considerations in order to
 When SSH connects, it typically produces two hashes of the ECDSA key fingerprint.
 Copy user's known_hosts_ to /etc/skel/ to ensure new users have access to the fingerprints that you trust
 ### Commands:
-`sudo systemctl stop sshd` : stop SSH service
-`sudo ssh-keygen -t rsa -f /etc/ssh/ssh_host_rsa_key` : rebuild the RSA key; don't enter a passphrase
-`sudo ssh-keygen -t ed25519 -f /etc/ssh/ssh_host_ed25519_key`
-`sudo ssh-keygen -t ecdsa -f /etc/ssh/ssh_host_ecdsa_key`
-`ssh-keyscan 127.0.0.1` display the public key of a host
-`ssh-keyscan 127.0.0.1 >> ~/.ssh/known_hosts` append public key of a host to the known_hosts file
-`ssh-keygen -lf /etc/ssh/ssh_host_ecdsa_key.pub` : generate a fingerprint from the public key (SHA256 by default)
-`ssh-keygen -lf /etc/ssh/ssh_host_ecdsa_key.pub -E sha512` : generate a SHA512 fingerprint from the public key
-`ssh-keygen -lf /etc/ssh/ssh_host_ecdsa_key.pub -E md5` : generate a MD5 fingerprint from the public key (MD5 is no longer recommended)
-`ssh -1 dpezet@127.0.0.1` : request a SSHv1 connection
+  - `sudo systemctl stop sshd` : stop SSH service
+  - `sudo ssh-keygen -t rsa -f /etc/ssh/ssh_host_rsa_key` : rebuild the RSA key; don't enter a passphrase
+  - `sudo ssh-keygen -t ed25519 -f /etc/ssh/ssh_host_ed25519_key`
+  - `sudo ssh-keygen -t ecdsa -f /etc/ssh/ssh_host_ecdsa_key`
+  - `ssh-keyscan 127.0.0.1` display the public key of a host
+  - `ssh-keyscan 127.0.0.1 >> ~/.ssh/known_hosts` append public key of a host to the known_hosts file
+  - `ssh-keygen -lf /etc/ssh/ssh_host_ecdsa_key.pub` : generate a fingerprint from the public key (SHA256 by default)
+  - `ssh-keygen -lf /etc/ssh/ssh_host_ecdsa_key.pub -E sha512` : generate a SHA512 fingerprint from the public key
+  - `ssh-keygen -lf /etc/ssh/ssh_host_ecdsa_key.pub -E md5` : generate a MD5 fingerprint from the public key (MD5 is no longer recommended)
+  - `ssh -1 dpezet@127.0.0.1` : request a SSHv1 connection
   `-2` v2 only 
   `-4` IPv4 only
   `-6` IPv6 only
@@ -477,16 +477,16 @@ SE Linux Modes:
   2. Permissive: Access not conforming to ACL is logged; handy for development
   3. Disabled: ACL is not applied
 ### Commands:
-`sestatus` : see if you have SELinux installed
-`setenforce enforcing|1|permissive|0` : change mode of SELinux
-`ls -lZ` : display SELinux contexts for files
-`ps auxZ` : display SELinux contexts for processes
-`chcon -Rv --type=httpd_sys_content_t /website` : "change context" for website directory
-`restorecon -Rv /website` : restore security context default in the policy
-`sudo yum install policycoreutils-python` : install policy toolkit
-`semanage fcontext -a -t httpd_sys_content_t /website` : amend policy to add a file context 
-`semanage port -a -t http_port_t -p tcp 8080` : add a port context
-`semanage port -l` : display all ports with attached types
+  - `sestatus` : see if you have SELinux installed
+  - `setenforce enforcing|1|permissive|0` : change mode of SELinux
+  - `ls -lZ` : display SELinux contexts for files
+  - `ps auxZ` : display SELinux contexts for processes
+  - `chcon -Rv --type=httpd_sys_content_t /website` : "change context" for website directory
+  - `restorecon -Rv /website` : restore security context default in the policy
+  - `sudo yum install policycoreutils-python` : install policy toolkit
+  - `semanage fcontext -a -t httpd_sys_content_t /website` : amend policy to add a file context 
+  - `semanage port -a -t http_port_t -p tcp 8080` : add a port context
+  - `semanage port -l` : display all ports with attached types
 ### Files:
 /etc/selinux/config
   - "SELINUX=enforcing" if changed to "permissive", it would be placed in "permissive" mode upon reboot
@@ -505,18 +505,18 @@ AppArmor is a competitor to SELinux that creates profiles that focuses on indivi
 ## 39 Filtering traffic with firewalld
 firewalld took over from iptables during the transition from sysvinit to systemd in RH systems. Like iptables, firewalld uses the netfilter protocols. It works by placing network traffic into zones, and often commands have to be written twice: once to affect running configuration and again to store the change to disk.
 ### Commands:
-`sudo firewall-cmd --state` confirm firewalld is running
-`firewall-cmd --get-default-zone` display the default zone
-`firewall-cmd --get-active-zones` zones that actually have an interface attached
-`firewall-cmd --new-zone=testlab` firewalld will demand the additional option `--permanent` meaning the change will be written to disk
-`firewall-cmd --reload` load running configuration from disk
-`firewall-cmd --get-services` display names of all available services
-`firewall-cmd --add-service=ftp --permanent; firewalld-cmd --add-service=ftp`
-`firewall-cmd --list-services` display services loaded in memory
-  `--remove-service`
-  `--add-port=8080/tcp` add nonstandard port
-  `--add-port=50000-60000/udp` add a range of nonstandard ports
-  `--list-ports` see approved port numbers
+  - `sudo firewall-cmd --state` confirm firewalld is running
+  - `firewall-cmd --get-default-zone` display the default zone
+  - `firewall-cmd --get-active-zones` zones that actually have an interface attached
+  - `firewall-cmd --new-zone=testlab` firewalld will demand the additional option `--permanent` meaning the change will be written to disk
+  - `firewall-cmd --reload` load running configuration from disk
+  - `firewall-cmd --get-services` display names of all available services
+  - `firewall-cmd --add-service=ftp --permanent; firewalld-cmd --add-service=ftp`
+  - `firewall-cmd --list-services` display services loaded in memory
+    - `--remove-service`
+    - `--add-port=8080/tcp` add nonstandard port
+    - `--add-port=50000-60000/udp` add a range of nonstandard ports
+    - `--list-ports` see approved port numbers
 ### Files:
 /etc/sysconfig/network-scripts/ifcfg-ens33 : interface settings
 /usr/lib/firewalld/services : display .xml files that define services
@@ -534,31 +534,31 @@ Chains: places where rules can be placed
   - OUTPUT
   - FORWARD
 ### Commands:
-`iptables --list` can be deceiving because the iptables utilities will respond even if the service is not running
-`systemctl stop firewalld` firewalld has to be stopped before iptables can be started.
-`systemctl mask firewalld` prevent firewalld from being started inadvertently by another process; better than `disable`
-`systemctl enable --now iptables`
-`iptables --list-rules` display rules as written on disk
-`iptables -A INPUT -p tcp --dport 80 -j ACCEPT` accept TCP traffic to port 80; this rule will appear in the list of rules (`iptables --list`)
-`iptables -A INPUT -p tcp --dport ssh -s 10.0.222.222 -j ACCEPT` accept SSH traffic from a particular source
-`iptables-save` display what the running configuration would look like if written to disk; must be redirected to a file
-`iptables -F` reload configuration file
-`systemctl restart iptables`
-`iptables -vnL --line` show statistics for configuration lines
-`watch -n 0.5 iptables -vnL` will update twice a second, producing a sort of dashboard
+  - `iptables --list` can be deceiving because the iptables utilities will respond even if the service is not running
+  - `systemctl stop firewalld` firewalld has to be stopped before iptables can be started.
+  - `systemctl mask firewalld` prevent firewalld from being started inadvertently by another process; better than `disable`
+  - `systemctl enable --now iptables`
+  - `iptables --list-rules` display rules as written on disk
+  - `iptables -A INPUT -p tcp --dport 80 -j ACCEPT` accept TCP traffic to port 80; this rule will appear in the list of rules (`iptables --list`)
+  - `iptables -A INPUT -p tcp --dport ssh -s 10.0.222.222 -j ACCEPT` accept SSH traffic from a particular source
+  - `iptables-save` display what the running configuration would look like if written to disk; must be redirected to a file
+  - `iptables -F` reload configuration file
+  - `systemctl restart iptables`
+  - `iptables -vnL --line` show statistics for configuration lines
+  - `watch -n 0.5 iptables -vnL` will update twice a second, producing a sort of dashboard
 ### Files:
 /etc/sysconfig/iptables : location of saved configu
 
 ## 41 Backup and restore data
 ### Commands:
-`tar cvzf backup.tgz ~/Documents`
-`tar xvzf ~/Documents/ backup.tgz`
-`dar` "disk archiver", replaces `tar`
-`dar -R ~/Documents -c full.bak` create a full backup of {~/Documents}
-`dar -R ~/Documents -c diff1.bak -A full.bak` create a differential backup (every differential backup takes the full backup as reference
-`dar -R ~/Documents -c incr1.bak -A full.bak` create incremental backups
-`dar -x full.bak; dar -x incr1.bak -w` : restore backups
-`dd if=/dev/sda of=/dev/sdb`
+  - `tar cvzf backup.tgz ~/Documents`
+  - `tar xvzf ~/Documents/ backup.tgz`
+  - `dar` "disk archiver", replaces `tar`
+  - `dar -R ~/Documents -c full.bak` create a full backup of {~/Documents}
+  - `dar -R ~/Documents -c diff1.bak -A full.bak` create a differential backup (every differential backup takes the full backup as reference
+  - `dar -R ~/Documents -c incr1.bak -A full.bak` create incremental backups
+  - `dar -x full.bak; dar -x incr1.bak -w` : restore backups
+  - `dd if=/dev/sda of=/dev/sdb`
 Topics: mirrorvg, scp, sftp, rsync
 
 ## 42 Configuring bash
@@ -579,18 +579,18 @@ Shell scripts can be refactored as functions in the .bashrc file. To make these 
 ## 43 Writing a bash script
 
 ## 44 Scheduling tasks, 1
-`at` schedules one-time tasks using an interactive shell
-`cron` schedules recurring tasks
+  - `at` schedules one-time tasks using an interactive shell
+  - `cron` schedules recurring tasks
 
 ### Commands:
-`at` : execute a command at a particular time, one-time
-`at 3 PM Fri /home/dpezet/backupdb.sh`
-/bin/bash: :q: command not found
-`atrm 3` : remove job number 3
-`cron` : execute recurring tasks at a predetermined time
-`crontab -e` : edit user cron table (file is stored as `/var/spool/cron/user`)
-`crontab -eu user` : edit {user}'s user cron table
-`anacron` : tool that will run jobs that were missed if the system was turned off, according to rules set in `/etc/anacrontab`
+  - `at` : execute a command at a particular time, one-time
+  - `at 3 PM Fri /home/dpezet/backupdb.sh`
+  - /bin/bash: :q: command not found
+  - `atrm 3` : remove job number 3
+  - `cron` : execute recurring tasks at a predetermined time
+  - `crontab -e` : edit user cron table (file is stored as `/var/spool/cron/user`)
+  - `crontab -eu user` : edit {user}'s user cron table
+  - `anacron` : tool that will run jobs that were missed if the system was turned off, according to rules set in `/etc/anacrontab`
 ### Files:
 #### at config files
 If the following two files don't exist, only root is allowed access to `cron`
@@ -614,17 +614,17 @@ If the following two files don't exist, only root is allowed access to `cron`
 ## 45 Scheduling tasks, 2
 
 ## 46 Version control with git
-`git clone`
-`git config --global user.email "you@example.com"`
-`git config --global user.name "Your name"`
-`git init`
-`git status`
-`git add`
-`git commit -m -m "Commit message"`
-`git log`
-`git branch` : list branches
-`git checkout -b` : create a branch
-`git checkout master; git merge; git status` : switch back to master and resync
+  - `git clone`
+  - `git config --global user.email "you@example.com"`
+  - `git config --global user.name "Your name"`
+  - `git init`
+  - `git status`
+  - `git add`
+  - `git commit -m -m "Commit message"`
+  - `git log`
+  - `git branch` : list branches
+  - `git checkout -b` : create a branch
+  - `git checkout master; git merge; git status` : switch back to master and resync
 
 ## 47 Installing CentOS, 1
 CentOS (Community Enterprise Operating System) recompiled, debranded version of RHEL. Many in CentOS community are actually RH employees. CentOS serves as a kind of proving ground for the full enterprise version of Red Hat.  RHEL (Red Hat Enterprise Linux) costs a few hundred dollars a year, including support.  
