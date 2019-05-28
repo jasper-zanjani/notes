@@ -56,7 +56,7 @@ This command will allow recovery using the following command
 ```sh
 sfdisk /dev/hdd -I hdd-partition-sectors.save
 ```
-
+Man page indicates this flag is no longer supported, and recommends use of __dd__ instead.
 
 
 
