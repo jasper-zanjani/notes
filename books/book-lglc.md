@@ -146,8 +146,10 @@ Topics: at, atd, bg, crontab, fg, jobs, killall, kill, nice, ps, pstree, renice,
 #### Managing print jobs
 #### LPD Printing system
 #### Configuring printers
+
 ### Log file administration
 Information and error messages recorded by daemons are called _log files__ and typically stored in _/var/log_
+
 #### System log daemon `rsyslogd`
 Creates a socket for other system processes to write to at /dev/log. Any information written there is saved in the appropriate log file according to entries in /etc/rsyslog.conf
 /etc/rsyslog.conf : whitespace-delimited config file that contains General Directives to control general logging behavior
@@ -167,6 +169,7 @@ Creates a socket for other system processes to write to at /dev/log. Any informa
 `mail.*             -/var/log/maillog` : log all mail messages in one place
 `cron.*             /var/log/cron`
 `*.emerg            *` : everybody gets emergency messages
+
 #### Managing log files
 `>/var/log/messages` clear a log without deleting it, in order to preserve pemrmissions
 /etc/logrotate.conf : config file for `logrotate`, overriden by files in /etc/logrotate.d/ 

@@ -9,17 +9,26 @@ Perl6 offers an interactive shell, but previous versions needed a specialized co
 - Enclosing function arguments in parentheses is optional
 
 ## Command-line invocation options
-`-e 'code'`
-: execute {code} inline (cf. similar syntax for sed) (MP:17, YUG:614)
+#### Inline execution of code
+Compare similar syntax for sed (MP:17, YUG:614)
+```sh
+perl6 -e 'code'
+```
 
-`-w`
-: enable warning messages
+#### Enable warning messages
+```sh
+perl6 -w
+```
 
-`-n`
-: request an implicit input-reading loop that stores records in `$_`
+#### Request an implicit input-reading loop that stores records in `$_`
+```sh
+perl6 -n
+```
 
-`-p`
-: request an implicit input-reading loop that stores records in `$_` and automatically prints that variable after optional processing of its contents
+#### Request an implicit input-reading loop that stores records in `$_` and automatically prints that variable after optional processing of its contents
+```sh
+perl6 -p
+```
 
 `-l`
 :automatically insert an output record separator at end of the output of `print`
@@ -236,3 +245,7 @@ class attributes are declard with `my` keyword, then a method is declared to all
 
 ## Math
 Mathematical consonants have their own keywords in Perl6: `pi`, `e`, and `tau` (2*pi)
+
+## Other topics
+#### rename function in Debian
+[The Rename Command](https://www.putorius.net/rename-command-linux.html)
