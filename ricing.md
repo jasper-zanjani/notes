@@ -45,6 +45,7 @@ Basically display managers are the login screens, while the GUI manipulated duri
 
 ### Changing display manager
 "How to choose and switch Linux display managers" [MakeUseOf.com](https://www.makeuseof.com/tag/choose-switch-linux-display-managers/)
+
 Command   |  Effect
 :---      | :---
 `dpkg-reconfigure gdm` | Produce a curses-based interface where you can select a display manager
