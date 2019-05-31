@@ -1,8 +1,9 @@
 ![LuchadortoCat](https://octodex.github.com/images/luchadortocat.png)
 
 # Coding study priorities
-## Notes
-- [ ] Reorganize and reformat notes to make code sections more legible
+## Reformatting notes
+- [ ] Convert command lists to table
+- [ ] Move some to gists, as appropriate
 ## Dotfiles
 - [ ] Qtile configuration
   - [ ] [Layouts](http://docs.qtile.org/en/latest/manual/ref/layouts.html)
@@ -17,6 +18,7 @@
   - [ ] Additional colors, bolding
   - [ ] Keys
 - [ ] [Stapler](https://github.com/hellerbarde/stapler)
+- [ ] Python curses tutorial?
 
 ## Certifications
 - [x] CompTIA Linux+

@@ -1,8 +1,6 @@
-## Api Star
+## apistar
 ### Command line
-`pip install apistar`
-`apistar new --layout minimal`
-: Generate files:
+`apistar new --layout minimal` : Generate files:
   ```
   ├ d __pycache__/
   │ ├ - app.cpython-16.pyc
