@@ -120,6 +120,9 @@ __subprocess__ modules allows you to spawn new processes, interact with file des
 `conn.close()`
 [SQLite tutorial](https://youtu.be/pd-0G0MigUA)
 
+## sys
+`sys.prefix` : return site-specific directory where Python files are installed (/usr/local/ by default)
+
 ## termcolor
 `cprint(text,color)` : print {text} in {color} (unix color)
 
