@@ -16,8 +16,16 @@
 - [ ] Research potential contributions to [Castero](https://github.com/xgi/castero)
   - [ ] Additional colors, bolding
   - [ ] Keys
+- [ ] [Stapler](https://github.com/hellerbarde/stapler)
 
 ## Certifications
 - [x] CompTIA Linux+
   - [x] Linux Academy video courses
 
+# Organizing ideas
+
+Program an interactive to-do app that uses the Python Bullet library
+  - daily tasks that are refreshed periodically
+  - distributed tasks that are parcelled out each session
+  - emoji integration
+  - persistent state
