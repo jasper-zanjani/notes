@@ -1,5 +1,5 @@
--|Title|,Author
-:---|:---
+-|Title|Author
+:---|:---|:---
 AH|"CompTIA A+ Certification Study Guide, Ninth Edition (Exams 220-901 & 220-902)","Holcombe, Jane; Wempen, Faithe"
 AM|"CompTIA A+ Certification All-in-One Exam Guide, Ninth Edition","Meyers, Mike"
 BNfP|Bash Notes for Professionals,Goalkicker.com
