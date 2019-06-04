@@ -108,3 +108,6 @@ Shortcut  | Effect
 :---      | :---
 `:` | activate command line
 `ctrl+g` `ctrl+G` | next, previous result 
+
+## Sources
+  - "Convert between Unix and Windows text files" [kb.iu.edu](https://kb.iu.edu/d/acux)
