@@ -1,5 +1,13 @@
 # vim
 
+## Converting between DOS and Unix formats
+
+
+Syntax        | Effect
+:---          | :---
+`:set fileformat=unix` | set file format to unix
+`:set fileformat=dos` | set file format to dos
+
 ## Color
 
 Syntax        | Effect
