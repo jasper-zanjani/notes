@@ -55,4 +55,5 @@ Vim|_The Vim Book_|Steve Oualline
 VV|_Views on Vue_|
 WCL|_Windows Command-Line_|William R. Stanek
 WCSS|_Wicked Cool Shell Scripts_|Taylor, Dave and Perry, Brandon
+WSAF|_Windows Server 2016 Administration Fundamentals_|Dauti, Bekim
 YUG|_Your Unix: the Ultimate Guide_|Das, Sumitabha
