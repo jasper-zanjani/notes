@@ -1,9 +1,11 @@
-# Windows Server Administration Fundamentals, [ITPro.TV](https://app.itpro.tv/course-library/mta-server1/overview-mcsa-windows-81-70692/)
+# Windows Server Administration Fundamentals [ITPro.TV](https://app.itpro.tv/course-library/mta-server1/overview-mcsa-windows-81-70692/)
 
-## [Overview](https://app.itpro.tv/course-library/mta-server1/overview-mcsa-windows-81-70692/)
+## Overview
+- Source: [itp](https://app.itpro.tv/course-library/mta-server1/overview-mcsa-windows-81-70692/)
 The MTA is a suitable starting point for IT professionals.
 
-## [Understand device drivers](https://app.itpro.tv/course-library/mta-server1/understand-device-drivers/)
+## Understand device drivers
+- Source: [itp](https://app.itpro.tv/course-library/mta-server1/understand-device-drivers/)
 A driver is software that allows use of hardware
 
 Methods for installing new drivers:
@@ -27,7 +29,8 @@ Interrupt requests (IRQ)
   - handled dynamically by the system
   - Visible in Resources tab in Device Manager
 
-## [Understand services](https://app.itpro.tv/course-library/mta-server1/understand-services/)
+## Understand services
+- Source: [itp](https://app.itpro.tv/course-library/mta-server1/understand-services/)
 
 ### Managing services
 Administrative Tools > Services
@@ -47,7 +50,8 @@ Active Directory Module for Windows Powershell
 `Add-ADComputerServiceAccount -Identity dc01 -ServiceAccount websvc` | add account to list of service accounts on machine
 `Install-AdServiceAccount -Identity websvc` | install the account and tell the system to start using it. Adding "\websvc$" in This Account" under Log On tab for the service with nothing in the password fields will now tie that account to the service.
 
-## [Server installation options](https://app.itpro.tv/course-library/mta-server1/server-installation-options/)
+## Server installation options
+- Source: [itp](https://app.itpro.tv/course-library/mta-server1/server-installation-options/)
 ### Licenses
 3 main licenses available for Microsoft Server 2008:
   1. Enterprise (no longer available for recent editions)
@@ -64,8 +68,9 @@ Installations can be attended or unattended (requiring an XML format __answer fi
 ### Windows Deployment Services
 Automated way to get Windows Server installed on a machine. A reference machine is __sysprepped__, whereby uniquely identifying information is destroyed, and the resulting generalized image is loaded to a deployment server, which can then serve the image to various other servers.
 
-## [Server installation options, part 2](https://app.itpro.tv/course-library/mta-server1/server-install-options-2/)
-Topics: BIOS menu, Safe Mode, etc
+## Server installation options, part 2
+- Source: [itp](https://app.itpro.tv/course-library/mta-server1/server-install-options-2/)
+- Topics: BIOS menu, Safe Mode, etc
 "Core" is equivalent to headless mode
 
 ### sconfig 
@@ -73,7 +78,8 @@ Server configurator: Terminal-based menu-driven system for configuring server
 
 ### Firmware and BIOS upgrades
 
-## [Identify Application Servers](https://app.itpro.tv/course-library/mta-server1/identify-application-servers/)
+## Identify Application Servers
+- Source: [itp](https://app.itpro.tv/course-library/mta-server1/identify-application-servers/)
 There are a variety of servers that are individual Microsoft products that require their own licenses:
   - Exchange : email server
   - Microsoft SQL Server
@@ -84,7 +90,8 @@ There are a variety of servers that are individual Microsoft products that requi
 Other services are known as roles and can be run without any additional cost:
   - DNS server
 
-## [Web servers](https://app.itpro.tv/course-library/mta-server1/web-servers/)
+## Web servers
+- Source: [itp](https://app.itpro.tv/course-library/mta-server1/web-servers/)
 Internet Information Services (IIS) Role is used to administer web servers
 Add web server role
   - Server Manager > Add Roles Wizard
@@ -93,7 +100,8 @@ Custom ports and protocol types can be changed by navigating to Actions > Edit S
 
 Custom certificates have the filename extension .pfx. When installing it, it should be placed into the Trusted Root Certification Authorities directory
 
-## [Remote access](https://app.itpro.tv/course-library/mta-server1/remote-access2/)
+## Remote access
+- Source: [itp](https://app.itpro.tv/course-library/mta-server1/remote-access2/)
 Remote desktop and Remote assistance allow access to the entire desktop
 Remote Server Administration Tools (RSAT) allow tailored access to administrative consoles have to be installed separately from a special binary.
 
@@ -104,7 +112,8 @@ From Remote Desktop Connection > Advanced tab > Connect from anywhere > Use thes
 
 VPN is effectively the same as adding your remote host to the corporate network, like connecting a long Ethernet cable to the host network router
 
-## [File and print services](https://app.itpro.tv/course-library/mta-server1/file-print-services/)
+## File and print services
+- Source: [itp](https://app.itpro.tv/course-library/mta-server1/file-print-services/)
 
 ### Printers
 Local printers can be shared over the network, in which case the local host connected to the printer becomes the print server
@@ -119,7 +128,8 @@ Permissions are over an object; rights are system-wide. Group Policy Management 
 Event Viewer > Windows Logs > Security displays results of audit
 
 
-## [Server virtualization](https://app.itpro.tv/course-library/mta-server1/server-virtualization/)
+## Server virtualization
+- Source: [itp](https://app.itpro.tv/course-library/mta-server1/server-virtualization/)
 Hyper-V is Microsoft's hypervisor, which allows multiple virtual servers to share the same hardware. It is a Type I hypervisor, superior to a Type II like VirtualBox
 
 A Virtual Hard Drive (VHD) is a hard drive that is treated like a hard drive. Two main formats: VHD and VHDX, differentiated mostly by size limitation. 
@@ -134,13 +144,15 @@ __Checkpoints__ are save states that represent snapshots of the system at points
 ### Physical to virtual, vice versa
 `disk2vhd` tool allows you to make a VHD from a bootable physical drive. VHD disks can also be treated as bootable hard drives by the BIOS.
 
-## [Active Directory accounts and groupd](https://app.itpro.tv/course-library/mta-server1/accounts/)
+## Active Directory accounts and groupd
+- Source: [itp](https://app.itpro.tv/course-library/mta-server1/accounts/)
 __Domain accounts__ refer to accounts created in Active Directory, requiring a __domain controller__. This allows a user to logon to any of an organization's machines, with the credentials and management rights being centrally managed. 
 
 __Local accounts__, by contrast, are machine-dependent with user accounts stored in a SAM file.
 
 
-## [Active Directory Infrastructure](https://app.itpro.tv/course-library/mta-server1/ad-infrastructure/)
+## Active Directory Infrastructure
+- Source: [itp](https://app.itpro.tv/course-library/mta-server1/ad-infrastructure/)
 Install Active Directory Users and Computers as a role. AD database is stored C:\Windows\NTDS\ntds.dit
 C:\Windows\SYSVOL is where group policy information is stored
 New domain controllers will copy the AD database from the first, and changes ripple across all child domain controllers automatically, the same "tree" within the "forest". These form __contiguous namespaces__.
@@ -157,14 +169,16 @@ Active Directory has a __multiple-master__ principle, where there is more than o
 
 Within __sites__ (a way to define areas of the network that have high-speed, reliable connectivity, typically co-located), replication occurs almost immediately; outside of them, replication can be controlled by admins.
 
-## [Group Policy](https://app.itpro.tv/course-library/mta-server1/policy/)
+## Group Policy
+- Source: [itp](https://app.itpro.tv/course-library/mta-server1/policy/)
 __Centralized Configuration Management (CCM)__ 
 Local policy is applied first, then site, domain, and OU, in order. The end-result is called the __Resultant Set of Policy (RSOP)__
 __Group Policy Management__ is MMC used to manage group policy
 Group policies cannot be linked to containers, only OUs.
 `gpupdate /force` refresh group policies after a change, if you don't want to wait for 90-120 minute refresh cycle
 
-## [Storage](https://app.itpro.tv/course-library/mta-server1/storage-technologies/)
+## Storage
+- Source: [itp](https://app.itpro.tv/course-library/mta-server1/storage-technologies/)
   - Local storage
     - IDE or Parallel ATA devices (2 for each of 2 channels, for a total of 4 drives)
     - Serial ATA
@@ -175,7 +189,8 @@ Group policies cannot be linked to containers, only OUs.
     - iSCSI "poor man's SAN", takes advantage of existing infrastructure. In WS2008 requires a virtual hard drive to be set up.
     - NFS Windows Server supports Network File System (NFS) used by Unix servers.
 
-## [Understanding RAID](https://app.itpro.tv/course-library/mta-server1/understanding-raid/)
+## Understanding RAID
+- Source: [itp](https://app.itpro.tv/course-library/mta-server1/understanding-raid/)
 __Redundant Array of Independent Disks (RAID)__
   - RAID 0 : striping
   - RAID 1 : mirror
@@ -183,8 +198,8 @@ __Redundant Array of Independent Disks (RAID)__
   - RAID 10: striping across mirrored sets
 Software RAID disks for all modes except 10 can be configured in Computer Management
 
-
-## [Disk types](https://app.itpro.tv/course-library/mta-server1/disk-types/)
+## Disk types
+- Source: [itp](https://app.itpro.tv/course-library/mta-server1/disk-types/)
 Filesystems: NTFS, REFS, FAT32
 "Basic" disk type = MBR
 "Dynamic" disk types = GPT
@@ -193,17 +208,21 @@ __Mount points__ allow you to avoid using another drive letter; it is another op
 __Virtual Hard Drive (VHD)__ is a file that is treated as a hard drive, used primarily with VMs.
 __Distributed filesystem__ is shared by more than one machine. 
 
-## [Server Components](https://app.itpro.tv/course-library/mta-server1/disk-types/)
+## Server Components
+- Source: [itp](https://app.itpro.tv/course-library/mta-server1/disk-types/)
 
-## [Performance monitoring](https://app.itpro.tv/course-library/mta-server1/performance-monitoring/)
+## Performance monitoring
+- Source: [itp](https://app.itpro.tv/course-library/mta-server1/performance-monitoring/)
 Task Manager > Performance
 Ending process is like SIGKILL, ending application is like SIGQUIT
 Resource Monitor is like task manager on steroids
 Performance monitor allows fine-grained monitoring of performance by choosing Counters
 
-## [Logs and alerts](https://app.itpro.tv/course-library/mta-server1/logs-alerts/)
+## Logs and alerts
+- Source: [itp](https://app.itpro.tv/course-library/mta-server1/logs-alerts/)
 
-## [Startup Process](https://app.itpro.tv/course-library/mta-server1/startup-process/)
+## Startup Process
+- Source: [itp](https://app.itpro.tv/course-library/mta-server1/startup-process/)
 Basic boot process has changed since 2008. After POST, control is eventually handed over to the bootloader located in the __Master Boot Record (MBR)__, BOOTMGR.exe (which has replaced the older NTLDR), which looks for the active partition, then winload.exe  which loads the specific version of Windows. On resume, control is handed to winresume.exe.
 
 For the exam:
@@ -216,7 +235,8 @@ __Directory Service Restore Mode (DSRM)__ is the equivalent to Safe Mode for Act
 `bcdedit /set safeboot dsrepair` (24:00) enter DSRM on reboot from the command line
 `bcdedit /deletevalue safeboot` remove safe boot option, allowing normal boot on restart
 
-## [Business continuity](https://app.itpro.tv/course-library/mta-server1/business-continuity2/) 
+## Business continuity
+- Source: [itp](https://app.itpro.tv/course-library/mta-server1/business-continuity2/) 
 Ensuring continuous operations in the face of foreseeable technical failures.
 
 ### Disaster recovery
@@ -232,10 +252,12 @@ Business continuity in the face of foreseeable technical failures basically devo
 ### Active Directory
 Active Directory Domain Controllers generally bring newly restored replication partners up to speed automatically, __except__ in the case of __deleted Objects__. Because the deletion date is more recent than the restoration's date, the restored Object will be immediately deleted, unless you do an __Authoritative Restore__, which will allows an administrator to mark an Object to be maintained.
 
-## [Understanding updates](https://app.itpro.tv/course-library/mta-server1/understanding-updates/)
+## Understanding updates
+- Source: [itp](https://app.itpro.tv/course-library/mta-server1/understanding-updates/)
 Updates are more involved in a server environment than in a desktop environment. Updates are necessary because they typically patch known security holes, or add desired functionality. __Windows Server Update Services (WSUS)__ (in Administrative Tools) allows administrators to run their own update servers, to make sure updates are administered in a way that suits the enterprise's systems.
 
-## [Troubleshooting methods](https://app.itpro.tv/course-library/mta-server1/troubleshooting-methods/)
+## Troubleshooting methods
+- Source: [itp](https://app.itpro.tv/course-library/mta-server1/troubleshooting-methods/)
 Often, reimaging a computer is easier than trying to chase down an elusive issue. 
 
 ### Troubleshooting methodologies
