@@ -1,22 +1,22 @@
 # Windows Server and Active Directory
 
-Term                                              | Definition
+Term                                              | Definition | Source
 ---                                               | ---
 Active Server Pages (ASP)                         | Microsoft scripting technology
-Active Directory Federation Services (AD FS)      | used by the __Web Application Proxy__ role service of __Remote Access__ role to authenticate corporate users to allow access to intranet web applications from the outside [WSAF](sources/wsaf.md): 158
-DirectAccess                                      | Allows access to corporate intranet without using a VPN. Introduced in Windows Server 2008 R2; uses __IPsec__ protocol to encrypt communication between client and server; encapsulave IPv6 traffic over IPv4 to reach intranet from the internet. [WSAF](sources/wsaf.md): 157
-Distributed Component Object Model (DCOM)         | Microsoft technology for communication between software components on networked computers which provides the communication infrastructure for __Microsoft COM+__ application servers.|[ITP](sources/itp-winsrv-mcsa.md)
+Active Directory Federation Services (AD FS)      | used by the __Web Application Proxy__ role service of __Remote Access__ role to authenticate corporate users to allow access to intranet web applications from the outside | [WSAF](sources/wsaf.md): 158
+DirectAccess                                      | Allows access to corporate intranet without using a VPN. Introduced in Windows Server 2008 R2; uses __IPsec__ protocol to encrypt communication between client and server; encapsulave IPv6 traffic over IPv4 to reach intranet from the internet. | [WSAF](sources/wsaf.md): 157
+Distributed Component Object Model (DCOM)         | Microsoft technology for communication between software components on networked computers which provides the communication infrastructure for __Microsoft COM+__ application servers.| [ITP](sources/itp-winsrv-mcsa.md)
 domain                                            | an administrative boundary for Active Directory (usually symbolized by a triangle)
 forest                                            | security boundary for Active Directory
-functional level                                  | determines available AD DS capabilities at the Forest and Domain levels [WSAF](sources/wsaf.md): 117
-group                                             | collection of Active Directory objects, typically representing users, computers, peripheral devices, and network services [WSAF](sources/wsaf.md): 182
-Group Policy Object (GPO)                         | collection of configured parameters that show how computers will looka nd behave for a certain group of users [WSAF](sources/wsaf.md): 183
+functional level                                  | determines available AD DS capabilities at the Forest and Domain levels | [WSAF](sources/wsaf.md): 117
+group                                             | collection of Active Directory objects, typically representing users, computers, peripheral devices, and network services | [WSAF](sources/wsaf.md): 182
+Group Policy Object (GPO)                         | collection of configured parameters that show how computers will looka nd behave for a certain group of users | [WSAF](sources/wsaf.md): 183
 Internet Client Printing (ICP)                    | technology used for the __Internet Printing__ role service of the __Print and Document Services__ role
-IPsec                                             | Secure protocol used by __DirectAccess__ [WSAF](sources/wsaf.md): 157
-Network Operating System (NOS)                    | software capable of managing, maintaining, and providing resources in the network [WSAF](sources/wsaf.md): 14
-Remote Desktop Connection (RDC)                   | [WSAF](sources/wsaf.md): 163
-Remote Procedure Call (RPC)                       | protocol that one program can use to request a service from a program located on another network host without having to navigate that network|[ITP](sources/itp-winsrv-mcsa.md)
-Virtual Private Network (VPN)                     | secure path within a organization's network, or on the internet, for transmitting sensitive data [WSAF](sources/wsaf.md): 164
+IPsec                                             | Secure protocol used by __DirectAccess__ | [WSAF](sources/wsaf.md): 157
+Network Operating System (NOS)                    | software capable of managing, maintaining, and providing resources in the network | [WSAF](sources/wsaf.md): 14
+Remote Desktop Connection (RDC)                   |  | [WSAF](sources/wsaf.md): 163
+Remote Procedure Call (RPC)                       | protocol that one program can use to request a service from a program located on another network host without having to navigate that network | [ITP](sources/itp-winsrv-mcsa.md)
+Virtual Private Network (VPN)                     | secure path within a organization's network, or on the internet, for transmitting sensitive data | [WSAF](sources/wsaf.md): 164
 
 
 Program                                           | Binary        | Description   |Source
@@ -25,13 +25,14 @@ Authorization Manager                             | azman.msc     | Used in dele
 Deployment Image Servicing and Management (DISM)  |               | command-line tool used to mount and service Windows images before deployment, replacing several deployment tools, including __PEimg__, __Intlcfg__, __ImageX__, and __Package Manager__ | [MD](https://docs.microsoft.com/en-us/windows-hardware/manufacture/desktop/dism---deployment-image-servicing-and-management-technical-reference-for-windows)
 Disk Management                                   |               | MMC snap-in corresponding to rule group Remote Volume Management|[ITP](sources/itp-winsrv-mcsa.md)
 disk2vhd                                          | disk2vhd      | Make a VHD from a bootable physical drive | [ITP](sources/itp-winsrv-mta.md)
-DiskPart                                          | manage drives, including disks, partitions, volumes, and virtual hard disks |  | [MD](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/diskpart)
+DiskPart                                          |               | manage drives, including disks, partitions, volumes, and virtual hard disks |  | [MD](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/diskpart)
 Event Viewer                                      |               | MMC snap-in corresponding to rule group Remote Event Log Management|[ITP](sources/itp-winsrv-mcsa.md)
 Fsutil                                            | fsutil.exe    | Performs tasks that are related to file allocation table (FAT) and NTFS file systems, such as managing reparse points, managing sparse files, or dismounting a volume           | [MD](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/fsutil)
 Group Policy Management Console (GPMC)            | gpmc.msc      | Manage GPOs | [WSAF](sources/wsaf.md): 184
 ImageX                                            |               | command-line tool that allows an admin to image an entire hard drive in WIM format
 Internet Information Services (IIS)               |               | Console used to manage web servers  | [ITP](sources/itp-winsrv-mta.md)
 Local Users and Groups                            | lusrmgr.msc   | Used to add users to the Hyper-V Administrators container  | [ITP](sources/itp-winsrv-mcsa.md)
+Local Group Policy Editor                         | gpedit.msc    | Used to assign user permissions | [WSAF](sources/wsaf.md): 175, 187
 Microsoft Management Console (MMC)                |               | Component of Windows that hosts __snap-ins__, allowing multiple management tools to be accessed from the same interface. An example component is __Computer Management__.|[ITP](sources/itp-winsrv-mcsa.md)
 ntdsutil                                          | ntdsutil.exe  | older command-line utility that provides access to a variety of Active Directory functions | 
 Server Manager                                    |               | A GUI-based tool for managing servers, introduced in Windows Server 2008. __Scope Pane__ shows installed roles, __Details Pane__ displays details of a selected role. | [WSAF](sources/wsaf.md): 144
