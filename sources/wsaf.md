@@ -16,12 +16,12 @@ Installation options
   - __Server Core__ managed locally through Windows PowerShell or remotely through Server Manager
   - __Nano Server__: replacement for Server Core that takes up even less hardware resources with no local login capabilities
 
-Abbreviation|Expansion|Description
----:---:---
-ADK|Assessment and Deployment Kit|tool that automates desktop and server deployments
-MDT|Microsoft Deployment Toolkit|tool that automates desktop and server deployments
-PXE|Preboot Execution Environment|required by WDS installation
-WDS|Windows Deployment Service|installation over the network
+Term|Abbreviation|Definition
+---|---
+Assessment and Deployment Kit|ADK|tool that automates desktop and server deployments
+Microsoft Deployment Toolkit|MDT|tool that automates desktop and server deployments
+Preboot Execution Environment|PXE|required by WDS installation
+Windows Deployment Service|WDS|installation over the network
 
 ## Post-Installation Tasks in Windows Server
 
@@ -97,4 +97,13 @@ Active Directory Domains and Trusts|domain.msc|manage domains trusts, and releva
 Active Directory Sites and Services|dssite.msc|manage replication and services between sites
 Active Directory Module for Windows PowerShell||used to manage the Windows Server's directory services through cmdlets
 
+## Group Policy
+A __group__ is a collection of __Active Directory objects__, understood as representing users, computers, peripheral devices, and network services. A __Group Policy__ is the best option offered by Microsoft to set up restrictions on computers and users, and can be understood as templates that enable sysadmins to control what users can and cannot do on AD objects. __Group Policy Objects (GPO)__ are collections of configured parameters that show how computers will look and behave for a certain group of users.
+GPOs are assigned in the following order:
+  - Local
+  - Site
+  - Domain
+  - OU
+GPOs assigned to __computer accounts__ take effect when the computers are turned on, but those assigned to __user accounts__ take effect upon login.
 
+## Virtualization

@@ -1,4 +1,5 @@
-# Windows Server Administration Fundamentals [ITPro.TV](https://app.itpro.tv/course-library/mta-server1/overview-mcsa-windows-81-70692/)
+# Windows Server Administration Fundamentals 
+- Source: [itp](https://app.itpro.tv/course-library/mta-server1/overview-mcsa-windows-81-70692/)
 
 ## Overview
 - Source: [itp](https://app.itpro.tv/course-library/mta-server1/overview-mcsa-windows-81-70692/)
@@ -7,24 +8,19 @@ The MTA is a suitable starting point for IT professionals.
 ## Understand device drivers
 - Source: [itp](https://app.itpro.tv/course-library/mta-server1/understand-device-drivers/)
 A driver is software that allows use of hardware
-
 Methods for installing new drivers:
   - Driver Installation > Allow non administrators to install drivers for these device setup classes
   - Preload drivers in the Driver Store, making it available for any user to install : `pnputil -a C:\path\to\driver`
   - Require signed drivers, or sign it yourself, but the certificate has to be added to the __trusted root__.
-
 Disabling a device and removing a device: 
   - `pnputil -d` to remove a driver from the store 
   - `pnputil -f -d` force removal of the package and delete it
   - Device Manager
-
 Updating a driver will require a restart since drivers are loaded on boot
   - Device Manager > Update driver button
   - Setup executable
-
 Driver rollback
   - Device manager > Roll Back Driver
-
 Interrupt requests (IRQ)
   - handled dynamically by the system
   - Visible in Resources tab in Device Manager
@@ -39,7 +35,6 @@ Administrative Tools > Services
   - Startup type: Manual, Auto, Automatic Delayed Start, Disabled
   - Various options for failure: Restart Service, Restart Computer, etc
   - Log On tab controls account used to determine services' access to resources: Local System (equivalent to Admin, most powerful level of access), Local Service (moderate level of access to resources, similar to User, but no network access), and Network Service
-
 ### Creating a Managed Service Account
 __Managed Service Accounts__: Windows manages password changes for service accounts; they can only be used on a single server, but Group Managed Accounts were released in 2012.
 
