@@ -1,6 +1,6 @@
 # Windows Server 2016 Administration Fundamentals, by Bekim Dauti
 
-## Introducing Windows Server
+## 1 Introducing Windows Server
 - Topics: networking concepts, Windows Server overview, WS2016 editions
 
 Windows Server 2016 editions
@@ -8,7 +8,7 @@ Windows Server 2016 editions
   - Standard
   - Essentials
 
-## Installing Windows Server
+## 2 Installing Windows Server
 - Topics: clean installation vs. upgrade, unattended installations
 
 Installation options
@@ -23,7 +23,7 @@ Microsoft Deployment Toolkit|MDT|tool that automates desktop and server deployme
 Preboot Execution Environment|PXE|required by WDS installation
 Windows Deployment Service|WDS|installation over the network
 
-## Post-Installation Tasks in Windows Server
+## 3 Post-Installation Tasks in Windows Server
 
 ### Device drivers
 device driver: program that acts as a translator between computer hardware and an operating system
@@ -78,7 +78,16 @@ Two methods of configuration, depending on Windows Server 2016 edition:
   - __Server Manager__ in Desktop Experience
   - __Server Configuration (sconfig.cmd)__ in Server Core
 
-## Directory Services in Windows Server
+## 4 Directory Services in Windows Server
+
+### Understanding Active Directory Infrastructure
+
+Snap-in|Executable|Description
+Active Directory Administrative Center|dsac.exe|one-stop-shop for managing Windows Server Directory Services
+Active Directory Users and Computers|dsa.msc|manage users, computers, and relevant information
+Active Directory Domains and Trusts|domain.msc|manage domains trusts, and relevant information
+Active Directory Sites and Services|dssite.msc|manage replication and services between sites
+Active Directory Module for Windows PowerShell||used to manage the Windows Server's directory services through cmdlets
 
 Term|Abbreviation|Definition
 ---|---
@@ -90,14 +99,45 @@ Forest||collection of trees
 Primary Domain Controller|PDC|in Windows NT, the single domain controller per domain
 Tree||collection of one or more domains, linked through transitive trust
 
-Snap-in|Executable|Description
-Active Directory Administrative Center|dsac.exe|one-stop-shop for managing Windows Server Directory Services
-Active Directory Users and Computers|dsa.msc|manage users, computers, and relevant information
-Active Directory Domains and Trusts|domain.msc|manage domains trusts, and relevant information
-Active Directory Sites and Services|dssite.msc|manage replication and services between sites
-Active Directory Module for Windows PowerShell||used to manage the Windows Server's directory services through cmdlets
+### Understanding Domain Name System (DNS)
 
-## Group Policy
+### Understanding organizational units and containers
+
+Default containers created after promoting a server to domain controller:
+  - Computers
+  - Domain Controllers
+  - ForeignSecurityPrincipals
+  - Keys
+  - LostAndFound
+  - Managed Service Accounts
+  - Program Data
+  - Users
+
+### Understanding accounts and groups
+  - __Accounts__ are used to access network services
+  - __Groups__ are collections of __Active Directory objects__, understood as representing users, computers, peripheral devices, and network services, and are used to facilitate the process of assigning rights and permissions
+
+#### Accounts
+  - __Domain account__ refers to an Active Directory __user__ (added to __Users__ container of  __AD Users and Computers__) or __computer__ (added to __Computers__ container)
+  - __Local account__ refers to a local user, whose information is stored in the local SAM file (added through __Computer Management__)
+
+#### User profiles
+  - __Local__ user profile is stored on a local computer and created when the user __first logs in__
+  - __Roaming__ user profile is copied and stored in a network share
+  - __Mandatory__ user profile is like a roaming user profile except that changes are never saved
+
+#### Groups
+2 types of group:
+  - __Security__ groups are explicitly used to assign permissions to shared resources on a network
+  - __Distribution__ groups are used exclusively for email
+
+3 group __scopes__:
+  - __Domain local__ groups include accounts, other domain local groups, global groups, and universal groups from the parent's domain local group domain
+  - __Global__ groups include accounts and other global groups from the parent's global group domain
+  - __Universal__ groups include accounts, global groups, and universal groups from __any__ domain in the forest where a universal group belongs
+
+
+## 6 Group Policy
 A __group__ is a collection of __Active Directory objects__, understood as representing users, computers, peripheral devices, and network services. A __Group Policy__ is the best option offered by Microsoft to set up restrictions on computers and users, and can be understood as templates that enable sysadmins to control what users can and cannot do on AD objects. __Group Policy Objects (GPO)__ are collections of configured parameters that show how computers will look and behave for a certain group of users.
 GPOs are assigned in the following order:
   - Local
@@ -106,4 +146,9 @@ GPOs are assigned in the following order:
   - OU
 GPOs assigned to __computer accounts__ take effect when the computers are turned on, but those assigned to __user accounts__ take effect upon login.
 
-## Virtualization
+## 7 Virtualization
+
+## 9 Tuning and maintaining Windows Server
+
+### Performance counters
+__Performance Monitor__ allows you to collect __Counters__ into a __Data Collector Set__, which is logged into C:\PerfLogs
