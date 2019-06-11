@@ -21,6 +21,11 @@ Virtual Private Network (VPN)                     | secure path within a organiz
 
 Program                                           | Binary        | Description   |Source
 ---                                               | ---           | ---           | ---
+Active Directory Administrative Center            | dsac.exe      | MMC snap-in used to manage Windows Server directory services | [WSAF](/sources/wsaf.md): 106
+Active Directory Users and Computers              | dsa.msc       | MMC snap-in used to manage users, hosts, and relevant information | [WSAF](/sources/wsaf.md): 106
+Active Directory Domains and Trusts               | domain.msc    | MMC snap-in used to manage domains, trusts, and relevant information | [WSAF](/sources/wsaf.md): 106
+Active Directory Module for Windows PowerShell    |               | MMC snap-in used to manage Active Directory through Powershell cmdlets | [WSAF](/sources/wsaf.md): 106
+Active Directory Sites and Services               | dssite.msc    | MMC snap-in used to manage the replication and services between sites | [WSAF](/sources/wsaf.md): 106
 Authorization Manager                             | azman.msc     | Used in delegating VM management  | [ITP](sources/itp-winsrv-mcsa.md)
 Deployment Image Servicing and Management (DISM)  |               | command-line tool used to mount and service Windows images before deployment, replacing several deployment tools, including __PEimg__, __Intlcfg__, __ImageX__, and __Package Manager__ | [MD](https://docs.microsoft.com/en-us/windows-hardware/manufacture/desktop/dism---deployment-image-servicing-and-management-technical-reference-for-windows)
 Disk Management                                   |               | MMC snap-in corresponding to rule group Remote Volume Management|[ITP](sources/itp-winsrv-mcsa.md)
