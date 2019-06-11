@@ -1,7 +1,7 @@
 # Windows Server and Active Directory
 
 Term                                              | Definition | Source
----                                               | ---
+---                                               | ---        | ---
 Active Server Pages (ASP)                         | Microsoft scripting technology
 Active Directory Federation Services (AD FS)      | used by the __Web Application Proxy__ role service of __Remote Access__ role to authenticate corporate users to allow access to intranet web applications from the outside | [WSAF](sources/wsaf.md): 158
 DirectAccess                                      | Allows access to corporate intranet without using a VPN. Introduced in Windows Server 2008 R2; uses __IPsec__ protocol to encrypt communication between client and server; encapsulave IPv6 traffic over IPv4 to reach intranet from the internet. | [WSAF](sources/wsaf.md): 157
