@@ -147,6 +147,10 @@ GPOs are assigned in the following order:
 GPOs assigned to __computer accounts__ take effect when the computers are turned on, but those assigned to __user accounts__ take effect upon login.
 
 ## 7 Virtualization
+3 types of virtual switch available in Hyper-V
+  - __External__ switch, which binds the physical network adapter so that virtual machines can access the physical network
+  - __Internal__ switch, usable only by virtual machines and the physical server
+  - __Private__ switch, used only by the virtual machines that run on the physical server
 
 ## 9 Tuning and maintaining Windows Server
 
