@@ -7,16 +7,27 @@ Active Directory Federation Services (AD FS)      | used by the __Web Applicatio
 DirectAccess                                      | Allows access to corporate intranet without using a VPN. Introduced in Windows Server 2008 R2; uses __IPsec__ protocol to encrypt communication between client and server; encapsulave IPv6 traffic over IPv4 to reach intranet from the internet. | [WSAF](sources/wsaf.md): 157
 Distributed Component Object Model (DCOM)         | Microsoft technology for communication between software components on networked computers which provides the communication infrastructure for __Microsoft COM+__ application servers.| [ITP](sources/itp-winsrv-mcsa.md)
 domain                                            | an administrative boundary for Active Directory (usually symbolized by a triangle)
+Fibre Channel                                     | high-speed data transfer protocol used primarily in __SAN__s to connect data storage to servers  | [Wiki](https://en.wikipedia.org/wiki/Fibre_Channel)
 forest                                            | security boundary for Active Directory
 functional level                                  | determines available AD DS capabilities at the Forest and Domain levels | [WSAF](sources/wsaf.md): 117
 group                                             | collection of Active Directory objects, typically representing users, computers, peripheral devices, and network services | [WSAF](sources/wsaf.md): 182
 Group Policy Object (GPO)                         | collection of configured parameters that show how computers will looka nd behave for a certain group of users | [WSAF](sources/wsaf.md): 183
 Internet Client Printing (ICP)                    | technology used for the __Internet Printing__ role service of the __Print and Document Services__ role
+Internet Small Computer System Interface (iSCSI)  | technology that allows servers to connect to storage devices across an Ethernet network | 
 IPsec                                             | Secure protocol used by __DirectAccess__ | [WSAF](sources/wsaf.md): 157
+Loopback Policy                                   | Group policy applied based on the 
+Microsoft Identity Manager (MIM)                  |  | [IMWS](sources/imws.md): 123; [MS](https://aka.ms/vaz62m)
 Network Operating System (NOS)                    | software capable of managing, maintaining, and providing resources in the network | [WSAF](sources/wsaf.md): 14
+New Technology File System (NTFS)                 | Microsoft filesystem technology introduced in the 1990s that offers advanced features such as __EFS__, __VSCS__, journaling, etc. | [WSAF](sources/wsaf.md): 235
+Privileged Access Management (PAM)                | Microsoft security feature introduced in Server 2016 that requires implementation of __MIM__. PAM introduces the concept of __PAM trust__ as well as the __bastion forest__, which is guaranteed to be free of malicious activity. | [IMWS](sources/imws.md): 123; 
+Remote Access Dial-up Authentication Service (RADIUS) | client/server protocol where the client is typically a NAS and the server is usually a daemon process running on a Unix or Windows NT machine. 
 Remote Desktop Connection (RDC)                   |  | [WSAF](sources/wsaf.md): 163
 Remote Procedure Call (RPC)                       | protocol that one program can use to request a service from a program located on another network host without having to navigate that network | [ITP](sources/itp-winsrv-mcsa.md)
+Server Message Block                              |  | 
+Service                                           | an application that runs in the background with no user interface, intended to provide operating system features like web serving, event logging, file serving, printing, or error reporting
+Service Control Manager                           |  | [MD](https://docs.microsoft.com/en-us/windows/desktop/services/service-user-accounts)
 Virtual Private Network (VPN)                     | secure path within a organization's network, or on the internet, for transmitting sensitive data | [WSAF](sources/wsaf.md): 164
+Volume Shadow Copy Service (VSS)                  | a feature of the __NTFS__ filesystem that allows a snapshot of a file to be taken even while it is in use | [WSAF](sources/wsaf.md): 235; [MD](https://docs.microsoft.com/en-us/windows-server/storage/file-server/volume-shadow-copy-service)
 
 
 Program                                           | Binary        | Description   |Source
@@ -44,6 +55,7 @@ Server Manager                                    |               | A GUI-based 
 Services                                          |               | MMC snap-in corresponding to rule group Remote Service Management| [ITP](sources/itp-winsrv-mcsa.md)
 Shared Folders                                    |               | MMC snap-in corresponding to rule group File and Printer Sharing| [ITP](sources/itp-winsrv-mcsa.md)
 Task Scheduler                                    |               | MMC snap-in corresponding to rule group Performance Logs and Alerts, File and Printer Sharing | [ITP](sources/itp-winsrv-mcsa.md)
+wevtutil                                          | wevtutil.exe  | Enables you to retrieve information about event logs and publishers. You can also use this command to install and uninstall event manifests, to run queries, and to export, archive, and clear logs | [MD](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/wevtutil)
 Windows Defender Firewall with Advanced Security  | wf.msc        |               | [ITP](sources/itp-winsrv-mcsa.md)
 Windows Firewall and Advanced Security            |               | MMC snap-in corresponding to rule group Windows Firewall Remote Management | [ITP](sources/itp-winsrv-mcsa.md)
 Windows Remote Shell (WinRS)                      |               |               | [ITP](sources/itp-winsrv-mcsa.md)
@@ -79,6 +91,10 @@ Collaboration server  | Sharepoint Server     |
 Monitoring server     | System Center Operations MAnager (SCOM) | Deploy, configure, manage, and monitor operations, services, devices, and applications of enterprise systems through a single console
 Threat management     | System Center 2016 Endpoint Protection, also Forefront Threat Management Gateway (Forefront TMG), foremerly Microsoft Internet Security and Acceleration (ISA) Server; network router, firewall, VPN server, and web cache
 
+## Storage
+### External Storage
+__Fibre Channel__ is an alternative to __SCSI__, especially if the storage will be physically separated from the server. The maximum range of SCSI is 12 meters, but Fibre Channel is more expensive.
+
 ## NTFS
 
 NTFS permission | Description 
@@ -96,3 +112,10 @@ Share permissions
   - Change
   - Read
 
+## Server installation
+
+### Services
+Three types, in order of increasing privilege:
+  - __LocalService__, meant to run least-privileged services, accesses the network as an _Anonymous_ user
+  - __NetworkService__, meant to run standard privileged services with the right to access the network as the machine by presenting the computer's credentials to remote servers
+  - __LocalSystem__, completely trusted account, even more so than the administrator account.
