@@ -115,6 +115,7 @@ Share permissions
 ## Server installation
 
 ### Services
+  - Sources: [digitalcitizen.life](https://www.digitalcitizen.life/what-are-windows-services-what-they-do-how-manage-them)
 Three types, in order of increasing privilege:
   - __LocalService__, meant to run least-privileged services, accesses the network as an _Anonymous_ user
   - __NetworkService__, meant to run standard privileged services with the right to access the network as the machine by presenting the computer's credentials to remote servers
