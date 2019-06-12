@@ -4,10 +4,11 @@ Term                                              | Definition | Source
 ---                                               | ---        | ---
 Active Server Pages (ASP)                         | Microsoft scripting technology
 Active Directory Federation Services (AD FS)      | used by the __Web Application Proxy__ role service of __Remote Access__ role to authenticate corporate users to allow access to intranet web applications from the outside | [WSAF](sources/wsaf.md): 158
+Common Internet File System (CIFS)                | file access protocol based on __SMB__ | 
 DirectAccess                                      | Allows access to corporate intranet without using a VPN. Introduced in Windows Server 2008 R2; uses __IPsec__ protocol to encrypt communication between client and server; encapsulave IPv6 traffic over IPv4 to reach intranet from the internet. | [WSAF](sources/wsaf.md): 157
 Distributed Component Object Model (DCOM)         | Microsoft technology for communication between software components on networked computers which provides the communication infrastructure for __Microsoft COM+__ application servers.| [ITP](sources/itp-winsrv-mcsa.md)
 domain                                            | an administrative boundary for Active Directory (usually symbolized by a triangle)
-Fibre Channel                                     | high-speed data transfer protocol used primarily in __SAN__s to connect data storage to servers  | [Wiki](https://en.wikipedia.org/wiki/Fibre_Channel)
+Fibre Channel (FC)                                | high-speed data transfer protocol used primarily in __SAN__s to connect data storage to servers  | [Wiki](https://en.wikipedia.org/wiki/Fibre_Channel)
 forest                                            | security boundary for Active Directory
 functional level                                  | determines available AD DS capabilities at the Forest and Domain levels | [WSAF](sources/wsaf.md): 117
 group                                             | collection of Active Directory objects, typically representing users, computers, peripheral devices, and network services | [WSAF](sources/wsaf.md): 182
@@ -15,7 +16,7 @@ Group Policy Object (GPO)                         | collection of configured par
 Internet Client Printing (ICP)                    | technology used for the __Internet Printing__ role service of the __Print and Document Services__ role
 Internet Small Computer System Interface (iSCSI)  | technology that allows servers to connect to storage devices across an Ethernet network | 
 IPsec                                             | Secure protocol used by __DirectAccess__ | [WSAF](sources/wsaf.md): 157
-Loopback Policy                                   | Group policy applied based on the 
+Loopback Policy                                   | Group policy applied based on the computer, whatever the user | [MD](https://support.microsoft.com/en-us/help/231287/loopback-processing-of-group-policy)
 Microsoft Identity Manager (MIM)                  |  | [IMWS](sources/imws.md): 123; [MS](https://aka.ms/vaz62m)
 Network Operating System (NOS)                    | software capable of managing, maintaining, and providing resources in the network | [WSAF](sources/wsaf.md): 14
 New Technology File System (NTFS)                 | Microsoft filesystem technology introduced in the 1990s that offers advanced features such as __EFS__, __VSCS__, journaling, etc. | [WSAF](sources/wsaf.md): 235
@@ -25,9 +26,10 @@ Remote Desktop Connection (RDC)                   |  | [WSAF](sources/wsaf.md): 
 Remote Procedure Call (RPC)                       | protocol that one program can use to request a service from a program located on another network host without having to navigate that network | [ITP](sources/itp-winsrv-mcsa.md)
 Server Message Block                              |  | 
 Service                                           | an application that runs in the background with no user interface, intended to provide operating system features like web serving, event logging, file serving, printing, or error reporting
-Service Control Manager                           |  | [MD](https://docs.microsoft.com/en-us/windows/desktop/services/service-user-accounts)
+Service Control Manager                           | __RPC__ server that provides an interface for: __maintaining the database__ of installed services; __starting__ services on startup or on demand; enumerating installed services; transmitting control requests to running services (i.e. __stopping__ them); locking and unlocking the service database | [MD](https://docs.microsoft.com/en-us/windows/desktop/services/service-control-manager)
 Virtual Private Network (VPN)                     | secure path within a organization's network, or on the internet, for transmitting sensitive data | [WSAF](sources/wsaf.md): 164
 Volume Shadow Copy Service (VSS)                  | a feature of the __NTFS__ filesystem that allows a snapshot of a file to be taken even while it is in use | [WSAF](sources/wsaf.md): 235; [MD](https://docs.microsoft.com/en-us/windows-server/storage/file-server/volume-shadow-copy-service)
+Windows Server Update Services (WSUS)             | allows administrators to control and manage updates distributed through Microsoft Update | [MD](https://docs.microsoft.com/en-us/windows-server/administration/windows-server-update-services/get-started/windows-server-update-services-wsus)
 
 
 Program                                           | Binary        | Description   |Source
@@ -94,6 +96,9 @@ Threat management     | System Center 2016 Endpoint Protection, also Forefront T
 ## Storage
 ### External Storage
 __Fibre Channel__ is an alternative to __SCSI__, especially if the storage will be physically separated from the server. The maximum range of SCSI is 12 meters, but Fibre Channel is more expensive.
+### Network Storage
+  - __SAN__ uses block-level storage, appearing as disk drives to clients. A SAN configured using Fibre Channel is a separate network from any LAN, and devices using SAN storage must have a FC adapter.
+  - __NAS__ provides access through file sharing, acting as a network-based file server.
 
 ## NTFS
 
@@ -114,9 +119,39 @@ Share permissions
 
 ## Server installation
 
+### Requirements
+
+          | Desktop Experience  | Server Core
+:---      | :---                | :---
+RAM       | 2 GB                | 512 MB
+Processor | 1.4 GHz 64-bit      | same
+Space     | 32 GB               | same
+
+
+### Disabling Windows Update
+Group Policy should be used to prevent certain updates from being done automatically. This includes clients in a local workgroup as well as Active Directory.
+
 ### Services
   - Sources: [digitalcitizen.life](https://www.digitalcitizen.life/what-are-windows-services-what-they-do-how-manage-them)
-Three types, in order of increasing privilege:
+Three predefined local accounts used by the Service Control Manager, in order of increasing privilege:
   - __LocalService__, meant to run least-privileged services, accesses the network as an _Anonymous_ user
   - __NetworkService__, meant to run standard privileged services with the right to access the network as the machine by presenting the computer's credentials to remote servers
   - __LocalSystem__, completely trusted account, even more so than the administrator account.
+__Managed Service Accounts__ and __Group Managed Service Accounts__ provide an alternative means of providing security context to services.
+
+## Groups
+A __group__ is a collection of __Active Directory objects__, understood as representing users, computers, peripheral devices, and network services. A __Group Policy__ is the best option offered by Microsoft to set up restrictions on computers and users, and can be understood as templates that enable sysadmins to control what users can and cannot do on AD objects. __Group Policy Objects (GPO)__ are collections of configured parameters that show how computers will look and behave for a certain group of users.
+GPOs are assigned in the following order:
+  - Local
+  - Site
+  - Domain
+  - OU
+GPOs assigned to __computer accounts__ take effect when the computers are turned on, but those assigned to __user accounts__ take effect upon login.
+2 types of group:
+  - __Security__ groups are explicitly used to assign permissions to shared resources on a network
+  - __Distribution__ groups are used exclusively for email
+
+3 group __scopes__:
+  - __Domain local__ groups include accounts, other domain local groups, global groups, and universal groups from the parent's domain local group domain
+  - __Global__ groups include accounts and other global groups from the parent's global group domain
+  - __Universal__ groups include accounts, global groups, and universal groups from __any__ domain in the forest where a universal group belongs
