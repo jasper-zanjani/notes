@@ -136,7 +136,7 @@ Share permissions
 ## Server installation (Objective 1)
 ### Requirements
 
-          | Desktop Experience  | Server Core
+-         | Desktop Experience  | Server Core
 :---      | :---                | :---
 RAM       | 2 GB                | 512 MB
 Processor | 1.4 GHz 64-bit      | same
