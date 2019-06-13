@@ -16,7 +16,7 @@ forest                                            | security boundary for Active
 functional level                                  | determines available AD DS capabilities at the Forest and Domain levels | [WSAF](sources/wsaf.md): 117
 group                                             | collection of Active Directory objects, typically representing users, computers, peripheral devices, and network services | [WSAF](sources/wsaf.md): 182
 Group Policy Object (GPO)                         | collection of configured parameters that show how computers will looka nd behave for a certain group of users | [WSAF](sources/wsaf.md): 183
-Internet Client Printing (ICP)                    | technology used for the __Internet Printing__ role service of the __Print and Document Services__ role
+Internet Printing Client                          | used to connect to a printer through a web browser, used for the __Internet Printing__ role service of the __Print and Document Services__ role
 Internet Small Computer System Interface (iSCSI)  | technology that allows servers to connect to storage devices across an Ethernet network | 
 IPsec                                             | Secure protocol used by __DirectAccess__ | [WSAF](sources/wsaf.md): 157
 Loopback Policy                                   | Group policy applied based on the computer, whatever the user | [MD](https://support.microsoft.com/en-us/help/231287/loopback-processing-of-group-policy)
