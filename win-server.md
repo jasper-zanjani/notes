@@ -185,3 +185,9 @@ GPOs assigned to __computer accounts__ take effect when the computers are turned
 ### Organizational Units (Objective 3.2)
 Unlike groups, OUs can't be placed on access control lists, nor can they be placed into groups. By contrast, they are used to organize AD objects to facilitate delegation of administration and to deploy group policy settings to objects located within them..
 
+## Server Maintenance
+### Shadow copies
+  - __read-only__ by default
+  - __not__ transportable
+### Scheduled backups
+Must be performed to an __NTFS shared or local drive__
