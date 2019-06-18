@@ -1,5 +1,8 @@
 # Python
-`#!/usr/bin/env python` : shebang 
+
+Shebang
+:---
+`#!/usr/bin/env python`
 
 ## alternative data types
 
