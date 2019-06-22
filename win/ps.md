@@ -56,7 +56,6 @@ Syntax | Effect | Source
 `Set-PSReadlineOption -HistoryNoDuplicates:$true`|set history to only save unique commands
 `Set-PSReadlineOption -EditMode Emacs`|enable bash-like functionality where an incomplete command followed by <Tab> will produce a list of all matching commands
 `Set-PSReadlineOption -EditMode Windows`|change <Tab> behavior back to default for PowerShell
-
 `Get-Process`|display running processes
 `Clear-Host`|clear screen
 `Get-Services`|display services
@@ -112,6 +111,8 @@ Syntax | Effect | Source
 
 ## Azure commands
 
+Syntax | Effect | Source
+:---  | :---    | :---
 __`New-AzResourceGroup`__ | create an Azure resource group | [md](https://docs.microsoft.com/en-us/powershell/module/Az.resources/new-Azresourcegroup?view=azps-2.3.2)
 `New-AzResourceGroup -Name TutorialResources -Location eastus` | create a new resource group | [md](https://docs.microsoft.com/en-us/powershell/azure/azureps-vm-tutorial?tutorial-step=2&view=azps-2.3.2)
 `Get-Credential` | get a credential object based on a username and password | [md](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.security/get-credential?view=powershell-6)
