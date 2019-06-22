@@ -1,9 +1,33 @@
 # PowerShell
 
 ## Output formatting
-  - Format-Wide
-  - Format-List
-  - Format-Table
+#### Format-Wide
+Syntax | Effect | Source
+:---  | :---    | :---
+`Get-Service \| Format-Wide` | change output format to `Format-Wide`
+`Get-Service \| Format-Wide -Column 1` | change output format to be a single column
+`Get-Service \| Format-Wide -Property DisplayName` | change output to display the `DisplayName` property
+
+#### Format-List
+Syntax | Effect | Source
+:---  | :---    | :---
+`Get-Service \| Format-List` | display output as a list with properties listed next to values
+`Get-Service \| Format-List -Property *` | display all properties
+`Get-Service \| fl -Property Status,StartType,DisplayName` | display only specified properties
+
+#### Format-Table
+Syntax | Effect | Source
+:---  | :---    | :---
+`Get-Service \| Format-Table -Property *`|display all properties
+`Get-Service \| Format-Table -Property DisplayName,StartType,Status -GrouptBy Status`|group by `Status`, but the output will be confused because it was not sorted
+
+#### Sort-Object
+`Get-Service \| Sort-Object` | sort list of services
+`Get-Service \| Sort-Object -Property Status \| Format-Table -Property DisplayName,StartType,Status -GrouptBy Status`|group by `Status` after sorting
+
+#### Write-Host
+`Get-Serivce \| Write-Host` | will produce an error because `Write-Host` expects a single object
+`Get-Service \| ForEach-Object {Write-Host $_.name}`| loop through each object in output of `Get-Service` and send the `name` field to `Write-Host`
 
 ## Commands
 Syntax | Effect | Source
@@ -24,10 +48,15 @@ Syntax | Effect | Source
 `Get-ADUser -Identity mike`|display information for Active Directory user <mike>
 `Get-History`|display history of inputted commands for the current session
 `Invoke-History`|run a command from the history
+
+### PSReadlineOption
+Syntax | Effect | Source
+:---  | :---    | :---
 `Get-PSReadlineOption`|display options available in the module
 `Set-PSReadlineOption -HistoryNoDuplicates:$true`|set history to only save unique commands
 `Set-PSReadlineOption -EditMode Emacs`|enable bash-like functionality where an incomplete command followed by <Tab> will produce a list of all matching commands
 `Set-PSReadlineOption -EditMode Windows`|change <Tab> behavior back to default for PowerShell
+
 `Get-Process`|display running processes
 `Clear-Host`|clear screen
 `Get-Services`|display services
@@ -37,18 +66,6 @@ Syntax | Effect | Source
 `New-Alias ip Get-NetIPAddress`|establish a new alias
 `Set-Alias ip Get-NetAdapter`|edit an existing alias
 `Export-Alias -Path alias.ps1 -As Script`|export session aliases to a ".ps1" file
-`Get-Service \| Sort-Object` | sort list of services
-`Get-Serivce \| Write-Host` | will produce an error because `Write-Host` expects a single object
-`Get-Service \| ForEach-Object {Write-Host $_.name}`| loop through each object in output of `Get-Service` and send the `name` field to `Write-Host`
-`Get-Service \| Format-Wide` | change output format to `Format-Wide`
-`Get-Service \| Format-Wide -Column 1` | change output format to be a single column
-`Get-Service \| Format-Wide -Property DisplayName` | change output to display the `DisplayName` property
-`Get-Service \| Format-List` | display output as a list with properties listed next to values
-`Get-Service \| Format-List -Property *` | display all properties
-`Get-Service \| fl -Property Status,StartType,DisplayName` | display only specified properties
-`Get-Service \| Format-Table -Property *`|display all properties
-`Get-Service \| Format-Table -Property DisplayName,StartType,Status -GrouptBy Status`|group by `Status`, but the output will be confused because it was not sorted
-`Get-Service \| Sort-Object -Property Status \| Format-Table -Property DisplayName,StartType,Status -GrouptBy Status`|group by `Status` after sorting
 `Get-PSDrive`|display mapped drives
 `Set-Location`|change the present working directory (`cd` is an alias)
 `New-PSDrive -Name scripts -PSProvider FileSystem -Root "C:\Scripts"`|map a directory to a drive
@@ -95,9 +112,18 @@ Syntax | Effect | Source
 
 ## Azure commands
 
+__`New-AzResourceGroup`__ | create an Azure resource group | [md](https://docs.microsoft.com/en-us/powershell/module/Az.resources/new-Azresourcegroup?view=azps-2.3.2)
+`New-AzResourceGroup -Name TutorialResources -Location eastus` | create a new resource group | [md](https://docs.microsoft.com/en-us/powershell/azure/azureps-vm-tutorial?tutorial-step=2&view=azps-2.3.2)
+`Get-Credential` | get a credential object based on a username and password | [md](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.security/get-credential?view=powershell-6)
+`New-AzVM` | create a virtual machine | [md](https://docs.microsoft.com/en-us/powershell/module/Az.compute/new-Azvm?view=azps-2.3.2)
+`Select-Object` | select objects or object properties | [md](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/select-object?view=powershell-6)
+`Get-AzPublicIpAddress` | get a public IP address | [md](https://docs.microsoft.com/en-us/powershell/module/Az.network/get-AzPublicIpAddress?view=azps-2.3.2)
+`Remove-AzResourceGroup` | remove a resource group | [md](https://docs.microsoft.com/en-us/powershell/module/Az.resources/Remove-AzResourceGroup?view=azps-2.3.2)
+`Wait-Job` | suppress the command prompt until one or all of the PowerShell background jobs running in the session are completed | [md](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/wait-job?view=powershell-6)
+
+
 Syntax  | Effect  | Source
 :---    | :---    | :---
-`New-AzResourceGroup -Name TutorialResources -Location eastus` | create a new resource group | [md](https://docs.microsoft.com/en-us/powershell/azure/azureps-vm-tutorial?tutorial-step=2&view=azps-2.3.2)
 `$cred = Get-Credential -Message "Enter a username and password for the virtual machine."` | create admin credentials for the VM | [md](https://docs.microsoft.com/en-us/powershell/azure/azureps-vm-tutorial?tutorial-step=3&view=azps-2.3.2)
 `$vmParams = @{ ResourceGroupName = 'TutorialResources' Name = 'TutorialVM1' Location = 'eastus' ImageName = 'Win2016Datacenter' PublicIpAddressName = 'tutorialPublicIp' Credential = $cred OpenPorts = 3389 }; $newVM1 = New-AzVM @vmParams` | create a virtual machine | [md](https://docs.microsoft.com/en-us/powershell/azure/azureps-vm-tutorial?tutorial-step=4&view=azps-2.3.2)
 
