@@ -111,9 +111,9 @@ Syntax | Effect | Source
 
 ## Azure commands
 
-Syntax | Effect | Source
-:---  | :---    | :---
-__`New-AzResourceGroup`__ | create an Azure resource group | [md](https://docs.microsoft.com/en-us/powershell/module/Az.resources/new-Azresourcegroup?view=azps-2.3.2)
+Syntax | Effect | Example | Source
+:---  | :---    | :---    | :---
+`New-AzResourceGroup` | create an Azure resource group | `New-AzResourceGroup -Name TutorialResources -Location eastus` | [md](https://docs.microsoft.com/en-us/powershell/module/Az.resources/new-Azresourcegroup?view=azps-2.3.2)
 `New-AzResourceGroup -Name TutorialResources -Location eastus` | create a new resource group | [md](https://docs.microsoft.com/en-us/powershell/azure/azureps-vm-tutorial?tutorial-step=2&view=azps-2.3.2)
 `Get-Credential` | get a credential object based on a username and password | [md](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.security/get-credential?view=powershell-6)
 `New-AzVM` | create a virtual machine | [md](https://docs.microsoft.com/en-us/powershell/module/Az.compute/new-Azvm?view=azps-2.3.2)
