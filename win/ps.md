@@ -1,5 +1,10 @@
 # PowerShell
 
+## Output formatting
+  - Format-Wide
+  - Format-List
+  - Format-Table
+
 ## Commands
 Syntax | Effect | Source
 :---  | :---    | :---
@@ -87,3 +92,23 @@ Syntax | Effect | Source
 `Set-ADAccountPassword -identity MBentley -Reset -NewPassword (ConvertTo-SecureString -AsPlainText "What is 255.255.255.240" -Force)`|reset password
 `Search-ADAccount -LockedOut`|display locked out accounts
 `Unlock-ADAccount -identity wbryan`|unlock account
+
+## Azure commands
+
+Syntax  | Effect  | Source
+:---    | :---    | :---
+`New-AzResourceGroup -Name TutorialResources -Location eastus` | create a new resource group | [md](https://docs.microsoft.com/en-us/powershell/azure/azureps-vm-tutorial?tutorial-step=2&view=azps-2.3.2)
+`$cred = Get-Credential -Message "Enter a username and password for the virtual machine."` | create admin credentials for the VM | [md](https://docs.microsoft.com/en-us/powershell/azure/azureps-vm-tutorial?tutorial-step=3&view=azps-2.3.2)
+```powershell
+$vmParams = @{
+  ResourceGroupName = 'TutorialResources'
+  Name = 'TutorialVM1'
+  Location = 'eastus'
+  ImageName = 'Win2016Datacenter'
+  PublicIpAddressName = 'tutorialPublicIp'
+  Credential = $cred
+  OpenPorts = 3389
+}
+$newVM1 = New-AzVM @vmParams
+``` | create a virtual machine | [md](https://docs.microsoft.com/en-us/powershell/azure/azureps-vm-tutorial?tutorial-step=4&view=azps-2.3.2)
+
