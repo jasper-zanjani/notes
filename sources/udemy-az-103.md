@@ -67,4 +67,6 @@ PowerShell                          | CLI                   | Effect
 `New-AzureRmPolicyAssignment`       | `az policy assignment`| assign the new policy to the account
 
 ## Azure policy
-Azure policy isn't limited to tagging, but can be used to define policies that will enforce corporate standards and service-level agreements (SLA) across all or specific resources.
+Azure policy isn't limited to tagging, but can be used to define policies that will enforce corporate standards and service-level agreements (SLA) across all or specific resources. These can be restricted to particular geographic locations, virtual machines, etc.
+
+

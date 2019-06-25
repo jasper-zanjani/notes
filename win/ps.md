@@ -1,5 +1,11 @@
 # PowerShell
 
+## Administering Azure VMs
+
+Syntax  | Effect  | Example | Source
+:---    | :---    | :---    | :---
+`Enable-PSRemoting`|allow remote PowerShell management||[md](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/enable-psremoting?view=powershell-6)
+
 ## Output formatting
 #### Format-Wide
 Syntax | Effect | Source
@@ -29,7 +35,8 @@ Syntax | Effect | Source
 `Get-Serivce \| Write-Host` | will produce an error because `Write-Host` expects a single object
 `Get-Service \| ForEach-Object {Write-Host $_.name}`| loop through each object in output of `Get-Service` and send the `name` field to `Write-Host`
 
-## Commands
+## Other commands
+
 Syntax | Effect | Source
 :---  | :---    | :---
 `Get-Module`|display loaded PowerShell modules
@@ -50,6 +57,7 @@ Syntax | Effect | Source
 `Invoke-History`|run a command from the history
 
 ### PSReadlineOption
+
 Syntax | Effect | Source
 :---  | :---    | :---
 `Get-PSReadlineOption`|display options available in the module
@@ -127,5 +135,4 @@ Syntax  | Effect  | Source
 :---    | :---    | :---
 `$cred = Get-Credential -Message "Enter a username and password for the virtual machine."` | create admin credentials for the VM | [md](https://docs.microsoft.com/en-us/powershell/azure/azureps-vm-tutorial?tutorial-step=3&view=azps-2.3.2)
 `$vmParams = @{ ResourceGroupName = 'TutorialResources' Name = 'TutorialVM1' Location = 'eastus' ImageName = 'Win2016Datacenter' PublicIpAddressName = 'tutorialPublicIp' Credential = $cred OpenPorts = 3389 }; $newVM1 = New-AzVM @vmParams` | create a virtual machine | [md](https://docs.microsoft.com/en-us/powershell/azure/azureps-vm-tutorial?tutorial-step=4&view=azps-2.3.2)
-
 
