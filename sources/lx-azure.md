@@ -1,4 +1,11 @@
 # Five Principles for Deploying and Managing Linux in the Cloud (With Azure)
+> Source: [md](https://docs.microsoft.com/en-us/learn/modules/principles-cloud-computing/2-what-is-cloud-computing)
+> - [ ] 1. Introduction
+> - [ ] 2. Principle 1: Understand which Linux VMs are adaptable to the cloud
+> - [ ] 3. Principle 2: Define your workload's required availability
+> - [ ] 4. Principle 3: Monitor your applications running on Linux across the entire stack
+> - [ ] 5. Principle 4: Ensure your Linux VMs are secure and backed up
+> - [ ] 6. Principle 5: Govern your cloud environment
 
 Term                                              | Definition | Source
 ---                                               | ---        | ---
@@ -48,7 +55,15 @@ Virtual Private Cloud (VPC)                       | VPN-like service offered by 
 virtualization                                    | process of converting a physical IT resource into (multiple) virtual resources | [5PLC](file-lx-azure.md): 15
 Web Service Description Language (WSDL)           | markup language used for API of a web service
 
-## Introduction
+## 1. Introduction
+> - [ ] 1.1 How the cloud is being used
+> - [ ] 1.2 Benefits of cloud computing
+> - [ ] 1.3 Types of cloud services: IaaS, PaaS, and SaaS
+> - [ ] 1.4 Types of cloud deployments
+> - [ ] 1.5 Cloud-enabling technology
+> - [ ] 1.6 Cloud computing architecture
+> - [ ] 1.7 Running Linux in the Cloud: the role of containers
+
 Benefits of cloud computing
   - _Agility_: qickly implement a cloud ienvironment (vice setting up hardware)
   - _Pay-for-use_ billing model
@@ -82,6 +97,12 @@ Use cases for containers:
   - CI/CD
 
 ## Principle 1: Understand which Linux VMs are adaptable to the cloud
+> - [ ] 2.1 The cloud roadmap
+> - [ ] 2.2 Cloud readiness assessments
+> - [ ] 2.3 Essentials of a cloud-readiness assessment
+> - [ ] 2.4 Cloud migration strategies
+> - [ ] 2.5 Cloud migration tasks
+> - [ ] 2.6 The three key phases of cloud migration
 
 Concerns addressed by a well-built cloud adoption roadmap
   - _Benefits_ of migrating to the cloud
@@ -153,6 +174,12 @@ Crucial elements:
   - Cost optimization
 
 ## Principle 2: Define your workload's required availability
+> - [ ] 2.1 Load balancing and high availability in the cloud
+> - [ ] 2.2 Running Linux VMs in multiple regions for high availability
+> - [ ] 2.3 Storage redundancy through replication
+> - [ ] 2.4 Dynamic failure detection and recovery in the cloud
+> - [ ] 2.5 Enhancing the scalability of web applications in the cloud
+> - [ ] 2.6 Reference architecture for running a web application in multiple regions
 
 __Ensuring high availability__ is a complex and risky task in a datacenter, supported by a variety of techniques and tools. But with geographically dispersed __Availability Zones__, cloud computing can help to ensure high availability.
 
@@ -164,7 +191,31 @@ Load balancing__ refers to the process of spreading incoming requests across mul
   - __Network__ load balancers work at the Network OSI layer
 
 ## Principle 3: Monitor your applications running on Linux across the entire stack
+> - [ ] 3.1 Application performance monitoring (APM) and the cloud
+> - [ ] 3.2 Challenges of monitoring hybrid architectures
+> - [ ] 3.3 Monitoring Linux VMs and containers in the cloud
+> - [ ] 3.4 Cloud performance monitoring
+> - [ ] 3.5 Performance benchmarks
+> - [ ] 3.6 Getting a unified view of your infrastructure
+> - [ ] 3.7 Cloud-monitoring tools
+> - [ ] 3.8 The importance of a comprehensive monitoring solution
+> - [ ] 3.9 Best practices for cloud monitoring
+
 
 ## Principle 4: Ensure your Linux VMs are secure and backed up
+> - [ ] 4.1 Security in the cloud
+> - [ ] 4.2 A shared responsibility security model in the cloud
+> - [ ] 4.3 Security concerns due to shared IT resources
+> - [ ] 4.4 Cloud security tools and mechanisms that contribute to better security
+> - [ ] 4.5 Disaster recovery in the cloud
+> - [ ] 4.6 Traditional DR strategies versus cloud-based strategies
+> - [ ] 4.7 How the cloud shifts the DR tradeoffs
+
 
 ## Principle 5: Govern your cloud environment 
+> - [ ] 5.1 Governance and compliance in a cloud environment: the issues
+> - [ ] 5.2 The fundamental pillars of a secure and compliant cloud service
+> - [ ] 5.3 Strategies and tools for enhanced governance in the cloud
+> - [ ] 5.4 Trusting the Cloud Service Provider
+> - [ ] 5.5 Summary
+
