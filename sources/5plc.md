@@ -1,60 +1,11 @@
 # Five Principles for Deploying and Managing Linux in the Cloud (With Azure)
 > Source: [md](https://docs.microsoft.com/en-us/learn/modules/principles-cloud-computing/2-what-is-cloud-computing)
-> - [ ] 1. Introduction
-> - [ ] 2. Principle 1: Understand which Linux VMs are adaptable to the cloud
-> - [ ] 3. Principle 2: Define your workload's required availability
-> - [ ] 4. Principle 3: Monitor your applications running on Linux across the entire stack
+> - [x] 1. Introduction
+> - [x] 2. Principle 1: Understand which Linux VMs are adaptable to the cloud
+> - [x] 3. Principle 2: Define your workload's required availability
+> - [x] 4. Principle 3: Monitor your applications running on Linux across the entire stack
 > - [ ] 5. Principle 4: Ensure your Linux VMs are secure and backed up
 > - [ ] 6. Principle 5: Govern your cloud environment
-
-Term                                              | Definition | Source
----                                               | ---        | ---
-Amazon CloudWatch                                 |             | 
-Autoscaling                                       | automatic adjustment of computing capacity to meet changes in cloud workloads | 5PLC: 64
-Availability Zones                                | term used in AWS and Azure to refer to redundant, geographically dispersed computing resources | 5PLC: 19
-Availability set                                  | Azure capability that groups VMs to ensure they are distributed across multiple hardware clusters, isolated from each other | 5PLC: 42
-Azure Application Gateway                         | Layer 7 load balancer that protects web applications against well-known web exploits | 5PLC: 43
-Azure Container Instances (ACI)                   | for running Docker containers on Azure VMs | 5PLC: 23
-Azure Container Registry (ACR)                    | for storing and managing container images | 5PLC: 23
-Azure Container Service                           | Azure feature that offers Jenkins and Kubernetes | 5PLC: 21
-Azure Data Migration Assistant (Azure DMA)        | Microsoft tools to help with database discovery and assessment, can create migration workflows to move database schemas, data, users, roles, and SQL logins; cf. __Azure DMS__ | 5PLC: 36
-Azure Database Migration Service (Azure DMS)      | specialized tool for migrating data during cloud deployment, migrates on-premise Oracle, MySQL, and SQL Server databases to an Azure managed database in the cloud or to an on-premises database running in an Azure VM | 5PLC: 32
-Azure Kubernetes Service (AKS)                    | Linux-based service offered by Azure to orchestrate containers using Kubernetes, DC/OS, or Docker | 5PLC: 22
-Azure Migrate Service                             | tool explicitly development for supporting cloud migration | 5PLC: 32-36
-Azure Security Center                             | scans Azure cloud resources for vulnerabilities, such as web apps not protected by __WAF__
-Azure Service Fabric                              | like __Azure Container Service__, can be used to develop microservices and orchestrate containers on Linux | 5PLC: 23
-Azure Site Recovery                               | tool used to move Azure-compatible Linux VMs of any distribution | 5PLC: 38
-Azure Virtual Machine Scale Sets (VMSSs)          |             | 
-Brigade                                           | event-driven scripting tool for Kubernetes offered by Microsoft
-cloud provisioning                                | computing model that remotely provisions scalable and measured computing resources and services | [5PLC](file-lx-azure.md): 9
-cloud storage device                              | mechanisms which implement the interfaces to __object storage__, accessed via REST or web services | 5PLC: 17
-Draft                                             | Microsoft tool that makes it easy to develop container-based applications and to deploy them to Kubernetes clusters | 5PLC: 24
-dynamic scalability                               | ability of a cloud provider to transparently scale computing resources in response to the runtime conditions of a user's environment | 5PLC: 19
-elasciticy                                        | cf. __dynamic scalability__
-extract, transform, and load (ETL)                | type of job used with containers | 5PLC: 20
-Google Stackdriver                                |             | 
-Helm                                              | open-source packaging tool used to install, deploy, and manage containers in a Kubernetes cluster, manage Kubernetes charts (packages of preconfigured Kubernetes resources) | 5PLC: 23
-hybrid cloud                                      | two or more cloud deployment models, where private and public clouds share data and applications and data flows freely between them | [5PLC](file-lx-azure.md): 14 
-Identity and Access Management (IAM)              | 
-Infrastructure as a Service (IaaS)                | cloud provider supplies the IT infrastructure (servers, strorage, and networks) which is paid for based on usage, providing the client with a high degree of control over the cloud environment | [5PLC](file-lx-azure.md): 12
-load balancing                                    | manner by which a cloud provider manages online traffic by distributing workloads across many servers and computing resources | 5PLC: 19
-Microservices                                     | small, self-contained applications that perform single tasks or run single processes; spreading incoming requests across multiple VMs; two types | 5PLC: 20, 43
-Microsoft Azure Monitor                           |             | 
-Microsoft Web Application Firewall (WAF)          | feature of __Azure Application Gateway__
-object storage                                    | various types of resources are stored as web resources | 5PLC: 17
-Platform as a Service (PaaS)                      | computing model in which the cloud provider provisions and manages all the computing infrastructure (servers, networks, and databases), providing a ready-to-use computing environment | [5PLC](file-lx-azure.md): 13
-public cloud                                      | cloud accessed over the public internet, run by a third-party cloud provider, such as Azure, AWS, or GCP | [5PLC](file-lx-azure.md): 14 
-private cloud                                     | cloud run on an on-site datacenter, or hosted by a third-party service but owned by the client itself | [5PLC](file-lx-azure.md): 14 
-resource                                          | physical or virtual server, software programs, services, storage, or network devices | [5PLC](file-lx-azure.md): 9
-resource replication                              | creation of multiple instances of the same computing resource | 5PLC: 17
-resource pooling                                  | method by which a cloud provider can provide commoditized computing resources, whereby a large amount of computing resources services many clients | 5PLC: 18
-SOAP                                              | messaging format relied upon for web services | [5PLC](file-lx-azure.md): 17 
-Software as a Service (SaaS)                      | cloud provider delivers software applications on demand over the Internet, managing not only the infrastructure but also the software applications themselves | [5PLC](file-lx-azure.md): 13
-Universal Description, Discovery, and Integration (UDDI) | standard for regulating service registries where WSDL definitions can be publish | [5PLC](file-lx-azure.md): 17 
-Virtual Machine Scale Set (VMSS)                  | create and manage a group of identical load-balanced VMs, the number of which automatically increases or decreases
-Virtual Private Cloud (VPC)                       | VPN-like service offered by Azure
-virtualization                                    | process of converting a physical IT resource into (multiple) virtual resources | [5PLC](file-lx-azure.md): 15
-Web Service Description Language (WSDL)           | markup language used for API of a web service
 
 ## 1. Introduction
 > - [x] 1.1 How the cloud is being used
@@ -66,7 +17,7 @@ Web Service Description Language (WSDL)           | markup language used for API
 > - [x] 1.7 Running Linux in the Cloud: the role of containers
 
 #### 1.2 Benefits of cloud computing
-  - _Agility_: qickly implement a cloud ienvironment (vice setting up hardware)
+  - _Agility_: quickly implement a cloud ienvironment (vice setting up hardware)
   - _Pay-for-use_ billing model
   - _Lower cost_: lesser capital expense of buying hardware and other components required for a datacenter
   - _Elasticity_: ability to quickly ramp up and down computing capacity
@@ -205,7 +156,7 @@ Load balancing__ refers to the process of spreading incoming requests across mul
 ## 4. Principle 3: Monitor your applications running on Linux across the entire stack
 > - [x] 4.1 Application performance monitoring (APM) and the cloud
 > - [x] 4.2 Challenges of monitoring hybrid architectures
-> - [ ] 4.3 Monitoring Linux VMs and containers in the cloud
+> - [x] 4.3 Monitoring Linux VMs and containers in the cloud
 > - [x] 4.4 Cloud performance monitoring
 > - [x] 4.5 Performance benchmarks
 > - [x] 4.6 Getting a unified view of your infrastructure
@@ -225,9 +176,9 @@ Monitoring issues typical to cloud and hybrid cloud architectures:
   - _Dynamic resource provision_
 
 #### 4.3 Monitoring Linux VMs and containers in the cloud
-> - [ ] Log analysis
-> - [ ] Linux server monitoring
-> - [ ] Monitoring and tracking API calls
+- Log analysis
+- Linux server monitoring
+- Monitoring and tracking API calls
 
 #### 4.4 Cloud performance monitoring
 Tools for performance monitor vary by cloud provider
@@ -279,4 +230,54 @@ Effective monitoring solution must help you:
 > - [ ] 6.3 Strategies and tools for enhanced governance in the cloud
 > - [ ] 6.4 Trusting the Cloud Service Provider
 > - [ ] 6.5 Summary
+
+## Glossary
+Term                                              | Definition | Source
+---                                               | ---        | ---
+Amazon CloudWatch                                 |             | 
+Autoscaling                                       | automatic adjustment of computing capacity to meet changes in cloud workloads | 5PLC: 64
+Availability Zones                                | term used in AWS and Azure to refer to redundant, geographically dispersed computing resources | 5PLC: 19
+Availability set                                  | Azure capability that groups VMs to ensure they are distributed across multiple hardware clusters, isolated from each other | 5PLC: 42
+Azure Application Gateway                         | Layer 7 load balancer that protects web applications against well-known web exploits | 5PLC: 43
+Azure Container Instances (ACI)                   | for running Docker containers on Azure VMs | 5PLC: 23
+Azure Container Registry (ACR)                    | for storing and managing container images | 5PLC: 23
+Azure Container Service                           | Azure feature that offers Jenkins and Kubernetes | 5PLC: 21
+Azure Data Migration Assistant (Azure DMA)        | Microsoft tools to help with database discovery and assessment, can create migration workflows to move database schemas, data, users, roles, and SQL logins; cf. __Azure DMS__ | 5PLC: 36
+Azure Database Migration Service (Azure DMS)      | specialized tool for migrating data during cloud deployment, migrates on-premise Oracle, MySQL, and SQL Server databases to an Azure managed database in the cloud or to an on-premises database running in an Azure VM | 5PLC: 32
+Azure Kubernetes Service (AKS)                    | Linux-based service offered by Azure to orchestrate containers using Kubernetes, DC/OS, or Docker | 5PLC: 22
+Azure Migrate Service                             | tool explicitly development for supporting cloud migration | 5PLC: 32-36
+Azure Security Center                             | scans Azure cloud resources for vulnerabilities, such as web apps not protected by __WAF__
+Azure Service Fabric                              | like __Azure Container Service__, can be used to develop microservices and orchestrate containers on Linux | 5PLC: 23
+Azure Site Recovery                               | tool used to move Azure-compatible Linux VMs of any distribution | 5PLC: 38
+Azure Virtual Machine Scale Sets (VMSSs)          |             | 
+Brigade                                           | event-driven scripting tool for Kubernetes offered by Microsoft
+cloud provisioning                                | computing model that remotely provisions scalable and measured computing resources and services | [5PLC](file-lx-azure.md): 9
+cloud storage device                              | mechanisms which implement the interfaces to __object storage__, accessed via REST or web services | 5PLC: 17
+Draft                                             | Microsoft tool that makes it easy to develop container-based applications and to deploy them to Kubernetes clusters | 5PLC: 24
+dynamic scalability                               | ability of a cloud provider to transparently scale computing resources in response to the runtime conditions of a user's environment | 5PLC: 19
+elasciticy                                        | cf. __dynamic scalability__
+extract, transform, and load (ETL)                | type of job used with containers | 5PLC: 20
+Google Stackdriver                                |             | 
+Helm                                              | open-source packaging tool used to install, deploy, and manage containers in a Kubernetes cluster, manage Kubernetes charts (packages of preconfigured Kubernetes resources) | 5PLC: 23
+hybrid cloud                                      | two or more cloud deployment models, where private and public clouds share data and applications and data flows freely between them | [5PLC](file-lx-azure.md): 14 
+Identity and Access Management (IAM)              | 
+Infrastructure as a Service (IaaS)                | cloud provider supplies the IT infrastructure (servers, strorage, and networks) which is paid for based on usage, providing the client with a high degree of control over the cloud environment | [5PLC](file-lx-azure.md): 12
+load balancing                                    | manner by which a cloud provider manages online traffic by distributing workloads across many servers and computing resources | 5PLC: 19
+Microservices                                     | small, self-contained applications that perform single tasks or run single processes; spreading incoming requests across multiple VMs; two types | 5PLC: 20, 43
+Microsoft Azure Monitor                           |             | 
+Microsoft Web Application Firewall (WAF)          | feature of __Azure Application Gateway__
+object storage                                    | various types of resources are stored as web resources | 5PLC: 17
+Platform as a Service (PaaS)                      | computing model in which the cloud provider provisions and manages all the computing infrastructure (servers, networks, and databases), providing a ready-to-use computing environment | [5PLC](file-lx-azure.md): 13
+public cloud                                      | cloud accessed over the public internet, run by a third-party cloud provider, such as Azure, AWS, or GCP | [5PLC](file-lx-azure.md): 14 
+private cloud                                     | cloud run on an on-site datacenter, or hosted by a third-party service but owned by the client itself | [5PLC](file-lx-azure.md): 14 
+resource                                          | physical or virtual server, software programs, services, storage, or network devices | [5PLC](file-lx-azure.md): 9
+resource replication                              | creation of multiple instances of the same computing resource | 5PLC: 17
+resource pooling                                  | method by which a cloud provider can provide commoditized computing resources, whereby a large amount of computing resources services many clients | 5PLC: 18
+SOAP                                              | messaging format relied upon for web services | [5PLC](file-lx-azure.md): 17 
+Software as a Service (SaaS)                      | cloud provider delivers software applications on demand over the Internet, managing not only the infrastructure but also the software applications themselves | [5PLC](file-lx-azure.md): 13
+Universal Description, Discovery, and Integration (UDDI) | standard for regulating service registries where WSDL definitions can be publish | [5PLC](file-lx-azure.md): 17 
+Virtual Machine Scale Set (VMSS)                  | create and manage a group of identical load-balanced VMs, the number of which automatically increases or decreases
+Virtual Private Cloud (VPC)                       | VPN-like service offered by Azure
+virtualization                                    | process of converting a physical IT resource into (multiple) virtual resources | [5PLC](file-lx-azure.md): 15
+Web Service Description Language (WSDL)           | markup language used for API of a web service
 
