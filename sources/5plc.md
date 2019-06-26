@@ -10,6 +10,7 @@
 Term                                              | Definition | Source
 ---                                               | ---        | ---
 Amazon CloudWatch                                 |             | 
+Autoscaling                                       | automatic adjustment of computing capacity to meet changes in cloud workloads | 5PLC: 64
 Availability Zones                                | term used in AWS and Azure to refer to redundant, geographically dispersed computing resources | 5PLC: 19
 Availability set                                  | Azure capability that groups VMs to ensure they are distributed across multiple hardware clusters, isolated from each other | 5PLC: 42
 Azure Application Gateway                         | Layer 7 load balancer that protects web applications against well-known web exploits | 5PLC: 43
@@ -56,15 +57,15 @@ virtualization                                    | process of converting a phys
 Web Service Description Language (WSDL)           | markup language used for API of a web service
 
 ## 1. Introduction
-> - [ ] 1.1 How the cloud is being used
-> - [ ] 1.2 Benefits of cloud computing
-> - [ ] 1.3 Types of cloud services: IaaS, PaaS, and SaaS
-> - [ ] 1.4 Types of cloud deployments
-> - [ ] 1.5 Cloud-enabling technology
-> - [ ] 1.6 Cloud computing architecture
-> - [ ] 1.7 Running Linux in the Cloud: the role of containers
+> - [x] 1.1 How the cloud is being used
+> - [x] 1.2 Benefits of cloud computing
+> - [x] 1.3 Types of cloud services: IaaS, PaaS, and SaaS
+> - [x] 1.4 Types of cloud deployments
+> - [x] 1.5 Cloud-enabling technology
+> - [x] 1.6 Cloud computing architecture
+> - [x] 1.7 Running Linux in the Cloud: the role of containers
 
-Benefits of cloud computing
+#### 1.2 Benefits of cloud computing
   - _Agility_: qickly implement a cloud ienvironment (vice setting up hardware)
   - _Pay-for-use_ billing model
   - _Lower cost_: lesser capital expense of buying hardware and other components required for a datacenter
@@ -73,16 +74,17 @@ Benefits of cloud computing
   - _Security_: responsibility is shared between application security (client) and infrastructure security (provider)
   - _Performance_: cloud provider can offer the latest in computing hardware and lower network latency
 
-Types of cloud services:
+#### 1.3 Types of cloud services:
   - _IaaS_
   - _PaaS_
   - _SaaS_
 
-Types of cloud deployments
+#### 1.4 Types of cloud deployments
   - _Public cloud_
   - _Private cloud_
   - _Hybrid cloud_
 
+#### 1.6 Cloud computing architecture
 Features common to cloud computing providers:
   - _On-demand_ usage of resources: clients are free to provision any resources at any time
   - _Measured usage_: billing is based on usage
@@ -91,33 +93,43 @@ Features common to cloud computing providers:
   - _Resiliency_: redundant computing resources are located in different geographical areas
   - _Load balancing_
 
+#### 1.7 Running Linux in the cloud: the role of containers
 Use cases for containers:
   - Microservices
   - Batch and __ETL__ jobs
   - CI/CD
 
 ## Principle 1: Understand which Linux VMs are adaptable to the cloud
-> - [ ] 2.1 The cloud roadmap
-> - [ ] 2.2 Cloud readiness assessments
-> - [ ] 2.3 Essentials of a cloud-readiness assessment
-> - [ ] 2.4 Cloud migration strategies
-> - [ ] 2.5 Cloud migration tasks
-> - [ ] 2.6 The three key phases of cloud migration
+> - [x] 2.1 The Cloud RoadMap
+> - [x] 2.2 Cloud readiness assessments
+> - [x] 2.3 Essentials of a cloud-readiness assessment
+> - [x] 2.4 Cloud migration strategies
+> - [x] 2.5 Cloud migration tasks
+> - [x] 2.6 The three key phases of cloud migration
 
+#### 2.1 The Cloud RoadMap
 Concerns addressed by a well-built cloud adoption roadmap
   - _Benefits_ of migrating to the cloud
   - _What_ to move to the cloud
   - _Technology_ to be chosen
   - _Method_ of optimizing
 
-Elements of a cloud-readiness assessment
+#### 2.3 Essentials of a cloud-readiness assessment
   - Shareholder interviews
+  - Current infrastructure analysis
+  - Workload, application, and database analysis
+  - Prioritization
+  - Cloud architectures and the cloud deployment
+  - Cloud personnel requirements
+  - Cost analysis
+  - Compliance and regulation requirements
+  - Cloud migration plan
 
-Strategies for cloud migration
+#### 2.4 Cloud migration strategies
   1. _Lift and shift_: entire current software stack is migrated
   2. _Architect applications before migration_: software is redesigned to take advantage of cloud features. This is more risky because you are planning an infrastructure migration at the same time as an application upgrade.
 
-Tasks to be performed for cloud migration
+#### 2.5 Cloud migration tasks
 - Pre-deployment tasks
   - _Understanding the scope of the migration_: correct cloud assessment
   - _Creating the cloud architectures_: select types of cloud services to be adopted
@@ -131,18 +143,18 @@ Tasks to be performed for cloud migration
     - Security assessment: vulnerability assessments and penetration tests
 - Go-Live Tasks
 
-#### Azure Migrate Service
+##### Azure Migrate Service
 Performs dependency mapping and supports the successful migration of multitier applications. Assists in the following ways:
   - _Assesses your readiness for the Azure cloud_
   - _Recommends the best sizes for your cloud VMs_ along with a confidence rating on a scale of 1-5 stars
   - _Estimates monthly costs_
 
-### Key phases of cloud migration
-  - Discovery phase
-  - Migration phase
-  - Optimization phase
+#### 2.6 The three key phases of cloud migration
+> - [x] Discovery phase
+> - [x] Migration phase
+> - [x] Optimization phase
 
-#### Discovery
+##### Discovery
 Key questions:
   - What is the nature of the current environment?
   - Will the application or workload run properly on the cloud provider's environment?
@@ -162,60 +174,109 @@ Server categorization used by Azure Migrate
   - _Not ready for Azure_: machine won't boot in Azure and can't be hosted on Azure (e.g. if it has a disk larger than 4 TB)
   - _Readiness unknown_: insufficient data in vCenter Server for Azure Migrate to determine readiness
 
-#### Migration
+##### Migration
 Custom tools from Microsoft or third parties are more effective than scripting or manual migration
   - Azure Site Recovery tool
   - CloudEndure, a third-party tool, can move a wider range of support VMs to Azure
   - Velostrata performs migration more quickly by migrating only the VM's compute runtime and replicating VM's storage slowly over time
 
-### Optimization
+##### Optimization
 Crucial elements:
   - Performance management
   - Cost optimization
 
-## Principle 2: Define your workload's required availability
-> - [ ] 2.1 Load balancing and high availability in the cloud
-> - [ ] 2.2 Running Linux VMs in multiple regions for high availability
-> - [ ] 2.3 Storage redundancy through replication
-> - [ ] 2.4 Dynamic failure detection and recovery in the cloud
-> - [ ] 2.5 Enhancing the scalability of web applications in the cloud
-> - [ ] 2.6 Reference architecture for running a web application in multiple regions
+## 3. Principle 2: Define your workload's required availability
+> - [ ] 3.1 Load balancing and high availability in the cloud
+> - [ ] 3.2 Running Linux VMs in multiple regions for high availability
+> - [ ] 3.3 Storage redundancy through replication
+> - [ ] 3.4 Dynamic failure detection and recovery in the cloud
+> - [ ] 3.5 Enhancing the scalability of web applications in the cloud
+> - [ ] 3.6 Reference architecture for running a web application in multiple regions
 
 __Ensuring high availability__ is a complex and risky task in a datacenter, supported by a variety of techniques and tools. But with geographically dispersed __Availability Zones__, cloud computing can help to ensure high availability.
 
 In order to deploy reliable VMS, Azure uses __availability sets__, logical groupings that ensure that VMs are distributed across multiple hardware clusters, isolated from each other. Azure assigns every VM in an availability set to a __fault domain__, a set of VMs that share a common power source and network switch, and an __update domain__. Availability sets are created before VM deployment.
 
-### Load balancing and high availability in the cloud
+#### 3.1 Load balancing and high availability in the cloud
 Load balancing__ refers to the process of spreading incoming requests across multiple VMs. Load balancers come in two types:
   - __Application__ load balancers, which sit between incoming application traffic and computing resources. They monitor targets and route traffic to the healthy ones.
   - __Network__ load balancers work at the Network OSI layer
 
-## Principle 3: Monitor your applications running on Linux across the entire stack
-> - [ ] 3.1 Application performance monitoring (APM) and the cloud
-> - [ ] 3.2 Challenges of monitoring hybrid architectures
-> - [ ] 3.3 Monitoring Linux VMs and containers in the cloud
-> - [ ] 3.4 Cloud performance monitoring
-> - [ ] 3.5 Performance benchmarks
-> - [ ] 3.6 Getting a unified view of your infrastructure
-> - [ ] 3.7 Cloud-monitoring tools
-> - [ ] 3.8 The importance of a comprehensive monitoring solution
-> - [ ] 3.9 Best practices for cloud monitoring
+## 4. Principle 3: Monitor your applications running on Linux across the entire stack
+> - [x] 4.1 Application performance monitoring (APM) and the cloud
+> - [x] 4.2 Challenges of monitoring hybrid architectures
+> - [ ] 4.3 Monitoring Linux VMs and containers in the cloud
+> - [x] 4.4 Cloud performance monitoring
+> - [x] 4.5 Performance benchmarks
+> - [x] 4.6 Getting a unified view of your infrastructure
+> - [x] 4.7 Cloud-monitoring tools
+> - [x] 4.8 The importance of a comprehensive monitoring solution
+> - [x] 4.9 Best practices for cloud monitoring
+
+  - Application hosting services: __Azure App Service__, Google Compute Engine, Heroku
+
+#### 4.1 Application performance monitoring (APM) and the cloud
+- Serverless computing: __Azure Function__ and __AWS Lambda__
+
+#### 4.2 Challenges of monitoring hybrid architectures
+Monitoring issues typical to cloud and hybrid cloud architectures:
+  - _Multiple tools_
+  - _Lack of visibility into resource utilization_
+  - _Dynamic resource provision_
+
+#### 4.3 Monitoring Linux VMs and containers in the cloud
+> - [ ] Log analysis
+> - [ ] Linux server monitoring
+> - [ ] Monitoring and tracking API calls
+
+#### 4.4 Cloud performance monitoring
+Tools for performance monitor vary by cloud provider
+
+#### 4.5 Performance benchmarks
+Key Linux server metrics to monitor
+  - _CPU usage_: The key statistic is the percentage of time the CPU is in use. This has to be analyzed for what portion of usage is attributed to user applications (__CPU user time__) vs. the system (__CPU privileged time__)
+  - _Disk I/O_: If I/O writes are high, causing bottlenecks, a new instance type may be needed from the cloud provider.
+  - _Memory utilization_: Excessive paging events indicate more RAM should be provisioned.
+  - _Network performance_
 
 
-## Principle 4: Ensure your Linux VMs are secure and backed up
-> - [ ] 4.1 Security in the cloud
-> - [ ] 4.2 A shared responsibility security model in the cloud
-> - [ ] 4.3 Security concerns due to shared IT resources
-> - [ ] 4.4 Cloud security tools and mechanisms that contribute to better security
-> - [ ] 4.5 Disaster recovery in the cloud
-> - [ ] 4.6 Traditional DR strategies versus cloud-based strategies
-> - [ ] 4.7 How the cloud shifts the DR tradeoffs
+#### 4.6 Getting a unified view of your infrastructure
+Although cloud providers provide proprietary tools for monitoring cloud infrastructure, third-party tools like __Datadog__ can be integrated with Azure and provide additional metrics not available from first-party tools. They can even be linked to other third-party tools like __PagerDuty__ and __Slack__ to get automatic alerts.
+
+#### 4.7 Cloud-monitoring tools
+Cloud monitoring is increasingly being offered as a fully managed SaaS by independent providers.
+  - Amazon CloudWatch
+  - Google Stackdriver
+  - Microsoft Azure Monitor
+
+#### 4.8 The importance of a comprehensive monitoring solution
+Effective monitoring solution must help you:
+  - Understand detailed operation of infrastructure components
+  - Understand how application components perform
+  - Enhance availability of applications with proactive notifications about critical issues
+  - Integrate with other tools or fix problems discovered by monitoring
+
+#### 4.9 Best practices for cloud monitoring
+  - Identify the right metrics
+  - Support __autoscaling__: automatic adjustment of computing capacity to meet changes in cloud workloads
+  - Monitor the user experience
+  - Gather uniform metrics
+  - Monitor cloud service usage and costs
+
+## 5. Principle 4: Ensure your Linux VMs are secure and backed up
+> - [ ] 5.1 Security in the cloud
+> - [ ] 5.2 A shared responsibility security model in the cloud
+> - [ ] 5.3 Security concerns due to shared IT resources
+> - [ ] 5.4 Cloud security tools and mechanisms that contribute to better security
+> - [ ] 5.5 Disaster recovery in the cloud
+> - [ ] 5.6 Traditional DR strategies versus cloud-based strategies
+> - [ ] 5.7 How the cloud shifts the DR tradeoffs
 
 
-## Principle 5: Govern your cloud environment 
-> - [ ] 5.1 Governance and compliance in a cloud environment: the issues
-> - [ ] 5.2 The fundamental pillars of a secure and compliant cloud service
-> - [ ] 5.3 Strategies and tools for enhanced governance in the cloud
-> - [ ] 5.4 Trusting the Cloud Service Provider
-> - [ ] 5.5 Summary
+## 6. Principle 5: Govern your cloud environment 
+> - [ ] 6.1 Governance and compliance in a cloud environment: the issues
+> - [ ] 6.2 The fundamental pillars of a secure and compliant cloud service
+> - [ ] 6.3 Strategies and tools for enhanced governance in the cloud
+> - [ ] 6.4 Trusting the Cloud Service Provider
+> - [ ] 6.5 Summary
 
