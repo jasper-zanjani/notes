@@ -22,3 +22,7 @@ Scale up          | increase __instance size__ of existing resources: __disrupti
   - _Microsoft Azure Concepts_ [Udemy](https://www.udemy.com/linux-academy-microsoft-azure-concepts/)
 
  
+## Types of cloud services
+  - Infrastructure as a Service (IaaS "eye-az")
+  - Platform as a Service (PaaS "paz")
+  - Software as a Service (SaaS)

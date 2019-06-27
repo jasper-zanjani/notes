@@ -1,8 +1,9 @@
 # Linux filesystems
 
-## Permissions
-[NetworkWorld](https://www.networkworld.com/article/3397790/a-deeper-dive-into-linux-permissions.html#tk.rss_linux)
+#### Permissions
+  - "A deeper dive into Linux permissions". [NetworkWorld](https://www.networkworld.com/article/3397790/a-deeper-dive-into-linux-permissions.html#tk.rss_linux)
 
-## Filesystem Hierarchy Standard (FHS)
-[linuxjournal.com](https://www.linuxjournal.com/content/filesystem-hierarchy-standard)
+#### Filesystem Hierarchy Standard (FHS)
+  - "Filesystem Hierarchy Standard". [linuxjournal.com](https://www.linuxjournal.com/content/filesystem-hierarchy-standard)
+  - "Linux Directory Structure Explained for Beginners". [linuxhandbook.com](https://linuxhandbook.com/linux-directory-structure/)
 

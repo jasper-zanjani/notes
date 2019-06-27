@@ -27,3 +27,6 @@ Update domains can be set from 1-20, and affect how software updates from Micros
 ## Managing VMs
   - Adding data disks
   - Adding network interfaces
+
+
+
