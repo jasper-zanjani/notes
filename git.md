@@ -52,3 +52,17 @@ git branch test         # create a new branch with current HEAD
 git reset --hard HEAD~  # reset master to before last commit 
 git checkout test       # continue on new branch
 ```
+
+#### Line endings
+Git will automatically append CRLF endings on Windows. This setting can be displayed with the following command:
+```bash
+git config core.autocrlf
+```
+
+In order to disable this, adjust the setting
+```bash
+git config core.autocrlf false
+```
+
+## Sources
+  - "Dealing with line endings". [GitHub Help](https://help.github.com/en/articles/dealing-with-line-endings)
