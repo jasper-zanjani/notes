@@ -17,4 +17,4 @@ watch free -h
 
 
 ## Sources
-  - [linuxhandbook.com](https://linuxhandbook.com/free-command/)
+  - "Free Command in Linux Explained With Examples". [linuxhandbook.com](https://linuxhandbook.com/free-command/)
