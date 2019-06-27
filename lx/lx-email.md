@@ -29,7 +29,7 @@ Installable client program
 
 Syntax | Effect or description
 :---   | :---
-`ssmtp -au recipient -ap pw user@host < msg` | send <msg> to <recipient> from <user> at <host> using password <pw>
+`ssmtp -au recipient -ap pw user@host < msg` | send {msg} to {recipient} from {user} at {host} using password {pw}
 
 #### Configuration
 File | Description
