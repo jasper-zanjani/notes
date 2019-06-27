@@ -64,5 +64,21 @@ In order to disable this, adjust the setting
 git config core.autocrlf false
 ```
 
+#### Squashing commits
+Sometimes many commits are made to resolve a single issue. These should be "squashed". To squash the last 4 commits:
+
+```bash
+git rebase -i HEAD~4
+```
+
+This will open a text editor where you will have to select what to do with each of the 4 commits. Most recent commits are at the bottom, and at least the top (oldest) commit has to remain "pick" in order to squash the others.
+
+The repo will have to be force-pushed once these changes have been made.
+
+```bash
+git push --force
+```
+
 ## Sources
   - "Dealing with line endings". [GitHub Help](https://help.github.com/en/articles/dealing-with-line-endings)
+  - "Squash All Commits Related to a Single Issue into a Single Commit". [GitHub](https://github.com/todotxt/todo.txt-android/wiki/Squash-All-Commits-Related-to-a-Single-Issue-into-a-Single-Commit)
