@@ -35,6 +35,11 @@ Kubernetes is visualized as a system built from layers, with each higher layer a
 ### Node server components
   - __kubelet__, main contact point for each node with the cluster group
 
+### History
+Kubernetes was first announced by Google in mid-2014. It coalesced from a fusion between developers working on Google's Compute Engine and Google's __Borg__, a cluster manager that runs hundreds of thousands of jobs at Google, representing the infrastructure powering the entire Google enterprise. By that time, Amazon had established a market advantage and the developers decided to change their approach by introducing a disruptive technology to drive the relevance of the Compute platform they had built. They created a ubiquitous abstraction that could run better than anyone else.
+
+At the time, Google had been trying to engage the Linux kernel team and trying to overcome their skepticism. Internally, the project was framed as offering "Borg as a Service", although there were concerns that Google was in danger of revealing too much of its secret sauce.
+
 ## Sources
   - "Microsoft Azure for Beginners: Introduction - Scott Duffy [YouTube](https://www.youtube.com/watch?v=3gnLwSI4d9E)
   - "AZ-103 Microsoft Azure Administrator" [microsoft.com](https://www.microsoft.com/en-us/learning/exam-az-103.aspx)
@@ -45,3 +50,4 @@ Kubernetes is visualized as a system built from layers, with each higher layer a
   - [linuxcontainers.org](https://linuxcontainers.org/)
   - "Beginner's Guide to Containers and Orchestration". [Udemy](https://www.udemy.com/linux-academy-beginners-guide-to-containers-and-orchestration/)
   - "A Practical Introduction to Container Terminology". [developers.redhat.com](https://developers.redhat.com/blog/2018/02/22/container-terminology-practical-introduction/)
+  - "Kubernetes Co-Founders On K8’s Past, Present and Future (It Ain’t All Pretty)". [thenewstack.io](https://thenewstack.io/learning-from-the-success-of-kubernetes/)
