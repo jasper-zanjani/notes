@@ -75,6 +75,7 @@ Syntax  | Effect
 
 Syntax  | Effect
 :--- | :---
+`Install-Module -Name Az -AllowClobber` | Install the __Az__ module
 `Import-Module SmbShare`|import module {SmbShare}
 
 ## Help commands
@@ -212,6 +213,7 @@ Invoke-WebRequest -Uri http://microsoft.com -UserAgent ([Microsoft.PowerShell.Co
 ## Azure
 
 :---  | :---
+`Install-Module -Name Az -AllowClobber` | Install the __Az__ module
 
 ## Other commands
 
@@ -229,3 +231,4 @@ Syntax  | Effect
   - "How to use Wget to download web-based packages on Windows." [TechRepublic](https://www.techrepublic.com/article/how-to-use-wget-to-download-web-based-packages-on-windows/#ftag=RSS56d97e7)
   - "Check PowerShell Version". [powertheshell.com](http://www.powertheshell.com/topic/learnpowershell/firststeps/psversion/)
   - "Enable-PSRemoting". [Microsoft Docs](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/enable-psremoting?view=powershell-6)
+  - "Azure Az Module for Windows PowerShell, Core, and Cloud Shell Replaces Azure RM". [Petri](https://www.petri.com/azure-az-module-for-windows-powershell-core-and-cloud-shell-replaces-azurerm)
