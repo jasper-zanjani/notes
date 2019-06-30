@@ -124,10 +124,15 @@ Syntax  | Effect
 ## Active Directory
 ### ADAccount
 
-Syntax  | Effect
-:--- | :---
-`Search-ADAccount -LockedOut`|display locked out accounts
-`Unlock-ADAccount -identity wbryan`|unlock account
+#### Display locked out accounts
+```powershell
+Search-ADAccount -LockedOut`
+```
+
+#### Unlock account
+```powershell
+Unlock-ADAccount -identity wbryan
+```
 
 ### ADAccountPassword
 
@@ -137,38 +142,113 @@ Syntax  | Effect
 
 ### ADOrganizationalUnit
 
-Anki | Syntax  | Effect
-:---  | :--- | :---
-`New-ADOrganizationalUnit -Name GNV -Credential officeprodemoco\joey`|Create a new Organizational Unit
-`Set-ADOrganizationalUnit -Name GNV -ProtectedFromAccidentalDeletion $False -Identity "OU=GNV, DC=officeprodemoco, DC=onmicrosoft, DC=com" `| remove accidental deletion protection
-`Remove-ADOrganizationalUnit -Identity "OU=GNV, DC=officeprodemoco, DC=onmicrosoft, DC=com" -confirm:$False`|remove an OU
-`Get-ADOrganizationalUnit -filter * \| FT`|display OUs, confirming deletion has taken place
+#### Create a new Organizational Unit
+```powershell
+New-ADOrganizationalUnit -Name GNV -Credential officeprodemoco\joey
+```
 
-### ADUser
+#### Remove accidental deletion protection
+```powershell
+Set-ADOrganizationalUnit -Name GNV -ProtectedFromAccidentalDeletion $False -Identity "OU=GNV, DC=officeprodemoco, DC=onmicrosoft, DC=com" 
+```
 
-Anki | Syntax  | Effect
-:---  | :--- | :---
-`Get-ADUser`|
-`Get-ADUser -Identity mike` | display information for Active Directory user {mike}
-`Get-ADUser -Filter * -SearchBase "OU=RoadCrew,OU=office365,DC=officeprodemoco,DC=com,DC=onmicrosoft"  -Properties ProtectedFromAccidentalDeletion`|Display Protection from Accidental Deletion
-`Get-ADUser -Filter * -SearchBase "OU=RoadCrew,OU=office365,DC=officeprodemoco,DC=com" \| Set-ADObject -ProtectedFromAccidentalDeletion $true`|protect users in a specified OU from accidental deletion
-`New-ADUser -Name "Walter Mitty"`|create a new user (disabled by default)
-`New-ADUser -Name "Marty McFly" -AccountPassword (ConvertTo-SecureString "P@ssw0rd!" -AsPlainText -Force) -Enabled $true -GivenName "Martin" -Surname "McFly"`|create a new user
-`Get-ADUser "Marty McFly" \| Select-Object Name`|display information on user, confirming successful creation
-`import-csv users.csv \| foreach {New-ADUser -SamAccountName $_.SAM -GivenName $_.Last -DisplayName $_.DisplayName -Name $_.Name -Description $_.Description -AccountPassword (ConvertToSecureString $_.Password -AsPlainText -Force) -Enabled $True}`|add a CSV full of users
+#### Remove an OU
+```powershell
+Remove-ADOrganizationalUnit -Identity "OU=GNV, DC=officeprodemoco, DC=onmicrosoft, DC=com" -confirm:$False
+```
+
+#### Display OUs, confirming deletion has taken place
+```powershell
+Get-ADOrganizationalUnit -filter * | FT
+```
+
+### Get-ADUser
+#### Display information for Active Directory user {mike}
+```powershell
+Get-ADUser -Identity mike
+```
+
+#### Display Protection from Accidental Deletion
+```powershell
+Get-ADUser -Filter * -SearchBase "OU=RoadCrew,OU=office365,DC=officeprodemoco,DC=com,DC=onmicrosoft"  -Properties ProtectedFromAccidentalDeletion
+```
+
+#### Protect users in a specified OU from accidental deletion
+```powershell
+Get-ADUser -Filter * -SearchBase "OU=RoadCrew,OU=office365,DC=officeprodemoco,DC=com" \| Set-ADObject -ProtectedFromAccidentalDeletion $true
+```
+
+### New-ADUser
+#### Create a new user (disabled by default)
+```powershell
+New-ADUser -Name "Walter Mitty"
+```
+
+#### Create a new user
+```powershell
+New-ADUser -Name "Marty McFly" -AccountPassword (ConvertTo-SecureString "P@ssw0rd!" -AsPlainText -Force) -Enabled $true -GivenName "Martin" -Surname "McFly"
+```
+
+#### Display information on user, confirming successful creation
+```powershell
+Get-ADUser "Marty McFly" \| Select-Object Name
+```
+
+#### Add a CSV full of users
+```powershell
+import-csv users.csv \| foreach {New-ADUser -SamAccountName $_.SAM -GivenName $_.Last -DisplayName $_.DisplayName -Name $_.Name -Description $_.Description -AccountPassword (ConvertToSecureString $_.Password -AsPlainText -Force) -Enabled $True}`
+```
 
 
-Anki | Syntax  | Effect
-:---  | :--- | :---
-`Get-IPAddress`|display IP configuration
-`winrm quickconfig`, `winrm qc`|configure the machine to accept WS-Management requests from other machines
-`Set-NetFirewallRule -name COMPlusNetworkAccess-DCOM-In -Enabled True`|set firewall rule for COM+ Network Access (DCOM-In)
-`Set-NetFirewallRule -name RemoteEventLogSvc-In-TCP -Enabled True`|set firewall rule for Remote Event Log Management (NP-In)
-`Set-NetFirewallRule -name RemoteEventLogSvc-NP-In-TCP -Enabled True`|set firewall rule for Remote Event Log Management (RPC)
-`Set-NetFirewallRule -name RemoteEventLogSvc-RPCSS-TCP -Enabled True`|set firewall rule for Remote Event Log Management (RPC-EPMAP)
-`winrm enumerate winrm/config/listener`|list all WinRM listeners  
-`winrm get winrm/config`|display WinRM configuration
-`Install-WindowsFeature -Name RSAT-ADDS -IncludeAllSubFeature`|Install Remote Server Adminstration Tools for PowerShell
+## Network
+#### Display IP configuration
+
+```powershell
+Get-IPAddress
+```
+
+#### Configure the machine to accept WS-Management requests from other machines
+
+```powershell
+winrm quickconfig
+winrm qc
+```
+
+### NetFirewallRule
+#### Set firewall rule for COM+ Network Access (DCOM-In)
+```powershell
+Set-NetFirewallRule -name COMPlusNetworkAccess-DCOM-In -Enabled True
+```
+
+#### Set firewall rule for Remote Event Log Management (NP-In)
+```powershell
+Set-NetFirewallRule -name RemoteEventLogSvc-In-TCP -Enabled True
+```
+
+#### Set firewall rule for Remote Event Log Management (RPC)
+```powershell
+Set-NetFirewallRule -name RemoteEventLogSvc-NP-In-TCP -Enabled True
+```
+
+#### Set firewall rule for Remote Event Log Management (RPC-EPMAP)
+```powershell
+Set-NetFirewallRule -name RemoteEventLogSvc-RPCSS-TCP -Enabled True
+```
+
+#### List all WinRM listeners  
+```powershell
+winrm enumerate winrm/config/listener
+```
+
+#### Display WinRM configuration
+```powershell
+winrm get winrm/config
+```
+
+#### Install Remote Server Adminstration Tools for PowerShell
+```powershell
+Install-WindowsFeature -Name RSAT-ADDS -IncludeAllSubFeature`
+```
 
 
 ## Web requests 
@@ -211,12 +291,12 @@ Invoke-WebRequest -Uri http://microsoft.com -UserAgent ([Microsoft.PowerShell.Co
 ```
 
 ## Azure
-
-:---  | :---
-`Install-Module -Name Az -AllowClobber` | Install the __Az__ module
+#### Install the __Az__ module
+```powershell
+Install-Module -Name Az -AllowClobber
+```
 
 ## Other commands
-
 
 ### PSReadlineOption
 
