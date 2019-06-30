@@ -1,20 +1,7 @@
 # Five Principles for Deploying and Managing Linux in the Cloud (With Azure)
 > Source: [md](https://docs.microsoft.com/en-us/learn/modules/principles-cloud-computing/2-what-is-cloud-computing)
-> - [x] 1. Introduction
-> - [x] 2. Principle 1: Understand which Linux VMs are adaptable to the cloud
-> - [x] 3. Principle 2: Define your workload's required availability
-> - [x] 4. Principle 3: Monitor your applications running on Linux across the entire stack
-> - [ ] 5. Principle 4: Ensure your Linux VMs are secure and backed up
-> - [ ] 6. Principle 5: Govern your cloud environment
 
 ## 1. Introduction
-> - [x] 1.1 How the cloud is being used
-> - [x] 1.2 Benefits of cloud computing
-> - [x] 1.3 Types of cloud services: IaaS, PaaS, and SaaS
-> - [x] 1.4 Types of cloud deployments
-> - [x] 1.5 Cloud-enabling technology
-> - [x] 1.6 Cloud computing architecture
-> - [x] 1.7 Running Linux in the Cloud: the role of containers
 
 #### 1.2 Benefits of cloud computing
   - _Agility_: quickly implement a cloud ienvironment (vice setting up hardware)
@@ -51,12 +38,6 @@ Use cases for containers:
   - CI/CD
 
 ## Principle 1: Understand which Linux VMs are adaptable to the cloud
-> - [x] 2.1 The Cloud RoadMap
-> - [x] 2.2 Cloud readiness assessments
-> - [x] 2.3 Essentials of a cloud-readiness assessment
-> - [x] 2.4 Cloud migration strategies
-> - [x] 2.5 Cloud migration tasks
-> - [x] 2.6 The three key phases of cloud migration
 
 #### 2.1 The Cloud RoadMap
 Concerns addressed by a well-built cloud adoption roadmap
@@ -101,9 +82,9 @@ Performs dependency mapping and supports the successful migration of multitier a
   - _Estimates monthly costs_
 
 #### 2.6 The three key phases of cloud migration
-> - [x] Discovery phase
-> - [x] Migration phase
-> - [x] Optimization phase
+- Discovery phase
+- Migration phase
+- Optimization phase
 
 ##### Discovery
 Key questions:
@@ -137,12 +118,6 @@ Crucial elements:
   - Cost optimization
 
 ## 3. Principle 2: Define your workload's required availability
-> - [ ] 3.1 Load balancing and high availability in the cloud
-> - [ ] 3.2 Running Linux VMs in multiple regions for high availability
-> - [ ] 3.3 Storage redundancy through replication
-> - [ ] 3.4 Dynamic failure detection and recovery in the cloud
-> - [ ] 3.5 Enhancing the scalability of web applications in the cloud
-> - [ ] 3.6 Reference architecture for running a web application in multiple regions
 
 __Ensuring high availability__ is a complex and risky task in a datacenter, supported by a variety of techniques and tools. But with geographically dispersed __Availability Zones__, cloud computing can help to ensure high availability.
 
@@ -154,17 +129,7 @@ Load balancing__ refers to the process of spreading incoming requests across mul
   - __Network__ load balancers work at the Network OSI layer
 
 ## 4. Principle 3: Monitor your applications running on Linux across the entire stack
-> - [x] 4.1 Application performance monitoring (APM) and the cloud
-> - [x] 4.2 Challenges of monitoring hybrid architectures
-> - [x] 4.3 Monitoring Linux VMs and containers in the cloud
-> - [x] 4.4 Cloud performance monitoring
-> - [x] 4.5 Performance benchmarks
-> - [x] 4.6 Getting a unified view of your infrastructure
-> - [x] 4.7 Cloud-monitoring tools
-> - [x] 4.8 The importance of a comprehensive monitoring solution
-> - [x] 4.9 Best practices for cloud monitoring
-
-  - Application hosting services: __Azure App Service__, Google Compute Engine, Heroku
+- Application hosting services: __Azure App Service__, Google Compute Engine, Heroku
 
 #### 4.1 Application performance monitoring (APM) and the cloud
 - Serverless computing: __Azure Function__ and __AWS Lambda__
@@ -215,64 +180,90 @@ Effective monitoring solution must help you:
   - Monitor cloud service usage and costs
 
 ## 5. Principle 4: Ensure your Linux VMs are secure and backed up
-> - [x] 5.1 Security in the cloud
-> - [x] 5.2 A shared responsibility security model in the cloud
-> - [x] 5.3 Security concerns due to shared IT resources
-> - [ ] 5.4 Cloud security tools and mechanisms that contribute to better security
-> - [ ] 5.5 Disaster recovery in the cloud
-> - [ ] 5.6 Traditional DR strategies versus cloud-based strategies
-> - [ ] 5.7 How the cloud shifts the DR tradeoffs
 
-Cloud provider is responsible for security of the overall cloud environment. The customer is responsible for security inside that environment.
+The enhanced security afforded by cloud providers is one of their major draws. The cloud provider is responsible for security of the cloud platform (security __of__ the cloud). The customer is responsible for security of the environment (security __in__ the cloud).
 
-#### 5.5 Disaster recovery in the cloud
+Tools and mechanisms that contribute to better security include:
+  - _Strong network security_: cloud providers offer built-in firewalls (security groups) and encryption of data transmitted to/from clouds is common
+  - _Configuration Management (CM) tools_ like __Chef__ and __Puppet__ facilitate creation of preconfigured VMs and manage resources according to organizational standards.
+  - _Access control_: centralized __IAM__ to manage users, security credentails, and authorization policies
+  - _Virtual Private Clouds (VPC)_
 
+__Elasticity__ and __virtualization__, enabling on-demand provisioning of computing power, are the two features of cloud computing that allow it to offer superior __Disaster Recovery (DR)__ solutions, reducing __Recovery time objective (RTO)__ and __Recovery point objective (RPO)__.
 
+There are 3 types of DR solutions. But the prevalence of the cloud has led organizations to consider cloud storage as an alternative to these expensive measures.
+  - _Real-time data replication_: A failover is configured for critical applications, such that a mirror of the production system is on standby at the DR site ready to continue operations on little to no notice. 
+  - _Off-site storage of tapes_
+  - _Backup target appliance in the DR site_
+ 
+Compared to traditional physical DR measures, the cloud offers solutions that are _simpler_, _cheaper_, and _quicker_.
 
 ## 6. Principle 5: Govern your cloud environment 
-> - [ ] 6.1 Governance and compliance in a cloud environment: the issues
-> - [ ] 6.2 The fundamental pillars of a secure and compliant cloud service
-> - [ ] 6.3 Strategies and tools for enhanced governance in the cloud
-> - [ ] 6.4 Trusting the Cloud Service Provider
-> - [ ] 6.5 Summary
+
+Governance in the cloud is affected the following challenges:
+  - Customer has less control of governance
+  - Customer shares resources with, but has no insight into the control exercised by, provider
+  - International and national regulations on data storage of nationals
+  - Data disclosures to governments
+  - Data moves around within cloud
+  - Varying IAM controls
+  - Accountable encryption key management, required by some government and industrial certifying bodies, is facilitated by tools provided by some cloud providers
+
+Pillars of secure and compliant cloud service
+  - Security
+  - Compliance
+  - Privacy and control
+  - Transparency
+
+Strategies and tools for enhanced governance in the cloud
+  - Security policies
+    - _RBAC_: fine-grained access management technique, ensuring users are granted only specific, approved permissions
+    - _Network controls_: VPNs and Network security groups (virtual firewalls)
+    - _Account hierarchies_: Limit the use of cloud services within the customer's business
+  - Continuous security assessments in the cloud are essential, and tools like __Amazon Inspector__ automate them, improving security.
+  - Geo-specific services, where operations are confined to specific jurisdictional boundaries, are required by laws and regulations
+
 
 ## Glossary
+
 Term                                    | Definition | Source
----                                     | ---        | ---
+:---                                    | :---       | ---
 Amazon CloudWatch                       |            | 
 Autoscaling                             | automatic adjustment of computing capacity to meet changes in cloud workloads | 5PLC: 64
 Availability Zones                      | term used in AWS and Azure to refer to redundant, geographically dispersed computing resources | 5PLC: 19
 Availability set                        | Azure capability that groups VMs to ensure they are distributed across multiple hardware clusters, isolated from each other | 5PLC: 42
-cloud provisioning                      | computing model that remotely provisions scalable and measured computing resources and services | [5PLC](file-lx-azure.md): 9
-cloud storage device                    | mechanisms which implement the interfaces to __object storage__, accessed via REST or web services | 5PLC: 17
-Draft                                   | Microsoft tool that makes it easy to develop container-based applications and to deploy them to Kubernetes clusters | 5PLC: 24
-dynamic scalability                     | ability of a cloud provider to transparently scale computing resources in response to the runtime conditions of a user's environment | 5PLC: 19
-elasciticy                              | cf. __dynamic scalability__
-extract, transform, and load (ETL)      | type of job used with containers | 5PLC: 20
-Helm                                    | open-source packaging tool used to install, deploy, and manage containers in a Kubernetes cluster, manage Kubernetes charts (packages of preconfigured Kubernetes resources) | 5PLC: 23
-hybrid cloud                            | two or more cloud deployment models, where private and public clouds share data and applications and data flows freely between them | [5PLC](file-lx-azure.md): 14 
+Business Continuity and Disaster Recovery (BCDR) |    | 5PLC: 38
+Cloud provisioning                      | computing model that remotely provisions scalable and measured computing resources and services | 5PLC: 9
+Cloud storage device                    | mechanisms which implement the interfaces to __object storage__, accessed via REST or web services | 5PLC: 17
+Configuration Management (CM)           | tools that facilitate automation of infrastructure tasks or track changes in configurations made by users to cloud resources | 5PLC: 70
+Disaster Recovery (DR)                  | preparing for and recovering from an interruption in operations | 5PLC: 70
+Dynamic scalability                     | ability of a cloud provider to transparently scale computing resources in response to the runtime conditions of a user's environment | 5PLC: 19
+Elasciticy                              | cf. __dynamic scalability__
+Extract, Transform, and Load (ETL)      | type of job used with containers | 5PLC: 20
+Hybrid cloud                            | two or more cloud deployment models, where private and public clouds share data and applications and data flows freely between them | 5PLC: 14 
 Identity and Access Management (IAM)    | 
-Infrastructure as a Service (IaaS)      | cloud provider supplies the IT infrastructure (servers, strorage, and networks) which is paid for based on usage, providing the client with a high degree of control over the cloud environment | [5PLC](file-lx-azure.md): 12
-load balancing                          | manner by which a cloud provider manages online traffic by distributing workloads across many servers and computing resources | 5PLC: 19
+Infrastructure as a Service (IaaS)      | cloud provider supplies the IT infrastructure (servers, strorage, and networks) which is paid for based on usage, providing the client with a high degree of control over the cloud environment | 5PLC: 12
+Load balancing                          | manner by which a cloud provider manages online traffic by distributing workloads across many servers and computing resources | 5PLC: 19
 Microservices                           | small, self-contained applications that perform single tasks or run single processes; spreading incoming requests across multiple VMs; two types | 5PLC: 20, 43
-object storage                          | various types of resources are stored as web resources | 5PLC: 17
-Platform as a Service (PaaS)            | computing model in which the cloud provider provisions and manages all the computing infrastructure (servers, networks, and databases), providing a ready-to-use computing environment | [5PLC](file-lx-azure.md): 13
-public cloud                            | cloud accessed over the public internet, run by a third-party cloud provider, such as Azure, AWS, or GCP | [5PLC](file-lx-azure.md): 14 
-private cloud                           | cloud run on an on-site datacenter, or hosted by a third-party service but owned by the client itself | [5PLC](file-lx-azure.md): 14 
-resource                                | physical or virtual server, software programs, services, storage, or network devices | [5PLC](file-lx-azure.md): 9
-resource replication                    | creation of multiple instances of the same computing resource | 5PLC: 17
-resource pooling                        | method by which a cloud provider can provide commoditized computing resources, whereby a large amount of computing resources services many clients | 5PLC: 18
-SOAP                                    | messaging format relied upon for web services | [5PLC](file-lx-azure.md): 17 
-Software as a Service (SaaS)            | cloud provider delivers software applications on demand over the Internet, managing not only the infrastructure but also the software applications themselves | [5PLC](file-lx-azure.md): 13
-Universal Description, Discovery, and Integration (UDDI) | standard for regulating service registries where WSDL definitions can be publish | [5PLC](file-lx-azure.md): 17 
+Object storage                          | various types of resources are stored as web resources | 5PLC: 17
+Platform as a Service (PaaS)            | computing model in which the cloud provider provisions and manages all the computing infrastructure (servers, networks, and databases), providing a ready-to-use computing environment | 5PLC: 13
+Public cloud                            | cloud accessed over the public internet, run by a third-party cloud provider, such as Azure, AWS, or GCP | 5PLC: 14 
+Private cloud                           | cloud run on an on-site datacenter, or hosted by a third-party service but owned by the client itself | 5PLC: 14 
+Recovery point objective (RPO)          | acceptable amount of data loss, as measured by time | 5PLC: 71
+Recovery time objective (RTO)           | time it takes to restore a business process to established operational service levels during disaster recovery | 5PLC: 71
+Resource                                | physical or virtual server, software programs, services, storage, or network devices | 5PLC: 9
+Resource replication                    | creation of multiple instances of the same computing resource | 5PLC: 17
+Resource pooling                        | method by which a cloud provider can provide commoditized computing resources, whereby a large amount of computing resources services many clients | 5PLC: 18
+SOAP                                    | messaging format relied upon for web services | 5PLC: 17 
+Software as a Service (SaaS)            | cloud provider delivers software applications on demand over the Internet, managing not only the infrastructure but also the software applications themselves | 5PLC: 13
+Universal Description, Discovery, and Integration (UDDI) | standard for regulating service registries where WSDL definitions can be publish | 5PLC: 17 
 Virtual Machine Scale Set (VMSS)        | create and manage a group of identical load-balanced VMs, the number of which automatically increases or decreases
-Virtual Private Cloud (VPC)             | VPN-like service offered by Azure
-virtualization                          | process of converting a physical IT resource into (multiple) virtual resources | [5PLC](file-lx-azure.md): 15
+Virtual Private Cloud (VPC)             | allow cloud users to provision a logically isolated section of the broader cloud where they can launch their own resources in a private network, offered by both AWS and Azure | 5PLC: 70
+Virtualization                          | process of converting a physical IT resource into (multiple) virtual resources | 5PLC: 15
 Web Service Description Language (WSDL) | markup language used for API of a web service
 
 ## Products and features
-
-### Azure products and features
+### Microsoft products and features, including Azure
 
 Term                             | Definition | Source
 ---                              | ---        | ---
@@ -288,22 +279,25 @@ Azure Migrate Service            | tool explicitly development for supporting cl
 Azure Monitor                    |             | 
 Azure Security Center            | scans Azure cloud resources for vulnerabilities, such as web apps not protected by __WAF__
 Azure Service Fabric             | like __Azure Container Service__, can be used to develop microservices and orchestrate containers on Linux | 5PLC: 23
-Azure Site Recovery              | tool used to move Azure-compatible Linux VMs of any distribution | 5PLC: 38
+Azure Site Recovery              | cloud-based recovery solution that can also be used to move Azure-compatible Linux VMs of any distribution | 5PLC: 38, 74
 Azure Virtual Machine Scale Sets (VMSSs) |             | 
-
-### Other Microsoft products and features
-
-Term                             | Definition | Source
----                              | ---        | ---
-Brigade                          | event-driven scripting tool for Kubernetes offered by Microsoft
+Azure VNets                      | cloud-based VPN service | 5PLC: 85
+Brigade             | event-driven scripting tool for Kubernetes offered by Microsoft
+Draft               | Microsoft tool that makes it easy to develop container-based applications and to deploy them to Kubernetes clusters | 5PLC: 24
 Microsoft Web Application Firewall (WAF) | feature of __Azure Application Gateway__
 
 ### Third-party products and features
 
-Term                             | Definition | Source
----                              | ---        | ---
-CloudEndure                      | third-party tool used for migrating on-premise VMs to Azure | 5PLC: 39
-Google Stackdriver               |             | 
-Velostrata                       | third-party tool used for migrating on-premise VMs to Azure quickly, by replicating only the VM's compute runtime and replicating the VM's storage slowly | 5PLC: 39
-Oracle Data Guard                | high-availability system
+Term                | Definition | Source
+---                 | ---        | ---
+Amazon Inspector    | automated security assessment service | 5PLC: 85
+Amazon Virtual Private Cloud  | cloud-based VPN service | 5PLC: 85
+AWS Fargate         | cloud-based container service | 5PLC: 21
+Chef                | configuration management tool | 5PLC: 70
+CloudEndure         | third-party tool used for migrating on-premise VMs to Azure | 5PLC: 39
+Google Stackdriver  |             | 
+Helm                | open-source packaging tool used to install, deploy, and manage containers in a Kubernetes cluster, manage Kubernetes charts (packages of preconfigured Kubernetes resources) | 5PLC: 23
+Puppet              | configuration management tool | 5PLC: 70
+Velostrata          | third-party tool used for migrating on-premise VMs to Azure quickly, by replicating only the VM's compute runtime and replicating the VM's storage slowly | 5PLC: 39
+Oracle Data Guard   | high-availability system
 Oracle Real Application Clusters | high-availability system for databases
