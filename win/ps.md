@@ -1,11 +1,39 @@
 # PowerShell
 
-## Common Tasks
+## Basic Syntax
+  - Backtick (\`) is 
 
-Syntax  | Effect 
-:---    | :---
-`Clear-Host`|clear screen
-`Set-Location`|change the present working directory (`cd` is an alias)
+## Basic syntax and common tasks
+
+Bash    | PowerShell | Notes
+:---    | :---       | :---
+\\      | \`         | used at the end of lines to allow multiline commands
+`alias` | `Get-Alias`, `gal`; `New-Alias`, `nal`
+`awk`   | 
+`cat`   | `Get-Content`, `cat`, `gc`, `type` 
+`cp`    | `Copy-Item`, `cp`, `cpi`, `copy`
+`cd`    | `Set-Location`, `cd`, `sl`, `chdir`
+`find`  | `Get-ChildItem -Recurse -File -Filter ...`
+`grep`  | `Where-Object`, `where`, `?` | See __Filters__ below
+`less`  | `Out-Host -Paging`, `oh -Paging`
+`man`   | `Get-Help`
+`more`  | rf. `less`
+`ls`    | `Get-ChildItem`, `dir`, `gci`, `ls` 
+`mkdir` | `New-Item`
+`pwd`   | `Get-Location`, `gl`, `pwd`
+`reset` | `Clear-Host`, `clear`, `cls` 
+`rm`    | `Remove-Item`, `rm`, `ri`, `rmdir`, `rd`, `del`
+`sed`   | `Select-Object`, `select` | See __Filters__ below
+`tail`  | `Get-Content -Tail`
+`touch` | `New-Item`
+
+#### Filters
+Filtering results can be done with 5 commands:
+  - `Where-Object` (aliased to `where` and `?`): the most commonly used such command
+  - `Select-Object` (aliased to `select`): used to specify specific columns of information to be displayed
+  - `Select-String` (aliased to `sls`)
+  - `ForEach-Object` (aliased to `foreach` and `%`)
+  - `Out-GridView`
 
 ## Display basic system information
 
@@ -37,6 +65,18 @@ Syntax  | Effect
 `New-PSDrive -Name scripts -PSProvider FileSystem -Root "C:\Scripts"`|map a directory to a drive
 `Remove-PSDrive -Name scripts`|remove a drive
 
+## Help commands
+
+Syntax  | Effect
+:--- | :---
+`Get-Help cmd`              | display help file for {cmd}
+`Get-Help cmd -Examples`    | display usage examples
+`Get-Help cmd -Detailed`    | display detailed help for a command
+`Get-Help cmd -Full`        | display entire help file for a command
+`Get-Help cmd -Online`      | navigate to online help page for a command
+`Get-Help cmd -ShowWindow`  | display help output in a window
+`Update-Help`               | download help files
+
 ## Output formatting
 
 Syntax  | Effect
@@ -59,7 +99,7 @@ Syntax  | Effect
 Syntax  | Effect
 :--- | :---
 `Get-Alias`                 | display aliases
-`Get-Alias -Definition -Get-ChildItem`|display items that point to `-Get-ChildItem`
+`Get-Alias -Definition Get-ChildItem`|display items that point to `Get-ChildItem`
 `New-Alias ip Get-NetIPAddress`|establish a new alias
 `Set-Alias ip Get-NetAdapter`|edit an existing alias
 `Export-Alias -Path alias.ps1 -As Script`|export session aliases to a ".ps1" file
@@ -78,17 +118,6 @@ Syntax  | Effect
 `Install-Module -Name Az -AllowClobber` | Install the __Az__ module
 `Import-Module SmbShare`|import module {SmbShare}
 
-## Help commands
-
-Syntax  | Effect
-:--- | :---
-`Get-Help cmd`              | display help file for {cmd}
-`Get-Help cmd -Examples`    | display usage examples
-`Get-Help cmd -Details`     | display detailed help for a command
-`Get-Help cmd -Full`        | display entire help file for a command
-`Get-Help cmd -Online`      | navigate to online help page for a command
-`Get-Help cmd -ShowWindow`  | display help output in a window
-`Update-Help`               | download help files
 
 ## Profiles
 
@@ -375,6 +404,24 @@ Install-Module  `
   -AllowClobber
 ```
 
+#### Create a VM
+Where `$cred` was set with the username and password needed for the admin account:
+```powershell
+$cred = Get-Credential
+```
+
+```powershell
+New-AzVM                                                              `
+  -ResourceGroupName    "RG"                                          `
+  -Name                 "VM"                                          `
+  -Location             "EastUS"                                      `
+  -VirtualNetworkName   "VN"                                          `
+  -SubnetName           "SN"                                          `
+  -SecurityGroupName    "SG"                                          `
+  -PublicIpAddressName  "IP"                                          `
+  -Credential           $cred
+```
+
 #### Connecting to a VM
 WinRM access must be enabled on the target VM
 ```powershell
@@ -423,3 +470,5 @@ Set-PSReadlineOption        `
   - "Enable-PSRemoting". [Microsoft Docs](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/enable-psremoting?view=powershell-6)
   - "Azure Az Module for Windows PowerShell, Core, and Cloud Shell Replaces Azure RM". [Petri](https://www.petri.com/azure-az-module-for-windows-powershell-core-and-cloud-shell-replaces-azurerm)
   - "Manage Azure IaaS virtual machines with Windows Admin Center". [Microsoft Docs](https://docs.microsoft.com/en-us/windows-server/manage/windows-admin-center/azure/manage-azure-vms)
+  - "PowerShell Basics: Filtering Objects". [ITPro Today](https://www.itprotoday.com/powershell/powershell-basics-filtering-objects). 2013/07/25.
+  - "PowerShell equivalents for common Linux/bash commands". [TheShellNut](https://mathieubuisson.github.io/powershell-linux-bash/). 2015/09/30.
