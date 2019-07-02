@@ -126,77 +126,130 @@ Syntax  | Effect
 
 #### Display locked out accounts
 ```powershell
-Search-ADAccount -LockedOut`
+Search-ADAccount `
+  -LockedOut`
 ```
 
 #### Unlock account
 ```powershell
-Unlock-ADAccount -identity wbryan
+Unlock-ADAccount `
+  -identity wbryan
 ```
 
 ### ADAccountPassword
 
-Syntax  | Effect
-:--- | :---
-`Set-ADAccountPassword -identity MBentley -Reset -NewPassword (ConvertTo-SecureString -AsPlainText "What is 255.255.255.240" -Force)`|reset password
+#### Reset password
+
+```powershell
+Set-ADAccountPassword `
+  -identity MBentley `
+  -Reset `
+  -NewPassword (`
+    ConvertTo-SecureString `
+      -AsPlainText "What is 255.255.255.240" `
+      -Force`
+  )
+```
 
 ### ADOrganizationalUnit
 
 #### Create a new Organizational Unit
 ```powershell
-New-ADOrganizationalUnit -Name GNV -Credential officeprodemoco\joey
+New-ADOrganizationalUnit `
+  -Name GNV `
+  -Credential officeprodemoco\joey
 ```
 
 #### Remove accidental deletion protection
 ```powershell
-Set-ADOrganizationalUnit -Name GNV -ProtectedFromAccidentalDeletion $False -Identity "OU=GNV, DC=officeprodemoco, DC=onmicrosoft, DC=com" 
+Set-ADOrganizationalUnit `
+  -Name GNV `
+  -ProtectedFromAccidentalDeletion $False `
+  -Identity "OU=GNV, DC=officeprodemoco, DC=onmicrosoft, DC=com" 
 ```
 
 #### Remove an OU
 ```powershell
-Remove-ADOrganizationalUnit -Identity "OU=GNV, DC=officeprodemoco, DC=onmicrosoft, DC=com" -confirm:$False
+Remove-ADOrganizationalUnit `
+  -Identity "OU=GNV, DC=officeprodemoco, DC=onmicrosoft, DC=com" `
+  -confirm:$False
 ```
 
 #### Display OUs, confirming deletion has taken place
 ```powershell
-Get-ADOrganizationalUnit -filter * | FT
+Get-ADOrganizationalUnit `
+  -filter * `
+  | FT
 ```
 
 ### Get-ADUser
 #### Display information for Active Directory user {mike}
 ```powershell
-Get-ADUser -Identity mike
+Get-ADUser `
+  -Identity mike
 ```
 
 #### Display Protection from Accidental Deletion
 ```powershell
-Get-ADUser -Filter * -SearchBase "OU=RoadCrew,OU=office365,DC=officeprodemoco,DC=com,DC=onmicrosoft"  -Properties ProtectedFromAccidentalDeletion
+Get-ADUser `
+  -Filter * `
+  -SearchBase "OU=RoadCrew,OU=office365,DC=officeprodemoco,DC=com,DC=onmicrosoft"  `
+  -Properties ProtectedFromAccidentalDeletion
 ```
 
 #### Protect users in a specified OU from accidental deletion
 ```powershell
-Get-ADUser -Filter * -SearchBase "OU=RoadCrew,OU=office365,DC=officeprodemoco,DC=com" \| Set-ADObject -ProtectedFromAccidentalDeletion $true
+Get-ADUser `
+  -Filter * `
+  -SearchBase "OU=RoadCrew,OU=office365,DC=officeprodemoco,DC=com" `
+  | Set-ADObject `
+    -ProtectedFromAccidentalDeletion $true
 ```
 
 ### New-ADUser
 #### Create a new user (disabled by default)
 ```powershell
-New-ADUser -Name "Walter Mitty"
+New-ADUser `
+  -Name "Walter Mitty"
 ```
 
 #### Create a new user
 ```powershell
-New-ADUser -Name "Marty McFly" -AccountPassword (ConvertTo-SecureString "P@ssw0rd!" -AsPlainText -Force) -Enabled $true -GivenName "Martin" -Surname "McFly"
+New-ADUser `
+  -Name "Marty McFly" `
+  -AccountPassword (`
+    ConvertTo-SecureString "P@ssw0rd!" `
+      -AsPlainText `
+      -Force`
+  ) `
+  -Enabled $true `
+  -GivenName "Martin" `
+  -Surname "McFly"
 ```
 
 #### Display information on user, confirming successful creation
 ```powershell
-Get-ADUser "Marty McFly" \| Select-Object Name
+Get-ADUser "Marty McFly" `
+  | Select-Object Name
 ```
 
 #### Add a CSV full of users
 ```powershell
-import-csv users.csv \| foreach {New-ADUser -SamAccountName $_.SAM -GivenName $_.Last -DisplayName $_.DisplayName -Name $_.Name -Description $_.Description -AccountPassword (ConvertToSecureString $_.Password -AsPlainText -Force) -Enabled $True}`
+import-csv users.csv `
+  | foreach { `
+    New-ADUser `
+      -SamAccountName $_.SAM `
+      -GivenName $_.Last `
+      -DisplayName $_.DisplayName `
+      -Name $_.Name `
+      -Description $_.Description `
+      -AccountPassword ( `
+        ConvertToSecureString $_.Password `
+          -AsPlainText `
+          -Force `
+      ) `
+      -Enabled $True `
+  }`
 ```
 
 
@@ -217,22 +270,30 @@ winrm qc
 ### NetFirewallRule
 #### Set firewall rule for COM+ Network Access (DCOM-In)
 ```powershell
-Set-NetFirewallRule -name COMPlusNetworkAccess-DCOM-In -Enabled True
+Set-NetFirewallRule `
+  -name COMPlusNetworkAccess-DCOM-In `
+  -Enabled True
 ```
 
 #### Set firewall rule for Remote Event Log Management (NP-In)
 ```powershell
-Set-NetFirewallRule -name RemoteEventLogSvc-In-TCP -Enabled True
+Set-NetFirewallRule `
+  -name RemoteEventLogSvc-In-TCP `
+  -Enabled True
 ```
 
 #### Set firewall rule for Remote Event Log Management (RPC)
 ```powershell
-Set-NetFirewallRule -name RemoteEventLogSvc-NP-In-TCP -Enabled True
+Set-NetFirewallRule `
+  -name RemoteEventLogSvc-NP-In-TCP `
+  -Enabled True
 ```
 
 #### Set firewall rule for Remote Event Log Management (RPC-EPMAP)
 ```powershell
-Set-NetFirewallRule -name RemoteEventLogSvc-RPCSS-TCP -Enabled True
+Set-NetFirewallRule `
+  -name RemoteEventLogSvc-RPCSS-TCP `
+  -Enabled True
 ```
 
 #### List all WinRM listeners  
@@ -247,7 +308,9 @@ winrm get winrm/config
 
 #### Install Remote Server Adminstration Tools for PowerShell
 ```powershell
-Install-WindowsFeature -Name RSAT-ADDS -IncludeAllSubFeature`
+Install-WindowsFeature `
+  -Name RSAT-ADDS `
+  -IncludeAllSubFeature
 ```
 
 
@@ -256,18 +319,28 @@ Install-WindowsFeature -Name RSAT-ADDS -IncludeAllSubFeature`
 ### Invoke-WebRequest
 
 #### Download a file over HTTP/HTTPS
+
 ```powershell
-Invoke-WebRequest -Uri http://example.com/path/to/file -OutFile \\path\to\local\file
+Invoke-WebRequest `
+  -Uri http://example.com/path/to/file `
+  -OutFile \\path\to\local\file
 ```
 
 #### Resume a partial download
+
 ```powershell
-Invoke-WebRequest -Uri http://example.com/path/to/file -Resume -Outfile \\path\to\local\file
+Invoke-WebRequest `
+  -Uri http://example.com/path/to/file `
+  -Resume `
+  -Outfile \\path\to\local\file
 ```
 
 #### Transfer a file over FTP/SFTP
+
 ```powershell
-Invoke-WebRequest ftp://ftp.example.com/file -Outfile C:\path\to\file -Credential ftpuseraccount
+Invoke-WebRequest ftp://ftp.example.com/file `
+  -Outfile C:\path\to\file `
+  -Credential ftpuseraccount
 ```
 
 #### Resolve shortened URLs
@@ -281,34 +354,72 @@ $Uri -UseBasicParsing  $Web.BaseResponse.ResponseUri.AbsoluteUri
 #### Scrape links from a website
 
 ```powershell
-(Invoke-WebRequest -Uri "https://techrepublic.com").Links.Href
+(Invoke-WebRequest `
+  -Uri "https://techrepublic.com" `
+).Links.Href
 ```
 
 #### Request data from a website impersonating a browser
 
 ```powershell
-Invoke-WebRequest -Uri http://microsoft.com -UserAgent ([Microsoft.PowerShell.Commands.PSUserAgent]::Chrome)
+Invoke-WebRequest `
+  -Uri http://microsoft.com `
+  -UserAgent ([Microsoft.PowerShell.Commands.PSUserAgent]::Chrome)
 ```
 
 ## Azure
 #### Install the __Az__ module
 ```powershell
-Install-Module -Name Az -AllowClobber
+Install-Module  `
+  -Name Az      `
+  -AllowClobber
 ```
+
+#### Connecting to a VM
+WinRM access must be enabled on the target VM
+```powershell
+winrm quickconfig
+```
+
+Open port __5985__ to enable inbound WinRM connections from the Azure Portal
+
+Context                           | Action  | Effect
+:---                              | :---    | :---
+Azure Portal                      | Select __Virtual machines__ blade | Enter __Virtual machines__ page
+Virtual machines page             | Select VM to be modified | Enter __Virtual machine__ page
+Virtual machine page              | Select _Settings_ > __Networking__  | Open __Network Interface__ page
+Network interface page            | Click __Add inbound port rule__ button | Open __Add inbound security rule__ modal dialog box
+Add inbound security rule dialog  | Click __Basic__ button at top of dialog, switching to basic mode. Enter "5985" into __Port ranges__ field | 
+
 
 ## Other commands
 
 ### PSReadlineOption
+#### Display options available in the module
+```powershell
+Get-PSReadlineOption
+```
 
-Syntax  | Effect
-:---  | :---
-`Get-PSReadlineOption`|display options available in the module
-`Set-PSReadlineOption -HistoryNoDuplicates:$true`|set history to only save unique commands
-`Set-PSReadlineOption -EditMode Emacs`|enable bash-like functionality where an incomplete command followed by <Tab> will produce a list of all matching commands
-`Set-PSReadlineOption -EditMode Windows`|change <Tab> behavior back to default for PowerShell
+#### Set history to only save unique commands
+```powershell
+Set-PSReadlineOption        `
+  -HistoryNoDuplicates:$true
+```
+#### Enable bash-like ambiguous command completion, where tab brings up a menu of matches
+```powershell
+Set-PSReadlineOption        `
+  -EditMode Emacs
+```
+
+#### Change &lt;Tab&gt; behavior back to default for PowerShell
+```powershell
+Set-PSReadlineOption        `
+  -EditMode Windows
+```
 
 ## Sources
   - "How to use Wget to download web-based packages on Windows." [TechRepublic](https://www.techrepublic.com/article/how-to-use-wget-to-download-web-based-packages-on-windows/#ftag=RSS56d97e7)
   - "Check PowerShell Version". [powertheshell.com](http://www.powertheshell.com/topic/learnpowershell/firststeps/psversion/)
   - "Enable-PSRemoting". [Microsoft Docs](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/enable-psremoting?view=powershell-6)
   - "Azure Az Module for Windows PowerShell, Core, and Cloud Shell Replaces Azure RM". [Petri](https://www.petri.com/azure-az-module-for-windows-powershell-core-and-cloud-shell-replaces-azurerm)
+  - "Manage Azure IaaS virtual machines with Windows Admin Center". [Microsoft Docs](https://docs.microsoft.com/en-us/windows-server/manage/windows-admin-center/azure/manage-azure-vms)
