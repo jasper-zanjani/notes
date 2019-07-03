@@ -1,7 +1,5 @@
 # PowerShell
-
 ## Basic Syntax
-
 ### Comparison operators
 
 Syntax  | Effect
@@ -29,6 +27,7 @@ Syntax  | Effect
 Bash    | PowerShell | Notes
 :---    | :---       | :---
 \\      | \`         | used at the end of lines to allow multiline commands
+`>>`    | `Add-Content`, `ac`
 `alias` | `Get-Alias`, `gal`; `New-Alias`, `nal`
 `awk`   | `Select-Object`, `select` | See __Filters__ below
 `cat`   | `Get-Content`, `cat`, `gc`, `type` 
@@ -40,11 +39,12 @@ Bash    | PowerShell | Notes
 `man`   | `Get-Help`
 `more`  | rf. `less`
 `ls`    | `Get-ChildItem`, `dir`, `gci`, `ls` 
-`mkdir` | `New-Item`
+`mkdir` | `New-Item -ItemType Directory`, `ni -ItemType Directory`
 `pwd`   | `Get-Location`, `gl`, `pwd`
 `reset` | `Clear-Host`, `clear`, `cls` 
 `rm`    | `Remove-Item`, `rm`, `ri`, `rmdir`, `rd`, `del`
 `sed`   | `Where-Object`, `where`, `?` | See __Filters__ below
+`shutdown`| `Stop-Computer`
 `tail`  | `Get-Content -Tail`
 `touch` | `New-Item`
 
@@ -59,7 +59,7 @@ Filtering results can be done with 5 commands:
 #### Display basic system information
 
 Syntax  | Effect
-:--- | :---
+:---    | :---
 `Get-Alias`                 | display aliases
 `Get-Command`               | display all installed commands, including aliases, applications, filters, functions, and scripts
 `Get-Help cmd`              | display help file for {cmd}
@@ -72,7 +72,7 @@ Syntax  | Effect
 `Update-Help`               | download help files
 
 Syntax  | Effect
-:--- | :---
+:---    | :---
 `Get-Alias Definition -eq Get-ChildItem`|display items that point to `Get-ChildItem`
 `Get-Command \| measure`    | piping to `measure` is similar to `wc`, will count lines
 `Get-Command -Module ActiveDirectory`|display cmdlets available under a specified module
@@ -87,7 +87,7 @@ Syntax  | Effect
 ## Help commands
 
 Syntax  | Effect
-:--- | :---
+:---    | :---
 `Get-Help cmd`              | display help file for {cmd}
 `Get-Help cmd -Examples`    | display usage examples
 `Get-Help cmd -Detailed`    | display detailed help for a command
@@ -99,7 +99,7 @@ Syntax  | Effect
 ## Output formatting
 
 Syntax  | Effect
-:---  | :---
+:---    | :---
 `Get-Service \| Format-Wide` | change output format to `Format-Wide`
 `Get-Service \| Format-Wide -Column 1` | change output format to be a single column
 `Get-Service \| Format-Wide -Property DisplayName` | change output to display the `DisplayName` property
@@ -113,37 +113,67 @@ Syntax  | Effect
 `Get-Serivce \| Write-Host` | will produce an error because `Write-Host` expects a single object
 `Get-Service \| ForEach-Object {Write-Host $_.name}`| loop through each object in output of `Get-Service` and send the `name` field to `Write-Host`
 
-## Aliases
+## File manipulation
 
 Syntax  | Effect
-:--- | :---
+:---    | :---
+`New-Item -ItemType File -Name filename` | create a new file in the current working directory named &lt;filename&gt;
+`Add-Content C:\path\to\file $content` | append &lt;content&gt; to &lt;file&gt;
+
+### Add-Content
+
+Option              | Mandatory | Position
+:---                | :---      | :---
+`-Path`             | ✔ | 0
+`-Value`            | ✔ | 1 
+
+Option              | Description
+:---                | :---
+`-AsByteStream`     | 
+`-Credential`       | 
+`-Encoding`         | 
+`-Exclude`          | 
+`-Filter`           | 
+`-Force`            | 
+`-Include`          | 
+`-LiteralPath`      | 
+`-NoNewline`        | 
+`-PassThru`         | 
+`-Stream`           | 
+`-Confirm`          | 
+`-WhatIf`           | 
+
+## Environment manipulation
+### Alias
+
+Syntax  | Effect
+:---    | :---
 `Get-Alias`                 | display aliases
 `Get-Alias -Definition Get-ChildItem`|display items that point to `Get-ChildItem`
 `New-Alias ip Get-NetIPAddress`|establish a new alias
 `Set-Alias ip Get-NetAdapter`|edit an existing alias
 `Export-Alias -Path alias.ps1 -As Script`|export session aliases to a ".ps1" file
 
-
-## Services
-
-Syntax  | Effect
-:--- | :---
-`Start-Service WinRM`       | Start the &lt;WinRM&gt; service
-`Stop-Service WinRM`        | Stop the &lt;WinRM&gt; service
-`Get-Service WinRM`         | Display status of &lt;WinRM&gt; service
-
-## Modules
+### Service
 
 Syntax  | Effect
-:--- | :---
+:---    | :---
+`Start-Service WinRM`, `sasv winrm` | Start the &lt;WinRM&gt; service
+`Stop-Service WinRM`, `spsv winrm`  | Stop the &lt;WinRM&gt; service
+`Get-Service WinRM`, `gsv winrm`    | Display status of &lt;WinRM&gt; service
+
+### Module
+Modules are automatically imported, if available, when you run a command that belongs to one. Or you can manually import them.
+
+Syntax  | Effect
+:---    | :---
 `Install-Module -Name Az -AllowClobber` | Install the __Az__ module
 `Import-Module SmbShare`|import module {SmbShare}
 
-
-## Profiles
+### Profiles
 
 Syntax  | Effect
-:--- | :---
+:---    | :---
 `$profile`|display file of current profile
 `$profile.CurrentUserCurrentHost`| C:\Users\Michael\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1
 `$profile.CurrentUserAllHosts`|C:\Users\Michael\Documents\WindowsPowerShell\profile.ps1
@@ -153,7 +183,7 @@ Syntax  | Effect
 ## Remote commands
 
 Syntax  | Effect
-:--- | :---
+:---    | :---
 `Enable-PSRemoting`| allow remote PowerShell management
 `Invoke-Command -ComputerName core01,core02 -Scriptblock {ipconfig /all}`|execute the commands in the block on the machines specified
 `New-PSSession -ComputerName core02`|start a new PowerShell session, connecting to the specified computer
@@ -173,7 +203,6 @@ Syntax  | Effect
 
 ## Active Directory
 ### ADAccount
-
 #### Display locked out accounts
 ```powershell
 Search-ADAccount `
@@ -187,9 +216,7 @@ Unlock-ADAccount `
 ```
 
 ### ADAccountPassword
-
 #### Reset password
-
 ```powershell
 Set-ADAccountPassword `
   -identity MBentley `
@@ -202,7 +229,6 @@ Set-ADAccountPassword `
 ```
 
 ### ADOrganizationalUnit
-
 #### Create a new Organizational Unit
 ```powershell
 New-ADOrganizationalUnit `
@@ -305,13 +331,11 @@ import-csv users.csv
 
 ## Network
 #### Display IP configuration
-
 ```powershell
 Get-IPAddress
 ```
 
 #### Configure the machine to accept WS-Management requests from other machines
-
 ```powershell
 winrm quickconfig
 winrm qc
@@ -319,7 +343,6 @@ winrm qc
 
 ### NetFirewallRule
 #### Set firewall rule for COM+ Network Access (DCOM-In)
-
 ```powershell
 Set-NetFirewallRule
   -name COMPlusNetworkAccess-DCOM-In
@@ -366,11 +389,8 @@ Install-WindowsFeature `
 
 
 ## Web requests 
-
 ### Invoke-WebRequest
-
 #### Download a file over HTTP/HTTPS
-
 ```powershell
 Invoke-WebRequest 
   -Uri http://example.com/path/to/file 
@@ -378,7 +398,6 @@ Invoke-WebRequest
 ```
 
 #### Resume a partial download
-
 ```powershell
 Invoke-WebRequest 
   -Uri http://example.com/path/to/file 
@@ -387,7 +406,6 @@ Invoke-WebRequest
 ```
 
 #### Transfer a file over FTP/SFTP
-
 ```powershell
 Invoke-WebRequest ftp://ftp.example.com/file 
   -Outfile C:\path\to\file 
@@ -395,7 +413,6 @@ Invoke-WebRequest ftp://ftp.example.com/file
 ```
 
 #### Resolve shortened URLs
-
 ```powershell
 $Uri = 'short-url/extension' 
 $Web = Invoke-WebRequest -Uri 
@@ -403,7 +420,6 @@ $Uri -UseBasicParsing  $Web.BaseResponse.ResponseUri.AbsoluteUri
 ```
 
 #### Scrape links from a website
-
 ```powershell
 (Invoke-WebRequest
   -Uri "https://techrepublic.com"
@@ -411,7 +427,6 @@ $Uri -UseBasicParsing  $Web.BaseResponse.ResponseUri.AbsoluteUri
 ```
 
 #### Request data from a website impersonating a browser
-
 ```powershell
 Invoke-WebRequest 
   -Uri http://microsoft.com 
@@ -419,7 +434,6 @@ Invoke-WebRequest
 ```
 
 ## Other commands
-
 ### PSReadlineOption
 #### Display options available in the module
 ```powershell
@@ -431,6 +445,7 @@ Get-PSReadlineOption
 Set-PSReadlineOption        `
   -HistoryNoDuplicates:$true
 ```
+
 #### Enable bash-like ambiguous command completion, where tab brings up a menu of matches
 ```powershell
 Set-PSReadlineOption
