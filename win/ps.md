@@ -2,6 +2,28 @@
 
 ## Basic Syntax
 
+### Comparison operators
+
+Syntax  | Effect
+:---    | :---
+`-eq`
+`-ne`
+`-gt`
+`-ge`
+`-lt`
+`-le`
+`-like` | wildcard pattern
+`-notlike`
+`-match` | regex pattern
+`-notmatch`
+`-contains`
+`-notcontains`
+`-in`
+`-notin`
+`-replace`
+`-is`   | type comparison
+`-isnot`
+
 ## Comparison with bash
 
 Bash    | PowerShell | Notes
@@ -424,3 +446,4 @@ Set-PSReadlineOption
 ## Sources
   - "How to use Wget to download web-based packages on Windows." [TechRepublic](https://www.techrepublic.com/article/how-to-use-wget-to-download-web-based-packages-on-windows/#ftag=RSS56d97e7): 2019/06/26.
   - "Check PowerShell Version". [powertheshell.com](http://www.powertheshell.com/topic/learnpowershell/firststeps/psversion/)
+  - "About Comparison Operators". [Microsoft Docs](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_comparison_operators?view=powershell-6): 2019/01/17.
