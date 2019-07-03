@@ -193,13 +193,22 @@ Syntax  | Effect
 `Enter-PSSession -ComputerName o365-dc01 -Credential officeprodemoco\joey`|start and enter a new PS session to specified computer with provided credentials. This will change the prompt to show the name of the remote machine in brackets.
 
 ## Hyper-V
-
-Syntax  | Effect
-:--- | :---
-`Install-WindowsFeature -Name Hyper-V -IncludeAllSubFeature -IncludeManagementTools -Restart`|install Hyper-V from PowerShell command-line
-`Set-VMMemory -VMName SRV01 -DynamicMemoryEnabled $false`|disable dynamic memory on a virtual host (nested virtualization)
-`Set-VMProcessor -VMName SVR01 -Count 2`| configure 2 virtual processors on a virtual host (nested virtualization)
-`Set-VMNetworkAdapter -VMName SVR01 -Name "NetworkAdapter" -MACAddressSpoofing On`|turn on MAC address spoofing on a virtual host (nested virtualization)
+#### Install Hyper-V from PowerShell command-line
+```powershell
+Install-WindowsFeature -Name Hyper-V -IncludeAllSubFeature -IncludeManagementTools -Restart
+```
+#### Disable dynamic memory on a virtual host (nested virtualization)
+```powershell
+Set-VMMemory -VMName SRV01 -DynamicMemoryEnabled $false
+```
+#### Configure 2 virtual processors on a virtual host (nested virtualization)
+```powershell
+Set-VMProcessor -VMName SVR01 -Count 2
+```
+#### Turn on MAC address spoofing on a virtual host (nested virtualization)
+```powershell
+Set-VMNetworkAdapter -VMName SVR01 -Name "NetworkAdapter" -MACAddressSpoofing On
+```
 
 ## Active Directory
 ### ADAccount

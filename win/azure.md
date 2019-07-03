@@ -95,14 +95,15 @@ Enter-PSSession -ComputerName 123.47.78.90 -Credential $cred
 ```
 
 #### Invoking a command on a VM
-`Invoke-AzVMCommand` requires only a single command (which is named).
+`Invoke-AzVMRunCommand` requires only a single option
 
 Option              | Mandatory | Position
 :---                | :---      | :---
 `-CommandId`        | ✔         | Named
-`-ResourceGroupNAme`|           | Named
 
-
+Option              | Description
+:---                | :---
+`-ResourceGroupNAme`
 
 ##### Example: Run a script within a VM
 ```powershell
