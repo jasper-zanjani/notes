@@ -228,7 +228,6 @@ Strategies and tools for enhanced governance in the cloud
 
 Term                                    | Definition | Source
 :---                                    | :---       | ---
-Amazon CloudWatch                       |            | 
 Autoscaling                             | automatic adjustment of computing capacity to meet changes in cloud workloads | 5PLC: 64
 Availability Zones                      | term used in AWS and Azure to refer to redundant, geographically dispersed computing resources | 5PLC: 19
 Availability set                        | Azure capability that groups VMs to ensure they are distributed across multiple hardware clusters, isolated from each other | 5PLC: 42
@@ -276,8 +275,8 @@ Azure Database Migration Service (Azure DMS) | specialized tool for migrating da
 Azure ExpressRoute               | high-performance network solution that helps you create private connections between Azure datacenters and infrastructure located in your datacenters or in colocated environments | 5PLC: 48
 Azure Kubernetes Service (AKS)   | Linux-based service offered by Azure to orchestrate containers using Kubernetes, DC/OS, or Docker | 5PLC: 22
 Azure Migrate Service            | tool explicitly development for supporting cloud migration | 5PLC: 32-36
-Azure Monitor                    |             | 
-Azure Security Center            | scans Azure cloud resources for vulnerabilities, such as web apps not protected by __WAF__
+Azure Monitor                    | tool for monitoring applications (cf. __Amazon CloudWatch__) | 5PLC: 61
+Azure Security Center            | combines best practice analysis and security policy management for Azure cloud resources, automatically scanning and collecting all security data from cloud resources | 5PLC: 86
 Azure Service Fabric             | like __Azure Container Service__, can be used to develop microservices and orchestrate containers on Linux | 5PLC: 23
 Azure Site Recovery              | cloud-based recovery solution that can also be used to move Azure-compatible Linux VMs of any distribution | 5PLC: 38, 74
 Azure Virtual Machine Scale Sets (VMSSs) |             | 
@@ -290,14 +289,15 @@ Microsoft Web Application Firewall (WAF) | feature of __Azure Application Gatewa
 
 Term                | Definition | Source
 ---                 | ---        | ---
+Amazon CloudWatch   | tool for monitoring applications (cf. __Azure Monitor__, __Google Stackdrive__)| 5PLC: 61
 Amazon Inspector    | automated security assessment service | 5PLC: 85
 Amazon Virtual Private Cloud  | cloud-based VPN service | 5PLC: 85
 AWS Fargate         | cloud-based container service | 5PLC: 21
 Chef                | configuration management tool | 5PLC: 70
 CloudEndure         | third-party tool used for migrating on-premise VMs to Azure | 5PLC: 39
-Google Stackdriver  |             | 
+Google Stackdriver  | offers monitoring and logging for applications being run in Google Cloud and AWS (cf. __Amazon CloudWatch__, __Azure Monitor__)| 5PLC: 62
 Helm                | open-source packaging tool used to install, deploy, and manage containers in a Kubernetes cluster, manage Kubernetes charts (packages of preconfigured Kubernetes resources) | 5PLC: 23
 Puppet              | configuration management tool | 5PLC: 70
 Velostrata          | third-party tool used for migrating on-premise VMs to Azure quickly, by replicating only the VM's compute runtime and replicating the VM's storage slowly | 5PLC: 39
-Oracle Data Guard   | high-availability system
-Oracle Real Application Clusters | high-availability system for databases
+Oracle Data Guard   | high-availability system | 5PLC: 41
+Oracle Real Application Clusters | high-availability system for databases | 5PLC: 41
