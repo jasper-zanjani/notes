@@ -4,7 +4,6 @@
 
 Manage access to Azure resources using __role-based access control (RBAC)__. __Service Administrator__ and __Co-Administrator__ are legacy roles used with the classic deployment model.
 
-
 ## PowerShell
 
 #### Install the Azure Resource Manager PowerShell module
@@ -33,41 +32,50 @@ $cred = Get-Credential
 ```
 
 ```powershell
-New-AzVM                                                              `
-  -ResourceGroupName    "RG"                                          `
-  -Name                 "VM"                                          `
-  -Location             "EastUS"                                      `
-  -VirtualNetworkName   "VN"                                          `
-  -SubnetName           "SN"                                          `
-  -SecurityGroupName    "SG"                                          `
-  -PublicIpAddressName  "IP"                                          `
+New-AzVM                    
+  -ResourceGroupName    "RG"
+  -Name                 "VM"
+  -Location             "EastUS"
+  -VirtualNetworkName   "VN"
+  -SubnetName           "SN"
+  -SecurityGroupName    "SG"
+  -PublicIpAddressName  "IP"
   -Credential           $cred
 ```
 
-#### Connecting to a VM via PowerShell
-1. WinRM access must be enabled on the target VM as well as the local machine.
+#### Start a VM
+
+`Start-AzVM` requires at minimum __2__ arguments:
+Option              | Mandatory | Position
+:---                | :--- | :---
+`-Id`, `-ResourceGroupName` | ✔ | 0
+`-Name`             | ✔ | 1
+
 ```powershell
-winrm quickconfig
+Start-AzVM Greeks Socrates
 ```
 
-2. Enable PowerShell remoting
+
+#### Connect to a VM
+1. WinRM access must be enabled on the target VM as well as the local machine.
+
 ```powershell
 Enable-PSRemoting
 ```
 
-An alternative command is:
+Alternatively:
 ```powershell
 winrm quickconfig
 ```
 
-3. Ensure WinRM is able to enter via ports 5985 and 5986 (rf. __Create an inbound security rule...__ below)
+2. Ensure WinRM is able to enter via ports 5985 and 5986 (rf. __Create an inbound security rule...__ below)
 
-4. Add the VM's public IP address &lt;$ipaddr&gt; to the trusted hosts of the local machine (must be run as administrator):
+3. Add the VM's public IP address &lt;$ipaddr&gt; to the trusted hosts of the local machine (must be run as administrator):
 ```powershell
-Set-Item WSMan:\localhost\Client\TrustedHosts -Value $ipaddr
+Set-Item WSMan:\localhost\Client\TrustedHosts -Value ipaddr
 ```
 
-5. Open the WinRM ports in the VM's firewall, if Windows Firewall is activated. The commands provided here can be run locally on the VM, or invoked through Azure:
+4. Open the WinRM ports in the VM's firewall, if Windows Firewall is activated. The commands provided here can be run locally on the VM, or invoked through Azure:
 
 ```powershell
 netsh advfirewall firewall add rule name=WinRMHTTP dir=in action=allow protocol=TCP localport=5985
@@ -86,6 +94,24 @@ $cred = Get-Credential
 Enter-PSSession -ComputerName 123.47.78.90 -Credential $cred
 ```
 
+#### Invoking a command on a VM
+`Invoke-AzVMCommand` requires only a single command (which is named).
+
+Option              | Mandatory | Position
+:---                | :---      | :---
+`-CommandId`        | ✔         | Named
+`-ResourceGroupNAme`|           | Named
+
+
+
+##### Example: Run a script within a VM
+```powershell
+Invoke-AzureRmVMRunCommand 
+  -ResourceGroupName 4SysOps 
+  -Name Demo 
+  -CommandId 'RunPowerShellScript' 
+  -ScriptPath C:\injectedscript.ps1
+```
 
 #### Create an inbound security rule, opening a port for inbound WinRM connections
 An __inbound security rule__ can be created in the Cloud Shell using PowerShell:
@@ -128,3 +154,5 @@ Create another, similar rule for HTTPS traffic to port 5986
   - "Connect to Azure VM using PowerShell". [4sysops](https://4sysops.com/archives/connect-to-azure-vm-using-powershell/): 2018/10/11.
   - "About PSSessions". [Microsoft Docs](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_pssessions?view=powershell-6): 2019/07/02.
   - "Enable PowerShell Remoting". [4sysops](https://4sysops.com/wiki/enable-powershell-remoting/).
+  - "Start-AzureRmVM". [Microsoft Docs](https://docs.microsoft.com/en-us/powershell/module/azurerm.compute/start-azurermvm?view=azurermps-6.13.0).
+  - "Invoke-AzureRmVMRunCommand". [Microsoft Docs](https://docs.microsoft.com/en-us/powershell/module/AzureRm.Compute/Invoke-AzureRmVMRunCommand?view=azurermps-6.13.0).
