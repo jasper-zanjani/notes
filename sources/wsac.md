@@ -79,7 +79,7 @@ gui   | Server Manager > Add roles and features
 
   1. Install __Active Directory Domain Services__, __DHCP Server__, and __DNS Server__
   2. Click "Promote this server to a domain controller"
-  3. Select "Add a new forest", entering a vlaid fully-qualified domain name
+  3. Select "Add a new forest", entering a valid fully-qualified domain name
   4. 
 #### 2.02 Adding a second Domain Controller
 #### 2.03 Organizing your computers with Organizational Units

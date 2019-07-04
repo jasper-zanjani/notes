@@ -22,7 +22,7 @@ Syntax  | Effect
 `-is`   | type comparison
 `-isnot`
 
-## Comparison with bash
+### Comparison with bash
 
 Bash    | PowerShell | Notes
 :---    | :---       | :---
@@ -48,7 +48,7 @@ Bash    | PowerShell | Notes
 `tail`  | `Get-Content -Tail`
 `touch` | `New-Item`
 
-#### Filters
+### Filters
 Filtering results can be done with 5 commands:
   - `Where-Object` (aliased to `where` and `?`): the most commonly used such command
   - `Select-Object` (aliased to `select`): used to specify specific columns of information to be displayed
@@ -56,7 +56,7 @@ Filtering results can be done with 5 commands:
   - `ForEach-Object` (aliased to `foreach` and `%`)
   - `Out-GridView`
 
-#### Display basic system information
+### Display basic system information
 
 Syntax  | Effect
 :---    | :---
@@ -84,7 +84,7 @@ Syntax  | Effect
 `New-PSDrive -Name scripts -PSProvider FileSystem -Root "C:\Scripts"`|map a directory to a drive
 `Remove-PSDrive -Name scripts`|remove a drive
 
-## Help commands
+### Help commands
 
 Syntax  | Effect
 :---    | :---
@@ -96,7 +96,7 @@ Syntax  | Effect
 `Get-Help cmd -ShowWindow`  | display help output in a window
 `Update-Help`               | download help files
 
-## Output formatting
+### Output formatting
 
 Syntax  | Effect
 :---    | :---
@@ -113,14 +113,14 @@ Syntax  | Effect
 `Get-Serivce \| Write-Host` | will produce an error because `Write-Host` expects a single object
 `Get-Service \| ForEach-Object {Write-Host $_.name}`| loop through each object in output of `Get-Service` and send the `name` field to `Write-Host`
 
-## File manipulation
+### File manipulation
 
 Syntax  | Effect
 :---    | :---
 `New-Item -ItemType File -Name filename` | create a new file in the current working directory named &lt;filename&gt;
 `Add-Content C:\path\to\file $content` | append &lt;content&gt; to &lt;file&gt;
 
-### Add-Content
+#### Add-Content
 
 Option              | Mandatory | Position
 :---                | :---      | :---
@@ -211,7 +211,6 @@ Set-VMNetworkAdapter -VMName SVR01 -Name "NetworkAdapter" -MACAddressSpoofing On
 ```
 
 ## Active Directory
-
 #### Create a domain controller
 ```powershell
 Install-WindowsFeature AD-Domain-Service -IncludeManagementTools
@@ -225,13 +224,11 @@ Syntax  | Effect
 `Install-ADDSForest` | Add a new forest
 `Install-ADDSDomain` | Add a domain to an existing forest
 `Install-ADDSDomainController` | Add a domain controller to an existing domain
-
 #### Create a new user (disabled by default)
 ```powershell
 New-ADUser `
   -Name "Walter Mitty"
 ```
-
 #### Create a new user
 ```powershell
 New-ADUser -Name "Marty McFly" 
@@ -244,12 +241,10 @@ New-ADUser -Name "Marty McFly"
 ```powershell
 Search-ADAccount -LockedOut
 ```
-
 #### Unlock account
 ```powershell
 Unlock-ADAccount -identity wbryan
 ```
-
 #### Reset password
 ```powershell
 Set-ADAccountPassword `
@@ -261,37 +256,31 @@ Set-ADAccountPassword `
       -Force`
   )
 ```
-
 #### Create a new Organizational Unit
 ```powershell
 New-ADOrganizationalUnit -Name GNV -Credential officeprodemoco\joey
 ```
-
 #### Remove accidental deletion protection
 ```powershell
 Set-ADOrganizationalUnit -Name GNV -ProtectedFromAccidentalDeletion $False `
   -Identity "OU=GNV, DC=officeprodemoco, DC=onmicrosoft, DC=com" 
 ```
-
 #### Remove an OU
 ```powershell
 Remove-ADOrganizationalUnit `
   -Identity "OU=GNV, DC=officeprodemoco, DC=onmicrosoft, DC=com" -confirm:$False
 ```
-
 #### Display OUs, confirming deletion has taken place
 ```powershell
 Get-ADOrganizationalUnit `
   -filter * `
   | FT
 ```
-
 #### Display information for Active Directory user {mike}
 ```powershell
 Get-ADUser `
   -Identity mike
 ```
-
 #### Display Protection from Accidental Deletion
 ```powershell
 Get-ADUser `
@@ -299,7 +288,6 @@ Get-ADUser `
   -SearchBase "OU=RoadCrew,OU=office365,DC=officeprodemoco,DC=com,DC=onmicrosoft"  `
   -Properties ProtectedFromAccidentalDeletion
 ```
-
 #### Protect users in a specified OU from accidental deletion
 ```powershell
 Get-ADUser `
@@ -308,12 +296,10 @@ Get-ADUser `
   | Set-ADObject `
     -ProtectedFromAccidentalDeletion $true
 ```
-
 #### Display information on user, confirming successful creation
 ```powershell
 Get-ADUser "Marty McFly" | Select-Object Name
 ```
-
 #### Add a CSV full of users
 ```powershell
 import-csv users.csv 
@@ -332,7 +318,6 @@ import-csv users.csv
       -Enabled $True 
   }
 ```
-
 
 ## Network
 #### Display IP configuration
