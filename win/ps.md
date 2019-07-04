@@ -211,20 +211,45 @@ Set-VMNetworkAdapter -VMName SVR01 -Name "NetworkAdapter" -MACAddressSpoofing On
 ```
 
 ## Active Directory
-### ADAccount
+
+#### Create a domain controller
+```powershell
+Install-WindowsFeature AD-Domain-Service -IncludeManagementTools
+Import-Module ADDSDeployment
+```
+
+3 cmdlets available for 3 different scenarios:
+
+Syntax  | Effect
+:---    | :---
+`Install-ADDSForest` | Add a new forest
+`Install-ADDSDomain` | Add a domain to an existing forest
+`Install-ADDSDomainController` | Add a domain controller to an existing domain
+
+#### Create a new user (disabled by default)
+```powershell
+New-ADUser `
+  -Name "Walter Mitty"
+```
+
+#### Create a new user
+```powershell
+New-ADUser -Name "Marty McFly" 
+  -AccountPassword ( ConvertTo-SecureString "P@ssw0rd!" -AsPlainText -Force) 
+  -Enabled $true 
+  -GivenName "Martin" 
+  -Surname "McFly"
+```
 #### Display locked out accounts
 ```powershell
-Search-ADAccount `
-  -LockedOut`
+Search-ADAccount -LockedOut
 ```
 
 #### Unlock account
 ```powershell
-Unlock-ADAccount `
-  -identity wbryan
+Unlock-ADAccount -identity wbryan
 ```
 
-### ADAccountPassword
 #### Reset password
 ```powershell
 Set-ADAccountPassword `
@@ -237,27 +262,21 @@ Set-ADAccountPassword `
   )
 ```
 
-### ADOrganizationalUnit
 #### Create a new Organizational Unit
 ```powershell
-New-ADOrganizationalUnit `
-  -Name GNV `
-  -Credential officeprodemoco\joey
+New-ADOrganizationalUnit -Name GNV -Credential officeprodemoco\joey
 ```
 
 #### Remove accidental deletion protection
 ```powershell
-Set-ADOrganizationalUnit `
-  -Name GNV `
-  -ProtectedFromAccidentalDeletion $False `
+Set-ADOrganizationalUnit -Name GNV -ProtectedFromAccidentalDeletion $False `
   -Identity "OU=GNV, DC=officeprodemoco, DC=onmicrosoft, DC=com" 
 ```
 
 #### Remove an OU
 ```powershell
 Remove-ADOrganizationalUnit `
-  -Identity "OU=GNV, DC=officeprodemoco, DC=onmicrosoft, DC=com" `
-  -confirm:$False
+  -Identity "OU=GNV, DC=officeprodemoco, DC=onmicrosoft, DC=com" -confirm:$False
 ```
 
 #### Display OUs, confirming deletion has taken place
@@ -267,7 +286,6 @@ Get-ADOrganizationalUnit `
   | FT
 ```
 
-### Get-ADUser
 #### Display information for Active Directory user {mike}
 ```powershell
 Get-ADUser `
@@ -291,31 +309,9 @@ Get-ADUser `
     -ProtectedFromAccidentalDeletion $true
 ```
 
-### New-ADUser
-#### Create a new user (disabled by default)
-```powershell
-New-ADUser `
-  -Name "Walter Mitty"
-```
-
-#### Create a new user
-```powershell
-New-ADUser 
-  -Name "Marty McFly" 
-  -AccountPassword (
-    ConvertTo-SecureString "P@ssw0rd!" 
-      -AsPlainText 
-      -Force
-  ) 
-  -Enabled $true 
-  -GivenName "Martin" 
-  -Surname "McFly"
-```
-
 #### Display information on user, confirming successful creation
 ```powershell
-Get-ADUser "Marty McFly" `
-  | Select-Object Name
+Get-ADUser "Marty McFly" | Select-Object Name
 ```
 
 #### Add a CSV full of users
@@ -471,3 +467,4 @@ Set-PSReadlineOption
   - "How to use Wget to download web-based packages on Windows." [TechRepublic](https://www.techrepublic.com/article/how-to-use-wget-to-download-web-based-packages-on-windows/#ftag=RSS56d97e7): 2019/06/26.
   - "Check PowerShell Version". [powertheshell.com](http://www.powertheshell.com/topic/learnpowershell/firststeps/psversion/)
   - "About Comparison Operators". [Microsoft Docs](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_comparison_operators?view=powershell-6): 2019/01/17.
+  - Berkouwer, Sander. _Active Directory Administration Cookbook_. [sources/adac.md](../sources/adac.md)
