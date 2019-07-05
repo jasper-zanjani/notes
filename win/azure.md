@@ -56,7 +56,7 @@ Start-AzVM Greeks Socrates
 ```
 
 
-#### Connect to a VM
+#### Connect to a VM from Windows
 1. WinRM access must be enabled on the target VM as well as the local machine.
 
 ```powershell
@@ -82,16 +82,15 @@ netsh advfirewall firewall add rule name=WinRMHTTP dir=in action=allow protocol=
 netsh advfirewall firewall add rule name=WinRMHTTPS dir=in action=allow protocol=TCP localport=5986
 ```
 
-6. Store the login credential in a variable. In Windows PowerShell this will bring up a dialog box in which you enter the username and password that will be passed to the VM. In PowerShell Core, the terminal itself will prompt for username and password.
-
+5.  Connect to the VM's public IP, passing along a previously-stored credential:
 ```powershell
-$cred = Get-Credential
+$cred=Get-Credential
+Enter-PSSession -ComputerName 123.47.78.90 -Credential $cred
 ```
 
-7. Connect to the VM's public IP, passing along the credential
-
+Or, enter the credential dynamically
 ```powershell
-Enter-PSSession -ComputerName 123.47.78.90 -Credential $cred
+etsn -ComputerName 123.45.67.89 -Credential (Get-Credential)
 ```
 
 #### Invoking a command on a VM
@@ -112,6 +111,12 @@ Invoke-AzureRmVMRunCommand
   -ScriptPath C:\injectedscript.ps1
 ```
 #### Example: Define statements inline
+```powershell
+Invoke-Command -ComputerName core01,core02 -Scriptblock {ipconfig /all}
+```
+
+##### Example: Run commands defined inline
+__This example has to be adapted to use the command `Invoke-AzVMRunCommand` instead__
 ```powershell
 Invoke-Command -ComputerName core01,core02 -Scriptblock {ipconfig /all}
 ```
@@ -149,6 +154,7 @@ Add inbound security rule dialog  | Click __Basic__ button at top of dialog, swi
 Create another, similar rule for HTTPS traffic to port 5986
 
 #### Display IP address
+`Get-PublicIpAddress` requires the __resource name__ of the public IP address assigned to a NIC.
 ```powershell
 Get-PublicIpAddress -Name Socrates-ip
 Get-PublicIpAddress -ResourceGroupName Greeks
@@ -159,9 +165,10 @@ Get-PublicIpAddress -ResourceGroupName Greeks
   - "Azure Az Module for Windows PowerShell, Core, and Cloud Shell Replaces Azure RM". [Petri](https://www.petri.com/azure-az-module-for-windows-powershell-core-and-cloud-shell-replaces-azurerm): 2019/01/23.
   - "Manage Azure IaaS virtual machines with Windows Admin Center". [Microsoft Docs](https://docs.microsoft.com/en-us/windows-server/manage/windows-admin-center/azure/manage-azure-vms): 2018/09/06.
   - "PowerShell Basics: Filtering Objects". [ITPro Today](https://www.itprotoday.com/powershell/powershell-basics-filtering-objects): 2013/07/25.
-  - "PowerShell equivalents for common Linux/bash commands". [TheShellNut](https://mathieubuisson.github.io/powershell-linux-bash/): 2015/09/30.
   - "Connect to Azure VM using PowerShell". [4sysops](https://4sysops.com/archives/connect-to-azure-vm-using-powershell/): 2018/10/11.
   - "About PSSessions". [Microsoft Docs](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_pssessions?view=powershell-6): 2019/07/02.
   - "Enable PowerShell Remoting". [4sysops](https://4sysops.com/wiki/enable-powershell-remoting/).
   - "Start-AzureRmVM". [Microsoft Docs](https://docs.microsoft.com/en-us/powershell/module/azurerm.compute/start-azurermvm?view=azurermps-6.13.0).
   - "Invoke-AzureRmVMRunCommand". [Microsoft Docs](https://docs.microsoft.com/en-us/powershell/module/AzureRm.Compute/Invoke-AzureRmVMRunCommand?view=azurermps-6.13.0).
+  - "PowerShell Remoting over SSH". [Microsoft Docs](https://docs.microsoft.com/en-us/powershell/scripting/learn/remoting/ssh-remoting-in-powershell-core?view=powershell-6): 2018/08/13.
+  - "Installation of OpenSSH for Windows Server 2019 and Windows 10". [Microsoft Docs](https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse): 2019/01/06.
