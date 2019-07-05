@@ -325,12 +325,6 @@ import-csv users.csv
 Get-IPAddress
 ```
 
-#### Configure the machine to accept WS-Management requests from other machines
-```powershell
-winrm quickconfig
-winrm qc
-```
-
 ### NetFirewallRule
 #### Set firewall rule for COM+ Network Access (DCOM-In)
 ```powershell

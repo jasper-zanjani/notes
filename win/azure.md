@@ -108,8 +108,7 @@ Option              | Description
 ##### Example: Run a script within a VM
 ```powershell
 Invoke-AzureRmVMRunCommand 
-  -ResourceGroupName 4SysOps 
-  -Name Demo 
+  -ResourceGroupName 4SysOps -Name Demo 
   -CommandId 'RunPowerShellScript' 
   -ScriptPath C:\injectedscript.ps1
 ```
@@ -145,6 +144,12 @@ Network interface page            | Click __Add inbound port rule__ button | Ope
 Add inbound security rule dialog  | Click __Basic__ button at top of dialog, switching to basic mode. Enter "5985" into __Port ranges__ field | 
 
 Create another, similar rule for HTTPS traffic to port 5986
+
+#### Display IP address
+```powershell
+Get-PublicIpAddress -Name Socrates-ip
+Get-PublicIpAddress -ResourceGroupName Greeks
+```
 
 ## Sources
   - "Enable-PSRemoting". [Microsoft Docs](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/enable-psremoting?view=powershell-6)
