@@ -96,7 +96,6 @@ Enter-PSSession -ComputerName 123.47.78.90 -Credential $cred
 
 #### Invoking a command on a VM
 `Invoke-AzVMRunCommand` requires only a single option
-
 Option              | Mandatory | Position
 :---                | :---      | :---
 `-CommandId`        | ✔         | Named
@@ -111,6 +110,11 @@ Invoke-AzureRmVMRunCommand
   -ResourceGroupName 4SysOps -Name Demo 
   -CommandId 'RunPowerShellScript' 
   -ScriptPath C:\injectedscript.ps1
+```
+#### Example: Define statements inline
+Execute the commands in the block on the machines specified
+```powershell
+Invoke-Command -ComputerName core01,core02 -Scriptblock {ipconfig /all}
 ```
 
 #### Create an inbound security rule, opening a port for inbound WinRM connections
