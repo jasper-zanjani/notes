@@ -112,7 +112,6 @@ Invoke-AzureRmVMRunCommand
   -ScriptPath C:\injectedscript.ps1
 ```
 #### Example: Define statements inline
-Execute the commands in the block on the machines specified
 ```powershell
 Invoke-Command -ComputerName core01,core02 -Scriptblock {ipconfig /all}
 ```
