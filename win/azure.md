@@ -154,10 +154,14 @@ Add inbound security rule dialog  | Click __Basic__ button at top of dialog, swi
 Create another, similar rule for HTTPS traffic to port 5986
 
 #### Display IP address
-`Get-PublicIpAddress` requires the __resource name__ of the public IP address assigned to a NIC.
+`Get-AzPublicIpAddress` takes the name of the resource (e.g. where &lt;VM&gt; is the name of the virtual machine, "VM-ip") and returns an object with a property `IpAddress`
 ```powershell
-Get-PublicIpAddress -Name Socrates-ip
-Get-PublicIpAddress -ResourceGroupName Greeks
+Get-AzPublicIpAddress Socrates-ip | select IpAddress
+```
+
+In order to use the output in an evaluated expression (like command substitution in bash), the property has to be expanded with the `-ExpandProperty` switch.
+```powershell
+Get-AzPublicIpAddress Socrates-ip | select -ExpandProperty IpAddress
 ```
 
 ## Sources
