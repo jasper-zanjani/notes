@@ -147,3 +147,63 @@ Syntax|Effect
 `$profile.AllUsersAllHosts`|C:\Windows\System32\WindowsPowerShell\v1.0\profile.ps1
 `$profile.AllUsersCurrentHost`|C:\Windows\System32\WindowsPowerShell\v1.0\Microsoft.PowerShell_profile.ps1
 
+
+## Functions
+Functions are declared with the following syntax
+```powershell
+function Start-PSAdmin {
+  Start-Process PowerShell -Verb RunAs
+}
+```
+
+Single-line comments are preceded by `#`. But block quotes can be created by enclosing them between `<#` and `#>`.
+
+Parameters can be referenced using the built-in array `args`, which contains all arguments passed to the function on invocation.
+```powershell
+function Get-LargeFiles {
+  Get-ChildItem C:\Users\Michael\Documents |
+  where {$_.Length -gt $args[0] and !$_PSIscontainer} |
+  Sort-Object Length -Descending
+}
+```
+
+Parameters can be declared in one of two ways. One, within the function body using the `param` keyword, followed by the name of the variable representing the parameter's value, enclosed in parentheses and preceded by the dollar sign `$`.
+```powershell
+function Get-LargeFiles {
+  param ($size)
+  Get-ChildItem C:\Users\Michael\Documents |
+  where {$_.Length -gt $Size -and !$_.PSIsContainer} |
+  Sort-Object Length -Descending
+}
+```
+
+An alternative way is directly after the function name, with each parameter separated by a comma.
+
+```powershell
+function Get-LargeFiles($size) {
+  Get-ChildItem C:\Users\Michael\Documents |
+  where {$_.Length -gt $Size -and !$_.PSIsContainer} |
+  Sort-Object Length -Descending
+}
+```
+
+
+Default values for parameters can be specified by placing them within the parentheses
+```powershell
+function Get-LargeFiles {
+  param ($size=2000)
+  Get-ChildItem C:\Users\Michael\Documents |
+  where {$_.Length -gt $Size -and !$_.PSIsContainer} |
+  Sort-Object Length -Descending
+}
+```
+
+__Data typing__ can be performed by preceding the named parameter with `[int]`, for example. This simplifies data validation and also serves to document your code.
+```powershell
+function Get-LargeFiles {
+  param ([int]$Size=2000)
+  Get-ChildItem C:\Users\Michael\Documents |
+  where {$_.Length -gt $Size -and !$_.PSIsContainer} |
+  Sort-Object Length -Descending
+}
+```

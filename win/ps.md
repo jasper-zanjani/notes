@@ -33,6 +33,7 @@ Bash    | PowerShell | Notes
 `cat`   | `Get-Content`, `cat`, `gc`, `type` 
 `cp`    | `Copy-Item`, `cp`, `cpi`, `copy`
 `cd`    | `Set-Location`, `cd`, `sl`, `chdir`
+`echo`  | `Write-Host`
 `find`  | `Get-ChildItem -Recurse -File -Filter ...`
 `grep`  | `Where-Object`, `where`, `?` | See __Filters__ below
 `less`  | `Out-Host -Paging`, `oh -Paging`
@@ -40,6 +41,8 @@ Bash    | PowerShell | Notes
 `more`  | rf. `less`
 `ls`    | `Get-ChildItem`, `dir`, `gci`, `ls` 
 `mkdir` | `New-Item -ItemType Directory`, `ni -ItemType Directory`
+`print` | `Write-Host`
+`printf`| `Write-Host`
 `pwd`   | `Get-Location`, `gl`, `pwd`
 `reset` | `Clear-Host`, `clear`, `cls` 
 `rm`    | `Remove-Item`, `rm`, `ri`, `rmdir`, `rd`, `del`
@@ -47,6 +50,7 @@ Bash    | PowerShell | Notes
 `shutdown`| `Stop-Computer`
 `tail`  | `Get-Content -Tail`
 `touch` | `New-Item`
+`uniq`  | `Select-Object -Unique`
 
 ### Filters
 Filtering results can be done with 5 commands:
@@ -142,6 +146,107 @@ Option              | Description
 `-Stream`           | 
 `-Confirm`          | 
 `-WhatIf`           | 
+
+
+### Defining functions
+Functions are declared with the following syntax
+```powershell
+function Start-PSAdmin {
+  Start-Process PowerShell -Verb RunAs
+}
+```
+
+Single-line comments are preceded by `#`. But block quotes can be created by enclosing them between `<#` and `#>`.
+
+__Positional parameters__ can be referenced using the built-in array `args`, which contains all arguments passed to the function on invocation.
+```powershell
+function Get-LargeFiles {
+  Get-ChildItem C:\Users\Michael\Documents |
+  where {$_.Length -gt $args[0] and !$_PSIscontainer} |
+  Sort-Object Length -Descending
+}
+```
+
+__Named parameters__ can be declared in one of two ways. One, within the function body using the `param` keyword, followed by the name of the variable representing the parameter's value, enclosed in parentheses and preceded by the dollar sign `$`.
+```powershell
+function Get-LargeFiles {
+  param ($Size)
+  Get-ChildItem C:\Users\Michael\Documents |
+  where {$_.Length -gt $Size -and !$_.PSIsContainer} |
+  Sort-Object Length -Descending
+}
+```
+
+An alternative way is directly after the function name, with each parameter separated by a comma.
+
+```powershell
+function Get-LargeFiles($Size) {
+  Get-ChildItem C:\Users\Michael\Documents |
+  where {$_.Length -gt $Size -and !$_.PSIsContainer} |
+  Sort-Object Length -Descending
+}
+```
+
+
+Default values for parameters can be specified by placing them within the parentheses
+```powershell
+function Get-LargeFiles {
+  param ($Size=2000)
+  Get-ChildItem C:\Users\Michael\Documents |
+  where {$_.Length -gt $Size -and !$_.PSIsContainer} |
+  Sort-Object Length -Descending
+}
+```
+
+The name of the variable becomes the named parameter used when invoking the function
+```powershell
+Get-LargeFiles -Size 2000
+```
+
+__Data typing__ can be performed by preceding the named parameter with `[int]`, for example. This simplifies data validation and also serves to document your code.
+```powershell
+function Get-LargeFiles {
+  param ([int]$Size=2000)
+  Get-ChildItem C:\Users\Michael\Documents |
+  where {$_.Length -gt $Size -and !$_.PSIsContainer} |
+  Sort-Object Length -Descending
+}
+```
+__Switch parameters__ are declared with a special syntax, such that `[switch]` precedes the dollar sign.
+```powershell
+function Switch-Item {
+  param ([switch]$on)
+  if ($on) { "Switch on" }
+  else { "Switch off" }
+}
+```
+
+Passing the option `-on` to the function on invocation will produce the output:
+```
+Switch on
+```
+
+Omitting the optino will produce the output:
+```
+Switch off
+```
+
+Boolean values can be explicitly set upon invocation using this syntax:
+```powershell
+Switch-Item -on:$false
+```
+
+Which will produce the output:
+```
+Switch off
+```
+
+__Mandatory parameters__ are declared by preceding the parameter name with `[Parameter(Mandatory=$true)]`. 
+```powershell
+
+```
+
+
 
 ## Environment manipulation
 ### Alias
@@ -302,56 +407,40 @@ Get-ADUser "Marty McFly" | Select-Object Name
 ```
 #### Add a CSV full of users
 ```powershell
-import-csv users.csv 
-  | foreach { 
-    New-ADUser 
-      -SamAccountName $_.SAM 
-      -GivenName $_.Last 
-      -DisplayName $_.DisplayName 
-      -Name $_.Name 
-      -Description $_.Description 
-      -AccountPassword ( 
-        ConvertToSecureString $_.Password 
-          -AsPlainText 
-          -Force 
-      ) 
-      -Enabled $True 
-  }
+import-csv users.csv | 
+foreach { 
+  New-ADUser 
+    -SamAccountName $_.SAM 
+    -GivenName $_.Last 
+    -DisplayName $_.DisplayName 
+    -Name $_.Name 
+    -Description $_.Description 
+    -AccountPassword (ConvertToSecureString $_.Password -AsPlainText -Force) 
+    -Enabled $True 
+}
 ```
 
 ## Network
-#### Display IP configuration
-```powershell
-Get-IPAddress
-```
 
 ### NetFirewallRule
 #### Set firewall rule for COM+ Network Access (DCOM-In)
 ```powershell
-Set-NetFirewallRule
-  -name COMPlusNetworkAccess-DCOM-In
-  -Enabled True
+Set-NetFirewallRule -name COMPlusNetworkAccess-DCOM-In -Enabled True
 ```
 
 #### Set firewall rule for Remote Event Log Management (NP-In)
 ```powershell
-Set-NetFirewallRule `
-  -name RemoteEventLogSvc-In-TCP `
-  -Enabled True
+Set-NetFirewallRule -name RemoteEventLogSvc-In-TCP -Enabled True
 ```
 
 #### Set firewall rule for Remote Event Log Management (RPC)
 ```powershell
-Set-NetFirewallRule `
-  -name RemoteEventLogSvc-NP-In-TCP `
-  -Enabled True
+Set-NetFirewallRule -name RemoteEventLogSvc-NP-In-TCP -Enabled True
 ```
 
 #### Set firewall rule for Remote Event Log Management (RPC-EPMAP)
 ```powershell
-Set-NetFirewallRule `
-  -name RemoteEventLogSvc-RPCSS-TCP `
-  -Enabled True
+Set-NetFirewallRule -name RemoteEventLogSvc-RPCSS-TCP -Enabled True
 ```
 
 #### List all WinRM listeners  
@@ -366,9 +455,7 @@ winrm get winrm/config
 
 #### Install Remote Server Adminstration Tools for PowerShell
 ```powershell
-Install-WindowsFeature `
-  -Name RSAT-ADDS `
-  -IncludeAllSubFeature
+Install-WindowsFeature -Name RSAT-ADDS -IncludeAllSubFeature
 ```
 
 
@@ -376,24 +463,17 @@ Install-WindowsFeature `
 ### Invoke-WebRequest
 #### Download a file over HTTP/HTTPS
 ```powershell
-Invoke-WebRequest 
-  -Uri http://example.com/path/to/file 
-  -OutFile \\path\to\local\file
+Invoke-WebRequest -Uri http://example.com/path/to/file -OutFile \\path\to\local\file
 ```
 
 #### Resume a partial download
 ```powershell
-Invoke-WebRequest 
-  -Uri http://example.com/path/to/file 
-  -Resume 
-  -Outfile \\path\to\local\file
+Invoke-WebRequest -Uri http://example.com/path/to/file -Resume -Outfile \\path\to\local\file
 ```
 
 #### Transfer a file over FTP/SFTP
 ```powershell
-Invoke-WebRequest ftp://ftp.example.com/file 
-  -Outfile C:\path\to\file 
-  -Credential ftpuseraccount
+Invoke-WebRequest ftp://ftp.example.com/file -Outfile C:\path\to\file -Credential ftpuseraccount
 ```
 
 #### Resolve shortened URLs
@@ -405,16 +485,12 @@ $Uri -UseBasicParsing  $Web.BaseResponse.ResponseUri.AbsoluteUri
 
 #### Scrape links from a website
 ```powershell
-(Invoke-WebRequest
-  -Uri "https://techrepublic.com"
-).Links.Href
+(Invoke-WebRequest -Uri "https://techrepublic.com").Links.Href
 ```
 
 #### Request data from a website impersonating a browser
 ```powershell
-Invoke-WebRequest 
-  -Uri http://microsoft.com 
-  -UserAgent ([Microsoft.PowerShell.Commands.PSUserAgent]::Chrome)
+Invoke-WebRequest -Uri http://microsoft.com -UserAgent ([Microsoft.PowerShell.Commands.PSUserAgent]::Chrome)
 ```
 
 ## Other commands
@@ -448,3 +524,5 @@ Set-PSReadlineOption
   - "About Comparison Operators". [Microsoft Docs](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_comparison_operators?view=powershell-6): 2019/01/17.
   - Berkouwer, Sander. _Active Directory Administration Cookbook_. [sources/adac.md](../sources/adac.md)
   - "PowerShell equivalents for common Linux/bash commands". [TheShellNut](https://mathieubuisson.github.io/powershell-linux-bash/): 2015/09/30.
+  - "About Functions". [Microsoft Docs](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_functions?view=powershell-6): 2019/02/26.
+  - "Select-Object". [Microsoft Docs](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/select-object?view=powershell-6)
