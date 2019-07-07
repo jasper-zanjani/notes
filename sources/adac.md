@@ -17,8 +17,8 @@
 
 
 ## 1. Optimizing Forests, Domains, and Trusts
-> - [ ] 1.01 Choosing between a new domain or forest
-> - [ ] 1.02 Listing the domains in your forest
+> - [x] 1.01 Choosing between a new domain or forest
+> - [x] 1.02 Listing the domains in your forest
 > - [ ] 1.03 Using adprep.exe to prepare for new Active Directory functionality
 > - [ ] 1.04 Raising the domain functional level to Windows Server 2016
 > - [ ] 1.05 Raising the forest functional level to Windows Server 2016
@@ -31,6 +31,16 @@
 
 #### 1.01 Choosing between a new domain or forest
 #### 1.02 Listing the domains in your forest
+This task requires the __Active Directory module__ for PowerShell to be installed.
+```powershell
+Install-WindowsFeature RSAT-AD-PowerShell -IncludeManagementTools
+```
+
+`Get-ADForest` is the command used to display forests:
+```powershell
+Get-ADForest | select -ExpandProperty domains
+```
+
 #### 1.03 Using adprep.exe to prepare for new Active Directory functionality
 #### 1.04 Raising the domain functional level to Windows Server 2016
 #### 1.05 Raising the forest functional level to Windows Server 2016
@@ -53,7 +63,6 @@ Dimensioning domain controllers:
   - Install Server Core
   - Install latest stable firmware
   - Use VM-GenerationID enabled virtualization platforms, so that you can take snapshots of DCs without compromising the AD database
-
 Preconfigure servers after installation:
   - change hostname
   - Make sure Windows is activated
