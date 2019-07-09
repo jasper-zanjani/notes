@@ -49,6 +49,26 @@ $vm = Set-AzVMSourceImage -VM $vm -PublisherName 'MicrosoftWindowsServer' -Offer
 New-AzVM -ResourceGroupName $ResourceGroupName -Location $LocationName -VM $vm
 ```
 
+#### Find a Marketplace image
+
+`Get-AzVMImage` requires the following named parameters:
+  - `-Location` i.e. "EastUS"
+  - `-Offer` cf. `Get-AzVMImageOffer`
+  - `-PublisherName` cf. `Get-AzVMImagePublisher`
+  - `-Skus` cf. `Get-AzVMImageSku`
+  - `-Version` providing `*` will produce a list of available versions
+
+`Get-AzVMImageOffer`
+  - `-Location`
+  - `-PublisherName`
+`Get-AzVMImagePublisher`
+  - `-Location`
+`Get-AzVMImageSku`
+  - `-Location`
+  - `-Offer`
+  - `-PublisherName`
+
+
 #### Start a VM
 
 `Start-AzVM` requires at minimum __2__ arguments:
@@ -76,7 +96,7 @@ Alternatively:
 winrm quickconfig
 ```
 
-It can also be done through Azure, using `Invoke-AzVMRunCommand`
+It can also be done through Azure, using `Invoke-AzVMRunCommand -CommandId EnableRemotePS`
 
 
 2. __Modify Network Security Group policy__ (see below) to allow inbound connections to ports 5985 and 5986, which are used by WinRM.
@@ -120,23 +140,13 @@ Get-AzSubscription | select -ExpandProperty Id
 ```
 
 #### Invoking a command on a VM
-`Invoke-AzVMRunCommand` requires only a single option
-Option              | Mandatory | Position
-:---                | :---      | :---
-`-CommandId`        | ✔         | Named
-
-Option              | Description
-:---                | :---
-`-ResourceGroupNAme`
-
-You can pass along a script containing predefined commands using the named parameter `-ScriptPath`, but the value for `-CommandId` must be `RunPowerShellScript`. Unlike `Invoke-Command, there is no way to define commands inline.
+`Invoke-AzVMRunCommand` requires only a single option: `-CommandId`. You can pass along a script containing predefined commands using the named parameter `-ScriptPath`, but the value for `-CommandId` must be `RunPowerShellScript`. Unlike `Invoke-Command, there is no way to define commands inline.
 ```powershell
-Invoke-AzVMRunCommand -ResourceGroupName RG -VMName VM `
-  -CommandId 'RunPowerShellScript' -ScriptPath C:\injectedscript.ps1
+Invoke-AzVMRunCommand -ResourceGroupName RG -VMName VM -CommandId 'RunPowerShellScript' -ScriptPath C:\injectedscript.ps1
 ```
 
 #### Modify Network Security Group policies
-Open inbound ports are most easily defined at the time of VM creation (`New-AzVM ... -InboundPorts 5985,5986 ...`).
+Open inbound ports are most easily defined at the time of VM creation (`New-AzVM ... -OpenPorts 5985,5986 ...`).
 
 From __Azure Portal__: Virtual machines > VM to be modified > (Settings) Networking > Network interface > Add inbound port rule button 
 
