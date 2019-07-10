@@ -11,9 +11,9 @@ uname -srm
 ```
 
 Output:
-```
-Linux 4.15.0-54-generic x86_64
-```
+> ```
+> Linux 4.15.0-54-generic x86_64
+> ```
 
 ```bash
 hostnamectl | grep "Kernel"
