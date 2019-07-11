@@ -71,6 +71,7 @@ Windows Defender Firewall with Advanced Security  | wf.msc        |             
 Windows Firewall and Advanced Security            |               | MMC snap-in corresponding to rule group Windows Firewall Remote Management | [ITP](sources/itp-winsrv-mcsa.md)
 Windows Remote Shell (WinRS)                      |               |               | [ITP](sources/itp-winsrv-mcsa.md)
 Windows Remote Management (WinRM)                 | winrm.exe     | Microsoft's implementation of the __WS-Management Protocol__. Unlike MMCs, which are based on DCOM (legacy technology), WinRM is considered firewall-friendly and is the preferred option, especially since its `quickconfig` makes setting up remote management easier | [ITP](sources/itp-winsrv-mcsa.md)
+Windows Diagnostic extension                      |               | can be used to push custom metrics to Azure [AZ-103](../sources/az-103.md): 44
 
 ## Files
 

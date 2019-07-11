@@ -226,6 +226,114 @@ In order to use the output in an evaluated expression (like command substitution
 Get-AzPublicIpAddress Socrates-ip | select -ExpandProperty IpAddress
 ```
 
+#### Tag a resource group that already had been tagged (PowerShell)
+```powershell
+$tags = (Get-AzResourceGroup -Name hrgroup).Tags
+$tags.Add("Owner","user@contoso.com")
+Set-AzResourceGroup -Tag $tags -Name hrgroup
+```
+
+Using the `Add()` method
+```powershell
+$r = Get-AzResource -ResourceName hrvm1 -ResourceGroupName hrgroup
+$r.Tags.Add("Owner","user@contoso.com")
+Set-AzResource -Tag $r.Tags -ResourceId $r.ResourceId -Force
+```
+
+#### Tag a resource-group that has not already been tagged (PowerShell)
+```powershell
+$r = Get-AzResource -ResourceName hrvm1 -ResourceGroupName hrgroup
+Set-AzResource -Tag @{ CostCode="1001"; Environment="Production" } -ResourceId
+$r.ResourceId -Force
+```
+
+#### Enable diagnostics log collection with a storage account
+```powershell
+PS C:\> $resource = Get-AzResource `
+>>   -Name <resourceName> `
+>>   -ResourceGroupName <resourceGroupName>
+PS C:\> $storage = Get-AzResource `
+>>   -Name <resourceName> `
+>>   -ResourceGroupName <resourceGroupName>
+PS C:\> Set-AzDiagnosticSetting `
+>>   -ResourceId $resource.ResourceId `
+>>   -StorageAccountId $storage.ResourceId `
+>>   -Enabled $true
+```
+
+#### Enable diagnostics log streaming to an Event Hub (PowerShell)
+```powershell
+PS C:\> $rule = Get-AzServiceBusRule -ResourceGroup <resourceGroupName> `
+>> -Namespace <namespace> `
+>> -Topic <topic> `
+>> -Subscription <subscription> `
+>> -Name <ruleName> 
+PS C:\> Set-AzDiagnosticSetting `
+>> -ResourceId $resource.ResourceId `
+>> -ServiceBusRuleId $rule.Id `
+>> -Enabled $true
+```
+
+#### Enable diagnostics logs collection in a Log Analytics workspace (PowerShell)
+```powershell
+PS C:\> $workspace = Get-AzOperationalInsightsWorkspace `
+>> -Name <workspaceName> `
+>> -ResourceGroupName <resourceGroupName> 
+PS C:\> Set-AzDiagnosticSetting `
+>> -ResourceId $resource.ResourceId `
+>> -WorkspaceId $workspace.ResourceId `
+>> -Enabled $true
+```
+
+#### Create a new Log Analytics workspace (PowerShell)
+A new workspace can be configured through the Log Analytics blade, or through APIs using a Resource Manager template.
+```powershell
+PS C:\> $params = @{
+>> workspaceName = "ExampleLA"
+>> location = "eastus"
+>> sku = "PerGB2018"
+}
+PS C:\> New-AzResourceGroup `
+>> -Name ExamRefRG `
+>> -Location "East US"
+PS C:\> New-AzResourceGroupDeployment `
+>> -ResourceGroupName ExamRefRG `
+>> -TemplateFile 'azuredeploy.json' `
+>> -TemplateParameterObject $params `
+>> -Verbose
+```
+
+#### Delete a resource group
+```powershell
+PS C:\> Remove-AzResourceGroup -Name "hrgroup"
+```
+
+#### Delete a resource group without confirmation
+```powershell
+PS C:\> Remove-AzResourceGroup -Name "hrgroup" -Force
+```
+
+#### Create a storage account
+```powershell
+PS C:\> New-AzStorageAccount `
+>> -ResourceGroupName RG
+>> -Name mystorage112300
+>> -SkuName Standard_LRS
+>> -Location WestUS
+>> -Kind StorageV2
+>> -AccessTier Hot
+```
+
+#### Change storage account's access tier, without confirmation 
+```powershell
+PS C:\> Set-AzStorageAccount `
+>> -ResourceGroupName RG `
+>> -Name $accountName `
+>> -AccessTier Cool `
+>> -Force
+```
+
+
 ## Sources
   - "Enable-PSRemoting". [Microsoft Docs](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/enable-psremoting?view=powershell-6)
   - "Azure Az Module for Windows PowerShell, Core, and Cloud Shell Replaces Azure RM". [Petri](https://www.petri.com/azure-az-module-for-windows-powershell-core-and-cloud-shell-replaces-azurerm): 2019/01/23.
