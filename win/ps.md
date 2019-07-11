@@ -351,6 +351,22 @@ Get-WmiObject -Win32_OperatingSystem -ComputerName localhost |
 Select-Object -Property @{n="Last Boot Time";e={[Management.ManagementDateTimeConvert]::ToDateTime($_.LastBootUpTime)}}
 ```
 
+#### Build a credential
+Credentials can be stored in a variable and built interactively with `Get-Credential`
+```powershell
+$cred = Get-Credential
+```
+
+A credential can be built piecemeal by first securely saving a password with `ConvertTo-SecureString`
+```powershell
+$pw = ConvertTo-SecureString "Password" -AsPlainText -Force
+```
+
+Then construct the credential by using `New-Object`
+```powershell
+$cred = New-Object System.Management.Automation.PSCredential ("FullerP", $pw)
+```
+
 ## Sources
   - Berkouwer, Sander. _Active Directory Administration Cookbook_. [sources/adac.md](../sources/adac.md).
   - Krause, Jordan. _Windows Server 2016 Administration Cookbook_. [sources/wsac.md](../sources/wsac.md).

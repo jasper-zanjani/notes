@@ -19,10 +19,64 @@ Connect-AzAccount
   - `-Name` which can be defined positionally at position __0__
   - `-Location`, the geographic area ("EastUS", "CentralUS", etc), defined positionally at position __1__
 
+```powershell
+New-AzResourceGroup RG WestUS
+```
+
+#### Deploy a Windows Server Server Core VM
+```powershell
+$vm = Get-AzVMImage `
+-Location EastUS `
+-Offer WindowsServer `
+-PublisherName MicrosoftWindowsServer `
+-Skus 2016-Datacenter-Server-Core `
+-Version 2016.127.20190603
+```
+
+Sku: `2016-Datacenter-Server-Core`
+Size: `Standard_B1ls`, 1 core, 512 MB RAM, 1 TB disk size
+```powershell
+$vm = New-AzVMConfig -VMName Spike -VMSize Standard_B1ls
+$vm = Set-AzVMOperatingSystem $vm -Windows -ComputerName SpikeSpiegel -Crednetial $aztestadmin
+$vm = Add-AzVMNetworkInterface
+```
+
+Set-AzVMOperatingSystem options:
+
+Option  | Position  | Description
+:---    | :---      | :---
+`-VM`           | 0 | Local virtual machine object on which to set OS properties
+`-Linux`        | 1 | Indicates that the OS is Linux
+`-Windows`      | 1 | Indicates OS type is Windows
+`-ComputerName` | 2 | Name of the computer
+`-Credential`   | 3
+`-CustomData`   | 4 | Optional
+`-DisablePasswordAuthentication` | 5 | Optional
+`-ProvisionVMAgent`               | 5 | Optional
+`-EnableAutoUpdate` | 6 | Optional
+`-TimeZone`   | 7 | Optional
+`-WinRMHttp`  | 8 | Optional: indicates that the system uses HTTP WinRM
+`-WinRMHttps` | 9 | Indicates that the system uses HTTPS WinRM
+`-WinRMCertificateUrl` | 10 | Use of WinRM certificate, stored in a Key Vault
+
 #### Create a VM
 `New-AzVM`
+
+Option                | Position  | Description
+:---                  | :---      | :---
+`-ResourceGroupName`  | 0
+`-Location`           | 1
+`-VM`                 | 2
+`-Zone`               | 3
+
+
 ```powershell
 New-AzVM -ResourceGroupName "RG" -Name "VM" -Location "EastUS" -Size "Standard-B2s" -Credential (Get-Credential)
+```
+
+Or, taking advantage of positional parameters
+```powershell
+New-AzVM RG
 ```
 
 The `-Image` optional named parameter can be used to define other operating systems, and requires friendly image names. If a Linux image is provided, you should provide the `-Linux` switch parameter as well in order to specify a Linux-type disk file.
