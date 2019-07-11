@@ -172,6 +172,16 @@ In order to use the output in an evaluated expression (like command substitution
 Get-AzPublicIpAddress Socrates-ip | select -ExpandProperty IpAddress
 ```
 
+#### Delete a resource group
+```powershell
+PS C:\> Remove-AzResourceGroup -Name "hrgroup"
+```
+
+#### Delete a resource group without confirmation
+```powershell
+PS C:\> Remove-AzResourceGroup -Name "hrgroup" -Force
+```
+
 ## Sources
   - "Enable-PSRemoting". [Microsoft Docs](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/enable-psremoting?view=powershell-6)
   - "Azure Az Module for Windows PowerShell, Core, and Cloud Shell Replaces Azure RM". [Petri](https://www.petri.com/azure-az-module-for-windows-powershell-core-and-cloud-shell-replaces-azurerm): 2019/01/23.
