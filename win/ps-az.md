@@ -64,10 +64,10 @@ Option  | Position  | Description
 
 Option                | Position  | Description
 :---                  | :---      | :---
-`-ResourceGroupName`  | 0
-`-Location`           | 1
+`-ResourceGroupName`  | 0         | Optional
+`-Location`           | 1         | Optional
 `-VM`                 | 2
-`-Zone`               | 3
+`-Zone`               | 3         | Optional
 
 
 ```powershell
