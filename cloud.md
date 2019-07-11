@@ -18,8 +18,8 @@ Scale up          | increase __instance size__ of existing resources: __disrupti
 
 ## Microsoft Azure
 [AZ-103 certification](https://www.microsoft.com/en-us/learning/exam-az-103.aspx)
-  - _Microsoft Azure AZ-103_ [ITProTV](https://app.itpro.tv/course-library/microsoft-az103/manage-subscriptions-az103/)
-  - _Microsoft Azure Concepts_ [Udemy](https://www.udemy.com/linux-academy-microsoft-azure-concepts/)
+  - [x] _Microsoft Azure AZ-103_ [ITProTV](https://app.itpro.tv/course-library/microsoft-az103/manage-subscriptions-az103/)
+  - [x] _Microsoft Azure Concepts_ [Udemy](https://www.udemy.com/linux-academy-microsoft-azure-concepts/)
 
  
 ## Types of cloud services
