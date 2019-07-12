@@ -76,7 +76,7 @@ New-AzVM -ResourceGroupName "RG" -Name "VM" -Location "EastUS" -Size "Standard-B
 
 Or, taking advantage of positional parameters
 ```powershell
-New-AzVM RG
+New-AzVM Greeks Socrates $vm
 ```
 
 The `-Image` optional named parameter can be used to define other operating systems, and requires friendly image names. If a Linux image is provided, you should provide the `-Linux` switch parameter as well in order to specify a Linux-type disk file.
@@ -105,22 +105,25 @@ New-AzVM -ResourceGroupName $ResourceGroupName -Location $LocationName -VM $vm
 
 #### Find a Marketplace image
 
-`Get-AzVMImage` requires the following named parameters:
-  - `-Location` i.e. "EastUS"
-  - `-Offer` cf. `Get-AzVMImageOffer`
-  - `-PublisherName` cf. `Get-AzVMImagePublisher`
-  - `-Skus` cf. `Get-AzVMImageSku`
-  - `-Version` providing `*` will produce a list of available versions
+`Get-AzVMImagePublisher` produces the publisher, e.g. "MicrosoftWindowsServer"
+  - `-Location`
 
-`Get-AzVMImageOffer`
+`Get-AzVMImageOffer` produces the offer, e.g. "WindowsServer"
   - `-Location`
   - `-PublisherName`
-`Get-AzVMImagePublisher`
-  - `-Location`
-`Get-AzVMImageSku`
+
+`Get-AzVMImageSku` produces the sku, e.g.  "2016-Datacenter-Server-Core"
   - `-Location`
   - `-Offer`
   - `-PublisherName`
+
+`Get-AzVMImage` requires the following named parameters:
+  - `-Location` i.e. "EastUS"
+  - `-PublisherName` cf. `Get-AzVMImagePublisher`
+  - `-Offer` cf. `Get-AzVMImageOffer`
+  - `-Skus` cf. `Get-AzVMImageSku`
+  - `-Version` providing `*` will produce a list of available versions
+
 
 
 #### Start a VM
