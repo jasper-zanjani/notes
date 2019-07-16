@@ -35,44 +35,51 @@ Alerts can have 3 states:
 
 ## Azure blades
 
-Blade         | Option                | Topics
-:---          | :---                  | :---
-Monitor       | Alerts                | View alerts, Create Alerts, Manage Alert rules
-              | Metrics               | View and create charts using metrics
-Alerts        | New alert rule        | Create Alerts
-              | Manage alert rules    | View existing alert rules
-Log Analytics | Create                | Configure a new Log Analytics workspace
-Metrics       | 
-Subscription  | Access Control (IAM)  | Assign subscription administrator permissions, including classic and RBAC roles
+Blade                                   | Option                | Topics
+:---                                    | :---                  | :---
+Monitor                                 | Alerts                | View alerts, Create Alerts, Manage Alert rules
+                                        | Metrics               | View and create charts using metrics
+Alerts                                  | New alert rule        | Create Alerts
+                                        | Manage alert rules    | View existing alert rules
+Log Analytics                           | Create                | Configure a new Log Analytics workspace
+Metrics                                 | 
+Storage account                         | Firewalls and Virtual Networks |  Storage Firewall, allowing access to virtual networks
+                                        | Access keys           | Access storage name and key
+Subscription                            | Access Control (IAM)  | Assign subscription administrator permissions, including classic and RBAC roles
 
 
 ## Glossary
 
-Term  | Definition  | Source
-:---  | :---        | :---
-logs    | numerical data or text
-metrics | numerical values output by resources and services within Azure | [az-103.md](../sources/az-103.md): 43
+Term                                    | Definition  | Source
+:---                                    | :---        | :---
+bring your own key (BYOK)               | act of importing keys to Azure Key Vault
+Hardware Security Modules (HSM)         | one of the ways keys in __Azure Key Vault__ can be protected
+key rolling                             | regenerate one access key by switching applications to a second one before regenerating the first | [az-103.md](../sources/az-103.md): 114
+logs                                    | numerical data or text
+metrics                                 | numerical values output by resources and services within Azure | [az-103.md](../sources/az-103.md): 43
 
-Azure feature | Description | Source
-:---          | :---        | :---
+Azure feature                           | Description | Source
+:---                                    | :---        | :---
 Activity Log
-Application Insights | service that can provide __application metrics__, if enabled and if the applications have been instrumented | [az-103.md](../sources/az-103.md): 44
-Azure Automation | allows you to build __runbooks__ that execute commands or scripts
+Application Insights                    | service that can provide __application metrics__, if enabled and if the applications have been instrumented | [az-103.md](../sources/az-103.md): 44
+Azure Automation                        | allows you to build __runbooks__ that execute commands or scripts
 Azure Functions
-Azure Log Analytics (OMS) agent) | agent required to be installed on a machine for it to report telemetry to Azure Log Analytics (previously known as __Microsoft Monitoring Agent__)
-Azure Monitor | "single pane of glass" to manage __metrics__, __logs__, and **alerts** from multiple subscriptions
-Azure Policy  | service that can create, assign, and manage policies to enforce governance.
-Azure Storage Explorer | cross-platform application designed to help you quickly manage one or more Azure storage accounts that supports all storage services and CosmosDB and Azure Data Lake Storage services
-Cloudyn       | service requiring separate registration that can track resource cost for Azure resources and resource usage for AWS and Azure. | [az-103.md](../sources/az-103.md): 60
+Azure Key Vault                         | helps safeguard cryptographic keys and secrets used by cloud applications and services | [az-103.md](../sources/az-103.md): 114
+Azure Log Analytics (OMS) agent)        | agent required to be installed on a machine for it to report telemetry to Azure Log Analytics (previously known as __Microsoft Monitoring Agent__)
+Azure Monitor                           | "single pane of glass" to manage __metrics__, __logs__, and **alerts** from multiple subscriptions
+Azure Policy                            | service that can create, assign, and manage policies to enforce governance.
+Azure Storage Explorer                  | cross-platform application designed to help you quickly manage one or more Azure storage accounts that supports all storage services and CosmosDB and Azure Data Lake Storage services
+Cloudyn                                 | service requiring separate registration that can track resource cost for Azure resources and resource usage for AWS and Azure. | [az-103.md](../sources/az-103.md): 60
 Enterprise Agreement 
-ExpressRoute  | 
-Kusto         | query language comparable to SQL used by Log Analytics. Kusto queries use the pipe character to separate commands, always begin with a scope, are case-sensitive, and generate read-only requests so log entries are only deleted based on retention policy. | [az-103.md](../sources/az-103.md): 53
-Log Analytics | facilitates collection, correlation, search, and action on log and performance data, organized in __workspaces__ | [az-103.md](../sources/az-103.md): 47-48.
-Log Analytics workspace | where logs are collected and aggregated | [az-103.md](../sources/az-103.md): 48
+ExpressRoute                            | 
+Kusto                                   | query language comparable to SQL used by Log Analytics. Kusto queries use the pipe character to separate commands, always begin with a scope, are case-sensitive, and generate read-only requests so log entries are only deleted based on retention policy. | [az-103.md](../sources/az-103.md): 53
+Log Analytics                           | facilitates collection, correlation, search, and action on log and performance data, organized in __workspaces__ | [az-103.md](../sources/az-103.md): 47-48.
+Log Analytics workspace                 | where logs are collected and aggregated | [az-103.md](../sources/az-103.md): 48
 Logic Apps
-Resource      | single service instance, which can be a virtual machine, a virtual network, a storage account, or any toher Azure service | [az-103.md](../sources/az-103.md): 62
-Resource group  | logical group of resources | [az-103.md](../sources/az-103.md): 63
-Resource group template | JSON file that allows you to declaratively describe a set of resources | [az-103.md](../sources/az-103.md): 100
+Resource                                | single service instance, which can be a virtual machine, a virtual network, a storage account, or any toher Azure service | [az-103.md](../sources/az-103.md): 62
+Resource group                          | logical group of resources | [az-103.md](../sources/az-103.md): 63
+Resource group template                 | JSON file that allows you to declaratively describe a set of resources | [az-103.md](../sources/az-103.md): 100
+Shared Access Signature (SAS)           | 
 Locally-redundant storage (LRS)         | Storage replication option that makes 3 local sychronous (within a single datacenter) copies 
 Zone-redundant storage (ZRS)            | Storage replication option that makes 3 synchronous copies across multiple availability zones; available for general-purpose v2 storage accounts at **Standard** performance tier only.
 Geographically-redundant storage (GRS)  | Storage replication option that makes 3 local synchronous copies plus 3 additional asynchronous copies (typically within 15 minutes, but no SLA) to a second data center far away from the primary region

@@ -155,7 +155,6 @@ winrm quickconfig
 
 It can also be done through Azure, using `Invoke-AzVMRunCommand -CommandId EnableRemotePS`
 
-
 2. __Modify Network Security Group policy__ (see below) to allow inbound connections to ports 5985 and 5986, which are used by WinRM.
 
 3. Add the VM's public IP address &lt;$ipaddr&gt; to the trusted hosts of the local machine (must be run as administrator):
@@ -188,7 +187,7 @@ Or, enter the credential dynamically
 etsn -ComputerName 123.45.67.89 -Credential (Get-Credential)
 ```
 
-##### Connect to VM from a Mac or Linux machine
+#### Connect to VM from a Mac or Linux machine
 Using OpenSSH...
 
 #### Display Azure subscription ID
@@ -336,6 +335,55 @@ PS C:\> Set-AzStorageAccount `
 >> -Force
 ```
 
+#### Enable all metrics and logs for a resource
+```powershell
+PS C:\> Set-AzDiagnosticSetting `
+>> -ResourceId <resourceId> `
+>> -Enabled $True
+```
+
+#### Disable all metrics and logs
+```powershell
+PS C:\> Set-AzDiagnosticSetting `
+>> -ResourceId <resourceId> `
+>> -Enabled $False
+```
+
+#### Create an Azure Key Vault (PowerShell)
+```powershell
+PS C:\> New-AzKeyVault `
+>>  -VaultName vaultName `
+>>  -ResourceGroupNAme rgName `
+>>  -Location EastUS 
+```
+
+#### Create a software managed key in Azure Key Vault (PowerShell)
+```powershell
+PS C:\> Add-AzKeyVaultKey `
+>>  -VaultName vaultName `
+>>  -Name keyName `
+>>  -Destination 'Software'
+```
+
+#### Retrieve a storage account key (PowerShell)
+```powershell
+PS C:\> $storageKey = Get-AzStorageAccountKey `
+>>  -ResourceGrouupName rgName `
+>>  -Name storageAccount `
+```
+
+#### Convert storage account key to secure string
+```powershell
+PS C:\> $secretvalue = ConvertTo-SecureString $storageKey[0].Value -AsPlainText -Force
+```
+
+#### Set secret value to be used  (PowerShell)
+```powershell
+PS C:\> $secret = Set-AzKeyVaultSecret `
+>>  -VaultName vaultName `
+>>  -Name $secretName `
+>>  -SecretValue $secretvalue
+```
 
 ## Sources
   - "Enable-PSRemoting". [Microsoft Docs](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/enable-psremoting?view=powershell-6)
