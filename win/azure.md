@@ -37,12 +37,13 @@ Alerts can have 3 states:
 
 Blade                                   | Option                | Topics
 :---                                    | :---                  | :---
-Monitor                                 | Alerts                | View alerts, Create Alerts, Manage Alert rules
-                                        | Metrics               | View and create charts using metrics
 Alerts                                  | New alert rule        | Create Alerts
                                         | Manage alert rules    | View existing alert rules
+Import/Export Jobs                      |                       | Import and export data 
 Log Analytics                           | Create                | Configure a new Log Analytics workspace
 Metrics                                 | 
+Monitor                                 | Alerts                | View alerts, Create Alerts, Manage Alert rules
+                                        | Metrics               | View and create charts using metrics
 Storage account                         | Firewalls and Virtual Networks |  Storage Firewall, allowing access to virtual networks
                                         | Access keys           | Access storage name and key
 Subscription                            | Access Control (IAM)  | Assign subscription administrator permissions, including classic and RBAC roles
@@ -52,18 +53,27 @@ Subscription                            | Access Control (IAM)  | Assign subscri
 
 Term                                    | Definition  | Source
 :---                                    | :---        | :---
+append blob                             | blob type optimized for append operations, with no support for modification of existing blob contents, most commonly used for log files | [az-103.md](../sources/az-103.md): 130
+blob storage                            | used for large-scale storage of arbitrary data objects, such as media files, log files, or other objects | [az-103.md](../sources/az-103.md): 129
+block blob                              | blob type optimized for efficient uploads and downloads for video, image, and other general-purpose storage | [az-103.md](../sources/az-103.md): 130
+container                               | subdivision of a storage account, in which blobs are stored; similar in concept to a hard drive in that they provide a storage space in which blobs can be organized in a directory structure | [az-103.md](../sources/az-103.md): 129
 bring your own key (BYOK)               | act of importing keys to Azure Key Vault
 Hardware Security Modules (HSM)         | one of the ways keys in __Azure Key Vault__ can be protected
 key rolling                             | regenerate one access key by switching applications to a second one before regenerating the first | [az-103.md](../sources/az-103.md): 114
 logs                                    | numerical data or text
 metrics                                 | numerical values output by resources and services within Azure | [az-103.md](../sources/az-103.md): 43
+page blob                               | blob type optimized for random-access I/O, typically used to store VHD files when using unmanaged disks | [az-103.md](../sources/az-103.md): 130
+soft delete                             | Storage account feature that allows you to save and recover data when blobs or blob snapshots are deleted even in the event of an overwrite | [az-103.md](../sources/az-103.md): 135
 
 Azure feature                           | Description | Source
 :---                                    | :---        | :---
-Activity Log
+async blob copy service                 | server-side based service that can copy files you specify from a source location to a destination in an Azure Storage account | [az-103.md](../sources/az-103.md): 124
+Azure Activity Log                      | subscription level log that captures events from operational data to service health events for a subscription | [az-103.md](../sources/az-103.md): 119
 Application Insights                    | service that can provide __application metrics__, if enabled and if the applications have been instrumented | [az-103.md](../sources/az-103.md): 44
 Azure Automation                        | allows you to build __runbooks__ that execute commands or scripts
+Azure Data Box                          | device that Microsoft will send to you that allows you to copy your data to it and then ship back to Microsoft for upload to Azure | [az-103.md](../sources/az-103.md): 129
 Azure Functions
+Azure Import and Export service         | allows you to ship data into or out of an Azure Storage account by physically shipping disks to an Azure datacenter | [az-103.md](../sources/az-103.md): 129
 Azure Key Vault                         | helps safeguard cryptographic keys and secrets used by cloud applications and services | [az-103.md](../sources/az-103.md): 114
 Azure Log Analytics (OMS) agent)        | agent required to be installed on a machine for it to report telemetry to Azure Log Analytics (previously known as __Microsoft Monitoring Agent__)
 Azure Monitor                           | "single pane of glass" to manage __metrics__, __logs__, and **alerts** from multiple subscriptions
@@ -79,7 +89,7 @@ Logic Apps
 Resource                                | single service instance, which can be a virtual machine, a virtual network, a storage account, or any toher Azure service | [az-103.md](../sources/az-103.md): 62
 Resource group                          | logical group of resources | [az-103.md](../sources/az-103.md): 63
 Resource group template                 | JSON file that allows you to declaratively describe a set of resources | [az-103.md](../sources/az-103.md): 100
-Shared Access Signature (SAS)           | 
+Shared Access Signature (SAS) token     | query string parameter appended to the full URI of a storage resource | [az-103.md](../sources/az-103.md): 118
 Locally-redundant storage (LRS)         | Storage replication option that makes 3 local sychronous (within a single datacenter) copies 
 Zone-redundant storage (ZRS)            | Storage replication option that makes 3 synchronous copies across multiple availability zones; available for general-purpose v2 storage accounts at **Standard** performance tier only.
 Geographically-redundant storage (GRS)  | Storage replication option that makes 3 local synchronous copies plus 3 additional asynchronous copies (typically within 15 minutes, but no SLA) to a second data center far away from the primary region
