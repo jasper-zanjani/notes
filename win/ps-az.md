@@ -1,63 +1,68 @@
 # PowerShell commands for Azure
 
-Command                           | Task
-:---                              | :---
-`Add-AzKeyVaultKey`               | **Create a software managed key in Azure Key Vault**
-`Add-AzNetworkSecurityRuleConfig` | **Modify Network Security Group policies**
-`Add-AzVMNetworkInterface`        | **Deploy a Windows Server Core VM**
-`Connect-AzAccount`               | **Connect to Azure**
-`ConvertTo-SecureString`          | **Convert storage account key to secure string**
-`Enable-PSRemoting`               | **Connect to VM from a Windows machine**
-`Enter-PSSession`                 | **Connect to VM from a Windows machine** 
-`Get-AzNetworkSecurityGroup`      | **Modify Network Security Group policies**
-`Get-AzPublicIpAddress`           | **Display IP Address**
-`Get-AzResource`                  | **Enable diagnostics log collection with a storage account**
-`Get-AzResourceGroup`             | **Tag a resource group that already had been tagged**
-`Get-AzServiceBusRule`            | **Enable diagnostics log streaming to an Event Hub**
-`Get-AzStorageAccountKey`         | **Retrieve a storage account key**
-`Get-AzStorageBlobCopyState`      | **Use async blob copy service to copy a file**
-`Get-AzSubscription`              | **Display Azure subscription ID**
-`Get-AzVMImage`                   | **Deploy a Windows Server Core VM**
-                                  | **Find a Marketplace image**
-`Get-AzVMImageOffer`              | **Find a Marketplace image** 
-`Get-AzVMImagePublisher`          | **Find a Marketplace image** 
-`Get-AzVMImageSku`                | **Find a Marketplace image**
-`Install-Module`                  | **Install the Azure Resource Manager PowerShell module**
-`Invoke-AzVMRunCommand`           | **Invoking a command on a VM**
-`New-AzKeyVault`                  | **Create an Azure Key Vault**
-`New-AzResourceGroup`             | **Create a Resource Group**
-                                  | **Create a new Log Analytics workspace**
-`New-AzResourceGroupDeployment`   | **Create a new Log Analytics workspace**
-`New-AzStorageAccount`            | **Create a storage account**
-`New-AzStorageContainer`          | **Create a storage container**
-                                  | **Use async blob copy service to copy a file**
-`New-AzStorageContext`            | **Use async blob copy service to copy a file**
-`New-AzStorageBlobSASToken`       | **Create a SAS token for a specific storage blob**
-`New-AzVM`                        | **Create a VM**
-`New-AzVMConfig`                  | **Create a VM**
-                                  | **Deploy a Windows Server Core VM**
-`New-NetFirewallRule`             | **Connect to VM from a Windows machine** 
-`Remove-AzResourceGroup`          | **Delete a resource group**
-                                  | **Delete a resource group without confirmation**
-`Set-AzCurrentStorageAccount`     | **Create a storage container**
-`Set-AzDiagnosticSetting`         | **Enable diagnostics log collection with a storage account**
-                                  | **Enable diagnostics log collection in a Log Analytics workspace**
-`Set-AzKeyVaultSecret`            | **Set secret value to be used**
-`Set-AzNetworkSecurityGroup`      | **Modify Network Security Group policies**
-`Set-AzResource`                  | **Tag a resource group that already had been tagged**
-`Set-AzResourceGroup`             | **Tag a resource group that already had been tagged**
-`Set-AzDiagnosticSetting`         | **Enable all metrics and logs for a resource**
-                                  | **Disable all metrics and logs**
-`Set-AzStorageAccount`            | **Change storage account's access tier, without confirmation**
-                                  | **Change replication mode of a storage account**
-`Set-AzStorageBlobContent`        | **Create a storage blob**
-`Start-AzStorageBlobCopy`         | **Use async blob copy service to copy a file**
-`Set-AzVMOperatingSystem`         | **Deploy a Windows Server Core VM**
-`Set-AzVMSourceImage`             | **Create a VM**
-`Set-Item`                        | **Connect to VM from a Windows machine** 
-`Start-AzVM`                      | **Start a VM**
-`Start-AzStorageBlobCopy`         | **Use async blob copy service to copy a file**
-`Stop-AzVM`                       | **Shut down a VM**
+Command                           | Skill | Task
+:---                              | :---  | :---
+`Add-AzKeyVaultKey`               | 2.1   | **Create a software managed key in Azure Key Vault**
+`Add-AzNetworkSecurityRuleConfig` |       | **Modify Network Security Group policies**
+`Add-AzVMNetworkInterface`        | 2.1   | **Deploy a Windows Server Core VM**
+`Connect-AzAccount`               |       | **Connect to Azure**
+`ConvertTo-SecureString`          |       | **Convert storage account key to secure string**
+`Enable-PSRemoting`               |       | **Connect to VM from a Windows machine**
+`Enter-PSSession`                 |       | **Connect to VM from a Windows machine** 
+`Get-AzNetworkSecurityGroup`      |       | **Modify Network Security Group policies**
+`Get-AzPublicIpAddress`           |       | **Display IP Address**
+`Get-AzResource`                  |       | **Enable diagnostics log collection with a storage account**
+`Get-AzResourceGroup`             |       | **Tag a resource group that already had been tagged**
+`Get-AzServiceBusRule`            |       | **Enable diagnostics log streaming to an Event Hub**
+`Get-AzStorageAccountKey`         | 2.1   | **Retrieve a storage account key**
+                                  | 2.3   | **Create an Azure File Share**
+                                  | 2.3   | **Connect to and mount an Azure File Share**
+`Get-AzStorageBlobCopyState`      |       | **Use async blob copy service to copy a file**
+`Get-AzSubscription`              |       | **Display Azure subscription ID**
+`Get-AzVMImage`                   |       | **Deploy a Windows Server Core VM**
+                                  |       | **Find a Marketplace image**
+`Get-AzVMImageOffer`              |       | **Find a Marketplace image** 
+`Get-AzVMImagePublisher`          |       | **Find a Marketplace image** 
+`Get-AzVMImageSku`                |       | **Find a Marketplace image**
+`Install-Module`                  |       | **Install the Azure Resource Manager PowerShell module**
+`Invoke-AzVMRunCommand`           |       | **Invoking a command on a VM**
+`New-AzKeyVault`                  |       | **Create an Azure Key Vault**
+`New-AzResourceGroup`             |       | **Create a Resource Group**
+                                  |       | **Create a new Log Analytics workspace**
+`New-AzResourceGroupDeployment`   |       | **Create a new Log Analytics workspace**
+`New-AzStorageAccount`            |       | **Create a storage account**
+`New-AzStorageContainer`          |       | **Create a storage container**
+                                  |       | **Use async blob copy service to copy a file**
+`New-AzStorageContext`            |       | **Use async blob copy service to copy a file**
+                                  | 2.3   | **Create an Azure File Share**
+`New-AzStorageShare`              | 2.3   | **Create an Azure File Share**
+`New-AzStorageBlobSASToken`       |       | **Create a SAS token for a specific storage blob**
+`New-AzVM`                        |       | **Create a VM**
+`New-AzVMConfig`                  |       | **Create a VM**
+                                  |       | **Deploy a Windows Server Core VM**
+`New-NetFirewallRule`             |       | **Connect to VM from a Windows machine** 
+`New-PSDrive`                     |       | **Connect to and mount an Azure File Share**
+`Remove-AzResourceGroup`          |       | **Delete a resource group**
+                                  |       | **Delete a resource group without confirmation**
+`Set-AzCurrentStorageAccount`     |       | **Create a storage container**
+`Set-AzDiagnosticSetting`         |       | **Enable diagnostics log collection with a storage account**
+                                  |       | **Enable diagnostics log collection in a Log Analytics workspace**
+`Set-AzKeyVaultSecret`            |       | **Set secret value to be used**
+`Set-AzNetworkSecurityGroup`      |       | **Modify Network Security Group policies**
+`Set-AzResource`                  |       | **Tag a resource group that already had been tagged**
+`Set-AzResourceGroup`             |       | **Tag a resource group that already had been tagged**
+`Set-AzDiagnosticSetting`         |       | **Enable all metrics and logs for a resource**
+                                  |       | **Disable all metrics and logs**
+`Set-AzStorageAccount`            |       | **Change storage account's access tier, without confirmation**
+                                  |       | **Change replication mode of a storage account**
+`Set-AzStorageBlobContent`        |       | **Create a storage blob**
+`Start-AzStorageBlobCopy`         |       | **Use async blob copy service to copy a file**
+`Set-AzVMOperatingSystem`         |       | **Deploy a Windows Server Core VM**
+`Set-AzVMSourceImage`             |       | **Create a VM**
+`Set-Item`                        |       | **Connect to VM from a Windows machine** 
+`Start-AzVM`                      |       | **Start a VM**
+`Start-AzStorageBlobCopy`         |       | **Use async blob copy service to copy a file**
+`Stop-AzVM`                       |       | **Shut down a VM**
 
 #### Install the Azure Resource Manager PowerShell module
 The older module __AzureRM__ has been replaced, largely, by __Az__. Commands to the older module are aliased to the new, but there are some commands which require the older module.
@@ -487,6 +492,35 @@ PS C:\> Set-AzStorageBlobContent `
 >>  -File $localFile `
 >>  -Container $container `
 >>  -Blob $blobName
+```
+
+#### Create an Azure File Share
+```powershell
+PS C:\> $storageKey = Get-AzStorageAccountKey
+>>  -ResourceGroupName $rgName
+>>  -Name $storageAccount
+
+PS C:\> $context = New-AzStorageContext
+>>  -StorageAccountName $storageAccount
+>>  -StorageAccountKey $storageKey.Value[0]
+
+PS C:\> New-AzStorageShare
+>>  -Name $shareName
+>>  -Context $context
+```
+
+#### Connect to and mount an Azure File Share 
+`New-PSDrive` maps the drive
+```powershell
+PS C:\> $storageKey = (Get-AzStorageAccountKey -ResourceGroupName $rgName -Name $storageNAme).Value[0]
+PS C:\> $acctKey = ConvertTo-SecureString -String $storageKey -AsPlainText -Force
+PS C:\> $credential = New-Object System.Management.Automation.PSCredential `
+>>  -ArgumentList "Azure\$storageName", $acctKey
+PS C:\> New-PSDrive `
+>>  -Name "Z" `
+>>  -PSProvider FileSystem `
+>>  -Root "\\$storageName.file.core.windows.net\$shareName" 
+>>  -Credential $credential
 ```
 
 ## Sources

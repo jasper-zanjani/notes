@@ -48,14 +48,12 @@ Users are disabled by default, so you must enable them by setting the `-Enabled`
 New-ADUser -Name "Marty McFly" -Enabled $true -GivenName "Martin" -Surname "McFly"
   -AccountPassword ( ConvertTo-SecureString "P@ssw0rd!" -AsPlainText -Force) 
 ```
-#### Display locked out accounts
-```powershell
-Search-ADAccount -LockedOut
-```
+
 #### Unlock account
 ```powershell
 Unlock-ADAccount -identity wbryan
 ```
+
 #### Reset password
 ```powershell
 Set-ADAccountPassword -Identity MBentley -Reset -NewPassword (ConvertTo-SecureString `
@@ -115,4 +113,26 @@ Get-WindowsFeature
 Install Web Server
 ```powershell
 Install-WindowsFeature Web-Server,Web-Common-Http,Web-Mgmt-Console -Restart
+```
+### Search-ADAccount
+
+Option                    | Effect
+:---                      | :---
+`-AccountDisabled`        | filter disabled accounts
+`-AccountExpired`         | filter expired accounts
+`-ComputersOnly`          | filter computer accounts
+`-LockedOut`              | filter locked out accounts
+`-PasswordExpired`        | filter accounts with expired passwords
+`-PasswordNeverExpires`   | filter accounts with passwords that will never expire
+`-UsersOnly`              | filter users
+
+
+#### Display accounts that have been inactive for the last 90 days
+```powershell
+Search-ADAccount -AccountInactive -TimeSpan 90.00:00:00
+```
+
+#### Display accounts expiring on a particular date
+```powershell
+Search-ADAccount -AccountExpiring -DateTime "3/18/2019"
 ```

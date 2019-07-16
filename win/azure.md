@@ -72,6 +72,7 @@ Azure Activity Log                      | subscription level log that captures e
 Application Insights                    | service that can provide __application metrics__, if enabled and if the applications have been instrumented | [az-103.md](../sources/az-103.md): 44
 Azure Automation                        | allows you to build __runbooks__ that execute commands or scripts
 Azure Data Box                          | device that Microsoft will send to you that allows you to copy your data to it and then ship back to Microsoft for upload to Azure | [az-103.md](../sources/az-103.md): 129
+Azure File Service                      | fully managed file share service that offers endpoints for __SMB__ (__CIFS__) protocol | [az-103.md](../sources/az-103.md): 147
 Azure Functions
 Azure Import and Export service         | allows you to ship data into or out of an Azure Storage account by physically shipping disks to an Azure datacenter | [az-103.md](../sources/az-103.md): 129
 Azure Key Vault                         | helps safeguard cryptographic keys and secrets used by cloud applications and services | [az-103.md](../sources/az-103.md): 114
@@ -90,7 +91,7 @@ Resource                                | single service instance, which can be 
 Resource group                          | logical group of resources | [az-103.md](../sources/az-103.md): 63
 Resource group template                 | JSON file that allows you to declaratively describe a set of resources | [az-103.md](../sources/az-103.md): 100
 Shared Access Signature (SAS) token     | query string parameter appended to the full URI of a storage resource | [az-103.md](../sources/az-103.md): 118
-Locally-redundant storage (LRS)         | Storage replication option that makes 3 local sychronous (within a single datacenter) copies 
+Locally-redundant storage (LRS)         | Storage replication option that makes 3 local synchronous (within a single datacenter) copies 
 Zone-redundant storage (ZRS)            | Storage replication option that makes 3 synchronous copies across multiple availability zones; available for general-purpose v2 storage accounts at **Standard** performance tier only.
 Geographically-redundant storage (GRS)  | Storage replication option that makes 3 local synchronous copies plus 3 additional asynchronous copies (typically within 15 minutes, but no SLA) to a second data center far away from the primary region
 Read-access geographically redundant storage (RA-GRS) | Storage replication option that makes 3 local synchronous copies plus 3 additional asynchronous copies to a second data center far away from the primary region, which has only read-only access
