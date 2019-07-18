@@ -1,9 +1,7 @@
 # Microsoft Azure
 
 ## Web Apps
-__Web Apps__ represent Azure's __PaaS__ product. It is part of the __App Service__ family.
-
-Other __App Service__ family members:
+__Web Apps__ represent Azure's __PaaS__ product. It is part of the __App Service__ family, which include:
   - Mobile Apps
   - API Apps
   - Logic Apps
@@ -16,22 +14,14 @@ Service plan tiers:
   - Standard: Daily backups, automatic scaling of app instances, deployment slots, and user routing with Traffic Manager
   - Premium: more frequent backups, increased storage, and greater number of deployment slots and instance scaling options.
   
-## Storage
-
-
 ## Role assignments and classic administrators
-VMs represent Azure's __IaaS__ product.
-Manage access to Azure resources using __role-based access control (RBAC)__. __Service Administrator__ and __Co-Administrator__ are legacy roles used with the classic deployment model.
+VMs represent Azure's __IaaS__ product. Manage access to Azure resources using __role-based access control (RBAC)__. __Service Administrator__ and __Co-Administrator__ are legacy roles used with the classic deployment model.
 
 ## Alerts
 Alerts can have 3 states:
   - **New** and not reviewed
   - **Acknowledged** issue is being actioned by an admin
   - **Closed** issue that generated the alerts has been resolved and the alert has been marked as closed
-
-##### Sources
-  - "Overview of alerts in Microsoft Azure". [Microsoft Docs](https://docs.microsoft.com/en-us/azure/azure-monitor/platform/alerts-overview). 2018/01/27
-  - Washam, Michael; Tuliani, Jonathan; Hoag, Scott. _Exam Ref AZ-103 Microsoft Azure Administrator_. [sources/az-103.md](../sources/az-103.md): 31-40.
 
 ## Azure blades
 
@@ -48,7 +38,6 @@ Storage account                         | Firewalls and Virtual Networks |  Stor
                                         | Access keys           | Access storage name and key
 Subscription                            | Access Control (IAM)  | Assign subscription administrator permissions, including classic and RBAC roles
 
-
 ## Glossary
 
 Term                                    | Definition  | Source
@@ -63,6 +52,8 @@ key rolling                             | regenerate one access key by switching
 logs                                    | numerical data or text
 metrics                                 | numerical values output by resources and services within Azure | [az-103.md](../sources/az-103.md): 43
 page blob                               | blob type optimized for random-access I/O, typically used to store VHD files when using unmanaged disks | [az-103.md](../sources/az-103.md): 130
+role                                    | definition of what action is allowed or denied to a **security principal** | [AZ-103](../sources/az-103.md): 85
+security principal                      | entities with access to Azure resources, i.e. users, groups, and service identities | [AZ-103](../sources/az-103.md): 85
 soft delete                             | Storage account feature that allows you to save and recover data when blobs or blob snapshots are deleted even in the event of an overwrite | [az-103.md](../sources/az-103.md): 135
 
 Azure feature                           | Description | Source
@@ -99,7 +90,7 @@ Hot                                     | blob storage access tier optimized for
 Cool                                    | blob storage access tier optimized for storing large amounts of data that is infrequently accessed and stored for at least 30 days
 Archive                                 | blob storage access tier designed for long-term storage of infrequently-used data that can tolerate several hours of retrieval latency, remaining in the Archive tier for at least 180 days.
 
-
 ## Sources
-  - Foulds, Iain. _Learn Azure in a Month of Lunches_. [sources/lzml.md](../sources/lzml.md)
-  - Washam, Michael; Tuliani, Jonathan; Hoag, Scott. _Exam Ref AZ-103 Microsoft Azure Administrator_. [sources/az-103.md](../sources/az-103.md)
+  - Foulds, Iain. _Learn Azure in a Month of Lunches_. [LZML](../sources/lzml.md)
+  - Washam, Michael; Tuliani, Jonathan; Hoag, Scott. _Exam Ref AZ-103 Microsoft Azure Administrator_. [AZ-103](../sources/az-103.md)
+  - "Overview of alerts in Microsoft Azure". [Microsoft Docs](https://docs.microsoft.com/en-us/azure/azure-monitor/platform/alerts-overview). 2018/01/27
