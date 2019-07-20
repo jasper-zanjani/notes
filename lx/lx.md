@@ -12,6 +12,10 @@ System Management Mode (SMM) launches UEFI software
 ### Bootloaders
 Bootloaders like GRUB (GRand Unified Bootloader) or _u-boot_ turns on power supplies and scans buses and interfaces to locate the kernel image and the root filesystem. LILO (LInux LOader) is also another bootloader that can be found on older Linux systems (LALOS)
 
+#### Change Windows bootloader to Linux, while dual booting
+```cmd
+bcdedit /set {bootmgr} path \EFI\manjaro\grubx64.efi
+```
 ### Initial RAM Disk
 _initrd_ (Initial RAM disk) is a temporary file system that's loaded into memory when the system boots
 
@@ -19,7 +23,7 @@ _initrd_ (Initial RAM disk) is a temporary file system that's loaded into memory
 Linux kernel is typically named _vmlinux_ or _vmlinuz_ (when compressed). Kernel ring buffer contains messages related to the Linux kernel. A ring buffer is a data structure that is always the same size; old messages are discarded as new ones come in, once the buffer is full. `dmesg` is used to see its contents, and the messages are also stored in `/var/log/dmesg`
 
 ### init
-`init` or "SystemVinit" is a daemon process which was used by most distros until recently.
+`sysvinit` or "SystemVinit" is a daemon process which was used by most distros until recently.
   - processes started serially and synchronously, wasting system resources
   - for years, a common hack was to run services in the background, simulating a sort of parallel processing
 _Upstart_ was developed in Ubuntu/GNU Linux, but abandoned in 2014. _Systemd_ starts processes in parallel, has become de facto standard for all major Linux distributions
@@ -146,7 +150,7 @@ add ",acl" to options in `fstab` file, then mount/unmount disk. If enabling FACL
 `/etc/fstab`: ("f-stab") disks and mount locations, e.g. /home, /root, etc (not present in BSD)
 
 ## Manjaro
-`bcdedit /set {bootmgr} path \EFI\manjaro\grubx64.efi` : change Windows bootloader to Manjaro, while dual booting
+
 `sudo mhwd -a pci nonfree 0300` : command was run while troubleshooting black screen on startup 
 /sys/class/net : contains network interface configuration files (or at least symlinks to them in other directories), similar to /etc/sysconfig/network-scripts/ in RHEL
 
