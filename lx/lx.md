@@ -12,6 +12,10 @@ System Management Mode (SMM) launches UEFI software
 ### Bootloaders
 Bootloaders like GRUB (GRand Unified Bootloader) or _u-boot_ turns on power supplies and scans buses and interfaces to locate the kernel image and the root filesystem. LILO (LInux LOader) is also another bootloader that can be found on older Linux systems (LALOS)
 
+#### Change Windows bootloader to Linux, while dual booting
+```cmd
+bcdedit /set {bootmgr} path \EFI\manjaro\grubx64.efi
+```
 ### Initial RAM Disk
 _initrd_ (Initial RAM disk) is a temporary file system that's loaded into memory when the system boots
 
@@ -146,7 +150,7 @@ add ",acl" to options in `fstab` file, then mount/unmount disk. If enabling FACL
 `/etc/fstab`: ("f-stab") disks and mount locations, e.g. /home, /root, etc (not present in BSD)
 
 ## Manjaro
-`bcdedit /set {bootmgr} path \EFI\manjaro\grubx64.efi` : `change Windows bootloader to Manjaro, while dual booting
-`sudo mhwd -a pci nonfree 0300` : command was run while t```````````ur`oubleshooting black screen on startup 
+
+`sudo mhwd -a pci nonfree 0300` : command was run while troubleshooting black screen on startup 
 /sys/class/net : contains network interface configuration files (or at least symlinks to them in other directories), similar to /etc/sysconfig/network-scripts/ in RHEL
 
