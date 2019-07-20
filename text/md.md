@@ -9,11 +9,17 @@
 `- [x] Item` : checked checkbox
 
 ## Newlines
-GitHub does not honor single newlines: you have to use double newlines to achieve the effect or append `\` to the end of a line.
+GitHub does not honor single newlines: you have to use double newlines to achieve the effect or append `\` to the end of a line, **so long as there is no change in format from the current line to the next**
 
 ```markdown
 > Foo\
 > Bar
+```
+
+But the backslash is unnecessary if, for example, you are placing the checkbox within a blockquote for the next line:
+```markdown
+> Foo
+> - [ ] Bar
 ```
 
 ## Links
