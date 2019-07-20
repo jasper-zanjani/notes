@@ -1,6 +1,16 @@
 # Containers
   - "Beginner's Guide to Containers and Orchestration". [Udemy](https://www.udemy.com/linux-academy-beginners-guide-to-containers-and-orchestration/)
 
+Term      | Description
+:---      | :---
+container | form of lightweight virtualization; low overhead wrapper around an application or set of services | [alex-ionescu.com](http://www.alex-ionescu.com/publications/syscan/syscan2017.pdf)
+
+## Windows
+  - __Helium__ : virtualized filesystem and registry
+  - __Argon__ : isolation of object manager, network virtualization
+  - __Krypton__ : thin Hyper-V partition
+  - __Xenon__ : Argon with BAse OS image
+
 ## Kubernetes
 Kubernetes (K8s) has emerged as the leading container orchestrator in the industry since 2018. It is a __container management__ system developed by Google then donated to the __Cloud Native Computing Foundation__. It aims to provide better ways of managing distributed components and services across varied infrastructure.
 
@@ -21,6 +31,8 @@ Kubernetes is visualized as a system built from layers, with each higher layer a
 
 ### Node server components
   - __kubelet__, main contact point for each node with the cluster group
+
+
 
 ## Sources
   - "Microsoft Azure for Beginners: Introduction - Scott Duffy [YouTube](https://www.youtube.com/watch?v=3gnLwSI4d9E)

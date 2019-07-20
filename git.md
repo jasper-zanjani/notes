@@ -32,16 +32,36 @@ Syntax | Effect
 `git revert commit` | remove (committed) changes in {commit}
 `git rm file` | remove tracked {file} from repo
 
-#### Rebase changes committed to _scrollFix_ onto _master_
+
+## Stash
+> "Git - Stashing". [git-scm.com](https://git-scm.com/book/en/v1/Git-Tools-Stashing).
+#### Stash changes to work-tree
+```bash
+git stash
+```
+#### View stashes in stash stack
+```bash
+git stash list
+```
+#### Apply changes in most recent stash
+```bash
+git stash apply
+```
+#### Apply changes in stash <n>
+```bash
+git stash apply stash@{n}
+```
+
+#### Rebase changes committed to <branch> onto <master>
 ```sh
-git checkout scrollFix
+git checkout branch
 git rebase master
 ```
-This will rewind _scrollFix_ to the commit shared by the two branches, then applying all changes made subsequently to _master_. 
+This will rewind <branch> to the commit shared by the two branches, then applying all changes made subsequently to <master>. 
 
 ```sh
-git checkout master
-git merge scrollFix
+git checkout <master>
+git merge <branch>
 ```
 Now the history will appear as though all changes were made in series, when they were actually made in parallel on separate branches.
 
