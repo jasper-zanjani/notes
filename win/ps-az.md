@@ -17,6 +17,7 @@ Command                           | Skill   | Task
 ^                                 | 1.2a.2  | **Enable diagnostics log collection with a storage account**
 `New-AzResourceGroup`             |         | **Create a Resource Group**
 ^                                 |         | **Create a new Log Analytics workspace**
+^                                 | 3.1a.2  | **Create an Azure VM**
 `Remove-AzResourceGroup`          | 1.3.1   | **Delete a resource group**
 ^                                 | 1.3.2   | **Delete a resource group without confirmation**
 `Set-AzResourceGroup`             | 1.1b.4  | **Tag a resource group that already had been tagged**
@@ -41,6 +42,7 @@ Uncategorized Command             | Skill   | Task
 `Add-AzNetworkSecurityRuleConfig` |         | **Modify Network Security Group policies**
 `Add-AzVMNetworkInterface`        | 2.1     | **Deploy a Windows Server Core VM**
 `Connect-AzAccount`               |         | **Connect to Azure**
+^                                 | 3.1a.2  | **Create an Azure VM**
 `ConvertTo-Json`                  | 1.4b.1  | **Retrieve the definition of a role**
 `ConvertTo-SecureString`          | 2.1c.5  | **Convert storage account key to secure string**
 `Enable-PSRemoting`               |         | **Connect to VM from a Windows machine**
@@ -79,6 +81,7 @@ Uncategorized Command             | Skill   | Task
 `New-AzStorageShareSASToken`      | 2.1d    | Mentioned only
 `New-AzStorageTableSASToken`      | 2.1d    | Mentioned only
 `New-AzStorageShare`              | 2.3     | **Create an Azure File Share**
+`New-AzVirtualNetworkSubnetConfig`| 3.1a.2  | **Create an Azure VM**
 `New-AzVM`                        |         | **Create a VM**
 `New-AzVMConfig`                  |         | **Create a VM**
 ^                                 |         | **Deploy a Windows Server Core VM**
@@ -163,7 +166,7 @@ Option                            | Position  | Description
 `-WinRMHttps`                     | 9 | Indicates that the system uses HTTPS WinRM
 `-WinRMCertificateUrl`            | 10 | Use of WinRM certificate, stored in a Key Vault
 
-#### Create a VM
+#### 3.1a.2: Create an Azure VM
 `New-AzVM`
 
 Option                | Position  | Description
@@ -176,10 +179,6 @@ Option                | Position  | Description
 
 ```powershell
 New-AzVM -ResourceGroupName "RG" -Name "VM" -Location "EastUS" -Size "Standard-B2s" -Credential (Get-Credential)
-```
-
-Or, taking advantage of positional parameters
-```powershell
 New-AzVM Greeks Socrates $vm
 ```
 

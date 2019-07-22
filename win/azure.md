@@ -47,6 +47,7 @@ blob storage                            | used for large-scale storage of arbitr
 block blob                              | blob type optimized for efficient uploads and downloads for video, image, and other general-purpose storage | [az-103.md](../sources/az-103.md): 130
 container                               | subdivision of a storage account, in which blobs are stored; similar in concept to a hard drive in that they provide a storage space in which blobs can be organized in a directory structure | [az-103.md](../sources/az-103.md): 129
 bring your own key (BYOK)               | act of importing keys to Azure Key Vault
+endpoint                                | file servers and paths within the file server you want the sync group to sync with each other | [AZ-103](../sources/az-103.md):
 Hardware Security Modules (HSM)         | one of the ways keys in __Azure Key Vault__ can be protected
 key rolling                             | regenerate one access key by switching applications to a second one before regenerating the first | [az-103.md](../sources/az-103.md): 114
 logs                                    | numerical data or text
@@ -62,8 +63,13 @@ async blob copy service                 | server-side based service that can cop
 Azure Activity Log                      | subscription level log that captures events from operational data to service health events for a subscription | [az-103.md](../sources/az-103.md): 119
 Application Insights                    | service that can provide __application metrics__, if enabled and if the applications have been instrumented | [az-103.md](../sources/az-103.md): 44
 Azure Automation                        | allows you to build __runbooks__ that execute commands or scripts
+Azure Backup                            | service that allows you to backup on-premises servers, cloud-based VMs, and virtualized workloads such as SQL Server and SharePoint to Microsoft Azure. | [AZ-103](../sources/az-103.md): 159
+Azure Backup Reports                    | provide data visualization from within Power BI from across Recovery Service vaults and Azure subscriptions to provide insight into backup activity | [AZ-103](../sources/az-103.md): 170
+Azure Backup Server                     | stand-alone service that is installed on a Windows Server operating system that stores backup data in a **Microsoft Azure Recovery Vault** | [AZ-103](../sources/az-103.md): 169
 Azure Data Box                          | device that Microsoft will send to you that allows you to copy your data to it and then ship back to Microsoft for upload to Azure | [az-103.md](../sources/az-103.md): 129
 Azure File Service                      | fully managed file share service that offers endpoints for __SMB__ (__CIFS__) protocol | [az-103.md](../sources/az-103.md): 147
+Azure File Sync                         | extends Azure File Service to allow on-premises file server to be extended to Azure | [AZ-103](../sources/az-103.md): 152
+Azure File Sync agent                   | software that needs to be deployed on every server to be added to an **Azure File Sync** group | [AZ-103](../sources/az-103.md): 152
 Azure Functions
 Azure Import and Export service         | allows you to ship data into or out of an Azure Storage account by physically shipping disks to an Azure datacenter | [az-103.md](../sources/az-103.md): 129
 Azure Key Vault                         | helps safeguard cryptographic keys and secrets used by cloud applications and services | [az-103.md](../sources/az-103.md): 114
@@ -78,6 +84,8 @@ Kusto                                   | query language comparable to SQL used 
 Log Analytics                           | facilitates collection, correlation, search, and action on log and performance data, organized in __workspaces__ | [az-103.md](../sources/az-103.md): 47-48.
 Log Analytics workspace                 | where logs are collected and aggregated | [az-103.md](../sources/az-103.md): 48
 Logic Apps
+Microsoft Azure Recovery Services (MARS) agent | stand-alone agent used to protect files and folders; one of the various backup agents that can be used with **Azure Backup** | [AZ-103](../sources/az-103.md): 162
+Recovery Services vault                 | the single resource that is provisioned for either **Azure Backup** or **Azure Site Recovery** | [AZ-103](../sources/az-103.md): 160
 Resource                                | single service instance, which can be a virtual machine, a virtual network, a storage account, or any toher Azure service | [az-103.md](../sources/az-103.md): 62
 Resource group                          | logical group of resources | [az-103.md](../sources/az-103.md): 63
 Resource group template                 | JSON file that allows you to declaratively describe a set of resources | [az-103.md](../sources/az-103.md): 100

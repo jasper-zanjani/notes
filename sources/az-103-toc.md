@@ -35,16 +35,16 @@
 >   - [x] 2.2c: Create import into Azure job
 >   - [x] 2.2d: Use Azure Data Box
 >   - [x] 2.2e: Configure Azure content delivery network (CDN) endpoints
-> - [ ] 2.3: Configure Azure files
->   - [ ] 2.3a: Using the Azure File Service
->   - [ ] 2.3b: Create Azure File Sync service
->   - [ ] 2.3c: Create Azure sync group
->   - [ ] 2.3d: Troubleshoot Azure File Sync
-> - [ ] 2.4: Implement Azure Backup
->   - [ ] 2.4a: Create Recovery Services Vault
->   - [ ] 2.4b: Backup and restore data
->   - [ ] 2.4c: Configure and review backup reports
->   - [ ] 2.4d: Create and configure backup policy
+> - [x] 2.3: Configure Azure files
+>   - [x] 2.3a: Using the Azure File Service
+>   - [x] 2.3b: Create Azure File Sync service
+>   - [x] 2.3c: Create Azure sync group
+>   - [x] 2.3d: Troubleshoot Azure File Sync
+> - [x] 2.4: Implement Azure Backup
+>   - [x] 2.4a: Create Recovery Services Vault
+>   - [x] 2.4b: Backup and restore data
+>   - [x] 2.4c: Configure and review backup reports
+>   - [x] 2.4d: Create and configure backup policy
 > - [ ] 3.1: Create and configure a VM for Windows and Linux
 >   - [ ] 3.1a: Creating virtual machines
 >   - [ ] 3.1b: Configuring high availability

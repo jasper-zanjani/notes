@@ -752,3 +752,239 @@ WAImportExport.exe PrepImport \
 2. Click **+ Endpoint** button
 3. Specify unique name, configuration for origin settings such as type, host header, and origin port for HTTP and HTTPS.
 4. Click **Add** button
+#### 2.3a.1: Create an Azure File Share (Portal)
+> AZ-103: 2.3a.1 p. 148
+1. Open a standard Azure storage account (not premium)
+2. **Files**
+3. **+ File Share** button
+#### 2.3a.2: Create an Azure File Share (PowerShell)
+> AZ-103: 2.3a.2 p. 149\
+> Azure CLI equivalent: 2.3a.3
+
+```powershell
+PS C:\> $storageKey = Get-AzStorageAccountKey
+>>  -ResourceGroupName $rgName
+>>  -Name $storageAccount
+
+PS C:\> $context = New-AzStorageContext
+>>  -StorageAccountName $storageAccount
+>>  -StorageAccountKey $storageKey.Value[0]
+
+PS C:\> New-AzStorageShare
+>>  -Name $shareName
+>>  -Context $context
+```
+#### 2.3a.3: Create an Azure File Share (CLI)
+> AZ-103: 2.3a.3 p. 149\
+> PowerShell equivalent: 2.3a.2
+
+```powershell
+$ constring=$(az storage account show-connection-string -n $storageAccountName)
+
+$ az storage share create \
+>  --name $shareName \
+>  --quota 2048 \
+>  --connection-string $constring
+```
+#### 2.3a.4: Connect to and mount an Azure File Share (Windows File Explorer)
+1. Right-click on **This PC**
+2. Click **Map Network Drive** option
+3. Specify drive letter to be used 
+4. Specify folder: `\\<storageAccount>.files.core.windows.net\<shareName>`
+5. Click **Finish**
+6. In the dialog box that opens login with the username: `AZURE\<storageName>`
+7. Password should be access key for the storage account
+#### 2.3a.5: Connect to and mount an Azure File Share (net use command)
+```cmd
+net use x \\erstandard01.file.core.windows.net\logs /u:AZURE\erstandard01 <accessKey>
+```
+#### 2.3a.6: Connect to and mount an Azure File Share (PowerShell)
+`New-PSDrive` maps the drive
+```powershell
+$storageKey = (Get-AzStorageAccountKey -ResourceGroupName $rgName -Name $storageNAme).Value[0]
+$acctKey = ConvertTo-SecureString -String $storageKey -AsPlainText -Force
+$credential = New-Object System.Management.Automation.PSCredential `
+  -ArgumentList "Azure\$storageName", $acctKey
+
+New-PSDrive `
+  -Name "Z" `
+  -PSProvider FileSystem `
+  -Root "\\$storageName.file.core.windows.net\$shareName" 
+  -Credential $credential
+```
+#### 2.3a.7: Automatically reconnect after reboot in Windows
+```
+cmdkey \
+  /add:storageAccountName.file.core.windows.net \
+  /user:AZURE\storageAccountName \
+  /pass:storageAccountKey
+```
+#### 2.3a.8: Connect to and mount an Azure File Share (Linux)
+Mounting to `/logs`
+```bash
+sudo mount \
+-t cifs //$storageAccount.file.core.windows.net/logs /logs \
+-o vers=3.0,username=$storageAccount,password=$storageAccountKey,dir_mode=0777,file_mode=0777,sec=ntlmssp
+```
+#### 2.3b.1: Create the Azure File Sync Service (Portal)
+Create a resource > **Storage** > **Azure File Sync**
+#### 2.3c.1: Create a sync group (Portal)
+Specify name of sync group in dialog after creating an Azure File Sync (2.3b.1)
+#### 2.3c.2: Add endpoints to Azure File Sync Group (Portal)
+1. Register a server to the sync group by installing **Azure File Sync agent** on each server. When installing, you sign in with your subscription's credentials, then register the server by providing the Subscription, Resource Group, and Storage Sync Service names.
+2. Click **Add Server Endpoint**. This will display a dropdown of all servers with the agent installed and associated with the sync service.
+#### 2.3d.1: Collect logs to troubleshoot issues with Azure File Sync agent installation
+```
+StorageSyncAgent.msi /l*v AFSInstaller.log
+```
+#### 2.3d.2: Remove the server from registered sync group
+Error message "This server is already registered during registration"
+```powershell
+Import-Module "C:\Program Files\Azure\StorageSyncAgent\StorageSync.Management.ServerCmdlets.dll"
+Reset-StorageSyncServer
+```
+#### 3.1a.1: Create an Azure VM (Portal)
+...
+#### 3.1a.2: Create an Azure VM (PowerShell)
+> AZ-103: 3.1a.2: 181-184
+> - [ ] Indexed?
+> - [ ] Anki?
+
+```powershell
+# Login to Azure account
+Connect-AzAccount
+
+# Create a new resource group
+New-AzResourceGroup `
+  -Name $resourceGroupName `
+  -Location $location
+
+# Create a virtual network
+$subnets = @()
+$subnets += New-AzVirtualNetworkSubnetConfig `
+  -Name $subnet1Name `
+  -AddressPrefix $subnet1AddressPrefix
+$subnets += New-AzVirtualNetworkSubnetConfig `
+  -Name $subnet2Name `
+  -AddressPrefix $subnet2AddressPrefix
+$vnet = New-AzVirtualNetwork `
+  -Name $vnetNAme `
+  -Location $location `
+  -AddressPrefix $vnetAddressSpace `
+  -Subnet $subnets
+
+# Create a public IP address
+$pip = New-AzPublicIpAddress `
+  -Name $ipName `
+  -ResourceGroupName $rgNAme `
+  -Location $location `
+  -AllocationMethod Dynamic `
+  -DomainNameLabel $dnsName
+
+# Add a rule to the network security group to allow RDP in
+$nsgRules = @()
+$nsgRules += New-AzNetworkSecurityRuleConfig `
+  -Name "RDP" `
+  -Description "RemoteDesktop" `
+  -Protocol Tcp `
+  -SourcePortRange "*" `
+  -DestinationPortRange "3389" `
+  -SourceAddressPrefix "*" `
+  -DestinationAddressPrefix "*" `
+  -Access Allow `
+  -Priority 110 `
+  -Direction Inbound
+
+# Apply the rules
+$nsg = New-AzNetworkSecurityGroup `
+  -ResourceGroupName $resourceGroupName `
+  -Name "ExamREfNSG" `
+  -SecurityRules $nsgRules `
+  -Location $location
+
+# Create a virtual machine configuration object with the `New-AzVMConfig` cmdlet
+$vm = New-AzVMConfig
+  -VMName $vmName `
+  -VMSize $vmSize
+
+# Specify operating system and credentials
+Set-AzVMOperatingSystem `
+  -Windows `
+  -ComputerName $vmName `
+  -Credential $cred `
+  -ProvisionVMAgent `
+  -VM $vm
+
+# Specify the operating system image using `Set-AzVMSourceImage`
+Set-AzVMSourceImage `
+  -PublisherName $pubName `
+  -Offer $offerName `
+  -Skus $skuName `
+  -Version "latest" `
+  -VM $vm
+
+Set-AzVMOSDisk `
+  -CreateOption fromImage `
+  -VM $vm
+
+# Create the network interface for the VM
+$nic = New-AzNetworkInterface `
+  -Name $nicNAme `
+  -ResourceGroupName $resourceGroupName `
+  -Location $location `
+  -SubnetId $vnet.Subnets[0].Id `
+  -PublicIpAddressId $pip.Id `
+  -NetworkSecurityGroupId $nsg.Id
+
+Add-AzVMNetworkInterface `
+  -VM $vm `
+  -NetworkInterface $nic
+
+# Provision the virtual machine with `New-AzVM`
+New-AzVM `
+  -ResourceGroupName $resourceGroupName `
+  -Location $location
+  -VM $vm
+```
+
+`New-AzVM` option     | Position  | Description
+:---                  | :---      | :---
+`-ResourceGroupName`  | 0         | Optional
+`-Location`           | 1         | Optional
+`-VM`                 | 2
+`-Zone`               | 3         | Optional
+
+
+```powershell
+New-AzVM -ResourceGroupName "RG" -Name "VM" -Location "EastUS" -Size "Standard-B2s" -Credential (Get-Credential)
+New-AzVM Greeks Socrates $vm
+```
+
+The `-Image` optional named parameter can be used to define other operating systems, and requires friendly image names. If a Linux image is provided, you should provide the `-Linux` switch parameter as well in order to specify a Linux-type disk file.
+  - Win2016Datacenter (default)
+  - Win2012R2Datacenter
+  - Win2012Datacenter
+  - Win2008R2SP1
+  - UbuntuLTS
+  - CentOS
+  - CoreOS
+  - Debian
+  - openSUSE-Leap
+  - RHEL
+  - SLES
+
+A custom image object can be built up and passed to `New-AzVM` through the `-VM` named parameter by using other commands:
+```powershell
+...
+$vm = New-AzVMConfig -VMName $VMName -VMSize $VMSize
+$vm = Set-AzVMOperatingSystem -VM $vm -Windows -ComputerName $ComputerName -Credential $Credential -Provision VMAgent -EnableAutoUpdate
+$vm = Add-AzVMNetworkInterface -VM $vm -Id $NIC.Id
+$vm = Set-AzVMSourceImage -VM $vm -PublisherName 'MicrosoftWindowsServer' -Offer 'WindowsServer' -Skus '2012-R2-Datacenter' -Version latest
+
+New-AzVM -ResourceGroupName $ResourceGroupName -Location $LocationName -VM $vm
+```
+#### 3.1a.3: Create an Azure VM (Azure CLI)
+#### 3.1a.4: Capture a managed VM image (Portal)
+#### 3.1a.5: Capture a managed VM image (PowerShell)
+#### 3.1a.6: Capture a managed VM image (Azure CLI)
+#### 3.1a.7: Create a VM from an image
