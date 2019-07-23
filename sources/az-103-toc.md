@@ -69,12 +69,10 @@
 >   - [ ] 3.3e: Redeploy VMs
 >   - [ ] 3.3f: Automate configuration management
 > - [ ] 3.4: Manage VM Backups
->   - [ ] 3.4a: Add data disks
->   - [ ] 3.4b: Add network interfaces
->   - [ ] 3.4c: Manage VM sizes
->   - [ ] 3.4d: Move VMs from one resource group to another
->   - [ ] 3.4e: Redeploy VMs
->   - [ ] 3.4f: Automate configuration management
+>   - [ ] 3.4a: Configure VM backup
+>   - [ ] 3.4b: Define backup policies
+>   - [ ] 3.4c: Implement backup policies
+>   - [ ] 3.4d: Perform VM restore
 > - [ ] 4.1: Implement and manage virtual networking
 >   - [ ] 4.1a: Create and configure a virtual network and subnets
 >   - [ ] 4.1b: Configure private IP addresses and network interfaces

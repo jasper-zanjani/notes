@@ -1,20 +1,12 @@
 # Exam Ref AZ-103 Microsoft Azure Administrator, by Michael Washam, Jonathan Tuliani, and Scott Hoag
 ## Tasks 
-#### 1.1a.1 Assign an RBAC role (Portal)
-> AZ-103: 1.1a.1 (p. 4)
-
+#### 1.1a.1: Assign an RBAC role (Portal)
 To assign an RBAC role to a subscription, open the __Subscription__, then the __Access Control (IAM)__ blades, then click __Add Role Assignment__. This will open a dialog box where you can select a __Role__ (e.g. Owner) then __Select__ a target principal.
-#### 1.1b.1 Configure resource quotas
-> AZ-103: 1.1b.1 (p. 9)
-> - [x] Indexed\
-> - [x] Anki?
-
+#### 1.1b.1: Configure resource quotas
 To view resource quotas for a subscription, go to the subscription in Azure Portal and open the __Usage + quotas__ blade. From there you can select resources and then click the __Request Increase__ button. PowerShell commands used with resource quotas:
   - `Get-AzVMUsage`: view current usage of vCPU quotas
   - `Get-AzStorageUsage`: view current usage of storage service
 #### 1.1b.2 Configure cost center quotas
-> AZ-103: 1.1b.2 (p. 10)
-
 Budgets can be viewed and administered in the __Cost Management + Billing__ blade. Users must be at least Reader to a subscription to view, and Contributor to create and manage, budgets. Specialized roles that grant access to Cost Management include
   - __Cost Management contributor__
   - __Cost Management reader__
@@ -23,47 +15,63 @@ To create a budget, open __Cost Management + Billing__, then __Subscriptions__, 
   - `Set-AzResourceGroup` apply a tag to a resource group with __no preexisting tags__
   - `.Tags` method that retrieves Tag collection from a resource group
   - `.Add()` method used to add tags to a resource group that __already has__ tags.
-#### 1.1b.3 Tag a resource group that has not already been tagged (PowerShell)
-> AZ-103: 1.1b.3 (p. 14)
-> - [x] Indexed?
-> - [x] Anki?
-
+#### 1.1b.3: Tag a resource group with no existing tags (PowerShell)
+```powershell
+Set-AzResourceGroup `
+  -Name hrgroup
+  -Tag @{CostCode=1001; Environment=Production}
+```
+#### 1.1b.4: Tag a resource group with existing tags (PowerShell)
+```powershell
+$tags = (Get-AzResourceGroup -Name hrgroup).Tags
+$tags.Add("Owner", "user@contoso.com")
+Set-AzResourceGroup `
+  -Tag $tags
+  -Name hrgroup
+```
+#### 1.1b.5: Tag a resource with no existing tags (PowerShell)
 ```powershell
 $r = Get-AzResource -ResourceName hrvm1 -ResourceGroupName hrgroup
 Set-AzResource -Tag @{ CostCode="1001"; Environment="Production" } -ResourceId
 $r.ResourceId -Force
 ```
-#### 1.1b.4 Tag a resource group that already had been tagged (PowerShell)
-> AZ-103: 1.1b.4 (p. 14)
-> - [x] Indexed?
-> - [x] Anki?
-
+#### 1.1b.6: Tag a resource with existing tags (PowerShell)
 ```powershell
-$tags = (Get-AzResourceGroup -Name hrgroup).Tags
-$tags.Add("Owner","user@contoso.com")
-Set-AzResourceGroup -Tag $tags -Name hrgroup
+$r = Get-AzResource `
+  -ResourceName hrvm1 `
+  -ResourceGroupName hrgroup
+$r.Tags.Add("Owner", "user@contoso.com")
+Set-AzResource `
+  -Tag $r.Tags `
+  -ResourceId $r.ResourceId `
+  -Force
 ```
-Using the `Add()` method
+#### 1.1b.7: Remove tags from a resource (PowerShell)
 ```powershell
-$r = Get-AzResource -ResourceName hrvm1 -ResourceGroupName hrgroup
-$r.Tags.Add("Owner","user@contoso.com")
-Set-AzResource -Tag $r.Tags -ResourceId $r.ResourceId -Force
+Set-AzResourceGroup `
+  -Tag @{} `
+  -Name hrgroup
 ```
-#### 1.1c.1 Create a policy definition (Portal)
-> AZ-103: 1.1c.1 (p. 16)
-
+#### 1.1b.8: Retrieve resource groups with a specific tag (PowerShell)
+```powershell
+(Get-AzResourceGroup -Tag @{ Owner="user@contoso.com" }).ResourceGroupName
+```
+#### 1.1b.9: Retrieve resources with a specific tag (PowerShell)
+```powershell
+(Get-AzResource -Tag @{ Owner="user@contoso.com"}).Name
+```
+#### 1.1b.10: Retrieve resources based on a tag name but no value (PowerShell)
+```powershell
+(Get-AzResource -TagName CostCode).Name
+```
+#### 1.1c.1: Create a policy definition (Portal)
 Open __All Services__, then __Policy__, then the __Definitions__ blade. Both builtin and custom policies can be managed here.
-#### 1.1c.1 Register resource provider in subscription (Azure CLI)
-> AZ-103: 1.1c.2 (p. 21)
-
-Az CLI can be used to register the `Microsoft.PolicyInsights` resource provider is registered in the target subscription, a prerequisite for policy creation:
+#### 1.1c.2: Register resource provider in subscription (Azure CLI)
 ```bash
 az provider register \
   --namespace 'Microsoft.PolicyInsights'
 ```
-#### 1.1c.2 Define a policy (Azure CLI)
-> AZ-103: 1.1c.3 (p. 21)
-
+#### 1.1c.3: Define a policy (Azure CLI)
 ```bash
 az policy definition create \
   --name 'allowedVMs' \
@@ -72,31 +80,21 @@ az policy definition create \
   --rules '{...}' \
   --params '{...}'
 ```
-#### 1.1c.3 Apply policy to a scope (Azure CLI)
-> AZ-103: 1.1c.3 (p. 21)
-
+#### 1.1c.4: Apply policy to a scope (Azure CLI)
 ```bash
 $ az policy assignment create \
 > --policy allowedVMs \
 > --name 'deny-non-compliant-vms' \
 > --scope '/subscriptions/<Subscription ID>' -p
 ```
-#### 1.1c.4 Delete policy assignment (Azure CLI)
-> AZ-103: 1.1c.4 (p. 22)
-
+#### 1.1c.5 Delete policy assignment (Azure CLI)
 ```bash
 $ az policy assignment delete \
 > --name deny-non-compliant-vms
 ```
 #### 1.2a.1 Enable diagnostics log collection with a storage account (Portal)
-> AZ-103: 1.2a.1 (p. 27)
-
 Browse to the resource itself. Alternatively, open __Azure Monitor__ and then the __Diagnostics Settings__ blade. From there you can view all eligible resouce types and view status of log collection. 
 #### 1.2a.2 Enable diagnostics log collection with a storage account (PowerShell)
-> AZ-103: 1.2a.2 (p. 29)
-> - [x] Indexed?
-> - [ ] Anki?
-
 `Set-AzDiagnostic-Setting` requires resource ID of resource being enabled (can be found with `Get-AzResource`) and resource ID of storage account (passed to `StorageAccountId` parameter).
 
 ```powershell
@@ -113,10 +111,6 @@ Set-AzDiagnosticSetting `
   -Enabled $true
 ```
 #### 1.2a.3 Enable diagnostics log streaming to an Event Hub (PowerShell) 
-> AZ-103: 1.2a.3 (p. 30)
-> - [x] Indexed?
-> - [ ] Anki?
-
 ```powershell
 $rule = Get-AzServiceBusRule `
   -ResourceGroup <resourceGroupName> `
@@ -130,10 +124,6 @@ Set-AzDiagnosticSetting `
   -Enabled $true
 ```
 #### 1.2a.4 Enable diagnostics logs collection in a Log Analytics workspace (PowerShell)
-> AZ-103: 1.2a.4 (p. 30)
-> - [x] Indexed?
-> - [ ] Anki?
-
 ```powershell
 $workspace = Get-AzOperationalInsightsWorkspace `
   -Name <workspaceName> `
@@ -549,23 +539,6 @@ $blobCopyState = Start-AzStorageBlobCopy `
   -DestBlob $vhdName
   -DestContext $destContext
 ```
-#### 2.2a.1 Create a storage container (PowerShell) 
-> AZ-103: 2.2a.1 (p. 132)
-
-`New-AzStorageContainer` require a storage context to be set, specifying the storage account anme and authentication credentials.
-
-```powershell
-$storageKey = Get-AzStorageAccountKey
-  -Name $storageAccount `
-  -ResourceGroupName $resourceGroup
-$context = New-AzStorageContext `
-  -StorageAccountName $storageAccount `
-  -storageAccountKey $storageKey.Value[0]
-Set-AzCurrentStorageAccount -Context $context
-New-AzStorageContainer `
-  -Name $container
-  -Permission Off
-```
 #### 2.1f.2: Copy a blob from one storage account to another (PowerShell)
 > AZ-103: 2.1f.2 p. 124-125
 ```powershell
@@ -850,12 +823,35 @@ Reset-StorageSyncServer
 > - [ ] Indexed?
 > - [ ] Anki?
 
+Subtask sequence:
+  - Login to Azure account
+  - Create a new resource group
+  - Create a public IP address
+  - Add a rule to the network security group to allow RDP in
+  - Apply the rules
+
+
+Command sequence:
+  - `Connect-AzAccount`
+  - `New-AzResourceGroup`
+  - `New-AzVirtualNetworkSubnetConfig`
+  - `New-AzVirtualNetwork`
+  - `New-AzPublicIpAddress`
+  - `New-AzNetworkSecurityRuleConfig`
+  - `New-AzNetworkSecurityGroup`
+  - `New-AzVMConfig`
+  - `Set-AzVMOperatingSystem`
+  - `Set-AzVMSourceImage`
+  - `Set-AzVMOSDisk`
+  - `New-AzNetworkInterface`
+  - `Add-AzVMNetworkInterface`
+  - `New-AzVM`
+
 ```powershell
 # Login to Azure account
 Connect-AzAccount
-
-# Create a new resource group
-New-AzResourceGroup `
+# Create a new resource group 
+New-AzResourceGroup ` 
   -Name $resourceGroupName `
   -Location $location
 
