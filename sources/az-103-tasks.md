@@ -140,8 +140,6 @@ Set-AzDiagnosticSetting `
 resourceId=$(az resource show -resource-group resourceGroupName -name resourceName --resource-type resourceType --query id --output tsv)
 ```
 #### 1.2a.6 Enable diagnostics log collection with a storage account (Azure CLI)
-> AZ-103: 1.2a.6 (p. 29-30)
-
 ```bash
 az monitor diagnostic-settings create \
   --name <diagnosticName> \
@@ -156,8 +154,6 @@ az monitor diagnostic-settings create \
     "enabled": true } } ] '
 ```
 #### 1.2a.7 Enable diagnostics log streaming to an Event Hub (Azure CLI)
-> AZ-103: 1.2a.7 (p. 30)
-
 ```bash
 az monitor diagnostic-settings create \
   --name <diagnosticName> \
@@ -168,8 +164,6 @@ az monitor diagnostic-settings create \
     "enabled": true }]'
 ```
 #### 1.2a.8 Enable diagnostics logs collection in a Log Analytics workspace (Azure CLI)
-> AZ-103: 1.2a.8 (p. 30)
-
 ```bash
 az monitor diagnostic-settings create \
   --name <diagnosticName> \
@@ -189,40 +183,28 @@ az monitor diagnostic-settings create \
 3. Click Cloudyn
 4. Register with Cloudyn
 #### 1.3.1 Delete a resource group (PowerShell)
-> AZ-103: 1.3.1 (p. 84)
-
 ```powershell
 Remove-AzResourceGroup `
   -Name "hrgroup"
 ```
 #### 1.3.2 Delete a resource group without confirmation (PowerShell)
-> AZ-103: 1.3.2 (p. 84)
-
 ```powershell
 Remove-AzResourceGroup 
   -Name "hrgroup" 
   -Force
 ```
 #### 1.3.3 Delete a resource group (CLI)
-> AZ-103: 1.3.3 (p. 84)
-
 ```bash
 az group delete 
   --name hrgroup
 ```
 #### 1.3.4 Delete a resource group without confirmation (CLI)
-> AZ-103: 1.3.4 (p. 84)
-
 ```bash
 az group delete 
   --name hrgroup 
   --yes
 ```
 #### 1.4b.1: Retrieve the definition of a role (PowerShell)
-> AZ-103: 1.4b.1 p. 88
-> - [x] Indexed?
-> - [ ] Anki?
-
 ```powershell
 Get-AzRoleDefinition `
   -Name "Virtual Machine Contributor" |
@@ -233,10 +215,6 @@ ConvertTo-Json
 az role definition list -n "Virtual Machine Contributor"
 ```
 #### 1.4b.3: Retrieve operations that support `DataActions` and `NotDataActions` (PowerShell)
-> AZ-103: 1.4b.3 p. 90
-> - [x] Indexed?
-> - [ ] Anki?
-
 ```powershell
 Get-AzProviderOperation * |? { $_.IsDataAction -eq $true }
 ```
@@ -252,8 +230,6 @@ Get-AzProviderOperation * |? { $_.IsDataAction -eq $true }
 3. Open **Role Assignments** tab
 4. Select one or more security principals and click **Remove**
 #### 1.4c.3: List roles available for assignment (PowerShell)
-> AZ-103: 1.4c.3 p. 96
-
 ```powershell
 Get-AzRoleDefinition | Where-Object { $_.IsCustom -eq $true }
 ```
@@ -266,10 +242,6 @@ az role definition list --custom-role-only -o table
 az role assignment list --all
 ```
 #### 1.4c.6: Grant a user RBAC rights (PowerShell)
-> AZ-103: 1.4c.6 p. 96
-> - [x] Indexed?
-> - [ ] Anki?
-
 ```powershell
 New-AzRoleAssignment `
   -SignInName cloudadmin@opsgility.onmicrosoft.com `
@@ -284,10 +256,6 @@ az role assignment create \
   --resource-group ExamRefRG
 ```
 #### 1.4c.8: Grant a group RBAC rights (PowerShell)
-> AZ-103: 1.4c.8 p. 97
-> - [x] Indexed?
-> - [ ] Anki?
-
 ```powershell
 $group = Get-AzADGroup `
   -SearchString "Cloud Admins"
@@ -305,11 +273,6 @@ az role assignment create \
  --resource-group ExamRefRG
 ```
 #### 1.4c.10: Remove RBAC assignments from a user (PowerShell)
-> AZ-103: 1.4c.10 p. 97\
-> Azure CLI equivalent: 1.4c.12
-> - [x] Indexed?
-> - [ ] Anki?
-
 ```powershell
 Remove-AzRoleAssignment `
   -SignInName cloudadmin@opsgility.onmicrosoft.com
@@ -317,9 +280,6 @@ Remove-AzRoleAssignment `
   -ResourceGroupName ExamRefRG
 ```
 #### 1.4c.11: Remove RBAC assignments from a group (PowerShell)
-> AZ-103: 1.4c.11 p. 97\
-> Azure CLI equivalent: 1.4c.13
-
 ```powershell
 $group = Get-AzADGRoup -SearchString "Cloud Admins"
 Remove-AzRoleAssignment `
@@ -328,8 +288,6 @@ Remove-AzRoleAssignment `
   -ResourceGroupName ExamRefRG
 ```
 #### 1.4c.12: Remove RBAC assignments from a user (Azure CLI)
-> PowerShell equivalent: 1.4c.10
-
 ```bash
 az role assignment delete \
   --role "Virtual Machine Contributor" \
@@ -337,8 +295,6 @@ az role assignment delete \
   --resource-group ExamRefRG
 ```
 #### 1.4c.13: Remove RBAC assignments from a group (Azure CLI)
-> PowerShell equivalent: 1.4c.11
-
 ```bash
 groupid=$(az ad group list --query "[?displayName=='CloudAdmins'].objectId" -o tsv)
 az role assignment delete \
@@ -349,10 +305,6 @@ az role assignment delete \
 #### 2.1a.1: Create a storage account (Portal)
 Click **Create a resouce**, then **Storage**, then **Storage account**. Choose a **globally** unique name for the account, containing lower-case characters and digits only.
 #### 2.1a.2: Create a storage account (PowerShell)
-> AZ-103: 2.1a.2 p. 107
-> - [x] Indexed?
-> - [ ] Anki?
-
 ```powershell
 New-AzStorageAccount `
   -ResourceGroupName RG
@@ -371,10 +323,6 @@ az storage account create \
   --sku $sku
 ```
 #### 2.1a.4: Change storage account's access tier, without confirmation (PowerShell)
-> AZ-103: 2.1a.4 p. 107
-> - [x] Indexed?
-> - [ ] Anki?
-
 ```powershell
 Set-AzStorageAccount `
   -ResourceGroupName RG `
@@ -383,19 +331,12 @@ Set-AzStorageAccount `
   -Force
 ```
 #### 2.1b.1: Configure service endpoints (Portal)
-> AZ-103: 2.1b.1 p. 112
-
 1. Specify `Microsoft.Storage` in the service endpoint settings of the VNet subnet
 2. Configure which VNets can access a particular storage account
 #### 2.1c.1: Access storage account name and key (Portal)
 1. Open storage account
 2. Open **Access keys** blade
 #### 2.1c.2: Create an Azure Key Vault (PowerShell)
-> AZ-103: 2.1c.2 p. 115\
-> Azure CLI equivalent: 2.1c.7
-> - [x] Indexed?
-> - [ ] Anki?
-
 ```powershell
 New-AzKeyVault `
   -VaultName vaultName `
@@ -403,11 +344,6 @@ New-AzKeyVault `
   -Location EastUS 
 ```
 #### 2.1c.3: Store a software managed key in Azure Key Vault (PowerShell)
-> AZ-103: 2.1c.3 p. 115\
-> Azure CLI equivalent: 2.1c.8
-> - [x] Indexed?
-> - [ ] Anki?
-
 ```powershell
 Add-AzKeyVaultKey `
   -VaultName vaultName `
@@ -415,29 +351,16 @@ Add-AzKeyVaultKey `
   -Destination 'Software'
 ```
 #### 2.1c.4: Retrieve a storage account key (PowerShell)
-> AZ-103: 2.1c.4 p. 115
-> - [x] Indexed?
-> - [ ] Anki?
-
 ```powershell
 $storageKey = Get-AzStorageAccountKey `
   -ResourceGrouupName rgName `
   -Name storageAccount `
 ```
 #### 2.1c.5: Convert storage account key to secure string
-> AZ-103: 2.1c.5 p. 115
-> - [x] Indexed?
-> - [ ] Anki?
-
 ```powershell
 $secretvalue = ConvertTo-SecureString $storageKey[0].Value -AsPlainText -Force
 ```
 #### 2.1c.6: Set secret value to be used in Azure Key Vault (PowerShell)
-> AZ-103: 2.1c.6 p. 115\
-> Azure CLI equivalent: 2.1c.9
-> - [x] Indexed?
-> - [ ] Anki?
-
 ```powershell
 $secret = Set-AzKeyVaultSecret `
   -VaultName vaultName `
@@ -445,11 +368,6 @@ $secret = Set-AzKeyVaultSecret `
   -SecretValue $secretvalue
 ```
 #### 2.1c.7: Create an Azure Key Vault (Azure CLI)
-> AZ-103: 2.1c.7 p. 115\
-> PowerShell equivalent: 2.1c.2
-> - [ ] Indexed?
-> - [ ] Anki?
-
 ```bash
 az keyvault create \
   --name $vaultName \
@@ -457,11 +375,6 @@ az keyvault create \
   --location $location
 ```
 #### 2.1c.8: Store a software managed key in Azure Key Vault (Azure CLI)
-> AZ-103: 2.1c.8 p. 115\
-> PowerShell equivalent: 2.1c.3
-> - [ ] Indexed?
-> - [ ] Anki?
-
 ```bash
 az keyvault key create \
   --vault-name $vaultName \
@@ -469,11 +382,6 @@ az keyvault key create \
   --protection "software"
 ```
 #### 2.1c.9: Set secret value to be used in Azure Key Vault (Azure CLI)
-> AZ-103: 2.1c.9 p. 115\
-> PowerShell equivalent: 2.1c.6
-> - [ ] Indexed?
-> - [ ] Anki?
-
 ```bash
 az keyvault secret set \
   --vault-name $vaultName \
@@ -481,11 +389,6 @@ az keyvault secret set \
   --value $secretValue
 ```
 #### 2.1d.1: Create a SAS token for a specific storage blob (PowerShell)
-> AZ-103: 2.1d.1 p. 117\
-> Azure CLI equivalent: 2.1d.2
-> - [x] Indexed?
-> - [ ] Anki?
-
 ```powershell
 New-AzStorageBlobSASToken `
   -Container $container `
@@ -496,11 +399,6 @@ New-AzStorageBlobSASToken `
   -Context $context
 ```
 #### 2.1d.2: Create a SAS token for a specific storage blob (Azure CLI)
-> AZ-103: 2.1d.2 p.117\
-> PowerShell equivalent: 2.1d.1
-> - [ ] Indexed?
-> - [ ] Anki?
-
 ```bash
 az storage blob generate-sas \
   --account-name "storageAccount" \
@@ -515,10 +413,6 @@ az storage blob generate-sas \
 2. Open **Activity Log**
 3. Click Logs icon at top of Activity Log view to select an existing Log Analytics (OMS) workspace or create a new one
 #### 2.1f.1: Change replication mode of a storage account
-> AZ-103: 2.1f.1 p. 123
-> - [x] Indexed?
-> - [ ] Anki?
-
 ```powershell
 Set-AzStorageAccount `
   -ResourceGroupName $resourceGroup `
@@ -526,10 +420,6 @@ Set-AzStorageAccount `
   -SkuName $type
 ```
 #### 2.1f.2: Use async blob copy service to copy a file
-> AZ-103: 2.1f.2 p. 12
-> - [x] Indexed?
-> - [ ] Anki?
-
 ```powershell
 $blobCopyState = Start-AzStorageBlobCopy `
   -SrcBlob $blobName `
@@ -540,7 +430,6 @@ $blobCopyState = Start-AzStorageBlobCopy `
   -DestContext $destContext
 ```
 #### 2.1f.2: Copy a blob from one storage account to another (PowerShell)
-> AZ-103: 2.1f.2 p. 124-125
 ```powershell
 $srcStorageKey = Get-AzStorageAccountKey `
  -ResourceGroupName $sourceRGName `
@@ -571,13 +460,10 @@ $copiedBlob = Start-AzStorageBlobCopy `
  -DestContext $destContext
 ```
 #### 2.1f.3: Monitor progress of the async blob copy (PowerShell)
-> AZ-103: 2.1f.3 p. 126\
-> Azure CLI equivalent: 2.1f.5
 ```powershell
 PS C:\> $copiedBlob | Get-AzStorageBlobCopyState
 ```
 #### 2.1f.4: Copy a blob from one storage account to another (Azure CLI)
-> PowerShell equivalent: 2.1f.2
 ```bash
 az storage blob copy start \
  --account-name $destStorageAccount \
@@ -589,7 +475,6 @@ az storage blob copy start \
  --source-account-key $srcStorageKey
 ```
 #### 2.1f.5: Monitor progress of the async blob copy (Azure CLI)
-> PowerShell equivalent: 2.1f.3
 ```bash
 az storage blob show \
  --account-name $destStorageAccount \
@@ -598,7 +483,6 @@ az storage blob show \
  --name $blobName
 ```
 #### 2.1f.6: Use AzCopy to copy a blob
-> AZ-103: 2.1f.6 p. 127
 ```cmd
 AzCopy \
  /Source:https://sourceblob.blob.core.windows.net/sourcecontainer/ \
@@ -608,11 +492,6 @@ AzCopy \
  /Pattern:disk1.vhd
 ```
 #### 2.2a.1: Create a storage container (PowerShell)
-> AZ-103: 2.2a.1 p. 132\
-> Azure CLI equivalent: 2.2a.2
-> - [ ] Indexed?
-> - [ ] Anki?
-
 Command                     | Effect
 :---                        | :---
 `New-AzStorageContainer`    | Create a container
@@ -640,11 +519,6 @@ Set-AzStorageBlobContent `
   -Blob $blobName
 ```
 #### 2.2a.2: Create a storage container (Azure CLI)
-> AZ-103: 2.2a.2 p. 133\
-> PowerShell equivalent: 2.2a.1
-> - [ ] Indexed?
-> - [ ] Anki?
-
 `az storage container create` is used to create a storage account container; the parameter `public-access` is used to set permissions, and supported values include `off`, `blob`, and `container`
 ```bash
 az storage container create \
@@ -653,10 +527,6 @@ az storage container create \
   --public-access off
 ```
 #### 2.2a.3: Upload a file (Azure CLI)
-> AZ-103: 2.2a.2 p. 133
-> - [ ] Indexed?
-> - [ ] Anki?
-
 `az storage blob upload` is used to upload a file
 ```bash
 az storage blob upload \
@@ -675,7 +545,6 @@ AzCopy copy https://storageAccount.blob.core.windows.net/sourceContainer/path/to
 AzCopy copy localFilePath https://storageAccount.blob.core.windows.net/destinationContainer/path/to/blob?SASToken
 ```
 #### 2.2b.1: Export data (Portal)
-> AZ-103: 2.2b.1: p. 135
 1. From **All Services** open **Import/Export Jobs**
 2. Open **Create Import/Export Job**
 3. Select **Basics** tab
@@ -726,14 +595,10 @@ WAImportExport.exe PrepImport \
 3. Specify unique name, configuration for origin settings such as type, host header, and origin port for HTTP and HTTPS.
 4. Click **Add** button
 #### 2.3a.1: Create an Azure File Share (Portal)
-> AZ-103: 2.3a.1 p. 148
 1. Open a standard Azure storage account (not premium)
 2. **Files**
 3. **+ File Share** button
 #### 2.3a.2: Create an Azure File Share (PowerShell)
-> AZ-103: 2.3a.2 p. 149\
-> Azure CLI equivalent: 2.3a.3
-
 ```powershell
 PS C:\> $storageKey = Get-AzStorageAccountKey
 >>  -ResourceGroupName $rgName
@@ -748,9 +613,6 @@ PS C:\> New-AzStorageShare
 >>  -Context $context
 ```
 #### 2.3a.3: Create an Azure File Share (CLI)
-> AZ-103: 2.3a.3 p. 149\
-> PowerShell equivalent: 2.3a.2
-
 ```powershell
 $ constring=$(az storage account show-connection-string -n $storageAccountName)
 
@@ -819,9 +681,6 @@ Reset-StorageSyncServer
 #### 3.1a.1: Create an Azure VM (Portal)
 ...
 #### 3.1a.2: Create an Azure VM (PowerShell)
-> AZ-103: 3.1a.2: 181-184
-> - [ ] Indexed?
-> - [ ] Anki?
 
 Subtask sequence:
   - Login to Azure account
@@ -979,8 +838,151 @@ $vm = Set-AzVMSourceImage -VM $vm -PublisherName 'MicrosoftWindowsServer' -Offer
 
 New-AzVM -ResourceGroupName $ResourceGroupName -Location $LocationName -VM $vm
 ```
-#### 3.1a.3: Create an Azure VM (Azure CLI)
 #### 3.1a.4: Capture a managed VM image (Portal)
 #### 3.1a.5: Capture a managed VM image (PowerShell)
 #### 3.1a.6: Capture a managed VM image (Azure CLI)
 #### 3.1a.7: Create a VM from an image
+#### 3.1a.04: Capture a managed VM image
+#### 3.1a.05: Capture a managed VM image
+#### 3.1a.06: Capture a managed VM image
+#### 3.1a.07: Creating a VM from an image
+#### 3.1a.08: Login to Azure (PowerShell)
+#### 3.1a.09: Create a new resource group (PowerShell)
+#### 3.1a.10: Create a virtual network (PowerShell)
+#### 3.1a.11: Create a public IP address resource (PowerShell)
+#### 3.1a.12: Add a rule to a network security group (PowerShell)
+#### 3.1a.13: Create a network security group (PowerShell)
+#### 3.1a.14: Specify size and availability of a virtual machine (PowerShell)
+#### 3.1a.15: Set operating system and credentials of a virtual machine (PowerShell)
+#### 3.1a.16: Specify an operating system image for a virtual machine (PowerShell)
+#### 3.1a.17: Create a network interface for a virtual machine (PowerShell)
+#### 3.1a.18: Login to Azure (Azure CLI)
+#### 3.1a.19: Create a new resource group (Azure CLI)
+#### 3.1a.20: Identify regions available to resources and resource groups (Azure CLI)
+#### 3.1a.21: Create a simple virtual machine
+#### 3.1a.22: Create a virtual network (Azure CLI)
+#### 3.1a.23: Add subnets to a virtual network (Azure CLI)
+#### 3.1a.24: Create a public IP address resource (Azure CLI)
+#### 3.1a.25: Create a network security group (Azure CLI)
+#### 3.1a.26: Add rules to a network security group (Azure CLI)
+#### 3.1a.27: Create a network security group rule to allow incoming SSH connections (Azure CLI)
+#### 3.1a.28: Create a network security group rule to allow incoming HTTP connections (Azure CLI)
+#### 3.1a.29: Create a network interface for a virtual machine (Azure CLI)
+#### 3.1a.30: Retrieve a list of marketplace images (Azure CLI)
+#### 3.1a.32: Retrieve available VM sizes (Azure CLI)
+#### 3.1a.33: Create a virtual machine (Azure CLI)
+#### 3.1a.34: Specify a legacy unmanaged image for use in a new virtual machine (PowerShell)
+#### 3.1a.35: Specify a legacy unmanaged image for use in a new virtual machine (Azure CLI)
+#### 3.1a.36: Specify a managed image for use in a new virtual machine (PowerShell)
+#### 3.1a.37: Specify a managed image for use in a new virtual machine (Azure CLI)
+#### 3.1b.01: Create an availability set (Portal)
+#### 3.1b.02: Create an availability set (PowerShell)
+```powershell
+New-AzavailabilitySet `
+  -ResourceGroupName `
+  -Location
+  -PlatformUpdateDomainCount 10 `
+  -PlatformFaultDomainCount 3 `
+  -Sku "Aligned"
+```
+#### 3.1b.03: Create an availability set (CLI)
+#### 3.1c.01: Resizing a VM (PowerShell)
+#### 3.1c.02: Resizing a VM (Azure CLI)
+#### 3.1e.01: Modify host cache setting on a virtual HD (Portal)
+#### 3.1e.02: Modify host cache setting on a virtual HD (PowerShell)
+#### 3.1e.03: Modify host cache setting on a managed virtual HD (Azure CLI)
+#### 3.1e.04: Modify host cache setting on a unmanaged virtual HD (Azure CLI)
+#### 3.1e.05: Create a new storage pool using all available disks (PowerShell)
+#### 3.1f.01: Connecting to a Windows VM with remote desktop
+#### 3.1f.02: Connecting to a Linux virtual machine using SSH
+#### 3.1g.01: Enabling and configuring diagnostics (Windows)
+#### 3.1g.02: Enabling and configuring diagnostics (Linux)
+#### 3.1h.01: Creating a virtual machine scale set (Portal)
+#### 3.1h.02: Creating a virtual machine scale set (PowerShell)
+#### 3.1h.03: Creating a virtual machine scale set (CLI)
+#### 3.2c.01: Deploy a template that creates a VM (Portal)
+#### 3.2c.02: Deploy a template that creates a VM (PowerShell)
+#### 3.2d.01: Deploy a template in Complete mode
+#### 3.2e.01: Export deployment template (Portal)
+#### 3.2e.02: Access template that represents current state of resource group
+#### 3.2e.03: Export templates
+#### 3.2e.04: Export all resources in a resource group as a template
+#### 3.2e.05: Pass a template file during deployment
+#### 3.3a.01: Add a data disk to an existing VM (Portal)
+#### 3.3a.02: Attach a new managed disk to an existing VM
+#### 3.3b.01: Add a new network interface to an existing VM
+#### 3.3b.02: Attach a new network interface to an existing VM
+#### 3.3c.01: View all available sizes in a location
+#### 3.3c.02: Change VM to a new size
+#### 3.3d.01: Move a VM to another resource group or subscription (Portal)
+#### 3.3d.02: Move a resource to another resource group or subscription (PowerShell)
+#### 3.3d.03: Move a resource to another resource group or subscription (Azure CLI)
+#### 3.3e.01: Redeploy a VM
+#### 3.3f.01: Package a DSC script into a zip file
+#### 3.3f.02: Apply the PowerShell Desired State Configuration extension
+#### 3.3f.03: Publish a packaged DSC script to a storage account
+#### 3.3f.04: Use the custom script extension
+#### 3.4a.01: Backup a VM with Azure Backup
+#### 3.4d.01: Restore an Azure Backup recovery point as a new VM
+#### 3.4d.02: Restore access to files in Azure Backup
+#### 4.1d.01: Configure user-defined routes (Portal)
+#### 4.1d.02: Configure user-defined routes (PowerShell)
+#### 4.1d.03: Configure user-defined routes (Azure CLI)
+#### 4.2a.01: Creating a VNet peering (Portal)
+#### 4.2a.02: Creating a VNet peering (PowerShell)
+#### 4.2a.03: Creating a VNet peering (Azure CLI)
+#### 4.2b.01: Creating a VPN gateway and VNet-to-VNet connection (Portal)
+#### 4.2b.02: Creating a VPN gateway and VNet-to-VNet connection (PowerShell)
+#### 4.2b.03: Creating a VPN gateway and VNet-to-VNet connection (Azure CLI)
+#### 4.3a.01: Creating DNS zones and DNS records (Portal)
+#### 4.3a.02: Creating DNS zones and DNS records (PowerShell)
+#### 4.3a.03: Creating DNS zones and DNS records (Azure CLI)
+#### 4.3b.01: Configure custom DNS settings (Portal)
+#### 4.3b.02: Configure custom DNS settings (PowerShell)
+#### 4.3b.03: Configure custom DNS settings (Azure CLI)
+#### 4.3c.01: Create private DNS zones
+#### 4.4c.01: Implement Service Map (Portal)
+#### 4.4c.02: Install Dependency Agent
+#### 4.4c.03: Register a resource provider (PowerShell)
+#### 4.4c.04: Register a resource provider (Azure CLI)
+#### 4.4d.01: View effective security rules (Portal)
+#### 4.4d.02: View effective security rules (PowerShell)
+#### 4.4d.03: View effective security rules (Azure CLI)
+#### 4.5a.01: Create an Azure load balancer (Portal)
+#### 4.5a.02: Create an Azure load balancer (PowerShell)
+#### 4.5a.03: Create an Azure load balancer (Azure CLI)
+#### 4.5b.01: Enable basic-tier load-balancer logs
+#### 4.6a.01: Install Network Performance Monitor (Portal)
+#### 4.6a.02: Install Network Performance Monitor on a VM (Portal)
+#### 4.6a.03: Connect on-premises server to Log Analytics
+#### 4.6a.04: Configure Performance Monitor
+#### 4.6a.05: Configure Service Connectivity Monitor
+#### 4.6a.06: Configure ExpressRoute Monitor
+#### 4.6c.01: Install Network Watcher VM extension (PowerShell)
+#### 4.6c.02: Install Network Watcher VM extension (Azure CLI)
+#### 4.6c.03: Use IP Flow Verify (Portal)
+#### 4.6c.04: Use IP Flow Verify (PowerShell)
+#### 4.6c.05: Use IP Flow Verify (Azure CLI)
+#### 4.6c.06: Use Next Hop (Portal)
+#### 4.6c.07: Use Next Hop (PowerShell)
+#### 4.6c.08: Use Next Hop (Azure CLI)
+#### 4.6c.09: Use Packet Capture (Portal)
+#### 4.6c.10: Use Packet Capture (PowerShell)
+#### 4.6c.11: Use Packet Capture (Azure CLI)
+#### 4.6c.12: Use Network Topology (Portal)
+#### 4.6c.13: Use Network Topology (PowerShell)
+#### 4.6c.14: Use Network Topology (Azure CLI)
+#### 4.6d.01: Use VPN Troubleshoot (Portal)
+#### 4.6d.02: Use VPN Troubleshoot (PowerShell)
+#### 4.6d.03: Use VPN Troubleshoot (Azure CLI)
+#### 4.6e.01: Use Connection Troubleshoot (Portal)
+#### 4.6e.02: Use Connection Troubleshoot (PowerShell)
+#### 4.6e.03: Use Connection Troubleshoot (Azure CLI)
+#### 4.6e.04: Use Connection Monitor (Portal)
+#### 4.7a.01: Create a VPN Gateway (Portal)
+#### 4.7a.02: Create a VPN Gateway (PowerShell)
+#### 4.7a.03: Create a VPN Gateway (Azure CLI)
+#### 4.7b.01: Create a site-to-site VPN (Portal)
+#### 4.7b.02: Create a site-to-site VPN (PowerShell)
+#### 4.7b.03: Create a site-to-site VPN (Azure CLI)
+#### 4.7c.01: Creating an ExpressRoute circuit

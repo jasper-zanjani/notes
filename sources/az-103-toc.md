@@ -120,7 +120,8 @@
 > - [ ] 5.3: Implement and manage hybrid identities
 >   - [ ] 5.3a: Install and configure Azure AD Connect
 >   - [ ] 5.3b: Configure federation and single sign-on
->   - [ ] 5.3c: Manage password sync and writeback
+>   - [ ] 5.3c: Manage Azure AD Connect
+>   - [ ] 5.3d: Manage password sync and writeback
 > - [ ] 5.4: Implement multi-factor authentication
 >   - [ ] 5.4a: Multi-Factor Authentication
 >   - [ ] 5.4b: Azure MFA advanced features

@@ -367,9 +367,18 @@ Then construct the credential by using `New-Object`
 $cred = New-Object System.Management.Automation.PSCredential ("FullerP", $pw)
 ```
 
+## Desired State Configuration (DSC) syntax
+
+Syntax                                            | Effect
+:---                                              | :---
+Configuration                                     | precedes title of script, at top (e.g. `Configuration ContosoSimple`)
+Ensure                                            | property within `WindowsFeature` that can be set to `Present` or `Absent` (e.g. `Ensure = "Present"`)
+WindowsFeature                                    | declares code block representing a DSC resource to be installed (e.g. `WindowsFeature IIS`)
+
 ## Sources
-  - Berkouwer, Sander. _Active Directory Administration Cookbook_. [sources/adac.md](../sources/adac.md).
-  - Krause, Jordan. _Windows Server 2016 Administration Cookbook_. [sources/wsac.md](../sources/wsac.md).
+  - Berkouwer, Sander. _Active Directory Administration Cookbook_. [ADAC](../sources/adac.md).
+  - Krause, Jordan. _Windows Server 2016 Administration Cookbook_. [WSAC](../sources/wsac.md).
+  - Michael Washam, Jonathan Tuliani, and Scott Hoag. _Exam Ref AZ-103 Microsoft Azure Administrator_. [AZ-103](../sources/az-103.md)
   - "How to use Wget to download web-based packages on Windows." [TechRepublic](https://www.techrepublic.com/article/how-to-use-wget-to-download-web-based-packages-on-windows/#ftag=RSS56d97e7): 2019/06/26.
   - "Check PowerShell Version". [powertheshell.com](http://www.powertheshell.com/topic/learnpowershell/firststeps/psversion/)
   - "About Comparison Operators". [Microsoft Docs](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_comparison_operators?view=powershell-6): 2019/01/17.
