@@ -163,9 +163,7 @@ function Start-PSAdmin {
   Start-Process PowerShell -Verb RunAs
 }
 ```
-
-Single-line comments are preceded by `#`. But block quotes can be created by enclosing them between `<#` and `#>`.
-
+Single-line comments are preceded by `#`. But block quotes can be created by enclosing them between `<#` and `#>`.\
 __Positional parameters__ can be referenced using the built-in array `args`, which contains all arguments passed to the function on invocation.
 ```powershell
 function Get-LargeFiles {
@@ -174,7 +172,6 @@ function Get-LargeFiles {
   Sort-Object Length -Descending
 }
 ```
-
 __Named parameters__ can be declared in one of two ways. One, within the function body using the `param` keyword, followed by the name of the variable representing the parameter's value, enclosed in parentheses and preceded by the dollar sign `$`.
 ```powershell
 function Get-LargeFiles {
@@ -184,9 +181,7 @@ function Get-LargeFiles {
   Sort-Object Length -Descending
 }
 ```
-
 An alternative way is directly after the function name, with each parameter separated by a comma.
-
 ```powershell
 function Get-LargeFiles($Size) {
   Get-ChildItem C:\Users\Michael\Documents |
@@ -194,8 +189,6 @@ function Get-LargeFiles($Size) {
   Sort-Object Length -Descending
 }
 ```
-
-
 Default values for parameters can be specified by placing them within the parentheses
 ```powershell
 function Get-LargeFiles {
@@ -205,12 +198,10 @@ function Get-LargeFiles {
   Sort-Object Length -Descending
 }
 ```
-
 The name of the variable becomes the named parameter used when invoking the function
 ```powershell
 Get-LargeFiles -Size 2000
 ```
-
 __Data typing__ can be performed by preceding the named parameter with `[int]`, for example. This simplifies data validation and also serves to document your code.
 ```powershell
 function Get-LargeFiles {
@@ -228,34 +219,25 @@ function Switch-Item {
   else { "Switch off" }
 }
 ```
-
 Passing the option `-on` to the function on invocation will produce the output:
 ```
 Switch on
 ```
-
 Omitting the optino will produce the output:
 ```
 Switch off
 ```
-
 Boolean values can be explicitly set upon invocation using this syntax:
 ```powershell
 Switch-Item -on:$false
 ```
-
 Which will produce the output:
 ```
 Switch off
 ```
-
 __Mandatory parameters__ are declared by preceding the parameter name with `[Parameter(Mandatory=$true)]`. 
 ```powershell
-
 ```
-
-
-
 ## Environment manipulation
 ### Alias
 
@@ -324,49 +306,40 @@ Set-VMNetworkAdapter -VMName SVR01 -Name "NetworkAdapter" -MACAddressSpoofing On
 ```
 
 ## Other commands
-
 #### Display options available in the module
 ```powershell
 Get-PSReadlineOption
 ```
-
 #### Set history to only save unique commands
 ```powershell
 Set-PSReadlineOption -HistoryNoDuplicates:$true
 ```
-
 #### Enable bash-like ambiguous command completion, where tab brings up a menu of matches
 ```powershell
 Set-PSReadlineOption -EditMode Emacs
 ```
-
 #### Change &lt;Tab&gt; behavior back to default for PowerShell
 ```powershell
 Set-PSReadlineOption -EditMode Windows
 ```
-
 #### View system uptime
 ```powershell
 Get-WmiObject -Win32_OperatingSystem -ComputerName localhost |
 Select-Object -Property @{n="Last Boot Time";e={[Management.ManagementDateTimeConvert]::ToDateTime($_.LastBootUpTime)}}
 ```
-
 #### Build a credential
 Credentials can be stored in a variable and built interactively with `Get-Credential`
 ```powershell
 $cred = Get-Credential
 ```
-
 A credential can be built piecemeal by first securely saving a password with `ConvertTo-SecureString`
 ```powershell
 $pw = ConvertTo-SecureString "Password" -AsPlainText -Force
 ```
-
 Then construct the credential by using `New-Object`
 ```powershell
 $cred = New-Object System.Management.Automation.PSCredential ("FullerP", $pw)
 ```
-
 ## Desired State Configuration (DSC) syntax
 
 Syntax                                            | Effect

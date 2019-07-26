@@ -82,15 +82,15 @@ az policy definition create \
 ```
 #### 1.1c.4: Apply policy to a scope (Azure CLI)
 ```bash
-$ az policy assignment create \
-> --policy allowedVMs \
-> --name 'deny-non-compliant-vms' \
-> --scope '/subscriptions/<Subscription ID>' -p
+az policy assignment create \
+--policy allowedVMs \
+--name 'deny-non-compliant-vms' \
+--scope '/subscriptions/<Subscription ID>' -p
 ```
 #### 1.1c.5 Delete policy assignment (Azure CLI)
 ```bash
-$ az policy assignment delete \
-> --name deny-non-compliant-vms
+az policy assignment delete \
+--name deny-non-compliant-vms
 ```
 #### 1.2a.1 Enable diagnostics log collection with a storage account (Portal)
 Browse to the resource itself. Alternatively, open __Azure Monitor__ and then the __Diagnostics Settings__ blade. From there you can view all eligible resouce types and view status of log collection. 
@@ -99,10 +99,10 @@ Browse to the resource itself. Alternatively, open __Azure Monitor__ and then th
 
 ```powershell
 $resource = Get-AzResource `
-  -Name <resourceName> `
+  -Name <resourceName`
   -ResourceGroupName <resourceGroupName>
 $storage = Get-AzResource `
-  -Name <resourceName> `
+  -Name <resourceName`
   -ResourceGroupName <resourceGroupName>
 
 Set-AzDiagnosticSetting `
@@ -113,11 +113,11 @@ Set-AzDiagnosticSetting `
 #### 1.2a.3 Enable diagnostics log streaming to an Event Hub (PowerShell) 
 ```powershell
 $rule = Get-AzServiceBusRule `
-  -ResourceGroup <resourceGroupName> `
-  -Namespace <namespace> `
-  -Topic <topic> `
-  -Subscription <subscription> `
-  -Name <ruleName> 
+  -ResourceGroup <resourceGroupName`
+  -Namespace <namespace`
+  -Topic <topic`
+  -Subscription <subscription`
+  -Name <ruleName
 Set-AzDiagnosticSetting `
   -ResourceId $resource.ResourceId `
   -ServiceBusRuleId $rule.Id `
@@ -126,8 +126,8 @@ Set-AzDiagnosticSetting `
 #### 1.2a.4 Enable diagnostics logs collection in a Log Analytics workspace (PowerShell)
 ```powershell
 $workspace = Get-AzOperationalInsightsWorkspace `
-  -Name <workspaceName> `
-  -ResourceGroupName <resourceGroupName> 
+  -Name <workspaceName`
+  -ResourceGroupName <resourceGroupName
 Set-AzDiagnosticSetting `
   -ResourceId $resource.ResourceId `
   -WorkspaceId $workspace.ResourceId `
@@ -142,10 +142,10 @@ resourceId=$(az resource show -resource-group resourceGroupName -name resourceNa
 #### 1.2a.6 Enable diagnostics log collection with a storage account (Azure CLI)
 ```bash
 az monitor diagnostic-settings create \
-  --name <diagnosticName> \
-  --storage-account <storageId> \
-  --resource <resouceId> \
-  --resouce-group <resourceGroup> \
+  --name <diagnosticName\
+  --storage-account <storageId\
+  --resource <resouceId\
+  --resouce-group <resourceGroup\
   --logs '[ {
   "category": <categoryName>,
   "enabled": true,
@@ -156,9 +156,9 @@ az monitor diagnostic-settings create \
 #### 1.2a.7 Enable diagnostics log streaming to an Event Hub (Azure CLI)
 ```bash
 az monitor diagnostic-settings create \
-  --name <diagnosticName> \
-  --event-hub-rule <eventHubRuleId> \
-  --resource <targetResourceId> \
+  --name <diagnosticName\
+  --event-hub-rule <eventHubRuleId\
+  --resource <targetResourceId\
   --logs '[{
     "category": <categoryName>,
     "enabled": true }]'
@@ -166,10 +166,10 @@ az monitor diagnostic-settings create \
 #### 1.2a.8 Enable diagnostics logs collection in a Log Analytics workspace (Azure CLI)
 ```bash
 az monitor diagnostic-settings create \
-  --name <diagnosticName> \
-  --workspace <logAnalyticsName> \
-  --resource <resourceId> \
-  --resouce-group <logAnalysticsWorkspaceResourceGroup> \
+  --name <diagnosticName\
+  --workspace <logAnalyticsName\
+  --resource <resourceId\
+  --resouce-group <logAnalysticsWorkspaceResourceGroup\
   --logs '[{
     "category": <categoryName>,
     "enabled": true }]'
@@ -461,7 +461,7 @@ $copiedBlob = Start-AzStorageBlobCopy `
 ```
 #### 2.1f.3: Monitor progress of the async blob copy (PowerShell)
 ```powershell
-PS C:\> $copiedBlob | Get-AzStorageBlobCopyState
+$copiedBlob | Get-AzStorageBlobCopyState
 ```
 #### 2.1f.4: Copy a blob from one storage account to another (Azure CLI)
 ```bash
@@ -492,11 +492,6 @@ AzCopy \
  /Pattern:disk1.vhd
 ```
 #### 2.2a.1: Create a storage container (PowerShell)
-Command                     | Effect
-:---                        | :---
-`New-AzStorageContainer`    | Create a container
-`Set-AzStorageBlobContent`  | Create a blob within an existing container
-
 ```powershell
 $storageKey = Get-AzStorageAccountKey `
   -Name $storageAccount `
@@ -509,6 +504,7 @@ $context = New-AzStorageContext `
 Set-AzCurrentStorageAccount `
   -Context $context
 
+# Create storage container
 New-AzStorageContainer `
   -Name $container `
   -Permission Off
@@ -600,26 +596,26 @@ WAImportExport.exe PrepImport \
 3. **+ File Share** button
 #### 2.3a.2: Create an Azure File Share (PowerShell)
 ```powershell
-PS C:\> $storageKey = Get-AzStorageAccountKey
->>  -ResourceGroupName $rgName
->>  -Name $storageAccount
+$storageKey = Get-AzStorageAccountKey
+  -ResourceGroupName $rgName
+  -Name $storageAccount
 
-PS C:\> $context = New-AzStorageContext
->>  -StorageAccountName $storageAccount
->>  -StorageAccountKey $storageKey.Value[0]
+$context = New-AzStorageContext
+  -StorageAccountName $storageAccount
+  -StorageAccountKey $storageKey.Value[0]
 
-PS C:\> New-AzStorageShare
->>  -Name $shareName
->>  -Context $context
+New-AzStorageShare
+  -Name $shareName
+  -Context $context
 ```
 #### 2.3a.3: Create an Azure File Share (CLI)
 ```powershell
-$ constring=$(az storage account show-connection-string -n $storageAccountName)
+constring=$(az storage account show-connection-string -n $storageAccountName)
 
-$ az storage share create \
->  --name $shareName \
->  --quota 2048 \
->  --connection-string $constring
+az storage share create \
+  --name $shareName \
+  --quota 2048 \
+  --connection-string $constring
 ```
 #### 2.3a.4: Connect to and mount an Azure File Share (Windows File Explorer)
 1. Right-click on **This PC**
@@ -662,7 +658,7 @@ sudo mount \
 -o vers=3.0,username=$storageAccount,password=$storageAccountKey,dir_mode=0777,file_mode=0777,sec=ntlmssp
 ```
 #### 2.3b.1: Create the Azure File Sync Service (Portal)
-Create a resource > **Storage** > **Azure File Sync**
+Create a resource **Storage** **Azure File Sync**
 #### 2.3c.1: Create a sync group (Portal)
 Specify name of sync group in dialog after creating an Azure File Sync (2.3b.1)
 #### 2.3c.2: Add endpoints to Azure File Sync Group (Portal)
@@ -681,34 +677,10 @@ Reset-StorageSyncServer
 #### 3.1a.1: Create an Azure VM (Portal)
 ...
 #### 3.1a.2: Create an Azure VM (PowerShell)
-
-Subtask sequence:
-  - Login to Azure account
-  - Create a new resource group
-  - Create a public IP address
-  - Add a rule to the network security group to allow RDP in
-  - Apply the rules
-
-
-Command sequence:
-  - `Connect-AzAccount`
-  - `New-AzResourceGroup`
-  - `New-AzVirtualNetworkSubnetConfig`
-  - `New-AzVirtualNetwork`
-  - `New-AzPublicIpAddress`
-  - `New-AzNetworkSecurityRuleConfig`
-  - `New-AzNetworkSecurityGroup`
-  - `New-AzVMConfig`
-  - `Set-AzVMOperatingSystem`
-  - `Set-AzVMSourceImage`
-  - `Set-AzVMOSDisk`
-  - `New-AzNetworkInterface`
-  - `Add-AzVMNetworkInterface`
-  - `New-AzVM`
-
 ```powershell
 # Login to Azure account
 Connect-AzAccount
+
 # Create a new resource group 
 New-AzResourceGroup ` 
   -Name $resourceGroupName `
@@ -782,7 +754,7 @@ Set-AzVMOSDisk `
   -CreateOption fromImage `
   -VM $vm
 
-# Create the network interface for the VM
+# Create a network interface
 $nic = New-AzNetworkInterface `
   -Name $nicNAme `
   -ResourceGroupName $resourceGroupName `
@@ -838,43 +810,179 @@ $vm = Set-AzVMSourceImage -VM $vm -PublisherName 'MicrosoftWindowsServer' -Offer
 
 New-AzVM -ResourceGroupName $ResourceGroupName -Location $LocationName -VM $vm
 ```
+#### 3.1a.3: Create an Azure VM (Azure CLI)
+```bash
+# Login to Azure account
+az login
+
+# Create a new resource group 
+az group create \
+  --name ... \
+  --location ...
+
+# Identify available regions
+az account list-locations
+
+# Create a simple virtual machine
+az vm create \
+  --resource-group ... \
+  --name ... \
+  --image ... \
+  --generate-ssh-keys
+
+# Create a virtual network
+az network vnet create \
+  --resource-group ...\
+  -n ... \
+  --address-prefixes ... \
+  -l ...
+
+# Create a public IP address
+az network public-ip create \
+  -n ... \
+  -g ... \
+  --allocation-method Dynamic \
+  --dns-name ... \
+  -l ...
+
+# Create a network security group
+az network nsg create \
+  -n ... \
+  -g ... \
+  -l ...
+
+# Create a network security group rule to allow SSH in
+az network nsg rule create \
+  -n SSH \
+  --nsg-name ...\
+  --priority 100 \
+  -g ...
+  --access Allow \
+  --description "SSH Access" \
+  --direction Inbound \
+  --protocol Tcp \
+  --destination-address-prefix "*" \
+  --destination-port-range 22
+  --source-address-prefix "*" \
+  --source-port-range "*"
+
+# Create a network security group rule to allow HTTP in
+az network nsg rule create \
+  -n HTTP \
+  --nsg-name ...\
+  --priority 101 \
+  -g ...
+  --access Allow \
+  --description "Web Access" \
+  --direction Inbound \
+  --protocol Tcp \
+  --destination-address-prefix "*" \
+  --destination-port-range 80
+  --source-address-prefix "*" \
+  --source-port-range "*"
+
+# Create a network interface
+az network nic create \
+  -n ... \
+  -g ... \
+  --subnet ... \
+  --network-security-group ... \
+  --vnet-name ... \
+  --public-ip-address ... \
+  -l ...
+
+# Retrieve a list of marketplace images
+az vm image list \
+  --all
+
+# Retrieve form factors available in each region
+az vm list-sizes \
+  --location ...
+
+# Create the VM
+az vm create \
+  -n ... \
+  -g ... \
+  -l ... \
+  --size ... \
+  --nics ... \
+  --image ... \
+  --generate-ssh-keys
+```
+
 #### 3.1a.4: Capture a managed VM image (Portal)
 #### 3.1a.5: Capture a managed VM image (PowerShell)
+```powershell
+# Set status of VM to "Generalized"
+Set-AzVM `
+  -ResourceGroupName ... `
+  -Name ... `
+  -Generalized 
+
+# Create a managed VM from a VM
+$vm = Get-AzVM `
+  -ResourceGroupName ... `
+  -Name ...
+$image = New-AzImageConfig `
+  -Location ... `
+  -SourceVirtualMachineId $vm.ID `
+New-AzImage `
+  -Image $image `
+  -ImageName ... `
+  -ResourceGroupName ...
+```
 #### 3.1a.6: Capture a managed VM image (Azure CLI)
+```bash
+# Deallocate the VM
+az vm deallocate \ 
+  --resource-group ...\
+  --name ...
+
+# Set the status of the VM to Generalized
+az vm generalize \
+  --resource-group ... \
+  --name ...
+
+az image create \
+  --resource-group ...\
+  --name ... \
+  --source ... 
+```
 #### 3.1a.7: Create a VM from an image
-#### 3.1a.04: Capture a managed VM image
-#### 3.1a.05: Capture a managed VM image
-#### 3.1a.06: Capture a managed VM image
-#### 3.1a.07: Creating a VM from an image
-#### 3.1a.08: Login to Azure (PowerShell)
-#### 3.1a.09: Create a new resource group (PowerShell)
-#### 3.1a.10: Create a virtual network (PowerShell)
-#### 3.1a.11: Create a public IP address resource (PowerShell)
-#### 3.1a.12: Add a rule to a network security group (PowerShell)
-#### 3.1a.13: Create a network security group (PowerShell)
-#### 3.1a.14: Specify size and availability of a virtual machine (PowerShell)
-#### 3.1a.15: Set operating system and credentials of a virtual machine (PowerShell)
-#### 3.1a.16: Specify an operating system image for a virtual machine (PowerShell)
-#### 3.1a.17: Create a network interface for a virtual machine (PowerShell)
-#### 3.1a.18: Login to Azure (Azure CLI)
-#### 3.1a.19: Create a new resource group (Azure CLI)
-#### 3.1a.20: Identify regions available to resources and resource groups (Azure CLI)
-#### 3.1a.21: Create a simple virtual machine
-#### 3.1a.22: Create a virtual network (Azure CLI)
-#### 3.1a.23: Add subnets to a virtual network (Azure CLI)
-#### 3.1a.24: Create a public IP address resource (Azure CLI)
-#### 3.1a.25: Create a network security group (Azure CLI)
-#### 3.1a.26: Add rules to a network security group (Azure CLI)
-#### 3.1a.27: Create a network security group rule to allow incoming SSH connections (Azure CLI)
-#### 3.1a.28: Create a network security group rule to allow incoming HTTP connections (Azure CLI)
-#### 3.1a.29: Create a network interface for a virtual machine (Azure CLI)
-#### 3.1a.30: Retrieve a list of marketplace images (Azure CLI)
-#### 3.1a.32: Retrieve available VM sizes (Azure CLI)
-#### 3.1a.33: Create a virtual machine (Azure CLI)
 #### 3.1a.34: Specify a legacy unmanaged image for use in a new virtual machine (PowerShell)
+```powershell
+$vm = Set-AzVMOSDisk `
+  -VM ... `
+  -Name ... `
+  -VhdUri ... `
+  -CreateOption fromImage `
+  -SourceImageUri ... `
+  -Windows
+```
 #### 3.1a.35: Specify a legacy unmanaged image for use in a new virtual machine (Azure CLI)
+```bash
+az vm create \
+  --resource-group ... \
+  --name ... \
+  --image ... \
+  --generate-ssh-keys
+```
 #### 3.1a.36: Specify a managed image for use in a new virtual machine (PowerShell)
+```powershell
+$image = Get-AzImage `
+  -ImageName ... `
+  -ResourceGroupName ...
+$vmConfig = Set-AzVMSourceImage `
+  -VM $vmConfig `
+  -Id $image.Id
+```
 #### 3.1a.37: Specify a managed image for use in a new virtual machine (Azure CLI)
+```bash
+az vm create \
+  -g ... \
+  -n ... \
+  --image ...
+```
 #### 3.1b.01: Create an availability set (Portal)
 #### 3.1b.02: Create an availability set (PowerShell)
 ```powershell
@@ -886,12 +994,50 @@ New-AzavailabilitySet `
   -Sku "Aligned"
 ```
 #### 3.1b.03: Create an availability set (CLI)
+```sh
+az vm availability-set create \
+  --name ... \
+  --resource-group ... \
+  --platform-fault-domain-count 3 \
+  --platform-update-domain-count 10
+```
 #### 3.1c.01: Resizing a VM (PowerShell)
+```powershell
+# View available sizes
+Get-AzVMSize -Location $location
+
+# Change VM to the new size
+$vm = Get-AzVM -ResourceGroupName $rgName -VMName $vmNAme
+$vm.HardwareProfile.VMSize = "Standard_DS2_V2"
+Update-AzVM -VM $vm -ResourceGroupName $rgName
+```
 #### 3.1c.02: Resizing a VM (Azure CLI)
+```sh
+az vm list-vm-resize-options \
+  --resource-group $rgName \
+  --name $vmName \
+  --output table
+az vm resize \
+  --resource-group $rgName \
+  --name $vmName \
+  --size Standard_DS3_v2
+```
 #### 3.1e.01: Modify host cache setting on a virtual HD (Portal)
 #### 3.1e.02: Modify host cache setting on a virtual HD (PowerShell)
+```powershell
+$vm = Get-AzVM -ResourceGroupName $rgName -Name $vmName
+Set-AzVMDataDisk -VM $vm -Lun 0 -Caching ReadOnly
+Update-AzVM -ResourceGroupName $rgName -VM $vm
+```
 #### 3.1e.03: Modify host cache setting on a managed virtual HD (Azure CLI)
+```sh
+# Attach a managed disk
+az vm disk attach --vm-name $vmName --resource-group $rgName --size-gb 128 --disk $diskName --caching ReadWrite -new
+```
 #### 3.1e.04: Modify host cache setting on a unmanaged virtual HD (Azure CLI)
+```sh
+az vm unmanaged-disk attach ...
+```
 #### 3.1e.05: Create a new storage pool using all available disks (PowerShell)
 #### 3.1f.01: Connecting to a Windows VM with remote desktop
 #### 3.1f.02: Connecting to a Linux virtual machine using SSH
@@ -899,7 +1045,40 @@ New-AzavailabilitySet `
 #### 3.1g.02: Enabling and configuring diagnostics (Linux)
 #### 3.1h.01: Creating a virtual machine scale set (Portal)
 #### 3.1h.02: Creating a virtual machine scale set (PowerShell)
+```powershell
+# Create a VMSS with IIS installed from a custom script extension
+New-AzResourceGroup -Name -rgName -Location $location
+
+# Create a config object
+$vmssConfig = New-AzVmssConfig `
+  -Location ... `
+  -SkuCapacity `
+  -SkuName `
+  -UpgradePolicyMode Automatic
+
+#Create a public IP address
+$publicIP = New-AzPublicIpAddress -ResourceGroupName -Location -AllocationMethod Static -Name $publicIPName
+
+# Create a frontend and backend IP pool
+$frontendIP = New-AzLoadBalancerFrontendIpConfig -Name -PublicIpAddress
+$backendPool = New-AzLoadBalancerBackendAddressPoolConfig -Name $backendPoolName
+
+# Create the load balancer
+$lb = New-AzLoadBalancer -ResourceGroupName -Name -Location -FrontendIPConfiguration $frontendIP -BackendAddressPool $backendPool
+
+# Create a load balancer health probe on port 80
+Add-AzLoadBalancerProbeConfig -Name -LoadBalancer $lb -Protocol http -Port 80 -IntervalInSeconds 15 -ProbeCount 2 -RequestPath "/"
+
+# Create a load balancer rule to distribute traffic on port 80
+Add-AzLoadBalancerRuleConfig
+```
 #### 3.1h.03: Creating a virtual machine scale set (CLI)
+```sh
+az group create --name $rgName --location $location
+az vmss create --resource-group $rgName --name $ssName --image UbuntuLTS \
+  --authentication-type password --admin-username $userName --admin-password $password
+```
+
 #### 3.2c.01: Deploy a template that creates a VM (Portal)
 #### 3.2c.02: Deploy a template that creates a VM (PowerShell)
 #### 3.2d.01: Deploy a template in Complete mode
@@ -950,7 +1129,103 @@ New-AzavailabilitySet `
 #### 4.4d.03: View effective security rules (Azure CLI)
 #### 4.5a.01: Create an Azure load balancer (Portal)
 #### 4.5a.02: Create an Azure load balancer (PowerShell)
+```powershell
+# Create Public IP
+$publicIP = New-AzPublicIpAddress -Name -ResourceGroupName -Location `
+  -AllocationMethod Static 
+
+# Create frontend IP configuration
+$frontendIP = New-AzLoadBalancerFrontendIpConfig -Name `
+  -PublicIpAddress $publicIP
+
+# Create backend pool
+$beAddressPool = New-AzLoadBalancerBackendAddressPoolConfig -Name
+
+# Create HTTP Probe
+$healthProbe = New-AzLoadBalancerProbeConfig `
+  -Name -RequestPath '/' -Protocol http -Port 80
+
+# Create load balancer rule
+$lbrule = New-AzLoadBalancerRuleConfig `
+  -Name -FrontendIpConfiguration $frontendIP `
+  -BackendAddressPool $beAddressPool `
+  -Probe $healthProbe `
+  -Protocol Tcp -FrontendPort 80 -BackendPort 80
+
+# Create load balancer
+$lb = New-AzLoadBalancer `
+  -ResourceGroupName -Name -Location `
+  -FrontendIpConfiguration $frontendIP `
+  -LoadBalancingRule $lbrule `
+  -BackendAddressPool $beAddressPool `
+  -Probe $healthProbe
+```
 #### 4.5a.03: Create an Azure load balancer (Azure CLI)
+```sh
+#Create Public IP
+az network public-ip create \
+  --name ExamRefLB-IP --resource-group --location \
+  --allocation-method Static
+
+# Create load balancer
+az network lb create \
+  --name ExamRefLB \
+  --resource-group --location \
+  --backend-pool-name ExamRefBackEndPool \
+  --frontend-ip-name ExamRefFrontEnd --public-ip-address ExamRefLB-IP
+
+# Create HTTP Probe
+az network lb probe create \
+  --resource-group \
+  --name HealthProbe \
+  --lb-name ExamRefLB \
+  --protocol http --port 80 --path / --interval 5 --threshold 2
+
+# Create load balancer rule
+az network lb rule create \
+  --name ExamRefRule
+  --lb-name ExamRefLB
+  --resource-group 
+  --protocol Tcp --frontend-port 80 --backend-port 80 \
+  --frontend-ip-name ExamRefFrontEnd \
+  --backend-pool-name ExamRefBackEndPool \
+  --probe-name HealthProbe
+```
+#### 4.5a.04: Add VMs to the backend pool of a load balancer (PowerShell)
+The process in PowerShell is actually to add a reference to the backend pool to the NIC of each VM.
+```powershell
+# Get the NIC based on VM ID
+$vml = Get-AzVM -Name -ResourceGroupName
+$vmlnic = Get-AzNetworkInterface -ResourceGroupName |
+  where {$_.VirtualMachine.Id -eq $vml.Id}
+
+# Get the load balancer and backend pool
+$lb = Get-AzLoadBalancer -Name -ResourceGroupName
+$beAddressPool = Get-AzLoadBalancerBackendAddressPoolConfig `
+  -Name -ResourceGroupName
+
+# All IP configuration settings of the NIC have to be reapplied, there is no support for incremental changes
+$ipconfig = Get-AzNetworkInterfaceIpConfig `
+  -Name ipconfig1 -NetworkInterface vm1nic
+
+Set-AzNetworkInterfaceIpConfig `
+  -Name ipconfig 1 -NetworkInterface $vm1nic `
+  -SubnetId $ipconfig.Subnet.Id `
+  -LoadBalancerBackendAddressPoolId $beAddressPool.Id
+
+# Commit the change
+Set-AzNetworkInterface -NetworkInterface $vm1nic
+```
+#### 4.5a.05: Add VMs to the backend pool of a load balancer (Azure CLI)
+Azure CLI supports incremental update of the NIC, which makes this command simpler than its PowerShell equivalent.
+```sh
+az network nic ip-config address-pool add \
+  --resource-group
+  --address-pool ExamRefBackEndPool \
+  --lb-name ExamRefLB \
+  --nic-name vm1-nic \
+  --ip-config-name ipconfig1
+```
 #### 4.5b.01: Enable basic-tier load-balancer logs
 #### 4.6a.01: Install Network Performance Monitor (Portal)
 #### 4.6a.02: Install Network Performance Monitor on a VM (Portal)
@@ -959,6 +1234,7 @@ New-AzavailabilitySet `
 #### 4.6a.05: Configure Service Connectivity Monitor
 #### 4.6a.06: Configure ExpressRoute Monitor
 #### 4.6c.01: Install Network Watcher VM extension (PowerShell)
+
 #### 4.6c.02: Install Network Watcher VM extension (Azure CLI)
 #### 4.6c.03: Use IP Flow Verify (Portal)
 #### 4.6c.04: Use IP Flow Verify (PowerShell)
