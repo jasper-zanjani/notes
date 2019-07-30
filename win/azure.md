@@ -81,6 +81,7 @@ Azure Monitor                           | "single pane of glass" to manage __met
 Azure Network Performance Monitor (NPM) | network monitorign solution that offers three main services and a dashboard giving an overview of network status | [AZ-103](../sources/az-103.md): 368
 Azure Policy                            | service that can create, assign, and manage policies to enforce governance.
 Azure Storage Explorer                  | cross-platform application designed to help you quickly manage one or more Azure storage accounts that supports all storage services and CosmosDB and Azure Data Lake Storage services
+BlobCache                               | multi-tier caching technology used on Azure VMs with SSDs; uses a combination of the RAM on the VM and local SSD | AZ-103: 201
 Cloudyn                                 | service requiring separate registration that can track resource cost for Azure resources and resource usage for AWS and Azure. | [AZ-103](../sources/az-103.md): 60
 Connection Monitor                      | a **Network Watcher** feature that provides ongoing connection monitoring between a VM or App Gateway and another endpoint | AZ-103: 385
 Connection Troubleshoot                 | a **Network Watcher** feature that allows you to test connectivity between a VM or App Gateway and another endpoint | AZ-103: 384

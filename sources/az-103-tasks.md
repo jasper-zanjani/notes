@@ -1,5 +1,5 @@
 # Exam Ref AZ-103 Microsoft Azure Administrator, by Michael Washam, Jonathan Tuliani, and Scott Hoag
-## Tasks 
+## Tasks
 #### 1.1a.1: Assign an RBAC role (Portal)
 To assign an RBAC role to a subscription, open the __Subscription__, then the __Access Control (IAM)__ blades, then click __Add Role Assignment__. This will open a dialog box where you can select a __Role__ (e.g. Owner) then __Select__ a target principal.
 #### 1.1b.1: Configure resource quotas
@@ -96,7 +96,6 @@ az policy assignment delete \
 Browse to the resource itself. Alternatively, open __Azure Monitor__ and then the __Diagnostics Settings__ blade. From there you can view all eligible resouce types and view status of log collection. 
 #### 1.2a.2 Enable diagnostics log collection with a storage account (PowerShell)
 `Set-AzDiagnostic-Setting` requires resource ID of resource being enabled (can be found with `Get-AzResource`) and resource ID of storage account (passed to `StorageAccountId` parameter).
-
 ```powershell
 $resource = Get-AzResource `
   -Name <resourceName`
@@ -104,7 +103,6 @@ $resource = Get-AzResource `
 $storage = Get-AzResource `
   -Name <resourceName`
   -ResourceGroupName <resourceGroupName>
-
 Set-AzDiagnosticSetting `
   -ResourceId $resource.ResourceId `
   -StorageAccountId $storage.ResourceId `
@@ -135,7 +133,6 @@ Set-AzDiagnosticSetting `
 ```
 #### 1.2a.5 Enable diagnostic logs (Azure CLI)
 `az monitor diagnostic-settings create` to enable diagnostic logs. `az resource show` to obtain resource ID.
-
 ```bash
 resourceId=$(az resource show -resource-group resourceGroupName -name resourceName --resource-type resourceType --query id --output tsv)
 ```
@@ -434,7 +431,6 @@ $blobCopyState = Start-AzStorageBlobCopy `
 $srcStorageKey = Get-AzStorageAccountKey `
  -ResourceGroupName $sourceRGName `
  -Name $srcStorageAccount
-
 $destStorageKey = Get-AzStorageAccountKey `
  -ResourceGroupName $destRGName `
  -Name $destStorageAccount
@@ -680,12 +676,10 @@ Reset-StorageSyncServer
 ```powershell
 # Login to Azure account
 Connect-AzAccount
-
 # Create a new resource group 
 New-AzResourceGroup ` 
   -Name $resourceGroupName `
   -Location $location
-
 # Create a virtual network
 $subnets = @()
 $subnets += New-AzVirtualNetworkSubnetConfig `
@@ -699,7 +693,6 @@ $vnet = New-AzVirtualNetwork `
   -Location $location `
   -AddressPrefix $vnetAddressSpace `
   -Subnet $subnets
-
 # Create a public IP address
 $pip = New-AzPublicIpAddress `
   -Name $ipName `
@@ -707,7 +700,6 @@ $pip = New-AzPublicIpAddress `
   -Location $location `
   -AllocationMethod Dynamic `
   -DomainNameLabel $dnsName
-
 # Add a rule to the network security group to allow RDP in
 $nsgRules = @()
 $nsgRules += New-AzNetworkSecurityRuleConfig `
@@ -721,19 +713,16 @@ $nsgRules += New-AzNetworkSecurityRuleConfig `
   -Access Allow `
   -Priority 110 `
   -Direction Inbound
-
 # Apply the rules
 $nsg = New-AzNetworkSecurityGroup `
   -ResourceGroupName $resourceGroupName `
   -Name "ExamREfNSG" `
   -SecurityRules $nsgRules `
   -Location $location
-
 # Create a virtual machine configuration object with the `New-AzVMConfig` cmdlet
 $vm = New-AzVMConfig
   -VMName $vmName `
   -VMSize $vmSize
-
 # Specify operating system and credentials
 Set-AzVMOperatingSystem `
   -Windows `
@@ -741,7 +730,6 @@ Set-AzVMOperatingSystem `
   -Credential $cred `
   -ProvisionVMAgent `
   -VM $vm
-
 # Specify the operating system image using `Set-AzVMSourceImage`
 Set-AzVMSourceImage `
   -PublisherName $pubName `
@@ -749,11 +737,9 @@ Set-AzVMSourceImage `
   -Skus $skuName `
   -Version "latest" `
   -VM $vm
-
 Set-AzVMOSDisk `
   -CreateOption fromImage `
   -VM $vm
-
 # Create a network interface
 $nic = New-AzNetworkInterface `
   -Name $nicNAme `
@@ -762,25 +748,21 @@ $nic = New-AzNetworkInterface `
   -SubnetId $vnet.Subnets[0].Id `
   -PublicIpAddressId $pip.Id `
   -NetworkSecurityGroupId $nsg.Id
-
 Add-AzVMNetworkInterface `
   -VM $vm `
   -NetworkInterface $nic
-
 # Provision the virtual machine with `New-AzVM`
 New-AzVM `
   -ResourceGroupName $resourceGroupName `
   -Location $location
   -VM $vm
 ```
-
 `New-AzVM` option     | Position  | Description
 :---                  | :---      | :---
 `-ResourceGroupName`  | 0         | Optional
 `-Location`           | 1         | Optional
 `-VM`                 | 2
 `-Zone`               | 3         | Optional
-
 
 ```powershell
 New-AzVM -ResourceGroupName "RG" -Name "VM" -Location "EastUS" -Size "Standard-B2s" -Credential (Get-Credential)
@@ -814,29 +796,24 @@ New-AzVM -ResourceGroupName $ResourceGroupName -Location $LocationName -VM $vm
 ```bash
 # Login to Azure account
 az login
-
 # Create a new resource group 
 az group create \
   --name ... \
   --location ...
-
 # Identify available regions
 az account list-locations
-
 # Create a simple virtual machine
 az vm create \
   --resource-group ... \
   --name ... \
   --image ... \
   --generate-ssh-keys
-
 # Create a virtual network
 az network vnet create \
   --resource-group ...\
   -n ... \
   --address-prefixes ... \
   -l ...
-
 # Create a public IP address
 az network public-ip create \
   -n ... \
@@ -844,13 +821,11 @@ az network public-ip create \
   --allocation-method Dynamic \
   --dns-name ... \
   -l ...
-
 # Create a network security group
 az network nsg create \
   -n ... \
   -g ... \
   -l ...
-
 # Create a network security group rule to allow SSH in
 az network nsg rule create \
   -n SSH \
@@ -865,7 +840,6 @@ az network nsg rule create \
   --destination-port-range 22
   --source-address-prefix "*" \
   --source-port-range "*"
-
 # Create a network security group rule to allow HTTP in
 az network nsg rule create \
   -n HTTP \
@@ -880,7 +854,6 @@ az network nsg rule create \
   --destination-port-range 80
   --source-address-prefix "*" \
   --source-port-range "*"
-
 # Create a network interface
 az network nic create \
   -n ... \
@@ -890,15 +863,12 @@ az network nic create \
   --vnet-name ... \
   --public-ip-address ... \
   -l ...
-
 # Retrieve a list of marketplace images
 az vm image list \
   --all
-
 # Retrieve form factors available in each region
 az vm list-sizes \
   --location ...
-
 # Create the VM
 az vm create \
   -n ... \
@@ -909,7 +879,6 @@ az vm create \
   --image ... \
   --generate-ssh-keys
 ```
-
 #### 3.1a.4: Capture a managed VM image (Portal)
 #### 3.1a.5: Capture a managed VM image (PowerShell)
 ```powershell
@@ -1005,7 +974,6 @@ az vm availability-set create \
 ```powershell
 # View available sizes
 Get-AzVMSize -Location $location
-
 # Change VM to the new size
 $vm = Get-AzVM -ResourceGroupName $rgName -VMName $vmNAme
 $vm.HardwareProfile.VMSize = "Standard_DS2_V2"
@@ -1046,39 +1014,106 @@ az vm unmanaged-disk attach ...
 #### 3.1h.01: Creating a virtual machine scale set (Portal)
 #### 3.1h.02: Creating a virtual machine scale set (PowerShell)
 ```powershell
+# Variables
+$rgName = "ExamRefRG"
+$location = "WestUS"
+$vmSize = "Standard_DS2_V2"
+$capacity = 2
 # Create a VMSS with IIS installed from a custom script extension
-New-AzResourceGroup -Name -rgName -Location $location
-
+New-AzResourceGroup `
+  -Name $rgName `
+  -Location $location
 # Create a config object
 $vmssConfig = New-AzVmssConfig `
-  -Location ... `
-  -SkuCapacity `
-  -SkuName `
+  -Location $location `
+  -SkuCapacity $capacity`
+  -SkuName $vmSize `
   -UpgradePolicyMode Automatic
-
 #Create a public IP address
-$publicIP = New-AzPublicIpAddress -ResourceGroupName -Location -AllocationMethod Static -Name $publicIPName
-
+$publicIP = New-AzPublicIpAddress `
+  -ResourceGroupName $rgNAme `
+  -Location $locaiton `
+  -AllocationMethod Static `
+  -Name $publicIPName
 # Create a frontend and backend IP pool
-$frontendIP = New-AzLoadBalancerFrontendIpConfig -Name -PublicIpAddress
-$backendPool = New-AzLoadBalancerBackendAddressPoolConfig -Name $backendPoolName
-
+$frontendIP = New-AzLoadBalancerFrontendIpConfig `
+  -Name "lbFrontEndPool" `
+  -PublicIpAddress $publicIP
+$backendPool = New-AzLoadBalancerBackendAddressPoolConfig `
+  -Name "lbBackEndPool"
 # Create the load balancer
-$lb = New-AzLoadBalancer -ResourceGroupName -Name -Location -FrontendIPConfiguration $frontendIP -BackendAddressPool $backendPool
-
-# Create a load balancer health probe on port 80
-Add-AzLoadBalancerProbeConfig -Name -LoadBalancer $lb -Protocol http -Port 80 -IntervalInSeconds 15 -ProbeCount 2 -RequestPath "/"
-
+$lb = New-AzLoadBalancer `
+  -ResourceGroupName $rgName `
+  -Name "lbrule" `
+  -Location $location `
+  -FrontendIPConfiguration $frontendIP `
+  -BackendAddressPool $backendPool
 # Create a load balancer rule to distribute traffic on port 80
-Add-AzLoadBalancerRuleConfig
+Add-AzLoadBalancerProbeConfig `
+  -Name "lbrule" `
+  -LoadBalancer $lb `
+  -Protocol http `
+  -Port 80 `
+  -IntervalInSeconds 15 `
+  -ProbeCount 2 `
+  -RequestPath "/"
+Set-AzLoadBalancer -LoadBalancer $lb
+# Reference a VM image from the gallery
+Set-AzVmssStorageProfile $vmssConfig `
+  -ImageReferencePublisher MicrosoftWindowsServer `
+  -ImageReferenceOffer WindowsServer `
+  -ImageReferenceSku 2016-Datacenter `
+  -ImageReferenceVersion latest `
+  -OsDiskCreateOption FromImage
+# Set up information for authenticating with the VM
+Set-AzVmssOsProfile $vmssConfig `
+  -AdminUsername "azureuser" `
+  -AdminPassword "P@ssword!" `
+  -ComputerNamePrefix "ssVM"
+# Create VNet resources
+$subnet = New-AzVirtualNetworkSubnetConfig `
+  -Name "web" -AddressPrefix 10.0.0.0/24
+$vnet = New-AzVirtualNetwork `
+  -ResourceGroupName $rgName `
+  -Name $ssName `
+  -Location $location `
+  -AddressPrefix 10.0.0.0/16 `
+  -Subnet $subnet
+$ipConfig = New-AzVmssIpConfig `
+  -Name "vmssIPConfig" `
+  -LocatBalancerBackendAddressPoolsId $lb.BackendAddressPools[0].Id `
+  -SubnetId $vnet.Subnets[0].Id
+# Attach the VNet to the config object
+Add-AzVmssNetworkInterfaceConfiguration `
+  -VirtualMachineScaleSet $vmssConfig `
+  -Name "network-config" `
+  -Primary $true `
+  -IPConfiguration $ipConfig 
+# Create the scale set with the config object
+New-AzVmss `
+  -ResourceGroupName $rgName `
+  -Name $scaleSetName `
+  -VirtualMachineScaleSet $vmssConfig
 ```
 #### 3.1h.03: Creating a virtual machine scale set (CLI)
 ```sh
-az group create --name $rgName --location $location
-az vmss create --resource-group $rgName --name $ssName --image UbuntuLTS \
-  --authentication-type password --admin-username $userName --admin-password $password
+rgName="ExamRefRG"
+ssName="erscaleset"
+userName="azureuser"
+password="P@ssword!"
+vmPrefix="ssVM"
+location="WestUS"
+az group create \
+  --name $rgName \
+  --location $location
+az vmss create \
+  --resource-group $rgName \
+  --name $ssName \
+  --image UbuntuLTS \
+  --authentication-type password \
+  --admin-username $userName \
+  --admin-password $password
 ```
-
 #### 3.2c.01: Deploy a template that creates a VM (Portal)
 #### 3.2c.02: Deploy a template that creates a VM (PowerShell)
 #### 3.2d.01: Deploy a template in Complete mode
@@ -1105,53 +1140,412 @@ az vmss create --resource-group $rgName --name $ssName --image UbuntuLTS \
 #### 3.4d.01: Restore an Azure Backup recovery point as a new VM
 #### 3.4d.02: Restore access to files in Azure Backup
 #### 4.1d.01: Configure user-defined routes (Portal)
+First, create the route table resource, then add routes 
 #### 4.1d.02: Configure user-defined routes (PowerShell)
+First, create the route table resource (`New-AzRouteTable`), then add routes (`Add-AzRouteConfig`)
+```powershell
+# Create the route table resource
+$rt = New-AzRouteTable `
+  -Name RouteTable1 `
+  -ResourceGroupName ExamRefRG
+# Add a route to route table
+Add-AzRouteConfig `
+  -RouteTable $rt `
+  -Name Route1 `
+  -AddressPrefix 10.3.0.0/16 `
+  -NextHopType VirtualAppliance `
+  -NextHopIpAddress 10.2.20.4
+Set-AzRouteTable `
+  -RouteTable $rt
+# Find the VNet and subnet
+$vnet = Get-AzVirtualNetwork `
+  -Name VNet1 `
+  -ResourceGroupNAme ExamRefRG `
+$subnet = $vnet.Subnets | where {$_.Name -eq "Default"}
+# Update the subnet to specify the route table
+Set-AzVirtualNetworkSubnetConfig `
+  -VirtualNetwork $vnet `
+  -Name Default `
+  -AddressPrefix $subnet.AddressPrefix `
+  -RouteTable $rt
+# Commit the VNet back to Azure
+Set-AzVirtualNetwork `
+  -VirtualNetwork $vnet
+# Get effective routes for a NIC
+Get-AzEffectiveRouteTable `
+  -NetworkInterfaceName VNet1-VM
+  -ResourceGroupName ExamRefRG
+```
 #### 4.1d.03: Configure user-defined routes (Azure CLI)
+```sh
+# Create route table
+az network route-table create \
+  --name RouteTable1 \
+  --resource-group ExamRefRG \
+# Add route to route table
+az network route-table route create \
+  --name Route1 \
+  --route-table-name RouteTable1 \
+  --resource-group ExamRefRG \
+  --address-prefix 10.3.0.0/16 \
+  --next-hop-type VirtualAppliance \
+  --next-hop-ip-address 10.2.20.4
+# Associate route table with subnet
+az network vnet subnet update \ 
+  --name defualt \
+  --vnet-name Vnet1 \
+  --resource-group ExamRefRG \
+  --route-table RouteTable1
+# Get effective routes for NIC
+az network nic show-effective-route-table \
+  --name VM1-NIC \
+  --resource-group ExamRefRG
+```
 #### 4.2a.01: Creating a VNet peering (Portal)
 #### 4.2a.02: Creating a VNet peering (PowerShell)
+```powershell
+$vnet1 = Get-AzVirtualNetwork -ResourceGroupName ExamRefRG -Name VNet1
+$vnet2 = Get-AzVirtualNetwork -ResourceGroupName ExamRefRG -Name VNet2
+# Peer Vnet1 to VNet2
+Add-AzVirtualNetworkPeering `
+  -Name 'VNet2-to-VNet1' `
+  -VirtualNetwork $vnet2 `
+  -RemoteVirtualNetworkId $vnet1.Id
+# Peer Vnet2 to VNet1
+Add-AzVirtualNetworkPeering `
+  -Name 'VNet1-to-VNet2' `
+  -VirtualNetwork $vnet1 `
+  -RemoteVirtualNetworkId $vnet2.Id
+# Check the peering status
+Get-AzVirtualNetworkPeering `
+  -ResourceGroupName ExamRefRG `
+  -VirtualNetworkName VNet1 |
+  Format-Table VirtualNetworkName, PeeringState
+```
 #### 4.2a.03: Creating a VNet peering (Azure CLI)
+```sh
+# Peer VNet1 to VNet2
+az network vnet peering create `
+  --name VNet1-to-VNet2 `
+  --resource-group ExamRefRG `
+  --vnet-name VNet1 `
+  --allow-vnet-access `
+  --remote-vnet VNet2
+# Peer VNet2 to VNet1
+az network vnet peering create `
+  --name VNet2-to-VNet1 `
+  --resource-group ExamRefRG `
+  --vnet-name VNet2 `
+  --allow-vnet-access --remote-vnet VNet1
+# Check the peering status
+az network vnet peering list `
+  --resource-group ExamRefRG `
+  --vnet-name VNet1 `
+  -o table
+az network vnet peering list `
+  --resource-group ExamRefRG `
+  --vnet-name VNet2 `
+  -o table
+```
 #### 4.2b.01: Creating a VPN gateway and VNet-to-VNet connection (Portal)
 #### 4.2b.02: Creating a VPN gateway and VNet-to-VNet connection (PowerShell)
+```powershell
+# Create gateway subnets in VNet2 and VNet3
+$vnet2 = Get-AzVirtualNetwork -Name VNet2 -ResourceGroupName ExamRefRG
+$vnet2.Subnets += New-AzVirtualNetworkSubnetConfig `
+  -Name GatewaySubnet `
+  -AddressPrefix 10.2.1.0/27
+$vnet2 = Set-AzVirtualNetwork -VirtualNetwork $vnet2
+$vnet3 = Get-AzVirtualNetwork -Name VNet3 -ResourceGroupName ExamRefRG
+$vnet3.Subnets += New-AzVirtualNetworkSubnetConfig `
+  -Name GatewaySubnet `
+  -AddressPrefix 10.3.1.0/27
+$vnet3 = Set-AzVirtualNetwork -VirtualNetwork $vnet3
+# Create VPN gateway in VNet2
+$gwpip2 = New-AzPublicIpAddress -Name VNet2-GW-IP -ResourceGroupName ExamRefRG `
+  -Location $vnet2.Location -AllocationMethod Dynamic
+$gwsubnet2 = Get-AzVirtualNetworkSubnetConfig -Name 'GatewaySubnet' `
+  -VirtualNetwork $vnet2
+$gwipconf2 = New-AzVirtualNetworkGatewayIpConfig `
+  -Name GwIPConf2 `
+  -Subnet $gwsubnet2 `
+  -PublicIpAddress $gwpip2
+$vnet2gw = New-AzVirtualNetworkGateway `
+  -Name VNet2-GW `
+  -ResourceGroupNAme ExamRefRG
+  -Location $vnet2.Location `
+  -IpConfigurations $gwipconf2 `
+  -GatewayType Vpn `
+  -VpnType RouteBased `
+  -GatewaySku VpnGw1
+# Create VPN gateway in VNet3
+$gwpip3 = New-AzPublicIpAddress -Name VNet3-GW-IP -ResourceGroupName ExamRefRG
+  -Location $vnet3.Location -AllocationMethod Dynamic
+$gwsubnet3 = Get-AzVirtualNetworkSubnetConfig -Name 'GatewaySubnet' `
+  -VirtualNetwork $vnet3
+$gwipconf3 = New-AzVirtualNetworkGatewayIpConfig -Name GwIPConf3 `
+  -Subnet $gwsubnet3 -PublicIpAddress $gwpip3
+$vnet3gw = New-AzVirtualNetworkGateway -Name VNet3-GW -ResourceGroupNAme ExamRefRG `
+  -Location $vnet3.Location -IpConfigurations $gwipconf3 -GatewayType Vpn `
+  -VpnType RouteBased -GatewaySku VpnGw1
+# Create connections
+New-AzVirtualNetworkGatewayConnection -Name VNet2-to-VNet3 `
+  -ResourceGroupName ExamRefRG `
+  -Location $vnet2.Location `
+  -VirtualNetworkGateway1 $vnet2gw `
+  -VirtualNetworkGateway2 $vnet3gw `
+  -ConnectionType VNet2VNet `
+  -SharedKey "secretkey123"
+New-AzVirtualNetworkGatewayConnection -Name VNet3-to-VNet2 `
+  -ResourceGroupName ExamRefRG `
+  -Location $vnet3.Location `
+  -VirtualNetworkGateway1 $vnet3gw `
+  -VirtualNetworkGateway2 $vnet2gw `
+  -ConnectionType VNet2VNet `
+  -SharedKey "secretkey123"
+```
 #### 4.2b.03: Creating a VPN gateway and VNet-to-VNet connection (Azure CLI)
+```sh
+# Create gateway subnets in VNet2 and VNet3
+az network vnet subnet create \
+  --name GatewaySubnet \
+  --vnet-name VNet2 \
+  --resource-group ExamRefRG \
+  --address-prefixes 10.2.1.0/27
+az network vnet subnet create \
+  --name GatewaySubnet \
+  --vnet-name VNet3 \
+  --resource-group ExamRefRG \
+  --address-prefixes 10.3.1.0/27
+# Create public IP addresses for use by VPN gateways
+az network public-ip create \
+  --name VNet2-GW-IP \
+  --resource-group ExamRefRG \
+  --location NorthEurope
+az network public-ip create \
+  --name VNet3-GW-IP \
+  --resource-group ExamRefRG \
+  --location WestEurope
+# Create VPN gateways in VNet2 and VNet 3
+az network vnet-gateway create \
+  --name VNet2-GW \
+  --resource-group ExamRefRG \
+  --gateway-type vpn \
+  --sku VpnGw1 \
+  --vpn-type RouteBased \
+  --vnet VNet2 \
+  --public-ip-addresses VNet2-GW-IP \
+  --location NorthEurope
+az network vnet-gateway create \
+  --name VNet3-GW \
+  --resource-group ExamRefRG \
+  --gateway-type vpn \
+  --sku VpnGw1 \
+  --vpn-type RouteBased \
+  --vnet VNet3 \
+  --public-ip-addresses VNet3-GW-IP \
+  --location WestEurope
+# Create connections between VPN gateways
+az network vpn-connection create \
+  --name VNet2-to-VNet3 \
+  --resource-group ExamRefRG \
+  --vnet-gateway1 VNet2-GW \
+  --vnet-gateway2 VNet3-GW \
+  --shared-key secretkey123 \
+  --location NorthEurope
+az network vpn-connection create \
+  --name VNet3-to-VNet2 \
+  --resource-group ExamRefRG \
+  --vnet-gateway1 VNet3-GW \
+  --vnet-gateway2 VNet2-GW \
+  --shared-key secretkey123 \
+  --location WestEurope
+```
 #### 4.3a.01: Creating DNS zones and DNS records (Portal)
 #### 4.3a.02: Creating DNS zones and DNS records (PowerShell)
+```powershell
+# Create a DNS zone
+New-AzDnsZone `
+  -Name examref.com `
+  -ResourceGroupName ExamRefRG
+# Create a record set containing a single record
+New-AzDnsRecordSet `
+  -Name www `
+  -RecordType A `
+  -ZoneName examref.com `
+  -ResourceGroupName ExamRefRG `
+  -Ttl 3600
+  -DnsRecords (New-AzDnsRecordConfig -IPv4Address "1.2.3.4")
+# Create a record set at the zone apex containing multiple records
+$records = @()
+$records += New-AzDnsRecordConfig -IPv4Address "1.2.3.4"
+$records += New-AzDnsRecordConfig -IPv4Address "5.6.7.8"
+New-AzDnsRecordSet `
+  -Name "@" `
+  -RecordType A `
+  -ZoneName examref.com `
+  -ResourceGroupName ExamRefRG `
+  -Ttl 3600 `
+  -DnsRecords $records
+# Add a new record to and remove an existing record from an existing record set
+$recordset = Get-AzDnsRecordSet `
+  -Name www `
+  -RecordType A `
+  -ZoneName examref.com `
+  -ResourceGroupName ExamRefRG
+Add-AzdnsRecordConfig `
+  -RecordSet $recordset `
+  -IPv4Address "5.6.7.8"
+Remove-AzDnsRecordConfig `
+  -RecordSet $recordset `
+  -IPv4Address "1.2.3.4"
+Set-AzDnsRecordSet `
+  -RecordSet $recordset
+# View records
+Get-AzDnsRecordSet `
+  -ZoneName examref.com `
+  -ResourceGroupName ExamRefRG
+```
 #### 4.3a.03: Creating DNS zones and DNS records (Azure CLI)
+```sh
+# Create a DNS zone
+az network dns zone create \
+  --name examref.com \
+  --resource-group ExamRefRG
+# Create an empty record set of type A
+az network dns record-set a create \
+  --name www \
+  --zone-name examref.com \
+  --resource-group ExamRefRG \
+  --ttl 3600
+# Add A records to the above record set
+az network dns record-set a add-record \
+  --record-set-name www \
+  --zone-name examref.com \
+  --resource-group ExamRefRG \
+  --ipv4-address 1.2.3.4
+az network dns record-set a add-record \
+  --record-set-name www \
+  --zone-name examref.com \
+  --resource-group ExamRefRG \
+  --ipv4-address 5.6.7.8
+# Remove an A record from the record set
+az network dns record-set a remove-record \
+  --record-set-name www \
+  --zone-name examref.com \
+  --resource-group ExamRefRG \
+  --ipv4-address 1.2.3.4
+# View records
+az network dns record-set list \
+  --zone-name examref.com \
+  --resource-group ExamRefRG \
+  -o table 
+```
 #### 4.3b.01: Configure custom DNS settings (Portal)
 #### 4.3b.02: Configure custom DNS settings (PowerShell)
+```powershell
+# Create a virtual network with custom DNS settings
+New-AzVirtualNetwork `
+  -Name VNet1 `
+  -ResourceGroupName ExamRefRG `
+  -Location "North Europe" `
+  -AddressPrefix 10.1.0.0/16 `
+  -DNSServer 10.0.0.4,10.0.0.5 `
+  -Subnet (New-AzVirtualNetworkSubnetConfig -Name Default -AddressPrefix 10.1.0.0/24)
+# Modify the DNS server configuration of an existing VNET
+$vnet = Get-AzVirtualNetwork `
+  -Name VNet1 `
+  -ResourceGroupName ExamRefRG
+$vnet.DhcpOptions.DnsServers.Clear()
+$vnet.DhcpOptions.DnsServers.Add("10.10.200.1")
+$vnet.DhcpOptions.DnsServers.Add("10.10.200.2")
+Set-AzVirtualNetwork `
+  -VirtualNetwork $vnet
+# Restart the VMs in the VNet to pick up the DNS change
+$vm = Get-AzVM `
+  -Name VNet1-VM `
+  -ResourceGroupName ExamRefRG
+Restart-AzVM -ID $vm.Id
+# Update the DNS settings on a NIC
+$nic = Get-AzNetworkInterface `
+  -Name VM1-NIC `
+  -ResourceGroupName ExamRefRG
+$nic.DnsSettings.DnsServers.Clear()
+$nic.DnsSettings.DnsServers.Add("8.8.8.8")
+$nic.DnsSettings.DnsServers.Add("8.8.4.4")
+# Commit the DNS change, causing the VM to restart
+Set-AzNetworkInterface -NetworkInterface $nic
+```
 #### 4.3b.03: Configure custom DNS settings (Azure CLI)
+```sh
+# Create a virtual network with custom DNS settings
+az network vnet create \
+  --name VNet1 \
+  --resource-group ExamRefRG \
+  --address-prefixes 10.0.0.0/16 \
+  --dns-servers 8.8.8.8 8.8.4.4
+# Set custom DNS servers on a VNet
+az network vnet update \
+  --name VNet1 \
+  --resource-group ExamRefRG \
+  --dns-servers 10.0.0.254
+# Remove custom DNS servers from a VNET
+az network vnet update \
+  --name VNet1 \
+  --resource-group ExamRefRG \
+  --remove DHCPOptions.DNSServers
+# Set custom DNS servers on a NIC
+az network nic update \
+  --name VM1-NIC \
+  --resource-group ExamRefRG
+  --dns-servers 8.8.8.8 8.8.4.4
+```
 #### 4.3c.01: Create private DNS zones
 #### 4.4c.01: Implement Service Map (Portal)
 #### 4.4c.02: Install Dependency Agent
 #### 4.4c.03: Register a resource provider (PowerShell)
+```powershell
+Register-AzResourceProvider `
+  -ProviderNamespace Microsoft.Insights
+```
 #### 4.4c.04: Register a resource provider (Azure CLI)
+```sh
+az provider register \
+  --namespace Microsoft.Insights
+```
 #### 4.4d.01: View effective security rules (Portal)
 #### 4.4d.02: View effective security rules (PowerShell)
+```powershell
+Get-AzEffectiveNetworkSecurityGroup `
+  -NetworkInterfaceName examref-vm1638 `
+  -ResourceGroupName ExamRefRG
+```
 #### 4.4d.03: View effective security rules (Azure CLI)
+```sh
+az network nic list-effective-nsg \
+  --name examref-vm1638 \
+  --resource-group ExamRefRG
+```
 #### 4.5a.01: Create an Azure load balancer (Portal)
 #### 4.5a.02: Create an Azure load balancer (PowerShell)
 ```powershell
 # Create Public IP
 $publicIP = New-AzPublicIpAddress -Name -ResourceGroupName -Location `
   -AllocationMethod Static 
-
 # Create frontend IP configuration
 $frontendIP = New-AzLoadBalancerFrontendIpConfig -Name `
   -PublicIpAddress $publicIP
-
 # Create backend pool
 $beAddressPool = New-AzLoadBalancerBackendAddressPoolConfig -Name
-
 # Create HTTP Probe
 $healthProbe = New-AzLoadBalancerProbeConfig `
   -Name -RequestPath '/' -Protocol http -Port 80
-
 # Create load balancer rule
 $lbrule = New-AzLoadBalancerRuleConfig `
   -Name -FrontendIpConfiguration $frontendIP `
   -BackendAddressPool $beAddressPool `
   -Probe $healthProbe `
   -Protocol Tcp -FrontendPort 80 -BackendPort 80
-
 # Create load balancer
 $lb = New-AzLoadBalancer `
   -ResourceGroupName -Name -Location `
@@ -1166,21 +1560,18 @@ $lb = New-AzLoadBalancer `
 az network public-ip create \
   --name ExamRefLB-IP --resource-group --location \
   --allocation-method Static
-
 # Create load balancer
 az network lb create \
   --name ExamRefLB \
   --resource-group --location \
   --backend-pool-name ExamRefBackEndPool \
   --frontend-ip-name ExamRefFrontEnd --public-ip-address ExamRefLB-IP
-
 # Create HTTP Probe
 az network lb probe create \
   --resource-group \
   --name HealthProbe \
   --lb-name ExamRefLB \
   --protocol http --port 80 --path / --interval 5 --threshold 2
-
 # Create load balancer rule
 az network lb rule create \
   --name ExamRefRule
@@ -1198,21 +1589,17 @@ The process in PowerShell is actually to add a reference to the backend pool to 
 $vml = Get-AzVM -Name -ResourceGroupName
 $vmlnic = Get-AzNetworkInterface -ResourceGroupName |
   where {$_.VirtualMachine.Id -eq $vml.Id}
-
 # Get the load balancer and backend pool
 $lb = Get-AzLoadBalancer -Name -ResourceGroupName
 $beAddressPool = Get-AzLoadBalancerBackendAddressPoolConfig `
   -Name -ResourceGroupName
-
 # All IP configuration settings of the NIC have to be reapplied, there is no support for incremental changes
 $ipconfig = Get-AzNetworkInterfaceIpConfig `
   -Name ipconfig1 -NetworkInterface vm1nic
-
 Set-AzNetworkInterfaceIpConfig `
   -Name ipconfig 1 -NetworkInterface $vm1nic `
   -SubnetId $ipconfig.Subnet.Id `
   -LoadBalancerBackendAddressPoolId $beAddressPool.Id
-
 # Commit the change
 Set-AzNetworkInterface -NetworkInterface $vm1nic
 ```
@@ -1234,31 +1621,278 @@ az network nic ip-config address-pool add \
 #### 4.6a.05: Configure Service Connectivity Monitor
 #### 4.6a.06: Configure ExpressRoute Monitor
 #### 4.6c.01: Install Network Watcher VM extension (PowerShell)
-
+```powershell
+Set-AzVMExtension ` 
+  -ResourceGroupName ExamRefRG `
+  -Location "West Europe" `
+  -VMName VM1 `
+  -Name networkWatcherAgent `
+  -Publisher Microsoft.Azure.NetworkWatcher `
+  -Type NetworkWatcherAgentWindows `
+  -TypeHandlerVersion 1.4
+```
 #### 4.6c.02: Install Network Watcher VM extension (Azure CLI)
+```sh
+az vm extension set \
+  --vm-name VM1 \
+  --resource-group ExamRefRG \
+  --publisher Microsoft.Azure.NetworkWatcher \
+  --version 1.4 \
+  --name NetworkWatcherAgentWindows \
+  --extension-instance-name NetworkWatcherAgent
+```
 #### 4.6c.03: Use IP Flow Verify (Portal)
 #### 4.6c.04: Use IP Flow Verify (PowerShell)
+```powershell
+Test-AzNetworkWatcherIPFlow
+```
 #### 4.6c.05: Use IP Flow Verify (Azure CLI)
+```sh
+az network watcher test-ip-flow
+```
 #### 4.6c.06: Use Next Hop (Portal)
 #### 4.6c.07: Use Next Hop (PowerShell)
+```powershell
+Get-AzNetworkWatcherNextHop
+```
 #### 4.6c.08: Use Next Hop (Azure CLI)
+```sh
+az network watcher show-next-hop
+```
 #### 4.6c.09: Use Packet Capture (Portal)
 #### 4.6c.10: Use Packet Capture (PowerShell)
+```powershell
+# Get the Network Watcher resource
+$nw = Get-AzResource | Where ResourceType -eq "Microsoft.Network/networkWatchers" -and Location -eq "WestEurope"
+$networkWatcher = Get-AzNetworkWatcher `
+  -Name $nw.Name `
+  -ResourceGroupName $nw.ResourceGroupName
+# Get the storage account to store the capture in
+$storageAccount = Get-AzStorageAccount `
+  -Name examref-storage `
+  -ResourceGroupName ExamRefRG
+# Set up filters
+$filter1 = New-AzPacketCaptureFilterConfig `
+  -Protocol TCP `
+  -RemoteIPAddress "1.1.1.1-255.255.255.255" `
+  -LocalIPAddress "10.0.0.3" `
+  -LocalPort "1-65535" `
+  -RemotePort "20;80;443"
+$filter2 = New-AzPacketCaptureFilterConfig `
+  -Protocol UDP
+# Get the VM
+$vm = Get-AzVM `  
+  -Name VM1 `
+  -ResourceGroupName ExamRefRG
+# Start the packet capture
+New-AzNetworkWatcherPacketCapture `
+  -NetworkWatcher $networkWatcher `
+  -TargetVirtualMachineId $vm.Id `
+  -PacketCaptureName "PacketCaptureTest" `
+  -StorageAccountId $storageAccount.id `
+  -TimeLimitInSeconds 60 `
+  -Filter $filter1, $filter2
+# Check packet capture status
+Get-AzNetworkWatcherPacketCapture `
+  -NetworkWatcher $networkWatcher `
+  -PacketCaptureName "PacketCaptureTest"
+# Stop packet capture
+Stop-AzNetworkWatcherPacketCapture `
+  -NetworkWatcher $networkWatcher `
+  -PacketCaptureName "PacketCaptureTest"
+```
 #### 4.6c.11: Use Packet Capture (Azure CLI)
+```sh
+# Start packet capture
+az network watcher packet-capture create \
+  --name PacketCaptureTest2 \
+  --resource-group ExamRefRG \
+  --vm VM1 \
+  --time-limit 300 \
+  --storage-account examref-storage \
+  --filters '[ { 
+    "protocol": "TCP", 
+    "remoteIPAddress": "1.1.1.1-255.255.255.255",
+    "localIPAddress":"10.0.0.3", 
+    "remotePort":"20" } ]'
+# Get packet capture status
+az network watcher packet-capture show-status \ 
+  --name PacketCaptureTest \
+  --location WestEurope
+# Stop packet capture
+az network watcher packet-capture stop \
+  --name PacketCaptureTest \
+  --location WestEurope
+```
 #### 4.6c.12: Use Network Topology (Portal)
 #### 4.6c.13: Use Network Topology (PowerShell)
+```powershell
+Get-AzNetworkWatcherTopology
+```
 #### 4.6c.14: Use Network Topology (Azure CLI)
+```sh
+az network watcher show-topology
+```
 #### 4.6d.01: Use VPN Troubleshoot (Portal)
 #### 4.6d.02: Use VPN Troubleshoot (PowerShell)
+```powershell
+# Get the Network Watcher resource
+$nw = Get-AzResource | 
+Where `
+  ResourceType -eq Microsoft.Network/networkWatchers -and `
+  Location -eq WestEurope
+$networkWatcher = Get-AzNetworkWatcher `
+  -Name $nw.Name `
+  -ResourceGroupName $nw.ResourceGroupName
+# Create a storage account and container for logs
+$sa = New-AzStorageAccount `
+  -Name examrefstorage `
+  -SKU Standard_LRS `
+  -ResourceGroupName ExamRefRG `
+  -Location WestEurope
+Set-AzCurrentStorageAccount `
+  -ResourceGroupName $sa.ResourceGroupName `
+  -Name $sa.StorageAccountName
+$sc = New-AzureStorageContainer `
+  -Name logs
+# Get the connection to troubleshoot
+$connection = Get-AzVirtualNetworkGatewayConnection `
+  -Name Vnet1-to-Vnet2 `
+  -ResourceGroupName ExamRefRG
+# Start VPN Troubleshoot
+Start-AzNetworkWatcherResourceTroubleshooting `
+  -NetworkWatcher $networkWatcher `
+  -TargetResourceId $connection.Id `
+  -StorageId $sa.Id `
+  -StoragePath "$($sa.PrimaryEndpoints.Blob)$($sc.name)"
+```
 #### 4.6d.03: Use VPN Troubleshoot (Azure CLI)
+```sh
+# Crate a storage account and container for logs
+az storage account create \
+  --name examrefstorage \
+  --location westeurope \
+  --resource-group ExamRefRG \
+  --sku Standard_LRS
+az storage account keys list \
+  --resource-group ExamRefRG \
+  --account-name examrefstorage
+az storage container create \
+  --account-name examrefstorage \
+  --account-key {storageAccountKey} \
+  --name logs
+# Start VPN Troubleshoot
+az network watcher troubleshooting start \
+  --resource-group ExamRefRG \
+  --resource Vnet1-to-Vnet2 \
+  --resource-type vpnConnection 
+  --storage-account examrefstorage \
+  --storage-path https://examrefstorage.blob.core.windows.net/logs \
+  --output json
+```
 #### 4.6e.01: Use Connection Troubleshoot (Portal)
 #### 4.6e.02: Use Connection Troubleshoot (PowerShell)
 #### 4.6e.03: Use Connection Troubleshoot (Azure CLI)
 #### 4.6e.04: Use Connection Monitor (Portal)
 #### 4.7a.01: Create a VPN Gateway (Portal)
 #### 4.7a.02: Create a VPN Gateway (PowerShell)
+```powershell
+$rg = ExamRefRG
+# Create gateway subnet in VNet1
+# Gateway subnets are normal subnets with the name "GatewaySubnet"
+$vnet1 = Get-AzVirtualNetwork `
+  -Name VNet1 `
+  -ResourceGroupName $rg
+$vnet1.Subnets += New-AzVirtualNetworkSubnetConfig `
+  -Name GatewaySubnet `
+  -AddressPrefix 10.1.1.0/27
+$vnet1 = Set-AzVirtualNetwork `
+  -VirtualNetwork $vnet1
+# Create VPN gateway in VNet1
+$gwpip = New-AzPublicIpAddress `
+  -Name VNet1-GW-IP `
+  -ResourceGroupName $rg `
+  -Location 'North Europe' `
+  -AllocationMethod Dynamic
+$gwsubnet = Get-AzVirtualNetworkSubnetConfig `
+  -Name 'GatewaySubnet' `
+  -VirtualNetwork $vnet1
+$gwipconf = New-AzVirtualNetworkGatewayIpConfig `
+  -Name GwIPConf `
+  -Subnet $gwsubnet `
+  -PublicIpAddress $gwpip
+$vnet1gw = New-AzVirtualNetworkGateway `
+  -Name VNet1-GW `
+  -ResourceGroupName $rg `
+  -Location 'North Europe' `
+  -IpConfigurations $gwipconf `
+  -GatewayType Vpn `
+  -VpnType RouteBased `
+  -GatewaySku VpnGw1
+```
 #### 4.7a.03: Create a VPN Gateway (Azure CLI)
+```sh
+# Create gateway subnets in VNet2 and VNet3
+az network vnet subnet create \
+  --name GatewaySubnet \
+  --vnet-name VNet1 \
+  --resource-group ExamRefRG \
+  --address-prefixes 10.1.1.0/27
+# Create public IP addresses for use by VPN gateway
+az network public-ip create \
+  --name VNet1-GW-IP \
+  --resource-group ExamRefRG \
+  --location NorthEurope
+# Create VPN gateway in VNet1
+az network vnet-gateway create \
+  --name VNet1-GW \
+  --resource-group ExamRefRG \
+  --gateway-type vpn \
+  --sku VpnGw1 \
+  --vpn-type RouteBased \
+  --vnet VNet1 \
+  --public-ip-addresses VNet1-GW-IP \
+  --location NorthEurope
+```
 #### 4.7b.01: Create a site-to-site VPN (Portal)
 #### 4.7b.02: Create a site-to-site VPN (PowerShell)
+```powershell
+# Create local network gateway
+$localnw = New-AzLocalNetworkGateway `
+  -Name LocalNetGW `
+  -ResourceGroupName ExamRefRG `
+  -Location "West Europe" `
+  -GatewayIpAddress "53.50.123.195" `
+  -AddressPrefix "10.5.0.0/16" 
+# Get VPN gateway
+$gateway = Get-AzVirtualNetworkGateway `
+  -Name VPNGW1 `
+  -ResourceGroupName ExamRefRG
+# Create the connection
+$conn = New-AzVirtualNetworkGatewayConnection `
+  -Name OnPremConnection `
+  -ResourceGroupName ExamRefRG `
+  -Location 'West Europe' `
+  -VirtualNetworkGateway1 $gateway `
+  -LocalNetworkGateway2 $localnw `
+  -ConnectionType IPsec `
+  -SharedKey "abc123"
+```
 #### 4.7b.03: Create a site-to-site VPN (Azure CLI)
+```sh
+# Create Local Network Gateway
+az network local-gateway create \
+  --gateway-ip-address 53.50.123.195 \
+  --name LocalNetGW \
+  --resource-group ExamRefRG \
+  --local-address-prefixes 10.5.0.0/16
+# Create VPN connection
+az network vpn-connection create \  
+  --name OnPremConnection \
+  --resource-group ExamRefRG \
+  --vnet-gateway21 VPNGW1 \
+  --location WestEurope \
+  --shared-key abc123 \
+  --local-gateway2 LocalNetGW
+```
 #### 4.7c.01: Creating an ExpressRoute circuit
