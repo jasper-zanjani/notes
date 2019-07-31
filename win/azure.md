@@ -54,6 +54,9 @@ key rolling                             | regenerate one access key by switching
 logs                                    | numerical data or text
 metrics                                 | numerical values output by resources and services within Azure | [AZ-103](../sources/az-103.md): 43
 page blob                               | blob type optimized for random-access I/O, typically used to store VHD files when using unmanaged disks | [AZ-103](../sources/az-103.md): 130
+resource                                | manageable item that is available through Azure, including virtual machines, storage accounts, web apps, databases, and virtual networks | [Azure Resource Manager overview](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-overview)
+resource group                          | container that holds related resources for an Azure solution | [Azure Resource Manager overview](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-overview)
+resource provider                       | service that supplies Azure resources (e.g. `Microsoft.Compute`, `Microsoft.Insights`, `Microsoft.Storage`) | [Azure Resource Manager overview](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-overview)
 role                                    | definition of what action is allowed or denied to a **security principal** | [AZ-103](../sources/az-103.md): 85
 security principal                      | entities with access to Azure resources, i.e. users, groups, and service identities | [AZ-103](../sources/az-103.md): 85
 soft delete                             | Storage account feature that allows you to save and recover data when blobs or blob snapshots are deleted even in the event of an overwrite | [AZ-103](../sources/az-103.md): 135
@@ -64,7 +67,7 @@ Azure feature                           | Description | Source
 Archive                                 | blob storage access tier designed for long-term storage of infrequently-used data that can tolerate several hours of retrieval latency, remaining in the Archive tier for at least 180 days.
 async blob copy service                 | server-side based service that can copy files you specify from a source location to a destination in an Azure Storage account | [AZ-103](../sources/az-103.md): 124
 Azure Activity Log                      | subscription level log that captures events from operational data to service health events for a subscription | [AZ-103](../sources/az-103.md): 119
-Application Insights                    | service that can provide __application metrics__, if enabled and if the applications have been instrumented | [AZ-103](../sources/az-103.md): 44
+Application Insights                    | service that can provide __application metrics__, if enabled and if the applications have been instrumented (now integrated into **Azure Monitor**) | [AZ-103](../sources/az-103.md): 44
 Azure Automation                        | allows you to build __runbooks__ that execute commands or scripts
 Azure Backup                            | service that allows you to backup on-premises servers, cloud-based VMs, and virtualized workloads such as SQL Server and SharePoint to Microsoft Azure. | [AZ-103](../sources/az-103.md): 159
 Azure Backup Reports                    | provide data visualization from within Power BI from across Recovery Service vaults and Azure subscriptions to provide insight into backup activity | [AZ-103](../sources/az-103.md): 170
@@ -76,10 +79,11 @@ Azure File Sync agent                   | software that needs to be deployed on 
 Azure Functions
 Azure Import and Export service         | allows you to ship data into or out of an Azure Storage account by physically shipping disks to an Azure datacenter | [AZ-103](../sources/az-103.md): 129
 Azure Key Vault                         | helps safeguard cryptographic keys and secrets used by cloud applications and services | [AZ-103](../sources/az-103.md): 114
-Azure Log Analytics (OMS) agent)        | agent required to be installed on a machine for it to report telemetry to Azure Log Analytics (previously known as __Microsoft Monitoring Agent__)
+Azure Log Analytics (OMS) agent)        | agent required to be installed on a machine for it to report telemetry to Azure Log Analytics (previously known as __Microsoft Monitoring Agent__, now integrated into **Azure Monitor**)
 Azure Monitor                           | "single pane of glass" to manage __metrics__, __logs__, and **alerts** from multiple subscriptions
 Azure Network Performance Monitor (NPM) | network monitorign solution that offers three main services and a dashboard giving an overview of network status | [AZ-103](../sources/az-103.md): 368
 Azure Policy                            | service that can create, assign, and manage policies to enforce governance.
+Azure Resource Manager                  | service that manages and deploys resources in an Azure subscription, providing consistent capabilities and results across various such as the Portal, PowerShell, Azure CLI, REST APIs, and client SDKs ![Azure Resource Manager](https://docs.microsoft.com/en-us/azure/azure-resource-manager/media/resource-group-overview/consistent-management-layer.png)| [Azure Resource Manager overview](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-overview)
 Azure Storage Explorer                  | cross-platform application designed to help you quickly manage one or more Azure storage accounts that supports all storage services and CosmosDB and Azure Data Lake Storage services
 BlobCache                               | multi-tier caching technology used on Azure VMs with SSDs; uses a combination of the RAM on the VM and local SSD | AZ-103: 201
 Cloudyn                                 | service requiring separate registration that can track resource cost for Azure resources and resource usage for AWS and Azure. | [AZ-103](../sources/az-103.md): 60
@@ -94,7 +98,7 @@ Hot                                     | blob storage access tier optimized for
 IP Flow Verify                          | a **Network Watcher** tool that provides a quick and easy way to test if a given network flow will be allowe4d into or out of a VM | AZ-103: 376
 Kusto                                   | query language comparable to SQL used by Log Analytics. Kusto queries use the pipe character to separate commands, always begin with a scope, are case-sensitive, and generate read-only requests so log entries are only deleted based on retention policy. | [AZ-103](../sources/az-103.md): 53
 Locally-redundant storage (LRS)         | Storage replication option that makes 3 local synchronous (within a single datacenter) copies 
-Log Analytics                           | facilitates collection, correlation, search, and action on log and performance data, organized in __workspaces__ | [AZ-103](../sources/az-103.md): 47-48.
+Log Analytics                           | facilitates collection, correlation, search, and action on log and performance data, organized in __workspaces__ (now being called **Azure Monitor logs** | [AZ-103](../sources/az-103.md): 47-48; [Azure Monitor terminology changes](https://docs.microsoft.com/en-us/azure/azure-monitor/terminology)
 Log Analytics workspace                 | where logs are collected and aggregated | [AZ-103](../sources/az-103.md): 48
 Logic Apps
 Microsoft Azure Recovery Services (MARS) agent | stand-alone agent used to protect files and folders; one of the various backup agents that can be used with **Azure Backup** | [AZ-103](../sources/az-103.md): 162

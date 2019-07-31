@@ -16,9 +16,7 @@ Connect-AzAccount
 ```
 
 #### Create a Resource Group
-`New-AzResourceGroup` has two required parameters
-  - `-Name` which can be defined positionally at position __0__
-  - `-Location`, the geographic area ("EastUS", "CentralUS", etc), defined positionally at position __1__
+`New-AzResourceGroup` has two required parameters which can be defined positionally in the following order: `Name` and `Location`
 
 ```powershell
 New-AzResourceGroup RG WestUS
