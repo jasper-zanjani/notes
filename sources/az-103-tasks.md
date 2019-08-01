@@ -1,4 +1,5 @@
 # Exam Ref AZ-103 Microsoft Azure Administrator, by Michael Washam, Jonathan Tuliani, and Scott Hoag
+[Test link](#14c6-grant-a-user-rbac-rights-powershell)
 ## Tasks
 #### 1.1a.1: Assign an RBAC role (Portal)
 To assign an RBAC role to a subscription, open the __Subscription__, then the __Access Control (IAM)__ blades, then click __Add Role Assignment__. This will open a dialog box where you can select a __Role__ (e.g. Owner) then __Select__ a target principal.
