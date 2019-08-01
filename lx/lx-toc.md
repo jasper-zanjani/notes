@@ -4,11 +4,12 @@
 
 File                            | Contents
 :---                            | :---
-[lx.md](lx.md)                  | Technical aspects of Linux operation: boot sequence, processes, `init`, control groups, filesystems, FACL
-[lx-arch.md](lx-arch.md)        | Arch Linux installation process
-[lx-network.md](lx-network.md)  | Networking topics and index to network-related commands
-[lx-xbox.md](lx-xbox.md)        | Setup process for Xbox 360 wireless controller (does not appear to be necessary on Manjaro)
-[lx-email.md](lx-email.md)      | Applications used for email services 
+[lx](lx.md)                     | Technical aspects of Linux operation: boot sequence, processes, `init`, control groups, filesystems, FACL
+[lx-arch](lx-arch.md)           | Arch Linux installation process
+[lx-network](lx-network.md)     | Networking topics and index to network-related commands
+[lx-xbox](lx-xbox.md)           | Setup process for Xbox 360 wireless controller (does not appear to be necessary on Manjaro)
+[lx-email](lx-email.md)         | Applications used for email services 
+[lx-terms](lx-terms.md)         | Linux applications, abbreviations, file formats, and other terms to be memorized
 [X](X.md)
 
 ### Other operating systems
@@ -82,15 +83,14 @@ Command                         | Description
 [pacman](pacman.md)
 
 # CLI conventions for shell scripts
-
 ## Validating arguments
 `if [ $# != 2 ]; then echo "..."; exit 1; fi` : (PGL:548)
 `[ -z "$1" ] && echo "..." && exit 1` : [Luke Smith](https://youtu.be/ksAfmJfdub0) 
 `if [ ! -z "$2" ] ; then ...; fi` : [Yakuake scripting](https://coderwall.com/p/kq9ghg/yakuake-scripting)
-
 ## Looping based on user input
+placed in a while loop, if user responds with anything except "y" (the read command will read only the first letter) the loop will terminate (CLKF)
 ```bash
 read -p "Backup another server? (y/n)" -n 1
 ["$BACKUP_AGAIN"="y"] || break
 ```
-: placed in a while loop, if user responds with anything except "y" (the read command will read only the first letter) the loop will terminate (CLKF)
+
