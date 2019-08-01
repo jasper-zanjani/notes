@@ -216,9 +216,7 @@ $rule = Get-AzServiceBusRule -ResourceGroup <resourceGroupName> `
   -Topic <topic> `
   -Subscription <subscription> `
   -Name <ruleName> 
-Set-AzDiagnosticSetting `
-  -ResourceId $resource.ResourceId `
-  -ServiceBusRuleId $rule.Id `
+Set-AzDiagnosticSetting -ResourceId $resource.ResourceId -ServiceBusRuleId $rule.Id `
   -Enabled $true
 ```
 

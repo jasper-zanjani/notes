@@ -1013,29 +1013,27 @@ az vm unmanaged-disk attach ...
 #### 3.1g.02: Enabling and configuring diagnostics (Linux)
 #### 3.1h.01: Creating a virtual machine scale set (Portal)
 #### 3.1h.02: Creating a virtual machine scale set (PowerShell)
+Set variables
 ```powershell
-# Variables
 $rgName = "ExamRefRG"
 $location = "WestUS"
 $vmSize = "Standard_DS2_V2"
 $capacity = 2
-# Create a VMSS with IIS installed from a custom script extension
-New-AzResourceGroup `
-  -Name $rgName `
-  -Location $location
-# Create a config object
-$vmssConfig = New-AzVmssConfig `
-  -Location $location `
-  -SkuCapacity $capacity`
-  -SkuName $vmSize `
-  -UpgradePolicyMode Automatic
-#Create a public IP address
-$publicIP = New-AzPublicIpAddress `
-  -ResourceGroupName $rgNAme `
-  -Location $locaiton `
-  -AllocationMethod Static `
-  -Name $publicIPName
-# Create a frontend and backend IP pool
+```
+Create a VMSS with IIS installed from a custom script extension
+```powershell
+New-AzResourceGroup -Name $rgName -Location $location
+```
+Create a config object
+```powershell
+$vmssConfig = New-AzVmssConfig -Location $location -SkuCapacity $capacity -SkuName $vmSize -UpgradePolicyMode Automatic
+```
+Create a public IP address
+```powershell
+$publicIP = New-AzPublicIpAddress -ResourceGroupName $rgNAme -Location $locaiton -AllocationMethod Static -Name $publicIPName
+```
+Create a frontend and backend IP pool
+```powershell
 $frontendIP = New-AzLoadBalancerFrontendIpConfig `
   -Name "lbFrontEndPool" `
   -PublicIpAddress $publicIP
