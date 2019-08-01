@@ -2,21 +2,20 @@
 #### Install the Azure Resource Manager PowerShell module
 The older module __AzureRM__ has been replaced, largely, by __Az__. Commands to the older module are aliased to the new, but there are some commands which require the older module.
 ```powershell
-Install-Module 
-  -Name Az 
-  -AllowClobber
+Install-Module -Name Az -AllowClobber
 Install-Module AzureRM
 ```
 
 #### Connect to Azure 
 `Connect-AzAccount` will produce an alphanumeric code that you must enter on [Microsoft's website](https://microsoft.com/devicelogin) to complete authentication.
-
 ```powershell
 Connect-AzAccount
 ```
 
 #### Create a Resource Group
-`New-AzResourceGroup` has two required parameters which can be defined positionally in the following order: `Name` and `Location`
+`New-AzResourceGroup` has two required parameters which can be defined positionally in the following order: 
+  1. `Name` 
+  2. `Location`
 
 ```powershell
 New-AzResourceGroup RG WestUS
@@ -25,68 +24,45 @@ New-AzResourceGroup RG WestUS
 #### Deploy a Windows Server Core VM
 ```powershell
 $vm = Get-AzVMImage `
--Location EastUS `
--Offer WindowsServer `
--PublisherName MicrosoftWindowsServer `
--Skus 2016-Datacenter-Server-Core `
--Version 2016.127.20190603
+  -Location EastUS `
+  -Offer WindowsServer `
+  -PublisherName MicrosoftWindowsServer `
+  -Skus 2016-Datacenter-Server-Core `
+  -Version 2016.127.20190603
 ```
-
-Sku: `2016-Datacenter-Server-Core`
-Size: `Standard_B1ls`, 1 core, 512 MB RAM, 1 TB disk size
+Sku: `2016-Datacenter-Server-Core`\
+Size: `Standard_B1ls` (1 core, 512 MB RAM, 1 TB disk size)
 ```powershell
 $vm = New-AzVMConfig -VMName Spike -VMSize Standard_B1ls
 $vm = Set-AzVMOperatingSystem $vm -Windows -ComputerName SpikeSpiegel -Crednetial $aztestadmin
 $vm = Add-AzVMNetworkInterface
 ```
+`Set-AzVMOperatingSystem` options:\
+  1. `VM` Local virtual machine object on which to set OS properties
+  2. `Linux` Indicates that the OS is Linux
+  3. `Windows` Indicates OS type is Windows
+  4. `ComputerName` Name of the computer
+  5. `Credential`                     
+  6. `CustomData` Optional
+  7. `DisablePasswordAuthentication`  Optional
+  8. `ProvisionVMAgent` Optional
+  9. `EnableAutoUpdate` Optional
+  10. `TimeZone` Optional
+  11. `WinRMHttp` Optional: indicates that the system uses HTTP WinRM
+  12. `WinRMHttps` Indicates that the system uses HTTPS WinRM
+  13. `WinRMCertificateUrl` Use of WinRM certificate, stored in a Key Vault
 
-Set-AzVMOperatingSystem options:
-
-Option                            | Position  | Description
-:---                              | :---      | :---
-`-VM`                             | 0 | Local virtual machine object on which to set OS properties
-`-Linux`                          | 1 | Indicates that the OS is Linux
-`-Windows`                        | 1 | Indicates OS type is Windows
-`-ComputerName`                   | 2 | Name of the computer
-`-Credential`                     | 3
-`-CustomData`                     | 4 | Optional
-`-DisablePasswordAuthentication`  | 5 | Optional
-`-ProvisionVMAgent`               | 5 | Optional
-`-EnableAutoUpdate`               | 6 | Optional
-`-TimeZone`                       | 7 | Optional
-`-WinRMHttp`                      | 8 | Optional: indicates that the system uses HTTP WinRM
-`-WinRMHttps`                     | 9 | Indicates that the system uses HTTPS WinRM
-`-WinRMCertificateUrl`            | 10 | Use of WinRM certificate, stored in a Key Vault
-
-#### 3.1a.2: Create an Azure VM
-`New-AzVM`
-
-Option                | Position  | Description
-:---                  | :---      | :---
-`-ResourceGroupName`  | 0         | Optional
-`-Location`           | 1         | Optional
-`-VM`                 | 2
-`-Zone`               | 3         | Optional
-
-
+#### Create an Azure VM
+`New-AzVM` options
+  1. `ResourceGroupName` 
+  2. `Location` 
+  3. `VM` required
+  4. `Zone`
+  - `Image` optional named parameter can be used to define other operating systems, and requires friendly image names. Its default value is `Win2016Datacenter`. If a Linux image is provided, you should provide the `-Linux` switch parameter as well in order to specify a Linux-type disk file.
 ```powershell
 New-AzVM -ResourceGroupName "RG" -Name "VM" -Location "EastUS" -Size "Standard-B2s" -Credential (Get-Credential)
 New-AzVM Greeks Socrates $vm
 ```
-
-The `-Image` optional named parameter can be used to define other operating systems, and requires friendly image names. If a Linux image is provided, you should provide the `-Linux` switch parameter as well in order to specify a Linux-type disk file.
-  - Win2016Datacenter (default)
-  - Win2012R2Datacenter
-  - Win2012Datacenter
-  - Win2008R2SP1
-  - UbuntuLTS
-  - CentOS
-  - CoreOS
-  - Debian
-  - openSUSE-Leap
-  - RHEL
-  - SLES
-
 A custom image object can be built up and passed to `New-AzVM` through the `-VM` named parameter by using other commands:
 ```powershell
 ...
@@ -94,23 +70,19 @@ $vm = New-AzVMConfig -VMName $VMName -VMSize $VMSize
 $vm = Set-AzVMOperatingSystem -VM $vm -Windows -ComputerName $ComputerName -Credential $Credential -Provision VMAgent -EnableAutoUpdate
 $vm = Add-AzVMNetworkInterface -VM $vm -Id $NIC.Id
 $vm = Set-AzVMSourceImage -VM $vm -PublisherName 'MicrosoftWindowsServer' -Offer 'WindowsServer' -Skus '2012-R2-Datacenter' -Version latest
-
 New-AzVM -ResourceGroupName $ResourceGroupName -Location $LocationName -VM $vm
 ```
 
 #### Find a Marketplace image
 `Get-AzVMImagePublisher` produces the publisher, e.g. "MicrosoftWindowsServer"
-  - `-Location`
-
+  - `Location` required
 `Get-AzVMImageOffer` produces the offer, e.g. "WindowsServer"
-  - `-Location`
-  - `-PublisherName`
-
-`Get-AzVMImageSku` produces the sku, e.g.  "2016-Datacenter-Server-Core"
-  - `-Location`
-  - `-Offer`
-  - `-PublisherName`
-
+  - `Location` required
+  - `PublisherName` required
+`Get-AzVMImageSku` produces the SKU, e.g.  "2016-Datacenter-Server-Core"
+  - `Location` required
+  - `Offer` required
+  - `PublisherName` required
 `Get-AzVMImage` requires the following named parameters:
   - `-Location` i.e. "EastUS"
   - `-PublisherName` cf. `Get-AzVMImagePublisher`
@@ -119,20 +91,16 @@ New-AzVM -ResourceGroupName $ResourceGroupName -Location $LocationName -VM $vm
   - `-Version` providing `*` will produce a list of available versions
 
 #### Start a VM
-`Start-AzVM` requires at minimum __2__ arguments:
-
-Option              | Mandatory | Position
-:---                | :--- | :---
-`-Id`, `-ResourceGroupName` | ✔ | 0
-`-Name`             | ✔ | 1
-
+`Start-AzVM` required parameters:
+  - `Id` or `-ResourceGroupName`
+  - `Name`
 ```powershell
 Start-AzVM Greeks Socrates
 ```
 
 #### Shut down a VM
 ```powershell
-Stop-AzVM RG VM
+Stop-AzVM Greeks Socrates
 ```
 
 #### Connect to VM from a Windows machine
@@ -144,39 +112,28 @@ Alternatively:
 ```cmd
 winrm quickconfig
 ```
-
 It can also be done through Azure, using `Invoke-AzVMRunCommand -CommandId EnableRemotePS`
-
 2. __Modify Network Security Group policy__ (see below) to allow inbound connections to ports 5985 and 5986, which are used by WinRM.
-
 3. Add the VM's public IP address &lt;$ipaddr&gt; to the trusted hosts of the local machine (must be run as administrator):
 ```powershell
 Set-Item WSMan:\localhost\Client\TrustedHosts -Value ipaddr
 ```
-
 4. Open the WinRM ports in the VM's firewall, if Windows Firewall is activated. The commands provided here can be run locally on the VM, or invoked through Azure:
-
 ```powershell
 New-NetFirewallRule -DisplayName "WinRMHTTP" -Direction Inbound -LocalPort 5985 -Protocol TCP -Action Allow
 New-NetFirewallRule -DisplayName "WinRMHTTPS" -Direction Inbound -LocalPort 5986 -Protocol TCP -Action Allow
 ```
-
 Alternatively:
-
 ```cmd
 netsh advfirewall firewall add rule name=WinRMHTTP dir=in action=allow protocol=TCP localport=5985
 netsh advfirewall firewall add rule name=WinRMHTTPS dir=in action=allow protocol=TCP localport=5986
 ```
-
 5.  Connect to the VM's public IP, passing along a previously-stored credential:
 ```powershell
 $cred=Get-Credential
 Enter-PSSession -ComputerName 123.47.78.90 -Credential $cred
-```
-
-Or, enter the credential dynamically
-```powershell
-etsn -ComputerName 123.45.67.89 -Credential (Get-Credential)
+# Alternatively...
+etsn 123.45.67.89 -Credential (Get-Credential)
 ```
 
 #### Connect to VM from a Mac or Linux machine
@@ -194,10 +151,8 @@ Invoke-AzVMRunCommand -ResourceGroupName RG -VMName VM -CommandId 'RunPowerShell
 ```
 
 #### Modify Network Security Group policies
-Open inbound ports are most easily defined at the time of VM creation (`New-AzVM ... -OpenPorts 5985,5986 ...`).
-
-From __Azure Portal__: Virtual machines > VM to be modified > (Settings) Networking > Network interface > Add inbound port rule button 
-
+Open inbound ports are most easily defined at the time of VM creation (`New-AzVM ... -OpenPorts 5985,5986 ...`).\
+From __Azure Portal__: Virtual machines > VM to be modified > (Settings) Networking > Network interface > Add inbound port rule button \
 In PowerShell, an __inbound security rule__ can be created:
 ```powershell
 Get-AzNetworkSecurityGroup -Name NSG -ResourceGroupName 4SysOps | 
@@ -214,7 +169,6 @@ Set-AzNetworkSecurityGroup
 ```powershell
 Get-AzPublicIpAddress Socrates-ip | select IpAddress
 ```
-
 In order to use the output in an evaluated expression (like command substitution in bash), the property has to be expanded with the `-ExpandProperty` switch.
 ```powershell
 Get-AzPublicIpAddress Socrates-ip | select -ExpandProperty IpAddress
@@ -243,29 +197,29 @@ $r.ResourceId -Force
 
 #### Enable diagnostics log collection with a storage account
 ```powershell
-PS C:\> $resource = Get-AzResource `
->>   -Name <resourceName> `
->>   -ResourceGroupName <resourceGroupName>
-PS C:\> $storage = Get-AzResource `
->>   -Name <resourceName> `
->>   -ResourceGroupName <resourceGroupName>
-PS C:\> Set-AzDiagnosticSetting `
->>   -ResourceId $resource.ResourceId `
->>   -StorageAccountId $storage.ResourceId `
->>   -Enabled $true
+$resource = Get-AzResource `
+  -Name <resourceName> `
+  -ResourceGroupName <resourceGroupName>
+$storage = Get-AzResource `
+  -Name <resourceName> `
+  -ResourceGroupName <resourceGroupName>
+Set-AzDiagnosticSetting `
+  -ResourceId $resource.ResourceId `
+  -StorageAccountId $storage.ResourceId `
+  -Enabled $true
 ```
 
 #### Enable diagnostics log streaming to an Event Hub (PowerShell)
 ```powershell
-PS C:\> $rule = Get-AzServiceBusRule -ResourceGroup <resourceGroupName> `
->> -Namespace <namespace> `
->> -Topic <topic> `
->> -Subscription <subscription> `
->> -Name <ruleName> 
-PS C:\> Set-AzDiagnosticSetting `
->> -ResourceId $resource.ResourceId `
->> -ServiceBusRuleId $rule.Id `
->> -Enabled $true
+$rule = Get-AzServiceBusRule -ResourceGroup <resourceGroupName> `
+  -Namespace <namespace> `
+  -Topic <topic> `
+  -Subscription <subscription> `
+  -Name <ruleName> 
+Set-AzDiagnosticSetting `
+  -ResourceId $resource.ResourceId `
+  -ServiceBusRuleId $rule.Id `
+  -Enabled $true
 ```
 
 #### Enable diagnostics logs collection in a Log Analytics workspace (PowerShell)
@@ -361,102 +315,96 @@ PS C:\> Add-AzKeyVaultKey `
 
 #### Retrieve a storage account key (PowerShell)
 ```powershell
-PS C:\> $storageKey = Get-AzStorageAccountKey `
->>  -ResourceGrouupName rgName `
->>  -Name storageAccount `
+$storageKey = Get-AzStorageAccountKey `
+  -ResourceGrouupName rgName `
+  -Name storageAccount `
 ```
 
 #### Convert storage account key to secure string
 ```powershell
-PS C:\> $secretvalue = ConvertTo-SecureString $storageKey[0].Value -AsPlainText -Force
+$secretvalue = ConvertTo-SecureString $storageKey[0].Value -AsPlainText -Force
 ```
 
 #### Set secret value to be used  (PowerShell)
 ```powershell
-PS C:\> $secret = Set-AzKeyVaultSecret `
->>  -VaultName vaultName `
->>  -Name $secretName `
->>  -SecretValue $secretvalue
+$secret = Set-AzKeyVaultSecret `
+  -VaultName vaultName `
+  -Name $secretName `
+  -SecretValue $secretvalue
 ```
 
 #### Create a SAS token for a specific storage blob
 ```powershell
-PS C:\> New-AzStorageBlobSASToken `
->>  -Container $container `
->>  -Blob $blob `
->>  -Permission "rwd" `
->>  -StartTime $startTime `
->>  -ExpiryTime $startTime.AddHours(4) `
->>  -Context $context
+New-AzStorageBlobSASToken `
+  -Container $container `
+  -Blob $blob `
+  -Permission "rwd" `
+  -StartTime $startTime `
+  -ExpiryTime $startTime.AddHours(4) `
+  -Context $context
 ```
 
 #### Use async blob copy service to copy a file
 ```powershell
-PS C:\> $blobCopyState = Start-AzStorageBlobCopy `
->>  -SrcBlob $blobName `
->>  -SrcContainer $srcContainer `
->>  -Context $srcContext `
->>  -DestContainer $destContainer `
->>  -DestBlob $vhdName
+$blobCopyState = Start-AzStorageBlobCopy `
+  -SrcBlob $blobName `
+  -SrcContainer $srcContainer `
+  -Context $srcContext `
+  -DestContainer $destContainer `
+  -DestBlob $vhdName
 ```
 
 #### Create a storage container
 `New-AzStorageContainer` require a storage context to be set, specifying the storage account anme and authentication credentials.
-
 ```powershell
-PS C:\> $storageKey = Get-AzStorageAccountKey
->>  -Name $storageAccount `
->>  -ResourceGroupName $resourceGroup
-
-PS C:\> $context = New-AzStorageContext `
->>  -StorageAccountName $storageAccount `
->>  -storageAccountKey $storageKey.Value[0]
-
-PS C:\> Set-AzCurrentStorageAccount -Context $context
-
-PS C:\> New-AzStorageContainer `
->>  -Name $container
->>  -Permission Off
+$storageKey = Get-AzStorageAccountKey
+  -Name $storageAccount `
+  -ResourceGroupName $resourceGroup
+$context = New-AzStorageContext `
+  -StorageAccountName $storageAccount `
+  -storageAccountKey $storageKey.Value[0]
+Set-AzCurrentStorageAccount -Context $context
+New-AzStorageContainer `
+  -Name $container
+  -Permission Off
 ```
 
 #### Create a storage blob
 ```powershell
-PS C:\> Set-AzStorageBlobContent `
->>  -File $localFile `
->>  -Container $container `
->>  -Blob $blobName
+Set-AzStorageBlobContent `
+  -File $localFile `
+  -Container $container `
+  -Blob $blobName
 ```
 
 #### Create an Azure File Share
 ```powershell
-PS C:\> $storageKey = Get-AzStorageAccountKey
->>  -ResourceGroupName $rgName
->>  -Name $storageAccount
-
-PS C:\> $context = New-AzStorageContext
->>  -StorageAccountName $storageAccount
->>  -StorageAccountKey $storageKey.Value[0]
-
-PS C:\> New-AzStorageShare
->>  -Name $shareName
->>  -Context $context
+$storageKey = Get-AzStorageAccountKey
+  -ResourceGroupName $rgName
+  -Name $storageAccount
+$context = New-AzStorageContext
+  -StorageAccountName $storageAccount
+  -StorageAccountKey $storageKey.Value[0]
+New-AzStorageShare
+  -Name $shareName
+  -Context $context
 ```
 
 #### Connect to and mount an Azure File Share 
 `New-PSDrive` maps the drive
 ```powershell
-PS C:\> $storageKey = (Get-AzStorageAccountKey -ResourceGroupName $rgName -Name $storageNAme).Value[0]
-PS C:\> $acctKey = ConvertTo-SecureString -String $storageKey -AsPlainText -Force
-PS C:\> $credential = New-Object System.Management.Automation.PSCredential `
->>  -ArgumentList "Azure\$storageName", $acctKey
-PS C:\> New-PSDrive `
->>  -Name "Z" `
->>  -PSProvider FileSystem `
->>  -Root "\\$storageName.file.core.windows.net\$shareName" 
->>  -Credential $credential
+$storageKey = (Get-AzStorageAccountKey -ResourceGroupName $rgName -Name $storageNAme).Value[0]
+$acctKey = ConvertTo-SecureString -String $storageKey -AsPlainText -Force
+$credential = New-Object System.Management.Automation.PSCredential `
+  -ArgumentList "Azure\$storageName", $acctKey
+New-PSDrive `
+  -Name "Z" `
+  -PSProvider FileSystem `
+  -Root "\\$storageName.file.core.windows.net\$shareName" 
+  -Credential $credential
 ```
 
-#### Retrieve the definition of a role (PowerShell)
+#### Retrieve the definition of a role
 > AZ-103: 1.4b.1 p. 88
 ```powershell
 Get-AzRoleDefinition `
@@ -470,13 +418,13 @@ ConvertTo-Json
 Get-AzProviderOperation * | ? { $_.IsDataAction -eq $true }
 ```
 
-#### List roles available for assignment (PowerShell)
+#### List roles available for assignment
 > AZ-103: 1.4c.3 p. 96
 ```powershell
 Get-AzRoleDefinition | Where-Object { $_.IsCustom -eq $true }
 ```
 
-#### Grant a user RBAC rights (PowerShell)
+#### Grant a user RBAC rights
 > AZ-103: 1.4c.6 p. 96
 ```powershell
 New-AzRoleAssignment `
@@ -485,7 +433,7 @@ New-AzRoleAssignment `
  -ResourceGroupName ExamRefRG
 ```
 
-#### Grant a group RBAC rights (PowerShell)
+#### Grant a group RBAC rights
 > AZ-103: 1.4c.8 p. 97
 ```powershell
 $group = Get-AzADGroup `
@@ -495,7 +443,8 @@ New-AzRoleAssignment `
  -RoleDefinitionName "Virtual Machine Contributor" `
  -ResourceGroupName ExamRefRG
 ```
-#### 1.4c.10: Remove RBAC assignments from a user (PowerShell)
+
+#### Remove RBAC assignments from a user
 > AZ-103: 1.4c.10 p. 97
 ```powershell
 Remove-AzRoleAssignment `
@@ -503,7 +452,8 @@ Remove-AzRoleAssignment `
  -RoleDefinitionName "Virtual Machine Contributor" `
  -ResourceGroupName ExamRefRG
 ```
-#### 1.4c.11: Remove RBAC assignments from a group (PowerShell)
+
+#### Remove RBAC assignments from a group
 > AZ-103: 1.4c.11 p. 97
 ```powershell
 $group = Get-AzADGRoup -SearchString "Cloud Admins"
