@@ -1,7 +1,6 @@
 # PowerShell
 ## Basic Syntax
-### Comparison operators
-
+### Comparison operators\
 Syntax  | Effect
 :---    | :---
 `-eq`
@@ -21,9 +20,7 @@ Syntax  | Effect
 `-replace`
 `-is`   | type comparison
 `-isnot`
-
-### Comparison with bash
-
+### Comparison with bash\ 
 Bash    | PowerShell | Notes
 :---    | :---       | :---
 \\      | \`         | used at the end of lines to allow multiline commands
@@ -53,7 +50,6 @@ Bash    | PowerShell | Notes
 `tail`  | `Get-Content -Tail`
 `touch` | `New-Item`
 `uniq`  | `Select-Object -Unique`
-
 ### Filters
 Filtering results can be done with 5 commands:
   - `Where-Object` (aliased to `where` and `?`): the most commonly used such command
@@ -61,16 +57,15 @@ Filtering results can be done with 5 commands:
   - `Select-String` (aliased to `sls`)
   - `ForEach-Object` (aliased to `foreach` and `%`)
   - `Out-GridView`
-
 #### Foreach-Object
 There are two different ways to construct a `ForEach-Object` statement:
   1. __Script block__, within which the variable `$_` represents the current object
   2. __Operation statement__, more naturalistic, where you specify a property value or call a method.
-
-### Display basic system information
-
+### Display basic system information\
 Syntax                        | Effect
 :---                          | :---
+`$PSDefaultParametersValues`  | hash table that specifies custom default values for any cmdlet or advanced function
+`$PSVersionTable`             | display PowerShell version
 `Get-Alias`                   | display aliases
 `Get-Command`                 | display all installed commands, including aliases, applications, filters, functions, and scripts
 `Get-Help cmd`                | display help file for {cmd}
@@ -79,9 +74,7 @@ Syntax                        | Effect
 `Get-Process`                 | display running processes
 `Get-PSDrive`                 | display mapped drives
 `Get-Services`                | display services
-`$PSVersionTable`             | display PowerShell version
-`Update-Help`                 | download help files
-
+`Update-Help`                 | download help files\
 Syntax                        | Effect
 :---                          | :---
 `Get-Alias Definition -eq Get-ChildItem`|display items that point to `Get-ChildItem`
@@ -94,9 +87,7 @@ Syntax                        | Effect
 `Set-Alias ip Get-NetAdapter` |edit an existing alias
 `New-PSDrive -Name scripts -PSProvider FileSystem -Root "C:\Scripts"`|map a directory to a drive
 `Remove-PSDrive -Name scripts`|remove a drive
-
-### Common parameters
-
+### Common parameters\
 Option                        | Effect
 :---                          | :---
 `-Debug`,`-db`                | display programmer-level detail about command operation
@@ -156,6 +147,11 @@ Option                        | Mandatory | Position
 `-Path`                       | ✔ | 0
 `-Value`                      | ✔ | 1 
 
+### Other syntax
+**Hash tables** (equivalent to Python dictionaries) are declared with `@{...}` ([Source](../sources/az-103-tasks.md#11b7-remove-tags-from-a-resource-powershell/))
+```powershell
+Set-AzResourceGroup -Tag @{} -Name hrgroup 
+```
 ### Defining functions
 Functions are declared with the following syntax
 ```powershell
@@ -172,7 +168,7 @@ function Get-LargeFiles {
   Sort-Object Length -Descending
 }
 ```
-__Named parameters__ can be declared in one of two ways. One, within the function body using the `param` keyword, followed by the name of the variable representing the parameter's value, enclosed in parentheses and preceded by the dollar sign `$`.
+__Named parameters__ can be declared in one of two ways. One, within the function body using the `param` keyword, followed by the name of the variable representing the parameter's value, enclosed in `$(...)`:
 ```powershell
 function Get-LargeFiles {
   param ($Size)
@@ -359,3 +355,5 @@ WindowsFeature                                    | declares code block represen
   - "About Functions". [Microsoft Docs](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_functions?view=powershell-6): 2019/02/26.
   - "Select-Object". [Microsoft Docs](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/select-object?view=powershell-6)
   - "About CommonParameters". [Microsoft Docs](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_commonparameters?view=powershell-6): 2019/05/27.
+  - "About Parameters Default Values". [Microsoft Docs](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_parameters_default_values?view=powershell-6): 2019/05/30.
+  - "What's in your PowerShell $PSDefaultParameterValues Preference Variable?". [mikefrobbins.com](https://mikefrobbins.com/2019/08/01/whats-in-your-powershell-psdefaultparametervalues-preference-variable/): 2019/08/01.
