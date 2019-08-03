@@ -12,6 +12,16 @@ From "View system uptime" below:
 Select-Object -Property @{n="Last Boot Time";e={[Management.ManagementDateTimeConvert]::ToDateTime($_.LastBootUpTime)}}
 ```
 
+### Automatic variables
+**Automatic variables** are variables that store state information for PowerShell and are created and maintained by Powershell.
+
+Syntax  | Effect
+:---    | :---
+`$$` | last token in the last line received by the session
+`$?` | execution status of the last operation
+`$^` | first token in the last line received by the session
+`$_` | current object in the pipeline object
+
 ### Comparison operators
 Syntax  | Effect
 :---    | :---
@@ -34,35 +44,36 @@ Syntax  | Effect
 `-isnot`
 
 ### Comparison with bash
-Bash    | PowerShell | Notes
-:---    | :---       | :---
-\\      | \`         | used at the end of lines to allow multiline commands
-`&`     | `Start-Job`,`sajb` | sends a process into the background
-`>>`    | `Add-Content`, `ac`
-`alias` | `Get-Alias`, `gal`; `New-Alias`, `nal`
-`awk`   | `Select-Object`, `select` | See __Filters__ below
-`cat`   | `Get-Content`, `cat`, `gc`, `type` 
-`cp`    | `Copy-Item`, `cp`, `cpi`, `copy`
-`cd`    | `Set-Location`, `cd`, `sl`, `chdir`
-`echo`  | `Write-Host`
-`find`  | `Get-ChildItem -Recurse -File -Filter ...`
-`grep`  | `Where-Object`, `where`, `?` | See __Filters__ below
-`less`  | `Out-Host -Paging`, `oh -Paging`
-`man`   | `Get-Help`
-`more`  | rf. `less`
-`ls`    | `Get-ChildItem`, `dir`, `gci`, `ls` 
-`mkdir` | `New-Item -ItemType Directory`, `ni -ItemType Directory`
-`print` | `Write-Host`
-`printf`| `Write-Host`
-`pwd`   | `Get-Location`, `gl`, `pwd`
-`reset` | `Clear-Host`, `clear`, `cls` 
-`rm`    | `Remove-Item`, `rm`, `ri`, `rmdir`, `rd`, `del`
-`sed`   | `Where-Object`, `where`, `?` | See __Filters__ below
-`shutdown -r` | `Restart-Computer`
-`shutdown`| `Stop-Computer`
-`tail`  | `Get-Content -Tail`
-`touch` | `New-Item`
-`uniq`  | `Select-Object -Unique`
+Bash            | PowerShell | Notes
+:---            | :---       | :---
+\\              | \`         | used at the end of lines to allow multiline commands
+`$!` `!$`       | `$$` | automatic variable referring to the last "token" (argument) in the previous command
+`$?`            | `$?` | automatic variable containing the execution status of the previous command
+`&`             | `Start-Job`,`sajb` | sends a process into the background
+`>>`            | `Add-Content`, `ac`
+`alias`         | `Get-Alias`, `gal`; `New-Alias`, `nal`
+`awk`           | `Select-Object`, `select` | See __Filters__ below
+`cat`           | `Get-Content`, `cat`, `gc`, `type` 
+`cp`            | `Copy-Item`, `cp`, `cpi`, `copy`
+`cd`            | `Set-Location`, `cd`, `sl`, `chdir`
+`echo`          | `Write-Host`
+`find`          | `Get-ChildItem -Recurse -File -Filter ...`
+`grep`          | `Where-Object`, `where`, `?` | See __Filters__ below
+`less` `more`   | `Out-Host -Paging`, `oh -Paging`
+`man`           | `Get-Help`
+`ls`            | `Get-ChildItem`, `dir`, `gci`, `ls` 
+`mkdir`         | `New-Item -ItemType Directory`, `ni -ItemType Directory`
+`print`         | `Write-Host`
+`printf`        | `Write-Host`
+`pwd`           | `Get-Location`, `gl`, `pwd`
+`reset`         | `Clear-Host`, `clear`, `cls` 
+`rm`            | `Remove-Item`, `rm`, `ri`, `rmdir`, `rd`, `del`
+`sed`           | `Where-Object`, `where`, `?` | See __Filters__ below
+`shutdown -r`   | `Restart-Computer`
+`shutdown`      | `Stop-Computer`
+`tail`          | `Get-Content -Tail`
+`touch`         | `New-Item`
+`uniq`          | `Select-Object -Unique`
 
 ### Filters
 Filtering results can be done with 5 commands:
@@ -369,17 +380,24 @@ Configuration                                     | precedes title of script, at
 Ensure                                            | property within `WindowsFeature` that can be set to `Present` or `Absent` (e.g. `Ensure = "Present"`)
 WindowsFeature                                    | declares code block representing a DSC resource to be installed (e.g. `WindowsFeature IIS`)
 
+## Glossary
+
+Term | Definition | Source
+:--- | :---       | :---
+automatic variables | variables that store state information for PowerShell and are created and maintained by Powershell. | 14
+
 ## Sources
-  - Berkouwer, Sander. _Active Directory Administration Cookbook_. [ADAC](../sources/adac.md).
-  - Krause, Jordan. _Windows Server 2016 Administration Cookbook_. [WSAC](../sources/wsac.md).
-  - Michael Washam, Jonathan Tuliani, and Scott Hoag. _Exam Ref AZ-103 Microsoft Azure Administrator_. [AZ-103](../sources/az-103.md)
-  - "How to use Wget to download web-based packages on Windows." [TechRepublic](https://www.techrepublic.com/article/how-to-use-wget-to-download-web-based-packages-on-windows/#ftag=RSS56d97e7): 2019/06/26.
-  - "Check PowerShell Version". [powertheshell.com](http://www.powertheshell.com/topic/learnpowershell/firststeps/psversion/)
-  - "About Comparison Operators". [Microsoft Docs](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_comparison_operators?view=powershell-6): 2019/01/17.
-  - "PowerShell equivalents for common Linux/bash commands". [TheShellNut](https://mathieubuisson.github.io/powershell-linux-bash/): 2015/09/30.
-  - "About Functions". [Microsoft Docs](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_functions?view=powershell-6): 2019/02/26.
-  - "Select-Object". [Microsoft Docs](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/select-object?view=powershell-6)
-  - "About CommonParameters". [Microsoft Docs](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_commonparameters?view=powershell-6): 2019/05/27.
-  - "About Parameters Default Values". [Microsoft Docs](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_parameters_default_values?view=powershell-6): 2019/05/30.
-  - "What's in your PowerShell `$PSDefaultParameterValues` Preference Variable?". [mikefrobbins.com](https://mikefrobbins.com/2019/08/01/whats-in-your-powershell-psdefaultparametervalues-preference-variable/): 2019/08/01.
-  - "Using PowerShell to Copy to the Clipboard". [adamtheautomater.com](https://adamtheautomator.com/powershell-copy-to-clipboard/): 2019/08/01.
+  1. Berkouwer, Sander. _Active Directory Administration Cookbook_. [ADAC](../sources/adac.md).
+  2. Krause, Jordan. _Windows Server 2016 Administration Cookbook_. [WSAC](../sources/wsac.md).
+  3. Michael Washam, Jonathan Tuliani, and Scott Hoag. _Exam Ref AZ-103 Microsoft Azure Administrator_. [AZ-103](../sources/az-103.md)
+  4. "How to use Wget to download web-based packages on Windows." [TechRepublic](https://www.techrepublic.com/article/how-to-use-wget-to-download-web-based-packages-on-windows/#ftag=RSS56d97e7): 2019/06/26.
+  5. "Check PowerShell Version". [powertheshell.com](http://www.powertheshell.com/topic/learnpowershell/firststeps/psversion/)
+  6. "About Comparison Operators". [Microsoft Docs](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_comparison_operators?view=powershell-6): 2019/01/17.
+  7. "PowerShell equivalents for common Linux/bash commands". [TheShellNut](https://mathieubuisson.github.io/powershell-linux-bash/): 2015/09/30.
+  8. "About Functions". [Microsoft Docs](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_functions?view=powershell-6): 2019/02/26.
+  9. "Select-Object". [Microsoft Docs](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/select-object?view=powershell-6)
+  10. "About CommonParameters". [Microsoft Docs](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_commonparameters?view=powershell-6): 2019/05/27.
+  11. "About Parameters Default Values". [Microsoft Docs](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_parameters_default_values?view=powershell-6): 2019/05/30.
+  12. "What's in your PowerShell `$PSDefaultParameterValues` Preference Variable?". [mikefrobbins.com](https://mikefrobbins.com/2019/08/01/whats-in-your-powershell-psdefaultparametervalues-preference-variable/): 2019/08/01.
+  13. "Using PowerShell to Copy to the Clipboard". [adamtheautomater.com](https://adamtheautomator.com/powershell-copy-to-clipboard/): 2019/08/01.
+  14. "About Automatic Variables". [Microsoft Docs](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-6): 2019/02/26.
