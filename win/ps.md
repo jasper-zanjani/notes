@@ -1,6 +1,18 @@
 # PowerShell
 ## Basic Syntax
-### Comparison operators\
+### Syntax to research
+#### `[?...]` 
+From [AZ-103](../sources/az-103-tasks.md) 1.4c.09:
+```powershell
+groupid=$(az ad group list --query "[?displayName=='Cloud Admins'].objectId" -o tsv)
+```
+#### `::`
+From "View system uptime" below:
+```powershell
+Select-Object -Property @{n="Last Boot Time";e={[Management.ManagementDateTimeConvert]::ToDateTime($_.LastBootUpTime)}}
+```
+
+### Comparison operators
 Syntax  | Effect
 :---    | :---
 `-eq`
@@ -20,7 +32,8 @@ Syntax  | Effect
 `-replace`
 `-is`   | type comparison
 `-isnot`
-### Comparison with bash\ 
+
+### Comparison with bash
 Bash    | PowerShell | Notes
 :---    | :---       | :---
 \\      | \`         | used at the end of lines to allow multiline commands
@@ -50,6 +63,7 @@ Bash    | PowerShell | Notes
 `tail`  | `Get-Content -Tail`
 `touch` | `New-Item`
 `uniq`  | `Select-Object -Unique`
+
 ### Filters
 Filtering results can be done with 5 commands:
   - `Where-Object` (aliased to `where` and `?`): the most commonly used such command
@@ -61,7 +75,8 @@ Filtering results can be done with 5 commands:
 There are two different ways to construct a `ForEach-Object` statement:
   1. __Script block__, within which the variable `$_` represents the current object
   2. __Operation statement__, more naturalistic, where you specify a property value or call a method.
-### Display basic system information\
+
+### Display basic system information
 Syntax                        | Effect
 :---                          | :---
 `$PSDefaultParametersValues`  | hash table that specifies custom default values for any cmdlet or advanced function
@@ -74,7 +89,8 @@ Syntax                        | Effect
 `Get-Process`                 | display running processes
 `Get-PSDrive`                 | display mapped drives
 `Get-Services`                | display services
-`Update-Help`                 | download help files\
+`Update-Help`                 | download help files
+
 Syntax                        | Effect
 :---                          | :---
 `Get-Alias Definition -eq Get-ChildItem`|display items that point to `Get-ChildItem`
@@ -87,7 +103,8 @@ Syntax                        | Effect
 `Set-Alias ip Get-NetAdapter` |edit an existing alias
 `New-PSDrive -Name scripts -PSProvider FileSystem -Root "C:\Scripts"`|map a directory to a drive
 `Remove-PSDrive -Name scripts`|remove a drive
-### Common parameters\
+
+### Common parameters
 Option                        | Effect
 :---                          | :---
 `-Debug`,`-db`                | display programmer-level detail about command operation
@@ -105,7 +122,6 @@ Option                        | Effect
 `-Confirm`,`-cf`              | prompt for confirmation before executing the command
 
 ### Help commands
-
 Syntax  | Effect
 :---    | :---
 `Get-Help cmd`                | display help file for {cmd}
@@ -117,7 +133,6 @@ Syntax  | Effect
 `Update-Help`                 | download help files
 
 ### Output formatting
-
 Syntax  | Effect
 :---    | :---
 `Get-Service \| Format-Wide` | change output format to `Format-Wide`
@@ -134,14 +149,12 @@ Syntax  | Effect
 `Get-Service \| ForEach-Object {Write-Host $_.name}`| loop through each object in output of `Get-Service` and send the `name` field to `Write-Host`
 
 ### File manipulation
-
 Syntax  | Effect
 :---    | :---
 `New-Item -ItemType File -Name filename` | create a new file in the current working directory named &lt;filename&gt;
 `Add-Content C:\path\to\file $content` | append &lt;content&gt; to &lt;file&gt;
 
 #### Add-Content
-
 Option                        | Mandatory | Position
 :---                          | :---      | :---
 `-Path`                       | ✔ | 0
@@ -219,7 +232,7 @@ Passing the option `-on` to the function on invocation will produce the output:
 ```
 Switch on
 ```
-Omitting the optino will produce the output:
+Omitting the option:
 ```
 Switch off
 ```
@@ -236,7 +249,6 @@ __Mandatory parameters__ are declared by preceding the parameter name with `[Par
 ```
 ## Environment manipulation
 ### Alias
-
 Syntax  | Effect
 :---    | :---
 `Get-Alias`                 | display aliases
@@ -246,7 +258,6 @@ Syntax  | Effect
 `Export-Alias -Path alias.ps1 -As Script`|export session aliases to a ".ps1" file
 
 ### Service
-
 Syntax  | Effect
 :---    | :---
 `Start-Service WinRM`, `sasv winrm` | Start the &lt;WinRM&gt; service
@@ -255,14 +266,12 @@ Syntax  | Effect
 
 ### Module
 Modules are automatically imported, if available, when you run a command that belongs to one. Or you can manually import them.
-
 Syntax  | Effect
 :---    | :---
 `Install-Module -Name Az -AllowClobber` | Install the __Az__ module
 `Import-Module SmbShare`|import module {SmbShare}
 
 ### Profiles
-
 Syntax  | Effect
 :---    | :---
 `$profile`|display file of current profile
@@ -272,7 +281,6 @@ Syntax  | Effect
 `$profile.AllUsersCurrentHost`|C:\Windows\System32\WindowsPowerShell\v1.0\Microsoft.PowerShell_profile.ps1
 
 ## Remote commands
-
 Syntax  | Effect
 :---    | :---
 `Enable-PSRemoting`| allow remote PowerShell management
@@ -282,7 +290,6 @@ Syntax  | Effect
 `Enter-PSSession -id 1`|interact with the specified PowerShell session
 `Exit-PSSession -ComputerName demodc`|end the PowerShell session with the specified computer
 `Enter-PSSession -ComputerName o365-dc01 -Credential officeprodemoco\joey`|start and enter a new PS session to specified computer with provided credentials. This will change the prompt to show the name of the remote machine in brackets.
-
 ## Hyper-V
 #### Install Hyper-V from PowerShell command-line
 ```powershell
@@ -300,7 +307,6 @@ Set-VMProcessor -VMName SVR01 -Count 2
 ```powershell
 Set-VMNetworkAdapter -VMName SVR01 -Name "NetworkAdapter" -MACAddressSpoofing On
 ```
-
 ## Other commands
 #### Display options available in the module
 ```powershell
@@ -336,6 +342,25 @@ Then construct the credential by using `New-Object`
 ```powershell
 $cred = New-Object System.Management.Automation.PSCredential ("FullerP", $pw)
 ```
+### Clipboard
+#### Copy text to clipboard
+```powershell
+Write-Output 'Hello' | Set-Clipboard
+```
+With `Append` switch parameter, items can be added without clearing the clipboard:
+```powershell
+Write-Output 'Hello' | Set-Clipboard -Append
+```
+#### Interrogate items in clipboard
+Interpret items in clipboard as files
+```powershell
+Get-Clipboard -Format FileDropList
+```
+Retrieve various properties of an image in clipboard
+```powershell
+Get-Clipboard -Format Image
+```
+
 ## Desired State Configuration (DSC) syntax
 
 Syntax                                            | Effect
@@ -356,4 +381,5 @@ WindowsFeature                                    | declares code block represen
   - "Select-Object". [Microsoft Docs](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/select-object?view=powershell-6)
   - "About CommonParameters". [Microsoft Docs](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_commonparameters?view=powershell-6): 2019/05/27.
   - "About Parameters Default Values". [Microsoft Docs](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_parameters_default_values?view=powershell-6): 2019/05/30.
-  - "What's in your PowerShell $PSDefaultParameterValues Preference Variable?". [mikefrobbins.com](https://mikefrobbins.com/2019/08/01/whats-in-your-powershell-psdefaultparametervalues-preference-variable/): 2019/08/01.
+  - "What's in your PowerShell `$PSDefaultParameterValues` Preference Variable?". [mikefrobbins.com](https://mikefrobbins.com/2019/08/01/whats-in-your-powershell-psdefaultparametervalues-preference-variable/): 2019/08/01.
+  - "Using PowerShell to Copy to the Clipboard". [adamtheautomater.com](https://adamtheautomator.com/powershell-copy-to-clipboard/): 2019/08/01.
