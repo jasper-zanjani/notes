@@ -728,6 +728,20 @@ az vm unmanaged-disk attach
 ```
 #### 3.1e.05: Create a new storage pool using all available disks (PowerShell)
 #### 3.1f.01: Connecting to a Windows VM with remote desktop
+```ps
+# Variables
+$rgName = "ExamRefRG"
+$vmName = "ExamRefVM"
+$Path = "C:\path\to\ExamRefVM.rdp"
+```
+```ps
+# Use `Launch` param to retrieve .rdp file and immediately open it with a Remote Desktop client
+Get-AzRemoteDesktopFile -ResourceGroupName $rgName -Name $vmName -Launch
+```
+```ps
+# Specify `LocalPath` param to save the .rdp file for later use
+Get-AzRemoteDesktopFile -ResourceGroupName $rgName -Name $vmName -LocalPath $path
+```
 #### 3.1f.02: Connecting to a Linux virtual machine using SSH
 #### 3.1g.01: Enabling and configuring diagnostics (Windows)
 #### 3.1g.02: Enabling and configuring diagnostics (Linux)
@@ -805,26 +819,211 @@ az vmss create --resource-group $rgName --name $ssName --image UbuntuLTS --authe
 ```
 #### 3.2c.01: Deploy a template that creates a VM (Portal)
 #### 3.2c.02: Deploy a template that creates a VM (PowerShell)
+```ps
+# Variables
+$rgName = "ExamRefRG"
+$location = "WestUs"
+$deploymentName = "simpleVMDeployment"
+$templateUri = "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-vm-simple-windows/azuredeploy.json"
+```
+```ps
+# Create a resource group
+New-AzResourceGroup -Name $rgName -Location $location
+# Deploy template from GitHub
+New-AzResourceGroupDeployment -Name $deploymentName -ResourceGroupName $rgName -TemplateUri $templateUri
+```
+#### 3.2c.03: Deploy a template that creates a VM (Azure CLI)
+```sh
+# Variables
+rgName="ExamRefRG"
+location="WestUS"
+deploymentName="simpleVMDeployment"
+templateUri = "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-vm-simple-windows/azuredeploy.json"
+```
+```sh
+# Create a resource group
+az group create --name $rgNAme --location $location
+```
+```sh
+# Deploy template from GitHub
+az group deployment create --name $deploymentName --resource-group $rgName --template-uri $templateUri
+```
 #### 3.2d.01: Deploy a template in Complete mode
+```ps
+New-AzResourceGroupDeployment -Mode Complete -Name simpleVMDeployment -ResourceGroupName ExamRefRG
+```
+```sh
+az group deployment create --name simpleVMDeployment --mode Complete --resource-group ExamRefRG
+```
 #### 3.2e.01: Export deployment template (Portal)
 #### 3.2e.02: Access template that represents current state of resource group
 #### 3.2e.03: Export templates
+```ps
+Save-AzResourceGroupDeploymentTemplate -ResourceGroupName ExamRefRG -DeploymentName simpleVMDeployment
+```
+```sh
+az group deployment export --name simpleVMDeployment --resource-group ExamRefRG
+```
 #### 3.2e.04: Export all resources in a resource group as a template
+```ps
+Export-AzResourceGroup -ResourceGroupName ExamRefRG
+```
+```sh
+az group export --name ExamRefRG
+```
 #### 3.2e.05: Pass a template file during deployment
 #### 3.3a.01: Add a data disk to an existing VM (Portal)
 #### 3.3a.02: Attach a new managed disk to an existing VM
+```ps
+# Variables
+$dataDiskName = "MyDataDisk"
+$location="WestUS"
+```
+```ps
+# Create the disk configuration
+$diskConfig = New-AzDiskConfig -SkuName Premium_LRS -Location $location -CreateOption Empty -DiskSizeGB 128
+```
+```ps
+# Create the disk
+$dataDisk1 = New-AzDisk -DiskName $dataDiskName -Disk $diskConfig -ResourceGroupNAme ExamRefRG
+```
+```ps
+# Retrieve the current VM
+$vm = Get-AzVM -Name ExamRefVM -ResourceGroupName ExamRefRG
+```
+```ps
+# Attach the disk
+$vm = Add-AzVMDataDisk -VM $vm -Name $dataDiskName -CreateOption Attach -ManagedDiskId $dataDisk1.Id -Lun 1
+```
+```ps
+# Update the VM
+Update-AzVM -VM $vm -ResourceGroupName ExamRefRG
+```
+```sh
+az vm disk attach -g ExamRefRG --vm-name ExamRefVM --name myDataDisk --new --size-gb 128 --sku Premium_LRS
+``` 
 #### 3.3b.01: Add a new network interface to an existing VM
 #### 3.3b.02: Attach a new network interface to an existing VM
+```ps
+# Variables
+$vnetNAme = "ExamRefVNET"
+$subnetName = "Subnet-1"
+$rgName = "ExamRefRG"
+$vmName = "ExamRefVM"
+$nicName = "newnic"
+```
+```ps
+# Deallocate the VM
+Stop-AzVM -Name $vmName -ResourceGroupName $rgName
+```
+```ps
+# Retrieve the VM configuration
+$vm = Get-AzVm -Name ExamRefVM -ResourceGroupName $rgName
+```
+```ps
+# Get info for the backend subnet
+$myVnet = Get-AzVirtualNetwork -ResourceGroupName $rgName -Name $vnetName
+$backend = $myVnet.Subnets |? { $_.Name -eq $subnetName }
+```
+```ps
+# Create a virtual NIC
+$newNic = New-AzNetworkInterface -ResourceGroupName $rgName -Name $nicName -Location $location -SubnetId $newNic.Id
+```
+```ps
+# Get the ID of the new virtual NIC and add to VM
+$nicId = (Get-AzNetworkInterface -ResourceGroupName $rgName -Name $nicName).Id
+Add-AzVMNetworkInterface -VM $vm -Id $nicId -Primary | Update-AzVm -ResourceGroupName $rgName
+```
+```sh
+# Variables
+vnetName="ExamRefVNET"
+subnetName="Subnet-1"
+rgName="ExamRefRG"
+vmName="ExamRefVM"
+nicName="newnic"
+```
+```sh
+az network nic create --resource-group $rgName --name $nicName --vnet-name $ExamRefVNET --subnet $subnetName
+az vm nic add -g $rgName --vm-name $vmName --nics $nicName --primary-nic
+```
 #### 3.3c.01: View all available sizes in a location
 #### 3.3c.02: Change VM to a new size
 #### 3.3d.01: Move a VM to another resource group or subscription (Portal)
 #### 3.3d.02: Move a resource to another resource group or subscription (PowerShell)
+```ps
+# Use `Get-AzResource` to identify the resource ID value
+$resourceID = Get-AzResource -ResourceGroupName ExamRefRG | Format-Table -Property ResourceId
+```
+```ps
+# Specify the destination resource group and the resource ID to move
+Move-AzResource -DestinationResourceGroupName ExamRefDestRG -ResourceId $resourceID
+```
+```ps
+# To move to a different subscription, use the `-DestinationSubscriptionId` param
+Move-AzResource -DestinationSubscriptionId $subscriptionID -DestinationResourceGroupName ExamRefDestRG -ResourceId $resourceID
+```
 #### 3.3d.03: Move a resource to another resource group or subscription (Azure CLI)
+```sh
+# List resource IDs
+az resource list -g ExamRefRG
+```
+```sh
+# Move to a different resource group
+az resource move --destination-group ExamRefDestRG --ids $resourceID
+```
+```sh
+# Use the `--subscription-id` parameter to move to a different subscription
+az resource move --destination-group ExamrefDestRG --destination-subscription-id $subscriptionID --ids $resourceID
+```
 #### 3.3e.01: Redeploy a VM
 #### 3.3f.01: Package a DSC script into a zip file
+```ps
+Publish-AzVMDscConfiguration -ConfigurationPath .\ContosoWeb.ps1 -OutputArchivePath .\ContosoWeb.zip
+```
 #### 3.3f.02: Apply the PowerShell Desired State Configuration extension
 #### 3.3f.03: Publish a packaged DSC script to a storage account
+```ps
+# Variables
+$rgName = "ExamRefRG"
+$location =- "WestUS"
+$vmName = "ExamRefVM"
+$storageName = "dscstorageer1"
+$configurationName = "Main"
+$archiveBlob = "ContosoWeb.ps1.zip"
+$configurationPath = ".\ContosoWeb.ps1"
+```
+```ps
+# Publish the configuration script into Azure storage
+Publish-AzVMDscConfiguration -ConfigurationPath $configurationPath -ResourceGroupName $rgName -StorageAccountName $storageName
+```
+```ps
+# Set the VM to run the DSC configuration
+Set-AzVmDscExtension -Version 2.76 -ResourceGroupName $rgName -VMName $vmName -ArchiveStorageAccountNAme $storageName -ArchiveBlobName $archiveBNlob -AutoUpdate:$false -ConfigurationName $configurationName
+```
 #### 3.3f.04: Use the custom script extension
+```ps
+# Deploy the Active Directory Domain Services role
+Install-WindowsFeature -Name "AD-Domain-Services" -IncludeManagementTools -IncludeAllSubFeature
+Install-ADDSForest -DomainName $domain -DomainMode Win2012 -ForestMode Win2012 -Force -SafeModeAdministratorPassword $smPassword
+```
+```ps
+# Use `Set-AzVMCustomScriptExtension` to run script on a VM
+$rgName = "ExamRefRG"
+$vmName = "ExamRefVM"
+$scriptName = "deploy-ad.ps1"
+$domain = "contoso.com"
+$extensionName = "installAD"
+$location = "WestUS"
+$scriptUri = "https://raw.githubusercontent.com/opsgility/lab-support-public/master/script-extensions/deploy-ad.ps1" 
+$scriptArgument = "contoso.com $password"
+Set-AzVMCustomScriptExtension -ResourceGroupName $rgName -VMName $vmName -FileUri $scriptUri -Argument "$domain $password" -Run $scriptName -Name $extensionName -Location $location
+```
+```sh
+rgName="ExamRefRG"
+vmName="LinuxVM"
+extensionName="InstallApache"
+az vm extension set --resource-group $rgName --vm-name $vmName --name customScript --publisher Microsoft.Azure.Extensions --protected-settings ./cseconfig.json
+```
 #### 3.4a.01: Backup a VM with Azure Backup
 #### 3.4d.01: Restore an Azure Backup recovery point as a new VM
 #### 3.4d.02: Restore access to files in Azure Backup
