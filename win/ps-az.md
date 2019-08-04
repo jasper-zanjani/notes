@@ -13,9 +13,9 @@ Connect-AzAccount
 ```
 
 #### Create a Resource Group
-`New-AzResourceGroup` has two required parameters which can be defined positionally in the following order: 
-  1. `Name` 
-  2. `Location`
+> `New-AzResourceGroup` required parameters: 
+> 1. `Name` 
+> 2. `Location`
 
 ```powershell
 New-AzResourceGroup RG WestUS
@@ -51,6 +51,7 @@ $vm = Add-AzVMNetworkInterface
   11. `WinRMHttp` Optional: indicates that the system uses HTTP WinRM
   12. `WinRMHttps` Indicates that the system uses HTTPS WinRM
   13. `WinRMCertificateUrl` Use of WinRM certificate, stored in a Key Vault
+<hr>
 
 #### Create an Azure VM
 `New-AzVM` options
@@ -62,15 +63,6 @@ $vm = Add-AzVMNetworkInterface
 ```powershell
 New-AzVM -ResourceGroupName "RG" -Name "VM" -Location "EastUS" -Size "Standard-B2s" -Credential (Get-Credential)
 New-AzVM Greeks Socrates $vm
-```
-A custom image object can be built up and passed to `New-AzVM` through the `-VM` named parameter by using other commands:
-```powershell
-...
-$vm = New-AzVMConfig -VMName $VMName -VMSize $VMSize
-$vm = Set-AzVMOperatingSystem -VM $vm -Windows -ComputerName $ComputerName -Credential $Credential -Provision VMAgent -EnableAutoUpdate
-$vm = Add-AzVMNetworkInterface -VM $vm -Id $NIC.Id
-$vm = Set-AzVMSourceImage -VM $vm -PublisherName 'MicrosoftWindowsServer' -Offer 'WindowsServer' -Skus '2012-R2-Datacenter' -Version latest
-New-AzVM -ResourceGroupName $ResourceGroupName -Location $LocationName -VM $vm
 ```
 
 #### Find a Marketplace image
@@ -257,208 +249,6 @@ PS C:\> Remove-AzResourceGroup -Name "hrgroup"
 #### Delete a resource group without confirmation
 ```powershell
 PS C:\> Remove-AzResourceGroup -Name "hrgroup" -Force
-```
-
-#### 2.1a.2: Create a storage account
-> AZ-103: 2.1a.2 p. 107
-```powershell
-PS C:\> New-AzStorageAccount `
->> -ResourceGroupName RG
->> -Name mystorage112300
->> -SkuName Standard_LRS
->> -Location WestUS
->> -Kind StorageV2
->> -AccessTier Hot
-```
-
-#### 2.1a.4: Change storage account's access tier, without confirmation 
-> AZ-103: 2.1a.4 p. 107
-```powershell
-PS C:\> Set-AzStorageAccount `
->> -ResourceGroupName RG `
->> -Name $accountName `
->> -AccessTier Cool `
->> -Force
-```
-
-#### Enable all metrics and logs for a resource
-```powershell
-PS C:\> Set-AzDiagnosticSetting `
->> -ResourceId <resourceId> `
->> -Enabled $True
-```
-
-#### Disable all metrics and logs
-```powershell
-PS C:\> Set-AzDiagnosticSetting `
->> -ResourceId <resourceId> `
->> -Enabled $False
-```
-
-#### Create an Azure Key Vault (PowerShell)
-```powershell
-PS C:\> New-AzKeyVault `
->>  -VaultName vaultName `
->>  -ResourceGroupNAme rgName `
->>  -Location EastUS 
-```
-
-#### Create a software managed key in Azure Key Vault (PowerShell)
-```powershell
-PS C:\> Add-AzKeyVaultKey `
->>  -VaultName vaultName `
->>  -Name keyName `
->>  -Destination 'Software'
-```
-
-#### Retrieve a storage account key (PowerShell)
-```powershell
-$storageKey = Get-AzStorageAccountKey `
-  -ResourceGrouupName rgName `
-  -Name storageAccount `
-```
-
-#### Convert storage account key to secure string
-```powershell
-$secretvalue = ConvertTo-SecureString $storageKey[0].Value -AsPlainText -Force
-```
-
-#### Set secret value to be used  (PowerShell)
-```powershell
-$secret = Set-AzKeyVaultSecret `
-  -VaultName vaultName `
-  -Name $secretName `
-  -SecretValue $secretvalue
-```
-
-#### Create a SAS token for a specific storage blob
-```powershell
-New-AzStorageBlobSASToken `
-  -Container $container `
-  -Blob $blob `
-  -Permission "rwd" `
-  -StartTime $startTime `
-  -ExpiryTime $startTime.AddHours(4) `
-  -Context $context
-```
-
-#### Use async blob copy service to copy a file
-```powershell
-$blobCopyState = Start-AzStorageBlobCopy `
-  -SrcBlob $blobName `
-  -SrcContainer $srcContainer `
-  -Context $srcContext `
-  -DestContainer $destContainer `
-  -DestBlob $vhdName
-```
-
-#### Create a storage container
-`New-AzStorageContainer` require a storage context to be set, specifying the storage account anme and authentication credentials.
-```powershell
-$storageKey = Get-AzStorageAccountKey
-  -Name $storageAccount `
-  -ResourceGroupName $resourceGroup
-$context = New-AzStorageContext `
-  -StorageAccountName $storageAccount `
-  -storageAccountKey $storageKey.Value[0]
-Set-AzCurrentStorageAccount -Context $context
-New-AzStorageContainer `
-  -Name $container
-  -Permission Off
-```
-
-#### Create a storage blob
-```powershell
-Set-AzStorageBlobContent `
-  -File $localFile `
-  -Container $container `
-  -Blob $blobName
-```
-
-#### Create an Azure File Share
-```powershell
-$storageKey = Get-AzStorageAccountKey
-  -ResourceGroupName $rgName
-  -Name $storageAccount
-$context = New-AzStorageContext
-  -StorageAccountName $storageAccount
-  -StorageAccountKey $storageKey.Value[0]
-New-AzStorageShare
-  -Name $shareName
-  -Context $context
-```
-
-#### Connect to and mount an Azure File Share 
-`New-PSDrive` maps the drive
-```powershell
-$storageKey = (Get-AzStorageAccountKey -ResourceGroupName $rgName -Name $storageNAme).Value[0]
-$acctKey = ConvertTo-SecureString -String $storageKey -AsPlainText -Force
-$credential = New-Object System.Management.Automation.PSCredential `
-  -ArgumentList "Azure\$storageName", $acctKey
-New-PSDrive `
-  -Name "Z" `
-  -PSProvider FileSystem `
-  -Root "\\$storageName.file.core.windows.net\$shareName" 
-  -Credential $credential
-```
-
-#### Retrieve the definition of a role
-> AZ-103: 1.4b.1 p. 88
-```powershell
-Get-AzRoleDefinition `
- -Name "Virtual Machine Contributor" |
-ConvertTo-Json
-```
-
-#### Retrieve operations that support `DataActions` and `NotDataActions` (PowerShell)
-> AZ-103: 1.4b.3 p.90
-```powershell
-Get-AzProviderOperation * | ? { $_.IsDataAction -eq $true }
-```
-
-#### List roles available for assignment
-> AZ-103: 1.4c.3 p. 96
-```powershell
-Get-AzRoleDefinition | Where-Object { $_.IsCustom -eq $true }
-```
-
-#### Grant a user RBAC rights
-> AZ-103: 1.4c.6 p. 96
-```powershell
-New-AzRoleAssignment `
- -SignInName cloudadmin@opsgility.onmicrosoft.com `
- -RoleDefinitionName "Virtual Machine Contributor" `
- -ResourceGroupName ExamRefRG
-```
-
-#### Grant a group RBAC rights
-> AZ-103: 1.4c.8 p. 97
-```powershell
-$group = Get-AzADGroup `
- -SearchString "Cloud Admins"
-New-AzRoleAssignment `
- -ObjectId $group.Id `
- -RoleDefinitionName "Virtual Machine Contributor" `
- -ResourceGroupName ExamRefRG
-```
-
-#### Remove RBAC assignments from a user
-> AZ-103: 1.4c.10 p. 97
-```powershell
-Remove-AzRoleAssignment `
- -SignInName cloudadmin@opsgility.onmicrosoft.com
- -RoleDefinitionName "Virtual Machine Contributor" `
- -ResourceGroupName ExamRefRG
-```
-
-#### Remove RBAC assignments from a group
-> AZ-103: 1.4c.11 p. 97
-```powershell
-$group = Get-AzADGRoup -SearchString "Cloud Admins"
-Remove-AzRoleAssignment `
- -ObjectId $group.Id `
- -RoleDefinitionName "Virtual Machine Contributor"
- -ResourceGroupName ExamRefRG
 ```
 
 ## Sources
