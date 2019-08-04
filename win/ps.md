@@ -12,6 +12,9 @@ From "View system uptime" below:
 Select-Object -Property @{n="Last Boot Time";e={[Management.ManagementDateTimeConvert]::ToDateTime($_.LastBootUpTime)}}
 ```
 
+#### `ForEach-Object`
+See [4.4c.02](../sources/az-103-tasks.md)
+
 ### Automatic variables
 **Automatic variables** are variables that store state information for PowerShell and are created and maintained by Powershell.
 
