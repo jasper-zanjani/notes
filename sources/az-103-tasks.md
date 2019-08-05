@@ -1,11 +1,18 @@
 # Exam Ref AZ-103 Microsoft Azure Administrator, by Michael Washam, Jonathan Tuliani, and Scott Hoag
 ## Tasks
+###  1       Manage Azure subscriptions and resource
 #### 1.1a.1: Assign an RBAC role (Portal)
 To assign an RBAC role to a subscription, open the __Subscription__, then the __Access Control (IAM)__ blades, then click __Add Role Assignment__. This will open a dialog box where you can select a __Role__ (e.g. Owner) then __Select__ a target principal.
 #### 1.1b.1: Configure resource quotas
 To view resource quotas for a subscription, go to the subscription in Azure Portal and open the __Usage + quotas__ blade. From there you can select resources and then click the __Request Increase__ button. PowerShell commands used with resource quotas:
-  - `Get-AzVMUsage`: view current usage of vCPU quotas
-  - `Get-AzStorageUsage`: view current usage of storage service
+```ps
+# View current usage of vCPU quotas
+Get-AzVMUsage
+```
+```ps
+# View current usage of storage service
+Get-AzStorageUsage
+``` 
 #### 1.1b.2 Configure cost center quotas
 Budgets can be viewed and administered in the __Cost Management + Billing__ blade. Users must be at least Reader to a subscription to view, and Contributor to create and manage, budgets. Specialized roles that grant access to Cost Management include
   - __Cost Management contributor__
@@ -36,7 +43,7 @@ $r = Get-AzResource -ResourceName hrvm1 -ResourceGroupName hrgroup
 $r.Tags.Add("Owner", "user@contoso.com")
 Set-AzResource -Tag $r.Tags -ResourceId $r.ResourceId -Force
 ```
-#### 1.1b.7: Remove tags from a resource (PowerShell)
+#### 1.1b.7: Remove tags from a resource group (PowerShell)
 ```ps
 Set-AzResourceGroup -Tag @{} -Name hrgroup
 ```
@@ -89,7 +96,7 @@ Set-AzDiagnosticSetting -ResourceId $resource.ResourceId -ServiceBusRuleId $rule
 $workspace = Get-AzOperationalInsightsWorkspace -Name $workspaceName -ResourceGroupName $resourceGroupName
 Set-AzDiagnosticSetting -ResourceId $resource.ResourceId -WorkspaceId $workspace.ResourceId -Enabled $true
 ```
-#### 1.2a.5 Enable diagnostic logs (Azure CLI)
+#### 1.2a.5 Obtain resource ID (Azure CLI)
 `az monitor diagnostic-settings create` to enable diagnostic logs. `az resource show` to obtain resource ID.
 ```sh
 resourceId=$(az resource show -resource-group $resourceGroupName -name $resourceName --resource-type $resourceType --query id --output tsv)
@@ -213,6 +220,7 @@ az role assignment delete --role "Virtual Machine Contributor" --assignee "cloud
 groupid=$(az ad group list --query "[?displayName=='CloudAdmins'].objectId" -o tsv)
 az role assignment delete --role "Virtual Machine Contributor" --assignee-object-id $groupid --resource-group ExamRefRG
 ```
+###  2       Implement and manage storage
 #### 2.1a.1: Create a storage account (Portal)
 Click **Create a resouce**, then **Storage**, then **Storage account**. Choose a **globally** unique name for the account, containing lower-case characters and digits only.
 #### 2.1a.2: Create a storage account (PowerShell)
@@ -268,7 +276,7 @@ az keyvault secret set --vault-name $vaultName --name $secretName --value $secre
 #### 2.1d.1: Create a SAS token for a specific storage blob (PowerShell)
 ```ps
 $storageKey = Get-AzStorageAccountKey -ResourceGroupName $rgName -Name $accountName
-$context = New-AzStorageContext -StorageAccountNAme $accountName -StorageAccountKey $storageKey[0].Value
+$context = New-AzStorageContext -StorageAccountName $accountName -StorageAccountKey $storageKey[0].Value
 $startTime = Get-Date
 $endTime = $startTime.AddHours(4)
 
@@ -282,11 +290,11 @@ az storage blob generate-sas --account-name "storageAccount" --account-key $stor
 1. Find **Management + Governance** in **All Services**
 2. Open **Activity Log**
 3. Click Logs icon at top of Activity Log view to select an existing Log Analytics (OMS) workspace or create a new one
-#### 2.1f.1: Change replication mode of a storage account
+#### 2.1f.1: Change replication mode of a storage account (PowerShell)
 ```ps
 Set-AzStorageAccount -ResourceGroupName $resourceGroup -Name $accountName -SkuName $type
 ```
-#### 2.1f.2: Use async blob copy service to copy a file
+#### 2.1f.2: Use async blob copy service to copy a file (PowerShell)
 ```ps
 $blobCopyState = Start-AzStorageBlobCopy -SrcBlob $blobName -SrcContainer $srcContainer -Context $srcContext -DestContainer $destContainer -DestBlob $vhdName -DestContext $destContext
 ```
@@ -419,15 +427,19 @@ WAImportExport.exe PrepImport \
 2. **Files**
 3. **+ File Share** button
 #### 2.3a.2: Create an Azure File Share (PowerShell)
-Variables:
 ```ps
+# Get key of storage account
 $storageKey = Get-AzStorageAccountKey -ResourceGroupName $rgName -Name $storageAccount 
+# Get context from storage key
 $context = New-AzStorageContext -StorageAccountName $storageAccount -StorageAccountKey $storageKey.Value[0]
+# Create the file share with the context
 New-AzStorageShare -Name $shareName -Context $context
 ```
 #### 2.3a.3: Create an Azure File Share (CLI)
 ```ps
+# Get the connection string associated with the account
 constring=$(az storage account show-connection-string -n $storageAccountName)
+# Create the file share with the connection string
 az storage share create --name $shareName --quota 2048 --connection-string $constring
 ```
 #### 2.3a.4: Connect to and mount an Azure File Share (Windows File Explorer)
@@ -476,6 +488,7 @@ Error message "This server is already registered during registration"
 Import-Module "C:\Program Files\Azure\StorageSyncAgent\StorageSync.Management.ServerCmdlets.dll"
 Reset-StorageSyncServer
 ```
+###  3       Deploy and manage virtual machines
 #### 3.1a.1: Create an Azure VM (Portal)
 ...
 #### 3.1a.2: Create an Azure VM (PowerShell)
@@ -1027,6 +1040,7 @@ az vm extension set --resource-group $rgName --vm-name $vmName --name customScri
 #### 3.4a.01: Backup a VM with Azure Backup
 #### 3.4d.01: Restore an Azure Backup recovery point as a new VM
 #### 3.4d.02: Restore access to files in Azure Backup
+###  4       Configure and manage virtual networks
 #### 4.1d.01: Configure user-defined routes (Portal)
 First, create the route table resource, then add routes 
 #### 4.1d.02: Configure user-defined routes (PowerShell)
@@ -1533,3 +1547,4 @@ az network local-gateway create --gateway-ip-address 53.50.123.195 --name LocalN
 az network vpn-connection create --name OnPremConnection --resource-group ExamRefRG --vnet-gateway1 VPNGW1 --location WestEurope --shared-key abc123 --local-gateway2 LocalNetGW
 ```
 #### 4.7c.01: Creating an ExpressRoute circuit
+###  5        Manage identities
