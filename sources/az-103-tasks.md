@@ -5,11 +5,11 @@
 To assign an RBAC role to a subscription, open the __Subscription__, then the __Access Control (IAM)__ blades, then click __Add Role Assignment__. This will open a dialog box where you can select a __Role__ (e.g. Owner) then __Select__ a target principal.
 #### 1.1b.1: Configure resource quotas
 To view resource quotas for a subscription, go to the subscription in Azure Portal and open the __Usage + quotas__ blade. From there you can select resources and then click the __Request Increase__ button. PowerShell commands used with resource quotas:
-```ps
+```powershell
 # View current usage of vCPU quotas
 Get-AzVMUsage
 ```
-```ps
+```powershell
 # View current usage of storage service
 Get-AzStorageUsage
 ``` 
@@ -23,40 +23,40 @@ To create a budget, open __Cost Management + Billing__, then __Subscriptions__, 
   - `.Tags` method that retrieves Tag collection from a resource group
   - `.Add()` method used to add tags to a resource group that __already has__ tags.
 #### 1.1b.3: Tag a resource group with no existing tags (PowerShell)
-```ps
+```powershell
 Set-AzResourceGroup -Name hrgroup -Tag @{CostCode=1001; Environment=Production}
 ```
 #### 1.1b.4: Tag a resource group with existing tags (PowerShell)
-```ps
+```powershell
 $tags = (Get-AzResourceGroup -Name hrgroup).Tags
 $tags.Add("Owner", "user@contoso.com")
 Set-AzResourceGroup -Tag $tags -Name hrgroup
 ```
 #### 1.1b.5: Tag a resource with no existing tags (PowerShell)
-```ps
+```powershell
 $r = Get-AzResource -ResourceName hrvm1 -ResourceGroupName hrgroup
 Set-AzResource -Tag @{ CostCode="1001"; Environment="Production" } -ResourceId $r.ResourceId -Force
 ```
 #### 1.1b.6: Tag a resource with existing tags (PowerShell)
-```ps
+```powershell
 $r = Get-AzResource -ResourceName hrvm1 -ResourceGroupName hrgroup
 $r.Tags.Add("Owner", "user@contoso.com")
 Set-AzResource -Tag $r.Tags -ResourceId $r.ResourceId -Force
 ```
 #### 1.1b.7: Remove tags from a resource group (PowerShell)
-```ps
+```powershell
 Set-AzResourceGroup -Tag @{} -Name hrgroup
 ```
 #### 1.1b.8: Retrieve resource groups with a specific tag (PowerShell)
-```ps
+```powershell
 (Get-AzResourceGroup -Tag @{ Owner="user@contoso.com" }).ResourceGroupName
 ```
 #### 1.1b.9: Retrieve resources with a specific tag (PowerShell)
-```ps
+```powershell
 (Get-AzResource -Tag @{ Owner="user@contoso.com"}).Name
 ```
 #### 1.1b.10: Retrieve resources based on a tag name but no value (PowerShell)
-```ps
+```powershell
 (Get-AzResource -TagName CostCode).Name
 ```
 #### 1.1c.1: Create a policy definition (Portal)
@@ -81,18 +81,18 @@ az policy assignment delete --name deny-non-compliant-vms
 Browse to the resource itself. Alternatively, open __Azure Monitor__ and then the __Diagnostics Settings__ blade. From there you can view all eligible resouce types and view status of log collection. 
 #### 1.2a.2 Enable diagnostics log collection with a storage account (PowerShell)
 `Set-AzDiagnostic-Setting` requires resource ID of resource being enabled (can be found with `Get-AzResource`) and resource ID of storage account (passed to `StorageAccountId` parameter).
-```ps
+```powershell
 $resource = Get-AzResource -Name $resourceName -ResourceGroupName $resourceGroupName
 $storage = Get-AzResource -Name $resourceName -ResourceGroupName $resourceGroupName
 Set-AzDiagnosticSetting -ResourceId $resource.ResourceId -StorageAccountId $storage.ResourceId -Enabled $true
 ```
 #### 1.2a.3 Enable diagnostics log streaming to an Event Hub (PowerShell) 
-```ps
+```powershell
 $rule = Get-AzServiceBusRule -ResourceGroup $resourceGroupName -Namespace $namespace -Topic $topic -Subscription $subscription -Name $ruleName
 Set-AzDiagnosticSetting -ResourceId $resource.ResourceId -ServiceBusRuleId $rule.Id -Enabled $true
 ```
 #### 1.2a.4 Enable diagnostics logs collection in a Log Analytics workspace (PowerShell)
-```ps
+```powershell
 $workspace = Get-AzOperationalInsightsWorkspace -Name $workspaceName -ResourceGroupName $resourceGroupName
 Set-AzDiagnosticSetting -ResourceId $resource.ResourceId -WorkspaceId $workspace.ResourceId -Enabled $true
 ```
@@ -134,11 +134,11 @@ az monitor diagnostic-settings create --name $diagnosticName --workspace $logAna
 3. Click Cloudyn
 4. Register with Cloudyn
 #### 1.3.1 Delete a resource group (PowerShell)
-```ps
+```powershell
 Remove-AzResourceGroup -Name $resourceGroup
 ```
 #### 1.3.2 Delete a resource group without confirmation (PowerShell)
-```ps
+```powershell
 Remove-AzResourceGroup -Name $resourceGroup -Force
 ```
 #### 1.3.3 Delete a resource group (CLI)
@@ -150,7 +150,7 @@ az group delete --name $resourceGroup
 az group delete --name $resourceGroup --yes
 ```
 #### 1.4b.1: Retrieve the definition of a role (PowerShell)
-```ps
+```powershell
 Get-AzRoleDefinition -Name "Virtual Machine Contributor" | ConvertTo-Json
 ```
 #### 1.4b.2: Retrieve the definition of a role (Azure CLI)
@@ -158,7 +158,7 @@ Get-AzRoleDefinition -Name "Virtual Machine Contributor" | ConvertTo-Json
 az role definition list -n "Virtual Machine Contributor"
 ```
 #### 1.4b.3: Retrieve operations that support `DataActions` and `NotDataActions` (PowerShell)
-```ps
+```powershell
 Get-AzProviderOperation * |? { $_.IsDataAction -eq $true }
 ```
 #### 1.4c.1: Assign a role to a user (Portal)
@@ -173,7 +173,7 @@ Get-AzProviderOperation * |? { $_.IsDataAction -eq $true }
 3. Open **Role Assignments** tab
 4. Select one or more security principals and click **Remove**
 #### 1.4c.3: List roles available for assignment (PowerShell)
-```ps
+```powershell
 Get-AzRoleDefinition | Where-Object { $_.IsCustom -eq $true }
 ```
 #### 1.4c.4: List custom roles available for assignment (Azure CLI)
@@ -185,7 +185,7 @@ az role definition list --custom-role-only -o table
 az role assignment list --all
 ```
 #### 1.4c.6: Grant a user RBAC rights (PowerShell)
-```ps
+```powershell
 New-AzRoleAssignment -SignInName "cloudadmin@opsgility.onmicrosoft.com" -RoleDefinitionName "Virtual Machine Contributor" -ResourceGroupName ExamRefRG
 ```
 #### 1.4c.7: Grant a user RBAC rights (Azure CLI)
@@ -193,7 +193,7 @@ New-AzRoleAssignment -SignInName "cloudadmin@opsgility.onmicrosoft.com" -RoleDef
 az role assignment create --assignee "cloudadmin@opsgility.onmicrosoft.com" --role "Virtual Machine Contributor" --resource-group ExamRefRG
 ```
 #### 1.4c.8: Grant a group RBAC rights (PowerShell)
-```ps
+```powershell
 $group = Get-AzADGroup -SearchString "Cloud Admins"
 New-AzRoleAssignment -ObjectId $group.Id -RoleDefinitionName "Virtual Machine Contributor" -ResourceGroupName ExamRefRG
 ```
@@ -203,11 +203,11 @@ groupid=$(az ad group list --query "[?displayName=='Cloud Admins'].objectId" -o 
 az role assignment create --role "Virtual Machine Contributor" --assignee-object-id $groupid --resource-group ExamRefRG
 ```
 #### 1.4c.10: Remove RBAC assignments from a user (PowerShell)
-```ps
+```powershell
 Remove-AzRoleAssignment -SignInName "cloudadmin@opsgility.onmicrosoft.com" -RoleDefinitionName "Virtual Machine Contributor" -ResourceGroupName ExamRefRG
 ```
 #### 1.4c.11: Remove RBAC assignments from a group (PowerShell)
-```ps
+```powershell
 $group = Get-AzADGRoup -SearchString "Cloud Admins"
 Remove-AzRoleAssignment -ObjectId $group.Id -RoleDefinitionName "Virtual Machine Contributor" -ResourceGroupName ExamRefRG
 ```
@@ -224,7 +224,7 @@ az role assignment delete --role "Virtual Machine Contributor" --assignee-object
 #### 2.1a.1: Create a storage account (Portal)
 Click **Create a resouce**, then **Storage**, then **Storage account**. Choose a **globally** unique name for the account, containing lower-case characters and digits only.
 #### 2.1a.2: Create a storage account (PowerShell)
-```ps
+```powershell
 New-AzStorageAccount -ResourceGroupName ExamRefRG -Name mystorage112300 -SkuName Standard_LRS -Location WestUS -Kind StorageV2 -AccessTier Hot
 ```
 #### 2.1a.3: Create a storage account (CLI)
@@ -232,7 +232,7 @@ New-AzStorageAccount -ResourceGroupName ExamRefRG -Name mystorage112300 -SkuName
 az storage account create --name $accountName --resource-group $resourceGroup -location $location --sku $sku
 ```
 #### 2.1a.4: Change storage account's access tier, without confirmation (PowerShell)
-```ps
+```powershell
 Set-AzStorageAccount -ResourceGroupName RG -Name $accountName -AccessTier Cool -Force
 ```
 #### 2.1b.1: Configure service endpoints (Portal)
@@ -242,23 +242,23 @@ Set-AzStorageAccount -ResourceGroupName RG -Name $accountName -AccessTier Cool -
 1. Open storage account
 2. Open **Access keys** blade
 #### 2.1c.2: Create an Azure Key Vault (PowerShell)
-```ps
+```powershell
 New-AzKeyVault -VaultName $vaultName -Name $keyName -ResourceGroupName $rgName -Location $location
 ```
 #### 2.1c.3: Store a software managed key in Azure Key Vault (PowerShell)
-```ps
+```powershell
 $key = Add-AzKeyVaultKey -VaultName $vaultName -Name $keyName -Destination 'Software'
 ```
 #### 2.1c.4: Retrieve a storage account key (PowerShell)
-```ps
+```powershell
 $storageKey = Get-AzStorageAccountKey -ResourceGroupName $rgName -Name $storageAccount 
 ```
 #### 2.1c.5: Convert storage account key to secure string
-```ps
+```powershell
 $secretvalue = ConvertTo-SecureString $storageKey[0].Value -AsPlainText -Force
 ```
 #### 2.1c.6: Set secret value to be used in Azure Key Vault (PowerShell)
-```ps
+```powershell
 $secret = Set-AzKeyVaultSecret -VaultName $vaultName -Name $secretName -SecretValue $secretvalue
 ```
 #### 2.1c.7: Create an Azure Key Vault (Azure CLI)
@@ -274,7 +274,7 @@ az keyvault key create --vault-name $vaultName --name $keyName --protection "sof
 az keyvault secret set --vault-name $vaultName --name $secretName --value $secretValue
 ```
 #### 2.1d.1: Create a SAS token for a specific storage blob (PowerShell)
-```ps
+```powershell
 $storageKey = Get-AzStorageAccountKey -ResourceGroupName $rgName -Name $accountName
 $context = New-AzStorageContext -StorageAccountName $accountName -StorageAccountKey $storageKey[0].Value
 $startTime = Get-Date
@@ -291,33 +291,33 @@ az storage blob generate-sas --account-name "storageAccount" --account-key $stor
 2. Open **Activity Log**
 3. Click Logs icon at top of Activity Log view to select an existing Log Analytics (OMS) workspace or create a new one
 #### 2.1f.1: Change replication mode of a storage account (PowerShell)
-```ps
+```powershell
 Set-AzStorageAccount -ResourceGroupName $resourceGroup -Name $accountName -SkuName $type
 ```
 #### 2.1f.2: Use async blob copy service to copy a file (PowerShell)
-```ps
+```powershell
 $blobCopyState = Start-AzStorageBlobCopy -SrcBlob $blobName -SrcContainer $srcContainer -Context $srcContext -DestContainer $destContainer -DestBlob $vhdName -DestContext $destContext
 ```
-```ps
+```powershell
 # Get storage account keys
 $srcStorageKey = Get-AzStorageAccountKey -ResourceGroupName $sourceRGName -Name $srcStorageAccount
 $destStorageKey = Get-AzStorageAccountKey -ResourceGroupName $destRGName -Name $destStorageAccount
 ```
-```ps
+```powershell
 # Create storage account contexts
 $srcContext = New-AzStorageContext -StorageAccountName $srcStorageAccount -StorageAccountKey $srcStorageKey.Value[0]
 $destContext = New-AzStorageContext -StorageAccountNAme $destStorageAccount -StorageAccountKey $destStorageKey.Value[0]
 ```
-```ps
+```powershell
 # Create new container in destination account
 New-AzStorageContainer -Name $destContainer -Context $destContext
 ```
-```ps
+```powershell
 # Make the copy
 $copiedBlob = Start-AzStorageBlobCopy -SrcBlob $blobName -SrcContainer $srcContainer -Context $srcContext -DestContainer $destContainer -DestBlob $blobName -DestContext $destContext
 ```
 #### 2.1f.3: Monitor progress of the async blob copy (PowerShell)
-```ps
+```powershell
 $copiedBlob | Get-AzStorageBlobCopyState
 ```
 #### 2.1f.4: Copy a blob from one storage account to another (Azure CLI)
@@ -333,20 +333,20 @@ az storage blob show --account-name $destStorageAccount --account-key $destStora
 AzCopy /Source:https://sourceblob.blob.core.windows.net/sourcecontainer/ /Dest:https://deststorage.blob.core.windows.net/destcontainer/ /SourceKey:sourcekey /DestKey:destkey /Pattern:disk1.vhd
 ```
 #### 2.2a.1: Create a storage container (PowerShell)
-```ps
+```powershell
 # Get account key
 $storageKey = Get-AzStorageAccountKey -Name $storageAccount -ResourceGroupName $resourceGroup
 ```
-```ps
+```powershell
 # Create and store the storage context
 $context = New-AzStorageContext -StorageAccountName $storageAccount -StorageAccountKey $storageKey.Value[0]
 Set-AzCurrentStorageAccount -Context $context
 ```
-```ps
+```powershell
 # Create storage container
 New-AzStorageContainer -Name $container -Permission Off
 ```
-```ps
+```powershell
 # Create storage blob
 Set-AzStorageBlobContent -File $localFile -Container $container -Blob $blobName
 ```
@@ -427,7 +427,7 @@ WAImportExport.exe PrepImport \
 2. **Files**
 3. **+ File Share** button
 #### 2.3a.2: Create an Azure File Share (PowerShell)
-```ps
+```powershell
 # Get key of storage account
 $storageKey = Get-AzStorageAccountKey -ResourceGroupName $rgName -Name $storageAccount 
 # Get context from storage key
@@ -436,7 +436,7 @@ $context = New-AzStorageContext -StorageAccountName $storageAccount -StorageAcco
 New-AzStorageShare -Name $shareName -Context $context
 ```
 #### 2.3a.3: Create an Azure File Share (CLI)
-```ps
+```powershell
 # Get the connection string associated with the account
 constring=$(az storage account show-connection-string -n $storageAccountName)
 # Create the file share with the connection string
@@ -456,7 +456,7 @@ net use x \\erstandard01.file.core.windows.net\logs /u:AZURE\erstandard01 <acces
 ```
 #### 2.3a.6: Connect to and mount an Azure File Share (PowerShell)
 `New-PSDrive` maps the drive
-```ps
+```powershell
 $storageKey = (Get-AzStorageAccountKey -ResourceGroupName $rgName -Name $storageNAme).Value[0]
 $acctKey = ConvertTo-SecureString -String $storageKey -AsPlainText -Force
 $credential = New-Object System.Management.Automation.PSCredential -ArgumentList "Azure\$storageName", $acctKey
@@ -484,7 +484,7 @@ StorageSyncAgent.msi /l*v AFSInstaller.log
 ```
 #### 2.3d.2: Remove the server from registered sync group
 Error message "This server is already registered during registration"
-```ps
+```powershell
 Import-Module "C:\Program Files\Azure\StorageSyncAgent\StorageSync.Management.ServerCmdlets.dll"
 Reset-StorageSyncServer
 ```
@@ -492,7 +492,7 @@ Reset-StorageSyncServer
 #### 3.1a.1: Create an Azure VM (Portal)
 ...
 #### 3.1a.2: Create an Azure VM (PowerShell)
-```ps
+```powershell
 # Variables
 $subnets = @()
 $subnet1Name = "Subnet1"
@@ -502,53 +502,53 @@ $subnet2AddressPrefix = "10.0.1.0/24"
 $vnetAddressSpace = "10.0.0.0/16"
 $vnetName = "ExamRefVNET"
 ```
-```ps
+```powershell
 # Login to Azure account
 Connect-AzAccount
 ```
-```ps
+```powershell
 # Create a new resource group 
 New-AzResourceGroup -Name $resourceGroupName -Location $location
 ```
-```ps
+```powershell
 # Create a virtual network
 $subnets = @()
 $subnets += New-AzVirtualNetworkSubnetConfig -Name $subnet1Name -AddressPrefix $subnet1AddressPrefix
 $subnets += New-AzVirtualNetworkSubnetConfig -Name $subnet2Name -AddressPrefix $subnet2AddressPrefix
 $vnet = New-AzVirtualNetwork -Name $vnetName -Location $location -AddressPrefix $vnetAddressSpace -Subnet $subnets
 ```
-```ps
+```powershell
 # Create a public IP address
 $pip = New-AzPublicIpAddress -Name $ipName -ResourceGroupName $rgName -Location $location -AllocationMethod Dynamic -DomainNameLabel $dnsName
 ```
-```ps
+```powershell
 # Add a rule to the network security group to allow RDP in
 $nsgRules = @()
 $nsgRules += New-AzNetworkSecurityRuleConfig -Name "RDP" -Description "RemoteDesktop" -Protocol Tcp -SourcePortRange "*" -DestinationPortRange "3389" -SourceAddressPrefix "*" -DestinationAddressPrefix "*" -Access Allow -Priority 110 -Direction Inbound
 ```
-```ps
+```powershell
 # Apply the rules
 $nsg = New-AzNetworkSecurityGroup -ResourceGroupName $resourceGroupName -Name "ExamREfNSG" -SecurityRules $nsgRules -Location $location
 ```
-```ps
+```powershell
 # Create a virtual machine configuration object with the `New-AzVMConfig` cmdlet
 $vm = New-AzVMConfig -VMName $vmName -VMSize $vmSize
 ```
-```ps
+```powershell
 # Specify operating system and credentials
 Set-AzVMOperatingSystem -Windows -ComputerName $vmName -Credential $cred -ProvisionVMAgent -VM $vm
 ```
-```ps
+```powershell
 # Specify the operating system image using `Set-AzVMSourceImage`
 Set-AzVMSourceImage -PublisherName $pubName -Offer $offerName -Skus $skuName -Version "latest" -VM $vm
 Set-AzVMOSDisk -CreateOption fromImage -VM $vm
 ```
-```ps
+```powershell
 # Create a network interface
 $nic = New-AzNetworkInterface -Name $nicNAme -ResourceGroupName $resourceGroupName -Location $location -SubnetId $vnet.Subnets[0].Id -PublicIpAddressId $pip.Id -NetworkSecurityGroupId $nsg.Id
 Add-AzVMNetworkInterface -VM $vm -NetworkInterface $nic
 ```
-```ps
+```powershell
 # Provision the virtual machine with `New-AzVM`
 New-AzVM -ResourceGroupName $resourceGroupName -Location $location -VM $vm
 ```
@@ -619,18 +619,18 @@ az vm create -n $vmName -g $rgName -l $location --size $vmSize --nics $nicname -
 ```
 #### 3.1a.4: Capture a managed VM image (Portal)
 #### 3.1a.5: Capture a managed VM image (PowerShell)
-```ps
+```powershell
 # Variables
 $rgName = "Contoso"
 $vmName = "ImageVM"
 $location = "WestUS"
 $imageName = "WinVMImage"j
 ```
-```ps
+```powershell
 # Set status of VM to "Generalized"
 Set-AzVM -ResourceGroupName  $rgName -Name $vmName -Generalized 
 ```
-```ps
+```powershell
 # Create a managed VM from a VM
 $vm = Get-AzVM -ResourceGroupName $rgName -Name $vmName
 $image = New-AzImageConfig -Location $location -SourceVirtualMachineId $vm.ID 
@@ -654,7 +654,7 @@ az image create --resource-group $rgName --name $imageName --source $vmName
 ```
 #### 3.1a.7: Create a VM from an image
 #### 3.1a.34: Specify a legacy unmanaged image for use in a new virtual machine (PowerShell)
-```ps
+```powershell
 $osDiskUri = "https://examrefstorage.blob.core.windows.net/vhd/os-disk"
 $imageUri = "https://examrefstorage.blob.core.windows.net/images/legacy-image.vhd"
 $vm = Set-AzVMOSDisk -VM $vm -Name $osDiskName -VhdUri $osDiskUri -CreateOption fromImage -SourceImageUri $imageUri -Windows
@@ -664,7 +664,7 @@ $vm = Set-AzVMOSDisk -VM $vm -Name $osDiskName -VhdUri $osDiskUri -CreateOption 
 az vm create --resource-group $rgName --name $vmName --image $osDiskUri --generate-ssh-keys
 ```
 #### 3.1a.36: Specify a managed image for use in a new virtual machine (PowerShell)
-```ps
+```powershell
 $image = Get-AzImage -ImageName $imageName -ResourceGroupName $rgName
 $vmConfig = Set-AzVMSourceImage -VM $vmConfig -Id $image.Id
 ```
@@ -674,13 +674,13 @@ az vm create -g $rgName -n $vmName --image $imageName
 ```
 #### 3.1b.01: Create an availability set (Portal)
 #### 3.1b.02: Create an availability set (PowerShell)
-```ps
+```powershell
 # Variables
 $rgName = "ExamRefRG"
 $avSetName = "WebAVSet"
 $location = "West US"
 ```
-```ps
+```powershell
 # Create an availability set
 New-AzavailabilitySet -ResourceGroupName $rgName -Name $avSetName -Location $location -PlatformUpdateDomainCount 10 -PlatformFaultDomainCount 3 -Sku "Aligned"
 ```
@@ -696,17 +696,17 @@ location="WestUS"
 az vm availability-set create --name $avSetName --resource-group $rgName --platform-fault-domain-count 3 --platform-update-domain-count 10
 ```
 #### 3.1c.01: Resizing a VM (PowerShell)
-```ps
+```powershell
 # Variables
 $rgName = "ExamRefRG"
 $vmName = "Web1"
 $size = "Standard_DS2_V2"
 ```
-```ps
+```powershell
 # View available sizes
 Get-AzVMSize -Location $location
 ```
-```ps
+```powershell
 # Change VM to the new size
 $vm = Get-AzVM -ResourceGroupName $rgName -VMName $vmNAme
 $vm.HardwareProfile.VMSize = "Standard_DS2_V2"
@@ -719,7 +719,7 @@ az vm resize --resource-group $rgName --name $vmName --size Standard_DS3_v2
 ```
 #### 3.1e.01: Modify host cache setting on a virtual HD (Portal)
 #### 3.1e.02: Modify host cache setting on a virtual HD (PowerShell)
-```ps
+```powershell
 $vm = Get-AzVM -ResourceGroupName $rgName -Name $vmName
 Set-AzVMDataDisk -VM $vm -Lun 0 -Caching ReadOnly
 Update-AzVM -ResourceGroupName $rgName -VM $vm
@@ -741,17 +741,17 @@ az vm unmanaged-disk attach
 ```
 #### 3.1e.05: Create a new storage pool using all available disks (PowerShell)
 #### 3.1f.01: Connecting to a Windows VM with remote desktop
-```ps
+```powershell
 # Variables
 $rgName = "ExamRefRG"
 $vmName = "ExamRefVM"
 $Path = "C:\path\to\ExamRefVM.rdp"
 ```
-```ps
+```powershell
 # Use `Launch` param to retrieve .rdp file and immediately open it with a Remote Desktop client
 Get-AzRemoteDesktopFile -ResourceGroupName $rgName -Name $vmName -Launch
 ```
-```ps
+```powershell
 # Specify `LocalPath` param to save the .rdp file for later use
 Get-AzRemoteDesktopFile -ResourceGroupName $rgName -Name $vmName -LocalPath $path
 ```
@@ -760,58 +760,58 @@ Get-AzRemoteDesktopFile -ResourceGroupName $rgName -Name $vmName -LocalPath $pat
 #### 3.1g.02: Enabling and configuring diagnostics (Linux)
 #### 3.1h.01: Creating a virtual machine scale set (Portal)
 #### 3.1h.02: Creating a virtual machine scale set (PowerShell)
-```ps
+```powershell
 # Variables
 $rgName = "ExamRefRG"
 $location = "WestUS"
 $vmSize = "Standard_DS2_V2"
 $capacity = 2
 ```
-```ps
+```powershell
 # Create a VMSS with IIS installed from a custom script extension
 New-AzResourceGroup -Name $rgName -Location $location
 ```
-```ps
+```powershell
 # Create a config object
 $vmssConfig = New-AzVmssConfig -Location $location -SkuCapacity $capacity -SkuName $vmSize -UpgradePolicyMode Automatic
 ```
-```ps
+```powershell
 # Create a public IP address
 $publicIP = New-AzPublicIpAddress -ResourceGroupName $rgNAme -Location $locaiton -AllocationMethod Static -Name $publicIPName
 ```
-```ps
+```powershell
 # Create a frontend and backend IP pool
 $frontendIP = New-AzLoadBalancerFrontendIpConfig -Name "lbFrontEndPool" -PublicIpAddress $publicIP
 $backendPool = New-AzLoadBalancerBackendAddressPoolConfig -Name "lbBackEndPool"
 ```
-```ps
+```powershell
 # Create the load balancer
 $lb = New-AzLoadBalancer -ResourceGroupName $rgName -Name "lbrule" -Location $location -FrontendIPConfiguration $frontendIP -BackendAddressPool $backendPool
 ```
-```ps
+```powershell
 # Create a load balancer rule to distribute traffic on port 80
 Add-AzLoadBalancerProbeConfig -Name "lbrule" -LoadBalancer $lb -Protocol http -Port 80 -IntervalInSeconds 15 -ProbeCount 2 -RequestPath "/"
 Set-AzLoadBalancer -LoadBalancer $lb
 ```
-```ps
+```powershell
 # Reference a VM image from the gallery
 Set-AzVmssStorageProfile $vmssConfig -ImageReferencePublisher MicrosoftWindowsServer -ImageReferenceOffer WindowsServer -ImageReferenceSku 2016-Datacenter -ImageReferenceVersion latest -OsDiskCreateOption FromImage
 ```
-```ps
+```powershell
 # Set up information for authenticating with the VM
 Set-AzVmssOsProfile $vmssConfig -AdminUsername "azureuser" -AdminPassword "P@ssword!" -ComputerNamePrefix "ssVM"
 ```
-```ps
+```powershell
 # Create VNet resources
 $subnet = New-AzVirtualNetworkSubnetConfig -Name "web" -AddressPrefix 10.0.0.0/24
 $vnet = New-AzVirtualNetwork -ResourceGroupName $rgName -Name $ssName -Location $location -AddressPrefix 10.0.0.0/16 -Subnet $subnet
 $ipConfig = New-AzVmssIpConfig -Name "vmssIPConfig" -LoadBalancerBackendAddressPoolsId $lb.BackendAddressPools[0].Id -SubnetId $vnet.Subnets[0].Id
 ```
-```ps
+```powershell
 # Attach the VNet to the config object
 Add-AzVmssNetworkInterfaceConfiguration -VirtualMachineScaleSet $vmssConfig -Name "network-config" -Primary $true -IPConfiguration $ipConfig 
 ```
-```ps
+```powershell
 # Create the scale set with the config object
 New-AzVmss -ResourceGroupName $rgName -Name $scaleSetName -VirtualMachineScaleSet $vmssConfig
 ```
@@ -825,21 +825,21 @@ password="P@ssword!"
 vmPrefix="ssVM"
 location="WestUS"
 ```
-```ps
+```powershell
 # Create a VM Scale Set with load balancer, virtual network, and a public IP address
 az group create --name $rgName --location $location
 az vmss create --resource-group $rgName --name $ssName --image UbuntuLTS --authentication-type password --admin-username $userName --admin-password $password
 ```
 #### 3.2c.01: Deploy a template that creates a VM (Portal)
 #### 3.2c.02: Deploy a template that creates a VM (PowerShell)
-```ps
+```powershell
 # Variables
 $rgName = "ExamRefRG"
 $location = "WestUs"
 $deploymentName = "simpleVMDeployment"
 $templateUri = "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-vm-simple-windows/azuredeploy.json"
 ```
-```ps
+```powershell
 # Create a resource group
 New-AzResourceGroup -Name $rgName -Location $location
 # Deploy template from GitHub
@@ -862,7 +862,7 @@ az group create --name $rgNAme --location $location
 az group deployment create --name $deploymentName --resource-group $rgName --template-uri $templateUri
 ```
 #### 3.2d.01: Deploy a template in Complete mode
-```ps
+```powershell
 New-AzResourceGroupDeployment -Mode Complete -Name simpleVMDeployment -ResourceGroupName ExamRefRG
 ```
 ```sh
@@ -871,14 +871,14 @@ az group deployment create --name simpleVMDeployment --mode Complete --resource-
 #### 3.2e.01: Export deployment template (Portal)
 #### 3.2e.02: Access template that represents current state of resource group
 #### 3.2e.03: Export templates
-```ps
+```powershell
 Save-AzResourceGroupDeploymentTemplate -ResourceGroupName ExamRefRG -DeploymentName simpleVMDeployment
 ```
 ```sh
 az group deployment export --name simpleVMDeployment --resource-group ExamRefRG
 ```
 #### 3.2e.04: Export all resources in a resource group as a template
-```ps
+```powershell
 Export-AzResourceGroup -ResourceGroupName ExamRefRG
 ```
 ```sh
@@ -887,28 +887,28 @@ az group export --name ExamRefRG
 #### 3.2e.05: Pass a template file during deployment
 #### 3.3a.01: Add a data disk to an existing VM (Portal)
 #### 3.3a.02: Attach a new managed disk to an existing VM
-```ps
+```powershell
 # Variables
 $dataDiskName = "MyDataDisk"
 $location="WestUS"
 ```
-```ps
+```powershell
 # Create the disk configuration
 $diskConfig = New-AzDiskConfig -SkuName Premium_LRS -Location $location -CreateOption Empty -DiskSizeGB 128
 ```
-```ps
+```powershell
 # Create the disk
 $dataDisk1 = New-AzDisk -DiskName $dataDiskName -Disk $diskConfig -ResourceGroupNAme ExamRefRG
 ```
-```ps
+```powershell
 # Retrieve the current VM
 $vm = Get-AzVM -Name ExamRefVM -ResourceGroupName ExamRefRG
 ```
-```ps
+```powershell
 # Attach the disk
 $vm = Add-AzVMDataDisk -VM $vm -Name $dataDiskName -CreateOption Attach -ManagedDiskId $dataDisk1.Id -Lun 1
 ```
-```ps
+```powershell
 # Update the VM
 Update-AzVM -VM $vm -ResourceGroupName ExamRefRG
 ```
@@ -917,7 +917,7 @@ az vm disk attach -g ExamRefRG --vm-name ExamRefVM --name myDataDisk --new --siz
 ``` 
 #### 3.3b.01: Add a new network interface to an existing VM
 #### 3.3b.02: Attach a new network interface to an existing VM
-```ps
+```powershell
 # Variables
 $vnetNAme = "ExamRefVNET"
 $subnetName = "Subnet-1"
@@ -925,24 +925,24 @@ $rgName = "ExamRefRG"
 $vmName = "ExamRefVM"
 $nicName = "newnic"
 ```
-```ps
+```powershell
 # Deallocate the VM
 Stop-AzVM -Name $vmName -ResourceGroupName $rgName
 ```
-```ps
+```powershell
 # Retrieve the VM configuration
 $vm = Get-AzVm -Name ExamRefVM -ResourceGroupName $rgName
 ```
-```ps
+```powershell
 # Get info for the backend subnet
 $myVnet = Get-AzVirtualNetwork -ResourceGroupName $rgName -Name $vnetName
 $backend = $myVnet.Subnets |? { $_.Name -eq $subnetName }
 ```
-```ps
+```powershell
 # Create a virtual NIC
 $newNic = New-AzNetworkInterface -ResourceGroupName $rgName -Name $nicName -Location $location -SubnetId $newNic.Id
 ```
-```ps
+```powershell
 # Get the ID of the new virtual NIC and add to VM
 $nicId = (Get-AzNetworkInterface -ResourceGroupName $rgName -Name $nicName).Id
 Add-AzVMNetworkInterface -VM $vm -Id $nicId -Primary | Update-AzVm -ResourceGroupName $rgName
@@ -963,15 +963,15 @@ az vm nic add -g $rgName --vm-name $vmName --nics $nicName --primary-nic
 #### 3.3c.02: Change VM to a new size
 #### 3.3d.01: Move a VM to another resource group or subscription (Portal)
 #### 3.3d.02: Move a resource to another resource group or subscription (PowerShell)
-```ps
+```powershell
 # Use `Get-AzResource` to identify the resource ID value
 $resourceID = Get-AzResource -ResourceGroupName ExamRefRG | Format-Table -Property ResourceId
 ```
-```ps
+```powershell
 # Specify the destination resource group and the resource ID to move
 Move-AzResource -DestinationResourceGroupName ExamRefDestRG -ResourceId $resourceID
 ```
-```ps
+```powershell
 # To move to a different subscription, use the `-DestinationSubscriptionId` param
 Move-AzResource -DestinationSubscriptionId $subscriptionID -DestinationResourceGroupName ExamRefDestRG -ResourceId $resourceID
 ```
@@ -990,12 +990,12 @@ az resource move --destination-group ExamrefDestRG --destination-subscription-id
 ```
 #### 3.3e.01: Redeploy a VM
 #### 3.3f.01: Package a DSC script into a zip file
-```ps
+```powershell
 Publish-AzVMDscConfiguration -ConfigurationPath .\ContosoWeb.ps1 -OutputArchivePath .\ContosoWeb.zip
 ```
 #### 3.3f.02: Apply the PowerShell Desired State Configuration extension
 #### 3.3f.03: Publish a packaged DSC script to a storage account
-```ps
+```powershell
 # Variables
 $rgName = "ExamRefRG"
 $location =- "WestUS"
@@ -1005,21 +1005,21 @@ $configurationName = "Main"
 $archiveBlob = "ContosoWeb.ps1.zip"
 $configurationPath = ".\ContosoWeb.ps1"
 ```
-```ps
+```powershell
 # Publish the configuration script into Azure storage
 Publish-AzVMDscConfiguration -ConfigurationPath $configurationPath -ResourceGroupName $rgName -StorageAccountName $storageName
 ```
-```ps
+```powershell
 # Set the VM to run the DSC configuration
 Set-AzVmDscExtension -Version 2.76 -ResourceGroupName $rgName -VMName $vmName -ArchiveStorageAccountNAme $storageName -ArchiveBlobName $archiveBNlob -AutoUpdate:$false -ConfigurationName $configurationName
 ```
 #### 3.3f.04: Use the custom script extension
-```ps
+```powershell
 # Deploy the Active Directory Domain Services role
 Install-WindowsFeature -Name "AD-Domain-Services" -IncludeManagementTools -IncludeAllSubFeature
 Install-ADDSForest -DomainName $domain -DomainMode Win2012 -ForestMode Win2012 -Force -SafeModeAdministratorPassword $smPassword
 ```
-```ps
+```powershell
 # Use `Set-AzVMCustomScriptExtension` to run script on a VM
 $rgName = "ExamRefRG"
 $vmName = "ExamRefVM"
@@ -1045,29 +1045,29 @@ az vm extension set --resource-group $rgName --vm-name $vmName --name customScri
 First, create the route table resource, then add routes 
 #### 4.1d.02: Configure user-defined routes (PowerShell)
 Create the route table resource
-```ps
+```powershell
 $rt = New-AzRouteTable -Name RouteTable1 -ResourceGroupName ExamRefRG
 ```
 Add a route to route table
-```ps
+```powershell
 Add-AzRouteConfig -RouteTable $rt -Name Route1 -AddressPrefix 10.3.0.0/16 -NextHopType VirtualAppliance -NextHopIpAddress 10.2.20.4
 Set-AzRouteTable -RouteTable $rt
 ```
 Find the VNet and subnet
-```ps
+```powershell
 $vnet = Get-AzVirtualNetwork -Name VNet1 -ResourceGroupNAme ExamRefRG 
 $subnet = $vnet.Subnets | where {$_.Name -eq "Default"}
 ```
 Update the subnet to specify the route table
-```ps
+```powershell
 Set-AzVirtualNetworkSubnetConfig -VirtualNetwork $vnet -Name Default -AddressPrefix $subnet.AddressPrefix -RouteTable $rt
 ```
 Commit the VNet back to Azure
-```ps
+```powershell
 Set-AzVirtualNetwork -VirtualNetwork $vnet
 ```
 Get effective routes for a NIC
-```ps
+```powershell
 Get-AzEffectiveRouteTable -NetworkInterfaceName VNet1-VM -ResourceGroupName ExamRefRG
 ```
 #### 4.1d.03: Configure user-defined routes (Azure CLI)
@@ -1089,16 +1089,16 @@ az network nic show-effective-route-table --name VM1-NIC --resource-group ExamRe
 ```
 #### 4.2a.01: Creating a VNet peering (Portal)
 #### 4.2a.02: Creating a VNet peering (PowerShell)
-```ps
+```powershell
 $vnet1 = Get-AzVirtualNetwork -ResourceGroupName ExamRefRG -Name VNet1
 $vnet2 = Get-AzVirtualNetwork -ResourceGroupName ExamRefRG -Name VNet2
 ```
-```ps
+```powershell
 # Peer Vnet1 to VNet2 (and vice versa)
 Add-AzVirtualNetworkPeering -Name 'VNet2-to-VNet1' -VirtualNetwork $vnet2 -RemoteVirtualNetworkId $vnet1.Id
 Add-AzVirtualNetworkPeering -Name 'VNet1-to-VNet2' -VirtualNetwork $vnet1 -RemoteVirtualNetworkId $vnet2.Id
 ```
-```ps
+```powershell
 # Check the peering status
 Get-AzVirtualNetworkPeering -ResourceGroupName ExamRefRG -VirtualNetworkName VNet1 |
 Format-Table VirtualNetworkName, PeeringState
@@ -1119,7 +1119,7 @@ az network vnet peering list --resource-group ExamRefRG --vnet-name VNet2 -o tab
 ```
 #### 4.2b.01: Creating a VPN gateway and VNet-to-VNet connection (Portal)
 #### 4.2b.02: Creating a VPN gateway and VNet-to-VNet connection (PowerShell)
-```ps
+```powershell
 # Create gateway subnets in VNet2 and VNet3
 $vnet2 = Get-AzVirtualNetwork -Name VNet2 -ResourceGroupName ExamRefRG
 $vnet2.Subnets += New-AzVirtualNetworkSubnetConfig -Name GatewaySubnet -AddressPrefix 10.2.1.0/27
@@ -1128,21 +1128,21 @@ $vnet3 = Get-AzVirtualNetwork -Name VNet3 -ResourceGroupName ExamRefRG
 $vnet3.Subnets += New-AzVirtualNetworkSubnetConfig -Name GatewaySubnet -AddressPrefix 10.3.1.0/27
 $vnet3 = Set-AzVirtualNetwork -VirtualNetwork $vnet3
 ```
-```ps
+```powershell
 # Create VPN gateway in VNet2
 $gwpip2 = New-AzPublicIpAddress -Name VNet2-GW-IP -ResourceGroupName ExamRefRG -Location $vnet2.Location -AllocationMethod Dynamic
 $gwsubnet2 = Get-AzVirtualNetworkSubnetConfig -Name 'GatewaySubnet' -VirtualNetwork $vnet2
 $gwipconf2 = New-AzVirtualNetworkGatewayIpConfig -Name GwIPConf2 -Subnet $gwsubnet2 -PublicIpAddress $gwpip2
 $vnet2gw = New-AzVirtualNetworkGateway -Name VNet2-GW -ResourceGroupNAme ExamRefR -Location $vnet2.Location -IpConfigurations $gwipconf2 -GatewayType Vpn -VpnType RouteBased -GatewaySku VpnGw1
 ```
-```ps
+```powershell
 # Create VPN gateway in VNet3
 $gwpip3 = New-AzPublicIpAddress -Name VNet3-GW-IP -ResourceGroupName ExamRefR -Location $vnet3.Location -AllocationMethod Dynamic
 $gwsubnet3 = Get-AzVirtualNetworkSubnetConfig -Name 'GatewaySubnet' -VirtualNetwork $vnet3
 $gwipconf3 = New-AzVirtualNetworkGatewayIpConfig -Name GwIPConf3 -Subnet $gwsubnet3 -PublicIpAddress $gwpip3
 $vnet3gw = New-AzVirtualNetworkGateway -Name VNet3-GW -ResourceGroupNAme ExamRefRG -Location $vnet3.Location -IpConfigurations $gwipconf3 -GatewayType Vpn -VpnType RouteBased -GatewaySku VpnGw1
 ```
-```ps
+```powershell
 # Create connections
 New-AzVirtualNetworkGatewayConnection -Name VNet2-to-VNet3 -ResourceGroupName ExamRefRG -Location $vnet2.Location -VirtualNetworkGateway1 $vnet2gw -VirtualNetworkGateway2 $vnet3gw -ConnectionType VNet2VNet -SharedKey "secretkey123"
 New-AzVirtualNetworkGatewayConnection -Name VNet3-to-VNet2 -ResourceGroupName ExamRefRG -Location $vnet3.Location -VirtualNetworkGateway1 $vnet3gw -VirtualNetworkGateway2 $vnet2gw -ConnectionType VNet2VNet -SharedKey "secretkey123"
@@ -1170,29 +1170,29 @@ az network vpn-connection create --name VNet3-to-VNet2 --resource-group ExamRefR
 ```
 #### 4.3a.01: Creating DNS zones and DNS records (Portal)
 #### 4.3a.02: Creating DNS zones and DNS records (PowerShell)
-```ps
+```powershell
 # Create a DNS zone
 New-AzDnsZone -Name examref.com -ResourceGroupName ExamRefRG
 ```
-```ps
+```powershell
 # Create a record set containing a single record
 New-AzDnsRecordSet -Name www -RecordType A -ZoneName examref.com -ResourceGroupName ExamRefRG -Ttl 3600 -DnsRecords (New-AzDnsRecordConfig -IPv4Address "1.2.3.4")
 ```
-```ps
+```powershell
 # Create a record set at the zone apex containing multiple records
 $records = @()
 $records += New-AzDnsRecordConfig -IPv4Address "1.2.3.4"
 $records += New-AzDnsRecordConfig -IPv4Address "5.6.7.8"
 New-AzDnsRecordSet -Name "@" -RecordType A -ZoneName examref.com -ResourceGroupName ExamRefRG -Ttl 3600 -DnsRecords $records
 ```
-```ps
+```powershell
 # Add a new record to and remove an existing record from an existing record set
 $recordset = Get-AzDnsRecordSet -Name www -RecordType A -ZoneName examref.com -ResourceGroupName ExamRefRG
 Add-AzdnsRecordConfig -RecordSet $recordset -IPv4Address "5.6.7.8"
 Remove-AzDnsRecordConfig -RecordSet $recordset -IPv4Address "1.2.3.4"
 Set-AzDnsRecordSet -RecordSet $recordset
 ```
-```ps
+```powershell
 # View records
 Get-AzDnsRecordSet -ZoneName examref.com -ResourceGroupName ExamRefRG
 ```
@@ -1220,11 +1220,11 @@ az network dns record-set list --zone-name examref.com --resource-group ExamRefR
 ```
 #### 4.3b.01: Configure custom DNS settings (Portal)
 #### 4.3b.02: Configure custom DNS settings (PowerShell)
-```ps
+```powershell
 # Create a virtual network with custom DNS settings
 New-AzVirtualNetwork -Name VNet1 -ResourceGroupName ExamRefRG -Location "North Europe" -AddressPrefix 10.1.0.0/16 -DNSServer 10.0.0.4,10.0.0.5 -Subnet (New-AzVirtualNetworkSubnetConfig -Name Default -AddressPrefix 10.1.0.0/24)
 ```
-```ps
+```powershell
 # Modify the DNS server configuration of an existing VNET
 $vnet = Get-AzVirtualNetwork -Name VNet1 -ResourceGroupName ExamRefRG
 $vnet.DhcpOptions.DnsServers.Clear()
@@ -1232,19 +1232,19 @@ $vnet.DhcpOptions.DnsServers.Add("10.10.200.1")
 $vnet.DhcpOptions.DnsServers.Add("10.10.200.2")
 Set-AzVirtualNetwork -VirtualNetwork $vnet
 ```
-```ps
+```powershell
 # Restart the VMs in the VNet to pick up the DNS change
 $vm = Get-AzVM -Name VNet1-VM -ResourceGroupName ExamRefRG
 Restart-AzVM -ID $vm.Id
 ```
-```ps
+```powershell
 # Update the DNS settings on a NIC
 $nic = Get-AzNetworkInterface -Name VM1-NIC -ResourceGroupName ExamRefRG
 $nic.DnsSettings.DnsServers.Clear()
 $nic.DnsSettings.DnsServers.Add("8.8.8.8")
 $nic.DnsSettings.DnsServers.Add("8.8.4.4")
 ```
-```ps
+```powershell
 # Commit the DNS change, causing the VM to restart
 Set-AzNetworkInterface -NetworkInterface $nic
 ```
@@ -1269,7 +1269,7 @@ az network nic update --name VM1-NIC --resource-group ExamRefRG --dns-servers 8.
 #### 4.4c.01: Implement Service Map (Portal)
 #### 4.4c.02: Install Dependency Agent
 #### 4.4c.03: Register a resource provider (PowerShell)
-```ps
+```powershell
 Register-AzResourceProvider -ProviderNamespace Microsoft.Insights
 ```
 #### 4.4c.04: Register a resource provider (Azure CLI)
@@ -1278,7 +1278,7 @@ az provider register --namespace Microsoft.Insights
 ```
 #### 4.4d.01: View effective security rules (Portal)
 #### 4.4d.02: View effective security rules (PowerShell)
-```ps
+```powershell
 Get-AzEffectiveNetworkSecurityGroup -NetworkInterfaceName examref-vm1638 -ResourceGroupName ExamRefRG
 ```
 #### 4.4d.03: View effective security rules (Azure CLI)
@@ -1287,32 +1287,32 @@ az network nic list-effective-nsg --name examref-vm1638 --resource-group ExamRef
 ```
 #### 4.5a.01: Create an Azure load balancer (Portal)
 #### 4.5a.02: Create an Azure load balancer (PowerShell)
-```ps
+```powershell
 # Variables
 $rgName = "ExamRefRG"
 $location = "West Europe"
 ```
-```ps
+```powershell
 # Create Public IP
 $publicIP = New-AzPublicIpAddress -Name ExamRefLB-IP -ResourceGroupName $rgNAme -Location $location -AllocationMethod Static 
 ```
-```ps
+```powershell
 # Create frontend IP configuration
 $frontendIP = New-AzLoadBalancerFrontendIpConfig -Name ExamRefFrontEnd -PublicIpAddress $publicIP
 ```
-```ps
+```powershell
 # Create backend pool
 $beAddressPool = New-AzLoadBalancerBackendAddressPoolConfig -Name ExamRefBackEndPool
 ```
-```ps
+```powershell
 # Create HTTP Probe
 $healthProbe = New-AzLoadBalancerProbeConfig -Name -RequestPath '/' -Protocol http -Port 80
 ```
-```ps
+```powershell
 # Create load balancer rule
 $lbrule = New-AzLoadBalancerRuleConfig -Name -FrontendIpConfiguration $frontendIP -BackendAddressPool $beAddressPool -Probe $healthProbe -Protocol Tcp -FrontendPort 80 -BackendPort 80
 ```
-```ps
+```powershell
 # Create load balancer
 $lb = New-AzLoadBalancer -ResourceGroupName -Name -Location -FrontendIpConfiguration $frontendIP -LoadBalancingRule $lbrule -BackendAddressPool $beAddressPool -Probe $healthProbe
 ```
@@ -1335,26 +1335,26 @@ az network lb rule create --name ExamRefRule --lb-name ExamRefLB --resource-grou
 ```
 #### 4.5a.04: Add VMs to the backend pool of a load balancer (PowerShell)
 The process in PowerShell is actually to add a reference to the backend pool to the NIC of each VM.
-```ps
+```powershell
 # Variables
 $rgName = "ExamRefRG"
 ```
-```ps
+```powershell
 # Get the NIC based on VM ID
 $vml = Get-AzVM -Name VM1 -ResourceGroupName $rgName
 $vmlnic = Get-AzNetworkInterface -ResourceGroupName $rgName | where {$_.VirtualMachine.Id -eq $vml.Id}
 ```
-```ps
+```powershell
 # Get the load balancer and backend pool
 $lb = Get-AzLoadBalancer -Name ExamRefLB -ResourceGroupName $rgName
 $beAddressPool = Get-AzLoadBalancerBackendAddressPoolConfig -Name ExamRefBackEndPool -LoadBalancer $lb
 ```
-```ps
+```powershell
 # All IP configuration settings of the NIC have to be reapplied, there is no support for incremental changes
 $ipconfig = Get-AzNetworkInterfaceIpConfig -Name ipconfig1 -NetworkInterface vm1nic
 Set-AzNetworkInterfaceIpConfig -Name ipconfig1 -NetworkInterface $vm1nic -SubnetId $ipconfig.Subnet.Id -LoadBalancerBackendAddressPoolId $beAddressPool.Id
 ```
-```ps
+```powershell
 # Commit the change
 Set-AzNetworkInterface -NetworkInterface $vm1nic
 ```
@@ -1371,7 +1371,7 @@ az network nic ip-config address-pool add --resource-group ExamRefRG --address-p
 #### 4.6a.05: Configure Service Connectivity Monitor
 #### 4.6a.06: Configure ExpressRoute Monitor
 #### 4.6c.01: Install Network Watcher VM extension (PowerShell)
-```ps
+```powershell
 Set-AzVMExtension ` -ResourceGroupName ExamRefRG -Location "West Europe" -VMName VM1 -Name networkWatcherAgent -Publisher Microsoft.Azure.NetworkWatcher -Type NetworkWatcherAgentWindows -TypeHandlerVersion 1.4
 ```
 #### 4.6c.02: Install Network Watcher VM extension (Azure CLI)
@@ -1380,7 +1380,7 @@ az vm extension set --vm-name VM1 --resource-group ExamRefRG --publisher Microso
 ```
 #### 4.6c.03: Use IP Flow Verify (Portal)
 #### 4.6c.04: Use IP Flow Verify (PowerShell)
-```ps
+```powershell
 Test-AzNetworkWatcherIPFlow
 ```
 #### 4.6c.05: Use IP Flow Verify (Azure CLI)
@@ -1389,7 +1389,7 @@ az network watcher test-ip-flow
 ```
 #### 4.6c.06: Use Next Hop (Portal)
 #### 4.6c.07: Use Next Hop (PowerShell)
-```ps
+```powershell
 Get-AzNetworkWatcherNextHop
 ```
 #### 4.6c.08: Use Next Hop (Azure CLI)
@@ -1398,33 +1398,33 @@ az network watcher show-next-hop
 ```
 #### 4.6c.09: Use Packet Capture (Portal)
 #### 4.6c.10: Use Packet Capture (PowerShell)
-```ps
+```powershell
 # Get the Network Watcher resource
 $nw = Get-AzResource | Where ResourceType -eq "Microsoft.Network/networkWatchers" -and Location -eq "WestEurope"
 $networkWatcher = Get-AzNetworkWatcher -Name $nw.Name -ResourceGroupName $nw.ResourceGroupName
 ```
-```ps
+```powershell
 # Get the storage account to store the capture in
 $storageAccount = Get-AzStorageAccount -Name examref-storage -ResourceGroupName ExamRefRG
 ```
-```ps
+```powershell
 # Set up filters
 $filter1 = New-AzPacketCaptureFilterConfig -Protocol TCP -RemoteIPAddress "1.1.1.1-255.255.255.255" -LocalIPAddress "10.0.0.3" -LocalPort "1-65535" -RemotePort "20;80;443"
 $filter2 = New-AzPacketCaptureFilterConfig -Protocol UDP
 ```
-```ps
+```powershell
 # Get the VM
 $vm = Get-AzVM ` -Name VM1 -ResourceGroupName ExamRefRG
 ```
-```ps
+```powershell
 # Start the packet capture
 New-AzNetworkWatcherPacketCapture -NetworkWatcher $networkWatcher -TargetVirtualMachineId $vm.Id -PacketCaptureName "PacketCaptureTest" -StorageAccountId $storageAccount.id -TimeLimitInSeconds 60 -Filter $filter1, $filter2
 ```
-```ps
+```powershell
 # Check packet capture status
 Get-AzNetworkWatcherPacketCapture -NetworkWatcher $networkWatcher -PacketCaptureName "PacketCaptureTest"
 ```
-```ps
+```powershell
 # Stop packet capture
 Stop-AzNetworkWatcherPacketCapture -NetworkWatcher $networkWatcher -PacketCaptureName "PacketCaptureTest"
 ```
@@ -1448,7 +1448,7 @@ az network watcher packet-capture stop --name PacketCaptureTest --location WestE
 ```
 #### 4.6c.12: Use Network Topology (Portal)
 #### 4.6c.13: Use Network Topology (PowerShell)
-```ps
+```powershell
 Get-AzNetworkWatcherTopology
 ```
 #### 4.6c.14: Use Network Topology (Azure CLI)
@@ -1457,22 +1457,22 @@ az network watcher show-topology
 ```
 #### 4.6d.01: Use VPN Troubleshoot (Portal)
 #### 4.6d.02: Use VPN Troubleshoot (PowerShell)
-```ps
+```powershell
 # Get the Network Watcher resource
 $nw = Get-AzResource | Where ResourceType -eq Microsoft.Network/networkWatchers -and Location -eq WestEurope
 $networkWatcher = Get-AzNetworkWatcher -Name $nw.Name -ResourceGroupName $nw.ResourceGroupName
 ```
-```ps
+```powershell
 # Create a storage account and container for logs
 $sa = New-AzStorageAccount -Name examrefstorage -SKU Standard_LRS -ResourceGroupName ExamRefRG -Location WestEurope
 Set-AzCurrentStorageAccount -ResourceGroupName $sa.ResourceGroupName -Name $sa.StorageAccountName
 $sc = New-AzureStorageContainer -Name logs
 ```
-```ps
+```powershell
 # Get the connection to troubleshoot
 $connection = Get-AzVirtualNetworkGatewayConnection -Name Vnet1-to-Vnet2 -ResourceGroupName ExamRefRG
 ```
-```ps
+```powershell
 # Start VPN Troubleshoot
 Start-AzNetworkWatcherResourceTroubleshooting -NetworkWatcher $networkWatcher -TargetResourceId $connection.Id -StorageId $sa.Id -StoragePath "$($sa.PrimaryEndpoints.Blob)$($sc.name)"
 ```
@@ -1493,17 +1493,17 @@ az network watcher troubleshooting start --resource-group ExamRefRG --resource V
 #### 4.6e.04: Use Connection Monitor (Portal)
 #### 4.7a.01: Create a VPN Gateway (Portal)
 #### 4.7a.02: Create a VPN Gateway (PowerShell)
-```ps
+```powershell
 $rg = ExamRefRG
 ```
-```ps
+```powershell
 # Create gateway subnet in VNet1
 # Gateway subnets are normal subnets with the name "GatewaySubnet"
 $vnet1 = Get-AzVirtualNetwork -Name VNet1 -ResourceGroupName $rg
 $vnet1.Subnets += New-AzVirtualNetworkSubnetConfig -Name GatewaySubnet -AddressPrefix 10.1.1.0/27
 $vnet1 = Set-AzVirtualNetwork -VirtualNetwork $vnet1
 ```
-```ps
+```powershell
 # Create VPN gateway in VNet1
 $gwpip = New-AzPublicIpAddress -Name VNet1-GW-IP -ResourceGroupName $rg -Location 'North Europe' -AllocationMethod Dynamic
 $gwsubnet = Get-AzVirtualNetworkSubnetConfig -Name 'GatewaySubnet' -VirtualNetwork $vnet1
@@ -1525,15 +1525,15 @@ az network vnet-gateway create --name VNet1-GW --resource-group ExamRefRG --gate
 ```
 #### 4.7b.01: Create a site-to-site VPN (Portal)
 #### 4.7b.02: Create a site-to-site VPN (PowerShell)
-```ps
+```powershell
 # Create local network gateway
 $localnw = New-AzLocalNetworkGateway -Name LocalNetGW -ResourceGroupName ExamRefRG -Location "West Europe" -GatewayIpAddress "53.50.123.195" -AddressPrefix "10.5.0.0/16" 
 ```
-```ps
+```powershell
 # Get VPN gateway
 $gateway = Get-AzVirtualNetworkGateway -Name VPNGW1 -ResourceGroupName ExamRefRG
 ```
-```ps
+```powershell
 # Create the connection
 $conn = New-AzVirtualNetworkGatewayConnection -Name OnPremConnection -ResourceGroupName ExamRefRG -Location 'West Europe' -VirtualNetworkGateway1 $gateway -LocalNetworkGateway2 $localnw -ConnectionType IPsec -SharedKey "abc123"
 ```

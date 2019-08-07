@@ -190,7 +190,6 @@ ALTER TABLE movies ADD Language TEXT DEFAULT "English";
 DROP TABLE IF EXISTS movies;
 DROP TABLE IF EXISTS BoxOffice;
 ```
-
 ### Cities
 Table: North_american_cities
 city | country  | population  | latitude  | longitude
@@ -373,7 +372,6 @@ CREATE user rishabh@localhost identified BY 'pass123';
 ```sql
 REVOKE all privileges ON theitstuff.* FROM rishabh@localhost;
 ```
-
 ## Security
 #### Reduce attack surface
 - Isolate the DB server from other applications and services
