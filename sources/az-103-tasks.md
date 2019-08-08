@@ -62,19 +62,19 @@ Set-AzResourceGroup -Tag @{} -Name hrgroup
 #### 1.1c.1: Create a policy definition (Portal)
 Open __All Services__, then __Policy__, then the __Definitions__ blade. Both builtin and custom policies can be managed here.
 #### 1.1c.2: Register resource provider in subscription (Azure CLI)
-```sh
+```bash
 az provider register --namespace 'Microsoft.PolicyInsights'
 ```
 #### 1.1c.3: Define a policy (Azure CLI)
-```sh
+```bash
 az policy definition create --name 'allowedVMs' --description 'Only allow virtual machines in the defined SKUs' --mode ALL --rules '{...}' --params '{...}'
 ```
 #### 1.1c.4: Apply policy to a scope (Azure CLI)
-```sh
+```bash
 az policy assignment create --policy allowedVMs --name 'deny-non-compliant-vms' --scope '/subscriptions/<Subscription ID>' -p
 ```
 #### 1.1c.5 Delete policy assignment (Azure CLI)
-```sh
+```bash
 az policy assignment delete --name deny-non-compliant-vms
 ```
 #### 1.2a.1 Enable diagnostics log collection with a storage account (Portal)
@@ -98,11 +98,11 @@ Set-AzDiagnosticSetting -ResourceId $resource.ResourceId -WorkspaceId $workspace
 ```
 #### 1.2a.5 Obtain resource ID (Azure CLI)
 `az monitor diagnostic-settings create` to enable diagnostic logs. `az resource show` to obtain resource ID.
-```sh
+```bash
 resourceId=$(az resource show -resource-group $resourceGroupName -name $resourceName --resource-type $resourceType --query id --output tsv)
 ```
 #### 1.2a.6 Enable diagnostics log collection with a storage account (Azure CLI)
-```sh
+```bash
 az monitor diagnostic-settings create --name $diagnosticName --storage-account $storageId --resource $resouceId --resource-group $resourceGroup \
   --logs '[ {
     "category": <categoryName>,
@@ -112,14 +112,14 @@ az monitor diagnostic-settings create --name $diagnosticName --storage-account $
       "enabled": true } } ] '
 ```
 #### 1.2a.7 Enable diagnostics log streaming to an Event Hub (Azure CLI)
-```sh
+```bash
 az monitor diagnostic-settings create --name $diagnosticName --event-hub $eventHubName --event-hub-rule $eventHubRuleId --resource $targetResourceId \
   --logs '[{
     "category": <categoryName>,
     "enabled": true }]'
 ```
 #### 1.2a.8 Enable diagnostics logs collection in a Log Analytics workspace (Azure CLI)
-```sh
+```bash
 az monitor diagnostic-settings create --name $diagnosticName --workspace $logAnalyticsName --resource $resourceId --resouce-group $resourceGroup \
   --logs '[{
     "category": <categoryName>,
@@ -142,11 +142,11 @@ Remove-AzResourceGroup -Name $resourceGroup
 Remove-AzResourceGroup -Name $resourceGroup -Force
 ```
 #### 1.3.3 Delete a resource group (CLI)
-```sh
+```bash
 az group delete --name $resourceGroup
 ```
 #### 1.3.4 Delete a resource group without confirmation (CLI)
-```sh
+```bash
 az group delete --name $resourceGroup --yes
 ```
 #### 1.4b.1: Retrieve the definition of a role (PowerShell)
@@ -154,7 +154,7 @@ az group delete --name $resourceGroup --yes
 Get-AzRoleDefinition -Name "Virtual Machine Contributor" | ConvertTo-Json
 ```
 #### 1.4b.2: Retrieve the definition of a role (Azure CLI)
-```sh
+```bash
 az role definition list -n "Virtual Machine Contributor"
 ```
 #### 1.4b.3: Retrieve operations that support `DataActions` and `NotDataActions` (PowerShell)
@@ -177,11 +177,11 @@ Get-AzProviderOperation * |? { $_.IsDataAction -eq $true }
 Get-AzRoleDefinition | Where-Object { $_.IsCustom -eq $true }
 ```
 #### 1.4c.4: List custom roles available for assignment (Azure CLI)
-```sh
+```bash
 az role definition list --custom-role-only -o table
 ```
 #### 1.4c.5: View all role assignments in a subscription (Azure CLI)
-```sh
+```bash
 az role assignment list --all
 ```
 #### 1.4c.6: Grant a user RBAC rights (PowerShell)
@@ -189,7 +189,7 @@ az role assignment list --all
 New-AzRoleAssignment -SignInName "cloudadmin@opsgility.onmicrosoft.com" -RoleDefinitionName "Virtual Machine Contributor" -ResourceGroupName ExamRefRG
 ```
 #### 1.4c.7: Grant a user RBAC rights (Azure CLI)
-```sh
+```bash
 az role assignment create --assignee "cloudadmin@opsgility.onmicrosoft.com" --role "Virtual Machine Contributor" --resource-group ExamRefRG
 ```
 #### 1.4c.8: Grant a group RBAC rights (PowerShell)
@@ -198,7 +198,7 @@ $group = Get-AzADGroup -SearchString "Cloud Admins"
 New-AzRoleAssignment -ObjectId $group.Id -RoleDefinitionName "Virtual Machine Contributor" -ResourceGroupName ExamRefRG
 ```
 #### 1.4c.9: Grant a group RBAC rights (Azure CLI)
-```sh
+```bash
 groupid=$(az ad group list --query "[?displayName=='Cloud Admins'].objectId" -o tsv)
 az role assignment create --role "Virtual Machine Contributor" --assignee-object-id $groupid --resource-group ExamRefRG
 ```
@@ -212,11 +212,11 @@ $group = Get-AzADGRoup -SearchString "Cloud Admins"
 Remove-AzRoleAssignment -ObjectId $group.Id -RoleDefinitionName "Virtual Machine Contributor" -ResourceGroupName ExamRefRG
 ```
 #### 1.4c.12: Remove RBAC assignments from a user (Azure CLI)
-```sh
+```bash
 az role assignment delete --role "Virtual Machine Contributor" --assignee "cloudadmin@opsgility.onmicrosoft.com" --resource-group ExamRefRG
 ```
 #### 1.4c.13: Remove RBAC assignments from a group (Azure CLI)
-```sh
+```bash
 groupid=$(az ad group list --query "[?displayName=='CloudAdmins'].objectId" -o tsv)
 az role assignment delete --role "Virtual Machine Contributor" --assignee-object-id $groupid --resource-group ExamRefRG
 ```
@@ -228,7 +228,7 @@ Click **Create a resouce**, then **Storage**, then **Storage account**. Choose a
 New-AzStorageAccount -ResourceGroupName ExamRefRG -Name mystorage112300 -SkuName Standard_LRS -Location WestUS -Kind StorageV2 -AccessTier Hot
 ```
 #### 2.1a.3: Create a storage account (CLI)
-```sh
+```bash
 az storage account create --name $accountName --resource-group $resourceGroup -location $location --sku $sku
 ```
 #### 2.1a.4: Change storage account's access tier, without confirmation (PowerShell)
@@ -262,15 +262,15 @@ $secretvalue = ConvertTo-SecureString $storageKey[0].Value -AsPlainText -Force
 $secret = Set-AzKeyVaultSecret -VaultName $vaultName -Name $secretName -SecretValue $secretvalue
 ```
 #### 2.1c.7: Create an Azure Key Vault (Azure CLI)
-```sh
+```bash
 az keyvault create --name $vaultName --resource-group $rgName --location $location
 ```
 #### 2.1c.8: Store a software managed key in Azure Key Vault (Azure CLI)
-```sh
+```bash
 az keyvault key create --vault-name $vaultName --name $keyName --protection "software"
 ```
 #### 2.1c.9: Set secret value to be used in Azure Key Vault (Azure CLI)
-```sh
+```bash
 az keyvault secret set --vault-name $vaultName --name $secretName --value $secretValue
 ```
 #### 2.1d.1: Create a SAS token for a specific storage blob (PowerShell)
@@ -283,7 +283,7 @@ $endTime = $startTime.AddHours(4)
 New-AzStorageBlobSASToken -Container $container -Blob $blob -Permission "rwd" -StartTime $startTime -ExpiryTime $startTime.AddHours(4) -Context $context
 ```
 #### 2.1d.2: Create a SAS token for a specific storage blob (Azure CLI)
-```sh
+```bash
 az storage blob generate-sas --account-name "storageAccount" --account-key $storageAccountKey --container-name $container --name $blobName --permissions r --expiry "2019-05-31"
 ```
 #### 2.1e.1: Access Activity Log data (Portal)
@@ -321,11 +321,11 @@ $copiedBlob = Start-AzStorageBlobCopy -SrcBlob $blobName -SrcContainer $srcConta
 $copiedBlob | Get-AzStorageBlobCopyState
 ```
 #### 2.1f.4: Copy a blob from one storage account to another (Azure CLI)
-```sh
+```bash
 az storage blob copy start --account-name $destStorageAccount --account-key $destStorageKey --destination-blob $blobName --source-account-name $srcStorageAccount --source-container $srcContainer --source-blob $blobName --source-account-key $srcStorageKey
 ```
 #### 2.1f.5: Monitor progress of the async blob copy (Azure CLI)
-```sh
+```bash
 az storage blob show --account-name $destStorageAccount --account-key $destStorageKey --container-name $destContainer --name $blobName
 ```
 #### 2.1f.6: Use AzCopy to copy a blob
@@ -356,12 +356,12 @@ Set-AzStorageBlobContent -File $localFile -Container $container -Blob $blobName
     - `off` 
     - `blob`
     - `container`
-```sh
+```bash
 az storage container create --account-name $storageaccount --name $containername --public-access off
 ```
 #### 2.2a.3: Upload a file (Azure CLI)
 `az storage blob upload` is used to upload a file
-```sh
+```bash
 az storage blob upload --container-name $containerName --account-name $accountName --account-key $accountKey --file $file --name $blobName
 ```
 #### 2.2a.4: Download a blob from a container (AzCopy)
@@ -468,7 +468,7 @@ cmdkey /add:storageAccountName.file.core.windows.net /user:AZURE\storageAccountN
 ```
 #### 2.3a.8: Connect to and mount an Azure File Share (Linux)
 Mounting to `/logs`
-```sh
+```bash
 sudo mount -t cifs //$storageAccount.file.core.windows.net/logs /logs -o "vers=3.0,username=$storageAccount,password=$storageAccountKey,dir_mode=0777,file_mode=0777,sec=ntlmssp"
 ```
 #### 2.3b.1: Create the Azure File Sync Service (Portal)
@@ -553,63 +553,63 @@ Add-AzVMNetworkInterface -VM $vm -NetworkInterface $nic
 New-AzVM -ResourceGroupName $resourceGroupName -Location $location -VM $vm
 ```
 #### 3.1a.3: Create an Azure VM (Azure CLI)
-```sh
+```bash
 # Login to Azure account
 az login
 ```
-```sh
+```bash
 # Create a new resource group 
 az group create --name $rgName --location $location
 ```
-```sh
+```bash
 # Identify available regions
 az account list-locations
 ```
-```sh
+```bash
 # Create a simple virtual machine
 vmName="myUbuntuVM"
 imageName="UbuntuLTS"
 az vm create --resource-group $rgName --name $vmName --image $imageName --generate-ssh-keys
 ```
-```sh
+```bash
 # Create a virtual network
 vnetName="ExamRefVNET"
 vnetAddressPrefix="10.0.0.0/16"
 az network vnet create --resource-group $rgName -n ExamRefVNET --address-prefixes $vnetAddressPrefix -l $location
 ```
-```sh
+```bash
 # Create a public IP address
 dnsRecord="examrefdns123123"
 ipName="ExamRefIP"
 az network public-ip create -n $ipName -g $rgName --allocation-method Dynamic --dns-name $dnsRecord -l $location
 ```
-```sh
+```bash
 # Create a network security group
 nsgName="webnsg"
 az network nsg create -n $nsgName -g $rgName -l $location
 ```
-```sh
+```bash
 # Create a network security group rule to allow SSH in
 az network nsg rule create -n SSH --nsg-name ... --priority 100 -g ... --access Allow --description "SSH Access" --direction Inbound --protocol Tcp --destination-address-prefix "*" --destination-port-range 22 --source-address-prefix "*" --source-port-range "*"
 ```
-```sh
+```bash
 # Create a network security group rule to allow HTTP in
 az network nsg rule create -n HTTP --nsg-name ... --priority 101 -g ... --access Allow --description "Web Access" --direction Inbound --protocol Tcp --destination-address-prefix "*" --destination-port-range 80 --source-address-prefix "*" --source-port-range "* 
 ```
-```sh
+```bash
 # Create a network interface
 nicname="WebVMNic1"
 az network nic create -n $nicname -g $rgName --subnet $Subnet1Name --network-security-group $nsgName --vnet-name $vnetName --public-ip-address $ipName -l $location
 ```
-```sh
+```bash
 # Retrieve a list of marketplace images
 az vm image list --all
 ```
-```sh
+```bash
 # Retrieve form factors available in each region
 az vm list-sizes --location ...
 ```
-```sh
+```bash
 # Create the VM
 imageName="Canonical:UbuntuServer:16.04-LTS:latest"
 vmSize="Standard_DS1_V2"
@@ -637,17 +637,17 @@ $image = New-AzImageConfig -Location $location -SourceVirtualMachineId $vm.ID
 New-AzImage -Image $image -ImageName $imageName -ResourceGroupName $rgName
 ```
 #### 3.1a.6: Capture a managed VM image (Azure CLI)
-```sh
+```bash
 # Create a managed image
 rgName="Contoso"
 vmName="ImageVM"
 imageName="LinuxImage"
 ```
-```sh
+```bash
 # Deallocate the VM
 az vm deallocate --resource-group $rgName --name $vmName
 ```
-```sh
+```bash
 # Set the status of the VM to Generalized
 az vm generalize --resource-group $rgName --name $vmName
 az image create --resource-group $rgName --name $imageName --source $vmName 
@@ -660,7 +660,7 @@ $imageUri = "https://examrefstorage.blob.core.windows.net/images/legacy-image.vh
 $vm = Set-AzVMOSDisk -VM $vm -Name $osDiskName -VhdUri $osDiskUri -CreateOption fromImage -SourceImageUri $imageUri -Windows
 ```
 #### 3.1a.35: Specify a legacy unmanaged image for use in a new virtual machine (Azure CLI)
-```sh
+```bash
 az vm create --resource-group $rgName --name $vmName --image $osDiskUri --generate-ssh-keys
 ```
 #### 3.1a.36: Specify a managed image for use in a new virtual machine (PowerShell)
@@ -669,7 +669,7 @@ $image = Get-AzImage -ImageName $imageName -ResourceGroupName $rgName
 $vmConfig = Set-AzVMSourceImage -VM $vmConfig -Id $image.Id
 ```
 #### 3.1a.37: Specify a managed image for use in a new virtual machine (Azure CLI)
-```sh
+```bash
 az vm create -g $rgName -n $vmName --image $imageName
 ```
 #### 3.1b.01: Create an availability set (Portal)
@@ -685,13 +685,13 @@ $location = "West US"
 New-AzavailabilitySet -ResourceGroupName $rgName -Name $avSetName -Location $location -PlatformUpdateDomainCount 10 -PlatformFaultDomainCount 3 -Sku "Aligned"
 ```
 #### 3.1b.03: Create an availability set (CLI)
-```sh
+```bash
 # Variables
 rgName="ExamRefRG"
 avSetName="WebAVSet"
 location="WestUS"
 ```
-```sh
+```bash
 # Create an availability set
 az vm availability-set create --name $avSetName --resource-group $rgName --platform-fault-domain-count 3 --platform-update-domain-count 10
 ```
@@ -713,7 +713,7 @@ $vm.HardwareProfile.VMSize = "Standard_DS2_V2"
 Update-AzVM -VM $vm -ResourceGroupName $rgName
 ```
 #### 3.1c.02: Resizing a VM (Azure CLI)
-```sh
+```bash
 az vm list-vm-resize-options --resource-group $rgName --name $vmName --output table
 az vm resize --resource-group $rgName --name $vmName --size Standard_DS3_v2
 ```
@@ -726,17 +726,17 @@ Update-AzVM -ResourceGroupName $rgName -VM $vm
 ```
 #### 3.1e.03: Modify host cache setting on a managed virtual HD (Azure CLI)
 Variables
-```sh
+```bash
 rgName="StorageRG"
 vmName="StandardVM"
 diskName="ManagedDisk"
 ```
 Attach a managed disk
-```sh
+```bash
 az vm disk attach --vm-name $vmName --resource-group $rgName --size-gb 128 --disk $diskName --caching ReadWrite -new
 ```
 #### 3.1e.04: Modify host cache setting on a unmanaged virtual HD (Azure CLI)
-```sh
+```bash
 az vm unmanaged-disk attach
 ```
 #### 3.1e.05: Create a new storage pool using all available disks (PowerShell)
@@ -816,7 +816,7 @@ Add-AzVmssNetworkInterfaceConfiguration -VirtualMachineScaleSet $vmssConfig -Nam
 New-AzVmss -ResourceGroupName $rgName -Name $scaleSetName -VirtualMachineScaleSet $vmssConfig
 ```
 #### 3.1h.03: Creating a virtual machine scale set (CLI)
-```sh
+```bash
 # Variables
 rgName="ExamRefRG"
 ssName="erscaleset"
@@ -846,18 +846,18 @@ New-AzResourceGroup -Name $rgName -Location $location
 New-AzResourceGroupDeployment -Name $deploymentName -ResourceGroupName $rgName -TemplateUri $templateUri
 ```
 #### 3.2c.03: Deploy a template that creates a VM (Azure CLI)
-```sh
+```bash
 # Variables
 rgName="ExamRefRG"
 location="WestUS"
 deploymentName="simpleVMDeployment"
 templateUri = "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-vm-simple-windows/azuredeploy.json"
 ```
-```sh
+```bash
 # Create a resource group
 az group create --name $rgNAme --location $location
 ```
-```sh
+```bash
 # Deploy template from GitHub
 az group deployment create --name $deploymentName --resource-group $rgName --template-uri $templateUri
 ```
@@ -865,7 +865,7 @@ az group deployment create --name $deploymentName --resource-group $rgName --tem
 ```powershell
 New-AzResourceGroupDeployment -Mode Complete -Name simpleVMDeployment -ResourceGroupName ExamRefRG
 ```
-```sh
+```bash
 az group deployment create --name simpleVMDeployment --mode Complete --resource-group ExamRefRG
 ```
 #### 3.2e.01: Export deployment template (Portal)
@@ -874,14 +874,14 @@ az group deployment create --name simpleVMDeployment --mode Complete --resource-
 ```powershell
 Save-AzResourceGroupDeploymentTemplate -ResourceGroupName ExamRefRG -DeploymentName simpleVMDeployment
 ```
-```sh
+```bash
 az group deployment export --name simpleVMDeployment --resource-group ExamRefRG
 ```
 #### 3.2e.04: Export all resources in a resource group as a template
 ```powershell
 Export-AzResourceGroup -ResourceGroupName ExamRefRG
 ```
-```sh
+```bash
 az group export --name ExamRefRG
 ```
 #### 3.2e.05: Pass a template file during deployment
@@ -912,7 +912,7 @@ $vm = Add-AzVMDataDisk -VM $vm -Name $dataDiskName -CreateOption Attach -Managed
 # Update the VM
 Update-AzVM -VM $vm -ResourceGroupName ExamRefRG
 ```
-```sh
+```bash
 az vm disk attach -g ExamRefRG --vm-name ExamRefVM --name myDataDisk --new --size-gb 128 --sku Premium_LRS
 ``` 
 #### 3.3b.01: Add a new network interface to an existing VM
@@ -947,7 +947,7 @@ $newNic = New-AzNetworkInterface -ResourceGroupName $rgName -Name $nicName -Loca
 $nicId = (Get-AzNetworkInterface -ResourceGroupName $rgName -Name $nicName).Id
 Add-AzVMNetworkInterface -VM $vm -Id $nicId -Primary | Update-AzVm -ResourceGroupName $rgName
 ```
-```sh
+```bash
 # Variables
 vnetName="ExamRefVNET"
 subnetName="Subnet-1"
@@ -955,7 +955,7 @@ rgName="ExamRefRG"
 vmName="ExamRefVM"
 nicName="newnic"
 ```
-```sh
+```bash
 az network nic create --resource-group $rgName --name $nicName --vnet-name $ExamRefVNET --subnet $subnetName
 az vm nic add -g $rgName --vm-name $vmName --nics $nicName --primary-nic
 ```
@@ -976,15 +976,15 @@ Move-AzResource -DestinationResourceGroupName ExamRefDestRG -ResourceId $resourc
 Move-AzResource -DestinationSubscriptionId $subscriptionID -DestinationResourceGroupName ExamRefDestRG -ResourceId $resourceID
 ```
 #### 3.3d.03: Move a resource to another resource group or subscription (Azure CLI)
-```sh
+```bash
 # List resource IDs
 az resource list -g ExamRefRG
 ```
-```sh
+```bash
 # Move to a different resource group
 az resource move --destination-group ExamRefDestRG --ids $resourceID
 ```
-```sh
+```bash
 # Use the `--subscription-id` parameter to move to a different subscription
 az resource move --destination-group ExamrefDestRG --destination-subscription-id $subscriptionID --ids $resourceID
 ```
@@ -1031,7 +1031,7 @@ $scriptUri = "https://raw.githubusercontent.com/opsgility/lab-support-public/mas
 $scriptArgument = "contoso.com $password"
 Set-AzVMCustomScriptExtension -ResourceGroupName $rgName -VMName $vmName -FileUri $scriptUri -Argument "$domain $password" -Run $scriptName -Name $extensionName -Location $location
 ```
-```sh
+```bash
 rgName="ExamRefRG"
 vmName="LinuxVM"
 extensionName="InstallApache"
@@ -1071,19 +1071,19 @@ Get effective routes for a NIC
 Get-AzEffectiveRouteTable -NetworkInterfaceName VNet1-VM -ResourceGroupName ExamRefRG
 ```
 #### 4.1d.03: Configure user-defined routes (Azure CLI)
-```sh
+```bash
 # Create route table
 az network route-table create --name RouteTable1 --resource-group ExamRefRG 
 ```
-```sh
+```bash
 # Add route to route table
 az network route-table route create --name Route1 --route-table-name RouteTable1 --resource-group ExamRefRG --address-prefix 10.3.0.0/16 --next-hop-type VirtualAppliance --next-hop-ip-address 10.2.20.4
 ```
-```sh
+```bash
 # Associate route table with subnet
 az network vnet subnet update --name defualt --vnet-name Vnet1 --resource-group ExamRefRG --route-table RouteTable1
 ```
-```sh
+```bash
 # Get effective routes for NIC
 az network nic show-effective-route-table --name VM1-NIC --resource-group ExamRefRG
 ```
@@ -1104,15 +1104,15 @@ Get-AzVirtualNetworkPeering -ResourceGroupName ExamRefRG -VirtualNetworkName VNe
 Format-Table VirtualNetworkName, PeeringState
 ```
 #### 4.2a.03: Creating a VNet peering (Azure CLI)
-```sh
+```bash
 # Peer VNet1 to VNet2
 az network vnet peering create --name VNet1-to-VNet2 --resource-group ExamRefRG --vnet-name VNet1 --allow-vnet-access --remote-vnet VNet2
 ```
-```sh
+```bash
 # Peer VNet2 to VNet1
 az network vnet peering create --name VNet2-to-VNet1 --resource-group ExamRefRG --vnet-name VNet2 --allow-vnet-access --remote-vnet VNet1
 ```
-```sh
+```bash
 # Check the peering status
 az network vnet peering list --resource-group ExamRefRG --vnet-name VNet1 -o table
 az network vnet peering list --resource-group ExamRefRG --vnet-name VNet2 -o table
@@ -1148,22 +1148,22 @@ New-AzVirtualNetworkGatewayConnection -Name VNet2-to-VNet3 -ResourceGroupName Ex
 New-AzVirtualNetworkGatewayConnection -Name VNet3-to-VNet2 -ResourceGroupName ExamRefRG -Location $vnet3.Location -VirtualNetworkGateway1 $vnet3gw -VirtualNetworkGateway2 $vnet2gw -ConnectionType VNet2VNet -SharedKey "secretkey123"
 ```
 #### 4.2b.03: Creating a VPN gateway and VNet-to-VNet connection (Azure CLI)
-```sh
+```bash
 # Create gateway subnets in VNet2 and VNet3
 az network vnet subnet create --name GatewaySubnet --vnet-name VNet2 --resource-group ExamRefRG --address-prefixes 10.2.1.0/27
 az network vnet subnet create --name GatewaySubnet --vnet-name VNet3 --resource-group ExamRefRG --address-prefixes 10.3.1.0/27
 ```
-```sh
+```bash
 # Create public IP addresses for use by VPN gateways
 az network public-ip create --name VNet2-GW-IP --resource-group ExamRefRG --location NorthEurope
 az network public-ip create --name VNet3-GW-IP --resource-group ExamRefRG --location WestEurope
 ```
-```sh
+```bash
 # Create VPN gateways in VNet2 and VNet 3
 az network vnet-gateway create --name VNet2-GW --resource-group ExamRefRG --gateway-type vpn --sku VpnGw1 --vpn-type RouteBased --vnet VNet2 --public-ip-addresses VNet2-GW-IP --location NorthEurope
 az network vnet-gateway create --name VNet3-GW --resource-group ExamRefRG --gateway-type vpn --sku VpnGw1 --vpn-type RouteBased --vnet VNet3 --public-ip-addresses VNet3-GW-IP --location WestEurope
 ```
-```sh
+```bash
 # :Create connections between VPN gateways
 az network vpn-connection create --name VNet2-to-VNet3 --resource-group ExamRefRG --vnet-gateway1 VNet2-GW --vnet-gateway2 VNet3-GW --shared-key secretkey123 --location NorthEurope
 az network vpn-connection create --name VNet3-to-VNet2 --resource-group ExamRefRG --vnet-gateway1 VNet3-GW --vnet-gateway2 VNet2-GW --shared-key secretkey123 --location WestEurope
@@ -1197,24 +1197,24 @@ Set-AzDnsRecordSet -RecordSet $recordset
 Get-AzDnsRecordSet -ZoneName examref.com -ResourceGroupName ExamRefRG
 ```
 #### 4.3a.03: Creating DNS zones and DNS records (Azure CLI)
-```sh
+```bash
 # Create a DNS zone
 az network dns zone create --name examref.com --resource-group ExamRefRG
 ```
-```sh
+```bash
 # Create an empty record set of type A
 az network dns record-set a create --name www --zone-name examref.com --resource-group ExamRefRG --ttl 3600
 ```
-```sh
+```bash
 # Add A records to the above record set
 az network dns record-set a add-record --record-set-name www --zone-name examref.com --resource-group ExamRefRG --ipv4-address 1.2.3.4
 az network dns record-set a add-record --record-set-name www --zone-name examref.com --resource-group ExamRefRG --ipv4-address 5.6.7.8
 ```
-```sh
+```bash
 # Remove an A record from the record set
 az network dns record-set a remove-record --record-set-name www --zone-name examref.com --resource-group ExamRefRG --ipv4-address 1.2.3.4
 ```
-```sh
+```bash
 # View records
 az network dns record-set list --zone-name examref.com --resource-group ExamRefRG -o table 
 ```
@@ -1249,19 +1249,19 @@ $nic.DnsSettings.DnsServers.Add("8.8.4.4")
 Set-AzNetworkInterface -NetworkInterface $nic
 ```
 #### 4.3b.03: Configure custom DNS settings (Azure CLI)
-```sh
+```bash
 # Create a virtual network with custom DNS settings
 az network vnet create --name VNet1 --resource-group ExamRefRG --address-prefixes 10.0.0.0/16 --dns-servers 8.8.8.8 8.8.4.4
 ```
-```sh
+```bash
 # Set custom DNS servers on a VNet
 az network vnet update --name VNet1 --resource-group ExamRefRG --dns-servers 10.0.0.254
 ```
-```sh
+```bash
 # Remove custom DNS servers from a VNET
 az network vnet update --name VNet1 --resource-group ExamRefRG --remove DHCPOptions.DNSServers
 ```
-```sh
+```bash
 # Set custom DNS servers on a NIC
 az network nic update --name VM1-NIC --resource-group ExamRefRG --dns-servers 8.8.8.8 8.8.4.4
 ```
@@ -1273,7 +1273,7 @@ az network nic update --name VM1-NIC --resource-group ExamRefRG --dns-servers 8.
 Register-AzResourceProvider -ProviderNamespace Microsoft.Insights
 ```
 #### 4.4c.04: Register a resource provider (Azure CLI)
-```sh
+```bash
 az provider register --namespace Microsoft.Insights
 ```
 #### 4.4d.01: View effective security rules (Portal)
@@ -1282,7 +1282,7 @@ az provider register --namespace Microsoft.Insights
 Get-AzEffectiveNetworkSecurityGroup -NetworkInterfaceName examref-vm1638 -ResourceGroupName ExamRefRG
 ```
 #### 4.4d.03: View effective security rules (Azure CLI)
-```sh
+```bash
 az network nic list-effective-nsg --name examref-vm1638 --resource-group ExamRefRG
 ```
 #### 4.5a.01: Create an Azure load balancer (Portal)
@@ -1317,19 +1317,19 @@ $lbrule = New-AzLoadBalancerRuleConfig -Name -FrontendIpConfiguration $frontendI
 $lb = New-AzLoadBalancer -ResourceGroupName -Name -Location -FrontendIpConfiguration $frontendIP -LoadBalancingRule $lbrule -BackendAddressPool $beAddressPool -Probe $healthProbe
 ```
 #### 4.5a.03: Create an Azure load balancer (Azure CLI)
-```sh
+```bash
 #Create Public IP
 az network public-ip create --name ExamRefLB-IP --resource-group ExamRefRG --location --allocation-method Static
 ```
-```sh
+```bash
 # Create load balancer
 az network lb create --name ExamRefLB --resource-group ExamRefRG --location --backend-pool-name ExamRefBackEndPool --frontend-ip-name ExamRefFrontEnd --public-ip-address ExamRefLB-IP
 ```
-```sh
+```bash
 # Create HTTP Probe
 az network lb probe create --resource-group ExamRefRG --name HealthProbe --lb-name ExamRefLB --protocol http --port 80 --path / --interval 5 --threshold 
 ```
-```sh
+```bash
 # Create load balancer rule
 az network lb rule create --name ExamRefRule --lb-name ExamRefLB --resource-group ExamRefRG --protocol Tcp --frontend-port 80 --backend-port 80 --frontend-ip-name ExamRefFrontEnd --backend-pool-name ExamRefBackEndPool --probe-name HealthProbe
 ```
@@ -1360,7 +1360,7 @@ Set-AzNetworkInterface -NetworkInterface $vm1nic
 ```
 #### 4.5a.05: Add VMs to the backend pool of a load balancer (Azure CLI)
 Azure CLI supports incremental update of the NIC, which makes this command simpler than its PowerShell equivalent.
-```sh
+```bash
 az network nic ip-config address-pool add --resource-group ExamRefRG --address-pool ExamRefBackEndPool --lb-name ExamRefLB --nic-name vm1-nic --ip-config-name ipconfig1
 ```
 #### 4.5b.01: Enable basic-tier load-balancer logs
@@ -1375,7 +1375,7 @@ az network nic ip-config address-pool add --resource-group ExamRefRG --address-p
 Set-AzVMExtension ` -ResourceGroupName ExamRefRG -Location "West Europe" -VMName VM1 -Name networkWatcherAgent -Publisher Microsoft.Azure.NetworkWatcher -Type NetworkWatcherAgentWindows -TypeHandlerVersion 1.4
 ```
 #### 4.6c.02: Install Network Watcher VM extension (Azure CLI)
-```sh
+```bash
 az vm extension set --vm-name VM1 --resource-group ExamRefRG --publisher Microsoft.Azure.NetworkWatcher --version 1.4 --name NetworkWatcherAgentWindows --extension-instance-name NetworkWatcherAgent
 ```
 #### 4.6c.03: Use IP Flow Verify (Portal)
@@ -1384,7 +1384,7 @@ az vm extension set --vm-name VM1 --resource-group ExamRefRG --publisher Microso
 Test-AzNetworkWatcherIPFlow
 ```
 #### 4.6c.05: Use IP Flow Verify (Azure CLI)
-```sh
+```bash
 az network watcher test-ip-flow
 ```
 #### 4.6c.06: Use Next Hop (Portal)
@@ -1393,7 +1393,7 @@ az network watcher test-ip-flow
 Get-AzNetworkWatcherNextHop
 ```
 #### 4.6c.08: Use Next Hop (Azure CLI)
-```sh
+```bash
 az network watcher show-next-hop
 ```
 #### 4.6c.09: Use Packet Capture (Portal)
@@ -1429,7 +1429,7 @@ Get-AzNetworkWatcherPacketCapture -NetworkWatcher $networkWatcher -PacketCapture
 Stop-AzNetworkWatcherPacketCapture -NetworkWatcher $networkWatcher -PacketCaptureName "PacketCaptureTest"
 ```
 #### 4.6c.11: Use Packet Capture (Azure CLI)
-```sh
+```bash
 # Start packet capture
 az network watcher packet-capture create --name PacketCaptureTest2 --resource-group ExamRefRG --vm VM1 --time-limit 300 --storage-account examref-storage `
   --filters '[ { 
@@ -1438,11 +1438,11 @@ az network watcher packet-capture create --name PacketCaptureTest2 --resource-gr
     "localIPAddress":"10.0.0.3", 
     "remotePort":"20" } ]'
 ```
-```sh
+```bash
 # Get packet capture status
 az network watcher packet-capture show-status --name PacketCaptureTest --location WestEurope
 ```
-```sh
+```bash
 # Stop packet capture
 az network watcher packet-capture stop --name PacketCaptureTest --location WestEurope
 ```
@@ -1452,7 +1452,7 @@ az network watcher packet-capture stop --name PacketCaptureTest --location WestE
 Get-AzNetworkWatcherTopology
 ```
 #### 4.6c.14: Use Network Topology (Azure CLI)
-```sh
+```bash
 az network watcher show-topology
 ```
 #### 4.6d.01: Use VPN Troubleshoot (Portal)
@@ -1477,13 +1477,13 @@ $connection = Get-AzVirtualNetworkGatewayConnection -Name Vnet1-to-Vnet2 -Resour
 Start-AzNetworkWatcherResourceTroubleshooting -NetworkWatcher $networkWatcher -TargetResourceId $connection.Id -StorageId $sa.Id -StoragePath "$($sa.PrimaryEndpoints.Blob)$($sc.name)"
 ```
 #### 4.6d.03: Use VPN Troubleshoot (Azure CLI)
-```sh
+```bash
 # Crate a storage account and container for logs
 az storage account create --name examrefstorage --location westeurope --resource-group ExamRefRG --sku Standard_LRS
 az storage account keys list --resource-group ExamRefRG --account-name examrefstorage
 az storage container create --account-name examrefstorage --account-key {storageAccountKey} --name logs
 ```
-```sh
+```bash
 # Start VPN Troubleshoot
 az network watcher troubleshooting start --resource-group ExamRefRG --resource Vnet1-to-Vnet2 --resource-type vpnConnection --storage-account examrefstorage --storage-path https://examrefstorage.blob.core.windows.net/logs --output json
 ```
@@ -1511,15 +1511,15 @@ $gwipconf = New-AzVirtualNetworkGatewayIpConfig -Name GwIPConf -Subnet $gwsubnet
 $vnet1gw = New-AzVirtualNetworkGateway -Name VNet1-GW -ResourceGroupName $rg -Location 'North Europe' -IpConfigurations $gwipconf -GatewayType Vpn -VpnType RouteBased -GatewaySku VpnGw1
 ```
 #### 4.7a.03: Create a VPN Gateway (Azure CLI)
-```sh
+```bash
 # Create gateway subnets in VNet2 and VNet3
 az network vnet subnet create --name GatewaySubnet --vnet-name VNet1 --resource-group ExamRefRG --address-prefixes 10.1.1.0/27
 ```
-```sh
+```bash
 # Create public IP addresses for use by VPN gateway
 az network public-ip create --name VNet1-GW-IP --resource-group ExamRefRG --location NorthEurope
 ```
-```sh
+```bash
 # Create VPN gateway in VNet1
 az network vnet-gateway create --name VNet1-GW --resource-group ExamRefRG --gateway-type vpn --sku VpnGw1 --vpn-type RouteBased --vnet VNet1 --public-ip-addresses VNet1-GW-IP --location NorthEurope
 ```
@@ -1538,11 +1538,11 @@ $gateway = Get-AzVirtualNetworkGateway -Name VPNGW1 -ResourceGroupName ExamRefRG
 $conn = New-AzVirtualNetworkGatewayConnection -Name OnPremConnection -ResourceGroupName ExamRefRG -Location 'West Europe' -VirtualNetworkGateway1 $gateway -LocalNetworkGateway2 $localnw -ConnectionType IPsec -SharedKey "abc123"
 ```
 #### 4.7b.03: Create a site-to-site VPN (Azure CLI)
-```sh
+```bash
 # Create Local Network Gateway
 az network local-gateway create --gateway-ip-address 53.50.123.195 --name LocalNetGW --resource-group ExamRefRG --local-address-prefixes 10.5.0.0/16
 ```
-```sh
+```bash
 # Create VPN connection
 az network vpn-connection create --name OnPremConnection --resource-group ExamRefRG --vnet-gateway1 VPNGW1 --location WestEurope --shared-key abc123 --local-gateway2 LocalNetGW
 ```
