@@ -28,13 +28,26 @@ Shells | [bash](bash.md) [elvish](elvish.md) [fish](fish.md)
 SystemD | [hostnamectl](hostnamectl.md) [xinetd](xinetd.md)
 Utilities | [imagemagick](imagemagick.md) [tmux](tmux.md)
 
-# CLI conventions for shell scripts
-## Validating arguments
-`if [ $# != 2 ]; then echo "..."; exit 1; fi` : (PGL:548)
-`[ -z "$1" ] && echo "..." && exit 1` : [Luke Smith](https://youtu.be/ksAfmJfdub0) 
-`if [ ! -z "$2" ] ; then ...; fi` : [Yakuake scripting](https://coderwall.com/p/kq9ghg/yakuake-scripting)
-## Looping based on user input
-placed in a while loop, if user responds with anything except "y" (the read command will read only the first letter) the loop will terminate (CLKF)
+## CLI conventions for shell scripts
+#### Validating arguments
+> PGL:548
+```
+if [ $# != 2 ]
+then 
+  echo "..."
+  exit 1
+fi
+```
+[Luke Smith](https://youtu.be/ksAfmJfdub0) 
+```
+[ -z "$1" ] && echo "..." && exit 1
+```
+[Yakuake scripting](https://coderwall.com/p/kq9ghg/yakuake-scripting)
+```
+if [ ! -z "$2" ] ; then ...; fi
+```
+#### Looping based on user input
+Placed in a while loop, if user responds with anything except "y" (the read command will read only the first letter) the loop will terminate (CLKF)
 ```bash
 read -p "Backup another server? (y/n)" -n 1
 ["$BACKUP_AGAIN"="y"] || break
