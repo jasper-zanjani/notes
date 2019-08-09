@@ -12,89 +12,21 @@ Topic                            | Contents
 [lx-terms](lx-terms.md)         | Linux applications, abbreviations, file formats, and other terms to be memorized
 [X](X.md)
 
-### Other operating systems
-
-Operating system  | Description
-:---              | :---  
-[BSD](bsd.md)
-[Mac OS X](macosx.md)
-[Kali Linux](lx-kali.md)
-
-### Shells
-
-Shell | Description
-:---  | :---
-[bash](bash.md) 
-[elvish](elvish.md
-[fish](fish.md)
-
-### Desktop environments
-
-Desktop environments
-:---
-[KDE](kde.md)
 
 ## Commands
-### Network
 
-Letter | Commands
+Type | Commands
 :--- | :---
-D | [dhclient](lx-network.md#dhclient) [dig](lx-network.md#dig) 
-F | ftp [firewalld](lx-network.md#firewalld)
-H | [hostnamectl](lx-network.md#hostnamectl)
-I | [ifconfig](lx-network.md#ifconfig) [iptables](lx-network.md#iptables)
-N | [nc](lx-network.md#nc) [netplan](lx-network.md#netplan) [netstat](lx-network.md#netstat) [NetworkManager](lx-network.md#networkmanager) nmap [nmcli](lx-network.md#nmcli) [nslookup](lx-network.md#nslookup)
-P | [ping](lx-network.md#ping)
-R | [route](lx-network.md#route)
-S | [ss](lx-network.md#ss)
-T | [tcpdump](lx-network.md#tcpdump) tracepath traceroute
-X | [xinetd](lx-network.md#xinetd) 
-
-### Filters
-
-Command                         | Description
-:---                            | :---
-[awk](awk.md)
-[sed](sed.md)
-[grep](grep.md)
-
-### GNU Utilities
-
-Command                         | Description
-:---                            | :---
-[cat](cat.md)
-[crontab](crontab.md)
-[date](date.md)
-[history](history.md)
-[less](less.md)
-[make](make.md)
-[sfdisk](sfdisk.md)
-[shuf](shuf.md)
-[sort](sort.md)
-[sudo](sudo.md)
-[test](test.md)
-[watch](watch.md)
-
-### SystemD
-
-Command                         | Description
-:---                            | :---
-[hostnamectl](hostnamectl.md)
-[xinetd](xinetd.md)
-
-
-### Utilities
-
-Command                         | Description
-:---                            | :---
-[imagemagick](imagemagick.md)
-[tmux](tmux.md)
-
-### Package managers
-
-Command                         | Description
-:---                            | :---
-[pacman](pacman.md)
+BSD | [BSD](bsd.md) [Mac OS X](macosx.md)
+Desktop environments | [KDE](kde.md)
+Distros | [Kali Linux](lx-kali.md)
+Filters | [awk](awk.md) [grep](grep.md) [sed](sed.md)
+GNU Utilities | [cat](cat.md) [crontab](crontab.md) [date](date.md) [history](history.md) [less](less.md) [make](make.md) [sfdisk](sfdisk.md) [shuf](shuf.md) [sort](sort.md) [sudo](sudo.md) [test](test.md) [watch](watch.md)
+Network | [dhclient](lx-network.md#dhclient) [dig](lx-network.md#dig) ftp [firewalld](lx-network.md#firewalld) [hostnamectl](lx-network.md#hostnamectl) [ifconfig](lx-network.md#ifconfig) [iptables](lx-network.md#iptables) [nc](lx-network.md#nc) [netplan](lx-network.md#netplan) [netstat](lx-network.md#netstat) [NetworkManager](lx-network.md#networkmanager) nmap [nmcli](lx-network.md#nmcli) [nslookup](lx-network.md#nslookup) [ping](lx-network.md#ping) [route](lx-network.md#route) [ss](lx-network.md#ss) [tcpdump](lx-network.md#tcpdump) tracepath traceroute [xinetd](lx-network.md#xinetd) 
+Package managers | [pacman](pacman.md)
+Shells | [bash](bash.md) [elvish](elvish.md) [fish](fish.md)
+SystemD | [hostnamectl](hostnamectl.md) [xinetd](xinetd.md)
+Utilities | [imagemagick](imagemagick.md) [tmux](tmux.md)
 
 # CLI conventions for shell scripts
 ## Validating arguments
