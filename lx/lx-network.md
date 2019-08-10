@@ -10,31 +10,13 @@ Test from the inside out, starting with the loopback
 
 ## Commands
 
-Command                             | Effect or description
-:---                                | :---
-[dhclient](#dhclient)           | obtain and configure TCP/IP information from a server on the network (LGLC: 34)
-[dig](#dig)                       | Perform a DNS lookup, useful when troubleshooting a DNS issue (cf. `nslookup`)
-ftp                               | encrypted file transfers
-[firewalld](#firewalld)           | Successor to `iptables` in Red Hat, and like its predecessor a frontend to the netfilter protocols. Places network traffic into zones. Commands have to be written twice: once to affect running config and again to have the change saved
-[hostnamectl](#hostnamectl)       | 
-[ifconfig](#ifconfig)             | Interface configuration, used to assign a TCP/IP configuration to a network interface, but no longer installed on modern distros.
-[iptables](#iptables)             | A popular firewall, like `firewalld`, a frontend for the kernel-level `netfilters` service.
-[nc](#nc)                         | netcat utility. It allows testing of a host's ports, similar to __ping__, but more versatile because __ping__ only uses the portless ICMP protocol. GNU and OpenBSD versions available (itp-l+: 28)
-[netplan](#netplan)               | Ubuntu network configuration tool
-[netstat](#netstat)               | 
-[NetworkManager](#networkmanager) | 
-nmap                              | audit open ports on a host
-[nmcli](#nmcli)                   | Interface to Network Manager, which allows for consistent network configuration across a system.
-[nslookup](#nslookup)             | Perform a DNS lookup in an interactive shell with cleaner output than __dig__. Enter a domain name and you get output in two sections. [NetworkWorld](https://www.networkworld.com/video/95669/how-to-use-the-nslookup-command-2-minute-linux-tip#tk.rss_linux)
-[ping](#ping)                     | "packet Internet groper" utility used for checking network connections, using ICMP packets (cf. __nc__)
-[route](#route)                   | Display and manipulate the routing table
-[ss](#ss)                         | "socket statistics", successor to __netstat__. 
-[tcpdump](#tcpdump)               | Inspect actual IP packets (Wireshark is a GUI-based alternative)
-tracepath                         | Successor to `traceroute`, allowing the user to test connectivity along the path. Doesn't show as much detail with regard to time, so it may be faster.
-traceroute                        | Provides much more information than `tracepath`, even though it's older (lxa-lpic: 109.3)
-[xinetd](#xinetd)                 | Internet Super Daemon provided an alternate method of connecting to various outdated network services. Should be turned off nowadays.  
+Command
+:--- 
+[dhclient](#dhclient) [dig](#dig) [ftp](#ftp) [firewalld](#firewalld) [hostnamectl](#hostnamectl) [ifconfig](#ifconfig) [iptables](#iptables) [nc](#nc) [netplan](#netplan) [netstat](#netstat) [NetworkManager](#networkmanager) [nmap](#nmap) [nmcli](#nmcli) [nslookup](#nslookup) [ping](#ping) [route](#route) [ss](#ss) [tcpdump](#tcpdump) tracepath traceroute [xinetd](#xinetd) 
 
 ## dhclient
+> [LGLC](../sources/lglc.md): 34
+obtain and configure TCP/IP information from a server on the network 
 #### Turn on the DHCP client and get a new address from the server
 ```
 sudo dhclient
@@ -45,7 +27,7 @@ sudo dhclient -r
 ```
 
 ## dig
-
+Perform a DNS lookup, useful when troubleshooting a DNS issue (cf. `nslookup`)
 #### Nameserver
 ```
 dig example.com NS
@@ -117,6 +99,8 @@ firewall-cmd --add-port=50000-60000/udp
 firewall-cmd --list-ports
 ```
 
+## ftp
+encrypted file transfers
 
 ## hostnamectl
 #### Permanently change hostname to {hostname} (systemd)
@@ -141,10 +125,9 @@ ifconfig eth0 down
 ```
 
 ## iptables
+A popular firewall, like `firewalld`, a frontend for the kernel-level `netfilters` service. Interface configuration, used to assign a TCP/IP configuration to a network interface, but no longer installed on modern distros.
 
-### Config files
-
-File | Description
+Config files | Description
 :---   | :---
 /etc/sysconfig/iptables | location of saved config
 
@@ -165,6 +148,7 @@ Syntax | Effect
 
 
 ## nc
+The netcat utility allows testing of a host's ports, similar to __ping__, but more versatile because __ping__ only uses the portless ICMP protocol. GNU and OpenBSD versions available (itp-l+: 28)
 #### Connect to host on port 80
 ```
 nc example.com 80
@@ -220,6 +204,7 @@ nc -L -p 3001 -d -e cmd.exe
 ```
 
 ## netplan
+Ubuntu network configuration tool
 ### Config files
 File          | Description
 :---          | :---
@@ -295,7 +280,11 @@ watch -n 1 'netstat -an | grep ":80" | wc -l'
 
 `chkconfig NetworkManager off`, `systemctl disable NetworkManager.service`, `service NetworkManager stop` stop NetworkManager service (Upstart, Systemd, Sysvinit)
 
+## nmap
+Audit open ports on a host
+
 ## nmcli
+Interface to Network Manager, which allows for consistent network configuration across a system.
 #### Display devices and statuses
 ```
 nmcli device status
@@ -319,6 +308,7 @@ nmcli device show
 ```
 
 ## nslookup
+Perform a DNS lookup in an interactive shell with cleaner output than __dig__. Enter a domain name and you get output in two sections. [NetworkWorld](https://www.networkworld.com/video/95669/how-to-use-the-nslookup-command-2-minute-linux-tip#tk.rss_linux)
 ### Tasks
 #### Get IP address of a website
 ```
@@ -350,6 +340,7 @@ nslookup -port=portno url
 ```
 
 ## ping
+"packet Internet groper" utility used for checking network connections, using ICMP packets (cf. __nc__)
 #### Numeric output only
 ```
 ping -n
@@ -376,6 +367,7 @@ ping -r
 ```
 
 ## route
+Display and manipulate the routing table
 ### Tasks
 #### Display routing table
 ```
@@ -395,6 +387,7 @@ route add -net 192.168.1.0 netmask 255.255.255.0 gw 192.168.0.1
 ```
 
 ## ss
+"Socket statistics", successor to __netstat__. 
 ### Options
 Options are of two kinds:
   1. Connection type (listening or established)
@@ -441,14 +434,23 @@ ss -tunapl
 ```
 
 ## tcpdump
+Inspect actual IP packets (Wireshark is a GUI-based alternative)
 #### All network data will be displayed to STDOUT
 ```
 tcpdump -i eth0
 ```
 
-## xinetd
+## tracepath
+Successor to `traceroute`, allowing the user to test connectivity along the path. Doesn't show as much detail with regard to time, so it may be faster.
 
-File | Description
+## traceroute
+> lxa-lpic: 109.3
+Provides much more information than `tracepath`, even though it's older (
+
+## xinetd
+Internet Super Daemon provided an alternate method of connecting to various outdated network services. Should be turned off nowadays.  
+
+Config file | Description
 :--- | :---
 /etc/xinet.d/ | config files
 /etc/xinetd.conf  | master xinetd configuration
