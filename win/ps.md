@@ -11,10 +11,8 @@ From "View system uptime" below:
 ```powershell
 Select-Object -Property @{n="Last Boot Time";e={[Management.ManagementDateTimeConvert]::ToDateTime($_.LastBootUpTime)}}
 ```
-
 #### `ForEach-Object`
 See [4.4c.02](../sources/az-103-tasks.md)
-
 ### Automatic variables
 **Automatic variables** are variables that store state information for PowerShell and are created and maintained by Powershell.
 
@@ -24,7 +22,6 @@ Syntax  | Effect
 `$?` | execution status of the last operation
 `$^` | first token in the last line received by the session
 `$_` | current object in the pipeline object
-
 ### Comparison operators
 Syntax  | Effect
 :---    | :---
@@ -45,7 +42,6 @@ Syntax  | Effect
 `-replace`
 `-is`   | type comparison
 `-isnot`
-
 ### Comparison with bash
 Bash            | PowerShell | Notes
 :---            | :---       | :---
@@ -77,7 +73,6 @@ Bash            | PowerShell | Notes
 `tail`          | `Get-Content -Tail`
 `touch`         | `New-Item`
 `uniq`          | `Select-Object -Unique`
-
 ### Filters
 Filtering results can be done with 5 commands:
   - `Where-Object` (aliased to `where` and `?`): the most commonly used such command

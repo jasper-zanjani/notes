@@ -34,7 +34,6 @@ Syntax | Effect
 
 
 ## Stash
-> "Git - Stashing". [git-scm.com](https://git-scm.com/book/en/v1/Git-Tools-Stashing).
 #### Stash changes to work-tree
 ```bash
 git stash
@@ -51,54 +50,43 @@ git stash apply
 ```bash
 git stash apply stash@{n}
 ```
-
 #### Rebase changes committed to <branch> onto <master>
 ```sh
 git checkout branch
 git rebase master
 ```
 This will rewind <branch> to the commit shared by the two branches, then applying all changes made subsequently to <master>. 
-
 ```sh
 git checkout <master>
 git merge <branch>
 ```
 Now the history will appear as though all changes were made in series, when they were actually made in parallel on separate branches.
-
-
 #### Move the last commit to a new branch
 ```sh
 git branch test         # create a new branch with current HEAD
 git reset --hard HEAD~  # reset master to before last commit 
 git checkout test       # continue on new branch
 ```
-
 #### Line endings
 Git will automatically append CRLF endings on Windows. This setting can be displayed with the following command:
 ```bash
 git config core.autocrlf
 ```
-
 In order to disable this, adjust the setting
 ```bash
 git config core.autocrlf false
 ```
-
 #### Squashing commits
 Sometimes many commits are made to resolve a single issue. These should be "squashed". To squash the last 4 commits:
-
 ```bash
 git rebase -i HEAD~4
 ```
-
 This will open a text editor where you will have to select what to do with each of the 4 commits. Most recent commits are at the bottom, and at least the top (oldest) commit has to remain "pick" in order to squash the others.
-
-The repo will have to be force-pushed once these changes have been made.
-
+The repo will have to be force-pushed once these changes have been made. 
 ```bash
 git push --force
 ```
-
 ## Sources
   - "Dealing with line endings". [GitHub Help](https://help.github.com/en/articles/dealing-with-line-endings)
   - "Squash All Commits Related to a Single Issue into a Single Commit". [GitHub](https://github.com/todotxt/todo.txt-android/wiki/Squash-All-Commits-Related-to-a-Single-Issue-into-a-Single-Commit)
+  - "Git - Stashing". [git-scm.com](https://git-scm.com/book/en/v1/Git-Tools-Stashing).

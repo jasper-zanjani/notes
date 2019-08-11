@@ -1,5 +1,7 @@
 # Static site generators
 
+## Netlify
+
 ## GitHub Pages
 Requires index.html in the `master` branch of a repository with a specific name: `username.github.io` where {username} is your GitHub username
 
@@ -22,3 +24,4 @@ Ruby-based static site generator. GitHub renders your Jekyll site and hosts it.
 ## Sources
   - "Run your blog on GitHub Pages with Python". [GitHub](https://opensource.com/article/19/5/run-your-blog-github-pages-python#comment-177311)
   - "GitHub Pages is a CI/CD pipeline". [GitHub](https://opensource.com/article/19/8/github-pages-cicd-pipeline): 2019/08/01.
+  - "12 lessons from 100 days of web". [Talk Python To Me](../sources/tptm.md): 224

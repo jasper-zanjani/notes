@@ -12,7 +12,7 @@ Test from the inside out, starting with the loopback
 
 Command
 :--- 
-[dhclient](#dhclient) [dig](#dig) [ftp](#ftp) [firewalld](#firewalld) [hostnamectl](#hostnamectl) [ifconfig](#ifconfig) [iptables](#iptables) [nc](#nc) [netplan](#netplan) [netstat](#netstat) [NetworkManager](#networkmanager) [nmap](#nmap) [nmcli](#nmcli) [nslookup](#nslookup) [ping](#ping) [route](#route) [ss](#ss) [tcpdump](#tcpdump) tracepath traceroute [xinetd](#xinetd) 
+[dhclient](#dhclient) [dig](#dig) [ftp](#ftp) [firewalld](#firewalld) [hostnamectl](#hostnamectl) [ifconfig](#ifconfig) [iptables](#iptables) [nc](#nc) [netplan](#netplan) [netstat](#netstat) [NetworkManager](#networkmanager) [nmap](#nmap) [nmcli](#nmcli) [nslookup](#nslookup) [ping](#ping) [route](#route) [ss](#ss) [tcpdump](#tcpdump) [tracepath](#tracepath) [traceroute](#traceroute) [xinetd](#xinetd) 
 
 ## dhclient
 > [LGLC](../sources/lglc.md): 34
@@ -205,8 +205,8 @@ nc -L -p 3001 -d -e cmd.exe
 
 ## netplan
 Ubuntu network configuration tool
-### Config files
-File          | Description
+
+Config file   | Description
 :---          | :---
 /etc/netplan/ | directory containing various configuration files and scripts
 /etc/nplan/99_config.yaml | netplan config
@@ -308,7 +308,7 @@ nmcli device show
 ```
 
 ## nslookup
-Perform a DNS lookup in an interactive shell with cleaner output than __dig__. Enter a domain name and you get output in two sections. [NetworkWorld](https://www.networkworld.com/video/95669/how-to-use-the-nslookup-command-2-minute-linux-tip#tk.rss_linux)
+Perform a DNS lookup in an interactive shell with cleaner output than __dig__. Enter a domain name and you get output in two sections. 
 ### Tasks
 #### Get IP address of a website
 ```
@@ -462,3 +462,4 @@ Config file | Description
   - "Bite Size Networking". [wizardzines.com](https://wizardzines.com/zines/bite-size-networking/)
   - "How to use the nmcli command: Linux Tip" [networkworld.com](https://www.networkworld.com/video/94347/how-to-use-the-nmcli-command-linux-tip#tk.rss_linux)
   - "nslookup Command: 7 Practical Examples" [linuxhandbook.com](https://linuxhandbook.com/nslookup-command/)
+  - "How to use the nslookup command". [NetworkWorld](https://www.networkworld.com/video/95669/how-to-use-the-nslookup-command-2-minute-linux-tip#tk.rss_linux)

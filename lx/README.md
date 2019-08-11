@@ -16,7 +16,6 @@ Distros | [Kali Linux](lx-kali.md)
 [X](X.md)
 SystemD | [hostnamectl](hostnamectl.md) [xinetd](xinetd.md)
 
-
 ## Commands
 
 Commands

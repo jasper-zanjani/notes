@@ -2,12 +2,12 @@
 
 Pattern-scanning utility and processing language, one of the two primary commands which accept regular expressions in Unix systems.
 
->"The basic function of awk is to search files for lines that contain certain patterns." ([GEAP](https://github.com/jasper-zanjani/notes/blob/master/sources.md):17)
+>"The basic function of awk is to search files for lines that contain certain patterns." ([GEAP](../sources/README.md): 17
 
 ### Invocation
-awk __programs__ can be defined __inline__ or in a __program-file__ ([PGL](https://github.com/jasper-zanjani/notes/blob/master/sources.md):528)
+awk __programs__ can be defined __inline__ or in a __program-file__ ([PGL](../sources/README.md): 528)
   - inline: `awk options 'program' input-files`
-  - __program-file__, also "source-file" ([GEAP](https://github.com/jasper-zanjani/notes/blob/master/sources.md):18): `awk options -f program-file input-files` 
+  - __program-file__, also "source-file" ([GEAP](../sources/README.md):18): `awk options -f program-file input-files` 
 
 awk programs can be run without defining __input-files__, in which case awk will accept input from STDIN
 
@@ -26,7 +26,7 @@ Syntax      | Effect
 `#` | comments begin with octothorpe
 
 #### Programs
-awk __programs__ are the equivalent of sed "instructions", and similarly combine __patterns__ and __actions__ ([PGL](https://github.com/jasper-zanjani/notes/blob/master/sources.md): 530, [GEAP](https://github.com/jasper-zanjani/notes/blob/master/sources.md): 17)
+awk __programs__ are the equivalent of sed "instructions", and similarly combine __patterns__ and __actions__ ([PGL](../sources/README.md): 530, [GEAP](../sources/README.md): 17)
 
 #### Patterns
 Patterns can be:
@@ -67,8 +67,6 @@ Syntax      | Effect
 `toupper(string)` | convert {string} to uppercase
 
 ### Formatted strings
-
-
 Formatted strings use the `printf` command, with the syntax `printf "control-string", *args`. The {control-string} is interpolated with expressions called _conversion specifications_, with the syntax `%[-][x[.y]]conv` where {x} represents minimum field width, {y} number of places to the right of a decimal point in a number, and _conv_ can be one of the following values (PGL:534):
   - `d` integer
   - `e` exponential notation
@@ -150,5 +148,4 @@ Syntax      | Effect
 
 ## Sources
   - "Getting Started With AWK Command [Beginner's Guide]" [linuxhandbook.com](https://linuxhandbook.com/awk-command-tutorial/)
-  - [HPR](https://github.com/jasper-zanjani/notes/blob/master/sources.md) 2816
-
+  - [HPR](../sources/README.md) 2816 

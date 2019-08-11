@@ -13,7 +13,7 @@ Get-AzVMUsage
 # View current usage of storage service
 Get-AzStorageUsage
 ``` 
-#### 1.1b.2 Configure cost center quotas
+#### 1.1b.2: Configure cost center quotas
 Budgets can be viewed and administered in the __Cost Management + Billing__ blade. Users must be at least Reader to a subscription to view, and Contributor to create and manage, budgets. Specialized roles that grant access to Cost Management include
   - __Cost Management contributor__
   - __Cost Management reader__ \
