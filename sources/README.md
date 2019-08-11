@@ -47,7 +47,7 @@ PiaN  | _Python in a Nutshell_|Martelli, Alex
 PP    | _Programming Python_|Lutz, Mark
 SA    | _sed & awk (2nd edition)_|Dougherty, Dale and Robbins, Arnold
 SY    | _Syntax_|
-TP    | _Talk Python to Me_|
+TPTM  | _Talk Python to Me_|
 TW    | _This Week in Linux_|
 ULSAH | _Unix and Linux System Administration Handbook_|
 UN    | _Unix in a Nutshell_|Robbins, Arnold
