@@ -11,7 +11,8 @@
 ```python
 from setuptools import setup
 
-setup(name='funniest',
+setup(
+  name='funniest',
   version='0.1',
   description='The funniest joke in the world',
   url='http://github.com/storborg/funniest',
@@ -22,7 +23,6 @@ setup(name='funniest',
   zip_safe=False
 )
 ```
-
 If the package has dependencies, they can be added by appending a `install_requires` keyword argument passing an array of the module names
 ```python
 ..., install_requires=[ 'markdown', ], ...
@@ -43,5 +43,5 @@ If the package has dependencies, they can be added by appending a `install_requi
 `python setup.py register sdist upload` do all the above in a single step
 
 ## Sources
-  - [python-packaging](https://python-packaging.readthedocs.io/en/latest/)
+  - "How to package your Python code". [Read the Docs](https://python-packaging.readthedocs.io/en/latest/)
   - [setuptools](https://setuptools.readthedocs.io/en/latest/setuptools.html)
