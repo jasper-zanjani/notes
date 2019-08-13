@@ -646,10 +646,9 @@ imageName="LinuxImage"
 ```bash
 # Deallocate the VM
 az vm deallocate --resource-group $rgName --name $vmName
-```
-```bash
 # Set the status of the VM to Generalized
 az vm generalize --resource-group $rgName --name $vmName
+# Capture managed VM image from generalized VM
 az image create --resource-group $rgName --name $imageName --source $vmName 
 ```
 #### 3.1a.7: Create a VM from an image

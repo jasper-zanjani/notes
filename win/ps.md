@@ -265,21 +265,18 @@ Syntax  | Effect
 `New-Alias ip Get-NetIPAddress`|establish a new alias
 `Set-Alias ip Get-NetAdapter`|edit an existing alias
 `Export-Alias -Path alias.ps1 -As Script`|export session aliases to a ".ps1" file
-
 ### Service
 Syntax  | Effect
 :---    | :---
 `Start-Service WinRM`, `sasv winrm` | Start the &lt;WinRM&gt; service
 `Stop-Service WinRM`, `spsv winrm`  | Stop the &lt;WinRM&gt; service
 `Get-Service WinRM`, `gsv winrm`    | Display status of &lt;WinRM&gt; service
-
 ### Module
 Modules are automatically imported, if available, when you run a command that belongs to one. Or you can manually import them.
 Syntax  | Effect
 :---    | :---
 `Install-Module -Name Az -AllowClobber` | Install the __Az__ module
 `Import-Module SmbShare`|import module {SmbShare}
-
 ### Profiles
 Syntax  | Effect
 :---    | :---
@@ -288,7 +285,6 @@ Syntax  | Effect
 `$profile.CurrentUserAllHosts`|C:\Users\Michael\Documents\WindowsPowerShell\profile.ps1
 `$profile.AllUsersAllHosts`|C:\Windows\System32\WindowsPowerShell\v1.0\profile.ps1
 `$profile.AllUsersCurrentHost`|C:\Windows\System32\WindowsPowerShell\v1.0\Microsoft.PowerShell_profile.ps1
-
 ## Remote commands
 Syntax  | Effect
 :---    | :---
@@ -377,6 +373,9 @@ Syntax                                            | Effect
 Configuration                                     | precedes title of script, at top (e.g. `Configuration ContosoSimple`)
 Ensure                                            | property within `WindowsFeature` that can be set to `Present` or `Absent` (e.g. `Ensure = "Present"`)
 WindowsFeature                                    | declares code block representing a DSC resource to be installed (e.g. `WindowsFeature IIS`)
+
+## Errors
+The `Throw` keyword generates a temrinating error
 
 ## Glossary
 

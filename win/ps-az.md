@@ -70,16 +70,13 @@ New-AzVM Greeks Socrates $vm
   - `Location` required
 `Get-AzVMImageOffer` produces the offer, e.g. "WindowsServer"
   - `Location` required
-  - `PublisherName` required
+  - `PublisherName` required (refer to `Get-AzVMImagePublisher`)
 `Get-AzVMImageSku` produces the SKU, e.g.  "2016-Datacenter-Server-Core"
-  - `Location` required
-  - `Offer` required
-  - `PublisherName` required
+  - `Location` and `PublisherName` required
+  - `Offer` required (refer to `Get-AzVMImageOffer`)
 `Get-AzVMImage` requires the following named parameters:
-  - `-Location` i.e. "EastUS"
-  - `-PublisherName` cf. `Get-AzVMImagePublisher`
-  - `-Offer` cf. `Get-AzVMImageOffer`
-  - `-Skus` cf. `Get-AzVMImageSku`
+  - `-Location`, `PublisherName`, and `-Offer` required
+  - `-Skus` required (refer to `Get-AzVMImageSku`)
   - `-Version` providing `*` will produce a list of available versions
 
 #### Start a VM
@@ -100,7 +97,7 @@ Stop-AzVM Greeks Socrates
 ```powershell
 Enable-PSRemoting
 ```
-Alternatively:
+Alternatively, using the command-prompt:
 ```cmd
 winrm quickconfig
 ```
@@ -115,7 +112,7 @@ Set-Item WSMan:\localhost\Client\TrustedHosts -Value ipaddr
 New-NetFirewallRule -DisplayName "WinRMHTTP" -Direction Inbound -LocalPort 5985 -Protocol TCP -Action Allow
 New-NetFirewallRule -DisplayName "WinRMHTTPS" -Direction Inbound -LocalPort 5986 -Protocol TCP -Action Allow
 ```
-Alternatively:
+Alternatively, using the command-prompt:
 ```cmd
 netsh advfirewall firewall add rule name=WinRMHTTP dir=in action=allow protocol=TCP localport=5985
 netsh advfirewall firewall add rule name=WinRMHTTPS dir=in action=allow protocol=TCP localport=5986
