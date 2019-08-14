@@ -8,6 +8,7 @@ Elasticity        | ability to increase or decrease the __instance count or size
 Scalability       | ability to increase the __instance count or size__ of existing resources | [udemy.com](https://www.udemy.com/linux-academy-microsoft-azure-concepts/)
 Scale out         | increase __instance count__ of existing resources: non-disruptive | [udemy.com](https://www.udemy.com/linux-academy-microsoft-azure-concepts/)
 Scale up          | increase __instance size__ of existing resources: __disruptive__ | [udemy.com](https://www.udemy.com/linux-academy-microsoft-azure-concepts/)
+zone              | a part of the domain namespace delegated to a legal entity (person or organization) who is responsible for maintaining it, i.e. Top-Level Domains (".com"), second-level domains ("example.com"), and subdomains; also an administrative function allowing for granular control of DNS components | [Pocket](https://app.getpocket.com/read/2495535941) -> [ns1.com](https://ns1.com/resources/dns-zones-explained)
 
 ## AWS
 [AWS certifications](https://aws.amazon.com/certification/) include the [AWS Certified Cloud Practitioner](https://aws.amazon.com/certification/certified-cloud-practitioner/), which costs $100. 
