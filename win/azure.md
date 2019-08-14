@@ -1,19 +1,15 @@
 # Microsoft Azure
-
 ## Web Apps
 __Web Apps__ represent Azure's __PaaS__ product. It is part of the __App Service__ family, which include:
   - Mobile Apps
   - API Apps
-  - Logic Apps
-
-Each App Service resource is associated with a __service plan__, which defines the amount of resources available.
-
+  - Logic Apps\
+Each App Service resource is associated with a __service plan__, which defines the amount of resources available.\
 Service plan tiers:
-  - Free/Shared: uses a shared infrastructure with minimal storage. No options for deploying different staged versions, routing of traffic, or backups
-  - Basic: Dedicated compute for app, including avaiilability of SSL and manual scaling of app instance number.
-  - Standard: Daily backups, automatic scaling of app instances, deployment slots, and user routing with Traffic Manager
-  - Premium: more frequent backups, increased storage, and greater number of deployment slots and instance scaling options.
-  
+  - **Free/Shared**: uses a shared infrastructure with minimal storage. No options for deploying different staged versions, routing of traffic, or backups
+  - **Basic**: Dedicated compute for app, including avaiilability of SSL and manual scaling of app instance number.
+  - **Standard**: Daily backups, automatic scaling of app instances, deployment slots, and user routing with Traffic Manager
+  - **Premium**: more frequent backups, increased storage, and greater number of deployment slots and instance scaling options.
 ## Role assignments and classic administrators
 VMs represent Azure's __IaaS__ product. Manage access to Azure resources using __role-based access control (RBAC)__. __Service Administrator__ and __Co-Administrator__ are legacy roles used with the classic deployment model.
 
@@ -47,6 +43,24 @@ Metrics can have up to 10 name-value pairs (dimensions) and have the following p
   - **Type** of measurement the value represents
   - **Resource** associated with the value
   - **Value**
+## VMs
+### Operating system images
+VM images are captured from an existing VM that has been prepared (or "generalized"). This removes unique settings (hostname, security IDs, personal information, user accounts, domain join information, etc) but not customizations (software installations, patches, additional files, folders).\
+2 methods of generalizing a VM:
+  1. **sysprep.exe**
+  2. **Microsoft Azure Linux Agent (waagent)**
+2 types of VM image types
+  1. **Managed** images (recommended), which remove the dependency of the VM to the image, at least within the same region. Copying a VM to another region still requires the managed image to be copied first.
+  2. **Unmanaged** images, which required the VM to be created in the same storage account as that of the image. VM copies required the image to be copies first.
+## VNets
+**Virtual Networks** (VNets) created through Portal require at least one subnet.
+### Subnets
+Subnet names are immutable and must be unique within each VNet, and their IP ranges must be described using CIDR notation. They can only be deleted if empty.\
+Azure will reserve **5** IP addresses from each subnet IP range.
+  - First and last IP addresses in each subnet are reserved for network identification and broadcast
+  - An additional three addresses at the start (bottom) of the range are reserved. (This means the smallest possible subnet is `/29`, providing 3 addresses for use)
+  - e.g. the first available IP address in range `192.168.1.0/24` is `192.168.1.4`
+## Azure blades
 
 ## Storage
 4 storage services provided within each storage account:

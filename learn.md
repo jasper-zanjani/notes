@@ -17,13 +17,24 @@ Here, both instances of `storage` are tested at once.
 #### Single task with different implementations
 ```
 * Create an availability set (PowerShell) (3.1b.02)
-{{c1::New-AzAvailabilitySet}}
-  -{{c2::PlatformUpdateDomainCount}}
-  -{{c3::PlatformFaultDomainCount}}
-  -{{c4::Sku}} "{{c8::Aligned}}"
+New-AzAvailabilitySet
+  -PlatformUpdateDomainCount
+  -PlatformFaultDomainCount
+  -Sku "{{c8::Aligned}}"
 
 * Create an availability set (CLI) (3.1b.03)
-az {{c5::vm availability-set create}}
-  --{{c6::platform-update-domain-count}}
-  --{{c7::platform-fault-domain-count}}
+az vm availability-set create
+  --platform-update-domain-count
+  --platform-fault-domain-count
 ```
+
+#### Config object pattern
+```
+* Capture a managed VM image (3.1a.05)
+$vm = Get-AzVM
+$image = New-AzImageConfig -SourceVirtualMachineId $vm.Id
+New-AzImage -Image $image
+```
+
+## Sources
+  [](sources/az-103-tasks.md)

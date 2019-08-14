@@ -1,7 +1,7 @@
-# Cloud providers
-
+# Cloud providers 
 Term              | Definition  | Source
 :---              | :---        | :---
+Classless Inter-Domain Domain Routing | style of describing IP address ranges where a slash followed by a number follows the IP address (i.e. `10.0.0.0/8`) describes what portion of an IP address is variable and what portion describes the host | [A](#sources): 280 
 Fault tolerance   | a system's ability to __continue operating properly__ when one or more of its components fails | [udemy.com](https://www.udemy.com/linux-academy-microsoft-azure-concepts/)
 High availability | maintaining __acceptable continuous performance__ despite temporary load fluctuations or failures in services, hardware, or data centers | [udemy.com](https://www.udemy.com/linux-academy-microsoft-azure-concepts/)
 Elasticity        | ability to increase or decrease the __instance count or size__ of existing resources based on fluctuations in traffic or load, or in resource workload | [udemy.com](https://www.udemy.com/linux-academy-microsoft-azure-concepts/)
@@ -27,3 +27,6 @@ zone              | a part of the domain namespace delegated to a legal entity (
   - Infrastructure as a Service (IaaS "eye-az")
   - Platform as a Service (PaaS "paz")
   - Software as a Service (SaaS)
+
+## Sources
+  A. Washam, Michael; Tuliani, Jonathan; Hoag, Scott. _Exam Ref AZ-103 Microsoft Azure Administrator_. [AZ-103](sources/az-103.md)
