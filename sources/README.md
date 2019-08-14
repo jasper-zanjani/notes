@@ -57,3 +57,16 @@ WCL   | _Windows Command-Line_|William R. Stanek
 WCSS  | _Wicked Cool Shell Scripts_|Taylor, Dave and Perry, Brandon
 WSAF  | _Windows Server 2016 Administration Fundamentals_|Dauti, Bekim
 YUG   | _Your Unix: the Ultimate Guide_|Das, Sumitabha
+
+## Podcasts
+
+Name | Links
+:--- | :---
+Linux Unplugged | [Web](https://linuxunplugged.com/) [Twitter](https://twitter.com/jupitersignal)
+
+## People
+
+Name | Description  | Links
+:--- | :---         | :---
+Fisher, Chris | Host of Jupiter Broadcasting podcasts
+Tolinski, Scott | 
