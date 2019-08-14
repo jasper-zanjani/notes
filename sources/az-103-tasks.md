@@ -77,6 +77,31 @@ az policy assignment create --policy allowedVMs --name 'deny-non-compliant-vms' 
 ```bash
 az policy assignment delete --name deny-non-compliant-vms
 ```
+#### 1.1c.06 Azure Policy commands in PowerShell
+```powershell
+# Create a policy definition
+New-AzPolicyDefinition
+  -Name 'appendEnvironmentTag'
+  -DisplayName 'Append Environment TAg'
+  -Policy 'AppendDefaultTag.json'
+  -Parameter 'AppendDefaultTagParams.json'
+$scope = '/subscriptions/$subscriptionID'
+$policyparam = '{
+  "tagName" : {
+    "value": "Environment" },
+  "tagValue": {
+    "value" : "Production" } }'
+$assignment = New-AzPolicyAssignment
+  -Name 'append-environment-tag'
+  -DisplayName 'Append Environment Tag'
+  -Scope $scope 
+  -PolicyDefinition $definition
+  -PolicyParameter $policyparam
+
+# Remove policy assignment and definition
+Remove-AzPolicyAssignment -Id $assignment.ResourceId
+Remove-AzPolicyDefinition -Id $definition.ResourceId
+```
 #### 1.2a.1 Enable diagnostics log collection with a storage account (Portal)
 Browse to the resource itself. Alternatively, open __Azure Monitor__ and then the __Diagnostics Settings__ blade. From there you can view all eligible resouce types and view status of log collection. 
 #### 1.2a.2 Enable diagnostics log collection with a storage account (PowerShell)
@@ -128,6 +153,10 @@ az monitor diagnostic-settings create --name $diagnosticName --workspace $logAna
 #### 1.2b.1 Create an alert rule (Portal)
 1. **Alerts**
 2. **New Alert Rule** button
+#### 1.2e.01 Create a workspace
+#### 1.2e.02 Create a workspace (PowerShell, CLI)
+#### 1.2e.03: Collect event and performance data from Windows and Linux machines
+#### 1.2e.04: Create alert rules from within query interface
 #### 1.2g.1 Enable Cloudyn (Portal)
 1. Open **Cost Management + Billing**
 2. Open **Cost Management**
