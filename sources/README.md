@@ -93,7 +93,13 @@ Ressington, Joe       | [Linux Action News](#podcasts) [User Error](#podcasts) [
 Robbins, Arnold       | _Bash Pocket Reference_, _Unix in a Nutshell_, _sed & awk_
 Tolinski, Scott       | Host of [Syntax](#podcasts) | [Twitter](https://twitter.com/stolinski) [Github](https://github.com/stolinski) [BitBucket](https://bitbucket.org/stolinski) [Facebook](https://www.facebook.com/LevelUpTuts)
 
-## Notes
+## Note
+### Coder Radio
+#### 361
+  - Source: [coder.show](https://coder.show/361)
+  - Apple changing from bash to zsh for the next release of Mac OS X
+  - Designing UIs in Swift
+    - Functional programming
 ### Hacker Public Radio
 #### 1938: How I prepare HPR shows
   - Source: [hpr.org](hackerpublicradio.org/eps/hpr1938_full_shownotes.html)
