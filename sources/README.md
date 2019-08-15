@@ -104,6 +104,7 @@ Tolinski, Scott       | Host of [Syntax](#podcasts) | [Twitter](https://twitter.
     - Functional programming
 #### CR 325
 > "Clojure Calisthenics". [coder.show](https://coder.show/325): 2018/09/07.\
+
 Wes Payne is a big fan of Clojure, in particular with the professionalism of the clojure community. Clojure is not as closely tied to Java as it was in its inception when it was a "JAR", but it still needs a JVM.
 ### Hacker Public Radio
 #### HPR 1938
