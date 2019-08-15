@@ -11,7 +11,7 @@ CGF           | _Chengdu Gaming Federation_|
 CL+           | _Comptia Linux+ Complete Study Guide_|Smith, Roderick
 CLKF          | _Command-Line Kung Fu_|Jason Cannon
 CLx           | [chooselinux.show](https://chooselinux.show/)|
-CR            | **Coder Radio** [Web](https://coder.show/) [Twitter](https://twitter.com/coderradioshow) | [361](#cr-361)
+CR            | **Coder Radio** [Web](https://coder.show/) [Twitter](https://twitter.com/coderradioshow) | [325](#cr-325) [361](#cr-361)
 CSP           | _Classic Computer Science Problems in Python_| Kopec, David
 DL            | [destinationlinux.com](http://destinationlinux.com/)|
 FP            | _Fluent Python_|Ramalho, Luciano
@@ -103,7 +103,7 @@ Tolinski, Scott       | Host of [Syntax](#podcasts) | [Twitter](https://twitter.
   - Designing UIs in Swift
     - Functional programming
 #### CR 325
-> "Clojure Calisthenics". [coder.show](https://coder.show/325): 2018/09/07.
+> "Clojure Calisthenics". [coder.show](https://coder.show/325): 2018/09/07.\
 Wes Payne is a big fan of Clojure, in particular with the professionalism of the clojure community. Clojure is not as closely tied to Java as it was in its inception when it was a "JAR", but it still needs a JVM.
 ### Hacker Public Radio
 #### HPR 1938
