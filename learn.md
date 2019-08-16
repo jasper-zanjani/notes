@@ -37,4 +37,4 @@ New-AzImage -Image $image
 ```
 
 ## Sources
-  [](sources/az-103-tasks.md)
+  [AZ-103 Tasks](sources/az-103-tasks.md)

@@ -1,31 +1,37 @@
 # Microsoft Azure
 ## Web Apps
 __Web Apps__ represent Azure's __PaaS__ product. It is part of the __App Service__ family, which include:
-  - Mobile Apps
-  - API Apps
-  - Logic Apps\
+- Mobile Apps
+- API Apps
+- Logic Apps\
 Each App Service resource is associated with a __service plan__, which defines the amount of resources available.\
 Service plan tiers:
-  - **Free/Shared**: uses a shared infrastructure with minimal storage. No options for deploying different staged versions, routing of traffic, or backups
-  - **Basic**: Dedicated compute for app, including avaiilability of SSL and manual scaling of app instance number.
-  - **Standard**: Daily backups, automatic scaling of app instances, deployment slots, and user routing with Traffic Manager
-  - **Premium**: more frequent backups, increased storage, and greater number of deployment slots and instance scaling options.
+- **Free/Shared**: uses a shared infrastructure with minimal storage. No options for deploying different staged versions, routing of traffic, or backups
+- **Basic**: Dedicated compute for app, including avaiilability of SSL and manual scaling of app instance number.
+- **Standard**: Daily backups, automatic scaling of app instances, deployment slots, and user routing with Traffic Manager
+- **Premium**: more frequent backups, increased storage, and greater number of deployment slots and instance scaling options.
 ## Role assignments and classic administrators
 VMs represent Azure's __IaaS__ product. Manage access to Azure resources using __role-based access control (RBAC)__. __Service Administrator__ and __Co-Administrator__ are legacy roles used with the classic deployment model.
 ## Alerts
 Alerts can have 3 states:
-  - **New** and not reviewed
-  - **Acknowledged** issue is being actioned by an admin
-  - **Closed** issue that generated the alerts has been resolved and the alert has been marked as closed
+- **New** and not reviewed
+- **Acknowledged** issue is being actioned by an admin
+- **Closed** issue that generated the alerts has been resolved and the alert has been marked as closed
 ## VMs
 ### Operating system images
 VM images are captured from an existing VM that has been prepared (or "generalized"). This removes unique settings (hostname, security IDs, personal information, user accounts, domain join information, etc) but not customizations (software installations, patches, additional files, folders).\
 2 methods of generalizing a VM:
   1. **sysprep.exe**
-  2. **Microsoft Azure Linux Agent (waagent)**
+  2. **Microsoft Azure Linux Agent (waagent)**\
 2 types of VM image types
   1. **Managed** images (recommended), which remove the dependency of the VM to the image, at least within the same region. Copying a VM to another region still requires the managed image to be copied first.
   2. **Unmanaged** images, which required the VM to be created in the same storage account as that of the image. VM copies required the image to be copies first.
+### Availability sets and zones
+**Availability zones** protect from datacenter-level failures by providing physical and logical separation between VM instances. Zones have independent power sources, network, and cooling, and there are at least 3 zones in every region.\
+**Availability sets** offer redundancy for VMs in the same application tier, ensuring at least one VM is available in the case of a host update or problem. Each VM is assigned a **fault domain** (representing separate physical racks in the datacenter) and an **update domain** (representing groups of VMs and underlying physical hardware that can be rebooted at the same time for host updates). Every availability set has up to 20 update domains and 3 fault domains available.\
+A VM joined to an availability zone **may not** be also joined to an **availability set**.
+### Scale sets
+**VM scale sets (VMSS)** support the ability to dynamically add and remove instances. By default, a VMSS supports up to 100 instances or up to 1000 instances if deployed with the property `singlePlacementGroup` set to false (called a **large-scale set**). A **placement group** is a concept similar to an availability set in that it assigns fault and upgrade domains. By default, a scale set consists of only a single placement group, but disabling this setting allows the scale set to be composed of multiple placement groups. If a custom image is used instead of one in the gallery, the limit is actually 300 instances.
 ## VNets
 **Virtual Networks** (VNets) created through Portal require at least one subnet.
 ### Subnets
@@ -35,7 +41,6 @@ Azure will reserve **5** IP addresses from each subnet IP range.
   - An additional three addresses at the start (bottom) of the range are reserved. (This means the smallest possible subnet is `/29`, providing 3 addresses for use)
   - e.g. the first available IP address in range `192.168.1.0/24` is `192.168.1.4`
 ## Azure blades
-
 Blade                                   | Option                | Topics
 :---                                    | :---                  | :---
 Alerts                                  | New alert rule        | Create Alerts
@@ -49,7 +54,6 @@ Storage account                         | Firewalls and Virtual Networks |  Stor
                                         | Access keys           | Access storage name and key
 Subscription                            | Access Control (IAM)  | Assign subscription administrator permissions, including classic and RBAC roles
 ## Glossary
-
 Term                                    | Definition  | Source
 :---                                    | :---        | :---
 append blob                             | blob type optimized for append operations, with no support for modification of existing blob contents, most commonly used for log files | [AZ-103](../sources/az-103.md): 130
@@ -71,11 +75,13 @@ role                                    | definition of what action is allowed o
 security principal                      | entities with access to Azure resources, i.e. users, groups, and service identities | [AZ-103](../sources/az-103.md): 85
 soft delete                             | Storage account feature that allows you to save and recover data when blobs or blob snapshots are deleted even in the event of an overwrite | [AZ-103](../sources/az-103.md): 135
 Desired State Configuration (DSC)       | a common Windows PowerShell extension for configuration management | AZ-103: 259
-
+## Features
 Azure feature                           | Description | Source
 :---                                    | :---        | :---
 Archive                                 | blob storage access tier designed for long-term storage of infrequently-used data that can tolerate several hours of retrieval latency, remaining in the Archive tier for at least 180 days.
 async blob copy service                 | server-side based service that can copy files you specify from a source location to a destination in an Azure Storage account | [AZ-103](../sources/az-103.md): 124
+availability set                        | feature that offers redundancy for VMs by assigning each instance a fault domain and update domain | [A](#sources): 193
+availability zone                       | feature that offers redundancy for VMs by providing physical and logical separation between VM instances, which will have independent power sources, network, and cooling. | [A](#sources): 191
 Azure Activity Log                      | subscription level log that captures events from operational data to service health events for a subscription | [AZ-103](../sources/az-103.md): 119
 Application Insights                    | service that can provide __application metrics__, if enabled and if the applications have been instrumented (now integrated into **Azure Monitor**) | [AZ-103](../sources/az-103.md): 44
 Azure Automation                        | allows you to build __runbooks__ that execute commands or scripts
@@ -86,7 +92,7 @@ Azure Data Box                          | device that Microsoft will send to you
 Azure File Service                      | fully managed file share service that offers endpoints for __SMB__ (__CIFS__) protocol | [AZ-103](../sources/az-103.md): 147
 Azure File Sync                         | extends Azure File Service to allow on-premises file server to be extended to Azure | [AZ-103](../sources/az-103.md): 152
 Azure File Sync agent                   | software that needs to be deployed on every server to be added to an **Azure File Sync** group | [AZ-103](../sources/az-103.md): 152
-Azure Functions
+Azure Functions                         | 
 Azure Import and Export service         | allows you to ship data into or out of an Azure Storage account by physically shipping disks to an Azure datacenter | [AZ-103](../sources/az-103.md): 129
 Azure Key Vault                         | helps safeguard cryptographic keys and secrets used by cloud applications and services | [AZ-103](../sources/az-103.md): 114
 Azure Log Analytics (OMS) agent)        | agent required to be installed on a machine for it to report telemetry to Azure Log Analytics (previously known as __Microsoft Monitoring Agent__, now integrated into **Azure Monitor**)
@@ -107,6 +113,7 @@ Geographically-redundant storage (GRS)  | Storage replication option that makes 
 Hot                                     | blob storage access tier optimized for the frequent access of objects in the storage account
 IP Flow Verify                          | a **Network Watcher** tool that provides a quick and easy way to test if a given network flow will be allowe4d into or out of a VM | AZ-103: 376
 Kusto                                   | query language comparable to SQL used by Log Analytics. Kusto queries use the pipe character to separate commands, always begin with a scope, are case-sensitive, and generate read-only requests so log entries are only deleted based on retention policy. | [AZ-103](../sources/az-103.md): 53
+large-scale set                         | a **scale set** spanning more than one **placement group** (allowing it to exceed 100 instances) | [A](#sources): 223
 Locally-redundant storage (LRS)         | Storage replication option that makes 3 local synchronous (within a single datacenter) copies 
 Log Analytics                           | facilitates collection, correlation, search, and action on log and performance data, organized in __workspaces__ (now being called **Azure Monitor logs** | [AZ-103](../sources/az-103.md): 47-48; [Azure Monitor terminology changes](https://docs.microsoft.com/en-us/azure/azure-monitor/terminology)
 Log Analytics workspace                 | where logs are collected and aggregated | [AZ-103](../sources/az-103.md): 48
@@ -119,6 +126,7 @@ Network Watcher                         | central hub for a wide range of networ
 Next Hop                                | a **Network Watcher** view that provides a useful way to understand how a VM's outbound traffic is being directed | AZ-103: 377
 Packet Captures                         | a **Network Watcher** tool that allows you to capture network packets entering or leaving VMs | AZ-103: 378
 Performance Monitor                     | one of the three **Network Performance Monitor** services that monitors connectivity between various points in the network, both in Azure and on-premises; enables monitoring of packet loss and latency between endpoints | [AZ-103](../sources/az-103.md): 369
+placement group                         | construct containing a fault and upgrade domain, similar to **availability sets**, used in **scale sets** | [A](#sources): 222
 Read-access geographically redundant storage (RA-GRS) | Storage replication option that makes 3 local synchronous copies plus 3 additional asynchronous copies to a second data center far away from the primary region, which has only read-only access
 Recovery Services vault                 | the single resource that is provisioned for either **Azure Backup** or **Azure Site Recovery** | [AZ-103](../sources/az-103.md): 160
 Resource                                | single service instance, which can be a virtual machine, a virtual network, a storage account, or any other Azure service | [AZ-103](../sources/az-103.md): 62
@@ -131,8 +139,6 @@ VMSnapshot                              | extension automatically deployed by th
 VMSnapshotLinux                         | extension automatically deployed by the Azure fabric controller to VMs while configuring backups through Azure Backup | [AZ-103](../sources/az-103.md): 270
 VPN Troubleshoot                        | a **Network Watcher** feature that provides automated diagnostics of Azure VPN gateways and connections | AZ-103: 381
 Zone-redundant storage (ZRS)            | Storage replication option that makes 3 synchronous copies across multiple availability zones; available for general-purpose v2 storage accounts at **Standard** performance tier only.
-
 ## Sources
-  - Foulds, Iain. _Learn Azure in a Month of Lunches_. [LZML](../sources/lzml.md)
-  - Washam, Michael; Tuliani, Jonathan; Hoag, Scott. _Exam Ref AZ-103 Microsoft Azure Administrator_. [AZ-103](../sources/az-103.md)
-  - "Overview of alerts in Microsoft Azure". [Microsoft Docs](https://docs.microsoft.com/en-us/azure/azure-monitor/platform/alerts-overview). 2018/01/27
+  A. Washam, Michael; Tuliani, Jonathan; Hoag, Scott. _Exam Ref AZ-103 Microsoft Azure Administrator_. [AZ-103](../sources/az-103.md)
+  B. "Overview of alerts in Microsoft Azure". [Microsoft Docs](https://docs.microsoft.com/en-us/azure/azure-monitor/platform/alerts-overview). 2018/01/27
