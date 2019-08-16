@@ -169,10 +169,52 @@ Option                        | Mandatory | Position
 `-Path`                       | ✔ | 0
 `-Value`                      | ✔ | 1 
 
-### Other syntax
-**Hash tables** (equivalent to Python dictionaries) are declared with `@{...}` ([Source](../sources/az-103-tasks.md#11b7-remove-tags-from-a-resource-powershell/))
+### Hash tables
+**Hash tables** (equivalent to Python dictionaries) can be built with hash literals:
 ```powershell
-Set-AzResourceGroup -Tag @{} -Name hrgroup 
+$hashtable = @{
+  Apple = 'red'
+  Orange = 'orange'
+  Eggplant = 'purple'
+}
+```
+Each line in a hash literal is a separate statement, that needs to be separated by semicolons when written in-line:
+```powershell
+$hashtable = @{ Apple = 'red'; Orange = 'orange'; Eggplant = 'purple' }
+```
+The Hashtable method `Add()` can also be used:
+```powershell
+$hashtable = @{}
+$hashtable.Add('Apple','red')
+$hashtable.Add('Orange','orange')
+$hashtable.Add('Kiwi','green')
+```
+Like dicts in Python, copying a hash table is merely a reference or shallow copy:
+```powershell
+$hashtable1 = $hashtable
+$hashtable1['Apple'] = 'rainbow'
+$hashtable['Apple'] # => rainbow
+```
+But a deep copy or "clone" can be made:
+```powershell
+$hashtable2 = $hashtable.Clone()
+```
+Like in Python, the keys and values can be retrieved with methods (properties in PowerShell)
+```powershell
+$hashtable.Keys # => @('Apple','Orange','Kiwi')
+$hashtable.Values # => @('red','orange','green')
+```
+### Flow control
+```powershell
+if ($condition) {
+  ...
+}
+```
+```powershell
+switch ($reference) {
+  $value1 { ... }
+  $value2 { ... }
+}
 ```
 ### Defining functions
 Functions are declared with the following syntax
