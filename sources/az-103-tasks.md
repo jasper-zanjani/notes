@@ -3,7 +3,7 @@
 
 PowerShell command 
 :--- 
-<small>Add-AzDnsRecordConfig [4.3a.02](#43a2) Add-AzKeyVaultKey [2.1c.02](#21c02) Add-AzLoadBalancerProbeConfig Add-AzLoadBalancerRuleConfig Add-AzRouteConfig Add-AzVirtualNetworkPeering Add-AzVMDataDisk Add-AzVMNetworkInterface Add-AzVmssExtension Add-AzVmssNetworkInterfaceConfiguration AzCopy Connect-AzAccount ConvertTo-Json ConvertTo-SecureString Export-AzResourceGroup ForEach-Object Format-Table Get-AzADGroup Get-AzDnsRecordSet Get-AzEffectiveNetworkSecurityGroup Get-AzEffectiveRouteTable Get-AzImage Get-AzLoadBalancer Get-AzLoadBalancerBackendAddressPoolConfig Get-AzNetworkInterface Get-AzNetworkInterfaceIpConfig Get-AzNetworkWatcher Get-AzNetworkWatcherNextHop Get-AzNetworkWatcherPacketCapture Get-AzNetworkWatcherTopology Get-AzOperationalInsightsWorkspace Get-AzProviderOperation Get-AzRemoteDesktopFile Get-AzResource Get-AzResourceGroup Get-AzRoleDefinition Get-AzServiceBusRule Get-AzStorageAccount Get-AzStorageAccountKey Get-AzStorageBlobCopyState Get-AzStorageUsage Get-AzVirtualNetwork Get-AzVirtualNetworkGateway Get-AzVirtualNetworkGatewayConnection Get-AzVirtualNetworkPeering Get-AzVirtualNetworkSubnetConfig Get-AzVM Get-AzVMSize Get-AzVMUsage Get-Date Get-StoragePool Install-ADDSForest Install-WindowsFeature Move-AzResource New-AzAvailabilitySet New-AzDiskConfig New-AzDnsRecordConfig New-AzDnsRecordSet New-AzDnsZone New-AzImage New-AzImageConfig New-AzKeyVault New-AzLoadBalancer New-AzLoadBalancerBackendAddressPoolConfig New-AzLoadBalancerFrontendIpConfig New-AzLoadBalancerProbeConfig New-AzLoadBalancerRuleConfig New-AzLocalNetworkGateway New-AzNetworkInterface New-AzNetworkSecurityGroup New-AzNetworkSecurityRuleConfig New-AzNetworkWatcherPacketCapture New-AzPacketCaptureFilterConfig New-AzPublicIpAddress New-AzResourceGroup New-AzResourceGroupDeployment New-AzRoleAssignment New-AzRouteTable New-AzStorageAccount New-AzStorageBlobSASToken New-AzStorageContainer New-AzStorageContext New-AzStorageShare New-AzVirtualNetwork New-AzVirtualNetworkGateway New-AzVirtualNetworkGatewayConnection New-AzVirtualNetworkGatewayIpConfig New-AzVirtualNetworkSubnetConfig New-AzVMConfig New-AzVmss New-AzVmssIpConfig New-Object New-PSDrive New-StoragePool New-VirtualDisk Object.HardwareProfile.VmSize Publish-AzVMDscConfiguration Register-AzResourceProvider Remove-AzDnsRecordConfig Remove-AzResourceGroup Remove-AzRoleAssignment Restart-AzVM Save-AzResourceGroupDeploymentTemplate Set-AzCurrentStorageAccount Set-AzDiagnosticSetting Set-AzDnsRecordSet Set-AzKeyVaultSecret Set-AzLoadBalancer Set-AzNetworkInterface Set-AzNetworkInterfaceIpConfig Set-AzResourceGroup Set-AzRouteTable Set-AzStorageAccount Set-AzStorageBlobContent Set-AzVirtualNetwork Set-AzVirtualNetworkSubnetConfig Set-AzVM Set-AzVMCustomScriptExtension Set-AzVMDataDisk Set-AzVmDscExtension Set-AzVMExtension Set-AzVMOperatingSystem Set-AzVMOSDisk Set-AzVMSourceImage Set-AzVmssOsProfile Set-AzVmssStorageProfile Start-AzNetworkWatcherResourceTroubleshooting Start-AzStorageBlobCopy Stop-AzNetworkWatcherPacketCapture Stop-AzVM Test-AzNetworkWatcherConnectivity Test-AzNetworkWatcherIPFlow Update-AzVM Where-Object</small>
+<small>Add-AzDnsRecordConfig [4.3a.02](#43a02) Add-AzKeyVaultKey [2.1c.02](#21c02) Add-AzLoadBalancerProbeConfig Add-AzLoadBalancerRuleConfig Add-AzRouteConfig Add-AzVirtualNetworkPeering Add-AzVMDataDisk Add-AzVMNetworkInterface Add-AzVmssExtension Add-AzVmssNetworkInterfaceConfiguration AzCopy Connect-AzAccount ConvertTo-Json ConvertTo-SecureString Export-AzResourceGroup ForEach-Object Format-Table Get-AzADGroup Get-AzDnsRecordSet Get-AzEffectiveNetworkSecurityGroup Get-AzEffectiveRouteTable Get-AzImage Get-AzLoadBalancer Get-AzLoadBalancerBackendAddressPoolConfig Get-AzNetworkInterface Get-AzNetworkInterfaceIpConfig Get-AzNetworkWatcher Get-AzNetworkWatcherNextHop Get-AzNetworkWatcherPacketCapture Get-AzNetworkWatcherTopology Get-AzOperationalInsightsWorkspace Get-AzProviderOperation Get-AzRemoteDesktopFile Get-AzResource Get-AzResourceGroup Get-AzRoleDefinition Get-AzServiceBusRule Get-AzStorageAccount Get-AzStorageAccountKey Get-AzStorageBlobCopyState Get-AzStorageUsage Get-AzVirtualNetwork Get-AzVirtualNetworkGateway Get-AzVirtualNetworkGatewayConnection Get-AzVirtualNetworkPeering Get-AzVirtualNetworkSubnetConfig Get-AzVM Get-AzVMSize Get-AzVMUsage Get-Date Get-StoragePool Install-ADDSForest Install-WindowsFeature Move-AzResource New-AzAvailabilitySet New-AzDiskConfig New-AzDnsRecordConfig New-AzDnsRecordSet New-AzDnsZone New-AzImage New-AzImageConfig New-AzKeyVault New-AzLoadBalancer New-AzLoadBalancerBackendAddressPoolConfig New-AzLoadBalancerFrontendIpConfig New-AzLoadBalancerProbeConfig New-AzLoadBalancerRuleConfig New-AzLocalNetworkGateway New-AzNetworkInterface New-AzNetworkSecurityGroup New-AzNetworkSecurityRuleConfig New-AzNetworkWatcherPacketCapture New-AzPacketCaptureFilterConfig New-AzPublicIpAddress New-AzResourceGroup New-AzResourceGroupDeployment New-AzRoleAssignment New-AzRouteTable New-AzStorageAccount New-AzStorageBlobSASToken New-AzStorageContainer New-AzStorageContext New-AzStorageShare New-AzVirtualNetwork New-AzVirtualNetworkGateway New-AzVirtualNetworkGatewayConnection New-AzVirtualNetworkGatewayIpConfig New-AzVirtualNetworkSubnetConfig New-AzVMConfig New-AzVmss New-AzVmssIpConfig New-Object New-PSDrive New-StoragePool New-VirtualDisk Object.HardwareProfile.VmSize Publish-AzVMDscConfiguration Register-AzResourceProvider Remove-AzDnsRecordConfig Remove-AzResourceGroup Remove-AzRoleAssignment Restart-AzVM Save-AzResourceGroupDeploymentTemplate Set-AzCurrentStorageAccount Set-AzDiagnosticSetting Set-AzDnsRecordSet Set-AzKeyVaultSecret Set-AzLoadBalancer Set-AzNetworkInterface Set-AzNetworkInterfaceIpConfig Set-AzResourceGroup Set-AzRouteTable Set-AzStorageAccount Set-AzStorageBlobContent Set-AzVirtualNetwork Set-AzVirtualNetworkSubnetConfig Set-AzVM Set-AzVMCustomScriptExtension Set-AzVMDataDisk Set-AzVmDscExtension Set-AzVMExtension Set-AzVMOperatingSystem Set-AzVMOSDisk Set-AzVMSourceImage Set-AzVmssOsProfile Set-AzVmssStorageProfile Start-AzNetworkWatcherResourceTroubleshooting Start-AzStorageBlobCopy Stop-AzNetworkWatcherPacketCapture Stop-AzVM Test-AzNetworkWatcherConnectivity Test-AzNetworkWatcherIPFlow Update-AzVM Where-Object</small>
 
 ## Tasks
 ###  1       Manage Azure subscriptions and resource
@@ -181,7 +181,7 @@ az monitor diagnostic-settings create --name $diagnosticName --workspace $logAna
     "category": <categoryName>,
     "enabled": true }]'
 ```
-#### 1.2b.1
+#### 1.2b.01
 Create an alert rule (Portal)
 1. **Alerts**
 2. **New Alert Rule** button
@@ -193,7 +193,7 @@ Create a workspace (PowerShell, CLI)
 Collect event and performance data from Windows and Linux machines
 #### 1.2e.04:
 Create alert rules from within query interface
-#### 1.2g.1
+#### 1.2g.01
 Enable Cloudyn (Portal)
 1. Open **Cost Management + Billing**
 2. Open **Cost Management**
@@ -219,66 +219,66 @@ Delete a resource group without confirmation (CLI)
 ```bash
 az group delete --name $resourceGroup --yes
 ```
-#### 1.4b.1:
+#### 1.4b.01:
 Retrieve the definition of a role (PowerShell)
 ```powershell
 Get-AzRoleDefinition -Name "Virtual Machine Contributor" | ConvertTo-Json
 ```
-#### 1.4b.2:
+#### 1.4b.02:
 Retrieve the definition of a role (Azure CLI)
 ```bash
 az role definition list -n "Virtual Machine Contributor"
 ```
-#### 1.4b.3:
+#### 1.4b.03:
 Retrieve operations that support `DataActions` and `NotDataActions` (PowerShell)
 ```powershell
 Get-AzProviderOperation * |? { $_.IsDataAction -eq $true }
 ```
-#### 1.4c.1:
+#### 1.4c.01:
 Assign a role to a user (Portal)
 1. Navigate to resource group
 2. Open Access Control (IAM)
 3. Open **Role Assignments** tab
 4. Click **Add**
 5. Select **Add Role Assignment**
-#### 1.4c.2:
+#### 1.4c.02:
 Remove a role assignment (Portal)
 1. Navigate to resource group
 2. Open Access Control (IAM)
 3. Open **Role Assignments** tab
 4. Select one or more security principals and click **Remove**
-#### 1.4c.3:
+#### 1.4c.03:
 List roles available for assignment (PowerShell)
 ```powershell
 Get-AzRoleDefinition | Where-Object { $_.IsCustom -eq $true }
 ```
-#### 1.4c.4:
+#### 1.4c.04:
 List custom roles available for assignment (Azure CLI)
 ```bash
 az role definition list --custom-role-only -o table
 ```
-#### 1.4c.5:
+#### 1.4c.05:
 View all role assignments in a subscription (Azure CLI)
 ```bash
 az role assignment list --all
 ```
-#### 1.4c.6:
+#### 1.4c.06:
 Grant a user RBAC rights (PowerShell)
 ```powershell
 New-AzRoleAssignment -SignInName "cloudadmin@opsgility.onmicrosoft.com" -RoleDefinitionName "Virtual Machine Contributor" -ResourceGroupName ExamRefRG
 ```
-#### 1.4c.7:
+#### 1.4c.07:
 Grant a user RBAC rights (Azure CLI)
 ```bash
 az role assignment create --assignee "cloudadmin@opsgility.onmicrosoft.com" --role "Virtual Machine Contributor" --resource-group ExamRefRG
 ```
-#### 1.4c.8:
+#### 1.4c.08:
 Grant a group RBAC rights (PowerShell)
 ```powershell
 $group = Get-AzADGroup -SearchString "Cloud Admins"
 New-AzRoleAssignment -ObjectId $group.Id -RoleDefinitionName "Virtual Machine Contributor" -ResourceGroupName ExamRefRG
 ```
-#### 1.4c.9:
+#### 1.4c.09:
 Grant a group RBAC rights (Azure CLI)
 ```bash
 groupid=$(az ad group list --query "[?displayName=='Cloud Admins'].objectId" -o tsv)
@@ -307,73 +307,73 @@ groupid=$(az ad group list --query "[?displayName=='CloudAdmins'].objectId" -o t
 az role assignment delete --role "Virtual Machine Contributor" --assignee-object-id $groupid --resource-group ExamRefRG
 ```
 ###  2       Implement and manage storage
-#### 2.1a.1:
+#### 2.1a.01:
 Create a storage account (Portal)
 Click **Create a resouce**, then **Storage**, then **Storage account**. Choose a **globally** unique name for the account, containing lower-case characters and digits only.
-#### 2.1a.2:
+#### 2.1a.02:
 Create a storage account (PowerShell)
 ```powershell
 New-AzStorageAccount -ResourceGroupName ExamRefRG -Name mystorage112300 -SkuName Standard_LRS -Location WestUS -Kind StorageV2 -AccessTier Hot
 ```
-#### 2.1a.3:
+#### 2.1a.03:
 Create a storage account (CLI)
 ```bash
 az storage account create --name $accountName --resource-group $resourceGroup -location $location --sku $sku
 ```
-#### 2.1a.4:
+#### 2.1a.04:
 Change storage account's access tier, without confirmation (PowerShell)
 ```powershell
 Set-AzStorageAccount -ResourceGroupName RG -Name $accountName -AccessTier Cool -Force
 ```
-#### 2.1b.1:
+#### 2.1b.01:
 Configure service endpoints (Portal)
 1. Specify `Microsoft.Storage` in the service endpoint settings of the VNet subnet
 2. Configure which VNets can access a particular storage account
-#### 2.1c.1:
+#### 2.1c.01:
 Access storage account name and key (Portal)
 1. Open storage account
 2. Open **Access keys** blade
-#### 2.1c.2:
+#### 2.1c.02:
 Create an Azure Key Vault (PowerShell)
 ```powershell
 New-AzKeyVault -VaultName $vaultName -Name $keyName -ResourceGroupName $rgName -Location $location
 ```
-#### 2.1c.3:
+#### 2.1c.03:
 Store a software managed key in Azure Key Vault (PowerShell)
 ```powershell
 $key = Add-AzKeyVaultKey -VaultName $vaultName -Name $keyName -Destination 'Software'
 ```
-#### 2.1c.4:
+#### 2.1c.04:
 Retrieve a storage account key (PowerShell)
 ```powershell
 $storageKey = Get-AzStorageAccountKey -ResourceGroupName $rgName -Name $storageAccount 
 ```
-#### 2.1c.5:
+#### 2.1c.05:
 Convert storage account key to secure string
 ```powershell
 $secretvalue = ConvertTo-SecureString $storageKey[0].Value -AsPlainText -Force
 ```
-#### 2.1c.6:
+#### 2.1c.06:
 Set secret value to be used in Azure Key Vault (PowerShell)
 ```powershell
 $secret = Set-AzKeyVaultSecret -VaultName $vaultName -Name $secretName -SecretValue $secretvalue
 ```
-#### 2.1c.7:
+#### 2.1c.07:
 Create an Azure Key Vault (Azure CLI)
 ```bash
 az keyvault create --name $vaultName --resource-group $rgName --location $location
 ```
-#### 2.1c.8:
+#### 2.1c.08:
 Store a software managed key in Azure Key Vault (Azure CLI)
 ```bash
 az keyvault key create --vault-name $vaultName --name $keyName --protection "software"
 ```
-#### 2.1c.9:
+#### 2.1c.09:
 Set secret value to be used in Azure Key Vault (Azure CLI)
 ```bash
 az keyvault secret set --vault-name $vaultName --name $secretName --value $secretValue
 ```
-#### 2.1d.1:
+#### 2.1d.01:
 Create a SAS token for a specific storage blob (PowerShell)
 ```powershell
 $storageKey = Get-AzStorageAccountKey -ResourceGroupName $rgName -Name $accountName
@@ -383,22 +383,22 @@ $endTime = $startTime.AddHours(4)
 
 New-AzStorageBlobSASToken -Container $container -Blob $blob -Permission "rwd" -StartTime $startTime -ExpiryTime $startTime.AddHours(4) -Context $context
 ```
-#### 2.1d.2:
+#### 2.1d.02:
 Create a SAS token for a specific storage blob (Azure CLI)
 ```bash
 az storage blob generate-sas --account-name "storageAccount" --account-key $storageAccountKey --container-name $container --name $blobName --permissions r --expiry "2019-05-31"
 ```
-#### 2.1e.1:
+#### 2.1e.01:
 Access Activity Log data (Portal)
 1. Find **Management + Governance** in **All Services**
 2. Open **Activity Log**
 3. Click Logs icon at top of Activity Log view to select an existing Log Analytics (OMS) workspace or create a new one
-#### 2.1f.1:
+#### 2.1f.01:
 Change replication mode of a storage account (PowerShell)
 ```powershell
 Set-AzStorageAccount -ResourceGroupName $resourceGroup -Name $accountName -SkuName $type
 ```
-#### 2.1f.2:
+#### 2.1f.02:
 Use async blob copy service to copy a file (PowerShell)
 ```powershell
 $blobCopyState = Start-AzStorageBlobCopy -SrcBlob $blobName -SrcContainer $srcContainer -Context $srcContext -DestContainer $destContainer -DestBlob $vhdName -DestContext $destContext
@@ -421,27 +421,27 @@ New-AzStorageContainer -Name $destContainer -Context $destContext
 # Make the copy
 $copiedBlob = Start-AzStorageBlobCopy -SrcBlob $blobName -SrcContainer $srcContainer -Context $srcContext -DestContainer $destContainer -DestBlob $blobName -DestContext $destContext
 ```
-#### 2.1f.3:
+#### 2.1f.03:
 Monitor progress of the async blob copy (PowerShell)
 ```powershell
 $copiedBlob | Get-AzStorageBlobCopyState
 ```
-#### 2.1f.4:
+#### 2.1f.04:
 Copy a blob from one storage account to another (Azure CLI)
 ```bash
 az storage blob copy start --account-name $destStorageAccount --account-key $destStorageKey --destination-blob $blobName --source-account-name $srcStorageAccount --source-container $srcContainer --source-blob $blobName --source-account-key $srcStorageKey
 ```
-#### 2.1f.5:
+#### 2.1f.05:
 Monitor progress of the async blob copy (Azure CLI)
 ```bash
 az storage blob show --account-name $destStorageAccount --account-key $destStorageKey --container-name $destContainer --name $blobName
 ```
-#### 2.1f.6:
+#### 2.1f.06:
 Use AzCopy to copy a blob
 ```cmd
 AzCopy /Source:https://sourceblob.blob.core.windows.net/sourcecontainer/ /Dest:https://deststorage.blob.core.windows.net/destcontainer/ /SourceKey:sourcekey /DestKey:destkey /Pattern:disk1.vhd
 ```
-#### 2.2a.1:
+#### 2.2a.01:
 Create a storage container (PowerShell)
 ```powershell
 # Get account key
@@ -460,7 +460,7 @@ New-AzStorageContainer -Name $container -Permission Off
 # Create storage blob
 Set-AzStorageBlobContent -File $localFile -Container $container -Blob $blobName
 ```
-#### 2.2a.2:
+#### 2.2a.02:
 Create a storage container (Azure CLI)
 `az storage container create` parameters:
   - `public-access` used to set permissions: values include 
@@ -470,23 +470,23 @@ Create a storage container (Azure CLI)
 ```bash
 az storage container create --account-name $storageaccount --name $containername --public-access off
 ```
-#### 2.2a.3:
+#### 2.2a.03:
 Upload a file (Azure CLI)
 `az storage blob upload` is used to upload a file
 ```bash
 az storage blob upload --container-name $containerName --account-name $accountName --account-key $accountKey --file $file --name $blobName
 ```
-#### 2.2a.4:
+#### 2.2a.04:
 Download a blob from a container (AzCopy)
 ```cmd
 AzCopy copy https://storageAccount.blob.core.windows.net/sourceContainer/path/to/blob?SASToken localFilePath
 ```
-#### 2.2a.5:
+#### 2.2a.05:
 Upload a blob to a container (AzCopy)
 ```cmd
 AzCopy copy localFilePath https://storageAccount.blob.core.windows.net/destinationContainer/path/to/blob?SASToken
 ```
-#### 2.2b.1:
+#### 2.2b.01:
 Export data (Portal)
 1. From **All Services** open **Import/Export Jobs**
 2. Open **Create Import/Export Job**
@@ -498,7 +498,7 @@ Export data (Portal)
 8. Specify carrier information and address for disks to be shipped to
 9. Select **Summary** tab
 10. Click OK
-#### 2.2c.1:
+#### 2.2c.01:
 Import data
 1. Install Azure Import/Export tool
 2. Prepare drives and copy data to drives. Specify destination storage account key, BitLocker key (available from Portal), and log directory, among other parameters, in the first session
@@ -512,7 +512,7 @@ WAImportExport.exe PrepImport \
   /dstdir:DestinationPath
 ```
 3. Create an import job through the Portal
-#### 2.2c.2:
+#### 2.2c.02:
 Create an import job (Portal)
 1. From **All Services** open **Import/Export Jobs**
 2. Open **Create Import/Export Job**
@@ -525,29 +525,29 @@ Create an import job (Portal)
 9. Select **Summary** tab
 10. Click OK
 11. Physically ship disks to Microsoft
-#### 2.2e.1:
+#### 2.2e.01:
 Publish content in a CDN endpoint (Portal)
 1. Create a new CDN profile
 2. Add an endpoint to the profile
-#### 2.2e.2:
+#### 2.2e.02:
 Create a new CDN profile (Portal)
 1. Click **Create a resource** 
 2. Click **Web**
 3. Click **CDN**, opening the CDN profile blade
 4. Specify name for the profile, name of the resource group, region, and pricing tier.
 5. Click **Create**
-#### 2.2e.3:
+#### 2.2e.03:
 Add an endpoint to a CDN profile (Portal)
 1. Open the CDN Profile
 2. Click **+ Endpoint** button
 3. Specify unique name, configuration for origin settings such as type, host header, and origin port for HTTP and HTTPS.
 4. Click **Add** button
-#### 2.3a.1:
+#### 2.3a.01:
 Create an Azure File Share (Portal)
 1. Open a standard Azure storage account (not premium)
 2. **Files**
 3. **+ File Share** button
-#### 2.3a.2:
+#### 2.3a.02:
 Create an Azure File Share (PowerShell)
 ```powershell
 # Get key of storage account
@@ -557,7 +557,7 @@ $context = New-AzStorageContext -StorageAccountName $storageAccount -StorageAcco
 # Create the file share with the context
 New-AzStorageShare -Name $shareName -Context $context
 ```
-#### 2.3a.3:
+#### 2.3a.03:
 Create an Azure File Share (CLI)
 ```powershell
 # Get the connection string associated with the account
@@ -565,7 +565,7 @@ constring=$(az storage account show-connection-string -n $storageAccountName)
 # Create the file share with the connection string
 az storage share create --name $shareName --quota 2048 --connection-string $constring
 ```
-#### 2.3a.4:
+#### 2.3a.04:
 Connect to and mount an Azure File Share (Windows File Explorer)
 1. Right-click on **This PC**
 2. Click **Map Network Drive** option
@@ -574,12 +574,12 @@ Connect to and mount an Azure File Share (Windows File Explorer)
 5. Click **Finish**
 6. In the dialog box that opens login with the username: `AZURE\<storageName>`
 7. Password should be access key for the storage account
-#### 2.3a.5:
+#### 2.3a.05:
 Connect to and mount an Azure File Share (net use command)
 ```cmd
 net use x \\erstandard01.file.core.windows.net\logs /u:AZURE\erstandard01 <accessKey>
 ```
-#### 2.3a.6:
+#### 2.3a.06:
 Connect to and mount an Azure File Share (PowerShell)
 `New-PSDrive` maps the drive
 ```powershell
@@ -588,33 +588,33 @@ $acctKey = ConvertTo-SecureString -String $storageKey -AsPlainText -Force
 $credential = New-Object System.Management.Automation.PSCredential -ArgumentList "Azure\$storageName", $acctKey
 New-PSDrive -Name "Z" -PSProvider FileSystem -Root "\\$storageName.file.core.windows.net\$shareName" -Credential $credential
 ```
-#### 2.3a.7:
+#### 2.3a.07:
 Automatically reconnect after reboot in Windows
 ```
 cmdkey /add:storageAccountName.file.core.windows.net /user:AZURE\storageAccountName /pass:storageAccountKey
 ```
-#### 2.3a.8:
+#### 2.3a.08:
 Connect to and mount an Azure File Share (Linux)
 Mounting to `/logs`
 ```bash
 sudo mount -t cifs //$storageAccount.file.core.windows.net/logs /logs -o "vers=3.0,username=$storageAccount,password=$storageAccountKey,dir_mode=0777,file_mode=0777,sec=ntlmssp"
 ```
-#### 2.3b.1:
+#### 2.3b.01:
 Create the Azure File Sync Service (Portal)
 Create a resource **Storage** **Azure File Sync**
-#### 2.3c.1:
+#### 2.3c.01:
 Create a sync group (Portal)
 Specify name of sync group in dialog after creating an Azure File Sync (2.3b.1)
-#### 2.3c.2:
+#### 2.3c.02:
 Add endpoints to Azure File Sync Group (Portal)
 1. Register a server to the sync group by installing **Azure File Sync agent** on each server. When installing, you sign in with your subscription's credentials, then register the server by providing the Subscription, Resource Group, and Storage Sync Service names.
 2. Click **Add Server Endpoint**. This will display a dropdown of all servers with the agent installed and associated with the sync service.
-#### 2.3d.1:
+#### 2.3d.01:
 Collect logs to troubleshoot issues with Azure File Sync agent installation
 ```
 StorageSyncAgent.msi /l*v AFSInstaller.log
 ```
-#### 2.3d.2:
+#### 2.3d.02:
 Remove the server from registered sync group
 Error message "This server is already registered during registration"
 ```powershell
@@ -622,10 +622,10 @@ Import-Module "C:\Program Files\Azure\StorageSyncAgent\StorageSync.Management.Se
 Reset-StorageSyncServer
 ```
 ###  3       Deploy and manage virtual machines
-#### 3.1a.1:
+#### 3.1a.01:
 Create an Azure VM (Portal)
 ...
-#### 3.1a.2:
+#### 3.1a.02:
 Create an Azure VM (PowerShell)
 ```powershell
 # Variables
@@ -687,7 +687,7 @@ Add-AzVMNetworkInterface -VM $vm -NetworkInterface $nic
 # Provision the virtual machine with `New-AzVM`
 New-AzVM -ResourceGroupName $resourceGroupName -Location $location -VM $vm
 ```
-#### 3.1a.3:
+#### 3.1a.03:
 Create an Azure VM (Azure CLI)
 ```bash
 # Login to Azure account
@@ -753,9 +753,9 @@ user=demouser
 vmName="WebVM"
 az vm create -n $vmName -g $rgName -l $location --size $vmSize --nics $nicname --image $imageName --generate-ssh-keys
 ```
-#### 3.1a.4:
+#### 3.1a.04:
 Capture a managed VM image (Portal)
-#### 3.1a.5:
+#### 3.1a.05:
 Capture a managed VM image (PowerShell)
 ```powershell
 # Variables
@@ -774,7 +774,7 @@ $vm = Get-AzVM -ResourceGroupName $rgName -Name $vmName
 $image = New-AzImageConfig -Location $location -SourceVirtualMachineId $vm.ID 
 New-AzImage -Image $image -ImageName $imageName -ResourceGroupName $rgName
 ```
-#### 3.1a.6:
+#### 3.1a.06:
 Capture a managed VM image (Azure CLI)
 ```bash
 # Create a managed image
@@ -790,7 +790,7 @@ az vm generalize --resource-group $rgName --name $vmName
 # Capture managed VM image from generalized VM
 az image create --resource-group $rgName --name $imageName --source $vmName 
 ```
-#### 3.1a.7:
+#### 3.1a.07:
 Create a VM from an image
 #### 3.1a.34:
 Specify a legacy unmanaged image for use in a new virtual machine (PowerShell)
