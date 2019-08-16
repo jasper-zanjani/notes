@@ -11,13 +11,33 @@ Service plan tiers:
 - **Standard**: Daily backups, automatic scaling of app instances, deployment slots, and user routing with Traffic Manager
 - **Premium**: more frequent backups, increased storage, and greater number of deployment slots and instance scaling options.
 ## Role assignments and classic administrators
-VMs represent Azure's __IaaS__ product. Manage access to Azure resources using __role-based access control (RBAC)__. __Service Administrator__ and __Co-Administrator__ are legacy roles used with the classic deployment model.
+  __Service Administrator__ and __Co-Administrator__ are legacy roles used with the classic deployment model.
+Azure methods of administering access to resources can be divided into two groups
+  1. __Classic__ subscription administration roles 
+    - Account Administrator
+    - Service Administrator
+    - Co-Administrator
+  2. __Role-Based Access Controls (RBAC)__: There are more than __70__ built-in RBAC roles, allowing fine-grained access management, but __4__ of them are foundational:
+    1. __Owner__ has full access to all resources and __can__ delegate access. Service Administrator and Co-Administrators are assigned this role at the subscription scope.
+    2. __Contributor__ can create and manage all resources, but __cannot__ delegate access.
+    3. __Reader__ can view resources.
+    4. __User Access Administrator__ only manages user access to resources.
+
+Classic subscription administrators have full access to a subcription. They can access resources through Azure Portal, ARM APIs (PowerShell and CLI), and classic deployment model APIs. By default, the account that is used to sign up for a subscription is automatically set as both __Account Administrator__ and __Service Administrator__. There can only be one Account Administrator per account and only 1 Service Administrator per subscription. __Co-Administrators__ have the same access as Service Administrators, and there can be 200 of them per subscription, but cannot change the association of subscriptions to directories.\
+Current assignments for classic admins can be seen in the __Properties blade__ of a subscription in Azure Portal. Co-Administrator assignments can be added by opening the __Access Control (IAM)__ blade of a subscription, then clicking the __Add co-administrator__ button.\
+RBAC roles are supported only by Azure Portal and the ARM APIs. Access is applied to a __scope__, which includes subscriptions, resource groups, or resources. Azure Policy can be applied at various __scopes__. For example, a policy applied to a subscription is said to be at the "subscription scope". Policy can also be applied to Management Groups, which is an additional scope above subscription. In this way, several subscriptions can inherit a single policy through a Management Group.\
+There is a built-in role named __Resource Policy Contributor__, which includes access to most Policy operations and should be considered privileged.\
+RBAC roles can be used to grant rights to 2 types of principals:
+  1. __User principal__: identity associated with a user or group of users.
+  2. __Service principal__: identity associated with an application.\
+RBAC roles can also be applied to a subscription through __Management Groups__, which represent the recommended practice for ensuring consistent application of tenant-wide security. Management groups form a hierarchy where each child inherits policy from its single parent while having additional controls. There is a single Management Group at the root of the hierarchy, associated with the Azure AD tenant (which is associated, in turn, with a subscription) that cannot be moved or deleted. 
 ## Alerts
 Alerts can have 3 states:
 - **New** and not reviewed
 - **Acknowledged** issue is being actioned by an admin
 - **Closed** issue that generated the alerts has been resolved and the alert has been marked as closed
 ## VMs
+VMs represent Azure's __IaaS__ product.
 ### Operating system images
 VM images are captured from an existing VM that has been prepared (or "generalized"). This removes unique settings (hostname, security IDs, personal information, user accounts, domain join information, etc) but not customizations (software installations, patches, additional files, folders).\
 2 methods of generalizing a VM:

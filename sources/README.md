@@ -1,83 +1,68 @@
 ## Abbreviations
-Abbreviation  |  Title  | Notes
-:---          | :---    | :---
-BNfP          | _Bash Notes for Professionals_. [Goalkicker.com](goalkicker.com)|
-BPR           | _Bash Pocket Reference (2nd ed.)_ |Robbins, Arnold
-BRM           | _Bash Reference Manual_|Ramey, Chet and Fox, Brian
-BSD           | _[bsdnow.tv](https://www.bsdnow.tv/)_|
-CB            | _Coding Blocks_|
-CCP           | _Cracking Codes With Python_|Sweigart, Al
-CGF           | _Chengdu Gaming Federation_|
-CL+           | _Comptia Linux+ Complete Study Guide_|Smith, Roderick
-CLKF          | _Command-Line Kung Fu_|Jason Cannon
-CLx           | [chooselinux.show](https://chooselinux.show/)|
-CR            | **Coder Radio** [Web](https://coder.show/) [Twitter](https://twitter.com/coderradioshow) | [325](#cr-325) [361](#cr-361)
-CSP           | _Classic Computer Science Problems in Python_| Kopec, David
-DL            | [destinationlinux.com](http://destinationlinux.com/)|
-FP            | _Fluent Python_|Ramalho, Luciano
-FPP           | _Functional Python Programming_|Steven Lott
-GL            | _Going Linux_|
-HPR           | _Hacker Public Radio_
-IMWS          | _Introduction to Microsoft Windows Server 2016_|John McCabe with the Windows Server team
-ITP           | [ITPro.TV](https://itpro.tv/)|
-JDG           | _JavaScript: the Definitive Guide_|Flanagan, David
-JNfP          | _JavaScript Notes for Professionals_| [Goalkicker.com](goalkicker.com)
-JSJ           | JavaScript Jabber|
-LALOS         | _Linux Administration: The Linux Operating System_|Jason Cannon
-LAN           | [Linux Action News](#podcasts)
-LC            | Learn Code the Hard Way|
-LCL           | _Linux Command Line, the_|Shotts, William
-LCN           | _LPI Linux Certification in a Nutshell_|
-LGLC          | _Linux+ Guide to Linux Certification, 3rd ed._|Eckert, Jason
-LH            | _[linuxhandbook.com](https://linuxhandbook.com/)_|
-LNLx          | _Late Night Linux_|
-LPI           | _Linux Programming Interface, the_|Kerrisk, Michael
-LS            | _Luke Smith YouTube Channel_ [YouTube](https://www.youtube.com/channel/UC2eYFnH61tmytImy1mTYvhA) | Luke Smith
-LSSP          | _Linux Shell Scripting Projects_|Cannon, Jason
-LU            | [Linux Unplugged](#podcasts)
-MC            | _Mint Cast_|
-MD            | _Microsoft Docs_|
-OOJ           | _Object-Oriented JavaScript_|Antani, Ved and Stefanov, Stoyan
-OSc           | _[opensource.com](https://opensource.com/)_|
-OST           | _[ostechnix.com](https://ostechnix.com/)_|
-PB            | [Python Bytes](#podcasts)
-PBX           | _Perl by Example, 4th ed._|Quigley, Ellie
-PGL           | _Practical Guide to Linux, A_|Sobell, Mark
-PiaN          | _Python in a Nutshell_|Martelli, Alex
-PP            | _Programming Python_|Lutz, Mark
-SA            | _sed & awk (2nd edition)_|Dougherty, Dale and Robbins, Arnold
-SY            | [Syntax](#podcasts)
-TP            | [Talk Python to Me](#podcasts)
-TW            | _This Week in Linux_|
-ULSAH         | _Unix and Linux System Administration Handbook_|
-UN            | _Unix in a Nutshell_|Robbins, Arnold
-Vim           | _The Vim Book_|Steve Oualline
-VV            | [Views on Vue](#podcasts)
-WCL           | _Windows Command-Line_|William R. Stanek
-WCSS          | _Wicked Cool Shell Scripts_|Taylor, Dave and Perry, Brandon
-WSAF          | _Windows Server 2016 Administration Fundamentals_|Dauti, Bekim
-YUG           | _Your Unix: the Ultimate Guide_|Das, Sumitabha
-
-## Podcasts
-Name | Links
-:--- | :---
-BSD Now               | [Web](https://www.bsdnow.tv/) [Subreddit](https://www.reddit.com/r/bsdnow) [FaceBook](https://www.facebook.com/BSDNow/) [Twitter](https://twitter.com/bsdnow)
-Choose Linux          | [Web](https://chooselinux.show) [Twitter](https://twitter.com/chooselinux)
-CloudSkills.fm        | [Web](https://cloudskills.fm/)
-Destination Linux     | 
-Extras                | [Web](https://extras.show/)
-Friday                | [Web](https://fridaystream.com)
-Going Linux           | [Web](https://goinglinux.com) [Twitter](https://twitter.com/goinglinux)
-Hacker Public Radio   | [Web](http://hackerpublicradio.org/)
-Linux Action News     | [Web](https://linuxactionnews.com/) [Twitter](https://twitter.com/linuxactionnews)
-Linux Unplugged       | [Web](https://linuxunplugged.com/) [Twitter](https://twitter.com/LinuxUnplugged)
-RunAs Radio           | [Web](http://www.runasradio.com/) [Twitter](https://twitter.com/RunAsRadio)
-Syntax                | [Web](https://syntax.fm/) [Twitter](https://twitter.com/syntaxfm)
-Talk Python           | [Web](https://talkpython.fm) [Twitter](https://twitter.com/TalkPython) [Notes](#talk-python)
-TechSNAP              | [Web](https://techsnap.systems) [Twitter](https://twitter.com/techsnapsystems)
-This Week in Linux    | 
-User Error            | [Web](https://error.show/) [Twitter](https://twitter.com/usererrorshow)
-Views on Vue          | 
+Abbr.  |  Source
+:---          | :---    
+BNfP          | **Bash Notes for Professionals**. [Web](goalkicker.com)|
+BPR           | Robbins, Arnold. **Bash Pocket Reference (2nd ed.)**.
+BRM           | Ramey, Chet and Fox, Brian. **Bash Reference Manual**
+BSD           | **BSD Now** [Web](https://www.bsdnow.tv/) [Subreddit](https://www.reddit.com/r/bsdnow) [FaceBook](https://www.facebook.com/BSDNow/) [Twitter](https://twitter.com/bsdnow)
+CB            | **Coding Blocks**
+CCP           | Sweigart, Al. **Cracking Codes With Python**.
+CGF           | **Chengdu Gaming Federation**
+CLKF          | **Command-Line Kung Fu**|Jason Cannon
+CL            | **Choose Linux** [Web](https://chooselinux.show) [Twitter](https://twitter.com/chooselinux)
+CR            | **Coder Radio** [Web](https://coder.show/) [Twitter](https://twitter.com/coderradioshow) Notes: [325](#cr-325) [361](#cr-361)
+CSFM          | **CloudSkills.fm** [Web](https://cloudskills.fm/) Notes: [2](#csfm-2) [3](#csfm-3) [29](#csfm-29)
+CSP           | **Classic Computer Science Problems in Python**| Kopec, David
+DL            | **Destination Linux** [Web](http://destinationlinux.com/)
+Extras        | [Web](https://extras.show/)
+FP            | Ramalho, Luciano. **Fluent Python**.
+FPP           | Lott, Steven. **Functional Python Programming**
+Friday        | [Web](https://fridaystream.com)
+GL            | **Going Linux** [Web](https://goinglinux.com) [Twitter](https://twitter.com/goinglinux)
+HPR           | **Hacker Public Radio** [Web](http://hackerpublicradio.org/) Links: [1938](#hpr-1938) [2107](#hpr-2107)
+IMWS          | McCabe, John et al. **Introduction to Microsoft Windows Server 2016**.
+ITP           | **ITPro.TV** [Web](https://itpro.tv/)
+JDG           | Flanagan, David. **JavaScript: the Definitive Guide**
+JNfP          | **JavaScript Notes for Professionals** [Web](goalkicker.com)
+JSJ           | **JavaScript Jabber**
+LALOS         | Cannon, Jason. **Linux Administration: The Linux Operating System**
+LAN           | Linux Action News  [Web](https://linuxactionnews.com/) [Twitter](https://twitter.com/linuxactionnews)
+LC            | **Learn Code the Hard Way**
+LCL           | Shotts, William. **Linux Command Line, the**
+LCN           | **LPI Linux Certification in a Nutshell**
+LGLC          | Eckert, Jason. **Linux+ Guide to Linux Certification, 3rd ed.**
+LH            | **Linux Handbook** [Web](https://linuxhandbook.com/)
+LNL           | **Late Night Linux** Notes: [65](#lnl-65)
+LPI           | **Linux Programming Interface, the**|Kerrisk, Michael
+LS            | Smith, Luke . **Luke Smith YouTube Channel** [YouTube](https://www.youtube.com/channel/UC2eYFnH61tmytImy1mTYvhA)
+LSSP          | Cannon, Jason. **Linux Shell Scripting Projects**
+LU            | **Linux Unplugged** [Web](https://linuxunplugged.com/) [Twitter](https://twitter.com/LinuxUnplugged)
+MC            | **Mint Cast**
+MD            | **Microsoft Docs**
+OOJ           | Antani, Ved and Stefanov, Stoyan. **Object-Oriented JavaScript**
+OSc           | **OpenSource.com**. [Web](https://opensource.com/)
+OST           | **OSTechnix.com**. [Web](https://ostechnix.com/)
+PB            | **Python Bytes**. 
+PBX           | Quigley, Ellie. **Perl by Example, 4th ed.**
+PGL           | Sobell, Mark. **Practical Guide to Linux, A**
+PiaN          | Martelli, Alex. **Python in a Nutshell**
+PP            | Lutz, Mark. **Programming Python**
+RAR           | **RunAs Radio** [Web](http://www.runasradio.com/) [Twitter](https://twitter.com/RunAsRadio)
+SA            | Dougherty, Dale and Robbins, Arnold. **sed & awk (2nd edition)**
+SY            | **Syntax** [Web](https://syntax.fm/) [Twitter](https://twitter.com/syntaxfm)
+TP            | **Talk Python** [Web](https://talkpython.fm) [Twitter](https://twitter.com/TalkPython) Notes: [213](#tp-213) [216](#tp-216) [224](#tp-224)
+TS            | **TechSNAP** [Web](https://techsnap.systems) [Twitter](https://twitter.com/techsnapsystems)
+TWIG          | **This Week in Games**
+TWIL          | **This Week in Linux**
+UE            | **User Error** [Web](https://error.show/) [Twitter](https://twitter.com/usererrorshow)
+ULSAH         | **Unix and Linux System Administration Handbook**
+UN            | Robbins, Arnold. **Unix in a Nutshell**
+Vim           | Steve Oualline. **The Vim Book**
+VOV           | **Views on Vue**
+WCL           | Stanek, William R. **Windows Command-Line**.
+WCSS          | Taylor, Dave and Perry, Brandon. **Wicked Cool Shell Scripts**
+WSAF          | Dauti, Bekim. **Windows Server 2016 Administration Fundamentals**
+YUG           | Das, Sumitabha. **Your Unix: the Ultimate Guide**
 ## People
 Name                  | Description  | Links
 :---                  | :---         | :---
@@ -89,13 +74,34 @@ Fisher, Chris         | [Linux Unplugged](#podcasts) | [Twitter](https://twitter
 Jude, Allan           | [BSD Now](#podcasts) | [Web](https://www.scaleengine.com/) [FaceBook](https://facebook.com/allanjude) [LinkedIn](https://www.linkedin.com/in/allanjude/)
 Kennedy, Michael      | [Talk Python](#podcasts) [Python Bytes](#podcasts) | [Twitter](https://twitter.com/mkennedy)
 Payne, Wes            | [TechSNAP](#podcasts), [Coder Radio](#podcasts)
-Pfeiffer, Mike        | Host of [CloudSkills.fm](#podcasts) | [Web](https://mikepfeiffer.io) [Twitter](https://twitter.com/mike_pfeiffer) [Facebook](https://www.facebook.com/mikepfeifferhq/)
+Pfeiffer, Mike        | Host of [CloudSkills.fm](#podcasts) | [Web](https://mikepfeiffer.io) [Twitter](https://twitter.com/mike**pfeiffer) [Facebook](https://www.facebook.com/mikepfeifferhq/)
 Pope, Alan            | Guest on [User Error](#podcasts) and others | [Twitter](https://twitter.com/popey)
 Reuschling, Benedict  | [BSD Now](#podcasts) | [Twitter](https://twitter.com/bsdbcr)
 Ressington, Joe       | [Linux Action News](#podcasts) [User Error](#podcasts) [Choose Linux](#podcasts) | [Web](https://joeress.com) [Twitter](https://twitter.com/JoeRessington)
-Robbins, Arnold       | _Bash Pocket Reference_, _Unix in a Nutshell_, _sed & awk_
+Robbins, Arnold       | **Bash Pocket Reference**, **Unix in a Nutshell**, **sed & awk**
 Tolinski, Scott       | Host of [Syntax](#podcasts) | [Twitter](https://twitter.com/stolinski) [Github](https://github.com/stolinski) [BitBucket](https://bitbucket.org/stolinski) [Facebook](https://www.facebook.com/LevelUpTuts)
 ## Notes
+### CloudSkills.fm
+#### CSFM 2
+> "Infrastructure as Code in the Cloud"
+- An alternative job title to DevOps Engineer is "Infrastructure Developer"
+- Infrastructure as Code and automation are terms that refer to the use of deployment templates to provision resources reproducibly.
+- Automation templates are especially useful when testing software. The development environment for that version of the application can be provisioned and comprehensively tested before risking the production environment.
+- Go for the Azure Solutions Architect Expert, since it demonstrates the skills needed
+#### CSFM 3
+> "Cloud Migration Strategy"
+- Azure's Site Recovery has been a game-changer that AWS has had no answer for, until Amazon acquired CloudEndure, which had offered a similar service for multiple cloud providers.
+- "architectural patterns"
+#### CSFM 5
+> "Automation with PowerShell"
+- A good project idea is to spin up a Windows 10 VM in Azure
+#### CSFM 29
+> "Building Serverless Apps on AWS". []
+> "Unless you're an infrastructure company, infrastructure is overhead."
+- Guest Yan Cui discusses AWS Lambda's market dominance.
+- It makes no sense to worry about migration from one cloud provider to another before it becomes an issue: CAPEX (capital expenditure) vs. OPEX (operating expenditure). And transferring Compute is easy.
+- Although Lambda is capable, there are hard limits. For example, there is a limit on increasing concurrency of 500 per minute. So highly spiky workloads that exceed that limit make Lambda less appealing.
+- When analyzing costs, we shouldn't fall for the fallacy of thinking that minimizing the AWS bill is equivalent to reducing infrastructure costs. Some solutions that may drastically reduce monthly costs on AWS, such as Lambda, may actually require much higher costs to support from competent engineers.
 ### Coder Radio
 #### CR 361
 > "ZEEEE Shell!". [coder.show](https://coder.show/361): 2019/06/10.
@@ -103,24 +109,27 @@ Tolinski, Scott       | Host of [Syntax](#podcasts) | [Twitter](https://twitter.
   - Designing UIs in Swift
     - Functional programming
 #### CR 325
-> "Clojure Calisthenics". [coder.show](https://coder.show/325): 2018/09/07.\
-
-Wes Payne is a big fan of Clojure, in particular with the professionalism of the clojure community. Clojure is not as closely tied to Java as it was in its inception when it was a "JAR", but it still needs a JVM.
+> "Clojure Calisthenics". [coder.show](https://coder.show/325): 2018/09/07.
+- Wes Payne is a big fan of Clojure, in particular with the professionalism of the clojure community. Clojure is not as closely tied to Java as it was in its inception when it was a "JAR", but it still needs a JVM.
 ### Hacker Public Radio
 #### HPR 1938
-> "How I prepare HPR shows". [hpr.org](hackerpublicradio.org/eps/hpr1938_full_shownotes.html)
+> "How I prepare HPR shows". [hpr.org](hackerpublicradio.org/eps/hpr1938**full**shownotes.html)
   - `make`
-#### 2107: Makefiles for everyday use
-  - Source: [hpr.org](https://hackerpublicradio.org/eps.php?id=2107)
+#### HPR 2107
+  - Source: "Makefiles for everyday use". [hpr.org](https://hackerpublicradio.org/eps.php?id=2107)
   - `make`
 ### Late Night Linux
-#### 65
+#### LNL 65
   - KDE App page
   - Google Stadia
   - How can the FLOSS community take advantage of the opportunity presented by the sunsetting of Windows 7?
 ### Talk Python
-#### 224 12 lessons from 100 days of code
+#### TP 213
+> "WebAssembly and CPython".
+- Web Assembly is gaining steam in the developer community, and several Web Assembly projects are in train. Pyodide is the SciPy stack into web assembly. The interpreter is on the order of 40MB, which is still too large for convenient use on the web. Compiling to CPython may not be the correct answer in the future as technology evolves. A straight Python to web-assembly compilation target would have some difficulties, but it is possible. If you turn Web Assembly as a general interpreter layer, various possibilities open up.
+#### TP 216
+> "Digging into Visual Studio Code".
+#### TP 224
+> "12 lessons from 100 days of code".
 - Netlify will watch changes to a GitHub repo as a continuous delivery platform for static sites.
-#### 213 WebAssembly and CPython
-Web Assembly is gaining steam in the developer community, and several Web Assembly projects are in train. Pyodide is the SciPy stack into web assembly. The interpreter is on the order of 40MB, which is still too large for convenient use on the web. Compiling to CPython may not be the correct answer in the future as technology evolves. A straight Python to web-assembly compilation target would have some difficulties, but it is possible. If you turn Web Assembly as a general interpreter layer, various possibilities open up.
-#### 216 Digging into Visual Studio Code
+
