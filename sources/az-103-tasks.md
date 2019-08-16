@@ -1,14 +1,11 @@
 # Exam Ref AZ-103 Microsoft Azure Administrator, by Michael Washam, Jonathan Tuliani, and Scott Hoag
-## Commands
+## Index of commands
 ### Azure
-Access and connection
+Access
 :---
 Connect-AzAccount [3.1a.02](#31a02)
-New-AzRoleAssignment [1.4c.06](#14c06) [1.4c.08](#14c08) Remove-AzRoleAssignment [1.4c.10](#14c10) [1.4c.11](#14c11) Get-AzRoleDefinition [1.4b.01](#14b01) [1.4c.03](#14c03)
-
-Keyvault
-:---
-New-AzKeyVault [2.1c.02](#21c02) Add-AzKeyVaultKey [2.1c.02](#21c02) [2.1c.03](#21c03) Set-AzKeyVaultSecret [2.1c.02](#21c02)
+**Role-based access control** New-AzRoleAssignment [1.4c.06](#14c06) [1.4c.08](#14c08) Remove-AzRoleAssignment [1.4c.10](#14c10) [1.4c.11](#14c11) Get-AzRoleDefinition [1.4b.01](#14b01) [1.4c.03](#14c03)
+**Keyvault** New-AzKeyVault [2.1c.02](#21c02) Add-AzKeyVaultKey [2.1c.02](#21c02) [2.1c.03](#21c03) Set-AzKeyVaultSecret [2.1c.02](#21c02)
 
 Network
 :---
@@ -16,8 +13,7 @@ Network
 Get-AzVirtualNetworkGateway [4.7b.02](#47b02) New-AzVirtualNetworkGateway [4.2b.02](#42b02) [4.7a.02](#47a02) Get-AzVirtualNetworkGatewayConnection [4.6d.02](#46d02) New-AzVirtualNetworkGatewayConnection [4.2b.02](#42b02) [4.7b.02](#47b02) New-AzVirtualNetworkGatewayIpConfig [4.2b.02](#42b02) [4.7a.02](#47a02) 
 Add-AzVirtualNetworkPeering [4.2a.02](#42a02) Get-AzVirtualNetworkPeering [4.2a.02](#42a02) 
 Get-AzVirtualNetworkSubnetConfig [4.2b.02](#42b02) [4.7a.02](#47a02) New-AzVirtualNetworkSubnetConfig [3.1a.02](#31a02) [3.1h.02](#31h02) [4.2b.02](#42b02) [4.7a.02](#47a02) Set-AzVirtualNetworkSubnetConfig [4.1d.02](#41d02)
-**Network security groups** New-AzNetworkSecurityGroup [3.1a.02](#31a02) New-AzNetworkSecurityRuleConfig [3.1a.02](#31a02)
-Get-AzEffectiveNetworkSecurityGroup [4.4d.02](#44d02)
+**Network security groups** New-AzNetworkSecurityGroup [3.1a.02](#31a02) New-AzNetworkSecurityRuleConfig [3.1a.02](#31a02) Get-AzEffectiveNetworkSecurityGroup [4.4d.02](#44d02)
 **Network interfaces** Get-AzNetworkInterface [4.3b.02](#43b02) New-AzNetworkInterface [3.1a.02](#31a02) [3.3b.02](#33b02) Set-AzNetworkInterface [4.3b.02](#43b02) [4.5a.02](#45a02) Get-AzNetworkInterfaceIpConfig [4.5a.02](#45a02) Set-AzNetworkInterfaceIpConfig [4.5a.02](#45a02)
 **DNS records** Add-AzDnsRecordConfig [4.3a.02](#43a02) New-AzDnsRecordConfig [4.3a.02](#43a02) Remove-AzDnsRecordConfig [4.3a.02](#43a02)
 **DNS record sets** Get-AzDnsRecordSet [4.3a.02](#43a02) [4.3a.02](#43a02) New-AzDnsRecordSet [4.3a.02](#43a02) [4.3a.02](#43a02) Set-AzDnsRecordSet [4.3a.02](#43a02)
@@ -25,26 +21,19 @@ Get-AzEffectiveNetworkSecurityGroup [4.4d.02](#44d02)
 **Network Watcher** Get-AzNetworkWatcher [4.6c.10](#46c10) [4.6d.02](#46d02) Test-AzNetworkWatcherConnectivity [4.6e.02](#46e02) Test-AzNetworkWatcherIPFlow [4.6c.04](#46c04) Get-AzNetworkWatcherNextHop [4.6c.07](#46c07) Get-AzNetworkWatcherPacketCapture [4.6c.10](#46c10) New-AzNetworkWatcherPacketCapture [4.6c.10](#46c10) Stop-AzNetworkWatcherPacketCapture [4.6c.10](#46c10) Start-AzNetworkWatcherResourceTroubleshooting [4.6d.02](#46d02) Get-AzNetworkWatcherTopology [4.6c.13](#46c13) Get-AzOperationalInsightsWorkspace [1.2a.04](#12a04) New-AzPacketCaptureFilterConfig [4.6c.10](#46c10)
 **IP** New-AzPublicIpAddress [3.1a.02](#31a02) [3.1h.02](#31h02) [4.2b.02](#42b02) [4.5a.02](#45a02) [4.7a.02](#47a02)
 **Load balancing** Get-AzLoadBalancer [4.5a.02](#45a02) New-AzLoadBalancer [3.1h.02](#31h02) [4.5a.02](#45a02) Set-AzLoadBalancer [3.1h.02](#31h02) Get-AzLoadBalancerBackendAddressPoolConfig [4.5a.02](#45a02) New-AzLoadBalancerBackendAddressPoolConfig [3.1h.02](#31h02) [4.5a.02](#45a02) New-AzLoadBalancerFrontendIpConfig [3.1h.02](#31h02) [4.5a.02](#45a02) Add-AzLoadBalancerProbeConfig [3.1h.02](#31h02) New-AzLoadBalancerProbeConfig [4.5a.02](#45a02) Add-AzLoadBalancerRuleConfig [3.1h.02](#31h02) New-AzLoadBalancerRuleConfig [4.5a.02](#45a02)
-New-AzLocalNetworkGateway [4.7b.02](#47b02)
-**Route tables** Add-AzRouteConfig [4.1d.02](#41d02) New-AzRouteTable [4.1d.02](#41d02) Set-AzRouteTable [4.1d.02](#41d02)
-Get-AzEffectiveRouteTable [4.1d.02](#41d02)
+**Route tables** Get-AzEffectiveRouteTable [4.1d.02](#41d02) Add-AzRouteConfig [4.1d.02](#41d02) New-AzRouteTable [4.1d.02](#41d02) Set-AzRouteTable [4.1d.02](#41d02)
+**Etc** New-AzLocalNetworkGateway [4.7b.02](#47b02)
 
 Storage
 :---
-Get-AzStorageAccount [4.6c.10](#46c10) New-AzStorageAccount [2.1a.02](#21a02) [4.6d.02](#46d02) Set-AzStorageAccount [2.1a.04](#21a04) [2.1e.01](#21e01) Get-AzStorageAccountKey [2.1c.02](#21c02) [2.1c.04](#21c04) [2.1d.01](#21d01) [2.1f.02](#21f02) [2.2a.01](#22a01) [2.3a.02](#23a02) [2.3a.06](#23a06) Set-AzStorageBlobContent [2.2a.01](#22a01) Start-AzStorageBlobCopy [2.1f.02](#21f02) Get-AzStorageBlobCopyState [2.1f.03](#21f03) New-AzStorageBlobSASToken [2.1d.01](#21d01) New-AzStorageContainer [2.1f.02](#21f02) [2.2a.01](#22a01) [4.6d.02](#46d02) New-AzStorageContext [2.1d.01](#21d01) [2.1f.02](#21f02) [2.2a.01](#22a01) [2.3a.02](#23a02) New-AzStorageShare [2.3a.02](#23a02) Get-AzStorageUsage [1.1b.01](#11b01)
-Set-AzCurrentStorageAccount [2.2a.01](#22a01) [4.6d.02](#46d02)
-
+**Storage account** Get-AzStorageAccount [4.6c.10](#46c10) New-AzStorageAccount [2.1a.02](#21a02) [4.6d.02](#46d02) Set-AzStorageAccount [2.1a.04](#21a04) [2.1e.01](#21e01) Get-AzStorageAccountKey [2.1c.02](#21c02) [2.1c.04](#21c04) [2.1d.01](#21d01) [2.1f.02](#21f02) [2.2a.01](#22a01) [2.3a.02](#23a02) [2.3a.06](#23a06) Set-AzCurrentStorageAccount [2.2a.01](#22a01) [4.6d.02](#46d02)
+**Blobs** Set-AzStorageBlobContent [2.2a.01](#22a01) Start-AzStorageBlobCopy [2.1f.02](#21f02) Get-AzStorageBlobCopyState [2.1f.03](#21f03) New-AzStorageBlobSASToken [2.1d.01](#21d01) New-AzStorageContainer [2.1f.02](#21f02) [2.2a.01](#22a01) [4.6d.02](#46d02) New-AzStorageContext [2.1d.01](#21d01) [2.1f.02](#21f02) [2.2a.01](#22a01) [2.3a.02](#23a02) New-AzStorageShare [2.3a.02](#23a02) Get-AzStorageUsage [1.1b.01](#11b01)
 
 Resources
 :---
 Get-AzResource [1.2a.02](#12a02) [3.3d.02](#33d02) [4.6c.10](#46c10) [4.6d.02](#46d02) Move-AzResource [3.3d.02](#33d02)
 Get-AzProviderOperation [1.4b.03](#14b03) Register-AzResourceProvider [4.4c.03](#44c03)
 **Resource groups** Get-AzResourceGroup [1.1b.04](#11b04) New-AzResourceGroup [2.1a.02](#21a02) [3.1a.02](#31a02) [3.1a.02](#31a02) [3.1a.02](#31a02) [3.1h.02](#31h02) Remove-AzResourceGroup [1.3.01](#1301) [1.3.02](#1302) Set-AzResourceGroup [1.1b.03](#11b03) [1.1b.04](#11b04) New-AzResourceGroupDeployment [3.2c.02](#32c02) [3.2d.01](#32d01) [3.2e.05](#32e05) Save-AzResourceGroupDeploymentTemplate [3.2e.03](#32e03) Export-AzResourceGroup [3.2e.04](#32e04)
-
-
-Messaging
-:---
-Get-AzServiceBusRule [1.2a.03](#12a03)
 
 Virtual machines
 :---
@@ -56,7 +45,12 @@ Virtual machines
 **Availability sets** New-AzAvailabilitySet [3.1b.02](#31b02)
 **Scale sets** New-AzVmss [3.1h.02](#31h02) Add-AzVmssExtension [3.1h.02](#31h02) New-AzVmssIpConfig [3.1h.02](#31h02) Add-AzVmssNetworkInterfaceConfiguration [3.1h.02](#31h02) Set-AzVmssOsProfile [3.1h.02](#31h02) Set-AzVmssStorageProfile [3.1h.02](#31h02)
 
+Messaging
+:---
+Get-AzServiceBusRule [1.2a.03](#12a03)
+
 ### Others
+Other commands
 :---
 Get-Date [4.4c.02](#44c02) ConvertTo-Json [1.4b.01](#14b01) ForEach-Object [4.4c.02](#44c02) New-Object [2.3a.06](#23a06) Where-Object [1.4c.03](#14c03) [3.3b.02](#33b02) [4.6d.02](#46d02) New-PSDrive [2.3a.06](#23a06) ConvertTo-SecureString [2.1c.02](#21c02) [2.1c.06](#21c06) [2.3a.06](#23a06) Get-StoragePool [3.1e.05](#31e05) New-StoragePool [3.1e.05](#31e05) Format-Table [4.2a.02](#42a02) New-VirtualDisk [3.1e.05](#31e05) Install-WindowsFeature [3.3f.04](#33f04)
 **Active Directory** Install-ADDSForest [3.3f.04](#33f04) Get-AzADGroup [1.4c.08](#14c08) [1.4c.11](#14c11)
