@@ -10,41 +10,24 @@ Keyvault
 :---
 New-AzKeyVault [2.1c.02](#21c02) Add-AzKeyVaultKey [2.1c.02](#21c02) [2.1c.03](#21c03) Set-AzKeyVaultSecret [2.1c.02](#21c02)
 
-#### Network
-Virtual networks
+Network
 :---
-Get-AzVirtualNetwork [3.3b.02](#33b02) [3.3b.02](#33b02) [4.1d.02](#41d02) [4.2a.02](#42a02) [4.2b.02](#42b02) [4.3c.01](#43c01) [4.7a.02](#47a02) New-AzVirtualNetwork [3.1a.02](#31a02) [3.1h.02](#31h02) [4.3b.02](#43b02) Set-AzVirtualNetwork [4.1d.02](#41d02) [4.2b.02](#42b02) [4.3b.02](#43b02) [4.7a.02](#47a02) 
+**Virtual networks** Get-AzVirtualNetwork [3.3b.02](#33b02) [3.3b.02](#33b02) [4.1d.02](#41d02) [4.2a.02](#42a02) [4.2b.02](#42b02) [4.3c.01](#43c01) [4.7a.02](#47a02) New-AzVirtualNetwork [3.1a.02](#31a02) [3.1h.02](#31h02) [4.3b.02](#43b02) Set-AzVirtualNetwork [4.1d.02](#41d02) [4.2b.02](#42b02) [4.3b.02](#43b02) [4.7a.02](#47a02) 
 Get-AzVirtualNetworkGateway [4.7b.02](#47b02) New-AzVirtualNetworkGateway [4.2b.02](#42b02) [4.7a.02](#47a02) Get-AzVirtualNetworkGatewayConnection [4.6d.02](#46d02) New-AzVirtualNetworkGatewayConnection [4.2b.02](#42b02) [4.7b.02](#47b02) New-AzVirtualNetworkGatewayIpConfig [4.2b.02](#42b02) [4.7a.02](#47a02) 
 Add-AzVirtualNetworkPeering [4.2a.02](#42a02) Get-AzVirtualNetworkPeering [4.2a.02](#42a02) 
 Get-AzVirtualNetworkSubnetConfig [4.2b.02](#42b02) [4.7a.02](#47a02) New-AzVirtualNetworkSubnetConfig [3.1a.02](#31a02) [3.1h.02](#31h02) [4.2b.02](#42b02) [4.7a.02](#47a02) Set-AzVirtualNetworkSubnetConfig [4.1d.02](#41d02)
-
-Network security groups
-:---
-New-AzNetworkSecurityGroup [3.1a.02](#31a02) New-AzNetworkSecurityRuleConfig [3.1a.02](#31a02)
+**Network security groups** New-AzNetworkSecurityGroup [3.1a.02](#31a02) New-AzNetworkSecurityRuleConfig [3.1a.02](#31a02)
 Get-AzEffectiveNetworkSecurityGroup [4.4d.02](#44d02)
-
-Network interfaces
-:---
-Get-AzNetworkInterface [4.3b.02](#43b02) New-AzNetworkInterface [3.1a.02](#31a02) [3.3b.02](#33b02) Set-AzNetworkInterface [4.3b.02](#43b02) [4.5a.02](#45a02) Get-AzNetworkInterfaceIpConfig [4.5a.02](#45a02) Set-AzNetworkInterfaceIpConfig [4.5a.02](#45a02)
-
-DNS
-:---
-Add-AzDnsRecordConfig [4.3a.02](#43a02) New-AzDnsRecordConfig [4.3a.02](#43a02) Remove-AzDnsRecordConfig [4.3a.02](#43a02)
-Get-AzDnsRecordSet [4.3a.02](#43a02) [4.3a.02](#43a02) New-AzDnsRecordSet [4.3a.02](#43a02) [4.3a.02](#43a02) Set-AzDnsRecordSet [4.3a.02](#43a02)
-New-AzDnsZone [4.3a.02](#43a02) [4.3c.01](#43c01)
-
-Network Watcher
-:---
-Get-AzNetworkWatcher [4.6c.10](#46c10) [4.6d.02](#46d02) Test-AzNetworkWatcherConnectivity [4.6e.02](#46e02) Test-AzNetworkWatcherIPFlow [4.6c.04](#46c04) Get-AzNetworkWatcherNextHop [4.6c.07](#46c07) Get-AzNetworkWatcherPacketCapture [4.6c.10](#46c10) New-AzNetworkWatcherPacketCapture [4.6c.10](#46c10) Stop-AzNetworkWatcherPacketCapture [4.6c.10](#46c10) Start-AzNetworkWatcherResourceTroubleshooting [4.6d.02](#46d02) Get-AzNetworkWatcherTopology [4.6c.13](#46c13) Get-AzOperationalInsightsWorkspace [1.2a.04](#12a04) New-AzPacketCaptureFilterConfig [4.6c.10](#46c10)
-
-IP
-:---
-New-AzPublicIpAddress [3.1a.02](#31a02) [3.1h.02](#31h02) [4.2b.02](#42b02) [4.5a.02](#45a02) [4.7a.02](#47a02)
-
-Load balancing
-:---
-Get-AzLoadBalancer [4.5a.02](#45a02) New-AzLoadBalancer [3.1h.02](#31h02) [4.5a.02](#45a02) Set-AzLoadBalancer [3.1h.02](#31h02) Get-AzLoadBalancerBackendAddressPoolConfig [4.5a.02](#45a02) New-AzLoadBalancerBackendAddressPoolConfig [3.1h.02](#31h02) [4.5a.02](#45a02) New-AzLoadBalancerFrontendIpConfig [3.1h.02](#31h02) [4.5a.02](#45a02) Add-AzLoadBalancerProbeConfig [3.1h.02](#31h02) New-AzLoadBalancerProbeConfig [4.5a.02](#45a02) Add-AzLoadBalancerRuleConfig [3.1h.02](#31h02) New-AzLoadBalancerRuleConfig [4.5a.02](#45a02)
+**Network interfaces** Get-AzNetworkInterface [4.3b.02](#43b02) New-AzNetworkInterface [3.1a.02](#31a02) [3.3b.02](#33b02) Set-AzNetworkInterface [4.3b.02](#43b02) [4.5a.02](#45a02) Get-AzNetworkInterfaceIpConfig [4.5a.02](#45a02) Set-AzNetworkInterfaceIpConfig [4.5a.02](#45a02)
+**DNS records** Add-AzDnsRecordConfig [4.3a.02](#43a02) New-AzDnsRecordConfig [4.3a.02](#43a02) Remove-AzDnsRecordConfig [4.3a.02](#43a02)
+**DNS record sets** Get-AzDnsRecordSet [4.3a.02](#43a02) [4.3a.02](#43a02) New-AzDnsRecordSet [4.3a.02](#43a02) [4.3a.02](#43a02) Set-AzDnsRecordSet [4.3a.02](#43a02)
+**DNS zones** New-AzDnsZone [4.3a.02](#43a02) [4.3c.01](#43c01)
+**Network Watcher** Get-AzNetworkWatcher [4.6c.10](#46c10) [4.6d.02](#46d02) Test-AzNetworkWatcherConnectivity [4.6e.02](#46e02) Test-AzNetworkWatcherIPFlow [4.6c.04](#46c04) Get-AzNetworkWatcherNextHop [4.6c.07](#46c07) Get-AzNetworkWatcherPacketCapture [4.6c.10](#46c10) New-AzNetworkWatcherPacketCapture [4.6c.10](#46c10) Stop-AzNetworkWatcherPacketCapture [4.6c.10](#46c10) Start-AzNetworkWatcherResourceTroubleshooting [4.6d.02](#46d02) Get-AzNetworkWatcherTopology [4.6c.13](#46c13) Get-AzOperationalInsightsWorkspace [1.2a.04](#12a04) New-AzPacketCaptureFilterConfig [4.6c.10](#46c10)
+**IP** New-AzPublicIpAddress [3.1a.02](#31a02) [3.1h.02](#31h02) [4.2b.02](#42b02) [4.5a.02](#45a02) [4.7a.02](#47a02)
+**Load balancing** Get-AzLoadBalancer [4.5a.02](#45a02) New-AzLoadBalancer [3.1h.02](#31h02) [4.5a.02](#45a02) Set-AzLoadBalancer [3.1h.02](#31h02) Get-AzLoadBalancerBackendAddressPoolConfig [4.5a.02](#45a02) New-AzLoadBalancerBackendAddressPoolConfig [3.1h.02](#31h02) [4.5a.02](#45a02) New-AzLoadBalancerFrontendIpConfig [3.1h.02](#31h02) [4.5a.02](#45a02) Add-AzLoadBalancerProbeConfig [3.1h.02](#31h02) New-AzLoadBalancerProbeConfig [4.5a.02](#45a02) Add-AzLoadBalancerRuleConfig [3.1h.02](#31h02) New-AzLoadBalancerRuleConfig [4.5a.02](#45a02)
 New-AzLocalNetworkGateway [4.7b.02](#47b02)
+**Route tables** Add-AzRouteConfig [4.1d.02](#41d02) New-AzRouteTable [4.1d.02](#41d02) Set-AzRouteTable [4.1d.02](#41d02)
+Get-AzEffectiveRouteTable [4.1d.02](#41d02)
 
 Storage
 :---
@@ -52,46 +35,31 @@ Get-AzStorageAccount [4.6c.10](#46c10) New-AzStorageAccount [2.1a.02](#21a02) [4
 Set-AzCurrentStorageAccount [2.2a.01](#22a01) [4.6d.02](#46d02)
 
 
-#### Resources
 Resources
+:---
 Get-AzResource [1.2a.02](#12a02) [3.3d.02](#33d02) [4.6c.10](#46c10) [4.6d.02](#46d02) Move-AzResource [3.3d.02](#33d02)
 Get-AzProviderOperation [1.4b.03](#14b03) Register-AzResourceProvider [4.4c.03](#44c03)
+**Resource groups** Get-AzResourceGroup [1.1b.04](#11b04) New-AzResourceGroup [2.1a.02](#21a02) [3.1a.02](#31a02) [3.1a.02](#31a02) [3.1a.02](#31a02) [3.1h.02](#31h02) Remove-AzResourceGroup [1.3.01](#1301) [1.3.02](#1302) Set-AzResourceGroup [1.1b.03](#11b03) [1.1b.04](#11b04) New-AzResourceGroupDeployment [3.2c.02](#32c02) [3.2d.01](#32d01) [3.2e.05](#32e05) Save-AzResourceGroupDeploymentTemplate [3.2e.03](#32e03) Export-AzResourceGroup [3.2e.04](#32e04)
 
-Resource groups
-:---
-Get-AzResourceGroup [1.1b.04](#11b04) New-AzResourceGroup [2.1a.02](#21a02) [3.1a.02](#31a02) [3.1a.02](#31a02) [3.1a.02](#31a02) [3.1h.02](#31h02) Remove-AzResourceGroup [1.3.01](#1301) [1.3.02](#1302) Set-AzResourceGroup [1.1b.03](#11b03) [1.1b.04](#11b04) New-AzResourceGroupDeployment [3.2c.02](#32c02) [3.2d.01](#32d01) [3.2e.05](#32e05) Save-AzResourceGroupDeploymentTemplate [3.2e.03](#32e03) Export-AzResourceGroup [3.2e.04](#32e04)
-
-Monitoring
-:---
-Set-AzDiagnosticSetting [1.2a.02](#12a02) [1.2a.03](#12a03) [1.2a.04](#12a04)
-Route tables
-:---
-Add-AzRouteConfig [4.1d.02](#41d02) New-AzRouteTable [4.1d.02](#41d02) Set-AzRouteTable [4.1d.02](#41d02)
-Get-AzEffectiveRouteTable [4.1d.02](#41d02)
 
 Messaging
 :---
 Get-AzServiceBusRule [1.2a.03](#12a03)
 
-#### Virtual machines
 Virtual machines
 :---
-Get-AzVM [3.1a.02](#31a02) [3.1c.01](#31c01) [3.1e.02](#31e02) [3.3a.02](#33a02) [3.3b.02](#33b02) [3.3c.02](#33c02) [4.3b.02](#43b02) [4.4c.02](#44c02) [4.5a.02](#45a02) [4.6c.10](#46c10) Restart-AzVM [4.3b.02](#43b02) Set-AzVM [3.1a.02](#31a02) [3.3e.01](#33e01) Stop-AzVM [3.3b.02](#33b02) Update-AzVM [3.1c.01](#31c01) [3.1e.02](#31e02) [3.3a.02](#33a02) [3.3c.02](#33c02) New-AzVMConfig [3.1a.02](#31a02) Set-AzVMCustomScriptExtension [3.3f.04](#33f04) Add-AzVMDataDisk [3.3a.02](#33a02) Set-AzVMDataDisk [3.1e.02](#31e02) Publish-AzVMDscConfiguration [3.3f.01](#33f01) [3.3f.03](#33f03) Set-AzVmDscExtension [3.3f.03](#33f03) Set-AzVMExtension [4.4c.02](#44c02) [4.6c.01](#46c01) Add-AzVMNetworkInterface [3.1a.02](#31a02) [3.3b.02](#33b02) Set-AzVMOperatingSystem [3.1a.02](#31a02) Set-AzVMOSDisk [3.1a.02](#31a02) [3.1a.34](#31a34) Get-AzVMSize [3.1c.01](#31c01) [3.3c.01](#33c01) Set-AzVMSourceImage [3.1a.02](#31a02) [3.1a.36](#31a36) Get-AzVMUsage [1.1b.01](#11b01)
-Get-AzRemoteDesktopFile [3.1f.01](#31f01)
-New-AzDiskConfig [3.3a.02](#33a02) [3.3a.02](#33a02)
-New-AzAvailabilitySet [3.1b.02](#31b02)
-Get-AzImage [3.1a.36](#31a36) New-AzImage [3.1a.05](#31a05) New-AzImageConfig [3.1a.05](#31a05)
-
-Virtual machine scale sets
-:---
-New-AzVmss [3.1h.02](#31h02) Add-AzVmssExtension [3.1h.02](#31h02) New-AzVmssIpConfig [3.1h.02](#31h02) Add-AzVmssNetworkInterfaceConfiguration [3.1h.02](#31h02) Set-AzVmssOsProfile [3.1h.02](#31h02) Set-AzVmssStorageProfile [3.1h.02](#31h02)
-
+**Virtual machines** Get-AzVM [3.1a.02](#31a02) [3.1c.01](#31c01) [3.1e.02](#31e02) [3.3a.02](#33a02) [3.3b.02](#33b02) [3.3c.02](#33c02) [4.3b.02](#43b02) [4.4c.02](#44c02) [4.5a.02](#45a02) [4.6c.10](#46c10) Restart-AzVM [4.3b.02](#43b02) Set-AzVM [3.1a.02](#31a02) [3.3e.01](#33e01) Stop-AzVM [3.3b.02](#33b02) Update-AzVM [3.1c.01](#31c01) [3.1e.02](#31e02) [3.3a.02](#33a02) [3.3c.02](#33c02) New-AzVMConfig [3.1a.02](#31a02) Set-AzVMCustomScriptExtension [3.3f.04](#33f04)  Publish-AzVMDscConfiguration [3.3f.01](#33f01) [3.3f.03](#33f03) Set-AzVmDscExtension [3.3f.03](#33f03) Set-AzVMExtension [4.4c.02](#44c02) [4.6c.01](#46c01) Add-AzVMNetworkInterface [3.1a.02](#31a02) [3.3b.02](#33b02) Set-AzVMOperatingSystem [3.1a.02](#31a02) Set-AzVMOSDisk [3.1a.02](#31a02) [3.1a.34](#31a34) Get-AzVMSize [3.1c.01](#31c01) [3.3c.01](#33c01) Set-AzVMSourceImage [3.1a.02](#31a02) [3.1a.36](#31a36) Get-AzVMUsage [1.1b.01](#11b01)
+**Remote access** Get-AzRemoteDesktopFile [3.1f.01](#31f01)
+**Disks** New-AzDiskConfig [3.3a.02](#33a02) [3.3a.02](#33a02) Add-AzVMDataDisk [3.3a.02](#33a02) Set-AzVMDataDisk [3.1e.02](#31e02)
+**Image** Get-AzImage [3.1a.36](#31a36) New-AzImage [3.1a.05](#31a05) New-AzImageConfig [3.1a.05](#31a05)
+**Monitoring** Set-AzDiagnosticSetting [1.2a.02](#12a02) [1.2a.03](#12a03) [1.2a.04](#12a04)
+**Availability sets** New-AzAvailabilitySet [3.1b.02](#31b02)
+**Scale sets** New-AzVmss [3.1h.02](#31h02) Add-AzVmssExtension [3.1h.02](#31h02) New-AzVmssIpConfig [3.1h.02](#31h02) Add-AzVmssNetworkInterfaceConfiguration [3.1h.02](#31h02) Set-AzVmssOsProfile [3.1h.02](#31h02) Set-AzVmssStorageProfile [3.1h.02](#31h02)
 
 ### Others
+:---
 Get-Date [4.4c.02](#44c02) ConvertTo-Json [1.4b.01](#14b01) ForEach-Object [4.4c.02](#44c02) New-Object [2.3a.06](#23a06) Where-Object [1.4c.03](#14c03) [3.3b.02](#33b02) [4.6d.02](#46d02) New-PSDrive [2.3a.06](#23a06) ConvertTo-SecureString [2.1c.02](#21c02) [2.1c.06](#21c06) [2.3a.06](#23a06) Get-StoragePool [3.1e.05](#31e05) New-StoragePool [3.1e.05](#31e05) Format-Table [4.2a.02](#42a02) New-VirtualDisk [3.1e.05](#31e05) Install-WindowsFeature [3.3f.04](#33f04)
-
-### Active Directory
-Install-ADDSForest [3.3f.04](#33f04) Get-AzADGroup [1.4c.08](#14c08) [1.4c.11](#14c11)
+**Active Directory** Install-ADDSForest [3.3f.04](#33f04) Get-AzADGroup [1.4c.08](#14c08) [1.4c.11](#14c11)
 
 ## Tasks
 ###  1       Manage Azure subscriptions and resource
