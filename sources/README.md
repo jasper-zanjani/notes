@@ -76,20 +76,20 @@ YUG           | Das, Sumitabha. **Your Unix: the Ultimate Guide**
 ## People
 Name                  | Description  | Links
 :---                  | :---         | :---
-Bos, Wes              | Host of [Syntax](#podcasts) | [Twitter](https://twitter.com/wesbos)
-Bushey, Larry         | Host of [Going Linux](#podcasts) | [Twitter](https://twitter.com/goinglinux) [LinkedIn](https://www.linkedin.com/in/larrybushey/)
-Campbell, Richard     | Host of [RunAs Radio](#podcasts) | [Twitter](https://twitter.com/richcampbell)
-Domenick, Michael     | Host of [Coder Radio](#podcasts) | [Twitter](https://twitter.com/dominucco)
-Fisher, Chris         | [Linux Unplugged](#podcasts) | [Twitter](https://twitter.com/ChrisLAS)
-Jude, Allan           | [BSD Now](#podcasts) | [Web](https://www.scaleengine.com/) [FaceBook](https://facebook.com/allanjude) [LinkedIn](https://www.linkedin.com/in/allanjude/)
-Kennedy, Michael      | [Talk Python](#podcasts) [Python Bytes](#podcasts) | [Twitter](https://twitter.com/mkennedy)
-Payne, Wes            | [TechSNAP](#podcasts), [Coder Radio](#podcasts)
-Pfeiffer, Mike        | Host of [CloudSkills.fm](#podcasts) | [Web](https://mikepfeiffer.io) [Twitter](https://twitter.com/mike**pfeiffer) [Facebook](https://www.facebook.com/mikepfeifferhq/)
-Pope, Alan            | Guest on [User Error](#podcasts) and others | [Twitter](https://twitter.com/popey)
-Reuschling, Benedict  | [BSD Now](#podcasts) | [Twitter](https://twitter.com/bsdbcr)
-Ressington, Joe       | [Linux Action News](#podcasts) [User Error](#podcasts) [Choose Linux](#podcasts) | [Web](https://joeress.com) [Twitter](https://twitter.com/JoeRessington)
+Bos, Wes              | [SY](#abbreviations) | [Twitter](https://twitter.com/wesbos)
+Bushey, Larry         | [GL](#abbreviations) | [Twitter](https://twitter.com/goinglinux) [LinkedIn](https://www.linkedin.com/in/larrybushey/)
+Campbell, Richard     | [RAR](#abbreviations) | [Twitter](https://twitter.com/richcampbell)
+Domenick, Michael     | [CR](#abbreviations) | [Twitter](https://twitter.com/dominucco)
+Fisher, Chris         | [LU](#abbreviations) | [Twitter](https://twitter.com/ChrisLAS)
+Jude, Allan           | [BSD](#abbreviations) | [Web](https://www.scaleengine.com/) [FaceBook](https://facebook.com/allanjude) [LinkedIn](https://www.linkedin.com/in/allanjude/)
+Kennedy, Michael      | [TP](#abbreviations) [PB](#podcasts) | [Twitter](https://twitter.com/mkennedy)
+Payne, Wes            | [TS](#abbreviations), [CR](#abbreviations)
+Pfeiffer, Mike        | [CSFM](#abbreviations) | [Web](https://mikepfeiffer.io) [Twitter](https://twitter.com/mike**pfeiffer) [Facebook](https://www.facebook.com/mikepfeifferhq/)
+Pope, Alan            | [UE](#abbreviations) and others | [Twitter](https://twitter.com/popey)
+Reuschling, Benedict  | [BSD](#abbreviations) | [Twitter](https://twitter.com/bsdbcr)
+Ressington, Joe       | [LAN](#abbreviations) [UE](#abbreviations) [CL](#abbreviations) | [Web](https://joeress.com) [Twitter](https://twitter.com/JoeRessington)
 Robbins, Arnold       | **Bash Pocket Reference**, **Unix in a Nutshell**, **sed & awk**
-Tolinski, Scott       | Host of [Syntax](#podcasts) | [Twitter](https://twitter.com/stolinski) [Github](https://github.com/stolinski) [BitBucket](https://bitbucket.org/stolinski) [Facebook](https://www.facebook.com/LevelUpTuts)
+Tolinski, Scott       | [SY](#abbreviations) | [Twitter](https://twitter.com/stolinski) [Github](https://github.com/stolinski) [BitBucket](https://bitbucket.org/stolinski) [Facebook](https://www.facebook.com/LevelUpTuts)
 ## Notes
 ### CloudSkills.fm
 #### CSFM 2
