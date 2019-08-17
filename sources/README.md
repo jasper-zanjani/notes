@@ -1,3 +1,13 @@
+## Processing workflows
+### Cookbooks
+Collections of tasks which need to be comprehensively learned (e.g. Azure commands and procedures for [AZ-103](az-103.md))
+1. **Number** tasks for easy reference and linking in markdown
+2. **Catalog** tasks and desciptions in a spreadsheet
+3. **Copy** catalog with task and description to markdown
+4. **Fill** markdown with syntax, producing a true reference of the source's syntax
+5. **Map** each form-based feature (e.g. commands) to tasks in a spreadsheet (Command | Task) 
+6. **Index** form-based features at the top of the markdown as a concordance
+
 ## Abbreviations
 Abbr.  |  Source
 :---          | :---    
@@ -57,7 +67,7 @@ TWIL          | **This Week in Linux**
 UE            | **User Error** [Web](https://error.show/) [Twitter](https://twitter.com/usererrorshow)
 ULSAH         | **Unix and Linux System Administration Handbook**
 UN            | Robbins, Arnold. **Unix in a Nutshell**
-Vim           | Steve Oualline. **The Vim Book**
+Vim           | Oualline, Steve. **The Vim Book**
 VOV           | **Views on Vue**
 WCL           | Stanek, William R. **Windows Command-Line**.
 WCSS          | Taylor, Dave and Perry, Brandon. **Wicked Cool Shell Scripts**
@@ -132,4 +142,3 @@ Tolinski, Scott       | Host of [Syntax](#podcasts) | [Twitter](https://twitter.
 #### TP 224
 > "12 lessons from 100 days of code".
 - Netlify will watch changes to a GitHub repo as a continuous delivery platform for static sites.
-
