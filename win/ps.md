@@ -2,7 +2,7 @@
 ## Basic Syntax
 ### Syntax to research
 #### `[?...]` 
-From [AZ-103](../sources/az-103-tasks.md) 1.4c.09:
+From [AZ-103](/sources/az-103-tasks.md) 1.4c.09:
 ```powershell
 groupid=$(az ad group list --query "[?displayName=='Cloud Admins'].objectId" -o tsv)
 ```
@@ -11,18 +11,29 @@ From "View system uptime" below:
 ```powershell
 Select-Object -Property @{n="Last Boot Time";e={[Management.ManagementDateTimeConvert]::ToDateTime($_.LastBootUpTime)}}
 ```
-#### `ForEach-Object`
-See [4.4c.02](../sources/az-103-tasks.md)
-### Automatic variables
+### Variables
+#### Automatic variables
 **Automatic variables** are variables that store state information for PowerShell and are created and maintained by Powershell.
 
-Syntax  | Effect
-:---    | :---
-`$$` | last token in the last line received by the session
-`$?` | execution status of the last operation
-`$^` | first token in the last line received by the session
-`$_` | current object in the pipeline object
-### Comparison operators
+Syntax          | Effect
+:---            | :---
+`$$`            | last token in the last line received by the session
+`$?`            | execution status of the last operation
+`$^`            | first token in the last line received by the session
+`$_` `$PSItem`  | current object in the pipeline object
+#### Data types and casting
+Variables can be typed by preceding their identifier with the datatype in brackets
+```powershell
+[double]$Price
+[int]$Quantity
+[string]$Description
+```
+Compatible data can be **cast** or converted by simply specifying the type in an assignment, but when the data cannot be converted the interpreter will throw an error.
+```powershell
+$Number = [int]'04' # => 4
+$FailedCast = [int]'Hello' # => ErrorId 'InvalidCastFromStringToInteger'
+```
+#### Comparison operators
 Syntax  | Effect
 :---    | :---
 `-eq`
@@ -42,7 +53,7 @@ Syntax  | Effect
 `-replace`
 `-is`   | type comparison
 `-isnot`
-### Comparison with bash
+#### Comparison with bash
 Bash            | PowerShell | Notes
 :---            | :---       | :---
 \\              | \`         | used at the end of lines to allow multiline commands
@@ -73,19 +84,16 @@ Bash            | PowerShell | Notes
 `tail`          | `Get-Content -Tail`
 `touch`         | `New-Item`
 `uniq`          | `Select-Object -Unique`
-### Filters
+#### Filters
 Filtering results can be done with 5 commands:
   - `Where-Object` (aliased to `where` and `?`): the most commonly used such command
   - `Select-Object` (aliased to `select`): used to specify specific columns of information to be displayed
   - `Select-String` (aliased to `sls`)
-  - `ForEach-Object` (aliased to `foreach` and `%`)
   - `Out-GridView`
-#### Foreach-Object
-There are two different ways to construct a `ForEach-Object` statement:
-  1. __Script block__, within which the variable `$_` represents the current object
-  2. __Operation statement__, more naturalistic, where you specify a property value or call a method.
-
-### Display basic system information
+  - `ForEach-Object` (aliased to `foreach` and `%`) There are two different ways to construct a `ForEach-Object` statement:
+    1. __Script block__, within which the variable `$_` represents the current object
+    2. __Operation statement__, more naturalistic, where you specify a property value or call a method.
+#### Display basic system information
 Syntax                        | Effect
 :---                          | :---
 `$PSDefaultParametersValues`  | hash table that specifies custom default values for any cmdlet or advanced function
@@ -112,7 +120,6 @@ Syntax                        | Effect
 `Set-Alias ip Get-NetAdapter` |edit an existing alias
 `New-PSDrive -Name scripts -PSProvider FileSystem -Root "C:\Scripts"`|map a directory to a drive
 `Remove-PSDrive -Name scripts`|remove a drive
-
 ### Common parameters
 Option                        | Effect
 :---                          | :---
@@ -129,7 +136,6 @@ Option                        | Effect
 `-WarningVariable`,`-wv`      | store warnings about the command in a variable
 `-WhatIf`,`-wi`               | display a message describing the effect of the command, instead of actually executing it
 `-Confirm`,`-cf`              | prompt for confirmation before executing the command
-
 ### Help commands
 Syntax  | Effect
 :---    | :---
@@ -140,7 +146,6 @@ Syntax  | Effect
 `Get-Help cmd -Online`        | navigate to online help page for a command
 `Get-Help cmd -ShowWindow`    | display help output in a window
 `Update-Help`                 | download help files
-
 ### Output formatting
 Syntax  | Effect
 :---    | :---
@@ -156,7 +161,6 @@ Syntax  | Effect
 `Get-Service \| Sort-Object -Property Status \| Format-Table -Property DisplayName,StartType,Status -GrouptBy Status`|group by `Status` after sorting
 `Get-Serivce \| Write-Host` | will produce an error because `Write-Host` expects a single object
 `Get-Service \| ForEach-Object {Write-Host $_.name}`| loop through each object in output of `Get-Service` and send the `name` field to `Write-Host`
-
 ### File manipulation
 Syntax  | Effect
 :---    | :---
@@ -168,7 +172,6 @@ Option                        | Mandatory | Position
 :---                          | :---      | :---
 `-Path`                       | ✔ | 0
 `-Value`                      | ✔ | 1 
-
 ### Hash tables
 **Hash tables** (equivalent to Python dictionaries) can be built with hash literals:
 ```powershell
@@ -204,7 +207,20 @@ Like in Python, the keys and values can be retrieved with methods (properties in
 $hashtable.Keys # => @('Apple','Orange','Kiwi')
 $hashtable.Values # => @('red','orange','green')
 ```
-### Flow control
+Unlike Python, a hash table can be made ordered, changing its data type:
+```powershell
+$Hashtable = [ordered]@{One = 1; Two = 2; Three = 3; Four = 4}
+$Hashtable.GetType().Name # => OrderedDictionary
+```
+Measuring length:
+```powershell
+$Hashtable.Count
+```
+Removing keys:
+```powershell
+$Hashtable.Remove('One')
+```
+### Control flow
 ```powershell
 if ($condition) {
   ...
@@ -215,6 +231,16 @@ switch ($reference) {
   $value1 { ... }
   $value2 { ... }
 }
+```
+### Loops
+Pipeline is the defining feature of PowerShell, which allows it to break apart composite objects and act on each element with the `ForEach-Object` cmdlet.
+```powershell
+1..5 | ForEach-Object {$_ + 2} # => @(3,4,5,6,7)
+```
+When values are stored in a variable at the end of a pipeline, it will create an array. `while` and `do while` loops are available, as well as `until` and `do until` loops which operate so long as their condition is **false**.
+```powershell
+$Values = while ($true) {(++$Tick); if ($Tick -gt 2) { break } } # => @(1,2,3)
+$Values = do { 'eat me!' } while ($false) # => @('eat me!')
 ```
 ### Defining functions
 Functions are declared with the following syntax
@@ -407,7 +433,6 @@ Retrieve various properties of an image in clipboard
 ```powershell
 Get-Clipboard -Format Image
 ```
-
 ## Desired State Configuration (DSC) syntax
 
 Syntax                                            | Effect
@@ -415,16 +440,13 @@ Syntax                                            | Effect
 Configuration                                     | precedes title of script, at top (e.g. `Configuration ContosoSimple`)
 Ensure                                            | property within `WindowsFeature` that can be set to `Present` or `Absent` (e.g. `Ensure = "Present"`)
 WindowsFeature                                    | declares code block representing a DSC resource to be installed (e.g. `WindowsFeature IIS`)
-
 ## Errors
-The `Throw` keyword generates a temrinating error
-
+The `Throw` keyword generates a terminating error
 ## Glossary
 
 Term | Definition | Source
 :--- | :---       | :---
 automatic variables | variables that store state information for PowerShell and are created and maintained by Powershell. | 14
-
 ## Sources
   1. Berkouwer, Sander. _Active Directory Administration Cookbook_. [ADAC](../sources/adac.md).
   2. Krause, Jordan. _Windows Server 2016 Administration Cookbook_. [WSAC](../sources/wsac.md).
