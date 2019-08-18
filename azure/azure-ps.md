@@ -93,15 +93,18 @@ Stop-AzVM Greeks Socrates
 ```
 
 #### Connect to VM from a Windows machine
-1. WinRM access must be enabled on the target VM as well as the local machine.
 ```powershell
+# Azure can enable PowerShell on the target machine
+Invoke-AzVMRunCommand -CommandId EnableRemotePS
+```
+```powershell
+# WinRM can be enabled from a local command
 Enable-PSRemoting
 ```
-Alternatively, using the command-prompt:
 ```cmd
+@ Using the command-prompt
 winrm quickconfig
 ```
-It can also be done through Azure, using `Invoke-AzVMRunCommand -CommandId EnableRemotePS`
 2. __Modify Network Security Group policy__ (see below) to allow inbound connections to ports 5985 and 5986, which are used by WinRM.
 3. Add the VM's public IP address &lt;$ipaddr&gt; to the trusted hosts of the local machine (must be run as administrator):
 ```powershell
@@ -140,7 +143,10 @@ Invoke-AzVMRunCommand -ResourceGroupName RG -VMName VM -CommandId 'RunPowerShell
 ```
 
 #### Modify Network Security Group policies
-Open inbound ports are most easily defined at the time of VM creation (`New-AzVM ... -OpenPorts 5985,5986 ...`).\
+```powershell
+# Open inbound ports are most easily defined at the time of VM creation 
+New-AzVM ... -OpenPorts 5985,5986 ...
+```
 From __Azure Portal__: Virtual machines > VM to be modified > (Settings) Networking > Network interface > Add inbound port rule button \
 In PowerShell, an __inbound security rule__ can be created:
 ```powershell
