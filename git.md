@@ -55,7 +55,7 @@ git stash apply stash@{n}
 git checkout branch
 git rebase master
 ```
-This will rewind <branch> to the commit shared by the two branches, then applying all changes made subsequently to <master>. 
+This will rewind {branch} to the commit shared by the two branches, then applying all changes made subsequently to {master}. 
 ```sh
 git checkout <master>
 git merge <branch>
