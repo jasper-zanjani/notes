@@ -7,6 +7,7 @@ IaaS            | Virtual Machines | Elastic Compute Cloud (EC2) | Compute Engin
 PaaS            | App Service, Cloud Services | Elastic Beanstalk  | App Engine
 Containers      | Container Service, Service Fabric | Elastic Container Service (ECS) | Google Kubernetes Engine
 Serverless functions | Functions | Lambda | Functions
+Containers      | Container Service, Service Fabric | Elastic Container Service (ECS) | Google Kubernetes Engine
 Virtual networks | VNets | Virtual Private Cloud (VPC) | Virtual Private Cloud
 Load Balancer   | Load Balancer, Application Gateway | Elastic Load Balancer  | Load Balancing
 Dedicated Interconnect | ExpressRoute | Direct Connect  | Interconnect
@@ -82,6 +83,18 @@ NoSQL Document database service offering high performance and automatic scaling 
 GCP Realtime database used for Big Data (ref [G](#sources)).
   - **History**: BigTable evolved out of Google's need to ensure access to petabytes of data in its web search business line. It was described in a 2006 research paper that ended up launching the entire NoSQL industry. In 2015 it was made available as a service to cloud customers. (ref [D](#sources))
   - **Queries**: BigTable doesn't support secondary indexes (ref [E,F](#sources))
+#### App Engine
+Google Cloud Platform Platform-as-a-Service offering.
+
+Video | Link
+:---  | :---
+Get to know Google App Engine | [YouTube](https://youtu.be/2PRciDpqpko) 
+
+#### Compute Engine
+
+Video | Link
+:---  | :---
+Getting Started with Google Cloud Compute Engine | [YouTube](https://youtu.be/1XH0gLlGDdk)
 #### Coldline
 
 ## Glossary
