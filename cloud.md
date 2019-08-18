@@ -2,8 +2,10 @@
 Service         | Azure | AWS   | GCP
 :---            | :---  | :---  | :---
 Certifications  | [Azure certs](#azure-certs) | [AWS certs](#aws-certs) | [GCP certs](#gcp-certs)
-IaaS            | Virtual Machines | Elastic Compute Cloud (EC2) | [Compute Engine](#compute-engine)
-PaaS            | App Service, Cloud Services | Elastic Beanstalk  | [App Engine](#app-engine)
+CLI             | [Azure PowerShell](azure/azure-ps.md) [Azure CLI](azure/azure-cli.md) | | [gcloud command-line tool](https://cloud.google.com/sdk/gcloud/)
+IaaS            | Virtual Machines | Elastic Compute Cloud (EC2) | Compute Engine
+PaaS            | App Service, Cloud Services | Elastic Beanstalk  | App Engine
+Containers      | Container Service, Service Fabric | Elastic Container Service (ECS) | Google Kubernetes Engine
 Serverless functions | Functions | Lambda | Functions
 Containers      | Container Service, Service Fabric | Elastic Container Service (ECS) | Google Kubernetes Engine
 Virtual networks | VNets | Virtual Private Cloud (VPC) | Virtual Private Cloud
@@ -15,7 +17,7 @@ Object Storage  | Blob Storage | Simple Storage Service (S3) | Storage
 Block Storage   | Disk Storage | Elastic Block Store (EBS) | Persistent Disk
 File Storage    | File Storage | Elastic File System (EFS) | Filestore (beta)
 Reduced-availability Storage | Cool Blob Storage | S3 Standard-Infrequent Access, S3 One Zone-Infrequent Access  | Storage Nearline
-Archival Storage | Archive Blob Storage | Glacier |  Storage Coldline
+Archival Storage | Archive Blob Storage | Glacier |  [ Coldline ](https://cloud.google.com/storage/archival/)
 RDBMS           | SQL Database | Relational Database Service (RDS), Aurora | SQL, Spanner
 NoSQL: Key-value | Table Storage | DynamoDB   | [Firestore](#firestore), [Bigtable](#bigtable)
 NoSQL: Indexed  | [Cosmos DB](#cosmosdb) | SimpleDB |  [Firestore](#firestore)
@@ -68,8 +70,8 @@ Professional Collaboration Engineer   | [Certification](https://cloud.google.com
 #### CosmosDB
 Microsoft Azure NoSQL database service optimized for mobile and web applications that offers graph, document, and key-value APIs (ref [K](#sources)).
 #### Firestore
-GCP document-oriented database service intended for use in mobile and web applications that appears to have taken over from "FireBase Realtime Database" (ref. [B](#sources)).
-  - **History**: Not to be confused with "Firebase Realtime Database", an earlier product that does not scale as well and does not offer as good an SLA (ref [H,I](#sources)). Graduated from beta in early 2019 (ref [I](#sources))
+NoSQL Document database service offering high performance and automatic scaling intended for serverless mobile and web application development with Cloud App Engine.
+  - **History**: Firestore was released from beta in early 2019 and combines and improves upon functionality of previous products named **Cloud Datastore** and **Firebase Realtime Database** (ref [H,I](#sources)). Firestore features a compatibility mode that emulates the behavior of Datastore in accessing Firestore's storage layer while removing some of Datastore's limitations.
   - **Queries** (ref. [c](#sources))
     - Queries in Firestore are intended to be used to find documents stored in one specific collection or sub-collection. 
     - A query that spans multiple sub-collections ("collection group query") was not possible until recently, but the field has to be specified as having a scope of "Collection group" within GCP, and there is a limit of (about) 200 for these queries. 
@@ -93,6 +95,7 @@ Get to know Google App Engine | [YouTube](https://youtu.be/2PRciDpqpko)
 Video | Link
 :---  | :---
 Getting Started with Google Cloud Compute Engine | [YouTube](https://youtu.be/1XH0gLlGDdk)
+#### Coldline
 
 ## Glossary
 Term              | Definition  | Source
@@ -126,3 +129,4 @@ zone              | a part of the domain namespace delegated to a legal entity (
   I. "Cloud Firestore vs the Realtime Database: Which one do I use?". [The Firebase Blog](https://firebase.googleblog.com/2017/10/cloud-firestore-for-rtdb-developers.html): 2017/10/03.
   J. "Cloud Firestore Pricing | Get to Know Cloud Firestore #3". [YouTube](https://youtu.be/6NegFl9p_sE): 2018/06/27.
   K. "Azure Friday | Azure Cosmos DB with Scott Hanselman". [YouTube](https://youtu.be/4fRKzcU__jY): 2017/06/27.
+  L. "Archival cloud storage: Nearline & Coldline". [Google Cloud](https://cloud.google.com/storage/archival/)

@@ -1,13 +1,4 @@
-## Processing workflows
-### Cookbooks
-Collections of tasks which need to be comprehensively learned (e.g. Azure commands and procedures for [AZ-103](az-103.md))
-1. **Number** tasks for easy reference and linking in markdown
-2. **Catalog** tasks and desciptions in a spreadsheet
-3. **Copy** catalog with task and description to markdown
-4. **Fill** markdown with syntax, producing a true reference of the source's syntax
-5. **Map** each form-based feature (e.g. commands) to tasks in a spreadsheet (Command | Task) 
-6. **Index** form-based features at the top of the markdown as a concordance
-
+# Sources
 ## Abbreviations
 Abbr.  |  Source
 :---          | :---    
@@ -23,7 +14,7 @@ CL            | **Choose Linux** [Web](https://chooselinux.show) [Twitter](https
 CR            | **Coder Radio** [Web](https://coder.show/) [Twitter](https://twitter.com/coderradioshow) Notes: [325](#cr-325) [361](#cr-361)
 CSFM          | **CloudSkills.fm** [Web](https://cloudskills.fm/) Notes: [2](#csfm-2) [3](#csfm-3) [29](#csfm-29)
 CSP           | **Classic Computer Science Problems in Python**| Kopec, David
-DL            | **Destination Linux** [Web](http://destinationlinux.com/)
+DL            | **Destination Linux** [Web](http://destinationlinux.com/) Notes: 
 Extras        | [Web](https://extras.show/)
 FP            | Ramalho, Luciano. **Fluent Python**.
 FPP           | Lott, Steven. **Functional Python Programming**
@@ -121,6 +112,7 @@ Tolinski, Scott       | [SY](#abbreviations) | [Twitter](https://twitter.com/sto
 #### CR 325
 > "Clojure Calisthenics". [coder.show](https://coder.show/325): 2018/09/07.
 - Wes Payne is a big fan of Clojure, in particular with the professionalism of the clojure community. Clojure is not as closely tied to Java as it was in its inception when it was a "JAR", but it still needs a JVM.
+### Destination Linux
 ### Hacker Public Radio
 #### HPR 1938
 > "How I prepare HPR shows". [hpr.org](hackerpublicradio.org/eps/hpr1938**full**shownotes.html)
