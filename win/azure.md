@@ -12,7 +12,6 @@ Service plan tiers:
   - **Premium**: more frequent backups, increased storage, and greater number of deployment slots and instance scaling options.
 ## Role assignments and classic administrators
 VMs represent Azure's __IaaS__ product. Manage access to Azure resources using __role-based access control (RBAC)__. __Service Administrator__ and __Co-Administrator__ are legacy roles used with the classic deployment model.
-
 ## Monitor
 Monitor incorporates alerts and metrics
 ### Alerts
@@ -61,7 +60,6 @@ Azure will reserve **5** IP addresses from each subnet IP range.
   - An additional three addresses at the start (bottom) of the range are reserved. (This means the smallest possible subnet is `/29`, providing 3 addresses for use)
   - e.g. the first available IP address in range `192.168.1.0/24` is `192.168.1.4`
 ## Azure blades
-
 ## Storage
 4 storage services provided within each storage account:
   1. **Blobs** provides a highly scalable service for storing arbitrary data objects, such as text or binary data

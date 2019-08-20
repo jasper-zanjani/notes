@@ -1,4 +1,10 @@
 # Microsoft Azure
+## Storage
+#### Importing data into Azure using Import/Export service
+Import/Export 
+1. Install **Azure Import/Export tool**. This requires a Windows computer with .NET Framework and BitLocker. There are two versions: Version 1 is recommended for **blob storage**, and Version 2 is recommended for **Files storage**.
+2. Prepare drives using the tool. The first session requires several parameters, including **destination storage account key**, **BitLocker key**, and log directory.
+3. Create an import job through Azure portal.. This requires a Windows computer with .NET Framework and BitLocker.
 ## Web Apps
 __Web Apps__ represent Azure's __PaaS__ product. It is part of the __App Service__ family, which include:
 - Mobile Apps

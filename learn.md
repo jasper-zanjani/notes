@@ -48,5 +48,16 @@ $records += New-AzDnsRecordConfig -IPv4Address "1.2.3.4"
 $records += New-AzDnsRecordConfig -IPv4Address "5.6.7.8"
 New-AzDnsRecordSet -Name "@" -RecordType A -ZoneName examref.com -ResourceGroupName ExamRefRG -Ttl 3600 -DnsRecords $records
 ```
+```powershell
+$vm = Get-AzVM
+$vm.HardwareProfile.VMSize = Standard_DS3_v2
+Update-AzVM -VM $vm
+```
+```powershell
+$rt = New-AzRouteTable
+Add-AzRouteConfig -RouteTable $rt
+Set-AzRouteTable -RouteTable $rt
+```
+
 ## Sources
   [AZ-103 Tasks](sources/az-103-tasks.md)
