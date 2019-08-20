@@ -1,22 +1,15 @@
 # Containers
-Term      | Description
-:---      | :---
-container | form of lightweight virtualization; low overhead wrapper around an application or set of services | [alex-ionescu.com](http://www.alex-ionescu.com/publications/syscan/syscan2017.pdf)
-
 ## Linux containers
 ### LXC
 Well-known, established low-level toolset with templates, library and language bindings.
 ### LXD
 Offers a user experience similar to virtual machines, using a single command-line tool to manage containers, but using Linux containers instead. At its core lies a privileged daemon that exposes a REST API over a local Unix socket as well as over the network.
 ### LXCFS
-
-
 ## Windows containers
   - __Helium__ : virtualized filesystem and registry
   - __Argon__ : isolation of object manager, network virtualization
   - __Krypton__ : thin Hyper-V partition
   - __Xenon__ : Argon with BAse OS image
-
 ## Kubernetes
 Kubernetes (K8s) has emerged as the leading container orchestrator in the industry since 2018. It is a __container management__ system developed by Google then donated to the __Cloud Native Computing Foundation__. It aims to provide better ways of managing distributed components and services across varied infrastructure.\ 
 A __pod__ is the most basic unit that K8s deals with, representing one or more tightly-coupled containers that should be controlled as a single application (typically one main container with subsidiary helper containers). A pod's containers should operate closely container, share a lifecycle, and always be scheduled on the same node.\ 
@@ -33,7 +26,6 @@ At the time, Google had been trying to engage the Linux kernel team and trying t
   - __cloud-controller-manager__
 ### Node server components
   - __kubelet__, main contact point for each node with the cluster group
-
 ## Podman
 Comprehensive container management technology that borrows Docker syntax, developed by Red Hat. The name is short for "pod manager", using Kubernetes' coinage of the term "pod". Unlike Docker, in which containers send messages to the Docker daemon which runs as root (potentially a security concern), Podman containers run as traditional **fork-exec** children of the Podman process, allowing these processes to be run without root privileges.\
 Every podman pod contains an **infra container** whose only purpose is to hold the namespaces associated with the pod and allow podman to connect other containers to the pod.\
@@ -64,17 +56,32 @@ podman exec 5f421b01faa ps -ef
 ```sh
 podman ps --pod - all
 ```
-
+## Glossary
+Term                | Description
+:---                | :---
+**Conmon**          | utility used by **Podman** to keep the PTY terminal of containers open in order to execute commands
+**container**       | form of lightweight virtualization; low overhead wrapper around an application or set of services
+**Container Storage Interface** | Kubernetes component that facilitates storage (ref [N](#sources))
+**infra container** | component of a **Podman** pod that holds namespaces associated with the pod itself, allowing it to connect to containers
+**Kube Master**     | primary control point for distributed orchestration across different nodes (ref [N](#sources))
+**Node**            | system resources that perform tasks as passigned by **Kube Master** (ref [N](#sources))
+**Pod**             | collection of one or more containers sharing an IP address, network, and storage
+**Helium**          | Windows container with a virtualized filesystem and registry
+**Argon**           | Windows container with isolation of object manager, network virtualization
+**Krypton**         | Windows container with a thin Hyper-V partition
+**Xenon**           | Argon Windows container with Base OS image
 ## Sources
-  - "Microsoft Azure for Beginners: Introduction - Scott Duffy [YouTube](https://www.youtube.com/watch?v=3gnLwSI4d9E)
-  - "AZ-103 Microsoft Azure Administrator" [microsoft.com](https://www.microsoft.com/en-us/learning/exam-az-103.aspx)
-  - "Fundamentals of Kubernetes on Microsoft Azure - BRK2396" [YouTube](https://www.youtube.com/watch?v=gmN732qN1Gg)
-  - "Kubernetes in 5 mins" [YouTube](https://www.youtube.com/watch?v=PH-2FfFD2PU)
-  - "What is Kubernetes" [YouTube](https://www.youtube.com/watch?v=F-p_7XaEC84)
-  - "An Introduction to Kubernetes [digitalocean.com](https://www.digitalocean.com/community/tutorials/an-introduction-to-kubernetes)
-  - [linuxcontainers.org](https://linuxcontainers.org/)
-  - "Beginner's Guide to Containers and Orchestration". [Udemy](https://www.udemy.com/linux-academy-beginners-guide-to-containers-and-orchestration/)
-  - "A Practical Introduction to Container Terminology". [developers.redhat.com](https://developers.redhat.com/blog/2018/02/22/container-terminology-practical-introduction/)
-  - "Kubernetes Co-Founders On K8’s Past, Present and Future (It Ain’t All Pretty)". [thenewstack.io](https://thenewstack.io/learning-from-the-success-of-kubernetes/)
-  - "Podman: Managing pods and containers in a local container runtime". [Red Hat Developers](https://developers.redhat.com/blog/2019/01/15/podman-managing-containers-pods/)
-  - Interactive Podman Tutorial. [katacoda.com](https://www.katacoda.com/courses/containers-without-docker/running-containers-with-podman)
+  A. "Microsoft Azure for Beginners: Introduction - Scott Duffy [YouTube](https://www.youtube.com/watch?v=3gnLwSI4d9E)
+  B. "AZ-103 Microsoft Azure Administrator" [microsoft.com](https://www.microsoft.com/en-us/learning/exam-az-103.aspx)
+  C. "Fundamentals of Kubernetes on Microsoft Azure - BRK2396" [YouTube](https://www.youtube.com/watch?v=gmN732qN1Gg)
+  D. "Kubernetes in 5 mins" [YouTube](https://www.youtube.com/watch?v=PH-2FfFD2PU)
+  E. "What is Kubernetes" [YouTube](https://www.youtube.com/watch?v=F-p_7XaEC84)
+  F. "An Introduction to Kubernetes [digitalocean.com](https://www.digitalocean.com/community/tutorials/an-introduction-to-kubernetes)
+  G. [linuxcontainers.org](https://linuxcontainers.org/)
+  H. "Beginner's Guide to Containers and Orchestration". [Udemy](https://www.udemy.com/linux-academy-beginners-guide-to-containers-and-orchestration/)
+  I. "A Practical Introduction to Container Terminology". [developers.redhat.com](https://developers.redhat.com/blog/2018/02/22/container-terminology-practical-introduction/)
+  J. "Kubernetes Co-Founders On K8’s Past, Present and Future (It Ain’t All Pretty)". [thenewstack.io](https://thenewstack.io/learning-from-the-success-of-kubernetes/)
+  K. "Podman: Managing pods and containers in a local container runtime". [Red Hat Developers](https://developers.redhat.com/blog/2019/01/15/podman-managing-containers-pods/)
+  L. Interactive Podman Tutorial. [katacoda.com](https://www.katacoda.com/courses/containers-without-docker/running-containers-with-podman)
+  M. "Helium, Argon, Krypton & Xenon: The Noble Gases of Windows Containers". [alex-ionescu.com](http://www.alex-ionescu.com/publications/syscan/syscan2017.pdf): 2017/05.
+  N. "Understanding Kubernetes Storage". [enterprisestorageforum.com](https://www.enterprisestorageforum.com/cloud-storage/kubernetes-storage.html): 2019/08/16.

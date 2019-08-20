@@ -1,30 +1,731 @@
 # Linux
 
-## Contents
+Table of contents
+-:-
+[Commands](#commands) [Glossary](#glossary) [Sources](#sources)
 
-Topic                            | Contents
+Topic                           | Contents
 :---                            | :---
-BSD | [BSD](bsd.md) [Mac OS X](macosx.md)
+BSD                             | [BSD](bsd.md) [Mac OS X](macosx.md)
 [lx](lx.md)                     | Technical aspects of Linux operation: boot sequence, processes, `init`, control groups, filesystems, FACL
-Desktop environments | [KDE](kde.md)
-Distros | [Kali Linux](lx-kali.md)
-[lx-arch](lx-arch.md)           | Arch Linux installation process
-[lx-network](lx-network.md)     | Networking topics and index to network-related commands
-[lx-xbox](lx-xbox.md)           | Setup process for Xbox 360 wireless controller (does not appear to be necessary on Manjaro)
-[lx-email](lx-email.md)         | Applications used for email services 
-[lx-terms](lx-terms.md)         | Linux applications, abbreviations, file formats, and other terms to be memorized
+Desktop environments            | [KDE](kde.md) [i3](i3.md)
+Distros                         | [Kali Linux](lx-kali.md) [Arch Linux](lx-arch.md)
+[Email](lx-email.md)         | Applications used for email services 
 [X](X.md)
-SystemD | [hostnamectl](hostnamectl.md) [xinetd](xinetd.md)
-
+SystemD                         | [hostnamectl](hostnamectl.md) 
 ## Commands
+All commands
+-:-
+[awk](awk.md) [bash](bash.md) [cat](cat.md) [crontab](crontab.md) [date](date.md) [dhclient](#dhclient) [dig](#dig) [elvish](elvish.md) [firewalld](#firewalld) [fish](fish.md) ftp [grep](grep.md) [history](history.md) [hostnamectl](#hostnamectl) [ifconfig](#ifconfig) [imagemagick](imagemagick.md) [install](#install) [iptables](#iptables) [less](less.md) [make](make.md) [nc](#nc) [netplan](#netplan) [netstat](#netstat) [NetworkManager](#networkmanager) nmap [nmcli](#nmcli) [nslookup](#nslookup) [pacman](pacman.md) [partx](#partx) [ping](#ping) [route](#route) [sed](#sed) [sfdisk](#sfdisk) [shuf](#shuf) [sort](#sort) [ss](#ss) [sudo](sudo.md) [test](test.md) [tcpdump](#tcpdump) [tmux](tmux.md) tracepath traceroute [watch](watch.md) [xinetd](#xinetd) 
 
-Commands
-:---
-[awk](awk.md) [bash](bash.md) [cat](cat.md) [crontab](crontab.md) [date](date.md) [dhclient](lx-network.md#dhclient) [dig](lx-network.md#dig) [elvish](elvish.md) [firewalld](lx-network.md#firewalld) [fish](fish.md) ftp [grep](grep.md) [history](history.md) [hostnamectl](lx-network.md#hostnamectl) [ifconfig](lx-network.md#ifconfig) [imagemagick](imagemagick.md) [iptables](lx-network.md#iptables) [less](less.md) [make](make.md) [nc](lx-network.md#nc) [netplan](lx-network.md#netplan) [netstat](lx-network.md#netstat) [NetworkManager](lx-network.md#networkmanager) nmap [nmcli](lx-network.md#nmcli) [nslookup](lx-network.md#nslookup) [pacman](pacman.md) [ping](lx-network.md#ping) [route](lx-network.md#route) [sed](sed.md) [sfdisk](sfdisk.md) [shuf](shuf.md) [sort](sort.md) [ss](lx-network.md#ss) [sudo](sudo.md) [test](test.md) [tcpdump](lx-network.md#tcpdump) [tmux](tmux.md) tracepath traceroute [watch](watch.md) [xinetd](lx-network.md#xinetd) 
+Network commands
+-:- 
+[bpftrace](#bpftrace) [dhclient](#dhclient) [dig](#dig) [ftp](#ftp) [firewalld](#firewalld) [hostnamectl](#hostnamectl) [ifconfig](#ifconfig) [iptables](#iptables) [nc](#nc) [netplan](#netplan) [netstat](#netstat) [NetworkManager](#networkmanager) [nmap](#nmap) [nmcli](#nmcli) [nslookup](#nslookup) [ping](#ping) [route](#route) [ss](#ss) [tcpdump](#tcpdump) [tracepath](#tracepath) [traceroute](#traceroute) [xinetd](#xinetd) 
 
-## CLI conventions for shell scripts
+Commands needing further research
+-:-
+[lsof](#lsof) [column](#column) [sc](#sc) [espeak](#espeak) [visudo](#visudo) [fmt](#fmt) [paste](#paste) [openssl](#openssl) [sshfs](#sshfs) [ssh-copy-id](#ssh-copy-id)
+### bpftrace
+New open-source tracer for analyzing production performance problems and troubleshooting software [[19](#sources)]
+### dhclient
+Obtain and configure TCP/IP information from a server on the network [[LGLC](../sources/lglc.md): 34]
+#### Turn on the DHCP client and get a new address from the server
+```
+sudo dhclient
+```
+#### Release the IP address currently assigned and request a new IP lease
+```
+sudo dhclient -r
+```
+### dig
+Perform a DNS lookup, useful when troubleshooting a DNS issue (cf. `nslookup`)
+#### Nameserver
+```
+dig example.com NS
+```
+#### Mail server
+```
+dig example.com MX
+```
+### firewalld
+Successor to `iptables` in Red Hat, and like its predecessor a frontend to the netfilter protocols. Places network traffic into zones. Commands have to be written twice: once to affect running config and again to have the change saved
+
+Configuration file                          | Description
+:---                                        | :---
+/etc/sysconfig/network-scripts/ifcfg-ens33  | interface settings
+/usr/lib/firewalld/services                 | .xml files that define services ("ZONE=public")
+
+#### Display status of service
+```
+firewall-cmd --state
+```
+#### Display default zone
+```
+firewall-cmd --get-default-zone
+```
+#### Display zones that are attached to an interface
+```
+firewall-cmd --get-active-zones
+```
+#### Add a new zone
+```
+firewall-cmd --new-zone=testlab
+```
+#### Add a new zone, and write the change to disk
+```
+firewall-cmd --new-zone=testlab  --permanent
+```
+#### Load saved configuration
+```
+firewall-cmd --reload
+```
+#### Display names of all available services
+```
+firewall-cmd --get-services
+```
+#### Add a service permanently
+```
+firewall-cmd --add-service=ftp --permanent
+```
+#### Display services loaded in memory
+```
+firewall-cmd --list-services
+```
+```
+firewall-cmd --remove-service
+```
+#### Add nonstandard port
+```
+firewall-cmd --add-port=8080/tcp
+```
+#### Add a range of nonstandard ports
+```
+firewall-cmd --add-port=50000-60000/udp
+```
+#### See approved port numbers
+```
+firewall-cmd --list-ports
+```
+### ftp
+encrypted file transfers
+### hostnamectl
+#### Permanently change hostname to {hostname} (systemd)
+```
+sudo hostnamectl set-hostname hostname
+```### install
+#### Copy a file while preserving timestamp
+The copy will have the `install` default of `755`, but the original's `mtime` is maintained:
+```sh
+install --preserve-timestamp example/foo .
+```
+[[9](#sources)]
+#### Copy a file, setting permissions, owner, and group
+```sh
+install --preserve-timestamp --owner=jdoe --group=sudoers --mode=753
+```
+[[9](#sources)]
+### ifconfig
+"RX" and "TX" stand for received and transmitted.
+#### Apply a static IP address to interface {eth0} and turn it on ("up")
+```
+ifconfig eth0 up 10.1.230.245 netmask 255.255.255.0
+```
+#### Bring an interface up or down
+```
+ifup eth0
+ifdown eth0
+```
+```
+ifconfig eth0 up
+ifconfig eth0 down
+```
+### iptables
+A popular firewall, like `firewalld`, a frontend for the kernel-level `netfilters` service. Interface configuration, used to assign a TCP/IP configuration to a network interface, but no longer installed on modern distros.
+
+Config files | Description
+:---   | :---
+/etc/sysconfig/iptables | location of saved config
+
+Syntax | Effect
+:---   | :---
+`iptables --list` | will produce output even if the service is not running
+`systemctl enable --now iptables` | start iptables service
+`iptables --list-rules` | display rules as written on disk
+`iptables -A INPUT -p tcp --dport 80 -j ACCEPT` | accept TCP traffic to port 80
+`iptables -A INPUT -p tcp --dport ssh -s 10.0.222.222 -j ACCEPT` | accept SSH traffic from a particular source
+`iptables-save` | stdout only; must be redirected to a file
+`iptables -F` | reload config file
+`systemctl restart iptables`
+`iptables -vnL --line` | show statistics for configuration lines
+`watch -n 0.5 iptables -vnL` \ update twice a second, producing a dashboard
+### lowriter
+`lowriter` is a command-line utility installed with LibreOffice Writer.[[21](#sources)]
+#### Convert a single file to PDF
+```sh
+lowriter --convert-to pdf filename.doc
+```
+#### Convert a batch of files using globbing
+```sh
+lowriter --convert-to pdf *.docx
+```
+### nc
+The netcat utility allows testing of a host's ports, similar to __ping__, but more versatile because __ping__ only uses the portless ICMP protocol. GNU and OpenBSD versions available (itp-l+: 28)
+#### Connect to host on port 80
+```
+nc example.com 80
+```
+#### Scan ports
+```
+# Scan a single port
+nc -v -w 2 z 192.168.56.1 22
+
+# Scan multiple ports
+nc -v -w 2 z 192.168.56.1 22 80
+
+# Scan a range of ports
+nc -v -w 2 z 192.168.56.1 22-25
+```
+#### Transfer files between servers
+This example uses the `pv` utility to monitor progress.
+```
+# Run `nc` in listening mode (`-l` option) on port 3000
+tar -zcf - debian-10.0.0-amd64-xfce-CD-1.iso | pv | nc -l -p 3000 -q 5
+
+# On the receiving client, to obtain the file:
+nc 192.168.1.4 3000 | pv | tar -zxf -
+```
+#### Create a command-line chat server
+```
+# Create chat server listening on port 5000
+nc -l -vv -p 5000
+
+# Launch a chat session on the other system
+nc 192.168.56.1 5000
+```
+#### Find a service running on port
+Obtain port banners (`-n` disables DNS lookup)
+```
+nc -v -n 192.168.56.110 80
+```
+#### Create stream sockets
+Create and listen on a UNIX-domain stream socket
+```
+nc -lU /var/tmp/mysocket &
+ss -lpn | grep "/var/tmp/"
+```
+#### Create a backdoor
+Netcat needs to listen on a chosen port (here 3001): `-d` disables reading from stdin; `-e` specifies the command to run on the target system
+```
+nc -L -p 3001 -d -e cmd.exe
+```
+### netplan
+Ubuntu network configuration tool
+
+Config file   | Description
+:---          | :---
+/etc/netplan/ | directory containing various configuration files and scripts
+/etc/nplan/99_config.yaml | netplan config
+#### Apply network configuration changes
+```
+sudo netplan apply
+```
+### netstat
+#### Show interface statistics 
+> LGLC: 535
+```
+netstat -i
+``` 
+#### Display routing table 
+> lxa-lpic: 109.2, itp-lpic: 39
+```
+netstat -r
+netstat --route
+``` 
+#### Show all sockets on all active interfaces 
+> lxa-lpic: 109.2
+```
+netstat -a
+``` 
+#### Show network traffic 
+> itp-lpic.md
+```
+netstat -an
+``` 
+#### Count number of TCP connections 
+> lxa-lpic: 109.2
+```
+netstat -a | grep tcp - | wc -l
+``` 
+#### Refresh every 5 seconds 
+> lxa-lpic: 109.2
+```
+netstat -c 5 -a
+``` 
+#### TCP connections 
+>lxa-lpic: 109.2
+```
+netstat -t
+``` 
+#### Active sessions 
+>itp-lpic: 39
+```
+netstat -tp
+``` 
+#### All sessions
+> itp-lpic: 39
+```
+netstat -atp
+``` 
+#### Routing table with name resolution 
+> lxa-lpic: 109.2
+```
+netstat -rn
+``` 
+#### Get the list of IPs and ports that are connected via https on your webserver every second
+```
+watch -n 1 'netstat -an | grep ":443"'
+``` 
+#### Get the total number of connections on port 80 every second
+```
+watch -n 1 'netstat -an | grep ":80" | wc -l'
+```
+### networkmanager
+`chkconfig NetworkManager off`, `systemctl disable NetworkManager.service`, `service NetworkManager stop` stop NetworkManager service (Upstart, Systemd, Sysvinit)
+### nmap
+Audit open ports on a host
+#### Scan hosts from a text file
+```sh
+nmap -iL hosts.txt
+```
+#### Identify a host's operating system
+```sh
+nmap -A localhost.example.com
+```
+#### Determine whether a host has a firewall enabled
+```sh
+nmap -sA localhost.example.com
+```
+#### Scan a specified range of ports
+```sh
+nmap -p 10-300 localhost.example.com
+```
+#### Perform a SYN TCP scan, stealthier than the TCP connect scan
+```sh
+nmap -sT localhost.example.com
+```
+### nmcli
+Interface to Network Manager, which allows for consistent network configuration across a system.
+#### Display devices and statuses
+```
+nmcli device status
+```
+#### Display information on interfaces as well as status
+Including other network connections not managed by network manager ("unmanaged") or not connected ("unavailable") 
+```
+nmcli dev status
+```
+#### Display what connections are enabled 
+```
+nmcli general status
+```
+#### Display UUIDs associated with network connections 
+```
+nmcli connection show --active
+```
+#### Display much more information on network devices
+```
+nmcli device show
+```
+### nslookup
+Perform a DNS lookup in an interactive shell with cleaner output than __dig__. Enter a domain name and you get output in two sections. 
+#### Get IP address of a website
+```
+nslookup url
+```
+#### Get only nameservers
+```
+nslookup -type=ns url
+```
+#### Get only MX records
+```
+nslookup -type=mx url
+```
+#### Get Start of Authority (SOA) record
+```
+nslookup -type=soa url
+```
+#### Display all available records
+```
+nslookup -type=any url
+```
+#### Perform reverse DNS lookup on {ipaddress}
+```
+nslookup ipaddress
+```
+#### Specify port {portno} in the lookup
+```
+nslookup -port=portno url
+```
+### partx
+`partx` is a utility that provides information on drive partitions to the Linux kernel. [[12](#sources)]
+#### Display partition table of a drive
+```bash
+partx --show /dev/sda
+```
+#### Show details of only one partition of a drive
+```bash
+partx --show /dev/sda1
+```
+#### Specify a range of partitions on a drive
+```bash
+partx -o START, END --nr 10 /dev/sda
+```
+#### Add all partitions on a disk to the system
+```bash
+partx -a /dev/sda
+```
+#### Dos[;au tje ;emgtj om sectors and human-readable size of a partition
+```bash
+partx -o SECTORS,SIZE /dev/sda1 /dev/sda
+```
+#### Remove the last partition
+```bash
+partx -d --nr -1:-1 /dev/sda
+```
+#### Disable headers
+```bash
+partx -o START -g --nr 5 /dev/sda
+```
+### sed
+Stream-oriented editor typically used for applying repetitive edits across all lines of multiple files. In particular it is, alongside `awk` one of the two primary commands which accept regular expressions in Unix systems. 
+#### sed command-line syntax
+Invocation syntax has two forms:
+```sh
+sed options 'instruction' file # Instructions provided inline
+```
+```sh
+sed options -f scriptfile file # Instructions read from a **command file**
+```
+Options:
+  - `-e` : when providing more than one instruction, this flag precedes every one
+  - `-f`, `--file` : read from a **command file** (called a **program file** in some places [[PGL](../sources/README.md): 564]
+  - `-i` : edit the file in-place instead of outputting to stdout
+  - `-i=suffix` : edit the file in-place, but save a backup copy of the original with {suffix} appended to - the filename
+  - `-n` : suppress duplicate line printing; only print lines specified with the `p` command 
+#### sed scripting
+`#` : comments begin with octothorpe
+`#n` : if first line of script begins with these two characters, it is equivalent to using the `-n` flag
+#### sed syntax
+sed instructions are made of **addresses** and **procedures** . Sources do not use consistent terminology to describe the two components of most sed commands:
+
+:---                                | :---
+`sed 'pattern {procedure}' file`    | [[SA](../sources/README.md): 14]
+`sed 'address {action}' file`       | [[YUG](../sources/README.md): 449]
+`sed 'address {instruction}' file`  | [[PGL](../sources/README.md): 565]
+
+Zero, one, or two addresses can precede a procedure.
+  - In the absence of an address, the procedure is executed over every line of input
+  - With one address, the procedure will be executed over every line of input that matches
+  - With two addresses, the procedure will be executed over groups of lines whereby:
+    - The first address selects the first line in the first group
+    - The second address selects the next subsequent line that it matches, which becomes the last line in the first group
+    - If no match for the second address is found, it point to the end of the file
+    - After the match, the selection process for the next group begins by searching for a match to the first address
+Addressing can be done in one of two ways:
+  1. **Line addressing**, specifying line numbers separated by a comma (e.g. `3,7p`); `$` represents the last line of input
+  2. **Context addressing**, using a regular expression enclosed by forward slashes (e.g. `/From:/p`)
+
+Procedure   | Description
+:---        | :---  
+`!c`        | negation operator can be used with any procedure {c}
+`a`         | append text to the addressed lines
+`d`         | cause sed not to display the addressed lines ("delete"); can emulate `grep -v`, which selects lines which do _not_ match the specified pattern
+`i`         | prepend text to the addressed lines
+`n`         | write out the currently selected line if appropriate, read the next input line, and start processing the new line with the next instruction
+`x`         | where {x} is a number, specifying occurrence (e.g. `2` would replace only the second occurrence of each pattern per line)
+`g`         | replace all occurrences
+`p`         | print original content (e.g. `sed -n 's/test/another test/p' myfile`)
+`w outputfile`        | write results to {outputfile} (e.g. `sed 's/test/another test/w output' myfile`)
+`s/pattern/replacement/flags`         | replace regex {pattern} with {replacement} ("substitute")
+`g`         | replace **all** instances of the search pattern with the replacement, rather than the first instance (global)
+`&`         | known as the **repeated pattern**, represents the represents the entire source string; the only special character used in the replacement string - all other characters are treated literally
+
+#### Display first 3 lines
+```sh
+
+sed '3q' emp.lst
+```
+[[YUG](../sources/README.md): 450]
+Display first 5 lines, similar to `head -5 emp.lst`
+```sh
+sed '5q' new
+```
+[[PGL](../sources/README.md):569]\
+Pipe output of `ps` to `sed`, displaying top 10 memory-intensive processes
+```sh
+ps axch -o cmd,%mem --sort=-%mem | sed 11q
+```
+Pipe output of `ps` to `sed`, displaying top 10 CPU-intensive processes
+```sh
+ps axch -o cmd:15,%cpu --sort=-%cpu | sed 11q
+```
+#### Display first two lines of file
+Without `-n`, each line will be printed twice
+```sh
+sed -n '1,2p' emp.lst
+```
+Prepending `!` to the procedure reverses the sense of the command
+```sh
+sed -n '3,$!p' emp.lst
+```
+[[YUG](../sources/README.md): 450-451]
+#### Display a range of lines
+```sh
+sed -n '9,11p' emp.lst
+```
+Use the `-e` flag to precede multiple instructions
+```sh
+sed -n -e '1,2p' -e '7,9p' -e '$p' emp.lst
+```
+#### Delete lines
+Delete second line alone
+```sh
+sed '2d' myfile
+```
+Delete a range of lines: from the 2nd through the 3rd
+```sh
+sed '2,3d' myfile
+```
+Delete a range of lines, from the first occurrence of 'second' to the line with the first occurrence of 'fourth'
+```sh
+sed '/second/,/fourth/d' myfile
+```
+#### Print all of a file except for specific lines
+Suppress any line with 'test' in it
+```sh
+sed '/test/d' myfile
+```
+Suppress from the 3rd line to EOF
+```sh
+sed '3,$d' myfile
+```
+#### Replace text
+Replace the first instance of the `|` character with `:` and display the first two lines [[YUG](../sources/README.md):455]
+```sh
+sed 's/|/:/ emp.lst | head -2
+```
+Replace all instances of the `|` character with `:`, displaying the first two lines [[YUG](../sources/README.md):455]
+```sh
+sed 's/|/:/g' emp.lst | head -2
+```
+Substitute HTML tags:
+```sh
+sed 's/<I>/<EM>/g'
+```
+These commands will replace "director" with "executive director"
+```sh
+sed 's/director/executive director/' emp.lst
+```
+```sh
+sed 's/director/executive &/' emp.lst
+```
+```sh
+sed '/director/s//executive &/' emp.lst
+```
+[[YUG](../sources/README.md): 456-457]
+#### Searching for text
+Equivalent to `grep MA *`
+```sh
+sed -n '/MA/p' *
+```
+#### Stringing sed statements together with pipe
+Take lines beginning with "fake" and remove all instances of "fake.", piping them... remove all parentheses with content and count lines of output (results)
+```sh
+sed -n '/^fake/s/fake\.//p' * | sed -nr 's/\(.*\)//p' | wc -l
+```
+Take lines of all files in CWD beginning with "fake" and remove all instances of string "fake." Then remove all parentheses with any content within them and print only the top 10 lines
+```sh
+sed -ne '/^fake/p' * | sed -n 's/fake\.//p' | sed -nr 's/\(.*\)//p' | sed 11q
+```
+Count the number of pipes replaced by piping output to `cmp`, which will use the `-l` option to output byte numbers of differing values, then counting the lines of output (YUG:456)
+```sh
+sed 's/|/:/g' emp.lst | cmp -l - emp.lst | wc -l
+```
+### sfdisk
+Script-based partition table editor, similar to [`fdisk`](#fdisk) and [`gdisk`](#gdisk), which can be run interactively. It does not interface with GPT format, neither is it designed for large partitions. [[11](#sources)]
+#### List partitions on all devices
+```sh
+sfdisk -l
+sfdisk --list
+```
+#### List partitions on {device}
+```sh
+sfdisk -l device
+sfdisk --list device
+```
+#### Display size of {partition} or {device}
+This command produces the size of {partition} (i.e. `/dev/sda1`) or even {device} (`/dev/sda`) in blocks
+```sh
+sfdisk -s partition
+sfdisk -s device
+```
+#### Apply consistency checks to {partition} or {device}
+```sh
+sfdisk -V partition
+sfdisk --verify device
+```
+#### Create a partition
+```sh
+sfdisk device
+```
+#### Save sectors changed
+This command will allow recovery using the following command
+```sh
+sfdisk /dev/hdd -O hdd-partition-sectors.save
+```
+#### Recovery
+Man page indicates this flag is no longer supported, and recommends use of `dd` instead.
+```sh
+sfdisk /dev/hdd -I hdd-partition-sectors.save
+```
+### shuf
+#### Shuffle items separated by a space
+```sh
+shuf -e one two three
+```
+[[10](#sources)]
+#### Shuffle items separated by newline 
+```sh
+shuf -n 1 cards.txt
+```
+[[10](#sources)]
+### sort
+#### Sort by space-delimited columns
+Processes consuming the most memory will be at the bottom
+```sh
+ps aux | sort -nk 4
+```
+[[CLKF](../sources/README.md)]\
+Processes consuming the most CPU will be at the bottom
+```sh
+ps aux | sort -nk 3
+```
+[[CLKF](../sources/README.md)]    
+### stat
+### ping
+"packet Internet groper" utility used for checking network connections, using ICMP packets (cf. __nc__)
+#### Numeric output only
+```
+ping -n
+```
+#### Send {n} number of pings
+```
+ping -c n
+``` 
+#### Flood ping
+```
+ping -f
+```
+#### Print timestamp
+```
+ping -D
+```
+#### Mark outgoing packet to be processed appropriate to kernel's policy
+```
+ping -m
+``` 
+#### Bypass routing tables
+```
+ping -r
+```
+### route
+Display and manipulate the routing table
+#### Display routing table
+```
+route -n
+```
+#### Add a default gateway
+```
+route add default gw 192.168.0.1
+```
+#### Remove a default gateway
+```
+route del default gw 192.168.0.1
+```
+#### Give a particular network a different gateway
+```
+route add -net 192.168.1.0 netmask 255.255.255.0 gw 192.168.0.1
+```
+### ss
+"Socket statistics", successor to __netstat__. 
+#### ss Options
+Options are of two kinds:
+  1. Connection type (listening or established)
+    - `ss` display established connections (default)
+    - `ss -l` , `ss --listening` display sockets listening
+    - `ss -a` , `ss --all` display both listening sockets and established connections
+  2. Protocol type
+    - `ss` display all protocol sockets (default)
+    - `ss -t` , `ss --tcp` display TCP protocol sockets
+    - `ss -u` , `ss --udp` display UDP sockets
+    - `ss -x` , `ss --unix` display Unix domain sockets
+#### Display port numbers instead of protocol names
+```
+ss -n
+```
+```
+ss --numeric
+```
+#### Do __name__ lookups and display __all__ information
+```
+ss -an
+```
+#### Display all active TCP sessions
+```
+ss -atp
+```
+#### Display active TCP sessions
+```
+ss -tp
+```
+#### Display routing table (cf. `ip route`)
+```
+ss --route
+```
+#### Display programs with open ports 
+```
+ss --program
+```
+#### Show all running servers 
+"Tuna please"
+```
+ss -tunapl
+```
+### tcpdump
+Inspect actual IP packets (Wireshark is a GUI-based alternative)
+#### All network data will be displayed to STDOUT
+```
+tcpdump -i eth0
+```
+### tracepath
+Successor to `traceroute`, allowing the user to test connectivity along the path. Doesn't show as much detail with regard to time, so it may be faster.
+### traceroute
+Provides much more information than `tracepath`, even though it's older [[lxa-lpic](../sources/lxa-lpic.md)]
+### xinetd
+Internet Super Daemon provided an alternate method of connecting to various outdated network services. Should be turned off nowadays.  
+
+Configuration file  | Description
+:---                | :---
+/etc/xinet.d/       | config files
+/etc/xinetd.conf    | master xinetd configuration
+/etc/cmd.allow      | specify who is allowed to run a command
+/etc/cmd.deny       | specify who is disallowed from running a command
+#### Display statistics for a file
+```sh
+stat file
+```
+## Assorted tasks, procedures, and recommendations
 #### Validating arguments
-> PGL:548
 ```
 if [ $# != 2 ]
 then 
@@ -32,18 +733,158 @@ then
   exit 1
 fi
 ```
-> Luke Smith video. [YouTube](https://youtu.be/ksAfmJfdub0) 
+[[PGL](../sources/README.md): 548]
 ```
 [ -z "$1" ] && echo "..." && exit 1
 ```
-> "Yakuake scripting". [coderwall.dom](https://coderwall.com/p/kq9ghg/yakuake-scripting)
+[[7](#sources)]
 ```
 if [ ! -z "$2" ] ; then ...; fi
 ```
+[[8](#sources)]
 #### Looping based on user input
-Placed in a while loop, if user responds with anything except "y" (the read command will read only the first letter) the loop will terminate (CLKF)
+Placed in a while loop, if user responds with anything except "y" (the read command will read only the first letter) the loop will terminate 
 ```bash
 read -p "Backup another server? (y/n)" -n 1
 ["$BACKUP_AGAIN"="y"] || break
+# ref CLKF
 ```
-
+#### Diagnosing network problems
+Test from the inside out, starting with the loopback
+  1. ping looback address, testing the TCP/IP stack
+  2. ping the hardware interface
+  3. ping another host on the network
+  4. ping the gateway
+  5. ping an IP address on the Internet
+  6. ping a hostname on the Internet
+## Glossary
+Name                            | Description
+:---                            | :---
+Akira                           | design tool; alternative to `Sketch` and `Adobe XD`
+Anthos                          | Google cloud service, competitor to AWS, runs on Kubernetes | 
+Ardour                          | edit multiple audio tracks [[1](#sources)]
+Audacity                        | process and edit audio files [[1](#sources)]
+Bentoo Linux                    | Linux distribution made as a version of Funtoo which is easier to install | 
+bro                             | alternative to man 
+btrfs                           | B-Tree File System or "butter FS": file system was adopted by SUSE Enterprise Linux, but support was dropped by Red Hat in 2017 | 
+cheat                           | alternative to man 
+Click                           | Python package that uses decorators to create command-line interfaces | 
+Clonezilla                      | open-source software package for disk imaging and cloning; started as an alternative to the commercial software package Norton Ghost | DL: 111
+coreboot                        | open-source firmware | [[LS](../sources/README.md)]
+eta                             | command-line tool that draws a progress bar for long-running processes 
+rdesktop                        | command-line utility for initiating a REmote Desktop Protocol connection with a Windows host [[4](#sources)]
+Rosegarden                      | read and edit notations, MIDI files [[1](#sources)]
+Timeshift                       | backup utility that can capture the entire drive as a snapshot [[2](#sources)]
+darktable                       | open-source photography workflow application; more involved than `digikam` [[LU](../sources/README.md): 289]
+digikam                         | open-source image organizer and tag editor; switched from `Exiv2` to `QtAV` for video support; written in C++ [[LU](../sources/README.md): 289]
+dmenu                           | dynamic menu for X11; originally designed for `dwm`
+dolphin                         | KDE file manager [[LCL](../sources/READMe.md): 27]
+dwm                             | window manager written in C that needs to be recompiled when you change configuration | 
+enlightenment                   | stacking window manager for X Window System 
+Endlessh | SSH tarpit that sends an endless SSH banner to keep malicious SSH clients locked up for long periods of time | 
+exa                             | open-source replacement for `ls`, with additional options | DT
+ext4                            | filesystem adopted by Linux in 2008; developed by Theodore Ts'o | 
+feh                             | X11 image viewer 
+Fedora                          | Linux distribution available in 3 flavors: Server, Workstation, and Cloud; Default desktop environment: GNOME; Default user interface: GNOME Shell; Package management system: RPM 
+Fedora CoreOS Config (.fcc)     | YAML file that specifies the desired configuration of a CoreOS machine. It is converted to an **Ignition config** file using the **Fedore CoreOS Config Transpiler**  [[5](#sources)
+Fedora CoreOS Config Transpiler (FCCT) | utility used to generate an **Ignition config** file from a **Fedora CoreOS Config** file [[5](#sources), [6](#sources)]
+Funtoo Linux                    | Linux distribution also made by Daniel Robbins | 
+hexchat                         | open-source IRC client typically preinstalled with Linux distros | DL: 112
+Ignition Config (.ign)          | configuration file generated by the **Fedora CoreOS Config Transpiler** from a **Fedora CoreOS Config** file to provision a CoreOS system [[6](#sources)]
+Flameshot                       | open-source screenshot tool with convenient options for graphical editing [[DL](../sources/README.md): 110]
+flatpak                         | building and distributing desktop applications on Linux 
+flowblade                       | open-source video editor [[LU](../sources/README.md): 295]
+FSCrypt                         | Ubuntu tool that took the mantle from EncryptFS | 
+geary                           | GUI email application for GNOME 3 | [[LU](../sources/README.md): 289]
+Gentoo                          | Linux distribution for which the source code is compiled locally according to the user's preferences, optimizing the distro to the specific computer; started by Daniel Robbins | 
+GNOME                           | desktop environment; unique among desktop environments for being single-threaded process and thus susceptible to catastrophic crashes [[DL](../sources/README.md): 110]
+gopass                          | command-line password manager 
+gparted                         | partition editor; graphical frontend to GNU Parted
+htop                            | interactive process viewer 
+immutable infrastructure        | a machine that is not modified **in-place**, but configured only through the provisioning process | 5
+iptables                        | userspace utility program that allows a sysadmin to configure tables provided by the Linux kernel firewall; `iptables` applies to IPv4; `ip6tables` to IPv6; `arptables` to ARP; `ebtables` to Ethernet frames
+Kali Linux                      | Linux distribution which is the most popular one for ethical hacking and pentesting; based on Debian; installable on a banana board (Raspberry Pi) | DL: 110
+KDE                             | desktop environment [[DL](../sources/README.md): 105]
+kpcli                           | command-line version of `keepass` or `keepassx` 
+libcgroup                       | easiest way to work with cgroups on Red Hat Linux; `cgconfig` service installed with libcgroup package
+lightdm                         | user login screen
+Lightworks                      | video editor [[DL](../sources/README.md): 105]
+Linux Multimedia Studio (LMMS)  | alternative to Frooty Loops [[1](#sources)]
+Lubuntu                         | Ubuntu flavor using the LXQt desktop environment | 
+lynx                            | open-source terminal-based web browser | DT
+Minix                           | POSIX-compliant Unix-like OS based on a microkernel architecture; although the source code was released in print form (in 1987), the license cost $69, which was included in the cost of the book; had its own filesystem which could handle filenames up to 14 characters and address 64MB of storage; developed by Andrew Tannenbaum for teaching; used by Linus Torvalds to develop the original Linux kernel | 
+Mixxx                           | DJ software, including BPM, key detection, sync, effects  [[1](#sources)]
+MPlayer                         | multimedia player with support for streaming online radio  [[3](#sources)]
+MuseScore                       | arrange a musical score  [[1](#sources)]
+Matrix                          | open standard for messaging; integrates with and bridges to IRC and other protocols, potentially consolidating the fractured landscape of messaging on Linux [[DL](../sources/README.md#destination-linux): 110
+MyPy                            | most common Python static type checker | 
+Nautilus                        | file manager used by default in GNOME | 
+Nemo                            | file manager used by default in Budgie | 
+netcat                          | open-source tool (which replaces and refines the features of another, older, identically-named program) which facilitates TCP/IP connections and requests | DT
+netdata                         | open-source real-time performance and health monitor | 
+nm-applet                       | network manager | 
+nnn                             | terminal-based file browser; written in Python | 
+OBS                             | open-source live video streaming production software which has become the de facto standard; alternative to WireCast | DL: 111
+pacman                          | package manager for Arch Linux | 
+Parted Magic                    | commercial Linux distribution with data recovery and disk partitioning tools; started as a free alternative to the commercial software package "Partition Magic" | DL: 111
+PDF Chain                       | graphical utility which works as a wrapper to common `PDFtk` commands; allows user to merge PDFs, extract pages, and add watermarks | OSc
+PDF-Shuffler                    | graphical utility to move pages around in a PDF file | OSc
+Pi MusicBox                     | turns Raspberry Pi into a standalone streaming music player | 
+pitivi                          | buggy video editing application still in beta; written in Python | OSc
+Plasma                          | KDE desktop environment | DL: 110
+prepros                         | GUI  commercial CSS compiler | 
+Qt                              | open-source widget toolkit for creating GUIs and cross-platform applications; `GTK+` is an alternative | 
+QtAV                            | multimedia playback framework based on `Qt` and `FFmpeg`; directly uses ffmpeg codecs; alternative to `Exiv2` | LU: 289
+qtile                           | tiling window manager written and configured in Python used by Luke Smith; abandoned by DT in 2019 after a few weeks of use | 
+ranger                          | file manager | 
+rxvt-unicode                    | terminal emulator | 
+shorewall                       | open-source command-line firewall tool for Linux; works off plaintext configuration files; more user-friendly than `iptables`; alternative: `FireHOL` | LU: 289
+snapcraft                       | platform to allow high-frequency updates of applications; developed by Canonical; uses YAML format; written in Go, C | 
+solVItaire                      | terminal-based solitarie game that uses vim key bindings | 
+st                              | "simple terminal"; suckless terminal emulator | 
+surf                            | suckless web browser | 
+sxiv                            | suckless image viewer | 
+systemctl                       | main command used to inspect and control `systemd` | 
+systemd                         | suite of basic building blocks for a Linux system | 
+termite                         | terminal disfavored by Distro Tube | 
+Thunar                          | file manager used by XFCE | 
+Tilix                           | tiling terminal emulator; GTK3 | DL: 104
+Titan                           | command-line password manager and file encryption tool; stores passwords in an encrypted SQLite database | OSc
+tldr                            | alternative to man | OST
+tutanota                        | encrypted open-source email service | 
+Ubuntu Touch                    | open-source operating system for mobile devices | DL: 104
+urxvt                           | terminal favored by Distro Tube | 
+vifm                            | file manager; lacks image previews and file icons | 
+Wasmer                          | Python module that allows Python to run web assembly | 
+Wayland                         | intended to be a successor to X | DL: 110
+wine                            | method of running Windows applications on linux which is faster than a virtual machine or emulator | 
+xfce4                           | desktop environment | 
+xorg                            | X.org server;  | 
+Xubuntu                         | Linux distribution based on Ubuntu which uses the XFCE desktop environment | 
+YaST                            | package manager and configuration tool for openSUSE and SUSE Linux Enterprise; "Yet Another Setup Tool" | LU: 289
+yum                             | package management tool for Red Hat Enterprise Linux | 
+Youtube-dl                      | command-line utility for downloading YouTube videos [[3](#sources)]
+ZFS                             | Zettabyte File System: next-generation filesystem with a problematic license by Oracle [[LU](../sources/README.md): 284]
+ZynAddSubFX                     | LMMS plugin, used with synthesizers [[1](#sources)]
+## Sources
+  1. "7 Open Source Software Related To Music". [Fosslicious](https://www.fosslicious.com/2019/01/7-open-source-software-related-to-music.html): 2019/01/02.
+  2. "How to create snapshots on Linux with Timeshift". [TechRepublic](https://www.techrepublic.com/article/how-to-create-snapshots-on-linux-with-timeshift/#ftag=RSS56d97e7)
+  3. "Music and video at the Linux terminal". [Red Hat](https://www.redhat.com/sysadmin/music-video-linux-terminal?sc_cid=70160000001273HAAQ): 2019/06/25.
+  4. "rdesktop - A RDP Client to Connect Windows Desktop from Linux". [TecMint](https://www.tecmint.com/rdesktop-connect-windows-desktop-from-linux/): 2019/07/09.
+  5. "Introducing Fedora CoreOS". [Fedora Magazine](https://fedoramagazine.org/introducing-fedora-coreos/): 2019/07/24.  
+  6. "Fedora CoreOS - Getting Started". [Fedora Documentation](https://docs.fedoraproject.org/en-US/fedora-coreos/getting-started/): 
+  7. "Easy Academic References on the Command Line". [YouTube](https://youtu.be/ksAfmJfdub0) 
+  8. "Yakuake scripting". [coderwall.com](https://coderwall.com/p/kq9ghg/yakuake-scripting)
+  9. "Moving files on Linux without `mv`". [opensource.com](https://opensource.com/article/19/8/moving-files-linux-without-mv): 2019/08/19.
+  10. "Linux and Unix shuf command tutorial with examples". [shapeshed.com](https://shapeshed.com/unix-shuf/): 2016/08/09.
+  11. "Linux `sfdisk` command". [ComputerHope](https://www.computerhope.com/unix/sfdisk.htm): 2019/05/04.
+  12. "8 Partx Command Usage Examples in Linux". [TecMint](https://www.tecmint.com/partx-command-in-linux-with-examples/)
+  13. "How to use the stat command: 2-Minute Linux Tips". [NetworkWorld](https://www.networkworld.com/video/96327/how-to-use-the-stat-command-2-minute-linux-tips#tk.rss_linux)
+  14. "8 Netcat (nc) Command with Examples". [TecMint](https://www.tecmint.com/netcat-nc-command-examples/): 2019/08/09.
+  15. "Bite Size Networking". [wizardzines.com](https://wizardzines.com/zines/bite-size-networking/)
+  16. "How to use the nmcli command: Linux Tip" [networkworld.com](https://www.networkworld.com/video/94347/how-to-use-the-nmcli-command-linux-tip#tk.rss_linux)
+  17. "nslookup Command: 7 Practical Examples" [linuxhandbook.com](https://linuxhandbook.com/nslookup-command/)
+  18. "How to use the nslookup command". [NetworkWorld](https://www.networkworld.com/video/95669/how-to-use-the-nslookup-command-2-minute-linux-tip#tk.rss_linux)
+  19. "An introduction to bpftrace for Linux". [opensource.com](https://opensource.com/article/19/8/introduction-bpftrace): 2019/08/19.
+  20. "Six practical use cases for `nmap`". [Red Hat](https://www.redhat.com/sysadmin/use-cases-nmap): 2019/08/19.
+  21. "How to convert documents to PDF format on the Ubuntu Command Line". [vitux.com](https://vitux.com/how-to-convert-documents-to-pdf-format-on-the-ubuntu-command-line/).
