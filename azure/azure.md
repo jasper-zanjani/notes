@@ -1,10 +1,18 @@
 # Microsoft Azure
 ## Storage
-#### Importing data into Azure using Import/Export service
-Import/Export 
-1. Install **Azure Import/Export tool**. This requires a Windows computer with .NET Framework and BitLocker. There are two versions: Version 1 is recommended for **blob storage**, and Version 2 is recommended for **Files storage**.
-2. Prepare drives using the tool. The first session requires several parameters, including **destination storage account key**, **BitLocker key**, and log directory.
-3. Create an import job through Azure portal.. This requires a Windows computer with .NET Framework and BitLocker.
+#### CDN
+There are 4 products available within Azure CDN:
+  1. Azure CDN Standard from Microsoft, which does not offer dynamic site acceleration (DSA) (cf. Azure Front Door Service)
+  2. Azure CDN Standard from Akamai
+  3. Azure CDN Standard from Verizon
+  4. Azure CDN Premium from Verizon, for which caching is configured using a rules engine.
+#### Import/Export service
+Import/Export service allows the physical shipment of disks to Azure for import.
+1. Procure 2.5-inch SATA or 3.5-inch HDD disks.
+2. Install **Azure Import/Export tool** on the disks. This requires a Windows computer with .NET Framework and BitLocker. There are two versions: Version 1 is recommended for **blob storage**, and Version 2 is recommended for **Files storage**.
+3. Prepare drives using the tool. The first session requires several parameters, including **destination storage account key**, **BitLocker key**, and log directory.
+4. Create an import job through Azure portal.. This requires a Windows computer with .NET Framework and BitLocker.
+
 ## Backup
 Azure Backup can backup both Azure VMs and on-premises Windows machines
 
@@ -34,8 +42,7 @@ Azure methods of administering access to resources can be divided into two group
     1. __Owner__ has full access to all resources and __can__ delegate access. Service Administrator and Co-Administrators are assigned this role at the subscription scope.
     2. __Contributor__ can create and manage all resources, but __cannot__ delegate access.
     3. __Reader__ can view resources.
-    4. __User Access Administrator__ only manages user access to resources.
-
+    4. __User Access Administrator__ only manages user access to resources.\
 Classic subscription administrators have full access to a subcription. They can access resources through Azure Portal, ARM APIs (PowerShell and CLI), and classic deployment model APIs. By default, the account that is used to sign up for a subscription is automatically set as both __Account Administrator__ and __Service Administrator__. There can only be one Account Administrator per account and only 1 Service Administrator per subscription. __Co-Administrators__ have the same access as Service Administrators, and there can be 200 of them per subscription, but cannot change the association of subscriptions to directories.\
 Current assignments for classic admins can be seen in the __Properties blade__ of a subscription in Azure Portal. Co-Administrator assignments can be added by opening the __Access Control (IAM)__ blade of a subscription, then clicking the __Add co-administrator__ button.\
 RBAC roles are supported only by Azure Portal and the ARM APIs. Access is applied to a __scope__, which includes subscriptions, resource groups, or resources. Azure Policy can be applied at various __scopes__. For example, a policy applied to a subscription is said to be at the "subscription scope". Policy can also be applied to Management Groups, which is an additional scope above subscription. In this way, several subscriptions can inherit a single policy through a Management Group.\
@@ -65,6 +72,16 @@ VM images are captured from an existing VM that has been prepared (or "generaliz
 A VM joined to an availability zone **may not** be also joined to an **availability set**.
 ### Scale sets
 **VM scale sets (VMSS)** support the ability to dynamically add and remove instances. By default, a VMSS supports up to 100 instances or up to 1000 instances if deployed with the property `singlePlacementGroup` set to false (called a **large-scale set**). A **placement group** is a concept similar to an availability set in that it assigns fault and upgrade domains. By default, a scale set consists of only a single placement group, but disabling this setting allows the scale set to be composed of multiple placement groups. If a custom image is used instead of one in the gallery, the limit is actually 300 instances.
+### Load balancers
+Load balancers redistribute traffic from a frontend pool to a backend pool using rules. **Health probes** determine the health of the VMs in the backend pool: if they don't respond then new connections won't be sent. By default, Azure Load Balancer stores rules in a 5-tuple:
+  1. Source IP address
+  2. Source port
+  3. Destination IP address
+  4. Destination ports
+  5. IP Protocol number\
+Azure Load Balancers come in 2 pricing tiers:
+  1. **Basic** which is free
+  2. **Standard** which is charged based on the number of rules and the data that is processed.
 ## VNets
 **Virtual Networks** (VNets) created through Portal require at least one subnet.
 ### Subnets
@@ -73,6 +90,7 @@ Azure will reserve **5** IP addresses from each subnet IP range.
   - First and last IP addresses in each subnet are reserved for network identification and broadcast
   - An additional three addresses at the start (bottom) of the range are reserved. (This means the smallest possible subnet is `/29`, providing 3 addresses for use)
   - e.g. the first available IP address in range `192.168.1.0/24` is `192.168.1.4`
+
 ## Azure blades
 Blade                                   | Option                | Topics
 :---                                    | :---                  | :---
@@ -170,9 +188,10 @@ VMSnapshotLinux                         | extension automatically deployed by th
 VPN Troubleshoot                        | a **Network Watcher** feature that provides automated diagnostics of Azure VPN gateways and connections [[A](#sources): 381]
 Zone-redundant storage (ZRS)            | Storage replication option that makes 3 synchronous copies across multiple availability zones; available for general-purpose v2 storage accounts at **Standard** performance tier only.
 ## Sources
-  A. Washam, Michael; Tuliani, Jonathan; Hoag, Scott. _Exam Ref AZ-103 Microsoft Azure Administrator_. [AZ-103](../sources/az-103.md)
-  B. "Overview of alerts in Microsoft Azure". [Microsoft Docs](https://docs.microsoft.com/en-us/azure/azure-monitor/platform/alerts-overview). 2018/01/27
-  C. "Azure Backup vs. Azure Site Recovery". [4sysops](https://4sysops.com/archives/azure-backup-vs-azure-site-recovery/): 2019/08/19.
-  D. "Azure Resource Manager overview". [Microsoft Docs](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-overview)
-  E. "Azure Monitor terminology changes". [Microsoft Docs](https://docs.microsoft.com/en-us/azure/azure-monitor/terminology)
-  F. "Azure Data Box Edge". [YouTube](https://youtu.be/5L8FcyQ1lCY).
+  1. Washam, Michael; Tuliani, Jonathan; Hoag, Scott. _Exam Ref AZ-103 Microsoft Azure Administrator_. [AZ-103](../sources/az-103.md)
+  2. "Overview of alerts in Microsoft Azure". [Microsoft Docs](https://docs.microsoft.com/en-us/azure/azure-monitor/platform/alerts-overview). 2018/01/27
+  3. "Azure Backup vs. Azure Site Recovery". [4sysops](https://4sysops.com/archives/azure-backup-vs-azure-site-recovery/): 2019/08/19.
+  4. "Azure Resource Manager overview". [Microsoft Docs](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-overview)
+  5. "Azure Monitor terminology changes". [Microsoft Docs](https://docs.microsoft.com/en-us/azure/azure-monitor/terminology)
+  6. "Azure Data Box Edge". [YouTube](https://youtu.be/5L8FcyQ1lCY).
+  7. _Micorosft Azure Administrator - Exam Guide AZ-103_. Zaal, Sjoukje.
