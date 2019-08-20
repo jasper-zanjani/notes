@@ -1,15 +1,15 @@
 # Python
 
-Shebang
-:---
-`#!/usr/bin/env python`
+#### Shebang
+```py
+#!/usr/bin/env python
+```
 
-## alternative data types
-
-### list (FP:54-56)
-`array` : alternative to lists which is much more efficient for holding millions of numbers (FP:47-50)
-`memoryview` : built-in class, inspired by NumPythat lets you read and write data without moving bits around (FP:51)
-
+## Alternative data types
+> ref: [FP](#sources): 54-56
+  - `array` list alternative which is much more efficient for holding millions of numbers (FP:47-50)
+  - `memoryview` built-in class, inspired by `NumPy` that lets you read and write data without moving bits around 
+(FP:51)
 ### queues implemented in stdlib packages (FP:56-57)
   - `queue`: `Queue`, `LifoQueue`, `PriorityQueue`
   - `multiprocessing`: `Queue`, `JoinableQueue`
