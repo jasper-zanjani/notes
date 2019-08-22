@@ -1,8 +1,8 @@
 \# | Title | Links
 :--- | :--- | :---
-1.1a |  Assign administrator permissions | [1.1a.01](#11a01) 
-1.1b |  Configure cost center quotas and tagging | [1.1b.01](#11b01) [1.1b.02](#11b02) [1.1b.03](#11b03) [1.1b.04](#11b04) [1.1b.05](#11b05) [1.1b.06](#11b06) [1.1b.07](#11b07) [1.1b.8](#11b8) [1.1b.9](#11b9) [1.1b.10](#11b10) 
-1.1c | Configure Azure subscription policies | [1.1c.1](#11c1) [1.1c.2](#11c2) [1.1c.3](#11c3) [1.1c.4](#11c4) [1.1c.5](#11c5) [1.1c.06](#11c06) 
+1.1a |  Assign administrator permissions | [Notes]<br/>[1.1a.01](#11a01) 
+1.1b |  Configure cost center quotas and tagging | [Notes]<br/>[1.1b.01](#11b01) [1.1b.02](#11b02) [1.1b.03](#11b03) [1.1b.04](#11b04) [1.1b.05](#11b05) [1.1b.06](#11b06) [1.1b.07](#11b07) [1.1b.8](#11b8) [1.1b.9](#11b9) [1.1b.10](#11b10) 
+1.1c | Configure Azure subscription policies | [Notes]<br/>[1.1c.1](#11c1) [1.1c.2](#11c2) [1.1c.3](#11c3) [1.1c.4](#11c4) [1.1c.5](#11c5) [1.1c.06](#11c06) 
 1.2a | Configure diagnostic settings on resources | [1.2a.1](#12a1) [1.2a.2](#12a2) [1.2a.3](#12a3) [1.2a.4](#12a4) [1.2a.5](#12a5) [1.2a.6](#12a6) [1.2a.7](#12a7) [1.2a.8](#12a8) 
 1.2b | Create and test alerts | [1.2b.01](#12b01) 
 1.2e | Utilize log search query functions | [1.2e.01](#12e01) [1.2e.02](#12e02) [1.2e.03](#12e03) [1.2e.04](#12e04) 
