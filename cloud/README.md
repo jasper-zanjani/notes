@@ -2,7 +2,7 @@
 Service                           | Azure                       | AWS   | GCP
 :---                              | :---                        | :---  | :---
 Certifications                    | [Azure certs](#azure-certs) | [AWS certs](#aws-certs) | [GCP certs](#gcp-certs)
-Command-line tools                | [Azure PowerShell](azure/azure-ps.md) [Azure CLI](azure/azure-cli.md) | | 
+Command-line tools                | [Azure PowerShell](azure/azure-ps.md) [Azure CLI](azure/azure-cli.md) | AWS Command Line Interface<br/>AWS Tools for PowerShell| [gsutil](#gsutil) [gcloud](#gcloud)
 IaaS                              | Virtual Machines            | Elastic Compute Cloud (EC2) | Compute Engine
 PaaS                              | App Service, Cloud Services | Elastic Beanstalk  | App Engine
 Containers                        | Container Service, Service Fabric | Elastic Container Service (ECS) | Google Kubernetes Engine
@@ -10,14 +10,15 @@ Serverless functions              | Functions                   | Lambda | Funct
 Containers                        | Container Service, Service Fabric | Elastic Container Service (ECS) | Google Kubernetes Engine
 Virtual networks                  | VNets                       | Virtual Private Cloud (VPC) | Virtual Private Cloud
 Load Balancer                     | Load Balancer, Application Gateway | Elastic Load Balancer  | Load Balancing
-Private connection to cloud       | ExpressRoute | Direct Connect  | Interconnect
-DNS                               | DNS | Route 53   | DNS
-CDN                               | CDN | CloudFront  | CDN
-Object Storage                    | Blob Storage | Simple Storage Service (S3) | Storage
-Block Storage                     | Disk Storage | Elastic Block Store (EBS) | Persistent Disk
-File Storage                      | File Storage | Elastic File System (EFS) | Filestore (beta)
-Reduced-availability Storage      | Cool Blob Storage | S3 Standard-Infrequent Access, S3 One Zone-Infrequent Access  | Storage Nearline
-Archival Storage                  | Archive Blob Storage | Glacier |  [ Coldline ](https://cloud.google.com/storage/archival/)
+Private connection to cloud       | ExpressRoute                | Direct Connect  | Interconnect
+DNS                               | DNS                         | Route 53              | DNS
+CDN                               | CDN                         | CloudFront            | CDN
+Object Storage                    | Blob Storage                | Simple Storage Service (S3) | Storage
+Block Storage                     | Disk Storage                | Elastic Block Store (EBS) | Persistent Disk
+File Storage                      | File Storage                | Elastic File System (EFS) | Filestore (beta)
+Reduced-availability Storage      | Cool Blob Storage           | S3 Standard-Infrequent Access, S3 One Zone-Infrequent Access  | Storage Nearline
+Archival Storage                  | Archive Blob Storage        | Glacier |  [ Coldline ](https://cloud.google.com/storage/archival/)
+Physical data transport           | Import/Export Service, Data Box | Snowball | GCS Transfer appliance [[16](#sources)]
 RDBMS                             | SQL Database                | Relational Database Service (RDS), Aurora | SQL, Spanner
 NoSQL: Key-value                  | Table Storage               | DynamoDB   | [Firestore](#firestore), [Bigtable](#bigtable)
 NoSQL: Indexed                    | [Cosmos DB](#cosmosdb)      | SimpleDB |  [Firestore](#firestore)
@@ -67,6 +68,8 @@ Professional Cloud Security Engineer  | [Certification](https://cloud.google.com
 Professional Collaboration Engineer   | [Certification](https://cloud.google.com/certification/collaboration-engineer)
 ## Services
 ### Command-line tools
+#### AWS Command Line Interface and AWS Tools for PowerShell
+[[17](#sources)]
 #### gsutil
 gsutil is a Python application that enables command-line access to Cloud Storage [[15](#sources)].\
 `gsutil` uses the prefix `gs://` to indicate a resource in Cloud Storage:
@@ -141,3 +144,5 @@ zone              | a part of the domain namespace delegated to a legal entity (
   13. "Linux Academy: Microsoft Azure Concepts". [Udemy](https://www.udemy.com/linux-academy-microsoft-azure-concepts/)
   14. "DNS zones explained". [Pocket](https://app.getpocket.com/read/2495535941) -> [ns1.com](https://ns1.com/resources/dns-zones-explained)
   15. "gsutil tool". [Google Cloud](https://cloud.google.com/storage/docs/gsutil).
+  16. "Uploading files to GCS (Cloud Storage Bytes". [YouTube](https://youtu.be/nmZxfuFIP08).
+  17. "SysAdmin & Hybrid Cloud Special". [AWS TechChat](../sources/README.md#aws-53)
