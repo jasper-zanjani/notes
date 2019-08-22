@@ -1,4 +1,4 @@
-[1: Manage Azure subscriptions and resource](#1-manage-azure-subscriptions-and-resource) | 
+[1: Manage Azure subscriptions and resource](#1-manage-azure-subscriptions-and-resource) | asdf
 :--- | :---
 1.1a: Assign administrator permissions | [1.1a.01](#11a01) 
 1.1b: Configure cost center quotas and tagging | [1.1b.01](#11b01) [1.1b.02](#11b02) [1.1b.03](#11b03) [1.1b.04](#11b04) [1.1b.05](#11b05) [1.1b.06](#11b06) [1.1b.07](#11b07) [1.1b.8](#11b8) [1.1b.9](#11b9) [1.1b.10](#11b10) 
