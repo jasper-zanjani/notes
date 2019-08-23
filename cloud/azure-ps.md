@@ -1,4 +1,9 @@
 # PowerShell commands for Azure
+## Commands
+
+Azure Powershell Modules
+:---
+[accounts](#azaccounts) [advisor](#azadvisor) [aks](#azaks) [alertsmanagement](#azalertsmanagement) [analysisservices](#azanalysisservices) [apimanagement](#azapimanagement) [applicationinsights](#azapplicationinsights) [attestation](#azattestation) [automation](#azautomation) [batch](#azbatch) [billing](#azbilling) [blueprint](#azblueprint) [cdn](#azcdn) [cognitiveservices](#azcognitiveservices) [compute](#azcompute) [containerinstance](#azcontainerinstance) [containerregistry](#azcontainerregistry) [databox](#azdatabox) [datafactory](#azdatafactory) [datalakeanalytics](#azdatalakeanalytics) [datalakestore](#azdatalakestore) [datamigration](#azdatamigration) [deploymentmanager](#azdeploymentmanager) [deviceprovisioningservices](#azdeviceprovisioningservices) [devspaces](#azdevspaces) [devtestlabs](#azdevtestlabs) [eventgrid](#azeventgrid) [eventhub](#azeventhub) [frontdoor](#azfrontdoor) [guestconfiguration](#azguestconfiguration) [hdinsight](#azhdinsight) [iothub](#aziothub) [keyvault](#azkeyvault) [kusto](#azkusto) [logicapp](#azlogicapp) [machinelearning](#azmachinelearning) [managedserviceidentity](#azmanagedserviceidentity) [managedservices](#azmanagedservices) [managementpartner](#azmanagementpartner) [maps](#azmaps) [marketplaceordering](#azmarketplaceordering) [media](#azmedia) [mixedreality](#azmixedreality) [netappfiles](#aznetappfiles) [network](#aznetwork) [notificationhubs](#aznotificationhubs) [operationalinsights](#azoperationalinsights) [peering](#azpeering) [policyinsights](#azpolicyinsights) [powerbiembedded](#azpowerbiembedded) [privatedns](#azprivatedns) [recoveryservices](#azrecoveryservices) [rediscache](#azrediscache) [relay](#azrelay) [reservations](#azreservations) [resourcegraph](#azresourcegraph) [resources](#azresources) [search](#azsearch) [security](#azsecurity) [servicebus](#azservicebus) [servicefabric](#azservicefabric) [signalr](#azsignalr) [sql](#azsql) [storage](#azstorage) [storagesync](#azstoragesync) [streamanalytics](#azstreamanalytics) [subscription](#azsubscription) [trafficmanager](#aztrafficmanager) [websites](#azwebsites)
 
 Azure PowerShell commands
 :---
@@ -71,9 +76,6 @@ Azure PowerShell commands
 **Subscription** [New-AzSubscription](#new-azsubscription)
 **Trafficmanager** [Add-AzTrafficManagerCustomHeaderToEndpoint](#add-aztrafficmanagercustomheadertoendpoint) [Add-AzTrafficManagerCustomHeaderToProfile](#add-aztrafficmanagercustomheadertoprofile) [Add-AzTrafficManagerEndpointConfig](#add-aztrafficmanagerendpointconfig) [Add-AzTrafficManagerExpectedStatusCodeRange](#add-aztrafficmanagerexpectedstatuscoderange) [Add-AzTrafficManagerIpAddressRange](#add-aztrafficmanageripaddressrange) [Disable-AzTrafficManagerEndpoint](#disable-aztrafficmanagerendpoint) [Disable-AzTrafficManagerProfile](#disable-aztrafficmanagerprofile) [Enable-AzTrafficManagerEndpoint](#enable-aztrafficmanagerendpoint) [Enable-AzTrafficManagerProfile](#enable-aztrafficmanagerprofile) [Get-AzTrafficManagerEndpoint](#get-aztrafficmanagerendpoint) [Get-AzTrafficManagerProfile](#get-aztrafficmanagerprofile) [New-AzTrafficManagerEndpoint](#new-aztrafficmanagerendpoint) [New-AzTrafficManagerProfile](#new-aztrafficmanagerprofile) [Remove-AzTrafficManagerCustomHeaderFromEndpoint](#remove-aztrafficmanagercustomheaderfromendpoint) [Remove-AzTrafficManagerCustomHeaderFromProfile](#remove-aztrafficmanagercustomheaderfromprofile) [Remove-AzTrafficManagerEndpoint](#remove-aztrafficmanagerendpoint) [Remove-AzTrafficManagerEndpointConfig](#remove-aztrafficmanagerendpointconfig) [Remove-AzTrafficManagerExpectedStatusCodeRange](#remove-aztrafficmanagerexpectedstatuscoderange) [Remove-AzTrafficManagerIpAddressRange](#remove-aztrafficmanageripaddressrange) [Remove-AzTrafficManagerProfile](#remove-aztrafficmanagerprofile) [Set-AzTrafficManagerEndpoint](#set-aztrafficmanagerendpoint) [Set-AzTrafficManagerProfile](#set-aztrafficmanagerprofile)
 **Websites** [Edit-AzWebAppBackupConfiguration](#edit-azwebappbackupconfiguration) [Enter-AzWebAppContainerPSSession](#enter-azwebappcontainerpssession) [Get-AzAppServicePlan](#get-azappserviceplan) [Get-AzAppServicePlanMetric](#get-azappserviceplanmetric) [Get-AzDeletedWebApp](#get-azdeletedwebapp) [Get-AzWebApp](#get-azwebapp) [Get-AzWebAppBackup](#get-azwebappbackup) [Get-AzWebAppBackupConfiguration](#get-azwebappbackupconfiguration) [Get-AzWebAppBackupList](#get-azwebappbackuplist) [Get-AzWebAppCertificate](#get-azwebappcertificate) [Get-AzWebAppContainerContinuousDeploymentUrl](#get-azwebappcontainercontinuousdeploymenturl) [Get-AzWebAppMetric](#get-azwebappmetric) [Get-AzWebAppPublishingProfile](#get-azwebapppublishingprofile) [Get-AzWebAppSlot](#get-azwebappslot) [Get-AzWebAppSlotConfigName](#get-azwebappslotconfigname) [Get-AzWebAppSlotMetric](#get-azwebappslotmetric) [Get-AzWebAppSlotPublishingProfile](#get-azwebappslotpublishingprofile) [Get-AzWebAppSnapshot](#get-azwebappsnapshot) [Get-AzWebAppSSLBinding](#get-azwebappsslbinding) [New-AzAppServicePlan](#new-azappserviceplan) [New-AzWebApp](#new-azwebapp) [New-AzWebAppAzureStoragePath](#new-azwebappazurestoragepath) [New-AzWebAppBackup](#new-azwebappbackup) [New-AzWebAppContainerPSSession](#new-azwebappcontainerpssession) [New-AzWebAppDatabaseBackupSetting](#new-azwebappdatabasebackupsetting) [New-AzWebAppSlot](#new-azwebappslot) [New-AzWebAppSSLBinding](#new-azwebappsslbinding) [Publish-AzWebApp](#publish-azwebapp) [Remove-AzAppServicePlan](#remove-azappserviceplan) [Remove-AzWebApp](#remove-azwebapp) [Remove-AzWebAppBackup](#remove-azwebappbackup) [Remove-AzWebAppSlot](#remove-azwebappslot) [Remove-AzWebAppSSLBinding](#remove-azwebappsslbinding) [Reset-AzWebAppPublishingProfile](#reset-azwebapppublishingprofile) [Reset-AzWebAppSlotPublishingProfile](#reset-azwebappslotpublishingprofile) [Restart-AzWebApp](#restart-azwebapp) [Restart-AzWebAppSlot](#restart-azwebappslot) [Restore-AzDeletedWebApp](#restore-azdeletedwebapp) [Restore-AzWebAppBackup](#restore-azwebappbackup) [Restore-AzWebAppSnapshot](#restore-azwebappsnapshot) [Set-AzAppServicePlan](#set-azappserviceplan) [Set-AzWebApp](#set-azwebapp) [Set-AzWebAppSlot](#set-azwebappslot) [Set-AzWebAppSlotConfigName](#set-azwebappslotconfigname) [Start-AzWebApp](#start-azwebapp) [Start-AzWebAppSlot](#start-azwebappslot) [Stop-AzWebApp](#stop-azwebapp) [Stop-AzWebAppSlot](#stop-azwebappslot) [Switch-AzWebAppSlot](#switch-azwebappslot)
-
-
-## Commands
 
 #### Add-AzADGroupMember
 Adds a user to an existing AD group.(refs [MD](https://docs.microsoft.com/en-us/powershell/module/az.resources/Add-AzADGroupMember) )
@@ -5096,28 +5098,7 @@ Waits for the completion or failure of a specified job.(refs [MD](https://docs.m
 #### Wait-AzRecoveryServicesBackupJob
 Waits for a Backup job to finish.(refs [MD](https://docs.microsoft.com/en-us/powershell/module/az.recoveryservices/Wait-AzRecoveryServicesBackupJob) )
 
-#### Install the Azure Resource Manager PowerShell module
-The older module __AzureRM__ has been replaced, largely, by __Az__. Commands to the older module are aliased to the new, but there are some commands which require the older module.
-```powershell
-Install-Module -Name Az -AllowClobber
-Install-Module AzureRM
-```
-
-#### Connect to Azure 
-`Connect-AzAccount` will produce an alphanumeric code that you must enter on [Microsoft's website](https://microsoft.com/devicelogin) to complete authentication.
-```powershell
-Connect-AzAccount
-```
-
-#### Create a Resource Group
-> `New-AzResourceGroup` required parameters: 
-> 1. `Name` 
-> 2. `Location`
-
-```powershell
-New-AzResourceGroup RG WestUS
-```
-
+## Tasks
 #### Deploy a Windows Server Core VM
 ```powershell
 $vm = Get-AzVMImage `
@@ -5148,8 +5129,6 @@ $vm = Add-AzVMNetworkInterface
   11. `WinRMHttp` Optional: indicates that the system uses HTTP WinRM
   12. `WinRMHttps` Indicates that the system uses HTTPS WinRM
   13. `WinRMCertificateUrl` Use of WinRM certificate, stored in a Key Vault
-<hr>
-
 #### Create an Azure VM
 `New-AzVM` options
   1. `ResourceGroupName` 
@@ -5161,7 +5140,6 @@ $vm = Add-AzVMNetworkInterface
 New-AzVM -ResourceGroupName "RG" -Name "VM" -Location "EastUS" -Size "Standard-B2s" -Credential (Get-Credential)
 New-AzVM Greeks Socrates $vm
 ```
-
 #### Find a Marketplace image
 `Get-AzVMImagePublisher` produces the publisher, e.g. "MicrosoftWindowsServer"
   - `Location` required
@@ -5175,7 +5153,6 @@ New-AzVM Greeks Socrates $vm
   - `-Location`, `PublisherName`, and `-Offer` required
   - `-Skus` required (refer to `Get-AzVMImageSku`)
   - `-Version` providing `*` will produce a list of available versions
-
 #### Start a VM
 `Start-AzVM` required parameters:
   - `Id` or `-ResourceGroupName`
@@ -5183,12 +5160,10 @@ New-AzVM Greeks Socrates $vm
 ```powershell
 Start-AzVM Greeks Socrates
 ```
-
 #### Shut down a VM
 ```powershell
 Stop-AzVM Greeks Socrates
 ```
-
 #### Connect to VM from a Windows machine
 ```powershell
 # Azure can enable PowerShell on the target machine
@@ -5224,21 +5199,17 @@ Enter-PSSession -ComputerName 123.47.78.90 -Credential $cred
 # Alternatively...
 etsn 123.45.67.89 -Credential (Get-Credential)
 ```
-
 #### Connect to VM from a Mac or Linux machine
 Using OpenSSH...
-
 #### Display Azure subscription ID
 ```powershell
 Get-AzSubscription | select -ExpandProperty Id
 ```
-
 #### Invoking a command on a VM
 `Invoke-AzVMRunCommand` requires only a single option: `-CommandId`. You can pass along a script containing predefined commands using the named parameter `-ScriptPath`, but the value for `-CommandId` must be `RunPowerShellScript`. Unlike `Invoke-Command, there is no way to define commands inline.
 ```powershell
 Invoke-AzVMRunCommand -ResourceGroupName RG -VMName VM -CommandId 'RunPowerShellScript' -ScriptPath C:\injectedscript.ps1
 ```
-
 #### Modify Network Security Group policies
 ```powershell
 # Open inbound ports are most easily defined at the time of VM creation 
@@ -5254,6 +5225,22 @@ Add-AzNetworkSecurityRuleConfig
   -SourceAddressPrefix Internet -SourcePortRange * 
   -DestinationAddressPrefix * -DestinationPortRange 5985 | 
 Set-AzNetworkSecurityGroup
+```
+#### Ensure App Services, backup vault, and event hub have access to a storage account
+```powershell
+Get-AzVirtualNetwork -ResourceGroupName RG01 -Name VNET01 |
+Set-AzVirtualNetworkSubnetConfig -NAme VSUBNET01 -AddressPrefix 10.0.0.0/24 -ServiceEndpoint Microsoft.Storage |
+Set-AzVirtualNetwork
+
+$subnet = Get-AzVirtualNetwork -ResourceGroupName RG01 -Name VNET01 |
+Get-AzVirtualNetworkSubnetConfig -Name VSUBNET01
+Add-AzStorageAccountNetworkRule -ResourceGroupName VNET01 -Name Storage01 -VirtualNetworkResourceId $subnet.Id
+Update-AzStorageAccountNetworkRuleSet -ResourceGroupName RG01 -Name STORAGE01 -Bypass Azure.Services
+```
+#### Configure a VM for backup
+```powershell
+$t = Get-AzRecoveryServicesVault -Name t1
+Set-AzRecoveryServicesBackupProperties -Vault $t -BackupStorageRedundancy GeoRedundant 
 ```
 ## Sources
   - Michael Washam, Jonathan Tuliani, and Scott Hoag. _Exam Ref AZ-103 Microsoft Azure Administrator_. [AZ-103](../sources/az-103.md)
