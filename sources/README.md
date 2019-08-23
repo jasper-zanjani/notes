@@ -2,6 +2,7 @@
 ## Abbreviations
 Abbr.  |  Source
 :---          | :---    
+ADP           | **Azure DevOps Podcast** [Web](http://azuredevopspodcast.clear-measure.com/) Notes: [48](#adp-48)
 BNfP          | **Bash Notes for Professionals**. [Web](goalkicker.com)|
 BPR           | Robbins, Arnold. **Bash Pocket Reference (2nd ed.)**.
 BRM           | Ramey, Chet and Fox, Brian. **Bash Reference Manual**
@@ -17,6 +18,7 @@ CSP           | **Classic Computer Science Problems in Python**| Kopec, David
 DL            | **Destination Linux** [Web](http://destinationlinux.com/) Notes: 
 Extras        | [Web](https://extras.show/)
 FP            | Ramalho, Luciano. **Fluent Python**.
+FPLC          | **Five Principles for Deploying and Managing Linux in the Cloud (With Azure)** [Notes](fplc.md)
 FPP           | Lott, Steven. **Functional Python Programming**
 Friday        | [Web](https://fridaystream.com)
 GL            | **Going Linux** [Web](https://goinglinux.com) [Twitter](https://twitter.com/goinglinux)
@@ -26,6 +28,7 @@ ITP           | **ITPro.TV** [Web](https://itpro.tv/)
 JDG           | Flanagan, David. **JavaScript: the Definitive Guide**
 JNfP          | **JavaScript Notes for Professionals** [Web](goalkicker.com)
 JSJ           | **JavaScript Jabber**
+K8S           | **Kubernetes Podcast from Google** [Twitter](http://twitter.com/mkubernetespod) [Email](mailto:kubernetespodcast@google.com) [Web](https://kubernetespodcast.com)
 LALOS         | Cannon, Jason. **Linux Administration: The Linux Operating System**
 LAN           | Linux Action News  [Web](https://linuxactionnews.com/) [Twitter](https://twitter.com/linuxactionnews)
 LC            | **Learn Code the Hard Way**
@@ -48,6 +51,7 @@ PBX           | Quigley, Ellie. **Perl by Example, 4th ed.**
 PGL           | Sobell, Mark. **Practical Guide to Linux, A**
 PiaN          | Martelli, Alex. **Python in a Nutshell**
 PP            | Lutz, Mark. **Programming Python**
+PSP           | **PowerScripting Podcast**
 RAR           | **RunAs Radio** [Web](http://www.runasradio.com/) [Twitter](https://twitter.com/RunAsRadio)
 SA            | Dougherty, Dale and Robbins, Arnold. **sed & awk (2nd edition)**
 SY            | **Syntax** [Web](https://syntax.fm/) [Twitter](https://twitter.com/syntaxfm)
@@ -62,26 +66,44 @@ Vim           | Oualline, Steve. **The Vim Book**
 VOV           | **Views on Vue**
 WCL           | Stanek, William R. **Windows Command-Line**.
 WCSS          | Taylor, Dave and Perry, Brandon. **Wicked Cool Shell Scripts**
+WDT           | **Weekly Dev Tips**
 WSAF          | Dauti, Bekim. **Windows Server 2016 Administration Fundamentals**
 YUG           | Das, Sumitabha. **Your Unix: the Ultimate Guide**
 ## People
-Name                  | Description  | Links
-:---                  | :---         | :---
-Bos, Wes              | [SY](#abbreviations) | [Twitter](https://twitter.com/wesbos)
-Bushey, Larry         | [GL](#abbreviations) | [Twitter](https://twitter.com/goinglinux) [LinkedIn](https://www.linkedin.com/in/larrybushey/)
-Campbell, Richard     | [RAR](#abbreviations) | [Twitter](https://twitter.com/richcampbell)
-Domenick, Michael     | [CR](#abbreviations) | [Twitter](https://twitter.com/dominucco)
-Fisher, Chris         | [LU](#abbreviations) | [Twitter](https://twitter.com/ChrisLAS)
-Jude, Allan           | [BSD](#abbreviations) | [Web](https://www.scaleengine.com/) [FaceBook](https://facebook.com/allanjude) [LinkedIn](https://www.linkedin.com/in/allanjude/)
-Kennedy, Michael      | [TP](#abbreviations) [PB](#podcasts) | [Twitter](https://twitter.com/mkennedy)
-Payne, Wes            | [TS](#abbreviations), [CR](#abbreviations)
-Pfeiffer, Mike        | [CSFM](#abbreviations) | [Web](https://mikepfeiffer.io) [Twitter](https://twitter.com/mike**pfeiffer) [Facebook](https://www.facebook.com/mikepfeifferhq/)
-Pope, Alan            | [UE](#abbreviations) and others | [Twitter](https://twitter.com/popey)
-Reuschling, Benedict  | [BSD](#abbreviations) | [Twitter](https://twitter.com/bsdbcr)
-Ressington, Joe       | [LAN](#abbreviations) [UE](#abbreviations) [CL](#abbreviations) | [Web](https://joeress.com) [Twitter](https://twitter.com/JoeRessington)
+Name                  | Description  
+:---                  | :---         
+Bos, Wes              | Host: [SY](#abbreviations)  [Twitter](https://twitter.com/wesbos)
+Box, Craig            | Host: [K8S](#abbreviations) [Twitter](http://twitter.com/craigbox)
+Bushey, Larry         | Host: [GL](#abbreviations)  [Twitter](https://twitter.com/goinglinux) [LinkedIn](https://www.linkedin.com/in/larrybushey/)
+Campbell, Richard     | Host: [RAR](#abbreviations)  [Twitter](https://twitter.com/richcampbell)
+Chapman, Chris        | Guest: [K8S 67](#k8s-67) 
+Domenick, Michael     | Host: [CR](#abbreviations)  [Twitter](https://twitter.com/dominucco)
+Fisher, Chris         | Host: [LU](#abbreviations)  [Twitter](https://twitter.com/ChrisLAS)
+Glick, Adam           | Host: [K8S](#abbreviations) [Twitter](http://twitter.com/mobileglick)
+Jude, Allan           | Host: [BSD](#abbreviations)  [Web](https://www.scaleengine.com/) [FaceBook](https://facebook.com/allanjude) [LinkedIn](https://www.linkedin.com/in/allanjude/)
+Kennedy, Michael      | Host: [TP](#abbreviations) [PB](#podcasts) | [Twitter](https://twitter.com/mkennedy)
+Palermo, Jeffrey      | Host: [ADP](#abbreviations) [Twitter](https://twitter.com/jeffreypalermo) [LinkedIn](https://www.linkedin.com/in/palermo/) [Website](http://jeffreypalermo.com/)
+Payne, Wes            | Host: [TS](#abbreviations), [CR](#abbreviations)
+Pfeiffer, Mike        | Host: [CSFM](#abbreviations)  [Web](https://mikepfeiffer.io) [Twitter](https://twitter.com/mike**pfeiffer) [Facebook](https://www.facebook.com/mikepfeifferhq/)
+Pope, Alan            | Host: [UE](#abbreviations) | [Twitter](https://twitter.com/popey)
+Reuschling, Benedict  | Host: [BSD](#abbreviations) | [Twitter](https://twitter.com/bsdbcr)
+Ressington, Joe       | Host: [LAN](#abbreviations) [UE](#abbreviations) [CL](#abbreviations) | [Web](https://joeress.com) [Twitter](https://twitter.com/JoeRessington)
 Robbins, Arnold       | **Bash Pocket Reference**, **Unix in a Nutshell**, **sed & awk**
-Tolinski, Scott       | [SY](#abbreviations) | [Twitter](https://twitter.com/stolinski) [Github](https://github.com/stolinski) [BitBucket](https://bitbucket.org/stolinski) [Facebook](https://www.facebook.com/LevelUpTuts)
+Francis, Joel (Sallow) | Guest: [PSP](#abbreviations) [Twitter](https://twitter.com/vexx32) [GitHub](https://github.com/vexx32) [LinkedIn](https://www.linkedin.com/in/joel-francis-356539128/)
+Smith, Steve (ardalis)| Host: [WDT](#abbreviations) Guest: [ADP 40](#adp-40)  [LinkedIn](https://www.linkedin.com/in/stevenandrewsmith/) [Twitter](https://twitter.com/ardalis)
+Tolinski, Scott       | Host: [SY](#abbreviations) | [Twitter](https://twitter.com/stolinski) [Github](https://github.com/stolinski) [BitBucket](https://bitbucket.org/stolinski) [Facebook](https://www.facebook.com/LevelUpTuts) sdf
 ## Notes
+### Azure DevOps Podcast
+#### ADP 48
+Testing and static analysis
+Several different types of automated tests
+  - **Unit tests** test functionality without dependencies (i.e. file system, database, network, etc). `XUnit` is recommended for .NET Core
+  - **Integration tests** 
+  - **Functional tests** test the full stack of the system, except for the client. ASP .NET core functional tests are easily written.
+  - **UI tests** simulate user interaction using systems like Selenium, which uses .NET, or Cypress, which uses JavaScript.
+
+Test coverage metrics are a double-edged sword, because they incentivize developers to "gold-plate" their code by implementing spurious tests which pass easily.
+**Cyclomatic complexity** refers to the number of pathways through the code, measured at the method level.
 ### CloudSkills.fm
 #### CSFM 2
 > "Infrastructure as Code in the Cloud"
@@ -120,6 +142,10 @@ Tolinski, Scott       | [SY](#abbreviations) | [Twitter](https://twitter.com/sto
 #### HPR 2107
   - Source: "Makefiles for everyday use". [hpr.org](https://hackerpublicradio.org/eps.php?id=2107)
   - `make`
+### Kubernetes Podcast from Google
+#### K8S 67
+Orka, with Chris Chapman\
+Orka is a virtualization layer for Mac build infrastructure offered by hosting company MacStadium. iPhone architecture and security make building for that platform very different. Virtual Mac instances first became possible in Snow Leopard, but the EULA allows only 2 VMs per machine. MacStadium is an enterprise-scale cloud for Apple. A typical lifecycle for an iOS build begins with a simulator, followed by a physical test, typically in a build farm of physical iOS devices.  
 ### Late Night Linux
 #### LNL 65
   - KDE App page
