@@ -1,6 +1,6 @@
+Noun | Verb
 :--- | :---
-<br/><br/> **az.accounts** AzAccount [**Connect**](#connect-azaccount)
-[Disconnect](#disconnect-azaccount)
+**az.accounts**<br/> AzAccount | [**Connect**](#connect-azaccount) [Disconnect](#disconnect-azaccount)
 AzContext | [Clear](#clear-azcontext) [Get](#get-azcontext) [Import](#import-azcontext) [Remove](#remove-azcontext) [Rename](#rename-azcontext) [Save](#save-azcontext) [Select](#select-azcontext) [Set](#set-azcontext)
 AzContextAutosave | [Disable](#disable-azcontextautosave)
 [Enable](#enable-azcontextautosave)
