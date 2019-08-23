@@ -1,5 +1,5 @@
-# MySQL
-## Syntax
+# Query Languages
+## SQL syntax
 #### `INNER JOIN`
 Using `INNER JOIN` in a query allows you to combine row data across two separate tables using the **primary key**, the unique identifier for the underlying entity.
 ```sql
@@ -83,17 +83,33 @@ id | title | director | year | length_minutes
 ```sql
 SELECT "title" FROM movies;
 ```
+```kusto
+Movies
+| project title
+```
 #### 1.2 Find the director of each film
 ```sql
 SELECT "director" FROM movies;
+```
+```kusto
+Movies
+| project director
 ```
 #### 1.3 Find the title and director of each film
 ```sql
 SELECT "title","director" FROM movies;
 ```
+```kusto
+movies
+| project director, title
+```
 #### 1.4 Find the title and year of each film
 ```sql
 SELECT "title","year" FROM movies;
+```
+```kusto
+movies
+| project title,year
 ```
 #### 1.5 Find all information about each film
 ```sql
@@ -371,6 +387,14 @@ CREATE user rishabh@localhost identified BY 'pass123';
 #### Revoke user privileges
 ```sql
 REVOKE all privileges ON theitstuff.* FROM rishabh@localhost;
+```
+#### Generate an Azure report on Virtual MAchines
+```kusto
+Event
+| where (EventLevelName == "Error")
+| where (TimeGenerated > ago(1days))
+| summarize ErrorCount = count() by Computer
+| top 10 by ErrorCount desc
 ```
 ## Security
 #### Reduce attack surface

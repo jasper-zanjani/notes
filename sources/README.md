@@ -40,7 +40,7 @@ LNL           | **Late Night Linux** Notes: [65](#lnl-65)
 LPI           | **Linux Programming Interface, the**|Kerrisk, Michael
 LS            | Smith, Luke . **Luke Smith YouTube Channel** [YouTube](https://www.youtube.com/channel/UC2eYFnH61tmytImy1mTYvhA)
 LSSP          | Cannon, Jason. **Linux Shell Scripting Projects**
-LU            | **Linux Unplugged** [Web](https://linuxunplugged.com/) [Twitter](https://twitter.com/LinuxUnplugged)
+LU            | **Linux Unplugged** [Web](https://linuxunplugged.com/) [Twitter](https://twitter.com/LinuxUnplugged) Notes [315](#lu-315)
 MC            | **Mint Cast**
 MD            | **Microsoft Docs**
 OOJ           | Antani, Ved and Stefanov, Stoyan. **Object-Oriented JavaScript**
@@ -151,6 +151,9 @@ Orka is a virtualization layer for Mac build infrastructure offered by hosting c
   - KDE App page
   - Google Stadia
   - How can the FLOSS community take advantage of the opportunity presented by the sunsetting of Windows 7?
+### Linux Unplugged
+#### LU 315
+
 ### Talk Python
 #### TP 213
 > "WebAssembly and CPython".
