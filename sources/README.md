@@ -159,6 +159,8 @@ Orka is a virtualization layer for Mac build infrastructure offered by hosting c
   - Google Stadia
   - How can the FLOSS community take advantage of the opportunity presented by the sunsetting of Windows 7?
 ### Linux Unplugged
+#### LU 289
+Clear Linux
 #### LU 315
 
 ### Talk Python
