@@ -2,6 +2,7 @@
 ## Abbreviations
 Abbr.  |  Source
 :---          | :---    
+AWS           | **AWS TechChat** Notes: [35](#aws-35)
 BNfP          | **Bash Notes for Professionals**. [Web](goalkicker.com)|
 BPR           | Robbins, Arnold. **Bash Pocket Reference (2nd ed.)**.
 BRM           | Ramey, Chet and Fox, Brian. **Bash Reference Manual**
@@ -82,6 +83,12 @@ Ressington, Joe       | [LAN](#abbreviations) [UE](#abbreviations) [CL](#abbrevi
 Robbins, Arnold       | **Bash Pocket Reference**, **Unix in a Nutshell**, **sed & awk**
 Tolinski, Scott       | [SY](#abbreviations) | [Twitter](https://twitter.com/stolinski) [Github](https://github.com/stolinski) [BitBucket](https://bitbucket.org/stolinski) [Facebook](https://www.facebook.com/LevelUpTuts)
 ## Notes
+### AWS TechCHAT
+#### AWS 35
+Deep dive on databases
+#### AWS 53
+SysAdmin & Hybrid Cloud Special\
+AWS CLI and AWS Tools for PowerShell are available for AWS.
 ### CloudSkills.fm
 #### CSFM 2
 > "Infrastructure as Code in the Cloud"
