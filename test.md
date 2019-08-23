@@ -1,4 +1,4 @@
-```kusto
+```kql
 T
 | project
     X=C,                       // Rename column C to X
