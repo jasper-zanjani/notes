@@ -1,123 +1,175 @@
 # Command-Line Kung-Fu, by Jason Cannon
-
-`sudo !!` `su -c "!!"` : run the last command as root
-`!<string>` : repeat the last command that started with a given string
-`!^` : reuse the second word (first argument) from the previous command
-`!$` : reuse the last word (last argument) from the previous command
-`!!:n` : n is 0-indexed, so `!!:0` would refer to the command itself, etc
-`^<string1>^<string2>^` : replace only the first occurrence of {string1}; trailing `^` is optional
-`^<string1>^<string2>^:&` : replace all occurrences; trailing `^` is required
-`!#:n` : zero-based word reference {n} (0 is the command, etc)
-`script` : save a copy of your command line session
-`history | awk '{print $2' | sort | uniq -c | sort -rn | head` : find out which commands you use most often
-`history -c` : clear your shell history
-
+#### Run the last command as root
+```
+sudo !!` `su -c "!!"
+```
+#### Repeat the last command that started with a given string
+```
+!<string>
+```
+#### Reuse the second word (first argument) from the previous command
+```
+!^
+```
+#### Reuse the last word (last argument) from the previous command
+```
+!$
+```
+#### n-th word of previous command
+`n` is 0-indexed, so `!!:0` would refer to the command itself, etc
+```
+!!:n
+```
+#### n-th word of current command
+`n` is 0-indexed, so `!#:0` would be the command itself, etc
+```
+!#:n
+```
+#### Replace only the first occurrence of a string
+Trailing `^` is optional, but the string must be placed within angle brackets
+```
+^<string1>^<string2>^
+```
+#### Replace all occurrences of a string
+Trailing `^` is required
+```
+^<string1>^<string2>^:&
+```
+#### Save a copy of your command line session
+```
+script
+```
+#### Find out which commands you use most often
+```
+history | awk '{print $2' | sort | uniq -c | sort -rn | head
+```
+#### Clear your shell history
+```
+history -c
+```
 #### Strip out comments and blank lines
-`grep -E -v "^#|^$" file`
-
+```
+grep -E -v "^#|^$" file
+```
 #### Use vim to edit files over the network
 `vim scp://user@host/path/file`
-
 #### Display output in a table
 `| column -t` : pipe output of another command into `column -t`; space-delimited text is put into columns
-
 #### Grab the last word on a line of output
 `awk '{print $NF}' file`
-
 #### View colorized output with less
 `| less -R`
 : force `less` to preserve the raw string codes of input
-
 #### Preserve color when piping to grep
 `| grep --color=never`
-: prevent `grep` from recolorizing input
-
+prevent `grep` from recolorizing input
 #### Append text to a file using sudo
 `| sudo tee`
-
 #### Change the case of a string
-`tr [:upper:] [:lower:]`
-
+```sh
+tr [:upper:] [:lower:]
+```
 #### Display your command search path in a human readable format
-`echo $PATH | tr ':' '\n'`
-
+```sh
+echo $PATH | tr ':' '\n'
+```
 #### Create a text file from the command line without using an editor
-`cat > file`
-: will prompt for input from STDIN, until <^d> to signal EOF
-
+Will prompt for input from STDIN, until <^d> to signal EOF
+```sh
+cat > file
+```
 #### Display a block of text between two strings
-`awk '/start/,/stop/' file`
-
+```sh
+awk '/start/,/stop/' file
+```
 #### Delete a block of text between two strings
-`sed '/start/,/stop/d' file`
-
+```sh
+sed '/start/,/stop/d' file
+```
 #### Fix common typos with aliases
-`alias grpe='grep'`
-
+```sh
+alias grpe='grep'
+```
 #### Sort the body of output while leaving the header on the first line intact
+Insert this into **.bash_profile**
 ```bash
 body() {
   IFS=read -r header
   printf "%s\n" "$header"
   "$@"
 ```
-: insert this into .bash_profile
-
 #### Remove a character or set of characters from a string or line of output
-`tr -d "text"`
-
+```sh
+tr -d "text"
+```
 #### Count the number of occurrences of a string
-`| uniq -c | sort -nr`
-
+```sh
+| uniq -c | sort -nr
+```
 #### Serve files in the current directory via a web interface
-`python -m SimpleHTTPServer 8080`
-`python3 -m http.server`
-: using port 80 requires sudo, since it is a privileged port
-
+Using port 80 requires sudo, since it is a privileged port
+```sh
+python -m SimpleHTTPServer 8080
+```
+```sh
+python3 -m http.server
+```
 #### Mount a directory from a remote server on your local host via SSH
-`sshfs remotehost:/directory mountpoint`
-`fusermount -u mountpoint`
-
+```sh
+sshfs remotehost:/directory mountpoint
+```
+```sh
+fusermount -u mountpoint
+```
 #### Get your public IP from the command line using curl
-`curl ifconfig.me`
-
+```sh
+curl ifconfig.me
+```
 #### SSH into a remote system without a password
-`ssh-keygen`
-`ssh-copy-id remotehost`
-`ssh remotehost`
-: contents of the public key need to be in `~/.ssh/authorized_keys` on the remote host
-
+Contents of the public key need to be in `~/.ssh/authorized_keys` on the remote host
+```sh
+ssh-keygen
+ssh-copy-id remotehost
+ssh remotehost
+```
 #### Show open network connections
-`sudo lsof -Pni`
-: `lsof` can be used to display open files, open network ports, and network connections; `-P` prevents the conversion of port numbers to port names; `-i` displays network connections; `-n` prevents the conversion of IP addresses to hostnames
-
+`lsof` can be used to display open files, open network ports, and network connections; `-P` prevents the conversion of port numbers to port names; `-i` displays network connections; `-n` prevents the conversion of IP addresses to hostnames
+```sh
+sudo lsof -Pni
+```
 #### Compare the differences between a remote and local file
-`ssh remotehost cat /path/to/remotefile | dif /path/to/localfile`
-: cat a file over SSH and pipe the output into a diff or sdiff command
-
+`cat` a file over SSH and pipe the output into a diff or sdiff command
+```sh
+ssh remotehost cat /path/to/remotefile | diff /path/to/localfile
+```
 #### Send email from the command-line
-`mail recipient@domain.com`
-: send email interactively
-
-`echo 'message' | mail -s 'subject' recipient@domain.com`
-: send message via pipe 
-
+Send email interactively
+```sh
+mail recipient@domain.com
+```
+Send message via pipe 
+```sh
+echo 'message' | mail -s 'subject' recipient@domain.com
+```
 #### Send an email attachment from the command-line
-`mail -a /path/to/attachment`
-: send email interactively
-
-`echo 'message' | mail -s 'subject' -a /path/to/attachment`
-: send message via pipe
-
+Send email interactively
+```sh
+mail -a /path/to/attachment
+```
+Send message via pipe
+```sh
+echo 'message' | mail -s 'subject' -a /path/to/attachment
+```
 #### Create an SSH tunnel to access remote resources
-you can tunnel into a server to access a website which your local machine may not
-`ssh -N -L localport:host:remoteport remotehost`
-: `-L` creates the SSH tunnel; first port is the port that will be opened on the local machine; 
-
+you can tunnel into a server to access a website which your local machine may not; `-L` creates the SSH tunnel; first port is the port that will be opened on the local machine; 
+```sh
+ssh -N -L localport:host:remoteport remotehost
+```
 #### Find out which programs are listening on which ports
-`sudo netstat -nutlp`
-: `-n` show numerical addresses instead of determining symbolic names; `-u` include UDP protocol; `-t` include TCP protocol; `-l` show only listening sockets; `-p` show PID and program name
-
+`-n` show numerical addresses instead of determining symbolic names; `-u` include UDP protocol; `-t` include TCP protocol; `-l` show only listening sockets; `-p` show PID and program name
+```sh
+sudo netstat -nutlp
+```
 #### Use a different SSH key for a given remote host
 modify the `~/.ssh/config` file
 ```config
@@ -268,38 +320,69 @@ done
 
 `gpw () { openssl rand -base64 48 | cut -c1-${1};}`
 
-## Files and directories
-
-#### Quickly make a backup of a file
-`cp file{,.bak}`
-: brace expansion allows creation of multiple command-line args from a single one (equivalent to `cp file file.bak`)
-`mkdir -p ~/my-app/{bin,lib,log}`
-: `-p` argument creates parent directories if they don't exist
-
-#### Quickly change a file's extension
-`mv file{.old,.new}`
-: using brace expansion
-
+#### Quickly make a backup of a file using brace expansion
+Brace expansion allows creation of multiple command-line args from a single one 
+```sh
+cp file{,.bak} # equivalent to `cp file file.bak`
+```
+#### Quickly create multiple directories using brace expansion
+`-p` argument creates parent directories if they don't exist
+```sh
+mkdir -p ~/my-app/{bin,lib,log}
+```
+#### Quickly change a file's extension using brace expansion
+```sh
+mv file{.old,.new}
+```
 #### Create backups of files by date with ease
 `alias d='date +%F'` : using format "YYYY-MM-DD"
 `cp file{,.$(d)}` : append date to end of filename of copy using new alias
 `cmd > file` : overwrite the contents of a file
 
 #### Empty a file that is being written to
-`> file`
-`cat /dev/null > file`
-: if a process has a file open it will continue to write to the file if you try to delete it naively. This way the file is truncated and applications can continue writing to it.
-
+If a process has a file open it will continue to write to the file if you try to delete it naively. This way the file is truncated and applications can continue writing to it.
+```sh
+> file
+```
+```sh
+cat /dev/null > file
+```
 `cmd >> file`
-`tail -f file` : view tail of file in realtime
-`multitail files` : watch multiple log files at the same time, not available on BSD
+#### View tail of file in realtime
+```sh
+tail -f file
+```
+#### Watch multiple log files at the same time
+`multitail` is not available on BSD
+```sh
+multitail files
+``` 
 `find . -type d -empty -delete` : `-type d` fine empty directories and delete them
-`grep -rl string a` : `-r` recursive; `-l` list files that match
-`find . -type f -ls` : easy-to-read recursive file listing
-`tree -d` : `-d` see only directories
-`tree -L n` : `-L` limit depth to {n}
-`find /path -type f -exec sed -i.bak` : replace a string in multiple files
-`awk 'NR==N'` : extract the nth line from a file 
+#### Find files in a directory containing {string}
+`-r` recursive; `-l` list files that match
+```sh
+grep -rl string a
+```
+#### Display a recursive file listing
+```sh
+find . -type f -ls
+```
+`-d` see only directories
+```sh
+tree -d
+```
+`-L` limit depth to {n}
+```sh
+tree -L n
+```
+#### Replace a string in multiple files
+```sh
+find /path -type f -exec sed -i.bak
+```
+#### Extract the nth line from a file 
+```sh
+awk 'NR==N'
+```
 #### Convert text files from Windows format to Linux format and vice-versa
 `dos2unix` | `unix2dos` 
 
@@ -337,26 +420,41 @@ TZ environment variable specifies timezone
 `tar xf archive -C /path/to/directory`
 
 #### Transform the directory structure of a tar file when extarcting it
-`tar xf archive --strip-components=n` : where {n} is a number that represents the level of the top directory from which to extract
-
+Where {n} is a number that represents the level of the top directory from which to extract
+```sh
+tar xf archive --strip-components=n
+```
 #### Use a spreadsheet from the command-line
-`sc` : not available on BSD
-
+Not available on BSD
+```sh
+sc
+```
 #### Rudimentary command-line stopwatch
 `time read` : will stop when you press enter, displaying how much time elapsed
 
 #### Repeat a command at regular intervals and watch its changing output
-`watch cmd -n n` : execute {cmd} at periods of {n} seconds, watching its output
-
+Execute {cmd} at periods of {n} seconds, watching its output
+```sh
+watch cmd -n n
+```
 #### Execute a command at a given time
-`echo "cmd" | at time`
-`at -f file time`
-
+```sh
+echo "cmd" | at time
+```
+```sh
+at -f file time
+```
 #### Share your screen session with another user
-`screen -x user/session`
-
+```sh
+screen -x user/session
+```
 #### Execute an unaliased version of an aliased command
-`\cmd` : if {cmd} is a command as well as an alias, use the backslash to run it as the original command
-
+If {cmd} is a command as well as an alias, use the backslash to run it as the original command
+```
+\cmd
+```
 #### Save the output of a command as an image
-`cmd | convert label:@- image.png` : `convert` command from ImageMagick software suite
+`convert` command is from ImageMagick software suite
+```
+cmd | convert label:@- image.png
+``` 
