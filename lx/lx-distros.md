@@ -9,5 +9,5 @@ CoreOS systems are meant to be **immutable infrastructure**, meaning they are on
 CoreOS automatically installs upgrades automatically without user intervention, although they can be stopped if a problem is found.
 
 ## Sources
-  Clear Linux segment. [Linux Unplugged](../sources/sources.md): 289
-  "Introducing Fedora CoreOS". [Fedora Magazine](https://fedoramagazine.org/introducing-fedora-coreos/): 2019/07/24.
+  1. Clear Linux segment. [Linux Unplugged](../sources/README.md#lu-289)
+  2. "Introducing Fedora CoreOS". [Fedora Magazine](https://fedoramagazine.org/introducing-fedora-coreos/): 2019/07/24.

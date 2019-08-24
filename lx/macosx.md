@@ -1,4 +1,12 @@
 # Mac OS X configuration
+#### Open path in Finder
+```
+open path
+```
+#### Open an application from Terminal
+```
+open -a /Applications/application.app
+```
 
 ## iterm2
 #### Configuration as a dropdown terminal

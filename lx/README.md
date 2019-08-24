@@ -109,21 +109,21 @@ firewall-cmd --list-ports
 ### ftp
 encrypted file transfers
 ### hostnamectl
-#### Permanently change hostname to {hostname} (systemd)
+#### Change hostname
 ```
 sudo hostnamectl set-hostname hostname
-```### install
-#### Copy a file while preserving timestamp
+```
+### install
+With `install`, files can be copied while maintaining various metadata, including timestamp, owner, etc. [[9](#sources)]
+Copy a file while preserving timestamp
 The copy will have the `install` default of `755`, but the original's `mtime` is maintained:
 ```sh
 install --preserve-timestamp example/foo .
 ```
-[[9](#sources)]
-#### Copy a file, setting permissions, owner, and group
+Copy a file, setting permissions, owner, and group
 ```sh
 install --preserve-timestamp --owner=jdoe --group=sudoers --mode=753
 ```
-[[9](#sources)]
 ### ifconfig
 "RX" and "TX" stand for received and transmitted.
 #### Apply a static IP address to interface {eth0} and turn it on ("up")
@@ -723,6 +723,11 @@ tcpdump -i eth0
 Successor to `traceroute`, allowing the user to test connectivity along the path. Doesn't show as much detail with regard to time, so it may be faster.
 ### traceroute
 Provides much more information than `tracepath`, even though it's older [[lxa-lpic](../sources/lxa-lpic.md)]
+### uname
+#### Check kernel version (uname)
+```bash
+uname -srm
+```
 ### xinetd
 Internet Super Daemon provided an alternate method of connecting to various outdated network services. Should be turned off nowadays.  
 
