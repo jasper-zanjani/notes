@@ -6,25 +6,36 @@ Table of contents
 
 Topic                           | Contents
 :---                            | :---
-BSD                             | [BSD](bsd.md) [Mac OS X](macosx.md)
 [lx](lx.md)                     | Technical aspects of Linux operation: boot sequence, processes, `init`, control groups, filesystems, FACL
-Desktop environments            | [KDE](kde.md) [i3](i3.md)
-Distros                         | [Kali Linux](lx-kali.md) [Arch Linux](lx-arch.md)
-[Email](lx-email.md)         | Applications used for email services 
+**Desktop environments** [KDE](kde.md) [i3](i3.md)
+**Distros** [Arch Linux](lx-distros.md#arch-linux) [BSD](bsd.md)  [Clear Linux](lx-distros.md#clear-linux) [Fedora CoreOS](#lx-distros.md#fedora-coreos) [Kali Linux](lx-distros.md#kali-linux) [Mac OS X](macosx.md)
 [X](X.md)
-SystemD                         | [hostnamectl](hostnamectl.md) 
+
+## Configuration files
+Config file     | Description
+:---            | :---
+/etc/aliases    | forwarding to more than one address requires entries here
+$HOME/.forward  | forwarding to only one address
 ## Commands
 All commands
--:-
-[awk](awk.md) [bash](bash.md) [cat](cat.md) [crontab](crontab.md) [date](date.md) [dhclient](#dhclient) [dig](#dig) [elvish](elvish.md) [firewalld](#firewalld) [fish](fish.md) ftp [grep](grep.md) [history](history.md) [hostnamectl](#hostnamectl) [ifconfig](#ifconfig) [imagemagick](imagemagick.md) [install](#install) [iptables](#iptables) [less](less.md) [make](make.md) [nc](#nc) [netplan](#netplan) [netstat](#netstat) [NetworkManager](#networkmanager) nmap [nmcli](#nmcli) [nslookup](#nslookup) [pacman](pacman.md) [partx](#partx) [ping](#ping) [route](#route) [sed](#sed) [sfdisk](#sfdisk) [shuf](#shuf) [sort](#sort) [ss](#ss) [sudo](sudo.md) [test](test.md) [tcpdump](#tcpdump) [tmux](tmux.md) tracepath traceroute [watch](watch.md) [xinetd](#xinetd) 
-
-Network commands
--:- 
-[bpftrace](#bpftrace) [dhclient](#dhclient) [dig](#dig) [ftp](#ftp) [firewalld](#firewalld) [hostnamectl](#hostnamectl) [ifconfig](#ifconfig) [iptables](#iptables) [nc](#nc) [netplan](#netplan) [netstat](#netstat) [NetworkManager](#networkmanager) [nmap](#nmap) [nmcli](#nmcli) [nslookup](#nslookup) [ping](#ping) [route](#route) [ss](#ss) [tcpdump](#tcpdump) [tracepath](#tracepath) [traceroute](#traceroute) [xinetd](#xinetd) 
-
-Commands needing further research
--:-
-[lsof](#lsof) [column](#column) [sc](#sc) [espeak](#espeak) [visudo](#visudo) [fmt](#fmt) [paste](#paste) [openssl](#openssl) [sshfs](#sshfs) [ssh-copy-id](#ssh-copy-id)
+:---:
+[at](#at)  [bash](bash.md) [cat](cat.md) [crontab](crontab.md) [date](date.md) [dhclient](#dhclient) [elvish](elvish.md) [fish](fish.md) [free](#free) [fusermount](#fusermount) [history](#history) [imagemagick](imagemagick.md) [install](#install) [make](make.md) [mkdir](#mkdir) [sudo](sudo.md) [test](test.md) [tmux](tmux.md) [watch](watch.md)  
+**Disk** [partx](#partx) [sfdisk](#sfdisk) 
+**E-mail** [mail](#mail) [mailq](#mailq) [postfix](#postfix) [qmail](#qmail) [sendmail](#sendmail) [ssmtp](#ssmtp) 
+**Filters** [awk](awk.md) [grep](#grep) [less](less.md) [sed](#sed) [shuf](#shuf) [sort](#sort) [tr](#tr) 
+**Network** [bpftrace](#bpftrace) [dhclient](#dhclient) [dig](#dig) [ftp](#ftp) [firewalld](#firewalld) [hostnamectl](#hostnamectl) [ifconfig](#ifconfig) [iptables](#iptables) [nc](#nc) [netplan](#netplan) [netstat](#netstat) [NetworkManager](#networkmanager) [nmap](#nmap) [nmcli](#nmcli) [nslookup](#nslookup) [ping](#ping) [route](#route) [ss](#ss) [tcpdump](#tcpdump) [tracepath](#tracepath) [traceroute](#traceroute) [xinetd](#xinetd) 
+**Package managers** [pacman](pacman.md) 
+**SSH** [sshfs](#sshfs) [ssh-copy-id](#ssh-copy-id) [ssh-keygen](#ssh-keygen) [ssh](#ssh)
+**SystemD** [firewalld](#firewalld) [hostnamectl](#hostnamectl) [xinetd](#xinetd)
+**Needing further research** [lsof](#lsof) [column](#column) [sc](#sc) [espeak](#espeak) [visudo](#visudo) [fmt](#fmt) [paste](#paste) [openssl](#openssl) [sshfs](#sshfs) [ssh-copy-id](#ssh-copy-id)
+### at
+#### Execute a command at a given time
+```sh
+echo "cmd" | at time
+```
+```sh
+at -f file time
+```
 ### bpftrace
 New open-source tracer for analyzing production performance problems and troubleshooting software [[19](#sources)]
 ### dhclient
@@ -106,8 +117,50 @@ firewall-cmd --add-port=50000-60000/udp
 ```
 firewall-cmd --list-ports
 ```
+### free
+Simple utility that display realtime memory information.\
+Option  | Effect
+:---    | :---
+`-h`    | human-readable output
+`-s n`  | run the program every <n> seconds, until the program is manually interrupted
+`-c n`  | run the program <n> times
+#### List memory statistics in kilobytes
+Without any options, `free` returns a table listing general statistics in kilobytes:
+```bash
+free
+```
+#### Command-line memory dashboard
+```bash
+watch free -h
+```
 ### ftp
 encrypted file transfers
+### fusermount
+#### Mount a directory from a remote server on your local host via SSH
+[[23](#sources)]
+```sh
+fusermount -u mountpoint
+```
+### grep
+Option  | Long option             | Effect
+:---    | :---                    | :---
+`-A n`  |                         | print {n} lines of trailing context from the file after each match
+`-B n`  |                         | print {n} lines of leading context from the file after each match
+`-c`    | `--count`               | print number of lines containing the pattern
+`-C n`  |                         | print {n} lines of leading and trailing context surrounding each match
+`-E`    | `--extended-regexp`     | force grep to use extended regular expressions, making it similar to `egrep`
+`-F`    | `--fixed-strings`       | force grep to interpret pattern as fixed strings, making it similar to `fgrep`
+`-H`    |                         | always pr int filename headers with output lines
+`-l`    | `--files-with-matches`  | print only filenames where pattern matches occur; search continues to the next file if a match is found, making it less computationally expensive
+`-n`    | `--line-number`         | print line number where match occurs
+`-r`    |                         | recursive
+`-v`    | `--invert-match`        | print lines **not** matching the pattern
+### history
+#### Clear your shell history
+[[23](#sources)]
+```
+history -c
+```
 ### hostnamectl
 #### Change hostname
 ```
@@ -115,12 +168,12 @@ sudo hostnamectl set-hostname hostname
 ```
 ### install
 With `install`, files can be copied while maintaining various metadata, including timestamp, owner, etc. [[9](#sources)]
-Copy a file while preserving timestamp
+#### Copy a file while preserving timestamp
 The copy will have the `install` default of `755`, but the original's `mtime` is maintained:
 ```sh
 install --preserve-timestamp example/foo .
 ```
-Copy a file, setting permissions, owner, and group
+#### Copy a file, setting permissions, owner, and group
 ```sh
 install --preserve-timestamp --owner=jdoe --group=sudoers --mode=753
 ```
@@ -167,6 +220,40 @@ lowriter --convert-to pdf filename.doc
 #### Convert a batch of files using globbing
 ```sh
 lowriter --convert-to pdf *.docx
+```
+### lsof
+#### Show open network connections
+`lsof` can be used to display open files, open network ports, and network connections; `-P` prevents the conversion of port numbers to port names; `-i` displays network connections; `-n` prevents the conversion of IP addresses to hostnames [[23](#sources)]
+```sh
+sudo lsof -Pni
+```
+### mail
+Mail User Agent (MUA) which accepts interactive input using the `&` prompt
+#### Send email from the command-line
+Send email interactively
+```sh
+mail recipient@domain.com
+```
+Send message via pipe 
+```sh
+echo 'message' | mail -s 'subject' recipient@domain.com
+```
+#### Send an email attachment from the command-line
+Send email interactively
+```sh
+mail -a /path/to/attachment
+```
+Send message via pipe
+```sh
+echo 'message' | mail -s 'subject' -a /path/to/attachment
+```
+#### mailq
+Prints summary of mail messages queued for future delivery
+### mkdir
+#### Quickly create multiple directories using brace expansion
+`-p` argument creates parent directories if they don't exist
+```sh
+mkdir -p ~/my-app/{bin,lib,log}
 ```
 ### nc
 The netcat utility allows testing of a host's ports, similar to __ping__, but more versatile because __ping__ only uses the portless ICMP protocol. GNU and OpenBSD versions available (itp-l+: 28)
@@ -245,7 +332,7 @@ netstat --route
 > lxa-lpic: 109.2
 ```
 netstat -a
-``` 
+```
 #### Show network traffic 
 > itp-lpic.md
 ```
@@ -366,6 +453,29 @@ nslookup ipaddress
 ```
 nslookup -port=portno url
 ```
+### qmail
+Mail Transfer Agent (MTA) designed as a drop-in replacement for Sendmail, notable for being the first to be "security-aware". Its various modular subcomponents run independently and are mutually untrustful. It uses SMTP to exchange messages with other MTAs. It was written by Dan Bernstein, a professor of mathematics famous for litigating against the US government with regard to export controls on encryption algorithms. Deprecated and removed from Arch repos in 2005. [[27](#sources)]
+### pacman
+
+Option | Long option | Effect
+:---   | :--- | :---
+`-Q` | list all installed packages
+`-Q \| wc -l` | get number of total installed packages by counting the lines of output of `pacman -Q`
+`-Qe` | list programs explicitly installed by user or program command
+`-Qeq` | list only program names explicitly installed
+`-Qm` | list programs only installed from AUR
+`-Qn` | list programs only installed from main repositories
+`-Qdt` | dependencies no longer needed (orphans)
+`-Ql` | `--query --list` : list all files owned by a package
+`-S pkg` | typical syntax to install a package
+`-Sy` | synchronize package database (equivalent to `apt-get update`)
+`-Su` | update programs (equivalent to `apt-get upgrade`)
+`-Syu` | sync package database (`Sy`) and upgrade all programs (`u`) (equivalent to `apt-get update && apt-get upgrade`)
+`-Syy` | force double-check of repositories
+`-Syyuw` | downloads programs but doesn't install them, for the option of manual installation
+`-R pkg` | remove {pkg}, but leaving dependencies
+`-Rs pkg` | remove {pkg} as well as its dependencies
+`-Rns pkg` | remove {pkg}, dependencies, as well as config files 
 ### partx
 `partx` is a utility that provides information on drive partitions to the Linux kernel. [[12](#sources)]
 #### Display partition table of a drive
@@ -395,6 +505,22 @@ partx -d --nr -1:-1 /dev/sda
 #### Disable headers
 ```bash
 partx -o START -g --nr 5 /dev/sda
+```
+### postfix
+Designed to replace Sendmail. 
+- multiple processes with no particular parent/child relationship
+Receives mail by two methods:
+  1. Local mail (sendmail)
+  2. Internet mail (SMTP)
+Before mail is queued for delivery, it goes through a cleanup daemon, which can be configured to do header and body inspection using regex
+`Qmgr` is the heart of postfix mail delivery; it maintains an active queue, which attempts delivery. It delivers mail using three methods:
+  1. Local inboxes
+  2. Internet (SMTP)
+  3. Piped to programs
+### screen
+#### Share your screen session with another user
+```sh
+screen -x user/session
 ```
 ### sed
 Stream-oriented editor typically used for applying repetitive edits across all lines of multiple files. In particular it is, alongside `awk` one of the two primary commands which accept regular expressions in Unix systems. 
@@ -601,16 +727,34 @@ shuf -n 1 cards.txt
 [[10](#sources)]
 ### sort
 #### Sort by space-delimited columns
-Processes consuming the most memory will be at the bottom
+Processes consuming the most memory will be at the bottom [[23](#sources)]
 ```sh
 ps aux | sort -nk 4
 ```
-[[CLKF](../sources/README.md)]\
 Processes consuming the most CPU will be at the bottom
 ```sh
 ps aux | sort -nk 3
 ```
-[[CLKF](../sources/README.md)]    
+### sh
+### ssmtp
+Installable client program [[25](#sources)]
+
+Configuration file | Description
+:--- | :---
+/etc/ssmtp/ssmtp.conf | Configuration file
+
+Syntax | Effect or description
+:---   | :---
+#### Send {msg} to {recipient} from {user} at {host} using password {pw}
+```sh
+ssmtp -au recipient -ap pw user@host < msg
+```
+#### Configuration file
+```ini
+mailhub=smtp.gmail.com:587
+UseTLS=YES
+UseSTARTTLS=YES
+```
 ### stat
 ### ping
 "packet Internet groper" utility used for checking network connections, using ICMP packets (cf. __nc__)
@@ -668,6 +812,25 @@ route del default gw 192.168.0.1
 ```
 route add -net 192.168.1.0 netmask 255.255.255.0 gw 192.168.0.1
 ```
+### sendmail
+Mail daemon once the de facto standard for accepting and redirecting mail on Linux distributions, long ago fallen into disuse. It was infamous for its difficulty to set up, with roots in ARPANET itself.
+### ssh
+#### Compare the differences between a remote and local file
+`cat` a file over SSH and pipe the output into a diff or sdiff command [[23](#sources)j]
+```sh
+ssh remotehost cat /path/to/remotefile | diff /path/to/localfile
+```
+#### Create an SSH tunnel to access remote resources
+Tunnel into a server to access a website which your local machine may not; `-L` creates the SSH tunnel; first port is the port that will be opened on the local machine [[23](#sources)]
+```sh
+ssh -N -L localport:host:remoteport remotehost
+```
+### sshfs
+#### Mount a directory from a remote server on your local host via SSH
+[[23](#sources)]
+```sh
+sshfs remotehost:/directory mountpoint
+```
 ### ss
 "Socket statistics", successor to __netstat__. 
 #### ss Options
@@ -719,6 +882,16 @@ Inspect actual IP packets (Wireshark is a GUI-based alternative)
 ```
 tcpdump -i eth0
 ```
+### tr
+#### Change the case of a string
+[[23](#sources)]
+```sh
+tr [:upper:] [:lower:]
+```
+#### Remove a character or set of characters from a string or line of output
+```sh
+tr -d "text"
+```
 ### tracepath
 Successor to `traceroute`, allowing the user to test connectivity along the path. Doesn't show as much detail with regard to time, so it may be faster.
 ### traceroute
@@ -727,6 +900,12 @@ Provides much more information than `tracepath`, even though it's older [[lxa-lp
 #### Check kernel version (uname)
 ```bash
 uname -srm
+```
+### watch
+#### Repeat a command at regular intervals and watch its changing output
+Execute {cmd} at periods of {n} seconds, watching its output [[23](#sources)]
+```sh
+watch cmd -n n
 ```
 ### xinetd
 Internet Super Daemon provided an alternate method of connecting to various outdated network services. Should be turned off nowadays.  
@@ -760,11 +939,10 @@ if [ ! -z "$2" ] ; then ...; fi
 ```
 [[8](#sources)]
 #### Looping based on user input
-Placed in a while loop, if user responds with anything except "y" (the read command will read only the first letter) the loop will terminate 
+Placed in a while loop, if user responds with anything except "y" (the read command will read only the first letter) the loop will terminate [[23](#sources)]
 ```bash
 read -p "Backup another server? (y/n)" -n 1
 ["$BACKUP_AGAIN"="y"] || break
-# ref CLKF
 ```
 #### Diagnosing network problems
 Test from the inside out, starting with the loopback
@@ -774,6 +952,18 @@ Test from the inside out, starting with the loopback
   4. ping the gateway
   5. ping an IP address on the Internet
   6. ping a hostname on the Internet
+#### Display contents of a random file
+```sh
+ls | sort -R | sed 1q | xargs cat
+```
+#### Find out which commands you use most often
+```sh
+history | awk '{print $2' | sort | uniq -c | sort -rn | head
+```
+#### Count the number of occurrences of a string
+```sh
+| uniq -c | sort -nr
+```
 ## Glossary
 Name                            | Description
 :---                            | :---
@@ -906,3 +1096,9 @@ ZynAddSubFX                     | LMMS plugin, used with synthesizers [[1](#sour
   20. "Six practical use cases for `nmap`". [Red Hat](https://www.redhat.com/sysadmin/use-cases-nmap): 2019/08/19.
   21. "How to convert documents to PDF format on the Ubuntu Command Line". [vitux.com](https://vitux.com/how-to-convert-documents-to-pdf-format-on-the-ubuntu-command-line/).
   22. "Linux Mail Server Postfix Architecture" [YouTube](https://youtu.be/qhA8HuJBa64)
+  23. Cannon, Jason. [*Command Line Kung Fu.*](../sources/clkf.md)
+  24. 
+  25. "Send Emails From Linux Terminal Using SSMTP". [linuxhandbook.com](https://linuxhandbook.com/linux-send-email-ssmtp/)
+  26. "Linux Mail Server Postfix Architecture" [YouTube](https://youtu.be/qhA8HuJBa64)
+  27. "Qmail deprecation" [archlinux.org](https://www.archlinux.org/news/qmail-deprecation/)
+  28. "Free Command in Linux Explained With Examples". [linuxhandbook.com](https://linuxhandbook.com/free-command/)
