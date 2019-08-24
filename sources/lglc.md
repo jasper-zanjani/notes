@@ -1,5 +1,4 @@
 # Linux+ Guide to Linux Certification 3rd ed., by Jason W. Eckert
-
 ##  1 Introduction to Linux
 Operating systems
 Linux operating system
@@ -19,7 +18,6 @@ Common uses of Linux
   - Supercomputers
   - Scientific/engineering workstations
   - Office/personal workstations
-
 ##  2 Linux Installation and usage
 Installing Linux
   - Preparing for installation
@@ -31,7 +29,6 @@ Basic Linux usage
   - Shell metacharacters
   - Getting command help
   - Shutting down the Linux system
-
 ##  3 Exploring Linux filesystems
 Linux directory structure
   - Changing directories
@@ -49,7 +46,6 @@ Editing text files
   - `vi` editor
   - Other common text editors
 Topics: cat, cd, grep, egrep, fgrep, file, less, ll, ls, more, nano, od, pwd, strings, tac, tail, vi
-
 ##  4 Linux filesystem management
 Filesystem Hierarchy Standard : /bin, /boot, /dev, /etc, /home, /lib, /media, /mnt, /opt, /proc, /root, /sbin, /tmp, /usr, /usr/local, /var
 Managing files and directories
@@ -61,7 +57,6 @@ File and directory permissions
   - Default permissions
   - Special permissions
 Topics: chgrp, chmod, chown, cp, ln, locate, rm, rmdir, touch, umask
-
 ##  5 Linux filesystem administration
 /dev directory
 Filesystems
@@ -78,7 +73,6 @@ Monitoring filesystems
 Hard disk quotas
 Files: /etc/fstab, /etc/mtab, /proc/devices, 
 Topics: /dev/MAKEDEV, cfdisk, df, du, edquota, fdisk, fsck, fuser, lvcreate, lvdisplay, lvextend, lvscan, mkfs, mkisofs, mknod, mkswap, mount, pvcreate, pvdisplay, pvscan, quota, quotaoff, quotaon, repquota, swapon, swapoff, tune2fs, umount, vgcreate, vgdisplay, vgextend, vgscan
-
 ##  6 Advanced installation
 Advanced storage configuration
   - SCSI hard disk configuration
@@ -94,7 +88,6 @@ Troubleshooting installations
   - Problems during installation
   - Problems after installation
 Topics: dd 
-
 ##  7 Working with the bash shell
 Command input and output
   - Redirection
@@ -110,7 +103,6 @@ Escape sequences
   - Decision constructs
   - Loop constructs
 Topics: alias, awk, echo, env, export, grep, read, sed, set, sort, tee, tr
-
 ##  8 System initialization and X Windows
 Boot process
 Boot loaders
@@ -127,7 +119,6 @@ X Windows system
   - Starting and stopping X Windows
 Configuring X Windows
 Topics: grub-install, grub-md5-crypt, init, lilo, runlevel, service, system-config-display, system-config-keyboard, telinit, .dmrc, .xinitrc, /boot/grub/grub.conf, /etc/inittab, /etc/lilo.conf, /etc/rc.d/rc.local, /etc/rc.d/rc.sysinit, /etc/rc.d/init.d, /etc/rc.d/rc*.d
-
 ##  9 Managing Linux processes
 Linux processes
 Viewing processes
@@ -139,53 +130,180 @@ Scheduling commands
   - Scheduling commands with `atd`
   - Scheduling commands with the `cron` daemon
 Topics: at, atd, bg, crontab, fg, jobs, killall, kill, nice, ps, pstree, renice, top, /etc/at.allow, /etc/at.deny, /etc/cron.allow, /etc/cron.d, /etc/cron.deny, /etc/crontab, /var/spool/at, /var/spool/cron
+##  10 Common administrative tasks
+### 10A 
+Printer administration\
+### 10A1
+Common Unix printing system
+### 10A2
+Managing print jobs
+### 10A3
+LPD Printing system
+### 10A4
+Configuring printers
+### 10B 
+> Log file administration
+Configuration file  | Description
+:---                | :---
+**/dev/log**            | location of `rsyslogd` socket for other system processes to write to [440]
+**/etc/logrotate.conf** | `logrotate` configuration file [445]
+**/etc/logrotate.d/**   | `logrotate` configuration files which override those in **/etc/logrotate.conf** [445]
+**/etc/rsyslog.conf**   | `rsyslogd` configuration file [440]
+**/etc/syslog.conf**    | `syslogd` configuration file on legacy Linux systems [442]
+**/var/log**            | typical location of logs recorded by daemons
 
-## 10 Common administrative tasks
-### Printer administration
-#### Common Unix printing system
-#### Managing print jobs
-#### LPD Printing system
-#### Configuring printers
+Information and error messages recorded by daemons are called **log files** and typically stored in `/var/log`
+### 10B1 
+> System log daemon `rsyslogd`
+**System Log Daemon `rsyslogd`** handles the logging of most events in a centralized fashion. Syslog entries have the format `facility.priority` followed by the location of the logfile in which the notifications are to be stored. The **facility** is the area of the system emitting the notification, and **priority** refers to the precedence of the information.\
+Logs can also be sent to another computer using the format `facility.priority @host:port`
+#### 10B1A
+Format of entries in **/etc/rsyslog.conf**
+```
+facility.priority  /var/log/logfile
+```
+#### 10B1B
+Example syslog entries [443]
+```conf
+# Listen for kernel messages with a priority of warning and above
+kern.warning /var/log/logfile
 
-### Log file administration
-Information and error messages recorded by daemons are called _log files__ and typically stored in _/var/log_
+# Warning messages from the kernel
+kern.=warning /var/log/logfile
 
-#### System log daemon `rsyslogd`
-Creates a socket for other system processes to write to at /dev/log. Any information written there is saved in the appropriate log file according to entries in /etc/rsyslog.conf
-/etc/rsyslog.conf : whitespace-delimited config file that contains General Directives to control general logging behavior
-`facility.priority /var/log/logfile` : general pattern; whitespace delimited
-`kern.warning       /var/log/logfile` : log kernel messages with a priority of warning and higher
-`kern.=warning      /var/log/logfile` : log only kernel messages with a priority of warning
-`kern.*             /var/log/logfile` : log all error messages from the kernel
-`kern.*;kern.!=warn /var/log/logfile` : specify multiple facilities and priorities by delimiting each with a semicolon
-`facility.priority @hostname:portnumber` : also possible; remote host must have the UDP and TCP protocol listeners uncommented, to listen on port 514 (default syslogd port)
-`$ModLoad imuxsock.so` : provide support for local system logging (`logger` command)
-`$ModLoad imklog.so` : provide kernel logging support (previously done by `rklogd`)
-`$ModLoad immark.so` : provide --MARK-- message capability
-`$ModLoad imudp.so` \ `$UDPServerRun 514` : provide UDP syslog reception
-`$ModLoad imtcp.so` \ `$InputTCPServerRun 514` : provide TCP syslog reception
-`*.info;mail.none;news.none;authrpriv.none;cron.none /var/log/messages` : log anything of level info or higher
-`authpriv.*         /var/log/secure` : authpriv file has restricted access
-`mail.*             -/var/log/maillog` : log all mail messages in one place
-`cron.*             /var/log/cron`
-`*.emerg            *` : everybody gets emergency messages
+# Log all kernel messages
+kern.* /var/log/logfile
 
-#### Managing log files
-`>/var/log/messages` clear a log without deleting it, in order to preserve pemrmissions
-/etc/logrotate.conf : config file for `logrotate`, overriden by files in /etc/logrotate.d/ 
-`weekly` : rotate log files weekly
-`monthly` : rotate log files monthly
-`rotate 4` : keep 4 weeks worth of backlogs
-`notifempty` : do not rotate if empty
-`create` : create new (empty) log files after rotating old ones
-`create 0664 root utmp` : new log file has permissions rw-rw-r-- with owner root and group utmp
-`minsize 1M` : rotation only occurs when log file has a size greater than 1MB
-`dateext` : use date as suffix of the rotated file
-`compress` : compress log files
-`delaycompress` : compress old files, but only on the next rotation
-`rotate 1` : only one old log file is kept
-`include /etc/logrotate.d` : RPM packages drop log rotation information into /etc/logrotate.d/
-`/var/log/btmp { ... }` : individual log files can have settings that override the general directives
+# Specify multiple facilities and priorities using semicolon `;`, log all messages except warnings
+kern.*;kern.!=warn /var/log/logfile
+
+# Log all warnings from all facilities except for the kernel, use `none` keyword
+*.=warn;kern.none /var/log/logfile
+```
+#### 10B1C
+Sample **/etc/rsyslog.conf** file [440-442]
+```conf
+#rsyslog v3 config file
+
+# Provide support for local system logging
+$ModLoad imuxsock.so
+
+# Provide kernel logging support (previously done by rklogd)
+$ModLoadimklog.so
+
+# Provide --MARK-- message capability
+$ModLoadimmark.so
+
+# Provide UDP syslog reception
+$ModLoad imudp.so
+$UDPServerRun 514
+
+# Provide TCP syslog reception
+$ModLoad imtcp.so
+$Input TCPServerRun 514
+
+# GLOBAL DIRECTIVES #
+# Use default timestamp format
+$ActionFileDefaultTemplate RSYSLOG_TraditionalFileFormat
+
+# File syncing capability is disabled by default
+#$ActionFileEnableSync on
+
+# RULES #
+# Log all kernel messages to the console
+kern.* /dev/console
+
+# Log anything of level info or higher, but don't log private authentication messages
+*.info;mail.none;news.none;authpriv.none;cron.none /var/log/messages
+
+# Log all mail messages in one place
+mail.* -/var/log/maillog
+
+# Log cron stuff
+cron.* /var/log/cron
+
+# Everybody gets emergency messages
+*.emerg *
+
+# Save news errors of level crit and higher in a special file
+uucp,news.crit /var/log/spooler
+
+# Save boot messages to boot.log
+local7.* /var/log/boot.log
+
+# FORWARDING RULE #
+# The following block of statements define a single forwarding rule and belong together
+
+# Where to place spool files
+$WorkDirectory /var/spppl/rsyslog
+
+# Unique name prefix for spool files
+$ActionQueueFileName fwdRule1
+
+# 1GB space limit
+$ActionQueueMaxDiskSpace 1g
+
+# Save messages to disk on shutdown
+$ActionQueueSaveOnShutdown on
+
+# Run asynchronously
+$ActionQueueType LinkedList
+
+# Infinite retries if host is down
+$ActionResumeRetryCount -1
+
+# Remote host is in the format `ip:port` e.g. 192.168.0.1:514
+*.* @@remote-host:514
+
+# INN
+news.=crit /var/log/news/news.crit
+news.=err /var/log/news/news.err
+news.notice /var/log/news/news.notice
+news.=debug /var/log/news/news.debug
+```
+### 10B2
+Manually clear log files or use `logrotate` to back them up. `logrotate` will rename log files on a cyclic basis, and a specific number of backups to keep can be set. `logrotate` is typically scheduled to run daily via a cronjob.
+#### 10B2A
+Manually run logrotate
+```sh
+logrotate /etc/logrotate.conf
+```
+#### 10B2B
+Example **/etc/logrotate.conf** file
+```conf
+# Rotate log files weekly
+weekly
+
+# Keep 4 weeks of backups
+rotate 4
+
+# Create new (empty) log files after rotating old ones
+create
+
+# Use date as a suffix of the rotated file
+dateext
+
+# Compress logs
+compress
+
+# RPM packages drop log rotation information into this directory
+include /etc/logrotate.d
+
+# No packages own wtmp and btmp, they are rotated here. wtmp is rotated monthly, only if the size of the log is at least 1 MB. The new log file has the permissions 664 with the owner root and group uttmp. For btmp, the rotation is monthly, and no errors are reported if the log is missing.
+/var/log/wtmp {
+  monthly
+  create 0664 root uttmp
+  minsize 1M
+  rotate 1 }
+/var/log/btmp {
+  missingok
+  monthly
+  create 0600 root utmp
+  rotate 1 }
+```
+### 10C
+Administering users and groups\
+
 ### Administering users and groups
 #### Creating user accounts
 #### Modifying user accounts

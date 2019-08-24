@@ -95,6 +95,12 @@ Francis, Joel (Sallow) | Guest: [PSP](#abbreviations) [Twitter](https://twitter.
 Smith, Steve (ardalis)| Host: [WDT](#abbreviations) Guest: [ADP 40](#adp-40)  [LinkedIn](https://www.linkedin.com/in/stevenandrewsmith/) [Twitter](https://twitter.com/ardalis)
 Tolinski, Scott       | Host: [SY](#abbreviations) | [Twitter](https://twitter.com/stolinski) [Github](https://github.com/stolinski) [BitBucket](https://bitbucket.org/stolinski) [Facebook](https://www.facebook.com/LevelUpTuts) sdf
 ## Notes
+### AWS TechCHAT
+#### AWS 35
+Deep dive on databases
+#### AWS 53
+SysAdmin & Hybrid Cloud Special\
+AWS CLI and AWS Tools for PowerShell are available for AWS.
 ### Azure DevOps Podcast
 #### ADP 48
 Testing and static analysis
