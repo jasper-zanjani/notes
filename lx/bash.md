@@ -1,19 +1,8 @@
-# Bash
+### bash
+- `getopt` and `argp_parse` reorder the elements of `argv` by default, but this behavior can be suppressed by setting the `_POSIX_OPTION_ORDER` environment variable
+#### Terminal prompt
 
-### Invocation
-  - single alphanumeric character preceded by a hyphen
-  - `--` ends all command-line option arguments, subsequent arguments are non-option arguments
-  - `getopt` and `argp_parse` reorder the elements of `argv` by default, but this behavior can be suppressed by setting the `_POSIX_OPTION_ORDER` environment variable
-  - long names are conventionally preceded by `--`, and they may be abbreviated by users if unique
-
-### Configuration
-
-Syntax                  | Effect
-:---                    | :---
-`C:\Program Files\Git\etc\profile.d\git-prompt.sh` | Git Bash `.bashrc` location
-`PS1`                   | environment variable accepting a string of escaped character sequences representing colors and strings
-
-Metacharacter           | Effect
+`$PS1` Metacharacters   | Effect
 :---                    | :---
 `\a`                    | a bell character
 `\d`                    | the date (DDD MMM dd)
@@ -40,19 +29,13 @@ Metacharacter           | Effect
 `\[`                    | begin a sequence of non-printing characters (used to embed a terminal control sequence)
 `\]`                    | end a sequence of non-printing characters
 
-### Colors
-ANSI/VT100 terminals and emulators can display colors and formatted texts by using __escape sequences__ ( __escape character__ followed by __format code__, terminated by "m").
+ANSI/VT100 terminals and emulators can display colors and formatted texts by using __escape sequences__ ( __escape character__ followed by __format code__, terminated by "m").\
 Three escape characters:
   - `\e` 
   - `\033`
   - `\x1B`
 
-### Symlinks
-Windows traditionally does not support symlinks
-- `ln -s` will create a copy instead
-- `mklink /d {linkname} {directory}` use `mklink` command prompt command instead
-
-## Syntax
+#### Syntax
 
 Event designator        | Effect
 :---                    | :---
@@ -77,7 +60,7 @@ Content of all loops is bracketed by `do` and `done`: `for i in ... do ...; done
   - `for i in {000..100}; do cmd; done;`
   - `for i in 1 2 3 4 5; do cmd; done;`
 
-Syntax                  | Effect
+Number bases            | Description
 :---                    | :---
 `r#n`                   | general format for interpreting number <n> as having base (radix) <r>
 `2#1111001110011010`    | binary 
@@ -85,21 +68,18 @@ Syntax                  | Effect
 `032`                   | octal 
 `32#@_`                 | base-32: a range of ASCII characters can be used to define numbers with bases up to 64: 10 digits, 26 lowercase characters, 26 uppercase characters, '@', and '_' 
 
-### Command sequences
-  - `;` run commands synchnonously
-  - `&` run commands asynchronously
-  - `&&` logical AND
-  - `||` logical OR
+Command sequence syntax | Effect
+:---                    | :---
+`;`   | run commands synchnonously
+`&`   | run commands asynchronously
+`&&`  | logical AND; run next command synchronously only if first command succeeds
+`||`  | logical OR; run next command synchronously only if first command fails
 
 ### Other commands
 
 Syntax                  | Effect
 :---                    | :---
 `echo "hello" \| pbcopy`| put text onto the Mac OS X clipboard ("PasteBoard") 
-`ls \| sort -R \| sed 1q \| xargs bat` | send a random file from within the current directory to `bat` for display 
-`open .`                | open current directory in Finder (osx)
-`open -a /Applications/application.app` | open {application} from Terminal (osx)
-`explorer.exe .`        | open current directory in Explorer (win)
 
 ## Sources
   - [gnu.org](https://www.gnu.org/software/libc/manual/html_node/Argument-Syntax.html)

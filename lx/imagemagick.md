@@ -1,9 +1,9 @@
-### Image Magick
+### imagemagick
 
-Syntax | Effect
+Command groups | Effect
 :--- | :---
-`mogrify` - resize, blur, crop, despeckle, dither, draw on, flip, join, resample, etc
-`identify`- describes the format and characteristics of one or more image files
+`mogrify` | resize, blur, crop, despeckle, dither, draw on, flip, join, resample, etc
+`identify`| describes the format and characteristics of one or more image files
 
 #### `identify` Options
 `-format {string}` 
@@ -49,11 +49,17 @@ also affected by `-gravity` setting
   - `SouthEast`
 
 ## Examples
-
-Syntax | Effect
-:--- | :---
-`magick mogrify -resize 1920x1200 -write mars-bg.jpg pia22511.jpg` |
-`magick identify -format "%w x %h" pia22511.jpg` | 
-
+```sh
+magick mogrify -resize 1920x1200 -write mars-bg.jpg pia22511.jpg
+```
+```sh
+magick identify -format "%w x %h" pia22511.jpg
+```
+#### Save the output of a command as an image
+`convert` command is from ImageMagick software suite [[2](#sources)]
+```
+cmd | convert label:@- image.png
+``` 
 ### Sources
-  - "Geometry" [imagemagick.org](https://imagemagick.org/script/command-line-processing.php#geometry)
+  1. "Geometry" [imagemagick.org](https://imagemagick.org/script/command-line-processing.php#geometry) 
+  2. Cannon, Jason. [*Command Line Kung Fu*](../sources/clkf.md)
