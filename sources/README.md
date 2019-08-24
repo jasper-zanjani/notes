@@ -1,74 +1,76 @@
 # Sources
 ## Abbreviations
-Abbr.  |  Source
-:---          | :---    
-ADP           | **Azure DevOps Podcast** [Web](http://azuredevopspodcast.clear-measure.com/) Notes: [48](#adp-48)
-BNfP          | **Bash Notes for Professionals**. [Web](goalkicker.com)|
-BPR           | Robbins, Arnold. **Bash Pocket Reference (2nd ed.)**.
-BRM           | Ramey, Chet and Fox, Brian. **Bash Reference Manual**
-BSD           | **BSD Now** [Web](https://www.bsdnow.tv/) [Subreddit](https://www.reddit.com/r/bsdnow) [FaceBook](https://www.facebook.com/BSDNow/) [Twitter](https://twitter.com/bsdnow)
-CB            | **Coding Blocks**
-CCP           | Sweigart, Al. **Cracking Codes With Python**.
-CGF           | **Chengdu Gaming Federation**
-CLKF          | **Command-Line Kung Fu**|Jason Cannon
-CL            | **Choose Linux** [Web](https://chooselinux.show) [Twitter](https://twitter.com/chooselinux)
-CR            | **Coder Radio** [Web](https://coder.show/) [Twitter](https://twitter.com/coderradioshow) Notes: [325](#cr-325) [361](#cr-361)
-CSFM          | **CloudSkills.fm** [Web](https://cloudskills.fm/) Notes: [2](#csfm-2) [3](#csfm-3) [29](#csfm-29)
-CSP           | **Classic Computer Science Problems in Python**| Kopec, David
-DL            | **Destination Linux** [Web](http://destinationlinux.com/) Notes: 
-Extras        | [Web](https://extras.show/)
-FP            | Ramalho, Luciano. **Fluent Python**.
-FPLC          | **Five Principles for Deploying and Managing Linux in the Cloud (With Azure)** [Notes](fplc.md)
-FPP           | Lott, Steven. **Functional Python Programming**
-Friday        | [Web](https://fridaystream.com)
-GL            | **Going Linux** [Web](https://goinglinux.com) [Twitter](https://twitter.com/goinglinux)
-HPR           | **Hacker Public Radio** [Web](http://hackerpublicradio.org/) Links: [1938](#hpr-1938) [2107](#hpr-2107)
-IMWS          | McCabe, John et al. **Introduction to Microsoft Windows Server 2016**.
-ITP           | **ITPro.TV** [Web](https://itpro.tv/)
-JDG           | Flanagan, David. **JavaScript: the Definitive Guide**
-JNfP          | **JavaScript Notes for Professionals** [Web](goalkicker.com)
-JSJ           | **JavaScript Jabber**
-K8S           | **Kubernetes Podcast from Google** [Twitter](http://twitter.com/mkubernetespod) [Email](mailto:kubernetespodcast@google.com) [Web](https://kubernetespodcast.com)
-LALOS         | Cannon, Jason. **Linux Administration: The Linux Operating System**
-LAN           | Linux Action News  [Web](https://linuxactionnews.com/) [Twitter](https://twitter.com/linuxactionnews)
-LC            | **Learn Code the Hard Way**
-LCL           | Shotts, William. **Linux Command Line, the**
-LCN           | **LPI Linux Certification in a Nutshell**
-LGLC          | Eckert, Jason. **Linux+ Guide to Linux Certification, 3rd ed.**
-LH            | **Linux Handbook** [Web](https://linuxhandbook.com/)
-LNL           | **Late Night Linux** Notes: [65](#lnl-65)
-LPI           | **Linux Programming Interface, the**|Kerrisk, Michael
-LS            | Smith, Luke . **Luke Smith YouTube Channel** [YouTube](https://www.youtube.com/channel/UC2eYFnH61tmytImy1mTYvhA)
-LSSP          | Cannon, Jason. **Linux Shell Scripting Projects**
-LU            | **Linux Unplugged** [Web](https://linuxunplugged.com/) [Twitter](https://twitter.com/LinuxUnplugged) Notes [315](#lu-315)
-MC            | **Mint Cast**
-MD            | **Microsoft Docs**
-OOJ           | Antani, Ved and Stefanov, Stoyan. **Object-Oriented JavaScript**
-OSc           | **OpenSource.com**. [Web](https://opensource.com/)
-OST           | **OSTechnix.com**. [Web](https://ostechnix.com/)
-PB            | **Python Bytes**. 
-PBX           | Quigley, Ellie. **Perl by Example, 4th ed.**
-PGL           | Sobell, Mark. **Practical Guide to Linux, A**
-PiaN          | Martelli, Alex. **Python in a Nutshell**
-PP            | Lutz, Mark. **Programming Python**
-PSP           | **PowerScripting Podcast**
-RAR           | **RunAs Radio** [Web](http://www.runasradio.com/) [Twitter](https://twitter.com/RunAsRadio)
-SA            | Dougherty, Dale and Robbins, Arnold. **sed & awk (2nd edition)**
-SY            | **Syntax** [Web](https://syntax.fm/) [Twitter](https://twitter.com/syntaxfm)
-TP            | **Talk Python** [Web](https://talkpython.fm) [Twitter](https://twitter.com/TalkPython) Notes: [213](#tp-213) [216](#tp-216) [224](#tp-224)
-TS            | **TechSNAP** [Web](https://techsnap.systems) [Twitter](https://twitter.com/techsnapsystems)
-TWIG          | **This Week in Games**
-TWIL          | **This Week in Linux**
-UE            | **User Error** [Web](https://error.show/) [Twitter](https://twitter.com/usererrorshow)
-ULSAH         | **Unix and Linux System Administration Handbook**
-UN            | Robbins, Arnold. **Unix in a Nutshell**
-Vim           | Oualline, Steve. **The Vim Book**
-VOV           | **Views on Vue**
-WCL           | Stanek, William R. **Windows Command-Line**.
-WCSS          | Taylor, Dave and Perry, Brandon. **Wicked Cool Shell Scripts**
-WDT           | **Weekly Dev Tips**
-WSAF          | Dauti, Bekim. **Windows Server 2016 Administration Fundamentals**
-YUG           | Das, Sumitabha. **Your Unix: the Ultimate Guide**
+Abbr.                 |  Source
+:---                  | :---    
+ADP                   | **Azure DevOps Podcast** [Web](http://azuredevopspodcast.clear-measure.com/) Notes: [48](#adp-48)
+BNfP                  | **Bash Notes for Professionals**. [Web](goalkicker.com)|
+BPR                   | Robbins, Arnold. **Bash Pocket Reference (2nd ed.)**.
+BRM                   | Ramey, Chet and Fox, Brian. **Bash Reference Manual**
+BSD                   | **BSD Now** [Web](https://www.bsdnow.tv/) [Subreddit](https://www.reddit.com/r/bsdnow) [FaceBook](https://www.facebook.com/BSDNow/) [Twitter](https://twitter.com/bsdnow)
+CB                    | **Coding Blocks**
+CCP                   | Sweigart, Al. **Cracking Codes With Python**.
+CGF                   | **Chengdu Gaming Federation**
+CLKF                  | **Command-Line Kung Fu**|Jason Cannon
+CL                    | **Choose Linux** [Web](https://chooselinux.show) [Twitter](https://twitter.com/chooselinux)
+CR                    | **Coder Radio** [Web](https://coder.show/) [Twitter](https://twitter.com/coderradioshow) Notes: [325](#cr-325) [361](#cr-361)
+CSFM                  | **CloudSkills.fm** [Web](https://cloudskills.fm/) Notes: [2](#csfm-2) [3](#csfm-3) [29](#csfm-29)
+CSP                   | **Classic Computer Science Problems in Python**| Kopec, David
+DL                    | **Destination Linux** [Web](http://destinationlinux.com/) Notes: 
+Extras                | [Web](https://extras.show/)
+FP                    | Ramalho, Luciano. **Fluent Python**.
+FPLC                  | **Five Principles for Deploying and Managing Linux in the Cloud (With Azure)** [Notes](fplc.md)
+FPP                   | Lott, Steven. **Functional Python Programming**
+Friday                | [Web](https://fridaystream.com)
+GL                    | **Going Linux** [Web](https://goinglinux.com) [Twitter](https://twitter.com/goinglinux)
+HPR                   | **Hacker Public Radio** [Web](http://hackerpublicradio.org/) Links: [1938](#hpr-1938) [2107](#hpr-2107)
+IMWS                  | McCabe, John et al. **Introduction to Microsoft Windows Server 2016**.
+ITP                   | **ITPro.TV** [Web](https://itpro.tv/)
+JDG                   | Flanagan, David. **JavaScript: the Definitive Guide**
+JNfP                  | **JavaScript Notes for Professionals** [Web](goalkicker.com)
+JSJ                   | **JavaScript Jabber**
+K8S                   | **Kubernetes Podcast from Google** [Twitter](http://twitter.com/mkubernetespod) [Email](mailto:kubernetespodcast@google.com) [Web](https://kubernetespodcast.com)
+LALOS                 | Cannon, Jason. **Linux Administration: The Linux Operating System**
+LAN                   | Linux Action News  [Web](https://linuxactionnews.com/) [Twitter](https://twitter.com/linuxactionnews)
+LC                    | **Learn Code the Hard Way**
+LCL                   | Shotts, William. **Linux Command Line, the**
+LCN                   | **LPI Linux Certification in a Nutshell**
+LGLC                  | Eckert, Jason. **Linux+ Guide to Linux Certification, 3rd ed.**
+LH                    | **Linux Handbook** [Web](https://linuxhandbook.com/)
+LJ                    | **Linux Journal** Notes: [283](#lj-283)
+LNL                   | **Late Night Linux** Notes: [65](#lnl-65)
+LPI                   | **Linux Programming Interface, the**|Kerrisk, Michael
+LS                    | Smith, Luke . **Luke Smith YouTube Channel** [YouTube](https://www.youtube.com/channel/UC2eYFnH61tmytImy1mTYvhA)
+LSSP                  | Cannon, Jason. **Linux Shell Scripting Projects**
+LU                    | **Linux Unplugged** [Web](https://linuxunplugged.com/) [Twitter](https://twitter.com/LinuxUnplugged) Notes [315](#lu-315)
+MC                    | **Mint Cast**
+MD                    | **Microsoft Docs**
+OOJ                   | Antani, Ved and Stefanov, Stoyan. **Object-Oriented JavaScript**
+OSc                   | **OpenSource.com**. [Web](https://opensource.com/)
+OST                   | **OSTechnix.com**. [Web](https://ostechnix.com/)
+PB                    | **Python Bytes**. 
+PBX                   | Quigley, Ellie. **Perl by Example, 4th ed.**
+PGL                   | Sobell, Mark. **Practical Guide to Linux, A**
+PiaN                  | Martelli, Alex. **Python in a Nutshell**
+PP                    | Lutz, Mark. **Programming Python**
+PSP                   | **PowerScripting Podcast**
+RAR                   | **RunAs Radio** [Web](http://www.runasradio.com/) [Twitter](https://twitter.com/RunAsRadio)
+SA                    | Dougherty, Dale and Robbins, Arnold. **sed & awk (2nd edition)**
+SY                    | **Syntax** [Web](https://syntax.fm/) [Twitter](https://twitter.com/syntaxfm)
+TP                    | **Talk Python** [Web](https://talkpython.fm) [Twitter](https://twitter.com/TalkPython) Notes: [213](#tp-213) [216](#tp-216) [224](#tp-224)
+TS                    | **TechSNAP** [Web](https://techsnap.systems) [Twitter](https://twitter.com/techsnapsystems)
+TWIG                  | **This Week in Games**
+TWIL                  | **This Week in Linux**
+UE                    | **User Error** [Web](https://error.show/) [Twitter](https://twitter.com/usererrorshow)
+ULSAH                 | **Unix and Linux System Administration Handbook**
+UN                    | Robbins, Arnold. **Unix in a Nutshell**
+Vim                   | Oualline, Steve. **The Vim Book**
+VOV                   | **Views on Vue**
+WCL                   | Stanek, William R. **Windows Command-Line**.
+WCSS                  | Taylor, Dave and Perry, Brandon. **Wicked Cool Shell Scripts**
+WDT                   | **Weekly Dev Tips**
+WSAF                  | Dauti, Bekim. **Windows Server 2016 Administration Fundamentals**
+YUG                   | Das, Sumitabha. **Your Unix: the Ultimate Guide**
+
 ## People
 Name                  | Description  
 :---                  | :---         
@@ -151,9 +153,11 @@ Orka is a virtualization layer for Mac build infrastructure offered by hosting c
   - KDE App page
   - Google Stadia
   - How can the FLOSS community take advantage of the opportunity presented by the sunsetting of Windows 7?
+### Linux Journal
+#### LJ 283
+- **ClusterShell**: Python tool and library to connect a set of nodes in parallel through SSH
 ### Linux Unplugged
 #### LU 315
-
 ### Talk Python
 #### TP 213
 > "WebAssembly and CPython".

@@ -17,6 +17,10 @@ Import/Export service allows the physical shipment of disks to Azure for import.
 4. Create an import job through Azure portal.. This requires a Windows computer with .NET Framework and BitLocker.
 #### File Sync
 Azure File Sync communicates over TCP 443 over SSL, and **not** IPSec.
+**Cloud tiering** is an optional feature inw hich frequently accsesed files are cached locally while all other files are **tiered** to Azure Files based on policy.\
+File Sync terminology:
+  - **Storage Sync Service** top-level Azure resource for Azure File Sync
+  - **Sync group** defines sync topology for a set of files
 ## Backup
 Azure Backup can backup both Azure VMs and on-premises Windows machines
 
