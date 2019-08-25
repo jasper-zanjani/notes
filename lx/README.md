@@ -19,7 +19,7 @@ $HOME/.forward  | forwarding to only one address
 ## Commands
 All commands
 :---:
-[at](#at)  [bash](bash.md) [cat](cat.md) [crontab](crontab.md) [date](date.md) [dhclient](#dhclient) [elvish](elvish.md) [fish](fish.md) [free](#free) [fusermount](#fusermount) [history](#history) [imagemagick](imagemagick.md) [install](#install) [make](make.md) [mkdir](#mkdir) [sudo](sudo.md) [test](test.md) [tmux](tmux.md) [watch](watch.md)  
+[at](#at)  [bash](bash.md) [cat](cat.md) [crontab](crontab.md) [date](date.md) [dhclient](#dhclient) [elvish](elvish.md) [fish](fish.md) [free](#free) [fusermount](#fusermount) [history](#history) [imagemagick](imagemagick.md) [install](#install) [make](make.md) [mkdir](#mkdir) [mktemp](#mktemp) [sudo](sudo.md) [test](test.md) [tmux](tmux.md) [watch](watch.md)  
 **Disk** [partx](#partx) [sfdisk](#sfdisk) 
 **E-mail** [mail](#mail) [mailq](#mailq) [postfix](#postfix) [qmail](#qmail) [sendmail](#sendmail) [ssmtp](#ssmtp) 
 **Filters** [awk](awk.md) [grep](#grep) [less](less.md) [sed](#sed) [shuf](#shuf) [sort](#sort) [tr](#tr) 
@@ -255,6 +255,33 @@ Prints summary of mail messages queued for future delivery
 ```sh
 mkdir -p ~/my-app/{bin,lib,log}
 ```
+### mktemp
+Create a temporary file or directory safely and print its name. These will not need to be manually cleaned up because they will be placed in the temporary directory (**/tmp**) [[29](#sources)]
+#### Create a new temporary file
+```sh
+mktemp
+```
+#### Create a new temporary directory
+```sh
+mktemp -d
+```
+#### Create a new temporary file or directory with a custom name
+Append at least 3 `X`'s to the end of the filename
+```sh
+mktemp ostechnixXXX
+```
+Add a suffix
+```sh
+mktemp ostechnixXXX --suffix=blog
+```
+### mv
+Option              | Effect
+:---                | :---
+`--backup`          | takes an argument defining how the backup file is named (not available in BSD): <br/> `existing` if numbered backups already exist in the destination, then a numbered backup is created. Otherwise, the `simple` scheme is used <br/> `none` do not create a backup even if `--backup` is set; useful to override a `mv` alias that sets the `--backup` option <br/> `numbered` append number to the destination file <br/> `simple` append "~" to the destination filename, which will be hidden when running `ls --ignore-backups`
+`--force` `-f`      | overrides `--interactive`
+`--interactive` `-i`| 
+`--no-clobber` `-n` | silently reject move action in the event of a conflict
+`--update` `-u`     | only overwrite if the modification time of the destination is older than the source
 ### nc
 The netcat utility allows testing of a host's ports, similar to __ping__, but more versatile because __ping__ only uses the portless ICMP protocol. GNU and OpenBSD versions available (itp-l+: 28)
 #### Connect to host on port 80
@@ -1102,3 +1129,5 @@ ZynAddSubFX                     | LMMS plugin, used with synthesizers [[1](#sour
   26. "Linux Mail Server Postfix Architecture" [YouTube](https://youtu.be/qhA8HuJBa64)
   27. "Qmail deprecation" [archlinux.org](https://www.archlinux.org/news/qmail-deprecation/)
   28. "Free Command in Linux Explained With Examples". [linuxhandbook.com](https://linuxhandbook.com/free-command/)
+  29. "The `mktemp` Command Tutorial With examples". [OSTechnix](https://www.ostechnix.com/the-mktemp-command-tutorial-with-examples-for-beginners/)
+  30. "How to move a file in Linux". [opensource.com](https://opensource.com/article/19/8/moving-files-linux-depth): 2019/08/22.
