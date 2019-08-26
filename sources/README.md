@@ -1,104 +1,122 @@
 # Sources
 ## Abbreviations
-Abbr.                 |  Source
-:---                  | :---    
-ADP                   | **Azure DevOps Podcast** [Web](http://azuredevopspodcast.clear-measure.com/) Notes: [48](#adp-48)
-BNfP                  | **Bash Notes for Professionals**. [Web](goalkicker.com)|
-BPR                   | Robbins, Arnold. **Bash Pocket Reference (2nd ed.)**.
-BRM                   | Ramey, Chet and Fox, Brian. **Bash Reference Manual**
-BSD                   | **BSD Now** [Web](https://www.bsdnow.tv/) [Subreddit](https://www.reddit.com/r/bsdnow) [FaceBook](https://www.facebook.com/BSDNow/) [Twitter](https://twitter.com/bsdnow)
-CB                    | **Coding Blocks**
-CCP                   | Sweigart, Al. **Cracking Codes With Python**.
-CGF                   | **Chengdu Gaming Federation**
-CLKF                  | **Command-Line Kung Fu**|Jason Cannon
-CL                    | **Choose Linux** [Web](https://chooselinux.show) [Twitter](https://twitter.com/chooselinux)
-CR                    | **Coder Radio** [Web](https://coder.show/) [Twitter](https://twitter.com/coderradioshow) Notes: [325](#cr-325) [361](#cr-361)
-CSFM                  | **CloudSkills.fm** [Web](https://cloudskills.fm/) Notes: [2](#csfm-2) [3](#csfm-3) [29](#csfm-29)
-CSP                   | **Classic Computer Science Problems in Python**| Kopec, David
-DL                    | **Destination Linux** [Web](http://destinationlinux.com/) Notes: 
-Extras                | [Web](https://extras.show/)
-FP                    | Ramalho, Luciano. **Fluent Python**.
-FPLC                  | **Five Principles for Deploying and Managing Linux in the Cloud (With Azure)** [Notes](fplc.md)
-FPP                   | Lott, Steven. **Functional Python Programming**
-Friday                | [Web](https://fridaystream.com)
-GL                    | **Going Linux** [Web](https://goinglinux.com) [Twitter](https://twitter.com/goinglinux)
-HPR                   | **Hacker Public Radio** [Web](http://hackerpublicradio.org/) Links: [1938](#hpr-1938) [2107](#hpr-2107)
-IMWS                  | McCabe, John et al. **Introduction to Microsoft Windows Server 2016**.
-ITP                   | **ITPro.TV** [Web](https://itpro.tv/)
-JDG                   | Flanagan, David. **JavaScript: the Definitive Guide**
-JNfP                  | **JavaScript Notes for Professionals** [Web](goalkicker.com)
-JSJ                   | **JavaScript Jabber**
-K8S                   | **Kubernetes Podcast from Google** [Twitter](http://twitter.com/mkubernetespod) [Email](mailto:kubernetespodcast@google.com) [Web](https://kubernetespodcast.com)
-LALOS                 | Cannon, Jason. **Linux Administration: The Linux Operating System**
-LAN                   | Linux Action News  [Web](https://linuxactionnews.com/) [Twitter](https://twitter.com/linuxactionnews)
-LC                    | **Learn Code the Hard Way**
-LCL                   | Shotts, William. **Linux Command Line, the**
-LCN                   | **LPI Linux Certification in a Nutshell**
-LGLC                  | Eckert, Jason. **Linux+ Guide to Linux Certification, 3rd ed.**
-LH                    | **Linux Handbook** [Web](https://linuxhandbook.com/)
-LJ                    | **Linux Journal** Notes: [283](#lj-283)
-LNL                   | **Late Night Linux** Notes: [65](#lnl-65)
-LPI                   | **Linux Programming Interface, the**|Kerrisk, Michael
-LS                    | Smith, Luke . **Luke Smith YouTube Channel** [YouTube](https://www.youtube.com/channel/UC2eYFnH61tmytImy1mTYvhA)
-LSSP                  | Cannon, Jason. **Linux Shell Scripting Projects**
-LU                    | **Linux Unplugged** [Web](https://linuxunplugged.com/) [Twitter](https://twitter.com/LinuxUnplugged) Notes [315](#lu-315)
-MC                    | **Mint Cast**
-MD                    | **Microsoft Docs**
-OOJ                   | Antani, Ved and Stefanov, Stoyan. **Object-Oriented JavaScript**
-OSc                   | **OpenSource.com**. [Web](https://opensource.com/)
-OST                   | **OSTechnix.com**. [Web](https://ostechnix.com/)
-PB                    | **Python Bytes**. 
-PBX                   | Quigley, Ellie. **Perl by Example, 4th ed.**
-PGL                   | Sobell, Mark. **Practical Guide to Linux, A**
-PiaN                  | Martelli, Alex. **Python in a Nutshell**
-PP                    | Lutz, Mark. **Programming Python**
-PSP                   | **PowerScripting Podcast**
-RAR                   | **RunAs Radio** [Web](http://www.runasradio.com/) [Twitter](https://twitter.com/RunAsRadio)
-SA                    | Dougherty, Dale and Robbins, Arnold. **sed & awk (2nd edition)**
-SY                    | **Syntax** [Web](https://syntax.fm/) [Twitter](https://twitter.com/syntaxfm)
-TP                    | **Talk Python** [Web](https://talkpython.fm) [Twitter](https://twitter.com/TalkPython) Notes: [213](#tp-213) [216](#tp-216) [224](#tp-224)
-TS                    | **TechSNAP** [Web](https://techsnap.systems) [Twitter](https://twitter.com/techsnapsystems)
-TWIG                  | **This Week in Games**
-TWIL                  | **This Week in Linux**
-UE                    | **User Error** [Web](https://error.show/) [Twitter](https://twitter.com/usererrorshow)
-ULSAH                 | **Unix and Linux System Administration Handbook**
-UN                    | Robbins, Arnold. **Unix in a Nutshell**
-Vim                   | Oualline, Steve. **The Vim Book**
-VOV                   | **Views on Vue**
-WCL                   | Stanek, William R. **Windows Command-Line**.
-WCSS                  | Taylor, Dave and Perry, Brandon. **Wicked Cool Shell Scripts**
-WDT                   | **Weekly Dev Tips**
-WSAF                  | Dauti, Bekim. **Windows Server 2016 Administration Fundamentals**
-YUG                   | Das, Sumitabha. **Your Unix: the Ultimate Guide**
+Abbr.                   |  Source
+:---                    | :---    
+ADP                     | **Azure DevOps Podcast** [Web](http://azuredevopspodcast.clear-measure.com/) Notes: [48](#adp-48)
+AWS                     | **AWS Podcast** [Web](https://aws.amazon.com/podcasts/aws-podcast/) Notes: [329](#aws-329)
+AWST                    | **AWS TechChat** Notes: [35](#awst-35) [53](#awst-53)
+BNfP                    | **Bash Notes for Professionals**. [Web](goalkicker.com)|
+BPR                     | Robbins, Arnold. **Bash Pocket Reference (2nd ed.)**.
+BRM                     | Ramey, Chet and Fox, Brian. **Bash Reference Manual**
+BSD                     | **BSD Now** [Web](https://www.bsdnow.tv/) [Subreddit](https://www.reddit.com/r/bsdnow) [FaceBook](https://www.facebook.com/BSDNow/) [Twitter](https://twitter.com/bsdnow)
+CB                      | **Coding Blocks**
+CCP                     | Sweigart, Al. **Cracking Codes With Python**.
+CGF                     | **Chengdu Gaming Federation**
+CLKF                    | **Command-Line Kung Fu**|Jason Cannon
+CL                      | **Choose Linux** [Web](https://chooselinux.show) [Twitter](https://twitter.com/chooselinux)
+CR                      | **Coder Radio** [Web](https://coder.show/) [Twitter](https://twitter.com/coderradioshow) Notes: [325](#cr-325) [361](#cr-361)
+CSFM                    | **CloudSkills.fm** [Web](https://cloudskills.fm/) Notes: [2](#csfm-2) [3](#csfm-3) [29](#csfm-29)
+CSP                     | **Classic Computer Science Problems in Python**| Kopec, David
+DL                      | **Destination Linux** [Web](http://destinationlinux.com/) Notes: 
+Extras                  | [Web](https://extras.show/)
+FP                      | Ramalho, Luciano. **Fluent Python**.
+FPLC                    | **Five Principles for Deploying and Managing Linux in the Cloud (With Azure)** [Notes](fplc.md)
+FPP                     | Lott, Steven. **Functional Python Programming**
+Friday                  | [Web](https://fridaystream.com)
+GL                      | **Going Linux** [Web](https://goinglinux.com) [Twitter](https://twitter.com/goinglinux)
+HPR                     | **Hacker Public Radio** [Web](http://hackerpublicradio.org/) Links: [1938](#hpr-1938) [2107](#hpr-2107)
+IMWS                    | McCabe, John et al. **Introduction to Microsoft Windows Server 2016**.
+ITP                     | **ITPro.TV** [Web](https://itpro.tv/)
+JDG                     | Flanagan, David. **JavaScript: the Definitive Guide**
+JNfP                    | **JavaScript Notes for Professionals** [Web](goalkicker.com)
+JSJ                     | **JavaScript Jabber**
+K8S                     | **Kubernetes Podcast from Google** [Twitter](http://twitter.com/mkubernetespod) [Email](mailto:kubernetespodcast@google.com) [Web](https://kubernetespodcast.com)
+LALOS                   | Cannon, Jason. **Linux Administration: The Linux Operating System**
+LAN                     | Linux Action News  [Web](https://linuxactionnews.com/) [Twitter](https://twitter.com/linuxactionnews)
+LC                      | **Learn Code the Hard Way**
+LCL                     | Shotts, William. **Linux Command Line, the**
+LCN                     | **LPI Linux Certification in a Nutshell**
+LGLC                    | Eckert, Jason. **Linux+ Guide to Linux Certification, 3rd ed.**
+LH                      | **Linux Handbook** [Web](https://linuxhandbook.com/)
+LJ                      | **Linux Journal** Notes: [283](#lj-283)
+LNL                     | **Late Night Linux** Notes: [65](#lnl-65)
+LPI                     | **Linux Programming Interface, the**|Kerrisk, Michael
+LS                      | Smith, Luke . **Luke Smith YouTube Channel** [YouTube](https://www.youtube.com/channel/UC2eYFnH61tmytImy1mTYvhA)
+LSSP                    | Cannon, Jason. **Linux Shell Scripting Projects**
+LU                      | **Linux Unplugged** [Web](https://linuxunplugged.com/) [Twitter](https://twitter.com/LinuxUnplugged) Notes [315](#lu-315)
+MC                      | **Mint Cast**
+MD                      | **Microsoft Docs**
+OOJ                     | Antani, Ved and Stefanov, Stoyan. **Object-Oriented JavaScript**
+OSc                     | **OpenSource.com**. [Web](https://opensource.com/)
+OST                     | **OSTechnix.com**. [Web](https://ostechnix.com/)
+PB                      | **Python Bytes**. 
+PBX                     | Quigley, Ellie. **Perl by Example, 4th ed.**
+PGL                     | Sobell, Mark. **Practical Guide to Linux, A**
+PiaN                    | Martelli, Alex. **Python in a Nutshell**
+PP                      | Lutz, Mark. **Programming Python**
+PSP                     | **PowerScripting Podcast**
+RAR                     | **RunAs Radio** [Web](http://www.runasradio.com/) [Twitter](https://twitter.com/RunAsRadio)
+SA                      | Dougherty, Dale and Robbins, Arnold. **sed & awk (2nd edition)**
+SY                      | **Syntax** [Web](https://syntax.fm/) [Twitter](https://twitter.com/syntaxfm)
+TP                      | **Talk Python** [Web](https://talkpython.fm) [Twitter](https://twitter.com/TalkPython) Notes: [213](#tp-213) [216](#tp-216) [224](#tp-224)
+TS                      | **TechSNAP** [Web](https://techsnap.systems) [Twitter](https://twitter.com/techsnapsystems)
+TWIG                    | **This Week in Games**
+TWIL                    | **This Week in Linux**
+UE                      | **User Error** [Web](https://error.show/) [Twitter](https://twitter.com/usererrorshow)
+ULSAH                   | **Unix and Linux System Administration Handbook**
+UN                      | Robbins, Arnold. **Unix in a Nutshell**
+Vim                     | Oualline, Steve. **The Vim Book**
+VOV                     | **Views on Vue**
+WCL                     | Stanek, William R. **Windows Command-Line**.
+WCSS                    | Taylor, Dave and Perry, Brandon. **Wicked Cool Shell Scripts**
+WDT                     | **Weekly Dev Tips**
+WSAF                    | Dauti, Bekim. **Windows Server 2016 Administration Fundamentals**
+YUG                     | Das, Sumitabha. **Your Unix: the Ultimate Guide**
 
 ## People
-Name                  | Description  
-:---                  | :---         
-Bos, Wes              | Host: [SY](#abbreviations)  [Twitter](https://twitter.com/wesbos)
-Box, Craig            | Host: [K8S](#abbreviations) [Twitter](http://twitter.com/craigbox)
-Bushey, Larry         | Host: [GL](#abbreviations)  [Twitter](https://twitter.com/goinglinux) [LinkedIn](https://www.linkedin.com/in/larrybushey/)
-Campbell, Richard     | Host: [RAR](#abbreviations)  [Twitter](https://twitter.com/richcampbell)
-Chapman, Chris        | Guest: [K8S 67](#k8s-67) 
-Domenick, Michael     | Host: [CR](#abbreviations)  [Twitter](https://twitter.com/dominucco)
-Fisher, Chris         | Host: [LU](#abbreviations)  [Twitter](https://twitter.com/ChrisLAS)
-Glick, Adam           | Host: [K8S](#abbreviations) [Twitter](http://twitter.com/mobileglick)
-Jude, Allan           | Host: [BSD](#abbreviations)  [Web](https://www.scaleengine.com/) [FaceBook](https://facebook.com/allanjude) [LinkedIn](https://www.linkedin.com/in/allanjude/)
-Kennedy, Michael      | Host: [TP](#abbreviations) [PB](#podcasts) | [Twitter](https://twitter.com/mkennedy)
-Palermo, Jeffrey      | Host: [ADP](#abbreviations) [Twitter](https://twitter.com/jeffreypalermo) [LinkedIn](https://www.linkedin.com/in/palermo/) [Website](http://jeffreypalermo.com/)
-Payne, Wes            | Host: [TS](#abbreviations), [CR](#abbreviations)
-Pfeiffer, Mike        | Host: [CSFM](#abbreviations)  [Web](https://mikepfeiffer.io) [Twitter](https://twitter.com/mike**pfeiffer) [Facebook](https://www.facebook.com/mikepfeifferhq/)
-Pope, Alan            | Host: [UE](#abbreviations) | [Twitter](https://twitter.com/popey)
-Reuschling, Benedict  | Host: [BSD](#abbreviations) | [Twitter](https://twitter.com/bsdbcr)
-Ressington, Joe       | Host: [LAN](#abbreviations) [UE](#abbreviations) [CL](#abbreviations) | [Web](https://joeress.com) [Twitter](https://twitter.com/JoeRessington)
-Robbins, Arnold       | **Bash Pocket Reference**, **Unix in a Nutshell**, **sed & awk**
-Francis, Joel (Sallow) | Guest: [PSP](#abbreviations) [Twitter](https://twitter.com/vexx32) [GitHub](https://github.com/vexx32) [LinkedIn](https://www.linkedin.com/in/joel-francis-356539128/)
-Smith, Steve (ardalis)| Host: [WDT](#abbreviations) Guest: [ADP 40](#adp-40)  [LinkedIn](https://www.linkedin.com/in/stevenandrewsmith/) [Twitter](https://twitter.com/ardalis)
-Tolinski, Scott       | Host: [SY](#abbreviations) | [Twitter](https://twitter.com/stolinski) [Github](https://github.com/stolinski) [BitBucket](https://bitbucket.org/stolinski) [Facebook](https://www.facebook.com/LevelUpTuts) sdf
+Name                    | Description  
+:---                    | :---         
+Barr, Jeff              | Host: [AWS](#abbreviations) [Twitter](https://twitter.com/intent/user?screen_name=jeffbarr)
+Bos, Wes                | Host: [SY](#abbreviations)  [Twitter](https://twitter.com/wesbos)
+Box, Craig              | Host: [K8S](#abbreviations) [Twitter](http://twitter.com/craigbox)
+Bushey, Larry           | Host: [GL](#abbreviations)  [Twitter](https://twitter.com/goinglinux) [LinkedIn](https://www.linkedin.com/in/larrybushey/)
+Campbell, Richard       | Host: [RAR](#abbreviations)  [Twitter](https://twitter.com/richcampbell)
+Chapman, Chris          | Guest: [K8S 67](#k8s-67) 
+Domenick, Michael       | Host: [CR](#abbreviations)  [Twitter](https://twitter.com/dominucco)
+Elisha, Simon           | Host: [AWS](#abbreviations) [Twitter](https://twitter.com/intent/user?screen_name=simon_elisha)
+Fisher, Chris           | Host: [LU](#abbreviations)  [Twitter](https://twitter.com/ChrisLAS)
+Glick, Adam             | Host: [K8S](#abbreviations) [Twitter](http://twitter.com/mobileglick)
+Hunt, Randall           | Guest: AWS [329](#aws-328)
+Jude, Allan             | Host: [BSD](#abbreviations)  [Web](https://www.scaleengine.com/) [FaceBook](https://facebook.com/allanjude) [LinkedIn](https://www.linkedin.com/in/allanjude/)
+Kennedy, Michael        | Host: [TP](#abbreviations) [PB](#podcasts) | [Twitter](https://twitter.com/mkennedy)
+Palermo, Jeffrey        | Host: [ADP](#abbreviations) [Twitter](https://twitter.com/jeffreypalermo) [LinkedIn](https://www.linkedin.com/in/palermo/) [Website](http://jeffreypalermo.com/)
+Payne, Wes              | Host: [TS](#abbreviations), [CR](#abbreviations)
+Pfeiffer, Mike          | Host: [CSFM](#abbreviations)  [Web](https://mikepfeiffer.io) [Twitter](https://twitter.com/mike**pfeiffer) [Facebook](https://www.facebook.com/mikepfeifferhq/)
+Pope, Alan              | Host: [UE](#abbreviations) | [Twitter](https://twitter.com/popey)
+Reuschling, Benedict    | Host: [BSD](#abbreviations) | [Twitter](https://twitter.com/bsdbcr)
+Ressington, Joe         | Host: [LAN](#abbreviations) [UE](#abbreviations) [CL](#abbreviations) | [Web](https://joeress.com) [Twitter](https://twitter.com/JoeRessington)
+Robbins, Arnold         | **Bash Pocket Reference**, **Unix in a Nutshell**, **sed & awk**
+Francis, Joel (Sallow)  | Guest: [PSP](#abbreviations) [Twitter](https://twitter.com/vexx32) [GitHub](https://github.com/vexx32) [LinkedIn](https://www.linkedin.com/in/joel-francis-356539128/)
+Smith, Steve (ardalis)  | Host: [WDT](#abbreviations) Guest: [ADP 40](#adp-40)  [LinkedIn](https://www.linkedin.com/in/stevenandrewsmith/) [Twitter](https://twitter.com/ardalis)
+Tolinski, Scott         | Host: [SY](#abbreviations) | [Twitter](https://twitter.com/stolinski) [Github](https://github.com/stolinski) [BitBucket](https://bitbucket.org/stolinski) [Facebook](https://www.facebook.com/LevelUpTuts) sdf
 ## Notes
+### AWS Podcast
+#### AWS 329
+Choosing a Database Platform\
+The historical motivation for the invention of relational databases was minimizing the cost of storage by eliminating duplication. At the turn of the century, as storage cost fell, other database paradigms emerged, producing **7 fundamental categories of data**:
+  - **Relational** data
+  - **Key-value** data: divided into **key-to-blob** storage and **key-to-document** storage
+  - **In-memory** storage: i.e. Redis, MemCacheD
+  - **Graph** storage
+  - **Search**: introspection into natural-language queries, i.e. **Managed Elastic Search**
+  - **Time-series**
+  - **Ledger**
+
+The recommended approach to select a database is to determine the **access pattern** needed. Organizations should be open to encouraging innovation by using more than one database, rather than overemphasizing reducing the cost of infrastructure by insisting on using a single, monolithic database that may not be suited to every business purpose.
 ### AWS TechCHAT
-#### AWS 35
+#### AWST 35
 Deep dive on databases
-#### AWS 53
+#### AWST 53
 SysAdmin & Hybrid Cloud Special\
 AWS CLI and AWS Tools for PowerShell are available for AWS.
 ### Azure DevOps Podcast
