@@ -20,7 +20,7 @@ Reduced-availability Storage      | Cool Blob Storage           | S3 Standard-In
 Archival Storage                  | Archive Blob Storage        | Glacier |  [ Coldline ](https://cloud.google.com/storage/archival/)
 Physical data transport           | Import/Export Service, Data Box | Snowball | GCS Transfer appliance [[16](#sources)]
 RDBMS                             | SQL Database                | Relational Database Service (RDS), Aurora | SQL, Spanner
-NoSQL: Key-value                  | Table Storage               | DynamoDB   | [Firestore](#firestore), [Bigtable](#bigtable)
+NoSQL: Key-value                  | Table Storage               | [ DynamoDB ](#dynamodb)   | [Firestore](#firestore), [Bigtable](#bigtable)
 NoSQL: Indexed                    | [Cosmos DB](#cosmosdb)      | SimpleDB |  [Firestore](#firestore)
 Batch Data Processing             | HDInsight, Batch            | Elastic MapReduce (EMR), Batch | Dataproc, Dataflow
 Stream Data Processing            | Stream Analytics            | Kinesis |  Dataflow
@@ -80,6 +80,11 @@ gs://BUCKET_NAME/OBJECT_NAME
 [gcloud command-line tool](https://cloud.google.com/sdk/gcloud/)
 #### CosmosDB
 Microsoft Azure NoSQL database service optimized for mobile and web applications that offers graph, document, and key-value APIs [[11](#sources)].
+#### DynamoDB
+Wide-column NoSQL database with the choice between **strongly consistent** and **eventually consistent** (half the cost) reads. DynamoDB offers two types of indexes: **Global Secondary Index** and **Local Secondary Index (LSI)**. The LSI is an alternate sort key attribute. GSI allow you to create a completely new aggregation of data, whereas LSI only allows sorting.\
+GSI updates are eventually consistent, with asynchronous updates populated after an update response is passed to the client.[[18](#sources)]\
+DynamoDB Streams (changelog for the DynamoDB table) interfaces with AWS Lambda to implement **complex queries**, computed values like sum, average, maximum, etc. These are implemented in a different **processing space** than the DynamoDB table itself, so that it does not affect the table. AWS Lambda has an **invocation role** which defines what Lambda can **see** (triggered upon a change to the table as reported in DynamoDB Streams) and an **execution role** which defines what it can **do**.[[18](#sources)]
+
 #### Firestore
 NoSQL Document database service offering high performance and automatic scaling intended for serverless mobile and web application development with Cloud App Engine.
   - **History**: Firestore was released from beta in early 2019 and combines and improves upon functionality of previous products named **Cloud Datastore** and **Firebase Realtime Database** [[8,9](#sources)]. Firestore features a compatibility mode that emulates the behavior of Datastore in accessing Firestore's storage layer while removing some of Datastore's limitations.
@@ -127,7 +132,6 @@ Scale out         | increase __instance count__ of existing resources: non-disru
 Scale up          | increase __instance size__ of existing resources: __disruptive__ [[7](#sources)]
 Serverless architecture | software design pattern where applications are hosted by a third-party service and are executed only when needed. Typically used for simple, transaction-type functions that are run often.
 zone              | a part of the domain namespace delegated to a legal entity (person or organization) who is responsible for maintaining it, i.e. Top-Level Domains (".com"), second-level domains ("example.com"), and subdomains; also an administrative function allowing for granular control of DNS components [[14](#sources)]
-
 ## Sources
   1. Washam, Michael; Tuliani, Jonathan; Hoag, Scott. _Exam Ref AZ-103 Microsoft Azure Administrator_. [AZ-103](sources/az-103.md)
   2. "Zero to App: Live Coding an App with Firebase (Firebase Dev Summit 2017)". [YouTube](https://www.youtube.com/watch?v=VTkM5BbnslU)
@@ -145,4 +149,5 @@ zone              | a part of the domain namespace delegated to a legal entity (
   14. "DNS zones explained". [Pocket](https://app.getpocket.com/read/2495535941) -> [ns1.com](https://ns1.com/resources/dns-zones-explained)
   15. "gsutil tool". [Google Cloud](https://cloud.google.com/storage/docs/gsutil).
   16. "Uploading files to GCS (Cloud Storage Bytes". [YouTube](https://youtu.be/nmZxfuFIP08).
-  17. "SysAdmin & Hybrid Cloud Special". [AWS TechChat](../sources/README.md#aws-53)
+  17. "SysAdmin & Hybrid Cloud Special". [AWS TechChat](../sources/README.md#aws-53) 
+  18. "AWS re:Invent 2018: Amazon DynamoDB Deep Dive: Advanced Design Patterns for DynamoDB (DAT401)". [YouTube](https://youtu.be/HaEPXoXVf2k).
