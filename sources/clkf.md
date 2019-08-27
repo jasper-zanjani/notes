@@ -1,70 +1,83 @@
 # Command-Line Kung-Fu, by Jason Cannon
 #### Run the last command as root
-```
+```sh
 sudo !!` `su -c "!!"
 ```
 #### Repeat the last command that started with a given string
-```
+```sh
 !<string>
 ```
 #### Reuse the second word (first argument) from the previous command
-```
+```sh
 !^
 ```
 #### Reuse the last word (last argument) from the previous command
-```
+```sh
 !$
 ```
 #### n-th word of previous command
 `n` is 0-indexed, so `!!:0` would refer to the command itself, etc
-```
+```sh
 !!:n
 ```
 #### n-th word of current command
 `n` is 0-indexed, so `!#:0` would be the command itself, etc
-```
+```sh
 !#:n
 ```
 #### Replace only the first occurrence of a string
 Trailing `^` is optional, but the string must be placed within angle brackets
-```
+```sh
 ^<string1>^<string2>^
 ```
 #### Replace all occurrences of a string
 Trailing `^` is required
-```
+```sh
 ^<string1>^<string2>^:&
 ```
 #### Save a copy of your command line session
-```
+```sh
 script
 ```
 #### Find out which commands you use most often
-```
+```sh
 history | awk '{print $2' | sort | uniq -c | sort -rn | head
 ```
 #### Clear your shell history
-```
+```sh
 history -c
 ```
 #### Strip out comments and blank lines
-```
+```sh
 grep -E -v "^#|^$" file
 ```
 #### Use vim to edit files over the network
-`vim scp://user@host/path/file`
+```sh
+vim scp://user@host/path/file
+```
 #### Display output in a table
-`| column -t` : pipe output of another command into `column -t`; space-delimited text is put into columns
+Pipe output of another command into `column -t`; space-delimited text is put into columns
+```sh
+command | column -t
+```
 #### Grab the last word on a line of output
-`awk '{print $NF}' file`
+```sh
+awk '{print $NF}' file
+```
 #### View colorized output with less
-`| less -R`
-: force `less` to preserve the raw string codes of input
+Force `less` to preserve the raw string codes of input
+```sh
+cmd | less -R
+```
 #### Preserve color when piping to grep
-`| grep --color=never`
-prevent `grep` from recolorizing input
+Prevent `grep` from recolorizing input
+```sh
+cmd | grep --color=never
+```
 #### Append text to a file using sudo
-`| sudo tee`
+```sh
+cmd | sudo tee
+```
 #### Change the case of a string
 ```sh
 tr [:upper:] [:lower:]
@@ -171,22 +184,21 @@ ssh -N -L localport:host:remoteport remotehost
 sudo netstat -nutlp
 ```
 #### Use a different SSH key for a given remote host
-modify the `~/.ssh/config` file
+Modify the `~/.ssh/config` file
 ```config
 Host remote-host
 IdentityFile ~/.ssh/id_rsa-remote-host
 ```
-
-`ssh -i ~/.ssh/id_rsa-db1 db1.example.com`
-: use different SSH keys for different hosts by specifying the `-i` option
-
+Use different SSH keys for different hosts by specifying the `-i` option
+```sh
+ssh -i ~/.ssh/id_rsa-db1 db1.example.com
+```
 #### Avoid having to type your username when connecting via SSH
-modify the `~/.ssh/config` file
+Modify the `~/.ssh/config` file to avoid having to type {username@} when connecting to {remote-host}
 ```config
 Host remote-host
 User username
 ```
-: avoid having to type {username@} when connecting to {remote-host}
 #### Simplify multi-hop SSH connections and transparently proxy SSH
 modify the `~/.ssh/config` file
 ```config
@@ -195,33 +207,33 @@ Host jumphost.example.com
 Host *.example.com
   ProxyCommand ssh -W %h:%p jumphost.example.com
 ```
-: configure SSH to automatically use a gateway server when accessing a host and proxy a ssh connection to server1 from through {jumphost}
-
+Configure SSH to automatically use a gateway server when accessing a host and proxy a ssh connection to server1 from through {jumphost}
 #### Disconnect from a remote session and reconnect at a later time, picking up where you left off
-start a screen session before launching a long-running process on a remote host, but after connecting via SSH. By detaching the session and then reattaching later, you can review output using vim keybindings
-
+Start a screen session before launching a long-running process on a remote host, but after connecting via SSH. By detaching the session and then reattaching later, you can review output using vim keybindings
 #### Configure SSH to append domain names to host names based on a pattern
 modify the `~/.ssh/config` file
 ```config
 host-prefix* !*.domain.com
   HostName %h.domain.com
 ```
-
 #### Run a command immune to hangups, allowing the job to run after you disconnect
-`nohup command &`
-
+```sh
+nohup command &
+```
 #### Encrypt your web browsing data with an SSH SOCKS proxy
-i`ssh -D PORT remote-host`
-
+```sh
+ssh -D PORT remote-host
+```
 #### Download a webpage, HTTP data, or use a web API from the command-line
-`curl -o file.html http://website/webpage`
-`wget http://website/webpage`
-
+```sh
+curl -o file.html http://website/webpage
+wget http://website/webpage
+```
 #### Use vim to edit files over the network
-`vim scp://remotehost//path/to/file`
-`vim scp://remote-user@remote-host//path/to/file`
-
-
+```sh
+vim scp://remotehost//path/to/file
+vim scp://remote-user@remote-host//path/to/file
+```
 #### Use a `for` loop at the command-line
 ```bash
 for VAR in LIST
@@ -229,10 +241,10 @@ do
   cmds
 done
 ```
-
 #### Command substitution
-`VAR=$(command)`
-
+```sh
+VAR=$(command)
+```
 #### Store command-line output as a variable to use later
 ```bash
 for VAR in LIST
@@ -242,7 +254,6 @@ do
   echo "$FOO BAR"
 done
 ```
-
 #### Read in input one line at a time
 ```bash
 while read LINE
@@ -250,41 +261,40 @@ do
   cmd
 done < file.txt
 ```
-
 ```bash
 command | while read LINE
 do
   cmd
 done
 ```
-
 #### Accept user input and store it in a variable
+`read -n 1` will accept only the first letter of the written word
 ```bash
 read VAR
 read -n 1 VAR
 read -p "Prompt text: " VAR
 ```
-: `-n 1` will accept only the first letter of the written word
-
 #### Sum all the numbers in a given column of a text
-`awk '{sum += $1} END {print sum}' file`
-: add up all first records to {sum}, then print that number out at the end
-
+Add up all first records to {sum}, then print that number out at the end
+```sh
+awk '{sum += $1} END {print sum}' file
+```
 #### Automatically answer yes to any command
-`yes | cmd`
-: print out "y" until process is killed
-
-## System administration
-
+Print out "y" until process is killed
+```sh
+yes | cmd
+```
 #### Display mounted file systems in a tabular format
-`mount | column -t`
-: by default, mount displays all mounted filesystems
-
+By default, `mount` displays all mounted filesystems
+```sh
+mount | column -t
+```
 #### Kill all processes for a given user or program
-`pkill -9 cmd`
-`pkill -9 -u user cmd`
-: kill several processes with a single command
-
+Kill several processes with a single command
+```sh
+pkill -9 cmd
+pkill -9 -u user cmd
+```
 #### Repeat a command until it succeeds
 ```bash
 while true
@@ -292,41 +302,47 @@ do
   cmd && break
 done
 ```
-
 #### Find who is using the most disk space
-`sudo du -s /home | sort -n`
-
+```sh
+sudo du -s /home | sort -n
+``` 
 #### Find the files that are using the most disk space
-`find / -type f -exec wc -c {} \; | sort -n`
-
+```sh
+find / -type f -exec wc -c {} \; | sort -n
+```
 #### List processes, sorted by memory usage
-`ps aux | sort -nk 4`
-: processes consuming the most memory will be at the bottom
-
-`ps aux | sort -nk 4 | tail -5`
-: five worst offenders
-
+```sh
+ps aux | sort -nk 4 # Processes consuming the most memory will be at the bottom
+ps aux | sort -nk 4 | tail -5 # Five worst offenders
+```
 #### List processes, sorted by CPU usage
-`ps aux | sort -nk 3`
-: processes consuming the most CPU will be at the bottom
-
+Processes consuming the most CPU will be at the bottom
+```sh
+ps aux | sort -nk 3
+```
 #### Quickly tell if you are on a 32- or 64-bit system
-`getconf LONG_BIT`
-: return '32' or '64'
-
+Returns '32' or '64'
+```sh
+getconf LONG_BIT
+```
 #### Generate a random password
-`openssl rand -base64 48 | cut -c1-PASSWORD-LENGTH`
-: use `openssl` to generate a random password
-
-`gpw () { openssl rand -base64 48 | cut -c1-${1};}`
-
+Use `openssl` to generate a random password
+```sh
+openssl rand -base64 48 | cut -c1-$LENGTH
+```
+```sh
+# .bashrc
+gpw () { 
+  openssl rand -base64 48 | cut -c1-${1}
+}
+```
 #### Quickly make a backup of a file using brace expansion
 Brace expansion allows creation of multiple command-line args from a single one 
 ```sh
 cp file{,.bak} # equivalent to `cp file file.bak`
 ```
 #### Quickly create multiple directories using brace expansion
-`-p` argument creates parent directories if they don't exist
+`mkdir -p` creates parent directories if they don't exist
 ```sh
 mkdir -p ~/my-app/{bin,lib,log}
 ```
@@ -334,17 +350,16 @@ mkdir -p ~/my-app/{bin,lib,log}
 ```sh
 mv file{.old,.new}
 ```
-#### Create backups of files by date with ease
-`alias d='date +%F'` : using format "YYYY-MM-DD"
-`cp file{,.$(d)}` : append date to end of filename of copy using new alias
-`cmd > file` : overwrite the contents of a file
-
+#### Create backups of files by date with ease using brace expansion
+```sh
+alias d='date +%F'  # Using format "YYYY-MM-DD"
+cp file{,.$(d)}     # Append date to end of filename of copy using new alias
+cmd > file          # Overwrite the contents of a file
+``` 
 #### Empty a file that is being written to
 If a process has a file open it will continue to write to the file if you try to delete it naively. This way the file is truncated and applications can continue writing to it.
 ```sh
 > file
-```
-```sh
 cat /dev/null > file
 ```
 `cmd >> file`
@@ -384,41 +399,52 @@ find /path -type f -exec sed -i.bak
 awk 'NR==N'
 ```
 #### Convert text files from Windows format to Linux format and vice-versa
-`dos2unix` | `unix2dos` 
-
+```sh
+dos2unix
+unix2dos
+```
 #### Change to the previous working directory
-`cd -`
-
+```sh
+cd -
+```
 #### Reset your terminal emulator display
-`reset`
-
+```sh
+reset
+```
 #### Search Wikipedia from the Command-line
-`dig +short txt <string>.wp.dg.cx`
-`host -t txt <string>.wp.dg.cx`
-: DNS returns Wikipedia article summaries as TXT records
-
+DNS returns Wikipedia article summaries as TXT records
+```sh
+dig +short txt <string>.wp.dg.cx
+host -t txt <string>.wp.dg.cx
+```
 #### Make non-interactive shell sessions behave the same as interactive sessions
-`if [ -f ~/.bashrc ]; then source ~/.bashrc; fi` : make .bash_profile point to .bashrc so that non-interactive sessions (like SSH) behave the same as interactive sessions (login)
-
-#### Make your computer talk to you
-`espeak -f file`
-`echo text | espeak`
-: text-to-speech (not available on BSD)
-
+Make **.bash_profile** point to **.bashrc** so that non-interactive sessions (like SSH) behave the same as interactive sessions (login)
+```sh
+if [ -f ~/.bashrc ]; then source ~/.bashrc; fi
+```
+#### Text to speech
+Not available on BSD
+```sh
+espeak -f file
+echo text | espeak
+```
 #### Display the current date and time in a different time zone
-`TZ=<TIMEZONE> date`
-`TZ=MST date`
-TZ environment variable specifies timezone
-
+`TZ` environment variable specifies timezone
+```sh
+TZ=<TIMEZONE> date
+TZ=MST date
+```
 #### Display a calendar at the command-line
-`cal`
-`cal MM YYYY`
-`cal YYYY`
-
+```sh
+cal
+cal MM YYYY
+cal YYYY
+```
 #### Extract a tar archive to a different directory
-`tar archive -C /path/to/directory`
-`tar xf archive -C /path/to/directory`
-
+```sh
+tar archive -C /path/to/directory
+tar xf archive -C /path/to/directory
+```
 #### Transform the directory structure of a tar file when extarcting it
 Where {n} is a number that represents the level of the top directory from which to extract
 ```sh
@@ -429,9 +455,11 @@ Not available on BSD
 ```sh
 sc
 ```
-#### Rudimentary command-line stopwatch
-`time read` : will stop when you press enter, displaying how much time elapsed
-
+#### Stopwatch
+Will stop when you press enter, displaying how much time elapsed
+```sh
+time read
+```
 #### Repeat a command at regular intervals and watch its changing output
 Execute {cmd} at periods of {n} seconds, watching its output
 ```sh
@@ -457,4 +485,4 @@ If {cmd} is a command as well as an alias, use the backslash to run it as the or
 `convert` command is from ImageMagick software suite
 ```
 cmd | convert label:@- image.png
-``` 
+```
