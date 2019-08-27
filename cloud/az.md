@@ -17,20 +17,45 @@ New-AzVM Greeks Socrates $vm
 $subnet = New-AzVirtualNetworkSubnetConfig -Name "subnet1" -AddressPrefix "10.0.0.0/24"
 $vnet = New-AzVirtualNetwork -Name "vnet" -ResourceGroupName "RG" -Location "East US" -AddressPrefix "10.0.0.0/16" -Subnet $subnet
 
-# Create a Public IP Address 
-$ip = New-AzPublicIpAddress -Name "wscore-ip" -ResourceGroupName "RG" -Location "East US" -AllocationMethod Dynamic
+# Create a Network Security Group to allow remote PowerShell
+$nsgRules = @()
+$nsgRules += New-AzNetworkSecurityRuleConfig -Name "AllowingWinRMHTTP" -Description "To Enable PowerShell Remote Access" -Access Allow -Protocol Tcp -Direction Inbound -Priority 103 -SourceAddressPrefix Internet -SourcePortRange * -DestinationAddressPrefix * -DestinationPortRange 5985
+$nsgRules += New-AzNetworkSecurityRuleConfig -Name "AllowingWinRMHTTPS" -Description "To Enable PowerShell Remote Access" -Access Allow -Protocol Tcp -Direction Inbound -Priority 104 -SourceAddressPrefix Internet -SourcePortRange * -DestinationAddressPrefix * -DestinationPortRange 5986
+$nsg = New-AzNetworkSecurityGroup -Name "wscore-nsg" -ResourceGroupName "RG" -Location "East US" -SecurityRules $nsgRules
 
 # Create a Network Interface from the IP and VNet
-$nic = New-AzNetworkInterface -Name "wscore-nic" -ResourceGroupName "RG" -Location "East US" -SubnetId $vnet.Subnets[0].Id -PublicIpAddressId $pip.Id
-```
-```powershell
+$ip = New-AzPublicIpAddress -Name "wscore-ip" -ResourceGroupName "RG" -Location "East US" -AllocationMethod Dynamic
+$nic = New-AzNetworkInterface -Name "wscore-nic" -ResourceGroupName "RG" -Location "East US" -SubnetId $vnet.Subnets[0].Id -PublicIpAddressId $pip.Id -NetworkSecurityGroupId $nsg.Id
+
 # Provision the actual VM
 $vm = New-AzVMConfig -VMName "Socrates" -VMSize "Standard_B1ls"       # 1 core, 512 MB RAM, 1 TB disk size
 Set-AzVMOperatingSystem -VM $vm -Windows -ComputerName Socrates -Credential $aztestadmin
 Set-AzVMSourceImage -PublisherName "MicrosoftWindowsServer" -Offer "WindowsServer" -Skus "2016-Datacenter-Server-Core" -Version 2016.127.20190603 -VM $vm
 Set-AzVMOSDisk -CreatOption fromImage -VM $vm
 Add-AzVMNetworkInterface -NetworkInterface $nic -VM $vm
+
+# No `-Name`, since we set `-VMName` when initializing the PSVirtualMachine object with `New-AzVMConfig`
+New-AzVM -VM $vm -Location "East US" -ResourceGroupName "RG" -OpenPorts 5985,5986 
+```
+#### Modify Network Security Group policies
+```powershell
+# Open inbound ports are most easily defined at the time of VM creation 
+# But this option is not available when using a PSVirtualMachine object created with `New-AzVMConfig`
 New-AzVM -VM $vm -Location "East US" -ResourceGroupName "RG" -OpenPorts 5985,5986
+```
+From __Azure Portal__: Virtual machines > VM to be modified > (Settings) Networking > Network interface > Add inbound port rule button \
+In PowerShell, an __inbound security rule__ can be created:
+```powershell
+Get-AzNetworkSecurityGroup -Name NSG -ResourceGroupName 4SysOps | 
+Add-AzNetworkSecurityRuleConfig -Name AllowingWinRMHTTP -Description "To Enable PowerShell Remote Access" -Access Allow -Protocol Tcp -Direction Inbound -Priority 103 -SourceAddressPrefix Internet -SourcePortRange * -DestinationAddressPrefix * -DestinationPortRange 5985 | 
+Set-AzNetworkSecurityGroup
+```
+#### Associate a Network Security Group to a Network Interface
+```powershell
+$nic = Get-AzNetworkInterface -ResourceGroupName "RG" -Name "wscore-nic"
+$nsg = Get-AzNetworkSecurityGroup -ResourceGroupName "RG" -Name "wscore-nsg"
+$nic.NetworkSecurityGroup = $nsg
+Set-AzNetworkInterface -NetworkInterface $nic
 ```
 #### Find a Marketplace image
 ```powershell
@@ -57,7 +82,7 @@ Stop-AzVM Greeks Socrates
 #### Connect to VM from a Windows machine
 ```powershell
 # Azure can enable PowerShell on the target machine
-Invoke-AzVMRunCommand -CommandId EnableRemotePS
+Invoke-AzVMRunCommand -ResourceGroupName "RG" -VMName "Socrates" -CommandId EnableRemotePS
 ```
 ```powershell
 # WinRM can be enabled from a local command
@@ -96,22 +121,6 @@ Using OpenSSH...
 ```powershell
 Invoke-AzVMRunCommand -ResourceGroupName RG -VMName VM -CommandId 'RunPowerShellScript' -ScriptPath C:\injectedscript.ps1
 ```
-#### Modify Network Security Group policies
-```powershell
-# Open inbound ports are most easily defined at the time of VM creation 
-New-AzVM -VM $vm -Location "East US" -ResourceGroupName "RG" -OpenPorts 5985,5986
-```
-From __Azure Portal__: Virtual machines > VM to be modified > (Settings) Networking > Network interface > Add inbound port rule button \
-In PowerShell, an __inbound security rule__ can be created:
-```powershell
-Get-AzNetworkSecurityGroup -Name NSG -ResourceGroupName 4SysOps | 
-Add-AzNetworkSecurityRuleConfig
-  -Name AllowingWinRMHTTP -Description "To Enable PowerShell Remote Access"
-  -Access Allow -Protocol Tcp -Direction Inbound -Priority 103 
-  -SourceAddressPrefix Internet -SourcePortRange * 
-  -DestinationAddressPrefix * -DestinationPortRange 5985 | 
-Set-AzNetworkSecurityGroup
-```
 #### Ensure App Services, backup vault, and event hub have access to a storage account
 ```powershell
 Get-AzVirtualNetwork -ResourceGroupName RG01 -Name VNET01 |
@@ -129,19 +138,6 @@ $t = Get-AzRecoveryServicesVault -Name t1
 Set-AzRecoveryServicesBackupProperties -Vault $t -BackupStorageRedundancy GeoRedundant 
 ```
 ## Sources
-  - Michael Washam, Jonathan Tuliani, and Scott Hoag. _Exam Ref AZ-103 Microsoft Azure Administrator_. [AZ-103](../sources/az-103.md)
-  - "Enable-PSRemoting". [Microsoft Docs](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/enable-psremoting?view=powershell-6)
-  - "Azure Az Module for Windows PowerShell, Core, and Cloud Shell Replaces Azure RM". [Petri](https://www.petri.com/azure-az-module-for-windows-powershell-core-and-cloud-shell-replaces-azurerm): 2019/01/23.
-  - "Manage Azure IaaS virtual machines with Windows Admin Center". [Microsoft Docs](https://docs.microsoft.com/en-us/windows-server/manage/windows-admin-center/azure/manage-azure-vms): 2018/09/06.
-  - "PowerShell Basics: Filtering Objects". [ITPro Today](https://www.itprotoday.com/powershell/powershell-basics-filtering-objects): 2013/07/25.
-  - "Connect to Azure VM using PowerShell". [4sysops](https://4sysops.com/archives/connect-to-azure-vm-using-powershell/): 2018/10/11.
-  - "About PSSessions". [Microsoft Docs](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_pssessions?view=powershell-6): 2019/07/02.
-  - "Enable PowerShell Remoting". [4sysops](https://4sysops.com/wiki/enable-powershell-remoting/).
-  - "Start-AzureRmVM". [Microsoft Docs](https://docs.microsoft.com/en-us/powershell/module/azurerm.compute/start-azurermvm?view=azurermps-6.13.0).
-  - "Invoke-AzureRmVMRunCommand". [Microsoft Docs](https://docs.microsoft.com/en-us/powershell/module/AzureRm.Compute/Invoke-AzureRmVMRunCommand?view=azurermps-6.13.0).
-  - "PowerShell Remoting over SSH". [Microsoft Docs](https://docs.microsoft.com/en-us/powershell/scripting/learn/remoting/ssh-remoting-in-powershell-core?view=powershell-6): 2018/08/13.
-  - "Installation of OpenSSH for Windows Server 2019 and Windows 10". [Microsoft Docs](https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse): 2019/01/06.
-  - "New-AzVM". [Microsoft Docs](https://docs.microsoft.com/en-us/powershell/module/az.compute/new-azvm?view=azps-2.4.0).
 ## Moving resources
 - App Service SSL certificates need to be deleted from each App Service before moving it to a new resource group.
 - VNet peering has to be disabled before moving a VNet, and a VNet can **only** be moved within the same subscription.
@@ -379,3 +375,16 @@ Zone-redundant storage (ZRS)            | Storage replication option that makes 
   8. "An introduction to Azure Dedicated Hosts". [YouTube](https://youtu.be/5qegfWl5woo): 2019/08/22.
   9. "Azure Backup". [YouTube](https://youtu.be/HJeCqbbT-5s): 2018/01/18.
   10. "Create, change, or delete a network security group". [Microsoft Docs](https://docs.microsoft.com/en-us/azure/virtual-network/manage-network-security-group): 2018/04/04.
+  - Michael Washam, Jonathan Tuliani, and Scott Hoag. _Exam Ref AZ-103 Microsoft Azure Administrator_. [AZ-103](../sources/az-103.md)
+  - "Enable-PSRemoting". [Microsoft Docs](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/enable-psremoting?view=powershell-6)
+  - "Azure Az Module for Windows PowerShell, Core, and Cloud Shell Replaces Azure RM". [Petri](https://www.petri.com/azure-az-module-for-windows-powershell-core-and-cloud-shell-replaces-azurerm): 2019/01/23.
+  - "Manage Azure IaaS virtual machines with Windows Admin Center". [Microsoft Docs](https://docs.microsoft.com/en-us/windows-server/manage/windows-admin-center/azure/manage-azure-vms): 2018/09/06.
+  - "PowerShell Basics: Filtering Objects". [ITPro Today](https://www.itprotoday.com/powershell/powershell-basics-filtering-objects): 2013/07/25.
+  - "Connect to Azure VM using PowerShell". [4sysops](https://4sysops.com/archives/connect-to-azure-vm-using-powershell/): 2018/10/11.
+  - "About PSSessions". [Microsoft Docs](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_pssessions?view=powershell-6): 2019/07/02.
+  - "Enable PowerShell Remoting". [4sysops](https://4sysops.com/wiki/enable-powershell-remoting/).
+  - "Start-AzureRmVM". [Microsoft Docs](https://docs.microsoft.com/en-us/powershell/module/azurerm.compute/start-azurermvm?view=azurermps-6.13.0).
+  - "Invoke-AzureRmVMRunCommand". [Microsoft Docs](https://docs.microsoft.com/en-us/powershell/module/AzureRm.Compute/Invoke-AzureRmVMRunCommand?view=azurermps-6.13.0).
+  - "PowerShell Remoting over SSH". [Microsoft Docs](https://docs.microsoft.com/en-us/powershell/scripting/learn/remoting/ssh-remoting-in-powershell-core?view=powershell-6): 2018/08/13.
+  - "Installation of OpenSSH for Windows Server 2019 and Windows 10". [Microsoft Docs](https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse): 2019/01/06.
+  - "New-AzVM". [Microsoft Docs](https://docs.microsoft.com/en-us/powershell/module/az.compute/new-azvm?view=azps-2.4.0).
