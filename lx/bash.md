@@ -1,7 +1,6 @@
 ### bash
 - `getopt` and `argp_parse` reorder the elements of `argv` by default, but this behavior can be suppressed by setting the `_POSIX_OPTION_ORDER` environment variable
 #### Terminal prompt
-
 `$PS1` Metacharacters   | Effect
 :---                    | :---
 `\a`                    | a bell character
@@ -74,13 +73,9 @@ Command sequence syntax | Effect
 `&`   | run commands asynchronously
 `&&`  | logical AND; run next command synchronously only if first command succeeds
 `||`  | logical OR; run next command synchronously only if first command fails
-
-### Other commands
-
-Syntax                  | Effect
-:---                    | :---
-`echo "hello" \| pbcopy`| put text onto the Mac OS X clipboard ("PasteBoard") 
-
+#### Variables
+[[3](#sources)]
 ## Sources
-  - [gnu.org](https://www.gnu.org/software/libc/manual/html_node/Argument-Syntax.html)
-  - [putorius.net](https://www.putorius.net/bash-using-control-operators.html)
+  1. [gnu.org](https://www.gnu.org/software/libc/manual/html_node/Argument-Syntax.html)
+  2. [putorius.net](https://www.putorius.net/bash-using-control-operators.html)
+  3. "Using Variables in `bash`" [opensource.com](https://opensource.com/article/19/8/using-variables-bash): 2019/08/26.
