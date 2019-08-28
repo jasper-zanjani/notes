@@ -37,8 +37,10 @@ perl6 -p
 : define the character that marks the end of an input record, using octal digits
 
 ## Scripts
-`#!/usr/bin/env perl`
-: shebang
+#### Shebang
+```perl
+#!/usr/bin/env perl`
+```
 
 ## Data types and variables
 Perl variables are of three types, associated with 3 corresponding sigils which begin the identifiers
