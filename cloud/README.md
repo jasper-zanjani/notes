@@ -1,4 +1,5 @@
 # Cloud providers 
+## Service comparison table
 Service                           | Azure                       | AWS   | GCP
 :---                              | :---                        | :---  | :---
 Certifications                    | [Azure certs](#azure-certs) | [AWS certs](#aws-certs) | [GCP certs](#gcp-certs)
@@ -29,7 +30,6 @@ Big Data Analytics                | Data Lake Analytics, Data Lake Store | Redsh
 Messaging                         | Service Bus                 | Simple Notification Service (SNS), Simple Queueing Service (SQS) | Pub/Sub
 Monitoring                        | Monitor                     | CloudWatch   | Stackdriver 
 Deployment                        | Resource Manager            | CloudFormation   | Deployment Manage
-
 ### Certifications
 #### AWS certs
 [Certification](https://aws.amazon.com/certification/) | Links
@@ -66,6 +66,12 @@ Professional Cloud Developer          | [Certification](https://cloud.google.com
 Professional Cloud Network Engineer   | [Certification](https://cloud.google.com/certification/cloud-network-engineer)
 Professional Cloud Security Engineer  | [Certification](https://cloud.google.com/certification/cloud-security-engineer/)
 Professional Collaboration Engineer   | [Certification](https://cloud.google.com/certification/collaboration-engineer)
+## Resources
+### GCP resources
+GCP resources are organized in a **resource hierarchy** organized under an **Organization**, which is considered the top level of the hierarchy, although it can be further subsumed by an even higher **Domain**.[[19](#sources), [20](#sources)]\
+A **Billing Account** tracks charges and billing account admins can set budgets.\
+The **Payments Profile** is a Google-level resource that is used to pay for all Google services.\
+**Projects** are organized under **Folders** which can be nested within each other, and can also have **Labels**. A project can have many labels, but only lives in a **single** folder. Resources are the lowest levels of the hierarchy and can **only** be parented by projects.[[19](#sources), [20](#sources)]
 ## Services
 ### Command-line tools
 #### AWS Command Line Interface and AWS Tools for PowerShell
@@ -84,7 +90,6 @@ Microsoft Azure NoSQL database service optimized for mobile and web applications
 Wide-column NoSQL database with the choice between **strongly consistent** and **eventually consistent** (half the cost) reads. DynamoDB offers two types of indexes: **Global Secondary Index** and **Local Secondary Index (LSI)**. The LSI is an alternate sort key attribute. GSI allow you to create a completely new aggregation of data, whereas LSI only allows sorting.\
 GSI updates are eventually consistent, with asynchronous updates populated after an update response is passed to the client.[[18](#sources)]\
 DynamoDB Streams (changelog for the DynamoDB table) interfaces with AWS Lambda to implement **complex queries**, computed values like sum, average, maximum, etc. These are implemented in a different **processing space** than the DynamoDB table itself, so that it does not affect the table. AWS Lambda has an **invocation role** which defines what Lambda can **see** (triggered upon a change to the table as reported in DynamoDB Streams) and an **execution role** which defines what it can **do**.[[18](#sources)]
-
 #### Firestore
 NoSQL Document database service offering high performance and automatic scaling intended for serverless mobile and web application development with Cloud App Engine.
   - **History**: Firestore was released from beta in early 2019 and combines and improves upon functionality of previous products named **Cloud Datastore** and **Firebase Realtime Database** [[8,9](#sources)]. Firestore features a compatibility mode that emulates the behavior of Datastore in accessing Firestore's storage layer while removing some of Datastore's limitations.
@@ -100,19 +105,15 @@ GCP Realtime database used for Big Data [[7](#sources)].
   - **History**: BigTable evolved out of Google's need to ensure access to petabytes of data in its web search business line. It was described in a 2006 research paper that ended up launching the entire NoSQL industry. In 2015 it was made available as a service to cloud customers. [[4](#sources)]
   - **Queries**: BigTable doesn't support secondary indexes [[5,6](#sources)]
 #### App Engine
-Google Cloud Platform Platform-as-a-Service offering.
-
+Google Cloud Platform Platform-as-a-Service offering.\
 Video | Link
 :---  | :---
 Get to know Google App Engine | [YouTube](https://youtu.be/2PRciDpqpko) 
-
 #### Compute Engine
-
 Video | Link
 :---  | :---
 Getting Started with Google Cloud Compute Engine | [YouTube](https://youtu.be/1XH0gLlGDdk)
 #### Coldline
-
 ## Glossary
 Term              | Definition  
 :---              | :---
@@ -151,3 +152,5 @@ zone              | a part of the domain namespace delegated to a legal entity (
   16. "Uploading files to GCS (Cloud Storage Bytes". [YouTube](https://youtu.be/nmZxfuFIP08).
   17. "SysAdmin & Hybrid Cloud Special". [AWS TechChat](../sources/README.md#aws-53) 
   18. "AWS re:Invent 2018: Amazon DynamoDB Deep Dive: Advanced Design Patterns for DynamoDB (DAT401)". [YouTube](https://youtu.be/HaEPXoXVf2k).
+  19. "Organizing your GCP resources - Beyond Your Bill". [YouTube](https://youtu.be/NOOhDq1JyIM): 2019/08/27.
+  20. "Resource Hierarchy". [Google Cloud](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy?utm_source=youtube&utm_medium=unpaidsocial&utm_campaign=ram-20190806-Resource-Hierarchy)
