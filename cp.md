@@ -1,5 +1,4 @@
 # Command Prompt
-
 ### bootrec
 Windows Recovery Environment command that repairs a system partition
 #### Windows Recovery Environment command to use when boot sector not found
