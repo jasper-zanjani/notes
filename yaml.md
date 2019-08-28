@@ -3,29 +3,34 @@
   - commonly used for configuration files
   - Two types of structures: Lists and Maps (key-value pairs)
   - indentation levels are significant
-  - [CNCF](https://www.cncf.io/blog/2019/02/21/introduction-to-yaml-creating-a-kubernetes-deployment/)
 
-`---`
-: separator, optional
-
-`key: value`
-: key-value pair format (like JSON but without quotes or enclosing braces)
-
-`- list-item`
-: Markdown-style lists preceded by a hyphen (also no quotes or brackets)
+#### YAML Syntax
+Syntax        | Effect
+:---          | :---
+`---`         | separator, optional
+`key: value`  | key-value pair format (like JSON but without quotes or enclosing braces)
+`- list-item` | Markdown-style lists preceded by a hyphen (also no quotes or brackets)
 
 ## Python
-`import ruamel.yaml`
-: import YAML parser package
-
-`yaml = ruamel.yaml.YAML()`
-: workhorse function
-
-`yaml.dump(data,sys.stdout)`
-: print all `data` to stdout
-
-`yaml.dump(data,f)`
-; write `data` to `f`
-
-`yaml.indent(mapping=4,sequence=6,offset=3)`
-; adjust indentation levels
+#### Import YAML parser package
+```py
+import ruamel.yaml
+```
+#### Workhorse function
+```py
+yaml = ruamel.yaml.YAML()
+```
+#### Print all `data` to stdout
+```py
+yaml.dump(data,sys.stdout)
+```
+#### Write `data` to `f`
+```py
+yaml.dump(data,f)
+```
+#### Adjust indentation levels
+```py
+yaml.indent(mapping=4,sequence=6,offset=3)
+```
+## Sources
+  - "Introduction to YAML". [CNCF](https://www.cncf.io/blog/2019/02/21/introduction-to-yaml-creating-a-kubernetes-deployment/)
