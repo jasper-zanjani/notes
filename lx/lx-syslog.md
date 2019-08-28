@@ -1,6 +1,6 @@
 # Syslog
 
-#     | Severity      | Description
+\#    | Severity      | Description
 :---  | :---          | :---  
 0     | Emergencies   | Most severe error conditions that render the system unusable
 1     | Alerts        | Conditions requiring immediate attention
