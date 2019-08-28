@@ -14,17 +14,17 @@ Topic                           | Contents
 ## Configuration files
 Config file     | Description
 :---            | :---
-/etc/aliases    | forwarding to more than one address requires entries here
+/etc/aliases    | forwarding to more than one address requires entries here [[alias](#alias)]
 $HOME/.forward  | forwarding to only one address
 ## Commands
 All commands
 :---:
-[at](#at)  [bash](bash.md) [cat](cat.md) [crontab](crontab.md) [date](date.md) [dhclient](#dhclient) [elvish](elvish.md) [fish](fish.md) [free](#free) [fusermount](#fusermount) [history](#history) [imagemagick](imagemagick.md) [install](#install) [make](make.md) [mkdir](#mkdir) [mktemp](#mktemp) [sudo](sudo.md) [test](test.md) [tmux](tmux.md) [watch](watch.md)  
+[at](#at)  [bash](bash.md) [cat](cat.md) [crontab](crontab.md) [date](date.md) [dhclient](#dhclient) [elvish](elvish.md) [exif](#exif) [file](#file) [fish](fish.md) [free](#free) [fusermount](#fusermount) [history](#history) [imagemagick](imagemagick.md) [install](#install) [make](make.md) [mkdir](#mkdir) [mktemp](#mktemp) [read](#read) [rename](#rename) [sudo](sudo.md) [test](test.md) [tmux](tmux.md) [watch](watch.md)
 **Disk** [partx](#partx) [sfdisk](#sfdisk) 
 **E-mail** [mail](#mail) [mailq](#mailq) [postfix](#postfix) [qmail](#qmail) [sendmail](#sendmail) [ssmtp](#ssmtp) 
 **Filters** [awk](awk.md) [grep](#grep) [less](less.md) [sed](#sed) [shuf](#shuf) [sort](#sort) [tr](#tr) 
 **Network** [bpftrace](#bpftrace) [dhclient](#dhclient) [dig](#dig) [ftp](#ftp) [firewalld](#firewalld) [hostnamectl](#hostnamectl) [ifconfig](#ifconfig) [iptables](#iptables) [nc](#nc) [netplan](#netplan) [netstat](#netstat) [NetworkManager](#networkmanager) [nmap](#nmap) [nmcli](#nmcli) [nslookup](#nslookup) [ping](#ping) [route](#route) [ss](#ss) [tcpdump](#tcpdump) [tracepath](#tracepath) [traceroute](#traceroute) [xinetd](#xinetd) 
-**Package managers** [pacman](pacman.md) 
+**Package managers** [apt](#apt) [dpkg](#dpkg) [pacman](pacman.md) [rpm](#rpm) [yay](#yay) [yum](#yum)
 **SSH** [sshfs](#sshfs) [ssh-copy-id](#ssh-copy-id) [ssh-keygen](#ssh-keygen) [ssh](#ssh)
 **SystemD** [firewalld](#firewalld) [hostnamectl](#hostnamectl) [xinetd](#xinetd)
 **Needing further research** [lsof](#lsof) [column](#column) [sc](#sc) [espeak](#espeak) [visudo](#visudo) [fmt](#fmt) [paste](#paste) [openssl](#openssl) [sshfs](#sshfs) [ssh-copy-id](#ssh-copy-id)
@@ -38,6 +38,25 @@ at -f file time
 ```
 ### bpftrace
 New open-source tracer for analyzing production performance problems and troubleshooting software [[19](#sources)]
+### chown
+#### Change a file or directory's ownership
+To change the user and group owner of a file to {user} and {group}, `chown`'s syntax is of the format `user:group` [[32](#sources)].
+```sh
+chown susan:delta file          # Assign {file} to user `susan` and group `delta`
+chown alan file                 # Assign {file} to user `alan`
+chown alan: file                # Assign {file} to user and group `alan`
+chown :gamma file               # Assign {file} to the group `gamma`
+```
+Assign {path} to `susan` and group `delta`, recursively and with verbose output
+```sh
+chown --verbose --recursive susan:delta path 
+chown -vR susan:delta path
+```
+```sh
+chown -vR --reference=. path    # Use a `reference` file to match the configuration of a particular file
+chown -cfR --preserve-root alan # `preserve-root` prevents changes to files in the root directory, but has no effect when not used with `recursive`
+k
+```
 ### dhclient
 Obtain and configure TCP/IP information from a server on the network [[LGLC](../sources/lglc.md): 34]
 #### Turn on the DHCP client and get a new address from the server
@@ -57,6 +76,20 @@ dig example.com NS
 #### Mail server
 ```
 dig example.com MX
+```
+### dpkg
+
+### exif
+#### View image metadata
+Unlike alternatives like `file` and ImageMagick's `identify`, `exif` produces columnar output [[31](#sources)]
+```sh
+exif image.png 
+```
+### file
+#### View image metadata
+[[31](#sources)]
+```sh
+file image.png # => file type, dimensions, color depth
 ```
 ### firewalld
 Successor to `iptables` in Red Hat, and like its predecessor a frontend to the netfilter protocols. Places network traffic into zones. Commands have to be written twice: once to affect running config and again to have the change saved
@@ -119,11 +152,12 @@ firewall-cmd --list-ports
 ```
 ### free
 Simple utility that display realtime memory information.\
-Option  | Effect
-:---    | :---
-`-h`    | human-readable output
-`-s n`  | run the program every <n> seconds, until the program is manually interrupted
-`-c n`  | run the program <n> times
+#### free options
+Option  | POSIX option            | Effect
+:---    | :---                    | :---
+`-c n`  |                         | run the program {n} times
+`-h`    |                         | human-readable output
+`-s n`  |                         | run the program every {n} seconds, until the program is manually interrupted
 #### List memory statistics in kilobytes
 Without any options, `free` returns a table listing general statistics in kilobytes:
 ```bash
@@ -142,7 +176,7 @@ encrypted file transfers
 fusermount -u mountpoint
 ```
 ### grep
-Option  | Long option             | Effect
+Option  | POSIX option            | Effect
 :---    | :---                    | :---
 `-A n`  |                         | print {n} lines of trailing context from the file after each match
 `-B n`  |                         | print {n} lines of leading context from the file after each match
@@ -275,15 +309,19 @@ Add a suffix
 mktemp ostechnixXXX --suffix=blog
 ```
 ### mv
-Option              | Effect
-:---                | :---
-`--backup`          | takes an argument defining how the backup file is named (not available in BSD): <br/> `existing` if numbered backups already exist in the destination, then a numbered backup is created. Otherwise, the `simple` scheme is used <br/> `none` do not create a backup even if `--backup` is set; useful to override a `mv` alias that sets the `--backup` option <br/> `numbered` append number to the destination file <br/> `simple` append "~" to the destination filename, which will be hidden when running `ls --ignore-backups`
-`--force` `-f`      | overrides `--interactive`
-`--interactive` `-i`| 
-`--no-clobber` `-n` | silently reject move action in the event of a conflict
-`--update` `-u`     | only overwrite if the modification time of the destination is older than the source
+Option  | POSIX option            | Effect
+:---    | :---                    | :---
+\-      | `--backup`              | takes an argument defining how the backup file is named (not available in BSD): <br/> `existing` if numbered backups already exist in the destination, then a numbered backup is created. Otherwise, the `simple` scheme is used <br/> `none` do not create a backup even if `--backup` is set; useful to override a `mv` alias that sets the `--backup` option <br/> `numbered` append number to the destination file <br/> `simple` append "~" to the destination filename, which will be hidden when running `ls --ignore-backups`
+`-f`    | `--force`               | overrides `--interactive`
+`-i`    | `--interactive`         | 
+`-n`    | `--no-clobber`          | silently reject move action in the event of a conflict
+`-u`    | `--update`              | only overwrite if the modification time of the destination is older than the source
 ### nc
 The netcat utility allows testing of a host's ports, similar to __ping__, but more versatile because __ping__ only uses the portless ICMP protocol. GNU and OpenBSD versions available (itp-l+: 28)
+#### nc options
+Option  | POSIX option            | Effect
+:---    | :---                    | :---
+`-l`    |                         | listening mode
 #### Connect to host on port 80
 ```
 nc example.com 80
@@ -483,26 +521,28 @@ nslookup -port=portno url
 ### qmail
 Mail Transfer Agent (MTA) designed as a drop-in replacement for Sendmail, notable for being the first to be "security-aware". Its various modular subcomponents run independently and are mutually untrustful. It uses SMTP to exchange messages with other MTAs. It was written by Dan Bernstein, a professor of mathematics famous for litigating against the US government with regard to export controls on encryption algorithms. Deprecated and removed from Arch repos in 2005. [[27](#sources)]
 ### pacman
-
-Option | Long option | Effect
-:---   | :--- | :---
-`-Q` | list all installed packages
-`-Q \| wc -l` | get number of total installed packages by counting the lines of output of `pacman -Q`
-`-Qe` | list programs explicitly installed by user or program command
-`-Qeq` | list only program names explicitly installed
-`-Qm` | list programs only installed from AUR
-`-Qn` | list programs only installed from main repositories
-`-Qdt` | dependencies no longer needed (orphans)
-`-Ql` | `--query --list` : list all files owned by a package
-`-S pkg` | typical syntax to install a package
-`-Sy` | synchronize package database (equivalent to `apt-get update`)
-`-Su` | update programs (equivalent to `apt-get upgrade`)
-`-Syu` | sync package database (`Sy`) and upgrade all programs (`u`) (equivalent to `apt-get update && apt-get upgrade`)
-`-Syy` | force double-check of repositories
-`-Syyuw` | downloads programs but doesn't install them, for the option of manual installation
-`-R pkg` | remove {pkg}, but leaving dependencies
-`-Rs pkg` | remove {pkg} as well as its dependencies
-`-Rns pkg` | remove {pkg}, dependencies, as well as config files 
+Option  | POSIX option            | Effect
+:---    | :---                    | :---
+`Q`     | `--query`               | list all installed packages
+`-R`    |                         | remove {pkg}, but leave dependencies
+`-Qe`   |                         | list programs explicitly installed by user or program command
+`-Qeq`  |                         | list only program names explicitly installed
+`-Qm`   |                         | list programs only installed from AUR
+`-Qn`   |                         | list programs only installed from main repositories
+`-Qdt`  |                         | list dependencies no longer needed (orphans)
+`-Ql`   | `--query` `--list`      | list all files owned by a package
+`-S`    | `sync`                  | install {pkg}
+`-Sy`   |                         | synchronize package database 
+`-Su`   |                         | update programs 
+`-Syu`  |                         | sync package database (`Sy`) and upgrade all programs (`u`) (equivalent to `apt-get update && apt-get upgrade`)
+`-Syy`  |                         | force double-check of repositories
+`-Syyuw` |                        | downloads programs but doesn't install them, for the option of manual installation
+`-Rs`   |                         | remove {pkg} as well as its dependencies
+`-Rns`  |                         | remove {pkg}, dependencies, as well as config files 
+#### Get number of total installed packages
+```sh
+pacman -Q | wc -l
+```
 ### partx
 `partx` is a utility that provides information on drive partitions to the Linux kernel. [[12](#sources)]
 #### Display partition table of a drive
@@ -544,14 +584,48 @@ Before mail is queued for delivery, it goes through a cleanup daemon, which can 
   1. Local inboxes
   2. Internet (SMTP)
   3. Piped to programs
+### read
+#### Stopwatch
+Will stop when you press enter, displaying how much time elapsed
+```sh
+time read
+```
+### rename
+`rename` uses regular expressions [[33](#sources)]
+#### rename options
+Option  | POSIX option            | Effect
+:---    | :---                    | :---
+`-n`    | `--nono`                | dry-run: describe the changes the command would make, without actually doing them
+#### Rename multiple files
+```sh
+# Renaming file.old to file.new
+rename 's/old/new/' this.old
+
+# Use globbing to rename all matching files
+rename 's/old/new/' *.old
+rename 's/report/review/' *
+
+# Change all uppercase letters to lowercase
+rename 'y/A-Z/a-z/' *
+```
 ### screen
 #### Share your screen session with another user
 ```sh
 screen -x user/session
 ```
 ### sed
-Stream-oriented editor typically used for applying repetitive edits across all lines of multiple files. In particular it is, alongside `awk` one of the two primary commands which accept regular expressions in Unix systems. 
-#### sed command-line syntax
+`sed` ("Stream-oriented editor") is typically used for applying repetitive edits across all lines of multiple files. In particular it is, alongside `awk` one of the two primary commands which accept regular expressions in Unix systems. 
+#### sed options
+Option  | POSIX option            | Effect
+:---    | :---                    | :---
+`-e`    |                         | when providing more than one instruction, this flag precedes every one
+`-f`    | `--file`                | read from a **command file** (called a **program file** in some places [[PGL](../sources/README.md): 564]
+`-i`    |                         | edit the file in-place instead of outputting to stdout
+`-n`    |                         | suppress duplicate line printing; only print lines specified with the `p` command 
+#### sed scripting
+`#` : comments begin with octothorpe
+`#n` : if first line of script begins with these two characters, it is equivalent to using the `-n` flag
+#### sed syntax
 Invocation syntax has two forms:
 ```sh
 sed options 'instruction' file # Instructions provided inline
@@ -559,17 +633,7 @@ sed options 'instruction' file # Instructions provided inline
 ```sh
 sed options -f scriptfile file # Instructions read from a **command file**
 ```
-Options:
-  - `-e` : when providing more than one instruction, this flag precedes every one
-  - `-f`, `--file` : read from a **command file** (called a **program file** in some places [[PGL](../sources/README.md): 564]
-  - `-i` : edit the file in-place instead of outputting to stdout
-  - `-i=suffix` : edit the file in-place, but save a backup copy of the original with {suffix} appended to - the filename
-  - `-n` : suppress duplicate line printing; only print lines specified with the `p` command 
-#### sed scripting
-`#` : comments begin with octothorpe
-`#n` : if first line of script begins with these two characters, it is equivalent to using the `-n` flag
-#### sed syntax
-sed instructions are made of **addresses** and **procedures** . Sources do not use consistent terminology to describe the two components of most sed commands:
+`sed` instructions are made of **addresses** and **procedures** . Sources do not use consistent terminology to describe the two components of most sed commands:
 
 :---                                | :---
 `sed 'pattern {procedure}' file`    | [[SA](../sources/README.md): 14]
@@ -602,7 +666,10 @@ Procedure   | Description
 `s/pattern/replacement/flags`         | replace regex {pattern} with {replacement} ("substitute")
 `g`         | replace **all** instances of the search pattern with the replacement, rather than the first instance (global)
 `&`         | known as the **repeated pattern**, represents the represents the entire source string; the only special character used in the replacement string - all other characters are treated literally
-
+#### Edit the file in-place, but save a backup copy of the original with {suffix} appended to - the filename
+```sh
+-i=suffix
+```
 #### Display first 3 lines
 ```sh
 
@@ -860,17 +927,18 @@ sshfs remotehost:/directory mountpoint
 ```
 ### ss
 "Socket statistics", successor to __netstat__. 
-#### ss Options
+#### ss options
 Options are of two kinds:
   1. Connection type (listening or established)
-    - `ss` display established connections (default)
-    - `ss -l` , `ss --listening` display sockets listening
-    - `ss -a` , `ss --all` display both listening sockets and established connections
   2. Protocol type
-    - `ss` display all protocol sockets (default)
-    - `ss -t` , `ss --tcp` display TCP protocol sockets
-    - `ss -u` , `ss --udp` display UDP sockets
-    - `ss -x` , `ss --unix` display Unix domain sockets
+
+Option  | POSIX option            | Effect
+:---    | :---                    | :---
+`-l`    | `--listening`           | display sockets that are listening
+`-a`    | `--all`                 | display both listening sockets and established connections
+`-t`    | `--tcp`                 | display TCP sockets
+`-u`    | `--udp`                 | display UDP sockets
+`-x`    | `--unix`                | display Unix domain sockets
 #### Display port numbers instead of protocol names
 ```
 ss -n
@@ -936,7 +1004,7 @@ watch cmd -n n
 ```
 ### xinetd
 Internet Super Daemon provided an alternate method of connecting to various outdated network services. Should be turned off nowadays.  
-
+#### xinetd configuration
 Configuration file  | Description
 :---                | :---
 /etc/xinet.d/       | config files
@@ -995,14 +1063,14 @@ history | awk '{print $2' | sort | uniq -c | sort -rn | head
 Name                            | Description
 :---                            | :---
 Akira                           | design tool; alternative to `Sketch` and `Adobe XD`
-Anthos                          | Google cloud service, competitor to AWS, runs on Kubernetes | 
+Anthos                          | Google cloud service, competitor to AWS, runs on Kubernetes
 Ardour                          | edit multiple audio tracks [[1](#sources)]
 Audacity                        | process and edit audio files [[1](#sources)]
-Bentoo Linux                    | Linux distribution made as a version of Funtoo which is easier to install | 
+Bentoo Linux                    | Linux distribution made as a version of Funtoo which is easier to install
 bro                             | alternative to man 
-btrfs                           | B-Tree File System or "butter FS": file system was adopted by SUSE Enterprise Linux, but support was dropped by Red Hat in 2017 | 
+btrfs                           | B-Tree File System or "butter FS": file system was adopted by SUSE Enterprise Linux, but support was dropped by Red Hat in 2017
 cheat                           | alternative to man 
-Click                           | Python package that uses decorators to create command-line interfaces | 
+Click                           | Python package that uses decorators to create command-line interfaces
 Clonezilla                      | open-source software package for disk imaging and cloning; started as an alternative to the commercial software package Norton Ghost | DL: 111
 coreboot                        | open-source firmware | [[LS](../sources/README.md)]
 eta                             | command-line tool that draws a progress bar for long-running processes 
@@ -1013,11 +1081,11 @@ darktable                       | open-source photography workflow application; 
 digikam                         | open-source image organizer and tag editor; switched from `Exiv2` to `QtAV` for video support; written in C++ [[LU](../sources/README.md): 289]
 dmenu                           | dynamic menu for X11; originally designed for `dwm`
 dolphin                         | KDE file manager [[LCL](../sources/READMe.md): 27]
-dwm                             | window manager written in C that needs to be recompiled when you change configuration | 
+dwm                             | window manager written in C that needs to be recompiled when you change configuration
 enlightenment                   | stacking window manager for X Window System 
-Endlessh | SSH tarpit that sends an endless SSH banner to keep malicious SSH clients locked up for long periods of time | 
-exa                             | open-source replacement for `ls`, with additional options | DT
-ext4                            | filesystem adopted by Linux in 2008; developed by Theodore Ts'o | 
+Endlessh                        | SSH tarpit that sends an endless SSH banner to keep malicious SSH clients locked up for long periods of time
+exa                             | open-source replacement for `ls`, with additional options
+ext4                            | filesystem adopted by Linux in 2008; developed by Theodore Ts'o
 feh                             | X11 image viewer 
 Fedora                          | Linux distribution available in 3 flavors: Server, Workstation, and Cloud; Default desktop environment: GNOME; Default user interface: GNOME Shell; Package management system: RPM 
 Fedora CoreOS Config (.fcc)     | YAML file that specifies the desired configuration of a CoreOS machine. It is converted to an **Ignition config** file using the **Fedore CoreOS Config Transpiler**  [[5](#sources)
@@ -1031,6 +1099,7 @@ flowblade                       | open-source video editor [[LU](../sources/READ
 FSCrypt                         | Ubuntu tool that took the mantle from EncryptFS | 
 geary                           | GUI email application for GNOME 3 | [[LU](../sources/README.md): 289]
 Gentoo                          | Linux distribution for which the source code is compiled locally according to the user's preferences, optimizing the distro to the specific computer; started by Daniel Robbins | 
+Glimpse                         | GIMP fork [[24](#sources)] [Web](https://getglimpse.app/) [Twitter](https://twitter.com/glimpse_editor) [Github](https://github.com/glimpse-editor/)
 GNOME                           | desktop environment; unique among desktop environments for being single-threaded process and thus susceptible to catastrophic crashes [[DL](../sources/README.md): 110]
 gopass                          | command-line password manager 
 gparted                         | partition editor; graphical frontend to GNU Parted
@@ -1051,13 +1120,13 @@ Mixxx                           | DJ software, including BPM, key detection, syn
 MPlayer                         | multimedia player with support for streaming online radio  [[3](#sources)]
 MuseScore                       | arrange a musical score  [[1](#sources)]
 Matrix                          | open standard for messaging; integrates with and bridges to IRC and other protocols, potentially consolidating the fractured landscape of messaging on Linux [[DL](../sources/README.md#destination-linux): 110
-MyPy                            | most common Python static type checker | 
-Nautilus                        | file manager used by default in GNOME | 
-Nemo                            | file manager used by default in Budgie | 
+MyPy                            | most common Python static type checker
+Nautilus                        | file manager used by default in GNOME
+Nemo                            | file manager used by default in Budgie
 netcat                          | open-source tool (which replaces and refines the features of another, older, identically-named program) which facilitates TCP/IP connections and requests | DT
-netdata                         | open-source real-time performance and health monitor | 
-nm-applet                       | network manager | 
-nnn                             | terminal-based file browser; written in Python | 
+netdata                         | open-source real-time performance and health monitor
+nm-applet                       | network manager
+nnn                             | terminal-based file browser; written in Python
 OBS                             | open-source live video streaming production software which has become the de facto standard; alternative to WireCast | DL: 111
 pacman                          | package manager for Arch Linux | 
 Parted Magic                    | commercial Linux distribution with data recovery and disk partitioning tools; started as a free alternative to the commercial software package "Partition Magic" | DL: 111
@@ -1068,35 +1137,35 @@ pitivi                          | buggy video editing application still in beta;
 Plasma                          | KDE desktop environment | DL: 110
 prepros                         | GUI  commercial CSS compiler | 
 Qt                              | open-source widget toolkit for creating GUIs and cross-platform applications; `GTK+` is an alternative | 
-QtAV                            | multimedia playback framework based on `Qt` and `FFmpeg`; directly uses ffmpeg codecs; alternative to `Exiv2` | LU: 289
-qtile                           | tiling window manager written and configured in Python used by Luke Smith; abandoned by DT in 2019 after a few weeks of use | 
-ranger                          | file manager | 
-rxvt-unicode                    | terminal emulator | 
-shorewall                       | open-source command-line firewall tool for Linux; works off plaintext configuration files; more user-friendly than `iptables`; alternative: `FireHOL` | LU: 289
-snapcraft                       | platform to allow high-frequency updates of applications; developed by Canonical; uses YAML format; written in Go, C | 
-solVItaire                      | terminal-based solitarie game that uses vim key bindings | 
-st                              | "simple terminal"; suckless terminal emulator | 
-surf                            | suckless web browser | 
-sxiv                            | suckless image viewer | 
-systemctl                       | main command used to inspect and control `systemd` | 
-systemd                         | suite of basic building blocks for a Linux system | 
-termite                         | terminal disfavored by Distro Tube | 
-Thunar                          | file manager used by XFCE | 
-Tilix                           | tiling terminal emulator; GTK3 | DL: 104
-Titan                           | command-line password manager and file encryption tool; stores passwords in an encrypted SQLite database | OSc
-tldr                            | alternative to man | OST
-tutanota                        | encrypted open-source email service | 
-Ubuntu Touch                    | open-source operating system for mobile devices | DL: 104
-urxvt                           | terminal favored by Distro Tube | 
-vifm                            | file manager; lacks image previews and file icons | 
-Wasmer                          | Python module that allows Python to run web assembly | 
-Wayland                         | intended to be a successor to X | DL: 110
-wine                            | method of running Windows applications on linux which is faster than a virtual machine or emulator | 
-xfce4                           | desktop environment | 
-xorg                            | X.org server;  | 
-Xubuntu                         | Linux distribution based on Ubuntu which uses the XFCE desktop environment | 
-YaST                            | package manager and configuration tool for openSUSE and SUSE Linux Enterprise; "Yet Another Setup Tool" | LU: 289
-yum                             | package management tool for Red Hat Enterprise Linux | 
+QtAV                            | multimedia playback framework based on `Qt` and `FFmpeg`; directly uses ffmpeg codecs; alternative to `Exiv2` [[LU](../sources/README.md): 289]
+qtile                           | tiling window manager written and configured in Python used by Luke Smith; abandoned by DT in 2019 after a few weeks of use 
+ranger                          | file manager
+rxvt-unicode                    | terminal emulator
+shorewall                       | open-source command-line firewall tool for Linux; works off plaintext configuration files; more user-friendly than `iptables`; alternative: `FireHOL` [[LU](../sources/README.md): 289]
+snapcraft                       | platform to allow high-frequency updates of applications; developed by Canonical; uses YAML format; written in Go, C
+solVItaire                      | terminal-based solitarie game that uses vim key bindings
+st                              | "simple terminal"; suckless terminal emulator
+surf                            | suckless web browser
+sxiv                            | suckless image viewer
+systemctl                       | main command used to inspect and control `systemd`
+systemd                         | suite of basic building blocks for a Linux system
+termite                         | terminal disfavored by Distro Tube
+Thunar                          | file manager used by XFCE
+Tilix                           | tiling terminal emulator; GTK3 [[DL](../sources/README.md): 104]
+Titan                           | command-line password manager and file encryption tool; stores passwords in an encrypted SQLite database 
+tldr                            | alternative to man
+tutanota                        | encrypted open-source email service
+Ubuntu Touch                    | open-source operating system for mobile devices [[DL](../sources/README.md): 104]
+urxvt                           | terminal favored by Distro Tube
+vifm                            | file manager; lacks image previews and file icons
+Wasmer                          | Python module that allows Python to run web assembly
+Wayland                         | intended to be a successor to X [[DL](../sources/README.md): 110]
+wine                            | method of running Windows applications on linux which is faster than a virtual machine or emulator
+xfce4                           | desktop environment
+xorg                            | X.org server
+Xubuntu                         | Linux distribution based on Ubuntu which uses the XFCE desktop environment
+YaST                            | package manager and configuration tool for openSUSE and SUSE Linux Enterprise; "Yet Another Setup Tool" [[LU](../sources/README.md): 289]
+yum                             | package management tool for Red Hat Enterprise Linux
 Youtube-dl                      | command-line utility for downloading YouTube videos [[3](#sources)]
 ZFS                             | Zettabyte File System: next-generation filesystem with a problematic license by Oracle [[LU](../sources/README.md): 284]
 ZynAddSubFX                     | LMMS plugin, used with synthesizers [[1](#sources)]
@@ -1124,10 +1193,13 @@ ZynAddSubFX                     | LMMS plugin, used with synthesizers [[1](#sour
   21. "How to convert documents to PDF format on the Ubuntu Command Line". [vitux.com](https://vitux.com/how-to-convert-documents-to-pdf-format-on-the-ubuntu-command-line/).
   22. "Linux Mail Server Postfix Architecture" [YouTube](https://youtu.be/qhA8HuJBa64)
   23. Cannon, Jason. [*Command Line Kung Fu.*](../sources/clkf.md)
-  24. 
+  24. "Someone forked GIMP into Glimpse because gimp is an offensive word". [It's FOSS](https://itsfoss.com/gimp-fork-glimpse/): 2019/08/27.
   25. "Send Emails From Linux Terminal Using SSMTP". [linuxhandbook.com](https://linuxhandbook.com/linux-send-email-ssmtp/)
   26. "Linux Mail Server Postfix Architecture" [YouTube](https://youtu.be/qhA8HuJBa64)
   27. "Qmail deprecation" [archlinux.org](https://www.archlinux.org/news/qmail-deprecation/)
   28. "Free Command in Linux Explained With Examples". [linuxhandbook.com](https://linuxhandbook.com/free-command/)
   29. "The `mktemp` Command Tutorial With examples". [OSTechnix](https://www.ostechnix.com/the-mktemp-command-tutorial-with-examples-for-beginners/)
   30. "How to move a file in Linux". [opensource.com](https://opensource.com/article/19/8/moving-files-linux-depth): 2019/08/22.
+  31. "How to view image metadata". [OSTechNix](https://www.ostechnix.com/how-to-view-image-metadata-on-linux/): 2019/08/26.
+  32. "Introduction to the Linux `chown` command". [opensource.com](https://opensource.com/article/19/8/linux-chown-command): 2019/08/26.
+  33. "How to rename a group of files on Linux". [NetworkWorld](https://www.networkworld.com/article/3433865/how-to-rename-a-group-of-files-on-linux.html#tk.rss_linux): 2019/08/26.
