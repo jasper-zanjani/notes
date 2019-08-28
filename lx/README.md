@@ -12,10 +12,63 @@ Topic                           | Contents
 [X](X.md)
 
 ## Configuration files
-Config file     | Description
-:---            | :---
-/etc/aliases    | forwarding to more than one address requires entries here [[alias](#alias)]
-$HOME/.forward  | forwarding to only one address
+Config file                       | Description
+:---                              | :---
+$HOME/.forward                    | forwarding to only one address
+$HOME/.gnupg/pubring.gpg          | default storage for public [gpg](#gpg) keyrings 
+$HOME/.ssh/known_hosts            | public keys of SSH hosts
+$HOME/xorg.conf                   | user config which overrides system defaults
+/boot/grub/grub.cfg               | GRUB2 bootloader
+/etc/aliases                      | systemwide email aliases
+/etc/apt/sources.list             | APT repos <br/>`deb-src` is the prefix used to denote a Debian source repo
+/etc/default/useradd              | [useradd](#useradd)
+/etc/fstab                        | filesystems to be mounted by the system at boot
+/etc/gdm/custom.conf              | GNOME config
+/etc/group                        | colon-delimited values for groups<br/>**Format**:<br/>`name:password:GID:user1,user2,user3,...`
+/etc/hosts                        | global hostnames
+/etc/hotplug/usb                  | location of scripts executed when a hotplug device is inserted
+/etc/hostname                     | contains hostname
+/etc/init.d/                      | [sysvinit](#sysvinit) scripts run during startup and shutdown
+/etc/inittab                      | initialization table
+/etc/ld.so.conf.d/                | configs that establish pathnames where shared libraries may be found
+/etc/lightdm/                     | directory containing **users.conf**, and the subdirectory **lightdm.conf.d**, if created, the contents of which will be loaded as well
+/etc/lightdm/lightdm.conf         | [lightdm](#lightdm) 
+/etc/ld.so.conf                   | [ldconfig](#ldconfig) 
+/etc/login.defs                   | default configuration values for [useradd](#useradd), [userdel](#userdel), [usermod](#usermod), and [groupadd](#groupadd)
+/etc/logrotate.conf               | [logrotate](#logrotate)
+/etc/lvm/.cache                   | default location of LVM cache
+/etc/modprobe.d/                  | [modprobe](#modprobe)
+/etc/mtab                         | updated dynamically with information about currently mounted filesystems
+/etc/network                      | global network settings
+/etc/ntp.conf                     | NTP config
+/etc/nsswitch.conf                | controls lookup system beyond just DNS
+/etc/passwd                       |
+/etc/postfix/main.cf              | [postfix](#postfix)
+/etc/rc.d/rc.sysinit              | first script run by init
+/etc/resolv.conf                  | nameserver definitions (maximum of 6 domains with total of 256 characters)
+/etc/samba/smb.conf               | Samba configuration fileA
+/etc/selinux/config               | [SELinux](#selinux)
+/etc/services                     | used to resolve port numbers
+/etc/skel/                        | default configs for new users
+/etc/ssh/ssh_config               | client config for ssh
+/etc/ssh/sshd_config              | server configuration file for ssh
+/etc/sudoers                      | who has sudo access
+/etc/sysconfig/desktop            | Specifies display manager and desktops on Red Hat
+/etc/sysconfig/network-scripts/   | directory containing network configs and scripts for Red Hat
+/etc/syslog-ng/syslog-ng.conf     | [syslog-ng](#syslog-ng)
+/etc/udev/hwdb.bin                | udev hardware database
+/etc/X11/xdm/xdm-config           | XFCE config
+/etc/xinet.d/                     | directory of config files for xinetd
+/etc/yum.repos.d/                 | repository definitions with filenames that follow the pattern **\*.repo**
+/etc/yum.conf                     | config
+/lib/systemd/system/              | directory containing unit configs
+/proc/loadavg                     | virtual file that has information about load average for use in [`uptime`](#uptime)
+/var/log/dmesg                    | kernel ring buffer information
+/var/log/audit/audit.log          | audit file for SELinux
+/sys/class/net/eth0/address       | MAC address of eth0
+/usr/share/config/kdm/kdmrc       | KDM config
+/usr/share/lightdm/lightdm.conf.d/ | [lightdm](#lightdm) configs, all of whose filenames follow the pattern **50-\*.conf**
+
 ## Commands
 All commands
 :---:
