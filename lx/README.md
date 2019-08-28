@@ -75,6 +75,7 @@ All commands
 **Disk** [partx](#partx) [sfdisk](#sfdisk) 
 **E-mail** [mail](#mail) [mailq](#mailq) [postfix](#postfix) [qmail](#qmail) [sendmail](#sendmail) [ssmtp](#ssmtp) 
 **Filters** [awk](awk.md) [grep](#grep) [less](less.md) [sed](#sed) [shuf](#shuf) [sort](#sort) [tr](#tr) 
+**Git** [git](#git) [tig](#tig)
 **Network** [bpftrace](#bpftrace) [dhclient](#dhclient) [dig](#dig) [ftp](#ftp) [firewalld](#firewalld) [hostnamectl](#hostnamectl) [ifconfig](#ifconfig) [iptables](#iptables) [nc](#nc) [netplan](#netplan) [netstat](#netstat) [NetworkManager](#networkmanager) [nmap](#nmap) [nmcli](#nmcli) [nslookup](#nslookup) [ping](#ping) [route](#route) [ss](#ss) [tcpdump](#tcpdump) [tracepath](#tracepath) [traceroute](#traceroute) [xinetd](#xinetd) 
 **Package managers** [apt](#apt) [dpkg](#dpkg) [pacman](pacman.md) [rpm](#rpm) [yay](#yay) [yum](#yum)
 **SSH** [sshfs](#sshfs) [ssh-copy-id](#ssh-copy-id) [ssh-keygen](#ssh-keygen) [ssh](#ssh)
@@ -1029,6 +1030,40 @@ Inspect actual IP packets (Wireshark is a GUI-based alternative)
 ```
 tcpdump -i eth0
 ```
+### tig
+Provides a curses-based browser that allows you to navigate the commits in the current branch. It is essentially a wrapper around `git log`, and therefore accepts the same arguments that can be passed to it.[[34](#sources)]
+#### tig config
+Config file   | Description
+:---          | :---
+$HOME/.tigrc  | 
+#### Browse the commit history for a single {file}
+```sh
+tig file
+```
+#### Browse the commit history for a single {file}, filtering to a specific date range
+```sh
+tig --after="2017-01-01" --before="2018-05-16" -- README.md
+```
+#### Find who made a change toa  file and why
+```sh
+tig blame file
+```
+#### Browse stash
+```sh
+tig stash
+```
+#### Browse refs
+```sh
+tig refs
+```
+#### Navigate the output of `git grep`
+```sh
+tig grep -i foo lib/Bar
+```
+#### Pipe a list of commit IDs to tig
+```sh
+git rev-list --author=olaf HEAD | tig show --stdin
+```
 ### tr
 #### Change the case of a string
 [[23](#sources)]
@@ -1255,3 +1290,4 @@ ZynAddSubFX                     | LMMS plugin, used with synthesizers [[1](#sour
   31. "How to view image metadata". [OSTechNix](https://www.ostechnix.com/how-to-view-image-metadata-on-linux/): 2019/08/26.
   32. "Introduction to the Linux [`chown`](#chown) command". [opensource.com](https://opensource.com/article/19/8/linux-chown-command): 2019/08/26.
   33. "How to [`rename`](#rename) a group of files on Linux". [NetworkWorld](https://www.networkworld.com/article/3433865/how-to-rename-a-group-of-files-on-linux.html#tk.rss_linux): 2019/08/26.
+  34. "How to use Tig to browse Git logs". [opensource.com](https://opensource.com/article/19/6/what-tig) 
