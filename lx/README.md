@@ -22,6 +22,7 @@ $HOME/xorg.conf                   | user config which overrides system defaults
 /etc/aliases                      | systemwide email aliases
 /etc/apt/sources.list             | APT repos <br/>`deb-src` is the prefix used to denote a Debian source repo
 /etc/default/useradd              | [useradd](#useradd)
+/etc/files.dns                    | NIS+ servers for Solaris servers
 /etc/fstab                        | filesystems to be mounted by the system at boot
 /etc/gdm/custom.conf              | GNOME config
 /etc/group                        | colon-delimited values for groups<br/>**Format**:<br/>`name:password:GID:user1,user2,user3,...`
@@ -53,7 +54,8 @@ $HOME/xorg.conf                   | user config which overrides system defaults
 /etc/ssh/ssh_config               | client config for ssh
 /etc/ssh/sshd_config              | server configuration file for ssh
 /etc/sudoers                      | who has sudo access
-/etc/sysconfig/desktop            | Specifies display manager and desktops on Red Hat
+[/etc/sysconfig/desktop](#etcsysconfigdesktop) | Specify display manager and desktops on Red Hat
+/etc/sysconfig/iptables           | [iptables](#iptables)
 /etc/sysconfig/network-scripts/   | directory containing network configs and scripts for Red Hat
 /etc/syslog-ng/syslog-ng.conf     | [syslog-ng](#syslog-ng)
 /etc/udev/hwdb.bin                | udev hardware database
@@ -68,19 +70,51 @@ $HOME/xorg.conf                   | user config which overrides system defaults
 /sys/class/net/eth0/address       | MAC address of eth0
 /usr/share/config/kdm/kdmrc       | KDM config
 /usr/share/lightdm/lightdm.conf.d/ | [lightdm](#lightdm) configs, all of whose filenames follow the pattern **50-\*.conf**
+
+### /etc/sysconfig/desktop
+Specify desktop environment and display manager on Red Hat.
+```conf
+DESKTOP="KDE"
+DISPLAYMANAGER="KDE"
+```
+```conf
+DESKTOP="XFCE"
+DISPLAYMANAGER="XDM"
+```
+```conf
+DESKTOP="Gnome"
+DISPLAYMANAGER="GDM"
+```
 ## Commands
-All commands
+Commands sorted alphabetically
 :---
-[at](#at)  [bash](bash.md) [cat](cat.md) [crontab](crontab.md) [date](date.md) [dhclient](#dhclient) [elvish](elvish.md) [exif](#exif) [file](#file) [fish](fish.md) [free](#free) [fusermount](#fusermount) [history](#history) [imagemagick](imagemagick.md) [install](#install) [make](make.md) [mkdir](#mkdir) [mktemp](#mktemp) [read](#read) [rename](#rename) [sudo](sudo.md) [test](test.md) [tmux](tmux.md) [watch](watch.md)
-**Disk** [partx](#partx) [sfdisk](#sfdisk) 
-**E-mail** [mail](#mail) [mailq](#mailq) [postfix](#postfix) [qmail](#qmail) [sendmail](#sendmail) [ssmtp](#ssmtp) 
-**Filters** [awk](awk.md) [grep](#grep) [less](less.md) [sed](#sed) [shuf](#shuf) [sort](#sort) [tr](#tr) 
-**Git** [git](#git) [tig](#tig)
-**Network** [bpftrace](#bpftrace) [dhclient](#dhclient) [dig](#dig) [ftp](#ftp) [firewalld](#firewalld) [hostnamectl](#hostnamectl) [ifconfig](#ifconfig) [iptables](#iptables) [nc](#nc) [netplan](#netplan) [netstat](#netstat) [NetworkManager](#networkmanager) [nmap](#nmap) [nmcli](#nmcli) [nslookup](#nslookup) [ping](#ping) [route](#route) [ss](#ss) [tcpdump](#tcpdump) [tracepath](#tracepath) [traceroute](#traceroute) [xinetd](#xinetd) 
-**Package managers** [apt](#apt) [dpkg](#dpkg) [pacman](pacman.md) [rpm](#rpm) [yay](#yay) [yum](#yum)
-**SSH** [sshfs](#sshfs) [ssh-copy-id](#ssh-copy-id) [ssh-keygen](#ssh-keygen) [ssh](#ssh)
-**SystemD** [firewalld](#firewalld) [hostnamectl](#hostnamectl) [xinetd](#xinetd)
-**Needing further research** [lsof](#lsof) [column](#column) [sc](#sc) [espeak](#espeak) [visudo](#visudo) [fmt](#fmt) [paste](#paste) [openssl](#openssl) [sshfs](#sshfs) [ssh-copy-id](#ssh-copy-id)
+**A** [adduser](#adduser) [alsamixer](#alsamixer) [apropos](#apropos) [apt](#apt) [apt-cache](#apt-cache) [at](#at) [ausearch](#ausearch) [awk](#awk) 
+**B** [bash](#bash) [blkid](#blkid) [bpftrace](#bpftrace) [bzcat](#bzcat) [bzip2](#bzip2) [bzless](#bzless) [bzmore](#bzmore) 
+**C** [cancel](#cancel) [cat](#cat) [chage](#chage) [chcon](#chcon) [chgrp](#chgrp) [chkconfig](#chkconfig) [chmod](#chmod) [chown](#chown) [chpass](#chpass) [chsh](#chsh) [column](#column) [compress](#compress) [cp](#cp) [crontab](#crontab) [crossystem](#crossystem) [cryptsetup](#cryptsetup) [curl](#curl) [cut](#cut) 
+**D** [dar](#dar) [date](#date) [dbus](#dbus) [dd](#dd) [declare](#declare) [df](#df) [dhclient](#dhclient) [diff](#diff) [dig](#dig) [dirname](#dirname) [dm-crypt](#dm-crypt) [dmesg](#dmesg) [doveadm](#doveadm) [dpkg](#dpkg) [dpkg-reconfigure](#dpkg-reconfigure) [du](#du) [dumpe2fs](#dumpe2fs) 
+**E** [e2image](#e2image) [e2label](#e2label) [edquota](#edquota) [elvis](#elvis) [elvish](#elvish) [espeak](#espeak) [exif](#exif) 
+**F** [fam](#fam) [fdisk](#fdisk) [file](#file) [find](#find) [firewall-cmd](#firewall-cmd) [firewalld](#firewalld) [fish](#fish) [fmt](#fmt) [fold](#fold) [free](#free) [fsck](#fsck) [fstrim](#fstrim) [ftp](#ftp) [fusermount](#fusermount) 
+**G** [gconf-editor](#gconf-editor) [gdisk](#gdisk) [gdmsetup](#gdmsetup) [gem](#gem) [getfacl](#getfacl) [git](#git) [gpasswd](#gpasswd) [gpg](#gpg) [grep](#grep) [groupadd](#groupadd) [groupdel](#groupdel) [groupmod](#groupmod) [grub](#grub) [gzip](#gzip) 
+**H** [hdiutil](#hdiutil) [hdparm](#hdparm) [head](#head) [history](#history) [host](#host) [hostname](#hostname) [hostnamectl](#hostnamectl) [hwclock](#hwclock) 
+**I** [iconv](#iconv) [ifconfig](#ifconfig) [imagemagick](#imagemagick) [init](#init) [initctl](#initctl) [insmod](#insmod) [install](#install) [ip](#ip) [iptables](#iptables) [iscsiadm](#iscsiadm) [iwlist](#iwlist) 
+**J** [journalctl](#journalctl) 
+**K** [kill](#kill) 
+**L** [last](#last) [ldapadd](#ldapadd) [ldconfig](#ldconfig) [ldd](#ldd) [less](#less) [let](#let) [link](#link) [locale](#locale) [localectl](#localectl) [logout](#logout) [lp](#lp) [lpadmin](#lpadmin) [lpstat](#lpstat) [ls](#ls) [lsblk](#lsblk) [lsmod](#lsmod) [lsof](#lsof) [lspci](#lspci) [lsusb](#lsusb) [lvcreate](#lvcreate) [lvdisplay](#lvdisplay) [lvremove](#lvremove) [lvresize](#lvresize) 
+**M** [mail](#mail) [mailq](#mailq) [mailstats](#mailstats) [make](#make) [makemap](#makemap) [mdadm](#mdadm) [mhwd](#mhwd) [mhwd-chroot](#mhwd-chroot) [mkdir](#mkdir) [mke2fs](#mke2fs) [mkfontscale](#mkfontscale) [mkfs](#mkfs) [mkswap](#mkswap) [mktemp](#mktemp) [modinfo](#modinfo) [modprobe](#modprobe) [mount](#mount) [mt](#mt) 
+**N** [nc](#nc) [netplan](#netplan) [netstat](#netstat) [NetworkManager](#NetworkManager) [newaliases](#newaliases) [nice](#nice) [nl](#nl) [nmap](#nmap) [nmblookup](#nmblookup) [nmcli](#nmcli) [nohup](#nohup) [nslookup](#nslookup) [ntpdate](#ntpdate) 
+**O** [openssl](#openssl) 
+**P** [pacman](#pacman) [pacman](#pacman) [partx](#partx) [passwd](#passwd) [paste](#paste) [patch](#patch) [ping](#ping) [pip](#pip) [postfix](#postfix) [postqueue](#postqueue) [postsuper](#postsuper) [ps](#ps) [pvcreate](#pvcreate) [pvdisplay](#pvdisplay) [pvremove](#pvremove) [pydoc](#pydoc) 
+**Q** [qmail](#qmail) [quota](#quota) [quotacheck](#quotacheck) [quotaoff](#quotaoff) [quotaon](#quotaon) 
+**R** [read](#read) [rename](#rename) [repquota](#repquota) [resize2fs](#resize2fs) [resize4fs](#resize4fs) [restorecon](#restorecon) [rmmod](#rmmod) [route](#route) [rpm](#rpm) [rsync](#rsync) [runlevel](#runlevel) 
+**S** [samba](#samba) [sc](#sc) [sed](#sed) [semanage](#semanage) [sendmail](#sendmail) [seq](#seq) [service](#service) [sestatus](#sestatus) [setenforce](#setenforce) [setfacl](#setfacl) [sfdisk](#sfdisk) [shred](#shred) [shuf](#shuf) [shutdown](#shutdown) [slapadd](#slapadd)  [sleep](#sleep) [snap](#snap) [sort](#sort) [source](#source) [speaker-test](#speaker-test) [ss](#ss) [ssh](#ssh) [ssh-copy-id](#ssh-copy-id) [ssh-keygen](#ssh-keygen) [ssh-keyscan](#ssh-keyscan) [sshfs](#sshfs) [ssmtp](#ssmtp) [startx](#startx) [stty](#stty) [su](#su) [sudo](#sudo) [swapoff](#swapoff) [swapon](#swapon) [sysctl](#sysctl) [syslog](#syslog) [systemctl](#systemctl) [systemd-delta](#systemd-delta) 
+**T** [tail](#tail) [tar](#tar) [tcpdump](#tcpdump) [telinit](#telinit) [test](#test) [test](#test) [tig](#tig) [timedatectl](#timedatectl) [tmux](#tmux) [top](#top) [tput](#tput) [tr](#tr) [tracepath](#tracepath) [traceroute](#traceroute) [tune2fs](#tune2fs) [tzselect](#tzselect) 
+**U** [udevadm](#udevadm) [umount](#umount) [uname](#uname) [uncompress](#uncompress) [unzip](#unzip) [update-grub](#update-grub) [update-rc.d](#update-rc.d) [useradd](#useradd) [userdel](#userdel) [usermod](#usermod) 
+**V** [variable](#variable) [vgcreate](#vgcreate) [vgdisplay](#vgdisplay) [vgextend](#vgextend) [vgremove](#vgremove) [vgscan](#vgscan) [vifs](#vifs) [visudo](#visudo) 
+**W** [wall](#wall) [watch](#watch) [wc](#wc) [whatis](#whatis) 
+**X** [X](#X) [xdpyinfo](#xdpyinfo) [xhost](#xhost) [xinetd](#xinetd) [Xorg](#Xorg) [xrandr](#xrandr) [xwininfo](#xwininfo) 
+**Y** [yay](#yay) [yum](#yum) 
+**Z** [zip](#zip) [zipcloak](#zipcloak) [zipdetails](#zipdetails) [zipgrep](#zipgrep) [zipinfo](#zipinfo) [zipnote](#zipnote) [zipsplit](#zipsplit) [zsh](#zsh)
+
 ### at
 #### Execute a command at a given time
 ```sh
@@ -88,6 +122,194 @@ echo "cmd" | at time
 ```
 ```sh
 at -f file time
+```
+### bzcat
+### bzless
+### bzmore
+Page through bz2 files
+### bzip2
+#### Display contents of {archive} to stdout
+```sh
+bzip2 -c archive
+bzip2 --stdout archive
+```
+#### Decompress {archive}
+```sh
+bzip2 -d archive
+bzip2 --decompress archive
+```
+#### Compress {symlink}
+```sh
+bzip2 -f symlink
+bzip2 --force symlink
+```
+### compress
+#### Display contents of the compressed file to stdout (same as using `zcat`)
+```sh
+compress -c
+```
+#### Compress symbolic links
+```sh
+compress -f
+```
+#### Compress files recursively within a specified directory
+```sh
+compress -r
+```
+### dar
+#### Create a differential (or incremental) backup of {file}, using full.bak as reference
+```sh
+dar -R /path/to/file -c diff1.bak -A full.bak
+```
+#### Create a full backup of {file}
+```sh
+dar -R /path/to/file -c full.bak
+```
+#### Restore full.bak
+```sh
+dar -x full.bak
+```
+### gzip
+Zip a single file in-place; each file is replaced by one with the extension `.gz` or `.z`, maintaining ownership modes, access and modification times
+#### Compress {file} at compression ratio {#}, ranging from 1 to 9 (6 by default)
+```sh
+gzip -#
+gzip --fast
+gzip --best
+```
+#### Display contents of {archive} to stdout
+```sh
+gzip -c archive
+gzip --stdout -to-stdout archive
+```
+#### Decompress {archive}
+```sh
+gzip -d archive
+gzip --decompress archive
+```
+#### Compress {symlink}
+```sh
+gzip -f symlink
+gzip --force symlink
+```
+#### Do not preserve original modification and access time for files
+```sh
+gzip -n
+gzip --no-name
+```
+#### Specify extension {.ext} instead of default ".gz" while compressing {file}
+```sh
+gzip -S .ext file
+gzip --suffix .ext file
+```
+### zcat
+Page through .gz files
+### rsync
+#### Archive mode: equivalent to -rptlgoD
+```sh
+rsync -a
+```
+#### Create a backup of every file destination file transferred
+```sh
+rsync -b
+```
+### tar
+#### Change directory `dir` before adding `files` to the tar archive, using relative pathnames; makes it possible to archive files that don't share a common ancestor directory
+```sh
+tar -C path files tar --directory=path files
+```
+#### Create {archive} from contents of {path}
+```sh
+tar -cf archive path
+tar --create --file archive path
+```
+#### Create bzip2-compressed {archive} from contents of {path}
+```sh
+tar -cfj archive path
+tar --create --file --bzip archive path
+```
+#### Create gzip-compressed {archive} from contents of {path}
+```sh
+tar -cfz archive path
+tar --create --file --gzip archive path
+```
+#### Preserve permissions
+```sh
+tar -p
+```
+#### Add {file} to {archive}
+```sh
+tar -rf archive file
+tar --append --file archive file
+```
+#### Read a list of filenames to be archived, one filename per line, from file
+```sh
+tar -T file
+tar --files-from=file
+```
+#### List the contents of {archive}
+```sh
+tar -tf archive
+tar --list --file archive
+```
+#### Extract contents of {tarfile} in the current directory
+```sh
+tar -xf archive
+tar --extract --file archive
+```
+#### Extract only {file} from {archive}
+```sh
+tar -xf archive file tar--extract --file archive file
+```
+#### Extract contents of gzip-compressed {archive} to {path}
+```sh
+tar -xzf archive -C path
+```
+### uncompress
+#### Overwrite existing files without prompting, if they exist
+```sh
+uncompress  -f
+```
+#### Decompress files recursively
+```sh
+uncompress -r
+```
+### unzip
+Extract compressed files in a zip archive
+### zip
+#### Archive files in InfoZIP format
+```sh
+zip zipfile *files
+```
+### zipcloak
+#### Encrypt a zip {archive}
+```sh
+zipcloak archive
+```
+### zipdetails
+#### Produce a detailed list of information about a zip {archive}
+```sh
+zipdetails archive
+```
+### zipgrep
+#### Search for {string} within all files of a zip {archive}
+```sh
+zipgrep string archive
+```
+### zipinfo
+#### Print information about ZIP format archives
+```sh
+zipinfo *zipfiles
+```
+### zipnote
+#### Annotate a zip {archive} by creating a {comments} file, which can then be edited and rewritten with `-w` flag
+```sh
+zipnote archive > comments
+```
+### zipsplit
+#### Split `zipfile` into segments of size `size`
+```sh
+zipsplit -n size zipfile
 ```
 ### bpftrace
 New open-source tracer for analyzing production performance problems and troubleshooting software [[19](#sources)]
@@ -131,7 +353,6 @@ dig example.com NS
 dig example.com MX
 ```
 ### dpkg
-
 ### exif
 #### View image metadata
 Unlike alternatives like `file` and ImageMagick's `identify`, `exif` produces columnar output [[31](#sources)]
@@ -228,6 +449,28 @@ encrypted file transfers
 ```sh
 fusermount -u mountpoint
 ```
+### gpg
+PGP was bought by Semantec, and GNU has since released GPG, an open-source replacement.[35](#sources)
+#### Decrypt file
+```sh
+gpg file.txt
+```
+#### Export GPG public key
+```sh
+gpg --export --output ~/jdoe.pub
+```
+#### Import another person's public key
+```sh
+gpg --import jdoe.pub
+```
+#### List available GPG keys
+```sh
+gpg --list-key
+```
+#### Encrypt a file
+```sh
+gpg --encrypt -r jdoe@dplaptop.lab.itpro.tv ./file.txt
+```
 ### grep
 Option  | POSIX option            | Effect
 :---    | :---                    | :---
@@ -281,23 +524,32 @@ ifconfig eth0 down
 ```
 ### iptables
 A popular firewall, like `firewalld`, a frontend for the kernel-level `netfilters` service. Interface configuration, used to assign a TCP/IP configuration to a network interface, but no longer installed on modern distros.
-
-Config files | Description
-:---   | :---
+#### iptables config
+Config files  | Description
+:---          | :---
 /etc/sysconfig/iptables | location of saved config
-
-Syntax | Effect
-:---   | :---
-`iptables --list` | will produce output even if the service is not running
-`systemctl enable --now iptables` | start iptables service
-`iptables --list-rules` | display rules as written on disk
-`iptables -A INPUT -p tcp --dport 80 -j ACCEPT` | accept TCP traffic to port 80
-`iptables -A INPUT -p tcp --dport ssh -s 10.0.222.222 -j ACCEPT` | accept SSH traffic from a particular source
-`iptables-save` | stdout only; must be redirected to a file
-`iptables -F` | reload config file
-`systemctl restart iptables`
-`iptables -vnL --line` | show statistics for configuration lines
-`watch -n 0.5 iptables -vnL` \ update twice a second, producing a dashboard
+#### Display rules as written on disk
+```sh
+iptables --list-rules
+```
+#### Accept SSH traffic from a particular IP
+```sh
+iptables -A INPUT -p ssh -s 10.0.222.222 -j ACCEPT
+```
+#### Accept incoming TCP traffic to port 80
+```sh
+iptables -A INPUT -p tcp --dport 80 -j ACCEPT
+```
+#### Reload configuration file
+```sh
+iptables -F
+```
+#### Show statistics for configuration lines
+```sh
+iptables -vnL --lines
+```
+### iptables-save
+Display what the running configuration would look like if written to disk (must be redirected to a file)
 ### lowriter
 `lowriter` is a command-line utility installed with LibreOffice Writer.[[21](#sources)]
 #### Convert a single file to PDF
@@ -307,6 +559,14 @@ lowriter --convert-to pdf filename.doc
 #### Convert a batch of files using globbing
 ```sh
 lowriter --convert-to pdf *.docx
+```
+### locale
+
+### localectl
+Change locale
+#### Change locale to French
+```sh
+localectl set-locale LANG=fr_FR.utf8
 ```
 ### lsof
 #### Show open network connections
@@ -1089,6 +1349,10 @@ Execute {cmd} at periods of {n} seconds, watching its output [[23](#sources)]
 ```sh
 watch cmd -n n
 ```
+#### Update twice a second, producing a dashboard
+```sh
+watch -n 0.5 iptables -vnL
+```
 ### xinetd
 Internet Super Daemon provided an alternate method of connecting to various outdated network services. Should be turned off nowadays.  
 #### xinetd configuration
@@ -1102,6 +1366,107 @@ Configuration file  | Description
 ```sh
 stat file
 ```
+### yum
+Yellow Dog Update manager (Yellow Dog was a variation of Red Hat for PowerPC architectures), package manager more commonly used today. [35](#sources)
+#### Upgrade installed packages
+```sh
+yum -y
+```
+#### Remove {package} as well as the cached package
+```sh
+yum erase package
+```
+#### Install {packagegroup}
+```sh
+yum groupinstall packagegroup
+```
+#### Query repos for information on {package}
+```sh
+yum info package
+```
+#### Install {package}
+```sh
+yum install package
+```
+#### Search for packages with a name matching {pattern}
+```sh
+yum list pattern
+```
+#### Search database for {pattern}
+```sh
+yum search pattern
+```
+#### Upgrade {package}
+```sh
+yum update package
+```
+### lvcreate
+#### Create a 20 gigabyte logical volume named "Marketing" from volume group {vg1}
+```sh
+lvcreate -L 20G vg1 -n Marketing
+```
+#### Create logical volume named {lv1} of size {500G} from volume group {vg1}
+```sh
+lvcreate-L 500G vg1 -n lv1
+```
+### lvdisplaylvs
+View logical volumes
+### lvremove
+#### Remove logical volume {/dev/vg1/lv1}
+```sh
+lvremove /dev/vg1/lv1
+```
+### lvresize
+#### Resize existent logical volume {Marketing} in volume group {vg1} to have an additional 10 gigabytes of space
+```sh
+lvresize -L +10G /dev/vg1/Marketing
+```
+### pvcreate
+#### Create physical volumes from {/dev/sdb} and {/dev/sdc}
+```sh
+pvcreate /dev/sdb /dev/sdc
+```
+### pvcreate*partitions
+Create physical volumes from {partitions}
+### pvdisplay
+#### View physical volumes
+```sh
+pvdisplay | pvs
+```
+### pvremove
+#### Remove physical volumes {/dev/sdb1}, {/dev/sdc1}, {/dev/sdd1}
+```sh
+pvremove /dev/sdb1 /dev/sdc1 /dev/sdd1
+```
+### resize2fs
+#### Resize filesystem of logical volume {Marketing} on volume group {vg1} to take up the entire logical volume
+```sh
+resize2fs /dev/vg1/Marketing
+```
+### vgcreate
+#### Create volume group {vg1} from physical volumes {/dev/sdb} and {/dev/sdc}
+```sh
+vgcreate vg1 /dev/sdb /dev/sdc
+```
+#### Create a volume group {vg1} from device {/dev/sdb1}
+```sh
+vgcreatevg1 /dev/sdb1
+```
+### vgdisplay
+### vgs
+View volume groups
+### vgextend
+#### Add an additional drive {/dev/sdd} to existent volume group {vg1}
+```sh
+vgextend vg1 /dev/sdd
+```
+### vgremove
+#### Remove volume group {/dev/vg1}
+```sh
+vgremove /dev/vg1
+```
+### vgscan
+Build the LVM cache file
 ## Tasks
 #### Validating arguments
 ```
@@ -1291,3 +1656,4 @@ ZynAddSubFX                     | LMMS plugin, used with synthesizers [[1](#sour
   32. "Introduction to the Linux [`chown`](#chown) command". [opensource.com](https://opensource.com/article/19/8/linux-chown-command): 2019/08/26.
   33. "How to [`rename`](#rename) a group of files on Linux". [NetworkWorld](https://www.networkworld.com/article/3433865/how-to-rename-a-group-of-files-on-linux.html#tk.rss_linux): 2019/08/26.
   34. "How to use Tig to browse Git logs". [opensource.com](https://opensource.com/article/19/6/what-tig) 
+  35. "CompTIA Linux+ powered by LPI". ITProTV. [itp-lpic.md](../sources/itp-lpic.md)
