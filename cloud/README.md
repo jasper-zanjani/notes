@@ -20,7 +20,7 @@ File Storage                      | File Storage                | Elastic File S
 Reduced-availability Storage      | Cool Blob Storage           | S3 Standard-Infrequent Access, S3 One Zone-Infrequent Access  | Storage Nearline
 Archival Storage                  | Archive Blob Storage        | Glacier |  [ Coldline ](https://cloud.google.com/storage/archival/)
 Physical data transport           | Import/Export Service, Data Box | Snowball | GCS Transfer appliance [[16](#sources)]
-RDBMS                             | SQL Database                | Relational Database Service (RDS), Aurora | SQL, Spanner
+RDBMS                             | SQL Database                | Relational Database Service (RDS), Aurora | SQL, [ Spanner ](#spanner)
 NoSQL: Key-value                  | Table Storage               | [ DynamoDB ](#dynamodb)   | [Firestore](#firestore), [Bigtable](#bigtable)
 NoSQL: Indexed                    | [Cosmos DB](#cosmosdb)      | SimpleDB |  [Firestore](#firestore)
 Batch Data Processing             | HDInsight, Batch            | Elastic MapReduce (EMR), Batch | Dataproc, Dataflow
@@ -30,8 +30,8 @@ Big Data Analytics                | Data Lake Analytics, Data Lake Store | Redsh
 Messaging                         | Service Bus                 | Simple Notification Service (SNS), Simple Queueing Service (SQS) | Pub/Sub
 Monitoring                        | Monitor                     | CloudWatch   | Stackdriver 
 Deployment                        | Resource Manager            | CloudFormation   | Deployment Manage
-### Certifications
-#### AWS certs
+## Certifications
+### AWS certs
 [Certification](https://aws.amazon.com/certification/) | Links
 :---                                  | :---
 AWS Certified Cloud Practitioner      | [Certification]](https://aws.amazon.com/certification/certified-cloud-practitioner/)
@@ -45,7 +45,7 @@ AWS Certified Big Data - Specialty    | [Certification](https://aws.amazon.com/c
 AWS Certified Advanced Networking - Specialty | [Certification](https://aws.amazon.com/certification/certified-advanced-networking-specialty/)
 AWS Certified Machine Learning - Specialty | [Certification](https://aws.amazon.com/certification/certified-machine-learning-specialty/)
 AWS Certified Alexa Skill Builder - Specialty | [Certification](https://aws.amazon.com/certification/certified-alexa-skill-builder-specialty/)
-#### Azure certs
+### Azure certs
 [Certification](https://www.microsoft.com/en-us/learning/browse-all-certifications.aspx) | Links
 :---                                  | :---
 Azure Administrator Associate         | [Certification](https://www.microsoft.com/en-us/learning/azure-administrator.aspx) Exam: [AZ-103](https://www.microsoft.com/en-us/learning/exam-az-103.aspx)
@@ -56,7 +56,7 @@ Azure Data Scientist Associate        | [Certification](https://www.microsoft.co
 Azure Developer Associate             | [Certification](https://www.microsoft.com/en-us/learning/azure-developer.aspx) Exam: [AZ-203](https://www.microsoft.com/en-us/learning/azure-developer.aspx#cert-expansion-tab-exam-az-203)
 Azure DevOps Engineer Expert          | [Certification](https://www.microsoft.com/en-us/learning/azure-devops.aspx) Exam: [AZ-400](https://www.microsoft.com/en-us/learning/azure-devops.aspx#cert-expansion-tab-exam-az-400)
 Azure Solutions Architect Expert      | [Certification](https://www.microsoft.com/en-us/learning/azure-solutions-architect.aspx) Exams: [AZ-300](https://www.microsoft.com/en-us/learning/azure-solutions-architect.aspx#cert-expansion-tab-exam-az-300), [AZ-301](https://www.microsoft.com/en-us/learning/azure-solutions-architect.aspx#cert-expansion-tab-exam-az-301)
-#### GCP certs
+### GCP certs
 [Certification](https://cloud.google.com/certification/)| Links
 :---                                  | :---
 Associate Cloud Engineer              | [Certification](https://cloud.google.com/certification/cloud-engineer) [Exam](https://cloud.google.com/certification/guides/cloud-engineer/)
@@ -73,17 +73,19 @@ A **Billing Account** tracks charges and billing account admins can set budgets.
 The **Payments Profile** is a Google-level resource that is used to pay for all Google services.\
 **Projects** are organized under **Folders** which can be nested within each other, and can also have **Labels**. A project can have many labels, but only lives in a **single** folder. Resources are the lowest levels of the hierarchy and can **only** be parented by projects.[[19](#sources), [20](#sources)]
 ## Services
-### Command-line tools
+## Command-line tools
 #### AWS Command Line Interface and AWS Tools for PowerShell
 [[17](#sources)]
-#### gsutil
-gsutil is a Python application that enables command-line access to Cloud Storage [[15](#sources)].\
+#### GCP utilities: `gsutil` and `gcloud`
+`gsutil` is a Python application that enables command-line access to Cloud Storage [[15](#sources)].\
 `gsutil` uses the prefix `gs://` to indicate a resource in Cloud Storage:
 ```
 gs://BUCKET_NAME/OBJECT_NAME
 ```
-#### gcloud
 [gcloud command-line tool](https://cloud.google.com/sdk/gcloud/)
+## NoSQL
+#### Spanner
+Managed scaleable database service.
 #### CosmosDB
 Microsoft Azure NoSQL database service optimized for mobile and web applications that offers graph, document, and key-value APIs [[11](#sources)].
 #### DynamoDB
@@ -104,6 +106,7 @@ NoSQL Document database service offering high performance and automatic scaling 
 GCP Realtime database used for Big Data [[7](#sources)].
   - **History**: BigTable evolved out of Google's need to ensure access to petabytes of data in its web search business line. It was described in a 2006 research paper that ended up launching the entire NoSQL industry. In 2015 it was made available as a service to cloud customers. [[4](#sources)]
   - **Queries**: BigTable doesn't support secondary indexes [[5,6](#sources)]
+## PaaS
 #### App Engine
 Google Cloud Platform Platform-as-a-Service offering.\
 Video | Link
@@ -117,6 +120,7 @@ Getting Started with Google Cloud Compute Engine | [YouTube](https://youtu.be/1X
 ## Glossary
 Term              | Definition  
 :---              | :---
+Atomicity, Consistency, Isolation, Durability (ACID) | properties of database transactions intended to guarantee validity even in the event of error or failure
 Classless Inter-Domain Domain Routing | style of describing IP address ranges where a slash followed by a number follows the IP address (i.e. `10.0.0.0/8`) describes what portion of an IP address is variable and what portion describes the host [[A](#sources): 280]
 document store    | also "document-oriented database", a type of **NoSQL database** that relies on the concept of the record as **document**, whose **content** may differ in format and structure from document to document. Documents are placed within a **collection**, and each document is addressed via a unique key.
 Elasticity        | ability to increase or decrease the __instance count or size__ of existing resources based on fluctuations in traffic or load, or in resource workload 
@@ -125,6 +129,8 @@ Function as a Service | **serverless** architecture
 Fault tolerance   | a system's ability to __continue operating properly__ when one or more of its components fails [[7](#sources)]
 High availability | maintaining __acceptable continuous performance__ despite temporary load fluctuations or failures in services, hardware, or data centers | 
 IaaS              | ("eye-az") Infrastructure as a Service 
+Online Analytics Processing (OLAP)
+Online Transaction Processing (OLAP)
 PaaS              | ("paz") cf. **Platform as a Service**
 Platform as a Service | software design pattern where a third-party service (i.e. Heroku, [Azure Web Apps](), and AWS [Elastic Beanstalk](#elastic-beanstalk)) eliminates the need for managing infrastructure but unlike **serverless architecture**, does not scale automatically. Typically an application deployed over PaaS is running on at least one server at all times.
 SaaS              | ("saz") Software as a Service 
