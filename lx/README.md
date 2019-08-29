@@ -930,7 +930,7 @@ partx -o START, END --nr 10 /dev/sda
 ```bash
 partx -a /dev/sda
 ```
-#### Dos[;au tje ;emgtj om sectors and human-readable size of a partition
+#### Display length in sectors and human-readable size of a partition
 ```bash
 partx -o SECTORS,SIZE /dev/sda1 /dev/sda
 ```

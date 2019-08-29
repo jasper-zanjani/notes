@@ -585,7 +585,7 @@ Shell scripts can be refactored as functions in the .bashrc file. To make these 
 ### Commands:
   - `at` : execute a command at a particular time, one-time
   - `at 3 PM Fri /home/dpezet/backupdb.sh`
-  - /bin/bash: :q: command not found
+  - /bin/bash: : command not found
   - `atrm 3` : remove job number 3
   - `cron` : execute recurring tasks at a predetermined time
   - `crontab -e` : edit user cron table (file is stored as `/var/spool/cron/user`)

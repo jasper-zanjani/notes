@@ -72,7 +72,6 @@ WCSS                    | Taylor, Dave and Perry, Brandon. **Wicked Cool Shell S
 WDT                     | **Weekly Dev Tips**
 WSAF                    | Dauti, Bekim. **Windows Server 2016 Administration Fundamentals**
 YUG                     | Das, Sumitabha. **Your Unix: the Ultimate Guide**
-
 ## People
 Name                    | Description  
 :---                    | :---         
