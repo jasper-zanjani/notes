@@ -103,11 +103,11 @@ Commands sorted alphabetically
 **M** [mail](#mail) [mailq](#mailq) [mailstats](#mailstats) [make](#make) [makemap](#makemap) [mdadm](#mdadm) [mhwd](#mhwd) [mhwd-chroot](#mhwd-chroot) [mkdir](#mkdir) [mke2fs](#mke2fs) [mkfontscale](#mkfontscale) [mkfs](#mkfs) [mkswap](#mkswap) [mktemp](#mktemp) [modinfo](#modinfo) [modprobe](#modprobe) [mount](#mount) [mt](#mt) 
 **N** [nc](#nc) [netplan](#netplan) [netstat](#netstat) [NetworkManager](#NetworkManager) [newaliases](#newaliases) [nice](#nice) [nl](#nl) [nmap](#nmap) [nmblookup](#nmblookup) [nmcli](#nmcli) [nohup](#nohup) [nslookup](#nslookup) [ntpdate](#ntpdate) 
 **O** [openssl](#openssl) 
-**P** [pacman](#pacman) [pacman](#pacman) [partx](#partx) [passwd](#passwd) [paste](#paste) [patch](#patch) [ping](#ping) [pip](#pip) [postfix](#postfix) [postqueue](#postqueue) [postsuper](#postsuper) [ps](#ps) [pvcreate](#pvcreate) [pvdisplay](#pvdisplay) [pvremove](#pvremove) [pydoc](#pydoc) 
+**P** [pacman](#pacman) [partx](#partx) [passwd](#passwd) [paste](#paste) [patch](#patch) [ping](#ping) [pip](#pip) [postfix](#postfix) [postqueue](#postqueue) [postsuper](#postsuper) [ps](#ps) [pvcreate](#pvcreate) [pvdisplay](#pvdisplay) [pvremove](#pvremove) [pydoc](#pydoc) 
 **Q** [qmail](#qmail) [quota](#quota) [quotacheck](#quotacheck) [quotaoff](#quotaoff) [quotaon](#quotaon) 
 **R** [read](#read) [rename](#rename) [repquota](#repquota) [resize2fs](#resize2fs) [resize4fs](#resize4fs) [restorecon](#restorecon) [rmmod](#rmmod) [route](#route) [rpm](#rpm) [rsync](#rsync) [runlevel](#runlevel) 
 **S** [samba](#samba) [sc](#sc) [sed](#sed) [semanage](#semanage) [sendmail](#sendmail) [seq](#seq) [service](#service) [sestatus](#sestatus) [setenforce](#setenforce) [setfacl](#setfacl) [sfdisk](#sfdisk) [shred](#shred) [shuf](#shuf) [shutdown](#shutdown) [slapadd](#slapadd)  [sleep](#sleep) [snap](#snap) [sort](#sort) [source](#source) [speaker-test](#speaker-test) [ss](#ss) [ssh](#ssh) [ssh-copy-id](#ssh-copy-id) [ssh-keygen](#ssh-keygen) [ssh-keyscan](#ssh-keyscan) [sshfs](#sshfs) [ssmtp](#ssmtp) [startx](#startx) [stty](#stty) [su](#su) [sudo](#sudo) [swapoff](#swapoff) [swapon](#swapon) [sysctl](#sysctl) [syslog](#syslog) [systemctl](#systemctl) [systemd-delta](#systemd-delta) 
-**T** [tail](#tail) [tar](#tar) [tcpdump](#tcpdump) [telinit](#telinit) [test](#test) [test](#test) [tig](#tig) [timedatectl](#timedatectl) [tmux](#tmux) [top](#top) [tput](#tput) [tr](#tr) [tracepath](#tracepath) [traceroute](#traceroute) [tune2fs](#tune2fs) [tzselect](#tzselect) 
+**T** [tail](#tail) [tar](#tar) [tcpdump](#tcpdump) [telinit](#telinit) [test](#test) [tig](#tig) [timedatectl](#timedatectl) [tmux](#tmux) [top](#top) [tput](#tput) [tr](#tr) [tracepath](#tracepath) [traceroute](#traceroute) [tune2fs](#tune2fs) [tzselect](#tzselect) 
 **U** [udevadm](#udevadm) [umount](#umount) [uname](#uname) [uncompress](#uncompress) [unzip](#unzip) [update-grub](#update-grub) [update-rc.d](#update-rc.d) [useradd](#useradd) [userdel](#userdel) [usermod](#usermod) 
 **V** [variable](#variable) [vgcreate](#vgcreate) [vgdisplay](#vgdisplay) [vgextend](#vgextend) [vgremove](#vgremove) [vgscan](#vgscan) [vifs](#vifs) [visudo](#visudo) 
 **W** [wall](#wall) [watch](#watch) [wc](#wc) [whatis](#whatis) 
@@ -123,6 +123,61 @@ echo "cmd" | at time
 ```sh
 at -f file time
 ```
+### bash
+#### bash variables
+
+Syntax                                              | Effect
+:---                                                | :---
+`${string//search/substitution}`                    | replace all matches of {search} with {substitution} within {string}
+`${string/#search/substitution}`                    | replace {search} with {substituion} if it occurs at start of {string}
+`${string/%search/substitution}`                    | replace {search} with {substituion} if it occurs at end of {string}
+`${string/search/substitution}`                     | replace first match of {search} with {substitution} within {string}
+`${string##substring}`                              | delete longest match of {substring} from start of {string}
+`${string#substring}`                               | delete shortest match of {substring} from start of {string}
+`${string%%substring}`                              | delete longest match of {substring} from end of {string}
+`${string%substring}`                               | delete shortest match of {substring} from end of {string}
+`$_`                                                | return last field of the last command
+`$!`                                                | return process ID (pid) of the last job run in the background
+`$?`                                                | return exit status of the last executed function or command
+`$@`                                                | return all command line arguments as an array of strings
+`$*`                                                | return all positional parameters in a single string separated by space
+`$#`                                                | return number of positional arguments passed to the script or function
+`$$`                                                | return process ID (pid) of the current process
+`$BASH_ENV`                                         | environment variable pointing to the Bash startup file which is read when a script is invoked
+`$BASH_VERSINFO`                                    | array containing the full version information split into elements
+`$BASH_VERSION`                                     | string that shows the version of bash that is running
+`$BASHPID`                                          | process ID of the current bash instance (see `$$`)
+`$EDITOR`                                           | default editor that will be invoked by any scripts or programs (usually `vi` or `emacs`)
+`$FUNCNAME`                                         | name of the current function
+`$GROUPS`                                           | array containing the numbers of groups the user is a member of
+`$HISTFILE`                                         | location of the history file (~/.bash_history by default)
+`$HISTFILESIZE`                                     | maximum number of events saved between sessions
+`$HISTSIZE`                                         | maximum number of events saved during a session
+`$HOME`                                             | home directory of the user
+`$HOSTNAME`                                         | hostname assigned to the system during startup
+`$HOSTTYPE`                                         | identifies hardware
+`$IFS`                                              | internal field separator, used when bash is splitting strings while looping, etc (white space characters by default)
+`$LANG=C`                                           | cause programs to bypass locale translations
+`$LINENO`                                           | line number of the current script (useful when debugging)
+`$MACHTYPE`                                         | identifies hardware but includes OS information (rf. `$HOSTTYPE`)
+`$OLDPWD`                                           | return working directory before the last `cd` command
+`$OSTYPE`                                           | type of OS running on the machine
+`$PATH`                                             | search path for finding binaries for commands
+`$PIPESTATUS`                                       | array containing the exit statuses of the commands in the most recent foreground pipeline
+`$PPID`                                             | process ID of the script or shell's parent (the process that invoked the current script or shell)
+`$PWD`                                              | return current working directory
+`$RANDOM`                                           | a random integer between 0 and 32767
+`$REPLY`                                            | default reply used by `select` and `read`
+`$SECONDS`                                          | number of seconds the script has been running
+`$SHELL`                                            | name of user's default shell ('/bin/bash')
+`$SHELLOPTS`                                        | list of options bash is supplied on startup to control its behavior
+`$SHLVL`                                            | number of shell levels the current shell is running on top of
+`$TMOUT`                                            | log users out of shell automatically after a certain period of inactivity
+`$TMOUT=n`                                          | exit the shell if no command is typed after `n` seconds; also affects the `read` command and `select` loop
+`$TMPDIR`                                           | place temporary files created and used by the shell in `directory`
+`$TMPDIR=directory`                                 | place temporary files created and used by the shell in directory
+`$UID`                                              | user's ID number
+
 ### bzcat
 ### bzless
 ### bzmore
@@ -366,6 +421,7 @@ exif image.png
 file image.png # => file type, dimensions, color depth
 ```
 ### firewalld
+### firewall-cmd
 Successor to `iptables` in Red Hat, and like its predecessor a frontend to the netfilter protocols. Places network traffic into zones. Commands have to be written twice: once to affect running config and again to have the change saved
 
 Configuration file                          | Description
@@ -1467,6 +1523,2267 @@ vgremove /dev/vg1
 ```
 ### vgscan
 Build the LVM cache file
+
+### adduser
+#### Create a new user (on Debian systems, preferred to `useradd`)
+```sh
+adduser 
+```
+### alsamixer
+Command-line audio mixer
+### apropos
+#### Look up one or more `keywords` in the online manpages: same as `man -k` (rf. `whatis`)
+```sh
+apropos keywords
+```
+### apt
+#### Upgrade distribution
+```sh
+apt dist-upgrade
+```
+#### Install local {file} as a package
+```sh
+apt install file
+```
+#### Install {package}
+```sh
+apt install package
+```
+#### Search for packages matching {searchexpression}
+```sh
+apt list pattern
+```
+#### Remove {package}
+```sh
+apt remove package
+```
+#### Update package database
+```sh
+apt update
+```
+#### Upgrade all packages
+```sh
+apt upgrade
+```
+### apt-cache
+#### Display basic information about each available package and its dependencies 
+```sh
+apt-cache dump
+```
+### at
+#### List scheduled jobs
+```sh
+at -l
+```
+#### Remove scheduled jobs
+```sh
+at -r
+```
+#### Execute {cmd} at {time}
+```sh
+at time
+> cmd
+```
+### ausearch
+#### Display audit logs from {startdate} to {enddate}
+```sh
+ausearch --start startdate--end enddate
+```
+#### Search audit logs for today for logins of UID 500
+```sh
+ausearch --start today --loginuid500
+```
+### blkid
+Show UUID, Label, and filesystems of GPT block devices
+### chage
+Change user password expiry information
+### chage
+#### Remove expiration date from an account
+```sh
+chage -E -1 user
+```
+#### Set the date (or number of days since January 1, 1970) on which the user's account will no longer be accessible to {date} (YYYY-MM-DD)
+```sh
+chage -E days chage --expiredate days
+```
+#### Set the maximum number of days during which a password is valid
+```sh
+chage -M days chage --maxdays days
+```
+#### Set the minimum number of days between password changes
+```sh
+chage -m days chage --mindays days
+```
+### chage
+#### Set the number of days of warning before a password change is required
+```sh
+chage -W days chage --warndays days
+```
+### chcon
+#### Change context for website directory
+```sh
+chcon -Rv --type=httpd_sys_content_t website
+```
+### chgrp
+#### Change ownership of {file} to {user} and {group}
+```sh
+chgrp user:group
+```
+### chkconfig
+Turn services on or off for runlevels, defaulting to 3 or 5, in sysvinit
+#### Display a table of all services with information on each runlevel, indicating whether it is enabled or not, in sysvinit
+```sh
+chkconfig --list
+```
+#### Display all services and their runlevels (on a SysV system)
+```sh
+chkconfig --list
+```
+#### Turn NetworkManager off (sysvinit)
+```sh
+chkconfig NetworkManager off
+```
+#### Turn {daemon} on for runlevels 3 and 5 in sysvinit
+```sh
+chkconfig --level 35 daemon on
+```
+#### Turn {daemon} service on in sysvinit
+```sh
+chkconfig daemon off
+```
+#### Turn {daemon} service on in sysvinit
+```sh
+chkconfig daemon on
+```
+### file
+#### Set sticky bit on {file}
+```sh
+chmod +t file
+```
+#### Clear sticky bit on {file}
+```sh
+chmod -t file
+```
+#### Clear SGID bit on {file}
+```sh
+chmod g-s file
+```
+#### Set SGID bit on {file}
+```sh
+chmod g+s file
+```
+#### Clear SUID bit on {file}
+```sh
+chmod u-s file
+```
+#### Set SUID bit on {file}
+```sh
+chmod u+s file
+```
+#### Set `setuid` permission on {file}
+```sh
+chmod +s file
+```
+#### Recursively grant {user} ownership to {path}
+```sh
+chown -R user path
+```
+#### Change owner of {file} to {newowner}
+```sh
+chown newowner file
+```
+### chpass
+#### Change default shell to Fish
+```sh
+chpass -s /usr/local/bin/fish
+```
+### chsh
+#### Change the user's default shell to Bash
+```sh
+chsh-s /bin/bash
+```
+#### Change the user's default shell to Fish
+```sh
+chsh-s /usr/local/bin/fish
+```
+### file
+#### Preserve symlinks in a recursive copy
+```sh
+cp -a
+cp --archive
+```
+### crontab
+#### Remove current crontab, clearing cron jobs for the effective user
+```sh
+crontab -r
+```
+#### Specify that {user}'s crontab is to be modified
+```sh
+crontab -u user
+```
+### crossystem
+Print all parameters with descriptions and current values
+### cryptsetup
+#### Incorporate full-disk encryption on /dev/sdb1, asking for passphrase twice
+```sh
+cryptsetup --verify-passphrase luksFormat /dev/sdb1
+```
+### cryptsetup
+#### Assign virtual name "storage1" to encrypted disk /dev/sdb1
+```sh
+cryptsetup luksOpen /dev/sdb1 storage1
+```
+### curl
+#### Download {url}, posting form-encoded {name} as {value}
+```sh
+curl -d '{name}={value}' url
+```
+### curl
+#### Download {url}, but produce no output in case of failure
+```sh
+curl -f url
+curl --fail url
+```
+#### Download {url}, following redirects
+```sh
+curl -L url
+curl --location url
+```
+#### Download {url} saving output under the filename indicated by the URL itself
+```sh
+curl -O url
+curl --remote-name url
+```
+#### Make an http GET request to the URL provided, displaying the response in the terminal
+```sh
+curl url
+```
+#### Download {url} and save to {file}
+```sh
+curl url -o file
+```
+### filter
+#### Character number
+```sh
+cut -c
+```
+#### Delimiter
+```sh
+cut -d
+```
+#### Field number
+```sh
+cut -f
+```
+### date
+Display the date and time according to locale settings
+#### Set the current date and time to {datestring}
+```sh
+date -s "datestring"
+```
+### date
+#### Print or set UTC time
+```sh
+date -u
+date --utc
+date universal
+```
+### dbus-monitor
+Monitor messages going through a D-Bus message bus
+### filesystem
+#### Implement a simple CPU benchmark by writing 1 GB of zeroes and piping it to md5sum
+```sh
+dd if=/dev/zero bs=1M count=1024 | md5sum
+```
+### declare
+#### Option which displays output in a way that could then be used as input to another command
+```sh
+declare -p
+```
+### filesystem
+#### Change scale to terabytes
+```sh
+df -BT
+df --block-size=T
+```
+#### Show drive utilization
+```sh
+df -h
+```
+### dhclient
+Turn on DHCP client and get a new address from the server
+#### Release the currently assigned IP address and get a new one
+```sh
+dhclient -r
+```
+### filter
+#### Three lines of context
+```sh
+diff -c
+```
+### filter
+#### Case-insensitive
+```sh
+diff -i
+```
+#### Ignore whitespace
+```sh
+diff -w
+```
+### dig
+DNS lookup tool that returns the text of the actual response from the DNS server
+#### Perform a reverse DNS lookup on an IP address
+```sh
+dig -x 8.8.8.8
+```
+#### Specify an alternate DNS server to query
+```sh
+dig @8.8.8.8 example.com
+```
+#### Find authoritative nameservers for the zone and display SOA records
+```sh
+dig +nsearch example.com
+```
+#### Lookup the IP associated with a domain name
+```sh
+dig +short example.com
+```
+### dig
+#### Lookup the mail server IP associated with a domain name
+```sh
+dig +short example.com MX example.com MX
+```
+#### Perform iterative queries and display the entire trace path to resolve a domain name
+```sh
+dig +trace example.com
+```
+#### Get all types of records for a given domain name
+```sh
+dig example.com ANY
+```
+#### Display Start of Authority information for a domain
+```sh
+dig example.com soa
+```
+### file
+#### Strip last component from filename (cf. `basename`)
+```sh
+dirname pathname
+```
+### dm-crypt
+Disk-encryption subsystem which serves as the backend to `cryptsetup`
+### dmesg
+#### Disable kernel messages from being sent to the console
+```sh
+dmesg -d
+```
+#### Enable kernel messages being sent to the console
+```sh
+dmesg -e
+```
+#### Display the time in local time
+```sh
+dmesg -e
+dmesg --reltime
+```
+### doveadm
+#### Produce a password appropriate for use with dovecot
+```sh
+doveadm pw
+```
+#### Display information about {package}
+```sh
+dpkg -I package
+dpkg --info package
+```
+### dpkg-reconfigure
+#### Change the time zone on a Debian based system using package-based tools
+```sh
+dpkg-reconfigure tzdata
+```
+### filesystem
+#### Summary of information in human-readable format
+```sh
+du -sh
+du --summarize --human-readable
+```
+#### Show the size of all files and subdirectories of {dir} in human-readable form
+```sh
+du -h dir
+```
+#### Show the size of {file} in human-readable form
+```sh
+du -h file
+```
+#### Show the size of a directory at {path} in human-readable form
+```sh
+du -hs path
+```
+### dumpe2fs
+Display detailed filesystem information
+### e2image
+Create an image of important metadata for an ext3 filesystem
+#### Assign label "Storage" to /dev/sdb1
+```sh
+e2label /dev/sdb1 Storage
+```
+### file
+#### Find all files in {path} that are owned by {user}
+```sh
+find path -user username
+```
+### firewall-cmd
+#### Add a range of nonstandard ports
+```sh
+firewall-cmd --add-port=50000-60000/udp
+```
+#### Add a nonstandard port
+```sh
+firewall-cmd --add-port=8080/tcp
+```
+#### Add the FTP service to the firewall
+```sh
+firewall-cmd --add-service=ftp
+```
+#### Display zones that actually have an attached interface
+```sh
+firewall-cmd --get-active-zones
+```
+#### Display the default zone
+```sh
+firewall-cmd --get-default-zone
+```
+#### Display names of available services
+```sh
+firewall-cmd --get-services
+```
+### firewall-cmd
+#### Display approved port numbers
+```sh
+firewall-cmd --list-ports
+```
+#### Define a new zone "testlab"
+```sh
+firewall-cmd --new-zone=testlab
+```
+#### Record a change to the configuration on disk
+```sh
+firewall-cmd --permanent
+```
+#### Load configuration on disk into memory
+```sh
+firewall-cmd --reload
+```
+#### Remove firewalld service
+```sh
+firewall-cmd --remove-service
+```
+#### Confirm firewalld is running
+```sh
+firewall-cmd --state
+```
+### filter
+#### Display text of {file}, wrapping long lines
+```sh
+fold  file
+```
+### fsck
+Check filesystem for errors
+#### Display progress indicators
+```sh
+fsck -C
+```
+#### Specify {ext3} filesystem and check {/dev/sdc1} for errors
+```sh
+fsck -t ext3 /dev/sdc1
+```
+### fsck-r
+Prompt when attempting a repair action
+### fstrim
+Discard unused blocks on a mounted filesystem
+### gconf-editor
+GUI-based configuration editor for GNOME
+### gdmsetup
+GUI program used to set options for the login window when using GDM
+### gem
+#### Install a Ruby {package}
+```sh
+gem install package
+```
+#### Display currently installed Ruby packages
+```sh
+gem list
+```
+#### Remove a Ruby {package}
+```sh
+gem uninstall package
+```
+#### Update a Ruby {package}
+```sh
+gem update package
+```
+### file
+#### Get access control list for {file}
+```sh
+getfacl file
+```
+### gpasswd
+#### Add {user} to {group}
+```sh
+gpasswd -a user group
+```
+#### Add {user} as admin of {group}
+```sh
+gpasswd -A user group
+```
+#### Remove {user} from {group}
+```sh
+gpasswd -d user group
+```
+### gpg
+#### Sign {file} without encrypting it (produces file.asc)
+```sh
+gpg --clearsign file
+```
+#### Generate a key
+```sh
+gpg --generate-key
+gpg --gen-key
+```
+#### Import another person's public key
+```sh
+gpg --import ~/jdoe.pub
+```
+#### Send keys to {keyserver}
+```sh
+gpg --send-keys keyIDs --keyserver keyserver
+```
+### groupadd
+Create a new group
+### groupdel
+Delete a group
+### groupmod
+Modify definition of specified group by modifying the appropriate entry in the group database
+#### Rename {group} to {newname}
+```sh
+groupmod -n group newname
+```
+#### Change name of {group} to {newname}
+```sh
+groupmod -n newname group<hr># groupmod --new-name newname group
+```
+### grub
+#### Install boot images within a directory other than /boot
+```sh
+grub-install --boot-directory
+```
+#### Send output of grub2-mkconfig to the correct location for booting
+```sh
+grub2-mkconfig --output=/boot/grub2/grub.cfg
+```
+### hdiutil
+Manipulate disk images
+### hdparm
+Get/set SATA/IDE device parameters
+#### Check power mode
+```sh
+hdparm -C
+```
+#### Show drive geometry, including size in sectors and starting offset
+```sh
+hdparm -g
+```
+### filter
+#### Print first 8 characters of {file}
+```sh
+head -c8 file
+```
+### host
+#### Display SOA record frm each authoritative DNS nameserver
+```sh
+host -C
+```
+### hostname
+#### Return the domain name configured for the server
+```sh
+hostname -d
+```
+### hostnamectl
+#### Permanently change hostname to {hostname}
+```sh
+hostnamectl set-hostname hostname
+```
+### hwclock
+Access the BIOS clock
+### hwclock
+#### Set hardware clock to software clock
+```sh
+hwclock --hctosys
+```
+#### Set software clock to hardware clock
+```sh
+hwclock --systohw
+```
+### system
+#### Display the Hardware Clock time
+```sh
+hwclock --show
+```
+### iconv
+Convert text from one encoding to another
+#### Convert {file} from ASCII to UTF-8
+```sh
+iconv -f ASCII -t UTF-8 file
+```
+#### Show available character sets
+```sh
+iconv -l --list
+```
+### ifconfig
+#### Display details of all interfaces (even disabled)
+```sh
+ifconfig -a
+```
+#### Disable eth0
+```sh
+ifconfig eth0 down
+```
+#### Configure eth0 with an additional IPv6 address
+```sh
+ifconfig eth0 inet6 add fdd6:551:b09e::/128
+```
+#### Enable eth0
+```sh
+ifconfig eth0 up
+```
+#### Turn network interface {eth0} on or off using `ifconfig`
+```sh
+ifconfig eth0 up
+ifconfig eth0 down
+```
+#### Turn off network interface {eth0}
+```sh
+ifdown eth0
+```
+#### Bring online all interfaces marked as auto within the networking configuration
+```sh
+ifup -a
+```
+#### Turn on network interface {eth0}
+```sh
+ifup eth0
+```
+### init
+#### Access different runlevels
+```sh
+init 
+```
+#### Immediately configure the system to runlevel {n} in sysvinit
+```sh
+init n
+```
+### init6
+Reboot
+### initctl
+#### Reload configuration files (on Upstart-controlled system)
+```sh
+initctl reload
+```
+### insmod
+#### Insert a module into the Linux kernel
+```sh
+insmod module
+```
+### ip
+#### Newer alternative to the old `ifconfig`
+```sh
+ip addr
+```
+#### Show L2 status (links)
+```sh
+ip link
+```
+#### Listen for netlink messages
+```sh
+ip monitor 
+```
+### ip
+#### Display routing information
+```sh
+ip route
+```
+#### Change the default gateway to 192.168.1.1 on eth0
+```sh
+ip route change default via 192.168.1.1 dev eth0
+```
+### iptables
+#### Display rules as written on disk
+```sh
+iptables --list-rules
+```
+#### Set an iptable rule to accept SSH traffic from a particular IP
+```sh
+iptables -A INPUT -p ssh -s 10.0.222.222 -j ACCEPT
+```
+#### Set an iptable rule to accept incoming TCP traffic to port 80
+```sh
+iptables -A INPUT -p tcp --dport 80 -j ACCEPT
+```
+#### Reload configuration file
+```sh
+iptables -F
+```
+#### Show statistics for configuration lines
+```sh
+iptables -vnL --lines
+```
+### iptables-save
+Display what the running configuration would look like if written to disk (must be redirected to a file)
+### iscsiadm
+Command-line utility allowing discovery and login to iSCSI targets
+#### Set interval length between two ping requests
+```sh
+iscsiadm -i
+```
+#### Discover iSCSI targets
+```sh
+iscsiadm discovery
+```
+### iwlist
+Get detailed wireless information about a wireless interface
+### journalctl
+Display the systemd binary logs
+#### Show current disk usage of all journal files
+```sh
+journalctl --disk-usage
+```
+#### Continuously update the display as new log entries are created
+```sh
+journalctl -f
+```
+#### Display output in reverse (newest entries first)
+```sh
+journalctl -r
+```
+### kill
+#### List signal options
+```sh
+kill -l
+kill --list
+```
+#### Transmit SIGKILL to {proc}
+```sh
+kill -9 proc
+kill --KILL proc
+```
+### last
+Display history of successful logins
+#### Load information from an alternate file
+```sh
+last -f file
+last --file file
+```
+#### Display history of successful logins by {username}
+```sh
+last username
+```
+### lastb
+Display history of unsuccessful logins
+### ldconfig
+#### Change location of cache to be updated
+```sh
+ldconfig -C
+```
+#### Print current directories and libraries in cache
+```sh
+ldconfig -p
+```
+#### Display all shared libraries
+```sh
+ldconfig -v
+```
+### ldd
+#### Display dependencies of {program}
+```sh
+ldd program
+```
+### let
+#### Perform arithmetic as specified by one or more `expressions`
+```sh
+let  expressions | ((expressions))
+```
+### link
+#### Create a link between two files; same as `ln`, but with no error checking
+```sh
+link file1 file2
+```
+### locale
+Display all environment variables related to localization with their current values
+#### Display all localizations currently supported by the system
+```sh
+locale -a
+```
+### logout
+#### Exit a login shell
+```sh
+logout 
+```
+### lp
+Send `files` to the printer; with no arguments, prints stdin
+### lpstat
+Print the `lp` print queue status
+### ls
+#### Display hidden files
+```sh
+ls -a ls --all
+```
+#### Append indicator (*/=>@|) to entries
+```sh
+ls -F ls --classify
+```
+#### Display SELinux context for files
+```sh
+ls -Z
+```
+### lsblk
+Display information about all block devices
+### filesystem
+#### Show UUID, Label, and filesystems of non-GPT block devices
+```sh
+lsblk -f
+```
+### lsmod
+Display currently loaded modules
+### lspci
+#### Display PCI devices and the drivers being used
+```sh
+lspci -k
+```
+#### Display both numeric codes and device names
+```sh
+lspci -nn
+```
+### filesystem
+#### Display USB connections in a tree-like format
+```sh
+lsusb -t
+```
+### mail
+Enter interactive shell for reading email inbox
+#### Check {user}'s email
+```sh
+mail -u user
+```
+#### Send email to {user}
+```sh
+mail user
+```
+### mailq
+Display the current mail queue on a Postfix server
+### mailstats
+Gather and display statistics about mail processed on a server running sendmail
+### makemap
+Execute after making a change to the sendmail access database /etc/access
+### mdadm
+Manage Linux Software RAID devices
+#### Start a stopped RAID array
+```sh
+mdadm --assemble
+```
+#### Set the polling interval ?
+```sh
+mdadm --delay
+```
+### mhwd
+Manjaro hardware utility
+### mhwd-chroot
+Chroot into an installed Linux installation from a live boot of a Manjaro Installation Media
+### file
+#### Create new directory {dirname} along with all of the parents in its pathname, if they do not exist
+```sh
+mkdir -p dirname
+mkdir --parents dirname
+```
+### mke2fs
+Create an ext2/3/4 filesystem
+### mkfontscale
+Create a fonts.scale file definition when executed against the current directory
+### filesystem
+#### Create an ext4 filesystem on {partition}
+```sh
+mkfs -t ext4 partition
+```
+### filesystem
+#### Specify {filesystemtype} to be created
+```sh
+mkfs -T filesystemtype
+```
+#### Make a swap file out of {partition}
+```sh
+mkswap partition
+```
+### modinfo
+#### Determine options that a given module supports
+```sh
+modinfo -p
+```
+### modinfo
+#### Show information about a Linux kernel module
+```sh
+modinfo module
+```
+### modprobe
+Add and remove modules from the Linux kernel
+#### Remove {module} from the Linux kernel
+```sh
+modprobe --remove  module
+```
+#### Show dependencies for a module
+```sh
+modprobe --show-depends
+```
+#### Show kernel {module}'s dependencies
+```sh
+modprobe --show-depends module
+```
+### filesystem
+#### Mount all filesystems in fstab
+```sh
+mount -a
+```
+#### Mount {filesystem} as read-only
+```sh
+mount -r filesystem
+```
+#### Specify filesystem type
+```sh
+mount -t
+```
+#### Mount a partition using its UUID
+```sh
+mount -U
+```
+#### Mount {filesystem} as read-write
+```sh
+mount -w filesystem
+```
+#### Mount a USB stick that is made available on /dev/sdb in /media/usb
+```sh
+mount /dev/sdb1 /media/usb
+```
+### mt
+Control magnetic tape drive operation; operates on environment variable TAPE
+### nc
+#### Connect to {port} at {host}
+```sh
+nc host port
+```
+#### Netcat command that retrieves a webpage
+```sh
+nc host port \get
+```
+### netplan
+#### Apply network configuration settings (Ubuntu)
+```sh
+netplan apply
+```
+### netstat
+#### Display all active sockets on all interfaces
+```sh
+netstat -a
+```
+#### Show network traffic
+```sh
+netstat -an
+```
+#### Refresh every five seconds
+```sh
+netstat -c5
+```
+#### Display routing table
+```sh
+netstat -r
+```
+#### Show the current default route without performing DNS lookups on the IP addresses involved
+```sh
+netstat -rn
+```
+#### Display only TCP connections
+```sh
+netstat -t
+```
+### newaliases
+Refresh the mail system after a change to the /etc/aliases file
+### newaliases
+Must be run after making a change to email aliases on a server running postfix
+### nice
+#### Run {prog} at a nice value of (positive) 10
+```sh
+nice -10 prog
+nice -n 10
+nice prog
+```
+### filter
+#### Number all lines, including blank lines
+```sh
+nl -b a file
+nl --body-numbering=a file
+```
+### nmap
+Scan hosts and ports on a network
+#### Aggressive scan
+```sh
+nmap -A 192.168.1.0/24
+```
+#### Ping scan home network (not bothering with ports)
+```sh
+nmap -sn 192.168.1.0/24
+```
+#### Fast port scan using SYN packets
+```sh
+nmap -sS -F 192.168.1.0/24
+```
+#### Port scan using SYN ("synchronize") packet, first element of TCP handshake
+```sh
+nmap -sS 192.168.1.0/24
+```
+#### Port scan using normal TCP
+```sh
+nmap -sT 192.168.1.0/24
+```
+#### Port scan using UDP
+```sh
+nmap -sU 192.168.1.0/24
+```
+#### Xmas scan
+```sh
+nmap -sX
+```
+### nmblookup
+Test NetBIOS name resolution
+### nmcli
+Control NetworkManager and report network status
+### nmcli
+CLI interface to NetworkManager
+#### Configure settings for network interface {ens01} via interactive shell
+```sh
+nmcli connection edit ens01
+```
+#### List all connections NetworkManager has
+```sh
+nmcli connection show
+```
+#### Show settings for network interface {ens01}
+```sh
+nmcli device show ens01
+```
+#### Show status for all devices
+```sh
+nmcli device status
+```
+#### Display devices and status
+```sh
+nmcli device status
+```
+#### Display currently configured hostname
+```sh
+nmcli general hostname
+```
+#### Set hostname to {hostname}
+```sh
+nmcli general hostname hostname
+```
+#### Show overall status of NetworkManager
+```sh
+nmcli general status
+```
+### nohup
+#### Execute {cmd} in the background such that it won't be interrupted by a logoff
+```sh
+nohup cmd &
+```
+### nslookup
+#### Retrieve IP address of {host}
+```sh
+nslookup host
+```
+### system
+#### Synchronize system clock to that of an online Network Time Protocol server
+```sh
+ntpdate -upool.ntp.org
+```
+### pacman
+#### List installed packages
+```sh
+pacman -Q
+pacman --query
+```
+#### List all orphaned dependencies (no longer needed)
+```sh
+pacman -Qdt
+pacman --query --deps --unrequired
+```
+#### List only explicitly installed packages and versions
+```sh
+pacman -Qe
+pacman --query --explicit
+```
+### pacman
+#### List explicitly installed packages, limiting output to program names
+```sh
+pacman -Qeq
+pacman --query --explicit --quiet
+```
+#### List all packages installed from the AUR
+```sh
+pacman -Qm
+pacman --query --foreign
+```
+#### List all packages installed from main repos
+```sh
+pacman -Qn
+pacman --query --native
+```
+#### Find which package owns {file}
+```sh
+pacman -Qo file
+pacman --query --owns file
+```
+#### List all install packages, filtering output to packages that are out-of-date on the local system
+```sh
+pacman -Qu
+pacman --query --upgrades
+```
+#### Remove {package}
+```sh
+pacman -R package
+pacman --remove package
+```
+#### Remove {package}, dependencies, and config files
+```sh
+pacman -Rns package
+pacman --remove --recursive --nosave
+```
+#### Remove {package} as well as its dependencies
+```sh
+pacman -Rs
+pacman --remove --recursive
+```
+#### Install {pkg} from the AUR
+```sh
+pacman -S package
+pacman --sync package
+```
+#### Remove all packages from the cache as well as unused sync databases
+```sh
+pacman -Scc
+pacman --sync --clean --clean
+```
+#### Display information about {package}
+```sh
+pacman -Si package
+pacman --sync --info package
+```
+#### Search for {pkg} in AUR repos
+```sh
+pacman -Ss package
+pacman --sync --search package
+```
+#### Search for packages matching {searchexpression}
+```sh
+pacman -Ss pattern
+pacman --sync --search pattern
+```
+#### Update package database
+```sh
+pacman -Sy
+pacman --sync --refresh
+```
+#### Update all packages from AUR and official repos
+```sh
+pacman -Syu
+pacman --sync --refresh --sysupgrade
+```
+#### Force refresh of all package databases, even if they appear to be up-to-date
+```sh
+pacman -Syy
+pacman --sync --refresh --refresh
+```
+#### Download program updates but don't install them
+```sh
+pacman -Syyuw
+pacman --sync --refresh --refresh --sysupgrade --downloadonly
+```
+### passwd
+#### Immediately expire the passwore of {user}, forcing a password change on next login
+```sh
+passwd -e user # passwd --expire user
+```
+#### Disable an account after {n} days of inactivity
+```sh
+passwd -i n # passwd --inactive n
+```
+#### Lock {user}'s account
+```sh
+passwd -l user # passwd --lock
+```
+#### Unlock {user}'s account
+```sh
+passwd -u user # passwd --unlock
+```
+### filter
+#### Ignore whitespace
+```sh
+patch -i
+```
+### ping
+#### Send {n} number of pings
+```sh
+ping -c n
+```
+#### Print timestamp
+```sh
+ping -D
+```
+#### Flood ping
+```sh
+ping -f
+```
+#### Mark outgoing packet to be processed appropriate to kernel's policy
+```sh
+ping -m
+```
+#### Numeric output only; disable name resolution
+```sh
+ping -n
+```
+#### Bypass routing tables
+```sh
+ping -r
+```
+### pip
+#### Display installed packages
+```sh
+pip list
+```
+#### Display information about {package}
+```sh
+pip show package
+```
+### postqueue
+#### Cause mail queue to be processed on a Postfix server
+```sh
+postqueue -f
+```
+### postsuper
+#### Delete all of the messages from the queue on a postfix server
+```sh
+postsuper -d
+```
+### ps
+#### Display processes in a tree-like display illustrating parent-child relationships
+```sh
+ps -f
+ps --forest
+```
+#### Show system processes
+```sh
+ps ax
+ps -e
+```
+#### Display full listing of processes
+```sh
+ps u
+ps -f
+```
+#### Display user processes
+```sh
+ps xG
+ps -a
+```
+### ps
+#### Display SELinux contexts for processes
+```sh
+ps auxZ
+```
+### pydoc
+#### Display all installed Python modules
+```sh
+pydoc modules
+```
+### quota
+#### Check quota status of {user}
+```sh
+quota user
+```
+### quotacheck
+Create the quota database
+### quotaoff
+#### Turn off all quotas
+```sh
+quotaoff -a
+```
+### quotaon
+#### Turn on all quotas
+```sh
+quotaon -a
+```
+#### Turn on quotas for {user}
+```sh
+quotaon -u user
+```
+### read
+#### Read from standard input, with the words assigned to sequential indices of {array}
+```sh
+read -a 
+```
+### read
+#### Read from standard input, with the first character of `delim` being used to terminate input, rather than newline
+```sh
+read -d delim
+```
+#### Read from standard input, if standard input is coming from a terminal, readline is used to obtain the line
+```sh
+read -e 
+```
+#### Read from standard input, returning after reading {n} chars
+```sh
+read -n n
+```
+#### Read from standard input, displaying `prompt` on standard error before reading any input
+```sh
+read -p prompt
+```
+#### Read from standard input, backslash no longer will act as an escape character
+```sh
+read -r 
+```
+#### Read from standard input, silent mode (characters are not echoed)
+```sh
+read -s
+```
+#### Read from standard input, returning failure is a complete line of input is not read within {n} seconds
+```sh
+read -t n
+```
+#### Read input from file descriptor `fd`
+```sh
+read -u fd
+```
+### repquota
+#### Human-readable
+```sh
+repquota -sh
+```
+### resize4fs
+Resize ext4 filesystem
+### restorecon
+#### Restore security context default in the policy
+```sh
+restorecon -Rv website
+```
+### rmmod
+#### Wait until a module is no longer in use before unloading
+```sh
+rmmod -w
+```
+#### Remove a module from the Linux kernel
+```sh
+rmmod module
+```
+### route
+#### Add a route to the server for the network 192.168.51.0/24 through the gateway 192.168.51.1
+```sh
+route add -net192.168.51.0 netmask 255.255.255.0 gw 192.168.51.1
+```
+#### Add default gateway at {ipaddr}
+```sh
+route add default gw ipaddr
+```
+### rpm
+#### Remove {package}
+```sh
+rpm -e package
+rpm --erase package
+```
+#### Install {package}
+```sh
+rpm -i package
+rpm --install package
+```
+#### Query repos for information on {package}
+```sh
+rpm -qi package
+rpm --query --info package
+```
+#### Upgrade {package}
+```sh
+rpm -U package
+rpm --upgrade package
+```
+#### Upgrade or install {package}, with progress bars
+```sh
+rpm -Uvh package
+rpm --upgrade --verbose --hash package
+```
+#### Copy recursively, preserving group, owner, modification times, and device-files (if super-user)
+```sh
+rsync -a
+rsync --archive
+```
+#### Specify remote shell to use
+```sh
+rsync -e ssh
+rsync --rsh=ssh
+```
+#### Preserve group
+```sh
+rsync -g
+rsync --group
+```
+#### Preserve owner
+```sh
+rsync -o
+rsync --owner
+```
+#### Copy file to remotepath on remotehost
+```sh
+rsync file remotehost:remotepath
+```
+### rsync
+#### Copy remotefile from remotehost to path
+```sh
+rsync remotehost:remotefilepath
+```
+### runlevel
+#### Show runlevel for system
+```sh
+runlevel 
+```
+### smbclient
+Connect to a Samba server
+#### Set the port while connecting to a Samba server
+```sh
+smbclient -p
+```
+### smbpasswd
+Create a Samba password
+### smbstatus
+Report on current Samba connections
+#### List Samba shares
+```sh
+smbstatus -S
+```
+### filter
+#### Run sed commands in `sedscr` on file
+```sh
+sed -f sedscript file
+```
+#### Suppress automatic printing of pattern space
+```sh
+sed -n
+sed --quiet
+sed --silent
+```
+### semanage
+#### Amend policy to add a file context
+```sh
+semanage fcontext -a -t httpd_sys_content_t website
+```
+#### Add a port context
+```sh
+semanage port -a -t http_port_t -p tcp 8080
+```
+#### Display all ports with attached types
+```sh
+semanage port -l
+```
+### filter
+#### Sequence from 1 to 15
+```sh
+seq -f "%03g" 15
+```
+#### Sequence from 5 to 99, separated by a space instead of a newline
+```sh
+seq -s " " 5 99
+```
+#### Sequence every third number from 5 to 20
+```sh
+seq 5 320
+```
+#### Sequence from 1 to 8
+```sh
+seq 8
+```
+### service
+#### Restart network service (sysvinit)
+```sh
+service network restart
+```
+#### Check status of {daemon} in sysvinit
+```sh
+sudo service daemon status
+```
+### sestatus
+Display status of SELinux
+### setenforce
+#### Change SELinux mode, where {mode} can be "enforcing" (or "1"), "permissive" ("0") or "disabled"
+```sh
+setenforce mode
+```
+### file
+#### Grant user {lisa} right to read {file}
+```sh
+setfacl -m u:lisa:r file
+```
+#### Remove named group {staff} from {file}'s ACL
+```sh
+setfacl -x g:staff file
+```
+### setfacl
+Set file access control lists
+#### Modify file access control list for {file} to revoke write access from all groups and all named users
+```sh
+setfacl -m m::rx file
+```
+### sfdisk
+Script-oriented tool for partitioning disk devices
+### filesystem
+#### Set the first partition of the first SATA device to a RAID type
+```sh
+sfdisk --id /dev/sda 1 fd
+```
+#### Set the first partition of the first SATA device to a RAID type
+```sh
+sfdisk --id /dev/sda 1 fd
+```
+#### List partitions on all devices
+```sh
+sfdisk-l # sfdisk --list
+```
+#### List partitions on {device}
+```sh
+sfdisk-l device # sfdisk --list device
+```
+### shred
+#### Write random data to an unmounted disk for {n} passes
+```sh
+shred --iterations=n
+```
+### filter
+#### Randomly permute input
+```sh
+shuf 
+```
+#### Shuffle items separated by a space
+```sh
+shuf -e *items
+```
+#### Print random selection of integers from {x} to {y} (inclusive) without replacement
+```sh
+shuf -i x-y
+```
+#### Print random selection of integers from {x} to {y} (inclusive), with replacement
+```sh
+shuf -i x-y -r
+```
+#### Shuffle items separated by newline in file `cards.txt`, displaying only one
+```sh
+shuf -n 1 items.txt
+```
+### shutdown
+#### Shut down at 8 pm
+```sh
+shutdown 20:00
+```
+### slapadd
+Add entries to the slapd LDAP directory
+### sleep
+#### Wait a specified number of `seconds` before executing another command; often used in shell scripts
+```sh
+sleep seconds
+```
+### snap
+#### Disable snap {pkg}
+```sh
+snap disable package
+```
+#### Enable disabled snap {pkg}
+```sh
+snap enable package
+```
+#### Display information about {package}
+```sh
+snap info --verbose package
+```
+#### Install snap {pkg}
+```sh
+snap install package
+```
+#### Display logs of snap {pkg}
+```sh
+snap logs package
+```
+#### Check for snap updates
+```sh
+snap refresh
+```
+#### Uninstall snap {pkg}
+```sh
+snap remove package
+```
+### filter
+#### Sort by column number {n}
+```sh
+sort -k n
+```
+#### Reverse sort order
+```sh
+sort -r
+```
+#### Set delimiter to character {x}
+```sh
+sort -t x
+```
+### source
+#### Execute commands from a file in the current shell
+```sh
+source file
+. file
+```
+### speaker-test
+#### Test loudspeakers with a 2-speaker setup
+```sh
+speaker-test -c 2
+```
+### ss
+Dump socket statistics
+#### Do name lookups and display all information
+```sh
+ss -an
+ss --all --numeric
+```
+#### Display all sessions, filtering to just TCP that are actively listening
+```sh
+ss -atp
+ss --all --tcp --processes
+```
+#### Display active TCP connections
+```sh
+ss -tp
+ss --tcp --processes
+```
+### ssh
+#### Display timer information
+```sh
+ss -o
+ss --options
+```
+#### Request a SSHv1 connection to {user@host}
+```sh
+ssh -1 user@host
+```
+#### Request a SSHv2 connection to {user@host}
+```sh
+ssh -2 user@host
+```
+#### Request a IPv4 connection to {user@host}
+```sh
+ssh -4 user@host
+```
+#### Request a IPv6 connection to {user@host}
+```sh
+ssh -6 user@host
+```
+#### Enable the use of a key for authentication
+```sh
+ssh -i privatekey
+```
+#### Ssh to {user} at {host} and {hostport} from {port}
+```sh
+ssh -L port:host:hostport user@host
+```
+#### Set the port for the remote host
+```sh
+ssh -p
+```
+#### Initiate a SSH session with {user@host}, enabling X forwarding
+```sh
+ssh -Y user@host
+```
+#### List currently loaded keys
+```sh
+ssh-add -l
+```
+### ssh-keygen
+#### Generate a MD5 fingerprint from public key at {file}
+```sh
+ssh-keygen -E md5-lf /path/to/file
+```
+#### Generate a SHA512 fingerprint from public key at {file}
+```sh
+ssh-keygen -E sha512 -lf /path/to/file
+```
+#### Generate a fingerprint from the public key
+```sh
+ssh-keygen -lf /path/to/file
+```
+### ssh-keyscan
+#### Display the public key of {host}
+```sh
+ssh-keyscan host
+```
+### stty
+#### Return number of rows and columns of the terminal
+```sh
+stty size
+```
+### su
+#### Obtain the normal login environment
+```sh
+su -
+```
+#### Execute a single command with a non-interactive session
+```sh
+su -c cmd
+```
+### sudo
+#### Prevent sudo from prompting for credentials or for any other reason
+```sh
+sudo --noprompt
+```
+### filesystem
+#### Instruct system to begin using {partition} as a swap file
+```sh
+swapon partition
+```
+### sysctl
+View and configure kernel parameters at runtime
+#### Display current hostname as known to the kernel
+```sh
+sysctl -n kernel.hostname
+```
+### syslog
+System logging facility used for messages from the kernel
+### systemctl
+#### Display 
+```sh
+systemctl --failed
+```
+#### Turn NetworkManager off (systemd)
+```sh
+systemctl disable NetworkManager.service
+```
+#### Disable {service}, ensuring it does not run on boot
+```sh
+systemctl disable service
+```
+#### Make {service} run on boot 
+```sh
+systemctl enable  service
+```
+#### Configure iptables to start on boot and start it immediately
+```sh
+systemctl enable --now iptables
+```
+#### Display default target (on a systemd-controlled system)
+```sh
+systemctl get-default 
+```
+#### ?
+```sh
+systemctl isolate --now service
+```
+#### Change target to runlevel emergency
+```sh
+systemctl isolate emergency.target
+```
+#### Change target to runlevel 5
+```sh
+systemctl isolate graphical.target
+systemctl isolate runlevel5.target
+```
+#### Change target to runlevel 3
+```sh
+systemctl isolate multi-user.target
+systemctl isolate runlevel3.target
+```
+#### Change target to runlevel 0
+```sh
+systemctl isolate poweroff.target
+systemctl isolate runlevel0.target
+```
+#### Change target to runlevel 6
+```sh
+systemctl isolate reboot.target
+systemctl isolate runlevel6.target
+```
+#### Change target to runlevel 1
+```sh
+systemctl isolate rescue.target
+systemctl isolate runlevel1.target
+```
+#### Change signal type sent to process to be killed
+```sh
+systemctl kill -s
+```
+#### Equivalent to chkconfig --list
+```sh
+systemctl list-unit-files --type=service
+```
+#### List available service units
+```sh
+systemctl list-units
+```
+#### Prevent firewalld from being started inadvertently by another process
+```sh
+systemctl mask firewalld
+```
+#### Reboot the system
+```sh
+systemctl reboot
+```
+#### Restart {service}
+```sh
+systemctl restart  service
+```
+#### Restart iptables service
+```sh
+systemctl restart iptables
+```
+#### Restart network service
+```sh
+systemctl restart network.service
+```
+#### Configure system to boot to a GUI
+```sh
+systemctl set-default graphical.target
+```
+#### Start {service}
+```sh
+systemctl start  service
+```
+#### Check status of {service}
+```sh
+systemctl status  service
+```
+#### Terminate {service}
+```sh
+systemctl stop  service
+```
+#### Stop the firewalld service
+```sh
+systemctl stop firewalld
+```
+#### Suspend the system
+```sh
+systemctl suspend
+```
+### systemd-delta
+Show files that are overridden with systemd
+### systemd-delta
+#### Display differences among files when they are overridden
+```sh
+systemd-delta --diff
+```
+### filter
+#### Output last lines beginning at 30th line from the start
+```sh
+tail -n=+30
+tail --lines=+30
+```
+### tcpdump
+Inspect actual IP packets
+#### Set snapshot length of capture (default 65,535B)
+```sh
+tcpdump -s
+```
+### telinit
+#### Refresh system after changes to `/etc/inittab`
+```sh
+telinit 
+```
+### telinit--no-wall
+Cause operation to not send any notice to logged-on users
+### test
+Evaluate a condition, returning 0 if true and 1 if false
+#### Test if both EXPRESSION1 and EXPRESSION2 are true
+```sh
+test  EXPRESSION1 -a EXPRESSION2
+```
+#### Test if either EXPRESSION1 or EXPRESSION2 are true
+```sh
+test  EXPRESSION1 -o EXPRESSION2
+```
+#### Test if {file} is newer (modification date) than {other}
+```sh
+test  file -nt other-nt other
+```
+### test
+#### Test if {file} is older than {other}
+```sh
+test  file -ot other-ot other
+```
+#### Test if INT1 is less than INT2
+```sh
+test  INT1 -lt INT2
+```
+#### Test if INT1 is unequal to INT2
+```sh
+test  INT1 -ne INT2
+```
+#### Test if {file} exists and is block special
+```sh
+test -b file
+```
+#### Test if {file} exists and is character special
+```sh
+test -c file
+```
+#### Test if {file} exists and is a directory
+```sh
+test -d file
+```
+#### Test if {file} exists
+```sh
+test -e file
+```
+#### Test if {file} exists and is a regular file
+```sh
+test -f file
+```
+#### Test if {file} exists and is set-group-ID
+```sh
+test -g file
+```
+#### Test if {file} exists and is owned by the effective group ID
+```sh
+test -G file
+```
+#### Test if {file} exists and is a symbolic link
+```sh
+test -h file
+```
+#### Test if {file} exists and has its sticky bit set
+```sh
+test -k file
+```
+#### Test if {file} exists and is a symbolic link
+```sh
+test -L file
+```
+#### Test if the length of {string} is nonzero
+```sh
+test -n string
+[[ -n string ]]
+```
+#### Test if {file} exists and is owned by the effective user ID
+```sh
+test -O file
+```
+#### Test if {file} exists and is a named pipe
+```sh
+test -p file
+```
+#### Test if {file} exists and read permission is granted
+```sh
+test -r file
+```
+#### Test if {file} exists and has a size greater than zero
+```sh
+test -s file
+```
+### test
+#### Test if {file} exists and is a socket
+```sh
+test -S file
+```
+#### Test if {file} exists and its set-userID bit is set
+```sh
+test -u file
+```
+#### Test if {file} exists and write permission is granted
+```sh
+test -w file
+```
+#### Test if {file} exists and execute (or search) permission is granted
+```sh
+test -x file
+```
+#### Test if the length of {string} is zero
+```sh
+test -z string
+[[ -z string ]]
+```
+#### Test if {file} and {other} have the same device and inode numbers
+```sh
+test file -ef other
+[[ file -ef other]]
+```
+#### Test if INT1 is equal to INT2
+```sh
+test INT1 -eq INT2
+[[ INT1 -eq INT2 ]]
+```
+#### Test if INT1 is greater than or equal to INT2
+```sh
+test INT1 -ge INT2
+[[ INT1 -ge INT2 ]]
+```
+#### Test if INT1 is less than or equal to INT2
+```sh
+test INT1 -le INT2
+[[ INT1 -le INT2 ]]
+```
+### timedatectl
+Display the system clock, including local time, universal time, time zone, etc
+### top
+#### Change update interval
+```sh
+top -n
+```
+### tput
+#### Return width of current terminal window
+```sh
+tput cols 
+```
+#### Return height of current terminal window
+```sh
+tput lines
+```
+### tracepath
+Successor to `traceroute, blocked by many ISPs because it is a newer tool
+### traceroute
+Follow the path a packet takes between two hosts
+#### Choose the interface to be used for the path trace
+```sh
+traceroute -i
+```
+#### Choose the source address to be used for the path trace
+```sh
+traceroute -s
+```
+#### Use TCP SYN packets for the path trace
+```sh
+traceroute -T
+```
+#### Set the Type of Service (ToS) flag to be used for the path trace
+```sh
+traceroute -t
+```
+### tune2fs
+Adjust various 
+#### Run `fsck` on {/dev/sdb1} on every boot
+```sh
+tune2fs -c 1 /dev/sdb1
+```
+#### Run `fsck` on {/dev/sda1} at intervals of 60 mounts or 6 months
+```sh
+tune2fs -c 60 -i 6m /dev/sda1
+```
+#### Enable journaling on ext2 partition {/dev/sdc1}
+```sh
+tune2fs -j /dev/sdc1
+```
+#### Assign label "Sales" to logical volume {/dev/vg1/Sales}
+```sh
+tune2fs -L Sales /dev/vg1/Sales
+```
+### tzselect
+Select timezone
+### udevadm
+Udev management tool
+#### Update the hardware database index after updating source files related to udev
+```sh
+udevadm -u
+```
+### filesystem
+#### Unmount a USB stick mounted a `/dev/sda`
+```sh
+umount /dev/sda1
+```
+### uname
+#### Display operating system release number
+```sh
+uname -r
+```
+### update-grub
+Make changes take effect for a GRUB2 configuration change
+### update-rc.d
+Create links within /etc/rc.d/ for starting and stopping services
+### useradd
+Create a new user
+#### View defaults for new users
+```sh
+useradd -D
+```
+#### Add {user}
+```sh
+useradd user
+```
+#### Add {user}, noting her full {name}
+```sh
+useradd user -c name
+```
+#### Add {user}, specifying home directory at {path}
+```sh
+useradd user -d path
+```
+#### Add {user}, specifying expiration {date} (YYYY-MM-DD)
+```sh
+useradd user -e date
+```
+#### Create new {user} leaving a {comment} field (conventionally noting the full name of the user) and creating a home directory
+```sh
+useradd-c comment -m user
+```
+### useradd-r
+Create a system user rather than a normal user
+### userdel
+Delete an existing user account;
+#### Delete an existing user account as well as the user's home directory
+```sh
+userdel-r  user
+```
+### usermod
+Modify user account files
+#### Lock account of {user}
+```sh
+usermod -L user
+```
+#### Rename {user} {new}
+```sh
+usermod -l user new
+```
+#### Unlock account of {user}
+```sh
+usermod -U user
+```
+#### Add {user} to {group}
+```sh
+usermod user -a -G group
+```
+### vifs
+Safely edit fstab file
+### visudo
+Edit and view the `etc/sudoers` file
+### wall
+#### Send {message} to users in {group}
+```sh
+wall -g group message
+wall --group group message
+```
+### watch
+#### Display a dashboard that will run {cmd} every second, displaying the output
+```sh
+watch -n 1 cmd
+```
+### filter
+#### Display byte count
+```sh
+wc -c
+```
+#### Count lines of text
+```sh
+wc -l 
+```
+#### Display character count
+```sh
+wc -m
+```
+#### Count words of text
+```sh
+wc -w
+```
+### whatis
+#### Look up one or more commands in the online manpages and display a brief description
+```sh
+whatis commands
+```
+### X
+Start the graphical interface from a command line
+### X
+#### Test X11 with the config file automatically generated after `Xorg -configure`
+```sh
+X -config $HOME/xorg.conf.new
+```
+### xdpyinfo
+Show detailed information about display
+### xhost
+#### Enable access control to X server
+```sh
+xhost -
+```
+#### Remove {host} from list of authorized clients for X server
+```sh
+xhost -host
+```
+#### Disable access control to X server
+```sh
+xhost +
+```
+#### Add {host} to list of authorized clients for X server
+```sh
+xhost +host
+```
+### Xorg
+#### Enable automatic configuration of X11 server
+```sh
+Xorg -configure
+```
+### xrandr
+Set size, orientation, and reflection of video output
+#### Change resolution of DisplayPort1 to 1920x1080
+```sh
+xrandr --output DP1 --mode 1920x1080
+```
+#### Disable VGA1 output
+```sh
+xrandr --output VGA1 --off
+```
+#### Display current state of the system
+```sh
+xrandr -q  --query
+```
+### xwininfo
+Utility that provides information about a clicked window, including dimensions, position, etc
+### yay
+#### Display all AUR packages that need to be updated (deprecated)
+```sh
+yay -Pu
+yay --show --upgrades package
+```
+#### List all install packages, filtering output to packages that are out-of-date on the local system
+```sh
+yay -Qu
+yay --query --upgrades
+```
+#### Install {pkg} from the AUR
+```sh
+yay -S package
+yay --sync package
+```
+#### Display information about {package}
+```sh
+yay -Si package
+yay --sync --info package
+```
+#### Search for {pkg} in AUR repos
+```sh
+yay -Ss package
+yay --sync --search package
+```
+#### Update all packages from AUR and official repos
+```sh
+yay -Syu
+yay --sync --refresh --sysupgrade
+```
+#### Remove unwanted dependencies of now-removed installations of AUR repos
+```sh
+yay -Yc
+yay --yay --clean
+```
+
 ## Tasks
 #### Validating arguments
 ```
