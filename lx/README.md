@@ -86,6 +86,7 @@ DESKTOP="Gnome"
 DISPLAYMANAGER="GDM"
 ```
 ## Commands
+### Contents
 Commands sorted alphabetically
 :---
 **A** [adduser](#adduser) [alsamixer](#alsamixer) [apropos](#apropos) [apt](#apt) [apt-cache](#apt-cache) [at](#at) [ausearch](#ausearch) [awk](#awk) 
@@ -114,7 +115,6 @@ Commands sorted alphabetically
 **X** [X](#X) [xdpyinfo](#xdpyinfo) [xhost](#xhost) [xinetd](#xinetd) [Xorg](#Xorg) [xrandr](#xrandr) [xwininfo](#xwininfo) 
 **Y** [yay](#yay) [yum](#yum) 
 **Z** [zip](#zip) [zipcloak](#zipcloak) [zipdetails](#zipdetails) [zipgrep](#zipgrep) [zipinfo](#zipinfo) [zipnote](#zipnote) [zipsplit](#zipsplit) [zsh](#zsh)
-
 ### at
 #### Execute a command at a given time
 ```sh
@@ -177,7 +177,6 @@ Syntax                                              | Effect
 `$TMPDIR`                                           | place temporary files created and used by the shell in `directory`
 `$TMPDIR=directory`                                 | place temporary files created and used by the shell in directory
 `$UID`                                              | user's ID number
-
 ### bzcat
 ### bzless
 ### bzmore
@@ -617,7 +616,6 @@ lowriter --convert-to pdf filename.doc
 lowriter --convert-to pdf *.docx
 ```
 ### locale
-
 ### localectl
 Change locale
 #### Change locale to French
@@ -625,8 +623,12 @@ Change locale
 localectl set-locale LANG=fr_FR.utf8
 ```
 ### lsof
-#### Show open network connections
 `lsof` can be used to display open files, open network ports, and network connections; `-P` prevents the conversion of port numbers to port names; `-i` displays network connections; `-n` prevents the conversion of IP addresses to hostnames [[23](#sources)]
+#### Show open network connections
+Option  | POSIX option            | Effect
+:---    | :---                    | :---
+`-P`    |                         | prevent the conversion of port numbers to names
+
 ```sh
 sudo lsof -Pni
 ```
@@ -1465,7 +1467,8 @@ lvcreate -L 20G vg1 -n Marketing
 ```sh
 lvcreate-L 500G vg1 -n lv1
 ```
-### lvdisplaylvs
+### lvdisplay
+### lvs
 View logical volumes
 ### lvremove
 #### Remove logical volume {/dev/vg1/lv1}
@@ -1482,8 +1485,10 @@ lvresize -L +10G /dev/vg1/Marketing
 ```sh
 pvcreate /dev/sdb /dev/sdc
 ```
-### pvcreate*partitions
-Create physical volumes from {partitions}
+#### Create physical volumes from {partitions}
+```sh
+pvcreate*partitions
+```
 ### pvdisplay
 #### View physical volumes
 ```sh
@@ -1523,7 +1528,6 @@ vgremove /dev/vg1
 ```
 ### vgscan
 Build the LVM cache file
-
 ### adduser
 #### Create a new user (on Debian systems, preferred to `useradd`)
 ```sh
@@ -1762,12 +1766,13 @@ curl url
 ```sh
 curl url -o file
 ```
-### filter
-#### Character number
-```sh
-cut -c
-```
-#### Delimiter
+### cut
+#### cut options
+
+Option  | POSIX option            | Effect
+:---    | :---                    | :---
+`-c`    |                         | character number
+`-d`    | delimiter
 ```sh
 cut -d
 ```
@@ -1901,7 +1906,7 @@ dpkg --info package
 ```sh
 dpkg-reconfigure tzdata
 ```
-### filesystem
+### du
 #### Summary of information in human-readable format
 ```sh
 du -sh
@@ -1921,7 +1926,7 @@ du -hs path
 ```
 ### dumpe2fs
 Display detailed filesystem information
-### e2image
+### e2label
 Create an image of important metadata for an ext3 filesystem
 #### Assign label "Storage" to /dev/sdb1
 ```sh
@@ -1997,8 +2002,11 @@ fsck -C
 ```sh
 fsck -t ext3 /dev/sdc1
 ```
-### fsck-r
-Prompt when attempting a repair action
+### 
+#### Prompt when attempting a repair action
+```sh
+fsck -r
+```
 ### fstrim
 Discard unused blocks on a mounted filesystem
 ### gconf-editor
@@ -2182,8 +2190,10 @@ init
 ```sh
 init n
 ```
-### init6
-Reboot
+#### Reboot
+```sh
+init 6
+```
 ### initctl
 #### Reload configuration files (on Upstart-controlled system)
 ```sh
@@ -2207,7 +2217,6 @@ ip link
 ```sh
 ip monitor 
 ```
-### ip
 #### Display routing information
 ```sh
 ip route
@@ -2237,8 +2246,11 @@ iptables -F
 ```sh
 iptables -vnL --lines
 ```
-### iptables-save
-Display what the running configuration would look like if written to disk (must be redirected to a file)
+#### Display what the running configuration would look like if written to disk 
+Must be redirected to a file
+```sh
+iptables-save
+```
 ### iscsiadm
 Command-line utility allowing discovery and login to iSCSI targets
 #### Set interval length between two ping requests
@@ -2347,7 +2359,6 @@ ls -Z
 ```
 ### lsblk
 Display information about all block devices
-### filesystem
 #### Show UUID, Label, and filesystems of non-GPT block devices
 ```sh
 lsblk -f
@@ -3403,8 +3414,10 @@ tcpdump -s
 ```sh
 telinit 
 ```
-### telinit--no-wall
-Cause operation to not send any notice to logged-on users
+#### Cause operation to not send any notice to logged-on users
+```sh
+telinit--no-wall
+```
 ### test
 Evaluate a condition, returning 0 if true and 1 if false
 #### Test if both EXPRESSION1 and EXPRESSION2 are true
@@ -3597,7 +3610,7 @@ Udev management tool
 ```sh
 udevadm -u
 ```
-### filesystem
+### umount
 #### Unmount a USB stick mounted a `/dev/sda`
 ```sh
 umount /dev/sda1
@@ -3637,8 +3650,10 @@ useradd user -e date
 ```sh
 useradd-c comment -m user
 ```
-### useradd-r
-Create a system user rather than a normal user
+#### Create a system user rather than a normal user
+```sh
+useradd-r
+```
 ### userdel
 Delete an existing user account;
 #### Delete an existing user account as well as the user's home directory
