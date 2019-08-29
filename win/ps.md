@@ -433,6 +433,11 @@ Retrieve various properties of an image in clipboard
 ```powershell
 Get-Clipboard -Format Image
 ```
+#### Generate a GUID
+```powershell
+New-Guid
+(New-Guid).Guid | clip
+```
 ## Desired State Configuration (DSC) syntax
 
 Syntax                                            | Effect
