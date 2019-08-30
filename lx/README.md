@@ -21,6 +21,8 @@ $HOME/xorg.conf                   | user config which overrides system defaults
 /boot/grub/grub.cfg               | GRUB2 bootloader
 /etc/aliases                      | systemwide email aliases
 /etc/apt/sources.list             | APT repos <br/>`deb-src` is the prefix used to denote a Debian source repo
+[/etc/cmd.allow](#xinetd-configuration-files)                    | [xinetd](#xinetd)
+[/etc/cmd.deny](#xinetd-configuration-files)                     | [xinetd](#xinetd)
 /etc/default/useradd              | [useradd](#useradd)
 /etc/files.dns                    | NIS+ servers for Solaris servers
 /etc/fstab                        | filesystems to be mounted by the system at boot
@@ -53,6 +55,7 @@ $HOME/xorg.conf                   | user config which overrides system defaults
 /etc/skel/                        | default configs for new users
 /etc/ssh/ssh_config               | client config for ssh
 /etc/ssh/sshd_config              | server configuration file for ssh
+[/etc/ssmtp/ssmtp.conf](#etcssmtpssmtpconf)    | [ssmtp](#ssmtp)
 /etc/sudoers                      | who has sudo access
 [/etc/sysconfig/desktop](#etcsysconfigdesktop) | Specify display manager and desktops on Red Hat
 /etc/sysconfig/iptables           | [iptables](#iptables)
@@ -60,7 +63,8 @@ $HOME/xorg.conf                   | user config which overrides system defaults
 /etc/syslog-ng/syslog-ng.conf     | [syslog-ng](#syslog-ng)
 /etc/udev/hwdb.bin                | udev hardware database
 /etc/X11/xdm/xdm-config           | XFCE config
-/etc/xinet.d/                     | directory of config files for xinetd
+[/etc/xinet.d/](#xinetd-configuration-files)                     | directory of config files for [xinetd](#xinetd)
+[/etc/xinetd.conf](#xinetd-configuration-files)                  | master [xinetd](#xinetd) configuration
 /etc/yum.repos.d/                 | repository definitions with filenames that follow the pattern **\*.repo**
 /etc/yum.conf                     | config
 /lib/systemd/system/              | directory containing unit configs
@@ -84,6 +88,12 @@ DISPLAYMANAGER="XDM"
 ```conf
 DESKTOP="Gnome"
 DISPLAYMANAGER="GDM"
+```
+#### /etc/ssmtp/ssmtp.conf
+```ini
+mailhub=smtp.gmail.com:587
+UseTLS=YES
+UseSTARTTLS=YES
 ```
 ## Commands
 Commands sorted alphabetically
@@ -125,7 +135,6 @@ at -f file time
 ```
 ### bash
 #### bash variables
-
 Syntax                                              | Effect
 :---                                                | :---
 `${string//search/substitution}`                    | replace all matches of {search} with {substitution} within {string}
@@ -177,7 +186,6 @@ Syntax                                              | Effect
 `$TMPDIR`                                           | place temporary files created and used by the shell in `directory`
 `$TMPDIR=directory`                                 | place temporary files created and used by the shell in directory
 `$UID`                                              | user's ID number
-
 ### bzcat
 ### bzless
 ### bzmore
@@ -377,6 +385,10 @@ chown alan file                 # Assign {file} to user `alan`
 chown alan: file                # Assign {file} to user and group `alan`
 chown :gamma file               # Assign {file} to the group `gamma`
 ```
+#### Recursively grant {user} ownership to {path}
+```sh
+chown -R user path
+```
 Assign {path} to `susan` and group `delta`, recursively and with verbose output
 ```sh
 chown --verbose --recursive susan:delta path 
@@ -385,7 +397,6 @@ chown -vR susan:delta path
 ```sh
 chown -vR --reference=. path    # Use a `reference` file to match the configuration of a particular file
 chown -cfR --preserve-root alan # `preserve-root` prevents changes to files in the root directory, but has no effect when not used with `recursive`
-k
 ```
 ### dhclient
 Obtain and configure TCP/IP information from a server on the network [[LGLC](../sources/lglc.md): 34]
@@ -528,6 +539,7 @@ gpg --list-key
 gpg --encrypt -r jdoe@dplaptop.lab.itpro.tv ./file.txt
 ```
 ### grep
+#### grep options
 Option  | POSIX option            | Effect
 :---    | :---                    | :---
 `-A n`  |                         | print {n} lines of trailing context from the file after each match
@@ -542,11 +554,10 @@ Option  | POSIX option            | Effect
 `-r`    |                         | recursive
 `-v`    | `--invert-match`        | print lines **not** matching the pattern
 ### history
-#### Clear your shell history
-[[23](#sources)]
-```
-history -c
-```
+#### history options
+Option  | POSIX option            | Effect
+:---    | :---                    | :---
+`-c`    |                         | clear history [[23](#sources)]
 ### hostnamectl
 #### Change hostname
 ```
@@ -625,8 +636,14 @@ Change locale
 localectl set-locale LANG=fr_FR.utf8
 ```
 ### lsof
-#### Show open network connections
 `lsof` can be used to display open files, open network ports, and network connections; `-P` prevents the conversion of port numbers to port names; `-i` displays network connections; `-n` prevents the conversion of IP addresses to hostnames [[23](#sources)]
+#### lsof options
+Option  | POSIX option            | Effect
+:---    | :---                    | :---
+`-i`    | | display network connections
+`-n`    | | prevent the conversion of IP addresses to hostnames
+`-P`    | | prevent the conversion of port numbers to port names
+#### Show open network connections
 ```sh
 sudo lsof -Pni
 ```
@@ -811,7 +828,12 @@ watch -n 1 'netstat -an | grep ":443"'
 watch -n 1 'netstat -an | grep ":80" | wc -l'
 ```
 ### networkmanager
-`chkconfig NetworkManager off`, `systemctl disable NetworkManager.service`, `service NetworkManager stop` stop NetworkManager service (Upstart, Systemd, Sysvinit)
+#### Stop NetworkManager service
+```sh
+chkconfig NetworkManager off               # Upstart
+systemctl disable NetworkManager.service   # Systemd
+service NetworkManager stop                # sysvinit
+```
 ### nmap
 Audit open ports on a host
 #### Scan hosts from a text file
@@ -1202,21 +1224,13 @@ ps aux | sort -nk 3
 ### ssmtp
 Installable client program [[25](#sources)]
 
-Configuration file | Description
-:--- | :---
-/etc/ssmtp/ssmtp.conf | Configuration file
-
-Syntax | Effect or description
-:---   | :---
+#### ssmtp config
+Configuration file                            | Description
+:---                                          | :---
+[ /etc/ssmtp/ssmtp.conf ](#etcssmtpssmtpconf) | Configuration file
 #### Send {msg} to {recipient} from {user} at {host} using password {pw}
 ```sh
 ssmtp -au recipient -ap pw user@host < msg
-```
-#### Configuration file
-```ini
-mailhub=smtp.gmail.com:587
-UseTLS=YES
-UseSTARTTLS=YES
 ```
 ### stat
 ### ping
@@ -1411,7 +1425,7 @@ watch -n 0.5 iptables -vnL
 ```
 ### xinetd
 Internet Super Daemon provided an alternate method of connecting to various outdated network services. Should be turned off nowadays.  
-#### xinetd configuration
+#### xinetd configuration files
 Configuration file  | Description
 :---                | :---
 /etc/xinet.d/       | config files
@@ -1655,7 +1669,7 @@ chkconfig daemon off
 ```sh
 chkconfig daemon on
 ```
-### file
+### chmod
 #### Set sticky bit on {file}
 ```sh
 chmod +t file
@@ -1683,14 +1697,6 @@ chmod u+s file
 #### Set `setuid` permission on {file}
 ```sh
 chmod +s file
-```
-#### Recursively grant {user} ownership to {path}
-```sh
-chown -R user path
-```
-#### Change owner of {file} to {newowner}
-```sh
-chown newowner file
 ```
 ### chpass
 #### Change default shell to Fish
@@ -1790,7 +1796,7 @@ date universal
 ```
 ### dbus-monitor
 Monitor messages going through a D-Bus message bus
-### filesystem
+### dd
 #### Implement a simple CPU benchmark by writing 1 GB of zeroes and piping it to md5sum
 ```sh
 dd if=/dev/zero bs=1M count=1024 | md5sum
@@ -1997,8 +2003,10 @@ fsck -C
 ```sh
 fsck -t ext3 /dev/sdc1
 ```
-### fsck-r
-Prompt when attempting a repair action
+#### Prompt when attempting a repair action 
+```sh
+fsck -r
+```
 ### fstrim
 Discard unused blocks on a mounted filesystem
 ### gconf-editor
@@ -2963,7 +2971,7 @@ runlevel
 ### smbclient
 Connect to a Samba server
 #### Set the port while connecting to a Samba server
-```sh
+```
 smbclient -p
 ```
 ### smbpasswd
