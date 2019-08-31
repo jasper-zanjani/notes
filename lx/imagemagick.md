@@ -1,34 +1,22 @@
 ### imagemagick
 
-Command groups  | Effect
+Command group   | Description
 :---            | :---
-identify        | describes the format and characteristics of one or more image files
+identify        | describe the format and characteristics of one or more image files
 mogrify         | resize, blur, crop, despeckle, dither, draw on, flip, join, resample, etc
 
 #### `identify` Options
-`-format {string}` 
-  - display formatted image characteristics
-  - `{string}` is formatted string using `%[key]` escape sequences
-    - `%w` current width in pixels
-    - `%h` current height in pixels
-    - lots more: https://imagemagick.org/script/escape.php
+Option                            | Effect
+:---                              | :---
+`-format {string}`                | display formatted image characteristics; {string} is formatted string using `%[key]` escape sequences<br/> **%w** current width in pixels <br/> **%h** current height in pixels
 
 #### `mogrify` Options
-`-write {filename}`
-  save to `filename`
-`-resize XxY`
-  resize image to `X` pixels by `Y` pixels
+Option                            | Effect
+:---                              | :---
+`-write filename`                 | save to `filename`
+`-resize XxY`                     | resize image to `X` pixels by `Y` pixels
 `-crop {geometry}`
-  
-Argument patterns 
-:---          | 
-{geometry}    | **{size}{offset}**
-{size}        | **{scale}%** height and weight are both scaled by a specified percentage<br/> **{width}x{height}** maximum values of height and width<br/> **{width}x{height}^** minimum values of height and width<br/>
-{offset}      | also affected by `-gravity` setting<br/> **`+0+0`** top-left corner
-gravity       | 
-`-gravity {type}`
-  set current gravity suggestion for various other options
-  {type} can have following values
+`-gravity type`                   | set current gravity suggestion for various other options; **{type}** can have following values
   - `NorthWest`
   - `North`
   - `NorthEast`
@@ -38,8 +26,14 @@ gravity       |
   - `SouthWest`
   - `South`
   - `SouthEast`
+  
+Argument patterns 
+:---          | 
+{geometry}    | **{size}{offset}**
+{size}        | **{scale}%** height and weight are both scaled by a specified percentage<br/> **{width}x{height}** maximum values of height and width<br/> **{width}x{height}^** minimum values of height and width<br/>
+{offset}      | also affected by `-gravity` setting<br/> **`+0+0`** top-left corner
+gravity       | 
 
-## Examples
 #### Resize images
 ```sh
 # Using full syntax
@@ -53,7 +47,7 @@ The `convert` command is from the ImageMagick software suite [[2](#sources)]
 ```sh
 cmd | convert label:@- image.png
 ``` 
-#### View metadata
+#### View image metadata
 The `identify` is from the ImageMagick software suite [[3](#sources)]
 ```sh
 identify image.png # => dimensions, color depth, color profile
