@@ -11,90 +11,6 @@ Topic                           | Contents
 **Distros** [Arch Linux](lx-distros.md#arch-linux) [BSD](bsd.md)  [Clear Linux](lx-distros.md#clear-linux) [Fedora CoreOS](#lx-distros.md#fedora-coreos) [Kali Linux](lx-distros.md#kali-linux) [Mac OS X](macosx.md)
 [X](X.md)
 
-## Configs
-Config file                       | Description
-:---                              | :---
-$HOME/.forward                    | forwarding to only one address
-$HOME/.gnupg/pubring.gpg          | default storage for public [gpg](#gpg) keyrings 
-$HOME/.ssh/known_hosts            | public keys of SSH hosts
-$HOME/xorg.conf                   | user config which overrides system defaults
-/boot/grub/grub.cfg               | GRUB2 bootloader
-/etc/aliases                      | systemwide email aliases
-/etc/apt/sources.list             | APT repos <br/>`deb-src` is the prefix used to denote a Debian source repo
-[/etc/cmd.allow](#xinetd-configuration-files)                    | [xinetd](#xinetd)
-[/etc/cmd.deny](#xinetd-configuration-files)                     | [xinetd](#xinetd)
-/etc/default/useradd              | [useradd](#useradd)
-/etc/files.dns                    | NIS+ servers for Solaris servers
-/etc/fstab                        | filesystems to be mounted by the system at boot
-/etc/gdm/custom.conf              | GNOME config
-/etc/group                        | colon-delimited values for groups<br/>**Format**:<br/>`name:password:GID:user1,user2,user3,...`
-/etc/hosts                        | global hostnames
-/etc/hotplug/usb                  | location of scripts executed when a hotplug device is inserted
-/etc/hostname                     | contains hostname
-/etc/init.d/                      | [sysvinit](#sysvinit) scripts run during startup and shutdown
-/etc/inittab                      | initialization table
-/etc/ld.so.conf.d/                | configs that establish pathnames where shared libraries may be found
-/etc/lightdm/                     | directory containing **users.conf**, and the subdirectory **lightdm.conf.d**, if created, the contents of which will be loaded as well
-/etc/lightdm/lightdm.conf         | [lightdm](#lightdm) 
-/etc/ld.so.conf                   | [ldconfig](#ldconfig) 
-/etc/login.defs                   | default configuration values for [useradd](#useradd), [userdel](#userdel), [usermod](#usermod), and [groupadd](#groupadd)
-/etc/logrotate.conf               | [logrotate](#logrotate)
-/etc/lvm/.cache                   | default location of LVM cache
-/etc/modprobe.d/                  | [modprobe](#modprobe)
-/etc/mtab                         | updated dynamically with information about currently mounted filesystems
-/etc/network                      | global network settings
-/etc/ntp.conf                     | NTP config
-/etc/nsswitch.conf                | controls lookup system beyond just DNS
-/etc/passwd                       |
-/etc/postfix/main.cf              | [postfix](#postfix)
-/etc/rc.d/rc.sysinit              | first script run by init
-/etc/resolv.conf                  | nameserver definitions (maximum of 6 domains with total of 256 characters)
-/etc/samba/smb.conf               | Samba configuration fileA
-/etc/selinux/config               | [SELinux](#selinux)
-/etc/services                     | used to resolve port numbers
-/etc/skel/                        | default configs for new users
-/etc/ssh/ssh_config               | client config for ssh
-/etc/ssh/sshd_config              | server configuration file for ssh
-[/etc/ssmtp/ssmtp.conf](#etcssmtpssmtpconf)    | [ssmtp](#ssmtp)
-/etc/sudoers                      | who has sudo access
-[/etc/sysconfig/desktop](#etcsysconfigdesktop) | Specify display manager and desktops on Red Hat
-/etc/sysconfig/iptables           | [iptables](#iptables)
-/etc/sysconfig/network-scripts/   | directory containing network configs and scripts for Red Hat
-/etc/syslog-ng/syslog-ng.conf     | [syslog-ng](#syslog-ng)
-/etc/udev/hwdb.bin                | udev hardware database
-/etc/X11/xdm/xdm-config           | XFCE config
-[/etc/xinet.d/](#xinetd-configuration-files)                     | directory of config files for [xinetd](#xinetd)
-[/etc/xinetd.conf](#xinetd-configuration-files)                  | master [xinetd](#xinetd) configuration
-/etc/yum.repos.d/                 | repository definitions with filenames that follow the pattern **\*.repo**
-/etc/yum.conf                     | config
-/lib/systemd/system/              | directory containing unit configs
-/proc/loadavg                     | virtual file that has information about load average for use in [`uptime`](#uptime)
-/var/log/dmesg                    | kernel ring buffer information
-/var/log/audit/audit.log          | audit file for SELinux
-/sys/class/net/eth0/address       | MAC address of eth0
-/usr/share/config/kdm/kdmrc       | KDM config
-/usr/share/lightdm/lightdm.conf.d/ | [lightdm](#lightdm) configs, all of whose filenames follow the pattern **50-\*.conf**
-
-### /etc/sysconfig/desktop
-Specify desktop environment and display manager on Red Hat.
-```conf
-DESKTOP="KDE"
-DISPLAYMANAGER="KDE"
-```
-```conf
-DESKTOP="XFCE"
-DISPLAYMANAGER="XDM"
-```
-```conf
-DESKTOP="Gnome"
-DISPLAYMANAGER="GDM"
-```
-#### /etc/ssmtp/ssmtp.conf
-```ini
-mailhub=smtp.gmail.com:587
-UseTLS=YES
-UseSTARTTLS=YES
-```
 ## Commands
 Commands sorted alphabetically
 :---
@@ -117,7 +33,7 @@ Commands sorted alphabetically
 **Q** [qmail](#qmail) [quota](#quota) [quotacheck](#quotacheck) [quotaoff](#quotaoff) [quotaon](#quotaon) 
 **R** [read](#read) [rename](#rename) [repquota](#repquota) [resize2fs](#resize2fs) [resize4fs](#resize4fs) [restorecon](#restorecon) [rmmod](#rmmod) [route](#route) [rpm](#rpm) [rsync](#rsync) [runlevel](#runlevel) 
 **S** [samba](#samba) [sc](#sc) [sed](#sed) [semanage](#semanage) [sendmail](#sendmail) [seq](#seq) [service](#service) [sestatus](#sestatus) [setenforce](#setenforce) [setfacl](#setfacl) [sfdisk](#sfdisk) [shred](#shred) [shuf](#shuf) [shutdown](#shutdown) [slapadd](#slapadd)  [sleep](#sleep) [snap](#snap) [sort](#sort) [source](#source) [speaker-test](#speaker-test) [ss](#ss) [ssh](#ssh) [ssh-copy-id](#ssh-copy-id) [ssh-keygen](#ssh-keygen) [ssh-keyscan](#ssh-keyscan) [sshfs](#sshfs) [ssmtp](#ssmtp) [startx](#startx) [stty](#stty) [su](#su) [sudo](#sudo) [swapoff](#swapoff) [swapon](#swapon) [sysctl](#sysctl) [syslog](#syslog) [systemctl](#systemctl) [systemd-delta](#systemd-delta) 
-**T** [tail](#tail) [tar](#tar) [tcpdump](#tcpdump) [telinit](#telinit) [test](#test) [tig](#tig) [timedatectl](#timedatectl) [tmux](#tmux) [top](#top) [tput](#tput) [tr](#tr) [tracepath](#tracepath) [traceroute](#traceroute) [tune2fs](#tune2fs) [tzselect](#tzselect) 
+**T** [tail](#tail) [tar](#tar) [tcpdump](#tcpdump) [telinit](#telinit) [test](#test) [tig](#tig) [timedatectl](#timedatectl) [tmux](#tmux) [touch](#touch) [top](#top) [tput](#tput) [tr](#tr) [tracepath](#tracepath) [traceroute](#traceroute) [tune2fs](#tune2fs) [tzselect](#tzselect) 
 **U** [udevadm](#udevadm) [umount](#umount) [uname](#uname) [uncompress](#uncompress) [unzip](#unzip) [update-grub](#update-grub) [update-rc.d](#update-rc.d) [useradd](#useradd) [userdel](#userdel) [usermod](#usermod) 
 **V** [variable](#variable) [vgcreate](#vgcreate) [vgdisplay](#vgdisplay) [vgextend](#vgextend) [vgremove](#vgremove) [vgscan](#vgscan) [vifs](#vifs) [visudo](#visudo) 
 **W** [wall](#wall) [watch](#watch) [wc](#wc) [whatis](#whatis) 
@@ -1438,9 +1354,17 @@ stat file
 ```
 ### yum
 Yellow Dog Update manager (Yellow Dog was a variation of Red Hat for PowerPC architectures), package manager more commonly used today. [35](#sources)
+#### yum options
+Option  | POSIX option            | Effect
+:---    | :---                    | :---
+y       | assumeyes               | respond to any prompt with "yes" automatically
+
+
 #### Upgrade installed packages
 ```sh
-yum -y
+yum update
+yum update package # update a specific {package}
+yum upgrade # equivalent to `yum update --obsoletes`
 ```
 #### Remove {package} as well as the cached package
 ```sh
@@ -3791,7 +3715,96 @@ yay --sync --refresh --sysupgrade
 yay -Yc
 yay --yay --clean
 ```
+### touch
+#### Update {newfile}'s modification date to match {oldfile}
+[[36](#sources)]
+```sh
+touch -r oldfile newfile
+```
+## Configs
+Config file                       | Description
+:---                              | :---
+$HOME/.forward                    | forwarding to only one address
+$HOME/.gnupg/pubring.gpg          | default storage for public [gpg](#gpg) keyrings 
+$HOME/.ssh/known_hosts            | public keys of SSH hosts
+$HOME/xorg.conf                   | user config which overrides system defaults
+/boot/grub/grub.cfg               | GRUB2 bootloader
+/etc/aliases                      | systemwide email aliases
+/etc/apt/sources.list             | APT repos <br/>`deb-src` is the prefix used to denote a Debian source repo
+[/etc/cmd.allow](#xinetd-configuration-files)                    | [xinetd](#xinetd)
+[/etc/cmd.deny](#xinetd-configuration-files)                     | [xinetd](#xinetd)
+/etc/default/useradd              | [useradd](#useradd)
+/etc/files.dns                    | NIS+ servers for Solaris servers
+/etc/fstab                        | filesystems to be mounted by the system at boot
+/etc/gdm/custom.conf              | GNOME config
+/etc/group                        | colon-delimited values for groups<br/>**Format**:<br/>`name:password:GID:user1,user2,user3,...`
+/etc/hosts                        | global hostnames
+/etc/hotplug/usb                  | location of scripts executed when a hotplug device is inserted
+/etc/hostname                     | contains hostname
+/etc/init.d/                      | [sysvinit](#sysvinit) scripts run during startup and shutdown
+/etc/inittab                      | initialization table
+/etc/ld.so.conf.d/                | configs that establish pathnames where shared libraries may be found
+/etc/lightdm/                     | directory containing **users.conf**, and the subdirectory **lightdm.conf.d**, if created, the contents of which will be loaded as well
+/etc/lightdm/lightdm.conf         | [lightdm](#lightdm) 
+/etc/ld.so.conf                   | [ldconfig](#ldconfig) 
+/etc/login.defs                   | default configuration values for [useradd](#useradd), [userdel](#userdel), [usermod](#usermod), and [groupadd](#groupadd)
+/etc/logrotate.conf               | [logrotate](#logrotate)
+/etc/lvm/.cache                   | default location of LVM cache
+/etc/modprobe.d/                  | [modprobe](#modprobe)
+/etc/mtab                         | updated dynamically with information about currently mounted filesystems
+/etc/network                      | global network settings
+/etc/ntp.conf                     | NTP config
+/etc/nsswitch.conf                | controls lookup system beyond just DNS
+/etc/passwd                       |
+/etc/postfix/main.cf              | [postfix](#postfix)
+/etc/rc.d/rc.sysinit              | first script run by init
+/etc/resolv.conf                  | nameserver definitions (maximum of 6 domains with total of 256 characters)
+/etc/samba/smb.conf               | Samba configuration fileA
+/etc/selinux/config               | [SELinux](#selinux)
+/etc/services                     | used to resolve port numbers
+/etc/skel/                        | default configs for new users
+/etc/ssh/ssh_config               | client config for ssh
+/etc/ssh/sshd_config              | server configuration file for ssh
+[/etc/ssmtp/ssmtp.conf](#etcssmtpssmtpconf)    | [ssmtp](#ssmtp)
+/etc/sudoers                      | who has sudo access
+[/etc/sysconfig/desktop](#etcsysconfigdesktop) | Specify display manager and desktops on Red Hat
+/etc/sysconfig/iptables           | [iptables](#iptables)
+/etc/sysconfig/network-scripts/   | directory containing network configs and scripts for Red Hat
+/etc/syslog-ng/syslog-ng.conf     | [syslog-ng](#syslog-ng)
+/etc/udev/hwdb.bin                | udev hardware database
+/etc/X11/xdm/xdm-config           | XFCE config
+[/etc/xinet.d/](#xinetd-configuration-files)                     | directory of config files for [xinetd](#xinetd)
+[/etc/xinetd.conf](#xinetd-configuration-files)                  | master [xinetd](#xinetd) configuration
+/etc/yum.repos.d/                 | repository definitions with filenames that follow the pattern **\*.repo**
+/etc/yum.conf                     | config
+/lib/systemd/system/              | directory containing unit configs
+/proc/loadavg                     | virtual file that has information about load average for use in [`uptime`](#uptime)
+/var/log/dmesg                    | kernel ring buffer information
+/var/log/audit/audit.log          | audit file for SELinux
+/sys/class/net/eth0/address       | MAC address of eth0
+/usr/share/config/kdm/kdmrc       | KDM config
+/usr/share/lightdm/lightdm.conf.d/ | [lightdm](#lightdm) configs, all of whose filenames follow the pattern **50-\*.conf**
 
+### /etc/sysconfig/desktop
+Specify desktop environment and display manager on Red Hat.
+```conf
+DESKTOP="KDE"
+DISPLAYMANAGER="KDE"
+```
+```conf
+DESKTOP="XFCE"
+DISPLAYMANAGER="XDM"
+```
+```conf
+DESKTOP="Gnome"
+DISPLAYMANAGER="GDM"
+```
+#### /etc/ssmtp/ssmtp.conf
+```ini
+mailhub=smtp.gmail.com:587
+UseTLS=YES
+UseSTARTTLS=YES
+```
 ## Tasks
 #### Validating arguments
 ```
@@ -3975,10 +3988,11 @@ ZynAddSubFX                     | LMMS plugin, used with synthesizers [[1](#sour
   26. "Linux Mail Server Postfix Architecture" [YouTube](https://youtu.be/qhA8HuJBa64)
   27. "Qmail deprecation" [archlinux.org](https://www.archlinux.org/news/qmail-deprecation/)
   28. "[`free`](#free) Command in Linux Explained With Examples". [linuxhandbook.com](https://linuxhandbook.com/free-command/)
-  29. "The `mktemp` Command Tutorial With examples". [OSTechnix](https://www.ostechnix.com/the-mktemp-command-tutorial-with-examples-for-beginners/)
+  29. "The [ `mktemp` ](#mktemp) Command Tutorial With examples". [OSTechnix](https://www.ostechnix.com/the-mktemp-command-tutorial-with-examples-for-beginners/)
   30. "How to move a file in Linux". [opensource.com](https://opensource.com/article/19/8/moving-files-linux-depth): 2019/08/22.
   31. "How to view image metadata". [OSTechNix](https://www.ostechnix.com/how-to-view-image-metadata-on-linux/): 2019/08/26.
   32. "Introduction to the Linux [`chown`](#chown) command". [opensource.com](https://opensource.com/article/19/8/linux-chown-command): 2019/08/26.
   33. "How to [`rename`](#rename) a group of files on Linux". [NetworkWorld](https://www.networkworld.com/article/3433865/how-to-rename-a-group-of-files-on-linux.html#tk.rss_linux): 2019/08/26.
   34. "How to use Tig to browse Git logs". [opensource.com](https://opensource.com/article/19/6/what-tig) 
   35. "CompTIA Linux+ powered by LPI". ITProTV. [itp-lpic.md](../sources/itp-lpic.md)
+  36. "Unix as a Second Language: The [`touch`](#touch) command". [Network World](https://www.networkworld.com/article/3435279/unix-as-a-second-language-the-touch-command.html#tk.rss_linux).
