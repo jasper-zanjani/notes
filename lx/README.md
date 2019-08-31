@@ -1352,46 +1352,69 @@ Configuration file  | Description
 stat file
 ```
 ### yum
-Yellow Dog Update manager (Yellow Dog was a variation of Red Hat for PowerPC architectures), package manager more commonly used today. [35](#sources)
+Yellow Dog Updater, Modified package manager (Yellow Dog was a variation of Red Hat for PowerPC architectures), package manager more commonly used today. [[35](#sources), [37](#sources)]
 #### yum options
 Option  | POSIX option            | Effect
 :---    | :---                    | :---
 y       | assumeyes               | respond to any prompt with "yes" automatically
-
-
-#### Upgrade installed packages
+#### Install {package}
+```sh
+yum install package
+yum groupinstall packagegroup # package group
+yum --enablerepo=repo install package # from a specific {repo}
+```
+#### Remove {package} 
+```sh
+yum remove package
+yum -y remove package # without confirmation
+yum erase package # as well as the cached package
+yum groupremove packagegroup
+```
+#### Update installed packages
 ```sh
 yum update
 yum update package # update a specific {package}
 yum upgrade # equivalent to `yum update --obsoletes`
+yum groupupdate packagegroup
 ```
-#### Remove {package} as well as the cached package
+#### List all available packages in database
 ```sh
-yum erase package
+yum list
+yum grouplist
 ```
-#### Install {packagegroup}
+#### List all installed packages
 ```sh
-yum groupinstall packagegroup
+yum list installed
 ```
 #### Query repos for information on {package}
 ```sh
 yum info package
 ```
-#### Install {package}
+#### Find packages
 ```sh
-yum install package
+yum list name # name matching {name} exactly
+yum search pattern # search for package name matching {pattern}
 ```
-#### Search for packages with a name matching {pattern}
+#### Find what package {config} belongs to
 ```sh
-yum list pattern
+yum provides /path/to/config
 ```
-#### Search database for {pattern}
+#### List repositories
 ```sh
-yum search pattern
+yum repolist
+yum repolist all # enabled and disabled repos
 ```
-#### Upgrade {package}
+#### Interactive shell
 ```sh
-yum update package
+yum shell
+```
+#### Clear cache
+```sh
+yum clean all
+```
+#### View command history
+```sh
+yum history
 ```
 ### lvcreate
 #### Create a 20 gigabyte logical volume named "Marketing" from volume group {vg1}
@@ -4005,3 +4028,4 @@ ZynAddSubFX                     | LMMS plugin, used with synthesizers [[1](#sour
   34. "How to use Tig to browse Git logs". [opensource.com](https://opensource.com/article/19/6/what-tig) 
   35. "CompTIA Linux+ powered by LPI". ITProTV. [itp-lpic.md](../sources/itp-lpic.md)
   36. "Unix as a Second Language: The [`touch`](#touch) command". [Network World](https://www.networkworld.com/article/3435279/unix-as-a-second-language-the-touch-command.html#tk.rss_linux).
+  37. "20 Linux [YUM](#yum) (Yellowdog Update, Modified) Commands for Package Management". [TecMint](https://www.tecmint.com/20-linux-yum-yellowdog-updater-modified-commands-for-package-mangement/). 2012/08/11.
