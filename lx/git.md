@@ -207,4 +207,4 @@ git commit --amend
   1. "Dealing with line endings". [GitHub Help](https://help.github.com/en/articles/dealing-with-line-endings)
   2. "Squash All Commits Related to a Single Issue into a Single Commit". [GitHub](https://github.com/todotxt/todo.txt-android/wiki/Squash-All-Commits-Related-to-a-Single-Issue-into-a-Single-Commit)
   3. "Git - Stashing". [git-scm.com](https://git-scm.com/book/en/v1/Git-Tools-Stashing).
-  4. [Dev.to](https://dev.to/jacobherrington/4-useful-patterns-in-git-19ac)
+  4. "4 Useful Solutions to Common Git Problems". [Dev.to](https://dev.to/jacobherrington/4-useful-patterns-in-git-19ac): 2019/08/26.
