@@ -1,26 +1,20 @@
 # PowerShell commands for Active Directory
-
 #### Create a domain controller
 ```powershell
 Install-WindowsFeature AD-Domain-Services -IncludeManagementTools
 Import-Module ADDSDeployment
 ```
-
-3 cmdlets available for 3 different scenarios:
-
+3 cmdlets available for 3 different scenarios:\
 Syntax                          | Effect
 :---                            | :---
 `Install-ADDSForest`            | Add a new forest
 `Install-ADDSDomain`            | Add a domain to an existing forest
 `Install-ADDSDomainController`  | Add a domain controller to an existing domain
-
 #### Add a new forest
 ```powershell
 Install-ADDSForest -DomainName example.com -InstallDNS
 ```
-
 If the system fails to automatically create a NetBIOS name, it can be manually specified with the named parameter `-DomainNetbiosName`
-
 #### Display installed forests
 ```powershell
 Get-ADForest | select -ExpandProperty domains
@@ -29,31 +23,30 @@ Get-ADForest | select -ExpandProperty domains
 `Install-ADDSDomain` only requires the following two parameters:
   - `-NewDomainName` if the value set for `-DomainType` is set to `ChildDomain` (which it is by default), a single label domain name can be used.
   - `ParentDomainName` the name of an existing parent domain
-
 ```powershell
 Install-ADDSDomain -NewDomainName hq -ParentDomainName pythagoras.net
 ```
-
 ```powershell
 Install-ADDSDomain -Credential (Get-Credential CORP\EnterpriseAdmin1) -NewDomainName child -ParentDomainName corp.contoso.com -InstallDNS -CreateDNSDelegation -DomainMode Win2003 -ReplicationSourceDC DC1.corp.contoso.com -SiteName Houston -DatabasePath "D:\NTDS" -SYSVOLPath "D:\SYSVOL" -LogPath "E:\Logs" -NoRebootOnCompletion
 ```
-
+#### Join a new computer to a domain
+[[1](#sources)]
+```powershell
+Add-Computer -Domain 'officeprodemoco.onmicrosoft.com' -Restart
+```
 #### Create a new user (disabled by default)
 ```powershell
 New-ADUser -Name "Walter Mitty"
 ```
-
 Users are disabled by default, so you must enable them by setting the `-Enabled` switch parameter:
 ```powershell
 New-ADUser -Name "Marty McFly" -Enabled $true -GivenName "Martin" -Surname "McFly"
   -AccountPassword ( ConvertTo-SecureString "P@ssw0rd!" -AsPlainText -Force) 
 ```
-
 #### Unlock account
 ```powershell
 Unlock-ADAccount -identity wbryan
 ```
-
 #### Reset password
 ```powershell
 Set-ADAccountPassword -Identity MBentley -Reset -NewPassword (ConvertTo-SecureString `
@@ -115,24 +108,22 @@ Install Web Server
 Install-WindowsFeature Web-Server,Web-Common-Http,Web-Mgmt-Console -Restart
 ```
 ### Search-ADAccount
-
 Option                    | Effect
 :---                      | :---
-`-AccountDisabled`        | filter disabled accounts
-`-AccountExpired`         | filter expired accounts
-`-ComputersOnly`          | filter computer accounts
-`-LockedOut`              | filter locked out accounts
-`-PasswordExpired`        | filter accounts with expired passwords
-`-PasswordNeverExpires`   | filter accounts with passwords that will never expire
-`-UsersOnly`              | filter users
-
-
+AccountDisabled           | filter disabled accounts
+AccountExpired            | filter expired accounts
+ComputersOnly             | filter computer accounts
+LockedOut                 | filter locked out accounts
+PasswordExpired           | filter accounts with expired passwords
+PasswordNeverExpires      | filter accounts with passwords that will never expire
+UsersOnly                 | filter users
 #### Display accounts that have been inactive for the last 90 days
 ```powershell
 Search-ADAccount -AccountInactive -TimeSpan 90.00:00:00
 ```
-
 #### Display accounts expiring on a particular date
 ```powershell
 Search-ADAccount -AccountExpiring -DateTime "3/18/2019"
-```
+``` 
+## Sources
+  1. "Managing AD Computer Accounts Part 2". _Windows Server 101_. [ITPro.TV](../sources/README.md)
