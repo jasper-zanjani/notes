@@ -33,15 +33,20 @@ Install-ADDSDomain -Credential (Get-Credential CORP\EnterpriseAdmin1) -NewDomain
 [[1](#sources)]
 ```powershell
 Add-Computer -Domain 'officeprodemoco.onmicrosoft.com' -Restart
+New-ADComputer -Name "O365-CL93"
+
+# Joining many computers using a .csv file
+New-ADComputer -Name "O365-CL93"
+$List = "C:\Labfiles\computers.csv"
+$OU = "OU=office365,DC=officeprodemoco,DC=onmicrosoft,DC=com"
+Import-Csv -path $List | ForEach-Object {New-ADComputer -Name $_.Name -Path $OU}
 ```
-#### Create a new user (disabled by default)
+#### Create a new user
 ```powershell
 New-ADUser -Name "Walter Mitty"
-```
-Users are disabled by default, so you must enable them by setting the `-Enabled` switch parameter:
-```powershell
-New-ADUser -Name "Marty McFly" -Enabled $true -GivenName "Martin" -Surname "McFly"
-  -AccountPassword ( ConvertTo-SecureString "P@ssw0rd!" -AsPlainText -Force) 
+
+# Users are disabled by default, so you must enable them by setting the `-Enabled` switch parameter:
+New-ADUser -Name "Marty McFly" -Enabled $true -GivenName "Martin" -Surname "McFly" -AccountPassword ( ConvertTo-SecureString "P@ssw0rd!" -AsPlainText -Force) 
 ```
 #### Unlock account
 ```powershell
