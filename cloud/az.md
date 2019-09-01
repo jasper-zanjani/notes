@@ -1,16 +1,5 @@
 # Microsoft Azure
 ## Tasks
-#### Create a virtual network with a subnet
-```powershell
-# Create a subnet first, to pass to the VNet upon creation
-$subnet = New-AzVirtualNetworkSubnetConfig -Name "subnet1" -AddressPrefix "10.0.0.0/24"
-$vnet = New-AzVirtualNetwork -Name "vnet" -ResourceGroupName "RG" -Location "East US" -AddressPrefix "10.0.0.0/16" -Subnet $subnet
-```
-#### Create an Azure VM
-```powershell
-New-AzVM -ResourceGroupName "RG" -Name "VM" -Location "EastUS" -Size "Standard-B2s" -Credential (Get-Credential)
-New-AzVM Greeks Socrates $vm
-```
 #### Provision a Windows Server Core VM
 ```powershell
 # Create a VNet with a subnet
@@ -30,12 +19,23 @@ $nic = New-AzNetworkInterface -Name "wscore-nic" -ResourceGroupName "RG" -Locati
 # Provision the actual VM
 $vm = New-AzVMConfig -VMName "Socrates" -VMSize "Standard_B1ls"       # 1 core, 512 MB RAM, 1 TB disk size
 Set-AzVMOperatingSystem -VM $vm -Windows -ComputerName Socrates -Credential $aztestadmin
-Set-AzVMSourceImage -PublisherName "MicrosoftWindowsServer" -Offer "WindowsServer" -Skus "2016-Datacenter-Server-Core" -Version 2016.127.20190603 -VM $vm
-Set-AzVMOSDisk -CreatOption fromImage -VM $vm
-Add-AzVMNetworkInterface -NetworkInterface $nic -VM $vm
+Set-AzVMSourceImage -VM $vm -PublisherName "MicrosoftWindowsServer" -Offer "WindowsServer" -Skus "2016-Datacenter-Server-Core" -Version 2016.127.20190603
+Set-AzVMOSDisk -VM $vm -CreateOption fromImage
+Add-AzVMNetworkInterface -VM $vm -NetworkInterface $nic
 
 # No `-Name`, since we set `-VMName` when initializing the PSVirtualMachine object with `New-AzVMConfig`
 New-AzVM -AsJob -VM $vm -Location "East US" -ResourceGroupName "RG" -OpenPorts 5985,5986 
+```
+#### Create a virtual network with a subnet
+```powershell
+# Create a subnet first, to pass to the VNet upon creation
+$subnet = New-AzVirtualNetworkSubnetConfig -Name "subnet1" -AddressPrefix "10.0.0.0/24"
+$vnet = New-AzVirtualNetwork -Name "vnet" -ResourceGroupName "RG" -Location "East US" -AddressPrefix "10.0.0.0/16" -Subnet $subnet
+```
+#### Create an Azure VM
+```powershell
+New-AzVM -ResourceGroupName "RG" -Name "VM" -Location "EastUS" -Size "Standard-B2s" -Credential (Get-Credential)
+New-AzVM Greeks Socrates $vm
 ```
 #### Modify Network Security Group policies
 ```powershell

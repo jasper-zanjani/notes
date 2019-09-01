@@ -12,6 +12,7 @@ Syntax                          | Effect
 `Install-ADDSDomainController`  | Add a domain controller to an existing domain
 #### Add a new forest
 ```powershell
+# This will prompt for safe mode administrator password
 Install-ADDSForest -DomainName example.com -InstallDNS
 ```
 If the system fails to automatically create a NetBIOS name, it can be manually specified with the named parameter `-DomainNetbiosName`
@@ -29,6 +30,12 @@ Install-ADDSDomain -NewDomainName hq -ParentDomainName pythagoras.net
 ```powershell
 Install-ADDSDomain -Credential (Get-Credential CORP\EnterpriseAdmin1) -NewDomainName child -ParentDomainName corp.contoso.com -InstallDNS -CreateDNSDelegation -DomainMode Win2003 -ReplicationSourceDC DC1.corp.contoso.com -SiteName Houston -DatabasePath "D:\NTDS" -SYSVOLPath "D:\SYSVOL" -LogPath "E:\Logs" -NoRebootOnCompletion
 ```
+#### Demote a domain controller
+Demotion of a DC is consummate with uninstalling the AD Domain Controller role.
+```powershell
+# When removing the last domain controller of a domain, additional options need to be specified that result in the obliteration of the domain, its forest, and associated data.
+Uninstall-ADDSDomainController -LocalAdministratorPassword (ConvertTo-SecureString $pw -AsPlainText -Force) -LastDomainControllerInDomain -RemoveApplicationPartitions
+```
 #### Join a new computer to a domain
 [[1](#sources)]
 ```powershell
@@ -41,7 +48,9 @@ $List = "C:\Labfiles\computers.csv"
 $OU = "OU=office365,DC=officeprodemoco,DC=onmicrosoft,DC=com"
 Import-Csv -path $List | ForEach-Object {New-ADComputer -Name $_.Name -Path $OU}
 ```
-#### Create a new user
+#### Verify a computer has connected to a domain
+Check "Organization" in Windows about page, or navigate to Control PAnel > System and Security > System and examine the **Computer name, domain, and workgroup settings**, where the domain can be seen.
+#### Create a new user (disabled by default)
 ```powershell
 New-ADUser -Name "Walter Mitty"
 
@@ -130,5 +139,9 @@ Search-ADAccount -AccountInactive -TimeSpan 90.00:00:00
 ```powershell
 Search-ADAccount -AccountExpiring -DateTime "3/18/2019"
 ``` 
+## Commands
+
+
+
 ## Sources
   1. "Managing AD Computer Accounts Part 2". _Windows Server 101_. [ITPro.TV](../sources/README.md)

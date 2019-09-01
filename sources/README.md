@@ -2,6 +2,7 @@
 ## Abbreviations
 Abbr.                   |  Source
 :---                    | :---    
+AAP                     | **Admin Admin Podcast** [Web](http://www.adminadminpodcast.co.uk/) [Twitter](https://twitter.com/admadmpodcast)
 ADP                     | **Azure DevOps Podcast** [Web](http://azuredevopspodcast.clear-measure.com/) Notes: [48](#adp-48)
 AWS                     | **AWS Podcast** [Web](https://aws.amazon.com/podcasts/aws-podcast/) Notes: [329](#aws-329)
 AWST                    | **AWS TechChat** Notes: [35](#awst-35) [53](#awst-53)
@@ -81,6 +82,7 @@ Box, Craig              | Host: [K8S](#abbreviations) [Twitter](http://twitter.c
 Bushey, Larry           | Host: [GL](#abbreviations)  [Twitter](https://twitter.com/goinglinux) [LinkedIn](https://www.linkedin.com/in/larrybushey/)
 Campbell, Richard       | Host: [RAR](#abbreviations)  [Twitter](https://twitter.com/richcampbell)
 Chapman, Chris          | Guest: [K8S 67](#k8s-67) 
+Christman, Alister      | Host: [AAP](#abbreviations) [Twitter](https://twitter.com/mralc)
 Domenick, Michael       | Host: [CR](#abbreviations)  [Twitter](https://twitter.com/dominucco)
 Elisha, Simon           | Host: [AWS](#abbreviations) [Twitter](https://twitter.com/intent/user?screen_name=simon_elisha)
 Fisher, Chris           | Host: [LU](#abbreviations)  [Twitter](https://twitter.com/ChrisLAS)
@@ -97,8 +99,11 @@ Ressington, Joe         | Host: [LAN](#abbreviations) [UE](#abbreviations) [CL](
 Robbins, Arnold         | **Bash Pocket Reference**, **Unix in a Nutshell**, **sed & awk**
 Francis, Joel (Sallow)  | Guest: [PSP](#abbreviations) [Twitter](https://twitter.com/vexx32) [GitHub](https://github.com/vexx32) [LinkedIn](https://www.linkedin.com/in/joel-francis-356539128/)
 Smith, Steve (ardalis)  | Host: [WDT](#abbreviations) Guest: [ADP 40](#adp-40)  [LinkedIn](https://www.linkedin.com/in/stevenandrewsmith/) [Twitter](https://twitter.com/ardalis)
+Spriggs, Jon            | Host: [AAP](#abbreviations) [Twitter](https://twitter.com/ticktockhouse)
+Steele, Jerry           | Host: [AAP](#abbreviations) [Twitter](https://twitter.com/ticktockhouse)
 Tolinski, Scott         | Host: [SY](#abbreviations) | [Twitter](https://twitter.com/stolinski) [Github](https://github.com/stolinski) [BitBucket](https://bitbucket.org/stolinski) [Facebook](https://www.facebook.com/LevelUpTuts) sdf
 ## Notes
+### Admin Admin
 ### AWS Podcast
 #### AWS 329
 Choosing a Database Platform\
