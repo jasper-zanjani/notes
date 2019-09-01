@@ -1357,6 +1357,7 @@ Yellow Dog Updater, Modified package manager (Yellow Dog was a variation of Red 
 Option  | POSIX option            | Effect
 :---    | :---                    | :---
 y       | assumeyes               | respond to any prompt with "yes" automatically
+x       | exclude                 | exclude specific packages from updates [[38](#sources)]
 #### Install {package}
 ```sh
 yum install package
@@ -1376,6 +1377,10 @@ yum update
 yum update package # update a specific {package}
 yum upgrade # equivalent to `yum update --obsoletes`
 yum groupupdate packagegroup
+
+# Exclude some packages from update
+yum update --exclude=kernel
+yum update --exclude=httpd,php
 ```
 #### List all available packages in database
 ```sh
@@ -3808,7 +3813,7 @@ $HOME/xorg.conf                   | user config which overrides system defaults
 [/etc/xinet.d/](#xinetd-configuration-files)                     | directory of config files for [xinetd](#xinetd)
 [/etc/xinetd.conf](#xinetd-configuration-files)                  | master [xinetd](#xinetd) configuration
 /etc/yum.repos.d/                 | repository definitions with filenames that follow the pattern **\*.repo**
-/etc/yum.conf                     | config
+[/etc/yum.conf](#etcyumconf)      | [yum](#yum)
 /lib/systemd/system/              | directory containing unit configs
 /proc/loadavg                     | virtual file that has information about load average for use in [`uptime`](#uptime)
 /var/log/dmesg                    | kernel ring buffer information
@@ -3831,11 +3836,18 @@ DISPLAYMANAGER="XDM"
 DESKTOP="Gnome"
 DISPLAYMANAGER="GDM"
 ```
-#### /etc/ssmtp/ssmtp.conf
+### /etc/ssmtp/ssmtp.conf
 ```ini
 mailhub=smtp.gmail.com:587
 UseTLS=YES
 UseSTARTTLS=YES
+```
+### /etc/yum.conf
+#### Exclude packages from updates permanently
+[[38](#sources)]
+```ini
+[main]
+exclude=kernel* php*
 ```
 ## Tasks
 #### Validating arguments
@@ -4029,3 +4041,4 @@ ZynAddSubFX                     | LMMS plugin, used with synthesizers [[1](#sour
   35. "CompTIA Linux+ powered by LPI". ITProTV. [itp-lpic.md](../sources/itp-lpic.md)
   36. "Unix as a Second Language: The [`touch`](#touch) command". [Network World](https://www.networkworld.com/article/3435279/unix-as-a-second-language-the-touch-command.html#tk.rss_linux).
   37. "20 Linux [YUM](#yum) (Yellowdog Update, Modified) Commands for Package Management". [TecMint](https://www.tecmint.com/20-linux-yum-yellowdog-updater-modified-commands-for-package-mangement/). 2012/08/11.
+  38. "Three ways to exclude specific packages from [`yum`](#yum) update". [2daygeek.com](https://www.2daygeek.com/redhat-centos-yum-update-exclude-specific-packages/): 2019/08/28.
