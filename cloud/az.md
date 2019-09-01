@@ -35,7 +35,7 @@ Set-AzVMOSDisk -CreatOption fromImage -VM $vm
 Add-AzVMNetworkInterface -NetworkInterface $nic -VM $vm
 
 # No `-Name`, since we set `-VMName` when initializing the PSVirtualMachine object with `New-AzVMConfig`
-New-AzVM -VM $vm -Location "East US" -ResourceGroupName "RG" -OpenPorts 5985,5986 
+New-AzVM -AsJob -VM $vm -Location "East US" -ResourceGroupName "RG" -OpenPorts 5985,5986 
 ```
 #### Modify Network Security Group policies
 ```powershell
@@ -80,40 +80,46 @@ Start-AzVM Greeks Socrates
 Stop-AzVM Greeks Socrates
 ```
 #### Connect to VM from a Windows machine
+The local workstation must have WinRM up and running:
+```powershell
+Enable-PSRemoting
+
+# If a network connection is Public, this command will not work
+Enable-PSRemoting -SkipNetworkProfileCheck -Force
+```
+The remote computer must also have WinRM up and running. 
 ```powershell
 # Azure can enable PowerShell on the target machine
-Invoke-AzVMRunCommand -ResourceGroupName "RG" -VMName "Socrates" -CommandId EnableRemotePS
-```
-```powershell
+Invoke-AzVMRunCommand -AsJob -ResourceGroupName "RG" -VMName "Socrates" -CommandId EnableRemotePS
+
 # WinRM can be enabled from a local command
 Enable-PSRemoting
 ```
 ```cmd
-@ Using the command-prompt
+@ Command-prompt
 winrm quickconfig
 ```
-2. __Modify Network Security Group policy__ (see below) to allow inbound connections to ports 5985 and 5986, which are used by WinRM.
-3. Add the VM's public IP address &lt;$ipaddr&gt; to the trusted hosts of the local machine (must be run as administrator):
+Add the VM's public IP address {ipaddr} to the trusted hosts of the local workstation (must be run as administrator):
 ```powershell
 Set-Item WSMan:\localhost\Client\TrustedHosts -Value ipaddr
 ```
-4. Open the WinRM ports in the VM's firewall, if Windows Firewall is activated. The commands provided here can be run locally on the VM, or invoked through Azure:
+Traffic to ports **5985** and **5986** must be allowed through [Windows firewall](#open-ports-in-windows-firewall) and, if the computer is an Azure VM, the Network Security Group.
+```powershell
+Enter-PSSession -ComputerName 123.47.78.90 -Credential $cred
+etsn 123.45.67.89 -Credential (Get-Credential)
+```
+#### Open ports in Windows Firewall 
+Ports 5985 and 5986 are used for **WinRM**
 ```powershell
 New-NetFirewallRule -DisplayName "WinRMHTTP" -Direction Inbound -LocalPort 5985 -Protocol TCP -Action Allow
 New-NetFirewallRule -DisplayName "WinRMHTTPS" -Direction Inbound -LocalPort 5986 -Protocol TCP -Action Allow
 ```
-Alternatively, using the command-prompt:
 ```cmd
+@ Command-prompt
 netsh advfirewall firewall add rule name=WinRMHTTP dir=in action=allow protocol=TCP localport=5985
 netsh advfirewall firewall add rule name=WinRMHTTPS dir=in action=allow protocol=TCP localport=5986
 ```
-5.  Connect to the VM's public IP, passing along a previously-stored credential:
-```powershell
-$cred=Get-Credential
-Enter-PSSession -ComputerName 123.47.78.90 -Credential $cred
-# Alternatively...
-etsn 123.45.67.89 -Credential (Get-Credential)
-```
+1.  Connect to the VM's public IP, passing along a previously-stored credential:
 #### Connect to VM from a Mac or Linux machine
 Using OpenSSH...
 #### Invoking a command on a VM
