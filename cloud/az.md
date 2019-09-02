@@ -1,5 +1,6 @@
 # Microsoft Azure
 ## Tasks
+#### Enable
 #### Provision a Windows Server Core VM
 ```powershell
 # Create a VNet with a subnet
@@ -83,7 +84,7 @@ Start-AzVM Greeks Socrates
 Stop-AzVM Greeks Socrates
 ```
 #### Connect to VM from a Windows machine
-The local workstation must have WinRM up and running:
+The local Windows workstation must have WinRM up and running:
 ```powershell
 Enable-PSRemoting
 
@@ -93,6 +94,7 @@ Enable-PSRemoting -SkipNetworkProfileCheck -Force
 The remote computer must also have WinRM up and running. 
 ```powershell
 # Azure can enable PowerShell on the target machine
+Enable-AzVMPSRemoting -Name Socrates -ResourceGroupName "RG"
 Invoke-AzVMRunCommand -AsJob -ResourceGroupName "RG" -VMName "Socrates" -CommandId EnableRemotePS
 
 # WinRM can be enabled from a local command
