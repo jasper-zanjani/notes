@@ -1,9 +1,22 @@
 # Python
 ## Table of contents
 
-Standard library
-:---
-[argparse](#argparse) [array](#array) [bisect](#bisect) [collections](#collections) [contextlib](#contextlib) [ctypes](#ctypes) [curses](#curses) [datetime](#datetime) [functools](#functools) [getpass](#getpass) [glob](#glob) [heapq](#heapq) [json](#json) [optparse](#optparse) [os](#os) [pathlib](#pathlib) [platform](#platform) [random](#random) [subprocess](#subprocess) [sqlite3](#sqlite3) [sys](#sys) [termcolor](#termcolor) [weakref](#weakref)
+\#    | Standard library
+:---  | :---
+A     | [argparse](#argparse) [array](#array) 
+B     | [bisect](#bisect) 
+C     | [collections](#collections) [contextlib](#contextlib) [ctypes](#ctypes) [curses](#curses) 
+D     | [datetime](#datetime) 
+F     | [functools](#functools) 
+G     | [getpass](#getpass) [glob](#glob) 
+H     | [heapq](#heapq) 
+J     | [json](#json) 
+O     | [optparse](#optparse) [os](#os) 
+P     | [pathlib](#pathlib) [platform](#platform) [pywinrm](#winrm)
+R     | [random](#random) 
+S     | [subprocess](#subprocess) [sqlite3](#sqlite3) [sys](#sys) 
+T     | [termcolor](#termcolor) 
+W     | [weakref](#weakref) [winrm](#winrm)
 
 ## argparse
 `ArgumentParser(description=helptext)` where {helptext} contains usage that will appear with `-h` or `--help`
@@ -15,12 +28,13 @@ Standard library
   - `-` is required at the beginning of the string
   - values need to be passed after `=` or `<space>`
   - no longer behaves as a positional argument
-`qv=ArgumentParser.add_mutually_exclusive_group()`
-  - add a group of arguments which may not be used together
-  - appears as `[-v | -q]` in the usage provided to a user
-`qv.add_argument("-v","--verbose", action="store_true")`
-`qv.add_argument("-q","--quiet","-s","--silent", action="store_true",help='quiet/silent mode')`
-  - many invocation options can be added to the same argument 
+#### Add a group of arguments which may not be used together
+Usage appears as `[-v | -q]` indicating one of the options may be used. Many invocation options can be added to the same argument:
+```py
+qv=ArgumentParser.add_mutually_exclusive_group()
+qv.add_argument("-v","--verbose", action="store_true")
+qv.add_argument("-q","--quiet","-s","--silent", action="store_true",help='quiet/silent mode')
+````
 ## array 
 `import array`
 `frombytes`
@@ -48,8 +62,14 @@ curses.panel
 difference between `datetime` objects is a `timedelta`
 `datetime.date(2016,7,24)`
 `datetime.date.today()`
-`datetime.strptime(datestring,formatstring)` parse strings into datetime objects; various metacharacters are defined for `strptime`
-`datetime.datetime.strptime('06/30/1992','%m/%d/%Y')` produce a `datetime` object
+#### Parse strings into datetime objects
+Various metacharacters are defined for `strptime`
+```py
+datetime.strptime(datestring,formatstring)
+``` 
+```py
+datetime.datetime.strptime('06/30/1992','%m/%d/%Y')
+``` 
 ## functools
 for higher-order functions (functions that act on or return other functions)
 `functools.reduce(function, iterable [, initializer])` : apply `function` of two arguments cumulatively to the items of `iterable` in order to reduce it to a single value
@@ -76,34 +96,94 @@ heapq.heappop(heap)
 heapq.heapreplace(heap,element)
 ```
 ## json
-`data=json.load(jsonfile)` parse a JSON file opened as `jsonfile`
-`json.dump(data,jsonfile)` write {data} to a JSON file opened as `jsonfile`
-`jsonfile.write(json.dumps(data, indent=4))` write {data} to a JSON file opened as `jsonfile`
+#### Parse a JSON document
+```py
+# Parse an open file descriptor
+data=json.load(fd)
+
+# Deserialize {data} containing a JSON document
+data = json.loads(data)
+``` 
+#### Write to an open file descriptor
+```py
+with open("path","w") as jsonfile:
+  json.dump(data,jsonfile)
+
+# Specify indentation
+jsonfile.write(json.dumps(data, indent=4))
+```
 ## optparse
-`parser = optparse.OptionParser(usage=__doc__.strip())` : after importing `optparse`, instantiate the parser object
-`parser.add_option('--timeout')` : add an option
+Instantiate the parser object
+```py
+parser = optparse.OptionParser(usage=__doc__.strip())
+
+# add an option
+parser.add_option('--timeout')
+```
 ## os
-`os.system('ls -la')` execute shell command given by string
-`os.popen('ls -la').read()` store output in a variable
-`os.chdir(path)`
-`os.getcwd()`
-`os.path.isfile(file)` return True if exists
+#### Execute shell command given by string
+The value returned is actually the exit code, **not** the output of the command to STDOUT.
+```py
+os.system('ls -la')
+``` 
+#### Store output in a variable
+```py
+os.popen('ls -la').read()
+``` 
+#### Navigate filesystem
+```py
+os.getcwd()
+os.chdir(path)
+```
+#### Test for existence of a file
+```py
+os.path.isfile(file)
+``` 
 ## pathlib
-`pathlib.Path(path)` create a new pathlib object; represents a file or directory
-`pathlib.Path.is_file(file)` return True if {file} exists
-`pathlib.Path.is_dir(dir)` return True if {dir} exists
-`pathlib.Path.exists()`
-`pathlib.Path.glob('*.py')` find all `.py` files; returns a generator
-`pathlib.Path.open()` makes a file object that is automatically closed; builtin `open` function will also work
-`pathlib.Path.suffix()` returns file extension
-`pathlib.Path.stat().st_size` returns file size
+`pathlib.Path(path)` Create a new pathlib object; represents a file or directory
+#### Test for existence of a file
+```py
+pathlib.Path.is_file(file)
+``` 
+#### Test for existence of a directory
+```py
+pathlib.Path.is_dir(dir)
+```
+#### Find all `.py` files
+Returns a generator
+```py
+pathlib.Path.glob('*.py')
+```
+#### Opena file
+Makes a file object that is automatically closed, similar to `open` builtin:
+```py
+pathlib.Path.open()
+``` 
+#### Display file extension
+```py
+pathlib.Path.suffix()
+```
+#### Display file size
+```py
+pathlib.Path.stat().st_size
+``` 
 ## platform
 ## random
 `random.choice(iterable)` random choice with replacement
 `random.shuffle(iterable)` shuffle elements of an iterable in-place (FP:42)
 ## subprocess
 __subprocess__ modules allows you to spawn new processes, interact with file descriptors, and obtain exit codes. The recommended approach is to use the `run()` function as default, which runs a CLI command with options as a list of strings and returns a `CompletedProcess` instance.
-`subprocess.run('ls','-l,'.')` arguments and options are provided in a list
+#### Execute shell command
+Unlike `os.system`, `subprocess.run` takes a list of arguments. 
+```py
+subprocess.run(['ls','-l,'.'], 0)
+
+# Set `capture_output` to `True` to save output, stored as property `stdout` of the returned object. 
+data = subprocess.run(['ls,'-l','.'], 0, capture_output=True)
+
+# The data is stored as a **bytestring**, which can be decoded to a normal string.
+data.stdout.decode('utf-8')
+```
 `subprocess.run(['ls','-l','/dev/null'], capture_output=True` will return a CompletedProcess instance with the command's output stored under `stdout`
 `subprocess.run('exit 1', shell=True, check=True)` will raise a `CalledProcessError` exception because of the non-zero exit code
 ## sqlite3
@@ -115,14 +195,12 @@ __subprocess__ modules allows you to spawn new processes, interact with file des
 `conn.close()`
 ## sys
 #### Return site-specific directory where Python files are installed 
-/usr/local/ by default
-```
-import sys
-
+```py
+# /usr/local/ by default
 sys.prefix
 ```
 ## termcolor
-#### Print text in a color code
+#### Print {text} in a color code
 ```py
 from termcolor import cprint
 
@@ -131,15 +209,23 @@ cprint(text,color)
 ## weakref
 Support **weak references**, that is, references to objects which return exceptions when that object has been garbage collected
 #### Create a weak reference to {object} 
-A weak reference created using `ref` must be dereferenced 
 ```py
+# A weak reference created using `ref` must be dereferenced 
 r = weakref.ref(obj) 
 r().method() 
 r.method()      # will not work
-```
-A weak reference created using `proxy` does not need to be dereferenced:
-```py
+
+# A weak reference created using `proxy` does not need to be dereferenced:
 weakref.proxy(obj)
 ```
+## winrm
+**Winrm** allows you to connect Linux and Windows hosts over WinRM.[[2](#sources)]
+#### Begin a WinRM session
+```py
+# If no errors are thrown, the session has been successfully established
+session = winrm.Session(ipaddress,auth=(username,password))
+```
+
 ## Sources
-  - "SQLite tutorial". [YouTube](https://youtu.be/pd-0G0MigUA)
+  1. "SQLite tutorial". [YouTube](https://youtu.be/pd-0G0MigUA)
+  2. "Step-by-step guide on how to set up WinRM on a Linux client". [Pocket](https://app.getpocket.com/read/2676040255) &lt; [Original](https://adamtheautomator.com/winrm-linux-remoting/)
