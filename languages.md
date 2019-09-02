@@ -3,13 +3,15 @@
 > "A programming language is low level when its programs require attention to the irrelevant." 
 > \- Alan Perlis\
 Despite C's reputation as a low-level programming language, in fact it merely emulates the ancient PDP-11, which is the only machine for which its abstract machine can be described as "close to the metal". 
-In the age of parallel processes, C's serial nature 
+In the age of parallel processes, C's serial nature [[1](#sources)]
 ### Glossary
-Loop unswitching | one of the core optimizations that a C compiler performs; transforms a loop containing a conditional into a conditional with a loop in both parts, which changes flow control
-Register rename engine | component of modern high-end cores which is one of the largest consumers of die area and power
+Term                                    | Description
+:---                                    | :---
+Loop unswitching                        | one of the core optimizations that a C compiler performs; transforms a loop containing a conditional into a conditional with a loop in both parts, which changes flow control
+Register rename engine                  | component of modern high-end cores which is one of the largest consumers of die area and power
 Scalar Replacement Of Aggregates (SROA) | one of the core optimizations that a C compiler performs; attempts to replace `struct`s and arrays with fixed lengths with individual variables, which allows the compiler to treat accesses as independent and elide operations entirely if it can prove the results are neve visible, which also deletes padding sometimes
-Scalar Vector Extensions (SVE) | "", produced by ARM
-Segmented architecture | pointers might be segment IDs and an offset
+Scalar Vector Extensions (SVE)          | "", produced by ARM
+Segmented architecture                  | pointers might be segment IDs and an offset
 ## Ruby
 Syntax            | Definition
 :---              | :---
@@ -42,4 +44,4 @@ Syntax            | Definition
 ### macros
 `assert!()` verifies conditions within parentheses
 ## Sources
-  - "C is not a low-level programming language". [acm.org](https://queue.acm.org/detail.cfm?id=3212479)
+  1. "C is not a low-level programming language". [acm.org](https://queue.acm.org/detail.cfm?id=3212479)
