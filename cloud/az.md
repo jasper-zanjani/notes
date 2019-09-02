@@ -15,16 +15,19 @@ $nsg = New-AzNetworkSecurityGroup -Name "wscore-nsg" -ResourceGroupName "RG" -Lo
 # Create a Network Interface from the IP and VNet
 $ip = New-AzPublicIpAddress -Name "wscore-ip" -ResourceGroupName "RG" -Location "East US" -AllocationMethod Dynamic
 $nic = New-AzNetworkInterface -Name "wscore-nic" -ResourceGroupName "RG" -Location "East US" -SubnetId $vnet.Subnets[0].Id -PublicIpAddressId $pip.Id -NetworkSecurityGroupId $nsg.Id
-
-# Provision the actual VM
-$vm = New-AzVMConfig -VMName "Socrates" -VMSize "Standard_B1ls"       # 1 core, 512 MB RAM, 1 TB disk size
+```
+```powershell
+$vm = New-AzVMConfig -VMName "Socrates" -VMSize "Standard_B1s"
 Set-AzVMOperatingSystem -VM $vm -Windows -ComputerName Socrates -Credential $aztestadmin
 Set-AzVMSourceImage -VM $vm -PublisherName "MicrosoftWindowsServer" -Offer "WindowsServer" -Skus "2016-Datacenter-Server-Core" -Version 2016.127.20190603
 Set-AzVMOSDisk -VM $vm -CreateOption fromImage
 Add-AzVMNetworkInterface -VM $vm -NetworkInterface $nic
 
 # No `-Name`, since we set `-VMName` when initializing the PSVirtualMachine object with `New-AzVMConfig`
-New-AzVM -AsJob -VM $vm -Location "East US" -ResourceGroupName "RG" -OpenPorts 5985,5986 
+New-AzVM -AsJob -VM $vm -Location "East US" -ResourceGroupName "RG" 
+```
+```sh
+az vm create -n Socrates -g RG -l "East US" --image MicrosoftWindowsServer:WindowsServer:2016-Datacenter-Server-Core:2016.127.20190603 --admin-username aztestadmin --admin-password $password --nics socrates-nic
 ```
 #### Create a virtual network with a subnet
 ```powershell

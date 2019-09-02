@@ -1,8 +1,24 @@
 # Azure CLI
+#### Querying command output
+Use `--query` to execute a **JMESPath** query on the results of commands. 
+#### Invoke a command on a VM
+```sh
+# Run a shell script, `$script` can be supplied inline
+az vm run-command invoke --command-id RunShellScript --scripts $script
 
+# Parameters can be passed to the script argument
+az vm run-command invoke --command-id RunShellScript --scirpts 'echo $1 $2' --parameters hello world
 
+# Run a PowerShell script
+az vm run-command invoke --command-id RunPowerShellScript -n Socrates -g RG 
 
-
+# Run a script file
+az vm run-command invoke --command-id RunPowerShellScript -n Socrates -g RG --scripts @script.ps1 --parameters 'arg1=somefoo' 'arg2=somebar'
+```
+Available values for **command-id** can be enumerated:
+```sh
+az vm run-command list
+```
 ## Extensions
 ### Azure DevOps CLI
 Command groups:
@@ -19,7 +35,6 @@ Command subgroups:
   - `team`
   - `user`
   - `wiki`
-
 #### Install DevOps CLI
 ```sh
 az extension add --name azure-devops
@@ -38,7 +53,8 @@ This command will produce interactive prompts to fill in parameters.
 az pipelines create --name "Express.CI"
 ```
 ## Sources
-  A. "Working with Azure DevOps using the Azure DevOps CLI". [YouTube](https://www.youtube.com/watch?time_continue=7&v=DiztcJOZvZo)
+  1. "Working with Azure DevOps using the Azure DevOps CLI". [YouTube](https://www.youtube.com/watch?time_continue=7&v=DiztcJOZvZo)
+  2. "Query Azure CLI command output". [MD](https://docs.microsoft.com/en-us/cli/azure/query-azure-cli?view=azure-cli-latest): 2018/11/11.
 
 ## Index
 
