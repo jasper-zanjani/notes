@@ -10,10 +10,17 @@
 6. **Index** form-based features at the top of the markdown as a concordance.
 ## Automation
 ### Ansible
+**Ansible Tower** is a web-based RESTful API endpoint that provides a GUI frontend to Ansible configuration management. On login, Tower presents a dashboard that depicts success and failure of Ansible playbook runs. Tower implements RBAC, supporting large teams. [[4](#sources)]
 ### Puppet
 ### Chef
 ## Blockchain
-Blockchain is a database technology that uses hashes to ensure reliability and security of data stored across a network of computers, popularized by BitCoin. Records, containing information, are validated and then added to **Blocks**, or hashed containers, which are then concatenated in a **chain** by associating each block with the hash of both of its neighbors.
+Blockchain is a database technology that uses hashes to ensure reliability and security of data stored across a network of computers, popularized by BitCoin. Records, containing information, are validated and then added to **Blocks**, or hashed containers, which are then concatenated in a **chain** by associating each block with the hash of both of its neighbors. [[3](#sources)]
+## Bootloaders
+bootloader: software located in the first sector (Master Boot Record) of a HDD, which is read by the BIOS
+- implementing interruptions requires knowledge of Assembler
+- expertise in low-level programming in C
+- Java and C# produce intermediate code, which must be executed by a special virtual machine
+- mixed-code technique requires at least two compilers (one for Assembler and C, another as a linker to join the *.obj files to create a single executable file)
 ## Bots
 ### Discord
 Main procedure:
@@ -91,4 +98,5 @@ Three technologies that individually take a lifetime to master. Learning these s
   - [medium.com](https://medium.com/@devfire/how-to-become-a-devops-engineer-in-six-months-or-less-366097df7737)
   1. "Custom bot using Ruby". [YouTube](https://www.youtube.com/watch?v=rVVhkX1uTRQ).
   2. "How to make a Discord bot in Python". [Real Python](https://realpython.com/how-to-make-a-discord-bot-python/): 2019/08/19.
-  - "Blockchain explained". [Reuters](https://graphics.reuters.com/TECHNOLOGY-BLOCKCHAIN/010070P11GN/index.html?source=post_page---------------------------).
+  3. "Blockchain explained". [Reuters](https://graphics.reuters.com/TECHNOLOGY-BLOCKCHAIN/010070P11GN/index.html?source=post_page---------------------------).
+  4. "Red Hat Ansible Tower Demo". [YouTube](https://youtu.be/wZ_mh4-4HPY): 2018/09/09.
