@@ -94,8 +94,10 @@ Enable-PSRemoting -SkipNetworkProfileCheck -Force
 The remote computer must also have WinRM up and running. 
 ```powershell
 # Azure can enable PowerShell on the target machine
-Enable-AzVMPSRemoting -Name Socrates -ResourceGroupName "RG"
 Invoke-AzVMRunCommand -AsJob -ResourceGroupName "RG" -VMName "Socrates" -CommandId EnableRemotePS
+
+# Using Azure Cloud PowerShell
+Enable-AzVMPSRemoting -Name Socrates -ResourceGroupName "RG"
 
 # WinRM can be enabled from a local command
 Enable-PSRemoting
