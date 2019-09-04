@@ -33,7 +33,7 @@ Commands sorted alphabetically
 **P** [pacman](#pacman) [partx](#partx) [passwd](#passwd) [paste](#paste) [patch](#patch) [ping](#ping) [pip](#pip) [postfix](#postfix) [postqueue](#postqueue) [postsuper](#postsuper) [ps](#ps) [pvcreate](#pvcreate) [pvdisplay](#pvdisplay) [pvremove](#pvremove) [pydoc](#pydoc) 
 **Q** [qmail](#qmail) [quota](#quota) [quotacheck](#quotacheck) [quotaoff](#quotaoff) [quotaon](#quotaon) 
 **R** [read](#read) [rename](#rename) [repquota](#repquota) [resize2fs](#resize2fs) [resize4fs](#resize4fs) [restorecon](#restorecon) [rmmod](#rmmod) [route](#route) [rpm](#rpm) [rsync](#rsync) [runlevel](#runlevel) 
-**S** [samba](#samba) [sc](#sc) [sed](#sed) [semanage](#semanage) [sendmail](#sendmail) [seq](#seq) [service](#service) [sestatus](#sestatus) [setenforce](#setenforce) [setfacl](#setfacl) [sfdisk](#sfdisk) [shred](#shred) [shuf](#shuf) [shutdown](#shutdown) [slapadd](#slapadd)  [sleep](#sleep) [snap](#snap) [sort](#sort) [source](#source) [speaker-test](#speaker-test) [ss](#ss) [ssh](#ssh) [ssh-copy-id](#ssh-copy-id) [ssh-keygen](#ssh-keygen) [ssh-keyscan](#ssh-keyscan) [sshfs](#sshfs) [ssmtp](#ssmtp) [startx](#startx) [stty](#stty) [su](#su) [sudo](#sudo) [swapoff](#swapoff) [swapon](#swapon) [sysctl](#sysctl) [syslog](#syslog) [systemctl](#systemctl) [systemd-delta](#systemd-delta) 
+**S** [samba](#samba) [sc](#sc) [sed](#sed) [semanage](#semanage) [sendmail](#sendmail) [seq](#seq) [service](#service) [sestatus](#sestatus) [setenforce](#setenforce) [setfacl](#setfacl) [sfdisk](#sfdisk) [shred](#shred) [shuf](#shuf) [shutdown](#shutdown) [slapadd](#slapadd)  [sleep](#sleep) [snap](#snap) [sort](#sort) [sosreport](#sosreport) [source](#source) [speaker-test](#speaker-test) [ss](#ss) [ssh](#ssh) [ssh-copy-id](#ssh-copy-id) [ssh-keygen](#ssh-keygen) [ssh-keyscan](#ssh-keyscan) [sshfs](#sshfs) [ssmtp](#ssmtp) [startx](#startx) [stty](#stty) [su](#su) [sudo](#sudo) [swapoff](#swapoff) [swapon](#swapon) [sysctl](#sysctl) [syslog](#syslog) [systemctl](#systemctl) [systemd-delta](#systemd-delta) 
 **T** [tail](#tail) [tar](#tar) [tcpdump](#tcpdump) [telinit](#telinit) [test](#test) [tig](#tig) [timedatectl](#timedatectl) [tmux](#tmux) [touch](#touch) [top](#top) [tput](#tput) [tr](#tr) [tracepath](#tracepath) [traceroute](#traceroute) [tune2fs](#tune2fs) [tzselect](#tzselect) 
 **U** [udevadm](#udevadm) [umount](#umount) [uname](#uname) [uncompress](#uncompress) [unzip](#unzip) [update-grub](#update-grub) [update-rc.d](#update-rc.d) [useradd](#useradd) [userdel](#userdel) [usermod](#usermod) 
 **V** [variable](#variable) [vgcreate](#vgcreate) [vgdisplay](#vgdisplay) [vgextend](#vgextend) [vgremove](#vgremove) [vgscan](#vgscan) [vifs](#vifs) [visudo](#visudo) 
@@ -3758,6 +3758,33 @@ yay --yay --clean
 ```sh
 touch -r oldfile newfile
 ```
+
+### sosreport
+**SOS** is an open-source data collection tool that can be used to collect system configuration details and diagnostic information from a Unix-like operating system. It is installed by default on Ubuntu Server. [[39](#sources)]
+#### sosreport options
+Option  | POSIX option            | Effect
+:---    | :---                    | :---
+\-      | compression-type        | specify alternative compression (`xz` by default)
+l       |                         | list plugins
+\-      | tmp-dir                 | specify alternative temporary directory
+
+
+#### Collect system configuration details
+Without arguments, the report will be generated and stored in `$TMPDIR`
+```sh
+sosreport
+
+# Specify alternative temporary directory
+sosreport --tmp-dir /opt
+
+# Specify alternative compression (`xz` by default)
+sosreport --compression-type gzip
+
+# Generate report for only specific plugins
+sosreport -o apache --batch
+```
+
+
 ## Configs
 Config file                       | Description
 :---                              | :---
@@ -4042,3 +4069,4 @@ ZynAddSubFX                     | LMMS plugin, used with synthesizers [[1](#sour
   36. "Unix as a Second Language: The [`touch`](#touch) command". [Network World](https://www.networkworld.com/article/3435279/unix-as-a-second-language-the-touch-command.html#tk.rss_linux).
   37. "20 Linux [YUM](#yum) (Yellowdog Update, Modified) Commands for Package Management". [TecMint](https://www.tecmint.com/20-linux-yum-yellowdog-updater-modified-commands-for-package-mangement/). 2012/08/11.
   38. "Three ways to exclude specific packages from [`yum`](#yum) update". [2daygeek.com](https://www.2daygeek.com/redhat-centos-yum-update-exclude-specific-packages/): 2019/08/28.
+  39. "How to install and use [`sosreport`](#sosreport) on Ubuntu". [howtoforge.com](https://www.howtoforge.com/how-to-install-and-use-sosreport-on-ubuntu-1804/).
