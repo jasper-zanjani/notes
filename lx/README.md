@@ -1,5 +1,4 @@
 # Linux
-
 Table of contents
 :---:
 [Configs](#configs) [Commands](#commands) [Tasks](#tasks) [Glossary](#glossary) [Sources](#sources)
@@ -3794,7 +3793,8 @@ $HOME/.ssh/known_hosts            | public keys of SSH hosts
 $HOME/xorg.conf                   | user config which overrides system defaults
 /boot/grub/grub.cfg               | GRUB2 bootloader
 /etc/aliases                      | systemwide email aliases
-/etc/apt/sources.list             | APT repos <br/>`deb-src` is the prefix used to denote a Debian source repo
+[/etc/apt/sources.list](#etcaptsourceslist)             | APT repos <br/>`deb-src` is the prefix used to denote a Debian source repo
+/etc/apt/sources.list.d/          | directory containing additional repository definitions
 [/etc/cmd.allow](#xinetd-configuration-files)                    | [xinetd](#xinetd)
 [/etc/cmd.deny](#xinetd-configuration-files)                     | [xinetd](#xinetd)
 /etc/default/useradd              | [useradd](#useradd)
@@ -3813,6 +3813,7 @@ $HOME/xorg.conf                   | user config which overrides system defaults
 /etc/ld.so.conf                   | [ldconfig](#ldconfig) 
 /etc/login.defs                   | default configuration values for [useradd](#useradd), [userdel](#userdel), [usermod](#usermod), and [groupadd](#groupadd)
 /etc/logrotate.conf               | [logrotate](#logrotate)
+[/etc/lsb-release](#etclsb-release)  | Ubuntu version<br/>[lsb_release](#lsb_release)
 /etc/lvm/.cache                   | default location of LVM cache
 /etc/modprobe.d/                  | [modprobe](#modprobe)
 /etc/mtab                         | updated dynamically with information about currently mounted filesystems
@@ -3845,10 +3846,33 @@ $HOME/xorg.conf                   | user config which overrides system defaults
 /proc/loadavg                     | virtual file that has information about load average for use in [`uptime`](#uptime)
 /var/log/dmesg                    | kernel ring buffer information
 /var/log/audit/audit.log          | audit file for SELinux
+/sys                              | virtual filesystem that provides information on devices and buses that the kernel is aware of
+/sys/block                        | block devices
+/sys/bus                          | devices attached to system bus
+/sys/bus/cpu                      | CPUs
+/sys/bus/cpu/devices              | USB devices
 /sys/class/net/eth0/address       | MAC address of eth0
 /usr/share/config/kdm/kdmrc       | KDM config
 /usr/share/lightdm/lightdm.conf.d/ | [lightdm](#lightdm) configs, all of whose filenames follow the pattern **50-\*.conf**
-
+### /etc/apt/sources.list
+Repos used in [`apt`](#apt) package manager are listed in files with the URL preceded by `deb` (`deb-src` used to be used).
+```cfg
+deb http://us-central1.gce.archive.ubuntu.com/ubuntu/ bionic main restricted
+deb http://us-central1.gce.archive.ubuntu.com/ubuntu/ bionic-updates main restricted
+deb http://us-central1.gce.archive.ubuntu.com/ubuntu/ bionic universe
+deb http://us-central1.gce.archive.ubuntu.com/ubuntu/ bionic-updates universe
+```
+#### MongoDB repo
+```cfg
+deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.2 multiverse 
+```
+### /etc/lsb-release
+```conf
+DISTRIB_ID=Ubuntu
+DISTRIB_RELEASE=14.04
+DISTRIB_CODENAME=trusty
+DISTRIB_DESCRIPTION="Ubuntu 14.04.6 LTS"
+```
 ### /etc/sysconfig/desktop
 Specify desktop environment and display manager on Red Hat.
 ```conf
