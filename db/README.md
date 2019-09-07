@@ -16,6 +16,13 @@ NoSQL is most efficiently used with **composite keys** which combine more than o
 Term      | Description
 :---      | :---
 cursor    | control structure that enables traversal over the records in a database by pointing to one individual record at a time [[3](#sources)]
+## MongoDB
+#### Creating a new database
+Databases are implicitly created by switching to them, then inserting documents.
+```mongo
+use collection
+db.artists.insert({ artistname: "Picasso" })
+```
 ## Sources
   1. "Choosing a Database Platform". [AWS Podcast 329](sources/README.md#aws-329).
   2. "AWS re:Invent 2018: Amazon DynamoDB Deep Dive: Advanced Design Patterns for DynamoDB (DAT401)". [YouTube](https://youtu.be/HaEPXoXVf2k).
