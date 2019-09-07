@@ -117,28 +117,98 @@ Video | Link
 :---  | :---
 Getting Started with Google Cloud Compute Engine | [YouTube](https://youtu.be/1XH0gLlGDdk)
 #### Coldline
+
 ## Glossary
-Term              | Definition  
-:---              | :---
-Atomicity, Consistency, Isolation, Durability (ACID) | properties of database transactions intended to guarantee validity even in the event of error or failure
-Classless Inter-Domain Domain Routing | style of describing IP address ranges where a slash followed by a number follows the IP address (i.e. `10.0.0.0/8`) describes what portion of an IP address is variable and what portion describes the host [[A](#sources): 280]
-document store    | also "document-oriented database", a type of **NoSQL database** that relies on the concept of the record as **document**, whose **content** may differ in format and structure from document to document. Documents are placed within a **collection**, and each document is addressed via a unique key.
-Elasticity        | ability to increase or decrease the __instance count or size__ of existing resources based on fluctuations in traffic or load, or in resource workload 
-FaaS              | **Function as a Service**
-Function as a Service | **serverless** architecture
-Fault tolerance   | a system's ability to __continue operating properly__ when one or more of its components fails [[7](#sources)]
-High availability | maintaining __acceptable continuous performance__ despite temporary load fluctuations or failures in services, hardware, or data centers | 
-IaaS              | ("eye-az") Infrastructure as a Service 
+Term                                | Definition  
+:---                                | :---
+Elasticity                          | ability to increase or decrease the __instance count or size__ of existing resources based on fluctuations in traffic or load, or in resource workload 
+FaaS                                | **Function as a Service**
+Function as a Service               | **serverless** architecture
+Fault tolerance                     | a system's ability to __continue operating properly__ when one or more of its components fails [[7](#sources)]
+High availability                   | maintaining __acceptable continuous performance__ despite temporary load fluctuations or failures in services, hardware, or data centers | 
 Online Analytics Processing (OLAP)
 Online Transaction Processing (OLAP)
-PaaS              | ("paz") cf. **Platform as a Service**
-Platform as a Service | software design pattern where a third-party service (i.e. Heroku, [Azure Web Apps](), and AWS [Elastic Beanstalk](#elastic-beanstalk)) eliminates the need for managing infrastructure but unlike **serverless architecture**, does not scale automatically. Typically an application deployed over PaaS is running on at least one server at all times.
-SaaS              | ("saz") Software as a Service 
-Scalability       | ability to increase the __instance count or size__ of existing resources [[7](#sources)
-Scale out         | increase __instance count__ of existing resources: non-disruptive [[7](#sources)]
-Scale up          | increase __instance size__ of existing resources: __disruptive__ [[7](#sources)]
-Serverless architecture | software design pattern where applications are hosted by a third-party service and are executed only when needed. Typically used for simple, transaction-type functions that are run often.
-zone              | a part of the domain namespace delegated to a legal entity (person or organization) who is responsible for maintaining it, i.e. Top-Level Domains (".com"), second-level domains ("example.com"), and subdomains; also an administrative function allowing for granular control of DNS components [[14](#sources)]
+Platform as a Service               | software design pattern where a third-party service (i.e. Heroku, [Azure Web Apps](), and AWS [Elastic Beanstalk](#elastic-beanstalk)) eliminates the need for managing infrastructure but unlike **serverless architecture**, does not scale automatically. Typically an application deployed over PaaS is running on at least one server at all times.
+Serverless architecture             | software design pattern where applications are hosted by a third-party service and are executed only when needed. Typically used for simple, transaction-type functions that are run often.
+application programming interface   | provides programmatic access to resources [21](../sources/clf-c01.md
+API Gateway                         | fully managed service that allows you to create and publish secure APIs to scale [21](../sources/clf-c01.md
+artifact                            | central resource for compliance-related information [21](../sources/clf-c01.md
+Atomicity, Consistency, Isolation, Durability (ACID) | properties of database transactions intended to guarantee validity even in the event of error or failure
+Auto Scaling                        | automatic addition and subtraction of resources based on various factors, often their demand [21](../sources/clf-c01.md
+automation                          | automation generation and/or performance of required IT tasks [21](../sources/clf-c01.md
+availability                        | ensuring data is available when needed [21](../sources/clf-c01.md
+Availability Zone                   | division of geographic locations within regions; each Availability Zone contains at least one separate and distinct data center [21](../sources/clf-c01.md
+AWS Auditor Learning Path           | AWS Learning Path that focuses on compliance and legal roles [21](../sources/clf-c01.md
+AWS Global Infrastructure           | resources owned by AWS around the globe and used by customers [21](../sources/clf-c01.md
+AWS Partner Network                 | AWS global partner program that seeks to help partners build successful AWS solutions [21](../sources/clf-c01.md
+AWS Professional Services           | organization made up of a global team of experts that can help you with your desired business outcomes for AWS [21](../sources/clf-c01.md
+AWS Shared Responsibility model     | overall security model followed by AWS; this model divides the client responsibilities from those of Amazon [21](../sources/clf-c01.md
+Basic support plan                  | AWS support plan that is included free of charge for every account [21](../sources/clf-c01.md
+Business support plan               | third tier of 4 support plan tiers; features a response time to your issues of 1 hour [21](../sources/clf-c01.md
+ClassicLink                         | allows the linking of EC2-Classic instances to a VPC in your account [21](../sources/clf-c01.md
+Classless Inter-Domain Domain Routing | style of describing IP address ranges where a slash followed by a number follows the IP address (i.e. `10.0.0.0/8`) describes what portion of an IP address is variable and what portion describes the host [[A](#sources): 280]
+CloudFormation                      | gives developers and systems administrators an easy way to create and manage a collection of related AWS resources, provisioning and updating them in an orderly and predictable fashion [21](../sources/clf-c01.md
+CloudFront                          | global content delivery network service that accelerates delivery of your websites, APIs, video content, or other web assets [21](../sources/clf-c01.md
+CloudTrail                          | web service that records AWS API calls for your account and delivers log files to you [21](../sources/clf-c01.md
+CloudWatch                          | monitoring service for AWS Cloud resources and the applications you run on AWS [21](../sources/clf-c01.md
+CodeDeploy                          | fully managed code deployment service that helps you deploy software to things like EC2 instances [21](../sources/clf-c01.md
+Community cloud                     | cloud provisioned for use by a select group of companies or organization [21](../sources/clf-c01.md
+Confidentiality                     | keeping data secure (often through encryption) [21](../sources/clf-c01.md
+Developer support plan              | second of 4 support tiers; first level of support plan that provides you with access to tech support [21](../sources/clf-c01.md
+Direct Connect                      | alternative to a shared Internet connection to AWS; completely private connection from on-premises network to AWS [21](../sources/clf-c01.md
+document store                      | also "document-oriented database", a type of **NoSQL database** that relies on the concept of the record as **document**, whose **content** may differ in format and structure from document to document. Documents are placed within a **collection**, and each document is addressed via a unique key.
+DymanoDB                            | fast and flexible NoSQL database service for all applications that need consistent, single-digit millisecond latency at any scale [21](../sources/clf-c01.md
+Elastic Block Store                 | offers persistent block storage volumes for use with EC2 instances [21](../sources/clf-c01.md
+Elastic Compute Cloud               | makes virtual machines available in AWS and provides a managed environment for Docker containers [21](../sources/clf-c01.md
+Edge locations                      | locations that deliver cached CloudFront content [21](../sources/clf-c01.md
+Elastic File System                 | provides simple, scalable file storage for use with EC2 instances [21](../sources/clf-c01.md
+Elastic Beanstalk                   | service that permits you to upload your code and have it hosted automatically by AWS [21](../sources/clf-c01.md
+Elastic Load Balancing              | AWS tool for distributing requests for a resource among various resources [21](../sources/clf-c01.md
+ElastiCache                         | web service that makes it easy to deploy, operate, and scale an in-memory cache in the cloud [21](../sources/clf-c01.md
+Elasticity                          | ability of the cloud to grow or shrink resources dynamically based on demand or other factors [21](../sources/clf-c01.md
+Enterprise support plan             | premier level of support available in AWS; features a response time of just 15 minutes to major issues you are experiencing [21](../sources/clf-c01.md
+Federation                          | permitting an account to use its accses with another trusted service in order to access AWS [21](../sources/clf-c01.md
+free tier                           | trial account for AWS that is completely free, with some constraints [21](../sources/clf-c01.md
+fault tolerance                     | property that enables a system to continue operating properly in the event of the failure of some (one or more faults within) of its components [21](../sources/clf-c01.md
+Glacier                             | secure, durable, and extremely low-cost storage service for data archiving and long-term backup [21](../sources/clf-c01.md
+group                               | collection of user accounts; permissions are assigned to groups [21](../sources/clf-c01.md
+high availability                   | characteristic of a system that aims to ensure an agreed level of operational performance, usually uptime, for a higher than normal period [21](../sources/clf-c01.md
+hybrid cloud                        | companies that host some cloud technologies privately and rely on public cloud resources for other technologies [21](../sources/clf-c01.md
+integrity                           | ensuring data is not manipulated at rest or in transit [21](../sources/clf-c01.md
+Lambda                              | main serverless compute service of AWS [21](../sources/clf-c01.md
+Network ACL                         | used to control traffic moving between subnets in the VPC [21](../sources/clf-c01.md
+Networking and Content Delivery     | service category that features low-latency delivery of cached content to specific geographic locations [21](../sources/clf-c01.md
+On-demand instances                 | EC2 instances that are launched at a current price of compute time [21](../sources/clf-c01.md
+OpsWorks                            | configuration management service that uses Chef or Puppet, an automation platform that treats server configurations as code [21](../sources/clf-c01.md
+orchestration                       | scheduling and coordination of automated tasks for an entire process or workflow [21](../sources/clf-c01.md
+private cloud                       |  cloud technology kept "in-house" and fully managed by the private organization [21](../sources/clf-c01.md
+public cloud                        | massive cloud providers that make various "as a Service" models available to the public [21](../sources/clf-c01.md
+Relational Database Services        | make it easy to set up, operate, and scale a relational database in the cloud [21](../sources/clf-c01.md
+Redshift                            | fast, fully managed petabyte-scale data warehouse that makes it simple and cost-effective to analyze all your data using your existing business intelligence tools [21](../sources/clf-c01.md
+Region                              | physical, geographic location int he world where AWS creates multiple Availability Zones [21](../sources/clf-c01.md
+Reserved instances                  | instances at a fixed price that you have contractually reserved for your purposes [21](../sources/clf-c01.md
+Roles                               | similar to user accounts but with no credentials; used to provide access from one AWS service to another [21](../sources/clf-c01.md
+Route 53                            | highly available and scalable cloud Domain Name System web service [21](../sources/clf-c01.md
+Scalability                         | ability to increase the __instance count or size__ of existing resources [[7](#sources)
+Scale out                           | increase __instance count__ of existing resources: non-disruptive [[7](#sources)]
+Scale up                            | increase __instance size__ of existing resources: __disruptive__ [[7](#sources)]
+Security groups                     | built-in firewalls that are associated with EC2 isntances and provide security at the protocol and port lwevel [21](../sources/clf-c01.md
+Security **in** the cloud           | reference to the client security responsibilities in the AWS Shared Responsibility model [21](../sources/clf-c01.md
+Security **of** the cloud           | reference to the Amazon security responsibilities in the AWS Shared Responsibility model [21](../sources/clf-c01.md
+Service Catalog                     | allows creation and maintenance of a catalog of IT resources approved for use with AWS [21](../sources/clf-c01.md
+Simple Storage Service (S3)         | flexible, object-based storage for a wide variety of purposes [21](../sources/clf-c01.md
+Simple Monthly Calculator           | free AWS tool that allows you to calculate monthly AWS costs for various services [21](../sources/clf-c01.md
+Spot instance                       | instance where you bid on unused capacity in AWS [21](../sources/clf-c01.md
+Systems Manager                     | tool for grouping resources for ease of monitoring and configuration changes [21](../sources/clf-c01.md
+Total Cost of Ownership calculators | set of free AWS tools that permit you to reduce TCO by estimating cost savings using AWS [21](../sources/clf-c01.md
+Trusted Advisor                     | management tools that checks your configurations and provides modification advice to help you adhere to best practices [21](../sources/clf-c01.md
+Users                               | entities created to represent individuals who need access to AWS [21](../sources/clf-c01.md
+Virtual Private Cloud               | provides virtual network components in AWS [21](../sources/clf-c01.md
+endpoint                            | permits private connections from your VPC to supported AWS services [21](../sources/clf-c01.md
+peering                             | connection between multiple VPCs in AWS [21](../sources/clf-c01.md
+whitepaper                          | document made available by Amazon that provides valuable best practices and architectures to follow [21](../sources/clf-c01.md
+zone                                | a part of the domain namespace delegated to a legal entity (person or organization) who is responsible for maintaining it, i.e. Top-Level Domains (".com"), second-level domains ("example.com"), and subdomains; also an administrative function allowing for granular control of DNS components [[14](#sources)]
+
 ## Sources
   1. Washam, Michael; Tuliani, Jonathan; Hoag, Scott. _Exam Ref AZ-103 Microsoft Azure Administrator_. [AZ-103](sources/az-103.md)
   2. "Zero to App: Live Coding an App with Firebase (Firebase Dev Summit 2017)". [YouTube](https://www.youtube.com/watch?v=VTkM5BbnslU)
@@ -160,3 +230,4 @@ zone              | a part of the domain namespace delegated to a legal entity (
   18. "AWS re:Invent 2018: Amazon DynamoDB Deep Dive: Advanced Design Patterns for DynamoDB (DAT401)". [YouTube](https://youtu.be/HaEPXoXVf2k).
   19. "Organizing your GCP resources - Beyond Your Bill". [YouTube](https://youtu.be/NOOhDq1JyIM): 2019/08/27.
   20. "Resource Hierarchy". [Google Cloud](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy?utm_source=youtube&utm_medium=unpaidsocial&utm_campaign=ram-20190806-Resource-Hierarchy)
+  21. Sequeira, Anthony. "AWS Certified Cloud Practitioner (CLF-C01) Cert Guide". [CLF-C01](../sources/clf-c01.md)

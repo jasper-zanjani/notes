@@ -140,19 +140,7 @@ Install-WindowsFeature Web-Server,Web-Common-Http,Web-Mgmt-Console -Restart
 #### 3.7 Rebinding your renewed certificates automatically
 #### 3.8 Hosting multiple websites on your IIS server
 #### 3.9 Using host headers to manage multiple websites on a single IP address
-
-
 ## Chapter 4: Remote Desktop Services
-> - [ ] 4.1 Building a single server Remote Desktop Services environment
-> - [ ] 4.2 Adding an additional RDSH server to your RDS environment
-> - [ ] 4.3 Installing applications on a REmote Desktop Session Host server
-> - [ ] 4.4 Disabling the redirection of local resources
-> - [ ] 4.5 Shadowing another session in RDS
-> - [ ] 4.6 Installing a printer driver to use with redirection
-> - [ ] 4.7 Removing an RD Session Host server from use for maintenance
-> - [ ] 4.8 Publishing WordPad with RemoteApp
-> - [ ] 4.9 Tracking user logins with Logon/Logoff scripts
-
 #### 4.1 Building a single server Remote Desktop Services environment
 #### 4.2 Adding an additional RDSH server to your RDS environment
 #### 4.3 Installing applications on a REmote Desktop Session Host server
@@ -162,17 +150,7 @@ Install-WindowsFeature Web-Server,Web-Common-Http,Web-Mgmt-Console -Restart
 #### 4.7 Removing an RD Session Host server from use for maintenance
 #### 4.8 Publishing WordPad with RemoteApp
 #### 4.9 Tracking user logins with Logon/Logoff scripts
-
 ## Chapter 5: Monitoring and backup
-> - [ ] 5.1 Using Server Manager as a quick monitoring tool
-> - [ ] 5.2 Using the new Task Manager to its full potential
-> - [ ] 5.3 Evaluating system performance with Windows Performance Monitor
-> - [x] 5.4 Using Format-List to modify PowerShell data output
-> - [ ] 5.5 Configuring a full system backup using Windows Server Backup
-> - [ ] 5.6 Recovering data from a Windows backup file
-> - [ ] 5.7 Using IP Address MAnagement to keep track of your used IP addresses
-> - [ ] 5.8 Checking for viruses in Windows Server 2016
-
 #### 5.1 Using Server Manager as a quick monitoring tool
 #### 5.2 Using the new Task Manager to its full potential
 #### 5.3 Evaluating system performance with Windows Performance Monitor
@@ -181,20 +159,7 @@ Install-WindowsFeature Web-Server,Web-Common-Http,Web-Mgmt-Console -Restart
 #### 5.6 Recovering data from a Windows backup file
 #### 5.7 Using IP Address MAnagement to keep track of your used IP addresses
 #### 5.8 Checking for viruses in Windows Server 2016
-
 ## Chapter 6: Group Policy
-> - [ ] 6.01 Creating and assigning a new Group Policy Object
-> - [ ] 6.02 Mapping network drives with Group Policy
-> - [ ] 6.03 Redirecting the My Documents folder to a network share
-> - [ ] 6.04 Creating a VPN connection with Group Policy
-> - [ ] 6.05 Creating a printer connection with Group Policy
-> - [ ] 6.06 Using Group Policy to enforce an Internet proxy server
-> - [ ] 6.07 Viewing the settings currently enabled inside a GPO
-> - [ ] 6.08 Viewing the GPOs currently assigned to a computer]
-> - [ ] 6.09 Backing up and restoring GPOs
-> - [ ] 6.10 Plugging in ADMX and ADML templates
-
-
 #### 6.01 Creating and assigning a new Group Policy Object
 #### 6.02 Mapping network drives with Group Policy
 #### 6.03 Redirecting the My Documents folder to a network share
@@ -204,4 +169,4 @@ Install-WindowsFeature Web-Server,Web-Common-Http,Web-Mgmt-Console -Restart
 #### 6.07 Viewing the settings currently enabled inside a GPO
 #### 6.08 Viewing the GPOs currently assigned to a computer]
 #### 6.09 Backing up and restoring GPOs
-#### 6.10 Plugging in ADMX and ADML templates
+#### 6.10 Plugging in ADMX and ADML templates 

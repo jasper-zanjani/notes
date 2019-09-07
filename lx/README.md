@@ -17,23 +17,23 @@ Commands sorted alphabetically
 :---
 **A** [adduser](#adduser) [alsamixer](#alsamixer) [apropos](#apropos) [apt](#apt) [apt-cache](#apt-cache) [at](#at) [ausearch](#ausearch) [awk](#awk) 
 **B** [bash](#bash) [blkid](#blkid) [bpftrace](#bpftrace) [bzcat](#bzcat) [bzip2](#bzip2) [bzless](#bzless) [bzmore](#bzmore) 
-**C** [cancel](#cancel) [cat](#cat) [chage](#chage) [chcon](#chcon) [chgrp](#chgrp) [chkconfig](#chkconfig) [chmod](#chmod) [chown](#chown) [chpass](#chpass) [chsh](#chsh) [column](#column) [compress](#compress) [cp](#cp) [crontab](#crontab) [crossystem](#crossystem) [cryptsetup](#cryptsetup) [curl](#curl) [cut](#cut) 
+**C** [cancel](#cancel) [cat](#cat) [chage](#chage) [chcon](#chcon) [chgrp](#chgrp) [chkconfig](#sysvinit) [chmod](#chmod) [chown](#chown) [chpass](#chpass) [chsh](#chsh) [column](#column) [compress](#compress) [cp](#cp) [crontab](#crontab) [crossystem](#crossystem) [cryptsetup](#cryptsetup) [curl](#curl) [cut](#cut) 
 **D** [dar](#dar) [date](#date) [dbus](#dbus) [dd](#dd) [declare](#declare) [df](#df) [dhclient](#dhclient) [diff](#diff) [dig](#dig) [dirname](#dirname) [dm-crypt](#dm-crypt) [dmesg](#dmesg) [doveadm](#doveadm) [dpkg](#dpkg) [dpkg-reconfigure](#dpkg-reconfigure) [du](#du) [dumpe2fs](#dumpe2fs) 
 **E** [e2image](#e2image) [e2label](#e2label) [edquota](#edquota) [elvis](#elvis) [elvish](#elvish) [espeak](#espeak) [exif](#exif) 
 **F** [fam](#fam) [fdisk](#fdisk) [file](#file) [find](#find) [firewall-cmd](#firewall-cmd) [firewalld](#firewalld) [fish](#fish) [fmt](#fmt) [fold](#fold) [free](#free) [fsck](#fsck) [fstrim](#fstrim) [ftp](#ftp) [fusermount](#fusermount) 
 **G** [gconf-editor](#gconf-editor) [gdisk](#gdisk) [gdmsetup](#gdmsetup) [gem](#gem) [getfacl](#getfacl) [git](#git) [gpasswd](#gpasswd) [gpg](#gpg) [grep](#grep) [groupadd](#groupadd) [groupdel](#groupdel) [groupmod](#groupmod) [grub](#grub) [gzip](#gzip) 
 **H** [hdiutil](#hdiutil) [hdparm](#hdparm) [head](#head) [history](#history) [host](#host) [hostname](#hostname) [hostnamectl](#hostnamectl) [hwclock](#hwclock) 
-**I** [iconv](#iconv) [ifconfig](#ifconfig) [imagemagick](#imagemagick) [init](#init) [initctl](#initctl) [insmod](#insmod) [install](#install) [ip](#ip) [iptables](#iptables) [iscsiadm](#iscsiadm) [iwlist](#iwlist) 
+**I** [iconv](#iconv) [ifconfig](#ifconfig) [imagemagick](#imagemagick) [init](#sysvinit) [initctl](#initctl) [insmod](#insmod) [install](#install) [ip](#ip) [iptables](#iptables) [iscsiadm](#iscsiadm) [iwlist](#iwlist) 
 **J** [journalctl](#journalctl) 
 **K** [kill](#kill) 
 **L** [last](#last) [ldapadd](#ldapadd) [ldconfig](#ldconfig) [ldd](#ldd) [less](#less) [let](#let) [link](#link) [locale](#locale) [localectl](#localectl) [logout](#logout) [lp](#lp) [lpadmin](#lpadmin) [lpstat](#lpstat) [ls](#ls) [lsblk](#lsblk) [lsmod](#lsmod) [lsof](#lsof) [lspci](#lspci) [lsusb](#lsusb) [lvcreate](#lvcreate) [lvdisplay](#lvdisplay) [lvremove](#lvremove) [lvresize](#lvresize) 
-**M** [mail](#mail) [mailq](#mailq) [mailstats](#mailstats) [make](#make) [makemap](#makemap) [mdadm](#mdadm) [mhwd](#mhwd) [mhwd-chroot](#mhwd-chroot) [mkdir](#mkdir) [mke2fs](#mke2fs) [mkfontscale](#mkfontscale) [mkfs](#mkfs) [mkswap](#mkswap) [mktemp](#mktemp) [modinfo](#modinfo) [modprobe](#modprobe) [mount](#mount) [mt](#mt) 
+**M** [mail](#mail) [mailq](#mailq) [mailstats](#mailstats) [make](#make) [makemap](#makemap) [mdadm](#mdadm) [mhwd](#mhwd) [mhwd-chroot](#mhwd-chroot) [mkdir](#mkdir) [mke2fs](#mke2fs) [mkfontscale](#mkfontscale) [mkfs](#mkfs) [mkswap](#mkswap) [mktemp](#mktemp) [modinfo](#modinfo) [modprobe](#modprobe) [mongod](#mongod) [mount](#mount) [mt](#mt) 
 **N** [nc](#nc) [netplan](#netplan) [netstat](#netstat) [NetworkManager](#NetworkManager) [newaliases](#newaliases) [nice](#nice) [nl](#nl) [nmap](#nmap) [nmblookup](#nmblookup) [nmcli](#nmcli) [nohup](#nohup) [nslookup](#nslookup) [ntpdate](#ntpdate) 
 **O** [openssl](#openssl) 
 **P** [pacman](#pacman) [partx](#partx) [passwd](#passwd) [paste](#paste) [patch](#patch) [ping](#ping) [pip](#pip) [postfix](#postfix) [postqueue](#postqueue) [postsuper](#postsuper) [ps](#ps) [pvcreate](#pvcreate) [pvdisplay](#pvdisplay) [pvremove](#pvremove) [pydoc](#pydoc) 
 **Q** [qmail](#qmail) [quota](#quota) [quotacheck](#quotacheck) [quotaoff](#quotaoff) [quotaon](#quotaon) 
 **R** [read](#read) [rename](#rename) [repquota](#repquota) [resize2fs](#resize2fs) [resize4fs](#resize4fs) [restorecon](#restorecon) [rmmod](#rmmod) [route](#route) [rpm](#rpm) [rsync](#rsync) [runlevel](#runlevel) 
-**S** [samba](#samba) [sc](#sc) [sed](#sed) [semanage](#semanage) [sendmail](#sendmail) [seq](#seq) [service](#service) [sestatus](#sestatus) [setenforce](#setenforce) [setfacl](#setfacl) [sfdisk](#sfdisk) [shred](#shred) [shuf](#shuf) [shutdown](#shutdown) [slapadd](#slapadd)  [sleep](#sleep) [snap](#snap) [sort](#sort) [sosreport](#sosreport) [source](#source) [speaker-test](#speaker-test) [ss](#ss) [ssh](#ssh) [ssh-copy-id](#ssh-copy-id) [ssh-keygen](#ssh-keygen) [ssh-keyscan](#ssh-keyscan) [sshfs](#sshfs) [ssmtp](#ssmtp) [startx](#startx) [stty](#stty) [su](#su) [sudo](#sudo) [swapoff](#swapoff) [swapon](#swapon) [sysctl](#sysctl) [syslog](#syslog) [systemctl](#systemctl) [systemd-delta](#systemd-delta) 
+**S** [samba](#samba) [sc](#sc) [sed](#sed) [semanage](#selinux) [sendmail](#sendmail) [seq](#seq) [service](#sysvinit) [sestatus](#sestatus) [setenforce](#selinux) [setfacl](#setfacl) [sfdisk](#sfdisk) [shred](#shred) [shuf](#shuf) [shutdown](#shutdown) [slapadd](#slapadd)  [sleep](#sleep) [snap](#snap) [sort](#sort) [sosreport](#sosreport) [source](#source) [speaker-test](#speaker-test) [ss](#ss) [ssh](#ssh) [ssh-copy-id](#ssh-copy-id) [ssh-keygen](#ssh-keygen) [ssh-keyscan](#ssh-keyscan) [sshfs](#sshfs) [ssmtp](#ssmtp) [startx](#startx) [stty](#stty) [su](#su) [sudo](#sudo) [swapoff](#swapoff) [swapon](#swapon) [sysctl](#sysctl) [syslog](#syslog) [sysvinit](#sysvinit) [systemctl](#systemctl) [systemd-delta](#systemd-delta) 
 **T** [tail](#tail) [tar](#tar) [tcpdump](#tcpdump) [telinit](#telinit) [test](#test) [tig](#tig) [timedatectl](#timedatectl) [tmux](#tmux) [touch](#touch) [top](#top) [tput](#tput) [tr](#tr) [tracepath](#tracepath) [traceroute](#traceroute) [tune2fs](#tune2fs) [tzselect](#tzselect) 
 **U** [udevadm](#udevadm) [umount](#umount) [uname](#uname) [uncompress](#uncompress) [unzip](#unzip) [update-grub](#update-grub) [update-rc.d](#update-rc.d) [useradd](#useradd) [userdel](#userdel) [usermod](#usermod) 
 **V** [variable](#variable) [vgcreate](#vgcreate) [vgdisplay](#vgdisplay) [vgextend](#vgextend) [vgremove](#vgremove) [vgscan](#vgscan) [vifs](#vifs) [visudo](#visudo) 
@@ -1596,32 +1596,6 @@ chcon -Rv --type=httpd_sys_content_t website
 ```sh
 chgrp user:group
 ```
-### chkconfig
-Turn services on or off for runlevels, defaulting to 3 or 5, in sysvinit
-#### Display a table of all services with information on each runlevel, indicating whether it is enabled or not, in sysvinit
-```sh
-chkconfig --list
-```
-#### Display all services and their runlevels (on a SysV system)
-```sh
-chkconfig --list
-```
-#### Turn NetworkManager off (sysvinit)
-```sh
-chkconfig NetworkManager off
-```
-#### Turn {daemon} on for runlevels 3 and 5 in sysvinit
-```sh
-chkconfig --level 35 daemon on
-```
-#### Turn {daemon} service on in sysvinit
-```sh
-chkconfig daemon off
-```
-#### Turn {daemon} service on in sysvinit
-```sh
-chkconfig daemon on
-```
 ### chmod
 #### Set sticky bit on {file}
 ```sh
@@ -2135,19 +2109,6 @@ ifup -a
 ```sh
 ifup eth0
 ```
-### init
-#### Access different runlevels
-```sh
-init 
-```
-#### Immediately configure the system to runlevel {n} in sysvinit
-```sh
-init n
-```
-#### Reboot
-```sh
-init 6
-```
 ### initctl
 #### Reload configuration files (on Upstart-controlled system)
 ```sh
@@ -2411,7 +2372,20 @@ modprobe --show-depends
 ```sh
 modprobe --show-depends module
 ```
-### filesystem
+### mongod
+MongoDB daemon
+#### mongod options
+Option  | POSIX option            | Effect
+:---    | :---                    | :---
+        | dbpath                  | 
+        | fork                    |
+        | logpath                 |
+        | port                    |
+
+#### Run MongoDB service in the background on port 80
+```sh
+mongod --dbpath $HOME/db --port 80 --fork --logpath /var/tmp/mongodb
+```
 #### Mount all filesystems in fstab
 ```sh
 mount -a
@@ -2939,7 +2913,7 @@ Report on current Samba connections
 ```sh
 smbstatus -S
 ```
-### filter
+### sed
 #### Run sed commands in `sedscr` on file
 ```sh
 sed -f sedscript file
@@ -2950,7 +2924,24 @@ sed -n
 sed --quiet
 sed --silent
 ```
-### semanage
+### SELinux
+#### Display SELinux contexts for processes
+```sh
+ps auxZ
+```
+#### Display SELinux context for files
+```sh
+ls -Z
+```
+#### Display status of SELinux
+```sh
+sestatus
+```
+#### Change SELinux mode
+{mode} can be "enforcing" (or "1"), "permissive" ("0") or "disabled"
+```sh
+setenforce mode
+```
 #### Amend policy to add a file context
 ```sh
 semanage fcontext -a -t httpd_sys_content_t website
@@ -2963,7 +2954,7 @@ semanage port -a -t http_port_t -p tcp 8080
 ```sh
 semanage port -l
 ```
-### filter
+### seq
 #### Sequence from 1 to 15
 ```sh
 seq -f "%03g" 15
@@ -2980,23 +2971,53 @@ seq 5 320
 ```sh
 seq 8
 ```
-### service
-#### Restart network service (sysvinit)
+### sysvinit
+#### Access different runlevels
+```sh
+init 
+```
+#### Switch to runlevel {n}
+```sh
+init n
+init 6 # reboot
+```
+#### Restart network service 
 ```sh
 service network restart
 ```
-#### Check status of {daemon} in sysvinit
+#### Check status of {daemon}
 ```sh
-sudo service daemon status
+service daemon status
 ```
-### sestatus
-Display status of SELinux
-### setenforce
-#### Change SELinux mode, where {mode} can be "enforcing" (or "1"), "permissive" ("0") or "disabled"
+#### Stop {daemon}
 ```sh
-setenforce mode
+service daemon stop
+service mongodb stop
 ```
-### file
+#### Turn services on or off for runlevels
+Without arguments, `chkconfig` defaults to runlevels 3 or 5:
+```sh
+chkconfig
+```
+#### Display all services and runlevels
+```sh
+chkconfig --list
+```
+#### Turn {daemon} on for runlevels 3 and 5
+```sh
+chkconfig --level 35 daemon on
+```
+#### Turn {daemon} off
+```sh
+chkconfig daemon off
+chkconfig NetworkManager off
+```
+#### Turn {daemon} service on
+```sh
+chkconfig daemon on
+```
+### setfacl
+Set file access control lists
 #### Grant user {lisa} right to read {file}
 ```sh
 setfacl -m u:lisa:r file
@@ -3005,8 +3026,6 @@ setfacl -m u:lisa:r file
 ```sh
 setfacl -x g:staff file
 ```
-### setfacl
-Set file access control lists
 #### Modify file access control list for {file} to revoke write access from all groups and all named users
 ```sh
 setfacl -m m::rx file
