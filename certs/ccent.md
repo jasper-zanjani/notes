@@ -1,22 +1,4 @@
 # ICND1
-## 100-101 to 100-105 delta
-Remove:
-- Cisco Express Forwarding (CEF)
-- Dual Stack
-- Open Shortest Path First (OSPF)
-
-Add:
-- Collapsed Core architecture
-- IPv6 Stateless Address Auto Config (SLADC)
-- IPv6 Anycast Addressing
-- Link Layer Discovery Protocol (LLDP)
-- IPv4 RIP v2
-- DNS and DHCP connectivity issues
-- Syslog message logging
-- Cisco device management
-  - backup and restore
-  - feature licensing
-  - configure time zones
 
 ## Network design
 Hierarchical network design refers to three-layered or three-tiered network design:
