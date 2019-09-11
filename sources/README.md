@@ -2,24 +2,7 @@
 ## Abbreviations
 \#      | Links
 :---    | :---
-A       | [AAP](#admin-admin-podcast) [ADP](#azure-devops-podcast) [AID](#adventures-in-devops) [AWST](#aws-techchat)
-B       | [BNP](#bash-notes-for-professionals) [BPR](#bash-pocket-reference) [BRM](#bash-reference-manual) [BSD](#bsd-now)
-C       | [CB](#coding-blocks) [CCP](#cracking-codes-with-python) [CGF](#chengdu-gaming-federation) [CLKF](clkf.md) [CL](#choose-linux) [CR](#coder-radio) [CSFM](#cloudskillsfm) [CSP](csp.md)
-E       | [Extras](#extras)
-F       | [FP](#fluent-python) [FPLC](fplc.md) [FPP](#functional-python-programming)
-GL      | [GL](#going-linux) 
-H       | [HPR](#hacker-public-radio)
-I       | [IMWS](imws.md) [ITP](#itprotv)
-J       | [JDG](jdg.md) [JNP](jnp.md) [JSJ](#javascript-jabber)
-K       | [K8S](#kubernetes-podcast-from-google) 
-L       | [LALOS](lalos.md) [LAN](#linux-action-news) [LJ](#linux-journal) [LNL](#late-night-linux) [LSSP](lssp.md) [LU](#linux-unplugged)
-P       | [PodCTL](#podctl) [PBX](pbx.md) [PGL](pgl.md)
-R       | [RAR](#runas-radio)
-S       | [SA](s-and-a.md) [SY](#syntax)
-T       | [TP](#talk-python) [TS](#techsnap)
-U       | [UE](#user-error) [USLAH](ulsah.md)
-W       | [WSAC](wsac.md) [WSAF](wsaf.md) 
-Y       | [YUG](yug.md)
+A-Z     | [AAP](#admin-admin-podcast) [ADP](#azure-devops-podcast) [AID](#adventures-in-devops) [AWST](#aws-techchat) [BNP](#bash-notes-for-professionals) [BPR](#bash-pocket-reference) [BRM](#bash-reference-manual) [BSD](#bsd-now) [CB](#coding-blocks) [CCP](#cracking-codes-with-python) [CGF](#chengdu-gaming-federation) [CLKF](clkf.md) [CL](#choose-linux) [CR](#coder-radio) [CSFM](#cloudskillsfm) [CSP](csp.md) [Extras](#extras) [FP](#fluent-python) [FPLC](fplc.md) [FPP](#functional-python-programming) [GL](#going-linux) [HPR](#hacker-public-radio) [IMWS](imws.md) [ITP](#itprotv) [JDG](jdg.md) [JNP](jnp.md) [JSJ](#javascript-jabber) [K8S](#kubernetes-podcast-from-google) [LALOS](lalos.md) [LAN](#linux-action-news) [LJ](#linux-journal) [LNL](#late-night-linux) [LSSP](lssp.md) [LU](#linux-unplugged) [PodCTL](#podctl) [PBX](pbx.md) [PGL](pgl.md) [RAR](#runas-radio) [s&a](s-and-a.md) [SY](#syntax) [TP](#talk-python) [TS](#techsnap) [UE](#user-error) [USLAH](ulsah.md) [WSAC](wsac.md) [WSAF](wsaf.md) [YUG](yug.md)
 
 ## People
 #### Jeff Barr
@@ -40,7 +23,7 @@ Guest: [K8S 67](#k8s-67)
 Host: [AAP](#abbreviations) [Twitter](https://twitter.com/mralc)
 #### Michael Domenick
 Host: [CR](#abbreviations)  [Twitter](https://twitter.com/dominucco)
-Simon Elisha
+#### Simon Elisha
 Host: [AWS](#abbreviations) [Twitter](https://twitter.com/intent/user?screen_name=simon_elisha)
 #### Chris Fisher
 Founder of Jupiter Broadcasting, which merged or partnered with Linux Academy ca. September 2018.
@@ -66,7 +49,7 @@ Author of [FPP](#functional-python-programming)
 #### John McCabe
 [IMWS](imws.md)
 #### Philip Muler
-Guest: [LU](#abbreviations) [318](#lu-318) [Github](https://github.com/philmmanjaro)\
+Guest: [LU](#abbreviations) [318](#lu-318) [Github](https://github.com/philmmanjaro)
 #### Jeffrey Palermo
 Host: [ADP](#abbreviations) [Twitter](https://twitter.com/jeffreypalermo) [LinkedIn](https://www.linkedin.com/in/palermo/) [Website](http://jeffreypalermo.com/)
 #### Wes Payne
@@ -74,7 +57,7 @@ Host: [TS](#abbreviations), [CR](#abbreviations)
 #### Mike Pfeiffer
 Host: [CSFM](#abbreviations)  [Web](https://mikepfeiffer.io) [Twitter](https://twitter.com/mike**pfeiffer) [Facebook](https://www.facebook.com/mikepfeifferhq/)
 #### Alan Pope
-Host: [UE](#abbreviations) | [Twitter](https://twitter.com/popey)
+Host: [UE](#abbreviations) [Twitter](https://twitter.com/popey)
 #### Ellie Quigley
 [PBX](pbx.md)
 #### Luciano Ramalho
@@ -82,11 +65,11 @@ Author of [FP](#fluent-python)
 #### Chet Ramey
 Author: [BRM](#bash-reference-manual)
 #### Benedict Reuschling
-Host: [BSD](#abbreviations) | [Twitter](https://twitter.com/bsdbcr)
+Host: [BSD](#abbreviations) [Twitter](https://twitter.com/bsdbcr)
 #### Joe Ressington
 Host: [LAN](#abbreviations) [UE](#abbreviations) [CL](#abbreviations) | [Web](https://joeress.com) [Twitter](https://twitter.com/JoeRessington)
 #### Arnold Robbins
-Author of **Bash Pocket Reference**, **Unix in a Nutshell**, **sed & awk**
+[s&a](s-and-a.md)
 #### Joel (Sallow) Francis
 Guest: [PSP](#abbreviations) [Twitter](https://twitter.com/vexx32) [GitHub](https://github.com/vexx32) [LinkedIn](https://www.linkedin.com/in/joel-francis-356539128/)
 #### Steve (ardalis) Smith
@@ -100,7 +83,7 @@ Host: [AAP](#abbreviations) [Twitter](https://twitter.com/ticktockhouse)
 #### Al Sweigart
 Author: [CCP](#cracking-codes-with-python)
 #### Scott Tolinski
-Host: [SY](#abbreviations) [Twitter](https://twitter.com/stolinski) [Github](https://github.com/stolinski) [BitBucket](https://bitbucket.org/stolinski) [Facebook](https://www.facebook.com/LevelUpTuts) sdf
+Host: [SY](#abbreviations) [Twitter](https://twitter.com/stolinski) [Github](https://github.com/stolinski) [BitBucket](https://bitbucket.org/stolinski) [Facebook](https://www.facebook.com/LevelUpTuts)
 ## Notes
 ### Admin Admin Podcast
 [Web](http://www.adminadminpodcast.co.uk/) [Twitter](https://twitter.com/admadmpodcast)
