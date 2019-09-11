@@ -3920,6 +3920,15 @@ UseSTARTTLS=YES
 exclude=kernel* php*
 ```
 ## Tasks
+#### Install and configure Samba
+Install `samba`
+```sh
+sudo apt install samba
+```
+Verify the samba service `nmbd`
+```sh
+sudo systemctl status nmbd
+```
 #### Validating arguments
 ```
 if [ $# != 2 ]
@@ -4113,3 +4122,4 @@ ZynAddSubFX                     | LMMS plugin, used with synthesizers [[1](#sour
   37. "20 Linux [YUM](#yum) (Yellowdog Update, Modified) Commands for Package Management". [TecMint](https://www.tecmint.com/20-linux-yum-yellowdog-updater-modified-commands-for-package-mangement/). 2012/08/11.
   38. "Three ways to exclude specific packages from [`yum`](#yum) update". [2daygeek.com](https://www.2daygeek.com/redhat-centos-yum-update-exclude-specific-packages/): 2019/08/28.
   39. "How to install and use [`sosreport`](#sosreport) on Ubuntu". [howtoforge.com](https://www.howtoforge.com/how-to-install-and-use-sosreport-on-ubuntu-1804/).
+  40. "How to Install and Configure Samba on Ubuntu". [vitux.com](https://vitux.com/how-to-install-and-configure-samba-on-ubuntu/).

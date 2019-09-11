@@ -2,7 +2,7 @@
 ## Abbreviations
 \#      | Links
 :---    | :---
-A-Z     | [AAP](#admin-admin-podcast) [ADP](#azure-devops-podcast) [AID](#adventures-in-devops) [AWST](#aws-techchat) [BNP](#bash-notes-for-professionals) [BPR](#bash-pocket-reference) [BRM](#bash-reference-manual) [BSD](#bsd-now) [CB](#coding-blocks) [CCP](#cracking-codes-with-python) [CGF](#chengdu-gaming-federation) [CLKF](clkf.md) [CL](#choose-linux) [CR](#coder-radio) [CSFM](#cloudskillsfm) [CSP](csp.md) [Extras](#extras) [FP](#fluent-python) [FPLC](fplc.md) [FPP](#functional-python-programming) [GL](#going-linux) [HPR](#hacker-public-radio) [IMWS](imws.md) [ITP](#itprotv) [JDG](jdg.md) [JNP](jnp.md) [JSJ](#javascript-jabber) [K8S](#kubernetes-podcast-from-google) [LALOS](lalos.md) [LAN](#linux-action-news) [LJ](#linux-journal) [LNL](#late-night-linux) [LSSP](lssp.md) [LU](#linux-unplugged) [PodCTL](#podctl) [PBX](pbx.md) [PGL](pgl.md) [RAR](#runas-radio) [s&a](s-and-a.md) [SY](#syntax) [TP](#talk-python) [TS](#techsnap) [UE](#user-error) [USLAH](ulsah.md) [WSAC](wsac.md) [WSAF](wsaf.md) [YUG](yug.md)
+A-Z     | [AAP](#admin-admin-podcast) [ADAC](adac.md) [AZ-103](az-103.md) [ADP](#azure-devops-podcast) [AID](#adventures-in-devops) [AWST](#aws-techchat) [BNP](#bash-notes-for-professionals) [BPR](#bash-pocket-reference) [BRM](#bash-reference-manual) [BSD](#bsd-now) [CB](#coding-blocks) [CCP](ccp.md) [CGF](#chengdu-gaming-federation) [CLKF](clkf.md) [CL](#choose-linux) [CR](#coder-radio) [CSFM](#cloudskillsfm) [CSP](csp.md) [Extras](#extras) [FP](#fluent-python) [FPLC](fplc.md) [FPP](#functional-python-programming) [GL](#going-linux) [HPR](#hacker-public-radio) [IMWS](imws.md) [ITP](#itprotv) [JDG](jdg.md) [JNP](jnp.md) [JSJ](#javascript-jabber) [K8S](#kubernetes-podcast-from-google) [LALOS](lalos.md) [LAN](#linux-action-news) [LJ](#linux-journal) [LNL](#late-night-linux) [LSSP](lssp.md) [LU](#linux-unplugged) [PodCTL](#podctl) [PBX](pbx.md) [PGL](pgl.md) [RAR](#runas-radio) [s&a](s-and-a.md) [SY](#syntax) [TP](#talk-python) [TS](#techsnap) [UE](#user-error) [USLAH](ulsah.md) [WSAC](wsac.md) [WSAF](wsaf.md) [YUG](yug.md)
 
 ## People
 #### Jeff Barr
@@ -44,6 +44,9 @@ Host: [BSD](#abbreviations)  [Web](https://www.scaleengine.com/) [FaceBook](http
 Host: [TP](#abbreviations) [PB](#podcasts) | [Twitter](https://twitter.com/mkennedy)
 #### David Kopec
 Author: [CSP](csp.md)
+#### Patrick Lang
+Guest: [K8S](#kubernetes-podcast-from-google) [70](#k8s-70)
+Co-chair of Kubernetes Windows SIG
 #### Steven Lott
 Author of [FPP](#functional-python-programming)
 #### John McCabe
@@ -168,8 +171,6 @@ Test coverage metrics are a double-edged sword, because they incentivize develop
 [Notes](https://coder.show/325): 2018/09/07.
 - Wes Payne is a big fan of Clojure, in particular with the professionalism of the clojure community. Clojure is not as closely tied to Java as it was in its inception when it was a "JAR", but it still needs a JVM.
 ### Coding Blocks
-### Cracking Codes with Python
-Author: [Al Sweigart](#al-sweigart)
 ### Destination Linux
 [Web](http://destinationlinux.com/)
 ### Extras
@@ -194,6 +195,11 @@ Author: [Al Sweigart](#al-sweigart)
 ### JavaScript Jabber
 ### Kubernetes Podcast from Google
 [Twitter](http://twitter.com/mkubernetespod) [Email](mailto:kubernetespodcast@google.com) [Web](https://kubernetespodcast.com)
+#### K8S 70
+Windows Server Containers, with Patrick Lang\
+Windows server containers, like Linux containers, package dependencies. Windows offers two base images. The differences between Windows and Linux containers originate in historical differences. Windows was developed to be an entire operating system, not just a kernel, including APIs like Win16 and Win32. The border between kernel and user mode was always much blurrier than in Linux. The concept of a **session** was innovated to handle the problem of what to do when multiple users are making inputs simultaneously. A Windows container is essentially equivalent to a headless session.\
+Windows Server containers are focused on running headless applications. Tools like the **Windows Application Converter** assist in adapting UI-based tools to be run on a container.\
+Before the release of Windows Server 2016, developers were inspired by the success of Docker, which packaged dependencies and configurations into an easy-to-install package. By the time of the release of Windows Server 2016, a preview of Docker was ready for Windows containers. 
 #### K8S 67
 Orka, with Chris Chapman\
 Orka is a virtualization layer for Mac build infrastructure offered by hosting company MacStadium. iPhone architecture and security make building for that platform very different. Virtual Mac instances first became possible in Snow Leopard, but the EULA allows only 2 VMs per machine. MacStadium is an enterprise-scale cloud for Apple. A typical lifecycle for an iOS build begins with a simulator, followed by a physical test, typically in a build farm of physical iOS devices.  
