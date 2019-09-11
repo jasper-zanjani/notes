@@ -1,110 +1,115 @@
 # Sources
 ## Abbreviations
-Abbr.                   |  Source
-:---                    | :---    
-AAP                     | **Admin Admin Podcast** [Web](http://www.adminadminpodcast.co.uk/) [Twitter](https://twitter.com/admadmpodcast)
-ADP                     | **Azure DevOps Podcast** [Web](http://azuredevopspodcast.clear-measure.com/) Notes: [48](#adp-48)
-AWS                     | **AWS Podcast** [Web](https://aws.amazon.com/podcasts/aws-podcast/) Notes: [329](#aws-329)
-AWST                    | **AWS TechChat** Notes: [35](#awst-35) [53](#awst-53)
-BNfP                    | **Bash Notes for Professionals**. [Web](goalkicker.com)|
-BPR                     | Robbins, Arnold. **Bash Pocket Reference (2nd ed.)**.
-BRM                     | Ramey, Chet and Fox, Brian. **Bash Reference Manual**
-BSD                     | **BSD Now** [Web](https://www.bsdnow.tv/) [Subreddit](https://www.reddit.com/r/bsdnow) [FaceBook](https://www.facebook.com/BSDNow/) [Twitter](https://twitter.com/bsdnow)
-CB                      | **Coding Blocks**
-CCP                     | Sweigart, Al. **Cracking Codes With Python**.
-CGF                     | **Chengdu Gaming Federation**
-CLKF                    | **Command-Line Kung Fu**|Jason Cannon
-CL                      | **Choose Linux** [Web](https://chooselinux.show) [Twitter](https://twitter.com/chooselinux)
-CR                      | **Coder Radio** [Web](https://coder.show/) [Twitter](https://twitter.com/coderradioshow) Notes: [325](#cr-325) [361](#cr-361)
-CSFM                    | **CloudSkills.fm** [Web](https://cloudskills.fm/) Notes: [2](#csfm-2) [3](#csfm-3) [29](#csfm-29)
-CSP                     | **Classic Computer Science Problems in Python**| Kopec, David
-DL                      | **Destination Linux** [Web](http://destinationlinux.com/) Notes: 
-Extras                  | [Web](https://extras.show/)
-FP                      | Ramalho, Luciano. **Fluent Python**.
-FPLC                    | **Five Principles for Deploying and Managing Linux in the Cloud (With Azure)** [Notes](fplc.md)
-FPP                     | Lott, Steven. **Functional Python Programming**
-Friday                  | [Web](https://fridaystream.com)
-GL                      | **Going Linux** [Web](https://goinglinux.com) [Twitter](https://twitter.com/goinglinux)
-HPR                     | **Hacker Public Radio** [Web](http://hackerpublicradio.org/) Links: [1938](#hpr-1938) [2107](#hpr-2107)
-IMWS                    | McCabe, John et al. **Introduction to Microsoft Windows Server 2016**.
-ITP                     | **ITPro.TV** [Web](https://itpro.tv/)
-JDG                     | Flanagan, David. **JavaScript: the Definitive Guide**
-JNfP                    | **JavaScript Notes for Professionals** [Web](goalkicker.com)
-JSJ                     | **JavaScript Jabber**
-K8S                     | **Kubernetes Podcast from Google** [Twitter](http://twitter.com/mkubernetespod) [Email](mailto:kubernetespodcast@google.com) [Web](https://kubernetespodcast.com)
-LALOS                   | Cannon, Jason. **Linux Administration: The Linux Operating System**
-LAN                     | Linux Action News  [Web](https://linuxactionnews.com/) [Twitter](https://twitter.com/linuxactionnews)
-LC                      | **Learn Code the Hard Way**
-LCL                     | Shotts, William. **Linux Command Line, the**
-LCN                     | **LPI Linux Certification in a Nutshell**
-LGLC                    | Eckert, Jason. **Linux+ Guide to Linux Certification, 3rd ed.**
-LH                      | **Linux Handbook** [Web](https://linuxhandbook.com/)
-LJ                      | **Linux Journal** Notes: [283](#lj-283)
-LNL                     | **Late Night Linux** Notes: [65](#lnl-65)
-LPI                     | **Linux Programming Interface, the**|Kerrisk, Michael
-LS                      | Smith, Luke . **Luke Smith YouTube Channel** [YouTube](https://www.youtube.com/channel/UC2eYFnH61tmytImy1mTYvhA)
-LSSP                    | Cannon, Jason. **Linux Shell Scripting Projects**
-LU                      | **Linux Unplugged** [Web](https://linuxunplugged.com/) [Twitter](https://twitter.com/LinuxUnplugged) Notes [315](#lu-315)
-MC                      | **Mint Cast**
-MD                      | **Microsoft Docs**
-OOJ                     | Antani, Ved and Stefanov, Stoyan. **Object-Oriented JavaScript**
-OSc                     | **OpenSource.com**. [Web](https://opensource.com/)
-OST                     | **OSTechnix.com**. [Web](https://ostechnix.com/)
-PB                      | **Python Bytes**. 
-PBX                     | Quigley, Ellie. **Perl by Example, 4th ed.**
-PGL                     | Sobell, Mark. **Practical Guide to Linux, A**
-PiaN                    | Martelli, Alex. **Python in a Nutshell**
-PP                      | Lutz, Mark. **Programming Python**
-PSP                     | **PowerScripting Podcast**
-RAR                     | **RunAs Radio** [Web](http://www.runasradio.com/) [Twitter](https://twitter.com/RunAsRadio)
-SA                      | Dougherty, Dale and Robbins, Arnold. **sed & awk (2nd edition)**
-SY                      | **Syntax** [Web](https://syntax.fm/) [Twitter](https://twitter.com/syntaxfm)
-TP                      | **Talk Python** [Web](https://talkpython.fm) [Twitter](https://twitter.com/TalkPython) Notes: [213](#tp-213) [216](#tp-216) [224](#tp-224)
-TS                      | **TechSNAP** [Web](https://techsnap.systems) [Twitter](https://twitter.com/techsnapsystems)
-TWIG                    | **This Week in Games**
-TWIL                    | **This Week in Linux**
-UE                      | **User Error** [Web](https://error.show/) [Twitter](https://twitter.com/usererrorshow)
-ULSAH                   | **Unix and Linux System Administration Handbook**
-UN                      | Robbins, Arnold. **Unix in a Nutshell**
-Vim                     | Oualline, Steve. **The Vim Book**
-VOV                     | **Views on Vue**
-WCL                     | Stanek, William R. **Windows Command-Line**.
-WCSS                    | Taylor, Dave and Perry, Brandon. **Wicked Cool Shell Scripts**
-WDT                     | **Weekly Dev Tips**
-WSAF                    | Dauti, Bekim. **Windows Server 2016 Administration Fundamentals**
-YUG                     | Das, Sumitabha. **Your Unix: the Ultimate Guide**
+\#      | Links
+:---    | :---
+A       | [AAP](#admin-admin-podcast) [ADP](#azure-devops-podcast) [AID](#adventures-in-devops) [AWST](#aws-techchat)
+B       | [BNP](#bash-notes-for-professionals) [BPR](#bash-pocket-reference) [BRM](#bash-reference-manual) [BSD](#bsd-now)
+C       | [CB](#coding-blocks) [CCP](#cracking-codes-with-python) [CGF](#chengdu-gaming-federation) [CLKF](clkf.md) [CL](#choose-linux) [CR](#coder-radio) [CSFM](#cloudskillsfm) [CSP](csp.md)
+E       | [Extras](#extras)
+F       | [FP](#fluent-python) [FPLC](fplc.md) [FPP](#functional-python-programming)
+GL      | [GL](#going-linux) 
+H       | [HPR](#hacker-public-radio)
+I       | [IMWS](imws.md) [ITP](#itprotv)
+J       | [JDG](jdg.md) [JNP](jnp.md) [JSJ](#javascript-jabber)
+K       | [K8S](#kubernetes-podcast-from-google) 
+L       | [LALOS](lalos.md) [LAN](#linux-action-news) [LJ](#linux-journal) [LNL](#late-night-linux) [LSSP](lssp.md) [LU](#linux-unplugged)
+P       | [PodCTL](#podctl) [PBX](pbx.md) [PGL](pgl.md)
+R       | [RAR](#runas-radio)
+S       | [SA](s-and-a.md) [SY](#syntax)
+T       | [TP](#talk-python) [TS](#techsnap)
+U       | [UE](#user-error) [USLAH](ulsah.md)
+W       | [WSAC](wsac.md) [WSAF](wsaf.md) 
+Y       | [YUG](yug.md)
+
 ## People
-Name                    | Description  
-:---                    | :---         
-Barr, Jeff              | Host: [AWS](#abbreviations) [Twitter](https://twitter.com/intent/user?screen_name=jeffbarr)
-Bos, Wes                | Host: [SY](#abbreviations)  [Twitter](https://twitter.com/wesbos)
-Box, Craig              | Host: [K8S](#abbreviations) [Twitter](http://twitter.com/craigbox)
-Bushey, Larry           | Host: [GL](#abbreviations)  [Twitter](https://twitter.com/goinglinux) [LinkedIn](https://www.linkedin.com/in/larrybushey/)
-Campbell, Richard       | Host: [RAR](#abbreviations)  [Twitter](https://twitter.com/richcampbell)
-Chapman, Chris          | Guest: [K8S 67](#k8s-67) 
-Christman, Alister      | Host: [AAP](#abbreviations) [Twitter](https://twitter.com/mralc)
-Domenick, Michael       | Host: [CR](#abbreviations)  [Twitter](https://twitter.com/dominucco)
-Elisha, Simon           | Host: [AWS](#abbreviations) [Twitter](https://twitter.com/intent/user?screen_name=simon_elisha)
-Fisher, Chris           | Host: [LU](#abbreviations)  [Twitter](https://twitter.com/ChrisLAS)
-Glick, Adam             | Host: [K8S](#abbreviations) [Twitter](http://twitter.com/mobileglick)
-Hunt, Randall           | Guest: AWS [329](#aws-328)
-Jude, Allan             | Host: [BSD](#abbreviations)  [Web](https://www.scaleengine.com/) [FaceBook](https://facebook.com/allanjude) [LinkedIn](https://www.linkedin.com/in/allanjude/)
-Kennedy, Michael        | Host: [TP](#abbreviations) [PB](#podcasts) | [Twitter](https://twitter.com/mkennedy)
-Palermo, Jeffrey        | Host: [ADP](#abbreviations) [Twitter](https://twitter.com/jeffreypalermo) [LinkedIn](https://www.linkedin.com/in/palermo/) [Website](http://jeffreypalermo.com/)
-Payne, Wes              | Host: [TS](#abbreviations), [CR](#abbreviations)
-Pfeiffer, Mike          | Host: [CSFM](#abbreviations)  [Web](https://mikepfeiffer.io) [Twitter](https://twitter.com/mike**pfeiffer) [Facebook](https://www.facebook.com/mikepfeifferhq/)
-Pope, Alan              | Host: [UE](#abbreviations) | [Twitter](https://twitter.com/popey)
-Reuschling, Benedict    | Host: [BSD](#abbreviations) | [Twitter](https://twitter.com/bsdbcr)
-Ressington, Joe         | Host: [LAN](#abbreviations) [UE](#abbreviations) [CL](#abbreviations) | [Web](https://joeress.com) [Twitter](https://twitter.com/JoeRessington)
-Robbins, Arnold         | **Bash Pocket Reference**, **Unix in a Nutshell**, **sed & awk**
-Francis, Joel (Sallow)  | Guest: [PSP](#abbreviations) [Twitter](https://twitter.com/vexx32) [GitHub](https://github.com/vexx32) [LinkedIn](https://www.linkedin.com/in/joel-francis-356539128/)
-Smith, Steve (ardalis)  | Host: [WDT](#abbreviations) Guest: [ADP 40](#adp-40)  [LinkedIn](https://www.linkedin.com/in/stevenandrewsmith/) [Twitter](https://twitter.com/ardalis)
-Spriggs, Jon            | Host: [AAP](#abbreviations) [Twitter](https://twitter.com/ticktockhouse)
-Steele, Jerry           | Host: [AAP](#abbreviations) [Twitter](https://twitter.com/ticktockhouse)
-Tolinski, Scott         | Host: [SY](#abbreviations) | [Twitter](https://twitter.com/stolinski) [Github](https://github.com/stolinski) [BitBucket](https://bitbucket.org/stolinski) [Facebook](https://www.facebook.com/LevelUpTuts) sdf
+#### Jeff Barr
+Host: [AWS](#abbreviations) [Twitter](https://twitter.com/intent/user?screen_name=jeffbarr)
+#### Wes Bos
+Host: [SY](#abbreviations)  [Twitter](https://twitter.com/wesbos)
+#### Craig Bos
+Host: [K8S](#abbreviations) [Twitter](http://twitter.com/craigbox)
+#### Larry Bushey
+Host: [GL](#going-linux)  [Twitter](https://twitter.com/goinglinux) [LinkedIn](https://www.linkedin.com/in/larrybushey/)
+#### Richard Campbell
+Host: [RAR](#abbreviations)  [Twitter](https://twitter.com/richcampbell)
+#### Jason Cannon
+[CLKF](clkf.md) [LALOS](lalos.md) [LSSP](lssp.md)
+#### Chris Chapman
+Guest: [K8S 67](#k8s-67) 
+#### Alister Christman
+Host: [AAP](#abbreviations) [Twitter](https://twitter.com/mralc)
+#### Michael Domenick
+Host: [CR](#abbreviations)  [Twitter](https://twitter.com/dominucco)
+Simon Elisha
+Host: [AWS](#abbreviations) [Twitter](https://twitter.com/intent/user?screen_name=simon_elisha)
+#### Chris Fisher
+Founder of Jupiter Broadcasting, which merged or partnered with Linux Academy ca. September 2018.
+Host: [LU](#abbreviations)  [Twitter](https://twitter.com/ChrisLAS)
+#### David Flanagan
+[JDG](jdg.md)
+#### Brian Fox
+Author: [BRM](#bash-reference-manual)
+#### Adam Glick
+Host: [K8S](#abbreviations) [Twitter](http://twitter.com/mobileglick)
+#### Brian Gracely
+Host: [PodCTL](#abbreviations) [Twitter](https://twitter.com/bgracely)
+#### Randall Hunt
+Guest: AWS [329](#aws-328)
+#### Allan Jude
+Host: [BSD](#abbreviations)  [Web](https://www.scaleengine.com/) [FaceBook](https://facebook.com/allanjude) [LinkedIn](https://www.linkedin.com/in/allanjude/)
+#### Michael Kennedy
+Host: [TP](#abbreviations) [PB](#podcasts) | [Twitter](https://twitter.com/mkennedy)
+#### David Kopec
+Author: [CSP](csp.md)
+#### Steven Lott
+Author of [FPP](#functional-python-programming)
+#### John McCabe
+[IMWS](imws.md)
+#### Philip Muler
+Guest: [LU](#abbreviations) [318](#lu-318) [Github](https://github.com/philmmanjaro)\
+#### Jeffrey Palermo
+Host: [ADP](#abbreviations) [Twitter](https://twitter.com/jeffreypalermo) [LinkedIn](https://www.linkedin.com/in/palermo/) [Website](http://jeffreypalermo.com/)
+#### Wes Payne
+Host: [TS](#abbreviations), [CR](#abbreviations)
+#### Mike Pfeiffer
+Host: [CSFM](#abbreviations)  [Web](https://mikepfeiffer.io) [Twitter](https://twitter.com/mike**pfeiffer) [Facebook](https://www.facebook.com/mikepfeifferhq/)
+#### Alan Pope
+Host: [UE](#abbreviations) | [Twitter](https://twitter.com/popey)
+#### Ellie Quigley
+[PBX](pbx.md)
+#### Luciano Ramalho
+Author of [FP](#fluent-python)
+#### Chet Ramey
+Author: [BRM](#bash-reference-manual)
+#### Benedict Reuschling
+Host: [BSD](#abbreviations) | [Twitter](https://twitter.com/bsdbcr)
+#### Joe Ressington
+Host: [LAN](#abbreviations) [UE](#abbreviations) [CL](#abbreviations) | [Web](https://joeress.com) [Twitter](https://twitter.com/JoeRessington)
+#### Arnold Robbins
+Author of **Bash Pocket Reference**, **Unix in a Nutshell**, **sed & awk**
+#### Joel (Sallow) Francis
+Guest: [PSP](#abbreviations) [Twitter](https://twitter.com/vexx32) [GitHub](https://github.com/vexx32) [LinkedIn](https://www.linkedin.com/in/joel-francis-356539128/)
+#### Steve (ardalis) Smith
+Host: [WDT](#abbreviations) Guest: [ADP 40](#adp-40)  [LinkedIn](https://www.linkedin.com/in/stevenandrewsmith/) [Twitter](https://twitter.com/ardalis)
+#### Mark Sobell
+[PGL](pgl.md)
+#### Jon Spriggs
+Host: [AAP](#abbreviations) [Twitter](https://twitter.com/ticktockhouse)
+#### Jerry Steele
+Host: [AAP](#abbreviations) [Twitter](https://twitter.com/ticktockhouse)
+#### Al Sweigart
+Author: [CCP](#cracking-codes-with-python)
+#### Scott Tolinski
+Host: [SY](#abbreviations) [Twitter](https://twitter.com/stolinski) [Github](https://github.com/stolinski) [BitBucket](https://bitbucket.org/stolinski) [Facebook](https://www.facebook.com/LevelUpTuts) sdf
 ## Notes
-### Admin Admin
+### Admin Admin Podcast
+[Web](http://www.adminadminpodcast.co.uk/) [Twitter](https://twitter.com/admadmpodcast)
+### Adventures in DevOps
+[Web](https://devchat.tv/adventures-in-devops/)
+#### AID 9
+Nell recommends starting with Digital Ocean's tutorials to learn cloud technologies.
 ### AWS Podcast
+[Web](https://aws.amazon.com/podcasts/aws-podcast/) Notes: [329](#aws-329)
 #### AWS 329
 Choosing a Database Platform\
 The historical motivation for the invention of relational databases was minimizing the cost of storage by eliminating duplication. At the turn of the century, as storage cost fell, other database paradigms emerged, producing **7 fundamental categories of data**:
@@ -118,12 +123,14 @@ The historical motivation for the invention of relational databases was minimizi
 
 The recommended approach to select a database is to determine the **access pattern** needed. Organizations should be open to encouraging innovation by using more than one database, rather than overemphasizing reducing the cost of infrastructure by insisting on using a single, monolithic database that may not be suited to every business purpose.
 ### AWS TechCHAT
+Notes: [35](#awst-35) [53](#awst-53)
 #### AWST 35
 Deep dive on databases
 #### AWST 53
 SysAdmin & Hybrid Cloud Special\
 AWS CLI and AWS Tools for PowerShell are available for AWS.
 ### Azure DevOps Podcast
+[Web](http://azuredevopspodcast.clear-measure.com/) Notes: [48](#adp-48)
 #### ADP 48
 Testing and static analysis
 Several different types of automated tests
@@ -134,7 +141,17 @@ Several different types of automated tests
 
 Test coverage metrics are a double-edged sword, because they incentivize developers to "gold-plate" their code by implementing spurious tests which pass easily.
 **Cyclomatic complexity** refers to the number of pathways through the code, measured at the method level.
+### Bash Notes for Professionals
+[Web](goalkicker.com)
+### Bash Pocket Reference
+[ Robbins, Arnold ](#arnold-robbins). **Bash Pocket Reference (2nd ed.)**.
+### Bash Reference Manual
+[ Ramey, Chet ](#chet-ramey) and [ Fox, Brian ](#brian-fox). **Bash Reference Manual**
+### BSD Now
+[Web](https://www.bsdnow.tv/) [Subreddit](https://www.reddit.com/r/bsdnow) [FaceBook](https://www.facebook.com/BSDNow/) [Twitter](https://twitter.com/bsdnow)
+### Chengdu Gaming Federation
 ### CloudSkills.fm
+[Web](https://cloudskills.fm/) Notes: [2](#csfm-2) [3](#csfm-3) [29](#csfm-29)
 #### CSFM 2
 > "Infrastructure as Code in the Cloud"
 - An alternative job title to DevOps Engineer is "Infrastructure Developer"
@@ -155,40 +172,83 @@ Test coverage metrics are a double-edged sword, because they incentivize develop
 - It makes no sense to worry about migration from one cloud provider to another before it becomes an issue: CAPEX (capital expenditure) vs. OPEX (operating expenditure). And transferring Compute is easy.
 - Although Lambda is capable, there are hard limits. For example, there is a limit on increasing concurrency of 500 per minute. So highly spiky workloads that exceed that limit make Lambda less appealing.
 - When analyzing costs, we shouldn't fall for the fallacy of thinking that minimizing the AWS bill is equivalent to reducing infrastructure costs. Some solutions that may drastically reduce monthly costs on AWS, such as Lambda, may actually require much higher costs to support from competent engineers.
+### Choose Linux
+[Web](https://chooselinux.show) [Twitter](https://twitter.com/chooselinux)
 ### Coder Radio
+[Web](https://coder.show/) [Twitter](https://twitter.com/coderradioshow) Notes: [325](#cr-325) [361](#cr-361)
 #### CR 361
-> "ZEEEE Shell!". [coder.show](https://coder.show/361): 2019/06/10.
+[Notes](https://coder.show/361): 2019/06/10.
   - Apple changing from bash to zsh for the next release of Mac OS X
   - Designing UIs in Swift
     - Functional programming
 #### CR 325
-> "Clojure Calisthenics". [coder.show](https://coder.show/325): 2018/09/07.
+[Notes](https://coder.show/325): 2018/09/07.
 - Wes Payne is a big fan of Clojure, in particular with the professionalism of the clojure community. Clojure is not as closely tied to Java as it was in its inception when it was a "JAR", but it still needs a JVM.
+### Coding Blocks
+### Cracking Codes with Python
+Author: [Al Sweigart](#al-sweigart)
 ### Destination Linux
+[Web](http://destinationlinux.com/)
+### Extras
+[Web](https://extras.show/)
+### Fluent Python
+[Author](#luciano-ramalho)
+### Functional Python Programming
+[Author](#steven-lott)
+### Going Linux
+[Host](#larry-bushey) [Web](https://goinglinux.com) [Twitter](https://twitter.com/goinglinux)
 ### Hacker Public Radio
+[Web](http://hackerpublicradio.org/) Links: [1938](#hpr-1938) [2107](#hpr-2107)
 #### HPR 1938
 > "How I prepare HPR shows". [hpr.org](hackerpublicradio.org/eps/hpr1938**full**shownotes.html)
   - `make`
 #### HPR 2107
   - Source: "Makefiles for everyday use". [hpr.org](https://hackerpublicradio.org/eps.php?id=2107)
   - `make`
+### ITPro.TV
+[Azure](itp-azure.md) [Linux+](itp-linux-plus.md) [LPIC-1](itp-lpic.md) [PowerShell](itp-ps.md) Windows Server [MCSA](itp-winsrv-mcsa.md) [MTA](itp-winsrv-mta.md) [101](itp-ws101.md)
+[Web](https://itpro.tv/)
+### JavaScript Jabber
 ### Kubernetes Podcast from Google
+[Twitter](http://twitter.com/mkubernetespod) [Email](mailto:kubernetespodcast@google.com) [Web](https://kubernetespodcast.com)
 #### K8S 67
 Orka, with Chris Chapman\
 Orka is a virtualization layer for Mac build infrastructure offered by hosting company MacStadium. iPhone architecture and security make building for that platform very different. Virtual Mac instances first became possible in Snow Leopard, but the EULA allows only 2 VMs per machine. MacStadium is an enterprise-scale cloud for Apple. A typical lifecycle for an iOS build begins with a simulator, followed by a physical test, typically in a build farm of physical iOS devices.  
 ### Late Night Linux
+[65](#lnl-65)
 #### LNL 65
   - KDE App page
   - Google Stadia
   - How can the FLOSS community take advantage of the opportunity presented by the sunsetting of Windows 7?
+### Linux Action News
+[Web](https://linuxactionnews.com/) [Twitter](https://twitter.com/linuxactionnews)
 ### Linux Journal
+[283](#lj-283)
 #### LJ 283
 - **ClusterShell**: Python tool and library to connect a set of nodes in parallel through SSH
 ### Linux Unplugged
+[315](#lu-315) [318](#lu-318) [Web](https://linuxunplugged.com/) [Twitter](https://twitter.com/LinuxUnplugged) 
+#### LU 318
+Philip Muller discussed the transition of Manjaro to a for-profit business model.\
+Chrome OS has become Linux for the masses, in particular now that support for Linux applications has improved, and it has had great success penetrating the education market.\
+CloudReady OS allows you to install Chrome OS on other hardware. It is available in free and paid commercial editions. They are essentially reselling a version of Chrome OS with their commercial support which can be installed on any x86 machine. It offers a choice of Linux distros, or even a combination of them, including Debian.\
+Chris reflects on how Chrome OS has evolved since he first tried it in 2014. It has become much more complicated and powerful since its launch, and grudgingly admits he likes it, in particular how users can login with their own unique Linux environments.
 #### LU 289
 Clear Linux
-#### LU 315
+### PodCTL
+[Web](http://podcast.podctl.com/) [Twitter](https://www.twitter.com/podctl) Notes [5](#podctl-5)
+#### PodCTL 5
+Pivotal Container Services (PKS) started as a project between Google and Pivotal originally called "Kubo" which takes the BOSH installer from Cloud Foundry Foundation and installs a Kubernetes instance. Kubernetes doesn't have an official installer, and many open-source solutions have been implemented. **Time to Success** is a metric used by developers that want to test out new products or technologies. **MiniKube** is the most commonly used Kubernetes Engine for installation on a laptop for experimentation or learning purposes. **MiniShift** is to OpenShift what MiniKube is to Kubernetes. Both of these tools provide a **single-node**, **single-master** environment. \
+**Kubeadm** is the official Kubernetes installer from the CNCF, but it is not widely used because it doesn't deploy multiple Kubernetes masters. Kubernetes has the concept of masters that provide the **control plane** and **workers** which run Kubelets. In reality, the masters are just Kubernetes worker nodes that are running only Kubernetes core services, and those are the first pods that are deployed by K8S.
+**Kargo** builds highly available containers.\
+There are two main types of container engine installers: normal ones that install locally and interactively ask what Linux host is desired, and thne another type that interfaces with an IaaS provider and demands resources from it. The tools typically defined as configuration management tools like Chef, Ansible, Puppet, Salt, and Terraform are also typically used to package containerized software and can perform orchestration. Kargo, for example, uses Terraform to build the nodes and then Ansible to do the actual installation. OpenShift's installer uses Ansible.\
+**Prometheus** has become the go-to open-source monitoring and alerting tool. Other tools include the **ELK stack**, the **EFK stack**, and **Loggly**.
+### RunAs Radio
+[Web](http://www.runasradio.com/) [Twitter](https://twitter.com/RunAsRadio)
+### Syntax
+[Web](https://syntax.fm/) [Twitter](https://twitter.com/syntaxfm)
 ### Talk Python
+[Web](https://talkpython.fm) [Twitter](https://twitter.com/TalkPython) Notes: [213](#tp-213) [216](#tp-216) [224](#tp-224)
 #### TP 213
 > "WebAssembly and CPython".
 - Web Assembly is gaining steam in the developer community, and several Web Assembly projects are in train. Pyodide is the SciPy stack into web assembly. The interpreter is on the order of 40MB, which is still too large for convenient use on the web. Compiling to CPython may not be the correct answer in the future as technology evolves. A straight Python to web-assembly compilation target would have some difficulties, but it is possible. If you turn Web Assembly as a general interpreter layer, various possibilities open up.
@@ -197,3 +257,7 @@ Clear Linux
 #### TP 224
 > "12 lessons from 100 days of code".
 - Netlify will watch changes to a GitHub repo as a continuous delivery platform for static sites.
+### TechSNAP
+[Web](https://techsnap.systems) [Twitter](https://twitter.com/techsnapsystems)
+### User Error
+[Web](https://error.show/) [Twitter](https://twitter.com/usererrorshow)

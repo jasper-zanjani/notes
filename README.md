@@ -30,6 +30,36 @@ On login, Tower presents a dashboard that depicts success and failure of Ansible
 **AWX** is the open-source project upon which Ansible Tower was built.
 ### Puppet
 ### Chef
+## BitTorrent
+Bram Cohen invented BitTorrent protocol in 2001 and wrote the first client in Python. It is a peer-to-peer file sharing protocol where those who share a file are called **seeders** and those who download are called **peers**. All seeders and peers related to a particular torrent comprise the **swarm**. The **tracker server** or **tracker** serves as a repository for information about peers associated with the same file. Files are downloaded in hashed pieces from multiple seeders to distribute the burden of seeding a file.\
+A **Torrent Descriptor** file is a hashmap file
+Torrent Descriptor property | Description
+:---                        | :---
+Announce                    | URL of the tracker
+Info                        | dictionary whose keys depend on whether one or more files are being shared, including:<br/>Files: list of dictionaries, only exists when multiple files are being shared, each dictionary has two keys and corresponds to a file<br/>Length: size of the file in bytes<br/>Path: list of strings corresponding to subdirectory names, the last of which is the actual filename
+length                      | size of the file in bytes (when one file is being shared
+name                        | suggested file or directory name
+Pieces length               | number of bytes per piece; must be a power of 2 and at least 16KiB
+Pieces                      | list of SHA-1 160-bit hashes calculated on various parts of data
+
+```json
+{
+  "Announce": "url of tracker",
+  "Info": {
+  "Files": [{ 
+    "Length": 16, 
+    "path": "/folder/to/path" }, 
+    { "length": 193, 
+    "path": "/another/folder" }] 
+  },
+  "length": 192, 
+  "name":" Ubuntu.iso", 
+  "Pieces length": 262144, 
+  "Pieces": [AAF4C61DDCC5E8A2DABEDE0F3B482CD9AEA9434D, CFEA2496442C091FDDD1BA215D62A69EC34E94D0]
+}
+```
+
+[[6](#sources)]
 ## Blockchain
 Blockchain is a database technology that uses hashes to ensure reliability and security of data stored across a network of computers, popularized by BitCoin. Records, containing information, are validated and then added to **Blocks**, or hashed containers, which are then concatenated in a **chain** by associating each block with the hash of both of its neighbors. [[3](#sources)]
 ## Bootloaders
@@ -125,3 +155,4 @@ Hypervisor, similar to Hyper-V, but provided at a cost, with a robust command-li
   5. "How to become a DevOps engineer in six months or less". [medium.com](https://medium.com/@devfire/how-to-become-a-devops-engineer-in-six-months-or-less-366097df7737)
   6. "VMware PowerCLI 101". [BrianBunke.com](https://www.brianbunke.com/blog/2019/09/03/powercli-101/): 2019/09/03.
   7. "Ansible Tower vs. Ansible AWX". [4sysops](https://4sysops.com/archives/ansible-tower-vs-ansible-awx-for-automation/): 2019/08/13.
+  8. "How Does BitTorrent Work? a Plain English Guide". [dev.to](https://app.getpocket.com/read/2717933967)
