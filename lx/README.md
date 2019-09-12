@@ -3843,7 +3843,7 @@ $HOME/xorg.conf                   | user config which overrides system defaults
 /etc/postfix/main.cf              | [postfix](#postfix)
 /etc/rc.d/rc.sysinit              | first script run by init
 /etc/resolv.conf                  | nameserver definitions (maximum of 6 domains with total of 256 characters)
-/etc/samba/smb.conf               | Samba configuration fileA
+[/etc/samba/smb.conf](#etcsambasmbconf)| Samba configuration file
 /etc/selinux/config               | [SELinux](#selinux)
 /etc/services                     | used to resolve port numbers
 /etc/skel/                        | default configs for new users
@@ -3892,6 +3892,32 @@ DISTRIB_RELEASE=14.04
 DISTRIB_CODENAME=trusty
 DISTRIB_DESCRIPTION="Ubuntu 14.04.6 LTS"
 ```
+### /etc/samba/smb.conf
+```conf
+[samba-share]
+comment = Samba on Ubuntu
+path = /samba
+read only = no
+browsable = yes
+```
+[[40](#sources)]
+#### Configure anonymous unsecured file sharing on a shared directory
+```conf
+[global]
+workgroup = WORKGROUP
+netbios name = rhel
+security = user
+...
+[Anonymous]
+comment = Anonymous File Server Share
+path = /srv/samba/anonymous
+browsable =yes
+writable = yes
+guest ok = yes
+read only = no
+force user = nobody
+```
+[[41](#sources)]
 ### /etc/sysconfig/desktop
 Specify desktop environment and display manager on Red Hat.
 ```conf
@@ -3920,29 +3946,72 @@ UseSTARTTLS=YES
 exclude=kernel* php*
 ```
 ## Tasks
-#### Install and configure Samba
+### Samba
+#### Install and configure Samba server
 Install `samba`
 ```sh
 sudo apt install samba
 ```
-Verify the samba service `nmbd`
+Verify the samba service `smbd` is running
 ```sh
-sudo systemctl status nmbd
+sudo systemctl status smbd
 ```
+#### Configure Samba 
+```sh
+sudo mkdir /samba                   # Create a directory for the share
+sudo chmod -R 0777 /samba
+sudo chown -R nobody:nobody /samba  # Remove ownership
+```
+Open firewall rule
+```sh
+sudo firewall-cmd --permanent --add-service=samba
+sudo firewall-cmd --reload
+```
+Configure Samba config file at [/etc/samba/smb.conf](#etcsambasmbconf)
+```conf
+[samba-share]
+comment = Samba on Ubuntu
+path = /samba
+read only = no
+browsable = yes
+```
+Set up a Samba account for {user} 
+```sh
+sudo smbpasswd -a user
+```
+Restart Samba service
+```sh
+sudo systemctl restart smbd.service
+```
+[[40](#sources), [41](#sources)]
+#### Install and configure Samba as a client
+```sh
+sudo apt install smbclient 
+```
+Access samba share at {$shareName} at server {$ipAddress} using user credential {$user}
+```sh
+sudo smbclient //$ipAddress/$shareName -U $user
+```
+This will display the Samba CLI
+```
+smb: \>
+```
+[[40](#sources)]
+### Bash scripting
 #### Validating arguments
-```
+```sh 
 if [ $# != 2 ]
 then 
   echo "..."
   exit 1
 fi
 ```
-[[PGL](../sources/README.md): 548]
-```
+[[PGL](../sources/pgl.md): 548]
+```sh
 [ -z "$1" ] && echo "..." && exit 1
 ```
 [[7](#sources)]
-```
+```sh
 if [ ! -z "$2" ] ; then ...; fi
 ```
 [[8](#sources)]
@@ -4123,3 +4192,4 @@ ZynAddSubFX                     | LMMS plugin, used with synthesizers [[1](#sour
   38. "Three ways to exclude specific packages from [`yum`](#yum) update". [2daygeek.com](https://www.2daygeek.com/redhat-centos-yum-update-exclude-specific-packages/): 2019/08/28.
   39. "How to install and use [`sosreport`](#sosreport) on Ubuntu". [howtoforge.com](https://www.howtoforge.com/how-to-install-and-use-sosreport-on-ubuntu-1804/).
   40. "How to Install and Configure Samba on Ubuntu". [vitux.com](https://vitux.com/how-to-install-and-configure-samba-on-ubuntu/).
+  41. "Install Samba4 on RHEL 8 for File Sharing on Windows". [Web](https://www.tecmint.com/install-samba-on-rhel-8-for-file-sharing-on-windows/): 2019/06/12.
