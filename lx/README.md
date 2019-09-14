@@ -106,6 +106,13 @@ Syntax                                              | Effect
 ### bzmore
 Page through bz2 files
 ### bzip2
+#### bzip2 options
+Option  | POSIX option            | Effect
+:---    | :---                    | :---
+c       | stdout                  | compress or decompress to standard output
+d       | decompress              | force decompression
+z       | compress                | force compression
+f       | force                   | force overwrite of output files
 #### Display contents of {archive} to stdout
 ```sh
 bzip2 -c archive
@@ -149,6 +156,15 @@ dar -x full.bak
 ```
 ### gzip
 Zip a single file in-place; each file is replaced by one with the extension `.gz` or `.z`, maintaining ownership modes, access and modification times
+#### gzip options
+Option  | POSIX option            | Effect
+:---    | :---                    | :---
+1       | fast                    
+9       | best      
+c       | stdout, to-stdout       | output will go to STDOUT, leaving files intact
+d       | decompress, uncompress 
+f       | force                   | overwrite preexisting files
+S       | suffix                  | change default suffix (.gz)
 #### Compress {file} at compression ratio {#}, ranging from 1 to 9 (6 by default)
 ```sh
 gzip -#
