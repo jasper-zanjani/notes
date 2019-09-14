@@ -8,9 +8,6 @@
 4. **Fill** markdown with syntax, producing a true reference of the source's syntax
 5. **Map** each form-based feature (e.g. commands) to tasks in a spreadsheet (Command | Task). Once organized by command, the resulting associations can form another table of content which associates form features to tasks. These should be placed in another single-cell cloud where each token is followed by links to the tasks in which it appears. The tokens should be organized, either by command group or roughly by domain.
 6. **Index** form-based features at the top of the markdown as a concordance.
-## Automation
-### Puppet
-### Chef
 ## BitTorrent
 Bram Cohen invented BitTorrent protocol in 2001 and wrote the first client in Python. It is a peer-to-peer file sharing protocol where those who share a file are called **seeders** and those who download are called **peers**. All seeders and peers related to a particular torrent comprise the **swarm**. The **tracker server** or **tracker** serves as a repository for information about peers associated with the same file. Files are downloaded in hashed pieces from multiple seeders to distribute the burden of seeding a file. [[6](#sources)]\
 A **Torrent Descriptor** file is a hashmap file
@@ -90,6 +87,7 @@ bot = TwitchBot.new
 bot.write_to_chat "Hello world"
 ```
 ## DevOps
+The term "DevOps" began to gain currency in 2009-2010, before the emergence of containers. Features like self-healing, scalability, resource monitoring, automatic DNS management, etc have since become built-in to Kubernetes. [[7](#sources)]
 > DevOps is a way to deliver software with shared pain and responsibility.
 
 Traditionally, developers had incentives that were not aligned with those of operations who were to use the software. DevOps attempts to fuse development and operations, with the goal of aligning development with revenue generation.\
@@ -135,3 +133,4 @@ Hypervisor, similar to Hyper-V, but provided at a cost, with a robust command-li
   4. "How to become a DevOps engineer in six months or less". [Web](https://medium.com/@devfire/how-to-become-a-devops-engineer-in-six-months-or-less-366097df7737)
   5. "VMware PowerCLI 101". [Web](https://www.brianbunke.com/blog/2019/09/03/powercli-101/): 2019/09/03.
   6. "How Does BitTorrent Work? a Plain English Guide". [Web](https://app.getpocket.com/read/2717933967)
+  7. "Storage in a DevOps World". [GitHub](sources/README.md/#new-stack-makers)

@@ -2,7 +2,7 @@
 ## Abbreviations
 \#      | Links
 :---    | :---
-A-Z     | [AAP](#admin-admin-podcast) [ADAC](adac.md) [AZ-103](az-103.md) [ADP](#azure-devops-podcast) [AID](#adventures-in-devops) [AWST](#aws-techchat) [BNP](#bash-notes-for-professionals) [BPR](#bash-pocket-reference) [BRM](#bash-reference-manual) [BSD](#bsd-now) [CB](#coding-blocks) [CCP](ccp.md) [CGF](#chengdu-gaming-federation) [CLKF](clkf.md) [CL](#choose-linux) [CR](#coder-radio) [CSFM](#cloudskillsfm) [CSP](csp.md) [Extras](#extras) [FP](#fluent-python) [FPLC](fplc.md) [FPP](#functional-python-programming) [GL](#going-linux) [HPR](#hacker-public-radio) [IMWS](imws.md) [ITP](#itprotv) [JDG](jdg.md) [JNP](jnp.md) [JSJ](#javascript-jabber) [K8S](#kubernetes-podcast-from-google) [LALOS](lalos.md) [LAN](#linux-action-news) [LJ](#linux-journal) [LNL](#late-night-linux) [LSSP](lssp.md) [LU](#linux-unplugged) [PodCTL](#podctl) [PBX](pbx.md) [PGL](pgl.md) [RAR](#runas-radio) [s&a](s-and-a.md) [SY](#syntax) [TP](#talk-python) [TS](#techsnap) [UE](#user-error) [USLAH](ulsah.md) [WSAC](wsac.md) [WSAF](wsaf.md) [YUG](yug.md)
+A-Z     | [AAP](#admin-admin-podcast) [ADAC](adac.md) [AZ-103](az-103.md) [ADP](#azure-devops-podcast) [AID](#adventures-in-devops) [AWST](#aws-techchat) [BNP](#bash-notes-for-professionals) [BPR](#bash-pocket-reference) [BRM](#bash-reference-manual) [BSD](#bsd-now) [CB](#coding-blocks) [CCP](ccp.md) [CGF](#chengdu-gaming-federation) [CLKF](clkf.md) [CL](#choose-linux) [CR](#coder-radio) [CSFM](#cloudskillsfm) [CSP](csp.md) [Extras](#extras) [FP](#fluent-python) [FPLC](fplc.md) [FPP](#functional-python-programming) [GL](#going-linux) [GCPC](#google-cloud-platform-cookbook) [HPR](#hacker-public-radio) [IMWS](imws.md) [ITP](#itprotv) [JDG](jdg.md) [JNP](jnp.md) [JSJ](#javascript-jabber) [K8S](#kubernetes-podcast-from-google) [LALOS](lalos.md) [LAN](#linux-action-news) [LJ](#linux-journal) [LNL](#late-night-linux) [LSSP](lssp.md) [LU](#linux-unplugged) [NSM](#new-stack-makers) [PodCTL](#podctl) [PBX](pbx.md) [PGL](pgl.md) [RAR](#runas-radio) [s&a](s-and-a.md) [SY](#syntax) [TP](#talk-python) [TS](#techsnap) [UE](#user-error) [USLAH](ulsah.md) [WSAC](wsac.md) [WSAF](wsaf.md) [YUG](yug.md)
 
 ## People
 #### Jeff Barr
@@ -181,6 +181,50 @@ Test coverage metrics are a double-edged sword, because they incentivize develop
 [Author](#steven-lott)
 ### Going Linux
 [Host](#larry-bushey) [Web](https://goinglinux.com) [Twitter](https://twitter.com/goinglinux)
+### Google Cloud Platform Cookbook
+GCP offers 4 options for hosting a web application:
+  1. Google Compute Engine (GCE)
+  2. App Engine
+  3. Kubernetes Engine
+  4. Functions
+#### Host a Node.js app on GCE
+Clone a repo
+```sh
+git clone https://github.com/legorie/gcpcookbook.git
+```
+Create file named **.env** within the directory **gcpcookbook/Chapter01/mysite**
+```ini
+COOKIE_SECRET=d44d5c45e7f8149aabc068244
+MONGO_URI=mongodb://localhost/mysite
+```
+Install packages required by **package.json**
+```sh
+npm install
+```
+Making sure the MongoDB server is running, Run the application
+```sh
+node keystone.js
+``` 
+#### Deploy an application to Google Source Repositories
+#### Host a Node.js app on Google App Engine
+Verify that the default project is set properly
+```sh
+gcloud config list
+```
+#### Host a static application on Google Cloud storage
+#### Image resizing using Google Cloud Storage and Cloud Functions
+#### Migrating a MariaDB to Cloud Spanner
+#### Loading temperature data to Cloud Bigtable and BigQuerying it
+#### Storage metadata in Google Cloud Datastore
+#### VPC network peering between two networks
+#### VPN connection between two networks
+#### CDN setup for a static website
+#### Scan for vulnerabilities using Cloud Security Scanner
+#### Secure financial data using Cloud KMS
+#### Using the Data Loss Prevention API
+#### Create IAM custom roles
+#### Create service accounts
+
 ### Hacker Public Radio
 [Web](http://hackerpublicradio.org/) Links: [1938](#hpr-1938) [2107](#hpr-2107)
 #### HPR 1938
@@ -255,6 +299,12 @@ CloudReady OS allows you to install Chrome OS on other hardware. It is available
 Chris reflects on how Chrome OS has evolved since he first tried it in 2014. It has become much more complicated and powerful since its launch, and grudgingly admits he likes it, in particular how users can login with their own unique Linux environments.
 #### LU 289
 Clear Linux
+### New Stack Makers
+[Storage in a DevOps World](#storage-in-a-devops-world)
+#### Storage in a DevOps World
+[Web](https://thenewstack.io/storage-in-a-devops-world/)\
+The term "DevOps" began to gain currency in 2009-2010, before the emergence of containers. Features like self-healing, scalability, resource monitoring, automatic DNS management, etc have since become built-in to Kubernetes.
+
 ### PodCTL
 [Web](http://podcast.podctl.com/) [Twitter](https://www.twitter.com/podctl) Notes [5](#podctl-5)
 #### PodCTL 5
