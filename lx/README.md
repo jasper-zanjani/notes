@@ -3664,6 +3664,16 @@ userdel-r  user
 ```
 ### usermod
 Modify user account files
+#### usermod options
+Option  | POSIX option            | Effect
+:---    | :---                    | :---
+a       | append                  | add user to supplementary group(s), only used with `-G`
+G       | groups                  | specify a list of groups to which the user will be added
+l       | login                   | change user's name or "login"
+L       | lock                    | lock a user's password
+u       | uid                     | change UID
+U       | unlock                  | unlock account
+
 #### Lock account of {user}
 ```sh
 usermod -L user
