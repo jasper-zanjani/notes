@@ -1864,6 +1864,7 @@ r       | remove                  | remove {$PACKAGE}, keeping configuration fil
 s       | status                  | display package status
 S       | search                  | list package name responsible for a specific file being installed on the system
 C       | audit                   | check for broken packages
+\-      | get-selections          | display list of package selections
 ### dpkg-reconfigure
 Run a package's configuration script after it has already been installed.
 #### Change the time zone on a Debian based system using package-based tools
