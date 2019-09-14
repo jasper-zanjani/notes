@@ -3553,7 +3553,7 @@ tput cols
 tput lines
 ```
 ### tracepath
-Successor to `traceroute, blocked by many ISPs because it is a newer tool
+Successor to `traceroute`, blocked by many ISPs because it is a newer tool
 ### traceroute
 Follow the path a packet takes between two hosts
 #### Choose the interface to be used for the path trace
@@ -3614,13 +3614,27 @@ Make changes take effect for a GRUB2 configuration change
 Create links within /etc/rc.d/ for starting and stopping services
 ### useradd
 Create a new user
-#### View defaults for new users
-```sh
-useradd -D
-```
+#### useradd options
+Option  | POSIX option            | Effect
+:---    | :---                    | :---
+b       | base-dir                | default base directory for the system if `HOME_DIR` is not specified (sets `HOME` variable in [/etc/default/useradd](#etcdefaultuseradd)
+c       | comment                 | typically user's full name
+d       | home-dir                | specify user's login directory: default is to append the `LOGIN` name to `BASE_DIR`
+D       | defaults                | 
+e       | expire-date             | specify date on which the user account will be disabled (in format `YYYY-MM-DD`) (sets `EXPIRE` variable in [/etc/default/useradd](#etcdefaultuseradd))
+k       | skel                    | specify skeleton directory (defaulting to definition of `SKEL` variable in [/etc/default/useradd](#etcdefaultuseradd), failing to /etc/skel)
+m       | create-home             | create user's home directory if it does not exist, copying contents of skeleton directory
+r       | system                  | create a system account
+s       | shell                   | specify user's login shell (defaulting to definition of `SHELL` variable in [/etc/default/useradd](#etcdefaultuseradd), failing to an empty string)
+u       | uid                     | specify UID
+
 #### Add {user}
 ```sh
 useradd user
+```
+#### View defaults for new users
+```sh
+useradd -D
 ```
 #### Add {user}, noting her full {name}
 ```sh
@@ -3636,11 +3650,11 @@ useradd user -e date
 ```
 #### Create new {user} leaving a {comment} field (conventionally noting the full name of the user) and creating a home directory
 ```sh
-useradd-c comment -m user
+useradd -c comment -m user
 ```
 #### Create a system user rather than a normal user
 ```sh
-useradd-r
+useradd -r
 ```
 ### userdel
 Delete an existing user account;
@@ -3832,7 +3846,7 @@ $HOME/xorg.conf                   | user config which overrides system defaults
 /etc/apt/sources.list.d/          | directory containing additional repository definitions
 [/etc/cmd.allow](#xinetd-configuration-files)                    | [xinetd](#xinetd)
 [/etc/cmd.deny](#xinetd-configuration-files)                     | [xinetd](#xinetd)
-/etc/default/useradd              | [useradd](#useradd)
+[/etc/default/useradd](#etcdefaultuseradd) | [useradd](#useradd)
 /etc/files.dns                    | NIS+ servers for Solaris servers
 /etc/fstab                        | filesystems to be mounted by the system at boot
 /etc/gdm/custom.conf              | GNOME config
@@ -3889,6 +3903,10 @@ $HOME/xorg.conf                   | user config which overrides system defaults
 /sys/class/net/eth0/address       | MAC address of eth0
 /usr/share/config/kdm/kdmrc       | KDM config
 /usr/share/lightdm/lightdm.conf.d/ | [lightdm](#lightdm) configs, all of whose filenames follow the pattern **50-\*.conf**
+
+### /etc/default/useradd
+Default values for account creation. Properties: `EXPIRE`, `GROUP`, `HOME`, `INACTIVE`, `SHELL`, `SKEL`
+
 ### /etc/apt/sources.list
 Repos used in [`apt`](#apt) package manager are listed in files with the URL preceded by `deb` (`deb-src` used to be used).
 ```cfg
