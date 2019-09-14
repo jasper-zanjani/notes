@@ -3,17 +3,17 @@
 \#  | Title | Links
 :---| :---  | :---
 1   | Introduction to GCP             | 
-1A  | Introduction to cloud computing | 
-1B  | Introducing GCP
+1A  | Introduction to cloud computing | [PacktPub](https://subscription.packtpub.com/book/virtualization_and_cloud/9781788624350/1/ch01lvl1sec10/introduction-to-cloud-computing)
+1B  | Introducing GCP | [PacktPub](https://subscription.packtpub.com/book/virtualization_and_cloud/9781788624350/1/ch01lvl1sec11/introducing-gcp)
 1C  | Data centers and regions
-1D  | Relating AWS and Azure to GCP
-1E  | Using the command line
+1D  | Relating AWS and Azure to GCP | [PacktPub](https://subscription.packtpub.com/book/virtualization_and_cloud/9781788624350/1/ch01lvl1sec13/relating-aws-and-azure-to-gcp)
+1E  | Using the command line  | [PacktPub](https://subscription.packtpub.com/book/virtualization_and_cloud/9781788624350/1/ch01lvl1sec14/using-the-command-line)
 2   | GCP Compute
-2A  | Google Compute Engine
-2B  | Creating a VM instance
-2C  | Preemptible VM instances
-2D  | Live migration
-2E  | Google App Engine
+2A  | Google Compute Engine | [PacktPub](https://subscription.packtpub.com/book/virtualization_and_cloud/9781788624350/2/ch02lvl1sec16/google-compute-engine)
+2B  | Creating a VM instance | Single VM through GCP Console<br/>[PacktPub](https://subscription.packtpub.com/book/virtualization_and_cloud/9781788624350/2/ch02lvl1sec17/creating-a-vm-instance)
+2C  | Preemptible VM instances | **Preemptible instances** are created at a lower price than a regular instance, with the caveat being that GCE can terminate them if resources are needed for other tasks, or after 24 hours. To make a VM preemptible, simple set the **Preemptibility** option in **Availability policy** to **On**.<br/>[PacktPub](https://subscription.packtpub.com/book/virtualization_and_cloud/9781788624350/2/ch02lvl1sec18/preemptible-vm-instances)
+2D  | Live migration | **Live migration** refers to when a VM is moved to another host without interruption during a host system event (updates). Instances with GPUs cannot be live migrated.<br/>[PacktPub](https://subscription.packtpub.com/book/virtualization_and_cloud/9781788624350/2/ch02lvl1sec19/live-migration)
+2E  | Google App Engine | App Engine offers two environments: **standard** and **flexible**. All infrastructure required to run an App Engine instance is located in **one** region and is redundantly available across **all zones** within it. Once set, the app's region cannot be changed.<br/>[PacktPub](https://subscription.packtpub.com/book/virtualization_and_cloud/9781788624350/2/ch02lvl1sec20/google-app-engine)
 2F  | Kubernetes engine
 2G  | Node pools
 2H  | Google Cloud Functions 
@@ -59,11 +59,12 @@
 8D  | Setting up a budget
 9   | GCP Tools
 9A  | Deployment Manager
-9B  | GCP Marketplace
+9B  | GCP Marketplace | [PacktPub](https://subscription.packtpub.com/book/virtualization_and_cloud/9781788624350/9/ch09lvl1sec66/gcp-marketplace)
 9C  | GCP Cloud SDK | [Notes](#gcp-cloud-sdk) [PacktPub](https://subscription.packtpub.com/book/virtualization_and_cloud/9781788624350/9/ch09lvl1sec67/gcp-cloud-sdk)
-9D  | Cloud API
-9E  | Cloud shell
+9D  | Cloud API | [PacktPub](https://subscription.packtpub.com/book/virtualization_and_cloud/9781788624350/9/ch09lvl1sec68/cloud-api)
+9E  | Cloud shell | [PacktPub](https://subscription.packtpub.com/book/virtualization_and_cloud/9781788624350/9/ch09lvl1sec69/cloud-shell)
 
+#### Preemptible VM instances
 #### GCP Cloud SDK
 Cloud SDK is made up of **components**, installable packages that contain dependencies for tools. When you install Cloud SDK, the `gcloud`, `bq` (BigQuery), `gsutil` (GCP Storage), and `core` components are installed by default.\
 Using `gcloud` you can manage configurations. The configuration set by `gcloud init` becomes the `default`, but additional configurations can be created and saved under names, and you can browse them and switch between them.
