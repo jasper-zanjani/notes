@@ -349,7 +349,6 @@ dig example.com NS
 ```
 dig example.com MX
 ```
-### dpkg
 ### exif
 #### View image metadata
 Unlike alternatives like `file` and ImageMagick's `identify`, `exif` produces columnar output [[31](#sources)]
@@ -1840,12 +1839,23 @@ dmesg --reltime
 ```sh
 doveadm pw
 ```
-#### Display information about {package}
-```sh
-dpkg -I package
-dpkg --info package
-```
+### dpkg
+Manage local Debian packages
+#### dpkg options
+Option  | POSIX option            | Effect
+:---    | :---                    | :---
+I       | info                    | show information about {$PACKAGE}
+i       | install                 | install {$PACKAGE}
+l       | list                    | list packages currently installed
+L       | listfiles               | list packages that were installed as dependencies of another package
+p       | print-avail             | show details about {$PACKAGE}
+P       | purge                   | remove {$PACKAGE}, including configuration files
+r       | remove                  | remove {$PACKAGE}, keeping configuration files
+s       | status                  | display package status
+S       | search                  | list package name responsible for a specific file being installed on the system
+C       | audit                   | check for broken packages
 ### dpkg-reconfigure
+Run a package's configuration script after it has already been installed.
 #### Change the time zone on a Debian based system using package-based tools
 ```sh
 dpkg-reconfigure tzdata
