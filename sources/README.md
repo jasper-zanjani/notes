@@ -197,6 +197,7 @@ Test coverage metrics are a double-edged sword, because they incentivize develop
 [Twitter](http://twitter.com/mkubernetespod) [Email](mailto:kubernetespodcast@google.com) [Web](https://kubernetespodcast.com)
 #### K8S 70
 Windows Server Containers, with Patrick Lang\
+[Web](https://kubernetespodcast.com/episode/070-windows-server-containers/)\
 ##### What is a Windows container, and how is it different from a Linux container?\
 Windows server containers, like Linux containers, package dependencies. Windows offers two base images: **Windows Server Core** and **Nano Server**. 
 ##### Windows applications can run on Windows using Wine, and Linux applications can run on Windows using WSL. How are Windows and Linux applications different?\
