@@ -1547,6 +1547,16 @@ apt update
 apt upgrade
 ```
 ### apt-cache
+Display package information regarding package cache
+#### apt-cache commands
+Command   | Description
+:---      | :---
+search    | display all packages with the search term listed in the package name or description
+showpkg   | display information about a package
+stats     | display statistics about the package cache
+showsrc   | display information about a source package
+depends   | display a package's dependencies
+rdepends  | display a package's reverse dependencies, i.e. what packages for which this package is a dependency
 #### Display basic information about each available package and its dependencies 
 ```sh
 apt-cache dump
