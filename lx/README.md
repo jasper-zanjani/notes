@@ -460,6 +460,13 @@ fusermount -u mountpoint
 ```
 ### gpg
 PGP was bought by Semantec, and GNU has since released GPG, an open-source replacement.[35](#sources)
+#### gpg options
+Option  | POSIX option                | Effect
+:---    | :---                        | :---
+\-      | clearsign, clear-sign       | make a cleartext signature, readable without any special software
+\-      | send-keys                   | send keys to a keyserver
+d       | decrypt                     | decrypt {$FILE}
+k       | list-keys, list-public-keys | list available GPG keys
 #### Decrypt file
 ```sh
 gpg file.txt
@@ -480,6 +487,7 @@ gpg --list-key
 ```sh
 gpg --encrypt -r jdoe@dplaptop.lab.itpro.tv ./file.txt
 ```
+
 ### grep
 #### grep options
 Option  | POSIX option            | Effect
@@ -3962,6 +3970,10 @@ deb http://us-central1.gce.archive.ubuntu.com/ubuntu/ bionic-updates universe
 ```cfg
 deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.2 multiverse 
 ```
+#### gcloud
+```cfg
+deb [signed-by=/usr/share/keyrings/cloud.google.gpg] http://packages.cloud.google.com/apt cloud-sdk main
+```
 ### /etc/lsb-release
 ```conf
 DISTRIB_ID=Ubuntu
@@ -4147,7 +4159,7 @@ exa                             | open-source replacement for `ls`, with additio
 ext4                            | filesystem adopted by Linux in 2008; developed by Theodore Ts'o
 feh                             | X11 image viewer 
 Fedora                          | Linux distribution available in 3 flavors: Server, Workstation, and Cloud; Default desktop environment: GNOME; Default user interface: GNOME Shell; Package management system: RPM 
-Fedora CoreOS Config (.fcc)     | YAML file that specifies the desired configuration of a CoreOS machine. It is converted to an **Ignition config** file using the **Fedore CoreOS Config Transpiler**  [[5](#sources)
+Fedora CoreOS Config (.fcc)     | YAML file that specifies the desired configuration of a CoreOS machine. It is converted to an **Ignition config** file using the **Fedore CoreOS Config Transpiler**  [[5](#sources)]
 Fedora CoreOS Config Transpiler (FCCT) | utility used to generate an **Ignition config** file from a **Fedora CoreOS Config** file [[5](#sources), [6](#sources)]
 Funtoo Linux                    | Linux distribution also made by Daniel Robbins | 
 hexchat                         | open-source IRC client typically preinstalled with Linux distros | DL: 112
@@ -4178,7 +4190,7 @@ Minix                           | POSIX-compliant Unix-like OS based on a microk
 Mixxx                           | DJ software, including BPM, key detection, sync, effects  [[1](#sources)]
 MPlayer                         | multimedia player with support for streaming online radio  [[3](#sources)]
 MuseScore                       | arrange a musical score  [[1](#sources)]
-Matrix                          | open standard for messaging; integrates with and bridges to IRC and other protocols, potentially consolidating the fractured landscape of messaging on Linux [[DL](../sources/README.md#destination-linux): 110
+Matrix                          | open standard for messaging; integrates with and bridges to IRC and other protocols, potentially consolidating the fractured landscape of messaging on Linux [[DL](../sources/README.md#destination-linux): 110]
 MyPy                            | most common Python static type checker
 Nautilus                        | file manager used by default in GNOME
 Nemo                            | file manager used by default in Budgie
