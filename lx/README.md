@@ -208,6 +208,18 @@ rsync -a
 rsync -b
 ```
 ### tar
+#### tar options
+Option  | POSIX option            | Effect
+:---    | :---                    | :---
+c       | create                  | create a new archive
+f       | file                    | use file or device
+j       | bzip2                   | filter the archive through [`bzip2`](#bzip2
+p       | preserve-permissions    | extract information about file perfmissions
+r       | append                  | append files to the end of an archive
+t       | list                    | list the contents of an archive
+x       | extract, get            | extract files from an archive
+z       | gzip                    | filter the archive through [`gzip`](#gzip)
+
 #### Change directory `dir` before adding `files` to the tar archive, using relative pathnames; makes it possible to archive files that don't share a common ancestor directory
 ```sh
 tar -C path files tar --directory=path files
