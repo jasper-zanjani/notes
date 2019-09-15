@@ -14,7 +14,7 @@ Topic                           | Contents
 ### Contents
 Commands sorted alphabetically
 :---
-**A** [adduser](#adduser) [alsamixer](#alsamixer) [apropos](#apropos) [apt](#apt) [apt-cache](#apt-cache) [at](#at) [ausearch](#ausearch) [awk](#awk) 
+**A** [adduser](#adduser) [alsamixer](#alsamixer) [apropos](#apropos) [apt](#apt) [apt-cache](#apt-cache) [apt-key](#apt-key) [at](#at) [ausearch](#ausearch) [awk](#awk) 
 **B** [bash](#bash) [blkid](#blkid) [bpftrace](#bpftrace) [bzcat](#bzcat) [bzip2](#bzip2) [bzless](#bzless) [bzmore](#bzmore) 
 **C** [cancel](#cancel) [cat](#cat) [chage](#chage) [chcon](#chcon) [chgrp](#chgrp) [chkconfig](#sysvinit) [chmod](#chmod) [chown](#chown) [chpass](#chpass) [chsh](#chsh) [column](#column) [compress](#compress) [cp](#cp) [crontab](#crontab) [crossystem](#crossystem) [cryptsetup](#cryptsetup) [curl](#curl) [cut](#cut) 
 **D** [dar](#dar) [date](#date) [dbus](#dbus) [dd](#dd) [declare](#declare) [df](#df) [dhclient](#dhclient) [diff](#diff) [dig](#dig) [dirname](#dirname) [dm-crypt](#dm-crypt) [dmesg](#dmesg) [doveadm](#doveadm) [dpkg](#dpkg) [dpkg-reconfigure](#dpkg-reconfigure) [du](#du) [dumpe2fs](#dumpe2fs) 
@@ -1580,6 +1580,12 @@ rdepends  | display a package's reverse dependencies, i.e. what packages for whi
 #### Display basic information about each available package and its dependencies 
 ```sh
 apt-cache dump
+```
+### apt-key
+#### Add a public GPG key to keyring
+Google Cloud SDK
+```sh
+curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
 ```
 ### at
 #### List scheduled jobs
