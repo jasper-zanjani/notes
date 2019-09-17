@@ -39,9 +39,16 @@ You aren't gonna need it (YAGNI)        |
   - **K-Way Merge**: given K sorted arrays, use a Heap to efficiently traverse all the elements of all arrays.
   - **Topological sort**: find a linear ordering of elements that have dependencies on each other. Use a HashMap to store the graph in adjacency lists.
 
+## Architecture styles
+  - **N-tier**: application is divided into **tiers** or layers, each of which can only call into tiers below it. [[3](#sources)]
+  - **Web-Queue-Worker**: application has a web frontend that handles HTTP requests and backend worker that performs CPU-intensive tasks or long-running operations. "Queue" refers to the asynchronous message queue through which the frontend and backend communicate. [[3](#sources)]
+  - **Microservices**: application is composed of many small, independent services. [[3](#sources)]
+  - **Event-driven**: architecture that uses a **publish-subscribe (pub-sub)** model where producers publish events and consumers subscribe to them. [[3](#sources)]
+
 #### In-place reversal of linked list
 Without using extra memory, reverse the links betwen a set of nodes of a linked list.
 
 ## Sources
-  - [redhat.com](https://www.redhat.com/en/resources/cloud-native-container-design-whitepaper?sc_cid=70160000001273HAAQ)
-  - "14 Patterns to Ace Any Coding Interview Question". [Hackernoon](https://hackernoon.com/14-patterns-to-ace-any-coding-interview-question-c5bb3357f6ed?source=rss)
+  1. [redhat.com](https://www.redhat.com/en/resources/cloud-native-container-design-whitepaper?sc_cid=70160000001273HAAQ)
+  2. "14 Patterns to Ace Any Coding Interview Question". [Hackernoon](https://hackernoon.com/14-patterns-to-ace-any-coding-interview-question-c5bb3357f6ed?source=rss)
+  3. "Architecture styles". [MD](https://docs.microsoft.com/en-us/azure/architecture/guide/architecture-styles/): 2019/05/13.
