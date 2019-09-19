@@ -147,6 +147,7 @@ Basic support plan                  | AWS support plan that is included free of 
 Business support plan               | third tier of 4 support plan tiers; features a response time to your issues of 1 hour [21](../sources/clf-c01.md
 ClassicLink                         | allows the linking of EC2-Classic instances to a VPC in your account [21](../sources/clf-c01.md
 Classless Inter-Domain Domain Routing | style of describing IP address ranges where a slash followed by a number follows the IP address (i.e. `10.0.0.0/8`) describes what portion of an IP address is variable and what portion describes the host [[A](#sources): 280]
+Cloud Services Platform             | Google hybrid cloud software, comprising a set of software and services that work both on-premises and in GCP and are managed by GCP [K8S 13](#../sources/README.md#k8s-13)
 CloudFormation                      | gives developers and systems administrators an easy way to create and manage a collection of related AWS resources, provisioning and updating them in an orderly and predictable fashion [21](../sources/clf-c01.md
 CloudFront                          | global content delivery network service that accelerates delivery of your websites, APIs, video content, or other web assets [21](../sources/clf-c01.md
 CloudTrail                          | web service that records AWS API calls for your account and delivers log files to you [21](../sources/clf-c01.md

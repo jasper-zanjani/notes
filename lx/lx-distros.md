@@ -1,4 +1,6 @@
 # Linux distributions
+## Alpine Linux
+Security-oriented, lightweight Linux distribution used in containers and hardware.
 ## Arch Linux
 ### Arch Linux Installation
 1. `lsblk` inspect available drives and partitions before/after inserting USB drive

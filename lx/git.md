@@ -1,7 +1,7 @@
 # git
 
 #### Remove untracked files
-```
+```sh
 # Perform a "dry run" with `-n` to show what files and directories will be deleted
 git clean -d -n
 
@@ -21,21 +21,21 @@ git clean -d -x
 git clean -d -X
 ```
 #### Add file, located in $HOME to the git repo at gitpath
-```
+```sh
 git --git-dir=$gitpath.git --work-tree=$HOME add file
 ```
 #### Update index to include all files in the working tree, including removals
-```
+```sh
 git add -A
 git add --no-ignore-removal
 ```
 #### Stage all modifications in work-tree, including deletions
-```
+```sh
 git add -u
 ```
 #### See a list of branches
 A "*" indicates that branch is checked out; 
-```
+```sh
 git branch
 
 # Display the last commit for each branch
@@ -45,103 +45,103 @@ git branch -v
 git branch --no-merged
 ```
 #### Discard unstaged uncommitted changes to file
-```
+```sh
 git checkout -- file
 ```
 #### Switch to branch
-```
+```sh
 git checkout branch
 ```
 #### Apply a single, specific commit from another branch
-```
+```sh
 git cherry-pick commit
 ```
 #### Remove untracked files from local repo
-```
+```sh
 git clean
 ```
 #### Delete untracked files in the current directory
-```
+```sh
 git clean -f
 ```
 #### Remove untracked directories
-```
+```sh
 git clean -f -d
 ```
 #### Clean working directory interactively
-```
+```sh
 git clean -f -i
 ```
 #### Set up alias "br" for `branch`
-```
+```sh
 git config --global alias.br branch
 ```
 #### Store authentication details in a cache
-```
+```sh
 git config --global credential.helper cache
 ```
 #### Show commits between January 1 and January 5, 2016
-```
+```sh
 git log --after="2016-01-01" --before="2016-01-05"
 ```
 #### See commits that are on {branch} but not on {master}
-```
+```sh
 git logs master..branch
 ```
 #### Show tracked files that have been deleted
-```
+```sh
 git ls-files --deleted
 ```
 #### Show tracked files
-```
+```sh
 git ls-files
 ```
 #### Show tracked files, each line is terminated by a null byte
-```
+```sh
 git ls-files -z
 ```
 #### Move or rename a tracked file
-```
+```sh
 git mv file
 ```
 #### Transfer data from local branch {master} to remote {origin}
-```
+```sh
 git push -u origin master
 ```
 #### Combine branches by replaying the changes made on one branch to another
-```
+```sh
 git rebase
 ```
 #### Manage repositories whose branches you track
-```
+```sh
 git remote
 ```
 #### Add remote repo named {name} at {url}
-```
+```sh
 git remote add name url
 ```
 #### Display URL of remote {repo}
-```
+```sh
 git remote get-url repo
 ```
 #### Set {url} for existing {repo}
-```
+```sh
 git remote set-url url repo
 ```
 #### Undo unstaged changes since last commit
-```
+```sh
 git reset --hard
 ```
 #### Reset master to state before last commit
-```
+```sh
 git reset --hard HEAD~
 ```
 #### Remove (committed) changes in {commit}
-```
+```sh
 git revert commit
 ```
 #### Remove tracked file from repo
-```
+```sh
 git rm file
 ```
 ### Stash

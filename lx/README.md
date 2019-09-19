@@ -14,7 +14,7 @@ Topic                           | Contents
 ### Contents
 Commands sorted alphabetically
 :---
-**A** [adduser](#adduser) [alsamixer](#alsamixer) [apropos](#apropos) [apt](#apt) [apt-cache](#apt-cache) [apt-key](#apt-key) [at](#at) [ausearch](#ausearch) [awk](#awk) 
+**A** [adduser](#adduser) [add-apt-repository](#add-apt-repository) [alsamixer](#alsamixer) [apropos](#apropos) [apt](#apt) [apt-cache](#apt-cache) [apt-key](#apt-key) [at](#at) [ausearch](#ausearch) [awk](#awk) 
 **B** [bash](#bash) [blkid](#blkid) [bpftrace](#bpftrace) [bzcat](#bzcat) [bzip2](#bzip2) [bzless](#bzless) [bzmore](#bzmore) 
 **C** [cancel](#cancel) [cat](#cat) [chage](#chage) [chcon](#chcon) [chgrp](#chgrp) [chkconfig](#sysvinit) [chmod](#chmod) [chown](#chown) [chpass](#chpass) [chsh](#chsh) [column](#column) [compress](#compress) [cp](#cp) [crontab](#crontab) [crossystem](#crossystem) [cryptsetup](#cryptsetup) [curl](#curl) [cut](#cut) 
 **D** [dar](#dar) [date](#date) [dbus](#dbus) [dd](#dd) [declare](#declare) [df](#df) [dhclient](#dhclient) [diff](#diff) [dig](#dig) [dirname](#dirname) [dm-crypt](#dm-crypt) [dmesg](#dmesg) [doveadm](#doveadm) [dpkg](#dpkg) [dpkg-reconfigure](#dpkg-reconfigure) [du](#du) [dumpe2fs](#dumpe2fs) 
@@ -1583,9 +1583,14 @@ apt-cache dump
 ```
 ### apt-key
 #### Add a public GPG key to keyring
-Google Cloud SDK
 ```sh
-curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add - # Google Cloud SDK
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -	# Docker
+```
+### add-apt-repository
+#### Add a repository
+```sh
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
 ```
 ### at
 #### List scheduled jobs

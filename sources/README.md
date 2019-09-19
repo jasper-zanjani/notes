@@ -2,7 +2,7 @@
 ## Abbreviations
 \#      | Links
 :---    | :---
-A-Z     | [AAP](#admin-admin-podcast) [ADAC](adac.md) [AZ-103](az-103.md) [ADP](#azure-devops-podcast) [AID](#adventures-in-devops) [AWST](#aws-techchat) [BNP](#bash-notes-for-professionals) [BPR](#bash-pocket-reference) [BRM](#bash-reference-manual) [BSD](#bsd-now) [CB](#coding-blocks) [CCP](ccp.md) [CGF](#chengdu-gaming-federation) [CLKF](clkf.md) [CL](#choose-linux) [CR](#coder-radio) [CSFM](#cloudskillsfm) [CSP](csp.md) [Extras](#extras) [FP](#fluent-python) [FPLC](fplc.md) [FPP](#functional-python-programming) [GL](#going-linux) [GCPC](#google-cloud-platform-cookbook) [HPR](#hacker-public-radio) [IMWS](imws.md) [ITP](#itprotv) [JDG](jdg.md) [JNP](jnp.md) [JSJ](#javascript-jabber) [K8S](#kubernetes-podcast-from-google) [LALOS](lalos.md) [LAN](#linux-action-news) [LJ](#linux-journal) [LNL](#late-night-linux) [LSSP](lssp.md) [LU](#linux-unplugged) [NSM](#new-stack-makers) [PodCTL](#podctl) [PBX](pbx.md) [PGL](pgl.md) [RAR](#runas-radio) [s&a](s-and-a.md) [SY](#syntax) [TP](#talk-python) [TS](#techsnap) [UE](#user-error) [USLAH](ulsah.md) [WSAC](wsac.md) [WSAF](wsaf.md) [YUG](yug.md)
+A-Z     | [AAP](#admin-admin-podcast) [ADAC](adac.md) [AZ-103](az-103.md) [ADP](#azure-devops-podcast) [AID](#adventures-in-devops) [AWST](#aws-techchat) [BNP](#bash-notes-for-professionals) [BPR](#bash-pocket-reference) [BRM](#bash-reference-manual) [BSD](#bsd-now) [CB](#coding-blocks) [CCP](ccp.md) [CGF](#chengdu-gaming-federation) [CLKF](clkf.md) [CL](#choose-linux) [CR](#coder-radio) [CSFM](#cloudskillsfm) [CSP](csp.md) [Extras](#extras) [FP](#fluent-python) [FPLC](fplc.md) [FPP](#functional-python-programming) [GL](#going-linux) [GCPC](gcpc.md) [HPR](#hacker-public-radio) [IMWS](imws.md) [ITP](#itprotv) [JDG](jdg.md) [JNP](jnp.md) [JSJ](#javascript-jabber) [K8S](#kubernetes-podcast-from-google) [LALOS](lalos.md) [LAN](#linux-action-news) [LJ](#linux-journal) [LNL](#late-night-linux) [LSSP](lssp.md) [LU](#linux-unplugged) [NSM](#new-stack-makers) [PodCTL](#podctl) [PBX](pbx.md) [PGL](pgl.md) [RAR](#runas-radio) [s&a](s-and-a.md) [SY](#syntax) [TP](#talk-python) [TS](#techsnap) [UE](#user-error) [USLAH](ulsah.md) [WSAC](wsac.md) [WSAF](wsaf.md) [YUG](yug.md)
 
 ## People
 #### Jeff Barr
@@ -181,50 +181,6 @@ Test coverage metrics are a double-edged sword, because they incentivize develop
 [Author](#steven-lott)
 ### Going Linux
 [Host](#larry-bushey) [Web](https://goinglinux.com) [Twitter](https://twitter.com/goinglinux)
-### Google Cloud Platform Cookbook
-GCP offers 4 options for hosting a web application:
-  1. Google Compute Engine (GCE)
-  2. App Engine
-  3. Kubernetes Engine
-  4. Functions
-#### Host a Node.js app on GCE
-Clone a repo
-```sh
-git clone https://github.com/legorie/gcpcookbook.git
-```
-Create file named **.env** within the directory **gcpcookbook/Chapter01/mysite**
-```ini
-COOKIE_SECRET=d44d5c45e7f8149aabc068244
-MONGO_URI=mongodb://localhost/mysite
-```
-Install packages required by **package.json**
-```sh
-npm install
-```
-Making sure the MongoDB server is running, Run the application
-```sh
-node keystone.js
-``` 
-#### Deploy an application to Google Source Repositories
-#### Host a Node.js app on Google App Engine
-Verify that the default project is set properly
-```sh
-gcloud config list
-```
-#### Host a static application on Google Cloud storage
-#### Image resizing using Google Cloud Storage and Cloud Functions
-#### Migrating a MariaDB to Cloud Spanner
-#### Loading temperature data to Cloud Bigtable and BigQuerying it
-#### Storage metadata in Google Cloud Datastore
-#### VPC network peering between two networks
-#### VPN connection between two networks
-#### CDN setup for a static website
-#### Scan for vulnerabilities using Cloud Security Scanner
-#### Secure financial data using Cloud KMS
-#### Using the Data Loss Prevention API
-#### Create IAM custom roles
-#### Create service accounts
-
 ### Hacker Public Radio
 [Web](http://hackerpublicradio.org/) Links: [1938](#hpr-1938) [2107](#hpr-2107)
 #### HPR 1938
@@ -238,7 +194,9 @@ gcloud config list
 [Web](https://itpro.tv/)
 ### JavaScript Jabber
 ### Kubernetes Podcast from Google
-[Twitter](http://twitter.com/mkubernetespod) [Email](mailto:kubernetespodcast@google.com) [Web](https://kubernetespodcast.com)
+Contact | Notes
+:---    | :---
+[Twitter](http://twitter.com/mkubernetespod) [Email](mailto:kubernetespodcast@google.com) [Web](https://kubernetespodcast.com) | [13](#k8s-13) [67](#k8s-67) [70](#k8s-70)
 #### K8S 70
 Windows Server Containers, with Patrick Lang\
 [Web](https://kubernetespodcast.com/episode/070-windows-server-containers/)\
@@ -279,6 +237,15 @@ Get connected with the Kubernetes community repo, every SIG has a folder in ther
 #### K8S 67
 Orka, with Chris Chapman\
 Orka is a virtualization layer for Mac build infrastructure offered by hosting company MacStadium. iPhone architecture and security make building for that platform very different. Virtual Mac instances first became possible in Snow Leopard, but the EULA allows only 2 VMs per machine. MacStadium is an enterprise-scale cloud for Apple. A typical lifecycle for an iOS build begins with a simulator, followed by a physical test, typically in a build farm of physical iOS devices.  
+#### K8S 13
+**Google Cloud Services Platform, with Aparna Sinha**\
+**Cloud Services Platform**: Google hybrid cloud software, comprising a set of software and services that work both on-premises and in GCP and are managed by GCP\
+3 components that form the core of Cloud services Platform:
+  - **GKE On-Prem**: Kubernetes for on-premises environments.
+  - **GKE Policy Manager**: allows admins to gain centralized control over the hybrid environment
+  - **Istio**
+
+**Kubernetes Operators**: allow you to deploy and manage applications on Kubernetes clusters, such as Spark Operator, Airflow Operator, etc.
 ### Late Night Linux
 [65](#lnl-65)
 #### LNL 65
