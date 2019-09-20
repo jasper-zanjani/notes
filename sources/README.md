@@ -2,32 +2,60 @@
 ## Abbreviations
 \#      | Links
 :---    | :---
-A-Z     | [AAP](#admin-admin-podcast) [ADAC](adac.md) [AZ-103](az-103.md) [ADP](#azure-devops-podcast) [AID](#adventures-in-devops) [AWST](#aws-techchat) [BNP](#bash-notes-for-professionals) [BPR](#bash-pocket-reference) [BRM](#bash-reference-manual) [BSD](#bsd-now) [CB](#coding-blocks) [CCP](ccp.md) [CGF](#chengdu-gaming-federation) [CLKF](clkf.md) [CL](#choose-linux) [CR](#coder-radio) [CSFM](#cloudskillsfm) [CSP](csp.md) [Extras](#extras) [FP](#fluent-python) [FPLC](fplc.md) [FPP](#functional-python-programming) [GL](#going-linux) [GCPC](gcpc.md) [HPR](#hacker-public-radio) [IMWS](imws.md) [ITP](#itprotv) [JDG](jdg.md) [JNP](jnp.md) [JSJ](#javascript-jabber) [K8S](#kubernetes-podcast-from-google) [LALOS](lalos.md) [LAN](#linux-action-news) [LJ](#linux-journal) [LNL](#late-night-linux) [LSSP](lssp.md) [LU](#linux-unplugged) [NSM](#new-stack-makers) [PodCTL](#podctl) [PBX](pbx.md) [PGL](pgl.md) [RAR](#runas-radio) [s&a](s-and-a.md) [SY](#syntax) [TP](#talk-python) [TS](#techsnap) [UE](#user-error) [USLAH](ulsah.md) [WSAC](wsac.md) [WSAF](wsaf.md) [YUG](yug.md)
-
+A-F     | [AAP](#admin-admin-podcast) [ADAC](adac.md) [AZ-103](az-103.md) [ADP](#azure-devops-podcast) [AID](#adventures-in-devops) [AWST](#aws-techchat) [BNP](#bash-notes-for-professionals) [BPR](#bash-pocket-reference) [BRM](#bash-reference-manual) [BSD](#bsd-now) [CB](#coding-blocks) [CCP](ccp.md) [CGF](#chengdu-gaming-federation) [CLKF](clkf.md) [CL](#choose-linux) [CR](#coder-radio) [CSFM](#cloudskillsfm) [CSP](csp.md) [DD](#devops-and-docker) [Extras](#extras) [FP](#fluent-python) [FPLC](fplc.md) [FPP](#functional-python-programming) 
+G-S     | [GL](#going-linux) [GCPC](gcpc.md) [HPR](#hacker-public-radio) [IMWS](imws.md) [ITP](#itprotv) [JDG](jdg.md) [JNP](jnp.md) [JSJ](#javascript-jabber) [K8S](#kubernetes-podcast-from-google) [LALOS](lalos.md) [LAN](#linux-action-news) [LJ](#linux-journal) [LNL](#late-night-linux) [LSSP](lssp.md) [LU](#linux-unplugged) [NSM](#new-stack-makers) [PodCTL](#podctl) [PBX](pbx.md) [PGL](pgl.md) [RAR](#runas-radio) [s&a](s-and-a.md) [SY](#syntax) 
+T-Z     | [TP](#talk-python) [TS](#techsnap) [UE](#user-error) [USLAH](ulsah.md) [WSAC](wsac.md) [WSAF](wsaf.md) [YUG](yug.md)
 ## People
 #### Jeff Barr
-Host: [AWS](#abbreviations) [Twitter](https://twitter.com/intent/user?screen_name=jeffbarr)
+Description | Links
+:---        | :---
+Contact     | [Twitter](https://twitter.com/intent/user?screen_name=jeffbarr)
+Host        | [AWS](#abbreviations)
 #### Wes Bos
-Host: [SY](#abbreviations)  [Twitter](https://twitter.com/wesbos)
+Description | Links
+:---        | :---
+Contact     | [Twitter](https://twitter.com/wesbos)
+Host        | [SY](#abbreviations)
 #### Craig Bos
-Host: [K8S](#abbreviations) [Twitter](http://twitter.com/craigbox)
+Description | Links
+:---        | :---
+Contact     | [Twitter](http://twitter.com/craigbox)
+Host        | [K8S](#abbreviations) 
 #### Larry Bushey
-Host: [GL](#going-linux)  [Twitter](https://twitter.com/goinglinux) [LinkedIn](https://www.linkedin.com/in/larrybushey/)
+Description | Links
+:---        | :---
+Contact     | [Twitter](https://twitter.com/goinglinux) [LinkedIn](https://www.linkedin.com/in/larrybushey/)
+Host        | [GL](#going-linux)  
 #### Richard Campbell
-Host: [RAR](#abbreviations)  [Twitter](https://twitter.com/richcampbell)
+Description | Links
+:---        | :---
+Contact     | [Twitter](https://twitter.com/richcampbell)
+Host        | [RAR](#abbreviations)  
 #### Jason Cannon
-[CLKF](clkf.md) [LALOS](lalos.md) [LSSP](lssp.md)
+Description | Links
+:---        | :---
+Author      | [CLKF](clkf.md) [LALOS](lalos.md) [LSSP](lssp.md)
 #### Chris Chapman
-Guest: [K8S 67](#k8s-67) 
+Description | Links
+:---        | :---
+Guest       | [K8S 67](#k8s-67) 
 #### Alister Christman
 Host: [AAP](#abbreviations) [Twitter](https://twitter.com/mralc)
 #### Michael Domenick
 Host: [CR](#abbreviations)  [Twitter](https://twitter.com/dominucco)
 #### Simon Elisha
 Host: [AWS](#abbreviations) [Twitter](https://twitter.com/intent/user?screen_name=simon_elisha)
+#### Bret Fisher
+Description | Links
+:---        | :---
+Contact     | [Email](bret@bretfisher.com) [Twitter](https://twitter.com/BretFisher) [Facebook](https://www.facebook.com/bretfisher.devops) [YouTube](https://www.youtube.com/channel/UC0NErq0RhP51iXx64ZmyVfg)
+Host        | [DD](#devops-and-docker)
 #### Chris Fisher
-Founder of Jupiter Broadcasting, which merged or partnered with Linux Academy ca. September 2018.
-Host: [LU](#abbreviations)  [Twitter](https://twitter.com/ChrisLAS)
+Founder of Jupiter Broadcasting, which merged or partnered with Linux Academy on September 12, 2018.
+Description | Links
+:---        | :---
+Contact     | [Twitter](https://twitter.com/ChrisLAS)
+Host        | [LU](#abbreviations)  
 #### David Flanagan
 [JDG](jdg.md)
 #### Brian Fox
@@ -171,6 +199,16 @@ Test coverage metrics are a double-edged sword, because they incentivize develop
 [Notes](https://coder.show/325): 2018/09/07.
 - Wes Payne is a big fan of Clojure, in particular with the professionalism of the clojure community. Clojure is not as closely tied to Java as it was in its inception when it was a "JAR", but it still needs a JVM.
 ### Coding Blocks
+### DevOps and Docker
+Description | Links
+:---        | :---
+Contact     | [Web](https://podcast.bretfisher.com/)
+Alpine Linux  | [Notes](#dd-alpine) [Web](https://podcast.bretfisher.com/episodes/alpine-linux-as-a-base-image-is-it-really-secure)
+Learning Kubernetes | [Notes](#dd-learning-k8s) [Web](https://podcast.bretfisher.com/episodes/learning-kubernetes-with-jerome-petazzoni)
+#### DD Alpine
+Alpine may have an undeserved reputation for security, since it is tricky to scan containers running it.
+#### DD Learning K8S
+No notes taken.
 ### Destination Linux
 [Web](http://destinationlinux.com/)
 ### Extras
@@ -194,12 +232,24 @@ Test coverage metrics are a double-edged sword, because they incentivize develop
 [Web](https://itpro.tv/)
 ### JavaScript Jabber
 ### Kubernetes Podcast from Google
-Contact | Notes
-:---    | :---
-[Twitter](http://twitter.com/mkubernetespod) [Email](mailto:kubernetespodcast@google.com) [Web](https://kubernetespodcast.com) | [13](#k8s-13) [67](#k8s-67) [70](#k8s-70)
+Description | Links
+:---        | :---
+Contact     | [Twitter](http://twitter.com/mkubernetespod) [Email](mailto:kubernetespodcast@google.com) [Web](https://kubernetespodcast.com)
+5           | [Notes](#k8s-5) [Web](https://kubernetespodcast.com/episode/005-documentation/)
+13          | [Notes](#k8s-13) [Web](https://kubernetespodcast.com/episode/013-gke-and-cloud-services-platform/)
+67          | [Notes](#k8s-67) [Web](https://kubernetespodcast.com/episode/067-orka/)
+70          | [Notes](#k8s-70) [Web](https://kubernetespodcast.com/episode/070-windows-server-containers/)
+71          | [Notes](#k8s-71) [Web](https://kubernetespodcast.com/episode/071-containerd/)
+
+#### K8S 71
+`containerd` with Derek McGowan\
+Containerd is a container runtime that manages all the resources related to containers. It sits right below the Kubernetes `kubelet` as well as Docker. Beneath containerd there is the runtime, most commonly **runC**, which is the reference implementation of the OCR open container.\
+Containerd was originally designed to interface directly with runC so that Docker could be decoupled from the actual containers. Since then, containerd grew to include image resources, which means it could entirely replace Docker.\
+`ctr` is an unsupported tool that used for debugging containerd.\
+Container metrics (logging and monitoring information) is exposed through **Prometheus**. \
 #### K8S 70
 Windows Server Containers, with Patrick Lang\
-[Web](https://kubernetespodcast.com/episode/070-windows-server-containers/)\
+
 ##### What is a Windows container, and how is it different from a Linux container?\
 Windows server containers, like Linux containers, package dependencies. Windows offers two base images: **Windows Server Core** and **Nano Server**. 
 ##### Windows applications can run on Windows using Wine, and Linux applications can run on Windows using WSL. How are Windows and Linux applications different?\
@@ -246,6 +296,8 @@ Orka is a virtualization layer for Mac build infrastructure offered by hosting c
   - **Istio**
 
 **Kubernetes Operators**: allow you to deploy and manage applications on Kubernetes clusters, such as Spark Operator, Airflow Operator, etc.
+#### K8S 5
+No notes taken.
 ### Late Night Linux
 [65](#lnl-65)
 #### LNL 65
@@ -272,11 +324,13 @@ Clear Linux
 #### Storage in a DevOps World
 [Web](https://thenewstack.io/storage-in-a-devops-world/)\
 The term "DevOps" began to gain currency in 2009-2010, before the emergence of containers. Features like self-healing, scalability, resource monitoring, automatic DNS management, etc have since become built-in to Kubernetes.
-
 ### PodCTL
-[Web](http://podcast.podctl.com/) [Twitter](https://www.twitter.com/podctl) Notes [5](#podctl-5)
+Description | Links
+:---        | :---
+Contact     | [Web](http://podcast.podctl.com/) [Twitter](https://www.twitter.com/podctl) 
+5           | [Notes](#podctl-5) [Web](http://podcast.podctl.com/110399/563052-understanding-the-cloud-native-ecosystem)
 #### PodCTL 5
-Pivotal Container Services (PKS) started as a project between Google and Pivotal originally called "Kubo" which takes the BOSH installer from Cloud Foundry Foundation and installs a Kubernetes instance. Kubernetes doesn't have an official installer, and many open-source solutions have been implemented. **Time to Success** is a metric used by developers that want to test out new products or technologies. **MiniKube** is the most commonly used Kubernetes Engine for installation on a laptop for experimentation or learning purposes. **MiniShift** is to OpenShift what MiniKube is to Kubernetes. Both of these tools provide a **single-node**, **single-master** environment. \
+**Pivotal Container Services (PKS)** started as a project between Google and Pivotal originally called "Kubo" which takes the BOSH installer from Cloud Foundry Foundation and installs a Kubernetes instance. Kubernetes doesn't have an official installer, and many open-source solutions have been implemented. **Time to Success** is a metric used by developers that want to test out new products or technologies. **MiniKube** is the most commonly used Kubernetes Engine for installation on a laptop for experimentation or learning purposes. **MiniShift** is to OpenShift what MiniKube is to Kubernetes. Both of these tools provide a **single-node**, **single-master** environment. \
 **Kubeadm** is the official Kubernetes installer from the CNCF, but it is not widely used because it doesn't deploy multiple Kubernetes masters. Kubernetes has the concept of masters that provide the **control plane** and **workers** which run Kubelets. In reality, the masters are just Kubernetes worker nodes that are running only Kubernetes core services, and those are the first pods that are deployed by K8S.
 **Kargo** builds highly available containers.\
 There are two main types of container engine installers: normal ones that install locally and interactively ask what Linux host is desired, and thne another type that interfaces with an IaaS provider and demands resources from it. The tools typically defined as configuration management tools like Chef, Ansible, Puppet, Salt, and Terraform are also typically used to package containerized software and can perform orchestration. Kargo, for example, uses Terraform to build the nodes and then Ansible to do the actual installation. OpenShift's installer uses Ansible.\
@@ -286,15 +340,17 @@ There are two main types of container engine installers: normal ones that instal
 ### Syntax
 [Web](https://syntax.fm/) [Twitter](https://twitter.com/syntaxfm)
 ### Talk Python
-[Web](https://talkpython.fm) [Twitter](https://twitter.com/TalkPython) Notes: [213](#tp-213) [216](#tp-216) [224](#tp-224)
+Contact | Notes
+:---    | :---
+[Web](https://talkpython.fm) [Twitter](https://twitter.com/TalkPython) | [213](#tp-213) [216](#tp-216) [224](#tp-224)
 #### TP 213
-> "WebAssembly and CPython".
-- Web Assembly is gaining steam in the developer community, and several Web Assembly projects are in train. Pyodide is the SciPy stack into web assembly. The interpreter is on the order of 40MB, which is still too large for convenient use on the web. Compiling to CPython may not be the correct answer in the future as technology evolves. A straight Python to web-assembly compilation target would have some difficulties, but it is possible. If you turn Web Assembly as a general interpreter layer, various possibilities open up.
+WebAssembly and CPython\
+Web Assembly is gaining steam in the developer community, and several Web Assembly projects are in train. **Pyodide** is the **SciPy** stack into web assembly. The interpreter is on the order of 40MB, which is still too large for convenient use on the web. Compiling to CPython may not be the correct answer in the future as technology evolves. A straight Python to web-assembly compilation target would have some difficulties, but it is possible. If you turn Web Assembly as a general interpreter layer, various possibilities open up.
 #### TP 216
-> "Digging into Visual Studio Code".
+Digging into Visual Studio Code
 #### TP 224
-> "12 lessons from 100 days of code".
-- Netlify will watch changes to a GitHub repo as a continuous delivery platform for static sites.
+12 lessons from 100 days of code\
+Netlify will watch changes to a GitHub repo as a continuous delivery platform for static sites.
 ### TechSNAP
 [Web](https://techsnap.systems) [Twitter](https://twitter.com/techsnapsystems)
 ### User Error
