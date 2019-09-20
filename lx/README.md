@@ -2839,43 +2839,17 @@ quotaon -a
 quotaon -u user
 ```
 ### read
-#### Read from standard input, with the words assigned to sequential indices of {array}
-```sh
-read -a 
-```
-### read
-#### Read from standard input, with the first character of `delim` being used to terminate input, rather than newline
-```sh
-read -d delim
-```
-#### Read from standard input, if standard input is coming from a terminal, readline is used to obtain the line
-```sh
-read -e 
-```
-#### Read from standard input, returning after reading {n} chars
-```sh
-read -n n
-```
-#### Read from standard input, displaying `prompt` on standard error before reading any input
-```sh
-read -p prompt
-```
-#### Read from standard input, backslash no longer will act as an escape character
-```sh
-read -r 
-```
-#### Read from standard input, silent mode (characters are not echoed)
-```sh
-read -s
-```
-#### Read from standard input, returning failure is a complete line of input is not read within {n} seconds
-```sh
-read -t n
-```
-#### Read input from file descriptor `fd`
-```sh
-read -u fd
-```
+Option  | POSIX option            | Effect
+:---    | :---                    | :---
+a | | read from standard input, with the words assigned to sequential indices of {array}
+d | | read from standard input, with the first character of `delim` being used to terminate input, rather than newline
+e | | read from standard input, if standard input is coming from a terminal, readline is used to obtain the line
+n | | read from standard input, returning after reading {n} chars
+p | | read from standard input, displaying {$PROMPT} on standard error before reading any input
+r | | read from standard input, backslash no longer will act as an escape character
+s | | read from standard input, silent mode (characters are not echoed)
+t | | read from standard input, returning failure is a complete line of input is not read within {n} seconds
+u | | read input from file descriptor { $FILE }
 ### repquota
 #### Human-readable
 ```sh
@@ -2907,31 +2881,36 @@ route add -net192.168.51.0 netmask 255.255.255.0 gw 192.168.51.1
 route add default gw ipaddr
 ```
 ### rpm
-#### Remove {package}
-```sh
-rpm -e package
-rpm --erase package
-```
-#### Install {package}
-```sh
-rpm -i package
-rpm --install package
-```
+#### rpm option groups
+Option  | POSIX option            | Effect
+:---    | :---                    | :---
+e       | erase                   | remove specified package, including config files
+i       | install                 | install specified package
+q       | query                   | query for specified package
+U       | upgrade                 | upgrade specified package
+#### rpm query options
+Option  | POSIX option            | Effect
+:---    | :---                    | :---
+a       |                         | lista all installed packages
+c       |                         | list configs installed with specified package
+d       |                         | list documentation files installed with specified package
+i       |                         | display information about specified package
+K       |                         | Verify integrity of specified package
+l       |                         | List all files installed with specified package
+provides|                         | List which capabilities the specified package provides
+R       |                         | list which capabilities the specified package requires
+s       |                         | display state of each file that was installed by specified package (normal, not installed, or replaced)
 #### Query repos for information on {package}
 ```sh
 rpm -qi package
 rpm --query --info package
-```
-#### Upgrade {package}
-```sh
-rpm -U package
-rpm --upgrade package
 ```
 #### Upgrade or install {package}, with progress bars
 ```sh
 rpm -Uvh package
 rpm --upgrade --verbose --hash package
 ```
+### rsync
 #### Copy recursively, preserving group, owner, modification times, and device-files (if super-user)
 ```sh
 rsync -a
@@ -2956,7 +2935,6 @@ rsync --owner
 ```sh
 rsync file remotehost:remotepath
 ```
-### rsync
 #### Copy remotefile from remotehost to path
 ```sh
 rsync remotehost:remotefilepath
@@ -4058,7 +4036,6 @@ history | awk '{print $2' | sort | uniq -c | sort -rn | head
 Name                            | Description
 :---                            | :---
 Akira                           | design tool; alternative to `Sketch` and `Adobe XD`
-Anthos                          | Google cloud service, competitor to AWS, runs on Kubernetes
 Ardour                          | edit multiple audio tracks [[1](#sources)]
 Audacity                        | process and edit audio files [[1](#sources)]
 Bentoo Linux                    | Linux distribution made as a version of Funtoo which is easier to install
