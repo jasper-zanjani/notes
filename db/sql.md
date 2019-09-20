@@ -1,5 +1,11 @@
 # Query Languages
 ## SQL syntax
+Syntax        | Effect
+:---          | :---
+CREATE DATABASE db;
+USE db;
+CREATE TABLE tbl;
+
 #### `INNER JOIN`
 Using `INNER JOIN` in a query allows you to combine row data across two separate tables using the **primary key**, the unique identifier for the underlying entity.
 ```sql
@@ -42,6 +48,7 @@ CREATE TABLE movies (
 ALTER TABLE mytable ADD col1 DataType TableConstraint DEFAULT val1;
 ```
 #### `DROP TABLE`
+
 #### Expressions
 Mathematical and string functions and operators can transform values when query is executed, with the resulting variable name being declared with the `AS` keyword. It can also be used to create aliases for unwieldy column and table names.
 ```sql
