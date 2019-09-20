@@ -6,6 +6,12 @@ Kubernetes was first announced by Google in mid-2014. It coalesced from a fusion
 Kubernetes is visualized as a system built from layers, with each higher layer abstracting the complexity of the lower levels. One server serves as the **master**, exposing an API for users and clients, assigning or **scheduling** work, and orchestrating communication between other components. Other machines in the cluster are **nodes**, which accept and run workloads using available resources. Each node is equipped with a **container runtime** like Docker, which it uses to create and destroy containers according to instructions from the master server.\ 
 Before the popularization of containers, **application servers** provided **non-functional requirements** including security, isolation, fault tolerance, configuration management, and others. If applications are compared to CDs, then application servers are analogous to CD players.\ 
 At the time, Google had been trying to engage the Linux kernel team and trying to overcome their skepticism. Internally, the project was framed as offering "Borg as a Service", although there were concerns that Google was in danger of revealing too much of its secret sauce.
+### Design principles
+1. Kubernetes APIs are **declarative** rather than **imperative**, that is they describe a desired state.
+2. Kubernetes control plane has no hidden APIs
+3. Meet the users where they are: Kubernetes nodes can serve secrets as volumes or environmental variables to fit the requirements of the application
+4. Workload portability: Kubernetes acts like an operating system for distributed systems, abstracting peculiarities of infrastructure without changing the application.\
+[[18](README.md#sources)]
 ### Distributions
   - Kontena Pharos
   - Pivotal Container Service (PKS)
@@ -18,10 +24,10 @@ At the time, Google had been trying to engage the Linux kernel team and trying t
   - SUSE Container as a Service Platform
   - Telekube
 ### Master server components
-  - **etcd** configuration store, which stores configuration data that can be accessed by cluster nodes.
-  - **kube-apiserver** allows a user to configure K8s workloads and organizational units; implements a RESTful interface, allowing many different tools and libraries to communicate with it
-  - **kube-controller-manager** general service with many responsibilities
-  - **kube-scheduler**
-  - **cloud-controller-manager**
+- etcd
+- kube-apiserver
+- kube-controller-manager
+- kube-scheduler
+- cloud-controller-manager
 ### Node server components
-  - **kubelet**, main contact point for each node with the cluster group
+- `kubelet`
