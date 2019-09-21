@@ -40,14 +40,6 @@ Commands sorted alphabetically
 **X** [X](#X) [xdpyinfo](#xdpyinfo) [xhost](#xhost) [xinetd](#xinetd) [Xorg](#Xorg) [xrandr](#xrandr) [xwininfo](#xwininfo) 
 **Y** [yay](#yay) [yum](#yum) 
 **Z** [zip](#zip) [zipcloak](#zipcloak) [zipdetails](#zipdetails) [zipgrep](#zipgrep) [zipinfo](#zipinfo) [zipnote](#zipnote) [zipsplit](#zipsplit) [zsh](#zsh)
-### at
-#### Execute a command at a given time
-```sh
-echo "cmd" | at time
-```
-```sh
-at -f file time
-```
 ### bash
 #### bash variables
 Syntax                                              | Effect
@@ -102,7 +94,9 @@ Syntax                                              | Effect
 `$TMPDIR=directory`                                 | place temporary files created and used by the shell in directory
 `$UID`                                              | user's ID number
 ### bzcat
+Page through bz2 files
 ### bzless
+Page through bz2 files
 ### bzmore
 Page through bz2 files
 ### bzip2
@@ -198,15 +192,6 @@ gzip --suffix .ext file
 ```
 ### zcat
 Page through .gz files
-### rsync
-#### Archive mode: equivalent to -rptlgoD
-```sh
-rsync -a
-```
-#### Create a backup of every file destination file transferred
-```sh
-rsync -b
-```
 ### tar
 #### tar options
 Option  | POSIX option            | Effect
@@ -341,26 +326,6 @@ chown -vR susan:delta path
 chown -vR --reference=. path    # Use a `reference` file to match the configuration of a particular file
 chown -cfR --preserve-root alan # `preserve-root` prevents changes to files in the root directory, but has no effect when not used with `recursive`
 ```
-### dhclient
-Obtain and configure TCP/IP information from a server on the network [[LGLC](../sources/lglc.md): 34]
-#### Turn on the DHCP client and get a new address from the server
-```
-sudo dhclient
-```
-#### Release the IP address currently assigned and request a new IP lease
-```
-sudo dhclient -r
-```
-### dig
-Perform a DNS lookup, useful when troubleshooting a DNS issue (cf. `nslookup`)
-#### Nameserver
-```
-dig example.com NS
-```
-#### Mail server
-```
-dig example.com MX
-```
 ### exif
 #### View image metadata
 Unlike alternatives like `file` and ImageMagick's `identify`, `exif` produces columnar output [[31](#sources)]
@@ -372,66 +337,6 @@ exif image.png
 [[31](#sources)]
 ```sh
 file image.png # => file type, dimensions, color depth
-```
-### firewalld
-### firewall-cmd
-Successor to `iptables` in Red Hat, and like its predecessor a frontend to the netfilter protocols. Places network traffic into zones. Commands have to be written twice: once to affect running config and again to have the change saved
-
-Configuration file                          | Description
-:---                                        | :---
-/etc/sysconfig/network-scripts/ifcfg-ens33  | interface settings
-/usr/lib/firewalld/services                 | .xml files that define services ("ZONE=public")
-
-#### Display status of service
-```
-firewall-cmd --state
-```
-#### Display default zone
-```
-firewall-cmd --get-default-zone
-```
-#### Display zones that are attached to an interface
-```
-firewall-cmd --get-active-zones
-```
-#### Add a new zone
-```
-firewall-cmd --new-zone=testlab
-```
-#### Add a new zone, and write the change to disk
-```
-firewall-cmd --new-zone=testlab  --permanent
-```
-#### Load saved configuration
-```
-firewall-cmd --reload
-```
-#### Display names of all available services
-```
-firewall-cmd --get-services
-```
-#### Add a service permanently
-```
-firewall-cmd --add-service=ftp --permanent
-```
-#### Display services loaded in memory
-```
-firewall-cmd --list-services
-```
-```
-firewall-cmd --remove-service
-```
-#### Add nonstandard port
-```
-firewall-cmd --add-port=8080/tcp
-```
-#### Add a range of nonstandard ports
-```
-firewall-cmd --add-port=50000-60000/udp
-```
-#### See approved port numbers
-```
-firewall-cmd --list-ports
 ```
 ### free
 Simple utility that display realtime memory information.\
@@ -458,36 +363,6 @@ encrypted file transfers
 ```sh
 fusermount -u mountpoint
 ```
-### gpg
-PGP was bought by Semantec, and GNU has since released GPG, an open-source replacement.[35](#sources)
-#### gpg options
-Option  | POSIX option                | Effect
-:---    | :---                        | :---
-\-      | clearsign, clear-sign       | make a cleartext signature, readable without any special software
-\-      | send-keys                   | send keys to a keyserver
-d       | decrypt                     | decrypt {$FILE}
-k       | list-keys, list-public-keys | list available GPG keys
-#### Decrypt file
-```sh
-gpg file.txt
-```
-#### Export GPG public key
-```sh
-gpg --export --output ~/jdoe.pub
-```
-#### Import another person's public key
-```sh
-gpg --import jdoe.pub
-```
-#### List available GPG keys
-```sh
-gpg --list-key
-```
-#### Encrypt a file
-```sh
-gpg --encrypt -r jdoe@dplaptop.lab.itpro.tv ./file.txt
-```
-
 ### grep
 #### grep options
 Option  | POSIX option            | Effect
@@ -509,9 +384,9 @@ Option  | POSIX option            | Effect
 :---    | :---                    | :---
 `-c`    |                         | clear history [[23](#sources)]
 ### hostnamectl
-#### Change hostname
-```
-sudo hostnamectl set-hostname hostname
+#### Permanently change hostname to {$HOSTNAME}
+```sh
+hostnamectl set-hostname hostname
 ```
 ### install
 With `install`, files can be copied while maintaining various metadata, including timestamp, owner, etc. [[9](#sources)]
@@ -523,21 +398,6 @@ install --preserve-timestamp example/foo .
 #### Copy a file, setting permissions, owner, and group
 ```sh
 install --preserve-timestamp --owner=jdoe --group=sudoers --mode=753
-```
-### ifconfig
-"RX" and "TX" stand for received and transmitted.
-#### Apply a static IP address to interface {eth0} and turn it on ("up")
-```
-ifconfig eth0 up 10.1.230.245 netmask 255.255.255.0
-```
-#### Bring an interface up or down
-```
-ifup eth0
-ifdown eth0
-```
-```
-ifconfig eth0 up
-ifconfig eth0 down
 ```
 ### iptables
 A popular firewall, like `firewalld`, a frontend for the kernel-level `netfilters` service. Interface configuration, used to assign a TCP/IP configuration to a network interface, but no longer installed on modern distros.
@@ -565,8 +425,33 @@ iptables -F
 ```sh
 iptables -vnL --lines
 ```
+#### Display rules as written on disk
+```sh
+iptables --list-rules
+```
+#### Set an iptable rule to accept SSH traffic from a particular IP
+```sh
+iptables -A INPUT -p ssh -s 10.0.222.222 -j ACCEPT
+```
+#### Set an iptable rule to accept incoming TCP traffic to port 80
+```sh
+iptables -A INPUT -p tcp --dport 80 -j ACCEPT
+```
+#### Reload configuration file
+```sh
+iptables -F
+```
+#### Show statistics for configuration lines
+```sh
+iptables -vnL --lines
+```
 ### iptables-save
 Display what the running configuration would look like if written to disk (must be redirected to a file)
+#### Display what the running configuration would look like if written to disk 
+Must be redirected to a file
+```sh
+iptables-save > $FILE
+```
 ### lowriter
 `lowriter` is a command-line utility installed with LibreOffice Writer.[[21](#sources)]
 #### Convert a single file to PDF
@@ -577,7 +462,6 @@ lowriter --convert-to pdf filename.doc
 ```sh
 lowriter --convert-to pdf *.docx
 ```
-### locale
 ### localectl
 Change locale
 #### Change locale to French
@@ -598,6 +482,14 @@ sudo lsof -Pni
 ```
 ### mail
 Mail User Agent (MUA) which accepts interactive input using the `&` prompt
+#### Check {user}'s email
+```sh
+mail -u user
+```
+#### Send email to {user}
+```sh
+mail user
+```
 #### Send email from the command-line
 Send email interactively
 ```sh
@@ -618,12 +510,6 @@ echo 'message' | mail -s 'subject' -a /path/to/attachment
 ```
 #### mailq
 Prints summary of mail messages queued for future delivery
-### mkdir
-#### Quickly create multiple directories using brace expansion
-`-p` argument creates parent directories if they don't exist
-```sh
-mkdir -p ~/my-app/{bin,lib,log}
-```
 ### mktemp
 Create a temporary file or directory safely and print its name. These will not need to be manually cleaned up because they will be placed in the temporary directory (**/tmp**) [[29](#sources)]
 #### Create a new temporary file
@@ -705,66 +591,77 @@ Netcat needs to listen on a chosen port (here 3001): `-d` disables reading from 
 ```
 nc -L -p 3001 -d -e cmd.exe
 ```
-### netplan
-Ubuntu network configuration tool
-
-Config file   | Description
-:---          | :---
-/etc/netplan/ | directory containing various configuration files and scripts
-/etc/nplan/99_config.yaml | netplan config
-#### Apply network configuration changes
+#### Connect to {port} at {host}
+```sh
+nc host port
 ```
-sudo netplan apply
+#### Netcat command that retrieves a webpage
+```sh
+nc host port \get
 ```
 ### netstat
+#### Display all active sockets on all interfaces
+```sh
+netstat -a
+```
+#### Show network traffic
+```sh
+netstat -an
+```
+#### Refresh every five seconds
+```sh
+netstat -c5
+```
+#### Display routing table
+```sh
+netstat -r
+```
+#### Show the current default route without performing DNS lookups on the IP addresses involved
+```sh
+netstat -rn
+```
+#### Display only TCP connections
+```sh
+netstat -t
+```
 #### Show interface statistics 
-> LGLC: 535
 ```
 netstat -i
 ``` 
 #### Display routing table 
-> lxa-lpic: 109.2, itp-lpic: 39
 ```
 netstat -r
 netstat --route
 ``` 
 #### Show all sockets on all active interfaces 
-> lxa-lpic: 109.2
 ```
 netstat -a
 ```
 #### Show network traffic 
-> itp-lpic.md
 ```
 netstat -an
 ``` 
 #### Count number of TCP connections 
-> lxa-lpic: 109.2
 ```
 netstat -a | grep tcp - | wc -l
 ``` 
 #### Refresh every 5 seconds 
-> lxa-lpic: 109.2
 ```
 netstat -c 5 -a
 ``` 
 #### TCP connections 
->lxa-lpic: 109.2
 ```
 netstat -t
 ``` 
 #### Active sessions 
->itp-lpic: 39
 ```
 netstat -tp
 ``` 
 #### All sessions
-> itp-lpic: 39
 ```
 netstat -atp
 ``` 
 #### Routing table with name resolution 
-> lxa-lpic: 109.2
 ```
 netstat -rn
 ``` 
@@ -783,53 +680,12 @@ chkconfig NetworkManager off               # Upstart
 systemctl disable NetworkManager.service   # Systemd
 service NetworkManager stop                # sysvinit
 ```
-### nmap
-Audit open ports on a host
-#### Scan hosts from a text file
-```sh
-nmap -iL hosts.txt
-```
-#### Identify a host's operating system
-```sh
-nmap -A localhost.example.com
-```
-#### Determine whether a host has a firewall enabled
-```sh
-nmap -sA localhost.example.com
-```
-#### Scan a specified range of ports
-```sh
-nmap -p 10-300 localhost.example.com
-```
-#### Perform a SYN TCP scan, stealthier than the TCP connect scan
-```sh
-nmap -sT localhost.example.com
-```
-### nmcli
-Interface to Network Manager, which allows for consistent network configuration across a system.
-#### Display devices and statuses
-```
-nmcli device status
-```
-#### Display information on interfaces as well as status
-Including other network connections not managed by network manager ("unmanaged") or not connected ("unavailable") 
-```
-nmcli dev status
-```
-#### Display what connections are enabled 
-```
-nmcli general status
-```
-#### Display UUIDs associated with network connections 
-```
-nmcli connection show --active
-```
-#### Display much more information on network devices
-```
-nmcli device show
-```
 ### nslookup
 Perform a DNS lookup in an interactive shell with cleaner output than __dig__. Enter a domain name and you get output in two sections. 
+#### Retrieve IP address of {host}
+```sh
+nslookup host
+```
 #### Get IP address of a website
 ```
 nslookup url
@@ -879,6 +735,106 @@ Option  | POSIX option            | Effect
 `-Syyuw` |                        | downloads programs but doesn't install them, for the option of manual installation
 `-Rs`   |                         | remove {pkg} as well as its dependencies
 `-Rns`  |                         | remove {pkg}, dependencies, as well as config files 
+#### List installed packages
+```sh
+pacman -Q
+pacman --query
+```
+#### List all orphaned dependencies (no longer needed)
+```sh
+pacman -Qdt
+pacman --query --deps --unrequired
+```
+#### List only explicitly installed packages and versions
+```sh
+pacman -Qe
+pacman --query --explicit
+```
+#### List explicitly installed packages, limiting output to program names
+```sh
+pacman -Qeq
+pacman --query --explicit --quiet
+```
+#### List all packages installed from the AUR
+```sh
+pacman -Qm
+pacman --query --foreign
+```
+#### List all packages installed from main repos
+```sh
+pacman -Qn
+pacman --query --native
+```
+#### Find which package owns {file}
+```sh
+pacman -Qo file
+pacman --query --owns file
+```
+#### List all install packages, filtering output to packages that are out-of-date on the local system
+```sh
+pacman -Qu
+pacman --query --upgrades
+```
+#### Remove {package}
+```sh
+pacman -R package
+pacman --remove package
+```
+#### Remove {package}, dependencies, and config files
+```sh
+pacman -Rns package
+pacman --remove --recursive --nosave
+```
+#### Remove {package} as well as its dependencies
+```sh
+pacman -Rs
+pacman --remove --recursive
+```
+#### Install {pkg} from the AUR
+```sh
+pacman -S package
+pacman --sync package
+```
+#### Remove all packages from the cache as well as unused sync databases
+```sh
+pacman -Scc
+pacman --sync --clean --clean
+```
+#### Display information about {package}
+```sh
+pacman -Si package
+pacman --sync --info package
+```
+#### Search for {pkg} in AUR repos
+```sh
+pacman -Ss package
+pacman --sync --search package
+```
+#### Search for packages matching {searchexpression}
+```sh
+pacman -Ss pattern
+pacman --sync --search pattern
+```
+#### Update package database
+```sh
+pacman -Sy
+pacman --sync --refresh
+```
+#### Update all packages from AUR and official repos
+```sh
+pacman -Syu
+pacman --sync --refresh --sysupgrade
+```
+#### Force refresh of all package databases, even if they appear to be up-to-date
+```sh
+pacman -Syy
+pacman --sync --refresh --refresh
+```
+#### Download program updates but don't install them
+```sh
+pacman -Syyuw
+pacman --sync --refresh --refresh --sysupgrade --downloadonly
+```
 #### Get number of total installed packages
 ```sh
 pacman -Q | wc -l
@@ -924,12 +880,6 @@ Before mail is queued for delivery, it goes through a cleanup daemon, which can 
   1. Local inboxes
   2. Internet (SMTP)
   3. Piped to programs
-### read
-#### Stopwatch
-Will stop when you press enter, displaying how much time elapsed
-```sh
-time read
-```
 ### rename
 `rename` uses regular expressions [[33](#sources)]
 #### rename options
@@ -1181,63 +1131,6 @@ Configuration file                            | Description
 ```sh
 ssmtp -au recipient -ap pw user@host < msg
 ```
-### stat
-### ping
-"packet Internet groper" utility used for checking network connections, using ICMP packets (cf. __nc__)
-#### Numeric output only
-```
-ping -n
-```
-#### Send {n} number of pings
-```
-ping -c n
-``` 
-#### Flood ping
-```
-ping -f
-```
-#### Print timestamp
-```
-ping -D
-```
-#### Mark outgoing packet to be processed appropriate to kernel's policy
-```
-ping -m
-``` 
-#### Bypass routing tables
-```
-ping -r
-```
-### postfix
-Multiple processes with no particular parent/child relationship\
-Receives mail by two methods:
-  1. Local mail (sendmail)
-  2. Internet mail (SMTP)
-
-Before mail is queued for delivery, it goes through a cleanup daemon, which can be configured to do header and body inspection using regex
-`Qmgr` is the heart of postfix mail delivery; it maintains an active queue, which attempts delivery.\ 
-It delivers mail using three methods:
-  1. Local inboxes
-  2. Internet (SMTP)
-  3. Piped to programs\
-### route
-Display and manipulate the routing table
-#### Display routing table
-```
-route -n
-```
-#### Add a default gateway
-```
-route add default gw 192.168.0.1
-```
-#### Remove a default gateway
-```
-route del default gw 192.168.0.1
-```
-#### Give a particular network a different gateway
-```
-route add -net 192.168.1.0 netmask 255.255.255.0 gw 192.168.0.1
-```
 ### sendmail
 Mail daemon once the de facto standard for accepting and redirecting mail on Linux distributions, long ago fallen into disuse. It was infamous for its difficulty to set up, with roots in ARPANET itself.
 ### ssh
@@ -1368,9 +1261,10 @@ Execute {cmd} at periods of {n} seconds, watching its output [[23](#sources)]
 ```sh
 watch cmd -n n
 ```
-#### Update twice a second, producing a dashboard
+#### Display a dashboard that will run {cmd} every second, displaying the output
 ```sh
-watch -n 0.5 iptables -vnL
+watch -n 1 cmd
+watch -n 0.5 iptables -vnL # Update twice a second, producing a dashboard
 ```
 ### xinetd
 Internet Super Daemon provided an alternate method of connecting to various outdated network services. Should be turned off nowadays.  
@@ -1593,6 +1487,13 @@ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -	# D
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
 ```
 ### at
+#### Execute a command at a given time
+```sh
+echo "cmd" | at time
+```
+```sh
+at -f file time
+```
 #### List scheduled jobs
 ```sh
 at -l
@@ -1619,7 +1520,6 @@ ausearch --start today --loginuid500
 Show UUID, Label, and filesystems of GPT block devices
 ### chage
 Change user password expiry information
-### chage
 #### Remove expiration date from an account
 ```sh
 chage -E -1 user
@@ -1694,7 +1594,7 @@ chsh-s /bin/bash
 ```sh
 chsh-s /usr/local/bin/fish
 ```
-### file
+### cp
 #### Preserve symlinks in a recursive copy
 ```sh
 cp -a
@@ -1716,7 +1616,6 @@ Print all parameters with descriptions and current values
 ```sh
 cryptsetup --verify-passphrase luksFormat /dev/sdb1
 ```
-### cryptsetup
 #### Assign virtual name "storage1" to encrypted disk /dev/sdb1
 ```sh
 cryptsetup luksOpen /dev/sdb1 storage1
@@ -1726,7 +1625,6 @@ cryptsetup luksOpen /dev/sdb1 storage1
 ```sh
 curl -d '{name}={value}' url
 ```
-### curl
 #### Download {url}, but produce no output in case of failure
 ```sh
 curl -f url
@@ -1789,7 +1687,7 @@ dd if=/dev/zero bs=1M count=1024 | md5sum
 ```sh
 declare -p
 ```
-### filesystem
+### df
 #### Change scale to terabytes
 ```sh
 df -BT
@@ -1800,17 +1698,20 @@ df --block-size=T
 df -h
 ```
 ### dhclient
-Turn on DHCP client and get a new address from the server
+Obtain and configure TCP/IP information from a server on the network [[LGLC](../sources/lglc.md): 34]
+#### Turn on the DHCP client and get a new address from the server
+```
+dhclient
+```
 #### Release the currently assigned IP address and get a new one
 ```sh
 dhclient -r
 ```
-### filter
+### diff
 #### Three lines of context
 ```sh
 diff -c
 ```
-### filter
 #### Case-insensitive
 ```sh
 diff -i
@@ -1820,7 +1721,15 @@ diff -i
 diff -w
 ```
 ### dig
-DNS lookup tool that returns the text of the actual response from the DNS server
+DNS lookup tool that returns the text of the actual response from the DNS server, useful when troubleshooting a DNS issue (cf. [ `nslookup` ](#nslookup))
+#### Nameserver
+```
+dig example.com NS
+```
+#### Mail server
+```
+dig example.com MX
+```
 #### Perform a reverse DNS lookup on an IP address
 ```sh
 dig -x 8.8.8.8
@@ -1837,7 +1746,6 @@ dig +nsearch example.com
 ```sh
 dig +short example.com
 ```
-### dig
 #### Lookup the mail server IP associated with a domain name
 ```sh
 dig +short example.com MX example.com MX
@@ -1854,13 +1762,14 @@ dig example.com ANY
 ```sh
 dig example.com soa
 ```
-### file
-#### Strip last component from filename (cf. `basename`)
+### dirname
+#### Strip filename from $PATH
+(cf. [ `basename` ](#basename))
 ```sh
-dirname pathname
+dirname $PATH
 ```
 ### dm-crypt
-Disk-encryption subsystem which serves as the backend to `cryptsetup`
+Disk-encryption subsystem which serves as the backend to [ `cryptsetup` ](#cryptsetup)
 ### dmesg
 #### Disable kernel messages from being sent to the console
 ```sh
@@ -1928,12 +1837,70 @@ Create an image of important metadata for an ext3 filesystem
 ```sh
 e2label /dev/sdb1 Storage
 ```
-### file
+### find
 #### Find all files in {path} that are owned by {user}
 ```sh
 find path -user username
 ```
 ### firewall-cmd
+Successor to `iptables` in Red Hat, and like its predecessor a frontend to the netfilter protocols. Places network traffic into zones. Commands have to be written twice: once to affect running config and again to have the change saved
+
+Configuration file                          | Description
+:---                                        | :---
+/etc/sysconfig/network-scripts/ifcfg-ens33  | interface settings
+/usr/lib/firewalld/services                 | .xml files that define services ("ZONE=public")
+
+#### Display status of service
+```
+firewall-cmd --state
+```
+#### Display default zone
+```
+firewall-cmd --get-default-zone
+```
+#### Display zones that are attached to an interface
+```
+firewall-cmd --get-active-zones
+```
+#### Add a new zone
+```
+firewall-cmd --new-zone=testlab
+```
+#### Add a new zone, and write the change to disk
+```
+firewall-cmd --new-zone=testlab  --permanent
+```
+#### Load saved configuration
+```
+firewall-cmd --reload
+```
+#### Display names of all available services
+```
+firewall-cmd --get-services
+```
+#### Add a service permanently
+```
+firewall-cmd --add-service=ftp --permanent
+```
+#### Display services loaded in memory
+```
+firewall-cmd --list-services
+```
+```
+firewall-cmd --remove-service
+```
+#### Add nonstandard port
+```
+firewall-cmd --add-port=8080/tcp
+```
+#### Add a range of nonstandard ports
+```
+firewall-cmd --add-port=50000-60000/udp
+```
+#### See approved port numbers
+```
+firewall-cmd --list-ports
+```
 #### Add a range of nonstandard ports
 ```sh
 firewall-cmd --add-port=50000-60000/udp
@@ -1958,7 +1925,6 @@ firewall-cmd --get-default-zone
 ```sh
 firewall-cmd --get-services
 ```
-### firewall-cmd
 #### Display approved port numbers
 ```sh
 firewall-cmd --list-ports
@@ -1983,7 +1949,7 @@ firewall-cmd --remove-service
 ```sh
 firewall-cmd --state
 ```
-### filter
+### fold
 #### Display text of {file}, wrapping long lines
 ```sh
 fold  file
@@ -2025,7 +1991,7 @@ gem uninstall package
 ```sh
 gem update package
 ```
-### file
+### getfacl
 #### Get access control list for {file}
 ```sh
 getfacl file
@@ -2044,6 +2010,35 @@ gpasswd -A user group
 gpasswd -d user group
 ```
 ### gpg
+PGP was bought by Semantec, and GNU has since released GPG, an open-source replacement.[35](#sources)
+#### gpg options
+Option  | POSIX option                | Effect
+:---    | :---                        | :---
+\-      | clearsign, clear-sign       | make a cleartext signature, readable without any special software
+\-      | send-keys                   | send keys to a keyserver
+d       | decrypt                     | decrypt {$FILE}
+k       | list-keys, list-public-keys | list available GPG keys
+#### Decrypt file
+```sh
+gpg file.txt
+```
+#### Export GPG public key
+```sh
+gpg --export --output ~/jdoe.pub
+```
+#### Import another person's public key
+```sh
+gpg --import jdoe.pub
+```
+#### List available GPG keys
+```sh
+gpg --list-key
+```
+#### Encrypt a file
+```sh
+gpg --encrypt -r jdoe@dplaptop.lab.itpro.tv ./file.txt
+```
+
 #### Sign {file} without encrypting it (produces file.asc)
 ```sh
 gpg --clearsign file
@@ -2096,7 +2091,7 @@ hdparm -C
 ```sh
 hdparm -g
 ```
-### filter
+### head
 #### Print first 8 characters of {file}
 ```sh
 head -c8 file
@@ -2111,14 +2106,8 @@ host -C
 ```sh
 hostname -d
 ```
-### hostnamectl
-#### Permanently change hostname to {hostname}
-```sh
-hostnamectl set-hostname hostname
-```
 ### hwclock
 Access the BIOS clock
-### hwclock
 #### Set hardware clock to software clock
 ```sh
 hwclock --hctosys
@@ -2143,6 +2132,20 @@ iconv -f ASCII -t UTF-8 file
 iconv -l --list
 ```
 ### ifconfig
+"RX" and "TX" stand for received and transmitted.
+#### Apply a static IP address to interface {eth0} and turn it on ("up")
+```
+ifconfig eth0 up 10.1.230.245 netmask 255.255.255.0
+```
+#### Bring an interface up or down
+```
+ifup eth0
+ifdown eth0
+```
+```
+ifconfig eth0 up
+ifconfig eth0 down
+```
 #### Display details of all interfaces (even disabled)
 ```sh
 ifconfig -a
@@ -2206,32 +2209,6 @@ ip route
 #### Change the default gateway to 192.168.1.1 on eth0
 ```sh
 ip route change default via 192.168.1.1 dev eth0
-```
-### iptables
-#### Display rules as written on disk
-```sh
-iptables --list-rules
-```
-#### Set an iptable rule to accept SSH traffic from a particular IP
-```sh
-iptables -A INPUT -p ssh -s 10.0.222.222 -j ACCEPT
-```
-#### Set an iptable rule to accept incoming TCP traffic to port 80
-```sh
-iptables -A INPUT -p tcp --dport 80 -j ACCEPT
-```
-#### Reload configuration file
-```sh
-iptables -F
-```
-#### Show statistics for configuration lines
-```sh
-iptables -vnL --lines
-```
-#### Display what the running configuration would look like if written to disk 
-Must be redirected to a file
-```sh
-iptables-save
 ```
 ### iscsiadm
 Command-line utility allowing discovery and login to iSCSI targets
@@ -2356,20 +2333,10 @@ lspci -k
 ```sh
 lspci -nn
 ```
-### filesystem
+### lsusb
 #### Display USB connections in a tree-like format
 ```sh
 lsusb -t
-```
-### mail
-Enter interactive shell for reading email inbox
-#### Check {user}'s email
-```sh
-mail -u user
-```
-#### Send email to {user}
-```sh
-mail user
 ```
 ### mailq
 Display the current mail queue on a Postfix server
@@ -2391,7 +2358,11 @@ mdadm --delay
 Manjaro hardware utility
 ### mhwd-chroot
 Chroot into an installed Linux installation from a live boot of a Manjaro Installation Media
-### file
+### mkdir
+#### Quickly create multiple directories using brace expansion
+```sh
+mkdir -p ~/my-app/{bin,lib,log}
+```
 #### Create new directory {dirname} along with all of the parents in its pathname, if they do not exist
 ```sh
 mkdir -p dirname
@@ -2401,12 +2372,11 @@ mkdir --parents dirname
 Create an ext2/3/4 filesystem
 ### mkfontscale
 Create a fonts.scale file definition when executed against the current directory
-### filesystem
+### mkfs
 #### Create an ext4 filesystem on {partition}
 ```sh
 mkfs -t ext4 partition
 ```
-### filesystem
 #### Specify {filesystemtype} to be created
 ```sh
 mkfs -T filesystemtype
@@ -2420,7 +2390,6 @@ mkswap partition
 ```sh
 modinfo -p
 ```
-### modinfo
 #### Show information about a Linux kernel module
 ```sh
 modinfo module
@@ -2479,49 +2448,19 @@ mount /dev/sdb1 /media/usb
 ```
 ### mt
 Control magnetic tape drive operation; operates on environment variable TAPE
-### nc
-#### Connect to {port} at {host}
-```sh
-nc host port
-```
-#### Netcat command that retrieves a webpage
-```sh
-nc host port \get
-```
 ### netplan
-#### Apply network configuration settings (Ubuntu)
+Ubuntu network configuration tool
+
+Config file   | Description
+:---          | :---
+/etc/netplan/ | directory containing various configuration files and scripts
+/etc/nplan/99_config.yaml | netplan config
+#### Apply network configuration settings
 ```sh
 netplan apply
 ```
-### netstat
-#### Display all active sockets on all interfaces
-```sh
-netstat -a
-```
-#### Show network traffic
-```sh
-netstat -an
-```
-#### Refresh every five seconds
-```sh
-netstat -c5
-```
-#### Display routing table
-```sh
-netstat -r
-```
-#### Show the current default route without performing DNS lookups on the IP addresses involved
-```sh
-netstat -rn
-```
-#### Display only TCP connections
-```sh
-netstat -t
-```
 ### newaliases
-Refresh the mail system after a change to the /etc/aliases file
-### newaliases
-Must be run after making a change to email aliases on a server running postfix
+Refresh the mail system after a change to the [ /etc/aliases ](#configs) file; Must be run after making a change to email aliases on a server running [ `postfix` ](#postfix)
 ### nice
 #### Run {prog} at a nice value of (positive) 10
 ```sh
@@ -2529,7 +2468,7 @@ nice -10 prog
 nice -n 10
 nice prog
 ```
-### filter
+### nl
 #### Number all lines, including blank lines
 ```sh
 nl -b a file
@@ -2537,6 +2476,26 @@ nl --body-numbering=a file
 ```
 ### nmap
 Scan hosts and ports on a network
+#### Scan hosts from a text file
+```sh
+nmap -iL hosts.txt
+```
+#### Identify a host's operating system
+```sh
+nmap -A localhost.example.com
+```
+#### Determine whether a host has a firewall enabled
+```sh
+nmap -sA localhost.example.com
+```
+#### Scan a specified range of ports
+```sh
+nmap -p 10-300 localhost.example.com
+```
+#### Perform a SYN TCP scan, stealthier than the TCP connect scan
+```sh
+nmap -sT localhost.example.com
+```
 #### Aggressive scan
 ```sh
 nmap -A 192.168.1.0/24
@@ -2569,8 +2528,27 @@ nmap -sX
 Test NetBIOS name resolution
 ### nmcli
 Control NetworkManager and report network status
-### nmcli
-CLI interface to NetworkManager
+#### Display devices and statuses
+```
+nmcli device status
+```
+#### Display information on interfaces as well as status
+Including other network connections not managed by network manager ("unmanaged") or not connected ("unavailable") 
+```
+nmcli dev status
+```
+#### Display what connections are enabled 
+```
+nmcli general status
+```
+#### Display UUIDs associated with network connections 
+```
+nmcli connection show --active
+```
+#### Display much more information on network devices
+```
+nmcli device show
+```
 #### Configure settings for network interface {ens01} via interactive shell
 ```sh
 nmcli connection edit ens01
@@ -2608,117 +2586,10 @@ nmcli general status
 ```sh
 nohup cmd &
 ```
-### nslookup
-#### Retrieve IP address of {host}
-```sh
-nslookup host
-```
-### system
+### ntpdate
 #### Synchronize system clock to that of an online Network Time Protocol server
 ```sh
 ntpdate -upool.ntp.org
-```
-### pacman
-#### List installed packages
-```sh
-pacman -Q
-pacman --query
-```
-#### List all orphaned dependencies (no longer needed)
-```sh
-pacman -Qdt
-pacman --query --deps --unrequired
-```
-#### List only explicitly installed packages and versions
-```sh
-pacman -Qe
-pacman --query --explicit
-```
-### pacman
-#### List explicitly installed packages, limiting output to program names
-```sh
-pacman -Qeq
-pacman --query --explicit --quiet
-```
-#### List all packages installed from the AUR
-```sh
-pacman -Qm
-pacman --query --foreign
-```
-#### List all packages installed from main repos
-```sh
-pacman -Qn
-pacman --query --native
-```
-#### Find which package owns {file}
-```sh
-pacman -Qo file
-pacman --query --owns file
-```
-#### List all install packages, filtering output to packages that are out-of-date on the local system
-```sh
-pacman -Qu
-pacman --query --upgrades
-```
-#### Remove {package}
-```sh
-pacman -R package
-pacman --remove package
-```
-#### Remove {package}, dependencies, and config files
-```sh
-pacman -Rns package
-pacman --remove --recursive --nosave
-```
-#### Remove {package} as well as its dependencies
-```sh
-pacman -Rs
-pacman --remove --recursive
-```
-#### Install {pkg} from the AUR
-```sh
-pacman -S package
-pacman --sync package
-```
-#### Remove all packages from the cache as well as unused sync databases
-```sh
-pacman -Scc
-pacman --sync --clean --clean
-```
-#### Display information about {package}
-```sh
-pacman -Si package
-pacman --sync --info package
-```
-#### Search for {pkg} in AUR repos
-```sh
-pacman -Ss package
-pacman --sync --search package
-```
-#### Search for packages matching {searchexpression}
-```sh
-pacman -Ss pattern
-pacman --sync --search pattern
-```
-#### Update package database
-```sh
-pacman -Sy
-pacman --sync --refresh
-```
-#### Update all packages from AUR and official repos
-```sh
-pacman -Syu
-pacman --sync --refresh --sysupgrade
-```
-#### Force refresh of all package databases, even if they appear to be up-to-date
-```sh
-pacman -Syy
-pacman --sync --refresh --refresh
-```
-#### Download program updates but don't install them
-```sh
-pacman -Syyuw
-pacman --sync --refresh --refresh --sysupgrade --downloadonly
 ```
 ### passwd
 #### Immediately expire the passwore of {user}, forcing a password change on next login
@@ -2737,12 +2608,37 @@ passwd -l user # passwd --lock
 ```sh
 passwd -u user # passwd --unlock
 ```
-### filter
+### patch
 #### Ignore whitespace
 ```sh
 patch -i
 ```
 ### ping
+"packet Internet groper" utility used for checking network connections, using ICMP packets (cf. [ `nc` ](#nc))
+#### Numeric output only
+```
+ping -n
+```
+#### Send {n} number of pings
+```
+ping -c n
+``` 
+#### Flood ping
+```
+ping -f
+```
+#### Print timestamp
+```
+ping -D
+```
+#### Mark outgoing packet to be processed appropriate to kernel's policy
+```
+ping -m
+``` 
+#### Bypass routing tables
+```
+ping -r
+```
 #### Send {n} number of pings
 ```sh
 ping -c n
@@ -2807,7 +2703,6 @@ ps -f
 ps xG
 ps -a
 ```
-### ps
 #### Display SELinux contexts for processes
 ```sh
 ps auxZ
@@ -2850,6 +2745,11 @@ r | | read from standard input, backslash no longer will act as an escape charac
 s | | read from standard input, silent mode (characters are not echoed)
 t | | read from standard input, returning failure is a complete line of input is not read within {n} seconds
 u | | read input from file descriptor { $FILE }
+#### Stopwatch
+Will stop when you press enter, displaying how much time elapsed
+```sh
+time read
+```
 ### repquota
 #### Human-readable
 ```sh
@@ -2872,6 +2772,23 @@ rmmod -w
 rmmod module
 ```
 ### route
+Display and manipulate the routing table
+#### Display routing table
+```
+route -n
+```
+#### Add a default gateway
+```
+route add default gw 192.168.0.1
+```
+#### Remove a default gateway
+```
+route del default gw 192.168.0.1
+```
+#### Give a particular network a different gateway
+```
+route add -net 192.168.1.0 netmask 255.255.255.0 gw 192.168.0.1
+```
 #### Add a route to the server for the network 192.168.51.0/24 through the gateway 192.168.51.1
 ```sh
 route add -net192.168.51.0 netmask 255.255.255.0 gw 192.168.51.1
@@ -2934,6 +2851,14 @@ rsync --owner
 #### Copy file to remotepath on remotehost
 ```sh
 rsync file remotehost:remotepath
+```
+#### Archive mode: equivalent to -rptlgoD
+```sh
+rsync -a
+```
+#### Create a backup of every file destination file transferred
+```sh
+rsync -b
 ```
 #### Copy remotefile from remotehost to path
 ```sh
@@ -3077,7 +3002,7 @@ setfacl -m m::rx file
 ```
 ### sfdisk
 Script-oriented tool for partitioning disk devices
-### filesystem
+### sfdisk
 #### Set the first partition of the first SATA device to a RAID type
 ```sh
 sfdisk --id /dev/sda 1 fd
@@ -3099,7 +3024,7 @@ sfdisk-l device # sfdisk --list device
 ```sh
 shred --iterations=n
 ```
-### filter
+### shuf
 #### Randomly permute input
 ```sh
 shuf 
@@ -3161,7 +3086,7 @@ snap refresh
 ```sh
 snap remove package
 ```
-### filter
+### sort
 #### Sort by column number {n}
 ```sh
 sort -k n
@@ -3281,7 +3206,7 @@ su -c cmd
 ```sh
 sudo --noprompt
 ```
-### filesystem
+### swapon
 #### Instruct system to begin using {partition} as a swap file
 ```sh
 swapon partition
@@ -3415,7 +3340,7 @@ Show files that are overridden with systemd
 ```sh
 systemd-delta --diff
 ```
-### filter
+### tail
 #### Output last lines beginning at 30th line from the start
 ```sh
 tail -n=+30
@@ -3643,12 +3568,7 @@ Edit and view the `etc/sudoers` file
 wall -g group message
 wall --group group message
 ```
-### watch
-#### Display a dashboard that will run {cmd} every second, displaying the output
-```sh
-watch -n 1 cmd
-```
-### filter
+### wc
 #### Display byte count
 ```sh
 wc -c
@@ -3672,7 +3592,6 @@ whatis commands
 ```
 ### X
 Start the graphical interface from a command line
-### X
 #### Test X11 with the config file automatically generated after `Xorg -configure`
 ```sh
 X -config $HOME/xorg.conf.new
