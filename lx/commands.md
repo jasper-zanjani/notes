@@ -3,9 +3,12 @@
 
 Topic | Commands
 :---  | :---
+Filters 
 Hardware settings | [`insmod`](#insmod) [ `lsmod` ](#lsmod) [ `lspci` ](#lspci) [ `lsusb` ](#lsusb) [ `modprobe` ](#modprobe) [`rmmod`](#rmmod)
 Logical volumes
 Manjaro           | [`mhwd`](#mhwd) [`mhwd-chroot`](#mhwd-chroot)
+Package managers
+Systemd
 
 
 \#  | Commands sorted alphabetically
@@ -299,10 +302,10 @@ zipnote archive > comments
 zipsplit -n size zipfile
 ```
 ### bpftrace
-New open-source tracer for analyzing production performance problems and troubleshooting software [[19](#sources)]
+New open-source tracer for analyzing production performance problems and troubleshooting software [[19](README.md#sources)]
 ### chown
 #### Change a file or directory's ownership
-To change the user and group owner of a file to {user} and {group}, `chown`'s syntax is of the format `user:group` [[32](#sources)].
+To change the user and group owner of a file to {user} and {group}, `chown`'s syntax is of the format `user:group` [[32](README.md#sources)].
 ```sh
 chown susan:delta file          # Assign {file} to user `susan` and group `delta`
 chown alan file                 # Assign {file} to user `alan`
@@ -324,13 +327,13 @@ chown -cfR --preserve-root alan # `preserve-root` prevents changes to files in t
 ```
 ### exif
 #### View image metadata
-Unlike alternatives like `file` and ImageMagick's `identify`, `exif` produces columnar output [[31](#sources)]
+Unlike alternatives like `file` and ImageMagick's `identify`, `exif` produces columnar output [[31](README.md#sources)]
 ```sh
 exif image.png 
 ```
 ### file
 #### View image metadata
-[[31](#sources)]
+[[31](README.md#sources)]
 ```sh
 file image.png # => file type, dimensions, color depth
 ```
@@ -355,7 +358,7 @@ watch free -h
 encrypted file transfers
 ### fusermount
 #### Mount a directory from a remote server on your local host via SSH
-[[23](#sources)]
+[[23](README.md#sources)]
 ```sh
 fusermount -u mountpoint
 ```
@@ -378,14 +381,14 @@ Option  | POSIX option            | Effect
 #### history options
 Option  | POSIX option            | Effect
 :---    | :---                    | :---
-`-c`    |                         | clear history [[23](#sources)]
+`-c`    |                         | clear history [[23](README.md#sources)]
 ### hostnamectl
 #### Permanently change hostname to {$HOSTNAME}
 ```sh
 hostnamectl set-hostname hostname
 ```
 ### install
-With `install`, files can be copied while maintaining various metadata, including timestamp, owner, etc. [[9](#sources)]
+With `install`, files can be copied while maintaining various metadata, including timestamp, owner, etc. [[9](README.md#sources)]
 #### Copy a file while preserving timestamp
 The copy will have the `install` default of `755`, but the original's `mtime` is maintained:
 ```sh
@@ -449,7 +452,7 @@ Must be redirected to a file
 iptables-save > $FILE
 ```
 ### lowriter
-`lowriter` is a command-line utility installed with LibreOffice Writer.[[21](#sources)]
+`lowriter` is a command-line utility installed with LibreOffice Writer.[[21](README.md#sources)]
 #### Convert a single file to PDF
 ```sh
 lowriter --convert-to pdf filename.doc
@@ -465,7 +468,7 @@ Change locale
 localectl set-locale LANG=fr_FR.utf8
 ```
 ### lsof
-`lsof` can be used to display open files, open network ports, and network connections; `-P` prevents the conversion of port numbers to port names; `-i` displays network connections; `-n` prevents the conversion of IP addresses to hostnames [[23](#sources)]
+`lsof` can be used to display open files, open network ports, and network connections; `-P` prevents the conversion of port numbers to port names; `-i` displays network connections; `-n` prevents the conversion of IP addresses to hostnames [[23](README.md#sources)]
 #### lsof options
 Option  | POSIX option            | Effect
 :---    | :---                    | :---
@@ -507,7 +510,7 @@ echo 'message' | mail -s 'subject' -a /path/to/attachment
 #### mailq
 Prints summary of mail messages queued for future delivery
 ### mktemp
-Create a temporary file or directory safely and print its name. These will not need to be manually cleaned up because they will be placed in the temporary directory (**/tmp**) [[29](#sources)]
+Create a temporary file or directory safely and print its name. These will not need to be manually cleaned up because they will be placed in the temporary directory (**/tmp**) [[29](README.md#sources)]
 #### Create a new temporary file
 ```sh
 mktemp
@@ -711,7 +714,7 @@ nslookup ipaddress
 nslookup -port=portno url
 ```
 ### qmail
-Mail Transfer Agent (MTA) designed as a drop-in replacement for Sendmail, notable for being the first to be "security-aware". Its various modular subcomponents run independently and are mutually untrustful. It uses SMTP to exchange messages with other MTAs. It was written by Dan Bernstein, a professor of mathematics famous for litigating against the US government with regard to export controls on encryption algorithms. Deprecated and removed from Arch repos in 2005. [[27](#sources)]
+Mail Transfer Agent (MTA) designed as a drop-in replacement for Sendmail, notable for being the first to be "security-aware". Its various modular subcomponents run independently and are mutually untrustful. It uses SMTP to exchange messages with other MTAs. It was written by Dan Bernstein, a professor of mathematics famous for litigating against the US government with regard to export controls on encryption algorithms. Deprecated and removed from Arch repos in 2005. [[27](README.md#sources)]
 ### pacman
 Option  | POSIX option            | Effect
 :---    | :---                    | :---
@@ -836,7 +839,7 @@ pacman --sync --refresh --refresh --sysupgrade --downloadonly
 pacman -Q | wc -l
 ```
 ### partx
-`partx` is a utility that provides information on drive partitions to the Linux kernel. [[12](#sources)]
+`partx` is a utility that provides information on drive partitions to the Linux kernel. [[12](README.md#sources)]
 #### Display partition table of a drive
 ```bash
 partx --show /dev/sda
@@ -877,7 +880,7 @@ Before mail is queued for delivery, it goes through a cleanup daemon, which can 
   2. Internet (SMTP)
   3. Piped to programs
 ### rename
-`rename` uses regular expressions [[33](#sources)]
+`rename` uses regular expressions [[33](README.md#sources)]
 #### rename options
 Option  | POSIX option            | Effect
 :---    | :---                    | :---
@@ -1058,7 +1061,7 @@ Count the number of pipes replaced by piping output to `cmp`, which will use the
 sed 's/|/:/g' emp.lst | cmp -l - emp.lst | wc -l
 ```
 ### sfdisk
-Script-based partition table editor, similar to [`fdisk`](#fdisk) and [`gdisk`](#gdisk), which can be run interactively. It does not interface with GPT format, neither is it designed for large partitions. [[11](#sources)]
+Script-based partition table editor, similar to [`fdisk`](#fdisk) and [`gdisk`](#gdisk), which can be run interactively. It does not interface with GPT format, neither is it designed for large partitions. [[11](README.md#sources)]
 #### List partitions on all devices
 ```sh
 sfdisk -l
@@ -1099,15 +1102,15 @@ sfdisk /dev/hdd -I hdd-partition-sectors.save
 ```sh
 shuf -e one two three
 ```
-[[10](#sources)]
+[[10](README.md#sources)]
 #### Shuffle items separated by newline 
 ```sh
 shuf -n 1 cards.txt
 ```
-[[10](#sources)]
+[[10](README.md#sources)]
 ### sort
 #### Sort by space-delimited columns
-Processes consuming the most memory will be at the bottom [[23](#sources)]
+Processes consuming the most memory will be at the bottom [[23](README.md#sources)]
 ```sh
 ps aux | sort -nk 4
 ```
@@ -1116,7 +1119,7 @@ Processes consuming the most CPU will be at the bottom
 ps aux | sort -nk 3
 ```
 ### ssmtp
-Installable client program [[25](#sources)]
+Installable client program [[25](README.md#sources)]
 
 #### ssmtp config
 Configuration file                            | Description
@@ -1130,18 +1133,18 @@ ssmtp -au recipient -ap pw user@host < msg
 Mail daemon once the de facto standard for accepting and redirecting mail on Linux distributions, long ago fallen into disuse. It was infamous for its difficulty to set up, with roots in ARPANET itself.
 ### ssh
 #### Compare the differences between a remote and local file
-`cat` a file over SSH and pipe the output into a diff or sdiff command [[23](#sources)j]
+`cat` a file over SSH and pipe the output into a diff or sdiff command [[23](README.md#sources)j]
 ```sh
 ssh remotehost cat /path/to/remotefile | diff /path/to/localfile
 ```
 #### Create an SSH tunnel to access remote resources
-Tunnel into a server to access a website which your local machine may not; `-L` creates the SSH tunnel; first port is the port that will be opened on the local machine [[23](#sources)]
+Tunnel into a server to access a website which your local machine may not; `-L` creates the SSH tunnel; first port is the port that will be opened on the local machine [[23](README.md#sources)]
 ```sh
 ssh -N -L localport:host:remoteport remotehost
 ```
 ### sshfs
 #### Mount a directory from a remote server on your local host via SSH
-[[23](#sources)]
+[[23](README.md#sources)]
 ```sh
 sshfs remotehost:/directory mountpoint
 ```
@@ -1198,7 +1201,7 @@ Inspect actual IP packets (Wireshark is a GUI-based alternative)
 tcpdump -i eth0
 ```
 ### tig
-Provides a curses-based browser that allows you to navigate the commits in the current branch. It is essentially a wrapper around `git log`, and therefore accepts the same arguments that can be passed to it.[[34](#sources)]
+Provides a curses-based browser that allows you to navigate the commits in the current branch. It is essentially a wrapper around `git log`, and therefore accepts the same arguments that can be passed to it.[[34](README.md#sources)]
 #### tig config
 Config file   | Description
 :---          | :---
@@ -1233,7 +1236,7 @@ git rev-list --author=olaf HEAD | tig show --stdin
 ```
 ### tr
 #### Change the case of a string
-[[23](#sources)]
+[[23](README.md#sources)]
 ```sh
 tr [:upper:] [:lower:]
 ```
@@ -1252,7 +1255,7 @@ uname -srm
 ```
 ### watch
 #### Repeat a command at regular intervals and watch its changing output
-Execute {cmd} at periods of {n} seconds, watching its output [[23](#sources)]
+Execute {cmd} at periods of {n} seconds, watching its output [[23](README.md#sources)]
 ```sh
 watch cmd -n n
 ```
@@ -1275,12 +1278,12 @@ Configuration file  | Description
 stat file
 ```
 ### yum
-Yellow Dog Updater, Modified package manager (Yellow Dog was a variation of Red Hat for PowerPC architectures), package manager more commonly used today. [[35](#sources), [37](#sources)]
+Yellow Dog Updater, Modified package manager (Yellow Dog was a variation of Red Hat for PowerPC architectures), package manager more commonly used today. [[35](README.md#sources), [37](README.md#sources)]
 #### yum options
 Option  | POSIX option            | Effect
 :---    | :---                    | :---
 y       | assumeyes               | respond to any prompt with "yes" automatically
-x       | exclude                 | exclude specific packages from updates [[38](#sources)]
+x       | exclude                 | exclude specific packages from updates [[38](README.md#sources)]
 #### Install {package}
 ```sh
 yum install package
@@ -2005,7 +2008,7 @@ gpasswd -A user group
 gpasswd -d user group
 ```
 ### gpg
-PGP was bought by Semantec, and GNU has since released GPG, an open-source replacement.[35](#sources)
+PGP was bought by Semantec, and GNU has since released GPG, an open-source replacement.[35](README.md#sources)
 #### gpg options
 Option  | POSIX option                | Effect
 :---    | :---                        | :---
@@ -3675,13 +3678,13 @@ yay --yay --clean
 ```
 ### touch
 #### Update {newfile}'s modification date to match {oldfile}
-[[36](#sources)]
+[[36](README.md#sources)]
 ```sh
 touch -r oldfile newfile
 ```
 
 ### sosreport
-**SOS** is an open-source data collection tool that can be used to collect system configuration details and diagnostic information from a Unix-like operating system. It is installed by default on Ubuntu Server. [[39](#sources)]
+**SOS** is an open-source data collection tool that can be used to collect system configuration details and diagnostic information from a Unix-like operating system. It is installed by default on Ubuntu Server. [[39](README.md#sources)]
 #### sosreport options
 Option  | POSIX option            | Effect
 :---    | :---                    | :---
@@ -3742,7 +3745,7 @@ Restart Samba service
 ```sh
 sudo systemctl restart smbd.service
 ```
-[[40](#sources), [41](#sources)]
+[[40](README.md#sources), [41](README.md#sources)]
 #### Install and configure Samba as a client
 ```sh
 sudo apt install smbclient 
@@ -3755,7 +3758,7 @@ This will display the Samba CLI
 ```
 smb: \>
 ```
-[[40](#sources)]
+[[40](README.md#sources)]
 ### Bash scripting
 #### Validating arguments
 ```sh 
@@ -3769,13 +3772,13 @@ fi
 ```sh
 [ -z "$1" ] && echo "..." && exit 1
 ```
-[[7](#sources)]
+[[7](README.md#sources)]
 ```sh
 if [ ! -z "$2" ] ; then ...; fi
 ```
-[[8](#sources)]
+[[8](README.md#sources)]
 #### Looping based on user input
-Placed in a while loop, if user responds with anything except "y" (the read command will read only the first letter) the loop will terminate [[23](#sources)]
+Placed in a while loop, if user responds with anything except "y" (the read command will read only the first letter) the loop will terminate [[23](README.md#sources)]
 ```bash
 read -p "Backup another server? (y/n)" -n 1
 ["$BACKUP_AGAIN"="y"] || break
