@@ -3460,133 +3460,46 @@ telinit--no-wall
 ```
 ### test
 Evaluate a condition, returning 0 if true and 1 if false
-#### Test if both EXPRESSION1 and EXPRESSION2 are true
+#### test options
+Option  | Effect
+:---    | :---
+a       | Test if both EXPRESSION1 and EXPRESSION2 are true
+b       | Test if {file} exists and is block special
+c       | Test if {file} exists and is character special
+d       | Test if {file} exists and is a directory
+e       | Test if {file} exists
+ef      | Test if {file} and {other} have the same device and inode numbers
+eq      | Test if INT1 is equal to INT2
+f       | Test if {file} exists and is a regular file
+ge      | Test if INT1 is greater than or equal to INT2
+o       | Test if either EXPRESSION1 or EXPRESSION2 are true
+le      | Test if INT1 is less than or equal to INT2
+lt      | Test if INT1 is less than INT2
+ne      | Test if INT1 is unequal to INT2
+nt      | Test if {file} is newer (modification date) than {other}
+ot      | Test if {file} is older than {other}
+g       | Test if {file} exists and is set-group-ID
+G       | Test if {file} exists and is owned by the effective group ID
+h       | Test if {file} exists and is a symbolic link
+k       | Test if {file} exists and has its sticky bit set
+L       | Test if {file} exists and is a symbolic link
+n       | Test if the length of {string} is nonzero
+O       | Test if {file} exists and is owned by the effective user ID
+p       | Test if {file} exists and is a named pipe
+r       | Test if {file} exists and read permission is granted
+s       | Test if {file} exists and has a size greater than zero
+S       | Test if {file} exists and is a socket
+u       | Test if {file} exists and its set-userID bit is set
+w       | Test if {file} exists and write permission is granted
+x       | Test if {file} exists and execute (or search) permission is granted
+z       | Test if the length of {string} is zero
+#### Test if {VAR} has either the text "string1" or "string2" within it
 ```sh
-test  EXPRESSION1 -a EXPRESSION2
+[[ $VAR =~ 'string1' \| 'string2' ]]
 ```
-#### Test if either EXPRESSION1 or EXPRESSION2 are true
+#### Test if {VAR} matches a regex {pattern} (must not be quoted, otherwise, {pattern} will be treated as a string literal)
 ```sh
-test  EXPRESSION1 -o EXPRESSION2
-```
-#### Test if {file} is newer (modification date) than {other}
-```sh
-test  file -nt other-nt other
-```
-### test
-#### Test if {file} is older than {other}
-```sh
-test  file -ot other-ot other
-```
-#### Test if INT1 is less than INT2
-```sh
-test  INT1 -lt INT2
-```
-#### Test if INT1 is unequal to INT2
-```sh
-test  INT1 -ne INT2
-```
-#### Test if {file} exists and is block special
-```sh
-test -b file
-```
-#### Test if {file} exists and is character special
-```sh
-test -c file
-```
-#### Test if {file} exists and is a directory
-```sh
-test -d file
-```
-#### Test if {file} exists
-```sh
-test -e file
-```
-#### Test if {file} exists and is a regular file
-```sh
-test -f file
-```
-#### Test if {file} exists and is set-group-ID
-```sh
-test -g file
-```
-#### Test if {file} exists and is owned by the effective group ID
-```sh
-test -G file
-```
-#### Test if {file} exists and is a symbolic link
-```sh
-test -h file
-```
-#### Test if {file} exists and has its sticky bit set
-```sh
-test -k file
-```
-#### Test if {file} exists and is a symbolic link
-```sh
-test -L file
-```
-#### Test if the length of {string} is nonzero
-```sh
-test -n string
-[[ -n string ]]
-```
-#### Test if {file} exists and is owned by the effective user ID
-```sh
-test -O file
-```
-#### Test if {file} exists and is a named pipe
-```sh
-test -p file
-```
-#### Test if {file} exists and read permission is granted
-```sh
-test -r file
-```
-#### Test if {file} exists and has a size greater than zero
-```sh
-test -s file
-```
-### test
-#### Test if {file} exists and is a socket
-```sh
-test -S file
-```
-#### Test if {file} exists and its set-userID bit is set
-```sh
-test -u file
-```
-#### Test if {file} exists and write permission is granted
-```sh
-test -w file
-```
-#### Test if {file} exists and execute (or search) permission is granted
-```sh
-test -x file
-```
-#### Test if the length of {string} is zero
-```sh
-test -z string
-[[ -z string ]]
-```
-#### Test if {file} and {other} have the same device and inode numbers
-```sh
-test file -ef other
-[[ file -ef other]]
-```
-#### Test if INT1 is equal to INT2
-```sh
-test INT1 -eq INT2
-[[ INT1 -eq INT2 ]]
-```
-#### Test if INT1 is greater than or equal to INT2
-```sh
-test INT1 -ge INT2
-[[ INT1 -ge INT2 ]]
-```
-#### Test if INT1 is less than or equal to INT2
-```sh
-test INT1 -le INT2
-[[ INT1 -le INT2 ]]
+[[ $VAR =~ pattern ]]
 ```
 ### timedatectl
 Display the system clock, including local time, universal time, time zone, etc

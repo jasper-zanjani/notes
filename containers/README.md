@@ -47,7 +47,7 @@ Controller                  | control loop that watches the shared state of the 
 ctr                         | unsupported tool used to debug containerd [[22](#sources)]]
 `dockviz`                   | CLI tool that allows inspection of container image layers [[28](#sources)]
 EFK stack                   | [[23](#sources)]
-ELK stack                   | [[23](#sources)]
+ELK stack                   | Elasticsearch, Logstash, Kibana 
 `etcd`                      | configuration store which stores configuration data that can be accessed by cluster nodes.<br/>Consistent and highly-available key value store used as Kubernetes's backing store for all cluster data. [[17](#sources)]
 Helium                      | Windows container with a virtualized filesystem and registry
 Host Networking Service     | how configuration is exposed in Windows containers
@@ -70,7 +70,7 @@ MiniKube                    | most commonly used Kubernetes Engine for local ins
 MiniShift                   | lightweight OpenShift instance intended for installation on a local host for learning or experimentation purposes [[23](#sources)]
 namespace                   | tool for separating groups of repositories [[28](#sources)]
 Node                        | system resources that perform tasks as passigned by **Kube Master** [[14](#sources)]
-OpenShift                   | 
+OpenShift                   | Red Hat PaaS offering, providing an abstraction layer on top of Kubernetes. It comes in 4 flavors: **Origin**, **Online**, **Dedicated**, and **Enterprise**
 Operator                    | software extensions to Kubernetes that make use of **custom resources** to manage applications and their components. [[20](#sources)]<br/>Pattern for building K8S native applications that leverages and extends the K8S API (usable with **`kubectl`**) and runs on K8S as containers [[16](#sources)]<br/>Allow you to deploy and manage applications on Kubernetes clusters. [[21]]
 Operator Lifecycle Manager  | helps you to install, update, and manage the lifecycle of all Operators and associated services running on clusters [[16](#sources)]
 Operator Metering           | enable usage reporting for Operators and resources within K8S. <br/>Intended to aid **chargeback** of infrastructure costs to tables, services, etc. especially in the context of a cloud infrastructure. [[16](#sources)]
