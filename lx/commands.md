@@ -1836,9 +1836,15 @@ Create an image of important metadata for an ext3 filesystem
 e2label /dev/sdb1 Storage
 ```
 ### find
-#### Find all files in {path} that are owned by {user}
+#### Find all files in {$PATH} that are owned by {user}
 ```sh
-find path -user username
+find $PATH -user username
+```
+#### Find recently modified files/folders
+[[42](README.md)]
+```sh
+find $PATH -type f -mtime +120 -ls # Find only files that were modified 120 days ago
+
 ```
 ### firewall-cmd
 Successor to `iptables` in Red Hat, and like its predecessor a frontend to the netfilter protocols. Places network traffic into zones. Commands have to be written twice: once to affect running config and again to have the change saved
