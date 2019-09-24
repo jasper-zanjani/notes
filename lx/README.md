@@ -169,3 +169,4 @@ add ",acl" to options in `fstab` file, then mount/unmount disk. If enabling FACL
   39. "How to install and use [`sosreport`](#sosreport) on Ubuntu". [howtoforge.com](https://www.howtoforge.com/how-to-install-and-use-sosreport-on-ubuntu-1804/).
   40. "How to Install and Configure Samba on Ubuntu". [vitux.com](https://vitux.com/how-to-install-and-configure-samba-on-ubuntu/).
   41. "Install Samba4 on RHEL 8 for File Sharing on Windows". [Web](https://www.tecmint.com/install-samba-on-rhel-8-for-file-sharing-on-windows/): 2019/06/12.
+  42. "How to [ `find` ](#find) recently modified files/folders in Linux". [Web](https://www.2daygeek.com/check-find-recently-modified-files-folders-linux/): 2013/10/11.
