@@ -6,115 +6,50 @@ A-F     | [AAP](#admin-admin-podcast) [ADAC](adac.md) [AZ-103](az-103.md) [ADP](
 G-S     | [GL](#going-linux) [GCPC](gcpc.md) [HPR](#hacker-public-radio) [IMWS](imws.md) [ITP](#itprotv) [JDG](jdg.md) [JNP](jnp.md) [JSJ](#javascript-jabber) [K8S](#kubernetes-podcast-from-google) [LALOS](lalos.md) [LAN](#linux-action-news) [LJ](#linux-journal) [LNL](#late-night-linux) [LSSP](lssp.md) [LU](#linux-unplugged) [NSM](#new-stack-makers) [PodCTL](#podctl) [PBX](pbx.md) [PGL](pgl.md) [RAR](#runas-radio) [s&a](s-and-a.md) [SY](#syntax) 
 T-Z     | [TP](#talk-python) [TS](#techsnap) [UE](#user-error) [USLAH](ulsah.md) [WSAC](wsac.md) [WSAF](wsaf.md) [YUG](yug.md)
 ## People
-#### Jeff Barr
-Description | Links
-:---        | :---
-Contact     | [Twitter](https://twitter.com/intent/user?screen_name=jeffbarr)
-Host        | [AWS](#abbreviations)
-#### Wes Bos
-Description | Links
-:---        | :---
-Contact     | [Twitter](https://twitter.com/wesbos)
-Host        | [SY](#abbreviations)
-#### Craig Bos
-Description | Links
-:---        | :---
-Contact     | [Twitter](http://twitter.com/craigbox)
-Host        | [K8S](#abbreviations) 
-#### Larry Bushey
-Description | Links
-:---        | :---
-Contact     | [Twitter](https://twitter.com/goinglinux) [LinkedIn](https://www.linkedin.com/in/larrybushey/)
-Host        | [GL](#going-linux)  
-#### Richard Campbell
-Description | Links
-:---        | :---
-Contact     | [Twitter](https://twitter.com/richcampbell)
-Host        | [RAR](#abbreviations)  
-#### Jason Cannon
-Description | Links
-:---        | :---
-Author      | [CLKF](clkf.md) [LALOS](lalos.md) [LSSP](lssp.md)
-#### Chris Chapman
-Description | Links
-:---        | :---
-Guest       | [K8S 67](#k8s-67) 
-#### Alister Christman
-Host: [AAP](#abbreviations) [Twitter](https://twitter.com/mralc)
-#### Michael Domenick
-Host: [CR](#abbreviations)  [Twitter](https://twitter.com/dominucco)
-#### Simon Elisha
-Host: [AWS](#abbreviations) [Twitter](https://twitter.com/intent/user?screen_name=simon_elisha)
-#### Bret Fisher
-Description | Links
-:---        | :---
-Contact     | [Email](bret@bretfisher.com) [Twitter](https://twitter.com/BretFisher) [Facebook](https://www.facebook.com/bretfisher.devops) [YouTube](https://www.youtube.com/channel/UC0NErq0RhP51iXx64ZmyVfg)
-Host        | [DD](#devops-and-docker)
-#### Chris Fisher
-Founder of Jupiter Broadcasting, which merged or partnered with Linux Academy on September 12, 2018.
-Description | Links
-:---        | :---
-Contact     | [Twitter](https://twitter.com/ChrisLAS)
-Host        | [LU](#abbreviations)  
-#### David Flanagan
-[JDG](jdg.md)
-#### Brian Fox
-Author: [BRM](#bash-reference-manual)
-#### Adam Glick
-Host: [K8S](#abbreviations) [Twitter](http://twitter.com/mobileglick)
-#### Brian Gracely
-Host: [PodCTL](#abbreviations) [Twitter](https://twitter.com/bgracely)
-#### Randall Hunt
-Guest: AWS [329](#aws-328)
-#### Allan Jude
-Host: [BSD](#abbreviations)  [Web](https://www.scaleengine.com/) [FaceBook](https://facebook.com/allanjude) [LinkedIn](https://www.linkedin.com/in/allanjude/)
-#### Michael Kennedy
-Host: [TP](#abbreviations) [PB](#podcasts) | [Twitter](https://twitter.com/mkennedy)
-#### David Kopec
-Author: [CSP](csp.md)
-#### Patrick Lang
-[Twitter](https://www.twitter.com/PatrickLang) Guest: [K8S](#kubernetes-podcast-from-google) [70](#k8s-70)
-Co-chair of Kubernetes Windows SIG. Spent most of the past 10 years on the Microsoft Hyper-V team.
-#### Steven Lott
-Author of [FPP](#functional-python-programming)
-#### John McCabe
-[IMWS](imws.md)
-#### Philip Muler
-Guest: [LU](#abbreviations) [318](#lu-318) [Github](https://github.com/philmmanjaro)
-#### Jeffrey Palermo
-Host: [ADP](#abbreviations) [Twitter](https://twitter.com/jeffreypalermo) [LinkedIn](https://www.linkedin.com/in/palermo/) [Website](http://jeffreypalermo.com/)
-#### Wes Payne
-Host: [TS](#abbreviations), [CR](#abbreviations)
-#### Mike Pfeiffer
-Host: [CSFM](#abbreviations)  [Web](https://mikepfeiffer.io) [Twitter](https://twitter.com/mike**pfeiffer) [Facebook](https://www.facebook.com/mikepfeifferhq/)
-#### Alan Pope
-Host: [UE](#abbreviations) [Twitter](https://twitter.com/popey)
-#### Ellie Quigley
-[PBX](pbx.md)
-#### Luciano Ramalho
-Author of [FP](#fluent-python)
-#### Chet Ramey
-Author: [BRM](#bash-reference-manual)
-#### Benedict Reuschling
-Host: [BSD](#abbreviations) [Twitter](https://twitter.com/bsdbcr)
-#### Joe Ressington
-Host: [LAN](#abbreviations) [UE](#abbreviations) [CL](#abbreviations) | [Web](https://joeress.com) [Twitter](https://twitter.com/JoeRessington)
-#### Arnold Robbins
-[s&a](s-and-a.md)
-#### Joel (Sallow) Francis
-Guest: [PSP](#abbreviations) [Twitter](https://twitter.com/vexx32) [GitHub](https://github.com/vexx32) [LinkedIn](https://www.linkedin.com/in/joel-francis-356539128/)
-#### Steve (ardalis) Smith
-Host: [WDT](#abbreviations) Guest: [ADP 40](#adp-40)  [LinkedIn](https://www.linkedin.com/in/stevenandrewsmith/) [Twitter](https://twitter.com/ardalis)
-#### Mark Sobell
-[PGL](pgl.md)
-#### Jon Spriggs
-Host: [AAP](#abbreviations) [Twitter](https://twitter.com/ticktockhouse)
-#### Jerry Steele
-Host: [AAP](#abbreviations) [Twitter](https://twitter.com/ticktockhouse)
-#### Al Sweigart
-Author: [CCP](#cracking-codes-with-python)
-#### Scott Tolinski
-Host: [SY](#abbreviations) [Twitter](https://twitter.com/stolinski) [Github](https://github.com/stolinski) [BitBucket](https://bitbucket.org/stolinski) [Facebook](https://www.facebook.com/LevelUpTuts)
+Person    | Links | Description
+:---      | :---        | :---
+Jeff Barr | [Twitter](https://twitter.com/intent/user?screen_name=jeffbarr) | Host: [AWS](#abbreviations) 
+Joe Beda  | | One of the three "co-founders" of Kubernetes. He worked with the cluster management teams at Google, which resulted in adapting the Borg and Omega patterns into products. Now runs Heptio, along with Craig McLuckie, another co-founder of Kubernetes.<br/>Guest: [K8S 12](#k8s-12)
+Wes Bos   | [Twitter](https://twitter.com/wesbos) | Host: [SY](#abbreviations)
+Craig Bos | [Twitter](http://twitter.com/craigbox) | Host: [K8S](#abbreviations) 
+Larry Bushey | [Twitter](https://twitter.com/goinglinux) [LinkedIn](https://www.linkedin.com/in/larrybushey/) | [GL](#going-linux)  
+Richard Campbell | [Twitter](https://twitter.com/richcampbell) | [RAR](#abbreviations)  
+Jason Cannon | | Author: [CLKF](clkf.md) [LALOS](lalos.md) [LSSP](lssp.md)
+Chris Chapman | | [K8S 67](#k8s-67) 
+Alister Christman | [Twitter](https://twitter.com/mralc)| Host: [AAP](#abbreviations) 
+Michael Domenick | [Twitter](https://twitter.com/dominucco)| Host: [CR](#abbreviations)  
+Simon Elisha | [Twitter](https://twitter.com/intent/user?screen_name=simon_elisha) | Host: [AWS](#abbreviations) 
+Bret Fisher | [Email](bret@bretfisher.com) [Twitter](https://twitter.com/BretFisher) [Facebook](https://www.facebook.com/bretfisher.devops) [YouTube](https://www.youtube.com/channel/UC0NErq0RhP51iXx64ZmyVfg) | Host: [DD](#devops-and-docker)
+Chris Fisher | [Twitter](https://twitter.com/ChrisLAS) | Founder of Jupiter Broadcasting, which merged or partnered with Linux Academy on September 12, 2018.<br/>Host: [LU](#abbreviations)  
+David Flanagan | | Author: [JDG](jdg.md)
+Brian Fox | | Author: [BRM](#bash-reference-manual)
+Adam Glick | [Twitter](http://twitter.com/mobileglick)| Host: [K8S](#abbreviations) 
+Brian Gracely | [Twitter](https://twitter.com/bgracely) | Host: [PodCTL](#abbreviations) 
+Randall Hunt | | Guest: AWS [329](#aws-328)
+Allan Jude | [Web](https://www.scaleengine.com/) [FaceBook](https://facebook.com/allanjude) [LinkedIn](https://www.linkedin.com/in/allanjude/)| Host: [BSD](#abbreviations)  
+Michael Kennedy | [Twitter](https://twitter.com/mkennedy)| Host: [TP](#abbreviations) [PB](#podcasts) | 
+David Kopec | | Author: [CSP](csp.md)
+Patrick Lang | [Twitter](https://www.twitter.com/PatrickLang) | Co-chair of Kubernetes Windows SIG. Spent most of the past 10 years on the Microsoft Hyper-V team.<br/>Guest: [K8S 70](#k8s-70)
+Steven Lott | | Author of [FPP](#functional-python-programming)
+John McCabe | | Author: [IMWS](imws.md)
+Philip Muler | [Github](https://github.com/philmmanjaro)| Guest: [LU 318](#lu-318) 
+Jeffrey Palermo | [Twitter](https://twitter.com/jeffreypalermo) [LinkedIn](https://www.linkedin.com/in/palermo/) [Website](http://jeffreypalermo.com/) | Host: [ADP](#abbreviations) 
+Wes Payne | | Host: [TS](#abbreviations), [CR](#abbreviations)
+Mike Pfeiffer | | Host: [CSFM](#abbreviations)  [Web](https://mikepfeiffer.io) [Twitter](https://twitter.com/mike**pfeiffer) [Facebook](https://www.facebook.com/mikepfeifferhq/)
+Alan Pope | [Twitter](https://twitter.com/popey) | Host: [UE](#abbreviations) 
+Ellie Quigley | | Author: [PBX](pbx.md)
+Luciano Ramalho | | Author: [FP](#fluent-python)
+Chet Ramey | | Author: [BRM](#bash-reference-manual)
+Benedict Reuschling | [Twitter](https://twitter.com/bsdbcr) | Host: [BSD](#abbreviations) 
+Joe Ressington| [Web](https://joeress.com) [Twitter](https://twitter.com/JoeRessington) |  Host: [LAN](#abbreviations) [UE](#abbreviations) [CL](#abbreviations) 
+Arnold Robbins | | Author: [s&a](s-and-a.md)
+Joel (Sallow) Francis | [Twitter](https://twitter.com/vexx32) [GitHub](https://github.com/vexx32) [LinkedIn](https://www.linkedin.com/in/joel-francis-356539128/) | Guest: [PSP](#abbreviations) 
+Steve (ardalis) Smith | [LinkedIn](https://www.linkedin.com/in/stevenandrewsmith/) [Twitter](https://twitter.com/ardalis) | Host: [WDT](#abbreviations) Guest: [ADP 40](#adp-40)  
+Mark Sobell | | Author: [PGL](pgl.md)
+Jon Spriggs | [Twitter](https://twitter.com/ticktockhouse) | Host: [AAP](#abbreviations) 
+Jerry Steele | [Twitter](https://twitter.com/ticktockhouse) | Host: [AAP](#abbreviations) 
+Al Sweigart | | Author: [CCP](#cracking-codes-with-python)
+Scott Tolinski |  [Twitter](https://twitter.com/stolinski) [Github](https://github.com/stolinski) [BitBucket](https://bitbucket.org/stolinski) [Facebook](https://www.facebook.com/LevelUpTuts)| Host: [SY](#abbreviations) 
 ## Notes
 ### Admin Admin Podcast
 [Web](http://www.adminadminpodcast.co.uk/) [Twitter](https://twitter.com/admadmpodcast)
@@ -236,6 +171,7 @@ Description | Links
 :---        | :---
 Contact     | [Twitter](http://twitter.com/mkubernetespod) [Email](mailto:kubernetespodcast@google.com) [Web](https://kubernetespodcast.com)
 5           | [Notes](#k8s-5) [Web](https://kubernetespodcast.com/episode/005-documentation/)
+12          | [Notes](#k8s-12) [Web](https://kubernetespodcast.com/episode/012-kubernetes-origins/)
 13          | [Notes](#k8s-13) [Web](https://kubernetespodcast.com/episode/013-gke-and-cloud-services-platform/)
 67          | [Notes](#k8s-67) [Web](https://kubernetespodcast.com/episode/067-orka/)
 70          | [Notes](#k8s-70) [Web](https://kubernetespodcast.com/episode/070-windows-server-containers/)
@@ -249,40 +185,12 @@ Containerd was originally designed to interface directly with runC so that Docke
 Container metrics (logging and monitoring information) is exposed through **Prometheus**. \
 #### K8S 70
 Windows Server Containers, with Patrick Lang\
-
-##### What is a Windows container, and how is it different from a Linux container?\
-Windows server containers, like Linux containers, package dependencies. Windows offers two base images: **Windows Server Core** and **Nano Server**. 
-##### Windows applications can run on Windows using Wine, and Linux applications can run on Windows using WSL. How are Windows and Linux applications different?\
+Windows server containers, like Linux containers, package dependencies. Windows offers two base images: **Windows Server Core** and **Nano Server**. Windows Server containers are focused on running headless applications.\
 The differences between Windows and Linux containers originate in historical differences. Linux was developed with the goal of producing a stable kernel with a consistent application binary interface and limited syscalls in order to move applications from other commercial Unix-type OSes. In contrast, Windows was developed to be an entire operating system, not just a kernel, including APIs like Win16 and Win32. The border between kernel and user mode was always much blurrier than in Linux. The concept of a **session** was innovated to handle the problem of what to do when multiple users are making inputs simultaneously. A Windows container is essentially equivalent to a headless session.\
-##### Can I deploy an application with user interaction with Windows containers?
-Windows Server containers are focused on running headless applications. Tools like the **Windows Application Converter** are available to assist in adapting applications for publication on the Windows App Store or the Windows Enterprise Store. But Windows Server Containers are focused on headless apps.
-##### How did the Windows Server Container come about?
-Before the release of Windows Server 2016, developers were inspired by the success of Docker, which packaged dependencies and configurations into an easy-to-install package. By the time of the release of Windows Server 2016, a preview of Docker was ready for Windows containers. This made containers a concept that transcended operating systems.\
-##### Is the isolation model different between Windows and Linux containers?
-Every Windows installation has its own security database that is handled by the local security agent, and for every new user a unique binary identifier is generated that is unique to that database. Containers also create their own database upon creation.
-##### How do you work with identity in containers?
-Without Active Directory, every container is completely isolated. Active Directory has been around since Windows Server 2000, but the replication interval for AD databases is prohibitively long, which is too long for container applications. The solution is Group-Managed Service Accounts, which is a security principal that can be used by multiple users and computers. This turned out to be perfect for containers, but it still required the machine to be domain-joined, which is something we wanted to avoid for containers because of the delay in replication, as mentioned
-##### What had to change in Kubernetes to support Windows containers? And what had to change in Windows to support Kubernetes?
-The initial target for Windows Server 2016 was support for Docker and Docker Swarm, which implemented a **network plugin** model and a **storage plugin** model, which were deferred but still tightly coupled to the Docker engine. In Kubernetes, network and storage management was handled by the kubelet calling additional plugins like the **Container Network Interface** or the **Container Storage Interface** with a different order of operations. This necessitated the development of network namespaces in Windows, which were released in 2017 and 2018 for Windows Server, which allowed the creation of multiple containers with the same IP and the same virtual NIC. Storage also necessitated the creation of a mapped volume using symlinks in order to create a filesystem.
-##### There are parts of the Kubernetes stack that are built with Linux in mind, i.e. KubeProxy is basically a mess of `iptables` rules. Did you have to build an equivalent for Windows nodes?
-For the network control plane, configuration was exposed in what's called the **Host Networking Service (HNS)**. Another service called the **Virtual Networking Platform** made it possible to write granular rules governing how individual packets are forwarded, rewritten, and how policy is applied to them. This functions analogously to `iptables`. KubeProxy was updated to talk to the HNS to set those up.
-##### How did you merge Windows Identity with Kubernetes access controls?
-##### Which parts of Kubernetes run on Windows?
-Today, our focus is on being able to run the Kubelet and KubeProxy, which allows you to add a Windows node to an existing Kubernetes cluster.
-##### Can GPUs be used in Windows containers?
-There is support to share the GPU with what's already on the node, which allows you to use some DirectX APIs.
-##### How should someone with an app running on an old version of Windows Server update it to get it running on a Windows container?
-The container has to run Windows Server 2016 or newer. So the first question to ask is, can this application work on Windows Server 2016 or 2019? The application can't rely on a component that has since been deprecated, but some frameworks like .NET Core offer compatibility for versions of .NET as early as 2.0, which dates back to the early 2000s.\
-You have to examine your existing runbooks and implement them in an automatable form that is supported by containers. 
-##### Once I have a container, I have to keep it up to date. What do I have to do on Patch Tuesday?
-On Patch Tuesday, open up the Docker file and update the top line that says "from". Then rebuild and redeploy it. Microsoft has begun implementing security patches into updated Windows container images that are available on Docker Hub. Pull those down and rebuild the container. Deploy it and shut down the old one.
-##### You can only run a container that has the same major version as the host operating system. What about when the host operating system changes?
-Moving from one patch to another won't cause any problems, but going to the next version of Windows Server will cause an incompatibility. We are working on addressing that using Hyper-V isolation to bring up the kernel version need to run the container, but that has not yet been integrated into Kubernetes. Hyper-V runs much better under `containerd`, but work still needs to be done.
-##### How did you get started with Windows and containers?
-I was in the right place at the right time. I was supervising the Hyper-V team at Microsoft for most of the past ten years, and that team worked closely with the kernel team. And when we began to look at how to build containers, we quickly realized the talent to do that work had already been marshaled. We formed a team from my personnel and then formed a partnership with Docker which taught us a lot.
-##### How should someone interested in Windows Server containers start using them?
-If you have a Windows 10 machine, Docker for Windows can run containers on Linux or Windows, and you can switch between them using the system tray icon. Go to [aka.ms/windowscontainers](https://aka.ms/windowscontainers). If you don't have a machine, all the major cloud providers allow you to form a Windows Server or Windows 10 VM. 
-##### How can open-source contributors assist in the development of Windows containers?
+Every Windows installation has its own security database that is handled by the local security agent, and for every new user a unique binary identifier is generated that is unique to that database. Containers also create their own database upon creation. Without Active Directory, every container is completely isolated. Active Directory has been around since Windows Server 2000, but the replication interval for AD databases is too long for container applications. The solution is **Group-Managed Service Accounts**, which is a **security principal** that can be used by multiple users and computers. This turned out to be perfect for containers, but it still required the machine to be domain-joined, which is something we wanted to avoid for containers because of the delay in replication, as mentioned.\
+The initial target for Windows Server 2016 was support for Docker and Docker Swarm, which implemented a **network plugin** model and a **storage plugin** model, which were deferred but still tightly coupled to the Docker engine. In Kubernetes, network and storage management was handled by the kubelet calling additional plugins like the **Container Network Interface** or the **Container Storage Interface** with a different order of operations. This necessitated the development of network namespaces in Windows, which were released in 2017 and 2018 for Windows Server, which allowed the creation of multiple containers with the same IP and the same virtual NIC. Storage also necessitated the creation of a mapped volume using symlinks in order to create a filesystem.\
+For the network control plane, configuration was exposed in what's called the **Host Networking Service (HNS)**. Another service called the **Virtual Networking Platform** made it possible to write granular rules governing how individual packets are forwarded, rewritten, and how policy is applied to them. This functions analogously to `iptables`. KubeProxy was updated to talk to the HNS to set those up.\
+If you have a Windows 10 machine, Docker for Windows can run containers on Linux or Windows, and you can switch between them using the system tray icon. Go to [aka.ms/windowscontainers](https://aka.ms/windowscontainers). If you don't have a machine, all the major cloud providers allow you to form a Windows Server or Windows 10 VM. \
 Get connected with the Kubernetes community repo, every SIG has a folder in there which links to our weekly meetings and agenda. Get an invite to the Kubernetes Slack server and join the SIG Windows Slack channel.
 #### K8S 67
 Orka, with Chris Chapman\
@@ -296,6 +204,11 @@ Orka is a virtualization layer for Mac build infrastructure offered by hosting c
   - **Istio**
 
 **Kubernetes Operators**: allow you to deploy and manage applications on Kubernetes clusters, such as Spark Operator, Airflow Operator, etc.
+#### K8S 12
+Kubernetes Origins, with Joe Beda\
+Kubernetes started at Google at the same time as Google Compute Engine, as developers thought deeply about how to improve the value proposition of virtual machines. Joe Beda was an early user of Borg, and him and others pushed for it to be released as a product. However, it was decided that Borg and Omega specifically were too closely aligned with internal Google products, so a new open-source product was imagined, although there was internal resistance to opening it up to the community completely.\
+Red Hat's buy-in early in the history of Kubernetes by deciding to use Kubernetes as a basis. Namespaces are called projects in OpenShift.\
+Joe Beda is an advocate of a microkernel, minimalist architecture for the Kubernetes core with additional features layered on top. Beda is also 
 #### K8S 5
 No notes taken.
 ### Late Night Linux
