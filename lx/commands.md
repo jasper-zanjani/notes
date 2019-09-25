@@ -28,7 +28,7 @@ L   | [last](#last) [ldapadd](#ldapadd) [ldconfig](#ldconfig) [ldd](#ldd) [less]
 M   | [mail](#mail) [mailq](#mailq) [mailstats](#mailstats) [make](#make) [makemap](#makemap) [mdadm](#mdadm) [mhwd](#mhwd) [mhwd-chroot](#mhwd-chroot) [mkdir](#mkdir) [mke2fs](#mke2fs) [mkfontscale](#mkfontscale) [mkfs](#mkfs) [mkswap](#mkswap) [mktemp](#mktemp) [modinfo](#modinfo) [modprobe](#modprobe) [mongod](#mongod) [mount](#mount) [mt](#mt) 
 N   | [nc](#nc) [netplan](#netplan) [netstat](#netstat) [NetworkManager](#NetworkManager) [newaliases](#newaliases) [nice](#nice) [nl](#nl) [nmap](#nmap) [nmblookup](#nmblookup) [nmcli](#nmcli) [nohup](#nohup) [nslookup](#nslookup) [ntpdate](#ntpdate) 
 O   | [openssl](#openssl) 
-P   | [pacman](#pacman) [partx](#partx) [passwd](#passwd) [paste](#paste) [patch](#patch) [ping](#ping) [pip](#pip) [postfix](#postfix) [postqueue](#postqueue) [postsuper](#postsuper) [ps](#ps) [pvcreate](#pvcreate) [pvdisplay](#pvdisplay) [pvremove](#pvremove) [pydoc](#pydoc) 
+P   | [pacman](#pacman) [partx](#partx) [paste](#paste) [passwd](#passwd) [paste](#paste) [patch](#patch) [ping](#ping) [pip](#pip) [postfix](#postfix) [postqueue](#postqueue) [postsuper](#postsuper) [ps](#ps) [pvcreate](#pvcreate) [pvdisplay](#pvdisplay) [pvremove](#pvremove) [pydoc](#pydoc) 
 Q   | [qmail](#qmail) [quota](#quota) [quotacheck](#quotacheck) [quotaoff](#quotaoff) [quotaon](#quotaon) 
 R   | [read](#read) [rename](#rename) [repquota](#repquota) [resize2fs](#resize2fs) [resize4fs](#resize4fs) [restorecon](#restorecon) [rmmod](#rmmod) [route](#route) [rpm](#rpm) [rsync](#rsync) [runlevel](#runlevel) 
 S   | [samba](#samba) [sc](#sc) [sed](#sed) [semanage](#selinux) [sendmail](#sendmail) [seq](#seq) [service](#sysvinit) [sestatus](#sestatus) [setenforce](#selinux) [setfacl](#setfacl) [sfdisk](#sfdisk) [shred](#shred) [shuf](#shuf) [shutdown](#shutdown) [slapadd](#slapadd)  [sleep](#sleep) [snap](#snap) [sort](#sort) [sosreport](#sosreport) [source](#source) [speaker-test](#speaker-test) [ss](#ss) [ssh](#ssh) [ssh-copy-id](#ssh-copy-id) [ssh-keygen](#ssh-keygen) [ssh-keyscan](#ssh-keyscan) [sshfs](#sshfs) [ssmtp](#ssmtp) [startx](#startx) [stty](#stty) [su](#su) [sudo](#sudo) [swapoff](#swapoff) [swapon](#swapon) [sysctl](#sysctl) [syslog](#syslog) [sysvinit](#sysvinit) [systemctl](#systemctl) [systemd-delta](#systemd-delta) 
@@ -599,10 +599,20 @@ nc host port
 nc host port \get
 ```
 ### netstat
-#### Display all active sockets on all interfaces
-```sh
-netstat -a
-```
+Option  | POSIX option            | Effect
+:---    | :---                    | :---
+`-a`    | `--all` | display both listening and non-listening sockets
+`-c`    | `--continuous` | display selected information every second continuously
+`-e`    | `--extend` | display additional information (repeat for maximum detail)
+`-g`    | `--groups` | display multicast group membership information for IPv4 and IPv6
+`-i`    | `--interfaces` | display a table of all network interfaces
+`-l`    | `--listening` | display only listening sockets
+`-M`    | `--masquerade` | display masqueraded connections
+`-n`    | `--numeric` | display numerical addresses instead of symbolic host, port, or user names
+`-o`    | `--timers` | display information related to networking timers
+`-p`    | `--program` | display PID and name of program to which each socket belongs
+`-r`    | `--route` | display routing tables
+`-s`    | `--statistics` | display summary statistics by protocol
 #### Show network traffic
 ```sh
 netstat -an
@@ -610,47 +620,14 @@ netstat -an
 #### Refresh every five seconds
 ```sh
 netstat -c5
-```
-#### Display routing table
-```sh
-netstat -r
-```
+``` 
 #### Show the current default route without performing DNS lookups on the IP addresses involved
 ```sh
 netstat -rn
 ```
-#### Display only TCP connections
-```sh
-netstat -t
-```
-#### Show interface statistics 
-```
-netstat -i
-``` 
-#### Display routing table 
-```
-netstat -r
-netstat --route
-``` 
-#### Show all sockets on all active interfaces 
-```
-netstat -a
-```
-#### Show network traffic 
-```
-netstat -an
-``` 
 #### Count number of TCP connections 
 ```
 netstat -a | grep tcp - | wc -l
-``` 
-#### Refresh every 5 seconds 
-```
-netstat -c 5 -a
-``` 
-#### TCP connections 
-```
-netstat -t
 ``` 
 #### Active sessions 
 ```
@@ -1836,15 +1813,32 @@ Create an image of important metadata for an ext3 filesystem
 e2label /dev/sdb1 Storage
 ```
 ### find
+Search for files in a directory hierarchy
 #### Find all files in {$PATH} that are owned by {user}
 ```sh
 find $PATH -user username
 ```
 #### Find recently modified files/folders
-[[42](README.md)]
-```sh
-find $PATH -type f -mtime +120 -ls # Find only files that were modified 120 days ago
+There are 3 timestamps associated with files in Linux [[42](README.md)]:
+- `atime` "access time": last time file was accessed by a command or application
+- `mtime` "modify time": last time file's contents were modified
+- `ctime` "change time": last time file's attribute was modified 
 
+Numerical arguments can be specified in 3 ways:
+- `+n` greater than {n} days ago
+- `-n` less than {n} days ago
+- `n` exactly {n} days ago
+```sh
+find $PATH -type f -mtime +120 -ls # Find only files that were modified more than 120 days ago
+find $PATH -type f -mtime -15 -ls # Modified less than 15 days ago
+find $PATH -type f -mtime 10 -ls # Modified exactly 10 days ago
+
+# Find files modified over the past day
+find $PATH -type f -newermt "1 day ago" -ls
+find $PATH -type f -newermt "-24 hours" -ls
+find $PATH -type f -newermt "yesterday" -ls
+
+find $PATH -type f -ctime -1 -ls # Find files created today
 ```
 ### firewall-cmd
 Successor to `iptables` in Red Hat, and like its predecessor a frontend to the netfilter protocols. Places network traffic into zones. Commands have to be written twice: once to affect running config and again to have the change saved
@@ -2617,6 +2611,16 @@ passwd -l user # passwd --lock
 #### Unlock {user}'s account
 ```sh
 passwd -u user # passwd --unlock
+```
+### paste
+Merge lines of files
+#### Make a .csv file from two lists
+```sh
+paste -d ',' file1 file2
+```
+#### Transpose rows
+```sh
+paste -s file1 file2
 ```
 ### patch
 #### Ignore whitespace
