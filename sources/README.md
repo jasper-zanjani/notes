@@ -224,7 +224,19 @@ No notes taken.
 #### LJ 283
 - **ClusterShell**: Python tool and library to connect a set of nodes in parallel through SSH
 ### Linux Unplugged
-[315](#lu-315) [318](#lu-318) [Web](https://linuxunplugged.com/) [Twitter](https://twitter.com/LinuxUnplugged) 
+Description | Links
+:---        | :---
+Contact     | [Twitter](https://twitter.com/LinuxUnplugged) [Web](https://linuxunplugged.com/)
+320         | "RHELhide" [Notes] [Web](https://linuxunplugged.com/320)
+318         | "Manjaro Levels Up" [Notes](#lu-318) [Web](https://linuxunplugged.com/318)
+315         | "Wayland Buddies" [Notes](#lu-315) [Web](https://linuxunplugged.com/315)
+#### LU 320
+- Ubuntu Touch on the Pinebook
+- CentOS 8.1905
+- CentOS Stream: Sits between Fedora and RHEL, providing a rolling preview of future RHEL features.
+- Transforming the development experience within CentOS
+- Reinventing Home Directories
+- Twitch becomes premiere sponsor of OBS
 #### LU 318
 Philip Muller discussed the transition of Manjaro to a for-profit business model.\
 Chrome OS has become Linux for the masses, in particular now that support for Linux applications has improved, and it has had great success penetrating the education market.\
