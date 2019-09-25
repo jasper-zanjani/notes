@@ -1,4 +1,5 @@
-### bash
+# Shells
+## bash
 - `getopt` and `argp_parse` reorder the elements of `argv` by default, but this behavior can be suppressed by setting the `_POSIX_OPTION_ORDER` environment variable
 #### Terminal prompt
 `$PS1` Metacharacters   | Effect
@@ -75,7 +76,36 @@ Command sequence syntax | Effect
 `||`  | logical OR; run next command synchronously only if first command fails
 #### Variables
 [[3](#sources)]
+## Elvish shell
+### if/else
+```elvish
+~> if $true { echo good } else { echo bad }
+```
+### for loop iterating over an array
+```elvish
+~> for x [lorem ipsum] {
+     echo $x.pdf
+   }
+```
+### try/catch block and raising an error
+```elvish
+~> try {
+     fail 'bad error'
+   } except e {
+     echo error $e
+   } else {
+     echo ok
+   }
+```
+## Fish
+#### Fish color variables
+  - `fish_color_normal`
+  - `fish_color_command`
+  - `fish_color_quote`
+  - `fish_color_redirection` 
+
 ## Sources
   1. [gnu.org](https://www.gnu.org/software/libc/manual/html_node/Argument-Syntax.html)
   2. [putorius.net](https://www.putorius.net/bash-using-control-operators.html)
   3. "Using Variables in `bash`" [opensource.com](https://opensource.com/article/19/8/using-variables-bash): 2019/08/26.
+  4. [ItsFOSS](https://itsfoss.com/elvish-shell/)
