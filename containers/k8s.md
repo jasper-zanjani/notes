@@ -13,16 +13,16 @@ At the time, Google had been trying to engage the Linux kernel team and trying t
 4. Workload portability: Kubernetes acts like an operating system for distributed systems, abstracting peculiarities of infrastructure without changing the application.\
 [[18](README.md#sources)]
 ### Distributions
-  - Kontena Pharos
-  - Pivotal Container Service (PKS) [[23](README.md#sources)]
-  - Rancher 2.0
-  - Container Linux (formerly CoreOS)
-  - Canonical Distribution of Kubernetes
-  - Docker
-  - Heptio Kubernetes Subscription
-  - Red Hat OpenShift
-  - SUSE Container as a Service Platform
-  - Telekube
+- Kontena Pharos
+- Pivotal Container Service (PKS) [[23](README.md#sources)]
+- Rancher 2.0
+- Container Linux (formerly CoreOS)
+- Canonical Distribution of Kubernetes
+- Docker
+- Heptio Kubernetes Subscription
+- Red Hat OpenShift
+- SUSE Container as a Service Platform
+- Telekube
 ### Master server components
 - etcd
 - kube-apiserver
@@ -31,3 +31,59 @@ At the time, Google had been trying to engage the Linux kernel team and trying t
 - cloud-controller-manager
 ### Node server components
 - `kubelet`
+### Tools
+Name          | Description
+:---          | :---
+Aporeto       | security policies [Web](https://www.aporeto.com/)
+Ark           | see **Velero** [[K8S 12](../sources/README.md#k8s-12)]
+Bootkube      | Launch self-hosted Kubernetes clusters. [GitHub](https://github.com/kubernetes-incubator/bootkube)
+cAdvisor      | collecting metrics [GitHub](https://github.com/google/cadvisor)
+Conjure-up    | Canonical product that allows you to deploy The Canonical Distribution of Kubernetes on Ubuntu. 
+Consul        | Hashicorp service networking solution [Web](https://www.hashicorp.com/products/consul/)
+Contour       | ingress controller based on Envoy to solve Northwest problems [[K8S 12](../sources/README.md#k8s-12)]
+CoreDNS       | set of plugins written in Go which perform DNS functions [Web](https://coredns.io/)
+Dynatrace     | monitoring [Web](https://www.dynatrace.com/support/help/technology-support/cloud-platforms/kubernetes/installation-and-operation/further-integrations/connect-your-kubernetes-clusters-to-dynatrace/#configure-activegate)
+Fission       | serverless framework for Kubernetes [Web](https://fission.io/)
+Fnproject     | FaaS framework for Kubernetes, written in Go [Web](http://fnproject.io/)
+Funktion      | FaaS framework for Kubernetes, now sandboxed [GitHub](https://github.com/funktionio/funktion)
+Gimbal        | ingress controller based on Envoy to solve Northwest problems [[K8S 12](../sources/README.md#k8s-12)]
+Helm          | Kubernetes package manager [GitHub](https://github.com/kubernetes/helm)
+IronFunction  | FaaS framework for Kubernetes, written in Go [GitHub](https://github.com/iron-io/functions)
+Istio         | service mesh [[Web](https://istio.io/)]
+Jaeger        | implementation of a Kubernetes Operator [Web](https://www.jaegertracing.io/)
+JAAS          | "Juju as a Service". Simplifies configuration, scaling, and operation of complex software by deploying workloads to cloud provider of choice. 
+Kail          | "Kubernetes tail", tail Docker logs for all matched pods [GitHub](https://github.com/boz/kail)
+Kops          | Provision Kubernetes clusters from the command-line on AWS. [GitHub](https://github.com/kubernetes/kops)
+Ksonnet       | Templating language for creating Kubernetes objects [[K8S 12](../sources/README.md#k8s-12)]
+Kube-AWS      | "Kubernetes on AWS" console tool provided by CoreOS which deploys a Kubernetes cluster using AWS CloudFormation [GitHub](https://github.com/kubernetes-incubator/kube-aws)
+Kube-monkey   | Kubernetes version of Netflix's Chaos Monkey, intended to stress-test systems [GitHub](https://github.com/asobti/kube-monkey)
+Kube-ops-view | "Kubernetes Operational View", read-only system dashboard for multiple Kubernetes clusters. [GitHub](https://github.com/hjacobs/kube-ops-view)
+Kube-shell    | Enables command auto-completion and auto-suggestion, inline documentation about executed commands [GitHub](https://github.com/cloudnativelabs/kube-shell)
+Kube-state-metrics | metrics [GitHub](https://github.com/kubernetes/kube-state-metrics)
+Kubeadm       | Bootstrap best-practice Kubernetes clusters on existing infrastructure. [GitHub](https://github.com/kubernetes/kubeadm)
+Kubebox       | Provides a console interface for a Kubernetes cluster that allows monitoring of pod resource usage, cluster monitoring, logs, etc. [GitHub](https://github.com/astefanutti/kubebox)
+Kubeless      | FaaS framework [GitHub](https://github.com/kubeless/kubeless)
+Kubens        | switch between Kubernetes namespaces [GitHub](https://github.com/ahmetb/kubectx)
+Kubernetes Dashboard  | general-purpose web-based UI for Kubernetes clusters [GitHub](https://github.com/kubernetes/dashboard#kubernetes-dashboard)
+Kubespray     | Provides Ansible roles for Kubernetes deployment and configuration. [GitHub](https://github.com/kubernetes-incubator/kubespray)
+Kubetail      | Small bash script that aggregates logs from multiple pods. [GitHub](https://github.com/aks/kubetail)
+Kubewatch     | Publishes Kubernetes events to Slack.  [GitHub](https://github.com/bitnami-labs/kubewatch)
+Linkerd       | open-source service mesh tool that facilitates traffic between services [Web](https://linkerd.io/) [GitHub](https://github.com/linkerd/linkerd2)
+Minikube      | Conveniently launch a single-node Kubernetes cluster inside a locally hosted VM. Used to try out and learn the platform. [GitHub](https://github.com/kubernetes/minikube)
+Nuclio        | serverless project that support high-performance events and large amounts of data [Web](https://github.com/nuclio/nuclio)
+OpenFaaS      | framework to manage serverless functions on Docker Swarm or Kubernetes and analyze metrics [GitHub](https://github.com/openfaas/faas)
+OpenWhisk     | open-source FaaS platform that can be deployed on-premise or on the cloud [Web](https://console.bluemix.net/openwhisk/)
+PowerfulSeal  | chaos engineering tool, similar to Chaos Monkey [GitHub](https://github.com/bloomberg/powerfulseal)
+Prometheus    | Go-to tool for Kubernetes monitoring. [Web](https://prometheus.io/)
+Replex        | namesake governance and cost management platform [Web](https://www.replex.io/)
+Searchlight   | Kubernetes operator for Icinga [GitHub](https://github.com/appscode/searchlight)
+Sonobuoy      | Diagnostic tool and basis for the **Conformance** suite [Web](https://sonobuoy.io/) [[K8S 12](../sources/README.md#k8s-12)]
+Sumo Logic App | metrics [Web](https://www.sumologic.com/application/kubernetes/)
+Test-infra    | suite of tools for testing [GitHub](https://github.com/kubernetes/test-infra)
+Trireme       | Kubernetes Network Policies [GitHub](https://github.com/aporeto-inc/trireme-kubernetes)
+Twistlock     | monitoring and security [Web](https://www.twistlock.com/)
+Velero        | formerly (Heptio Ark) [GitHub](https://github.com/heptio/velero)
+Virtual-Kubelet | Kubernetes Kubelet implementation that masquerades as a kubelet for the purposes of connecting Kubernetes to other APIs [Web](https://virtual-kubelet.io/)
+Weave Scope   | Automatically generate applications and infrastructure topologies which identify application performance bottlenecks. [Web](https://www.weave.works/oss/scope/)
+
+[[29](README.md#sources)]

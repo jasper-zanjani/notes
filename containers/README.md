@@ -114,3 +114,4 @@ Xenon                       | Argon Windows container with Base OS image
 26. "Best practices for writing Dockerfiles". [Docker](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/)
 27. "A Practical Introduction to Docker Containers". [Red Hat](https://developers.redhat.com/blog/2014/05/15/practical-introduction-to-docker-containers/): 2014/05/15.
 28. "A Practical Introduction to Docker Container Terminology". [Red Hat](https://developers.redhat.com/blog/2016/01/13/a-practical-introduction-to-docker-container-terminology/): 2016/01/13.
+29. "50+ useful [ Kubernetes ](k8s.md) tools". [DZone](https://dzone.com/articles/50-useful-kubernetes-tools?utm_medium=feed&utm_source=feedpress.me&utm_campaign=Feed:%20dzone): 2018/06/03.
