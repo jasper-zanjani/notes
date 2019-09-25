@@ -68,7 +68,7 @@ layer                       | represents changes between itself and a parent lay
 Loggly                      | [[23](#sources)]
 MiniKube                    | most commonly used Kubernetes Engine for local installation for learning or experimentation purposes [[23](#sources)]
 MiniShift                   | lightweight OpenShift instance intended for installation on a local host for learning or experimentation purposes [[23](#sources)]
-namespace                   | tool for separating groups of repositories [[28](#sources)]
+namespace                   | tool for separating groups of repositories [[28](#sources)]<br/>equivalent to **projects** in **OpenShift** [K8S 12](../sources/README.md)
 Node                        | system resources that perform tasks as passigned by **Kube Master** [[14](#sources)]
 OpenShift                   | Red Hat PaaS offering, providing an abstraction layer on top of Kubernetes. It comes in 4 flavors: **Origin**, **Online**, **Dedicated**, and **Enterprise**
 Operator                    | software extensions to Kubernetes that make use of **custom resources** to manage applications and their components. [[20](#sources)]<br/>Pattern for building K8S native applications that leverages and extends the K8S API (usable with **`kubectl`**) and runs on K8S as containers [[16](#sources)]<br/>Allow you to deploy and manage applications on Kubernetes clusters. [[21]]
