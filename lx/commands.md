@@ -139,17 +139,6 @@ dar -x full.bak
 ```
 ### gzip
 Zip a single file in-place; each file is replaced by one with the extension `.gz` or `.z`, maintaining ownership modes, access and modification times
-
-Option  | POSIX option            | Effect
-:---    | :---                    | :---
-`-1`    | `--fast`                    
-`-9`    | `--best`      
-`-c`    | `--stdout` <br/>`--to-stdout` | output will go to STDOUT, leaving files intact
-`-d`    | `--decompress` <br/> `--uncompress`
-`-f`    | `--force`                   | overwrite preexisting files
-`-n`    | `--no-name`             | do not preserve original modification and access times for files
-`-S`    | `--suffix`                  | change default suffix (.gz)
-#### Compress {file} at compression ratio {#}, ranging from 1 to 9 (6 by default)
 ```sh
 gzip -#
 gzip --fast
@@ -160,7 +149,6 @@ gzip --best
 gzip -f symlink
 gzip --force symlink
 ```
-### zcat
 Page through .gz files
 ### tar
 #### tar options
@@ -2802,43 +2790,43 @@ rpm --upgrade --verbose --hash package
 ### rsync
 Option  | POSIX option            | Effect
 :---    | :---                    | :---
-`-a`    | `--archive`             | Copy recursively, preserving group, owner, modification times, and device-files (if super-user)
+`-a`    | `--archive`             | copy recursively, preserving group, owner, modification times, and device-files (if super-user) (equivalent to `-rptlgoD`)
+`-b`    |                         | create a backup of every file transferred
+`-e`    | `--rsh`                 | specify remote shell to use
+`-g`    | `--group`               | preserve group
+`-o`    | `--owner`               | preserve owner
+`-p`    |                         | specify nonstandard port
+\-      | `--delete`              | remove files and folders that aren't in the sender system
+\-      | `--exclude`             | exclude files (accepts globbing)
+\-      | `--include`             | specify specific files (accepts globbing)
+\-      | `--progress`            | display a progress bar
+\-      | `--remove-source-files` | remove original files after synchronization
 
-#### Copy recursively, preserving group, owner, modification times, and device-files (if super-user)
+Copy $FILE locally [[44](README.md#sources)]
 ```sh
-rsync -a
-rsync --archive
+rsync -zvr $FILE $PATH
 ```
-#### Specify remote shell to use
+Copy $FILE to $PATH on remote $HOST
 ```sh
-rsync -e ssh
-rsync --rsh=ssh
+rsync $FILE $HOST:$PATH
 ```
-#### Preserve group
+Copy $FILE from $HOST to local $PATH
 ```sh
-rsync -g
-rsync --group
+rsync $HOST:$FILE $PATH
 ```
-#### Preserve owner
+Copy $DIR recursively [[44](README.md#sources)]
 ```sh
-rsync -o
-rsync --owner
+rsync -zvr $DIR $PATH
+rsync -avz $DIR $PATH
 ```
-#### Copy file to remotepath on remotehost
+Copy to remote systems over SSH [[44](README.md#sources)]
 ```sh
-rsync file remotehost:remotepath
+rsync -zvre ssh $DIR $HOST:$REMOTEPATH
+rsync -avze ssh $DIR $HOST:$REMOTEPATH
 ```
-#### Archive mode: equivalent to -rptlgoD
+Synchronize only specific file type [[44](README.md#sources)]
 ```sh
-rsync -a
-```
-#### Create a backup of every file destination file transferred
-```sh
-rsync -b
-```
-#### Copy remotefile from remotehost to path
-```sh
-rsync remotehost:remotefilepath
+rsync -zvre ssh --include '*.php' --exclude '*' $PATH
 ```
 ### runlevel
 #### Show runlevel for system
