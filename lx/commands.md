@@ -13,32 +13,32 @@ Systemd
 
 \#  | Commands sorted alphabetically
 :---| :---
-A   | [adduser](#adduser) [add-apt-repository](#add-apt-repository) [alsamixer](#alsamixer) [apropos](#apropos) [apt](#apt) [apt-cache](#apt-cache) [apt-key](#apt-key) [at](#at) [ausearch](#ausearch) [awk](#awk) 
-B   | [bash](#bash) [blkid](#blkid) [bpftrace](#bpftrace) [bzcat](#bzcat) [bzip2](#bzip2) [bzless](#bzless) [bzmore](#bzmore) 
-C   | [cancel](#cancel) [cat](#cat) [chage](#chage) [chcon](#chcon) [chgrp](#chgrp) [chkconfig](#sysvinit) [chmod](#chmod) [chown](#chown) [chpass](#chpass) [chsh](#chsh) [column](#column) [compress](#compress) [cp](#cp) [crontab](#crontab) [crossystem](#crossystem) [cryptsetup](#cryptsetup) [curl](#curl) [cut](#cut) 
-D   | [dar](#dar) [date](#date) [dbus](#dbus) [dd](#dd) [declare](#declare) [df](#df) [dhclient](#dhclient) [diff](#diff) [dig](#dig) [dirname](#dirname) [dm-crypt](#dm-crypt) [dmesg](#dmesg) [doveadm](#doveadm) [dpkg](#dpkg) [dpkg-reconfigure](#dpkg-reconfigure) [du](#du) [dumpe2fs](#dumpe2fs) 
-E   | [e2image](#e2image) [e2label](#e2label) [edquota](#edquota) [elvis](#elvis) [elvish](#elvish) [espeak](#espeak) [exif](#exif) 
-F   | [fam](#fam) [fdisk](#fdisk) [file](#file) [find](#find) [firewall-cmd](#firewall-cmd) [firewalld](#firewalld) [fish](#fish) [fmt](#fmt) [fold](#fold) [free](#free) [fsck](#fsck) [fstrim](#fstrim) [ftp](#ftp) [fusermount](#fusermount) 
-G   | [gconf-editor](#gconf-editor) [gdisk](#gdisk) [gdmsetup](#gdmsetup) [gem](#gem) [getfacl](#getfacl) [git](#git) [gpasswd](#gpasswd) [gpg](#gpg) [grep](#grep) [groupadd](#groupadd) [groupdel](#groupdel) [groupmod](#groupmod) [grub](#grub) [gzip](#gzip) 
-H   | [hdiutil](#hdiutil) [hdparm](#hdparm) [head](#head) [history](#history) [host](#host) [hostname](#hostname) [hostnamectl](#hostnamectl) [hwclock](#hwclock) 
-I   | [iconv](#iconv) [ifconfig](#ifconfig) [imagemagick](#imagemagick) [init](#sysvinit) [initctl](#initctl) [insmod](#insmod) [install](#install) [ip](#ip) [iptables](#iptables) [iscsiadm](#iscsiadm) [iwlist](#iwlist) 
-J   | [journalctl](#journalctl) 
-K   | [kill](#kill) 
-L   | [last](#last) [ldapadd](#ldapadd) [ldconfig](#ldconfig) [ldd](#ldd) [less](#less) [let](#let) [link](#link) [locale](#locale) [localectl](#localectl) [logout](#logout) [lp](#lp) [lpadmin](#lpadmin) [lpstat](#lpstat) [ls](#ls) [lsblk](#lsblk) [lsmod](#lsmod) [lsof](#lsof) [lspci](#lspci) [lsusb](#lsusb) [lvcreate](#lvcreate) [lvdisplay](#lvdisplay) [lvremove](#lvremove) [lvresize](#lvresize) 
-M   | [mail](#mail) [mailq](#mailq) [mailstats](#mailstats) [make](#make) [makemap](#makemap) [mdadm](#mdadm) [mhwd](#mhwd) [mhwd-chroot](#mhwd-chroot) [mkdir](#mkdir) [mke2fs](#mke2fs) [mkfontscale](#mkfontscale) [mkfs](#mkfs) [mkswap](#mkswap) [mktemp](#mktemp) [modinfo](#modinfo) [modprobe](#modprobe) [mongod](#mongod) [mount](#mount) [mt](#mt) 
-N   | [nc](#nc) [netplan](#netplan) [netstat](#netstat) [NetworkManager](#NetworkManager) [newaliases](#newaliases) [nice](#nice) [nl](#nl) [nmap](#nmap) [nmblookup](#nmblookup) [nmcli](#nmcli) [nohup](#nohup) [nslookup](#nslookup) [ntpdate](#ntpdate) 
-O   | [openssl](#openssl) 
-P   | [pacman](#pacman) [partx](#partx) [paste](#paste) [passwd](#passwd) [paste](#paste) [patch](#patch) [ping](#ping) [pip](#pip) [postfix](#postfix) [postqueue](#postqueue) [postsuper](#postsuper) [ps](#ps) [pvcreate](#pvcreate) [pvdisplay](#pvdisplay) [pvremove](#pvremove) [pydoc](#pydoc) 
-Q   | [qmail](#qmail) [quota](#quota) [quotacheck](#quotacheck) [quotaoff](#quotaoff) [quotaon](#quotaon) 
-R   | [read](#read) [rename](#rename) [repquota](#repquota) [resize2fs](#resize2fs) [resize4fs](#resize4fs) [restorecon](#restorecon) [rmmod](#rmmod) [route](#route) [rpm](#rpm) [rsync](#rsync) [runlevel](#runlevel) 
-S   | [samba](#samba) [sc](#sc) [sed](#sed) [semanage](#selinux) [sendmail](#sendmail) [seq](#seq) [service](#sysvinit) [sestatus](#sestatus) [setenforce](#selinux) [setfacl](#setfacl) [sfdisk](#sfdisk) [shred](#shred) [shuf](#shuf) [shutdown](#shutdown) [slapadd](#slapadd)  [sleep](#sleep) [snap](#snap) [sort](#sort) [sosreport](#sosreport) [source](#source) [speaker-test](#speaker-test) [ss](#ss) [ssh](#ssh) [ssh-copy-id](#ssh-copy-id) [ssh-keygen](#ssh-keygen) [ssh-keyscan](#ssh-keyscan) [sshfs](#sshfs) [ssmtp](#ssmtp) [startx](#startx) [stty](#stty) [su](#su) [sudo](#sudo) [swapoff](#swapoff) [swapon](#swapon) [sysctl](#sysctl) [syslog](#syslog) [sysvinit](#sysvinit) [systemctl](#systemctl) [systemd-delta](#systemd-delta) 
-T   | [tail](#tail) [tar](#tar) [tcpdump](#tcpdump) [telinit](#telinit) [test](#test) [tig](#tig) [timedatectl](#timedatectl) [tmux](#tmux) [touch](#touch) [top](#top) [tput](#tput) [tr](#tr) [tracepath](#tracepath) [traceroute](#traceroute) [tune2fs](#tune2fs) [tzselect](#tzselect) 
-U   | [udevadm](#udevadm) [umount](#umount) [uname](#uname) [uncompress](#uncompress) [unzip](#unzip) [update-grub](#update-grub) [update-rc.d](#update-rc.d) [useradd](#useradd) [userdel](#userdel) [usermod](#usermod) 
-V   | [variable](#variable) [vgcreate](#vgcreate) [vgdisplay](#vgdisplay) [vgextend](#vgextend) [vgremove](#vgremove) [vgscan](#vgscan) [vifs](#vifs) [visudo](#visudo) 
-W   | [wall](#wall) [watch](#watch) [wc](#wc) [whatis](#whatis) 
-X   | [X](#X) [xdpyinfo](#xdpyinfo) [xhost](#xhost) [xinetd](#xinetd) [Xorg](#Xorg) [xrandr](#xrandr) [xwininfo](#xwininfo) 
-Y   | [yay](#yay) [yum](#yum) 
-Z   | [zip](#zip) [zipcloak](#zipcloak) [zipdetails](#zipdetails) [zipgrep](#zipgrep) [zipinfo](#zipinfo) [zipnote](#zipnote) [zipsplit](#zipsplit) [zsh](#zsh)
+A   | [`adduser`](#adduser) [`add-apt-repository`](#add-apt-repository) [`alsamixer`](#alsamixer) [`apropos`](#apropos) [`apt`](#apt) [`apt-cache`](#apt-cache) [`apt-key`](#apt-key) [`at`](#at) [`ausearch`](#ausearch) [`awk`](#awk) 
+B   | [`bash`](#bash) [`blkid`](#blkid) [`bpftrace`](#bpftrace) [`bzcat`](#bzcat) [`bzip2`](#bzip2) [`bzless`](#bzless) [`bzmore`](#bzmore) 
+C   | [`cancel`](#cancel) [`cat`](#cat) [`chage`](#chage) [`chcon`](#chcon) [`chgrp`](#chgrp) [`chkconfig`](#sysvinit) [`chmod`](#chmod) [`chown`](#chown) [`chpass`](#chpass) [`chsh`](#chsh) [`column`](#column) [`compress`](#compress) [`cp`](#cp) [`crontab`](#crontab) [`crossystem`](#crossystem) [`cryptsetup`](#cryptsetup) [`curl`](#curl) [`cut`](#cut) 
+D   | [`dar`](#dar) [`date`](#date) [`dbus`](#dbus) [`dd`](#dd) [`declare`](#declare) [`df`](#df) [`dhclient`](#dhclient) [`diff`](#diff) [`dig`](#dig) [`dirname`](#dirname) [`dm-crypt`](#dm-crypt) [`dmesg`](#dmesg) [`doveadm`](#doveadm) [`dpkg`](#dpkg) [`dpkg-reconfigure`](#dpkg-reconfigure) [`du`](#du) [`dumpe2fs`](#dumpe2fs) 
+E   | [`e2image`](#e2image) [`e2label`](#e2label) [`edquota`](#edquota) [`elvis`](#elvis) [`elvish`](#elvish) [`espeak`](#espeak) [`exif`](#exif) 
+F   | [`fam`](#fam) [`fdisk`](#fdisk) [`file`](#file) [`find`](#find) [`firewall-cmd`](#firewall-cmd) [`firewalld`](#firewalld) [`fish`](#fish) [`fmt`](#fmt) [`fold`](#fold) [`free`](#free) [`fsck`](#fsck) [`fstrim`](#fstrim) [`ftp`](#ftp) [`fusermount`](#fusermount) 
+G   | [`gconf-editor`](#gconf-editor) [`gdisk`](#gdisk) [`gdmsetup`](#gdmsetup) [`gem`](#gem) [`getfacl`](#getfacl) [`git`](#git) [`gpasswd`](#gpasswd) [`gpg`](#gpg) [`grep`](#grep) [`groupadd`](#groupadd) [`groupdel`](#groupdel) [`groupmod`](#groupmod) [`grub`](#grub) [`gzip`](#gzip) 
+H   | [`hdiutil`](#hdiutil) [`hdparm`](#hdparm) [`head`](#head) [`history`](#history) [`host`](#host) [`hostname`](#hostname) [`hostnamectl`](#hostnamectl) [`hwclock`](#hwclock) 
+I   | [`iconv`](#iconv) [`ifconfig`](#ifconfig) [`imagemagick`](#imagemagick) [`init`](#sysvinit) [`initctl`](#initctl) [`insmod`](#insmod) [`install`](#install) [`ip`](#ip) [`iptables`](#iptables) [`iscsiadm`](#iscsiadm) [`iwlist`](#iwlist) 
+J   | [`journalctl`](#journalctl) 
+K   | [`kill`](#kill) 
+L   | [`last`](#last) [`ldapadd`](#ldapadd) [`ldconfig`](#ldconfig) [`ldd`](#ldd) [`less`](#less) [`let`](#let) [`link`](#link) [`locale`](#locale) [`localectl`](#localectl) [`logout`](#logout) [`lp`](#lp) [`lpadmin`](#lpadmin) [`lpstat`](#lpstat) [`ls`](#ls) [`lsblk`](#lsblk) [`lsmod`](#lsmod) [`lsof`](#lsof) [`lspci`](#lspci) [`lsusb`](#lsusb) [`lvcreate`](#lvcreate) [`lvdisplay`](#lvdisplay) [`lvremove`](#lvremove) [`lvresize`](#lvresize) 
+M   | [`mail`](#mail) [`mailq`](#mailq) [`mailstats`](#mailstats) [`make`](#make) [`makemap`](#makemap) [`mdadm`](#mdadm) [`mhwd`](#mhwd) [`mhwd-chroot`](#mhwd-chroot) [`mkdir`](#mkdir) [`mke2fs`](#mke2fs) [`mkfontscale`](#mkfontscale) [`mkfs`](#mkfs) [`mkswap`](#mkswap) [`mktemp`](#mktemp) [`modinfo`](#modinfo) [`modprobe`](#modprobe) [`mongod`](#mongod) [`mount`](#mount) [`mt`](#mt) 
+N   | [`nc`](#nc) [`netplan`](#netplan) [`netstat`](#netstat) [`NetworkManager`](#NetworkManager) [`newaliases`](#newaliases) [`nice`](#nice) [`nl`](#nl) [`nmap`](#nmap) [`nmblookup`](#nmblookup) [`nmcli`](#nmcli) [`nohup`](#nohup) [`nslookup`](#nslookup) [`ntpdate`](#ntpdate) 
+O   | [`openssl`](#openssl) 
+P   | [`pacman`](#pacman) [`partx`](#partx) [`paste`](#paste) [`passwd`](#passwd) [`paste`](#paste) [`patch`](#patch) [`ping`](#ping) [`pip`](#pip) [`postfix`](#postfix) [`postqueue`](#postqueue) [`postsuper`](#postsuper) [`ps`](#ps) [`pvcreate`](#pvcreate) [`pvdisplay`](#pvdisplay) [`pvremove`](#pvremove) [`pydoc`](#pydoc) 
+Q   | [`qmail`](#qmail) [`quota`](#quota) [`quotacheck`](#quotacheck) [`quotaoff`](#quotaoff) [`quotaon`](#quotaon) 
+R   | [`read`](#read) [`rename`](#rename) [`repquota`](#repquota) [`resize2fs`](#resize2fs) [`resize4fs`](#resize4fs) [`restorecon`](#restorecon) [`rmmod`](#rmmod) [`route`](#route) [`rpm`](#rpm) [`rsync`](#rsync) [`runlevel`](#runlevel) 
+S   | [`samba`](#samba) [`sc`](#sc) [`sed`](#sed) [`semanage`](#selinux) [`sendmail`](#sendmail) [`seq`](#seq) [`service`](#sysvinit) [`sestatus`](#sestatus) [`setenforce`](#selinux) [`setfacl`](#setfacl) [`sfdisk`](#sfdisk) [`shred`](#shred) [`shuf`](#shuf) [`shutdown`](#shutdown) [`slapadd`](#slapadd)  [`sleep`](#sleep) [`snap`](#snap) [`sort`](#sort) [`sosreport`](#sosreport) [`source`](#source) [`speaker-test`](#speaker-test) [`ss`](#ss) [`ssh`](#ssh) [`ssh-copy-id`](#ssh-copy-id) [`ssh-keygen`](#ssh-keygen) [`ssh-keyscan`](#ssh-keyscan) [`sshfs`](#sshfs) [`ssmtp`](#ssmtp) [`startx`](#startx) [`stty`](#stty) [`su`](#su) [`sudo`](#sudo) [`swapoff`](#swapoff) [`swapon`](#swapon) [`sysctl`](#sysctl) [`syslog`](#syslog) [`sysvinit`](#sysvinit) [`systemctl`](#systemctl) [`systemd-delta`](#systemd-delta) 
+T   | [`tail`](#tail) [`tar`](#tar) [`tcpdump`](#tcpdump) [`telinit`](#telinit) [`test`](#test) [`tig`](#tig) [`timedatectl`](#timedatectl) [`tmux`](#tmux) [`touch`](#touch) [`top`](#top) [`tput`](#tput) [`tr`](#tr) [`tracepath`](#tracepath) [`traceroute`](#traceroute) [`tune2fs`](#tune2fs) [`tzselect`](#tzselect) 
+U   | [`udevadm`](#udevadm) [`umount`](#umount) [`uname`](#uname) [`uncompress`](#uncompress) [`unzip`](#unzip) [`update-grub`](#update-grub) [`update-rc.d`](#update-rc.d) [`useradd`](#useradd) [`userdel`](#userdel) [`usermod`](#usermod) 
+V   | [`variable`](#variable) [`vgcreate`](#vgcreate) [`vgdisplay`](#vgdisplay) [`vgextend`](#vgextend) [`vgremove`](#vgremove) [`vgscan`](#vgscan) [`vifs`](#vifs) [`visudo`](#visudo) 
+W   | [`wall`](#wall) [`watch`](#watch) [`wc`](#wc) [`whatis`](#whatis) 
+X   | [`X`](#X) [`xdpyinfo`](#xdpyinfo) [`xhost`](#xhost) [`xinetd`](#xinetd) [`Xorg`](#Xorg) [`xrandr`](#xrandr) [`xwininfo`](#xwininfo) 
+Y   | [`yay`](#yay) [`yum`](#yum) 
+Z   | [`zip`](#zip) [`zipcloak`](#zipcloak) [`zipdetails`](#zipdetails) [`zipgrep`](#zipgrep) [`zipinfo`](#zipinfo) [`zipnote`](#zipnote) [`zipsplit`](#zipsplit) [`zsh`](#zsh)
 ### bash
 #### bash variables
 Syntax                                              | Effect
@@ -99,27 +99,17 @@ Page through bz2 files
 ### bzmore
 Page through bz2 files
 ### bzip2
-#### bzip2 options
 Option  | POSIX option            | Effect
 :---    | :---                    | :---
-c       | stdout                  | compress or decompress to standard output
-d       | decompress              | force decompression
-z       | compress                | force compression
-f       | force                   | force overwrite of output files
-#### Display contents of {archive} to stdout
+`-c`    | `--stdout`              | compress or decompress to standard output
+`-d`    | `--decompress`          | force decompression
+`-z`    | `--compress`            | force compression
+`-f`    | `--force`               | force overwrite of output files
+
+Compress `$SYMLINK`
 ```sh
-bzip2 -c archive
-bzip2 --stdout archive
-```
-#### Decompress {archive}
-```sh
-bzip2 -d archive
-bzip2 --decompress archive
-```
-#### Compress {symlink}
-```sh
-bzip2 -f symlink
-bzip2 --force symlink
+bzip2 -f $SYMLINK
+bzip2 --force $SYMLINK
 ```
 ### compress
 #### Display contents of the compressed file to stdout (same as using `zcat`)
@@ -149,45 +139,26 @@ dar -x full.bak
 ```
 ### gzip
 Zip a single file in-place; each file is replaced by one with the extension `.gz` or `.z`, maintaining ownership modes, access and modification times
-#### gzip options
+
 Option  | POSIX option            | Effect
 :---    | :---                    | :---
-1       | fast                    
-9       | best      
-c       | stdout, to-stdout       | output will go to STDOUT, leaving files intact
-d       | decompress, uncompress 
-f       | force                   | overwrite preexisting files
-S       | suffix                  | change default suffix (.gz)
+`-1`    | `--fast`                    
+`-9`    | `--best`      
+`-c`    | `--stdout` <br/>`--to-stdout` | output will go to STDOUT, leaving files intact
+`-d`    | `--decompress` <br/> `--uncompress`
+`-f`    | `--force`                   | overwrite preexisting files
+`-n`    | `--no-name`             | do not preserve original modification and access times for files
+`-S`    | `--suffix`                  | change default suffix (.gz)
 #### Compress {file} at compression ratio {#}, ranging from 1 to 9 (6 by default)
 ```sh
 gzip -#
 gzip --fast
 gzip --best
 ```
-#### Display contents of {archive} to stdout
-```sh
-gzip -c archive
-gzip --stdout -to-stdout archive
-```
-#### Decompress {archive}
-```sh
-gzip -d archive
-gzip --decompress archive
-```
 #### Compress {symlink}
 ```sh
 gzip -f symlink
 gzip --force symlink
-```
-#### Do not preserve original modification and access time for files
-```sh
-gzip -n
-gzip --no-name
-```
-#### Specify extension {.ext} instead of default ".gz" while compressing {file}
-```sh
-gzip -S .ext file
-gzip --suffix .ext file
 ```
 ### zcat
 Page through .gz files
@@ -195,19 +166,17 @@ Page through .gz files
 #### tar options
 Option  | POSIX option            | Effect
 :---    | :---                    | :---
-c       | create                  | create a new archive
-f       | file                    | use file or device
-j       | bzip2                   | filter the archive through [`bzip2`](#bzip2
-p       | preserve-permissions    | extract information about file perfmissions
-r       | append                  | append files to the end of an archive
-t       | list                    | list the contents of an archive
-x       | extract, get            | extract files from an archive
-z       | gzip                    | filter the archive through [`gzip`](#gzip)
+`-c`    | `--create`              | create a new archive
+`-C`    | `--directory`           | change directory `$PATH` before adding `$FILES` to the tar archive, using relative pathnames; makes it possible to archive files that don't share a common ancestor directory
+`-f`    | `--file`                | use file or device
+`-j`    | `--bzip2`               | filter the archive through [`bzip2`](#bzip2
+`-p`    | `--preserve-permissions`| extract information about file perfmissions
+`-r`    | `--append`              | append files to the end of an archive
+`-t`    | `--list`                | list the contents of an archive
+`-T`    | `--files-from`          | read a list of filenames to be archived, one filename per line, from file
+`-x`    | `--extract`<br/>`--get` | extract files from an archive
+`-z`    | `--gzip`                | filter the archive through [`gzip`](#gzip)
 
-#### Change directory `dir` before adding `files` to the tar archive, using relative pathnames; makes it possible to archive files that don't share a common ancestor directory
-```sh
-tar -C path files tar --directory=path files
-```
 #### Create {archive} from contents of {path}
 ```sh
 tar -cf archive path
@@ -223,19 +192,10 @@ tar --create --file --bzip archive path
 tar -cfz archive path
 tar --create --file --gzip archive path
 ```
-#### Preserve permissions
-```sh
-tar -p
-```
 #### Add {file} to {archive}
 ```sh
 tar -rf archive file
 tar --append --file archive file
-```
-#### Read a list of filenames to be archived, one filename per line, from file
-```sh
-tar -T file
-tar --files-from=file
 ```
 #### List the contents of {archive}
 ```sh
@@ -256,14 +216,10 @@ tar -xf archive file tar--extract --file archive file
 tar -xzf archive -C path
 ```
 ### uncompress
-#### Overwrite existing files without prompting, if they exist
-```sh
-uncompress  -f
-```
-#### Decompress files recursively
-```sh
-uncompress -r
-```
+Option  | Effect
+:---    | :---
+`-f`    | overwrite existing files without prompting, if they exist
+`-r`    | decompress files recursively
 ### unzip
 Extract compressed files in a zip archive
 ### zip
@@ -342,9 +298,9 @@ Simple utility that display realtime memory information.\
 #### free options
 Option  | POSIX option            | Effect
 :---    | :---                    | :---
-`-c n`  |                         | run the program {n} times
+`-c`    |                         | run the program {n} times
 `-h`    |                         | human-readable output
-`-s n`  |                         | run the program every {n} seconds, until the program is manually interrupted
+`-s`    |                         | run the program every {n} seconds, until the program is manually interrupted
 #### List memory statistics in kilobytes
 Without any options, `free` returns a table listing general statistics in kilobytes:
 ```bash
@@ -366,10 +322,10 @@ fusermount -u mountpoint
 #### grep options
 Option  | POSIX option            | Effect
 :---    | :---                    | :---
-`-A n`  |                         | print {n} lines of trailing context from the file after each match
-`-B n`  |                         | print {n} lines of leading context from the file after each match
+`-A`    |                         | print {n} lines of trailing context from the file after each match
+`-B`    |                         | print {n} lines of leading context from the file after each match
 `-c`    | `--count`               | print number of lines containing the pattern
-`-C n`  |                         | print {n} lines of leading and trailing context surrounding each match
+`-C`    |                         | print {n} lines of leading and trailing context surrounding each match
 `-E`    | `--extended-regexp`     | force grep to use extended regular expressions, making it similar to `egrep`
 `-F`    | `--fixed-strings`       | force grep to interpret pattern as fixed strings, making it similar to `fgrep`
 `-H`    |                         | always pr int filename headers with output lines
@@ -379,9 +335,9 @@ Option  | POSIX option            | Effect
 `-v`    | `--invert-match`        | print lines **not** matching the pattern
 ### history
 #### history options
-Option  | POSIX option            | Effect
-:---    | :---                    | :---
-`-c`    |                         | clear history [[23](README.md#sources)]
+Option  | Effect
+:---    | :---
+`-c`    | clear history [[23](README.md#sources)]
 ### hostnamectl
 #### Permanently change hostname to {$HOSTNAME}
 ```sh
@@ -470,11 +426,11 @@ localectl set-locale LANG=fr_FR.utf8
 ### lsof
 `lsof` can be used to display open files, open network ports, and network connections; `-P` prevents the conversion of port numbers to port names; `-i` displays network connections; `-n` prevents the conversion of IP addresses to hostnames [[23](README.md#sources)]
 #### lsof options
-Option  | POSIX option            | Effect
-:---    | :---                    | :---
-`-i`    | | display network connections
-`-n`    | | prevent the conversion of IP addresses to hostnames
-`-P`    | | prevent the conversion of port numbers to port names
+Option  | Effect
+:---    | :---
+`-i`    | display network connections
+`-n`    | prevent the conversion of IP addresses to hostnames
+`-P`    | prevent the conversion of port numbers to port names
 #### Show open network connections
 ```sh
 sudo lsof -Pni
@@ -539,9 +495,9 @@ Option  | POSIX option            | Effect
 ### nc
 The netcat utility allows testing of a host's ports, similar to __ping__, but more versatile because __ping__ only uses the portless ICMP protocol. GNU and OpenBSD versions available (itp-l+: 28)
 #### nc options
-Option  | POSIX option            | Effect
-:---    | :---                    | :---
-`-l`    |                         | listening mode
+Option  | Effect
+:---    | :---
+`-l`    | listening mode
 #### Connect to host on port 80
 ```
 nc example.com 80
@@ -703,7 +659,7 @@ Option  | POSIX option            | Effect
 `-Qn`   |                         | list programs only installed from main repositories
 `-Qdt`  |                         | list dependencies no longer needed (orphans)
 `-Ql`   | `--query` `--list`      | list all files owned by a package
-`-S`    | `sync`                  | install {pkg}
+`-S`    | `--sync`                | install {pkg}
 `-Sy`   |                         | synchronize package database 
 `-Su`   |                         | update programs 
 `-Syu`  |                         | sync package database (`Sy`) and upgrade all programs (`u`) (equivalent to `apt-get update && apt-get upgrade`)
@@ -1259,8 +1215,8 @@ Yellow Dog Updater, Modified package manager (Yellow Dog was a variation of Red 
 #### yum options
 Option  | POSIX option            | Effect
 :---    | :---                    | :---
-y       | assumeyes               | respond to any prompt with "yes" automatically
-x       | exclude                 | exclude specific packages from updates [[38](README.md#sources)]
+`-y`    | `--assumeyes`           | respond to any prompt with "yes" automatically
+`-x`    | `--exclude`             | exclude specific packages from updates [[38](README.md#sources)]
 #### Install {package}
 ```sh
 yum install package
@@ -1440,12 +1396,12 @@ Display package information regarding package cache
 #### apt-cache commands
 Command   | Description
 :---      | :---
-search    | display all packages with the search term listed in the package name or description
-showpkg   | display information about a package
-stats     | display statistics about the package cache
-showsrc   | display information about a source package
-depends   | display a package's dependencies
-rdepends  | display a package's reverse dependencies, i.e. what packages for which this package is a dependency
+`search`  | display all packages with the search term listed in the package name or description
+`showpkg` | display information about a package
+`stats`   | display statistics about the package cache
+`showsrc` | display information about a source package
+`depends` | display a package's dependencies
+`rdepends`| display a package's reverse dependencies, i.e. what packages for which this package is a dependency
 #### Display basic information about each available package and its dependencies 
 ```sh
 apt-cache dump
@@ -1522,9 +1478,9 @@ chage -W days chage --warndays days
 chcon -Rv --type=httpd_sys_content_t website
 ```
 ### chgrp
-#### Change ownership of {file} to {user} and {group}
+#### Change ownership of `$FILE` to `$USER` and `$GROUP`
 ```sh
-chgrp user:group
+chgrp $USER:$GROUP $FILE
 ```
 ### chmod
 #### Set sticky bit on {file}
@@ -1769,17 +1725,17 @@ Manage local Debian packages
 #### dpkg options
 Option  | POSIX option            | Effect
 :---    | :---                    | :---
-I       | info                    | show information about {$PACKAGE}
-i       | install                 | install {$PACKAGE}
-l       | list                    | list packages currently installed
-L       | listfiles               | list packages that were installed as dependencies of another package
-p       | print-avail             | show details about {$PACKAGE}
-P       | purge                   | remove {$PACKAGE}, including configuration files
-r       | remove                  | remove {$PACKAGE}, keeping configuration files
-s       | status                  | display package status
-S       | search                  | list package name responsible for a specific file being installed on the system
-C       | audit                   | check for broken packages
-\-      | get-selections          | display list of package selections
+`-I`    | `--info`                | show information about {$PACKAGE}
+`-i`    | `--install`             | install {$PACKAGE}
+`-l`    | `--list`                | list packages currently installed
+`-L`    | `--listfiles`           | list packages that were installed as dependencies of another package
+`-p`    | `--print-avail`:         | show details about {$PACKAGE}
+`-P`    | `--purge`               | remove {$PACKAGE}, including configuration files
+`-r`    | `--remove`              | remove {$PACKAGE}, keeping configuration files
+`-s`    | `--status`              | display package status
+`-S`    | `--search`              | list package name responsible for a specific file being installed on the system
+`-C`    | `--audit`               | check for broken packages
+\-      | `--get-selections`      | display list of package selections
 ### dpkg-reconfigure
 Run a package's configuration script after it has already been installed.
 #### Change the time zone on a Debian based system using package-based tools
@@ -2060,14 +2016,10 @@ Create a new group
 Delete a group
 ### groupmod
 Modify definition of specified group by modifying the appropriate entry in the group database
-#### Rename {group} to {newname}
-```sh
-groupmod -n group newname
-```
-#### Change name of {group} to {newname}
-```sh
-groupmod -n newname group<hr># groupmod --new-name newname group
-```
+
+Option  | POSIX option            | Effect
+:---    | :---                    | :---
+`-n`    | `--newname`             | Rename {$GROUP} to {$NEWNAME}
 ### grub
 #### Install boot images within a directory other than /boot
 ```sh
@@ -2306,7 +2258,7 @@ Print the `lp` print queue status
 ```sh
 ls -a ls --all
 ```
-#### Append indicator (*/=>@|) to entries
+#### Append indicators to entries
 ```sh
 ls -F ls --classify
 ```
@@ -2341,9 +2293,9 @@ Option  | POSIX option            | Effect
 ### mailq
 Display the current mail queue on a Postfix server
 ### mailstats
-Gather and display statistics about mail processed on a server running sendmail
+Gather and display statistics about mail processed on a server running [ `sendmail` ](#sendmail)
 ### makemap
-Execute after making a change to the sendmail access database /etc/access
+Execute after making a change to the [ `sendmail` ](#sendmail) access database [ **/etc/access** ](configs.md)
 ### mdadm
 Manage Linux Software RAID devices
 #### Start a stopped RAID array
@@ -2400,8 +2352,8 @@ Add and remove modules from the Linux kernel
 
 Option  | POSIX option            | Effect
 :---    | :---                    | :---
-`-c`    |                         | display current `modprobe` configuration
-`-R`    |                         | display all modules that match an alias
+`-c`    | `--showconfig`          | display current `modprobe` configuration
+`-R`    | `--resolve-alias`       | display all modules that match an alias
 `-r`    | `--remove`              | remove specified module from memory
 
 #### Remove {$MODULE} from the Linux kernel
@@ -2417,10 +2369,10 @@ MongoDB daemon
 #### mongod options
 Option  | POSIX option            | Effect
 :---    | :---                    | :---
-        | dbpath                  | 
-        | fork                    |
-        | logpath                 |
-        | port                    |
+\-      | `--dbpath`              | 
+\-      | `--fork`                |
+\-      | `--logpath`             |
+\-      | `--port`                |
 
 #### Run MongoDB service in the background on port 80
 ```sh
@@ -2596,6 +2548,12 @@ nohup cmd &
 ntpdate -upool.ntp.org
 ```
 ### passwd
+Option  | POSIX option            | Effect
+:---    | :---                    | :---
+`-e`    | `--expire`              | 
+`-i`    | `--inactive`            |
+`-l`    | `--lock`                | 
+`-u`    | `--unlock`              |
 #### Immediately expire the passwore of {user}, forcing a password change on next login
 ```sh
 passwd -e user # passwd --expire user
@@ -2748,17 +2706,17 @@ quotaon -a
 quotaon -u user
 ```
 ### read
-Option  | POSIX option            | Effect
-:---    | :---                    | :---
-a | | read from standard input, with the words assigned to sequential indices of {array}
-d | | read from standard input, with the first character of `delim` being used to terminate input, rather than newline
-e | | read from standard input, if standard input is coming from a terminal, readline is used to obtain the line
-n | | read from standard input, returning after reading {n} chars
-p | | read from standard input, displaying {$PROMPT} on standard error before reading any input
-r | | read from standard input, backslash no longer will act as an escape character
-s | | read from standard input, silent mode (characters are not echoed)
-t | | read from standard input, returning failure is a complete line of input is not read within {n} seconds
-u | | read input from file descriptor { $FILE }
+Option  | Effect
+:---    | :---
+`-a`    | read from standard input, with the words assigned to sequential indices of {array}
+`-d`    | read from standard input, with the first character of `delim` being used to terminate input, rather than newline
+`-e`    | read from standard input, if standard input is coming from a terminal, readline is used to obtain the line
+`-n`    | read from standard input, returning after reading {n} chars
+`-p`    | read from standard input, displaying {$PROMPT} on standard error before reading any input
+`-r`    | read from standard input, backslash no longer will act as an escape character
+`-s`    | read from standard input, silent mode (characters are not echoed)
+`-t`    | read from standard input, returning failure is a complete line of input is not read within {n} seconds
+`-u`    | read input from file descriptor { $FILE }
 #### Stopwatch
 Will stop when you press enter, displaying how much time elapsed
 ```sh
@@ -2815,22 +2773,22 @@ route add default gw ipaddr
 #### rpm option groups
 Option  | POSIX option            | Effect
 :---    | :---                    | :---
-e       | erase                   | remove specified package, including config files
-i       | install                 | install specified package
-q       | query                   | query for specified package
-U       | upgrade                 | upgrade specified package
+`-e`    | erase                   | remove specified package, including config files
+`-i`    | install                 | install specified package
+`-q`    | query                   | query for specified package
+`-U`    | upgrade                 | upgrade specified package
 #### rpm query options
 Option  | POSIX option            | Effect
 :---    | :---                    | :---
-a       |                         | lista all installed packages
-c       |                         | list configs installed with specified package
-d       |                         | list documentation files installed with specified package
-i       |                         | display information about specified package
-K       |                         | Verify integrity of specified package
-l       |                         | List all files installed with specified package
-provides|                         | List which capabilities the specified package provides
-R       |                         | list which capabilities the specified package requires
-s       |                         | display state of each file that was installed by specified package (normal, not installed, or replaced)
+`-a`       |                         | lista all installed packages
+`-c`       |                         | list configs installed with specified package
+`-d`       |                         | list documentation files installed with specified package
+`-i`       |                         | display information about specified package
+`-K`       |                         | Verify integrity of specified package
+`-l`       |                         | List all files installed with specified package
+`-provides`|                         | List which capabilities the specified package provides
+`-R`       |                         | list which capabilities the specified package requires
+`-s`       |                         | display state of each file that was installed by specified package (normal, not installed, or replaced)
 #### Query repos for information on {package}
 ```sh
 rpm -qi package
@@ -2842,6 +2800,10 @@ rpm -Uvh package
 rpm --upgrade --verbose --hash package
 ```
 ### rsync
+Option  | POSIX option            | Effect
+:---    | :---                    | :---
+`-a`    | `--archive`             | Copy recursively, preserving group, owner, modification times, and device-files (if super-user)
+
 #### Copy recursively, preserving group, owner, modification times, and device-files (if super-user)
 ```sh
 rsync -a
@@ -3002,6 +2964,16 @@ chkconfig daemon on
 ```
 ### setfacl
 Set file access control lists
+:w
+
+Option  | POSIX option  | Description
+:---    | :---          | :---
+`-b`    | `--remove-all` | remove all extended ACL entries, retaining the base ACL entries of the owner, group, and others
+`-k`    | `--remove-default` | remove the Default ACL
+`-m`    | `--modify` | modify ACL of a directory
+`-M`    | `--modify-file` | modify ACL of a file
+`-x`    | `--remove` | remove ACL entries from a directory
+`-X`    | `--remove-file` | remove ACL entries from a file
 #### Grant user {lisa} right to read {file}
 ```sh
 setfacl -m u:lisa:r file
@@ -3380,39 +3352,39 @@ Evaluate a condition, returning 0 if true and 1 if false
 #### test options
 Option  | Effect
 :---    | :---
-a       | Test if both EXPRESSION1 and EXPRESSION2 are true
-b       | Test if {file} exists and is block special
-c       | Test if {file} exists and is character special
-d       | Test if {file} exists and is a directory
-e       | Test if {file} exists
-ef      | Test if {file} and {other} have the same device and inode numbers
-eq      | Test if INT1 is equal to INT2
-f       | Test if {file} exists and is a regular file
-ge      | Test if INT1 is greater than or equal to INT2
-o       | Test if either EXPRESSION1 or EXPRESSION2 are true
-le      | Test if INT1 is less than or equal to INT2
-lt      | Test if INT1 is less than INT2
-ne      | Test if INT1 is unequal to INT2
-nt      | Test if {file} is newer (modification date) than {other}
-ot      | Test if {file} is older than {other}
-g       | Test if {file} exists and is set-group-ID
-G       | Test if {file} exists and is owned by the effective group ID
-h       | Test if {file} exists and is a symbolic link
-k       | Test if {file} exists and has its sticky bit set
-L       | Test if {file} exists and is a symbolic link
-n       | Test if the length of {string} is nonzero
-O       | Test if {file} exists and is owned by the effective user ID
-p       | Test if {file} exists and is a named pipe
-r       | Test if {file} exists and read permission is granted
-s       | Test if {file} exists and has a size greater than zero
-S       | Test if {file} exists and is a socket
-u       | Test if {file} exists and its set-userID bit is set
-w       | Test if {file} exists and write permission is granted
-x       | Test if {file} exists and execute (or search) permission is granted
-z       | Test if the length of {string} is zero
+`-a`    | Test if both EXPRESSION1 and EXPRESSION2 are true
+`-b`    | Test if {file} exists and is block special
+`-c`    | Test if {file} exists and is character special
+`-d`    | Test if {file} exists and is a directory
+`-e`    | Test if {file} exists
+`-ef`   | Test if {file} and {other} have the same device and inode numbers
+`-eq`   | Test if INT1 is equal to INT2
+`-f`    | Test if {file} exists and is a regular file
+`-ge`   | Test if INT1 is greater than or equal to INT2
+`-o`    | Test if either EXPRESSION1 or EXPRESSION2 are true
+`-le`   | Test if INT1 is less than or equal to INT2
+`-lt`   | Test if INT1 is less than INT2
+`-ne`   | Test if INT1 is unequal to INT2
+`-nt`   | Test if {file} is newer (modification date) than {other}
+`-ot`   | Test if {file} is older than {other}
+`-g`    | Test if {file} exists and is set-group-ID
+`-G`    | Test if {file} exists and is owned by the effective group ID
+`-h`    | Test if {file} exists and is a symbolic link
+`-k`    | Test if {file} exists and has its sticky bit set
+`-L`    | Test if {file} exists and is a symbolic link
+`-n`    | Test if the length of {string} is nonzero
+`-O`    | Test if {file} exists and is owned by the effective user ID
+`-p`    | Test if {file} exists and is a named pipe
+`-r`    | Test if {file} exists and read permission is granted
+`-s`    | Test if {file} exists and has a size greater than zero
+`-S`    | Test if {file} exists and is a socket
+`-u`    | Test if {file} exists and its set-userID bit is set
+`-w`    | Test if {file} exists and write permission is granted
+`-x`    | Test if {file} exists and execute (or search) permission is granted
+`-z`    | Test if the length of {string} is zero
 #### Test if {VAR} has either the text "string1" or "string2" within it
 ```sh
-[[ $VAR =~ 'string1' \| 'string2' ]]
+[[ $VAR =~ 'string1' | 'string2' ]]
 ```
 #### Test if {VAR} matches a regex {pattern} (must not be quoted, otherwise, {pattern} will be treated as a string literal)
 ```sh
