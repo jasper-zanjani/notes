@@ -99,27 +99,17 @@ Page through bz2 files
 ### bzmore
 Page through bz2 files
 ### bzip2
-#### bzip2 options
 Option  | POSIX option            | Effect
 :---    | :---                    | :---
-c       | stdout                  | compress or decompress to standard output
-d       | decompress              | force decompression
-z       | compress                | force compression
-f       | force                   | force overwrite of output files
-#### Display contents of {archive} to stdout
+`-c`    | `--stdout`              | compress or decompress to standard output
+`-d`    | `--decompress`          | force decompression
+`-z`    | `--compress`            | force compression
+`-f`    | `--force`               | force overwrite of output files
+
+Compress `$SYMLINK`
 ```sh
-bzip2 -c archive
-bzip2 --stdout archive
-```
-#### Decompress {archive}
-```sh
-bzip2 -d archive
-bzip2 --decompress archive
-```
-#### Compress {symlink}
-```sh
-bzip2 -f symlink
-bzip2 --force symlink
+bzip2 -f $SYMLINK
+bzip2 --force $SYMLINK
 ```
 ### compress
 #### Display contents of the compressed file to stdout (same as using `zcat`)
@@ -149,65 +139,32 @@ dar -x full.bak
 ```
 ### gzip
 Zip a single file in-place; each file is replaced by one with the extension `.gz` or `.z`, maintaining ownership modes, access and modification times
-#### gzip options
-Option  | POSIX option            | Effect
-:---    | :---                    | :---
-1       | fast                    
-9       | best      
-c       | stdout, to-stdout       | output will go to STDOUT, leaving files intact
-d       | decompress, uncompress 
-f       | force                   | overwrite preexisting files
-S       | suffix                  | change default suffix (.gz)
-#### Compress {file} at compression ratio {#}, ranging from 1 to 9 (6 by default)
 ```sh
 gzip -#
 gzip --fast
 gzip --best
-```
-#### Display contents of {archive} to stdout
-```sh
-gzip -c archive
-gzip --stdout -to-stdout archive
-```
-#### Decompress {archive}
-```sh
-gzip -d archive
-gzip --decompress archive
 ```
 #### Compress {symlink}
 ```sh
 gzip -f symlink
 gzip --force symlink
 ```
-#### Do not preserve original modification and access time for files
-```sh
-gzip -n
-gzip --no-name
-```
-#### Specify extension {.ext} instead of default ".gz" while compressing {file}
-```sh
-gzip -S .ext file
-gzip --suffix .ext file
-```
-### zcat
 Page through .gz files
 ### tar
 #### tar options
 Option  | POSIX option            | Effect
 :---    | :---                    | :---
-c       | create                  | create a new archive
-f       | file                    | use file or device
-j       | bzip2                   | filter the archive through [`bzip2`](#bzip2
-p       | preserve-permissions    | extract information about file perfmissions
-r       | append                  | append files to the end of an archive
-t       | list                    | list the contents of an archive
-x       | extract, get            | extract files from an archive
-z       | gzip                    | filter the archive through [`gzip`](#gzip)
+`-c`    | `--create`              | create a new archive
+`-C`    | `--directory`           | change directory `$PATH` before adding `$FILES` to the tar archive, using relative pathnames; makes it possible to archive files that don't share a common ancestor directory
+`-f`    | `--file`                | use file or device
+`-j`    | `--bzip2`               | filter the archive through [`bzip2`](#bzip2
+`-p`    | `--preserve-permissions`| extract information about file perfmissions
+`-r`    | `--append`              | append files to the end of an archive
+`-t`    | `--list`                | list the contents of an archive
+`-T`    | `--files-from`          | read a list of filenames to be archived, one filename per line, from file
+`-x`    | `--extract`<br/>`--get` | extract files from an archive
+`-z`    | `--gzip`                | filter the archive through [`gzip`](#gzip)
 
-#### Change directory `dir` before adding `files` to the tar archive, using relative pathnames; makes it possible to archive files that don't share a common ancestor directory
-```sh
-tar -C path files tar --directory=path files
-```
 #### Create {archive} from contents of {path}
 ```sh
 tar -cf archive path
@@ -223,19 +180,10 @@ tar --create --file --bzip archive path
 tar -cfz archive path
 tar --create --file --gzip archive path
 ```
-#### Preserve permissions
-```sh
-tar -p
-```
 #### Add {file} to {archive}
 ```sh
 tar -rf archive file
 tar --append --file archive file
-```
-#### Read a list of filenames to be archived, one filename per line, from file
-```sh
-tar -T file
-tar --files-from=file
 ```
 #### List the contents of {archive}
 ```sh
@@ -256,14 +204,10 @@ tar -xf archive file tar--extract --file archive file
 tar -xzf archive -C path
 ```
 ### uncompress
-#### Overwrite existing files without prompting, if they exist
-```sh
-uncompress  -f
-```
-#### Decompress files recursively
-```sh
-uncompress -r
-```
+Option  | Effect
+:---    | :---
+`-f`    | overwrite existing files without prompting, if they exist
+`-r`    | decompress files recursively
 ### unzip
 Extract compressed files in a zip archive
 ### zip
@@ -342,9 +286,9 @@ Simple utility that display realtime memory information.\
 #### free options
 Option  | POSIX option            | Effect
 :---    | :---                    | :---
-`-c n`  |                         | run the program {n} times
+`-c`    |                         | run the program {n} times
 `-h`    |                         | human-readable output
-`-s n`  |                         | run the program every {n} seconds, until the program is manually interrupted
+`-s`    |                         | run the program every {n} seconds, until the program is manually interrupted
 #### List memory statistics in kilobytes
 Without any options, `free` returns a table listing general statistics in kilobytes:
 ```bash
@@ -366,10 +310,10 @@ fusermount -u mountpoint
 #### grep options
 Option  | POSIX option            | Effect
 :---    | :---                    | :---
-`-A n`  |                         | print {n} lines of trailing context from the file after each match
-`-B n`  |                         | print {n} lines of leading context from the file after each match
+`-A`    |                         | print {n} lines of trailing context from the file after each match
+`-B`    |                         | print {n} lines of leading context from the file after each match
 `-c`    | `--count`               | print number of lines containing the pattern
-`-C n`  |                         | print {n} lines of leading and trailing context surrounding each match
+`-C`    |                         | print {n} lines of leading and trailing context surrounding each match
 `-E`    | `--extended-regexp`     | force grep to use extended regular expressions, making it similar to `egrep`
 `-F`    | `--fixed-strings`       | force grep to interpret pattern as fixed strings, making it similar to `fgrep`
 `-H`    |                         | always pr int filename headers with output lines
@@ -379,9 +323,9 @@ Option  | POSIX option            | Effect
 `-v`    | `--invert-match`        | print lines **not** matching the pattern
 ### history
 #### history options
-Option  | POSIX option            | Effect
-:---    | :---                    | :---
-`-c`    |                         | clear history [[23](README.md#sources)]
+Option  | Effect
+:---    | :---
+`-c`    | clear history [[23](README.md#sources)]
 ### hostnamectl
 #### Permanently change hostname to {$HOSTNAME}
 ```sh
@@ -470,11 +414,11 @@ localectl set-locale LANG=fr_FR.utf8
 ### lsof
 `lsof` can be used to display open files, open network ports, and network connections; `-P` prevents the conversion of port numbers to port names; `-i` displays network connections; `-n` prevents the conversion of IP addresses to hostnames [[23](README.md#sources)]
 #### lsof options
-Option  | POSIX option            | Effect
-:---    | :---                    | :---
-`-i`    | | display network connections
-`-n`    | | prevent the conversion of IP addresses to hostnames
-`-P`    | | prevent the conversion of port numbers to port names
+Option  | Effect
+:---    | :---
+`-i`    | display network connections
+`-n`    | prevent the conversion of IP addresses to hostnames
+`-P`    | prevent the conversion of port numbers to port names
 #### Show open network connections
 ```sh
 sudo lsof -Pni
@@ -539,9 +483,9 @@ Option  | POSIX option            | Effect
 ### nc
 The netcat utility allows testing of a host's ports, similar to __ping__, but more versatile because __ping__ only uses the portless ICMP protocol. GNU and OpenBSD versions available (itp-l+: 28)
 #### nc options
-Option  | POSIX option            | Effect
-:---    | :---                    | :---
-`-l`    |                         | listening mode
+Option  | Effect
+:---    | :---
+`-l`    | listening mode
 #### Connect to host on port 80
 ```
 nc example.com 80
@@ -703,7 +647,7 @@ Option  | POSIX option            | Effect
 `-Qn`   |                         | list programs only installed from main repositories
 `-Qdt`  |                         | list dependencies no longer needed (orphans)
 `-Ql`   | `--query` `--list`      | list all files owned by a package
-`-S`    | `sync`                  | install {pkg}
+`-S`    | `--sync`                | install {pkg}
 `-Sy`   |                         | synchronize package database 
 `-Su`   |                         | update programs 
 `-Syu`  |                         | sync package database (`Sy`) and upgrade all programs (`u`) (equivalent to `apt-get update && apt-get upgrade`)
@@ -1440,12 +1384,12 @@ Display package information regarding package cache
 #### apt-cache commands
 Command   | Description
 :---      | :---
-search    | display all packages with the search term listed in the package name or description
-showpkg   | display information about a package
-stats     | display statistics about the package cache
-showsrc   | display information about a source package
-depends   | display a package's dependencies
-rdepends  | display a package's reverse dependencies, i.e. what packages for which this package is a dependency
+`search`  | display all packages with the search term listed in the package name or description
+`showpkg` | display information about a package
+`stats`   | display statistics about the package cache
+`showsrc` | display information about a source package
+`depends` | display a package's dependencies
+`rdepends`| display a package's reverse dependencies, i.e. what packages for which this package is a dependency
 #### Display basic information about each available package and its dependencies 
 ```sh
 apt-cache dump
@@ -1522,9 +1466,9 @@ chage -W days chage --warndays days
 chcon -Rv --type=httpd_sys_content_t website
 ```
 ### chgrp
-#### Change ownership of {file} to {user} and {group}
+#### Change ownership of `$FILE` to `$USER` and `$GROUP`
 ```sh
-chgrp user:group
+chgrp $USER:$GROUP $FILE
 ```
 ### chmod
 #### Set sticky bit on {file}
@@ -1769,17 +1713,17 @@ Manage local Debian packages
 #### dpkg options
 Option  | POSIX option            | Effect
 :---    | :---                    | :---
-`-I`    | info                    | show information about {$PACKAGE}
-`-i`    | install                 | install {$PACKAGE}
-`-l`    | list                    | list packages currently installed
-`-L`    | listfiles               | list packages that were installed as dependencies of another package
-`-p`    | print-avail             | show details about {$PACKAGE}
-`-P`    | purge                   | remove {$PACKAGE}, including configuration files
-`-r`    | remove                  | remove {$PACKAGE}, keeping configuration files
-`-s`    | status                  | display package status
-`-S`    | search                  | list package name responsible for a specific file being installed on the system
-`-C`    | audit                   | check for broken packages
-\-      | get-selections          | display list of package selections
+`-I`    | `--info`                | show information about {$PACKAGE}
+`-i`    | `--install`             | install {$PACKAGE}
+`-l`    | `--list`                | list packages currently installed
+`-L`    | `--listfiles`           | list packages that were installed as dependencies of another package
+`-p`    | `--print-avail`:         | show details about {$PACKAGE}
+`-P`    | `--purge`               | remove {$PACKAGE}, including configuration files
+`-r`    | `--remove`              | remove {$PACKAGE}, keeping configuration files
+`-s`    | `--status`              | display package status
+`-S`    | `--search`              | list package name responsible for a specific file being installed on the system
+`-C`    | `--audit`               | check for broken packages
+\-      | `--get-selections`      | display list of package selections
 ### dpkg-reconfigure
 Run a package's configuration script after it has already been installed.
 #### Change the time zone on a Debian based system using package-based tools
@@ -2060,14 +2004,10 @@ Create a new group
 Delete a group
 ### groupmod
 Modify definition of specified group by modifying the appropriate entry in the group database
-#### Rename {group} to {newname}
-```sh
-groupmod -n group newname
-```
-#### Change name of {group} to {newname}
-```sh
-groupmod -n newname group<hr># groupmod --new-name newname group
-```
+
+Option  | POSIX option            | Effect
+:---    | :---                    | :---
+`-n`    | `--newname`             | Rename {$GROUP} to {$NEWNAME}
 ### grub
 #### Install boot images within a directory other than /boot
 ```sh
@@ -2306,7 +2246,7 @@ Print the `lp` print queue status
 ```sh
 ls -a ls --all
 ```
-#### Append indicator (*/=>@|) to entries
+#### Append indicators to entries
 ```sh
 ls -F ls --classify
 ```
@@ -2341,9 +2281,9 @@ Option  | POSIX option            | Effect
 ### mailq
 Display the current mail queue on a Postfix server
 ### mailstats
-Gather and display statistics about mail processed on a server running sendmail
+Gather and display statistics about mail processed on a server running [ `sendmail` ](#sendmail)
 ### makemap
-Execute after making a change to the sendmail access database /etc/access
+Execute after making a change to the [ `sendmail` ](#sendmail) access database [ **/etc/access** ](configs.md)
 ### mdadm
 Manage Linux Software RAID devices
 #### Start a stopped RAID array
@@ -2417,10 +2357,10 @@ MongoDB daemon
 #### mongod options
 Option  | POSIX option            | Effect
 :---    | :---                    | :---
-        | `--dbpath`              | 
-        | `--fork`                |
-        | `--logpath`             |
-        | `--port`                |
+\-      | `--dbpath`              | 
+\-      | `--fork`                |
+\-      | `--logpath`             |
+\-      | `--port`                |
 
 #### Run MongoDB service in the background on port 80
 ```sh
@@ -3012,6 +2952,8 @@ chkconfig daemon on
 ```
 ### setfacl
 Set file access control lists
+:w
+
 Option  | POSIX option  | Description
 :---    | :---          | :---
 `-b`    | `--remove-all` | remove all extended ACL entries, retaining the base ACL entries of the owner, group, and others
