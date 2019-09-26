@@ -13,32 +13,32 @@ Systemd
 
 \#  | Commands sorted alphabetically
 :---| :---
-A   | [adduser](#adduser) [add-apt-repository](#add-apt-repository) [alsamixer](#alsamixer) [apropos](#apropos) [apt](#apt) [apt-cache](#apt-cache) [apt-key](#apt-key) [at](#at) [ausearch](#ausearch) [awk](#awk) 
-B   | [bash](#bash) [blkid](#blkid) [bpftrace](#bpftrace) [bzcat](#bzcat) [bzip2](#bzip2) [bzless](#bzless) [bzmore](#bzmore) 
-C   | [cancel](#cancel) [cat](#cat) [chage](#chage) [chcon](#chcon) [chgrp](#chgrp) [chkconfig](#sysvinit) [chmod](#chmod) [chown](#chown) [chpass](#chpass) [chsh](#chsh) [column](#column) [compress](#compress) [cp](#cp) [crontab](#crontab) [crossystem](#crossystem) [cryptsetup](#cryptsetup) [curl](#curl) [cut](#cut) 
-D   | [dar](#dar) [date](#date) [dbus](#dbus) [dd](#dd) [declare](#declare) [df](#df) [dhclient](#dhclient) [diff](#diff) [dig](#dig) [dirname](#dirname) [dm-crypt](#dm-crypt) [dmesg](#dmesg) [doveadm](#doveadm) [dpkg](#dpkg) [dpkg-reconfigure](#dpkg-reconfigure) [du](#du) [dumpe2fs](#dumpe2fs) 
-E   | [e2image](#e2image) [e2label](#e2label) [edquota](#edquota) [elvis](#elvis) [elvish](#elvish) [espeak](#espeak) [exif](#exif) 
-F   | [fam](#fam) [fdisk](#fdisk) [file](#file) [find](#find) [firewall-cmd](#firewall-cmd) [firewalld](#firewalld) [fish](#fish) [fmt](#fmt) [fold](#fold) [free](#free) [fsck](#fsck) [fstrim](#fstrim) [ftp](#ftp) [fusermount](#fusermount) 
-G   | [gconf-editor](#gconf-editor) [gdisk](#gdisk) [gdmsetup](#gdmsetup) [gem](#gem) [getfacl](#getfacl) [git](#git) [gpasswd](#gpasswd) [gpg](#gpg) [grep](#grep) [groupadd](#groupadd) [groupdel](#groupdel) [groupmod](#groupmod) [grub](#grub) [gzip](#gzip) 
-H   | [hdiutil](#hdiutil) [hdparm](#hdparm) [head](#head) [history](#history) [host](#host) [hostname](#hostname) [hostnamectl](#hostnamectl) [hwclock](#hwclock) 
-I   | [iconv](#iconv) [ifconfig](#ifconfig) [imagemagick](#imagemagick) [init](#sysvinit) [initctl](#initctl) [insmod](#insmod) [install](#install) [ip](#ip) [iptables](#iptables) [iscsiadm](#iscsiadm) [iwlist](#iwlist) 
-J   | [journalctl](#journalctl) 
-K   | [kill](#kill) 
-L   | [last](#last) [ldapadd](#ldapadd) [ldconfig](#ldconfig) [ldd](#ldd) [less](#less) [let](#let) [link](#link) [locale](#locale) [localectl](#localectl) [logout](#logout) [lp](#lp) [lpadmin](#lpadmin) [lpstat](#lpstat) [ls](#ls) [lsblk](#lsblk) [lsmod](#lsmod) [lsof](#lsof) [lspci](#lspci) [lsusb](#lsusb) [lvcreate](#lvcreate) [lvdisplay](#lvdisplay) [lvremove](#lvremove) [lvresize](#lvresize) 
-M   | [mail](#mail) [mailq](#mailq) [mailstats](#mailstats) [make](#make) [makemap](#makemap) [mdadm](#mdadm) [mhwd](#mhwd) [mhwd-chroot](#mhwd-chroot) [mkdir](#mkdir) [mke2fs](#mke2fs) [mkfontscale](#mkfontscale) [mkfs](#mkfs) [mkswap](#mkswap) [mktemp](#mktemp) [modinfo](#modinfo) [modprobe](#modprobe) [mongod](#mongod) [mount](#mount) [mt](#mt) 
-N   | [nc](#nc) [netplan](#netplan) [netstat](#netstat) [NetworkManager](#NetworkManager) [newaliases](#newaliases) [nice](#nice) [nl](#nl) [nmap](#nmap) [nmblookup](#nmblookup) [nmcli](#nmcli) [nohup](#nohup) [nslookup](#nslookup) [ntpdate](#ntpdate) 
-O   | [openssl](#openssl) 
-P   | [pacman](#pacman) [partx](#partx) [paste](#paste) [passwd](#passwd) [paste](#paste) [patch](#patch) [ping](#ping) [pip](#pip) [postfix](#postfix) [postqueue](#postqueue) [postsuper](#postsuper) [ps](#ps) [pvcreate](#pvcreate) [pvdisplay](#pvdisplay) [pvremove](#pvremove) [pydoc](#pydoc) 
-Q   | [qmail](#qmail) [quota](#quota) [quotacheck](#quotacheck) [quotaoff](#quotaoff) [quotaon](#quotaon) 
-R   | [read](#read) [rename](#rename) [repquota](#repquota) [resize2fs](#resize2fs) [resize4fs](#resize4fs) [restorecon](#restorecon) [rmmod](#rmmod) [route](#route) [rpm](#rpm) [rsync](#rsync) [runlevel](#runlevel) 
-S   | [samba](#samba) [sc](#sc) [sed](#sed) [semanage](#selinux) [sendmail](#sendmail) [seq](#seq) [service](#sysvinit) [sestatus](#sestatus) [setenforce](#selinux) [setfacl](#setfacl) [sfdisk](#sfdisk) [shred](#shred) [shuf](#shuf) [shutdown](#shutdown) [slapadd](#slapadd)  [sleep](#sleep) [snap](#snap) [sort](#sort) [sosreport](#sosreport) [source](#source) [speaker-test](#speaker-test) [ss](#ss) [ssh](#ssh) [ssh-copy-id](#ssh-copy-id) [ssh-keygen](#ssh-keygen) [ssh-keyscan](#ssh-keyscan) [sshfs](#sshfs) [ssmtp](#ssmtp) [startx](#startx) [stty](#stty) [su](#su) [sudo](#sudo) [swapoff](#swapoff) [swapon](#swapon) [sysctl](#sysctl) [syslog](#syslog) [sysvinit](#sysvinit) [systemctl](#systemctl) [systemd-delta](#systemd-delta) 
-T   | [tail](#tail) [tar](#tar) [tcpdump](#tcpdump) [telinit](#telinit) [test](#test) [tig](#tig) [timedatectl](#timedatectl) [tmux](#tmux) [touch](#touch) [top](#top) [tput](#tput) [tr](#tr) [tracepath](#tracepath) [traceroute](#traceroute) [tune2fs](#tune2fs) [tzselect](#tzselect) 
-U   | [udevadm](#udevadm) [umount](#umount) [uname](#uname) [uncompress](#uncompress) [unzip](#unzip) [update-grub](#update-grub) [update-rc.d](#update-rc.d) [useradd](#useradd) [userdel](#userdel) [usermod](#usermod) 
-V   | [variable](#variable) [vgcreate](#vgcreate) [vgdisplay](#vgdisplay) [vgextend](#vgextend) [vgremove](#vgremove) [vgscan](#vgscan) [vifs](#vifs) [visudo](#visudo) 
-W   | [wall](#wall) [watch](#watch) [wc](#wc) [whatis](#whatis) 
-X   | [X](#X) [xdpyinfo](#xdpyinfo) [xhost](#xhost) [xinetd](#xinetd) [Xorg](#Xorg) [xrandr](#xrandr) [xwininfo](#xwininfo) 
-Y   | [yay](#yay) [yum](#yum) 
-Z   | [zip](#zip) [zipcloak](#zipcloak) [zipdetails](#zipdetails) [zipgrep](#zipgrep) [zipinfo](#zipinfo) [zipnote](#zipnote) [zipsplit](#zipsplit) [zsh](#zsh)
+A   | [`adduser`](#adduser) [`add-apt-repository`](#add-apt-repository) [`alsamixer`](#alsamixer) [`apropos`](#apropos) [`apt`](#apt) [`apt-cache`](#apt-cache) [`apt-key`](#apt-key) [`at`](#at) [`ausearch`](#ausearch) [`awk`](#awk) 
+B   | [`bash`](#bash) [`blkid`](#blkid) [`bpftrace`](#bpftrace) [`bzcat`](#bzcat) [`bzip2`](#bzip2) [`bzless`](#bzless) [`bzmore`](#bzmore) 
+C   | [`cancel`](#cancel) [`cat`](#cat) [`chage`](#chage) [`chcon`](#chcon) [`chgrp`](#chgrp) [`chkconfig`](#sysvinit) [`chmod`](#chmod) [`chown`](#chown) [`chpass`](#chpass) [`chsh`](#chsh) [`column`](#column) [`compress`](#compress) [`cp`](#cp) [`crontab`](#crontab) [`crossystem`](#crossystem) [`cryptsetup`](#cryptsetup) [`curl`](#curl) [`cut`](#cut) 
+D   | [`dar`](#dar) [`date`](#date) [`dbus`](#dbus) [`dd`](#dd) [`declare`](#declare) [`df`](#df) [`dhclient`](#dhclient) [`diff`](#diff) [`dig`](#dig) [`dirname`](#dirname) [`dm-crypt`](#dm-crypt) [`dmesg`](#dmesg) [`doveadm`](#doveadm) [`dpkg`](#dpkg) [`dpkg-reconfigure`](#dpkg-reconfigure) [`du`](#du) [`dumpe2fs`](#dumpe2fs) 
+E   | [`e2image`](#e2image) [`e2label`](#e2label) [`edquota`](#edquota) [`elvis`](#elvis) [`elvish`](#elvish) [`espeak`](#espeak) [`exif`](#exif) 
+F   | [`fam`](#fam) [`fdisk`](#fdisk) [`file`](#file) [`find`](#find) [`firewall-cmd`](#firewall-cmd) [`firewalld`](#firewalld) [`fish`](#fish) [`fmt`](#fmt) [`fold`](#fold) [`free`](#free) [`fsck`](#fsck) [`fstrim`](#fstrim) [`ftp`](#ftp) [`fusermount`](#fusermount) 
+G   | [`gconf-editor`](#gconf-editor) [`gdisk`](#gdisk) [`gdmsetup`](#gdmsetup) [`gem`](#gem) [`getfacl`](#getfacl) [`git`](#git) [`gpasswd`](#gpasswd) [`gpg`](#gpg) [`grep`](#grep) [`groupadd`](#groupadd) [`groupdel`](#groupdel) [`groupmod`](#groupmod) [`grub`](#grub) [`gzip`](#gzip) 
+H   | [`hdiutil`](#hdiutil) [`hdparm`](#hdparm) [`head`](#head) [`history`](#history) [`host`](#host) [`hostname`](#hostname) [`hostnamectl`](#hostnamectl) [`hwclock`](#hwclock) 
+I   | [`iconv`](#iconv) [`ifconfig`](#ifconfig) [`imagemagick`](#imagemagick) [`init`](#sysvinit) [`initctl`](#initctl) [`insmod`](#insmod) [`install`](#install) [`ip`](#ip) [`iptables`](#iptables) [`iscsiadm`](#iscsiadm) [`iwlist`](#iwlist) 
+J   | [`journalctl`](#journalctl) 
+K   | [`kill`](#kill) 
+L   | [`last`](#last) [`ldapadd`](#ldapadd) [`ldconfig`](#ldconfig) [`ldd`](#ldd) [`less`](#less) [`let`](#let) [`link`](#link) [`locale`](#locale) [`localectl`](#localectl) [`logout`](#logout) [`lp`](#lp) [`lpadmin`](#lpadmin) [`lpstat`](#lpstat) [`ls`](#ls) [`lsblk`](#lsblk) [`lsmod`](#lsmod) [`lsof`](#lsof) [`lspci`](#lspci) [`lsusb`](#lsusb) [`lvcreate`](#lvcreate) [`lvdisplay`](#lvdisplay) [`lvremove`](#lvremove) [`lvresize`](#lvresize) 
+M   | [`mail`](#mail) [`mailq`](#mailq) [`mailstats`](#mailstats) [`make`](#make) [`makemap`](#makemap) [`mdadm`](#mdadm) [`mhwd`](#mhwd) [`mhwd-chroot`](#mhwd-chroot) [`mkdir`](#mkdir) [`mke2fs`](#mke2fs) [`mkfontscale`](#mkfontscale) [`mkfs`](#mkfs) [`mkswap`](#mkswap) [`mktemp`](#mktemp) [`modinfo`](#modinfo) [`modprobe`](#modprobe) [`mongod`](#mongod) [`mount`](#mount) [`mt`](#mt) 
+N   | [`nc`](#nc) [`netplan`](#netplan) [`netstat`](#netstat) [`NetworkManager`](#NetworkManager) [`newaliases`](#newaliases) [`nice`](#nice) [`nl`](#nl) [`nmap`](#nmap) [`nmblookup`](#nmblookup) [`nmcli`](#nmcli) [`nohup`](#nohup) [`nslookup`](#nslookup) [`ntpdate`](#ntpdate) 
+O   | [`openssl`](#openssl) 
+P   | [`pacman`](#pacman) [`partx`](#partx) [`paste`](#paste) [`passwd`](#passwd) [`paste`](#paste) [`patch`](#patch) [`ping`](#ping) [`pip`](#pip) [`postfix`](#postfix) [`postqueue`](#postqueue) [`postsuper`](#postsuper) [`ps`](#ps) [`pvcreate`](#pvcreate) [`pvdisplay`](#pvdisplay) [`pvremove`](#pvremove) [`pydoc`](#pydoc) 
+Q   | [`qmail`](#qmail) [`quota`](#quota) [`quotacheck`](#quotacheck) [`quotaoff`](#quotaoff) [`quotaon`](#quotaon) 
+R   | [`read`](#read) [`rename`](#rename) [`repquota`](#repquota) [`resize2fs`](#resize2fs) [`resize4fs`](#resize4fs) [`restorecon`](#restorecon) [`rmmod`](#rmmod) [`route`](#route) [`rpm`](#rpm) [`rsync`](#rsync) [`runlevel`](#runlevel) 
+S   | [`samba`](#samba) [`sc`](#sc) [`sed`](#sed) [`semanage`](#selinux) [`sendmail`](#sendmail) [`seq`](#seq) [`service`](#sysvinit) [`sestatus`](#sestatus) [`setenforce`](#selinux) [`setfacl`](#setfacl) [`sfdisk`](#sfdisk) [`shred`](#shred) [`shuf`](#shuf) [`shutdown`](#shutdown) [`slapadd`](#slapadd)  [`sleep`](#sleep) [`snap`](#snap) [`sort`](#sort) [`sosreport`](#sosreport) [`source`](#source) [`speaker-test`](#speaker-test) [`ss`](#ss) [`ssh`](#ssh) [`ssh-copy-id`](#ssh-copy-id) [`ssh-keygen`](#ssh-keygen) [`ssh-keyscan`](#ssh-keyscan) [`sshfs`](#sshfs) [`ssmtp`](#ssmtp) [`startx`](#startx) [`stty`](#stty) [`su`](#su) [`sudo`](#sudo) [`swapoff`](#swapoff) [`swapon`](#swapon) [`sysctl`](#sysctl) [`syslog`](#syslog) [`sysvinit`](#sysvinit) [`systemctl`](#systemctl) [`systemd-delta`](#systemd-delta) 
+T   | [`tail`](#tail) [`tar`](#tar) [`tcpdump`](#tcpdump) [`telinit`](#telinit) [`test`](#test) [`tig`](#tig) [`timedatectl`](#timedatectl) [`tmux`](#tmux) [`touch`](#touch) [`top`](#top) [`tput`](#tput) [`tr`](#tr) [`tracepath`](#tracepath) [`traceroute`](#traceroute) [`tune2fs`](#tune2fs) [`tzselect`](#tzselect) 
+U   | [`udevadm`](#udevadm) [`umount`](#umount) [`uname`](#uname) [`uncompress`](#uncompress) [`unzip`](#unzip) [`update-grub`](#update-grub) [`update-rc.d`](#update-rc.d) [`useradd`](#useradd) [`userdel`](#userdel) [`usermod`](#usermod) 
+V   | [`variable`](#variable) [`vgcreate`](#vgcreate) [`vgdisplay`](#vgdisplay) [`vgextend`](#vgextend) [`vgremove`](#vgremove) [`vgscan`](#vgscan) [`vifs`](#vifs) [`visudo`](#visudo) 
+W   | [`wall`](#wall) [`watch`](#watch) [`wc`](#wc) [`whatis`](#whatis) 
+X   | [`X`](#X) [`xdpyinfo`](#xdpyinfo) [`xhost`](#xhost) [`xinetd`](#xinetd) [`Xorg`](#Xorg) [`xrandr`](#xrandr) [`xwininfo`](#xwininfo) 
+Y   | [`yay`](#yay) [`yum`](#yum) 
+Z   | [`zip`](#zip) [`zipcloak`](#zipcloak) [`zipdetails`](#zipdetails) [`zipgrep`](#zipgrep) [`zipinfo`](#zipinfo) [`zipnote`](#zipnote) [`zipsplit`](#zipsplit) [`zsh`](#zsh)
 ### bash
 #### bash variables
 Syntax                                              | Effect
@@ -1259,8 +1259,8 @@ Yellow Dog Updater, Modified package manager (Yellow Dog was a variation of Red 
 #### yum options
 Option  | POSIX option            | Effect
 :---    | :---                    | :---
-y       | assumeyes               | respond to any prompt with "yes" automatically
-x       | exclude                 | exclude specific packages from updates [[38](README.md#sources)]
+`-y`    | `--assumeyes`           | respond to any prompt with "yes" automatically
+`-x`    | `--exclude`             | exclude specific packages from updates [[38](README.md#sources)]
 #### Install {package}
 ```sh
 yum install package
@@ -1769,16 +1769,16 @@ Manage local Debian packages
 #### dpkg options
 Option  | POSIX option            | Effect
 :---    | :---                    | :---
-I       | info                    | show information about {$PACKAGE}
-i       | install                 | install {$PACKAGE}
-l       | list                    | list packages currently installed
-L       | listfiles               | list packages that were installed as dependencies of another package
-p       | print-avail             | show details about {$PACKAGE}
-P       | purge                   | remove {$PACKAGE}, including configuration files
-r       | remove                  | remove {$PACKAGE}, keeping configuration files
-s       | status                  | display package status
-S       | search                  | list package name responsible for a specific file being installed on the system
-C       | audit                   | check for broken packages
+`-I`    | info                    | show information about {$PACKAGE}
+`-i`    | install                 | install {$PACKAGE}
+`-l`    | list                    | list packages currently installed
+`-L`    | listfiles               | list packages that were installed as dependencies of another package
+`-p`    | print-avail             | show details about {$PACKAGE}
+`-P`    | purge                   | remove {$PACKAGE}, including configuration files
+`-r`    | remove                  | remove {$PACKAGE}, keeping configuration files
+`-s`    | status                  | display package status
+`-S`    | search                  | list package name responsible for a specific file being installed on the system
+`-C`    | audit                   | check for broken packages
 \-      | get-selections          | display list of package selections
 ### dpkg-reconfigure
 Run a package's configuration script after it has already been installed.
@@ -2400,8 +2400,8 @@ Add and remove modules from the Linux kernel
 
 Option  | POSIX option            | Effect
 :---    | :---                    | :---
-`-c`    |                         | display current `modprobe` configuration
-`-R`    |                         | display all modules that match an alias
+`-c`    | `--showconfig`          | display current `modprobe` configuration
+`-R`    | `--resolve-alias`       | display all modules that match an alias
 `-r`    | `--remove`              | remove specified module from memory
 
 #### Remove {$MODULE} from the Linux kernel
@@ -2417,10 +2417,10 @@ MongoDB daemon
 #### mongod options
 Option  | POSIX option            | Effect
 :---    | :---                    | :---
-        | dbpath                  | 
-        | fork                    |
-        | logpath                 |
-        | port                    |
+        | `--dbpath`              | 
+        | `--fork`                |
+        | `--logpath`             |
+        | `--port`                |
 
 #### Run MongoDB service in the background on port 80
 ```sh
@@ -2596,6 +2596,12 @@ nohup cmd &
 ntpdate -upool.ntp.org
 ```
 ### passwd
+Option  | POSIX option            | Effect
+:---    | :---                    | :---
+`-e`    | `--expire`              | 
+`-i`    | `--inactive`            |
+`-l`    | `--lock`                | 
+`-u`    | `--unlock`              |
 #### Immediately expire the passwore of {user}, forcing a password change on next login
 ```sh
 passwd -e user # passwd --expire user
@@ -2748,17 +2754,17 @@ quotaon -a
 quotaon -u user
 ```
 ### read
-Option  | POSIX option            | Effect
-:---    | :---                    | :---
-a | | read from standard input, with the words assigned to sequential indices of {array}
-d | | read from standard input, with the first character of `delim` being used to terminate input, rather than newline
-e | | read from standard input, if standard input is coming from a terminal, readline is used to obtain the line
-n | | read from standard input, returning after reading {n} chars
-p | | read from standard input, displaying {$PROMPT} on standard error before reading any input
-r | | read from standard input, backslash no longer will act as an escape character
-s | | read from standard input, silent mode (characters are not echoed)
-t | | read from standard input, returning failure is a complete line of input is not read within {n} seconds
-u | | read input from file descriptor { $FILE }
+Option  | Effect
+:---    | :---
+`-a`    | read from standard input, with the words assigned to sequential indices of {array}
+`-d`    | read from standard input, with the first character of `delim` being used to terminate input, rather than newline
+`-e`    | read from standard input, if standard input is coming from a terminal, readline is used to obtain the line
+`-n`    | read from standard input, returning after reading {n} chars
+`-p`    | read from standard input, displaying {$PROMPT} on standard error before reading any input
+`-r`    | read from standard input, backslash no longer will act as an escape character
+`-s`    | read from standard input, silent mode (characters are not echoed)
+`-t`    | read from standard input, returning failure is a complete line of input is not read within {n} seconds
+`-u`    | read input from file descriptor { $FILE }
 #### Stopwatch
 Will stop when you press enter, displaying how much time elapsed
 ```sh
@@ -2815,22 +2821,22 @@ route add default gw ipaddr
 #### rpm option groups
 Option  | POSIX option            | Effect
 :---    | :---                    | :---
-e       | erase                   | remove specified package, including config files
-i       | install                 | install specified package
-q       | query                   | query for specified package
-U       | upgrade                 | upgrade specified package
+`-e`    | erase                   | remove specified package, including config files
+`-i`    | install                 | install specified package
+`-q`    | query                   | query for specified package
+`-U`    | upgrade                 | upgrade specified package
 #### rpm query options
 Option  | POSIX option            | Effect
 :---    | :---                    | :---
-a       |                         | lista all installed packages
-c       |                         | list configs installed with specified package
-d       |                         | list documentation files installed with specified package
-i       |                         | display information about specified package
-K       |                         | Verify integrity of specified package
-l       |                         | List all files installed with specified package
-provides|                         | List which capabilities the specified package provides
-R       |                         | list which capabilities the specified package requires
-s       |                         | display state of each file that was installed by specified package (normal, not installed, or replaced)
+`-a`       |                         | lista all installed packages
+`-c`       |                         | list configs installed with specified package
+`-d`       |                         | list documentation files installed with specified package
+`-i`       |                         | display information about specified package
+`-K`       |                         | Verify integrity of specified package
+`-l`       |                         | List all files installed with specified package
+`-provides`|                         | List which capabilities the specified package provides
+`-R`       |                         | list which capabilities the specified package requires
+`-s`       |                         | display state of each file that was installed by specified package (normal, not installed, or replaced)
 #### Query repos for information on {package}
 ```sh
 rpm -qi package
@@ -2842,6 +2848,10 @@ rpm -Uvh package
 rpm --upgrade --verbose --hash package
 ```
 ### rsync
+Option  | POSIX option            | Effect
+:---    | :---                    | :---
+`-a`    | `--archive`             | Copy recursively, preserving group, owner, modification times, and device-files (if super-user)
+
 #### Copy recursively, preserving group, owner, modification times, and device-files (if super-user)
 ```sh
 rsync -a
@@ -3002,6 +3012,14 @@ chkconfig daemon on
 ```
 ### setfacl
 Set file access control lists
+Option  | POSIX option  | Description
+:---    | :---          | :---
+`-b`    | `--remove-all` | remove all extended ACL entries, retaining the base ACL entries of the owner, group, and others
+`-k`    | `--remove-default` | remove the Default ACL
+`-m`    | `--modify` | modify ACL of a directory
+`-M`    | `--modify-file` | modify ACL of a file
+`-x`    | `--remove` | remove ACL entries from a directory
+`-X`    | `--remove-file` | remove ACL entries from a file
 #### Grant user {lisa} right to read {file}
 ```sh
 setfacl -m u:lisa:r file
@@ -3380,39 +3398,39 @@ Evaluate a condition, returning 0 if true and 1 if false
 #### test options
 Option  | Effect
 :---    | :---
-a       | Test if both EXPRESSION1 and EXPRESSION2 are true
-b       | Test if {file} exists and is block special
-c       | Test if {file} exists and is character special
-d       | Test if {file} exists and is a directory
-e       | Test if {file} exists
-ef      | Test if {file} and {other} have the same device and inode numbers
-eq      | Test if INT1 is equal to INT2
-f       | Test if {file} exists and is a regular file
-ge      | Test if INT1 is greater than or equal to INT2
-o       | Test if either EXPRESSION1 or EXPRESSION2 are true
-le      | Test if INT1 is less than or equal to INT2
-lt      | Test if INT1 is less than INT2
-ne      | Test if INT1 is unequal to INT2
-nt      | Test if {file} is newer (modification date) than {other}
-ot      | Test if {file} is older than {other}
-g       | Test if {file} exists and is set-group-ID
-G       | Test if {file} exists and is owned by the effective group ID
-h       | Test if {file} exists and is a symbolic link
-k       | Test if {file} exists and has its sticky bit set
-L       | Test if {file} exists and is a symbolic link
-n       | Test if the length of {string} is nonzero
-O       | Test if {file} exists and is owned by the effective user ID
-p       | Test if {file} exists and is a named pipe
-r       | Test if {file} exists and read permission is granted
-s       | Test if {file} exists and has a size greater than zero
-S       | Test if {file} exists and is a socket
-u       | Test if {file} exists and its set-userID bit is set
-w       | Test if {file} exists and write permission is granted
-x       | Test if {file} exists and execute (or search) permission is granted
-z       | Test if the length of {string} is zero
+`-a`    | Test if both EXPRESSION1 and EXPRESSION2 are true
+`-b`    | Test if {file} exists and is block special
+`-c`    | Test if {file} exists and is character special
+`-d`    | Test if {file} exists and is a directory
+`-e`    | Test if {file} exists
+`-ef`   | Test if {file} and {other} have the same device and inode numbers
+`-eq`   | Test if INT1 is equal to INT2
+`-f`    | Test if {file} exists and is a regular file
+`-ge`   | Test if INT1 is greater than or equal to INT2
+`-o`    | Test if either EXPRESSION1 or EXPRESSION2 are true
+`-le`   | Test if INT1 is less than or equal to INT2
+`-lt`   | Test if INT1 is less than INT2
+`-ne`   | Test if INT1 is unequal to INT2
+`-nt`   | Test if {file} is newer (modification date) than {other}
+`-ot`   | Test if {file} is older than {other}
+`-g`    | Test if {file} exists and is set-group-ID
+`-G`    | Test if {file} exists and is owned by the effective group ID
+`-h`    | Test if {file} exists and is a symbolic link
+`-k`    | Test if {file} exists and has its sticky bit set
+`-L`    | Test if {file} exists and is a symbolic link
+`-n`    | Test if the length of {string} is nonzero
+`-O`    | Test if {file} exists and is owned by the effective user ID
+`-p`    | Test if {file} exists and is a named pipe
+`-r`    | Test if {file} exists and read permission is granted
+`-s`    | Test if {file} exists and has a size greater than zero
+`-S`    | Test if {file} exists and is a socket
+`-u`    | Test if {file} exists and its set-userID bit is set
+`-w`    | Test if {file} exists and write permission is granted
+`-x`    | Test if {file} exists and execute (or search) permission is granted
+`-z`    | Test if the length of {string} is zero
 #### Test if {VAR} has either the text "string1" or "string2" within it
 ```sh
-[[ $VAR =~ 'string1' \| 'string2' ]]
+[[ $VAR =~ 'string1' | 'string2' ]]
 ```
 #### Test if {VAR} matches a regex {pattern} (must not be quoted, otherwise, {pattern} will be treated as a string literal)
 ```sh
