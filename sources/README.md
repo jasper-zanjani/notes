@@ -58,9 +58,11 @@ Scott Tolinski |  [Twitter](https://twitter.com/stolinski) [Github](https://gith
 #### AID 9
 Nell recommends starting with Digital Ocean's tutorials to learn cloud technologies.
 ### AWS Podcast
-[Web](https://aws.amazon.com/podcasts/aws-podcast/) Notes: [329](#aws-329)
+[Web](https://aws.amazon.com/podcasts/aws-podcast/) Notes: 
+\#          | Title     | Links
+:---        | :---      | :---
+329         | Choosing a Database Platform | [Notes](#aws-329)
 #### AWS 329
-Choosing a Database Platform\
 The historical motivation for the invention of relational databases was minimizing the cost of storage by eliminating duplication. At the turn of the century, as storage cost fell, other database paradigms emerged, producing **7 fundamental categories of data**:
   - **Relational** data
   - **Key-value** data: divided into **key-to-blob** storage and **key-to-document** storage
@@ -72,11 +74,11 @@ The historical motivation for the invention of relational databases was minimizi
 
 The recommended approach to select a database is to determine the **access pattern** needed. Organizations should be open to encouraging innovation by using more than one database, rather than overemphasizing reducing the cost of infrastructure by insisting on using a single, monolithic database that may not be suited to every business purpose.
 ### AWS TechCHAT
-Notes: [35](#awst-35) [53](#awst-53)
-#### AWST 35
-Deep dive on databases
+\#          | Title     | Links
+:---        | :---      | :---
+35          | Deep dive on databases  | Notes
+53          | SysAdmin & Hybrid Cloud Special | [Notes](#awst-53)
 #### AWST 53
-SysAdmin & Hybrid Cloud Special\
 AWS CLI and AWS Tools for PowerShell are available for AWS.
 ### Azure DevOps Podcast
 [Web](http://azuredevopspodcast.clear-measure.com/) Notes: [48](#adp-48)
@@ -98,24 +100,25 @@ Test coverage metrics are a double-edged sword, because they incentivize develop
 [ Ramey, Chet ](#chet-ramey) and [ Fox, Brian ](#brian-fox). **Bash Reference Manual**
 ### BSD Now
 [Web](https://www.bsdnow.tv/) [Subreddit](https://www.reddit.com/r/bsdnow) [FaceBook](https://www.facebook.com/BSDNow/) [Twitter](https://twitter.com/bsdnow)
-### Chengdu Gaming Federation
 ### CloudSkills.fm
-[Web](https://cloudskills.fm/) Notes: [2](#csfm-2) [3](#csfm-3) [29](#csfm-29)
+[Web](https://cloudskills.fm/) 
+\#          | Title     | Links
+:---        | :---      | :---
+2           | Infrastructure as Code in the Cloud | [Notes](#csfm-2)
+3           | Cloud Migration Strategy | [Notes](#csfm-3)
+5           | Automation with PowerShell  | [Notes](#csfm-5)
+29          | Building Serverless Apps on AWS | [Notes](#csfm-29)
 #### CSFM 2
-> "Infrastructure as Code in the Cloud"
 - An alternative job title to DevOps Engineer is "Infrastructure Developer"
 - Infrastructure as Code and automation are terms that refer to the use of deployment templates to provision resources reproducibly.
 - Automation templates are especially useful when testing software. The development environment for that version of the application can be provisioned and comprehensively tested before risking the production environment.
 - Go for the Azure Solutions Architect Expert, since it demonstrates the skills needed
 #### CSFM 3
-> "Cloud Migration Strategy"
 - Azure's Site Recovery has been a game-changer that AWS has had no answer for, until Amazon acquired CloudEndure, which had offered a similar service for multiple cloud providers.
 - "architectural patterns"
 #### CSFM 5
-> "Automation with PowerShell"
 - A good project idea is to spin up a Windows 10 VM in Azure
 #### CSFM 29
-> "Building Serverless Apps on AWS". []
 > "Unless you're an infrastructure company, infrastructure is overhead."
 - Guest Yan Cui discusses AWS Lambda's market dominance.
 - It makes no sense to worry about migration from one cloud provider to another before it becomes an issue: CAPEX (capital expenditure) vs. OPEX (operating expenditure). And transferring Compute is easy.
@@ -133,21 +136,19 @@ Test coverage metrics are a double-edged sword, because they incentivize develop
 #### CR 325
 [Notes](https://coder.show/325): 2018/09/07.
 - Wes Payne is a big fan of Clojure, in particular with the professionalism of the clojure community. Clojure is not as closely tied to Java as it was in its inception when it was a "JAR", but it still needs a JVM.
-### Coding Blocks
 ### DevOps and Docker
-Description | Links
-:---        | :---
-Contact     | [Web](https://podcast.bretfisher.com/)
-Alpine Linux  | [Notes](#dd-alpine) [Web](https://podcast.bretfisher.com/episodes/alpine-linux-as-a-base-image-is-it-really-secure)
-Learning Kubernetes | [Notes](#dd-learning-k8s) [Web](https://podcast.bretfisher.com/episodes/learning-kubernetes-with-jerome-petazzoni)
+[Web](https://podcast.bretfisher.com/)
+
+\#          | Title     | Links
+:---        | :---      | :---
+\-          | Alpine Linux  | [Notes](#dd-alpine) [Web](https://podcast.bretfisher.com/episodes/alpine-linux-as-a-base-image-is-it-really-secure)
+\-          | Learning Kubernetes | [Notes](#dd-learning-k8s) [Web](https://podcast.bretfisher.com/episodes/learning-kubernetes-with-jerome-petazzoni)
 #### DD Alpine
 Alpine may have an undeserved reputation for security, since it is tricky to scan containers running it.
 #### DD Learning K8S
 No notes taken.
 ### Destination Linux
 [Web](http://destinationlinux.com/)
-### Extras
-[Web](https://extras.show/)
 ### Fluent Python
 [Author](#luciano-ramalho)
 ### Functional Python Programming
@@ -155,36 +156,40 @@ No notes taken.
 ### Going Linux
 [Host](#larry-bushey) [Web](https://goinglinux.com) [Twitter](https://twitter.com/goinglinux)
 ### Hacker Public Radio
-[Web](http://hackerpublicradio.org/) Links: [1938](#hpr-1938) [2107](#hpr-2107)
+[Web](http://hackerpublicradio.org/) 
+\#          | Title     | Links
+:---        | :---      | :---
+1938        | How I prepare HPR shows | [Notes](#hpr-1938) [Web](hackerpublicradio.org/eps/hpr1938**full**shownotes.html) 
+2107        | Makefiles for everyday use | [Notes](#hpr-2107) [Web](https://hackerpublicradio.org/eps.php?id=2107)
 #### HPR 1938
-> "How I prepare HPR shows". [hpr.org](hackerpublicradio.org/eps/hpr1938**full**shownotes.html)
-  - `make`
+- `make`
 #### HPR 2107
-  - Source: "Makefiles for everyday use". [hpr.org](https://hackerpublicradio.org/eps.php?id=2107)
-  - `make`
+- `make`
 ### ITPro.TV
-[Azure](itp-azure.md) [Linux+](itp-linux-plus.md) [LPIC-1](itp-lpic.md) [PowerShell](itp-ps.md) Windows Server [MCSA](itp-winsrv-mcsa.md) [MTA](itp-winsrv-mta.md) [101](itp-ws101.md)
 [Web](https://itpro.tv/)
+
+\#          | Title     | Links
+:---        | :---      | :---
+Courses     |           | [Azure](itp-azure.md) [Linux+](itp-linux-plus.md) [LPIC-1](itp-lpic.md) [PowerShell](itp-ps.md) Windows Server [MCSA](itp-winsrv-mcsa.md) [MTA](itp-winsrv-mta.md) [101](itp-ws101.md)
 ### JavaScript Jabber
 ### Kubernetes Podcast from Google
-Description | Links
-:---        | :---
-Contact     | [Twitter](http://twitter.com/mkubernetespod) [Email](mailto:kubernetespodcast@google.com) [Web](https://kubernetespodcast.com)
-5           | [Notes](#k8s-5) [Web](https://kubernetespodcast.com/episode/005-documentation/)
-12          | [Notes](#k8s-12) [Web](https://kubernetespodcast.com/episode/012-kubernetes-origins/)
-13          | [Notes](#k8s-13) [Web](https://kubernetespodcast.com/episode/013-gke-and-cloud-services-platform/)
-67          | [Notes](#k8s-67) [Web](https://kubernetespodcast.com/episode/067-orka/)
-70          | [Notes](#k8s-70) [Web](https://kubernetespodcast.com/episode/070-windows-server-containers/)
-71          | [Notes](#k8s-71) [Web](https://kubernetespodcast.com/episode/071-containerd/)
+[Twitter](http://twitter.com/mkubernetespod) [Email](mailto:kubernetespodcast@google.com) [Web](https://kubernetespodcast.com)
+
+\#          | Title     | Links
+:---        | :---      | :---
+5           |           | Notes [Web](https://kubernetespodcast.com/episode/005-documentation/)
+12          | Kubernetes Origins, with Joe Beda | [Notes](#k8s-12) [Web](https://kubernetespodcast.com/episode/012-kubernetes-origins/)
+13          | Google Cloud Services Platform, with Aparna Sinha | [Notes](#k8s-13) [Web](https://kubernetespodcast.com/episode/013-gke-and-cloud-services-platform/)
+67          | Orka, with Chris Chapman | [Notes](#k8s-67) [Web](https://kubernetespodcast.com/episode/067-orka/)
+70          | Windows Server Containers, with Patrick Lang | [Notes](#k8s-70) [Web](https://kubernetespodcast.com/episode/070-windows-server-containers/)
+71          | `containerd` with Derek McGowan | [Notes](#k8s-71) [Web](https://kubernetespodcast.com/episode/071-containerd/)
 
 #### K8S 71
-`containerd` with Derek McGowan\
 Containerd is a container runtime that manages all the resources related to containers. It sits right below the Kubernetes `kubelet` as well as Docker. Beneath containerd there is the runtime, most commonly **runC**, which is the reference implementation of the OCR open container.\
 Containerd was originally designed to interface directly with runC so that Docker could be decoupled from the actual containers. Since then, containerd grew to include image resources, which means it could entirely replace Docker.\
 `ctr` is an unsupported tool that used for debugging containerd.\
 Container metrics (logging and monitoring information) is exposed through **Prometheus**. \
 #### K8S 70
-Windows Server Containers, with Patrick Lang\
 Windows server containers, like Linux containers, package dependencies. Windows offers two base images: **Windows Server Core** and **Nano Server**. Windows Server containers are focused on running headless applications.\
 The differences between Windows and Linux containers originate in historical differences. Linux was developed with the goal of producing a stable kernel with a consistent application binary interface and limited syscalls in order to move applications from other commercial Unix-type OSes. In contrast, Windows was developed to be an entire operating system, not just a kernel, including APIs like Win16 and Win32. The border between kernel and user mode was always much blurrier than in Linux. The concept of a **session** was innovated to handle the problem of what to do when multiple users are making inputs simultaneously. A Windows container is essentially equivalent to a headless session.\
 Every Windows installation has its own security database that is handled by the local security agent, and for every new user a unique binary identifier is generated that is unique to that database. Containers also create their own database upon creation. Without Active Directory, every container is completely isolated. Active Directory has been around since Windows Server 2000, but the replication interval for AD databases is too long for container applications. The solution is **Group-Managed Service Accounts**, which is a **security principal** that can be used by multiple users and computers. This turned out to be perfect for containers, but it still required the machine to be domain-joined, which is something we wanted to avoid for containers because of the delay in replication, as mentioned.\
@@ -193,10 +198,8 @@ For the network control plane, configuration was exposed in what's called the **
 If you have a Windows 10 machine, Docker for Windows can run containers on Linux or Windows, and you can switch between them using the system tray icon. Go to [aka.ms/windowscontainers](https://aka.ms/windowscontainers). If you don't have a machine, all the major cloud providers allow you to form a Windows Server or Windows 10 VM. \
 Get connected with the Kubernetes community repo, every SIG has a folder in there which links to our weekly meetings and agenda. Get an invite to the Kubernetes Slack server and join the SIG Windows Slack channel.
 #### K8S 67
-Orka, with Chris Chapman\
 Orka is a virtualization layer for Mac build infrastructure offered by hosting company MacStadium. iPhone architecture and security make building for that platform very different. Virtual Mac instances first became possible in Snow Leopard, but the EULA allows only 2 VMs per machine. MacStadium is an enterprise-scale cloud for Apple. A typical lifecycle for an iOS build begins with a simulator, followed by a physical test, typically in a build farm of physical iOS devices.  
 #### K8S 13
-**Google Cloud Services Platform, with Aparna Sinha**\
 **Cloud Services Platform**: Google hybrid cloud software, comprising a set of software and services that work both on-premises and in GCP and are managed by GCP\
 3 components that form the core of Cloud services Platform:
   - **GKE On-Prem**: Kubernetes for on-premises environments.
@@ -205,14 +208,13 @@ Orka is a virtualization layer for Mac build infrastructure offered by hosting c
 
 **Kubernetes Operators**: allow you to deploy and manage applications on Kubernetes clusters, such as Spark Operator, Airflow Operator, etc.
 #### K8S 12
-Kubernetes Origins, with Joe Beda\
 Kubernetes started at Google at the same time as Google Compute Engine, as developers thought deeply about how to improve the value proposition of virtual machines. Joe Beda was an early user of Borg, and him and others pushed for it to be released as a product. However, it was decided that Borg and Omega specifically were too closely aligned with internal Google products, so a new open-source product was imagined, although there was internal resistance to opening it up to the community completely.\
 Red Hat's buy-in early in the history of Kubernetes by deciding to use Kubernetes as a basis. Namespaces are called projects in OpenShift.\
 Joe Beda is an advocate of a microkernel, minimalist architecture for the Kubernetes core with additional features layered on top. Beda is also 
-#### K8S 5
-No notes taken.
 ### Late Night Linux
-[65](#lnl-65)
+\#          | Title     | Links
+:---        | :---      | :---
+65          |           | [Notes](#lnl-65)
 #### LNL 65
   - KDE App page
   - Google Stadia
@@ -220,16 +222,19 @@ No notes taken.
 ### Linux Action News
 [Web](https://linuxactionnews.com/) [Twitter](https://twitter.com/linuxactionnews)
 ### Linux Journal
-[283](#lj-283)
+\#          | Title     | Links
+:---        | :---      | :---
+283         |           | [Notes](#lj-283)
 #### LJ 283
 - **ClusterShell**: Python tool and library to connect a set of nodes in parallel through SSH
 ### Linux Unplugged
-Description | Links
-:---        | :---
-Contact     | [Twitter](https://twitter.com/LinuxUnplugged) [Web](https://linuxunplugged.com/)
-320         | "RHELhide" [Notes] [Web](https://linuxunplugged.com/320)
-318         | "Manjaro Levels Up" [Notes](#lu-318) [Web](https://linuxunplugged.com/318)
-315         | "Wayland Buddies" [Notes](#lu-315) [Web](https://linuxunplugged.com/315)
+[Twitter](https://twitter.com/LinuxUnplugged) [Web](https://linuxunplugged.com/)
+
+\#          | Title     | Links
+:---        | :---      | :---
+320         | RHELhide | [Notes](#lu-320) [Web](https://linuxunplugged.com/320)
+318         | Manjaro Levels Up | [Notes](#lu-318) [Web](https://linuxunplugged.com/318)
+315         | Wayland Buddies | [Notes](#lu-315) [Web](https://linuxunplugged.com/315)
 #### LU 320
 - Ubuntu Touch on the Pinebook
 - CentOS 8.1905
