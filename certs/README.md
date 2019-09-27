@@ -8,6 +8,7 @@ CompTIA Cloud+                                    | [CV0-002](https://certificat
 CompTIA Server+                                   | [SK0-004](https://certification.comptia.org/certifications/server)
 [Cisco CCENT](#cisco-ccna)                        | 100-105
 [Cisco CCNA](#cisco-ccna)                         | 100-105 200-105<br/>200-125
+[ Linux Foundation Certified Kubernetes Administrator ](#linux-foundation-cka) | Exam is based on Kubernetes 1.15 [Web](https://training.linuxfoundation.org/certification/certified-kubernetes-administrator-cka/)<br/>24 practical questions on the command-line [Web](https://blog.autsoft.hu/certified-kubernetes-administrator/?__s=8npm688qeyruhjuxaofx)
 MCSA Windows Server 2016                          | [70-410](https://www.microsoft.com/en-us/learning/exam-70-410.aspx) <br/>[70-411](https://www.microsoft.com/en-us/learning/exam-70-411.aspx) <br/>[70-412](https://www.microsoft.com/en-us/learning/exam-70-412.aspx)
 MTA Windows Server Administration Fundamentals    | [98-365](https://www.microsoft.com/en-us/learning/exam-98-365.aspx)
 
@@ -24,7 +25,6 @@ Comparison of exam topics in LX0-103/4 and XK0-004
 :---
 **Added**: Security Kernel modules Storage and virtualization Device management at enterprise level Git and automation Networking and firewalls Serverside and command-line Servers Troubleshooting SELinux
 **Removed**: X 11 Mail SQL Printing End-user support GNU Privacy Guard
-
 ## CompTIA Network+
 Exam
 :---
@@ -63,3 +63,6 @@ Comparison of exam topics in 100-101 and 100-105
 :---
 **Added**: Collapsed Core architecture, IPv6 Stateless Address Auto Config (SLADC), IPv6 Anycast Addressing, Link Layer Discovery Protocol (LLDP), IPv4 RIP v2, DNS and DHCP connectivity issues, Syslog message logging, Cisco device management (backup and restore, feature licensing, configure time zones)
 **Removed**: Cisco Express Forwarding (CEF), Dual Stack, Open Shortest Path First (OSPF)
+
+## Linux Foundation CKA
+
