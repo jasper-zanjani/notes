@@ -108,6 +108,7 @@ Test coverage metrics are a double-edged sword, because they incentivize develop
 3           | Cloud Migration Strategy | [Notes](#csfm-3)
 5           | Automation with PowerShell  | [Notes](#csfm-5)
 29          | Building Serverless Apps on AWS | [Notes](#csfm-29)
+40          | What to Do When You Don't Have Experience | [Notes](#csfm-40)
 #### CSFM 2
 - An alternative job title to DevOps Engineer is "Infrastructure Developer"
 - Infrastructure as Code and automation are terms that refer to the use of deployment templates to provision resources reproducibly.
@@ -124,6 +125,9 @@ Test coverage metrics are a double-edged sword, because they incentivize develop
 - It makes no sense to worry about migration from one cloud provider to another before it becomes an issue: CAPEX (capital expenditure) vs. OPEX (operating expenditure). And transferring Compute is easy.
 - Although Lambda is capable, there are hard limits. For example, there is a limit on increasing concurrency of 500 per minute. So highly spiky workloads that exceed that limit make Lambda less appealing.
 - When analyzing costs, we shouldn't fall for the fallacy of thinking that minimizing the AWS bill is equivalent to reducing infrastructure costs. Some solutions that may drastically reduce monthly costs on AWS, such as Lambda, may actually require much higher costs to support from competent engineers.
+#### CSFM 40
+Mike talks about his own work history, starting as a customer service representative working at AOL in the 1990s, then working tech support at Gateway, ultimately ending up in Phoenix where he remains today. 
+> [Getting certified] is a no-brainer. If you're not looking at certifications and you're thinking about doing this career transition, that's a mistake. So don't even get into this if you're not willing to do the certifications at this point because it's way too important, there are way too many people who are looking for that in these job openings.
 ### Choose Linux
 [Web](https://chooselinux.show) [Twitter](https://twitter.com/chooselinux)
 ### Coder Radio
