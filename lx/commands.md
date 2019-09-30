@@ -4,6 +4,7 @@
 Topic | Commands
 :---  | :---
 Ansible | [`ansible`](../ansible.md#ansible) [`ansible-galaxy`](../ansible.md#ansible-galaxy) [`ansible-playbook`](../ansible.md#ansible-playbook)
+Files	| [`fallocate`](#fallocate)
 Filters   | [ `awk` ](#awk) [ `copy` ](#copy) [ `egrep` ](#egrep) [ `fgrep` ](#fgrep) [ `grep` ](#grep) [ `paste` ](#paste) [ `sed` ](#sed) [ `tr` ](#tr)
 Hardware settings | [`insmod`](#insmod) [ `lsmod` ](#lsmod) [ `lspci` ](#lspci) [ `lsusb` ](#lsusb) [ `modprobe` ](#modprobe) [`rmmod`](#rmmod)
 Logical volumes   | [ `lvcreate` ](#tr) [ `lvdisplay` ](#lvdisplay) [ `lvremove` ](#lvremove) [ `lvs` ](#lvs) [ `pvcreate` ](#pvcreate) [ `pvdisplay` ](#pvdisplay) [ `pvremove` ](#pvremove) [ `pvs` ](#pvs) [ `vgcreate` ](#vgcreate) [ `vgdisplay` ](#vgdisplay) [ `vgextend` ](#vgextend) [ `vgremove` ](#vgremove) [ `vgs` ](#vgs)
@@ -18,7 +19,7 @@ B   | [`bash`](#bash) [`blkid`](#blkid) [`bpftrace`](#bpftrace) [`bzcat`](#bzcat
 C   | [`cancel`](#cancel) [`cat`](#cat) [`chage`](#chage) [`chcon`](#chcon) [`chgrp`](#chgrp) [`chkconfig`](#sysvinit) [`chmod`](#chmod) [`chown`](#chown) [`chpass`](#chpass) [`chsh`](#chsh) [`column`](#column) [`compress`](#compress) [`cp`](#cp) [`crontab`](#crontab) [`crossystem`](#crossystem) [`cryptsetup`](#cryptsetup) [`curl`](#curl) [`cut`](#cut) 
 D   | [`dar`](#dar) [`date`](#date) [`dbus`](#dbus) [`dd`](#dd) [`declare`](#declare) [`df`](#df) [`dhclient`](#dhclient) [`diff`](#diff) [`dig`](#dig) [`dirname`](#dirname) [`dm-crypt`](#dm-crypt) [`dmesg`](#dmesg) [`doveadm`](#doveadm) [`dpkg`](#dpkg) [`dpkg-reconfigure`](#dpkg-reconfigure) [`du`](#du) [`dumpe2fs`](#dumpe2fs) 
 E   | [`e2image`](#e2image) [`e2label`](#e2label) [`edquota`](#edquota) [`elvis`](#elvis) [`elvish`](#elvish) [`espeak`](#espeak) [`exif`](#exif) 
-F   | [`fam`](#fam) [`fdisk`](#fdisk) [`file`](#file) [`find`](#find) [`firewall-cmd`](#firewall-cmd) [`firewalld`](#firewalld) [`fish`](#fish) [`fmt`](#fmt) [`fold`](#fold) [`free`](#free) [`fsck`](#fsck) [`fstrim`](#fstrim) [`ftp`](#ftp) [`fusermount`](#fusermount) 
+F   | [`fallocate`](#fallocate) [`fam`](#fam) [`fdisk`](#fdisk) [`file`](#file) [`find`](#find) [`firewall-cmd`](#firewall-cmd) [`firewalld`](#firewalld) [`fish`](#fish) [`fmt`](#fmt) [`fold`](#fold) [`free`](#free) [`fsck`](#fsck) [`fstrim`](#fstrim) [`ftp`](#ftp) [`fusermount`](#fusermount) 
 G   | [`gconf-editor`](#gconf-editor) [`gdisk`](#gdisk) [`gdmsetup`](#gdmsetup) [`gem`](#gem) [`getfacl`](#getfacl) [`git`](#git) [`gpasswd`](#gpasswd) [`gpg`](#gpg) [`grep`](#grep) [`groupadd`](#groupadd) [`groupdel`](#groupdel) [`groupmod`](#groupmod) [`grub`](#grub) [`gzip`](#gzip) 
 H   | [`hdiutil`](#hdiutil) [`hdparm`](#hdparm) [`head`](#head) [`history`](#history) [`host`](#host) [`hostname`](#hostname) [`hostnamectl`](#hostnamectl) [`hwclock`](#hwclock) 
 I   | [`iconv`](#iconv) [`ifconfig`](#ifconfig) [`imagemagick`](#imagemagick) [`init`](#sysvinit) [`initctl`](#initctl) [`insmod`](#insmod) [`install`](#install) [`ip`](#ip) [`iptables`](#iptables) [`iscsiadm`](#iscsiadm) [`iwlist`](#iwlist) 
@@ -274,6 +275,13 @@ chown -cfR --preserve-root alan # `preserve-root` prevents changes to files in t
 Unlike alternatives like `file` and ImageMagick's `identify`, `exif` produces columnar output [[31](README.md#sources)]
 ```sh
 exif image.png 
+```
+### fallocate
+Allocate and deallocate space to a file
+#### Create a file size of 1 gigabyte
+```sh
+fallocate -l 1G $FILENAME  # gibibyte
+fallocate -l 1GB $FILENAME # gigabyte
 ```
 ### file
 #### View image metadata
