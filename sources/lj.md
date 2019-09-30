@@ -56,3 +56,7 @@ function dealCards
   done }
 ```
 [301: 45-46]
+### Ansible
+Ansible is unopinionated with regard to the nature of the SSH connection it uses to connect server to client, however it does need elevateed privileges to configure the client system. This confuses the learner, since it is hard to know where to begin, and it also brings up security concerns. The best compromise of security and convenience is to give `NOPASSWD` privileges to the remote user for certain executables that you expect Ansible to use. This eliminates the security concerns with alternative methods, such as storing passwords in cleartext in configuration files or needing passwords to be interactively typed.
+## Sources
+1. "Ansible: the Automation Framework that thinks like a Sysadmin". [Linux Journal](https://www.linuxjournal.com/content/ansible-automation-framework-thinks-sysadmin): 2018/01/05

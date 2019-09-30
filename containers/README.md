@@ -46,9 +46,11 @@ Container Runtime Interface | (CRI) [[22](#sources)]
 Controller                  | control loop that watches the shared state of the cluster through the `apiserver` and makes changes attempting to move the current state towards the desired state. [[17](#sources)]
 ctr                         | unsupported tool used to debug containerd [[22](#sources)]]
 `dockviz`                   | CLI tool that allows inspection of container image layers [[28](#sources)]
+domain specific language (DSL) | computer language specialized to a particular application domain (cf. **general-purpose language**)
 EFK stack                   | [[23](#sources)]
 ELK stack                   | Elasticsearch, Logstash, Kibana 
 `etcd`                      | configuration store which stores configuration data that can be accessed by cluster nodes.<br/>Consistent and highly-available key value store used as Kubernetes's backing store for all cluster data. [[17](#sources)]
+general-purpose language (GPL) | 
 Helium                      | Windows container with a virtualized filesystem and registry
 Host Networking Service     | how configuration is exposed in Windows containers
 infra container             | component of a **Podman** pod that holds namespaces associated with the pod itself, allowing it to connect to containers

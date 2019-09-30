@@ -76,11 +76,10 @@ client.run(token)
 DISCORD_TOKEN={your-bot-token}
 ``` 
 ### Twitch
-  - Nightbot
-  - [Mee6](https://mee6.xyz/)
+- Nightbot
+- [Mee6](https://mee6.xyz/)
 ### Ruby bot programming
-Ruby library "socket" allows integration with [Twitch's IRC API](https://twitchapps.com/tmi), which provides an oauth token which can be stored as password. Command `write_to_system` appears to be  what is needed to concatenate IRC commands `PASS #{@password`, `NICK #{@nickname}`, `USER #{@nickname} 0 * #{@nickname}`, and `JOIN #@{channel}`
-
+Ruby library "socket" allows integration with [Twitch's IRC API](https://twitchapps.com/tmi), which provides an oauth token which can be stored as password. Command `write_to_system` appears to be  what is needed to concatenate IRC commands `PASS #{@password`, `NICK #{@nickname}`, `USER #{@nickname} 0 * #{@nickname}`, and `JOIN #@{channel}`\
 From the REPL, you instantiate an instance of the class after running the script, which will allow passing messages to the chat room by using an instance method
 ```rb
 bot = TwitchBot.new
@@ -93,44 +92,27 @@ The term "DevOps" began to gain currency in 2009-2010, before the emergence of c
 Traditionally, developers had incentives that were not aligned with those of operations who were to use the software. DevOps attempts to fuse development and operations, with the goal of aligning development with revenue generation.\
 > Now, being a DevOps Engineer is something like "Systems Engineer 2.0".
 
-There is an agreed-upon set of tools and concepts that most companies use with regard to DevOps. The end-goal is __endo-to-end process automation__, a digital pipeline that moves bits around in assembly line-like fashion.[[4](#sources)]
-### Foundational layer
-Three technologies that individually take a lifetime to master. Learning these skills will be an eternal commitment.
-  - Linux
-  - Python
-    - Golang
-  - AWS
-    - Google Cloud
+There is an agreed-upon set of tools and concepts that most companies use with regard to DevOps. The end-goal is __endo-to-end process automation__, a digital pipeline that moves bits around in assembly line-like fashion.[[4](#sources)]\
+The Foundational Layer is composed of Three technologies that individually take a lifetime to master. Learning these skills represent an eternal commitment.[[4](#sources)]\
+1. Linux
+2. Python (progressing to Golang)
+3. AWS (progressing to GCP)
 
-### Real-world skills
-  - Configure
-    - Terraform
-      - Ansible
-  - Version
-    - Git and GitHub
-      - GitLab
-  - Package
-    - Docker
-      - Lambda
-  - Deploy
-    - Jenkins
-      - CodeDeploy
-  - Run
-    - ECS
-      - Kubernetes
-  - Monitor
-    - ELK Stack
-      - Prometheus
+Once you have learned the Foundational Layer, learn Real-world skills [[4](#sources)]:\
+- **Configure**: Terraform (progressing to Ansible)
+- **Version**: Git and GitHub (progressing to GitLab)
+- **Package**: Docker (progressing to Lambda)
+- **Deploy**: Jenkins (progressing to CodeDeploy)
+- **Run**: ECS (progressing to Kubernetes)
+- **Monitor**: ELK Stack (progressing to Prometheus)
 
 ## VMware
 Hypervisor, similar to Hyper-V, but provided at a cost, with a robust command-line interface via PowerShell.[[5](#sources)]
-
-
 ## Sources
-  1. "Custom bot using Ruby". [Web](https://www.youtube.com/watch?v=rVVhkX1uTRQ).
-  2. "How to make a Discord bot in Python". [Web](https://realpython.com/how-to-make-a-discord-bot-python/): 2019/08/19.
-  3. "Blockchain explained". [Web](https://graphics.reuters.com/TECHNOLOGY-BLOCKCHAIN/010070P11GN/index.html?source=post_page---------------------------).
-  4. "How to become a DevOps engineer in six months or less". [Web](https://medium.com/@devfire/how-to-become-a-devops-engineer-in-six-months-or-less-366097df7737)
-  5. "VMware PowerCLI 101". [Web](https://www.brianbunke.com/blog/2019/09/03/powercli-101/): 2019/09/03.
-  6. "How Does BitTorrent Work? a Plain English Guide". [Web](https://app.getpocket.com/read/2717933967)
-  7. "Storage in a DevOps World". [GitHub](sources/README.md/#new-stack-makers)
+1. "Custom bot using Ruby". [Web](https://www.youtube.com/watch?v=rVVhkX1uTRQ).
+2. "How to make a Discord bot in Python". [Web](https://realpython.com/how-to-make-a-discord-bot-python/): 2019/08/19.
+3. "Blockchain explained". [Web](https://graphics.reuters.com/TECHNOLOGY-BLOCKCHAIN/010070P11GN/index.html?source=post_page---------------------------).
+4. "How to become a DevOps engineer in six months or less". [Web](https://medium.com/@devfire/how-to-become-a-devops-engineer-in-six-months-or-less-366097df7737)
+5. "VMware PowerCLI 101". [Web](https://www.brianbunke.com/blog/2019/09/03/powercli-101/): 2019/09/03.
+6. "How Does BitTorrent Work? a Plain English Guide". [Web](https://app.getpocket.com/read/2717933967)
+7. "Storage in a DevOps World". [GitHub](sources/README.md/#new-stack-makers)

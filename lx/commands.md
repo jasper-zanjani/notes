@@ -3,13 +3,13 @@
 
 Topic | Commands
 :---  | :---
-Filters 
+Ansible | [`ansible`](../ansible.md#ansible) [`ansible-galaxy`](../ansible.md#ansible-galaxy) [`ansible-playbook`](../ansible.md#ansible-playbook)
+Filters   | [ `awk` ](#awk) [ `copy` ](#copy) [ `egrep` ](#egrep) [ `fgrep` ](#fgrep) [ `grep` ](#grep) [ `paste` ](#paste) [ `sed` ](#sed) [ `tr` ](#tr)
 Hardware settings | [`insmod`](#insmod) [ `lsmod` ](#lsmod) [ `lspci` ](#lspci) [ `lsusb` ](#lsusb) [ `modprobe` ](#modprobe) [`rmmod`](#rmmod)
-Logical volumes
+Logical volumes   | [ `lvcreate` ](#tr) [ `lvdisplay` ](#lvdisplay) [ `lvremove` ](#lvremove) [ `lvs` ](#lvs) [ `pvcreate` ](#pvcreate) [ `pvdisplay` ](#pvdisplay) [ `pvremove` ](#pvremove) [ `pvs` ](#pvs) [ `vgcreate` ](#vgcreate) [ `vgdisplay` ](#vgdisplay) [ `vgextend` ](#vgextend) [ `vgremove` ](#vgremove) [ `vgs` ](#vgs)
 Manjaro           | [`mhwd`](#mhwd) [`mhwd-chroot`](#mhwd-chroot)
-Package managers
-Systemd
-
+Package managers  | [ `apt` ](#apt) [ `dnf` ](#dnf) [ `pacman` ](#pacman) [ `yay` ](#yay) [ `yum` ](#yum)
+Systemd           | [ `journalctl` ](#journalctl) [ `systemctl` ](#systemctl)
 
 \#  | Commands sorted alphabetically
 :---| :---
