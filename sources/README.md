@@ -9,7 +9,7 @@ T-Z     | [TP](#talk-python) [TS](#techsnap) [UE](#user-error) [USLAH](ulsah.md)
 Person    | Links | Description
 :---      | :---        | :---
 Jeff Barr | [Twitter](https://twitter.com/intent/user?screen_name=jeffbarr) | Host: [AWS](#abbreviations) 
-Joe Beda  | | One of the three "co-founders" of Kubernetes. He worked with the cluster management teams at Google, which resulted in adapting the Borg and Omega patterns into products. Now runs Heptio, along with Craig McLuckie, another co-founder of Kubernetes.<br/>Guest: [K8S 12](#k8s-12)
+Joe Beda  | | One of the three "co-founders" of Kubernetes. He worked with the cluster management teams at Google, which resulted in adapting the Borg and Omega patterns into products. Now runs Heptio, along with Craig McLuckie, another co-founder of Kubernetes.<br/>Guest: [K8S 12](#k8s-12)<br/>Host: TGI Kubernetes
 Wes Bos   | [Twitter](https://twitter.com/wesbos) | Host: [SY](#abbreviations)
 Craig Bos | [Twitter](http://twitter.com/craigbox) | Host: [K8S](#abbreviations) 
 Larry Bushey | [Twitter](https://twitter.com/goinglinux) [LinkedIn](https://www.linkedin.com/in/larrybushey/) | [GL](#going-linux)  
@@ -271,6 +271,7 @@ There are two main types of container engine installers: normal ones that instal
 **Prometheus** has become the go-to open-source monitoring and alerting tool. Other tools include the **ELK stack**, the **EFK stack**, and **Loggly**.
 ### RunAs Radio
 [Web](http://www.runasradio.com/) [Twitter](https://twitter.com/RunAsRadio)
+
 ### Syntax
 [Web](https://syntax.fm/) [Twitter](https://twitter.com/syntaxfm)
 ### Talk Python
@@ -287,5 +288,10 @@ Digging into Visual Studio Code
 Netlify will watch changes to a GitHub repo as a continuous delivery platform for static sites.
 ### TechSNAP
 [Web](https://techsnap.systems) [Twitter](https://twitter.com/techsnapsystems)
+### TGI Kubernetes
+#### TGIK 91
+**Endpoint Slices** are a new feature in K8S 1.16 which provide a scalable and extensible alternative to Endpoints resources.\
+**kpack** is a K8S-native system for using **Buildpacks**: a structured, opinionated method of building container images. Buildpacks were first conceived by Heroku in 2011, and since then they have been adopted by Cloud Foundry and other PaaS (GitLab, Knative, Deis, Dokku, and Drie). kpack is a less opinionated alternative to Buildpack assocaited with Pivotal.\
+Dockerfiles can be a bit too flexible sometimes.
 ### User Error
 [Web](https://error.show/) [Twitter](https://twitter.com/usererrorshow)
