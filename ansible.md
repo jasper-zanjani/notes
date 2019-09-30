@@ -1,4 +1,4 @@
-# Ansible
+# Ansible configuration management
 Ansible is an automation tool used for configuration management using human-readable YAML templates. Ansible is distinguished for being **agentless**, meaning no special software is required on the nodes it manages.
 Ansible **playbooks** represent a sequence of scripted actions which apply changes uniformly over a set of hosts.  **Modules** are standalone scripts that enable a particular task across many OSes, services, applications, etc. Predefined modules are available in the **module library**, and new ones can be defined via Python or JSON.\
 Ansible host management relies on a `.ini` file containing a list of IP addresses or hostnames organized in groups.
@@ -23,8 +23,8 @@ pgsql_1 ansible_host=192.168.1.23
 ```
 ## Syntax
 Ansible can be used in one of two ways:
-1. Running **ad hoc** commands, that is commands executed in realtime by an administrator working at the terminal, using the `ansible` command.
-2. Running **playbooks**, YAML documents containing **tasks** each of which are equivalent to a single ad hoc command, using the `ansible-playbook` command. Any ad hoc command can be rewritten as a playbook, but some modules can only be used effectively as playbooks.
+1. Running **ad hoc** commands, that is commands executed in realtime by an administrator working at the terminal, using the [ `ansible` ](#ansible) command.
+2. Running **playbooks**, YAML documents containing **tasks** each of which are equivalent to a single ad hoc command, using the [ `ansible-playbook` ](#ansible-playbook) command. Any ad hoc command can be rewritten as a playbook, but some modules can only be used effectively as playbooks.
 ### ansible
 The `ansible` command is only used for running **ad hoc** commands,  Modules are called as arguments passed to the `-m` option. 
 ```sh
@@ -44,7 +44,7 @@ Search for roles [[7](#sources)]
 ```sh
 ansible-galaxy search $ROLE
 ```
-Install {$ROLE} made  available in **Ansible Galaxy** by {$USER} into the [ system-wide ](#configuration) roles folder [[7](#sources)]
+Install `$ROLE` made  available in **Ansible Galaxy** by `$USER` into the [ system-wide ](#configuration) roles folder [[7](#sources)]
 ```sh
 sudo ansible-galaxy install $USER.$ROLE
 ```
@@ -196,7 +196,7 @@ Compress files [[3](#sources)]
 ```
 
 #### `cli_config`
-Platform-agnostic way of pushing text-based configurations to network devices over the **network_cli_connection** plugin
+Platform-agnostic way of pushing text-based configurations to network devices over the **network_cli_connection** plugin [[3](#sources)]
 ```yaml
 # Set hostname for a switch and exit with a commit message
 - name: commit with comment
@@ -214,7 +214,6 @@ Platform-agnostic way of pushing text-based configurations to network devices ov
       filename: backup.cfg
       dir_path: /home/user
 ```
-[[3](#sources)]
 
 #### `command` module
 Safest module to execute remote commands on client machine, requires Python. When Ansible execute commands using the Command module, they are not processed through the user's shell (meaning environment variables like [ `$HOME` ](lx/commands.md#bash) and output redirection are not available).\
@@ -285,7 +284,7 @@ Display content of copy module only when verbosity of 2 is specified (i.e. `ansi
 ```
 [[3](#sources)]
 
-### `file` module
+#### `file` module
 Used for doing file manipulation on the remote system itself.[[5](#sources)]\
 
 #### `state` directive
@@ -326,7 +325,7 @@ Create a folder using a playbook [[3](#sources)]
 ```
 
 #### `git` module
-Manage git checkouts of repos
+Manage git checkouts of repos [[3](#sources)]
 ```yaml
 # Create git archive from repo
 - git:
@@ -340,10 +339,9 @@ Manage git checkouts of repos
     dest: /src/ansible-examples
     separate_git_dir: /src/ansible-examples.git
 ```
-[[3](#sources)]
 
 #### `lineinfile` module
-Manages lines in a text file, mostly used to ensure a particular line is present or changed in a config.
+Manages lines in a text file, mostly used to ensure a particular line is present or changed in a config.  [[3](#sources)]
 ```yaml
 - name: Ensure SELinux is set to enforcing mode
   lineinfile:
@@ -358,7 +356,6 @@ Manages lines in a text file, mostly used to ensure a particular line is present
     line: 192.168.1.99 foo.lab.net foo
     create: yes
 ```
-[[3](#sources)]
 
 ### Package management
 There is a specific module for most popular package managers, such as `dnf` and `apt`, but the `package` is generic and will install packages regardless of distribution.\
@@ -393,10 +390,10 @@ In the `package` module, `state` indicates what action to take with regard to th
 `latest`      | get the latest version, upgrading if needed
 `present`     | make sure package is installed, but don't upgrade if it is
 
-### `raw` module
+#### `raw` module
 Similar to [ `shell` ](#shell-module) module, but the user's default shell is used, Ansible doesn't do any error checking, and `STDERR`, `STDOUT`, and `Return Code` are all returned
 
-### `service` module
+#### `service` module
 Starts a package after installing it.
 ```yaml
 - name: Start service foo, based on running process /usr/bin/foo
@@ -414,7 +411,7 @@ Starts a package after installing it.
 ```
 [[3](#sources)]
 
-### `shell` module
+#### `shell` module
 The Shell module uses /bin/sh in the remote user's environment (cf. [`raw`](#raw-module) module).
 [[4](#sources)]
 Test authentication by displaying results of [`uptime`](lx/commands.md#uptime) command for each host in the `webservers` group. [[4](#sources)]
@@ -422,7 +419,7 @@ Test authentication by displaying results of [`uptime`](lx/commands.md#uptime) c
 ansible -m shell -a 'uptime' webservers
 ```
 
-### `setup` module
+#### `setup` module
 Usable almost exclusively in playbooks, although some ad hocs are available:\
 Display all available information about the system [[5](#sources)]
 ```sh
@@ -433,7 +430,7 @@ Filter results to `ansible_os_family`, which indicates if the OS is Debian or Re
 ansible $CLIENT -b -m setup -a "filter=*family*"
 ```
 
-### `template` module
+#### `template` module
 Works similar to mail merge in a word processor. Ansible uses the Jinja2 templating language, which has a syntax similar to Ansible variable substitution. [[6](#sources)]
 This example creates a HTML document on each client that is customized using Ansible variables. [[6](#sources)]
 ```yaml

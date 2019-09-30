@@ -203,8 +203,24 @@ Useful when you forget to stage a change
 git add README.md
 git commit --amend 
 ```
+#### Split up a commit
+To split up `$COMMIT`
+```sh
+git rebase -i "$COMMIT"^ # Start a rebase at the commit you want to split
+```
+Mark the commit to be split with `edit`. Now reset state to the previous commit
+```sh
+git reset HEAD^
+```
+The files are presented unstaged, and can be added to new commits as needed. Finally, finish the rebase
+```sh
+git rebase --continue
+```
+
+
 ## Sources
-  1. "Dealing with line endings". [GitHub Help](https://help.github.com/en/articles/dealing-with-line-endings)
-  2. "Squash All Commits Related to a Single Issue into a Single Commit". [GitHub](https://github.com/todotxt/todo.txt-android/wiki/Squash-All-Commits-Related-to-a-Single-Issue-into-a-Single-Commit)
-  3. "Git - Stashing". [git-scm.com](https://git-scm.com/book/en/v1/Git-Tools-Stashing).
-  4. "4 Useful Solutions to Common Git Problems". [Dev.to](https://dev.to/jacobherrington/4-useful-patterns-in-git-19ac): 2019/08/26.
+1. "Dealing with line endings". [GitHub Help](https://help.github.com/en/articles/dealing-with-line-endings)
+2. "Squash All Commits Related to a Single Issue into a Single Commit". [GitHub](https://github.com/todotxt/todo.txt-android/wiki/Squash-All-Commits-Related-to-a-Single-Issue-into-a-Single-Commit)
+3. "Git - Stashing". [git-scm.com](https://git-scm.com/book/en/v1/Git-Tools-Stashing).
+4. "4 Useful Solutions to Common Git Problems". [Dev.to](https://dev.to/jacobherrington/4-useful-patterns-in-git-19ac): 2019/08/26.
+5. "Code cleanup: splitting `git` commits in the middle of a branch". [Web](https://embeddedartistry.com/blog/2018/2/19/code-cleanup-splitting-up-git-commits-in-the-middle-of-a-branch): 2018/02/19.
