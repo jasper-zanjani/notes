@@ -9,7 +9,7 @@ T-Z     | [TP](#talk-python) [TS](#techsnap) [UE](#user-error) [USLAH](ulsah.md)
 Person    | Links | Description
 :---      | :---        | :---
 Jeff Barr | [Twitter](https://twitter.com/intent/user?screen_name=jeffbarr) | Host: [AWS](#abbreviations) 
-Joe Beda  | | One of the three "co-founders" of Kubernetes. He worked with the cluster management teams at Google, which resulted in adapting the Borg and Omega patterns into products. Now runs Heptio, along with Craig McLuckie, another co-founder of Kubernetes.<br/>Guest: [K8S 12](#k8s-12)
+Joe Beda  | | One of the three "co-founders" of Kubernetes. He worked with the cluster management teams at Google, which resulted in adapting the Borg and Omega patterns into products. Now runs Heptio, along with Craig McLuckie, another co-founder of Kubernetes.<br/>Guest: [K8S 12](#k8s-12)<br/>Host: TGI Kubernetes
 Wes Bos   | [Twitter](https://twitter.com/wesbos) | Host: [SY](#abbreviations)
 Craig Bos | [Twitter](http://twitter.com/craigbox) | Host: [K8S](#abbreviations) 
 Larry Bushey | [Twitter](https://twitter.com/goinglinux) [LinkedIn](https://www.linkedin.com/in/larrybushey/) | [GL](#going-linux)  
@@ -108,6 +108,7 @@ Test coverage metrics are a double-edged sword, because they incentivize develop
 3           | Cloud Migration Strategy | [Notes](#csfm-3)
 5           | Automation with PowerShell  | [Notes](#csfm-5)
 29          | Building Serverless Apps on AWS | [Notes](#csfm-29)
+40          | What to Do When You Don't Have Experience | [Notes](#csfm-40)
 #### CSFM 2
 - An alternative job title to DevOps Engineer is "Infrastructure Developer"
 - Infrastructure as Code and automation are terms that refer to the use of deployment templates to provision resources reproducibly.
@@ -124,6 +125,9 @@ Test coverage metrics are a double-edged sword, because they incentivize develop
 - It makes no sense to worry about migration from one cloud provider to another before it becomes an issue: CAPEX (capital expenditure) vs. OPEX (operating expenditure). And transferring Compute is easy.
 - Although Lambda is capable, there are hard limits. For example, there is a limit on increasing concurrency of 500 per minute. So highly spiky workloads that exceed that limit make Lambda less appealing.
 - When analyzing costs, we shouldn't fall for the fallacy of thinking that minimizing the AWS bill is equivalent to reducing infrastructure costs. Some solutions that may drastically reduce monthly costs on AWS, such as Lambda, may actually require much higher costs to support from competent engineers.
+#### CSFM 40
+Mike talks about his own work history, starting as a customer service representative working at AOL in the 1990s, then working tech support at Gateway, ultimately ending up in Phoenix where he remains today. 
+> [Getting certified] is a no-brainer. If you're not looking at certifications and you're thinking about doing this career transition, that's a mistake. So don't even get into this if you're not willing to do the certifications at this point because it's way too important, there are way too many people who are looking for that in these job openings.
 ### Choose Linux
 [Web](https://chooselinux.show) [Twitter](https://twitter.com/chooselinux)
 ### Coder Radio
@@ -267,6 +271,7 @@ There are two main types of container engine installers: normal ones that instal
 **Prometheus** has become the go-to open-source monitoring and alerting tool. Other tools include the **ELK stack**, the **EFK stack**, and **Loggly**.
 ### RunAs Radio
 [Web](http://www.runasradio.com/) [Twitter](https://twitter.com/RunAsRadio)
+
 ### Syntax
 [Web](https://syntax.fm/) [Twitter](https://twitter.com/syntaxfm)
 ### Talk Python
@@ -283,5 +288,10 @@ Digging into Visual Studio Code
 Netlify will watch changes to a GitHub repo as a continuous delivery platform for static sites.
 ### TechSNAP
 [Web](https://techsnap.systems) [Twitter](https://twitter.com/techsnapsystems)
+### TGI Kubernetes
+#### TGIK 91
+**Endpoint Slices** are a new feature in K8S 1.16 which provide a scalable and extensible alternative to Endpoints resources.\
+**kpack** is a K8S-native system for using **Buildpacks**: a structured, opinionated method of building container images. Buildpacks were first conceived by Heroku in 2011, and since then they have been adopted by Cloud Foundry and other PaaS (GitLab, Knative, Deis, Dokku, and Drie). kpack is a less opinionated alternative to Buildpack assocaited with Pivotal.\
+Dockerfiles can be a bit too flexible sometimes.
 ### User Error
 [Web](https://error.show/) [Twitter](https://twitter.com/usererrorshow)
