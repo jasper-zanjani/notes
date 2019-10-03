@@ -5,6 +5,32 @@ Syntax        | Effect
 `:set fileformat=unix` | set file format to unix
 `:set fileformat=dos` | set file format to dos
 [[1](#sources)]
+## Motion keys
+Key sequence  | Effect
+:---          | :---
+`aw`          | word and the space after it
+`iw`          | word
+`iW`          | sequence of non-whitespace characters
+`aW`          | sequence of non-whitespace characters and the space after it
+`is`          | sentence
+`as`          | sentence and spaces after it
+`ip`          | paragraph
+`ap`          | paragraph and the following space
+`i(`          | phrase enclosed in parentheses
+`a(`          | phrase enclosed in parentheses, including parentheses
+`i&lt;`       | phrase enclosed in angle brackets
+`a&lt;`       | phrase enclosed in angle brackets, including enclosing angle brackets
+`i[`          | phrase enclosed in square brackets
+`a[`          | phrase enclosed in square brackets, including enclosing brackets
+`i{`          | phrase enclosed in braces
+`a{`          | phrase enclosed in braces, including enclosing braces
+`i"`          | phrase enclosed in double quotes
+`a"`          | phrase enclosed in double quotes, including enclosing quotes
+`i'`          | phrase enclosed in single quotes
+`a'`          | phrase enclosed in single quotes, including enclosing quotes
+`i&#96;`      | phrase enclosed in backticks
+`a&#96;`      | phrase enclosed in backticks, including enclosing backticks
+
 ## Color
 Syntax        | Effect
 :---          | :---
@@ -15,7 +41,7 @@ Syntax        | Effect
 `:colo[rscheme] <tab>` | select alternative colorschemes
 `:colo <C-d>` | display all available colorschemes
 `:hi clear` | clear custom color commands
-`:hi[ghlight] Element ctermfg=color ctermbg=color` | set {Element} to {color}
+`:hi[ghlight] ELEMENT ctermfg=COLOR ctermbg=COLOR` | set {ELEMENT} to {COLOR}
 `:hi[ghlight] Element guifg=#abc123 guibg=#abc123` | hexadecimal color codes
 
 Elements | Effect
@@ -58,6 +84,9 @@ vnoremap <A-j> :m '>+1<CR>gv=gv
 vnoremap <A-k> :m '<-2<CR>gv=gv
 ```
 [[2](#sources)]
+
+
 ## Sources
 1. "Convert between Unix and Windows text files" [kb.iu.edu](https://kb.iu.edu/d/acux)
 2. "Moving lines up or down". [Vim Tips Wiki](https://vim.fandom.com/wiki/Moving_lines_up_or_down)
+3. _The Vim Book_. Oualline, Steve. 2007.
