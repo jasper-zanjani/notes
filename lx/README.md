@@ -174,3 +174,4 @@ add ",acl" to options in `fstab` file, then mount/unmount disk. If enabling FACL
 44. "[`rsync`](commands.md#rsync) (Remote Sync) command examples and usage". [Web](https://www.2daygeek.com/linux-rsync-command-local-remote-file-synchronization/): 2015/08/16.
 45. "Replacing `rc.local` in systemd Linux systems". [Red Hat](https://www.redhat.com/sysadmin/replacing-rclocal-systemd): 2019/10/01.
 46. "Linux [`tree`](commands.md#tree) command usage examples for beginners". [Tecmint](https://www.tecmint.com/linux-tree-command-examples/): 2019/10/02.
+47. "Use [`fallocate`](commands.md#fallocate) command to create files of specific size in Linux." [Linux Handbook](https://linuxhandbook.com/fallocate-command/): 2019/09/11.
