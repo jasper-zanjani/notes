@@ -39,7 +39,9 @@ Pieces                      | list of SHA-1 160-bit hashes calculated on various
 
 [[5](#sources)]
 ## Blockchain
-Blockchain is a database technology that uses hashes to ensure reliability and security of data stored across a network of computers, popularized by BitCoin. Records, containing information, are validated and then added to **Blocks**, or hashed containers, which are then concatenated in a **chain** by associating each block with the hash of both of its neighbors. [[3](#sources)]
+Blockchain is a **distributed digital ledger** consisting of interlinked blocks, each of which stores information that cannot be retroactively tampered with or deleted.[[8](#sources)]\
+Blockchain is a database technology that uses hashes to ensure reliability and security of data stored across a network of computers, popularized by BitCoin. Records, containing information, are validated and then added to **Blocks**, or hashed containers, which are then concatenated in a **chain** by associating each block with the hash of both of its neighbors. [[3](#sources)]\
+There can only be a a maximum of 21 million BTC, and the reward for mining a new bitcoin halves every 210,000 blocks. This has already occurred twice in the 10-year history of Bitcoin until late 2019, and another "blockhalving" is expected to occur in May 2020. [[9](#sources)]
 ## Bootloaders
 bootloader: software located in the first sector (Master Boot Record) of a HDD, which is read by the BIOS
 - implementing interruptions requires knowledge of Assembler
@@ -116,3 +118,5 @@ Hypervisor, similar to Hyper-V, but provided at a cost, with a robust command-li
 5. "VMware PowerCLI 101". [Web](https://www.brianbunke.com/blog/2019/09/03/powercli-101/): 2019/09/03.
 6. "How Does BitTorrent Work? a Plain English Guide". [Web](https://app.getpocket.com/read/2717933967)
 7. "Storage in a DevOps World". [GitHub](sources/README.md/#new-stack-makers)
+8. "Chain reaction: what will the next decade of [blockchain](#blockchain) look like?" [Hacker Noon](https://hackernoon.com/chain-reaction-what-will-the-next-decade-of-blockchain-look-like-fl2fd32r8?source=rss): 2019/10/03.
+9. "A ihstory of [blockhalving](#blockchain), and what to expect in 2020. [Hacker Noon](https://hackernoon.com/a-history-of-blockhalving-and-what-to-expect-in-2020-1s3q30cn?source=rss): 2019/10/03.
