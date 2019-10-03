@@ -33,7 +33,7 @@ P   | [`pacman`](#pacman) [`partx`](#partx) [`paste`](#paste) [`passwd`](#passwd
 Q   | [`qmail`](#qmail) [`quota`](#quota) [`quotacheck`](#quotacheck) [`quotaoff`](#quotaoff) [`quotaon`](#quotaon) 
 R   | [`read`](#read) [`rename`](#rename) [`repquota`](#repquota) [`resize2fs`](#resize2fs) [`resize4fs`](#resize4fs) [`restorecon`](#restorecon) [`rmmod`](#rmmod) [`route`](#route) [`rpm`](#rpm) [`rsync`](#rsync) [`runlevel`](#runlevel) 
 S   | [`samba`](#samba) [`sc`](#sc) [`sed`](#sed) [`semanage`](#selinux) [`sendmail`](#sendmail) [`seq`](#seq) [`service`](#sysvinit) [`sestatus`](#sestatus) [`setenforce`](#selinux) [`setfacl`](#setfacl) [`sfdisk`](#sfdisk) [`shred`](#shred) [`shuf`](#shuf) [`shutdown`](#shutdown) [`slapadd`](#slapadd)  [`sleep`](#sleep) [`snap`](#snap) [`sort`](#sort) [`sosreport`](#sosreport) [`source`](#source) [`speaker-test`](#speaker-test) [`ss`](#ss) [`ssh`](#ssh) [`ssh-copy-id`](#ssh-copy-id) [`ssh-keygen`](#ssh-keygen) [`ssh-keyscan`](#ssh-keyscan) [`sshfs`](#sshfs) [`ssmtp`](#ssmtp) [`startx`](#startx) [`stty`](#stty) [`su`](#su) [`sudo`](#sudo) [`swapoff`](#swapoff) [`swapon`](#swapon) [`sysctl`](#sysctl) [`syslog`](#syslog) [`sysvinit`](#sysvinit) [`systemctl`](#systemctl) [`systemd-delta`](#systemd-delta) 
-T   | [`tail`](#tail) [`tar`](#tar) [`tcpdump`](#tcpdump) [`telinit`](#telinit) [`test`](#test) [`tig`](#tig) [`timedatectl`](#timedatectl) [`tmux`](#tmux) [`touch`](#touch) [`top`](#top) [`tput`](#tput) [`tr`](#tr) [`tracepath`](#tracepath) [`traceroute`](#traceroute) [`tune2fs`](#tune2fs) [`tzselect`](#tzselect) 
+T   | [`tail`](#tail) [`tar`](#tar) [`tcpdump`](#tcpdump) [`telinit`](#telinit) [`test`](#test) [`tig`](#tig) [`timedatectl`](#timedatectl) [`tmux`](#tmux) [`touch`](#touch) [`top`](#top) [`tput`](#tput) [`tr`](#tr) [`tree`](#tree) [`tracepath`](#tracepath) [`traceroute`](#traceroute) [`tune2fs`](#tune2fs) [`tzselect`](#tzselect) 
 U   | [`udevadm`](#udevadm) [`umount`](#umount) [`uname`](#uname) [`uncompress`](#uncompress) [`unzip`](#unzip) [`update-grub`](#update-grub) [`update-rc.d`](#update-rc.d) [`useradd`](#useradd) [`userdel`](#userdel) [`usermod`](#usermod) 
 V   | [`variable`](#variable) [`vgcreate`](#vgcreate) [`vgdisplay`](#vgdisplay) [`vgextend`](#vgextend) [`vgremove`](#vgremove) [`vgscan`](#vgscan) [`vifs`](#vifs) [`visudo`](#visudo) 
 W   | [`wall`](#wall) [`watch`](#watch) [`wc`](#wc) [`whatis`](#whatis) 
@@ -1182,6 +1182,21 @@ Provides much more information than `tracepath`, even though it's older [[lxa-lp
 ```bash
 uname -srm
 ```
+### tree
+display contents of directories in a tree-like format[[46](README.md#sources)]
+
+Option  | Effect
+:---    | :---
+`-a`    | all files
+`-d`    | display directories only
+`-f`    | display full path prefix for each file
+`-g`    | display group name or GID for each file
+`-p`    | display permissions, similar to `ls -l`
+`-u`    | display username or UID
+`-L $N` | limit to `$N` maximum depth
+`-I $PATTERN` | suppress files matching `$PATTERN`
+`-P $PATTERN` | display only files matching `$PATTERN`
+`--prune`     | suppress empty directories
 ### watch
 #### Repeat a command at regular intervals and watch its changing output
 Execute {cmd} at periods of {n} seconds, watching its output [[23](README.md#sources)]
