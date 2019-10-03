@@ -1,5 +1,6 @@
 # Containers
-A VM has to emulate a full hardware stack, boot an operating system, and then launch your app. It's a virtualized hardware environment. Docker containers function at the application layer and skip all the steps VMs take.
+A VM has to emulate a full hardware stack, boot an operating system, and then launch your app. It's a virtualized hardware environment. Docker containers function at the application layer and skip all the steps VMs take.\
+A container provides a type of virtualization just like VMs, but container offer **process** isolation while a hypervisor provides **hardware** isolation.[[30](#sources)]
 
 Table of contents
 :---
@@ -51,7 +52,9 @@ EFK stack                   | [[23](#sources)]
 ELK stack                   | Elasticsearch, Logstash, Kibana 
 `etcd`                      | configuration store which stores configuration data that can be accessed by cluster nodes.<br/>Consistent and highly-available key value store used as Kubernetes's backing store for all cluster data. [[17](#sources)]
 general-purpose language (GPL) | 
+GitOps                      | managing Kubernetes through YAML files that are updated through version control systems like Git [[30](#sources)]
 Helium                      | Windows container with a virtualized filesystem and registry
+Helm                        | Kubernetes package manager
 Host Networking Service     | how configuration is exposed in Windows containers
 infra container             | component of a **Podman** pod that holds namespaces associated with the pod itself, allowing it to connect to containers
 Istio                       | 
@@ -117,3 +120,4 @@ Xenon                       | Argon Windows container with Base OS image
 27. "A Practical Introduction to Docker Containers". [Red Hat](https://developers.redhat.com/blog/2014/05/15/practical-introduction-to-docker-containers/): 2014/05/15.
 28. "A Practical Introduction to Docker Container Terminology". [Red Hat](https://developers.redhat.com/blog/2016/01/13/a-practical-introduction-to-docker-container-terminology/): 2016/01/13.
 29. "50+ useful [ Kubernetes ](k8s.md) tools". [DZone](https://dzone.com/articles/50-useful-kubernetes-tools?utm_medium=feed&utm_source=feedpress.me&utm_campaign=Feed:%20dzone): 2018/06/03.
+30. "Kubernetes 101-Concepts, Potential, and lots of container orchestrations". [Hacker Noon](https://hackernoon.com/kubernetes-101-concepts-and-why-it-matters-g27536x2?source=rss): 2019/10/02.
