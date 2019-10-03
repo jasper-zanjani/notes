@@ -51,6 +51,7 @@ $HOME/xorg.conf                   | user config which overrides system defaults
 /etc/sysconfig/iptables           | [iptables](#iptables)
 /etc/sysconfig/network-scripts/   | directory containing network configs and scripts for Red Hat
 /etc/syslog-ng/syslog-ng.conf     | [syslog-ng](#syslog-ng)
+/etc/systemd/system/              | [ SystemD service files ](#systemd-service-files), containing links to /usr/local
 /etc/udev/hwdb.bin                | udev hardware database
 /etc/X11/xdm/xdm-config           | XFCE config
 [/etc/xinet.d/](#xinetd-configuration-files)                     | directory of config files for [xinetd](#xinetd)
@@ -60,8 +61,6 @@ $HOME/xorg.conf                   | user config which overrides system defaults
 /lib/systemd/system/              | directory containing unit configs
 /proc/                            | virtual filesystem providing information on processes, kernel features, and system hardware
 /proc/loadavg                     | virtual file that has information about load average for use in [`uptime`](#uptime)
-/var/log/dmesg                    | kernel ring buffer information
-/var/log/audit/audit.log          | audit file for SELinux
 /sys/                             | virtual filesystem that provides information on devices and buses that the kernel is aware of
 /sys/block                        | block devices
 /sys/bus                          | devices attached to system bus
@@ -69,10 +68,27 @@ $HOME/xorg.conf                   | user config which overrides system defaults
 /sys/bus/cpu/devices              | USB devices
 /sys/class/net                    | network interface configuration files (or at least symlinks to them in other directories) in Manjaro<br/>similar to /etc/sysconfig/network-scripts/ in RHEL 
 /sys/class/net/eth0/address       | MAC address of eth0
+/usr/local/lib/systemd/system/    | [ SystemD service files ](#systemd-service-files)
 /usr/share/config/kdm/kdmrc       | KDM config
 /usr/share/lightdm/lightdm.conf.d/ | [lightdm](#lightdm) configs, all of whose filenames follow the pattern **50-\*.conf**
 /usr/share/hwdata/pci.ids         | PCI device names displayed by [`lspci`](#lspci)
 /usr/share/hwdata/pci.ids.gz      | PCI device names displayed by [`lspci`](#lspci)
+/var/log/dmesg                    | kernel ring buffer information
+/var/log/audit/audit.log          | audit file for SELinux
+
+### SystemD service files
+[[45](README.md#sources)]
+```ini
+[Unit]
+Description=Runs /usr/local/bin/mystartup.sh
+
+[Service]
+ExecStart=/usr/local/bin/mystartup.sh
+
+[Install]
+WantedBy=multi-user.target
+```
+
 ### /etc/default/useradd
 Default values for account creation. Properties: `EXPIRE`, `GROUP`, `HOME`, `INACTIVE`, `SHELL`, `SKEL`
 
