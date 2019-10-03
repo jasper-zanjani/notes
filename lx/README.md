@@ -172,3 +172,5 @@ add ",acl" to options in `fstab` file, then mount/unmount disk. If enabling FACL
 42. "How to [ `find` ](commands.md#find) recently modified files/folders in Linux". [Web](https://www.2daygeek.com/check-find-recently-modified-files-folders-linux/): 2013/10/11.
 43. "[`paste`](commands.md#paste) command in Linux (merge lines)". [Web](https://linuxize.com/post/paste-command-in-linux/): 2019/09/22.
 44. "[`rsync`](commands.md#rsync) (Remote Sync) command examples and usage". [Web](https://www.2daygeek.com/linux-rsync-command-local-remote-file-synchronization/): 2015/08/16.
+45. "Replacing `rc.local` in systemd Linux systems". [Red Hat](https://www.redhat.com/sysadmin/replacing-rclocal-systemd): 2019/10/01.
+46. "Linux [`tree`](commands.md#tree) command usage examples for beginners". [Tecmint](https://www.tecmint.com/linux-tree-command-examples/): 2019/10/02.
