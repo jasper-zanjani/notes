@@ -1,4 +1,5 @@
 # Kubernetes
+Kubernetes is a Greek word that stands for helmsman or captain.\
 Kubernetes (K8s) has emerged as the leading container orchestrator in the industry since 2018. It is a **container management** system developed by Google then donated to the **Cloud Native Computing Foundation**. It aims to provide better ways of managing distributed components and services across varied infrastructure.\
 A **pod** is the most basic unit that K8s deals with, representing one or more tightly-coupled containers that should be controlled as a single application (typically one main container with subsidiary helper containers). A pod's containers should operate closely container, share a lifecycle, and always be scheduled on the same node.\
 A "worker" is a container host, with a Kubelet process that communicates with K8s cluster services. K8s uses a **Desired State Management** system. Within a **pod** you can specify more than one container image.\

@@ -49,6 +49,6 @@ You aren't gonna need it (YAGNI)        |
 Without using extra memory, reverse the links betwen a set of nodes of a linked list.
 
 ## Sources
-  1. [redhat.com](https://www.redhat.com/en/resources/cloud-native-container-design-whitepaper?sc_cid=70160000001273HAAQ)
-  2. "14 Patterns to Ace Any Coding Interview Question". [Hackernoon](https://hackernoon.com/14-patterns-to-ace-any-coding-interview-question-c5bb3357f6ed?source=rss)
-  3. "Architecture styles". [MD](https://docs.microsoft.com/en-us/azure/architecture/guide/architecture-styles/): 2019/05/13.
+1. [redhat.com](https://www.redhat.com/en/resources/cloud-native-container-design-whitepaper?sc_cid=70160000001273HAAQ)
+2. "14 Patterns to Ace Any Coding Interview Question". [Hackernoon](https://hackernoon.com/14-patterns-to-ace-any-coding-interview-question-c5bb3357f6ed?source=rss)
+3. "Architecture styles". [MD](https://docs.microsoft.com/en-us/azure/architecture/guide/architecture-styles/): 2019/05/13.
