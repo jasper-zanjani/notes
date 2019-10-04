@@ -4,7 +4,7 @@
 :---    | :---
 A-F     | [AAP](#admin-admin-podcast) [ADAC](adac.md) [AZ-103](az-103.md) [ADP](#azure-devops-podcast) [AID](#adventures-in-devops) [AWST](#aws-techchat) [BNP](#bash-notes-for-professionals) [BPR](#bash-pocket-reference) [BRM](#bash-reference-manual) [BSD](#bsd-now) [CB](#coding-blocks) [CCP](ccp.md) [CGF](#chengdu-gaming-federation) [CLKF](clkf.md) [CL](#choose-linux) [CR](#coder-radio) [CSFM](#cloudskillsfm) [CSP](csp.md) [DD](#devops-and-docker) [Extras](#extras) [FP](#fluent-python) [FPLC](fplc.md) [FPP](#functional-python-programming) 
 G-S     | [GL](#going-linux) [GCPC](gcpc.md) [HPR](#hacker-public-radio) [IMWS](imws.md) [ITP](#itprotv) [JDG](jdg.md) [JNP](jnp.md) [JSJ](#javascript-jabber) [K8S](#kubernetes-podcast-from-google) [LALOS](lalos.md) [LAN](#linux-action-news) [LJ](#linux-journal) [LNL](#late-night-linux) [LSSP](lssp.md) [LU](#linux-unplugged) [NSM](#new-stack-makers) [PodCTL](#podctl) [PBX](pbx.md) [PGL](pgl.md) [RAR](#runas-radio) [s&a](s-and-a.md) [SY](#syntax) 
-T-Z     | [TP](#talk-python) [TS](#techsnap) [UE](#user-error) [USLAH](ulsah.md) [WSAC](wsac.md) [WSAF](wsaf.md) [YUG](yug.md)
+T-Z     | [TP](#talk-python) [TechSNAP](#techsnap) [UE](#user-error) [USLAH](ulsah.md) [WSAC](wsac.md) [WSAF](wsaf.md) [YUG](yug.md)
 ## People
 Person    | Links | Description
 :---      | :---        | :---
@@ -288,6 +288,14 @@ Digging into Visual Studio Code
 Netlify will watch changes to a GitHub repo as a continuous delivery platform for static sites.
 ### TechSNAP
 [Web](https://techsnap.systems) [Twitter](https://twitter.com/techsnapsystems)
+#### TechSNAP 413
+- Google support of **DNS Over HTTPS (DOH)** is getting resistance from ISPs because it will remove an optic into users' web traffic
+- CloudFlare has offered a completely free VPN named **WARP**, but it doesn't provide private web browsing because the `mmproxy` service is being used to embed your true IP in the TCP headers.
+- CloudFlare has announced support for **HTTP3** and **QUIC**, which allows you to reuse the same TCP session when loading multiple elements on one webpage. It has not yet been implemented by major browsers. The canary build of Chrome does support it, only on Mac and Windows, when executed with particular command-line arguments.
+- Startpage.com works as an anonymizing wrapper to Google, sending search queries to Google while removing personalizing information from the request. They also offer an email service called StartMail. The company is private and from the Netherlands.
+- Google has extended support for some Chromebook models in the wake of criticism of their six and half-year "death sentence".
+- Google Quantum Supremacy
+
 ### TGI Kubernetes
 #### TGIK 91
 **Endpoint Slices** are a new feature in K8S 1.16 which provide a scalable and extensible alternative to Endpoints resources.\
