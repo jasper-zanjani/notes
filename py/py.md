@@ -1,20 +1,19 @@
 # Python
-
-#### Shebang
+Shebang
 ```py
 #!/usr/bin/env python
 ```
 
 ## Alternative data types
-> ref: [FP](#sources): 54-56
+[FP](#sources): 54-56
   - `array` list alternative which is much more efficient for holding millions of numbers (FP:47-50)
   - `memoryview` built-in class, inspired by `NumPy` that lets you read and write data without moving bits around 
 (FP:51)
 ### queues implemented in stdlib packages (FP:56-57)
-  - `queue`: `Queue`, `LifoQueue`, `PriorityQueue`
-  - `multiprocessing`: `Queue`, `JoinableQueue`
-  - `asyncio`: `Queue`,`LifoQueue`, `PriorityQueue`, `JoinableQueue`
-  - `heapq`: functions `heappush` and `heappop` treat any mutable squence as a heap queue or priority queue
+- `queue`: `Queue`, `LifoQueue`, `PriorityQueue`
+- `multiprocessing`: `Queue`, `JoinableQueue`
+- `asyncio`: `Queue`,`LifoQueue`, `PriorityQueue`, `JoinableQueue`
+- `heapq`: functions `heappush` and `heappop` treat any mutable squence as a heap queue or priority queue
 
 ### dict (FP:75)
 `collections.OrderedDict` : maintains keys in insertion order

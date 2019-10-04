@@ -1,13 +1,17 @@
 # Certified Associate of Python Programming
 ## Contents
 
-\# | Links
-0  | 
-1  | 
-2  | 
-3  | 
-4  | 
-5  | 
+\#    | Links
+:---  | :---
+0     | 
+0.1   | 
+1     | 
+2     | 
+3     | 
+4     | 
+5     | 
+
+
 
 ## 0 Introduction
 ### 0.1.1 How does a computer program work?
@@ -84,6 +88,7 @@ You may ask now: which is better? The “compiling” model or the “interpreti
 There is no obvious answer. If there had been, one of these models would have ceased to exist a long time ago. Both of them have their advantages and their disadvantages.
 Here is a list of the main ones →
 \- | Compilation  | Interpretation
+:--- | :--- | :---
 Advantages | <ul><li>execution of the translated code is usually faster</li><li>only the user has to have the compiler - the end-user may use the code without it</li><li>translated code is stored using machine language - as it is hard to understand it, your own inventions and programming tricks are likely to remain your secret</li></ul> | <ul><li>you can run the code as soon as you complete it - there are no additional phases of translation</li><li>the code is stored using programming language, not the machine one - this means that it can be run on computers using different machine language: you don't compile your code separately for each different architecture</li></ul>
 Disadvantages | <ul><li>the compilation itself may be a very time-consuming process - you may not be able to run your code immediately after any amendment</li><li>you have to have as many compilers as hardware platforms you want your code to be run on</li></ul> | <ul><li>don't expect that interpretation will ramp your code to high speed - your code will share the computer's power with the interpreter, so it can't be really fast</li><li>both you and the end user have to have the interpreter to run your code</li></ul>
 
@@ -1133,9 +1138,7 @@ How does it work when a class has two ancestors offering the same entity, and th
 
 Let’s look at this.
 ### 5.5.18 How Python finds properties and methods?
-
 The Sub class inherits goods from two superclasses, Left and Right (these names are intended to be meaningful) →
-
 ```py
 class Left:
   Var = 'L'
@@ -1156,26 +1159,26 @@ object = Sub()
 
 print(object.Var, object.VarL, object.VarR, object.fun())
 ```
-
-There is no doubt that the class variable VarR comes from the Right class, and VarL comes from Left respectively. This is clear. But where does Var come from? Is it possible to guess it? The same problem is encountered with the fun() method – will it be invoked from Left or from Right? Let’s run the program – its output is:
-  L LL RR left
-
-This proves that both unclear cases have a solution inside the Left class. Is this a sufficient premise to formulate a general rule? Yes, it is.
+There is no doubt that the class variable VarR comes from the Right class, and VarL comes from Left respectively. This is clear. But where does Var come from? Is it possible to guess it? The same problem is encountered with the fun() method – will it be invoked from Left or from Right? Let’s run the program – its output is: L LL RR left\
+This proves that both unclear cases have a solution inside the Left class. Is this a sufficient premise to formulate a general rule? Yes, it is.\
 We can say that Python looks for object components in the following order:
 - inside the object itself;
 - in its superclasses, from bottom to top;
 - if there is more than one class on a particular inheritance path, Python scans them from left to right.
-
 Do you need anything more? Just make a small amendment in the code – replace:
-  class Sub(Left,Right):
-
+```py
+class Sub(Left,Right):
+```
 with:
-  class Sub(Right,Left):
-
+```py
+class Sub(Right,Left):
+```
 What do you see now? We see:
-  R LL RR right
-
+```
+R LL RR right
+```
 Do you see the same, or something different?
+
 ### 5.5.19 How to build a hierarchy of classes
 
 Building a hierarchy of classes isn’t just art for art’s sake. If you divide a problem among classes and decide which of them should be located at the top and which should be placed at the bottom of the hierarchy, you have to carefully analyze the issue, but before we show you how to do it (and how not to do it), we want to highlight an interesting effect. It’s nothing extraordinary (it’s just a consequence of the general rules presented earlier), but remembering it may be key to understanding how some codes work, and how the effect may be used to build a flexible set of classes.
@@ -3061,20 +3064,14 @@ except IOError as e:
 	print("I/O error occurred: ", strerr(e.errno))
 ```
 ### 5.9.7 Dealing with text files
-
-Writing text files seems to be simpler, as in fact there is one method that can be used to perform such a task.
-
-The method is named write() and it expects just one argument – a string that will be transferred to an open file (don’t forget – the open mode should reflect the way in which the data is transferred – writing a file opened in read mode won’t succeed).
-
-No newline character is added to the write()’s argument, so you have to add it yourself if you want the file to be filled with a number of lines.
-
-The example presented here → shows a very simple code that creates a file named newtext.txt (note: the open mode w ensures that the file will be created from scratch, even if it exists and contains data) and then puts ten lines into it.
-
-The string to be recorded consists of the word line, followed by the line number. We’ve decided to write the string’s contents character by character (this is done by the inner for loop) but you’re not obliged to do it in this way.
-
-We just wanted to show you that write() is able to operate on single characters.
-
+Writing text files seems to be simpler, as in fact there is one method that can be used to perform such a task.\
+The method is named write() and it expects just one argument – a string that will be transferred to an open file (don’t forget – the open mode should reflect the way in which the data is transferred – writing a file opened in read mode won’t succeed).\
+No newline character is added to the write()’s argument, so you have to add it yourself if you want the file to be filled with a number of lines.\
+The example presented here → shows a very simple code that creates a file named newtext.txt (note: the open mode w ensures that the file will be created from scratch, even if it exists and contains data) and then puts ten lines into it.\
+The string to be recorded consists of the word line, followed by the line number. We’ve decided to write the string’s contents character by character (this is done by the inner for loop) but you’re not obliged to do it in this way.\
+We just wanted to show you that write() is able to operate on single characters.\
 The code creates a file filled with the following text:
+```
   line #1
   line #2
   line #3
@@ -3085,6 +3082,7 @@ The code creates a file filled with the following text:
   line #8
   line #9
   line #10
+```
 
 ```py
 from os import strerror
@@ -3097,12 +3095,10 @@ try:
   fo.close()
 except IOError as e:
   print("I/O error occurred: ", strerr(e.errno))
-
 ```
+
 ### 5.9.8 Dealing with text files
-
 We’ve modified the previous code to write whole lines to the text file – this is how it looks →
-
 ```py
 from os import strerror
 try:
@@ -3113,51 +3109,34 @@ try:
 except IOError as e:
 	print("I/O error occurred: ", strerr(e.errno))
 ```
-
-The contents of the newly created file are the same.
-
-Note: you can use the same method to write to the stderr stream, but don’t try to open it, as it’s always open implicitly.
-
+The contents of the newly created file are the same.\
+Note: you can use the same method to write to the stderr stream, but don’t try to open it, as it’s always open implicitly.\
 For example, if you want to send a message string to stderr to distinguish it from normal program output, it may look like this:
-
 ```py
 import sys
 sys.stderr.write("Error message") 
 ```
+
 ### 5.9.9 What is bytearray?
-
-Before we start talking about binary files, we have to tell you about one of the specialized classes Python uses to store amorphous data.
-
-Amorphous data is data which have no specific shape or form – they are just a series of bytes.
-
-This doesn’t mean that these bytes cannot have their own meaning, or cannot represent any useful object, e.g., bitmap graphics.
-
-The most important aspect of this is that in the place where we have contact with the data, we are not able to, or simply don’t want to, know anything about it.
-
-Amorphous data cannot be stored using any of the previously presented means – they are neither strings nor lists.
-
-There should be a special container able to handle such data.
-
-Python has more than one such container – one of them is a specialized class name bytearray – as the name suggests, it’s an array containing (amorphous) bytes.
-
-If you want to have such a container, e.g., in order to read in a bitmap image and process it in any way, you need to create it explicitly, using one of available constructors.
-
+Before we start talking about binary files, we have to tell you about one of the specialized classes Python uses to store amorphous data.\
+Amorphous data is data which have no specific shape or form – they are just a series of bytes.\
+This doesn’t mean that these bytes cannot have their own meaning, or cannot represent any useful object, e.g., bitmap graphics.\
+The most important aspect of this is that in the place where we have contact with the data, we are not able to, or simply don’t want to, know anything about it.\
+Amorphous data cannot be stored using any of the previously presented means – they are neither strings nor lists.\
+There should be a special container able to handle such data.\
+Python has more than one such container – one of them is a specialized class name bytearray – as the name suggests, it’s an array containing (amorphous) bytes.\
+If you want to have such a container, e.g., in order to read in a bitmap image and process it in any way, you need to create it explicitly, using one of available constructors.\
 Take a look →
-
-`data = bytearray(100)` 
-
-Such an invocation creates a bytearray object able to store ten bytes.
-
-Note: such a constructor fills the whole array with zeros. 
+```py
+data = bytearray(100)
+```
+Such an invocation creates a bytearray object able to store ten bytes.\
+Note: such a constructor fills the whole array with zeros.
 
 ### 5.9.10 What is bytearray?
-
-Byte arrays resemble lists in many respects. For example, they are mutable, they’re a subject of the len() function, and you can access any of their elements using conventional indexing.
-
-There is one important limitation – you mustn’t set any byte array elements with a value which is not an integer (violating this rule will cause a TypeError exception) and you’re not allowed to assign a value that doesn’t come from the range 0 to 255 inclusive (unless you want to provoke a ValueError exception).
-
+Byte arrays resemble lists in many respects. For example, they are mutable, they’re a subject of the len() function, and you can access any of their elements using conventional indexing.\
+There is one important limitation – you mustn’t set any byte array elements with a value which is not an integer (violating this rule will cause a TypeError exception) and you’re not allowed to assign a value that doesn’t come from the range 0 to 255 inclusive (unless you want to provoke a ValueError exception).\
 You can treat any byte array elements as integer values – just like in this example →
-
 ```py
 data = bytearray(10)
 for i in range(len(data)):
@@ -3165,7 +3144,5 @@ for i in range(len(data)):
 for b in data:
   print(hex(b))
 ```
-
-Note: we’ve used two methods to iterate the byte arrays, and made use of the hex() function to see the elements printed as hexadecimal values.
-
+Note: we’ve used two methods to iterate the byte arrays, and made use of the hex() function to see the elements printed as hexadecimal values.\
 Now we’re going to show you how to write a byte array to a binary file – binary, as we don’t want to save its readable representation – we want to write a one-to-one copy of the physical memory content, byte by byte.

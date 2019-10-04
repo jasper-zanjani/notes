@@ -1,13 +1,15 @@
 # Python packaging
 
-## Directory structure
-- projectname/ : top-level directory
-  - projectname/ : additional code files will be placed in here
-    - __init__.py
-  - setup.py: containing a call to `setuptools.setup()`
+#### Directory structure
+```
+PROJECT
+├── PROJECT     # Additional code files will be placed in here
+│   └── init.py
+└── setup.py    # Containing a call to `setuptools.setup()`
 
-## Files
-### setup.py
+1 directory, 2 files
+```
+setup.py
 ```python
 from setuptools import setup
 
@@ -43,5 +45,5 @@ If the package has dependencies, they can be added by appending a `install_requi
 `python setup.py register sdist upload` do all the above in a single step
 
 ## Sources
-  - "How to package your Python code". [Read the Docs](https://python-packaging.readthedocs.io/en/latest/)
-  - [setuptools](https://setuptools.readthedocs.io/en/latest/setuptools.html)
+- "How to package your Python code". [Read the Docs](https://python-packaging.readthedocs.io/en/latest/)
+- "Building and distributing packages with [`setuptools`]()". [Web](https://setuptools.readthedocs.io/en/latest/setuptools.html)
