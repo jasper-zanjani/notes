@@ -3,8 +3,8 @@
 
 \#    | Standard library
 :---  | :---
-A-F   | [argparse](#argparse) [array](#array) [bisect](#bisect) [collections](#collections) [contextlib](#contextlib) [ctypes](#ctypes) [curses](#curses) [datetime](#datetime) [functools](#functools) 
-G-Z   | [getpass](#getpass) [glob](#glob) [heapq](#heapq) [json](#json) [optparse](#optparse) [os](#os) [pathlib](#pathlib) [platform](#platform) [pywinrm](#winrm) [random](#random) [subprocess](#subprocess) [sqlite3](#sqlite3) [sys](#sys) [termcolor](#termcolor) [weakref](#weakref) [winrm](#winrm)
+A-G   | [argparse](#argparse) [array](#array) [bisect](#bisect) [collections](#collections) [contextlib](#contextlib) [ctypes](#ctypes) [curses](#curses) [datetime](#datetime) [functools](#functools) [getpass](#getpass) [glob](#glob)
+H-Z   |  [heapq](#heapq) [json](#json) [optparse](#optparse) [os](#os) [pathlib](#pathlib) [platform](#platform) [pywinrm](#winrm) [random](#random) [subprocess](#subprocess) [sqlite3](#sqlite3) [sys](#sys) [termcolor](#termcolor) [weakref](#weakref) [winrm](#winrm)
 
 #### argparse
 Define information that will appear when the user wants help. The string {helptext} contains the usage that will appear with `-h` or `--help`.
