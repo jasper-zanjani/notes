@@ -3,7 +3,7 @@
 \#      | Links
 :---    | :---
 A-F     | [AAP](#admin-admin-podcast) [ADAC](adac.md) [AZ-103](az-103.md) [ADP](#azure-devops-podcast) [AID](#adventures-in-devops) [AWST](#aws-techchat) [BNP](#bash-notes-for-professionals) [BPR](#bash-pocket-reference) [BRM](#bash-reference-manual) [BSD](#bsd-now) [CB](#coding-blocks) [CCP](ccp.md) [CGF](#chengdu-gaming-federation) [CLKF](clkf.md) [CL](#choose-linux) [CR](#coder-radio) [CSFM](#cloudskillsfm) [CSP](csp.md) [DD](#devops-and-docker) [Extras](#extras) [FP](#fluent-python) [FPLC](fplc.md) [FPP](#functional-python-programming) 
-G-S     | [GL](#going-linux) [GCPC](gcpc.md) [HPR](#hacker-public-radio) [IMWS](imws.md) [ITP](#itprotv) [JDG](jdg.md) [JNP](jnp.md) [JSJ](#javascript-jabber) [K8S](#kubernetes-podcast-from-google) [LALOS](lalos.md) [LAN](#linux-action-news) [LJ](#linux-journal) [LNL](#late-night-linux) [LSSP](lssp.md) [LU](#linux-unplugged) [NSM](#new-stack-makers) [PodCTL](#podctl) [PBX](pbx.md) [PGL](pgl.md) [RAR](#runas-radio) [s&a](s-and-a.md) [SY](#syntax) 
+G-S     | [GL](#going-linux) [GCPC](gcpc.md) [HPR](#hacker-public-radio) [IMWS](imws.md) [ITP](#itprotv) [JDG](jdg.md) [JNP](jnp.md) [JSJ](#javascript-jabber) [K8S](#kubernetes-podcast-from-google) [LALOS](lalos.md) [LAN](#linux-action-news) [LJ](#linux-journal) [LNL](#late-night-linux) [LSSP](lssp.md) [LU](#linux-unplugged) [MintCast](#mintcast) [NSM](#new-stack-makers) [PodCTL](#podctl) [PBX](pbx.md) [PGL](pgl.md) [RAR](#runas-radio) [s&a](s-and-a.md) [SY](#syntax) 
 T-Z     | [TP](#talk-python) [TechSNAP](#techsnap) [UE](#user-error) [USLAH](ulsah.md) [WSAC](wsac.md) [WSAF](wsaf.md) [YUG](yug.md)
 ## People
 Person    | Links | Description
@@ -28,6 +28,7 @@ Brian Gracely | [Twitter](https://twitter.com/bgracely) | Host: [PodCTL](#abbrev
 Randall Hunt | | Guest: AWS [329](#aws-328)
 Allan Jude | [Web](https://www.scaleengine.com/) [FaceBook](https://facebook.com/allanjude) [LinkedIn](https://www.linkedin.com/in/allanjude/)| Host: [BSD](#abbreviations)  
 Michael Kennedy | [Twitter](https://twitter.com/mkennedy)| Host: [TP](#abbreviations) [PB](#podcasts) | 
+Gene Kim        | [Twitter](https://twitter.com/RealGeneKim) | Author: The Phoenix Project, The DevOps Handbook<br/>Guest: [RunAs 467](#runas-467)
 David Kopec | | Author: [CSP](csp.md)
 Patrick Lang | [Twitter](https://www.twitter.com/PatrickLang) | Co-chair of Kubernetes Windows SIG. Spent most of the past 10 years on the Microsoft Hyper-V team.<br/>Guest: [K8S 70](#k8s-70)
 Steven Lott | | Author of [FPP](#functional-python-programming)
@@ -104,11 +105,12 @@ Test coverage metrics are a double-edged sword, because they incentivize develop
 [Web](https://cloudskills.fm/) 
 \#          | Title     | Links
 :---        | :---      | :---
-2           | Infrastructure as Code in the Cloud | [Notes](#csfm-2)
-3           | Cloud Migration Strategy | [Notes](#csfm-3)
-5           | Automation with PowerShell  | [Notes](#csfm-5)
-29          | Building Serverless Apps on AWS | [Notes](#csfm-29)
-40          | What to Do When You Don't Have Experience | [Notes](#csfm-40)
+2           | Infrastructure as Code in the Cloud | [Notes](#csfm-2) [Web](https://cloudskills.fm/002)
+3           | Cloud Migration Strategy | [Notes](#csfm-3) [Web](https://cloudskills.fm/003)
+5           | Automation with PowerShell  | [Notes](#csfm-5) [Web](https://cloudskills.fm/005)
+29          | Building Serverless Apps on AWS | [Notes](#csfm-29) [Web](https://cloudskills.fm/029)
+40          | What to Do When You Don't Have Experience | [Notes](#csfm-40) [Web](https://cloudskills.fm/040)
+41          | Kuberneetes Q&A | [Notes](#csfm-41) [Web](https://cloudskills.fm/041)
 #### CSFM 2
 - An alternative job title to DevOps Engineer is "Infrastructure Developer"
 - Infrastructure as Code and automation are terms that refer to the use of deployment templates to provision resources reproducibly.
@@ -128,6 +130,14 @@ Test coverage metrics are a double-edged sword, because they incentivize develop
 #### CSFM 40
 Mike talks about his own work history, starting as a customer service representative working at AOL in the 1990s, then working tech support at Gateway, ultimately ending up in Phoenix where he remains today. 
 > [Getting certified] is a no-brainer. If you're not looking at certifications and you're thinking about doing this career transition, that's a mistake. So don't even get into this if you're not willing to do the certifications at this point because it's way too important, there are way too many people who are looking for that in these job openings.
+
+#### CSFM 41
+Interview with Anthony Nocentino, Data Platform MVP\
+Certified Kubernetes Administrator (CKA) certification from the Linux Foundation\
+Appliation monitoring for containers is wide open because most applications will still write to STDERR\
+Pfeiffer's experience with Kubernetes has not included manually creating a cluster, but rather using managed services\
+Containers are how applications are going to be deployed for the next 5 to 10 years\
+
 ### Choose Linux
 [Web](https://chooselinux.show) [Twitter](https://twitter.com/chooselinux)
 ### Coder Radio
@@ -218,11 +228,14 @@ Joe Beda is an advocate of a microkernel, minimalist architecture for the Kubern
 ### Late Night Linux
 \#          | Title     | Links
 :---        | :---      | :---
+71          |           | [Notes](#lnl-71)
 65          |           | [Notes](#lnl-65)
+#### LNL 71
+- 
 #### LNL 65
-  - KDE App page
-  - Google Stadia
-  - How can the FLOSS community take advantage of the opportunity presented by the sunsetting of Windows 7?
+- KDE App page
+- Google Stadia
+- How can the FLOSS community take advantage of the opportunity presented by the sunsetting of Windows 7?
 ### Linux Action News
 [Web](https://linuxactionnews.com/) [Twitter](https://twitter.com/linuxactionnews)
 ### Linux Journal
@@ -253,6 +266,10 @@ CloudReady OS allows you to install Chrome OS on other hardware. It is available
 Chris reflects on how Chrome OS has evolved since he first tried it in 2014. It has become much more complicated and powerful since its launch, and grudgingly admits he likes it, in particular how users can login with their own unique Linux environments.
 #### LU 289
 Clear Linux
+### MintCast
+#### MintCast 318.5
+`rxync` is the backend to many file syncing frontends\
+Resilio Sync started as BTSync or BitTorrent Sync, and it has a checkered past because the developers tried to convert it to a paid commercial product after it had been a popular open-source alternative to `rsync` for years. 
 ### New Stack Makers
 [Storage in a DevOps World](#storage-in-a-devops-world)
 #### Storage in a DevOps World
@@ -271,6 +288,39 @@ There are two main types of container engine installers: normal ones that instal
 **Prometheus** has become the go-to open-source monitoring and alerting tool. Other tools include the **ELK stack**, the **EFK stack**, and **Loggly**.
 ### RunAs Radio
 [Web](http://www.runasradio.com/) [Twitter](https://twitter.com/RunAsRadio)
+
+\#   | Title     | Links
+:--- | :---      | :---
+510  | The DevOps Handbook with Gene Kim | [Notes](#runas-510) [Web](http://runasradio.com/Shows/Show/510)
+467  | DevOps in 2015 with Gene Kim | [Notes](#runas-467) [Web](http://runasradio.com/Shows/Show/467)
+455  | Chef, PowerShell, and DSC with Steven Murawski | [Notes](#runas-455) [Web](http://runasradio.com/Shows/Show/455)
+408  | PowerShell Past and Future with Lee Holmes | [Notes](#runas-408) [Web](http://runasradio.com/Shows/Show/408)
+406  | DevOps in 2015 with Gene Kim | [Notes](#runas-406) [Web](http://runasradio.com/Shows/Show/406)
+357  | Talking DevOps with Gene Kim  | [Notes](#runas-357) [Web](http://runasradio.com/Shows/Show/357)
+
+#### RunAs 510
+_The DevOps Handbook_ took five years to write and contains 48 concrete case studies highlighting how DevOps practices translate to faster and better software development, happier employees, and a healthier bottom line.\
+While architects used to be ignored by working personnel, now architecture is a top-level leadership concern.\
+Conway's Law dictates that adding more people will result in a more complex product.\
+Richard Campbell is working on something called the "Humanitarian ToolBox"
+#### RunAs 467
+Gene and Robert fawn over Jeffrey Snover, father of PowerShell, and Mark Russinovitch, CTO of Azure.\
+On the topic of the recent DevOps Summit, Gene remarks that the emphasis of the conference has switched from a techhnical to an organization change management focus. He observes that security and management people are now trying to educate themselves on the new philosophy.\
+#### RunAs 455
+Chef is an automation platform, not just single-node configuration management.
+#### RunAs 408
+PowerShell, known originally as Monad, was the brain child of Jeffrey Snover. It started as an effort introduce the functionality of a unifying command-line interface that maintained and interfaced directly with Windows objects, skirting around the painful process of parsing and reparsing text output in bash.\
+The **administrative development model** prior to PowerShell consisted of 2 phases:
+1. Discovery, where an admin explored the GUI to accomplish a task
+2. Documentation, for which there was no structure and which took the form of Word documents, blog posts, etc.
+
+The practice used to be that GUI utilities had to have console programs programmed with custom-made expressive languages to support the tool from the command line. PowerShell offers a way to replace these with cmdlets.\
+**OneGet** (now known as the **PackageManagement** module in the PowerShell Gallery) was mentioned in the context of virtualizing Windows Servers.
+
+#### RunAs 406
+Gene Kim recaps 2014 and looks forward to the publication of his book _The DevOps Handbook_.
+> "DevOps is not just for the unicorns, it's for the horses as well."
+> "If you like solving problems, I cannot think of a better place to be than in a DevOps initiative."
 
 ### Syntax
 [Web](https://syntax.fm/) [Twitter](https://twitter.com/syntaxfm)
