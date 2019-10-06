@@ -93,6 +93,31 @@ Syntax                                              | Effect
 `$TMPDIR`                                           | place temporary files created and used by the shell in `directory`
 `$TMPDIR=directory`                                 | place temporary files created and used by the shell in directory
 `$UID`                                              | user's ID number
+#### Heredoc
+"Here Documents" consist of double less-than `&lt;&lt;` followed by the delimiting character sequence. `EOF` is typical.
+```sh
+cat << EOF
+1 a
+2 b
+3 c
+EOF
+```
+Variable substitution can take place in the heredoc, but if the delimiter is quoted (i.e. `"EOF"`), variables will not be substituted.
+```sh
+local y=3
+cat << EOF
+a=1
+x=$y
+```
+Output:
+```
+a=1
+x=3
+```
+### Here string
+```sh
+wc -c <<< "$x"
+```
 ### bzcat
 Page through bz2 files
 ### bzless
