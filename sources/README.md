@@ -31,6 +31,7 @@ Michael Kennedy | [Twitter](https://twitter.com/mkennedy)| Host: [TP](#abbreviat
 Gene Kim        | [Twitter](https://twitter.com/RealGeneKim) | Author: The Phoenix Project, The DevOps Handbook<br/>Guest: [RunAs 467](#runas-467)
 David Kopec | | Author: [CSP](csp.md)
 Patrick Lang | [Twitter](https://www.twitter.com/PatrickLang) | Co-chair of Kubernetes Windows SIG. Spent most of the past 10 years on the Microsoft Hyper-V team.<br/>Guest: [K8S 70](#k8s-70)
+Craig Loewen | | Guest: [ADP 57](#adp-57)
 Steven Lott | | Author of [FPP](#functional-python-programming)
 John McCabe | | Author: [IMWS](imws.md)
 Philip Muler | [Github](https://github.com/philmmanjaro)| Guest: [LU 318](#lu-318) 
@@ -51,6 +52,7 @@ Jon Spriggs | [Twitter](https://twitter.com/ticktockhouse) | Host: [AAP](#abbrev
 Jerry Steele | [Twitter](https://twitter.com/ticktockhouse) | Host: [AAP](#abbreviations) 
 Al Sweigart | | Author: [CCP](#cracking-codes-with-python)
 Scott Tolinski |  [Twitter](https://twitter.com/stolinski) [Github](https://github.com/stolinski) [BitBucket](https://bitbucket.org/stolinski) [Facebook](https://www.facebook.com/LevelUpTuts)| Host: [SY](#abbreviations) 
+
 ## Notes
 ### Admin Admin Podcast
 [Web](http://www.adminadminpodcast.co.uk/) [Twitter](https://twitter.com/admadmpodcast)
@@ -82,14 +84,23 @@ The recommended approach to select a database is to determine the **access patte
 #### AWST 53
 AWS CLI and AWS Tools for PowerShell are available for AWS.
 ### Azure DevOps Podcast
-[Web](http://azuredevopspodcast.clear-measure.com/) Notes: [48](#adp-48)
+[Web](http://azuredevopspodcast.clear-measure.com/)
+
+\#          | Title     | Links
+:---        | :---      | :---
+57          | Craig Loewen on the Windows Subsystem for Linux story | [Notes](#adp-57) [Web](http://azuredevopspodcast.clear-measure.com/craig-loewen-on-the-windows-subsystem-for-linux-devops-story-episode-57)
+48          | Steve Smith on DevOps quality | [Notes](#adp-48) [Web](http://azuredevopspodcast.clear-measure.com/steve-smith-on-devops-quality-episode-48)
+#### ADP 57
+**Windows Subsystem for Linux (WSL)** is shipped with Windows and tied to the Windows release cycle. Windows ships from a single massive codebase, of which WSL is part. WSL was written mostly in C and and has 3 million monthly active users.\
+WSL implements **user services** to connect to WSL distros and to run Windows-native applications like CMD.exe. WSL implements a **9P Protocol** file server to provide seamless integration of the virtualized Linux filesystem and that of the Windows host.\
+In version 1, WSL worked under a **translation architecture** where system calls were translated to NT kernel calls. This meant that applications that used system calls that were newer or more difficult to implement, like GUI applications or Docker, did not run on v1. But WSL2 shifted to a **lighweight virtualization** model using the Linux kernel. Now Docker runs on WSL2 and GUI applications can run by using an X server.\
+WSL v1 is available on Azure VMs if **nested virtualization** is enabled. WSL2 support is forthcoming.
 #### ADP 48
-Testing and static analysis
 Several different types of automated tests
-  - **Unit tests** test functionality without dependencies (i.e. file system, database, network, etc). `XUnit` is recommended for .NET Core
-  - **Integration tests** 
-  - **Functional tests** test the full stack of the system, except for the client. ASP .NET core functional tests are easily written.
-  - **UI tests** simulate user interaction using systems like Selenium, which uses .NET, or Cypress, which uses JavaScript.
+- **Unit tests** test functionality without dependencies (i.e. file system, database, network, etc). `XUnit` is recommended for .NET Core
+- **Integration tests** 
+- **Functional tests** test the full stack of the system, except for the client. ASP .NET core functional tests are easily written.
+- **UI tests** simulate user interaction using systems like Selenium, which uses .NET, or Cypress, which uses JavaScript.
 
 Test coverage metrics are a double-edged sword, because they incentivize developers to "gold-plate" their code by implementing spurious tests which pass easily.
 **Cyclomatic complexity** refers to the number of pathways through the code, measured at the method level.
