@@ -144,29 +144,30 @@ git revert commit
 ```sh
 git rm file
 ```
-### Stash
-#### Stash changes to work-tree
+#### Stash
+Stash changes to work-tree
 ```bash
 git stash
 ```
-#### View stashes in stash stack
+View stashes in stash stack
 ```bash
 git stash list
 ```
-#### Apply changes in most recent stash
+Apply changes in most recent stash
 ```bash
 git stash apply
 ```
-#### Apply changes in stash <n>
+Apply changes in stash `$STASH`
 ```bash
-git stash apply stash@{n}
+git stash apply stash@$STASH
 ```
-#### Rebase changes committed to <branch> onto <master>
+### Rebase
+#### Rebase changes committed to `branch` onto <master>
 ```sh
-git checkout branch
-git rebase master
+git checkout $BRANCH
+git rebase $MASTER
 ```
-This will rewind {branch} to the commit shared by the two branches, then applying all changes made subsequently to {master}. 
+This will rewind $BRANCH to the commit shared by the two branches, then applying all changes made subsequently to $MASTER. 
 ```sh
 git checkout <master>
 git merge <branch>
@@ -197,12 +198,21 @@ The repo will have to be force-pushed once these changes have been made.
 ```bash
 git push --force
 ```
-#### Add a change to the latest commit
-Useful when you forget to stage a change
+#### Add a change to a previous commit
+To add changes to the most recent commit, stage changes as normal (including removals), but when committing use the `--amend` option. This will present an editor, allowing you to edit the commit message, if necessary. [[6](#sources)]
 ```git
 git add README.md
 git commit --amend 
 ```
+To add changes to a commit that is not the most recent, a rebase is necessary. First [stash](#stash) the changes to be added, then initiate a rebase and mark the commit to be edited with `edit` or `e`. Leave the other commits alone, save, and drop back to the stash. Pop the stash (`git stash pop`), which will apply the changes stored in the most recent stash. Now you can stage the changes and commit:
+```sh
+git commit --amend --no-edit
+```
+Finally, continue the rebase, rewriting the rest of the commits against the new one.
+```sh
+git rebase --continue
+```
+
 #### Split up a commit
 To split up `$COMMIT`
 ```sh
@@ -224,3 +234,4 @@ git rebase --continue
 3. "Git - Stashing". [git-scm.com](https://git-scm.com/book/en/v1/Git-Tools-Stashing).
 4. "4 Useful Solutions to Common Git Problems". [Dev.to](https://dev.to/jacobherrington/4-useful-patterns-in-git-19ac): 2019/08/26.
 5. "Code cleanup: splitting `git` commits in the middle of a branch". [Web](https://embeddedartistry.com/blog/2018/2/19/code-cleanup-splitting-up-git-commits-in-the-middle-of-a-branch): 2018/02/19.
+6. "How to add a changed file to an older (not last) commit in Git". [StackOverflow](https://stackoverflow.com/questions/2719579/how-to-add-a-changed-file-to-an-older-not-last-commit-in-git).
