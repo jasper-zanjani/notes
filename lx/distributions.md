@@ -105,7 +105,13 @@ King Phisher        | simulate phishing attacks
 Nikto               | web server scanner
 Yersinia            | Perform Layer 2 attacks
 Social Engineering Toolkit (SET) |
+## Windows Subsystem for Linux
+**Windows Subsystem for Linux (WSL)** is shipped with Windows and tied to the Windows release cycle. Windows ships from a single massive codebase, of which WSL is part. WSL was written mostly in C and and has 3 million monthly active users.[[4](#sources)]\
+WSL implements **user services** to connect to WSL distros and to run Windows-native applications like CMD.exe. WSL implements a **9P Protocol** file server to provide seamless integration of the virtualized Linux filesystem and that of the Windows host.[[4](#sources)]\
+In version 1, WSL worked under a **translation architecture** where system calls were translated to NT kernel calls. This meant that applications that used system calls that were newer or more difficult to implement, like GUI applications or Docker, did not run on v1. But WSL2 shifted to a **lighweight virtualization** model using the Linux kernel. Now Docker runs on WSL2 and GUI applications can run by using an X server.[[4](#sources)]\
+WSL v1 is available on Azure VMs if **nested virtualization** is enabled. WSL2 support is forthcoming.[[4](#sources)]
 ## Sources
   1. Clear Linux segment. [Linux Unplugged](../sources/README.md#lu-289)
   2. "Introducing Fedora CoreOS". [Fedora Magazine](https://fedoramagazine.org/introducing-fedora-coreos/): 2019/07/24.
   3. "21 Best Kali Linux Tools for Hacking and Penetration Testing". [ItsFOSS](https://itsfoss.com/best-kali-linux-tools/)
+  4. "Craig Loewen on the Windows Subsystem for Linux story". [ADP 57](../sources/README.md#adp-57): 2019/10/07.
