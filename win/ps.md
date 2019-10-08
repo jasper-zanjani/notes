@@ -63,12 +63,14 @@ Bash            | PowerShell | Notes
 `>>`            | `Add-Content`, `ac`
 `alias`         | `Get-Alias`, `gal`; `New-Alias`, `nal`
 `awk`           | `Select-Object`, `select` | See __Filters__ below
+`bzip2`         | `Compress-Archive`, `Expand-Archive`
 `cat`           | `Get-Content`, `cat`, `gc`, `type` 
 `cp`            | `Copy-Item`, `cp`, `cpi`, `copy`
 `cd`            | `Set-Location`, `cd`, `sl`, `chdir`
 `echo`          | `Write-Host`
 `find`          | `Get-ChildItem -Recurse -File -Filter ...`
 `grep`          | `Where-Object`, `where`, `?` | See __Filters__ below
+`gzip`          | `Compress-Archive`, `Expand-Archive`
 `less` `more`   | `Out-Host -Paging`, `oh -Paging`
 `man`           | `Get-Help`
 `ls`            | `Get-ChildItem`, `dir`, `gci`, `ls` 
@@ -164,8 +166,8 @@ Syntax  | Effect
 ### File manipulation
 Syntax  | Effect
 :---    | :---
-`New-Item -ItemType File -Name filename` | create a new file in the current working directory named &lt;filename&gt;
-`Add-Content C:\path\to\file $content` | append &lt;content&gt; to &lt;file&gt;
+`New-Item -ItemType File -Name filename` | create a new file in the current working directory named `filename`
+`Add-Content C:\path\to\file $content` | append `content` to `file`
 
 #### Add-Content
 Option                        | Mandatory | Position
@@ -381,6 +383,10 @@ Set-VMProcessor -VMName SVR01 -Count 2
 Set-VMNetworkAdapter -VMName SVR01 -Name "NetworkAdapter" -MACAddressSpoofing On
 ```
 ## Other commands
+#### Extract archives
+```powershell
+Expand-Archive
+```
 #### Display options available in the module
 ```powershell
 Get-PSReadlineOption
@@ -415,8 +421,8 @@ Then construct the credential by using `New-Object`
 ```powershell
 $cred = New-Object System.Management.Automation.PSCredential ("FullerP", $pw)
 ```
-### Clipboard
-#### Copy text to clipboard
+#### Interact with clipboard
+Copy text to clipboard
 ```powershell
 Write-Output 'Hello' | Set-Clipboard
 ```
@@ -424,7 +430,7 @@ With `Append` switch parameter, items can be added without clearing the clipboar
 ```powershell
 Write-Output 'Hello' | Set-Clipboard -Append
 ```
-#### Interrogate items in clipboard
+Display items in clipboard
 Interpret items in clipboard as files
 ```powershell
 Get-Clipboard -Format FileDropList
@@ -442,28 +448,28 @@ New-Guid
 
 Syntax                                            | Effect
 :---                                              | :---
-Configuration                                     | precedes title of script, at top (e.g. `Configuration ContosoSimple`)
-Ensure                                            | property within `WindowsFeature` that can be set to `Present` or `Absent` (e.g. `Ensure = "Present"`)
-WindowsFeature                                    | declares code block representing a DSC resource to be installed (e.g. `WindowsFeature IIS`)
+`Configuration`                                     | precedes title of script, at top (e.g. `Configuration ContosoSimple`)
+`Ensure`                                            | property within `WindowsFeature` that can be set to `Present` or `Absent` (e.g. `Ensure = "Present"`)
+`WindowsFeature`                                    | declares code block representing a DSC resource to be installed (e.g. `WindowsFeature IIS`)
 ## Errors
 The `Throw` keyword generates a terminating error
 ## Glossary
-
-Term | Definition | Source
-:--- | :---       | :---
+Term                | Definition | Source
+:---                | :---       | :---
 automatic variables | variables that store state information for PowerShell and are created and maintained by Powershell. | 14
 ## Sources
-  1. Berkouwer, Sander. _Active Directory Administration Cookbook_. [ADAC](../sources/adac.md).
-  2. Krause, Jordan. _Windows Server 2016 Administration Cookbook_. [WSAC](../sources/wsac.md).
-  3. Michael Washam, Jonathan Tuliani, and Scott Hoag. _Exam Ref AZ-103 Microsoft Azure Administrator_. [AZ-103](../sources/az-103.md)
-  4. "How to use Wget to download web-based packages on Windows." [TechRepublic](https://www.techrepublic.com/article/how-to-use-wget-to-download-web-based-packages-on-windows/#ftag=RSS56d97e7): 2019/06/26.
-  5. "Check PowerShell Version". [powertheshell.com](http://www.powertheshell.com/topic/learnpowershell/firststeps/psversion/)
-  6. "About Comparison Operators". [Microsoft Docs](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_comparison_operators?view=powershell-6): 2019/01/17.
-  7. "PowerShell equivalents for common Linux/bash commands". [TheShellNut](https://mathieubuisson.github.io/powershell-linux-bash/): 2015/09/30.
-  8. "About Functions". [Microsoft Docs](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_functions?view=powershell-6): 2019/02/26.
-  9. "Select-Object". [Microsoft Docs](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/select-object?view=powershell-6)
-  10. "About CommonParameters". [Microsoft Docs](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_commonparameters?view=powershell-6): 2019/05/27.
-  11. "About Parameters Default Values". [Microsoft Docs](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_parameters_default_values?view=powershell-6): 2019/05/30.
-  12. "What's in your PowerShell `$PSDefaultParameterValues` Preference Variable?". [mikefrobbins.com](https://mikefrobbins.com/2019/08/01/whats-in-your-powershell-psdefaultparametervalues-preference-variable/): 2019/08/01.
-  13. "Using PowerShell to Copy to the Clipboard". [adamtheautomater.com](https://adamtheautomator.com/powershell-copy-to-clipboard/): 2019/08/01.
-  14. "About Automatic Variables". [Microsoft Docs](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-6): 2019/02/26.
+1. Berkouwer, Sander. _Active Directory Administration Cookbook_. [ADAC](../sources/adac.md).
+2. Krause, Jordan. _Windows Server 2016 Administration Cookbook_. [WSAC](../sources/wsac.md).
+3. Michael Washam, Jonathan Tuliani, and Scott Hoag. _Exam Ref AZ-103 Microsoft Azure Administrator_. [AZ-103](../sources/az-103.md)
+4. "How to use Wget to download web-based packages on Windows." [TechRepublic](https://www.techrepublic.com/article/how-to-use-wget-to-download-web-based-packages-on-windows/#ftag=RSS56d97e7): 2019/06/26.
+5. "Check PowerShell Version". [powertheshell.com](http://www.powertheshell.com/topic/learnpowershell/firststeps/psversion/)
+6. "About Comparison Operators". [Microsoft Docs](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_comparison_operators?view=powershell-6): 2019/01/17.
+7. "PowerShell equivalents for common Linux/bash commands". [TheShellNut](https://mathieubuisson.github.io/powershell-linux-bash/): 2015/09/30.
+8. "About Functions". [Microsoft Docs](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_functions?view=powershell-6): 2019/02/26.
+9. "Select-Object". [Microsoft Docs](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/select-object?view=powershell-6)
+10. "About CommonParameters". [Microsoft Docs](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_commonparameters?view=powershell-6): 2019/05/27.
+11. "About Parameters Default Values". [Microsoft Docs](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_parameters_default_values?view=powershell-6): 2019/05/30.
+12. "What's in your PowerShell `$PSDefaultParameterValues` Preference Variable?". [mikefrobbins.com](https://mikefrobbins.com/2019/08/01/whats-in-your-powershell-psdefaultparametervalues-preference-variable/): 2019/08/01.
+13. "Using PowerShell to Copy to the Clipboard". [adamtheautomater.com](https://adamtheautomator.com/powershell-copy-to-clipboard/): 2019/08/01.
+14. "About Automatic Variables". [Microsoft Docs](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-6): 2019/02/26.
+15. "3 ways to unzip compressed files using PowerShell". [Web](https://ridicurious.com/2019/07/29/3-ways-to-unzip-compressed-files-using-powershell/)
