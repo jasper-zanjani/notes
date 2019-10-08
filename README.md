@@ -87,27 +87,6 @@ From the REPL, you instantiate an instance of the class after running the script
 bot = TwitchBot.new
 bot.write_to_chat "Hello world"
 ```
-## DevOps
-The term "DevOps" began to gain currency in 2009-2010, before the emergence of containers. Features like self-healing, scalability, resource monitoring, automatic DNS management, etc have since become built-in to Kubernetes. [[7](#sources)]
-> DevOps is a way to deliver software with shared pain and responsibility.
-
-Traditionally, developers had incentives that were not aligned with those of operations who were to use the software. DevOps attempts to fuse development and operations, with the goal of aligning development with revenue generation.\
-> Now, being a DevOps Engineer is something like "Systems Engineer 2.0".
-
-There is an agreed-upon set of tools and concepts that most companies use with regard to DevOps. The end-goal is __endo-to-end process automation__, a digital pipeline that moves bits around in assembly line-like fashion.[[4](#sources)]\
-The Foundational Layer is composed of Three technologies that individually take a lifetime to master. Learning these skills represent an eternal commitment.[[4](#sources)]\
-1. Linux
-2. Python (progressing to Golang)
-3. AWS (progressing to GCP)
-
-Once you have learned the Foundational Layer, learn Real-world skills [[4](#sources)]:\
-- **Configure**: Terraform (progressing to Ansible)
-- **Version**: Git and GitHub (progressing to GitLab)
-- **Package**: Docker (progressing to Lambda)
-- **Deploy**: Jenkins (progressing to CodeDeploy)
-- **Run**: ECS (progressing to Kubernetes)
-- **Monitor**: ELK Stack (progressing to Prometheus)
-
 ## VMware
 Hypervisor, similar to Hyper-V, but provided at a cost, with a robust command-line interface via PowerShell.[[5](#sources)]
 ## Sources
@@ -119,4 +98,5 @@ Hypervisor, similar to Hyper-V, but provided at a cost, with a robust command-li
 6. "How Does BitTorrent Work? a Plain English Guide". [Web](https://app.getpocket.com/read/2717933967)
 7. "Storage in a DevOps World". [GitHub](sources/README.md/#new-stack-makers)
 8. "Chain reaction: what will the next decade of [blockchain](#blockchain) look like?" [Hacker Noon](https://hackernoon.com/chain-reaction-what-will-the-next-decade-of-blockchain-look-like-fl2fd32r8?source=rss): 2019/10/03.
-9. "A ihstory of [blockhalving](#blockchain), and what to expect in 2020. [Hacker Noon](https://hackernoon.com/a-history-of-blockhalving-and-what-to-expect-in-2020-1s3q30cn?source=rss): 2019/10/03.
+9. "A history of [blockhalving](#blockchain), and what to expect in 2020. [Hacker Noon](https://hackernoon.com/a-history-of-blockhalving-and-what-to-expect-in-2020-1s3q30cn?source=rss): 2019/10/03.
+10. "The open source guide to DevOps Monitoring tools". [opensource.com](https://opensource.com/downloads/devops-monitoring-guide)
