@@ -9,6 +9,7 @@ Bootkube                    | Launch self-hosted Kubernetes clusters. [GitHub](h
 Bosun                       | alert management system open-sourced by Stack Exchange and written in Golang [[31](sources.md)]
 Cabot                       | alert management system created by Arachnys [[31](sources.md)]
 cAdvisor                    | collecting metrics [GitHub](https://github.com/google/cadvisor)
+Cluster Store               | one of the 4 Kubernetes master server components [[35](sources.md)]
 Conjure-up                  | Canonical product that allows you to deploy The Canonical Distribution of Kubernetes on Ubuntu. 
 `conmon`                    | utility used by **Podman** to keep the PTY terminal of containers open in order to execute commands
 Consul                      | Hashicorp service networking solution [Web](https://www.hashicorp.com/products/consul/)
@@ -24,7 +25,7 @@ domain specific language (DSL) | computer language specialized to a particular a
 Dynatrace                   | monitoring [Web](https://www.dynatrace.com/support/help/technology-support/cloud-platforms/kubernetes/installation-and-operation/further-integrations/connect-your-kubernetes-clusters-to-dynatrace/#configure-activegate)
 EFK stack                   | **Elasticsearch**, **Fluentd**, and **Kibana** [[23, 31](sources.md)]
 ELK stack                   | **Elasticsearch**, **Logstash**, and **Kibana**: most popular open source log aggregation tool on the market [[31](sources.md)]
-`etcd`                      | configuration store which stores configuration data that can be accessed by cluster nodes.<br/>Consistent and highly-available key value store used as Kubernetes's backing store for all cluster data. [[17](sources.md)]
+Etcd                        | open-source key-value data store for configuration data that can be accessed by cluster nodes.<br/>Consistent and highly-available key value store used as Kubernetes's backing store for all cluster data. [[17, 36](sources.md)]
 Fission                     | serverless framework for Kubernetes [Web](https://fission.io/)
 Fluentd                     | log aggregation tool that often replaces **Logstash** [[31](sources.md)]
 Fnproject                   | FaaS framework for Kubernetes, written in Go [Web](http://fnproject.io/)
@@ -52,17 +53,19 @@ Kops                        | Provision Kubernetes clusters from the command-lin
 Krypton                     | Windows container with a thin Hyper-V partition
 Ksonnet                     | Templating language for creating Kubernetes objects [[K8S 12](../sources/README.md#k8s-12)]
 Kube Master                 | primary control point for distributed orchestration across different nodes [[14](sources.md)]
+Kubernetes Master           | collection of 4 processes that run on the master node: **Kube-apiserver**, **Cluster Store**, **Kube-controller-manager**, and **Kube-scheduler** [[35](sources.md)]
+Kube-apiserver              | one of the 4 Kubernetes master server components, exposes the Kubernetes API and frontend for the Kubernetes control plane. [[17](sources.md)]
 Kube-AWS                    | "Kubernetes on AWS" console tool provided by CoreOS which deploys a Kubernetes cluster using AWS CloudFormation [GitHub](https://github.com/kubernetes-incubator/kube-aws)
-`kube-apiserver`            | component on the master that exposes the Kubernetes API and frontend for the Kubernetes control plane. [[17](sources.md)]
-`kube-controller-manager`   | kubernetes master server component that embeds the core control loops shipped with Kubernetes. [[17](sources.md)]<br/>Manages **controllers** like `namespace-controller`, `deployment-controller`, etc.[[19](sources.md)]
+Kube-controller-manager     | one of the 4 Kubernetes master server components, embeds the core control loops shipped with Kubernetes. [[17](sources.md)]<br/>Manages **controllers** like `namespace-controller`, `deployment-controller`, etc.[[19](sources.md)]
 Kube-monkey                 | Kubernetes version of Netflix's Chaos Monkey, intended to stress-test systems [GitHub](https://github.com/asobti/kube-monkey)
 Kube-ops-view               | "Kubernetes Operational View", read-only system dashboard for multiple Kubernetes clusters. [GitHub](https://github.com/hjacobs/kube-ops-view)
-`kube-proxy`                | makes services real. [[19](sources.md)]<br/>network proxy that runs on each node in your cluster, implementing part of the Kubernetes Service concept [[17](sources.md)]
+Kube-proxy                  | one of the 2 Kubernetes node server components, makes services real. [[19](sources.md)]<br/>network proxy that runs on each node in your cluster, implementing part of the Kubernetes Service concept [[17](sources.md)]
+Kube-scheduler              | one of the 4 Kubernetes master sever components [[35](sources.md)]
 Kube-shell                  | Enables command auto-completion and auto-suggestion, inline documentation about executed commands [GitHub](https://github.com/cloudnativelabs/kube-shell)
 Kube-state-metrics          | metrics [GitHub](https://github.com/kubernetes/kube-state-metrics)
 Kubeadm                     | a tool for quickly installing Kubernetes and setting up a secure cluster [[17](sources.md)] [GitHub](https://github.com/kubernetes/kubeadm)
-`kubectl`                   | CLI tool for communicating with a Kubernetes API server<br/>Kubectl is a command line interface for running commands against Kubernetes clusters. `kubectl` looks for a file named config in $HOME/.kube/ but other kubeconfig files can be specified by setting the `$KUBECONFIG` environment variable or setting the `--kubeconfig` flag.[[17](sources.md)]
-`kubelet`                   | node server component that acts as the main contact point for each Kubernetes node with the cluster group<br/>An agent that runs on each node in the cluster. It makes sure that containers are running in a pod. [[17](sources.md)]<br/>Makes containers real.[[19](sources.md)]
+Kubectl                     | CLI tool for communicating with a Kubernetes API server<br/>Kubectl is a command line interface for running commands against Kubernetes clusters. `kubectl` looks for a file named config in $HOME/.kube/ but other kubeconfig files can be specified by setting the `$KUBECONFIG` environment variable or setting the `--kubeconfig` flag.[[17](sources.md)]
+Kubelet                     | one of the 2 Kubernetes node server components that acts as the main contact point for each Kubernetes node with the cluster group<br/>An agent that runs on each node in the cluster. It makes sure that containers are running in a pod. [[17](sources.md)]<br/>Makes containers real.[[19](sources.md)]
 Kubebox                     | Provides a console interface for a Kubernetes cluster that allows monitoring of pod resource usage, cluster monitoring, logs, etc. [GitHub](https://github.com/astefanutti/kubebox)
 Kubeless                    | FaaS framework [GitHub](https://github.com/kubeless/kubeless)
 Kubens                      | switch between Kubernetes namespaces [GitHub](https://github.com/ahmetb/kubectx)

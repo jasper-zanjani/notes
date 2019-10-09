@@ -175,3 +175,4 @@ add ",acl" to options in `fstab` file, then mount/unmount disk. If enabling FACL
 45. "Replacing `rc.local` in systemd Linux systems". [Red Hat](https://www.redhat.com/sysadmin/replacing-rclocal-systemd): 2019/10/01.
 46. "Linux [`tree`](commands.md#tree) command usage examples for beginners". [Tecmint](https://www.tecmint.com/linux-tree-command-examples/): 2019/10/02.
 47. "Use [`fallocate`](commands.md#fallocate) command to create files of specific size in Linux." [Linux Handbook](https://linuxhandbook.com/fallocate-command/): 2019/09/11.
+48. "Take screenshots from the Terminal in Mac OS X". [OSX Daily](http://osxdaily.com/2011/08/11/take-screen-shots-terminal-mac-os-x/): 2011/08/11.

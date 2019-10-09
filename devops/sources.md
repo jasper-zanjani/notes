@@ -33,3 +33,5 @@
 32. "Kubernetes Origins, with Joe Beda". [K8S 12](../sources/README.md#k8s-12)
 33. "Open source in VMware Tanzu". [VMware](https://blogs.vmware.com/cloudnative/2019/10/01/open-source-in-vmware-tanzu/): 2019/10/01.
 34. "VMware acquires Heptio, the startup founded by 2 co-founders of Kubernetes". [TechCrunch](https://techcrunch.com/2018/11/06/vmware-acquires-heptio-the-startup-founded-by-2-co-founders-of-kubernetes/): 2018/11/06.
+35. "A complete introduction to [Kubernetes](k8s.md)". [DZone](https://dzone.com/articles/a-complete-introduction-to-kubernetes-an-orchestra?utm_source=dzone&utm_medium=article&utm_campaign=k8s-cluster): 2018/04/10.
+36. "[Kubernetes](k8s.md) in 10 minutes: a complete guide". [DZone](https://dzone.com/articles/kubernetes-in-10-minutes-a-complete-guide-to-look?utm_source=dzone&utm_medium=article&utm_campaign=k8s-cluster): 2018/09/06.
