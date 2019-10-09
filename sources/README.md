@@ -303,6 +303,7 @@ There are two main types of container engine installers: normal ones that instal
 \#   | Title     | Links
 :--- | :---      | :---
 510  | The DevOps Handbook with Gene Kim | [Notes](#runas-510) [Web](http://runasradio.com/Shows/Show/510)
+471  | Just Enough Admin and Windows Server 2016 with Jeffrey Snover | [Notes](#runas-471) [Web](http://runasradio.com/Shows/Show/471)
 467  | DevOps in 2015 with Gene Kim | [Notes](#runas-467) [Web](http://runasradio.com/Shows/Show/467)
 455  | Chef, PowerShell, and DSC with Steven Murawski | [Notes](#runas-455) [Web](http://runasradio.com/Shows/Show/455)
 408  | PowerShell Past and Future with Lee Holmes | [Notes](#runas-408) [Web](http://runasradio.com/Shows/Show/408)
@@ -314,6 +315,8 @@ _The DevOps Handbook_ took five years to write and contains 48 concrete case stu
 While architects used to be ignored by working personnel, now architecture is a top-level leadership concern.\
 Conway's Law dictates that adding more people will result in a more complex product.\
 Richard Campbell is working on something called the "Humanitarian ToolBox"
+#### RunAs 471
+> "Really, the DevOps revolution is taking some of the things that we did in the Japanese quality revolution of the 1980s, which is all manufacturing-focused, and we're taking a lot of those principles and applying them to IT." -Jeffrey Snover
 #### RunAs 467
 Gene and Robert fawn over Jeffrey Snover, father of PowerShell, and Mark Russinovitch, CTO of Azure.\
 On the topic of the recent DevOps Summit, Gene remarks that the emphasis of the conference has switched from a techhnical to an organization change management focus. He observes that security and management people are now trying to educate themselves on the new philosophy.\
@@ -327,11 +330,10 @@ The **administrative development model** prior to PowerShell consisted of 2 phas
 
 The practice used to be that GUI utilities had to have console programs programmed with custom-made expressive languages to support the tool from the command line. PowerShell offers a way to replace these with cmdlets.\
 **OneGet** (now known as the **PackageManagement** module in the PowerShell Gallery) was mentioned in the context of virtualizing Windows Servers.
-
 #### RunAs 406
 Gene Kim recaps 2014 and looks forward to the publication of his book _The DevOps Handbook_.
-> "DevOps is not just for the unicorns, it's for the horses as well."
-> "If you like solving problems, I cannot think of a better place to be than in a DevOps initiative."
+> "DevOps is not just for the unicorns, it's for the horses as well." -Gene Kim
+> "If you like solving problems, I cannot think of a better place to be than in a DevOps initiative." -Gene Kim
 
 ### Syntax
 [Web](https://syntax.fm/) [Twitter](https://twitter.com/syntaxfm)
