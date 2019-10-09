@@ -1,4 +1,4 @@
-# Principles of software design
+# Software development
 
 Term                                    | Definition 
 :---                                    | :---
@@ -7,7 +7,7 @@ High observability principle (HOP)      | principle that recommends a container 
 Image immutability principle (IIP)      | containers should not change between different environments, rather any change in the containerized application should result in building a new container image which is reused across all environments.
 Keep it simple, stupid (KISS)           | 
 Life-cycle conformance principle (LCP)  | containers should provide APIs that the managing platform can read and send signals to
-Process disposability principle (PDP)   | containers need to be ad ephemeral as possible and ready to be replaced by another container instance at any given moment. This means that containerized applications must keep their __state__ externalized or distributed and redundant.
+Process disposability principle (PDP)   | containers need to be as ephemeral as possible and ready to be replaced by another container instance at any given moment. This means that containerized applications must keep their __state__ externalized or distributed and redundant.
 Runtime confinement principle (RCP)     | containers should not exceed the declared resource requirements, lest it become vulnerable to termination or migration when resource starvation occurs
 Self-containment principle (S-CP)       | containers should contain everything it needs at build time 
 Separation of concerns (SoC)            | 
@@ -16,39 +16,47 @@ Single responsibility, Open/closed, Liskov substitution, Interface segregation, 
 You aren't gonna need it (YAGNI)        | 
 
 ## Best practices for containerized application development
-  - __Aim for small images__: remove temporary files and avoid installation of unnecessary packages. This reduces container size, build time, and networking time when copying container images
-  - __Support arbitrary user IDs__: allow unprivileged users to run the container
-  - __Mark important ports__: use the `EXPOSE` command to specify port numbers
-  - __Use volumes for persistent data__: containers themselves must be created and destroyed, so persistent data has to be stored externally
-  - __Set image metadata__: tags, labels, and annotations make container images more usable
-  - __Synchronize host and image__: time and machine ID
+- __Aim for small images__: remove temporary files and avoid installation of unnecessary packages. This reduces container size, build time, and networking time when copying container images
+- __Support arbitrary user IDs__: allow unprivileged users to run the container
+- __Mark important ports__: use the `EXPOSE` command to specify port numbers
+- __Use volumes for persistent data__: containers themselves must be created and destroyed, so persistent data has to be stored externally
+- __Set image metadata__: tags, labels, and annotations make container images more usable
+- __Synchronize host and image__: time and machine ID
 
 ## Software patterns
-  - **Sliding window**: pattern used to perform a required operation on a specific window size of a given array or linked list 
-  - **Two pointers or iterators**: pattern where two pointers iterate through a data structure in tandem until one or both of them hit a certain condition 
-  - **Fast and Slow pointers**: (also Hare and Tortoise algorithm), uses two pointers which move through the data structure at different speeds. Typically used in linked lists.
-  - **Merge Intervals**: Technique to deal with overlapping intervals 
-  - **Cyclic sort**: iterate over an array one element at a time, placing it at its correct index, swapping it with the element already there.
-  - **In-place reversal of linked list**: reverse the links between a set of nodes of a linked list.
-  - **Tree Breadth First Search (BFS)**: traverse a tree by ingse a queue to keep track of all nodes of a level before jumping onto the next level. Push the root node to the queue and continue to iterate until the queue is empty. In each iteration, remove the node at the head of the queue, execute, and continue until all nodes are exhausted.
-  - **Tree Depth First Search (DFS)**: use recursion or a stack to keep track of all previous nodes while traversing. If a node is not a leaf, you need to decide whether to process the current node immediately or do so while processing children.
-  - **Two heaps**: Separate a set of elements into two heaps, a Min Heap and a Max Heap.
-  - **Subsets**: BFS approach to create permutations and combinations of a given set of elements
-  - **Modified binary search**: Binary Search is the best algorithm to use when searching for a value in a sorted data structure
-  - **Top K elements**: find K elements at an extreme (i.e. top, smallest, most frequent, etc). The best data structure to use to keep track of these is a heap of size K, because it will automatically keep track of these elements.
-  - **K-Way Merge**: given K sorted arrays, use a Heap to efficiently traverse all the elements of all arrays.
-  - **Topological sort**: find a linear ordering of elements that have dependencies on each other. Use a HashMap to store the graph in adjacency lists.
+- **Sliding window**: pattern used to perform a required operation on a specific window size of a given array or linked list 
+- **Two pointers or iterators**: pattern where two pointers iterate through a data structure in tandem until one or both of them hit a certain condition 
+- **Fast and Slow pointers**: (also Hare and Tortoise algorithm), uses two pointers which move through the data structure at different speeds. Typically used in linked lists.
+- **Merge Intervals**: Technique to deal with overlapping intervals 
+- **Cyclic sort**: iterate over an array one element at a time, placing it at its correct index, swapping it with the element already there.
+- **In-place reversal of linked list**: reverse the links between a set of nodes of a linked list.
+- **Tree Breadth First Search (BFS)**: traverse a tree by ingse a queue to keep track of all nodes of a level before jumping onto the next level. Push the root node to the queue and continue to iterate until the queue is empty. In each iteration, remove the node at the head of the queue, execute, and continue until all nodes are exhausted.
+- **Tree Depth First Search (DFS)**: use recursion or a stack to keep track of all previous nodes while traversing. If a node is not a leaf, you need to decide whether to process the current node immediately or do so while processing children.
+- **Two heaps**: Separate a set of elements into two heaps, a Min Heap and a Max Heap.
+- **Subsets**: BFS approach to create permutations and combinations of a given set of elements
+- **Modified binary search**: Binary Search is the best algorithm to use when searching for a value in a sorted data structure
+- **Top K elements**: find K elements at an extreme (i.e. top, smallest, most frequent, etc). The best data structure to use to keep track of these is a heap of size K, because it will automatically keep track of these elements.
+- **K-Way Merge**: given K sorted arrays, use a Heap to efficiently traverse all the elements of all arrays.
+- **Topological sort**: find a linear ordering of elements that have dependencies on each other. Use a HashMap to store the graph in adjacency lists.
 
 ## Architecture styles
-  - **N-tier**: application is divided into **tiers** or layers, each of which can only call into tiers below it. [[3](#sources)]
-  - **Web-Queue-Worker**: application has a web frontend that handles HTTP requests and backend worker that performs CPU-intensive tasks or long-running operations. "Queue" refers to the asynchronous message queue through which the frontend and backend communicate. [[3](#sources)]
-  - **Microservices**: application is composed of many small, independent services. [[3](#sources)]
-  - **Event-driven**: architecture that uses a **publish-subscribe (pub-sub)** model where producers publish events and consumers subscribe to them. [[3](#sources)]
+- **N-tier**: application is divided into **tiers** or layers, each of which can only call into tiers below it. [[3](#sources)]
+- **Web-Queue-Worker**: application has a web frontend that handles HTTP requests and backend worker that performs CPU-intensive tasks or long-running operations. "Queue" refers to the asynchronous message queue through which the frontend and backend communicate. [[3](#sources)]
+- **Microservices**: application is composed of many small, independent services. [[3](#sources)]
+- **Event-driven**: architecture that uses a **publish-subscribe (pub-sub)** model where producers publish events and consumers subscribe to them. [[3](#sources)]
 
 #### In-place reversal of linked list
 Without using extra memory, reverse the links betwen a set of nodes of a linked list.
+
+## Glossary
+Term                                    | Definition 
+:---                                    | :---
+Concurrency                             | when two tasks can start, run, and complete in **overlapping** time periods [[5](#sources)]
+Parallelism                             | when two tasks run at the same time [[5](#sources)]
 
 ## Sources
 1. [redhat.com](https://www.redhat.com/en/resources/cloud-native-container-design-whitepaper?sc_cid=70160000001273HAAQ)
 2. "14 Patterns to Ace Any Coding Interview Question". [Hackernoon](https://hackernoon.com/14-patterns-to-ace-any-coding-interview-question-c5bb3357f6ed?source=rss)
 3. "Architecture styles". [MD](https://docs.microsoft.com/en-us/azure/architecture/guide/architecture-styles/): 2019/05/13.
+4. "Introduction to concurrent programming: a beginner's guide". [Toptal](https://www.toptal.com/software/introduction-to-concurrent-programming): 
+5. "Ruby concurrency and parallelism: a practical tutorial". [Toptal](https://www.toptal.com/ruby/ruby-concurrency-and-parallelism-a-practical-primer): 
