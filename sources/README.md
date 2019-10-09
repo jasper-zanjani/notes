@@ -5,53 +5,6 @@
 A-F     | [AAP](#admin-admin-podcast) [ADAC](adac.md) [AZ-103](az-103.md) [ADP](#azure-devops-podcast) [AID](#adventures-in-devops) [AWST](#aws-techchat) [BNP](#bash-notes-for-professionals) [BPR](#bash-pocket-reference) [BRM](#bash-reference-manual) [BSD](#bsd-now) [CB](#coding-blocks) [CCP](ccp.md) [CGF](#chengdu-gaming-federation) [CLKF](clkf.md) [CL](#choose-linux) [CR](#coder-radio) [CSFM](#cloudskillsfm) [CSP](csp.md) [DD](#devops-and-docker) [Extras](#extras) [FP](#fluent-python) [FPLC](fplc.md) [FPP](#functional-python-programming) 
 G-S     | [GL](#going-linux) [GCPC](gcpc.md) [HPR](#hacker-public-radio) [IMWS](imws.md) [ITP](#itprotv) [JDG](jdg.md) [JNP](jnp.md) [JSJ](#javascript-jabber) [K8S](#kubernetes-podcast-from-google) [LALOS](lalos.md) [LAN](#linux-action-news) [LJ](#linux-journal) [LNL](#late-night-linux) [LSSP](lssp.md) [LU](#linux-unplugged) [MintCast](#mintcast) [NSM](#new-stack-makers) [PodCTL](#podctl) [PBX](pbx.md) [PGL](pgl.md) [RAR](#runas-radio) [s&a](s-and-a.md) [SY](#syntax) 
 T-Z     | [TP](#talk-python) [TechSNAP](#techsnap) [UE](#user-error) [USLAH](ulsah.md) [WSAC](wsac.md) [WSAF](wsaf.md) [YUG](yug.md)
-## People
-Person    | Links | Description
-:---      | :---        | :---
-Jeff Barr | [Twitter](https://twitter.com/intent/user?screen_name=jeffbarr) | Host: [AWS](#abbreviations) 
-Joe Beda  | | One of the three "co-founders" of Kubernetes. He worked with the cluster management teams at Google, which resulted in adapting the Borg and Omega patterns into products. Now runs Heptio, along with Craig McLuckie, another co-founder of Kubernetes.<br/>Guest: [K8S 12](#k8s-12)<br/>Host: TGI Kubernetes
-Wes Bos   | [Twitter](https://twitter.com/wesbos) | Host: [SY](#abbreviations)
-Craig Bos | [Twitter](http://twitter.com/craigbox) | Host: [K8S](#abbreviations) 
-Larry Bushey | [Twitter](https://twitter.com/goinglinux) [LinkedIn](https://www.linkedin.com/in/larrybushey/) | [GL](#going-linux)  
-Richard Campbell | [Twitter](https://twitter.com/richcampbell) | [RAR](#abbreviations)  
-Jason Cannon | | Author: [CLKF](clkf.md) [LALOS](lalos.md) [LSSP](lssp.md)
-Chris Chapman | | [K8S 67](#k8s-67) 
-Alister Christman | [Twitter](https://twitter.com/mralc)| Host: [AAP](#abbreviations) 
-Michael Domenick | [Twitter](https://twitter.com/dominucco)| Host: [CR](#abbreviations)  
-Simon Elisha | [Twitter](https://twitter.com/intent/user?screen_name=simon_elisha) | Host: [AWS](#abbreviations) 
-Bret Fisher | [Email](bret@bretfisher.com) [Twitter](https://twitter.com/BretFisher) [Facebook](https://www.facebook.com/bretfisher.devops) [YouTube](https://www.youtube.com/channel/UC0NErq0RhP51iXx64ZmyVfg) | Host: [DD](#devops-and-docker)
-Chris Fisher | [Twitter](https://twitter.com/ChrisLAS) | Founder of Jupiter Broadcasting, which merged or partnered with Linux Academy on September 12, 2018.<br/>Host: [LU](#abbreviations)  
-David Flanagan | | Author: [JDG](jdg.md)
-Brian Fox | | Author: [BRM](#bash-reference-manual)
-Adam Glick | [Twitter](http://twitter.com/mobileglick)| Host: [K8S](#abbreviations) 
-Brian Gracely | [Twitter](https://twitter.com/bgracely) | Host: [PodCTL](#abbreviations) 
-Randall Hunt | | Guest: AWS [329](#aws-328)
-Allan Jude | [Web](https://www.scaleengine.com/) [FaceBook](https://facebook.com/allanjude) [LinkedIn](https://www.linkedin.com/in/allanjude/)| Host: [BSD](#abbreviations)  
-Michael Kennedy | [Twitter](https://twitter.com/mkennedy)| Host: [TP](#abbreviations) [PB](#podcasts) | 
-Gene Kim        | [Twitter](https://twitter.com/RealGeneKim) | Author: The Phoenix Project, The DevOps Handbook<br/>Guest: [RunAs 467](#runas-467)
-David Kopec | | Author: [CSP](csp.md)
-Patrick Lang | [Twitter](https://www.twitter.com/PatrickLang) | Co-chair of Kubernetes Windows SIG. Spent most of the past 10 years on the Microsoft Hyper-V team.<br/>Guest: [K8S 70](#k8s-70)
-Craig Loewen | | Guest: [ADP 57](#adp-57)
-Steven Lott | | Author of [FPP](#functional-python-programming)
-John McCabe | | Author: [IMWS](imws.md)
-Philip Muler | [Github](https://github.com/philmmanjaro)| Guest: [LU 318](#lu-318) 
-Jeffrey Palermo | [Twitter](https://twitter.com/jeffreypalermo) [LinkedIn](https://www.linkedin.com/in/palermo/) [Website](http://jeffreypalermo.com/) | Host: [ADP](#abbreviations) 
-Wes Payne | | Host: [TS](#abbreviations), [CR](#abbreviations)
-Mike Pfeiffer | | Host: [CSFM](#abbreviations)  [Web](https://mikepfeiffer.io) [Twitter](https://twitter.com/mike**pfeiffer) [Facebook](https://www.facebook.com/mikepfeifferhq/)
-Alan Pope | [Twitter](https://twitter.com/popey) | Host: [UE](#abbreviations) 
-Ellie Quigley | | Author: [PBX](pbx.md)
-Luciano Ramalho | | Author: [FP](#fluent-python)
-Chet Ramey | | Author: [BRM](#bash-reference-manual)
-Benedict Reuschling | [Twitter](https://twitter.com/bsdbcr) | Host: [BSD](#abbreviations) 
-Joe Ressington| [Web](https://joeress.com) [Twitter](https://twitter.com/JoeRessington) |  Host: [LAN](#abbreviations) [UE](#abbreviations) [CL](#abbreviations) 
-Arnold Robbins | | Author: [s&a](s-and-a.md)
-Joel (Sallow) Francis | [Twitter](https://twitter.com/vexx32) [GitHub](https://github.com/vexx32) [LinkedIn](https://www.linkedin.com/in/joel-francis-356539128/) | Guest: [PSP](#abbreviations) 
-Steve (ardalis) Smith | [LinkedIn](https://www.linkedin.com/in/stevenandrewsmith/) [Twitter](https://twitter.com/ardalis) | Host: [WDT](#abbreviations) Guest: [ADP 40](#adp-40)  
-Mark Sobell | | Author: [PGL](pgl.md)
-Jon Spriggs | [Twitter](https://twitter.com/ticktockhouse) | Host: [AAP](#abbreviations) 
-Jerry Steele | [Twitter](https://twitter.com/ticktockhouse) | Host: [AAP](#abbreviations) 
-Al Sweigart | | Author: [CCP](#cracking-codes-with-python)
-Scott Tolinski |  [Twitter](https://twitter.com/stolinski) [Github](https://github.com/stolinski) [BitBucket](https://bitbucket.org/stolinski) [Facebook](https://www.facebook.com/LevelUpTuts)| Host: [SY](#abbreviations) 
 
 ## Notes
 ### Admin Admin Podcast
@@ -300,16 +253,22 @@ There are two main types of container engine installers: normal ones that instal
 ### RunAs Radio
 [Web](http://www.runasradio.com/) [Twitter](https://twitter.com/RunAsRadio)
 
-\#   | Title     | Links
-:--- | :---      | :---
-510  | The DevOps Handbook with Gene Kim | [Notes](#runas-510) [Web](http://runasradio.com/Shows/Show/510)
-471  | Just Enough Admin and Windows Server 2016 with Jeffrey Snover | [Notes](#runas-471) [Web](http://runasradio.com/Shows/Show/471)
-467  | DevOps in 2015 with Gene Kim | [Notes](#runas-467) [Web](http://runasradio.com/Shows/Show/467)
-455  | Chef, PowerShell, and DSC with Steven Murawski | [Notes](#runas-455) [Web](http://runasradio.com/Shows/Show/455)
-408  | PowerShell Past and Future with Lee Holmes | [Notes](#runas-408) [Web](http://runasradio.com/Shows/Show/408)
-406  | DevOps in 2015 with Gene Kim | [Notes](#runas-406) [Web](http://runasradio.com/Shows/Show/406)
-357  | Talking DevOps with Gene Kim  | [Notes](#runas-357) [Web](http://runasradio.com/Shows/Show/357)
+\#  | Title     | Links
+:---| :---      | :---
+534 | Azure Stack Update with Jeffrey Snover | [Notes](#runas-534) [Web](http://runasradio.com/Shows/Show/534)
+510 | The DevOps Handbook with Gene Kim | [Notes](#runas-510) [Web](http://runasradio.com/Shows/Show/510)
+471 | Just Enough Admin and Windows Server 2016 with Jeffrey Snover | [Notes](#runas-471) [Web](http://runasradio.com/Shows/Show/471)
+467 | DevOps in 2015 with Gene Kim | [Notes](#runas-467) [Web](http://runasradio.com/Shows/Show/467)
+455 | Chef, PowerShell, and DSC with Steven Murawski | [Notes](#runas-455) [Web](http://runasradio.com/Shows/Show/455)
+408 | PowerShell Past and Future with Lee Holmes | [Notes](#runas-408) [Web](http://runasradio.com/Shows/Show/408)
+406 | DevOps in 2015 with Gene Kim | [Notes](#runas-406) [Web](http://runasradio.com/Shows/Show/406)
+357 | Talking DevOps with Gene Kim  | [Notes](#runas-357) [Web](http://runasradio.com/Shows/Show/357)
 
+#### RunAs 534
+3 enduring use cases for Azure Stack
+1. Edge/disconnected: for cases where connectivity is absent or latency is too great for use of the public cloud (i.e. submarines, cruise ships, factory floors)
+2. Compliance and data sovereignty: deploying cloud services in countries where the public cloud has not yet established a Region.
+3. Modernization of apps: to support mainframe applications and progressively update their functionality by implementing the cloud piecemeal ("strangler" design pattern)
 #### RunAs 510
 _The DevOps Handbook_ took five years to write and contains 48 concrete case studies highlighting how DevOps practices translate to faster and better software development, happier employees, and a healthier bottom line.\
 While architects used to be ignored by working personnel, now architecture is a top-level leadership concern.\
