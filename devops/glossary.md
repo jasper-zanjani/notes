@@ -36,6 +36,7 @@ Grafana                     | visualization tool [[31](sources.md)]
 Graphite                    | push-based metrics aggregation tool [[31](sources.md)]
 Helium                      | Windows container with a virtualized filesystem and registry
 Helm                        | Kubernetes package manager [GitHub](https://github.com/kubernetes/helm)
+Heptio                      | Seattle-based startup founded by Kubernetes co-creators [Joe Beda](../people.md) and [ Craig McLuckie ](../people.md) that was acquired by VMware in late 2018. [[34](sources.md)]
 Host Networking Service     | how configuration is exposed in Windows containers
 InfluxDB                    | monitoring database included as part of **TICK** stack, offered in a single-node open-source version and a commercial version that supports clustering and scaling [[31](sources.md)]
 InfluxQL                    | query language associated with **InfluxDB**
@@ -81,6 +82,7 @@ Minikube                    | Conveniently launch a single-node Kubernetes clust
 namespace                   | tool for separating groups of repositories [[28](sources.md)]<br/>equivalent to **projects** in **OpenShift** [K8S 12](../sources/README.md)
 Node                        | system resources that perform tasks as passigned by **Kube Master** [[14](sources.md)]
 Nuclio                      | serverless project that support high-performance events and large amounts of data [Web](https://github.com/nuclio/nuclio)
+Octant                      | Kubernetes cluster application monitoring tool, written in Go and developed by **Vmware Tanzu** [[Web](https://github.com/vmware-tanzu/octant)]
 OpenFaaS                    | framework to manage serverless functions on Docker Swarm or Kubernetes and analyze metrics [GitHub](https://github.com/openfaas/faas)
 OpenShift                   | Red Hat PaaS offering, providing an abstraction layer on top of Kubernetes. It comes in 4 flavors: **Origin**, **Online**, **Dedicated**, and **Enterprise**
 OpenTSDB                    | "open source time-series database" metrics aggregation tool that stores data in Hadoop [[31](sources.md)]
@@ -108,8 +110,9 @@ TICK stack                  | Telegraf, **InfluxDB**, Chronograf, and Kapacitor 
 Time to success             | metric used by developers that want to test out new products or technologies [[23](sources.md)]
 Trireme                     | Kubernetes Network Policies [GitHub](https://github.com/aporeto-inc/trireme-kubernetes)
 Twistlock                   | monitoring and security [Web](https://www.twistlock.com/)
-Velero                      | formerly (Heptio Ark) [GitHub](https://github.com/heptio/velero)
+Velero                      | open source tool that facilitates backup, restoration, and migration of Kubernetes cluster resources and persistent volumes, formerly (**Heptio** Ark) [Web](https://github.com/heptio/velero)
 Virtual Networking Platform | what Windows containers use to implement firewall rules, analogous to `iptables` in Linux and Linux containers
 Virtual-Kubelet             | Kubernetes Kubelet implementation that masquerades as a kubelet for the purposes of connecting Kubernetes to other APIs [Web](https://virtual-kubelet.io/)
+VMware Tanzu                | GitHub organization announced at VMworld 2019 that will incorporate **Velero**, **Sonobuoy**, and **Octant** among other projects [[33](sources.md)] [ [Web](https://github.com/vmware-tanzu) ]
 Whisper                     | database associated with **Graphite** [Notes](README.md#prometheus)
 Xenon                       | Argon Windows container with Base OS image

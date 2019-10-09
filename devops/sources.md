@@ -31,3 +31,5 @@
 30. "Kubernetes 101-Concepts, Potential, and lots of container orchestrations". [Hacker Noon](https://hackernoon.com/kubernetes-101-concepts-and-why-it-matters-g27536x2?source=rss): 2019/10/02.
 31. "The open source guide to DevOps Monitoring tools". [opensource.com](https://opensource.com/downloads/devops-monitoring-guide)
 32. "Kubernetes Origins, with Joe Beda". [K8S 12](../sources/README.md#k8s-12)
+33. "Open source in VMware Tanzu". [VMware](https://blogs.vmware.com/cloudnative/2019/10/01/open-source-in-vmware-tanzu/): 2019/10/01.
+34. "VMware acquires Heptio, the startup founded by 2 co-founders of Kubernetes". [TechCrunch](https://techcrunch.com/2018/11/06/vmware-acquires-heptio-the-startup-founded-by-2-co-founders-of-kubernetes/): 2018/11/06.
