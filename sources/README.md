@@ -2,9 +2,9 @@
 ## Abbreviations
 \#      | Links
 :---    | :---
-A-F     | [AAP](#admin-admin-podcast) [ADAC](adac.md) [AZ-103](az-103.md) [ADP](#azure-devops-podcast) [AID](#adventures-in-devops) [AWST](#aws-techchat) [BNP](#bash-notes-for-professionals) [BPR](#bash-pocket-reference) [BRM](#bash-reference-manual) [BSD](#bsd-now) [CB](#coding-blocks) [CCP](ccp.md) [CGF](#chengdu-gaming-federation) [CLKF](clkf.md) [CL](#choose-linux) [CR](#coder-radio) [CSFM](#cloudskillsfm) [CSP](csp.md) [DD](#devops-and-docker) [Extras](#extras) [FP](#fluent-python) [FPLC](fplc.md) [FPP](#functional-python-programming) 
-G-S     | [GL](#going-linux) [GCPC](gcpc.md) [HPR](#hacker-public-radio) [IMWS](imws.md) [ITP](#itprotv) [JDG](jdg.md) [JNP](jnp.md) [JSJ](#javascript-jabber) [K8S](#kubernetes-podcast-from-google) [LALOS](lalos.md) [LAN](#linux-action-news) [LJ](#linux-journal) [LNL](#late-night-linux) [LSSP](lssp.md) [LU](#linux-unplugged) [MintCast](#mintcast) [NSM](#new-stack-makers) [PodCTL](#podctl) [PBX](pbx.md) [PGL](pgl.md) [RAR](#runas-radio) [s&a](s-and-a.md) [SY](#syntax) 
-T-Z     | [TP](#talk-python) [TechSNAP](#techsnap) [UE](#user-error) [USLAH](ulsah.md) [WSAC](wsac.md) [WSAF](wsaf.md) [YUG](yug.md)
+A-E     | [AAP](#admin-admin-podcast) [ADAC](adac.md) [AZ-103](az-103.md) [ADP](#azure-devops-podcast) [AID](#adventures-in-devops) [AWST](#aws-techchat) [BNP](#bash-notes-for-professionals) [BPR](#bash-pocket-reference) [BRM](#bash-reference-manual) [BSD](#bsd-now) [CB](#coding-blocks) [CCP](ccp.md) [CGF](#chengdu-gaming-federation) [CLKF](clkf.md) [CL](#choose-linux) [CR](#coder-radio) [CSFM](#cloudskillsfm) [CSP](csp.md) [DD](#devops-and-docker) 
+F-P     | [FP](#fluent-python) [FPLC](fplc.md) [FPP](#functional-python-programming) [GL](#going-linux) [GCPC](gcpc.md) [HPR](#hacker-public-radio) [IMWS](imws.md) [ITP](#itprotv) [JDG](jdg.md) [JNP](jnp.md) [JSJ](#javascript-jabber) [K8S](#kubernetes-podcast-from-google) [LALOS](lalos.md) [LAN](#linux-action-news) [LJ](#linux-journal) [LNL](#late-night-linux) [LSSP](lssp.md) [LU](#linux-unplugged) [MintCast](#mintcast) [NSM](#new-stack-makers) [PodCTL](#podctl) [PBX](pbx.md) [PGL](pgl.md) 
+R-Z     | [RAR](#runas-radio) [s&a](s-and-a.md) [SY](#syntax) [TP](#talk-python) [TechSNAP](#techsnap) [UE](#user-error) [USLAH](ulsah.md) [WSAC](wsac.md) [WSAF](wsaf.md) [YUG](yug.md)
 
 ## Notes
 ### Admin Admin Podcast

@@ -34,7 +34,7 @@ Deployment                        | Resource Manager            | CloudFormation
 ### AWS certs
 [Certification](https://aws.amazon.com/certification/) | Links
 :---                                  | :---
-AWS Certified Cloud Practitioner      | [Certification]](https://aws.amazon.com/certification/certified-cloud-practitioner/)
+AWS Certified Cloud Practitioner      | [Certification](https://aws.amazon.com/certification/certified-cloud-practitioner/)
 AWS Certified Solutions Architect     | [Certification](https://aws.amazon.com/certification/certified-solutions-architect-associate/)
 AWS Certified Developer - Associate   | [Certification](https://aws.amazon.com/certification/certified-developer-associate/)
 AWS Certified SysOps Administrator - Associate | [Certification](https://aws.amazon.com/certification/certified-sysops-admin-associate/)
