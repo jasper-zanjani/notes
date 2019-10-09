@@ -99,4 +99,3 @@ Hypervisor, similar to Hyper-V, but provided at a cost, with a robust command-li
 7. "Storage in a DevOps World". [GitHub](sources/README.md/#new-stack-makers)
 8. "Chain reaction: what will the next decade of [blockchain](#blockchain) look like?" [Hacker Noon](https://hackernoon.com/chain-reaction-what-will-the-next-decade-of-blockchain-look-like-fl2fd32r8?source=rss): 2019/10/03.
 9. "A history of [blockhalving](#blockchain), and what to expect in 2020. [Hacker Noon](https://hackernoon.com/a-history-of-blockhalving-and-what-to-expect-in-2020-1s3q30cn?source=rss): 2019/10/03.
-10. "The open source guide to DevOps Monitoring tools". [opensource.com](https://opensource.com/downloads/devops-monitoring-guide)

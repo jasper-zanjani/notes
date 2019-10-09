@@ -1,11 +1,7 @@
 # DevOps
-Table of contents
-:---
-[Container runtimes](#container-runtimes)
-[Linux containers](#linux-containers)
-[Windows containers](#windows-containers)
-[Glossary](#glossary)
-[Sources](#sources)
+\#      | Links
+:---    | :---
+A-Z     | [Container runtimes](#container-runtimes) [Docker](docker.md) [Glossary](glossary.md) [Kubernetes](k8s.md) [Linux containers](#linux-containers) [Podman](podman.md) [Sources](sources.md) [Windows containers](#windows-containers) [YAML](yaml.md)
 
 The term "DevOps" began to gain currency in 2009-2010, before the emergence of containers. Features like self-healing, scalability, resource monitoring, automatic DNS management, etc have since become built-in to Kubernetes. [[7](sources.md)]
 > DevOps is a way to deliver software with shared pain and responsibility.
@@ -34,8 +30,40 @@ Types of observability tools [[31](sources.md)]
 - **Alerting/visualizations**
 - **Distributed tracing**
 
-### 
+### Metrics aggregation ("monitoring") tools
+Metrics aggregation is primarily time-series data, which has the following features: [[31](sources.md)]
+- **Counter**: numeric values that only increase (total number of web requests, visitors, etc)
+- **Gauges**: numeric value that can increase or decrease (CPU, network, and memory usage, threads, etc)
+- **Quantiles**: allow better understanding of data than mean or other statistical functions that don't account for uneven distributions and outliers ("percentile")
+- **Histograms**: sample of observations
 
+#### Prometheus
+The most well-recognized time-series monitoring solution for cloud-native applications. It was created by Matt Proud and Julius Volz and sponsored by SoundCloud, hosted now within the CNCF. [[31](sources.md)]\
+Prometheus is a **pull**-based system that uses local configuration to describe the endpoints to collect from and the collection interval. Each endpoint has a client to collect the data and update it upon request.\
+Prometheus includes an expression language for selecting and presenting data called **PromQL**. It also comes with **AlertManager** to handle alerts.
+
+#### Graphite
+Push-based system. Applications push data into Graphite's **Carbon** component which stores data in the **Whisper** database. [[31](sources.md)]\
+Whisper is a lossy but fixed-size database, meaning the resolution of metrics will degrade over time.
+
+#### InfluxDB
+Uses an open core model (scaling and clustering cost extra), forming part of the **TICK** stack. Uses a key-value pair system ("tags") to add dimensionality to metrics. Uses a "system similar to a log-structured merge tree" for storage. [[31](sources.md)]\
+Open-source InfluxDB system is self-contained within a single host, but the commercial version has a distributed architecture.\
+InfluxDB includes the **InfluxQL** language for querying data.
+
+#### OpenTSDB
+"Open source time-series database" storing metrics in Hadoop. [ [31](sources.md) ]
+
+### Log aggregation tools
+
+#### Fluentd
+Log aggregator written in C and Ruby and adopted as an **Incubating** project by the CNCF that has become a replacement for **Logstash** in many contexts. Fluentd has a robust plugin system with over 500 plugins that allow quick and easy integration with different data sources and outputs. In Kubernetes, each pod has a "Fluentd **sidecar**". [[31](sources.md)]
+
+### Alert management tools
+#### Bosun
+Pull-based alerting tool developed by Stack Exchange and written in Golang. **Redis** is used to store state and metadata. [[31](sources.md)]
+#### Cabot
+Pull-based alerting tool that stores alerting data in a **Postgres** database as well as a **Redis** cache. Named after its creator's dog, developed by Arachnys for Christmas when its developers became frustrated with Nagios. Cabot can integrate with Google Calendar for on-call rotations, a feature called **Rota**. [[31](sources.md)]
 
 ## Containers
 A VM has to emulate a full hardware stack, boot an operating system, and then launch your app. It's a virtualized hardware environment. Docker containers function at the application layer and skip all the steps VMs take.\
