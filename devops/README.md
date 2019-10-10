@@ -1,13 +1,26 @@
 # DevOps
 \#      | Links
 :---    | :---
-A-Z     | [Container runtimes](#container-runtimes) [Docker](docker.md) [Glossary](glossary.md) [Kubernetes](k8s.md) [Linux containers](#linux-containers) [Podman](podman.md) [Sources](sources.md) [Windows containers](#windows-containers) [YAML](yaml.md)
+A-Z     | [Container runtimes](#container-runtimes) [Culture](#culture) [Docker](docker.md) [Glossary](glossary.md) [Kubernetes](k8s.md) [Linux containers](#linux-containers) [Podman](podman.md) [Sources](sources.md) [Windows containers](#windows-containers) [YAML](yaml.md)
 
-The term "DevOps" began to gain currency in 2009-2010, before the emergence of containers. Features like self-healing, scalability, resource monitoring, automatic DNS management, etc have since become built-in to Kubernetes. [[7](sources.md)]
 > DevOps is a way to deliver software with shared pain and responsibility.
 
+The term "DevOps" began to gain currency in 2009-2010, before the emergence of containers. DevOps was a necessary response in infrastructure to the quickening pace of software development that emerged after the emergence of the Agile manifesto. [[39](sources.md)]\
+Features like self-healing, scalability, resource monitoring, automatic DNS management, etc have since become built-in to Kubernetes. [[7](sources.md)]
+
+## Culture
+> "DevOps is not at all about getting code to production, but rather getting ideas into production and failing quick." [[39](sources.md)]
+
+DevOps culture is centered around collaboration and small multidisciplinary teams that bridge traditional gaps between infrastructure and software development personnel. Teams focus on competencies instead of rules and continuous learning. [[39](sources.md)]
+
+## Patterns
+DevOps involves 3 main patterns:
+1. Systems thinking: performance of the whole system is more important than the importance of a specific department
+2. Shift-left feedback loop: integration of automated testing into every development and operations activity
+3. Systematic experimentation: fail-fast mentality
+
+## Tools
 Traditionally, developers had incentives that were not aligned with those of operations who were to use the software. DevOps attempts to fuse development and operations, with the goal of aligning development with revenue generation.
-> Now, being a DevOps Engineer is something like "Systems Engineer 2.0".
 
 There is an agreed-upon set of tools and concepts that most companies use with regard to DevOps. The end-goal is __endo-to-end process automation__, a digital pipeline that moves bits around in assembly line-like fashion.[[4](sources.md)]\
 The Foundational Layer is composed of Three technologies that individually take a lifetime to master. Learning these skills represent an eternal commitment.[[4](sources.md)]\

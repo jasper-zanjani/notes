@@ -37,3 +37,4 @@
 36. "[Kubernetes](k8s.md) in 10 minutes: a complete guide". [DZone](https://dzone.com/articles/kubernetes-in-10-minutes-a-complete-guide-to-look?utm_source=dzone&utm_medium=article&utm_campaign=k8s-cluster): 2018/09/06.
 37. "Launch single node [Kubernetes](k8s.md) cluster". [Katacoda](https://www.katacoda.com/courses/kubernetes/launch-single-node-cluster). 
 38. "Getting started with `kubeadm`". [Katacoda](https://www.katacoda.com/courses/kubernetes/getting-started-with-kubeadm).
+39. "What is DevOps? An intersection of culture, processes, and tools". [DZone](https://dzone.com/articles/what-is-devops-an-intersection-of-culture-processe?utm_medium=feed&utm_source=feedpress.me&utm_campaign=Feed:%20dzone): 2019/10/10.
