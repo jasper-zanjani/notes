@@ -35,3 +35,5 @@
 34. "VMware acquires Heptio, the startup founded by 2 co-founders of Kubernetes". [TechCrunch](https://techcrunch.com/2018/11/06/vmware-acquires-heptio-the-startup-founded-by-2-co-founders-of-kubernetes/): 2018/11/06.
 35. "A complete introduction to [Kubernetes](k8s.md)". [DZone](https://dzone.com/articles/a-complete-introduction-to-kubernetes-an-orchestra?utm_source=dzone&utm_medium=article&utm_campaign=k8s-cluster): 2018/04/10.
 36. "[Kubernetes](k8s.md) in 10 minutes: a complete guide". [DZone](https://dzone.com/articles/kubernetes-in-10-minutes-a-complete-guide-to-look?utm_source=dzone&utm_medium=article&utm_campaign=k8s-cluster): 2018/09/06.
+37. "Launch single node [Kubernetes](k8s.md) cluster". [Katacoda](https://www.katacoda.com/courses/kubernetes/launch-single-node-cluster). 
+38. "Getting started with `kubeadm`". [Katacoda](https://www.katacoda.com/courses/kubernetes/getting-started-with-kubeadm).

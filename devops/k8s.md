@@ -44,3 +44,38 @@ Controlling services are called the **master (control plane) components**. It is
 Worker nodes are called **nodes**, and each node runs 2 processes [[35](sources.md)]:
 - **Kubelet**
 - **Kube-proxy**
+
+## Tasks
+Launch a single-node Kubernetes cluster [[37](sources.md)]
+```sh
+kubectl cluster-info
+kubectl get nodes
+kubectl create deployment first-deployment --image=katacoda/docker-http-server
+kubectl get pods
+kubectl expose deployment first-deployment --port=80 --type=NodePort
+export PORT=$(kubectl get svc first-deployment -o go-template='{{range.spec.ports}}{{if .nodePort}}{{.nodePort}}{{"\n"}}{{end}}{{end}}')
+echo "Accessing host01:$PORT"
+curl host01:$PORT
+minikube addons enable dashboard
+kubectl apply -f /opt/kubernetes-dashboard.yaml
+kubectl get pods -n kube-system -w
+```
+Launch a multi-node Kubernetes cluster with kubeadm [[38](sources.md)]
+```sh
+# on master
+kubeadm init --token=102952.1a7dd4cc8d1f4cc5 --kubernetes-version $(kubeadm version -o short)
+sudo cp /etc/kubernetes/admin.conf $HOME/
+sudo chown $(id -u):$(id -g) $HOME/admin.conf
+export KUBECONFIG=$HOME/admin.conf
+kubectl apply -f /opt/weave-kube
+kubectl get pod -n kube-systemo
+kubeadm token list
+
+# on node
+kubeadm join --discovery-token-unsafe-skip-ca-verification --token=102952.1a7dd4cc8d1f4cc5 172.17.0.20:6443
+
+# on master
+kubectl create deployment http --image=katacoda/docker-http-server:latest
+kubectl get pods
+kubectl apply -f dashboard.yaml
+```
