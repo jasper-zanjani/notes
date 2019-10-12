@@ -8,6 +8,8 @@ Kubernetes is visualized as a system built from layers, with each higher layer a
 Before the popularization of containers, **application servers** provided **non-functional requirements** including security, isolation, fault tolerance, configuration management, and others. If applications are compared to CDs, then application servers are analogous to CD players.\
 At the time, Google had been trying to engage the Linux kernel team and trying to overcome their skepticism. Internally, the project was framed as offering "Borg as a Service", although there were concerns that Google was in danger of revealing too much of its secret sauce.
 
+## Concepts
+
 #### Design principles
 1. Kubernetes APIs are **declarative** rather than **imperative**, that is they describe a desired state.
 2. Kubernetes control plane has no hidden APIs
@@ -80,3 +82,77 @@ kubectl create deployment http --image=katacoda/docker-http-server:latest
 kubectl get pods
 kubectl apply -f dashboard.yaml
 ```
+
+## Syntax
+### kubeadm
+### kubectl
+Command groups  | Links
+:---            | :---
+`cluster-info`
+`create`          | [Docs](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#create) [Notes](#kubectl-create)
+`delete`          | [Docs](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#delete) [Notes](#kubectl-delete)
+`edit`
+`expose`          | [Docs](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#expose) [Notes](#kubectl-expose)
+`get`             | [Docs](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#get) [Notes](#kubectl-get)
+`port-forward`
+`rollout`
+`run`             | [Docs](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#run) [Notes](#kubectl-run)
+`scale`
+`set`
+`token`
+`version`
+
+#### kubectl create
+Create a new deployment named `$DEPLOYMENT` from `$IMAGE`
+```sh
+kubectl create deployment $DEPLOYMENT --image=$IMAGE
+```
+
+
+#### kubectl delete
+Delete $POD
+```sh
+kubectl delete $POD
+```
+Delete pod `kuard` [[40](sources.md)]
+```sh
+delete pod kuard
+```
+
+
+#### kubectl edit
+Open an editor to modify deployment `kuard` [[40](sources.md)]
+```sh
+kubectl edit deployment kuard
+```
+
+
+#### kubectl expose
+Create a service from `kuard` deployment [[40](sources.md)]
+```sh
+kubectl expose deployment kuard --type=LoadBalancer --port=80 --target-port=8080
+```
+
+
+#### kubectl get
+View nodes in cluster [[40](sources.md)]
+```sh
+kubectl get nodes
+```
+View status of deployments
+```sh
+kubectl get pods
+kubectl get pods --namespace=kube-system # background processes necessary for Kubernetes itself
+```
+Display details of service `kuard`
+```sh
+kubectl get service kuard -o wide
+```
+
+
+#### kubectl run
+```sh
+kubectl run --generator=run-pod/v1 --image=gcr.io/kuar-demo/kuard-amd64:1 kuard
+kubectl run --image=gcr.io/kuar-demo/kuard-amd64:1 kuard --replicas=5 
+```
+

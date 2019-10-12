@@ -7,6 +7,7 @@ Ansible | [`ansible`](../ansible.md#ansible) [`ansible-galaxy`](../ansible.md#an
 Files	| [`fallocate`](#fallocate)
 Filters   | [ `awk` ](#awk) [ `copy` ](#copy) [ `egrep` ](#egrep) [ `fgrep` ](#fgrep) [ `grep` ](#grep) [ `paste` ](#paste) [ `sed` ](#sed) [ `tr` ](#tr)
 Hardware settings | [`insmod`](#insmod) [ `lsmod` ](#lsmod) [ `lspci` ](#lspci) [ `lsusb` ](#lsusb) [ `modprobe` ](#modprobe) [`rmmod`](#rmmod)
+Kubernetes        | [`kubeadm`](../devops/k8s.md#kubeadm) [`kubectl`](../devops/k8s.md#kubectl)
 Logical volumes   | [ `lvcreate` ](#tr) [ `lvdisplay` ](#lvdisplay) [ `lvremove` ](#lvremove) [ `lvs` ](#lvs) [ `pvcreate` ](#pvcreate) [ `pvdisplay` ](#pvdisplay) [ `pvremove` ](#pvremove) [ `pvs` ](#pvs) [ `vgcreate` ](#vgcreate) [ `vgdisplay` ](#vgdisplay) [ `vgextend` ](#vgextend) [ `vgremove` ](#vgremove) [ `vgs` ](#vgs)
 Manjaro           | [`mhwd`](#mhwd) [`mhwd-chroot`](#mhwd-chroot)
 Package managers  | [ `apt` ](#apt) [ `dnf` ](#dnf) [ `pacman` ](#pacman) [ `yay` ](#yay) [ `yum` ](#yum)
@@ -24,7 +25,7 @@ G   | [`gconf-editor`](#gconf-editor) [`gdisk`](#gdisk) [`gdmsetup`](#gdmsetup) 
 H   | [`hdiutil`](#hdiutil) [`hdparm`](#hdparm) [`head`](#head) [`history`](#history) [`host`](#host) [`hostname`](#hostname) [`hostnamectl`](#hostnamectl) [`hwclock`](#hwclock) 
 I   | [`iconv`](#iconv) [`ifconfig`](#ifconfig) [`imagemagick`](#imagemagick) [`init`](#sysvinit) [`initctl`](#initctl) [`insmod`](#insmod) [`install`](#install) [`ip`](#ip) [`iptables`](#iptables) [`iscsiadm`](#iscsiadm) [`iwlist`](#iwlist) 
 J   | [`journalctl`](#journalctl) 
-K   | [`kill`](#kill) 
+K   | [`kill`](#kill) [`kubeadm`](../devops/k8s.md#kubeadm) [`kubectl`](../devops/k8s.md#kubectl)
 L   | [`last`](#last) [`ldapadd`](#ldapadd) [`ldconfig`](#ldconfig) [`ldd`](#ldd) [`less`](#less) [`let`](#let) [`link`](#link) [`locale`](#locale) [`localectl`](#localectl) [`logout`](#logout) [`lp`](#lp) [`lpadmin`](#lpadmin) [`lpstat`](#lpstat) [`ls`](#ls) [`lsblk`](#lsblk) [`lsmod`](#lsmod) [`lsof`](#lsof) [`lspci`](#lspci) [`lsusb`](#lsusb) [`lvcreate`](#lvcreate) [`lvdisplay`](#lvdisplay) [`lvremove`](#lvremove) [`lvresize`](#lvresize) 
 M   | [`mail`](#mail) [`mailq`](#mailq) [`mailstats`](#mailstats) [`make`](#make) [`makemap`](#makemap) [`mdadm`](#mdadm) [`mhwd`](#mhwd) [`mhwd-chroot`](#mhwd-chroot) [`mkdir`](#mkdir) [`mke2fs`](#mke2fs) [`mkfontscale`](#mkfontscale) [`mkfs`](#mkfs) [`mkswap`](#mkswap) [`mktemp`](#mktemp) [`modinfo`](#modinfo) [`modprobe`](#modprobe) [`mongod`](#mongod) [`mount`](#mount) [`mt`](#mt) 
 N   | [`nc`](#nc) [`netplan`](#netplan) [`netstat`](#netstat) [`NetworkManager`](#NetworkManager) [`newaliases`](#newaliases) [`nice`](#nice) [`nl`](#nl) [`nmap`](#nmap) [`nmblookup`](#nmblookup) [`nmcli`](#nmcli) [`nohup`](#nohup) [`nslookup`](#nslookup) [`ntpdate`](#ntpdate) 
@@ -1207,7 +1208,18 @@ Successor to `traceroute`, allowing the user to test connectivity along the path
 ### traceroute
 Provides much more information than `tracepath`, even though it's older [[lxa-lpic](../sources/lxa-lpic.md)]
 ### uname
-#### Check kernel version (uname)
+
+Option  | Effect
+:---    | :---
+`-a`                                                | display all information
+`-s`                                                | display the kernel name
+`-n`                                                | display the network node (i.e. host name)
+`-v`                                                | display version (date) of the kernel
+`-m`                                                | display the machine hardware name
+`-p`                                                | display the processor type
+`-o`                                                | display operating system
+
+Check kernel version
 ```bash
 uname -srm
 ```

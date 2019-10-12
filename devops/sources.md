@@ -38,3 +38,4 @@
 37. "Launch single node [Kubernetes](k8s.md) cluster". [Katacoda](https://www.katacoda.com/courses/kubernetes/launch-single-node-cluster). 
 38. "Getting started with `kubeadm`". [Katacoda](https://www.katacoda.com/courses/kubernetes/getting-started-with-kubeadm).
 39. "What is DevOps? An intersection of culture, processes, and tools". [DZone](https://dzone.com/articles/what-is-devops-an-intersection-of-culture-processe?utm_medium=feed&utm_source=feedpress.me&utm_campaign=Feed:%20dzone): 2019/10/10.
+40. "A quick tour". [TGIK 1](../sources/README.md#tgik-1)

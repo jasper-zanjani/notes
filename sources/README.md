@@ -114,13 +114,18 @@ Containers are how applications are going to be deployed for the next 5 to 10 ye
 #### CR 325
 [Notes](https://coder.show/325): 2018/09/07.
 - Wes Payne is a big fan of Clojure, in particular with the professionalism of the clojure community. Clojure is not as closely tied to Java as it was in its inception when it was a "JAR", but it still needs a JVM.
+
 ### DevOps and Docker
 [Web](https://podcast.bretfisher.com/)
 
 \#          | Title     | Links
 :---        | :---      | :---
+\-          | K8s setup, GitOps, and more! | [Notes](#dd-gitops) [Web](https://podcast.bretfisher.com/episodes/k8s-setup-gitops-and-more)
 \-          | Alpine Linux  | [Notes](#dd-alpine) [Web](https://podcast.bretfisher.com/episodes/alpine-linux-as-a-base-image-is-it-really-secure)
 \-          | Learning Kubernetes | [Notes](#dd-learning-k8s) [Web](https://podcast.bretfisher.com/episodes/learning-kubernetes-with-jerome-petazzoni)
+
+#### DD GitOps
+DevOps is essentially about making software development faster. GitOps is a **style** of doing DevOps where the git protocol is used to log changes to infrastructure, which is stored as YAML or other automation scripts. 
 #### DD Alpine
 Alpine may have an undeserved reputation for security, since it is tricky to scan containers running it.
 #### DD Learning K8S
@@ -319,6 +324,11 @@ Netlify will watch changes to a GitHub repo as a continuous delivery platform fo
 - Google Quantum Supremacy
 
 ### TGI Kubernetes
+\#  | Title     | Links
+:---| :---      | :---
+1   | A Quick Tour | [Notes](tgik-01.md) [YouTube](https://youtu.be/9YYeE-bMWv8)
+91  | kpack     | [Notes](#tgik-91) [YouTube](https://youtu.be/4zkRX9PSJ5k)
+
 #### TGIK 91
 **Endpoint Slices** are a new feature in K8S 1.16 which provide a scalable and extensible alternative to Endpoints resources.\
 **kpack** is a K8S-native system for using **Buildpacks**: a structured, opinionated method of building container images. Buildpacks were first conceived by Heroku in 2011, and since then they have been adopted by Cloud Foundry and other PaaS (GitLab, Knative, Deis, Dokku, and Drie). kpack is a less opinionated alternative to Buildpack assocaited with Pivotal.\
