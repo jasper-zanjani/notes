@@ -9,6 +9,7 @@ Before the popularization of containers, **application servers** provided **non-
 At the time, Google had been trying to engage the Linux kernel team and trying to overcome their skepticism. Internally, the project was framed as offering "Borg as a Service", although there were concerns that Google was in danger of revealing too much of its secret sauce.
 
 ## Concepts
+**Kubernetes API objects** are used to describe a cluster's **desired state**. This makes programming Kubernetes **declarative** rather than **imperative**. 
 
 #### Design principles
 1. Kubernetes APIs are **declarative** rather than **imperative**, that is they describe a desired state.
@@ -29,11 +30,13 @@ At the time, Google had been trying to engage the Linux kernel team and trying t
 - SUSE Container as a Service Platform
 - Telekube
 
-#### Master server components
-- etcd
+#### Kubernetes Master
+Collection of 3 processes that run on a single node in the cluster, which is then designated the **master node** [[42](sources.md)]
 - kube-apiserver
 - kube-controller-manager
 - kube-scheduler
+
+- etcd
 - cloud-controller-manager
 
 #### Kubernetes Master
@@ -48,49 +51,16 @@ Worker nodes are called **nodes**, and each node runs 2 processes [[35](sources.
 - **Kubelet**
 - **Kube-proxy**
 
-## Tasks
-Launch a single-node Kubernetes cluster [[37](sources.md)]
-```sh
-kubectl cluster-info
-kubectl get nodes
-kubectl create deployment first-deployment --image=katacoda/docker-http-server
-kubectl get pods
-kubectl expose deployment first-deployment --port=80 --type=NodePort
-export PORT=$(kubectl get svc first-deployment -o go-template='{{range.spec.ports}}{{if .nodePort}}{{.nodePort}}{{"\n"}}{{end}}{{end}}')
-echo "Accessing host01:$PORT"
-curl host01:$PORT
-minikube addons enable dashboard
-kubectl apply -f /opt/kubernetes-dashboard.yaml
-kubectl get pods -n kube-system -w
-```
-Launch a multi-node Kubernetes cluster with kubeadm [[38](sources.md)]
-```sh
-# on master
-kubeadm init --token=102952.1a7dd4cc8d1f4cc5 --kubernetes-version $(kubeadm version -o short)
-sudo cp /etc/kubernetes/admin.conf $HOME/
-sudo chown $(id -u):$(id -g) $HOME/admin.conf
-export KUBECONFIG=$HOME/admin.conf
-kubectl apply -f /opt/weave-kube
-kubectl get pod -n kube-systemo
-kubeadm token list
-
-# on node
-kubeadm join --discovery-token-unsafe-skip-ca-verification --token=102952.1a7dd4cc8d1f4cc5 172.17.0.20:6443
-
-# on master
-kubectl create deployment http --image=katacoda/docker-http-server:latest
-kubectl get pods
-kubectl apply -f dashboard.yaml
-```
-
 ## Syntax
 ### kubeadm
+
 ### kubectl
 Command groups  | Links
 :---            | :---
 `cluster-info`
 `create`          | [Docs](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#create) [Notes](#kubectl-create)
 `delete`          | [Docs](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#delete) [Notes](#kubectl-delete)
+`describe`        | [Docs](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#describe) 
 `edit`
 `expose`          | [Docs](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#expose) [Notes](#kubectl-expose)
 `get`             | [Docs](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#get) [Notes](#kubectl-get)
@@ -120,6 +90,14 @@ delete pod kuard
 ```
 
 
+#### kubectl describe
+[[41](sources.md)]
+```sh
+kubectl describe deployment http
+kubectl describe svc http
+```
+
+
 #### kubectl edit
 Open an editor to modify deployment `kuard` [[40](sources.md)]
 ```sh
@@ -128,9 +106,10 @@ kubectl edit deployment kuard
 
 
 #### kubectl expose
-Create a service from `kuard` deployment [[40](sources.md)]
+Create a load-balancing service from an existing deployment. `target-port` refers to the ports on deployed pods, while `port` refers to the external facing port of the cluster.  [[40, 41](sources.md)]
 ```sh
 kubectl expose deployment kuard --type=LoadBalancer --port=80 --target-port=8080
+kubectl expose deployment http --external-ip="172.17.0.15" --port=8000 --target-port=80
 ```
 
 
@@ -141,6 +120,7 @@ kubectl get nodes
 ```
 View status of deployments
 ```sh
+kubectl get deployments
 kubectl get pods
 kubectl get pods --namespace=kube-system # background processes necessary for Kubernetes itself
 ```
@@ -152,7 +132,11 @@ kubectl get service kuard -o wide
 
 #### kubectl run
 ```sh
+kubectl run --image=$IMGURL:$VERSION
 kubectl run --generator=run-pod/v1 --image=gcr.io/kuar-demo/kuard-amd64:1 kuard
 kubectl run --image=gcr.io/kuar-demo/kuard-amd64:1 kuard --replicas=5 
+kubectl run http --image=katacoda/docker-http-server:latest --replicas=1
+kubectl run httpexposed --image=katacoda/docker-http-server:latest --replicas=1 --port=80 --hostport=8001
 ```
+
 

@@ -32,7 +32,7 @@ Fnproject                   | FaaS framework for Kubernetes, written in Go [Web]
 Funktion                    | FaaS framework for Kubernetes, now sandboxed [GitHub](https://github.com/funktionio/funktion)
 general-purpose language (GPL) | 
 Gimbal                      | ingress controller based on Envoy to solve Northwest problems [[K8S 12](../sources/README.md#k8s-12)]
-GitOps                      | managing Kubernetes through YAML files that are updated through version control systems like Git [[30](sources.md)]
+GitOps                      | a style of doing DevOps where the git protocol is used to log changes to infrastructure, which is stored as YAML or other automation scripts. [[30, 43](sources.md)]
 Grafana                     | visualization tool [[31](sources.md)]
 Graphite                    | push-based metrics aggregation tool [[31](sources.md)]
 Helium                      | Windows container with a virtualized filesystem and registry

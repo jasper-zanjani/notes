@@ -11,13 +11,11 @@ Features like self-healing, scalability, resource monitoring, automatic DNS mana
 ## Culture
 > "DevOps is not at all about getting code to production, but rather getting ideas into production and failing quick." [[39](sources.md)]
 
-DevOps culture is centered around collaboration and small multidisciplinary teams that bridge traditional gaps between infrastructure and software development personnel. Teams focus on competencies instead of rules and continuous learning. [[39](sources.md)]
-
-## Patterns
-DevOps involves 3 main patterns:
-1. Systems thinking: performance of the whole system is more important than the importance of a specific department
-2. Shift-left feedback loop: integration of automated testing into every development and operations activity
-3. Systematic experimentation: fail-fast mentality
+DevOps culture is centered around collaboration and small multidisciplinary teams that bridge traditional gaps between infrastructure and software development personnel. Teams focus on competencies instead of rules and continuous learning. DevOps principles are oriented to business outcomes. [[39](sources.md)]\
+DevOps involves 3 main patterns, called the "Three Ways" of DevOps:
+1. **Systems thinking**: visualized as flow from left to right as of an idea to production. Managing this flow is referred to as **global optimization** or **bottleneck reduction**. This perspective emphasizes that the performance of the whole system is more important than the importance of a specific department
+2. **Amplifying feedback loops**: visualized as flow from right to left, enhancement and shortening of feedback loops such that corrections are made fast and continuously. 
+3. **Continuous learning**: analogous to the culture of *kaizen* in Toyota, which inspired the Lean software development methodology and by extension the practice of DevOps. Organizations should be brave enough to continuously experiment and bring about new innovations.
 
 ## Tools
 Traditionally, developers had incentives that were not aligned with those of operations who were to use the software. DevOps attempts to fuse development and operations, with the goal of aligning development with revenue generation.
