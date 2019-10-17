@@ -16,5 +16,6 @@ DHCP process [[1](#sources): 74-75]
 ## Glossary
 administrative distance (AD) | indicates a routing protocol's trustworthiness
 Enhanced Interiot Gateway Routing Protocol (EIGRP) | 
+H.323  | ITU-T standard that addresses call, multimedia, and bandwidth control for voice and videoconferencing
 ## Sources
 1. "Exam Cram: CompTIA Network+ N10-007". Dulaney, Emmett.
