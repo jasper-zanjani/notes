@@ -145,6 +145,7 @@ AWS Professional Services           | organization made up of a global team of e
 AWS Shared Responsibility model     | overall security model followed by AWS; this model divides the client responsibilities from those of Amazon [21](../sources/clf-c01.md
 Basic support plan                  | AWS support plan that is included free of charge for every account [21](../sources/clf-c01.md
 Business support plan               | third tier of 4 support plan tiers; features a response time to your issues of 1 hour [21](../sources/clf-c01.md
+Cisco Meraki                        | company that produces infrastructure equipment like cloud-managed switches, cameras, wireless access points, etc
 ClassicLink                         | allows the linking of EC2-Classic instances to a VPC in your account [21](../sources/clf-c01.md
 Classless Inter-Domain Domain Routing | style of describing IP address ranges where a slash followed by a number follows the IP address (i.e. `10.0.0.0/8`) describes what portion of an IP address is variable and what portion describes the host [[A](#sources): 280]
 Cloud Services Platform             | Google hybrid cloud software, comprising a set of software and services that work both on-premises and in GCP and are managed by GCP [K8S 13](#../sources/README.md#k8s-13)
