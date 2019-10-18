@@ -10,6 +10,7 @@ Richard Campbell | [Twitter](https://twitter.com/richcampbell) | [RAR](sources/R
 Jason Cannon | | Author: [CLKF](clkf.md) [LALOS](lalos.md) [LSSP](lssp.md)
 Chris Chapman | | [K8S 67](sources/README.md#k8s-67) 
 Alister Christman | [Twitter](https://twitter.com/mralc)| Host: [AAP](sources/README.md#abbreviations) 
+Bram Cohen  | | Inventor of [BitTorrent](README.md#bittorrent)
 Michael Domenick | [Twitter](https://twitter.com/dominucco)| Host: [CR](sources/README.md#abbreviations)  
 Simon Elisha | [Twitter](https://twitter.com/intent/user?screen_name=simon_elisha) | Host: [AWS](sources/README.md#abbreviations) 
 Bret Fisher | [Email](bret@bretfisher.com) [Twitter](https://twitter.com/BretFisher) [Facebook](https://www.facebook.com/bretfisher.devops) [YouTube](https://www.youtube.com/channel/UC0NErq0RhP51iXx64ZmyVfg) | Host: [DD](sources/README.md#devops-and-docker)
