@@ -8,9 +8,11 @@
 4. **Fill** markdown with syntax, producing a true reference of the source's syntax
 5. **Map** each form-based feature (e.g. commands) to tasks in a spreadsheet (Command | Task). Once organized by command, the resulting associations can form another table of content which associates form features to tasks. These should be placed in another single-cell cloud where each token is followed by links to the tasks in which it appears. The tokens should be organized, either by command group or roughly by domain.
 6. **Index** form-based features at the top of the markdown as a concordance.
+
 ## BitTorrent
-Bram Cohen invented BitTorrent protocol in 2001 and wrote the first client in Python. It is a peer-to-peer file sharing protocol where those who share a file are called **seeders** and those who download are called **peers**. All seeders and peers related to a particular torrent comprise the **swarm**. The **tracker server** or **tracker** serves as a repository for information about peers associated with the same file. Files are downloaded in hashed pieces from multiple seeders to distribute the burden of seeding a file. [[6](#sources)]\
+Bram Cohen invented BitTorrent protocol in 2001 and wrote the first client in Python. It is a peer-to-peer file sharing protocol where those who share a file are called **seeders** and those who download are called **peers**. All seeders and peers related to a particular torrent comprise the **swarm**. The **tracker server** or **tracker** serves as a repository for information about peers associated with the same file. Files are downloaded in hashed pieces from multiple seeders to distribute the burden of seeding a file. [[4](#sources)]\
 A **Torrent Descriptor** file is a hashmap file
+
 Torrent Descriptor property | Description
 :---                        | :---
 Announce                    | URL of the tracker
@@ -36,11 +38,6 @@ Pieces                      | list of SHA-1 160-bit hashes calculated on various
   "Pieces": [AAF4C61DDCC5E8A2DABEDE0F3B482CD9AEA9434D, CFEA2496442C091FDDD1BA215D62A69EC34E94D0]
 }
 ```
-
-## Blockchain
-Blockchain is a **distributed digital ledger** consisting of interlinked blocks, each of which stores information that cannot be retroactively tampered with or deleted.[[8](#sources)]\
-Blockchain is a database technology that uses hashes to ensure reliability and security of data stored across a network of computers, popularized by BitCoin. Records, containing information, are validated and then added to **Blocks**, or hashed containers, which are then concatenated in a **chain** by associating each block with the hash of both of its neighbors. [[3](#sources)]\
-There can only be a a maximum of 21 million BTC, and the reward for mining a new bitcoin halves every 210,000 blocks. This has already occurred twice in the 10-year history of Bitcoin until late 2019, and another "blockhalving" is expected to occur in May 2020. [[9](#sources)]
 
 ## Bootloaders
 bootloader: software located in the first sector (Master Boot Record) of a HDD, which is read by the BIOS
@@ -89,24 +86,15 @@ bot = TwitchBot.new
 bot.write_to_chat "Hello world"
 ```
 
-## Cryptocurrency
-The establishment of the ERC-20 protocol allows new tokens to launch on Ethereum's blockchain. This resulted in an explosion of new cryptocurrencies in 2017. Since then, investors have switched focus to tokens that are exchanged on creditable exchanges. **Initial Exchange Offerings (IEO)** have become popular.\
-**Crypto tokens** form one of the two categories of cryptocurrency and represent  a tradable asset or utility that is found on a blockchain. Cryptocurrency is a standard currency used for the sole purpose of making or receivng payments on the blockchain. Crypto tokens represent an underlying asset, customer loyalty points for example. [[11](#sources)]
  
 
 ## VMware
-Hypervisor, similar to Hyper-V, but provided at a cost, with a robust command-line interface via PowerShell.[[5](#sources)]
+Hypervisor, similar to Hyper-V, but provided at a cost, with a robust command-line interface via PowerShell. [[3](#sources)]
 
 ## Sources
 1. "Custom bot using Ruby". [Web](https://www.youtube.com/watch?v=rVVhkX1uTRQ).
 2. "How to make a Discord bot in Python". [Web](https://realpython.com/how-to-make-a-discord-bot-python/): 2019/08/19.
-3. "Blockchain explained". [Web](https://graphics.reuters.com/TECHNOLOGY-BLOCKCHAIN/010070P11GN/index.html?source=post_page---------------------------).
-4. "How to become a DevOps engineer in six months or less". [Web](https://medium.com/@devfire/how-to-become-a-devops-engineer-in-six-months-or-less-366097df7737)
-5. "VMware PowerCLI 101". [Web](https://www.brianbunke.com/blog/2019/09/03/powercli-101/): 2019/09/03.
-6. "How Does BitTorrent Work? a Plain English Guide". [Web](https://app.getpocket.com/read/2717933967)
-7. "Storage in a DevOps World". [GitHub](sources/README.md/#new-stack-makers)
-8. "Chain reaction: what will the next decade of [blockchain](#blockchain) look like?" [Hacker Noon](https://hackernoon.com/chain-reaction-what-will-the-next-decade-of-blockchain-look-like-fl2fd32r8?source=rss): 2019/10/03.
-9. "A history of [blockhalving](#blockchain), and what to expect in 2020. [Hacker Noon](https://hackernoon.com/a-history-of-blockhalving-and-what-to-expect-in-2020-1s3q30cn?source=rss): 2019/10/03.
-10. "New ways to launch a token". [Hacker Noon](https://hackernoon.com/new-ways-to-launch-a-token-vz15321a?source=rss): 2019/10/10.
-11. "Defining crypto tokens". [Investopedia](https://www.investopedia.com/terms/c/crypto-token.asp): 2018/04/03.
+3. "VMware PowerCLI 101". [Web](https://www.brianbunke.com/blog/2019/09/03/powercli-101/): 2019/09/03.
+4. "How Does BitTorrent Work? a Plain English Guide". [Web](https://app.getpocket.com/read/2717933967)
+5. "Storage in a DevOps World". [GitHub](sources/README.md/#new-stack-makers)
 
