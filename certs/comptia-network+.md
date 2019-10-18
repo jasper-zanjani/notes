@@ -44,11 +44,19 @@ SNMP commands can be sent from the manager to agents, including `Get`, `Get Next
 **Management Information Bases (MIBs)** are databases that define what parameters are accessible, read-only, and writable. Creation of MIBs is governed by ISO, which assigns every organization an ID number which is then associated with the MIBs it creates. These numbers are assigned in a model called the **hierarchical name tree**. [[1](#sources): 56]\
 SNMP **communities** are logical groupings of systems within which devices only communicate with one another and only accept SNMP commands from a manager with the correct community name. There are typically two communities configured by default: public (read-only) and private (read-write). [[1](#sources): 56]
 
+## Network services
+Network services provide functionality enabling the network to operate
+#### DNS 
+DNS operates in the **DNS namespace**, which has logical divisions that are **hierarchically organized** into top-level or country domains, sub- or secon-dlevel domains, and then further subdomains. The **fully qualified domain name (FQDN)** contains the top-level domain, domain, and subdomains (if any) of a host. [[1](#sources): 68]\
+**Pointer (PTR)** records are used for **reverse lookup**, that is resolving IP address to hostnames. [[1](#sources): 69]
+
 ## Glossary
 Term                                      | Definition
 :---                                      | :---
 Address Resolution Protocol (ARP)         | defined in **RFC 826**, responsible for resolving IP addresses to MAC addresses [[more...](#arp)]
 administrative distance (AD)              | indicates a routing protocol's trustworthiness
+Domain Name Service (DNS)                 | network service that resolves hostnames to IP addresses
+Dynamic DNS (DDNS)                        | newer system that enables hosts to be dynamically registered with the DNS server [[1](#sources): 67]
 Enhanced Interior Gateway Routing Protocol (EIGRP) | 
 File Transfer Protocol (FTP)              | defined in **RFC 959**, protocol for uploading and downloading files [[1](#sources): 45]
 H.323                                     | ITU-T standard that addresses call, multimedia, and bandwidth control for voice and videoconferencing [[1](#sources): 53]
