@@ -3,7 +3,7 @@ Certification                                     | Current information
 :---                                              | :---
 CompTIA Cloud+                                    | [CV0-002](https://certification.comptia.org/certifications/cloud)
 [CompTIA Linux+](#comptia-linux)                  | [XK0-004](https://certification.comptia.org/certifications/linux) [Objectives](https://certification.comptia.org/docs/default-source/exam-objectives/comptia-linux-xk0-004-exam-objectives.pdf)
-[CompTIA Network+](#comptia-network)              | [ N10-007 ](https://www.comptia.org/certifications/network) [ Objectives ](https://certification.comptia.org/docs/default-source/exam-objectives/comptia-network-n10-007-v-3-0-exam-objectives.pdf)
+[CompTIA Network+](#comptia-network)              | [ N10-007 ](https://www.comptia.org/certifications/network) [ Objectives ](https://certification.comptia.org/docs/default-source/exam-objectives/comptia-network-n10-007-v-3-0-exam-objectives.pdf) [Notes](net+.md)
 [CompTIA Security+](#comptia-security)            | SY0-501
 CompTIA Server+                                   | [SK0-004](https://certification.comptia.org/certifications/server)
 [Cisco CCENT](#cisco-ccna)                        | 100-105
@@ -25,6 +25,7 @@ Comparison of exam topics in LX0-103/4 and XK0-004
 :---
 **Added**: Security Kernel modules Storage and virtualization Device management at enterprise level Git and automation Networking and firewalls Serverside and command-line Servers Troubleshooting SELinux
 **Removed**: X 11 Mail SQL Printing End-user support GNU Privacy Guard
+
 ## CompTIA Network+
 Exam
 :---
