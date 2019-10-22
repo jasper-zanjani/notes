@@ -6,7 +6,8 @@ A-Z     | [Container runtimes](#container-runtimes) [Culture](#culture) [Docker]
 > DevOps is a way to deliver software with shared pain and responsibility.
 
 The term "DevOps" began to gain currency in 2009-2010, before the emergence of containers. DevOps was a necessary response in infrastructure to the quickening pace of software development that emerged after the emergence of the Agile manifesto. [[39](sources.md)]\
-Features like self-healing, scalability, resource monitoring, automatic DNS management, etc have since become built-in to Kubernetes. [[7](sources.md)]
+Features like self-healing, scalability, resource monitoring, automatic DNS management, etc have since become built-in to Kubernetes. [[7](sources.md)]\
+DevOps provides the cultural and tooling advantage a company needs in order to deliver software more quickly. [[44](sources.md)]
 
 ## Culture
 > "DevOps is not at all about getting code to production, but rather getting ideas into production and failing quick." [[39](sources.md)]
@@ -35,6 +36,8 @@ Once you have learned the Foundational Layer, learn Real-world skills [[4](sourc
 - **Monitor**: ELK Stack (progressing to Prometheus)
 
 ## DevOps tools
+Most DevOps practices can be applied via effective tooling. Various software stacks can be composed together from modular components that have emerged as both open-source and commercial products.\
+
 Types of observability tools [[31](sources.md)]
 - **Metrics aggregation**: time-ordered data collected at a consistent interval, allowing advanced calculations and predictive analytics to be applied
 - **Log aggregation**: 

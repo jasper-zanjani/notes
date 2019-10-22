@@ -42,3 +42,4 @@
 41. "Start containers using [`kubectl`](../devops/k8s.md#kubectl)". [Katacoda](../sources/katacoda.md#start-containers-using-kubectl)
 42. "Concepts". [Kubernetes](https://kubernetes.io/docs/concepts/).
 43. "K8s setup, GitOps, and more!". [DD](../sources/README.md#dd-gitops)
+44. "DevSecOps explained in 5 minutes". [DZone](https://dzone.com/articles/devsecops-explained-in-5-minutes?utm_medium=feed&utm_source=feedpress.me&utm_campaign=Feed:%20dzone).

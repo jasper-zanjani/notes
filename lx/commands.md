@@ -1057,19 +1057,31 @@ Man page indicates this flag is no longer supported, and recommends use of `dd` 
 sfdisk /dev/hdd -I hdd-partition-sectors.save
 ```
 ### shuf
-#### Shuffle items separated by a space
+
+Option  | Effect
+:---    | :---
+`-e`    | shuffle items separated by a space
+
+
+Shuffle items separated by a space [[10](README.md#sources)]
 ```sh
 shuf -e one two three
 ```
-[[10](README.md#sources)]
-#### Shuffle items separated by newline 
+Shuffle items separated by newline [[10](README.md#sources)]
 ```sh
 shuf -n 1 cards.txt
 ```
-[[10](README.md#sources)]
+
 ### sort
-#### Sort by space-delimited columns
-Processes consuming the most memory will be at the bottom [[23](README.md#sources)]
+
+Option  | Effect
+:---    | :---
+`-k $N` | sort by column number `$N`
+`-r`    | reverse sort order
+`-t $X` | set delimiter to character `$X`
+
+
+Sort by space-delimited columns. Processes consuming the most memory will be at the bottom [[23](README.md#sources)]
 ```sh
 ps aux | sort -nk 4
 ```
@@ -1077,6 +1089,7 @@ Processes consuming the most CPU will be at the bottom
 ```sh
 ps aux | sort -nk 3
 ```
+
 ### ssmtp
 Installable client program [[25](README.md#sources)]
 
@@ -3133,19 +3146,7 @@ snap refresh
 ```sh
 snap remove package
 ```
-### sort
-#### Sort by column number {n}
-```sh
-sort -k n
-```
-#### Reverse sort order
-```sh
-sort -r
-```
-#### Set delimiter to character {x}
-```sh
-sort -t x
-```
+
 ### source
 #### Execute commands from a file in the current shell
 ```sh

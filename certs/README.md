@@ -3,7 +3,7 @@ Certification                                     | Current information
 :---                                              | :---
 CompTIA Cloud+                                    | [CV0-002](https://certification.comptia.org/certifications/cloud)
 [CompTIA Linux+](#comptia-linux)                  | [XK0-004](https://certification.comptia.org/certifications/linux) [Objectives](https://certification.comptia.org/docs/default-source/exam-objectives/comptia-linux-xk0-004-exam-objectives.pdf)
-[CompTIA Network+](#comptia-network)              | N10-007
+[CompTIA Network+](#comptia-network)              | [ N10-007 ](https://www.comptia.org/certifications/network) [ Objectives ](https://certification.comptia.org/docs/default-source/exam-objectives/comptia-network-n10-007-v-3-0-exam-objectives.pdf)
 [CompTIA Security+](#comptia-security)            | SY0-501
 CompTIA Server+                                   | [SK0-004](https://certification.comptia.org/certifications/server)
 [Cisco CCENT](#cisco-ccna)                        | 100-105

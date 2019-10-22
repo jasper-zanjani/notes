@@ -8,7 +8,7 @@ Table of contents
 
 Topic                           | Contents
 :---                            | :---
-Desktop environments            | [KDE](kde.md) [i3](i3.md)
+Desktop environments            | [GNOME](gnome.md) [KDE](kde.md) [i3](i3.md)
 Distros                         | [Arch Linux](distributions.md#arch-linux) [BSD](distributions.md#bsd) [Clear Linux](distributions.md#clear-linux) [Fedora CoreOS](#distributions.md#fedora-coreos) [Kali Linux](distributions.md#kali-linux) [Mac OS X](macosx.md)
 Others                          | [X](X.md)
 
