@@ -1,12 +1,10 @@
 # CompTIA Network+
 
-Type | Commands
-:--- | :---
-Linux | [`arp`](#arp)
-Windows | [`tracert`](#tracert)
+Commands
+:---
+[`arp`](#arp-command) `dig`  `ifconfig` `ipconfig` `iptables` `netstat` `nmap` `nslookup` `pathping` `ping` `route` `tcpdump` `traceroute` Windows: [`tracert`](#tracert)
 
-IEEE speccifications
-
+#### IEEE speccifications
 Term    | Description
 :---    | :---
 802.1q  | Trunking
@@ -14,13 +12,11 @@ Term    | Description
 802.3at | PoE+
 802.11  | Wi-Fi
 
-
-Exam objectives
-
+#### Exam objectives 
 \#    | Title | Description
 :---  | :---  | :---
 1.0 | Networking concepts
-1.1 | Explain the purposes and uses of ports and protocols | [**DHCP**](#dhcp) [**DNS**](#dns) FTP H.323 HTTP HTTPS [**ICMP**](#icmp) IMAP [**IP**](#ip) [**LDAP**](#ldap) [**LDAPS**](#ldaps) NTP POP RDDP SFTP SIP SMB SMTP SNMP SSH TCP TELNET TFTP UDP
+1.1 | Ports and protocols | [**DHCP**](#dhcp) [**DNS**](#dns) FTP H.323 HTTP HTTPS [**ICMP**](#icmp) IMAP [**IP**](#ip) [**LDAP**](#ldap) [**LDAPS**](#ldaps) NTP POP RDDP SFTP SIP SMB SMTP SNMP SSH TCP TELNET TFTP UDP
 1.2 | Explain devices, applications, protocols and services at their appropriate OSI layers | 
 1.3 | Explain the concepts and characteristics of routing and switching | **Properties of network traffic** <br/>Broadcast domains, CSMA/CD, CSMA/CA, Collision domains, Protocol data units, MTU, Broadcast, Multicast, Unicast <br/>**Segmentation and interface properties**<br/> VLANs, Trunking, Tagging and untagging ports, Port mirroring, Switching loops/spanning tree, PoE and PoE+, DMZ, MAC address table, ARP table<br/>**Routing**<br/> RIP, EIGRP, OSPF, BGP, Routing types<br/>**IPv6 concepts**<br/> Addressing, Tunneling, Dual stack, Router advertisement, Neighbor discovery<br/>**Performance concepts**<br/> Traffic shaping, QoS, Diffserv, CoS <br/>**Other topics**<br/> NAT, PAT, Port forwarding, Access control list, Distributed switching, Packet-switched network, Circuit-switched network, Software-defined networking
 1.4 | Given a scenario, configure the appropriate IP addressing components | **Subnetting** Classful, Classless, VLSM, CIDR<br/>**Address assignments** DHCP, DHCPv6, Static, APIPA, EUI64, IP reservations
@@ -49,7 +45,7 @@ Exam objectives
 4.6 | Explain common mitigation techniques and their purposes
 5.0 | Network troubleshooting and tools
 5.1 | Explain the network troubleshooting methodology
-5.2 | Given a scenario, use the appropriate tool | **Hardware tools** Crimper, Cable tester, Punchdown tool, OTDR, Light meter, Tone generator, Loopback adapter, Multimeter, Spectrum analyzer<br/>**Software tools** Packet sniffer, Port scanner, Protocol analyzer, WiFi analyzer, Bandwidth speed tester<br/>**Command-line utilities** `ping`, `tracert`, `traceroute`, `nslookup`, `ipconfig`, `ifconfig`, `iptables`, `netstats`, `tcpdump`, `pathping`, `nmap`, `route`, `arp`, `dig`
+5.2 | Given a scenario, use the appropriate tool | **Hardware tools** Crimper, Cable tester, Punchdown tool, OTDR, Light meter, Tone generator, Loopback adapter, Multimeter, Spectrum analyzer<br/>**Software tools** Packet sniffer, Port scanner, Protocol analyzer, WiFi analyzer, Bandwidth speed tester<br/>**Command-line utilities** 
 5.3 | Given a scenario, troubleshoot common wired connectivity and performance issues | Attenuation, Latency, Jitter, Crosstalk, EMI, Open/short, Incorrect pin-out, Incorrect cable type, Bad port, Transceiver mismatch, TX/RX reverse, Duplex/speed mismatch, Damaged cables, Bent pins, Bottlenecks, VLAN mismatch, Network connection LED status indicator
 5.4 | Given a scenario, troubleshoot common wireless connectivity and performance issues | Reflection, Refraction, Absorption, LAtency, Jitter, Attenuation, Incorrect antenna type, Interference, Incorrect antenna placement, Channel overlap, Overcapacity, Distance limitations, Frequency mismatch, Wrong SSID, Wrong passphrase, Security type mismatch, Power levels, Signal-to-noise ratio
 5.5 | Given a scenario, troubleshoot common network service issues | Names not resolving, Incorrect gateway, Incorrect netmask, Duplicate IP addresses, Duplicate MAC addresses, Expired IP address, Rogue DHCP server, Untrusted SSL certificate, Incorrect time, Exhausted DHCP scope, Blocked TCP/UDP ports, Incorrect host-based firewall settings, Incorrect ACL settings, Unresponsive service, Hardware failure
@@ -102,16 +98,18 @@ Switching methods:
 - **Circuit switching**: requires a dedicated physical connection between sending and receiving devices
 
 Routing environments:
-- **Dynamic routing**
+- **Dynamic routing**: involves routers communicating known routes to all directly attached routers. Communication between distance-vector routers is known as **hops**: each router represents one hop. There are **two** types of routing protocols used:
+  - **Distance-vector protocols**
+  - **Link-state protocols**: newer option where the router builds a map of the entire network [[1](#sources): 114]
+    - **Open Shortest Path First (OSPF)**: based on the **shortest path first (SPF)** algorithm to find the least-cost path to any network node
+    - **Intermediate System-to-Intermediate System (IS-IS)**: discover shortest path for data to travel using the **SPF** algorithm
+- **Static routing**: manually entered routes
+
+
 
 ## Other protocols
 #### ARP
 A system will first attempt to determine whether it is on the same network as the requested IP. If so, the ARP **cache**, a locally stored table that maps Internet to physical addresses, is consulted to determine the corresponding MAC address entry. If the requested host is not found, a broadcast asks the host with the target IP to send back its MAC address and only the target system will reply. Cache entries can be made dynamically (they will be automatically updated) or statically (added with `arp -s` and removed with `arp -d`). [[1](#sources): 61-62]
-
-Option  | Effect
-:---    | :---
-`-s`    | manually add a static entry to the cache
-`-d`    | delete an entry from the cache
 
 #### DHCP
 DHCP process [[1](#sources): 74-75]
@@ -143,6 +141,34 @@ Network services provide functionality enabling the network to operate
 #### DNS 
 DNS operates in the **DNS namespace**, which has logical divisions that are **hierarchically organized** into top-level or country domains, sub- or secon-dlevel domains, and then further subdomains. The **fully qualified domain name (FQDN)** contains the top-level domain, domain, and subdomains (if any) of a host. [[1](#sources): 68]\
 **Pointer (PTR)** records are used for **reverse lookup**, that is resolving IP address to hostnames. [[1](#sources): 69]
+
+## Commands
+### arp command
+Option  | Effect
+:---    | :---
+`-s`    | manually add a static entry to the cache
+`-d`    | delete an entry from the cache
+
+### route
+[[1](#sources): 107]
+Command | Effect
+:---    | :---
+`add`   | add a static route to a routing table
+
+Option  | Effect
+:---    | :---
+`-p`    | make a route **p**ersistent
+
+Basic syntax:
+```sh
+route add 192.168.2.1 mask (255.255.255.0) 192.168.2.4
+```
+
+### tracert
+On Windows, this command is aliased to `traceroute` which is the Linux command. [[1](#sources): 112]
+Option  | Effect
+:---    | :---
+`-6`    | IPv6, aliased to `traceroute6`
 
 ## Glossary
 Term                                                        | Definition
