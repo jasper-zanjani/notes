@@ -4,15 +4,17 @@
 :---    | :---
 A-E     | [AAP](#admin-admin-podcast) [ADAC](adac.md) [AZ-103](az-103.md) [ADP](#azure-devops-podcast) [AID](#adventures-in-devops) [AWST](#aws-techchat) [BNP](#bash-notes-for-professionals) [BPR](#bash-pocket-reference) [BRM](#bash-reference-manual) [BSD](#bsd-now) [CB](#coding-blocks) [CCP](ccp.md) [CGF](#chengdu-gaming-federation) [CLKF](clkf.md) [CL](#choose-linux) [CR](#coder-radio) [CSFM](#cloudskillsfm) [CSP](csp.md) [DD](#devops-and-docker) 
 F-P     | [FP](#fluent-python) [FPLC](fplc.md) [FPP](#functional-python-programming) [GL](#going-linux) [GCPC](gcpc.md) [HPR](#hacker-public-radio) [IMWS](imws.md) [ITP](#itprotv) [JDG](jdg.md) [JNP](jnp.md) [JSJ](#javascript-jabber) [K8S](#kubernetes-podcast-from-google) [LALOS](lalos.md) [LAN](#linux-action-news) [LJ](#linux-journal) [LNL](#late-night-linux) [LSSP](lssp.md) [LU](#linux-unplugged) [MintCast](#mintcast) [NSM](#new-stack-makers) [PodCTL](#podctl) [PBX](pbx.md) [PGL](pgl.md) 
-R-Z     | [RAR](#runas-radio) [s&a](s-and-a.md) [SY](#syntax) [TP](#talk-python) [TechSNAP](#techsnap) [UE](#user-error) [USLAH](ulsah.md) [WSAC](wsac.md) [WSAF](wsaf.md) [YUG](yug.md)
+R-Z     | [RunAs](#runas-radio) [s&a](s-and-a.md) [SY](#syntax) [TP](#talk-python) [TechSNAP](#techsnap) [UE](#user-error) [USLAH](ulsah.md) [WSAC](wsac.md) [WSAF](wsaf.md) [YUG](yug.md)
 
 ## Notes
 ### Admin Admin Podcast
 [Web](http://www.adminadminpodcast.co.uk/) [Twitter](https://twitter.com/admadmpodcast)
+
 ### Adventures in DevOps
 [Web](https://devchat.tv/adventures-in-devops/)
 #### AID 9
 Nell recommends starting with Digital Ocean's tutorials to learn cloud technologies.
+
 ### AWS Podcast
 [Web](https://aws.amazon.com/podcasts/aws-podcast/) Notes: 
 \#          | Title     | Links
@@ -29,6 +31,7 @@ The historical motivation for the invention of relational databases was minimizi
   - **Ledger**
 
 The recommended approach to select a database is to determine the **access pattern** needed. Organizations should be open to encouraging innovation by using more than one database, rather than overemphasizing reducing the cost of infrastructure by insisting on using a single, monolithic database that may not be suited to every business purpose.
+
 ### AWS TechCHAT
 \#          | Title     | Links
 :---        | :---      | :---
@@ -36,6 +39,7 @@ The recommended approach to select a database is to determine the **access patte
 53          | SysAdmin & Hybrid Cloud Special | [Notes](#awst-53)
 #### AWST 53
 AWS CLI and AWS Tools for PowerShell are available for AWS.
+
 ### Azure DevOps Podcast
 [Web](http://azuredevopspodcast.clear-measure.com/)
 
@@ -255,11 +259,13 @@ Contact     | [Web](http://podcast.podctl.com/) [Twitter](https://www.twitter.co
 **Kargo** builds highly available containers.\
 There are two main types of container engine installers: normal ones that install locally and interactively ask what Linux host is desired, and thne another type that interfaces with an IaaS provider and demands resources from it. The tools typically defined as configuration management tools like Chef, Ansible, Puppet, Salt, and Terraform are also typically used to package containerized software and can perform orchestration. Kargo, for example, uses Terraform to build the nodes and then Ansible to do the actual installation. OpenShift's installer uses Ansible.\
 **Prometheus** has become the go-to open-source monitoring and alerting tool. Other tools include the **ELK stack**, the **EFK stack**, and **Loggly**.
+
 ### RunAs Radio
 [Web](http://www.runasradio.com/) [Twitter](https://twitter.com/RunAsRadio)
 
 \#  | Title     | Links
 :---| :---      | :---
+616 | 2018 Recap with Jeffrey Snover | [Notes](#runas-616) [Web](http://runasradio.com/Shows/Show/534)
 534 | Azure Stack Update with Jeffrey Snover | [Notes](#runas-534) [Web](http://runasradio.com/Shows/Show/534)
 510 | The DevOps Handbook with Gene Kim | [Notes](#runas-510) [Web](http://runasradio.com/Shows/Show/510)
 471 | Just Enough Admin and Windows Server 2016 with Jeffrey Snover | [Notes](#runas-471) [Web](http://runasradio.com/Shows/Show/471)
@@ -267,23 +273,32 @@ There are two main types of container engine installers: normal ones that instal
 455 | Chef, PowerShell, and DSC with Steven Murawski | [Notes](#runas-455) [Web](http://runasradio.com/Shows/Show/455)
 408 | PowerShell Past and Future with Lee Holmes | [Notes](#runas-408) [Web](http://runasradio.com/Shows/Show/408)
 406 | DevOps in 2015 with Gene Kim | [Notes](#runas-406) [Web](http://runasradio.com/Shows/Show/406)
+384 | DSC Update with Jeffrey Snover | [Notes](#runas-384) [Web](http://runasradio.com/Shows/Show/406)
 357 | Talking DevOps with Gene Kim  | [Notes](#runas-357) [Web](http://runasradio.com/Shows/Show/357)
 
+#### RunAs 616
+**Just Enough Admin** ("GEE-ah") breaking things into microservices\
+**Azure Stack** is an appliance. **AWS Outpost** is a new product that competes directly with Azure Stack.
+
 #### RunAs 534
-3 enduring use cases for Azure Stack
+3 enduring use cases for **Azure Stack**
 1. Edge/disconnected: for cases where connectivity is absent or latency is too great for use of the public cloud (i.e. submarines, cruise ships, factory floors)
 2. Compliance and data sovereignty: deploying cloud services in countries where the public cloud has not yet established a Region.
 3. Modernization of apps: to support mainframe applications and progressively update their functionality by implementing the cloud piecemeal ("strangler" design pattern)
+
 #### RunAs 510
 _The DevOps Handbook_ took five years to write and contains 48 concrete case studies highlighting how DevOps practices translate to faster and better software development, happier employees, and a healthier bottom line.\
 While architects used to be ignored by working personnel, now architecture is a top-level leadership concern.\
 Conway's Law dictates that adding more people will result in a more complex product.\
 Richard Campbell is working on something called the "Humanitarian ToolBox"
+
 #### RunAs 471
 > "Really, the DevOps revolution is taking some of the things that we did in the Japanese quality revolution of the 1980s, which is all manufacturing-focused, and we're taking a lot of those principles and applying them to IT." -Jeffrey Snover
+
 #### RunAs 467
 Gene and Robert fawn over Jeffrey Snover, father of PowerShell, and Mark Russinovitch, CTO of Azure.\
 On the topic of the recent DevOps Summit, Gene remarks that the emphasis of the conference has switched from a techhnical to an organization change management focus. He observes that security and management people are now trying to educate themselves on the new philosophy.\
+
 #### RunAs 455
 Chef is an automation platform, not just single-node configuration management.
 #### RunAs 408
@@ -294,10 +309,18 @@ The **administrative development model** prior to PowerShell consisted of 2 phas
 
 The practice used to be that GUI utilities had to have console programs programmed with custom-made expressive languages to support the tool from the command line. PowerShell offers a way to replace these with cmdlets.\
 **OneGet** (now known as the **PackageManagement** module in the PowerShell Gallery) was mentioned in the context of virtualizing Windows Servers.
+
 #### RunAs 406
 Gene Kim recaps 2014 and looks forward to the publication of his book _The DevOps Handbook_.
 > "DevOps is not just for the unicorns, it's for the horses as well." -Gene Kim
 > "If you like solving problems, I cannot think of a better place to be than in a DevOps initiative." -Gene Kim
+
+#### RunAs 384
+CI/CD vs. DevOps: accelerate end to end software delivery process\
+2 subcomponents of the problem: delivering feedback to the developer\
+"Combined CI/CD
+
+
 
 ### Syntax
 [Web](https://syntax.fm/) [Twitter](https://twitter.com/syntaxfm)

@@ -2019,11 +2019,10 @@ gem uninstall package
 ```sh
 gem update package
 ```
+
 ### getfacl
-#### Get access control list for {file}
-```sh
-getfacl file
-```
+Get access control list for {file}
+
 ### gpasswd
 #### Add {user} to {group}
 ```sh
@@ -2273,154 +2272,176 @@ kill --KILL proc
 ```
 ### last
 Display history of successful logins
-#### Load information from an alternate file
+Load information from an alternate file
 ```sh
 last -f file
 last --file file
 ```
-#### Display history of successful logins by {username}
+Display history of successful logins by {username}
 ```sh
 last username
 ```
+
 ### lastb
 Display history of unsuccessful logins
+
 ### ldconfig
-#### Change location of cache to be updated
+Change location of cache to be updated
 ```sh
 ldconfig -C
 ```
-#### Print current directories and libraries in cache
+Print current directories and libraries in cache
 ```sh
 ldconfig -p
 ```
-#### Display all shared libraries
+Display all shared libraries
 ```sh
 ldconfig -v
 ```
+
 ### ldd
-#### Display dependencies of {program}
+Display dependencies of {program}
 ```sh
 ldd program
 ```
+
 ### let
-#### Perform arithmetic as specified by one or more `expressions`
+Perform arithmetic as specified by one or more `expressions`
 ```sh
 let  expressions | ((expressions))
 ```
+
 ### link
-#### Create a link between two files; same as `ln`, but with no error checking
+Create a link between two files; same as `ln`, but with no error checking
 ```sh
 link file1 file2
 ```
+
 ### locale
 Display all environment variables related to localization with their current values
 #### Display all localizations currently supported by the system
 ```sh
 locale -a
 ```
+
 ### logout
-#### Exit a login shell
-```sh
-logout 
-```
+Exit a login shell
+
 ### lp
 Send `files` to the printer; with no arguments, prints stdin
+
 ### lpstat
 Print the `lp` print queue status
+
 ### ls
-#### Display hidden files
+Display hidden files
 ```sh
 ls -a ls --all
 ```
-#### Append indicators to entries
+Append indicators to entries
 ```sh
 ls -F ls --classify
 ```
-#### Display SELinux context for files
+Display SELinux context for files
 ```sh
 ls -Z
 ```
+
 ### lsblk
-Display information about all block devices
-#### Show UUID, Label, and filesystems of non-GPT block devices
+Display information about all block devices\
+Show UUID, Label, and filesystems of non-GPT block devices
 ```sh
 lsblk -f
 ```
+
 ### lsmod
 Display currently loaded modules. Output in three columns:
 1. Module name
 2. Module size (bytes)
 3. Processes, filesystems, or other modules using the module
+
 ### lspci
 Display devices that are attached to the PCI bus
-Option  | POSIX option            | Effect
-:---    | :---                    | :---
-`-k`    |                         | display PCI devices and the drivers being used
-`-n`    |                         | display device numbers rather than names
-`-nn`   |                         | display both device numbers and names (typically stored in [ /usr/share/hwdata/pci.ids ](#configs) or [ /usr/share/hwdata/pci.ids.gz ](#configs))
+
+Option  | Effect
+:---    | :---
+`-k`    | display PCI devices and the drivers being used
+`-n`    | display device numbers rather than names
+`-nn`   | display both device numbers and names (typically stored in [ /usr/share/hwdata/pci.ids ](#configs) or [ /usr/share/hwdata/pci.ids.gz ](#configs))
+
 ### lsusb
 Display devices that are attached to the PCI bus
-Option  | POSIX option            | Effect
-:---    | :---                    | :---
-`-D`    |                         | display {$DEVICE} rather than probing the /dev/bus/usb directory and displaying all devices
-`-t`    |                         | display devices in a tree-like format
+
+Option  | Effect
+:---    | :---
+`-D`    | display {$DEVICE} rather than probing the /dev/bus/usb directory and displaying all devices
+`-t`    | display devices in a tree-like format
+
 ### mailq
 Display the current mail queue on a Postfix server
+
 ### mailstats
 Gather and display statistics about mail processed on a server running [ `sendmail` ](#sendmail)
+
 ### makemap
 Execute after making a change to the [ `sendmail` ](#sendmail) access database [ **/etc/access** ](configs.md)
+
 ### mdadm
 Manage Linux Software RAID devices
-#### Start a stopped RAID array
-```sh
-mdadm --assemble
-```
-#### Set the polling interval ?
-```sh
-mdadm --delay
-```
+
+POSIX option  | Effect
+:---          | :---
+`--assemble`  | Start a stopped RAID array
+`--delay`     | Set the polling interval
+
 ### mhwd
 Manjaro hardware utility
 `sudo mhwd -a pci nonfree 0300` : command was run while troubleshooting black screen on startup 
+
 ### mhwd-chroot
 Chroot into an installed Linux installation from a live boot of a Manjaro Installation Media
+
 ### mkdir
-#### Quickly create multiple directories using brace expansion
+Quickly create multiple directories using brace expansion
 ```sh
 mkdir -p ~/my-app/{bin,lib,log}
 ```
-#### Create new directory {dirname} along with all of the parents in its pathname, if they do not exist
+Create new directory {dirname} along with all of the parents in its pathname, if they do not exist
 ```sh
 mkdir -p dirname
 mkdir --parents dirname
 ```
+
 ### mke2fs
 Create an ext2/3/4 filesystem
+
 ### mkfontscale
 Create a fonts.scale file definition when executed against the current directory
+
 ### mkfs
-#### Create an ext4 filesystem on {partition}
+Create an ext4 filesystem on {partition}
 ```sh
 mkfs -t ext4 partition
 ```
-#### Specify {filesystemtype} to be created
+Specify {filesystemtype} to be created
 ```sh
 mkfs -T filesystemtype
 ```
-#### Make a swap file out of {partition}
+Make a swap file out of {partition}
 ```sh
 mkswap partition
 ```
+
 ### modinfo
-#### Determine options that a given module supports
+Determine options that a given module supports
 ```sh
 modinfo -p
 ```
-#### Show information about a Linux kernel module
+Show information about a Linux kernel module
 ```sh
 modinfo module
 ```
+
 ### modprobe
 Add and remove modules from the Linux kernel
 
@@ -2430,54 +2451,57 @@ Option  | POSIX option            | Effect
 `-R`    | `--resolve-alias`       | display all modules that match an alias
 `-r`    | `--remove`              | remove specified module from memory
 
-#### Remove {$MODULE} from the Linux kernel
+Remove {$MODULE} from the Linux kernel
 ```sh
 modprobe --remove $MODULE
 ```
-#### Show kernel {$MODULE}'s dependencies
+Show kernel {$MODULE}'s dependencies
 ```sh
 modprobe --show-depends $MODULE
 ```
+
 ### mongod
 MongoDB daemon
-#### mongod options
-Option  | POSIX option            | Effect
-:---    | :---                    | :---
-\-      | `--dbpath`              | 
-\-      | `--fork`                |
-\-      | `--logpath`             |
-\-      | `--port`                |
+mongod options
+POSIX option  | Effect
+:---          | :---
+`--dbpath`    | 
+`--fork`      |
+`--logpath`   |
+`--port`      |
 
-#### Run MongoDB service in the background on port 80
+Run MongoDB service in the background on port 80
 ```sh
 mongod --dbpath $HOME/db --port 80 --fork --logpath /var/tmp/mongodb
 ```
-#### Mount all filesystems in fstab
+Mount all filesystems in fstab
 ```sh
 mount -a
 ```
-#### Mount {filesystem} as read-only
+Mount {filesystem} as read-only
 ```sh
 mount -r filesystem
 ```
-#### Specify filesystem type
+Specify filesystem type
 ```sh
 mount -t
 ```
-#### Mount a partition using its UUID
+Mount a partition using its UUID
 ```sh
 mount -U
 ```
-#### Mount {filesystem} as read-write
+Mount {filesystem} as read-write
 ```sh
 mount -w filesystem
 ```
-#### Mount a USB stick that is made available on /dev/sdb in /media/usb
+Mount a USB stick that is made available on /dev/sdb in /media/usb
 ```sh
 mount /dev/sdb1 /media/usb
 ```
+
 ### mt
 Control magnetic tape drive operation; operates on environment variable TAPE
+
 ### netplan
 Ubuntu network configuration tool
 
@@ -2485,14 +2509,17 @@ Config file   | Description
 :---          | :---
 /etc/netplan/ | directory containing various configuration files and scripts
 /etc/nplan/99_config.yaml | netplan config
-#### Apply network configuration settings
+
+Apply network configuration settings
 ```sh
 netplan apply
 ```
+
 ### newaliases
 Refresh the mail system after a change to the [ /etc/aliases ](#configs) file; Must be run after making a change to email aliases on a server running [ `postfix` ](#postfix)
+
 ### nice
-#### Run {prog} at a nice value of (positive) 10
+Run {prog} at a nice value of (positive) 10
 ```sh
 nice -10 prog
 nice -n 10
@@ -2567,159 +2594,155 @@ Including other network connections not managed by network manager ("unmanaged")
 ```
 nmcli dev status
 ```
-#### Display what connections are enabled 
+Display what connections are enabled 
 ```
 nmcli general status
 ```
-#### Display UUIDs associated with network connections 
+Display UUIDs associated with network connections 
 ```
 nmcli connection show --active
 ```
-#### Display much more information on network devices
+Display much more information on network devices
 ```
 nmcli device show
 ```
-#### Configure settings for network interface {ens01} via interactive shell
+Configure settings for network interface {ens01} via interactive shell
 ```sh
 nmcli connection edit ens01
 ```
-#### List all connections NetworkManager has
+List all connections NetworkManager has
 ```sh
 nmcli connection show
 ```
-#### Show settings for network interface {ens01}
+Show settings for network interface {ens01}
 ```sh
 nmcli device show ens01
 ```
-#### Show status for all devices
+Show status for all devices
 ```sh
 nmcli device status
 ```
-#### Display devices and status
+Display devices and status
 ```sh
 nmcli device status
 ```
-#### Display currently configured hostname
+Display currently configured hostname
 ```sh
 nmcli general hostname
 ```
-#### Set hostname to {hostname}
+Set hostname to {hostname}
 ```sh
 nmcli general hostname hostname
 ```
-#### Show overall status of NetworkManager
+Show overall status of NetworkManager
 ```sh
 nmcli general status
 ```
+
 ### nohup
-#### Execute {cmd} in the background such that it won't be interrupted by a logoff
+Execute {cmd} in the background such that it won't be interrupted by a logoff
 ```sh
 nohup cmd &
 ```
+
 ### ntpdate
-#### Synchronize system clock to that of an online Network Time Protocol server
+Synchronize system clock to that of an online Network Time Protocol server
 ```sh
 ntpdate -upool.ntp.org
 ```
+
 ### passwd
 Option  | POSIX option            | Effect
 :---    | :---                    | :---
-`-e`    | `--expire`              | 
+`-e`    | `--expire`              | immediately expire the passwore of {user}, forcing a password change on next login
 `-i`    | `--inactive`            |
 `-l`    | `--lock`                | 
 `-u`    | `--unlock`              |
-#### Immediately expire the passwore of {user}, forcing a password change on next login
+
 ```sh
 passwd -e user # passwd --expire user
 ```
-#### Disable an account after {n} days of inactivity
+Disable an account after {n} days of inactivity
 ```sh
 passwd -i n # passwd --inactive n
 ```
-#### Lock {user}'s account
+Lock {user}'s account
 ```sh
 passwd -l user # passwd --lock
 ```
-#### Unlock {user}'s account
+Unlock {user}'s account
 ```sh
 passwd -u user # passwd --unlock
 ```
+
 ### paste
-Merge lines of files
-#### Make a .csv file from two lists
+Merge lines of files\
+Make a .csv file from two lists
 ```sh
 paste -d ',' file1 file2
 ```
-#### Transpose rows
+Transpose rows
 ```sh
 paste -s file1 file2
 ```
+
 ### patch
-#### Ignore whitespace
+Ignore whitespace
 ```sh
 patch -i
 ```
+
 ### ping
 "packet Internet groper" utility used for checking network connections, using ICMP packets (cf. [ `nc` ](#nc))
-#### Numeric output only
+Numeric output only
 ```
 ping -n
 ```
-#### Send {n} number of pings
+Send {n} number of pings
 ```
 ping -c n
 ``` 
-#### Flood ping
+Flood ping
 ```
 ping -f
 ```
-#### Print timestamp
+Print timestamp
 ```
 ping -D
 ```
-#### Mark outgoing packet to be processed appropriate to kernel's policy
+Mark outgoing packet to be processed appropriate to kernel's policy
 ```
 ping -m
 ``` 
-#### Bypass routing tables
+Bypass routing tables
 ```
 ping -r
 ```
-#### Send {n} number of pings
-```sh
-ping -c n
-```
-#### Print timestamp
-```sh
-ping -D
-```
-#### Flood ping
-```sh
-ping -f
-```
-#### Mark outgoing packet to be processed appropriate to kernel's policy
+Mark outgoing packet to be processed appropriate to kernel's policy
 ```sh
 ping -m
 ```
-#### Numeric output only; disable name resolution
+Numeric output only; disable name resolution
 ```sh
 ping -n
 ```
-#### Bypass routing tables
+Bypass routing tables
 ```sh
 ping -r
 ```
+
 ### pip
-#### Display installed packages
+Display installed packages
 ```sh
 pip list
 ```
-#### Display information about {package}
+Display information about {package}
 ```sh
 pip show package
 ```
+
 ### postqueue
-#### Cause mail queue to be processed on a Postfix server
+Cause mail queue to be processed on a Postfix server
 ```sh
 postqueue -f
 ```
@@ -3037,8 +3060,7 @@ chkconfig NetworkManager off
 chkconfig daemon on
 ```
 ### setfacl
-Set file access control lists
-:w
+Set file access control list
 
 Option  | POSIX option  | Description
 :---    | :---          | :---
@@ -3046,20 +3068,31 @@ Option  | POSIX option  | Description
 `-k`    | `--remove-default` | remove the Default ACL
 `-m`    | `--modify` | modify ACL of a directory
 `-M`    | `--modify-file` | modify ACL of a file
+`-s`    |               | overwrite or **s**et
 `-x`    | `--remove` | remove ACL entries from a directory
 `-X`    | `--remove-file` | remove ACL entries from a file
-#### Grant user {lisa} right to read {file}
+
+Grant user {lisa} right to read {file}
 ```sh
 setfacl -m u:lisa:r file
 ```
-#### Remove named group {staff} from {file}'s ACL
+Remove named group {staff} from {file}'s ACL
 ```sh
 setfacl -x g:staff file
 ```
-#### Modify file access control list for {file} to revoke write access from all groups and all named users
+Modify file access control list for {file} to revoke write access from all groups and all named users
 ```sh
 setfacl -m m::rx file
 ```
+Grant read access to **o**ther users
+```sh
+setfacl -m o::rwx file4.txt
+```
+Add user {zach} to list of users of file4.txt
+```sh
+setfacl -m u:zach:rw file4.txt
+```
+
 ### sfdisk
 Script-oriented tool for partitioning disk devices
 ### sfdisk
@@ -3444,50 +3477,51 @@ Option  | Effect
 `-w`    | Test if {file} exists and write permission is granted
 `-x`    | Test if {file} exists and execute (or search) permission is granted
 `-z`    | Test if the length of {string} is zero
-#### Test if {VAR} has either the text "string1" or "string2" within it
+
+Test if {VAR} has either the text "string1" or "string2" within it
 ```sh
 [[ $VAR =~ 'string1' | 'string2' ]]
 ```
-#### Test if {VAR} matches a regex {pattern} (must not be quoted, otherwise, {pattern} will be treated as a string literal)
+Test if {VAR} matches a regex {pattern} (must not be quoted, otherwise, {pattern} will be treated as a string literal)
 ```sh
 [[ $VAR =~ pattern ]]
 ```
+
 ### timedatectl
-Display the system clock, including local time, universal time, time zone, etc
-### top
-#### Change update interval
+Display the system clock, including local time, universal time, time zone, etc\
+List timezones <super>[49](sources.md)</super>
 ```sh
-top -n
+timedatectl list-timezones
 ```
+
+### top
+Option  | Effect
+:---    | :---
+`-n`    | change update interval
+
 ### tput
-#### Return width of current terminal window
+Return width of current terminal window
 ```sh
 tput cols 
 ```
-#### Return height of current terminal window
+Return height of current terminal window
 ```sh
 tput lines
 ```
+
 ### tracepath
 Successor to `traceroute`, blocked by many ISPs because it is a newer tool
+
 ### traceroute
 Follow the path a packet takes between two hosts
-#### Choose the interface to be used for the path trace
-```sh
-traceroute -i
-```
-#### Choose the source address to be used for the path trace
-```sh
-traceroute -s
-```
-#### Use TCP SYN packets for the path trace
-```sh
-traceroute -T
-```
-#### Set the Type of Service (ToS) flag to be used for the path trace
-```sh
-traceroute -t
-```
+
+Option  | Effect
+:---    | :---
+`-i`    | choose the **i**nterface to be used for the path trace
+`-s`    | choose the **s**ource address to be used for the path trace
+`-T`    | use **T**CP SYN packets for the path trace
+`-t`    | set the **t** of service flag (ToS) to be used for the path trace
+
 ### tune2fs
 Adjust various 
 #### Run `fsck` on {/dev/sdb1} on every boot
@@ -3506,72 +3540,75 @@ tune2fs -j /dev/sdc1
 ```sh
 tune2fs -L Sales /dev/vg1/Sales
 ```
+
 ### tzselect
 Select timezone
+
 ### udevadm
 Udev management tool
-#### Update the hardware database index after updating source files related to udev
-```sh
-udevadm -u
-```
+
+Option  | Effect
+:---    | :---
+`-u`    | **u**pdate the hardware database index after updating source files related to udev
+
 ### umount
-#### Unmount a USB stick mounted a `/dev/sda`
+Unmount a USB stick mounted a `/dev/sda`
 ```sh
 umount /dev/sda1
 ```
 ### uname
-#### Display operating system release number
-```sh
-uname -r
-```
+
+Option  | Effect
+:---    | :---
+`-r`    | display operating system release number
+
 ### update-grub
 Make changes take effect for a GRUB2 configuration change
+
 ### update-rc.d
 Create links within /etc/rc.d/ for starting and stopping services
+
 ### useradd
 Create a new user
-#### useradd options
+
 Option  | POSIX option            | Effect
 :---    | :---                    | :---
-b       | base-dir                | default base directory for the system if `HOME_DIR` is not specified (sets `HOME` variable in [/etc/default/useradd](#etcdefaultuseradd)
-c       | comment                 | typically user's full name
-d       | home-dir                | specify user's login directory: default is to append the `LOGIN` name to `BASE_DIR`
-D       | defaults                | 
-e       | expire-date             | specify date on which the user account will be disabled (in format `YYYY-MM-DD`) (sets `EXPIRE` variable in [/etc/default/useradd](#etcdefaultuseradd))
-k       | skel                    | specify skeleton directory (defaulting to definition of `SKEL` variable in [/etc/default/useradd](#etcdefaultuseradd), failing to /etc/skel)
-m       | create-home             | create user's home directory if it does not exist, copying contents of skeleton directory
-r       | system                  | create a system account
-s       | shell                   | specify user's login shell (defaulting to definition of `SHELL` variable in [/etc/default/useradd](#etcdefaultuseradd), failing to an empty string)
-u       | uid                     | specify UID
+`-b`       | `--base-dir`         | default base directory for the system if `HOME_DIR` is not specified (sets `HOME` variable in [/etc/default/useradd](#etcdefaultuseradd)
+`-c`       | `--comment`          | typically user's full name
+`-d`       | `--home-dir`         | specify user's login directory: default is to append the `LOGIN` name to `BASE_DIR`
+`-D`       | `--defaults`         | view **d**efaults for new users
+`-e`       | `--expire-date`      | specify date on which the user account will be disabled (in format `YYYY-MM-DD`) (sets `EXPIRE` variable in [/etc/default/useradd](#etcdefaultuseradd))
+`-k`       | `--skel`             | specify skeleton directory (defaulting to definition of `SKEL` variable in [/etc/default/useradd](#etcdefaultuseradd), failing to /etc/skel)
+`-m`       | `--create-home`      | create user's home directory if it does not exist, copying contents of skeleton directory
+`-r`       | `--system`           | create a system account
+`-s`       | `--shell`            | specify user's login shell (defaulting to definition of `SHELL` variable in [/etc/default/useradd](#etcdefaultuseradd), failing to an empty string)
+`-u`       | `--uid`              | specify UID
 
-#### Add {user}
+Add {user}
 ```sh
 useradd user
 ```
-#### View defaults for new users
-```sh
-useradd -D
-```
-#### Add {user}, noting her full {name}
+Add {user}, noting her full {name}
 ```sh
 useradd user -c name
 ```
-#### Add {user}, specifying home directory at {path}
+Add {user}, specifying home directory at {path}
 ```sh
 useradd user -d path
 ```
-#### Add {user}, specifying expiration {date} (YYYY-MM-DD)
+Add {user}, specifying expiration {date} (YYYY-MM-DD)
 ```sh
 useradd user -e date
 ```
-#### Create new {user} leaving a {comment} field (conventionally noting the full name of the user) and creating a home directory
+Create new {user} leaving a {comment} field (conventionally noting the full name of the user) and creating a home directory
 ```sh
 useradd -c comment -m user
 ```
-#### Create a system user rather than a normal user
+Create a system user rather than a normal user
 ```sh
 useradd -r
 ```
+
 ### userdel
 Delete an existing user account;
 #### Delete an existing user account as well as the user's home directory
