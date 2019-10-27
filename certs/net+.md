@@ -138,9 +138,21 @@ SNMP **communities** are logical groupings of systems within which devices only 
 
 ## Network services
 Network services provide functionality enabling the network to operate
-#### DNS 
-DNS operates in the **DNS namespace**, which has logical divisions that are **hierarchically organized** into top-level or country domains, sub- or secon-dlevel domains, and then further subdomains. The **fully qualified domain name (FQDN)** contains the top-level domain, domain, and subdomains (if any) of a host. [[1](#sources): 68]\
-**Pointer (PTR)** records are used for **reverse lookup**, that is resolving IP address to hostnames. [[1](#sources): 69]
+
+### DNS 
+**Domain Name System (DNS)** originated to support the growth of email. **RFC 805** introduced the concepts of domains (previous to that, emails took the format `USER@HOST` with no domain.\
+DNS has 3 main components: [[2]]
+- **Domain namespace**: which has logical divisions that are **hierarchically organized** into a tree-like structure composed of top-level or country domains (".gov", ".ca", etc), sub- or second-level domains ("example.com"), and then further subdomains. The **fully qualified domain name (FQDN)** contains the top-level domain, domain, and subdomains (if any) of a host. [[1](#sources): 68]\
+- **Name servers**: server programs that contain the domain tree's structure and can set or cache it.
+- **Resolvers**: client programs that extract information from name servers in response to user requests.
+
+A domain name identifies a set of resources that is associated with separate **resource registry (RR)**. The most common ones are: [[2](#sources)]
+- **`A`**: host address associated with the domain name
+- **`NS`**: authoritative name server
+- **`SOA`**: start of a zone of authority
+- **`CNAME`**: canonical name of an alias
+- **Pointer (`PTR`)** records are used for **reverse lookup**, that is resolving IP address to hostnames. [[1](#sources): 69]
+
 
 ## Commands
 ### arp command
@@ -176,3 +188,4 @@ Term                                                        | Definition
 
 ## Sources
 1. "Exam Cram: CompTIA Network+ N10-007". Dulaney, Emmett. 
+2. "DNS 101: An introduction to Domain Name Servers". [Red Hat](https://www.redhat.com/sysadmin/dns-domain-name-servers): 2019/10/17.
