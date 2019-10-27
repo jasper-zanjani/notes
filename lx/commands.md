@@ -1,33 +1,41 @@
 # Linux Commands
 #### Contents
 
-Topic | Commands
-:---  | :---
-Ansible | [`ansible`](../ansible.md#ansible) [`ansible-galaxy`](../ansible.md#ansible-galaxy) [`ansible-playbook`](../ansible.md#ansible-playbook)
-Files	| [`fallocate`](#fallocate)
-Filters   | [ `awk` ](#awk) [ `copy` ](#copy) [ `egrep` ](#egrep) [ `fgrep` ](#fgrep) [ `grep` ](#grep) [ `paste` ](#paste) [ `sed` ](#sed) [ `tr` ](#tr)
-Hardware settings | [`insmod`](#insmod) [ `lsmod` ](#lsmod) [ `lspci` ](#lspci) [ `lsusb` ](#lsusb) [ `modprobe` ](#modprobe) [`rmmod`](#rmmod)
-Kubernetes        | [`kubeadm`](../devops/k8s.md#kubeadm) [`kubectl`](../devops/k8s.md#kubectl)
-Logical volumes   | [ `lvcreate` ](#tr) [ `lvdisplay` ](#lvdisplay) [ `lvremove` ](#lvremove) [ `lvs` ](#lvs) [ `pvcreate` ](#pvcreate) [ `pvdisplay` ](#pvdisplay) [ `pvremove` ](#pvremove) [ `pvs` ](#pvs) [ `vgcreate` ](#vgcreate) [ `vgdisplay` ](#vgdisplay) [ `vgextend` ](#vgextend) [ `vgremove` ](#vgremove) [ `vgs` ](#vgs)
-Manjaro           | [`mhwd`](#mhwd) [`mhwd-chroot`](#mhwd-chroot)
-Package managers  | [ `apt` ](#apt) [ `dnf` ](#dnf) [ `pacman` ](#pacman) [ `yay` ](#yay) [ `yum` ](#yum)
-Systemd           | [ `journalctl` ](#journalctl) [ `systemctl` ](#systemctl)
+Topic                         | Commands
+:---                          | :---
+Ansible                       | [`ansible`](../ansible.md#ansible) [`ansible-galaxy`](../ansible.md#ansible-galaxy) [`ansible-playbook`](../ansible.md#ansible-playbook)
+Date and time                 | [`chrony`](#chrony) [`date`](#date) [`hwclock`](#hwclock) [`timedatectl`](#timedatectl)
+Files	                        | [`fallocate`](#fallocate)
+Filters                       | [`awk`](#awk) [`copy`](#copy) [`egrep`](#egrep) [`fgrep`](#fgrep) [`grep`](#grep) [`paste`](#paste) [`sed`](#sed) [`tr`](#tr)
+Gnome                         | `gconf-editor`
+Hardware settings             | [`insmod`](#insmod) [ `lsmod` ](#lsmod) [ `lspci` ](#lspci) [ `lsusb` ](#lsusb) [ `modprobe` ](#modprobe) [`rmmod`](#rmmod)
+Kubernetes                    | [`kubeadm`](../devops/k8s.md#kubeadm) [`kubectl`](../devops/k8s.md#kubectl)
+Logical volumes               | [`lvcreate`](#tr) [`lvdisplay`](#lvdisplay) [`lvremove`](#lvremove) [`lvs`](#lvs) [ `pvcreate` ](#pvcreate) [ `pvdisplay` ](#pvdisplay) [ `pvremove` ](#pvremove) [ `pvs` ](#pvs) [ `vgcreate` ](#vgcreate) [ `vgdisplay` ](#vgdisplay) [ `vgextend` ](#vgextend) [ `vgremove` ](#vgremove) [ `vgs` ](#vgs)
+Mac OS X                      | `pbcopy` `pbpaste` `screencapture`
+Mail                          | [`mail`](#mail) [`mailx`](#mail) [`msmtp`](#msmtp) [`qmail`](#qmail) [`postfix`](#postfix) 
+Manjaro                       | [`mhwd`](#mhwd) [`mhwd-chroot`](#mhwd-chroot)
+Network                       | `netstat` `ss`
+Package managers              | [`apt`](#apt) [`brew`](#brew) [`dnf`](#dnf) [`gem`](#gem) [`pacman`](#pacman) [`pip`](#pip) [`yay`](#yay) [`yum`](#yum)
+System administration         | [`getent`](#getent) [`useradd`](#useradd) [`userdel`](#userdel) [`usermod`](#usermod) Debian: `adduser`
+Systemd                       | [`journalctl`](#journalctl) [`localectl`](#localectl) [`systemctl`](#systemctl) [`timedatectl`](#timedatectl)
+X                             | `xdpyinfo` `xwininfo` `Xorg` `xrandr`
+
 
 \#  | Commands sorted alphabetically
 :---| :---
 A   | [`adduser`](#adduser) [`add-apt-repository`](#add-apt-repository) [`alsamixer`](#alsamixer) [`apropos`](#apropos) [`apt`](#apt) [`apt-cache`](#apt-cache) [`apt-key`](#apt-key) [`arp`](#arp) [`at`](#at) [`ausearch`](#ausearch) [`awk`](#awk) 
 B   | [`bash`](#bash) [`blkid`](#blkid) [`borg`](#borg) [`bpftrace`](#bpftrace) [`bzcat`](#bzcat) [`bzip2`](#bzip2) [`bzless`](#bzless) [`bzmore`](#bzmore) 
-C   | [`cancel`](#cancel) [`cat`](#cat) [`chage`](#chage) [`chcon`](#chcon) [`chgrp`](#chgrp) [`chkconfig`](#sysvinit) [`chmod`](#chmod) [`chown`](#chown) [`chpass`](#chpass) [`chsh`](#chsh) [`column`](#column) [`compress`](#compress) [`cp`](#cp) [`crontab`](#crontab) [`crossystem`](#crossystem) [`cryptsetup`](#cryptsetup) [`curl`](#curl) [`cut`](#cut) 
+C   | [`cancel`](#cancel) [`cat`](#cat) [`chage`](#chage) [`chcon`](#chcon) [`chgrp`](#chgrp) [`chkconfig`](#sysvinit) [`chmod`](#chmod) [`chown`](#chown) [`chpass`](#chpass) [`chrony`](#chrony) [`chsh`](#chsh) [`column`](#column) [`compress`](#compress) [`cp`](#cp) [`crontab`](#crontab) [`crossystem`](#crossystem) [`cryptsetup`](#cryptsetup) [`curl`](#curl) [`cut`](#cut) 
 D   | [`dar`](#dar) [`date`](#date) [`dbus`](#dbus) [`dd`](#dd) [`declare`](#declare) [`df`](#df) [`dhclient`](#dhclient) [`diff`](#diff) [`dig`](#dig) [`dirname`](#dirname) [`dm-crypt`](#dm-crypt) [`dmesg`](#dmesg) [`doveadm`](#doveadm) [`dpkg`](#dpkg) [`dpkg-reconfigure`](#dpkg-reconfigure) [`du`](#du) [`dumpe2fs`](#dumpe2fs) 
 E   | [`e2image`](#e2image) [`e2label`](#e2label) [`edquota`](#edquota) [`elvis`](#elvis) [`elvish`](#elvish) [`espeak`](#espeak) [`exif`](#exif) 
 F   | [`fallocate`](#fallocate) [`fam`](#fam) [`fdisk`](#fdisk) [`file`](#file) [`find`](#find) [`firewall-cmd`](#firewall-cmd) [`firewalld`](#firewalld) [`fish`](#fish) [`fmt`](#fmt) [`fold`](#fold) [`free`](#free) [`fsck`](#fsck) [`fstrim`](#fstrim) [`ftp`](#ftp) [`fusermount`](#fusermount) 
-G   | [`gconf-editor`](#gconf-editor) [`gdisk`](#gdisk) [`gdmsetup`](#gdmsetup) [`gem`](#gem) [`getfacl`](#getfacl) [`git`](#git) [`gpasswd`](#gpasswd) [`gpg`](#gpg) [`grep`](#grep) [`groupadd`](#groupadd) [`groupdel`](#groupdel) [`groupmod`](#groupmod) [`grub`](#grub) [`gzip`](#gzip) 
+G   | [`gconf-editor`](#gconf-editor) [`gdisk`](#gdisk) [`gdmsetup`](#gdmsetup) [`gem`](#gem) [`getent`](#getent) [`getfacl`](#getfacl) [`git`](#git) [`gpasswd`](#gpasswd) [`gpg`](#gpg) [`grep`](#grep) [`groupadd`](#groupadd) [`groupdel`](#groupdel) [`groupmod`](#groupmod) [`grub`](#grub) [`gzip`](#gzip) 
 H   | [`hdiutil`](#hdiutil) [`hdparm`](#hdparm) [`head`](#head) [`history`](#history) [`host`](#host) [`hostname`](#hostname) [`hostnamectl`](#hostnamectl) [`hwclock`](#hwclock) 
 I   | [`iconv`](#iconv) [`ifconfig`](#ifconfig) [`imagemagick`](#imagemagick) [`init`](#sysvinit) [`initctl`](#initctl) [`insmod`](#insmod) [`install`](#install) [`ip`](#ip) [`iptables`](#iptables) [`iscsiadm`](#iscsiadm) [`iwlist`](#iwlist) 
 J   | [`journalctl`](#journalctl) 
 K   | [`kill`](#kill) [`kubeadm`](../devops/k8s.md#kubeadm) [`kubectl`](../devops/k8s.md#kubectl)
 L   | [`last`](#last) [`ldapadd`](#ldapadd) [`ldconfig`](#ldconfig) [`ldd`](#ldd) [`less`](#less) [`let`](#let) [`link`](#link) [`locale`](#locale) [`localectl`](#localectl) [`logout`](#logout) [`lp`](#lp) [`lpadmin`](#lpadmin) [`lpstat`](#lpstat) [`ls`](#ls) [`lsblk`](#lsblk) [`lsmod`](#lsmod) [`lsof`](#lsof) [`lspci`](#lspci) [`lsusb`](#lsusb) [`lvcreate`](#lvcreate) [`lvdisplay`](#lvdisplay) [`lvremove`](#lvremove) [`lvresize`](#lvresize) 
-M   | [`mail`](#mail) [`mailq`](#mailq) [`mailstats`](#mailstats) [`make`](#make) [`makemap`](#makemap) [`mdadm`](#mdadm) [`mhwd`](#mhwd) [`mhwd-chroot`](#mhwd-chroot) [`mkdir`](#mkdir) [`mke2fs`](#mke2fs) [`mkfontscale`](#mkfontscale) [`mkfs`](#mkfs) [`mkswap`](#mkswap) [`mktemp`](#mktemp) [`modinfo`](#modinfo) [`modprobe`](#modprobe) [`mongod`](#mongod) [`mount`](#mount) [`mt`](#mt) 
+M   | [`mail`](#mail) [`mailq`](#mailq) [`mailstats`](#mailstats) [`make`](#make) [`makemap`](#makemap) [`mdadm`](#mdadm) [`mhwd`](#mhwd) [`mhwd-chroot`](#mhwd-chroot) [`mkdir`](#mkdir) [`mke2fs`](#mke2fs) [`mkfontscale`](#mkfontscale) [`mkfs`](#mkfs) [`mkswap`](#mkswap) [`mktemp`](#mktemp) [`modinfo`](#modinfo) [`modprobe`](#modprobe) [`mongod`](#mongod) [`mount`](#mount) [`msmtp`](#msmtp) [`mt`](#mt) 
 N   | [`nc`](#nc) [`netplan`](#netplan) [`netstat`](#netstat) [`NetworkManager`](#NetworkManager) [`newaliases`](#newaliases) [`nice`](#nice) [`nl`](#nl) [`nmap`](#nmap) [`nmblookup`](#nmblookup) [`nmcli`](#nmcli) [`nohup`](#nohup) [`nslookup`](#nslookup) [`ntpdate`](#ntpdate) 
 O   | [`openssl`](#openssl) 
 P   | [`pacman`](#pacman) [`partx`](#partx) [`paste`](#paste) [`passwd`](#passwd) [`paste`](#paste) [`patch`](#patch) [`ping`](#ping) [`pip`](#pip) [`postfix`](#postfix) [`postqueue`](#postqueue) [`postsuper`](#postsuper) [`ps`](#ps) [`pvcreate`](#pvcreate) [`pvdisplay`](#pvdisplay) [`pvremove`](#pvremove) [`pydoc`](#pydoc) 
@@ -41,6 +49,8 @@ W   | [`wall`](#wall) [`watch`](#watch) [`wc`](#wc) [`whatis`](#whatis)
 X   | [`X`](#X) [`xdpyinfo`](#xdpyinfo) [`xhost`](#xhost) [`xinetd`](#xinetd) [`Xorg`](#Xorg) [`xrandr`](#xrandr) [`xwininfo`](#xwininfo) 
 Y   | [`yay`](#yay) [`yum`](#yum) 
 Z   | [`zip`](#zip) [`zipcloak`](#zipcloak) [`zipdetails`](#zipdetails) [`zipgrep`](#zipgrep) [`zipinfo`](#zipinfo) [`zipnote`](#zipnote) [`zipsplit`](#zipsplit) [`zsh`](#zsh)
+
+
 ### bash
 #### bash variables
 Syntax                                              | Effect
@@ -168,6 +178,7 @@ dar -R /path/to/file -c full.bak
 ```sh
 dar -x full.bak
 ```
+
 ### gzip
 Zip a single file in-place; each file is replaced by one with the extension `.gz` or `.z`, maintaining ownership modes, access and modification times
 ```sh
@@ -175,14 +186,14 @@ gzip -#
 gzip --fast
 gzip --best
 ```
-#### Compress {symlink}
+Compress {symlink}
 ```sh
 gzip -f symlink
 gzip --force symlink
 ```
 Page through .gz files
+
 ### tar
-#### tar options
 Option  | POSIX option            | Effect
 :---    | :---                    | :---
 `-c`    | `--create`              | create a new archive
@@ -196,71 +207,78 @@ Option  | POSIX option            | Effect
 `-x`    | `--extract`<br/>`--get` | extract files from an archive
 `-z`    | `--gzip`                | filter the archive through [`gzip`](#gzip)
 
-#### Create {archive} from contents of {path}
+Create {archive} from contents of {path}
 ```sh
 tar -cf archive path
 tar --create --file archive path
 ```
-#### Create bzip2-compressed {archive} from contents of {path}
+Create bzip2-compressed {archive} from contents of {path}
 ```sh
 tar -cfj archive path
 tar --create --file --bzip archive path
 ```
-#### Create gzip-compressed {archive} from contents of {path}
+Create gzip-compressed {archive} from contents of {path}
 ```sh
 tar -cfz archive path
 tar --create --file --gzip archive path
 ```
-#### Add {file} to {archive}
+Add {file} to {archive}
 ```sh
 tar -rf archive file
 tar --append --file archive file
 ```
-#### List the contents of {archive}
+List the contents of {archive}
 ```sh
 tar -tf archive
 tar --list --file archive
 ```
-#### Extract contents of {tarfile} in the current directory
+Extract contents of {tarfile} in the current directory
 ```sh
 tar -xf archive
 tar --extract --file archive
 ```
-#### Extract only {file} from {archive}
+Extract only {file} from {archive}
 ```sh
 tar -xf archive file tar--extract --file archive file
 ```
-#### Extract contents of gzip-compressed {archive} to {path}
+Extract contents of gzip-compressed {archive} to {path}
 ```sh
 tar -xzf archive -C path
 ```
+
 ### uncompress
 Option  | Effect
 :---    | :---
 `-f`    | overwrite existing files without prompting, if they exist
 `-r`    | decompress files recursively
+
 ### unzip
 Extract compressed files in a zip archive
+
 ### zip
-#### Archive files in InfoZIP format
+Archive files in InfoZIP format
 ```sh
 zip zipfile *files
 ```
+
 ### zipcloak
-#### Encrypt a zip {archive}
+Encrypt a zip {archive}
 ```sh
 zipcloak archive
 ```
+
 ### zipdetails
-#### Produce a detailed list of information about a zip {archive}
+Produce a detailed list of information about a zip {archive}
 ```sh
 zipdetails archive
 ```
+
 ### zipgrep
-#### Search for {string} within all files of a zip {archive}
+Search for {string} within all files of a zip {archive}
 ```sh
 zipgrep string archive
 ```
+
 ### zipinfo
 #### Print information about ZIP format archives
 ```sh
@@ -271,23 +289,25 @@ zipinfo *zipfiles
 ```sh
 zipnote archive > comments
 ```
+
 ### zipsplit
-#### Split `zipfile` into segments of size `size`
+Split `zipfile` into segments of size `size`
 ```sh
 zipsplit -n size zipfile
 ```
+
 ### bpftrace
-New open-source tracer for analyzing production performance problems and troubleshooting software [[19](README.md#sources)]
+New open-source tracer for analyzing production performance problems and troubleshooting software [[19](sources.md)]
+
 ### chown
-#### Change a file or directory's ownership
-To change the user and group owner of a file to {user} and {group}, `chown`'s syntax is of the format `user:group` [[32](README.md#sources)].
+Change a file or directory's ownership. To change the user and group owner of a file to {user} and {group}, `chown`'s syntax is of the format `user:group` [[32](sources.md)].
 ```sh
 chown susan:delta file          # Assign {file} to user `susan` and group `delta`
 chown alan file                 # Assign {file} to user `alan`
 chown alan: file                # Assign {file} to user and group `alan`
 chown :gamma file               # Assign {file} to the group `gamma`
 ```
-#### Recursively grant {user} ownership to {path}
+Recursively grant {user} ownership to {path}
 ```sh
 chown -R user path
 ```
@@ -300,52 +320,56 @@ chown -vR susan:delta path
 chown -vR --reference=. path    # Use a `reference` file to match the configuration of a particular file
 chown -cfR --preserve-root alan # `preserve-root` prevents changes to files in the root directory, but has no effect when not used with `recursive`
 ```
+
 ### exif
-#### View image metadata
-Unlike alternatives like `file` and ImageMagick's `identify`, `exif` produces columnar output [[31](README.md#sources)]
+View image metadata. Unlike alternatives like `file` and ImageMagick's `identify`, `exif` produces columnar output [[31](sources.md)]
 ```sh
 exif image.png 
 ```
+
 ### fallocate
-Allocate and deallocate space to a file
-#### Create a file size of 1 gigabyte
+Allocate and deallocate space to a file\
+Create a file size of 1 gigabyte
 ```sh
 fallocate -l 1G $FILENAME  # gibibyte
 fallocate -l 1GB $FILENAME # gigabyte
 ```
+
 ### file
-#### View image metadata
-[[31](README.md#sources)]
+View image metadata [[31](sources.md)]
 ```sh
 file image.png # => file type, dimensions, color depth
 ```
+
 ### free
 Simple utility that display realtime memory information.\
-#### free options
-Option  | POSIX option            | Effect
-:---    | :---                    | :---
-`-c`    |                         | run the program {n} times
-`-h`    |                         | human-readable output
-`-s`    |                         | run the program every {n} seconds, until the program is manually interrupted
-#### List memory statistics in kilobytes
-Without any options, `free` returns a table listing general statistics in kilobytes:
+
+Option  | Effect
+:---    | :---
+`-c`    | run the program {n} times
+`-h`    | human-readable output
+`-s`    | run the program every {n} seconds, until the program is manually interrupted
+
+List memory statistics in kilobytes. Without any options, `free` returns a table listing general statistics in kilobytes:
 ```bash
 free
 ```
-#### Command-line memory dashboard
+Command-line memory dashboard
 ```bash
 watch free -h
 ```
+
 ### ftp
 encrypted file transfers
+
 ### fusermount
-#### Mount a directory from a remote server on your local host via SSH
-[[23](README.md#sources)]
+Mount a directory from a remote server on your local host via SSH [[23](sources.md)]
 ```sh
 fusermount -u mountpoint
 ```
+
 ### grep
-#### grep options
+
 Option  | POSIX option            | Effect
 :---    | :---                    | :---
 `-A`    |                         | print {n} lines of trailing context from the file after each match
@@ -359,29 +383,33 @@ Option  | POSIX option            | Effect
 `-n`    | `--line-number`         | print line number where match occurs
 `-r`    |                         | recursive
 `-v`    | `--invert-match`        | print lines **not** matching the pattern
+
 ### history
-#### history options
+
 Option  | Effect
 :---    | :---
-`-c`    | clear history [[23](README.md#sources)]
+`-c`    | clear history [[23](sources.md)]
+
 ### hostnamectl
-#### Permanently change hostname to {$HOSTNAME}
+Permanently change hostname to `$HOSTNAME`
 ```sh
-hostnamectl set-hostname hostname
+hostnamectl set-hostname $HOSTNAME
 ```
+
 ### install
-With `install`, files can be copied while maintaining various metadata, including timestamp, owner, etc. [[9](README.md#sources)]
-#### Copy a file while preserving timestamp
-The copy will have the `install` default of `755`, but the original's `mtime` is maintained:
+With `install`, files can be copied while maintaining various metadata, including timestamp, owner, etc. [[9](sources.md)]\
+Copy a file while preserving timestamp. The copy will have the `install` default of `755`, but the original's `mtime` is maintained:
 ```sh
 install --preserve-timestamp example/foo .
 ```
-#### Copy a file, setting permissions, owner, and group
+Copy a file, setting permissions, owner, and group
 ```sh
 install --preserve-timestamp --owner=jdoe --group=sudoers --mode=753
 ```
+
 ### iptables
 A popular firewall, like `firewalld`, a frontend for the kernel-level `netfilters` service. Interface configuration, used to assign a TCP/IP configuration to a network interface, but no longer installed on modern distros.
+
 #### iptables config
 Config files  | Description
 :---          | :---
@@ -434,7 +462,7 @@ Must be redirected to a file
 iptables-save > $FILE
 ```
 ### lowriter
-`lowriter` is a command-line utility installed with LibreOffice Writer.[[21](README.md#sources)]
+`lowriter` is a command-line utility installed with LibreOffice Writer.[[21](sources.md)]
 #### Convert a single file to PDF
 ```sh
 lowriter --convert-to pdf filename.doc
@@ -444,44 +472,45 @@ lowriter --convert-to pdf filename.doc
 lowriter --convert-to pdf *.docx
 ```
 ### localectl
-Change locale
-#### Change locale to French
+Change locale to French
 ```sh
 localectl set-locale LANG=fr_FR.utf8
 ```
+
 ### lsof
-`lsof` can be used to display open files, open network ports, and network connections; `-P` prevents the conversion of port numbers to port names; `-i` displays network connections; `-n` prevents the conversion of IP addresses to hostnames [[23](README.md#sources)]
-#### lsof options
+`lsof` can be used to display open files, open network ports, and network connections; `-P` prevents the conversion of port numbers to port names; `-i` displays network connections; `-n` prevents the conversion of IP addresses to hostnames [[23](sources.md)]
+
 Option  | Effect
 :---    | :---
 `-i`    | display network connections
 `-n`    | prevent the conversion of IP addresses to hostnames
 `-P`    | prevent the conversion of port numbers to port names
-#### Show open network connections
+
+Show open network connections
 ```sh
 sudo lsof -Pni
 ```
+
 ### mail
-Mail User Agent (MUA) which accepts interactive input using the `&` prompt
-#### Check {user}'s email
+**Mail User Agent (MUA)** which accepts interactive input using the `&` prompt
+Check email of `$USER`
 ```sh
-mail -u user
+mail -u $USER
 ```
-#### Send email to {user}
+Send email to `$USER`
 ```sh
-mail user
+mail $USER
 ```
 #### Send email from the command-line
 Send email interactively
 ```sh
-mail recipient@domain.com
+mail $ADDRESS
 ```
 Send message via pipe 
 ```sh
 echo 'message' | mail -s 'subject' recipient@domain.com
 ```
-#### Send an email attachment from the command-line
-Send email interactively
+Send an email attachment from the command-line
 ```sh
 mail -a /path/to/attachment
 ```
@@ -489,20 +518,21 @@ Send message via pipe
 ```sh
 echo 'message' | mail -s 'subject' -a /path/to/attachment
 ```
+
 #### mailq
 Prints summary of mail messages queued for future delivery
+
 ### mktemp
-Create a temporary file or directory safely and print its name. These will not need to be manually cleaned up because they will be placed in the temporary directory (**/tmp**) [[29](README.md#sources)]
-#### Create a new temporary file
+Create a temporary file or directory safely and print its name. These will not need to be manually cleaned up because they will be placed in the temporary directory (**/tmp**) [[29](sources.md)]\
+Create a new temporary file
 ```sh
 mktemp
 ```
-#### Create a new temporary directory
+Create a new temporary directory
 ```sh
 mktemp -d
 ```
-#### Create a new temporary file or directory with a custom name
-Append at least 3 `X`'s to the end of the filename
+Create a new temporary file or directory with a custom name. Append at least 3 `X`'s to the end of the filename
 ```sh
 mktemp ostechnixXXX
 ```
@@ -510,6 +540,7 @@ Add a suffix
 ```sh
 mktemp ostechnixXXX --suffix=blog
 ```
+
 ### mv
 Option  | POSIX option            | Effect
 :---    | :---                    | :---
@@ -518,17 +549,19 @@ Option  | POSIX option            | Effect
 `-i`    | `--interactive`         | 
 `-n`    | `--no-clobber`          | silently reject move action in the event of a conflict
 `-u`    | `--update`              | only overwrite if the modification time of the destination is older than the source
+
 ### nc
 The netcat utility allows testing of a host's ports, similar to __ping__, but more versatile because __ping__ only uses the portless ICMP protocol. GNU and OpenBSD versions available (itp-l+: 28)
-#### nc options
+
 Option  | Effect
 :---    | :---
 `-l`    | listening mode
-#### Connect to host on port 80
+
+Connect to host on port 80
 ```
 nc example.com 80
 ```
-#### Scan ports
+Scan ports
 ```
 # Scan a single port
 nc -v -w 2 z 192.168.56.1 22
@@ -673,7 +706,7 @@ nslookup ipaddress
 nslookup -port=portno url
 ```
 ### qmail
-Mail Transfer Agent (MTA) designed as a drop-in replacement for Sendmail, notable for being the first to be "security-aware". Its various modular subcomponents run independently and are mutually untrustful. It uses SMTP to exchange messages with other MTAs. It was written by Dan Bernstein, a professor of mathematics famous for litigating against the US government with regard to export controls on encryption algorithms. Deprecated and removed from Arch repos in 2005. [[27](README.md#sources)]
+Mail Transfer Agent (MTA) designed as a drop-in replacement for Sendmail, notable for being the first to be "security-aware". Its various modular subcomponents run independently and are mutually untrustful. It uses SMTP to exchange messages with other MTAs. It was written by Dan Bernstein, a professor of mathematics famous for litigating against the US government with regard to export controls on encryption algorithms. Deprecated and removed from Arch repos in 2005. [[27](sources.md)]
 ### pacman
 Option  | POSIX option            | Effect
 :---    | :---                    | :---
@@ -798,7 +831,7 @@ pacman --sync --refresh --refresh --sysupgrade --downloadonly
 pacman -Q | wc -l
 ```
 ### partx
-`partx` is a utility that provides information on drive partitions to the Linux kernel. [[12](README.md#sources)]
+`partx` is a utility that provides information on drive partitions to the Linux kernel. [[12](sources.md)]
 #### Display partition table of a drive
 ```bash
 partx --show /dev/sda
@@ -839,7 +872,7 @@ Before mail is queued for delivery, it goes through a cleanup daemon, which can 
   2. Internet (SMTP)
   3. Piped to programs
 ### rename
-`rename` uses regular expressions [[33](README.md#sources)]
+`rename` uses regular expressions [[33](sources.md)]
 #### rename options
 Option  | POSIX option            | Effect
 :---    | :---                    | :---
@@ -1020,7 +1053,7 @@ Count the number of pipes replaced by piping output to `cmp`, which will use the
 sed 's/|/:/g' emp.lst | cmp -l - emp.lst | wc -l
 ```
 ### sfdisk
-Script-based partition table editor, similar to [`fdisk`](#fdisk) and [`gdisk`](#gdisk), which can be run interactively. It does not interface with GPT format, neither is it designed for large partitions. [[11](README.md#sources)]
+Script-based partition table editor, similar to [`fdisk`](#fdisk) and [`gdisk`](#gdisk), which can be run interactively. It does not interface with GPT format, neither is it designed for large partitions. [[11](sources.md)]
 #### List partitions on all devices
 ```sh
 sfdisk -l
@@ -1063,11 +1096,11 @@ Option  | Effect
 `-e`    | shuffle items separated by a space
 
 
-Shuffle items separated by a space [[10](README.md#sources)]
+Shuffle items separated by a space [[10](sources.md)]
 ```sh
 shuf -e one two three
 ```
-Shuffle items separated by newline [[10](README.md#sources)]
+Shuffle items separated by newline [[10](sources.md)]
 ```sh
 shuf -n 1 cards.txt
 ```
@@ -1081,7 +1114,7 @@ Option  | Effect
 `-t $X` | set delimiter to character `$X`
 
 
-Sort by space-delimited columns. Processes consuming the most memory will be at the bottom [[23](README.md#sources)]
+Sort by space-delimited columns. Processes consuming the most memory will be at the bottom [[23](sources.md)]
 ```sh
 ps aux | sort -nk 4
 ```
@@ -1091,37 +1124,44 @@ ps aux | sort -nk 3
 ```
 
 ### ssmtp
-Installable client program [[25](README.md#sources)]
+Installable client program [[25](sources.md)]
 
-#### ssmtp config
 Configuration file                            | Description
 :---                                          | :---
-[ /etc/ssmtp/ssmtp.conf ](#etcssmtpssmtpconf) | Configuration file
-#### Send {msg} to {recipient} from {user} at {host} using password {pw}
+[/etc/ssmtp/ssmtp.conf](configs.md#etcssmtpssmtpconf) | Configuration file
+
+Send {msg} to {recipient} from {user} at {host} using password {pw}
 ```sh
 ssmtp -au recipient -ap pw user@host < msg
 ```
+
+
 ### sendmail
 Mail daemon once the de facto standard for accepting and redirecting mail on Linux distributions, long ago fallen into disuse. It was infamous for its difficulty to set up, with roots in ARPANET itself.
+
+
 ### ssh
-#### Compare the differences between a remote and local file
-`cat` a file over SSH and pipe the output into a diff or sdiff command [[23](README.md#sources)j]
+Compare the differences between a remote and local file.  `cat` a file over SSH and pipe the output into a diff or sdiff command [[23](sources.md)j]
 ```sh
 ssh remotehost cat /path/to/remotefile | diff /path/to/localfile
 ```
-#### Create an SSH tunnel to access remote resources
-Tunnel into a server to access a website which your local machine may not; `-L` creates the SSH tunnel; first port is the port that will be opened on the local machine [[23](README.md#sources)]
+Create an SSH tunnel to access remote resources
+Tunnel into a server to access a website which your local machine may not; `-L` creates the SSH tunnel; first port is the port that will be opened on the local machine [[23](sources.md)]
 ```sh
 ssh -N -L localport:host:remoteport remotehost
 ```
+
+
 ### sshfs
-#### Mount a directory from a remote server on your local host via SSH
-[[23](README.md#sources)]
+Mount a directory from a remote server on your local host via SSH
+[[23](sources.md)]
 ```sh
 sshfs remotehost:/directory mountpoint
 ```
+
 ### ss
 "Socket statistics", successor to __netstat__. 
+
 #### ss options
 Options are of two kinds:
   1. Connection type (listening or established)
@@ -1173,7 +1213,7 @@ Inspect actual IP packets (Wireshark is a GUI-based alternative)
 tcpdump -i eth0
 ```
 ### tig
-Provides a curses-based browser that allows you to navigate the commits in the current branch. It is essentially a wrapper around `git log`, and therefore accepts the same arguments that can be passed to it.[[34](README.md#sources)]
+Provides a curses-based browser that allows you to navigate the commits in the current branch. It is essentially a wrapper around `git log`, and therefore accepts the same arguments that can be passed to it.[[34](sources.md)]
 #### tig config
 Config file   | Description
 :---          | :---
@@ -1202,24 +1242,27 @@ tig refs
 ```sh
 tig grep -i foo lib/Bar
 ```
-#### Pipe a list of commit IDs to tig
+Pipe a list of commit IDs to tig
 ```sh
 git rev-list --author=olaf HEAD | tig show --stdin
 ```
+
 ### tr
-#### Change the case of a string
-[[23](README.md#sources)]
+Change the case of a string [[23](sources.md)]
 ```sh
 tr [:upper:] [:lower:]
 ```
-#### Remove a character or set of characters from a string or line of output
+Remove a character or set of characters from a string or line of output
 ```sh
 tr -d "text"
 ```
+
 ### tracepath
 Successor to `traceroute`, allowing the user to test connectivity along the path. Doesn't show as much detail with regard to time, so it may be faster.
+
 ### traceroute
 Provides much more information than `tracepath`, even though it's older [[lxa-lpic](../sources/lxa-lpic.md)]
+
 ### uname
 
 Option  | Effect
@@ -1236,8 +1279,9 @@ Check kernel version
 ```bash
 uname -srm
 ```
+
 ### tree
-display contents of directories in a tree-like format[[46](README.md#sources)]
+display contents of directories in a tree-like format[[46](sources.md)]
 
 Option  | Effect
 :---    | :---
@@ -1251,51 +1295,56 @@ Option  | Effect
 `-I $PATTERN` | suppress files matching `$PATTERN`
 `-P $PATTERN` | display only files matching `$PATTERN`
 `--prune`     | suppress empty directories
+
 ### watch
-#### Repeat a command at regular intervals and watch its changing output
-Execute {cmd} at periods of {n} seconds, watching its output [[23](README.md#sources)]
+Repeat a command at regular intervals and watch its changing output
+Execute {cmd} at periods of {n} seconds, watching its output [[23](sources.md)]
 ```sh
 watch cmd -n n
 ```
-#### Display a dashboard that will run {cmd} every second, displaying the output
+Display a dashboard that will run {cmd} every second, displaying the output
 ```sh
 watch -n 1 cmd
 watch -n 0.5 iptables -vnL # Update twice a second, producing a dashboard
 ```
+
 ### xinetd
 Internet Super Daemon provided an alternate method of connecting to various outdated network services. Should be turned off nowadays.  
-#### xinetd configuration files
+
 Configuration file  | Description
 :---                | :---
 /etc/xinet.d/       | config files
 /etc/xinetd.conf    | master xinetd configuration
 /etc/cmd.allow      | specify who is allowed to run a command
 /etc/cmd.deny       | specify who is disallowed from running a command
-#### Display statistics for a file
+
+Display statistics for a file
 ```sh
 stat file
 ```
+
 ### yum
-Yellow Dog Updater, Modified package manager (Yellow Dog was a variation of Red Hat for PowerPC architectures), package manager more commonly used today. [[35](README.md#sources), [37](README.md#sources)]
-#### yum options
+Yellow Dog Updater, Modified package manager (Yellow Dog was a variation of Red Hat for PowerPC architectures), package manager more commonly used today. [[35](sources.md), [37](sources.md)]
+
 Option  | POSIX option            | Effect
 :---    | :---                    | :---
 `-y`    | `--assumeyes`           | respond to any prompt with "yes" automatically
-`-x`    | `--exclude`             | exclude specific packages from updates [[38](README.md#sources)]
-#### Install {package}
+`-x`    | `--exclude`             | exclude specific packages from updates [[38](sources.md)]
+
+Install {package}
 ```sh
 yum install package
 yum groupinstall packagegroup # package group
 yum --enablerepo=repo install package # from a specific {repo}
 ```
-#### Remove {package} 
+Remove {package} 
 ```sh
 yum remove package
 yum -y remove package # without confirmation
 yum erase package # as well as the cached package
 yum groupremove packagegroup
 ```
-#### Update installed packages
+Update installed packages
 ```sh
 yum update
 yum update package # update a specific {package}
@@ -1306,156 +1355,174 @@ yum groupupdate packagegroup
 yum update --exclude=kernel
 yum update --exclude=httpd,php
 ```
-#### List all available packages in database
+List all available packages in database
 ```sh
 yum list
 yum grouplist
 ```
-#### List all installed packages
+List all installed packages
 ```sh
 yum list installed
 ```
-#### Query repos for information on {package}
+Query repos for information on {package}
 ```sh
 yum info package
 ```
-#### Find packages
+Find packages
 ```sh
 yum list name # name matching {name} exactly
 yum search pattern # search for package name matching {pattern}
 ```
-#### Find what package {config} belongs to
+Find what package {config} belongs to
 ```sh
 yum provides /path/to/config
 ```
-#### List repositories
+List repositories
 ```sh
 yum repolist
 yum repolist all # enabled and disabled repos
 ```
-#### Interactive shell
+Interactive shell
 ```sh
 yum shell
 ```
-#### Clear cache
+Clear cache
 ```sh
 yum clean all
 ```
-#### View command history
+View command history
 ```sh
 yum history
 ```
+
 ### lvcreate
-#### Create a 20 gigabyte logical volume named "Marketing" from volume group {vg1}
+Create a 20 gigabyte logical volume named "Marketing" from volume group {vg1}
 ```sh
 lvcreate -L 20G vg1 -n Marketing
 ```
-#### Create logical volume named {lv1} of size {500G} from volume group {vg1}
+Create logical volume named {lv1} of size {500G} from volume group {vg1}
 ```sh
 lvcreate-L 500G vg1 -n lv1
 ```
+
 ### lvdisplay
 ### lvs
 View logical volumes
+
 ### lvremove
-#### Remove logical volume {/dev/vg1/lv1}
+Remove logical volume {/dev/vg1/lv1}
 ```sh
 lvremove /dev/vg1/lv1
 ```
+
 ### lvresize
-#### Resize existent logical volume {Marketing} in volume group {vg1} to have an additional 10 gigabytes of space
+Resize existent logical volume {Marketing} in volume group {vg1} to have an additional 10 gigabytes of space
 ```sh
 lvresize -L +10G /dev/vg1/Marketing
 ```
+
 ### pvcreate
-#### Create physical volumes from {/dev/sdb} and {/dev/sdc}
+Create physical volumes from {/dev/sdb} and {/dev/sdc}
 ```sh
 pvcreate /dev/sdb /dev/sdc
 ```
-#### Create physical volumes from {partitions}
+Create physical volumes from {partitions}
 ```sh
 pvcreate*partitions
 ```
+
 ### pvdisplay
-#### View physical volumes
+View physical volumes
 ```sh
 pvdisplay | pvs
 ```
+
 ### pvremove
-#### Remove physical volumes {/dev/sdb1}, {/dev/sdc1}, {/dev/sdd1}
+Remove physical volumes {/dev/sdb1}, {/dev/sdc1}, {/dev/sdd1}
 ```sh
 pvremove /dev/sdb1 /dev/sdc1 /dev/sdd1
 ```
+
 ### resize2fs
-#### Resize filesystem of logical volume {Marketing} on volume group {vg1} to take up the entire logical volume
+Resize filesystem of logical volume {Marketing} on volume group {vg1} to take up the entire logical volume
 ```sh
 resize2fs /dev/vg1/Marketing
 ```
+
 ### vgcreate
-#### Create volume group {vg1} from physical volumes {/dev/sdb} and {/dev/sdc}
+Create volume group {vg1} from physical volumes {/dev/sdb} and {/dev/sdc}
 ```sh
 vgcreate vg1 /dev/sdb /dev/sdc
 ```
-#### Create a volume group {vg1} from device {/dev/sdb1}
+Create a volume group {vg1} from device {/dev/sdb1}
 ```sh
 vgcreatevg1 /dev/sdb1
 ```
+
 ### vgdisplay
 ### vgs
 View volume groups
+
 ### vgextend
 #### Add an additional drive {/dev/sdd} to existent volume group {vg1}
 ```sh
 vgextend vg1 /dev/sdd
 ```
+
 ### vgremove
-#### Remove volume group {/dev/vg1}
+Remove volume group {/dev/vg1}
 ```sh
 vgremove /dev/vg1
 ```
+
 ### vgscan
 Build the LVM cache file
+
 ### adduser
-#### Create a new user (on Debian systems, preferred to `useradd`)
+Create a new user (on Debian systems, preferred to `useradd`)
 ```sh
 adduser 
 ```
+
 ### alsamixer
 Command-line audio mixer
+
 ### apropos
-#### Look up one or more `keywords` in the online manpages: same as `man -k` (rf. `whatis`)
+Look up one or more `keywords` in the online manpages: same as `man -k` (rf. `whatis`)
 ```sh
 apropos keywords
 ```
+
 ### apt
-#### Upgrade distribution
+Upgrade distribution
 ```sh
 apt dist-upgrade
 ```
-#### Install local {file} as a package
+Install local {file} as a package
 ```sh
 apt install file
 ```
-#### Install {package}
+Install {package}
 ```sh
 apt install package
 ```
-#### Search for packages matching {searchexpression}
+Search for packages matching {searchexpression}
 ```sh
 apt list pattern
 ```
-#### Remove {package}
+Remove {package}
 ```sh
 apt remove package
 ```
-#### Update package database
+Update package database
 ```sh
 apt update
 ```
-#### Upgrade all packages
+Upgrade all packages
 ```sh
 apt upgrade
 ```
+
 ### apt-cache
 Display package information regarding package cache
 #### apt-cache commands
@@ -1479,229 +1546,292 @@ Option  | Effect
 `-s`    | manually add a static entry to the cache
 `-d`    | delete an entry from the cache
 
-
 ### apt-key
-#### Add a public GPG key to keyring
+Add a public GPG key to keyring
 ```sh
 curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add - # Google Cloud SDK
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -	# Docker
 ```
+
 ### add-apt-repository
-#### Add a repository
+Add a repository
 ```sh
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+sudo add-apt-repository "deb http://security.ubuntu.com/ubuntu trusty-security main universe"
 ```
+
 ### at
-#### Execute a command at a given time
+Execute a command at a given time
 ```sh
 echo "cmd" | at time
 ```
 ```sh
 at -f file time
 ```
-#### List scheduled jobs
+List scheduled jobs
 ```sh
 at -l
 ```
-#### Remove scheduled jobs
+Remove scheduled jobs
 ```sh
 at -r
 ```
-#### Execute {cmd} at {time}
+Execute `cmd` at `time`
 ```sh
 at time
 > cmd
 ```
+
 ### ausearch
-#### Display audit logs from {startdate} to {enddate}
+Display audit logs from {startdate} to {enddate}
 ```sh
 ausearch --start startdate--end enddate
 ```
-#### Search audit logs for today for logins of UID 500
+Search audit logs for today for logins of UID 500
 ```sh
 ausearch --start today --loginuid500
 ```
+
 ### blkid
 Show UUID, Label, and filesystems of GPT block devices
+
 ### chage
 Change user password expiry information
-#### Remove expiration date from an account
+Remove expiration date from an account
 ```sh
 chage -E -1 user
 ```
-#### Set the date (or number of days since January 1, 1970) on which the user's account will no longer be accessible to {date} (YYYY-MM-DD)
+Set the date (or number of days since January 1, 1970) on which the user's account will no longer be accessible to {date} (YYYY-MM-DD)
 ```sh
 chage -E days chage --expiredate days
 ```
-#### Set the maximum number of days during which a password is valid
+Set the maximum number of days during which a password is valid
 ```sh
 chage -M days chage --maxdays days
 ```
-#### Set the minimum number of days between password changes
+Set the minimum number of days between password changes
 ```sh
 chage -m days chage --mindays days
 ```
-### chage
-#### Set the number of days of warning before a password change is required
+Set the number of days of warning before a password change is required
 ```sh
 chage -W days chage --warndays days
 ```
+
 ### chcon
-#### Change context for website directory
+Change context for website directory
 ```sh
 chcon -Rv --type=httpd_sys_content_t website
 ```
+
 ### chgrp
-#### Change ownership of `$FILE` to `$USER` and `$GROUP`
+Change ownership of `$FILE` to `$USER` and `$GROUP`
 ```sh
 chgrp $USER:$GROUP $FILE
 ```
+
 ### chmod
-#### Set sticky bit on {file}
+Set sticky bit on `$FILE`
 ```sh
-chmod +t file
+chmod +t $FILE
 ```
-#### Clear sticky bit on {file}
+Clear sticky bit on `$FILE`
 ```sh
 chmod -t file
 ```
-#### Clear SGID bit on {file}
+Clear SGID bit on `$FILE`
 ```sh
 chmod g-s file
 ```
-#### Set SGID bit on {file}
+Set SGID bit on `$FILE`
 ```sh
 chmod g+s file
 ```
-#### Clear SUID bit on {file}
+Clear SUID bit on `$FILE`
 ```sh
 chmod u-s file
 ```
-#### Set SUID bit on {file}
+Set SUID bit on `$FILE`
 ```sh
 chmod u+s file
 ```
-#### Set `setuid` permission on {file}
+Set `setuid` permission on `$FILE`
 ```sh
 chmod +s file
 ```
+
 ### chpass
-#### Change default shell to Fish
+Change default shell to Fish
 ```sh
 chpass -s /usr/local/bin/fish
 ```
+
+### chrony
+Synchronize system time using NTP (cf. [`timedatectl`](#timedatectl)\
+Stop the `systemd-timesyncd` service
+```sh
+sudo systemctl stop systemd-timesyncd.service
+```
+Install `chrony` if it is not already present and enable and start the service
+```sh
+sudo systemctl enable chronyd && sudo systemctl start chronyd
+```
+
 ### chsh
-#### Change the user's default shell to Bash
+Change the user's default shell to Bash
 ```sh
 chsh-s /bin/bash
 ```
-#### Change the user's default shell to Fish
+Change the user's default shell to Fish
 ```sh
 chsh-s /usr/local/bin/fish
 ```
+
 ### cp
-#### Preserve symlinks in a recursive copy
+Preserve symlinks in a recursive copy
 ```sh
 cp -a
 cp --archive
 ```
+
 ### crontab
-#### Remove current crontab, clearing cron jobs for the effective user
+There are 2 types of `crontab`, taking similar syntax:
+1. User crontabs, where cron jobs take the syntax: `minute hour day month weekday cmd`
+2. System crontabs found in /etc/cron.d/, /etc/cron.hourly, /etc/cron.weekly, or /etc/monthly specify a user: `minute hour day month weekday USER cmd`
+
+Command | Effect
+:---                    | :---
+`-e`                    | create or __edit__ crontab (using $EDITOR path variable)
+`-l`                    | list cron jobs
+`-u  $USER -l`          | list {user}'s cron jobs
+`-r`                    | delete all cron jobs
+`-u $USER -r`           | delete cron jobs of `$USER`
+`-u $SUSER $NEWCRONTAB` | replace current crontab of `$USER` with `$NEWCRONTAB`
+
+Remove current crontab, clearing cron jobs for the effective user
 ```sh
 crontab -r
 ```
-#### Specify that {user}'s crontab is to be modified
+Specify that {user}'s crontab is to be modified
 ```sh
 crontab -u user
 ```
+
+
 ### crossystem
 Print all parameters with descriptions and current values
+
 ### cryptsetup
-#### Incorporate full-disk encryption on /dev/sdb1, asking for passphrase twice
+Incorporate full-disk encryption on /dev/sdb1, asking for passphrase twice
 ```sh
 cryptsetup --verify-passphrase luksFormat /dev/sdb1
 ```
-#### Assign virtual name "storage1" to encrypted disk /dev/sdb1
+Assign virtual name "storage1" to encrypted disk /dev/sdb1
 ```sh
 cryptsetup luksOpen /dev/sdb1 storage1
 ```
+
+
 ### curl
-#### Download {url}, posting form-encoded {name} as {value}
+Download {url}, posting form-encoded {name} as {value}
 ```sh
 curl -d '{name}={value}' url
 ```
-#### Download {url}, but produce no output in case of failure
+Download {url}, but produce no output in case of failure
 ```sh
 curl -f url
 curl --fail url
 ```
-#### Download {url}, following redirects
+Download {url}, following redirects
 ```sh
 curl -L url
 curl --location url
 ```
-#### Download {url} saving output under the filename indicated by the URL itself
+Download {url} saving output under the filename indicated by the URL itself
 ```sh
 curl -O url
 curl --remote-name url
 ```
-#### Make an http GET request to the URL provided, displaying the response in the terminal
+Make an http GET request to the URL provided, displaying the response in the terminal
 ```sh
 curl url
 ```
-#### Download {url} and save to {file}
+Download {url} and save to {file}
 ```sh
 curl url -o file
 ```
+
+
 ### cut
-#### cut options
 
 Option  | POSIX option            | Effect
 :---    | :---                    | :---
 `-c`    |                         | character number
-`-d`    | delimiter
-```sh
-cut -d
-```
-#### Field number
-```sh
-cut -f
-```
+`-d`    | `--delimiter`
+`-f`    |                         | field number
+
+
 ### date
-Display the date and time according to locale settings
-#### Set the current date and time to {datestring}
+Display the date and time according to locale settings\
+
+Option  | Effect
+:---    | :---
+`-s`    | set date [[4](sources.md)]
+
+Set the current date and time to `$DATESTRING`
 ```sh
-date -s "datestring"
+date -s "$DATESTRING"
 ```
-### date
-#### Print or set UTC time
+Set only the year using `"next year"` or `"last year"`
+```sh
+date -s "next year"
+date -s "last year"
+```
+Set only the day
+```sh
+date -s "next day"
+date -s "monday"
+```
+Print or set UTC time
 ```sh
 date -u
 date --utc
 date universal
 ```
+Display the date fifty days into the future [[50](sources.md)]
+```sh
+date -d '+50days' +%F
+```
+
+
 ### dbus-monitor
 Monitor messages going through a D-Bus message bus
+
+
 ### dd
-#### Implement a simple CPU benchmark by writing 1 GB of zeroes and piping it to md5sum
+Implement a simple CPU benchmark by writing 1 GB of zeroes and piping it to md5sum
 ```sh
 dd if=/dev/zero bs=1M count=1024 | md5sum
 ```
+
+
 ### declare
-#### Option which displays output in a way that could then be used as input to another command
+Option which displays output in a way that could then be used as input to another command
 ```sh
 declare -p
 ```
+
 ### df
-#### Change scale to terabytes
+Change scale to terabytes
 ```sh
 df -BT
 df --block-size=T
 ```
-#### Show drive utilization
+Show drive utilization
 ```sh
 df -h
 ```
+
 ### dhclient
 Obtain and configure TCP/IP information from a server on the network [[LGLC](../sources/lglc.md): 34]
 #### Turn on the DHCP client and get a new address from the server
@@ -1878,130 +2008,160 @@ Configuration file                          | Description
 /etc/sysconfig/network-scripts/ifcfg-ens33  | interface settings
 /usr/lib/firewalld/services                 | .xml files that define services ("ZONE=public")
 
-#### Display status of service
+Display status of service
 ```
 firewall-cmd --state
 ```
-#### Display default zone
+Display default zone
 ```
 firewall-cmd --get-default-zone
 ```
-#### Display zones that are attached to an interface
+Display zones that are attached to an interface
 ```
 firewall-cmd --get-active-zones
 ```
-#### Add a new zone
+Add a new zone
 ```
 firewall-cmd --new-zone=testlab
 ```
-#### Add a new zone, and write the change to disk
+Add a new zone, and write the change to disk
 ```
 firewall-cmd --new-zone=testlab  --permanent
 ```
-#### Load saved configuration
+Load saved configuration
 ```
 firewall-cmd --reload
 ```
-#### Display names of all available services
+Display names of all available services
 ```
 firewall-cmd --get-services
 ```
-#### Add a service permanently
+Add a service permanently
 ```
 firewall-cmd --add-service=ftp --permanent
 ```
-#### Display services loaded in memory
+Display services loaded in memory
 ```
 firewall-cmd --list-services
 ```
+Remove service
 ```
 firewall-cmd --remove-service
 ```
-#### Add nonstandard port
+Add nonstandard port
 ```
 firewall-cmd --add-port=8080/tcp
 ```
-#### Add a range of nonstandard ports
+Add a range of nonstandard ports
 ```
 firewall-cmd --add-port=50000-60000/udp
 ```
-#### See approved port numbers
+See approved port numbers
 ```
 firewall-cmd --list-ports
 ```
-#### Add a range of nonstandard ports
+Add a range of nonstandard ports
 ```sh
 firewall-cmd --add-port=50000-60000/udp
 ```
-#### Add a nonstandard port
+Add a nonstandard port
 ```sh
 firewall-cmd --add-port=8080/tcp
 ```
-#### Add the FTP service to the firewall
+Add the FTP service to the firewall
 ```sh
 firewall-cmd --add-service=ftp
 ```
-#### Display zones that actually have an attached interface
+Display zones that actually have an attached interface
 ```sh
 firewall-cmd --get-active-zones
 ```
-#### Display the default zone
+Display the default zone
 ```sh
 firewall-cmd --get-default-zone
 ```
-#### Display names of available services
+Display names of available services
 ```sh
 firewall-cmd --get-services
 ```
-#### Display approved port numbers
+Display approved port numbers
 ```sh
 firewall-cmd --list-ports
 ```
-#### Define a new zone "testlab"
+Define a new zone "testlab"
 ```sh
 firewall-cmd --new-zone=testlab
 ```
-#### Record a change to the configuration on disk
+Record a change to the configuration on disk
 ```sh
 firewall-cmd --permanent
 ```
-#### Load configuration on disk into memory
+Load configuration on disk into memory
 ```sh
 firewall-cmd --reload
 ```
-#### Remove firewalld service
+Remove firewalld service
 ```sh
 firewall-cmd --remove-service
 ```
-#### Confirm firewalld is running
+Confirm firewalld is running
 ```sh
 firewall-cmd --state
 ```
+
+
 ### fold
-#### Display text of {file}, wrapping long lines
+Display text of {file}, wrapping long lines
 ```sh
 fold  file
 ```
+
+
 ### fsck
-Check filesystem for errors
-#### Display progress indicators
+Check filesystem for errors\
+Display progress indicators
 ```sh
 fsck -C
 ```
-#### Specify {ext3} filesystem and check {/dev/sdc1} for errors
+Specify {ext3} filesystem and check {/dev/sdc1} for errors
 ```sh
 fsck -t ext3 /dev/sdc1
 ```
-#### Prompt when attempting a repair action 
+Prompt when attempting a repair action 
 ```sh
 fsck -r
 ```
+
+
 ### fstrim
 Discard unused blocks on a mounted filesystem
+
+
 ### gconf-editor
 GUI-based configuration editor for GNOME
+
+
 ### gdmsetup
 GUI program used to set options for the login window when using GDM
+
+### getent
+Get entries from the `passwd` file [[50](sources.md)]
+```sh
+getent passwd sonny timmy
+```
+```
+sonny:x:1001:1002:Sonny:/home/sonny:/bin/bash
+timmy:x:1002:1003::/home/timmy:/bin/bash
+```
+
+```sh
+getent group sonny timmy
+```
+```
+sonny:x:1002:
+timmy:x:1003:
+```
+
 ### gem
 #### Install a Ruby {package}
 ```sh
@@ -2036,32 +2196,34 @@ gpasswd -A user group
 ```sh
 gpasswd -d user group
 ```
+
 ### gpg
-PGP was bought by Semantec, and GNU has since released GPG, an open-source replacement.[35](README.md#sources)
-#### gpg options
-Option  | POSIX option                | Effect
-:---    | :---                        | :---
-\-      | clearsign, clear-sign       | make a cleartext signature, readable without any special software
-\-      | send-keys                   | send keys to a keyserver
-d       | decrypt                     | decrypt {$FILE}
-k       | list-keys, list-public-keys | list available GPG keys
-#### Decrypt file
+PGP was bought by Semantec, and GNU has since released GPG, an open-source replacement.[35](sources.md)
+
+Option  | POSIX option  | Effect
+:---    | :---          | :---
+\-      | `--clearsign`<br/>`--clear-sign` | make a cleartext signature, readable without any special software
+\-      | `--send-keys` | send keys to a keyserver
+`-d`    | `--decrypt`   | decrypt $FILE}
+`-k`    | `--list-keys`<br/>`--list-public-keys` | list available GPG keys
+
+Decrypt file
 ```sh
 gpg file.txt
 ```
-#### Export GPG public key
+Export GPG public key
 ```sh
 gpg --export --output ~/jdoe.pub
 ```
-#### Import another person's public key
+Import another person's public key
 ```sh
 gpg --import jdoe.pub
 ```
-#### List available GPG keys
+List available GPG keys
 ```sh
 gpg --list-key
 ```
-#### Encrypt a file
+Encrypt a file
 ```sh
 gpg --encrypt -r jdoe@dplaptop.lab.itpro.tv ./file.txt
 ```
@@ -2083,10 +2245,13 @@ gpg --import ~/jdoe.pub
 ```sh
 gpg --send-keys keyIDs --keyserver keyserver
 ```
+
 ### groupadd
 Create a new group
+
 ### groupdel
 Delete a group
+
 ### groupmod
 Modify definition of specified group by modifying the appropriate entry in the group database
 
@@ -2102,65 +2267,74 @@ grub-install --boot-directory
 ```sh
 grub2-mkconfig --output=/boot/grub2/grub.cfg
 ```
+
 ### hdiutil
 Manipulate disk images
+
 ### hdparm
-Get/set SATA/IDE device parameters
-#### Check power mode
+Get/set SATA/IDE device parameters\
+Check power mode
 ```sh
 hdparm -C
 ```
-#### Show drive geometry, including size in sectors and starting offset
+Show drive geometry, including size in sectors and starting offset
 ```sh
 hdparm -g
 ```
+
 ### head
-#### Print first 8 characters of {file}
+Print first 8 characters of `$FILE`
 ```sh
-head -c8 file
+head -c8 $FILE
 ```
+
 ### host
-#### Display SOA record frm each authoritative DNS nameserver
+Display SOA record frm each authoritative DNS nameserver
 ```sh
 host -C
 ```
+
 ### hostname
-#### Return the domain name configured for the server
+Return the domain name configured for the server
 ```sh
 hostname -d
 ```
+
 ### hwclock
-Access the BIOS clock
-#### Set hardware clock to software clock
+Access the BIOS clock\
+Set hardware clock to software clock
 ```sh
 hwclock --hctosys
 ```
-#### Set software clock to hardware clock
+Set software clock to hardware clock
 ```sh
 hwclock --systohw
 ```
+
 ### system
-#### Display the Hardware Clock time
+Display the Hardware Clock time
 ```sh
 hwclock --show
 ```
+
 ### iconv
-Convert text from one encoding to another
-#### Convert {file} from ASCII to UTF-8
+Convert text from one encoding to another\
+Convert {file} from ASCII to UTF-8
 ```sh
 iconv -f ASCII -t UTF-8 file
 ```
-#### Show available character sets
+Show available character sets
 ```sh
 iconv -l --list
 ```
+
 ### ifconfig
-"RX" and "TX" stand for received and transmitted.
-#### Apply a static IP address to interface {eth0} and turn it on ("up")
+"RX" and "TX" stand for received and transmitted.\
+Apply a static IP address to interface {eth0} and turn it on ("up")
 ```
 ifconfig eth0 up 10.1.230.245 netmask 255.255.255.0
 ```
-#### Bring an interface up or down
+Bring an interface up or down
 ```
 ifup eth0
 ifdown eth0
@@ -2169,109 +2343,117 @@ ifdown eth0
 ifconfig eth0 up
 ifconfig eth0 down
 ```
-#### Display details of all interfaces (even disabled)
+Display details of all interfaces (even disabled)
 ```sh
 ifconfig -a
 ```
-#### Disable eth0
+Disable eth0
 ```sh
 ifconfig eth0 down
 ```
-#### Configure eth0 with an additional IPv6 address
+Configure eth0 with an additional IPv6 address
 ```sh
 ifconfig eth0 inet6 add fdd6:551:b09e::/128
 ```
-#### Enable eth0
+Enable eth0
 ```sh
 ifconfig eth0 up
 ```
-#### Turn network interface {eth0} on or off using `ifconfig`
+Turn network interface {eth0} on or off using `ifconfig`
 ```sh
 ifconfig eth0 up
 ifconfig eth0 down
 ```
-#### Turn off network interface {eth0}
+Turn off network interface {eth0}
 ```sh
 ifdown eth0
 ```
-#### Bring online all interfaces marked as auto within the networking configuration
+Bring online all interfaces marked as auto within the networking configuration
 ```sh
 ifup -a
 ```
-#### Turn on network interface {eth0}
+Turn on network interface {eth0}
 ```sh
 ifup eth0
 ```
+
 ### initctl
-#### Reload configuration files (on Upstart-controlled system)
+Reload configuration files (on Upstart-controlled system)
 ```sh
 initctl reload
 ```
+
 ### insmod
-#### Insert a module into the Linux kernel
+Insert a module into the Linux kernel
 ```sh
 insmod module
 ```
+
 ### ip
-#### Newer alternative to the old `ifconfig`
+Newer alternative to the old `ifconfig`
 ```sh
 ip addr
 ```
-#### Show L2 status (links)
+Show L2 status (links)
 ```sh
 ip link
 ```
-#### Listen for netlink messages
+Listen for netlink messages
 ```sh
 ip monitor 
 ```
-#### Display routing information
+Display routing information
 ```sh
 ip route
 ```
-#### Change the default gateway to 192.168.1.1 on eth0
+Change the default gateway to 192.168.1.1 on eth0
 ```sh
 ip route change default via 192.168.1.1 dev eth0
 ```
+
 ### iscsiadm
-Command-line utility allowing discovery and login to iSCSI targets
-#### Set interval length between two ping requests
+Command-line utility allowing discovery and login to iSCSI targets\
+Set interval length between two ping requests
 ```sh
 iscsiadm -i
 ```
-#### Discover iSCSI targets
+Discover iSCSI targets
 ```sh
 iscsiadm discovery
 ```
+
 ### iwlist
 Get detailed wireless information about a wireless interface
+
 ### journalctl
-Display the systemd binary logs
-#### Show current disk usage of all journal files
+Display the systemd binary logs\
+Show current disk usage of all journal files
 ```sh
 journalctl --disk-usage
 ```
-#### Continuously update the display as new log entries are created
+Continuously update the display as new log entries are created
 ```sh
 journalctl -f
 ```
-#### Display output in reverse (newest entries first)
+Display output in reverse (newest entries first)
 ```sh
 journalctl -r
 ```
+
 ### kill
-#### List signal options
+List signal options
 ```sh
 kill -l
 kill --list
 ```
-#### Transmit SIGKILL to {proc}
+Transmit SIGKILL to {proc}
 ```sh
 kill -9 proc
 kill --KILL proc
 ```
+
 ### last
-Display history of successful logins
+Display history of successful logins\
 Load information from an alternate file
 ```sh
 last -f file
@@ -2462,7 +2644,7 @@ modprobe --show-depends $MODULE
 
 ### mongod
 MongoDB daemon
-mongod options
+
 POSIX option  | Effect
 :---          | :---
 `--dbpath`    | 
@@ -2474,15 +2656,17 @@ Run MongoDB service in the background on port 80
 ```sh
 mongod --dbpath $HOME/db --port 80 --fork --logpath /var/tmp/mongodb
 ```
-Mount all filesystems in fstab
+
+### mount
+Mount all filesystems in `fstab`
 ```sh
 mount -a
 ```
-Mount {filesystem} as read-only
+Mount `$FILESYSTEM` as read-only
 ```sh
-mount -r filesystem
+mount -r $FILESYSTEM
 ```
-Specify filesystem type
+Specify `$FILESYSTEM` type
 ```sh
 mount -t
 ```
@@ -2490,7 +2674,7 @@ Mount a partition using its UUID
 ```sh
 mount -U
 ```
-Mount {filesystem} as read-write
+Mount `$FILESYSTEM` as read-write
 ```sh
 mount -w filesystem
 ```
@@ -2498,6 +2682,13 @@ Mount a USB stick that is made available on /dev/sdb in /media/usb
 ```sh
 mount /dev/sdb1 /media/usb
 ```
+
+### msmtp
+[[51](sources.md)]
+Config file   | Description
+:---          | :---
+~/.msmtprc    | 
+
 
 ### mt
 Control magnetic tape drive operation; operates on environment variable TAPE
@@ -2911,7 +3102,7 @@ Option  | POSIX option            | Effect
 \-      | `--progress`            | display a progress bar
 \-      | `--remove-source-files` | remove original files after synchronization
 
-Copy $FILE locally [[44](README.md#sources)]
+Copy $FILE locally [[44](sources.md)]
 ```sh
 rsync -zvr $FILE $PATH
 ```
@@ -2923,17 +3114,17 @@ Copy $FILE from $HOST to local $PATH
 ```sh
 rsync $HOST:$FILE $PATH
 ```
-Copy $DIR recursively [[44](README.md#sources)]
+Copy $DIR recursively [[44](sources.md)]
 ```sh
 rsync -zvr $DIR $PATH
 rsync -avz $DIR $PATH
 ```
-Copy to remote systems over SSH [[44](README.md#sources)]
+Copy to remote systems over SSH [[44](sources.md)]
 ```sh
 rsync -zvre ssh $DIR $HOST:$REMOTEPATH
 rsync -avze ssh $DIR $HOST:$REMOTEPATH
 ```
-Synchronize only specific file type [[44](README.md#sources)]
+Synchronize only specific file type [[44](sources.md)]
 ```sh
 rsync -zvre ssh --include '*.php' --exclude '*' $PATH
 ```
@@ -3489,9 +3680,17 @@ Test if {VAR} matches a regex {pattern} (must not be quoted, otherwise, {pattern
 
 ### timedatectl
 Display the system clock, including local time, universal time, time zone, etc\
-List timezones <super>[49](sources.md)</super>
+List timezones [ [49](sources.md) ]
 ```sh
 timedatectl list-timezones
+```
+Set timezone [ [49](sources.md) ]
+```sh
+timedatectl set-timezone America/New_York
+```
+Synchronize over NTP using the `systemd-timesync` daemon (alternatively, use [`chrony`](#chrony) [ [49](sources.md) ]
+```sh
+timedatectl set-ntp true
 ```
 
 ### top
@@ -3675,103 +3874,117 @@ wc -w
 ```sh
 whatis commands
 ```
+
+
 ### X
 Start the graphical interface from a command line
 #### Test X11 with the config file automatically generated after `Xorg -configure`
 ```sh
 X -config $HOME/xorg.conf.new
 ```
+
+
 ### xdpyinfo
 Show detailed information about display
+
+
 ### xhost
-#### Enable access control to X server
+Enable access control to X server
 ```sh
 xhost -
 ```
-#### Remove {host} from list of authorized clients for X server
+Remove {host} from list of authorized clients for X server
 ```sh
 xhost -host
 ```
-#### Disable access control to X server
+Disable access control to X server
 ```sh
 xhost +
 ```
-#### Add {host} to list of authorized clients for X server
+Add {host} to list of authorized clients for X server
 ```sh
 xhost +host
 ```
+
+
 ### Xorg
-#### Enable automatic configuration of X11 server
+Enable automatic configuration of X11 server
 ```sh
 Xorg -configure
 ```
+
+
 ### xrandr
-Set size, orientation, and reflection of video output
-#### Change resolution of DisplayPort1 to 1920x1080
+Set size, orientation, and reflection of video output\
+Change resolution of DisplayPort1 to 1920x1080
 ```sh
 xrandr --output DP1 --mode 1920x1080
 ```
-#### Disable VGA1 output
+Disable VGA1 output
 ```sh
 xrandr --output VGA1 --off
 ```
-#### Display current state of the system
+Display current state of the system
 ```sh
 xrandr -q  --query
 ```
+
+
 ### xwininfo
 Utility that provides information about a clicked window, including dimensions, position, etc
+
+
 ### yay
-#### Display all AUR packages that need to be updated (deprecated)
+Display all AUR packages that need to be updated (deprecated)
 ```sh
 yay -Pu
 yay --show --upgrades package
 ```
-#### List all install packages, filtering output to packages that are out-of-date on the local system
+List all install packages, filtering output to packages that are out-of-date on the local system
 ```sh
 yay -Qu
 yay --query --upgrades
 ```
-#### Install {pkg} from the AUR
+Install {pkg} from the AUR
 ```sh
 yay -S package
 yay --sync package
 ```
-#### Display information about {package}
+Display information about {package}
 ```sh
 yay -Si package
 yay --sync --info package
 ```
-#### Search for {pkg} in AUR repos
+Search for {pkg} in AUR repos
 ```sh
 yay -Ss package
 yay --sync --search package
 ```
-#### Update all packages from AUR and official repos
+Update all packages from AUR and official repos
 ```sh
 yay -Syu
 yay --sync --refresh --sysupgrade
 ```
-#### Remove unwanted dependencies of now-removed installations of AUR repos
+Remove unwanted dependencies of now-removed installations of AUR repos
 ```sh
 yay -Yc
 yay --yay --clean
 ```
+
 ### touch
-#### Update {newfile}'s modification date to match {oldfile}
-[[36](README.md#sources)]
+Update {newfile}'s modification date to match {oldfile} [[36](sources.md)]
 ```sh
 touch -r oldfile newfile
 ```
 
 ### sosreport
-**SOS** is an open-source data collection tool that can be used to collect system configuration details and diagnostic information from a Unix-like operating system. It is installed by default on Ubuntu Server. [[39](README.md#sources)]
-#### sosreport options
+**SOS** is an open-source data collection tool that can be used to collect system configuration details and diagnostic information from a Unix-like operating system. It is installed by default on Ubuntu Server. [[39](sources.md)]
+
 Option  | POSIX option            | Effect
 :---    | :---                    | :---
-\-      | compression-type        | specify alternative compression (`xz` by default)
-l       |                         | list plugins
-\-      | tmp-dir                 | specify alternative temporary directory
+\-      | `--compression-type`    | specify alternative compression (`xz` by default)
+`-l`    |                         | list plugins
+\-      | `--tmp-dir`             | specify alternative temporary directory
 
 
 #### Collect system configuration details
@@ -3788,9 +4001,17 @@ sosreport --compression-type gzip
 # Generate report for only specific plugins
 sosreport -o apache --batch
 ```
+
+### sudo
+`sudo` is installed by default on most distros, but it can be installed. [[52](sources.md)]\
+In order to use `sudo`, users have to be added to special groups that vary based on distribution. The group `wheel` grants access to `sudo` on Red Hat derivatives, while there is a group named `sudo` on Debian, Ubuntu, and derivatives to do the same thing.\
+Using `sudo` with output redirection will cause an error if the effective user doesn't have write permissions. 
+- Invoke a new shell as root by using `sudo sh -c`
+- Pipe output to `sudo tee` command
+
 ## Tasks
 ### Samba
-#### Install and configure Samba server
+Install and configure Samba server
 Install `samba`
 ```sh
 sudo apt install samba
@@ -3799,7 +4020,7 @@ Verify the samba service `smbd` is running
 ```sh
 sudo systemctl status smbd
 ```
-#### Configure Samba 
+Configure Samba 
 ```sh
 sudo mkdir /samba                   # Create a directory for the share
 sudo chmod -R 0777 /samba
@@ -3822,12 +4043,11 @@ Set up a Samba account for {user}
 ```sh
 sudo smbpasswd -a user
 ```
-Restart Samba service
+Restart Samba service [[40](sources.md), [41](sources.md)]
 ```sh
 sudo systemctl restart smbd.service
 ```
-[[40](README.md#sources), [41](README.md#sources)]
-#### Install and configure Samba as a client
+Install and configure Samba as a client
 ```sh
 sudo apt install smbclient 
 ```
@@ -3839,9 +4059,10 @@ This will display the Samba CLI
 ```
 smb: \>
 ```
-[[40](README.md#sources)]
+[[40](sources.md)]
+
 ### Bash scripting
-#### Validating arguments
+Validating arguments [[PGL](../sources/pgl.md): 548]
 ```sh 
 if [ $# != 2 ]
 then 
@@ -3849,21 +4070,20 @@ then
   exit 1
 fi
 ```
-[[PGL](../sources/pgl.md): 548]
+[[7](sources.md)]
 ```sh
 [ -z "$1" ] && echo "..." && exit 1
 ```
-[[7](README.md#sources)]
+[[8](sources.md)]
 ```sh
 if [ ! -z "$2" ] ; then ...; fi
 ```
-[[8](README.md#sources)]
-#### Looping based on user input
-Placed in a while loop, if user responds with anything except "y" (the read command will read only the first letter) the loop will terminate [[23](README.md#sources)]
+Placed in a while loop, if user responds with anything except "y" (the read command will read only the first letter) the loop will terminate [[23](sources.md)]
 ```bash
 read -p "Backup another server? (y/n)" -n 1
 ["$BACKUP_AGAIN"="y"] || break
 ```
+
 #### Diagnosing network problems
 Test from the inside out, starting with the loopback
   1. ping looback address, testing the TCP/IP stack
@@ -3872,20 +4092,22 @@ Test from the inside out, starting with the loopback
   4. ping the gateway
   5. ping an IP address on the Internet
   6. ping a hostname on the Internet
-#### Display contents of a random file
+
+Display contents of a random file
 ```sh
 ls | sort -R | sed 1q | xargs cat
 ```
-#### Find out which commands you use most often
+Find out which commands you use most often
 ```sh
 history | awk '{print $2' | sort | uniq -c | sort -rn | head
 ```
-#### Count the number of occurrences of a string
+Count the number of occurrences of a string
 ```sh
 | uniq -c | sort -nr
 ```
+
 ### screencapture
-Take a screenshot on Mac OS X [[48](README.md#sources)]
+Take a screenshot on Mac OS X [[48](sources.md)]
 
 Option  | Effect
 :---    | :---
