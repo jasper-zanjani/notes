@@ -1,13 +1,18 @@
 # DevOps
 \#      | Links
 :---    | :---
-A-Z     | [Container runtimes](#container-runtimes) [Culture](#culture) [Docker](docker.md) [Glossary](glossary.md) [Kubernetes](k8s.md) [Linux containers](#linux-containers) [Podman](podman.md) [Sources](sources.md) [Windows containers](#windows-containers) [YAML](yaml.md)
+A-Z     | [CI/CD](#cicd) [Container runtimes](#container-runtimes) [Culture](#culture) [Docker](docker.md) [Glossary](glossary.md) [Kubernetes](k8s.md) [Linux containers](#linux-containers) [Podman](podman.md) [Sources](sources.md) [Windows containers](#windows-containers) [YAML](yaml.md)
 
 > DevOps is a way to deliver software with shared pain and responsibility.
 
 The term "DevOps" began to gain currency in 2009-2010, before the emergence of containers. DevOps was a necessary response in infrastructure to the quickening pace of software development that emerged after the emergence of the Agile manifesto. [[39](sources.md)]\
 Features like self-healing, scalability, resource monitoring, automatic DNS management, etc have since become built-in to Kubernetes. [[7](sources.md)]\
 DevOps provides the cultural and tooling advantage a company needs in order to deliver software more quickly. [[44](sources.md)]
+
+## CI/CD
+CI/CD basically means running scripts to build pipelines that build applications.[[45](sources.md)]
+- **Continuous Integration (CI)** is about taking code to **artifact**, which is the packaged software ready for deployment produced after code is brought through the build process. 
+- **Continuous Delivery (CD)** refers to the stages of provisioning cloud environments to deploy the artifact.
 
 ## Culture
 > "DevOps is not at all about getting code to production, but rather getting ideas into production and failing quick." [[39](sources.md)]

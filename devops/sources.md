@@ -43,3 +43,4 @@
 42. "Concepts". [Kubernetes](https://kubernetes.io/docs/concepts/).
 43. "K8s setup, GitOps, and more!". [DD](../sources/README.md#dd-gitops)
 44. "DevSecOps explained in 5 minutes". [DZone](https://dzone.com/articles/devsecops-explained-in-5-minutes?utm_medium=feed&utm_source=feedpress.me&utm_campaign=Feed:%20dzone).
+45. "Understanding the basic concepts of [ CI/CD ](README.md#cicd)". [Hacker Noon](https://hackernoon.com/understanding-the-basic-concepts-of-cicd-73t3zec?source=rss): 2019/10/25.
