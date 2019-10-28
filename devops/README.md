@@ -1,7 +1,7 @@
 # DevOps
 \#      | Links
 :---    | :---
-A-Z     | [CI/CD](#cicd) [Container runtimes](#container-runtimes) [Culture](#culture) [Docker](docker.md) [Glossary](glossary.md) [Kubernetes](k8s.md) [Linux containers](#linux-containers) [Podman](podman.md) [Sources](sources.md) [Windows containers](#windows-containers) [YAML](yaml.md)
+A-Z     | [CI/CD](#cicd) [Container runtimes](#container-runtimes) [Culture](#culture) [Docker](docker.md) [Glossary](glossary.md) [Kubernetes](k8s.md) [Linux containers](#linux-containers) [Podman](podman.md) [Sources](sources.md) [Vagrant](vagrant.md) [Windows containers](#windows-containers) [YAML](yaml.md)
 
 > DevOps is a way to deliver software with shared pain and responsibility.
 
