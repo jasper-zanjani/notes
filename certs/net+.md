@@ -8,6 +8,7 @@ Commands
 Term    | Description
 :---    | :---
 802.1q  | Trunking
+802.3   | CSMA/CD
 802.3af | PoE
 802.3at | PoE+
 802.11  | Wi-Fi
@@ -52,8 +53,8 @@ Term    | Description
 
 ## Wireless
 Wireless access [[1](#sources): 247]
-- **Basic service set (BSS)**: when a single AP is connected to the wired network
-- **Extended service set (ESS)**: using multiple BSSs to form a single subnetwork
+- **Basic service set (BSS)**: single AP
+- **Extended service set (ESS)**: multiple APs
 - **Independent basic service set (IBSS)**: ad hoc mode
 
 ## IP
@@ -79,9 +80,12 @@ Notable address or range  | Description
 :---            | :---
 127.0.0.1       | reserved for loopback testing
 169.254.0.0/16  | range of addresses used in APIPA
+::0, ::1        | loopback address
+2000::/3        | global unicast range
+fc00::/7        | unique local unicast
+ff00::/8        | multicast range
 fe80::/64       | IPv6 link-local addresses
 fec0::/10       | IPv6 site-local addresses
-::0, ::1        | loopback address
 
 #### Network Address Translation
 **NAT** allows many computers to hide behind a single IP address, using one of several addressing schemes [[1](#sources): 99-101].
@@ -99,13 +103,27 @@ Switching methods:
 
 Routing environments:
 - **Dynamic routing**: involves routers communicating known routes to all directly attached routers. Communication between distance-vector routers is known as **hops**: each router represents one hop. There are **two** types of routing protocols used:
-  - **Distance-vector protocols**
-  - **Link-state protocols**: newer option where the router builds a map of the entire network [[1](#sources): 114]
+  - **Distance-vector protocols** operate by having each router send updates about all the toher routers it knows about to directly connected routers, with updates automatically sent every 30 or 60 seconds. Routers can be configured to send **triggered updates** when a change is detected. The process by which routers learn of updates to network topology is called **convergence**.
+    - **Router Information Protocol (RIP)** limited to 15 hops, no support for authentication. **RIPv2** also limited to 15 hops to maintain compatibility with v1, but supports authentication.
+    - **Enhanced Interior Gateway Routing Protocol (EIGRP)**: enables routers to exchange information more efficiently than RIP, using neighbors to determine routing information. Uses **Diffusing Update Algorithm (DUAL)** to determine best route to a destination.
+  - **Link-state protocols**: newer option where the router builds a map of the entire network. Routers send **link-state advertisements (LSA)** that contain information about the networks to which they connect. [[1](#sources): 114]
     - **Open Shortest Path First (OSPF)**: based on the **shortest path first (SPF)** algorithm to find the least-cost path to any network node
     - **Intermediate System-to-Intermediate System (IS-IS)**: discover shortest path for data to travel using the **SPF** algorithm
+  - **Hybrid Routing Protocols**
+    - **Border Gateway Protocol (BGP)** can be used between gateway hosts on the Internet. BGP supports the use of **autonomous system numbers (ASN)**, globally unique numbers used by connected groups of IP networks that share the same routing policy.
 - **Static routing**: manually entered routes
 
+Another way categorizing routing protocols:
+- **Interior Gateway Protocols (IGP)** include distance-vector and link-state protocols, i.e. RIP, OSPF, and IS-IS
+- **Exterior Gateway Protocols (EGP)** include BGP
 
+**Routing loops** occur when routers are too slow in updating their routing tables and a redundant communication cycle is created between them. This is mitigated by:
+- **Split horizon** prevents router from advertising routes to routers from which they were learned
+- **Poison reverse** route is advertised back on the interface from which it was learned but with a hop count of infinity, which tells the node that the route is unreachable.
+
+Access methods
+- **Carrier sense multiple access/collision detection (CSMA/CD)**
+- **Carrier sense multiple access with collision avoidance (CSMA/CA)**, used in 802.11 wireless,
 
 ## Other protocols
 #### ARP
@@ -153,6 +171,12 @@ A domain name identifies a set of resources that is associated with separate **r
 - **`CNAME`**: canonical name of an alias
 - **Pointer (`PTR`)** records are used for **reverse lookup**, that is resolving IP address to hostnames. [[1](#sources): 69]
 
+## Backups
+Backup types
+- Full
+- Incremental: backup of data that has changed since the previous incremental backup
+- Differential: backup of data that has changed since the last full backup
+- Snapshot: read-only copy of data, frozen at a point in time
 
 ## Commands
 ### arp command
