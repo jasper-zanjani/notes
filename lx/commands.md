@@ -3491,129 +3491,119 @@ sysctl -n kernel.hostname
 ```
 ### syslog
 System logging facility used for messages from the kernel
+
 ### systemctl
-#### Display 
-```sh
-systemctl --failed
-```
-#### Turn NetworkManager off (systemd)
-```sh
-systemctl disable NetworkManager.service
-```
-#### Disable {service}, ensuring it does not run on boot
+Disable `$SERVICE`, ensuring it does not run on boot
 ```sh
 systemctl disable service
+systemctl disable NetworkManager.service
 ```
-#### Make {service} run on boot 
+Make `$SERVICE` run on boot 
 ```sh
-systemctl enable  service
+systemctl enable $SERVICE
 ```
-#### Configure iptables to start on boot and start it immediately
+Configure iptables to start on boot and start it immediately
 ```sh
 systemctl enable --now iptables
 ```
-#### Display default target (on a systemd-controlled system)
+Display default target (on a systemd-controlled system)
 ```sh
 systemctl get-default 
 ```
-#### ?
+?
 ```sh
 systemctl isolate --now service
 ```
-#### Change target to runlevel emergency
+Change target to runlevel emergency
 ```sh
 systemctl isolate emergency.target
 ```
-#### Change target to runlevel 5
+Change target to runlevel 5
 ```sh
 systemctl isolate graphical.target
 systemctl isolate runlevel5.target
 ```
-#### Change target to runlevel 3
+Change target to runlevel 3
 ```sh
 systemctl isolate multi-user.target
 systemctl isolate runlevel3.target
 ```
-#### Change target to runlevel 0
+Change target to runlevel 0
 ```sh
 systemctl isolate poweroff.target
 systemctl isolate runlevel0.target
 ```
-#### Change target to runlevel 6
+Change target to runlevel 6
 ```sh
 systemctl isolate reboot.target
 systemctl isolate runlevel6.target
 ```
-#### Change target to runlevel 1
+Change target to runlevel 1
 ```sh
 systemctl isolate rescue.target
 systemctl isolate runlevel1.target
 ```
-#### Change signal type sent to process to be killed
+Change signal type sent to process to be killed
 ```sh
 systemctl kill -s
 ```
-#### Equivalent to chkconfig --list
+Equivalent to chkconfig --list
 ```sh
 systemctl list-unit-files --type=service
 ```
-#### List available service units
+List available service units
 ```sh
 systemctl list-units
 ```
-#### Prevent firewalld from being started inadvertently by another process
+Prevent firewalld from being started inadvertently by another process
 ```sh
 systemctl mask firewalld
 ```
-#### Reboot the system
+Reboot the system
 ```sh
 systemctl reboot
 ```
-#### Restart {service}
+Restart `$SERVICE`
 ```sh
-systemctl restart  service
-```
-#### Restart iptables service
-```sh
+systemctl restart $SERVICE
 systemctl restart iptables
-```
-#### Restart network service
-```sh
 systemctl restart network.service
 ```
-#### Configure system to boot to a GUI
+Configure system to boot to a GUI
 ```sh
 systemctl set-default graphical.target
 ```
-#### Start {service}
+Start `$SERVICE`
 ```sh
-systemctl start  service
+systemctl start $SERVICE
 ```
-#### Check status of {service}
+Check status of `$SERVICE`
 ```sh
-systemctl status  service
+systemctl status $SERVICE
+sudo systemctl is-active $SERVICE
 ```
-#### Terminate {service}
+Terminate `$SERVICE`
 ```sh
-systemctl stop  service
+systemctl stop $SERVICE
 ```
-#### Stop the firewalld service
+Stop `$SERVICE`
 ```sh
-systemctl stop firewalld
+systemctl stop $SERVICE
 ```
-#### Suspend the system
+Suspend the system
 ```sh
 systemctl suspend
 ```
+
 ### systemd-delta
-Show files that are overridden with systemd
-### systemd-delta
-#### Display differences among files when they are overridden
+Show files that are overridden with systemd\
+Display differences among files when they are overridden
 ```sh
 systemd-delta --diff
 ```
+
 ### tail
-#### Output last lines beginning at 30th line from the start
+Output last lines beginning at 30th line from the start
 ```sh
 tail -n=+30
 tail --lines=+30
