@@ -8,6 +8,7 @@ Commands
 Term    | Description
 :---    | :---
 802.1q  | Trunking
+802.3   | CSMA/CD
 802.3af | PoE
 802.3at | PoE+
 802.11  | Wi-Fi
@@ -99,13 +100,27 @@ Switching methods:
 
 Routing environments:
 - **Dynamic routing**: involves routers communicating known routes to all directly attached routers. Communication between distance-vector routers is known as **hops**: each router represents one hop. There are **two** types of routing protocols used:
-  - **Distance-vector protocols**
-  - **Link-state protocols**: newer option where the router builds a map of the entire network [[1](#sources): 114]
+  - **Distance-vector protocols** operate by having each router send updates about all the toher routers it knows about to directly connected routers, with updates automatically sent every 30 or 60 seconds. Routers can be configured to send **triggered updates** when a change is detected. The process by which routers learn of updates to network topology is called **convergence**.
+    - **Router Information Protocol (RIP)** limited to 15 hops, no support for authentication. **RIPv2** also limited to 15 hops to maintain compatibility with v1, but supports authentication.
+    - **Enhanced Interior Gateway Routing Protocol (EIGRP)**: enables routers to exchange information more efficiently than RIP, using neighbors to determine routing information. Uses **Diffusing Update Algorithm (DUAL)** to determine best route to a destination.
+  - **Link-state protocols**: newer option where the router builds a map of the entire network. Routers send **link-state advertisements (LSA)** that contain information about the networks to which they connect. [[1](#sources): 114]
     - **Open Shortest Path First (OSPF)**: based on the **shortest path first (SPF)** algorithm to find the least-cost path to any network node
     - **Intermediate System-to-Intermediate System (IS-IS)**: discover shortest path for data to travel using the **SPF** algorithm
+  - **Hybrid Routing Protocols**
+    - **Border Gateway Protocol (BGP)** can be used between gateway hosts on the Internet. BGP supports the use of **autonomous system numbers (ASN)**, globally unique numbers used by connected groups of IP networks that share the same routing policy.
 - **Static routing**: manually entered routes
 
+Another way categorizing routing protocols:
+- **Interior Gateway Protocols (IGP)** include distance-vector and link-state protocols, i.e. RIP, OSPF, and IS-IS
+- **Exterior Gateway Protocols (EGP)** include BGP
 
+**Routing loops** occur when routers are too slow in updating their routing tables and a redundant communication cycle is created between them. This is mitigated by:
+- **Split horizon** prevents router from advertising routes to routers from which they were learned
+- **Poison reverse** route is advertised back on the interface from which it was learned but with a hop count of infinity, which tells the node that the route is unreachable.
+
+Access methods
+- **Carrier sense multiple access/collision detection (CSMA/CD)**
+- **Carrier sense multiple access with collision avoidance (CSMA/CA)**, used in 802.11 wireless,
 
 ## Other protocols
 #### ARP
