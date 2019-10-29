@@ -7,8 +7,9 @@ Commands
 #### IEEE speccifications
 Term    | Description
 :---    | :---
-802.1q  | Trunking
-802.3   | CSMA/CD
+802.1az | SPB
+802.1q  | VLANs
+802.3   | Ethernet, [ CSMA/CD ](#access-methods)
 802.3af | PoE
 802.3at | PoE+
 802.11  | Wi-Fi
@@ -53,8 +54,8 @@ Term    | Description
 
 ## Wireless
 Wireless access [[1](#sources): 247]
-- **Basic service set (BSS)**: when a single AP is connected to the wired network
-- **Extended service set (ESS)**: using multiple BSSs to form a single subnetwork
+- **Basic service set (BSS)**: single AP
+- **Extended service set (ESS)**: multiple APs
 - **Independent basic service set (IBSS)**: ad hoc mode
 
 ## IP
@@ -80,9 +81,12 @@ Notable address or range  | Description
 :---            | :---
 127.0.0.1       | reserved for loopback testing
 169.254.0.0/16  | range of addresses used in APIPA
+::0, ::1        | loopback address
+2000::/3        | global unicast range
+fc00::/7        | unique local unicast
+ff00::/8        | multicast range
 fe80::/64       | IPv6 link-local addresses
 fec0::/10       | IPv6 site-local addresses
-::0, ::1        | loopback address
 
 #### Network Address Translation
 **NAT** allows many computers to hide behind a single IP address, using one of several addressing schemes [[1](#sources): 99-101].
@@ -91,14 +95,14 @@ fec0::/10       | IPv6 site-local addresses
 - **Static Network Address Tranlsation (SNAT)**: a private IP is mapped to a single external public one
 - **Destination Network Address Translation (DNAT)**: destination IP addresses of individual packets is changed by the router
 
-#### TCP/IP routing and switching
-Switching methods:
+#### Switching
 - **Packet switching**: also known as independent routing, messages are broken down into smaller pieces called **packets**
   - **Virtual-circuit** packet switching: where a logical connection is established between the source and destination device
   - **Datagram** packet switching: packets are independently sent
 - **Circuit switching**: requires a dedicated physical connection between sending and receiving devices
 
-Routing environments:
+#### Routing 
+- **Static routing**: manually entered routes
 - **Dynamic routing**: involves routers communicating known routes to all directly attached routers. Communication between distance-vector routers is known as **hops**: each router represents one hop. There are **two** types of routing protocols used:
   - **Distance-vector protocols** operate by having each router send updates about all the toher routers it knows about to directly connected routers, with updates automatically sent every 30 or 60 seconds. Routers can be configured to send **triggered updates** when a change is detected. The process by which routers learn of updates to network topology is called **convergence**.
     - **Router Information Protocol (RIP)** limited to 15 hops, no support for authentication. **RIPv2** also limited to 15 hops to maintain compatibility with v1, but supports authentication.
@@ -108,9 +112,8 @@ Routing environments:
     - **Intermediate System-to-Intermediate System (IS-IS)**: discover shortest path for data to travel using the **SPF** algorithm
   - **Hybrid Routing Protocols**
     - **Border Gateway Protocol (BGP)** can be used between gateway hosts on the Internet. BGP supports the use of **autonomous system numbers (ASN)**, globally unique numbers used by connected groups of IP networks that share the same routing policy.
-- **Static routing**: manually entered routes
 
-Another way categorizing routing protocols:
+Another way of categorizing routing protocols:
 - **Interior Gateway Protocols (IGP)** include distance-vector and link-state protocols, i.e. RIP, OSPF, and IS-IS
 - **Exterior Gateway Protocols (EGP)** include BGP
 
@@ -118,9 +121,27 @@ Another way categorizing routing protocols:
 - **Split horizon** prevents router from advertising routes to routers from which they were learned
 - **Poison reverse** route is advertised back on the interface from which it was learned but with a hop count of infinity, which tells the node that the route is unreachable.
 
-Access methods
-- **Carrier sense multiple access/collision detection (CSMA/CD)**
-- **Carrier sense multiple access with collision avoidance (CSMA/CA)**, used in 802.11 wireless,
+#### Access methods
+- **Carrier sense multiple access/collision detection (CSMA/CD)**: known as a **contention media access method**, before sending data a system checks to see if the network medium is free because the medium can carry only one network signal at a time. When a collision is detected, systems wait a randomly calculated amount of time in milliseconds known as the **backoff** period before attempting to transmit again.
+- **Carrier sense multiple access with collision avoidance (CSMA/CA)**: systems announce intent to transmit data, and others wait their turn. If the medium is busy, the system waits for a backoff interval before trying again.
+
+#### Routing metrics
+- **Hop counts**: number of hops necessary to reach a node
+- **Maximum transmission unit (MTU)**: largest data unit that can be passed without fragmentation
+- **Bandwidth**: maximum packet size permitted for Internet transmission
+- **Costs**: numbers associated with traveling from hop to hop
+- **Administrative distance:** numerical value assigned to a route based on its perceived quality, assigned based on an algorithm employed by a routing protocol
+- **Latency**: amount of time it takes for a packet to travel from one location to another
+
+#### VLAN
+VLANs are groups of connected computers that act as if they are on their own network segment, even though they might not be, and they are used for network segmentation. [[1](#sources): 119-120]\ 
+VLAN membership
+- **Protocol-based VLANs**: computers are assigned to VLANs using the protocol in use and the Layer 3 address
+- **Port-based VLANs**: require that specific ports on a network switch be assigned to a LAN
+- **MAC address-based VLANs**
+
+#### STP
+**Spanning Tree Protocol (STP)** uses the **Spanning Tree Algorithm (STA)** to prevent the occurrence of switching loops. It also uses **bridge protocol data units (BPDUs)** to identify the status of ports and bridges across the network.
 
 ## Other protocols
 #### ARP
@@ -161,12 +182,20 @@ DNS has 3 main components: [[2]]
 - **Name servers**: server programs that contain the domain tree's structure and can set or cache it.
 - **Resolvers**: client programs that extract information from name servers in response to user requests.
 
+#### DNS records
 A domain name identifies a set of resources that is associated with separate **resource registry (RR)**. The most common ones are: [[2](#sources)]
 - **`A`**: host address associated with the domain name
 - **`NS`**: authoritative name server
 - **`SOA`**: start of a zone of authority
 - **`CNAME`**: canonical name of an alias
 - **Pointer (`PTR`)** records are used for **reverse lookup**, that is resolving IP address to hostnames. [[1](#sources): 69]
+
+## Backups
+#### Backup types
+- **Full**
+- **Incremental**: backup of data that has changed since the previous incremental backup
+- **Differential**: backup of data that has changed since the last full backup
+- **Snapshot**: read-only copy of data, frozen at a point in time
 
 
 ## Commands
@@ -196,10 +225,6 @@ On Windows, this command is aliased to `traceroute` which is the Linux command. 
 Option  | Effect
 :---    | :---
 `-6`    | IPv6, aliased to `traceroute6`
-
-## Glossary
-Term                                                        | Definition
-:---                                                        | :---
 
 ## Sources
 1. "Exam Cram: CompTIA Network+ N10-007". Dulaney, Emmett. 
