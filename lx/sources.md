@@ -53,3 +53,4 @@
 52. "[`sudo`](commands.md#sudo) command in Linux". [linuxize.com](https://linuxize.com/post/sudo-command-in-linux/)
 53. "How to Create and Manage [`cron`](commands.md#crontab) Jobs on Linux".  [TecMint](https://www.tecmint.com/create-and-manage-cron-jobs-on-linux/)
 54. "[`cron`](commands.md#crontab) How To". [Ubuntu](https://help.ubuntu.com/community/CronHowto)
+55. "Demistifying namespaces and containers in Linux". [opensource.com](https://opensource.com/article/19/10/namespaces-and-containers-linux). 2019/10/29.

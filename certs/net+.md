@@ -133,6 +133,7 @@ Another way of categorizing routing protocols:
 - **Administrative distance:** numerical value assigned to a route based on its perceived quality, assigned based on an algorithm employed by a routing protocol
 - **Latency**: amount of time it takes for a packet to travel from one location to another
 
+### Switching
 #### VLAN
 VLANs are groups of connected computers that act as if they are on their own network segment, even though they might not be, and they are used for network segmentation. [[1](#sources): 119-120]\ 
 VLAN membership
@@ -142,6 +143,12 @@ VLAN membership
 
 #### STP
 **Spanning Tree Protocol (STP)** uses the **Spanning Tree Algorithm (STA)** to prevent the occurrence of switching loops. It also uses **bridge protocol data units (BPDUs)** to identify the status of ports and bridges across the network.
+
+#### Interface configuration
+There are various ways of adjusting the functionality of switch interfaces:
+- **Tag or untag VLANs**: tag if you are trunking
+- **Default VLAN**: cannot be deleted and is used for communication between switches (VLAN 1 in Cisco switches)
+- **Port mirroring**: 
 
 ## Other protocols
 #### ARP

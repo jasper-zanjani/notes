@@ -7,7 +7,8 @@ Topic                           | Contents
 :---                            | :---
 Desktop environments            | [GNOME](gnome.md) [KDE](kde.md) [i3](i3.md)
 Distributions                   | [Arch Linux](distributions.md#arch-linux) [BSD](distributions.md#bsd) [Clear Linux](distributions.md#clear-linux) [Fedora CoreOS](#distributions.md#fedora-coreos) [Kali Linux](distributions.md#kali-linux) [Mac OS X](macosx.md)
-Others                          | [Boot sequence](#boot-sequence) [Runlevels](#runlevels) [X](X.md)
+Packaging                       | [Flatpak](#flatpak)
+Others                          | [Boot sequence](#boot-sequence) [Namespaces](#namespaces) [Runlevels](#runlevels) [X](X.md)
 
 ## Boot sequence
 ### Microcontrollers
@@ -24,11 +25,11 @@ Bootloaders like GRUB (GRand Unified Bootloader) or _u-boot_ turns on power supp
 bcdedit /set {bootmgr} path \EFI\manjaro\grubx64.efi
 ```
 ### Initial RAM Disk
-`**initrd**` (Initial RAM disk) is a temporary file system that's loaded into memory when the system boots
+**`initrd`** (Initial RAM disk) is a temporary file system that's loaded into memory when the system boots
 ### Kernel
-Linux kernel is typically named `**vmlinux**` or `**vmlinuz**` (when compressed). Kernel ring buffer contains messages related to the Linux kernel. A ring buffer is a data structure that is always the same size; old messages are discarded as new ones come in, once the buffer is full. `dmesg` is used to see its contents, and the messages are also stored in `/var/log/dmesg`
+Linux kernel is typically named **`vmlinux`** or **`vmlinuz`** (when compressed). Kernel ring buffer contains messages related to the Linux kernel. A ring buffer is a data structure that is always the same size; old messages are discarded as new ones come in, once the buffer is full. `dmesg` is used to see its contents, and the messages are also stored in `/var/log/dmesg`
 ### init
-`**sysvinit**` or "**SystemVinit**" is a daemon process which was used by most distros until recently.
+**`sysvinit`** or "**SystemVinit**" is a daemon process which was used by most distros until recently.
   - processes started serially and synchronously, wasting system resources
   - for years, a common hack was to run services in the background, simulating a sort of parallel processing
 **Upstart** was developed by Canonical for Ubuntu, but abandoned in 2014. 
@@ -44,9 +45,9 @@ Traditionally, `syslogd` was the daemon in charge of this, but recently alternat
 - every Linux process inherits the environment (PATH variable, etc) and other attributes of its parent process
 
 ### Segments
-1. TEXT SEGMENT: executable code
-2. DATA SEGMENT: variables and arrays the program uses during execution
-3. USER SEGMENT: process attributes
+1. **`TEXT SEGMENT`**: executable code
+2. **`DATA SEGMENT`**: variables and arrays the program uses during execution
+3. **`USER SEGMENT`**: process attributes
   - process ID (PID)
   - real user ID of user who created it (stored in /etc/passwd)
   - real group ID
@@ -62,24 +63,22 @@ Traditionally, `syslogd` was the daemon in charge of this, but recently alternat
 2. Shell scripts are executed by spawning a sub-shell, which becomes the script's parent
 3. External commands are spawned as children of the parent as described above
 
-### Running a process in the background
-- `&`
-- `nohup` logging out will not terminate child processes
 ### Low priority jobs
 `nice` : priorities range from 0-19 in `csh` (10 is default); higher values run at lower priority
 `ps -l` : view priorities of jobs
 `nice -5 cmd &` : run {cmd} at a higher priority
 
 ## Runlevels
-`poweroff.target` : systemd equivalent to runlevel 0
-`rescue.target` : systemd equivalent to runlevel 1
-`multi-user.target` : systemd equivalent to runlevel 3
-`graphical.target` : systemd equivalent to runlevel 5
-`reboot.target` : systemd equivalent to runlevel 6
-`emergency.target` : systemd equivalent to runlevel emergency
+`poweroff.target` : systemd equivalent to runlevel 0\
+`rescue.target` : systemd equivalent to runlevel 1\
+`multi-user.target` : systemd equivalent to runlevel 3\
+`graphical.target` : systemd equivalent to runlevel 5\
+`reboot.target` : systemd equivalent to runlevel 6\
+`emergency.target` : systemd equivalent to runlevel emergency\
 `systemctl isolate runlevel` : change target to {runlevel}
 
 ## Control groups (cgroups)
+**cgroups** is Linux kernel feature that isolates a collection of processes.
 - allow you to allocate resources (CPU time, system memory, network bandwidth, or combinations thereof) among user-defined groups of processes
 - like processes, cgroups are hierarchical and inherit attributes from parents, but they from separate trees branching off from `subsystems` (also: `resource controller`, or just `controller`), each of which represent a single system resouce 
   - `blkio` sets limits on input/output access from block devices
@@ -127,3 +126,7 @@ B-Tree Filesystem "butter fs" was adopted by SUSE Enterprise Linux, but support 
 #### Enabling
 add ",acl" to options in `fstab` file, then mount/unmount disk. If enabling FACL on root partition, system has to be rebooted.
 
+## Packaging
+### Flatpak
+## Namespaces
+Process IDs in the same **namespace** can have access to one another, whereas those in different namespaces cannot. Spawning a process in a new namespace prevents it from seeing the host's context, so an interactive shell like `zsh` spawned in its own namespace will report its PID as `1`, even though the host will assign its own PID. [[55](sources.md)]
