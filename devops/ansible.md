@@ -174,9 +174,8 @@ The role can be specified in a very simple playbook:
 ## Modules
 \#    | Modules
 :---  | :---
-A-D   | [`apt`](#package-management) [`archive`](#archive-module) [`cli_config`](#cli_config) [`command`](#command-module) [`copy`](#copy-module) [`debug`](#debug-module) [`dnf`](#package-management) 
-F-R   | [`file`](#file-module) [`git`](#git-module) [`lineinfile`](#lineinfile-module) [`package`](#package-management) [`ping`](#ping-module) [`raw`](#raw-module) 
-S-Z   | [`service`](#service-module) [`setup`](#setup-module) [`shell`](#shell-module) [`template`](#template-module)
+A-Z   | [`apt`](#package-management) [`archive`](#archive-module) [`cli_config`](#cli_config) [`command`](#command-module) [`copy`](#copy-module) [`debug`](#debug-module) [`dnf`](#package-management) [`file`](#file-module) [`git`](#git-module) [`lineinfile`](#lineinfile-module) [`package`](#package-management) [`ping`](#ping-module) [`raw`](#raw-module) [`service`](#service-module) [`setup`](#setup-module) [`shell`](#shell-module) [`template`](#template-module)
+
 #### Archive module
 Compress files [[3](#sources)]
 ```yaml
