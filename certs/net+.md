@@ -13,6 +13,7 @@ Term    | Description
 802.3af | PoE
 802.3at | PoE+
 802.11  | Wi-Fi
+RFC 2131  | [DHCP](#DHCP)
 
 #### Exam objectives 
 \#    | Title | Description
@@ -104,7 +105,7 @@ fec0::/10       | IPv6 site-local addresses
 #### Routing 
 - **Static routing**: manually entered routes
 - **Dynamic routing**: involves routers communicating known routes to all directly attached routers. Communication between distance-vector routers is known as **hops**: each router represents one hop. There are **two** types of routing protocols used:
-  - **Distance-vector protocols** operate by having each router send updates about all the toher routers it knows about to directly connected routers, with updates automatically sent every 30 or 60 seconds. Routers can be configured to send **triggered updates** when a change is detected. The process by which routers learn of updates to network topology is called **convergence**.
+  - **Distance-vector protocols** operate by having each router send updates about all the other routers it knows about to directly connected routers, with updates automatically sent every 30 or 60 seconds. Routers can be configured to send **triggered updates** when a change is detected. The process by which routers learn of updates to network topology is called **convergence**.
     - **Router Information Protocol (RIP)** limited to 15 hops, no support for authentication. **RIPv2** also limited to 15 hops to maintain compatibility with v1, but supports authentication.
     - **Enhanced Interior Gateway Routing Protocol (EIGRP)**: enables routers to exchange information more efficiently than RIP, using neighbors to determine routing information. Uses **Diffusing Update Algorithm (DUAL)** to determine best route to a destination.
   - **Link-state protocols**: newer option where the router builds a map of the entire network. Routers send **link-state advertisements (LSA)** that contain information about the networks to which they connect. [[1](#sources): 114]
@@ -155,6 +156,9 @@ There are various ways of adjusting the functionality of switch interfaces:
 A system will first attempt to determine whether it is on the same network as the requested IP. If so, the ARP **cache**, a locally stored table that maps Internet to physical addresses, is consulted to determine the corresponding MAC address entry. If the requested host is not found, a broadcast asks the host with the target IP to send back its MAC address and only the target system will reply. Cache entries can be made dynamically (they will be automatically updated) or statically (added with `arp -s` and removed with `arp -d`). [[1](#sources): 61-62]
 
 #### DHCP
+**Dynamic Host Configuration Protocol (DHCP)** enables IP address ranges ("**scopes**" or "**address pools**") to be used to randomly assign IP addresses to hosts. **Scope options** can be configured, such as supplying a specific address to a client which is known as a **reservation**, or where certain addresses are **not** given out to clients which is known as an **exclusion**.
+
+
 DHCP process [[1](#sources): 74-75]
 1. **DHCPDISCOVER** packet is sent by system configured to use DHCP
 2. **DHCPOFFER** sent by DHCP server, containing IP address and other information such as lease duration
@@ -185,7 +189,7 @@ Network services provide functionality enabling the network to operate
 ### DNS 
 **Domain Name System (DNS)** originated to support the growth of email. **RFC 805** introduced the concepts of domains (previous to that, emails took the format `USER@HOST` with no domain.\
 DNS has 3 main components: [[2]]
-- **Domain namespace**: which has logical divisions that are **hierarchically organized** into a tree-like structure composed of top-level or country domains (".gov", ".ca", etc), sub- or second-level domains ("example.com"), and then further subdomains. The **fully qualified domain name (FQDN)** contains the top-level domain, domain, and subdomains (if any) of a host. [[1](#sources): 68]\
+- **Domain namespace**: which has logical divisions that are **hierarchically organized** into a tree-like structure composed of top-level or country domains (`.gov`, `.ca`, etc), sub- or second-level domains (`example.com`), and then further subdomains. The **fully qualified domain name (FQDN)** contains the top-level domain, domain, and subdomains (if any) of a host. [[1](#sources): 68]
 - **Name servers**: server programs that contain the domain tree's structure and can set or cache it.
 - **Resolvers**: client programs that extract information from name servers in response to user requests.
 
@@ -196,6 +200,15 @@ A domain name identifies a set of resources that is associated with separate **r
 - **`SOA`**: start of a zone of authority
 - **`CNAME`**: canonical name of an alias
 - **Pointer (`PTR`)** records are used for **reverse lookup**, that is resolving IP address to hostnames. [[1](#sources): 69]
+
+#### NetBIOS resolution
+**Network Basic Input/Output System (NetBIOS)** name resolution can be performed 3 ways
+- **Windows Internet Name Service (WINS)** on Windows networks
+- **`LMHOSTS`** file which must be manually configured
+- Using broadcasts, but broadcasts create additional traffic and cannot traverse routers without additional configuration, so name resolution across segments becomes impossible.
+
+### [ DHCP ](#dhcp)
+
 
 ## Backups
 #### Backup types
