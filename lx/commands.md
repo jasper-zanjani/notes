@@ -24,7 +24,7 @@ X                             | `xdpyinfo` `xwininfo` `Xorg` `xrandr`
 \#  | Commands sorted alphabetically
 :---| :---
 A   | [`adduser`](#adduser) [`add-apt-repository`](#add-apt-repository) [`alsamixer`](#alsamixer) [`apropos`](#apropos) [`apt`](#apt) [`apt-cache`](#apt-cache) [`apt-key`](#apt-key) [`arp`](#arp) [`at`](#at) [`ausearch`](#ausearch) [`awk`](#awk) 
-B   | [`bash`](#bash) [`blkid`](#blkid) [`borg`](#borg) [`bpftrace`](#bpftrace) [`bzcat`](#bzcat) [`bzip2`](#bzip2) [`bzless`](#bzless) [`bzmore`](#bzmore) 
+B   | [`bash`](#bash) [`blkid`](#blkid) [`bmon`](#bmon) [`borg`](#borg) [`bpftrace`](#bpftrace) [`bzcat`](#bzcat) [`bzip2`](#bzip2) [`bzless`](#bzless) [`bzmore`](#bzmore) 
 C   | [`cancel`](#cancel) [`cat`](#cat) [`chage`](#chage) [`chcon`](#chcon) [`chgrp`](#chgrp) [`chkconfig`](#sysvinit) [`chmod`](#chmod) [`chown`](#chown) [`chpass`](#chpass) [`chrony`](#chrony) [`chsh`](#chsh) [`column`](#column) [`compress`](#compress) [`cp`](#cp) [`crontab`](#crontab) [`crossystem`](#crossystem) [`cryptsetup`](#cryptsetup) [`curl`](#curl) [`cut`](#cut) 
 D   | [`dar`](#dar) [`date`](#date) [`dbus`](#dbus) [`dd`](#dd) [`declare`](#declare) [`df`](#df) [`dhclient`](#dhclient) [`diff`](#diff) [`dig`](#dig) [`dirname`](#dirname) [`dm-crypt`](#dm-crypt) [`dmesg`](#dmesg) [`doveadm`](#doveadm) [`dpkg`](#dpkg) [`dpkg-reconfigure`](#dpkg-reconfigure) [`du`](#du) [`dumpe2fs`](#dumpe2fs) 
 E   | [`e2image`](#e2image) [`e2label`](#e2label) [`edquota`](#edquota) [`elvis`](#elvis) [`elvish`](#elvish) [`espeak`](#espeak) [`exif`](#exif) 
@@ -129,6 +129,10 @@ x=3
 ```sh
 wc -c <<< "$x"
 ```
+
+### bmon
+
+[[56](sources.md)]
 
 ### borg
 
