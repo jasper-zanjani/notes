@@ -7,10 +7,13 @@ Commands
 #### IEEE speccifications
 Term    | Description
 :---    | :---
+802.1   | Media Access Control
 802.1az | SPB
-802.1q  | VLANs
+802.1q  | VLANs, Trunking
+802.1X  | Port authentication
+802.2   | Logical Link Control (LLC) of Data Link Layer
 802.3   | Ethernet, [ CSMA/CD ](#access-methods)
-802.3af | PoE
+802.3af | [ PoE ](#poe)
 802.3at | PoE+
 802.11  | Wi-Fi
 RFC 2131  | [DHCP](#DHCP)
@@ -143,13 +146,18 @@ VLAN membership
 - **MAC address-based VLANs**
 
 #### STP
-**Spanning Tree Protocol (STP)** uses the **Spanning Tree Algorithm (STA)** to prevent the occurrence of switching loops. It also uses **bridge protocol data units (BPDUs)** to identify the status of ports and bridges across the network.
+**Spanning Tree Protocol (STP)**, used with network [ **bridges** ](#bridge) and **switches** uses the **Spanning Tree Algorithm (STA)** to prevent the occurrence of switching loops. It also uses **bridge protocol data units (BPDUs)** to identify the status of ports and bridges across the network.
 
 #### Interface configuration
 There are various ways of adjusting the functionality of switch interfaces:
 - **Tag or untag VLANs**: tag if you are trunking
 - **Default VLAN**: cannot be deleted and is used for communication between switches (VLAN 1 in Cisco switches)
-- **Port mirroring**: 
+- **Port mirroring**: duplicating data for one port and sending it to another, most commonly to monitor traffic using **Remote Switched Port Analyzer (RSPAN)** or **Switched Port Analyzer (SPAN)**.
+- **Authentication, accounting, and authorization (AAA)** through [**RADIUS**](#radius), [**TACACS+**](#tacacs), or [**Kerberos**](#kerberos) 
+- Usernames/passwords
+- **Virtual consoles and terminals**
+
+
 
 ## Other protocols
 #### ARP
@@ -210,12 +218,45 @@ A domain name identifies a set of resources that is associated with separate **r
 ### [ DHCP ](#dhcp)
 
 
-## Backups
+## Business continuity and disaster recovery
 #### Backup types
+[[1](#sources): 307]
 - **Full**
 - **Incremental**: backup of data that has changed since the previous incremental backup
 - **Differential**: backup of data that has changed since the last full backup
 - **Snapshot**: read-only copy of data, frozen at a point in time
+
+#### Power disruptions
+[[1](#sources): 311]
+- **Blackout**: total failure of power supply
+- **Spike**: Short but intense increase in voltage
+- **Surge**: Increase in power that is longer but less intense than a spike
+- **Sage**: Short-term voltage drop
+- **Brownout**: drop in voltage that lasts more than a few minutes
+
+#### Technologies that enable high availability
+[[1](#sources): 314]
+- **Fault tolerance**: capability to withstand a fault without losing tolerance
+- **Load balancing**: technique in which the workload is distrbuted among several servers
+
+#### Policies
+[[1](#sources): 315]
+- **Standard business documents**:
+  - **Service-level agreement (SLA)**: 
+  - Memorandum of understanding (MOU)
+  - Master license agreement (MLA)
+  - Statement of work (SOW)
+
+#### Network test types
+[[1](#sources): 329]
+- **performance test**: measures network's current performance level
+- **load test**: also called ""volume"" or ""endurance"" testing, involve placing the network under a larger-than-normal workload
+- **stress test**: push resources to the limit by placing the network under intense pressure
+
+
+
+## Devices
+#### Bridge
 
 
 ## Commands
