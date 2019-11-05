@@ -2,7 +2,7 @@
 
 Commands
 :---
-[`arp`](#arp-command) `dig`  `ifconfig` `ipconfig` `iptables` `netstat` `nmap` `nslookup` `pathping` `ping` `route` `tcpdump` `traceroute` Windows: [`tracert`](#tracert)
+ `dig`  `ifconfig` `ipconfig` `iptables` `netstat` `nmap` `nslookup` `pathping` `ping` `route` `tcpdump` `traceroute` <br/>Windows: [`arp`](#arp-command) [`ipconfig`](#ipconfig) [`pathping`](#pathping) [`tracert`](#tracert)
 
 #### IEEE speccifications
 Term    | Description
@@ -220,8 +220,11 @@ A domain name identifies a set of resources that is associated with separate **r
 
 ## Commands
 ### arp command
+Used to view and work with the IP adress to MAC address resolution cache.
+
 Option  | Effect
 :---    | :---
+`-a`    | Display both the IP and MAC addresses and whether they are dynamic or static entries [[1](#sources): 436]
 `-s`    | manually add a static entry to the cache
 `-d`    | delete an entry from the cache
 
