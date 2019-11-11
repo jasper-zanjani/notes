@@ -55,3 +55,4 @@
 54. "[`cron`](commands.md#crontab) How To". [Ubuntu](https://help.ubuntu.com/community/CronHowto)
 55. "Demistifying namespaces and containers in Linux". [opensource.com](https://opensource.com/article/19/10/namespaces-and-containers-linux). 2019/10/29.
 56. "Viewing network bandwidth usage with bmon". [Network World](https://www.networkworld.com/article/3447936/viewing-network-bandwidth-usage-with-bmon.html#tk.rss_linux). 2019/10/29.
+57. "[ RAID ](#raid) for those who avoid it." [Red Hat](https://www.redhat.com/sysadmin/raid-intro): 2019/11/01. [p](https://app.getpocket.com/read/2777681287)

@@ -1,7 +1,14 @@
 # Ansible configuration management
 Ansible is an automation tool used for configuration management using human-readable YAML templates. Ansible is distinguished for being **agentless**, meaning no special software is required on the nodes it manages.
 Ansible **playbooks** represent a sequence of scripted actions which apply changes uniformly over a set of hosts.  **Modules** are standalone scripts that enable a particular task across many OSes, services, applications, etc. Predefined modules are available in the **module library**, and new ones can be defined via Python or JSON.\
-Ansible host management relies on a `.ini` file containing a list of IP addresses or hostnames organized in groups.
+Ansible host management relies on a `.ini` file containing a list of IP addresses or hostnames organized in groups.\
+There are several areas where Ansible can be used in personal projects for learning purposes. [[8](#sources)]
+1. Use the [`users`](#users) module to manage users, assign groups, and define custom aliases in the `profile` property.
+2. Put a time limit on the availability of the `sudo` command
+3. Use Ansible Tower to produce a GUI interface to restart certain services.
+4. Use Ansible Tower to look for files larger than a particular size in a directory.
+5. Debug a system performance problem. 
+
 ## Configuration
 Config file                       | Description
 :---                              | :---
@@ -25,7 +32,8 @@ pgsql_1 ansible_host=192.168.1.23
 Ansible can be used in one of two ways:
 1. Running **ad hoc** commands, that is commands executed in realtime by an administrator working at the terminal, using the [ `ansible` ](#ansible) command.
 2. Running **playbooks**, YAML documents containing **tasks** each of which are equivalent to a single ad hoc command, using the [ `ansible-playbook` ](#ansible-playbook) command. Any ad hoc command can be rewritten as a playbook, but some modules can only be used effectively as playbooks.
-### ansible
+
+### `ansible`
 The `ansible` command is only used for running **ad hoc** commands,  Modules are called as arguments passed to the `-m` option. 
 ```sh
 ansible $CLIENT [-b] -m $MODULE -a $ARGUMENTS
@@ -39,7 +47,8 @@ Option  | POSIX option            | Effect
 `-a`    |                         | specify arguments to module
 `-b`    |                         | elevate priviliges by "becoming" the sudo user
 `-m`    |                         | specify module to be executed
-### ansible-galaxy
+
+### `ansible-galaxy`
 Search for roles [[7](#sources)]
 ```sh
 ansible-galaxy search $ROLE
@@ -70,6 +79,7 @@ ansible-playbook -i $CLIENT $PLAYBOOK
 Option  | POSIX option            | Effect
 :---    | :---                    | :---
 `-i`    |                         | ?
+
 ### Playbooks
 ```yaml
 ---
@@ -83,6 +93,7 @@ Option  | POSIX option            | Effect
     - name: this restarts the apache service
       service: name=apache2 enabled=yes state=restarted
 ```
+
 #### Handlers
 **Handlers** are tasks that are executed when notified by a task. They are only run once, and only if the notifying task has made a change to the system. [[6](#sources)]\
 Here, `enable apache` will be called if `this installs a package` makes a change. If apache2 is already installed, the handler is not called. [[6](#sources)]
@@ -101,6 +112,7 @@ Here, `enable apache` will be called if `this installs a package` makes a change
     - name: enable apache
       service: name=apache2 enabled=yes state=started
 ```
+
 #### Variable substitution
 Variable substitution is done by specifying the name of the placeholder variable and its value under `vars` as a sibling to `tasks` and `handlers` [[6](#sources)]
 ```yaml
@@ -493,3 +505,4 @@ task                    | a single scripted action in a playbook, equivalent to 
 5. "Ansible: Making things happen". [Linux Journal](https://www.linuxjournal.com/content/ansible-making-things-happen): 2018/01/30
 6. "Ansible, Part III: Playbooks". [Linux Journal](https://www.linuxjournal.com/content/ansible-part-iii-playbooks): 2018/02/19.
 7. "Ansible, Part IV: Putting it all together'. [Linux Journal](https://www.linuxjournal.com/content/ansible-part-iv-putting-it-all-together): 2018/03/02.
+8. "5 ops tasks to do with Ansible". [p](https://app.getpocket.com/read/2704061417) [w](https://opensource.com/article/19/8/ops-tasks-ansible): 2019/08/26.
