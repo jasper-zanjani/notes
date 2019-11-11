@@ -8,7 +8,7 @@ Topic                           | Contents
 Desktop environments            | [GNOME](gnome.md) [KDE](kde.md) [i3](i3.md)
 Distributions                   | [Arch Linux](distributions.md#arch-linux) [BSD](distributions.md#bsd) [Clear Linux](distributions.md#clear-linux) [Fedora CoreOS](#distributions.md#fedora-coreos) [Kali Linux](distributions.md#kali-linux) [Mac OS X](macosx.md)
 Packaging                       | [Flatpak](#flatpak)
-Others                          | [Boot sequence](#boot-sequence) [Namespaces](#namespaces) [Runlevels](#runlevels) [X](X.md)
+Others                          | [Boot sequence](#boot-sequence) [Namespaces](#namespaces) [RAID](#raid) [Runlevels](#runlevels) [X](X.md)
 
 ## Boot sequence
 ### Microcontrollers
@@ -126,7 +126,17 @@ B-Tree Filesystem "butter fs" was adopted by SUSE Enterprise Linux, but support 
 #### Enabling
 add ",acl" to options in `fstab` file, then mount/unmount disk. If enabling FACL on root partition, system has to be rebooted.
 
-## Packaging
-### Flatpak
+## Flatpak
+
+
+
 ## Namespaces
-Process IDs in the same **namespace** can have access to one another, whereas those in different namespaces cannot. Spawning a process in a new namespace prevents it from seeing the host's context, so an interactive shell like `zsh` spawned in its own namespace will report its PID as `1`, even though the host will assign its own PID. [[55](sources.md)]
+Process IDs in the same **namespace** can have access to one another, whereas those in different namespaces cannot. Spawning a process in a new namespace prevents it from seeing the host's context, so an interactive shell like `zsh` spawned in its own namespace will report its PID as `1`, even though the host will assign its own PID. This is the concept behind [**containers**](../devops/README.md#containers). [[55](sources.md)]
+
+## RAID
+- **RAID 0**: Built with no internal redundancy, each disk provides its full capacity to the array as usable storage. Although technically single disk can work, at least two disks is more typical. [[57](sources.md)]
+- **RAID 1**: Mirrored set of drives, which have to be the same size or space will be forfeited to accomodate the smallest drive. [[57](sources.md)]
+- RAID 2, 3, and 4: obsolete, proprietary, or very rare. [[57](sources.md)]
+- RAID 5: Middle ground which stripes data across multiple drives but with some redundancy, requiring at least **3** disks. An array containing *n* drives makes *n - 1* drives' worth of storage, with one drive's worth of space being used to provide redundancy. [[57](sources.md)]
+- RAID 10: Multiple RAID 1 arrays are treated as drives in a RAID 0, so data is striped across mirrored arrays. [[57](sources.md)]
+- RAID 50: Multiple RAID 5 arrays contained in a RAID 0, and because there are at least of such arrays involved the minimum number of drives is **6**. [[57](sources.md)]

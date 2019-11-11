@@ -86,21 +86,22 @@ Pull-based alerting tool that stores alerting data in a **Postgres** database as
 
 ## Containers
 A VM has to emulate a full hardware stack, boot an operating system, and then launch your app. It's a virtualized hardware environment. Docker containers function at the application layer and skip all the steps VMs take.\
-A container provides a type of virtualization just like VMs, but container offer **process** isolation while a hypervisor provides **hardware** isolation.[[30](#sources)]
+A container provides a type of virtualization just like VMs, but container offer **process** isolation while a hypervisor provides **hardware** isolation.[[30](#sources)]\
+VMs and containers solve different problems. Hardware virtualization was originally developed to make fuller use of physical servers by enabling the over-provisioning of resources and reusing them at the end of the virtual server lifecycle. By consolidating physical hardware, you can scale and automate virtual infrastructure. Containers, on the other hand, are actually closer to the bare metal and provie almost no overhead. LXC, inspired by Solaris Containers and FreeBSD jails, enables a virtual environment with its own process and network space using kernel-native **cgroups** functionality. This created **process isolation** using namespaces, preventing processes from monitoring or affecting those running in another container or on the host machine. [[46](#sources)]
 
-## Container runtimes
-- [ containerd ](#containerd): manages all the resources related to containers. It sits right below the Kubernetes `kubelet` as well as Docker. Beneath containerd there is the runtime, most commonly **runC**, which is the reference implementation of the OCR open container. Containerd was originally designed to interface directly with runC so that Docker could be decoupled from the actual containers. Since then, containerd grew to include image resources, which means it could entirely replace Docker. [[22](#sources)]\
-- [ Docker ](docker.md)
-- [ Podman ](podman.md)
+Container runtimes
+- [ **containerd** ](#containerd): manages all the resources related to containers. It sits right below the Kubernetes `kubelet` as well as Docker. Beneath containerd there is the runtime, most commonly **runC**, which is the reference implementation of the OCR open container. Containerd was originally designed to interface directly with runC so that Docker could be decoupled from the actual containers. Since then, containerd grew to include image resources, which means it could entirely replace Docker. [[22](#sources)]\
+- [ **Docker** ](docker.md)
+- [ **Podman** ](podman.md)
 - CRI-O
 - frakti
 
-## Linux containers
+### Linux containers
 - **LXC**: Well-known, established low-level toolset with templates, library and language bindings.
 - **LXD**: Offers a user experience similar to virtual machines, using a single command-line tool to manage containers, but using Linux containers instead. At its core lies a privileged daemon that exposes a REST API over a local Unix socket as well as over the network.
 - **LXCFS**
 
-## Windows containers
+### Windows containers
 Windows server containers, like Linux containers, package dependencies. Windows offers two base images: **Windows Server Core** and **Nano Server**.\
 The differences between Windows and Linux containers originate in historical differences. Linux was developed with the goal of producing a stable kernel with a consistent application binary interface and limited syscalls in order to move applications from other commercial Unix-type OSes. In contrast, Windows was developed to be an entire operating system, not just a kernel, including APIs like Win16 and Win32. The border between kernel and user mode was always much blurrier than in Linux. The concept of a **session** was innovated to handle the problem of what to do when multiple users are making inputs simultaneously. A Windows container is essentially equivalent to a headless session.\
 Windows Server containers are focused on running headless applications.\
@@ -110,6 +111,7 @@ Today, our focus is on being able to run the Kubelet and KubeProxy, which allows
 There is support to share the GPU with what's already on the node, which allows you to use some DirectX APIs.
 The container has to run Windows Server 2016 or newer. So the first question to ask is, can this application work on Windows Server 2016 or 2019? The application can't rely on a component that has since been deprecated, but some frameworks like .NET Core offer compatibility for versions of .NET as early as 2.0, which dates back to the early 2000s.\
 Windows container types include **Helium**, **Argon**, **Krypton**, and **Xenon**.
+
 #### Update container when Microsoft issues an update
 On Patch Tuesday, open up the Docker file and update the top line that says "from". Then rebuild and redeploy it. Microsoft has begun implementing security patches into updated Windows container images that are available on Docker Hub. Pull those down and rebuild the container. Deploy it and shut down the old one.
 
