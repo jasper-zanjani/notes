@@ -22,11 +22,11 @@ RFC 2131  | [DHCP](#DHCP)
 \#    | Title | Description
 :---  | :---  | :---
 1.0 | Networking concepts
-1.1 | Ports and protocols | [**DHCP**](#dhcp) [**DNS**](#dns) FTP H.323 HTTP HTTPS [**ICMP**](#icmp) IMAP [**IP**](#ip) [**LDAP**](#ldap) [**LDAPS**](#ldaps) NTP POP RDDP SFTP SIP SMB SMTP SNMP SSH TCP TELNET TFTP UDP
+1.1 | Ports and [protocols](#protocols)
 1.2 | Explain devices, applications, protocols and services at their appropriate OSI layers | 
 1.3 | Explain the concepts and characteristics of routing and switching | **Properties of network traffic** <br/>Broadcast domains, CSMA/CD, CSMA/CA, Collision domains, Protocol data units, MTU, Broadcast, Multicast, Unicast <br/>**Segmentation and interface properties**<br/> VLANs, Trunking, Tagging and untagging ports, Port mirroring, Switching loops/spanning tree, PoE and PoE+, DMZ, MAC address table, ARP table<br/>**Routing**<br/> RIP, EIGRP, OSPF, BGP, Routing types<br/>**IPv6 concepts**<br/> Addressing, Tunneling, Dual stack, Router advertisement, Neighbor discovery<br/>**Performance concepts**<br/> Traffic shaping, QoS, Diffserv, CoS <br/>**Other topics**<br/> NAT, PAT, Port forwarding, Access control list, Distributed switching, Packet-switched network, Circuit-switched network, Software-defined networking
 1.4 | Given a scenario, configure the appropriate IP addressing components | **Subnetting** Classful, Classless, VLSM, CIDR<br/>**Address assignments** DHCP, DHCPv6, Static, APIPA, EUI64, IP reservations
-1.5 | Compare and contrast the characteristics of network topologies, types and technologies | **Wired topologies** Logical vs. physical, Star, Ring, Mesh, Bus, Mesh, Ad hoc, Infrastructure <br/>**Types** LAN, WLAN, MAN, WAN, CAN, SAN, PAN<br/>**IoT** Z-Wave, Ant+, Bluetooth, NFC, IR, RFID, 802.11
+1.5 | Compare and contrast the characteristics of network topologies, types and technologies | [Wired topologies](#wired-topologies) <br/>**Types** LAN, WLAN, MAN, WAN, CAN, SAN, PAN<br/>**IoT** Z-Wave, Ant+, Bluetooth, NFC, IR, RFID, 802.11
 1.6 | Given a scenario, implement the appropriate wireless technologies and configurations | **802.11 standards** a, b, g, n, ac<br/>**Cellular** GSM, TDMA, CDMA <br/>**Frequencies** 2.4GHz, 5.0GHz <br/>**Other topics** Speed and distance requirements, Channel bandwidth, Channel bonding, MIMO/MU-MIMO, Unidirectional/omnidirectional, Site surveys
 1.7 | Summmarize cloud concepts and their purposes | **Types of services** SaaS, PaaS, IaaS <br/>**Cloud delivery models** Private, Public, Hybrid<br/>**Other topics** Connectivity methods, Security implications/considerations, Relationship between local and cloud resources
 1.8 | Explain the functions of network services | **DNS records** A, AAAA, TXT, SPF, DKIM, SRV, MX, CNAME, NS, PTR <br/>**DNS topics** Internal vs. external DNS, Third-party/cloud-hosted DNS, Hierarchy, Forward vs. reverse zone<br/>**DHCP service** MAC reservations, Pools, IP exclusions, Scope options, Lease time, TTL, DHCP relay, IP helper <br/>**Other topics** NTP, IPAM
@@ -56,7 +56,30 @@ RFC 2131  | [DHCP](#DHCP)
 5.4 | Given a scenario, troubleshoot common wireless connectivity and performance issues | Reflection, Refraction, Absorption, LAtency, Jitter, Attenuation, Incorrect antenna type, Interference, Incorrect antenna placement, Channel overlap, Overcapacity, Distance limitations, Frequency mismatch, Wrong SSID, Wrong passphrase, Security type mismatch, Power levels, Signal-to-noise ratio
 5.5 | Given a scenario, troubleshoot common network service issues | Names not resolving, Incorrect gateway, Incorrect netmask, Duplicate IP addresses, Duplicate MAC addresses, Expired IP address, Rogue DHCP server, Untrusted SSL certificate, Incorrect time, Exhausted DHCP scope, Blocked TCP/UDP ports, Incorrect host-based firewall settings, Incorrect ACL settings, Unresponsive service, Hardware failure
 
+#### Protocols
+[**DHCP**](#dhcp) [**DNS**](#dns) [FTP](#glossary) [H.323](#sources) [HTTP](#glossary) [**ICMP**](#icmp) IMAP [**IP**](#ip) [**LDAP/S**](#ldap) NTP POP RDDP SFTP SIP SMB SMTP SNMP SSH TCP TELNET TFTP UDP
+
+#### Wired topologies
+[[1](#sources): 2-6]
+- **bus topology**
+uses a trunk or backbone to connect all computers on the network
+- **ring topology**
+data travels in a circular fashion from one computer to another
+- **star topology**
+all devices connect to a central device
+- **wired mesh topology**
+each device connects to every other
+
 ## Wireless
+#### Wireless topologies
+[[1](#sources): 7-11]
+- **infrastructure wireless topology**
+wireless devices communicate with the wired LAN through the access point
+- **ad hoc wireless topology**
+all devices connect directly to one another
+- **mesh wireless topology**
+extends transmission distance by relaying the signal from one device to another
+
 Wireless access [[1](#sources): 247]
 - **Basic service set (BSS)**: single AP
 - **Extended service set (ESS)**: multiple APs
