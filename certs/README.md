@@ -1,7 +1,11 @@
 # Certifications
 Certification                                     | Current information
 :---                                              | :---
+<<<<<<< HEAD
 [CompTIA Network+](#comptia-network)              | [N10-007](https://www.comptia.org/certifications/network) [Objectives](https://certification.comptia.org/docs/default-source/exam-objectives/comptia-network-n10-007-v-3-0-exam-objectives.pdf) [Notes](net+.md) $319
+=======
+[CompTIA Network+](#comptia-network)              | [N10-007](https://www.comptia.org/certifications/network) [Objectives](https://certification.comptia.org/docs/default-source/exam-objectives/comptia-network-n10-007-v-3-0-exam-objectives.pdf) [Notes](n10-007.md) $319
+>>>>>>> a23de432460ae5722df6bde90131c7a6c25c3f94
 [CompTIA Security+](#comptia-security)            | [SY0-501](https://www.comptia.org/certifications/security) [Objectives](https://www.comptia.jp/pdf/Security%2B%20SY0-501%20Exam%20Objectives.pdf) $339
 [CompTIA Server+](#comptia-server)                | [SK0-004](https://certification.comptia.org/certifications/server) $319
 [CompTIA Cloud+](#comptia-cloud)                  | [CV0-002](https://www.comptia.org/certifications/cloud) $319
@@ -27,9 +31,15 @@ Comparison of exam topics in LX0-103/4 and XK0-004
 **Removed**: X 11 Mail SQL Printing End-user support GNU Privacy Guard
 
 ## CompTIA Network+
+<<<<<<< HEAD
 Exam      | Retired
 :---      | :---
 N10-007   | -
+=======
+Exam      | Retired | Description
+:---      | :---    | :---
+N10-007   | -       | [Notes](n10-007.md)
+>>>>>>> a23de432460ae5722df6bde90131c7a6c25c3f94
 N10-006   | 2018
 N10-005   | 2015
 N10-004   | 2012
