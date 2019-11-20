@@ -9,7 +9,7 @@ Certification                                     | Current information
 [Cisco CCENT](#cisco-ccna)                        | 100-105
 [Cisco CCNA](#cisco-ccna)                         | 100-105 200-105<br/>200-125
 [ Linux Foundation Certified Kubernetes Administrator ](#linux-foundation-cka) | Exam is based on Kubernetes 1.15 [Web](https://training.linuxfoundation.org/certification/certified-kubernetes-administrator-cka/)<br/>24 practical questions on the command-line [Web](https://blog.autsoft.hu/certified-kubernetes-administrator/?__s=8npm688qeyruhjuxaofx)
-MCSA Windows Server 2016                          | [70-410](https://www.microsoft.com/en-us/learning/exam-70-410.aspx) <br/>[70-411](https://www.microsoft.com/en-us/learning/exam-70-411.aspx) <br/>[70-412](https://www.microsoft.com/en-us/learning/exam-70-412.aspx)
+MCSA Windows Server                               | 70-740 70-741 70-742<br>[70-410](https://www.microsoft.com/en-us/learning/exam-70-410.aspx) [70-411](https://www.microsoft.com/en-us/learning/exam-70-411.aspx) [70-412](https://www.microsoft.com/en-us/learning/exam-70-412.aspx)
 MTA Windows Server Administration Fundamentals    | [98-365](https://www.microsoft.com/en-us/learning/exam-98-365.aspx)
 
 ## CompTIA Linux+
