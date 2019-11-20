@@ -1,11 +1,7 @@
 # Certifications
 Certification                                     | Current information
 :---                                              | :---
-<<<<<<< HEAD
-[CompTIA Network+](#comptia-network)              | [N10-007](https://www.comptia.org/certifications/network) [Objectives](https://certification.comptia.org/docs/default-source/exam-objectives/comptia-network-n10-007-v-3-0-exam-objectives.pdf) [Notes](net+.md) $319
-=======
 [CompTIA Network+](#comptia-network)              | [N10-007](https://www.comptia.org/certifications/network) [Objectives](https://certification.comptia.org/docs/default-source/exam-objectives/comptia-network-n10-007-v-3-0-exam-objectives.pdf) [Notes](n10-007.md) $319
->>>>>>> a23de432460ae5722df6bde90131c7a6c25c3f94
 [CompTIA Security+](#comptia-security)            | [SY0-501](https://www.comptia.org/certifications/security) [Objectives](https://www.comptia.jp/pdf/Security%2B%20SY0-501%20Exam%20Objectives.pdf) $339
 [CompTIA Server+](#comptia-server)                | [SK0-004](https://certification.comptia.org/certifications/server) $319
 [CompTIA Cloud+](#comptia-cloud)                  | [CV0-002](https://www.comptia.org/certifications/cloud) $319
@@ -13,7 +9,7 @@ Certification                                     | Current information
 [Cisco CCENT](#cisco-ccna)                        | 100-105
 [Cisco CCNA](#cisco-ccna)                         | 100-105 200-105<br/>200-125
 [ Linux Foundation Certified Kubernetes Administrator ](#linux-foundation-cka) | Exam is based on Kubernetes 1.15 [Web](https://training.linuxfoundation.org/certification/certified-kubernetes-administrator-cka/)<br/>24 practical questions on the command-line [Web](https://blog.autsoft.hu/certified-kubernetes-administrator/?__s=8npm688qeyruhjuxaofx)
-MCSA Windows Server 2016                          | [70-410](https://www.microsoft.com/en-us/learning/exam-70-410.aspx) <br/>[70-411](https://www.microsoft.com/en-us/learning/exam-70-411.aspx) <br/>[70-412](https://www.microsoft.com/en-us/learning/exam-70-412.aspx)
+MCSA Windows Server                               | 70-740 70-741 70-742<br>[70-410](https://www.microsoft.com/en-us/learning/exam-70-410.aspx) [70-411](https://www.microsoft.com/en-us/learning/exam-70-411.aspx) [70-412](https://www.microsoft.com/en-us/learning/exam-70-412.aspx)
 MTA Windows Server Administration Fundamentals    | [98-365](https://www.microsoft.com/en-us/learning/exam-98-365.aspx)
 
 ## CompTIA Linux+
@@ -31,15 +27,9 @@ Comparison of exam topics in LX0-103/4 and XK0-004
 **Removed**: X 11 Mail SQL Printing End-user support GNU Privacy Guard
 
 ## CompTIA Network+
-<<<<<<< HEAD
-Exam      | Retired
-:---      | :---
-N10-007   | -
-=======
 Exam      | Retired | Description
 :---      | :---    | :---
 N10-007   | -       | [Notes](n10-007.md)
->>>>>>> a23de432460ae5722df6bde90131c7a6c25c3f94
 N10-006   | 2018
 N10-005   | 2015
 N10-004   | 2012
