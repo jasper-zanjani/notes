@@ -1,35 +1,36 @@
 # Cloud providers 
 ## Service comparison table
-Service                           | Azure                       | AWS   | GCP
-:---                              | :---                        | :---  | :---
-Certifications                    | [Azure certs](../certs/README.md#azure-certs) | [AWS certs](../certs/README.md#aws-certs) | [GCP certs](../certs/README.md#gcp-certs)
-Command-line tools                | [Azure PowerShell](azure/azure-ps.md) [Azure CLI](azure/azure-cli.md) | AWS Command Line Interface<br/>AWS Tools for PowerShell| [gsutil](#gsutil) [gcloud](#gcloud)
-IaaS                              | Virtual Machines            | Elastic Compute Cloud (EC2) | Compute Engine
-PaaS                              | App Service, Cloud Services | Elastic Beanstalk  | App Engine
-Containers                        | Container Service, Service Fabric | Elastic Container Service (ECS) | Google Kubernetes Engine
-Serverless functions              | Functions                   | Lambda | Functions
-Containers                        | Container Service, Service Fabric | Elastic Container Service (ECS) | Google Kubernetes Engine
-Virtual networks                  | VNets                       | Virtual Private Cloud (VPC) | Virtual Private Cloud
-Load Balancer                     | Load Balancer, Application Gateway | Elastic Load Balancer  | Load Balancing
-Private connection to cloud       | ExpressRoute                | Direct Connect  | Interconnect
-DNS                               | DNS                         | Route 53              | DNS
-CDN                               | CDN                         | CloudFront            | CDN
-Object Storage                    | Blob Storage                | Simple Storage Service (S3) | Storage
-Block Storage                     | Disk Storage                | Elastic Block Store (EBS) | Persistent Disk
-File Storage                      | File Storage                | Elastic File System (EFS) | Filestore (beta)
-Reduced-availability Storage      | Cool Blob Storage           | S3 Standard-Infrequent Access, S3 One Zone-Infrequent Access  | Storage Nearline
-Archival Storage                  | Archive Blob Storage        | Glacier |  [ Coldline ](https://cloud.google.com/storage/archival/)
-Physical data transport           | Import/Export Service, Data Box | Snowball | GCS Transfer appliance [[16](#sources)]
-RDBMS                             | SQL Database                | Relational Database Service (RDS), Aurora | SQL, [ Spanner ](#spanner)
-NoSQL: Key-value                  | Table Storage               | [ DynamoDB ](#dynamodb)   | [Firestore](#firestore), [Bigtable](#bigtable)
-NoSQL: Indexed                    | [Cosmos DB](#cosmosdb)      | SimpleDB |  [Firestore](#firestore)
-Batch Data Processing             | HDInsight, Batch            | Elastic MapReduce (EMR), Batch | Dataproc, Dataflow
-Stream Data Processing            | Stream Analytics            | Kinesis |  Dataflow
-Stream Data Ingest                | Event Hubs, Service Bus     | Kinesis  | Pub/Sub
-Big Data Analytics                | Data Lake Analytics, Data Lake Store | Redshift, Athena  | BigQuery
-Messaging                         | Service Bus                 | Simple Notification Service (SNS), Simple Queueing Service (SQS) | Pub/Sub
-Monitoring                        | Monitor                     | CloudWatch   | Stackdriver 
-Deployment                        | Resource Manager            | CloudFormation   | Deployment Manage
+Service                               | Azure                       | AWS   | GCP
+:---                                  | :---                        | :---  | :---
+**Certifications**                    | [Azure certs](../certs/README.md#azure-certs) | [AWS certs](../certs/README.md#aws-certs) | [GCP certs](../certs/README.md#gcp-certs)
+**Command-line tools**                | [Azure PowerShell](azure/azure-ps.md) [Azure CLI](azure/azure-cli.md) | AWS Command Line Interface<br/>AWS Tools for PowerShell| [gsutil](#gsutil) [gcloud](#gcloud)
+**IaaS**                              | Virtual Machines            | Elastic Compute Cloud (EC2) | Compute Engine
+**PaaS**                              | App Service, Cloud Services | Elastic Beanstalk  | App Engine
+**Containers**                        | Container Service, Service Fabric | Elastic Container Service (ECS) | Google Kubernetes Engine
+**Serverless functions**              | Functions                   | Lambda | Functions
+**Containers**                        | Container Service, Service Fabric | Elastic Container Service (ECS) | Google Kubernetes Engine
+**Virtual networks**                  | VNets                       | Virtual Private Cloud (VPC) | Virtual Private Cloud
+**Load Balancer**                     | Load Balancer, Application Gateway | Elastic Load Balancer  | Load Balancing
+**Private connection to cloud**       | ExpressRoute                | Direct Connect  | Interconnect
+**DNS**                               | DNS                         | Route 53              | DNS
+**CDN**                               | CDN                         | CloudFront            | CDN
+**Object Storage**                    | Blob Storage                | Simple Storage Service (S3) | Storage
+**Block Storage**                     | Disk Storage                | Elastic Block Store (EBS) | Persistent Disk
+**File Storage**                      | File Storage                | Elastic File System (EFS) | Filestore (beta)
+**Reduced-availability Storage**      | Cool Blob Storage           | S3 Standard-Infrequent Access, S3 One Zone-Infrequent Access  | Storage Nearline
+**Archival Storage**                  | Archive Blob Storage        | Glacier |  [ Coldline ](https://cloud.google.com/storage/archival/)
+**Physical data transport**           | Import/Export Service, Data Box | Snowball | GCS Transfer appliance [[16](#sources)]
+**RDBMS**                             | SQL Database                | Relational Database Service (RDS), Aurora | SQL, [ Spanner ](#spanner)
+**NoSQL: Key-value**                  | Table Storage               | [ DynamoDB ](#dynamodb)   | [Firestore](#firestore), [Bigtable](#bigtable)
+**NoSQL: Indexed**                    | [Cosmos DB](#cosmosdb)      | SimpleDB |  [Firestore](#firestore)
+**Batch Data Processing**             | HDInsight, Batch            | Elastic MapReduce (EMR), Batch | Dataproc, Dataflow
+**Stream Data Processing**            | Stream Analytics            | Kinesis |  Dataflow
+**Stream Data Ingest**                | Event Hubs, Service Bus     | Kinesis  | Pub/Sub
+**Big Data Analytics**                | Data Lake Analytics, Data Lake Store | Redshift, Athena  | BigQuery
+**Messaging**                         | Service Bus                 | Simple Notification Service (SNS), Simple Queueing Service (SQS) | Pub/Sub
+**Monitoring**                        | Monitor                     | CloudWatch   | Stackdriver 
+**Deployment**                        | Resource Manager            | CloudFormation   | Deployment Manage
+
 ## Resources
 ### GCP resources
 GCP resources are organized in a **resource hierarchy** organized under an **Organization**, which is considered the top level of the hierarchy, although it can be further subsumed by an even higher **Domain**.[[19](#sources), [20](#sources)]\
