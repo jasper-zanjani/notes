@@ -1,12 +1,9 @@
-# Windows Server Administration Fundamentals 
-- Source: [itp](https://app.itpro.tv/course-library/mta-server1/overview-mcsa-windows-81-70692/)
+# [Windows Server Administration Fundamentals](https://app.itpro.tv/course-library/mta-server1/overview-mcsa-windows-81-70692/)
 
-## Overview
-- Source: [itp](https://app.itpro.tv/course-library/mta-server1/overview-mcsa-windows-81-70692/)
+## [Overview](https://app.itpro.tv/course-library/mta-server1/overview-mcsa-windows-81-70692/)
 The MTA is a suitable starting point for IT professionals.
 
-## Understand device drivers
-- Source: [itp](https://app.itpro.tv/course-library/mta-server1/understand-device-drivers/)
+## [Understand device drivers](https://app.itpro.tv/course-library/mta-server1/understand-device-drivers/)
 A driver is software that allows use of hardware
 Methods for installing new drivers:
   - Driver Installation > Allow non administrators to install drivers for these device setup classes
@@ -213,11 +210,9 @@ Ending process is like SIGKILL, ending application is like SIGQUIT
 Resource Monitor is like task manager on steroids
 Performance monitor allows fine-grained monitoring of performance by choosing Counters
 
-## Logs and alerts
-- Source: [itp](https://app.itpro.tv/course-library/mta-server1/logs-alerts/)
+## [Logs and alerts](https://app.itpro.tv/course-library/mta-server1/logs-alerts/)
 
-## Startup Process
-- Source: [itp](https://app.itpro.tv/course-library/mta-server1/startup-process/)
+## [Startup Process](https://app.itpro.tv/course-library/mta-server1/startup-process/)
 Basic boot process has changed since 2008. After POST, control is eventually handed over to the bootloader located in the __Master Boot Record (MBR)__, BOOTMGR.exe (which has replaced the older NTLDR), which looks for the active partition, then winload.exe  which loads the specific version of Windows. On resume, control is handed to winresume.exe.
 
 For the exam:
