@@ -1,7 +1,7 @@
 # Linux
 Table of contents
 :---:
-[Configs](configs.md) [Commands](commands.md#commands) [Tasks](commands.md#tasks) [Sources](sources.md)
+[Configs](configs.md) &bull; [Commands](commands.md#commands) &bull; [Tasks](commands.md#tasks) &bull; [Sources](sources.md)
 
 Topic                           | Contents
 :---                            | :---
@@ -123,20 +123,25 @@ B-Tree Filesystem "butter fs" was adopted by SUSE Enterprise Linux, but support 
 
 ## Filesystem access control lists
 **Filesystem access control lists (FACL)** allow you to grant permissions to more than one group, i.e. in cases where more than one department of a corporation needs access to the same files.  They are made up of _access control entries_ (ACE). FACL permissions will be indicated in a `ls -l` command by the presence of a "+" after the symbolic notation for the traditional UGO permissions. **Acl** is a dependency of `systemd`.
+
 #### Enabling
 add ",acl" to options in `fstab` file, then mount/unmount disk. If enabling FACL on root partition, system has to be rebooted.
 
 ## Flatpak
 
-
-
 ## Namespaces
 Process IDs in the same **namespace** can have access to one another, whereas those in different namespaces cannot. Spawning a process in a new namespace prevents it from seeing the host's context, so an interactive shell like `zsh` spawned in its own namespace will report its PID as `1`, even though the host will assign its own PID. This is the concept behind [**containers**](../devops/README.md#containers). [[55](sources.md)]
 
 ## RAID
-- **RAID 0**: Built with no internal redundancy, each disk provides its full capacity to the array as usable storage. Although technically single disk can work, at least two disks is more typical. [[57](sources.md)]
-- **RAID 1**: Mirrored set of drives, which have to be the same size or space will be forfeited to accomodate the smallest drive. [[57](sources.md)]
-- RAID 2, 3, and 4: obsolete, proprietary, or very rare. [[57](sources.md)]
-- RAID 5: Middle ground which stripes data across multiple drives but with some redundancy, requiring at least **3** disks. An array containing *n* drives makes *n - 1* drives' worth of storage, with one drive's worth of space being used to provide redundancy. [[57](sources.md)]
-- RAID 10: Multiple RAID 1 arrays are treated as drives in a RAID 0, so data is striped across mirrored arrays. [[57](sources.md)]
-- RAID 50: Multiple RAID 5 arrays contained in a RAID 0, and because there are at least of such arrays involved the minimum number of drives is **6**. [[57](sources.md)]
+
+Description | Image
+---         | ---
+**RAID 0** Built with no internal redundancy, each disk provides its full capacity to the array as usable storage. Although technically single disk can work, at least two disks is more typical. | 
+**RAID 1** Mirrored set of drives, which have to be the same size or space will be forfeited to accomodate the smallest drive. | 
+**RAID 2**  | ![RAID 2](img/RAID-2.png)
+**RAID 3**  | ![RAID 3](img/RAID-3.png)
+**RAID 4**  | ![RAID 4](img/RAID-4.png) 
+**RAID 5** Middle ground which stripes data across multiple drives but with some redundancy, requiring at least **3** disks. An array containing *n* drives makes *n - 1* drives' worth of storage, with one drive's worth of space being used to provide redundancy. | ![RAID 5](img/RAID-5.png)
+**RAID 6**  | ![RAID 6](img/RAID-6.png)
+**RAID 10** Multiple RAID 1 arrays are treated as drives in a RAID 0, so data is striped across mirrored arrays. | 
+**RAID 50** Multiple RAID 5 arrays contained in a RAID 0, and because there are at least of such arrays involved the minimum number of drives is **6**. | 
