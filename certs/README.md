@@ -48,14 +48,14 @@ Professional Cloud Security Engineer  | [Certification](https://cloud.google.com
 Professional Collaboration Engineer   | [Certification](https://cloud.google.com/certification/collaboration-engineer)
 
 #### MCSA
-Exam    | Retired | Description
-:---    | :---    | :---
-70-740  "Installation, Storage and Compute with Windows Server 2016" | | [Notes](70-740.md) [Objectives](https://www.microsoft.com/en-us/learning/exam-70-740.aspx) 
-70-741  "Networking with Windows Server 2016" | [Objectives](https://www.microsoft.com/en-us/learning/exam-70-741.aspx) 
-70-742  "Identity with Windows Server 2016" | [Objectives](https://www.microsoft.com/en-us/learning/exam-70-742.aspx) 
-70-410  "Installing and Configuring Windows Server 2012" | | [Objectives](https://www.microsoft.com/en-us/learning/exam-70-410.aspx) 
-70-411  "Administering Windows Server 2012 | | [Objectives](https://www.microsoft.com/en-us/learning/exam-70-411.aspx) 
-70-412  "Configuring Advanced Windows Server 2012 Services" | | [Objectives](https://www.microsoft.com/en-us/learning/exam-70-412.aspx)
+Exam                                                                  | Retired | Description
+:---                                                                  | :---    | :---
+70-740  "Installation, Storage and Compute with Windows Server 2016"  |         | [Notes](70-740.md) [Objectives](https://www.microsoft.com/en-us/learning/exam-70-740.aspx) 
+70-741  "Networking with Windows Server 2016"                         |         | [Objectives](https://www.microsoft.com/en-us/learning/exam-70-741.aspx) 
+70-742  "Identity with Windows Server 2016"                           |         | [Objectives](https://www.microsoft.com/en-us/learning/exam-70-742.aspx) 
+70-410  "Installing and Configuring Windows Server 2012"              |         | [Objectives](https://www.microsoft.com/en-us/learning/exam-70-410.aspx) 
+70-411  "Administering Windows Server 2012                            |         | [Objectives](https://www.microsoft.com/en-us/learning/exam-70-411.aspx) 
+70-412  "Configuring Advanced Windows Server 2012 Services"           |         | [Objectives](https://www.microsoft.com/en-us/learning/exam-70-412.aspx)
 
 ## CompTIA Linux+
 Exam        | Retired | Description
