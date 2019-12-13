@@ -1,6 +1,4 @@
-# Notes and research
-## Processing workflows
-#### Cookbooks
+## Processing cookbooks
 **Cookbooks** are collections of tasks with representative implementations (e.g. Azure commands and procedures for [AZ-103](az-103.md))
 1. **Number** tasks for easy reference, indexing, and linking in markdown
 2. **Catalog** tasks and desciptions in a spreadsheet
@@ -86,8 +84,6 @@ bot = TwitchBot.new
 bot.write_to_chat "Hello world"
 ```
 
- 
-
 ## VMware
 Hypervisor, similar to Hyper-V, but provided at a cost, with a robust command-line interface via PowerShell. [[3](#sources)]
 
@@ -97,4 +93,3 @@ Hypervisor, similar to Hyper-V, but provided at a cost, with a robust command-li
 3. "VMware PowerCLI 101". [Web](https://www.brianbunke.com/blog/2019/09/03/powercli-101/): 2019/09/03.
 4. "How Does BitTorrent Work? a Plain English Guide". [Web](https://app.getpocket.com/read/2717933967)
 5. "Storage in a DevOps World". [GitHub](sources/README.md/#new-stack-makers)
-

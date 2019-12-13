@@ -31,7 +31,7 @@
 30. "How to move a file in Linux". [opensource.com](https://opensource.com/article/19/8/moving-files-linux-depth): 2019/08/22.
 31. "How to view image metadata". [OSTechNix](https://www.ostechnix.com/how-to-view-image-metadata-on-linux/): 2019/08/26.
 32. "Introduction to the Linux [`chown`](commands.md#chown) command". [opensource.com](https://opensource.com/article/19/8/linux-chown-command): 2019/08/26.
-33. "How to [`rename`](commands.md#rename) a group of files on Linux". [NetworkWorld](https://www.networkworld.com/article/3433865/how-to-rename-a-group-of-files-on-linux.html#tk.rss_linux): 2019/08/26.
+33. "How to [`rename`](commands.md#rename) a group of files on Linux". [NetworkWorld](https://www.networkworld.com/article/3433865/how-to-rename-a-group-of-files-on-linux.html#tk.rss_linux): 2019/08/26. 
 34. "How to use [`tig`](commands.md#tig) to browse Git logs". [opensource.com](https://opensource.com/article/19/6/what-tig) 
 35. "CompTIA Linux+ powered by LPI". ITProTV. [itp-lpic.md](../sources/itp-lpic.md)
 36. "Unix as a Second Language: The [`touch`](commands.md#touch) command". [Network World](https://www.networkworld.com/article/3435279/unix-as-a-second-language-the-touch-command.html#tk.rss_linux).
@@ -56,3 +56,5 @@
 55. "Demistifying namespaces and containers in Linux". [opensource.com](https://opensource.com/article/19/10/namespaces-and-containers-linux). 2019/10/29.
 56. "Viewing network bandwidth usage with bmon". [Network World](https://www.networkworld.com/article/3447936/viewing-network-bandwidth-usage-with-bmon.html#tk.rss_linux). 2019/10/29.
 57. "[ RAID ](#raid) for those who avoid it." [Red Hat](https://www.redhat.com/sysadmin/raid-intro): 2019/11/01. [p](https://app.getpocket.com/read/2777681287)
+58. "[Help] WiFi does not work". [Reddit](https://www.reddit.com/r/GalliumOS/comments/b8xm3l/help_wifi_does_not_work/): 2019.
+59. "How to Connect Wi-Fi from Linux Terminal Using Nmcli Command". [TecMint](https://www.tecmint.com/nmcli-connect-wi-fi-from-linux-terminal/): 2018/04/12.

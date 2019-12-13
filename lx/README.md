@@ -68,17 +68,18 @@ Traditionally, `syslogd` was the daemon in charge of this, but recently alternat
 `ps -l` : view priorities of jobs
 `nice -5 cmd &` : run {cmd} at a higher priority
 
-## Runlevels
-`poweroff.target` : systemd equivalent to runlevel 0\
-`rescue.target` : systemd equivalent to runlevel 1\
-`multi-user.target` : systemd equivalent to runlevel 3\
-`graphical.target` : systemd equivalent to runlevel 5\
-`reboot.target` : systemd equivalent to runlevel 6\
-`emergency.target` : systemd equivalent to runlevel emergency\
-`systemctl isolate runlevel` : change target to {runlevel}
+Runlevel                      | Description
+---                           | ---
+`poweroff.target`             | systemd equivalent to runlevel `0`
+`rescue.target`               | systemd equivalent to runlevel `1`
+`multi-user.target`           | systemd equivalent to runlevel `3`
+`graphical.target`            | systemd equivalent to runlevel `5`
+`reboot.target`               | systemd equivalent to runlevel `6`
+`emergency.target`            | systemd equivalent to runlevel `emergency`
+`systemctl isolate $RUNLEVEL` | change target to `$RUNLEVEL`
 
-## Control groups (cgroups)
-**cgroups** is Linux kernel feature that isolates a collection of processes.
+### Cgroups
+**Control group (cgroups)** is a Linux kernel feature that isolates a collection of processes.
 - allow you to allocate resources (CPU time, system memory, network bandwidth, or combinations thereof) among user-defined groups of processes
 - like processes, cgroups are hierarchical and inherit attributes from parents, but they from separate trees branching off from `subsystems` (also: `resource controller`, or just `controller`), each of which represent a single system resouce 
   - `blkio` sets limits on input/output access from block devices
@@ -96,28 +97,30 @@ Fully-featured desktop environments are distinct from window managers, which are
 Most modern Linux distributions use the `ext4` filesystem, which descends from `ext3` and `ext2`, and ultimately `ext`. Other filesystems in use include `btrfs`, `xfs`, and `zfs`
 Source: [OpenSource.com](https://opensource.com/article/18/4/ext4-filesystem)
 ### ext
-  - developed by Remy Card to address limitations in the MINIX filesystem, which was used to develop the first Linux kernel
-  - could address up to 2GB of storage and handle 255-character filenames
-  - had only one timestap per file
+- developed by Remy Card to address limitations in the MINIX filesystem, which was used to develop the first Linux kernel
+- could address up to 2GB of storage and handle 255-character filenames
+- had only one timestap per file
 ### ext2
-  - developed by Remy Card only a year after `ext`'s release as a commercial-grade filesystem, influenced by BSD's Berkeley Fast File System
-  - prone to corruption if the system crashed or lost power while data was being written; prone to performance losses due to fragmentation
-  - quickly and widely adopted, and still used as a format for USB drives
+- developed by Remy Card only a year after `ext`'s release as a commercial-grade filesystem, influenced by BSD's Berkeley Fast File System
+- prone to corruption if the system crashed or lost power while data was being written; prone to performance losses due to fragmentation
+- quickly and widely adopted, and still used as a format for USB drives
 ### ext3
-  - adopted by mainline Linux in 2001
-  - uses `journaling`, whereby disk writes are stored as transactions in a special allocation, which allows a rebooted system to roll back incomplete transactions
-  - 3 levels of journaling: `journal`, `ordered`, and `writeback`
-    - `journal` lowest risk, writes both data and metadata to journal before commiting it to filesystem
-    - `ordered` default mode in most Linux distros, writes metadata to journal but commits data directly to the filesystem
-    - `writeback` least safe, metadata is journaled but data is not
+- adopted by mainline Linux in 2001
+- uses `journaling`, whereby disk writes are stored as transactions in a special allocation, which allows a rebooted system to roll back incomplete transactions
+- 3 levels of journaling: `journal`, `ordered`, and `writeback`
+  - `journal` lowest risk, writes both data and metadata to journal before commiting it to filesystem
+  - `ordered` default mode in most Linux distros, writes metadata to journal but commits data directly to the filesystem
+  - `writeback` least safe, metadata is journaled but data is not
 ### ext4
-  - added to mainline Linux in 2008, developed by Theodore Ts'o
-  - improves upon `ext3` but is still reliant on old technology
+- added to mainline Linux in 2008, developed by Theodore Ts'o
+- improves upon `ext3` but is still reliant on old technology
 ### ZFS
-  - true next-generation filesystem with a problematic license
-  - ZFS on Linux (ZOL) is considered the ugly stepchild of the ZFS community despite the fact that the Linux implementation has the most features and the most community support
+- true next-generation filesystem with a problematic license
+- ZFS on Linux (ZOL) is considered the ugly stepchild of the ZFS community despite the fact that the Linux implementation has the most features and the most community support
+- ZFS is too tightly bound to the operation of the kernel to operate in true userspace, and that is why each implementation is different for operating systems 
   - ZFS is too tightly bound to the operation of the kernel to operate in true userspace, and that is why each implementation is different for operating systems 
-  - LU: 284
+- ZFS is too tightly bound to the operation of the kernel to operate in true userspace, and that is why each implementation is different for operating systems 
+- LU: 284
 ### btrfs
 B-Tree Filesystem "butter fs" was adopted by SUSE Enterprise Linux, but support was dropped by Red Hat in 2017
 
@@ -127,9 +130,7 @@ B-Tree Filesystem "butter fs" was adopted by SUSE Enterprise Linux, but support 
 #### Enabling
 add ",acl" to options in `fstab` file, then mount/unmount disk. If enabling FACL on root partition, system has to be rebooted.
 
-## Flatpak
-
-## Namespaces
+### Namespaces
 Process IDs in the same **namespace** can have access to one another, whereas those in different namespaces cannot. Spawning a process in a new namespace prevents it from seeing the host's context, so an interactive shell like `zsh` spawned in its own namespace will report its PID as `1`, even though the host will assign its own PID. This is the concept behind [**containers**](../devops/README.md#containers). [[55](sources.md)]
 
 ## RAID
@@ -145,3 +146,48 @@ Description | Image
 **RAID 6**  | ![RAID 6](img/RAID-6.png)
 **RAID 10** Multiple RAID 1 arrays are treated as drives in a RAID 0, so data is striped across mirrored arrays. | 
 **RAID 50** Multiple RAID 5 arrays contained in a RAID 0, and because there are at least of such arrays involved the minimum number of drives is **6**. | 
+
+### Time
+Connection to an NTP server is necessary for a variety of services.\
+Linux systems have two clocks:
+1. hardware clock/real-time clock (RTC)
+2. system clock
+
+Manually synchronize hardware clock to system clock (generally only required if **no NTP server is available**)
+```bash
+hwclock --hctosys
+```
+
+## Tasks
+Change hostname 
+```bash
+sudo hostnamectl set-hostname newhostname
+```
+Check kernel version [[ref](https://linuxize.com/post/how-to-check-the-kernel-version-in-linux/ "linuxize.com - How to check the Kernel version in Linux")]
+```bash
+uname -srm
+```
+```bash
+hostnamectl | grep "Kernel"
+```
+```bash
+cat /proc/version
+```
+
+### Syslog
+
+\#    | Severity      | Description
+:---  | :---          | :---  
+0     | Emergencies   | Most severe error conditions that render the system unusable
+1     | Alerts        | Conditions requiring immediate attention
+2     | Critical      | Condition that should be addressed to prevent an interruption of service
+3     | Error         | Error conditions that do not render the system unusable
+4     | Warning       | Specific operations failed to complete successfully
+5     | Notifications | Non-error notifications that alert an administrator about state changes within a system
+6     | Informational | Detailed dinformation about the normal operation of a system
+7     | Debugging     | Highly detailed information used for troubleshooting
+
+### Security
+#### Library injections
+Similar to DLL files on Windows systems, .so ("shared object") library files on Linux allow code to be shared by various processes. They are vulnerable to injection attacks. One file in particular, **linux-vdso.so.1**, finds and locates other shared libraries and is mapped by the kernel into the address space of every process. This library-loading mechanism can be exploited through the use of the environment variable **`LD_PRELOAD`**, which is considered the most convenient way to load a shared library in a process at startup. If defined, this variable is read by the system and the library is loaded immediately after linux-vdso.so.1 into every process that is run. [[ref](https://www.networkworld.com/article/3404621/tracking-down-library-injections-on-linux.html "networkworld.com - Tracking down library injections on Linux")]\
+This attack can be detected using the **[osquery](https://osquery.io/)** tool. This tool represents the system as a relational database which can then be queried, in particular against the **process_envs** table.

@@ -55,6 +55,6 @@ identify -verbose image.png
 ```
 
 ### Sources
-  1. "Geometry" [imagemagick.org](https://imagemagick.org/script/command-line-processing.php#geometry) 
-  2. Cannon, Jason. [*Command Line Kung Fu*](../sources/clkf.md)
-  3. "How to view image metadata on Linux". [OSTechNix](https://www.ostechnix.com/how-to-view-image-metadata-on-linux/): 2019/08/26.
+1. "Geometry" [imagemagick.org](https://imagemagick.org/script/command-line-processing.php#geometry) 
+2. Cannon, Jason. [*Command Line Kung Fu*](../sources/clkf.md)
+3. "How to view image metadata on Linux". [OSTechNix](https://www.ostechnix.com/how-to-view-image-metadata-on-linux/): 2019/08/26.

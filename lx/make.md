@@ -64,7 +64,6 @@ The __AM_INIT_AUTOMAKE__ macro is also called because we're using __automake__:
 AM_INIT_AUTOMAKE
 ```
 
-
 ## Sources
 - [Thoughtbot](https://thoughtbot.com/blog/the-magic-behind-configure-make-make-install)
 
