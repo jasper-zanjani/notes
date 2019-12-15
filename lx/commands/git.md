@@ -223,6 +223,44 @@ The files are presented unstaged, and can be added to new commits as needed. Fin
 git rebase --continue
 ```
 
+### `tig`
+Provides a curses-based browser that allows you to navigate the commits in the current branch. It is essentially a wrapper around `git log`, and therefore accepts the same arguments that can be passed to it.[[34](sources.md)]
+
+Config file   | Description
+:---          | :---
+$HOME/.tigrc  | 
+
+Browse the commit history for a single {file}
+```sh
+tig file
+```
+Browse the commit history for a single {file}, filtering to a specific date range
+```sh
+tig --after="2017-01-01" --before="2018-05-16" -- README.md
+```
+Find who made a change toa  file and why
+```sh
+tig blame file
+```
+Browse stash
+```sh
+tig stash
+```
+Browse refs
+```sh
+tig refs
+```
+Navigate the output of `git grep`
+```sh
+tig grep -i foo lib/Bar
+```
+Pipe a list of commit IDs to tig
+```sh
+git rev-list --author=olaf HEAD | tig show --stdin
+```
+
+
+
 ## Sources
 1. "Dealing with line endings". [GitHub Help](https://help.github.com/en/articles/dealing-with-line-endings)
 2. "Squash All Commits Related to a Single Issue into a Single Commit". [GitHub](https://github.com/todotxt/todo.txt-android/wiki/Squash-All-Commits-Related-to-a-Single-Issue-into-a-Single-Commit)

@@ -4,48 +4,51 @@
 Topic                         | Commands
 :---                          | :---
 Ansible                       | [`ansible`](../ansible.md#ansible) [`ansible-galaxy`](../ansible.md#ansible-galaxy) [`ansible-playbook`](../ansible.md#ansible-playbook)
-Archive                       | [**`bzip2`**](bzip2.md) `bzcat` `bzless` `bzmore` &bull; [`compress`](compress.md#compress) [`uncompress`](compress.md#uncompress) [`gzip`](gzip.md) [`tar`](tar.md#tar) &bull; [**`zip`**](zip.md#zip) [`unzip`](zip.md#unzip) [`zipcloak`](zip.md#zipcloak) [`zipdetails`](zip.md#zipdetails) [`zipgrep`](zip.md#zipgrep) [`zipinfo`](zip.md#zipinfo) [`zipnote`](zip.md#zipnote) [`zipsplit`](zip.md#zipsplit)
-Date and time                 | [`chrony`](#chrony) [`date`](date.md#date) [`hwclock`](#hwclock) [`timedatectl`](#timedatectl)
-Files	                        | [`fallocate`](#fallocate)
-Filters                       | [**`sed`**](sed.md#sed) &bull; [**`awk`**](awk.md#awk) &bull; [**`grep`**](#grep) [`egrep`](#egrep) [`fgrep`](#fgrep) &bull; [`copy`](#copy) [`paste`](#paste) &bull; [`cat`](cat.md#cat) [`tr`](#tr)
-Gnome                         | `gconf-editor`
+Archive                       | [**`bzip2`**](bzip2.md) `bzcat` `bzless` `bzmore` &bull; [`compress`](compress.md#compress) [`uncompress`](compress.md#uncompress) &bull; [`gzip`](gzip.md) [`tar`](tar.md#tar) &bull; [**`zip`**](zip.md#zip) [`unzip`](zip.md#unzip) [`zipcloak`](zip.md#zipcloak) [`zipdetails`](zip.md#zipdetails) [`zipgrep`](zip.md#zipgrep) [`zipinfo`](zip.md#zipinfo) [`zipnote`](zip.md#zipnote) [`zipsplit`](zip.md#zipsplit) &bull; [`dar`](dar.md)
+Date and time                 | [`chrony`](#chrony) [`date`](date.md#date) [`hwclock`](#hwclock) [`timedatectl`](init.md#timedatectl)
+Disk management               | `blkid` [`partx`](partx.md)
+Distributions                 | **Debian** [`adduser`](useradd.md#adduser) [**`apt`**](apt.md#apt) `apt-cache` `apt-key` `add-apt-repository` **Manjaro** [`mhwd`](#mhwd) [`mhwd-chroot`](#mhwd-chroot) [`pacman`](pacman.md) [`yay`](yay.md) **Red Hat** [`dnf`](#dnf) [`rpm`](rpm.md) [`yum`](yum.md)
+Files	                        | [`chown`](chown.md) [`fallocate`](fallocate.md) [`install`](install.md "Copy files while maintaining metadata") [`lsof`](lsof.md "Display open files, open network ports, and network connections"] [`setfacl`](setfacl.md) [`sshfs`](ssh.md#sshfs) [`tree`](#tree)
+Filters                       | [`sed`](sed.md#sed) [`awk`](awk.md#awk) [`grep`](grep.md) [`egrep`](grep.md) [`fgrep`](grep.md) &bull; [`copy`](#copy) [`paste`](#paste) &bull; [`cat`](cat.md#cat) [`shuf`](shuf.md) [`tr`](tr.md)
+Gnome                         | [`gconf-editor`](gsettings.md) [`gsettings`](gsettings.md) 
+GRUB                          | [`update-grub`](grub.md#update-grub)
 Hardware settings             | [`insmod`](#insmod) [ `lsmod` ](#lsmod) [ `lspci` ](#lspci) [ `lsusb` ](#lsusb) [ `modprobe` ](#modprobe) [`rmmod`](#rmmod)
+Init                          | **Systemd** [`hostnamectl`](init.md#hostnamectl) [`journalctl`](init.md#journalctl) [`localectl`](init.md#localectl) [`systemctl`](init.md#systemctl) [`systemd-delta`](init.md#systemd-delta) [`timedatectl`](init.md#timedatectl) &bull; **Sysvinit** [`chkconfig`](init.md#chkconfig) [`init`](init.md#init) [`service`](init.md#service) [`telinit`](init.md#telinit) &bull; **Upstart** [`initctl`](init.md#initctl)
 Kubernetes                    | [`kubeadm`](../devops/k8s.md#kubeadm) [`kubectl`](../devops/k8s.md#kubectl)
-Logical volumes               | [`lvcreate`](#tr) [`lvdisplay`](#lvdisplay) [`lvremove`](#lvremove) [`lvs`](#lvs) [ `pvcreate` ](#pvcreate) [ `pvdisplay` ](#pvdisplay) [ `pvremove` ](#pvremove) [ `pvs` ](#pvs) [ `vgcreate` ](#vgcreate) [ `vgdisplay` ](#vgdisplay) [ `vgextend` ](#vgextend) [ `vgremove` ](#vgremove) [ `vgs` ](#vgs)
+Logical volumes               | [`lvcreate`](lvm.md#lvcreate) [`lvdisplay`](lvm.md##lvdisplay) [`lvremove`](lvm.md##lvremove) [`lvs`](lvm.md##lvs) [`pvcreate`](lvm.md##pvcreate) [`pvdisplay`](lvm.md##pvdisplay) [`pvremove`](lvm.md##pvremove) [`pvs`](lvm.md##pvs) [`vgcreate`](lvm.md##vgcreate) [`vgdisplay`](lvm.md##vgdisplay) [`vgextend`](lvm.md##vgextend) [`vgremove`](lvm.md##vgremove) [`vgs`](lvm.md##vgs)
 Mac OS X                      | `pbcopy` `pbpaste` `screencapture`
 Mail                          | [`mail`](#mail) [`mailmerge`](mailmerge.md#mailmerge) [`mailx`](#mail) [`msmtp`](#msmtp) [`qmail`](#qmail) [`postfix`](#postfix) 
-Manjaro                       | [`mhwd`](#mhwd) [`mhwd-chroot`](#mhwd-chroot)
-Network                       | `iwlist` `iwconfig` `netstat` [`rfkill`](rfkill.md) `ss`
-Package managers              | [`apt`](#apt) [`brew`](#brew) [`dnf`](#dnf) [`gem`](#gem) [`pacman`](#pacman) [`pip`](#pip) [`yay`](#yay) [`yum`](#yum)
-System administration         | [`getent`](#getent) [`useradd`](#useradd) [`userdel`](#userdel) [`usermod`](#usermod) Debian: `adduser`
-Systemd                       | [`journalctl`](#journalctl) [`localectl`](#localectl) [`systemctl`](#systemctl) [`timedatectl`](#timedatectl)
-Version control               | [`git`](git.md#git)
+Network                       | `iwlist` `iwconfig` [`netstat`](netstat.md) [`nc`](nc.md) [`nmap`](nmap.md) [`nmcli`](nmcli.md) [`rfkill`](rfkill.md) [`ss`](ss.md) `tracepath` `traceroute` `xinetd` &bull; **DNS** [`dig`](dig.md) [`nslookup`](nslookup.md)
+Package managers              | [`apt`](apt.md#apt) [`brew`](#brew) [`dnf`](#dnf) [`gem`](gem.md) [`pacman`](pacman.md) [`pip`](#pip) [`snap`](snap.md) [`yay`](yay.md) [`yum`](yum.md)
+Processes                     | [`lsns`](containers.md) [`pidof`](containers.md) [`ps`](ps.md) [`top`](sysadmin.md#top) [`unshare`](containers.md)
+Remote connections            | [`rsync`](rsync.md) [`ssh`](ssh.md#ssh) [`ssh-keygen`](ssh.md#ssh-keygen) [`ssh-keyscan`](ssh.md#ssh-keyscan) [`sshfs`](ssh.md#sshfs)
+System administration         | [`free`](sysadmin.md#free) [`getent`](sysadmin.md#getent) [`gpasswd`](gpasswd.md) [`groupadd`](useradd.md#groupadd) [`groupdel`](useradd.md#groupdel) [`groupmod`](useradd.md#groupmod) [`stty`](#stty) [`su`](sudo.md#su) [`sudo`](sudo.md#sudo) [`top`](sysadmin.md#top) [`uname`](sysadmin.md#uname) [`useradd`](useradd.md#useradd) [`userdel`](useradd.md#userdel) [`usermod`](useradd.md#usermod) `vifs` `visudo` &bull; **Debian** [`adduser`](useradd.md#adduser)
+Version control               | [`git`](git.md#git) [`tig`](git.md#tig)
 Wi-Fi                         | [`iw`](iw.md) `iwlist` `iwconfig` [`rfkill`](rfkill.md)
-X                             | [`xdpyinfo`](X.md) [`xwininfo`](X.md) [`Xorg`](X.md) [`xrandr`](X.md)
+X                             | [`xdpyinfo`](X.md#xdpyinfo) [`xmodmap`](xmodmap.md) [`xwininfo`](X.md#xwininfo) [`Xorg`](X.md#xorg) [`xrandr`](X.md#xrandr)
 
 
 \#  | Commands sorted alphabetically
 :---| :---
-A   | [`adduser`](#adduser) [`add-apt-repository`](#add-apt-repository) [`alsamixer`](#alsamixer) [`apropos`](#apropos) [`apt`](#apt) [`apt-cache`](#apt-cache) [`apt-key`](#apt-key) [`arp`](#arp) [`at`](#at) [`ausearch`](#ausearch) [`awk`](#awk) 
+A   | [`adduser`](#adduser) [`add-apt-repository`](#add-apt-repository) [`alsamixer`](#alsamixer) [`apropos`](#apropos) [`apt`](apt.md#apt) [`apt-cache`](apt.md#apt-cache) [`apt-key`](apt.md#apt-key) [`arp`](#arp) [`at`](#at) [`ausearch`](#ausearch) [`awk`](#awk) 
 B   | [`bash`](#bash) [`blkid`](#blkid) [`bmon`](#bmon) [`borg`](#borg) [`bpftrace`](#bpftrace) [`bzcat`](bzip2.md#bzcat) [`bzip2`](bzip2.md#bzip2) [`bzless`](bzip2.md#bzless) [`bzmore`](bzip2.md#bzmore) 
-C   | [`cancel`](#cancel) [`cat`](cat.md#cat) [`chage`](#chage) [`chcon`](#chcon) [`chgrp`](#chgrp) [`chkconfig`](#sysvinit) [`chmod`](#chmod) [`chown`](#chown) [`chpass`](#chpass) [`chrony`](#chrony) [`chsh`](#chsh) [`column`](#column) [`compress`](#compress) [`cp`](#cp) [`crontab`](#crontab) [`crossystem`](#crossystem) [`cryptsetup`](#cryptsetup) [`curl`](#curl) [`cut`](#cut) 
+C   | [`cancel`](#cancel) [`cat`](cat.md#cat) [`chage`](#chage) [`chcon`](#chcon) [`chgrp`](#chgrp) [`chkconfig`](#sysvinit) [`chmod`](#chmod) [`chown`](chown.md) [`chpass`](#chpass) [`chrony`](#chrony) [`chsh`](#chsh) [`column`](#column) [`compress`](#compress) [`cp`](#cp) [`crontab`](#crontab) [`crossystem`](#crossystem) [`cryptsetup`](#cryptsetup) [`curl`](#curl) [`cut`](#cut) 
 D   | [`dar`](#dar) [`date`](date.md#date) [`dbus`](#dbus) [`dd`](#dd) [`declare`](#declare) [`df`](#df) [`dhclient`](#dhclient) [`diff`](#diff) [`dig`](#dig) [`dirname`](#dirname) [`dm-crypt`](#dm-crypt) [`dmesg`](#dmesg) [`doveadm`](#doveadm) [`dpkg`](#dpkg) [`dpkg-reconfigure`](#dpkg-reconfigure) [`du`](#du) [`dumpe2fs`](#dumpe2fs) 
 E   | [`e2image`](#e2image) [`e2label`](#e2label) [`edquota`](#edquota) [`elvis`](#elvis) [`elvish`](#elvish) [`espeak`](#espeak) [`exif`](#exif) 
-F   | [`fallocate`](#fallocate) [`fam`](#fam) [`fdisk`](#fdisk) [`file`](#file) [`find`](#find) [`firewall-cmd`](#firewall-cmd) [`firewalld`](#firewalld) [`fish`](#fish) [`fmt`](#fmt) [`fold`](#fold) [`free`](#free) [`fsck`](#fsck) [`fstrim`](#fstrim) [`ftp`](#ftp) [`fusermount`](#fusermount) 
-G   | [`gconf-editor`](#gconf-editor) [`gdisk`](#gdisk) [`gdmsetup`](#gdmsetup) [`gem`](#gem) [`getent`](#getent) [`getfacl`](#getfacl) [`git`](git.md#git) [`gpasswd`](#gpasswd) [`gpg`](#gpg) [`grep`](#grep) [`groupadd`](#groupadd) [`groupdel`](#groupdel) [`groupmod`](#groupmod) [`grub`](#grub) [`gzip`](#gzip) 
+F   | [`fallocate`](fallocate.md) [`fam`](#fam) [`fdisk`](#fdisk) [`file`](#file) [`find`](#find) [`firewall-cmd`](#firewall-cmd) [`firewalld`](#firewalld) [`fish`](#fish) [`fmt`](#fmt) [`fold`](#fold) [`free`](#free) [`fsck`](#fsck) [`fstrim`](#fstrim) [`ftp`](#ftp) [`fusermount`](#fusermount) 
+G   | [`gconf-editor`](gsettings.md) [`gdisk`](#gdisk) [`gdmsetup`](#gdmsetup) [`gem`](#gem) [`getent`](#getent) [`getfacl`](#getfacl) [`git`](git.md#git) [`gpasswd`](gpasswd.md) [`gpg`](#gpg) [`grep`](grep.md) [`groupadd`](#groupadd) [`groupdel`](#groupdel) [`groupmod`](#groupmod) [`grub`](#grub) [`gsettings`](gsettings.md) [`gzip`](#gzip) 
 H   | [`hdiutil`](#hdiutil) [`hdparm`](#hdparm) [`head`](#head) [`history`](#history) [`host`](#host) [`hostname`](#hostname) [`hostnamectl`](#hostnamectl) [`hwclock`](#hwclock) 
-I   | [`iconv`](#iconv) [`ifconfig`](#ifconfig) [`imagemagick`](#imagemagick) [`init`](#sysvinit) [`initctl`](#initctl) [`insmod`](#insmod) [`install`](#install) [`ip`](#ip) [`iptables`](#iptables) [`iscsiadm`](#iscsiadm) [`iw`](iw.md) [`iwconfig`](#iwconfig) [`iwlist`](#iwlist) 
-J-K | [`journalctl`](#journalctl) &bull; [`kill`](#kill) [`kubeadm`](../devops/k8s.md#kubeadm) [`kubectl`](../devops/k8s.md#kubectl)
-L   | [`last`](#last) [`ldapadd`](#ldapadd) [`ldconfig`](#ldconfig) [`ldd`](#ldd) [`less`](#less) [`let`](#let) [`link`](#link) [`locale`](#locale) [`localectl`](#localectl) [`logout`](#logout) [`lp`](#lp) [`lpadmin`](#lpadmin) [`lpstat`](#lpstat) [`ls`](#ls) [`lsblk`](#lsblk) [`lsmod`](#lsmod) [`lsns`](#lsns) [`lsof`](#lsof) [`lspci`](#lspci) [`lsusb`](#lsusb) [`lvcreate`](#lvcreate) [`lvdisplay`](#lvdisplay) [`lvremove`](#lvremove) [`lvresize`](#lvresize) 
+I   | [`iconv`](#iconv) [`ifconfig`](#ifconfig) [`imagemagick`](#imagemagick) [`init`](#sysvinit) [`initctl`](#initctl) [`insmod`](#insmod) [`install`](#install.md) [`ip`](#ip) [`iptables`](#iptables) [`iscsiadm`](#iscsiadm) [`iw`](iw.md) [`iwconfig`](#iwconfig) [`iwlist`](#iwlist) 
+J-K | [`journalctl`](init.md#journalctl) &bull; [`kill`](#kill) [`kubeadm`](../devops/k8s.md#kubeadm) [`kubectl`](../devops/k8s.md#kubectl)
+L   | [`last`](#last) [`ldapadd`](#ldapadd) [`ldconfig`](#ldconfig) [`ldd`](#ldd) [`less`](#less) [`let`](#let) [`link`](#link) [`locale`](#locale) [`localectl`](init.md#localectl) [`logout`](#logout) [`lp`](#lp) [`lpadmin`](#lpadmin) [`lpstat`](#lpstat) [`ls`](#ls) [`lsblk`](#lsblk) [`lsmod`](#lsmod) [`lsns`](containers.md) [`lsof`](#lsof) [`lspci`](#lspci) [`lsusb`](#lsusb) [`lvcreate`](#lvcreate) [`lvdisplay`](#lvdisplay) [`lvremove`](#lvremove) [`lvresize`](#lvresize) 
 M   | [`mail`](#mail) [`mailq`](#mailq) [`mailstats`](#mailstats) [`make`](#make) [`makemap`](#makemap) [`mdadm`](#mdadm) [`mhwd`](#mhwd) [`mhwd-chroot`](#mhwd-chroot) [`mkdir`](#mkdir) [`mke2fs`](#mke2fs) [`mkfontscale`](#mkfontscale) [`mkfs`](#mkfs) [`mkswap`](#mkswap) [`mktemp`](#mktemp) [`modinfo`](#modinfo) [`modprobe`](#modprobe) [`mongod`](#mongod) [`mount`](#mount) [`msmtp`](#msmtp) [`mt`](#mt) 
-N-O | [`nc`](#nc) [`netplan`](#netplan) [`netstat`](#netstat) [`NetworkManager`](#NetworkManager) [`newaliases`](#newaliases) [`nice`](#nice) [`nl`](#nl) [`nmap`](#nmap) [`nmblookup`](#nmblookup) [`nmcli`](#nmcli) [`nohup`](#nohup) [`nslookup`](#nslookup) [`ntpdate`](#ntpdate) &bull; [`openssl`](#openssl)
-P   | [`pacman`](#pacman) [`partx`](#partx) [`paste`](#paste) [`passwd`](#passwd) [`paste`](#paste) [`patch`](#patch) [`pidof`](#pidof) [`ping`](#ping) [`pip`](#pip) [`postfix`](#postfix) [`postqueue`](#postqueue) [`postsuper`](#postsuper) [`ps`](#ps) [`pvcreate`](#pvcreate) [`pvdisplay`](#pvdisplay) [`pvremove`](#pvremove) [`pydoc`](#pydoc) 
-Q-R | [`qmail`](#qmail) [`quota`](#quota) [`quotacheck`](#quotacheck) [`quotaoff`](#quotaoff) [`quotaon`](#quotaon) &bull; [`read`](#read) [`rename`](#rename) [`repquota`](#repquota) [`resize2fs`](#resize2fs) [`rfkill`](#rfkill) [`resize4fs`](#resize4fs) [`restorecon`](#restorecon) [`rmmod`](#rmmod) [`route`](#route) [`rpm`](#rpm) [`rsync`](#rsync) [`runlevel`](#runlevel) 
-S   | [`samba`](#samba) [`sc`](#sc) [`screencapture`](#screencapture) [`sed`](sed.md#sed) [`semanage`](#selinux) [`sendmail`](#sendmail) [`seq`](#seq) [`service`](#sysvinit) [`sestatus`](#sestatus) [`setenforce`](#selinux) [`setfacl`](#setfacl) [`sfdisk`](#sfdisk) [`shred`](#shred) [`shuf`](#shuf) [`shutdown`](#shutdown) [`slapadd`](#slapadd)  [`sleep`](#sleep) [`snap`](#snap) [`sort`](#sort) [`sosreport`](#sosreport) [`source`](#source) [`speaker-test`](#speaker-test) [`ss`](#ss) [`ssh`](#ssh) [`ssh-copy-id`](#ssh-copy-id) [`ssh-keygen`](#ssh-keygen) [`ssh-keyscan`](#ssh-keyscan) [`sshfs`](#sshfs) [`ssmtp`](#ssmtp) [`startx`](#startx) [`stty`](#stty) [`su`](#su) [`sudo`](#sudo) [`swapoff`](#swapoff) [`swapon`](#swapon) [`sysctl`](#sysctl) [`syslog`](#syslog) [`sysvinit`](#sysvinit) [`systemctl`](#systemctl) [`systemd-delta`](#systemd-delta) 
-T   | [`tail`](#tail) [`tar`](tar.md#tar) [`tcpdump`](#tcpdump) [`telinit`](#telinit) [`test`](test.md#test) [`tig`](#tig) [`timedatectl`](#timedatectl) [`tmux`](tmux.md#tmux) [`touch`](#touch) [`top`](#top) [`tput`](#tput) [`tr`](#tr) [`tree`](#tree) [`tracepath`](#tracepath) [`traceroute`](#traceroute) [`tune2fs`](#tune2fs) [`tzselect`](#tzselect) 
-U   | [`udevadm`](#udevadm) [`umount`](#umount) [`uname`](#uname) [`uncompress`](#uncompress) [`unshare`](#unshare) [`unzip`](#unzip) [`update-grub`](#update-grub) [`update-rc.d`](#update-rc.d) [`useradd`](#useradd) [`userdel`](#userdel) [`usermod`](#usermod) 
-V   | [`variable`](#variable) [`vgcreate`](#vgcreate) [`vgdisplay`](#vgdisplay) [`vgextend`](#vgextend) [`vgremove`](#vgremove) [`vgscan`](#vgscan) [`vifs`](#vifs) [`visudo`](#visudo) 
-W-Z | [`wall`](#wall) [`watch`](watch.md#watch) [`wc`](#wc) [`whatis`](#whatis) &bull; [`X`](#X) [`xdpyinfo`](#xdpyinfo) [`xhost`](#xhost) [`xinetd`](#xinetd) [`Xorg`](#Xorg) [`xrandr`](#xrandr) [`xwininfo`](#xwininfo) &bull; [`yay`](#yay) [`yum`](#yum) &bull; [`zip`](#zip) [`zipcloak`](#zipcloak) [`zipdetails`](#zipdetails) [`zipgrep`](#zipgrep) [`zipinfo`](#zipinfo) [`zipnote`](#zipnote) [`zipsplit`](#zipsplit) [`zsh`](#zsh)
+N-O | [`nc`](nc.md) [`netplan`](#netplan) [`netstat`](#netstat) [`NetworkManager`](#NetworkManager) [`newaliases`](#newaliases) [`nice`](#nice) [`nl`](#nl) [`nmap`](nmap.md) [`nmblookup`](#nmblookup) [`nmcli`](nmcli.md) [`nohup`](#nohup) [`nslookup`](nslookup.md) [`ntpdate`](#ntpdate) &bull; [`openssl`](#openssl)
+P   | [`pacman`](pacman.md) [`partx`](partx.md) [`paste`](#paste) [`passwd`](#passwd) [`paste`](#paste) [`patch`](#patch) [`pidof`](containers.md) [`ping`](#ping) [`pip`](#pip) [`postfix`](#postfix) [`postqueue`](#postqueue) [`postsuper`](#postsuper) [`ps`](#ps) [`pvcreate`](#pvcreate) [`pvdisplay`](#pvdisplay) [`pvremove`](#pvremove) [`pydoc`](#pydoc) 
+Q-R | [`qmail`](#qmail) [`quota`](#quota) [`quotacheck`](#quotacheck) [`quotaoff`](#quotaoff) [`quotaon`](#quotaon) &bull; [`read`](#read) [`rename`](#rename) [`repquota`](#repquota) [`resize2fs`](#resize2fs) [`rfkill`](#rfkill) [`resize4fs`](#resize4fs) [`restorecon`](#restorecon) [`rmmod`](#rmmod) [`route`](#route) [`rpm`](#rpm) [`rsync`](rsync.md) [`runlevel`](#runlevel) 
+S   | [`samba`](#samba) [`sc`](#sc) [`screencapture`](#screencapture) [`sed`](sed.md#sed) [`semanage`](#selinux) [`sendmail`](#sendmail) [`seq`](#seq) [`service`](#sysvinit) [`sestatus`](#sestatus) [`setenforce`](#selinux) [`setfacl`](#setfacl) [`sfdisk`](#sfdisk) [`shred`](#shred) [`shuf`](#shuf) [`shutdown`](#shutdown) [`slapadd`](#slapadd)  [`sleep`](#sleep) [`snap`](#snap) [`sort`](#sort) [`sosreport`](#sosreport) [`source`](#source) [`speaker-test`](#speaker-test) [`ss`](ss.md) [`ssh`](#ssh) [`ssh-copy-id`](#ssh-copy-id) [`ssh-keygen`](#ssh-keygen) [`ssh-keyscan`](#ssh-keyscan) [`sshfs`](#sshfs) [`ssmtp`](#ssmtp) [`startx`](#startx) [`stty`](#stty) [`su`](#su) [`sudo`](sudo.md) [`swapoff`](#swapoff) [`swapon`](#swapon) [`sysctl`](#sysctl) [`syslog`](#syslog) [`sysvinit`](#sysvinit) [`systemctl`](init.md#systemctl) [`systemd-delta`](#systemd-delta) 
+T   | [`tail`](#tail) [`tar`](tar.md#tar) [`tcpdump`](#tcpdump) [`telinit`](#telinit) [`test`](test.md#test) [`tig`](#tig) [`timedatectl`](init.md#timedatectl) [`tmux`](tmux.md#tmux) [`touch`](#touch) [`top`](sysadmin.md#top) [`tput`](#tput) [`tr`](tr.md) [`tree`](#tree) [`tracepath`](#tracepath) [`traceroute`](#traceroute) [`tune2fs`](#tune2fs) [`tzselect`](#tzselect) 
+U-V | [`udevadm`](#udevadm) [`umount`](#umount) [`uname`](sysadmin.md#uname) [`uncompress`](#uncompress) [`unshare`](containers.md) [`unzip`](#unzip) [`update-grub`](#update-grub) [`update-rc.d`](#update-rc.d) [`useradd`](#useradd) [`userdel`](#userdel) [`usermod`](#usermod) &bull; [`variable`](#variable) [`vgcreate`](#vgcreate) [`vgdisplay`](#vgdisplay) [`vgextend`](#vgextend) [`vgremove`](#vgremove) [`vgscan`](#vgscan) [`vifs`](#vifs) [`visudo`](#visudo) 
+W-Z | [`wall`](#wall) [`watch`](watch.md#watch) [`wc`](#wc) [`whatis`](#whatis) &bull; [`X`](#X) [`xdpyinfo`](#xdpyinfo) [`xhost`](#xhost) [`xinetd`](#xinetd) [`Xorg`](#Xorg) [`xrandr`](#xrandr) [`xwininfo`](#xwininfo) &bull; [`yay`](#yay) [`yum`](yum.md) &bull; [`zip`](#zip) [`zipcloak`](#zipcloak) [`zipdetails`](#zipdetails) [`zipgrep`](#zipgrep) [`zipinfo`](#zipinfo) [`zipnote`](#zipnote) [`zipsplit`](#zipsplit) [`zsh`](#zsh)
 
 
 ### bash
@@ -100,8 +103,9 @@ Variable                                            | Effect
 `$TMPDIR`                                           | place temporary files created and used by the shell in `directory`
 `$TMPDIR=directory`                                 | place temporary files created and used by the shell in directory
 `$UID`                                              | user's ID number
-#### Heredoc
-"Here Documents" consist of double less-than `&lt;&lt;` followed by the delimiting character sequence. `EOF` is typical.
+`$XDG_SESSION_TYPE`                                 | display compositor (e.g. `wayland`)
+
+**"Here Documents"** or **"Heredocs"** consist of double less-than `<<` followed by an arbitrary character sequence which will be used as delimeter, typically "EOF".
 ```sh
 cat << EOF
 1 a
@@ -121,7 +125,7 @@ Output:
 a=1
 x=3
 ```
-### Here string
+Here string
 ```sh
 wc -c <<< "$x"
 ```
@@ -129,176 +133,49 @@ wc -c <<< "$x"
 ### `bmon`
 [[56](sources.md)]
 
-### dar
-Create a differential (or incremental) backup of {file}, using full.bak as reference
-```sh
-dar -R /path/to/file -c diff1.bak -A full.bak
-```
-Create a full backup of {file}
-```sh
-dar -R /path/to/file -c full.bak
-```
-Restore full.bak
-```sh
-dar -x full.bak
-```
-
-### unshare
-Run a program in a namespace **unshared** from its parent process. [[55](sources.md)]
-```sh
-sudo unshare --fork --pid --mount-proc zsh
-```
-
-### bpftrace
+### `bpftrace`
 New open-source tracer for analyzing production performance problems and troubleshooting software [[19](sources.md)]
 
-### chown
-Change a file or directory's ownership. To change the user and group owner of a file to {user} and {group}, `chown`'s syntax is of the format `user:group` [[32](sources.md)].
-```sh
-chown susan:delta file          # Assign {file} to user `susan` and group `delta`
-chown alan file                 # Assign {file} to user `alan`
-chown alan: file                # Assign {file} to user and group `alan`
-chown :gamma file               # Assign {file} to the group `gamma`
-```
-Recursively grant {user} ownership to {path}
-```sh
-chown -R user path
-```
-Assign {path} to `susan` and group `delta`, recursively and with verbose output
-```sh
-chown --verbose --recursive susan:delta path 
-chown -vR susan:delta path
-```
-```sh
-chown -vR --reference=. path    # Use a `reference` file to match the configuration of a particular file
-chown -cfR --preserve-root alan # `preserve-root` prevents changes to files in the root directory, but has no effect when not used with `recursive`
-```
-
-### exif
+### `exif`
 View image metadata. Unlike alternatives like `file` and ImageMagick's `identify`, `exif` produces columnar output [[31](sources.md)]
 ```sh
 exif image.png 
 ```
 
-### fallocate
-Allocate and deallocate space to a file\
-Create a file size of 1 gigabyte
-```sh
-fallocate -l 1G $FILENAME  # gibibyte
-fallocate -l 1GB $FILENAME # gigabyte
-```
-
-### file
+### `file`
 View image metadata [[31](sources.md)]
 ```sh
 file image.png # => file type, dimensions, color depth
 ```
 
-### free
-Simple utility that displays realtime memory information.
-
-Option  | Effect
-:---    | :---
-`-c`    | run the program {n} times
-`-h`    | human-readable output
-`-s`    | run the program every {n} seconds, until the program is manually interrupted
-
-List memory statistics in kilobytes. Without any options, `free` returns a table listing general statistics in kilobytes:
-```bash
-free
-```
-Command-line memory dashboard
-```bash
-watch free -h
-```
-
-### ftp
+### `ftp`
 encrypted file transfers
 
-### fusermount
+### `fusermount`
 Mount a directory from a remote server on your local host via SSH [[23](sources.md)]
 ```sh
 fusermount -u mountpoint
 ```
 
-### grep
-
-Option  | POSIX option            | Effect
-:---    | :---                    | :---
-`-A`    |                         | print {n} lines of trailing context from the file after each match
-`-B`    |                         | print {n} lines of leading context from the file after each match
-`-c`    | `--count`               | print number of lines containing the pattern
-`-C`    |                         | print {n} lines of leading and trailing context surrounding each match
-`-E`    | `--extended-regexp`     | force grep to use extended regular expressions, making it similar to `egrep`
-`-F`    | `--fixed-strings`       | force grep to interpret pattern as fixed strings, making it similar to `fgrep`
-`-H`    |                         | always pr int filename headers with output lines
-`-l`    | `--files-with-matches`  | print only filenames where pattern matches occur; search continues to the next file if a match is found, making it less computationally expensive
-`-n`    | `--line-number`         | print line number where match occurs
-`-r`    |                         | recursive
-`-v`    | `--invert-match`        | print lines **not** matching the pattern
-
-### history
+### `history`
 
 Option  | Effect
 :---    | :---
 `-c`    | clear history [[23](sources.md)]
 
-### hostnamectl
-Permanently change hostname to `$HOSTNAME`
-```sh
-hostnamectl set-hostname $HOSTNAME
-```
 
-### install
-With `install`, files can be copied while maintaining various metadata, including timestamp, owner, etc. [[9](sources.md)]\
-Copy a file while preserving timestamp. The copy will have the `install` default of `755`, but the original's `mtime` is maintained:
-```sh
-install --preserve-timestamp example/foo .
-```
-Copy a file, setting permissions, owner, and group
-```sh
-install --preserve-timestamp --owner=jdoe --group=sudoers --mode=753
-```
-
-
-### lowriter
+### `lowriter`
 `lowriter` is a command-line utility installed with LibreOffice Writer.[[21](sources.md)]
 Convert a single file to PDF
 ```sh
 lowriter --convert-to pdf filename.doc
 ```
-#### Convert a batch of files using globbing
+Convert a batch of files using globbing
 ```sh
 lowriter --convert-to pdf *.docx
 ```
-### localectl
-Change locale to French
-```sh
-localectl set-locale LANG=fr_FR.utf8
-```
 
-### lsns
-List existing namespaces. Namespace PIDs can also be accessed with [[55](sources.md)]
-```sh
-ls /proc/*/ns
-```
-
-
-### lsof
-`lsof` can be used to display open files, open network ports, and network connections; `-P` prevents the conversion of port numbers to port names; `-i` displays network connections; `-n` prevents the conversion of IP addresses to hostnames [[23](sources.md)]
-
-Option  | Effect
-:---    | :---
-`-i`    | display network connections
-`-n`    | prevent the conversion of IP addresses to hostnames
-`-P`    | prevent the conversion of port numbers to port names
-
-Show open network connections
-```sh
-sudo lsof -Pni
-```
-
-### mail
+### `mail`
 **Mail User Agent (MUA)** which accepts interactive input using the `&` prompt
 Check email of `$USER`
 ```sh
@@ -308,7 +185,7 @@ Send email to `$USER`
 ```sh
 mail $USER
 ```
-#### Send email from the command-line
+Send email from the command-line
 Send email interactively
 ```sh
 mail $ADDRESS
@@ -326,10 +203,10 @@ Send message via pipe
 echo 'message' | mail -s 'subject' -a /path/to/attachment
 ```
 
-#### mailq
+### `mailq`
 Prints summary of mail messages queued for future delivery
 
-### mktemp
+### `mktemp`
 Create a temporary file or directory safely and print its name. These will not need to be manually cleaned up because they will be placed in the temporary directory (**/tmp**) [[29](sources.md)]\
 Create a new temporary file
 ```sh
@@ -348,7 +225,7 @@ Add a suffix
 mktemp ostechnixXXX --suffix=blog
 ```
 
-### mv
+### `mv`
 Option  | POSIX option            | Effect
 :---    | :---                    | :---
 \-      | `--backup`              | takes an argument defining how the backup file is named (not available in BSD): <br/> `existing` if numbered backups already exist in the destination, then a numbered backup is created. Otherwise, the `simple` scheme is used <br/> `none` do not create a backup even if `--backup` is set; useful to override a `mv` alias that sets the `--backup` option <br/> `numbered` append number to the destination file <br/> `simple` append "~" to the destination filename, which will be hidden when running `ls --ignore-backups`
@@ -357,334 +234,37 @@ Option  | POSIX option            | Effect
 `-n`    | `--no-clobber`          | silently reject move action in the event of a conflict
 `-u`    | `--update`              | only overwrite if the modification time of the destination is older than the source
 
-### nc
-The netcat utility allows testing of a host's ports, similar to __ping__, but more versatile because __ping__ only uses the portless ICMP protocol. GNU and OpenBSD versions available (itp-l+: 28)
-
-Option  | Effect
-:---    | :---
-`-l`    | listening mode
-
-Connect to host on port 80
-```
-nc example.com 80
-```
-Scan ports
-```
-# Scan a single port
-nc -v -w 2 z 192.168.56.1 22
-
-# Scan multiple ports
-nc -v -w 2 z 192.168.56.1 22 80
-
-# Scan a range of ports
-nc -v -w 2 z 192.168.56.1 22-25
-```
-#### Transfer files between servers
-This example uses the `pv` utility to monitor progress.
-```
-# Run `nc` in listening mode (`-l` option) on port 3000
-tar -zcf - debian-10.0.0-amd64-xfce-CD-1.iso | pv | nc -l -p 3000 -q 5
-
-# On the receiving client, to obtain the file:
-nc 192.168.1.4 3000 | pv | tar -zxf -
-```
-#### Create a command-line chat server
-```
-# Create chat server listening on port 5000
-nc -l -vv -p 5000
-
-# Launch a chat session on the other system
-nc 192.168.56.1 5000
-```
-#### Find a service running on port
-Obtain port banners (`-n` disables DNS lookup)
-```
-nc -v -n 192.168.56.110 80
-```
-#### Create stream sockets
-Create and listen on a UNIX-domain stream socket
-```
-nc -lU /var/tmp/mysocket &
-ss -lpn | grep "/var/tmp/"
-```
-#### Create a backdoor
-Netcat needs to listen on a chosen port (here 3001): `-d` disables reading from stdin; `-e` specifies the command to run on the target system
-```
-nc -L -p 3001 -d -e cmd.exe
-```
-#### Connect to {port} at {host}
-```sh
-nc host port
-```
-#### Netcat command that retrieves a webpage
-```sh
-nc host port \get
-```
-### netstat
-Option  | POSIX option            | Effect
-:---    | :---                    | :---
-`-a`    | `--all` | display both listening and non-listening sockets
-`-c`    | `--continuous` | display selected information every second continuously
-`-e`    | `--extend` | display additional information (repeat for maximum detail)
-`-g`    | `--groups` | display multicast group membership information for IPv4 and IPv6
-`-i`    | `--interfaces` | display a table of all network interfaces
-`-l`    | `--listening` | display only listening sockets
-`-M`    | `--masquerade` | display masqueraded connections
-`-n`    | `--numeric` | display numerical addresses instead of symbolic host, port, or user names
-`-o`    | `--timers` | display information related to networking timers
-`-p`    | `--program` | display PID and name of program to which each socket belongs
-`-r`    | `--route` | display routing tables
-`-s`    | `--statistics` | display summary statistics by protocol
-#### Show network traffic
-```sh
-netstat -an
-```
-#### Refresh every five seconds
-```sh
-netstat -c5
-``` 
-#### Show the current default route without performing DNS lookups on the IP addresses involved
-```sh
-netstat -rn
-```
-#### Count number of TCP connections 
-```
-netstat -a | grep tcp - | wc -l
-``` 
-#### Active sessions 
-```
-netstat -tp
-``` 
-#### All sessions
-```
-netstat -atp
-``` 
-#### Routing table with name resolution 
-```
-netstat -rn
-``` 
-#### Get the list of IPs and ports that are connected via https on your webserver every second
-```
-watch -n 1 'netstat -an | grep ":443"'
-``` 
-#### Get the total number of connections on port 80 every second
-```
-watch -n 1 'netstat -an | grep ":80" | wc -l'
-```
-### networkmanager
-#### Stop NetworkManager service
+### `networkmanager`
+Stop NetworkManager service
 ```sh
 chkconfig NetworkManager off               # Upstart
 systemctl disable NetworkManager.service   # Systemd
 service NetworkManager stop                # sysvinit
 ```
-### nslookup
-Perform a DNS lookup in an interactive shell with cleaner output than __dig__. Enter a domain name and you get output in two sections. 
-#### Retrieve IP address of {host}
-```sh
-nslookup host
-```
-#### Get IP address of a website
-```
-nslookup url
-```
-#### Get only nameservers
-```
-nslookup -type=ns url
-```
-#### Get only MX records
-```
-nslookup -type=mx url
-```
-#### Get Start of Authority (SOA) record
-```
-nslookup -type=soa url
-```
-#### Display all available records
-```
-nslookup -type=any url
-```
-#### Perform reverse DNS lookup on {ipaddress}
-```
-nslookup ipaddress
-```
-#### Specify port {portno} in the lookup
-```
-nslookup -port=portno url
-```
-### qmail
+
+### `qmail`
 Mail Transfer Agent (MTA) designed as a drop-in replacement for Sendmail, notable for being the first to be "security-aware". Its various modular subcomponents run independently and are mutually untrustful. It uses SMTP to exchange messages with other MTAs. It was written by Dan Bernstein, a professor of mathematics famous for litigating against the US government with regard to export controls on encryption algorithms. Deprecated and removed from Arch repos in 2005. [[27](sources.md)]
-### pacman
-Option  | POSIX option            | Effect
-:---    | :---                    | :---
-`Q`     | `--query`               | list all installed packages
-`-R`    |                         | remove {pkg}, but leave dependencies
-`-Qe`   |                         | list programs explicitly installed by user or program command
-`-Qeq`  |                         | list only program names explicitly installed
-`-Qm`   |                         | list programs only installed from AUR
-`-Qn`   |                         | list programs only installed from main repositories
-`-Qdt`  |                         | list dependencies no longer needed (orphans)
-`-Ql`   | `--query` `--list`      | list all files owned by a package
-`-S`    | `--sync`                | install {pkg}
-`-Sy`   |                         | synchronize package database 
-`-Su`   |                         | update programs 
-`-Syu`  |                         | sync package database (`Sy`) and upgrade all programs (`u`) (equivalent to `apt-get update && apt-get upgrade`)
-`-Syy`  |                         | force double-check of repositories
-`-Syyuw` |                        | downloads programs but doesn't install them, for the option of manual installation
-`-Rs`   |                         | remove {pkg} as well as its dependencies
-`-Rns`  |                         | remove {pkg}, dependencies, as well as config files 
-#### List installed packages
-```sh
-pacman -Q
-pacman --query
-```
-#### List all orphaned dependencies (no longer needed)
-```sh
-pacman -Qdt
-pacman --query --deps --unrequired
-```
-#### List only explicitly installed packages and versions
-```sh
-pacman -Qe
-pacman --query --explicit
-```
-#### List explicitly installed packages, limiting output to program names
-```sh
-pacman -Qeq
-pacman --query --explicit --quiet
-```
-#### List all packages installed from the AUR
-```sh
-pacman -Qm
-pacman --query --foreign
-```
-#### List all packages installed from main repos
-```sh
-pacman -Qn
-pacman --query --native
-```
-#### Find which package owns {file}
-```sh
-pacman -Qo file
-pacman --query --owns file
-```
-#### List all install packages, filtering output to packages that are out-of-date on the local system
-```sh
-pacman -Qu
-pacman --query --upgrades
-```
-#### Remove {package}
-```sh
-pacman -R package
-pacman --remove package
-```
-#### Remove {package}, dependencies, and config files
-```sh
-pacman -Rns package
-pacman --remove --recursive --nosave
-```
-#### Remove {package} as well as its dependencies
-```sh
-pacman -Rs
-pacman --remove --recursive
-```
-#### Install {pkg} from the AUR
-```sh
-pacman -S package
-pacman --sync package
-```
-#### Remove all packages from the cache as well as unused sync databases
-```sh
-pacman -Scc
-pacman --sync --clean --clean
-```
-#### Display information about {package}
-```sh
-pacman -Si package
-pacman --sync --info package
-```
-#### Search for {pkg} in AUR repos
-```sh
-pacman -Ss package
-pacman --sync --search package
-```
-#### Search for packages matching {searchexpression}
-```sh
-pacman -Ss pattern
-pacman --sync --search pattern
-```
-#### Update package database
-```sh
-pacman -Sy
-pacman --sync --refresh
-```
-#### Update all packages from AUR and official repos
-```sh
-pacman -Syu
-pacman --sync --refresh --sysupgrade
-```
-#### Force refresh of all package databases, even if they appear to be up-to-date
-```sh
-pacman -Syy
-pacman --sync --refresh --refresh
-```
-#### Download program updates but don't install them
-```sh
-pacman -Syyuw
-pacman --sync --refresh --refresh --sysupgrade --downloadonly
-```
-#### Get number of total installed packages
-```sh
-pacman -Q | wc -l
-```
-### partx
-`partx` is a utility that provides information on drive partitions to the Linux kernel. [[12](sources.md)]
-#### Display partition table of a drive
-```bash
-partx --show /dev/sda
-```
-#### Show details of only one partition of a drive
-```bash
-partx --show /dev/sda1
-```
-#### Specify a range of partitions on a drive
-```bash
-partx -o START, END --nr 10 /dev/sda
-```
-#### Add all partitions on a disk to the system
-```bash
-partx -a /dev/sda
-```
-#### Display length in sectors and human-readable size of a partition
-```bash
-partx -o SECTORS,SIZE /dev/sda1 /dev/sda
-```
-#### Remove the last partition
-```bash
-partx -d --nr -1:-1 /dev/sda
-```
-#### Disable headers
-```bash
-partx -o START -g --nr 5 /dev/sda
-```
-### postfix
+
+### `postfix`
 Designed to replace Sendmail. 
 - multiple processes with no particular parent/child relationship
 Receives mail by two methods:
-  1. Local mail (sendmail)
-  2. Internet mail (SMTP)
+1. Local mail (sendmail)
+2. Internet mail (SMTP)
 Before mail is queued for delivery, it goes through a cleanup daemon, which can be configured to do header and body inspection using regex
 `Qmgr` is the heart of postfix mail delivery; it maintains an active queue, which attempts delivery. It delivers mail using three methods:
-  1. Local inboxes
-  2. Internet (SMTP)
-  3. Piped to programs
-### rename
+1. Local inboxes
+2. Internet (SMTP)
+3. Piped to programs
+
+### `rename`
 `rename` uses regular expressions [[33](sources.md)]
-#### rename options
+
 Option  | POSIX option            | Effect
 :---    | :---                    | :---
 `-n`    | `--nono`                | dry-run: describe the changes the command would make, without actually doing them
-#### Rename multiple files
+
+Rename multiple files
 ```sh
 # Renaming file.old to file.new
 rename 's/old/new/' this.old
@@ -696,85 +276,52 @@ rename 's/report/review/' *
 # Change all uppercase letters to lowercase
 rename 'y/A-Z/a-z/' *
 ```
-### screen
-#### Share your screen session with another user
+
+### `screen`
+Share your screen session with another user
 ```sh
 screen -x user/session
 ```
 
-
-### sfdisk
+### `sfdisk`
 Script-based partition table editor, similar to [`fdisk`](#fdisk) and [`gdisk`](#gdisk), which can be run interactively. It does not interface with GPT format, neither is it designed for large partitions. [[11](sources.md)]
-#### List partitions on all devices
+List partitions on all devices
 ```sh
 sfdisk -l
 sfdisk --list
 ```
-#### List partitions on {device}
+List partitions on {device}
 ```sh
 sfdisk -l device
 sfdisk --list device
 ```
-#### Display size of {partition} or {device}
+Display size of {partition} or {device}
 This command produces the size of {partition} (i.e. `/dev/sda1`) or even {device} (`/dev/sda`) in blocks
 ```sh
 sfdisk -s partition
 sfdisk -s device
 ```
-#### Apply consistency checks to {partition} or {device}
+Apply consistency checks to {partition} or {device}
 ```sh
 sfdisk -V partition
 sfdisk --verify device
 ```
-#### Create a partition
+Create a partition
 ```sh
 sfdisk device
 ```
-#### Save sectors changed
+Save sectors changed
 This command will allow recovery using the following command
 ```sh
 sfdisk /dev/hdd -O hdd-partition-sectors.save
 ```
-#### Recovery
+Recovery
 Man page indicates this flag is no longer supported, and recommends use of `dd` instead.
 ```sh
 sfdisk /dev/hdd -I hdd-partition-sectors.save
 ```
-### shuf
 
-Option  | Effect
-:---    | :---
-`-e`    | shuffle items separated by a space
-
-
-Shuffle items separated by a space [[10](sources.md)]
-```sh
-shuf -e one two three
-```
-Shuffle items separated by newline [[10](sources.md)]
-```sh
-shuf -n 1 cards.txt
-```
-
-### sort
-
-Option  | Effect
-:---    | :---
-`-k $N` | sort by column number `$N`
-`-r`    | reverse sort order
-`-t $X` | set delimiter to character `$X`
-
-
-Sort by space-delimited columns. Processes consuming the most memory will be at the bottom [[23](sources.md)]
-```sh
-ps aux | sort -nk 4
-```
-Processes consuming the most CPU will be at the bottom
-```sh
-ps aux | sort -nk 3
-```
-
-### ssmtp
+### `ssmtp`
 Installable client program [[25](sources.md)]
 
 Configuration file                            | Description
@@ -786,152 +333,24 @@ Send {msg} to {recipient} from {user} at {host} using password {pw}
 ssmtp -au recipient -ap pw user@host < msg
 ```
 
-
-### sendmail
+### `sendmail`
 Mail daemon once the de facto standard for accepting and redirecting mail on Linux distributions, long ago fallen into disuse. It was infamous for its difficulty to set up, with roots in ARPANET itself.
 
-
-### ssh
-Compare the differences between a remote and local file.  `cat` a file over SSH and pipe the output into a diff or sdiff command [[23](sources.md)j]
-```sh
-ssh remotehost cat /path/to/remotefile | diff /path/to/localfile
-```
-Create an SSH tunnel to access remote resources
-Tunnel into a server to access a website which your local machine may not; `-L` creates the SSH tunnel; first port is the port that will be opened on the local machine [[23](sources.md)]
-```sh
-ssh -N -L localport:host:remoteport remotehost
-```
-
-
-### sshfs
-Mount a directory from a remote server on your local host via SSH
-[[23](sources.md)]
-```sh
-sshfs remotehost:/directory mountpoint
-```
-
-### ss
-"Socket statistics", successor to __netstat__. 
-
-#### ss options
-Options are of two kinds:
-  1. Connection type (listening or established)
-  2. Protocol type
-
-Option  | POSIX option            | Effect
-:---    | :---                    | :---
-`-l`    | `--listening`           | display sockets that are listening
-`-a`    | `--all`                 | display both listening sockets and established connections
-`-t`    | `--tcp`                 | display TCP sockets
-`-u`    | `--udp`                 | display UDP sockets
-`-x`    | `--unix`                | display Unix domain sockets
-#### Display port numbers instead of protocol names
-```
-ss -n
-```
-```
-ss --numeric
-```
-#### Do __name__ lookups and display __all__ information
-```
-ss -an
-```
-#### Display all active TCP sessions
-```
-ss -atp
-```
-#### Display active TCP sessions
-```
-ss -tp
-```
-#### Display routing table (cf. `ip route`)
-```
-ss --route
-```
-#### Display programs with open ports 
-```
-ss --program
-```
-#### Show all running servers 
-"Tuna please"
-```
-ss -tunapl
-```
-### tcpdump
-Inspect actual IP packets (Wireshark is a GUI-based alternative)
-#### All network data will be displayed to STDOUT
+### `tcpdump`
+Inspect actual IP packets (Wireshark is a GUI-based alternative)\
+All network data will be displayed to STDOUT
 ```
 tcpdump -i eth0
 ```
-### tig
-Provides a curses-based browser that allows you to navigate the commits in the current branch. It is essentially a wrapper around `git log`, and therefore accepts the same arguments that can be passed to it.[[34](sources.md)]
-#### tig config
-Config file   | Description
-:---          | :---
-$HOME/.tigrc  | 
-#### Browse the commit history for a single {file}
-```sh
-tig file
-```
-#### Browse the commit history for a single {file}, filtering to a specific date range
-```sh
-tig --after="2017-01-01" --before="2018-05-16" -- README.md
-```
-#### Find who made a change toa  file and why
-```sh
-tig blame file
-```
-#### Browse stash
-```sh
-tig stash
-```
-#### Browse refs
-```sh
-tig refs
-```
-#### Navigate the output of `git grep`
-```sh
-tig grep -i foo lib/Bar
-```
-Pipe a list of commit IDs to tig
-```sh
-git rev-list --author=olaf HEAD | tig show --stdin
-```
 
-### tr
-Change the case of a string [[23](sources.md)]
-```sh
-tr [:upper:] [:lower:]
-```
-Remove a character or set of characters from a string or line of output
-```sh
-tr -d "text"
-```
-
-### tracepath
+### `tracepath`
 Successor to `traceroute`, allowing the user to test connectivity along the path. Doesn't show as much detail with regard to time, so it may be faster.
 
-### traceroute
+### `traceroute`
 Provides much more information than `tracepath`, even though it's older [[lxa-lpic](../sources/lxa-lpic.md)]
 
-### uname
 
-Option  | Effect
-:---    | :---
-`-a`                                                | display all information
-`-s`                                                | display the kernel name
-`-n`                                                | display the network node (i.e. host name)
-`-v`                                                | display version (date) of the kernel
-`-m`                                                | display the machine hardware name
-`-p`                                                | display the processor type
-`-o`                                                | display operating system
-
-Check kernel version
-```bash
-uname -srm
-```
-
-### tree
+### `tree`
 display contents of directories in a tree-like format[[46](sources.md)]
 
 Option  | Effect
@@ -947,7 +366,7 @@ Option  | Effect
 `-P $PATTERN` | display only files matching `$PATTERN`
 `--prune`     | suppress empty directories
 
-### watch
+### `watch`
 Repeat a command at regular intervals and watch its changing output
 Execute {cmd} at periods of {n} seconds, watching its output [[23](sources.md)]
 ```sh
@@ -959,7 +378,7 @@ watch -n 1 cmd
 watch -n 0.5 iptables -vnL # Update twice a second, producing a dashboard
 ```
 
-### xinetd
+### `xinetd`
 Internet Super Daemon provided an alternate method of connecting to various outdated network services. Should be turned off nowadays.  
 
 Configuration file  | Description
@@ -974,244 +393,30 @@ Display statistics for a file
 stat file
 ```
 
-### yum
-Yellow Dog Updater, Modified package manager (Yellow Dog was a variation of Red Hat for PowerPC architectures), package manager more commonly used today. [[35](sources.md), [37](sources.md)]
-
-Option  | POSIX option            | Effect
-:---    | :---                    | :---
-`-y`    | `--assumeyes`           | respond to any prompt with "yes" automatically
-`-x`    | `--exclude`             | exclude specific packages from updates [[38](sources.md)]
-
-Install {package}
-```sh
-yum install package
-yum groupinstall packagegroup # package group
-yum --enablerepo=repo install package # from a specific {repo}
-```
-Remove {package} 
-```sh
-yum remove package
-yum -y remove package # without confirmation
-yum erase package # as well as the cached package
-yum groupremove packagegroup
-```
-Update installed packages
-```sh
-yum update
-yum update package # update a specific {package}
-yum upgrade # equivalent to `yum update --obsoletes`
-yum groupupdate packagegroup
-
-# Exclude some packages from update
-yum update --exclude=kernel
-yum update --exclude=httpd,php
-```
-List all available packages in database
-```sh
-yum list
-yum grouplist
-```
-List all installed packages
-```sh
-yum list installed
-```
-Query repos for information on {package}
-```sh
-yum info package
-```
-Find packages
-```sh
-yum list name # name matching {name} exactly
-yum search pattern # search for package name matching {pattern}
-```
-Find what package {config} belongs to
-```sh
-yum provides /path/to/config
-```
-List repositories
-```sh
-yum repolist
-yum repolist all # enabled and disabled repos
-```
-Interactive shell
-```sh
-yum shell
-```
-Clear cache
-```sh
-yum clean all
-```
-View command history
-```sh
-yum history
-```
-
-### lvcreate
-Create a 20 gigabyte logical volume named "Marketing" from volume group {vg1}
-```sh
-lvcreate -L 20G vg1 -n Marketing
-```
-Create logical volume named {lv1} of size {500G} from volume group {vg1}
-```sh
-lvcreate-L 500G vg1 -n lv1
-```
-
-### lvdisplay
-### lvs
-View logical volumes
-
-### lvremove
-Remove logical volume {/dev/vg1/lv1}
-```sh
-lvremove /dev/vg1/lv1
-```
-
-### lvresize
-Resize existent logical volume {Marketing} in volume group {vg1} to have an additional 10 gigabytes of space
-```sh
-lvresize -L +10G /dev/vg1/Marketing
-```
-
-### pvcreate
-Create physical volumes from {/dev/sdb} and {/dev/sdc}
-```sh
-pvcreate /dev/sdb /dev/sdc
-```
-Create physical volumes from {partitions}
-```sh
-pvcreate*partitions
-```
-
-### pvdisplay
-View physical volumes
-```sh
-pvdisplay | pvs
-```
-
-### pvremove
-Remove physical volumes {/dev/sdb1}, {/dev/sdc1}, {/dev/sdd1}
-```sh
-pvremove /dev/sdb1 /dev/sdc1 /dev/sdd1
-```
-
-### resize2fs
+### `resize2fs`
 Resize filesystem of logical volume {Marketing} on volume group {vg1} to take up the entire logical volume
 ```sh
 resize2fs /dev/vg1/Marketing
 ```
 
-### vgcreate
-Create volume group {vg1} from physical volumes {/dev/sdb} and {/dev/sdc}
-```sh
-vgcreate vg1 /dev/sdb /dev/sdc
-```
-Create a volume group {vg1} from device {/dev/sdb1}
-```sh
-vgcreatevg1 /dev/sdb1
-```
-
-### vgdisplay
-### vgs
-View volume groups
-
-### vgextend
-#### Add an additional drive {/dev/sdd} to existent volume group {vg1}
-```sh
-vgextend vg1 /dev/sdd
-```
-
-### vgremove
-Remove volume group {/dev/vg1}
-```sh
-vgremove /dev/vg1
-```
-
-### vgscan
-Build the LVM cache file
-
-### adduser
-Create a new user (on Debian systems, preferred to `useradd`)
-```sh
-adduser 
-```
-
-### alsamixer
+### `alsamixer`
 Command-line audio mixer
 
-### apropos
+### `apropos`
 Look up one or more `keywords` in the online manpages: same as `man -k` (rf. `whatis`)
 ```sh
 apropos keywords
 ```
 
-### apt
-Upgrade distribution
-```sh
-apt dist-upgrade
-```
-Install local {file} as a package
-```sh
-apt install file
-```
-Install {package}
-```sh
-apt install package
-```
-Search for packages matching {searchexpression}
-```sh
-apt list pattern
-```
-Remove {package}
-```sh
-apt remove package
-```
-Update package database
-```sh
-apt update
-```
-Upgrade all packages
-```sh
-apt upgrade
-```
-
-### apt-cache
-Display package information regarding package cache
-#### apt-cache commands
-Command   | Description
-:---      | :---
-`search`  | display all packages with the search term listed in the package name or description
-`showpkg` | display information about a package
-`stats`   | display statistics about the package cache
-`showsrc` | display information about a source package
-`depends` | display a package's dependencies
-`rdepends`| display a package's reverse dependencies, i.e. what packages for which this package is a dependency
-#### Display basic information about each available package and its dependencies 
-```sh
-apt-cache dump
-```
-
-#### arp 
+#### `arp`
 Option  | Effect
 :---    | :---
 `-a`    | display entries in the cache
 `-s`    | manually add a static entry to the cache
 `-d`    | delete an entry from the cache
 
-### apt-key
-Add a public GPG key to keyring
-```sh
-curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add - # Google Cloud SDK
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -	# Docker
-```
 
-### add-apt-repository
-Add a repository
-```sh
-sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
-sudo add-apt-repository "deb http://security.ubuntu.com/ubuntu trusty-security main universe"
-```
-
-### at
+### `at`
 Execute a command at a given time
 ```sh
 echo "cmd" | at time
@@ -1233,7 +438,7 @@ at time
 > cmd
 ```
 
-### ausearch
+### `ausearch`
 Display audit logs from {startdate} to {enddate}
 ```sh
 ausearch --start startdate--end enddate
@@ -1243,7 +448,7 @@ Search audit logs for today for logins of UID 500
 ausearch --start today --loginuid500
 ```
 
-### blkid
+### `blkid`
 Show UUID, Label, and filesystems of GPT block devices
 
 ### chage
@@ -1318,7 +523,7 @@ chpass -s /usr/local/bin/fish
 ```
 
 ### chrony
-Synchronize system time using NTP (cf. [`timedatectl`](#timedatectl)\
+Synchronize system time using NTP (cf. [`timedatectl`](init.md#timedatectl)\
 Stop the `systemd-timesyncd` service
 ```sh
 sudo systemctl stop systemd-timesyncd.service
@@ -1506,51 +711,9 @@ diff -i
 ```sh
 diff -w
 ```
-### dig
-DNS lookup tool that returns the text of the actual response from the DNS server, useful when troubleshooting a DNS issue (cf. [ `nslookup` ](#nslookup))
-#### Nameserver
-```
-dig example.com NS
-```
-#### Mail server
-```
-dig example.com MX
-```
-#### Perform a reverse DNS lookup on an IP address
-```sh
-dig -x 8.8.8.8
-```
-#### Specify an alternate DNS server to query
-```sh
-dig @8.8.8.8 example.com
-```
-#### Find authoritative nameservers for the zone and display SOA records
-```sh
-dig +nsearch example.com
-```
-#### Lookup the IP associated with a domain name
-```sh
-dig +short example.com
-```
-#### Lookup the mail server IP associated with a domain name
-```sh
-dig +short example.com MX example.com MX
-```
-#### Perform iterative queries and display the entire trace path to resolve a domain name
-```sh
-dig +trace example.com
-```
-#### Get all types of records for a given domain name
-```sh
-dig example.com ANY
-```
-#### Display Start of Authority information for a domain
-```sh
-dig example.com soa
-```
+
 ### dirname
-#### Strip filename from $PATH
-(cf. [ `basename` ](#basename))
+Strip filename from $PATH (cf. [ `basename` ](#basename))
 ```sh
 dirname $PATH
 ```
@@ -1767,7 +930,6 @@ Display text of {file}, wrapping long lines
 fold  file
 ```
 
-
 ### fsck
 Check filesystem for errors\
 Display progress indicators
@@ -1783,70 +945,15 @@ Prompt when attempting a repair action
 fsck -r
 ```
 
-
 ### fstrim
 Discard unused blocks on a mounted filesystem
-
-
-### gconf-editor
-GUI-based configuration editor for GNOME
-
 
 ### gdmsetup
 GUI program used to set options for the login window when using GDM
 
-### getent
-Get entries from the `passwd` file [[50](sources.md)]
-```sh
-getent passwd sonny timmy
-```
-```
-sonny:x:1001:1002:Sonny:/home/sonny:/bin/bash
-timmy:x:1002:1003::/home/timmy:/bin/bash
-```
-
-```sh
-getent group sonny timmy
-```
-```
-sonny:x:1002:
-timmy:x:1003:
-```
-
-### gem
-#### Install a Ruby {package}
-```sh
-gem install package
-```
-#### Display currently installed Ruby packages
-```sh
-gem list
-```
-#### Remove a Ruby {package}
-```sh
-gem uninstall package
-```
-#### Update a Ruby {package}
-```sh
-gem update package
-```
 
 ### getfacl
 Get access control list for {file}
-
-### gpasswd
-#### Add {user} to {group}
-```sh
-gpasswd -a user group
-```
-#### Add {user} as admin of {group}
-```sh
-gpasswd -A user group
-```
-#### Remove {user} from {group}
-```sh
-gpasswd -d user group
-```
 
 ### gpg
 PGP was bought by Semantec, and GNU has since released GPG, an open-source replacement.[35](sources.md)
@@ -1897,18 +1004,8 @@ gpg --import ~/jdoe.pub
 gpg --send-keys keyIDs --keyserver keyserver
 ```
 
-### groupadd
-Create a new group
 
-### groupdel
-Delete a group
 
-### groupmod
-Modify definition of specified group by modifying the appropriate entry in the group database
-
-Option  | POSIX option            | Effect
-:---    | :---                    | :---
-`-n`    | `--newname`             | Rename {$GROUP} to {$NEWNAME}
 ### grub
 #### Install boot images within a directory other than /boot
 ```sh
@@ -2028,12 +1125,6 @@ Turn on network interface {eth0}
 ifup eth0
 ```
 
-### initctl
-Reload configuration files (on Upstart-controlled system)
-```sh
-initctl reload
-```
-
 ### insmod
 Insert a module into the Linux kernel
 ```sh
@@ -2051,25 +1142,10 @@ Discover iSCSI targets
 iscsiadm discovery
 ```
 
-### iwlist
+### `iwlist`
 Get detailed wireless information about a wireless interface
 
-### journalctl
-Display the systemd binary logs\
-Show current disk usage of all journal files
-```sh
-journalctl --disk-usage
-```
-Continuously update the display as new log entries are created
-```sh
-journalctl -f
-```
-Display output in reverse (newest entries first)
-```sh
-journalctl -r
-```
-
-### kill
+### `kill`
 List signal options
 ```sh
 kill -l
@@ -2129,8 +1205,8 @@ link file1 file2
 ```
 
 ### locale
-Display all environment variables related to localization with their current values
-#### Display all localizations currently supported by the system
+Display all environment variables related to localization with their current values\
+Display all localizations currently supported by the system
 ```sh
 locale -a
 ```
@@ -2143,20 +1219,6 @@ Send `files` to the printer; with no arguments, prints stdin
 
 ### lpstat
 Print the `lp` print queue status
-
-### ls
-Display hidden files
-```sh
-ls -a ls --all
-```
-Append indicators to entries
-```sh
-ls -F ls --classify
-```
-Display SELinux context for files
-```sh
-ls -Z
-```
 
 ### lsblk
 Display information about all block devices\
@@ -2205,14 +1267,14 @@ POSIX option  | Effect
 `--assemble`  | Start a stopped RAID array
 `--delay`     | Set the polling interval
 
-### mhwd
+### `mhwd`
 Manjaro hardware utility
 `sudo mhwd -a pci nonfree 0300` : command was run while troubleshooting black screen on startup 
 
-### mhwd-chroot
+### `mhwd-chroot`
 Chroot into an installed Linux installation from a live boot of a Manjaro Installation Media
 
-### mkdir
+### `mkdir`
 Quickly create multiple directories using brace expansion
 ```sh
 mkdir -p ~/my-app/{bin,lib,log}
@@ -2351,113 +1413,8 @@ nice prog
 nl -b a file
 nl --body-numbering=a file
 ```
-### nmap
-Scan hosts and ports on a network
-#### Scan hosts from a text file
-```sh
-nmap -iL hosts.txt
-```
-#### Identify a host's operating system
-```sh
-nmap -A localhost.example.com
-```
-#### Determine whether a host has a firewall enabled
-```sh
-nmap -sA localhost.example.com
-```
-#### Scan a specified range of ports
-```sh
-nmap -p 10-300 localhost.example.com
-```
-#### Perform a SYN TCP scan, stealthier than the TCP connect scan
-```sh
-nmap -sT localhost.example.com
-```
-#### Aggressive scan
-```sh
-nmap -A 192.168.1.0/24
-```
-#### Ping scan home network (not bothering with ports)
-```sh
-nmap -sn 192.168.1.0/24
-```
-#### Fast port scan using SYN packets
-```sh
-nmap -sS -F 192.168.1.0/24
-```
-#### Port scan using SYN ("synchronize") packet, first element of TCP handshake
-```sh
-nmap -sS 192.168.1.0/24
-```
-#### Port scan using normal TCP
-```sh
-nmap -sT 192.168.1.0/24
-```
-#### Port scan using UDP
-```sh
-nmap -sU 192.168.1.0/24
-```
-#### Xmas scan
-```sh
-nmap -sX
-```
 ### nmblookup
 Test NetBIOS name resolution
-### nmcli
-Control NetworkManager and report network status
-#### Display devices and statuses
-```
-nmcli device status
-```
-#### Display information on interfaces as well as status
-Including other network connections not managed by network manager ("unmanaged") or not connected ("unavailable") 
-```
-nmcli dev status
-```
-Display what connections are enabled 
-```
-nmcli general status
-```
-Display UUIDs associated with network connections 
-```
-nmcli connection show --active
-```
-Display much more information on network devices
-```
-nmcli device show
-```
-Configure settings for network interface {ens01} via interactive shell
-```sh
-nmcli connection edit ens01
-```
-List all connections NetworkManager has
-```sh
-nmcli connection show
-```
-Show settings for network interface {ens01}
-```sh
-nmcli device show ens01
-```
-Show status for all devices
-```sh
-nmcli device status
-```
-Display devices and status
-```sh
-nmcli device status
-```
-Display currently configured hostname
-```sh
-nmcli general hostname
-```
-Set hostname to {hostname}
-```sh
-nmcli general hostname hostname
-```
-Show overall status of NetworkManager
-```sh
-nmcli general status
-```
 
 ### nohup
 Execute {cmd} in the background such that it won't be interrupted by a logoff
@@ -2465,13 +1422,13 @@ Execute {cmd} in the background such that it won't be interrupted by a logoff
 nohup cmd &
 ```
 
-### ntpdate
+### `ntpdate`
 Synchronize system clock to that of an online Network Time Protocol server
 ```sh
 ntpdate -upool.ntp.org
 ```
 
-### passwd
+### `passwd`
 Option  | POSIX option            | Effect
 :---    | :---                    | :---
 `-e`    | `--expire`              | immediately expire the passwore of {user}, forcing a password change on next login
@@ -2512,21 +1469,11 @@ Ignore whitespace
 patch -i
 ```
 
-### pidof
-Query system to discover the PID of any named application. [[55](sources.md)]
-```sh
-pidof zsh
+### `ping`
+"packet Internet groper" utility used for checking network connections, using ICMP packets (cf. [ `nc` ](nc.md))\
+Send `$N` number of pings
 ```
-
-### ping
-"packet Internet groper" utility used for checking network connections, using ICMP packets (cf. [ `nc` ](#nc))
-Numeric output only
-```
-ping -n
-```
-Send {n} number of pings
-```
-ping -c n
+ping -c $N
 ``` 
 Flood ping
 ```
@@ -2540,14 +1487,6 @@ Mark outgoing packet to be processed appropriate to kernel's policy
 ```
 ping -m
 ``` 
-Bypass routing tables
-```
-ping -r
-```
-Mark outgoing packet to be processed appropriate to kernel's policy
-```sh
-ping -m
-```
 Numeric output only; disable name resolution
 ```sh
 ping -n
@@ -2573,58 +1512,33 @@ Cause mail queue to be processed on a Postfix server
 postqueue -f
 ```
 ### postsuper
-#### Delete all of the messages from the queue on a postfix server
+Delete all of the messages from the queue on a postfix server
 ```sh
 postsuper -d
 ```
-### ps
-#### Display processes in a tree-like display illustrating parent-child relationships
-```sh
-ps -f
-ps --forest
-```
-#### Show system processes
-```sh
-ps ax
-ps -e
-```
-#### Display full listing of processes
-```sh
-ps u
-ps -f
-```
-#### Display user processes
-```sh
-ps xG
-ps -a
-```
-#### Display SELinux contexts for processes
-```sh
-ps auxZ
-```
 ### pydoc
-#### Display all installed Python modules
+Display all installed Python modules
 ```sh
 pydoc modules
 ```
 ### quota
-#### Check quota status of {user}
+Check quota status of {user}
 ```sh
 quota user
 ```
 ### quotacheck
 Create the quota database
 ### quotaoff
-#### Turn off all quotas
+Turn off all quotas
 ```sh
 quotaoff -a
 ```
-### quotaon
-#### Turn on all quotas
+### `quotaon`
+Turn on all quotas
 ```sh
 quotaon -a
 ```
-#### Turn on quotas for {user}
+Turn on quotas for {user}
 ```sh
 quotaon -u user
 ```
@@ -2640,688 +1554,234 @@ Option  | Effect
 `-s`    | read from standard input, silent mode (characters are not echoed)
 `-t`    | read from standard input, returning failure is a complete line of input is not read within {n} seconds
 `-u`    | read input from file descriptor { $FILE }
-#### Stopwatch
+
+Stopwatch\
 Will stop when you press enter, displaying how much time elapsed
 ```sh
 time read
 ```
-### repquota
+### `repquota`
 #### Human-readable
 ```sh
 repquota -sh
 ```
-### resize4fs
+### `resize4fs`
 Resize ext4 filesystem
-### restorecon
-#### Restore security context default in the policy
+
+### `restorecon`
+Restore security context default in the policy
 ```sh
 restorecon -Rv website
 ```
-### rmmod
-#### Wait until a module is no longer in use before unloading
+
+### `rmmod`
+Wait until a module is no longer in use before unloading
 ```sh
 rmmod -w
 ```
-#### Remove $MODULE from the Linux kernel
+Remove $MODULE from the Linux kernel
 ```sh
 rmmod $MODULE
 ```
-### route
-Display and manipulate the routing table
-#### Display routing table
+### `route`
+Display and manipulate the routing table\
+Display routing table
 ```
 route -n
 ```
-#### Add a default gateway
+Add a default gateway
 ```
 route add default gw 192.168.0.1
 ```
-#### Remove a default gateway
+Remove a default gateway
 ```
 route del default gw 192.168.0.1
 ```
-#### Give a particular network a different gateway
+Give a particular network a different gateway
 ```
 route add -net 192.168.1.0 netmask 255.255.255.0 gw 192.168.0.1
 ```
-#### Add a route to the server for the network 192.168.51.0/24 through the gateway 192.168.51.1
+Add a route to the server for the network 192.168.51.0/24 through the gateway 192.168.51.1
 ```sh
 route add -net192.168.51.0 netmask 255.255.255.0 gw 192.168.51.1
 ```
-#### Add default gateway at {ipaddr}
+Add default gateway at {ipaddr}
 ```sh
 route add default gw ipaddr
 ```
-### rpm
-#### rpm option groups
-Option  | POSIX option            | Effect
-:---    | :---                    | :---
-`-e`    | erase                   | remove specified package, including config files
-`-i`    | install                 | install specified package
-`-q`    | query                   | query for specified package
-`-U`    | upgrade                 | upgrade specified package
-#### rpm query options
-Option  | POSIX option            | Effect
-:---    | :---                    | :---
-`-a`       |                         | lista all installed packages
-`-c`       |                         | list configs installed with specified package
-`-d`       |                         | list documentation files installed with specified package
-`-i`       |                         | display information about specified package
-`-K`       |                         | Verify integrity of specified package
-`-l`       |                         | List all files installed with specified package
-`-provides`|                         | List which capabilities the specified package provides
-`-R`       |                         | list which capabilities the specified package requires
-`-s`       |                         | display state of each file that was installed by specified package (normal, not installed, or replaced)
-#### Query repos for information on {package}
-```sh
-rpm -qi package
-rpm --query --info package
-```
-#### Upgrade or install {package}, with progress bars
-```sh
-rpm -Uvh package
-rpm --upgrade --verbose --hash package
-```
-### rsync
-Option  | POSIX option            | Effect
-:---    | :---                    | :---
-`-a`    | `--archive`             | copy recursively, preserving group, owner, modification times, and device-files (if super-user) (equivalent to `-rptlgoD`)
-`-b`    |                         | create a backup of every file transferred
-`-e`    | `--rsh`                 | specify remote shell to use
-`-g`    | `--group`               | preserve group
-`-o`    | `--owner`               | preserve owner
-`-p`    |                         | specify nonstandard port
-\-      | `--delete`              | remove files and folders that aren't in the sender system
-\-      | `--exclude`             | exclude files (accepts globbing)
-\-      | `--include`             | specify specific files (accepts globbing)
-\-      | `--progress`            | display a progress bar
-\-      | `--remove-source-files` | remove original files after synchronization
 
-Copy $FILE locally [[44](sources.md)]
-```sh
-rsync -zvr $FILE $PATH
-```
-Copy $FILE to $PATH on remote $HOST
-```sh
-rsync $FILE $HOST:$PATH
-```
-Copy $FILE from $HOST to local $PATH
-```sh
-rsync $HOST:$FILE $PATH
-```
-Copy $DIR recursively [[44](sources.md)]
-```sh
-rsync -zvr $DIR $PATH
-rsync -avz $DIR $PATH
-```
-Copy to remote systems over SSH [[44](sources.md)]
-```sh
-rsync -zvre ssh $DIR $HOST:$REMOTEPATH
-rsync -avze ssh $DIR $HOST:$REMOTEPATH
-```
-Synchronize only specific file type [[44](sources.md)]
-```sh
-rsync -zvre ssh --include '*.php' --exclude '*' $PATH
-```
+
 ### runlevel
-#### Show runlevel for system
+Show runlevel for system
 ```sh
 runlevel 
 ```
 ### smbclient
 Connect to a Samba server
-#### Set the port while connecting to a Samba server
+Set the port while connecting to a Samba server
 ```
 smbclient -p
 ```
+
 ### smbpasswd
 Create a Samba password
+
 ### smbstatus
 Report on current Samba connections
-#### List Samba shares
+List Samba shares
 ```sh
 smbstatus -S
 ```
+
 ### sed
-#### Run sed commands in `sedscr` on file
+Run sed commands in `sedscr` on file
 ```sh
 sed -f sedscript file
 ```
-#### Suppress automatic printing of pattern space
+Suppress automatic printing of pattern space
 ```sh
 sed -n
 sed --quiet
 sed --silent
 ```
+
 ### SELinux
-#### Display SELinux contexts for processes
+Display SELinux contexts for processes
 ```sh
 ps auxZ
 ```
-#### Display SELinux context for files
+Display SELinux context for files
 ```sh
 ls -Z
 ```
-#### Display status of SELinux
+Display status of SELinux
 ```sh
 sestatus
 ```
-#### Change SELinux mode
+Change SELinux mode
 {$MODE} can be "enforcing" (or "1"), "permissive" ("0") or "disabled"
 ```sh
 setenforce $MODE
 ```
-#### Amend policy to add a file context
+Amend policy to add a file context
 ```sh
 semanage fcontext -a -t httpd_sys_content_t website
 ```
-#### Add a port context
+Add a port context
 ```sh
 semanage port -a -t http_port_t -p tcp 8080
 ```
-#### Display all ports with attached types
+Display all ports with attached types
 ```sh
 semanage port -l
 ```
-### seq
-#### Sequence from 1 to 15
+
+### `seq`
+Sequence from 1 to 15
 ```sh
 seq -f "%03g" 15
 ```
-#### Sequence from 5 to 99, separated by a space instead of a newline
+Sequence from 5 to 99, separated by a space instead of a newline
 ```sh
 seq -s " " 5 99
 ```
-#### Sequence every third number from 5 to 20
+Sequence every third number from 5 to 20
 ```sh
 seq 5 320
 ```
-#### Sequence from 1 to 8
+Sequence from 1 to 8
 ```sh
 seq 8
 ```
-### sysvinit
-#### Access different runlevels
-```sh
-init 
-```
-#### Switch to runlevel {n}
-```sh
-init n
-init 6 # reboot
-```
-#### Restart network service 
-```sh
-service network restart
-```
-#### Check status of {daemon}
-```sh
-service daemon status
-```
-#### Stop {daemon}
-```sh
-service daemon stop
-service mongodb stop
-```
-#### Turn services on or off for runlevels
-Without arguments, `chkconfig` defaults to runlevels 3 or 5:
-```sh
-chkconfig
-```
-#### Display all services and runlevels
-```sh
-chkconfig --list
-```
-#### Turn {daemon} on for runlevels 3 and 5
-```sh
-chkconfig --level 35 daemon on
-```
-#### Turn {daemon} off
-```sh
-chkconfig daemon off
-chkconfig NetworkManager off
-```
-#### Turn {daemon} service on
-```sh
-chkconfig daemon on
-```
-### setfacl
-Set file access control list
 
-Option  | POSIX option  | Description
-:---    | :---          | :---
-`-b`    | `--remove-all` | remove all extended ACL entries, retaining the base ACL entries of the owner, group, and others
-`-k`    | `--remove-default` | remove the Default ACL
-`-m`    | `--modify` | modify ACL of a directory
-`-M`    | `--modify-file` | modify ACL of a file
-`-s`    |               | overwrite or **s**et
-`-x`    | `--remove` | remove ACL entries from a directory
-`-X`    | `--remove-file` | remove ACL entries from a file
-
-Grant user {lisa} right to read {file}
-```sh
-setfacl -m u:lisa:r file
-```
-Remove named group {staff} from {file}'s ACL
-```sh
-setfacl -x g:staff file
-```
-Modify file access control list for {file} to revoke write access from all groups and all named users
-```sh
-setfacl -m m::rx file
-```
-Grant read access to **o**ther users
-```sh
-setfacl -m o::rwx file4.txt
-```
-Add user {zach} to list of users of file4.txt
-```sh
-setfacl -m u:zach:rw file4.txt
-```
-
-### sfdisk
+### `sfdisk`
 Script-oriented tool for partitioning disk devices
-### sfdisk
-#### Set the first partition of the first SATA device to a RAID type
+
+Set the first partition of the first SATA device to a RAID type
 ```sh
 sfdisk --id /dev/sda 1 fd
 ```
-#### Set the first partition of the first SATA device to a RAID type
+Set the first partition of the first SATA device to a RAID type
 ```sh
 sfdisk --id /dev/sda 1 fd
 ```
-#### List partitions on all devices
+List partitions on all devices
 ```sh
 sfdisk-l # sfdisk --list
 ```
-#### List partitions on {device}
+List partitions on {device}
 ```sh
 sfdisk-l device # sfdisk --list device
 ```
-### shred
-#### Write random data to an unmounted disk for {n} passes
+
+### `shred`
+Write random data to an unmounted disk for {n} passes
 ```sh
 shred --iterations=n
 ```
-### shuf
-#### Randomly permute input
-```sh
-shuf 
-```
-#### Shuffle items separated by a space
-```sh
-shuf -e *items
-```
-#### Print random selection of integers from {x} to {y} (inclusive) without replacement
-```sh
-shuf -i x-y
-```
-#### Print random selection of integers from {x} to {y} (inclusive), with replacement
-```sh
-shuf -i x-y -r
-```
-#### Shuffle items separated by newline in file `cards.txt`, displaying only one
-```sh
-shuf -n 1 items.txt
-```
-### shutdown
-#### Shut down at 8 pm
+
+### `shutdown`
+Shut down at 8 pm
 ```sh
 shutdown 20:00
 ```
-### slapadd
+
+### `slapadd`
 Add entries to the slapd LDAP directory
-### sleep
-#### Wait a specified number of `seconds` before executing another command; often used in shell scripts
+
+### `sleep`
+Wait a specified number of `seconds` before executing another command; often used in shell scripts
 ```sh
 sleep seconds
 ```
-### snap
-#### Disable snap {pkg}
-```sh
-snap disable package
-```
-#### Enable disabled snap {pkg}
-```sh
-snap enable package
-```
-#### Display information about {package}
-```sh
-snap info --verbose package
-```
-#### Install snap {pkg}
-```sh
-snap install package
-```
-#### Display logs of snap {pkg}
-```sh
-snap logs package
-```
-#### Check for snap updates
-```sh
-snap refresh
-```
-#### Uninstall snap {pkg}
-```sh
-snap remove package
-```
 
 ### source
-#### Execute commands from a file in the current shell
+Execute commands from a file in the current shell
 ```sh
 source file
 . file
 ```
 ### speaker-test
-#### Test loudspeakers with a 2-speaker setup
+Test loudspeakers with a 2-speaker setup
 ```sh
 speaker-test -c 2
 ```
-### ss
-Dump socket statistics
-#### Do name lookups and display all information
-```sh
-ss -an
-ss --all --numeric
-```
-#### Display all sessions, filtering to just TCP that are actively listening
-```sh
-ss -atp
-ss --all --tcp --processes
-```
-#### Display active TCP connections
-```sh
-ss -tp
-ss --tcp --processes
-```
-### ssh
-#### Display timer information
-```sh
-ss -o
-ss --options
-```
-#### Request a SSHv1 connection to {user@host}
-```sh
-ssh -1 user@host
-```
-#### Request a SSHv2 connection to {user@host}
-```sh
-ssh -2 user@host
-```
-#### Request a IPv4 connection to {user@host}
-```sh
-ssh -4 user@host
-```
-#### Request a IPv6 connection to {user@host}
-```sh
-ssh -6 user@host
-```
-#### Enable the use of a key for authentication
-```sh
-ssh -i privatekey
-```
-#### Ssh to {user} at {host} and {hostport} from {port}
-```sh
-ssh -L port:host:hostport user@host
-```
-#### Set the port for the remote host
-```sh
-ssh -p
-```
-#### Initiate a SSH session with {user@host}, enabling X forwarding
-```sh
-ssh -Y user@host
-```
-#### List currently loaded keys
-```sh
-ssh-add -l
-```
-### ssh-keygen
-#### Generate a MD5 fingerprint from public key at {file}
-```sh
-ssh-keygen -E md5-lf /path/to/file
-```
-#### Generate a SHA512 fingerprint from public key at {file}
-```sh
-ssh-keygen -E sha512 -lf /path/to/file
-```
-#### Generate a fingerprint from the public key
-```sh
-ssh-keygen -lf /path/to/file
-```
-### ssh-keyscan
-#### Display the public key of {host}
-```sh
-ssh-keyscan host
-```
-### stty
-#### Return number of rows and columns of the terminal
+
+### `stty`
+Return number of rows and columns of the terminal
 ```sh
 stty size
 ```
-### su
-#### Obtain the normal login environment
-```sh
-su -
-```
-#### Execute a single command with a non-interactive session
-```sh
-su -c cmd
-```
-### sudo
-#### Prevent sudo from prompting for credentials or for any other reason
-```sh
-sudo --noprompt
-```
+
 ### swapon
-#### Instruct system to begin using {partition} as a swap file
+Instruct system to begin using {partition} as a swap file
 ```sh
 swapon partition
 ```
-### sysctl
-View and configure kernel parameters at runtime
-#### Display current hostname as known to the kernel
+### `sysctl`
+View and configure kernel parameters at runtime\
+Display current hostname as known to the kernel
 ```sh
 sysctl -n kernel.hostname
 ```
-### syslog
+
+### `syslog`
 System logging facility used for messages from the kernel
 
-### systemctl
-Disable `$SERVICE`, ensuring it does not run on boot
-```sh
-systemctl disable service
-systemctl disable NetworkManager.service
-```
-Make `$SERVICE` run on boot 
-```sh
-systemctl enable $SERVICE
-```
-Configure iptables to start on boot and start it immediately
-```sh
-systemctl enable --now iptables
-```
-Display default target (on a systemd-controlled system)
-```sh
-systemctl get-default 
-```
-?
-```sh
-systemctl isolate --now service
-```
-Change target to runlevel emergency
-```sh
-systemctl isolate emergency.target
-```
-Change target to runlevel 5
-```sh
-systemctl isolate graphical.target
-systemctl isolate runlevel5.target
-```
-Change target to runlevel 3
-```sh
-systemctl isolate multi-user.target
-systemctl isolate runlevel3.target
-```
-Change target to runlevel 0
-```sh
-systemctl isolate poweroff.target
-systemctl isolate runlevel0.target
-```
-Change target to runlevel 6
-```sh
-systemctl isolate reboot.target
-systemctl isolate runlevel6.target
-```
-Change target to runlevel 1
-```sh
-systemctl isolate rescue.target
-systemctl isolate runlevel1.target
-```
-Change signal type sent to process to be killed
-```sh
-systemctl kill -s
-```
-Equivalent to chkconfig --list
-```sh
-systemctl list-unit-files --type=service
-```
-List available service units
-```sh
-systemctl list-units
-```
-Prevent firewalld from being started inadvertently by another process
-```sh
-systemctl mask firewalld
-```
-Reboot the system
-```sh
-systemctl reboot
-```
-Restart `$SERVICE`
-```sh
-systemctl restart $SERVICE
-systemctl restart iptables
-systemctl restart network.service
-```
-Configure system to boot to a GUI
-```sh
-systemctl set-default graphical.target
-```
-Start `$SERVICE`
-```sh
-systemctl start $SERVICE
-```
-Check status of `$SERVICE`
-```sh
-systemctl status $SERVICE
-sudo systemctl is-active $SERVICE
-```
-Terminate `$SERVICE`
-```sh
-systemctl stop $SERVICE
-```
-Stop `$SERVICE`
-```sh
-systemctl stop $SERVICE
-```
-Suspend the system
-```sh
-systemctl suspend
-```
 
-### systemd-delta
-Show files that are overridden with systemd\
-Display differences among files when they are overridden
-```sh
-systemd-delta --diff
-```
-
-### tail
+### `tail`
 Output last lines beginning at 30th line from the start
 ```sh
 tail -n=+30
 tail --lines=+30
 ```
-### tcpdump
-Inspect actual IP packets
-#### Set snapshot length of capture (default 65,535B)
+
+### `tcpdump`
+Inspect actual IP packets\
+Set snapshot length of capture (default 65,535B)
 ```sh
 tcpdump -s
 ```
-### telinit
-#### Refresh system after changes to `/etc/inittab`
-```sh
-telinit 
-```
-#### Cause operation to not send any notice to logged-on users
-```sh
-telinit--no-wall
-```
-### test
-Evaluate a condition, returning 0 if true and 1 if false
-#### test options
-Option  | Effect
-:---    | :---
-`-a`    | Test if both EXPRESSION1 and EXPRESSION2 are true
-`-b`    | Test if {file} exists and is block special
-`-c`    | Test if {file} exists and is character special
-`-d`    | Test if {file} exists and is a directory
-`-e`    | Test if {file} exists
-`-ef`   | Test if {file} and {other} have the same device and inode numbers
-`-eq`   | Test if INT1 is equal to INT2
-`-f`    | Test if {file} exists and is a regular file
-`-ge`   | Test if INT1 is greater than or equal to INT2
-`-o`    | Test if either EXPRESSION1 or EXPRESSION2 are true
-`-le`   | Test if INT1 is less than or equal to INT2
-`-lt`   | Test if INT1 is less than INT2
-`-ne`   | Test if INT1 is unequal to INT2
-`-nt`   | Test if {file} is newer (modification date) than {other}
-`-ot`   | Test if {file} is older than {other}
-`-g`    | Test if {file} exists and is set-group-ID
-`-G`    | Test if {file} exists and is owned by the effective group ID
-`-h`    | Test if {file} exists and is a symbolic link
-`-k`    | Test if {file} exists and has its sticky bit set
-`-L`    | Test if {file} exists and is a symbolic link
-`-n`    | Test if the length of {string} is nonzero
-`-O`    | Test if {file} exists and is owned by the effective user ID
-`-p`    | Test if {file} exists and is a named pipe
-`-r`    | Test if {file} exists and read permission is granted
-`-s`    | Test if {file} exists and has a size greater than zero
-`-S`    | Test if {file} exists and is a socket
-`-u`    | Test if {file} exists and its set-userID bit is set
-`-w`    | Test if {file} exists and write permission is granted
-`-x`    | Test if {file} exists and execute (or search) permission is granted
-`-z`    | Test if the length of {string} is zero
-
-Test if {VAR} has either the text "string1" or "string2" within it
-```sh
-[[ $VAR =~ 'string1' | 'string2' ]]
-```
-Test if {VAR} matches a regex {pattern} (must not be quoted, otherwise, {pattern} will be treated as a string literal)
-```sh
-[[ $VAR =~ pattern ]]
-```
-
-### timedatectl
-Display the system clock, including local time, universal time, time zone, etc\
-List timezones [ [49](sources.md) ]
-```sh
-timedatectl list-timezones
-```
-Set timezone [ [49](sources.md) ]
-```sh
-timedatectl set-timezone America/New_York
-```
-Synchronize over NTP using the `systemd-timesync` daemon (alternatively, use [`chrony`](#chrony) [ [49](sources.md) ]
-```sh
-timedatectl set-ntp true
-```
-
-### top
-Option  | Effect
-:---    | :---
-`-n`    | change update interval
 
 ### tput
 Return width of current terminal window
@@ -3346,263 +1806,69 @@ Option  | Effect
 `-T`    | use **T**CP SYN packets for the path trace
 `-t`    | set the **t** of service flag (ToS) to be used for the path trace
 
-### tune2fs
-Adjust various 
-#### Run `fsck` on {/dev/sdb1} on every boot
+### `tune2fs`
+Adjust various ...
+Run `fsck` on {/dev/sdb1} on every boot
 ```sh
 tune2fs -c 1 /dev/sdb1
 ```
-#### Run `fsck` on {/dev/sda1} at intervals of 60 mounts or 6 months
+Run `fsck` on {/dev/sda1} at intervals of 60 mounts or 6 months
 ```sh
 tune2fs -c 60 -i 6m /dev/sda1
 ```
-#### Enable journaling on ext2 partition {/dev/sdc1}
+Enable journaling on ext2 partition {/dev/sdc1}
 ```sh
 tune2fs -j /dev/sdc1
 ```
-#### Assign label "Sales" to logical volume {/dev/vg1/Sales}
+Assign label "Sales" to logical volume {/dev/vg1/Sales}
 ```sh
 tune2fs -L Sales /dev/vg1/Sales
 ```
 
-### tzselect
+### `tzselect`
 Select timezone
 
-### udevadm
+### `udevadm`
 Udev management tool
 
 Option  | Effect
 :---    | :---
 `-u`    | **u**pdate the hardware database index after updating source files related to udev
 
-### umount
+### `umount`
 Unmount a USB stick mounted a `/dev/sda`
 ```sh
 umount /dev/sda1
 ```
-### uname
-
-Option  | Effect
-:---    | :---
-`-r`    | display operating system release number
-
-### update-grub
-Make changes take effect for a GRUB2 configuration change
 
 ### update-rc.d
 Create links within /etc/rc.d/ for starting and stopping services
 
-### useradd
-Create a new user
-
-Option  | POSIX option            | Effect
-:---    | :---                    | :---
-`-b`       | `--base-dir`         | default base directory for the system if `HOME_DIR` is not specified (sets `HOME` variable in [/etc/default/useradd](#etcdefaultuseradd)
-`-c`       | `--comment`          | typically user's full name
-`-d`       | `--home-dir`         | specify user's login directory: default is to append the `LOGIN` name to `BASE_DIR`
-`-D`       | `--defaults`         | view **d**efaults for new users
-`-e`       | `--expire-date`      | specify date on which the user account will be disabled (in format `YYYY-MM-DD`) (sets `EXPIRE` variable in [/etc/default/useradd](#etcdefaultuseradd))
-`-k`       | `--skel`             | specify skeleton directory (defaulting to definition of `SKEL` variable in [/etc/default/useradd](#etcdefaultuseradd), failing to /etc/skel)
-`-m`       | `--create-home`      | create user's home directory if it does not exist, copying contents of skeleton directory
-`-r`       | `--system`           | create a system account
-`-s`       | `--shell`            | specify user's login shell (defaulting to definition of `SHELL` variable in [/etc/default/useradd](#etcdefaultuseradd), failing to an empty string)
-`-u`       | `--uid`              | specify UID
-
-Add {user}
-```sh
-useradd user
-```
-Add {user}, noting her full {name}
-```sh
-useradd user -c name
-```
-Add {user}, specifying home directory at {path}
-```sh
-useradd user -d path
-```
-Add {user}, specifying expiration {date} (YYYY-MM-DD)
-```sh
-useradd user -e date
-```
-Create new {user} leaving a {comment} field (conventionally noting the full name of the user) and creating a home directory
-```sh
-useradd -c comment -m user
-```
-Create a system user rather than a normal user
-```sh
-useradd -r
-```
-
-### userdel
-Delete an existing user account;
-#### Delete an existing user account as well as the user's home directory
-```sh
-userdel-r  user
-```
-### usermod
-Modify user account files
-#### usermod options
-Option  | POSIX option            | Effect
-:---    | :---                    | :---
-a       | append                  | add user to supplementary group(s), only used with `-G`
-G       | groups                  | specify a list of groups to which the user will be added
-l       | login                   | change user's name or "login"
-L       | lock                    | lock a user's password
-u       | uid                     | change UID
-U       | unlock                  | unlock account
-
-#### Lock account of {user}
-```sh
-usermod -L user
-```
-#### Rename {user} {new}
-```sh
-usermod -l user new
-```
-#### Unlock account of {user}
-```sh
-usermod -U user
-```
-#### Add {user} to {group}
-```sh
-usermod user -a -G group
-```
-### vifs
+### `vifs`
 Safely edit fstab file
-### visudo
+
+### `visudo`
 Edit and view the `etc/sudoers` file
+
 ### wall
-#### Send {message} to users in {group}
+Send {message} to users in {group}
 ```sh
 wall -g group message
 wall --group group message
 ```
-### wc
-#### Display byte count
-```sh
-wc -c
-```
-#### Count lines of text
-```sh
-wc -l 
-```
-#### Display character count
-```sh
-wc -m
-```
-#### Count words of text
-```sh
-wc -w
-```
-### whatis
-#### Look up one or more commands in the online manpages and display a brief description
+### `whatis`
+Look up one or more commands in the online manpages and display a brief description
 ```sh
 whatis commands
 ```
 
-
-### X
-Start the graphical interface from a command line
-#### Test X11 with the config file automatically generated after `Xorg -configure`
-```sh
-X -config $HOME/xorg.conf.new
-```
-
-
-### xdpyinfo
-Show detailed information about display
-
-
-### xhost
-Enable access control to X server
-```sh
-xhost -
-```
-Remove {host} from list of authorized clients for X server
-```sh
-xhost -host
-```
-Disable access control to X server
-```sh
-xhost +
-```
-Add {host} to list of authorized clients for X server
-```sh
-xhost +host
-```
-
-
-### Xorg
-Enable automatic configuration of X11 server
-```sh
-Xorg -configure
-```
-
-
-### xrandr
-Set size, orientation, and reflection of video output\
-Change resolution of DisplayPort1 to 1920x1080
-```sh
-xrandr --output DP1 --mode 1920x1080
-```
-Disable VGA1 output
-```sh
-xrandr --output VGA1 --off
-```
-Display current state of the system
-```sh
-xrandr -q  --query
-```
-
-
-### xwininfo
-Utility that provides information about a clicked window, including dimensions, position, etc
-
-
-### yay
-Display all AUR packages that need to be updated (deprecated)
-```sh
-yay -Pu
-yay --show --upgrades package
-```
-List all install packages, filtering output to packages that are out-of-date on the local system
-```sh
-yay -Qu
-yay --query --upgrades
-```
-Install {pkg} from the AUR
-```sh
-yay -S package
-yay --sync package
-```
-Display information about {package}
-```sh
-yay -Si package
-yay --sync --info package
-```
-Search for {pkg} in AUR repos
-```sh
-yay -Ss package
-yay --sync --search package
-```
-Update all packages from AUR and official repos
-```sh
-yay -Syu
-yay --sync --refresh --sysupgrade
-```
-Remove unwanted dependencies of now-removed installations of AUR repos
-```sh
-yay -Yc
-yay --yay --clean
-```
-
-### touch
+### `touch`
 Update {newfile}'s modification date to match {oldfile} [[36](sources.md)]
 ```sh
 touch -r oldfile newfile
 ```
 
-### sosreport
+### `sosreport`
 **SOS** is an open-source data collection tool that can be used to collect system configuration details and diagnostic information from a Unix-like operating system. It is installed by default on Ubuntu Server. [[39](sources.md)]
 
 Option  | POSIX option            | Effect
@@ -3612,7 +1878,7 @@ Option  | POSIX option            | Effect
 \-      | `--tmp-dir`             | specify alternative temporary directory
 
 
-#### Collect system configuration details
+Collect system configuration details
 Without arguments, the report will be generated and stored in `$TMPDIR`
 ```sh
 sosreport
@@ -3626,13 +1892,6 @@ sosreport --compression-type gzip
 # Generate report for only specific plugins
 sosreport -o apache --batch
 ```
-
-### sudo
-`sudo` is installed by default on most distros, but it can be installed. [[52](sources.md)]\
-In order to use `sudo`, users have to be added to special groups that vary based on distribution. The group `wheel` grants access to `sudo` on Red Hat derivatives, while there is a group named `sudo` on Debian, Ubuntu, and derivatives to do the same thing.\
-Using `sudo` with output redirection will cause an error if the effective user doesn't have write permissions. 
-- Invoke a new shell as root by using `sudo sh -c`
-- Pipe output to `sudo tee` command
 
 ## Tasks
 ### Samba
@@ -3711,12 +1970,12 @@ read -p "Backup another server? (y/n)" -n 1
 
 #### Diagnosing network problems
 Test from the inside out, starting with the loopback
-  1. ping looback address, testing the TCP/IP stack
-  2. ping the hardware interface
-  3. ping another host on the network
-  4. ping the gateway
-  5. ping an IP address on the Internet
-  6. ping a hostname on the Internet
+1. ping looback address, testing the TCP/IP stack
+2. ping the hardware interface
+3. ping another host on the network
+4. ping the gateway
+5. ping an IP address on the Internet
+6. ping a hostname on the Internet
 
 Display contents of a random file
 ```sh
@@ -3730,14 +1989,3 @@ Count the number of occurrences of a string
 ```sh
 | uniq -c | sort -nr
 ```
-
-### screencapture
-Take a screenshot on Mac OS X [[48](sources.md)]
-
-Option  | Effect
-:---    | :---
-`-c`    | send to clipboard
-`-T $SECONDS` | take screenshot after `$SECONDS`
-`-t $FORMAT`  | specify file `$FORMAT` (png by default)
-`-x`    | take screenshot without shutter sound
-

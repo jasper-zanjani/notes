@@ -64,6 +64,9 @@ The __AM_INIT_AUTOMAKE__ macro is also called because we're using __automake__:
 AM_INIT_AUTOMAKE
 ```
 
+#### Projects that use `make`
+- [`most`](https://github.com/FauxFaux/most-pager/ "GitHub - FauxFaux/most-pager")
+
 ## Sources
 - [Thoughtbot](https://thoughtbot.com/blog/the-magic-behind-configure-make-make-install)
 
