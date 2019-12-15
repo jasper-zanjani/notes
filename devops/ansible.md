@@ -1,6 +1,6 @@
-# Ansible configuration management
-Ansible is an automation tool used for configuration management using human-readable YAML templates. Ansible is distinguished for being **agentless**, meaning no special software is required on the nodes it manages.
-Ansible **playbooks** represent a sequence of scripted actions which apply changes uniformly over a set of hosts.  **Modules** are standalone scripts that enable a particular task across many OSes, services, applications, etc. Predefined modules are available in the **module library**, and new ones can be defined via Python or JSON.\
+# Ansible
+Ansible is an automation tool used for configuration management using human-readable YAML templates. Ansible is distinguished for being **agentless**, meaning no special software is required on the nodes it manages.\
+Ansible [**playbooks**](#playbooks) represent a sequence of scripted actions which apply changes uniformly over a set of hosts.  [**Modules**](#modules) are standalone scripts that enable a particular task across many OSes, services, applications, etc. Predefined modules are available in the **module library**, and new ones can be defined via Python or JSON.\
 Ansible host management relies on a `.ini` file containing a list of IP addresses or hostnames organized in groups.\
 There are several areas where Ansible can be used in personal projects for learning purposes. [[8](#sources)]
 1. Use the [`users`](#users) module to manage users, assign groups, and define custom aliases in the `profile` property.
@@ -8,6 +8,15 @@ There are several areas where Ansible can be used in personal projects for learn
 3. Use Ansible Tower to produce a GUI interface to restart certain services.
 4. Use Ansible Tower to look for files larger than a particular size in a directory.
 5. Debug a system performance problem. 
+
+\#      | Commands
+---     | ---
+**A-Z** | [`ansible`](ansible-command) [`ansible-galaxy`](#ansible-galaxy) [`ansible-inventory`](#ansible-inventory) [`ansible-playbook`](#ansible-playbook)
+
+\#      | Modules
+---     | ---
+**A-L** | [`apt`](#package-management) [`archive`](#archive-module) &bull; [`cli_config`](#cli_config) [`command`](#command-module) [`copy`](#copy-module) &bull; [`debug`](#debug-module) [`dnf`](#package-management) &bull; [`file`](#file-module) &bull; [`git`](#git-module) 
+**M-Z** | [`lineinfile`](#lineinfile-module) [`package`](#package-management) [`ping`](#ping-module) [`raw`](#raw-module) [`service`](#service-module) [`setup`](#setup-module) [`shell`](#shell-module) [`template`](#template-module)
 
 ## Configuration
 Config file                       | Description
@@ -33,7 +42,7 @@ Ansible can be used in one of two ways:
 1. Running **ad hoc** commands, that is commands executed in realtime by an administrator working at the terminal, using the [ `ansible` ](#ansible) command.
 2. Running **playbooks**, YAML documents containing **tasks** each of which are equivalent to a single ad hoc command, using the [ `ansible-playbook` ](#ansible-playbook) command. Any ad hoc command can be rewritten as a playbook, but some modules can only be used effectively as playbooks.
 
-### `ansible`
+### `ansible` command
 The `ansible` command is only used for running **ad hoc** commands,  Modules are called as arguments passed to the `-m` option. 
 ```sh
 ansible $CLIENT [-b] -m $MODULE -a $ARGUMENTS
@@ -47,6 +56,11 @@ Option  | POSIX option            | Effect
 `-a`    |                         | specify arguments to module
 `-b`    |                         | elevate priviliges by "becoming" the sudo user
 `-m`    |                         | specify module to be executed
+
+Install `htop` on the localhost
+```sh
+ansible localhost -b -m package -a "name=htop"
+```
 
 ### `ansible-galaxy`
 Search for roles [[7](#sources)]
@@ -70,8 +84,9 @@ Upload a role [[7](#sources)]
 ansible-galaxy import $USERNAME $REPONAME
 ansible-galaxy import --no-wait $USERNAME $REPONAME # send job to background
 ```
+### `ansible-inventory`
 
-### ansible-playbook
+### `ansible-playbook`
 Playbooks are executed with the `ansible-playbook` command
 ```sh
 ansible-playbook -i $CLIENT $PLAYBOOK
@@ -79,8 +94,7 @@ ansible-playbook -i $CLIENT $PLAYBOOK
 Option  | POSIX option            | Effect
 :---    | :---                    | :---
 `-i`    |                         | ?
-
-### Playbooks
+## Playbooks
 ```yaml
 ---
 
@@ -182,13 +196,8 @@ The role can be specified in a very simple playbook:
   roles:
     - webserver
 ```
-
 ## Modules
-\#    | Modules
-:---  | :---
-A-Z   | [`apt`](#package-management) [`archive`](#archive-module) [`cli_config`](#cli_config) [`command`](#command-module) [`copy`](#copy-module) [`debug`](#debug-module) [`dnf`](#package-management) [`file`](#file-module) [`git`](#git-module) [`lineinfile`](#lineinfile-module) [`package`](#package-management) [`ping`](#ping-module) [`raw`](#raw-module) [`service`](#service-module) [`setup`](#setup-module) [`shell`](#shell-module) [`template`](#template-module)
-
-#### Archive module
+#### `archive` module
 Compress files [[3](#sources)]
 ```yaml
 - name: Compress directory /path/to/foo/ into /path/to/foo.tgz
@@ -205,7 +214,6 @@ Compress files [[3](#sources)]
     dest: /path/file.tar.bz2
     format: bz2
 ```
-
 #### `cli_config`
 Platform-agnostic way of pushing text-based configurations to network devices over the **network_cli_connection** plugin [[3](#sources)]
 ```yaml
@@ -225,7 +233,6 @@ Platform-agnostic way of pushing text-based configurations to network devices ov
       filename: backup.cfg
       dir_path: /home/user
 ```
-
 #### `command` module
 Safest module to execute remote commands on client machine, requires Python. When Ansible execute commands using the Command module, they are not processed through the user's shell (meaning environment variables like [ `$HOME` ](lx/commands.md#bash) and output redirection are not available).\
 Takes command name followed by a list of space-delimited arguments. 
@@ -244,7 +251,6 @@ Takes command name followed by a list of space-delimited arguments.
     creates: /path/to/database
 ```
 [[3](#sources)]
-
 #### `copy` module
 Used for copying files from the server to clients (cf. [File](#file-module)). Useful when updating configuration files.\
 This will look in the current directory on the Ansible server for `updated.conf` and then copy it to each client.
@@ -271,7 +277,6 @@ ansible $CLIENT -b -m copy -a "src=./updated.conf dest=/etc/ntp.conf owner=root 
     mode: u=rw,g=r,o=r
 ```
 [[3](#sources)]
-
 #### `debug` module
 ```yaml
 - name: Display all variables/facts known for a host
@@ -294,10 +299,8 @@ Display content of copy module only when verbosity of 2 is specified (i.e. `ansi
       verbosity: 2
 ```
 [[3](#sources)]
-
 #### `file` module
 Used for doing file manipulation on the remote system itself.[[5](#sources)]\
-
 #### `state` directive
 The `state` directive can take one of several values, and indicates to Ansible what should actually be done to the target file:
 `state` value | Effect
@@ -334,7 +337,6 @@ Create a folder using a playbook [[3](#sources)]
     state: directory
     mode: '0755'
 ```
-
 #### `git` module
 Manage git checkouts of repos [[3](#sources)]
 ```yaml
@@ -350,7 +352,6 @@ Manage git checkouts of repos [[3](#sources)]
     dest: /src/ansible-examples
     separate_git_dir: /src/ansible-examples.git
 ```
-
 #### `lineinfile` module
 Manages lines in a text file, mostly used to ensure a particular line is present or changed in a config.  [[3](#sources)]
 ```yaml
@@ -367,43 +368,8 @@ Manages lines in a text file, mostly used to ensure a particular line is present
     line: 192.168.1.99 foo.lab.net foo
     create: yes
 ```
-
-### Package management
-There is a specific module for most popular package managers, such as `dnf` and `apt`, but the `package` is generic and will install packages regardless of distribution.\
-Install Apache2 using the `apt` module in an ad hoc command [[5](#sources)]
-```sh
-ansible $CLIENT -b -m apt -a "update_cache=yes name=apache2 state=latest"
-```
-Install Apache and MariaDB [[3](#sources)]
-```yaml
-- name: install the latest version of Apache and MariaDB
-  dnf:
-    name:
-     - httpd
-      - mariadb-server
-    state: latest
-```
-Install PostgreSQL and NGINX [[3](#sources)]
-```yaml
-- name: Install a list of packages
-  yum:
-    name:
-     - nginx
-      - postgresql
-      - postgresql-server
-    state: present
-```
-#### `state` directive
-In the `package` module, `state` indicates what action to take with regard to the specified package. [[5](#sources)]
-`state` value | Effect
-:---          | :---
-`absent`      | remove the package, if installed
-`latest`      | get the latest version, upgrading if needed
-`present`     | make sure package is installed, but don't upgrade if it is
-
 #### `raw` module
 Similar to [ `shell` ](#shell-module) module, but the user's default shell is used, Ansible doesn't do any error checking, and `STDERR`, `STDOUT`, and `Return Code` are all returned
-
 #### `service` module
 Starts a package after installing it.
 ```yaml
@@ -421,7 +387,6 @@ Starts a package after installing it.
     args: eth0
 ```
 [[3](#sources)]
-
 #### `shell` module
 The Shell module uses /bin/sh in the remote user's environment (cf. [`raw`](#raw-module) module).
 [[4](#sources)]
@@ -429,7 +394,6 @@ Test authentication by displaying results of [`uptime`](lx/commands.md#uptime) c
 ```sh
 ansible -m shell -a 'uptime' webservers
 ```
-
 #### `setup` module
 Usable almost exclusively in playbooks, although some ad hocs are available:\
 Display all available information about the system [[5](#sources)]
@@ -440,7 +404,6 @@ Filter results to `ansible_os_family`, which indicates if the OS is Debian or Re
 ```sh
 ansible $CLIENT -b -m setup -a "filter=*family*"
 ```
-
 #### `template` module
 Works similar to mail merge in a word processor. Ansible uses the Jinja2 templating language, which has a syntax similar to Ansible variable substitution. [[6](#sources)]
 This example creates a HTML document on each client that is customized using Ansible variables. [[6](#sources)]
@@ -481,6 +444,38 @@ and its hostname is:</h1>
 {# this is a comment, which won't be copied to the index.html file #}
 </center></html>
 ```
+### Package management
+There is a specific module for most popular package managers, such as `dnf` and `apt`, but the `package` is generic and will install packages regardless of distribution.\
+Install Apache2 using the `apt` module in an ad hoc command [[5](#sources)]
+```sh
+ansible $CLIENT -b -m apt -a "update_cache=yes name=apache2 state=latest"
+```
+Install Apache and MariaDB [[3](#sources)]
+```yaml
+- name: install the latest version of Apache and MariaDB
+  dnf:
+    name:
+     - httpd
+      - mariadb-server
+    state: latest
+```
+Install PostgreSQL and NGINX [[3](#sources)]
+```yaml
+- name: Install a list of packages
+  yum:
+    name:
+     - nginx
+      - postgresql
+      - postgresql-server
+    state: present
+```
+#### `state` directive
+In the `package` module, `state` indicates what action to take with regard to the specified package. [[5](#sources)]
+`state` value | Effect
+:---          | :---
+`absent`      | remove the package, if installed
+`latest`      | get the latest version, upgrading if needed
+`present`     | make sure package is installed, but don't upgrade if it is
 ## Glossary
 Term                    | Definition
 :---                    | :---
@@ -496,7 +491,6 @@ module library          | where Predefined modules are available, and new ones c
 playbook                | sequence of scripted actions which apply changes uniformly over a set of hosts
 role                    | a way of breaking up playbooks into components using a system of subdirectories, allowing them to be reused and shared online [[7](#sources)]
 task                    | a single scripted action in a playbook, equivalent to an ad hoc command
-
 ## Sources
 1. "Red Hat Ansible Tower Demo". [Web](https://youtu.be/wZ_mh4-4HPY): 2018/09/09.
 2. "Ansible Tower vs. Ansible AWX". [Web](https://4sysops.com/archives/ansible-tower-vs-ansible-awx-for-automation/): 2019/08/13.
