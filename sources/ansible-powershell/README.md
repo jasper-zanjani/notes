@@ -5,7 +5,7 @@ Table of contents
 [ 1 ](#1) &bull; [ 2 ](#2) &bull; [ 3 ](#3) &bull; [ 4 ](#4) &bull; [5](#5) &bull; [6](#6) &bull; [7](#7) &bull; [8](#8) &bull; [9](#9) 
 
 ## 1
-In Part 1 of this series we’ll warm up by taking a look at the lab setup I am using, configuring some basics in AWX and what’s possible with the Ansible win_service module to configure Windows services.
+In Part 1 of this series we’ll warm up by taking a look at the lab setup I am using, configuring some basics in AWX and what’s possible with the Ansible `win_service` module to configure Windows services.
 #### Lab details
 For Ansible, I’m using AWX deployed in containers based from the example documented here.\ 
 Additionally, I have two Windows 2016 VMs. One to provide some basic Windows services such as DNS and Active Directory. The second a plain, vanilla install to test the Ansible playbooks on.
@@ -13,18 +13,18 @@ Additionally, I have two Windows 2016 VMs. One to provide some basic Windows ser
 I store the Ansible playbooks in this series in my personal Github repository which make them easy to access and maintain, also they can be retrieved in AWX simply be pointing a project to this repo.
 #### AWX Configuration
 Within AWX I have first of all configured a Project which points to my GitHub Playbook repository, so that I can easily select Playbooks stored there in Job Templates. Note that no credentials are required for this project since it is public and I only need to read the contents:
-![](01.png)\
+![](img/01.png)\
 I have two separate Inventories configured, one for the Windows AD / DNS server and one for the vanilla Windows server. Note these inventories could be combined depending on requirements, I’m just using two for demo purposes.
 #### AD Inventory
 I’ve set Ansible Windows winrm connection variables here:\
-![](02.png)\
+![](img/02.png)\
 The IP address of the AD server is specified on the Hosts tab:\
-![](03.png)\
+![](img/03.png)\
 #### Test Target Inventory
 The test Windows server has the same connection variables, but a different IP address listed on the Hosts tab:\
-![](05.png)\
+![](img/05.png)\
 I’ve created a Credentials object to use in Job Templates:\
-![](06.png)\
+![](img/06.png)\
 With those pre-requisites in place, we can move onto a job template where I have completed the following fields:
 - `Name`: _0_configure-service (for ease of demo I’ve set it to the name of the playbook and the order I demonstrated them during the presentation.)
 - `Job Typ`e: Run
@@ -33,7 +33,7 @@ With those pre-requisites in place, we can move onto a job template where I have
 - `Playbook`: _0_configure-service.yml (a handy drop-down selector of Playbooks discovered by AWX in the project)
 - `Credential`: TestCreds (the credentials used to give permissions within Windows)
 
-![](07.png)\
+![](img/07.png)\
 The contents of the `_0_configure-service.yml` used in the above job template are below:
 ```yaml
 ---
@@ -53,16 +53,16 @@ The contents of the `_0_configure-service.yml` used in the above job template ar
 ```
 The first task checks for the presence of the SNMPTTRAP Windows service and returns details about it. The second task ensures that the SNMPTTRAP Windows service is started and the Startup Type is set to automatic.\
 Starting a job from AWX from the job template above results in the below successful outcome:\
-![](08.png)\
-![](09.png)\
+![](img/08.png)\
+![](img/09.png)\
 The first task reports that the SNMPTTRAP Windows service exists and if we click on that item we can see the details reported back:\
-![](10.png)\
+![](img/10.png)\
 For the second task, I checked before running the job and the SNMPTTRAP Windows service was stopped and set to a Startup Type of Manual.\
-![](11.png)\
+![](img/11.png)\
 The Ansible job reported that it had made a change:\
-![](12.png)\
+![](img/12.png)\
 Checking the change shows the SNMPTTRAP Windows service was started and set to the desired Startup Type of Automatic.\
-![](13.png)\
+![](img/13.png)\
 Now that we have established the lab setup, how to configure a project, inventory, job template in AWX and run a simple job, we’ll move onto further posts in this series on other Windows and PowerShell topics.\
 
 ---
@@ -70,7 +70,7 @@ Now that we have established the lab setup, how to configure a project, inventor
 
 In Part 2 of this series we’ll move on from the introductory topics and look at how we can use Ansible to prepare servers with any external PowerShell Modules they need from the PowerShell Gallery.\
 Our job template in AWX is _1_install-psmodule\
-![](14.png)\
+![](img/14.png)\
 The contents of _1_install-psmodule.yml are are follows:
 ```yaml
 ---
@@ -84,14 +84,14 @@ The contents of _1_install-psmodule.yml are are follows:
 ```
 We can use the native Ansible module win_psmodule to do the work for us. In addition, we can ensure multiple modules are installed without needing a separate task for each one by looping using with_items. This enables us to simply supply the names of the modules for the PowerShell Gallery that we need and Ansible will install both of them.\
 Looking at our vanilla Windows 2016 server, we can observe that prior to running the job template neither the PowervRA or PowervRO modules are installed.\
-![](15.png)\
+![](img/15.png)\
 Running a job from the _1_install-psmodule job template produces a successful result:\
-![](16.png)\
-![](17.png)\
-![](18.png)\
-![](19.png)\
+![](img/16.png)\
+![](img/17.png)\
+![](img/18.png)\
+![](img/19.png)\
 Checking our vanilla Windows 2016 server, we can now observe that both the PowervRA or PowervRO modules are installed and available for further automation.\
-![](20.png)
+![](img/20.png)
 
 ---
 ## 3
@@ -103,7 +103,7 @@ It’s a similar story when we turn to Ansible support for Windows Roles and Fea
 
 In the main both of them should get you to the same end result, so the choice is yours. In this post, we’ll be concentrating on the win_feature Ansible module.\
 Our job template in AWX is _2_install-windowsfeature 
-![](21.png)\
+![](img/21.png)\
 The contents of _2_install-windowsfeature.yml are are follows:
 ```yaml
 ---
@@ -123,18 +123,18 @@ The contents of _2_install-windowsfeature.yml are are follows:
 ```
 The first task installs Remote-Desktop-Services including the management tools and the second task removes `Print-Services`.\
 Before running any job, looking at our vanilla Windows 2016 server below, we can observe that Remote-Desktop-Services is not present, but Print-Services is there.\
-![](22.png)\
+![](img/22.png)\
 Running a job from the _2_install-windowsfeature job template produces a successful result:\
-![](23.png)\
-![](24.png)\
+![](img/23.png)\
+![](img/24.png)\
 Checking our vanilla Windows 2016 server, we can now observe that Remote-Desktop-Services is present and Print-Services has been removed.\
-![](25.png)\
+![](img/25.png)\
 
 ---
 ## 4
 In Part 4 of this series we’ll continue our journey with Ansible, Windows and PowerShell and look at how we can use Ansible to invoke PowerShell code directly.\
 Our job template in AWX to test out the possible different scenarios is _3_invoke-powershell\
-![](26.png)\
+![](img/26.png)\
 The contents of _3_invoke-powershell.yml are are follows:\
 ```yaml
 ---
@@ -189,23 +189,23 @@ The code within the test.ps1 script:
 Set-Content -Path C:\Temp\test3.txt -Value "That's so wizard Ani"
 ```
 Running a job from the _3_invoke-powershell job template produces a successful result:\
-![](27.png)\
-![](28.png)\
+![](img/27.png)\
+![](img/28.png)\
 #### Run a single line of PowerShell
 Viewing the log shows us the command that was run:\
-![](29.png)\
+![](img/29.png)\
 Checking our vanilla Windows 2016 server we can observe the presence and content of the test.txt file:\
-![](30.png)\
+![](img/30.png)\
 #### Run multi-lined PowerShell commands
 Viewing the log shows us the command that was run:\
-![](31.png)\
+![](img/31.png)\
 Checking our vanilla Windows 2016 server we can observe the presence and content of the test2.txt file:\
-![](32.png)\
+![](img/32.png)\
 #### Run a PowerShell script
 Viewing the log shows us the command that was run:\
-![](33.png)\
+![](img/33.png)\
 Checking our vanilla Windows 2016 server we can observe the presence and content of the test3.txt file:\
-![](34.png)\
+![](img/34.png)\
 So those are the basics for invoking PowerShell code. You may also be interested in two other related posts I have in this area which I won’t be covering in this basics series:
 
 ## 5
@@ -213,7 +213,7 @@ In Part 5 of this series we’ll continue our journey with Ansible, Windows and 
 In my experience different automation and orchestration toolsets can require you to return errors from PowerShell scripts in different ways. So far with Ansible I have found that returning an exit code of 0 (success) or 1 (failure) from the PowerShell script to Ansible will result in the success or failure of that task in the Playbook. I experimented with other numbers for return codes to see if I could use them to establish different types of failure, but Ansible did not appear to support that. (If you have other experiences with PowerShell, return codes and Ansible then please leave them in the comments below.)\
 So the following example will demonstrate how to ensure that an exit code of 0 or 1 is returned from the PowerShell script executed by Ansible to the task which executed it.\
 Our job template in AWX is _4_example-errorhandling\
-![](35.png)\
+![](img/35.png)\
 The contents of _4_example-errorhandling.yml are are follows:
 ```yaml
 ---
@@ -254,17 +254,17 @@ So, depending on how you want to handle this scenario, you may wish to set $Erro
 #### `-ErrorAction Continue`
 On a similar note, watch out for the -ErrorAction Continue added to the end of the Write-Error lines in the catch block. A consequence of setting $ErrorActionPreference to Stop means that Write-Error will generate a terminating error, not the non-terminating error that is its default behaviour. Without forcing the ErrorAction to be Continue for those to lines only, the script would exit at line 10 and the extra error lines won’t be present in the output.\
 Running a job from the _2 example-errorhandling job template produces the failed result we are looking for:\
-![](36.png)\
-![](37.png)\
+![](img/36.png)\
+![](img/37.png)\
 Looking at more detail to the task with the error, we can observe that we received an exit code of 1 and the detailed error info from the catch block:\
-![](38.png)
+![](img/38.png)
 
 ---
 ## 6
 In Part 6 of this series we’ll continue our journey with Ansible, Windows and PowerShell and look at how we can display output from code in PowerShell scripts back in Ansible to help track the progress of a task.\
 The following example will demonstrate how to send log info from a PowerShell script back to Ansible.\
 Our job template in AWX is _5_log-output\
-![](39.png)\
+![](img/39.png)\
 The contents of _5_log-output.yml are are follows:\
 ```yaml
 ---
@@ -293,8 +293,8 @@ Write-Host "VM: 10.0.3.4"
 Write-Host "VM: 10.0.3.6"
 ```
 Running a job from the _5_log-output job template produces the following result:\
-![](40.png)\
-![](41.png)\
+![](img/40.png)\
+![](img/41.png)\
 The script was successfully copied and executed. The information from the Write-Host commands was not displayed by default in the Run a script task, however by adding a debug task we are able to grab the log info from the stdout_lines property.\
 For a more advanced look at returning data from PowerShell scripts, take a look at this post I made outside of this series.
 
@@ -304,7 +304,7 @@ For a more advanced look at returning data from PowerShell scripts, take a look 
 In Part 7 of this series we’ll continue our journey with Ansible, Windows and PowerShell and look at how utilise PowerShell DSC. If you or your team already own some automation created using PowerShell DSC then it is possible to re-use that via an Ansible Playbook. Or maybe you think that you or they would prefer to create configuration automation going forward using a perhaps more familiar PowerShell DSC, then this could be a solution for you.\
 The following example will demonstrate how to use the Active Directory DSC module to create a user in AD.\
 Our job template in AWX is _6_invoke-dsc\
-![](42.png)\
+![](img/42.png)\
 The contents of _6_invoke-dsc.yml are are follows:\
 ```yaml
 ---
@@ -335,13 +335,13 @@ The contents of _6_invoke-dsc.yml are are follows:\
 Since PowerShell DSC modules are typically located in the PowerShell Gallery, we can use the win_psmodule to make sure it is present on our system. (Part 2 of this series covered installing PowerShell Modules from the PowerShell Gallery with Ansible.) The first task ensures that the Active Directory DSC module , xActiveDirectory, is present.\
 The second task uses the win_dsc Ansible module to configure an Active Directory DSC module resource and create a user in AD. We simply need to list some of the properties of the user in order to create it.\
 Our Active Directory OU before running the Ansible job contains no user named test_user:\
-![](44.png)\
+![](img/44.png)\
 Running a job from the _6_ invoke-dsc job template produces the following result:\
-![](45.png)\
-![](46.png)\
+![](img/45.png)\
+![](img/46.png)\
 Now the user test_user is present:
-![](47.png)\
-![](48.png)\
+![](img/47.png)\
+![](img/48.png)\
 You can use any existing PowerShell DSC module in the PowerShell Gallery to carry out what you need to achieve and drive the automation from Ansible.
 
 ---
@@ -350,7 +350,7 @@ You can use any existing PowerShell DSC module in the PowerShell Gallery to carr
 In Part 8 of this series we’ll continue our journey with Ansible, Windows and PowerShell and look at how to handle reboots. Despite improvements in Windows over the years, it’s still pretty common as part of VM or application deployment to need to restart the VM and wait for it to be available before carrying on with some further steps.\
 The following example will demonstrate how to use the win_reboot and win_wait_for modules to reboot a VM and wait for the RDP port 3389 to be available before carrying on.\
 Our job template in AWX is _7_reboot_and_wait\
-![](49.png)\
+![](img/49.png)\
 The contents of _7_reboot_and_wait.yml are are follows:\
 ```yaml
 ---
@@ -368,8 +368,8 @@ The contents of _7_reboot_and_wait.yml are are follows:\
 The first task reboots the VM using the default options, which includes running a test command of whoami in the VM to confirm it has started.\
 This can be expanded further in the second task by waiting for a particular to become available. In this example we use the RDP port 3389 to confirm that the VM is ready for us to continue with any further automation.\
 Running a job from the _7_reboot_and_wait job template produces the following result:\
-![](49.png)\
-![](50.png)\
+![](img/49.png)\
+![](img/50.png)\
 The VM was successfully rebooted and we waited for port 3389 to be responsive before continuing further.
 
 ---
@@ -377,14 +377,14 @@ The VM was successfully rebooted and we waited for port 3389 to be responsive be
 ## 9
 In Part 9 of this series we’ll continue our journey with Ansible, Windows and PowerShell and look at how to handle disk creation. After ‘physically’ adding the new disk, either in a physical server or private / public cloud VM, typically you will need to initialize, partition and format it ready for use.\
 In Windows Disk Management a newly added disk will look like Disk 2 below:\
-![](52.png)\
+![](img/52.png)\
 The following example will demonstrate how to use a combination of a PowerShell command and the win_disk_facts, win_partition and win_format modules to initialize, partition and format the above newly added Disk 2.\
 Our job template in AWX is _8_initialize-partition-format-disk\
-![](53.png)\
+![](img/53.png)\
 Note: I have made use of the ‘Prompt on launch’ checkbox for extra variables.\
-![](54.png)\
+![](img/54.png)\
 This means when executing the playbook via the web UI we’ll be prompted to amend the extra variables if we want to, i.e. for a different disk number or drive letter.\
-![](55.png)\
+![](img/55.png)\
 The contents of _8_initialize-partition-format-disk are are follows:\
 ```yaml
 ---
@@ -415,10 +415,10 @@ The contents of _8_initialize-partition-format-disk are are follows:\
 We start out by retrieving disk facts via win_disk_facts . These extra facts are then available to us via the fact ansible_disks. We use a when clause on the subsequent steps to only execute them when the guid property is null, i.e. the disk has not been touched yet.\
 There is no Ansible module yet which supports initializing the disk, so we send a PowerShell command using the Initialize-Disk cmdlet to configure that part. Subsequent steps use the win_partition and win_format modules to create a partition with the specified drive letter and then format it with NTFS and a drive label of Data.\
 Running a job from the _8_initialize-partition-format-disk job template produces the following result:\
-![](56.png)\
-![](57.png)\
+![](img/56.png)\
+![](img/57.png)\
 Checking our disk back in Computer Management we observe that it has been brought online, partitioned and formatted.\
-![](58.png)
+![](img/58.png)
 
 ---
 
