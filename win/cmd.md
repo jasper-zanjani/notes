@@ -18,7 +18,10 @@ Change Windows bootloader to Linux, while dual booting
 ```cmd
 bcdedit /set {bootmgr} path \EFI\manjaro\grubx64.efi
 ```
-
+Restore GRUB menu on a Fedora installation
+```cmd
+bcdedit /set {bootmgr} path \EFI\fedora\shim.efi
+```
 ### `bootrec`
 Windows Recovery Environment command that repairs a system partition
 Use when boot sector not found
