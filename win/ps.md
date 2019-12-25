@@ -7,49 +7,64 @@ Topic                                                   | Syntax
 [Comparison operators](#comparison-operators)           | `-eq` `-ne` `-gt` `-ge` `-lt` `-le` [`-like`](#comparison-operators) `-notlike` `-match` `-notmatch` `-contains` `-notcontains` `in` `notin` `-replace` `-is` `-isnot`
 [DSC](#dsc)                                             | `Configuration` `Ensure` `WindowsFeature`
 [Disks and file systems](#disk)                         | 
-[Filters](#filters)                                     | [`Where-Object`](#filters) [`Select-Object`](#filters) [`Select-String`](#filters) [`Out-GridView`](#filters) [`ForEach-Object`](#filters)
 [Formatting](#output-formatting)                        | `Format-List` `Format-Table` `Format-Wide`
 [Hyper-V](#hyper-v)                                     | [`Set-VMMemory`](#set-vmmemory) [`Set-VMNetworkAdapter`](#set-vmnetworkadapter) [`Set-VMProcessor`](#set-vmprocessor)
 [Network](#network)                                     | [`Get-NetFirewallRule`](#get-netfirewallrule) [`New-NetFirewallRule`](#new-netfirewallrule) [`Set-NetFirewallRule`](#set-netfirewallrule) [`Invoke-WebRequest`](#invoke-webrequest)
 [Profile](#$profile)                                    | 
-[System information](#display-basic-system-information) | `Get-Alias` `Get-Command` `Get-Help` `Get-History` `Get-Module` `Get-Process` `Get-PSDrive` `Get-Service` `Update-Help`
+
 
 \#    | Cmdlet nouns sorted alphabetically
 ---   | ---
-A-D   | **`Alias`** [`Export`](#alias) [`Get`](#alias) [`New`](#alias) [`Set`](#alias) &bull; **`Archive`** [`Expand`](#expand-archive) &bull; **`Clipboard`** [`Get`](#get-clipboard) [`Set`](#set-clipboard) &bull; **`Credential`** [`Get`](#credentials) &bull; **`Disk`** [`Get`](#get-disk)
-E-O   | **`Guid`** [`New`](#new-guid) &bull; **`Help`** [`Get`](#get-help) [`Update`](#update-help) &bull; **`Module`** [`Import`](#module) [`Install`](#module) &bull; **`NetFirewallRule`** [`Get`](#get-netfirewallrule) [`New`](#new-netfirewallrule) [`Set`](#set-netfirewallrule) &bull; **`Output`** [`Write`](#write-output)
-P     | **Partition** [`Get`](#get-partition) [`New`](#new-partition) [`Remove`](#remove-partition) &bull; [**`PSReadlineOption`**](#psreadlineoption) `Get` `Set` &bull; [**PSSession**](#pssession) `Enter` `Exit` `Get` `New`
-Q-Z   | **`Service`** [`Get`](#service) [`Start`](#service) [`Stop`](#service) &bull; **`VMMemory`** [`Set`](#set-vmmemory) &bull; **`VMNetworkAdapter`** [`Set`](#set-vmnetworkadapter) &bull; **`VMProcessor`** [`Set`](#set-vmprocessor) &bull; **`WebRequest`** [`Invoke`](#invoke-webrequest) &bull; **`WMIObject`** [`Get`](#get-wmiobject)
+A     | **`Alias`** [`Export`](#export-alias) [`Get`](#get-alias) [`New`](#new-alias )[`Set`](#set-alias) &bull; **`Archive`** [`Expand`](#expand-archive) &bull; 
+C     | **`Clipboard`** [`Get`](#get-clipboard) [`Set`](#set-clipboard) &bull; **`Credential`** [`Get`](#credentials) &bull; 
+D     | **`Disk`** [`Get`](#get-disk)
+G     | **`Guid`** [`New`](#new-guid)
+H     | **`Help`** [`Get`](#get-help) [`Update`](#update-help)
+M     | **`Module`** [`Import`](#module) [`Install`](#module)
+N     | **`NetFirewallRule`** [`Get`](#get-netfirewallrule) [`New`](#new-netfirewallrule) [`Set`](#set-netfirewallrule) &bull; 
+O     | **`Output`** [`Write`](#write-output)
+P     | **`Partition`** [`Get`](#get-partition) [`New`](#new-partition) [`Remove`](#remove-partition) &bull; **`PSReadlineOption`** [`Get`](#get-psreadlineoption) [`Set`](#set-psreadlineoption) &bull; **`PSSession`** [`Enter`](#pssession) [`Exit`](#pssession) [`Get`](#pssession) [`New`](#pssession)
+S     | **`Service`** [`Get`](#service) [`Start`](#service) [`Stop`](#service) &bull;
+V     | **`VMMemory`** [`Set`](#set-vmmemory) &bull; **`VMNetworkAdapter`** [`Set`](#set-vmnetworkadapter) &bull; **`VMProcessor`** [`Set`](#set-vmprocessor) &bull;
+W     | **`WebRequest`** [`Invoke`](#invoke-webrequest) &bull; **`WMIObject`** [`Get`](#get-wmiobject)
 
-## Basic Syntax
+Topic                 | Cmdlets
+---                   | ---
+Clipboard             | [`Get-Clipboard`](#get-clipboard) [`New-Guid`](#new-guid) [`Set-Clipboard`](#set-clipboard) [`Write-Output`](#write-output)
+Disk management       | [`Format-Volume`](#format-volume) [`Get-Disk`](#get-disk) [`Get-Partition`](#get-partition) [`New-Partition`](#new-partition) [`Remove-Partition`](#remove-partition)
+Filters               | [`Where-Object`](#filters) [`Select-Object`](#filters) [`Select-String`](#filters) [`Out-GridView`](#filters) [`ForEach-Object`](#filters)
+Firewall              | [`Get-NetFirewallRule`](#get-netfirewallrule) [`New-NetFirewallRule`](#new-netfirewallrule) [`Set-NetFirewallRule`](#set-netfirewallrule)
+Hyper-V               | [`Set-VMMemory`](#set-vmmemory) [`Set-VMNetworkAdapter`](#set-vmnetworkadapter) [`Set-VMProcessor`](#set-vmprocessor)
+Remote administration | [`Enable-PSRemoting`](#enable-psremoting) [`Invoke-Command`](#invoke-command)
+System administration | [`Get-Alias`](#get-alias) [`Get-Command`](#get-command) `Get-Help` `Get-History` `Get-Module` `Get-Process` `Get-PSDrive` `Get-Service` `Update-Help`
 
-### Syntax to research
+## Syntax
+#### Syntax to research
 
-#### `[?...]` 
+`[?...]` 
 From [AZ-103](../sources/az-103-tasks.md) 1.4c.09:
 ```powershell
 groupid=$(az ad group list --query "[?displayName=='Cloud Admins'].objectId" -o tsv)
 ```
 
-#### `::`
+`::`
 From "View system uptime" below:
 ```powershell
 Select-Object -Property @{n="Last Boot Time";e={[Management.ManagementDateTimeConvert]::ToDateTime($_.LastBootUpTime)}}
 ```
 
-### Variables
+The `Throw` keyword generates a terminating error
 
-#### Automatic variables
+#### Variables
 **Automatic variables** are variables that store state information for PowerShell and are created and maintained by Powershell.
 
 Syntax          | Effect
 :---            | :---
-`$$`            | last token in the last line received by the session
+`$_` `$PSItem`  | **pipeline object** current object in the pipeline object
 `$?`            | execution status of the last operation
 `$^`            | first token in the last line received by the session
-`$_` `$PSItem`  | current object in the pipeline object
+`$$`            | last token in the last line received by the session
 
-#### Typing
 Variables can be typed by preceding their identifier with the datatype in brackets
 ```powershell
 [double]$Price
@@ -62,6 +77,15 @@ $Number = [int]'04'
 $FailedCast = [int]'Hello'
 ```
 
+#### Profiles
+Syntax                            | Effect
+:---                              | :---
+`$profile`                        | display file of current profile
+`$profile.CurrentUserCurrentHost` | %UserProfile%\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1
+`$profile.CurrentUserAllHosts`    | %UserProfile%\Documents\WindowsPowerShell\profile.ps1
+`$profile.AllUsersAllHosts`       | %windir%\System32\WindowsPowerShell\v1.0\profile.ps1
+`$profile.AllUsersCurrentHost`    | %windir%\System32\WindowsPowerShell\v1.0\Microsoft.PowerShell_profile.ps1
+
 #### Comparison operators
 Syntax          | Effect
 ---             | ---
@@ -69,6 +93,36 @@ Syntax          | Effect
 `-match`        | regex pattern
 `-is`           | type comparison
 
+Syntax                        | Effect
+:---                          | :---
+`Get-Alias Definition -eq Get-ChildItem`|display items that point to `Get-ChildItem`
+`Get-Command \| measure`      | piping to `measure` is similar to `wc`, will count lines
+`Get-Command -Module ActiveDirectory`|display cmdlets available under a specified module
+`Get-Command *smb*`           | use a wildcard
+`Get-Module -ListAvailable`   | display installed PowerShell modules
+`Invoke-History`              | run a command from the history
+`New-Alias ip Get-NetIPAddress`|establish a new alias
+`Set-Alias ip Get-NetAdapter` |edit an existing alias
+`New-PSDrive -Name scripts -PSProvider FileSystem -Root "C:\Scripts"`|map a directory to a drive
+`Remove-PSDrive -Name scripts`|remove a drive
+
+Common Parameter              | Effect
+:---                          | :---
+`-Debug`,`-db`                | display programmer-level detail about command operation
+`-ErrorAction`                | determine how the cmdlet responds to a non-terminating error
+`-ErrorVariable`,`-ev`        | store errors in specified variable
+`-InformationAction`,`-infa`  | specify action to take at occurrences of `Write-Information` command
+`-InformationVariable`,`-iv`  | store information message passed from `Write-Information` cmdlet
+`-OutVariable`,`-ov`          | store output objects from the command in the specified variable
+`-OutBuffer`,`-ob`            | determine number of objects to accumulate in a buffer before any objects are sent through the pipeline
+`-PipelineVariable`,`-pv`     | store value of the current pipeline element in specified variable
+`-Verbose`,`-vb`              | display detailed operation done by the command
+`-WarningAction`,`-wa`        | specify action to take on occurrence of `Write-Warning` cmdlet
+`-WarningVariable`,`-wv`      | store warnings about the command in a variable
+`-WhatIf`,`-wi`               | display a message describing the effect of the command, instead of actually executing it
+`-Confirm`,`-cf`              | prompt for confirmation before executing the command
+
+## Tasks
 #### Comparison with bash
 Bash            | PowerShell | Notes
 :---            | :---       | :---
@@ -103,72 +157,31 @@ Bash            | PowerShell | Notes
 `touch`         | `New-Item`
 `uniq`          | `Select-Object -Unique`
 
+
 #### Filters
 Filtering results can be done with 5 commands:
-  - `Where-Object` (aliased to `where` and `?`): the most commonly used such command
-  - `Select-Object` (aliased to `select`): used to specify specific columns of information to be displayed
-  - `Select-String` (aliased to `sls`)
-  - `Out-GridView`
-  - `ForEach-Object` (aliased to `foreach` and `%`) There are two different ways to construct a `ForEach-Object` statement:
-    1. __Script block__, within which the variable `$_` represents the current object
-    2. __Operation statement__, more naturalistic, where you specify a property value or call a method.
+- `Where-Object` (aliased to `where` and `?`): the most commonly used such command
+- `Select-Object` (aliased to `select`): used to specify specific columns of information to be displayed
+- `Select-String` (aliased to `sls`)
+- `Out-GridView`
+- `ForEach-Object` (aliased to `foreach` and `%`) There are two different ways to construct a `ForEach-Object` statement:
+  1. __Script block__, within which the variable `$_` represents the current object
+  2. __Operation statement__, more naturalistic, where you specify a property value or call a method.
 
-#### Display basic system information
-Syntax                        | Effect
-:---                          | :---
-`$PSDefaultParametersValues`  | hash table that specifies custom default values for any cmdlet or advanced function
-`$PSVersionTable`             | display PowerShell version
-`Get-Alias`                   | display aliases
-`Get-Command`                 | display all installed commands, including aliases, applications, filters, functions, and scripts
-`Get-Help cmd`                | display help file for {cmd}
-`Get-History`                 | display history of inputted commands for the current session
-`Get-Module`                  | display currently loaded PowerShell modules
-`Get-Process`                 | display running processes
-`Get-PSDrive`                 | display mapped drives
-`Get-Service`                 | display services
-`Update-Help`                 | download help files
+#### Credentials
 
-Syntax                        | Effect
-:---                          | :---
-`Get-Alias Definition -eq Get-ChildItem`|display items that point to `Get-ChildItem`
-`Get-Command \| measure`      | piping to `measure` is similar to `wc`, will count lines
-`Get-Command -Module ActiveDirectory`|display cmdlets available under a specified module
-`Get-Command *smb*`           | use a wildcard
-`Get-Module -ListAvailable`   | display installed PowerShell modules
-`Invoke-History`              | run a command from the history
-`New-Alias ip Get-NetIPAddress`|establish a new alias
-`Set-Alias ip Get-NetAdapter` |edit an existing alias
-`New-PSDrive -Name scripts -PSProvider FileSystem -Root "C:\Scripts"`|map a directory to a drive
-`Remove-PSDrive -Name scripts`|remove a drive
-
-### Common parameters
-Option                        | Effect
-:---                          | :---
-`-Debug`,`-db`                | display programmer-level detail about command operation
-`-ErrorAction`                | determine how the cmdlet responds to a non-terminating error
-`-ErrorVariable`,`-ev`        | store errors in specified variable
-`-InformationAction`,`-infa`  | specify action to take at occurrences of `Write-Information` command
-`-InformationVariable`,`-iv`  | store information message passed from `Write-Information` cmdlet
-`-OutVariable`,`-ov`          | store output objects from the command in the specified variable
-`-OutBuffer`,`-ob`            | determine number of objects to accumulate in a buffer before any objects are sent through the pipeline
-`-PipelineVariable`,`-pv`     | store value of the current pipeline element in specified variable
-`-Verbose`,`-vb`              | display detailed operation done by the command
-`-WarningAction`,`-wa`        | specify action to take on occurrence of `Write-Warning` cmdlet
-`-WarningVariable`,`-wv`      | store warnings about the command in a variable
-`-WhatIf`,`-wi`               | display a message describing the effect of the command, instead of actually executing it
-`-Confirm`,`-cf`              | prompt for confirmation before executing the command
-
-### `Get-Help`
-Option            | Effect
----               | ---
-`-Examples`       | display usage examples
-`-Detailed`       | display detailed help for a command
-`-Full`           | display entire help file for a command
-`-Online`         | navigate to online help page for a command
-`-ShowWindow`     | display help output in a window
-
-### `Update-Help`
-Download help files
+Credentials can be stored in a variable and built interactively with `Get-Credential`
+```powershell
+$cred = Get-Credential
+```
+A credential can be built piecemeal by first securely saving a password with `ConvertTo-SecureString`
+```powershell
+$pw = ConvertTo-SecureString "Password" -AsPlainText -Force
+```
+Then construct the credential by using `New-Object`
+```powershell
+$cred = New-Object System.Management.Automation.PSCredential ("FullerP", $pw)
+```
 
 ### Output formatting
 Change output format to `Format-Wide`
@@ -221,10 +234,14 @@ Get-Service | ForEach-Object {Write-Host $_.name}
 ```
 
 ### File manipulation
-Syntax  | Effect
-:---    | :---
-`New-Item -ItemType File -Name filename` | create a new file in the current working directory named `filename`
-`Add-Content C:\path\to\file $content` | append `content` to `file`
+Create a new file in the current working directory named `filename`
+```powershell
+New-Item -ItemType File -Name filename
+```
+Append `content` to `file`
+```powershell
+Add-Content C:\path\to\file $content
+```
 
 ### Hash tables
 **Hash tables** (equivalent to Python dictionaries) can be built with hash literals:
@@ -275,31 +292,7 @@ Removing keys:
 $Hashtable.Remove('One')
 ```
 
-### Control flow
-```powershell
-if ($condition) {
-  ...
-}
-```
-```powershell
-switch ($reference) {
-  $value1 { ... }
-  $value2 { ... }
-}
-```
-
-### Loops
-Pipeline is the defining feature of PowerShell, which allows it to break apart composite objects and act on each element with the `ForEach-Object` cmdlet.
-```powershell
-1..5 | ForEach-Object {$_ + 2} # => @(3,4,5,6,7)
-```
-When values are stored in a variable at the end of a pipeline, it will create an array. `while` and `do while` loops are available, as well as `until` and `do until` loops which operate so long as their condition is **false**.
-```powershell
-$Values = while ($true) {(++$Tick); if ($Tick -gt 2) { break } } # => @(1,2,3)
-$Values = do { 'eat me!' } while ($false) # => @('eat me!')
-```
-
-### Defining functions
+### Scripting
 Functions are declared with the following syntax
 ```powershell
 function Start-PSAdmin {
@@ -381,33 +374,118 @@ Switch off
 __Mandatory parameters__ are declared by preceding the parameter name with `[Parameter(Mandatory=$true)]`. 
 ```powershell
 ```
-## Environment manipulation
 
-### Alias
-Syntax  | Effect
-:---    | :---
-`Get-Alias`                 | display aliases
-`Get-Alias -Definition Get-ChildItem`|display items that point to `Get-ChildItem`
-`New-Alias ip Get-NetIPAddress`|establish a new alias
-`Set-Alias ip Get-NetAdapter`|edit an existing alias
-`Export-Alias -Path alias.ps1 -As Script`|export session aliases to a ".ps1" file
 
-## Services
-### `Start-Service`
-Start the &lt;WinRM&gt; service
+### Control flow
 ```powershell
-Start-Service WinRM
+if ($condition) {
+  ...
+}
 ```
 ```powershell
-sasv winrm
+switch ($reference) {
+  $value1 { ... }
+  $value2 { ... }
+}
 ```
-### `Stop-Service`
-Stop the &lt;WinRM&gt; service
+
+### Loops
+Pipeline is the defining feature of PowerShell, which allows it to break apart composite objects and act on each element with the `ForEach-Object` cmdlet.
 ```powershell
-Stop-Service WinRM
+1..5 | ForEach-Object {$_ + 2} # => @(3,4,5,6,7)
 ```
+When values are stored in a variable at the end of a pipeline, it will create an array. `while` and `do while` loops are available, as well as `until` and `do until` loops which operate so long as their condition is **false**.
 ```powershell
-spsv winrm
+$Values = while ($true) {(++$Tick); if ($Tick -gt 2) { break } } # => @(1,2,3)
+$Values = do { 'eat me!' } while ($false) # => @('eat me!')
+```
+
+## Cmdlets
+### `Enable-PSRemoting`
+### `Enter-PSSession`
+Interact with the specified PowerShell session
+```powershell
+Enter-PSSession -id 1
+```
+Start and enter a new PS session to specified computer with provided credentials. This will change the prompt to show the name of the remote machine in brackets.
+```powershell
+Enter-PSSession -ComputerName o365-dc01 -Credential officeprodemoco\joey
+```
+### `Exit-PSSession`
+End the PowerShell session with the specified computer
+```powershell
+Exit-PSSession -ComputerName demodc
+```
+### `Expand-Archive`
+Decompress archives
+```powershell
+Expand-Archive
+```
+### `Export-Alias`
+Export session aliases to a ".ps1" file
+```powershell
+Export-Alias -Path alias.ps1 -As Script
+```
+### `Format-Volume`
+Full format of specified drive [[16](#sources)]
+```powershell
+Format-Volume -DriveLetter S -FileSystem FAT32 -NewFileSystemLabel SumTips -Full
+```
+### `Get-Alias`
+Display aliases
+```powershell
+Get-Alias
+```
+Display items that point to `Get-ChildItem`
+```powershell
+Get-Alias -Definition Get-ChildItem
+```
+### `Get-Clipboard`
+Interpret items in clipboard as files
+```powershell
+Get-Clipboard -Format FileDropList
+```
+Retrieve various properties of an image in clipboard
+```powershell
+Get-Clipboard -Format Image
+```
+### `Get-Command`
+### `Get-Disk`
+### `Get-Help`
+Option            | Effect
+---               | ---
+`-Examples`       | display usage examples
+`-Detailed`       | display detailed help for a command
+`-Full`           | display entire help file for a command
+`-Online`         | navigate to online help page for a command
+`-ShowWindow`     | display help output in a window
+### `Get-NetFirewallRule`
+Display all firewall rules
+```powershell
+Get-NetFirewallRule
+```
+Display active firewall rules for inbound connections
+```powershell
+Get-NetFirewallRule -Enabled True -Direction Inbound
+```
+Display programs associated with firewall rules
+```powershell
+Get-NetFirewallRule | %{$_.Name; $_ | Get-NetFirewallApplicationFilter}
+```
+### `Get-Partition`
+Display a list of existing partitions, their drive letters, and the disk they are associated with [[16](#sources)]
+```powershell
+Get-Disk | Get-Partition
+```
+### `Get-PSReadlineOption`
+Display options available in the module
+```powershell
+Get-PSReadlineOption
+```
+### `Get-PSSession`
+Display PowerShell sessions
+```powershell
+Get-PSSession
 ```
 ### `Get-Service`
 Display status of &lt;WinRM&gt; service
@@ -417,162 +495,78 @@ Get-Service WinRM
 ```powershell
 gsv winrm
 ```
-
-### Module
-Modules are automatically imported, if available, when you run a command that belongs to one. Or you can manually import them.
-
-Syntax  | Effect
-:---    | :---
-`Install-Module -Name Az -AllowClobber` | Install the __Az__ module
-`Import-Module SmbShare`|import module {SmbShare}
-
-### `$profile`
-Syntax  | Effect
-:---    | :---
-`$profile`|display file of current profile
-`$profile.CurrentUserCurrentHost`| C:\Users\Michael\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1
-`$profile.CurrentUserAllHosts`|C:\Users\Michael\Documents\WindowsPowerShell\profile.ps1
-`$profile.AllUsersAllHosts`|C:\Windows\System32\WindowsPowerShell\v1.0\profile.ps1
-`$profile.AllUsersCurrentHost`|C:\Windows\System32\WindowsPowerShell\v1.0\Microsoft.PowerShell_profile.ps1
-
-## Remote commands
-
-### `Enable-PSRemoting`
-Allow remote PowerShell management
-
-### `PSSession`
-Start a new PowerShell session, connecting to the specified computer
+### `Get-WmiObject`
+View system uptime
 ```powershell
-New-PSSession -ComputerName core02
+Get-WmiObject -Win32_OperatingSystem -ComputerName localhost |
+Select-Object -Property @{n="Last Boot Time";e={[Management.ManagementDateTimeConvert]::ToDateTime($_.LastBootUpTime)}}
 ```
-Display PowerShell sessions
+### `Import-Module`
+Import `SmbShare` module
 ```powershell
-Get-PSSession
+Import-Module SmbShare
 ```
-Interact with the specified PowerShell session
+### `Install-Module`
+Install the `Az` module
 ```powershell
-Enter-PSSession -id 1
+Install-Module -Name Az -AllowClobber
 ```
-End the PowerShell session with the specified computer
+### `Install-WindowsFeature`
+Install Remote Server Adminstration Tools for PowerShell
 ```powershell
-Exit-PSSession -ComputerName demodc
+Install-WindowsFeature -Name RSAT-ADDS -IncludeAllSubFeature
 ```
-Start and enter a new PS session to specified computer with provided credentials. This will change the prompt to show the name of the remote machine in brackets.
+Install Hyper-V
 ```powershell
-Enter-PSSession -ComputerName o365-dc01 -Credential officeprodemoco\joey
+Install-WindowsFeature -Name Hyper-V -IncludeAllSubFeature -IncludeManagementTools -Restart
 ```
-
 ### `Invoke-Command`
 Execute the commands in the block on the machines specified
 ```powershell
 Invoke-Command -ComputerName core01,core02 -Scriptblock {ipconfig /all}
 ```
-
-
-## Hyper-V
-
-Install Hyper-V from PowerShell command-line
+### `Invoke-WebRequest`
+Download a file over HTTP/HTTPS
 ```powershell
-Install-WindowsFeature -Name Hyper-V -IncludeAllSubFeature -IncludeManagementTools -Restart
+Invoke-WebRequest -Uri http://example.com/path/to/file -OutFile \\path\to\local\file
 ```
-
-### `Set-VMMemory`
-Disable dynamic memory on a virtual host (nested virtualization)
+Resume a partial download
 ```powershell
-Set-VMMemory -VMName SRV01 -DynamicMemoryEnabled $false
+Invoke-WebRequest -Uri http://example.com/path/to/file -Resume -Outfile \\path\to\local\file
 ```
-
-### `Set-VMProcessor`
-Configure 2 virtual processors on a virtual host (nested virtualization)
+Transfer a file over FTP/SFTP
 ```powershell
-Set-VMProcessor -VMName SVR01 -Count 2
+Invoke-WebRequest ftp://ftp.example.com/file -Outfile C:\path\to\file -Credential ftpuseraccount
 ```
-
-### `Set-VMNetworkAdapter`
-Turn on MAC address spoofing on a virtual host (nested virtualization)
+Resolve shortened URLs
 ```powershell
-Set-VMNetworkAdapter -VMName SVR01 -Name "NetworkAdapter" -MACAddressSpoofing On
+$Uri = 'short-url/extension' 
+$Web = Invoke-WebRequest -Uri 
+$Uri -UseBasicParsing  $Web.BaseResponse.ResponseUri.AbsoluteUri
 ```
-
-## Credentials
-
-Credentials can be stored in a variable and built interactively with `Get-Credential`
+Scrape links from a website
 ```powershell
-$cred = Get-Credential
+(Invoke-WebRequest -Uri "https://techrepublic.com").Links.Href
 ```
-A credential can be built piecemeal by first securely saving a password with `ConvertTo-SecureString`
+Request data from a website impersonating a browser
 ```powershell
-$pw = ConvertTo-SecureString "Password" -AsPlainText -Force
+Invoke-WebRequest -Uri http://microsoft.com -UserAgent ([Microsoft.PowerShell.Commands.PSUserAgent]::Chrome)
 ```
-Then construct the credential by using `New-Object`
+### `New-Alias`
+Establish a new alias
 ```powershell
-$cred = New-Object System.Management.Automation.PSCredential ("FullerP", $pw)
+New-Alias ip Get-NetIPAddress
 ```
-
-## Clipboard
-
-### `Write-Output`
-Copy text to clipboard
-```powershell
-Write-Output 'Hello' | Set-Clipboard
-```
-
-### `Set-Clipboard`
-Copy text to clipboard
-```powershell
-Write-Output 'Hello' | Set-Clipboard
-```
-
-With `Append` switch parameter, items can be added without clearing the clipboard:
-```powershell
-Write-Output 'Hello' | Set-Clipboard -Append
-```
-
-### `Get-Clipboard`
-Display items in clipboard
-
-Interpret items in clipboard as files
-```powershell
-Get-Clipboard -Format FileDropList
-```
-Retrieve various properties of an image in clipboard
-```powershell
-Get-Clipboard -Format Image
-```
-
 ### `New-Guid`
 Generate a GUID
 ```powershell
 New-Guid
 (New-Guid).Guid | clip
 ```
-
-## DSC
-
-Syntax           | Effect
-:---             | :---
-`Configuration`  | precedes title of script, at top (e.g. `Configuration ContosoSimple`)
-`Ensure`         | property within `WindowsFeature` that can be set to `Present` or `Absent` (e.g. `Ensure = "Present"`)
-`WindowsFeature` | declares code block representing a DSC resource to be installed (e.g. `WindowsFeature IIS`)
-
-## Errors
-The `Throw` keyword generates a terminating error
-
-## Disk
-### `Get-Disk`
-### `Get-Partition`
-Display a list of existing partitions, their drive letters, and the disk they are associated with [[16](#sources)]
+### `New-NetFirewallRule`
+Set a new firewall rule for incoming WinRM connections
 ```powershell
-Get-Disk | Get-Partition
-```
-### `Remove-Partition`
-Remove a partition [[16](#sources)]
-```powershell
-Remove-Partition -DiskNumber 1 -PartitionNumber 1
-```
-Remove a partition without confirmation
-```powershell
-Remove-Partition -DiskNumber 1 -PartitionNumber 1 -Confirm:$false
+New-NetFirewallRule -DisplayName "WinRMHTTP" -Direction Inbound -LocalPort 5985 -Protocol TCP -Action Allow
 ```
 ### `New-Partition`
 Use all available size for a new partition [[16](#sources)]
@@ -583,114 +577,52 @@ Automatically assign a drive letter
 ```powershell
 New-Partition -DiskNumber 1 -UseMaximumSize -AssignDriveLetter
 ```
-### `Format-Volume`
-Full format of specified drive [[16](#sources)]
+### `New-PSSession`
+Start a new PowerShell session, connecting to the specified computer
 ```powershell
-Format-Volume -DriveLetter S -FileSystem FAT32 -NewFileSystemLabel SumTips -Full
+New-PSSession -ComputerName core02
 ```
-
-## Network
-Windows Firewall can be manipulated with `Get-NetFirewallRule` and `Set-NetFirewallRule`
-
-### `Get-NetFirewallRule`
-
-Display all firewall rules
+### `Remove-Partition`
+Remove a partition [[16](#sources)]
 ```powershell
-Get-NetFirewallRule
+Remove-Partition -DiskNumber 1 -PartitionNumber 1
 ```
-
-Display active firewall rules for inbound connections
+Remove a partition without confirmation
 ```powershell
-Get-NetFirewallRule -Enabled True -Direction Inbound
+Remove-Partition -DiskNumber 1 -PartitionNumber 1 -Confirm:$false
 ```
-
-Display programs associated with firewall rules
+### `Set-Alias`
+Edit an existing alias
 ```powershell
-Get-NetFirewallRule | %{$_.Name; $_ | Get-NetFirewallApplicationFilter}
+Set-Alias ip Get-NetAdapter
 ```
-
-### `New-NetFirewallRule`
-
-Set a new firewall rule for incoming WinRM connections
+### `Set-Clipboard`
+Copy text to clipboard
 ```powershell
-New-NetFirewallRule -DisplayName "WinRMHTTP" -Direction Inbound -LocalPort 5985 -Protocol TCP -Action Allow
+Write-Output 'Hello' | Set-Clipboard
 ```
-
+With `Append` switch parameter, items can be added without clearing the clipboard:
+```powershell
+Write-Output 'Hello' | Set-Clipboard -Append
+```
 ### `Set-NetFirewallRule`
-
 Set firewall rule for COM+ Network Access (DCOM-In)
 ```powershell
 Set-NetFirewallRule -name COMPlusNetworkAccess-DCOM-In -Enabled True
 ```
-
 Set firewall rule for Remote Event Log Management (NP-In)
 ```powershell
 Set-NetFirewallRule -name RemoteEventLogSvc-In-TCP -Enabled True
 ```
-
 Set firewall rule for Remote Event Log Management (RPC)
 ```powershell
 Set-NetFirewallRule -name RemoteEventLogSvc-NP-In-TCP -Enabled True
 ```
-
 Set firewall rule for Remote Event Log Management (RPC-EPMAP)
 ```powershell
 Set-NetFirewallRule -name RemoteEventLogSvc-RPCSS-TCP -Enabled True
 ```
-
-### `Install-WindowsFeature`
-
-Install Remote Server Adminstration Tools for PowerShell
-```powershell
-Install-WindowsFeature -Name RSAT-ADDS -IncludeAllSubFeature
-```
-
-### `Invoke-WebRequest`
-Download a file over HTTP/HTTPS
-```powershell
-Invoke-WebRequest -Uri http://example.com/path/to/file -OutFile \\path\to\local\file
-```
-
-Resume a partial download
-```powershell
-Invoke-WebRequest -Uri http://example.com/path/to/file -Resume -Outfile \\path\to\local\file
-```
-
-Transfer a file over FTP/SFTP
-```powershell
-Invoke-WebRequest ftp://ftp.example.com/file -Outfile C:\path\to\file -Credential ftpuseraccount
-```
-
-Resolve shortened URLs
-```powershell
-$Uri = 'short-url/extension' 
-$Web = Invoke-WebRequest -Uri 
-$Uri -UseBasicParsing  $Web.BaseResponse.ResponseUri.AbsoluteUri
-```
-
-Scrape links from a website
-```powershell
-(Invoke-WebRequest -Uri "https://techrepublic.com").Links.Href
-```
-
-Request data from a website impersonating a browser
-```powershell
-Invoke-WebRequest -Uri http://microsoft.com -UserAgent ([Microsoft.PowerShell.Commands.PSUserAgent]::Chrome)
-```
-
-## Others
-
-### `Expand-Archive`
-Extract archives
-```powershell
-Expand-Archive
-```
-
-### `PSReadlineOption`
-Display options available in the module
-```powershell
-Get-PSReadlineOption
-```
+### `Set-PSReadlineOption`
 Set history to only save unique commands
 ```powershell
 Set-PSReadlineOption -HistoryNoDuplicates:$true
@@ -699,16 +631,49 @@ Enable bash-like ambiguous command completion, where tab brings up a menu of mat
 ```powershell
 Set-PSReadlineOption -EditMode Emacs
 ```
-Change &lt;Tab&gt; behavior back to default for PowerShell
+Change `<Tab>` behavior back to default for PowerShell
 ```powershell
 Set-PSReadlineOption -EditMode Windows
 ```
-### `Get-WmiObject`
-View system uptime
+### `Set-VMMemory`
+Disable dynamic memory on a virtual host (nested virtualization)
 ```powershell
-Get-WmiObject -Win32_OperatingSystem -ComputerName localhost |
-Select-Object -Property @{n="Last Boot Time";e={[Management.ManagementDateTimeConvert]::ToDateTime($_.LastBootUpTime)}}
+Set-VMMemory -VMName SRV01 -DynamicMemoryEnabled $false
 ```
+### `Set-VMNetworkAdapter`
+Turn on MAC address spoofing on a virtual host (nested virtualization)
+```powershell
+Set-VMNetworkAdapter -VMName SVR01 -Name "NetworkAdapter" -MACAddressSpoofing On
+```
+### `Set-VMProcessor`
+Configure 2 virtual processors on a virtual host (nested virtualization)
+```powershell
+Set-VMProcessor -VMName SVR01 -Count 2
+```
+### `Start-Service`
+Start the `WinRM` service
+```powershell
+Start-Service WinRM
+```
+```powershell
+sasv winrm
+```
+### `Stop-Service`
+Stop the `WinRM` service
+```powershell
+Stop-Service WinRM
+```
+```powershell
+spsv winrm
+```
+### `Update-Help`
+Download help files
+### `Write-Output`
+Copy text to clipboard
+```powershell
+Write-Output 'Hello' | Set-Clipboard
+```
+
 
 ## Sources
 1. Berkouwer, Sander. _Active Directory Administration Cookbook_. [ADAC](../sources/adac.md).
@@ -727,3 +692,19 @@ Select-Object -Property @{n="Last Boot Time";e={[Management.ManagementDateTimeCo
 14. "About Automatic Variables". [Microsoft Docs](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-6): 2019/02/26.
 15. "3 ways to unzip compressed files using PowerShell". [Web](https://ridicurious.com/2019/07/29/3-ways-to-unzip-compressed-files-using-powershell/)
 16. "Manage [disk](#disk) partitions with Windows PowerShell". [SumTips.com](https://sumtips.com/tips-n-tricks/manage-disk-partitions-with-windows-powershell/)
+
+[Enable-PSRemoting]: #enable-psremoting "Allow remote PowerShell management"
+[Enter-PSSession]: #enter-pssession "Interact with the specified PowerShell session"
+[Exit-PSSession]: #exit-pssession "End the PowerShell session with the specified computer"
+[Expand-Archive]: #expand-archive "Decompress archives"
+[Get-Alias]: #alias "Display aliases"
+[Get-Clipboard]: #get-clipboard "Display items in clipboard"
+[Get-Command]: # "Display all installed commands, including aliases, applications, filters, functions, and scripts"
+[Get-Help]: #get-help "Display help file for cmdlets"
+[Get-History]: # "Display history of inputted commands for the current session"
+[Get-Module]: # "Display currently loaded PowerShell modules"
+[Get-Process]: # "Display running processes"
+[Get-PSDrive]: # "Display mapped drives"
+[Get-Service]: #get-service "Display services"
+[Import-Module]: #import-module "Manually import a module, rather than waiting for it to load dynamically when using one of its cmdlets"
+[Update-Help]: #update-help "Download help files"
