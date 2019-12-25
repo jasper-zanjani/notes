@@ -1,8 +1,15 @@
 # Command Prompt
 
-\#    | Commands sorted alphabetically
----   | ---
-A-Z   | [`arp`](#arp) [`bcdedit`](#bcdedit) [`bootrec`](#bootrec) [`ipconfig`](#ipconfig) [`nbtstat`](#nbtstat) [`netsh`](#netsh) [`route`](#route) [`systeminfo`](#systeminfo) [`tracert`](#tracert) [`traceroute`](#tracert) [`winrm`](#winrm)
+\#      | Commands sorted alphabetically
+---     | ---
+A       | [`arp`](#arp) 
+B       | [`bcdedit`][bcdedit] [`bootrec`](#bootrec)
+I       | [`ipconfig`](#ipconfig) 
+N       | [`nbtstat`](#nbtstat) [`netsh`](#netsh) 
+R       | [`route`](#route) 
+S       | [`systeminfo`](#systeminfo) 
+T       | [`tracert`](#tracert) [`traceroute`](#tracert) 
+W       | [`winrm`](#winrm)
 
 ### `arp`
 Used to view and work with the IP adress to MAC address resolution cache.
@@ -22,6 +29,15 @@ Restore GRUB menu on a Fedora installation
 ```cmd
 bcdedit /set {bootmgr} path \EFI\fedora\shim.efi
 ```
+Enable **Test Signing Mode** [^](https://www.howtogeek.com/167723/how-to-disable-driver-signature-verification-on-64-bit-windows-8.1-so-that-you-can-install-unsigned-drivers/ "howtogeek.com - 'How to disable driver signature verification on 64-bit Windows 8.1 so that you can install unsigned drivers'")
+```cmd
+bcdedit /set testsign on
+```
+Disable **Test Signing Mode** [^](https://www.howtogeek.com/167723/how-to-disable-driver-signature-verification-on-64-bit-windows-8.1-so-that-you-can-install-unsigned-drivers/ "howtogeek.com - 'How to disable driver signature verification on 64-bit Windows 8.1 so that you can install unsigned drivers'")
+```cmd
+bcdedit /set testsign off
+```
+
 ### `bootrec`
 Windows Recovery Environment command that repairs a system partition
 Use when boot sector not found
@@ -109,3 +125,5 @@ winrm get winrm/config
 A. "Practice Lab: CompTIA Security+ (SY0-501)". [Web](https://pts.measureup.com/web/index.php#dashboard.php)
 
 Lammle, Todd. _CompTIA Network+ Study Guide: Exam N10-005_. 2012.
+
+[bcdedit]: #bcdedit "Boot configuration data editor"
