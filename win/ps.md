@@ -1,39 +1,31 @@
 # PowerShell
-
-Topic                                                   | Syntax
----                                                     | ---
-[Automatic variables](#automatic-variables)             | `$$` `$?` `$^` `$_` `$PSDefaultParametersValues` `$PSItem` `$PSVersionTable`
-[Clipboard](#clipboard)                                 | [`Get-Clipboard`](#get-clipboard) [`Set-Clipboard`](#set-clipboard)
-[Comparison operators](#comparison-operators)           | `-eq` `-ne` `-gt` `-ge` `-lt` `-le` [`-like`](#comparison-operators) `-notlike` `-match` `-notmatch` `-contains` `-notcontains` `in` `notin` `-replace` `-is` `-isnot`
-[DSC](#dsc)                                             | `Configuration` `Ensure` `WindowsFeature`
-[Disks and file systems](#disk)                         | 
-[Formatting](#output-formatting)                        | `Format-List` `Format-Table` `Format-Wide`
-[Hyper-V](#hyper-v)                                     | [`Set-VMMemory`](#set-vmmemory) [`Set-VMNetworkAdapter`](#set-vmnetworkadapter) [`Set-VMProcessor`](#set-vmprocessor)
-[Network](#network)                                     | [`Get-NetFirewallRule`](#get-netfirewallrule) [`New-NetFirewallRule`](#new-netfirewallrule) [`Set-NetFirewallRule`](#set-netfirewallrule) [`Invoke-WebRequest`](#invoke-webrequest)
-[Profile](#$profile)                                    | 
-
-
+#### Table of contents
 \#    | Cmdlet nouns sorted alphabetically
 ---   | ---
-A     | **`Alias`** [`Export`](#export-alias) [`Get`](#get-alias) [`New`](#new-alias )[`Set`](#set-alias) &bull; **`Archive`** [`Expand`](#expand-archive) &bull; 
-C     | **`Clipboard`** [`Get`](#get-clipboard) [`Set`](#set-clipboard) &bull; **`Credential`** [`Get`](#credentials) &bull; 
+A     | **`Alias`** [`Export`](#export-alias) [`Get`](#get-alias) [`New`](#new-alias )[`Set`](#set-alias) &bull; **`Archive`** [`Expand`](#expand-archive)
+C     | **`ChildItem`** [`Get`][Get-ChildItem] **`Clipboard`** [`Get`](#get-clipboard) [`Set`](#set-clipboard) &bull; **`Credential`** [`Get`](#credentials) **`Csv`** [`Export`][Export-Csv] [`Import`][Import-Csv]
 D     | **`Disk`** [`Get`](#get-disk)
+E     | **`ExecutionPolicy`** [`Set`][Set-ExecutionPolicy]
 G     | **`Guid`** [`New`](#new-guid)
 H     | **`Help`** [`Get`](#get-help) [`Update`](#update-help)
+L     | **`List`** [`Format`][Format-List] &bull; **`Location`** [`Set`][Set-Location]
 M     | **`Module`** [`Import`](#module) [`Install`](#module)
-N     | **`NetFirewallRule`** [`Get`](#get-netfirewallrule) [`New`](#new-netfirewallrule) [`Set`](#set-netfirewallrule) &bull; 
-O     | **`Output`** [`Write`](#write-output)
+N     | **`NetFirewallRule`** [`Get`](#get-netfirewallrule) [`New`](#new-netfirewallrule) [`Set`](#set-netfirewallrule) &bull; **`Null`** [`Out`][Out-Null]
+O     | **`Object`** [`ForEach`][ForEach-Object] [`Select`][Select-Object] [`Where`][Where-Object] **`Output`** [`Write`](#write-output)
 P     | **`Partition`** [`Get`](#get-partition) [`New`](#new-partition) [`Remove`](#remove-partition) &bull; **`PSReadlineOption`** [`Get`](#get-psreadlineoption) [`Set`](#set-psreadlineoption) &bull; **`PSSession`** [`Enter`](#pssession) [`Exit`](#pssession) [`Get`](#pssession) [`New`](#pssession)
 S     | **`Service`** [`Get`](#service) [`Start`](#service) [`Stop`](#service) &bull;
-V     | **`VMMemory`** [`Set`](#set-vmmemory) &bull; **`VMNetworkAdapter`** [`Set`](#set-vmnetworkadapter) &bull; **`VMProcessor`** [`Set`](#set-vmprocessor) &bull;
+T     | **`Table`** [`Format`][Format-Table]
+V     | **`VMMemory`** [`Set`](#set-vmmemory) &bull; **`VMNetworkAdapter`** [`Set`](#set-vmnetworkadapter) &bull; **`VMProcessor`** [`Set`](#set-vmprocessor)
 W     | **`WebRequest`** [`Invoke`](#invoke-webrequest) &bull; **`WMIObject`** [`Get`](#get-wmiobject)
 
 Topic                 | Cmdlets
 ---                   | ---
 Clipboard             | [`Get-Clipboard`](#get-clipboard) [`New-Guid`](#new-guid) [`Set-Clipboard`](#set-clipboard) [`Write-Output`](#write-output)
 Disk management       | [`Format-Volume`](#format-volume) [`Get-Disk`](#get-disk) [`Get-Partition`](#get-partition) [`New-Partition`](#new-partition) [`Remove-Partition`](#remove-partition)
+Environment           | [`Get-Module`][Get-Module] [`Import-Module`][Import-Module] [`Set-ExecutionPolicy`][Set-ExecutionPolicy] [`Set-Location`][Set-Location]
 Filters               | [`Where-Object`](#filters) [`Select-Object`](#filters) [`Select-String`](#filters) [`Out-GridView`](#filters) [`ForEach-Object`](#filters)
 Firewall              | [`Get-NetFirewallRule`](#get-netfirewallrule) [`New-NetFirewallRule`](#new-netfirewallrule) [`Set-NetFirewallRule`](#set-netfirewallrule)
+Formatting            | [`Format-List`](#output-formatting) [`Format-Table`](#output-formatting) [`Format-Wide`](#output-formatting)
 Hyper-V               | [`Set-VMMemory`](#set-vmmemory) [`Set-VMNetworkAdapter`](#set-vmnetworkadapter) [`Set-VMProcessor`](#set-vmprocessor)
 Remote administration | [`Enable-PSRemoting`](#enable-psremoting) [`Invoke-Command`](#invoke-command)
 System administration | [`Get-Alias`](#get-alias) [`Get-Command`](#get-command) `Get-Help` `Get-History` `Get-Module` `Get-Process` `Get-PSDrive` `Get-Service` `Update-Help`
@@ -156,8 +148,6 @@ Bash            | PowerShell | Notes
 `tail`          | `Get-Content -Tail`
 `touch`         | `New-Item`
 `uniq`          | `Select-Object -Unique`
-
-
 #### Filters
 Filtering results can be done with 5 commands:
 - `Where-Object` (aliased to `where` and `?`): the most commonly used such command
@@ -167,9 +157,7 @@ Filtering results can be done with 5 commands:
 - `ForEach-Object` (aliased to `foreach` and `%`) There are two different ways to construct a `ForEach-Object` statement:
   1. __Script block__, within which the variable `$_` represents the current object
   2. __Operation statement__, more naturalistic, where you specify a property value or call a method.
-
 #### Credentials
-
 Credentials can be stored in a variable and built interactively with `Get-Credential`
 ```powershell
 $cred = Get-Credential
@@ -182,7 +170,6 @@ Then construct the credential by using `New-Object`
 ```powershell
 $cred = New-Object System.Management.Automation.PSCredential ("FullerP", $pw)
 ```
-
 ### Output formatting
 Change output format to `Format-Wide`
 ```powershell
@@ -232,7 +219,6 @@ Loop through each object in output of `Get-Service` and send the `name` field to
 ```powershell
 Get-Service | ForEach-Object {Write-Host $_.name}
 ```
-
 ### File manipulation
 Create a new file in the current working directory named `filename`
 ```powershell
@@ -242,7 +228,6 @@ Append `content` to `file`
 ```powershell
 Add-Content C:\path\to\file $content
 ```
-
 ### Hash tables
 **Hash tables** (equivalent to Python dictionaries) can be built with hash literals:
 ```powershell
@@ -291,7 +276,6 @@ Removing keys:
 ```powershell
 $Hashtable.Remove('One')
 ```
-
 ### Scripting
 Functions are declared with the following syntax
 ```powershell
@@ -374,8 +358,6 @@ Switch off
 __Mandatory parameters__ are declared by preceding the parameter name with `[Parameter(Mandatory=$true)]`. 
 ```powershell
 ```
-
-
 ### Control flow
 ```powershell
 if ($condition) {
@@ -388,7 +370,6 @@ switch ($reference) {
   $value2 { ... }
 }
 ```
-
 ### Loops
 Pipeline is the defining feature of PowerShell, which allows it to break apart composite objects and act on each element with the `ForEach-Object` cmdlet.
 ```powershell
@@ -426,6 +407,8 @@ Export session aliases to a ".ps1" file
 ```powershell
 Export-Alias -Path alias.ps1 -As Script
 ```
+### `Export-Csv`
+### `Export-CliXml`
 ### `Format-Volume`
 Full format of specified drive [[16](#sources)]
 ```powershell
@@ -440,6 +423,7 @@ Display items that point to `Get-ChildItem`
 ```powershell
 Get-Alias -Definition Get-ChildItem
 ```
+### `Get-ChildItem`
 ### `Get-Clipboard`
 Interpret items in clipboard as files
 ```powershell
@@ -459,6 +443,7 @@ Option            | Effect
 `-Full`           | display entire help file for a command
 `-Online`         | navigate to online help page for a command
 `-ShowWindow`     | display help output in a window
+### `Get-Member`
 ### `Get-NetFirewallRule`
 Display all firewall rules
 ```powershell
@@ -501,6 +486,8 @@ View system uptime
 Get-WmiObject -Win32_OperatingSystem -ComputerName localhost |
 Select-Object -Property @{n="Last Boot Time";e={[Management.ManagementDateTimeConvert]::ToDateTime($_.LastBootUpTime)}}
 ```
+### `Import-CliXml`
+### `Import-Csv`
 ### `Import-Module`
 Import `SmbShare` module
 ```powershell
@@ -582,6 +569,7 @@ Start a new PowerShell session, connecting to the specified computer
 ```powershell
 New-PSSession -ComputerName core02
 ```
+### `Out-Null`
 ### `Remove-Partition`
 Remove a partition [[16](#sources)]
 ```powershell
@@ -605,6 +593,8 @@ With `Append` switch parameter, items can be added without clearing the clipboar
 ```powershell
 Write-Output 'Hello' | Set-Clipboard -Append
 ```
+### `Set-ExecutionPolicy`
+### `Set-Location`
 ### `Set-NetFirewallRule`
 Set firewall rule for COM+ Network Access (DCOM-In)
 ```powershell
@@ -698,13 +688,31 @@ Write-Output 'Hello' | Set-Clipboard
 [Exit-PSSession]: #exit-pssession "End the PowerShell session with the specified computer"
 [Expand-Archive]: #expand-archive "Decompress archives"
 [Get-Alias]: #alias "Display aliases"
+[Get-ChildItem]: #get-childitem "Get items in one or more locations"
 [Get-Clipboard]: #get-clipboard "Display items in clipboard"
-[Get-Command]: # "Display all installed commands, including aliases, applications, filters, functions, and scripts"
+[Get-Command]: #get-command "Display all installed commands, including aliases, applications, filters, functions, and scripts (alias: gcm)"
 [Get-Help]: #get-help "Display help file for cmdlets"
 [Get-History]: # "Display history of inputted commands for the current session"
+[Get-Member]: #get-member "Display properties and methods of a PowerShell object (alias: gm)"
 [Get-Module]: # "Display currently loaded PowerShell modules"
 [Get-Process]: # "Display running processes"
 [Get-PSDrive]: # "Display mapped drives"
-[Get-Service]: #get-service "Display services"
-[Import-Module]: #import-module "Manually import a module, rather than waiting for it to load dynamically when using one of its cmdlets"
+[Get-PSSnapin]: # "Display currently loaded snapins (.NET assemblies containing a collection of cmdlets and/or providers for use within PowerShell) - last supported in PowerShell 5.1"
+[Add-PSSnapin]: # "Load a given list of snap-ins (.NET assemblies containing a collection of cmdlets and/or providers for use within PowerShell) either by name or via the pipeline - last supported in PowerShell 5.1"
+[Get-Service]: #get-service "Display services (alias: gsv)"
+[Import-Module]: #import-module "Manually import a module, rather than waiting for it to load dynamically when using one of its cmdlets (alias: ipmo)"
+[Set-ExecutionPolicy]: #set-executionpolicy "Change PowerShell execution policy for Windows computers (Windows only)"
+[Set-Location]: #set-location "Set present working directory (alias: cd)"
 [Update-Help]: #update-help "Download help files"
+
+[Format-List]: #output-formatting "Display output in list style (alias: fl)"
+[Format-Table]: #output-formatting "Display output in table style (alias: ft)"
+[Out-Null]: #out-null "Dispose of information piped to it, in lieu of displaying it"
+[ForEach-Object]: #filters "(alias: %)"
+[Where-Object]: #filters "(alias: ?)"
+[Select-Object]: #filters "(alias: select)"
+
+[Export-Csv]: #export-csv "Export PowerShell objects to CSV"
+[Import-Csv]: #import-csv "Import CSV files as PowerShell objects"
+[Export-CliXml]: #export-clixml "Serialize a PowerShell object as a Common Language Infrastructure (CLI) XML file"
+[Import-CliXml]: #import-clixml "Import a Common Language Infrastructure (CLI) XML file with data that represents Microsoft .NET Framework objects and create PowerShell objects from it"
