@@ -20,21 +20,20 @@
 17. [Upgrading to Windows Server 2003 R2](# "Outlines the process to upgrade your existing Active Directory to Windows Server 2003 R2.")
 18. [Upgrading to Windows Server 2008](# "Outlines the process to upgrade your existing Active Directory to Windows Server 2008.")
 19. [Integrating Microsoft Exchange](# "Covers some of the important Active Directory-related issues when implementing Microsoft Exchange.")
-20. [Active Directory Lightweight Directory Service (a.k.a. ADAM)](# "Introduces Active Directory Lightweight Directory Services (AD LDS, formerly ADAM).")
-[AD LDS][AD LDS]
-1.  [Scripting with ADSI](# "Introduces ADSI scripting by leading you through a series of step-by-step examples.")
-2.  [IADs and the Property Cache](# "Delves into the concept of the property cache used extensively by ADSI and shows you how to properly manipulate any attribute of any object within it.")
-3.  [Using ADO for searching](# "Demonstrates how to make use of a technology normally reserved for databases and now extended to allow rapid searching for objects in Active Directory.")
-4.  [Users and groups](# "Gives you the lowdown on how to rapidly create users and groups, giving them whatever attributes you desire.")
-5.  [Permissions and auditing](# "Describes how each object contains its own list of permissions and auditing entries that governs how it can be accessed and how access is logged.")
-6.  [Extending the Schema and the Active Directory snap-ins](# "Covers the creation of new classes and attributes programmatically in the schema, and modification of the existing Active Directory snap-ins to perform additional customized functions.")
-7.  [Scripting with WMI](# "Gives a quick overview of WMI and goes through several examples for managing a system, including services, the registry, and the event log. Accessing AD with WMI is also covered, along with the TrustMon and Replication WMI Providers.")
-8.  [Scripting DNS](# "Describes how to manipulate DNS server configuration, zones, and resource records with the WMI DNS Provider.")
-9.  [Programming the Directory with the .NET framework](# "Starts off by providing some background information on the .NET Framework and then dives into several examples using the System.DirectoryServices namespaces with VB.NET.")
-10. [PowerShell Basics](# "Provides a jumpstart to Windows PowerShell and a quick reference for PowerShell scripting concepts.") &bull; 
-11. [Scripting Active Directory with PowerShell](# "Describes how to manage and manipulate Active Directory using Windows PowerShell.")
-12. [Scripting Basic Exchange 2003 tasks](# "Tackles common Active Directory-related user and group management tasks for Microsoft Exchange 2000/2003.")
-13. [Scripting Basic Exchange 2007 tasks](# "Tackles common Active Directory-related tasks for Microsoft Exchange 2007 using Windows PowerShell.")
+20. [Active Directory Lightweight Directory Service (a.k.a. ADAM)](# "Introduces Active Directory Lightweight Directory Services (AD LDS, formerly ADAM).") [AD LDS][AD LDS]
+21. [Scripting with ADSI](# "Introduces ADSI scripting by leading you through a series of step-by-step examples.")
+22. [IADs and the Property Cache](# "Delves into the concept of the property cache used extensively by ADSI and shows you how to properly manipulate any attribute of any object within it.")
+23. [Using ADO for searching](# "Demonstrates how to make use of a technology normally reserved for databases and now extended to allow rapid searching for objects in Active Directory.")
+24. [Users and groups](# "Gives you the lowdown on how to rapidly create users and groups, giving them whatever attributes you desire.")
+25. [Permissions and auditing](# "Describes how each object contains its own list of permissions and auditing entries that governs how it can be accessed and how access is logged.")
+26. [Extending the Schema and the Active Directory snap-ins](# "Covers the creation of new classes and attributes programmatically in the schema, and modification of the existing Active Directory snap-ins to perform additional customized functions.")
+27. [Scripting with WMI](# "Gives a quick overview of WMI and goes through several examples for managing a system, including services, the registry, and the event log. Accessing AD with WMI is also covered, along with the TrustMon and Replication WMI Providers.")
+28. [Scripting DNS](# "Describes how to manipulate DNS server configuration, zones, and resource records with the WMI DNS Provider.")
+29. [Programming the Directory with the .NET framework](# "Starts off by providing some background information on the .NET Framework and then dives into several examples using the System.DirectoryServices namespaces with VB.NET.")
+30. [PowerShell Basics](# "Provides a jumpstart to Windows PowerShell and a quick reference for PowerShell scripting concepts.") &bull; 
+31. [Scripting Active Directory with PowerShell](# "Describes how to manage and manipulate Active Directory using Windows PowerShell.")
+32. [Scripting Basic Exchange 2003 tasks](# "Tackles common Active Directory-related user and group management tasks for Microsoft Exchange 2000/2003.")
+33. [Scripting Basic Exchange 2007 tasks](# "Tackles common Active Directory-related tasks for Microsoft Exchange 2007 using Windows PowerShell.")
 
 #### Table of Contents, 5th edition
 1. A brief introduction
@@ -67,7 +66,7 @@ LDAP originated in 1993 as a lighter-weight alternative to [X.500](#glossary "IT
 Active Directory, like its predecessor WinNT, provides directory services; [`dcpromo.exe`](#glossary "wizard that promotes a member server to domain controller") can be used to promote and demote domain controllers.\
 Microsoft's first [NOS](#glossary "networked environment in which various types of resources, such as user, group, and computer accounts, are stored in a central repository that is controlled by administrators and accessible to end users") was WinNT 3.0, combining features of LAN Manager protocols and OS/2 (1990). NT allowed administrative delegation only at the domain, but Active Directory allows administrators to define administrative boundaries at the forest, domain, or Organizational Unit.\
 In Active Directory, all domains within a forest trust each other via **transitive trust**, which results in a [**Complete-trust**](#glossary "Windows NT domain model where any domain could create accounts, and each could access shared resources in any other domain") model within the forest. Domain models available in NT included [Single-domain](#glossary "Windows NT domain model with only one domain and no trusts"), 
-[Single-master](#glossary "Windows NT domain model with a single user (or account) domain and multiple resource domains, each of which had one-way trusts with the user domain"), and [Multimaster](#glossary "Windows NT domain model with multiple user domains (each of which having two-way trust with the others), and multiple resource domains (each of which had one-way trust with every user domain); each trust had to be manually set") [[Desmond][Desmond2009]: 8-9]
+[Single-master](#glossary "Windows NT domain model with a single user (or account) domain and multiple resource domains, each of which had one-way trusts with the user domain"), and [Multimaster](#glossary "Windows NT domain model with multiple user domains (each of which having two-way trust with the others), and multiple resource domains (each of which had one-way trust with every user domain); each trust had to be manually set") [[^][Desmond2009]: 8-9]
 
 Active Directory Schemas are [extensible](#glossary "schema to which new object types may be added"), whereas NT schemas were not.
 
@@ -77,8 +76,8 @@ Name resolution | [WINS](#glossary "obsolete system that resolves NetBIOS names 
 Database        | [SAM](#glossary "\"Security Accounts Manager\", NT database with a maximum recommended size of 40 MB") | [ESE](#glossary "\"Extensible Storage Engine\", Exchange database which provided the basis for Active Directory, developed to hold millions of objects with a maximum database size of 16 TB")
 
 #### Windows Server 2003
-The concept of [mixed](#glossary "Windows 2000 operation mode that allows Win2k and WinNT domain controllers to coexist, but does not support universal or nested groups") and [native](#glossary "Windows 2000 operation mode that offers support for universal groups, nested groups, and transitive trust relationships but no support for WinNT domain controllers") operation modes introduced in Windows Server 2000 was further refined into that of domain and forest [functional levels](#functional-levels "determines available Active Directory domain or forest capabilities") in Windows Server 2003. [[Desmond][Desmond2009]: 10]\
-Windows Server 2003 introduced several optional components: [ADAM][ADAM], [ADFS](#glossary "\"Active Directory Federated Services\", standards-based technology that enables distributed identification, authentication, and authorization across organizational and platform boundaries"), and [IMU](#glossary "\"Identity Management for Unix\", manage user accounts and passwords on Windows and Unix via NIS; automatically synchronize passwords between Windows and Unix"). [[Desmond][Desmond2009]: 14]
+The concept of [mixed](#glossary "Windows 2000 operation mode that allows Win2k and WinNT domain controllers to coexist, but does not support universal or nested groups") and [native](#glossary "Windows 2000 operation mode that offers support for universal groups, nested groups, and transitive trust relationships but no support for WinNT domain controllers") operation modes introduced in Windows Server 2000 was further refined into that of domain and forest [functional levels](#functional-levels "determines available Active Directory domain or forest capabilities") in Windows Server 2003. [[^][Desmond2009]: 10]\
+Windows Server 2003 introduced several optional components: [ADAM][ADAM], [ADFS](#glossary "\"Active Directory Federated Services\", standards-based technology that enables distributed identification, authentication, and authorization across organizational and platform boundaries"), and [IMU](#glossary "\"Identity Management for Unix\", manage user accounts and passwords on Windows and Unix via NIS; automatically synchronize passwords between Windows and Unix"). [[^][Desmond2009]: 14]
 
 #### Windows Server 2008
 Windows Server 2008 introduced [**RODC**][RODC]s and **Server Core**.
@@ -87,13 +86,25 @@ Windows Server 2008 introduced [**RODC**][RODC]s and **Server Core**.
 #### Objects
 Active Directory objects can be either [leaf node](#glossary "also 'non-container', Active Directory object which does not contain any other objects")s or [container](#glossary "Active Directory object which contains other objects")s and are stored in a [DIT](#glossary "\"Directory Information Tree\", ESE database file that stores Active Directory objects in flat database rows and columns") file.\
 [GUID](#glossary "\"Globally Unique Identifier\", 128-bit number assigned to objects by the system at the time of their creation; Microsoft implementation of the UUID concept")s and
-[distinguished names](#distinguished-names "(DN), hierarchical paths used to uniquely reference any object in LDAP or Active Directory") are used to uniquely identify objects in Active Directory. [[Desmond][Desmond2009]: 17-19]
+[distinguished names](#distinguished-names "(DN), hierarchical paths used to uniquely reference any object in LDAP or Active Directory") are used to uniquely identify objects in Active Directory. [[^][Desmond2009]: 17-19]
 
-#### Domains and domain trees
+#### Distinuished name
+Distinguished names for AD objects are normally represented as a string of comma-delimited prefix-name pairs separated by `=`. The DN of `mycorp.com` would look like:
+```
+dc=mycorp,dc=com
+```
+Active Directory supports the [`CN`](#distinguished-name "LDAPv3 attribute prefix for common names"), [`L`](#distinguished-name "LDAPv3 attribute prefix for locality names"), [`O`](#distinguished-name "LDAPv3 attribute prefix for organization names"), [`OU`](#distinguished-name "LDAPv3 attribute prefix for organizational unit names"), [`C`](#distinguished-name "LDAPv3 attribute prefix for country names"), and [`DC`](#distinguished-name "LDAPv3 attribute prefix for domain components") prefixes.
+[RDN](#distinguished-name "\"relative distinguished name\", name used to uniquely reference an object within its parent container in the directory")s must be unique within the container in which they exist. [[^][Desmond2009]: 19-20]
+
+#### Domain
+A [DC](#domain "\"domain controller\", server that responds to security authentication requests within a Windows Server domain") can be authoritative for one and only one domain. [Domain tree](#domain "series of domains connected together hierarchically, using a contiguous naming scheme")s ease management and access to resources. [[^][Desmond2009]: 21]
 #### Forests
 #### Organizational Units
-#### Global Catalog
+#### GC
+[Global Catalog](#gc "read-only catalog of all objects in a forest which contains a subset of attributes for each object; used to perform forest-wide searches") is accessible via LDAP over port 3268. [[^][Desmond2009]: 25]
+
 #### FSMO
+[FSMO](#fsmo "\"Flexible Single Master Operator\", server that is master for a particular role or function") roles include [Schema Master](#fsmo "forest-wide domain controller role allowing changes to be made to the Active Directory Schema"), [Domain Naming Master](#fsmo "forest-wide domain controller role that controls changes to the forest-wide namespace"), [PDC Emulator](#fsmo "\"Primary Domain Controller Emulator\", domain-wide domain controller role replicates the Windows NT SAM database to Windows NT 4.0 and Windows 3.51 BDCs"), [RID Master](#fsmo "\"Relative-Identifier Master\", domain-wide domain controller role that maintains a pool of unique RID values to ensure that all SIDs in a domain are unique"), and [Infrastructure Master](#fsmo "domain-wide domain controller role that maintains references to objects in other domains ('phantoms')").
 #### Time synchronization
 #### Functional levels
 Functional levels could not be downgraded to a lower number once set until WS 2008 R2.
@@ -122,17 +133,13 @@ Well-known RIDs
 - `513` Users
 - `512` Administrators
 
-
-#### Distinguished names
-DNs are represented using a syntax defined in LDAP standards. For example, the 
-
 ## RODC
 ## AD LDS
-AD LDS (previously known as [ADAM](#ad-lds "\"Active Directory Application Mode\", standalone LDAP service similar to full Active Directory, but without DNS, Group Policy, or Kerberos requirements (ref. AD LDS)")) offers a pared-down version of AD that is easy to set up and tear down. It was first released in November 2003 and offers security benefits because it doesn't enable so many services by default. It was renamed AD LDS with the release of Windows Server 2008. [[Desmond][Desmond2009]: 457-458]\
+AD LDS (previously known as [ADAM](#ad-lds "\"Active Directory Application Mode\", standalone LDAP service similar to full Active Directory, but without DNS, Group Policy, or Kerberos requirements (ref. AD LDS)")) offers a pared-down version of AD that is easy to set up and tear down. It was first released in November 2003 and offers security benefits because it doesn't enable so many services by default. It was renamed AD LDS with the release of Windows Server 2008. [[^][Desmond2009]: 457-458]\
 
 Differences between AD and AD LDS
 - AD LDS is a standalone application run from a `dsamain.exe` process (rather than `lsass.exe`), which means it can be started or stopped on demand without rebooting and multiple instances can be run.
-- AD LDS lacks the global catalog functionality (removing [NSPI](# "\"Name Service Provider Interface\", feature supported by Active Directory's global catalog") and [AB](# "\"Address Book\", feature supported by Active Directory's global catalog") as well)
+- AD LDS lacks the [global catalog](#gc "read-only catalog of all objects in a forest which contains a subset of attributes for each object; used to perform forest-wide searches") functionality (removing [NSPI](# "\"Name Service Provider Interface\", feature supported by Active Directory's global catalog") and [AB](# "\"Address Book\", feature supported by Active Directory's global catalog") as well)
 
 Feature         | AD LDS        | Active Directory
 ---             | ---           | ---
@@ -145,6 +152,7 @@ Service account | `NT AUTHORITY\NetworkService` | `LocalSystem`
 
 ## Index
 
+#### PowerShell cmdlets
 \#      | PowerShell cmdlets (nouns sorted alphabetically)
 ---     | ---
 C       | **`CliXml`** [`Export`][Export-CliXml] [`Import`][Import-CliXml] &bull; **`Command`** [`Get`][Get-Command] &bull; **`Csv`** [`Export`][Export-Csv] [`Import`][Import-Csv]
@@ -156,11 +164,13 @@ N       | **`Null`** [`Out`][Out-Null]
 O       | **`Object`** [`ForEach`][ForEach-Object] [`Where`][Where-Object]
 P       | **`PSSnapin`** [`Add`][Add-PSSnapin] [`Get`][Get-PSSnapin]
 
+#### Windows objects
 \#      | Windows objects
 ---     | ---
 D       | [`domainDNS`](# "class from which application partition objects must be derived")
 S       | [`serviceConnectionPoint`][SCP]
 
+#### LDAP controls
 \#      | LDAP controls
 ---     | ---
 L       | [`LDAP_SERVER_SEARCH_OPTIONS_OID`](# "control that enables full instance search functionality on AD LDS")

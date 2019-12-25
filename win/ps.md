@@ -666,8 +666,9 @@ Write-Output 'Hello' | Set-Clipboard
 
 
 ## Sources
-1. Berkouwer, Sander. _Active Directory Administration Cookbook_. [ADAC](../sources/adac.md).
-2. Krause, Jordan. _Windows Server 2016 Administration Cookbook_. [WSAC](../sources/wsac.md).
+[ADAC]: ../sources/adac.md "Berkouwer, Sander. _Active Directory Administration Cookbook_."
+[WSAC]: ../sources/wsac.md "Krause, Jordan. _Windows Server 2016 Administration Cookbook_."
+
 3. Michael Washam, Jonathan Tuliani, and Scott Hoag. _Exam Ref AZ-103 Microsoft Azure Administrator_. [AZ-103](../sources/az-103.md)
 4. "How to use Wget to download web-based packages on Windows." [TechRepublic](https://www.techrepublic.com/article/how-to-use-wget-to-download-web-based-packages-on-windows/#ftag=RSS56d97e7): 2019/06/26.
 5. "Check PowerShell Version". [powertheshell.com](http://www.powertheshell.com/topic/learnpowershell/firststeps/psversion/)

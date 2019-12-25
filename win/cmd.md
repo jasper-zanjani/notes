@@ -2,14 +2,17 @@
 
 \#      | Commands sorted alphabetically
 ---     | ---
-A       | [`arp`](#arp) 
-B       | [`bcdedit`][bcdedit] [`bootrec`](#bootrec)
+A       | [`adprep`](#adprep "Prepare Active Directory for Windows Server upgrades") [`arp`](#arp) 
+B       | [`bcdedit`](#bcdedit "Boot configuration data editor") [`bootrec`](#bootrec)
 I       | [`ipconfig`](#ipconfig) 
-N       | [`nbtstat`](#nbtstat) [`netsh`](#netsh) 
+N       | [`nbtstat`](#nbtstat) [`netsh`](#netsh) [`ntdsutil`](#ntdsutil "Used to transfer FSMO roles between domain controllers")
 R       | [`route`](#route) 
 S       | [`systeminfo`](#systeminfo) 
 T       | [`tracert`](#tracert) [`traceroute`](#tracert) 
 W       | [`winrm`](#winrm)
+
+### ADPrep
+Prepare Active Directory for Windows Server upgrades. Must be run on the Infrastructure Master role owner with the flag `/domainprep`. [[^][Desmond2009]: 29]
 
 ### `arp`
 Used to view and work with the IP adress to MAC address resolution cache.
@@ -58,7 +61,7 @@ Option      | Effect
 `/renew`
 
 ### `nbtstat`
-Option      | Effect
+Option      | Effect [[^][Lammle]: 540-6]
 :---        | :---
 `-a $HOST`  | display NetBIOS name table of <code>$HOST</code> (NetBIOS name)
 `-A $HOST`  | display NetBIOS name table of <code>$HOST</code> (IP address)
@@ -67,7 +70,7 @@ Option      | Effect
 `-R`        | purge NetBIOS name table cache and reload the LMHOSTS file into memory
 `-S`        | display NetBIOS sessions table
 `-s`        | display NetBIOS sessions table, attempting to resolve remote IP addresses to hostnames
-\-          | [[Lammle](#sources): 540-6]
+
 
 ### `netsh`
 Configure DNS to be dynamically assigned
@@ -83,14 +86,16 @@ Turn off Windows firewall
 netsh advfirewall set allprofiles state off
 ```
 
+### `ntdsutil`
+Used to transfer [FSMO](# "\"Flexible Single Master Operator\", server that is master for a particular role or function") roles between domain controllers. [[^][Desmond2009]: 30]
+
 ### `route`
-Command  | Effect
+Command  | Effect [[^][Lammle]: 539]
 :---     | :---
 `print`  | display routing table
 `add`    | add a route to the routing table
 `change` | modify an existing route
 `delete` | delete a route
-\-       | [[Lammle](#sources): 539]
 
 Option  | Effect
 :---    | :---
@@ -105,7 +110,7 @@ route add 192.168.2.1 mask (255.255.255.0) 192.168.2.4
 Shows system information about the machine, including installed hotfixes and patches
 
 ### `tracert`
-On Windows, this command is aliased to `traceroute` which is the Linux command. [[1](#sources): 112]
+On Windows, this command is aliased to `traceroute` which is the Linux command. [[^][Lammle]: 112]
 
 Option  | Effect
 :---    | :---
@@ -122,8 +127,7 @@ winrm get winrm/config
 ```
 
 ## Sources
-A. "Practice Lab: CompTIA Security+ (SY0-501)". [Web](https://pts.measureup.com/web/index.php#dashboard.php)
 
-Lammle, Todd. _CompTIA Network+ Study Guide: Exam N10-005_. 2012.
-
-[bcdedit]: #bcdedit "Boot configuration data editor"
+[Lab]: https://pts.measureup.com/web/index.php#dashboard.php "Practice Lab: CompTIA Security+ (SY0-501)"
+[Lammle]: ../certs/n10-007.md "Lammle, Todd. _CompTIA Network+ Study Guide: Exam N10-005_. 2012."
+[Desmond2009]: ../sources/ad.md "Desmond, Brian et al. _Active Directory_. O'Reilly Media, 2009."
