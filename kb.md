@@ -21,6 +21,7 @@ Ctrl+Enter                | Open a new window in any application
 Meta+Backtick             | Switch between windows of an application
 Meta+PgUp                 | Switch to workspace above
 Meta+PgDown               | Switch to workspace below
+Alt+F2                    | Run command
 # BSD
 `^t` : get information on what a stalled process is doing
 # KDE

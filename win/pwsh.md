@@ -10,9 +10,9 @@ G     | **`Guid`** [`New`](#new-guid)
 H     | **`Help`** [`Get`](#get-help) [`Update`](#update-help)
 L     | **`List`** [`Format`][Format-List] &bull; **`Location`** [`Set`][Set-Location]
 M     | **`Module`** [`Import`](#module) [`Install`](#module)
-N     | **`NetFirewallRule`** [`Get`](#get-netfirewallrule) [`New`](#new-netfirewallrule) [`Set`](#set-netfirewallrule) &bull; **`Null`** [`Out`][Out-Null]
+N     | **`NetAdapter`** [`Get`][Get-NetAdapter] **`NetFirewallRule`** [`Get`](#get-netfirewallrule) [`New`](#new-netfirewallrule) [`Set`](#set-netfirewallrule) &bull; **`NetIpAddress`** [`New`][New-NetIpAddress] &bull; **`Null`** [`Out`][Out-Null]
 O     | **`Object`** [`ForEach`][ForEach-Object] [`Select`][Select-Object] [`Where`][Where-Object] **`Output`** [`Write`](#write-output)
-P     | **`Partition`** [`Get`](#get-partition) [`New`](#new-partition) [`Remove`](#remove-partition) &bull; **`PSReadlineOption`** [`Get`](#get-psreadlineoption) [`Set`](#set-psreadlineoption) &bull; **`PSSession`** [`Enter`](#pssession) [`Exit`](#pssession) [`Get`](#pssession) [`New`](#pssession)
+P     | **`Partition`** [`Get`](#get-partition) [`New`](#new-partition) [`Remove`](#remove-partition) &bull; **`PSReadlineOption`** [`Get`](#get-psreadlineoption) [`Set`](#set-psreadlineoption) &bull; **`PSSession`** [`Disconnect`][Disconnect-PSSession] [`Enter`](#enter-pssession) [`Exit`](#exit-pssession) [`Get`](#get-pssession) [`New`][New-PSSession]
 S     | **`Service`** [`Get`](#service) [`Start`](#service) [`Stop`](#service) &bull;
 T     | **`Table`** [`Format`][Format-Table]
 V     | **`VMMemory`** [`Set`](#set-vmmemory) &bull; **`VMNetworkAdapter`** [`Set`](#set-vmnetworkadapter) &bull; **`VMProcessor`** [`Set`](#set-vmprocessor)
@@ -30,12 +30,12 @@ Topic                 | Cmdlets
 Clipboard             | [`Get-Clipboard`](#get-clipboard) [`New-Guid`](#new-guid) [`Set-Clipboard`](#set-clipboard) [`Write-Output`](#write-output)
 Disk management       | [`Format-Volume`](#format-volume) [`Get-Disk`](#get-disk) [`Get-Partition`](#get-partition) [`New-Partition`](#new-partition) [`Remove-Partition`](#remove-partition)
 Environment           | [`Get-Module`][Get-Module] [`Import-Module`][Import-Module] [`Set-ExecutionPolicy`][Set-ExecutionPolicy] [`Set-Location`][Set-Location]
-Filters               | [`Where-Object`](#filters) [`Select-Object`](#filters) [`Select-String`](#filters) [`Out-GridView`](#filters) [`ForEach-Object`](#filters)
+Filters               | [`Where-Object`][Where-Object] [`Select-Object`][Select-Object] [`Select-String`](#filters) [`Out-GridView`](#filters) [`ForEach-Object`][ForEach-Object]
 Firewall              | [`Get-NetFirewallRule`](#get-netfirewallrule) [`New-NetFirewallRule`](#new-netfirewallrule) [`Set-NetFirewallRule`](#set-netfirewallrule)
-Formatting            | [`Format-List`](#output-formatting) [`Format-Table`](#output-formatting) [`Format-Wide`](#output-formatting)
+Formatting            | [`Format-List`][Format-List] [`Format-Table`][Format-Table] [`Format-Wide`](#output-formatting)
 Hyper-V               | [`Set-VMMemory`](#set-vmmemory) [`Set-VMNetworkAdapter`](#set-vmnetworkadapter) [`Set-VMProcessor`](#set-vmprocessor)
-Remote administration | [`Enable-PSRemoting`](#enable-psremoting) [`Invoke-Command`](#invoke-command)
-System administration | [`Get-Alias`](#get-alias) [`Get-Command`](#get-command) `Get-Help` `Get-History` `Get-Module` `Get-Process` `Get-PSDrive` `Get-Service` `Update-Help`
+Remote administration | [`Enable-PSRemoting`][Enable-PSRemoting] [`Invoke-Command`](#invoke-command) &bull; **`PSSession`** [`Disconnect`][Disconnect-PSSession] [`Enter`][Enter-PSSession] [`Exit`](#exit-pssession) [`Get`](#get-pssession) [`New`][New-PSSession]
+System administration | [`Get-Alias`][Get-Alias] [`Get-Command`][Get-Command] [`Get-Help`][Get-Help] [`Get-History`][Get-History] [`Get-Module`][Get-Module] `Get-Process` `Get-PSDrive` [`Get-Service`][Get-Service] [`Update-Help`][Update-Help]
 
 ## Syntax
 #### Syntax to research
@@ -389,6 +389,36 @@ $Values = do { 'eat me!' } while ($false) # => @('eat me!')
 ```
 
 ## Cmdlets
+### `Add-Computer`
+Join a computer to a domain [[^][Zacker]: 20]
+
+Option  | Description
+---     | ---
+`Credential`
+`DomainName`
+`NewName`
+
+Rename a computer and join it to a domain
+```powershell
+Add-Computer -DomainName adatum.com -NewName ServerB -Credential adatum\administrator
+```
+Join a new computer to a domain [[1](#sources)]
+```powershell
+Add-Computer -Domain 'officeprodemoco.onmicrosoft.com' -Restart
+New-ADComputer -Name "O365-CL93"
+```
+Joining many computers using a .csv file
+```powershell
+New-ADComputer -Name "O365-CL93"
+$List = "C:\Labfiles\computers.csv"
+$OU = "OU=office365,DC=officeprodemoco,DC=onmicrosoft,DC=com"
+Import-Csv -path $List | ForEach-Object {New-ADComputer -Name $_.Name -Path $OU}
+```
+Verify a computer has connected to a domain
+Check "Organization" in Windows about page, or navigate to Control PAnel > System and Security > System and examine the **Computer name, domain, and workgroup settings**, where the domain can be seen.
+### `Add-PSSnapin`
+### `Disconnect-PSSession`
+Terminate a remote PowerShell session begun with [`New-PSSession`][New-PSSession] [[^][Zacker]: 22]
 ### `Enable-PSRemoting`
 ### `Enter-PSSession`
 Interact with the specified PowerShell session
@@ -400,6 +430,7 @@ Start and enter a new PS session to specified computer with provided credentials
 Enter-PSSession -ComputerName o365-dc01 -Credential officeprodemoco\joey
 ```
 ### `Exit-PSSession`
+Exit a remote PowerShell session [[^][Zacker]: 22]\
 End the PowerShell session with the specified computer
 ```powershell
 Exit-PSSession -ComputerName demodc
@@ -451,6 +482,13 @@ Option            | Effect
 `-Online`         | navigate to online help page for a command
 `-ShowWindow`     | display help output in a window
 ### `Get-Member`
+### `Get-Module`
+### `Get-NetAdapter`
+Display available network interfaces [[^][Zacker]: 19]
+
+Option  | Description
+---     | ---
+...
 ### `Get-NetFirewallRule`
 Display all firewall rules
 ```powershell
@@ -487,6 +525,12 @@ Get-Service WinRM
 ```powershell
 gsv winrm
 ```
+### `Get-WindowsFeature`
+Display installable Windows roles, role services, and features
+Display a branching view of available Windows roles, role services, and features
+```powershell
+Get-WindowsFeature
+```
 ### `Get-WmiObject`
 View system uptime
 ```powershell
@@ -510,6 +554,17 @@ Install the `Az` module
 Install-Module -Name Az -AllowClobber
 ```
 ### `Install-WindowsFeature`
+Install Windows features and roles [[^][Zacker]: 15-16]
+
+Option  | Description
+---     | ---
+`-IncludeAllSubFeature`
+`-IncludeManagementTools`
+
+Install a feature
+```powershell
+Install-WindowsFeature -Name $featurename -IncludeAllSubFeature -IncludeManagementTools
+```
 Install Remote Server Adminstration Tools for PowerShell
 ```powershell
 Install-WindowsFeature -Name RSAT-ADDS -IncludeAllSubFeature
@@ -575,6 +630,20 @@ Set a new firewall rule for incoming WinRM connections
 ```powershell
 New-NetFirewallRule -DisplayName "WinRMHTTP" -Direction Inbound -LocalPort 5985 -Protocol TCP -Action Allow
 ```
+### `New-NetIpAddress`
+Manually configure network interface, if a DHCP server is unavailable [[^][Zacker]: 19]
+
+Option  | Description
+---     | ---
+`DefaultGateway` | Specifies IP address of local router that computer should use to access other networks
+`InterfaceIndex` | Identifies adapter to be configured using interface numbers as displayed by [`Get-NetAdapter`](#get-netadapter)
+`IpAddress` | Specifies IP address to be assigned to adapter
+`PrefixLength` | Specifies subnet mask value
+
+Configure a network adapter 
+```powershell
+New-NetIpAddress -InterfaceIndex 6 -IpAddress 192.168.0.200 -PrefixLength 24 -DefaultGateway 192.168.0.1
+```
 ### `New-Partition`
 Use all available size for a new partition [[16](#sources)]
 ```powershell
@@ -585,6 +654,14 @@ Automatically assign a drive letter
 New-Partition -DiskNumber 1 -UseMaximumSize -AssignDriveLetter
 ```
 ### `New-PSSession`
+Option  | Description
+---     | ---
+`-ComputerName`
+
+Manage a Windows Server remotely [[^][Zacker]: 21]
+```powershell
+New-PSSession -ComputerName rtmsvrd
+```
 Start a new PowerShell session, connecting to the specified computer
 ```powershell
 New-PSSession -ComputerName core02
@@ -612,6 +689,18 @@ Write-Output 'Hello' | Set-Clipboard
 With `Append` switch parameter, items can be added without clearing the clipboard:
 ```powershell
 Write-Output 'Hello' | Set-Clipboard -Append
+```
+### `Set-DnsClientServerAddress`
+Configure DNS server addresses [[^][Zacker]: 20]
+
+Option  | Description
+---     | ---
+`-InterfaceIndex`
+`-ServerAddresses`
+
+Configure DNS server addresses [[^][Zacker]: 20]
+```powershell
+Set-DnsClientServerAddress -InterfaceIndex 6 -ServerAddresses ("192.168.0.1", "192.168.0.2")
 ```
 ### `Set-ExecutionPolicy`
 ### `Set-Location`
@@ -690,13 +779,11 @@ Add a new forest
 Install-ADDSForest -DomainName example.com -InstallDNS
 ```
 If the system fails to automatically create a NetBIOS name, it can be manually specified with the named parameter `-DomainNetbiosName`
-
 ### `Get-ADForest`
 Display installed forests
 ```powershell
 Get-ADForest | select -ExpandProperty domains
 ```
-
 ### `Install-ADDSDomain`
 Add a new domain
 `Install-ADDSDomain` only requires the following two parameters:
@@ -708,30 +795,13 @@ Install-ADDSDomain -NewDomainName hq -ParentDomainName pythagoras.net
 ```powershell
 Install-ADDSDomain -Credential (Get-Credential CORP\EnterpriseAdmin1) -NewDomainName child -ParentDomainName corp.contoso.com -InstallDNS -CreateDNSDelegation -DomainMode Win2003 -ReplicationSourceDC DC1.corp.contoso.com -SiteName Houston -DatabasePath "D:\NTDS" -SYSVOLPath "D:\SYSVOL" -LogPath "E:\Logs" -NoRebootOnCompletion
 ```
-
 ### `Uninstall-ADDSDomainController`
 Demote a domain controller (consummate with uninstalling the AD Domain Controller role)
 ```powershell
 # When removing the last domain controller of a domain, additional options need to be specified that result in the obliteration of the domain, its forest, and associated data.
 Uninstall-ADDSDomainController -LocalAdministratorPassword (ConvertTo-SecureString $pw -AsPlainText -Force) -LastDomainControllerInDomain -RemoveApplicationPartitions
 ```
-
 ### `New-ADComputer`
-### `Add-Computer`
-Join a new computer to a domain [[1](#sources)]
-```powershell
-Add-Computer -Domain 'officeprodemoco.onmicrosoft.com' -Restart
-New-ADComputer -Name "O365-CL93"
-
-# Joining many computers using a .csv file
-New-ADComputer -Name "O365-CL93"
-$List = "C:\Labfiles\computers.csv"
-$OU = "OU=office365,DC=officeprodemoco,DC=onmicrosoft,DC=com"
-Import-Csv -path $List | ForEach-Object {New-ADComputer -Name $_.Name -Path $OU}
-```
-Verify a computer has connected to a domain
-Check "Organization" in Windows about page, or navigate to Control PAnel > System and Security > System and examine the **Computer name, domain, and workgroup settings**, where the domain can be seen.
-
 ### `New-ADUser`
 Create a new user (disabled by default)
 ```powershell
@@ -790,13 +860,6 @@ Protect users in a specified OU from accidental deletion
 Get-ADUser -Filter * -SearchBase "OU=RoadCrew,OU=office365,DC=officeprodemoco,DC=com" ` | 
 Set-ADObject -ProtectedFromAccidentalDeletion $true
 ```
-
-### `Get-WindowsFeature`
-Display installable Windows roles, role services, and features
-Display a branching view of available Windows roles, role services, and features
-```powershell
-Get-WindowsFeature
-```
 ### `Search-ADAccount`
 
 Option                        | Effect
@@ -817,9 +880,12 @@ Display accounts expiring on a particular date
 ```powershell
 Search-ADAccount -AccountExpiring -DateTime "3/18/2019"
 ``` 
+### `Start-DscConfiguration`
+Used to erect a **push architecture** in [DSC](dsc.md). [[^][Zacker]: 27]
 
-
-
+Option  | Description
+---     | ---
+`-Path`
 
 ## Sources
 3. Michael Washam, Jonathan Tuliani, and Scott Hoag. _Exam Ref AZ-103 Microsoft Azure Administrator_. [AZ-103](../sources/az-103.md)
@@ -840,34 +906,44 @@ Search-ADAccount -AccountExpiring -DateTime "3/18/2019"
 [ADAC]: ../sources/adac.md "Berkouwer, Sander. _Active Directory Administration Cookbook_."
 [WSAC]: ../sources/wsac.md "Krause, Jordan. _Windows Server 2016 Administration Cookbook_."
 
-[Enable-PSRemoting]: #enable-psremoting "Allow remote PowerShell management"
-[Enter-PSSession]: #enter-pssession "Interact with the specified PowerShell session"
-[Exit-PSSession]: #exit-pssession "End the PowerShell session with the specified computer"
-[Expand-Archive]: #expand-archive "Decompress archives"
-[Get-Alias]: #alias "Display aliases"
-[Get-ChildItem]: #get-childitem "Get items in one or more locations"
-[Get-Clipboard]: #get-clipboard "Display items in clipboard"
-[Get-Command]: #get-command "Display all installed commands, including aliases, applications, filters, functions, and scripts (alias: gcm)"
-[Get-Help]: #get-help "Display help file for cmdlets"
-[Get-History]: # "Display history of inputted commands for the current session"
-[Get-Member]: #get-member "Display properties and methods of a PowerShell object (alias: gm)"
-[Get-Module]: # "Display currently loaded PowerShell modules"
-[Get-Process]: # "Display running processes"
-[Get-PSDrive]: # "Display mapped drives"
-[Get-PSSnapin]: # "Display currently loaded snapins (.NET assemblies containing a collection of cmdlets and/or providers for use within PowerShell) - last supported in PowerShell 5.1"
-[Add-PSSnapin]: # "Load a given list of snap-ins (.NET assemblies containing a collection of cmdlets and/or providers for use within PowerShell) either by name or via the pipeline - last supported in PowerShell 5.1"
-[Get-Service]: #get-service "Display services (alias: gsv)"
-[Import-Module]: #import-module "Manually import a module, rather than waiting for it to load dynamically when using one of its cmdlets (alias: ipmo)"
-[Set-ExecutionPolicy]: #set-executionpolicy "Change PowerShell execution policy for Windows computers (Windows only)"
-[Set-Location]: #set-location "Set present working directory (alias: cd)"
-[Update-Help]: #update-help "Download help files"
-[Format-List]: #output-formatting "Display output in list style (alias: fl)"
-[Format-Table]: #output-formatting "Display output in table style (alias: ft)"
-[Out-Null]: #out-null "Dispose of information piped to it, in lieu of displaying it"
-[ForEach-Object]: #filters "(alias: %)"
-[Where-Object]: #filters "(alias: ?)"
-[Select-Object]: #filters "(alias: select)"
-[Export-Csv]: #export-csv "Export PowerShell objects to CSV"
-[Import-Csv]: #import-csv "Import CSV files as PowerShell objects"
-[Export-CliXml]: #export-clixml "Serialize a PowerShell object as a Common Language Infrastructure (CLI) XML file"
-[Import-CliXml]: #import-clixml "Import a Common Language Infrastructure (CLI) XML file with data that represents Microsoft .NET Framework objects and create PowerShell objects from it"
+[Add-Computer]: ../win/pwsh.md#add-computer "Join a computer to a domain"
+[Add-PSSnapin]: ../win/pwsh.md#add-pssnapin "Load a given list of snap-ins (.NET assemblies containing a collection of cmdlets and/or providers for use within PowerShell) either by name or via the pipeline - last supported in PowerShell 5.1"
+[Disconnect-PSSession]: ../win/pwsh.md#disconnect-pssession "Terminate a remote PowerShell session begun with `New-PSSession`"
+[Enable-PSRemoting]: ../win/pwsh.md#enable-psremoting "Allow remote PowerShell management"
+[Enter-PSSession]: ../win/pwsh.md#enter-pssession "Interact with the specified PowerShell session"
+[Expand-Archive]: ../win/pwsh.md#expand-archive "Decompress archives"
+[Export-CliXml]: ../win/pwsh.md#export-clixml "Serialize a PowerShell object as a Common Language Infrastructure (CLI) XML file"
+[Export-Csv]: ../win/pwsh.md#export-csv "Export PowerShell objects to CSV"
+[ForEach-Object]: ../win/pwsh.md#filters "(alias: %)"
+[Format-List]: ../win/pwsh.md#output-formatting "Display output in list style (alias: fl)"
+[Format-Table]: ../win/pwsh.md#output-formatting "Display output in table style (alias: ft)"
+[Get-Alias]: ../win/pwsh.md#get-alias "Display aliases"
+[Get-ChildItem]: ../win/pwsh.md#get-childitem "Get items in one or more locations"
+[Get-Clipboard]: ../win/pwsh.md#get-clipboard "Display items in clipboard"
+[Get-Command]: ../win/pwsh.md#get-command "Display all installed commands, including aliases, applications, filters, functions, and scripts (alias: gcm)"
+[Get-Help]: ../win/pwsh.md#get-help "Display help file for cmdlets"
+[Get-History]: ../win/pwsh.md#get-history "Display history of inputted commands for the current session"
+[Get-Member]: ../win/pwsh.md#get-member "Display properties and methods of a PowerShell object (alias: gm)"
+[Get-Module]: ../win/pwsh.md#get-module "Display currently loaded PowerShell modules"
+[Get-NetAdapter]: ../win/pwsh.md#get-netadapter "Display available network interfaces"
+[Get-PSDrive]: ../win/pwsh.md#get-psdrive "Display mapped drives"
+[Get-PSSnapin]: ../win/pwsh.md#get-pssnapin "Display currently loaded snapins (.NET assemblies containing a collection of cmdlets and/or providers for use within PowerShell) - last supported in PowerShell 5.1"
+[Get-Process]: ../win/pwsh.md#get-process "Display running processes"
+[Get-Service]: ../win/pwsh.md#get-service "Display services (alias: gsv)"
+[Import-CliXml]: ../win/pwsh.md#import-clixml "Import a Common Language Infrastructure (CLI) XML file with data that represents Microsoft .NET Framework objects and create PowerShell objects from it"
+[Import-Csv]: ../win/pwsh.md#import-csv "Import CSV files as PowerShell objects"
+[Import-Module]: ../win/pwsh.md#import-module "Manually import a module, rather than waiting for it to load dynamically when using one of its cmdlets (alias: ipmo)"
+[Install-WindowsFeature]: ../win/pwsh.md#install-windowsfeature "Install Windows features and roles"
+[New-NetIpAddress]: ../win/pwsh.md#new-netipaddress "Manually configure network interface, if a DHCP server is unavailable"
+[New-PSSession]: ../win/pwsh.md#new-pssession "Start a new remote PowerShell session with a remote computer"
+[Out-Null]: ../win/pwsh.md#out-null "Dispose of information piped to it, in lieu of displaying it"
+[Select-Object]: ../win/pwsh.md#filters "(alias: select)"
+[Set-DnsClientServerAddress]: ../win/pwsh.md#set-dnsclientserveraddress "Configure DNS server addresses"
+[Set-ExecutionPolicy]: ../win/pwsh.md#set-executionpolicy "Change PowerShell execution policy for Windows computers (Windows only)"
+[Set-Location]: ../win/pwsh.md#set-location "Set present working directory (alias: cd)"
+[Start-DscConfiguration]: ../win/pwsh.md#start-dscconfiguration "Erect a push architecture in DSC"
+[Start-Service]: ../win/pwsh.md#start-service " "
+[Stop-Service]: ../win/pwsh.md#stop-service " "
+[Update-Help]: ../win/pwsh.md#update-help "Download help files"
+[Where-Object]: ../win/pwsh.md#filters "(alias: ?)"
+[Write-Output]: ../win/pwsh.md#write-output " "
