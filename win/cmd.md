@@ -86,6 +86,18 @@ Turn off Windows firewall
 netsh advfirewall set allprofiles state off
 ```
 
+### `netdom`
+Alternative to [`Add-Computer`](ps.md#add-computer) PowerShell cmdlet [[^][Zacker]: 21]
+
+Rename a computer
+```
+netdom renamecomputer %computername% /newname: newcomputername
+```
+Join a computer to a domain
+```
+netdom join %computername% /domain: domainname /userd: username /password:*
+```
+
 ### `ntdsutil`
 Used to transfer [FSMO](# "\"Flexible Single Master Operator\", server that is master for a particular role or function") roles between domain controllers. [[^][Desmond2009]: 30]
 
@@ -131,3 +143,4 @@ winrm get winrm/config
 [Lab]: https://pts.measureup.com/web/index.php#dashboard.php "Practice Lab: CompTIA Security+ (SY0-501)"
 [Lammle]: ../certs/n10-007.md "Lammle, Todd. _CompTIA Network+ Study Guide: Exam N10-005_. 2012."
 [Desmond2009]: ../sources/ad.md "Desmond, Brian et al. _Active Directory_. O'Reilly Media, 2009."
+[Zacker]: ../certs/70-740.md "Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017."
