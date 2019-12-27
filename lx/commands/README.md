@@ -7,8 +7,8 @@ Ansible                       | [`ansible`](../ansible.md#ansible) [`ansible-gal
 Archive                       | [**`bzip2`**](bzip2.md) `bzcat` `bzless` `bzmore` &bull; [`compress`](compress.md#compress) [`uncompress`](compress.md#uncompress) &bull; [`gzip`](gzip.md) [`tar`](tar.md#tar) &bull; [**`zip`**](zip.md#zip) [`unzip`](zip.md#unzip) [`zipcloak`](zip.md#zipcloak) [`zipdetails`](zip.md#zipdetails) [`zipgrep`](zip.md#zipgrep) [`zipinfo`](zip.md#zipinfo) [`zipnote`](zip.md#zipnote) [`zipsplit`](zip.md#zipsplit) &bull; [`dar`](dar.md)
 Date and time                 | [`chrony`](#chrony) [`date`](date.md#date) [`hwclock`](#hwclock) [`timedatectl`](init.md#timedatectl)
 Disk management               | `blkid` [`partx`](partx.md)
-Distributions                 | **Debian** [`adduser`](useradd.md#adduser) [**`apt`**](apt.md#apt) `apt-cache` `apt-key` `add-apt-repository` **Manjaro** [`mhwd`](#mhwd) [`mhwd-chroot`](#mhwd-chroot) [`pacman`](pacman.md) [`yay`](yay.md) **Red Hat** [`dnf`](#dnf) [`rpm`](rpm.md) [`yum`](yum.md)
-Files	                        | [`chown`](chown.md) [`fallocate`](fallocate.md) [`install`](install.md "Copy files while maintaining metadata") [`lsof`](lsof.md "Display open files, open network ports, and network connections"] [`setfacl`](setfacl.md) [`sshfs`](ssh.md#sshfs) [`tree`](#tree)
+Distributions                 | **Debian** [`adduser`](useradd.md#adduser) [**`apt`**](apt.md#apt) `apt-cache` `apt-key` `add-apt-repository` **Manjaro** [`mhwd`](#mhwd) [`mhwd-chroot`](#mhwd-chroot) [`pacman`](pacman.md) [`yay`](yay.md) **Red Hat** [`dnf`][dnf] [`rpm`](rpm.md) [`yum`](yum.md)
+Files	                        | [`chown`](chown.md) [`fallocate`](fallocate.md) [`install`](install.md "Copy files while maintaining metadata") [`lsof`](lsof.md "Display open files, open network ports, and network connections") [`setfacl`](setfacl.md) [`sshfs`](ssh.md#sshfs) [`tree`](#tree)
 Filters                       | [`sed`](sed.md#sed) [`awk`](awk.md#awk) [`grep`](grep.md) [`egrep`](grep.md) [`fgrep`](grep.md) &bull; [`copy`](#copy) [`paste`](#paste) &bull; [`cat`](cat.md#cat) [`shuf`](shuf.md) [`tr`](tr.md)
 Gnome                         | [`gconf-editor`](gsettings.md) [`gsettings`](gsettings.md) 
 GRUB                          | [`update-grub`](grub.md#update-grub)
@@ -18,13 +18,13 @@ Kubernetes                    | [`kubeadm`](../devops/k8s.md#kubeadm) [`kubectl`
 Logical volumes               | [`lvcreate`](lvm.md#lvcreate) [`lvdisplay`](lvm.md##lvdisplay) [`lvremove`](lvm.md##lvremove) [`lvs`](lvm.md##lvs) [`pvcreate`](lvm.md##pvcreate) [`pvdisplay`](lvm.md##pvdisplay) [`pvremove`](lvm.md##pvremove) [`pvs`](lvm.md##pvs) [`vgcreate`](lvm.md##vgcreate) [`vgdisplay`](lvm.md##vgdisplay) [`vgextend`](lvm.md##vgextend) [`vgremove`](lvm.md##vgremove) [`vgs`](lvm.md##vgs)
 Mac OS X                      | `pbcopy` `pbpaste` `screencapture`
 Mail                          | [`mail`](#mail) [`mailmerge`](mailmerge.md#mailmerge) [`mailx`](#mail) [`msmtp`](#msmtp) [`qmail`](#qmail) [`postfix`](#postfix) 
-Network                       | `iwlist` `iwconfig` [`netstat`](netstat.md) [`nc`](nc.md) [`nmap`](nmap.md) [`nmcli`](nmcli.md) [`rfkill`](rfkill.md) [`ss`](ss.md) `tracepath` `traceroute` `xinetd` &bull; **DNS** [`dig`](dig.md) [`nslookup`](nslookup.md)
-Package managers              | [`apt`](apt.md#apt) [`brew`](#brew) [`dnf`](#dnf) [`gem`](gem.md) [`pacman`](pacman.md) [`pip`](#pip) [`snap`](snap.md) [`yay`](yay.md) [`yum`](yum.md)
+Network                       | [`ip`][ip] `iwlist` `iwconfig` [`netstat`](netstat.md) [`nc`](nc.md) [`nmap`](nmap.md) [`nmcli`](nmcli.md) [`rfkill`](rfkill.md) [`ss`](ss.md) `tracepath` `traceroute` `xinetd` &bull; **DNS** [`dig`](dig.md) [`nslookup`](nslookup.md)
+Package managers              | [`apt`](apt.md#apt) [`brew`](#brew) [`dnf`][dnf] [`gem`](gem.md) [`pacman`](pacman.md) [`pip`](#pip) [`snap`](snap.md) [`yay`](yay.md) [`yum`](yum.md)
 Processes                     | [`lsns`](containers.md) [`pidof`](containers.md) [`ps`](ps.md) [`top`](sysadmin.md#top) [`unshare`](containers.md)
 Remote connections            | [`rsync`](rsync.md) [`ssh`](ssh.md#ssh) [`ssh-keygen`](ssh.md#ssh-keygen) [`ssh-keyscan`](ssh.md#ssh-keyscan) [`sshfs`](ssh.md#sshfs)
 System administration         | [`free`](sysadmin.md#free) [`getent`](sysadmin.md#getent) [`gpasswd`](gpasswd.md) [`groupadd`](useradd.md#groupadd) [`groupdel`](useradd.md#groupdel) [`groupmod`](useradd.md#groupmod) [`stty`](#stty) [`su`](sudo.md#su) [`sudo`](sudo.md#sudo) [`top`](sysadmin.md#top) [`uname`](sysadmin.md#uname) [`useradd`](useradd.md#useradd) [`userdel`](useradd.md#userdel) [`usermod`](useradd.md#usermod) `vifs` `visudo` &bull; **Debian** [`adduser`](useradd.md#adduser)
 Version control               | [`git`](git.md#git) [`tig`](git.md#tig)
-Wi-Fi                         | [`iw`](iw.md) `iwlist` `iwconfig` [`rfkill`](rfkill.md)
+Wi-Fi                         | [`iw`][iw] `iwlist` `iwconfig` [`rfkill`](rfkill.md)
 X                             | [`xdpyinfo`](X.md#xdpyinfo) [`xmodmap`](xmodmap.md) [`xwininfo`](X.md#xwininfo) [`Xorg`](X.md#xorg) [`xrandr`](X.md#xrandr)
 
 
@@ -33,12 +33,12 @@ X                             | [`xdpyinfo`](X.md#xdpyinfo) [`xmodmap`](xmodmap.
 A   | [`adduser`](#adduser) [`add-apt-repository`](#add-apt-repository) [`alsamixer`](#alsamixer) [`apropos`](#apropos) [`apt`](apt.md#apt) [`apt-cache`](apt.md#apt-cache) [`apt-key`](apt.md#apt-key) [`arp`](#arp) [`at`](#at) [`ausearch`](#ausearch) [`awk`](#awk) 
 B   | [`bash`](#bash) [`blkid`](#blkid) [`bmon`](#bmon) [`borg`](#borg) [`bpftrace`](#bpftrace) [`bzcat`](bzip2.md#bzcat) [`bzip2`](bzip2.md#bzip2) [`bzless`](bzip2.md#bzless) [`bzmore`](bzip2.md#bzmore) 
 C   | [`cancel`](#cancel) [`cat`](cat.md#cat) [`chage`](#chage) [`chcon`](#chcon) [`chgrp`](#chgrp) [`chkconfig`](#sysvinit) [`chmod`](#chmod) [`chown`](chown.md) [`chpass`](#chpass) [`chrony`](#chrony) [`chsh`](#chsh) [`column`](#column) [`compress`](#compress) [`cp`](#cp) [`crontab`](#crontab) [`crossystem`](#crossystem) [`cryptsetup`](#cryptsetup) [`curl`](#curl) [`cut`](#cut) 
-D   | [`dar`](#dar) [`date`](date.md#date) [`dbus`](#dbus) [`dd`](#dd) [`declare`](#declare) [`df`](#df) [`dhclient`](#dhclient) [`diff`](#diff) [`dig`](#dig) [`dirname`](#dirname) [`dm-crypt`](#dm-crypt) [`dmesg`](#dmesg) [`doveadm`](#doveadm) [`dpkg`](#dpkg) [`dpkg-reconfigure`](#dpkg-reconfigure) [`du`](#du) [`dumpe2fs`](#dumpe2fs) 
+D   | [`dar`](#dar) [`date`](date.md#date) [`dbus`](#dbus) [`dd`](#dd) [`declare`](#declare) [`df`](#df) [`dhclient`](#dhclient) [`diff`](#diff) [`dig`](#dig) [`dirname`](#dirname) [`dm-crypt`](#dm-crypt) [`dmesg`](#dmesg) [`dnf`][dnf] [`doveadm`](#doveadm) [`dpkg`](#dpkg) [`dpkg-reconfigure`](#dpkg-reconfigure) [`du`](#du) [`dumpe2fs`](#dumpe2fs) 
 E   | [`e2image`](#e2image) [`e2label`](#e2label) [`edquota`](#edquota) [`elvis`](#elvis) [`elvish`](#elvish) [`espeak`](#espeak) [`exif`](#exif) 
-F   | [`fallocate`](fallocate.md) [`fam`](#fam) [`fdisk`](#fdisk) [`file`](#file) [`find`](#find) [`firewall-cmd`](#firewall-cmd) [`firewalld`](#firewalld) [`fish`](#fish) [`fmt`](#fmt) [`fold`](#fold) [`free`](#free) [`fsck`](#fsck) [`fstrim`](#fstrim) [`ftp`][ftp] [`fusermount`](#fusermount) 
+F   | [`fallocate`](fallocate.md) [`fam`](#fam) [`fc-cache`][fc-cache] [`fdisk`](#fdisk) [`file`](#file) [`find`](#find) [`firewall-cmd`](#firewall-cmd) [`firewalld`](#firewalld) [`fish`](#fish) [`fmt`](#fmt) [`fold`](#fold) [`free`](#free) [`fsck`](#fsck) [`fstrim`](#fstrim) [`ftp`][ftp] [`fusermount`](#fusermount) 
 G   | [`gconf-editor`](gsettings.md) [`gdisk`](#gdisk) [`gdmsetup`](#gdmsetup) [`gem`](#gem) [`getent`](#getent) [`getfacl`](#getfacl) [`git`](git.md#git) [`gpasswd`](gpasswd.md) [`gpg`](#gpg) [`grep`](grep.md) [`groupadd`](#groupadd) [`groupdel`](#groupdel) [`groupmod`](#groupmod) [`grub`](#grub) [`gsettings`](gsettings.md) [`gzip`](#gzip) 
 H   | [`hdiutil`](#hdiutil) [`hdparm`](#hdparm) [`head`](#head) [`history`](#history) [`host`](#host) [`hostname`](#hostname) [`hostnamectl`](#hostnamectl) [`hwclock`](#hwclock) 
-I   | [`iconv`](#iconv) [`ifconfig`](#ifconfig) [`imagemagick`](#imagemagick) [`init`](#sysvinit) [`initctl`](#initctl) [`insmod`](#insmod) [`install`](#install.md) [`ip`](#ip) [`iptables`](#iptables) [`iscsiadm`](#iscsiadm) [`iw`](iw.md) [`iwconfig`](#iwconfig) [`iwlist`](#iwlist) 
+I   | [`iconv`](#iconv) [`ifconfig`](#ifconfig) [`imagemagick`](#imagemagick) [`init`](#sysvinit) [`initctl`](#initctl) [`insmod`](#insmod) [`install`](#install.md) [`ip`][ip] [`iptables`](#iptables) [`iscsiadm`](#iscsiadm) [`iw`][iw] [`iwconfig`](#iwconfig) [`iwlist`](#iwlist) 
 J-K | [`journalctl`](init.md#journalctl) &bull; [`kill`](#kill) [`kubeadm`](../devops/k8s.md#kubeadm) [`kubectl`](../devops/k8s.md#kubectl)
 L   | [`last`](#last) [`ldapadd`](#ldapadd) [`ldconfig`](#ldconfig) [`ldd`](#ldd) [`less`](#less) [`let`](#let) [`link`](#link) [`locale`](#locale) [`localectl`](init.md#localectl) [`logout`](#logout) [`lp`](#lp) [`lpadmin`](#lpadmin) [`lpstat`](#lpstat) [`ls`](#ls) [`lsblk`](#lsblk) [`lsmod`](#lsmod) [`lsns`](containers.md) [`lsof`](#lsof) [`lspci`](#lspci) [`lsusb`](#lsusb) [`lvcreate`](#lvcreate) [`lvdisplay`](#lvdisplay) [`lvremove`](#lvremove) [`lvresize`](#lvresize) 
 M   | [`mail`](#mail) [`mailq`](#mailq) [`mailstats`](#mailstats) [`make`](#make) [`makemap`](#makemap) [`mdadm`](#mdadm) [`mhwd`](#mhwd) [`mhwd-chroot`](#mhwd-chroot) [`mkdir`](#mkdir) [`mke2fs`](#mke2fs) [`mkfontscale`](#mkfontscale) [`mkfs`](#mkfs) [`mkswap`](#mkswap) [`mktemp`](#mktemp) [`modinfo`](#modinfo) [`modprobe`](#modprobe) [`mongod`](#mongod) [`mount`](#mount) [`msmtp`](#msmtp) [`mt`](#mt) 
@@ -140,6 +140,12 @@ New open-source tracer for analyzing production performance problems and trouble
 View image metadata. Unlike alternatives like `file` and ImageMagick's `identify`, `exif` produces columnar output [[31](sources.md)]
 ```sh
 exif image.png 
+```
+
+### `fc-cache`
+Update the font cache [[^](https://docs.fedoraproject.org/en-US/quick-docs/adding-new-fonts-fedora/ "Fedora Docs - Adding new fonts in Fedora")]
+```sh
+fc-cache -v
 ```
 
 ### `file`
@@ -1990,4 +1996,8 @@ Count the number of occurrences of a string
 | uniq -c | sort -nr
 ```
 
-[ftp]: # 'Transfer files to and from a remote network site"
+[ftp]: # 'Transfer files to and from a remote network site'
+[dnf]: dnf.md '"Dandified YUM", successor to `yum` as a package manager for RPM-based Linux distributions like Fedora.'
+[fc-cache]: #fc-cache "Update the font cache."
+[ip]: ip.md "Newer alternative to the old `ifconfig`"
+[iw]: iw.md "Show or manipulate wireless devices and their configuration"

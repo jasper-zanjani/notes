@@ -20,7 +20,7 @@
 17. [Upgrading to Windows Server 2003 R2](# "Outlines the process to upgrade your existing Active Directory to Windows Server 2003 R2.")
 18. [Upgrading to Windows Server 2008](# "Outlines the process to upgrade your existing Active Directory to Windows Server 2008.")
 19. [Integrating Microsoft Exchange](# "Covers some of the important Active Directory-related issues when implementing Microsoft Exchange.")
-20. [Active Directory Lightweight Directory Service (a.k.a. ADAM)](# "Introduces Active Directory Lightweight Directory Services (AD LDS, formerly ADAM).") [AD LDS][AD LDS]
+q20. [Active Directory Lightweight Directory Service (a.k.a. ADAM)](# "Introduces Active Directory Lightweight Directory Services (AD LDS, formerly ADAM).") [AD LDS][AD LDS]
 21. [Scripting with ADSI](# "Introduces ADSI scripting by leading you through a series of step-by-step examples.")
 22. [IADs and the Property Cache](# "Delves into the concept of the property cache used extensively by ADSI and shows you how to properly manipulate any attribute of any object within it.")
 23. [Using ADO for searching](# "Demonstrates how to make use of a technology normally reserved for databases and now extended to allow rapid searching for objects in Active Directory.")

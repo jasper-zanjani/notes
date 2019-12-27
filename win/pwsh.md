@@ -15,7 +15,7 @@ O     | **`Object`** [`ForEach`][ForEach-Object] [`Select`][Select-Object] [`Whe
 P     | **`Partition`** [`Get`](#get-partition) [`New`](#new-partition) [`Remove`](#remove-partition) &bull; **`PSReadlineOption`** [`Get`](#get-psreadlineoption) [`Set`](#set-psreadlineoption) &bull; **`PSSession`** [`Disconnect`][Disconnect-PSSession] [`Enter`](#enter-pssession) [`Exit`](#exit-pssession) [`Get`](#get-pssession) [`New`][New-PSSession]
 S     | **`Service`** [`Get`](#service) [`Start`](#service) [`Stop`](#service) &bull;
 T     | **`Table`** [`Format`][Format-Table]
-V     | **`VMMemory`** [`Set`](#set-vmmemory) &bull; **`VMNetworkAdapter`** [`Set`](#set-vmnetworkadapter) &bull; **`VMProcessor`** [`Set`](#set-vmprocessor)
+V     | **`VMFirmware`** [`Set`][Set-VMFirmware] &bull; **`VMMemory`** [`Set`](#set-vmmemory) &bull; **`VMNetworkAdapter`** [`Set`](#set-vmnetworkadapter) &bull; **`VMProcessor`** [`Set`](#set-vmprocessor) &bull; **`VMSwitch`** [`New`][New-VMSwitch]
 W     | **`WebRequest`** [`Invoke`](#invoke-webrequest) &bull; **`WindowsFeature`** [`Get`](#get-windowsfeature) [`Install`](#install-windowsfeature) **`WMIObject`** [`Get`](#get-wmiobject)
 
 \#    | Active Directory cmdlets
@@ -33,25 +33,11 @@ Environment           | [`Get-Module`][Get-Module] [`Import-Module`][Import-Modu
 Filters               | [`Where-Object`][Where-Object] [`Select-Object`][Select-Object] [`Select-String`](#filters) [`Out-GridView`](#filters) [`ForEach-Object`][ForEach-Object]
 Firewall              | [`Get-NetFirewallRule`](#get-netfirewallrule) [`New-NetFirewallRule`](#new-netfirewallrule) [`Set-NetFirewallRule`](#set-netfirewallrule)
 Formatting            | [`Format-List`][Format-List] [`Format-Table`][Format-Table] [`Format-Wide`](#output-formatting)
-Hyper-V               | [`Set-VMMemory`](#set-vmmemory) [`Set-VMNetworkAdapter`](#set-vmnetworkadapter) [`Set-VMProcessor`](#set-vmprocessor)
+Hyper-V               | [`New-VMSwitch`][New-VMSwitch] [`Set-VMFirmware`][Set-VMFirmware] [`Set-VMMemory`](#set-vmmemory) [`Set-VMNetworkAdapter`](#set-vmnetworkadapter) [`Set-VMProcessor`](#set-vmprocessor)
 Remote administration | [`Enable-PSRemoting`][Enable-PSRemoting] [`Invoke-Command`](#invoke-command) &bull; **`PSSession`** [`Disconnect`][Disconnect-PSSession] [`Enter`][Enter-PSSession] [`Exit`](#exit-pssession) [`Get`](#get-pssession) [`New`][New-PSSession]
 System administration | [`Get-Alias`][Get-Alias] [`Get-Command`][Get-Command] [`Get-Help`][Get-Help] [`Get-History`][Get-History] [`Get-Module`][Get-Module] `Get-Process` `Get-PSDrive` [`Get-Service`][Get-Service] [`Update-Help`][Update-Help]
 
 ## Syntax
-#### Syntax to research
-
-`[?...]` 
-From [AZ-103](../sources/az-103-tasks.md) 1.4c.09:
-```powershell
-groupid=$(az ad group list --query "[?displayName=='Cloud Admins'].objectId" -o tsv)
-```
-
-`::`
-From "View system uptime" below:
-```powershell
-Select-Object -Property @{n="Last Boot Time";e={[Management.ManagementDateTimeConvert]::ToDateTime($_.LastBootUpTime)}}
-```
-
 The `Throw` keyword generates a terminating error
 
 #### Variables
@@ -208,7 +194,7 @@ Get-Service | Format-Table -Property *
 ```
 Group by `Status`, but the output will be confused because it was not sorted
 ```powershell
-Get-Service | Format-Table -Property DisplayName,StartType,Status -GrouptBy Status
+Get-Service | Format-Table -Property DisplayName,StartType,Status -GroupBy Status
 ```
 Sort list of services
 ```powershell
@@ -402,7 +388,7 @@ Rename a computer and join it to a domain
 ```powershell
 Add-Computer -DomainName adatum.com -NewName ServerB -Credential adatum\administrator
 ```
-Join a new computer to a domain [[1](#sources)]
+Join a new computer to a domain [^][1]
 ```powershell
 Add-Computer -Domain 'officeprodemoco.onmicrosoft.com' -Restart
 New-ADComputer -Name "O365-CL93"
@@ -448,7 +434,7 @@ Export-Alias -Path alias.ps1 -As Script
 ### `Export-Csv`
 ### `Export-CliXml`
 ### `Format-Volume`
-Full format of specified drive [[16](#sources)]
+Full format of specified drive [^][16]
 ```powershell
 Format-Volume -DriveLetter S -FileSystem FAT32 -NewFileSystemLabel SumTips -Full
 ```
@@ -503,7 +489,7 @@ Display programs associated with firewall rules
 Get-NetFirewallRule | %{$_.Name; $_ | Get-NetFirewallApplicationFilter}
 ```
 ### `Get-Partition`
-Display a list of existing partitions, their drive letters, and the disk they are associated with [[16](#sources)]
+Display a list of existing partitions, their drive letters, and the disk they are associated with [^][16]
 ```powershell
 Get-Disk | Get-Partition
 ```
@@ -645,7 +631,7 @@ Configure a network adapter
 New-NetIpAddress -InterfaceIndex 6 -IpAddress 192.168.0.200 -PrefixLength 24 -DefaultGateway 192.168.0.1
 ```
 ### `New-Partition`
-Use all available size for a new partition [[16](#sources)]
+Use all available size for a new partition [^][16]
 ```powershell
 New-Partition -DiskNumber 1 -UseMaximumSize
 ```
@@ -666,9 +652,15 @@ Start a new PowerShell session, connecting to the specified computer
 ```powershell
 New-PSSession -ComputerName core02
 ```
+### `New-VMSwitch`
+Turn on NAT on the nested Hyper-V VM
+```powershell
+New-VMSwitch -name VMNAT -SwitchType Internal
+New-NetNAT -Name LocalNAT -InternalIPInterfaceAddressPrefix "192.168.100.0/24"
+```
 ### `Out-Null`
 ### `Remove-Partition`
-Remove a partition [[16](#sources)]
+Remove a partition [^][16]
 ```powershell
 Remove-Partition -DiskNumber 1 -PartitionNumber 1
 ```
@@ -860,6 +852,11 @@ Protect users in a specified OU from accidental deletion
 Get-ADUser -Filter * -SearchBase "OU=RoadCrew,OU=office365,DC=officeprodemoco,DC=com" ` | 
 Set-ADObject -ProtectedFromAccidentalDeletion $true
 ```
+### `Set-VMFirmware`
+Enable secure boot on Generation 2 Linux VMs [^][IMWS]
+```powershell
+Set-VMFirmware vmname -SecureBootTemplate MicrosoftUEFICertificateAuthority
+```
 ### `Search-ADAccount`
 
 Option                        | Effect
@@ -888,23 +885,25 @@ Option  | Description
 `-Path`
 
 ## Sources
-3. Michael Washam, Jonathan Tuliani, and Scott Hoag. _Exam Ref AZ-103 Microsoft Azure Administrator_. [AZ-103](../sources/az-103.md)
-4. "How to use Wget to download web-based packages on Windows." [TechRepublic](https://www.techrepublic.com/article/how-to-use-wget-to-download-web-based-packages-on-windows/#ftag=RSS56d97e7): 2019/06/26.
-5. "Check PowerShell Version". [powertheshell.com](http://www.powertheshell.com/topic/learnpowershell/firststeps/psversion/)
-6. "About Comparison Operators". [Microsoft Docs](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_comparison_operators?view=powershell-6): 2019/01/17.
-7. "PowerShell equivalents for common Linux/bash commands". [TheShellNut](https://mathieubuisson.github.io/powershell-linux-bash/): 2015/09/30.
-8. "About Functions". [Microsoft Docs](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_functions?view=powershell-6): 2019/02/26.
-9. "Select-Object". [Microsoft Docs](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/select-object?view=powershell-6)
-10. "About CommonParameters". [Microsoft Docs](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_commonparameters?view=powershell-6): 2019/05/27.
-11. "About Parameters Default Values". [Microsoft Docs](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_parameters_default_values?view=powershell-6): 2019/05/30.
-12. "What's in your PowerShell `$PSDefaultParameterValues` Preference Variable?". [mikefrobbins.com](https://mikefrobbins.com/2019/08/01/whats-in-your-powershell-psdefaultparametervalues-preference-variable/): 2019/08/01.
-13. "Using PowerShell to Copy to the Clipboard". [adamtheautomater.com](https://adamtheautomator.com/powershell-copy-to-clipboard/): 2019/08/01.
-14. "About Automatic Variables". [Microsoft Docs](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-6): 2019/02/26.
-15. "3 ways to unzip compressed files using PowerShell". [Web](https://ridicurious.com/2019/07/29/3-ways-to-unzip-compressed-files-using-powershell/)
-16. "Manage [disk](#disk) partitions with Windows PowerShell". [SumTips.com](https://sumtips.com/tips-n-tricks/manage-disk-partitions-with-windows-powershell/)
+[3]: ../sources/az-103.md "Michael Washam, Jonathan Tuliani, and Scott Hoag. _Exam Ref AZ-103 Microsoft Azure Administrator_."
+[4]: https://www.techrepublic.com/article/how-to-use-wget-to-download-web-based-packages-on-windows/#ftag=RSS56d97e7 "techrepublic.com - How to use Wget to download web-based packages on Windows."
+[5]: http://www.powertheshell.com/topic/learnpowershell/firststeps/psversion/ "powertheshell.com - Check PowerShell Version"
+[6]: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_comparison_operators?view=powershell-6 "Microsoft Docs - About Comparison Operators"
+[7]: https://mathieubuisson.github.io/powershell-linux-bash/ "mathieubuisson.github.io - PowerShell equivalents for common Linux/bash commands"
+[8]: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_functions?view=powershell-6 "Microsoft Docs - About Functions"
+[9]: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/select-object?view=powershell-6 "Microsoft Docs - Select-Object"
+[10]: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_commonparameters?view=powershell-6 "Microsoft Docs - About CommonParameters"
+[11]: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_parameters_default_values?view=powershell-6 "Microsoft Docs - About Parameters Default Values"
+[12]: https://mikefrobbins.com/2019/08/01/whats-in-your-powershell-psdefaultparametervalues-preference-variable/ "mikefrobbins.com - What's in your PowerShell `$PSDefaultParameterValues` Preference Variable?"
+[13]: https://adamtheautomator.com/powershell-copy-to-clipboard/ "adamtheautomater.com - Using PowerShell to Copy to the Clipboard"
+[14]: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-6 "Microsoft Docs - About Automatic Variables"
+[15]: https://ridicurious.com/2019/07/29/3-ways-to-unzip-compressed-files-using-powershell/ "ridicurious.com - 3 ways to unzip compressed files using PowerShell"
+[16]: https://sumtips.com/tips-n-tricks/manage-disk-partitions-with-windows-powershell/ "SumTips.com - Manage disk partitions with Windows PowerShell"
 
 [ADAC]: ../sources/adac.md "Berkouwer, Sander. _Active Directory Administration Cookbook_."
 [WSAC]: ../sources/wsac.md "Krause, Jordan. _Windows Server 2016 Administration Cookbook_."
+[IMWS]: ../sources/imws.md "McCabe, John. _Introduction to Microsoft Windows Server 2016_."
+[Zacker]: ../certs/70-740.md "Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017."
 
 [Add-Computer]: ../win/pwsh.md#add-computer "Join a computer to a domain"
 [Add-PSSnapin]: ../win/pwsh.md#add-pssnapin "Load a given list of snap-ins (.NET assemblies containing a collection of cmdlets and/or providers for use within PowerShell) either by name or via the pipeline - last supported in PowerShell 5.1"
@@ -936,11 +935,13 @@ Option  | Description
 [Install-WindowsFeature]: ../win/pwsh.md#install-windowsfeature "Install Windows features and roles"
 [New-NetIpAddress]: ../win/pwsh.md#new-netipaddress "Manually configure network interface, if a DHCP server is unavailable"
 [New-PSSession]: ../win/pwsh.md#new-pssession "Start a new remote PowerShell session with a remote computer"
+[New-VMSwitch]: ../win/pwsh.md#new-vmswitch " "
 [Out-Null]: ../win/pwsh.md#out-null "Dispose of information piped to it, in lieu of displaying it"
 [Select-Object]: ../win/pwsh.md#filters "(alias: select)"
 [Set-DnsClientServerAddress]: ../win/pwsh.md#set-dnsclientserveraddress "Configure DNS server addresses"
 [Set-ExecutionPolicy]: ../win/pwsh.md#set-executionpolicy "Change PowerShell execution policy for Windows computers (Windows only)"
 [Set-Location]: ../win/pwsh.md#set-location "Set present working directory (alias: cd)"
+[Set-VMFirmware]: ../win/pwsh.md#set-vmfirmware " "
 [Start-DscConfiguration]: ../win/pwsh.md#start-dscconfiguration "Erect a push architecture in DSC"
 [Start-Service]: ../win/pwsh.md#start-service " "
 [Stop-Service]: ../win/pwsh.md#stop-service " "
