@@ -25,7 +25,7 @@ Remote connections            | [`rsync`](rsync.md) [`ssh`](ssh.md#ssh) [`ssh-ke
 System administration         | [`free`](sysadmin.md#free) [`getent`](sysadmin.md#getent) [`gpasswd`](gpasswd.md) [`groupadd`](useradd.md#groupadd) [`groupdel`](useradd.md#groupdel) [`groupmod`](useradd.md#groupmod) [`stty`](#stty) [`su`](sudo.md#su) [`sudo`](sudo.md#sudo) [`top`](sysadmin.md#top) [`uname`](sysadmin.md#uname) [`useradd`](useradd.md#useradd) [`userdel`](useradd.md#userdel) [`usermod`](useradd.md#usermod) `vifs` `visudo` &bull; **Debian** [`adduser`](useradd.md#adduser)
 Version control               | [`git`](git.md#git) [`tig`](git.md#tig)
 Wi-Fi                         | [`iw`][iw] `iwlist` `iwconfig` [`rfkill`](rfkill.md)
-X                             | [`xdpyinfo`](X.md#xdpyinfo) [`xmodmap`](xmodmap.md) [`xwininfo`](X.md#xwininfo) [`Xorg`](X.md#xorg) [`xrandr`](X.md#xrandr)
+X                             | [`xdpyinfo`](X.md#xdpyinfo) [`xlsclients][xlsclients] [`xmodmap`](xmodmap.md) [`xwininfo`](X.md#xwininfo) [`Xorg`](X.md#xorg) [`xrandr`](X.md#xrandr)
 
 
 \#  | Commands sorted alphabetically
@@ -40,7 +40,7 @@ G   | [`gconf-editor`](gsettings.md) [`gdisk`](#gdisk) [`gdmsetup`](#gdmsetup) [
 H   | [`hdiutil`](#hdiutil) [`hdparm`](#hdparm) [`head`](#head) [`history`](#history) [`host`](#host) [`hostname`](#hostname) [`hostnamectl`](#hostnamectl) [`hwclock`](#hwclock) 
 I   | [`iconv`](#iconv) [`ifconfig`](#ifconfig) [`imagemagick`](#imagemagick) [`init`](#sysvinit) [`initctl`](#initctl) [`insmod`](#insmod) [`install`](#install.md) [`ip`][ip] [`iptables`](#iptables) [`iscsiadm`](#iscsiadm) [`iw`][iw] [`iwconfig`](#iwconfig) [`iwlist`](#iwlist) 
 J-K | [`journalctl`](init.md#journalctl) &bull; [`kill`](#kill) [`kubeadm`](../devops/k8s.md#kubeadm) [`kubectl`](../devops/k8s.md#kubectl)
-L   | [`last`](#last) [`ldapadd`](#ldapadd) [`ldconfig`](#ldconfig) [`ldd`](#ldd) [`less`](#less) [`let`](#let) [`link`](#link) [`locale`](#locale) [`localectl`](init.md#localectl) [`logout`](#logout) [`lp`](#lp) [`lpadmin`](#lpadmin) [`lpstat`](#lpstat) [`ls`](#ls) [`lsblk`](#lsblk) [`lsmod`](#lsmod) [`lsns`](containers.md) [`lsof`](#lsof) [`lspci`](#lspci) [`lsusb`](#lsusb) [`lvcreate`](#lvcreate) [`lvdisplay`](#lvdisplay) [`lvremove`](#lvremove) [`lvresize`](#lvresize) 
+L   | [`last`](#last) [`ldapadd`](#ldapadd) [`ldconfig`](#ldconfig) [`ldd`](#ldd) [`less`](#less) [`let`](#let) [`link`](#link) [`locale`](#locale) [`localectl`](init.md#localectl) [`loginctl`][loginctl] [`logout`](#logout) [`lp`](#lp) [`lpadmin`](#lpadmin) [`lpstat`](#lpstat) [`ls`](#ls) [`lsblk`](#lsblk) [`lsmod`](#lsmod) [`lsns`](containers.md) [`lsof`](#lsof) [`lspci`](#lspci) [`lsusb`](#lsusb) [`lvcreate`](#lvcreate) [`lvdisplay`](#lvdisplay) [`lvremove`](#lvremove) [`lvresize`](#lvresize) 
 M   | [`mail`](#mail) [`mailq`](#mailq) [`mailstats`](#mailstats) [`make`](#make) [`makemap`](#makemap) [`mdadm`](#mdadm) [`mhwd`](#mhwd) [`mhwd-chroot`](#mhwd-chroot) [`mkdir`](#mkdir) [`mke2fs`](#mke2fs) [`mkfontscale`](#mkfontscale) [`mkfs`](#mkfs) [`mkswap`](#mkswap) [`mktemp`](#mktemp) [`modinfo`](#modinfo) [`modprobe`](#modprobe) [`mongod`](#mongod) [`mount`](#mount) [`msmtp`](#msmtp) [`mt`](#mt) 
 N-O | [`nc`](nc.md) [`netplan`](#netplan) [`netstat`](#netstat) [`NetworkManager`](#NetworkManager) [`newaliases`](#newaliases) [`nice`](#nice) [`nl`](#nl) [`nmap`](nmap.md) [`nmblookup`](#nmblookup) [`nmcli`](nmcli.md) [`nohup`](#nohup) [`nslookup`](nslookup.md) [`ntpdate`](#ntpdate) &bull; [`openssl`](#openssl)
 P   | [`pacman`](pacman.md) [`partx`](partx.md) [`paste`](#paste) [`passwd`](#passwd) [`paste`](#paste) [`patch`](#patch) [`pidof`](containers.md) [`ping`](#ping) [`pip`](#pip) [`postfix`](#postfix) [`postqueue`](#postqueue) [`postsuper`](#postsuper) [`ps`](#ps) [`pvcreate`](#pvcreate) [`pvdisplay`](#pvdisplay) [`pvremove`](#pvremove) [`pydoc`](#pydoc) 
@@ -103,6 +103,7 @@ Variable                                            | Effect
 `$TMPDIR`                                           | place temporary files created and used by the shell in `directory`
 `$TMPDIR=directory`                                 | place temporary files created and used by the shell in directory
 `$UID`                                              | user's ID number
+`$WAYLAND_DISPLAY`                                  | determine if Wayland is running (example output: `wayland-0`) [^](https://docs.fedoraproject.org/en-US/fedora/f31/system-administrators-guide/Wayland/ "docs.fedoraproject.org - The Wayland Display Server")
 `$XDG_SESSION_TYPE`                                 | display compositor (e.g. `wayland`)
 
 **"Here Documents"** or **"Heredocs"** consist of double less-than `<<` followed by an arbitrary character sequence which will be used as delimeter, typically "EOF".
@@ -2000,4 +2001,6 @@ Count the number of occurrences of a string
 [dnf]: dnf.md '"Dandified YUM", successor to `yum` as a package manager for RPM-based Linux distributions like Fedora.'
 [fc-cache]: #fc-cache "Update the font cache."
 [ip]: ip.md "Newer alternative to the old `ifconfig`"
+[loginctl]: systemd.md "Control the systemd login manager"
 [iw]: iw.md "Show or manipulate wireless devices and their configuration"
+[xlsclients]: X.md#xlsclients "Determine what applications are running on the legacy X11 server provided with Wayland"
