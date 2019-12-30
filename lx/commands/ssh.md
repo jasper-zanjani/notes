@@ -1,4 +1,4 @@
-### ssh
+### `ssh`
 Display timer information
 ```sh
 ss -o
@@ -64,6 +64,13 @@ Generate a fingerprint from the public key
 ```sh
 ssh-keygen -lf /path/to/file
 ```
+Generate host keys for WSL [^][https://gist.github.com/zentralwerkstatt/9e6c83e757cdfe430d6710585b2275c7 "GitHub Gist - SSH into Linux Subsystem for Windows"]
+```sh
+sudo ssh-keygen -t rsa -f /etc/ssh/ssh_host_rsa_key
+sudo ssh-keygen -t dsa -f /etc/ssh/ssh_host_dsa_key
+sudo ssh-keygen -t ecdsa -f /etc/ssh/ssh_host_ecdsa_key
+```
+
 ### ssh-keyscan
 Display the public key of {host}
 ```sh

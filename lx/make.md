@@ -8,11 +8,14 @@ make install
 
 ## use case
 Given 3 files in a directory
-  1. main.cpp
-  2. message.cpp
-  3. message.h
-`g++ main.cpp message.cpp`
-  produces `a.out` which is executable
+1. main.cpp
+2. message.cpp
+3. message.h
+
+Produces `a.out` which is executable
+```sh
+g++ main.cpp message.cpp
+```
 
 But for large projects, with potentially thousands of files, this is impractical
 
@@ -69,4 +72,3 @@ AM_INIT_AUTOMAKE
 
 ## Sources
 - [Thoughtbot](https://thoughtbot.com/blog/the-magic-behind-configure-make-make-install)
-

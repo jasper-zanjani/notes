@@ -26,6 +26,9 @@ Add {host} to list of authorized clients for X server
 xhost +host
 ```
 
+### `xlsclients`
+Determine what applications are running on the legacy X11 server provided with Wayland.
+
 ### `Xorg`
 Enable automatic configuration of X11 server
 ```sh

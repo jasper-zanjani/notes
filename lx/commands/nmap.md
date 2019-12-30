@@ -48,3 +48,14 @@ Xmas scan
 ```sh
 nmap -sX
 ```
+Scan a range of IPs [^][Sec+ Lab]
+```sh
+nmap 192.168.27.0/24 > hosts.txt
+```
+Identify operating system and scan ports using TCP SYN packets [^][Sec+ Lab]
+```sh
+nmap -O -sS 192.168.27.0/24 > hosts.txt
+```
+
+
+[Sec+ Lab]: https://pts.measureup.com/web/index.php#dashboard.php "Practice Lab: CompTIA Security+ (SY0-501)"

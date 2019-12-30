@@ -1,29 +1,29 @@
-### snap
-Disable snap {pkg}
+### `snap`
+Disable snap `$PACKAGE
 ```sh
-snap disable package
+snap disable $PACKAGE
 ```
-Enable disabled snap {pkg}
+Enable disabled snap `$PACKAGE`
 ```sh
-snap enable package
+snap enable $PACKAGE
 ```
-Display information about {package}
+Display information about `$PACKAGE`
 ```sh
-snap info --verbose package
+snap info --verbose $PACKAGE
 ```
-Install snap {pkg}
+Install snap `$PACKAGE`
 ```sh
-snap install package
+snap install $PACKAGE
 ```
-Display logs of snap {pkg}
+Display logs of snap `$PACKAGE`
 ```sh
-snap logs package
+snap logs $PACKAGE
 ```
 Check for snap updates
 ```sh
 snap refresh
 ```
-Uninstall snap {pkg}
+Uninstall snap `$PACKAGE`
 ```sh
-snap remove package
+snap remove $PACKAGE
 ```
