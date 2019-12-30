@@ -7,7 +7,7 @@ B       | [`bcdedit`](#bcdedit "Boot configuration data editor") [`bootrec`](#bo
 I       | [`ipconfig`](#ipconfig) 
 N       | [`nbtstat`](#nbtstat) [`netsh`](#netsh) [`ntdsutil`](#ntdsutil "Used to transfer FSMO roles between domain controllers")
 R       | [`route`](#route) 
-S       | [`systeminfo`](#systeminfo) 
+S       | [`shutdown`](#shutdown) [`systeminfo`](#systeminfo) 
 T       | [`tracert`](#tracert) [`traceroute`](#tracert) 
 W       | [`winrm`](#winrm)
 
@@ -116,6 +116,12 @@ Option  | Effect
 Basic syntax:
 ```sh
 route add 192.168.2.1 mask (255.255.255.0) 192.168.2.4
+```
+
+### `shutdown`
+Immediate restart [^][Lab]
+```cmd
+shutdown /r /t 0
 ```
 
 ### `systeminfo`

@@ -1,10 +1,10 @@
 # Sources
-1. "7 Open Source Software Related To Music". [Fosslicious](https://www.fosslicious.com/2019/01/7-open-source-software-related-to-music.html): 2019/01/02.
-2. "How to create snapshots on Linux with Timeshift". [TechRepublic](https://www.techrepublic.com/article/how-to-create-snapshots-on-linux-with-timeshift/#ftag=RSS56d97e7)
-3. "Music and video at the Linux terminal". [Red Hat](https://www.redhat.com/sysadmin/music-video-linux-terminal?sc_cid=70160000001273HAAQ): 2019/06/25.
-4. "rdesktop - A RDP Client to Connect Windows Desktop from Linux". [TecMint](https://www.tecmint.com/rdesktop-connect-windows-desktop-from-linux/): 2019/07/09.
-5. "Introducing Fedora CoreOS". [Fedora Magazine](https://fedoramagazine.org/introducing-fedora-coreos/): 2019/07/24.  
-6. "Fedora CoreOS - Getting Started". [Fedora Documentation](https://docs.fedoraproject.org/en-US/fedora-coreos/getting-started/): 
+[1]: https://www.fosslicious.com/2019/01/7-open-source-software-related-to-music.html "Fossilicious: \"7 Open Source Software Related To Music\""
+[2]: https://www.techrepublic.com/article/how-to-create-snapshots-on-linux-with-timeshift/#ftag=RSS56d97e7 "TechRepublic: \"How to create snapshots on Linux with Timeshift\""
+[3]: https://www.redhat.com/sysadmin/music-video-linux-terminal?sc_cid=70160000001273HAAQ "Red Hat: \"Music and video at the Linux terminal\""
+[4]: https://www.tecmint.com/rdesktop-connect-windows-desktop-from-linux/ "TecMint: \"rdesktop - A RDP Client to Connect Windows Desktop from Linux\""
+[5]: https://fedoramagazine.org/introducing-fedora-coreos/ "Fedora Magazine: \"Introducing Fedora CoreOS\""
+[6]: https://docs.fedoraproject.org/en-US/fedora-coreos/getting-started/ "docs.fedoraproject.org: \"Fedora CoreOS - Getting Started\""
 7. "Easy Academic References on the Command Line". [YouTube](https://youtu.be/ksAfmJfdub0) 
 8. "Yakuake scripting". [coderwall.com](https://coderwall.com/p/kq9ghg/yakuake-scripting)
 9. "Moving files on Linux without [ `mv` ](commands.md#mv)". [opensource.com](https://opensource.com/article/19/8/moving-files-linux-without-mv): 2019/08/19.
@@ -42,8 +42,9 @@
 41. "Install Samba4 on RHEL 8 for File Sharing on Windows". [Web](https://www.tecmint.com/install-samba-on-rhel-8-for-file-sharing-on-windows/): 2019/06/12.
 42. "How to [ `find` ](commands.md#find) recently modified files/folders in Linux". [Web](https://www.2daygeek.com/check-find-recently-modified-files-folders-linux/): 2013/10/11.
 43. "[`paste`](commands.md#paste) command in Linux (merge lines)". [Web](https://linuxize.com/post/paste-command-in-linux/): 2019/09/22.
-44. "[`rsync`](commands.md#rsync) (Remote Sync) command examples and usage". [Web](https://www.2daygeek.com/linux-rsync-command-local-remote-file-synchronization/): 2015/08/16.
-45. "Replacing `rc.local` in systemd Linux systems". [Red Hat](https://www.redhat.com/sysadmin/replacing-rclocal-systemd): 2019/10/01.
+
+[44]: https://www.2daygeek.com/linux-rsync-command-local-remote-file-synchronization/ "rsync (Remote Sync) command examples and usage"
+[45]: https://www.redhat.com/sysadmin/replacing-rclocal-systemd "Red Hat: \"Replacing `rc.local` in systemd Linux systems\""
 46. "Linux [`tree`](commands.md#tree) command usage examples for beginners". [Tecmint](https://www.tecmint.com/linux-tree-command-examples/): 2019/10/02.
 47. "Use [`fallocate`](commands.md#fallocate) command to create files of specific size in Linux." [Linux Handbook](https://linuxhandbook.com/fallocate-command/): 2019/09/11.
 48. "Take screenshots from the Terminal in Mac OS X". [OSX Daily](http://osxdaily.com/2011/08/11/take-screen-shots-terminal-mac-os-x/): 2011/08/11.
@@ -57,3 +58,5 @@
 57. "[ RAID ](#raid) for those who avoid it." [Red Hat](https://www.redhat.com/sysadmin/raid-intro): 2019/11/01. [p](https://app.getpocket.com/read/2777681287)
 58. "[Help] WiFi does not work". [Reddit](https://www.reddit.com/r/GalliumOS/comments/b8xm3l/help_wifi_does_not_work/): 2019.
 59. "How to Connect Wi-Fi from Linux Terminal Using Nmcli Command". [TecMint](https://www.tecmint.com/nmcli-connect-wi-fi-from-linux-terminal/): 2018/04/12.
+
+[Sec+ Lab]: https://pts.measureup.com/web/index.php#dashboard.php "Practice Lab: CompTIA Security+ (SY0-501)"

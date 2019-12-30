@@ -13,10 +13,10 @@ Others                          | [Boot sequence](#boot-sequence) [Namespaces](#
 ## Boot sequence
 ### Microcontrollers
 Microcontrollers that may be listening when the system is nominally off; they typically have their own BIOS and kernels and are inaccessible from the main system
-  - Baseboard Management Controller (BMC) responds to wake-on-LAN (WOL)
-  - Intel Management Engine (IME)
-    - `x86_64` software suite for remote management of systems
-    - firmware is based on `Minix` and runs on the Platform Controller Hub processor, not the main CPU
+- Baseboard Management Controller (BMC) responds to wake-on-LAN (WOL)
+- Intel Management Engine (IME)
+  - `x86_64` software suite for remote management of systems
+  - firmware is based on `Minix` and runs on the Platform Controller Hub processor, not the main CPU
 System Management Mode (SMM) launches UEFI software
 ### Bootloaders
 Bootloaders like GRUB (GRand Unified Bootloader) or _u-boot_ turns on power supplies and scans buses and interfaces to locate the kernel image and the root filesystem. LILO (LInux LOader) is also another bootloader that can be found on older Linux systems (LALOS)

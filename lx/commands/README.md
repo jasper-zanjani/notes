@@ -5,6 +5,7 @@ Topic                         | Commands
 :---                          | :---
 Ansible                       | [`ansible`](../ansible.md#ansible) [`ansible-galaxy`](../ansible.md#ansible-galaxy) [`ansible-playbook`](../ansible.md#ansible-playbook)
 Archive                       | [**`bzip2`**](bzip2.md) `bzcat` `bzless` `bzmore` &bull; [`compress`](compress.md#compress) [`uncompress`](compress.md#uncompress) &bull; [`gzip`](gzip.md) [`tar`](tar.md#tar) &bull; [**`zip`**](zip.md#zip) [`unzip`](zip.md#unzip) [`zipcloak`](zip.md#zipcloak) [`zipdetails`](zip.md#zipdetails) [`zipgrep`](zip.md#zipgrep) [`zipinfo`](zip.md#zipinfo) [`zipnote`](zip.md#zipnote) [`zipsplit`](zip.md#zipsplit) &bull; [`dar`](dar.md)
+Benchmarking                  | [`free`][free] [`glances`][glances] [`lscpu`][lscpu] `nproc` `uptime`
 Date and time                 | [`chrony`](#chrony) [`date`](date.md#date) [`hwclock`](#hwclock) [`timedatectl`](init.md#timedatectl)
 Disk management               | `blkid` [`partx`](partx.md)
 Distributions                 | **Debian** [`adduser`](useradd.md#adduser) [**`apt`**](apt.md#apt) `apt-cache` `apt-key` `add-apt-repository` **Manjaro** [`mhwd`](#mhwd) [`mhwd-chroot`](#mhwd-chroot) [`pacman`](pacman.md) [`yay`](yay.md) **Red Hat** [`dnf`][dnf] [`rpm`](rpm.md) [`yum`](yum.md)
@@ -18,7 +19,7 @@ Kubernetes                    | [`kubeadm`](../devops/k8s.md#kubeadm) [`kubectl`
 Logical volumes               | [`lvcreate`](lvm.md#lvcreate) [`lvdisplay`](lvm.md##lvdisplay) [`lvremove`](lvm.md##lvremove) [`lvs`](lvm.md##lvs) [`pvcreate`](lvm.md##pvcreate) [`pvdisplay`](lvm.md##pvdisplay) [`pvremove`](lvm.md##pvremove) [`pvs`](lvm.md##pvs) [`vgcreate`](lvm.md##vgcreate) [`vgdisplay`](lvm.md##vgdisplay) [`vgextend`](lvm.md##vgextend) [`vgremove`](lvm.md##vgremove) [`vgs`](lvm.md##vgs)
 Mac OS X                      | `pbcopy` `pbpaste` `screencapture`
 Mail                          | [`mail`](#mail) [`mailmerge`](mailmerge.md#mailmerge) [`mailx`](#mail) [`msmtp`](#msmtp) [`qmail`](#qmail) [`postfix`](#postfix) 
-Network                       | [`ip`][ip] `iwlist` `iwconfig` [`netstat`](netstat.md) [`nc`](nc.md) [`nmap`](nmap.md) [`nmcli`](nmcli.md) [`rfkill`](rfkill.md) [`ss`](ss.md) `tracepath` `traceroute` `xinetd` &bull; **DNS** [`dig`](dig.md) [`nslookup`](nslookup.md)
+Network                       | [`hping3`][hping3] [`ip`][ip] `iwlist` `iwconfig` [`netstat`](netstat.md) [`nc`](nc.md) [`nmap`](nmap.md) [`nmcli`](nmcli.md) [`rfkill`](rfkill.md) [`ss`](ss.md) `tracepath` `traceroute` `xinetd` &bull; **DNS** [`dig`](dig.md) [`nslookup`](nslookup.md)
 Package managers              | [`apt`](apt.md#apt) [`brew`](#brew) [`dnf`][dnf] [`gem`](gem.md) [`pacman`](pacman.md) [`pip`](#pip) [`snap`](snap.md) [`yay`](yay.md) [`yum`](yum.md)
 Processes                     | [`lsns`](containers.md) [`pidof`](containers.md) [`ps`](ps.md) [`top`](sysadmin.md#top) [`unshare`](containers.md)
 Remote connections            | [`rsync`](rsync.md) [`ssh`](ssh.md#ssh) [`ssh-keygen`](ssh.md#ssh-keygen) [`ssh-keyscan`](ssh.md#ssh-keyscan) [`sshfs`](ssh.md#sshfs)
@@ -2000,7 +2001,12 @@ Count the number of occurrences of a string
 [ftp]: # 'Transfer files to and from a remote network site'
 [dnf]: dnf.md '"Dandified YUM", successor to `yum` as a package manager for RPM-based Linux distributions like Fedora.'
 [fc-cache]: #fc-cache "Update the font cache."
+[free]: benchmarking.md#free "Display amount of free and used memory in the system"
+[glances]: benchmarking.md#glances "Cross-platform monitoring tool, written in Python"
 [ip]: ip.md "Newer alternative to the old `ifconfig`"
 [loginctl]: systemd.md "Control the systemd login manager"
 [iw]: iw.md "Show or manipulate wireless devices and their configuration"
+[lscpu]: benchmarking.md#lscpu "Display CPU architecture information"
+[nproc]: benchmarking.md#nproc "Display number of CPU processors or cores"
 [xlsclients]: X.md#xlsclients "Determine what applications are running on the legacy X11 server provided with Wayland"
+[hping3]: network.md#hping3 "Active network smashing tool"
