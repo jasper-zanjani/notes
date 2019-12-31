@@ -7,49 +7,19 @@
 5. **Map** each form-based feature (e.g. commands) to tasks in a spreadsheet (Command | Task). Once organized by command, the resulting associations can form another table of content which associates form features to tasks. These should be placed in another single-cell cloud where each token is followed by links to the tasks in which it appears. The tokens should be organized, either by command group or roughly by domain.
 6. **Index** form-based features at the top of the markdown as a concordance.
 
-## BitTorrent
-Bram Cohen invented BitTorrent protocol in 2001 and wrote the first client in Python. It is a peer-to-peer file sharing protocol where those who share a file are called **seeders** and those who download are called **peers**. All seeders and peers related to a particular torrent comprise the **swarm**. The **tracker server** or **tracker** serves as a repository for information about peers associated with the same file. Files are downloaded in hashed pieces from multiple seeders to distribute the burden of seeding a file. [[4](#sources)]\
-A **Torrent Descriptor** file is a hashmap file
-
-Torrent Descriptor property | Description
-:---                        | :---
-Announce                    | URL of the tracker
-Info                        | dictionary whose keys depend on whether one or more files are being shared, including:<br/>Files: list of dictionaries, only exists when multiple files are being shared, each dictionary has two keys and corresponds to a file<br/>Length: size of the file in bytes<br/>Path: list of strings corresponding to subdirectory names, the last of which is the actual filename
-length                      | size of the file in bytes (when one file is being shared
-name                        | suggested file or directory name
-Pieces length               | number of bytes per piece; must be a power of 2 and at least 16KiB
-Pieces                      | list of SHA-1 160-bit hashes calculated on various parts of data
-
-```json
-{
-  "Announce": "url of tracker",
-  "Info": {
-  "Files": [{ 
-    "Length": 16, 
-    "path": "/folder/to/path" }, 
-    { "length": 193, 
-    "path": "/another/folder" }] 
-  },
-  "length": 192, 
-  "name":" Ubuntu.iso", 
-  "Pieces length": 262144, 
-  "Pieces": [AAF4C61DDCC5E8A2DABEDE0F3B482CD9AEA9434D, CFEA2496442C091FDDD1BA215D62A69EC34E94D0]
-}
-```
-
 ## Bootloaders
-bootloader: software located in the first sector (Master Boot Record) of a HDD, which is read by the BIOS
+**bootloader**: software located in the first sector (Master Boot Record) of a HDD, which is read by the BIOS
 - implementing interruptions requires knowledge of Assembler
 - expertise in low-level programming in C
 - Java and C# produce intermediate code, which must be executed by a special virtual machine
 - mixed-code technique requires at least two compilers (one for Assembler and C, another as a linker to join the *.obj files to create a single executable file)
 
 ## Bots
-### Discord
-Main procedure:
-  1. Create the bot user on Discord and register it with a guild.
-  2. Write code that uses Discord’s APIs and implements your bot’s behaviors.
-#### Create a Discord connection
+#### Discord
+1. Create the bot user on Discord and register it with a guild.
+2. Write code that uses Discord’s APIs and implements your bot’s behaviors.
+
+Create a Discord connection
 A `Client` is an object that represents a connection to Discord, handling events, tracking state, and interacting with Discord APIs.
 ```py
 # bot.py
@@ -67,16 +37,17 @@ async def on_ready():
 
 client.run(token)
 ```
-#### Store token in `.env` file
+Store token in `.env` file
 `.env` should be placed in the same directory as `bot.py`
 ```
 # .env
 DISCORD_TOKEN={your-bot-token}
 ``` 
-### Twitch
+#### Twitch
 - Nightbot
 - [Mee6](https://mee6.xyz/)
-### Ruby bot programming
+
+#### Ruby bot programming
 Ruby library "socket" allows integration with [Twitch's IRC API](https://twitchapps.com/tmi), which provides an oauth token which can be stored as password. Command `write_to_system` appears to be  what is needed to concatenate IRC commands `PASS #{@password`, `NICK #{@nickname}`, `USER #{@nickname} 0 * #{@nickname}`, and `JOIN #@{channel}`\
 From the REPL, you instantiate an instance of the class after running the script, which will allow passing messages to the chat room by using an instance method
 ```rb
@@ -91,5 +62,4 @@ Hypervisor, similar to Hyper-V, but provided at a cost, with a robust command-li
 1. "Custom bot using Ruby". [Web](https://www.youtube.com/watch?v=rVVhkX1uTRQ).
 2. "How to make a Discord bot in Python". [Web](https://realpython.com/how-to-make-a-discord-bot-python/): 2019/08/19.
 3. "VMware PowerCLI 101". [Web](https://www.brianbunke.com/blog/2019/09/03/powercli-101/): 2019/09/03.
-4. "How Does BitTorrent Work? a Plain English Guide". [Web](https://app.getpocket.com/read/2717933967)
 5. "Storage in a DevOps World". [GitHub](sources/README.md/#new-stack-makers)
