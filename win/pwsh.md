@@ -11,12 +11,12 @@ H     | **`Help`** [`Get`](#get-help) [`Update`](#update-help)
 L     | **`List`** [`Format`][Format-List] &bull; **`Location`** [`Set`][Set-Location]
 M     | **`Module`** [`Import`](#module) [`Install`](#module)
 N     | **`NetAdapter`** [`Get`][Get-NetAdapter] **`NetFirewallRule`** [`Get`](#get-netfirewallrule) [`New`](#new-netfirewallrule) [`Set`](#set-netfirewallrule) &bull; **`NetIpAddress`** [`New`][New-NetIpAddress] &bull; **`Null`** [`Out`][Out-Null]
-O     | **`Object`** [`ForEach`][ForEach-Object] [`Select`][Select-Object] [`Where`][Where-Object] **`Output`** [`Write`](#write-output)
+O     | **`Object`** [`ForEach`][ForEach-Object] [`Select`][Select-Object] [`Where`][Where-Object] **`Output`** [`Write`](#write-output) &bull; 
 P     | **`Partition`** [`Get`](#get-partition) [`New`](#new-partition) [`Remove`](#remove-partition) &bull; **`PSReadlineOption`** [`Get`](#get-psreadlineoption) [`Set`](#set-psreadlineoption) &bull; **`PSSession`** [`Disconnect`][Disconnect-PSSession] [`Enter`](#enter-pssession) [`Exit`](#exit-pssession) [`Get`](#get-pssession) [`New`][New-PSSession]
 S     | **`Service`** [`Get`](#service) [`Start`](#service) [`Stop`](#service) &bull;
 T     | **`Table`** [`Format`][Format-Table]
 V     | **`VMFirmware`** [`Set`][Set-VMFirmware] &bull; **`VMMemory`** [`Set`](#set-vmmemory) &bull; **`VMNetworkAdapter`** [`Set`](#set-vmnetworkadapter) &bull; **`VMProcessor`** [`Set`](#set-vmprocessor) &bull; **`VMSwitch`** [`New`][New-VMSwitch]
-W     | **`WebRequest`** [`Invoke`](#invoke-webrequest) &bull; **`WindowsFeature`** [`Get`](#get-windowsfeature) [`Install`](#install-windowsfeature) **`WMIObject`** [`Get`](#get-wmiobject)
+W     | **`WebRequest`** [`Invoke`](#invoke-webrequest) &bull; **`WindowsFeature`** [`Get`](#get-windowsfeature) [`Install`](#install-windowsfeature) &bull; **`WindowsOptionalFeature`** [`Enable`][Enable-WindowsOptionalFeature] **`WMIObject`** [`Get`](#get-wmiobject)
 
 \#    | Active Directory cmdlets
 ---   | ---
@@ -884,6 +884,16 @@ Option  | Description
 ---     | ---
 `-Path`
 
+### `Enable-WindowsOptionalFeature`
+Enable a feature in the currently running operating system [^](https://docs.microsoft.com/en-us/powershell/module/dism/enable-windowsoptionalfeature?view=win10-ps&redirectedfrom=MSDN "Microsoft Docs: \"Enable-WindowsOptionalFeature\"")
+```powershell
+Enable-WindowsOptionalFeature -Online -FeatureName "Hearts" -All
+```
+Enable WSL [^](https://www.reddit.com/r/bashonubuntuonwindows/comments/7smf9m/help_wsl_wont_activate_on_my_freshly_installed/ "Reddit: \"[help] WSL won't activate on my freshly installed Windows 10 version 1709\"")
+```powershell
+Enable-WindowsOptionalFeature -online -FeatureName Microsoft-Windows-Subsystem-Linux
+```
+
 ## Sources
 [3]: ../sources/az-103.md "Michael Washam, Jonathan Tuliani, and Scott Hoag. _Exam Ref AZ-103 Microsoft Azure Administrator_."
 [4]: https://www.techrepublic.com/article/how-to-use-wget-to-download-web-based-packages-on-windows/#ftag=RSS56d97e7 "techrepublic.com - How to use Wget to download web-based packages on Windows."
@@ -908,6 +918,7 @@ Option  | Description
 [Add-Computer]: ../win/pwsh.md#add-computer "Join a computer to a domain"
 [Add-PSSnapin]: ../win/pwsh.md#add-pssnapin "Load a given list of snap-ins (.NET assemblies containing a collection of cmdlets and/or providers for use within PowerShell) either by name or via the pipeline - last supported in PowerShell 5.1"
 [Disconnect-PSSession]: ../win/pwsh.md#disconnect-pssession "Terminate a remote PowerShell session begun with `New-PSSession`"
+[Enable-WindowsOptionalFeature]: ../win/pwsh.md#enable-windowsoptionalfeature "Enable or restore an optional feature in a Windows image"
 [Enable-PSRemoting]: ../win/pwsh.md#enable-psremoting "Allow remote PowerShell management"
 [Enter-PSSession]: ../win/pwsh.md#enter-pssession "Interact with the specified PowerShell session"
 [Expand-Archive]: ../win/pwsh.md#expand-archive "Decompress archives"

@@ -1,9 +1,8 @@
 # Perl
 
-## REPL
 Perl6 offers an interactive shell, but previous versions needed a specialized command to be run through the interpreter
 
-## General syntax
+General syntax
 - Semicolons terminate lines
 - Whitespace is irrelevant, except inside strings
 - Enclosing function arguments in parentheses is optional
