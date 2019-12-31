@@ -8,7 +8,7 @@ Topic                           | Contents
 Desktop environments            | [GNOME](gnome.md) [KDE](kde.md) [i3](i3.md)
 Distributions                   | [Arch Linux](distributions.md#arch-linux) [BSD](distributions.md#bsd) [Clear Linux](distributions.md#clear-linux) [Fedora CoreOS](#distributions.md#fedora-coreos) [Kali Linux](distributions.md#kali-linux) [Mac OS X](macosx.md)
 Packaging                       | [Flatpak](#flatpak)
-Others                          | [Boot sequence](#boot-sequence) [Namespaces](#namespaces) [RAID](#raid) [Runlevels](#runlevels) [X](X.md)
+Others                          | [Boot sequence](#boot-sequence) [Namespaces](#namespaces) [PulseAudio](pulseaudio.md) [RAID](#raid) [Runlevels](#runlevels) [X](X.md)
 
 ## Boot sequence
 ### Microcontrollers
