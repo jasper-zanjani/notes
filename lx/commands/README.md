@@ -23,6 +23,7 @@ Network                       | [`hping3`][hping3] [`ip`][ip] `iwlist` `iwconfig
 Package managers              | [`apt`](apt.md#apt) [`brew`](#brew) [`dnf`][dnf] [`gem`](gem.md) [`pacman`](pacman.md) [`pip`](#pip) [`snap`](snap.md) [`yay`](yay.md) [`yum`](yum.md)
 Processes                     | [`lsns`](containers.md) [`pidof`](containers.md) [`ps`](ps.md) [`top`](sysadmin.md#top) [`unshare`](containers.md)
 Remote connections            | [`rsync`](rsync.md) [`ssh`](ssh.md#ssh) [`ssh-keygen`](ssh.md#ssh-keygen) [`ssh-keyscan`](ssh.md#ssh-keyscan) [`sshfs`](ssh.md#sshfs)
+Sound                         | [`amixer`][amixer]
 System administration         | [`free`](sysadmin.md#free) [`getent`](sysadmin.md#getent) [`gpasswd`](gpasswd.md) [`groupadd`](useradd.md#groupadd) [`groupdel`](useradd.md#groupdel) [`groupmod`](useradd.md#groupmod) [`stty`](#stty) [`su`](sudo.md#su) [`sudo`](sudo.md#sudo) [`top`](sysadmin.md#top) [`uname`](sysadmin.md#uname) [`useradd`](useradd.md#useradd) [`userdel`](useradd.md#userdel) [`usermod`](useradd.md#usermod) `vifs` `visudo` &bull; **Debian** [`adduser`](useradd.md#adduser)
 Version control               | [`git`](git.md#git) [`tig`](git.md#tig)
 Wi-Fi                         | [`iw`][iw] `iwlist` `iwconfig` [`rfkill`](rfkill.md)
@@ -1998,6 +1999,7 @@ Count the number of occurrences of a string
 | uniq -c | sort -nr
 ```
 
+[amixer]: sound.md#amixer "Command-line mixer for ALSA sound card driver"
 [ftp]: # 'Transfer files to and from a remote network site'
 [dnf]: dnf.md '"Dandified YUM", successor to `yum` as a package manager for RPM-based Linux distributions like Fedora.'
 [fc-cache]: #fc-cache "Update the font cache."
