@@ -16,3 +16,9 @@ amixer info
 
 [amixer]: sound.md#amixer "Command-line mixer for ALSA sound card driver"
 [Schatz]: http://www.volkerschatz.com/noise/alsa.html "www.volkerschatz.com: \"A close look at ALSA\""
+
+### `speaker-test`
+Test loudspeakers with a 2-speaker setup
+```sh
+speaker-test -c 2
+```

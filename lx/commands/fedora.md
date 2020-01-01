@@ -39,7 +39,7 @@ Option  | POSIX option            | Effect
 `-a`       |                         | list all installed packages
 `-c`       |                         | list configs installed with specified package
 `-d`       |                         | list documentation files installed with specified package
-`-i`       |                         | display information about specified package
+`-I`       |                         | display information about specified package
 `-K`       |                         | Verify integrity of specified package
 `-l`       |                         | List all files installed with specified package
 `-provides`|                         | List which capabilities the specified package provides

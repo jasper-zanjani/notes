@@ -10,41 +10,44 @@ Distributions                   | [Arch Linux](distributions.md#arch-linux) [BSD
 Packaging                       | [Flatpak](#flatpak)
 Others                          | [Boot sequence](#boot-sequence) [Namespaces](#namespaces) [PulseAudio](pulseaudio.md) [RAID](#raid) [Runlevels](#runlevels) [X](X.md)
 
-## Boot sequence
-### Microcontrollers
-Microcontrollers that may be listening when the system is nominally off; they typically have their own BIOS and kernels and are inaccessible from the main system
-- Baseboard Management Controller (BMC) responds to wake-on-LAN (WOL)
-- Intel Management Engine (IME)
-  - `x86_64` software suite for remote management of systems
-  - firmware is based on `Minix` and runs on the Platform Controller Hub processor, not the main CPU
-System Management Mode (SMM) launches UEFI software
-### Bootloaders
+### Boot
 Bootloaders like GRUB (GRand Unified Bootloader) or _u-boot_ turns on power supplies and scans buses and interfaces to locate the kernel image and the root filesystem. LILO (LInux LOader) is also another bootloader that can be found on older Linux systems (LALOS)
-#### Change Windows bootloader to Linux, while dual booting
-```cmd
-bcdedit /set {bootmgr} path \EFI\manjaro\grubx64.efi
-```
-### Initial RAM Disk
+
+Microcontrollers may be listening when the system is nominally off; they typically have their own BIOS and kernels and are inaccessible from the main system
+- **Baseboard Management Controller (BMC)** responds to **wake-on-LAN (WOL)**
+- **Intel Management Engine (IME)** `x86_64` software suite for remote management of systems; firmware is based on `Minix` and runs on the **Platform Controller Hub** processor, not the main CPU
+- **System Management Mode (SMM)** launches UEFI software
+
 **`initrd`** (Initial RAM disk) is a temporary file system that's loaded into memory when the system boots
-### Kernel
-Linux kernel is typically named **`vmlinux`** or **`vmlinuz`** (when compressed). Kernel ring buffer contains messages related to the Linux kernel. A ring buffer is a data structure that is always the same size; old messages are discarded as new ones come in, once the buffer is full. `dmesg` is used to see its contents, and the messages are also stored in `/var/log/dmesg`
-### init
-**`sysvinit`** or "**SystemVinit**" is a daemon process which was used by most distros until recently.
-  - processes started serially and synchronously, wasting system resources
-  - for years, a common hack was to run services in the background, simulating a sort of parallel processing
-**Upstart** was developed by Canonical for Ubuntu, but abandoned in 2014. 
-**Systemd** which starts processes in parallel has become de facto standard for all major Linux distributions
+
+Linux kernel is typically named **vmlinux** (or **vmlinuz** when compressed). Kernel ring buffer contains messages related to the Linux kernel. A ring buffer is a data structure that is always the same size; old messages are discarded as new ones come in, once the buffer is full. `dmesg` is used to see its contents, and the messages are also stored in `/var/log/dmesg`
+
 
 ### System logging
 Traditionally, `syslogd` was the daemon in charge of this, but recently alternatives such as `rsyslog` and `syslog-ng` have emerged. 
 
-## Processes
+\#    | Severity      | Description
+:---  | :---          | :---  
+0     | Emergencies   | Most severe error conditions that render the system unusable
+1     | Alerts        | Conditions requiring immediate attention
+2     | Critical      | Condition that should be addressed to prevent an interruption of service
+3     | Error         | Error conditions that do not render the system unusable
+4     | Warning       | Specific operations failed to complete successfully
+5     | Notifications | Non-error notifications that alert an administrator about state changes within a system
+6     | Informational | Detailed dinformation about the normal operation of a system
+7     | Debugging     | Highly detailed information used for troubleshooting
+
+### Processes
 - every process has a parent; a process can **spawn** children
 - a process runs in its own **user address space**, a protected space which can't be disturbed by other users
 - all processes on a Linux system are child processes of a common parent: the `init` process which is executed by the kernel at boot time (PID 1)
 - every Linux process inherits the environment (PATH variable, etc) and other attributes of its parent process
 
-### Segments
+Process creation:
+1. `FORK` copy process invoking it as `fork()`
+2. `EXEC` parent then overwrites this copy with the program that has to be executed which replaces or **overlays** the text and data areas as `exec()` system call
+3. `WAIT` parent waits for `SIGTERM` signal which the child will send upon completion `wait()` system call
+
 1. **`TEXT SEGMENT`**: executable code
 2. **`DATA SEGMENT`**: variables and arrays the program uses during execution
 3. **`USER SEGMENT`**: process attributes
@@ -53,30 +56,23 @@ Traditionally, `syslogd` was the daemon in charge of this, but recently alternat
   - real group ID
   - priority
 
-### Phases of process creation
-1. FORK copy process invoking it as `fork()`
-2. EXEC parent then overwrites this copy with the program that has to be executed which replaces or **overlays** the text and data areas as `exec()` system call
-3. WAIT parent waits for SIGTERM signal which the child will send upon completion `wait()` system call
-
-### Types of commands
-1. Internal commands (`cd`, `echo`, etc. and variable assignments) do not spawn child processes
-2. Shell scripts are executed by spawning a sub-shell, which becomes the script's parent
-3. External commands are spawned as children of the parent as described above
+- Internal commands (`cd`, `echo`, etc. and variable assignments) do not spawn child processes
+- Shell scripts are executed by spawning a sub-shell, which becomes the script's parent
+- External commands are spawned as children of the parent as described above
 
 ### Low priority jobs
-`nice` : priorities range from 0-19 in `csh` (10 is default); higher values run at lower priority
-`ps -l` : view priorities of jobs
-`nice -5 cmd &` : run {cmd} at a higher priority
-
-Runlevel                      | Description
----                           | ---
-`poweroff.target`             | systemd equivalent to runlevel `0`
-`rescue.target`               | systemd equivalent to runlevel `1`
-`multi-user.target`           | systemd equivalent to runlevel `3`
-`graphical.target`            | systemd equivalent to runlevel `5`
-`reboot.target`               | systemd equivalent to runlevel `6`
-`emergency.target`            | systemd equivalent to runlevel `emergency`
-`systemctl isolate $RUNLEVEL` | change target to `$RUNLEVEL`
+Priorities range from 0-19 in `csh` (10 is default); higher values run at lower priority
+```sh
+nice
+```
+View priorities of jobs
+```sh
+ps -l
+```
+Run `cmd` at a higher priority
+```sh
+nice -5 cmd &
+```
 
 ### Cgroups
 **Control group (cgroups)** is a Linux kernel feature that isolates a collection of processes.
@@ -89,51 +85,43 @@ Runlevel                      | Description
   - good for limiting the resources available to a container
   - `systemd` uses cgroups
   - first heard about in Linux Unplugged 289, in the context of Fedora supporting v2 whereas most userspace applications support v1
-## Graphical environments
-Fully-featured desktop environments are distinct from window managers, which are more focused in scope
 
-## Filesystems
-**inodes** "index node", data structure that stores all the information about a file except its name and data
+Process IDs in the same **namespace** can have access to one another, whereas those in different namespaces cannot. Spawning a process in a new namespace prevents it from seeing the host's context, so an interactive shell like `zsh` spawned in its own namespace will report its PID as `1`, even though the host will assign its own PID. This is the concept behind [**containers**](../devops/README.md#containers). [[55](sources.md)]
+
+### Graphical environments
+Fully-featured **desktop environments** are distinct from **window managers**, which are more focused in scope
+
+### Filesystems
+**Index node (inode)** is a data structure that stores all the information about a file except its name and data
 Most modern Linux distributions use the `ext4` filesystem, which descends from `ext3` and `ext2`, and ultimately `ext`. Other filesystems in use include `btrfs`, `xfs`, and `zfs`
-Source: [OpenSource.com](https://opensource.com/article/18/4/ext4-filesystem)
-### ext
-- developed by Remy Card to address limitations in the MINIX filesystem, which was used to develop the first Linux kernel
-- could address up to 2GB of storage and handle 255-character filenames
-- had only one timestap per file
-### ext2
-- developed by Remy Card only a year after `ext`'s release as a commercial-grade filesystem, influenced by BSD's Berkeley Fast File System
-- prone to corruption if the system crashed or lost power while data was being written; prone to performance losses due to fragmentation
-- quickly and widely adopted, and still used as a format for USB drives
-### ext3
-- adopted by mainline Linux in 2001
-- uses `journaling`, whereby disk writes are stored as transactions in a special allocation, which allows a rebooted system to roll back incomplete transactions
-- 3 levels of journaling: `journal`, `ordered`, and `writeback`
-  - `journal` lowest risk, writes both data and metadata to journal before commiting it to filesystem
-  - `ordered` default mode in most Linux distros, writes metadata to journal but commits data directly to the filesystem
-  - `writeback` least safe, metadata is journaled but data is not
-### ext4
-- added to mainline Linux in 2008, developed by Theodore Ts'o
-- improves upon `ext3` but is still reliant on old technology
-### ZFS
+Source: [^](https://opensource.com/article/18/4/ext4-filesystem "opensource.com: \"Understanding Linux filesystems: ext4 and beyond\"")
+
+#### ext
+**Extended File System** was first implemented in 1992 by Remy Card to address limitations in the MINIX filesystem, which was used to develop the first Linux kernel. It could address up to 2GB of storage and handle 255-character filenames and had only one timestap per file.
+
+**ext2** was developed by Remy Card only a year after `ext`'s release as a commercial-grade filesystem, influenced by BSD's Berkeley Fast File System. It was prone to corruption if the system crashed or lost power while data was being written and performance losses due to fragmentation. Nevertheless, it was quickly and widely adopted, and still used as a format for USB drives.
+
+**ext3** was adopted by mainline Linux in 2001 and uses **journaling**, whereby disk writes are stored as transactions in a special allocation, which allows a rebooted system to roll back incomplete transactions. 3 journaling modes: [journal](#ext "lowest risk journaling mode in ext3, writes both data and metadata to journal before commiting it to filesystem"), [ordered](#ext "default journaling mode in ext3, writes metadata to journal but commits data directly to the filesystem"), and [writeback](#ext "least safe journaling mode in ext3, metadata is journaled but data is not")
+
+**ext4** was added to mainline Linux in 2008, developed by Theodore Ts'o, and improves upon `ext3` but is still reliant on old technology.
+
+#### ZFS
 - true next-generation filesystem with a problematic license
-- ZFS on Linux (ZOL) is considered the ugly stepchild of the ZFS community despite the fact that the Linux implementation has the most features and the most community support
+- **ZFS on Linux (ZOL)** is considered the ugly stepchild of the ZFS community despite the fact that the Linux implementation has the most features and the most community support
 - ZFS is too tightly bound to the operation of the kernel to operate in true userspace, and that is why each implementation is different for operating systems 
   - ZFS is too tightly bound to the operation of the kernel to operate in true userspace, and that is why each implementation is different for operating systems 
 - ZFS is too tightly bound to the operation of the kernel to operate in true userspace, and that is why each implementation is different for operating systems 
 - LU: 284
-### btrfs
-B-Tree Filesystem "butter fs" was adopted by SUSE Enterprise Linux, but support was dropped by Red Hat in 2017
 
-## Filesystem access control lists
+
+**B-Tree Filesystem "butter fs"** was adopted by SUSE Enterprise Linux, but support was dropped by Red Hat in 2017.
+
+### Filesystem access control lists
 **Filesystem access control lists (FACL)** allow you to grant permissions to more than one group, i.e. in cases where more than one department of a corporation needs access to the same files.  They are made up of _access control entries_ (ACE). FACL permissions will be indicated in a `ls -l` command by the presence of a "+" after the symbolic notation for the traditional UGO permissions. **Acl** is a dependency of `systemd`.
 
-#### Enabling
-add ",acl" to options in `fstab` file, then mount/unmount disk. If enabling FACL on root partition, system has to be rebooted.
+To enable it, add ",acl" to options in `fstab` file, then mount/unmount disk. If enabling FACL on root partition, system has to be rebooted.
 
-### Namespaces
-Process IDs in the same **namespace** can have access to one another, whereas those in different namespaces cannot. Spawning a process in a new namespace prevents it from seeing the host's context, so an interactive shell like `zsh` spawned in its own namespace will report its PID as `1`, even though the host will assign its own PID. This is the concept behind [**containers**](../devops/README.md#containers). [[55](sources.md)]
-
-## RAID
+### RAID
 
 Description | Image
 ---         | ---
@@ -158,12 +146,18 @@ Manually synchronize hardware clock to system clock (generally only required if 
 hwclock --hctosys
 ```
 
+### Security
+#### Library injections
+Similar to DLL files on Windows systems, .so ("shared object") library files on Linux allow code to be shared by various processes. They are vulnerable to injection attacks. One file in particular, **linux-vdso.so.1**, finds and locates other shared libraries and is mapped by the kernel into the address space of every process. This library-loading mechanism can be exploited through the use of the environment variable **`LD_PRELOAD`**, which is considered the most convenient way to load a shared library in a process at startup. If defined, this variable is read by the system and the library is loaded immediately after linux-vdso.so.1 into every process that is run. [^](https://www.networkworld.com/article/3404621/tracking-down-library-injections-on-linux.html "networkworld.com: \"Tracking down library injections on Linux\"")
+
+This attack can be detected using the **[osquery](https://osquery.io/)** tool. This tool represents the system as a relational database which can then be queried, in particular against the **process_envs** table.
+
 ## Tasks
 Change hostname 
 ```bash
 sudo hostnamectl set-hostname newhostname
 ```
-Check kernel version [[ref](https://linuxize.com/post/how-to-check-the-kernel-version-in-linux/ "linuxize.com - How to check the Kernel version in Linux")]
+Check kernel version [^](https://linuxize.com/post/how-to-check-the-kernel-version-in-linux/ "linuxize.com: \"How to check the Kernel version in Linux\"")
 ```bash
 uname -srm
 ```
@@ -174,20 +168,3 @@ hostnamectl | grep "Kernel"
 cat /proc/version
 ```
 
-### Syslog
-
-\#    | Severity      | Description
-:---  | :---          | :---  
-0     | Emergencies   | Most severe error conditions that render the system unusable
-1     | Alerts        | Conditions requiring immediate attention
-2     | Critical      | Condition that should be addressed to prevent an interruption of service
-3     | Error         | Error conditions that do not render the system unusable
-4     | Warning       | Specific operations failed to complete successfully
-5     | Notifications | Non-error notifications that alert an administrator about state changes within a system
-6     | Informational | Detailed dinformation about the normal operation of a system
-7     | Debugging     | Highly detailed information used for troubleshooting
-
-### Security
-#### Library injections
-Similar to DLL files on Windows systems, .so ("shared object") library files on Linux allow code to be shared by various processes. They are vulnerable to injection attacks. One file in particular, **linux-vdso.so.1**, finds and locates other shared libraries and is mapped by the kernel into the address space of every process. This library-loading mechanism can be exploited through the use of the environment variable **`LD_PRELOAD`**, which is considered the most convenient way to load a shared library in a process at startup. If defined, this variable is read by the system and the library is loaded immediately after linux-vdso.so.1 into every process that is run. [[ref](https://www.networkworld.com/article/3404621/tracking-down-library-injections-on-linux.html "networkworld.com - Tracking down library injections on Linux")]\
-This attack can be detected using the **[osquery](https://osquery.io/)** tool. This tool represents the system as a relational database which can then be queried, in particular against the **process_envs** table.

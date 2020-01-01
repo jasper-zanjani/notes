@@ -17,7 +17,7 @@
 16. "How to use the [`nmcli`](commands.md#nmcli) command: Linux Tip" [networkworld.com](https://www.networkworld.com/video/94347/how-to-use-the-nmcli-command-linux-tip#tk.rss_linux)
 17. "[ `nslookup` ](commands.md#nslookup) Command: 7 Practical Examples" [linuxhandbook.com](https://linuxhandbook.com/nslookup-command/)
 18. "How to use the [`nslookup`](commands.md#nslookup) command". [NetworkWorld](https://www.networkworld.com/video/95669/how-to-use-the-nslookup-command-2-minute-linux-tip#tk.rss_linux)
-19. "An introduction to [ `bpftrace` ](commands.md#bpftrace) for Linux". [opensource.com](https://opensource.com/article/19/8/introduction-bpftrace): 2019/08/19.
+[19]: https://opensource.com/article/19/8/introduction-bpftrace "opensource.com: \"An introduction to bpftrace for Linux\""
 20. "Six practical use cases for [ `nmap` ](commands.md#nmap)". [Red Hat](https://www.redhat.com/sysadmin/use-cases-nmap): 2019/08/19.
 21. "How to convert documents to PDF format on the Ubuntu Command Line". [vitux.com](https://vitux.com/how-to-convert-documents-to-pdf-format-on-the-ubuntu-command-line/).
 22. "Linux Mail Server Postfix Architecture" [YouTube](https://youtu.be/qhA8HuJBa64)
@@ -29,7 +29,7 @@
 28. "[`free`](commands.md#free) Command in Linux Explained With Examples". [linuxhandbook.com](https://linuxhandbook.com/free-command/)
 29. "The [ `mktemp` ](commands.md#mktemp) Command Tutorial With examples". [OSTechnix](https://www.ostechnix.com/the-mktemp-command-tutorial-with-examples-for-beginners/)
 30. "How to move a file in Linux". [opensource.com](https://opensource.com/article/19/8/moving-files-linux-depth): 2019/08/22.
-31. "How to view image metadata". [OSTechNix](https://www.ostechnix.com/how-to-view-image-metadata-on-linux/): 2019/08/26.
+[31]: https://www.ostechnix.com/how-to-view-image-metadata-on-linux/ "ostechnix.com: \"How to view image metadata\""
 32. "Introduction to the Linux [`chown`](commands.md#chown) command". [opensource.com](https://opensource.com/article/19/8/linux-chown-command): 2019/08/26.
 33. "How to [`rename`](commands.md#rename) a group of files on Linux". [NetworkWorld](https://www.networkworld.com/article/3433865/how-to-rename-a-group-of-files-on-linux.html#tk.rss_linux): 2019/08/26. 
 34. "How to use [`tig`](commands.md#tig) to browse Git logs". [opensource.com](https://opensource.com/article/19/6/what-tig) 
@@ -38,17 +38,17 @@
 37. "20 Linux [YUM](commands.md#yum) (Yellowdog Update, Modified) Commands for Package Management". [TecMint](https://www.tecmint.com/20-linux-yum-yellowdog-updater-modified-commands-for-package-mangement/). 2012/08/11.
 38. "Three ways to exclude specific packages from [`yum`](commands.md#yum) update". [2daygeek.com](https://www.2daygeek.com/redhat-centos-yum-update-exclude-specific-packages/): 2019/08/28.
 39. "How to install and use [`sosreport`](commands.md#sosreport) on Ubuntu". [howtoforge.com](https://www.howtoforge.com/how-to-install-and-use-sosreport-on-ubuntu-1804/).
-40. "How to Install and Configure Samba on Ubuntu". [vitux.com](https://vitux.com/how-to-install-and-configure-samba-on-ubuntu/).
-41. "Install Samba4 on RHEL 8 for File Sharing on Windows". [Web](https://www.tecmint.com/install-samba-on-rhel-8-for-file-sharing-on-windows/): 2019/06/12.
-42. "How to [ `find` ](commands.md#find) recently modified files/folders in Linux". [Web](https://www.2daygeek.com/check-find-recently-modified-files-folders-linux/): 2013/10/11.
-43. "[`paste`](commands.md#paste) command in Linux (merge lines)". [Web](https://linuxize.com/post/paste-command-in-linux/): 2019/09/22.
+[40]: https://vitux.com/how-to-install-and-configure-samba-on-ubuntu/ "vitux.com: \"How to Install and Configure Samba on Ubuntu\""
+[41]: https://www.tecmint.com/install-samba-on-rhel-8-for-file-sharing-on-windows/ "tecmint.com: \"Install Samba4 on RHEL 8 for File Sharing on Windows\""
+2.  "How to [ `find` ](commands.md#find) recently modified files/folders in Linux". [Web](https://www.2daygeek.com/check-find-recently-modified-files-folders-linux/): 2013/10/11.
+3.  "[`paste`](commands.md#paste) command in Linux (merge lines)". [Web](https://linuxize.com/post/paste-command-in-linux/): 2019/09/22.
 
 [44]: https://www.2daygeek.com/linux-rsync-command-local-remote-file-synchronization/ "rsync (Remote Sync) command examples and usage"
 [45]: https://www.redhat.com/sysadmin/replacing-rclocal-systemd "Red Hat: \"Replacing `rc.local` in systemd Linux systems\""
 46. "Linux [`tree`](commands.md#tree) command usage examples for beginners". [Tecmint](https://www.tecmint.com/linux-tree-command-examples/): 2019/10/02.
 47. "Use [`fallocate`](commands.md#fallocate) command to create files of specific size in Linux." [Linux Handbook](https://linuxhandbook.com/fallocate-command/): 2019/09/11.
 48. "Take screenshots from the Terminal in Mac OS X". [OSX Daily](http://osxdaily.com/2011/08/11/take-screen-shots-terminal-mac-os-x/): 2011/08/11.
-49. "How to set date and time on Linux." [Web](https://devconnected.com/how-to-set-date-and-time-on-linux/): 2019/10/17.
+[49]: https://devconnected.com/how-to-set-date-and-time-on-linux/ "devconnected.com: \"How to set date and time on Linux\""
 50. "User administration complete guide on Linux." [Web](https://devconnected.com/user-administration-complete-guide-on-linux/#Setting_an_account_expiration_date_easily): 2019/10/13.
 51. "How to use Gmail from the Ubuntu terminal to send emails." [Vitux](https://vitux.com/how-to-use-gmail-from-the-ubuntu-terminal-to-send-emails/). 
 52. "[`sudo`](commands.md#sudo) command in Linux". [linuxize.com](https://linuxize.com/post/sudo-command-in-linux/)

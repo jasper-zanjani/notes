@@ -15,19 +15,19 @@ Syslog standard uses facilities and __severities__ to categorize messages (cf. "
 ```conf
 $IncludeConfig /etc/rsyslog.d/*.conf
 ```
-#### Generate syslog messages
+Generate syslog messages
 ```sh
 logger
 ```
-#### Provide a facility.severity level (defaults to `user.notice`)
+Provide a facility.severity level (defaults to `user.notice`)
 ```sh
 logger -p
 ```
-#### Tag message
+Tag message
 ```sh
 logger -t
 ```
-#### Test logrotate config 
+Test logrotate config 
 ```
 logrotate -fv /etc/logrotate.conf
 ```

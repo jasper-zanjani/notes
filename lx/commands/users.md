@@ -76,7 +76,7 @@ useradd -r
 Delete an existing user account;\
 Delete an existing user account as well as the user's home directory
 ```sh
-userdel-r  user
+userdel -r  user
 ```
 
 ### `usermod`
@@ -91,21 +91,21 @@ Option  | POSIX option            | Effect
 `-u`    | `--uid`                 | change UID
 `-U`    | `--unlock`              | unlock account
 
-Lock account of {user}
+Lock account of `user`
 ```sh
-usermod -L user
+usermod -L $USER
 ```
-Rename {user} {new}
+Rename `$USER` `$NEW`
 ```sh
-usermod -l user new
+usermod -l $USER $NEW
 ```
-Unlock account of {user}
+Unlock account of `$USER`
 ```sh
-usermod -U user
+usermod -U $USER
 ```
-Add {user} to {group}
+Add `$USER` to `$GROUP`
 ```sh
-usermod user -a -G group
+usermod $USER -a -G $GROUP
 ```
 
 ### `adduser`
@@ -114,15 +114,17 @@ Create a new user (on Debian systems, preferred to `useradd`)
 adduser 
 ```
 
-### groupadd
+### `groupadd`
 Create a new group
 
-### groupdel
+### `groupdel`
 Delete a group
 
-### groupmod
+### `groupmod`
 Modify definition of specified group by modifying the appropriate entry in the group database
 
 Option  | POSIX option            | Effect
 :---    | :---                    | :---
 `-n`    | `--newname`             | Rename {$GROUP} to {$NEWNAME}
+
+[groupadd]: useradd.md#groupadd "Create a new group"

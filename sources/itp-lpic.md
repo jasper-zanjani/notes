@@ -1,35 +1,16 @@
 # CompTIA Linux+ powered by LPI (LX0-103-LX0-104) by ITProTV
+Shells include [`bash`][bash], [`csh`]([)# "C Shell"), [`tcsh`](# "TENEX fork of `csh`"), and `dash` [^](# "Command Line basics")\
+Commands: `cd`, `uname -a`, `pwd`, `echo`, `exit`, `logout`, `type`, `type -a`, `history`, `!!`. `history -c`
+Keybindings; `^p`, `^r`, `^s`, `^g`, `^a`, `^e`, `^LeftArrow`, `^RightArrow`, `^k`, `^x`, `^t`
 
-## 01 Overview
+`cat`, `od`, `sort`, `split`, `tr`, `nl`, `cat -n`, `pr`, `head`, `tail`, `less`, `cut` [^](# "Streams, redirection, and pipes")
 
-## 02 Command-line basics
-Various shells
-  - bash: Bourne Again Shell
-  - csh: C Shell
-  - tcsh: TENEX fork of csh
-  - dash
-Using a shell
-Topics: cd, uname -a, pwd, echo, exit, logout, type, type -a, history, !!, history -c, ^p, ^r, ^s, ^g, ^a, ^e, ^<Left>, ^<Right>, ^k, ^x, ^t
-
-## 03 Streams, redirection, and pipes
-Topics: cat, od, sort, split, tr, nl, cat -n, pr, head, tail, less, cut
-
-## 04 Processing text
-Topics: grep, grep -E, sed
-
-## 05 Using regular expressions
-
-## 06 Editing files with vi, 1
-
-## 07 Editing files with vi, 2
+`grep`, `grep -E`, `sed` [^](# "Processing text")
 
 ## 08 Using RPM
 Red Hat systems do their own thing. Other distributions based on Red Hat, like Fedora and CentOS, use Red Hat's package manager. In the days when all software was compiled by the end-user, Red Hat pioneered with the Red Hat Package Manager (RPM).  RPM can refer to the package manager as well as the packages themselves. RPM utility does not resolve dependencies.
-RPM filenames have a structure: {name}-{version}-{build number}-{Red Hat version}-{processor architecture}.rpm
-  - Some packages have "noarch" for processor architecture, meaning they are processor agnostic
-RPM utility can `install` or `update` a package
-### Commands
-#### rpm
+RPM filenames have a structure: {name}-{version}-{build number}-{Red Hat version}-{processor architecture}.rpm. Some packages have "noarch" for processor architecture, meaning they are processor agnostic
+
 `rpm -i package` : install {pkg} 
 `rpm -U package` : update {pkg}, this command can also be used to install 
 `rpm -Uvhi package` : `vh` gives *visual* indicators of progress, namely progress bars 
@@ -334,11 +315,27 @@ X is made up of a server and a client, so remote connections are possible, altho
   3. SSH into the server with X forwarding (`-Y` option)
   4. Run programs remotely from within the SSH shell
 ### Commands
-`xhost si:localuser:dpezet` : add user {dpezet} to ACL
-`xhost +` allow clients from any host to connect (not unsafe if you use a firewall that allows only SSH)
-`ssh dpezet@10.1.230.118` : establish an SSH connection
-`ssh -Y dpezet@10.1.230.118` : `-Y` allows X forwarding
-`echo $DISPLAY` : by default will display ":0", but after establishing an SSH connection with X forwarding, it will display "localhost:n.0" where {n} is a number that may vary
+Add user {dpezet} to ACL
+```sh
+xhost si:localuser:dpezet
+```
+Allow clients from any host to connect (not unsafe if you use a firewall that allows only SSH)
+```sh
+xhost +
+```
+Establish an SSH connection
+```sh
+ssh dpezet@10.1.230.118
+```
+Allow X forwarding
+```sh
+ssh -Y dpezet@10.1.230.118
+```
+By default will display ":0", but after establishing an SSH connection with X 
+```sh
+echo $DISPLAY
+```
+
 ### Files
 /etc/ssh/ssh_config : System config file for SSH
   - "ForwardX11 no" will disallow X forwarding
@@ -602,3 +599,5 @@ SSH is actually a tunneling protocol that runs a shell by default
   `-N` do not create an interactive shell (i.e. create a tunnel)
 `telnet 127.0.0.1 60023` : telnet to your own address at the given port
 
+
+[bash]: commands/README.md#bash "Bourne Again Shell"

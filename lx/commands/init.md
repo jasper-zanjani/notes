@@ -1,5 +1,16 @@
-
 ## Sysvinit
+- **SystemVinit** is a daemon process which was used by most distros until recently. Processes started serially and synchronously, wasting system resources; for years, a common hack was to run services in the background, simulating a sort of parallel processing
+- **Upstart** was developed by Canonical for Ubuntu, but abandoned in 2014. 
+- [**Systemd**][SystemD] which starts processes in parallel has become de facto standard for all major Linux distributions
+
+\#  | Commands sorted alphabetically
+:---| :---
+C   | `chkconfig`
+I   | `init` `initctl`
+R   | `runlevel`
+S   | `service`
+T   | `telinit`
+
 ### `chkconfig`
 Turn services on or off for runlevels
 Without arguments, `chkconfig` defaults to runlevels 3 or 5:
@@ -35,6 +46,12 @@ init n
 init 6 # reboot
 ```
 
+### `runlevel`
+Show runlevel for system
+```sh
+runlevel 
+```
+
 ### `service`
 Restart network service 
 ```sh
@@ -67,3 +84,5 @@ Reload configuration files (on Upstart-controlled system)
 ```sh
 initctl reload
 ```
+
+[SystemD]: systemd.md "De facto standard init system for all major Linux distributions today"

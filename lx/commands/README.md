@@ -1,30 +1,30 @@
 # Linux Commands
-#### Contents
 
 Topic                         | Commands
 :---                          | :---
 Ansible                       | [`ansible`](../ansible.md#ansible) [`ansible-galaxy`](../ansible.md#ansible-galaxy) [`ansible-playbook`](../ansible.md#ansible-playbook)
 Archive                       | [**`bzip2`**](bzip2.md) `bzcat` `bzless` `bzmore` &bull; [`compress`](compress.md#compress) [`uncompress`](compress.md#uncompress) &bull; [`gzip`](gzip.md) [`tar`](tar.md#tar) &bull; [**`zip`**](zip.md#zip) [`unzip`](zip.md#unzip) [`zipcloak`](zip.md#zipcloak) [`zipdetails`](zip.md#zipdetails) [`zipgrep`](zip.md#zipgrep) [`zipinfo`](zip.md#zipinfo) [`zipnote`](zip.md#zipnote) [`zipsplit`](zip.md#zipsplit) &bull; [`dar`](dar.md)
+Bash builtins                 | [`let`](bash.md#let) [`source`](bash.md#source)
 Benchmarking                  | [`free`][free] [`glances`][glances] [`lscpu`][lscpu] `nproc` `uptime`
 Date and time                 | [`chrony`](#chrony) [`date`](date.md#date) [`hwclock`](#hwclock) [`timedatectl`](init.md#timedatectl)
 Disk management               | `blkid` [`partx`](partx.md)
-Distributions                 | **Debian** [`adduser`](useradd.md#adduser) [**`apt`**](apt.md#apt) `apt-cache` `apt-key` `add-apt-repository` **Manjaro** [`mhwd`](#mhwd) [`mhwd-chroot`](#mhwd-chroot) [`pacman`](pacman.md) [`yay`](yay.md) **Red Hat** [`dnf`][dnf] [`rpm`](rpm.md) [`yum`](yum.md)
+Distributions                 | **Debian** [`adduser`](users.md#adduser) [**`apt`**](apt.md#apt) `apt-cache` `apt-key` `add-apt-repository` <br> **Manjaro** [`mhwd`](#mhwd) [`mhwd-chroot`](#mhwd-chroot) [`pacman`](pacman.md) [`yay`](yay.md) <br> **Red Hat** [`dnf`][dnf] [`firewall-cmd`](#firewall-cmd) [`yum`](yum.md) <br> **Ubuntu** [`netplan`](#netplan)
 Files	                        | [`chown`](chown.md) [`fallocate`](fallocate.md) [`install`](install.md "Copy files while maintaining metadata") [`lsof`](lsof.md "Display open files, open network ports, and network connections") [`setfacl`](setfacl.md) [`sshfs`](ssh.md#sshfs) [`tree`](#tree)
 Filters                       | [`sed`](sed.md#sed) [`awk`](awk.md#awk) [`grep`](grep.md) [`egrep`](grep.md) [`fgrep`](grep.md) &bull; [`copy`](#copy) [`paste`](#paste) &bull; [`cat`](cat.md#cat) [`shuf`](shuf.md) [`tr`](tr.md)
 Gnome                         | [`gconf-editor`](gsettings.md) [`gsettings`](gsettings.md) 
 GRUB                          | [`update-grub`](grub.md#update-grub)
 Hardware settings             | [`insmod`](#insmod) [ `lsmod` ](#lsmod) [ `lspci` ](#lspci) [ `lsusb` ](#lsusb) [ `modprobe` ](#modprobe) [`rmmod`](#rmmod)
-Init                          | **Systemd** [`hostnamectl`](systemd.md#hostnamectl) [`journalctl`](systemd.md#journalctl) [`localectl`](systemd.md#localectl) [`systemctl`](systemd.md#systemctl) [`systemd-delta`](systemd.md#systemd-delta) [`timedatectl`](systemd.md#timedatectl) &bull; **Sysvinit** [`chkconfig`](init.md#chkconfig) [`init`](init.md#init) [`service`](init.md#service) [`telinit`](init.md#telinit) &bull; **Upstart** [`initctl`](init.md#initctl)
+Init                          | **Systemd** [`hostnamectl`][hostnamectl] [`journalctl`][journalctl] [`localectl`][localectl] [`systemctl`][systemd-delta] [`systemd-delta`][systemd-delta] [`timedatectl`][timedatectl] <br> **Sysvinit** [`chkconfig`](init.md#chkconfig) [`init`](init.md#init) [`service`](init.md#service) [`telinit`](init.md#telinit) &bull; **Upstart** [`initctl`](init.md#initctl)
 Kubernetes                    | [`kubeadm`](../devops/k8s.md#kubeadm) [`kubectl`](../devops/k8s.md#kubectl)
 Logical volumes               | [`lvcreate`](lvm.md#lvcreate) [`lvdisplay`](lvm.md##lvdisplay) [`lvremove`](lvm.md##lvremove) [`lvs`](lvm.md##lvs) [`pvcreate`](lvm.md##pvcreate) [`pvdisplay`](lvm.md##pvdisplay) [`pvremove`](lvm.md##pvremove) [`pvs`](lvm.md##pvs) [`vgcreate`](lvm.md##vgcreate) [`vgdisplay`](lvm.md##vgdisplay) [`vgextend`](lvm.md##vgextend) [`vgremove`](lvm.md##vgremove) [`vgs`](lvm.md##vgs)
 Mac OS X                      | `pbcopy` `pbpaste` `screencapture`
-Mail                          | [`mail`](#mail) [`mailmerge`](mailmerge.md#mailmerge) [`mailx`](#mail) [`msmtp`](#msmtp) [`qmail`](#qmail) [`postfix`](#postfix) 
+Mail                          | [`mail`](mail.md#mail) [`mailmerge`](mail.md#mailmerge) `mailx` [`msmtp`](#msmtp) <br> **SMTP servers** `exim` [`qmail`](mail.md#qmail) [`postfix`](mail.md#postfix) `sendmail`
 Network                       | [`hping3`][hping3] [`ip`][ip] `iwlist` `iwconfig` [`netstat`](netstat.md) [`nc`](nc.md) [`nmap`](nmap.md) [`nmcli`](nmcli.md) [`rfkill`](rfkill.md) [`ss`](ss.md) `tracepath` `traceroute` `xinetd` &bull; **DNS** [`dig`](dig.md) [`nslookup`](nslookup.md)
 Package managers              | [`apt`](apt.md#apt) [`brew`](#brew) [`dnf`][dnf] [`gem`](gem.md) [`pacman`](pacman.md) [`pip`](#pip) [`snap`](snap.md) [`yay`](yay.md) [`yum`](yum.md)
 Processes                     | [`lsns`](containers.md) [`pidof`](containers.md) [`ps`](ps.md) [`top`](sysadmin.md#top) [`unshare`](containers.md)
 Remote connections            | [`rsync`](rsync.md) [`ssh`](ssh.md#ssh) [`ssh-keygen`](ssh.md#ssh-keygen) [`ssh-keyscan`](ssh.md#ssh-keyscan) [`sshfs`](ssh.md#sshfs)
 Sound                         | [`amixer`][amixer]
-System administration         | [`free`](sysadmin.md#free) [`getent`](sysadmin.md#getent) [`gpasswd`](gpasswd.md) [`groupadd`](useradd.md#groupadd) [`groupdel`](useradd.md#groupdel) [`groupmod`](useradd.md#groupmod) [`stty`](#stty) [`su`](sudo.md#su) [`sudo`](sudo.md#sudo) [`top`](sysadmin.md#top) [`uname`](sysadmin.md#uname) [`useradd`](useradd.md#useradd) [`userdel`](useradd.md#userdel) [`usermod`](useradd.md#usermod) `vifs` `visudo` &bull; **Debian** [`adduser`](useradd.md#adduser)
+System administration         | [`free`](sysadmin.md#free) [`getent`](sysadmin.md#getent) [`gpasswd`](gpasswd.md) [`groupadd`](users.md#groupadd) [`groupdel`](users.md#groupdel) [`groupmod`](users.md#groupmod) [`logger`][logger] [`logrotate`][logrotate] [`stty`](#stty) [`su`](sudo.md#su) [`sudo`](sudo.md#sudo) [`top`](sysadmin.md#top) [`uname`](sysadmin.md#uname) [`useradd`](users.md#useradd) [`userdel`](users.md#userdel) [`usermod`](users.md#usermod) `vifs` `visudo` &bull; **Debian** [`adduser`](users.md#adduser)
 Version control               | [`git`](git.md#git) [`tig`](git.md#tig)
 Wi-Fi                         | [`iw`][iw] `iwlist` `iwconfig` [`rfkill`](rfkill.md)
 X                             | [`xdpyinfo`](X.md#xdpyinfo) [`xlsclients][xlsclients] [`xmodmap`](xmodmap.md) [`xwininfo`](X.md#xwininfo) [`Xorg`](X.md#xorg) [`xrandr`](X.md#xrandr)
@@ -38,109 +38,35 @@ C   | [`cancel`](#cancel) [`cat`](cat.md#cat) [`chage`](#chage) [`chcon`](#chcon
 D   | [`dar`](#dar) [`date`](date.md#date) [`dbus`](#dbus) [`dd`](#dd) [`declare`](#declare) [`df`](#df) [`dhclient`](#dhclient) [`diff`](#diff) [`dig`](#dig) [`dirname`](#dirname) [`dm-crypt`](#dm-crypt) [`dmesg`](#dmesg) [`dnf`][dnf] [`doveadm`](#doveadm) [`dpkg`](#dpkg) [`dpkg-reconfigure`](#dpkg-reconfigure) [`du`](#du) [`dumpe2fs`](#dumpe2fs) 
 E   | [`e2image`](#e2image) [`e2label`](#e2label) [`edquota`](#edquota) [`elvis`](#elvis) [`elvish`](#elvish) [`espeak`](#espeak) [`exif`](#exif) 
 F   | [`fallocate`](fallocate.md) [`fam`](#fam) [`fc-cache`][fc-cache] [`fdisk`](#fdisk) [`file`](#file) [`find`](#find) [`firewall-cmd`](#firewall-cmd) [`firewalld`](#firewalld) [`fish`](#fish) [`fmt`](#fmt) [`fold`](#fold) [`free`](#free) [`fsck`](#fsck) [`fstrim`](#fstrim) [`ftp`][ftp] [`fusermount`](#fusermount) 
-G   | [`gconf-editor`](gsettings.md) [`gdisk`](#gdisk) [`gdmsetup`](#gdmsetup) [`gem`](#gem) [`getent`](#getent) [`getfacl`](#getfacl) [`git`](git.md#git) [`gpasswd`](gpasswd.md) [`gpg`](#gpg) [`grep`](grep.md) [`groupadd`](#groupadd) [`groupdel`](#groupdel) [`groupmod`](#groupmod) [`grub`](#grub) [`gsettings`](gsettings.md) [`gzip`](#gzip) 
+G   | [`gconf-editor`](gsettings.md) [`gdisk`](#gdisk) [`gdmsetup`](#gdmsetup) [`gem`](#gem) [`getent`](#getent) [`getfacl`](#getfacl) [`git`](git.md#git) [`gpasswd`](gpasswd.md) [`gpg`](#gpg) [`grep`](grep.md) [`groupadd`](users.md#groupadd) [`groupdel`](#groupdel) [`groupmod`](#groupmod) [`grub`](#grub) [`gsettings`](gsettings.md) [`gzip`](#gzip) 
 H   | [`hdiutil`](#hdiutil) [`hdparm`](#hdparm) [`head`](#head) [`history`](#history) [`host`](#host) [`hostname`](#hostname) [`hostnamectl`](#hostnamectl) [`hwclock`](#hwclock) 
 I   | [`iconv`](#iconv) [`ifconfig`](#ifconfig) [`imagemagick`](#imagemagick) [`init`](#sysvinit) [`initctl`](#initctl) [`insmod`](#insmod) [`install`](#install.md) [`ip`][ip] [`iptables`](#iptables) [`iscsiadm`](#iscsiadm) [`iw`][iw] [`iwconfig`](#iwconfig) [`iwlist`](#iwlist) 
-J-K | [`journalctl`](init.md#journalctl) &bull; [`kill`](#kill) [`kubeadm`](../devops/k8s.md#kubeadm) [`kubectl`](../devops/k8s.md#kubectl)
-L   | [`last`](#last) [`ldapadd`](#ldapadd) [`ldconfig`](#ldconfig) [`ldd`](#ldd) [`less`](#less) [`let`](#let) [`link`](#link) [`locale`](#locale) [`localectl`](init.md#localectl) [`loginctl`][loginctl] [`logout`](#logout) [`lp`](#lp) [`lpadmin`](#lpadmin) [`lpstat`](#lpstat) [`ls`](#ls) [`lsblk`](#lsblk) [`lsmod`](#lsmod) [`lsns`](containers.md) [`lsof`](#lsof) [`lspci`](#lspci) [`lsusb`](#lsusb) [`lvcreate`](#lvcreate) [`lvdisplay`](#lvdisplay) [`lvremove`](#lvremove) [`lvresize`](#lvresize) 
+J   | [`journalctl`](init.md#journalctl) 
+K   | [`kill`](#kill) [`kubeadm`](../devops/k8s.md#kubeadm) [`kubectl`](../devops/k8s.md#kubectl)
+L   | [`last`](#last) [`ldapadd`](#ldapadd) [`ldconfig`](#ldconfig) [`ldd`](#ldd) [`less`](#less) [`let`](bash.md#let) [`link`](#link) [`locale`](#locale) [`localectl`](init.md#localectl) [`loginctl`][loginctl] [`logout`](#logout) [`lp`](#lp) [`lpadmin`](#lpadmin) [`lpstat`](#lpstat) [`ls`](#ls) [`lsblk`](#lsblk) [`lsmod`](#lsmod) [`lsns`](containers.md) [`lsof`](#lsof) [`lspci`](#lspci) [`lsusb`](#lsusb) [`lvcreate`](#lvcreate) [`lvdisplay`](#lvdisplay) [`lvremove`](#lvremove) [`lvresize`](#lvresize) 
 M   | [`mail`](#mail) [`mailq`](#mailq) [`mailstats`](#mailstats) [`make`](#make) [`makemap`](#makemap) [`mdadm`](#mdadm) [`mhwd`](#mhwd) [`mhwd-chroot`](#mhwd-chroot) [`mkdir`](#mkdir) [`mke2fs`](#mke2fs) [`mkfontscale`](#mkfontscale) [`mkfs`](#mkfs) [`mkswap`](#mkswap) [`mktemp`](#mktemp) [`modinfo`](#modinfo) [`modprobe`](#modprobe) [`mongod`](#mongod) [`mount`](#mount) [`msmtp`](#msmtp) [`mt`](#mt) 
-N-O | [`nc`](nc.md) [`netplan`](#netplan) [`netstat`](#netstat) [`NetworkManager`](#NetworkManager) [`newaliases`](#newaliases) [`nice`](#nice) [`nl`](#nl) [`nmap`](nmap.md) [`nmblookup`](#nmblookup) [`nmcli`](nmcli.md) [`nohup`](#nohup) [`nslookup`](nslookup.md) [`ntpdate`](#ntpdate) &bull; [`openssl`](#openssl)
+N   | [`nc`](nc.md) [`netplan`](#netplan) [`netstat`](#netstat) [`NetworkManager`](#NetworkManager) [`newaliases`](#newaliases) [`nice`](#nice) [`nl`](#nl) [`nmap`](nmap.md) [`nmblookup`](#nmblookup) [`nmcli`](nmcli.md) [`nohup`](#nohup) [`nslookup`](nslookup.md) [`ntpdate`](#ntpdate) 
+O   | [`openssl`](#openssl)
 P   | [`pacman`](pacman.md) [`partx`](partx.md) [`paste`](#paste) [`passwd`](#passwd) [`paste`](#paste) [`patch`](#patch) [`pidof`](containers.md) [`ping`](#ping) [`pip`](#pip) [`postfix`](#postfix) [`postqueue`](#postqueue) [`postsuper`](#postsuper) [`ps`](#ps) [`pvcreate`](#pvcreate) [`pvdisplay`](#pvdisplay) [`pvremove`](#pvremove) [`pydoc`](#pydoc) 
-Q-R | [`qmail`](#qmail) [`quota`](#quota) [`quotacheck`](#quotacheck) [`quotaoff`](#quotaoff) [`quotaon`](#quotaon) &bull; [`read`](#read) [`rename`](#rename) [`repquota`](#repquota) [`resize2fs`](#resize2fs) [`rfkill`](#rfkill) [`resize4fs`](#resize4fs) [`restorecon`](#restorecon) [`rmmod`](#rmmod) [`route`](#route) [`rpm`](#rpm) [`rsync`](rsync.md) [`runlevel`](#runlevel) 
-S   | [`samba`](#samba) [`sc`](#sc) [`screencapture`](#screencapture) [`sed`](sed.md#sed) [`semanage`](#selinux) [`sendmail`](#sendmail) [`seq`](#seq) [`service`](#sysvinit) [`sestatus`](#sestatus) [`setenforce`](#selinux) [`setfacl`](#setfacl) [`sfdisk`](#sfdisk) [`shred`](#shred) [`shuf`](#shuf) [`shutdown`](#shutdown) [`slapadd`](#slapadd)  [`sleep`](#sleep) [`snap`](#snap) [`sort`](#sort) [`sosreport`](#sosreport) [`source`](#source) [`speaker-test`](#speaker-test) [`ss`](ss.md) [`ssh`](#ssh) [`ssh-copy-id`](#ssh-copy-id) [`ssh-keygen`](#ssh-keygen) [`ssh-keyscan`](#ssh-keyscan) [`sshfs`](#sshfs) [`ssmtp`](#ssmtp) [`startx`](#startx) [`stty`](#stty) [`su`](#su) [`sudo`](sudo.md) [`swapoff`](#swapoff) [`swapon`](#swapon) [`sysctl`](#sysctl) [`syslog`](#syslog) [`sysvinit`](#sysvinit) [`systemctl`](init.md#systemctl) [`systemd-delta`](#systemd-delta) 
+Q   | [`qmail`](#qmail) [`quota`](#quota) [`quotacheck`](#quotacheck) [`quotaoff`](#quotaoff) [`quotaon`](#quotaon)
+R   | [`read`](#read) [`rename`](#rename) [`repquota`](#repquota) [`resize2fs`](#resize2fs) [`rfkill`](#rfkill) [`resize4fs`](#resize4fs) [`restorecon`](#restorecon) [`rmmod`](#rmmod) [`route`](#route) [`rpm`](#rpm) [`rsync`](rsync.md) [`runlevel`](init.md#runlevel) 
+S   | [`samba`](#samba) [`sc`](#sc) [`screencapture`](#screencapture) [`sed`](sed.md#sed) [`semanage`](#selinux) [`sendmail`](#sendmail) [`seq`](#seq) [`service`](#sysvinit) [`sestatus`](#sestatus) [`setenforce`](#selinux) [`setfacl`](#setfacl) [`sfdisk`](#sfdisk) [`shred`](#shred) [`shuf`](#shuf) [`shutdown`](#shutdown) [`slapadd`](#slapadd)  [`sleep`](#sleep) [`snap`](#snap) [`sort`](#sort) [`sosreport`](#sosreport) [`source`](bash.md#source) [`speaker-test`](audio.md#speaker-test) [`ss`](ss.md) [`ssh`](#ssh) [`ssh-copy-id`](#ssh-copy-id) [`ssh-keygen`](#ssh-keygen) [`ssh-keyscan`](#ssh-keyscan) [`sshfs`](#sshfs) [`ssmtp`](#ssmtp) [`startx`](#startx) [`stty`](#stty) [`su`](#su) [`sudo`](sudo.md) [`swapoff`](#swapoff) [`swapon`](#swapon) [`sysctl`](#sysctl) [`syslog`](#syslog) [`sysvinit`](#sysvinit) [`systemctl`](init.md#systemctl) [`systemd-delta`](#systemd-delta) 
 T   | [`tail`](#tail) [`tar`](tar.md#tar) [`tcpdump`](#tcpdump) [`telinit`](#telinit) [`test`](test.md#test) [`tig`](#tig) [`timedatectl`](init.md#timedatectl) [`tmux`](tmux.md#tmux) [`touch`](#touch) [`top`](sysadmin.md#top) [`tput`](#tput) [`tr`](tr.md) [`tree`](#tree) [`tracepath`](#tracepath) [`traceroute`](#traceroute) [`tune2fs`](#tune2fs) [`tzselect`](#tzselect) 
-U-V | [`udevadm`](#udevadm) [`umount`](#umount) [`uname`](sysadmin.md#uname) [`uncompress`](#uncompress) [`unshare`](containers.md) [`unzip`](#unzip) [`update-grub`](#update-grub) [`update-rc.d`](#update-rc.d) [`useradd`](#useradd) [`userdel`](#userdel) [`usermod`](#usermod) &bull; [`variable`](#variable) [`vgcreate`](#vgcreate) [`vgdisplay`](#vgdisplay) [`vgextend`](#vgextend) [`vgremove`](#vgremove) [`vgscan`](#vgscan) [`vifs`](#vifs) [`visudo`](#visudo) 
-W-Z | [`wall`](#wall) [`watch`](watch.md#watch) [`wc`](#wc) [`whatis`](#whatis) &bull; [`X`](#X) [`xdpyinfo`](#xdpyinfo) [`xhost`](#xhost) [`xinetd`](#xinetd) [`Xorg`](#Xorg) [`xrandr`](#xrandr) [`xwininfo`](#xwininfo) &bull; [`yay`](#yay) [`yum`](yum.md) &bull; [`zip`](#zip) [`zipcloak`](#zipcloak) [`zipdetails`](#zipdetails) [`zipgrep`](#zipgrep) [`zipinfo`](#zipinfo) [`zipnote`](#zipnote) [`zipsplit`](#zipsplit) [`zsh`](#zsh)
-
-
-### bash
-Variable                                            | Effect
-:---                                                | :---
-`${string//search/substitution}`                    | replace all matches of {search} with {substitution} within {string}
-`${string/#search/substitution}`                    | replace {search} with {substituion} if it occurs at start of {string}
-`${string/%search/substitution}`                    | replace {search} with {substituion} if it occurs at end of {string}
-`${string/search/substitution}`                     | replace first match of {search} with {substitution} within {string}
-`${string##substring}`                              | delete longest match of {substring} from start of {string}
-`${string#substring}`                               | delete shortest match of {substring} from start of {string}
-`${string%%substring}`                              | delete longest match of {substring} from end of {string}
-`${string%substring}`                               | delete shortest match of {substring} from end of {string}
-`$_`                                                | return last field of the last command
-`$!`                                                | return process ID (pid) of the last job run in the background
-`$?`                                                | return exit status of the last executed function or command
-`$@`                                                | return all command line arguments as an array of strings
-`$*`                                                | return all positional parameters in a single string separated by space
-`$#`                                                | return number of positional arguments passed to the script or function
-`$$`                                                | return process ID (pid) of the current process
-`$BASH_ENV`                                         | environment variable pointing to the Bash startup file which is read when a script is invoked
-`$BASH_VERSINFO`                                    | array containing the full version information split into elements
-`$BASH_VERSION`                                     | string that shows the version of bash that is running
-`$BASHPID`                                          | process ID of the current bash instance (see `$$`)
-`$EDITOR`                                           | default editor that will be invoked by any scripts or programs (usually `vi` or `emacs`)
-`$FUNCNAME`                                         | name of the current function
-`$GROUPS`                                           | array containing the numbers of groups the user is a member of
-`$HISTFILE`                                         | location of the history file (~/.bash_history by default)
-`$HISTFILESIZE`                                     | maximum number of events saved between sessions
-`$HISTSIZE`                                         | maximum number of events saved during a session
-`$HOME`                                             | home directory of the user
-`$HOSTNAME`                                         | hostname assigned to the system during startup
-`$HOSTTYPE`                                         | identifies hardware
-`$IFS`                                              | internal field separator, used when bash is splitting strings while looping, etc (white space characters by default)
-`$LANG=C`                                           | cause programs to bypass locale translations
-`$LINENO`                                           | line number of the current script (useful when debugging)
-`$MACHTYPE`                                         | identifies hardware but includes OS information (rf. `$HOSTTYPE`)
-`$OLDPWD`                                           | return working directory before the last `cd` command
-`$OSTYPE`                                           | type of OS running on the machine
-`$PATH`                                             | search path for finding binaries for commands
-`$PIPESTATUS`                                       | array containing the exit statuses of the commands in the most recent foreground pipeline
-`$PPID`                                             | process ID of the script or shell's parent (the process that invoked the current script or shell)
-`$PWD`                                              | return current working directory
-`$RANDOM`                                           | a random integer between 0 and 32767
-`$REPLY`                                            | default reply used by `select` and `read`
-`$SECONDS`                                          | number of seconds the script has been running
-`$SHELL`                                            | name of user's default shell ('/bin/bash')
-`$SHELLOPTS`                                        | list of options bash is supplied on startup to control its behavior
-`$SHLVL`                                            | number of shell levels the current shell is running on top of
-`$TMOUT`                                            | log users out of shell automatically after a certain period of inactivity
-`$TMOUT=n`                                          | exit the shell if no command is typed after `n` seconds; also affects the `read` command and `select` loop
-`$TMPDIR`                                           | place temporary files created and used by the shell in `directory`
-`$TMPDIR=directory`                                 | place temporary files created and used by the shell in directory
-`$UID`                                              | user's ID number
-`$WAYLAND_DISPLAY`                                  | determine if Wayland is running (example output: `wayland-0`) [^](https://docs.fedoraproject.org/en-US/fedora/f31/system-administrators-guide/Wayland/ "docs.fedoraproject.org - The Wayland Display Server")
-`$XDG_SESSION_TYPE`                                 | display compositor (e.g. `wayland`)
-
-**"Here Documents"** or **"Heredocs"** consist of double less-than `<<` followed by an arbitrary character sequence which will be used as delimeter, typically "EOF".
-```sh
-cat << EOF
-1 a
-2 b
-3 c
-EOF
-```
-Variable substitution can take place in the heredoc, but if the delimiter is quoted (i.e. `"EOF"`), variables will not be substituted.
-```sh
-local y=3
-cat << EOF
-a=1
-x=$y
-```
-Output:
-```
-a=1
-x=3
-```
-Here string
-```sh
-wc -c <<< "$x"
-```
+U   | [`udevadm`](#udevadm) [`umount`](#umount) [`uname`](sysadmin.md#uname) [`uncompress`](#uncompress) [`unshare`](containers.md) [`unzip`](#unzip) [`update-grub`](#update-grub) [`update-rc.d`](#update-rc.d) [`useradd`](#useradd) [`userdel`](#userdel) [`usermod`](#usermod) 
+V   | [`variable`](#variable) [`vgcreate`](#vgcreate) [`vgdisplay`](#vgdisplay) [`vgextend`](#vgextend) [`vgremove`](#vgremove) [`vgscan`](#vgscan) [`vifs`](#vifs) [`visudo`](#visudo) 
+W   | [`wall`](#wall) [`watch`](watch.md#watch) [`wc`](#wc) [`whatis`](#whatis) 
+X   | [`X`](#X) [`xdpyinfo`](#xdpyinfo) [`xhost`](#xhost) [`xinetd`](#xinetd) [`Xorg`](#Xorg) [`xrandr`](#xrandr) [`xwininfo`](#xwininfo) 
+Y   | [`yay`](#yay) [`yum`](yum.md) 
+Z   | [`zip`](#zip) [`zipcloak`](#zipcloak) [`zipdetails`](#zipdetails) [`zipgrep`](#zipgrep) [`zipinfo`](#zipinfo) [`zipnote`](#zipnote) [`zipsplit`](#zipsplit) [`zsh`](#zsh)
 
 ### `bmon`
 [[56](sources.md)]
 
 ### `bpftrace`
-New open-source tracer for analyzing production performance problems and troubleshooting software [[19](sources.md)]
+New open-source tracer for analyzing production performance problems and troubleshooting software [^][19]
 
 ### `exif`
-View image metadata. Unlike alternatives like `file` and ImageMagick's `identify`, `exif` produces columnar output [[31](sources.md)]
+View image metadata. Unlike alternatives like `file` and ImageMagick's `identify`, `exif` produces columnar output [^][31]
 ```sh
 exif image.png 
 ```
@@ -152,7 +78,7 @@ fc-cache -v
 ```
 
 ### `file`
-View image metadata [[31](sources.md)]
+View image metadata [^][31]
 ```sh
 file image.png # => file type, dimensions, color depth
 ```
@@ -184,34 +110,6 @@ Convert a batch of files using globbing
 lowriter --convert-to pdf *.docx
 ```
 
-### `mail`
-**Mail User Agent (MUA)** which accepts interactive input using the `&` prompt
-Check email of `$USER`
-```sh
-mail -u $USER
-```
-Send email to `$USER`
-```sh
-mail $USER
-```
-Send email from the command-line
-Send email interactively
-```sh
-mail $ADDRESS
-```
-Send message via pipe 
-```sh
-echo 'message' | mail -s 'subject' recipient@domain.com
-```
-Send an email attachment from the command-line
-```sh
-mail -a /path/to/attachment
-```
-Send message via pipe
-```sh
-echo 'message' | mail -s 'subject' -a /path/to/attachment
-```
-
 ### `mailq`
 Prints summary of mail messages queued for future delivery
 
@@ -237,7 +135,7 @@ mktemp ostechnixXXX --suffix=blog
 ### `mv`
 Option  | POSIX option            | Effect
 :---    | :---                    | :---
-\-      | `--backup`              | takes an argument defining how the backup file is named (not available in BSD): <br/> `existing` if numbered backups already exist in the destination, then a numbered backup is created. Otherwise, the `simple` scheme is used <br/> `none` do not create a backup even if `--backup` is set; useful to override a `mv` alias that sets the `--backup` option <br/> `numbered` append number to the destination file <br/> `simple` append "~" to the destination filename, which will be hidden when running `ls --ignore-backups`
+\-      | `--backup`              | takes an argument defining how the backup file is named (not available in BSD)
 `-f`    | `--force`               | overrides `--interactive`
 `-i`    | `--interactive`         | 
 `-n`    | `--no-clobber`          | silently reject move action in the event of a conflict
@@ -250,21 +148,6 @@ chkconfig NetworkManager off               # Upstart
 systemctl disable NetworkManager.service   # Systemd
 service NetworkManager stop                # sysvinit
 ```
-
-### `qmail`
-Mail Transfer Agent (MTA) designed as a drop-in replacement for Sendmail, notable for being the first to be "security-aware". Its various modular subcomponents run independently and are mutually untrustful. It uses SMTP to exchange messages with other MTAs. It was written by Dan Bernstein, a professor of mathematics famous for litigating against the US government with regard to export controls on encryption algorithms. Deprecated and removed from Arch repos in 2005. [[27](sources.md)]
-
-### `postfix`
-Designed to replace Sendmail. 
-- multiple processes with no particular parent/child relationship
-Receives mail by two methods:
-1. Local mail (sendmail)
-2. Internet mail (SMTP)
-Before mail is queued for delivery, it goes through a cleanup daemon, which can be configured to do header and body inspection using regex
-`Qmgr` is the heart of postfix mail delivery; it maintains an active queue, which attempts delivery. It delivers mail using three methods:
-1. Local inboxes
-2. Internet (SMTP)
-3. Piped to programs
 
 ### `rename`
 `rename` uses regular expressions [[33](sources.md)]
@@ -329,21 +212,6 @@ Man page indicates this flag is no longer supported, and recommends use of `dd` 
 ```sh
 sfdisk /dev/hdd -I hdd-partition-sectors.save
 ```
-
-### `ssmtp`
-Installable client program [[25](sources.md)]
-
-Configuration file                            | Description
-:---                                          | :---
-[/etc/ssmtp/ssmtp.conf](configs.md#etcssmtpssmtpconf) | Configuration file
-
-Send {msg} to {recipient} from {user} at {host} using password {pw}
-```sh
-ssmtp -au recipient -ap pw user@host < msg
-```
-
-### `sendmail`
-Mail daemon once the de facto standard for accepting and redirecting mail on Linux distributions, long ago fallen into disuse. It was infamous for its difficulty to set up, with roots in ARPANET itself.
 
 ### `tcpdump`
 Inspect actual IP packets (Wireshark is a GUI-based alternative)\
@@ -460,7 +328,7 @@ ausearch --start today --loginuid500
 ### `blkid`
 Show UUID, Label, and filesystems of GPT block devices
 
-### chage
+### `chage`
 Change user password expiry information
 Remove expiration date from an account
 ```sh
@@ -468,34 +336,37 @@ chage -E -1 user
 ```
 Set the date (or number of days since January 1, 1970) on which the user's account will no longer be accessible to {date} (YYYY-MM-DD)
 ```sh
-chage -E days chage --expiredate days
+chage -E $DAYS 
+chage --expiredate $DAYS
 ```
 Set the maximum number of days during which a password is valid
 ```sh
-chage -M days chage --maxdays days
+chage -M $DAYS 
+chage --maxdays $DAYS
 ```
 Set the minimum number of days between password changes
 ```sh
-chage -m days chage --mindays days
+chage -m $DAYS
+chage --mindays $DAYS
 ```
 Set the number of days of warning before a password change is required
 ```sh
 chage -W days chage --warndays days
 ```
 
-### chcon
+### `chcon`
 Change context for website directory
 ```sh
 chcon -Rv --type=httpd_sys_content_t website
 ```
 
-### chgrp
+### `chgrp`
 Change ownership of `$FILE` to `$USER` and `$GROUP`
 ```sh
 chgrp $USER:$GROUP $FILE
 ```
 
-### chmod
+### `chmod`
 Set sticky bit on `$FILE`
 ```sh
 chmod +t $FILE
@@ -525,13 +396,13 @@ Set `setuid` permission on `$FILE`
 chmod +s file
 ```
 
-### chpass
+### `chpass`
 Change default shell to Fish
 ```sh
 chpass -s /usr/local/bin/fish
 ```
 
-### chrony
+### `chrony`
 Synchronize system time using NTP (cf. [`timedatectl`](init.md#timedatectl)\
 Stop the `systemd-timesyncd` service
 ```sh
@@ -542,7 +413,7 @@ Install `chrony` if it is not already present and enable and start the service
 sudo systemctl enable chronyd && sudo systemctl start chronyd
 ```
 
-### chsh
+### `chsh`
 Change the user's default shell to Bash
 ```sh
 chsh-s /bin/bash
@@ -552,14 +423,14 @@ Change the user's default shell to Fish
 chsh-s /usr/local/bin/fish
 ```
 
-### cp
+### `cp`
 Preserve symlinks in a recursive copy
 ```sh
 cp -a
 cp --archive
 ```
 
-### crontab
+### `crontab`
 There are 2 types of `crontab`, taking similar syntax:
 1. User crontabs, where cron jobs take the syntax: `minute hour day month weekday cmd`
 2. System crontabs found in /etc/cron.d/, /etc/cron.hourly, /etc/cron.weekly, or /etc/monthly specify a user: `minute hour day month weekday USER cmd`
@@ -582,11 +453,10 @@ Specify that {user}'s crontab is to be modified
 crontab -u user
 ```
 
-
-### crossystem
+### `crossystem`
 Print all parameters with descriptions and current values
 
-### cryptsetup
+### `cryptsetup`
 Incorporate full-disk encryption on /dev/sdb1, asking for passphrase twice
 ```sh
 cryptsetup --verify-passphrase luksFormat /dev/sdb1
@@ -596,8 +466,7 @@ Assign virtual name "storage1" to encrypted disk /dev/sdb1
 cryptsetup luksOpen /dev/sdb1 storage1
 ```
 
-
-### curl
+### `curl`
 Download {url}, posting form-encoded {name} as {value}
 ```sh
 curl -d '{name}={value}' url
@@ -627,7 +496,7 @@ curl url -o file
 ```
 
 
-### cut
+### `cut`
 
 Option  | POSIX option            | Effect
 :---    | :---                    | :---
@@ -636,7 +505,7 @@ Option  | POSIX option            | Effect
 `-f`    |                         | field number
 
 
-### date
+### `date`
 Display the date and time according to locale settings\
 
 Option  | Effect
@@ -669,24 +538,23 @@ date -d '+50days' +%F
 ```
 
 
-### dbus-monitor
+### `dbus-monitor`
 Monitor messages going through a D-Bus message bus
 
 
-### dd
+### `dd`
 Implement a simple CPU benchmark by writing 1 GB of zeroes and piping it to md5sum
 ```sh
 dd if=/dev/zero bs=1M count=1024 | md5sum
 ```
 
-
-### declare
+### `declare`
 Option which displays output in a way that could then be used as input to another command
 ```sh
 declare -p
 ```
 
-### df
+### `df`
 Change scale to terabytes
 ```sh
 df -BT
@@ -697,59 +565,62 @@ Show drive utilization
 df -h
 ```
 
-### dhclient
+### `dhclient`
 Obtain and configure TCP/IP information from a server on the network [[LGLC](../sources/lglc.md): 34]
-#### Turn on the DHCP client and get a new address from the server
+Turn on the DHCP client and get a new address from the server
 ```
 dhclient
 ```
-#### Release the currently assigned IP address and get a new one
+Release the currently assigned IP address and get a new one
 ```sh
 dhclient -r
 ```
-### diff
-#### Three lines of context
+
+### `diff`
+Three lines of context
 ```sh
 diff -c
 ```
-#### Case-insensitive
+Case-insensitive
 ```sh
 diff -i
 ```
-#### Ignore whitespace
+Ignore whitespace
 ```sh
 diff -w
 ```
 
-### dirname
+### `dirname`
 Strip filename from $PATH (cf. [ `basename` ](#basename))
 ```sh
 dirname $PATH
 ```
-### dm-crypt
+### `dm-crypt`
 Disk-encryption subsystem which serves as the backend to [ `cryptsetup` ](#cryptsetup)
-### dmesg
-#### Disable kernel messages from being sent to the console
+### `dmesg`
+Disable kernel messages from being sent to the console
 ```sh
 dmesg -d
 ```
-#### Enable kernel messages being sent to the console
+Enable kernel messages being sent to the console
 ```sh
 dmesg -e
 ```
-#### Display the time in local time
+Display the time in local time
 ```sh
 dmesg -e
 dmesg --reltime
 ```
-### doveadm
-#### Produce a password appropriate for use with dovecot
+
+### `doveadm`
+Produce a password appropriate for use with dovecot
 ```sh
 doveadm pw
 ```
-### dpkg
+
+### `dpkg`
 Manage local Debian packages
-#### dpkg options
+
 Option  | POSIX option            | Effect
 :---    | :---                    | :---
 `-I`    | `--info`                | show information about {$PACKAGE}
@@ -763,45 +634,50 @@ Option  | POSIX option            | Effect
 `-S`    | `--search`              | list package name responsible for a specific file being installed on the system
 `-C`    | `--audit`               | check for broken packages
 \-      | `--get-selections`      | display list of package selections
-### dpkg-reconfigure
+
+### `dpkg-reconfigure`
 Run a package's configuration script after it has already been installed.
-#### Change the time zone on a Debian based system using package-based tools
+Change the time zone on a Debian based system using package-based tools
 ```sh
 dpkg-reconfigure tzdata
 ```
-### du
-#### Summary of information in human-readable format
+
+### `du`
+Summary of information in human-readable format
 ```sh
 du -sh
 du --summarize --human-readable
 ```
-#### Show the size of all files and subdirectories of {dir} in human-readable form
+Show the size of all files and subdirectories of {dir} in human-readable form
 ```sh
 du -h dir
 ```
-#### Show the size of {file} in human-readable form
+Show the size of {file} in human-readable form
 ```sh
 du -h file
 ```
-#### Show the size of a directory at {path} in human-readable form
+Show the size of a directory at {path} in human-readable form
 ```sh
 du -hs path
 ```
-### dumpe2fs
+
+### `dumpe2fs`
 Display detailed filesystem information
-### e2label
+
+### `e2label`
 Create an image of important metadata for an ext3 filesystem
-#### Assign label "Storage" to /dev/sdb1
+Assign label "Storage" to /dev/sdb1
 ```sh
 e2label /dev/sdb1 Storage
 ```
-### find
+
+### `find`
 Search for files in a directory hierarchy
-#### Find all files in {$PATH} that are owned by {user}
+Find all files in {$PATH} that are owned by {user}
 ```sh
 find $PATH -user username
 ```
-#### Find recently modified files/folders
+Find recently modified files/folders
 There are 3 timestamps associated with files in Linux [[42](README.md)]:
 - `atime` "access time": last time file was accessed by a command or application
 - `mtime` "modify time": last time file's contents were modified
@@ -823,7 +699,7 @@ find $PATH -type f -newermt "yesterday" -ls
 
 find $PATH -type f -ctime -1 -ls # Find files created today
 ```
-### firewall-cmd
+### `firewall-cmd`
 Successor to `iptables` in Red Hat, and like its predecessor a frontend to the netfilter protocols. Places network traffic into zones. Commands have to be written twice: once to affect running config and again to have the change saved
 
 Configuration file                          | Description
@@ -932,14 +808,13 @@ Confirm firewalld is running
 firewall-cmd --state
 ```
 
-
-### fold
+### `fold`
 Display text of {file}, wrapping long lines
 ```sh
 fold  file
 ```
 
-### fsck
+### `fsck`
 Check filesystem for errors\
 Display progress indicators
 ```sh
@@ -954,17 +829,16 @@ Prompt when attempting a repair action
 fsck -r
 ```
 
-### fstrim
+### `fstrim`
 Discard unused blocks on a mounted filesystem
 
-### gdmsetup
+### `gdmsetup`
 GUI program used to set options for the login window when using GDM
 
-
-### getfacl
+### `getfacl`
 Get access control list for {file}
 
-### gpg
+### `gpg`
 PGP was bought by Semantec, and GNU has since released GPG, an open-source replacement.[35](sources.md)
 
 Option  | POSIX option  | Effect
@@ -994,41 +868,28 @@ Encrypt a file
 ```sh
 gpg --encrypt -r jdoe@dplaptop.lab.itpro.tv ./file.txt
 ```
-
-#### Sign {file} without encrypting it (produces file.asc)
+Sign {file} without encrypting it (produces file.asc)
 ```sh
 gpg --clearsign file
 ```
-#### Generate a key
+Generate a key
 ```sh
 gpg --generate-key
 gpg --gen-key
 ```
-#### Import another person's public key
+Import another person's public key
 ```sh
 gpg --import ~/jdoe.pub
 ```
-#### Send keys to {keyserver}
+Send keys to {keyserver}
 ```sh
 gpg --send-keys keyIDs --keyserver keyserver
 ```
 
-
-
-### grub
-#### Install boot images within a directory other than /boot
-```sh
-grub-install --boot-directory
-```
-#### Send output of grub2-mkconfig to the correct location for booting
-```sh
-grub2-mkconfig --output=/boot/grub2/grub.cfg
-```
-
-### hdiutil
+### `hdiutil`
 Manipulate disk images
 
-### hdparm
+### `hdparm`
 Get/set SATA/IDE device parameters\
 Check power mode
 ```sh
@@ -1039,25 +900,25 @@ Show drive geometry, including size in sectors and starting offset
 hdparm -g
 ```
 
-### head
+### `head`
 Print first 8 characters of `$FILE`
 ```sh
 head -c8 $FILE
 ```
 
-### host
+### `host`
 Display SOA record frm each authoritative DNS nameserver
 ```sh
 host -C
 ```
 
-### hostname
+### `hostname`
 Return the domain name configured for the server
 ```sh
 hostname -d
 ```
 
-### hwclock
+### `hwclock`
 Access the BIOS clock\
 Set hardware clock to software clock
 ```sh
@@ -1067,14 +928,12 @@ Set software clock to hardware clock
 ```sh
 hwclock --systohw
 ```
-
-### system
 Display the Hardware Clock time
 ```sh
 hwclock --show
 ```
 
-### iconv
+### `iconv`
 Convert text from one encoding to another\
 Convert {file} from ASCII to UTF-8
 ```sh
@@ -1085,62 +944,13 @@ Show available character sets
 iconv -l --list
 ```
 
-### ifconfig
-"RX" and "TX" stand for received and transmitted.\
-Apply a static IP address to interface {eth0} and turn it on ("up")
-```
-ifconfig eth0 up 10.1.230.245 netmask 255.255.255.0
-```
-Bring an interface up or down
-```
-ifup eth0
-ifdown eth0
-```
-```
-ifconfig eth0 up
-ifconfig eth0 down
-```
-Display details of all interfaces (even disabled)
-```sh
-ifconfig -a
-```
-Disable eth0
-```sh
-ifconfig eth0 down
-```
-Configure eth0 with an additional IPv6 address
-```sh
-ifconfig eth0 inet6 add fdd6:551:b09e::/128
-```
-Enable eth0
-```sh
-ifconfig eth0 up
-```
-Turn network interface {eth0} on or off using `ifconfig`
-```sh
-ifconfig eth0 up
-ifconfig eth0 down
-```
-Turn off network interface {eth0}
-```sh
-ifdown eth0
-```
-Bring online all interfaces marked as auto within the networking configuration
-```sh
-ifup -a
-```
-Turn on network interface {eth0}
-```sh
-ifup eth0
-```
-
-### insmod
+### `insmod`
 Insert a module into the Linux kernel
 ```sh
 insmod module
 ```
 
-### iscsiadm
+### `iscsiadm`
 Command-line utility allowing discovery and login to iSCSI targets\
 Set interval length between two ping requests
 ```sh
@@ -1166,7 +976,7 @@ kill -9 proc
 kill --KILL proc
 ```
 
-### last
+### `last`
 Display history of successful logins\
 Load information from an alternate file
 ```sh
@@ -1178,10 +988,10 @@ Display history of successful logins by {username}
 last username
 ```
 
-### lastb
+### `lastb`
 Display history of unsuccessful logins
 
-### ldconfig
+### `ldconfig`
 Change location of cache to be updated
 ```sh
 ldconfig -C
@@ -1195,54 +1005,48 @@ Display all shared libraries
 ldconfig -v
 ```
 
-### ldd
+### `ldd`
 Display dependencies of {program}
 ```sh
 ldd program
 ```
 
-### let
-Perform arithmetic as specified by one or more `expressions`
-```sh
-let  expressions | ((expressions))
-```
-
-### link
+### `link`
 Create a link between two files; same as `ln`, but with no error checking
 ```sh
 link file1 file2
 ```
 
-### locale
+### `locale`
 Display all environment variables related to localization with their current values\
 Display all localizations currently supported by the system
 ```sh
 locale -a
 ```
 
-### logout
+### `logout`
 Exit a login shell
 
-### lp
+### `lp`
 Send `files` to the printer; with no arguments, prints stdin
 
-### lpstat
+### `lpstat`
 Print the `lp` print queue status
 
-### lsblk
+### `lsblk`
 Display information about all block devices\
 Show UUID, Label, and filesystems of non-GPT block devices
 ```sh
 lsblk -f
 ```
 
-### lsmod
+### `lsmod`
 Display currently loaded modules. Output in three columns:
 1. Module name
 2. Module size (bytes)
 3. Processes, filesystems, or other modules using the module
 
-### lspci
+### `lspci`
 Display devices that are attached to the PCI bus
 
 Option  | Effect
@@ -1251,7 +1055,7 @@ Option  | Effect
 `-n`    | display device numbers rather than names
 `-nn`   | display both device numbers and names (typically stored in [ /usr/share/hwdata/pci.ids ](#configs) or [ /usr/share/hwdata/pci.ids.gz ](#configs))
 
-### lsusb
+### `lsusb`
 Display devices that are attached to the PCI bus
 
 Option  | Effect
@@ -1259,16 +1063,11 @@ Option  | Effect
 `-D`    | display {$DEVICE} rather than probing the /dev/bus/usb directory and displaying all devices
 `-t`    | display devices in a tree-like format
 
-### mailq
-Display the current mail queue on a Postfix server
 
-### mailstats
-Gather and display statistics about mail processed on a server running [ `sendmail` ](#sendmail)
-
-### makemap
+### `makemap`
 Execute after making a change to the [ `sendmail` ](#sendmail) access database [ **/etc/access** ](configs.md)
 
-### mdadm
+### `mdadm`
 Manage Linux Software RAID devices
 
 POSIX option  | Effect
@@ -1294,13 +1093,13 @@ mkdir -p dirname
 mkdir --parents dirname
 ```
 
-### mke2fs
+### `mke2fs`
 Create an ext2/3/4 filesystem
 
-### mkfontscale
+### `mkfontscale`
 Create a fonts.scale file definition when executed against the current directory
 
-### mkfs
+### `mkfs`
 Create an ext4 filesystem on {partition}
 ```sh
 mkfs -t ext4 partition
@@ -1314,7 +1113,7 @@ Make a swap file out of {partition}
 mkswap partition
 ```
 
-### modinfo
+### `modinfo`
 Determine options that a given module supports
 ```sh
 modinfo -p
@@ -1324,7 +1123,7 @@ Show information about a Linux kernel module
 modinfo module
 ```
 
-### modprobe
+### `modprobe`
 Add and remove modules from the Linux kernel
 
 Option  | POSIX option            | Effect
@@ -1342,7 +1141,7 @@ Show kernel {$MODULE}'s dependencies
 modprobe --show-depends $MODULE
 ```
 
-### mongod
+### `mongod`
 MongoDB daemon
 
 POSIX option  | Effect
@@ -1357,7 +1156,7 @@ Run MongoDB service in the background on port 80
 mongod --dbpath $HOME/db --port 80 --fork --logpath /var/tmp/mongodb
 ```
 
-### mount
+### `mount`
 Mount all filesystems in `fstab`
 ```sh
 mount -a
@@ -1383,17 +1182,10 @@ Mount a USB stick that is made available on /dev/sdb in /media/usb
 mount /dev/sdb1 /media/usb
 ```
 
-### msmtp
-[[51](sources.md)]
-Config file   | Description
-:---          | :---
-~/.msmtprc    | 
-
-
-### mt
+### `mt`
 Control magnetic tape drive operation; operates on environment variable TAPE
 
-### netplan
+### `netplan`
 Ubuntu network configuration tool
 
 Config file   | Description
@@ -1406,26 +1198,26 @@ Apply network configuration settings
 netplan apply
 ```
 
-### newaliases
+### `newaliases`
 Refresh the mail system after a change to the [ /etc/aliases ](#configs) file; Must be run after making a change to email aliases on a server running [ `postfix` ](#postfix)
 
-### nice
+### `nice`
 Run {prog} at a nice value of (positive) 10
 ```sh
 nice -10 prog
 nice -n 10
 nice prog
 ```
-### nl
-#### Number all lines, including blank lines
+### `nl`
+Number all lines, including blank lines
 ```sh
 nl -b a file
 nl --body-numbering=a file
 ```
-### nmblookup
+### `nmblookup`
 Test NetBIOS name resolution
 
-### nohup
+### `nohup`
 Execute {cmd} in the background such that it won't be interrupted by a logoff
 ```sh
 nohup cmd &
@@ -1461,7 +1253,7 @@ Unlock {user}'s account
 passwd -u user # passwd --unlock
 ```
 
-### paste
+### `paste`
 Merge lines of files\
 Make a .csv file from two lists
 ```sh
@@ -1472,7 +1264,7 @@ Transpose rows
 paste -s file1 file2
 ```
 
-### patch
+### `patch`
 Ignore whitespace
 ```sh
 patch -i
@@ -1505,7 +1297,7 @@ Bypass routing tables
 ping -r
 ```
 
-### pip
+### `pip`
 Display installed packages
 ```sh
 pip list
@@ -1515,29 +1307,20 @@ Display information about {package}
 pip show package
 ```
 
-### postqueue
-Cause mail queue to be processed on a Postfix server
-```sh
-postqueue -f
-```
-### postsuper
-Delete all of the messages from the queue on a postfix server
-```sh
-postsuper -d
-```
-### pydoc
+
+### `pydoc`
 Display all installed Python modules
 ```sh
 pydoc modules
 ```
-### quota
+### `quota`
 Check quota status of {user}
 ```sh
 quota user
 ```
-### quotacheck
+### `quotacheck`
 Create the quota database
-### quotaoff
+### `quotaoff`
 Turn off all quotas
 ```sh
 quotaoff -a
@@ -1551,7 +1334,7 @@ Turn on quotas for {user}
 ```sh
 quotaon -u user
 ```
-### read
+### `read`
 Option  | Effect
 :---    | :---
 `-a`    | read from standard input, with the words assigned to sequential indices of {array}
@@ -1570,7 +1353,7 @@ Will stop when you press enter, displaying how much time elapsed
 time read
 ```
 ### `repquota`
-#### Human-readable
+Human-readable
 ```sh
 repquota -sh
 ```
@@ -1620,29 +1403,24 @@ route add default gw ipaddr
 ```
 
 
-### runlevel
-Show runlevel for system
-```sh
-runlevel 
-```
-### smbclient
+### `smbclient`
 Connect to a Samba server
 Set the port while connecting to a Samba server
 ```
 smbclient -p
 ```
 
-### smbpasswd
+### `smbpasswd`
 Create a Samba password
 
-### smbstatus
+### `smbstatus`
 Report on current Samba connections
 List Samba shares
 ```sh
 smbstatus -S
 ```
 
-### sed
+### `sed`
 Run sed commands in `sedscr` on file
 ```sh
 sed -f sedscript file
@@ -1744,18 +1522,6 @@ Wait a specified number of `seconds` before executing another command; often use
 sleep seconds
 ```
 
-### source
-Execute commands from a file in the current shell
-```sh
-source file
-. file
-```
-### speaker-test
-Test loudspeakers with a 2-speaker setup
-```sh
-speaker-test -c 2
-```
-
 ### `stty`
 Return number of rows and columns of the terminal
 ```sh
@@ -1792,7 +1558,7 @@ Set snapshot length of capture (default 65,535B)
 tcpdump -s
 ```
 
-### tput
+### `tput`
 Return width of current terminal window
 ```sh
 tput cols 
@@ -1802,10 +1568,10 @@ Return height of current terminal window
 tput lines
 ```
 
-### tracepath
+### `tracepath`
 Successor to `traceroute`, blocked by many ISPs because it is a newer tool
 
-### traceroute
+### `traceroute`
 Follow the path a packet takes between two hosts
 
 Option  | Effect
@@ -1850,7 +1616,7 @@ Unmount a USB stick mounted a `/dev/sda`
 umount /dev/sda1
 ```
 
-### update-rc.d
+### `update-rc.d`
 Create links within /etc/rc.d/ for starting and stopping services
 
 ### `vifs`
@@ -1859,7 +1625,7 @@ Safely edit fstab file
 ### `visudo`
 Edit and view the `etc/sudoers` file
 
-### wall
+### `wall`
 Send {message} to users in {group}
 ```sh
 wall -g group message
@@ -1872,9 +1638,9 @@ whatis commands
 ```
 
 ### `touch`
-Update {newfile}'s modification date to match {oldfile} [[36](sources.md)]
+Update `$NEW`'s modification date to match `$OLD` [[36](sources.md)]
 ```sh
-touch -r oldfile newfile
+touch -r $OLD $NEW
 ```
 
 ### `sosreport`
@@ -1902,9 +1668,13 @@ sosreport --compression-type gzip
 sosreport -o apache --batch
 ```
 
+### `logger`
+Create a one-time log file entry that you specify.
+
+
 ## Tasks
 ### Samba
-Install and configure Samba server
+Install and configure Samba server [^][40]
 Install `samba`
 ```sh
 sudo apt install samba
@@ -1936,7 +1706,7 @@ Set up a Samba account for {user}
 ```sh
 sudo smbpasswd -a user
 ```
-Restart Samba service [[40](sources.md), [41](sources.md)]
+Restart Samba service [^][40][^][41]
 ```sh
 sudo systemctl restart smbd.service
 ```
@@ -1952,7 +1722,6 @@ This will display the Samba CLI
 ```
 smb: \>
 ```
-[[40](sources.md)]
 
 ### Bash scripting
 Validating arguments [[PGL](../sources/pgl.md): 548]
@@ -1999,16 +1768,36 @@ Count the number of occurrences of a string
 | uniq -c | sort -nr
 ```
 
-[amixer]: sound.md#amixer "Command-line mixer for ALSA sound card driver"
-[ftp]: # 'Transfer files to and from a remote network site'
+---
+
+[19]: https://opensource.com/article/19/8/introduction-bpftrace "opensource.com: \"An introduction to bpftrace for Linux\""
+[31]: https://www.ostechnix.com/how-to-view-image-metadata-on-linux/ "ostechnix.com: \"How to view image metadata\""
+[40]: https://vitux.com/how-to-install-and-configure-samba-on-ubuntu/ "vitux.com: \"How to Install and Configure Samba on Ubuntu\""
+
+[41]: https://www.tecmint.com/install-samba-on-rhel-8-for-file-sharing-on-windows/ "tecmint.com: \"Install Samba4 on RHEL 8 for File Sharing on Windows\""
+
+[amixer]: audio.md#amixer "Command-line mixer for ALSA sound card driver"
 [dnf]: dnf.md '"Dandified YUM", successor to `yum` as a package manager for RPM-based Linux distributions like Fedora.'
 [fc-cache]: #fc-cache "Update the font cache."
 [free]: benchmarking.md#free "Display amount of free and used memory in the system"
+[ftp]: # 'Transfer files to and from a remote network site'
 [glances]: benchmarking.md#glances "Cross-platform monitoring tool, written in Python"
+[groupadd]: users.md#groupadd "Create a new group"
+
 [ip]: ip.md "Newer alternative to the old `ifconfig`"
-[loginctl]: systemd.md "Control the systemd login manager"
 [iw]: iw.md "Show or manipulate wireless devices and their configuration"
+[hping3]: network.md#hping3 "Active network smashing tool"
+[hwclock]: #hwclock "Access the BIOS clock"
+[logger]: #logger "Create a one-time file entry specified by the user"
+[loginctl]: systemd.md "Control the systemd login manager"
 [lscpu]: benchmarking.md#lscpu "Display CPU architecture information"
 [nproc]: benchmarking.md#nproc "Display number of CPU processors or cores"
 [xlsclients]: X.md#xlsclients "Determine what applications are running on the legacy X11 server provided with Wayland"
-[hping3]: network.md#hping3 "Active network smashing tool"
+
+[hostnamectl]: systemd.md#hostnamectl "Control the system hostname"
+[journalctl]: systemd.md#journalctl "Query the systemd journal"
+[localectl]: systemd.md#localectl "Control the system locale and keyboard layout settings"
+[loginctl]: systemd.md#loginctl "Control the systemd login manager"
+[systemctl]: systemd.md#systemctl "Control the systemd system and service manager"
+[systemd-delta]: systemd.md#systemd-dela "Find overridden configuration files"
+[timedatectl]: systemd.md#timedatectl "Control the system time and date"

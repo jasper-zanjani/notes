@@ -25,6 +25,14 @@ Add {host} to list of authorized clients for X server
 ```sh
 xhost +host
 ```
+Add user `dpezet` to ACL
+```sh
+xhost si:localuser:dpezet
+```
+Allow clients from any host to connect (not unsafe if you use a firewall that allows only SSH)
+```sh
+xhost +
+```
 
 ### `xlsclients`
 Determine what applications are running on the legacy X11 server provided with Wayland.

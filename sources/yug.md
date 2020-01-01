@@ -43,3 +43,19 @@ The three modes and the `.exrc` file,
 ### 4.4 Saving text `:w`
 - writing selected lines
 - recovering from a crash
+
+## Electronic mail
+### `mail`
+The earliest mail handling tool "still' offered by all UNIX systems (ca. 2001).
+### `elm`
+### `pine`
+"Program for Internet news and e-mail", featuring an interface similar to the `nano` text editor and developed at the University of Washington. [[^][YUG]: 372]
+
+Option  | Effect
+:---    | :---
+`-I`    | Execute 
+
+
+[mail]: # ""
+[pine]: # "\"Program for Internet news and email\", the most popular mailer (ca. 2001)"
+[YUG]: # "Das, Samitabha. _Your Unix: The Ultimate Guide_. McGraw-Hill, 2001."

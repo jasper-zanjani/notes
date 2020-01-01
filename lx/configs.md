@@ -1,19 +1,23 @@
 # Linux configuration files
-Config file                                                 | Description
-:---                                                        | :---
-.forward                                                    | forwarding to only one address
-.gnupg/pubring.gpg                                          | default storage for public [gpg](#gpg) keyrings 
-.ssh/known_hosts                                            | public keys of SSH hosts
-.mailrc                                                     | 
-xorg.conf                                                   | user config which overrides system defaults
-/boot/grub/grub.cfg                                         | GRUB2 bootloader
-/dev/                                                       | virtual filesystem containing device files, used to access physical and virtual devices
-/etc/aliases                                                | systemwide email aliases
-/etc/anacrontab
-[/etc/apt/sources.list](#etcaptsourceslist)                 | APT repos <br/>`deb-src` is the prefix used to denote a Debian source repo
-/etc/apt/sources.list.d/                                    | directory containing additional repository definitions
-[/etc/cmd.allow](#xinetd-configuration-files)               | [xinetd](commands.md#xinetd)
-[/etc/cmd.deny](#xinetd-configuration-files)                | [xinetd](commands.md#xinetd)
+Directory                   | Config files
+---                         | ---
+~                           | [.forward][.forward] [.mailrc](#mailrc)  mtab [xorg.conf][xorg.conf] 
+~/.gnupg                    | [pubring.gpg][.gnupg/pubring.gpg] 
+~/.ssh                      | [known_hosts][.ssh/known_hosts]
+/etc                        | [aliases][/etc/aliases] anacrontab [cmd.allow](README.md#xinetd) [cmd.deny](README.md#xinetd) [files.dns](# "NIS+ servers for Solaris servers") [fstab][/etc/fstab] [group][/etc/group] [hostname][/etc/hostname] [hosts][/etc/hosts] ld.so.conf [**ld.so.conf.d**](# "Configs that establish pathnames where shared libraries may be found") [login.defs](# "Default configuration values for useradd, userdel, usermod, and groupadd") logrotate.conf [lsb-release](#etclsb-release) [mtab][/etc/mtab] [network][/etc/network] ntp.conf [nsswitch.conf](# "Controls lookup system beyond just DNS") passwd [resolv.conf][/etc/resolv.conf] [services](# "Used to resolve port numbers") [shadow][/etc/shadow] [sudoers](#etcsudoers) [yum.conf](#etcyumconf) <br> **modprobe.d/** [**skel/**][/etc/skel/] **sources.list.d** **yum.repos.d**
+/etc/apt                    | [sources.list](#etcaptsourceslist) [**sources.list.d/**](# "Directory containing additional repository definitions")
+/etc/default                | [useradd](#etcdefaultuseradd)
+/etc/lightdm/               | lightdm.conf users.conf **lightdm.conf.d**
+/etc/postfix/               | main.cf
+/etc/samba                  | [smb.conf][/etc/samba/smb.conf]
+/etc/selinux                | config
+/etc/ssh/                   | ssh_config sshd_config
+/etc/ssmtp/                 | [ssmtp.conf](#etcssmtpssmtpconf)
+/etc/sysconfig              | [desktop](#etcsysconfigdesktop "Specify display manager and desktops on Red Hat") iptables **network-scripts**
+/etc/systemd/               | [**system/**](#systemd-service-files "systemd service files")
+/etc/X11/                   | **xdm/**&zwnj;xdm-config 
+
+#### Contents
 [/etc/cron.allow](#crontab)                                 | [`crontab`](commands.md#crontab)
 [/etc/cron.deny](#crontab)                                  | [`crontab`](commands.md#crontab)
 [/etc/cron.d/](#crontab)                                    | [`crontab`](commands.md#crontab)
@@ -23,51 +27,21 @@ xorg.conf                                                   | user config which 
 [/etc/cron.monthly](#crontab)                               | [`crontab`](commands.md#crontab)
 [/etc/crontab](#crontab)                                    | [`crontab`](commands.md#crontab)
 [/etc/default/useradd](#etcdefaultuseradd)                  | [useradd](commands.md#useradd)
-/etc/files.dns                                              | NIS+ servers for Solaris servers
-/etc/fstab                                                  | filesystems to be mounted by the system at boot
-/etc/gdm/custom.conf                                        | GNOME config
-/etc/group                                                  | colon-delimited values for groups<br/>**Format**:<br/>`name:password:GID:user1,user2,user3,...`
-/etc/hosts                                                  | global hostnames
 /etc/hotplug/usb                                            | location of scripts executed when a hotplug device is inserted
-/etc/hostname                                               | contains hostname
 /etc/init.d/                                                | [sysvinit](#sysvinit) scripts run during startup and shutdown
 /etc/inittab                                                | initialization table
-/etc/ld.so.conf.d/                                          | configs that establish pathnames where shared libraries may be found
-/etc/lightdm/                                               | directory containing **users.conf**, and the subdirectory **lightdm.conf.d**, if created, the contents of which will be loaded as well
-/etc/lightdm/lightdm.conf                                   | [lightdm](#lightdm) 
-/etc/ld.so.conf                                             | [ldconfig](commands.md#ldconfig) 
 /etc/login.defs                                             | default configuration values for [useradd](#useradd), [userdel](#userdel), [usermod](#usermod), and [groupadd](#groupadd)
 /etc/logrotate.conf                                         | [logrotate](commands.md#logrotate)
 [/etc/lsb-release](#etclsb-release)                         | Ubuntu version<br/>[lsb_release](#lsb_release)
 /etc/lvm/.cache                                             | default location of LVM cache
-/etc/modprobe.d/                                            | [modprobe](commands.md#modprobe)
-/etc/mtab                                                   | updated dynamically with information about currently mounted filesystems
-/etc/network                                                | global network settings
-/etc/ntp.conf                                               | NTP config
-/etc/nsswitch.conf                                          | controls lookup system beyond just DNS
-/etc/passwd                                                 |
-/etc/postfix/main.cf                                        | [`postfix`](commands.md#postfix)
 /etc/rc.d/rc.sysinit                                        | first script run by init
-/etc/resolv.conf                                            | nameserver definitions (maximum of 6 domains with total of 256 characters)
-[/etc/samba/smb.conf](#etcsambasmbconf)                     | Samba configuration file
-/etc/selinux/config                                         | [SELinux](#selinux)
-/etc/services                                               | used to resolve port numbers
-/etc/skel/                                                  | default configs for new users
-/etc/ssh/ssh_config                                         | client config for ssh
-/etc/ssh/sshd_config                                        | server configuration file for ssh
-[/etc/ssmtp/ssmtp.conf](#etcssmtpssmtpconf)                 | [`ssmtp`](commands.md#ssmtp)
-[/etc/sudoers](#etcsudoers)                                 | who has sudo access
-[/etc/sysconfig/desktop](#etcsysconfigdesktop)              | Specify display manager and desktops on Red Hat
-/etc/sysconfig/iptables                                     | [iptables](#iptables)
-/etc/sysconfig/network-scripts/                             | directory containing network configs and scripts for Red Hat
 /etc/syslog-ng/syslog-ng.conf                               | [syslog-ng](#syslog-ng)
-/etc/systemd/system/                                        | [ SystemD service files ](#systemd-service-files), containing links to /usr/local
 /etc/udev/hwdb.bin                                          | udev hardware database
-/etc/X11/xdm/xdm-config                                     | XFCE config
 [/etc/xinet.d/](#xinetd-configuration-files)                | directory of config files for [xinetd](commands.md#xinetd)
 [/etc/xinetd.conf](#xinetd-configuration-files)             | master [xinetd](commands.md#xinetd) configuration
 /etc/yum.repos.d/                                           | repository definitions with filenames that follow the pattern **\*.repo**
-[/etc/yum.conf](#etcyumconf)                                | [yum](##### yum)
+
+
 /lib/systemd/system/                                        | directory containing unit configs
 /proc/                                                      | virtual filesystem providing information on processes, kernel features, and system hardware
 /proc/loadavg                                               | virtual file that has information about load average for use in [`uptime`](#uptime)
@@ -86,6 +60,7 @@ xorg.conf                                                   | user config which 
 /var/log/dmesg                                              | kernel ring buffer information
 /var/log/audit/audit.log                                    | audit file for SELinux
 /var/spool/cron/                                            | contains user crontables
+/boot/grub/grub.cfg                                         | GRUB2 bootloader
 
 ### SystemD service files
 [[45](README.md#sources)]
@@ -204,14 +179,14 @@ Syntax  | Effect
 
 
 ### crontab
-Directive | Effect
-:--- | :---
-`@hourly`|  equivalent to `0 * * * *`
-`@midnight`, `@daily` | equivalent to `0 0 * * *`
-`@weekly`|  equivalent to `0 0 * * 0`
-`@monthly`|  equivalent to `0 0 1 * *`
-`@annually`,  `@yearly`| equivalent to `0 0 1 1 *`
-`@reboot`|  run at startup
+Directive             | Effect
+---                   | ---
+`@hourly`             | equivalent to `0 * * * *`
+`@midnight` `@daily`  | equivalent to `0 0 * * *`
+`@weekly`             | equivalent to `0 0 * * 0`
+`@monthly`            | equivalent to `0 0 1 * *`
+`@annually` `@yearly` | equivalent to `0 0 1 1 *`
+`@reboot`             | run at startup
 
 Run /root/backup.sh at 0300 everyday
 ```sh
@@ -234,5 +209,48 @@ Run `linuxcommand` at 04:05 every Sunday
 5 4 * * sun /path/to/linuxcommand
 ```
 
-Config files
+### /etc/shadow
+Colon-delimited file containing password hashes for every user listed in [/etc/passwd][/etc/passwd]
+```
+$USERNAME:$PASSWORD:$LASTCHANGED:$MIN:$MAX:$WARN:$INACTIVE:$EXPIRE
+```
+- `$USERNAME` Login name
+- `$PASSWORD` Encrypted password; dollar signs delimit encryption hash function ([`$1`](#etcshadow "MD5"), [`$2a`](#etcshadow "Blowfish"), [`$2y`](#etcshadow "Blowfish"), [`$5`](#etcshadow "SHA-256"), or [`$6`](#etcshaodw "SHA-512")), then salt, then hash value. After locking the account with `usermod -L`, an exclamation point `!` is placed in front of this field, making the password inoperable and locking the account.  When an account has not yet had a password set, this value is `!!`
+- `$LASTCHANGED` Days since 01/01/1970 that password was last changed
+- `$MIN` minimum number of days required between password changes
+- `$MAX` maximum number of days the password is valid before user is forced to change password
+- `$WARN` number of days the password is to expire that user is warned that password must be changed
+- `$INACTIVE` number of days after password expires that account is disabled
+- `$EXPIRE` days since 01/01/1970 that account is disabled
 
+### /etc/group
+Colon-delimited file describing group membership
+```
+$GROUP:$PASSWORD:$GID:$USER1:$USER2:$USER3...
+```
+
+### /etc/resolv.conf
+Use DNS queries prior to consulting /etc/hosts
+```sh
+nameserver dns
+nameserver files
+```
+
+---
+
+[.forward]: # "Forwarding to only one address"
+[xorg.conf]: # "User config which overrides system defaults"
+[/dev]: # "Virtual filesystem containing device files, used to access physical and virtual devices"
+[/etc/aliases]: # "Systemwide email aliases"
+[/etc/fstab]: # "Filesystems to be mounted by the system at boot"
+[/etc/group]: #etcgroup "Colon-delimited file describing group membership"
+[/etc/hostname]: # "contains hostname"
+[/etc/hosts]: # "Global hostnames"
+[/etc/mtab]: # "Updated dynamically with information about currently mounted filesystems"
+[/etc/network]: # "Global network settings"
+[/etc/resolv.conf]: # "Nameserver definitions (maximum of 6 domains with total of 256 characters)"
+[/etc/samba/smb.conf]: # "Samba configuration file"
+[/etc/shadow]: #etcshadow "Colon-delimited file containing password hashes for every user listed in /etc/passwd"
+[/etc/skel/]: # "Default configs for new users"
+[.gnupg/pubring.gpg]: # "Default storage for public `gpg` keyrings"
+[.ssh/known_hosts]: # "Public keys of SSH hosts"

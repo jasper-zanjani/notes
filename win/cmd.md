@@ -28,9 +28,13 @@ Change Windows bootloader to Linux, while dual booting
 ```cmd
 bcdedit /set {bootmgr} path \EFI\manjaro\grubx64.efi
 ```
-Restore GRUB menu on a Fedora installation
+Change Windows bootloader to Linux, while dual booting (Fedora)
 ```cmd
 bcdedit /set {bootmgr} path \EFI\fedora\shim.efi
+```
+Change Windows bootloader to Linux, while dual booting (Manjaro)
+```cmd
+bcdedit /set {bootmgr} path \EFI\manjaro\grubx64.efi
 ```
 Enable **Test Signing Mode** [^](https://www.howtogeek.com/167723/how-to-disable-driver-signature-verification-on-64-bit-windows-8.1-so-that-you-can-install-unsigned-drivers/ "howtogeek.com - 'How to disable driver signature verification on 64-bit Windows 8.1 so that you can install unsigned drivers'")
 ```cmd
