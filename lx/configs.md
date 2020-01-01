@@ -1,21 +1,44 @@
 # Linux configuration files
-Directory                   | Config files
+
+Home subdirectory           | Config files sorted alphabetically
 ---                         | ---
-~                           | [.forward][.forward] [.mailrc](#mailrc)  mtab [xorg.conf][xorg.conf] 
-~/.gnupg                    | [pubring.gpg][.gnupg/pubring.gpg] 
-~/.ssh                      | [known_hosts][.ssh/known_hosts]
-/etc                        | [aliases][/etc/aliases] anacrontab [cmd.allow](README.md#xinetd) [cmd.deny](README.md#xinetd) [files.dns](# "NIS+ servers for Solaris servers") [fstab][/etc/fstab] [group][/etc/group] [hostname][/etc/hostname] [hosts][/etc/hosts] ld.so.conf [**ld.so.conf.d**](# "Configs that establish pathnames where shared libraries may be found") [login.defs](# "Default configuration values for useradd, userdel, usermod, and groupadd") logrotate.conf [lsb-release](#etclsb-release) [mtab][/etc/mtab] [network][/etc/network] ntp.conf [nsswitch.conf](# "Controls lookup system beyond just DNS") passwd [resolv.conf][/etc/resolv.conf] [services](# "Used to resolve port numbers") [shadow][/etc/shadow] [sudoers](#etcsudoers) [yum.conf](#etcyumconf) <br> **modprobe.d/** [**skel/**][/etc/skel/] **sources.list.d** **yum.repos.d**
-/etc/apt                    | [sources.list](#etcaptsourceslist) [**sources.list.d/**](# "Directory containing additional repository definitions")
-/etc/default                | [useradd](#etcdefaultuseradd)
-/etc/lightdm/               | lightdm.conf users.conf **lightdm.conf.d**
-/etc/postfix/               | main.cf
-/etc/samba                  | [smb.conf][/etc/samba/smb.conf]
-/etc/selinux                | config
-/etc/ssh/                   | ssh_config sshd_config
-/etc/ssmtp/                 | [ssmtp.conf](#etcssmtpssmtpconf)
-/etc/sysconfig              | [desktop](#etcsysconfigdesktop "Specify display manager and desktops on Red Hat") iptables **network-scripts**
-/etc/systemd/               | [**system/**](#systemd-service-files "systemd service files")
-/etc/X11/                   | **xdm/**&zwnj;xdm-config 
+.                           | [.forward][.forward] [.mailrc](#mailrc) mtab [xorg.conf][xorg.conf]
+.gnupg/                     | [pubring.gpg][.gnupg/pubring.gpg]
+.ssh/                       | [known_hosts][.ssh/known_hosts] 
+
+/#  | /etc config files sorted alphabetically
+--- | ---
+A   | [aliases][/etc/aliases] anacrontab
+C   | [cmd.allow](README.md#xinetd) [cmd.deny](README.md#xinetd)
+F   | [files.dns](# "NIS+ servers for Solaris servers") [fstab][/etc/fstab]
+G   | [group][/etc/group]
+H   | [hostname][/etc/hostname] [hosts][/etc/hosts]
+L   | ld.so.conf [**ld.so.conf.d**](# "Configs that establish pathnames where shared libraries may be found") [login.defs](# "Default configuration values for useradd, userdel, usermod, and groupadd") logrotate.conf [lsb-release](#etclsb-release)
+M   | [mtab][/etc/mtab]
+N   | [network][/etc/network] [nsswitch.conf](# "Controls lookup system beyond just DNS") ntp.conf
+P   | passwd
+R   | [resolv.conf][/etc/resolv.conf]
+S   | [services](# "Used to resolve port numbers") [shadow][/etc/shadow] [sudoers](#etcsudoers)
+Y   | [yum.conf](#etcyumconf)
+
+
+/etc subdirectory   | Config files sorted alphabetically
+---                 | ---
+apt/                | [sources.list](#etcaptsourceslist) [**sources.list.d/**](# "Directory containing additional repository definitions")
+default/            | [useradd](#etcdefaultuseradd)
+lightdm/            | lightdm.conf users.conf **lightdm.conf.d**
+modprobe.d/         | 
+postfix/            | main.cf
+samba/              | [smb.conf][/etc/samba/smb.conf]
+selinux/            | config
+[skel/][/etc/skel/] | 
+sources.list.d/     | 
+ssh/                | ssh_config sshd_config
+ssmtp/              | [ssmtp.conf](#etcssmtpssmtpconf)
+sysconfig/          | [desktop](#etcsysconfigdesktop "Specify display manager and desktops on Red Hat") iptables **network-scripts**
+systemd/            | [**system/**](#systemd-service-files "systemd service files")
+X11/                | **xdm/**&zwnj;xdm-config 
+yum.repos.d/        | 
 
 #### Contents
 [/etc/cron.allow](#crontab)                                 | [`crontab`](commands.md#crontab)
