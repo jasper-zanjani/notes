@@ -1,7 +1,7 @@
 \#  | Commands sorted alphabetically
 :---| :---
 M   | `mailmerge` `mailq` `mailstats` `msmtp`
-P   | `postqueue` `postsuper`
+P   | `postfix` `postqueue` `postsuper`
 Q   | `qmail`
 S   | `sendmail` `ssmtp`
 
@@ -98,7 +98,7 @@ Before mail is queued for delivery, it goes through a cleanup daemon, which can 
 Mail Transfer Agent (MTA) designed as a drop-in replacement for Sendmail, notable for being the first to be "security-aware". Its various modular subcomponents run independently and are mutually untrustful. It uses SMTP to exchange messages with other MTAs. It was written by Dan Bernstein, a professor of mathematics famous for litigating against the US government with regard to export controls on encryption algorithms. Deprecated and removed from Arch repos in 2005. [[27](sources.md)]
 
 ### `sendmail`
-Mail daemon once the de facto standard for accepting and redirecting mail on Linux distributions, long ago fallen into disuse. It was infamous for its difficulty to set up, with roots in ARPANET itself.
+Mail daemon once the de facto standard for accepting and redirecting mail on Linux distributions, long ago fallen into disuse. It was infamous for its difficulty to set up, with roots in ARPANET itself. [^][Eckert]
 
 ### `ssmtp`
 Installable client program [[25](sources.md)]
@@ -111,3 +111,8 @@ Send {msg} to {recipient} from {user} at {host} using password {pw}
 ```sh
 ssmtp -au recipient -ap pw user@host < msg
 ```
+### `pine`
+"Program for Internet news and email", a popular [MUA](# "\"mail user agent\", program that allows a user to view mail, such as mutt, pine, printmail, elm, mail, Thunderbird, Evolution, and Eudora") during the 1990s which has since been superceded by Alpine.
+
+[pine]: ../lx/commands/mail.md#pine "\"Program for Internet news and email\", popular MUA during the 1990s which has since been replaced by Alpine."
+[Eckert]: # "Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012."

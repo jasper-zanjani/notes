@@ -36,8 +36,9 @@ default/                                      | [useradd][/etc/default/useradd]
 lightdm/                                      | lightdm.conf users.conf
 lightdm.conf.d/                               | 
 lvm                                           | [.cache][/etc/lvm/.cache]
+mail/                                         | [sendmail.mc][/etc/mail/sendmail.mc] [sendmail.cf][/etc/mail/sendmail.cf]
 modprobe.d/                                   | 
-postfix/                                      | main.cf
+postfix/                                      | [main.cf]
 rc.d/                                         | [rc.sysinit][/etc/rc.d/rc.sysinit]
 samba/                                        | [smb.conf][/etc/samba/smb.conf]
 selinux/                                      | config
@@ -241,10 +242,36 @@ nameserver dns
 nameserver files
 ```
 
+### /etc/postfix/main.cf
+[Postfix](commands/mail.md#postfix) config 
+
+Set e-mail domain name [^][Eckert]
+```cfg
+mydomain = sample.com
+```
+Set local access to domain name [^][Eckert]
+```cfg
+myorigin = $mydomain
+```
+Configure postfix to listen for email on all interfaces [^][Eckert]
+```cfg
+inet_interfaces = all
+```
+Configure destination domain for email [^][Eckert]
+```cfg
+mydestination = $myhostname, localhost.$mydomain, localhost, $mydomain
+```
+Trust email from computers on the local network [^][Eckert]
+```cfg
+mynetworks_style = class
+```
 ---
 
 [.forward]: # "Forwarding to only one address"
+[.gnupg/pubring.gpg]: # "Default storage for public `gpg` keyrings"
+[.ssh/known_hosts]: # "Public keys of SSH hosts"
 [xorg.conf]: # "User config which overrides system defaults"
+
 [/dev]: # "Virtual filesystem containing device files, used to access physical and virtual devices"
 [/etc/aliases]: # "Systemwide email aliases"
 [/etc/apt/sources.list]: #etcaptsourceslist
@@ -263,9 +290,12 @@ nameserver files
 [/etc/logrotate.conf]: commands/README.md#logrotate
 [/etc/lsb-release]: #lsb-release "Ubuntu version"
 [/etc/lvm/.cache]: # "Default location of LVM cache"
+[/etc/mail/sendmail.mc]: # "Sendmail config which is compiled to sendmail.cf"
+[/etc/mail/sendmail.cf]: # "Sendmail config which is compiled from sendmail.mc"
 [/etc/mtab]: # "Updated dynamically with information about currently mounted filesystems"
 [/etc/network]: # "Global network settings"
 [/etc/nsswitch.conf]: # "Controls lookup system beyond just DNS"
+[/etc/postfix/main.cf]: #etcpostfixmaincf "Postfix config"
 [/etc/rc.d/rc.sysinit]: # "First script run by init"
 [/etc/resolv.conf]: # "Nameserver definitions (maximum of 6 domains with total of 256 characters)"
 [/etc/samba/smb.conf]: # "Samba configuration file"
@@ -281,8 +311,6 @@ nameserver files
 [/etc/xinetd.conf]: commands/README.md#xinetd "Master xinetd configuration file"
 [/etc/yum.conf]: #etcyumconf
 [/etc/yum.repos.d/]: # "Repository definitions with filenames that follow the pattern \"*.repo\""
-[.gnupg/pubring.gpg]: # "Default storage for public `gpg` keyrings"
-[.ssh/known_hosts]: # "Public keys of SSH hosts"
 
 [/lib/systemd/system/]: # "directory containing unit configs"
 [/usr/share/config/kdm/kdmrc]: # "KDM config"
@@ -292,3 +320,7 @@ nameserver files
 [/var/log/audit/audit.log]: # "Audit file for SELinux, SSH"
 [/var/spool/cron/]: # "Contains user crontables"
 [/boot/grub/grub.cfg]: # "GRUB config file"
+
+---
+
+[Eckert]: # "Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012."

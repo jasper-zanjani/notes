@@ -57,5 +57,5 @@ Option  | Effect
 
 
 [mail]: # ""
-[pine]: # "\"Program for Internet news and email\", the most popular mailer (ca. 2001)"
+[pine]: ../lx/commands/mail.md#pine "\"Program for Internet news and email\", popular mailer during the 1990s which has since been replaced by the Alpine client."
 [YUG]: # "Das, Samitabha. _Your Unix: The Ultimate Guide_. McGraw-Hill, 2001."
