@@ -1,5 +1,5 @@
 # Linux configuration files
-
+#### Contents
 Home subdirectory           | Config files sorted alphabetically
 ---                         | ---
 .                           | [.forward][.forward] [.mailrc](#mailrc) mtab [xorg.conf][xorg.conf]
@@ -10,59 +10,50 @@ Home subdirectory           | Config files sorted alphabetically
 --- | ---
 A   | [aliases][/etc/aliases] anacrontab
 C   | [cmd.allow](README.md#xinetd) [cmd.deny](README.md#xinetd)
-F   | [files.dns](# "NIS+ servers for Solaris servers") [fstab][/etc/fstab]
+[`cron`](commands/README.md#crontab) | cron.allow cron.deny cron.daily cron.hourly cron.weekly cron.monthly crontab **cron.d/**
+F   | [files.dns][/etc/files.dns] [fstab][/etc/fstab]
 G   | [group][/etc/group]
 H   | [hostname][/etc/hostname] [hosts][/etc/hosts]
-L   | ld.so.conf [**ld.so.conf.d**](# "Configs that establish pathnames where shared libraries may be found") [login.defs](# "Default configuration values for useradd, userdel, usermod, and groupadd") logrotate.conf [lsb-release](#etclsb-release)
+I   | [inittab][/etc/inittab]
+L   | ld.so.conf [login.defs][/etc/login.defs] [logrotate.conf][/etc/logrotate.conf] [lsb-release][/etc/lsb-release]
 M   | [mtab][/etc/mtab]
-N   | [network][/etc/network] [nsswitch.conf](# "Controls lookup system beyond just DNS") ntp.conf
+N   | [network][/etc/network] [nsswitch.conf][/etc/nsswitch.conf] ntp.conf
 P   | passwd
 R   | [resolv.conf][/etc/resolv.conf]
-S   | [services](# "Used to resolve port numbers") [shadow][/etc/shadow] [sudoers](#etcsudoers)
-Y   | [yum.conf](#etcyumconf)
+S   | [services][/etc/services] [shadow][/etc/shadow] [sudoers](#etcsudoers)
+Y   | [yum.conf][/etc/yum.conf]
+
+/etc subdirectory                       | Config files sorted alphabetically
+---                                     | ---
+apt/                                    | [sources.list][/etc/apt/sources.list] [**sources.list.d/**][/etc/apt/sources.list.d/]
+default/                                | [useradd][/etc/default/useradd]
+[hotplug/usb/][/etc/hotplug/usb/]       |
+[init.d/][/etc/init.d/]                 |
+[ld.so.conf.d/][/etc/ld.so.conf.d/]     |
+lightdm/                                | lightdm.conf users.conf
+lightdm.conf.d/                         | 
+lvm                                     | [.cache][/etc/lvm/.cache]
+modprobe.d/                             | 
+postfix/                                | main.cf
+rc.d/                                   | [rc.sysinit][/etc/rc.d/rc.sysinit]
+samba/                                  | [smb.conf][/etc/samba/smb.conf]
+selinux/                                | config
+[skel/][/etc/skel/]                     | 
+sources.list.d/                         | 
+ssh/                                    | ssh_config sshd_config
+ssmtp/                                  | [ssmtp.conf][/etc/ssmtp/ssmtp.conf]
+sysconfig/                              | [desktop][/etc/sysconfig/desktop] iptables **network-scripts/**
+[systemd/system/][/etc/systemd/system/] |
+X11/                                    | **xdm/**&zwnj;xdm-config 
+[yum.repos.d/][/etc/yum.repos.d/]       | 
 
 
-/etc subdirectory   | Config files sorted alphabetically
----                 | ---
-apt/                | [sources.list](#etcaptsourceslist) [**sources.list.d/**](# "Directory containing additional repository definitions")
-default/            | [useradd](#etcdefaultuseradd)
-lightdm/            | lightdm.conf users.conf **lightdm.conf.d**
-modprobe.d/         | 
-postfix/            | main.cf
-samba/              | [smb.conf][/etc/samba/smb.conf]
-selinux/            | config
-[skel/][/etc/skel/] | 
-sources.list.d/     | 
-ssh/                | ssh_config sshd_config
-ssmtp/              | [ssmtp.conf](#etcssmtpssmtpconf)
-sysconfig/          | [desktop](#etcsysconfigdesktop "Specify display manager and desktops on Red Hat") iptables **network-scripts**
-systemd/            | [**system/**](#systemd-service-files "systemd service files")
-X11/                | **xdm/**&zwnj;xdm-config 
-yum.repos.d/        | 
-
-#### Contents
-[/etc/cron.allow](#crontab)                                 | [`crontab`](commands.md#crontab)
-[/etc/cron.deny](#crontab)                                  | [`crontab`](commands.md#crontab)
-[/etc/cron.d/](#crontab)                                    | [`crontab`](commands.md#crontab)
-[/etc/cron.daily](#crontab)                                 | [`crontab`](commands.md#crontab)
-[/etc/cron.hourly](#crontab)                                | [`crontab`](commands.md#crontab)
-[/etc/cron.weekly](#crontab)                                | [`crontab`](commands.md#crontab)
-[/etc/cron.monthly](#crontab)                               | [`crontab`](commands.md#crontab)
-[/etc/crontab](#crontab)                                    | [`crontab`](commands.md#crontab)
-[/etc/default/useradd](#etcdefaultuseradd)                  | [useradd](commands.md#useradd)
-/etc/hotplug/usb                                            | location of scripts executed when a hotplug device is inserted
-/etc/init.d/                                                | [sysvinit](#sysvinit) scripts run during startup and shutdown
-/etc/inittab                                                | initialization table
-/etc/login.defs                                             | default configuration values for [useradd](#useradd), [userdel](#userdel), [usermod](#usermod), and [groupadd](#groupadd)
-/etc/logrotate.conf                                         | [logrotate](commands.md#logrotate)
 [/etc/lsb-release](#etclsb-release)                         | Ubuntu version<br/>[lsb_release](#lsb_release)
-/etc/lvm/.cache                                             | default location of LVM cache
-/etc/rc.d/rc.sysinit                                        | first script run by init
 /etc/syslog-ng/syslog-ng.conf                               | [syslog-ng](#syslog-ng)
 /etc/udev/hwdb.bin                                          | udev hardware database
 [/etc/xinet.d/](#xinetd-configuration-files)                | directory of config files for [xinetd](commands.md#xinetd)
 [/etc/xinetd.conf](#xinetd-configuration-files)             | master [xinetd](commands.md#xinetd) configuration
-/etc/yum.repos.d/                                           | repository definitions with filenames that follow the pattern **\*.repo**
+/etc/yum.repos.d/                                           | 
 
 
 /lib/systemd/system/                                        | directory containing unit configs
@@ -84,6 +75,8 @@ yum.repos.d/        |
 /var/log/audit/audit.log                                    | audit file for SELinux
 /var/spool/cron/                                            | contains user crontables
 /boot/grub/grub.cfg                                         | GRUB2 bootloader
+
+## /etc
 
 ### SystemD service files
 [[45](README.md#sources)]
@@ -265,15 +258,35 @@ nameserver files
 [xorg.conf]: # "User config which overrides system defaults"
 [/dev]: # "Virtual filesystem containing device files, used to access physical and virtual devices"
 [/etc/aliases]: # "Systemwide email aliases"
+[/etc/apt/sources.list]: #etcaptsourceslist
+[/etc/apt/sources.list.d/]: # "Directory containing additional repository definitions"
+[/etc/default/useradd]: #etcdefaultuseradd
+[/etc/files.dns]: # "NIS+ servers for Solaris servers"
 [/etc/fstab]: # "Filesystems to be mounted by the system at boot"
 [/etc/group]: #etcgroup "Colon-delimited file describing group membership"
 [/etc/hostname]: # "contains hostname"
 [/etc/hosts]: # "Global hostnames"
+[/etc/hotplug/usb/]: # "Location of scripts executed when a hotplug device is inserted"
+[/etc/init.d/]: # "sysvinit scripts run during startup and shutdown"
+[/etc/inittab]: # "initialization table"
+[/etc/ld.so.conf.d/]: # "Configs that establish pathnames where shared libraries may be found"
+[/etc/login.defs]: # "Default configuration values for useradd, userdel, usermod, and groupadd"
+[/etc/logrotate.conf]: commands/README.md#logrotate
+[/etc/lsb-release]: # "Ubuntu version"
+[/etc/lvm/.cache]: # "Default location of LVM cache"
 [/etc/mtab]: # "Updated dynamically with information about currently mounted filesystems"
 [/etc/network]: # "Global network settings"
+[/etc/nsswitch.conf]: # "Controls lookup system beyond just DNS"
+[/etc/rc.d/rc.sysinit]: # "First script run by init"
 [/etc/resolv.conf]: # "Nameserver definitions (maximum of 6 domains with total of 256 characters)"
 [/etc/samba/smb.conf]: # "Samba configuration file"
+[/etc/services]: # "Used to resolve port numbers"
 [/etc/shadow]: #etcshadow "Colon-delimited file containing password hashes for every user listed in /etc/passwd"
 [/etc/skel/]: # "Default configs for new users"
+[/etc/ssmtp/ssmtp.conf]: #etcssmtpssmtpconf
+[/etc/sysconfig/desktop]: #etcsysconfigdesktop "Specify display manager and desktops on Red Hat"
+[/etc/systemd/system/]: #systemd-service-files "systemd service files"
+[/etc/yum.conf]: #etcyumconf
+[/etc/yum.repos.d/]: # "Repository definitions with filenames that follow the pattern \"*.repo\""
 [.gnupg/pubring.gpg]: # "Default storage for public `gpg` keyrings"
 [.ssh/known_hosts]: # "Public keys of SSH hosts"
