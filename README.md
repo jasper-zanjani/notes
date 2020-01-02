@@ -19,7 +19,7 @@
 1. Create the bot user on Discord and register it with a guild.
 2. Write code that uses Discord’s APIs and implements your bot’s behaviors.
 
-Create a Discord connection
+Create a Discord connection [^][2]
 A `Client` is an object that represents a connection to Discord, handling events, tracking state, and interacting with Discord APIs.
 ```py
 # bot.py
@@ -49,17 +49,18 @@ DISCORD_TOKEN={your-bot-token}
 
 #### Ruby bot programming
 Ruby library "socket" allows integration with [Twitch's IRC API](https://twitchapps.com/tmi), which provides an oauth token which can be stored as password. Command `write_to_system` appears to be  what is needed to concatenate IRC commands `PASS #{@password`, `NICK #{@nickname}`, `USER #{@nickname} 0 * #{@nickname}`, and `JOIN #@{channel}`\
-From the REPL, you instantiate an instance of the class after running the script, which will allow passing messages to the chat room by using an instance method
+From the REPL, you instantiate an instance of the class after running the script, which will allow passing messages to the chat room by using an instance method [^][1]
 ```rb
 bot = TwitchBot.new
 bot.write_to_chat "Hello world"
 ```
 
 ## VMware
-Hypervisor, similar to Hyper-V, but provided at a cost, with a robust command-line interface via PowerShell. [[3](#sources)]
+Hypervisor, similar to Hyper-V, but provided at a cost, with a robust command-line interface via PowerShell. [^][3]
 
-## Sources
-1. "Custom bot using Ruby". [Web](https://www.youtube.com/watch?v=rVVhkX1uTRQ).
-2. "How to make a Discord bot in Python". [Web](https://realpython.com/how-to-make-a-discord-bot-python/): 2019/08/19.
-3. "VMware PowerCLI 101". [Web](https://www.brianbunke.com/blog/2019/09/03/powercli-101/): 2019/09/03.
-5. "Storage in a DevOps World". [GitHub](sources/README.md/#new-stack-makers)
+---
+
+[1]: https://www.youtube.com/watch?v=rVVhkX1uTRQ "Custom bot using Ruby"
+[2]: https://realpython.com/how-to-make-a-discord-bot-python/ "How to make a Discord bot in Python"
+[3]: https://www.brianbunke.com/blog/2019/09/03/powercli-101/ "VMware PowerCLI 101"
+[5]: sources/README.md/#new-stack-makers "Storage in a DevOps World"

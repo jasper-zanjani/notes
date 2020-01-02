@@ -75,5 +75,9 @@ Add-AzRouteConfig -RouteTable $rt
 Set-AzRouteTable -RouteTable $rt
 ```
 
+#### Structure
+Playing around with reference-style links and tooltips has me thinking that there really should be a more structured, flexible way of generating text reports from object-style hierarchical information. For example, whether a definition appears beside a word dictionary style or in a tooltip on hover is really an implementation detail. There should be an easy way of storing that data and specifying that presentation dynamically.
+
+
 ## Sources
   [AZ-103 Tasks](sources/az-103-tasks.md)

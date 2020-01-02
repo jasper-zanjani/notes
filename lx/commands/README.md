@@ -27,7 +27,7 @@ Sound                         | [`amixer`][amixer]
 System administration         | [`free`](sysadmin.md#free) [`getent`](sysadmin.md#getent) [`gpasswd`](gpasswd.md) [`groupadd`](users.md#groupadd) [`groupdel`](users.md#groupdel) [`groupmod`](users.md#groupmod) [`logger`][logger] [`logrotate`][logrotate] [`stty`](#stty) [`su`](sudo.md#su) [`sudo`](sudo.md#sudo) [`top`](sysadmin.md#top) [`uname`](sysadmin.md#uname) [`useradd`](users.md#useradd) [`userdel`](users.md#userdel) [`usermod`](users.md#usermod) `vifs` `visudo` &bull; **Debian** [`adduser`](users.md#adduser)
 Version control               | [`git`](git.md#git) [`tig`](git.md#tig)
 Wi-Fi                         | [`iw`][iw] `iwlist` `iwconfig` [`rfkill`](rfkill.md)
-X                             | [`xdpyinfo`](X.md#xdpyinfo) [`xlsclients][xlsclients] [`xmodmap`](xmodmap.md) [`xwininfo`](X.md#xwininfo) [`Xorg`](X.md#xorg) [`xrandr`](X.md#xrandr)
+X                             | [`xdpyinfo`](X.md#xdpyinfo) [`xlsclients`][xlsclients] [`xmodmap`](xmodmap.md) [`Xorg`](X.md#xorg) [`xrandr`](X.md#xrandr) [`xwininfo`](X.md#xwininfo)
 
 
 \#  | Commands sorted alphabetically
@@ -51,7 +51,7 @@ P   | [`pacman`](pacman.md) [`partx`](partx.md) [`paste`](#paste) [`passwd`](#pa
 Q   | [`qmail`](#qmail) [`quota`](#quota) [`quotacheck`](#quotacheck) [`quotaoff`](#quotaoff) [`quotaon`](#quotaon)
 R   | [`read`](#read) [`rename`](#rename) [`repquota`](#repquota) [`resize2fs`](#resize2fs) [`rfkill`](#rfkill) [`resize4fs`](#resize4fs) [`restorecon`](#restorecon) [`rmmod`](#rmmod) [`route`](#route) [`rpm`](#rpm) [`rsync`](rsync.md) [`runlevel`](init.md#runlevel) 
 S   | [`samba`](#samba) [`sc`](#sc) [`screencapture`](#screencapture) [`sed`](sed.md#sed) [`semanage`](#selinux) [`sendmail`](#sendmail) [`seq`](#seq) [`service`](#sysvinit) [`sestatus`](#sestatus) [`setenforce`](#selinux) [`setfacl`](#setfacl) [`sfdisk`](#sfdisk) [`shred`](#shred) [`shuf`](#shuf) [`shutdown`](#shutdown) [`slapadd`](#slapadd)  [`sleep`](#sleep) [`snap`](#snap) [`sort`](#sort) [`sosreport`](#sosreport) [`source`](bash.md#source) [`speaker-test`](audio.md#speaker-test) [`ss`](ss.md) [`ssh`](#ssh) [`ssh-copy-id`](#ssh-copy-id) [`ssh-keygen`](#ssh-keygen) [`ssh-keyscan`](#ssh-keyscan) [`sshfs`](#sshfs) [`ssmtp`](#ssmtp) [`startx`](#startx) [`stty`](#stty) [`su`](#su) [`sudo`](sudo.md) [`swapoff`](#swapoff) [`swapon`](#swapon) [`sysctl`](#sysctl) [`syslog`](#syslog) [`sysvinit`](#sysvinit) [`systemctl`](init.md#systemctl) [`systemd-delta`](#systemd-delta) 
-T   | [`tail`](#tail) [`tar`](tar.md#tar) [`tcpdump`](#tcpdump) [`telinit`](#telinit) [`test`](test.md#test) [`tig`](#tig) [`timedatectl`](init.md#timedatectl) [`tmux`](tmux.md#tmux) [`touch`](#touch) [`top`](sysadmin.md#top) [`tput`](#tput) [`tr`](tr.md) [`tree`](#tree) [`tracepath`](#tracepath) [`traceroute`](#traceroute) [`tune2fs`](#tune2fs) [`tzselect`](#tzselect) 
+T   | [`tail`](#tail) [`tar`](tar.md#tar) [`tcpdump`](#tcpdump) [`telinit`](#telinit) [`test`](test.md#test) [`tig`](#tig) [`timedatectl`][timedatectl] [`tmux`](tmux.md#tmux) [`touch`](#touch) [`top`](sysadmin.md#top) [`tput`](#tput) [`tr`](tr.md) [`tree`](#tree) [`tracepath`](#tracepath) [`traceroute`](#traceroute) [`tune2fs`](#tune2fs) [`tzselect`](#tzselect) 
 U   | [`udevadm`](#udevadm) [`umount`](#umount) [`uname`](sysadmin.md#uname) [`uncompress`](#uncompress) [`unshare`](containers.md) [`unzip`](#unzip) [`update-grub`](#update-grub) [`update-rc.d`](#update-rc.d) [`useradd`](#useradd) [`userdel`](#userdel) [`usermod`](#usermod) 
 V   | [`variable`](#variable) [`vgcreate`](#vgcreate) [`vgdisplay`](#vgdisplay) [`vgextend`](#vgextend) [`vgremove`](#vgremove) [`vgscan`](#vgscan) [`vifs`](#vifs) [`visudo`](#visudo) 
 W   | [`wall`](#wall) [`watch`](watch.md#watch) [`wc`](#wc) [`whatis`](#whatis) 
@@ -60,7 +60,8 @@ Y   | [`yay`](#yay) [`yum`](yum.md)
 Z   | [`zip`](#zip) [`zipcloak`](#zipcloak) [`zipdetails`](#zipdetails) [`zipgrep`](#zipgrep) [`zipinfo`](#zipinfo) [`zipnote`](#zipnote) [`zipsplit`](#zipsplit) [`zsh`](#zsh)
 
 ### `bmon`
-[[56](sources.md)]
+[^][56]
+
 
 ### `bpftrace`
 New open-source tracer for analyzing production performance problems and troubleshooting software [^][19]
@@ -72,7 +73,7 @@ exif image.png
 ```
 
 ### `fc-cache`
-Update the font cache [[^](https://docs.fedoraproject.org/en-US/quick-docs/adding-new-fonts-fedora/ "Fedora Docs - Adding new fonts in Fedora")]
+Update the font cache [^][59]
 ```sh
 fc-cache -v
 ```
@@ -87,7 +88,7 @@ file image.png # => file type, dimensions, color depth
 encrypted file transfers
 
 ### `fusermount`
-Mount a directory from a remote server on your local host via SSH [[23](sources.md)]
+Mount a directory from a remote server on your local host via SSH [^][[23]
 ```sh
 fusermount -u mountpoint
 ```
@@ -96,11 +97,11 @@ fusermount -u mountpoint
 
 Option  | Effect
 :---    | :---
-`-c`    | clear history [[23](sources.md)]
+`-c`    | clear history [^][23]
 
 
 ### `lowriter`
-`lowriter` is a command-line utility installed with LibreOffice Writer.[[21](sources.md)]
+`lowriter` is a command-line utility installed with LibreOffice Writer. [^][21]
 Convert a single file to PDF
 ```sh
 lowriter --convert-to pdf filename.doc
@@ -114,7 +115,8 @@ lowriter --convert-to pdf *.docx
 Prints summary of mail messages queued for future delivery
 
 ### `mktemp`
-Create a temporary file or directory safely and print its name. These will not need to be manually cleaned up because they will be placed in the temporary directory (**/tmp**) [[29](sources.md)]\
+Create a temporary file or directory safely and print its name. These will not need to be manually cleaned up because they will be placed in the temporary directory (**/tmp**) [^][29]
+
 Create a new temporary file
 ```sh
 mktemp
@@ -150,7 +152,7 @@ service NetworkManager stop                # sysvinit
 ```
 
 ### `rename`
-`rename` uses regular expressions [[33](sources.md)]
+`rename` uses regular expressions [^][33]
 
 Option  | POSIX option            | Effect
 :---    | :---                    | :---
@@ -176,7 +178,8 @@ screen -x user/session
 ```
 
 ### `sfdisk`
-Script-based partition table editor, similar to [`fdisk`](#fdisk) and [`gdisk`](#gdisk), which can be run interactively. It does not interface with GPT format, neither is it designed for large partitions. [[11](sources.md)]
+Script-based partition table editor, similar to [`fdisk`](#fdisk) and [`gdisk`](#gdisk), which can be run interactively. It does not interface with GPT format, neither is it designed for large partitions. [^][11]
+
 List partitions on all devices
 ```sh
 sfdisk -l
@@ -228,7 +231,7 @@ Provides much more information than `tracepath`, even though it's older [[lxa-lp
 
 
 ### `tree`
-display contents of directories in a tree-like format[[46](sources.md)]
+display contents of directories in a tree-like format [^][46]
 
 Option  | Effect
 :---    | :---
@@ -245,7 +248,7 @@ Option  | Effect
 
 ### `watch`
 Repeat a command at regular intervals and watch its changing output
-Execute {cmd} at periods of {n} seconds, watching its output [[23](sources.md)]
+Execute {cmd} at periods of {n} seconds, watching its output [^][23]
 ```sh
 watch cmd -n n
 ```
@@ -253,21 +256,6 @@ Display a dashboard that will run {cmd} every second, displaying the output
 ```sh
 watch -n 1 cmd
 watch -n 0.5 iptables -vnL # Update twice a second, producing a dashboard
-```
-
-### `xinetd`
-Internet Super Daemon provided an alternate method of connecting to various outdated network services. Should be turned off nowadays.  
-
-Configuration file  | Description
-:---                | :---
-/etc/xinet.d/       | config files
-/etc/xinetd.conf    | master xinetd configuration
-/etc/cmd.allow      | specify who is allowed to run a command
-/etc/cmd.deny       | specify who is disallowed from running a command
-
-Display statistics for a file
-```sh
-stat file
 ```
 
 ### `resize2fs`
@@ -285,7 +273,7 @@ Look up one or more `keywords` in the online manpages: same as `man -k` (rf. `wh
 apropos keywords
 ```
 
-#### `arp`
+### `arp`
 Option  | Effect
 :---    | :---
 `-a`    | display entries in the cache
@@ -403,7 +391,8 @@ chpass -s /usr/local/bin/fish
 ```
 
 ### `chrony`
-Synchronize system time using NTP (cf. [`timedatectl`](init.md#timedatectl)\
+Synchronize system time using NTP (cf. [`timedatectl`][timedatectl]
+
 Stop the `systemd-timesyncd` service
 ```sh
 sudo systemctl stop systemd-timesyncd.service
@@ -510,7 +499,7 @@ Display the date and time according to locale settings\
 
 Option  | Effect
 :---    | :---
-`-s`    | set date [[4](sources.md)]
+`-s`    | set date [^][4]
 
 Set the current date and time to `$DATESTRING`
 ```sh
@@ -532,7 +521,7 @@ date -u
 date --utc
 date universal
 ```
-Display the date fifty days into the future [[50](sources.md)]
+Display the date fifty days into the future [^][50]
 ```sh
 date -d '+50days' +%F
 ```
@@ -678,7 +667,7 @@ Find all files in {$PATH} that are owned by {user}
 find $PATH -user username
 ```
 Find recently modified files/folders
-There are 3 timestamps associated with files in Linux [[42](README.md)]:
+There are 3 timestamps associated with files in Linux [^][42]
 - `atime` "access time": last time file was accessed by a command or application
 - `mtime` "modify time": last time file's contents were modified
 - `ctime` "change time": last time file's attribute was modified 
@@ -839,7 +828,7 @@ GUI program used to set options for the login window when using GDM
 Get access control list for {file}
 
 ### `gpg`
-PGP was bought by Semantec, and GNU has since released GPG, an open-source replacement.[35](sources.md)
+PGP was bought by Semantec, and GNU has since released GPG, an open-source replacement.
 
 Option  | POSIX option  | Effect
 :---    | :---          | :---
@@ -1638,38 +1627,55 @@ whatis commands
 ```
 
 ### `touch`
-Update `$NEW`'s modification date to match `$OLD` [[36](sources.md)]
+Update `$NEW`'s modification date to match `$OLD` [^][36]
 ```sh
 touch -r $OLD $NEW
 ```
 
 ### `sosreport`
-**SOS** is an open-source data collection tool that can be used to collect system configuration details and diagnostic information from a Unix-like operating system. It is installed by default on Ubuntu Server. [[39](sources.md)]
+**SOS** is an open-source data collection tool that can be used to collect system configuration details and diagnostic information from a Unix-like operating system. It is installed by default on Ubuntu Server. [^][39]
 
 Option  | POSIX option            | Effect
 :---    | :---                    | :---
-\-      | `--compression-type`    | specify alternative compression (`xz` by default)
 `-l`    |                         | list plugins
+\-      | `--compression-type`    | specify alternative compression (`xz` by default)
 \-      | `--tmp-dir`             | specify alternative temporary directory
 
 
-Collect system configuration details
-Without arguments, the report will be generated and stored in `$TMPDIR`
+Collect system configuration details (without arguments, the report will be generated and stored in `$TMPDIR`)
 ```sh
 sosreport
-
-# Specify alternative temporary directory
+```
+Specify alternative temporary directory
+```sh
 sosreport --tmp-dir /opt
-
-# Specify alternative compression (`xz` by default)
+```
+Specify alternative compression (`xz` by default)
+```sh
 sosreport --compression-type gzip
-
-# Generate report for only specific plugins
+```
+Generate report for only specific plugins
+```sh
 sosreport -o apache --batch
 ```
 
 ### `logger`
 Create a one-time log file entry that you specify.
+
+### `xinetd`
+Internet Super Daemon provided an alternate method of connecting to various outdated network services. Should be turned off nowadays.  
+
+Configuration file  | Description
+:---                | :---
+/etc/xinet.d/       | config files
+/etc/xinetd.conf    | master xinetd configuration
+/etc/cmd.allow      | specify who is allowed to run a command
+/etc/cmd.deny       | specify who is disallowed from running a command
+
+Display statistics for a file
+```sh
+stat file
+```
 
 
 ## Tasks
@@ -1694,7 +1700,7 @@ Open firewall rule
 sudo firewall-cmd --permanent --add-service=samba
 sudo firewall-cmd --reload
 ```
-Configure Samba config file at [/etc/samba/smb.conf](#etcsambasmbconf)
+Configure Samba config file at [/etc/samba/smb.conf][/etc/samba/smb.conf]
 ```conf
 [samba-share]
 comment = Samba on Ubuntu
@@ -1732,15 +1738,15 @@ then
   exit 1
 fi
 ```
-[[7](sources.md)]
+[^][7]
 ```sh
 [ -z "$1" ] && echo "..." && exit 1
 ```
-[[8](sources.md)]
+[^][8]
 ```sh
 if [ ! -z "$2" ] ; then ...; fi
 ```
-Placed in a while loop, if user responds with anything except "y" (the read command will read only the first letter) the loop will terminate [[23](sources.md)]
+Placed in a while loop, if user responds with anything except "y" (the read command will read only the first letter) the loop will terminate [^][23]
 ```bash
 read -p "Backup another server? (y/n)" -n 1
 ["$BACKUP_AGAIN"="y"] || break
@@ -1770,11 +1776,24 @@ Count the number of occurrences of a string
 
 ---
 
+[4]: https://www.tecmint.com/rdesktop-connect-windows-desktop-from-linux/ "TecMint: \"rdesktop - A RDP Client to Connect Windows Desktop from Linux\""
+[7]: https://youtu.be/ksAfmJfdub0 "YouTube: \"Easy Academic References on the Command Line\""
+[8]: https://coderwall.com/p/kq9ghg/yakuake-scripting "coderwall.com: \"Yakuake scripting\""
 [19]: https://opensource.com/article/19/8/introduction-bpftrace "opensource.com: \"An introduction to bpftrace for Linux\""
+[21]: https://vitux.com/how-to-convert-documents-to-pdf-format-on-the-ubuntu-command-line/ "vitux.com: \"How to convert documents to PDF format on the Ubuntu Command Line\""
+[23]: ../sources/clkf.md "Cannon, Jason. _Command Line Kung Fu_."
+[29]: https://www.ostechnix.com/the-mktemp-command-tutorial-with-examples-for-beginners/ "The mktemp Command Tutorial With examples"
 [31]: https://www.ostechnix.com/how-to-view-image-metadata-on-linux/ "ostechnix.com: \"How to view image metadata\""
+[33]: https://www.networkworld.com/article/3433865/how-to-rename-a-group-of-files-on-linux.html#tk.rss_linux "networkworld.com: \"How to rename a group of files on Linux\""
+[36]: https://www.networkworld.com/article/3435279/unix-as-a-second-language-the-touch-command.html#tk.rss_linux "networkworld.com: \"Unix as a Second Language: The touch command\""
+[39]: https://www.howtoforge.com/how-to-install-and-use-sosreport-on-ubuntu-1804/ "howtoforge.com: \"How to install and use sosreport on Ubuntu\""
 [40]: https://vitux.com/how-to-install-and-configure-samba-on-ubuntu/ "vitux.com: \"How to Install and Configure Samba on Ubuntu\""
-
 [41]: https://www.tecmint.com/install-samba-on-rhel-8-for-file-sharing-on-windows/ "tecmint.com: \"Install Samba4 on RHEL 8 for File Sharing on Windows\""
+[42]: https://www.2daygeek.com/check-find-recently-modified-files-folders-linux/ "2daygeek: \"How to find recently modified files/folders in Linux\""
+[46]: https://www.tecmint.com/linux-tree-command-examples/ "tecmint.com: \"Linux tree command usage examples for beginners\""
+[50]: https://devconnected.com/user-administration-complete-guide-on-linux/#Setting_an_account_expiration_date_easily "devconnected.com: \"User administration complete guide on Linux\""
+[56]: https://www.redhat.com/sysadmin/raid-intro "redhat.com: \"RAID for those who avoid it\""
+[59]: https://docs.fedoraproject.org/en-US/quick-docs/adding-new-fonts-fedora/ "Fedora Docs - Adding new fonts in Fedora"
 
 [amixer]: audio.md#amixer "Command-line mixer for ALSA sound card driver"
 [dnf]: dnf.md '"Dandified YUM", successor to `yum` as a package manager for RPM-based Linux distributions like Fedora.'
@@ -1801,3 +1820,5 @@ Count the number of occurrences of a string
 [systemctl]: systemd.md#systemctl "Control the systemd system and service manager"
 [systemd-delta]: systemd.md#systemd-dela "Find overridden configuration files"
 [timedatectl]: systemd.md#timedatectl "Control the system time and date"
+
+[/etc/samba/smb.conf]: # "Samba configuration file"

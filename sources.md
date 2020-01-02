@@ -56,6 +56,7 @@
 [56]: https://www.redhat.com/sysadmin/raid-intro "redhat.com: \"RAID for those who avoid it\""
 [57]: https://www.reddit.com/r/GalliumOS/comments/b8xm3l/help_wifi_does_not_work/ "Reddit: \"[Help] WiFi does not work\""
 [58]: https://www.tecmint.com/nmcli-connect-wi-fi-from-linux-terminal/ "tecmint.com: \"How to Connect Wi-Fi from Linux Terminal Using Nmcli Command\""
+[59]: https://docs.fedoraproject.org/en-US/quick-docs/adding-new-fonts-fedora/ "Fedora Docs - Adding new fonts in Fedora"
 
 [Sec+ Lab]: https://pts.measureup.com/web/index.php#dashboard.php "Practice Lab: CompTIA Security+ (SY0-501)"
 [Eckert]: # "Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012."
