@@ -1,13 +1,11 @@
 # Linux configuration files
-#### Contents
-##### Home
 Home subdirectory           | Config files sorted alphabetically
 ---                         | ---
 .                           | [.forward][.forward] [.mailrc](#mailrc) mtab [xorg.conf][xorg.conf]
 .gnupg/                     | [pubring.gpg][.gnupg/pubring.gpg]
 .ssh/                       | [known_hosts][.ssh/known_hosts] 
+[.vim/colors/]              |
 
-##### /etc
 /#  | /etc config files sorted alphabetically
 --- | ---
 A   | [aliases][/etc/aliases] anacrontab
@@ -54,7 +52,6 @@ X11/                                          | **xdm/**&zwnj;xdm-config
 [xinet.d/][/etc/xinetd/]                      | 
 [yum.repos.d/][/etc/yum.repos.d/]             | 
 
-##### Other
 Other directories                             | Config filenames sorted alphabetically
 ---                                           | ---
 /boot/grub/                                   | [grub.cfg][/boot/grub/grub.cfg]
@@ -65,8 +62,6 @@ Other directories                             | Config filenames sorted alphabet
 /usr/share/config/kdm/                        | [kdmrc][/usr/share/config/kdm/kdmrc]
 [/usr/share/lightdm/lightdm.conf.d/][/usr/share/lightdm/lightdm.conf.d/] | 
 /usr/share/hwdata/                            | [pci.ids][/usr/share/hwdata/pci.ids] [pci.ids.gz][/usr/share/hwdata/pci.ids]
-
-## /etc
 
 ### SystemD service files
 [[45](README.md#sources)]
@@ -271,6 +266,7 @@ mynetworks_style = class
 [.gnupg/pubring.gpg]: # "Default storage for public `gpg` keyrings"
 [.ssh/known_hosts]: # "Public keys of SSH hosts"
 [xorg.conf]: # "User config which overrides system defaults"
+[.vim/colors/]: ../text/vim.md "Contains custom color schemes for vim"
 
 [/dev]: # "Virtual filesystem containing device files, used to access physical and virtual devices"
 [/etc/aliases]: # "Systemwide email aliases"
