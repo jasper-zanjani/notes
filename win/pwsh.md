@@ -39,7 +39,7 @@ System administration | [`Get-Alias`][Get-Alias] [`Get-Command`][Get-Command] [`
 
 \#      | Bash
 ---     | ---
-**\#**  | [`$!`][$$] [`!$`][$$] [`$?`][$?] [`&`][&] [`>>`][Add-Content]
+**\#**  | [`$!`][$$] [`!$`][$$] [`$?`][$?] [`&`][Start-Job] [`>>`][Add-Content]
 **A**   | [`alias`][New-Alias] [awk][Select-Object]
 **B**   | `bzip2` 
 **C**   | [`cat`][Get-Content] [`cd`][Set-Location] [`cp`][Copy-Item]
@@ -52,7 +52,7 @@ System administration | [`Get-Alias`][Get-Alias] [`Get-Command`][Get-Command] [`
 **R**   | [`reset`][Clear-Host] [`rm`][Remove-Item]
 **S**   | [`sed`][Select-Object] [`shutdown`][Stop-Computer] [`-r`][Restart-Computer]
 **T**   | [`tail`][Get-Content] [`touch`][New-Item]
-**U**   | [`uniq`](#select-object "`Select-Object -Unique`)
+**U**   | [`uniq`](#select-object "`Select-Object -Unique`")
 
 ## Syntax
 The `Throw` keyword generates a terminating error
@@ -1068,6 +1068,7 @@ Write-Output "This is a test network file." -Path | Out-File C:\networkfiles\tes
 [Set-VMNetworkAdapter]:           #set-vmnetworkadapter                         "`Set-VMNetworkAdapter`"
 [Set-VMProcessor]:                #set-vmprocessor                              "`Set-VMProcessor`"
 [Start-DscConfiguration]:         #start-dscconfiguration                       "`Start-DscConfiguration` (alias: `sacfg`) &#10; Apply configuration to nodes"
+[Start-Job]:                      #start-job                                    "`Start-Job` (alias: `sajb`)"
 [Start-Service]:                  #start-service                                "`Start-Service` (alias: `sasv`) &#10; Start one or more stopped services"
 [Stop-Computer]:                  #stop-computer                                "`Stop-Computer`"
 [Stop-Service]:                   #stop-service                                 "`Stop-Service` (alias: `spsv`) Stop one or more services"

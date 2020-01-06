@@ -91,7 +91,7 @@ netsh advfirewall set allprofiles state off
 ```
 
 ### `netdom`
-Alternative to [`Add-Computer`](ps.md#add-computer) PowerShell cmdlet [[^][Zacker]: 21]
+Alternative to [`Add-Computer`](pwsh.md#add-computer) PowerShell cmdlet [[^][Zacker]: 21]
 
 Rename a computer
 ```

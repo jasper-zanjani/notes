@@ -20,7 +20,7 @@
 17. [Upgrading to Windows Server 2003 R2](# "Outlines the process to upgrade your existing Active Directory to Windows Server 2003 R2.")
 18. [Upgrading to Windows Server 2008](# "Outlines the process to upgrade your existing Active Directory to Windows Server 2008.")
 19. [Integrating Microsoft Exchange](# "Covers some of the important Active Directory-related issues when implementing Microsoft Exchange.")
-q20. [Active Directory Lightweight Directory Service (a.k.a. ADAM)](# "Introduces Active Directory Lightweight Directory Services (AD LDS, formerly ADAM).") [AD LDS][AD LDS]
+20. [Active Directory Lightweight Directory Service (a.k.a. ADAM)](# "Introduces Active Directory Lightweight Directory Services (AD LDS, formerly ADAM).") [AD LDS][AD LDS]
 21. [Scripting with ADSI](# "Introduces ADSI scripting by leading you through a series of step-by-step examples.")
 22. [IADs and the Property Cache](# "Delves into the concept of the property cache used extensively by ADSI and shows you how to properly manipulate any attribute of any object within it.")
 23. [Using ADO for searching](# "Demonstrates how to make use of a technology normally reserved for databases and now extended to allow rapid searching for objects in Active Directory.")
@@ -185,19 +185,19 @@ S       | [`SERVER_SEARCH_FLAG_PHANTOM_ROOT`](# "control that enables full insta
 [SCP]: #ad-lds "\"serviceConnectionPoint\", object that AD LDS can publish, usually under the computer object on which the service is installed, that maintains key pieces about the AD LDS installation in the `keywords` and `serviceBindingInformation` attributes"
 [SID]: #sid "\"Security Identifier\", unique, variable-length identifier used to identify a trustee or security principal, composed of 2 fixed fields and 15 additional fields, all separated by dashes"
 
-[Add-PSSnapin]: # "Load a given list of snap-ins (.NET assemblies containing a collection of cmdlets and/or providers for use within PowerShell) either by name or via the pipeline - last supported in PowerShell 5.1"
-[Export-CliXml]: ../win/ps.md#export-clixml "Serialize a PowerShell object as a Common Language Infrastructure (CLI) XML file"
-[Export-Csv]: ../win/ps.md#export-csv "Export PowerShell objects to CSV"
-[ForEach-Object]: ../win/ps.md#filters "(alias: %)"
-[Format-List]: ../win/ps.md#format-list "Display output in list style (alias: fl)"
-[Format-Table]: ../win/ps.md#format-table "Display output in table style (alias: ft)"
-[Get-Command]: ../win/ps.md#get-command "Display all installed commands, including aliases, applications, filters, functions, and scripts (alias: gcm)"
-[Get-Help]: ../win/ps.md#get-help "Display help file for cmdlets"
-[Get-Member]: ../win/ps.md#get-member "Display properties and methods of a PowerShell object (alias: gm)"
-[Get-PSSnapin]: # "Display currently loaded snapins (.NET assemblies containing a collection of cmdlets and/or providers for use within PowerShell) - last supported in PowerShell 5.1"
-[Import-Csv]: ../win/ps.md#import-csv "Import CSV files as PowerShell objects"
-[Import-CliXml]: ../win/ps.md#import-clixml "Import a Common Language Infrastructure (CLI) XML file with data that represents Microsoft .NET Framework objects and create PowerShell objects from it"
-[Out-Null]: ../win/ps.md#out-null "Dispose of information piped to it, in lieu of displaying it"
-[Set-Location]: ../win/ps.md#set-location "Set present working directory (alias: cd)"
-[Set-ExecutionPolicy]: ../win/ps.md#set-executionpolicy "Change PowerShell execution policy for Windows computers (Windows only)"
-[Where-Object]: ../win/ps.md#filters "(alias: ?)"
+[Add-PSSnapin]:         # "Load a given list of snap-ins (.NET assemblies containing a collection of cmdlets and/or providers for use within PowerShell) either by name or via the pipeline - last supported in PowerShell 5.1"
+[Export-CliXml]:        ../win/pwsh.md#export-clixml "Serialize a PowerShell object as a Common Language Infrastructure (CLI) XML file"
+[Export-Csv]:           ../win/pwsh.md#export-csv "Export PowerShell objects to CSV"
+[ForEach-Object]:       ../win/pwsh.md#filters "(alias: %)"
+[Format-List]:          ../win/pwsh.md#format-list "Display output in list style (alias: fl)"
+[Format-Table]:         ../win/pwsh.md#format-table "Display output in table style (alias: ft)"
+[Get-Command]:          ../win/pwsh.md#get-command "Display all installed commands, including aliases, applications, filters, functions, and scripts (alias: gcm)"
+[Get-Help]:             ../win/pwsh.md#get-help "Display help file for cmdlets"
+[Get-Member]:           ../win/pwsh.md#get-member "Display properties and methods of a PowerShell object (alias: gm)"
+[Get-PSSnapin]:         #                                   "Display currently loaded snapins (.NET assemblies containing a collection of cmdlets and/or providers for use within PowerShell) - last supported in PowerShell 5.1"
+[Import-Csv]:           ../win/pwsh.md#import-csv "Import CSV files as PowerShell objects"
+[Import-CliXml]:        ../win/pwsh.md#import-clixml "Import a Common Language Infrastructure (CLI) XML file with data that represents Microsoft .NET Framework objects and create PowerShell objects from it"
+[Out-Null]:             ../win/pwsh.md#out-null "Dispose of information piped to it, in lieu of displaying it"
+[Set-Location]:         ../win/pwsh.md#set-location "Set present working directory (alias: cd)"
+[Set-ExecutionPolicy]:  ../win/pwsh.md#set-executionpolicy  "Change PowerShell execution policy for Windows computers (Windows only)"
+[Where-Object]:         ../win/pwsh.md#filters              "(alias: ?)"
