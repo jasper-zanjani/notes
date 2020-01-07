@@ -78,6 +78,9 @@ Set-AzRouteTable -RouteTable $rt
 #### Structure
 Playing around with reference-style links and tooltips has me thinking that there really should be a more structured, flexible way of generating text reports from object-style hierarchical information. For example, whether a definition appears beside a word dictionary style or in a tooltip on hover is really an implementation detail. There should be an easy way of storing that data and specifying that presentation dynamically.
 
+What I have settled on is a multilayered note-taking strategy. Every **lexeme** is defined first in a **slug** or one-line description that establishes its **epistemological** context as well as its **semantic** significance. A **stub** further elaborates the lexeme, especially insofar as it encapsulates further lexemes or can be analyzed into components.
+
+These slugs and stubs can be presented in various ways. Most recently I have gotten into the habit of putting slugs into tooltips that appear when I hover over lexemes in my markdown notes. This is an especially elegant solution in tables, where I can provide a highly condensed and legible index of commands, each of which can be understood at a high level by hovering the mouse while still providing full details when clicked on. This is also an elegant solution in tables of contents, where I can use a tooltip to contain a synopsis of a chapter which still links to the full notes. It provides a way of rendering information of intermediary fidelity, between the mere title and fully developed notes.
 
 ## Sources
   [AZ-103 Tasks](sources/az-103-tasks.md)
