@@ -10,7 +10,7 @@ Date and time                 | [`chrony`](#chrony) [`date`](date.md#date) [`hwc
 Disk management               | `blkid` [`partx`](partx.md)
 Distributions                 | **Debian** [`adduser`](users.md#adduser) [**`apt`**](apt.md#apt) `apt-cache` `apt-key` `add-apt-repository` <br> **Manjaro** [`mhwd`](#mhwd) [`mhwd-chroot`](#mhwd-chroot) [`pacman`](pacman.md) [`yay`](yay.md) <br> **Red Hat** [`dnf`][dnf] [`firewall-cmd`](#firewall-cmd) [`yum`](yum.md) <br> **Ubuntu** [`netplan`](#netplan)
 Files	                        | [`chown`](chown.md) [`fallocate`](fallocate.md) [`install`](install.md "Copy files while maintaining metadata") [`lsof`](lsof.md "Display open files, open network ports, and network connections") [`setfacl`](setfacl.md) [`sshfs`](ssh.md#sshfs) [`tree`](#tree)
-Filters                       | [`sed`](sed.md#sed) [`awk`](awk.md#awk) [`grep`](grep.md) [`egrep`](grep.md) [`fgrep`](grep.md) &bull; [`copy`](#copy) [`paste`](#paste) &bull; [`cat`](cat.md#cat) [`shuf`](shuf.md) [`tr`](tr.md)
+Filters                       | [`awk`](awk.md#awk) [`cat`](cat.md#cat) [`copy`](#copy) [`egrep`](grep.md) [`fgrep`](grep.md) [`grep`](grep.md) [`paste`](#paste) [`sed`](sed.md#sed) [`shuf`](shuf.md) [`tr`](tr.md)
 Gnome                         | [`gconf-editor`](gsettings.md) [`gsettings`](gsettings.md) 
 GRUB                          | [`update-grub`](grub.md#update-grub)
 Hardware settings             | [`insmod`](#insmod) [ `lsmod` ](#lsmod) [ `lspci` ](#lspci) [ `lsusb` ](#lsusb) [ `modprobe` ](#modprobe) [`rmmod`](#rmmod)

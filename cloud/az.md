@@ -1,6 +1,9 @@
 # Microsoft Azure
+
+
+
+
 ## Tasks
-#### Enable
 #### Provision a Windows Server Core VM
 ```powershell
 # Create a VNet with a subnet
@@ -378,26 +381,26 @@ VMSnapshotLinux                         | extension automatically deployed by th
 VPN Troubleshoot                        | a **Network Watcher** feature that provides automated diagnostics of Azure VPN gateways and connections [[1](#sources): 381]
 Zone-redundant storage (ZRS)            | Storage replication option that makes 3 synchronous copies across multiple availability zones; available for general-purpose v2 storage accounts at **Standard** performance tier only.
 ## Sources
-  1. Washam, Michael; Tuliani, Jonathan; Hoag, Scott. _Exam Ref AZ-103 Microsoft Azure Administrator_. [AZ-103](../sources/az-103.md)
-  2. "Overview of alerts in Microsoft Azure". [Microsoft Docs](https://docs.microsoft.com/en-us/azure/azure-monitor/platform/alerts-overview). 2018/01/27
-  3. "Azure Backup vs. Azure Site Recovery". [4sysops](https://4sysops.com/archives/azure-backup-vs-azure-site-recovery/): 2019/08/19.
-  4. "Azure Resource Manager overview". [Microsoft Docs](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-overview)
-  5. "Azure Monitor terminology changes". [Microsoft Docs](https://docs.microsoft.com/en-us/azure/azure-monitor/terminology)
-  6. "Azure Data Box Edge". [YouTube](https://youtu.be/5L8FcyQ1lCY).
-  7. _Micorosft Azure Administrator - Exam Guide AZ-103_. Zaal, Sjoukje.
-  8. "An introduction to Azure Dedicated Hosts". [YouTube](https://youtu.be/5qegfWl5woo): 2019/08/22.
-  9. "Azure Backup". [YouTube](https://youtu.be/HJeCqbbT-5s): 2018/01/18.
-  10. "Create, change, or delete a network security group". [Microsoft Docs](https://docs.microsoft.com/en-us/azure/virtual-network/manage-network-security-group): 2018/04/04.
-  - Michael Washam, Jonathan Tuliani, and Scott Hoag. _Exam Ref AZ-103 Microsoft Azure Administrator_. [AZ-103](../sources/az-103.md)
-  - "Enable-PSRemoting". [Microsoft Docs](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/enable-psremoting?view=powershell-6)
-  - "Azure Az Module for Windows PowerShell, Core, and Cloud Shell Replaces Azure RM". [Petri](https://www.petri.com/azure-az-module-for-windows-powershell-core-and-cloud-shell-replaces-azurerm): 2019/01/23.
-  - "Manage Azure IaaS virtual machines with Windows Admin Center". [Microsoft Docs](https://docs.microsoft.com/en-us/windows-server/manage/windows-admin-center/azure/manage-azure-vms): 2018/09/06.
-  - "PowerShell Basics: Filtering Objects". [ITPro Today](https://www.itprotoday.com/powershell/powershell-basics-filtering-objects): 2013/07/25.
-  - "Connect to Azure VM using PowerShell". [4sysops](https://4sysops.com/archives/connect-to-azure-vm-using-powershell/): 2018/10/11.
-  - "About PSSessions". [Microsoft Docs](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_pssessions?view=powershell-6): 2019/07/02.
-  - "Enable PowerShell Remoting". [4sysops](https://4sysops.com/wiki/enable-powershell-remoting/).
-  - "Start-AzureRmVM". [Microsoft Docs](https://docs.microsoft.com/en-us/powershell/module/azurerm.compute/start-azurermvm?view=azurermps-6.13.0).
-  - "Invoke-AzureRmVMRunCommand". [Microsoft Docs](https://docs.microsoft.com/en-us/powershell/module/AzureRm.Compute/Invoke-AzureRmVMRunCommand?view=azurermps-6.13.0).
-  - "PowerShell Remoting over SSH". [Microsoft Docs](https://docs.microsoft.com/en-us/powershell/scripting/learn/remoting/ssh-remoting-in-powershell-core?view=powershell-6): 2018/08/13.
-  - "Installation of OpenSSH for Windows Server 2019 and Windows 10". [Microsoft Docs](https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse): 2019/01/06.
-  - "New-AzVM". [Microsoft Docs](https://docs.microsoft.com/en-us/powershell/module/az.compute/new-azvm?view=azps-2.4.0).
+1. Washam, Michael; Tuliani, Jonathan; Hoag, Scott. _Exam Ref AZ-103 Microsoft Azure Administrator_. [AZ-103](../sources/az-103.md)
+2. "Overview of alerts in Microsoft Azure". [Microsoft Docs](https://docs.microsoft.com/en-us/azure/azure-monitor/platform/alerts-overview). 2018/01/27
+3. "Azure Backup vs. Azure Site Recovery". [4sysops](https://4sysops.com/archives/azure-backup-vs-azure-site-recovery/): 2019/08/19.
+4. "Azure Resource Manager overview". [Microsoft Docs](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-overview)
+5. "Azure Monitor terminology changes". [Microsoft Docs](https://docs.microsoft.com/en-us/azure/azure-monitor/terminology)
+6. "Azure Data Box Edge". [YouTube](https://youtu.be/5L8FcyQ1lCY).
+7. _Micorosft Azure Administrator - Exam Guide AZ-103_. Zaal, Sjoukje.
+8. "An introduction to Azure Dedicated Hosts". [YouTube](https://youtu.be/5qegfWl5woo): 2019/08/22.
+9. "Azure Backup". [YouTube](https://youtu.be/HJeCqbbT-5s): 2018/01/18.
+10. "Create, change, or delete a network security group". [Microsoft Docs](https://docs.microsoft.com/en-us/azure/virtual-network/manage-network-security-group): 2018/04/04.
+- Michael Washam, Jonathan Tuliani, and Scott Hoag. _Exam Ref AZ-103 Microsoft Azure Administrator_. [AZ-103](../sources/az-103.md)
+- "Enable-PSRemoting". [Microsoft Docs](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/enable-psremoting?view=powershell-6)
+- "Azure Az Module for Windows PowerShell, Core, and Cloud Shell Replaces Azure RM". [Petri](https://www.petri.com/azure-az-module-for-windows-powershell-core-and-cloud-shell-replaces-azurerm): 2019/01/23.
+- "Manage Azure IaaS virtual machines with Windows Admin Center". [Microsoft Docs](https://docs.microsoft.com/en-us/windows-server/manage/windows-admin-center/azure/manage-azure-vms): 2018/09/06.
+- "PowerShell Basics: Filtering Objects". [ITPro Today](https://www.itprotoday.com/powershell/powershell-basics-filtering-objects): 2013/07/25.
+- "Connect to Azure VM using PowerShell". [4sysops](https://4sysops.com/archives/connect-to-azure-vm-using-powershell/): 2018/10/11.
+- "About PSSessions". [Microsoft Docs](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_pssessions?view=powershell-6): 2019/07/02.
+- "Enable PowerShell Remoting". [4sysops](https://4sysops.com/wiki/enable-powershell-remoting/).
+- "Start-AzureRmVM". [Microsoft Docs](https://docs.microsoft.com/en-us/powershell/module/azurerm.compute/start-azurermvm?view=azurermps-6.13.0).
+- "Invoke-AzureRmVMRunCommand". [Microsoft Docs](https://docs.microsoft.com/en-us/powershell/module/AzureRm.Compute/Invoke-AzureRmVMRunCommand?view=azurermps-6.13.0).
+- "PowerShell Remoting over SSH". [Microsoft Docs](https://docs.microsoft.com/en-us/powershell/scripting/learn/remoting/ssh-remoting-in-powershell-core?view=powershell-6): 2018/08/13.
+- "Installation of OpenSSH for Windows Server 2019 and Windows 10". [Microsoft Docs](https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse): 2019/01/06.
+- "New-AzVM". [Microsoft Docs](https://docs.microsoft.com/en-us/powershell/module/az.compute/new-azvm?view=azps-2.4.0).
