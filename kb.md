@@ -13,6 +13,7 @@ Default keyboard binding  | Effect
 Meta-h                    | Turn on dictation
 Meta-d                    | Show desktop
 Ctrl+Meta+0               | Start Windows PowerShell
+Ctrl+Shift+C              | Start Command Prompt
 # Mac OS X
 Default keyboard binding  | Effect
 :---                      | :---
