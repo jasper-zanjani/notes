@@ -1,29 +1,27 @@
 # PowerShell
 
-\#    | Cmdlet nouns sorted alphabetically
----   | ---
-**A** | **`Alias`** [`Export`][Export-Alias] [`Get`][Get-Alias] [`New`][New-Alias] [`Set`][Set-Alias] &bull; **`Archive`** [`Compress`][Compress-Archive] [`Expand`][Expand-Archive]
-ADA | **`ADAccount`** [`Search`][Search-ADAccount] [`Unlock`][Unlock-ADAccount] &bull; **`ADAccountPassword`** [`Set`][Set-ADAccountPassword]
-ADD | **`ADDSDomain`** [`Install`][Install-ADDSDomain] &bull; **`ADDSDomainController`** [`Uninstall`][Uninstall-ADDSDomainController] &bull; **`ADDSForest`** [`Get`][Get-ADDSForest] [`Install`][Install-ADDSForest]
-ADO | **`ADObject`** [`Set`][Set-ADObject] &bull; **`ADOrganizationalUnit`** [`Get`][Get-ADOrganizationalUnit] [`New`][New-ADOrganizationalUnit] [`Remove`][Remove-ADOrganizationalUnit] [`Set`][Set-ADOrganizationalUnit]
-ADP | **`ADPrincipalGroupMembership`** [`Add`][Add-ADPrincipalGroupMembership] [`Get`][Get-ADPrincipalGroupMembership]
-ADU | **`ADUser`** [`Get`][Get-ADUser] [`New`][New-ADUser]
-**C** | **`ChildItem`** [`Get`][Get-ChildItem] &bull; **`Clipboard`** [`Get`][Get-Clipboard] [`Set`][Set-Clipboard] &bull; **`Computer`** [`Add`][Add-Computer] [`Rename`][Rename-Computer] [`Restart`][Restart-Computer] [`Stop`][Stop-Computer] &bull; **`Content`** [`Add`][Add-Content] &bull; **`Credential`** [`Get`][Get-Credential] &bull; **`Csv`** [`Export`][Export-Csv] [`Import`][Import-Csv]
-**D** | **`Disk`** [`Get`][Get-Disk] 
-Dhcp | **`DhcpServerInDC`** [`Add`][Add-DhcpServerInDC] &bull; **`DhcpServerV4Scope`** [`Add`][Add-DhcpServerv4Scope] &bull; **`DhcpServerv4OptionValue`** [`Set`][Set-DhcpServerv4OptionValue]
-**E** | **`ExecutionPolicy`** [`Set`][Set-ExecutionPolicy]
-**G** | **`Guid`** [`New`][New-Guid]
-**H** | **`Help`** [`Get`][Get-Help] [`Update`][Update-Help]
-**I** | **`Item`** [`Copy`][Copy-Item] [`Get`][Get-Item] [`New`][New-Item] [`Remove`][Remove-Item]
-**L** | **`List`** [`Format`][Format-List] &bull; **`Location`** [`Get`][Get-Location] [`Set`][Set-Location]
-**M** | **`Module`** [`Import`][Import-Module] [`Install`][Install-Module]
-**N** | **`NetAdapter`** [`Get`][Get-NetAdapter] &bull; **`NetFirewallRule`** [`Get`][Get-NetFirewallRule] [`New`][New-NetFirewallRule] [`Set`][Set-NetFirewallRule] &bull; **`NetIpAddress`** [`New`][New-NetIpAddress] &bull; **`Null`** [`Out`][Out-Null]
-**O** | **`Object`** [`ForEach`][ForEach-Object] [`Select`][Select-Object] [`Where`][Where-Object] &bull; **`Output`** [`Write`][Write-Output]
-**P** | **`Partition`** [`Get`][Get-Partition] [`New`][New-Partition] [`Remove`][Remove-Partition] &bull; **`PSReadlineOption`** [`Get`][Get-PSReadlineOption] [`Set`][Set-PSReadlineOption] &bull; **`PSSession`** [`Disconnect`][Disconnect-PSSession] [`Enter`][Enter-PSSession] [`Exit`][Exit-PSSession] [`Get`][Get-PSSession] [`New`][New-PSSession]
-**S** | **`Service`** [`Get`][Get-Service] [`Start`][Start-Service] [`Stop`][Stop-Service] &bull; **`SmbShare`** [`New`][New-SmbShare]
-**T** | **`Table`** [`Format`][Format-Table]
-**V** | **`VMFirmware`** [`Set`][Set-VMFirmware] &bull; **`VMMemory`** [`Set`][Set-VMMemory] &bull; **`VMNetworkAdapter`** [`Set`][Set-VMNetworkAdapter] &bull; **`VMProcessor`** [`Set`][Set-VMProcessor] &bull; **`VMSwitch`** [`New`][New-VMSwitch]
-**W** | **`WebRequest`** [`Invoke`][Invoke-WebRequest] &bull; **`WindowsFeature`** [`Get`][Get-WindowsFeature] [`Install`][Install-WindowsFeature] &bull; **`WindowsOptionalFeature`** [`Enable`][Enable-WindowsOptionalFeature] &bull; **`WMIObject`** [`Get`][Get-WMIObject]
+\#      | Approved cmdlet verbs and their aliases [^](https://docs.microsoft.com/en-us/powershell/scripting/developer/cmdlet/approved-verbs-for-windows-powershell-commands?view=powershell-7 "Microsoft Docs: \"Approved Verbs for PowerShell Commands\"")
+---     | ---
+**A-D** | [`a`](# "`Add-`") [`ap`](# "`Approve-`&#10;Confirms or agrees to the status of a resource or process.") [`as`](# "`Assert-`&#10;Affirms the state of a resource.") &bull; [`ba`](# "`Backup-`&#10;Stores data by replicating it.") [`bd`](# "`Build-`&#10;Creates an artifact (usually a binary or document) out of some set of input files (usually source code or declarative documents)") [`bl`](# "`Block-`&#10;Restricts access to a resource. This verb is paired with Unblock.") &bull; [`cc`](# "`Connect-`&#10;Creates a link between a source and a destination. This verb is paired with Disconnect.") [`cf`](# "`Convertfrom-`&#10;Converts one primary type of input (the cmdlet noun indicates the input) to one or more supported output types.") [`ch`](# "`Checkpoint-`&#10;Creates a snapshot of the current state of the data or of its configuration.") [`cm`](# "`Compress-`&#10;Compacts the data of a resource. Pairs with Expand.") [`cn`](# "`Confirm-`&#10;Acknowledges, verifies, or validates the state of a resource or process.") [`cp`](# "`Complete-`&#10;Concludes an operation.&#10;---&#10;`Copy-`&#10;Copies a resource to another name or to another container. For example, the Copy-Item cmdlet that is used to access stored data copies an item from one location in the data store to another location.") [`cr`](# "`Compare-`&#10;Evaluates the data from one resource against the data from another resource.") [`cs`](# "`Close-`") [`ct`](# "`Convertto-`&#10;Converts from one or more types of input to a primary output type (the cmdlet noun indicates the output type).") [`cv`](# "`Convert-`&#10;Changes the data from one representation to another when the cmdlet supports bidirectional conversion or when the cmdlet supports conversion between multiple data types.") &bull; [`d`](# "`Disable-`&#10;Configures a resource to an unavailable or inactive state. For example, the Disable-PSBreakpoint cmdlet makes a breakpoint inactive. This verb is paired with Enable.") [`db`](# "`Debug-`&#10;Examines a resource to diagnose operational problems.") [`dc`](# "`Disconnect-`&#10;Breaks the link between a source and a destination. This verb is paired with Connect.") [`dm`](# "`Dismount-`&#10;Detaches a named entity from a location. This verb is paired with Mount.") [`dn`](# "`Deny-`&#10;Refuses, objects, blocks, or opposes the state of a resource or process.") [`dp`](# "`Deploy-`&#10;Sends an application, website, or solution to a remote target[s] in such a way that a consumer of that solution can access it after deployment is complete") 
+**E-O** | [`e`](# "`Enable-`&#10;Configures a resource to an available or active state. For example, the Enable-PSBreakpoint cmdlet makes a breakpoint active. This verb is paired with Disable.") [`ed`](# "`Edit-`&#10;Modifies existing data by adding or removing content.") [`en`](# "`Expand-`&#10;Restores the data of a resource that has been compressed to its original state. This verb is paired with Compress.") [`ep`](# "`Export-`&#10;Encapsulates the primary input into a persistent data store, such as a file, or into an interchange format. This verb is paired with Import.") [`et`](# "`Enter-`") [`ex`](# "`Exit-`") &bull; [`f`](# "`Format-`") &bull; [`g`](# "`g`") [`gp`](# "`Group-`&#10;Arranges or associates one or more resources.") [`gr`](# "`Grant-`&#10;Allows access to a resource. This verb is paired with Revoke.") &bull; [`h`](# "`Hide-`") &bull; [`i`](# "`Invoke-`&#10;Performs an action, such as running a command or a method.") [`in`](# "`Initialize-`&#10;Prepares a resource for use, and sets it to a default state.") [`ip`](# "`Import-`&#10;Creates a resource from data that is stored in a persistent data store (such as a file) or in an interchange format. For example, the Import-CSV cmdlet imports data from a comma-separated value (CSV) file to objects that can be used by other cmdlets. This verb is paired with Export.") [`is`](# "`Install-`&#10;Places a resource in a location, and optionally initializes it. This verb is paired with Uninstall.") &bull; [`j`](# "`Join-`") &bull; [`l`](# "`Limit-`&#10;Applies constraints to a resource.") [`lk`](# "`Lock-`") &bull; [`m`](# "`Move`") [`mg`](# "`Merge-`&#10;Creates a single resource from multiple resources.") [`ms`](# "`Measure-`&#10;Identifies resources that are consumed by a specified operation, or retrieves statistics about a resource.") [`mt`](# "`Mount-`&#10;Attaches a named entity to a location. This verb is paired with Dismount.") &bull; [`n`](# "`n`") &bull; [`o`](# "`Out-`&#10;Sends data out of the environment. For example, the Out-Printer cmdlet sends data to a printer.") [`op`](# "`Open-`") [`om`](# "`Optimize-`") 
+**P-R** | [`pb`](# "`Publish-`&#10;Makes a resource available to others. This verb is paired with Unpublish.") [`pi`](# "`Ping-`&#10;Use the Test verb.") [`pop`](# "`Pop-`")  [`pt`](# "`Protect-`&#10;Safeguards a resource from attack or loss. This verb is paired with Unprotect.") [`pu`](# "`Push-`") &bull; [`r`](# "`Remove-`") [`rc`](# "`Receive-`&#10;Accepts information sent from a source. This verb is paired with Send.") [`rd`](# "`Read-`&#10;Acquires information from a source. This verb is paired with Write.") [`re`](# "`Redo-`") [`rg`](# "`Register-`&#10;Creates an entry for a resource in a repository such as a database. This verb is paired with Unregister.") [`rk`](# "`Revoke-`&#10;Specifies an action that does not allow access to a resource. This verb is paired with Grant.") [`rn`](# "`Rename-`") [`rp`](# "`Repair-`&#10;Restores a resource to a usable condition") [`rq`](# "`Request-`&#10;Asks for a resource or asks for permissions.") [`rr`](# "`Restore-`&#10;Sets a resource to a predefined state, such as a state set by Checkpoint. For example, the Restore-Computer cmdlet starts a system restore on the local computer.") [`rs`](# "`Reset`") [`rt`](# "`Restart-`&#10;Stops an operation and then starts it again. For example, the Restart-Service cmdlet stops and then starts a service.") [`ru`](# "`Resume-`&#10;Starts an operation that has been suspended. For example, the Resume-Service cmdlet starts a service that has been suspended. This verb is paired with Suspend.") [`rv`](# "`Resolve-`&#10;Maps a shorthand representation of a resource to a more complete representation.") 
+**S**   | [`s`](# "`Set-`") [`sa`](# "`Start-`&#10;Initiates an operation. For example, the Start-Service cmdlet starts a service. This verb is paired with Stop.") [`sb`](# "`Submit-`&#10;Presents a resource for approval.") [`sc`](# "`Select-`") [`sd`](# "`Send-`&#10;Delivers information to a destination. This verb is paired with Receive.") [`sh`](# "`Show-`") [`sk`](# "`Skip-`") [`sl`](# "`Split-`") [`sp`](# "`Stop-`&#10;Discontinues an activity. This verb is paired with Start.") [`sr`](# "`Search-`") [`ss`](# "`Suspend-`&#10;Pauses an activity. For example, the Suspend-Service cmdlet pauses a service. This verb is paired with Resume.") [`st`](# "`Step-`") [`sv`](# "`Save-`&#10;Preserves data to avoid loss.") [`sw`](# "`Switch-`") [`sy`](# "`Sync-`&#10;Assures that two or more resources are in the same state.") 
+**T-Z** | [`t`](# "`Test-`&#10;Verifies the operation or consistency of a resource.") [`tr`](# "`Trace-`&#10;Tracks the activities of a resource.") &bull; [`u`](# "`Use-`&#10;Uses or includes a resource to do something.") [`ub`](# "`Unpublish-`&#10;Makes a resource unavailable to others. This verb is paired with Publish.") [`ud`](# "`Update-`&#10;Brings a resource up-to-date to maintain its state, accuracy, conformance, or compliance. For example, the Update-FormatData cmdlet updates and adds formatting files to the current PowerShell console.") [`uk`](# "`Unlock-`")  [`ul`](# "`Unblock-`&#10;Removes restrictions to a resource. This verb is paired with Block.") [`un`](# "`Undo-`")  [`up`](# "`Unprotect-`&#10;Removes safeguards from a resource that were added to prevent it from attack or loss. This verb is paired with Protect.") [`ur`](# "`Unregister-`&#10;Removes the entry for a resource from a repository. This verb is paired with Register.") [`us`](# "`Uninstall-`&#10;Removes a resource from an indicated location. This verb is paired with Install.") &bull; [`w`](# "`Wait-`&#10;Pauses an operation until a specified event occurs. For example, the Wait-Job cmdlet pauses operations until one or more of the background jobs are complete.") [`wc`](# "`Watch-`") [`wr`](# "`Write-`&#10;Adds information to a target. This verb is paired with Read.") 
+
+\#      | Cmdlet nouns sorted alphabetically
+---     | ---
+**A**   | **`Alias`**&nbsp;[`ep`][Export-Alias]&nbsp;[`g`][Get-Alias]&nbsp;[`n`][New-Alias]&nbsp;[`s`][Set-Alias]&nbsp;&bull; **`Archive`**&nbsp;[`cm`][Compress-Archive]&nbsp;[`en`][Expand-Archive]
+AD      | **`ADAccount`**&nbsp;[`sr`][Search-ADAccount]&nbsp;[`uk`][Unlock-ADAccount]&nbsp;&bull; **`ADAccountPassword`**&nbsp;[`s`][Set-ADAccountPassword]&nbsp;&bull; **`ADDSDomain`**&nbsp;[`is`][Install-ADDSDomain]&nbsp;&bull; **`ADDSDomainController`**&nbsp;[`us`][Uninstall-ADDSDomainController]&nbsp;&bull; **`ADDSForest`**&nbsp;[`g`][Get-ADDSForest]&nbsp;[`is`][Install-ADDSForest]&nbsp;&bull; **`ADObject`** [`s`][Set-ADObject]&nbsp;&bull; **`ADOrganizationalUnit`**&nbsp;[`g`][Get-ADOrganizationalUnit]&nbsp;[`n`][New-ADOrganizationalUnit]&nbsp;[`r`][Remove-ADOrganizationalUnit]&nbsp;[`s`][Set-ADOrganizationalUnit]&nbsp;&bull; **`ADPrincipalGroupMembership`**&nbsp;[`a`][Add-ADPrincipalGroupMembership]&nbsp;[`g`][Get-ADPrincipalGroupMembership]&nbsp;&bull; **`ADUser`**&nbsp;[`g`][Get-ADUser]&nbsp;[`n`][New-ADUser]
+**C**   | **`ChildItem`**&nbsp;[`g`][Get-ChildItem]&nbsp;&bull; **`Clipboard`**&nbsp;[`g`][Get-Clipboard]&nbsp;[`s`][Set-Clipboard]&nbsp;&bull; **`Computer`**&nbsp;[`a`][Add-Computer]&nbsp;[`rn`][Rename-Computer]&nbsp;[`rt`][Restart-Computer]&nbsp;[`sp`][Stop-Computer]&nbsp;&bull; **`Content`**&nbsp;[`a`][Add-Content]&nbsp;&bull; **`Credential`** [`g`][Get-Credential] &bull; **`Csv`** [`ep`][Export-Csv] [`ip`][Import-Csv]
+**D**   | **`Disk`** [`g`][Get-Disk] &bull; **`DistributionGroupMember`** [`a`][Add-DistributionGroupMember] [`g`][Get-DistributionGroupMember] [`ud`][Update-DistributionGroupMember]
+Dhcp    | **`DhcpServerInDC`** [`a`][Add-DhcpServerInDC] &bull; **`DhcpServerV4Scope`** [`a`][Add-DhcpServerv4Scope] &bull; **`DhcpServerv4OptionValue`** [`s`][Set-DhcpServerv4OptionValue]
+**E-M** | **`ExecutionPolicy`** [`s`][Set-ExecutionPolicy] &bull; **`Guid`** [`n`][New-Guid] &bull; **`Help`** [`g`][Get-Help] [`ud`][Update-Help] &bull; **`Item`** [`cp`][Copy-Item] [`g`][Get-Item] [`n`][New-Item] [`r`][Remove-Item] &bull; **`List`** [`f`][Format-List] &bull; **`Location`** [`g`][Get-Location] [`s`][Set-Location] &bull; **`Module`** [`ip`][Import-Module] [`is`][Install-Module]
+**N**   | **`NetAdapter`** [`g`][Get-NetAdapter] &bull; **`NetFirewallRule`** [`g`][Get-NetFirewallRule] [`n`][New-NetFirewallRule] [`s`][Set-NetFirewallRule] &bull; **`NetIpAddress`** [`n`][New-NetIpAddress] &bull; **`Null`** [`o`][Out-Null]
+**O**   | **`Object`** [`ForEach`][ForEach-Object] [`sc`][Select-Object] [`Where`][Where-Object] &bull; **`Output`** [`wr`][Write-Output]
+**P**   | **`Partition`** [`g`][Get-Partition] [`n`][New-Partition] [`r`][Remove-Partition] &bull; **`PSReadlineOption`** [`g`][Get-PSReadlineOption] [`s`][Set-PSReadlineOption] &bull; **`PSSession`** [`dc`][Disconnect-PSSession] [`et`][Enter-PSSession] [`ex`][Exit-PSSession] [`g`][Get-PSSession] [`n`][New-PSSession]
+**S-T** | **`Service`** [`g`][Get-Service] [`sa`][Start-Service] [`sp`][Stop-Service] &bull; **`SmbShare`** [`n`][New-SmbShare] &bull; **`Table`** [`f`][Format-Table]
+**V**   | **`VMFirmware`** [`s`][Set-VMFirmware] &bull; **`VMMemory`** [`s`][Set-VMMemory] &bull; **`VMNetworkAdapter`** [`s`][Set-VMNetworkAdapter] &bull; **`VMProcessor`** [`s`][Set-VMProcessor] &bull; **`VMSwitch`** [`n`][New-VMSwitch]
+**W**   | **`WebRequest`** [`Invoke`][Invoke-WebRequest] &bull; **`WindowsFeature`** [`g`][Get-WindowsFeature] [`is`][Install-WindowsFeature] &bull; **`WindowsOptionalFeature`** [`e`][Enable-WindowsOptionalFeature] &bull; **`WMIObject`** [`g`][Get-WMIObject]
 
 Topic                 | Cmdlets
 ---                   | ---
@@ -34,25 +32,14 @@ Filters               | [`Where-Object`][Where-Object] [`Select-Object`][Select-
 Firewall              | [`Get-NetFirewallRule`](#get-netfirewallrule) [`New-NetFirewallRule`](#new-netfirewallrule) [`Set-NetFirewallRule`](#set-netfirewallrule)
 Formatting            | [`Format-List`][Format-List] [`Format-Table`][Format-Table] [`Format-Wide`](#output-formatting)
 Hyper-V               | [`New-VMSwitch`][New-VMSwitch] [`Set-VMFirmware`][Set-VMFirmware] [`Set-VMMemory`](#set-vmmemory) [`Set-VMNetworkAdapter`](#set-vmnetworkadapter) [`Set-VMProcessor`](#set-vmprocessor)
-Remote administration | [`Enable-PSRemoting`][Enable-PSRemoting] [`Invoke-Command`](#invoke-command) &bull; **`PSSession`** [`Disconnect`][Disconnect-PSSession] [`Enter`][Enter-PSSession] [`Exit`](#exit-pssession) [`Get`](#get-pssession) [`New`][New-PSSession]
+O365                  | **`DistributionGroupMember`** [`a`][Add-DistributionGroupMember] [`g`][Get-DistributionGroupMember] [`ud`][Update-DistributionGroupMember]
+Remote administration | [`Enable-PSRemoting`][Enable-PSRemoting] [`Invoke-Command`](#invoke-command) &bull; **`PSSession`** [`dc`][Disconnect-PSSession] [`et`][Enter-PSSession] [`ex`](#exit-pssession) [`g`](#get-pssession) [`n`][New-PSSession]
 System administration | [`Get-Alias`][Get-Alias] [`Get-Command`][Get-Command] [`Get-Help`][Get-Help] [`Get-History`][Get-History] [`Get-Module`][Get-Module] `Get-Process` `Get-PSDrive` [`Get-Service`][Get-Service] [`Update-Help`][Update-Help]
 
-\#      | Bash
+\#      | Bash (hover for PowerShell equivalents)
 ---     | ---
-**\#**  | [`$!`][$$] [`!$`][$$] [`$?`][$?] [`&`][Start-Job] [`>>`][Add-Content]
-**A**   | [`alias`][New-Alias] [awk][Select-Object]
-**B**   | `bzip2` 
-**C**   | [`cat`][Get-Content] [`cd`][Set-Location] [`cp`][Copy-Item]
-**E**   | [`echo`][Write-Host]
-**F**   | [`find`][Get-ChildItem]
-**G**   | [`grep`][Where-Object]
-**L**   | [`less`](#out-host "`Out-Host -Paging`") [`ls`][Get-ChildItem]
-**M**   | [`man`][Get-Help] [`mkdir`](#new-item "`New-Item -ItemType Directory`") [`more`](#out-host "`Out-Host -Paging`")
-**P**   | [`print`][Write-Host] [`printf`][Write-Host] [`pwd`][Get-Location]
-**R**   | [`reset`][Clear-Host] [`rm`][Remove-Item]
-**S**   | [`sed`][Select-Object] [`shutdown`][Stop-Computer] [`-r`][Restart-Computer]
-**T**   | [`tail`][Get-Content] [`touch`][New-Item]
-**U**   | [`uniq`](#select-object "`Select-Object -Unique`")
+**A-O** | [`$!`][$$] [`!$`][$$] [`$?`][$?] [`&`][Start-Job] [`>>`][Add-Content] &bull; [`alias`][New-Alias] [`awk`][Select-Object] &bull; `bzip2` &bull; [`cat`][Get-Content] [`cd`][Set-Location] [`cp`][Copy-Item] &bull; [`echo`][Write-Host] &bull; [`find`][Get-ChildItem] &bull; [`grep`][Where-Object] &bull; [`less`](#out-host "`Out-Host -Paging`") [`ls`][Get-ChildItem] &bull; [`man`][Get-Help] [`mkdir`](#new-item "`New-Item -ItemType Directory`") [`more`](#out-host "`Out-Host -Paging`")
+**P-Z** | [`print`][Write-Host] [`printf`][Write-Host] [`pwd`][Get-Location] &bull; [`reset`][Clear-Host] [`rm`][Remove-Item] &bull; [`sed`][Select-Object] [`shutdown`][Stop-Computer] [`-r`][Restart-Computer] &bull; [`tail`][Get-Content] [`touch`][New-Item] &bull; [`uniq`](#select-object "`Select-Object -Unique`")
 
 ## Syntax
 The `Throw` keyword generates a terminating error
@@ -127,7 +114,7 @@ Common Parameter        | Alias   | Effect
 #### Filters
 Filtering results can be done with 5 commands:
 - `Where-Object` (aliased to `where` and `?`): the most commonly used such command
-- `Select-Object` (aliased to `select`): used to specify specific columns of information to be displayed
+- `Select-Object` (aliased to `sc`ed to specify specific columns of information to be displayed
 - `Select-String` (aliased to `sls`)
 - `Out-GridView`
 - `ForEach-Object` (aliased to `foreach` and `%`) There are two different ways to construct a `ForEach-Object` statement:
@@ -399,6 +386,15 @@ Add-DhcpServerInDC -DnsName dc.corp.packtlab.com
 ```powershell
 Add-DhcpServerv4Scope -Name "PacktLabNet" -StartRange 10.0.0.50 -EndRange 10.0.0.100 -SubnetMask 255.255.255.0
 ```
+
+### `Add-DistributionGroupMember`
+
+Parameter | Effect
+---       | ---
+`Identity`| Specifies the group that you want to modify. You can use any value that uniquely identifies the group (including Name, Alias, Distinguished name, Canonical name, Email address, or GUID).
+`Member`  | Specifies the recipient that you want to add to the group. A member can be any mail-enabled recipient in your organization. You can use any value that uniquely identifies the recipient (including Name, Alias, Distinguished name, Canonical name, Email address, or GUID).
+
+
 ### `Add-PSSnapin`
 ### `Disconnect-PSSession`
 Terminate a remote PowerShell session begun with [`New-PSSession`][New-PSSession] [[^][Zacker]: 22]
@@ -1051,7 +1047,7 @@ Write-Output "This is a test network file." -Path | Out-File C:\networkfiles\tes
 [Rename-Computer]:                #rename-computer                              "`Rename-Computer`"
 [Restart-Computer]:               #restart-computer                             "`Restart-Computer`"
 [Search-ADAccount]:               #search-adaccount                             "`Search-ADAccount`"
-[Select-Object]:                  #filters                                      "`Select-Object` (alias: `select`) &#10; Select object or object properties"
+[Select-Object]:                  #filters                                      "`Select-Object` (alias: `sc`&#10; Select object or object properties"
 [Set-ADAccountPassword]:          #set-adaccountpassword                        "`Set-ADAccountPassword`"
 [Set-ADObject]:                   #set-adobject                                 "`Set-ADObject`"
 [Set-ADOrganizationalUnit]:       #set-adorganizationalunit                     "`Set-ADOrganizationalUnit`"
@@ -1078,3 +1074,7 @@ Write-Output "This is a test network file." -Path | Out-File C:\networkfiles\tes
 [Where-Object]:                   #filters                                      "`Where-Object` (alias: `?`, `where`) &#10; Select objects from a collection based on their property values"
 [Write-Host]:                     #write-host                                   "`Write-Host`"
 [Write-Output]:                   #write-output                                 "`Write-Output` (alias: `echo`, `write`) &#10; Send the specified objects to the next command in the pipeline. If the command is the last command in the pipeline, the objects are displayed in the console."
+
+[Add-DistributionGroupMember]: #add-distributiongroupmember "Add-DistributionGroupMember&#10;Add a single recipient to distribution groups and mail-enabled security groups"
+[Get-DistributionGroupMember]: #get-distributiongroupmember "Get-DistributionGroupMember&#10;View members of distribution groups and mail-enabled security groups"
+[Update-DistributionGroupMember]: #update-distributiongroupmember "Update-DistributionGroupMember&#10;Replace all members of distribution groups and mail-enabled security groups"
