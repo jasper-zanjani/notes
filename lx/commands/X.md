@@ -4,10 +4,8 @@ Test X11 with the config file automatically generated after `Xorg -configure`
 ```sh
 X -config $HOME/xorg.conf.new
 ```
-
 ### `xdpyinfo`
 Show detailed information about display
-
 ### `xhost`
 Enable access control to X server
 ```sh
@@ -33,16 +31,22 @@ Allow clients from any host to connect (not unsafe if you use a firewall that al
 ```sh
 xhost +
 ```
-
 ### `xlsclients`
 Determine what applications are running on the legacy X11 server provided with Wayland.
-
+### `xmodmap`
+Replacing Caps Lock with Escape
+```
+! Swap caps lock and escape
+remove Lock = Caps_Lock
+keysym Escape = Caps_Lock
+keysym Caps_Lock = Escape
+add Lock = Caps_Lock
+```
 ### `Xorg`
 Enable automatic configuration of X11 server
 ```sh
 Xorg -configure
 ```
-
 ### `xrandr`
 Set size, orientation, and reflection of video output\
 Change resolution of DisplayPort1 to 1920x1080
@@ -57,6 +61,5 @@ Display current state of the system
 ```sh
 xrandr -q  --query
 ```
-
 ### `xwininfo`
 Utility that provides information about a clicked window, including dimensions, position, etc

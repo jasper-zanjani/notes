@@ -1,5 +1,6 @@
 ### `install`
-Copy files while maintaining various metadata, including timestamp, owner, etc. [[9](sources.md)]\
+Copy files while maintaining various metadata, including timestamp, owner, etc. [[9](sources.md)]
+
 Copy a file while preserving timestamp. The copy will have the `install` default of `755`, but the original's `mtime` is maintained:
 ```sh
 install --preserve-timestamp example/foo .

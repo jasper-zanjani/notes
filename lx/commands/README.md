@@ -3,13 +3,13 @@
 Topic                         | Commands
 :---                          | :---
 Ansible                       | [`ansible`](../ansible.md#ansible) [`ansible-galaxy`](../ansible.md#ansible-galaxy) [`ansible-playbook`](../ansible.md#ansible-playbook)
-Archive                       | [**`bzip2`**](bzip2.md) `bzcat` `bzless` `bzmore` &bull; [`compress`](compress.md#compress) [`uncompress`](compress.md#uncompress) &bull; [`gzip`](gzip.md) [`tar`](tar.md#tar) &bull; [**`zip`**](zip.md#zip) [`unzip`](zip.md#unzip) [`zipcloak`](zip.md#zipcloak) [`zipdetails`](zip.md#zipdetails) [`zipgrep`](zip.md#zipgrep) [`zipinfo`](zip.md#zipinfo) [`zipnote`](zip.md#zipnote) [`zipsplit`](zip.md#zipsplit) &bull; [`dar`](dar.md)
+Archive                       | [**`bzip2`**][bzip2] [`bzcat`](archive.md#bzcat) [`bzless`](archive.md#bzless) [`bzmore`](archive.md#bzmore) &bull; [`compress`](archive.md#compress) [`uncompress`](archive.md#uncompress) &bull; [`gzip`][gzip] [`tar`](archive.md#tar) [`xz`][xz] &bull; [**`zip`**](archive.md#zip) [`unzip`](archive.md#unzip) [`zipcloak`](archive.md#zipcloak) [`zipdetails`](archive.md#zipdetails) [`zipgrep`](archive.md#zipgrep) [`zipinfo`](archive.md#zipinfo) [`zipnote`](archive.md#zipnote) [`zipsplit`](archive.md#zipsplit) &bull; [`dar`](archive.md#dar)
 Bash builtins                 | [`let`](bash.md#let) [`source`](bash.md#source)
-Benchmarking                  | [`free`][free] [`glances`][glances] [`lscpu`][lscpu] `nproc` `uptime`
+Benchmarking                  | [`free`][free] [`glances`][glances] [`iostat`][iostat] [`iperf`][iperf] [`lscpu`][lscpu] `nproc` `uptime`
 Date and time                 | [`chrony`](#chrony) [`date`](date.md#date) [`hwclock`](#hwclock) [`timedatectl`](init.md#timedatectl)
 Disk management               | `blkid` [`partx`](partx.md)
-Distributions                 | **Debian** [`adduser`](users.md#adduser) [**`apt`**](apt.md#apt) `apt-cache` `apt-key` `add-apt-repository` <br> **Manjaro** [`mhwd`](#mhwd) [`mhwd-chroot`](#mhwd-chroot) [`pacman`](pacman.md) [`yay`](yay.md) <br> **Red Hat** [`dnf`][dnf] [`firewall-cmd`](#firewall-cmd) [`yum`](yum.md) <br> **Ubuntu** [`netplan`](#netplan)
-Files	                        | [`chown`](chown.md) [`fallocate`](fallocate.md) [`install`](install.md "Copy files while maintaining metadata") [`lsof`](lsof.md "Display open files, open network ports, and network connections") [`setfacl`](setfacl.md) [`sshfs`](ssh.md#sshfs) [`tree`](#tree)
+Distributions                 | **Debian** [`adduser`](sysadmin.md#adduser) [**`apt`**](package.md#apt) `apt-cache` `apt-key` `add-apt-repository` <br> **Manjaro** [`mhwd`](#mhwd) [`mhwd-chroot`](#mhwd-chroot) [`pacman`](package.md#pacman) [`yay`](package.md#yay) <br> **Red Hat** [`dnf`][dnf] [`firewall-cmd`](#firewall-cmd) [`yum`](package.md#yum) <br> **Ubuntu** [`netplan`](#netplan)
+Files	                        |  [`fallocate`](fallocate.md) [`install`](install.md "Copy files while maintaining metadata") [`lsof`](lsof.md "Display open files, open network ports, and network connections") [`setfacl`](sysadmin.md#setfacl) [`sshfs`](ssh.md#sshfs) [`tree`](#tree)
 Filters                       | [`awk`](awk.md#awk) [`cat`](cat.md#cat) [`copy`](#copy) [`egrep`](grep.md) [`fgrep`](grep.md) [`grep`](grep.md) [`paste`](#paste) [`sed`](sed.md#sed) [`shuf`](shuf.md) [`tr`](tr.md)
 Gnome                         | [`gconf-editor`](gsettings.md) [`gsettings`](gsettings.md) 
 GRUB                          | [`update-grub`](grub.md#update-grub)
@@ -19,45 +19,45 @@ Kubernetes                    | [`kubeadm`](../devops/k8s.md#kubeadm) [`kubectl`
 Logical volumes               | [`lvcreate`](lvm.md#lvcreate) [`lvdisplay`](lvm.md##lvdisplay) [`lvremove`](lvm.md##lvremove) [`lvs`](lvm.md##lvs) [`pvcreate`](lvm.md##pvcreate) [`pvdisplay`](lvm.md##pvdisplay) [`pvremove`](lvm.md##pvremove) [`pvs`](lvm.md##pvs) [`vgcreate`](lvm.md##vgcreate) [`vgdisplay`](lvm.md##vgdisplay) [`vgextend`](lvm.md##vgextend) [`vgremove`](lvm.md##vgremove) [`vgs`](lvm.md##vgs)
 Mac OS X                      | `pbcopy` `pbpaste` `screencapture`
 Mail                          | [`mail`](mail.md#mail) [`mailmerge`](mail.md#mailmerge) `mailx` [`msmtp`](#msmtp) <br> **SMTP servers** `exim` [`qmail`](mail.md#qmail) [`postfix`](mail.md#postfix) `sendmail`
-Network                       | [`hping3`][hping3] [`ip`][ip] `iwlist` `iwconfig` [`netstat`](netstat.md) [`nc`](nc.md) [`nmap`](nmap.md) [`nmcli`](nmcli.md) [`rfkill`](rfkill.md) [`ss`](ss.md) `tracepath` `traceroute` `xinetd` &bull; **DNS** [`dig`](dig.md) [`nslookup`](nslookup.md)
-Package managers              | [`apt`](apt.md#apt) [`brew`](#brew) [`dnf`][dnf] [`gem`](gem.md) [`pacman`](pacman.md) [`pip`](#pip) [`snap`](snap.md) [`yay`](yay.md) [`yum`](yum.md)
-Processes                     | [`lsns`](containers.md) [`pidof`](containers.md) [`ps`](ps.md) [`top`](sysadmin.md#top) [`unshare`](containers.md)
+Network                       | [`ethtool`][ethtool] [`hping3`][hping3] [`iftop`][iftop] [`ip`][ip] [`iperf`][iperf] [`ipset`][ipset] `iwlist` `iwconfig` [`netstat`](network.md#netstat) [`nc`](network.md#nc) [`nmap`](nmap.md) [`nmcli`](network.md#nmcli) [`rfkill`](network.md#rfkill) [`ss`](network.md#ss) `tracepath` `traceroute` [`tshark`][tshark] `xinetd` &bull; **DNS** [`dig`](dig.md) [`nslookup`](nslookup.md)
+Package managers              | [`apt`](package.md#apt) [`brew`](#brew) [`dnf`][dnf] [`gem`](package.md#gem) [`pacman`](package.md#pacman) [`pip`](#pip) [`snap`](package.md#snap) [`yay`](package.md#yay) [`yum`](package.md#yum)
+Processes                     | [`lsns`](containers.md) [`pidof`](containers.md) [`ps`](sysadmin.md#ps) [`top`](sysadmin.md#top) [`unshare`](containers.md)
 Remote connections            | [`rsync`](rsync.md) [`ssh`](ssh.md#ssh) [`ssh-keygen`](ssh.md#ssh-keygen) [`ssh-keyscan`](ssh.md#ssh-keyscan) [`sshfs`](ssh.md#sshfs)
 Sound                         | [`amixer`][amixer]
-System administration         | [`free`](sysadmin.md#free) [`getent`](sysadmin.md#getent) [`gpasswd`](gpasswd.md) [`groupadd`](users.md#groupadd) [`groupdel`](users.md#groupdel) [`groupmod`](users.md#groupmod) [`logger`][logger] [`logrotate`][logrotate] [`stty`](#stty) [`su`](sudo.md#su) [`sudo`](sudo.md#sudo) [`top`](sysadmin.md#top) [`uname`](sysadmin.md#uname) [`useradd`](users.md#useradd) [`userdel`](users.md#userdel) [`usermod`](users.md#usermod) `vifs` `visudo` &bull; **Debian** [`adduser`](users.md#adduser)
+System administration         | [`chage`](sysadmin.md#chage) [`chcon`](sysadmin.md#chcon) [`chgrp`](sysadmin.md#chgrp) [`chmod`](sysadmin.md#chmod) [`chown`](sysadmin.md#chown) [`chpass`](sysadmin.md#chpass) [`chrony`](sysadmin.md#chrony) [`chsh`](sysadmin.md#chsh)  [`free`](sysadmin.md#free) [`getent`](sysadmin.md#getent) [`gpasswd`](sysadmin.md#gpasswd) [`groupadd`](sysadmin.md#groupadd) [`groupdel`](sysadmin.md#groupdel) [`groupmod`](sysadmin.md#groupmod) [`logger`][logger] [`logrotate`][logrotate] [`stty`](#stty) [`su`](sudo.md#su) [`sudo`](sudo.md#sudo) [`top`](sysadmin.md#top) [`uname`](sysadmin.md#uname) [`useradd`](sysadmin.md#useradd) [`userdel`](sysadmin.md#userdel) [`usermod`](sysadmin.md#usermod) `vifs` `visudo` &bull; **Debian** [`adduser`](sysadmin.md#adduser)
 Version control               | [`git`](git.md#git) [`tig`](git.md#tig)
-Wi-Fi                         | [`iw`][iw] `iwlist` `iwconfig` [`rfkill`](rfkill.md)
-X                             | [`xdpyinfo`](X.md#xdpyinfo) [`xlsclients`][xlsclients] [`xmodmap`](xmodmap.md) [`Xorg`](X.md#xorg) [`xrandr`](X.md#xrandr) [`xwininfo`](X.md#xwininfo)
+Wi-Fi                         | [`iw`][iw] `iwlist` `iwconfig` [`rfkill`](network.md#rfkill)
+X                             | [`xdpyinfo`](X.md#xdpyinfo) [`xlsclients`][xlsclients] [`xmodmap`](X.md#xmodmap) [`Xorg`](X.md#xorg) [`xrandr`](X.md#xrandr) [`xwininfo`](X.md#xwininfo)
 
 
 \#  | Commands sorted alphabetically
 :---| :---
-A   | [`adduser`](#adduser) [`add-apt-repository`](#add-apt-repository) [`alsamixer`](#alsamixer) [`apropos`](#apropos) [`apt`](apt.md#apt) [`apt-cache`](apt.md#apt-cache) [`apt-key`](apt.md#apt-key) [`arp`](#arp) [`at`](#at) [`ausearch`](#ausearch) [`awk`](#awk) 
-B   | [`bash`](#bash) [`blkid`](#blkid) [`bmon`](#bmon) [`borg`](#borg) [`bpftrace`](#bpftrace) [`bzcat`](bzip2.md#bzcat) [`bzip2`](bzip2.md#bzip2) [`bzless`](bzip2.md#bzless) [`bzmore`](bzip2.md#bzmore) 
-C   | [`cancel`](#cancel) [`cat`](cat.md#cat) [`chage`](#chage) [`chcon`](#chcon) [`chgrp`](#chgrp) [`chkconfig`](#sysvinit) [`chmod`](#chmod) [`chown`](chown.md) [`chpass`](#chpass) [`chrony`](#chrony) [`chsh`](#chsh) [`column`](#column) [`compress`](#compress) [`cp`](#cp) [`crontab`](#crontab) [`crossystem`](#crossystem) [`cryptsetup`](#cryptsetup) [`curl`](#curl) [`cut`](#cut) 
-D   | [`dar`](#dar) [`date`](date.md#date) [`dbus`](#dbus) [`dd`](#dd) [`declare`](#declare) [`df`](#df) [`dhclient`](#dhclient) [`diff`](#diff) [`dig`](#dig) [`dirname`](#dirname) [`dm-crypt`](#dm-crypt) [`dmesg`](#dmesg) [`dnf`][dnf] [`doveadm`](#doveadm) [`dpkg`](#dpkg) [`dpkg-reconfigure`](#dpkg-reconfigure) [`du`](#du) [`dumpe2fs`](#dumpe2fs) 
-E   | [`e2image`](#e2image) [`e2label`](#e2label) [`edquota`](#edquota) [`elvis`](#elvis) [`elvish`](#elvish) [`espeak`](#espeak) [`exif`](#exif) 
+A   | [`adduser`](#adduser) [`add-apt-repository`](#add-apt-repository) [`alsamixer`](#alsamixer) [`apropos`](#apropos) [`apt`](package.md#apt) [`apt-cache`](package.md#apt-cache) [`apt-key`](package.md#apt-key) [`arp`](#arp) [`at`](#at) [`ausearch`](#ausearch) [`awk`](#awk) 
+B   | [`bash`](#bash) [`blkid`](#blkid) [`bmon`](#bmon) [`borg`](#borg) [`bpftrace`](#bpftrace) [`bzcat`](archive.md#bzcat) [`bzip2`][bzip2] [`bzless`](archive.md#bzless) [`bzmore`](archive.md#bzmore) 
+C   | [`cancel`](#cancel) [`cat`](cat.md#cat) [`chage`](#chage) [`chcon`](#chcon) [`chgrp`](#chgrp) [`chkconfig`](#sysvinit) [`chmod`](#chmod) [`chown`](sysadmin.md#chown) [`chpass`](#chpass) [`chrony`](#chrony) [`chsh`](#chsh) [`column`](#column) [`compress`](#compress) [`cp`](#cp) [`crontab`](#crontab) [`crossystem`](#crossystem) [`cryptsetup`](#cryptsetup) [`curl`](#curl) [`cut`](#cut) 
+D   | [`dar`](#dar) [`date`](date.md#date) [`dbus`](#dbus) [`dd`](#dd) [`declare`](#declare) [`depmod`][depmod] [`df`](#df) [`dhclient`](#dhclient) [`diff`](#diff) [`dig`](#dig) [`dirname`](#dirname) [`dm-crypt`](#dm-crypt) [`dmesg`](#dmesg) [`dmidecode`][dmidecode] [`dnf`][dnf] [`doveadm`](#doveadm) [`dpkg`](#dpkg) [`dpkg-reconfigure`](#dpkg-reconfigure) [`dracut`][dracut] [`du`](#du) [`dumpe2fs`](#dumpe2fs) 
+E   | [`e2image`](#e2image) [`e2label`](#e2label) [`edquota`](#edquota) [`elvis`](#elvis) [`elvish`](#elvish) [`espeak`](#espeak) [`ethtool`][ethtool] [`exif`](#exif) 
 F   | [`fallocate`](fallocate.md) [`fam`](#fam) [`fc-cache`][fc-cache] [`fdisk`](#fdisk) [`file`](#file) [`find`](#find) [`firewall-cmd`](#firewall-cmd) [`firewalld`](#firewalld) [`fish`](#fish) [`fmt`](#fmt) [`fold`](#fold) [`free`](#free) [`fsck`](#fsck) [`fstrim`](#fstrim) [`ftp`][ftp] [`fusermount`](#fusermount) 
-G   | [`gconf-editor`](gsettings.md) [`gdisk`](#gdisk) [`gdmsetup`](#gdmsetup) [`gem`](#gem) [`getent`](#getent) [`getfacl`](#getfacl) [`git`](git.md#git) [`gpasswd`](gpasswd.md) [`gpg`](#gpg) [`grep`](grep.md) [`groupadd`](users.md#groupadd) [`groupdel`](#groupdel) [`groupmod`](#groupmod) [`grub`](#grub) [`gsettings`](gsettings.md) [`gzip`](#gzip) 
+G   | [`gconf-editor`](gsettings.md) [`gdisk`](#gdisk) [`gdmsetup`](#gdmsetup) [`gem`](#gem) [`getent`](#getent) [`getfacl`](#getfacl) [`git`](git.md#git) [`gpasswd`](sysadmin.md#gpasswd) [`gpg`](#gpg) [`grep`](grep.md) [`groupadd`](sysadmin.md#groupadd) [`groupdel`](#groupdel) [`groupmod`](#groupmod) [`grub`](#grub) [`gsettings`](gsettings.md) [`gzip`][gzip]
 H   | [`hdiutil`](#hdiutil) [`hdparm`](#hdparm) [`head`](#head) [`history`](#history) [`host`](#host) [`hostname`](#hostname) [`hostnamectl`](#hostnamectl) [`hwclock`](#hwclock) 
-I   | [`iconv`](#iconv) [`ifconfig`](#ifconfig) [`imagemagick`](#imagemagick) [`init`](#sysvinit) [`initctl`](#initctl) [`insmod`](#insmod) [`install`](#install.md) [`ip`][ip] [`iptables`](#iptables) [`iscsiadm`](#iscsiadm) [`iw`][iw] [`iwconfig`](#iwconfig) [`iwlist`](#iwlist) 
+I   | [`iconv`](#iconv) [`ifconfig`](#ifconfig) [`iftop`][iftop] [`imagemagick`](#imagemagick) [`init`](#sysvinit) [`initctl`](#initctl) [`insmod`](#insmod) [`install`](#install.md) [`iostat`][iostat] [`ip`][ip] [`iperf`][iperf] [`ipset`][ipset] [`iptables`](#iptables) [`iscsiadm`](#iscsiadm) [`iw`][iw] [`iwconfig`](#iwconfig) [`iwlist`](#iwlist) 
 J   | [`journalctl`](init.md#journalctl) 
-K   | [`kill`](#kill) [`kubeadm`](../devops/k8s.md#kubeadm) [`kubectl`](../devops/k8s.md#kubectl)
-L   | [`last`](#last) [`ldapadd`](#ldapadd) [`ldconfig`](#ldconfig) [`ldd`](#ldd) [`less`](#less) [`let`](bash.md#let) [`link`](#link) [`locale`](#locale) [`localectl`](init.md#localectl) [`loginctl`][loginctl] [`logout`](#logout) [`lp`](#lp) [`lpadmin`](#lpadmin) [`lpstat`](#lpstat) [`ls`](#ls) [`lsblk`](#lsblk) [`lsmod`](#lsmod) [`lsns`](containers.md) [`lsof`](#lsof) [`lspci`](#lspci) [`lsusb`](#lsusb) [`lvcreate`](#lvcreate) [`lvdisplay`](#lvdisplay) [`lvremove`](#lvremove) [`lvresize`](#lvresize) 
-M   | [`mail`](#mail) [`mailq`](#mailq) [`mailstats`](#mailstats) [`make`](commands/make.md) [`makemap`](#makemap) [`mdadm`](#mdadm) [`mhwd`](#mhwd) [`mhwd-chroot`](#mhwd-chroot) [`mkdir`](#mkdir) [`mke2fs`](#mke2fs) [`mkfontscale`](#mkfontscale) [`mkfs`](#mkfs) [`mkswap`](#mkswap) [`mktemp`](#mktemp) [`modinfo`](#modinfo) [`modprobe`](#modprobe) [`mongod`](#mongod) [`mount`](#mount) [`msmtp`](#msmtp) [`mt`](#mt) 
-N   | [`nc`](nc.md) [`netplan`](#netplan) [`netstat`](#netstat) [`NetworkManager`](#NetworkManager) [`newaliases`](#newaliases) [`nice`](#nice) [`nl`](#nl) [`nmap`](nmap.md) [`nmblookup`](#nmblookup) [`nmcli`](nmcli.md) [`nohup`](#nohup) [`nslookup`](nslookup.md) [`ntpdate`](#ntpdate) 
+K   | [`kill`](#kill) [`kinit`][kinit] [`klist`][klist] [`kubeadm`](../devops/k8s.md#kubeadm) [`kubectl`](../devops/k8s.md#kubectl)
+L   | [`last`](#last) [`ldapadd`](#ldapadd) [`ldconfig`](#ldconfig) [`ldd`](#ldd) [`less`](#less) [`let`](bash.md#let) [`link`](#link) [`locale`](#locale) [`localectl`](init.md#localectl) [`loginctl`][loginctl] [`logout`](#logout) [`lp`](#lp) [`lpadmin`](#lpadmin) [`lpstat`](#lpstat) [`ls`](#ls) [`lsblk`](#lsblk) [`lshw`][lshw] [`lsmod`](#lsmod) [`lsns`](containers.md) [`lsof`](#lsof) [`lspci`](#lspci) [`lsusb`](#lsusb) [`lvcreate`](#lvcreate) [`lvdisplay`](#lvdisplay) [`lvremove`](#lvremove) [`lvresize`](#lvresize) 
+M   | [`mail`](#mail) [`mailq`](#mailq) [`mailstats`](#mailstats) [`make`](package.md#make) [`makemap`](#makemap) [`mdadm`](#mdadm) [`mhwd`](#mhwd) [`mhwd-chroot`](#mhwd-chroot) [`mkdir`](#mkdir) [`mke2fs`](#mke2fs) [`mkfontscale`](#mkfontscale) [`mkfs`](#mkfs) [`mkinitrd`][mkinitrd] [`mkswap`](#mkswap) [`mktemp`](#mktemp) [`modinfo`](#modinfo) [`modprobe`](#modprobe) [`mongod`](#mongod) [`mount`](#mount) [`msmtp`](#msmtp) [`mt`](#mt) 
+N   | [`nc`](network.md#nc) [`netplan`](#netplan) [`netstat`](#netstat) [`NetworkManager`](#NetworkManager) [netstat](network.md#netstat) [`newaliases`](#newaliases) [`nice`](#nice) [`nl`](#nl) [`nmap`](nmap.md) [`nmblookup`](#nmblookup) [`nmcli`](network.md#nmcli) [`nohup`](#nohup) [`nslookup`](nslookup.md) [`ntpdate`](#ntpdate) 
 O   | [`openssl`](#openssl)
-P   | [`pacman`](pacman.md) [`partx`](partx.md) [`paste`](#paste) [`passwd`](#passwd) [`paste`](#paste) [`patch`](#patch) [`pidof`](containers.md) [`ping`](#ping) [`pip`](#pip) [`postfix`](#postfix) [`postqueue`](#postqueue) [`postsuper`](#postsuper) [`ps`](#ps) [`pvcreate`](#pvcreate) [`pvdisplay`](#pvdisplay) [`pvremove`](#pvremove) [`pydoc`](#pydoc) 
+P   | [`pacman`](package.md#pacman) [`partx`](partx.md) [`paste`](#paste) [`passwd`](#passwd) [`paste`](#paste) [`patch`](#patch) [`pidof`](containers.md) [`ping`](#ping) [`pip`](#pip) [`postfix`](#postfix) [`postqueue`](#postqueue) [`postsuper`](#postsuper) [`ps`](sysadmin.md#ps) [`pvcreate`](#pvcreate) [`pvdisplay`](#pvdisplay) [`pvremove`](#pvremove) [`pydoc`](#pydoc) 
 Q   | [`qmail`](#qmail) [`quota`](#quota) [`quotacheck`](#quotacheck) [`quotaoff`](#quotaoff) [`quotaon`](#quotaon)
 R   | [`read`](#read) [`rename`](#rename) [`repquota`](#repquota) [`resize2fs`](#resize2fs) [`rfkill`](#rfkill) [`resize4fs`](#resize4fs) [`restorecon`](#restorecon) [`rmmod`](#rmmod) [`route`](#route) [`rpm`](#rpm) [`rsync`](rsync.md) [`runlevel`](init.md#runlevel) 
-S   | [`samba`](#samba) [`sc`](#sc) [`screencapture`](#screencapture) [`sed`](sed.md#sed) [`semanage`](#selinux) [`sendmail`](#sendmail) [`seq`](#seq) [`service`](#sysvinit) [`sestatus`](#sestatus) [`setenforce`](#selinux) [`setfacl`](#setfacl) [`sfdisk`](#sfdisk) [`shred`](#shred) [`shuf`](#shuf) [`shutdown`](#shutdown) [`slapadd`](#slapadd)  [`sleep`](#sleep) [`snap`](#snap) [`sort`](#sort) [`sosreport`](#sosreport) [`source`](bash.md#source) [`speaker-test`](audio.md#speaker-test) [`ss`](ss.md) [`ssh`](#ssh) [`ssh-copy-id`](#ssh-copy-id) [`ssh-keygen`](#ssh-keygen) [`ssh-keyscan`](#ssh-keyscan) [`sshfs`](#sshfs) [`ssmtp`](#ssmtp) [`startx`](#startx) [`stty`](#stty) [`su`](#su) [`sudo`](sudo.md) [`swapoff`](#swapoff) [`swapon`](#swapon) [`sysctl`](#sysctl) [`syslog`](#syslog) [`sysvinit`](#sysvinit) [`systemctl`](init.md#systemctl) [`systemd-delta`](#systemd-delta) 
-T   | [`tail`](#tail) [`tar`](tar.md#tar) [`tcpdump`](#tcpdump) [`telinit`](#telinit) [`test`](test.md#test) [`tig`](#tig) [`timedatectl`][timedatectl] [`tmux`](tmux.md#tmux) [`touch`](#touch) [`top`](sysadmin.md#top) [`tput`](#tput) [`tr`](tr.md) [`tree`](#tree) [`tracepath`](#tracepath) [`traceroute`](#traceroute) [`tune2fs`](#tune2fs) [`tzselect`](#tzselect) 
+S   | [`samba`](#samba) [`sc`](#sc) [`screencapture`](#screencapture) [`sed`](sed.md#sed) [`semanage`](#selinux) [`sendmail`](#sendmail) [`seq`](#seq) [`service`](#sysvinit) [`sestatus`](#sestatus) [`setenforce`](#selinux) [`setfacl`](#setfacl) [`sfdisk`](#sfdisk) [`shred`](#shred) [`shuf`](#shuf) [`shutdown`](#shutdown) [`slapadd`](#slapadd)  [`sleep`](#sleep) [`snap`](#snap) [`sort`](#sort) [`sosreport`](#sosreport) [`source`](bash.md#source) [`speaker-test`](audio.md#speaker-test) [`ss`](network.md#ss) [`ssh`](#ssh) [`ssh-copy-id`](#ssh-copy-id) [`ssh-keygen`](#ssh-keygen) [`ssh-keyscan`](#ssh-keyscan) [`sshfs`](#sshfs) [`ssmtp`](#ssmtp) [`startx`](#startx) [`stty`](#stty) [`su`](#su) [`sudo`](sudo.md) [`swapoff`](#swapoff) [`swapon`](#swapon) [`sysctl`](#sysctl) [`syslog`](#syslog) [`sysvinit`](#sysvinit) [`systemctl`](init.md#systemctl) [`systemd-delta`](#systemd-delta) 
+T   | [`tail`](#tail) [`tar`](archive.md#tar#tar) [`tcpdump`](#tcpdump) [`telinit`](#telinit) [`test`](test.md#test) [`tig`](#tig) [`timedatectl`][timedatectl] [`tmux`](tmux.md#tmux) [`touch`](#touch) [`top`](sysadmin.md#top) [`tput`](#tput) [`tr`](tr.md) [`tree`](#tree) [`tracepath`](#tracepath) [`traceroute`](#traceroute) [`tshark`][tshark] [`tune2fs`](#tune2fs) [`tzselect`](#tzselect) 
 U   | [`udevadm`](#udevadm) [`umount`](#umount) [`uname`](sysadmin.md#uname) [`uncompress`](#uncompress) [`unshare`](containers.md) [`unzip`](#unzip) [`update-grub`](#update-grub) [`update-rc.d`](#update-rc.d) [`useradd`](#useradd) [`userdel`](#userdel) [`usermod`](#usermod) 
 V   | [`variable`](#variable) [`vgcreate`](#vgcreate) [`vgdisplay`](#vgdisplay) [`vgextend`](#vgextend) [`vgremove`](#vgremove) [`vgscan`](#vgscan) [`vifs`](#vifs) [`visudo`](#visudo) 
-W   | [`wall`](#wall) [`watch`](watch.md#watch) [`wc`](#wc) [`whatis`](#whatis) 
-X   | [`X`](#X) [`xdpyinfo`](#xdpyinfo) [`xhost`](#xhost) [`xinetd`](#xinetd) [`Xorg`](#Xorg) [`xrandr`](#xrandr) [`xwininfo`](#xwininfo) 
-Y   | [`yay`](#yay) [`yum`](yum.md) 
-Z   | [`zip`](#zip) [`zipcloak`](#zipcloak) [`zipdetails`](#zipdetails) [`zipgrep`](#zipgrep) [`zipinfo`](#zipinfo) [`zipnote`](#zipnote) [`zipsplit`](#zipsplit) [`zsh`](#zsh)
+W   | [`w`][w] [`wall`](#wall) [`watch`](watch.md#watch) [`wc`](#wc) [`whatis`](#whatis) 
+X   | [`X`](#X) [`xdpyinfo`](#xdpyinfo) [`xhost`](#xhost) [`xinetd`](#xinetd) [`Xorg`](#Xorg) [`xrandr`](#xrandr) [`xwininfo`](#xwininfo) [`xz`][xz]
+Y   | [`yay`](#yay) [`yum`](package.md#yum) [`yumdownloader`][yumdownloader]
+Z   | [`zip`](#zip) [`zipcloak`](#zipcloak) [`zipdetails`](#zipdetails) [`zipgrep`](#zipgrep) [`zipinfo`](#zipinfo) [`zipnote`](#zipnote) [`zipsplit`](#zipsplit) [`zsh`](#zsh) [`zypper`][zypper]
 
 ### `bmon`
 [^][56]
@@ -316,101 +316,7 @@ ausearch --start today --loginuid500
 ### `blkid`
 Show UUID, Label, and filesystems of GPT block devices
 
-### `chage`
-Change user password expiry information
-Remove expiration date from an account
-```sh
-chage -E -1 user
-```
-Set the date (or number of days since January 1, 1970) on which the user's account will no longer be accessible to {date} (YYYY-MM-DD)
-```sh
-chage -E $DAYS 
-chage --expiredate $DAYS
-```
-Set the maximum number of days during which a password is valid
-```sh
-chage -M $DAYS 
-chage --maxdays $DAYS
-```
-Set the minimum number of days between password changes
-```sh
-chage -m $DAYS
-chage --mindays $DAYS
-```
-Set the number of days of warning before a password change is required
-```sh
-chage -W days chage --warndays days
-```
 
-### `chcon`
-Change context for website directory
-```sh
-chcon -Rv --type=httpd_sys_content_t website
-```
-
-### `chgrp`
-Change ownership of `$FILE` to `$USER` and `$GROUP`
-```sh
-chgrp $USER:$GROUP $FILE
-```
-
-### `chmod`
-Set sticky bit on `$FILE`
-```sh
-chmod +t $FILE
-```
-Clear sticky bit on `$FILE`
-```sh
-chmod -t file
-```
-Clear SGID bit on `$FILE`
-```sh
-chmod g-s file
-```
-Set SGID bit on `$FILE`
-```sh
-chmod g+s file
-```
-Clear SUID bit on `$FILE`
-```sh
-chmod u-s file
-```
-Set SUID bit on `$FILE`
-```sh
-chmod u+s file
-```
-Set `setuid` permission on `$FILE`
-```sh
-chmod +s file
-```
-
-### `chpass`
-Change default shell to Fish
-```sh
-chpass -s /usr/local/bin/fish
-```
-
-### `chrony`
-Synchronize system time using NTP (cf. [`timedatectl`][timedatectl]
-
-Stop the `systemd-timesyncd` service
-```sh
-sudo systemctl stop systemd-timesyncd.service
-```
-Install `chrony` if it is not already present and enable and start the service
-```sh
-sudo systemctl enable chronyd && sudo systemctl start chronyd
-```
-
-### `chsh`
-Change the user's default shell to Bash
-```sh
-chsh-s /bin/bash
-```
-Change the user's default shell to Fish
-```sh
-chsh-s /usr/local/bin/fish
-```
 
 ### `cp`
 Preserve symlinks in a recursive copy
@@ -1260,7 +1166,7 @@ patch -i
 ```
 
 ### `ping`
-"packet Internet groper" utility used for checking network connections, using ICMP packets (cf. [ `nc` ](nc.md))\
+"packet Internet groper" utility used for checking network connections, using ICMP packets (cf. [ `nc` ](network.md#nc))\
 Send `$N` number of pings
 ```
 ping -c $N
@@ -1796,29 +1702,45 @@ Count the number of occurrences of a string
 [59]: https://docs.fedoraproject.org/en-US/quick-docs/adding-new-fonts-fedora/ "Fedora Docs - Adding new fonts in Fedora"
 
 [amixer]: audio.md#amixer "Command-line mixer for ALSA sound card driver"
-[dnf]: dnf.md '"Dandified YUM", successor to `yum` as a package manager for RPM-based Linux distributions like Fedora.'
+[bzip2]: archive.md#bzip2 '`bzip2`&#10;Compress or decompress archives using the Burrows-Wheeler block-sorting text-compression algorithm.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 271'
+[depmod]: # '`depmod`&#10;Builds the modules.dep file, which contains module dependencies and is used by `modprobe` to determine which modules need to be loaded&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 15'
+[dmidecode]: #dmidecode '`dmidecode`&#10;Display a description of hardware components&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 324'
+[dnf]: package.md#dnf '"Dandified YUM", successor to `yum` as a package manager for RPM-based Linux distributions like Fedora.'
+[dracut]: # '`dracut`&#10;Executed by `mkinitrd` but rarely used manually&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 8'
+[ethtool]: # '`ethtool`&#10;Display and configure network device settings.'
 [fc-cache]: #fc-cache "Update the font cache."
 [free]: benchmarking.md#free "Display amount of free and used memory in the system"
 [ftp]: # 'Transfer files to and from a remote network site'
 [glances]: benchmarking.md#glances "Cross-platform monitoring tool, written in Python"
-[groupadd]: users.md#groupadd "Create a new group"
-
-[ip]: ip.md "Newer alternative to the old `ifconfig`"
-[iw]: iw.md "Show or manipulate wireless devices and their configuration"
+[groupadd]: sysadmin.md#groupadd "Create a new group"
+[gzip]: #archive.md#gzip '`gzip`&#10;Compress or decompress archives using the Lempel-Ziv coding method&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 269'
+[hostnamectl]: systemd.md#hostnamectl "Control the system hostname"
 [hping3]: network.md#hping3 "Active network smashing tool"
 [hwclock]: #hwclock "Access the BIOS clock"
-[logger]: #logger "Create a one-time file entry specified by the user"
-[loginctl]: systemd.md "Control the systemd login manager"
-[lscpu]: benchmarking.md#lscpu "Display CPU architecture information"
-[nproc]: benchmarking.md#nproc "Display number of CPU processors or cores"
-[xlsclients]: X.md#xlsclients "Determine what applications are running on the legacy X11 server provided with Wayland"
-
-[hostnamectl]: systemd.md#hostnamectl "Control the system hostname"
+[iftop]: # '`iftop`&#10;Display network connections using the most bandwidth&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 281'
+[iostat]: # '`iostat`&#10;Display input/output statistics on devices, including partitions&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 48'
+[ip]: network.md#ip "Newer alternative to the old `ifconfig`"
+[iperf]: # '`iperf`&#10;Create tests of the throughput between two systems, requiring setup on both client and server&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 281'
+[ipset]: # '`ipset`&#10;Create a "set" of IP addresses to which firewall rules can be applied&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 282'
+[iw]: network.md#iw "Show or manipulate wireless devices and their configuration"
 [journalctl]: systemd.md#journalctl "Query the systemd journal"
+[kinit]: # '`kinit`&#10;Kerberos utility to obtain an individual ticket, which is then cached on the local system.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 239'
+[klist]: # '`klist`&#10;Display a list of cached Kerberos tickets&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 239'
 [localectl]: systemd.md#localectl "Control the system locale and keyboard layout settings"
+[logger]: #logger "Create a one-time file entry specified by the user"
 [loginctl]: systemd.md#loginctl "Control the systemd login manager"
+[lscpu]: benchmarking.md#lscpu "Display CPU architecture i"
+[lshw]: #lshw '`lshw`&#10;Display detailed information on system hardware&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 325'
+[mkinitrd]: # '`mkinitrd`&#10;Creates initramfs file&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 8'
+[nproc]: benchmarking.md#nproc "Display number of CPU processors or cores"
 [systemctl]: systemd.md#systemctl "Control the systemd system and service manager"
 [systemd-delta]: systemd.md#systemd-dela "Find overridden configuration files"
 [timedatectl]: systemd.md#timedatectl "Control the system time and date"
+[tshark]: # '`tshark`&#10;Wireshark terminal interface&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 283'
+[xlsclients]: X.md#xlsclients "Determine what applications are running on the legacy X11 server provided with Wayland"
+[xz]: # '`xz`&#10;Compress or decompress archives using the LZMA and LZMA2 compression methods.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 270'
+[w]: # '`w`&#10;Display output similar to that of `uptime` for all logged-in users'
+[yumdownloader]: # '`yumdownloader`&#10;Download software packages without installing them&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 84'
+[zypper]: # '`zypper`&#10;Package manager for SUSE with a syntax similar to that of `yum`&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 86'
 
 [/etc/samba/smb.conf]: # "Samba configuration file"

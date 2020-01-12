@@ -1,4 +1,4 @@
-### git
+### `git`
 Remove untracked files
 ```sh
 # Perform a "dry run" with `-n` to show what files and directories will be deleted

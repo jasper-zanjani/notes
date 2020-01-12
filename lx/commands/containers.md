@@ -1,17 +1,17 @@
 ### `lsns`
-List existing namespaces. Namespace with which PIDs can also be accessed [[1][1]]
+List existing namespaces. Namespace with which PIDs can also be accessed [^][1]
 ```sh
 ls /proc/*/ns
 ```
 
 ### `pidof`
-Query system to discover the PID of any named application. [[1][1]]
+Query system to discover the PID of any named application. [^][1]
 ```sh
 pidof zsh
 ```
 
 ### unshare
-Run a program in a namespace **unshared** from its parent process. [[1][1]]
+Run a program in a namespace **unshared** from its parent process. [^][1]
 ```sh
 sudo unshare --fork --pid --mount-proc zsh
 ```
