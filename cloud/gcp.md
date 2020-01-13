@@ -1,14 +1,57 @@
 # Google Cloud Platform 
-## Syntax
-Gcloud command groups, subgroups, commands, and description:
-Command group    | Commands       | Description
-:---             | :---           | :---
-gcloud compute instances    | create        | Compute Engine (GCE) VMs
-gcloud source repos         | clone create  | Google Cloud Source Control repositories
-gcloud app        |                         | App Engine
-gcloud container  |                         | Kubernetes Engine (GKE)
-gcloud services   |                         | Manage project's access to APIs
 
+Contents
+---
+Syntax
+
+
+## Syntax
+\#      | Commands
+---     | ---
+**C**   | [`cbt`][cbt]
+**GC**  | [`gcloud`][gcloud]
+**GS**  | [`gsutil`][gsutil]
+
+### `cbt`
+### `gcloud`
+
+\#      | Command groups
+---     | ---
+**A**   | `app`
+**C**   | `compute` `container`
+**S**   | `services` `source`
+
+
+Compute Engine (GCE) VMs
+```sh
+gcloud compute instances create
+```
+Google Cloud Source Control repositories
+```sh
+gcloud source repos clone
+gcloud source repos create
+```
+App Engine
+```sh
+gcloud app
+```
+Kubernetes Engine (GKE)
+```sh
+gcloud container
+```
+Manage project's access to APIs
+```sh
+gcloud services
+```
+### `gsutil`
+
+\#      | Command groups
+---     | ---
+**M**   | `mb`
+**R**   | `rsync`
+
+## Compute
+## Storage
 ## Tasks
 #### To-do application using MongoDB
 Create two VMs, {backend} and {frontend}, running on Ubuntu. Make sure ports 80 and 22 are open.
@@ -47,7 +90,10 @@ gcloud functions deploy hello_get --runtime python37 --trigger-http
 gcloud functions describe hello_get
 ```
 [[3](#sources)]
+
 ## Sources
 1. "Creating an empty repository". [Web](https://cloud.google.com/source-repositories/docs/creating-an-empty-repository).
 2. "Google Cloud Command Line for Beginners, or 'How to gcloud' | 9.13.18 | Linux Academy". [YouTube](https://www.youtube.com/watch?v=j274vq9a2Rs).
 3. "Quickstart: Using the gcloud Command-Line Tool". [Google Cloud](https://cloud.google.com/functions/docs/quickstart)
+
+[Sullivan]: # "Sullivan, Dan. _Official Google Cloud Certified Associate Cloud Engineer Study Guide_"
