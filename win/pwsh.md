@@ -1059,7 +1059,7 @@ Write-Output "This is a test network file." -Path | Out-File C:\networkfiles\tes
 [Set-Location]:                   #set-location                                 "`Set-Location` (alias: `cd`, `sl`, `chdir`) &#10; Set present working directory"
 [Set-NetFirewallRule]:            #set-netfirewallrule                          "`Set-NetFirewallRule`"
 [Set-PSReadlineOption]:           #set-psreadlineoption                         "`Set-PSReadlineOption`"
-[Set-VMFirmware]:                 #set-vmfirmware                               "`Set-VMFirmware` &#!0;  "
+[Set-VMFirmware]:                 #set-vmfirmware                               "`Set-VMFirmware` &#10;  "
 [Set-VMMemory]:                   #set-vmmemory                                 "`Set-VMMemory`"
 [Set-VMNetworkAdapter]:           #set-vmnetworkadapter                         "`Set-VMNetworkAdapter`"
 [Set-VMProcessor]:                #set-vmprocessor                              "`Set-VMProcessor`"
