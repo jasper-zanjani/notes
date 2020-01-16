@@ -1001,6 +1001,7 @@ $SpeechSynthesizer.SetOutputToWaveFile($WavFileOut)
 [Add-DhcpServerInDC]:             #add-dhcpserverindc                           "`Add-DhcpServerInDC`"
 [Add-PSSnapin]:                   #add-pssnapin                                 "`Add-PSSnapin` (alias: `asnp`) &#10; Load a given list of snap-ins (.NET assemblies containing a collection of cmdlets and/or providers for use within PowerShell) either by name or via the pipeline - last supported in PowerShell 5.1"
 [Add-DhcpServerv4Scope]:          #add-dhcpserverv4scope                        "`Add-DhcpServerv4Scope` &#10; Add an IPv4 scope on the DHCP server service."
+[Add-DistributionGroupMember]:    #add-distributiongroupmember                  "Add-DistributionGroupMember&#10;Add a single recipient to distribution groups and mail-enabled security groups"
 [Add-Type]:                       #add-type                                     '`Add-Type`&#10;Add a.NET Framework type (a class) to a Windows PowerShell session'
 [Add-WindowsFeature]:             #install-windowsfeature                       '`Add-WindowsFeature` (alias: `Install-WindowsFeature`)'
 [Clear-Host]:                     #clear-host                                   "`Clear-Host`"
@@ -1029,6 +1030,7 @@ $SpeechSynthesizer.SetOutputToWaveFile($WavFileOut)
 [Get-Content]:                    #get-content                                  "`Get-Content` (alias: `cat`, `gc`, `type`)"
 [Get-Credential]:                 #credentials                                  "`Get-Credential`"
 [Get-Disk]:                       #get-disk                                     "`Get-Disk`"
+[Get-DistributionGroupMember]: #get-distributiongroupmember "Get-DistributionGroupMember&#10;View members of distribution groups and mail-enabled security groups"
 [Get-Help]:                       #get-help                                     "`Get-Help` &#10; Display help file for cmdlets"
 [Get-History]:                    #get-history                                  "`Get-History` (alias: `ghy`, `h`, `history`) &#10; Display history of inputted commands for the current session"
 [Get-Item]:                       #get-item                                     "`Get-Item`"
@@ -1097,11 +1099,8 @@ $SpeechSynthesizer.SetOutputToWaveFile($WavFileOut)
 [Stop-Service]:                   #stop-service                                 "`Stop-Service` (alias: `spsv`) Stop one or more services"
 [Uninstall-ADDSDomainController]: #uninstall-addsdomaincontroller               "`Uninstall-ADDSDomainController`"
 [Unlock-ADAccount]:               #unlock-adaccount                             "`Unlock-ADAccount`"
+[Update-DistributionGroupMember]: #update-distributiongroupmember               "`Update-DistributionGroupMember`&#10;Replace all members of distribution groups and mail-enabled security groups"
 [Update-Help]:                    #update-help                                  "`Update-Help` &#10; Download help files"
 [Where-Object]:                   #filters                                      "`Where-Object` (alias: `?`, `where`) &#10; Select objects from a collection based on their property values"
 [Write-Host]:                     #write-host                                   "`Write-Host`"
 [Write-Output]:                   #write-output                                 "`Write-Output` (alias: `echo`, `write`) &#10; Send the specified objects to the next command in the pipeline. If the command is the last command in the pipeline, the objects are displayed in the console."
-
-[Add-DistributionGroupMember]: #add-distributiongroupmember "Add-DistributionGroupMember&#10;Add a single recipient to distribution groups and mail-enabled security groups"
-[Get-DistributionGroupMember]: #get-distributiongroupmember "Get-DistributionGroupMember&#10;View members of distribution groups and mail-enabled security groups"
-[Update-DistributionGroupMember]: #update-distributiongroupmember "Update-DistributionGroupMember&#10;Replace all members of distribution groups and mail-enabled security groups"

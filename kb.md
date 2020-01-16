@@ -12,8 +12,12 @@ Default keyboard binding  | Effect
 :---                      | :---
 Meta-h                    | Turn on dictation
 Meta-d                    | Show desktop
-Ctrl+Meta+0               | Start Windows PowerShell
+Win+X                     | Power Users Menu
+Win+X I                   | Start Windows PowerShell (if Taskbar setting to replace Command Prompt with Windows Powershell is enabled)
+Win+X C                   | Start Command Prompt (if Taskbar setting to replace Command Prompt with Windows Powershell is disabled)
 Ctrl+Shift+C              | Start Command Prompt
+Win+Shift+S               | Screenshot
+
 # Mac OS X
 Default keyboard binding  | Effect
 :---                      | :---
