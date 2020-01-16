@@ -3,8 +3,8 @@
 \#      | Approved cmdlet verbs and their aliases [^](https://docs.microsoft.com/en-us/powershell/scripting/developer/cmdlet/approved-verbs-for-windows-powershell-commands?view=powershell-7 "Microsoft Docs: \"Approved Verbs for PowerShell Commands\"")
 ---     | ---
 **A-D** | [`a`](# "`Add-`") [`ap`](# "`Approve-`&#10;Confirms or agrees to the status of a resource or process.") [`as`](# "`Assert-`&#10;Affirms the state of a resource.") &bull; [`ba`](# "`Backup-`&#10;Stores data by replicating it.") [`bd`](# "`Build-`&#10;Creates an artifact (usually a binary or document) out of some set of input files (usually source code or declarative documents)") [`bl`](# "`Block-`&#10;Restricts access to a resource. This verb is paired with Unblock.") &bull; [`cc`](# "`Connect-`&#10;Creates a link between a source and a destination. This verb is paired with Disconnect.") [`cf`](# "`Convertfrom-`&#10;Converts one primary type of input (the cmdlet noun indicates the input) to one or more supported output types.") [`ch`](# "`Checkpoint-`&#10;Creates a snapshot of the current state of the data or of its configuration.") [`cm`](# "`Compress-`&#10;Compacts the data of a resource. Pairs with Expand.") [`cn`](# "`Confirm-`&#10;Acknowledges, verifies, or validates the state of a resource or process.") [`cp`](# "`Complete-`&#10;Concludes an operation.&#10;---&#10;`Copy-`&#10;Copies a resource to another name or to another container. For example, the Copy-Item cmdlet that is used to access stored data copies an item from one location in the data store to another location.") [`cr`](# "`Compare-`&#10;Evaluates the data from one resource against the data from another resource.") [`cs`](# "`Close-`") [`ct`](# "`Convertto-`&#10;Converts from one or more types of input to a primary output type (the cmdlet noun indicates the output type).") [`cv`](# "`Convert-`&#10;Changes the data from one representation to another when the cmdlet supports bidirectional conversion or when the cmdlet supports conversion between multiple data types.") &bull; [`d`](# "`Disable-`&#10;Configures a resource to an unavailable or inactive state. For example, the Disable-PSBreakpoint cmdlet makes a breakpoint inactive. This verb is paired with Enable.") [`db`](# "`Debug-`&#10;Examines a resource to diagnose operational problems.") [`dc`](# "`Disconnect-`&#10;Breaks the link between a source and a destination. This verb is paired with Connect.") [`dm`](# "`Dismount-`&#10;Detaches a named entity from a location. This verb is paired with Mount.") [`dn`](# "`Deny-`&#10;Refuses, objects, blocks, or opposes the state of a resource or process.") [`dp`](# "`Deploy-`&#10;Sends an application, website, or solution to a remote target[s] in such a way that a consumer of that solution can access it after deployment is complete") 
-**E-O** | [`e`](# "`Enable-`&#10;Configures a resource to an available or active state. For example, the Enable-PSBreakpoint cmdlet makes a breakpoint active. This verb is paired with Disable.") [`ed`](# "`Edit-`&#10;Modifies existing data by adding or removing content.") [`en`](# "`Expand-`&#10;Restores the data of a resource that has been compressed to its original state. This verb is paired with Compress.") [`ep`](# "`Export-`&#10;Encapsulates the primary input into a persistent data store, such as a file, or into an interchange format. This verb is paired with Import.") [`et`](# "`Enter-`") [`ex`](# "`Exit-`") &bull; [`f`](# "`Format-`") &bull; [`g`](# "`g`") [`gp`](# "`Group-`&#10;Arranges or associates one or more resources.") [`gr`](# "`Grant-`&#10;Allows access to a resource. This verb is paired with Revoke.") &bull; [`h`](# "`Hide-`") &bull; [`i`](# "`Invoke-`&#10;Performs an action, such as running a command or a method.") [`in`](# "`Initialize-`&#10;Prepares a resource for use, and sets it to a default state.") [`ip`](# "`Import-`&#10;Creates a resource from data that is stored in a persistent data store (such as a file) or in an interchange format. For example, the Import-CSV cmdlet imports data from a comma-separated value (CSV) file to objects that can be used by other cmdlets. This verb is paired with Export.") [`is`](# "`Install-`&#10;Places a resource in a location, and optionally initializes it. This verb is paired with Uninstall.") &bull; [`j`](# "`Join-`") &bull; [`l`](# "`Limit-`&#10;Applies constraints to a resource.") [`lk`](# "`Lock-`") &bull; [`m`](# "`Move`") [`mg`](# "`Merge-`&#10;Creates a single resource from multiple resources.") [`ms`](# "`Measure-`&#10;Identifies resources that are consumed by a specified operation, or retrieves statistics about a resource.") [`mt`](# "`Mount-`&#10;Attaches a named entity to a location. This verb is paired with Dismount.") &bull; [`n`](# "`New-`&#10;Creates a resource. (The `Set-` verb can also be used when creating a resource that includes data, such as the `Set-Variable` cmdlet.)") &bull; [`o`](# "`Out-`&#10;Sends data out of the environment. For example, the Out-Printer cmdlet sends data to a printer.") [`op`](# "`Open-`") [`om`](# "`Optimize-`") 
-**P-R** | [`pb`](# "`Publish-`&#10;Makes a resource available to others. This verb is paired with Unpublish.") [`pi`](# "`Ping-`&#10;Use the Test verb.") [`pop`](# "`Pop-`")  [`pt`](# "`Protect-`&#10;Safeguards a resource from attack or loss. This verb is paired with Unprotect.") [`pu`](# "`Push-`") &bull; [`r`](# "`Remove-`") [`rc`](# "`Receive-`&#10;Accepts information sent from a source. This verb is paired with Send.") [`rd`](# "`Read-`&#10;Acquires information from a source. This verb is paired with Write.") [`re`](# "`Redo-`") [`rg`](# "`Register-`&#10;Creates an entry for a resource in a repository such as a database. This verb is paired with Unregister.") [`rk`](# "`Revoke-`&#10;Specifies an action that does not allow access to a resource. This verb is paired with Grant.") [`rn`](# "`Rename-`") [`rp`](# "`Repair-`&#10;Restores a resource to a usable condition") [`rq`](# "`Request-`&#10;Asks for a resource or asks for permissions.") [`rr`](# "`Restore-`&#10;Sets a resource to a predefined state, such as a state set by Checkpoint. For example, the Restore-Computer cmdlet starts a system restore on the local computer.") [`rs`](# "`Reset`") [`rt`](# "`Restart-`&#10;Stops an operation and then starts it again. For example, the Restart-Service cmdlet stops and then starts a service.") [`ru`](# "`Resume-`&#10;Starts an operation that has been suspended. For example, the Resume-Service cmdlet starts a service that has been suspended. This verb is paired with Suspend.") [`rv`](# "`Resolve-`&#10;Maps a shorthand representation of a resource to a more complete representation.") 
+**E-N** | [`e`](# "`Enable-`&#10;Configures a resource to an available or active state. For example, the Enable-PSBreakpoint cmdlet makes a breakpoint active. This verb is paired with Disable.") [`ed`](# "`Edit-`&#10;Modifies existing data by adding or removing content.") [`en`](# "`Expand-`&#10;Restores the data of a resource that has been compressed to its original state. This verb is paired with Compress.") [`ep`](# "`Export-`&#10;Encapsulates the primary input into a persistent data store, such as a file, or into an interchange format. This verb is paired with Import.") [`et`](# "`Enter-`") [`ex`](# "`Exit-`") &bull; [`f`](# "`Format-`") &bull; [`g`](# "`g`") [`gp`](# "`Group-`&#10;Arranges or associates one or more resources.") [`gr`](# "`Grant-`&#10;Allows access to a resource. This verb is paired with Revoke.") &bull; [`h`](# "`Hide-`") &bull; [`i`](# "`Invoke-`&#10;Performs an action, such as running a command or a method.") [`in`](# "`Initialize-`&#10;Prepares a resource for use, and sets it to a default state.") [`ip`](# "`Import-`&#10;Creates a resource from data that is stored in a persistent data store (such as a file) or in an interchange format. For example, the Import-CSV cmdlet imports data from a comma-separated value (CSV) file to objects that can be used by other cmdlets. This verb is paired with Export.") [`is`](# "`Install-`&#10;Places a resource in a location, and optionally initializes it. This verb is paired with Uninstall.") &bull; [`j`](# "`Join-`") &bull; [`l`](# "`Limit-`&#10;Applies constraints to a resource.") [`lk`](# "`Lock-`") &bull; [`m`](# "`Move`") [`mg`](# "`Merge-`&#10;Creates a single resource from multiple resources.") [`ms`](# "`Measure-`&#10;Identifies resources that are consumed by a specified operation, or retrieves statistics about a resource.") [`mt`](# "`Mount-`&#10;Attaches a named entity to a location. This verb is paired with Dismount.") &bull; [`n`](# "`New-`&#10;Creates a resource. (The `Set-` verb can also be used when creating a resource that includes data, such as the `Set-Variable` cmdlet.)") 
+**O-R** | [`o`](# "`Out-`&#10;Sends data out of the environment. For example, the Out-Printer cmdlet sends data to a printer.") [`op`](# "`Open-`") [`om`](# "`Optimize-`") &bull; [`pb`](# "`Publish-`&#10;Makes a resource available to others. This verb is paired with Unpublish.") [`pi`](# "`Ping-`&#10;Use the Test verb.") [`pop`](# "`Pop-`")  [`pt`](# "`Protect-`&#10;Safeguards a resource from attack or loss. This verb is paired with Unprotect.") [`pu`](# "`Push-`") &bull; [`r`](# "`Remove-`") [`rc`](# "`Receive-`&#10;Accepts information sent from a source. This verb is paired with Send.") [`rd`](# "`Read-`&#10;Acquires information from a source. This verb is paired with Write.") [`re`](# "`Redo-`") [`rg`](# "`Register-`&#10;Creates an entry for a resource in a repository such as a database. This verb is paired with Unregister.") [`rk`](# "`Revoke-`&#10;Specifies an action that does not allow access to a resource. This verb is paired with Grant.") [`rn`](# "`Rename-`") [`rp`](# "`Repair-`&#10;Restores a resource to a usable condition") [`rq`](# "`Request-`&#10;Asks for a resource or asks for permissions.") [`rr`](# "`Restore-`&#10;Sets a resource to a predefined state, such as a state set by Checkpoint. For example, the Restore-Computer cmdlet starts a system restore on the local computer.") [`rs`](# "`Reset`") [`rt`](# "`Restart-`&#10;Stops an operation and then starts it again. For example, the Restart-Service cmdlet stops and then starts a service.") [`ru`](# "`Resume-`&#10;Starts an operation that has been suspended. For example, the Resume-Service cmdlet starts a service that has been suspended. This verb is paired with Suspend.") [`rv`](# "`Resolve-`&#10;Maps a shorthand representation of a resource to a more complete representation.") 
 **S**   | [`s`](# "`Set-`") [`sa`](# "`Start-`&#10;Initiates an operation. For example, the Start-Service cmdlet starts a service. This verb is paired with Stop.") [`sb`](# "`Submit-`&#10;Presents a resource for approval.") [`sc`](# "`Select-`") [`sd`](# "`Send-`&#10;Delivers information to a destination. This verb is paired with Receive.") [`sh`](# "`Show-`") [`sk`](# "`Skip-`") [`sl`](# "`Split-`") [`sp`](# "`Stop-`&#10;Discontinues an activity. This verb is paired with Start.") [`sr`](# "`Search-`") [`ss`](# "`Suspend-`&#10;Pauses an activity. For example, the Suspend-Service cmdlet pauses a service. This verb is paired with Resume.") [`st`](# "`Step-`") [`sv`](# "`Save-`&#10;Preserves data to avoid loss.") [`sw`](# "`Switch-`") [`sy`](# "`Sync-`&#10;Assures that two or more resources are in the same state.") 
 **T-Z** | [`t`](# "`Test-`&#10;Verifies the operation or consistency of a resource.") [`tr`](# "`Trace-`&#10;Tracks the activities of a resource.") &bull; [`u`](# "`Use-`&#10;Uses or includes a resource to do something.") [`ub`](# "`Unpublish-`&#10;Makes a resource unavailable to others. This verb is paired with Publish.") [`ud`](# "`Update-`&#10;Brings a resource up-to-date to maintain its state, accuracy, conformance, or compliance. For example, the Update-FormatData cmdlet updates and adds formatting files to the current PowerShell console.") [`uk`](# "`Unlock-`")  [`ul`](# "`Unblock-`&#10;Removes restrictions to a resource. This verb is paired with Block.") [`un`](# "`Undo-`")  [`up`](# "`Unprotect-`&#10;Removes safeguards from a resource that were added to prevent it from attack or loss. This verb is paired with Protect.") [`ur`](# "`Unregister-`&#10;Removes the entry for a resource from a repository. This verb is paired with Register.") [`us`](# "`Uninstall-`&#10;Removes a resource from an indicated location. This verb is paired with Install.") &bull; [`w`](# "`Wait-`&#10;Pauses an operation until a specified event occurs. For example, the Wait-Job cmdlet pauses operations until one or more of the background jobs are complete.") [`wc`](# "`Watch-`") [`wr`](# "`Write-`&#10;Adds information to a target. This verb is paired with Read.") 
 
@@ -19,8 +19,8 @@ Dhcp    | **`DhcpServerInDC`** [`a`][Add-DhcpServerInDC] &bull; **`DhcpServerV4S
 **N**   | **`NetAdapter`** [`g`][Get-NetAdapter] &bull; **`NetFirewallRule`** [`g`][Get-NetFirewallRule] [`n`][New-NetFirewallRule] [`s`][Set-NetFirewallRule] &bull; **`NetIpAddress`** [`n`][New-NetIpAddress] &bull; **`Null`** [`o`][Out-Null]
 **O**   | **`Object`** [`ForEach`][ForEach-Object] [`sc`][Select-Object] [`Where`][Where-Object] &bull; **`Output`** [`wr`][Write-Output]
 **P**   | **`Partition`** [`g`][Get-Partition] [`n`][New-Partition] [`r`][Remove-Partition] &bull; **`PSReadlineOption`** [`g`][Get-PSReadlineOption] [`s`][Set-PSReadlineOption] &bull; **`PSSession`** [`dc`][Disconnect-PSSession] [`et`][Enter-PSSession] [`ex`][Exit-PSSession] [`g`][Get-PSSession] [`n`][New-PSSession]
-**S-T** | **`Service`** [`g`][Get-Service] [`sa`][Start-Service] [`sp`][Stop-Service] &bull; **`SmbShare`** [`n`][New-SmbShare] &bull; **`Table`** [`f`][Format-Table] &bull; **`Type`** [`a`][Add-Type]
-**V**   | **`VMFirmware`** [`s`][Set-VMFirmware] &bull; **`VMMemory`** [`s`][Set-VMMemory] &bull; **`VMNetworkAdapter`** [`s`][Set-VMNetworkAdapter] &bull; **`VMProcessor`** [`s`][Set-VMProcessor] &bull; **`VMSwitch`** [`n`][New-VMSwitch]
+**S-T** | **`Service`** [`g`][Get-Service] [`sa`][Start-Service] [`sp`][Stop-Service] &bull; **`SmbOpenFile`** [`cs`][Close-SmbOpenFile] [`g`][Get-SmbOpenFile] **`SmbShare`** [`n`][New-SmbShare] &bull; **`Table`** [`f`][Format-Table] &bull; **`Type`** [`a`][Add-Type]
+**V**   | **`VM`** [`cr`][Compare-VM] [`db`][Debug-VM] [`ep`][Export-VM] [`g`][Get-VM] [`ip`][Import-VM] [`m`][Move-VM] [`ms`][Measure-VM] [`n`][New-VM] [`r`][Remove-VM] [`rn`][Rename-VM] [`rt`][Restart-VM] [`ru`][Resume-VM] [`s`][Set-VM] [`sa`][Start-VM] [`sp`][Stop-VM] [`ss`][Suspend-VM] [`sv`][Save-VM] &bull; **`VMFirmware`** [`s`][Set-VMFirmware] &bull; **`VMMemory`** [`s`][Set-VMMemory] &bull; **`VMNetworkAdapter`** [`s`][Set-VMNetworkAdapter] &bull; **`VMProcessor`** [`s`][Set-VMProcessor] &bull; **`VMSwitch`** [`n`][New-VMSwitch]
 **W**   | **`WebRequest`** [`Invoke`][Invoke-WebRequest] &bull; **`WindowsFeature`** [`a`][Add-WindowsFeature] [`g`][Get-WindowsFeature] [`is`][Install-WindowsFeature] &bull; **`WindowsOptionalFeature`** [`e`][Enable-WindowsOptionalFeature] &bull; **`WMIObject`** [`g`][Get-WMIObject]
 
 Topic                 | Cmdlets
@@ -394,6 +394,15 @@ Parameter | Effect
 `Member`  | Specifies the recipient that you want to add to the group. A member can be any mail-enabled recipient in your organization. You can use any value that uniquely identifies the recipient (including Name, Alias, Distinguished name, Canonical name, Email address, or GUID).
 ### `Add-PSSnapin`
 ### `Add-Type`
+### `Close-SmbOpenFile`
+Close an open file [^][https://docs.microsoft.com/en-us/powershell/module/smbshare/close-smbopenfile?view=win10-ps]
+```powershell
+Close-SmbOpenFile -FileId 4415226383589
+```
+Close open files for a session [^][https://docs.microsoft.com/en-us/powershell/module/smbshare/close-smbopenfile?view=win10-ps]
+```powershell
+Close-SmbOpenFile -SessionId 4415226380393
+```
 ### `Disconnect-PSSession`
 Terminate a remote PowerShell session begun with [`New-PSSession`][New-PSSession] [[^][Zacker]: 22]
 ### `Enable-PSRemoting`
@@ -535,6 +544,44 @@ Get-Service WinRM
 ```
 ```powershell
 gsv winrm
+```
+### `Get-SmbOpenFile`
+Get information about an opened file [^][https://docs.microsoft.com/en-us/powershell/module/smbshare/get-smbopenfile?view=win10-ps]
+```powershell
+Get-SmbOpenFile -FileId 4415226383569 | Select-Object -Property *
+```
+Example output:
+```
+ClientComputerName    : 192.168.102.14 
+ClientUserName        : Contoso\Contoso-HV2$ 
+ClusterNodeName       : Contoso-FS2 
+ContinuouslyAvailable : True 
+Encrypted             : False 
+FileId                : 4415226383569 
+Locks                 : 1 
+Path                  : C:\ClusterStorage\Volume2\VMS\VM4.VHDX 
+Permissions           : 1179785 
+ScopeName             : Contoso-SO 
+SessionId             : 4415226380393 
+ShareRelativePath     : VM4.VHDX 
+PSComputerName        : 
+CimClass              : ROOT/Microsoft/Windows/SMB:MSFT_SmbOpenFile 
+CimInstanceProperties : {ClientComputerName, ClientUserName, ClusterNodeName, ContinuouslyAvailable...} 
+CimSystemProperties   : Microsoft.Management.Infrastructure.CimSystemProperties
+```
+Get information about a file opened for an SMB client [^][https://docs.microsoft.com/en-us/powershell/module/smbshare/get-smbopenfile?view=win10-ps]
+```powershell
+Get-SmbOpenFile -SessionId 4415226380393
+```
+Example output:
+```
+FileId              SessionId           Path                ShareRelativePath   ClientComputerName  ClientUserName 
+------              ---------           ----                -----------------   ------------------  -------------- 
+4415226383517       4415226380393       C:\ClusterStorag... VM4\VIRTUAL MACH... 192.168.102.14      Contoso\Contoso-HV2$ 
+4415226383521       4415226380393       C:\ClusterStorag... VM4\Virtual Mach... 192.168.102.14      Contoso\Contoso-HV2$ 
+4415226383529       4415226380393       C:\ClusterStorag... VM4\Virtual Mach... 192.168.102.14      Contoso\Contoso-HV2$ 
+4415226383569       4415226380393       C:\ClusterStorag... VM4.VHDX            192.168.102.14      Contoso\Contoso-HV2$ 
+4415226383589       4415226380393       C:\ClusterStorag... VM4.VHDX            192.168.102.14      Contoso\Contoso-HV2$
 ```
 ### `Get-WindowsFeature`
 Display installable Windows roles, role services, and features
@@ -985,6 +1032,8 @@ $SpeechSynthesizer.SetOutputToWaveFile($WavFileOut)
 [14]: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-6 "Microsoft Docs - About Automatic Variables"
 [15]: https://ridicurious.com/2019/07/29/3-ways-to-unzip-compressed-files-using-powershell/ "ridicurious.com - 3 ways to unzip compressed files using PowerShell"
 [16]: https://sumtips.com/tips-n-tricks/manage-disk-partitions-with-windows-powershell/ "SumTips.com - Manage disk partitions with Windows PowerShell"
+[https://docs.microsoft.com/en-us/powershell/module/smbshare/get-smbopenfile?view=win10-ps]: https://docs.microsoft.com/en-us/powershell/module/smbshare/get-smbopenfile?view=win10-ps '"Get-SmbOpenFile". _Microsoft Docs_.'
+[https://docs.microsoft.com/en-us/powershell/module/smbshare/close-smbopenfile?view=win10-ps]: https://docs.microsoft.com/en-us/powershell/module/smbshare/close-smbopenfile?view=win10-ps '"Close-SmbOpenFile". _Microsoft Docs_.'
 
 [ADAC]:   ../sources/adac.md "Berkouwer, Sander. _Active Directory Administration Cookbook_."
 [WSAC]:   ../sources/wsac.md "Krause, Jordan. _Windows Server 2016 Administration Cookbook_."
@@ -993,35 +1042,41 @@ $SpeechSynthesizer.SetOutputToWaveFile($WavFileOut)
 [Jones]:  https://subscription.packtpub.com/video/virtualization_and_cloud/9781789616385 "Jones, Joshua B. _Hands-On Powershell for Active Directory_. PacktPub: 2018."
 
 
+
 [$$]:                             #comparison-with-bash                         "`$$`&#10; Automatic variable referring to the last \"token\" (argument) in the previous command"
 [$?]:                             #comparison-with-bash                         "`$?`&#10; Automatic variable containing the execution status of the previous command"
 [Add-ADPrincipalGroupMembership]: #add-adprincipalgroupmembership               "`Add-ADPrincipalGroupMembership` &#10; Add a member to one or more Active Directory groups"
 [Add-Computer]:                   #add-computer                                 "`Add-Computer` &#10; Join a computer to a domain"
 [Add-Content]:                    #add-content                                  "`Add-Content`"
 [Add-DhcpServerInDC]:             #add-dhcpserverindc                           "`Add-DhcpServerInDC`"
-[Add-PSSnapin]:                   #add-pssnapin                                 "`Add-PSSnapin` (alias: `asnp`) &#10; Load a given list of snap-ins (.NET assemblies containing a collection of cmdlets and/or providers for use within PowerShell) either by name or via the pipeline - last supported in PowerShell 5.1"
 [Add-DhcpServerv4Scope]:          #add-dhcpserverv4scope                        "`Add-DhcpServerv4Scope` &#10; Add an IPv4 scope on the DHCP server service."
-[Add-DistributionGroupMember]:    #add-distributiongroupmember                  "Add-DistributionGroupMember&#10;Add a single recipient to distribution groups and mail-enabled security groups"
+[Add-DistributionGroupMember]:    #add-distributiongroupmember                  "`Add-DistributionGroupMember`&#10;Add a single recipient to distribution groups and mail-enabled security groups"
+[Add-PSSnapin]:                   #add-pssnapin                                 "`Add-PSSnapin` (alias: `asnp`) &#10; Load a given list of snap-ins (.NET assemblies containing a collection of cmdlets and/or providers for use within PowerShell) either by name or via the pipeline - last supported in PowerShell 5.1"
 [Add-Type]:                       #add-type                                     '`Add-Type`&#10;Add a.NET Framework type (a class) to a Windows PowerShell session'
 [Add-WindowsFeature]:             #install-windowsfeature                       '`Add-WindowsFeature` (alias: `Install-WindowsFeature`)'
+[Checkpoint-VM]:                  #checkpoint-vm                                '`Checkpoint-VM`&#10;Creates a checkpoint of a virtual machine.'
 [Clear-Host]:                     #clear-host                                   "`Clear-Host`"
+[Close-SmbOpenFile]:              #close-smbopenfile                            '`Close-SmbOpenFile`&#10;Close a file that is open by one of the clients of the SMB server&#10;"Close-SmbOpenFile". _Microsoft Docs_.'
+[Compare-VM]:                     #compare-vm                                   '`Compare-VM`&#10;Compares a virtual machine and a virtual machine host for compatibility, returning a compatibility report.'
 [Compress-Archive]:               #compress-archive                             "`Compress-Archive`"
 [Copy-Item]:                      #copy-item                                    "`Copy-Item`"
+[Debug-VM]:                       #debug-vm                                     '`Debug-VM`&#10;Debugs a virtual machine.'
 [Disconnect-PSSession]:           #disconnect-pssession                         "`Disconnect-PSSession` (alias: `dnsn`) &#10; Terminate a remote PowerShell session begun with `New-PSSession`"
-[Enable-WindowsOptionalFeature]:  #enable-windowsoptionalfeature                "`Enable-WindowsOptionalFeature` &#10; Enable or restore an optional feature in a Windows image"
 [Enable-PSRemoting]:              #enable-psremoting                            "`Enable-PSRemoting` &#10; Allow remote PowerShell management"
+[Enable-WindowsOptionalFeature]:  #enable-windowsoptionalfeature                "`Enable-WindowsOptionalFeature` &#10; Enable or restore an optional feature in a Windows image"
 [Enter-PSSession]:                #enter-pssession                              "`Enter-PSSession` (alias: `etsn`) &#10; Interact with the specified PowerShell session"
 [Exit-PSSession]:                 #exit-pssession                               "`Exit-PSSession` (alias: `exsn`) &#10; End an interactive session with a remote computer"
 [Expand-Archive]:                 #expand-archive                               "`Expand-Archive` &#10; Decompress archives"
 [Export-Alias]:                   #export-alias                                 "`Export-Alias` (alias: `epal`) &#10; Export information about currently defined aliases to a file."
 [Export-CliXml]:                  #export-clixml                                "`Export-CliXml` &#10; Serialize a PowerShell object as a Common Language Infrastructure (CLI) XML file"
 [Export-Csv]:                     #export-csv                                   "`Export-Csv` &#10; Export PowerShell objects to CSV"
+[Export-VM]:                      #export-vm                                    '`Export-VM`&#10;Exports a virtual machine to disk.'
 [ForEach-Object]:                 #filters                                      "`ForEach-Object` (alias: `%`, `foreach`) &#10; Perform an operation against each item in a collection of input objects."
 [Format-List]:                    #output-formatting                            "`Format-List` (alias: `fl`) &#10; Display output in list style"
 [Format-Table]:                   #output-formatting                            "`Format-Table` (alias: `ft`) &#10; Display output in table style"
 [Get-ADDSForest]:                 #get-addsforest                               "`Get-ADDSForest`"
-[Get-ADPrincipalGroupMembership]: #get-adprincipalgroupmembership               "`Get-ADPrincipalGroupMembership` &#10; Get the Active Directory groups that have a specified user, computer, group, or service account"
 [Get-ADOrganizationalUnit]:       #get-adorganizationalunit                     "`Get-ADOrganizationalUnit`"
+[Get-ADPrincipalGroupMembership]: #get-adprincipalgroupmembership               "`Get-ADPrincipalGroupMembership` &#10; Get the Active Directory groups that have a specified user, computer, group, or service account"
 [Get-ADUser]:                     #get-aduser                                   "`Get-ADUser` &#10; Get one or more Active Directory Users"
 [Get-Alias]:                      #get-alias                                    "`Get-Alias` (alias `gal`) &#10; Display aliases"
 [Get-ChildItem]:                  #get-childitem                                "`Get-ChildItem` (alias: `dir`, `gci`, `ls`) &#10; Get items in one or more locations"
@@ -1030,7 +1085,7 @@ $SpeechSynthesizer.SetOutputToWaveFile($WavFileOut)
 [Get-Content]:                    #get-content                                  "`Get-Content` (alias: `cat`, `gc`, `type`)"
 [Get-Credential]:                 #credentials                                  "`Get-Credential`"
 [Get-Disk]:                       #get-disk                                     "`Get-Disk`"
-[Get-DistributionGroupMember]: #get-distributiongroupmember "Get-DistributionGroupMember&#10;View members of distribution groups and mail-enabled security groups"
+[Get-DistributionGroupMember]:    #get-distributiongroupmember                  "Get-DistributionGroupMember&#10;View members of distribution groups and mail-enabled security groups"
 [Get-Help]:                       #get-help                                     "`Get-Help` &#10; Display help file for cmdlets"
 [Get-History]:                    #get-history                                  "`Get-History` (alias: `ghy`, `h`, `history`) &#10; Display history of inputted commands for the current session"
 [Get-Item]:                       #get-item                                     "`Get-Item`"
@@ -1039,24 +1094,29 @@ $SpeechSynthesizer.SetOutputToWaveFile($WavFileOut)
 [Get-Module]:                     #get-module                                   "`Get-Module` (alias: `gmo`) &#10; Display currently loaded PowerShell modules"
 [Get-NetAdapter]:                 #get-netadapter                               "`Get-NetAdapter` &#10; Display available network interfaces"
 [Get-NetFirewallRule]:            #get-netfirewallrule                          "`Get-NetFirewallRule`"
-[Get-Partition]:                  #get-partition                                "`Get-Partition`"
 [Get-PSDrive]:                    #get-psdrive                                  "`Get-PSDrive` (alias: `gdr`) &#10; Display mapped drives"
 [Get-PSReadlineOption]:           #get-psreadlineoption                         "`Get-PSReadlineOption`"
 [Get-PSSession]:                  #get-pssession                                "`Get-PSSession` (alias: `gsn`) &#10; Get the Windows PowerShell sessions on local and remote computers"
 [Get-PSSnapin]:                   #get-pssnapin                                 "`Get-PSSnapin` (alias: `gsnp`) &#10; Display currently loaded snapins (.NET assemblies containing a collection of cmdlets and/or providers for use within PowerShell) - last supported in PowerShell 5.1"
+[Get-Partition]:                  #get-partition                                "`Get-Partition`"
 [Get-Process]:                    #get-process                                  "`Get-Process` (alias: `gps`, `ps`) &#10; Display running processes"
 [Get-Service]:                    #get-service                                  "`Get-Service` (alias: `gsv`) &#10; Display services"
-[Get-WindowsFeature]:             #get-windowsfeature                           "`Get-WindowsFeature`"
+[Get-SmbOpenFile]:                #get-smbopenfile                              '`Get-SmbOpenFile`&#10;Retrieves basic information about the files that are open on behalf of the clients of the Server Message Block (SMB) server&#10;"Get-SmbOpenFile". _Microsoft Docs_.'
+[Get-VM]:                         #get-vm                                       '`Get-VM`&#10;Gets the virtual machines from one or more Hyper-V hosts.'
 [Get-WMIObject]:                  #get-wmiobject                                "`Get-WMIObject`"
+[Get-WindowsFeature]:             #get-windowsfeature                           "`Get-WindowsFeature`"
 [Import-CliXml]:                  #import-clixml                                "`Import-CliXml` &#10; Import a Common Language Infrastructure (CLI) XML file with data that represents Microsoft .NET Framework objects and create PowerShell objects from it"
 [Import-Csv]:                     #import-csv                                   "`Import-Csv` (alias: `ipcsv`) &#10; Import CSV files as PowerShell objects"
 [Import-Module]:                  #import-module                                "`Import-Module` (alias: `ipmo`) &#10; Manually import a module, rather than waiting for it to load dynamically when using one of its cmdlets"
-[Install-ADDSDomain]:             #install-addsdomain                           "`Install-ADDSDomain`"
+[Import-VM]:                      #import-vm                                    '`Import-VM`&#10;Imports a virtual machine from a file.'
 [Install-ADDSDomainController]:   #install-addsdomaincontroller                 '`Install-ADDSDomainController`&#10;Installs a new domain controller in an Active Directory domain'
+[Install-ADDSDomain]:             #install-addsdomain                           "`Install-ADDSDomain`"
 [Install-ADDSForest]:             #install-addsforest                           "`Install-ADDSForest`"
 [Install-Module]:                 #install-module                               "`Install-Module`"
 [Install-WindowsFeature]:         #install-windowsfeature                       "`Install-WindowsFeature` (alias: `Add-WindowsFeature`) &#10; Install one or more roles, role services, or features on either the local or a specified remote server that is running Windows Server 2012 R2"
 [Invoke-WebRequest]:              #invoke-webrequest                            "`Invoke-WebRequest`"
+[Measure-VM]:                     #measure-vm                                   '`Measure-VM`&#10;Reports resource utilization data for one or more virtual machines.'
+[Move-VM]:                        #move-vm                                      '`Move-VM`&#10;Moves a virtual machine to a new Hyper-V host.'
 [New-ADOrganizationalUnit]:       #new-adorganizationalunit                     "`New-ADOrganizationalUnit`"
 [New-ADUser]:                     #new-aduser                                   "`New-ADUser` &#10; Create a new Active Directory user"
 [New-Alias]:                      #new-alias                                    "`New-Alias` (alias: `nal`) &#10; Create a new alias"
@@ -1064,17 +1124,24 @@ $SpeechSynthesizer.SetOutputToWaveFile($WavFileOut)
 [New-Item]:                       #new-item                                     "`New-Item`"
 [New-NetFirewallRule]:            #new-netfirewallrule                          "`New-NetFirewallRule`"
 [New-NetIpAddress]:               #new-netipaddress                             "`New-NetIpAddress` &#10; Manually configure network interface, if a DHCP server is unavailable"
-[New-Partition]:                  #new-partition                                "`New-Partition`"
 [New-PSSession]:                  #new-pssession                                "`New-PSSession` (`nsn`) &#10; Start a new remote PowerShell session with a remote computer"
+[New-Partition]:                  #new-partition                                "`New-Partition`"
 [New-SmbShare]:                   #new-smbshare                                 "`New-SmbShare`"
 [New-VMSwitch]:                   #new-vmswitch                                 "`New-VMSwitch`"
+[New-VM]:                         #new-vm                                       '`New-VM`&#10;Creates a new virtual machine.'
 [Out-Null]:                       #out-null                                     "`Out-Null` &#10; Delete output instead of sending it down the pipeline"
 [Remove-ADOrganizationalUnit]:    #remove-adorganizationalunit                  "`Remove-ADOrganizationalUnit`"
 [Remove-Item]:                    #remove-item                                  "`Remove-Item` (alias: `rm`, `ri`, `rmdir`, `rd`, `del`)"
 [Remove-Partition]:               #remove-partition                             "`Remove-Partition`"
+[Remove-VM]:                      #remove-vm                                    '`Remove-VM`&#10;Deletes a virtual machine.'
 [Rename-Computer]:                #rename-computer                              "`Rename-Computer`"
+[Rename-VM]:                      #rename-vm                                    '`Rename-VM`&#10;Renames a virtual machine.'
+[Repair-VM]:                      #repair-vm                                    '`Repair-VM`&#10;Repairs one or more virtual machines.'
 [Resolve-DNSName]:                #resolve-dnsname                              '`Resolve-DNSName`&#10;...&#10;MeasureUp Practice Lab: Security+'
 [Restart-Computer]:               #restart-computer                             "`Restart-Computer`"
+[Restart-VM]:                     #restart-vm                                   '`Restart-VM`&#10;Restarts a virtual machine.'
+[Resume-VM]:                      #resume-vm                                    '`Resume-VM`&#10;Resumes a suspended (paused) virtual machine.'
+[Save-VM]:                        #save-vm                                      '`Save-VM`&#10;Saves a virtual machine.'
 [Search-ADAccount]:               #search-adaccount                             "`Search-ADAccount`"
 [Select-Object]:                  #filters                                      "`Select-Object` (alias: `sc`&#10; Select object or object properties"
 [Set-ADAccountPassword]:          #set-adaccountpassword                        "`Set-ADAccountPassword`"
@@ -1092,11 +1159,15 @@ $SpeechSynthesizer.SetOutputToWaveFile($WavFileOut)
 [Set-VMMemory]:                   #set-vmmemory                                 "`Set-VMMemory`"
 [Set-VMNetworkAdapter]:           #set-vmnetworkadapter                         "`Set-VMNetworkAdapter`"
 [Set-VMProcessor]:                #set-vmprocessor                              "`Set-VMProcessor`"
+[Set-VM]:                         #set-vm                                       '`Set-VM`&#10;Configures a virtual machine.'
 [Start-DscConfiguration]:         #start-dscconfiguration                       "`Start-DscConfiguration` (alias: `sacfg`) &#10; Apply configuration to nodes"
 [Start-Job]:                      #start-job                                    "`Start-Job` (alias: `sajb`)"
 [Start-Service]:                  #start-service                                "`Start-Service` (alias: `sasv`) &#10; Start one or more stopped services"
+[Start-VM]:                       #start-vm                                     '`Start-VM`&#10;Starts a virtual machine.'
 [Stop-Computer]:                  #stop-computer                                "`Stop-Computer`"
 [Stop-Service]:                   #stop-service                                 "`Stop-Service` (alias: `spsv`) Stop one or more services"
+[Stop-VM]:                        #stop-vm                                      '`Stop-VM`&#10;Shuts down, turns off, or saves a virtual machine.'
+[Suspend-VM]:                     #suspend-vm                                   '`Suspend-VM`&#10;Suspends, or pauses, a virtual machine.'
 [Uninstall-ADDSDomainController]: #uninstall-addsdomaincontroller               "`Uninstall-ADDSDomainController`"
 [Unlock-ADAccount]:               #unlock-adaccount                             "`Unlock-ADAccount`"
 [Update-DistributionGroupMember]: #update-distributiongroupmember               "`Update-DistributionGroupMember`&#10;Replace all members of distribution groups and mail-enabled security groups"
@@ -1104,3 +1175,10 @@ $SpeechSynthesizer.SetOutputToWaveFile($WavFileOut)
 [Where-Object]:                   #filters                                      "`Where-Object` (alias: `?`, `where`) &#10; Select objects from a collection based on their property values"
 [Write-Host]:                     #write-host                                   "`Write-Host`"
 [Write-Output]:                   #write-output                                 "`Write-Output` (alias: `echo`, `write`) &#10; Send the specified objects to the next command in the pipeline. If the command is the last command in the pipeline, the objects are displayed in the console."
+
+[Add-VMSwitch]: # '`Add-VMSwitch`&#10;Adds a virtual switch to an Ethernet resource pool.'
+[Get-VMSwitch]: # '`Get-VMSwitch`&#10;Gets virtual switches from one or more virtual Hyper-V hosts.'
+[New-VMSwitch]: # '`New-VMSwitch`&#10;Creates a new virtual switch on one or more virtual machine hosts.'
+[Remove-VMSwitch]: # '`Remove-VMSwitch`&#10;Deletes a virtual switch.'
+[Rename-VMSwitch]: # '`Rename-VMSwitch`&#10;Renames a virtual switch.'
+[Set-VMSwitch]: # '`Set-VMSwitch`&#10;Configures a virtual switch.'

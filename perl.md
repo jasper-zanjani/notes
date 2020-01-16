@@ -1,5 +1,4 @@
 # Perl
-
 Perl6 offers an interactive shell, but previous versions needed a specialized command to be run through the interpreter
 
 General syntax
@@ -8,23 +7,21 @@ General syntax
 - Enclosing function arguments in parentheses is optional
 
 ## Command-line invocation options
-#### Inline execution of code
+Inline execution of code
+
 Compare similar syntax for sed (MP:17, YUG:614)
 ```sh
 perl6 -e 'code'
 ```
-
-#### Enable warning messages
+Enable warning messages
 ```sh
 perl6 -w
 ```
-
-#### Request an implicit input-reading loop that stores records in `$_`
+Request an implicit input-reading loop that stores records in `$_`
 ```sh
 perl6 -n
 ```
-
-#### Request an implicit input-reading loop that stores records in `$_` and automatically prints that variable after optional processing of its contents
+Request an implicit input-reading loop that stores records in `$_` and automatically prints that variable after optional processing of its contents
 ```sh
 perl6 -p
 ```
@@ -36,7 +33,7 @@ perl6 -p
 : define the character that marks the end of an input record, using octal digits
 
 ## Scripts
-#### Shebang
+Shebang
 ```perl
 #!/usr/bin/env perl`
 ```
