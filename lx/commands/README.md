@@ -20,7 +20,7 @@ Logical volumes               | [`lvcreate`](lvm.md#lvcreate) [`lvdisplay`](lvm.
 Mac OS X                      | `pbcopy` `pbpaste` `screencapture`
 Mail                          | [`mail`](mail.md#mail) [`mailmerge`](mail.md#mailmerge) `mailx` [`msmtp`](#msmtp) <br> **SMTP servers** `exim` [`qmail`](mail.md#qmail) [`postfix`](mail.md#postfix) `sendmail`
 Network                       | [`ethtool`][ethtool] [`hping3`][hping3] [`iftop`][iftop] [`ip`][ip] [`iperf`][iperf] [`ipset`][ipset] `iwlist` `iwconfig` [`netstat`](network.md#netstat) [`nc`](network.md#nc) [`nmap`](nmap.md) [`nmcli`](network.md#nmcli) [`rfkill`](network.md#rfkill) [`ss`](network.md#ss) `tracepath` `traceroute` [`tshark`][tshark] `xinetd` &bull; **DNS** [`dig`](dig.md) [`nslookup`](nslookup.md)
-Package managers              | [`apt`](package.md#apt) [`brew`](#brew) [`dnf`][dnf] [`gem`](package.md#gem) [`pacman`](package.md#pacman) [`pip`](#pip) [`snap`](package.md#snap) [`yay`](package.md#yay) [`yum`](package.md#yum)
+Package managers              | [`apt`](package.md#apt) [`brew`](#brew) [`dnf`][dnf] [`gem`](package.md#gem) [`pacman`](package.md#pacman) [`pip`](#pip) [`rpm`][rpm] [`snap`](package.md#snap) [`yay`](package.md#yay) [`yum`](package.md#yum)
 Processes                     | [`lsns`](containers.md) [`pidof`](containers.md) [`ps`](sysadmin.md#ps) [`top`](sysadmin.md#top) [`unshare`](containers.md)
 Remote connections            | [`rsync`](rsync.md) [`ssh`](ssh.md#ssh) [`ssh-keygen`](ssh.md#ssh-keygen) [`ssh-keyscan`](ssh.md#ssh-keyscan) [`sshfs`](ssh.md#sshfs)
 Sound                         | [`amixer`][amixer]
@@ -50,7 +50,7 @@ N   | [`nc`](network.md#nc) [`netplan`](#netplan) [`netstat`](#netstat) [`Networ
 O   | [`openssl`](#openssl)
 P   | [`pacman`](package.md#pacman) [`partx`](partx.md) [`paste`](#paste) [`passwd`](#passwd) [`paste`](#paste) [`patch`](#patch) [`pidof`](containers.md) [`ping`](#ping) [`pip`](#pip) [`postfix`](#postfix) [`postqueue`](#postqueue) [`postsuper`](#postsuper) [`ps`](sysadmin.md#ps) [`pvcreate`](#pvcreate) [`pvdisplay`](#pvdisplay) [`pvremove`](#pvremove) [`pydoc`](#pydoc) 
 Q   | [`qmail`](#qmail) [`quota`](#quota) [`quotacheck`](#quotacheck) [`quotaoff`](#quotaoff) [`quotaon`](#quotaon)
-R   | [`read`](#read) [`rename`](#rename) [`repquota`](#repquota) [`resize2fs`](#resize2fs) [`rfkill`](#rfkill) [`resize4fs`](#resize4fs) [`restorecon`](#restorecon) [`rmmod`](#rmmod) [`route`](#route) [`rpm`](#rpm) [`rsync`](rsync.md) [`runlevel`](init.md#runlevel) 
+R   | [`read`](#read) [`rename`](#rename) [`repquota`](#repquota) [`resize2fs`](#resize2fs) [`rfkill`](#rfkill) [`resize4fs`](#resize4fs) [`restorecon`](#restorecon) [`rmmod`](#rmmod) [`route`](#route) [`rpm`][rpm] [`rsync`](rsync.md) [`runlevel`](init.md#runlevel) 
 S   | [`samba`](#samba) [`sc`](#sc) [`screencapture`](#screencapture) [`sed`](sed.md#sed) [`semanage`](#selinux) [`sendmail`](#sendmail) [`seq`](#seq) [`service`](#sysvinit) [`sestatus`](#sestatus) [`setenforce`](#selinux) [`setfacl`](#setfacl) [`sfdisk`](#sfdisk) [`shred`](#shred) [`shuf`](#shuf) [`shutdown`](#shutdown) [`slapadd`](#slapadd)  [`sleep`](#sleep) [`snap`](#snap) [`sort`](#sort) [`sosreport`](#sosreport) [`source`](bash.md#source) [`speaker-test`](audio.md#speaker-test) [`ss`](network.md#ss) [`ssh`](#ssh) [`ssh-copy-id`](#ssh-copy-id) [`ssh-keygen`](#ssh-keygen) [`ssh-keyscan`](#ssh-keyscan) [`sshfs`](#sshfs) [`ssmtp`](#ssmtp) [`startx`](#startx) [`stty`](#stty) [`su`](#su) [`sudo`](sudo.md) [`swapoff`](#swapoff) [`swapon`](#swapon) [`sysctl`](#sysctl) [`syslog`](#syslog) [`sysvinit`](#sysvinit) [`systemctl`](init.md#systemctl) [`systemd-delta`](#systemd-delta) 
 T   | [`tail`](#tail) [`tar`](archive.md#tar#tar) [`tcpdump`](#tcpdump) [`telinit`](#telinit) [`test`](test.md#test) [`tig`](#tig) [`timedatectl`][timedatectl] [`tmux`](tmux.md#tmux) [`touch`](#touch) [`top`](sysadmin.md#top) [`tput`](#tput) [`tr`](tr.md) [`tree`](#tree) [`tracepath`](#tracepath) [`traceroute`](#traceroute) [`tshark`][tshark] [`tune2fs`](#tune2fs) [`tzselect`](#tzselect) 
 U   | [`udevadm`](#udevadm) [`umount`](#umount) [`uname`](sysadmin.md#uname) [`uncompress`](#uncompress) [`unshare`](containers.md) [`unzip`](#unzip) [`update-grub`](#update-grub) [`update-rc.d`](#update-rc.d) [`useradd`](#useradd) [`userdel`](#userdel) [`usermod`](#usermod) 
@@ -1752,12 +1752,13 @@ Count the number of occurrences of a string
 [lshw]: #lshw '`lshw`&#10;Display detailed information on system hardware&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 325'
 [mkinitrd]: # '`mkinitrd`&#10;Creates initramfs file&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 8'
 [nproc]: benchmarking.md#nproc "Display number of CPU processors or cores"
+[rpm]: rpm.md#rpm '`rpm`&#10;RPM package manager'
 [systemctl]: systemd.md#systemctl "Control the systemd system and service manager"
 [systemd-delta]: systemd.md#systemd-dela "Find overridden configuration files"
 [timedatectl]: systemd.md#timedatectl "Control the system time and date"
 [tshark]: # '`tshark`&#10;Wireshark terminal interface&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 283'
 [virt-install]: virt.md#virt-install '`virt-install`&#10;Command-line tool for creating new KVM, Xen, or Linux container guests using the libvirt hypervisor management library'
-[virt-manager]: virt.md#virt-manager '`virt-manager`&#10;Desktop tool for managing VMs, providing the ability to control the lifecycle of existing machines, provision new VMs and various types of store, manage virtual networks, access the graphical console of virtual machines, and view performance statistics.'
+[virt-manager]: virt.md#virt-manager '`virt-manager`&#10;"Virtual Machine Manager", GUI tool for managing VMs developed by Red Hat'
 [w]: # '`w`&#10;Display output similar to that of `uptime` for all logged-in users'
 [xlsclients]: X.md#xlsclients "Determine what applications are running on the legacy X11 server provided with Wayland"
 [xz]: # '`xz`&#10;Compress or decompress archives using the LZMA and LZMA2 compression methods.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 270'

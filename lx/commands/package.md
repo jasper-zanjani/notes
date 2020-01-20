@@ -289,9 +289,6 @@ Option  | POSIX option            | Effect
 `-i`    | `--install`             | install specified package
 `-q`    | `--query`               | query for specified package
 `-U`    | `--upgrade`             | upgrade specified package
-
-Option  | POSIX option            | Effect
-:---    | :---                    | :---
 `-a`       |                         | list all installed packages
 `-c`       |                         | list configs installed with specified package
 `-d`       |                         | list documentation files installed with specified package
