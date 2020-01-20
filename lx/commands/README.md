@@ -3,9 +3,9 @@
 Topic                         | Commands
 :---                          | :---
 Ansible                       | [`ansible`](../ansible.md#ansible) [`ansible-galaxy`](../ansible.md#ansible-galaxy) [`ansible-playbook`](../ansible.md#ansible-playbook)
-Archive                       | [**`bzip2`**][bzip2] [`bzcat`](archive.md#bzcat) [`bzless`](archive.md#bzless) [`bzmore`](archive.md#bzmore) &bull; [`compress`](archive.md#compress) [`uncompress`](archive.md#uncompress) &bull; [`gzip`][gzip] [`tar`](archive.md#tar) [`xz`][xz] &bull; [**`zip`**](archive.md#zip) [`unzip`](archive.md#unzip) [`zipcloak`](archive.md#zipcloak) [`zipdetails`](archive.md#zipdetails) [`zipgrep`](archive.md#zipgrep) [`zipinfo`](archive.md#zipinfo) [`zipnote`](archive.md#zipnote) [`zipsplit`](archive.md#zipsplit) &bull; [`dar`](archive.md#dar)
+Archive                       | [**`bzip2`**][bzip2] &bull; [`compress`](archive.md#compress) [`uncompress`](archive.md#uncompress) &bull; [`gzip`][gzip] [`tar`](archive.md#tar) [`xz`][xz] &bull; [**`zip`**](archive.md#zip) [`unzip`](archive.md#unzip) [`zipcloak`](archive.md#zipcloak) [`zipdetails`](archive.md#zipdetails) [`zipgrep`](archive.md#zipgrep) [`zipinfo`](archive.md#zipinfo) [`zipnote`](archive.md#zipnote) [`zipsplit`](archive.md#zipsplit) &bull; [`cpio`][cpio] [`dar`](archive.md#dar)
 Bash builtins                 | [`let`](bash.md#let) [`source`](bash.md#source)
-Benchmarking                  | [`free`][free] [`glances`][glances] [`iostat`][iostat] [`iperf`][iperf] [`lscpu`][lscpu] `nproc` `uptime`
+Benchmarking                  | [`free`][free] [`glances`][glances]  [`iperf`][iperf] [`lscpu`][lscpu] `nproc` `uptime` <br>**Sysstat** [`iostat`][iostat] [`mpstat`][mpstat] [`sar`][sar]
 Date and time                 | [`chrony`](#chrony) [`date`](date.md#date) [`hwclock`](#hwclock) [`timedatectl`](init.md#timedatectl)
 Disk management               | `blkid` [`partx`](partx.md)
 Distributions                 | **Debian** [`adduser`](sysadmin.md#adduser) [**`apt`**](package.md#apt) `apt-cache` `apt-key` `add-apt-repository` <br> **Manjaro** [`mhwd`](#mhwd) [`mhwd-chroot`](#mhwd-chroot) [`pacman`](package.md#pacman) [`yay`](package.md#yay) <br> **Red Hat** [`dnf`][dnf] [`firewall-cmd`](#firewall-cmd) [`yum`](package.md#yum) <br> **Ubuntu** [`netplan`](#netplan)
@@ -21,6 +21,7 @@ Mac OS X                      | `pbcopy` `pbpaste` `screencapture`
 Mail                          | [`mail`](mail.md#mail) [`mailmerge`](mail.md#mailmerge) `mailx` [`msmtp`](#msmtp) <br> **SMTP servers** `exim` [`qmail`](mail.md#qmail) [`postfix`](mail.md#postfix) `sendmail`
 Network                       | [`ethtool`][ethtool] [`hping3`][hping3] [`iftop`][iftop] [`ip`][ip] [`iperf`][iperf] [`ipset`][ipset] `iwlist` `iwconfig` [`netstat`](network.md#netstat) [`nc`](network.md#nc) [`nmap`](nmap.md) [`nmcli`](network.md#nmcli) [`rfkill`](network.md#rfkill) [`ss`](network.md#ss) `tracepath` `traceroute` [`tshark`][tshark] `xinetd` &bull; **DNS** [`dig`](dig.md) [`nslookup`](nslookup.md)
 Package managers              | [`apt`](package.md#apt) [`brew`](#brew) [`dnf`][dnf] [`gem`](package.md#gem) [`pacman`](package.md#pacman) [`pip`](#pip) [`rpm`][rpm] [`snap`](package.md#snap) [`yay`](package.md#yay) [`yum`](package.md#yum)
+Printing                      | [**CUPS**][CUPS] [`cupsaccept`][cupsaccept] [`cupsenable`][cupsenable] [`cupsdisable`][cupsdisable] [`cupsreject`][cupsreject] [`lp`][lp] [`cancel`][cancel] <br> [**LPD**][LPD] [`lpc`][lpc] [`lpq`][lpq] [`lpr`][lpr] [`lprm`][lprm]
 Processes                     | [`lsns`](containers.md) [`pidof`](containers.md) [`ps`](sysadmin.md#ps) [`top`](sysadmin.md#top) [`unshare`](containers.md)
 Remote connections            | [`rsync`](rsync.md) [`ssh`](ssh.md#ssh) [`ssh-keygen`](ssh.md#ssh-keygen) [`ssh-keyscan`](ssh.md#ssh-keyscan) [`sshfs`](ssh.md#sshfs)
 Sound                         | [`amixer`][amixer]
@@ -29,7 +30,6 @@ Version control               | [`git`](git.md#git) [`tig`](git.md#tig)
 Virtualization                | [`virt-install`][virt-install] [`virt-manager`][virt-manager]
 Wi-Fi                         | [`iw`][iw] `iwlist` `iwconfig` [`rfkill`](network.md#rfkill)
 X                             | [`xdpyinfo`](X.md#xdpyinfo) [`xlsclients`][xlsclients] [`xmodmap`](X.md#xmodmap) [`Xorg`](X.md#xorg) [`xrandr`](X.md#xrandr) [`xwininfo`](X.md#xwininfo)
-
 
 \#  | Commands sorted alphabetically
 :---| :---
@@ -46,7 +46,7 @@ J   | [`journalctl`](init.md#journalctl)
 K   | [`kill`](#kill) [`kinit`][kinit] [`klist`][klist] [`kubeadm`](../devops/k8s.md#kubeadm) [`kubectl`](../devops/k8s.md#kubectl)
 L   | [`last`](#last) [`ldapadd`](#ldapadd) [`ldconfig`](#ldconfig) [`ldd`](#ldd) [`less`](#less) [`let`](bash.md#let) [`link`](#link) [`locale`](#locale) [`localectl`](init.md#localectl) [`loginctl`][loginctl] [`logout`](#logout) [`lp`](#lp) [`lpadmin`](#lpadmin) [`lpstat`](#lpstat) [`ls`](#ls) [`lsblk`](#lsblk) [`lshw`][lshw] [`lsmod`](#lsmod) [`lsns`](containers.md) [`lsof`](#lsof) [`lspci`](#lspci) [`lsusb`](#lsusb) [`lvcreate`](#lvcreate) [`lvdisplay`](#lvdisplay) [`lvremove`](#lvremove) [`lvresize`](#lvresize) 
 M   | [`mail`](#mail) [`mailq`](#mailq) [`mailstats`](#mailstats) [`make`](package.md#make) [`makemap`](#makemap) [`mdadm`](#mdadm) [`mhwd`](#mhwd) [`mhwd-chroot`](#mhwd-chroot) [`mkdir`](#mkdir) [`mke2fs`](#mke2fs) [`mkfontscale`](#mkfontscale) [`mkfs`](#mkfs) [`mkinitrd`][mkinitrd] [`mkswap`](#mkswap) [`mktemp`](#mktemp) [`modinfo`](#modinfo) [`modprobe`](#modprobe) [`mongod`](#mongod) [`mount`](#mount) [`msmtp`](#msmtp) [`mt`](#mt) 
-N   | [`nc`](network.md#nc) [`netplan`](#netplan) [`netstat`](#netstat) [`NetworkManager`](#NetworkManager) [netstat](network.md#netstat) [`newaliases`](#newaliases) [`nice`](#nice) [`nl`](#nl) [`nmap`](nmap.md) [`nmblookup`](#nmblookup) [`nmcli`](network.md#nmcli) [`nohup`](#nohup) [`nslookup`](nslookup.md) [`ntpdate`](#ntpdate) 
+N   | [`nc`](network.md#nc) [`netplan`](#netplan) [`netstat`](network.md#netstat) [`NetworkManager`](#NetworkManager) [`newaliases`](#newaliases) [`nice`](#nice) [`nl`](#nl) [`nmap`](nmap.md) [`nmblookup`](#nmblookup) [`nmcli`](network.md#nmcli) [`nohup`](#nohup) [`nslookup`](nslookup.md) [`ntpdate`](#ntpdate) [`ntsysv`][ntsysv]
 O   | [`openssl`](#openssl)
 P   | [`pacman`](package.md#pacman) [`partx`](partx.md) [`paste`](#paste) [`passwd`](#passwd) [`paste`](#paste) [`patch`](#patch) [`pidof`](containers.md) [`ping`](#ping) [`pip`](#pip) [`postfix`](#postfix) [`postqueue`](#postqueue) [`postsuper`](#postsuper) [`ps`](sysadmin.md#ps) [`pvcreate`](#pvcreate) [`pvdisplay`](#pvdisplay) [`pvremove`](#pvremove) [`pydoc`](#pydoc) 
 Q   | [`qmail`](#qmail) [`quota`](#quota) [`quotacheck`](#quotacheck) [`quotaoff`](#quotaoff) [`quotaon`](#quotaon)
@@ -1719,9 +1719,15 @@ Count the number of occurrences of a string
 [https://computingforgeeks.com/connect-to-bluetooth-device-from-linux-terminal/]: https://computingforgeeks.com/connect-to-bluetooth-device-from-linux-terminal/ "Computing for Geeks: \"How to connect to Bluetooth device from Linux terminal\""
 [http://www.linux-magazine.com/Issues/2017/197/Command-Line-bluetoothctl#article_i1]: http://www.linux-magazine.com/Issues/2017/197/Command-Line-bluetoothctl#article_i1 "Linux Magazine: \"Blue Control\""
 
-[amixer]: audio.md#amixer "Command-line mixer for ALSA sound card driver"
-[bluetoothctl]: #bluetoothctl '`bluetoothctl`&#10;Canonical implementation of Bluetooth on Linux'
-[bzip2]: archive.md#bzip2 '`bzip2`&#10;Compress or decompress archives using the Burrows-Wheeler block-sorting text-compression algorithm.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 271'
+[amixer]:         audio.md#amixer "Command-line mixer for ALSA sound card driver"
+[bluetoothctl]:   #bluetoothctl '`bluetoothctl`&#10;Canonical implementation of Bluetooth on Linux'
+[bzip2]:          archive.md#bzip2 '`bzip2`&#10;Compress or decompress archives using the Burrows-Wheeler block-sorting text-compression algorithm.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 271'
+[cpio]:           archive.md#cpio '`cpio`&#10;Backup utility that uses options similar to `tar`&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 491-492'
+[CUPS]: # 'Common Unix Printing System (CUPS)&#10;Most common printing system used on Linux computers today&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 428'
+[cupsaccept]:     #cupsaccept '`cupsaccept`&#10;Enable spooling for specified printer&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 429'
+[cupsreject]: #cupsreject '`cupsreject`&#10;Disable spooling for specified printer&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 429'
+[cupsenable]: #cupsenable '`cupsenable`&#10;Enable printing from the specified printer&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 429'
+[cupsdisable]: #cupsdisable '`cupsdisable`&#10;Disable printing from the specified printer&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 429'
 [depmod]: # '`depmod`&#10;Builds the modules.dep file, which contains module dependencies and is used by `modprobe` to determine which modules need to be loaded&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 15'
 [dmidecode]: #dmidecode '`dmidecode`&#10;Display a description of hardware components&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 324'
 [dnf]: package.md#dnf '"Dandified YUM", successor to `yum` as a package manager for RPM-based Linux distributions like Fedora.'
@@ -1737,7 +1743,7 @@ Count the number of occurrences of a string
 [hping3]: network.md#hping3 "Active network smashing tool"
 [hwclock]: #hwclock "Access the BIOS clock"
 [iftop]: # '`iftop`&#10;Display network connections using the most bandwidth&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 281'
-[iostat]: # '`iostat`&#10;Display input/output statistics on devices, including partitions&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 48'
+[iostat]: benchmarking.md#iostat '`iostat`&#10;Display input/output statistics on devices, including partitions&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 48&#10;---&#10;Measure the flow of information to and from disk devices&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 637'
 [ip]: network.md#ip "Newer alternative to the old `ifconfig`"
 [iperf]: # '`iperf`&#10;Create tests of the throughput between two systems, requiring setup on both client and server&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 281'
 [ipset]: # '`ipset`&#10;Create a "set" of IP addresses to which firewall rules can be applied&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 282'
@@ -1747,22 +1753,35 @@ Count the number of occurrences of a string
 [klist]: # '`klist`&#10;Display a list of cached Kerberos tickets&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 239'
 [localectl]: systemd.md#localectl "Control the system locale and keyboard layout settings"
 [logger]: #logger "Create a one-time file entry specified by the user"
+[logrotate]: #logrotate '`logrotate`&#10;Rename ("rotate") log files on a cyclic basis using /etc/logrotate.conf to determine behavior&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 445-447&#10;---&#10;Utility designed to ensure the partition that holds log files has enough room to handle them by rotating log files, reducing the space they use, typically configured to run automatically as a cron job&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 250-252'
 [loginctl]: systemd.md#loginctl "Control the systemd login manager"
+[LPD]: # 'Line Printer Daemon (LPD)&#10;Older Linux printing system&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 432'
+[lpc]: #lpc '`lpc`&#10;View status of printers&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 432'
+[lpq]: #lpq '`lpq`&#10;View print jobs in the print queue&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 432'
+[lpr]: #lpr '`lpr`&#10;Print documents to the print queue&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 432'
+[lprm]: #lprm '`lprm`&#10;Remove print jobs&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 432'
 [lscpu]: benchmarking.md#lscpu "Display CPU architecture i"
 [lshw]: #lshw '`lshw`&#10;Display detailed information on system hardware&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 325'
 [mkinitrd]: # '`mkinitrd`&#10;Creates initramfs file&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 8'
+[mpstat]: benchmarking.md#mpstat '`mpstat`&#10;Report processor-related statistics&#10;---&#10;Utility for monitoring CPU performance&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 635-637'
 [nproc]: benchmarking.md#nproc "Display number of CPU processors or cores"
+[ntsysv]: #ntsysv '`ntsysv`&#10;TUI utility used to modify appropriate runtime configuration files so that they start and stop daemons when entering a particular runlevel&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 367'
 [rpm]: rpm.md#rpm '`rpm`&#10;RPM package manager'
+[sar]: benchmarking.md#sar '`sar`&#10;"system activity reporter", the most widely used performance monitoring tool on Linux&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 637-641'
 [systemctl]: systemd.md#systemctl "Control the systemd system and service manager"
 [systemd-delta]: systemd.md#systemd-dela "Find overridden configuration files"
 [timedatectl]: systemd.md#timedatectl "Control the system time and date"
 [tshark]: # '`tshark`&#10;Wireshark terminal interface&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 283'
 [virt-install]: virt.md#virt-install '`virt-install`&#10;Command-line tool for creating new KVM, Xen, or Linux container guests using the libvirt hypervisor management library'
 [virt-manager]: virt.md#virt-manager '`virt-manager`&#10;"Virtual Machine Manager", GUI tool for managing VMs developed by Red Hat'
+[vmstat]: benchmarking.md#vmstat '`vmstat`&#10;Provides more detail than `free`&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 642'
 [w]: # '`w`&#10;Display output similar to that of `uptime` for all logged-in users'
 [xlsclients]: X.md#xlsclients "Determine what applications are running on the legacy X11 server provided with Wayland"
 [xz]: # '`xz`&#10;Compress or decompress archives using the LZMA and LZMA2 compression methods.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 270'
 [yumdownloader]: # '`yumdownloader`&#10;Download software packages without installing them&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 84'
 [zypper]: # '`zypper`&#10;Package manager for SUSE with a syntax similar to that of `yum`&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 86'
+[cancel]: #cancel '`cancel`&#10;Remove a print job that is in the queue&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 431'
+[lp]: #lp '`lp`&#10;Send a print job to a printer&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 428'
+
 
 [/etc/samba/smb.conf]: # "Samba configuration file"

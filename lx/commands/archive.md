@@ -30,6 +30,24 @@ Compress files recursively within a specified directory
 ```sh
 compress -r
 ```
+### `cpio`
+Option  | POSIX option            | Effect [^][Eckert]
+:---    | :---                    | :---
+`-A`    | `--append`              | append files to an existing archive
+`-d`    | `--make-directories`    | create directories as needed during extraction
+`-i`    | `--extract`             | read files from an archive
+`-L`    | `--dereference`         | prevent cpio from backing up symbolic links, only their target files
+`-o`    | `--create`              | create a new archive
+`-t`    | `--list`                | list the filename contents ("**t**able of contents")
+`-u`    | `--unconditional`       | overwrite existing files during extraction without prompting for u ser confirmation
+`-B`    |                         | change default block size from 512 bytes to 5KB, speeding up the transfer of information
+`-c`    |                         | use a storage format (SVR4) that is widely recognized by different versions of cpio for UNIX and Linux
+`-I`    |                         | indicate **i**nput device or file when viewing or extracting files
+\-      | `--no-absolute-filenames` | store filenames in an archive using relative pathnames
+`-O`    |                         | indicate **o**utput archive
+
+
+
 ### `dar`
 Create a differential (or incremental) backup of {file}, using full.bak as reference
 ```sh
@@ -113,34 +131,28 @@ Option  | Effect
 :---    | :---
 `-f`    | overwrite existing files without prompting, if they exist
 `-r`    | decompress files recursively
-
 ### `unzip`
 Extract compressed files in a zip archive
-
 ### `zip`
 Archive files in InfoZIP format
 ```sh
 zip zipfile *files
 ```
-
 ### `zipcloak`
 Encrypt a zip {archive}
 ```sh
 zipcloak archive
 ```
-
 ### `zipdetails`
 Produce a detailed list of information about a zip {archive}
 ```sh
 zipdetails archive
 ```
-
 ### `zipgrep`
 Search for {string} within all files of a zip {archive}
 ```sh
 zipgrep string archive
 ```
-
 ### `zipinfo`
 Print information about ZIP format archives
 ```sh
@@ -151,9 +163,11 @@ Annotate a zip {archive} by creating a {comments} file, which can then be edited
 ```sh
 zipnote archive > comments
 ```
-
 ### `zipsplit`
 Split `zipfile` into segments of size `size`
 ```sh
 zipsplit -n size zipfile
 ```
+
+## 
+[Eckert]: # "Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012."
