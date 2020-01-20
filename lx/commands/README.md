@@ -13,7 +13,7 @@ Files	                        |  [`fallocate`](fallocate.md) [`install`](install
 Filters                       | [`awk`](awk.md#awk) [`cat`](cat.md#cat) [`copy`](#copy) [`egrep`](grep.md) [`fgrep`](grep.md) [`grep`](grep.md) [`paste`](#paste) [`sed`](sed.md#sed) [`shuf`](shuf.md) [`tr`](tr.md)
 Gnome                         | [`gconf-editor`](gsettings.md) [`gsettings`](gsettings.md) 
 GRUB                          | [`update-grub`](grub.md#update-grub)
-Hardware settings             | [`insmod`](#insmod) [ `lsmod` ](#lsmod) [ `lspci` ](#lspci) [ `lsusb` ](#lsusb) [ `modprobe` ](#modprobe) [`rmmod`](#rmmod)
+Hardware settings             | [`bluetoothctl`][bluetoothctl] [`insmod`](#insmod) [ `lsmod` ](#lsmod) [ `lspci` ](#lspci) [ `lsusb` ](#lsusb) [ `modprobe` ](#modprobe) [`rmmod`](#rmmod)
 Init                          | **Systemd** [`hostnamectl`][hostnamectl] [`journalctl`][journalctl] [`localectl`][localectl] [`systemctl`][systemd-delta] [`systemd-delta`][systemd-delta] [`timedatectl`][timedatectl] <br> **Sysvinit** [`chkconfig`](init.md#chkconfig) [`init`](init.md#init) [`service`](init.md#service) [`telinit`](init.md#telinit) &bull; **Upstart** [`initctl`](init.md#initctl)
 Kubernetes                    | [`kubeadm`](../devops/k8s.md#kubeadm) [`kubectl`](../devops/k8s.md#kubectl)
 Logical volumes               | [`lvcreate`](lvm.md#lvcreate) [`lvdisplay`](lvm.md##lvdisplay) [`lvremove`](lvm.md##lvremove) [`lvs`](lvm.md##lvs) [`pvcreate`](lvm.md##pvcreate) [`pvdisplay`](lvm.md##pvdisplay) [`pvremove`](lvm.md##pvremove) [`pvs`](lvm.md##pvs) [`vgcreate`](lvm.md##vgcreate) [`vgdisplay`](lvm.md##vgdisplay) [`vgextend`](lvm.md##vgextend) [`vgremove`](lvm.md##vgremove) [`vgs`](lvm.md##vgs)
@@ -26,6 +26,7 @@ Remote connections            | [`rsync`](rsync.md) [`ssh`](ssh.md#ssh) [`ssh-ke
 Sound                         | [`amixer`][amixer]
 System administration         | [`chage`](sysadmin.md#chage) [`chcon`](sysadmin.md#chcon) [`chgrp`](sysadmin.md#chgrp) [`chmod`](sysadmin.md#chmod) [`chown`](sysadmin.md#chown) [`chpass`](sysadmin.md#chpass) [`chrony`](sysadmin.md#chrony) [`chsh`](sysadmin.md#chsh)  [`free`](sysadmin.md#free) [`getent`](sysadmin.md#getent) [`gpasswd`](sysadmin.md#gpasswd) [`groupadd`](sysadmin.md#groupadd) [`groupdel`](sysadmin.md#groupdel) [`groupmod`](sysadmin.md#groupmod) [`logger`][logger] [`logrotate`][logrotate] [`stty`](#stty) [`su`](sudo.md#su) [`sudo`](sudo.md#sudo) [`top`](sysadmin.md#top) [`uname`](sysadmin.md#uname) [`useradd`](sysadmin.md#useradd) [`userdel`](sysadmin.md#userdel) [`usermod`](sysadmin.md#usermod) `vifs` `visudo` &bull; **Debian** [`adduser`](sysadmin.md#adduser)
 Version control               | [`git`](git.md#git) [`tig`](git.md#tig)
+Virtualization                | [`virt-install`][virt-install] [`virt-manager`][virt-manager]
 Wi-Fi                         | [`iw`][iw] `iwlist` `iwconfig` [`rfkill`](network.md#rfkill)
 X                             | [`xdpyinfo`](X.md#xdpyinfo) [`xlsclients`][xlsclients] [`xmodmap`](X.md#xmodmap) [`Xorg`](X.md#xorg) [`xrandr`](X.md#xrandr) [`xwininfo`](X.md#xwininfo)
 
@@ -58,6 +59,20 @@ W   | [`w`][w] [`wall`](#wall) [`watch`](watch.md#watch) [`wc`](#wc) [`whatis`](
 X   | [`X`](#X) [`xdpyinfo`](#xdpyinfo) [`xhost`](#xhost) [`xinetd`](#xinetd) [`Xorg`](#Xorg) [`xrandr`](#xrandr) [`xwininfo`](#xwininfo) [`xz`][xz]
 Y   | [`yay`](#yay) [`yum`](package.md#yum) [`yumdownloader`][yumdownloader]
 Z   | [`zip`](#zip) [`zipcloak`](#zipcloak) [`zipdetails`](#zipdetails) [`zipgrep`](#zipgrep) [`zipinfo`](#zipinfo) [`zipnote`](#zipnote) [`zipsplit`](#zipsplit) [`zsh`](#zsh) [`zypper`][zypper]
+
+### `bluetoothctl`
+
+[^][https://computingforgeeks.com/connect-to-bluetooth-device-from-linux-terminal/]
+
+Command | Description [^][http://www.linux-magazine.com/Issues/2017/197/Command-Line-bluetoothctl#article_i1]
+---     | ---
+`list`  | display available controllers
+`show`  | display more detailed inormation about available controllers
+`select`  | select controller to pair, if the system has more than one
+`scan on` | receive a list of detected devices
+`pairable on` | prepare controller for pairing
+`devices` | list avialable devices
+`pair`  | pair with `$DEVICE`, which is the MAC address of the pairable device
 
 ### `bmon`
 [^][56]
@@ -1701,7 +1716,11 @@ Count the number of occurrences of a string
 [56]: https://www.redhat.com/sysadmin/raid-intro "redhat.com: \"RAID for those who avoid it\""
 [59]: https://docs.fedoraproject.org/en-US/quick-docs/adding-new-fonts-fedora/ "Fedora Docs - Adding new fonts in Fedora"
 
+[https://computingforgeeks.com/connect-to-bluetooth-device-from-linux-terminal/]: https://computingforgeeks.com/connect-to-bluetooth-device-from-linux-terminal/ "Computing for Geeks: \"How to connect to Bluetooth device from Linux terminal\""
+[http://www.linux-magazine.com/Issues/2017/197/Command-Line-bluetoothctl#article_i1]: http://www.linux-magazine.com/Issues/2017/197/Command-Line-bluetoothctl#article_i1 "Linux Magazine: \"Blue Control\""
+
 [amixer]: audio.md#amixer "Command-line mixer for ALSA sound card driver"
+[bluetoothctl]: #bluetoothctl '`bluetoothctl`&#10;Canonical implementation of Bluetooth on Linux'
 [bzip2]: archive.md#bzip2 '`bzip2`&#10;Compress or decompress archives using the Burrows-Wheeler block-sorting text-compression algorithm.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 271'
 [depmod]: # '`depmod`&#10;Builds the modules.dep file, which contains module dependencies and is used by `modprobe` to determine which modules need to be loaded&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 15'
 [dmidecode]: #dmidecode '`dmidecode`&#10;Display a description of hardware components&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 324'
@@ -1737,9 +1756,11 @@ Count the number of occurrences of a string
 [systemd-delta]: systemd.md#systemd-dela "Find overridden configuration files"
 [timedatectl]: systemd.md#timedatectl "Control the system time and date"
 [tshark]: # '`tshark`&#10;Wireshark terminal interface&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 283'
+[virt-install]: virt.md#virt-install '`virt-install`&#10;Command-line tool for creating new KVM, Xen, or Linux container guests using the libvirt hypervisor management library'
+[virt-manager]: virt.md#virt-manager '`virt-manager`&#10;Desktop tool for managing VMs, providing the ability to control the lifecycle of existing machines, provision new VMs and various types of store, manage virtual networks, access the graphical console of virtual machines, and view performance statistics.'
+[w]: # '`w`&#10;Display output similar to that of `uptime` for all logged-in users'
 [xlsclients]: X.md#xlsclients "Determine what applications are running on the legacy X11 server provided with Wayland"
 [xz]: # '`xz`&#10;Compress or decompress archives using the LZMA and LZMA2 compression methods.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 270'
-[w]: # '`w`&#10;Display output similar to that of `uptime` for all logged-in users'
 [yumdownloader]: # '`yumdownloader`&#10;Download software packages without installing them&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 84'
 [zypper]: # '`zypper`&#10;Package manager for SUSE with a syntax similar to that of `yum`&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 86'
 

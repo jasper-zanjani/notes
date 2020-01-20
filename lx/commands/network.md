@@ -273,6 +273,11 @@ Command | Effect
 `block` | disable specified device
 `list`  | List the current state of all available rfkill-using devices [[59](sources.md)]
 `unblock`| enable specified device [[59](sources.md)]
+
+Unblock Bluetooth, if it is blocked [^][https://computingforgeeks.com/connect-to-bluetooth-device-from-linux-terminal/]
+```sh
+rfkill unblock bluetooth
+```
 ### `ss`
 "Socket statistics", successor to __netstat__. 
 
@@ -338,3 +343,4 @@ ss --tcp --processes
 
 [Sec+ Lab]: https://pts.measureup.com/web/index.php#dashboard.php "Practice Lab: CompTIA Security+ (SY0-501)"
 [Kali hping3]: https://tools.kali.org/information-gathering/hping3 "tools.kali.org: \"hping3 - Active Network Smashing Tool\""
+[https://computingforgeeks.com/connect-to-bluetooth-device-from-linux-terminal/]: https://computingforgeeks.com/connect-to-bluetooth-device-from-linux-terminal/ "Computing for Geeks: \"How to connect to Bluetooth device from Linux terminal\""

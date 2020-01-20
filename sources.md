@@ -64,3 +64,7 @@
 [Dulaney]: # "Dulaney, Emmett. _Exam Cram: CompTIA Network+ N10-007_"
 [Neil]: # "Neil, Ian. _CompTIA Security+ Certification Guide_"
 [ITP Linux+]: ../sources/itp-lpic.md "ITProTV: \"CompTIA Linux+ powered by LPI\""
+
+[https://computingforgeeks.com/connect-to-bluetooth-device-from-linux-terminal/]: https://computingforgeeks.com/connect-to-bluetooth-device-from-linux-terminal/ "Computing for Geeks: \"How to connect to Bluetooth device from Linux terminal\""
+[http://www.linux-magazine.com/Issues/2017/197/Command-Line-bluetoothctl#article_i1]: http://www.linux-magazine.com/Issues/2017/197/Command-Line-bluetoothctl#article_i1 "Linux Magazine: \"Blue Control\""
+[https://docs.fedoraproject.org/en-US/quick-docs/getting-started-with-virtualization/]: https://docs.fedoraproject.org/en-US/quick-docs/getting-started-with-virtualization/ "Fedora Docs: \"Getting started with virtualization\""

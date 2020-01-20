@@ -64,6 +64,18 @@ View all packages installed by user
 ```sh
 dnf history userinstalled
 ```
+Display information about a **package group** [^][https://docs.fedoraproject.org/en-US/quick-docs/getting-started-with-virtualization/]
+```sh
+dnf groupinfo virtualization
+```
+Install a package group [^][https://docs.fedoraproject.org/en-US/quick-docs/getting-started-with-virtualization/]
+```sh
+dnf install @virtualization
+```
+Install a package group, including optional packages [^][https://docs.fedoraproject.org/en-US/quick-docs/getting-started-with-virtualization/]
+```sh
+dnf group install --with-optional virtualization
+```
 ### `gem`
 Install a Ruby `$PACKAGE`
 ```sh
@@ -440,3 +452,5 @@ View command history
 ```sh
 yum history
 ```
+## 
+[https://docs.fedoraproject.org/en-US/quick-docs/getting-started-with-virtualization/]: https://docs.fedoraproject.org/en-US/quick-docs/getting-started-with-virtualization/ "Fedora Docs: \"Getting started with virtualization\""

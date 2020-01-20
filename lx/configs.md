@@ -27,6 +27,7 @@ Y   | [yum.conf][/etc/yum.conf]
 /etc subdirectory                             | Config files sorted alphabetically
 ---                                           | ---
 apt/                                          | [sources.list][/etc/apt/sources.list] [**sources.list.d/**][/etc/apt/sources.list.d/]
+bluetooth/                                    | [main.conf][/etc/bluetooth/main.conf]
 default/                                      | [useradd][/etc/default/useradd]
 [hotplug/usb/][/etc/hotplug/usb/]             |
 [init.d/][/etc/init.d/]                       |
@@ -105,7 +106,12 @@ deb [signed-by=/usr/share/keyrings/cloud.google.gpg] http://packages.cloud.googl
 ```cfg
 deb http://security.ubuntu.com/ubuntu trusty-security main universe
 ```
-
+### /etc/bluetooth/main.conf
+Power on Bluetooth adapter at startup [^][https://computingforgeeks.com/connect-to-bluetooth-device-from-linux-terminal/]
+```ini
+[Policy]
+AutoEnable=true
+```
 ### /etc/lsb-release
 ```conf
 DISTRIB_ID=Ubuntu
@@ -272,6 +278,7 @@ mynetworks_style = class
 [/etc/aliases]: # "Systemwide email aliases"
 [/etc/apt/sources.list]: #etcaptsourceslist
 [/etc/apt/sources.list.d/]: # "Directory containing additional repository definitions"
+[/etc/bluetooth/main.conf]: #etcbluetoothmainconf "Bluetooth config"
 [/etc/default/useradd]: #etcdefaultuseradd
 [/etc/files.dns]: # "NIS+ servers for Solaris servers"
 [/etc/fstab]: # "Filesystems to be mounted by the system at boot"
@@ -320,3 +327,4 @@ mynetworks_style = class
 ---
 
 [Eckert]: # "Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012."
+[https://computingforgeeks.com/connect-to-bluetooth-device-from-linux-terminal/]: https://computingforgeeks.com/connect-to-bluetooth-device-from-linux-terminal/ "Computing for Geeks: \"How to connect to Bluetooth device from Linux terminal\""
