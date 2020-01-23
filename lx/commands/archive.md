@@ -1,3 +1,5 @@
+# Archive commands
+### `ar`
 ### `bzcat`
 Page through bz2 files
 ### `bzless`
@@ -45,9 +47,6 @@ Option  | POSIX option            | Effect [^][Eckert]
 `-I`    |                         | indicate **i**nput device or file when viewing or extracting files
 \-      | `--no-absolute-filenames` | store filenames in an archive using relative pathnames
 `-O`    |                         | indicate **o**utput archive
-
-
-
 ### `dar`
 Create a differential (or incremental) backup of {file}, using full.bak as reference
 ```sh

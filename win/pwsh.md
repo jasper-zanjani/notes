@@ -15,7 +15,7 @@ AD      | **`ADAccount`**&nbsp;[`sr`][Search-ADAccount]&nbsp;[`uk`][Unlock-ADAcc
 **C**   | **`ChildItem`**&nbsp;[`g`][Get-ChildItem]&nbsp;&bull; **`Clipboard`**&nbsp;[`g`][Get-Clipboard]&nbsp;[`s`][Set-Clipboard]&nbsp;&bull; **`Computer`**&nbsp;[`a`][Add-Computer]&nbsp;[`rn`][Rename-Computer]&nbsp;[`rt`][Restart-Computer]&nbsp;[`sp`][Stop-Computer]&nbsp;&bull; **`Content`**&nbsp;[`a`][Add-Content]&nbsp;&bull; **`Credential`** [`g`][Get-Credential] &bull; **`Csv`** [`ep`][Export-Csv] [`ip`][Import-Csv]
 **D**   | **`Disk`** [`g`][Get-Disk] &bull; **`DistributionGroupMember`** [`a`][Add-DistributionGroupMember] [`g`][Get-DistributionGroupMember] [`ud`][Update-DistributionGroupMember] &bull; **`DNSName`**&nbsp;[`rv`][Resolve-DNSName]
 Dhcp    | **`DhcpServerInDC`** [`a`][Add-DhcpServerInDC] &bull; **`DhcpServerV4Scope`** [`a`][Add-DhcpServerv4Scope] &bull; **`DhcpServerv4OptionValue`** [`s`][Set-DhcpServerv4OptionValue]
-**E-M** | **`ExecutionPolicy`** [`s`][Set-ExecutionPolicy] &bull; **`Guid`** [`n`][New-Guid] &bull; **`Help`** [`g`][Get-Help] [`ud`][Update-Help] &bull; **`Item`** [`cp`][Copy-Item] [`g`][Get-Item] [`n`][New-Item] [`r`][Remove-Item] &bull; **`List`** [`f`][Format-List] &bull; **`Location`** [`g`][Get-Location] [`s`][Set-Location] &bull; **`Module`**&nbsp;[`ip`][Import-Module]&nbsp;[`is`][Install-Module]
+**E-M** | **`ExecutionPolicy`** [`s`][Set-ExecutionPolicy] &bull; **`GPUpdate`** [`i`][Invoke-GPUpdate] &bull; **`Guid`** [`n`][New-Guid] &bull; **`Help`** [`g`][Get-Help] [`ud`][Update-Help] &bull; **`Item`** [`cp`][Copy-Item] [`g`][Get-Item] [`n`][New-Item] [`r`][Remove-Item] &bull; **`List`** [`f`][Format-List] &bull; **`Location`** [`g`][Get-Location] [`s`][Set-Location] &bull; **`Module`**&nbsp;[`ip`][Import-Module]&nbsp;[`is`][Install-Module]
 **N**   | **`NetAdapter`** [`g`][Get-NetAdapter] &bull; **`NetFirewallRule`** [`g`][Get-NetFirewallRule] [`n`][New-NetFirewallRule] [`s`][Set-NetFirewallRule] &bull; **`NetIpAddress`** [`n`][New-NetIpAddress] &bull; **`Null`** [`o`][Out-Null]
 **O**   | **`Object`** [`ForEach`][ForEach-Object] [`sc`][Select-Object] [`Where`][Where-Object] &bull; **`Output`** [`wr`][Write-Output]
 **P**   | **`Partition`** [`g`][Get-Partition] [`n`][New-Partition] [`r`][Remove-Partition] &bull; **`PSReadlineOption`** [`g`][Get-PSReadlineOption] [`s`][Set-PSReadlineOption] &bull; **`PSSession`** [`dc`][Disconnect-PSSession] [`et`][Enter-PSSession] [`ex`][Exit-PSSession] [`g`][Get-PSSession] [`n`][New-PSSession]
@@ -38,8 +38,8 @@ System administration | [`Get-Alias`][Get-Alias] [`Get-Command`][Get-Command] [`
 
 \#      | Bash (hover for PowerShell equivalents)
 ---     | ---
-**A-O** | [`$!`][$$] [`!$`][$$] [`$?`][$?] [`&`][Start-Job] [`>>`][Add-Content] &bull; [`alias`][New-Alias] [`awk`][Select-Object] &bull; `bzip2` &bull; [`cat`][Get-Content] [`cd`][Set-Location] [`cp`][Copy-Item] &bull; [`echo`][Write-Host] &bull; [`find`][Get-ChildItem] &bull; [`grep`][Where-Object] &bull; [`less`](#out-host "`Out-Host -Paging`") [`ls`][Get-ChildItem] &bull; [`man`][Get-Help] [`mkdir`](#new-item "`New-Item -ItemType Directory`") [`more`](#out-host "`Out-Host -Paging`")
-**P-Z** | [`print`][Write-Host] [`printf`][Write-Host] [`pwd`][Get-Location] &bull; [`reset`][Clear-Host] [`rm`][Remove-Item] &bull; [`sed`][Select-Object] [`shutdown`][Stop-Computer] [`-r`][Restart-Computer] &bull; [`tail`][Get-Content] [`touch`][New-Item] &bull; [`uniq`](#select-object "`Select-Object -Unique`")
+**A-L** | [`$!`][$$] [`!$`][$$] [`$?`][$?] [`&`][Start-Job] [`>>`][Add-Content] &bull; [`alias`][New-Alias] [`awk`][Select-Object] &bull; `bzip2` &bull; [`cat`][Get-Content] [`cd`][Set-Location] [`cp`][Copy-Item] &bull; [`echo`][Write-Host] &bull; [`find`][Get-ChildItem] &bull; [`grep`][Where-Object] &bull; [`less`](#out-host "`Out-Host -Paging`") [`ls`][Get-ChildItem] &bull; 
+**M-Z** | [`man`][Get-Help] [`mkdir`](#new-item "`New-Item -ItemType Directory`") [`more`](#out-host "`Out-Host -Paging`") &bull; [`print`][Write-Host] [`printf`][Write-Host] [`pwd`][Get-Location] &bull; [`reset`][Clear-Host] [`rm`][Remove-Item] &bull; [`sed`][Select-Object] [`shutdown`][Stop-Computer] [`-r`][Restart-Computer] &bull; [`tail`][Get-Content] [`touch`][New-Item] &bull; [`uniq`](#select-object "`Select-Object -Unique`")
 
 ## Syntax
 The `Throw` keyword generates a terminating error
@@ -1043,142 +1043,157 @@ $SpeechSynthesizer.SetOutputToWaveFile($WavFileOut)
 
 
 
-[$$]:                             #comparison-with-bash                         "`$$`&#10; Automatic variable referring to the last \"token\" (argument) in the previous command"
-[$?]:                             #comparison-with-bash                         "`$?`&#10; Automatic variable containing the execution status of the previous command"
-[Add-ADPrincipalGroupMembership]: #add-adprincipalgroupmembership               "`Add-ADPrincipalGroupMembership` &#10; Add a member to one or more Active Directory groups"
-[Add-Computer]:                   #add-computer                                 "`Add-Computer` &#10; Join a computer to a domain"
-[Add-Content]:                    #add-content                                  "`Add-Content`"
-[Add-DhcpServerInDC]:             #add-dhcpserverindc                           "`Add-DhcpServerInDC`"
-[Add-DhcpServerv4Scope]:          #add-dhcpserverv4scope                        "`Add-DhcpServerv4Scope` &#10; Add an IPv4 scope on the DHCP server service."
-[Add-DistributionGroupMember]:    #add-distributiongroupmember                  "`Add-DistributionGroupMember`&#10;Add a single recipient to distribution groups and mail-enabled security groups"
-[Add-PSSnapin]:                   #add-pssnapin                                 "`Add-PSSnapin` (alias: `asnp`) &#10; Load a given list of snap-ins (.NET assemblies containing a collection of cmdlets and/or providers for use within PowerShell) either by name or via the pipeline - last supported in PowerShell 5.1"
-[Add-Type]:                       #add-type                                     '`Add-Type`&#10;Add a.NET Framework type (a class) to a Windows PowerShell session'
-[Add-WindowsFeature]:             #install-windowsfeature                       '`Add-WindowsFeature` (alias: `Install-WindowsFeature`)'
-[Checkpoint-VM]:                  #checkpoint-vm                                '`Checkpoint-VM`&#10;Creates a checkpoint of a virtual machine.'
-[Clear-Host]:                     #clear-host                                   "`Clear-Host`"
-[Close-SmbOpenFile]:              #close-smbopenfile                            '`Close-SmbOpenFile`&#10;Close a file that is open by one of the clients of the SMB server&#10;"Close-SmbOpenFile". _Microsoft Docs_.'
-[Compare-VM]:                     #compare-vm                                   '`Compare-VM`&#10;Compares a virtual machine and a virtual machine host for compatibility, returning a compatibility report.'
-[Compress-Archive]:               #compress-archive                             "`Compress-Archive`"
-[Copy-Item]:                      #copy-item                                    "`Copy-Item`"
-[Debug-VM]:                       #debug-vm                                     '`Debug-VM`&#10;Debugs a virtual machine.'
-[Disconnect-PSSession]:           #disconnect-pssession                         "`Disconnect-PSSession` (alias: `dnsn`) &#10; Terminate a remote PowerShell session begun with `New-PSSession`"
-[Enable-PSRemoting]:              #enable-psremoting                            "`Enable-PSRemoting` &#10; Allow remote PowerShell management"
-[Enable-WindowsOptionalFeature]:  #enable-windowsoptionalfeature                "`Enable-WindowsOptionalFeature` &#10; Enable or restore an optional feature in a Windows image"
-[Enter-PSSession]:                #enter-pssession                              "`Enter-PSSession` (alias: `etsn`) &#10; Interact with the specified PowerShell session"
-[Exit-PSSession]:                 #exit-pssession                               "`Exit-PSSession` (alias: `exsn`) &#10; End an interactive session with a remote computer"
-[Expand-Archive]:                 #expand-archive                               "`Expand-Archive` &#10; Decompress archives"
-[Export-Alias]:                   #export-alias                                 "`Export-Alias` (alias: `epal`) &#10; Export information about currently defined aliases to a file."
-[Export-CliXml]:                  #export-clixml                                "`Export-CliXml` &#10; Serialize a PowerShell object as a Common Language Infrastructure (CLI) XML file"
-[Export-Csv]:                     #export-csv                                   "`Export-Csv` &#10; Export PowerShell objects to CSV"
-[Export-VM]:                      #export-vm                                    '`Export-VM`&#10;Exports a virtual machine to disk.'
-[ForEach-Object]:                 #filters                                      "`ForEach-Object` (alias: `%`, `foreach`) &#10; Perform an operation against each item in a collection of input objects."
-[Format-List]:                    #output-formatting                            "`Format-List` (alias: `fl`) &#10; Display output in list style"
-[Format-Table]:                   #output-formatting                            "`Format-Table` (alias: `ft`) &#10; Display output in table style"
-[Get-ADDSForest]:                 #get-addsforest                               "`Get-ADDSForest`"
-[Get-ADOrganizationalUnit]:       #get-adorganizationalunit                     "`Get-ADOrganizationalUnit`"
-[Get-ADPrincipalGroupMembership]: #get-adprincipalgroupmembership               "`Get-ADPrincipalGroupMembership` &#10; Get the Active Directory groups that have a specified user, computer, group, or service account"
-[Get-ADUser]:                     #get-aduser                                   "`Get-ADUser` &#10; Get one or more Active Directory Users"
-[Get-Alias]:                      #get-alias                                    "`Get-Alias` (alias `gal`) &#10; Display aliases"
-[Get-ChildItem]:                  #get-childitem                                "`Get-ChildItem` (alias: `dir`, `gci`, `ls`) &#10; Get items in one or more locations"
-[Get-Clipboard]:                  #get-clipboard                                "`Get-Clipboard` (alias: `gcb`) &#10; Display items in clipboard"
-[Get-Command]:                    #get-command                                  "`Get-Command` (alias: `gcm`) &#10; Display all installed commands, including aliases, applications, filters, functions, and scripts (alias: gcm)"
-[Get-Content]:                    #get-content                                  "`Get-Content` (alias: `cat`, `gc`, `type`)"
-[Get-Credential]:                 #credentials                                  "`Get-Credential`"
-[Get-Disk]:                       #get-disk                                     "`Get-Disk`"
-[Get-DistributionGroupMember]:    #get-distributiongroupmember                  "Get-DistributionGroupMember&#10;View members of distribution groups and mail-enabled security groups"
-[Get-Help]:                       #get-help                                     "`Get-Help` &#10; Display help file for cmdlets"
-[Get-History]:                    #get-history                                  "`Get-History` (alias: `ghy`, `h`, `history`) &#10; Display history of inputted commands for the current session"
-[Get-Item]:                       #get-item                                     "`Get-Item`"
-[Get-Location]:                   #get-location                                 "`Get-Location`"
-[Get-Member]:                     #get-member                                   "`Get-Member` (alias: `gm`) &#10; Display properties and methods of a PowerShell object"
-[Get-Module]:                     #get-module                                   "`Get-Module` (alias: `gmo`) &#10; Display currently loaded PowerShell modules"
-[Get-NetAdapter]:                 #get-netadapter                               "`Get-NetAdapter` &#10; Display available network interfaces"
-[Get-NetFirewallRule]:            #get-netfirewallrule                          "`Get-NetFirewallRule`"
-[Get-PSDrive]:                    #get-psdrive                                  "`Get-PSDrive` (alias: `gdr`) &#10; Display mapped drives"
-[Get-PSReadlineOption]:           #get-psreadlineoption                         "`Get-PSReadlineOption`"
-[Get-PSSession]:                  #get-pssession                                "`Get-PSSession` (alias: `gsn`) &#10; Get the Windows PowerShell sessions on local and remote computers"
-[Get-PSSnapin]:                   #get-pssnapin                                 "`Get-PSSnapin` (alias: `gsnp`) &#10; Display currently loaded snapins (.NET assemblies containing a collection of cmdlets and/or providers for use within PowerShell) - last supported in PowerShell 5.1"
-[Get-Partition]:                  #get-partition                                "`Get-Partition`"
-[Get-Process]:                    #get-process                                  "`Get-Process` (alias: `gps`, `ps`) &#10; Display running processes"
-[Get-Service]:                    #get-service                                  "`Get-Service` (alias: `gsv`) &#10; Display services"
-[Get-SmbOpenFile]:                #get-smbopenfile                              '`Get-SmbOpenFile`&#10;Retrieves basic information about the files that are open on behalf of the clients of the Server Message Block (SMB) server&#10;"Get-SmbOpenFile". _Microsoft Docs_.'
-[Get-VM]:                         #get-vm                                       '`Get-VM`&#10;Gets the virtual machines from one or more Hyper-V hosts.'
-[Get-WMIObject]:                  #get-wmiobject                                "`Get-WMIObject`"
-[Get-WindowsFeature]:             #get-windowsfeature                           "`Get-WindowsFeature`"
-[Import-CliXml]:                  #import-clixml                                "`Import-CliXml` &#10; Import a Common Language Infrastructure (CLI) XML file with data that represents Microsoft .NET Framework objects and create PowerShell objects from it"
-[Import-Csv]:                     #import-csv                                   "`Import-Csv` (alias: `ipcsv`) &#10; Import CSV files as PowerShell objects"
-[Import-Module]:                  #import-module                                "`Import-Module` (alias: `ipmo`) &#10; Manually import a module, rather than waiting for it to load dynamically when using one of its cmdlets"
-[Import-VM]:                      #import-vm                                    '`Import-VM`&#10;Imports a virtual machine from a file.'
-[Install-ADDSDomainController]:   #install-addsdomaincontroller                 '`Install-ADDSDomainController`&#10;Installs a new domain controller in an Active Directory domain'
-[Install-ADDSDomain]:             #install-addsdomain                           "`Install-ADDSDomain`"
-[Install-ADDSForest]:             #install-addsforest                           "`Install-ADDSForest`"
-[Install-Module]:                 #install-module                               "`Install-Module`"
-[Install-WindowsFeature]:         #install-windowsfeature                       "`Install-WindowsFeature` (alias: `Add-WindowsFeature`) &#10; Install one or more roles, role services, or features on either the local or a specified remote server that is running Windows Server 2012 R2"
-[Invoke-WebRequest]:              #invoke-webrequest                            "`Invoke-WebRequest`"
-[Measure-VM]:                     #measure-vm                                   '`Measure-VM`&#10;Reports resource utilization data for one or more virtual machines.'
-[Move-VM]:                        #move-vm                                      '`Move-VM`&#10;Moves a virtual machine to a new Hyper-V host.'
-[New-ADOrganizationalUnit]:       #new-adorganizationalunit                     "`New-ADOrganizationalUnit`"
-[New-ADUser]:                     #new-aduser                                   "`New-ADUser` &#10; Create a new Active Directory user"
-[New-Alias]:                      #new-alias                                    "`New-Alias` (alias: `nal`) &#10; Create a new alias"
-[New-Guid]:                       #new-guid                                     "`New-Guid`"
-[New-Item]:                       #new-item                                     "`New-Item`"
-[New-NetFirewallRule]:            #new-netfirewallrule                          "`New-NetFirewallRule`"
-[New-NetIpAddress]:               #new-netipaddress                             "`New-NetIpAddress` &#10; Manually configure network interface, if a DHCP server is unavailable"
-[New-PSSession]:                  #new-pssession                                "`New-PSSession` (`nsn`) &#10; Start a new remote PowerShell session with a remote computer"
-[New-Partition]:                  #new-partition                                "`New-Partition`"
-[New-SmbShare]:                   #new-smbshare                                 "`New-SmbShare`"
-[New-VMSwitch]:                   #new-vmswitch                                 "`New-VMSwitch`"
-[New-VM]:                         #new-vm                                       '`New-VM`&#10;Creates a new virtual machine.'
-[Out-Null]:                       #out-null                                     "`Out-Null` &#10; Delete output instead of sending it down the pipeline"
-[Remove-ADOrganizationalUnit]:    #remove-adorganizationalunit                  "`Remove-ADOrganizationalUnit`"
-[Remove-Item]:                    #remove-item                                  "`Remove-Item` (alias: `rm`, `ri`, `rmdir`, `rd`, `del`)"
-[Remove-Partition]:               #remove-partition                             "`Remove-Partition`"
-[Remove-VM]:                      #remove-vm                                    '`Remove-VM`&#10;Deletes a virtual machine.'
-[Rename-Computer]:                #rename-computer                              "`Rename-Computer`"
-[Rename-VM]:                      #rename-vm                                    '`Rename-VM`&#10;Renames a virtual machine.'
-[Repair-VM]:                      #repair-vm                                    '`Repair-VM`&#10;Repairs one or more virtual machines.'
-[Resolve-DNSName]:                #resolve-dnsname                              '`Resolve-DNSName`&#10;...&#10;MeasureUp Practice Lab: Security+'
-[Restart-Computer]:               #restart-computer                             "`Restart-Computer`"
-[Restart-VM]:                     #restart-vm                                   '`Restart-VM`&#10;Restarts a virtual machine.'
-[Resume-VM]:                      #resume-vm                                    '`Resume-VM`&#10;Resumes a suspended (paused) virtual machine.'
-[Save-VM]:                        #save-vm                                      '`Save-VM`&#10;Saves a virtual machine.'
-[Search-ADAccount]:               #search-adaccount                             "`Search-ADAccount`"
-[Select-Object]:                  #filters                                      "`Select-Object` (alias: `sc`&#10; Select object or object properties"
-[Set-ADAccountPassword]:          #set-adaccountpassword                        "`Set-ADAccountPassword`"
-[Set-ADObject]:                   #set-adobject                                 "`Set-ADObject`"
-[Set-ADOrganizationalUnit]:       #set-adorganizationalunit                     "`Set-ADOrganizationalUnit`"
-[Set-Alias]:                      #set-alias                                    "`Set-Alias`"
-[Set-Clipboard]:                  #set-clipboard                                "`Set-Clipboard (alias: `scb`): &#10; Set the current Windows clipboard entry"
-[Set-DhcpServerv4OptionValue]:    #set-dhcpserverv4optionvalue                  "`Set-DhcpServerv4OptionValue`"
-[Set-DnsClientServerAddress]:     #set-dnsclientserveraddress                   "`Set-DnsClientServerAddress` &#10; Set DNS server addresses associated with the TCP/IP properties on an interface"
-[Set-ExecutionPolicy]:            #set-executionpolicy                          "`Set-ExecutionPolicy` &#10; Change user preference for the Windows PowerShell execution policy"
-[Set-Location]:                   #set-location                                 "`Set-Location` (alias: `cd`, `sl`, `chdir`) &#10; Set present working directory"
-[Set-NetFirewallRule]:            #set-netfirewallrule                          "`Set-NetFirewallRule`"
-[Set-PSReadlineOption]:           #set-psreadlineoption                         "`Set-PSReadlineOption`"
-[Set-VMFirmware]:                 #set-vmfirmware                               "`Set-VMFirmware` &#10;  "
-[Set-VMMemory]:                   #set-vmmemory                                 "`Set-VMMemory`"
-[Set-VMNetworkAdapter]:           #set-vmnetworkadapter                         "`Set-VMNetworkAdapter`"
-[Set-VMProcessor]:                #set-vmprocessor                              "`Set-VMProcessor`"
-[Set-VM]:                         #set-vm                                       '`Set-VM`&#10;Configures a virtual machine.'
-[Start-DscConfiguration]:         #start-dscconfiguration                       "`Start-DscConfiguration` (alias: `sacfg`) &#10; Apply configuration to nodes"
-[Start-Job]:                      #start-job                                    "`Start-Job` (alias: `sajb`)"
-[Start-Service]:                  #start-service                                "`Start-Service` (alias: `sasv`) &#10; Start one or more stopped services"
-[Start-VM]:                       #start-vm                                     '`Start-VM`&#10;Starts a virtual machine.'
-[Stop-Computer]:                  #stop-computer                                "`Stop-Computer`"
-[Stop-Service]:                   #stop-service                                 "`Stop-Service` (alias: `spsv`) Stop one or more services"
-[Stop-VM]:                        #stop-vm                                      '`Stop-VM`&#10;Shuts down, turns off, or saves a virtual machine.'
-[Suspend-VM]:                     #suspend-vm                                   '`Suspend-VM`&#10;Suspends, or pauses, a virtual machine.'
-[Uninstall-ADDSDomainController]: #uninstall-addsdomaincontroller               "`Uninstall-ADDSDomainController`"
-[Unlock-ADAccount]:               #unlock-adaccount                             "`Unlock-ADAccount`"
-[Update-DistributionGroupMember]: #update-distributiongroupmember               "`Update-DistributionGroupMember`&#10;Replace all members of distribution groups and mail-enabled security groups"
-[Update-Help]:                    #update-help                                  "`Update-Help` &#10; Download help files"
-[Where-Object]:                   #filters                                      "`Where-Object` (alias: `?`, `where`) &#10; Select objects from a collection based on their property values"
-[Write-Host]:                     #write-host                                   "`Write-Host`"
-[Write-Output]:                   #write-output                                 "`Write-Output` (alias: `echo`, `write`) &#10; Send the specified objects to the next command in the pipeline. If the command is the last command in the pipeline, the objects are displayed in the console."
+[$$]:                                                #comparison-with-bash                         "`$$`&#10; Automatic variable referring to the last \"token\" (argument) in the previous command"
+[$?]:                                                #comparison-with-bash                         "`$?`&#10; Automatic variable containing the execution status of the previous command"
 
-[Add-VMSwitch]: # '`Add-VMSwitch`&#10;Adds a virtual switch to an Ethernet resource pool.'
-[Get-VMSwitch]: # '`Get-VMSwitch`&#10;Gets virtual switches from one or more virtual Hyper-V hosts.'
-[New-VMSwitch]: # '`New-VMSwitch`&#10;Creates a new virtual switch on one or more virtual machine hosts.'
-[Remove-VMSwitch]: # '`Remove-VMSwitch`&#10;Deletes a virtual switch.'
-[Rename-VMSwitch]: # '`Rename-VMSwitch`&#10;Renames a virtual switch.'
-[Set-VMSwitch]: # '`Set-VMSwitch`&#10;Configures a virtual switch.'
+[Add-ADPrincipalGroupMembership]:                    #add-adprincipalgroupmembership               "`Add-ADPrincipalGroupMembership` &#10; Add a member to one or more Active Directory groups"
+[Add-Computer]:                                      #add-computer                                 "`Add-Computer` &#10; Join a computer to a domain"
+[Add-Content]:                                       #add-content                                  "`Add-Content`"
+[Add-DhcpServerInDC]:                                #add-dhcpserverindc                           "`Add-DhcpServerInDC`"
+[Add-DhcpServerv4Scope]:                             #add-dhcpserverv4scope                        "`Add-DhcpServerv4Scope` &#10; Add an IPv4 scope on the DHCP server service."
+[Add-DistributionGroupMember]:                       #add-distributiongroupmember                  "`Add-DistributionGroupMember`&#10;Add a single recipient to distribution groups and mail-enabled security groups"
+[Add-PSSnapin]:                                      #add-pssnapin                                 "`Add-PSSnapin` (alias: `asnp`) &#10; Load a given list of snap-ins (.NET assemblies containing a collection of cmdlets and/or providers for use within PowerShell) either by name or via the pipeline - last supported in PowerShell 5.1"
+[Add-Type]:                                          #add-type                                     '`Add-Type`&#10;Add a.NET Framework type (a class) to a Windows PowerShell session'
+[Add-WindowsFeature]:                                #install-windowsfeature                       '`Add-WindowsFeature` (alias: `Install-WindowsFeature`)'
+
+[Checkpoint-VM]:                                     #checkpoint-vm                                '`Checkpoint-VM`&#10;Creates a checkpoint of a virtual machine.'
+[Clear-Host]:                                        #clear-host                                   "`Clear-Host`"
+[Close-SmbOpenFile]:                                 #close-smbopenfile                            '`Close-SmbOpenFile`&#10;Close a file that is open by one of the clients of the SMB server&#10;"Close-SmbOpenFile". _Microsoft Docs_.'
+[Compare-VM]:                                        #compare-vm                                   '`Compare-VM`&#10;Compares a virtual machine and a virtual machine host for compatibility, returning a compatibility report.'
+[Compress-Archive]:                                  #compress-archive                             "`Compress-Archive`"
+[Copy-Item]:                                         #copy-item                                    "`Copy-Item`"
+
+[Debug-VM]:                                          #debug-vm                                     '`Debug-VM`&#10;Debugs a virtual machine.'
+[Disconnect-PSSession]:                              #disconnect-pssession                         "`Disconnect-PSSession` (alias: `dnsn`) &#10; Terminate a remote PowerShell session begun with `New-PSSession`"
+
+[Enable-PSRemoting]:                                 #enable-psremoting                            "`Enable-PSRemoting` &#10; Allow remote PowerShell management"
+[Enable-WindowsOptionalFeature]:                     #enable-windowsoptionalfeature                "`Enable-WindowsOptionalFeature` &#10; Enable or restore an optional feature in a Windows image"
+[Enter-PSSession]:                                   #enter-pssession                              "`Enter-PSSession` (alias: `etsn`) &#10; Interact with the specified PowerShell session"
+[Exit-PSSession]:                                    #exit-pssession                               "`Exit-PSSession` (alias: `exsn`) &#10; End an interactive session with a remote computer"
+[Expand-Archive]:                                    #expand-archive                               "`Expand-Archive` &#10; Decompress archives"
+[Export-Alias]:                                      #export-alias                                 "`Export-Alias` (alias: `epal`) &#10; Export information about currently defined aliases to a file."
+[Export-CliXml]:                                     #export-clixml                                "`Export-CliXml` &#10; Serialize a PowerShell object as a Common Language Infrastructure (CLI) XML file"
+[Export-Csv]:                                        #export-csv                                   "`Export-Csv` &#10; Export PowerShell objects to CSV"
+[Export-VM]:                                         #export-vm                                    '`Export-VM`&#10;Exports a virtual machine to disk.'
+
+[ForEach-Object]:                                    #filters                                      "`ForEach-Object` (alias: `%`, `foreach`) &#10; Perform an operation against each item in a collection of input objects."
+[Format-List]:                                       #output-formatting                            "`Format-List` (alias: `fl`) &#10; Display output in list style"
+[Format-Table]:                                      #output-formatting                            "`Format-Table` (alias: `ft`) &#10; Display output in table style"
+
+[Get-ADDSForest]:                                    #get-addsforest                               "`Get-ADDSForest`"
+[Get-ADOrganizationalUnit]:                          #get-adorganizationalunit                     "`Get-ADOrganizationalUnit`"
+[Get-ADPrincipalGroupMembership]:                    #get-adprincipalgroupmembership               "`Get-ADPrincipalGroupMembership` &#10; Get the Active Directory groups that have a specified user, computer, group, or service account"
+[Get-ADUser]:                                        #get-aduser                                   "`Get-ADUser` &#10; Get one or more Active Directory Users"
+[Get-Alias]:                                         #get-alias                                    "`Get-Alias` (alias `gal`) &#10; Display aliases"
+[Get-ChildItem]:                                     #get-childitem                                "`Get-ChildItem` (alias: `dir`, `gci`, `ls`) &#10; Get items in one or more locations"
+[Get-Clipboard]:                                     #get-clipboard                                "`Get-Clipboard` (alias: `gcb`) &#10; Display items in clipboard"
+[Get-Command]:                                       #get-command                                  "`Get-Command` (alias: `gcm`) &#10; Display all installed commands, including aliases, applications, filters, functions, and scripts (alias: gcm)"
+[Get-Content]:                                       #get-content                                  "`Get-Content` (alias: `cat`, `gc`, `type`)"
+[Get-Credential]:                                    #credentials                                  "`Get-Credential`"
+[Get-Disk]:                                          #get-disk                                     "`Get-Disk`"
+[Get-DistributionGroupMember]:                       #get-distributiongroupmember                  "Get-DistributionGroupMember&#10;View members of distribution groups and mail-enabled security groups"
+[Get-Help]:                                          #get-help                                     "`Get-Help` &#10; Display help file for cmdlets"
+[Get-History]:                                       #get-history                                  "`Get-History` (alias: `ghy`, `h`, `history`) &#10; Display history of inputted commands for the current session"
+[Get-Item]:                                          #get-item                                     "`Get-Item`"
+[Get-Location]:                                      #get-location                                 "`Get-Location`"
+[Get-Member]:                                        #get-member                                   "`Get-Member` (alias: `gm`) &#10; Display properties and methods of a PowerShell object"
+[Get-Module]:                                        #get-module                                   "`Get-Module` (alias: `gmo`) &#10; Display currently loaded PowerShell modules"
+[Get-NetAdapter]:                                    #get-netadapter                               "`Get-NetAdapter` &#10; Display available network interfaces"
+[Get-NetFirewallRule]:                               #get-netfirewallrule                          "`Get-NetFirewallRule`"
+[Get-PSDrive]:                                       #get-psdrive                                  "`Get-PSDrive` (alias: `gdr`) &#10; Display mapped drives"
+[Get-PSReadlineOption]:                              #get-psreadlineoption                         "`Get-PSReadlineOption`"
+[Get-PSSession]:                                     #get-pssession                                "`Get-PSSession` (alias: `gsn`) &#10; Get the Windows PowerShell sessions on local and remote computers"
+[Get-PSSnapin]:                                      #get-pssnapin                                 "`Get-PSSnapin` (alias: `gsnp`) &#10; Display currently loaded snapins (.NET assemblies containing a collection of cmdlets and/or providers for use within PowerShell) - last supported in PowerShell 5.1"
+[Get-Partition]:                                     #get-partition                                "`Get-Partition`"
+[Get-Process]:                                       #get-process                                  "`Get-Process` (alias: `gps`, `ps`) &#10; Display running processes"
+[Get-Service]:                                       #get-service                                  "`Get-Service` (alias: `gsv`) &#10; Display services"
+[Get-SmbOpenFile]:                                   #get-smbopenfile                              '`Get-SmbOpenFile`&#10;Retrieves basic information about the files that are open on behalf of the clients of the Server Message Block (SMB) server&#10;"Get-SmbOpenFile". _Microsoft Docs_.'
+[Get-VM]:                                            #get-vm                                       '`Get-VM`&#10;Gets the virtual machines from one or more Hyper-V hosts.'
+[Get-WMIObject]:                                     #get-wmiobject                                "`Get-WMIObject`"
+[Get-WindowsFeature]:                                #get-windowsfeature                           "`Get-WindowsFeature`"
+
+[Import-CliXml]:                                     #import-clixml                                "`Import-CliXml` &#10; Import a Common Language Infrastructure (CLI) XML file with data that represents Microsoft .NET Framework objects and create PowerShell objects from it"
+[Import-Csv]:                                        #import-csv                                   "`Import-Csv` (alias: `ipcsv`) &#10; Import CSV files as PowerShell objects"
+[Import-Module]:                                     #import-module                                "`Import-Module` (alias: `ipmo`) &#10; Manually import a module, rather than waiting for it to load dynamically when using one of its cmdlets"
+[Import-VM]:                                         #import-vm                                    '`Import-VM`&#10;Imports a virtual machine from a file.'
+[Install-ADDSDomainController]:                      #install-addsdomaincontroller                 '`Install-ADDSDomainController`&#10;Installs a new domain controller in an Active Directory domain'
+[Install-ADDSDomain]:                                #install-addsdomain                           "`Install-ADDSDomain`"
+[Install-ADDSForest]:                                #install-addsforest                           "`Install-ADDSForest`"
+[Install-Module]:                                    #install-module                               "`Install-Module`"
+[Install-WindowsFeature]:                            #install-windowsfeature                       "`Install-WindowsFeature` (alias: `Add-WindowsFeature`) &#10; Install one or more roles, role services, or features on either the local or a specified remote server that is running Windows Server 2012 R2"
+[Invoke-GPUpdate]:                                   #invoke-gpupdate                              '```&#10;Invoke-GPUpdate&#10;```&#10;Schedule a remote Group Policy refresh on the specified host'
+[Invoke-WebRequest]:                                 #invoke-webrequest                            "`Invoke-WebRequest`"
+
+[Measure-VM]:                                        #measure-vm                                   '`Measure-VM`&#10;Reports resource utilization data for one or more virtual machines.'
+[Move-VM]:                                           #move-vm                                      '`Move-VM`&#10;Moves a virtual machine to a new Hyper-V host.'
+
+[New-ADOrganizationalUnit]:                          #new-adorganizationalunit                     "`New-ADOrganizationalUnit`"
+[New-ADUser]:                                        #new-aduser                                   "`New-ADUser` &#10; Create a new Active Directory user"
+[New-Alias]:                                         #new-alias                                    "`New-Alias` (alias: `nal`) &#10; Create a new alias"
+[New-Guid]:                                          #new-guid                                     "`New-Guid`"
+[New-Item]:                                          #new-item                                     "`New-Item`"
+[New-NetFirewallRule]:                               #new-netfirewallrule                          "`New-NetFirewallRule`"
+[New-NetIpAddress]:                                  #new-netipaddress                             "`New-NetIpAddress` &#10; Manually configure network interface, if a DHCP server is unavailable"
+[New-PSSession]:                                     #new-pssession                                "`New-PSSession` (`nsn`) &#10; Start a new remote PowerShell session with a remote computer"
+[New-Partition]:                                     #new-partition                                "`New-Partition`"
+[New-SmbShare]:                                      #new-smbshare                                 "`New-SmbShare`"
+[New-VMSwitch]:                                      #new-vmswitch                                 "`New-VMSwitch`"
+[New-VM]:                                            #new-vm                                       '`New-VM`&#10;Creates a new virtual machine.'
+
+[Out-Null]:                                          #out-null                                     "`Out-Null` &#10; Delete output instead of sending it down the pipeline"
+
+[Remove-ADOrganizationalUnit]:                       #remove-adorganizationalunit                  "`Remove-ADOrganizationalUnit`"
+[Remove-Item]:                                       #remove-item                                  "`Remove-Item` (alias: `rm`, `ri`, `rmdir`, `rd`, `del`)"
+[Remove-Partition]:                                  #remove-partition                             "`Remove-Partition`"
+[Remove-VM]:                                         #remove-vm                                    '`Remove-VM`&#10;Deletes a virtual machine.'
+[Rename-Computer]:                                   #rename-computer                              "`Rename-Computer`"
+[Rename-VM]:                                         #rename-vm                                    '`Rename-VM`&#10;Renames a virtual machine.'
+[Repair-VM]:                                         #repair-vm                                    '`Repair-VM`&#10;Repairs one or more virtual machines.'
+[Resolve-DNSName]:                                   #resolve-dnsname                              '`Resolve-DNSName`&#10;...&#10;MeasureUp Practice Lab: Security+'
+[Restart-Computer]:                                  #restart-computer                             "`Restart-Computer`"
+[Restart-VM]:                                        #restart-vm                                   '`Restart-VM`&#10;Restarts a virtual machine.'
+[Resume-VM]:                                         #resume-vm                                    '`Resume-VM`&#10;Resumes a suspended (paused) virtual machine.'
+
+[Save-VM]:                                           #save-vm                                      '`Save-VM`&#10;Saves a virtual machine.'
+[Search-ADAccount]:                                  #search-adaccount                             "`Search-ADAccount`"
+[Select-Object]:                                     #filters                                      "`Select-Object` (alias: `sc`&#10; Select object or object properties"
+[Set-ADAccountPassword]:                             #set-adaccountpassword                        "`Set-ADAccountPassword`"
+[Set-ADObject]:                                      #set-adobject                                 "`Set-ADObject`"
+[Set-ADOrganizationalUnit]:                          #set-adorganizationalunit                     "`Set-ADOrganizationalUnit`"
+[Set-Alias]:                                         #set-alias                                    "`Set-Alias`"
+[Set-Clipboard]:                                     #set-clipboard                                "`Set-Clipboard (alias: `scb`): &#10; Set the current Windows clipboard entry"
+[Set-DhcpServerv4OptionValue]:                       #set-dhcpserverv4optionvalue                  "`Set-DhcpServerv4OptionValue`"
+[Set-DnsClientServerAddress]:                        #set-dnsclientserveraddress                   "`Set-DnsClientServerAddress` &#10; Set DNS server addresses associated with the TCP/IP properties on an interface"
+[Set-ExecutionPolicy]:                               #set-executionpolicy                          "`Set-ExecutionPolicy` &#10; Change user preference for the Windows PowerShell execution policy"
+[Set-Location]:                                      #set-location                                 "`Set-Location` (alias: `cd`, `sl`, `chdir`) &#10; Set present working directory"
+[Set-NetFirewallRule]:                               #set-netfirewallrule                          "`Set-NetFirewallRule`"
+[Set-PSReadlineOption]:                              #set-psreadlineoption                         "`Set-PSReadlineOption`"
+[Set-VMFirmware]:                                    #set-vmfirmware                               "`Set-VMFirmware` &#10;  "
+[Set-VMMemory]:                                      #set-vmmemory                                 "`Set-VMMemory`"
+[Set-VMNetworkAdapter]:                              #set-vmnetworkadapter                         "`Set-VMNetworkAdapter`"
+[Set-VMProcessor]:                                   #set-vmprocessor                              "`Set-VMProcessor`"
+[Set-VM]:                                            #set-vm                                       '`Set-VM`&#10;Configures a virtual machine.'
+[Start-DscConfiguration]:                            #start-dscconfiguration                       "`Start-DscConfiguration` (alias: `sacfg`) &#10; Apply configuration to nodes"
+[Start-Job]:                                         #start-job                                    "`Start-Job` (alias: `sajb`)"
+[Start-Service]:                                     #start-service                                "`Start-Service` (alias: `sasv`) &#10; Start one or more stopped services"
+[Start-VM]:                                          #start-vm                                     '`Start-VM`&#10;Starts a virtual machine.'
+[Stop-Computer]:                                     #stop-computer                                "`Stop-Computer`"
+[Stop-Service]:                                      #stop-service                                 "`Stop-Service` (alias: `spsv`) Stop one or more services"
+[Stop-VM]:                                           #stop-vm                                      '`Stop-VM`&#10;Shuts down, turns off, or saves a virtual machine.'
+[Suspend-VM]:                                        #suspend-vm                                   '`Suspend-VM`&#10;Suspends, or pauses, a virtual machine.'
+
+[Uninstall-ADDSDomainController]:                    #uninstall-addsdomaincontroller               "`Uninstall-ADDSDomainController`"
+[Unlock-ADAccount]:                                  #unlock-adaccount                             "`Unlock-ADAccount`"
+[Update-DistributionGroupMember]:                    #update-distributiongroupmember               "`Update-DistributionGroupMember`&#10;Replace all members of distribution groups and mail-enabled security groups"
+[Update-Help]:                                       #update-help                                  "`Update-Help` &#10; Download help files"
+
+[Where-Object]:                                      #filters                                      "`Where-Object` (alias: `?`, `where`) &#10; Select objects from a collection based on their property values"
+[Write-Host]:                                        #write-host                                   "`Write-Host`"
+[Write-Output]:                                      #write-output                                 "`Write-Output` (alias: `echo`, `write`) &#10; Send the specified objects to the next command in the pipeline. If the command is the last command in the pipeline, the objects are displayed in the console."
+
+[Add-VMSwitch]:                                      # '`Add-VMSwitch`&#10;Adds a virtual switch to an Ethernet resource pool.'
+[Get-VMSwitch]:                                      # '`Get-VMSwitch`&#10;Gets virtual switches from one or more virtual Hyper-V hosts.'
+[New-VMSwitch]:                                      # '`New-VMSwitch`&#10;Creates a new virtual switch on one or more virtual machine hosts.'
+[Remove-VMSwitch]:                                   # '`Remove-VMSwitch`&#10;Deletes a virtual switch.'
+[Rename-VMSwitch]:                                   # '`Rename-VMSwitch`&#10;Renames a virtual switch.'
+[Set-VMSwitch]:                                      # '`Set-VMSwitch`&#10;Configures a virtual switch.'

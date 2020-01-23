@@ -3,9 +3,10 @@
 Topic                         | Commands
 :---                          | :---
 Ansible                       | [`ansible`](../ansible.md#ansible) [`ansible-galaxy`](../ansible.md#ansible-galaxy) [`ansible-playbook`](../ansible.md#ansible-playbook)
-Archive                       | [**`bzip2`**][bzip2] &bull; [`compress`](archive.md#compress) [`uncompress`](archive.md#uncompress) &bull; [`gzip`][gzip] [`tar`](archive.md#tar) [`xz`][xz] &bull; [**`zip`**](archive.md#zip) [`unzip`](archive.md#unzip) [`zipcloak`](archive.md#zipcloak) [`zipdetails`](archive.md#zipdetails) [`zipgrep`](archive.md#zipgrep) [`zipinfo`](archive.md#zipinfo) [`zipnote`](archive.md#zipnote) [`zipsplit`](archive.md#zipsplit) &bull; [`cpio`][cpio] [`dar`](archive.md#dar)
+Archive                       | [`ar`][ar] [**`bzip2`**][bzip2] &bull; [`compress`](archive.md#compress) [`uncompress`](archive.md#uncompress) &bull; [`gzip`][gzip] [`tar`](archive.md#tar) [`xz`][xz] &bull; [**`zip`**](archive.md#zip) [`unzip`](archive.md#unzip) [`zipcloak`](archive.md#zipcloak) [`zipdetails`](archive.md#zipdetails) [`zipgrep`](archive.md#zipgrep) [`zipinfo`](archive.md#zipinfo) [`zipnote`](archive.md#zipnote) [`zipsplit`](archive.md#zipsplit) &bull; [`cpio`][cpio] [`dar`](archive.md#dar)
 Bash builtins                 | [`let`](bash.md#let) [`source`](bash.md#source)
 Benchmarking                  | [`free`][free] [`glances`][glances]  [`iperf`][iperf] [`lscpu`][lscpu] `nproc` `uptime` <br>**Sysstat** [`iostat`][iostat] [`mpstat`][mpstat] [`sar`][sar]
+Build tools                   | [`as`][as] <br>**Autotools** [`aclocal`][aclocal]  [`autoconf`][autoconf] [`autoheader`][autoheader] [`autoreconf`][autoreconf] [`autoscan`][autoscan] [`autoupdate`][autoupdate]
 Date and time                 | [`chrony`](#chrony) [`date`](date.md#date) [`hwclock`](#hwclock) [`timedatectl`](init.md#timedatectl)
 Disk management               | `blkid` [`partx`](partx.md)
 Distributions                 | **Debian** [`adduser`](sysadmin.md#adduser) [**`apt`**](package.md#apt) `apt-cache` `apt-key` `add-apt-repository` <br> **Manjaro** [`mhwd`](#mhwd) [`mhwd-chroot`](#mhwd-chroot) [`pacman`](package.md#pacman) [`yay`](package.md#yay) <br> **Red Hat** [`dnf`][dnf] [`firewall-cmd`](#firewall-cmd) [`yum`](package.md#yum) <br> **Ubuntu** [`netplan`](#netplan)
@@ -33,7 +34,7 @@ X                             | [`xdpyinfo`](X.md#xdpyinfo) [`xlsclients`][xlscl
 
 \#  | Commands sorted alphabetically
 :---| :---
-A   | [`adduser`](#adduser) [`add-apt-repository`](#add-apt-repository) [`alsamixer`](#alsamixer) [`apropos`](#apropos) [`apt`](package.md#apt) [`apt-cache`](package.md#apt-cache) [`apt-key`](package.md#apt-key) [`arp`](#arp) [`at`](#at) [`ausearch`](#ausearch) [`awk`](#awk) 
+A   | [`aclocal`][aclocal] [`adduser`](#adduser) [`add-apt-repository`](#add-apt-repository) [`alsamixer`](#alsamixer) [`apropos`](#apropos) [`apt`](package.md#apt) [`apt-cache`](package.md#apt-cache) [`apt-key`](package.md#apt-key) [`ar`][ar] [`arp`](#arp) [`as`][as] [`at`](#at) [`ausearch`](#ausearch) [`autoconf`][autoconf] [`autoheader`][autoheader] [`awk`](#awk) 
 B   | [`bash`](#bash) [`blkid`](#blkid) [`bmon`](#bmon) [`borg`](#borg) [`bpftrace`](#bpftrace) [`bzcat`](archive.md#bzcat) [`bzip2`][bzip2] [`bzless`](archive.md#bzless) [`bzmore`](archive.md#bzmore) 
 C   | [`cancel`](#cancel) [`cat`](cat.md#cat) [`chage`](#chage) [`chcon`](#chcon) [`chgrp`](#chgrp) [`chkconfig`](#sysvinit) [`chmod`](#chmod) [`chown`](sysadmin.md#chown) [`chpass`](#chpass) [`chrony`](#chrony) [`chsh`](#chsh) [`column`](#column) [`compress`](#compress) [`cp`](#cp) [`crontab`](#crontab) [`crossystem`](#crossystem) [`cryptsetup`](#cryptsetup) [`curl`](#curl) [`cut`](#cut) 
 D   | [`dar`](#dar) [`date`](date.md#date) [`dbus`](#dbus) [`dd`](#dd) [`declare`](#declare) [`depmod`][depmod] [`df`](#df) [`dhclient`](#dhclient) [`diff`](#diff) [`dig`](#dig) [`dirname`](#dirname) [`dm-crypt`](#dm-crypt) [`dmesg`](#dmesg) [`dmidecode`][dmidecode] [`dnf`][dnf] [`doveadm`](#doveadm) [`dpkg`](#dpkg) [`dpkg-reconfigure`](#dpkg-reconfigure) [`dracut`][dracut] [`du`](#du) [`dumpe2fs`](#dumpe2fs) 
@@ -1695,7 +1696,7 @@ Count the number of occurrences of a string
 | uniq -c | sort -nr
 ```
 
----
+##
 
 [4]: https://www.tecmint.com/rdesktop-connect-windows-desktop-from-linux/ "TecMint: \"rdesktop - A RDP Client to Connect Windows Desktop from Linux\""
 [7]: https://youtu.be/ksAfmJfdub0 "YouTube: \"Easy Academic References on the Command Line\""
@@ -1719,42 +1720,67 @@ Count the number of occurrences of a string
 [https://computingforgeeks.com/connect-to-bluetooth-device-from-linux-terminal/]: https://computingforgeeks.com/connect-to-bluetooth-device-from-linux-terminal/ "Computing for Geeks: \"How to connect to Bluetooth device from Linux terminal\""
 [http://www.linux-magazine.com/Issues/2017/197/Command-Line-bluetoothctl#article_i1]: http://www.linux-magazine.com/Issues/2017/197/Command-Line-bluetoothctl#article_i1 "Linux Magazine: \"Blue Control\""
 
-[amixer]:         audio.md#amixer "Command-line mixer for ALSA sound card driver"
+##### 
+[aclocal]:                                           autotools.md#aclocal                                           '```&#10;aclocal&#10;```&#10;Place m4 macro definitions needed by `autoconf` into a single file. `aclocal` first scans for macro definitions in m4 files in its default directory (/usr/share/aclocal) and in the file acinclude.m4, then in the configure.ac file. IT generates an aclocal.m4 file that contains definitions of all m4 macros required by `autoconf`.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 16'
+[amixer]:                                            audio.md#amixer                                                "Command-line mixer for ALSA sound card driver"
+[ar]:                                                archive.md#ar                                                  '```&#10;ar&#10;```&#10;Maintain a group of files that are combined into a file archive. Used most commonly to create and update library files as used by `ld`.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 16'
+[as]:                                                autotools.md#as                                                '```&#10;as&#10;```&#10;Generate an object file from each specified assembly language source file. Primarily intended to assemble the output of the GNU C compiler `gcc` for use by the linker `ld`.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 18'
+[autoconf]:                                          autotools.md#autoconf                                          '```&#10;autoconf&#10;```&#10;Generate a configuration script from m4 macros defined in a template file, if given, or in a configure.ac or configure.in file in the CWD. The generated script is almost invariably called "configure".&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 21'
+[autoheader]:                                        autotools.md#autoheader                                        '```&#10;autoheader&#10;```&#10;Generate a template file of C `#define` statements from m4 macros defined in a template file, if specified, or in configure.ac or configure.in in the CWD. The generated template file is almost invariably called config.h.in or config.hin&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 22'
+[automake]:                                          autotools.md#automake                                          '```&#10;automake&#10;```&#10;Create GNU standards-compliant Makefile.in files from Makefile.am template files&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 23'
+[autoreconf]:                                        autotools.md#autoreconf                                        '```&#10;autoreconf&#10;```&#10;Update configure scripts by running `autoconf`, `autoheader`, `aclocal`, `automake`, and `libtoolize` as needed&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 21'
+[autoscan]:                                          autotools.md#autoscan                                          '```&#10;autoscan&#10;```&#10;Create or maintain a preliminary configure.ac file named configure.scan based on source files in specified directory or CWD.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 21'
+[autoupdate]:                                        autotools.md#autoupdate                                        '```&#10;autoupdate&#10;```&#10;Update the configure template file or configure.ac if none is specified&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 21'
+
+
+##### 
 [bluetoothctl]:   #bluetoothctl '`bluetoothctl`&#10;Canonical implementation of Bluetooth on Linux'
 [bzip2]:          archive.md#bzip2 '`bzip2`&#10;Compress or decompress archives using the Burrows-Wheeler block-sorting text-compression algorithm.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 271'
+
+[cancel]: #cancel '`cancel`&#10;Remove a print job that is in the queue&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 431'
 [cpio]:           archive.md#cpio '`cpio`&#10;Backup utility that uses options similar to `tar`&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 491-492'
 [CUPS]: # 'Common Unix Printing System (CUPS)&#10;Most common printing system used on Linux computers today&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 428'
 [cupsaccept]:     #cupsaccept '`cupsaccept`&#10;Enable spooling for specified printer&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 429'
 [cupsreject]: #cupsreject '`cupsreject`&#10;Disable spooling for specified printer&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 429'
 [cupsenable]: #cupsenable '`cupsenable`&#10;Enable printing from the specified printer&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 429'
 [cupsdisable]: #cupsdisable '`cupsdisable`&#10;Disable printing from the specified printer&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 429'
+
 [depmod]: # '`depmod`&#10;Builds the modules.dep file, which contains module dependencies and is used by `modprobe` to determine which modules need to be loaded&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 15'
 [dmidecode]: #dmidecode '`dmidecode`&#10;Display a description of hardware components&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 324'
 [dnf]: package.md#dnf '"Dandified YUM", successor to `yum` as a package manager for RPM-based Linux distributions like Fedora.'
 [dracut]: # '`dracut`&#10;Executed by `mkinitrd` but rarely used manually&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 8'
+
 [ethtool]: # '`ethtool`&#10;Display and configure network device settings.'
+
 [fc-cache]: #fc-cache "Update the font cache."
 [free]: benchmarking.md#free "Display amount of free and used memory in the system"
 [ftp]: # 'Transfer files to and from a remote network site'
+
 [glances]: benchmarking.md#glances "Cross-platform monitoring tool, written in Python"
 [groupadd]: sysadmin.md#groupadd "Create a new group"
 [gzip]: #archive.md#gzip '`gzip`&#10;Compress or decompress archives using the Lempel-Ziv coding method&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 269'
+
 [hostnamectl]: systemd.md#hostnamectl "Control the system hostname"
 [hping3]: network.md#hping3 "Active network smashing tool"
 [hwclock]: #hwclock "Access the BIOS clock"
+
 [iftop]: # '`iftop`&#10;Display network connections using the most bandwidth&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 281'
 [iostat]: benchmarking.md#iostat '`iostat`&#10;Display input/output statistics on devices, including partitions&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 48&#10;---&#10;Measure the flow of information to and from disk devices&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 637'
 [ip]: network.md#ip "Newer alternative to the old `ifconfig`"
 [iperf]: # '`iperf`&#10;Create tests of the throughput between two systems, requiring setup on both client and server&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 281'
 [ipset]: # '`ipset`&#10;Create a "set" of IP addresses to which firewall rules can be applied&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 282'
 [iw]: network.md#iw "Show or manipulate wireless devices and their configuration"
+
 [journalctl]: systemd.md#journalctl "Query the systemd journal"
+
 [kinit]: # '`kinit`&#10;Kerberos utility to obtain an individual ticket, which is then cached on the local system.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 239'
 [klist]: # '`klist`&#10;Display a list of cached Kerberos tickets&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 239'
+
 [localectl]: systemd.md#localectl "Control the system locale and keyboard layout settings"
 [logger]: #logger "Create a one-time file entry specified by the user"
 [logrotate]: #logrotate '`logrotate`&#10;Rename ("rotate") log files on a cyclic basis using /etc/logrotate.conf to determine behavior&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 445-447&#10;---&#10;Utility designed to ensure the partition that holds log files has enough room to handle them by rotating log files, reducing the space they use, typically configured to run automatically as a cron job&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 250-252'
 [loginctl]: systemd.md#loginctl "Control the systemd login manager"
+[lp]: #lp '`lp`&#10;Send a print job to a printer&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 428'
 [LPD]: # 'Line Printer Daemon (LPD)&#10;Older Linux printing system&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 432'
 [lpc]: #lpc '`lpc`&#10;View status of printers&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 432'
 [lpq]: #lpq '`lpq`&#10;View print jobs in the print queue&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 432'
@@ -1762,26 +1788,34 @@ Count the number of occurrences of a string
 [lprm]: #lprm '`lprm`&#10;Remove print jobs&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 432'
 [lscpu]: benchmarking.md#lscpu "Display CPU architecture i"
 [lshw]: #lshw '`lshw`&#10;Display detailed information on system hardware&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 325'
+
 [mkinitrd]: # '`mkinitrd`&#10;Creates initramfs file&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 8'
 [mpstat]: benchmarking.md#mpstat '`mpstat`&#10;Report processor-related statistics&#10;---&#10;Utility for monitoring CPU performance&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 635-637'
+
 [nproc]: benchmarking.md#nproc "Display number of CPU processors or cores"
 [ntsysv]: #ntsysv '`ntsysv`&#10;TUI utility used to modify appropriate runtime configuration files so that they start and stop daemons when entering a particular runlevel&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 367'
+
 [rpm]: rpm.md#rpm '`rpm`&#10;RPM package manager'
+
 [sar]: benchmarking.md#sar '`sar`&#10;"system activity reporter", the most widely used performance monitoring tool on Linux&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 637-641'
 [systemctl]: systemd.md#systemctl "Control the systemd system and service manager"
 [systemd-delta]: systemd.md#systemd-dela "Find overridden configuration files"
+
 [timedatectl]: systemd.md#timedatectl "Control the system time and date"
 [tshark]: # '`tshark`&#10;Wireshark terminal interface&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 283'
+
 [virt-install]: virt.md#virt-install '`virt-install`&#10;Command-line tool for creating new KVM, Xen, or Linux container guests using the libvirt hypervisor management library'
 [virt-manager]: virt.md#virt-manager '`virt-manager`&#10;"Virtual Machine Manager", GUI tool for managing VMs developed by Red Hat'
 [vmstat]: benchmarking.md#vmstat '`vmstat`&#10;Provides more detail than `free`&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 642'
+
 [w]: # '`w`&#10;Display output similar to that of `uptime` for all logged-in users'
+
 [xlsclients]: X.md#xlsclients "Determine what applications are running on the legacy X11 server provided with Wayland"
 [xz]: # '`xz`&#10;Compress or decompress archives using the LZMA and LZMA2 compression methods.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 270'
+
 [yumdownloader]: # '`yumdownloader`&#10;Download software packages without installing them&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 84'
+
 [zypper]: # '`zypper`&#10;Package manager for SUSE with a syntax similar to that of `yum`&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 86'
-[cancel]: #cancel '`cancel`&#10;Remove a print job that is in the queue&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 431'
-[lp]: #lp '`lp`&#10;Send a print job to a printer&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 428'
 
 
 [/etc/samba/smb.conf]: # "Samba configuration file"

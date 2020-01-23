@@ -34,7 +34,7 @@ echo 'message' | mail -s 'subject' -a /path/to/attachment
 ```
 
 ### `mailmerge`
-Mailmerge is a command-line Python program that provides a powerful way to send many customized emails by using Jinja2 templating. It is available from Fedora's repositories through `dnf` and is also available from PyPI. [[ref](https://opensource.com/article/19/8/sending-custom-emails-python "opensource.com - Sending custom emails with Python")]
+Mailmerge is a command-line Python program that provides a powerful way to send many customized emails by using Jinja2 templating. It is available from Fedora's repositories through `dnf` and is also available from PyPI. [[ref](https://opensource.com/article/19/8/sending-custom-emails-python "opensource.com: \"Sending custom emails with Python\"")]
 
 Configuration file            | Description
 :---                          | :---
