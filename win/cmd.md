@@ -1,16 +1,30 @@
 # Command Prompt
-\#      | Commands sorted alphabetically
----     | ---
-**A-N** | [`adprep`][adprep] [`arp`](#arp) &bull; [`bcdedit`][bcdedit] [`bootrec`](#bootrec) &bull; [`cscript`][cscript] &bull; [`diskpart`][diskpart] &bull; [`ipconfig`](#ipconfig) &bull; [`nbtstat`](#nbtstat) [`ncpa.cpl`][ncpa.cpl] [`netsh`](#netsh) [`ntdsutil`][ntdsutil]
-**O-Z** | [`route`](#route) &bull; [`shutdown`](#shutdown) [`slmgr`][slmgr] [`systeminfo`](#systeminfo) &bull; [`tracert`](#tracert) [`traceroute`](#tracert) &bull; [`winrm`](#winrm) [`wmic`][wmic]
+Commands sorted alphabetically
+---
+[`adprep`][adprep] [`arp`](#arp) &bull; [`bcdedit`][bcdedit] [`bootrec`](#bootrec) &bull; [`cscript`][cscript] &bull; [`diskpart`][diskpart] &bull; [`ipconfig`](#ipconfig) &bull; [`nbtstat`](#nbtstat) [`netsh`](#netsh) [`ntdsutil`][ntdsutil] &bull; [`route`](#route) &bull; [`shutdown`](#shutdown) [`slmgr`][slmgr] [`systeminfo`](#systeminfo) &bull; [`tracert`](#tracert) [`traceroute`](#tracert) &bull; [`winrm`](#winrm) [`wmic`][wmic]
 
-\#      | PowerShell equivalents to Command Prompt commands
----     | ---
-**A-Z** | [`gpupdate /force`][Invoke-GPUpdate]
+PowerShell equivalents to Command Prompt commands
+---
+[`gpupdate /force`][Invoke-GPUpdate]
 
-\#      | Control Panel tools [^][https://support.microsoft.com/en-us/help/192806/how-to-run-control-panel-tools-by-typing-a-command]
----     | ---
-**A-Z** | 
+Control Panel tools [^][https://support.microsoft.com/en-us/help/192806/how-to-run-control-panel-tools-by-typing-a-command]
+---
+[`access.cpl`][access.cpl] [`appwiz.cpl`][appwiz.cpl] &bull; [`desk.cpl`][desk.cpl] &bull; [`findfast.cpl`][findfast.cpl] &bull; [`inetcpl.cpl`][inetcpl.cpl] [`intl.cpl`][intl.cpl] &bull; [`joy.cpl`][joy.cpl] &bull; [`main.cpl`][main.cpl] [`mlcfg32.cpl`][mlcfg32.cpl] [`mmsys.cpl`][mmsys.cpl] &bull; [`ncpa.cpl`][ncpa.cpl] &bull; [`sysdm.cpl`][sysdm.cpl] &bull; [`timedate.cpl`][timedate.cpl] &bull; [`wgpocpl.cpl`][wgpocpl.cpl]
+
+[access.cpl]:                                        #access.cpl                                        '```&#10;C:\> access.cpl&#10;```&#10;Accessibility Options'
+[appwiz.cpl]:                                        #appwiz.cpl                                        '```&#10;C:\> appwiz.cpl&#10;```&#10;Add/Remove Programs'
+[desk.cpl]:                                          #desk.cpl                                          '```&#10;C:\> desk.cpl&#10;```&#10;Display Properties'
+[findfast.cpl]:                                      #findfast.cpl                                      '```&#10;C:\> findfast.cpl&#10;```&#10;FindFast'
+[inetcpl.cpl]:                                       #inetcpl.cpl                                       '```&#10;C:\> inetcpl.cpl&#10;```&#10;Internet Properties'
+[intl.cpl]:                                          #intl.cpl                                          '```&#10;C:\> intl.cpl&#10;```&#10;Regional Settings'
+[joy.cpl]:                                           #joy.cpl                                           '```&#10;C:\> joy.cpl&#10;```&#10;Joystick Properties'
+[main.cpl]:                                          #main.cpl                                          '```&#10;C:\> main.cpl&#10;```&#10;Mouse Properties'
+[mlcfg32.cpl]:                                       #mlcfg32.cpl                                       '```&#10;C:\> mlcfg32.cpl&#10;```&#10;Microsoft Exchange (or Windows Messaging)'
+[mmsys.cpl]:                                         #mmsys.cpl                                         '```&#10;C:\> mmsys.cpl&#10;```&#10;Sound Properties'
+[ncpa.cpl]:                                          #ncpa.cpl                                          '```&#10;C:\> ncpa.cpl&#10;```&#10;Network Settings'
+[sysdm.cpl]:                                         #sysdm.cpl                                         '```&#10;C:\> sysdm.cpl&#10;```&#10;System Properties'
+[timedate.cpl]:                                      #timedate.cpl                                      '```&#10;C:\> timedate.cpl&#10;```&#10;Date/Time Properties'
+[wgpocpl.cpl]:                                       #wgpocpl.cpl                                       '```&#10;C:\> wgpocpl.cpl&#10;```&#10;Microsoft Mail Post Office'
 
 ### `adprep`
 Prepare Active Directory for Windows Server upgrades. Must be run on the Infrastructure Master role owner with the flag `/domainprep`. [[^][Desmond2009]: 29]
@@ -58,8 +72,6 @@ bootrec /rebuildbcd
 ---     | ---
 **A-E** | [`ACTIVE`][diskpart active] [`ADD`][diskpart add] [`ASSIGN`][diskpart assign] [`AUTOMOUNT`][diskpart automount] &bull; [`BREAK`][diskpart break] &bull; [`CLEAN`][diskpart clean] [`CONVERT`][diskpart convert] [`CREATE`][diskpart create] &bull; [`DELETE`][diskpart delete] [`DETAIL`][diskpart detail] &bull; [`EXIT`][diskpart exit] [`EXTEND`][diskpart extend]
 **F-Z** | [`GPT`][diskpart gpt] &bull; [`HELP`][diskpart help] &bull; [`IMPORT`][diskpart import] [`INACTIVE`][diskpart inactive] &bull; [`LIST`][diskpart list] &bull; [`ONLINE`][diskpart online] &bull; [`REM`][diskpart rem] [`REMOVE`][diskpart remove] [`REPAIR`][diskpart repair] [`RESCAN`][diskpart rescan] [`RETAIN`][diskpart retain] &bull; [`SELECT`][diskpart select]
-
-
 ### `ipconfig`
 Option      | Effect
 :---        | :---
@@ -207,3 +219,5 @@ wmic path softwarelicensingservice get OA3xOriginalProductKey
 [wmic]:                                              #wmic                                              '`wmic`&#10;WMI command-line (WMIC) utility provides a command-line interface for WMI.'
 
 [Invoke-GPUpdate]:                                   pwsh.md#invoke-gpupdate                            '```&#10;Invoke-GPUpdate&#10;```&#10;Schedule a remote Group Policy refresh on the specified host'
+
+
