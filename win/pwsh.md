@@ -13,7 +13,7 @@
 **A**   | **`Alias`**&nbsp;[`ep`][Export-Alias]&nbsp;[`g`][Get-Alias]&nbsp;[`n`][New-Alias]&nbsp;[`s`][Set-Alias]&nbsp;&bull; **`Archive`**&nbsp;[`cm`][Compress-Archive]&nbsp;[`en`][Expand-Archive]
 AD      | **`ADAccount`**&nbsp;[`sr`][Search-ADAccount]&nbsp;[`uk`][Unlock-ADAccount]&nbsp;&bull; **`ADAccountPassword`**&nbsp;[`s`][Set-ADAccountPassword]&nbsp;&bull; **`ADDSDomain`**&nbsp;[`is`][Install-ADDSDomain]&nbsp;&bull; **`ADDSDomainController`**&nbsp;[`is`][Install-ADDSDomainController]&nbsp;[`us`][Uninstall-ADDSDomainController]&nbsp;&bull; **`ADDSForest`**&nbsp;[`g`][Get-ADDSForest]&nbsp;[`is`][Install-ADDSForest]&nbsp;&bull; **`ADObject`** [`s`][Set-ADObject]&nbsp;&bull; **`ADOrganizationalUnit`**&nbsp;[`g`][Get-ADOrganizationalUnit]&nbsp;[`n`][New-ADOrganizationalUnit]&nbsp;[`r`][Remove-ADOrganizationalUnit]&nbsp;[`s`][Set-ADOrganizationalUnit]&nbsp;&bull; **`ADPrincipalGroupMembership`**&nbsp;[`a`][Add-ADPrincipalGroupMembership]&nbsp;[`g`][Get-ADPrincipalGroupMembership]&nbsp;&bull; **`ADUser`**&nbsp;[`g`][Get-ADUser]&nbsp;[`n`][New-ADUser]
 **C**   | **`ChildItem`**&nbsp;[`g`][Get-ChildItem]&nbsp;&bull; **`Clipboard`**&nbsp;[`g`][Get-Clipboard]&nbsp;[`s`][Set-Clipboard]&nbsp;&bull; **`Computer`**&nbsp;[`a`][Add-Computer]&nbsp;[`rn`][Rename-Computer]&nbsp;[`rt`][Restart-Computer]&nbsp;[`sp`][Stop-Computer]&nbsp;&bull; **`Content`**&nbsp;[`a`][Add-Content]&nbsp;&bull; **`Credential`** [`g`][Get-Credential] &bull; **`Csv`** [`ep`][Export-Csv] [`ip`][Import-Csv]
-**D**   | **`Disk`** [`g`][Get-Disk] &bull; **`DistributionGroupMember`** [`a`][Add-DistributionGroupMember] [`g`][Get-DistributionGroupMember] [`ud`][Update-DistributionGroupMember] &bull; **`DNSName`**&nbsp;[`rv`][Resolve-DNSName]
+**D**   | **`Disk`** [`g`][Get-Disk] &bull; **`DistributionGroupMember`** [`a`][Add-DistributionGroupMember] [`g`][Get-DistributionGroupMember] [`ud`][Update-DistributionGroupMember] &bull; **`DNSClientServerAddress`** [`s`][Set-DnsClientServerAddress] **`DNSName`**&nbsp;[`rv`][Resolve-DNSName]
 Dhcp    | **`DhcpServerInDC`** [`a`][Add-DhcpServerInDC] &bull; **`DhcpServerV4Scope`** [`a`][Add-DhcpServerv4Scope] &bull; **`DhcpServerv4OptionValue`** [`s`][Set-DhcpServerv4OptionValue]
 **E-M** | **`ExecutionPolicy`** [`s`][Set-ExecutionPolicy] &bull; **`GPUpdate`** [`i`][Invoke-GPUpdate] &bull; **`Guid`** [`n`][New-Guid] &bull; **`Help`** [`g`][Get-Help] [`ud`][Update-Help] &bull; **`Item`** [`cp`][Copy-Item] [`g`][Get-Item] [`n`][New-Item] [`r`][Remove-Item] &bull; **`List`** [`f`][Format-List] &bull; **`Location`** [`g`][Get-Location] [`s`][Set-Location] &bull; **`Module`**&nbsp;[`ip`][Import-Module]&nbsp;[`is`][Install-Module]
 **N**   | **`NetAdapter`** [`g`][Get-NetAdapter] &bull; **`NetFirewallRule`** [`g`][Get-NetFirewallRule] [`n`][New-NetFirewallRule] [`s`][Set-NetFirewallRule] &bull; **`NetIpAddress`** [`n`][New-NetIpAddress] &bull; **`Null`** [`o`][Out-Null]
@@ -595,6 +595,10 @@ View system uptime
 Get-WmiObject -Win32_OperatingSystem -ComputerName localhost |
 Select-Object -Property @{n="Last Boot Time";e={[Management.ManagementDateTimeConvert]::ToDateTime($_.LastBootUpTime)}}
 ```
+Display Windows activation key [^][https://www.thewindowsclub.com/find-windows-product-key]
+```powershell
+(Get-WmiObject -query ‘select * from SoftwareLicensingService’).OA3xOriginalProductKey
+```
 ### `Import-CliXml`
 ### `Import-Csv`
 Add a CSV full of users
@@ -992,6 +996,18 @@ Write-Output "This is a test network file." -Path | Out-File C:\networkfiles\tes
 
 
 ## Tasks
+#### New domain controller
+[^][Jones]
+```powershell
+Install-WindowsFeature AD-Domain-Services,DHCP -IncludeManagementTools
+Install-ADDSForest -DomainName corp.packtlab.com
+Add-DhcpServerv4Scope -Name "PacktLabNet" -StartRange 10.0.0.50 -EndRange 10.0.0.100 -SubnetMask 255.255.255.0
+Set-DhcpServerv4OptionValue -DnsDomain corp.packtlab.com
+Add-DhcpServerInDC -DnsName dc.corp.packtlab.com
+New-AdUser -SamAccountName SysAdmin -AccountPassword (Read-Host "Set user password" -AsSecureString) -Name "SysAdmin" -Enabled $true -PasswordNeverExpires $true -ChangePasswordAtLogon $false
+Add-ADPrincipalGroupMembership -Identity "CN=SysAdmin,CN=Users,DC=corp,DC=packtlab,DC=com","CN=Domain Admins,CN=Users,DC=corp,DC=packtlab,DC=com"
+Get-ADPrincipalGroupMembership sysadmin
+```
 #### Text-to-speech
 Initialize text-to-speech object [^](https://www.scriptinglibrary.com/languages/powershell/powershell-text-to-speech/ "Powershell: Text To Speech in 3 lines of code")
 ```powershell
@@ -1034,6 +1050,7 @@ $SpeechSynthesizer.SetOutputToWaveFile($WavFileOut)
 [16]: https://sumtips.com/tips-n-tricks/manage-disk-partitions-with-windows-powershell/ "SumTips.com - Manage disk partitions with Windows PowerShell"
 [https://docs.microsoft.com/en-us/powershell/module/smbshare/get-smbopenfile?view=win10-ps]: https://docs.microsoft.com/en-us/powershell/module/smbshare/get-smbopenfile?view=win10-ps '"Get-SmbOpenFile". _Microsoft Docs_.'
 [https://docs.microsoft.com/en-us/powershell/module/smbshare/close-smbopenfile?view=win10-ps]: https://docs.microsoft.com/en-us/powershell/module/smbshare/close-smbopenfile?view=win10-ps '"Close-SmbOpenFile". _Microsoft Docs_.'
+[https://www.thewindowsclub.com/find-windows-product-key]:  https://www.thewindowsclub.com/find-windows-product-key "TheWindowsClub: \"How to find Windows Product Key using Command Prompt or PowerShell\""
 
 [ADAC]:   ../sources/adac.md "Berkouwer, Sander. _Active Directory Administration Cookbook_."
 [WSAC]:   ../sources/wsac.md "Krause, Jordan. _Windows Server 2016 Administration Cookbook_."
