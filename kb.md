@@ -16,6 +16,7 @@ Win+X                     | Power Users Menu
 Win+X I                   | Start Windows PowerShell (if Taskbar setting to replace Command Prompt with Windows Powershell is enabled)
 Win+X C                   | Start Command Prompt (if Taskbar setting to replace Command Prompt with Windows Powershell is disabled)
 Ctrl+Shift+C              | Start Command Prompt
+Ctrl+Shift+Esc            | Start Task Manager
 Win+Shift+S               | Screenshot
 
 # Mac OS X
