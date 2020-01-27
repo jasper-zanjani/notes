@@ -17,7 +17,7 @@ AD      | **`ADAccount`**&nbsp;[`sr`][Search-ADAccount]&nbsp;[`uk`][Unlock-ADAcc
 Dhcp    | **`DhcpServerInDC`** [`a`][Add-DhcpServerInDC] &bull; **`DhcpServerV4Scope`** [`a`][Add-DhcpServerv4Scope] &bull; **`DhcpServerv4OptionValue`** [`s`][Set-DhcpServerv4OptionValue]
 **E-M** | **`ExecutionPolicy`** [`s`][Set-ExecutionPolicy] &bull; **`GPUpdate`** [`i`][Invoke-GPUpdate] &bull; **`Guid`** [`n`][New-Guid] &bull; **`Help`** [`g`][Get-Help] [`ud`][Update-Help] &bull; **`Item`** [`cp`][Copy-Item] [`g`][Get-Item] [`n`][New-Item] [`r`][Remove-Item] &bull; **`List`** [`f`][Format-List] &bull; **`Location`** [`g`][Get-Location] [`s`][Set-Location] &bull; **`Module`**&nbsp;[`ip`][Import-Module]&nbsp;[`is`][Install-Module]
 **N**   | **`NetAdapter`** [`g`][Get-NetAdapter] &bull; **`NetFirewallRule`** [`g`][Get-NetFirewallRule] [`n`][New-NetFirewallRule] [`s`][Set-NetFirewallRule] &bull; **`NetIpAddress`** [`n`][New-NetIpAddress] &bull; **`Null`** [`o`][Out-Null]
-**O**   | **`Object`** [`ForEach`][ForEach-Object] [`sc`][Select-Object] [`Where`][Where-Object] &bull; **`Output`** [`wr`][Write-Output]
+**O**   | **`Object`** [`ForEach`][ForEach-Object] [`n`][New-Object] [`sc`][Select-Object] [`Where`][Where-Object] &bull; **`Output`** [`wr`][Write-Output]
 **P**   | **`Partition`** [`g`][Get-Partition] [`n`][New-Partition] [`r`][Remove-Partition] &bull; **`PSReadlineOption`** [`g`][Get-PSReadlineOption] [`s`][Set-PSReadlineOption] &bull; **`PSSession`** [`dc`][Disconnect-PSSession] [`et`][Enter-PSSession] [`ex`][Exit-PSSession] [`g`][Get-PSSession] [`n`][New-PSSession]
 **S-T** | **`Service`** [`g`][Get-Service] [`sa`][Start-Service] [`sp`][Stop-Service] &bull; **`SmbOpenFile`** [`cs`][Close-SmbOpenFile] [`g`][Get-SmbOpenFile] **`SmbShare`** [`n`][New-SmbShare] &bull; **`Table`** [`f`][Format-Table] &bull; **`Type`** [`a`][Add-Type]
 **V**   | **`VM`** [`cr`][Compare-VM] [`db`][Debug-VM] [`ep`][Export-VM] [`g`][Get-VM] [`ip`][Import-VM] [`m`][Move-VM] [`ms`][Measure-VM] [`n`][New-VM] [`r`][Remove-VM] [`rn`][Rename-VM] [`rt`][Restart-VM] [`ru`][Resume-VM] [`s`][Set-VM] [`sa`][Start-VM] [`sp`][Stop-VM] [`ss`][Suspend-VM] [`sv`][Save-VM] &bull; **`VMFirmware`** [`s`][Set-VMFirmware] &bull; **`VMMemory`** [`s`][Set-VMMemory] &bull; **`VMNetworkAdapter`** [`s`][Set-VMNetworkAdapter] &bull; **`VMProcessor`** [`s`][Set-VMProcessor] &bull; **`VMSwitch`** [`n`][New-VMSwitch]
@@ -39,7 +39,7 @@ System administration | [`Get-Alias`][Get-Alias] [`Get-Command`][Get-Command] [`
 \#      | Bash (hover for PowerShell equivalents)
 ---     | ---
 **A-L** | [`$!`][$$] [`!$`][$$] [`$?`][$?] [`&`][Start-Job] [`>>`][Add-Content] &bull; [`alias`][New-Alias] [`awk`][Select-Object] &bull; `bzip2` &bull; [`cat`][Get-Content] [`cd`][Set-Location] [`cp`][Copy-Item] &bull; [`echo`][Write-Host] &bull; [`find`][Get-ChildItem] &bull; [`grep`][Where-Object] &bull; [`less`](#out-host "`Out-Host -Paging`") [`ls`][Get-ChildItem] &bull; 
-**M-Z** | [`man`][Get-Help] [`mkdir`](#new-item "`New-Item -ItemType Directory`") [`more`](#out-host "`Out-Host -Paging`") &bull; [`print`][Write-Host] [`printf`][Write-Host] [`pwd`][Get-Location] &bull; [`reset`][Clear-Host] [`rm`][Remove-Item] &bull; [`sed`][Select-Object] [`shutdown`][Stop-Computer] [`-r`][Restart-Computer] &bull; [`tail`][Get-Content] [`touch`][New-Item] &bull; [`uniq`](#select-object "`Select-Object -Unique`")
+**M-Z** | [`man`][Get-Help] [`mkdir`](#new-item "`New-Item -ItemType Directory`") [`more`](#out-host "`Out-Host -Paging`") &bull; [`print`][Write-Host] [`printf`][Write-Host] [`pwd`][Get-Location] &bull; [`reset`][Clear-Host] [`rm`][Remove-Item] &bull; [`sed`][Select-Object] [`shutdown`][Stop-Computer] [`-r`][Restart-Computer] &bull; [`tail`][Get-Content] [`touch`][New-Item] &bull; [`uniq`](#select-object "`Select-Object -Unique`") &bull; [`which`][Get-Command]
 
 ## Syntax
 The `Throw` keyword generates a terminating error
@@ -1151,6 +1151,7 @@ $SpeechSynthesizer.SetOutputToWaveFile($WavFileOut)
 [New-Item]:                                          #new-item                                     "`New-Item`"
 [New-NetFirewallRule]:                               #new-netfirewallrule                          "`New-NetFirewallRule`"
 [New-NetIpAddress]:                                  #new-netipaddress                             "`New-NetIpAddress` &#10; Manually configure network interface, if a DHCP server is unavailable"
+[New-Object]:                                        #new-object                                   '```&#10;PS C:\> New-Object&#10;```&#10;Creates an instance of a Microsoft .NET Framework or COM object'
 [New-PSSession]:                                     #new-pssession                                "`New-PSSession` (`nsn`) &#10; Start a new remote PowerShell session with a remote computer"
 [New-Partition]:                                     #new-partition                                "`New-Partition`"
 [New-SmbShare]:                                      #new-smbshare                                 "`New-SmbShare`"
