@@ -1,12 +1,17 @@
 # Command Prompt
 \#      | Commands sorted alphabetically
 ---     | ---
-**A-N** | [`adprep`][adprep] [`arp`](#arp) &bull; [`bcdedit`][bcdedit] [`bootrec`](#bootrec) &bull; [`cscript`][cscript] &bull; [`diskpart`][diskpart] &bull; [`ipconfig`](#ipconfig) &bull; [`nbtstat`](#nbtstat) [`netsh`](#netsh) [`ntdsutil`][ntdsutil]
+**A-N** | [`adprep`][adprep] [`arp`](#arp) &bull; [`bcdedit`][bcdedit] [`bootrec`](#bootrec) &bull; [`cscript`][cscript] &bull; [`diskpart`][diskpart] &bull; [`ipconfig`](#ipconfig) &bull; [`nbtstat`](#nbtstat) [`ncpa.cpl`][ncpa.cpl] [`netsh`](#netsh) [`ntdsutil`][ntdsutil]
 **O-Z** | [`route`](#route) &bull; [`shutdown`](#shutdown) [`slmgr`][slmgr] [`systeminfo`](#systeminfo) &bull; [`tracert`](#tracert) [`traceroute`](#tracert) &bull; [`winrm`](#winrm) [`wmic`][wmic]
 
 \#      | PowerShell equivalents to Command Prompt commands
 ---     | ---
 **A-Z** | [`gpupdate /force`][Invoke-GPUpdate]
+
+\#      | Control Panel tools [^][https://support.microsoft.com/en-us/help/192806/how-to-run-control-panel-tools-by-typing-a-command]
+---     | ---
+**A-Z** | 
+
 ### `adprep`
 Prepare Active Directory for Windows Server upgrades. Must be run on the Infrastructure Master role owner with the flag `/domainprep`. [[^][Desmond2009]: 29]
 ### `arp`
@@ -161,6 +166,7 @@ wmic path softwarelicensingservice get OA3xOriginalProductKey
 [https://fossbytes.com/how-to-find-windows-product-key-lost-cmd-powershell-registry/]: https://fossbytes.com/how-to-find-windows-product-key-lost-cmd-powershell-registry/ "How to find Windows 10 product key using CMD, PowerShell, and Windows Registry?"
 [https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn502540(v%3Dws.11)]: https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn502540(v%3Dws.11) "Slmgr.vbs options for volume activation"
 [https://docs.microsoft.com/en-us/windows/win32/msi/command-line-options]: https://docs.microsoft.com/en-us/windows/win32/msi/command-line-options "Command-line options"
+[https://support.microsoft.com/en-us/help/192806/how-to-run-control-panel-tools-by-typing-a-command]: https://support.microsoft.com/en-us/help/192806/how-to-run-control-panel-tools-by-typing-a-command "Microsoft Support: \"How to run Control Panel tools by typing a command\""
 
 [Lab]: https://pts.measureup.com/web/index.php#dashboard.php "Practice Lab: CompTIA Security+ (SY0-501)"
 [Lammle]: ../certs/n10-007.md "Lammle, Todd. _CompTIA Network+ Study Guide: Exam N10-005_. 2012."
