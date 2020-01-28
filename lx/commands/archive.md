@@ -1,4 +1,7 @@
 # Archive commands
+&nbsp;  | Commands
+---     | ---
+&nbsp;  | `ar` &bull; `bzcat` `bzless` `bzmore` `bzip2` &bull; `compress` `cpio` &bull; `dar` &bull; `gzip` &bull; `tar` &bull; `uncompress` `unzip`  &bull; `zip` `zipcloak` `zipdetails` `zipgrep` `zipinfo` `zipnote` `zipsplit`
 ### `ar`
 ### `bzcat`
 Page through bz2 files
@@ -167,6 +170,5 @@ Split `zipfile` into segments of size `size`
 ```sh
 zipsplit -n size zipfile
 ```
-
 ## 
 [Eckert]: # "Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012."

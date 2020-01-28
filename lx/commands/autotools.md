@@ -1,9 +1,9 @@
 # Autotools
 GNU autotools are three packages: [`autoconf`][autoconf], [`automake`][automake], and `libtool`
 
-\#    | Commands
----   | ---
-**A** | [`aclocal`][aclocal] [`autoconf`][autoconf] [`autoheader`][autoheader] [`automake`][automake]
+&nbsp;  | Commands
+---     | ---
+&nbsp;  | [`aclocal`][aclocal] [`autoconf`][autoconf] [`autoheader`][autoheader] [`automake`][automake]
 
 ### `aclocal`
 ### `as`

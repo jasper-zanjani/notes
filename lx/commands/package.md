@@ -1,3 +1,10 @@
+# Linux package management commands
+&nbsp;      | Commands
+---         | ---
+**Arch**    | `pacman` &bull; `yay`
+**Debian**  | `apt` `apt-cache` `apt-key` `add-apt-repository` &bull; `dpkg` `dpkg-reconfigure`
+**Red Hat** | `dnf` &bull; `rpm` &bull; `yum`
+**Etc**     | `gem` &bull; `make` &bull; `pip` &bull; `snap`
 ### `apt`
 Upgrade distribution
 ```sh
@@ -75,6 +82,29 @@ dnf install @virtualization
 Install a package group, including optional packages [^][https://docs.fedoraproject.org/en-US/quick-docs/getting-started-with-virtualization/]
 ```sh
 dnf group install --with-optional virtualization
+```
+### `dpkg`
+Manage local Debian packages
+
+Option  | POSIX option            | Effect
+:---    | :---                    | :---
+`-I`    | `--info`                | show information about {$PACKAGE}
+`-i`    | `--install`             | install {$PACKAGE}
+`-l`    | `--list`                | list packages currently installed
+`-L`    | `--listfiles`           | list packages that were installed as dependencies of another package
+`-p`    | `--print-avail`:         | show details about {$PACKAGE}
+`-P`    | `--purge`               | remove {$PACKAGE}, including configuration files
+`-r`    | `--remove`              | remove {$PACKAGE}, keeping configuration files
+`-s`    | `--status`              | display package status
+`-S`    | `--search`              | list package name responsible for a specific file being installed on the system
+`-C`    | `--audit`               | check for broken packages
+\-      | `--get-selections`      | display list of package selections
+### `dpkg-reconfigure`
+Run a package's configuration script after it has already been installed.
+
+Change the time zone on a Debian based system using package-based tools
+```sh
+dpkg-reconfigure tzdata
 ```
 ### `gem`
 Install a Ruby `$PACKAGE`
@@ -281,6 +311,15 @@ pacman --sync --refresh --refresh --sysupgrade --downloadonly
 Get number of total installed packages
 ```sh
 pacman -Q | wc -l
+```
+### `pip`
+Display installed packages
+```sh
+pip list
+```
+Display information about {package}
+```sh
+pip show package
 ```
 ### `rpm`
 Option  | POSIX option            | Effect

@@ -3,13 +3,9 @@
 - **Upstart** was developed by Canonical for Ubuntu, but abandoned in 2014. 
 - [**Systemd**][SystemD] which starts processes in parallel has become de facto standard for all major Linux distributions
 
-\#  | Commands sorted alphabetically
-:---| :---
-C   | `chkconfig`
-I   | `init` `initctl`
-R   | `runlevel`
-S   | `service`
-T   | `telinit`
+&nbsp;  | Commands
+---     | ---
+&nbsp;  | `chkconfig` &bull; `init` `initctl` &bull; `runlevel` &bull; `service` &bull; `telinit`
 
 ### `chkconfig`
 Turn services on or off for runlevels

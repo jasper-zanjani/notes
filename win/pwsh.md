@@ -1102,7 +1102,7 @@ $SpeechSynthesizer.SetOutputToWaveFile($WavFileOut)
 [Get-ADPrincipalGroupMembership]:                    #get-adprincipalgroupmembership               "`Get-ADPrincipalGroupMembership` &#10; Get the Active Directory groups that have a specified user, computer, group, or service account"
 [Get-ADUser]:                                        #get-aduser                                   "`Get-ADUser` &#10; Get one or more Active Directory Users"
 [Get-Alias]:                                         #get-alias                                    "`Get-Alias` (alias `gal`) &#10; Display aliases"
-[Get-ChildItem]:                                     #get-childitem                                "`Get-ChildItem` (alias: `dir`, `gci`, `ls`) &#10; Get items in one or more locations"
+[Get-ChildItem]:                                     #get-childitem                                '```&#10;PS C:\> Get-ChildItem&#10;PS C:\> dir&#10;PS C:\> gci&#10;PS C:\> ls&#10;```&#10;Get items in one or more locations'
 [Get-Clipboard]:                                     #get-clipboard                                "`Get-Clipboard` (alias: `gcb`) &#10; Display items in clipboard"
 [Get-Command]:                                       #get-command                                  "`Get-Command` (alias: `gcm`) &#10; Display all installed commands, including aliases, applications, filters, functions, and scripts (alias: gcm)"
 [Get-Content]:                                       #get-content                                  "`Get-Content` (alias: `cat`, `gc`, `type`)"

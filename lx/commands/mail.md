@@ -1,9 +1,6 @@
-\#  | Commands sorted alphabetically
-:---| :---
-M   | `mailmerge` `mailq` `mailstats` `msmtp`
-P   | `postfix` `postqueue` `postsuper`
-Q   | `qmail`
-S   | `sendmail` `ssmtp`
+&nbsp;  | Commands sorted alphabetically
+---     | ---
+&nbsp;  | `mailmerge` `mailq` `mailstats` `msmtp` &bull; `postfix` `postqueue` `postsuper` &bull; `qmail` &bull; `sendmail` `ssmtp`
 
 ### `mail`
 **Mail User Agent (MUA)** which accepts interactive input using the `&` prompt
@@ -32,7 +29,6 @@ Send message via pipe
 ```sh
 echo 'message' | mail -s 'subject' -a /path/to/attachment
 ```
-
 ### `mailmerge`
 Mailmerge is a command-line Python program that provides a powerful way to send many customized emails by using Jinja2 templating. It is available from Fedora's repositories through `dnf` and is also available from PyPI. [[ref](https://opensource.com/article/19/8/sending-custom-emails-python "opensource.com: \"Sending custom emails with Python\"")]
 
@@ -59,18 +55,14 @@ Send all emails
 ```sh
 mailmerge --no-dry-run --no-limit
 ```
-
 ### `mailq`
 Display the current mail queue on a Postfix server
-
 ### `mailstats`
 Gather and display statistics about mail processed on a server running [ `sendmail` ](#sendmail)
-
 ### `msmtp`
 [^][51]
 
 ~/.msmtprc
-
 ### `postqueue`
 Cause mail queue to be processed on a Postfix server
 ```sh
@@ -81,7 +73,6 @@ Delete all of the messages from the queue on a postfix server
 ```sh
 postsuper -d
 ```
-
 ### `postfix`
 Designed to replace Sendmail. 
 - multiple processes with no particular parent/child relationship
@@ -93,13 +84,10 @@ Before mail is queued for delivery, it goes through a cleanup daemon, which can 
 1. Local inboxes
 2. Internet (SMTP)
 3. Piped to programs
-
 ### `qmail`
 Mail Transfer Agent (MTA) designed as a drop-in replacement for Sendmail, notable for being the first to be "security-aware". Its various modular subcomponents run independently and are mutually untrustful. It uses SMTP to exchange messages with other MTAs. It was written by Dan Bernstein, a professor of mathematics famous for litigating against the US government with regard to export controls on encryption algorithms. Deprecated and removed from Arch repos in 2005. [[27](sources.md)]
-
 ### `sendmail`
 Mail daemon once the de facto standard for accepting and redirecting mail on Linux distributions, long ago fallen into disuse. It was infamous for its difficulty to set up, with roots in ARPANET itself. [^][Eckert]
-
 ### `ssmtp`
 Installable client program [[25](sources.md)]
 
@@ -113,6 +101,6 @@ ssmtp -au recipient -ap pw user@host < msg
 ```
 ### `pine`
 "Program for Internet news and email", a popular [MUA](# "\"mail user agent\", program that allows a user to view mail, such as mutt, pine, printmail, elm, mail, Thunderbird, Evolution, and Eudora") during the 1990s which has since been superceded by Alpine.
-
+## 
 [pine]: ../lx/commands/mail.md#pine "\"Program for Internet news and email\", popular MUA during the 1990s which has since been replaced by Alpine."
 [Eckert]: # "Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012."

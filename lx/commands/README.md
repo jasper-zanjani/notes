@@ -4,38 +4,35 @@ Topic                         | Commands
 :---                          | :---
 Ansible                       | [`ansible`](../ansible.md#ansible) [`ansible-galaxy`](../ansible.md#ansible-galaxy) [`ansible-playbook`](../ansible.md#ansible-playbook)
 Archive                       | [`ar`][ar] [**`bzip2`**][bzip2] &bull; [`compress`](archive.md#compress) [`uncompress`](archive.md#uncompress) &bull; [`gzip`][gzip] [`tar`](archive.md#tar) [`xz`][xz] &bull; [**`zip`**](archive.md#zip) [`unzip`](archive.md#unzip) [`zipcloak`](archive.md#zipcloak) [`zipdetails`](archive.md#zipdetails) [`zipgrep`](archive.md#zipgrep) [`zipinfo`](archive.md#zipinfo) [`zipnote`](archive.md#zipnote) [`zipsplit`](archive.md#zipsplit) &bull; [`cpio`][cpio] [`dar`](archive.md#dar)
+Audio                         | [`alsamixer`][alsamixer] [`amixer`][amixer] [`speaker-test`][speaker-test]
 Bash builtins                 | [`let`](bash.md#let) [`source`](bash.md#source)
-Benchmarking                  | [`free`][free] [`glances`][glances]  [`iperf`][iperf] [`lscpu`][lscpu] `nproc` `uptime` <br>**Sysstat** [`iostat`][iostat] [`mpstat`][mpstat] [`sar`][sar]
 Build tools                   | [`as`][as] <br>**Autotools** [`aclocal`][aclocal]  [`autoconf`][autoconf] [`autoheader`][autoheader] [`autoreconf`][autoreconf] [`autoscan`][autoscan] [`autoupdate`][autoupdate] <br>**Compiler-compilers** [`bison`][bison] [`flex`][lex] [`yacc`][yacc]
 Date and time                 | [`chrony`](#chrony) [`date`](date.md#date) [`hwclock`](#hwclock) [`timedatectl`](init.md#timedatectl)
-Disk management               | `blkid` [`partx`](partx.md)
 Distributions                 | **Debian** [`adduser`](sysadmin.md#adduser) [**`apt`**](package.md#apt) `apt-cache` `apt-key` `add-apt-repository` <br> **Manjaro** [`mhwd`](#mhwd) [`mhwd-chroot`](#mhwd-chroot) [`pacman`](package.md#pacman) [`yay`](package.md#yay) <br> **Red Hat** [`dnf`][dnf] [`firewall-cmd`](#firewall-cmd) [`yum`](package.md#yum) <br> **Ubuntu** [`netplan`](#netplan)
-Files	                        |  [`fallocate`](fallocate.md) [`install`](install.md "Copy files while maintaining metadata") [`lsof`](lsof.md "Display open files, open network ports, and network connections") [`setfacl`](sysadmin.md#setfacl) [`sshfs`](ssh.md#sshfs) [`tree`](#tree)
-Filters                       | [`awk`](awk.md#awk) [`cat`](cat.md#cat) [`copy`](#copy) [`egrep`](grep.md) [`fgrep`](grep.md) [`grep`](grep.md) [`paste`](#paste) [`sed`](sed.md#sed) [`shuf`](shuf.md) [`tr`](tr.md)
+Files	                        | [`fallocate`](fallocate.md) [`install`][install] [`ls`][ls] [`lsof`][lsof] [`setfacl`](sysadmin.md#setfacl) [`sshfs`](ssh.md#sshfs) [`tree`](#tree)
 Gnome                         | [`gconf-editor`](gsettings.md) [`gsettings`](gsettings.md) 
 GRUB                          | [`update-grub`](grub.md#update-grub)
 Hardware settings             | [`bluetoothctl`][bluetoothctl] [`insmod`](#insmod) [ `lsmod` ](#lsmod) [ `lspci` ](#lspci) [ `lsusb` ](#lsusb) [ `modprobe` ](#modprobe) [`rmmod`](#rmmod)
+Information                   | [`stat`][stat] **Benchmarking** [`free`][free] [`glances`][glances]  [`iperf`][iperf] [`lscpu`][lscpu] `nproc` `uptime` <br>**Sysstat** [`iostat`][iostat] [`mpstat`][mpstat] [`sar`][sar]
 Init                          | **Systemd** [`hostnamectl`][hostnamectl] [`journalctl`][journalctl] [`localectl`][localectl] [`systemctl`][systemd-delta] [`systemd-delta`][systemd-delta] [`timedatectl`][timedatectl] <br> **Sysvinit** [`chkconfig`](init.md#chkconfig) [`init`](init.md#init) [`service`](init.md#service) [`telinit`](init.md#telinit) &bull; **Upstart** [`initctl`](init.md#initctl)
 Kubernetes                    | [`kubeadm`](../devops/k8s.md#kubeadm) [`kubectl`](../devops/k8s.md#kubectl)
-Logical volumes               | [`lvcreate`](lvm.md#lvcreate) [`lvdisplay`](lvm.md##lvdisplay) [`lvremove`](lvm.md##lvremove) [`lvs`](lvm.md##lvs) [`pvcreate`](lvm.md##pvcreate) [`pvdisplay`](lvm.md##pvdisplay) [`pvremove`](lvm.md##pvremove) [`pvs`](lvm.md##pvs) [`vgcreate`](lvm.md##vgcreate) [`vgdisplay`](lvm.md##vgdisplay) [`vgextend`](lvm.md##vgextend) [`vgremove`](lvm.md##vgremove) [`vgs`](lvm.md##vgs)
 Mac OS X                      | `pbcopy` `pbpaste` `screencapture`
 Mail                          | [`mail`](mail.md#mail) [`mailmerge`](mail.md#mailmerge) `mailx` [`msmtp`](#msmtp) <br> **SMTP servers** `exim` [`qmail`](mail.md#qmail) [`postfix`](mail.md#postfix) `sendmail`
-Network                       | [`ethtool`][ethtool] [`hping3`][hping3] [`iftop`][iftop] [`ip`][ip] [`iperf`][iperf] [`ipset`][ipset] `iwlist` `iwconfig` [`netstat`](network.md#netstat) [`nc`](network.md#nc) [`nmap`](nmap.md) [`nmcli`](network.md#nmcli) [`rfkill`](network.md#rfkill) [`ss`](network.md#ss) `tracepath` `traceroute` [`tshark`][tshark] `xinetd` &bull; **DNS** [`dig`](dig.md) [`nslookup`](nslookup.md)
-Package managers              | [`apt`](package.md#apt) [`brew`](#brew) [`dnf`][dnf] [`gem`](package.md#gem) [`pacman`](package.md#pacman) [`pip`](#pip) [`rpm`][rpm] [`snap`](package.md#snap) [`yay`](package.md#yay) [`yum`](package.md#yum)
+Network                       | [`bmon`][bmon] [`ethtool`][ethtool] [`hping3`][hping3] [`iftop`][iftop] [`ip`][ip] [`iperf`][iperf] [`ipset`][ipset] [`netstat`][netstat] [`nc`](network.md#nc) [`nmap`](nmap.md) [`nmcli`](network.md#nmcli) [`ss`](network.md#ss) `tracepath` `traceroute` [`tshark`][tshark] `xinetd` <br>**DNS** [`dig`][dig] [`nslookup`][nslookup] <br>**Wi-Fi** [`iw`][iw] [`iwlist`][iwlist] `iwconfig` [`rfkill`][rfkill]
+Package managers              | [`apt`][apt] [`brew`][brew] [`dnf`][dnf] [`dpkg`][dpkg] [`gem`][gem] [`pacman`][pacman] [`pip`][pip] [`rpm`][rpm] [`snap`][snap] [`yay`][yay] [`yum`][yum]
 Printing                      | [**CUPS**][CUPS] [`cupsaccept`][cupsaccept] [`cupsenable`][cupsenable] [`cupsdisable`][cupsdisable] [`cupsreject`][cupsreject] [`lp`][lp] [`cancel`][cancel] <br> [**LPD**][LPD] [`lpc`][lpc] [`lpq`][lpq] [`lpr`][lpr] [`lprm`][lprm]
-Processes                     | [`lsns`](containers.md) [`pidof`](containers.md) [`ps`](sysadmin.md#ps) [`top`](sysadmin.md#top) [`unshare`](containers.md)
 Remote connections            | [`rsync`](rsync.md) [`ssh`](ssh.md#ssh) [`ssh-keygen`](ssh.md#ssh-keygen) [`ssh-keyscan`](ssh.md#ssh-keyscan) [`sshfs`](ssh.md#sshfs)
-Sound                         | [`amixer`][amixer]
-System administration         | [`chage`](sysadmin.md#chage) [`chcon`](sysadmin.md#chcon) [`chgrp`](sysadmin.md#chgrp) [`chmod`](sysadmin.md#chmod) [`chown`](sysadmin.md#chown) [`chpass`](sysadmin.md#chpass) [`chrony`](sysadmin.md#chrony) [`chsh`](sysadmin.md#chsh)  [`free`](sysadmin.md#free) [`getent`](sysadmin.md#getent) [`gpasswd`](sysadmin.md#gpasswd) [`groupadd`](sysadmin.md#groupadd) [`groupdel`](sysadmin.md#groupdel) [`groupmod`](sysadmin.md#groupmod) [`logger`][logger] [`logrotate`][logrotate] [`stty`](#stty) [`su`](sudo.md#su) [`sudo`](sudo.md#sudo) [`top`](sysadmin.md#top) [`uname`](sysadmin.md#uname) [`useradd`](sysadmin.md#useradd) [`userdel`](sysadmin.md#userdel) [`usermod`](sysadmin.md#usermod) `vifs` `visudo` &bull; **Debian** [`adduser`](sysadmin.md#adduser)
+SELinux                       | [`semanage`][semanage] [`sestatus`][sestatus] [`setenforce`][setenforce]
+System administration         | [`chage`](sysadmin.md#chage) [`chcon`](sysadmin.md#chcon) [`chgrp`](sysadmin.md#chgrp) [`chmod`](sysadmin.md#chmod) [`chown`](sysadmin.md#chown) [`chpass`](sysadmin.md#chpass) [`chrony`](sysadmin.md#chrony) [`chsh`](sysadmin.md#chsh)  [`free`](sysadmin.md#free) [`getent`](sysadmin.md#getent) [`gpasswd`](sysadmin.md#gpasswd) [`groupadd`](sysadmin.md#groupadd) [`groupdel`](sysadmin.md#groupdel) [`groupmod`](sysadmin.md#groupmod) [`logger`][logger] [`logrotate`][logrotate] [`stty`](#stty) [`su`](sudo.md#su) [`sudo`](sudo.md#sudo) [`top`](sysadmin.md#top) [`uname`](sysadmin.md#uname) [`useradd`](sysadmin.md#useradd) [`userdel`](sysadmin.md#userdel) [`usermod`](sysadmin.md#usermod) `vifs` `visudo` &bull; **Debian** [`adduser`](sysadmin.md#adduser) <br>**Process management** [`lsns`](containers.md) [`pidof`](containers.md) [`ps`](sysadmin.md#ps) [`top`](sysadmin.md#top) [`unshare`](containers.md) <br>**Disk management** `blkid` [`partx`](partx.md) <br>**Logical volumes** [`lvcreate`](lvm.md#lvcreate) [`lvdisplay`](lvm.md##lvdisplay) [`lvremove`](lvm.md##lvremove) [`lvs`](lvm.md##lvs) [`pvcreate`](lvm.md##pvcreate) [`pvdisplay`](lvm.md##pvdisplay) [`pvremove`](lvm.md##pvremove) [`pvs`](lvm.md##pvs) [`vgcreate`](lvm.md##vgcreate) [`vgdisplay`](lvm.md##vgdisplay) [`vgextend`](lvm.md##vgextend) [`vgremove`](lvm.md##vgremove) [`vgs`](lvm.md##vgs)
+Text filters                  | [`awk`](awk.md#awk) [`cat`][cat] [`copy`](#copy) [`egrep`](grep.md) [`fgrep`](grep.md) [`grep`](grep.md) [`head`][head] [`nl`][nl] [`paste`](#paste) [`sed`](sed.md#sed) [`shuf`](shuf.md) [`sort`][sort] [`tail`][tail] [`tr`](tr.md)
 Version control               | [`git`](git.md#git) [`tig`](git.md#tig)
 Virtualization                | [`virt-install`][virt-install] [`virt-manager`][virt-manager]
-Wi-Fi                         | [`iw`][iw] `iwlist` `iwconfig` [`rfkill`](network.md#rfkill)
 X                             | [`xdpyinfo`](X.md#xdpyinfo) [`xlsclients`][xlsclients] [`xmodmap`](X.md#xmodmap) [`Xorg`](X.md#xorg) [`xrandr`](X.md#xrandr) [`xwininfo`](X.md#xwininfo)
 
 \#  | Commands sorted alphabetically
 --- | ---
 A   | [`aclocal`][aclocal] [`adduser`](#adduser) [`add-apt-repository`](#add-apt-repository) [`alsamixer`](#alsamixer) [`apropos`](#apropos) [`apt`](package.md#apt) [`apt-cache`](package.md#apt-cache) [`apt-key`](package.md#apt-key) [`ar`][ar] [`arp`](#arp) [`as`][as] [`at`](#at) [`ausearch`](#ausearch) [`autoconf`][autoconf] [`autoheader`][autoheader] [`awk`](#awk) 
-B   | [`bash`](#bash) [`bc`][bc] [`biff`][biff] [`blkid`](#blkid) [`bmon`](#bmon) [`borg`](#borg) [`bpftrace`](#bpftrace) [`bzcat`](archive.md#bzcat) [`bzip2`][bzip2] [`bzless`](archive.md#bzless) [`bzmore`](archive.md#bzmore) 
+B   | [`bash`](#bash) [`bc`][bc] [`biff`][biff] [`blkid`](#blkid) [`bmon`](#bmon) [`borg`](#borg) [`bpftrace`][bpftrace] [`bzcat`](archive.md#bzcat) [`bzip2`][bzip2] [`bzless`](archive.md#bzless) [`bzmore`](archive.md#bzmore) 
 C   | [`cancel`](#cancel) [`cat`](cat.md#cat) [`chage`](#chage) [`chcon`](#chcon) [`chgrp`](#chgrp) [`chkconfig`](#sysvinit) [`chmod`](#chmod) [`chown`](sysadmin.md#chown) [`chpass`](#chpass) [`chrony`](#chrony) [`chsh`](#chsh) [`column`](#column) [`compress`](#compress) [`cp`](#cp) [`crontab`](#crontab) [`crossystem`](#crossystem) [`cryptsetup`](#cryptsetup) [`curl`](#curl) [`cut`](#cut) 
 D   | [`dar`](#dar) [`date`](date.md#date) [`dbus`](#dbus) [`dd`](#dd) [`declare`](#declare) [`depmod`][depmod] [`df`](#df) [`dhclient`](#dhclient) [`diff`](#diff) [`dig`](#dig) [`dirname`](#dirname) [`dm-crypt`](#dm-crypt) [`dmesg`](#dmesg) [`dmidecode`][dmidecode] [`dnf`][dnf] [`doveadm`](#doveadm) [`dpkg`](#dpkg) [`dpkg-reconfigure`](#dpkg-reconfigure) [`dracut`][dracut] [`du`](#du) [`dumpe2fs`](#dumpe2fs) 
 E   | [`e2image`](#e2image) [`e2label`](#e2label) [`edquota`](#edquota) [`elvis`](#elvis) [`elvish`](#elvish) [`espeak`](#espeak) [`ethtool`][ethtool] [`exif`](#exif) 
@@ -43,11 +40,11 @@ F   | [`fallocate`](fallocate.md) [`fam`](#fam) [`fc-cache`][fc-cache] [`fdisk`]
 G   | [`gconf-editor`](gsettings.md) [`gdisk`](#gdisk) [`gdmsetup`](#gdmsetup) [`gem`](#gem) [`getent`](#getent) [`getfacl`](#getfacl) [`git`](git.md#git) [`gpasswd`](sysadmin.md#gpasswd) [`gpg`](#gpg) [`grep`](grep.md) [`groupadd`](sysadmin.md#groupadd) [`groupdel`](#groupdel) [`groupmod`](#groupmod) [`grub`](#grub) [`gsettings`](gsettings.md) [`gzip`][gzip]
 H   | [`hdiutil`](#hdiutil) [`hdparm`](#hdparm) [`head`](#head) [`history`](#history) [`host`](#host) [`hostname`](#hostname) [`hostnamectl`](#hostnamectl) [`hwclock`](#hwclock) 
 I   | [`iconv`](#iconv) [`ifconfig`](#ifconfig) [`iftop`][iftop] [`imagemagick`](#imagemagick) [`init`](#sysvinit) [`initctl`](#initctl) [`insmod`](#insmod) [`install`](#install.md) [`iostat`][iostat] [`ip`][ip] [`iperf`][iperf] [`ipset`][ipset] [`iptables`](#iptables) [`iscsiadm`](#iscsiadm) [`iw`][iw] [`iwconfig`](#iwconfig) [`iwlist`](#iwlist) 
-J   | [`journalctl`](init.md#journalctl) 
+J   | [`journalctl`](init.md#journalctl)
 K   | [`kill`](#kill) [`kinit`][kinit] [`klist`][klist] [`kubeadm`](../devops/k8s.md#kubeadm) [`kubectl`](../devops/k8s.md#kubectl)
-L   | [`last`](#last) [`ldapadd`](#ldapadd) [`ldconfig`](#ldconfig) [`ldd`](#ldd) [`less`](#less) [`let`](bash.md#let) [`link`](#link) [`locale`](#locale) [`localectl`](init.md#localectl) [`loginctl`][loginctl] [`logout`](#logout) [`lp`](#lp) [`lpadmin`](#lpadmin) [`lpstat`](#lpstat) [`ls`](#ls) [`lsblk`](#lsblk) [`lshw`][lshw] [`lsmod`](#lsmod) [`lsns`](containers.md) [`lsof`](#lsof) [`lspci`](#lspci) [`lsusb`](#lsusb) [`lvcreate`](#lvcreate) [`lvdisplay`](#lvdisplay) [`lvremove`](#lvremove) [`lvresize`](#lvresize) 
+L   | [`last`](#last) [`ldapadd`](#ldapadd) [`ldconfig`](#ldconfig) [`ldd`](#ldd) [`less`](#less) [`let`](bash.md#let) [`link`](#link) [`locale`](#locale) [`localectl`](init.md#localectl) [`loginctl`][loginctl] [`logout`](#logout) [`lp`](#lp) [`lpadmin`](#lpadmin) [`lpstat`](#lpstat) [`ls`](#ls) [`lsblk`](#lsblk) [`lshw`][lshw] [`lsmod`](#lsmod) [`lsns`](containers.md) [`lsof`][lsof] [`lspci`](#lspci) [`lsusb`](#lsusb) [`lvcreate`](#lvcreate) [`lvdisplay`](#lvdisplay) [`lvremove`](#lvremove) [`lvresize`](#lvresize) 
 M   | [`mail`](#mail) [`mailq`](#mailq) [`mailstats`](#mailstats) [`make`](package.md#make) [`makemap`](#makemap) [`mdadm`](#mdadm) [`mhwd`](#mhwd) [`mhwd-chroot`](#mhwd-chroot) [`mkdir`](#mkdir) [`mke2fs`](#mke2fs) [`mkfontscale`](#mkfontscale) [`mkfs`](#mkfs) [`mkinitrd`][mkinitrd] [`mkswap`](#mkswap) [`mktemp`](#mktemp) [`modinfo`](#modinfo) [`modprobe`](#modprobe) [`mongod`](#mongod) [`mount`](#mount) [`msmtp`](#msmtp) [`mt`](#mt) 
-N   | [`nc`](network.md#nc) [`netplan`](#netplan) [`netstat`](network.md#netstat) [`NetworkManager`](#NetworkManager) [`newaliases`](#newaliases) [`nice`](#nice) [`nl`](#nl) [`nmap`](nmap.md) [`nmblookup`](#nmblookup) [`nmcli`](network.md#nmcli) [`nohup`](#nohup) [`nslookup`](nslookup.md) [`ntpdate`](#ntpdate) [`ntsysv`][ntsysv]
+N   | [`nc`](network.md#nc) [`netplan`](#netplan) [`netstat`][netstat] [`NetworkManager`](#NetworkManager) [`newaliases`](#newaliases) [`nice`](#nice) [`nl`](#nl) [`nmap`](nmap.md) [`nmblookup`](#nmblookup) [`nmcli`](network.md#nmcli) [`nohup`](#nohup) [`nslookup`][nslookup] [`ntpdate`](#ntpdate) [`ntsysv`][ntsysv]
 O   | [`openssl`](#openssl)
 P   | [`pacman`](package.md#pacman) [`partx`](partx.md) [`paste`](#paste) [`passwd`](#passwd) [`paste`](#paste) [`patch`](#patch) [`pidof`](containers.md) [`ping`](#ping) [`pip`](#pip) [`postfix`](#postfix) [`postqueue`](#postqueue) [`postsuper`](#postsuper) [`ps`](sysadmin.md#ps) [`pvcreate`](#pvcreate) [`pvdisplay`](#pvdisplay) [`pvremove`](#pvremove) [`pydoc`](#pydoc) 
 Q   | [`qmail`](#qmail) [`quota`](#quota) [`quotacheck`](#quotacheck) [`quotaoff`](#quotaoff) [`quotaon`](#quotaon)
@@ -57,52 +54,41 @@ T   | [`tail`](#tail) [`tar`](archive.md#tar#tar) [`tcpdump`](#tcpdump) [`telini
 U   | [`udevadm`](#udevadm) [`umount`](#umount) [`uname`](sysadmin.md#uname) [`uncompress`](#uncompress) [`unshare`](containers.md) [`unzip`](#unzip) [`update-grub`](#update-grub) [`update-rc.d`](#update-rc.d) [`useradd`](#useradd) [`userdel`](#userdel) [`usermod`](#usermod) 
 V   | [`variable`](#variable) [`vgcreate`](#vgcreate) [`vgdisplay`](#vgdisplay) [`vgextend`](#vgextend) [`vgremove`](#vgremove) [`vgscan`](#vgscan) [`vifs`](#vifs) [`visudo`](#visudo) 
 W   | [`w`][w] [`wall`](#wall) [`watch`](watch.md#watch) [`wc`](#wc) [`whatis`](#whatis) 
-X   | [`X`](#X) [`xdpyinfo`](#xdpyinfo) [`xhost`](#xhost) [`xinetd`](#xinetd) [`Xorg`](#Xorg) [`xrandr`](#xrandr) [`xwininfo`](#xwininfo) [`xz`][xz]
+X   | [`X`](#X) [`xdpyinfo`](#xdpyinfo) [`xhost`](#xhost) [`xinetd`][xinetd] [`Xorg`](#Xorg) [`xrandr`](#xrandr) [`xwininfo`](#xwininfo) [`xz`][xz]
 Y   | [`yay`](#yay) [`yum`](package.md#yum) [`yumdownloader`][yumdownloader]
 Z   | [`zip`](#zip) [`zipcloak`](#zipcloak) [`zipdetails`](#zipdetails) [`zipgrep`](#zipgrep) [`zipinfo`](#zipinfo) [`zipnote`](#zipnote) [`zipsplit`](#zipsplit) [`zsh`](#zsh) [`zypper`][zypper]
 
 ### `bluetoothctl`
+&nbsp;  | `bluetoothctl` commands [^][http://www.linux-magazine.com/Issues/2017/197/Command-Line-bluetoothctl#article_i1] [^][https://computingforgeeks.com/connect-to-bluetooth-device-from-linux-terminal/]
+---     | ---
+&nbsp;  | [`device`][bluetoothctl devices] &bull; [`list`][bluetoothctl list] &bull; [`pair`][bluetoothctl pair] &bull; [`pairable on`][bluetoothctl pairable on] &bull; [`scan on`][bluetoothctl scan on] &bull; [`select`][bluetoothctl select] &bull; [`show`][bluetoothctl show]
 
-[^][https://computingforgeeks.com/connect-to-bluetooth-device-from-linux-terminal/]
-
-Command       | Description [^][http://www.linux-magazine.com/Issues/2017/197/Command-Line-bluetoothctl#article_i1]
----           | ---
-`list`        | display available controllers
-`show`        | display more detailed inormation about available controllers
-`select`      | select controller to pair, if the system has more than one
-`scan on`     | receive a list of detected devices
-`pairable on` | prepare controller for pairing
-`devices`     | list avialable devices
-`pair`        | pair with `$DEVICE`, which is the MAC address of the pairable device
-
-### `bmon`
-[^][56]
-
-
+[bluetoothctl list]:                                              #bluetoothctl                                       '```&#10;$ bluetoothctl&#10;[bluetooth]# list&#10;```&#10;Display available controllers'
+[bluetoothctl show]:                                              #bluetoothctl                                       '```&#10;$ bluetoothctl&#10;[bluetooth]# show&#10;```&#10;Display more detailed inormation about available controllers'
+[bluetoothctl select]:                                            #bluetoothctl                                       '```&#10;$ bluetoothctl&#10;[bluetooth]# select&#10;```&#10;Select controller to pair, if the system has more than one'
+[bluetoothctl scan on]:                                           #bluetoothctl                                       '```&#10;$ bluetoothctl&#10;[bluetooth]# scan on&#10;```&#10;Receive a list of detected devices'
+[bluetoothctl pairable on]:                                       #bluetoothctl                                       '```&#10;$ bluetoothctl&#10;[bluetooth]# pairable on&#10;```&#10;Prepare controller for pairing'
+[bluetoothctl devices]:                                           #bluetoothctl                                       '```&#10;$ bluetoothctl&#10;[bluetooth]# devices&#10;```&#10;List available devices'
+[bluetoothctl pair]:                                              #bluetoothctl                                       '```&#10;$ bluetoothctl&#10;[bluetooth]# pair $DEVICE&#10;```&#10;Pair with `$DEVICE`, which is the MAC address of the pairable device'
 ### `bpftrace`
 New open-source tracer for analyzing production performance problems and troubleshooting software [^][19]
-
 ### `exif`
 View image metadata. Unlike alternatives like `file` and ImageMagick's `identify`, `exif` produces columnar output [^][31]
 ```sh
 exif image.png 
 ```
-
 ### `fc-cache`
 Update the font cache [^][59]
 ```sh
 fc-cache -v
 ```
-
 ### `file`
 View image metadata [^][31]
 ```sh
 file image.png # => file type, dimensions, color depth
 ```
-
 ### `ftp`
 encrypted file transfers
-
 ### `fusermount`
 Mount a directory from a remote server on your local host via SSH [^][[23]
 ```sh
@@ -122,10 +108,6 @@ Convert a batch of files using globbing
 ```sh
 lowriter --convert-to pdf *.docx
 ```
-
-### `mailq`
-Prints summary of mail messages queued for future delivery
-
 ### `mktemp`
 Create a temporary file or directory safely and print its name. These will not need to be manually cleaned up because they will be placed in the temporary directory (**/tmp**) [^][29]
 
@@ -145,7 +127,6 @@ Add a suffix
 ```sh
 mktemp ostechnixXXX --suffix=blog
 ```
-
 ### `mv`
 Option  | POSIX option            | Effect
 :---    | :---                    | :---
@@ -154,7 +135,6 @@ Option  | POSIX option            | Effect
 `-i`    | `--interactive`         | 
 `-n`    | `--no-clobber`          | silently reject move action in the event of a conflict
 `-u`    | `--update`              | only overwrite if the modification time of the destination is older than the source
-
 ### `networkmanager`
 Stop NetworkManager service
 ```sh
@@ -162,7 +142,6 @@ chkconfig NetworkManager off               # Upstart
 systemctl disable NetworkManager.service   # Systemd
 service NetworkManager stop                # sysvinit
 ```
-
 ### `rename`
 `rename` uses regular expressions [^][33]
 
@@ -182,13 +161,11 @@ rename 's/report/review/' *
 # Change all uppercase letters to lowercase
 rename 'y/A-Z/a-z/' *
 ```
-
 ### `screen`
 Share your screen session with another user
 ```sh
 screen -x user/session
 ```
-
 ### `sfdisk`
 Script-based partition table editor, similar to [`fdisk`](#fdisk) and [`gdisk`](#gdisk), which can be run interactively. It does not interface with GPT format, neither is it designed for large partitions. [^][11]
 
@@ -227,39 +204,19 @@ Man page indicates this flag is no longer supported, and recommends use of `dd` 
 ```sh
 sfdisk /dev/hdd -I hdd-partition-sectors.save
 ```
-
 ### `tcpdump`
 Inspect actual IP packets (Wireshark is a GUI-based alternative)\
 All network data will be displayed to STDOUT
 ```
-tcpdump -i eth0
+tcpdump -i eth0   
 ```
-
 ### `tracepath`
 Successor to `traceroute`, allowing the user to test connectivity along the path. Doesn't show as much detail with regard to time, so it may be faster.
-
 ### `traceroute`
 Provides much more information than `tracepath`, even though it's older [[lxa-lpic](../sources/lxa-lpic.md)]
-
-
-### `tree`
-display contents of directories in a tree-like format [^][46]
-
-Option  | Effect
-:---    | :---
-`-a`    | all files
-`-d`    | display directories only
-`-f`    | display full path prefix for each file
-`-g`    | display group name or GID for each file
-`-p`    | display permissions, similar to `ls -l`
-`-u`    | display username or UID
-`-L $N` | limit to `$N` maximum depth
-`-I $PATTERN` | suppress files matching `$PATTERN`
-`-P $PATTERN` | display only files matching `$PATTERN`
-`--prune`     | suppress empty directories
-
 ### `watch`
 Repeat a command at regular intervals and watch its changing output
+
 Execute {cmd} at periods of {n} seconds, watching its output [^][23]
 ```sh
 watch cmd -n n
@@ -269,30 +226,22 @@ Display a dashboard that will run {cmd} every second, displaying the output
 watch -n 1 cmd
 watch -n 0.5 iptables -vnL # Update twice a second, producing a dashboard
 ```
-
 ### `resize2fs`
 Resize filesystem of logical volume {Marketing} on volume group {vg1} to take up the entire logical volume
 ```sh
 resize2fs /dev/vg1/Marketing
 ```
-
-### `alsamixer`
-Command-line audio mixer
-
 ### `apropos`
 Look up one or more `keywords` in the online manpages: same as `man -k` (rf. `whatis`)
 ```sh
 apropos keywords
 ```
-
 ### `arp`
 Option  | Effect
 :---    | :---
 `-a`    | display entries in the cache
 `-s`    | manually add a static entry to the cache
 `-d`    | delete an entry from the cache
-
-
 ### `at`
 Execute a command at a given time
 ```sh
@@ -314,7 +263,6 @@ Execute `cmd` at `time`
 at time
 > cmd
 ```
-
 ### `ausearch`
 Display audit logs from {startdate} to {enddate}
 ```sh
@@ -324,19 +272,14 @@ Search audit logs for today for logins of UID 500
 ```sh
 ausearch --start today --loginuid500
 ```
-
 ### `blkid`
 Show UUID, Label, and filesystems of GPT block devices
-
-
-
 ### `cp`
 Preserve symlinks in a recursive copy
 ```sh
 cp -a
 cp --archive
 ```
-
 ### `crontab`
 There are 2 types of `crontab`, taking similar syntax:
 1. User crontabs, where cron jobs take the syntax: `minute hour day month weekday cmd`
@@ -359,10 +302,8 @@ Specify that {user}'s crontab is to be modified
 ```sh
 crontab -u user
 ```
-
 ### `crossystem`
 Print all parameters with descriptions and current values
-
 ### `cryptsetup`
 Incorporate full-disk encryption on /dev/sdb1, asking for passphrase twice
 ```sh
@@ -372,7 +313,6 @@ Assign virtual name "storage1" to encrypted disk /dev/sdb1
 ```sh
 cryptsetup luksOpen /dev/sdb1 storage1
 ```
-
 ### `curl`
 Download {url}, posting form-encoded {name} as {value}
 ```sh
@@ -401,17 +341,12 @@ Download {url} and save to {file}
 ```sh
 curl url -o file
 ```
-
-
 ### `cut`
-
 Option  | POSIX option            | Effect
 :---    | :---                    | :---
 `-c`    |                         | character number
 `-d`    | `--delimiter`
 `-f`    |                         | field number
-
-
 ### `date`
 Display the date and time according to locale settings\
 
@@ -443,24 +378,18 @@ Display the date fifty days into the future [^][50]
 ```sh
 date -d '+50days' +%F
 ```
-
-
 ### `dbus-monitor`
 Monitor messages going through a D-Bus message bus
-
-
 ### `dd`
 Implement a simple CPU benchmark by writing 1 GB of zeroes and piping it to md5sum
 ```sh
 dd if=/dev/zero bs=1M count=1024 | md5sum
 ```
-
 ### `declare`
 Option which displays output in a way that could then be used as input to another command
 ```sh
 declare -p
 ```
-
 ### `df`
 Change scale to terabytes
 ```sh
@@ -471,7 +400,6 @@ Show drive utilization
 ```sh
 df -h
 ```
-
 ### `dhclient`
 Obtain and configure TCP/IP information from a server on the network [[LGLC](../sources/lglc.md): 34]
 Turn on the DHCP client and get a new address from the server
@@ -482,7 +410,6 @@ Release the currently assigned IP address and get a new one
 ```sh
 dhclient -r
 ```
-
 ### `diff`
 Three lines of context
 ```sh
@@ -496,7 +423,6 @@ Ignore whitespace
 ```sh
 diff -w
 ```
-
 ### `dirname`
 Strip filename from $PATH (cf. [ `basename` ](#basename))
 ```sh
@@ -518,37 +444,6 @@ Display the time in local time
 dmesg -e
 dmesg --reltime
 ```
-
-### `doveadm`
-Produce a password appropriate for use with dovecot
-```sh
-doveadm pw
-```
-
-### `dpkg`
-Manage local Debian packages
-
-Option  | POSIX option            | Effect
-:---    | :---                    | :---
-`-I`    | `--info`                | show information about {$PACKAGE}
-`-i`    | `--install`             | install {$PACKAGE}
-`-l`    | `--list`                | list packages currently installed
-`-L`    | `--listfiles`           | list packages that were installed as dependencies of another package
-`-p`    | `--print-avail`:         | show details about {$PACKAGE}
-`-P`    | `--purge`               | remove {$PACKAGE}, including configuration files
-`-r`    | `--remove`              | remove {$PACKAGE}, keeping configuration files
-`-s`    | `--status`              | display package status
-`-S`    | `--search`              | list package name responsible for a specific file being installed on the system
-`-C`    | `--audit`               | check for broken packages
-\-      | `--get-selections`      | display list of package selections
-
-### `dpkg-reconfigure`
-Run a package's configuration script after it has already been installed.
-Change the time zone on a Debian based system using package-based tools
-```sh
-dpkg-reconfigure tzdata
-```
-
 ### `du`
 Summary of information in human-readable format
 ```sh
@@ -567,17 +462,14 @@ Show the size of a directory at {path} in human-readable form
 ```sh
 du -hs path
 ```
-
 ### `dumpe2fs`
 Display detailed filesystem information
-
 ### `e2label`
 Create an image of important metadata for an ext3 filesystem
 Assign label "Storage" to /dev/sdb1
 ```sh
 e2label /dev/sdb1 Storage
 ```
-
 ### `find`
 Search for files in a directory hierarchy
 Find all files in {$PATH} that are owned by {user}
@@ -714,13 +606,6 @@ Confirm firewalld is running
 ```sh
 firewall-cmd --state
 ```
-
-### `fold`
-Display text of {file}, wrapping long lines
-```sh
-fold  file
-```
-
 ### `fsck`
 Check filesystem for errors\
 Display progress indicators
@@ -735,16 +620,12 @@ Prompt when attempting a repair action
 ```sh
 fsck -r
 ```
-
 ### `fstrim`
 Discard unused blocks on a mounted filesystem
-
 ### `gdmsetup`
 GUI program used to set options for the login window when using GDM
-
 ### `getfacl`
 Get access control list for {file}
-
 ### `gpg`
 PGP was bought by Semantec, and GNU has since released GPG, an open-source replacement.
 
@@ -792,10 +673,8 @@ Send keys to {keyserver}
 ```sh
 gpg --send-keys keyIDs --keyserver keyserver
 ```
-
 ### `hdiutil`
 Manipulate disk images
-
 ### `hdparm`
 Get/set SATA/IDE device parameters\
 Check power mode
@@ -806,25 +685,16 @@ Show drive geometry, including size in sectors and starting offset
 ```sh
 hdparm -g
 ```
-
-### `head`
-Print first 8 characters of `$FILE`
-```sh
-head -c8 $FILE
-```
-
 ### `host`
 Display SOA record frm each authoritative DNS nameserver
 ```sh
 host -C
 ```
-
 ### `hostname`
 Return the domain name configured for the server
 ```sh
 hostname -d
 ```
-
 ### `hwclock`
 Access the BIOS clock\
 Set hardware clock to software clock
@@ -839,7 +709,6 @@ Display the Hardware Clock time
 ```sh
 hwclock --show
 ```
-
 ### `iconv`
 Convert text from one encoding to another\
 Convert {file} from ASCII to UTF-8
@@ -850,13 +719,11 @@ Show available character sets
 ```sh
 iconv -l --list
 ```
-
 ### `insmod`
 Insert a module into the Linux kernel
 ```sh
 insmod module
 ```
-
 ### `iscsiadm`
 Command-line utility allowing discovery and login to iSCSI targets\
 Set interval length between two ping requests
@@ -867,10 +734,6 @@ Discover iSCSI targets
 ```sh
 iscsiadm discovery
 ```
-
-### `iwlist`
-Get detailed wireless information about a wireless interface
-
 ### `kill`
 List signal options
 ```sh
@@ -882,7 +745,6 @@ Transmit SIGKILL to {proc}
 kill -9 proc
 kill --KILL proc
 ```
-
 ### `last`
 Display history of successful logins\
 Load information from an alternate file
@@ -894,10 +756,8 @@ Display history of successful logins by {username}
 ```sh
 last username
 ```
-
 ### `lastb`
 Display history of unsuccessful logins
-
 ### `ldconfig`
 Change location of cache to be updated
 ```sh
@@ -911,19 +771,16 @@ Display all shared libraries
 ```sh
 ldconfig -v
 ```
-
 ### `ldd`
 Display dependencies of {program}
 ```sh
 ldd program
 ```
-
 ### `link`
 Create a link between two files; same as `ln`, but with no error checking
 ```sh
 link file1 file2
 ```
-
 ### `locale`
 Display all environment variables related to localization with their current values\
 Display all localizations currently supported by the system
@@ -978,16 +835,6 @@ Manjaro hardware utility
 `sudo mhwd -a pci nonfree 0300` : command was run while troubleshooting black screen on startup 
 ### `mhwd-chroot`
 Chroot into an installed Linux installation from a live boot of a Manjaro Installation Media
-### `mkdir`
-Quickly create multiple directories using brace expansion
-```sh
-mkdir -p ~/my-app/{bin,lib,log}
-```
-Create new directory {dirname} along with all of the parents in its pathname, if they do not exist
-```sh
-mkdir -p dirname
-mkdir --parents dirname
-```
 ### `mke2fs`
 Create an ext2/3/4 filesystem
 ### `mkfontscale`
@@ -1031,7 +878,6 @@ Show kernel {$MODULE}'s dependencies
 ```sh
 modprobe --show-depends $MODULE
 ```
-
 ### `mongod`
 MongoDB daemon
 
@@ -1046,7 +892,6 @@ Run MongoDB service in the background on port 80
 ```sh
 mongod --dbpath $HOME/db --port 80 --fork --logpath /var/tmp/mongodb
 ```
-
 ### `mount`
 Mount all filesystems in `fstab`
 ```sh
@@ -1072,10 +917,8 @@ Mount a USB stick that is made available on /dev/sdb in /media/usb
 ```sh
 mount /dev/sdb1 /media/usb
 ```
-
 ### `mt`
 Control magnetic tape drive operation; operates on environment variable TAPE
-
 ### `netplan`
 Ubuntu network configuration tool
 
@@ -1088,10 +931,8 @@ Apply network configuration settings
 ```sh
 netplan apply
 ```
-
 ### `newaliases`
 Refresh the mail system after a change to the [ /etc/aliases ](#configs) file; Must be run after making a change to email aliases on a server running [ `postfix` ](#postfix)
-
 ### `nice`
 Run {prog} at a nice value of (positive) 10
 ```sh
@@ -1099,27 +940,18 @@ nice -10 prog
 nice -n 10
 nice prog
 ```
-### `nl`
-Number all lines, including blank lines
-```sh
-nl -b a file
-nl --body-numbering=a file
-```
 ### `nmblookup`
 Test NetBIOS name resolution
-
 ### `nohup`
 Execute {cmd} in the background such that it won't be interrupted by a logoff
 ```sh
 nohup cmd &
 ```
-
 ### `ntpdate`
 Synchronize system clock to that of an online Network Time Protocol server
 ```sh
 ntpdate -upool.ntp.org
 ```
-
 ### `passwd`
 Option  | POSIX option            | Effect
 :---    | :---                    | :---
@@ -1143,7 +975,6 @@ Unlock {user}'s account
 ```sh
 passwd -u user # passwd --unlock
 ```
-
 ### `paste`
 Merge lines of files\
 Make a .csv file from two lists
@@ -1154,13 +985,11 @@ Transpose rows
 ```sh
 paste -s file1 file2
 ```
-
 ### `patch`
 Ignore whitespace
 ```sh
 patch -i
 ```
-
 ### `ping`
 "packet Internet groper" utility used for checking network connections, using ICMP packets (cf. [ `nc` ](network.md#nc))\
 Send `$N` number of pings
@@ -1187,18 +1016,6 @@ Bypass routing tables
 ```sh
 ping -r
 ```
-
-### `pip`
-Display installed packages
-```sh
-pip list
-```
-Display information about {package}
-```sh
-pip show package
-```
-
-
 ### `pydoc`
 Display all installed Python modules
 ```sh
@@ -1250,13 +1067,11 @@ repquota -sh
 ```
 ### `resize4fs`
 Resize ext4 filesystem
-
 ### `restorecon`
 Restore security context default in the policy
 ```sh
 restorecon -Rv website
 ```
-
 ### `rmmod`
 Wait until a module is no longer in use before unloading
 ```sh
@@ -1292,86 +1107,20 @@ Add default gateway at {ipaddr}
 ```sh
 route add default gw ipaddr
 ```
-
-
 ### `smbclient`
 Connect to a Samba server
 Set the port while connecting to a Samba server
 ```
 smbclient -p
 ```
-
 ### `smbpasswd`
 Create a Samba password
-
 ### `smbstatus`
 Report on current Samba connections
 List Samba shares
 ```sh
 smbstatus -S
 ```
-
-### `sed`
-Run sed commands in `sedscr` on file
-```sh
-sed -f sedscript file
-```
-Suppress automatic printing of pattern space
-```sh
-sed -n
-sed --quiet
-sed --silent
-```
-
-### SELinux
-Display SELinux contexts for processes
-```sh
-ps auxZ
-```
-Display SELinux context for files
-```sh
-ls -Z
-```
-Display status of SELinux
-```sh
-sestatus
-```
-Change SELinux mode
-{$MODE} can be "enforcing" (or "1"), "permissive" ("0") or "disabled"
-```sh
-setenforce $MODE
-```
-Amend policy to add a file context
-```sh
-semanage fcontext -a -t httpd_sys_content_t website
-```
-Add a port context
-```sh
-semanage port -a -t http_port_t -p tcp 8080
-```
-Display all ports with attached types
-```sh
-semanage port -l
-```
-
-### `seq`
-Sequence from 1 to 15
-```sh
-seq -f "%03g" 15
-```
-Sequence from 5 to 99, separated by a space instead of a newline
-```sh
-seq -s " " 5 99
-```
-Sequence every third number from 5 to 20
-```sh
-seq 5 320
-```
-Sequence from 1 to 8
-```sh
-seq 8
-```
-
 ### `sfdisk`
 Script-oriented tool for partitioning disk devices
 
@@ -1391,57 +1140,42 @@ List partitions on {device}
 ```sh
 sfdisk-l device # sfdisk --list device
 ```
-
-### `shred`
-Write random data to an unmounted disk for {n} passes
-```sh
-shred --iterations=n
-```
-
 ### `shutdown`
 Shut down at 8 pm
 ```sh
 shutdown 20:00
 ```
-
 ### `slapadd`
 Add entries to the slapd LDAP directory
-
 ### `sleep`
 Wait a specified number of `seconds` before executing another command; often used in shell scripts
 ```sh
 sleep seconds
 ```
-
+#### `stat`
+Display statistics for a file
+```sh
+stat file
+```
 ### `stty`
 Return number of rows and columns of the terminal
 ```sh
 stty size
 ```
-
-### swapon
+### `swapon`
 Instruct system to begin using {partition} as a swap file
 ```sh
 swapon partition
 ```
 ### `sysctl`
-View and configure kernel parameters at runtime\
+View and configure kernel parameters at runtime
+
 Display current hostname as known to the kernel
 ```sh
 sysctl -n kernel.hostname
 ```
-
 ### `syslog`
 System logging facility used for messages from the kernel
-
-
-### `tail`
-Output last lines beginning at 30th line from the start
-```sh
-tail -n=+30
-tail --lines=+30
-```
-
 ### `tcpdump`
 Inspect actual IP packets\
 Set snapshot length of capture (default 65,535B)
@@ -1521,47 +1255,14 @@ Look up one or more commands in the online manpages and display a brief descript
 ```sh
 whatis commands
 ```
-### `sosreport`
-**SOS** is an open-source data collection tool that can be used to collect system configuration details and diagnostic information from a Unix-like operating system. It is installed by default on Ubuntu Server. [^][39]
-
-Option  | POSIX option            | Effect
-:---    | :---                    | :---
-`-l`    |                         | list plugins
-\-      | `--compression-type`    | specify alternative compression (`xz` by default)
-\-      | `--tmp-dir`             | specify alternative temporary directory
-
-Collect system configuration details (without arguments, the report will be generated and stored in `$TMPDIR`)
-```sh
-sosreport
-```
-Specify alternative temporary directory
-```sh
-sosreport --tmp-dir /opt
-```
-Specify alternative compression (`xz` by default)
-```sh
-sosreport --compression-type gzip
-```
-Generate report for only specific plugins
-```sh
-sosreport -o apache --batch
-```
 
 ### `xinetd`
-Internet Super Daemon provided an alternate method of connecting to various outdated network services. Should be turned off nowadays.  
-
 Configuration file  | Description
 :---                | :---
 /etc/xinet.d/       | config files
 /etc/xinetd.conf    | master xinetd configuration
 /etc/cmd.allow      | specify who is allowed to run a command
 /etc/cmd.deny       | specify who is disallowed from running a command
-
-Display statistics for a file
-```sh
-stat file
-```
-
 
 ## Tasks
 ### Samba
@@ -1613,7 +1314,6 @@ This will display the Samba CLI
 ```
 smb: \>
 ```
-
 ### Bash scripting
 Validating arguments [[PGL](../sources/pgl.md): 548]
 ```sh 
@@ -1636,7 +1336,6 @@ Placed in a while loop, if user responds with anything except "y" (the read comm
 read -p "Backup another server? (y/n)" -n 1
 ["$BACKUP_AGAIN"="y"] || break
 ```
-
 #### Diagnosing network problems
 Test from the inside out, starting with the loopback
 1. ping looback address, testing the TCP/IP stack
@@ -1658,7 +1357,6 @@ Count the number of occurrences of a string
 ```sh
 | uniq -c | sort -nr
 ```
-
 ## 
 
 [4]: https://www.tecmint.com/rdesktop-connect-windows-desktop-from-linux/ "TecMint: \"rdesktop - A RDP Client to Connect Windows Desktop from Linux\""
@@ -1684,7 +1382,8 @@ Count the number of occurrences of a string
 [http://www.linux-magazine.com/Issues/2017/197/Command-Line-bluetoothctl#article_i1]: http://www.linux-magazine.com/Issues/2017/197/Command-Line-bluetoothctl#article_i1 "Linux Magazine: \"Blue Control\""
 
 [aclocal]:                                           autotools.md#aclocal                                           '```&#10;aclocal&#10;```&#10;Place m4 macro definitions needed by `autoconf` into a single file. `aclocal` first scans for macro definitions in m4 files in its default directory (/usr/share/aclocal) and in the file acinclude.m4, then in the configure.ac file. IT generates an aclocal.m4 file that contains definitions of all m4 macros required by `autoconf`.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 16'
-[amixer]:                                            audio.md#amixer                                                "Command-line mixer for ALSA sound card driver"
+[alsamixer]:                                         audio.md#alsamixer                                 '```&#10;$ alsamixer&#10;```&#10;Command-line mixer'
+[amixer]:                                            audio.md#amixer                                                '```&#10;$ amixer&#10;```&#10;Command-line mixer for ALSA sound card driver'
 [ar]:                                                archive.md#ar                                                  '```&#10;ar&#10;```&#10;Maintain a group of files that are combined into a file archive. Used most commonly to create and update library files as used by `ld`.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 16'
 [as]:                                                autotools.md#as                                                '```&#10;as&#10;```&#10;Generate an object file from each specified assembly language source file. Primarily intended to assemble the output of the GNU C compiler `gcc` for use by the linker `ld`.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 18'
 [autoconf]:                                          autotools.md#autoconf                                          '```&#10;autoconf&#10;```&#10;Generate a configuration script from m4 macros defined in a template file, if given, or in a configure.ac or configure.in file in the CWD. The generated script is almost invariably called "configure".&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 21'
@@ -1695,8 +1394,10 @@ Count the number of occurrences of a string
 [autoupdate]:                                        autotools.md#autoupdate                                        '```&#10;autoupdate&#10;```&#10;Update the configure template file or configure.ac if none is specified&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 21'
 [bc]:                                                #bc                                                            '```&#10;$ bc&#10;```&#10;An arbitrary precision calculator language&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 26'
 [biff]:                                              #biff                                                          '```&#10;$ biff&#10;```&#10;Turn mail notifications on or off. With no arguments, `biff` indicates the current status&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 27'
-[bison]:                                             #bison                                                         '```&#10;$ bison&#10;```&#10;Convert specified "file.y" containing a context-free grammar into tables for subsequent parsing while sending output to a new file named "file.c". Largely compatible with `yacc`, from which it derives its name.&#10;Originated as an adaptation of Bob Corbett's reimplementation of yacc which was distributed under the Berkeley license. Now maintained as a project of the FSF under a GPL license.'
+[bison]:                                             #bison                                                         '```&#10;$ bison&#10;```&#10;Convert specified "file.y" containing a context-free grammar into tables for subsequent parsing while sending output to a new file named "file.c". Largely compatible with `yacc`, from which it derives its name.&#10;Originated as an adaptation of Bob Corbett\'s reimplementation of yacc which was distributed under the Berkeley license. Now maintained as a project of the FSF under a GPL license.'
 [bluetoothctl]:                                      #bluetoothctl                                                  '```&#10;$ bluetoothctl&#10;```&#10;Canonical implementation of Bluetooth on Linux'
+[bmon]:                                              network.md#bmon                                    '```&#10;$ bmon&#10;```&#10;Terminal-based graphical bandwidth monitor'
+[bpftrace]:                                          #bpftrace                                          '```&#10;$ bpftrace&#10;```&#10;New open-source tracer for analyzing production performance problems and troubleshooting software&#10;"An introduction to `bpftrace` for Linux." opensource.com'
 [bzip2]:                                             archive.md#bzip2                                               '```&#10;$ bzip2&#10;```&#10;Compress or decompress archives using the Burrows-Wheeler block-sorting text-compression algorithm.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 271'
 [cancel]:                                            #cancel                                                        '```&#10;$ cancel&#10;```&#10;Remove a print job that is in the queue&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 431'
 [cpio]:                                              archive.md#cpio                                                '```&#10;$ cpio&#10;```&#10;Backup utility that uses options similar to `tar`&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 491-492'
@@ -1708,31 +1409,35 @@ Count the number of occurrences of a string
 [depmod]:                                            #                                                              '```&#10;$ depmod&#10;```&#10;Builds the modules.dep file, which contains module dependencies and is used by `modprobe` to determine which modules need to be loaded&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 15'
 [dmidecode]:                                         #dmidecode                                                     '```&#10;$ dmidecode&#10;```&#10;Display a description of hardware components&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 324'
 [dnf]:                                               package.md#dnf                                                 '```&#10;$ dnf&#10;```"Dandified YUM", successor to `yum` as a package manager for RPM-based Linux distributions like Fedora.'
+[dpkg]:                                              package.md#dpkg                                    '```&#10;$ dpkg&#10;```&#10;Manage local Debian packages'
 [dracut]:                                            #                                                              '`dracut`&#10;Executed by `mkinitrd` but rarely used manually&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 8'
 [ethtool]:                                           #                                                              '`ethtool`&#10;Display and configure network device settings.'
-[fc-cache]:                                          #fc-cache                                                      "Update the font cache."
-[free]:                                              benchmarking.md#free                                           "Display amount of free and used memory in the system"
+[fs-cache]:                                          #fs-cache                                          '```&#10;$ fs-cache&#10;```&#10;Update the font cache'
+[free]:                                              #free                                              '```&#10;$ free&#10;```&#10;Display amount of free and used memory in the system&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.'
 [ftp]:                                               #                                                              'Transfer files to and from a remote network site'
-[glances]:                                           benchmarking.md#glances                                        "Cross-platform monitoring tool, written in Python"
-[groupadd]:                                          sysadmin.md#groupadd                                           "Create a new group"
+[glances]:                                           benchmarking.md#glances                            '```&#10;$ glances&#10;```&#10;Cross-platform monitoring tool, written in Python'
+[groupadd]:                                          #groupadd                                          '```&#10;$ groupadd&#10;```&#10;Create a new group&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.'
 [gzip]:                                              #archive.md#gzip                                               '`gzip`&#10;Compress or decompress archives using the Lempel-Ziv coding method&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 269'
-[hostnamectl]:                                       systemd.md#hostnamectl                                         "Control the system hostname"
-[hping3]:                                            network.md#hping3                                              "Active network smashing tool"
-[hwclock]:                                           #hwclock                                                       "Access the BIOS clock"
+[hostnamectl]:                                       #hostnamectl                                       '```&#10;$ hostnamectl&#10;```&#10;Control the system hostname&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.'
+[hping3]:                                            network.md#hping3                                  '```&#10;$ hping3&#10;```&#10;Active network smashing tool'
+[hwclock]:                                           #hwclock                                           '```&#10;$ hwclock&#10;```&#10;Access the BIOS clock&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.'
+[ifconfig]:                                          network.md#ifconfig                                '```&#10;$ ifconfig&#10;```&#10;Obsolete program that configures network interfaces'
 [iftop]:                                             #                                                              '`iftop`&#10;Display network connections using the most bandwidth&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 281'
+[install]:                                           file.md#install                                    '```&#10;$ install&#10;```&#10;Copy files while maintaining metadata'
 [iostat]:                                            benchmarking.md#iostat                                         '`iostat`&#10;Display input/output statistics on devices, including partitions&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 48&#10;---&#10;Measure the flow of information to and from disk devices&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 637'
-[ip]:                                                network.md#ip                                                  "Newer alternative to the old `ifconfig`"
+[ip]:                                                network.md#ip                                                '```&#10;ip&#10;```&#10;Newer alternative to the old `ifconfig`&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.'
 [iperf]:                                             #                                                              '`iperf`&#10;Create tests of the throughput between two systems, requiring setup on both client and server&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 281'
 [ipset]:                                             #                                                              '`ipset`&#10;Create a "set" of IP addresses to which firewall rules can be applied&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 282'
-[iw]:                                                network.md#iw                                                  "Show or manipulate wireless devices and their configuration"
-[journalctl]:                                        systemd.md#journalctl                                          "Query the systemd journal"
+[iw]:                                                network.md#iw                                      '```&#10;$ iw&#10;```&#10;Show or manipulate wireless devices and their configuration'
+[iwlist]:                                            network.md#iwlist                                  '```&#10;$ iwlist&#10;```&#10;Get detailed wireless information about a wireless interface'
+[journalctl]:                                        #journalctl                                        '```&#10;$ journalctl&#10;```&#10;Query the systemd journal&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.'
 [kinit]:                                             #                                                              '`kinit`&#10;Kerberos utility to obtain an individual ticket, which is then cached on the local system.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 239'
 [klist]:                                             #                                                              '`klist`&#10;Display a list of cached Kerberos tickets&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 239'
 [lex]:                                               #lex                                                           '```&#10;$ lex&#10;```&#10;Generate a lexical analysis program based on the regular expressions and C statements contained in one or more input files&#10;Lexical analyzer generator written by Eric Schmidt'
-[localectl]:                                         systemd.md#localectl                                           "Control the system locale and keyboard layout settings"
-[logger]:                                            #logger                                                        "Create a one-time file entry specified by the user"
+[localectl]:                                         #localectl                                         '```&#10;localectl&#10;```&#10;Control the system locale and keyboard layout settings&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.'
+[logger]:                                            #logger                                            '```&#10;$ logger&#10;```&#10;Create a one-time file entry specified by the user'
 [logrotate]:                                         #logrotate                                                     '`logrotate`&#10;Rename ("rotate") log files on a cyclic basis using /etc/logrotate.conf to determine behavior&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 445-447&#10;---&#10;Utility designed to ensure the partition that holds log files has enough room to handle them by rotating log files, reducing the space they use, typically configured to run automatically as a cron job&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 250-252'
-[loginctl]:                                          systemd.md#loginctl                                            "Control the systemd login manager"
+[loginctl]:                                          systemd.md#loginctl                                '```&#10;$ loginctl&#10;```&#10;Control the systemd login manager'
 [lp]:                                                #lp                                                            '`lp`&#10;Send a print job to a printer&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 428'
 [LPD]:                                               #                                                              'Line Printer Daemon (LPD)&#10;Older Linux printing system&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 432'
 [lpc]:                                               #lpc                                                           '`lpc`&#10;View status of printers&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 432'
@@ -1741,23 +1446,35 @@ Count the number of occurrences of a string
 [lprm]:                                              #lprm                                                          '`lprm`&#10;Remove print jobs&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 432'
 [lscpu]:                                             benchmarking.md#lscpu                                          '```&#10;$ lscpu&#10;```&#10;Display CPU architecture'
 [lshw]:                                              #lshw                                                          '`lshw`&#10;Display detailed information on system hardware&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 325'
+[lsof]:                                              file.md#lsof                                       '```&#10;lsof&#10;```&#10;Display open files, open network ports, and network connections&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.'
 [mkinitrd]:                                          #                                                              '`mkinitrd`&#10;Creates initramfs file&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 8'
 [mpstat]:                                            benchmarking.md#mpstat                                         '`mpstat`&#10;Report processor-related statistics&#10;---&#10;Utility for monitoring CPU performance&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 635-637'
-[nproc]:                                             benchmarking.md#nproc                                          "Display number of CPU processors or cores"
-[ntsysv]:                                            #ntsysv                                                        '`ntsysv`&#10;TUI utility used to modify appropriate runtime configuration files so that they start and stop daemons when entering a particular runlevel&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 367'
-[rpm]:                                               rpm.md#rpm                                                     '`rpm`&#10;RPM package manager'
-[sar]:                                               benchmarking.md#sar                                            '`sar`&#10;"system activity reporter", the most widely used performance monitoring tool on Linux&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 637-641'
-[systemctl]:                                         systemd.md#systemctl                                           "Control the systemd system and service manager"
-[systemd-delta]:                                     systemd.md#systemd-dela                                        "Find overridden configuration files"
+[netstat]:                                           #netstat                                                       '```&#10;$ netstat&#10;```&#10;Print network connections, routing tables, interface statistics, masquerade connections, and multi-cast memberships'
+[nproc]:                                             benchmarking.md#nproc                              '```&#10;$ nproc&#10;```&#10;Display number of CPU processors or cores'
+[ntsysv]:                                            #ntsysv                                            '```&#10;$ ntsysv&#10;```&#10;TUI utility used to modify appropriate runtime configuration files so that they start and stop daemons when entering a particular runlevel&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 367'
+[rfkill]:                                            network.md#rfkill                                  '```&#10;$ rfkill&#10;```&#10;Tool for enabling and disabling wireless devices'
+[rpm]:                                               rpm.md#rpm                                         '`rpm`&#10;RPM package manager'
+[sar]:                                               benchmarking.md#sar                                '`sar`&#10;"system activity reporter", the most widely used performance monitoring tool on Linux&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 637-641'
+[semanage]:                                          selinux.md#semanage                                '```&#10;$ semanage&#10;```&#10;Edit security contexts for files and ports'
+[sestatus]:                                          selinux.md#sestatus                                '```&#10;sestatus&#10;```&#10;Display status of SELinux&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.'
+[setenforce]:                                        selinux.md#setenforce                              '```&#10;setenforce&#10;```&#10;Change SELinux mode&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.'
+[speaker-test]:                                      audio.md#speaker-test                              '```&#10;$ speaker-test&#10;```&#10;Generates a tone that can be used to test the speakers of a computer'
+[stat]:                                              #stat                                              '```&#10;$ stat&#10;```&#10;Display file or file system status'
+[systemctl]:                                         systemd.md#systemctl                               '```&#10;$ systemctl&#10;```&#10;Control the systemd system and service manager'
+[systemd-delta]:                                     systemd.md#systemd-delta                                       '```&#10;$ systemd-delta&#10;```&#10;Find overridden configuration files'
+[tcpdump]:                                           #tcpdump                                           '```&#10;$ tcpdump&#10;```&#10;Inspect IP packets (Wireshark is a GUI-based alternative)'
 [timedatectl]:                                       systemd.md#timedatectl                                         '```&#10;$ timedatectl&#10;```&#10;Control the system time and date'
+[tree]:                                              file.md#tree                                       '```&#10;$ tree&#10;```&#10;Display contents of directories in a tree-like format'
 [tshark]:                                            #                                                              '`tshark`&#10;Wireshark terminal interface&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 283'
 [virt-install]:                                      virt.md#virt-install                                           '`virt-install`&#10;Command-line tool for creating new KVM, Xen, or Linux container guests using the libvirt hypervisor management library'
 [virt-manager]:                                      virt.md#virt-manager                                           '`virt-manager`&#10;"Virtual Machine Manager", GUI tool for managing VMs developed by Red Hat'
 [vmstat]:                                            benchmarking.md#vmstat                                         '`vmstat`&#10;Provides more detail than `free`&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 642'
 [w]:                                                 #                                                              '```&#10;$ w&#10;```&#10;Display output similar to that of `uptime` for all logged-in users'
-[xlsclients]:                                        X.md#xlsclients                                                "```&#10;$ xlsclients&#10;```&#10;Determine what applications are running on the legacy X11 server provided with Wayland"
+[xinetd]:                                            #xinetd                                            '```&#10;$ xinetd&#10;```&#10;Internet Super Daemon provided an alternate method of connecting to various outdated network services. Should be turned off nowadays.'
+[xlsclients]:                                        X.md#xlsclients                                                '```&#10;$ xlsclients&#10;```&#10;Determine what applications are running on the legacy X11 server provided with Wayland'
 [xz]:                                                #                                                              '```&#10;$ xz&#10;```&#10;Compress or decompress archives using the LZMA and LZMA2 compression methods.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 270'
 [yacc]:                                              #yacc                                                          '```&#10;$ yacc&#10;```&#10;"yet another compiler-compiler", parser generator that converts a file containing a context-free LALR grmamar and converts it to tables for subsequent pasring, sending output to y.tab.c. Written between 1975 and 1978 by Stephen C. Johnson at Bell Labs.'
 [yumdownloader]:                                     #                                                              '```&#10;$ yumdownloader&#10;```&#10;Download software packages without installing them&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 84'
 [zypper]:                                            #                                                              '```&#10;$ zypper&#10;```&#10;Package manager for SUSE with a syntax similar to that of `yum`&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 86'
+
 [/etc/samba/smb.conf]:                               #                                                              "Samba configuration file"

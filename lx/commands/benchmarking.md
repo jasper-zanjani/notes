@@ -1,4 +1,7 @@
 # Linux benchmarking commands
+&nbsp;  | Commands
+---     | ---
+&nbsp;  | [`free`][free] &bull; [`glances`][glances] &bull; `ioping` `iotop` &bull; [`lscpu`][lscpu] &bull; `mpstat` &bull; `netstat` [`nproc`][nproc] &bull; [`pmap`][pmap] &bull; `sosreport` [`sysbench`][sysbench] &bull; `uptime` &bull; [`vmstat`][vmstat]
 ### `free`
 Display amount of free and used memory in the system [^][L5PMT-memory]
 ```sh
@@ -45,7 +48,31 @@ Option  | Description
 `-u`    | display CPU statistics (default when no options are specified)
 `-v`    | display kernel-related statistics
 `-W`    | display swapping statistics
+### `sosreport`
+**SOS** is an open-source data collection tool that can be used to collect system configuration details and diagnostic information from a Unix-like operating system. It is installed by default on Ubuntu Server. [^][39]
 
+Option  | POSIX option            | Effect
+:---    | :---                    | :---
+`-l`    |                         | list plugins
+\-      | `--compression-type`    | specify alternative compression (`xz` by default)
+\-      | `--tmp-dir`             | specify alternative temporary directory
+
+Collect system configuration details (without arguments, the report will be generated and stored in `$TMPDIR`)
+```sh
+sosreport
+```
+Specify alternative temporary directory
+```sh
+sosreport --tmp-dir /opt
+```
+Specify alternative compression (`xz` by default)
+```sh
+sosreport --compression-type gzip
+```
+Generate report for only specific plugins
+```sh
+sosreport -o apache --batch
+```
 ### `sysbench`
 Benchmark CPU by calculating prime numbers [^][https://youtu.be/KkMWXVx-Ul8]
 ```sh
@@ -55,7 +82,6 @@ File I/O benchmarking [^][https://youtu.be/KkMWXVx-Ul8]
 ```sh
 sysbench --test=fileio --file-total-size=10G --file-test-mode=rndrw --init-rng=on --max-time=300 --max-requests=0 run
 ```
-
 ### `uptime`
 [^][L5PMT-cpu]
 ### `vmstat`
@@ -79,8 +105,6 @@ Output header | Description [^][Eckert]
 `id`          | CPU idle time
 `wa`          | time spent waiting for I/O
 `st`          | time stolen from a virtual machine
-
-
 ### /proc/meminfo
 Free and used memory [^][L5PMT-memory]
 ## 
@@ -93,10 +117,10 @@ Free and used memory [^][L5PMT-memory]
 [L5PMT-subsystem]: https://subscription.packtpub.com/video/programming/9781838559250/p2/video2_1/subsystem-analysis-with-vmstat 'Linux 5 Performance Monitoring and Tuning: "Subsystem Analysis with vmstat"'
 [https://youtu.be/KkMWXVx-Ul8]: https://youtu.be/KkMWXVx-Ul8 "YouTube: How to Benchmark your Linux system, Hak5 1502.1"
 
-[free]:           #free             "Display amount of free and used memory in the system"
-[glances]:        #glances          "Cross-platform monitoring tool, written in Python"
-[lscpu]:          #lscpu            "Display CPU architecture information"
-[nproc]:          #nproc            "Display number of CPU processors or cores"
-[pmap]:           #pmap             "Report memory map of a process"
-[sysbench]:                                          #sysbench                                          '```&#10;$ sysbench&#10;```&#10;Multi-threaded benchmark tool for database systems'
-[vmstat]:         #vmstat           '`vmstat`&#10;Provides more detail than `free`&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 642'
+[free]:                                               #free             "Display amount of free and used memory in the system"
+[glances]:                                            #glances          "Cross-platform monitoring tool, written in Python"
+[lscpu]:                                              #lscpu            "Display CPU architecture information"
+[nproc]:                                              #nproc            "Display number of CPU processors or cores"
+[pmap]:                                               #pmap             "Report memory map of a process"
+[sysbench]:                                           #sysbench         '```&#10;$ sysbench&#10;```&#10;Multi-threaded benchmark tool for database systems'
+[vmstat]:                                             #vmstat           '`vmstat`&#10;Provides more detail than `free`&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 642'
