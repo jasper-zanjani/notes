@@ -58,179 +58,6 @@ X   | [`X`](#X) [`xdpyinfo`](#xdpyinfo) [`xhost`](#xhost) [`xinetd`][xinetd] [`X
 Y   | [`yay`](#yay) [`yum`](package.md#yum) [`yumdownloader`][yumdownloader]
 Z   | [`zip`](#zip) [`zipcloak`](#zipcloak) [`zipdetails`](#zipdetails) [`zipgrep`](#zipgrep) [`zipinfo`](#zipinfo) [`zipnote`](#zipnote) [`zipsplit`](#zipsplit) [`zsh`](#zsh) [`zypper`][zypper]
 
-### `bluetoothctl`
-&nbsp;  | `bluetoothctl` commands [^][http://www.linux-magazine.com/Issues/2017/197/Command-Line-bluetoothctl#article_i1] [^][https://computingforgeeks.com/connect-to-bluetooth-device-from-linux-terminal/]
----     | ---
-&nbsp;  | [`device`][bluetoothctl devices] &bull; [`list`][bluetoothctl list] &bull; [`pair`][bluetoothctl pair] &bull; [`pairable on`][bluetoothctl pairable on] &bull; [`scan on`][bluetoothctl scan on] &bull; [`select`][bluetoothctl select] &bull; [`show`][bluetoothctl show]
-
-[bluetoothctl list]:                                              #bluetoothctl                                       '```&#10;$ bluetoothctl&#10;[bluetooth]# list&#10;```&#10;Display available controllers'
-[bluetoothctl show]:                                              #bluetoothctl                                       '```&#10;$ bluetoothctl&#10;[bluetooth]# show&#10;```&#10;Display more detailed inormation about available controllers'
-[bluetoothctl select]:                                            #bluetoothctl                                       '```&#10;$ bluetoothctl&#10;[bluetooth]# select&#10;```&#10;Select controller to pair, if the system has more than one'
-[bluetoothctl scan on]:                                           #bluetoothctl                                       '```&#10;$ bluetoothctl&#10;[bluetooth]# scan on&#10;```&#10;Receive a list of detected devices'
-[bluetoothctl pairable on]:                                       #bluetoothctl                                       '```&#10;$ bluetoothctl&#10;[bluetooth]# pairable on&#10;```&#10;Prepare controller for pairing'
-[bluetoothctl devices]:                                           #bluetoothctl                                       '```&#10;$ bluetoothctl&#10;[bluetooth]# devices&#10;```&#10;List available devices'
-[bluetoothctl pair]:                                              #bluetoothctl                                       '```&#10;$ bluetoothctl&#10;[bluetooth]# pair $DEVICE&#10;```&#10;Pair with `$DEVICE`, which is the MAC address of the pairable device'
-### `bpftrace`
-New open-source tracer for analyzing production performance problems and troubleshooting software [^][19]
-### `exif`
-View image metadata. Unlike alternatives like `file` and ImageMagick's `identify`, `exif` produces columnar output [^][31]
-```sh
-exif image.png 
-```
-### `fc-cache`
-Update the font cache [^][59]
-```sh
-fc-cache -v
-```
-### `file`
-View image metadata [^][31]
-```sh
-file image.png # => file type, dimensions, color depth
-```
-### `ftp`
-encrypted file transfers
-### `fusermount`
-Mount a directory from a remote server on your local host via SSH [^][[23]
-```sh
-fusermount -u mountpoint
-```
-### `history`
-Option  | Effect
-:---    | :---
-`-c`    | clear history [^][23]
-### `lowriter`
-`lowriter` is a command-line utility installed with LibreOffice Writer. [^][21]
-Convert a single file to PDF
-```sh
-lowriter --convert-to pdf filename.doc
-```
-Convert a batch of files using globbing
-```sh
-lowriter --convert-to pdf *.docx
-```
-### `mktemp`
-Create a temporary file or directory safely and print its name. These will not need to be manually cleaned up because they will be placed in the temporary directory (**/tmp**) [^][29]
-
-Create a new temporary file
-```sh
-mktemp
-```
-Create a new temporary directory
-```sh
-mktemp -d
-```
-Create a new temporary file or directory with a custom name. Append at least 3 `X`'s to the end of the filename
-```sh
-mktemp ostechnixXXX
-```
-Add a suffix
-```sh
-mktemp ostechnixXXX --suffix=blog
-```
-### `mv`
-Option  | POSIX option            | Effect
-:---    | :---                    | :---
-\-      | `--backup`              | takes an argument defining how the backup file is named (not available in BSD)
-`-f`    | `--force`               | overrides `--interactive`
-`-i`    | `--interactive`         | 
-`-n`    | `--no-clobber`          | silently reject move action in the event of a conflict
-`-u`    | `--update`              | only overwrite if the modification time of the destination is older than the source
-### `networkmanager`
-Stop NetworkManager service
-```sh
-chkconfig NetworkManager off               # Upstart
-systemctl disable NetworkManager.service   # Systemd
-service NetworkManager stop                # sysvinit
-```
-### `rename`
-`rename` uses regular expressions [^][33]
-
-Option  | POSIX option            | Effect
-:---    | :---                    | :---
-`-n`    | `--nono`                | dry-run: describe the changes the command would make, without actually doing them
-
-Rename multiple files
-```sh
-# Renaming file.old to file.new
-rename 's/old/new/' this.old
-
-# Use globbing to rename all matching files
-rename 's/old/new/' *.old
-rename 's/report/review/' *
-
-# Change all uppercase letters to lowercase
-rename 'y/A-Z/a-z/' *
-```
-### `screen`
-Share your screen session with another user
-```sh
-screen -x user/session
-```
-### `sfdisk`
-Script-based partition table editor, similar to [`fdisk`](#fdisk) and [`gdisk`](#gdisk), which can be run interactively. It does not interface with GPT format, neither is it designed for large partitions. [^][11]
-
-List partitions on all devices
-```sh
-sfdisk -l
-sfdisk --list
-```
-List partitions on {device}
-```sh
-sfdisk -l device
-sfdisk --list device
-```
-Display size of {partition} or {device}
-This command produces the size of {partition} (i.e. `/dev/sda1`) or even {device} (`/dev/sda`) in blocks
-```sh
-sfdisk -s partition
-sfdisk -s device
-```
-Apply consistency checks to {partition} or {device}
-```sh
-sfdisk -V partition
-sfdisk --verify device
-```
-Create a partition
-```sh
-sfdisk device
-```
-Save sectors changed
-This command will allow recovery using the following command
-```sh
-sfdisk /dev/hdd -O hdd-partition-sectors.save
-```
-Recovery
-Man page indicates this flag is no longer supported, and recommends use of `dd` instead.
-```sh
-sfdisk /dev/hdd -I hdd-partition-sectors.save
-```
-### `tcpdump`
-Inspect actual IP packets (Wireshark is a GUI-based alternative)\
-All network data will be displayed to STDOUT
-```
-tcpdump -i eth0   
-```
-### `tracepath`
-Successor to `traceroute`, allowing the user to test connectivity along the path. Doesn't show as much detail with regard to time, so it may be faster.
-### `traceroute`
-Provides much more information than `tracepath`, even though it's older [[lxa-lpic](../sources/lxa-lpic.md)]
-### `watch`
-Repeat a command at regular intervals and watch its changing output
-
-Execute {cmd} at periods of {n} seconds, watching its output [^][23]
-```sh
-watch cmd -n n
-```
-Display a dashboard that will run {cmd} every second, displaying the output
-```sh
-watch -n 1 cmd
-watch -n 0.5 iptables -vnL # Update twice a second, producing a dashboard
-```
-### `resize2fs`
-Resize filesystem of logical volume {Marketing} on volume group {vg1} to take up the entire logical volume
-```sh
-resize2fs /dev/vg1/Marketing
-```
 ### `apropos`
 Look up one or more `keywords` in the online manpages: same as `man -k` (rf. `whatis`)
 ```sh
@@ -274,6 +101,20 @@ ausearch --start today --loginuid500
 ```
 ### `blkid`
 Show UUID, Label, and filesystems of GPT block devices
+### `bluetoothctl`
+&nbsp;  | `bluetoothctl` commands [^][http://www.linux-magazine.com/Issues/2017/197/Command-Line-bluetoothctl#article_i1] [^][https://computingforgeeks.com/connect-to-bluetooth-device-from-linux-terminal/]
+---     | ---
+&nbsp;  | [`device`][bluetoothctl devices] &bull; [`list`][bluetoothctl list] &bull; [`pair`][bluetoothctl pair] &bull; [`pairable on`][bluetoothctl pairable on] &bull; [`scan on`][bluetoothctl scan on] &bull; [`select`][bluetoothctl select] &bull; [`show`][bluetoothctl show]
+
+[bluetoothctl list]:                                              #bluetoothctl                                       '```&#10;$ bluetoothctl&#10;[bluetooth]# list&#10;```&#10;Display available controllers'
+[bluetoothctl show]:                                              #bluetoothctl                                       '```&#10;$ bluetoothctl&#10;[bluetooth]# show&#10;```&#10;Display more detailed inormation about available controllers'
+[bluetoothctl select]:                                            #bluetoothctl                                       '```&#10;$ bluetoothctl&#10;[bluetooth]# select&#10;```&#10;Select controller to pair, if the system has more than one'
+[bluetoothctl scan on]:                                           #bluetoothctl                                       '```&#10;$ bluetoothctl&#10;[bluetooth]# scan on&#10;```&#10;Receive a list of detected devices'
+[bluetoothctl pairable on]:                                       #bluetoothctl                                       '```&#10;$ bluetoothctl&#10;[bluetooth]# pairable on&#10;```&#10;Prepare controller for pairing'
+[bluetoothctl devices]:                                           #bluetoothctl                                       '```&#10;$ bluetoothctl&#10;[bluetooth]# devices&#10;```&#10;List available devices'
+[bluetoothctl pair]:                                              #bluetoothctl                                       '```&#10;$ bluetoothctl&#10;[bluetooth]# pair $DEVICE&#10;```&#10;Pair with `$DEVICE`, which is the MAC address of the pairable device'
+### `bpftrace`
+New open-source tracer for analyzing production performance problems and troubleshooting software [^][19]
 ### `cp`
 Preserve symlinks in a recursive copy
 ```sh
@@ -470,6 +311,21 @@ Assign label "Storage" to /dev/sdb1
 ```sh
 e2label /dev/sdb1 Storage
 ```
+### `exif`
+View image metadata. Unlike alternatives like `file` and ImageMagick's `identify`, `exif` produces columnar output [^][31]
+```sh
+exif image.png 
+```
+### `fc-cache`
+Update the font cache [^][59]
+```sh
+fc-cache -v
+```
+### `file`
+View image metadata [^][31]
+```sh
+file image.png # => file type, dimensions, color depth
+```
 ### `find`
 Search for files in a directory hierarchy
 Find all files in {$PATH} that are owned by {user}
@@ -622,6 +478,13 @@ fsck -r
 ```
 ### `fstrim`
 Discard unused blocks on a mounted filesystem
+### `ftp`
+encrypted file transfers
+### `fusermount`
+Mount a directory from a remote server on your local host via SSH [^][[23]
+```sh
+fusermount -u mountpoint
+```
 ### `gdmsetup`
 GUI program used to set options for the login window when using GDM
 ### `getfacl`
@@ -685,6 +548,10 @@ Show drive geometry, including size in sectors and starting offset
 ```sh
 hdparm -g
 ```
+### `history`
+Option  | Effect
+:---    | :---
+`-c`    | clear history [^][23]
 ### `host`
 Display SOA record frm each authoritative DNS nameserver
 ```sh
@@ -791,6 +658,16 @@ locale -a
 Create a one-time log file entry that you specify.
 ### `logout`
 Exit a login shell
+### `lowriter`
+`lowriter` is a command-line utility installed with LibreOffice Writer. [^][21]
+Convert a single file to PDF
+```sh
+lowriter --convert-to pdf filename.doc
+```
+Convert a batch of files using globbing
+```sh
+lowriter --convert-to pdf *.docx
+```
 ### `lp`
 Send `files` to the printer; with no arguments, prints stdin
 ### `lpstat`
@@ -851,6 +728,25 @@ mkfs -T filesystemtype
 Make a swap file out of {partition}
 ```sh
 mkswap partition
+```
+### `mktemp`
+Create a temporary file or directory safely and print its name. These will not need to be manually cleaned up because they will be placed in the temporary directory (**/tmp**) [^][29]
+
+Create a new temporary file
+```sh
+mktemp
+```
+Create a new temporary directory
+```sh
+mktemp -d
+```
+Create a new temporary file or directory with a custom name. Append at least 3 `X`'s to the end of the filename
+```sh
+mktemp ostechnixXXX
+```
+Add a suffix
+```sh
+mktemp ostechnixXXX --suffix=blog
 ```
 ### `modinfo`
 Determine options that a given module supports
@@ -919,6 +815,14 @@ mount /dev/sdb1 /media/usb
 ```
 ### `mt`
 Control magnetic tape drive operation; operates on environment variable TAPE
+### `mv`
+Option  | POSIX option            | Effect
+:---    | :---                    | :---
+\-      | `--backup`              | takes an argument defining how the backup file is named (not available in BSD)
+`-f`    | `--force`               | overrides `--interactive`
+`-i`    | `--interactive`         | 
+`-n`    | `--no-clobber`          | silently reject move action in the event of a conflict
+`-u`    | `--update`              | only overwrite if the modification time of the destination is older than the source
 ### `netplan`
 Ubuntu network configuration tool
 
@@ -930,6 +834,13 @@ Config file   | Description
 Apply network configuration settings
 ```sh
 netplan apply
+```
+### `networkmanager`
+Stop NetworkManager service
+```sh
+chkconfig NetworkManager off               # Upstart
+systemctl disable NetworkManager.service   # Systemd
+service NetworkManager stop                # sysvinit
 ```
 ### `newaliases`
 Refresh the mail system after a change to the [ /etc/aliases ](#configs) file; Must be run after making a change to email aliases on a server running [ `postfix` ](#postfix)
@@ -1060,10 +971,34 @@ Will stop when you press enter, displaying how much time elapsed
 ```sh
 time read
 ```
+### `rename`
+`rename` uses regular expressions [^][33]
+
+Option  | POSIX option            | Effect
+:---    | :---                    | :---
+`-n`    | `--nono`                | dry-run: describe the changes the command would make, without actually doing them
+
+Rename multiple files
+```sh
+# Renaming file.old to file.new
+rename 's/old/new/' this.old
+
+# Use globbing to rename all matching files
+rename 's/old/new/' *.old
+rename 's/report/review/' *
+
+# Change all uppercase letters to lowercase
+rename 'y/A-Z/a-z/' *
+```
 ### `repquota`
 Human-readable
 ```sh
 repquota -sh
+```
+### `resize2fs`
+Resize filesystem of logical volume {Marketing} on volume group {vg1} to take up the entire logical volume
+```sh
+resize2fs /dev/vg1/Marketing
 ```
 ### `resize4fs`
 Resize ext4 filesystem
@@ -1107,6 +1042,11 @@ Add default gateway at {ipaddr}
 ```sh
 route add default gw ipaddr
 ```
+### `screen`
+Share your screen session with another user
+```sh
+screen -x user/session
+```
 ### `smbclient`
 Connect to a Samba server
 Set the port while connecting to a Samba server
@@ -1139,6 +1079,44 @@ sfdisk-l # sfdisk --list
 List partitions on {device}
 ```sh
 sfdisk-l device # sfdisk --list device
+```
+
+Script-based partition table editor, similar to [`fdisk`](#fdisk) and [`gdisk`](#gdisk), which can be run interactively. It does not interface with GPT format, neither is it designed for large partitions. [^][11]
+
+List partitions on all devices
+```sh
+sfdisk -l
+sfdisk --list
+```
+List partitions on {device}
+```sh
+sfdisk -l device
+sfdisk --list device
+```
+Display size of {partition} or {device}
+This command produces the size of {partition} (i.e. `/dev/sda1`) or even {device} (`/dev/sda`) in blocks
+```sh
+sfdisk -s partition
+sfdisk -s device
+```
+Apply consistency checks to {partition} or {device}
+```sh
+sfdisk -V partition
+sfdisk --verify device
+```
+Create a partition
+```sh
+sfdisk device
+```
+Save sectors changed
+This command will allow recovery using the following command
+```sh
+sfdisk /dev/hdd -O hdd-partition-sectors.save
+```
+Recovery
+Man page indicates this flag is no longer supported, and recommends use of `dd` instead.
+```sh
+sfdisk /dev/hdd -I hdd-partition-sectors.save
 ```
 ### `shutdown`
 Shut down at 8 pm
@@ -1177,7 +1155,12 @@ sysctl -n kernel.hostname
 ### `syslog`
 System logging facility used for messages from the kernel
 ### `tcpdump`
-Inspect actual IP packets\
+Inspect actual IP packets
+
+All network data will be displayed to STDOUT
+```
+tcpdump -i eth0   
+```
 Set snapshot length of capture (default 65,535B)
 ```sh
 tcpdump -s
@@ -1250,12 +1233,23 @@ Send {message} to users in {group}
 wall -g group message
 wall --group group message
 ```
+### `watch`
+Repeat a command at regular intervals and watch its changing output
+
+Execute {cmd} at periods of {n} seconds, watching its output [^][23]
+```sh
+watch cmd -n n
+```
+Display a dashboard that will run {cmd} every second, displaying the output
+```sh
+watch -n 1 cmd
+watch -n 0.5 iptables -vnL # Update twice a second, producing a dashboard
+```
 ### `whatis`
 Look up one or more commands in the online manpages and display a brief description
 ```sh
 whatis commands
 ```
-
 ### `xinetd`
 Configuration file  | Description
 :---                | :---
