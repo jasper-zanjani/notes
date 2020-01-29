@@ -168,7 +168,7 @@ Immediate restart [^][Lab]
 shutdown /r /t 0
 ```
 ### `slmgr`
-&nbsp;    | Options [^][https://www.howtogeek.com/245445/how-to-use-slmgr-to-change-remove-or-extend-your-windows-license/] [!][https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn502540(v%3Dws.11)]
+&nbsp;    | Options [<sup>1</sup>][https://www.howtogeek.com/245445/how-to-use-slmgr-to-change-remove-or-extend-your-windows-license/] [<sup>2</sup>][https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn502540(v%3Dws.11)]
 ---       | ---
 [`slmgr`][slmgr] | [` /ato `][slmgr /ato] [` /dli `][slmgr /dli] [` /dlv `][slmgr /dlv]  [` /ipk `][slmgr /ipk]  [` /rearm `][slmgr /rearm] [` /upk `][slmgr /upk] [` /xpr `][slmgr /xpr]
 
