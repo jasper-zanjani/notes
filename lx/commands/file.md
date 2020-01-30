@@ -1,7 +1,7 @@
 # Linux file manipulation commands
 &nbsp;  | Commands
 ---     | ---
-&nbsp;  | [`install`][install] `ls` `lsof` `mkdir` `shred` [`tree`][tree]
+&nbsp;  | [`install`][install] `ls` [`lsof`][lsof] `mkdir` `shred` [`tree`][tree]
 ### `install`
 Copy files while maintaining various metadata, including timestamp, owner, etc. [[9](sources.md)]
 
