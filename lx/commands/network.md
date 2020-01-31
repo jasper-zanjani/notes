@@ -1,7 +1,13 @@
+# Linux network commands
+&nbsp;  | Commands
+---     | ---
+&nbsp;  | [`bmon`][bmon] &bull; [`hping3`][hping3] &bull; [`ifconfig`][ifconfig] [`ip`][ip] [`iw`][iw] [`iwlist`][iwlist] &bull; [`nc`][nc] [`netstat`][netstat] [`nmcli`][nmcli] &bull; [`rfkill`][rfkill] &bull; [`ss`][ss]
+### `bmon`
+[^][https://www.networkworld.com/video/99387/how-to-use-the-bmon-command-2-minute-linux-tips] [^][https://www.networkworld.com/article/3447936/viewing-network-bandwidth-usage-with-bmon.html]
 ### `hping3`
 Hping3 crafts "SYN" (sequence) packets from random spoofed IP addresses and sends them out at very short intervals. [^][Sec+ Lab]
 
-Option  | POSIX option            | Effect [^][Kali hping3]
+Option  | POSIX option            | Effect [^][https://tools.kali.org/information-gathering/hping3]
 :---    | :---                    | :---
 `-i`    | `--interval`            | wait for specified number of microseconds
 `-p`    | `--destport`            | destination port 
@@ -13,7 +19,8 @@ Option  | POSIX option            | Effect [^][Kali hping3]
 hping3 192.168.0.2 -p 80 -i u10 -S -q --rand-source
 ```
 ### `ifconfig`
-"RX" and "TX" stand for received and transmitted.\
+"RX" and "TX" stand for received and transmitted.
+
 Apply a static IP address to interface {eth0} and turn it on ("up")
 ```
 ifconfig eth0 up 10.1.230.245 netmask 255.255.255.0
@@ -96,6 +103,7 @@ Check the connecdtion status of the Wi-Fi device `wlp2s0`
 ```sh
 iw wlp2s0 link
 ```
+### `iwlist`
 ### `nc`
 The netcat utility allows testing of a host's ports, similar to __ping__, but more versatile because __ping__ only uses the portless ICMP protocol. GNU and OpenBSD versions available (itp-l+: 28)
 
@@ -212,11 +220,13 @@ watch -n 1 'netstat -an | grep ":80" | wc -l'
 ```
 ### `nmcli`
 Control NetworkManager and report network status
-#### Display devices and statuses
+
+Display devices and statuses
 ```
 nmcli device status
 ```
-#### Display information on interfaces as well as status
+
+Display information on interfaces as well as status
 Including other network connections not managed by network manager ("unmanaged") or not connected ("unavailable") 
 ```
 nmcli dev status
@@ -340,7 +350,15 @@ ss -tp
 ss --tcp --processes
 ```
 
-
+## 
 [Sec+ Lab]: https://pts.measureup.com/web/index.php#dashboard.php "Practice Lab: CompTIA Security+ (SY0-501)"
-[Kali hping3]: https://tools.kali.org/information-gathering/hping3 "tools.kali.org: \"hping3 - Active Network Smashing Tool\""
+[https://tools.kali.org/information-gathering/hping3]: https://tools.kali.org/information-gathering/hping3 "tools.kali.org: \"hping3 - Active Network Smashing Tool\""
 [https://computingforgeeks.com/connect-to-bluetooth-device-from-linux-terminal/]: https://computingforgeeks.com/connect-to-bluetooth-device-from-linux-terminal/ "Computing for Geeks: \"How to connect to Bluetooth device from Linux terminal\""
+[https://www.networkworld.com/article/3447936/viewing-network-bandwidth-usage-with-bmon.html]: https://www.networkworld.com/article/3447936/viewing-network-bandwidth-usage-with-bmon.html "Network World: \"Viewing network bandwidth usage with bmon\""
+[https://www.networkworld.com/video/99387/how-to-use-the-bmon-command-2-minute-linux-tips]: https://www.networkworld.com/video/99387/how-to-use-the-bmon-command-2-minute-linux-tips "Network World: How to use the bmon command: 2-Minute Linux Tips"
+
+[bmon]:                                              #bmon                                    '```&#10;$ bmon&#10;```&#10;Terminal-based graphical bandwidth monitor'
+[hping3]:                                            #hping3                                  '```&#10;$ hping3&#10;```&#10;Active network smashing tool'
+[ip]:                                                #ip                                                '```&#10;ip&#10;```&#10;Newer alternative to the old `ifconfig`&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.'
+[ifconfig]:                                          #ifconfig                                          '```&#10;$ ifconfig&#10;```&#10;Obsolete program that configures network interfaces'
+[rfkill]:                                            #rfkill                                  '```&#10;$ rfkill&#10;```&#10;Tool for enabling and disabling wireless devices'

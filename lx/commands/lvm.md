@@ -1,3 +1,5 @@
+# Linux logical volume management
+
 ### lvcreate
 Create a 20 gigabyte logical volume named "Marketing" from volume group {vg1}
 ```sh
@@ -7,7 +9,6 @@ Create logical volume named {lv1} of size {500G} from volume group {vg1}
 ```sh
 lvcreate-L 500G vg1 -n lv1
 ```
-
 ### `lvdisplay`
 ### `lvs`
 View logical volumes

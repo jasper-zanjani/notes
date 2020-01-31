@@ -1,4 +1,4 @@
-### date
+### `date`
 All output is formatted according to system's locale. The locale's timezone can be overriden by setting the `TZ` environment variable. [^](https://linuxize.com/post/linux-date-command/ "linuxize.com: \"Linux date command\"")\
 `$TIME` is in the format "MMDDhhmm"
 ```sh
