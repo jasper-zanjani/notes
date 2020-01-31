@@ -2,10 +2,7 @@
 
 \#    | Distros
 ---   | ---
-A     | [Alpine Linux][Alpine Linux]
-C     | [Clear Linux][Clear Linux]
-F     | [Fedora CoreOS][Fedora CoreOS]
-W     | [WSL][WSL]
+A-Z   | [Alpine Linux][Alpine Linux] &bull; [Clear Linux][Clear Linux] &bull; [Fedora CoreOS][Fedora CoreOS] &bull; [Kali Linux](#kali-linux) &bull; [WSL][WSL]
 
 ## Alpine Linux
 Security-oriented, lightweight Linux distribution used in containers and hardware.
