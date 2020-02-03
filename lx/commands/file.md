@@ -1,7 +1,27 @@
+[install]:                                           #install                                    '```&#10;$ install&#10;```&#10;Copy files while maintaining metadata'
+[lsof]:                                              #lsof                                       '```&#10;lsof&#10;```&#10;Display open files, open network ports, and network connections&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.'
+[tree]:                                              #tree                                       '```&#10;$ tree&#10;```&#10;Display contents of directories in a tree-like format'
+
+
 # Linux file manipulation commands
-&nbsp;  | Commands
----     | ---
-&nbsp;  | [`install`][install] `ls` [`lsof`][lsof] `mkdir` `shred` [`tree`][tree]
+Commands  | Options
+---       | ---
+[`fallocate`][fallocate]  | 
+[`install`][install]      |
+[`ls`][ls]                |
+[`lsof`][lsof]            |
+[`mkdir`][mkdir]          |
+[`shred`][shred]          |
+[`tree`][tree]            |
+
+### `fallocate`
+Allocate and deallocate space to a file
+
+Create a file size of 1 gigabyte
+```sh
+fallocate -l 1G $FILENAME  # gibibyte
+fallocate -l 1GB $FILENAME # gigabyte
+```
 ### `install`
 Copy files while maintaining various metadata, including timestamp, owner, etc. [[9](sources.md)]
 
@@ -72,6 +92,3 @@ Option  | Effect
 `-P $PATTERN` | display only files matching `$PATTERN`
 `--prune`     | suppress empty directories
 ## 
-[install]:                                           #install                                    '```&#10;$ install&#10;```&#10;Copy files while maintaining metadata'
-[lsof]:                                              #lsof                                       '```&#10;lsof&#10;```&#10;Display open files, open network ports, and network connections&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.'
-[tree]:                                              #tree                                       '```&#10;$ tree&#10;```&#10;Display contents of directories in a tree-like format'
