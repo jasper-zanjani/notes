@@ -1,18 +1,73 @@
+[chattr]:                                            #chattr                                     '```&#10;$ chattr&#10;```&#10;Change file attributes&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 311-312'
+[chgrp]:                                             #chgrp                                      '```&#10;$ chgrp&#10;```&#10;Change group ownership of a file&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 198-199'
+[chmod]:                                             #chmod                                      '```&#10;$ chmod&#10;```&#10;Change permissions on files&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 195-198'
+[chown]:                                             #chown                                      '```&#10;$ chown&#10;```&#10;Change the user owner or group owner of a file or directory&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 198'
+[cp]:                                                #cp                                         '```&#10;$ cp&#10;```&#10;Copy files or directories&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 129-130'
+[dd]:                                                #dd                                         '```&#10;$ dd&#10;```&#10;Perform multiple operations related to backing up data and creating files. One common use is to make a backup of an entire drive.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 269'
+[fallocate]:                                         #fallocate                                  '```&#10;$ fallocate&#10;```&#10;'
+[find]:                                              #find                                       '```&#10;$ find&#10;```&#10;Search the filesystem for files and directories&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 136'
+[getfacl]:                                           #getfacl                                    '```&#10;$ getfacl&#10;```&#10;Display the ACL of a file&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 199'
 [install]:                                           #install                                    '```&#10;$ install&#10;```&#10;Copy files while maintaining metadata'
-[lsof]:                                              #lsof                                       '```&#10;lsof&#10;```&#10;Display open files, open network ports, and network connections&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.'
+[ln]:                                                #ln                                         '```&#10;$ ln&#10;```&#10;Create a link&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 132'
+[locate]:                                            #locate                                     '```&#10;$ locate&#10;```&#10;Search for files based on a database that is typically created daily.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 138'
+[ls]:                                                #ls                                         '```&#10;$ ls&#10;```&#10;List files in a directory&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 131'
+[lsattr]:                                            #lsattr                                     '```&#10;$ lsattr&#10;```&#10;Display the attributes for a file&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 311'
+[lsof]:                                              #lsof                                       '```&#10;$ lsof&#10;```&#10;Display open files, open network ports, and network connections&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 303'
+[md5sum]:                                            #md5sum                                     '```&#10;$ md5sum&#10;```&#10;Display MD5 checksum value for a file&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 275'
+[mkdir]:                                             #mkdir                                      '```&#10;$ mkdir&#10;```&#10;Create a directory&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 132'
+[mv]:                                                #mv                                         '```&#10;$ mv&#10;```&#10;Move or rename a file&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 129'
+[rm]:                                                #rm                                         '```&#10;$ rm&#10;```&#10;Delete files and directories&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 130'
+[rmdir]:                                             #rmdir                                      '```&#10;$ rmdir&#10;```&#10;Delete empty directories&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 132'
+[rsync]:                                             #rsync                                      '```&#10;$ rsync&#10;```&#10;Copy files remotely; used in situations where only updated files are to be transferred in order to preserve bandwidth.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 131'
+[scp]:                                               #scp                                        '```&#10;$ scp&#10;```&#10;Copy files to and from remote systems via `ssh`&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 130'
+[setfacl]:                                           #setfacl                                    '```&#10;$ setfacl&#10;```&#10;Create an ACL on a file or directory.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 199'
+[shred]:                                             #shred                                      '```&#10;$ shred&#10;```&#10;'
+[stat]:                                              #stat                                       '```&#10;$ stat&#10;```&#10;See inode information of a file&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 135'
+[touch]:                                             #touch                                      '```&#10;$ touch&#10;```&#10;Used to create empty files and to update modification and access timestamps of existing files.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 129'
 [tree]:                                              #tree                                       '```&#10;$ tree&#10;```&#10;Display contents of directories in a tree-like format'
+[umask]:                                             #umask                                      '```&#10;$ umask&#10;```&#10;Set default permissions for files and directories&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 195'
+[unlink]:                                            #unlink                                     '```&#10;$ unlink&#10;```&#10;Does essentially what `rm` does, but in a subtly different way.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 135'
+[updatedb]:                                          #updatedb                                   '```&#10;$ updatedb&#10;```&#10;Create a database of all files on the operating system to be used by `locate`.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 140'
+[whereis]:                                           #whereis                                    '```&#10;$ whereis&#10;```&#10;Search for binary executables, source code, and manual pages in standard locations as well as the PATH and `$MANPATH`&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 139'
+[which]:                                             #which                                      '```&#10;$ which&#10;```&#10;Search for binary executables on the PATH&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 139'
 
 
 # Linux file manipulation commands
 Commands  | Options
 ---       | ---
-[`fallocate`][fallocate]  | 
-[`install`][install]      |
-[`ls`][ls]                |
-[`lsof`][lsof]            |
-[`mkdir`][mkdir]          |
-[`shred`][shred]          |
-[`tree`][tree]            |
+[`chattr`][chattr] | 
+[`chgrp`][chgrp] | 
+[`chmod`][chmod] | 
+[`chown`][chown] | 
+[`cp`][cp] | 
+[`dd`][dd] | 
+[`fallocate`][fallocate] | 
+[`find`][find] | 
+[`getfacl`][getfacl] | 
+[`install`][install] | 
+[`ln`][ln] | 
+[`locate`][locate] | 
+[`ls`][ls] | 
+[`lsattr`][lsattr] | 
+[`lsof`][lsof] | 
+[`md5sum`][md5sum] | 
+[`mkdir`][mkdir] | 
+[`mv`][mv] | 
+[`rm`][rm] | 
+[`rmdir`][rmdir] | 
+[`rsync`][rsync] | 
+[`scp`][scp] | 
+[`setfacl`][setfacl] | 
+[`shred`][shred] | 
+[`stat`][stat] | 
+[`touch`][touch] | 
+[`tree`][tree] | 
+[`umask`][umask] | 
+[`unlink`][unlink] | 
+[`updatedb`][updatedb] | 
+[`whereis`][whereis] | 
+[`which`][which] | 
+
 
 ### `fallocate`
 Allocate and deallocate space to a file
@@ -71,6 +126,82 @@ Create new directory {dirname} along with all of the parents in its pathname, if
 mkdir -p dirname
 mkdir --parents dirname
 ```
+### `rsync`
+Option  | POSIX option            | Effect
+:---    | :---                    | :---
+`-a`    | `--archive`             | copy recursively, preserving group, owner, modification times, and device-files (if super-user) (equivalent to `-rptlgoD`)
+`-b`    |                         | create a backup of every file transferred
+`-e`    | `--rsh`                 | specify remote shell to use
+`-g`    | `--group`               | preserve group
+`-o`    | `--owner`               | preserve owner
+`-p`    |                         | specify nonstandard port
+\-      | `--delete`              | remove files and folders that aren't in the sender system
+\-      | `--exclude`             | exclude files (accepts globbing)
+\-      | `--include`             | specify specific files (accepts globbing)
+\-      | `--progress`            | display a progress bar
+\-      | `--remove-source-files` | remove original files after synchronization
+
+Copy `$FILE` locally [^][44]
+```sh
+rsync -zvr $FILE $PATH
+```
+Copy `$FILE` to `$PATH` on remote `$HOST`
+```sh
+rsync $FILE $HOST:$PATH
+```
+Copy $FILE from $HOST to local $PATH
+```sh
+rsync $HOST:$FILE $PATH
+```
+Copy `$DIR` recursively [^][44]
+```sh
+rsync -zvr $DIR $PATH
+rsync -avz $DIR $PATH
+```
+Copy to remote systems over SSH [^][44]
+```sh
+rsync -zvre ssh $DIR $HOST:$REMOTEPATH
+rsync -avze ssh $DIR $HOST:$REMOTEPATH
+```
+Synchronize only specific file type [^][44]
+```sh
+rsync -zvre ssh --include '*.php' --exclude '*' $PATH
+```
+
+[44]: https://www.2daygeek.com/linux-rsync-command-local-remote-file-synchronization/ "rsync (Remote Sync) command examples and usage"
+### `setfacl`
+Set file access control list
+
+Option  | POSIX option  | Description
+:---    | :---          | :---
+`-b`    | `--remove-all` | remove all extended ACL entries, retaining the base ACL entries of the owner, group, and others
+`-k`    | `--remove-default` | remove the Default ACL
+`-m`    | `--modify` | modify ACL of a directory
+`-M`    | `--modify-file` | modify ACL of a file
+`-s`    |               | overwrite or **s**et
+`-x`    | `--remove` | remove ACL entries from a directory
+`-X`    | `--remove-file` | remove ACL entries from a file
+
+Grant user {lisa} right to read {file}
+```sh
+setfacl -m u:lisa:r file
+```
+Remove named group {staff} from {file}'s ACL
+```sh
+setfacl -x g:staff file
+```
+Modify file access control list for {file} to revoke write access from all groups and all named users
+```sh
+setfacl -m m::rx file
+```
+Grant read access to **o**ther users
+```sh
+setfacl -m o::rwx file4.txt
+```
+Add user {zach} to list of users of file4.txt
+```sh
+setfacl -m u:zach:rw file4.txt
+```
 ### `shred`
 Write random data to an unmounted disk for {n} passes
 ```sh
@@ -91,4 +222,3 @@ Option  | Effect
 `-I $PATTERN` | suppress files matching `$PATTERN`
 `-P $PATTERN` | display only files matching `$PATTERN`
 `--prune`     | suppress empty directories
-## 

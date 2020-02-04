@@ -1,9 +1,133 @@
+[bmon]:                                              net.md#bmon                                        '```&#10;$ bmon&#10;```&#10;Terminal-based graphical bandwidth monitor'
+[brctl]:                                             net.md#brctl                                       '```&#10;$ brctl&#10;```&#10;Create, modify, or view an Ethernet bridge, which connects separate networks into a single network from the perspective of users.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 27'
+[curl]:                                              net.md#curl                                        '```&#10;$ curl&#10;```&#10;Noninteractively transfer data from a large number of protocols, including FTP, FTPS, HTTP, SCP, SFTP, SMB, SMBS, Telnet, and TFTP&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 90'
+[ethtool]:                                           net.md#ethtool                                     '```&#10;$ ethtool&#10;```&#10;Display and configure network device settings.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 22'
+[hping3]:                                            net.md#hping3                                      '```&#10;$ hping3&#10;```&#10;Active network smashing tool'
+[ifconfig]:                                          net.md#ifconfig                                    '```&#10;$ ifconfig&#10;```&#10;Obsolete program that configures network interfaces'
+[iftop]:                                             net.md#iftop                                       '```&#10;$ iftop&#10;```&#10;Display network connections using the most bandwidth&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 281'
+[ip]:                                                net.md#ip                                          '```&#10;$ ip&#10;```&#10;Newer alternative to the old `ifconfig`&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 21'
+[iperf]:                                             net.md#iperf                                       '```&#10;$ iperf&#10;```&#10;Create tests of the throughput between two systems, requiring setup on both client and server&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 281'
+[ipset]:                                             net.md#ipset                                       '```&#10;$ ipset&#10;```&#10;Create a "set" of IP addresses to which firewall rules can be applied&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 282'
+[iw]:                                                net.md#iw                                          '```&#10;$ iw&#10;```&#10;Show or manipulate wireless devices and their configuration'
+[iwlist]:                                            net.md#iwlist                                      '```&#10;$ iwlist&#10;```&#10;Get detailed wireless information about a wireless interface'
+[mtr]:                                               net.md#mtr                                         '```&#10;$ mtr&#10;```&#10;Performs a `traceroute`-like operation every second&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 285'
+[netcat]:                                            net.md#netcat                                      '```&#10;$ netcat&#10;```&#10;Versatile utility for TCP or UDP connections&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 284'
+[netstat]:                                           net.md#netstat                                     '```&#10;$ netstat&#10;```&#10;Print network connections, routing tables, interface statistics, masquerade connections, and multi-cast memberships&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 18'
+[nmap]:                                              net.md#nmap                                        '```&#10;$ nmap&#10;```&#10;Probe a system for open ports&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 280'
+[nmcli]:                                             net.md#nmcli                                       '```&#10;$ nmcli&#10;```&#10;Configure NetworkManager&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 26'
+[nmtui]:                                             net.md#nmtui                                       '```&#10;$ nmtui&#10;```&#10;Provide a text-based to configure NetworkManager.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 27'
+[ping]:                                              net.md#ping                                        '```&#10;$ ping&#10;```&#10;Verify a remote host can respond to a network&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 18'
+[rfkill]:                                            net.md#rfkill                                      '```&#10;$ rfkill&#10;```&#10;Tool for enabling and disabling wireless devices'
+[route]:                                             net.md#route                                       '```&#10;$ route&#10;```&#10;Display or modify routing table&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 21'
+[sftp]:                                              net.md#sftp                                        '```&#10;$ sftp&#10;```&#10;Securely transfer files over ssh&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 274'
+[ss]:                                                net.md#ss                                          '```&#10;$ ss&#10;```&#10;Display socket information.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 25'
+[tcpdump]:                                           net.md#tcpdump                                     '```&#10;$ tcpdump&#10;```&#10;Inspect IP packets (Wireshark is a GUI-based alternative)&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 282'
+[tracepath]:                                         net.md#tracepath                                   '```&#10;$ tracepath&#10;```&#10;Similar to `traceroute`, but with fewer options and no requirement for superuser privileges&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 287'
+[traceroute]:                                        net.md#traceroute                                  '```&#10;$ traceroute&#10;```&#10;Interrogate the gateways on the way to a remote system&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 285'
+[tshark]:                                            net.md#tshark                                      '```&#10;$ tshark&#10;```&#10;Wireshark terminal interface&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 283'
+[wget]:                                              net.md#wget                                        '```&#10;$ wget&#10;```&#10;Noninteractive tool to download files from remote systems via HTTP, HTTPS, or FTP.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 89'
+[xinetd]:                                            net.md#xinetd                                      '```&#10;$ xinetd&#10;```&#10;Internet Super Daemon provided an alternate method of connecting to various outdated network services. Should be turned off nowadays.'
+[kinit]:                                             net.md#kinit                                       '```&#10;$ kinit&#10;```&#10;Kerberos utility to obtain an individual ticket, which is then cached on the local system.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 239'
+[klist]:                                             net.md#klist                                       '```&#10;$ klist&#10;```&#10;Display a list of cached Kerberos tickets&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 239'
+[dig]:                                               net.md#dig                                         '```&#10;$ dig&#10;```&#10;Perform DNS queries on specific DNS servers&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 19'
+[host]:                                              net.md#host                                        '```&#10;$ host&#10;```&#10;Perform simple DNS queries&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 20'
+[nslookup]:                                          net.md#nslookup                                    '```&#10;$ nslookup&#10;```&#10;Perform simple queries on DNS servers&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 19'
+[whois]:                                             net.md#whois                                       '```&#10;$ whois&#10;```&#10;Determine domain ownership&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 287'
+[ifup-wireless]:                                     net.md#ifup-wireless                               '```&#10;$ ifup-wireless&#10;```&#10;Configure wireless networks&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 28'
+[iwconfig]:                                          net.md#iwconfig                                    '```&#10;$ iwconfig&#10;```&#10;Display or set information about wireless network interfaces.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 25'
+
+[Sec+ Lab]: https://pts.measureup.com/web/index.php#dashboard.php "Practice Lab: CompTIA Security+ (SY0-501)"
+[https://tools.kali.org/information-gathering/hping3]: https://tools.kali.org/information-gathering/hping3 "tools.kali.org: \"hping3 - Active Network Smashing Tool\""
+[https://computingforgeeks.com/connect-to-bluetooth-device-from-linux-terminal/]: https://computingforgeeks.com/connect-to-bluetooth-device-from-linux-terminal/ "Computing for Geeks: \"How to connect to Bluetooth device from Linux terminal\""
+[https://www.networkworld.com/article/3447936/viewing-network-bandwidth-usage-with-bmon.html]: https://www.networkworld.com/article/3447936/viewing-network-bandwidth-usage-with-bmon.html "Network World: \"Viewing network bandwidth usage with bmon\""
+[https://www.networkworld.com/video/99387/how-to-use-the-bmon-command-2-minute-linux-tips]: https://www.networkworld.com/video/99387/how-to-use-the-bmon-command-2-minute-linux-tips "Network World: How to use the bmon command: 2-Minute Linux Tips"
+
+
 # Linux network commands
-&nbsp;  | Commands
----     | ---
-&nbsp;  | [`bmon`][bmon] &bull; [`hping3`][hping3] &bull; [`ifconfig`][ifconfig] [`ip`][ip] [`iw`][iw] [`iwlist`][iwlist] &bull; [`nc`][nc] [`netstat`][netstat] [`nmcli`][nmcli] &bull; [`rfkill`][rfkill] &bull; [`ss`][ss]
+Network commands  | Options
+---               | ---
+[`bmon`][bmon] | 
+[`brctl`][brctl] | 
+[`curl`][curl] | 
+[`dig`][dig] | 
+[`ethtool`][ethtool] | 
+[`host`][host] | 
+[`hping3`][hping3] | 
+[`ifconfig`][ifconfig] | 
+[`iftop`][iftop] | 
+[`ifup-wireless`][ifup-wireless] | 
+[`ip`][ip] | 
+[`iperf`][iperf] | 
+[`ipset`][ipset] | 
+[`iw`][iw] | 
+[`iwconfig`][iwconfig] | 
+[`iwlist`][iwlist] | 
+[`kinit`][kinit] | 
+[`klist`][klist] | 
+[`mtr`][mtr] | 
+[`netcat`][netcat] | 
+[`netstat`][netstat] | 
+[`nmap`][nmap] | 
+[`nmcli`][nmcli] | 
+[`nmtui`][nmtui] | 
+[`nslookup`][nslookup] | 
+[`ping`][ping] | 
+[`rfkill`][rfkill] | 
+[`route`][route] | 
+[`sftp`][sftp] | 
+[`ss`][ss] | 
+[`tcpdump`][tcpdump] | 
+[`tracepath`][tracepath] | 
+[`traceroute`][traceroute] | 
+[`tshark`][tshark] | 
+[`wget`][wget] | 
+[`whois`][whois] | 
+[`xinetd`][xinetd] | 
+
 ### `bmon`
 [^][https://www.networkworld.com/video/99387/how-to-use-the-bmon-command-2-minute-linux-tips] [^][https://www.networkworld.com/article/3447936/viewing-network-bandwidth-usage-with-bmon.html]
+### `dig`
+DNS lookup tool that returns the text of the actual response from the DNS server, useful when troubleshooting a DNS issue (cf. [ `nslookup` ](nslookup.md))\
+Nameserver
+```
+dig example.com NS
+```
+Mail server
+```
+dig example.com MX
+```
+Perform a reverse DNS lookup on an IP address
+```sh
+dig -x 8.8.8.8
+```
+Specify an alternate DNS server to query
+```sh
+dig @8.8.8.8 example.com
+```
+Find authoritative nameservers for the zone and display SOA records
+```sh
+dig +nsearch example.com
+```
+Lookup the IP associated with a domain name
+```sh
+dig +short example.com
+```
+Lookup the mail server IP associated with a domain name
+```sh
+dig +short example.com MX example.com MX
+```
+Perform iterative queries and display the entire trace path to resolve a domain name
+```sh
+dig +trace example.com
+```
+Get all types of records for a given domain name
+```sh
+dig example.com ANY
+```
+Display Start of Authority information for a domain
+```sh
+dig example.com soa
+```
 ### `hping3`
 Hping3 crafts "SYN" (sequence) packets from random spoofed IP addresses and sends them out at very short intervals. [^][Sec+ Lab]
 
@@ -93,6 +217,54 @@ Turn on interface `wlp2s0`
 ```sh
 sudo ip link set wlp2s0 up
 ```
+### `iptables`
+A popular firewall, like `firewalld`, a frontend for the kernel-level `netfilters` service. Interface configuration, used to assign a TCP/IP configuration to a network interface, but no longer installed on modern distros.
+
+Config files  | Description
+:---          | :---
+/etc/sysconfig/iptables | location of saved config
+
+Display rules as written on disk
+```sh
+iptables --list-rules
+```
+Accept SSH traffic from a particular IP
+```sh
+iptables -A INPUT -p ssh -s 10.0.222.222 -j ACCEPT
+```
+Accept incoming TCP traffic to port 80
+```sh
+iptables -A INPUT -p tcp --dport 80 -j ACCEPT
+```
+Reload configuration file
+```sh
+iptables -F
+```
+Show statistics for configuration lines
+```sh
+iptables -vnL --lines
+```
+Display rules as written on disk
+```sh
+iptables --list-rules
+```
+Set an iptable rule to accept SSH traffic from a particular IP
+```sh
+iptables -A INPUT -p ssh -s 10.0.222.222 -j ACCEPT
+```
+Set an iptable rule to accept incoming TCP traffic to port 80
+```sh
+iptables -A INPUT -p tcp --dport 80 -j ACCEPT
+```
+Reload configuration file
+```sh
+iptables -F
+```
+Show statistics for configuration lines
+```sh
+iptables -vnL --lines
+```
+### `iptables-save`
 ### `iw`
 Show or manipulate wireless devices and their configuration; followed by `dev`, `phy`, or `reg` depending on the device.\
 Check the name of network device [[59](sources.md)]
@@ -275,6 +447,102 @@ Show overall status of NetworkManager
 ```sh
 nmcli general status
 ```
+
+### `nmap`
+Scan hosts and ports on a network\
+Scan hosts from a text file
+```sh
+nmap -iL hosts.txt
+```
+Identify a host's operating system
+```sh
+nmap -A localhost.example.com
+```
+Determine whether a host has a firewall enabled
+```sh
+nmap -sA localhost.example.com
+```
+Scan a specified range of ports
+```sh
+nmap -p 10-300 localhost.example.com
+```
+Perform a SYN TCP scan, stealthier than the TCP connect scan
+```sh
+nmap -sT localhost.example.com
+```
+Aggressive scan
+```sh
+nmap -A 192.168.1.0/24
+```
+Ping scan home network (not bothering with ports)
+```sh
+nmap -sn 192.168.1.0/24
+```
+Fast port scan using SYN packets
+```sh
+nmap -sS -F 192.168.1.0/24
+```
+Port scan using SYN ("synchronize") packet, first element of TCP handshake
+```sh
+nmap -sS 192.168.1.0/24
+```
+Port scan using normal TCP
+```sh
+nmap -sT 192.168.1.0/24
+```
+Port scan using UDP
+```sh
+nmap -sU 192.168.1.0/24
+```
+Xmas scan
+```sh
+nmap -sX
+```
+Scan a range of IPs [^][Sec+ Lab]
+```sh
+nmap 192.168.27.0/24 > hosts.txt
+```
+Identify operating system and scan ports using TCP SYN packets [^][Sec+ Lab]
+```sh
+nmap -O -sS 192.168.27.0/24 > hosts.txt
+```
+
+
+[Sec+ Lab]: https://pts.measureup.com/web/index.php#dashboard.php "Practice Lab: CompTIA Security+ (SY0-501)"
+### `nslookup`
+Perform a DNS lookup in an interactive shell with cleaner output than __dig__. Enter a domain name and you get output in two sections. 
+Retrieve IP address of {host}
+```sh
+nslookup host
+```
+Get IP address of a website
+```
+nslookup url
+```
+Get only nameservers
+```
+nslookup -type=ns url
+```
+Get only MX records
+```
+nslookup -type=mx url
+```
+Get Start of Authority (SOA) record
+```
+nslookup -type=soa url
+```
+Display all available records
+```
+nslookup -type=any url
+```
+Perform reverse DNS lookup on {ipaddress}
+```
+nslookup ipaddress
+```
+Specify port {portno} in the lookup
+```
+nslookup -port=portno url
+```
 ### `rfkill`
 Tool for enabling and disabling wireless devices
 
@@ -349,16 +617,3 @@ Display active TCP connections
 ss -tp
 ss --tcp --processes
 ```
-
-## 
-[Sec+ Lab]: https://pts.measureup.com/web/index.php#dashboard.php "Practice Lab: CompTIA Security+ (SY0-501)"
-[https://tools.kali.org/information-gathering/hping3]: https://tools.kali.org/information-gathering/hping3 "tools.kali.org: \"hping3 - Active Network Smashing Tool\""
-[https://computingforgeeks.com/connect-to-bluetooth-device-from-linux-terminal/]: https://computingforgeeks.com/connect-to-bluetooth-device-from-linux-terminal/ "Computing for Geeks: \"How to connect to Bluetooth device from Linux terminal\""
-[https://www.networkworld.com/article/3447936/viewing-network-bandwidth-usage-with-bmon.html]: https://www.networkworld.com/article/3447936/viewing-network-bandwidth-usage-with-bmon.html "Network World: \"Viewing network bandwidth usage with bmon\""
-[https://www.networkworld.com/video/99387/how-to-use-the-bmon-command-2-minute-linux-tips]: https://www.networkworld.com/video/99387/how-to-use-the-bmon-command-2-minute-linux-tips "Network World: How to use the bmon command: 2-Minute Linux Tips"
-
-[bmon]:                                              #bmon                                    '```&#10;$ bmon&#10;```&#10;Terminal-based graphical bandwidth monitor'
-[hping3]:                                            #hping3                                  '```&#10;$ hping3&#10;```&#10;Active network smashing tool'
-[ip]:                                                #ip                                                '```&#10;ip&#10;```&#10;Newer alternative to the old `ifconfig`&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.'
-[ifconfig]:                                          #ifconfig                                          '```&#10;$ ifconfig&#10;```&#10;Obsolete program that configures network interfaces'
-[rfkill]:                                            #rfkill                                  '```&#10;$ rfkill&#10;```&#10;Tool for enabling and disabling wireless devices'
