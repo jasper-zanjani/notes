@@ -1,3 +1,55 @@
+[chage]:                                             sysadmin.md#chage                                  '```&#10;$ chage&#10;```&#10;Modify password-aging features for a user.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 95'
+[edquota]:                                           sysadmin.md#edquota                                '```&#10;$ edquota&#10;```&#10;Create or edit a user's disk quota&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 99'
+[groupadd]:                                          sysadmin.md#groupadd                               '```&#10;$ groupadd&#10;```&#10;Create a new group&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 94'
+[groupdel]:                                          sysadmin.md#groupdel                               '```&#10;$ groupdel&#10;```&#10;Delete a group account&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 96'
+[groupmod]:                                          sysadmin.md#groupmod                               '```&#10;$ groupmod&#10;```&#10;Modify a group account&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 95'
+[id]:                                                sysadmin.md#id                                     '```&#10;$ id&#10;```&#10;Display basic account information for a specified user, including UID, GID, and group membership&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 96'
+[last]:                                              sysadmin.md#last                                   '```&#10;$ last&#10;```&#10;Display information about current and previous logins&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 98'
+[lastb]:                                             sysadmin.md#lastb                                  '```&#10;$ lastb&#10;```&#10;Display failed login attempts&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 255'
+[passwd]:                                            sysadmin.md#passwd                                 '```&#10;$ passwd&#10;```&#10;Change a user's password.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 95'
+[quota]:                                             sysadmin.md#quota                                  '```&#10;$ quota&#10;```&#10;Display quotas&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 100'
+[quotacheck]:                                        sysadmin.md#quotacheck                             '```&#10;$ quotacheck&#10;```&#10;Create initial quota databases&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 99'
+[repquota]:                                          sysadmin.md#repquota                               '```&#10;$ repquota&#10;```&#10;Display quotas for an entire filesystem&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 101'
+[su]:                                                sysadmin.md#su                                     '```&#10;$ su&#10;```&#10;Allow a user to shift user accounts&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 209'
+[sudo]:                                              sysadmin.md#sudo                                   '```&#10;$ sudo&#10;```&#10;Run commands as other users (typically as the root user).&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 209'
+[sudoedit]:                                          sysadmin.md#sudoedit                               '```&#10;$ sudoedit&#10;```&#10;Edit a file using sudo&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 210'
+[ulimit]:                                            sysadmin.md#ulimit                                 '```&#10;$ ulimit&#10;```&#10;Display or set a user account's limits&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 201'
+[useradd]:                                           sysadmin.md#useradd                                '```&#10;$ useradd&#10;```&#10;Create a user account&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 94'
+[userdel]:                                           sysadmin.md#userdel                                '```&#10;$ userdel&#10;```&#10;Delete a user account&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 96'
+[usermod]:                                           sysadmin.md#usermod                                '```&#10;$ usermod&#10;```&#10;Modify a user account&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 94'
+[visudo]:                                            sysadmin.md#visudo                                 '```&#10;$ visudo&#10;```&#10;Edit /etc/sudoers file&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 210'
+[w]:                                                 sysadmin.md#w                                      '```&#10;$ w&#10;```&#10;Display output similar to that of `uptime` for all logged-in users&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 97'
+[who]:                                               sysadmin.md#who                                    '```&#10;$ who&#10;```&#10;Display currently users currently logged in&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 97'
+[whoami]:                                            init.md#whoami                                     '```&#10;$ whoami&#10;```&#10;Display effective user ID&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 96'
+
+# Linux system administration commands
+
+Commands | Options
+---       | ---
+[`chage`][chage] | 
+[`edquota`][edquota] | 
+[`groupadd`][groupadd] | 
+[`groupdel`][groupdel] | 
+[`groupmod`][groupmod] | 
+[`id`][id] | 
+[`last`][last] | 
+[`lastb`][lastb] | 
+[`passwd`][passwd] | 
+[`quota`][quota] | 
+[`quotacheck`][quotacheck] | 
+[`repquota`][repquota] | 
+[`su`][su] | 
+[`sudo`][sudo] | 
+[`sudoedit`][sudoedit] | 
+[`ulimit`][ulimit] | 
+[`useradd`][useradd] | 
+[`userdel`][userdel] | 
+[`usermod`][usermod] | 
+[`visudo`][visudo] | 
+[`w`][w] | 
+[`who`][who] | 
+[`whoami`][whoami] | 
+
 ### `adduser`
 Create a new user (on Debian systems, preferred to `useradd`)
 ```sh
@@ -229,6 +281,26 @@ setfacl -m o::rwx file4.txt
 Add user {zach} to list of users of file4.txt
 ```sh
 setfacl -m u:zach:rw file4.txt
+```
+### `sudo`
+`sudo` is installed by default on most distros, but it can be installed. [[52](sources.md)]\
+In order to use `sudo`, users have to be added to special groups that vary based on distribution. The group `wheel` grants access to `sudo` on Red Hat derivatives, while there is a group named `sudo` on Debian, Ubuntu, and derivatives to do the same thing.\
+Using `sudo` with output redirection will cause an error if the effective user doesn't have write permissions. 
+- Invoke a new shell as root by using `sudo sh -c`
+- Pipe output to `sudo tee` command
+
+Prevent sudo from prompting for credentials or for any other reason
+```sh
+sudo --noprompt
+```
+### `su`
+Obtain the normal login environment
+```sh
+su -
+```
+Execute a single command with a non-interactive session
+```sh
+su -c cmd
 ```
 ### `top`
 Option  | Effect
