@@ -3,23 +3,23 @@
 ---     | ---
 &nbsp;  | [`free`][free] &bull; [`glances`][glances] &bull; `ioping` `iotop` &bull; [`lscpu`][lscpu] &bull; `mpstat` &bull; `netstat` [`nproc`][nproc] &bull; [`pmap`][pmap] &bull; `sosreport` [`sysbench`][sysbench] &bull; `uptime` &bull; [`vmstat`][vmstat]
 ### `free`
-Display amount of free and used memory in the system [^][L5PMT-memory]
+Display amount of free and used memory in the system [<sup>Olushile</sup>][L5PMT-memory]
 ```sh
 free -m
 ```
 ### `glances`
-Cross-platform monitoring tool, written in Python. [^][L5PMT-glances]
+Cross-platform monitoring tool, written in Python. [<sup>Olushile</sup>][L5PMT-glances]
 
 Config                | Description
 ---                   | ---
-/etc/default/glances  | Change value of `RUN` to `"True"` in order to have glances run on startup [^][L5PMT-glances]
+/etc/default/glances  | Change value of `RUN` to `"True"` in order to have glances run on startup [<sup>Olushile</sup>][L5PMT-glances]
 ### `ioping`
-Displays disk latency in the same way that `ping` shows network latency [^][L5PMT-disk]
+Displays disk latency in the same way that `ping` shows network latency [<sup>Olushile</sup>][L5PMT-disk]
 ### `iotop`
 ### `lscpu`
-Display CPU architecture information [^][L5PMT-cpu]
+Display CPU architecture information [<sup>Olushile</sup>][L5PMT-cpu]
 ### `mpstat`
-Report processor-related statistics (part of "sysstat" package). [^][L5PMT-network]
+Report processor-related statistics (part of "sysstat" package). [<sup>Olushile</sup>][L5PMT-network]
 ```sh
 mpstat -P all
 ```
@@ -28,9 +28,9 @@ mpstat -P all
 netstat -tulpn
 ```
 ### `nproc`
-Display number of CPU processors or cores [^][L5PMT-cpu]
+Display number of CPU processors or cores [<sup>Olushile</sup>][L5PMT-cpu]
 ### `pmap`
-Report memory map of a process (part of "sysstat" package). [^][L5PMT-network]
+Report memory map of a process (part of "sysstat" package). [<sup>Olushile</sup>][L5PMT-network]
 ### `sar`
 Option  | Description
 ---     | ---
@@ -83,7 +83,7 @@ File I/O benchmarking [^][https://youtu.be/KkMWXVx-Ul8]
 sysbench --test=fileio --file-total-size=10G --file-test-mode=rndrw --init-rng=on --max-time=300 --max-requests=0 run
 ```
 ### `uptime`
-[^][L5PMT-cpu]
+[<sup>Olushile</sup>][L5PMT-cpu]
 ### `vmstat`
 
 Output header | Description [^][Eckert]
@@ -106,7 +106,7 @@ Output header | Description [^][Eckert]
 `wa`          | time spent waiting for I/O
 `st`          | time stolen from a virtual machine
 ### /proc/meminfo
-Free and used memory [^][L5PMT-memory]
+Free and used memory [<sup>Olushile</sup>][L5PMT-memory]
 ## 
 [Eckert]: # "Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012."
 [L5PMT-glances]: https://subscription.packtpub.com/video/programming/9781838559250/p1/video1_3/glances-tool 'Linux 5 Performance Monitoring and Tuning: "Glances Tool"'
