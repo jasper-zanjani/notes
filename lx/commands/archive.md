@@ -32,12 +32,13 @@ Commands                        | Options
 [`cpio`][cpio][` -o`][cpio -o]  | [`0`][cpio -0]  [`a`][cpio -a]  <code>&nbsp;</code>  [`c`][cpio -c]  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  [`v`][cpio -v]  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code> <br> <code>&nbsp;</code> [`A`][cpio -A]  [`B`][cpio -B]  [`C`][cpio -C]  <code>&nbsp;</code>  <code>&nbsp;</code>  [`F`][cpio -F]  <code>&nbsp;</code>  [`H`][cpio -H]  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  [`L`][cpio -L]  [`M`][cpio -M]  <code>&nbsp;</code>  [`O`][cpio -O]  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  [`V`][cpio -V]  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>
 [`cpio`][cpio][` -p`][cpio -p]  | [`0`][cpio -0]  [`a`][cpio -a]  <code>&nbsp;</code>  <code>&nbsp;</code>  [`d`][cpio -d]  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  [`l`][cpio -l]  [`m`][cpio -m]  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  [`u`][cpio -u]  [`v`][cpio -v]  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code> <br>  <code>&nbsp;</code> <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  [`L`][cpio -L]  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  [`P`][cpio -P]  <code>&nbsp;</code>  [`R`][cpio -R]  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  [`V`][cpio -V]  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>
 [`dar`][dar]                    |
-[`gunzip`][gunzip]
-[`gzip`][gzip]                  |
-[`tar`][tar]                    |
-[`uncompress`][uncompress]      |
-[`unxz`][unxz]
+[`gunzip`][gunzip]              |
+[`gzip`][gzip]                  | <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  [`c`][gzip -c]  [`d`][gzip -d]  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  [`r`][gzip -r]  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  [`v`][gzip -v]  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code> 
+[`tar`][tar]                    | <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  [`c`][tar -c]  [`d`][tar -d]  <code>&nbsp;</code>  [`f`][tar -f]  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  [`j`][tar -j]  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  [`p`][tar -p]  <code>&nbsp;</code>  [`r`][tar -r]  <code>&nbsp;</code>  [`t`][tar -t]  [`u`][tar -u]  [`v`][tar -v]  <code>&nbsp;</code>  [`x`][tar -x]  <code>&nbsp;</code>  [`z`][tar -z] <br><code>&nbsp;</code>  [`A`][tar -A]  <code>&nbsp;</code>  [`C`][tar -C]  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  [`J`][tar -J]  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  [`T`][tar -T]  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>
+[`uncompress`][uncompress]      | <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  [`f`][uncompress -f]  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  [`r`][uncompress -r]  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code> 
+[`unxz`][unxz]                  |
 [`unzip`][unzip]                |
+[`xz`][xz]                      | <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  [`c`][xz -c]  [`d`][xz -d]  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  [`l`][xz -l]  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  [`v`][xz -v]  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code> 
 [`zip`][zip]                    | <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  [`d`][zip -d]  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  [`r`][zip -r]  <code>&nbsp;</code>  <code>&nbsp;</code>  [`u`][zip -u]  [`v`][zip -v]  <code>&nbsp;</code>  [`x`][zip -x]  <code>&nbsp;</code>  <code>&nbsp;</code>
 
 
@@ -87,19 +88,6 @@ gzip --force symlink
 ```
 Page through .gz files
 ### `tar`
-Option  | POSIX option            | Effect
-:---    | :---                    | :---
-`-c`    | `--create`              | create a new archive
-`-C`    | `--directory`           | change directory `$PATH` before adding `$FILES` to the tar archive, using relative pathnames; makes it possible to archive files that don't share a common ancestor directory
-`-f`    | `--file`                | use file or device
-`-j`    | `--bzip2`               | filter the archive through [`bzip2`](#bzip2
-`-p`    | `--preserve-permissions`| extract information about file perfmissions
-`-r`    | `--append`              | append files to the end of an archive
-`-t`    | `--list`                | list the contents of an archive
-`-T`    | `--files-from`          | read a list of filenames to be archived, one filename per line, from file
-`-x`    | `--extract`<br/>`--get` | extract files from an archive
-`-z`    | `--gzip`                | filter the archive through [`gzip`](#gzip)
-
 Create {archive} from contents of {path}
 ```sh
 tar -cf archive path
