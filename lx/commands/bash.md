@@ -69,11 +69,26 @@
 [wait]:                                              #wait                                       '```&#10;$ wait&#10;```&#10;&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 131'
 [while]:                                             #while                                      '```&#10;$ while&#10;```&#10;&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 132'
 
+<!-- `bind` options -->
+[bind -f]:                                            #bind                                              '```&#10;$ bind -f $FILE&#10;```&#10;Read key bindings from `$FILE`&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 75'
+[bind -l]:                                            #bind                                              '```&#10;$ bind -l&#10;```&#10;List the names of all the `readline` functions&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 75'
+[bind -m]:                                            #bind                                              '```&#10;$ bind -m $MAP&#10;```&#10;Use `$MAP` as the keymap. Available keymaps include:&#10;  - `emacs`: same as `emacs-standard`&#10;  - `emacs-ctlx`&#10;  - `emacs-standard`&#10;  - `emacs-meta`&#10;  - `vi`: same as `vi-command`&#10;  - `vi-command`&#10;  - `vi-insert`&#10;  - `vi-move`&#10;&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 75'
+[bind -p]:                                            #bind                                              '```&#10;$ bind -p&#10;```&#10;print the current `readline` bindings such that they can be reread from a .inputrc file&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 75'
+[bind -q]:                                            #bind                                              '```&#10;$ bind -q $FUNCTION&#10;```&#10;query which keys invoke the `readline` function `$FUNCTION`&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 75'
+[bind -r]:                                            #bind                                              '```&#10;$ bind -r $SEQUENCE&#10;```&#10;Remove the binding for key sequence `$SEQUENCE`&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 75'
+[bind -s]:                                            #bind                                              '```&#10;$ bind -s&#10;```&#10;Print the current `readline` key sequence and macro bindings such that they can be reread from a .inputrc file&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 75'
+[bind -S]:                                            #bind                                              '```&#10;$ bind -S&#10;```&#10;Print the current `readline` key sequence and macro bindings&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 75'
+[bind -u]:                                            #bind                                              '```&#10;$ bind -u $FUNCTION&#10;```&#10;Unbind all keys that invoke the `readline` function `$FUNCTION`&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 76'
+[bind -v]:                                            #bind                                              '```&#10;$ bind -v&#10;```&#10;Print the current `readline` variables such that they can be reread from a .inputrc file&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 76'
+[bind -V]:                                            #bind                                              '```&#10;$ bind -V&#10;```&#10;Print the current `readline` variables&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 76'
+[bind -x]:                                            #bind                                              '```&#10;$ bind -x $SEQUENCE:$COMMAND&#10;```&#10;Execute shell command `$COMMAND` whenever `$SEQUENCE` is entered&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 76'
+[bind -X]:                                            #bind                                              '```&#10;$ bind -X&#10;```&#10;Print the current `readline` key sequences bound with `-x` such that they can be reread from a .inputrc file&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 76'
+
 # Bash builtins
 Commands  | Options
 ---       | ---
 [`alias`][alias] | 
-[`bind`][bind] | 
+[`bind`][bind] | <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  [`f`][bind -f]  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  [`l`][bind -l]  [`m`][bind -m]  <code>&nbsp;</code>  <code>&nbsp;</code>  [`p`][bind -p]  [`q`][bind -q]  [`r`][bind -r]  [`s`][bind -s]  <code>&nbsp;</code>  [`u`][bind -u]  [`v`][bind -v]  <code>&nbsp;</code>  [`x`][bind -x]  <code>&nbsp;</code>  <code>&nbsp;</code> <br><code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  [`S`][bind -S]  <code>&nbsp;</code>  <code>&nbsp;</code>  [`V`][bind -V]  <code>&nbsp;</code>  [`X`][bind -X]  <code>&nbsp;</code>  <code>&nbsp;</code>
 [`break`][break] | 
 [`builtin`][builtin] | 
 [`caller`][caller] | 

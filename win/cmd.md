@@ -27,7 +27,7 @@
 [wgpocpl.cpl]:                                       #wgpocpl.cpl                                       '```&#10;C:\> wgpocpl.cpl&#10;```&#10;Microsoft Mail Post Office'
 
 ### `adprep`
-Prepare Active Directory for Windows Server upgrades. Must be run on the Infrastructure Master role owner with the flag `/domainprep`. [[^][Desmond2009]: 29]
+Prepare Active Directory for Windows Server upgrades. Must be run on the Infrastructure Master role owner with the flag `/domainprep`. [<sup>Desmond 2009: 29</sup>][Desmond2009]
 ### `arp`
 Used to view and work with the IP adress to MAC address resolution cache.
 
@@ -38,7 +38,6 @@ Used to view and work with the IP adress to MAC address resolution cache.
 [arp -a]:                                            #arp                                               '```&#10;C:\> arp -a&#10;```&#10;Display both the IP and MAC addresses and whether they are dynamic or static entries '
 [arp -s]:                                            #arp                                               '```&#10;C:\> arp -s&#10;```&#10;Manually add a static entry to the cache'
 [arp -d]:                                            #arp                                               '```&#10;C:\> arp -d&#10;```&#10;Delete an entry from the cache'
-
 ### `bcdedit`
 Change Windows bootloader to Linux, while dual booting
 ```cmd
@@ -52,16 +51,17 @@ Change Windows bootloader to Linux, while dual booting (Manjaro)
 ```cmd
 bcdedit /set {bootmgr} path \EFI\manjaro\grubx64.efi
 ```
-Enable **Test Signing Mode** [^](https://www.howtogeek.com/167723/how-to-disable-driver-signature-verification-on-64-bit-windows-8.1-so-that-you-can-install-unsigned-drivers/ "howtogeek.com - 'How to disable driver signature verification on 64-bit Windows 8.1 so that you can install unsigned drivers'")
+Enable **Test Signing Mode** [<sup>Howtogeek</sup>](https://www.howtogeek.com/167723/how-to-disable-driver-signature-verification-on-64-bit-windows-8.1-so-that-you-can-install-unsigned-drivers/ "howtogeek.com - 'How to disable driver signature verification on 64-bit Windows 8.1 so that you can install unsigned drivers'")
 ```cmd
 bcdedit /set testsign on
 ```
-Disable **Test Signing Mode** [^](https://www.howtogeek.com/167723/how-to-disable-driver-signature-verification-on-64-bit-windows-8.1-so-that-you-can-install-unsigned-drivers/ "howtogeek.com - 'How to disable driver signature verification on 64-bit Windows 8.1 so that you can install unsigned drivers'")
+Disable **Test Signing Mode** [<sup>Howtogeek</sup>](https://www.howtogeek.com/167723/how-to-disable-driver-signature-verification-on-64-bit-windows-8.1-so-that-you-can-install-unsigned-drivers/ "howtogeek.com - 'How to disable driver signature verification on 64-bit Windows 8.1 so that you can install unsigned drivers'")
 ```cmd
 bcdedit /set testsign off
 ```
 ### `bootrec`
 Windows Recovery Environment command that repairs a system partition
+
 Use when boot sector not found
 ```
 bootrec /fixboot
@@ -106,12 +106,12 @@ Option      | Effect
 `/flushdns`
 `/renew`
 ### `msiexec`
-Option      | Effect [^][https://docs.microsoft.com/en-us/windows/win32/msi/command-line-options]
+Option      | Effect [Microsoft Docs][https://docs.microsoft.com/en-us/windows/win32/msi/command-line-options]
 ---         | ---
 `/i`        | Install or configure a product
 `/q` `/qn`  | Set user interface level to "no UI"
 ### `nbtstat`
-Option      | Effect [[^][Lammle]: 540-6]
+Option      | Effect [<sup>Lammle: 540-546</sup>][Lammle]
 :---        | :---
 `-a $HOST`  | display NetBIOS name table of <code>$HOST</code> (NetBIOS name)
 `-A $HOST`  | display NetBIOS name table of <code>$HOST</code> (IP address)
@@ -134,7 +134,7 @@ Turn off Windows firewall
 netsh advfirewall set allprofiles state off
 ```
 ### `netdom`
-Alternative to [`Add-Computer`](pwsh.md#add-computer) PowerShell cmdlet [[^][Zacker]: 21]
+Alternative to [`Add-Computer`][Add-Computer] PowerShell cmdlet [<sup>Zacker: 21</sup>][Zacker]
 
 Rename a computer
 ```
@@ -145,9 +145,9 @@ Join a computer to a domain
 netdom join %computername% /domain: domainname /userd: username /password:*
 ```
 ### `ntdsutil`
-Used to transfer [FSMO](# "\"Flexible Single Master Operator\", server that is master for a particular role or function") roles between domain controllers. [[^][Desmond2009]: 30]
+Used to transfer [FSMO](# "\"Flexible Single Master Operator\", server that is master for a particular role or function") roles between domain controllers. [<sup>Desmond 2009: 30</sup>][Desmond2009]
 ### `route`
-Command  | Effect [[^][Lammle]: 539]
+Command  | Effect [<sup>Lammle: 539</sup>][Lammle]
 :---     | :---
 `print`  | display routing table
 `add`    | add a route to the routing table
@@ -163,12 +163,12 @@ Basic syntax:
 route add 192.168.2.1 mask (255.255.255.0) 192.168.2.4
 ```
 ### `shutdown`
-Immediate restart [^][Lab]
+Immediate restart [<sup>Practice Lab</sup>][pl:Sec+]
 ```cmd
 shutdown /r /t 0
 ```
 ### `slmgr`
-&nbsp;    | Options [<sup>1</sup>][https://www.howtogeek.com/245445/how-to-use-slmgr-to-change-remove-or-extend-your-windows-license/] [<sup>2</sup>][https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn502540(v%3Dws.11)]
+&nbsp;    | Options [<sup>Howtogeek</sup>][https://www.howtogeek.com/245445/how-to-use-slmgr-to-change-remove-or-extend-your-windows-license/] [<sup>Microsoft Docs</sup>][https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn502540(v%3Dws.11)]
 ---       | ---
 [`slmgr`][slmgr] | [` /ato `][slmgr /ato] [` /dli `][slmgr /dli] [` /dlv `][slmgr /dlv]  [` /ipk `][slmgr /ipk]  [` /rearm `][slmgr /rearm] [` /upk `][slmgr /upk] [` /xpr `][slmgr /xpr]
 
@@ -182,7 +182,7 @@ shutdown /r /t 0
 ### `systeminfo`
 Shows system information about the machine, including installed hotfixes and patches
 ### `tracert`
-On Windows, this command is aliased to `traceroute` which is the Linux command. [[^][Lammle]: 112]
+On Windows, this command is aliased to `traceroute` which is the Linux command. [Lammle p.112][Lammle]
 
 Option  | Effect
 :---    | :---
@@ -197,21 +197,25 @@ Display WinRM configuration
 winrm get winrm/config
 ```
 ### `wmic`
-Recover Windows product key [^][https://fossbytes.com/how-to-find-windows-product-key-lost-cmd-powershell-registry/]
+Recover Windows product key [<sup>Fossbytes</sup>][https://fossbytes.com/how-to-find-windows-product-key-lost-cmd-powershell-registry/]
 ```cmd
 wmic path softwarelicensingservice get OA3xOriginalProductKey
 ```
+Recover serial number of a Lenovo laptop [<sup>Lenovo</sup>][https://pcsupport.lenovo.com/us/en/solutions/find-product-name]
+```cmd
+wmic bios get serialnumber
+```
 ## 
 
+[Desmond2009]: ../sources/ad.md "Desmond, Brian et al. _Active Directory_. O'Reilly Media, 2009."
 [https://www.howtogeek.com/245445/how-to-use-slmgr-to-change-remove-or-extend-your-windows-license/]: https://www.howtogeek.com/245445/how-to-use-slmgr-to-change-remove-or-extend-your-windows-license/ "HowToGeek: \"How to Use Slmgr to Change, Remove, or Extend Your Windows License\""
 [https://fossbytes.com/how-to-find-windows-product-key-lost-cmd-powershell-registry/]: https://fossbytes.com/how-to-find-windows-product-key-lost-cmd-powershell-registry/ "FossBytes: \"How to find Windows 10 product key using CMD, PowerShell, and Windows Registry?\""
 [https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn502540(v%3Dws.11)]: https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn502540(v%3Dws.11) "Microsoft Docs: \"Slmgr.vbs options for volume activation\""
 [https://docs.microsoft.com/en-us/windows/win32/msi/command-line-options]: https://docs.microsoft.com/en-us/windows/win32/msi/command-line-options "Microsoft Docs: \"Command-line options\""
 [https://support.microsoft.com/en-us/help/192806/how-to-run-control-panel-tools-by-typing-a-command]: https://support.microsoft.com/en-us/help/192806/how-to-run-control-panel-tools-by-typing-a-command "Microsoft Support: \"How to run Control Panel tools by typing a command\""
-
-[Lab]: https://pts.measureup.com/web/index.php#dashboard.php "Practice Lab: CompTIA Security+ (SY0-501)"
+[https://pcsupport.lenovo.com/us/en/solutions/find-product-name]: https://pcsupport.lenovo.com/us/en/solutions/find-product-name "Find my product or serial number - Windows OS Command Prompt (cmd.exe) prompt"
+[pl:Sec+]: https://pts.measureup.com/web/index.php#dashboard.php "Practice Lab: CompTIA Security+ (SY0-501)"
 [Lammle]: ../certs/n10-007.md "Lammle, Todd. _CompTIA Network+ Study Guide: Exam N10-005_. 2012."
-[Desmond2009]: ../sources/ad.md "Desmond, Brian et al. _Active Directory_. O'Reilly Media, 2009."
 [Zacker]: ../certs/70-740.md "Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017."
 
 [adprep]:                                            #adprep                                            '`adprep`&#10;Prepare Active Directory for Windows Server upgrades'
@@ -225,7 +229,8 @@ wmic path softwarelicensingservice get OA3xOriginalProductKey
 [slmgr]:                                             #slmgr                                             '`slmgr`&#10;Windows software licensing management tool'
 [wmic]:                                              #wmic                                              '`wmic`&#10;WMI command-line (WMIC) utility provides a command-line interface for WMI.'
 
-[Get-ChildItem]:                                     pwsh.md#get-childitem                              "```&#10;PS C:\> Get-ChildItem&#10;PS C:\> dir&#10;PS C:\> gci&#10;PS C:\> ls&#10;```&#10;Get items in one or more locations"
+[Add-Computer]:                                      pwsh.md#add-computer                               '```&#10;PS C:\> Add-Computer&#10;```&#10;Join a computer to a domain'
+[Get-ChildItem]:                                     pwsh.md#get-childitem                              '```&#10;PS C:\> Get-ChildItem&#10;PS C:\> dir&#10;PS C:\> gci&#10;PS C:\> ls&#10;```&#10;Get items in one or more locations'
 [Invoke-GPUpdate]:                                   pwsh.md#invoke-gpupdate                            '```&#10;Invoke-GPUpdate&#10;```&#10;Schedule a remote Group Policy refresh on the specified host'
 
 

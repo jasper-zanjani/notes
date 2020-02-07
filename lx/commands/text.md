@@ -1,14 +1,4 @@
 [cat]:                                               text.md#cat                                        '```&#10;$ cat&#10;```&#10;Display contents of text files&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 115'
-[cat -A]:                                             #cat                                               '```&#10;$ cat -A&#10;```&#10;same as `-vET`&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 115'
-[cat -b]:                                             #cat                                               '```&#10;$ cat -b&#10;$ cat --number-nonblank&#10;```&#10;number all nonblank output lines&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 32'
-[cat -E]:                                             #cat                                               '```&#10;$ cat -E&#10;$ cat --show-ends&#10;```&#10;print "$" at the end of each line&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 32'
-[cat -e]:                                             #cat                                               '```&#10;$ cat -e&#10;```&#10;same as `-vE`&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 32'
-[cat -n]:                                             #cat                                               '```&#10;$ cat -n&#10;$ cat --number&#10;```&#10;number lines, including blank lines&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 32'
-[cat -s]:                                             #cat                                               '```&#10;$ cat -s&#10;$ cat --squeeze-blank&#10;```&#10;collapse multiple blank lines to a single one&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 32'
-[cat -t]:                                             #cat                                               '```&#10;$ cat -t&#10;```&#10;same as `-vT`&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 32'
-[cat -T]:                                             #cat                                               '```&#10;$ cat -T&#10;$ cat --show-tabs&#10;```&#10;print TAB characters as "^I"&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 32'
-[cat -u]:                                             #cat                                               '```&#10;$ cat -u&#10;```&#10;ignored; retained for Unix compatibility&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 32'
-[cat -v]:                                             #cat                                               '```&#10;$ cat -v&#10;$ cat --show-nonprinting&#10;```&#10;display conrol characters and nonprinting characters, except LINEFEED and TAB&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 32'
 [cut]:                                               text.md#cut                                        '```&#10;$ cut&#10;```&#10;Display "sections" of data&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 128'
 [diff]:                                              text.md#diff                                       '```&#10;$ diff&#10;```&#10;Compare two files&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 140'
 [echo]:                                              text.md#echo                                       '```&#10;$ echo&#10;```&#10;Display the value of variables&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 331'
@@ -24,26 +14,73 @@
 [tr]:                                                text.md#tr                                         '```&#10;$ tr&#10;```&#10;Translate characters from one set to another&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 123'
 [wc]:                                                text.md#wc                                         '```&#10;$ wc&#10;```&#10;Display number of lines, words, or characters of data.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 128'
 
+<!-- `cat` options -->
+[cat -A]:                                             #cat                                               '```&#10;$ cat -A&#10;```&#10;same as `-vET`&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 115'
+[cat -b]:                                             #cat                                               '```&#10;$ cat -b&#10;$ cat --number-nonblank&#10;```&#10;number all nonblank output lines&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 32'
+[cat -E]:                                             #cat                                               '```&#10;$ cat -E&#10;$ cat --show-ends&#10;```&#10;print "$" at the end of each line&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 32'
+[cat -e]:                                             #cat                                               '```&#10;$ cat -e&#10;```&#10;same as `-vE`&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 32'
+[cat -n]:                                             #cat                                               '```&#10;$ cat -n&#10;$ cat --number&#10;```&#10;number lines, including blank lines&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 32'
+[cat -s]:                                             #cat                                               '```&#10;$ cat -s&#10;$ cat --squeeze-blank&#10;```&#10;collapse multiple blank lines to a single one&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 32'
+[cat -t]:                                             #cat                                               '```&#10;$ cat -t&#10;```&#10;same as `-vT`&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 32'
+[cat -T]:                                             #cat                                               '```&#10;$ cat -T&#10;$ cat --show-tabs&#10;```&#10;print TAB characters as "^I"&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 32'
+[cat -u]:                                             #cat                                               '```&#10;$ cat -u&#10;```&#10;ignored; retained for Unix compatibility&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 32'
+[cat -v]:                                             #cat                                               '```&#10;$ cat -v&#10;$ cat --show-nonprinting&#10;```&#10;display conrol characters and nonprinting characters, except LINEFEED and TAB&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 32'
+
+<!-- `diff` options -->
+[diff -a]:                                            #diff                                              '```&#10;$ diff -a&#10;$ diff --text&#10;```&#10;Treat all files as text files'
+[diff -b]:                                            #diff                                              '```&#10;$ diff -b&#10;$ diff --ignore-space-change&#10;```&#10;Treat successive blanks as one, including end-of-line blanks&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 59'
+[diff -B]:                                            #diff                                              '```&#10;$ diff -B&#10;$ diff --ignore-blank-lines&#10;```&#10;Ignore blank lines in files'
+[diff -c]:                                            #diff                                              '```&#10;$ diff -c&#10;```&#10;Produce output in "context diff" format, with three lines of context&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 59'
+[diff -C]:                                            #diff                                              '```&#10;$ diff -C&#10;$ diff --$N&#10;```&#10;Like `-c`, but produce `$N` lines of context&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 59'
+[diff -D]:                                            #diff                                              '```&#10;$ diff -D $SYMBOL&#10;$ diff --ifdef $SYMBOL&#10;```&#10;Merge files into a single one, containing conditional C preprocessor directives (`#ifdef`)&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 59'
+[diff -d]:                                            #diff                                              '```&#10;$ diff -d&#10;$ diff --minimal&#10;```&#10;Ignore segments of numerous changes and output a smaller set of changes, to speed up comparison.'
+[diff -e]:                                            #diff                                              '```&#10;$ diff -e&#10;$ diff --ed&#10;```&#10;Produce an `ed` script to recreate `$OTHER` from `$FILE`&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 59'
+[diff -E]:                                            #diff                                              '```&#10;$ diff -E&#10;$ diff --ignore-tab-expansion&#10;```&#10;Ignore differences due to expanding tabs'
+[diff -f]:                                            #diff                                              '```&#10;$ diff -f&#10;$ diff --forward-ed&#10;```&#10;Produce an `ed` script to recreate `$FILE` from `$OTHER`&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 59'
+[diff -F]:                                            #diff                                              '```&#10;$ diff -F $PATTERN&#10;$ diff --show-function-line $PATTERN&#10;```&#10;For context and unified diffs, show the most recent line containing regex `$PATTERN` before each block of changed lines'
+[diff -h]:                                            #diff                                              '```&#10;$ diff -h&#10;```&#10;Ignored by GNU `diff`&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 59'
+[diff -i]:                                            #diff                                              '```&#10;$ diff -i&#10;$ diff --ignore-case&#10;```&#10;Case-insensitive comparison&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 59'
+[diff -l]:                                            #diff                                              '```&#10;$ diff -l&#10;$ diff --paginate&#10;```&#10;Long format; output is paginated by `pr` so that diff listings for each file begin on a new page.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 59'
+[diff -L]:                                            #diff                                              '```&#10;$ diff -L $LABEL&#10;$ diff --label $LABEL&#10;```&#10;For context and unified diffs, print `$LABEL` in place of the filename being compared; use once for `$FILE` and again for `$OTHER`'
+[diff -n]:                                            #diff                                              '```&#10;$ diff -n&#10;$ diff --rcs&#10;```&#10;Like `-f`, but counts changed lines the way `rcsdiff` does&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 59'
+[diff -n]:                                            #diff                                              '```&#10;$ diff -n&#10;$ diff --normal&#10;```&#10;Produce a normal diff (default)'
+[diff -N]:                                            #diff                                              '```&#10;$ diff -N&#10;$ diff --new-file&#10;```&#10;Treat nonexistent files as empty'
+[diff -p]:                                            #diff                                              '```&#10;$ diff -p&#10;$ diff --show-c-function&#10;```&#10;When handling files in C or C-like languages such as Java, show the function containing each block of changed lines.'
+[diff -q]:                                            #diff                                              '```&#10;$ diff -q&#10;$ diff --brief&#10;```&#10;Output only when files differ&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 61'
+[diff -q]:                                            #diff                                              '```&#10;$ diff -q&#10;$ diff --brief&#10;```&#10;Output only whether files differ'
+[diff -r]:                                            #diff                                              '```&#10;$ diff -r&#10;$ diff --recursive&#10;```&#10;Run `diff` recursively for files in common subdirectories&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 59'
+[diff -s]:                                            #diff                                              '```&#10;$ diff -s&#10;$ diff --report-identical-files&#10;```&#10;Report files that are identical'
+[diff -S]:                                            #diff                                              '```&#10;$ diff -S $FILENAME&#10;$ diff --starting-file $FILENAME&#10;```&#10;Begin directory comparisons with `$FILE`, skipping files whose filenames alphabetically precede `$FILENAME`'
+[diff -t]:                                            #diff                                              '```&#10;$ diff -t&#10;$ diff --expand-tabs&#10;```&#10;Expand tabs in output lines; usefulf or preserving indentation changed by `-c`&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 59'
+[diff -T]:                                            #diff                                              '```&#10;$ diff -T&#10;$ diff --initial-tab&#10;```&#10;Insert initial tabs into output to line up tabs properly'
+[diff -u]:                                            #diff                                              '```&#10;$ diff -u&#10;```&#10;Produce output in "unified `diff`" format, with 3 lines of context&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 59'
+[diff -U]:                                            #diff                                              '```&#10;$ diff -U $N&#10;$ diff --unified $N&#10;```&#10;Like `-u`, but produces output with `$N` lines of context&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 59'
+[diff -v]:                                            #diff                                              '```&#10;$ diff -v&#10;$ diff --version&#10;```&#10;Print version number.'
+[diff -w]:                                            #diff                                              '```&#10;$ diff -w&#10;$ diff --ignore-all-space&#10;```&#10;Ignore spaces and tabs&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 59'
+[diff -W]:                                            #diff                                              '```&#10;$ diff -W $N&#10;$ diff --width $N&#10;```&#10;For two-column output (`-y`), produce columns with a maximum width of `$N` characters (130 by default)'
+[diff -x]:                                            #diff                                              '```&#10;$ diff -x $PATTERN&#10;$ diff --exclude $PATTERN&#10;```&#10;Do not compare files in a directory whose names match regex `$PATTERN`'
+[diff -X]:                                            #diff                                              '```&#10;$ diff -X $FILE&#10;$ diff --exclude-from $FILE&#10;```&#10;Do not compare files in a directory whose names match patterns described in `$FILE`'
+[diff -y]:                                            #diff                                              '```&#10;$ diff -y&#10;$ diff --side-by-side&#10;```&#10;Two-column output&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 61'
 
 # Linux text filtering commands
 
 Commands              | Options
 ---                   | ---
 [`cat`][cat]          | <code>&nbsp;</code>  [`b`][cat -b]  <code>&nbsp;</code>  <code>&nbsp;</code>  [`e`][cat -e]  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  [`n`][cat -n]  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  [`s`][cat -s]  [`t`][cat -t]  [`u`][cat -u]  [`v`][cat -v]  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code><br>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  [`E`][cat -E]  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  [`T`][cat -T]  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>
-[`cut`][cut] | 
-[`diff`][diff] | 
-[`echo`][echo] | 
-[`egrep`][egrep] | 
-[`grep`][grep] | 
-[`head`][head] | 
-[`less`][less] | 
-[`more`][more] | 
-[`nl`][nl] | 
-[`sort`][sort] | 
-[`tail`][tail] | 
-[`tee`][tee] | 
-[`tr`][tr] | 
-[`wc`][wc] | 
+[`cut`][cut]          | 
+[`diff`][diff]        | <code>&nbsp;</code>  [`a`][diff -a]  [`b`][diff -b]  [`c`][diff -c]  [`d`][diff -d]  [`e`][diff -e]  [`f`][diff -f]  <code>&nbsp;</code>  [`h`][diff -h]  [`i`][diff -i]  <code>&nbsp;</code>  <code>&nbsp;</code>  [`l`][diff -l]  <code>&nbsp;</code>  [`n`][diff -n]  <code>&nbsp;</code>  [`p`][diff -p]  [`q`][diff -q]  [`r`][diff -r]  [`s`][diff -s]  [`t`][diff -t]  [`u`][diff -u]  [`v`][diff -v]  [`w`][diff -w]  [`x`][diff -x]  [`y`][diff -y]  <code>&nbsp;</code> <br><code>&nbsp;</code>  <code>&nbsp;</code>  [`B`][diff -B]  [`C`][diff -C]  [`D`][diff -D]  [`E`][diff -E]  [`F`][diff -F]  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  [`L`][diff -L]  <code>&nbsp;</code>  [`N`][diff -N]  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  [`S`][diff -S]  [`T`][diff -T]  [`U`][diff -U]  <code>&nbsp;</code>  [`W`][diff -W]  [`X`][diff -X]  <code>&nbsp;</code>  <code>&nbsp;</code>
+[`echo`][echo]        | 
+[`egrep`][egrep]      | 
+[`grep`][grep]        |   
+[`head`][head]        | 
+[`less`][less]        | 
+[`more`][more]        | 
+[`nl`][nl]            | 
+[`sort`][sort]        | 
+[`tail`][tail]        | 
+[`tee`][tee]          | 
+[`tr`][tr]            | 
+[`wc`][wc]            | 
 
 ## awk
 
