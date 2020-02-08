@@ -84,78 +84,14 @@
 [bind -x]:                                            #bind                                              '```&#10;$ bind -x $SEQUENCE:$COMMAND&#10;```&#10;Execute shell command `$COMMAND` whenever `$SEQUENCE` is entered&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 76'
 [bind -X]:                                            #bind                                              '```&#10;$ bind -X&#10;```&#10;Print the current `readline` key sequences bound with `-x` such that they can be reread from a .inputrc file&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 76'
 
-# Bash builtins
+# Bash builtin commands
+&nbsp;  | Commands
+---     | ---
+&nbsp;  | [`alias`][alias] [`bind`][bind] [`break`][break] [`builtin`][builtin] [`caller`][caller] [`case`][case] [`cd`][cd] [`command`][command] [`compgen`][compgen] [`complete`][complete] [`compopt`][compopt] [`continue`][continue] [`declare`][declare] [`dirs`][dirs] [`disown`][disown] [`do`][do] [`done`][done] [`echo`][echo] [`enable`][enable] [`esac`][esac] [`eval`][eval] [`exec`][exec] [`exit`][exit] [`export`][export] [`false`][false] [`fc`][fc] [`fg`][fg] [`fi`][fi] [`for`][for] [`function`][function] [`getopts`][getopts] [`hash`][hash] [`help`][help] [`history`][history] [`if`][if] [`jobs`][jobs] [`kill`][kill] [`let`][let] [`local`][local] [`logout`][logout] [`mapfile`][mapfile] [`popd`][popd] [`printf`][printf] [`pushd`][pushd] [`pwd`][pwd] [`read`][read] [`readarray`][readarray] [`readonly`][readonly] [`return`][return] [`select`][select] [`set`][set] [`shift`][shift] [`shopt`][shopt] [`source`][source] [`suspend`][suspend] [`test`][test] [`time`][time] [`times`][times] [`trap`][trap] [`true`][true] [`type`][type] [`typeset`][typeset] [`ulimit`][ulimit] [`umask`][umask] [`unalias`][unalias] [`unset`][unset] [`until`][until] [`wait`][wait] [`while`][while]
+
 Commands  | Options
 ---       | ---
-[`alias`][alias] | 
 [`bind`][bind] | <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  [`f`][bind -f]  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  [`l`][bind -l]  [`m`][bind -m]  <code>&nbsp;</code>  <code>&nbsp;</code>  [`p`][bind -p]  [`q`][bind -q]  [`r`][bind -r]  [`s`][bind -s]  <code>&nbsp;</code>  [`u`][bind -u]  [`v`][bind -v]  <code>&nbsp;</code>  [`x`][bind -x]  <code>&nbsp;</code>  <code>&nbsp;</code> <br><code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  [`S`][bind -S]  <code>&nbsp;</code>  <code>&nbsp;</code>  [`V`][bind -V]  <code>&nbsp;</code>  [`X`][bind -X]  <code>&nbsp;</code>  <code>&nbsp;</code>
-[`break`][break] | 
-[`builtin`][builtin] | 
-[`caller`][caller] | 
-[`case`][case] | 
-[`cd`][cd] | 
-[`command`][command] | 
-[`compgen`][compgen] | 
-[`complete`][complete] | 
-[`compopt`][compopt] | 
-[`continue`][continue] | 
-[`declare`][declare] | 
-[`dirs`][dirs] | 
-[`disown`][disown] | 
-[`do`][do] | 
-[`done`][done] | 
-[`echo`][echo] | 
-[`enable`][enable] | 
-[`esac`][esac] | 
-[`eval`][eval] | 
-[`exec`][exec] | 
-[`exit`][exit] | 
-[`export`][export] | 
-[`false`][false] | 
-[`fc`][fc] | 
-[`fg`][fg] | 
-[`fi`][fi] | 
-[`for`][for] | 
-[`function`][function] | 
-[`getopts`][getopts] | 
-[`hash`][hash] | 
-[`help`][help] | 
-[`history`][history] | 
-[`if`][if] | 
-[`jobs`][jobs] | 
-[`kill`][kill] | 
-[`let`][let] | 
-[`local`][local] | 
-[`logout`][logout] | 
-[`mapfile`][mapfile] | 
-[`popd`][popd] | 
-[`printf`][printf] | 
-[`pushd`][pushd] | 
-[`pwd`][pwd] | 
-[`read`][read] | 
-[`readarray`][readarray] | 
-[`readonly`][readonly] | 
-[`return`][return] | 
-[`select`][select] | 
-[`set`][set] | 
-[`shift`][shift] | 
-[`shopt`][shopt] | 
-[`source`][source] | 
-[`suspend`][suspend] | 
-[`test`][test] | 
-[`time`][time] | 
-[`times`][times] | 
-[`trap`][trap] | 
-[`true`][true] | 
-[`type`][type] | 
-[`typeset`][typeset] | 
-[`ulimit`][ulimit] | 
-[`umask`][umask] | 
-[`unalias`][unalias] | 
-[`unset`][unset] | 
-[`until`][until] | 
-[`wait`][wait] | 
-[`while`][while] | 
 
 
 ### `bash`
