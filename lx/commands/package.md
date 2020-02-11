@@ -16,6 +16,21 @@
 [yumdownloader]:                                     package.md#yumdownloader                           '```&#10;$ yumdownloader&#10;```&#10;Download software packages without installing them&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 84'
 [zypper]:                                            package.md#zypper                                  '```&#10;$ zypper&#10;```&#10;Package manager for SUSE with a syntax similar to that of `yum`&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 86'
 
+<!-- `dpkg` options -->
+[dpkg -&#69;]:                                            #dpkg                                              '```&#10;$ dpkg -E&#10;```&#10;Do not overwrite a previously installed package of the same version&#10;: 47'
+[dpkg -&#71;]:                                            #dpkg                                              '```&#10;$ dpkg -G&#10;```&#10;Do not overwrite a previously installed package with an older version of that same package&#10;: 47'
+[dpkg -&#82;]:                                            #dpkg                                              '```&#10;$ dpkg -R&#10;$ dpkg --recursive&#10;```&#10;Recursively process package files in specified subdirectories&#10;: 48'
+[dpkg --configure]:                                   #dpkg                                              '```&#10;$ dpkg --configure&#10;```&#10;Configure an unpacked package. This involves setup of configuration files&#10;: 48'
+[dpkg -&#105;]:                                            #dpkg                                              '```&#10;$ dpkg -i&#10;$ dpkg --install&#10;```&#10;Install package&#10;: 48'
+[dpkg -&#108;]:                                            #dpkg                                              '```&#10;$ dpkg -l $PATTERN&#10;$ dpkg --list $PATTERN&#10;```&#10;Display information for installed package names that match `$PATTERN`&#10;: 48'
+[dpkg -&#76;]:                                            #dpkg                                              '```&#10;$ dpkg -L $PACKAGE&#10;$ dpkg --listfiles $PACKAGE&#10;```&#10;List files installed from `$PACKAGE`&#10;: 48'
+[dpkg --print-avail]:                                 #dpkg                                              '```&#10;$ dpkg --print-avail $PACKAGE&#10;```&#10;Display details found in /var/lib/dpkg/available about `$PACKAGE`&#10;: 48'
+[dpkg -&#10;]:                                            #dpkg                                              '```&#10;$ dpkg - $PACKAGE&#10;$ dpkg --purge $PACKAGE&#10;```&#10;Remove everything for `$PACKAGE`&#10;: 48'
+[dpkg -&#114;]:                                            #dpkg                                              '```&#10;$ dpkg -r $PACKAGE&#10;$ dpkg --remove $PACKAGE&#10;```&#10;Remove everything except configuration files for `$PACKAGE`&#10;: 48'
+[dpkg -&#115;]:                                            #dpkg                                              '```&#10;$ dpkg -s $PACKAGE&#10;$ dpkg --status $PACKAGE&#10;```&#10;Report the status of `$PACKAGE`&#10;: 48'
+[dpkg -&#83;]:                                            #dpkg                                              '```&#10;$ dpkg -S $PATTERN&#10;$ dpkg --search $PATTERN&#10;```&#10;Search for a filename matching `$PATTERN` from installed packages&#10;: 48'
+[dpkg --unpack]:                                      #dpkg                                              '```&#10;$ dpkg --unpack $PACKAGE&#10;```&#10;Unpack `$PACKAGE` but do not install the package it contains&#10;: 48'
+
 
 # Linux package management commands
 Commands    | Options
@@ -26,7 +41,7 @@ Commands    | Options
 [`apt-cache`][apt-cache] | 
 [`apt-get`][apt-get] | 
 [`dnf`][dnf] | 
-[`dpkg`][dpkg] | 
+[`dpkg`][dpkg] | <code>&nbsp;</code>  <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`i`][dpkg -&#105;] <code>&nbsp;</code> <code>&nbsp;</code> [`l`][dpkg -&#108;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`r`][dpkg -&#114;] [`s`][dpkg -&#115;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code>  <br><code>&nbsp;</code>&nbsp;<code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`E`][dpkg -&#69;] <code>&nbsp;</code> [`G`][dpkg -&#71;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`L`][dpkg -&#76;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`R`][dpkg -&#82;] [`S`][dpkg -&#83;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 
 [`dpkg-reconfigure`][dpkg-reconfigure] | 
 [`gem`][gem] | 
 [`pacman`][pacman] | 
