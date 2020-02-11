@@ -18,19 +18,15 @@
 [https://docs.microsoft.com/en-us/powershell/scripting/samples/working-with-registry-entries?view=powershell-7]: https://docs.microsoft.com/en-us/powershell/scripting/samples/working-with-registry-entries?view=powershell-7 "Working with Registry Entries"
 [https://docs.microsoft.com/en-us/powershell/scripting/samples/working-with-registry-keys?view=powershell-7]: https://docs.microsoft.com/en-us/powershell/scripting/samples/working-with-registry-keys?view=powershell-7 "Working with Registry Keys"
 
-
 [ADAC]:   ../sources/adac.md "Berkouwer, Sander. _Active Directory Administration Cookbook_."
 [WSAC]:   ../sources/wsac.md "Krause, Jordan. _Windows Server 2016 Administration Cookbook_."
 [IMWS]:   ../sources/imws.md "McCabe, John. _Introduction to Microsoft Windows Server 2016_."
 [Zacker]: ../certs/70-740.md "Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017."
 [Jones]:  https://subscription.packtpub.com/video/virtualization_and_cloud/9781789616385 "Jones, Joshua B. _Hands-On Powershell for Active Directory_. PacktPub: 2018."
 
-
-
 [$$]:                                                #comparison-with-bash                         "`$$`&#10; Automatic variable referring to the last \"token\" (argument) in the previous command"
 [$?]:                                                #comparison-with-bash                         "`$?`&#10; Automatic variable containing the execution status of the previous command"
 
-[Add-ADPrincipalGroupMembership]:                    #add-adprincipalgroupmembership               "`Add-ADPrincipalGroupMembership` &#10; Add a member to one or more Active Directory groups"
 [Add-Computer]:                                      #add-computer                                 "`Add-Computer` &#10; Join a computer to a domain"
 [Add-Content]:                                       #add-content                                  "`Add-Content`"
 [Add-DhcpServerInDC]:                                #add-dhcpserverindc                           "`Add-DhcpServerInDC`"
@@ -39,17 +35,12 @@
 [Add-PSSnapin]:                                      #add-pssnapin                                 "`Add-PSSnapin` (alias: `asnp`) &#10; Load a given list of snap-ins (.NET assemblies containing a collection of cmdlets and/or providers for use within PowerShell) either by name or via the pipeline - last supported in PowerShell 5.1"
 [Add-Type]:                                          #add-type                                     '`Add-Type`&#10;Add a.NET Framework type (a class) to a Windows PowerShell session'
 [Add-WindowsFeature]:                                #install-windowsfeature                       '`Add-WindowsFeature` (alias: `Install-WindowsFeature`)'
-
 [Checkpoint-VM]:                                     #checkpoint-vm                                '`Checkpoint-VM`&#10;Creates a checkpoint of a virtual machine.'
 [Clear-Host]:                                        #clear-host                                   "`Clear-Host`"
 [Close-SmbOpenFile]:                                 #close-smbopenfile                            '`Close-SmbOpenFile`&#10;Close a file that is open by one of the clients of the SMB server&#10;"Close-SmbOpenFile". _Microsoft Docs_.'
-[Compare-VM]:                                        #compare-vm                                   '`Compare-VM`&#10;Compares a virtual machine and a virtual machine host for compatibility, returning a compatibility report.'
 [Compress-Archive]:                                  #compress-archive                             "`Compress-Archive`"
 [Copy-Item]:                                         #copy-item                                    "`Copy-Item`"
-
-[Debug-VM]:                                          #debug-vm                                     '`Debug-VM`&#10;Debugs a virtual machine.'
 [Disconnect-PSSession]:                              #disconnect-pssession                         "`Disconnect-PSSession` (alias: `dnsn`) &#10; Terminate a remote PowerShell session begun with `New-PSSession`"
-
 [Enable-PSRemoting]:                                 #enable-psremoting                            "`Enable-PSRemoting` &#10; Allow remote PowerShell management"
 [Enable-WindowsOptionalFeature]:                     #enable-windowsoptionalfeature                "`Enable-WindowsOptionalFeature` &#10; Enable or restore an optional feature in a Windows image"
 [Enter-PSSession]:                                   #enter-pssession                              "`Enter-PSSession` (alias: `etsn`) &#10; Interact with the specified PowerShell session"
@@ -58,17 +49,10 @@
 [Export-Alias]:                                      #export-alias                                 "`Export-Alias` (alias: `epal`) &#10; Export information about currently defined aliases to a file."
 [Export-CliXml]:                                     #export-clixml                                "`Export-CliXml` &#10; Serialize a PowerShell object as a Common Language Infrastructure (CLI) XML file"
 [Export-Csv]:                                        #export-csv                                   "`Export-Csv` &#10; Export PowerShell objects to CSV"
-[Export-VM]:                                         #export-vm                                    '`Export-VM`&#10;Exports a virtual machine to disk.'
-
 [ForEach-Object]:                                    #filters                                      "`ForEach-Object` (alias: `%`, `foreach`) &#10; Perform an operation against each item in a collection of input objects."
 [Format-List]:                                       #output-formatting                            "`Format-List` (alias: `fl`) &#10; Display output in list style"
 [Format-Table]:                                      #output-formatting                            "`Format-Table` (alias: `ft`) &#10; Display output in table style"
 [Format-Volume]:                                     #format-volume                                     '```&#10;PS C:\>Format-Volume&#10;```&#10;Formats one or more existing volumes or a new volume on an existing partition.&#10;The Format-Volume cmdlet formats one or more existing volumes, or a new volume on an existing partition. This cmdlet returns the object representing the volume that was just formatted, with all properties updated to reflect the format operation.'
-
-[Get-ADDSForest]:                                    #get-addsforest                               "`Get-ADDSForest`"
-[Get-ADOrganizationalUnit]:                          #get-adorganizationalunit                     "`Get-ADOrganizationalUnit`"
-[Get-ADPrincipalGroupMembership]:                    #get-adprincipalgroupmembership               "`Get-ADPrincipalGroupMembership` &#10; Get the Active Directory groups that have a specified user, computer, group, or service account"
-[Get-ADUser]:                                        #get-aduser                                   "`Get-ADUser` &#10; Get one or more Active Directory Users"
 [Get-Alias]:                                         #get-alias                                    "`Get-Alias` (alias `gal`) &#10; Display aliases"
 [Get-ChildItem]:                                     #get-childitem                                '```&#10;PS C:\> Get-ChildItem&#10;PS C:\> dir&#10;PS C:\> gci&#10;PS C:\> ls&#10;```&#10;Get items in one or more locations'
 [Get-Clipboard]:                                     #get-clipboard                                "`Get-Clipboard` (alias: `gcb`) &#10; Display items in clipboard"
@@ -93,27 +77,15 @@
 [Get-Process]:                                       #get-process                                  "`Get-Process` (alias: `gps`, `ps`) &#10; Display running processes"
 [Get-Service]:                                       #get-service                                  "`Get-Service` (alias: `gsv`) &#10; Display services"
 [Get-SmbOpenFile]:                                   #get-smbopenfile                              '`Get-SmbOpenFile`&#10;Retrieves basic information about the files that are open on behalf of the clients of the Server Message Block (SMB) server&#10;"Get-SmbOpenFile". _Microsoft Docs_.'
-[Get-VM]:                                            #get-vm                                       '`Get-VM`&#10;Gets the virtual machines from one or more Hyper-V hosts.'
 [Get-WMIObject]:                                     #get-wmiobject                                "`Get-WMIObject`"
 [Get-WindowsFeature]:                                #get-windowsfeature                           "`Get-WindowsFeature`"
-
 [Import-CliXml]:                                     #import-clixml                                "`Import-CliXml` &#10; Import a Common Language Infrastructure (CLI) XML file with data that represents Microsoft .NET Framework objects and create PowerShell objects from it"
 [Import-Csv]:                                        #import-csv                                   "`Import-Csv` (alias: `ipcsv`) &#10; Import CSV files as PowerShell objects"
 [Import-Module]:                                     #import-module                                "`Import-Module` (alias: `ipmo`) &#10; Manually import a module, rather than waiting for it to load dynamically when using one of its cmdlets"
-[Import-VM]:                                         #import-vm                                    '`Import-VM`&#10;Imports a virtual machine from a file.'
-[Install-ADDSDomainController]:                      #install-addsdomaincontroller                 '`Install-ADDSDomainController`&#10;Installs a new domain controller in an Active Directory domain'
-[Install-ADDSDomain]:                                #install-addsdomain                           "`Install-ADDSDomain`"
-[Install-ADDSForest]:                                #install-addsforest                           "`Install-ADDSForest`"
 [Install-Module]:                                    #install-module                               "`Install-Module`"
 [Install-WindowsFeature]:                            #install-windowsfeature                       "`Install-WindowsFeature` (alias: `Add-WindowsFeature`) &#10; Install one or more roles, role services, or features on either the local or a specified remote server that is running Windows Server 2012 R2"
 [Invoke-GPUpdate]:                                   #invoke-gpupdate                              '```&#10;Invoke-GPUpdate&#10;```&#10;Schedule a remote Group Policy refresh on the specified host'
 [Invoke-WebRequest]:                                 #invoke-webrequest                            "`Invoke-WebRequest`"
-
-[Measure-VM]:                                        #measure-vm                                   '`Measure-VM`&#10;Reports resource utilization data for one or more virtual machines.'
-[Move-VM]:                                           #move-vm                                      '`Move-VM`&#10;Moves a virtual machine to a new Hyper-V host.'
-
-[New-ADOrganizationalUnit]:                          #new-adorganizationalunit                     "`New-ADOrganizationalUnit`"
-[New-ADUser]:                                        #new-aduser                                   "`New-ADUser` &#10; Create a new Active Directory user"
 [New-Alias]:                                         #new-alias                                    "`New-Alias` (alias: `nal`) &#10; Create a new alias"
 [New-Guid]:                                          #new-guid                                     "`New-Guid`"
 [New-Item]:                                          #new-item                                     "`New-Item`"
@@ -123,29 +95,14 @@
 [New-PSSession]:                                     #new-pssession                                "`New-PSSession` (`nsn`) &#10; Start a new remote PowerShell session with a remote computer"
 [New-Partition]:                                     #new-partition                                "`New-Partition`"
 [New-SmbShare]:                                      #new-smbshare                                 "`New-SmbShare`"
-[New-VMSwitch]:                                      #new-vmswitch                                 "`New-VMSwitch`"
-[New-VM]:                                            #new-vm                                       '`New-VM`&#10;Creates a new virtual machine.'
-
 [Out-Null]:                                          #out-null                                     "`Out-Null` &#10; Delete output instead of sending it down the pipeline"
-
-[Remove-ADOrganizationalUnit]:                       #remove-adorganizationalunit                  "`Remove-ADOrganizationalUnit`"
 [Remove-Item]:                                       #remove-item                                  "`Remove-Item` (alias: `rm`, `ri`, `rmdir`, `rd`, `del`)"
 [Remove-Partition]:                                  #remove-partition                             "`Remove-Partition`"
-[Remove-VM]:                                         #remove-vm                                    '`Remove-VM`&#10;Deletes a virtual machine.'
 [Rename-Computer]:                                   #rename-computer                              "`Rename-Computer`"
-[Rename-VM]:                                         #rename-vm                                    '`Rename-VM`&#10;Renames a virtual machine.'
-[Repair-VM]:                                         #repair-vm                                    '`Repair-VM`&#10;Repairs one or more virtual machines.'
 [Resolve-DNSName]:                                   #resolve-dnsname                              '`Resolve-DNSName`&#10;...&#10;MeasureUp Practice Lab: Security+'
 [Restart-Computer]:                                  #restart-computer                             "`Restart-Computer`"
-[Restart-VM]:                                        #restart-vm                                   '`Restart-VM`&#10;Restarts a virtual machine.'
-[Resume-VM]:                                         #resume-vm                                    '`Resume-VM`&#10;Resumes a suspended (paused) virtual machine.'
-
-[Save-VM]:                                           #save-vm                                      '`Save-VM`&#10;Saves a virtual machine.'
 [Search-ADAccount]:                                  #search-adaccount                             "`Search-ADAccount`"
 [Select-Object]:                                     #filters                                      "`Select-Object` (alias: `sc`&#10; Select object or object properties"
-[Set-ADAccountPassword]:                             #set-adaccountpassword                        "`Set-ADAccountPassword`"
-[Set-ADObject]:                                      #set-adobject                                 "`Set-ADObject`"
-[Set-ADOrganizationalUnit]:                          #set-adorganizationalunit                     "`Set-ADOrganizationalUnit`"
 [Set-Alias]:                                         #set-alias                                    "`Set-Alias`"
 [Set-Clipboard]:                                     #set-clipboard                                "`Set-Clipboard (alias: `scb`): &#10; Set the current Windows clipboard entry"
 [Set-DhcpServerv4OptionValue]:                       #set-dhcpserverv4optionvalue                  "`Set-DhcpServerv4OptionValue`"
@@ -154,36 +111,66 @@
 [Set-Location]:                                      #set-location                                 "`Set-Location` (alias: `cd`, `sl`, `chdir`) &#10; Set present working directory"
 [Set-NetFirewallRule]:                               #set-netfirewallrule                          "`Set-NetFirewallRule`"
 [Set-PSReadlineOption]:                              #set-psreadlineoption                         "`Set-PSReadlineOption`"
-[Set-VMFirmware]:                                    #set-vmfirmware                               "`Set-VMFirmware` &#10;  "
-[Set-VMMemory]:                                      #set-vmmemory                                 "`Set-VMMemory`"
-[Set-VMNetworkAdapter]:                              #set-vmnetworkadapter                         "`Set-VMNetworkAdapter`"
-[Set-VMProcessor]:                                   #set-vmprocessor                              "`Set-VMProcessor`"
-[Set-VM]:                                            #set-vm                                       '`Set-VM`&#10;Configures a virtual machine.'
 [Start-DscConfiguration]:                            #start-dscconfiguration                       "`Start-DscConfiguration` (alias: `sacfg`) &#10; Apply configuration to nodes"
 [Start-Job]:                                         #start-job                                    "`Start-Job` (alias: `sajb`)"
 [Start-Service]:                                     #start-service                                "`Start-Service` (alias: `sasv`) &#10; Start one or more stopped services"
-[Start-VM]:                                          #start-vm                                     '`Start-VM`&#10;Starts a virtual machine.'
 [Stop-Computer]:                                     #stop-computer                                "`Stop-Computer`"
 [Stop-Service]:                                      #stop-service                                 "`Stop-Service` (alias: `spsv`) Stop one or more services"
-
-[Uninstall-ADDSDomainController]:                    #uninstall-addsdomaincontroller               "`Uninstall-ADDSDomainController`"
-[Unlock-ADAccount]:                                  #unlock-adaccount                             "`Unlock-ADAccount`"
 [Update-DistributionGroupMember]:                    #update-distributiongroupmember               "`Update-DistributionGroupMember`&#10;Replace all members of distribution groups and mail-enabled security groups"
 [Update-Help]:                                       #update-help                                  "`Update-Help` &#10; Download help files"
-
 [Where-Object]:                                      #filters                                      "`Where-Object` (alias: `?`, `where`) &#10; Select objects from a collection based on their property values"
 [Write-Host]:                                        #write-host                                   "`Write-Host`"
 [Write-Output]:                                      #write-output                                 "`Write-Output` (alias: `echo`, `write`) &#10; Send the specified objects to the next command in the pipeline. If the command is the last command in the pipeline, the objects are displayed in the console."
 
+<!-- Active Directory cmdlets -->
+[Add-ADPrincipalGroupMembership]:                    #add-adprincipalgroupmembership               "`Add-ADPrincipalGroupMembership` &#10; Add a member to one or more Active Directory groups"
+[New-ADOrganizationalUnit]:                          #new-adorganizationalunit                     "`New-ADOrganizationalUnit`"
+[New-ADUser]:                                        #new-aduser                                   "`New-ADUser` &#10; Create a new Active Directory user"
+[Install-ADDSDomainController]:                      #install-addsdomaincontroller                 '`Install-ADDSDomainController`&#10;Installs a new domain controller in an Active Directory domain'
+[Install-ADDSDomain]:                                #install-addsdomain                           "`Install-ADDSDomain`"
+[Install-ADDSForest]:                                #install-addsforest                           "`Install-ADDSForest`"
+[Get-ADDSForest]:                                    #get-addsforest                               "`Get-ADDSForest`"
+[Get-ADOrganizationalUnit]:                          #get-adorganizationalunit                     "`Get-ADOrganizationalUnit`"
+[Get-ADPrincipalGroupMembership]:                    #get-adprincipalgroupmembership               "`Get-ADPrincipalGroupMembership` &#10; Get the Active Directory groups that have a specified user, computer, group, or service account"
+[Get-ADUser]:                                        #get-aduser                                   "`Get-ADUser` &#10; Get one or more Active Directory Users"
+[Set-ADAccountPassword]:                             #set-adaccountpassword                        "`Set-ADAccountPassword`"
+[Set-ADObject]:                                      #set-adobject                                 "`Set-ADObject`"
+[Set-ADOrganizationalUnit]:                          #set-adorganizationalunit                     "`Set-ADOrganizationalUnit`"
+[Uninstall-ADDSDomainController]:                    #uninstall-addsdomaincontroller               "`Uninstall-ADDSDomainController`"
+[Unlock-ADAccount]:                                  #unlock-adaccount                             "`Unlock-ADAccount`"
+[Remove-ADOrganizationalUnit]:                       #remove-adorganizationalunit                  "`Remove-ADOrganizationalUnit`"
+
+
 <!-- Hyper-V cmdlets -->
+[Add-VMSwitch]:                                      # '`Add-VMSwitch`&#10;Adds a virtual switch to an Ethernet resource pool.'
+[Compare-VM]:                                        #compare-vm                                   '`Compare-VM`&#10;Compares a virtual machine and a virtual machine host for compatibility, returning a compatibility report.'
+[Debug-VM]:                                          #debug-vm                                     '`Debug-VM`&#10;Debugs a virtual machine.'
+[Export-VM]:                                         #export-vm                                    '`Export-VM`&#10;Exports a virtual machine to disk.'
+[Get-VMSwitch]:                                      # '`Get-VMSwitch`&#10;Gets virtual switches from one or more virtual Hyper-V hosts.'
+[Get-VM]:                                            #get-vm                                       '`Get-VM`&#10;Gets the virtual machines from one or more Hyper-V hosts.'
+[Import-VM]:                                         #import-vm                                    '`Import-VM`&#10;Imports a virtual machine from a file.'
+[Measure-VM]:                                        #measure-vm                                   '`Measure-VM`&#10;Reports resource utilization data for one or more virtual machines.'
+[Move-VM]:                                           #move-vm                                      '`Move-VM`&#10;Moves a virtual machine to a new Hyper-V host.'
+[New-VMSwitch]:                                      # '`New-VMSwitch`&#10;Creates a new virtual switch on one or more virtual machine hosts.'
+[New-VMSwitch]:                                      #new-vmswitch                                 "`New-VMSwitch`"
+[New-VM]:                                            #new-vm                                       '`New-VM`&#10;Creates a new virtual machine.'
+[Remove-VMSwitch]:                                   # '`Remove-VMSwitch`&#10;Deletes a virtual switch.'
+[Remove-VM]:                                         #remove-vm                                    '`Remove-VM`&#10;Deletes a virtual machine.'
+[Rename-VMSwitch]:                                   # '`Rename-VMSwitch`&#10;Renames a virtual switch.'
+[Rename-VM]:                                         #rename-vm                                    '`Rename-VM`&#10;Renames a virtual machine.'
+[Repair-VM]:                                         #repair-vm                                    '`Repair-VM`&#10;Repairs one or more virtual machines.'
+[Restart-VM]:                                        #restart-vm                                   '`Restart-VM`&#10;Restarts a virtual machine.'
+[Resume-VM]:                                         #resume-vm                                    '`Resume-VM`&#10;Resumes a suspended (paused) virtual machine.'
+[Save-VM]:                                           #save-vm                                      '`Save-VM`&#10;Saves a virtual machine.'
+[Set-VMFirmware]:                                    #set-vmfirmware                               "`Set-VMFirmware` &#10;  "
+[Set-VMMemory]:                                      #set-vmmemory                                 "`Set-VMMemory`"
+[Set-VMNetworkAdapter]:                              #set-vmnetworkadapter                         "`Set-VMNetworkAdapter`"
+[Set-VMProcessor]:                                   #set-vmprocessor                              "`Set-VMProcessor`"
+[Set-VMSwitch]:                                      # '`Set-VMSwitch`&#10;Configures a virtual switch.'
+[Set-VM]:                                            #set-vm                                       '`Set-VM`&#10;Configures a virtual machine.'
+[Start-VM]:                                          #start-vm                                     '`Start-VM`&#10;Starts a virtual machine.'
 [Stop-VM]:                                           #stop-vm                                      '`Stop-VM`&#10;Shuts down, turns off, or saves a virtual machine.'
 [Suspend-VM]:                                        #suspend-vm                                   '`Suspend-VM`&#10;Suspends, or pauses, a virtual machine.'
-[Add-VMSwitch]:                                      # '`Add-VMSwitch`&#10;Adds a virtual switch to an Ethernet resource pool.'
-[Get-VMSwitch]:                                      # '`Get-VMSwitch`&#10;Gets virtual switches from one or more virtual Hyper-V hosts.'
-[New-VMSwitch]:                                      # '`New-VMSwitch`&#10;Creates a new virtual switch on one or more virtual machine hosts.'
-[Remove-VMSwitch]:                                   # '`Remove-VMSwitch`&#10;Deletes a virtual switch.'
-[Rename-VMSwitch]:                                   # '`Rename-VMSwitch`&#10;Renames a virtual switch.'
-[Set-VMSwitch]:                                      # '`Set-VMSwitch`&#10;Configures a virtual switch.'
 
 # PowerShell
 
@@ -195,7 +182,7 @@ Active Directory  | [New domain controller](#new-domain-controller)
 Registry          | [Set new Registry keys](#registry)
 
 
-\#      | Approved cmdlet verbs and their aliases [^](https://docs.microsoft.com/en-us/powershell/scripting/developer/cmdlet/approved-verbs-for-windows-powershell-commands?view=powershell-7 "Microsoft Docs: \"Approved Verbs for PowerShell Commands\"")
+\#      | Approved cmdlet verbs and their aliases [<sup>MS docs</sup>](https://docs.microsoft.com/en-us/powershell/scripting/developer/cmdlet/approved-verbs-for-windows-powershell-commands?view=powershell-7 "Microsoft Docs: \"Approved Verbs for PowerShell Commands\"")
 ---     | ---
 **A-D** | [`a`](# "`Add-`") [`ap`](# "`Approve-`&#10;Confirms or agrees to the status of a resource or process.") [`as`](# "`Assert-`&#10;Affirms the state of a resource.") &bull; [`ba`](# "`Backup-`&#10;Stores data by replicating it.") [`bd`](# "`Build-`&#10;Creates an artifact (usually a binary or document) out of some set of input files (usually source code or declarative documents)") [`bl`](# "`Block-`&#10;Restricts access to a resource. This verb is paired with Unblock.") &bull; [`cc`](# "`Connect-`&#10;Creates a link between a source and a destination. This verb is paired with Disconnect.") [`cf`](# "`Convertfrom-`&#10;Converts one primary type of input (the cmdlet noun indicates the input) to one or more supported output types.") [`ch`](# "`Checkpoint-`&#10;Creates a snapshot of the current state of the data or of its configuration.") [`cm`](# "`Compress-`&#10;Compacts the data of a resource. Pairs with Expand.") [`cn`](# "`Confirm-`&#10;Acknowledges, verifies, or validates the state of a resource or process.") [`cp`](# "`Complete-`&#10;Concludes an operation.&#10;---&#10;`Copy-`&#10;Copies a resource to another name or to another container. For example, the Copy-Item cmdlet that is used to access stored data copies an item from one location in the data store to another location.") [`cr`](# "`Compare-`&#10;Evaluates the data from one resource against the data from another resource.") [`cs`](# "`Close-`") [`ct`](# "`Convertto-`&#10;Converts from one or more types of input to a primary output type (the cmdlet noun indicates the output type).") [`cv`](# "`Convert-`&#10;Changes the data from one representation to another when the cmdlet supports bidirectional conversion or when the cmdlet supports conversion between multiple data types.") &bull; [`d`](# "`Disable-`&#10;Configures a resource to an unavailable or inactive state. For example, the Disable-PSBreakpoint cmdlet makes a breakpoint inactive. This verb is paired with Enable.") [`db`](# "`Debug-`&#10;Examines a resource to diagnose operational problems.") [`dc`](# "`Disconnect-`&#10;Breaks the link between a source and a destination. This verb is paired with Connect.") [`dm`](# "`Dismount-`&#10;Detaches a named entity from a location. This verb is paired with Mount.") [`dn`](# "`Deny-`&#10;Refuses, objects, blocks, or opposes the state of a resource or process.") [`dp`](# "`Deploy-`&#10;Sends an application, website, or solution to a remote target[s] in such a way that a consumer of that solution can access it after deployment is complete") 
 **E-N** | [`e`](# "`Enable-`&#10;Configures a resource to an available or active state. For example, the Enable-PSBreakpoint cmdlet makes a breakpoint active. This verb is paired with Disable.") [`ed`](# "`Edit-`&#10;Modifies existing data by adding or removing content.") [`en`](# "`Expand-`&#10;Restores the data of a resource that has been compressed to its original state. This verb is paired with Compress.") [`ep`](# "`Export-`&#10;Encapsulates the primary input into a persistent data store, such as a file, or into an interchange format. This verb is paired with Import.") [`et`](# "`Enter-`") [`ex`](# "`Exit-`") &bull; [`f`](# "`Format-`") &bull; [`g`](# "`g`") [`gp`](# "`Group-`&#10;Arranges or associates one or more resources.") [`gr`](# "`Grant-`&#10;Allows access to a resource. This verb is paired with Revoke.") &bull; [`h`](# "`Hide-`") &bull; [`i`](# "`Invoke-`&#10;Performs an action, such as running a command or a method.") [`in`](# "`Initialize-`&#10;Prepares a resource for use, and sets it to a default state.") [`ip`](# "`Import-`&#10;Creates a resource from data that is stored in a persistent data store (such as a file) or in an interchange format. For example, the Import-CSV cmdlet imports data from a comma-separated value (CSV) file to objects that can be used by other cmdlets. This verb is paired with Export.") [`is`](# "`Install-`&#10;Places a resource in a location, and optionally initializes it. This verb is paired with Uninstall.") &bull; [`j`](# "`Join-`") &bull; [`l`](# "`Limit-`&#10;Applies constraints to a resource.") [`lk`](# "`Lock-`") &bull; [`m`](# "`Move`") [`mg`](# "`Merge-`&#10;Creates a single resource from multiple resources.") [`ms`](# "`Measure-`&#10;Identifies resources that are consumed by a specified operation, or retrieves statistics about a resource.") [`mt`](# "`Mount-`&#10;Attaches a named entity to a location. This verb is paired with Dismount.") &bull; [`n`](# "`New-`&#10;Creates a resource. (The `Set-` verb can also be used when creating a resource that includes data, such as the `Set-Variable` cmdlet.)") 
@@ -427,7 +414,7 @@ $Values = do { 'eat me!' } while ($false) # => @('eat me!')
 Add-ADPrincipalGroupMembership -Identity "CN=SysAdmin,CN=Users,DC=corp,DC=packtlab,DC=com" -MemberOf "CN=Enterprise Admins,CN=Users,DC=corp,DC=packtlab,DC=com","CN=Domain Admins,CN=Users,DC=corp,DC=packtlab,DC=com"
 ```
 ### `Add-Computer`
-Join a computer to a domain [[^][Zacker]: 20]
+Join a computer to a domain [<sup>Zacker: 20</sup>][Zacker]
 
 Option  | Description
 ---     | ---
@@ -439,7 +426,7 @@ Rename a computer and join it to a domain
 ```powershell
 Add-Computer -DomainName adatum.com -NewName ServerB -Credential adatum\administrator
 ```
-Join a new computer to a domain [^][1]
+Join a new computer to a domain
 ```powershell
 Add-Computer -Domain 'officeprodemoco.onmicrosoft.com' -Restart
 New-ADComputer -Name "O365-CL93"
@@ -454,12 +441,12 @@ Import-Csv -path $List | ForEach-Object {New-ADComputer -Name $_.Name -Path $OU}
 Verify a computer has connected to a domain
 Check "Organization" in Windows about page, or navigate to Control PAnel > System and Security > System and examine the **Computer name, domain, and workgroup settings**, where the domain can be seen.
 ### `Add-DhcpServerInDC`
-[^][Jones]
+[<sup>Jones</sup>][Jones]
 ```powershell
 Add-DhcpServerInDC -DnsName dc.corp.packtlab.com
 ```
 ### `Add-DhcpServerv4Scope`
-[^][Jones]
+[<sup>Jones</sup>][Jones]
 ```powershell
 Add-DhcpServerv4Scope -Name "PacktLabNet" -StartRange 10.0.0.50 -EndRange 10.0.0.100 -SubnetMask 255.255.255.0
 ```
@@ -472,23 +459,23 @@ Parameter | Effect
 ### `Add-PSSnapin`
 ### `Add-Type`
 ### `Close-SmbOpenFile`
-Close an open file [^][https://docs.microsoft.com/en-us/powershell/module/smbshare/close-smbopenfile?view=win10-ps]
+Close an open file [<sup>MS Docs</sup>][https://docs.microsoft.com/en-us/powershell/module/smbshare/close-smbopenfile?view=win10-ps]
 ```powershell
 Close-SmbOpenFile -FileId 4415226383589
 ```
-Close open files for a session [^][https://docs.microsoft.com/en-us/powershell/module/smbshare/close-smbopenfile?view=win10-ps]
+Close open files for a session [<sup>MS Docs</sup>][https://docs.microsoft.com/en-us/powershell/module/smbshare/close-smbopenfile?view=win10-ps]
 ```powershell
 Close-SmbOpenFile -SessionId 4415226380393
 ```
 ### `Disconnect-PSSession`
-Terminate a remote PowerShell session begun with [`New-PSSession`][New-PSSession] [[^][Zacker]: 22]
+Terminate a remote PowerShell session begun with [`New-PSSession`][New-PSSession] [<sup>Zacker: 22</sup>][Zacker]
 ### `Enable-PSRemoting`
 ### `Enable-WindowsOptionalFeature`
-Enable a feature in the currently running operating system [^](https://docs.microsoft.com/en-us/powershell/module/dism/enable-windowsoptionalfeature?view=win10-ps&redirectedfrom=MSDN "Microsoft Docs: \"Enable-WindowsOptionalFeature\"")
+Enable a feature in the currently running operating system [<sup>MS Docs</sup>](https://docs.microsoft.com/en-us/powershell/module/dism/enable-windowsoptionalfeature?view=win10-ps&redirectedfrom=MSDN "Microsoft Docs: \"Enable-WindowsOptionalFeature\"")
 ```powershell
 Enable-WindowsOptionalFeature -Online -FeatureName "Hearts" -All
 ```
-Enable WSL [^](https://www.reddit.com/r/bashonubuntuonwindows/comments/7smf9m/help_wsl_wont_activate_on_my_freshly_installed/ "Reddit: \"[help] WSL won't activate on my freshly installed Windows 10 version 1709\"")
+Enable WSL [<sup>Reddit</sup>](https://www.reddit.com/r/bashonubuntuonwindows/comments/7smf9m/help_wsl_wont_activate_on_my_freshly_installed/ "Reddit: \"[help] WSL won't activate on my freshly installed Windows 10 version 1709\"")
 ```powershell
 Enable-WindowsOptionalFeature -online -FeatureName Microsoft-Windows-Subsystem-Linux
 ```
@@ -502,7 +489,7 @@ Start and enter a new PS session to specified computer with provided credentials
 Enter-PSSession -ComputerName o365-dc01 -Credential officeprodemoco\joey
 ```
 ### `Exit-PSSession`
-Exit a remote PowerShell session [[^][Zacker]: 22]\
+Exit a remote PowerShell session [<sup>Zacker: 22</sup>][Zacker]
 End the PowerShell session with the specified computer
 ```powershell
 Exit-PSSession -ComputerName demodc
@@ -535,7 +522,7 @@ Display OUs, confirming deletion has taken place
 Get-ADOrganizationalUnit  -filter * | ft
 ```
 ### `Get-ADPrincipalGroupMembership`
-[^][Jones]
+[<sup>Jones</sup>][Jones]
 ```powershell
 Get-ADPrincipalGroupMembership sysadmin
 ```
@@ -581,7 +568,7 @@ Get-Clipboard -Format Image
 ### `Get-Member`
 ### `Get-Module`
 ### `Get-NetAdapter`
-Display available network interfaces [[^][Zacker]: 19]
+Display available network interfaces [<sup>Zacker: 19</sup>][Zacker]
 
 Option  | Description
 ---     | ---
@@ -623,7 +610,7 @@ Get-Service WinRM
 gsv winrm
 ```
 ### `Get-SmbOpenFile`
-Get information about an opened file [^][https://docs.microsoft.com/en-us/powershell/module/smbshare/get-smbopenfile?view=win10-ps]
+Get information about an opened file [<sup>MS Docs</sup>][https://docs.microsoft.com/en-us/powershell/module/smbshare/get-smbopenfile?view=win10-ps]
 ```powershell
 Get-SmbOpenFile -FileId 4415226383569 | Select-Object -Property *
 ```
@@ -646,7 +633,7 @@ CimClass              : ROOT/Microsoft/Windows/SMB:MSFT_SmbOpenFile
 CimInstanceProperties : {ClientComputerName, ClientUserName, ClusterNodeName, ContinuouslyAvailable...} 
 CimSystemProperties   : Microsoft.Management.Infrastructure.CimSystemProperties
 ```
-Get information about a file opened for an SMB client [^][https://docs.microsoft.com/en-us/powershell/module/smbshare/get-smbopenfile?view=win10-ps]
+Get information about a file opened for an SMB client [<sup>MS Docs</sup>][https://docs.microsoft.com/en-us/powershell/module/smbshare/get-smbopenfile?view=win10-ps]
 ```powershell
 Get-SmbOpenFile -SessionId 4415226380393
 ```
@@ -672,7 +659,7 @@ View system uptime
 Get-WmiObject -Win32_OperatingSystem -ComputerName localhost |
 Select-Object -Property @{n="Last Boot Time";e={[Management.ManagementDateTimeConvert]::ToDateTime($_.LastBootUpTime)}}
 ```
-Display Windows activation key [^][https://www.thewindowsclub.com/find-windows-product-key]
+Display Windows activation key [<sup>The Windows Club</sup>][https://www.thewindowsclub.com/find-windows-product-key]
 ```powershell
 (Get-WmiObject -query ‘select * from SoftwareLicensingService’).OA3xOriginalProductKey
 ```
@@ -711,7 +698,7 @@ Install the `Az` module
 Install-Module -Name Az -AllowClobber
 ```
 ### `Install-WindowsFeature`
-Install Windows features and roles [[^][Zacker]: 15-16]
+Install Windows features and roles [<sup>Zacker: 15-16</sup>][Zacker]
 
 Option                    | Description
 ---                       | ---
@@ -731,7 +718,7 @@ Install Hyper-V
 ```powershell
 Install-WindowsFeature -Name Hyper-V -IncludeAllSubFeature -IncludeManagementTools -Restart
 ```
-Install Web Server [^][Jones]
+Install Web Server [<sup>Jones</sup>][Jones]
 ```powershell
 Install-WindowsFeature web-webserver -IncludeManagementTools
 ```
@@ -742,7 +729,7 @@ Create a domain controller
 ```powershell
 Install-WindowsFeature AD-Domain-Services -IncludeManagementTools
 ```
-Create a DHCP server [^][Jones]
+Create a DHCP server [<sup>Jones</sup>][Jones]
 ```powershell
 Install-WindowsFeature DHCP -IncludeManagementTools
 ```

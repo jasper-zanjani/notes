@@ -1,3 +1,5 @@
+[https://docs.fedoraproject.org/en-US/quick-docs/getting-started-with-virtualization/]: https://docs.fedoraproject.org/en-US/quick-docs/getting-started-with-virtualization/ "Fedora Docs: \"Getting started with virtualization\""
+
 [add-apt-repository]:                                package.md#add-apt-repository                      '```&#10;$ add-apt-repository&#10;```&#10;'
 [apt]:                                               package.md#apt                                     '```&#10;$ apt&#10;```&#10;'
 [apt-cache]:                                         package.md#apt-cache                               '```&#10;$ apt-cache&#10;```&#10;Display package information regarding the package cache&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 81'
@@ -17,41 +19,61 @@
 [zypper]:                                            package.md#zypper                                  '```&#10;$ zypper&#10;```&#10;Package manager for SUSE with a syntax similar to that of `yum`&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 86'
 
 <!-- `dpkg` options -->
-[dpkg -&#69;]:                                            #dpkg                                              '```&#10;$ dpkg -E&#10;```&#10;Do not overwrite a previously installed package of the same version&#10;: 47'
-[dpkg -&#71;]:                                            #dpkg                                              '```&#10;$ dpkg -G&#10;```&#10;Do not overwrite a previously installed package with an older version of that same package&#10;: 47'
-[dpkg -&#82;]:                                            #dpkg                                              '```&#10;$ dpkg -R&#10;$ dpkg --recursive&#10;```&#10;Recursively process package files in specified subdirectories&#10;: 48'
+[dpkg -&#67;]:                                        #dpkg                                              '```&#10;$ dpkg -C&#10;$ dpkg --audit&#10;```&#10;Check for broken packages'
+[dpkg -&#69;]:                                        #dpkg                                              '```&#10;$ dpkg -E&#10;```&#10;Do not overwrite a previously installed package of the same version&#10;: 47'
+[dpkg -&#71;]:                                        #dpkg                                              '```&#10;$ dpkg -G&#10;```&#10;Do not overwrite a previously installed package with an older version of that same package&#10;: 47'
+[dpkg -&#105;]:                                       #dpkg                                              '```&#10;$ dpkg -i $PACKAGE&#10;$ dpkg --install $PACKAGE&#10;```&#10;Install `$PACKAGE`&#10;: 48'
+[dpkg -&#73;]:                                        #dpkg                                              '```&#10;$ dpkg -I $PACKAGE&#10;$ dpkg --info $PACKAGE&#10;```&#10;Show information about `$PACKAGE`'
+[dpkg -&#108;]:                                       #dpkg                                              '```&#10;$ dpkg -l $PATTERN&#10;$ dpkg --list $PATTERN&#10;```&#10;Display information for installed package names that match `$PATTERN`&#10;: 48'
+[dpkg -&#76;]:                                        #dpkg                                              '```&#10;$ dpkg -L $PACKAGE&#10;$ dpkg --listfiles $PACKAGE&#10;```&#10;List files installed from `$PACKAGE`&#10;: 48'
+[dpkg -&#80;]:                                        #dpkg                                              '```&#10;$ dpkg -P $PACKAGE&#10;$ dpkg --purge $PACKAGE&#10;```&#10;Remove everything for `$PACKAGE`&#10;: 48'
+[dpkg -&#112;]:                                       #dpkg                                              '```&#10;$ dpkg -p $PACKAGE&#10;$ dpkg --print-avail $PACKAGE&#10;```&#10;Show details about `$PACKAGE`'
+[dpkg -&#82;]:                                        #dpkg                                              '```&#10;$ dpkg -R&#10;$ dpkg --recursive&#10;```&#10;Recursively process package files in specified subdirectories&#10;: 48'
+[dpkg -&#114;]:                                       #dpkg                                              '```&#10;$ dpkg -r $PACKAGE&#10;$ dpkg --remove $PACKAGE&#10;```&#10;Remove everything except configuration files for `$PACKAGE`&#10;: 48'
+[dpkg -&#115;]:                                       #dpkg                                              '```&#10;$ dpkg -s $PACKAGE&#10;$ dpkg --status $PACKAGE&#10;```&#10;Report the status of `$PACKAGE`&#10;: 48'
+[dpkg -&#83;]:                                        #dpkg                                              '```&#10;$ dpkg -S $PATTERN&#10;$ dpkg --search $PATTERN&#10;```&#10;Search for a filename matching `$PATTERN` from installed packages&#10;: 48'
 [dpkg --configure]:                                   #dpkg                                              '```&#10;$ dpkg --configure&#10;```&#10;Configure an unpacked package. This involves setup of configuration files&#10;: 48'
-[dpkg -&#105;]:                                            #dpkg                                              '```&#10;$ dpkg -i&#10;$ dpkg --install&#10;```&#10;Install package&#10;: 48'
-[dpkg -&#108;]:                                            #dpkg                                              '```&#10;$ dpkg -l $PATTERN&#10;$ dpkg --list $PATTERN&#10;```&#10;Display information for installed package names that match `$PATTERN`&#10;: 48'
-[dpkg -&#76;]:                                            #dpkg                                              '```&#10;$ dpkg -L $PACKAGE&#10;$ dpkg --listfiles $PACKAGE&#10;```&#10;List files installed from `$PACKAGE`&#10;: 48'
 [dpkg --print-avail]:                                 #dpkg                                              '```&#10;$ dpkg --print-avail $PACKAGE&#10;```&#10;Display details found in /var/lib/dpkg/available about `$PACKAGE`&#10;: 48'
-[dpkg -&#10;]:                                            #dpkg                                              '```&#10;$ dpkg - $PACKAGE&#10;$ dpkg --purge $PACKAGE&#10;```&#10;Remove everything for `$PACKAGE`&#10;: 48'
-[dpkg -&#114;]:                                            #dpkg                                              '```&#10;$ dpkg -r $PACKAGE&#10;$ dpkg --remove $PACKAGE&#10;```&#10;Remove everything except configuration files for `$PACKAGE`&#10;: 48'
-[dpkg -&#115;]:                                            #dpkg                                              '```&#10;$ dpkg -s $PACKAGE&#10;$ dpkg --status $PACKAGE&#10;```&#10;Report the status of `$PACKAGE`&#10;: 48'
-[dpkg -&#83;]:                                            #dpkg                                              '```&#10;$ dpkg -S $PATTERN&#10;$ dpkg --search $PATTERN&#10;```&#10;Search for a filename matching `$PATTERN` from installed packages&#10;: 48'
-[dpkg --unpack]:                                      #dpkg                                              '```&#10;$ dpkg --unpack $PACKAGE&#10;```&#10;Unpack `$PACKAGE` but do not install the package it contains&#10;: 48'
+[dpkg --unpack]:                                      #dpkg                                              '```&#10;$ dpkg --unpack $PACKAGE&#10;```&#10;Unpack `$PACKAGE` but don't install the package it contains&#10;: 48'
+[dpkg --get-selections]:                              #dpkg                                              '```&#10;$ dpkg --get-selections&#10;```&#10;Display list of package selections'
 
+<!-- `rpm` options -->
+[rpm -&#97;]:                                             #rpm                                               '```&#10;$ rpm -a&#10;$ rpm --all&#10;```&#10;In query mode, display a list of all packages installed on the system&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 55'
+[rpm -&#99;]:                                             #rpm                                               '```&#10;$ rpm -c $PACKAGE&#10;$ rpm --configfiles $PACKAGE&#10;```&#10;List only configuration files installed with specified package&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 56'
+[rpm -&#100;]:                                             #rpm                                               '```&#10;$ rpm -d $PACKAGE&#10;$ rpm --docfiles $PACKAGE&#10;```&#10;List only documentation files installed with specified package&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 56'
+[rpm -&#101;]:                                             #rpm                                               '```&#10;$ rpm -e $PACKAGE&#10;$ rpm --erase $PACKAGE&#10;```&#10;Remove specified package, including config files&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 56'
+[rpm -&#102;]:                                             #rpm                                               '```&#10;$ rpm -f $FILENAME&#10;$ rpm --file $FILENAME&#10;```&#10;In query mode, display the package that contains a particular file&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 55'
+[rpm -&#104;]:                                             #rpm                                               '```&#10;$ rpm -h&#10;$ rpm --hash&#10;```&#10;Prints a string of 50 hash marks during installation as a progress indicator&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 54'
+[rpm -&#105;]:                                             #rpm                                               '```&#10;$ rpm -i $PACKAGE&#10;$ rpm --install $PACKAGE&#10;```&#10;Install specified packages&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 56'
+[rpm -&#73;]:                                             #rpm                                               '```&#10;$ rpm -I $PACKAGE&#10;```&#10;Display information about specified package&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 56'
+[rpm -&#75;]:                                             #rpm                                               '```&#10;$ rpm -K $PACKAGE&#10;```&#10;Verify integrity of specified package'
+[rpm -&#108;]:                                             #rpm                                               '```&#10;$ rpm -l $PACKAGE&#10;$ rpm --list $PACKAGE&#10;```&#10;List all files installed with specified package&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 56'
+[rpm -&#112;]:                                             #rpm                                               '```&#10;$ rpm -p $FILENAME&#10;```&#10;Query a package file (most useful with `-i`)&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.'
+[rpm -&#113;]:                                             #rpm                                               '```&#10;$ rpm -q $PACKAGE&#10;$ rpm --query $PACKAGE&#10;```&#10;Query for specified package'
+[rpm -&#82;]:                                             #rpm                                               '```&#10;$ rpm -R $PACKAGE&#10;$ rpm --requires $PACKAGE&#10;```&#10;List packages on which this package depends&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 56'
+[rpm -&#115;]:                                             #rpm                                               '```&#10;$ rpm -s&#10;```&#10;Display the state of each file that was installed by the specified package (`normal`, `not installed`, or `replaced`)'
+[rpm -&#85;]:                                             #rpm                                               '```&#10;$ rpm -U $PACKAGE&#10;$ rpm --upgrade $PACKAGE&#10;```&#10;Upgrade specified package'
+[rpm -&#118;]:                                             #rpm                                               '```&#10;$ rpm -v&#10;```&#10;Verbose output&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 54'
+[rpm -&#86;]:                                             #rpm                                               '```&#10;$ rpm -V&#10;$ rpm --verify&#10;```&#10;Compare files from installed packages against their expected configuration from the RPM database.&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 58'
+[rpm --provides]:                                     #rpm                                               '```&#10;$ rpm --provides $PACKAGE&#10;```&#10;List which capabilities the specified package provides'
+[rpm --force]:                                        #rpm                                               '```&#10;$ rpm --force&#10;```&#10;Allows the replacement of existing packages and of files from previously installed packages; for upgrades, it allows the replacement of a newer package with an older one.&#10;Equivalent to using all of the following options:&#10;  `--replacepkgs`&#10;  `--replacefiles`&#10;  `--oldpackage`&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 54'
+[rpm --nodeps]:                                       #rpm                                               '```&#10;$ rpm --nodeps&#10;```&#10;Allows you to install a package without checking for dependencies.&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 54'
+[rpm --test]:                                         #rpm                                               '```&#10;$ rpm --test&#10;```&#10;Runs through all the motions except for actually writing files; useful to verify that a package will install correctly prior to making the attempt&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 54'
+[rpm --nofiles]:                                      #rpm                                               '```&#10;$ rpm --nofiles&#10;```&#10;In verify mode, ignore missing files&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 58'
+[rpm --nomd5]:                                        #rpm                                               '```&#10;$ rpm --nomd5&#10;```&#10;In verify mode, ignore MD5 checksum errors&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 58'
+[rpm --nopgp]:                                        #rpm                                               '```&#10;$ rpm --nopgp&#10;```&#10;In verify mode, ignore PGP checking errors&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 58'
 
 # Linux package management commands
+
+&nbsp;  | Commands
+---     | ---
+&nbsp;  | [`add-apt-repository`][add-apt-repository] [`apt`][apt] [`apt-cache`][apt-cache] [`apt-get`][apt-get] [`dnf`][dnf] [`dpkg`][dpkg] [`dpkg-reconfigure`][dpkg-reconfigure] [`gem`][gem] [`pacman`][pacman] [`pip`][pip] [`rpm`][rpm] [`snap`][snap] [`yay`][yay] [`yum`][yum] [`yumdownloader`][yumdownloader] [`zypper`][zypper] 
+
 Commands    | Options
 ---         | ---
-[`add-apt-repository`][add-apt-repository] | 
-[`apt`][apt] | 
-[`apt-cache`][apt-cache] | 
-[`apt-cache`][apt-cache] | 
-[`apt-get`][apt-get] | 
-[`dnf`][dnf] | 
-[`dpkg`][dpkg] | <code>&nbsp;</code>  <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`i`][dpkg -&#105;] <code>&nbsp;</code> <code>&nbsp;</code> [`l`][dpkg -&#108;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`r`][dpkg -&#114;] [`s`][dpkg -&#115;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code>  <br><code>&nbsp;</code>&nbsp;<code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`E`][dpkg -&#69;] <code>&nbsp;</code> [`G`][dpkg -&#71;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`L`][dpkg -&#76;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`R`][dpkg -&#82;] [`S`][dpkg -&#83;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 
-[`dpkg-reconfigure`][dpkg-reconfigure] | 
-[`gem`][gem] | 
-[`pacman`][pacman] | 
-[`pip`][pip] | 
-[`rpm`][rpm] | 
-[`snap`][snap] | 
-[`yay`][yay] | 
-[`yum`][yum] | 
-[`yumdownloader`][yumdownloader] | 
-[`zypper`][zypper] | 
+[`dpkg`][dpkg] | <code>&nbsp;</code>  <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`i`][dpkg -&#105;] <code>&nbsp;</code> <code>&nbsp;</code> [`l`][dpkg -&#108;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`p`][dpkg -&#112;] <code>&nbsp;</code> [`r`][dpkg -&#114;] [`s`][dpkg -&#115;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code>  <br><code>&nbsp;</code>&nbsp;<code>&nbsp;</code> <code>&nbsp;</code> [`C`][dpkg -&#67;] <code>&nbsp;</code> [`E`][dpkg -&#69;] <code>&nbsp;</code> [`G`][dpkg -&#71;] <code>&nbsp;</code> [`I`][dpkg -&#73;] <code>&nbsp;</code> <code>&nbsp;</code> [`L`][dpkg -&#76;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`P`][dpkg -&#80;] <code>&nbsp;</code> [`R`][dpkg -&#82;] [`S`][dpkg -&#83;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 
+[`rpm`][rpm] | <code>&nbsp;</code>  [`a`][rpm -&#97;] <code>&nbsp;</code> [`c`][rpm -&#99;] [`d`][rpm -&#100;] [`e`][rpm -&#101;] [`f`][rpm -&#102;] <code>&nbsp;</code> [`h`][rpm -&#104;] [`i`][rpm -&#105;] <code>&nbsp;</code> <code>&nbsp;</code> [`l`][rpm -&#108;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`p`][rpm -&#112;] [`q`][rpm -&#113;] <code>&nbsp;</code> [`s`][rpm -&#115;] <code>&nbsp;</code> <code>&nbsp;</code> [`v`][rpm -&#118;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code>  <br><code>&nbsp;</code>&nbsp;<code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`I`][rpm -&#73;] <code>&nbsp;</code> [`K`][rpm -&#75;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`R`][rpm -&#82;] <code>&nbsp;</code> <code>&nbsp;</code> [`U`][rpm -&#85;] [`V`][rpm -&#86;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 
+
 ### `apt`
 Upgrade distribution
 ```sh
@@ -132,20 +154,6 @@ dnf group install --with-optional virtualization
 ```
 ### `dpkg`
 Manage local Debian packages
-
-Option  | POSIX option            | Effect
-:---    | :---                    | :---
-`-I`    | `--info`                | show information about {$PACKAGE}
-`-i`    | `--install`             | install {$PACKAGE}
-`-l`    | `--list`                | list packages currently installed
-`-L`    | `--listfiles`           | list packages that were installed as dependencies of another package
-`-p`    | `--print-avail`:         | show details about {$PACKAGE}
-`-P`    | `--purge`               | remove {$PACKAGE}, including configuration files
-`-r`    | `--remove`              | remove {$PACKAGE}, keeping configuration files
-`-s`    | `--status`              | display package status
-`-S`    | `--search`              | list package name responsible for a specific file being installed on the system
-`-C`    | `--audit`               | check for broken packages
-\-      | `--get-selections`      | display list of package selections
 ### `dpkg-reconfigure`
 Run a package's configuration script after it has already been installed.
 
@@ -170,7 +178,6 @@ Update `$PACKAGE`
 ```sh
 gem update package
 ```
-
 ### `pacman`
 Option  | POSIX option            | Effect
 :---    | :---                    | :---
@@ -470,5 +477,3 @@ View command history
 ```sh
 yum history
 ```
-## 
-[https://docs.fedoraproject.org/en-US/quick-docs/getting-started-with-virtualization/]: https://docs.fedoraproject.org/en-US/quick-docs/getting-started-with-virtualization/ "Fedora Docs: \"Getting started with virtualization\""
