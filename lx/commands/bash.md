@@ -70,92 +70,28 @@
 [while]:                                             #while                                      '```&#10;$ while&#10;```&#10;&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 132'
 
 <!-- `bind` options -->
-[bind -f]:                                            #bind                                              '```&#10;$ bind -f $FILE&#10;```&#10;Read key bindings from `$FILE`&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 75'
-[bind -l]:                                            #bind                                              '```&#10;$ bind -l&#10;```&#10;List the names of all the `readline` functions&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 75'
-[bind -m]:                                            #bind                                              '```&#10;$ bind -m $MAP&#10;```&#10;Use `$MAP` as the keymap. Available keymaps include:&#10;  - `emacs`: same as `emacs-standard`&#10;  - `emacs-ctlx`&#10;  - `emacs-standard`&#10;  - `emacs-meta`&#10;  - `vi`: same as `vi-command`&#10;  - `vi-command`&#10;  - `vi-insert`&#10;  - `vi-move`&#10;&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 75'
-[bind -p]:                                            #bind                                              '```&#10;$ bind -p&#10;```&#10;print the current `readline` bindings such that they can be reread from a .inputrc file&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 75'
-[bind -q]:                                            #bind                                              '```&#10;$ bind -q $FUNCTION&#10;```&#10;query which keys invoke the `readline` function `$FUNCTION`&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 75'
-[bind -r]:                                            #bind                                              '```&#10;$ bind -r $SEQUENCE&#10;```&#10;Remove the binding for key sequence `$SEQUENCE`&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 75'
-[bind -s]:                                            #bind                                              '```&#10;$ bind -s&#10;```&#10;Print the current `readline` key sequence and macro bindings such that they can be reread from a .inputrc file&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 75'
-[bind -S]:                                            #bind                                              '```&#10;$ bind -S&#10;```&#10;Print the current `readline` key sequence and macro bindings&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 75'
-[bind -u]:                                            #bind                                              '```&#10;$ bind -u $FUNCTION&#10;```&#10;Unbind all keys that invoke the `readline` function `$FUNCTION`&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 76'
-[bind -v]:                                            #bind                                              '```&#10;$ bind -v&#10;```&#10;Print the current `readline` variables such that they can be reread from a .inputrc file&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 76'
-[bind -V]:                                            #bind                                              '```&#10;$ bind -V&#10;```&#10;Print the current `readline` variables&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 76'
-[bind -x]:                                            #bind                                              '```&#10;$ bind -x $SEQUENCE:$COMMAND&#10;```&#10;Execute shell command `$COMMAND` whenever `$SEQUENCE` is entered&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 76'
-[bind -X]:                                            #bind                                              '```&#10;$ bind -X&#10;```&#10;Print the current `readline` key sequences bound with `-x` such that they can be reread from a .inputrc file&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 76'
+[bind -&#102;]:                                            #bind                                              '```&#10;$ bind -f $FILE&#10;```&#10;Read key bindings from `$FILE`&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 75'
+[bind -&#108;]:                                            #bind                                              '```&#10;$ bind -l&#10;```&#10;List the names of all the `readline` functions&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 75'
+[bind -&#109;]:                                            #bind                                              '```&#10;$ bind -m $MAP&#10;```&#10;Use `$MAP` as the keymap. Available keymaps include:&#10;  - `emacs`: same as `emacs-standard`&#10;  - `emacs-ctlx`&#10;  - `emacs-standard`&#10;  - `emacs-meta`&#10;  - `vi`: same as `vi-command`&#10;  - `vi-command`&#10;  - `vi-insert`&#10;  - `vi-move`&#10;&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 75'
+[bind -&#112;]:                                            #bind                                              '```&#10;$ bind -p&#10;```&#10;print the current `readline` bindings such that they can be reread from a .inputrc file&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 75'
+[bind -&#113;]:                                            #bind                                              '```&#10;$ bind -q $FUNCTION&#10;```&#10;query which keys invoke the `readline` function `$FUNCTION`&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 75'
+[bind -&#114;]:                                            #bind                                              '```&#10;$ bind -r $SEQUENCE&#10;```&#10;Remove the binding for key sequence `$SEQUENCE`&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 75'
+[bind -&#115;]:                                            #bind                                              '```&#10;$ bind -s&#10;```&#10;Print the current `readline` key sequence and macro bindings such that they can be reread from a .inputrc file&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 75'
+[bind -&#83;]:                                            #bind                                              '```&#10;$ bind -S&#10;```&#10;Print the current `readline` key sequence and macro bindings&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 75'
+[bind -&#117;]:                                            #bind                                              '```&#10;$ bind -u $FUNCTION&#10;```&#10;Unbind all keys that invoke the `readline` function `$FUNCTION`&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 76'
+[bind -&#118;]:                                            #bind                                              '```&#10;$ bind -v&#10;```&#10;Print the current `readline` variables such that they can be reread from a .inputrc file&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 76'
+[bind -&#86;]:                                            #bind                                              '```&#10;$ bind -V&#10;```&#10;Print the current `readline` variables&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 76'
+[bind -&#120;]:                                            #bind                                              '```&#10;$ bind -x $SEQUENCE:$COMMAND&#10;```&#10;Execute shell command `$COMMAND` whenever `$SEQUENCE` is entered&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 76'
+[bind -&#88;]:                                            #bind                                              '```&#10;$ bind -X&#10;```&#10;Print the current `readline` key sequences bound with `-x` such that they can be reread from a .inputrc file&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 76'
 
-# Bash builtins
+# Bash builtin commands
+&nbsp;  | Commands
+---     | ---
+&nbsp;  | [`alias`][alias] [`bind`][bind] [`break`][break] [`builtin`][builtin] [`caller`][caller] [`case`][case] [`cd`][cd] [`command`][command] [`compgen`][compgen] [`complete`][complete] [`compopt`][compopt] [`continue`][continue] [`declare`][declare] [`dirs`][dirs] [`disown`][disown] [`do`][do] [`done`][done] [`echo`][echo] [`enable`][enable] [`esac`][esac] [`eval`][eval] [`exec`][exec] [`exit`][exit] [`export`][export] [`false`][false] [`fc`][fc] [`fg`][fg] [`fi`][fi] [`for`][for] [`function`][function] [`getopts`][getopts] [`hash`][hash] [`help`][help] [`history`][history] [`if`][if] [`jobs`][jobs] [`kill`][kill] [`let`][let] [`local`][local] [`logout`][logout] [`mapfile`][mapfile] [`popd`][popd] [`printf`][printf] [`pushd`][pushd] [`pwd`][pwd] [`read`][read] [`readarray`][readarray] [`readonly`][readonly] [`return`][return] [`select`][select] [`set`][set] [`shift`][shift] [`shopt`][shopt] [`source`][source] [`suspend`][suspend] [`test`][test] [`time`][time] [`times`][times] [`trap`][trap] [`true`][true] [`type`][type] [`typeset`][typeset] [`ulimit`][ulimit] [`umask`][umask] [`unalias`][unalias] [`unset`][unset] [`until`][until] [`wait`][wait] [`while`][while]
+
 Commands  | Options
 ---       | ---
-[`alias`][alias] | 
-[`bind`][bind] | <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  [`f`][bind -f]  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  [`l`][bind -l]  [`m`][bind -m]  <code>&nbsp;</code>  <code>&nbsp;</code>  [`p`][bind -p]  [`q`][bind -q]  [`r`][bind -r]  [`s`][bind -s]  <code>&nbsp;</code>  [`u`][bind -u]  [`v`][bind -v]  <code>&nbsp;</code>  [`x`][bind -x]  <code>&nbsp;</code>  <code>&nbsp;</code> <br><code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  [`S`][bind -S]  <code>&nbsp;</code>  <code>&nbsp;</code>  [`V`][bind -V]  <code>&nbsp;</code>  [`X`][bind -X]  <code>&nbsp;</code>  <code>&nbsp;</code>
-[`break`][break] | 
-[`builtin`][builtin] | 
-[`caller`][caller] | 
-[`case`][case] | 
-[`cd`][cd] | 
-[`command`][command] | 
-[`compgen`][compgen] | 
-[`complete`][complete] | 
-[`compopt`][compopt] | 
-[`continue`][continue] | 
-[`declare`][declare] | 
-[`dirs`][dirs] | 
-[`disown`][disown] | 
-[`do`][do] | 
-[`done`][done] | 
-[`echo`][echo] | 
-[`enable`][enable] | 
-[`esac`][esac] | 
-[`eval`][eval] | 
-[`exec`][exec] | 
-[`exit`][exit] | 
-[`export`][export] | 
-[`false`][false] | 
-[`fc`][fc] | 
-[`fg`][fg] | 
-[`fi`][fi] | 
-[`for`][for] | 
-[`function`][function] | 
-[`getopts`][getopts] | 
-[`hash`][hash] | 
-[`help`][help] | 
-[`history`][history] | 
-[`if`][if] | 
-[`jobs`][jobs] | 
-[`kill`][kill] | 
-[`let`][let] | 
-[`local`][local] | 
-[`logout`][logout] | 
-[`mapfile`][mapfile] | 
-[`popd`][popd] | 
-[`printf`][printf] | 
-[`pushd`][pushd] | 
-[`pwd`][pwd] | 
-[`read`][read] | 
-[`readarray`][readarray] | 
-[`readonly`][readonly] | 
-[`return`][return] | 
-[`select`][select] | 
-[`set`][set] | 
-[`shift`][shift] | 
-[`shopt`][shopt] | 
-[`source`][source] | 
-[`suspend`][suspend] | 
-[`test`][test] | 
-[`time`][time] | 
-[`times`][times] | 
-[`trap`][trap] | 
-[`true`][true] | 
-[`type`][type] | 
-[`typeset`][typeset] | 
-[`ulimit`][ulimit] | 
-[`umask`][umask] | 
-[`unalias`][unalias] | 
-[`unset`][unset] | 
-[`until`][until] | 
-[`wait`][wait] | 
-[`while`][while] | 
+[`bind`][bind] | <code>&nbsp;</code>  <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`f`][bind -&#102;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`l`][bind -&#108;] [`m`][bind -&#109;] <code>&nbsp;</code> <code>&nbsp;</code> [`p`][bind -&#112;] [`q`][bind -&#113;] [`r`][bind -&#114;] [`s`][bind -&#115;] <code>&nbsp;</code> [`u`][bind -&#117;] [`v`][bind -&#118;] <code>&nbsp;</code> [`x`][bind -&#120;] <code>&nbsp;</code> <code>&nbsp;</code>  <br><code>&nbsp;</code>&nbsp;<code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`S`][bind -&#83;] <code>&nbsp;</code> <code>&nbsp;</code> [`V`][bind -&#86;] <code>&nbsp;</code> [`X`][bind -&#88;] <code>&nbsp;</code> <code>&nbsp;</code> 
 
 
 ### `bash`
