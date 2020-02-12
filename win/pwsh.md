@@ -115,7 +115,7 @@
 [Start-Job]:                                         #start-job                                    "`Start-Job` (alias: `sajb`)"
 [Start-Service]:                                     #start-service                                "`Start-Service` (alias: `sasv`) &#10; Start one or more stopped services"
 [Stop-Computer]:                                     #stop-computer                                "`Stop-Computer`"
-[Stop-Service]:                                      #stop-service                                 "`Stop-Service` (alias: `spsv`) Stop one or more services"
+[Stop-Service]:                                      #stop-service                                 "```&#10;PS C:\> Stop-Service&#10;PS C:\> spsv&#10;```&#10;Stop one or more services"
 [Update-DistributionGroupMember]:                    #update-distributiongroupmember               "`Update-DistributionGroupMember`&#10;Replace all members of distribution groups and mail-enabled security groups"
 [Update-Help]:                                       #update-help                                  "`Update-Help` &#10; Download help files"
 [Where-Object]:                                      #filters                                      "`Where-Object` (alias: `?`, `where`) &#10; Select objects from a collection based on their property values"
@@ -140,6 +140,8 @@
 [Unlock-ADAccount]:                                  #unlock-adaccount                             "`Unlock-ADAccount`"
 [Remove-ADOrganizationalUnit]:                       #remove-adorganizationalunit                  "`Remove-ADOrganizationalUnit`"
 
+<!-- Network cmdlets -->
+[Get-NetIpConfiguration]:                            #get-netipconfiguration                            '```&#10;PS C:\> Get-NetIpConfiguration&#10;PS C:\> gip&#10;```&#10;Produce output similar to `ipconfig`'
 
 <!-- Hyper-V cmdlets -->
 [Add-VMSwitch]:                                      # '`Add-VMSwitch`&#10;Adds a virtual switch to an Ethernet resource pool.'
@@ -198,10 +200,10 @@ Registry          | [Set new Registry keys](#registry)
 **D**   | **`Disk`** [`g`][Get-Disk] &bull; **`DistributionGroupMember`** [`a`][Add-DistributionGroupMember] [`g`][Get-DistributionGroupMember] [`ud`][Update-DistributionGroupMember] &bull; **`DNSClientServerAddress`** [`s`][Set-DnsClientServerAddress] **`DNSName`**&nbsp;[`rv`][Resolve-DNSName]
 `Dhcp`  | **`DhcpServerInDC`** [`a`][Add-DhcpServerInDC] &bull; **`DhcpServerV4Scope`** [`a`][Add-DhcpServerv4Scope] &bull; **`DhcpServerv4OptionValue`** [`s`][Set-DhcpServerv4OptionValue]
 **E-M** | **`ExecutionPolicy`** [`s`][Set-ExecutionPolicy] &bull; **`GPUpdate`** [`i`][Invoke-GPUpdate] &bull; **`Guid`** [`n`][New-Guid] &bull; **`Help`** [`g`][Get-Help] [`ud`][Update-Help] &bull; **`Item`** [`cp`][Copy-Item] [`g`][Get-Item] [`n`][New-Item] [`r`][Remove-Item] &bull; **`List`** [`f`][Format-List] &bull; **`Location`** [`g`][Get-Location] [`s`][Set-Location] &bull; **`Module`**&nbsp;[`ip`][Import-Module]&nbsp;[`is`][Install-Module]
-**N**   | **`NetAdapter`** [`g`][Get-NetAdapter] &bull; **`NetFirewallRule`** [`g`][Get-NetFirewallRule] [`n`][New-NetFirewallRule] [`s`][Set-NetFirewallRule] &bull; **`NetIpAddress`** [`n`][New-NetIpAddress] &bull; **`Null`** [`o`][Out-Null]
+**N**   | **`NetAdapter`** [`g`][Get-NetAdapter] &bull; **`NetFirewallRule`** [`g`][Get-NetFirewallRule] [`n`][New-NetFirewallRule] [`s`][Set-NetFirewallRule] &bull; **`NetIpAddress`** [`n`][New-NetIpAddress] &bull; **`NetIpConfiguration`** [`g`][Get-NetIpConfiguration] &bull; **`Null`** [`o`][Out-Null]
 **O**   | **`Object`** [`ForEach`][ForEach-Object] [`n`][New-Object] [`sc`][Select-Object] [`Where`][Where-Object] &bull; **`Output`** [`wr`][Write-Output]
 **P**   | **`Partition`** [`g`][Get-Partition] [`n`][New-Partition] [`r`][Remove-Partition] &bull; **`PSReadlineOption`** [`g`][Get-PSReadlineOption] [`s`][Set-PSReadlineOption] &bull; **`PSSession`** [`dc`][Disconnect-PSSession] [`et`][Enter-PSSession] [`ex`][Exit-PSSession] [`g`][Get-PSSession] [`n`][New-PSSession]
-**S-T** | **`Service`** [`g`][Get-Service] [`sa`][Start-Service] [`sp`][Stop-Service] &bull; **`SmbOpenFile`** [`cs`][Close-SmbOpenFile] [`g`][Get-SmbOpenFile] **`SmbShare`** [`n`][New-SmbShare] &bull; **`Table`** [`f`][Format-Table] &bull; **`Type`** [`a`][Add-Type]
+**S-T** | **`Service`** [`g`][Get-Service] [`s`][Set-Service] [`sa`][Start-Service] [`sp`][Stop-Service] &bull; **`SmbOpenFile`** [`cs`][Close-SmbOpenFile] [`g`][Get-SmbOpenFile] **`SmbShare`** [`n`][New-SmbShare] &bull; **`Table`** [`f`][Format-Table] &bull; **`Type`** [`a`][Add-Type]
 **V**   | **`VM`** [`cr`][Compare-VM] [`db`][Debug-VM] [`ep`][Export-VM] [`g`][Get-VM] [`ip`][Import-VM] [`m`][Move-VM] [`ms`][Measure-VM] [`n`][New-VM] [`r`][Remove-VM] [`rn`][Rename-VM] [`rt`][Restart-VM] [`ru`][Resume-VM] [`s`][Set-VM] [`sa`][Start-VM] [`sp`][Stop-VM] [`ss`][Suspend-VM] [`sv`][Save-VM] &bull; **`VMFirmware`** [`s`][Set-VMFirmware] &bull; **`VMMemory`** [`s`][Set-VMMemory] &bull; **`VMNetworkAdapter`** [`s`][Set-VMNetworkAdapter] &bull; **`VMProcessor`** [`s`][Set-VMProcessor] &bull; **`VMSwitch`** [`n`][New-VMSwitch] &bull; **`Volume`** [`f`][Format-Volume]
 **W**   | **`WebRequest`** [`Invoke`][Invoke-WebRequest] &bull; **`WindowsFeature`** [`a`][Add-WindowsFeature] [`g`][Get-WindowsFeature] [`is`][Install-WindowsFeature] &bull; **`WindowsOptionalFeature`** [`e`][Enable-WindowsOptionalFeature] &bull; **`WMIObject`** [`g`][Get-WMIObject]
 
@@ -1025,12 +1027,9 @@ Start-Service WinRM
 sasv winrm
 ```
 ### `Stop-Service`
-Stop the `WinRM` service
+Stop the WebTitan service
 ```powershell
-Stop-Service WinRM
-```
-```powershell
-spsv winrm
+Stop-Service WtcOtg
 ```
 ### `Uninstall-ADDSDomainController`
 Demote a domain controller (consummate with uninstalling the AD Domain Controller role)

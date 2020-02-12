@@ -1,3 +1,5 @@
+[44]: https://www.2daygeek.com/linux-rsync-command-local-remote-file-synchronization/ "rsync (Remote Sync) command examples and usage"
+
 [chattr]:                                            #chattr                                     '```&#10;$ chattr&#10;```&#10;Change file attributes&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 311-312'
 [chgrp]:                                             #chgrp                                      '```&#10;$ chgrp&#10;```&#10;Change group ownership of a file&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 198-199'
 [chmod]:                                             #chmod                                      '```&#10;$ chmod&#10;```&#10;Change permissions on files&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 195-198'
@@ -33,40 +35,12 @@
 
 
 # Linux file manipulation commands
+&nbsp;  | Commands
+---     | ---
+&nbsp;  | [`chattr`][chattr] [`chgrp`][chgrp] [`chmod`][chmod] [`chown`][chown] [`cp`][cp] [`dd`][dd] [`fallocate`][fallocate] [`find`][find] [`getfacl`][getfacl] [`install`][install] [`ln`][ln] [`locate`][locate] [`ls`][ls] [`lsattr`][lsattr] [`lsof`][lsof] [`md5sum`][md5sum] [`mkdir`][mkdir] [`mv`][mv] [`rm`][rm] [`rmdir`][rmdir] [`rsync`][rsync] [`scp`][scp] [`setfacl`][setfacl] [`shred`][shred] [`stat`][stat] [`touch`][touch] [`tree`][tree] [`umask`][umask] [`unlink`][unlink] [`updatedb`][updatedb] [`whereis`][whereis] [`which`][which] 
+
 Commands  | Options
 ---       | ---
-[`chattr`][chattr] | 
-[`chgrp`][chgrp] | 
-[`chmod`][chmod] | 
-[`chown`][chown] | 
-[`cp`][cp] | 
-[`dd`][dd] | 
-[`fallocate`][fallocate] | 
-[`find`][find] | 
-[`getfacl`][getfacl] | 
-[`install`][install] | 
-[`ln`][ln] | 
-[`locate`][locate] | 
-[`ls`][ls] | 
-[`lsattr`][lsattr] | 
-[`lsof`][lsof] | 
-[`md5sum`][md5sum] | 
-[`mkdir`][mkdir] | 
-[`mv`][mv] | 
-[`rm`][rm] | 
-[`rmdir`][rmdir] | 
-[`rsync`][rsync] | 
-[`scp`][scp] | 
-[`setfacl`][setfacl] | 
-[`shred`][shred] | 
-[`stat`][stat] | 
-[`touch`][touch] | 
-[`tree`][tree] | 
-[`umask`][umask] | 
-[`unlink`][unlink] | 
-[`updatedb`][updatedb] | 
-[`whereis`][whereis] | 
-[`which`][which] | 
 
 
 ### `fallocate`
@@ -167,8 +141,6 @@ Synchronize only specific file type [^][44]
 ```sh
 rsync -zvre ssh --include '*.php' --exclude '*' $PATH
 ```
-
-[44]: https://www.2daygeek.com/linux-rsync-command-local-remote-file-synchronization/ "rsync (Remote Sync) command examples and usage"
 ### `setfacl`
 Set file access control list
 

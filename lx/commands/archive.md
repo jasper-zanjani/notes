@@ -1,4 +1,5 @@
 [Eckert]: # "Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012."
+[Haeder]: # "Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010."
 
 [bunzip2]:                                           archive.md#bunzip2                                 '```&#10;$ bunzip2&#10;```&#10;Decompress an archive created with `bzip2`&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 271'
 [bzip2]:                                             archive.md#bzip2                                               '```&#10;$ bzip2&#10;```&#10;Compress or decompress archives using the Burrows-Wheeler block-sorting text-compression algorithm.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 271'
@@ -106,13 +107,6 @@ Commands                        | Options
 [`xz`][xz]                      | <code>&nbsp;</code>  <code>&nbsp;</code> <code>&nbsp;</code> [`c`][xz -&#99;] [`d`][xz -&#100;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`l`][xz -&#108;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`v`][xz -&#118;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code>
 [`zip`][zip]                    | <code>&nbsp;</code>  <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`d`][zip -&#100;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`r`][zip -&#114;] <code>&nbsp;</code> <code>&nbsp;</code> [`u`][zip -&#117;] [`v`][zip -&#118;] <code>&nbsp;</code> [`x`][zip -&#120;] <code>&nbsp;</code> <code>&nbsp;</code>
 
-
-### `bzip2`
-Compress `$SYMLINK`
-```sh
-bzip2 -f $SYMLINK
-bzip2 --force $SYMLINK
-```
 ### `compress`
 Display contents of the compressed file to stdout (same as using `zcat`)
 ```sh
@@ -125,6 +119,15 @@ compress -f
 Compress files recursively within a specified directory
 ```sh
 compress -r
+```
+### `cpio`
+Create an archive that contains all the files in the current working directory [<sup>Haeder: 94</sup>][Haeder]
+```sh
+ls | cpio -ov > /tmp/archive.cpio
+```
+Extract all the files from the archive we just created
+```sh
+cpio -iv < /tmp/archive.cpio
 ```
 ### `dar`
 Create a differential (or incremental) backup of {file}, using full.bak as reference

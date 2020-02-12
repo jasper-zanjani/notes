@@ -846,133 +846,10 @@ Configuration file                          | Description
 /etc/sysconfig/network-scripts/ifcfg-ens33  | interface settings
 /usr/lib/firewalld/services                 | .xml files that define services ("ZONE=public")
 
-Display status of service
-```
-firewall-cmd --state
-```
-Display default zone
-```
-firewall-cmd --get-default-zone
-```
-Display zones that are attached to an interface
-```
-firewall-cmd --get-active-zones
-```
-Add a new zone
-```
-firewall-cmd --new-zone=testlab
-```
 Add a new zone, and write the change to disk
 ```
 firewall-cmd --new-zone=testlab  --permanent
 ```
-Load saved configuration
-```
-firewall-cmd --reload
-```
-Display names of all available services
-```
-firewall-cmd --get-services
-```
-Add a service permanently
-```
-firewall-cmd --add-service=ftp --permanent
-```
-Display services loaded in memory
-```
-firewall-cmd --list-services
-```
-Remove service
-```
-firewall-cmd --remove-service
-```
-Add nonstandard port
-```
-firewall-cmd --add-port=8080/tcp
-```
-Add a range of nonstandard ports
-```
-firewall-cmd --add-port=50000-60000/udp
-```
-See approved port numbers
-```
-firewall-cmd --list-ports
-```
-Add a range of nonstandard ports
-```sh
-firewall-cmd --add-port=50000-60000/udp
-```
-Add a nonstandard port
-```sh
-firewall-cmd --add-port=8080/tcp
-```
-Add the FTP service to the firewall
-```sh
-firewall-cmd --add-service=ftp
-```
-Display zones that actually have an attached interface
-```sh
-firewall-cmd --get-active-zones
-```
-Display the default zone
-```sh
-firewall-cmd --get-default-zone
-```
-Display names of available services
-```sh
-firewall-cmd --get-services
-```
-Display approved port numbers
-```sh
-firewall-cmd --list-ports
-```
-Define a new zone "testlab"
-```sh
-firewall-cmd --new-zone=testlab
-```
-Record a change to the configuration on disk
-```sh
-firewall-cmd --permanent
-```
-Load configuration on disk into memory
-```sh
-firewall-cmd --reload
-```
-Remove firewalld service
-```sh
-firewall-cmd --remove-service
-```
-Confirm firewalld is running
-```sh
-firewall-cmd --state
-```
-### `fsck`
-Check filesystem for errors\
-Display progress indicators
-```sh
-fsck -C
-```
-Specify {ext3} filesystem and check {/dev/sdc1} for errors
-```sh
-fsck -t ext3 /dev/sdc1
-```
-Prompt when attempting a repair action 
-```sh
-fsck -r
-```
-### `fstrim`
-Discard unused blocks on a mounted filesystem
-### `ftp`
-encrypted file transfers
-### `fusermount`
-Mount a directory from a remote server on your local host via SSH [^][[23]
-```sh
-fusermount -u mountpoint
-```
-### `gdmsetup`
-GUI program used to set options for the login window when using GDM
-### `getfacl`
-Get access control list for {file}
 ### `gpg`
 PGP was bought by Semantec, and GNU has since released GPG, an open-source replacement.
 
@@ -1020,67 +897,7 @@ Send keys to {keyserver}
 ```sh
 gpg --send-keys keyIDs --keyserver keyserver
 ```
-### `hdiutil`
-Manipulate disk images
-### `hdparm`
-Get/set SATA/IDE device parameters\
-Check power mode
-```sh
-hdparm -C
-```
-Show drive geometry, including size in sectors and starting offset
-```sh
-hdparm -g
-```
-### `history`
-Option  | Effect
-:---    | :---
-`-c`    | clear history [^][23]
-### `host`
-Display SOA record frm each authoritative DNS nameserver
-```sh
-host -C
-```
-### `hostname`
-Return the domain name configured for the server
-```sh
-hostname -d
-```
-### `hwclock`
-Access the BIOS clock\
-Set hardware clock to software clock
-```sh
-hwclock --hctosys
-```
-Set software clock to hardware clock
-```sh
-hwclock --systohw
-```
-Display the Hardware Clock time
-```sh
-hwclock --show
-```
-### `iconv`
-Convert text from one encoding to another\
-Convert {file} from ASCII to UTF-8
-```sh
-iconv -f ASCII -t UTF-8 file
-```
-Show available character sets
-```sh
-iconv -l --list
-```
-### `insmod`
-Insert a module into the Linux kernel
-```sh
-insmod module
-```
 ### `iscsiadm`
-Command-line utility allowing discovery and login to iSCSI targets\
-Set interval length between two ping requests
-```sh
-iscsiadm -i
-```
 Discover iSCSI targets
 ```sh
 iscsiadm discovery
@@ -1272,31 +1089,6 @@ Run MongoDB service in the background on port 80
 ```sh
 mongod --dbpath $HOME/db --port 80 --fork --logpath /var/tmp/mongodb
 ```
-### `mount`
-Mount all filesystems in `fstab`
-```sh
-mount -a
-```
-Mount `$FILESYSTEM` as read-only
-```sh
-mount -r $FILESYSTEM
-```
-Specify `$FILESYSTEM` type
-```sh
-mount -t
-```
-Mount a partition using its UUID
-```sh
-mount -U
-```
-Mount `$FILESYSTEM` as read-write
-```sh
-mount -w filesystem
-```
-Mount a USB stick that is made available on /dev/sdb in /media/usb
-```sh
-mount /dev/sdb1 /media/usb
-```
 ### `mt`
 Control magnetic tape drive operation; operates on environment variable TAPE
 ### `mv`
@@ -1308,8 +1100,6 @@ Option  | POSIX option            | Effect
 `-n`    | `--no-clobber`          | silently reject move action in the event of a conflict
 `-u`    | `--update`              | only overwrite if the modification time of the destination is older than the source
 ### `netplan`
-Ubuntu network configuration tool
-
 Config file   | Description
 :---          | :---
 /etc/netplan/ | directory containing various configuration files and scripts
@@ -1385,75 +1175,10 @@ Ignore whitespace
 ```sh
 patch -i
 ```
-### `ping`
-"packet Internet groper" utility used for checking network connections, using ICMP packets (cf. [ `nc` ](network.md#nc))\
-Send `$N` number of pings
-```
-ping -c $N
-``` 
-Flood ping
-```
-ping -f
-```
-Print timestamp
-```
-ping -D
-```
-Mark outgoing packet to be processed appropriate to kernel's policy
-```
-ping -m
-``` 
-Numeric output only; disable name resolution
-```sh
-ping -n
-```
-Bypass routing tables
-```sh
-ping -r
-```
 ### `pydoc`
 Display all installed Python modules
 ```sh
 pydoc modules
-```
-### `quota`
-Check quota status of {user}
-```sh
-quota user
-```
-### `quotacheck`
-Create the quota database
-### `quotaoff`
-Turn off all quotas
-```sh
-quotaoff -a
-```
-### `quotaon`
-Turn on all quotas
-```sh
-quotaon -a
-```
-Turn on quotas for {user}
-```sh
-quotaon -u user
-```
-### `read`
-Option  | Effect
-:---    | :---
-`-a`    | read from standard input, with the words assigned to sequential indices of {array}
-`-d`    | read from standard input, with the first character of `delim` being used to terminate input, rather than newline
-`-e`    | read from standard input, if standard input is coming from a terminal, readline is used to obtain the line
-`-n`    | read from standard input, returning after reading {n} chars
-`-p`    | read from standard input, displaying {$PROMPT} on standard error before reading any input
-`-r`    | read from standard input, backslash no longer will act as an escape character
-`-s`    | read from standard input, silent mode (characters are not echoed)
-`-t`    | read from standard input, returning failure is a complete line of input is not read within {n} seconds
-`-u`    | read input from file descriptor { $FILE }
-
-Stopwatch\
-Will stop when you press enter, displaying how much time elapsed
-```sh
-time read
 ```
 ### `rename`
 `rename` uses regular expressions [^][33]
@@ -1531,52 +1256,11 @@ Share your screen session with another user
 ```sh
 screen -x user/session
 ```
-### `smbclient`
-Connect to a Samba server
-Set the port while connecting to a Samba server
-```
-smbclient -p
-```
-### `smbpasswd`
-Create a Samba password
-### `smbstatus`
-Report on current Samba connections
-List Samba shares
-```sh
-smbstatus -S
-```
 ### `sfdisk`
-Script-oriented tool for partitioning disk devices
-
-Set the first partition of the first SATA device to a RAID type
-```sh
-sfdisk --id /dev/sda 1 fd
-```
-Set the first partition of the first SATA device to a RAID type
-```sh
-sfdisk --id /dev/sda 1 fd
-```
-List partitions on all devices
-```sh
-sfdisk-l # sfdisk --list
-```
-List partitions on {device}
-```sh
-sfdisk-l device # sfdisk --list device
-```
-
 Script-based partition table editor, similar to [`fdisk`](#fdisk) and [`gdisk`](#gdisk), which can be run interactively. It does not interface with GPT format, neither is it designed for large partitions. [^][11]
 
 List partitions on all devices
-```sh
-sfdisk -l
-sfdisk --list
-```
-List partitions on {device}
-```sh
-sfdisk -l device
-sfdisk --list device
-```
+
 Display size of {partition} or {device}
 This command produces the size of {partition} (i.e. `/dev/sda1`) or even {device} (`/dev/sda`) in blocks
 ```sh
@@ -1606,18 +1290,6 @@ sfdisk /dev/hdd -I hdd-partition-sectors.save
 Shut down at 8 pm
 ```sh
 shutdown 20:00
-```
-### `slapadd`
-Add entries to the slapd LDAP directory
-### `sleep`
-Wait a specified number of `seconds` before executing another command; often used in shell scripts
-```sh
-sleep seconds
-```
-#### `stat`
-Display statistics for a file
-```sh
-stat file
 ```
 ### `stty`
 Return number of rows and columns of the terminal
@@ -1649,11 +1321,6 @@ Set snapshot length of capture (default 65,535B)
 ```sh
 tcpdump -s
 ```
-### `touch`
-Update `$NEW`'s modification date to match `$OLD` [^][36]
-```sh
-touch -r $OLD $NEW
-```
 ### `tput`
 Return width of current terminal window
 ```sh
@@ -1663,17 +1330,6 @@ Return height of current terminal window
 ```sh
 tput lines
 ```
-### `tracepath`
-Successor to `traceroute`, blocked by many ISPs because it is a newer tool
-### `traceroute`
-Follow the path a packet takes between two hosts
-
-Option  | Effect
-:---    | :---
-`-i`    | choose the **i**nterface to be used for the path trace
-`-s`    | choose the **s**ource address to be used for the path trace
-`-T`    | use **T**CP SYN packets for the path trace
-`-t`    | set the **t** of service flag (ToS) to be used for the path trace
 ### `tune2fs`
 Adjust various ...
 Run `fsck` on {/dev/sdb1} on every boot
@@ -1692,47 +1348,18 @@ Assign label "Sales" to logical volume {/dev/vg1/Sales}
 ```sh
 tune2fs -L Sales /dev/vg1/Sales
 ```
-### `tzselect`
-Select timezone
 ### `udevadm`
 Udev management tool
 
 Option  | Effect
 :---    | :---
 `-u`    | **u**pdate the hardware database index after updating source files related to udev
-### `umount`
-Unmount a USB stick mounted a `/dev/sda`
-```sh
-umount /dev/sda1
-```
 ### `update-rc.d`
 Create links within /etc/rc.d/ for starting and stopping services
-### `vifs`
-Safely edit fstab file
-### `visudo`
-Edit and view the `etc/sudoers` file
-### `wall`
-Send {message} to users in {group}
-```sh
-wall -g group message
-wall --group group message
-```
 ### `watch`
-Repeat a command at regular intervals and watch its changing output
-
-Execute {cmd} at periods of {n} seconds, watching its output [^][23]
-```sh
-watch cmd -n n
-```
 Display a dashboard that will run {cmd} every second, displaying the output
 ```sh
-watch -n 1 cmd
-watch -n 0.5 iptables -vnL # Update twice a second, producing a dashboard
-```
-### `whatis`
-Look up one or more commands in the online manpages and display a brief description
-```sh
-whatis commands
+watch -n 0.5 iptables -vnL
 ```
 ### `xinetd`
 Configuration file  | Description
@@ -1858,7 +1485,6 @@ Count the number of occurrences of a string
 
 [https://computingforgeeks.com/connect-to-bluetooth-device-from-linux-terminal/]: https://computingforgeeks.com/connect-to-bluetooth-device-from-linux-terminal/ "Computing for Geeks: \"How to connect to Bluetooth device from Linux terminal\""
 [http://www.linux-magazine.com/Issues/2017/197/Command-Line-bluetoothctl#article_i1]: http://www.linux-magazine.com/Issues/2017/197/Command-Line-bluetoothctl#article_i1 "Linux Magazine: \"Blue Control\""
-
 
 [/etc/samba/smb.conf]:                               #                                                              "Samba configuration file"
 
