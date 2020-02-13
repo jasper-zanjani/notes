@@ -1,3 +1,27 @@
+[4]: https://www.tecmint.com/rdesktop-connect-windows-desktop-from-linux/ "TecMint: \"rdesktop - A RDP Client to Connect Windows Desktop from Linux\""
+[7]: https://youtu.be/ksAfmJfdub0 "YouTube: \"Easy Academic References on the Command Line\""
+[8]: https://coderwall.com/p/kq9ghg/yakuake-scripting "coderwall.com: \"Yakuake scripting\""
+[https://opensource.com/article/19/8/introduction-bpftrace]: https://opensource.com/article/19/8/introduction-bpftrace "opensource.com: \"An introduction to bpftrace for Linux\""
+[21]: https://vitux.com/how-to-convert-documents-to-pdf-format-on-the-ubuntu-command-line/ "vitux.com: \"How to convert documents to PDF format on the Ubuntu Command Line\""
+[23]: ../sources/clkf.md "Cannon, Jason. _Command Line Kung Fu_."
+[29]: https://www.ostechnix.com/the-mktemp-command-tutorial-with-examples-for-beginners/ "The mktemp Command Tutorial With examples"
+[31]: https://www.ostechnix.com/how-to-view-image-metadata-on-linux/ "ostechnix.com: \"How to view image metadata\""
+[https://www.networkworld.com/article/3433865/how-to-rename-a-group-of-files-on-linux.html#tk.rss_linux]: https://www.networkworld.com/article/3433865/how-to-rename-a-group-of-files-on-linux.html#tk.rss_linux "networkworld.com: \"How to rename a group of files on Linux\""
+[36]: https://www.networkworld.com/article/3435279/unix-as-a-second-language-the-touch-command.html#tk.rss_linux "networkworld.com: \"Unix as a Second Language: The touch command\""
+[39]: https://www.howtoforge.com/how-to-install-and-use-sosreport-on-ubuntu-1804/ "howtoforge.com: \"How to install and use sosreport on Ubuntu\""
+[40]: https://vitux.com/how-to-install-and-configure-samba-on-ubuntu/ "vitux.com: \"How to Install and Configure Samba on Ubuntu\""
+[41]: https://www.tecmint.com/install-samba-on-rhel-8-for-file-sharing-on-windows/ "tecmint.com: \"Install Samba4 on RHEL 8 for File Sharing on Windows\""
+[42]: https://www.2daygeek.com/check-find-recently-modified-files-folders-linux/ "2daygeek: \"How to find recently modified files/folders in Linux\""
+[46]: https://www.tecmint.com/linux-tree-command-examples/ "tecmint.com: \"Linux tree command usage examples for beginners\""
+[50]: https://devconnected.com/user-administration-complete-guide-on-linux/#Setting_an_account_expiration_date_easily "devconnected.com: \"User administration complete guide on Linux\""
+[https://www.redhat.com/sysadmin/raid-intro]: https://www.redhat.com/sysadmin/raid-intro "redhat.com: \"RAID for those who avoid it\""
+[59]: https://docs.fedoraproject.org/en-US/quick-docs/adding-new-fonts-fedora/ "Fedora Docs - Adding new fonts in Fedora"
+
+[https://computingforgeeks.com/connect-to-bluetooth-device-from-linux-terminal/]: https://computingforgeeks.com/connect-to-bluetooth-device-from-linux-terminal/ "Computing for Geeks: \"How to connect to Bluetooth device from Linux terminal\""
+[http://www.linux-magazine.com/Issues/2017/197/Command-Line-bluetoothctl#article_i1]: http://www.linux-magazine.com/Issues/2017/197/Command-Line-bluetoothctl#article_i1 "Linux Magazine: \"Blue Control\""
+
+[/etc/samba/smb.conf]:                               #                                                              "Samba configuration file"
+
 <!-- Ansible -->
 [ansible-galaxy]:                                    ../../devops/ansible.md#ansible-galaxy             '```&#10;$ ansible-galaxy&#10;```&#10;Command-line interface to public gallery of reusable roles for use in Ansible'
 [ansible-playbook]:                                  ../../devops/ansible.md#ansible-playbook           '```&#10;$ ansible-playbook&#10;```&#10;Execute Ansible playbooks'
@@ -597,38 +621,23 @@ Show UUID, Label, and filesystems of GPT block devices
 [bluetoothctl pairable on]:                                       #bluetoothctl                                       '```&#10;$ bluetoothctl&#10;[bluetooth]# pairable on&#10;```&#10;Prepare controller for pairing'
 [bluetoothctl devices]:                                           #bluetoothctl                                       '```&#10;$ bluetoothctl&#10;[bluetooth]# devices&#10;```&#10;List available devices'
 [bluetoothctl pair]:                                              #bluetoothctl                                       '```&#10;$ bluetoothctl&#10;[bluetooth]# pair $DEVICE&#10;```&#10;Pair with `$DEVICE`, which is the MAC address of the pairable device'
-### `bpftrace`
-New open-source tracer for analyzing production performance problems and troubleshooting software [^][19]
-### `cp`
-Preserve symlinks in a recursive copy
-```sh
-cp -a
-cp --archive
-```
 ### `crontab`
 There are 2 types of `crontab`, taking similar syntax:
 1. User crontabs, where cron jobs take the syntax: `minute hour day month weekday cmd`
 2. System crontabs found in /etc/cron.d/, /etc/cron.hourly, /etc/cron.weekly, or /etc/monthly specify a user: `minute hour day month weekday USER cmd`
 
-Command | Effect
-:---                    | :---
-`-e`                    | create or __edit__ crontab (using $EDITOR path variable)
-`-l`                    | list cron jobs
-`-u  $USER -l`          | list {user}'s cron jobs
-`-r`                    | delete all cron jobs
-`-u $USER -r`           | delete cron jobs of `$USER`
-`-u $SUSER $NEWCRONTAB` | replace current crontab of `$USER` with `$NEWCRONTAB`
-
-Remove current crontab, clearing cron jobs for the effective user
+List {user}'s cron jobs
 ```sh
-crontab -r
+crontab -u $USER -l
 ```
-Specify that {user}'s crontab is to be modified
+Delete cron jobs of `$USER`
 ```sh
-crontab -u user
+crontab -u $USER -r
 ```
-### `crossystem`
-Print all parameters with descriptions and current values
+Replace current crontab of `$USER` with `$NEWCRONTAB`
+```sh
+crontab -u $SUSER $NEWCRONTAB
+```
 ### `cryptsetup`
 Incorporate full-disk encryption on /dev/sdb1, asking for passphrase twice
 ```sh
@@ -638,40 +647,6 @@ Assign virtual name "storage1" to encrypted disk /dev/sdb1
 ```sh
 cryptsetup luksOpen /dev/sdb1 storage1
 ```
-### `curl`
-Download {url}, posting form-encoded {name} as {value}
-```sh
-curl -d '{name}={value}' url
-```
-Download {url}, but produce no output in case of failure
-```sh
-curl -f url
-curl --fail url
-```
-Download {url}, following redirects
-```sh
-curl -L url
-curl --location url
-```
-Download {url} saving output under the filename indicated by the URL itself
-```sh
-curl -O url
-curl --remote-name url
-```
-Make an http GET request to the URL provided, displaying the response in the terminal
-```sh
-curl url
-```
-Download {url} and save to {file}
-```sh
-curl url -o file
-```
-### `cut`
-Option  | POSIX option            | Effect
-:---    | :---                    | :---
-`-c`    |                         | character number
-`-d`    | `--delimiter`
-`-f`    |                         | field number
 ### `date`
 Display the date and time according to locale settings\
 
@@ -703,8 +678,6 @@ Display the date fifty days into the future [^][50]
 ```sh
 date -d '+50days' +%F
 ```
-### `dbus-monitor`
-Monitor messages going through a D-Bus message bus
 ### `dd`
 Implement a simple CPU benchmark by writing 1 GB of zeroes and piping it to md5sum
 ```sh
@@ -715,16 +688,6 @@ Option which displays output in a way that could then be used as input to anothe
 ```sh
 declare -p
 ```
-### `df`
-Change scale to terabytes
-```sh
-df -BT
-df --block-size=T
-```
-Show drive utilization
-```sh
-df -h
-```
 ### `dhclient`
 Obtain and configure TCP/IP information from a server on the network [[LGLC](../sources/lglc.md): 34]
 Turn on the DHCP client and get a new address from the server
@@ -734,40 +697,6 @@ dhclient
 Release the currently assigned IP address and get a new one
 ```sh
 dhclient -r
-```
-### `diff`
-Three lines of context
-```sh
-diff -c
-```
-Case-insensitive
-```sh
-diff -i
-```
-Ignore whitespace
-```sh
-diff -w
-```
-### `dirname`
-Strip filename from $PATH (cf. [ `basename` ](#basename))
-```sh
-dirname $PATH
-```
-### `dm-crypt`
-Disk-encryption subsystem which serves as the backend to [ `cryptsetup` ](#cryptsetup)
-### `dmesg`
-Disable kernel messages from being sent to the console
-```sh
-dmesg -d
-```
-Enable kernel messages being sent to the console
-```sh
-dmesg -e
-```
-Display the time in local time
-```sh
-dmesg -e
-dmesg --reltime
 ```
 ### `du`
 Summary of information in human-readable format
@@ -787,23 +716,10 @@ Show the size of a directory at {path} in human-readable form
 ```sh
 du -hs path
 ```
-### `dumpe2fs`
-Display detailed filesystem information
-### `e2label`
-Create an image of important metadata for an ext3 filesystem
-Assign label "Storage" to /dev/sdb1
-```sh
-e2label /dev/sdb1 Storage
-```
 ### `exif`
 View image metadata. Unlike alternatives like `file` and ImageMagick's `identify`, `exif` produces columnar output [^][31]
 ```sh
 exif image.png 
-```
-### `fc-cache`
-Update the font cache [^][59]
-```sh
-fc-cache -v
 ```
 ### `file`
 View image metadata [^][31]
@@ -902,63 +818,11 @@ Discover iSCSI targets
 ```sh
 iscsiadm discovery
 ```
-### `kill`
-List signal options
-```sh
-kill -l
-kill --list
-```
-Transmit SIGKILL to {proc}
-```sh
-kill -9 proc
-kill --KILL proc
-```
-### `last`
-Display history of successful logins\
-Load information from an alternate file
-```sh
-last -f file
-last --file file
-```
-Display history of successful logins by {username}
-```sh
-last username
-```
-### `lastb`
-Display history of unsuccessful logins
-### `ldconfig`
-Change location of cache to be updated
-```sh
-ldconfig -C
-```
-Print current directories and libraries in cache
-```sh
-ldconfig -p
-```
-Display all shared libraries
-```sh
-ldconfig -v
-```
 ### `ldd`
 Display dependencies of {program}
 ```sh
 ldd program
 ```
-### `link`
-Create a link between two files; same as `ln`, but with no error checking
-```sh
-link file1 file2
-```
-### `locale`
-Display all environment variables related to localization with their current values\
-Display all localizations currently supported by the system
-```sh
-locale -a
-```
-### `logger`
-Create a one-time log file entry that you specify.
-### `logout`
-Exit a login shell
 ### `lowriter`
 `lowriter` is a command-line utility installed with LibreOffice Writer. [^][21]
 Convert a single file to PDF
@@ -969,54 +833,23 @@ Convert a batch of files using globbing
 ```sh
 lowriter --convert-to pdf *.docx
 ```
-### `lp`
-Send `files` to the printer; with no arguments, prints stdin
-### `lpstat`
-Print the `lp` print queue status
-### `lsblk`
-Display information about all block devices\
-Show UUID, Label, and filesystems of non-GPT block devices
-```sh
-lsblk -f
-```
 ### `lsmod`
 Display currently loaded modules. Output in three columns:
 1. Module name
 2. Module size (bytes)
 3. Processes, filesystems, or other modules using the module
-### `lspci`
-Display devices that are attached to the PCI bus
-
-Option  | Effect
-:---    | :---
-`-k`    | display PCI devices and the drivers being used
-`-n`    | display device numbers rather than names
-`-nn`   | display both device numbers and names (typically stored in [ /usr/share/hwdata/pci.ids ](#configs) or [ /usr/share/hwdata/pci.ids.gz ](#configs))
-### `lsusb`
-Display devices that are attached to the PCI bus
-
-Option  | Effect
-:---    | :---
-`-D`    | display {$DEVICE} rather than probing the /dev/bus/usb directory and displaying all devices
-`-t`    | display devices in a tree-like format
-### `makemap`
-Execute after making a change to the [ `sendmail` ](#sendmail) access database [ **/etc/access** ](configs.md)
 ### `mdadm`
 Manage Linux Software RAID devices
 
 POSIX option  | Effect
-:---          | :---
+---           | ---
 `--assemble`  | Start a stopped RAID array
 `--delay`     | Set the polling interval
 ### `mhwd`
-Manjaro hardware utility
-`sudo mhwd -a pci nonfree 0300` : command was run while troubleshooting black screen on startup 
-### `mhwd-chroot`
-Chroot into an installed Linux installation from a live boot of a Manjaro Installation Media
-### `mke2fs`
-Create an ext2/3/4 filesystem
-### `mkfontscale`
-Create a fonts.scale file definition when executed against the current directory
+While troubleshooting black screen on startup 
+```sh
+sudo mhwd -a pci nonfree 0300
+```
 ### `mkfs`
 Create an ext4 filesystem on {partition}
 ```sh
@@ -1026,79 +859,11 @@ Specify {filesystemtype} to be created
 ```sh
 mkfs -T filesystemtype
 ```
-Make a swap file out of {partition}
-```sh
-mkswap partition
-```
-### `mktemp`
-Create a temporary file or directory safely and print its name. These will not need to be manually cleaned up because they will be placed in the temporary directory (**/tmp**) [^][29]
-
-Create a new temporary file
-```sh
-mktemp
-```
-Create a new temporary directory
-```sh
-mktemp -d
-```
-Create a new temporary file or directory with a custom name. Append at least 3 `X`'s to the end of the filename
-```sh
-mktemp ostechnixXXX
-```
-Add a suffix
-```sh
-mktemp ostechnixXXX --suffix=blog
-```
-### `modinfo`
-Determine options that a given module supports
-```sh
-modinfo -p
-```
-Show information about a Linux kernel module
-```sh
-modinfo module
-```
-### `modprobe`
-Add and remove modules from the Linux kernel
-
-Option  | POSIX option            | Effect
-:---    | :---                    | :---
-`-c`    | `--showconfig`          | display current `modprobe` configuration
-`-R`    | `--resolve-alias`       | display all modules that match an alias
-`-r`    | `--remove`              | remove specified module from memory
-
-Remove {$MODULE} from the Linux kernel
-```sh
-modprobe --remove $MODULE
-```
-Show kernel {$MODULE}'s dependencies
-```sh
-modprobe --show-depends $MODULE
-```
 ### `mongod`
-MongoDB daemon
-
-POSIX option  | Effect
-:---          | :---
-`--dbpath`    | 
-`--fork`      |
-`--logpath`   |
-`--port`      |
-
 Run MongoDB service in the background on port 80
 ```sh
 mongod --dbpath $HOME/db --port 80 --fork --logpath /var/tmp/mongodb
 ```
-### `mt`
-Control magnetic tape drive operation; operates on environment variable TAPE
-### `mv`
-Option  | POSIX option            | Effect
-:---    | :---                    | :---
-\-      | `--backup`              | takes an argument defining how the backup file is named (not available in BSD)
-`-f`    | `--force`               | overrides `--interactive`
-`-i`    | `--interactive`         | 
-`-n`    | `--no-clobber`          | silently reject move action in the event of a conflict
-`-u`    | `--update`              | only overwrite if the modification time of the destination is older than the source
 ### `netplan`
 Config file   | Description
 :---          | :---
@@ -1125,40 +890,10 @@ nice -10 prog
 nice -n 10
 nice prog
 ```
-### `nmblookup`
-Test NetBIOS name resolution
-### `nohup`
-Execute {cmd} in the background such that it won't be interrupted by a logoff
-```sh
-nohup cmd &
-```
 ### `ntpdate`
 Synchronize system clock to that of an online Network Time Protocol server
 ```sh
 ntpdate -upool.ntp.org
-```
-### `passwd`
-Option  | POSIX option            | Effect
-:---    | :---                    | :---
-`-e`    | `--expire`              | immediately expire the passwore of {user}, forcing a password change on next login
-`-i`    | `--inactive`            |
-`-l`    | `--lock`                | 
-`-u`    | `--unlock`              |
-
-```sh
-passwd -e user # passwd --expire user
-```
-Disable an account after {n} days of inactivity
-```sh
-passwd -i n # passwd --inactive n
-```
-Lock {user}'s account
-```sh
-passwd -l user # passwd --lock
-```
-Unlock {user}'s account
-```sh
-passwd -u user # passwd --unlock
 ```
 ### `paste`
 Merge lines of files\
@@ -1170,18 +905,13 @@ Transpose rows
 ```sh
 paste -s file1 file2
 ```
-### `patch`
-Ignore whitespace
-```sh
-patch -i
-```
 ### `pydoc`
 Display all installed Python modules
 ```sh
 pydoc modules
 ```
 ### `rename`
-`rename` uses regular expressions [^][33]
+`rename` uses regular expressions [Network World][https://www.networkworld.com/article/3433865/how-to-rename-a-group-of-files-on-linux.html#tk.rss_linux]
 
 Option  | POSIX option            | Effect
 :---    | :---                    | :---
@@ -1215,15 +945,6 @@ Resize ext4 filesystem
 Restore security context default in the policy
 ```sh
 restorecon -Rv website
-```
-### `rmmod`
-Wait until a module is no longer in use before unloading
-```sh
-rmmod -w
-```
-Remove $MODULE from the Linux kernel
-```sh
-rmmod $MODULE
 ```
 ### `route`
 Display and manipulate the routing table\
@@ -1348,14 +1069,6 @@ Assign label "Sales" to logical volume {/dev/vg1/Sales}
 ```sh
 tune2fs -L Sales /dev/vg1/Sales
 ```
-### `udevadm`
-Udev management tool
-
-Option  | Effect
-:---    | :---
-`-u`    | **u**pdate the hardware database index after updating source files related to udev
-### `update-rc.d`
-Create links within /etc/rc.d/ for starting and stopping services
 ### `watch`
 Display a dashboard that will run {cmd} every second, displaying the output
 ```sh
@@ -1462,29 +1175,3 @@ Count the number of occurrences of a string
 ```sh
 | uniq -c | sort -nr
 ```
-## 
-
-[4]: https://www.tecmint.com/rdesktop-connect-windows-desktop-from-linux/ "TecMint: \"rdesktop - A RDP Client to Connect Windows Desktop from Linux\""
-[7]: https://youtu.be/ksAfmJfdub0 "YouTube: \"Easy Academic References on the Command Line\""
-[8]: https://coderwall.com/p/kq9ghg/yakuake-scripting "coderwall.com: \"Yakuake scripting\""
-[19]: https://opensource.com/article/19/8/introduction-bpftrace "opensource.com: \"An introduction to bpftrace for Linux\""
-[21]: https://vitux.com/how-to-convert-documents-to-pdf-format-on-the-ubuntu-command-line/ "vitux.com: \"How to convert documents to PDF format on the Ubuntu Command Line\""
-[23]: ../sources/clkf.md "Cannon, Jason. _Command Line Kung Fu_."
-[29]: https://www.ostechnix.com/the-mktemp-command-tutorial-with-examples-for-beginners/ "The mktemp Command Tutorial With examples"
-[31]: https://www.ostechnix.com/how-to-view-image-metadata-on-linux/ "ostechnix.com: \"How to view image metadata\""
-[33]: https://www.networkworld.com/article/3433865/how-to-rename-a-group-of-files-on-linux.html#tk.rss_linux "networkworld.com: \"How to rename a group of files on Linux\""
-[36]: https://www.networkworld.com/article/3435279/unix-as-a-second-language-the-touch-command.html#tk.rss_linux "networkworld.com: \"Unix as a Second Language: The touch command\""
-[39]: https://www.howtoforge.com/how-to-install-and-use-sosreport-on-ubuntu-1804/ "howtoforge.com: \"How to install and use sosreport on Ubuntu\""
-[40]: https://vitux.com/how-to-install-and-configure-samba-on-ubuntu/ "vitux.com: \"How to Install and Configure Samba on Ubuntu\""
-[41]: https://www.tecmint.com/install-samba-on-rhel-8-for-file-sharing-on-windows/ "tecmint.com: \"Install Samba4 on RHEL 8 for File Sharing on Windows\""
-[42]: https://www.2daygeek.com/check-find-recently-modified-files-folders-linux/ "2daygeek: \"How to find recently modified files/folders in Linux\""
-[46]: https://www.tecmint.com/linux-tree-command-examples/ "tecmint.com: \"Linux tree command usage examples for beginners\""
-[50]: https://devconnected.com/user-administration-complete-guide-on-linux/#Setting_an_account_expiration_date_easily "devconnected.com: \"User administration complete guide on Linux\""
-[56]: https://www.redhat.com/sysadmin/raid-intro "redhat.com: \"RAID for those who avoid it\""
-[59]: https://docs.fedoraproject.org/en-US/quick-docs/adding-new-fonts-fedora/ "Fedora Docs - Adding new fonts in Fedora"
-
-[https://computingforgeeks.com/connect-to-bluetooth-device-from-linux-terminal/]: https://computingforgeeks.com/connect-to-bluetooth-device-from-linux-terminal/ "Computing for Geeks: \"How to connect to Bluetooth device from Linux terminal\""
-[http://www.linux-magazine.com/Issues/2017/197/Command-Line-bluetoothctl#article_i1]: http://www.linux-magazine.com/Issues/2017/197/Command-Line-bluetoothctl#article_i1 "Linux Magazine: \"Blue Control\""
-
-[/etc/samba/smb.conf]:                               #                                                              "Samba configuration file"
-
