@@ -31,7 +31,7 @@
 [&#36;^]:                                            #variables                                            '```&#10;PS C:\> &#36;^&#10;```&#10;First token in the last line received by the session'
 [&#36;&#36;]:                                        #variables                                        '```&#10;PS C:\> &#36;&#36;&#10;```&#10;Last token in the last line received by the session'
 [$args]:                                             #variables                                    '```&#10;PS C:\> $args&#10;```&#10;Array of values for undeclared parameters passed to a function, script or script block'
-[$HOME]:                                             #variables                                    '```&#10;PS C:\> $HOME&#10;```&#10;Full path of the user's home directory'
+[$HOME]:                                             #variables                                    '```&#10;PS C:\> $HOME&#10;```&#10;Full path of the home directory of the user'
 [$IsLinux]:                                          #variables                                    '```&#10;PS C:\> $IsLinux&#10;```&#10;Contains `$True` if the current session is running on a Linux operating system'
 [$IsMacOS]:                                          #variables                                    '```&#10;PS C:\> $IsMacOS&#10;```&#10;Contains `$True` if the current session is running on an OS X operating system'
 [$IsWindows]:                                        #variables                                    '```&#10;PS C:\> $IsWindows&#10;```&#10;Contains `$True` if the current session is running on a Windows operating system'
