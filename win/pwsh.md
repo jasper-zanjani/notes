@@ -17,6 +17,7 @@
 [https://www.thewindowsclub.com/find-windows-product-key]:  https://www.thewindowsclub.com/find-windows-product-key "TheWindowsClub: \"How to find Windows Product Key using Command Prompt or PowerShell\""
 [https://docs.microsoft.com/en-us/powershell/scripting/samples/working-with-registry-entries?view=powershell-7]: https://docs.microsoft.com/en-us/powershell/scripting/samples/working-with-registry-entries?view=powershell-7 "Working with Registry Entries"
 [https://docs.microsoft.com/en-us/powershell/scripting/samples/working-with-registry-keys?view=powershell-7]: https://docs.microsoft.com/en-us/powershell/scripting/samples/working-with-registry-keys?view=powershell-7 "Working with Registry Keys"
+[https://adamtheautomator.com/powershell-random-password/]: https://adamtheautomator.com/powershell-random-password/ "How to Generate a Random Password with PowerShell"
 
 [ADAC]:   ../sources/adac.md "Berkouwer, Sander. _Active Directory Administration Cookbook_."
 [WSAC]:   ../sources/wsac.md "Krause, Jordan. _Windows Server 2016 Administration Cookbook_."
@@ -24,8 +25,20 @@
 [Zacker]: ../certs/70-740.md "Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017."
 [Jones]:  https://subscription.packtpub.com/video/virtualization_and_cloud/9781789616385 "Jones, Joshua B. _Hands-On Powershell for Active Directory_. PacktPub: 2018."
 
-[$$]:                                                #comparison-with-bash                         "`$$`&#10; Automatic variable referring to the last \"token\" (argument) in the previous command"
-[$?]:                                                #comparison-with-bash                         "`$?`&#10; Automatic variable containing the execution status of the previous command"
+<!-- Powershell automatic variables -->
+[&#36;_]:                                            #variables                                            '```&#10;PS C:\> &#36;_&#10;PS C:\> $PSItem&#10;```&#10;Pipeline object'
+[&#36;?]:                                            #variables                                            '```&#10;PS C:\> &#36;?&#10;```&#10;Execution status of the last operation'
+[&#36;^]:                                            #variables                                            '```&#10;PS C:\> &#36;^&#10;```&#10;First token in the last line received by the session'
+[&#36;&#36;]:                                        #variables                                        '```&#10;PS C:\> &#36;&#36;&#10;```&#10;Last token in the last line received by the session'
+[$args]:                                             #variables                                    '```&#10;PS C:\> $args&#10;```&#10;Array of values for undeclared parameters passed to a function, script or script block'
+[$HOME]:                                             #variables                                    '```&#10;PS C:\> $HOME&#10;```&#10;Full path of the user's home directory'
+[$IsLinux]:                                          #variables                                    '```&#10;PS C:\> $IsLinux&#10;```&#10;Contains `$True` if the current session is running on a Linux operating system'
+[$IsMacOS]:                                          #variables                                    '```&#10;PS C:\> $IsMacOS&#10;```&#10;Contains `$True` if the current session is running on an OS X operating system'
+[$IsWindows]:                                        #variables                                    '```&#10;PS C:\> $IsWindows&#10;```&#10;Contains `$True` if the current session is running on a Windows operating system'
+[$PID]:                                              #variables                                    '```&#10;PS C:\> $PID&#10;```&#10;Contains process identifier (PID) of the process that is hosting the current PowerShell session'
+[$PSCulture]:                                        #variables                                    '```&#10;PS C:\> $PSCulture&#10;```&#10;Name of the culture currently in use in the operating system'
+[$PSVersionTable]:                                   #variables                                    '```&#10;PS C:\> $PSVersionTable&#10;```&#10;Read-only hash table that displays details about the version of PowerShell that is running in the current session'
+[$PWD]:                                              #variables                                    '```&#10;PS C:\> $PWD&#10;```&#10;Path object that represents the full path of the current directory'
 
 [Add-Computer]:                                      #add-computer                                 "`Add-Computer` &#10; Join a computer to a domain"
 [Add-Content]:                                       #add-content                                  "`Add-Content`"
@@ -111,6 +124,7 @@
 [Set-Location]:                                      #set-location                                 "`Set-Location` (alias: `cd`, `sl`, `chdir`) &#10; Set present working directory"
 [Set-NetFirewallRule]:                               #set-netfirewallrule                          "`Set-NetFirewallRule`"
 [Set-PSReadlineOption]:                              #set-psreadlineoption                         "`Set-PSReadlineOption`"
+[Set-Service]:                                       #set-service                                       '```&#10;PS C:\> Set-Service&#10;```&#10;Starts, stops, and suspends a service, and changes its properties'
 [Start-DscConfiguration]:                            #start-dscconfiguration                       "`Start-DscConfiguration` (alias: `sacfg`) &#10; Apply configuration to nodes"
 [Start-Job]:                                         #start-job                                    "`Start-Job` (alias: `sajb`)"
 [Start-Service]:                                     #start-service                                "`Start-Service` (alias: `sasv`) &#10; Start one or more stopped services"
@@ -231,12 +245,11 @@ The `Throw` keyword generates a terminating error
 #### Variables
 **Automatic variables** are variables that store state information for PowerShell and are created and maintained by Powershell.
 
-Syntax          | Effect
-:---            | :---
-`$_` `$PSItem`  | **pipeline object** current object in the pipeline object
-`$?`            | execution status of the last operation
-`$^`            | first token in the last line received by the session
-`$$`            | last token in the last line received by the session
+&nbsp;  | Variables
+---     | ---
+&nbsp;  | [`$_`][&#36;_] [`$?`][&#36;?] [`$^`][&#36;^] [`$$`][&#36;&#36;] 
+A-I     | [`$args`][$args] [`$HOME`][$HOME] [`$IsLinux`][$IsLinux] [`$IsMacOS`][$IsMacOS] [`$IsWindows`][$IsWindows] 
+P       | [`$PID`][$PID] [`$PSCulture`][$PSCulture] [`$PSVersionTable`][$PSVersionTable] [`$PWD`][$PWD]
 
 Variables can be typed by preceding their identifier with the datatype in brackets
 ```powershell
@@ -460,6 +473,11 @@ Parameter | Effect
 `Member`  | Specifies the recipient that you want to add to the group. A member can be any mail-enabled recipient in your organization. You can use any value that uniquely identifies the recipient (including Name, Alias, Distinguished name, Canonical name, Email address, or GUID).
 ### `Add-PSSnapin`
 ### `Add-Type`
+Generate a random password 20 characters long [<sup>Adam The Automator</sup>][https://adamtheautomator.com/powershell-random-password/]
+```powershell
+Add-Type -AssemblyName 'System.Web'
+[System.Web.Security.Membership]::GeneratePassword(20, 3)
+```
 ### `Close-SmbOpenFile`
 Close an open file [<sup>MS Docs</sup>][https://docs.microsoft.com/en-us/powershell/module/smbshare/close-smbopenfile?view=win10-ps]
 ```powershell
@@ -562,6 +580,11 @@ Retrieve various properties of an image in clipboard
 Get-Clipboard -Format Image
 ```
 ### `Get-Command`
+### `Get-Content`
+Make a PowerShell object from a JSON file
+```powershell
+Get-Content -Path file.json | ConvertFrom-Json
+```
 ### `Get-Disk`
 ### `Get-Help`
 \#    | Options
