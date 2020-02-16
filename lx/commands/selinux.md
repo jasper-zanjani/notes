@@ -1,7 +1,7 @@
 # SELinux commands
 &nbsp;  | Commands
 ---     | ---
-&nbsp;  | `semanage` `sestatus` `setenforce`
+&nbsp;  | `restorecon` `semanage` `sestatus` `setenforce`
 
 Display SELinux contexts for processes
 ```sh
@@ -10,6 +10,12 @@ ps auxZ
 Display SELinux context for files
 ```sh
 ls -Z
+```
+
+### `restorecon`
+Restore security context default in the policy
+```sh
+restorecon -Rv website
 ```
 ### `sestatus`
 Display status of SELinux

@@ -6,6 +6,7 @@
 [chown]:                                             #chown                                      '```&#10;$ chown&#10;```&#10;Change the user owner or group owner of a file or directory&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 198'
 [cp]:                                                #cp                                         '```&#10;$ cp&#10;```&#10;Copy files or directories&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 129-130'
 [dd]:                                                #dd                                         '```&#10;$ dd&#10;```&#10;Perform multiple operations related to backing up data and creating files. One common use is to make a backup of an entire drive.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 269'
+[exif]:                                              file.md#exif                                       '```&#10;$ exif&#10;```&#10;View image metadata, producing columnar output'
 [fallocate]:                                         #fallocate                                  '```&#10;$ fallocate&#10;```&#10;'
 [find]:                                              #find                                       '```&#10;$ find&#10;```&#10;Search the filesystem for files and directories&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 136'
 [getfacl]:                                           #getfacl                                    '```&#10;$ getfacl&#10;```&#10;Display the ACL of a file&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 199'
@@ -33,19 +34,34 @@
 [whereis]:                                           #whereis                                    '```&#10;$ whereis&#10;```&#10;Search for binary executables, source code, and manual pages in standard locations as well as the PATH and `$MANPATH`&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 139'
 [which]:                                             #which                                      '```&#10;$ which&#10;```&#10;Search for binary executables on the PATH&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 139'
 
+<!-- `ls` options -->
+[ls -&#97;]:                        #ls                            '```&#10;$ ls -a&#10;$ ls --all&#10;```&#10;List all files, including hidden files&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 131'
+[ls -&#100;]:                       #ls                            '```&#10;$ ls -d&#10;```&#10;List directory name, not its contents&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 131'
+[ls -&#70;]:                        #ls                            '```&#10;$ ls -F&#10;```&#10;Append a character to the end of the file to indicate its type. These characters include:&#10;  - `*`: executable file&#10;  - `/`: directory&#10;  - `@`: symbolic link&#10;&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 131'
+[ls -&#104;]:                       #ls                            '```&#10;$ ls -h&#10;```&#10;Human-readable output&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 131'
+[ls -&#105;]:                       #ls                            '```&#10;$ ls -i&#10;```&#10;Display inode value of each file&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 131'
+[ls -&#108;]:                       #ls                            '```&#10;$ ls -l&#10;```&#10;Display a long listing&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 131'
+[ls -&#114;]:                       #ls                            '```&#10;$ ls -r&#10;```&#10;Reverse the output order of the file listing&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 131'
+[ls -&#83;]:                        #ls                            '```&#10;$ ls -S&#10;```&#10;sort by file size&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 131'
+[ls -&#116;]:                       #ls                            '```&#10;$ ls -t&#10;```&#10;sort by modification time (newest first)&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 131'
+[ls -&#70;]:                        #ls                            '```&#10;$ ls -F&#10;$ ls --classify&#10;```&#10;Append indicators to entries'
+[ls -&#90;]:                        #ls                            '```&#10;$ ls -Z&#10;```&#10;Display SELinux context for files'
 
 # Linux file manipulation commands
 &nbsp;  | Commands
 ---     | ---
-&nbsp;  | [`chattr`][chattr] [`chgrp`][chgrp] [`chmod`][chmod] [`chown`][chown] [`cp`][cp] [`dd`][dd] [`fallocate`][fallocate] [`find`][find] [`getfacl`][getfacl] [`install`][install] [`ln`][ln] [`locate`][locate] [`ls`][ls] [`lsattr`][lsattr] [`lsof`][lsof] [`md5sum`][md5sum] [`mkdir`][mkdir] [`mv`][mv] [`rm`][rm] [`rmdir`][rmdir] [`rsync`][rsync] [`scp`][scp] [`setfacl`][setfacl] [`shred`][shred] [`stat`][stat] [`touch`][touch] [`tree`][tree] [`umask`][umask] [`unlink`][unlink] [`updatedb`][updatedb] [`whereis`][whereis] [`which`][which] 
+&nbsp;  | [`chattr`][chattr] [`chgrp`][chgrp] [`chmod`][chmod] [`chown`][chown] [`cp`][cp] [`dd`][dd] [`exif`][exif] [`fallocate`][fallocate] [`find`][find] [`getfacl`][getfacl] [`install`][install] [`ln`][ln] [`locate`][locate] [`ls`][ls] [`lsattr`][lsattr] [`lsof`][lsof] [`md5sum`][md5sum] [`mkdir`][mkdir] [`mv`][mv] [`rm`][rm] [`rmdir`][rmdir] [`rsync`][rsync] [`scp`][scp] [`setfacl`][setfacl] [`shred`][shred] [`stat`][stat] [`touch`][touch] [`tree`][tree] [`umask`][umask] [`unlink`][unlink] [`updatedb`][updatedb] [`whereis`][whereis] [`which`][which] 
 
 Commands  | Options
 ---       | ---
+`ls`      | <code>&nbsp;</code>   [`a`][ls -&#97;] <code>&nbsp;</code> <code>&nbsp;</code> [`d`][ls -&#100;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`h`][ls -&#104;] [`i`][ls -&#105;] <code>&nbsp;</code> <code>&nbsp;</code> [`l`][ls -&#108;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`r`][ls -&#114;] <code>&nbsp;</code> [`t`][ls -&#116;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code>  <br><code>&nbsp;</code>&nbsp;<code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`F`][ls -&#70;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`S`][ls -&#83;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`Z`][ls -&#90;] 
 
-
+### `exif`
+View image metadata. Unlike alternatives like `file` and ImageMagick's `identify`, `exif` produces columnar output [^][31]
+```sh
+exif image.png 
+```
 ### `fallocate`
-Allocate and deallocate space to a file
-
 Create a file size of 1 gigabyte
 ```sh
 fallocate -l 1G $FILENAME  # gibibyte
@@ -61,21 +77,6 @@ install --preserve-timestamp example/foo .
 Copy a file, setting permissions, owner, and group
 ```sh
 install --preserve-timestamp --owner=jdoe --group=sudoers --mode=753
-```
-### `ls`
-Display hidden files
-```sh
-ls -a
-ls --all
-```
-Append indicators to entries
-```sh
-ls -F
-ls --classify
-```
-Display SELinux context for files
-```sh
-ls -Z
 ```
 ### `lsof`
 Display open files, open network ports, and network connections [[23](sources.md)]

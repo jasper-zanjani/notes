@@ -1,5 +1,7 @@
 [https://docs.fedoraproject.org/en-US/quick-docs/getting-started-with-virtualization/]: https://docs.fedoraproject.org/en-US/quick-docs/getting-started-with-virtualization/ "Fedora Docs: \"Getting started with virtualization\""
+[LPM 231 Regolith Linux]: www.linux-magazine.com/Issues/2020/231 '"Timely Tiling: Exploring the i3 tiling window manager with Regolith Linux". _Linux Pro Magazine_. Issue 231'
 
+[alien]:                       package.md#alien                '```&#10;$ alien&#10;```&#10;Convert between or install package types native to other distributions, including Red Hat .rpm, Stampede .slp, Slackware .tgz, and generic .tar.gz files.&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 52'
 [add-apt-repository]:                                package.md#add-apt-repository                      '```&#10;$ add-apt-repository&#10;```&#10;'
 [apt]:                                               package.md#apt                                     '```&#10;$ apt&#10;```&#10;'
 [apt-cache]:                                         package.md#apt-cache                               '```&#10;$ apt-cache&#10;```&#10;Display package information regarding the package cache&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 81'
@@ -18,6 +20,19 @@
 [yumdownloader]:                                     package.md#yumdownloader                           '```&#10;$ yumdownloader&#10;```&#10;Download software packages without installing them&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 84'
 [zypper]:                                            package.md#zypper                                  '```&#10;$ zypper&#10;```&#10;Package manager for SUSE with a syntax similar to that of `yum`&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 86'
 
+<!-- `alien` options -->
+[alien -&#105;]:                #alien                         '```&#10;$ alien -&#105;&#10;```&#10;Automatically install the output package and remove the converted package file'
+[alien -&#114;]:                #alien                         '```&#10;$ alien -&#114;&#10;```&#10;Convert package to RPM format'
+[alien -&#116;]:                #alien                         '```&#10;$ alien -&#116;&#10;```&#10;Convert package to a `gzip` tar archive'
+
+<!-- `apt` commands -->
+[apt dist-upgrade]:               package.md#apt                           '```&#10;$ apt dist-upgrade&#10;```&#10;Upgrade distribution'
+[apt install]:                    package.md#apt                           '```&#10;$ apt install $PACKAGE&#10;```&#10;Install `$PACKAGE`'
+[apt list]:                       package.md#apt                           '```&#10;$ apt list $PATTERN&#10;```&#10;Search for packages matching `$PATTERN`'
+[apt remove]:                     package.md#apt                           '```&#10;$ apt remove $PACKAGE&#10;```&#10;Remove `$PACKAGE'
+[apt update]:                     package.md#apt                           '```&#10;$ apt update&#10;```&#10;Update package database'
+[apt upgrade]:                    package.md#apt                           '```&#10;$ apt upgrade&#10;```&#10;Upgrade all packages'
+
 <!-- `dpkg` options -->
 [dpkg -&#67;]:                                        #dpkg                                              '```&#10;$ dpkg -C&#10;$ dpkg --audit&#10;```&#10;Check for broken packages'
 [dpkg -&#69;]:                                        #dpkg                                              '```&#10;$ dpkg -E&#10;```&#10;Do not overwrite a previously installed package of the same version&#10;: 47'
@@ -34,7 +49,7 @@
 [dpkg -&#83;]:                                        #dpkg                                              '```&#10;$ dpkg -S $PATTERN&#10;$ dpkg --search $PATTERN&#10;```&#10;Search for a filename matching `$PATTERN` from installed packages&#10;: 48'
 [dpkg --configure]:                                   #dpkg                                              '```&#10;$ dpkg --configure&#10;```&#10;Configure an unpacked package. This involves setup of configuration files&#10;: 48'
 [dpkg --print-avail]:                                 #dpkg                                              '```&#10;$ dpkg --print-avail $PACKAGE&#10;```&#10;Display details found in /var/lib/dpkg/available about `$PACKAGE`&#10;: 48'
-[dpkg --unpack]:                                      #dpkg                                              '```&#10;$ dpkg --unpack $PACKAGE&#10;```&#10;Unpack `$PACKAGE` but don't install the package it contains&#10;: 48'
+[dpkg --unpack]:                                      #dpkg                                              '```&#10;$ dpkg --unpack $PACKAGE&#10;```&#10;Unpack `$PACKAGE` but do not install the package it contains&#10;: 48'
 [dpkg --get-selections]:                              #dpkg                                              '```&#10;$ dpkg --get-selections&#10;```&#10;Display list of package selections'
 
 <!-- `rpm` options -->
@@ -67,13 +82,30 @@
 
 &nbsp;  | Commands
 ---     | ---
-&nbsp;  | [`add-apt-repository`][add-apt-repository] [`apt`][apt] [`apt-cache`][apt-cache] [`apt-get`][apt-get] [`dnf`][dnf] [`dpkg`][dpkg] [`dpkg-reconfigure`][dpkg-reconfigure] [`gem`][gem] [`pacman`][pacman] [`pip`][pip] [`rpm`][rpm] [`snap`][snap] [`yay`][yay] [`yum`][yum] [`yumdownloader`][yumdownloader] [`zypper`][zypper] 
+Arch    | [`pacman`][pacman] [`yay`][yay]
+Debian  | [`add-apt-repository`][add-apt-repository] [`apt`][apt] [`apt-cache`][apt-cache] [`apt-get`][apt-get] [`dpkg`][dpkg] [`dpkg-reconfigure`][dpkg-reconfigure] 
+Red Hat | [`dnf`][dnf] [`rpm`][rpm] [`yum`][yum] [`yumdownloader`][yumdownloader]
+Etc     | [`alien`][alien] [`gem`][gem] [`pip`][pip] [`snap`][snap] [`zypper`][zypper] 
 
 Commands    | Options
 ---         | ---
+[`alien`][alien] | [`i`][alien -&#105;] [`r`][alien -&#114;] [`t`][alien -&#116;]  
+[`apt`][apt] | <code>&nbsp;</code>   <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code>  <br><code>&nbsp;</code>&nbsp;<code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <br>[`dist-upgrade`][apt dist-upgrade] [`install`][apt install] [`list`][apt list] [`remove`][apt remove] [`update`][apt update] [`upgrade`][apt upgrade] 
 [`dpkg`][dpkg] | <code>&nbsp;</code>  <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`i`][dpkg -&#105;] <code>&nbsp;</code> <code>&nbsp;</code> [`l`][dpkg -&#108;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`p`][dpkg -&#112;] <code>&nbsp;</code> [`r`][dpkg -&#114;] [`s`][dpkg -&#115;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code>  <br><code>&nbsp;</code>&nbsp;<code>&nbsp;</code> <code>&nbsp;</code> [`C`][dpkg -&#67;] <code>&nbsp;</code> [`E`][dpkg -&#69;] <code>&nbsp;</code> [`G`][dpkg -&#71;] <code>&nbsp;</code> [`I`][dpkg -&#73;] <code>&nbsp;</code> <code>&nbsp;</code> [`L`][dpkg -&#76;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`P`][dpkg -&#80;] <code>&nbsp;</code> [`R`][dpkg -&#82;] [`S`][dpkg -&#83;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 
 [`rpm`][rpm] | <code>&nbsp;</code>  [`a`][rpm -&#97;] <code>&nbsp;</code> [`c`][rpm -&#99;] [`d`][rpm -&#100;] [`e`][rpm -&#101;] [`f`][rpm -&#102;] <code>&nbsp;</code> [`h`][rpm -&#104;] [`i`][rpm -&#105;] <code>&nbsp;</code> <code>&nbsp;</code> [`l`][rpm -&#108;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`p`][rpm -&#112;] [`q`][rpm -&#113;] <code>&nbsp;</code> [`s`][rpm -&#115;] <code>&nbsp;</code> <code>&nbsp;</code> [`v`][rpm -&#118;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code>  <br><code>&nbsp;</code>&nbsp;<code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`I`][rpm -&#73;] <code>&nbsp;</code> [`K`][rpm -&#75;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`R`][rpm -&#82;] <code>&nbsp;</code> <code>&nbsp;</code> [`U`][rpm -&#85;] [`V`][rpm -&#86;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 
 
+### `add-apt-repository`
+Add a repository
+```sh
+add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+add-apt-repository "deb http://security.ubuntu.com/ubuntu trusty-security main universe"
+```
+Convert Ubuntu to Regolith Linux [<sup>LPM 231</sup>][LPM 231 Regolith Linux]
+```sh
+add-apt-repository -y ppa:kgilmer/regolith-stable
+apt updatelib
+apt install regolith-desktop
+```
 ### `apt`
 Upgrade distribution
 ```sh
@@ -124,12 +156,6 @@ Add a public GPG key to keyring
 ```sh
 curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add - # Google Cloud SDK
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -	# Docker
-```
-### `add-apt-repository`
-Add a repository
-```sh
-sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
-sudo add-apt-repository "deb http://security.ubuntu.com/ubuntu trusty-security main universe"
 ```
 ### `dnf`
 View all `dnf` commands

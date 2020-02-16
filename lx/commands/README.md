@@ -607,18 +607,7 @@ Search audit logs for today for logins of UID 500
 ```sh
 ausearch --start today --loginuid500
 ```
-### `bluetoothctl`
-&nbsp;  | `bluetoothctl` commands [^][http://www.linux-magazine.com/Issues/2017/197/Command-Line-bluetoothctl#article_i1] [^][https://computingforgeeks.com/connect-to-bluetooth-device-from-linux-terminal/]
----     | ---
-&nbsp;  | [`device`][bluetoothctl devices] &bull; [`list`][bluetoothctl list] &bull; [`pair`][bluetoothctl pair] &bull; [`pairable on`][bluetoothctl pairable on] &bull; [`scan on`][bluetoothctl scan on] &bull; [`select`][bluetoothctl select] &bull; [`show`][bluetoothctl show]
 
-[bluetoothctl list]:                                              #bluetoothctl                                       '```&#10;$ bluetoothctl&#10;[bluetooth]# list&#10;```&#10;Display available controllers'
-[bluetoothctl show]:                                              #bluetoothctl                                       '```&#10;$ bluetoothctl&#10;[bluetooth]# show&#10;```&#10;Display more detailed inormation about available controllers'
-[bluetoothctl select]:                                            #bluetoothctl                                       '```&#10;$ bluetoothctl&#10;[bluetooth]# select&#10;```&#10;Select controller to pair, if the system has more than one'
-[bluetoothctl scan on]:                                           #bluetoothctl                                       '```&#10;$ bluetoothctl&#10;[bluetooth]# scan on&#10;```&#10;Receive a list of detected devices'
-[bluetoothctl pairable on]:                                       #bluetoothctl                                       '```&#10;$ bluetoothctl&#10;[bluetooth]# pairable on&#10;```&#10;Prepare controller for pairing'
-[bluetoothctl devices]:                                           #bluetoothctl                                       '```&#10;$ bluetoothctl&#10;[bluetooth]# devices&#10;```&#10;List available devices'
-[bluetoothctl pair]:                                              #bluetoothctl                                       '```&#10;$ bluetoothctl&#10;[bluetooth]# pair $DEVICE&#10;```&#10;Pair with `$DEVICE`, which is the MAC address of the pairable device'
 ### `crontab`
 There are 2 types of `crontab`, taking similar syntax:
 1. User crontabs, where cron jobs take the syntax: `minute hour day month weekday cmd`
@@ -691,29 +680,7 @@ Release the currently assigned IP address and get a new one
 ```sh
 dhclient -r
 ```
-### `du`
-Summary of information in human-readable format
-```sh
-du -sh
-du --summarize --human-readable
-```
-Show the size of all files and subdirectories of {dir} in human-readable form
-```sh
-du -h dir
-```
-Show the size of {file} in human-readable form
-```sh
-du -h file
-```
-Show the size of a directory at {path} in human-readable form
-```sh
-du -hs path
-```
-### `exif`
-View image metadata. Unlike alternatives like `file` and ImageMagick's `identify`, `exif` produces columnar output [^][31]
-```sh
-exif image.png 
-```
+
 ### `file`
 View image metadata [^][31]
 ```sh
@@ -760,15 +727,6 @@ Add a new zone, and write the change to disk
 firewall-cmd --new-zone=testlab  --permanent
 ```
 ### `gpg`
-PGP was bought by Semantec, and GNU has since released GPG, an open-source replacement.
-
-Option  | POSIX option  | Effect
-:---    | :---          | :---
-\-      | `--clearsign`<br/>`--clear-sign` | make a cleartext signature, readable without any special software
-\-      | `--send-keys` | send keys to a keyserver
-`-d`    | `--decrypt`   | decrypt $FILE}
-`-k`    | `--list-keys`<br/>`--list-public-keys` | list available GPG keys
-
 Decrypt file
 ```sh
 gpg file.txt
@@ -818,6 +776,7 @@ ldd program
 ```
 ### `lowriter`
 `lowriter` is a command-line utility installed with LibreOffice Writer. [^][21]
+
 Convert a single file to PDF
 ```sh
 lowriter --convert-to pdf filename.doc
@@ -926,18 +885,6 @@ rename 'y/A-Z/a-z/' *
 Human-readable
 ```sh
 repquota -sh
-```
-### `resize2fs`
-Resize filesystem of logical volume {Marketing} on volume group {vg1} to take up the entire logical volume
-```sh
-resize2fs /dev/vg1/Marketing
-```
-### `resize4fs`
-Resize ext4 filesystem
-### `restorecon`
-Restore security context default in the policy
-```sh
-restorecon -Rv website
 ```
 ### `route`
 Display and manipulate the routing table\

@@ -1,4 +1,4 @@
-[Haeder]: # 'Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.'
+[Haeder]:                                            #                                                  'Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.'
 [xfs]:                                               x.md#xfs                                           '```&#10;$ xfs&#10;```&#10;X fonts server&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 307'
 
 # Linux commands related to X Windows System
@@ -64,4 +64,14 @@ xrandr -q  --query
 Dynamically add fonts [<sup>Haeder: 307</sup>][Haeder]
 ```ssh
 xset fp+ /usr/local/fonts
+```
+
+## Tasks
+X forwarding
+```sh
+ssh -Y user@host
+```
+Have remote system use local computer {me.luna.edu}'s X display
+```sh
+export DISPLAY=me.luna.edu:0
 ```
