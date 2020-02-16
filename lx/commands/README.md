@@ -13,10 +13,10 @@
 [41]: https://www.tecmint.com/install-samba-on-rhel-8-for-file-sharing-on-windows/ "tecmint.com: \"Install Samba4 on RHEL 8 for File Sharing on Windows\""
 [42]: https://www.2daygeek.com/check-find-recently-modified-files-folders-linux/ "2daygeek: \"How to find recently modified files/folders in Linux\""
 [46]: https://www.tecmint.com/linux-tree-command-examples/ "tecmint.com: \"Linux tree command usage examples for beginners\""
-[50]: https://devconnected.com/user-administration-complete-guide-on-linux/#Setting_an_account_expiration_date_easily "devconnected.com: \"User administration complete guide on Linux\""
+[https://devconnected.com/user-administration-complete-guide-on-linux/#Setting_an_account_expiration_date_easily]: https://devconnected.com/user-administration-complete-guide-on-linux/#Setting_an_account_expiration_date_easily "devconnected.com: \"User administration complete guide on Linux\""
 [https://www.redhat.com/sysadmin/raid-intro]: https://www.redhat.com/sysadmin/raid-intro "redhat.com: \"RAID for those who avoid it\""
 [59]: https://docs.fedoraproject.org/en-US/quick-docs/adding-new-fonts-fedora/ "Fedora Docs - Adding new fonts in Fedora"
-
+[Sobell]: https://github.com/jasper-zanjani/notes/blob/master/sources/pgl.md 'Sobell, Mark. _Practical Guide to Linux_. 2017.'
 [https://computingforgeeks.com/connect-to-bluetooth-device-from-linux-terminal/]: https://computingforgeeks.com/connect-to-bluetooth-device-from-linux-terminal/ "Computing for Geeks: \"How to connect to Bluetooth device from Linux terminal\""
 [http://www.linux-magazine.com/Issues/2017/197/Command-Line-bluetoothctl#article_i1]: http://www.linux-magazine.com/Issues/2017/197/Command-Line-bluetoothctl#article_i1 "Linux Magazine: \"Blue Control\""
 
@@ -607,8 +607,6 @@ Search audit logs for today for logins of UID 500
 ```sh
 ausearch --start today --loginuid500
 ```
-### `blkid`
-Show UUID, Label, and filesystems of GPT block devices
 ### `bluetoothctl`
 &nbsp;  | `bluetoothctl` commands [^][http://www.linux-magazine.com/Issues/2017/197/Command-Line-bluetoothctl#article_i1] [^][https://computingforgeeks.com/connect-to-bluetooth-device-from-linux-terminal/]
 ---     | ---
@@ -674,7 +672,7 @@ date -u
 date --utc
 date universal
 ```
-Display the date fifty days into the future [^][50]
+Display the date fifty days into the future [devconnected.com][https://devconnected.com/user-administration-complete-guide-on-linux/#Setting_an_account_expiration_date_easily]
 ```sh
 date -d '+50days' +%F
 ```
@@ -682,11 +680,6 @@ date -d '+50days' +%F
 Implement a simple CPU benchmark by writing 1 GB of zeroes and piping it to md5sum
 ```sh
 dd if=/dev/zero bs=1M count=1024 | md5sum
-```
-### `declare`
-Option which displays output in a way that could then be used as input to another command
-```sh
-declare -p
 ```
 ### `dhclient`
 Obtain and configure TCP/IP information from a server on the network [[LGLC](../sources/lglc.md): 34]
@@ -1133,7 +1126,7 @@ This will display the Samba CLI
 smb: \>
 ```
 ### Bash scripting
-Validating arguments [[PGL](../sources/pgl.md): 548]
+Validating arguments [<sup>Sobell: 548</sup>][Sobell]
 ```sh 
 if [ $# != 2 ]
 then 

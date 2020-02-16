@@ -82,18 +82,23 @@ Commands              | Options
 [`tr`][tr]            | 
 [`wc`][wc]            | 
 
-## awk
+### `awk`
+>"The basic function of awk is to search files for lines that contain certain patterns." ([GEAP](../sources/README.md): 17
 
 Pattern-scanning utility and processing language, one of the two primary commands which accept regular expressions in Unix systems.
 
->"The basic function of awk is to search files for lines that contain certain patterns." ([GEAP](../sources/README.md): 17
-
-### Invocation
 awk __programs__ can be defined __inline__ or in a __program-file__ ([PGL](../sources/README.md): 528)
   - inline: `awk options 'program' input-files`
   - __program-file__, also "source-file" ([GEAP](../sources/README.md):18): `awk options -f program-file input-files` 
 
 awk programs can be run without defining __input-files__, in which case awk will accept input from STDIN
+
+awk __programs__ are the equivalent of sed "instructions", and similarly combine __patterns__ and __actions__ ([PGL](../sources/README.md): 530, [GEAP](../sources/README.md): 17)
+
+Patterns can be:
+- regular expressions or fixed strings
+- line numbers using builtin variable `NR`
+- predefined patterns `BEGIN` or `END`, whose actions are executed before and after processing any lines of the data file, respectively
 
 Option            | Effect
 :---              | :---
@@ -102,28 +107,19 @@ Option            | Effect
 `-v var=value` | `--assign var=value` : sets variable {var} to {value} before script is executed (even before `BEGIN` pattern)
 `--` | POSIX-standard flag which marks end of command-line options (allowing specification of a datafile with a "-" at the beginning of its filename)
 
-### Syntax
+#### Syntax
 
 Syntax      | Effect
 :---        | :---
 `#!/bin/awk -f` | shebang
 `#` | comments begin with octothorpe
 
-#### Programs
-awk __programs__ are the equivalent of sed "instructions", and similarly combine __patterns__ and __actions__ ([PGL](../sources/README.md): 530, [GEAP](../sources/README.md): 17)
-
-#### Patterns
-Patterns can be:
-  - regular expressions or fixed strings
-  - line numbers using builtin variable `NR`
-  - predefined patterns `BEGIN` or `END`, whose actions are executed before and after processing any lines of the data file, respectively
-
 #### Predefined variables
 
 Syntax      | Effect
 :---        | :---
 `$0`        | current record
-`$n`        | field number {n}
+`$n`        | field number `$N`
 `ARGC`      | number of arguments in command line
 `ARGV`      | list of arguments
 `FILENAME`  | current input filename
@@ -360,8 +356,6 @@ Prepending `!` to the procedure reverses the sense of the command [[YUG](../sour
 ```sh
 sed -n '3,$!p' emp.lst
 ```
-
-
 Display a range of lines
 ```sh
 sed -n '9,11p' emp.lst
@@ -450,6 +444,19 @@ seq 5 320
 Sequence from 1 to 8
 ```sh
 seq 8
+```
+### `shuf`
+Print random selection of integers from {x} to {y} (inclusive) without replacement
+```sh
+shuf -i x-y
+```
+Print random selection of integers from {x} to {y} (inclusive), with replacement
+```sh
+shuf -i x-y -r
+```
+Shuffle items separated by newline in file `cards.txt`, displaying only one [[10](sources.md)]
+```sh
+shuf -n 1 items.txt
 ```
 ### `sort`
 Option  | Effect
