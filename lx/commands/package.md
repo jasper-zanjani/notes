@@ -61,23 +61,23 @@
 [dpkg --get-selections]:                              #dpkg                                              '```&#10;$ dpkg --get-selections&#10;```&#10;Display list of package selections'
 
 <!-- `rpm` options -->
-[rpm -&#97;]:                                             #rpm                                               '```&#10;$ rpm -a&#10;$ rpm --all&#10;```&#10;In query mode, display a list of all packages installed on the system&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 55'
-[rpm -&#99;]:                                             #rpm                                               '```&#10;$ rpm -c $PACKAGE&#10;$ rpm --configfiles $PACKAGE&#10;```&#10;List only configuration files installed with specified package&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 56'
-[rpm -&#100;]:                                             #rpm                                               '```&#10;$ rpm -d $PACKAGE&#10;$ rpm --docfiles $PACKAGE&#10;```&#10;List only documentation files installed with specified package&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 56'
-[rpm -&#101;]:                                             #rpm                                               '```&#10;$ rpm -e $PACKAGE&#10;$ rpm --erase $PACKAGE&#10;```&#10;Remove specified package, including config files&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 56'
-[rpm -&#102;]:                                             #rpm                                               '```&#10;$ rpm -f $FILENAME&#10;$ rpm --file $FILENAME&#10;```&#10;In query mode, display the package that contains a particular file&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 55'
-[rpm -&#104;]:                                             #rpm                                               '```&#10;$ rpm -h&#10;$ rpm --hash&#10;```&#10;Prints a string of 50 hash marks during installation as a progress indicator&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 54'
-[rpm -&#105;]:                                             #rpm                                               '```&#10;$ rpm -i $PACKAGE&#10;$ rpm --install $PACKAGE&#10;```&#10;Install specified packages&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 56'
-[rpm -&#73;]:                                             #rpm                                               '```&#10;$ rpm -I $PACKAGE&#10;```&#10;Display information about specified package&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 56'
-[rpm -&#75;]:                                             #rpm                                               '```&#10;$ rpm -K $PACKAGE&#10;```&#10;Verify integrity of specified package'
-[rpm -&#108;]:                                             #rpm                                               '```&#10;$ rpm -l $PACKAGE&#10;$ rpm --list $PACKAGE&#10;```&#10;List all files installed with specified package&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 56'
-[rpm -&#112;]:                                             #rpm                                               '```&#10;$ rpm -p $FILENAME&#10;```&#10;Query a package file (most useful with `-i`)&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.'
-[rpm -&#113;]:                                             #rpm                                               '```&#10;$ rpm -q $PACKAGE&#10;$ rpm --query $PACKAGE&#10;```&#10;Query for specified package'
-[rpm -&#82;]:                                             #rpm                                               '```&#10;$ rpm -R $PACKAGE&#10;$ rpm --requires $PACKAGE&#10;```&#10;List packages on which this package depends&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 56'
-[rpm -&#115;]:                                             #rpm                                               '```&#10;$ rpm -s&#10;```&#10;Display the state of each file that was installed by the specified package (`normal`, `not installed`, or `replaced`)'
-[rpm -&#85;]:                                             #rpm                                               '```&#10;$ rpm -U $PACKAGE&#10;$ rpm --upgrade $PACKAGE&#10;```&#10;Upgrade specified package'
-[rpm -&#118;]:                                             #rpm                                               '```&#10;$ rpm -v&#10;```&#10;Verbose output&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 54'
-[rpm -&#86;]:                                             #rpm                                               '```&#10;$ rpm -V&#10;$ rpm --verify&#10;```&#10;Compare files from installed packages against their expected configuration from the RPM database.&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 58'
+[rpm -&#97;]:                   #rpm                           '```&#10;$ rpm -a&#10;$ rpm --all&#10;```&#10;In query mode, display a list of all packages installed on the system&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 55'
+[rpm -&#99;]:                   #rpm                           '```&#10;$ rpm -c $PACKAGE&#10;$ rpm --configfiles $PACKAGE&#10;```&#10;List only configuration files installed with specified package&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 56'
+[rpm -&#100;]:                  #rpm                           '```&#10;$ rpm -d $PACKAGE&#10;$ rpm --docfiles $PACKAGE&#10;```&#10;List only documentation files installed with specified package&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 56'
+[rpm -&#101;]:                  #rpm                           '```&#10;$ rpm -e $PACKAGE&#10;$ rpm --erase $PACKAGE&#10;```&#10;Remove specified package, including config files&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 56'
+[rpm -&#102;]:                  #rpm                           '```&#10;$ rpm -f $FILENAME&#10;$ rpm --file $FILENAME&#10;```&#10;In query mode, display the package that contains a particular file&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 55'
+[rpm -&#104;]:                  #rpm                           '```&#10;$ rpm -h&#10;$ rpm --hash&#10;```&#10;Prints a string of 50 hash marks during installation as a progress indicator&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 54'
+[rpm -&#105;]:                  #rpm                           '```&#10;$ rpm -i $PACKAGE&#10;$ rpm --install $PACKAGE&#10;```&#10;Install specified packages&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 56'
+[rpm -&#73;]:                   #rpm                           '```&#10;$ rpm -I $PACKAGE&#10;```&#10;Display information about specified package&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 56'
+[rpm -&#75;]:                   #rpm                           '```&#10;$ rpm -K $PACKAGE&#10;```&#10;Verify integrity of specified package'
+[rpm -&#108;]:                  #rpm                           '```&#10;$ rpm -l $PACKAGE&#10;$ rpm --list $PACKAGE&#10;```&#10;List all files installed with specified package&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 56'
+[rpm -&#112;]:                  #rpm                           '```&#10;$ rpm -p $FILENAME&#10;```&#10;Query a package file (most useful with `-i`)&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.'
+[rpm -&#113;]:                  #rpm                           '```&#10;$ rpm -q $PACKAGE&#10;$ rpm --query $PACKAGE&#10;```&#10;Query for specified package'
+[rpm -&#82;]:                   #rpm                           '```&#10;$ rpm -R $PACKAGE&#10;$ rpm --requires $PACKAGE&#10;```&#10;List packages on which this package depends&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 56'
+[rpm -&#115;]:                  #rpm                           '```&#10;$ rpm -s&#10;```&#10;Display the state of each file that was installed by the specified package (`normal`, `not installed`, or `replaced`)'
+[rpm -&#85;]:                   #rpm                           '```&#10;$ rpm -U $PACKAGE&#10;$ rpm --upgrade $PACKAGE&#10;```&#10;Upgrade specified package'
+[rpm -&#86;]:                   #rpm                           '```&#10;$ rpm -V&#10;$ rpm --verify&#10;```&#10;Compare files from installed packages against their expected configuration from the RPM database.&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 58'
+[rpm -&#118;]:                  #rpm                           '```&#10;$ rpm -v&#10;```&#10;Verbose output&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 54'
 [rpm --provides]:                                     #rpm                                               '```&#10;$ rpm --provides $PACKAGE&#10;```&#10;List which capabilities the specified package provides'
 [rpm --force]:                                        #rpm                                               '```&#10;$ rpm --force&#10;```&#10;Allows the replacement of existing packages and of files from previously installed packages; for upgrades, it allows the replacement of a newer package with an older one.&#10;Equivalent to using all of the following options:&#10;  `--replacepkgs`&#10;  `--replacefiles`&#10;  `--oldpackage`&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 54'
 [rpm --nodeps]:                                       #rpm                                               '```&#10;$ rpm --nodeps&#10;```&#10;Allows you to install a package without checking for dependencies.&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 54'
@@ -85,6 +85,24 @@
 [rpm --nofiles]:                                      #rpm                                               '```&#10;$ rpm --nofiles&#10;```&#10;In verify mode, ignore missing files&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 58'
 [rpm --nomd5]:                                        #rpm                                               '```&#10;$ rpm --nomd5&#10;```&#10;In verify mode, ignore MD5 checksum errors&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 58'
 [rpm --nopgp]:                                        #rpm                                               '```&#10;$ rpm --nopgp&#10;```&#10;In verify mode, ignore PGP checking errors&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 58'
+
+<!-- `yum` commands -->
+[yum clean all]:                  package.md#yum                           '```&#10;$ yum clean all&#10;```&#10;Clear cache'
+[yum erase]:                      package.md#yum                           '```&#10;$ yum erase $PACKAGE&#10;```&#10;Remove package as well as the cached package'
+[yum groupinstall]:               package.md#yum                           '```&#10;$ yum groupinstall $GROUP&#10;```&#10;Install package group'
+[yum groupremove]:                package.md#yum                           '```&#10;$ yum groupremove $GROUP&#10;```&#10;Remove package group'
+[yum history]:                    package.md#yum                           '```&#10;$ yum history&#10;```&#10;View command history'
+[yum info]:                       package.md#yum                           '```&#10;$ yum info $PACKAGE&#10;```&#10;Query repos for information on `$PACKAGE`'
+[yum install]:                    package.md#yum                           '```&#10;$ yum install $PACKAGE&#10;```&#10;Install package'
+[yum list]:                       package.md#yum                           '```&#10;$ yum list&#10;```&#10;List all available packages in database'
+[yum list installed]:             package.md#yum                           '```&#10;$ yum list installed&#10;```&#10;List all installed packages'
+[yum provides]:                   package.md#yum                           '```&#10;$ yum provides $FILE&#10;```&#10;Find what package a configuration `$FILE` belongs to'
+[yum remove]:                     package.md#yum                           '```&#10;$ yum remove $PACKAGE&#10;```&#10;Remove package'
+[yum repolist]:                   package.md#yum                           '```&#10;$ yum repolist&#10;```&#10;Display repositories'
+[yum repolist all]:               package.md#yum                           '```&#10;$ yum repolist all&#10;```&#10;Display both enabled and disabled repositories'
+[yum search]:                     package.md#yum                           '```&#10;$ yum search $PATTERN&#10;```&#10;Search for package name matching `$PATTERN`'
+[yum shell]:                      package.md#yum                           '```&#10;$ yum shell&#10;```&#10;Interactive shell'
+[yum update]:                     package.md#yum                           '```&#10;$ yum update&#10;```&#10;Upgrade installed packages'
 
 # Linux package management commands
 
@@ -98,10 +116,11 @@ Etc     | [`alien`][alien] [`gem`][gem] [`pip`][pip] [`snap`][snap] [`zypper`][z
 Commands    | Options 
 ---         | ---     
 [`alien`][alien] | [`i`][alien -&#105;] [`r`][alien -&#114;] [`t`][alien -&#116;]  
-[`apt`][apt] | <code>&nbsp;</code>   <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code>  <br><code>&nbsp;</code>&nbsp;<code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <br> [`dist-upgrade`][apt dist-upgrade] [`install`][apt install] [`list`][apt list] [`remove`][apt remove] [`update`][apt update] [`upgrade`][apt upgrade] 
-[`apt-cache`][apt-cache] | | [`depends`][apt-cache depends] [`dump`][apt-cache dump] [`rdepends`][apt-cache rdepends] [`search`][apt-cache search] [`showpkg`][apt-cache showpkg] [`showsrc`][apt-cache showsrc] [`stats`][apt-cache stats] 
+[`apt`][apt] | [`dist-upgrade`][apt dist-upgrade] [`install`][apt install] [`list`][apt list] [`remove`][apt remove] [`update`][apt update] [`upgrade`][apt upgrade] 
+[`apt-cache`][apt-cache] | [`depends`][apt-cache depends] [`dump`][apt-cache dump] [`rdepends`][apt-cache rdepends] [`search`][apt-cache search] [`showpkg`][apt-cache showpkg] [`showsrc`][apt-cache showsrc] [`stats`][apt-cache stats] 
 [`dpkg`][dpkg] | <code>&nbsp;</code>  <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`i`][dpkg -&#105;] <code>&nbsp;</code> <code>&nbsp;</code> [`l`][dpkg -&#108;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`p`][dpkg -&#112;] <code>&nbsp;</code> [`r`][dpkg -&#114;] [`s`][dpkg -&#115;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code>  <br><code>&nbsp;</code>&nbsp;<code>&nbsp;</code> <code>&nbsp;</code> [`C`][dpkg -&#67;] <code>&nbsp;</code> [`E`][dpkg -&#69;] <code>&nbsp;</code> [`G`][dpkg -&#71;] <code>&nbsp;</code> [`I`][dpkg -&#73;] <code>&nbsp;</code> <code>&nbsp;</code> [`L`][dpkg -&#76;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`P`][dpkg -&#80;] <code>&nbsp;</code> [`R`][dpkg -&#82;] [`S`][dpkg -&#83;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code>  <br> [`configure`][dpkg --configure] [`get-selections`][dpkg --get-selections] [`print-avail`][dpkg --print-avail] [`unpack`][dpkg --unpack]
 [`rpm`][rpm] | <code>&nbsp;</code>  [`a`][rpm -&#97;] <code>&nbsp;</code> [`c`][rpm -&#99;] [`d`][rpm -&#100;] [`e`][rpm -&#101;] [`f`][rpm -&#102;] <code>&nbsp;</code> [`h`][rpm -&#104;] [`i`][rpm -&#105;] <code>&nbsp;</code> <code>&nbsp;</code> [`l`][rpm -&#108;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`p`][rpm -&#112;] [`q`][rpm -&#113;] <code>&nbsp;</code> [`s`][rpm -&#115;] <code>&nbsp;</code> <code>&nbsp;</code> [`v`][rpm -&#118;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code>  <br><code>&nbsp;</code>&nbsp;<code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`I`][rpm -&#73;] <code>&nbsp;</code> [`K`][rpm -&#75;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`R`][rpm -&#82;] <code>&nbsp;</code> <code>&nbsp;</code> [`U`][rpm -&#85;] [`V`][rpm -&#86;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <br>[`force`][rpm --force] [`nodeps`][rpm --nodeps] [`nofiles`][rpm --nofiles] [`nomd5`][rpm --nomd5] [`nopgp`][rpm --nopgp] [`provides`][rpm --provides] [`test`][rpm --test] 
+[`yum`][yum] | [`clean all`][yum clean all] [`erase`][yum erase] [`groupinstall`][yum groupinstall] [`groupremove`][yum groupremove] [`history`][yum history] [`info`][yum info] [`install`][yum install] [`list`][yum list] [`list installed`][yum list installed] [`provides`][yum provides] [`remove`][yum remove] [`repolist`][yum repolist] [`repolist all`][yum repolist all] [`search`][yum search] [`shell`][yum shell] [`update`][yum update] 
 
 ### `add-apt-repository`
 Add a repository
@@ -301,22 +320,6 @@ Display information about {package}
 pip show package
 ```
 ### `rpm`
-Option  | POSIX option            | Effect
-:---    | :---                    | :---
-`-e`    | `--erase`               | remove specified package, including config files
-`-i`    | `--install`             | install specified package
-`-q`    | `--query`               | query for specified package
-`-U`    | `--upgrade`             | upgrade specified package
-`-a`       |                         | list all installed packages
-`-c`       |                         | list configs installed with specified package
-`-d`       |                         | list documentation files installed with specified package
-`-I`       |                         | display information about specified package
-`-K`       |                         | Verify integrity of specified package
-`-l`       |                         | List all files installed with specified package
-`-provides`|                         | List which capabilities the specified package provides
-`-R`       |                         | list which capabilities the specified package requires
-`-s`       |                         | display state of each file that was installed by specified package (normal, not installed, or replaced)
-
 Query repos for information on {package}
 ```sh
 rpm -qi package
@@ -404,66 +407,16 @@ Option  | POSIX option            | Effect
 `-y`    | `--assumeyes`           | respond to any prompt with "yes" automatically
 `-x`    | `--exclude`             | exclude specific packages from updates [[38](sources.md)]
 
-Install {package}
+Install `$PACKAGE` from a specific `$REPO`
 ```sh
-yum install package
-yum groupinstall packagegroup # package group
-yum --enablerepo=repo install package # from a specific {repo}
+yum --enablerepo=$REPO install $PACKAGE
 ```
-Remove {package} 
+Remove `$PACKAGE` without confirmation
 ```sh
-yum remove package
-yum -y remove package # without confirmation
-yum erase package # as well as the cached package
-yum groupremove packagegroup
+yum -y remove $PACKAGE
 ```
-Update installed packages
+Exclude some packages from update
 ```sh
-yum update
-yum update package # update a specific {package}
-yum upgrade # equivalent to `yum update --obsoletes`
-yum groupupdate packagegroup
-
-# Exclude some packages from update
 yum update --exclude=kernel
 yum update --exclude=httpd,php
-```
-List all available packages in database
-```sh
-yum list
-yum grouplist
-```
-List all installed packages
-```sh
-yum list installed
-```
-Query repos for information on {package}
-```sh
-yum info package
-```
-Find packages
-```sh
-yum list name # name matching {name} exactly
-yum search pattern # search for package name matching {pattern}
-```
-Find what package {config} belongs to
-```sh
-yum provides /path/to/config
-```
-List repositories
-```sh
-yum repolist
-yum repolist all # enabled and disabled repos
-```
-Interactive shell
-```sh
-yum shell
-```
-Clear cache
-```sh
-yum clean all
-```
-View command history
-```sh
-yum history
 ```
