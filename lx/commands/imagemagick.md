@@ -1,10 +1,10 @@
-### imagemagick
+### `imagemagick`
 
 
 Command group   | Description
 :---            | :---
-identify        | describe the format and characteristics of one or more image files
-mogrify         | resize, blur, crop, despeckle, dither, draw on, flip, join, resample, etc
+identify        | Describe the format and characteristics of one or more image files
+mogrify         | Resize, blur, crop, despeckle, dither, draw on, flip, join, resample, etc
 
 #### `identify`
 Option                            | Effect

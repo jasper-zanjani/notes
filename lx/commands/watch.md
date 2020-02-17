@@ -15,4 +15,3 @@ Get the total number of connections on port 80 every second
 ```sh
 watch -n 1 'netstat -an | grep ":80" | wc -l'
 ```
-

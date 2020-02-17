@@ -1,3 +1,32 @@
+[ADP 57]: ../sources/README.md#adp-57 "Azure DevOps Podcast 57: \"Craig Loewen on the Windows Subsystem for Linux story\""
+[LXF 258]: https://www.linuxformat.com/archives?issue=258 '"Linux distribution reviews: Clear Linux 31530" _Linux Format_ 258'
+
+[Alpine Linux]: #alpine-linux "Security-oriented, lightweight Linux distribution used in containers and hardware."
+[Clear Linux]: #clear-linux "Rolling release distro from Intel with a custom package management system based on **bundles**, collections of packages that contain everything an application requires, including dependencies. Clear's update process also has the ability to do **delta downloads**, preserving bandwidth. It does not provide access with unusual licenses, like ZFS, Chrome, or FFmpeg."
+[Fedora CoreOS]: #fedora-coreos "Fedora edition built for running containerized workloads securely and at scale. CoreOS systems are meant to be immutable, meaning they are only configured through the provisioning process and not modified in-place."
+[WSL]: #windows-subsystem-for-linux "Linux virtual machine shipped with Windows with the ability to install several different distros."
+
+[Aircrack-ng]: #kali-linux 'Aircrack-ng&#10;Monitor and compromise WiFi networks'
+[BeEF]: #kali-linux 'BeEF&#10;Assess security of a web browser'
+[Apktool]: #kali-linux 'Apktool&#10;Reverse engineer Android apps'
+[AFB]: #kali-linux 'Autopsy Forensic Browser (AFB)&#10;Digital forensics'
+[Burp Suite Scanner]: #kali-linux 'Burp Suite Scanner&#10;GUI-based web application security scanner'
+[Hydra]: #kali-linux 'Hydra&#10;Crack login/password pairs'
+[John the Ripper]: #kali-linux 'John the Ripper&#10;Crack passwords'
+[King Phisher]: #kali-linux 'King Phisher&#10;Simulate phishing attacks'
+[Lynis]: #kali-linux 'Lynis&#10;Security auditing, compliance testing'
+[Maltego]: #kali-linux 'Maltego&#10;Data mining'
+[Metasploit Framework]: #kali-linux 'Metasploit Framework&#10;Penetration testing framework'
+[Nessus]: #kali-linux 'Nessus&#10;Paid tool to find vulnerabilities'
+[Nikto]: #kali-linux 'Nikto&#10;Web server scanner'
+[SET]: #kali-linux 'Social Engineering Toolkit (SET)'
+[Skipfish]: #kali-linux 'Skipfish&#10;Web application scanner'
+[Snort]: #kali-linux 'Snort&#10;Traffic analysis and packet logging'
+[Sqlmap]: #kali-linux 'Sqlmap&#10;Exploit SQL injection flaws'
+[Wireshark]: #kali-linux 'Wireshark&#10;Network analyzer'
+[WPScan]: #kali-linux 'WPScan&#10;WordPress security auditing tool'
+[Yersinia]: #kali-linux 'Yersinia&#10;Perform Layer 2 attacks'
+
 # Linux distributions
 
 \#    | Distros
@@ -129,7 +158,9 @@ reboot
 - Alt+LeftArrow|RightArrow navigate to adjacent TTY
 ## BSD
 **Berkeley Software Distribution (BSD)** began in the 70s and was based on AT&T original code. First source distributions required user to purchase a source license from AT&T, since much of the BSD source was derivative of UNIX.
+
 Berkeley finally released a "wholly-BSD" product as **Network Release 1** in 1989, which satisfied vendor demand for the TCP/IP networking code for PC.
+
 Work immediately began to reconstruct the remaining functionality of UNIX, which was completed in Network Release 2, released in 1991, which was based entirely on Berkeley code. Eventually this resulted in the 386BSD distribution, which then spawned five interrelated BSD distros.
 1. BSDI (now Wind River)
 2. NetBSD
@@ -173,34 +204,106 @@ In version 1, WSL worked under a **translation architecture** where system calls
 
 WSL v1 is available on Azure VMs if **nested virtualization** is enabled. WSL2 support is forthcoming.
 
----
+## GNOME
+Read: "How to type emoji in Linux". [opensource.com](https://opensource.com/article/19/10/how-type-emoji-linux)
+### `gconf-editor`
+GUI-based configuration editor for GNOME
+### `gsettings`
+Change function of Caps Lock key [^](https://superuser.com/questions/1196241/how-to-remap-caps-lock-on-wayland 'superuser.com - "How to remap CAPS LOCK on Wayland"')
+```sh
+gsettings set org.gnome.desktop.input-sources xkb-options "['caps:ctrl_modifier']"
+```
+Change mouse cursor size to `$SIZE`, which can be one of the values 24 (default), 32, 48, 64, or 96. [^](https://vitux.com/how-to-change-cursor-size-on-ubuntu-desktop/ "vitux.com: \"Change cursor size on Ubuntu through the command line\"")
+```sh
+gsettings set org.gnome.desktop.interface $SIZE
+```
+## Mac OS X
+### iterm2
+iterm2 can be configure as a **Guake**-style dropdown terminal:
+[SuperUser.com](https://superuser.com/questions/951393/pin-os-x-terminal-window-always-on-top-in-macos-yosemite)
+[Sharma Prakash](https://www.sharmaprakash.com.np/guake-like-dropdown-terminal-in-mac/#assign-hotkey)
 
-[ADP 57]: ../sources/README.md#adp-57 "Azure DevOps Podcast 57: \"Craig Loewen on the Windows Subsystem for Linux story\""
-[LXF 258]: # '"Linux distribution reviews: Clear Linux 31530" _Linux Format_ 258'
+### `open`
+Open path in Finder
+```
+open path
+```
+Open an application from Terminal
+```
+open -a /Applications/application.app
+```
+### `screencapture`
+Take a screenshot on Mac OS X [[48](sources.md)]
 
-[Alpine Linux]: #alpine-linux "Security-oriented, lightweight Linux distribution used in containers and hardware."
-[Clear Linux]: #clear-linux "Rolling release distro from Intel with a custom package management system based on **bundles**, collections of packages that contain everything an application requires, including dependencies. Clear's update process also has the ability to do **delta downloads**, preserving bandwidth. It does not provide access with unusual licenses, like ZFS, Chrome, or FFmpeg."
-[Fedora CoreOS]: #fedora-coreos "Fedora edition built for running containerized workloads securely and at scale. CoreOS systems are meant to be immutable, meaning they are only configured through the provisioning process and not modified in-place."
-[WSL]: #windows-subsystem-for-linux "Linux virtual machine shipped with Windows with the ability to install several different distros."
+Option  | Effect
+:---    | :---
+`-c`    | send to clipboard
+`-T $SECONDS` | take screenshot after `$SECONDS`
+`-t $FORMAT`  | specify file `$FORMAT` (png by default)
+`-x`    | take screenshot without shutter sound
+## Fedora
+Repos added
+- RPM Fusion
+  - `https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-31.noarch.rpm`
+  - `https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-free-release-31.noarch.rpm`
 
+Packages added:
+- `snap`
+- `breeze-cursor-theme`
+- `f30-backgrounds-gnome` .. `f20-backgrounds-gnome`
 
-[Aircrack-ng]: #kali-linux 'Aircrack-ng&#10;Monitor and compromise WiFi networks'
-[BeEF]: #kali-linux 'BeEF&#10;Assess security of a web browser'
-[Apktool]: #kali-linux 'Apktool&#10;Reverse engineer Android apps'
-[AFB]: #kali-linux 'Autopsy Forensic Browser (AFB)&#10;Digital forensics'
-[Burp Suite Scanner]: #kali-linux 'Burp Suite Scanner&#10;GUI-based web application security scanner'
-[Hydra]: #kali-linux 'Hydra&#10;Crack login/password pairs'
-[John the Ripper]: #kali-linux 'John the Ripper&#10;Crack passwords'
-[King Phisher]: #kali-linux 'King Phisher&#10;Simulate phishing attacks'
-[Lynis]: #kali-linux 'Lynis&#10;Security auditing, compliance testing'
-[Maltego]: #kali-linux 'Maltego&#10;Data mining'
-[Metasploit Framework]: #kali-linux 'Metasploit Framework&#10;Penetration testing framework'
-[Nessus]: #kali-linux 'Nessus&#10;Paid tool to find vulnerabilities'
-[Nikto]: #kali-linux 'Nikto&#10;Web server scanner'
-[SET]: #kali-linux 'Social Engineering Toolkit (SET)'
-[Skipfish]: #kali-linux 'Skipfish&#10;Web application scanner'
-[Snort]: #kali-linux 'Snort&#10;Traffic analysis and packet logging'
-[Sqlmap]: #kali-linux 'Sqlmap&#10;Exploit SQL injection flaws'
-[Wireshark]: #kali-linux 'Wireshark&#10;Network analyzer'
-[WPScan]: #kali-linux 'WPScan&#10;WordPress security auditing tool'
-[Yersinia]: #kali-linux 'Yersinia&#10;Perform Layer 2 attacks'
+Keyboard shortcuts:
+- M+Enter: `terminal-gnome`
+- M+F1, F2... workspaces
+
+Icons: `Qogir`
+## KDE
+#### Appearance
+- __Colors__ affects the appearance of text
+- __Workspace Theme__ opens up several dialogs
+  - __Look and Feel__ allows selection of Look and Feel Themes that affect window appearance
+  - __Plasma theme__ appears to affect the appearance of widgets only
+#### Comparison with other OSes
+File dialogs have highly configurable views, with icon sizes scalable from 16 to 128 px and filenames available to the side or below the icon.
+- A view similar to the Icons view in Mac OS X or the List view in Windows can be reproduced by setting View to the icon size to the minimum 16px and placing the filename to the side (`Icon Position` > `Next to file name`)
+#### Wallpapers
+Wallpaper types "Haenau" and "Hunyango" are QML (Qt Modeling Language) animated wallpapers that were introduced in Plasma 5.1 (2014)
+#### Widgets
+"Plasmoids" are dragged and dropped onto the Desktop, where they function as buttons. A long click will allow them to be moved, rotated, or resized. Each plasmoid can be configured with a keyboard shortcut. They occupy all virtual desktops.
+
+One plasmoid in particular is the "Grouping Plasmoid", which allows other plasmoids to be placed within it, where they occupy separate tabs. 
+#### Login manager
+Workspace > Startup and Shutdown > Login Screen (SDDM)
+The advanced tab allows you to select Mouse cursor theme and auto login of user and session type. These appear to affect specifically settings in /etc/sddm.conf (`Session=gnome-xorg` under `[Autologin]`)
+#### Default shortcuts
+Workspace > Shortcuts > Global Shortcuts
+"Run Command" refers to `krunner`, a single-line application launcher similar to the Run command on Windows.
+- __Alt-t__ : open a terminal window
+#### Restarting KDE Plasma
+Source: [Lifewire](https://www.lifewire.com/kubuntu-p2-2202573)
+
+Restarting KDE Plasma 4
+```sh
+killall plasma-desktop
+kstart plasma-desktop
+```
+Restarting KDE Plasma 5
+```sh
+killall plasmashell
+kstart plasmashell
+```
+```sh
+kquitapp5 plasmashell
+kstart plasmashell
+```
+### `kquitapp`
+Allows you to quit a dbus enabled application. Two options:
+
+Specify service to be stopped
+```sh
+kquitapp --service
+```
+Specify path to dbus interface 
+```sh
+kquitapp --path
+```

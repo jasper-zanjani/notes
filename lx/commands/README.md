@@ -13,10 +13,10 @@
 [41]: https://www.tecmint.com/install-samba-on-rhel-8-for-file-sharing-on-windows/ "tecmint.com: \"Install Samba4 on RHEL 8 for File Sharing on Windows\""
 [42]: https://www.2daygeek.com/check-find-recently-modified-files-folders-linux/ "2daygeek: \"How to find recently modified files/folders in Linux\""
 [46]: https://www.tecmint.com/linux-tree-command-examples/ "tecmint.com: \"Linux tree command usage examples for beginners\""
-[50]: https://devconnected.com/user-administration-complete-guide-on-linux/#Setting_an_account_expiration_date_easily "devconnected.com: \"User administration complete guide on Linux\""
+[https://devconnected.com/user-administration-complete-guide-on-linux/#Setting_an_account_expiration_date_easily]: https://devconnected.com/user-administration-complete-guide-on-linux/#Setting_an_account_expiration_date_easily "devconnected.com: \"User administration complete guide on Linux\""
 [https://www.redhat.com/sysadmin/raid-intro]: https://www.redhat.com/sysadmin/raid-intro "redhat.com: \"RAID for those who avoid it\""
 [59]: https://docs.fedoraproject.org/en-US/quick-docs/adding-new-fonts-fedora/ "Fedora Docs - Adding new fonts in Fedora"
-
+[Sobell]: https://github.com/jasper-zanjani/notes/blob/master/sources/pgl.md 'Sobell, Mark. _Practical Guide to Linux_. 2017.'
 [https://computingforgeeks.com/connect-to-bluetooth-device-from-linux-terminal/]: https://computingforgeeks.com/connect-to-bluetooth-device-from-linux-terminal/ "Computing for Geeks: \"How to connect to Bluetooth device from Linux terminal\""
 [http://www.linux-magazine.com/Issues/2017/197/Command-Line-bluetoothctl#article_i1]: http://www.linux-magazine.com/Issues/2017/197/Command-Line-bluetoothctl#article_i1 "Linux Magazine: \"Blue Control\""
 
@@ -511,30 +511,28 @@
 Topic                         | Commands
 :---                          | :---
 Ansible                       | [`ansible`][ansible] [`ansible-galaxy`][ansible-galaxy] [`ansible-playbook`][ansible-playbook] `ansible-inventory`
-Archive                       | [`ar`][ar] [`bunzip2`][bunzip2] [`bzip2`][bzip2] [`compress`][compress] [`cpio`][cpio] [`gunzip`][gunzip] [`gzip`][gzip] [`tar`][tar] [`unxz`][unxz] [`unzip`][unzip]  [`xz`][xz] [`zip`][zip] [`dar`][dar]
-Audio                         | [`alsamixer`][alsamixer] [`amixer`][amixer] [`speaker-test`][speaker-test]
-Bash builtins                 | [`bg`][bg]  [`bind`][bind] [`break`][break] [`builtin`][builtin] [`caller`][caller] [`case`][case] [`cd`][cd] [`command`][command] [`compgen`][compgen] [`complete`][complete] [`compopt`][compopt] [`continue`][continue] [`declare`][declare] [`dirs`][dirs] [`disown`][disown] [`do`][do] [`done`][done] [`echo`][echo] [`echo`][echo] [`enable`][enable] [`esac`][esac] [`eval`][eval] [`exec`][exec] [`exit`][exit] [`export`][export] [`false`][false] [`fc`][fc] [`fg`][fg] [`fi`][fi] [`for`][for] [`function`][function] [`getopts`][getopts] [`hash`][hash] [`help`][help] [`history`][history] [`if`][if] [`jobs`][jobs] [`kill`][kill] [`let`][let] [`local`][local] [`logout`][logout] [`mapfile`][mapfile] [`popd`][popd] [`printf`][printf] [`pushd`][pushd] [`pwd`][pwd] [`read`][read] [`readarray`][readarray] [`readonly`][readonly] [`return`][return] [`select`][select] [`set`][set] [`shift`][shift] [`shopt`][shopt] [`source`][source] [`suspend`][suspend] [`test`][test] [`time`][time] [`time`][time] [`times`][times] [`trap`][trap] [`true`][true] [`type`][type] [`typeset`][typeset] [`ulimit`][ulimit] [`umask`][umask] [`unalias`][unalias] [`unset`][unset] [`until`][until] [`wait`][wait] [`while`][while] 
-Build tools                   | [`as`][as] <br>**Autotools** [`aclocal`][aclocal]  [`autoconf`][autoconf] [`autoheader`][autoheader] [`autoreconf`][autoreconf] [`autoscan`][autoscan] [`autoupdate`][autoupdate] <br>**Compiler-compilers** [`bison`][bison] [`flex`][lex] [`yacc`][yacc]
-Date and time                 | [`chrony`][chrony] [`date`][date] [`hwclock`][hwclock] [`timedatectl`][timedatectl]
-Distributions                 | **Debian** [`adduser`][adduser] [`apt`][apt] [`apt-cache`] [`apt-key`] [`add-apt-repository`] <br> **Manjaro** [`mhwd`][mhwd] [`mhwd-chroot`][mhwd-chroot] [`pacman`][pacman] [`yay`][yay] <br> **Red Hat** [`dnf`][dnf] [`firewall-cmd`][firewall-cmd] [`yum`][yum] <br> **Ubuntu** [`netplan`][netplan] <br> **Mac OS X** [`pbcopy`][pbcopy] [`pbpaste`][pbpaste] [`screencapture`][screencapture]
-Files	                        | [`fallocate`][fallocate] [`install`][install] [`ls`][ls] [`lsof`][lsof] [`setfacl`][setfacl] [`sshfs`][sshfs] [`tree`][tree]
-Gnome                         | [`gconf-editor`][gconf-editor] [`gsettings`][gsettings]
-GRUB                          | [`update-grub`][update-grub]
-Hardware settings             | [`bluetoothctl`][bluetoothctl] [`insmod`][insmod] [`lsmod`][lsmod] [`lspci`][lspci] [`lsusb`][lsusb] [`modprobe`][modprobe] [`rmmod`][rmmod]
-Information                   | [`stat`][stat] **Benchmarking** [`free`][free] [`glances`][glances]  [`iperf`][iperf] [`lscpu`][lscpu] [`nproc`][nproc] [`top`][top] [`uptime`][uptime] <br>**Sysstat** [`iostat`][iostat] [`mpstat`][mpstat] [`sar`][sar]
-Init                          | **Systemd** [`hostnamectl`][hostnamectl] [`journalctl`][journalctl] [`localectl`][localectl] [`systemctl`][systemd-delta] [`systemd-delta`][systemd-delta] [`timedatectl`][timedatectl] <br> **Sysvinit** [`chkconfig`][chkconfig] [`init`][init] [`service`][service] [`telinit`][telinit] &bull; **Upstart** [`initctl`][initctl]
+[Archive](archive.md)         | [`ar`][ar] [`bunzip2`][bunzip2] [`bzip2`][bzip2] [`compress`][compress] [`cpio`][cpio] [`gunzip`][gunzip] [`gzip`][gzip] [`tar`][tar] [`unxz`][unxz] [`unzip`][unzip]  [`xz`][xz] [`zip`][zip] [`dar`][dar]
+[Audio](audio.md)             | [`alsamixer`][alsamixer] [`amixer`][amixer] [`speaker-test`][speaker-test]
+[Bash builtins](bash.md)      | **B** [`bg`][bg]  [`bind`][bind] [`break`][break] [`builtin`][builtin] <br>**C** [`caller`][caller] [`case`][case]/[`esac`][esac] [`cd`][cd] [`command`][command] [`compgen`][compgen] [`complete`][complete] [`compopt`][compopt] [`continue`][continue] <br> **D** [`declare`][declare] [`dirs`][dirs] [`disown`][disown] [`do`][do]/[`done`][done] <br>**E** [`echo`][echo] [`enable`][enable]  [`eval`][eval] [`exec`][exec] [`exit`][exit] [`export`][export] <br>**F** [`false`][false] [`fc`][fc] [`fg`][fg] [`for`][for] [`function`][function] <br>**G** [`getopts`][getopts] <br>**H** [`hash`][hash] [`help`][help] [`history`][history] <br>**I** [`if`][if]/[`fi`][fi]  <br>**J** [`jobs`][jobs] <br>**K** [`kill`][kill] <br>**L** [`let`][let] [`local`][local] [`logout`][logout]<br>**M** [`mapfile`][mapfile]<br>**P** [`popd`][popd] [`printf`][printf] [`pushd`][pushd] [`pwd`][pwd] <br>**R** [`read`][read] [`readarray`][readarray] [`readonly`][readonly] [`return`][return] <br>**S** [`select`][select] [`set`][set] [`shift`][shift] [`shopt`][shopt] [`source`][source] [`suspend`][suspend] <br>**T** [`test`][test] [`time`][time]  [`times`][times] [`trap`][trap] [`true`][true] [`type`][type] [`typeset`][typeset] <br> **U** [`ulimit`][ulimit] [`umask`][umask] [`unalias`][unalias] [`unset`][unset] [`until`][until] <br> **W** [`wait`][wait] [`while`][while] 
+[Boot](boot.md)               | [`update-grub`][update-grub]
+[Build tools](build.md)       | [`as`][as] <br>**Autotools** [`aclocal`][aclocal]  [`autoconf`][autoconf] [`autoheader`][autoheader] [`autoreconf`][autoreconf] [`autoscan`][autoscan] [`autoupdate`][autoupdate] <br>**Compiler-compilers** [`bison`][bison] [`flex`][lex] [`yacc`][yacc]
+[Distributions](distros.md)   | **Debian** [`adduser`][adduser] [`apt`][apt] [`apt-cache`] [`apt-key`] [`add-apt-repository`] <br> **Manjaro** [`mhwd`][mhwd] [`mhwd-chroot`][mhwd-chroot] [`pacman`][pacman] [`yay`][yay] <br> **Red Hat** [`dnf`][dnf] [`firewall-cmd`][firewall-cmd] [`yum`][yum] <br> **Ubuntu** [`netplan`][netplan] <br> **Mac OS X** [`pbcopy`][pbcopy] [`pbpaste`][pbpaste] [`screencapture`][screencapture]
+[Files](file.md)	            | [`fallocate`][fallocate] [`install`][install] [`ls`][ls] [`lsof`][lsof] [`setfacl`][setfacl] [`sshfs`][sshfs] [`tree`][tree]
+GNOME                         | [`gconf-editor`][gconf-editor] [`gsettings`][gsettings]
+[Hardware settings](hw.md)    | [`bluetoothctl`][bluetoothctl] [`insmod`][insmod] [`lsmod`][lsmod] [`lspci`][lspci] [`lsusb`][lsusb] [`modprobe`][modprobe] [`rmmod`][rmmod] <br> **[Printing](hw.md)** <br> [**CUPS**][CUPS] [`cupsaccept`][cupsaccept] [`cupsenable`][cupsenable] [`cupsdisable`][cupsdisable] [`cupsreject`][cupsreject] [`lp`][lp] [`cancel`][cancel] <br> [**LPD**][LPD] [`lpc`][lpc] [`lpq`][lpq] [`lpr`][lpr] [`lprm`][lprm]
+[Information](info.md)        | [`stat`][stat] <br> **Benchmarking** [`free`][free] [`glances`][glances]  [`iperf`][iperf] [`lscpu`][lscpu] [`nproc`][nproc] [`top`][top] [`uptime`][uptime] <br>**Sysstat** [`iostat`][iostat] [`mpstat`][mpstat] [`sar`][sar] <br> **Date and time** [`chrony`][chrony] [`date`][date] [`hwclock`][hwclock] [`timedatectl`][timedatectl]
+[Init](init.md)               | **Systemd** [`hostnamectl`][hostnamectl] [`journalctl`][journalctl] [`localectl`][localectl] [`systemctl`][systemd-delta] [`systemd-delta`][systemd-delta] [`timedatectl`][timedatectl] <br> **Sysvinit** [`chkconfig`][chkconfig] [`init`][init] [`service`][service] [`telinit`][telinit] &bull; **Upstart** [`initctl`][initctl]
 Kubernetes                    | [`kubeadm`][kubeadm] [`kubectl`][kubectl]
-Mail                          | [`mail`][mail] [`mailmerge`][mailmerge] [`mailx`][mailx] [`msmtp`][msmtp] <br> **SMTP servers** [`exim`][exim] [`qmail`][qmail] [`postfix`][postfix] [`sendmail`][sendmail]
-Network                       | [`bmon`][bmon] [`brctl`][brctl] [`curl`][curl] [`ethtool`][ethtool] [`hping3`][hping3] [`ifconfig`][ifconfig] [`iftop`][iftop] [`ip`][ip] [`iperf`][iperf] [`ipset`][ipset] [`iw`][iw] [`iwlist`][iwlist] [`mtr`][mtr] [`netcat`][netcat] [`netplan apply`][netplan apply] [`netstat`][netstat] [`nmap`][nmap] [`nmcli`][nmcli] [`nmtui`][nmtui] [`ping`][ping] [`rfkill`][rfkill] [`route`][route] [`sftp`][sftp] [`ss`][ss] [`tcpdump`][tcpdump] [`tracepath`][tracepath] [`traceroute`][traceroute] [`tshark`][tshark] [`wget`][wget] [`xinetd`][xinetd] <br>**Authentication** [`kinit`][kinit] [`klist`][klist] <br>**DNS** [`dig`][dig] [`host`][host] [`nslookup`][nslookup] [`whois`][whois] <br>**Wi-Fi** [`ifup-wireless`][ifup-wireless] [`iwconfig`][iwconfig]
-Package managers              | [`apt`][apt] [`brew`][brew] [`dnf`][dnf] [`dpkg`][dpkg] [`gem`][gem] [`pacman`][pacman] [`pip`][pip] [`rpm`][rpm] [`snap`][snap] [`yay`][yay] [`yum`][yum]
-Printing                      | [**CUPS**][CUPS] [`cupsaccept`][cupsaccept] [`cupsenable`][cupsenable] [`cupsdisable`][cupsdisable] [`cupsreject`][cupsreject] [`lp`][lp] [`cancel`][cancel] <br> [**LPD**][LPD] [`lpc`][lpc] [`lpq`][lpq] [`lpr`][lpr] [`lprm`][lprm]
-Remote connections            | [`rsync`][rsync] [`ssh`][ssh] [`ssh-keygen`][ssh-keygen] [`ssh-keyscan`][ssh-keyscan] [`sshfs`][sshfs]
-SELinux                       | [`semanage`][semanage] [`sestatus`][sestatus] [`setenforce`][setenforce]
-System administration         | [`chage`][chage] [`chcon`][chcon] [`chgrp`][chgrp] [`chmod`][chmod] [`chown`][chown] [`chpass`][chpass] [`chrony`][chrony] [`chsh`][chsh]  [`free`][free] [`getent`][getent] [`gpasswd`][gpasswd] [`groupadd`][groupadd] [`groupdel`][groupdel] [`groupmod`][groupmod] [`logger`][logger] [`logrotate`][logrotate] [`stty`][stty] [`su`][su] [`sudo`][sudo] [`uname`][uname] [`useradd`][useradd] [`userdel`][userdel] [`usermod`][usermod] [`vifs`][vifs] [`visudo`][visudo] &bull; **Debian** [`adduser`][adduser] <br>**Process management** [`lsns`][lsns] [`pidof`][pidof] [`ps`][ps] [`unshare`][unshare] <br>**Disk management** [`blkid`][blkid] [`partx`][partx] <br>**Logical volumes** [`lvcreate`][lvcreate] [`lvdisplay`][lvdisplay] [`lvremove`][lvremove] [`lvs`][lvdisplay] [`pvcreate`][pvcreate] [`pvdisplay`][pvdisplay] [`pvremove`][pvremove] [`pvs`][pvdisplay] [`vgcreate`][vgcreate] [`vgdisplay`][vgdisplay] [`vgextend`][vgextend] [`vgremove`][vgremove] [`vgs`][vgs]
-Text filters                  | [`awk`][awk] [`cat`][cat] [`copy`][copy] [`grep`][grep] [`head`][head] [`nl`][nl] [`paste`][paste] [`sed`][sed] [`shuf`][shuf] [`sort`][sort] [`tail`][tail] [`tr`][tr]
-Version control               | [`git`][git] [`tig`][tig]
-Virtualization                | [`virt-install`][virt-install] [`virt-manager`][virt-manager]
-X                             | [`xdpyinfo`][xdpyinfo] [`xlsclients`][xlsclients] [`xmodmap`][xmodmap] [`Xorg`][xorg] [`xrandr`][xrandr] [`xwininfo`][xwininfo]
+[Mail](mail.md)               | [`mail`][mail] [`mailmerge`][mailmerge] [`mailx`][mailx] [`msmtp`][msmtp] <br> **SMTP servers** [`exim`][exim] [`qmail`][qmail] [`postfix`][postfix] [`sendmail`][sendmail]
+[Network](net.md)             | [`bmon`][bmon] [`brctl`][brctl] [`curl`][curl] [`ethtool`][ethtool] [`hping3`][hping3] [`ifconfig`][ifconfig] [`iftop`][iftop] [`ip`][ip] [`iperf`][iperf] [`ipset`][ipset] [`iw`][iw] [`iwlist`][iwlist] [`mtr`][mtr] [`netcat`][netcat] [`netplan apply`][netplan apply] [`netstat`][netstat] [`nmap`][nmap] [`nmcli`][nmcli] [`nmtui`][nmtui] [`ping`][ping] [`rfkill`][rfkill] [`route`][route] [`sftp`][sftp] [`ss`][ss] [`tcpdump`][tcpdump] [`tracepath`][tracepath] [`traceroute`][traceroute] [`tshark`][tshark] [`wget`][wget] [`xinetd`][xinetd] <br>**Authentication** [`kinit`][kinit] [`klist`][klist] <br>**DNS** [`dig`][dig] [`host`][host] [`nslookup`][nslookup] [`whois`][whois] <br>**Wi-Fi** [`ifup-wireless`][ifup-wireless] [`iwconfig`][iwconfig]
+[Package managers](package.md)| [`apt`][apt] [`brew`][brew] [`dnf`][dnf] [`dpkg`][dpkg] [`gem`][gem] [`pacman`][pacman] [`pip`][pip] [`rpm`][rpm] [`snap`][snap] [`yay`][yay] [`yum`][yum]
+[Remote connections](ssh.md)  | [`rsync`][rsync] [`ssh`][ssh] [`ssh-keygen`][ssh-keygen] [`ssh-keyscan`][ssh-keyscan] [`sshfs`][sshfs]
+[SELinux](selinux.md)         | [`semanage`][semanage] [`sestatus`][sestatus] [`setenforce`][setenforce]
+[System administration](sysadmin.md) | [`chage`][chage] [`chcon`][chcon] [`chgrp`][chgrp] [`chmod`][chmod] [`chown`][chown] [`chpass`][chpass] [`chrony`][chrony] [`chsh`][chsh]  [`free`][free] [`getent`][getent] [`gpasswd`][gpasswd] [`groupadd`][groupadd] [`groupdel`][groupdel] [`groupmod`][groupmod] [`logger`][logger] [`logrotate`][logrotate] [`stty`][stty] [`su`][su] [`sudo`][sudo] [`uname`][uname] [`useradd`][useradd] [`userdel`][userdel] [`usermod`][usermod] [`vifs`][vifs] [`visudo`][visudo] &bull; **Debian** [`adduser`][adduser] <br>**Process management** [`lsns`][lsns] [`pidof`][pidof] [`ps`][ps] [`unshare`][unshare] <br>**Disk management** [`blkid`][blkid] [`partx`][partx] <br>**Logical volumes** [`lvcreate`][lvcreate] [`lvdisplay`][lvdisplay] [`lvremove`][lvremove] [`lvs`][lvdisplay] [`pvcreate`][pvcreate] [`pvdisplay`][pvdisplay] [`pvremove`][pvremove] [`pvs`][pvdisplay] [`vgcreate`][vgcreate] [`vgdisplay`][vgdisplay] [`vgextend`][vgextend] [`vgremove`][vgremove] [`vgs`][vgs]
+[Text filters](text.md)       | [`awk`][awk] [`cat`][cat] [`copy`][copy] [`grep`][grep] [`head`][head] [`nl`][nl] [`paste`][paste] [`sed`][sed] [`shuf`][shuf] [`sort`][sort] [`tail`][tail] [`tr`][tr]
+[Version control](git.md)     | [`git`][git] [`tig`][tig]
+[Virtualization](virt.md)     | [`virt-install`][virt-install] [`virt-manager`][virt-manager]
+[X](x.md)                     | [`xdpyinfo`][xdpyinfo] [`xlsclients`][xlsclients] [`xmodmap`][xmodmap] [`Xorg`][xorg] [`xrandr`][xrandr] [`xwininfo`][xwininfo]
 
 \#  | Commands sorted alphabetically
 --- | ---
@@ -607,20 +605,7 @@ Search audit logs for today for logins of UID 500
 ```sh
 ausearch --start today --loginuid500
 ```
-### `blkid`
-Show UUID, Label, and filesystems of GPT block devices
-### `bluetoothctl`
-&nbsp;  | `bluetoothctl` commands [^][http://www.linux-magazine.com/Issues/2017/197/Command-Line-bluetoothctl#article_i1] [^][https://computingforgeeks.com/connect-to-bluetooth-device-from-linux-terminal/]
----     | ---
-&nbsp;  | [`device`][bluetoothctl devices] &bull; [`list`][bluetoothctl list] &bull; [`pair`][bluetoothctl pair] &bull; [`pairable on`][bluetoothctl pairable on] &bull; [`scan on`][bluetoothctl scan on] &bull; [`select`][bluetoothctl select] &bull; [`show`][bluetoothctl show]
 
-[bluetoothctl list]:                                              #bluetoothctl                                       '```&#10;$ bluetoothctl&#10;[bluetooth]# list&#10;```&#10;Display available controllers'
-[bluetoothctl show]:                                              #bluetoothctl                                       '```&#10;$ bluetoothctl&#10;[bluetooth]# show&#10;```&#10;Display more detailed inormation about available controllers'
-[bluetoothctl select]:                                            #bluetoothctl                                       '```&#10;$ bluetoothctl&#10;[bluetooth]# select&#10;```&#10;Select controller to pair, if the system has more than one'
-[bluetoothctl scan on]:                                           #bluetoothctl                                       '```&#10;$ bluetoothctl&#10;[bluetooth]# scan on&#10;```&#10;Receive a list of detected devices'
-[bluetoothctl pairable on]:                                       #bluetoothctl                                       '```&#10;$ bluetoothctl&#10;[bluetooth]# pairable on&#10;```&#10;Prepare controller for pairing'
-[bluetoothctl devices]:                                           #bluetoothctl                                       '```&#10;$ bluetoothctl&#10;[bluetooth]# devices&#10;```&#10;List available devices'
-[bluetoothctl pair]:                                              #bluetoothctl                                       '```&#10;$ bluetoothctl&#10;[bluetooth]# pair $DEVICE&#10;```&#10;Pair with `$DEVICE`, which is the MAC address of the pairable device'
 ### `crontab`
 There are 2 types of `crontab`, taking similar syntax:
 1. User crontabs, where cron jobs take the syntax: `minute hour day month weekday cmd`
@@ -674,7 +659,7 @@ date -u
 date --utc
 date universal
 ```
-Display the date fifty days into the future [^][50]
+Display the date fifty days into the future [devconnected.com][https://devconnected.com/user-administration-complete-guide-on-linux/#Setting_an_account_expiration_date_easily]
 ```sh
 date -d '+50days' +%F
 ```
@@ -682,11 +667,6 @@ date -d '+50days' +%F
 Implement a simple CPU benchmark by writing 1 GB of zeroes and piping it to md5sum
 ```sh
 dd if=/dev/zero bs=1M count=1024 | md5sum
-```
-### `declare`
-Option which displays output in a way that could then be used as input to another command
-```sh
-declare -p
 ```
 ### `dhclient`
 Obtain and configure TCP/IP information from a server on the network [[LGLC](../sources/lglc.md): 34]
@@ -698,29 +678,7 @@ Release the currently assigned IP address and get a new one
 ```sh
 dhclient -r
 ```
-### `du`
-Summary of information in human-readable format
-```sh
-du -sh
-du --summarize --human-readable
-```
-Show the size of all files and subdirectories of {dir} in human-readable form
-```sh
-du -h dir
-```
-Show the size of {file} in human-readable form
-```sh
-du -h file
-```
-Show the size of a directory at {path} in human-readable form
-```sh
-du -hs path
-```
-### `exif`
-View image metadata. Unlike alternatives like `file` and ImageMagick's `identify`, `exif` produces columnar output [^][31]
-```sh
-exif image.png 
-```
+
 ### `file`
 View image metadata [^][31]
 ```sh
@@ -767,15 +725,6 @@ Add a new zone, and write the change to disk
 firewall-cmd --new-zone=testlab  --permanent
 ```
 ### `gpg`
-PGP was bought by Semantec, and GNU has since released GPG, an open-source replacement.
-
-Option  | POSIX option  | Effect
-:---    | :---          | :---
-\-      | `--clearsign`<br/>`--clear-sign` | make a cleartext signature, readable without any special software
-\-      | `--send-keys` | send keys to a keyserver
-`-d`    | `--decrypt`   | decrypt $FILE}
-`-k`    | `--list-keys`<br/>`--list-public-keys` | list available GPG keys
-
 Decrypt file
 ```sh
 gpg file.txt
@@ -825,6 +774,7 @@ ldd program
 ```
 ### `lowriter`
 `lowriter` is a command-line utility installed with LibreOffice Writer. [^][21]
+
 Convert a single file to PDF
 ```sh
 lowriter --convert-to pdf filename.doc
@@ -933,18 +883,6 @@ rename 'y/A-Z/a-z/' *
 Human-readable
 ```sh
 repquota -sh
-```
-### `resize2fs`
-Resize filesystem of logical volume {Marketing} on volume group {vg1} to take up the entire logical volume
-```sh
-resize2fs /dev/vg1/Marketing
-```
-### `resize4fs`
-Resize ext4 filesystem
-### `restorecon`
-Restore security context default in the policy
-```sh
-restorecon -Rv website
 ```
 ### `route`
 Display and manipulate the routing table\
@@ -1133,7 +1071,7 @@ This will display the Samba CLI
 smb: \>
 ```
 ### Bash scripting
-Validating arguments [[PGL](../sources/pgl.md): 548]
+Validating arguments [<sup>Sobell: 548</sup>][Sobell]
 ```sh 
 if [ $# != 2 ]
 then 

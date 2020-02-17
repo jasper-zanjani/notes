@@ -1,3 +1,62 @@
+[.forward]: # "Forwarding to only one address"
+[.gnupg/pubring.gpg]: # "Default storage for public `gpg` keyrings"
+[.ssh/known_hosts]: # "Public keys of SSH hosts"
+[xorg.conf]: # "User config which overrides system defaults"
+[.vim/colors/]: ../text/vim.md "Contains custom color schemes for vim"
+
+[/dev]: # "Virtual filesystem containing device files, used to access physical and virtual devices"
+[/etc/aliases]: # "Systemwide email aliases"
+[/etc/apt/sources.list]: #etcaptsourceslist
+[/etc/apt/sources.list.d/]: # "Directory containing additional repository definitions"
+[/etc/bluetooth/main.conf]: #etcbluetoothmainconf "Bluetooth config"
+[/etc/default/useradd]: #etcdefaultuseradd
+[/etc/files.dns]: # "NIS+ servers for Solaris servers"
+[/etc/fstab]: # "Filesystems to be mounted by the system at boot"
+[/etc/group]: #etcgroup "Colon-delimited file describing group membership"
+[/etc/hostname]: # "contains hostname"
+[/etc/hosts]: # "Global hostnames"
+[/etc/hotplug/usb/]: # "Location of scripts executed when a hotplug device is inserted"
+[/etc/init.d/]: # "sysvinit scripts run during startup and shutdown"
+[/etc/inittab]: # "initialization table"
+[/etc/ld.so.conf.d/]: # "Configs that establish pathnames where shared libraries may be found"
+[/etc/login.defs]: # "Default configuration values for useradd, userdel, usermod, and groupadd"
+[/etc/logrotate.conf]: commands/README.md#logrotate
+[/etc/lsb-release]: #lsb-release "Ubuntu version"
+[/etc/lvm/.cache]: # "Default location of LVM cache"
+[/etc/mail/sendmail.mc]: # "Sendmail config which is compiled to sendmail.cf"
+[/etc/mail/sendmail.cf]: # "Sendmail config which is compiled from sendmail.mc"
+[/etc/mtab]: # "Updated dynamically with information about currently mounted filesystems"
+[/etc/network]: # "Global network settings"
+[/etc/nsswitch.conf]: # "Controls lookup system beyond just DNS"
+[/etc/postfix/main.cf]: #etcpostfixmaincf "Postfix config"
+[/etc/rc.d/rc.sysinit]: # "First script run by init"
+[/etc/resolv.conf]: # "Nameserver definitions (maximum of 6 domains with total of 256 characters)"
+[/etc/samba/smb.conf]: # "Samba configuration file"
+[/etc/services]: # "Used to resolve port numbers"
+[/etc/shadow]: #etcshadow "Colon-delimited file containing password hashes for every user listed in /etc/passwd"
+[/etc/skel/]: # "Default configs for new users"
+[/etc/ssmtp/ssmtp.conf]: #etcssmtpssmtpconf
+[/etc/sysconfig/desktop]: #etcsysconfigdesktop "Specify display manager and desktops on Red Hat"
+[/etc/syslog-ng/syslog-ng.conf]: #syslog-ng
+[/etc/systemd/system/]: #systemd-service-files "systemd service files"
+[/etc/udev/hwdb.bin]: # "udev hardware database"
+[/etc/xinetd/]: commands/README.md#xinetd
+[/etc/xinetd.conf]: commands/README.md#xinetd "Master xinetd configuration file"
+[/etc/yum.conf]: #etcyumconf
+[/etc/yum.repos.d/]: # "Repository definitions with filenames that follow the pattern \"*.repo\""
+
+[/lib/systemd/system/]: # "directory containing unit configs"
+[/usr/share/config/kdm/kdmrc]: # "KDM config"
+[/usr/share/lightdm/lightdm.conf.d/]: # "lightdm configs, whose filenames follow the pattern \"50-*.conf\""
+[/usr/share/hwdata/pci.ids]: commands/README.md#lspci "PCI device names displayed by lspci"
+[/var/log/dmesg]: # "Kernel ring buffer information"
+[/var/log/audit/audit.log]: # "Audit file for SELinux, SSH"
+[/var/spool/cron/]: # "Contains user crontables"
+[/boot/grub/grub.cfg]: # "GRUB config file"
+
+[Eckert]: # "Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012."
+[https://computingforgeeks.com/connect-to-bluetooth-device-from-linux-terminal/]: https://computingforgeeks.com/connect-to-bluetooth-device-from-linux-terminal/ "Computing for Geeks: \"How to connect to Bluetooth device from Linux terminal\""
+
 # Linux configuration files
 Home subdirectory           | Config files sorted alphabetically
 ---                         | ---
@@ -266,65 +325,3 @@ Trust email from computers on the local network [^][Eckert]
 ```cfg
 mynetworks_style = class
 ```
----
-
-[.forward]: # "Forwarding to only one address"
-[.gnupg/pubring.gpg]: # "Default storage for public `gpg` keyrings"
-[.ssh/known_hosts]: # "Public keys of SSH hosts"
-[xorg.conf]: # "User config which overrides system defaults"
-[.vim/colors/]: ../text/vim.md "Contains custom color schemes for vim"
-
-[/dev]: # "Virtual filesystem containing device files, used to access physical and virtual devices"
-[/etc/aliases]: # "Systemwide email aliases"
-[/etc/apt/sources.list]: #etcaptsourceslist
-[/etc/apt/sources.list.d/]: # "Directory containing additional repository definitions"
-[/etc/bluetooth/main.conf]: #etcbluetoothmainconf "Bluetooth config"
-[/etc/default/useradd]: #etcdefaultuseradd
-[/etc/files.dns]: # "NIS+ servers for Solaris servers"
-[/etc/fstab]: # "Filesystems to be mounted by the system at boot"
-[/etc/group]: #etcgroup "Colon-delimited file describing group membership"
-[/etc/hostname]: # "contains hostname"
-[/etc/hosts]: # "Global hostnames"
-[/etc/hotplug/usb/]: # "Location of scripts executed when a hotplug device is inserted"
-[/etc/init.d/]: # "sysvinit scripts run during startup and shutdown"
-[/etc/inittab]: # "initialization table"
-[/etc/ld.so.conf.d/]: # "Configs that establish pathnames where shared libraries may be found"
-[/etc/login.defs]: # "Default configuration values for useradd, userdel, usermod, and groupadd"
-[/etc/logrotate.conf]: commands/README.md#logrotate
-[/etc/lsb-release]: #lsb-release "Ubuntu version"
-[/etc/lvm/.cache]: # "Default location of LVM cache"
-[/etc/mail/sendmail.mc]: # "Sendmail config which is compiled to sendmail.cf"
-[/etc/mail/sendmail.cf]: # "Sendmail config which is compiled from sendmail.mc"
-[/etc/mtab]: # "Updated dynamically with information about currently mounted filesystems"
-[/etc/network]: # "Global network settings"
-[/etc/nsswitch.conf]: # "Controls lookup system beyond just DNS"
-[/etc/postfix/main.cf]: #etcpostfixmaincf "Postfix config"
-[/etc/rc.d/rc.sysinit]: # "First script run by init"
-[/etc/resolv.conf]: # "Nameserver definitions (maximum of 6 domains with total of 256 characters)"
-[/etc/samba/smb.conf]: # "Samba configuration file"
-[/etc/services]: # "Used to resolve port numbers"
-[/etc/shadow]: #etcshadow "Colon-delimited file containing password hashes for every user listed in /etc/passwd"
-[/etc/skel/]: # "Default configs for new users"
-[/etc/ssmtp/ssmtp.conf]: #etcssmtpssmtpconf
-[/etc/sysconfig/desktop]: #etcsysconfigdesktop "Specify display manager and desktops on Red Hat"
-[/etc/syslog-ng/syslog-ng.conf]: #syslog-ng
-[/etc/systemd/system/]: #systemd-service-files "systemd service files"
-[/etc/udev/hwdb.bin]: # "udev hardware database"
-[/etc/xinetd/]: commands/README.md#xinetd
-[/etc/xinetd.conf]: commands/README.md#xinetd "Master xinetd configuration file"
-[/etc/yum.conf]: #etcyumconf
-[/etc/yum.repos.d/]: # "Repository definitions with filenames that follow the pattern \"*.repo\""
-
-[/lib/systemd/system/]: # "directory containing unit configs"
-[/usr/share/config/kdm/kdmrc]: # "KDM config"
-[/usr/share/lightdm/lightdm.conf.d/]: # "lightdm configs, whose filenames follow the pattern \"50-*.conf\""
-[/usr/share/hwdata/pci.ids]: commands/README.md#lspci "PCI device names displayed by lspci"
-[/var/log/dmesg]: # "Kernel ring buffer information"
-[/var/log/audit/audit.log]: # "Audit file for SELinux, SSH"
-[/var/spool/cron/]: # "Contains user crontables"
-[/boot/grub/grub.cfg]: # "GRUB config file"
-
----
-
-[Eckert]: # "Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012."
-[https://computingforgeeks.com/connect-to-bluetooth-device-from-linux-terminal/]: https://computingforgeeks.com/connect-to-bluetooth-device-from-linux-terminal/ "Computing for Geeks: \"How to connect to Bluetooth device from Linux terminal\""

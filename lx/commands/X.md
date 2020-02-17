@@ -1,38 +1,38 @@
+[Haeder]:                                            #                                                  'Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.'
+[xfs]:                                               x.md#xfs                                           '```&#10;$ xfs&#10;```&#10;X fonts server&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 307'
+
+# Linux commands related to X Windows System
+
+&nbsp;  | Commands
+---     | ---
+&nbsp;  | [`x`][x] [`xdpyinfo`][xdpyinfo] [`xfs`][xfs] [`xhost`][xhost] [`xlsclients`][xlsclients] [`xmodmap`][xmodmap] [`xorg`][xorg] [`xrandr`][xrandr] [`xset`][xset] [`xwininfo`][xwininfo]
+
 ### `X`
-Start the graphical interface from a command line\
 Test X11 with the config file automatically generated after `Xorg -configure`
 ```sh
 X -config $HOME/xorg.conf.new
 ```
-### `xdpyinfo`
-Show detailed information about display
 ### `xhost`
 Enable access control to X server
 ```sh
 xhost -
 ```
-Remove {host} from list of authorized clients for X server
-```sh
-xhost -host
-```
-Disable access control to X server
+Disable access control to X server, allowing clients from any host to connect (not unsafe if you use a firewall that allows only SSH)
 ```sh
 xhost +
 ```
-Add {host} to list of authorized clients for X server
+Add `$HOST` to list of authorized clients for X server
 ```sh
-xhost +host
+xhost +$HOST
 ```
-Add user `dpezet` to ACL
+Remove `$HOST` from list of authorized clients for X server
 ```sh
-xhost si:localuser:dpezet
+xhost -$HOST
 ```
-Allow clients from any host to connect (not unsafe if you use a firewall that allows only SSH)
+Add `$USER` to ACL
 ```sh
-xhost +
+xhost si:localuser:$USER
 ```
-### `xlsclients`
-Determine what applications are running on the legacy X11 server provided with Wayland.
 ### `xmodmap`
 Replacing Caps Lock with Escape
 ```
@@ -48,7 +48,6 @@ Enable automatic configuration of X11 server
 Xorg -configure
 ```
 ### `xrandr`
-Set size, orientation, and reflection of video output\
 Change resolution of DisplayPort1 to 1920x1080
 ```sh
 xrandr --output DP1 --mode 1920x1080
@@ -61,5 +60,18 @@ Display current state of the system
 ```sh
 xrandr -q  --query
 ```
-### `xwininfo`
-Utility that provides information about a clicked window, including dimensions, position, etc
+### `xset`
+Dynamically add fonts [<sup>Haeder: 307</sup>][Haeder]
+```ssh
+xset fp+ /usr/local/fonts
+```
+
+## Tasks
+X forwarding
+```sh
+ssh -Y user@host
+```
+Have remote system use local computer {me.luna.edu}'s X display
+```sh
+export DISPLAY=me.luna.edu:0
+```

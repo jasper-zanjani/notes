@@ -31,6 +31,22 @@
 <!-- `df` options -->
 
 <!-- `du` options -->
+[du -&#48;]:                        #du                            '```&#10;$ du -0&#10;$ du --null&#10;```&#10;End each output line with a binary zero (NUL) character instead of a newline&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 68'
+[du -&#97;]:                        #du                            '```&#10;$ du -a&#10;$ du --all&#10;```&#10;Print usage for all files, not just subdirectories&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 67'
+[du -&#98;]:                        #du                            '```&#10;$ du -b&#10;$ du --bytes&#10;```&#10;Print sizes in bytes&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 67'
+[du -&#66;]:                        #du                            '```&#10;$ du -B $SIZE&#10;$ du --block-size $SIZE&#10;```&#10;Use a block size of `$SIZE` bytes&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 67'
+[du -&#99;]:                        #du                            '```&#10;$ du -c&#10;$ du --total&#10;```&#10;In addition to normal output, print grand total of all arguments&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 68&#10;--------------------------&#10;Produce a grand total for all listed items&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 153'
+[du -&#68;]:                        #du                            '```&#10;$ du -D&#10;$ du --dereference-args&#10;```&#10;Follow symbolic links, but only if they are command-line arguments&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 68'
+[du -&#104;]:                       #du                            '```&#10;$ du -h&#10;$ du --human-readable&#10;```&#10;Print sizes in human-readable format&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 67&#10;-------------------------&#10;Display results in human-readable format&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 153'
+[du -&#107;]:                       #du                            '```&#10;$ du -k&#10;$ du --kilobytes&#10;```&#10;Print information in units of kilobytes&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 67'
+[du -&#76;]:                        #du                            '```&#10;$ du -L&#10;$ du --dereference&#10;```&#10;For symbolic links, process the file or directory to which the link refers, not the link itself&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 67'
+[du -&#108;]:                       #du                            '```&#10;$ du -l&#10;$ du --count-links&#10;```&#10;Count the size of all files, whether or not they have already appeared&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 68'
+[du -&#109;]:                       #du                            '```&#10;$ du -m&#10;$ du --megabytes&#10;```&#10;Print sizes in megabytes&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 68'
+[du -&#80;]:                        #du                            '```&#10;$ du -P&#10;$ du --no-dereference&#10;```&#10;Do not follow any symbolic links (default)&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 68'
+[du -&#115;]:                       #du                            '```&#10;$ du -s&#10;$ du --summarize&#10;```&#10;Print only the grand total for each named directory&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 67&#10;-----------------------------&#10;Print a summary for each of the `$DIRS` specified, instead of totals for each subdirectory found recursively&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 153'
+[du -&#83;]:                        #du                            '```&#10;$ du -S&#10;$ du --separate-dirs&#10;```&#10;Do not include the sizes of subdirectories when totaling the size of parent directories&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 68&#10;--------------------------&#10;Exclude subdirectories from counts and totals, limiting totals to `$DIRS`&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 153'
+[du -&#120;]:                       #du                            '```&#10;$ du -x&#10;$ du --one-file-system&#10;```&#10;Restrict file size evaluations to files on the same filesystem as the command-line `$FILE` parameter&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 67'
+[du -&#88;]:                        #du                            '```&#10;$ du -X $FILE&#10;$ du --exclude-from $FILE&#10;```&#10;Exclude files that match any pattern in `$FILE`&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 68'
 
 <!-- `sar` options -->
 
@@ -39,7 +55,7 @@ Commands                      | Options
 ---                           | ---
 [`date`][date]                | <code>&nbsp;</code>  [`a`][date +%a]  [`b`][date +%b]  [`c`][date +%c]  [`d`][date +%d]  [`e`][date +%e]  <code>&nbsp;</code>  [`g`][date +%g]  [`h`][date +%h]  <code>&nbsp;</code>  [`j`][date +%j]  [`k`][date +%k]  [`l`][date +%l]  [`m`][date +%m]  [`n`][date +%n]  <code>&nbsp;</code>  [`p`][date +%p]  <code>&nbsp;</code>  [`r`][date +%r]  [`s`][date +%s]  [`t`][date +%t]  [`u`][date +%u]  <code>&nbsp;</code>  [`w`][date +%w]  [`x`][date +%x]  [`y`][date +%y]  <code>&nbsp;</code> <br><code>&nbsp;</code>  [`A`][date +%A]  [`B`][date +%B]  <code>&nbsp;</code>  [`D`][date +%D]  <code>&nbsp;</code>  [`F`][date +%F]  [`G`][date +%G]  [`H`][date +%H]  [`I`][date +%I]  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  [`M`][date +%M]  [`N`][date +%N]  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  [`R`][date +%R]  [`S`][date +%S]  [`T`][date +%T]  [`U`][date +%U]  [`V`][date +%V]  [`W`][date +%W]  [`X`][date +%X]  [`Y`][date +%Y]  [`Z`][date +%Z]
 [`df`][df]                    | <code>&nbsp;</code>  [`a`][df -a]  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  [`h`][df -h]  [`i`][df -i]  <code>&nbsp;</code>  [`k`][df -k]  [`l`][df -l]  [`m`][df -m]  <code>&nbsp;</code>  [`o`][df -o]  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  [`t`][df -t]  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  [`x`][df -x]  <code>&nbsp;</code>  <code>&nbsp;</code> <br><code>&nbsp;</code>  <code>&nbsp;</code>  [`B`][df -B]  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  [`H`][df -H]  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  [`P`][df -P]  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  [`T`][df -T]  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>
-[`du`][du]                    | [`0`][du -0]  [`a`][du -a]  [`b`][du -b]  [`c`][du -c]  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  [`h`][du -h]  <code>&nbsp;</code>  <code>&nbsp;</code>  [`k`][du -k]  [`l`][du -l]  [`m`][du -m]  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  [`s`][du -s]  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  [`x`][du -x]  <code>&nbsp;</code>  <code>&nbsp;</code> <br><code>&nbsp;</code>  <code>&nbsp;</code>  [`B`][du -B]  <code>&nbsp;</code>  [`D`][du -D]  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  [`L`][du -L]  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  [`P`][du -P]  <code>&nbsp;</code>  <code>&nbsp;</code>  [`S`][du -S]  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  [`X`][du -X]  <code>&nbsp;</code>  <code>&nbsp;</code>
+[`du`][du]                    | [`0`][du -&#48;]   [`a`][du -&#97;] [`b`][du -&#98;] [`c`][du -&#99;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`h`][du -&#104;] <code>&nbsp;</code> <code>&nbsp;</code> [`k`][du -&#107;] [`l`][du -&#108;] [`m`][du -&#109;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`s`][du -&#115;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`x`][du -&#120;] <code>&nbsp;</code> <code>&nbsp;</code>  <br><code>&nbsp;</code>&nbsp;<code>&nbsp;</code> [`B`][du -&#66;] <code>&nbsp;</code> [`D`][du -&#68;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`L`][du -&#76;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`P`][du -&#80;] <code>&nbsp;</code> <code>&nbsp;</code> [`S`][du -&#83;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`X`][du -&#88;] <code>&nbsp;</code> <code>&nbsp;</code> 
 [`free`][free]                | 
 [`glances`][glances]          | 
 [`hwclock`][hwclock]          | 
@@ -60,6 +76,25 @@ Commands                      | Options
 [`uptime`][uptime]            | 
 [`vmstat`][vmstat]            | 
 
+
+### `du`
+Summary of information in human-readable format
+```sh
+du -sh
+du --summarize --human-readable
+```
+Show the size of all files and subdirectories of {dir} in human-readable form
+```sh
+du -h dir
+```
+Show the size of {file} in human-readable form
+```sh
+du -h file
+```
+Show the size of a directory at {path} in human-readable form
+```sh
+du -hs path
+```
 ### `free`
 Display amount of free and used memory in the system [^][L5PMT-memory]
 ```sh
