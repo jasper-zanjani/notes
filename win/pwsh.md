@@ -236,7 +236,7 @@ System administration | [`Get-Alias`][Get-Alias] [`Get-Command`][Get-Command] [`
 
 \#      | Bash (hover for PowerShell equivalents)
 ---     | ---
-**A-L** | [`$!`][$$] [`!$`][$$] [`$?`][$?] [`&`][Start-Job] [`>>`][Add-Content] &bull; [`alias`][New-Alias] [`awk`][Select-Object] &bull; `bzip2` &bull; [`cat`][Get-Content] [`cd`][Set-Location] [`cp`][Copy-Item] &bull; [`echo`][Write-Host] &bull; [`find`][Get-ChildItem] &bull; [`grep`][Where-Object] &bull; [`less`](#out-host "`Out-Host -Paging`") [`ls`][Get-ChildItem] &bull; 
+**A-L** | [`$!`][&#36;&#36;] [`!$`][&#36;&#36;] [`$?`][&#36;?] [`&`][Start-Job] [`>>`][Add-Content] &bull; [`alias`][New-Alias] [`awk`][Select-Object] &bull; `bzip2` &bull; [`cat`][Get-Content] [`cd`][Set-Location] [`cp`][Copy-Item] &bull; [`echo`][Write-Host] &bull; [`find`][Get-ChildItem] &bull; [`grep`][Where-Object] &bull; [`less`](#out-host "`Out-Host -Paging`") [`ls`][Get-ChildItem] &bull; 
 **M-Z** | [`man`][Get-Help] [`mkdir`](#new-item "`New-Item -ItemType Directory`") [`more`](#out-host "`Out-Host -Paging`") &bull; [`print`][Write-Host] [`printf`][Write-Host] [`pwd`][Get-Location] &bull; [`reset`][Clear-Host] [`rm`][Remove-Item] &bull; [`sed`][Select-Object] [`shutdown`][Stop-Computer] [`-r`][Restart-Computer] &bull; [`tail`][Get-Content] [`touch`][New-Item] &bull; [`uniq`](#select-object "`Select-Object -Unique`") &bull; [`which`][Get-Command]
 
 ## Syntax

@@ -1,6 +1,6 @@
-[4]: https://www.tecmint.com/rdesktop-connect-windows-desktop-from-linux/ "TecMint: \"rdesktop - A RDP Client to Connect Windows Desktop from Linux\""
-[7]: https://youtu.be/ksAfmJfdub0 "YouTube: \"Easy Academic References on the Command Line\""
-[8]: https://coderwall.com/p/kq9ghg/yakuake-scripting "coderwall.com: \"Yakuake scripting\""
+[https://www.tecmint.com/rdesktop-connect-windows-desktop-from-linux/]: https://www.tecmint.com/rdesktop-connect-windows-desktop-from-linux/ "TecMint: \"rdesktop - A RDP Client to Connect Windows Desktop from Linux\""
+[https://youtu.be/ksAfmJfdub0]: https://youtu.be/ksAfmJfdub0 "YouTube: \"Easy Academic References on the Command Line\""
+[https://coderwall.com/p/kq9ghg/yakuake-scripting]: https://coderwall.com/p/kq9ghg/yakuake-scripting "coderwall.com: \"Yakuake scripting\""
 [https://opensource.com/article/19/8/introduction-bpftrace]: https://opensource.com/article/19/8/introduction-bpftrace "opensource.com: \"An introduction to bpftrace for Linux\""
 [21]: https://vitux.com/how-to-convert-documents-to-pdf-format-on-the-ubuntu-command-line/ "vitux.com: \"How to convert documents to PDF format on the Ubuntu Command Line\""
 [23]: ../sources/clkf.md "Cannon, Jason. _Command Line Kung Fu_."
@@ -652,7 +652,7 @@ Display the date and time according to locale settings\
 
 Option  | Effect
 :---    | :---
-`-s`    | set date [^][4]
+`-s`    | set date [<sup>TecMint</sup>][https://www.tecmint.com/rdesktop-connect-windows-desktop-from-linux/]
 
 Set the current date and time to `$DATESTRING`
 ```sh
@@ -1141,11 +1141,11 @@ then
   exit 1
 fi
 ```
-[^][7]
+[<sup>YouTube</sup>][https://youtu.be/ksAfmJfdub0]
 ```sh
 [ -z "$1" ] && echo "..." && exit 1
 ```
-[^][8]
+[<sup>coderwall.com</sup>][https://coderwall.com/p/kq9ghg/yakuake-scripting]
 ```sh
 if [ ! -z "$2" ] ; then ...; fi
 ```

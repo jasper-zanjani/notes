@@ -1,40 +1,82 @@
-[bmon]:                                              net.md#bmon                                        '```&#10;$ bmon&#10;```&#10;Terminal-based graphical bandwidth monitor'
-[brctl]:                                             net.md#brctl                                       '```&#10;$ brctl&#10;```&#10;Create, modify, or view an Ethernet bridge, which connects separate networks into a single network from the perspective of users.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 27'
-[curl]:                                              net.md#curl                                        '```&#10;$ curl&#10;```&#10;Noninteractively transfer data from a large number of protocols, including FTP, FTPS, HTTP, SCP, SFTP, SMB, SMBS, Telnet, and TFTP&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 90'
-[ethtool]:                                           net.md#ethtool                                     '```&#10;$ ethtool&#10;```&#10;Display and configure network device settings.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 22'
-[hping3]:                                            net.md#hping3                                      '```&#10;$ hping3&#10;```&#10;Active network smashing tool'
-[ifconfig]:                                          net.md#ifconfig                                    '```&#10;$ ifconfig&#10;```&#10;Obsolete program that configures network interfaces'
-[iftop]:                                             net.md#iftop                                       '```&#10;$ iftop&#10;```&#10;Display network connections using the most bandwidth&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 281'
-[ip]:                                                net.md#ip                                          '```&#10;$ ip&#10;```&#10;Newer alternative to the old `ifconfig`&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 21'
-[iperf]:                                             net.md#iperf                                       '```&#10;$ iperf&#10;```&#10;Create tests of the throughput between two systems, requiring setup on both client and server&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 281'
-[ipset]:                                             net.md#ipset                                       '```&#10;$ ipset&#10;```&#10;Create a "set" of IP addresses to which firewall rules can be applied&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 282'
-[iw]:                                                net.md#iw                                          '```&#10;$ iw&#10;```&#10;Show or manipulate wireless devices and their configuration'
-[iwlist]:                                            net.md#iwlist                                      '```&#10;$ iwlist&#10;```&#10;Get detailed wireless information about a wireless interface'
-[mtr]:                                               net.md#mtr                                         '```&#10;$ mtr&#10;```&#10;Performs a `traceroute`-like operation every second&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 285'
-[netcat]:                                            net.md#netcat                                      '```&#10;$ netcat&#10;```&#10;Versatile utility for TCP or UDP connections&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 284'
-[netstat]:                                           net.md#netstat                                     '```&#10;$ netstat&#10;```&#10;Print network connections, routing tables, interface statistics, masquerade connections, and multi-cast memberships&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 18'
-[nmap]:                                              net.md#nmap                                        '```&#10;$ nmap&#10;```&#10;Probe a system for open ports&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 280'
-[nmcli]:                                             net.md#nmcli                                       '```&#10;$ nmcli&#10;```&#10;Configure NetworkManager&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 26'
-[nmtui]:                                             net.md#nmtui                                       '```&#10;$ nmtui&#10;```&#10;Provide a text-based to configure NetworkManager.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 27'
-[ping]:                                              net.md#ping                                        '```&#10;$ ping&#10;```&#10;Verify a remote host can respond to a network&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 18'
-[rfkill]:                                            net.md#rfkill                                      '```&#10;$ rfkill&#10;```&#10;Tool for enabling and disabling wireless devices'
-[route]:                                             net.md#route                                       '```&#10;$ route&#10;```&#10;Display or modify routing table&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 21'
-[sftp]:                                              net.md#sftp                                        '```&#10;$ sftp&#10;```&#10;Securely transfer files over ssh&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 274'
-[ss]:                                                net.md#ss                                          '```&#10;$ ss&#10;```&#10;Display socket information.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 25'
-[tcpdump]:                                           net.md#tcpdump                                     '```&#10;$ tcpdump&#10;```&#10;Inspect IP packets (Wireshark is a GUI-based alternative)&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 282'
-[tracepath]:                                         net.md#tracepath                                   '```&#10;$ tracepath&#10;```&#10;Similar to `traceroute`, but with fewer options and no requirement for superuser privileges&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 287'
-[traceroute]:                                        net.md#traceroute                                  '```&#10;$ traceroute&#10;```&#10;Interrogate the gateways on the way to a remote system&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 285'
-[tshark]:                                            net.md#tshark                                      '```&#10;$ tshark&#10;```&#10;Wireshark terminal interface&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 283'
-[wget]:                                              net.md#wget                                        '```&#10;$ wget&#10;```&#10;Noninteractive tool to download files from remote systems via HTTP, HTTPS, or FTP.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 89'
-[xinetd]:                                            net.md#xinetd                                      '```&#10;$ xinetd&#10;```&#10;Internet Super Daemon provided an alternate method of connecting to various outdated network services. Should be turned off nowadays.'
-[kinit]:                                             net.md#kinit                                       '```&#10;$ kinit&#10;```&#10;Kerberos utility to obtain an individual ticket, which is then cached on the local system.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 239'
-[klist]:                                             net.md#klist                                       '```&#10;$ klist&#10;```&#10;Display a list of cached Kerberos tickets&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 239'
-[dig]:                                               net.md#dig                                         '```&#10;$ dig&#10;```&#10;Perform DNS queries on specific DNS servers&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 19'
-[host]:                                              net.md#host                                        '```&#10;$ host&#10;```&#10;Perform simple DNS queries&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 20'
-[nslookup]:                                          net.md#nslookup                                    '```&#10;$ nslookup&#10;```&#10;Perform simple queries on DNS servers&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 19'
-[whois]:                                             net.md#whois                                       '```&#10;$ whois&#10;```&#10;Determine domain ownership&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 287'
-[ifup-wireless]:                                     net.md#ifup-wireless                               '```&#10;$ ifup-wireless&#10;```&#10;Configure wireless networks&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 28'
-[iwconfig]:                                          net.md#iwconfig                                    '```&#10;$ iwconfig&#10;```&#10;Display or set information about wireless network interfaces.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 25'
+[bmon]:                        net.md#bmon                     '```&#10;$ bmon&#10;```&#10;Terminal-based graphical bandwidth monitor'
+[brctl]:                       net.md#brctl                    '```&#10;$ brctl&#10;```&#10;Create, modify, or view an Ethernet bridge, which connects separate networks into a single network from the perspective of users.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 27'
+[curl]:                        net.md#curl                     '```&#10;$ curl&#10;```&#10;Noninteractively transfer data from a large number of protocols, including FTP, FTPS, HTTP, SCP, SFTP, SMB, SMBS, Telnet, and TFTP&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 90'
+[dig]:                         net.md#dig                      '```&#10;$ dig&#10;```&#10;Query DNS servers'
+[ethtool]:                     net.md#ethtool                  '```&#10;$ ethtool&#10;```&#10;Display and configure network device settings.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 22'
+[firewall-cmd]:                net.md#firewall-cmd             '```&#10;firewall-cmd&#10;```&#10;In Red Hat systems, the successor to `iptables` and like it a frontend to the `netfilter` protocols; places network traffic into "zones". Commands have to be written twice: once to affect running config and again to have the change saved'
+[host]:                        net.md#host                     '```&#10;$ host&#10;```&#10;Perform simple DNS queries&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 20'
+[hping3]:                      net.md#hping3                   '```&#10;$ hping3&#10;```&#10;Active network smashing tool'
+[ifconfig]:                    net.md#ifconfig                 '```&#10;$ ifconfig&#10;```&#10;Obsolete program that configures network interfaces'
+[iftop]:                       net.md#iftop                    '```&#10;$ iftop&#10;```&#10;Display network connections using the most bandwidth&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 281'
+[ifup-wireless]:               net.md#ifup-wireless            '```&#10;$ ifup-wireless&#10;```&#10;Configure wireless networks&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 28'
+[ip]:                          net.md#ip                       '```&#10;$ ip&#10;```&#10;Newer alternative to the old `ifconfig`&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 21'
+[iperf]:                       net.md#iperf                    '```&#10;$ iperf&#10;```&#10;Create tests of the throughput between two systems, requiring setup on both client and server&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 281'
+[ipset]:                       net.md#ipset                    '```&#10;$ ipset&#10;```&#10;Create a "set" of IP addresses to which firewall rules can be applied&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 282'
+[iscsiadm]:                    net.md#iscsiadm                 '```&#10;$ iscsiadm&#10;```&#10;Command-line utility allowing discovery and login to iSCSI targets'
+[iw]:                          net.md#iw                       '```&#10;$ iw&#10;```&#10;Show or manipulate wireless devices and their configuration'
+[iwconfig]:                    net.md#iwconfig                 '```&#10;$ iwconfig&#10;```&#10;Display or set information about wireless network interfaces.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 25'
+[iwlist]:                      net.md#iwlist                   '```&#10;$ iwlist&#10;```&#10;Get detailed wireless information about a wireless interface'
+[kinit]:                       net.md#kinit                    '```&#10;$ kinit&#10;```&#10;Kerberos utility to obtain an individual ticket, which is then cached on the local system.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 239'
+[klist]:                       net.md#klist                    '```&#10;$ klist&#10;```&#10;Display a list of cached Kerberos tickets&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 239'
+[mtr]:                         net.md#mtr                      '```&#10;$ mtr&#10;```&#10;Performs a `traceroute`-like operation every second&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 285'
+[netcat]:                      net.md#netcat                   '```&#10;$ netcat&#10;```&#10;Versatile utility for TCP or UDP connections&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 284'
+[netplan]:                     net.md#netplan                  '```&#10;$ netplan&#10;```&#10;Ubuntu network configuration tool'
+[netstat]:                     net.md#netstat                  '```&#10;$ netstat&#10;```&#10;Print network connections, routing tables, interface statistics, masquerade connections, and multi-cast memberships&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 18'
+[nmap]:                        net.md#nmap                     '```&#10;$ nmap&#10;```&#10;Probe a system for open ports&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 280'
+[nmblookup]:                   net.md#nmblookup                '```&#10;$ nmblookup&#10;```&#10;Test NetBIOS name resolution'
+[nmcli]:                       net.md#nmcli                    '```&#10;$ nmcli&#10;```&#10;Configure NetworkManager&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 26'
+[nmtui]:                       net.md#nmtui                    '```&#10;$ nmtui&#10;```&#10;Provide a text-based to configure NetworkManager.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 27'
+[nslookup]:                    net.md#nslookup                 '```&#10;$ nslookup&#10;```&#10;Perform simple queries on DNS servers&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 19'
+[ping]:                        net.md#ping                     '```&#10;$ ping&#10;```&#10;Send an ICMP `ECHO_REQUEST` datagram'
+[rfkill]:                      net.md#rfkill                   '```&#10;$ rfkill&#10;```&#10;Tool for enabling and disabling wireless devices'
+[route]:                       net.md#route                    '```&#10;$ route&#10;```&#10;Display or modify routing table&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 21'
+[sftp]:                        net.md#sftp                     '```&#10;$ sftp&#10;```&#10;Securely transfer files over ssh&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 274'
+[ss]:                          net.md#ss                       '```&#10;$ ss&#10;```&#10;Display socket information.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 25'
+[tcpdump]:                     net.md#tcpdump                  '```&#10;$ tcpdump&#10;```&#10;Inspect IP packets (Wireshark is a GUI-based alternative)&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 282'
+[tracepath]:                   net.md#tracepath                '```&#10;$ tracepath&#10;```&#10;Similar to `traceroute`, but with fewer options and no requirement for superuser privileges'
+[traceroute]:                  net.md#traceroute               '```&#10;$ traceroute&#10;```&#10;Follow the path a packet takes between two hosts'
+[tshark]:                      net.md#tshark                   '```&#10;$ tshark&#10;```&#10;Wireshark terminal interface&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 283'
+[wget]:                        net.md#wget                     '```&#10;$ wget&#10;```&#10;Noninteractive tool to download files from remote systems via HTTP, HTTPS, or FTP.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 89'
+[whois]:                       net.md#whois                    '```&#10;$ whois&#10;```&#10;Determine domain ownership&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 287'
+[xinetd]:                      net.md#xinetd                   '```&#10;$ xinetd&#10;```&#10;Internet Super Daemon provided an alternate method of connecting to various outdated network services. Should be turned off nowadays.'
+
+<!-- `firewall-cmd` options -->
+[firewall-cmd --state]:                #firewall-cmd                  '```&#10;$ firewall-cmd --state&#10;```&#10;Display status of service'
+[firewall-cmd --get-default-zone]:                #firewall-cmd                  '```&#10;$ firewall-cmd --get-default-zone&#10;```&#10;Display default zone'
+[firewall-cmd --get-active-zones]:                #firewall-cmd                  '```&#10;$ firewall-cmd --get-active-zones&#10;```&#10;Display zones that are attached to an interface'
+[firewall-cmd --new-zone]:                #firewall-cmd                  '```&#10;$ firewall-cmd --new-zone $NAME&#10;```&#10;Add a new zone'
+[firewall-cmd --permanent]:                #firewall-cmd                  '```&#10;$ firewall-cmd --permanent&#10;```&#10;Write the change tro disk'
+[firewall-cmd --reload]:                #firewall-cmd                  '```&#10;$ firewall-cmd --reload&#10;```&#10;Load saved configuration'
+[firewall-cmd --get-services]:                #firewall-cmd                  '```&#10;$ firewall-cmd --get-services&#10;```&#10;Display available services'
+[firewall-cmd --add-service]:                #firewall-cmd                  '```&#10;$ firewall-cmd --add-service $SERVICE&#10;```&#10;Add a service, like "ftp"'
+[firewall-cmd --list-services]:                #firewall-cmd                  '```&#10;$ firewall-cmd --list-services&#10;```&#10;Display loaded services'
+[firewall-cmd --remove-service]:                #firewall-cmd                  '```&#10;$ firewall-cmd --remove-service&#10;```&#10;Remove service'
+[firewall-cmd --add-port]:                #firewall-cmd                  '```&#10;$ firewall-cmd --add-port $PORTS/$PROTOCOL&#10;```&#10;Add nonstandard `$PORTS`, which can be a single port or a range.'
+
+<!-- `netstat` options -->
+[netstat -&#99;]:               #netstat                       '```&#10;$ netstat -c&#10;```&#10;Continuous operation, yielding a `netstat` display every second until interrupted with Ctrl-C&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 398'
+[netstat -&#105;]:              #netstat                       '```&#10;$ netstat -i&#10;```&#10;Display a list of interfaces&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 399'
+[netstat -&#110;]:              #netstat                       '```&#10;$ netstat -n&#10;```&#10;Numeric mode; do not resolve hostnames&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 399'
+[netstat -&#112;]:              #netstat                       '```&#10;$ netstat -p&#10;```&#10;Programs mode; display the PID and process name&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 399'
+[netstat -&#114;]:              #netstat                       '```&#10;$ netstat -r&#10;```&#10;Routing mode; display the routing table in the format of `route`&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 399'
+[netstat -&#118;]:              #netstat                       '```&#10;$ netstat -v&#10;```&#10;Verbose output&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 399'
+
+<!-- `route` options -->
+[route -&#67;]:                 #route                         '```&#10;$ route -C&#10;```&#10;Display the kernel routing cache&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 388'
+[route -&#70;]:                 #route                         '```&#10;$ route -F&#10;```&#10;Display the kernel routing table&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 388'
+[route -&#104;]:                #route                         '```&#10;$ route -h&#10;```&#10;Display a usage message&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 388'
+[route -&#110;]:                #route                         '```&#10;$ route -n&#10;```&#10;Numeric mode; do not resolve hostnames&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 388'
+[route -&#118;]:                #route                         '```&#10;$ route -v&#10;```&#10;Verbose output&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 388'
+
+<!-- `traceroute` options -->
+[traceroute -&#102;]:           #traceroute                    '```&#10;$ traceroute -&#102; $TTL&#10;```&#10;Set time-to-live value to `$TTL` (1 by default)'
+[traceroute -&#105;]:           #traceroute                    '```&#10;$ traceroute -&#105;&#10;```&#10;Choose interface to be used'
+[traceroute -&#110;]:           #traceroute                    '```&#10;$ traceroute -&#110;&#10;```&#10;Display numeric addresses instead of names'
+[traceroute -&#115;]:           #traceroute                    '```&#10;$ traceroute -&#115;&#10;```&#10;Choose source address'
+[traceroute -&#84;]:            #traceroute                    '```&#10;$ traceroute -T&#10;```&#10;Use TCP SYN packets for path trace'
+[traceroute -&#116;]:           #traceroute                    '```&#10;$ traceroute -t&#10;```&#10;Set "type of service (ToS)" flag'
+[traceroute -&#118;]:           #traceroute                    '```&#10;$ traceroute -v&#10;```&#10;Verbose output'
+[traceroute -&#119;]:           #traceroute                    '```&#10;$ traceroute -w $N&#10;```&#10;Set timeout on returned ICMP packets to `$N` seconds (5 by default)'
 
 [Sec+ Lab]: https://pts.measureup.com/web/index.php#dashboard.php "Practice Lab: CompTIA Security+ (SY0-501)"
 [https://tools.kali.org/information-gathering/hping3]: https://tools.kali.org/information-gathering/hping3 "tools.kali.org: \"hping3 - Active Network Smashing Tool\""
@@ -44,45 +86,17 @@
 
 
 # Linux network commands
-Network commands  | Options
+
+&nbsp;  | Commands
+---     | ---
+&nbsp;  | [`bmon`][bmon] [`brctl`][brctl] [`curl`][curl] [`dig`][dig] [`ethtool`][ethtool] [`firewall-cmd`][firewall-cmd] [`host`][host] [`hping3`][hping3] [`ifconfig`][ifconfig] [`iftop`][iftop] [`ifup-wireless`][ifup-wireless] [`ip`][ip] [`iperf`][iperf] [`ipset`][ipset] [`iscsiadm`][iscsiadm] [`iw`][iw] [`iwconfig`][iwconfig] [`iwlist`][iwlist] [`kinit`][kinit] [`klist`][klist] [`mtr`][mtr] [`netcat`][netcat] [`netplan`][netplan] [`netstat`][netstat] [`nmap`][nmap] [`nmblookup`][nmblookup] [`nmcli`][nmcli] [`nmtui`][nmtui] [`nslookup`][nslookup] [`ping`][ping] [`rfkill`][rfkill] [`route`][route] [`sftp`][sftp] [`ss`][ss] [`tcpdump`][tcpdump] [`tracepath`][tracepath] [`traceroute`][traceroute] [`tshark`][tshark] [`wget`][wget] [`whois`][whois] [`xinetd`][xinetd] 
+
+Commands  | Options
 ---               | ---
-[`bmon`][bmon] | 
-[`brctl`][brctl] | 
-[`curl`][curl] | 
-[`dig`][dig] | 
-[`ethtool`][ethtool] | 
-[`host`][host] | 
-[`hping3`][hping3] | 
-[`ifconfig`][ifconfig] | 
-[`iftop`][iftop] | 
-[`ifup-wireless`][ifup-wireless] | 
-[`ip`][ip] | 
-[`iperf`][iperf] | 
-[`ipset`][ipset] | 
-[`iw`][iw] | 
-[`iwconfig`][iwconfig] | 
-[`iwlist`][iwlist] | 
-[`kinit`][kinit] | 
-[`klist`][klist] | 
-[`mtr`][mtr] | 
-[`netcat`][netcat] | 
-[`netstat`][netstat] | 
-[`nmap`][nmap] | 
-[`nmcli`][nmcli] | 
-[`nmtui`][nmtui] | 
-[`nslookup`][nslookup] | 
-[`ping`][ping] | 
-[`rfkill`][rfkill] | 
-[`route`][route] | 
-[`sftp`][sftp] | 
-[`ss`][ss] | 
-[`tcpdump`][tcpdump] | 
-[`tracepath`][tracepath] | 
-[`traceroute`][traceroute] | 
-[`tshark`][tshark] | 
-[`wget`][wget] | 
-[`whois`][whois] | 
-[`xinetd`][xinetd] | 
+[`firewall-cmd`][firewall-cmd] | **A** [`add-port`][firewall-cmd --add-port] [`add-service`][firewall-cmd --add-service] <br>**G** [`get-active-zones`][firewall-cmd --get-active-zones] [`get-default-zone`][firewall-cmd --get-default-zone] [`get-services`][firewall-cmd --get-services] <br>**L** [`list-services`][firewall-cmd --list-services] <br>**N** [`new-zone`][firewall-cmd --new-zone] <br>**P** [`permanent`][firewall-cmd --permanent] <br>**R** [`reload`][firewall-cmd --reload] [`remove-service`][firewall-cmd --remove-service] <br>**S** [`state`][firewall-cmd --state]
+[`netstat`][netstat]  | <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`c`][netstat -&#99;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`i`][netstat -&#105;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`n`][netstat -&#110;] <code>&nbsp;</code> [`p`][netstat -&#112;] <code>&nbsp;</code> [`r`][netstat -&#114;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`v`][netstat -&#118;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 
+[`route`][route] | <code>&nbsp;</code>   <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`h`][route -&#104;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`n`][route -&#110;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`v`][route -&#118;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code>  <br><code>&nbsp;</code>&nbsp;<code>&nbsp;</code> <code>&nbsp;</code> [`C`][route -&#67;] <code>&nbsp;</code> <code>&nbsp;</code> [`F`][route -&#70;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 
+[`traceroute`][traceroute] | <code>&nbsp;</code>   <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`f`][traceroute -&#102;] <code>&nbsp;</code> <code>&nbsp;</code> [`i`][traceroute -&#105;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`n`][traceroute -&#110;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`s`][traceroute -&#115;] [`t`][traceroute -&#116;] <code>&nbsp;</code> [`v`][traceroute -&#118;] [`w`][traceroute -&#119;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code>  <br><code>&nbsp;</code>&nbsp;<code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`T`][traceroute -&#84;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 
 
 ### `bmon`
 [^][https://www.networkworld.com/video/99387/how-to-use-the-bmon-command-2-minute-linux-tips] [^][https://www.networkworld.com/article/3447936/viewing-network-bandwidth-usage-with-bmon.html]
@@ -128,6 +142,10 @@ Display Start of Authority information for a domain
 ```sh
 dig example.com soa
 ```
+### `firewall-cmd`
+
+&nbsp;  | Options
+
 ### `hping3`
 Hping3 crafts "SYN" (sequence) packets from random spoofed IP addresses and sends them out at very short intervals. [^][Sec+ Lab]
 
@@ -556,6 +574,10 @@ Unblock Bluetooth, if it is blocked [^][https://computingforgeeks.com/connect-to
 ```sh
 rfkill unblock bluetooth
 ```
+### `route`
+&nbsp;  | 
+---     | ---
+Options | [`h`][route -&#104;] [`n`][route -&#110;] [`p`][route -&#112;] [`v`][route -&#118;] [`C`][route -&#67;] [`F`][route -&#70;] 
 ### `ss`
 "Socket statistics", successor to __netstat__. 
 
