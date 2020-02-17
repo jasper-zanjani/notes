@@ -1,90 +1,100 @@
-[chage]:                                             sysadmin.md#chage                                  '```&#10;$ chage&#10;```&#10;Modify password-aging features for a user.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 95'
-[edquota]:                                           sysadmin.md#edquota                                '```&#10;$ edquota&#10;```&#10;Create or edit a user's disk quota&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 99'
-[groupadd]:                                          sysadmin.md#groupadd                               '```&#10;$ groupadd&#10;```&#10;Create a new group&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 94'
-[groupdel]:                                          sysadmin.md#groupdel                               '```&#10;$ groupdel&#10;```&#10;Delete a group account&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 96'
-[groupmod]:                                          sysadmin.md#groupmod                               '```&#10;$ groupmod&#10;```&#10;Modify a group account&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 95'
-[id]:                                                sysadmin.md#id                                     '```&#10;$ id&#10;```&#10;Display basic account information for a specified user, including UID, GID, and group membership&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 96'
-[last]:                                              sysadmin.md#last                                   '```&#10;$ last&#10;```&#10;Display information about current and previous logins&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 98'
-[lastb]:                                             sysadmin.md#lastb                                  '```&#10;$ lastb&#10;```&#10;Display failed login attempts&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 255'
-[passwd]:                                            sysadmin.md#passwd                                 '```&#10;$ passwd&#10;```&#10;Change a user's password.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 95'
-[quota]:                                             sysadmin.md#quota                                  '```&#10;$ quota&#10;```&#10;Display quotas&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 100'
-[quotacheck]:                                        sysadmin.md#quotacheck                             '```&#10;$ quotacheck&#10;```&#10;Create initial quota databases&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 99'
-[repquota]:                                          sysadmin.md#repquota                               '```&#10;$ repquota&#10;```&#10;Display quotas for an entire filesystem&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 101'
-[su]:                                                sysadmin.md#su                                     '```&#10;$ su&#10;```&#10;Allow a user to shift user accounts&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 209'
-[sudo]:                                              sysadmin.md#sudo                                   '```&#10;$ sudo&#10;```&#10;Run commands as other users (typically as the root user).&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 209'
-[sudoedit]:                                          sysadmin.md#sudoedit                               '```&#10;$ sudoedit&#10;```&#10;Edit a file using sudo&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 210'
-[ulimit]:                                            sysadmin.md#ulimit                                 '```&#10;$ ulimit&#10;```&#10;Display or set a user account's limits&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 201'
-[useradd]:                                           sysadmin.md#useradd                                '```&#10;$ useradd&#10;```&#10;Create a user account&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 94'
-[userdel]:                                           sysadmin.md#userdel                                '```&#10;$ userdel&#10;```&#10;Delete a user account&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 96'
-[usermod]:                                           sysadmin.md#usermod                                '```&#10;$ usermod&#10;```&#10;Modify a user account&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 94'
-[visudo]:                                            sysadmin.md#visudo                                 '```&#10;$ visudo&#10;```&#10;Edit /etc/sudoers file&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 210'
-[w]:                                                 sysadmin.md#w                                      '```&#10;$ w&#10;```&#10;Display output similar to that of `uptime` for all logged-in users&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 97'
-[who]:                                               sysadmin.md#who                                    '```&#10;$ who&#10;```&#10;Display currently users currently logged in&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 97'
-[whoami]:                                            init.md#whoami                                     '```&#10;$ whoami&#10;```&#10;Display effective user ID&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 96'
+[adduser]:                     sysadmin.md#adduser             '```&#10;$ adduser&#10;```&#10;Create a new user or update default new user information'
+[at]:                          sysadmin.md#at                  '```&#10;$ at&#10;```&#10;'
+[atq]:                         sysadmin.md#atq                 '```&#10;$ atq&#10;```&#10;'
+[atrm]:                        sysadmin.md#atrm                '```&#10;$ atrm&#10;```&#10;'
+[chage]:                       sysadmin.md#chage               '```&#10;$ chage&#10;```&#10;Modify password-aging features for a user.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 95'
+[edquota]:                     sysadmin.md#edquota             '```&#10;$ edquota&#10;```&#10;Create or edit disk quota of `$USER`&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 99'
+[getent]:                      sysadmin.md#getent              '```&#10;$ getent&#10;```&#10;List values stored in colon-delimited user and group account databases like /etc/passwd&#10;Rothwell, William. _CompTIA Linux+/LPIC-1 Portable Command guide_.: 185'
+[gpasswd]:                     sysadmin.md#gpasswd             '```&#10;$ gpasswd&#10;```&#10;Interactively set the password for `$GROUP`&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 326'
+[groupadd]:                    sysadmin.md#groupadd            '```&#10;$ groupadd&#10;```&#10;Add `$GROUP` to the system&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 325'
+[groupdel]:                    sysadmin.md#groupdel            '```&#10;$ groupdel&#10;```&#10;Delete `$GROUP` from the system&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 325'
+[groupmod]:                    sysadmin.md#groupmod            '```&#10;$ groupmod&#10;```&#10;Modify the parameters of `$GROUP`&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 325'
+[last]:                        sysadmin.md#last                '```&#10;$ last&#10;```&#10;Display history of successful logins'
+[lastb]:                       sysadmin.md#lastb               '```&#10;$ lastb&#10;```&#10;Display failed login attempts&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 255'
+[passwd]:                      sysadmin.md#passwd              '```&#10;$ passwd&#10;```&#10;Interactively set the password for `$USER`&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 325'
+[quota]:                       sysadmin.md#quota               '```&#10;$ quota&#10;```&#10;Display quota limits on user or group&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 169'
+[quotacheck]:                  sysadmin.md#quotacheck          '```&#10;$ quotacheck&#10;```&#10;Examine filesystems and compile quota databases&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 171'
+[quotaoff]:                    sysadmin.md#quotaoff            '```&#10;$ quotaoff&#10;```&#10;Disable disk quotas on one or more filesystems&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 171'
+[quotaon]:                     sysadmin.md#quotaon             '```&#10;$ quotaon&#10;```&#10;Enable previously configure disk quotas on one or more filesystems&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 170'
+[repquota]:                    sysadmin.md#repquota            '```&#10;$ repquota&#10;```&#10;Display quotas for an entire filesystem&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 101'
+[su]:                          sysadmin.md#su                  '```&#10;$ su&#10;```&#10;Allow a user to shift user accounts&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 209'
+[sudo]:                        sysadmin.md#sudo                '```&#10;$ sudo&#10;```&#10;Run commands as other users (typically as the root user).&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 209'
+[sudoedit]:                    sysadmin.md#sudoedit            '```&#10;$ sudoedit&#10;```&#10;Edit a file using sudo&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 210'
+[ulimit]:                      sysadmin.md#ulimit              '```&#10;$ ulimit&#10;```&#10;Display or set a account limits of `$USER`&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 201'
+[useradd]:                     sysadmin.md#useradd             '```&#10;$ useradd&#10;```&#10;Create a user account&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 94'
+[userdel]:                     sysadmin.md#userdel             '```&#10;$ userdel&#10;```&#10;Delete a user account&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 96'
+[usermod]:                     sysadmin.md#usermod             '```&#10;$ usermod&#10;```&#10;Modify a user account&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 94'
+[visudo]:                      sysadmin.md#visudo              '```&#10;$ visudo&#10;```&#10;Safely edit the /etc/sudoers file'
+[w]:                           sysadmin.md#w                   '```&#10;$ w&#10;```&#10;Display output similar to that of `uptime` for all logged-in users&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 97'
+[who]:                         sysadmin.md#who                 '```&#10;$ who&#10;```&#10;Display currently users currently logged in&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 97'
+[whoami]:                      sysadmin.md#whoami              '```&#10;$ whoami&#10;```&#10;Display effective user ID&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 96'
+
+
+<!-- `chage` options -->
+[chage -&#100;]:                #chage                         '```&#10;$ chage -&#100;&#10;```&#10;Change the Last Change field of the /etc/shadow file for the user&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 95'
+[chage -&#69;]:                 #chage                         '```&#10;$ chage -&#69;&#10;```&#10;Set the Expiration Date field of the /etc/shadow file for the user&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 95'
+[chage -&#109;]:                #chage                         '```&#10;$ chage -&#109;&#10;```&#10;Change the Min field of the /etc/shadow file for the user&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 95'
+[chage -&#77;]:                 #chage                         '```&#10;$ chage -&#77;&#10;```&#10;Change the Max field of the /etc/shadow file for the user&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 95'
+[chage -&#87;]:                 #chage                         '```&#10;$ chage -&#87;&#10;```&#10;Change the Warn field of the /etc/shadow file for the user&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 95'
+[chage -&#73;]:                 #chage                         '```&#10;$ chage -I&#10;```&#10;Set days of inactivity after a password has expired before account is locked&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 417'
+[chage -&#108;]:                #chage                         '```&#10;$ chage -l&#10;```&#10;Show password aging information for an account&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 417'
+
+<!-- `passwd` options -->
+[passwd -&#100;]:               #passwd                        '```&#10;$ passwd -d&#10;```&#10;Delete password&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 95'
+[passwd -&#101;]:               #passwd                        '```&#10;$ passwd -e&#10;$ passwd --expire&#10;```&#10;Immediately expire account&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 95'
+[passwd -&#105;]:               #passwd                        '```&#10;$ passwd -i $N&#10;$ passwd --inactive $N&#10;```&#10;Disable account after `$N` days of inactivity'
+[passwd -&#108;]:               #passwd                        '```&#10;$ passwd -l&#10;$ passwd --lock&#10;```&#10;Lock account&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 95'
+[passwd -&#109;]:               #passwd                        '```&#10;$ passwd -m&#10;```&#10;Change the Min field of the /etc/shadow file for the user&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 95'
+[passwd -&#77;]:                #passwd                        '```&#10;$ passwd -M&#10;```&#10;Change the Max field of the /etc/shadow file for the user&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 95'
+[passwd -&#117;]:               #passwd                        '```&#10;$ passwd -u&#10;$ passwd --unlock&#10;```&#10;Unlock the account&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 95'
+[passwd -&#119;]:               #passwd                        '```&#10;$ passwd -w&#10;```&#10;Change the Warn field of the /etc/shadow file for the user&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 95'
+
+<!-- `useradd` options -->
+[useradd -&#98;]:               #useradd                       '```&#10;$ useradd -b&#10;$ useradd --base-dir&#10;```&#10;Default base directory for the system if `$HOME_DIR` is not specified (sets `$HOME` variable in /etc/default/useradd)'
+[useradd -&#99;]:               #useradd                       '```&#10;$ useradd -c $COMMENT&#10;$ useradd --comment $COMMENT&#10;```&#10;Set comment or GECOS field for user&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 94'
+[useradd -&#100;]:              #useradd                       '```&#10;$ useradd -d $HOMEDIR&#10;$ useradd --home-dir $HOMEDIR&#10;```&#10;Specify home directory for user&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 94'
+[useradd -&#68;]:               #useradd                       '```&#10;$ useradd -D&#10;$ useradd --defaults&#10;```&#10;List (and optionally change) system default values&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 323'
+[useradd -&#101;]:              #useradd                       '```&#10;$ useradd -e&#10;$ useradd --expire-date&#10;```&#10;Set account expiration date&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 94'
+[useradd -&#102;]:              #useradd                       '```&#10;$ useradd -f&#10;```&#10;Set account inactive value&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 94'
+[useradd -&#103;]:              #useradd                       '```&#10;$ useradd -g&#10;```&#10;Specify primary group&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 94'
+[useradd -&#71;]:               #useradd                       '```&#10;$ useradd -G&#10;```&#10;Specify secondary groups&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 94'
+[useradd -&#107;]:              #useradd                       '```&#10;$ useradd -k&#10;$ useradd --skel&#10;```&#10;Specify skel directory&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 94'
+[useradd -&#109;]:              #useradd                       '```&#10;$ useradd -m&#10;$ useradd --create-home&#10;```&#10;Create and populate the home directory&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 323'
+[useradd -&#114;]:              #useradd                       '```&#10;$ useradd -r&#10;$ useradd --system&#10;```&#10;Create a system account'
+[useradd -&#115;]:              #useradd                       '```&#10;$ useradd -s $SHELL&#10;$ useradd --shell $SHELL&#10;```&#10;Specify login shell&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 94'
+[useradd -&#117;]:              #useradd                       '```&#10;$ useradd -u&#10;$ useradd --uid&#10;```&#10;Specify UID&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 94'
+
+<!-- `userdel` options -->
+[userdel -&#114;]:              #userdel                       '```&#10;$ userdel -r&#10;```&#10;Delete `$USER` as well as home directory&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 324'
+
+<!-- `usermod` options -->
+[usermod -&#76;]:               #usermod                       '```&#10;$ usermod -L&#10;```&#10;Lock password, disabling account&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 324'
+[usermod -&#85;]:               #usermod                       '```&#10;$ usermod -U&#10;```&#10;Unlock password, enabling account&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 324'
+[usermod -&#99;]:               #usermod                       '```&#10;$ usermod -c $COMMENT&#10;```&#10;Set or change the value of the Comment field &#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 413'
+[usermod -&#100;]:              #usermod                       '```&#10;$ usermod -d $HOMEDIR&#10;```&#10;Set or change home directory of user&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 413'
+[usermod -&#103;]:              #usermod                       '```&#10;$ usermod -g $GROUP&#10;```&#10;Set primary GID of the user&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 413'
+[usermod -&#71;]:               #usermod                       '```&#10;$ usermod -G $GROUPS&#10;$ usermod --groups $GROUPS&#10;```&#10;Set supplementary GIDS for a user to `$GROUPS` (comma-delimited)&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 413'
+[usermod -&#108;]:              #usermod                       '```&#10;$ usermod -l $NAME&#10;$ usermod --login $NAME&#10;```&#10;Change username to `$NAME`&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 413'
+[usermod -&#115;]:              #usermod                       '```&#10;$ usermod -s $SHELL&#10;```&#10;Change shell to `$SHELL`&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 413'
+[usermod -&#97;]:               #usermod                       '```&#10;$ usermod -a&#10;$ usermod --append&#10;```&#10;Add user to supplementary groups, only used with `-G`'
+[usermod -&#76;]:               #usermod                       '```&#10;$ usermod -L&#10;$ usermod --lock&#10;```&#10;Lock password, disabling account'
+[usermod -&#117;]:              #usermod                       '```&#10;$ usermod -u&#10;$ usermod --uid&#10;```&#10;Change UID'
+[usermod -&#85;]:               #usermod                       '```&#10;$ usermod -U&#10;$ usermod --unlock&#10;```&#10;Unlock account'
 
 # Linux system administration commands
 
+&nbsp;  | Commands
+---     | ---
+&nbsp;  | [`adduser`][adduser]  [`at`][at]  [`atq`][atq]  [`atrm`][atrm]  [`chage`][chage]  [`edquota`][edquota]  [`getent`][getent]  [`gpasswd`][gpasswd]  [`groupadd`][groupadd]  [`groupdel`][groupdel]  [`groupmod`][groupmod]  [`last`][last]  [`lastb`][lastb]  [`passwd`][passwd]  [`quota`][quota]  [`quotacheck`][quotacheck]  [`quotaoff`][quotaoff]  [`quotaon`][quotaon]  [`repquota`][repquota]  [`su`][su]  [`sudo`][sudo]  [`sudoedit`][sudoedit]  [`ulimit`][ulimit]  [`useradd`][useradd]  [`userdel`][userdel]  [`usermod`][usermod]  [`visudo`][visudo]  [`w`][w]  [`who`][who]  [`whoami`][whoami] 
+
 Commands | Options
 ---       | ---
-[`chage`][chage] | 
-[`edquota`][edquota] | 
-[`groupadd`][groupadd] | 
-[`groupdel`][groupdel] | 
-[`groupmod`][groupmod] | 
-[`id`][id] | 
-[`last`][last] | 
-[`lastb`][lastb] | 
-[`passwd`][passwd] | 
-[`quota`][quota] | 
-[`quotacheck`][quotacheck] | 
-[`repquota`][repquota] | 
-[`su`][su] | 
-[`sudo`][sudo] | 
-[`sudoedit`][sudoedit] | 
-[`ulimit`][ulimit] | 
-[`useradd`][useradd] | 
-[`userdel`][userdel] | 
-[`usermod`][usermod] | 
-[`visudo`][visudo] | 
-[`w`][w] | 
-[`who`][who] | 
-[`whoami`][whoami] | 
+[`chage`][chage] | <code>&nbsp;</code>   <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`d`][chage -&#100;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`l`][chage -&#108;] [`m`][chage -&#109;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code>  <br><code>&nbsp;</code>&nbsp;<code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`E`][chage -&#69;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`I`][chage -&#73;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`M`][chage -&#77;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`W`][chage -&#87;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 
+[`passwd`][passwd] | <code>&nbsp;</code>   <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`d`][passwd -&#100;] [`e`][passwd -&#101;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`i`][passwd -&#105;] <code>&nbsp;</code> <code>&nbsp;</code> [`l`][passwd -&#108;] [`m`][passwd -&#109;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`u`][passwd -&#117;] <code>&nbsp;</code> [`w`][passwd -&#119;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code>  <br><code>&nbsp;</code>&nbsp;<code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`M`][passwd -&#77;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 
+[`useradd`][useradd] | <code>&nbsp;</code>   <code>&nbsp;</code> [`b`][useradd -&#98;] [`c`][useradd -&#99;] [`d`][useradd -&#100;] [`e`][useradd -&#101;] [`f`][useradd -&#102;] [`g`][useradd -&#103;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`k`][useradd -&#107;] <code>&nbsp;</code> [`m`][useradd -&#109;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`r`][useradd -&#114;] [`s`][useradd -&#115;] <code>&nbsp;</code> [`u`][useradd -&#117;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code>  <br><code>&nbsp;</code>&nbsp;<code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`D`][useradd -&#68;] <code>&nbsp;</code> <code>&nbsp;</code> [`G`][useradd -&#71;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 
+[`userdel`][userdel] | [`r`][userdel -&#114;]
+[`usermod`][usermod] | <code>&nbsp;</code>   [`a`][usermod -&#97;] <code>&nbsp;</code> [`c`][usermod -&#99;] [`d`][usermod -&#100;] <code>&nbsp;</code> <code>&nbsp;</code> [`g`][usermod -&#103;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`l`][usermod -&#108;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`s`][usermod -&#115;] <code>&nbsp;</code> [`u`][usermod -&#117;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code>  <br><code>&nbsp;</code>&nbsp;<code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`G`][usermod -&#71;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`L`][usermod -&#76;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`U`][usermod -&#85;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 
 
-### `adduser`
-Create a new user (on Debian systems, preferred to `useradd`)
-```sh
-adduser 
-```
-### `chage`
-Change user password expiry information
-Remove expiration date from an account
-```sh
-chage -E -1 user
-```
-Set the date (or number of days since January 1, 1970) on which the user's account will no longer be accessible to {date} (YYYY-MM-DD)
-```sh
-chage -E $DAYS 
-chage --expiredate $DAYS
-```
-Set the maximum number of days during which a password is valid
-```sh
-chage -M $DAYS 
-chage --maxdays $DAYS
-```
-Set the minimum number of days between password changes
-```sh
-chage -m $DAYS
-chage --mindays $DAYS
-```
-Set the number of days of warning before a password change is required
-```sh
-chage -W days chage --warndays days
-```
-### `chcon`
-Change context for website directory
-```sh
-chcon -Rv --type=httpd_sys_content_t website
-```
 ### `chgrp`
 Change ownership of `$FILE` to `$USER` and `$GROUP`
 ```sh
@@ -403,39 +413,3 @@ Delete an existing user account as well as the user's home directory
 ```sh
 userdel -r  user
 ```
-### `usermod`
-
-Modify user account files
-
-Option  | POSIX option            | Effect
-:---    | :---                    | :---
-`-a`    | `--append`              | add user to supplementary group(s), only used with `-G`
-`-G`    | `--groups`              | specify a list of groups to which the user will be added
-`-l`    | `--login`               | change user's name or "login"
-`-L`    | `--lock`                | lock a user's password
-`-u`    | `--uid`                 | change UID
-`-U`    | `--unlock`              | unlock account
-
-Lock account of `user`
-```sh
-usermod -L $USER
-```
-Rename `$USER` `$NEW`
-```sh
-usermod -l $USER $NEW
-```
-Unlock account of `$USER`
-```sh
-usermod -U $USER
-```
-Add `$USER` to `$GROUP`
-```sh
-usermod $USER -a -G $GROUP
-```
-
-
-
-
-
-
-
