@@ -14,9 +14,12 @@
 [adprep]:                      #adprep                         '```&#10;C:\>adprep&#10;```&#10;Prepare Active Directory for Windows Server upgrades'
 [arp]:                         #arp                            '```&#10;C:\>arp&#10;```&#10;Display and modify the IP-to-MAC address translation tables used by ARP'
 [bcdedit]:                     #bcdedit                        '```&#10;C:\>bcdedit&#10;```&#10;Boot configuration data editor'
+[bootrec]:                     #bootrec                        '```&#10;C:\>bootrec&#10;```&#10;Windows Recovery Environment command that repairs a system partition'
 [cscript]:                     #cscript                        '```&#10;C:\>cscript&#10;```&#10;Starts a script so that it runs in a command-line environment'
 [diskpart]:                    #diskpart                       '```&#10;C:\>diskpart&#10;```&#10;Text-mode command interpreter used to convert disk types, create partitions and volumes, and configure RAID&#10;Stanek, William R. _Microsoft Windows Command-Line_.: 141'
+[ipconfig]:                    #ipconfig                       '```&#10;C:\>ipconfig&#10;```&#10;Display TCP/IP configuration'
 [msiexec]:                     #msiexec                        '```&#10;C:\>msiexec&#10;```&#10;Provides the means to install, modify, and perform operations on Windows Installer from the command line'
+[nbtstat]:                     #nbtstat                        '```&#10;C:\>nbtstat&#10;```&#10;Display status of NetBIOS'
 [ntdsutil]:                    #ntdsutil                       '```&#10;C:\>ntdsutil&#10;```&#10;Used to transfer FSMO roles between domain controllers'
 [sfc]:                         #sfc                            '```&#10;C:\>sfc&#10;C:\>sfc /scannow&#10;```&#10;Scan and verify protected system files&#10;Stanek, William R. _Microsoft Windows Command-Line_.: 373'
 [slmgr]:                       #slmgr                          '```&#10;C:\>slmgr&#10;```&#10;Windows software licensing management tool'
@@ -75,6 +78,15 @@
 [diskpart retain]:                #diskpart                      '```&#10;C:\> diskpart&#10;DISKPART> RETAIN&#10;```&#10;Prepare the selected simple volume to be used as the boot or system volume&#10;Stanek, William R. _Microsoft Windows Command-Line_.: 141'
 [diskpart select]:                #diskpart                      '```&#10;C:\> diskpart&#10;DISKPART> SELECT&#10;```&#10;Focus specified disk, partition, or volume&#10;Stanek, William R. _Microsoft Windows Command-Line_.: 141'
 
+<!-- `nbtstat` commands -->
+[nbtstat /&#97;]:               #nbtstat                       '```&#10;C:\>nbtstat /a&#10;```&#10;Display NetBIOS name table of `$HOST` (NetBIOS name)'
+[nbtstat /&#65;]:               #nbtstat                       '```&#10;C:\>nbtstat /A&#10;```&#10;Display NetBIOS name table of `$HOST` (IP address)'
+[nbtstat /&#110;]:              #nbtstat                       '```&#10;C:\>nbtstat /n&#10;```&#10;Display local NetBIOS name table on Windows device'
+[nbtstat /&#114;]:              #nbtstat                       '```&#10;C:\>nbtstat /r&#10;```&#10;Display NetBIOS resolution and registration statistics'
+[nbtstat /&#82;]:               #nbtstat                       '```&#10;C:\>nbtstat /R&#10;```&#10;Purge NetBIOS name table cache and reload the `LMHOSTS` file into memory'
+[nbtstat /&#83;]:               #nbtstat                       '```&#10;C:\>nbtstat /S&#10;```&#10;Display NetBIOS sessions table'
+[nbtstat /&#115;]:              #nbtstat                       '```&#10;C:\>nbtstat /s&#10;```&#10;Display NetBIOS sessions table, attempting to resolve remote IP addresses to hostnames'
+
 <!-- `route` commands -->
 [route print]:                    #route                         '```&#10;C:\>route print&#10;```&#10;Display routing table&#10;Lammle, Todd. _CompTIA Network+ Study Guide: Exam N10-005_. 2012.: 539'
 [route add]:                      #route                         '```&#10;C:\>route add&#10;```&#10;Add a route to the routing table&#10;Lammle, Todd. _CompTIA Network+ Study Guide: Exam N10-005_. 2012.: 539'
@@ -97,30 +109,42 @@
 [slmgr /rearm]:                   #slmgr                         '```&#10;C:\> slmgr /rearm&#10;```&#10;Reset activation timer to extend trial period. Each usage reduces the "rearm count" (ref. `/dlv`)'
 
 # Command Prompt
-&nbsp;  | Commands sorted alphabetically
----     | ---
-A       | [`adprep`][adprep] [`arp`][arp] 
-B       | [`bcdedit`][bcdedit] [`bootrec`](#bootrec)
-C       | [`cscript`][cscript] 
-D       | `dir`[<sup>pwsh</sup>][Get-ChildItem]  [`diskpart`][diskpart] 
-G       | `gpupdate`[<sup>pwsh</sup>][Invoke-GPUpdate]
-I       | [`ipconfig`](#ipconfig)
-N       | [`nbtstat`](#nbtstat) [`netsh`](#netsh) [`ntdsutil`][ntdsutil]
-R       | [`route`](#route)
-S       | [`sfc`][sfc] [`shutdown`](#shutdown) [`slmgr`][slmgr] [`systeminfo`](#systeminfo)
-T       | [`tracert`](#tracert) [`traceroute`](#tracert)
-W       | [`winrm`](#winrm) [`wmic`][wmic]
-Control Panel tools | [`access.cpl`][access.cpl] [`appwiz.cpl`][appwiz.cpl] &bull; [`desk.cpl`][desk.cpl] &bull; [`findfast.cpl`][findfast.cpl] &bull; [`inetcpl.cpl`][inetcpl.cpl] [`intl.cpl`][intl.cpl] &bull; [`joy.cpl`][joy.cpl] &bull; [`main.cpl`][main.cpl] [`mlcfg32.cpl`][mlcfg32.cpl] [`mmsys.cpl`][mmsys.cpl] &bull; [`ncpa.cpl`][ncpa.cpl] &bull; [`sysdm.cpl`][sysdm.cpl] &bull; [`timedate.cpl`][timedate.cpl] &bull; [`wgpocpl.cpl`][wgpocpl.cpl] [<sup>Microsoft</sup>][https://support.microsoft.com/en-us/help/192806/how-to-run-control-panel-tools-by-typing-a-command]
+**A** [`adprep`][adprep] [`arp`][arp] 
+**B** [`bcdedit`][bcdedit] [`bootrec`][bootrec]
+**C** [`cscript`][cscript] 
+**D** `dir`[<sup>pwsh</sup>][Get-ChildItem]  [`diskpart`][diskpart] 
+**G** `gpupdate`[<sup>pwsh</sup>][Invoke-GPUpdate]
+**I** [`ipconfig`][ipconfig]
+**N** [`nbtstat`][nbtstat] [`netsh`](#netsh) [`ntdsutil`][ntdsutil]
+**R** [`route`](#route)
+**S** [`sfc`][sfc] [`shutdown`](#shutdown) [`slmgr`][slmgr] [`systeminfo`][systeminfo]
+**T** [`tracert`](#tracert) [`traceroute`](#tracert)
+**W** [`winrm`](#winrm) [`wmic`][wmic]
+
+#### Control Panel tools [<sup>Microsoft</sup>][https://support.microsoft.com/en-us/help/192806/how-to-run-control-panel-tools-by-typing-a-command]
+
+**A** [`access.cpl`][access.cpl] [`appwiz.cpl`][appwiz.cpl]
+**D** [`desk.cpl`][desk.cpl] 
+**F** [`findfast.cpl`][findfast.cpl] 
+**I** [`inetcpl.cpl`][inetcpl.cpl] [`intl.cpl`][intl.cpl] 
+**J** [`joy.cpl`][joy.cpl]
+**M** [`main.cpl`][main.cpl] [`mlcfg32.cpl`][mlcfg32.cpl] [`mmsys.cpl`][mmsys.cpl]
+**N** [`ncpa.cpl`][ncpa.cpl]
+**S** [`sysdm.cpl`][sysdm.cpl]
+**T** [`timedate.cpl`][timedate.cpl]
+**W** [`wgpocpl.cpl`][wgpocpl.cpl]
+
+Commands  | Options
+---       | ---
+[`arp`][arp]  | [`a`][arp /&#97;] [`d`][arp /&#100;] [`s`][arp /&#115;]
+[`diskpart`][diskpart] | **A** [`ACTIVE`][diskpart active] [`ADD`][diskpart add] [`ASSIGN`][diskpart assign] [`AUTOMOUNT`][diskpart automount] **B** [`BREAK`][diskpart break] **C** [`CLEAN`][diskpart clean] [`CONVERT`][diskpart convert] [`CREATE`][diskpart create]<br>**D** [`DELETE`][diskpart delete] [`DETAIL`][diskpart detail] **E** [`EXIT`][diskpart exit] [`EXTEND`][diskpart extend]  **G** [`GPT`][diskpart gpt] **H** [`HELP`][diskpart help]  **I** [`IMPORT`][diskpart import] [`INACTIVE`][diskpart inactive] **L** [`LIST`][diskpart list]<br>**O** [`ONLINE`][diskpart online] **R** [`REM`][diskpart rem] [`REMOVE`][diskpart remove] [`REPAIR`][diskpart repair] [`RESCAN`][diskpart rescan] [`RETAIN`][diskpart retain] **S** [`SELECT`][diskpart select]
+[`ipconfig`][ipconfig] | `all` `flushdns` `renew`
+[`nbtstat`][nbtstat] | <code>&nbsp;</code>   [`a`][nbtstat /&#97;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`n`][nbtstat /&#110;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`r`][nbtstat /&#114;] [`s`][nbtstat /&#115;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code>  <br><code>&nbsp;</code>&nbsp;[`A`][nbtstat /&#65;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`R`][nbtstat /&#82;] [`S`][nbtstat /&#83;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 
+[`sfc`][sfc]  | [`scannow`][sfc /scannow]
+[`slmgr`][slmgr]  | **A** [`ato`][slmgr /ato] **D** [`dli`][slmgr /dli] [`dlv`][slmgr /dlv] **I** [`ipk`][slmgr /ipk] **R** [`rearm`][slmgr /rearm] **U** [`upk`][slmgr /upk] **X** [`xpr`][slmgr /xpr] [<sup>Howtogeek</sup>][https://www.howtogeek.com/245445/how-to-use-slmgr-to-change-remove-or-extend-your-windows-license/] [<sup>Microsoft Docs</sup>][https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn502540(v%3Dws.11)]
 
 ### `adprep`
 Prepare Active Directory for Windows Server upgrades. Must be run on the Infrastructure Master role owner with the flag `/domainprep`. [<sup>Desmond 2009: 29</sup>][Desmond2009]
-### `arp`
-Used to view and work with the IP adress to MAC address resolution cache.
-
-&nbsp;  | Options
----     | ---
-&nbsp;  | [`a`][arp /&#97;] [`d`][arp /&#100;] [`s`][arp /&#115;]
-
 ### `bcdedit`
 Change Windows bootloader to Linux, while dual booting
 ```cmd
@@ -146,43 +170,11 @@ Use when BCD file has been corrupted
 ```cmd
 bootrec /rebuildbcd
 ```
-### `diskpart`
-\#      | Commands sorted alphabetically
----     | ---
-A       | [`ACTIVE`][diskpart active] [`ADD`][diskpart add] [`ASSIGN`][diskpart assign] [`AUTOMOUNT`][diskpart automount] 
-B       | [`BREAK`][diskpart break]
-C       | [`CLEAN`][diskpart clean] [`CONVERT`][diskpart convert] [`CREATE`][diskpart create]
-D       | [`DELETE`][diskpart delete] [`DETAIL`][diskpart detail]
-E       | [`EXIT`][diskpart exit] [`EXTEND`][diskpart extend] 
-G       | [`GPT`][diskpart gpt]
-H       | [`HELP`][diskpart help] 
-I       | [`IMPORT`][diskpart import] [`INACTIVE`][diskpart inactive]
-L       | [`LIST`][diskpart list]
-O       | [`ONLINE`][diskpart online]
-R       | [`REM`][diskpart rem] [`REMOVE`][diskpart remove] [`REPAIR`][diskpart repair] [`RESCAN`][diskpart rescan] [`RETAIN`][diskpart retain]
-S       | [`SELECT`][diskpart select]
-
-### `ipconfig`
-Option      | Effect
-:---        | :---
-`/all`
-`/flushdns`
-`/renew`
 ### `msiexec`
 Option      | Effect [Microsoft Docs][https://docs.microsoft.com/en-us/windows/win32/msi/command-line-options]
 ---         | ---
 `/i`        | Install or configure a product
 `/q` `/qn`  | Set user interface level to "no UI"
-### `nbtstat`
-Option      | Effect [<sup>Lammle: 540-546</sup>][Lammle]
-:---        | :---
-`-a $HOST`  | display NetBIOS name table of <code>$HOST</code> (NetBIOS name)
-`-A $HOST`  | display NetBIOS name table of <code>$HOST</code> (IP address)
-`-n`        | display local NetBIOS name table on Windows device
-`-r`        | display NetBIOS resolution and registration statistics
-`-R`        | purge NetBIOS name table cache and reload the LMHOSTS file into memory
-`-S`        | display NetBIOS sessions table
-`-s`        | display NetBIOS sessions table, attempting to resolve remote IP addresses to hostnames
 ### `netsh`
 Configure DNS to be dynamically assigned
 ```cmd
@@ -220,24 +212,15 @@ Basic syntax:
 ```sh
 route add 192.168.2.1 mask (255.255.255.0) 192.168.2.4
 ```
-### `sfc`
-[^](#)  | Options
----     | ---
-&nbsp;  | [`scannow`][sfc /scannow]
+
 ### `shutdown`
 Immediate restart [<sup>Practice Lab</sup>][pl:Sec+]
 ```cmd
 shutdown /r /t 0
 ```
-### `slmgr`
-[^](#)  | Options [<sup>Howtogeek</sup>][https://www.howtogeek.com/245445/how-to-use-slmgr-to-change-remove-or-extend-your-windows-license/] [<sup>Microsoft Docs</sup>][https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn502540(v%3Dws.11)]
----     | ---
-&nbsp;  | [`ato`][slmgr /ato] [`dli`][slmgr /dli] [`dlv`][slmgr /dlv]  [`ipk`][slmgr /ipk]  [`rearm`][slmgr /rearm] [`upk`][slmgr /upk] [`xpr`][slmgr /xpr]
 
-### `systeminfo`
-Shows system information about the machine, including installed hotfixes and patches
 ### `tracert`
-On Windows, this command is aliased to `traceroute` which is the Linux command. [Lammle p.112][Lammle]
+On Windows, this command is aliased to `traceroute` which is the Linux command. [<sup>Lammle: 112<sup>][Lammle]
 
 Option  | Effect
 :---    | :---
@@ -259,4 +242,12 @@ wmic path softwarelicensingservice get OA3xOriginalProductKey
 Recover serial number of a Lenovo laptop [<sup>Lenovo</sup>][https://pcsupport.lenovo.com/us/en/solutions/find-product-name]
 ```cmd
 wmic bios get serialnumber
+```
+Display BIOS version
+```cmd
+wmic bios get biosversion
+```
+Display information about installed RAM
+```cmd
+wmic memorychip list full
 ```
