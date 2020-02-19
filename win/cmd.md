@@ -18,6 +18,7 @@
 [cscript]:                     #cscript                        '```&#10;C:\>cscript&#10;```&#10;Starts a script so that it runs in a command-line environment'
 [diskpart]:                    #diskpart                       '```&#10;C:\>diskpart&#10;```&#10;Text-mode command interpreter used to convert disk types, create partitions and volumes, and configure RAID&#10;Stanek, William R. _Microsoft Windows Command-Line_.: 141'
 [ipconfig]:                    #ipconfig                       '```&#10;C:\>ipconfig&#10;```&#10;Display TCP/IP configuration'
+[logoff]:                      #logoff                         '```&#10;C:\>logoff&#10;```&#10;Log out'
 [msiexec]:                     #msiexec                        '```&#10;C:\>msiexec&#10;```&#10;Provides the means to install, modify, and perform operations on Windows Installer from the command line'
 [nbtstat]:                     #nbtstat                        '```&#10;C:\>nbtstat&#10;```&#10;Display status of NetBIOS'
 [ntdsutil]:                    #ntdsutil                       '```&#10;C:\>ntdsutil&#10;```&#10;Used to transfer FSMO roles between domain controllers'
@@ -115,6 +116,7 @@
 **D** `dir`[<sup>pwsh</sup>][Get-ChildItem]  [`diskpart`][diskpart] 
 **G** `gpupdate`[<sup>pwsh</sup>][Invoke-GPUpdate]
 **I** [`ipconfig`][ipconfig]
+**L** [`logoff`][logoff]
 **N** [`nbtstat`][nbtstat] [`netsh`](#netsh) [`ntdsutil`][ntdsutil]
 **R** [`route`](#route)
 **S** [`sfc`][sfc] [`shutdown`](#shutdown) [`slmgr`][slmgr] [`systeminfo`][systeminfo]

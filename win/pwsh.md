@@ -198,6 +198,7 @@
 [Manipulating files](#file-manipulation) &bull;
 [Text-to-speech](#text-to-speech) &bull;
 [New domain controller](#new-domain-controller) &bull;
+[Remove Registry keys](#registry)
 [Set new Registry keys](#registry) &bull;
 
 #### Cmdlet verbs
@@ -920,6 +921,10 @@ Remove-ADOrganizationalUnit -Identity "OU=GNV, DC=officeprodemoco, DC=onmicrosof
 Rename computer
 ### `Restart-Computer`
 Restart computer
+### `Remove-Item`
+[Remove items from Registry key](#registry)
+
+
 ### `Remove-Partition`
 Remove a partition [<sup>Sum Tips</sup>][https://sumtips.com/tips-n-tricks/manage-disk-partitions-with-windows-powershell/]
 ```powershell
@@ -1067,6 +1072,10 @@ Used to erect a **push architecture** in [DSC](dsc.md). [<sup>Zacker: 27</sup>][
 Option  | Description
 ---     | ---
 `-Path`
+### `Set-Service`
+```powershell
+Set-Service WtcOtg -StartupType Disabled
+```
 ### `Start-Service`
 Start the `WinRM` service
 ```powershell
@@ -1235,6 +1244,10 @@ Fix Windows Search bar [<sup>MS Docs</sup>][https://docs.microsoft.com/en-us/pow
 New-Item -Path HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Search\BingSearchEnabled
 Set-Item $$ 0
 Set-ItemProperty -Path HKCU:\Software\Microsoft\Windows\CurrentVersion\Search -Name CortanaConsent -Value 0
+```
+Remove Microsoft Office identities 
+```powershell
+Remove-Item HKCU:\Software\Microsoft\Office\16.0\Common\Identity\Identities\*
 ```
 #### New domain controller
 [<sup>Jones</sup>][Jones]
