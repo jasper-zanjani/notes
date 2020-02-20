@@ -155,8 +155,7 @@
 [$SHELLOPTS]:                  #variables                               '```&#10;$ echo $SHELLOPTS&#10;```&#10;List of options bash is supplied on startup to control its behavior'
 [$SHLVL]:                      #variables                               '```&#10;$ echo $SHLVL&#10;```&#10;Number of shell levels the current shell is running on top of'
 [$TMOUT]:                      #variables                               '```&#10;$ echo $TMOUT $N&#10;```&#10;Exit the shell if no command is typed after n seconds; also affects the read command and select loop'
-[$TMPDIR]:                     #variables                               '```&#10;$ echo $TMPDIR&#10;```&#10;Place temporary files created and used by the shell in directory'
-[$TMPDIR=directory]:           #variables                               '```&#10;$ echo $TMPDIR=directory&#10;```&#10;Place temporary files created and used by the shell in directory'
+[$TMPDIR]:                     #variables                               '```&#10;$ echo $TMPDIR $DIR&#10;```&#10;Place temporary files created and used by the shell in directory `$DIR`'
 [$UID]:                        #variables                               '```&#10;$ echo $UID&#10;```&#10;UID number'
 [$WAYLAND_DISPLAY]:            #variables                               '```&#10;$ echo $WAYLAND_DISPLAY&#10;```&#10;Determine if Wayland is running (example output: `wayland-0`)&#10;"The Wayland Display Server". Fedora Project Documentation.'
 [$XDG_SESSION_TYPE]:           #variables                               '```&#10;$ echo $XDG_SESSION_TYPE&#10;```&#10;Display compositor (e.g. wayland)'
@@ -212,9 +211,7 @@
 [`$SHLVL`][$SHLVL] 
 **T** 
 [`$TMOUT`][$TMOUT] 
-[`$TMOUT=n`][$TMOUT=n] 
 [`$TMPDIR`][$TMPDIR] 
-[`$TMPDIR=directory`][$TMPDIR=directory] 
 **U** 
 [`$UID`][$UID] 
 **W** 
