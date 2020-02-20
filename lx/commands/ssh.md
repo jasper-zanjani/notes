@@ -1,3 +1,11 @@
+[https://gist.github.com/zentralwerkstatt/9e6c83e757cdfe430d6710585b2275c7]: https://gist.github.com/zentralwerkstatt/9e6c83e757cdfe430d6710585b2275c7 "GitHub Gist - SSH into Linux Subsystem for Windows"]
+
+# Linux SSH commands
+
+&nbsp;  | Commands
+---     | ---
+&nbsp;  | [`ssh`][ssh] [`ssh-keygen`][ssh-keygen]
+
 ### `ssh`
 Display timer information
 ```sh
@@ -50,33 +58,30 @@ Tunnel into a server to access a website which your local machine may not; `-L` 
 ```sh
 ssh -N -L localport:host:remoteport remotehost
 ```
-
-### ssh-keygen
-Generate a MD5 fingerprint from public key at {file}
+### `ssh-keygen`
+Generate a MD5 fingerprint from public key at `$FILE`
 ```sh
-ssh-keygen -E md5-lf /path/to/file
+ssh-keygen -E md5-lf $FILE
 ```
 Generate a SHA512 fingerprint from public key at {file}
 ```sh
-ssh-keygen -E sha512 -lf /path/to/file
+ssh-keygen -E sha512 -lf $FILE
 ```
 Generate a fingerprint from the public key
 ```sh
-ssh-keygen -lf /path/to/file
+ssh-keygen -lf $FILE
 ```
-Generate host keys for WSL [^][https://gist.github.com/zentralwerkstatt/9e6c83e757cdfe430d6710585b2275c7 "GitHub Gist - SSH into Linux Subsystem for Windows"]
+Generate host keys for WSL [<sup>GitHub</sup>][https://gist.github.com/zentralwerkstatt/9e6c83e757cdfe430d6710585b2275c7]
 ```sh
 sudo ssh-keygen -t rsa -f /etc/ssh/ssh_host_rsa_key
 sudo ssh-keygen -t dsa -f /etc/ssh/ssh_host_dsa_key
 sudo ssh-keygen -t ecdsa -f /etc/ssh/ssh_host_ecdsa_key
 ```
-
-### ssh-keyscan
-Display the public key of {host}
+### `ssh-keyscan`
+Display the public key of `$HOST`
 ```sh
 ssh-keyscan host
 ```
-
 ### `sshfs`
 Mount a directory from a remote server on your local host via SSH
 [[23](sources.md)]

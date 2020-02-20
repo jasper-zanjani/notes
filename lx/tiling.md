@@ -68,18 +68,22 @@ type=internal/i3
 format=<label-state>
 ; vim:ft=dosini
 ```
-#### dwm
-One of the oldest and lightest tiling window managers. Because suckless wants the source code not to exceed 2,000 lines of code, a lot of functionality is incorporated by means of "patches", which modify the source code using diff files.\
-Workspaces are called **tags**. A window can be associated with more than one tag, placing it on more than one workspace. Each monitor has a separate pool of workspaces. [[1][1]]
-#### xmonad
-Tiling window manager made especially difficult to configure because the program written in Haskell, as the config must be. All monitors share the same pool of workspaces.\
-Unusually for tiling window managers, when using multiple monitors, switching to another workspace actually switches the position of that workspace with the previous one. That is, the workspace that had previously been on the active monitor is sent to the workspace being called.[[1][1]]]
-#### awesome
-Originating as a form of [dwm](#dwm), it offers creature comforts that make it the easiest to adjust to as a new user of tiling window managers. It is written in Lua, as its config must be. Like dwm, each monitor has an independent pool of workspaces. [[1][1]]]
-#### herbstluft
-Herbstluft has a single pool of workspaces that is shared across all monitors.[[1][1]]]
-#### bspwm
-"Binary Space Partitioning Window Manager" uses tree partitioning as the logic for organizing tiles, with the default being the "dwindle" pattern. Like [awesome](#awesome), bspwm uses a shared pool of workspaces, but they are individually assigned to monitors in the configuration file.\
-Notably, it uses two config files: **bspwmrc** which determines what programs to autoload but doesn't contain any key bindings; and **sxhkdrc** which uses a syntax similar to [ i3 ](#i3) or [ herbstluft ](#herbstluft).[[1][1]]
+### `dwm`
+One of the oldest and lightest tiling window managers. Because suckless wants the source code not to exceed 2,000 lines of code, a lot of functionality is incorporated by means of "patches", which modify the source code using diff files.
 
-[1]: https://youtu.be/Obzf9ppODJU "YouTube - \"A Comprehensive Guide to Tiling Window Managers\" (DistroTube)"
+Workspaces are called **tags**. A window can be associated with more than one tag, placing it on more than one workspace. Each monitor has a separate pool of workspaces. [<sup>YouTube</sup>][https://youtu.be/Obzf9ppODJU]
+### `xmonad`
+Tiling window manager made especially difficult to configure because the program written in Haskell, as the config must be. All monitors share the same pool of workspaces.
+
+Unusually for tiling window managers, when using multiple monitors, switching to another workspace actually switches the position of that workspace with the previous one. That is, the workspace that had previously been on the active monitor is sent to the workspace being called.[<sup>YouTube</sup>][https://youtu.be/Obzf9ppODJU]
+### `awesome`
+Originating as a form of [dwm](#dwm), it offers creature comforts that make it the easiest to adjust to as a new user of tiling window managers. It is written in Lua, as its config must be. Like dwm, each monitor has an independent pool of workspaces. [<sup>YouTube</sup>][https://youtu.be/Obzf9ppODJU]
+### `herbstluft`
+Herbstluft has a single pool of workspaces that is shared across all monitors.[<sup>YouTube</sup>][https://youtu.be/Obzf9ppODJU]
+### `bspwm`
+"Binary Space Partitioning Window Manager" uses tree partitioning as the logic for organizing tiles, with the default being the "dwindle" pattern. Like [awesome](#awesome), bspwm uses a shared pool of workspaces, but they are individually assigned to monitors in the configuration file.
+
+Notably, it uses two config files: **bspwmrc** which determines what programs to autoload but doesn't contain any key bindings; and **sxhkdrc** which uses a syntax similar to [ i3 ](#i3) or [ herbstluft ](#herbstluft).
+[<sup>YouTube</sup>][https://youtu.be/Obzf9ppODJU]
+
+[https://youtu.be/Obzf9ppODJU]: https://youtu.be/Obzf9ppODJU "YouTube - \"A Comprehensive Guide to Tiling Window Managers\" (DistroTube)"

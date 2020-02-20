@@ -26,19 +26,19 @@ __newsboat__  | config file ($HOME/.newsboat/config, then $HOME/.config/newsboat
 __neofetch__  | `--config` option
 
 ## Simulating a tiling window manager in KDE
-  1. Run Command > Run Command (Meta+R)
-  2. KDE Daemon > Launch Konsole (Meta+Return)
-  3. Desktop navigation keyboard shortcuts: KWin >
-    - Switch to Desktop (Meta+Fkey)
-    - Switch to Previous/Next Desktop (Meta + PgUp/PgDown)
-    - Switch to Window Above/Below/to the Left/Right (Meta+ K/J/H/L)
-    - Window to Desktop (Meta+Shift+Fkey)
-    - Window to Previous/Next Desktop (Meta+Shift_PgUp/PgDown)
-  4. Panel screen edge -> top
-  5. Pager settings > General: Display only Desktop name
-  6. Configure Desktops
-    - Change names of desktops to Font Awesome icons
-    - Check "Show on-screen display when switching"
+1. Run Command > Run Command (Meta+R)
+2. KDE Daemon > Launch Konsole (Meta+Return)
+3. Desktop navigation keyboard shortcuts: KWin >
+  - Switch to Desktop (Meta+Fkey)
+  - Switch to Previous/Next Desktop (Meta + PgUp/PgDown)
+  - Switch to Window Above/Below/to the Left/Right (Meta+ K/J/H/L)
+  - Window to Desktop (Meta+Shift+Fkey)
+  - Window to Previous/Next Desktop (Meta+Shift_PgUp/PgDown)
+4. Panel screen edge -> top
+5. Pager settings > General: Display only Desktop name
+6. Configure Desktops
+  - Change names of desktops to Font Awesome icons
+  - Check "Show on-screen display when switching"
 
 ## Display managers
 Basically display managers are the login screens, while the GUI manipulated during normal use represents the desktop environment (i.e. GNOME, KDE, XFCE, etc).
@@ -54,6 +54,6 @@ Command   |  Effect
 
 ## Konsole configuration
 Color configuration is stored in two types of files 
-  1. `.profile` files $HOME/.local/share/konsole
-  2. `.colorscheme` files in /usr/share/konsole/ and in $HOME/.local/share/konsole/ (where they are moved when you adjust settings
+1. `.profile` files $HOME/.local/share/konsole
+2. `.colorscheme` files in /usr/share/konsole/ and in $HOME/.local/share/konsole/ (where they are moved when you adjust settings
 Profiles are more immediately selectable within the GUI and may refer to any colorscheme using the following syntax: `ColorScheme=colorscheme` where {colorscheme} refers to the filename of a colorscheme file, including spaces.
