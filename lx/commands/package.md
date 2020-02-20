@@ -5,6 +5,12 @@
 **Debian**  | `apt` `apt-cache` `apt-key` `add-apt-repository` &bull; `dpkg` `dpkg-reconfigure`
 **Red Hat** | `dnf` &bull; `rpm` &bull; `yum`
 **Etc**     | `gem` &bull; `make` &bull; `pip` &bull; `snap`
+
+Command | Options
+---     | ---
+`make` | <code>&nbsp;</code> [`b`][make -b] <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code> <br>  <code>&nbsp;</code>  [`B`][make -B]  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code> 
+
+
 ### `apt`
 Upgrade distribution
 ```sh
@@ -124,6 +130,12 @@ Update `$PACKAGE`
 gem update package
 ```
 ### `make`
+
+
+
+[make -b]:                                            #make                                              '```&#10;$ make -b&#10;```&#10;Silently accepted, but ignored, for compatibility with other versions of `make`'
+[make -B]:                                            #make                                              '```&#10;$ make -B&#10;$ make --always-make&#10;```&#10;Treat all targets as out of date. All targets are remade, no matter what the actual status is of their prerequisites'
+
 A common formula when installing software from source is the following sequence of commands [^](https://thoughtbot.com/blog/the-magic-behind-configure-make-make-install "thoughtbot.com: \"The magic behind configure, make, make install\"")
 ```sh
 ./configure
