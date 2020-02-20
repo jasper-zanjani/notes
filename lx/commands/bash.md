@@ -151,7 +151,7 @@
 [$RANDOM]:                     #variables                        '```&#10;$ echo $RANDOM&#10;```&#10;Random integer between 0 and 32767'
 [$REPLY]:                      #variables                         '```&#10;$ echo $REPLY&#10;```&#10;Default reply used by select and read'
 [$SECONDS]:                    #variables                       '```&#10;$ echo $SECONDS&#10;```&#10;Number of seconds the script has been running'
-[$SHELL]:                      #variables                         '```&#10;$ echo $SHELL&#10;```&#10;Default shell ('/bin/bash')'
+[$SHELL]:                      #variables                         '```&#10;$ echo $SHELL&#10;```&#10;Default shell (e.g. /bin/bash)'
 [$SHELLOPTS]:                  #variables                     '```&#10;$ echo $SHELLOPTS&#10;```&#10;List of options bash is supplied on startup to control its behavior'
 [$SHLVL]:                      #variables                         '```&#10;$ echo $SHLVL&#10;```&#10;Number of shell levels the current shell is running on top of'
 [$TMOUT]:                      #variables                         '```&#10;$ echo $TMOUT&#10;```&#10;Log users out of shell automatically after a certain period of inactivity'
