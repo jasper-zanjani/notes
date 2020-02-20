@@ -1,16 +1,20 @@
+
+<!-- Sources -->
+[Eckert]: https://github.com/jasper-zanjani/notes/blob/master/sources/lglc.md 'Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012'
+
 [https://www.tecmint.com/rdesktop-connect-windows-desktop-from-linux/]: https://www.tecmint.com/rdesktop-connect-windows-desktop-from-linux/ "TecMint: \"rdesktop - A RDP Client to Connect Windows Desktop from Linux\""
 [https://youtu.be/ksAfmJfdub0]: https://youtu.be/ksAfmJfdub0 "YouTube: \"Easy Academic References on the Command Line\""
 [https://coderwall.com/p/kq9ghg/yakuake-scripting]: https://coderwall.com/p/kq9ghg/yakuake-scripting "coderwall.com: \"Yakuake scripting\""
 [https://opensource.com/article/19/8/introduction-bpftrace]: https://opensource.com/article/19/8/introduction-bpftrace "opensource.com: \"An introduction to bpftrace for Linux\""
 [21]: https://vitux.com/how-to-convert-documents-to-pdf-format-on-the-ubuntu-command-line/ "vitux.com: \"How to convert documents to PDF format on the Ubuntu Command Line\""
-[23]: ../sources/clkf.md "Cannon, Jason. _Command Line Kung Fu_."
+[CLKF]: ../sources/clkf.md "Cannon, Jason. _Command Line Kung Fu_."
 [29]: https://www.ostechnix.com/the-mktemp-command-tutorial-with-examples-for-beginners/ "The mktemp Command Tutorial With examples"
-[31]: https://www.ostechnix.com/how-to-view-image-metadata-on-linux/ "ostechnix.com: \"How to view image metadata\""
+[https://www.ostechnix.com/how-to-view-image-metadata-on-linux/]: https://www.ostechnix.com/how-to-view-image-metadata-on-linux/ "ostechnix.com: \"How to view image metadata\""
 [https://www.networkworld.com/article/3433865/how-to-rename-a-group-of-files-on-linux.html#tk.rss_linux]: https://www.networkworld.com/article/3433865/how-to-rename-a-group-of-files-on-linux.html#tk.rss_linux "networkworld.com: \"How to rename a group of files on Linux\""
 [36]: https://www.networkworld.com/article/3435279/unix-as-a-second-language-the-touch-command.html#tk.rss_linux "networkworld.com: \"Unix as a Second Language: The touch command\""
 [39]: https://www.howtoforge.com/how-to-install-and-use-sosreport-on-ubuntu-1804/ "howtoforge.com: \"How to install and use sosreport on Ubuntu\""
-[40]: https://vitux.com/how-to-install-and-configure-samba-on-ubuntu/ "vitux.com: \"How to Install and Configure Samba on Ubuntu\""
-[41]: https://www.tecmint.com/install-samba-on-rhel-8-for-file-sharing-on-windows/ "tecmint.com: \"Install Samba4 on RHEL 8 for File Sharing on Windows\""
+[https://vitux.com/how-to-install-and-configure-samba-on-ubuntu/]: https://vitux.com/how-to-install-and-configure-samba-on-ubuntu/ "vitux.com: \"How to Install and Configure Samba on Ubuntu\""
+[https://www.tecmint.com/install-samba-on-rhel-8-for-file-sharing-on-windows/]: https://www.tecmint.com/install-samba-on-rhel-8-for-file-sharing-on-windows/ "tecmint.com: \"Install Samba4 on RHEL 8 for File Sharing on Windows\""
 [42]: https://www.2daygeek.com/check-find-recently-modified-files-folders-linux/ "2daygeek: \"How to find recently modified files/folders in Linux\""
 [46]: https://www.tecmint.com/linux-tree-command-examples/ "tecmint.com: \"Linux tree command usage examples for beginners\""
 [https://devconnected.com/user-administration-complete-guide-on-linux/#Setting_an_account_expiration_date_easily]: https://devconnected.com/user-administration-complete-guide-on-linux/#Setting_an_account_expiration_date_easily "devconnected.com: \"User administration complete guide on Linux\""
@@ -20,6 +24,10 @@
 [https://computingforgeeks.com/connect-to-bluetooth-device-from-linux-terminal/]: https://computingforgeeks.com/connect-to-bluetooth-device-from-linux-terminal/ "Computing for Geeks: \"How to connect to Bluetooth device from Linux terminal\""
 [http://www.linux-magazine.com/Issues/2017/197/Command-Line-bluetoothctl#article_i1]: http://www.linux-magazine.com/Issues/2017/197/Command-Line-bluetoothctl#article_i1 "Linux Magazine: \"Blue Control\""
 
+
+
+
+<!-- Configuration files -->
 [/etc/samba/smb.conf]:                               #                                                              "Samba configuration file"
 
 <!-- Ansible -->
@@ -121,18 +129,18 @@
 [while]:                                             bash.md#while                                      '```&#10;$ while&#10;```&#10;While `$CONDITION` is met, do `$CMDS`.&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 132'
 
 <!-- Build tools -->
-[aclocal]:                                           build.md#aclocal                                               '```&#10;aclocal&#10;```&#10;Place m4 macro definitions needed by `autoconf` into a single file. `aclocal` first scans for macro definitions in m4 files in its default directory (/usr/share/aclocal) and in the file acinclude.m4, then in the configure.ac file. IT generates an aclocal.m4 file that contains definitions of all m4 macros required by `autoconf`.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 16'
-[as]:                                                build.md#as                                                    '```&#10;as&#10;```&#10;Generate an object file from each specified assembly language source file. Primarily intended to assemble the output of the GNU C compiler `gcc` for use by the linker `ld`.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 18'
-[autoconf]:                                          build.md#autoconf                                              '```&#10;autoconf&#10;```&#10;Generate a configuration script from m4 macros defined in a template file, if given, or in a configure.ac or configure.in file in the CWD. The generated script is almost invariably called "configure".&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 21'
-[autoheader]:                                        build.md#autoheader                                            '```&#10;autoheader&#10;```&#10;Generate a template file of C `#define` statements from m4 macros defined in a template file, if specified, or in configure.ac or configure.in in the CWD. The generated template file is almost invariably called config.h.in or config.hin&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 22'
-[automake]:                                          build.md#automake                                              '```&#10;automake&#10;```&#10;Create GNU standards-compliant Makefile.in files from Makefile.am template files&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 23'
-[autoreconf]:                                        build.md#autoreconf                                            '```&#10;autoreconf&#10;```&#10;Update configure scripts by running `autoconf`, `autoheader`, `aclocal`, `automake`, and `libtoolize` as needed&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 21'
-[autoscan]:                                          build.md#autoscan                                              '```&#10;autoscan&#10;```&#10;Create or maintain a preliminary configure.ac file named configure.scan based on source files in specified directory or CWD.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 21'
-[autoupdate]:                                        build.md#autoupdate                                            '```&#10;autoupdate&#10;```&#10;Update the configure template file or configure.ac if none is specified&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 21'
-[bison]:                                             #bison                                                         '```&#10;$ bison&#10;```&#10;Convert specified "file.y" containing a context-free grammar into tables for subsequent parsing while sending output to a new file named "file.c". Largely compatible with `yacc`, from which it derives its name.&#10;Originated as an adaptation of Bob Corbett\'s reimplementation of yacc which was distributed under the Berkeley license. Now maintained as a project of the FSF under a GPL license.'
+[aclocal]:                                           build.md#aclocal                                   '```&#10;aclocal&#10;```&#10;Place m4 macro definitions needed by `autoconf` into a single file. `aclocal` first scans for macro definitions in m4 files in its default directory (/usr/share/aclocal) and in the file acinclude.m4, then in the configure.ac file. IT generates an aclocal.m4 file that contains definitions of all m4 macros required by `autoconf`.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 16'
+[as]:                                                build.md#as                                        '```&#10;as&#10;```&#10;Generate an object file from each specified assembly language source file. Primarily intended to assemble the output of the GNU C compiler `gcc` for use by the linker `ld`.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 18'
+[autoconf]:                                          build.md#autoconf                                  '```&#10;autoconf&#10;```&#10;Generate a configuration script from m4 macros defined in a template file, if given, or in a configure.ac or configure.in file in the CWD. The generated script is almost invariably called "configure".&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 21'
+[autoheader]:                                        build.md#autoheader                                '```&#10;autoheader&#10;```&#10;Generate a template file of C `#define` statements from m4 macros defined in a template file, if specified, or in configure.ac or configure.in in the CWD. The generated template file is almost invariably called config.h.in or config.hin&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 22'
+[automake]:                                          build.md#automake                                  '```&#10;automake&#10;```&#10;Create GNU standards-compliant Makefile.in files from Makefile.am template files&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 23'
+[autoreconf]:                                        build.md#autoreconf                                '```&#10;autoreconf&#10;```&#10;Update configure scripts by running `autoconf`, `autoheader`, `aclocal`, `automake`, and `libtoolize` as needed&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 21'
+[autoscan]:                                          build.md#autoscan                                  '```&#10;autoscan&#10;```&#10;Create or maintain a preliminary configure.ac file named configure.scan based on source files in specified directory or CWD.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 21'
+[autoupdate]:                                        build.md#autoupdate                                '```&#10;autoupdate&#10;```&#10;Update the configure template file or configure.ac if none is specified&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 21'
+[bison]:                                             #bison                                             '```&#10;$ bison&#10;```&#10;Convert specified "file.y" containing a context-free grammar into tables for subsequent parsing while sending output to a new file named "file.c". Largely compatible with `yacc`, from which it derives its name.&#10;Originated as an adaptation of Bob Corbett\'s reimplementation of yacc which was distributed under the Berkeley license. Now maintained as a project of the FSF under a GPL license.'
 
 <!-- Concepts -->
-[CUPS]:                                              #                                                              'Common Unix Printing System (CUPS)&#10;Most common printing system used on Linux computers today&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 428'
+[CUPS]:                                              #                                                  'Common Unix Printing System (CUPS)&#10;Most common printing system used on Linux computers today&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 428'
 [LPD]:                                               #                                                  'Line Printer Daemon (LPD)&#10;Older Linux printing system&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 432'
 
 <!-- Network -->
@@ -668,19 +676,8 @@ Implement a simple CPU benchmark by writing 1 GB of zeroes and piping it to md5s
 ```sh
 dd if=/dev/zero bs=1M count=1024 | md5sum
 ```
-### `dhclient`
-Obtain and configure TCP/IP information from a server on the network [[LGLC](../sources/lglc.md): 34]
-Turn on the DHCP client and get a new address from the server
-```
-dhclient
-```
-Release the currently assigned IP address and get a new one
-```sh
-dhclient -r
-```
-
 ### `file`
-View image metadata [^][31]
+View image metadata [<sup>ostechnix.com</sup>][https://www.ostechnix.com/how-to-view-image-metadata-on-linux/]
 ```sh
 file image.png # => file type, dimensions, color depth
 ```
@@ -788,18 +785,7 @@ Display currently loaded modules. Output in three columns:
 1. Module name
 2. Module size (bytes)
 3. Processes, filesystems, or other modules using the module
-### `mdadm`
-Manage Linux Software RAID devices
 
-POSIX option  | Effect
----           | ---
-`--assemble`  | Start a stopped RAID array
-`--delay`     | Set the polling interval
-### `mhwd`
-While troubleshooting black screen on startup 
-```sh
-sudo mhwd -a pci nonfree 0300
-```
 ### `mkfs`
 Create an ext4 filesystem on {partition}
 ```sh
@@ -834,11 +820,11 @@ service NetworkManager stop                # sysvinit
 ### `newaliases`
 Refresh the mail system after a change to the [ /etc/aliases ](#configs) file; Must be run after making a change to email aliases on a server running [ `postfix` ](#postfix)
 ### `nice`
-Run {prog} at a nice value of (positive) 10
+Run `$CMD` at a nice value of (positive) 10
 ```sh
-nice -10 prog
+nice -10 $CMD
 nice -n 10
-nice prog
+nice $CMD
 ```
 ### `ntpdate`
 Synchronize system clock to that of an online Network Time Protocol server
@@ -1020,9 +1006,117 @@ Configuration file  | Description
 /etc/cmd.allow      | specify who is allowed to run a command
 /etc/cmd.deny       | specify who is disallowed from running a command
 
+## Archive commands
+
+Commands                        | Options
+---                             | ---
+[`bzip2`][bzip2]                | <code>&nbsp;</code>  <code>&nbsp;</code> <code>&nbsp;</code> [`c`][bzip2 -&#99;] [`d`][bzip2 -&#100;] <code>&nbsp;</code> [`f`][bzip2 -&#102;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`v`][bzip2 -&#118;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`z`][bzip2 -&#122;]
+[`cpio`][cpio][` -i`][cpio -&#105;]  | <code>&nbsp;</code>  <code>&nbsp;</code> [`b`][cpio -&#98;] [`c`][cpio -&#99;] [`d`][cpio -&#100;] <code>&nbsp;</code> [`f`][cpio -&#102;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`k`][cpio -&#107;] <code>&nbsp;</code> [`m`][cpio -&#109;] [`n`][cpio -&#110;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`r`][cpio -&#114;] [`s`][cpio -&#115;] [`t`][cpio -&#116;] [`u`][cpio -&#117;] [`v`][cpio -&#118;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code>  <br><code>&nbsp;</code>&nbsp;<code>&nbsp;</code> [`B`][cpio -&#66;] [`C`][cpio -&#67;] <code>&nbsp;</code> [`E`][cpio -&#69;] <code>&nbsp;</code> <code>&nbsp;</code> [`H`][cpio -&#72;] [`I`][cpio -&#73;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`M`][cpio -&#77;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`R`][cpio -&#82;] [`S`][cpio -&#83;] <code>&nbsp;</code> <code>&nbsp;</code> [`V`][cpio -&#86;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 
+[`cpio`][cpio][` -o`][cpio -&#111;]  | [`0`][cpio -&#48;]  [`a`][cpio -&#97;] <code>&nbsp;</code> [`c`][cpio -&#99;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`v`][cpio -&#118;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code>  <br><code>&nbsp;</code> [`A`][cpio -&#65;] [`B`][cpio -&#66;] [`C`][cpio -&#67;] <code>&nbsp;</code> <code>&nbsp;</code> [`F`][cpio -&#70;] <code>&nbsp;</code> [`H`][cpio -&#72;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`L`][cpio -&#76;] [`M`][cpio -&#77;] <code>&nbsp;</code> [`O`][cpio -&#79;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`V`][cpio -&#86;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 
+[`cpio`][cpio][` -p`][cpio -&#112;]  | [`0`][cpio -&#48;]  [`a`][cpio -&#97;] <code>&nbsp;</code> <code>&nbsp;</code> [`d`][cpio -&#100;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`l`][cpio -&#108;] [`m`][cpio -&#109;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`u`][cpio -&#117;] [`v`][cpio -&#118;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code>  <br><code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`L`][cpio -&#76;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`R`][cpio -&#82;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`V`][cpio -&#86;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 
+[`gzip`][gzip]                  | <code>&nbsp;</code>  <code>&nbsp;</code> <code>&nbsp;</code> [`c`][gzip -&#99;] [`d`][gzip -&#100;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`r`][gzip -&#114;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`v`][gzip -&#118;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code>
+[`tar`][tar]                    | <code>&nbsp;</code>  <code>&nbsp;</code> <code>&nbsp;</code> [`c`][tar -&#99;] [`d`][tar -&#100;] <code>&nbsp;</code> [`f`][tar -&#102;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`j`][tar -&#106;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`p`][tar -&#112;] <code>&nbsp;</code> [`r`][tar -&#114;] <code>&nbsp;</code> [`t`][tar -&#116;] [`u`][tar -&#117;] [`v`][tar -&#118;] <code>&nbsp;</code> [`x`][tar -&#120;] <code>&nbsp;</code> [`z`][tar -&#122;]  <br><code>&nbsp;</code> [`A`][tar -&#65;] <code>&nbsp;</code> [`C`][tar -&#67;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`J`][tar -&#74;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 
+[`xz`][xz]                      | <code>&nbsp;</code>  <code>&nbsp;</code> <code>&nbsp;</code> [`c`][xz -&#99;] [`d`][xz -&#100;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`l`][xz -&#108;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`v`][xz -&#118;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code>
+[`zip`][zip]                    | <code>&nbsp;</code>  <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`d`][zip -&#100;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`r`][zip -&#114;] <code>&nbsp;</code> <code>&nbsp;</code> [`u`][zip -&#117;] [`v`][zip -&#118;] <code>&nbsp;</code> [`x`][zip -&#120;] <code>&nbsp;</code> <code>&nbsp;</code>
+
+### `compress`
+Display contents of the compressed file to stdout (same as using `zcat`)
+```sh
+compress -c
+```
+Compress symbolic links
+```sh
+compress -f
+```
+Compress files recursively within a specified directory
+```sh
+compress -r
+```
+### `cpio`
+Create an archive that contains all the files in the current working directory [<sup>Haeder: 94</sup>][Haeder]
+```sh
+ls | cpio -ov > /tmp/archive.cpio
+```
+Extract all the files from the archive we just created
+```sh
+cpio -iv < /tmp/archive.cpio
+```
+### `dar`
+Create a differential (or incremental) backup of {file}, using full.bak as reference
+```sh
+dar -R /path/to/file -c diff1.bak -A full.bak
+```
+Create a full backup of {file}
+```sh
+dar -R /path/to/file -c full.bak
+```
+Restore full.bak
+```sh
+dar -x full.bak
+```
+### `gzip`
+Zip a single file in-place; each file is replaced by one with the extension `.gz` or `.z`, maintaining ownership modes, access and modification times
+```sh
+gzip -#
+gzip --fast
+gzip --best
+```
+Compress {symlink}
+```sh
+gzip -f symlink
+gzip --force symlink
+```
+Page through .gz files
+### `tar`
+Create {archive} from contents of {path}
+```sh
+tar -cf archive path
+tar --create --file archive path
+```
+Create bzip2-compressed {archive} from contents of {path}
+```sh
+tar -cfj archive path
+tar --create --file --bzip archive path
+```
+Create gzip-compressed {archive} from contents of {path}
+```sh
+tar -cfz archive path
+tar --create --file --gzip archive path
+```
+Add {file} to {archive}
+```sh
+tar -rf archive file
+tar --append --file archive file
+```
+List the contents of {archive}
+```sh
+tar -tf archive
+tar --list --file archive
+```
+Extract contents of {tarfile} in the current directory
+```sh
+tar -xf archive
+tar --extract --file archive
+```
+Extract only {file} from {archive}
+```sh
+tar -xf archive file tar--extract --file archive file
+```
+Extract contents of gzip-compressed {archive} to {path}
+```sh
+tar -xzf archive -C path
+```
+### `unzip`
+Extract compressed files in a zip archive
+### `zip`
+Archive files in InfoZIP format
+```sh
+zip zipfile *files
+```
+
 ## Tasks
 ### Samba
-Install and configure Samba server [^][40]
+Install and configure Samba server [<sup>vitux.com</sup>][https://vitux.com/how-to-install-and-configure-samba-on-ubuntu/]
 Install `samba`
 ```sh
 sudo apt install samba
@@ -1054,7 +1148,7 @@ Set up a Samba account for {user}
 ```sh
 sudo smbpasswd -a user
 ```
-Restart Samba service [^][40][^][41]
+Restart Samba service [<sup>vitux.com</sup>][https://vitux.com/how-to-install-and-configure-samba-on-ubuntu/] [<sup>tecmint.com</sup>][https://www.tecmint.com/install-samba-on-rhel-8-for-file-sharing-on-windows/]
 ```sh
 sudo systemctl restart smbd.service
 ```
@@ -1087,7 +1181,7 @@ fi
 ```sh
 if [ ! -z "$2" ] ; then ...; fi
 ```
-Placed in a while loop, if user responds with anything except "y" (the read command will read only the first letter) the loop will terminate [^][23]
+Placed in a while loop, if user responds with anything except "y" (the read command will read only the first letter) the loop will terminate [<sup>CLKF</sup>][CLKF]
 ```bash
 read -p "Backup another server? (y/n)" -n 1
 ["$BACKUP_AGAIN"="y"] || break
@@ -1113,3 +1207,4 @@ Count the number of occurrences of a string
 ```sh
 | uniq -c | sort -nr
 ```
+

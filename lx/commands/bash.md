@@ -15,7 +15,7 @@
 [disown]:                                            #disown                                     '```&#10;$ disown&#10;```&#10;&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 87'
 [do]:                                                #do                                         '```&#10;$ do&#10;```&#10;&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 88'
 [done]:                                              #done                                       '```&#10;$ done&#10;```&#10;&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 88'
-[echo]:                                              #echo                                              '```&#10;$ echo&#10;```&#10;&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 88'
+[echo]:                                              #echo                                       '```&#10;$ echo&#10;```&#10;&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 88'
 [enable]:                                            #enable                                     '```&#10;$ enable&#10;```&#10;&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 89'
 [esac]:                                              #esac                                       '```&#10;$ esac&#10;```&#10;&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 90'
 [eval]:                                              #eval                                       '```&#10;$ eval&#10;```&#10;&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 90'
@@ -69,29 +69,61 @@
 [wait]:                                              #wait                                       '```&#10;$ wait&#10;```&#10;&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 131'
 [while]:                                             #while                                      '```&#10;$ while&#10;```&#10;&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 132'
 
+
 <!-- `bind` options -->
-[bind -&#102;]:                                            #bind                                              '```&#10;$ bind -f $FILE&#10;```&#10;Read key bindings from `$FILE`&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 75'
-[bind -&#108;]:                                            #bind                                              '```&#10;$ bind -l&#10;```&#10;List the names of all the `readline` functions&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 75'
-[bind -&#109;]:                                            #bind                                              '```&#10;$ bind -m $MAP&#10;```&#10;Use `$MAP` as the keymap. Available keymaps include:&#10;  - `emacs`: same as `emacs-standard`&#10;  - `emacs-ctlx`&#10;  - `emacs-standard`&#10;  - `emacs-meta`&#10;  - `vi`: same as `vi-command`&#10;  - `vi-command`&#10;  - `vi-insert`&#10;  - `vi-move`&#10;&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 75'
-[bind -&#112;]:                                            #bind                                              '```&#10;$ bind -p&#10;```&#10;print the current `readline` bindings such that they can be reread from a .inputrc file&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 75'
-[bind -&#113;]:                                            #bind                                              '```&#10;$ bind -q $FUNCTION&#10;```&#10;query which keys invoke the `readline` function `$FUNCTION`&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 75'
-[bind -&#114;]:                                            #bind                                              '```&#10;$ bind -r $SEQUENCE&#10;```&#10;Remove the binding for key sequence `$SEQUENCE`&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 75'
-[bind -&#115;]:                                            #bind                                              '```&#10;$ bind -s&#10;```&#10;Print the current `readline` key sequence and macro bindings such that they can be reread from a .inputrc file&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 75'
-[bind -&#83;]:                                            #bind                                              '```&#10;$ bind -S&#10;```&#10;Print the current `readline` key sequence and macro bindings&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 75'
-[bind -&#117;]:                                            #bind                                              '```&#10;$ bind -u $FUNCTION&#10;```&#10;Unbind all keys that invoke the `readline` function `$FUNCTION`&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 76'
-[bind -&#118;]:                                            #bind                                              '```&#10;$ bind -v&#10;```&#10;Print the current `readline` variables such that they can be reread from a .inputrc file&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 76' 
-[bind -&#86;]:                                            #bind                                              '```&#10;$ bind -V&#10;```&#10;Print the current `readline` variables&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 76'
-[bind -&#120;]:                                            #bind                                              '```&#10;$ bind -x $SEQUENCE:$COMMAND&#10;```&#10;Execute shell command `$COMMAND` whenever `$SEQUENCE` is entered&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 76'
-[bind -&#88;]:                                            #bind                                              '```&#10;$ bind -X&#10;```&#10;Print the current `readline` key sequences bound with `-x` such that they can be reread from a .inputrc file&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 76'
+[bind -&#102;]:                 #bind                          '```&#10;$ bind -f $FILE&#10;```&#10;Read key bindings from `$FILE`&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 75'
+[bind -&#108;]:                 #bind                          '```&#10;$ bind -l&#10;```&#10;List the names of all the `readline` functions&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 75'
+[bind -&#109;]:                 #bind                          '```&#10;$ bind -m $MAP&#10;```&#10;Use `$MAP` as the keymap. Available keymaps include:&#10;  - `emacs`: same as `emacs-standard`&#10;  - `emacs-ctlx`&#10;  - `emacs-standard`&#10;  - `emacs-meta`&#10;  - `vi`: same as `vi-command`&#10;  - `vi-command`&#10;  - `vi-insert`&#10;  - `vi-move`&#10;&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 75'
+[bind -&#112;]:                 #bind                          '```&#10;$ bind -p&#10;```&#10;print the current `readline` bindings such that they can be reread from a .inputrc file&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 75'
+[bind -&#113;]:                 #bind                          '```&#10;$ bind -q $FUNCTION&#10;```&#10;query which keys invoke the `readline` function `$FUNCTION`&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 75'
+[bind -&#114;]:                 #bind                          '```&#10;$ bind -r $SEQUENCE&#10;```&#10;Remove the binding for key sequence `$SEQUENCE`&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 75'
+[bind -&#115;]:                 #bind                          '```&#10;$ bind -s&#10;```&#10;Print the current `readline` key sequence and macro bindings such that they can be reread from a .inputrc file&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 75'
+[bind -&#83;]:                  #bind                          '```&#10;$ bind -S&#10;```&#10;Print the current `readline` key sequence and macro bindings&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 75'
+[bind -&#117;]:                 #bind                          '```&#10;$ bind -u $FUNCTION&#10;```&#10;Unbind all keys that invoke the `readline` function `$FUNCTION`&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 76'
+[bind -&#118;]:                 #bind                          '```&#10;$ bind -v&#10;```&#10;Print the current `readline` variables such that they can be reread from a .inputrc file&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 76' 
+[bind -&#86;]:                  #bind                          '```&#10;$ bind -V&#10;```&#10;Print the current `readline` variables&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 76'
+[bind -&#120;]:                 #bind                          '```&#10;$ bind -x $SEQUENCE:$COMMAND&#10;```&#10;Execute shell command `$COMMAND` whenever `$SEQUENCE` is entered&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 76'
+[bind -&#88;]:                  #bind                          '```&#10;$ bind -X&#10;```&#10;Print the current `readline` key sequences bound with `-x` such that they can be reread from a .inputrc file&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 76'
+
+<!-- `test` options -->
+[test -&#97;]:                  #test                          '```&#10;$ test -a $EXPRESSION1 $EXPRESSION2&#10;```&#10;Test if both `$EXPRESSION1` and `$EXPRESSION2` are true'
+[test -&#98;]:                  #test                          '```&#10;$ test -b $FILE&#10;```&#10;Test if `$FILE` exists and is block special'
+[test -&#99;]:                  #test                          '```&#10;$ test -c $FILE&#10;```&#10;Test if `$FILE` exists and is character special'
+[test -&#100;]:                 #test                          '```&#10;$ test -d $FILE&#10;```&#10;Test if `$FILE` exists and is a directory'
+[test -&#101;]:                 #test                          '```&#10;$ test -e $FILE&#10;```&#10;Test if `$FILE` exists'
+[test -&#102;]:                 #test                          '```&#10;$ test -f $FILE&#10;```&#10;Test if `$FILE` exists and is a regular file'
+[test -&#103;]:                 #test                          '```&#10;$ test -g $FILE&#10;```&#10;Test if `$FILE` exists and is set-group-ID'
+[test -&#71;]:                  #test                          '```&#10;$ test -G $FILE&#10;```&#10;Test if `$FILE` exists and is owned by the effective group ID'
+[test -&#104;]:                 #test                          '```&#10;$ test -h $FILE&#10;```&#10;Test if `$FILE` exists and is a symbolic link'
+[test -&#107;]:                 #test                          '```&#10;$ test -k $FILE&#10;```&#10;Test if `$FILE` exists and has its sticky bit set'
+[test -&#76;]:                  #test                          '```&#10;$ test -L $FILE&#10;```&#10;Test if `$FILE` exists and is a symbolic link'
+[test -&#110;]:                 #test                          '```&#10;$ test -n $STRING&#10;```&#10;Test if the length of `$STRING` is nonzero'
+[test -&#111;]:                 #test                          '```&#10;$ test -o $EXPRESSION1 $EXPRESSION2&#10;```&#10;Test if either `$EXPRESSION1` or `$EXPRESSION2` are true'
+[test -&#79;]:                  #test                          '```&#10;$ test -O $FILE&#10;```&#10;Test if `$FILE` exists and is owned by the effective user ID'
+[test -&#112;]:                 #test                          '```&#10;$ test -p $FILE&#10;```&#10;Test if `$FILE` exists and is a named pipe'
+[test -&#114;]:                 #test                          '```&#10;$ test -r $FILE&#10;```&#10;Test if `$FILE` exists and read permission is granted'
+[test -&#115;]:                 #test                          '```&#10;$ test -s $FILE&#10;```&#10;Test if `$FILE` exists and has a size greater than zero'
+[test -&#83;]:                  #test                          '```&#10;$ test -S $FILE&#10;```&#10;Test if `$FILE` exists and is a socket'
+[test -&#117;]:                 #test                          '```&#10;$ test -u $FILE&#10;```&#10;Test if `$FILE` exists and its set-userID bit is set'
+[test -&#119;]:                 #test                          '```&#10;$ test -w $FILE&#10;```&#10;Test if `$FILE` exists and write permission is granted'
+[test -&#120;]:                 #test                          '```&#10;$ test -x $FILE&#10;```&#10;Test if `$FILE` exists and execute (or search) permission is granted'
+[test -&#122;]:                 #test                          '```&#10;$ test -z $STRING&#10;```&#10;Test if the length of `$STRING` is zero'
+[test -ef]:                     #test                          '```&#10;$ test -ef $FILE $OTHER&#10;```&#10;Test if `$FILE` and `$OTHER` have the same device and inode numbers'
+[test -eq]:                     #test                          '```&#10;$ test -eq $M $N&#10;```&#10;Test if `$M` is equal to `$N`'
+[test -ge]:                     #test                          '```&#10;$ test -ge $M $N&#10;```&#10;Test if `$M` is greater than or equal to `$N`'
+[test -le]:                     #test                          '```&#10;$ test -le $M $N&#10;```&#10;Test if `$M` is less than or equal to `$N`'
+[test -lt]:                     #test                          '```&#10;$ test -lt $M $N&#10;```&#10;Test if `$M` is less than `$N`'
+[test -ne]:                     #test                          '```&#10;$ test -ne $M $N&#10;```&#10;Test if `$M` is unequal to `$N`'
+[test -nt]:                     #test                          '```&#10;$ test -nt $FILE $OTHER&#10;```&#10;Test if `$FILE` is newer (modification date) than `$OTHER`'
+[test -ot]:                     #test                          '```&#10;$ test -ot $FILE $OTHER&#10;```&#10;Test if `$FILE` is older than `$OTHER`'
 
 # Bash builtin commands
-&nbsp;  | Commands
----     | ---
-&nbsp;  | [`alias`][alias] [`bind`][bind] [`break`][break] [`builtin`][builtin] [`caller`][caller] [`case`][case] [`cd`][cd] [`command`][command] [`compgen`][compgen] [`complete`][complete] [`compopt`][compopt] [`continue`][continue] [`declare`][declare] [`dirs`][dirs] [`disown`][disown] [`do`][do] [`done`][done] [`echo`][echo] [`enable`][enable] [`esac`][esac] [`eval`][eval] [`exec`][exec] [`exit`][exit] [`export`][export] [`false`][false] [`fc`][fc] [`fg`][fg] [`fi`][fi] [`for`][for] [`function`][function] [`getopts`][getopts] [`hash`][hash] [`help`][help] [`history`][history] [`if`][if] [`jobs`][jobs] [`kill`][kill] [`let`][let] [`local`][local] [`logout`][logout] [`mapfile`][mapfile] [`popd`][popd] [`printf`][printf] [`pushd`][pushd] [`pwd`][pwd] [`read`][read] [`readarray`][readarray] [`readonly`][readonly] [`return`][return] [`select`][select] [`set`][set] [`shift`][shift] [`shopt`][shopt] [`source`][source] [`suspend`][suspend] [`test`][test] [`time`][time] [`times`][times] [`trap`][trap] [`true`][true] [`type`][type] [`typeset`][typeset] [`ulimit`][ulimit] [`umask`][umask] [`unalias`][unalias] [`unset`][unset] [`until`][until] [`wait`][wait] [`while`][while]
+**A** [`alias`][alias] **B** [`bind`][bind] [`break`][break] [`builtin`][builtin] **C** [`caller`][caller] [`case`][case] [`cd`][cd] [`command`][command] [`compgen`][compgen] [`complete`][complete] [`compopt`][compopt] [`continue`][continue] **D** [`declare`][declare] [`dirs`][dirs] [`disown`][disown] [`do`][do] [`done`][done] **E** [`echo`][echo] [`enable`][enable] [`esac`][esac] [`eval`][eval] [`exec`][exec] [`exit`][exit] [`export`][export] **F** [`false`][false] [`fc`][fc] [`fg`][fg] [`fi`][fi] [`for`][for] [`function`][function] **G** [`getopts`][getopts] **H** [`hash`][hash] [`help`][help] [`history`][history] **I** [`if`][if] **J** [`jobs`][jobs] **K** [`kill`][kill] **L** [`let`][let] [`local`][local] [`logout`][logout] **M** [`mapfile`][mapfile] **P** [`popd`][popd] [`printf`][printf] [`pushd`][pushd] [`pwd`][pwd] **R** [`read`][read] [`readarray`][readarray] [`readonly`][readonly] [`return`][return] **S** [`select`][select] [`set`][set] [`shift`][shift] [`shopt`][shopt] [`source`][source] [`suspend`][suspend] **T** [`test`][test] [`time`][time] [`times`][times] [`trap`][trap] [`true`][true] [`type`][type] [`typeset`][typeset] **U** [`ulimit`][ulimit] [`umask`][umask] [`unalias`][unalias] [`unset`][unset] [`until`][until] **W** [`wait`][wait] [`while`][while]
 
-Commands  | Options
----       | ---
-[`bind`][bind] | <code>&nbsp;</code>  <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`f`][bind -&#102;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`l`][bind -&#108;] [`m`][bind -&#109;] <code>&nbsp;</code> <code>&nbsp;</code> [`p`][bind -&#112;] [`q`][bind -&#113;] [`r`][bind -&#114;] [`s`][bind -&#115;] <code>&nbsp;</code> [`u`][bind -&#117;] [`v`][bind -&#118;] <code>&nbsp;</code> [`x`][bind -&#120;] <code>&nbsp;</code> <code>&nbsp;</code>  <br><code>&nbsp;</code>&nbsp;<code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`S`][bind -&#83;] <code>&nbsp;</code> <code>&nbsp;</code> [`V`][bind -&#86;] <code>&nbsp;</code> [`X`][bind -&#88;] <code>&nbsp;</code> <code>&nbsp;</code> 
+Commands        | Options
+---             | ---
+[`bind`][bind]  | <code>&nbsp;</code>  <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`f`][bind -&#102;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`l`][bind -&#108;] [`m`][bind -&#109;] <code>&nbsp;</code> <code>&nbsp;</code> [`p`][bind -&#112;] [`q`][bind -&#113;] [`r`][bind -&#114;] [`s`][bind -&#115;] <code>&nbsp;</code> [`u`][bind -&#117;] [`v`][bind -&#118;] <code>&nbsp;</code> [`x`][bind -&#120;] <code>&nbsp;</code> <code>&nbsp;</code>  <br><code>&nbsp;</code>&nbsp;<code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`S`][bind -&#83;] <code>&nbsp;</code> <code>&nbsp;</code> [`V`][bind -&#86;] <code>&nbsp;</code> [`X`][bind -&#88;] <code>&nbsp;</code> <code>&nbsp;</code> 
+[`test`][test]  | <code>&nbsp;</code>   [`a`][test -&#97;] [`b`][test -&#98;] [`c`][test -&#99;] [`d`][test -&#100;] [`e`][test -&#101;] [`f`][test -&#102;] [`g`][test -&#103;] [`h`][test -&#104;] <code>&nbsp;</code> <code>&nbsp;</code> [`k`][test -&#107;] <code>&nbsp;</code> <code>&nbsp;</code> [`n`][test -&#110;] [`o`][test -&#111;] [`p`][test -&#112;] <code>&nbsp;</code> [`r`][test -&#114;] [`s`][test -&#115;] <code>&nbsp;</code> [`u`][test -&#117;] <code>&nbsp;</code> [`w`][test -&#119;] [`x`][test -&#120;] <code>&nbsp;</code> [`z`][test -&#122;]  <br><code>&nbsp;</code>&nbsp;<code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`G`][test -&#71;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`L`][test -&#76;] <code>&nbsp;</code> <code>&nbsp;</code> [`O`][test -&#79;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`S`][test -&#83;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <br>  [`ef`][test -ef] [`eq`][test -eq] [`ge`][test -ge] [`le`][test -le] [`lt`][test -lt] [`ne`][test -ne] [`nt`][test -nt] [`ot`][test -ot]
 
 
 ### `bash`
@@ -175,7 +207,6 @@ Here string
 ```sh
 wc -c <<< "$x"
 ```
-
 ### `let`
 Perform arithmetic as specified by one or more `expressions`
 ```sh
@@ -188,41 +219,6 @@ source file
 . file
 ```
 ### `test`
-Evaluate a condition, returning 0 if true and 1 if false
-
-Option  | Effect
-:---    | :---
-`-a`    | Test if both EXPRESSION1 and EXPRESSION2 are true
-`-b`    | Test if {file} exists and is block special
-`-c`    | Test if {file} exists and is character special
-`-d`    | Test if {file} exists and is a directory
-`-e`    | Test if {file} exists
-`-f`    | Test if {file} exists and is a regular file
-`-g`    | Test if {file} exists and is set-group-ID
-`-G`    | Test if {file} exists and is owned by the effective group ID
-`-h`    | Test if {file} exists and is a symbolic link
-`-k`    | Test if {file} exists and has its sticky bit set
-`-L`    | Test if {file} exists and is a symbolic link
-`-n`    | Test if the length of {string} is nonzero
-`-o`    | Test if either EXPRESSION1 or EXPRESSION2 are true
-`-O`    | Test if {file} exists and is owned by the effective user ID
-`-p`    | Test if {file} exists and is a named pipe
-`-r`    | Test if {file} exists and read permission is granted
-`-s`    | Test if {file} exists and has a size greater than zero
-`-S`    | Test if {file} exists and is a socket
-`-u`    | Test if {file} exists and its set-userID bit is set
-`-w`    | Test if {file} exists and write permission is granted
-`-x`    | Test if {file} exists and execute (or search) permission is granted
-`-z`    | Test if the length of {string} is zero
-`-ef`   | Test if {file} and {other} have the same device and inode numbers
-`-eq`   | Test if INT1 is equal to INT2
-`-ge`   | Test if INT1 is greater than or equal to INT2
-`-le`   | Test if INT1 is less than or equal to INT2
-`-lt`   | Test if INT1 is less than INT2
-`-ne`   | Test if INT1 is unequal to INT2
-`-nt`   | Test if {file} is newer (modification date) than {other}
-`-ot`   | Test if {file} is older than {other}
-
 Test if {VAR} has either the text "string1" or "string2" within it
 ```sh
 [[ $VAR =~ 'string1' | 'string2' ]]

@@ -18,6 +18,7 @@
 [https://docs.microsoft.com/en-us/powershell/scripting/samples/working-with-registry-entries?view=powershell-7]: https://docs.microsoft.com/en-us/powershell/scripting/samples/working-with-registry-entries?view=powershell-7 "Working with Registry Entries"
 [https://docs.microsoft.com/en-us/powershell/scripting/samples/working-with-registry-keys?view=powershell-7]: https://docs.microsoft.com/en-us/powershell/scripting/samples/working-with-registry-keys?view=powershell-7 "Working with Registry Keys"
 [https://adamtheautomator.com/powershell-random-password/]: https://adamtheautomator.com/powershell-random-password/ "How to Generate a Random Password with PowerShell"
+[https://devblogs.microsoft.com/scripting/powertip-use-powershell-to-get-computer-name/]: https://devblogs.microsoft.com/scripting/powertip-use-powershell-to-get-computer-name/
 
 [ADAC]:   ../sources/adac.md "Berkouwer, Sander. _Active Directory Administration Cookbook_."
 [WSAC]:   ../sources/wsac.md "Krause, Jordan. _Windows Server 2016 Administration Cookbook_."
@@ -135,6 +136,7 @@
 [Where-Object]:                                      #filters                                      "`Where-Object` (alias: `?`, `where`) &#10; Select objects from a collection based on their property values"
 [Write-Host]:                                        #write-host                                   "`Write-Host`"
 [Write-Output]:                                      #write-output                                 "`Write-Output` (alias: `echo`, `write`) &#10; Send the specified objects to the next command in the pipeline. If the command is the last command in the pipeline, the objects are displayed in the console."
+[Measure-Object]:              #measure-object                 '```&#10;PS C:\> Measure-Object&#10;```&#10;Calculates the numeric properties of objects, and the characters, words, and lines in string objects, such as files of text.&#10;"Measure-Object". Microsoft Powershell documentation.'
 
 <!-- Active Directory cmdlets -->
 [Add-ADPrincipalGroupMembership]:                    #add-adprincipalgroupmembership               "`Add-ADPrincipalGroupMembership` &#10; Add a member to one or more Active Directory groups"
@@ -202,26 +204,119 @@
 [Set new Registry keys](#registry) &bull;
 
 #### Cmdlet verbs
-**A** [`a`](# "`Add-`") [`ap`](# "`Approve-`&#10;Confirms or agrees to the status of a resource or process.") [`as`](# "`Assert-`&#10;Affirms the state of a resource.") 
-**B** [`ba`](# "`Backup-`&#10;Stores data by replicating it.") [`bd`](# "`Build-`&#10;Creates an artifact (usually a binary or document) out of some set of input files (usually source code or declarative documents)") [`bl`](# "`Block-`&#10;Restricts access to a resource. This verb is paired with Unblock.") 
-**C** [`cc`](# "`Connect-`&#10;Creates a link between a source and a destination. This verb is paired with Disconnect.") [`cf`](# "`Convertfrom-`&#10;Converts one primary type of input (the cmdlet noun indicates the input) to one or more supported output types.") [`ch`](# "`Checkpoint-`&#10;Creates a snapshot of the current state of the data or of its configuration.") [`cm`](# "`Compress-`&#10;Compacts the data of a resource. Pairs with Expand.") [`cn`](# "`Confirm-`&#10;Acknowledges, verifies, or validates the state of a resource or process.") [`cp`](# "`Complete-`&#10;Concludes an operation.&#10;---&#10;`Copy-`&#10;Copies a resource to another name or to another container. For example, the Copy-Item cmdlet that is used to access stored data copies an item from one location in the data store to another location.") [`cr`](# "`Compare-`&#10;Evaluates the data from one resource against the data from another resource.") [`cs`](# "`Close-`") [`ct`](# "`Convertto-`&#10;Converts from one or more types of input to a primary output type (the cmdlet noun indicates the output type).") [`cv`](# "`Convert-`&#10;Changes the data from one representation to another when the cmdlet supports bidirectional conversion or when the cmdlet supports conversion between multiple data types.") 
-**D** [`d`](# "`Disable-`&#10;Configures a resource to an unavailable or inactive state. For example, the Disable-PSBreakpoint cmdlet makes a breakpoint inactive. This verb is paired with Enable.") [`db`](# "`Debug-`&#10;Examines a resource to diagnose operational problems.") [`dc`](# "`Disconnect-`&#10;Breaks the link between a source and a destination. This verb is paired with Connect.") [`dm`](# "`Dismount-`&#10;Detaches a named entity from a location. This verb is paired with Mount.") [`dn`](# "`Deny-`&#10;Refuses, objects, blocks, or opposes the state of a resource or process.") [`dp`](# "`Deploy-`&#10;Sends an application, website, or solution to a remote target[s] in such a way that a consumer of that solution can access it after deployment is complete") 
-**E** [`e`](# "`Enable-`&#10;Configures a resource to an available or active state. For example, the Enable-PSBreakpoint cmdlet makes a breakpoint active. This verb is paired with Disable.") [`ed`](# "`Edit-`&#10;Modifies existing data by adding or removing content.") [`en`](# "`Expand-`&#10;Restores the data of a resource that has been compressed to its original state. This verb is paired with Compress.") [`ep`](# "`Export-`&#10;Encapsulates the primary input into a persistent data store, such as a file, or into an interchange format. This verb is paired with Import.") [`et`](# "`Enter-`") [`ex`](# "`Exit-`") 
-**F** [`f`](# "`Format-`") 
-**G** [`g`](# "`g`") [`gp`](# "`Group-`&#10;Arranges or associates one or more resources.") [`gr`](# "`Grant-`&#10;Allows access to a resource. This verb is paired with Revoke.") 
-**H** [`h`](# "`Hide-`") 
-**I** [`i`](# "`Invoke-`&#10;Performs an action, such as running a command or a method.") [`in`](# "`Initialize-`&#10;Prepares a resource for use, and sets it to a default state.") [`ip`](# "`Import-`&#10;Creates a resource from data that is stored in a persistent data store (such as a file) or in an interchange format. For example, the Import-CSV cmdlet imports data from a comma-separated value (CSV) file to objects that can be used by other cmdlets. This verb is paired with Export.") [`is`](# "`Install-`&#10;Places a resource in a location, and optionally initializes it. This verb is paired with Uninstall.") 
-**J** [`j`](# "`Join-`") 
-**L** [`l`](# "`Limit-`&#10;Applies constraints to a resource.") [`lk`](# "`Lock-`") 
-**M** [`m`](# "`Move`") [`mg`](# "`Merge-`&#10;Creates a single resource from multiple resources.") [`ms`](# "`Measure-`&#10;Identifies resources that are consumed by a specified operation, or retrieves statistics about a resource.") [`mt`](# "`Mount-`&#10;Attaches a named entity to a location. This verb is paired with Dismount.") 
-**N** [`n`](# "`New-`&#10;Creates a resource. (The `Set-` verb can also be used when creating a resource that includes data, such as the `Set-Variable` cmdlet.)") 
-**O** [`o`](# "`Out-`&#10;Sends data out of the environment. For example, the Out-Printer cmdlet sends data to a printer.") [`op`](# "`Open-`") [`om`](# "`Optimize-`") 
-**P** [`pb`](# "`Publish-`&#10;Makes a resource available to others. This verb is paired with Unpublish.") [`pi`](# "`Ping-`&#10;Use the Test verb.") [`pop`](# "`Pop-`")  [`pt`](# "`Protect-`&#10;Safeguards a resource from attack or loss. This verb is paired with Unprotect.") [`pu`](# "`Push-`") 
-**R** [`r`](# "`Remove-`") [`rc`](# "`Receive-`&#10;Accepts information sent from a source. This verb is paired with Send.") [`rd`](# "`Read-`&#10;Acquires information from a source. This verb is paired with Write.") [`re`](# "`Redo-`") [`rg`](# "`Register-`&#10;Creates an entry for a resource in a repository such as a database. This verb is paired with Unregister.") [`rk`](# "`Revoke-`&#10;Specifies an action that does not allow access to a resource. This verb is paired with Grant.") [`rn`](# "`Rename-`") [`rp`](# "`Repair-`&#10;Restores a resource to a usable condition") [`rq`](# "`Request-`&#10;Asks for a resource or asks for permissions.") [`rr`](# "`Restore-`&#10;Sets a resource to a predefined state, such as a state set by Checkpoint. For example, the Restore-Computer cmdlet starts a system restore on the local computer.") [`rs`](# "`Reset`") [`rt`](# "`Restart-`&#10;Stops an operation and then starts it again. For example, the Restart-Service cmdlet stops and then starts a service.") [`ru`](# "`Resume-`&#10;Starts an operation that has been suspended. For example, the Resume-Service cmdlet starts a service that has been suspended. This verb is paired with Suspend.") [`rv`](# "`Resolve-`&#10;Maps a shorthand representation of a resource to a more complete representation.")
-**S** [`s`](# "`Set-`") [`sa`](# "`Start-`&#10;Initiates an operation. For example, the Start-Service cmdlet starts a service. This verb is paired with Stop.") [`sb`](# "`Submit-`&#10;Presents a resource for approval.") [`sc`](# "`Select-`") [`sd`](# "`Send-`&#10;Delivers information to a destination. This verb is paired with Receive.") [`sh`](# "`Show-`") [`sk`](# "`Skip-`") [`sl`](# "`Split-`") [`sp`](# "`Stop-`&#10;Discontinues an activity. This verb is paired with Start.") [`sr`](# "`Search-`") [`ss`](# "`Suspend-`&#10;Pauses an activity. For example, the Suspend-Service cmdlet pauses a service. This verb is paired with Resume.") [`st`](# "`Step-`") [`sv`](# "`Save-`&#10;Preserves data to avoid loss.") [`sw`](# "`Switch-`") [`sy`](# "`Sync-`&#10;Assures that two or more resources are in the same state.") 
-**T** [`t`](# "`Test-`&#10;Verifies the operation or consistency of a resource.") [`tr`](# "`Trace-`&#10;Tracks the activities of a resource.") 
-**U** [`u`](# "`Use-`&#10;Uses or includes a resource to do something.") [`ub`](# "`Unpublish-`&#10;Makes a resource unavailable to others. This verb is paired with Publish.") [`ud`](# "`Update-`&#10;Brings a resource up-to-date to maintain its state, accuracy, conformance, or compliance. For example, the Update-FormatData cmdlet updates and adds formatting files to the current PowerShell console.") [`uk`](# "`Unlock-`")  [`ul`](# "`Unblock-`&#10;Removes restrictions to a resource. This verb is paired with Block.") [`un`](# "`Undo-`")  [`up`](# "`Unprotect-`&#10;Removes safeguards from a resource that were added to prevent it from attack or loss. This verb is paired with Protect.") [`ur`](# "`Unregister-`&#10;Removes the entry for a resource from a repository. This verb is paired with Register.") [`us`](# "`Uninstall-`&#10;Removes a resource from an indicated location. This verb is paired with Install.")
-**W** [`w`](# "`Wait-`&#10;Pauses an operation until a specified event occurs. For example, the Wait-Job cmdlet pauses operations until one or more of the background jobs are complete.") [`wc`](# "`Watch-`") [`wr`](# "`Write-`&#10;Adds information to a target. This verb is paired with Read.") 
+**A** 
+[`a`](# "`Add-`") [`ap`](# "`Approve-`&#10;Confirms or agrees to the status of a resource or process.") 
+[`as`](# "`Assert-`&#10;Affirms the state of a resource.") 
+**B** 
+[`ba`](# "`Backup-`&#10;Stores data by replicating it.") 
+[`bd`](# "`Build-`&#10;Creates an artifact (usually a binary or document) out of some set of input files (usually source code or declarative documents)") 
+[`bl`](# "`Block-`&#10;Restricts access to a resource. This verb is paired with Unblock.") 
+**C** [`cc`](# "`Connect-`&#10;Creates a link between a source and a destination. This verb is paired with Disconnect.") 
+[`cf`](# "`Convertfrom-`&#10;Converts one primary type of input (the cmdlet noun indicates the input) to one or more supported output types.") 
+[`ch`](# "`Checkpoint-`&#10;Creates a snapshot of the current state of the data or of its configuration.") 
+[`cm`](# "`Compress-`&#10;Compacts the data of a resource. Pairs with Expand.") 
+[`cn`](# "`Confirm-`&#10;Acknowledges, verifies, or validates the state of a resource or process.") 
+[`cp`](# "`Complete-`&#10;Concludes an operation.&#10;---&#10;`Copy-`&#10;Copies a resource to another name or to another container. For example, the Copy-Item cmdlet that is used to access stored data copies an item from one location in the data store to another location.") 
+[`cr`](# "`Compare-`&#10;Evaluates the data from one resource against the data from another resource.") 
+[`cs`](# "`Close-`") 
+[`ct`](# "`Convertto-`&#10;Converts from one or more types of input to a primary output type (the cmdlet noun indicates the output type).") 
+[`cv`](# "`Convert-`&#10;Changes the data from one representation to another when the cmdlet supports bidirectional conversion or when the cmdlet supports conversion between multiple data types.") 
+**D** 
+[`d`](# "`Disable-`&#10;Configures a resource to an unavailable or inactive state. For example, the Disable-PSBreakpoint cmdlet makes a breakpoint inactive. This verb is paired with Enable.") 
+[`db`](# "`Debug-`&#10;Examines a resource to diagnose operational problems.") 
+[`dc`](# "`Disconnect-`&#10;Breaks the link between a source and a destination. This verb is paired with Connect.") 
+[`dm`](# "`Dismount-`&#10;Detaches a named entity from a location. This verb is paired with Mount.") 
+[`dn`](# "`Deny-`&#10;Refuses, objects, blocks, or opposes the state of a resource or process.") 
+[`dp`](# "`Deploy-`&#10;Sends an application, website, or solution to a remote target[s] in such a way that a consumer of that solution can access it after deployment is complete") 
+**E** 
+[`e`](# "`Enable-`&#10;Configures a resource to an available or active state. For example, the Enable-PSBreakpoint cmdlet makes a breakpoint active. This verb is paired with Disable.") 
+[`ed`](# "`Edit-`&#10;Modifies existing data by adding or removing content.") 
+[`en`](# "`Expand-`&#10;Restores the data of a resource that has been compressed to its original state. This verb is paired with Compress.") 
+[`ep`](# "`Export-`&#10;Encapsulates the primary input into a persistent data store, such as a file, or into an interchange format. This verb is paired with Import.") 
+[`et`](# "`Enter-`") 
+[`ex`](# "`Exit-`") 
+**F** 
+[`f`](# "`Format-`") 
+**G** 
+[`g`](# "`g`") 
+[`gp`](# "`Group-`&#10;Arranges or associates one or more resources.") 
+[`gr`](# "`Grant-`&#10;Allows access to a resource. This verb is paired with Revoke.") 
+**H** 
+[`h`](# "`Hide-`") 
+**I** 
+[`i`](# "`Invoke-`&#10;Performs an action, such as running a command or a method.") 
+[`in`](# "`Initialize-`&#10;Prepares a resource for use, and sets it to a default state.") 
+[`ip`](# "`Import-`&#10;Creates a resource from data that is stored in a persistent data store (such as a file) or in an interchange format. For example, the Import-CSV cmdlet imports data from a comma-separated value (CSV) file to objects that can be used by other cmdlets. This verb is paired with Export.") 
+[`is`](# "`Install-`&#10;Places a resource in a location, and optionally initializes it. This verb is paired with Uninstall.") 
+**J** 
+[`j`](# "`Join-`") 
+**L** 
+[`l`](# "`Limit-`&#10;Applies constraints to a resource.") 
+[`lk`](# "`Lock-`") 
+**M** 
+[`m`](# "`Move`") 
+[`mg`](# "`Merge-`&#10;Creates a single resource from multiple resources.") 
+[`ms`](# "`Measure-`&#10;Identifies resources that are consumed by a specified operation, or retrieves statistics about a resource.") 
+[`mt`](# "`Mount-`&#10;Attaches a named entity to a location. This verb is paired with Dismount.") 
+**N** 
+[`n`](# "`New-`&#10;Creates a resource. (The `Set-` verb can also be used when creating a resource that includes data, such as the `Set-Variable` cmdlet.)") 
+**O** 
+[`o`](# "`Out-`&#10;Sends data out of the environment. For example, the Out-Printer cmdlet sends data to a printer.") 
+[`op`](# "`Open-`") 
+[`om`](# "`Optimize-`") 
+**P** 
+[`pb`](# "`Publish-`&#10;Makes a resource available to others. This verb is paired with Unpublish.") 
+[`pi`](# "`Ping-`&#10;Use the Test verb.") 
+[`pop`](# "`Pop-`") 
+[`pt`](# "`Protect-`&#10;Safeguards a resource from attack or loss. This verb is paired with Unprotect.") 
+[`pu`](# "`Push-`") 
+**R** 
+[`r`](# "`Remove-`") 
+[`rc`](# "`Receive-`&#10;Accepts information sent from a source. This verb is paired with Send.") 
+[`rd`](# "`Read-`&#10;Acquires information from a source. This verb is paired with Write.") 
+[`re`](# "`Redo-`") 
+[`rg`](# "`Register-`&#10;Creates an entry for a resource in a repository such as a database. This verb is paired with Unregister.") 
+[`rk`](# "`Revoke-`&#10;Specifies an action that does not allow access to a resource. This verb is paired with Grant.") 
+[`rn`](# "`Rename-`") 
+[`rp`](# "`Repair-`&#10;Restores a resource to a usable condition") 
+[`rq`](# "`Request-`&#10;Asks for a resource or asks for permissions.") 
+[`rr`](# "`Restore-`&#10;Sets a resource to a predefined state, such as a state set by Checkpoint. For example, the Restore-Computer cmdlet starts a system restore on the local computer.") 
+[`rs`](# "`Reset`") 
+[`rt`](# "`Restart-`&#10;Stops an operation and then starts it again. For example, the Restart-Service cmdlet stops and then starts a service.") 
+[`ru`](# "`Resume-`&#10;Starts an operation that has been suspended. For example, the Resume-Service cmdlet starts a service that has been suspended. This verb is paired with Suspend.") 
+[`rv`](# "`Resolve-`&#10;Maps a shorthand representation of a resource to a more complete representation.")
+**S** 
+[`s`](# "`Set-`") 
+[`sa`](# "`Start-`&#10;Initiates an operation. For example, the Start-Service cmdlet starts a service. This verb is paired with Stop.") 
+[`sb`](# "`Submit-`&#10;Presents a resource for approval.") 
+[`sc`](# "`Select-`") 
+[`sd`](# "`Send-`&#10;Delivers information to a destination. This verb is paired with Receive.") 
+[`sh`](# "`Show-`") 
+[`sk`](# "`Skip-`") 
+[`sl`](# "`Split-`") 
+[`sp`](# "`Stop-`&#10;Discontinues an activity. This verb is paired with Start.") 
+[`sr`](# "`Search-`") 
+[`ss`](# "`Suspend-`&#10;Pauses an activity. For example, the Suspend-Service cmdlet pauses a service. This verb is paired with Resume.") 
+[`st`](# "`Step-`") 
+[`sv`](# "`Save-`&#10;Preserves data to avoid loss.") 
+[`sw`](# "`Switch-`") 
+[`sy`](# "`Sync-`&#10;Assures that two or more resources are in the same state.") 
+**T** 
+[`t`](# "`Test-`&#10;Verifies the operation or consistency of a resource.") 
+[`tr`](# "`Trace-`&#10;Tracks the activities of a resource.") 
+**U** 
+[`u`](# "`Use-`&#10;Uses or includes a resource to do something.") 
+[`ub`](# "`Unpublish-`&#10;Makes a resource unavailable to others. This verb is paired with Publish.") 
+[`ud`](# "`Update-`&#10;Brings a resource up-to-date to maintain its state, accuracy, conformance, or compliance. For example, the Update-FormatData cmdlet updates and adds formatting files to the current PowerShell console.") 
+[`uk`](# "`Unlock-`") 
+[`ul`](# "`Unblock-`&#10;Removes restrictions to a resource. This verb is paired with Block.") [`un`](# "`Undo-`") 
+[`up`](# "`Unprotect-`&#10;Removes safeguards from a resource that were added to prevent it from attack or loss. This verb is paired with Protect.") 
+[`ur`](# "`Unregister-`&#10;Removes the entry for a resource from a repository. This verb is paired with Register.") 
+[`us`](# "`Uninstall-`&#10;Removes a resource from an indicated location. This verb is paired with Install.")
+**W** 
+[`w`](# "`Wait-`&#10;Pauses an operation until a specified event occurs. For example, the Wait-Job cmdlet pauses operations until one or more of the background jobs are complete.") 
+[`wc`](# "`Watch-`") 
+[`wr`](# "`Write-`&#10;Adds information to a target. This verb is paired with Read.") 
 
 #### Cmdlets
 **A**  `Alias`&nbsp;[`ep`][Export-Alias]&nbsp;[`g`][Get-Alias]&nbsp;[`n`][New-Alias]&nbsp;[`s`][Set-Alias]&nbsp; `Archive`&nbsp;[`cm`][Compress-Archive]&nbsp;[`en`][Expand-Archive] `ADAccount`&nbsp;[`sr`][Search-ADAccount]&nbsp;[`uk`][Unlock-ADAccount]&nbsp; `ADAccountPassword`&nbsp;[`s`][Set-ADAccountPassword]&nbsp; `ADDSDomain`&nbsp;[`is`][Install-ADDSDomain]&nbsp; `ADDSDomainController`&nbsp;[`is`][Install-ADDSDomainController]&nbsp;[`us`][Uninstall-ADDSDomainController]&nbsp; `ADDSForest`&nbsp;[`g`][Get-ADDSForest]&nbsp;[`is`][Install-ADDSForest]&nbsp; `ADObject` [`s`][Set-ADObject]&nbsp; `ADOrganizationalUnit`&nbsp;[`g`][Get-ADOrganizationalUnit]&nbsp;[`n`][New-ADOrganizationalUnit]&nbsp;[`r`][Remove-ADOrganizationalUnit]&nbsp;[`s`][Set-ADOrganizationalUnit]&nbsp; `ADPrincipalGroupMembership`&nbsp;[`a`][Add-ADPrincipalGroupMembership]&nbsp;[`g`][Get-ADPrincipalGroupMembership]&nbsp; `ADUser`&nbsp;[`g`][Get-ADUser]&nbsp;[`n`][New-ADUser] 
@@ -251,7 +346,7 @@
 **S** [`sed`][Select-Object] [`shutdown`][Stop-Computer] [`-r`][Restart-Computer]
 **T** [`tail`][Get-Content] [`touch`][New-Item]
 **U** [`uniq`](#select-object "`Select-Object -Unique`")
-**W** [`which`][Get-Command]
+**W** [`wc`][Measure-Object] [`which`][Get-Command]
 
 #### Topics
 **Clipboard**  [`Get-Clipboard`](#get-clipboard) [`New-Guid`](#new-guid) [`Set-Clipboard`](#set-clipboard) [`Write-Output`](#write-output)
@@ -1079,9 +1174,6 @@ Set-Service WtcOtg -StartupType Disabled
 ### `Start-Service`
 Start the `WinRM` service
 ```powershell
-Start-Service WinRM
-```
-```powershell
 sasv winrm
 ```
 ### `Stop-Service`
@@ -1113,6 +1205,11 @@ Write-Output "This is a test network file." -Path | Out-File C:\networkfiles\tes
 ```
 
 ## Tasks
+#### Computer information
+Display computer name [<sup>Dr. Scripto</sup>][https://devblogs.microsoft.com/scripting/powertip-use-powershell-to-get-computer-name/]
+```powershell
+$env:computername
+```
 #### Generate password
 Generate a random password 20 characters long [<sup>Adam The Automator</sup>][https://adamtheautomator.com/powershell-random-password/]
 ```powershell
