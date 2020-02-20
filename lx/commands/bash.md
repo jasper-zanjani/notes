@@ -117,7 +117,52 @@
 [test -nt]:                     #test                          '```&#10;$ test -nt $FILE $OTHER&#10;```&#10;Test if `$FILE` is newer (modification date) than `$OTHER`'
 [test -ot]:                     #test                          '```&#10;$ test -ot $FILE $OTHER&#10;```&#10;Test if `$FILE` is older than `$OTHER`'
 
-# Bash builtin commands
+<!-- Environment variables -->
+[$_]:                          #variables                             '```&#10;$ echo $_&#10;```&#10;Last token of the last command'
+[$!]:                          #variables                             '```&#10;$ echo $!&#10;```&#10;PID of the last background job'
+[$?]:                          #variables                             '```&#10;$ echo $?&#10;```&#10;Exit status of the last executed function or command'
+[$@]:                          #variables                             '```&#10;$ echo $@&#10;```&#10;All command line arguments as an array of strings'
+[$*]:                          #variables                             '```&#10;$ echo $*&#10;```&#10;All command line arguments as a single string'
+[$#]:                          #variables                             '```&#10;$ echo $#&#10;```&#10;Number of command line arguments passed to the script or function'
+[$$]:                          #variables                             '```&#10;$ echo $$&#10;```&#10;PID of the current process'
+[$BASH_ENV]:                   #variables                      '```&#10;$ echo $BASH_ENV&#10;```&#10;Bash startup file read when a script is invoked'
+[$BASH_VERSINFO]:              #variables                 '```&#10;$ echo $BASH_VERSINFO&#10;```&#10;Array containing the full version information split into elements'
+[$BASH_VERSION]:               #variables                  '```&#10;$ echo $BASH_VERSION&#10;```&#10;Bash version running'
+[$BASHPID]:                    #variables                       '```&#10;$ echo $BASHPID&#10;```&#10;PID of the current bash instance'
+[$EDITOR]:                     #variables                        '```&#10;$ echo $EDITOR&#10;```&#10;Default text editor'
+[$FUNCNAME]:                   #variables                      '```&#10;$ echo $FUNCNAME&#10;```&#10;Name of the current function'
+[$GROUPS]:                     #variables                        '```&#10;$ echo $GROUPS&#10;```&#10;Array containing the GID of groups the user is a member of'
+[$HISTFILE]:                   #variables                      '```&#10;$ echo $HISTFILE&#10;```&#10;History file location ($HOME/.bash_history by default)'
+[$HISTFILESIZE]:               #variables                  '```&#10;$ echo $HISTFILESIZE&#10;```&#10;Maximum number of events saved between sessions'
+[$HISTSIZE]:                   #variables                      '```&#10;$ echo $HISTSIZE&#10;```&#10;Maximum number of events saved during a session'
+[$HOME]:                       #variables                          '```&#10;$ echo $HOME&#10;```&#10;Effective user's home directory'
+[$HOSTNAME]:                   #variables                      '```&#10;$ echo $HOSTNAME&#10;```&#10;System hostname assigned during startup'
+[$HOSTTYPE]:                   #variables                      '```&#10;$ echo $HOSTTYPE&#10;```&#10;Hardware information'
+[$IFS]:                        #variables                           '```&#10;$ echo $IFS&#10;```&#10;"Internal field separator", used when bash is splitting strings while looping, etc (white space by default)'
+[$LANG=C]:                     #variables                        '```&#10;$ echo $LANG=C&#10;```&#10;Cause programs to bypass locale translations'
+[$LINENO]:                     #variables                        '```&#10;$ echo $LINENO&#10;```&#10;Line number of the current script (useful when debugging)'
+[$MACHTYPE]:                   #variables                      '```&#10;$ echo $MACHTYPE&#10;```&#10;Hardware and OS information (cf. $HOSTTYPE)'
+[$OLDPWD]:                     #variables                        '```&#10;$ echo $OLDPWD&#10;```&#10;Working directory before the most recent `cd` command'
+[$OSTYPE]:                     #variables                        '```&#10;$ echo $OSTYPE&#10;```&#10;Type of OS running on the machine'
+[$PATH]:                       #variables                          '```&#10;$ echo $PATH&#10;```&#10;Search path for finding binaries for commands'
+[$PIPESTATUS]:                 #variables                    '```&#10;$ echo $PIPESTATUS&#10;```&#10;Array containing the exit statuses of the commands in the most recent foreground pipeline'
+[$PPID]:                       #variables                          '```&#10;$ echo $PPID&#10;```&#10;Process ID of the script or shell's parent (the process that invoked the current script or shell)'
+[$PWD]:                        #variables                           '```&#10;$ echo $PWD&#10;```&#10;Current working directory'
+[$RANDOM]:                     #variables                        '```&#10;$ echo $RANDOM&#10;```&#10;Random integer between 0 and 32767'
+[$REPLY]:                      #variables                         '```&#10;$ echo $REPLY&#10;```&#10;Default reply used by select and read'
+[$SECONDS]:                    #variables                       '```&#10;$ echo $SECONDS&#10;```&#10;Number of seconds the script has been running'
+[$SHELL]:                      #variables                         '```&#10;$ echo $SHELL&#10;```&#10;Name of user's default shell ('/bin/bash')'
+[$SHELLOPTS]:                  #variables                     '```&#10;$ echo $SHELLOPTS&#10;```&#10;List of options bash is supplied on startup to control its behavior'
+[$SHLVL]:                      #variables                         '```&#10;$ echo $SHLVL&#10;```&#10;Number of shell levels the current shell is running on top of'
+[$TMOUT]:                      #variables                         '```&#10;$ echo $TMOUT&#10;```&#10;Log users out of shell automatically after a certain period of inactivity'
+[$TMOUT=n]:                    #variables                       '```&#10;$ echo $TMOUT=n&#10;```&#10;Exit the shell if no command is typed after n seconds; also affects the read command and select loop'
+[$TMPDIR]:                     #variables                        '```&#10;$ echo $TMPDIR&#10;```&#10;Place temporary files created and used by the shell in directory'
+[$TMPDIR=directory]:           #variables              '```&#10;$ echo $TMPDIR=directory&#10;```&#10;Place temporary files created and used by the shell in directory'
+[$UID]:                        #variables                           '```&#10;$ echo $UID&#10;```&#10;User's ID number'
+[$WAYLAND_DISPLAY]:            #variables               '```&#10;$ echo $WAYLAND_DISPLAY&#10;```&#10;Determine if Wayland is running (example output: `wayland-0`)&#10;"The Wayland Display Server". Fedora Project Documentation.'
+[$XDG_SESSION_TYPE]:           #variables              '```&#10;$ echo $XDG_SESSION_TYPE&#10;```&#10;Display compositor (e.g. wayland)'
+
+#### Bash builtin commands
 **A** [`alias`][alias] **B** [`bind`][bind] [`break`][break] [`builtin`][builtin] **C** [`caller`][caller] [`case`][case] [`cd`][cd] [`command`][command] [`compgen`][compgen] [`complete`][complete] [`compopt`][compopt] [`continue`][continue] **D** [`declare`][declare] [`dirs`][dirs] [`disown`][disown] [`do`][do] [`done`][done] **E** [`echo`][echo] [`enable`][enable] [`esac`][esac] [`eval`][eval] [`exec`][exec] [`exit`][exit] [`export`][export] **F** [`false`][false] [`fc`][fc] [`fg`][fg] [`fi`][fi] [`for`][for] [`function`][function] **G** [`getopts`][getopts] **H** [`hash`][hash] [`help`][help] [`history`][history] **I** [`if`][if] **J** [`jobs`][jobs] **K** [`kill`][kill] **L** [`let`][let] [`local`][local] [`logout`][logout] **M** [`mapfile`][mapfile] **P** [`popd`][popd] [`printf`][printf] [`pushd`][pushd] [`pwd`][pwd] **R** [`read`][read] [`readarray`][readarray] [`readonly`][readonly] [`return`][return] **S** [`select`][select] [`set`][set] [`shift`][shift] [`shopt`][shopt] [`source`][source] [`suspend`][suspend] **T** [`test`][test] [`time`][time] [`times`][times] [`trap`][trap] [`true`][true] [`type`][type] [`typeset`][typeset] **U** [`ulimit`][ulimit] [`umask`][umask] [`unalias`][unalias] [`unset`][unset] [`until`][until] **W** [`wait`][wait] [`while`][while]
 
 Commands        | Options
@@ -125,6 +170,8 @@ Commands        | Options
 [`bind`][bind]  | <code>&nbsp;</code>  <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`f`][bind -&#102;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`l`][bind -&#108;] [`m`][bind -&#109;] <code>&nbsp;</code> <code>&nbsp;</code> [`p`][bind -&#112;] [`q`][bind -&#113;] [`r`][bind -&#114;] [`s`][bind -&#115;] <code>&nbsp;</code> [`u`][bind -&#117;] [`v`][bind -&#118;] <code>&nbsp;</code> [`x`][bind -&#120;] <code>&nbsp;</code> <code>&nbsp;</code>  <br><code>&nbsp;</code>&nbsp;<code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`S`][bind -&#83;] <code>&nbsp;</code> <code>&nbsp;</code> [`V`][bind -&#86;] <code>&nbsp;</code> [`X`][bind -&#88;] <code>&nbsp;</code> <code>&nbsp;</code> 
 [`test`][test]  | <code>&nbsp;</code>   [`a`][test -&#97;] [`b`][test -&#98;] [`c`][test -&#99;] [`d`][test -&#100;] [`e`][test -&#101;] [`f`][test -&#102;] [`g`][test -&#103;] [`h`][test -&#104;] <code>&nbsp;</code> <code>&nbsp;</code> [`k`][test -&#107;] <code>&nbsp;</code> <code>&nbsp;</code> [`n`][test -&#110;] [`o`][test -&#111;] [`p`][test -&#112;] <code>&nbsp;</code> [`r`][test -&#114;] [`s`][test -&#115;] <code>&nbsp;</code> [`u`][test -&#117;] <code>&nbsp;</code> [`w`][test -&#119;] [`x`][test -&#120;] <code>&nbsp;</code> [`z`][test -&#122;]  <br><code>&nbsp;</code>&nbsp;<code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`G`][test -&#71;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`L`][test -&#76;] <code>&nbsp;</code> <code>&nbsp;</code> [`O`][test -&#79;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`S`][test -&#83;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <br>  [`ef`][test -ef] [`eq`][test -eq] [`ge`][test -ge] [`le`][test -le] [`lt`][test -lt] [`ne`][test -ne] [`nt`][test -nt] [`ot`][test -ot]
 
+#### Environment variables
+[`$_`][$_] [`$!`][$!] [`$?`][$?] [`$@`][$@] [`$*`][$*] [`$#`][$#] [`$$`][$$] [`$BASH_ENV`][$BASH_ENV] [`$BASH_VERSINFO`][$BASH_VERSINFO] [`$BASH_VERSION`][$BASH_VERSION] [`$BASHPID`][$BASHPID] [`$EDITOR`][$EDITOR] [`$FUNCNAME`][$FUNCNAME] [`$GROUPS`][$GROUPS] [`$HISTFILE`][$HISTFILE] [`$HISTFILESIZE`][$HISTFILESIZE] [`$HISTSIZE`][$HISTSIZE] [`$HOME`][$HOME] [`$HOSTNAME`][$HOSTNAME] [`$HOSTTYPE`][$HOSTTYPE] [`$IFS`][$IFS] [`$LANG=C`][$LANG=C] [`$LINENO`][$LINENO] [`$MACHTYPE`][$MACHTYPE] [`$OLDPWD`][$OLDPWD] [`$OSTYPE`][$OSTYPE] [`$PATH`][$PATH] [`$PIPESTATUS`][$PIPESTATUS] [`$PPID`][$PPID] [`$PWD`][$PWD] [`$RANDOM`][$RANDOM] [`$REPLY`][$REPLY] [`$SECONDS`][$SECONDS] [`$SHELL`][$SHELL] [`$SHELLOPTS`][$SHELLOPTS] [`$SHLVL`][$SHLVL] [`$TMOUT`][$TMOUT] [`$TMOUT=n`][$TMOUT=n] [`$TMPDIR`][$TMPDIR] [`$TMPDIR=directory`][$TMPDIR=directory] [`$UID`][$UID] [`$WAYLAND_DISPLAY`][$WAYLAND_DISPLAY] [`$XDG_SESSION_TYPE`][$XDG_SESSION_TYPE] 
 
 ### `bash`
 Variable                                            | Effect
@@ -180,6 +227,33 @@ Variable                                            | Effect
 `$UID`                                              | user's ID number
 `$WAYLAND_DISPLAY`                                  | determine if Wayland is running (example output: `wayland-0`) [^](https://docs.fedoraproject.org/en-US/fedora/f31/system-administrators-guide/Wayland/ "docs.fedoraproject.org - The Wayland Display Server")
 `$XDG_SESSION_TYPE`                                 | display compositor (e.g. `wayland`)
+
+`$PS1` Metacharacters   | Effect
+:---                    | :---
+`\a`                    | a bell character
+`\d`                    | the date (DDD MMM dd)
+`\Dformat`              | {format} is passed to `strftime` and the result is inserted into the prompt string; empty format results in a locale-specific time representation.
+`\e`                    | escape character
+`\h`                    | hostname, up to the first '.'
+`\H`                    | hostname
+`\j`                    | number of jobs currently managed by the shell
+`\l`                    | basename of the shell's terminal device name
+`\n`                    | newline
+`\r`                    | carriage return
+`\s`                    | name of the shell, basename of `$0` (portion following the final slash)
+`\t`                    | time in 24 hour HH:MM:SS format
+`\T`                    | time in 12-hour HH:MM:SS format
+`\@`                    | time in 12-hour am/pm format
+`\A`                    | time in 24-hour HH:MM format
+`\W`                    | basename of `$PWD` with `$HOME` abbreviated with a tilde
+`\w`                    | current working directory, with `$HOME` abbreviated with a tilde (using `$PROMPT_DIRTRIM` variable)
+`\!`                    | history number of this command
+`\#`                    | command number of this command
+`\$`                    | if effective UID is 0, '#', otherwise '$'
+`\nnn`                  | character whose ASCII code is the octal value 'nnn'
+`\\`                    | backslash
+`\[`                    | begin a sequence of non-printing characters (used to embed a terminal control sequence)
+`\]`                    | end a sequence of non-printing characters
 
 
 #### Heredoc

@@ -1,33 +1,11 @@
+[NVMe]: # 'Nonvolatile Memory Express (NVMe)&#10;Next-generation interface protocol for accelerated communication between the processor and flash storage hardware.&#10;NVMe was initially limited to the consumer market and intended for smartphones and large enterprise storage. It supports up to 64,000 parallel queues with 64,000 commands per queue, and thus delivers significantly higher performance than the previously predominant SAS and SATA hard disk interfaces.&#10;_Admin Magazine_. Issue 54, Feb/Mar 2020.: 16'
+
+[NVMe][NVMe]
 # Shells
 ## bash
 - `getopt` and `argp_parse` reorder the elements of `argv` by default, but this behavior can be suppressed by setting the `_POSIX_OPTION_ORDER` environment variable
 #### Terminal prompt
-`$PS1` Metacharacters   | Effect
-:---                    | :---
-`\a`                    | a bell character
-`\d`                    | the date (DDD MMM dd)
-`\Dformat`              | {format} is passed to `strftime` and the result is inserted into the prompt string; empty format results in a locale-specific time representation.
-`\e`                    | escape character
-`\h`                    | hostname, up to the first '.'
-`\H`                    | hostname
-`\j`                    | number of jobs currently managed by the shell
-`\l`                    | basename of the shell's terminal device name
-`\n`                    | newline
-`\r`                    | carriage return
-`\s`                    | name of the shell, basename of `$0` (portion following the final slash)
-`\t`                    | time in 24 hour HH:MM:SS format
-`\T`                    | time in 12-hour HH:MM:SS format
-`\@`                    | time in 12-hour am/pm format
-`\A`                    | time in 24-hour HH:MM format
-`\W`                    | basename of `$PWD` with `$HOME` abbreviated with a tilde
-`\w`                    | current working directory, with `$HOME` abbreviated with a tilde (using `$PROMPT_DIRTRIM` variable)
-`\!`                    | history number of this command
-`\#`                    | command number of this command
-`\$`                    | if effective UID is 0, '#', otherwise '$'
-`\nnn`                  | character whose ASCII code is the octal value 'nnn'
-`\\`                    | backslash
-`\[`                    | begin a sequence of non-printing characters (used to embed a terminal control sequence)
-`\]`                    | end a sequence of non-printing characters
+
 
 ANSI/VT100 terminals and emulators can display colors and formatted texts by using __escape sequences__ ( __escape character__ followed by __format code__, terminated by "m").\
 Three escape characters:
