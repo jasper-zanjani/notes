@@ -1,3 +1,8 @@
+[syscall]: # 'system call (syscall)&#10;Service provided by the kernel that can be called from user mode which typically handles device access requests or other privileged operations.&#10;For most cases, making a syscall breaks down into 3 steps:&#10;  1. Marshall parameters - user mode puts the syscall parameters and number at locations defined by the ABI.&#10;  2. Special instruction - user mode uses a special processor instruction to transition to kernel mode for the syscall.&#10;  3. Handle the return - after the syscall is serviced, the kernel uses a special processor instruction to return to user mode and user mode checks the return value.&#10;"WSL System calls". _Windows Subsystem for Linux_. Microsoft.'
+[ProcFs]: # 'ProcFs&#10;Special filesystem in Unix-like operating systems that presents information about processes and other system information in a hierarchical file-like structure, typically mapped to /proc at boot time.&#10;"procfs". _Wikipedia_.'
+[SysFs]: # 'SysFs&#10;Pseudo file system provided by the Linux kernel that exports information about various kernel subsystems, hardware devices, and associated device drivers from the device model of the kernel to user space through virtual files.&#10;"sysfs". _Wikipedia_.'
+[TmpFs]: # 'TmpFs&#10;Temporary file storage paradigm implemented in many Unix-like operating systems. It is intended to appear as a mounted file system, but data is stored in volatile memory instead of a persistent storage device.&#10;"tmpfs". Wikipedia.'
+
 # Linux
 Table of contents
 :---:
@@ -9,6 +14,15 @@ Desktop environments            | [GNOME](gnome.md) [KDE](kde.md) [i3](i3.md)
 Distributions                   | [Arch Linux](distributions.md#arch-linux) [BSD](distributions.md#bsd) [Clear Linux](distributions.md#clear-linux) [Fedora CoreOS](#distributions.md#fedora-coreos) [Kali Linux](distributions.md#kali-linux) [Mac OS X](macosx.md)
 Packaging                       | [Flatpak](#flatpak)
 Others                          | [Boot sequence](#boot-sequence) [Namespaces](#namespaces) [PulseAudio](pulseaudio.md) [RAID](#raid) [Runlevels](#runlevels) [X](X.md)
+
+#### Concepts
+**P** 
+[ProcFs][ProcFs] 
+**S** 
+[syscall][syscall] 
+[SysFs][SysFs] 
+**T** 
+[TmpFs][TmpFs] 
 
 ### Boot
 Bootloaders like GRUB (GRand Unified Bootloader) or _u-boot_ turns on power supplies and scans buses and interfaces to locate the kernel image and the root filesystem. LILO (LInux LOader) is also another bootloader that can be found on older Linux systems (LALOS)
