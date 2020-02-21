@@ -160,7 +160,40 @@
 [$WAYLAND_DISPLAY]:            #variables                               '```&#10;$ echo $WAYLAND_DISPLAY&#10;```&#10;Determine if Wayland is running (example output: `wayland-0`)&#10;"The Wayland Display Server". Fedora Project Documentation.'
 [$XDG_SESSION_TYPE]:           #variables                               '```&#10;$ echo $XDG_SESSION_TYPE&#10;```&#10;Display compositor (e.g. wayland)'
 
+<!-- Metacharacters -->
+[\a]:                          #variables                               '```&#10;$ echo -e \a&#10;```&#10;Bell character'
+[\d]:                          #variables                               '```&#10;$ echo -e \d&#10;```&#10;The date (DDD MMM dd)'
+[\D]:                          #variables                               '```&#10;$ echo -e \D $FORMAT&#10;```&#10;`$FORMAT` is passed to `strftime` and the result is inserted into the prompt string; empty format results in a locale-specific time representation.'
+[\e]:                          #variables                               '```&#10;$ echo -e \e&#10;```&#10;Escape character'
+[\h]:                          #variables                               '```&#10;$ echo -e \h&#10;```&#10;Hostname, up to the first "."'
+[\H]:                          #variables                               '```&#10;$ echo -e \H&#10;```&#10;Hostname'
+[\j]:                          #variables                               '```&#10;$ echo -e \j&#10;```&#10;Number of jobs currently managed by the shell'
+[\l]:                          #variables                               '```&#10;$ echo -e \l&#10;```&#10;Basename of the shell terminal device name'
+[\n]:                          #variables                               '```&#10;$ echo -e \n&#10;```&#10;Newline'
+[\r]:                          #variables                               '```&#10;$ echo -e \r&#10;```&#10;Carriage return'
+[\s]:                          #variables                               '```&#10;$ echo -e \s&#10;```&#10;Name of the shell, basename of $0 (portion following the final slash)'
+[\t]:                          #variables                               '```&#10;$ echo -e \t&#10;```&#10;Time in 24 hour HH:MM:SS format'
+[\T]:                          #variables                               '```&#10;$ echo -e \T&#10;```&#10;Time in 12-hour HH:MM:SS format'
+[\@]:                          #variables                               '```&#10;$ echo -e \@&#10;```&#10;Time in 12-hour am/pm format'
+[\A]:                          #variables                               '```&#10;$ echo -e \A&#10;```&#10;Time in 24-hour HH:MM format'
+[\W]:                          #variables                               '```&#10;$ echo -e \W&#10;```&#10;Basename of $PWD with $HOME abbreviated with a tilde'
+[\w]:                          #variables                               '```&#10;$ echo -e \w&#10;```&#10;Current working directory, with $HOME abbreviated with a tilde (using $PROMPT_DIRTRIM variable)'
+[\!]:                          #variables                               '```&#10;$ echo -e \!&#10;```&#10;History number of this command'
+[\#]:                          #variables                               '```&#10;$ echo -e \#&#10;```&#10;Command number of this command'
+[\$]:                          #variables                               '```&#10;$ echo -e \$&#10;```&#10;"#" if effective UID is 0, otherwise "$"'
+[\123]:                        #variables                               '```&#10;$ echo -e \123&#10;```&#10;Character whose ASCII code is the octal value 123'
+[\\]:                          #variables                               '```&#10;$ echo -e \\&#10;```&#10;Backslash'
+[\[]:                          #variables                               '```&#10;$ echo -e \[&#10;```&#10;Begin a sequence of non-printing characters (used to embed a terminal control sequence)'
+[\]]:                          #variables                               '```&#10;$ echo -e \]&#10;```&#10;End a sequence of non-printing characters'
+
 #### Bash builtin commands
+
+Commands        | Options
+---             | ---
+[`bind`][bind]  | <code>&nbsp;</code>  <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`f`][bind -&#102;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`l`][bind -&#108;] [`m`][bind -&#109;] <code>&nbsp;</code> <code>&nbsp;</code> [`p`][bind -&#112;] [`q`][bind -&#113;] [`r`][bind -&#114;] [`s`][bind -&#115;] <code>&nbsp;</code> [`u`][bind -&#117;] [`v`][bind -&#118;] <code>&nbsp;</code> [`x`][bind -&#120;] <code>&nbsp;</code> <code>&nbsp;</code>  <br><code>&nbsp;</code>&nbsp;<code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`S`][bind -&#83;] <code>&nbsp;</code> <code>&nbsp;</code> [`V`][bind -&#86;] <code>&nbsp;</code> [`X`][bind -&#88;] <code>&nbsp;</code> <code>&nbsp;</code> 
+[`test`][test]  | <code>&nbsp;</code>   [`a`][test -&#97;] [`b`][test -&#98;] [`c`][test -&#99;] [`d`][test -&#100;] [`e`][test -&#101;] [`f`][test -&#102;] [`g`][test -&#103;] [`h`][test -&#104;] <code>&nbsp;</code> <code>&nbsp;</code> [`k`][test -&#107;] <code>&nbsp;</code> <code>&nbsp;</code> [`n`][test -&#110;] [`o`][test -&#111;] [`p`][test -&#112;] <code>&nbsp;</code> [`r`][test -&#114;] [`s`][test -&#115;] <code>&nbsp;</code> [`u`][test -&#117;] <code>&nbsp;</code> [`w`][test -&#119;] [`x`][test -&#120;] <code>&nbsp;</code> [`z`][test -&#122;]  <br><code>&nbsp;</code>&nbsp;<code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`G`][test -&#71;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`L`][test -&#76;] <code>&nbsp;</code> <code>&nbsp;</code> [`O`][test -&#79;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`S`][test -&#83;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <br>  [`ef`][test -ef] [`eq`][test -eq] [`ge`][test -ge] [`le`][test -le] [`lt`][test -lt] [`ne`][test -ne] [`nt`][test -nt] [`ot`][test -ot]
+
+#### Environment variables
 [`$_`][$_] 
 [`$!`][$!] 
 [`$?`][$?] 
@@ -219,18 +252,6 @@
 **X** 
 [`$XDG_SESSION_TYPE`][$XDG_SESSION_TYPE] 
 
-
-Commands        | Options
----             | ---
-[`bind`][bind]  | <code>&nbsp;</code>  <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`f`][bind -&#102;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`l`][bind -&#108;] [`m`][bind -&#109;] <code>&nbsp;</code> <code>&nbsp;</code> [`p`][bind -&#112;] [`q`][bind -&#113;] [`r`][bind -&#114;] [`s`][bind -&#115;] <code>&nbsp;</code> [`u`][bind -&#117;] [`v`][bind -&#118;] <code>&nbsp;</code> [`x`][bind -&#120;] <code>&nbsp;</code> <code>&nbsp;</code>  <br><code>&nbsp;</code>&nbsp;<code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`S`][bind -&#83;] <code>&nbsp;</code> <code>&nbsp;</code> [`V`][bind -&#86;] <code>&nbsp;</code> [`X`][bind -&#88;] <code>&nbsp;</code> <code>&nbsp;</code> 
-[`test`][test]  | <code>&nbsp;</code>   [`a`][test -&#97;] [`b`][test -&#98;] [`c`][test -&#99;] [`d`][test -&#100;] [`e`][test -&#101;] [`f`][test -&#102;] [`g`][test -&#103;] [`h`][test -&#104;] <code>&nbsp;</code> <code>&nbsp;</code> [`k`][test -&#107;] <code>&nbsp;</code> <code>&nbsp;</code> [`n`][test -&#110;] [`o`][test -&#111;] [`p`][test -&#112;] <code>&nbsp;</code> [`r`][test -&#114;] [`s`][test -&#115;] <code>&nbsp;</code> [`u`][test -&#117;] <code>&nbsp;</code> [`w`][test -&#119;] [`x`][test -&#120;] <code>&nbsp;</code> [`z`][test -&#122;]  <br><code>&nbsp;</code>&nbsp;<code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`G`][test -&#71;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`L`][test -&#76;] <code>&nbsp;</code> <code>&nbsp;</code> [`O`][test -&#79;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`S`][test -&#83;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <br>  [`ef`][test -ef] [`eq`][test -eq] [`ge`][test -ge] [`le`][test -le] [`lt`][test -lt] [`ne`][test -ne] [`nt`][test -nt] [`ot`][test -ot]
-
-#### Environment variables
-[`$_`][$_] 
-[`$!`][$!] [`$?`][$?] [`$@`][$@] [`$*`][$*] [`$#`][$#] [`$$`][$$] 
-**B** [`$BASH_ENV`][$BASH_ENV] [`$BASH_VERSINFO`][$BASH_VERSINFO] [`$BASH_VERSION`][$BASH_VERSION] [`$BASHPID`][$BASHPID] [`$EDITOR`][$EDITOR] [`$FUNCNAME`][$FUNCNAME] [`$GROUPS`][$GROUPS] [`$HISTFILE`][$HISTFILE] [`$HISTFILESIZE`][$HISTFILESIZE] [`$HISTSIZE`][$HISTSIZE] [`$HOME`][$HOME] [`$HOSTNAME`][$HOSTNAME] [`$HOSTTYPE`][$HOSTTYPE] [`$IFS`][$IFS] [`$LANG=C`][$LANG=C] [`$LINENO`][$LINENO] [`$MACHTYPE`][$MACHTYPE] [`$OLDPWD`][$OLDPWD] [`$OSTYPE`][$OSTYPE] [`$PATH`][$PATH] [`$PIPESTATUS`][$PIPESTATUS] [`$PPID`][$PPID] [`$PWD`][$PWD] [`$RANDOM`][$RANDOM] [`$REPLY`][$REPLY] [`$SECONDS`][$SECONDS] [`$SHELL`][$SHELL] [`$SHELLOPTS`][$SHELLOPTS] [`$SHLVL`][$SHLVL] [`$TMOUT`][$TMOUT] [`$TMOUT=n`][$TMOUT=n] [`$TMPDIR`][$TMPDIR] [`$TMPDIR=directory`][$TMPDIR=directory] [`$UID`][$UID] [`$WAYLAND_DISPLAY`][$WAYLAND_DISPLAY] [`$XDG_SESSION_TYPE`][$XDG_SESSION_TYPE] 
-
-### `bash`
 Variable                                            | Effect
 :---                                                | :---
 `${string//search/substitution}`                    | replace all matches of {search} with {substitution} within {string}
@@ -241,76 +262,32 @@ Variable                                            | Effect
 `${string#substring}`                               | delete shortest match of {substring} from start of {string}
 `${string%%substring}`                              | delete longest match of {substring} from end of {string}
 `${string%substring}`                               | delete shortest match of {substring} from end of {string}
-`$_`                                                | return last field of the last command
-`$!`                                                | return process ID (pid) of the last job run in the background
-`$?`                                                | return exit status of the last executed function or command
-`$@`                                                | return all command line arguments as an array of strings
-`$*`                                                | return all positional parameters in a single string separated by space
-`$#`                                                | return number of positional arguments passed to the script or function
-`$$`                                                | return process ID (pid) of the current process
-`$BASH_ENV`                                         | environment variable pointing to the Bash startup file which is read when a script is invoked
-`$BASH_VERSINFO`                                    | array containing the full version information split into elements
-`$BASH_VERSION`                                     | string that shows the version of bash that is running
-`$BASHPID`                                          | process ID of the current bash instance (see `$$`)
-`$EDITOR`                                           | default editor that will be invoked by any scripts or programs (usually `vi` or `emacs`)
-`$FUNCNAME`                                         | name of the current function
-`$GROUPS`                                           | array containing the numbers of groups the user is a member of
-`$HISTFILE`                                         | location of the history file (~/.bash_history by default)
-`$HISTFILESIZE`                                     | maximum number of events saved between sessions
-`$HISTSIZE`                                         | maximum number of events saved during a session
-`$HOME`                                             | home directory of the user
-`$HOSTNAME`                                         | hostname assigned to the system during startup
-`$HOSTTYPE`                                         | identifies hardware
-`$IFS`                                              | internal field separator, used when bash is splitting strings while looping, etc (white space characters by default)
-`$LANG=C`                                           | cause programs to bypass locale translations
-`$LINENO`                                           | line number of the current script (useful when debugging)
-`$MACHTYPE`                                         | identifies hardware but includes OS information (rf. `$HOSTTYPE`)
-`$OLDPWD`                                           | return working directory before the last `cd` command
-`$OSTYPE`                                           | type of OS running on the machine
-`$PATH`                                             | search path for finding binaries for commands
-`$PIPESTATUS`                                       | array containing the exit statuses of the commands in the most recent foreground pipeline
-`$PPID`                                             | process ID of the script or shell's parent (the process that invoked the current script or shell)
-`$PWD`                                              | return current working directory
-`$RANDOM`                                           | a random integer between 0 and 32767
-`$REPLY`                                            | default reply used by `select` and `read`
-`$SECONDS`                                          | number of seconds the script has been running
-`$SHELL`                                            | name of user's default shell ('/bin/bash')
-`$SHELLOPTS`                                        | list of options bash is supplied on startup to control its behavior
-`$SHLVL`                                            | number of shell levels the current shell is running on top of
-`$TMOUT`                                            | log users out of shell automatically after a certain period of inactivity
-`$TMOUT=n`                                          | exit the shell if no command is typed after `n` seconds; also affects the `read` command and `select` loop
-`$TMPDIR`                                           | place temporary files created and used by the shell in `directory`
-`$TMPDIR=directory`                                 | place temporary files created and used by the shell in directory
-`$UID`                                              | user's ID number
-`$WAYLAND_DISPLAY`                                  | determine if Wayland is running (example output: `wayland-0`) [^](https://docs.fedoraproject.org/en-US/fedora/f31/system-administrators-guide/Wayland/ "docs.fedoraproject.org - The Wayland Display Server")
-`$XDG_SESSION_TYPE`                                 | display compositor (e.g. `wayland`)
 
-`$PS1` Metacharacters   | Effect
-:---                    | :---
-`\a`                    | a bell character
-`\d`                    | the date (DDD MMM dd)
-`\Dformat`              | {format} is passed to `strftime` and the result is inserted into the prompt string; empty format results in a locale-specific time representation.
-`\e`                    | escape character
-`\h`                    | hostname, up to the first '.'
-`\H`                    | hostname
-`\j`                    | number of jobs currently managed by the shell
-`\l`                    | basename of the shell's terminal device name
-`\n`                    | newline
-`\r`                    | carriage return
-`\s`                    | name of the shell, basename of `$0` (portion following the final slash)
-`\t`                    | time in 24 hour HH:MM:SS format
-`\T`                    | time in 12-hour HH:MM:SS format
-`\@`                    | time in 12-hour am/pm format
-`\A`                    | time in 24-hour HH:MM format
-`\W`                    | basename of `$PWD` with `$HOME` abbreviated with a tilde
-`\w`                    | current working directory, with `$HOME` abbreviated with a tilde (using `$PROMPT_DIRTRIM` variable)
-`\!`                    | history number of this command
-`\#`                    | command number of this command
-`\$`                    | if effective UID is 0, '#', otherwise '$'
-`\nnn`                  | character whose ASCII code is the octal value 'nnn'
-`\\`                    | backslash
-`\[`                    | begin a sequence of non-printing characters (used to embed a terminal control sequence)
-`\]`                    | end a sequence of non-printing characters
+#### Metacharacters
+[`\a`][\a] 
+[`\d`][\d] 
+[`\D`][\D] 
+[`\e`][\e] 
+[`\h`][\h] 
+[`\H`][\H] 
+[`\j`][\j] 
+[`\l`][\l] 
+[`\n`][\n] 
+[`\r`][\r] 
+[`\s`][\s] 
+[`\t`][\t] 
+[`\T`][\T] 
+[`\@`][\@] 
+[`\A`][\A] 
+[`\W`][\W] 
+[`\w`][\w] 
+[`\!`][\!] 
+[`\#`][\#] 
+[`\$`][\$] 
+[`\123`][\123] 
+[`\\`][\\] 
+[`\[`][\[] 
+[`\]`][\]] 
 
 
 #### Heredoc
