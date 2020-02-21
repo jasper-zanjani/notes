@@ -25,8 +25,6 @@
 [http://www.linux-magazine.com/Issues/2017/197/Command-Line-bluetoothctl#article_i1]: http://www.linux-magazine.com/Issues/2017/197/Command-Line-bluetoothctl#article_i1 "Linux Magazine: \"Blue Control\""
 
 
-
-
 <!-- Configuration files -->
 [/etc/samba/smb.conf]:                               #                                                              "Samba configuration file"
 
@@ -34,99 +32,6 @@
 [ansible-galaxy]:                                    ../../devops/ansible.md#ansible-galaxy             '```&#10;$ ansible-galaxy&#10;```&#10;Command-line interface to public gallery of reusable roles for use in Ansible'
 [ansible-playbook]:                                  ../../devops/ansible.md#ansible-playbook           '```&#10;$ ansible-playbook&#10;```&#10;Execute Ansible playbooks'
 [ansible]:                                           ../../devops/ansible.md#ansible                    '```&#10;$ ansible&#10;```&#10;Agentless configuration management and automation tool using YAML templates, developed by Red Hat'
-
-<!-- Archive -->
-[bunzip2]:                                           archive.md#bunzip2                                 '```&#10;$ bunzip2&#10;```&#10;Decompress an archive created with `bzip2`&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 271'
-[bzcat]:                                             archive.md#bzcat                                   '```&#10;$ bzcat&#10;```&#10;Page through .bz2 files'
-[bzip2]:                                             archive.md#bzip2                                   '```&#10;$ bzip2&#10;```&#10;Compress or decompress archives using the Burrows-Wheeler block-sorting text-compression algorithm.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 271'
-[bzless]:                                            archive.md#bzless                                  '```&#10;$ bzless&#10;```&#10;Page through .bz2 files'
-[bzmore]:                                            archive.md#bzmore                                  '```&#10;$ bzmore&#10;```&#10;Page through .bz2 files'
-[cpio]:                                              archive.md#cpio                                    '```&#10;$ cpio&#10;```&#10;Create archives&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 268'
-[dar]:                                               archive.md#dar                                     '```&#10;$ dar&#10;```&#10;Backup tool that can make differential and incremental backups&#10;"`dar` manpage". _Ubuntu Manpage Repository_.'
-[gunzip]:                                            archive.md#gunzip                                  '```&#10;$ gunzip&#10;```&#10;Decompress an archive created with `gzip`&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 270'
-[gzip]:                                              archive.md#gzip                                    '```&#10;$ gzip&#10;```&#10;Compress or decompress archives using the Lempel-Ziv compression algorithm.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 269'
-[tar]:                                               archive.md#tar                                     '```&#10;$ tar&#10;```&#10;Merge multiple files into a single file&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 268'
-[unxz]:                                              archive.md#unxz                                    '```&#10;$ unxz&#10;```&#10;Decompress an archive created with `xz`&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 270'
-[unzip]:                                             archive.md#unzip                                   '```&#10;$ unzip&#10;```&#10;Decompress a .zip archive'
-[xz]:                                                archive.md#xz                                      '```&#10;$ xz&#10;```&#10;Compress or decompress archives using the LZMA and LZMA2 compression methods.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 270'
-[zip]:                                               archive.md#zip                                     '```&#10;$ zip&#10;```&#10;Merge multiple files into a single, compressed file&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 271'
-
-<!-- Audio -->
-[alsamixer]:                                         audio.md#alsamixer                                 '```&#10;$ alsamixer&#10;```&#10;Command-line mixer'
-[amixer]:                                            audio.md#amixer                                                '```&#10;$ amixer&#10;```&#10;Command-line mixer for ALSA sound card driver'
-
-<!-- Bash builtins -->
-[alias]:                                             bash.md#alias                                      '```&#10;$ alias&#10;```&#10;Assign a shorthand `$NAME` for `$CMD`, or display all aliases if not specified. (ref. `$BASH_ALIASES`)&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 74'
-[bg]:                                                bash.md#bg                                         '```&#10;$ bg&#10;```&#10;Put current job or `$JOB` in the background&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 74'
-[bind]:                                              bash.md#bind                                       '```&#10;$ bind&#10;```&#10;Manage the readline library; nonoption arguments have the same form as in a .inputrc file.&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 75'
-[break]:                                             bash.md#break                                      '```&#10;$ break&#10;```&#10;Exit from a `for`, `while`, `select`, or `until` loop.&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 76'
-[builtin]:                                           bash.md#builtin                                    '```&#10;$ builtin&#10;```&#10;Run the shell built-in command `$CMD` with the optional given arguments `$ARGS`, bypassing functions and aliases.&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 76'
-[caller]:                                            bash.md#caller                                     '```&#10;$ caller&#10;```&#10;Print line number and source filename of the current function call or dot file&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 77'
-[case]:                                              bash.md#case                                       '```&#10;$ case&#10;```&#10;Execute `$CMDS1` if `$VALUE` matches `$PATTERN1`, etc&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 77'
-[cd]:                                                bash.md#cd                                         '```&#10;$ cd&#10;```&#10;&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 78'
-[command]:                                           bash.md#command                                    '```&#10;$ command&#10;```&#10;Execute `$CMD`, bypassing any aliases or functions that may be defined for it&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 79'
-[compgen]:                                           bash.md#compgen                                    '```&#10;$ compgen&#10;```&#10;Generate possible completions for `$STRING`&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 80'
-[complete]:                                          bash.md#complete                                   '```&#10;$ complete&#10;```&#10;Specify how to complete arguments for each `$CMD`&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 80'
-[compopt]:                                           bash.md#compopt                                    '```&#10;$ compopt&#10;```&#10;Modify existing compspecs for given `$CMD`, or for the currently executing completion when invoked without `$CMD`&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 84'
-[continue]:                                          bash.md#continue                                   '```&#10;$ continue&#10;```&#10;Skip remaining commands in a `for`, `while`, `select`, or `until` loop, resuming the next iteration, or skipping `$N` nested loops&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 85'
-[declare]:                                           bash.md#declare                                    '```&#10;$ declare&#10;```&#10;Declare variables and manage their attributes&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 85'
-[dirs]:                                              bash.md#dirs                                       '```&#10;$ dirs&#10;```&#10;Print the directory stack managed by `pushd` and `popd`&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 87'
-[disown]:                                            bash.md#disown                                     '```&#10;$ disown&#10;```&#10;Remove one or more `$JOB` from list of jobs managed by bash&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 87'
-[do]:                                                bash.md#do                                         '```&#10;$ do&#10;```&#10;Reserved word that precedes the command sequence in a `for`, `while`, `until`, or `select` statement&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 88'
-[done]:                                              bash.md#done                                       '```&#10;$ done&#10;```&#10;Reserved word that ends a `for`, `while`, `until`, or `select` statement&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 88'
-[echo]:                                              bash.md#echo                                       '```&#10;$ echo&#10;```&#10;Write `$STRING` to STDOUT&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 88'
-[enable]:                                            bash.md#enable                                     '```&#10;$ enable&#10;```&#10;Enable or disable shell builtins, allowing an external version of a command like `echo` or `test` be used.&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 89'
-[esac]:                                              bash.md#esac                                       '```&#10;$ esac&#10;```&#10;Reserved word that ends a `case` statement&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 90'
-[eval]:                                              bash.md#eval                                       '```&#10;$ eval&#10;```&#10;Execute `$ARGS` after first performing variable expansion.&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 90'
-[exec]:                                              bash.md#exec                                       '```&#10;$ exec&#10;```&#10;Execute `$CMD` in place of the current process.&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 91'
-[exit]:                                              bash.md#exit                                       '```&#10;$ exit&#10;```&#10;Exit a shell script with status `$N`&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 92'
-[export]:                                            bash.md#export                                     '```&#10;$ export&#10;```&#10;Convert `$VAR` to a global variable&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 92'
-[false]:                                             bash.md#false                                      '```&#10;$ false&#10;```&#10;Built-in command that exits with a false return value.&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 93'
-[fc]:                                                bash.md#fc                                         '```&#10;$ fc&#10;```&#10;Display or edit commands in the history list&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 93'
-[fg]:                                                bash.md#fg                                         '```&#10;$ fg&#10;```&#10;Bring `$JOB` to the foreground&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 95'
-[fi]:                                                bash.md#fi                                         '```&#10;$ fi&#10;```&#10;Reserved word that ends an `if` statement&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 95'
-[for]:                                               bash.md#for                                        '```&#10;$ for&#10;```&#10;For variable `$X`, do `$CMD`; if `$LIST` is omitted, use `$@`&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 95'
-[function]:                                          bash.md#function                                   '```&#10;$ function&#10;```&#10;Define `$NAME` as a shell function&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 97'
-[getopts]:                                           bash.md#getopts                                    '```&#10;$ getopts&#10;```&#10;Process command-line arguments and check for legal options&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 97'
-[hash]:                                              bash.md#hash                                       '```&#10;$ hash&#10;```&#10;List the current set of hashed (previously found) commands&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 98'
-[help]:                                              bash.md#help                                       '```&#10;$ help&#10;```&#10;Print usage information for each command that matches `$PATTERN` to STDOUT&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 99'
-[history]:                                           bash.md#history                                    '```&#10;$ history&#10;```&#10;Print commands in the history list or manage the history file&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 100'
-[if]:                                                bash.md#if                                         '```&#10;$ if&#10;```&#10;Begin a conditional statement&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 101'
-[jobs]:                                              bash.md#jobs                                       '```&#10;$ jobs&#10;```&#10;List all running or stopped jobs, or list those specified by `$JOBS`&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 102'
-[kill]:                                              bash.md#kill                                       '```&#10;$ kill&#10;```&#10;Terminate each specified PID&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 103'
-[let]:                                               bash.md#let                                        '```&#10;$ let&#10;```&#10;Perform arithmetic as specified by one or more `$EXPRESSIONS`&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 104'
-[local]:                                             bash.md#local                                      '```&#10;$ local&#10;```&#10;Declare local variables for use inside functions&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 105'
-[logout]:                                            bash.md#logout                                     '```&#10;$ logout&#10;```&#10;Exit a login shell, executing ~/.bash_logout if it exists&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 105'
-[mapfile]:                                           bash.md#mapfile                                    '```&#10;$ mapfile&#10;```&#10;Read STDIN into `$ARRAY`, one line per element, or `$MAPFILE` shell variable if not specified&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 105'
-[popd]:                                              bash.md#popd                                       '```&#10;$ popd&#10;```&#10;Pop the top directory off the directory stack and change to the new top directory&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 106'
-[printf]:                                            bash.md#printf                                     '```&#10;$ printf&#10;```&#10;Formatted printing using escape sequences&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 107'
-[pushd]:                                             bash.md#pushd                                      '```&#10;$ pushd&#10;```&#10;Add `$PATH` to the directory state, or rotate it if none provided&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 108'
-[pwd]:                                               bash.md#pwd                                        '```&#10;$ pwd&#10;```&#10;Display current working directory on STDOUT&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 108'
-[read]:                                              bash.md#read                                       '```&#10;$ read&#10;```&#10;Read one line from STDIN and assign each word to the corresonding `$VAR`&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 109'
-[readarray]:                                         bash.md#readarray                                  '```&#10;$ readarray&#10;```&#10;Identical to `mapfile`&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 111'
-[readonly]:                                          bash.md#readonly                                   '```&#10;$ readonly&#10;```&#10;Prevent specified shell variables $VAR1, $VAR2 from being assigned new values, optionally assigning initial values $VAL1, $VAL2&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 111'
-[return]:                                            bash.md#return                                     '```&#10;$ return&#10;```&#10;Use inside a function definition, exiting with status `$N`&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 112'
-[select]:                                            bash.md#select                                     '```&#10;$ select&#10;```&#10;&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 112'
-[set]:                                               bash.md#set                                        '```&#10;$ set&#10;```&#10;Print values of all variables known to the current shell.&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 113'
-[shift]:                                             bash.md#shift                                      '```&#10;$ shift&#10;```&#10;Shift positional arguments; intended for use in a loop.&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 119'
-[shopt]:                                             bash.md#shopt                                      '```&#10;$ shopt&#10;```&#10;Set or unset shell options.&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 119'
-[source]:                                            bash.md#source                                     '```&#10;$ source&#10;```&#10;Execute a bash script as if the commands within it were executed directly on the command line&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 332'
-[source]:                                            bash.md#source                                     '```&#10;$ source&#10;```&#10;Read and execute a file in the current shell&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 120'
-[suspend]:                                           bash.md#suspend                                    '```&#10;$ suspend&#10;```&#10;Suspend the current shell, often used to stop an `su` command&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 120'
-[test]:                                              bash.md#test                                       '```&#10;$ test&#10;```&#10;Evaluate a condition and exit with status 0 if true, or with a nonzero exit status if false.&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 120'
-[time]:                                              bash.md#time                                       '```&#10;$ time&#10;```&#10;Execute `$CMD` and print the total elapsed time, user time, and system time (in seconds). Similar to external `time` command, except that this builtin version can also time other builtin commands and all commands in a pipeline.&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 124'
-[times]:                                             bash.md#times                                      '```&#10;$ times&#10;```&#10;Print accumulated user and system process times for the shell and the processes it has run&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 125'
-[trap]:                                              bash.md#trap                                       '```&#10;$ trap&#10;```&#10;Execute `$CMD` if any `$SIGNALS` are received&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 125'
-[true]:                                              bash.md#true                                       '```&#10;$ true&#10;```&#10;Built-in command that exits with a true return value&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 127'
-[type]:                                              bash.md#type                                       '```&#10;$ type&#10;```&#10;Show whether each command name is an external command, a built-in command, an alias, shell keyword, or defined shell function&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 127'
-[typeset]:                                           bash.md#typeset                                    '```&#10;$ typeset&#10;```&#10;Identical to `declare`&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 128'
-[ulimit]:                                            bash.md#ulimit                                     '```&#10;$ ulimit&#10;```&#10;Print value of one or more resource limits&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 128'
-[umask]:                                             bash.md#umask                                      '```&#10;$ umask&#10;```&#10;Set file creation mask to octal value `$MASK`, or display it if not provided.&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 130'
-[unalias]:                                           bash.md#unalias                                    '```&#10;$ unalias&#10;```&#10;Remove `$NAMES` from the alias list.&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 130'
-[unset]:                                             bash.md#unset                                      '```&#10;$ unset&#10;```&#10;Erase definitions of functions or variables listed in `$NAMES`&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 130'
-[until]:                                             bash.md#until                                      '```&#10;$ until&#10;```&#10;Until `$CONDITION` is met, do `$CMDS`&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 131'
-[wait]:                                              bash.md#wait                                       '```&#10;$ wait&#10;```&#10;Pause until the specified `$JOB`, which can be a job number or PID, completes, or until all background jobs complete if not provided.&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 131'
-[while]:                                             bash.md#while                                      '```&#10;$ while&#10;```&#10;While `$CONDITION` is met, do `$CMDS`.&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 132'
 
 <!-- Build tools -->
 [aclocal]:                                           build.md#aclocal                                   '```&#10;aclocal&#10;```&#10;Place m4 macro definitions needed by `autoconf` into a single file. `aclocal` first scans for macro definitions in m4 files in its default directory (/usr/share/aclocal) and in the file acinclude.m4, then in the configure.ac file. IT generates an aclocal.m4 file that contains definitions of all m4 macros required by `autoconf`.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 16'
@@ -265,266 +170,10 @@
 [whereis]:                                           file.md#whereis                                    '```&#10;$ whereis&#10;```&#10;Search for binary executables, source code, and manual pages in standard locations as well as the PATH and `$MANPATH`&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 139'
 [which]:                                             file.md#which                                      '```&#10;$ which&#10;```&#10;Search for binary executables on the PATH&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 139'
 
-<!-- Hardware: Printers -->
-[cancel]:                                            hw.md#cancel                                       '```&#10;$ cancel&#10;```&#10;Remove a print job that is in the queue&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 431'
-[cupsaccept]:                                        hw.md#cupsaccept                                   '```&#10;$ cupsaccept&#10;```&#10;Enable spooling for specified printer&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 429'
-[cupsctl]:                                           hw.md#cupsctl                                      '```&#10;$ cupsctl&#10;```&#10;Display or change CUPS settings&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 179'
-[cupsdisable]:                                       hw.md#cupsdisable                                  '```&#10;$ cupsdisable&#10;```&#10;Disable printing from the specified printer&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 429'
-[cupsenable]:                                        hw.md#cupsenable                                   '```&#10;$ cupsenable&#10;```&#10;Enable printing from the specified printer&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 429'
-[cupsreject]:                                        hw.md#cupsreject                                   '```&#10;$ cupsreject&#10;```&#10;Disable spooling for specified printer&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 429'
-[lpadmin]:                                           hw.md#lpadmin                                      '```&#10;$ lpadmin&#10;```&#10;Create a printer&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 179'
-[lpc]:                                               hw.md#lpc                                          '```&#10;$ lpc&#10;```&#10;View status of printers&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 432'
-[lpq]:                                               hw.md#lpq                                          '```&#10;$ lpq&#10;```&#10;View print jobs in the print queue&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 432'
-[lpr]:                                               hw.md#lpr                                          '```&#10;$ lpr&#10;```&#10;Print documents to the print queue&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 432'
-[lprm]:                                              hw.md#lprm                                         '```&#10;$ lprm&#10;```&#10;Remove print jobs&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 432'
-
-[bc]:                                                #bc                                                            '```&#10;$ bc&#10;```&#10;An arbitrary precision calculator language&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 26'
-[bg]:                                                info.md#bg                                         '```&#10;$ bg&#10;```&#10;Restart a suspended process in the background. Specify the number of the job according to the output of `jobs`, preceded by "%".&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 171'
-[biff]:                                              #biff                                                          '```&#10;$ biff&#10;```&#10;Turn mail notifications on or off. With no arguments, `biff` indicates the current status&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 27'
-[blkid]:                                             disk.md#blkid                                      '```&#10;$ blkid&#10;```&#10;Display label and UUIDs of block devices.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 51'
-[bluetoothctl]:                                      #bluetoothctl                                                  '```&#10;$ bluetoothctl&#10;```&#10;Canonical implementation of Bluetooth on Linux'
-[bmon]:                                              network.md#bmon                                    '```&#10;$ bmon&#10;```&#10;Terminal-based graphical bandwidth monitor'
-[bpftrace]:                                          #bpftrace                                          '```&#10;$ bpftrace&#10;```&#10;New open-source tracer for analyzing production performance problems and troubleshooting software&#10;"An introduction to `bpftrace` for Linux." opensource.com'
-[brctl]:                                             net.md#brctl                                       '```&#10;$ brctl&#10;```&#10;Create, modify, or view an Ethernet bridge, which connects separate networks into a single network from the perspective of users.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 27'
-[cancel]:                                            #cancel                                                        '```&#10;$ cancel&#10;```&#10;Remove a print job that is in the queue&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 431'
-[cat]:                                               text.md#cat                                        '```&#10;$ cat&#10;```&#10;Display contents of text files&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 115'
-[chage]:                                             sysadmin.md#chage                                  '```&#10;$ chage&#10;```&#10;Modify password-aging features for a user.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 95'
-[chattr]:                                            file.md#chattr                                     '```&#10;$ chattr&#10;```&#10;Change file attributes&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 311-312'
-[chcon]:                                             selinux.md#chcon                                   '```&#10;$ chcon&#10;```&#10;Change context of a file or directory&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 207'
-[chgrp]:                                             file.md#chgrp                                      '```&#10;$ chgrp&#10;```&#10;Change group ownership of a file&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 198-199'
-[chkconfig]:                                         init.md#chkconfig                                  '```&#10;$ chkconfig&#10;```&#10;Display or modify when services are started or stopped&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 153-154'
-[chmod]:                                             file.md#chmod                                      '```&#10;$ chmod&#10;```&#10;Change permissions on files&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 195-198'
-[chown]:                                             file.md#chown                                      '```&#10;$ chown&#10;```&#10;Change the user owner or group owner of a file or directory&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 198'
-[compress]:                                          #compress                                          '```&#10;$ compress&#10;```&#10;Compress and expand data&#10;&#10;Compress reduces the size of the named files using adaptive Lempel-Ziv coding. Whenever possible, each file is replaced by one with the extension .Z, while keeping the same ownership modes, access and modification times. If no files are specified, the standard input is compressed to the standard output. Compress will only attempt to compress regular files. In particular, it will ignore symbolic links. If a file has multiple hard links, compress will refuse to compress it unless the -f flag is given.'
-[cp]:                                                file.md#cp                                         '```&#10;$ cp&#10;```&#10;Copy files or directories&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 129-130'
-[cpio]:                                              archive.md#cpio                                    '```&#10;$ cpio&#10;```&#10;Create archives&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 268'
-[curl]:                                              net.md#curl                                        '```&#10;$ curl&#10;```&#10;Noninteractively transfer data from a large number of protocols, including FTP, FTPS, HTTP, SCP, SFTP, SMB, SMBS, Telnet, and TFTP&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 90'
-[cut]:                                               text.md#cut                                        '```&#10;$ cut&#10;```&#10;Display "sections" of data&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 128'
-[dar]:                                               archive.md#dar                                     '```&#10;$ dar&#10;```&#10;Backup tool that can make differential and incremental backups&#10;"`dar` manpage". _Ubuntu Manpage Repository_.'
-[date]:                                              info.md#date                                       '```&#10;$ date&#10;```&#10;Display the system clock&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 72'
-[dd]:                                                file.md#dd                                         '```&#10;$ dd&#10;```&#10;Perform multiple operations related to backing up data and creating files. One common use is to make a backup of an entire drive.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 269'
-[depmod]:                                            kernel.md#depmod                                   '```&#10;$ depmod&#10;```&#10;Builds the modules.dep file, which contains module dependencies and is used by `modprobe` to determine which modules need to be loaded&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 15'
-[df]:                                                benchmarking.md#df                                 '```&#10;$ df&#10;```&#10;Display usage of partitions and logical devices&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 49'
-[diff]:                                              text.md#diff                                       '```&#10;$ diff&#10;```&#10;Compare two files&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 140'
-[dig]:                                               net.md#dig                                         '```&#10;$ dig&#10;```&#10;Perform DNS queries on specific DNS servers&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 19'
-[dmesg]:                                             kernel.md#dmesg                                    '```&#10;$ dmesg&#10;```&#10;Display in-memory copy of the kernel ring buffer&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 178'
-[dmidecode]:                                         #dmidecode                                                     '```&#10;$ dmidecode&#10;```&#10;Display a description of hardware components&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 324'
-[dnf]:                                               package.md#dnf                                     '```&#10;$ dnf&#10;```&#10;Package manager for Red Hat systems that supercedes `yum`&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 86'
-[dpkg-reconfigure]:                                  package.md#dpkg-reconfigure                        '```&#10;$ dpkg-reconfigure&#10;```&#10;Run the configuration script again for a package that has already been installed.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 80'
-[dpkg]:                                              package.md#dpkg                                    '```&#10;$ dpkg&#10;```&#10;Manage local Debian packages&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 79'
-[dracut]:                                            kernel.md#dracut                                   '```&#10;$ dracut&#10;```&#10;Executed by `mkinitrd` but rarely used manually&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 8'
-[du]:                                                benchmarking.md#du                                 '```&#10;$ du&#10;```&#10;Display estimate disk space usage in a directory structure&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 49'
-[dumpe2fs]:                                          disk.md#dumpe2fs                                   '```&#10;$ dumpe2fs&#10;```&#10;Display filesystem metadata&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 51'
-[e2label]:                                           disk.md#e2label                                    '```&#10;$ e2label&#10;```&#10;Change the label of a filesystem&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 53'
-[echo]:                                              text.md#echo                                       '```&#10;$ echo&#10;```&#10;Display the value of variables&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 331'
-[edquota]:                                           sysadmin.md#edquota                                '```&#10;$ edquota&#10;```&#10;Create or edit a user\'s disk quota&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 99'
-[egrep]:                                             text.md#egrep                                      '```&#10;$ egrep&#10;```&#10;Equivalent to `grep -E`&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 128'
-[env]:                                               #env                                               '```&#10;$ env&#10;```&#10;Display environment variables in the current shell&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 330'
-[ethtool]:                                           #                                                              '`ethtool`&#10;Display and configure network device settings.'
-[export]:                                            #export                                            '```&#10;$ export&#10;```&#10;Convert a local variable to an environment variable&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 329'
-[find]:                                              file.md#find                                       '```&#10;$ find&#10;```&#10;Search the filesystem for files and directories&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 136'
-[free]:                                              benchmarking.md#free                               '```&#10;$ free&#10;```&#10;Display amount of free and used memory in the system&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 294'
-[fs-cache]:                                          #fs-cache                                          '```&#10;$ fs-cache&#10;```&#10;Update the font cache'
-[fsck]:                                              disk.md#fsck                                       '```&#10;$ fsck&#10;```&#10;Find filesystem problems on unmounted filesystems&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 52'
-[ftp]:                                               #                                                              'Transfer files to and from a remote network site'
-[getenforce]:                                        selinux.md#getenforce                              '```&#10;$ getenforce&#10;```&#10;Determine the current SELinux mode&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 205'
-[getfacl]:                                           file.md#getfacl                                    '```&#10;$ getfacl&#10;```&#10;Display the ACL of a file&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 199'
-[getsebool]:                                         selinux.md#getsebool                               '```&#10;$ getsebool&#10;```&#10;Display names and values of SELinux Booleans&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 206'
-[glances]:                                           benchmarking.md#glances                            '```&#10;$ glances&#10;```&#10;Cross-platform monitoring tool, written in Python'
-[grep]:                                              text.md#grep                                       '```&#10;$ grep&#10;```&#10;Search files for lines that contain a specific pattern&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 114'
-[gunzip]:                                            archive.md#gunzip                                  '```&#10;$ gunzip&#10;```&#10;Decompress an archive created with `gzip`&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 270'
-[gzip]:                                              archive.md#gzip                                    '```&#10;$ gzip&#10;```&#10;Compress or decompress archives using the Lempel-Ziv compression algorithm.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 269'
-[head]:                                              text.md#head                                       '```&#10;$ head&#10;```&#10;Display the top part of text data&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 116'
-[host]:                                              net.md#host                                        '```&#10;$ host&#10;```&#10;Perform simple DNS queries&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 20'
-[hostnamectl]:                                       init.md#hostnamectl                                '```&#10;$ hostnamectl&#10;```&#10;Control the system hostname&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 150'
-[hping3]:                                            network.md#hping3                                  '```&#10;$ hping3&#10;```&#10;Active network smashing tool'
-[hwclock]:                                           info.md#hwclock                                    '```&#10;$ hwclock&#10;```&#10;Access the BIOS clock&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 72'
-[id]:                                                sysadmin.md#id                                     '```&#10;$ id&#10;```&#10;Display basic account information for a specified user, including UID, GID, and group membership&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 96'
-[ifconfig]:                                          network.md#ifconfig                                '```&#10;$ ifconfig&#10;```&#10;Obsolete program that configures network interfaces'
-[iftop]:                                             net.md#iftop                                       '```&#10;$ iftop&#10;```&#10;Display network connections using the most bandwidth&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 281'
-[ifup-wireless]:                                     net.md#ifup-wireless                               '```&#10;$ ifup-wireless&#10;```&#10;Configure wireless networks&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 28'
-[install]:                                           file.md#install                                    '```&#10;$ install&#10;```&#10;Copy files while maintaining metadata'
-[ioping]:                                            disk.md#ioping                                     '```&#10;$ ioping&#10;```&#10;Perform simple latency tests on a disk&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 288'
-[iostat]:                                            benchmarking.md#iostat                                         '`iostat`&#10;Display input/output statistics on devices, including partitions&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 48&#10;---&#10;Measure the flow of information to and from disk devices&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 637'
-[ip]:                                                net.md#ip                                          '```&#10;$ ip&#10;```&#10;Newer alternative to the old `ifconfig`&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 21'
-[iperf]:                                             net.md#iperf                                       '```&#10;$ iperf&#10;```&#10;Create tests of the throughput between two systems, requiring setup on both client and server&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 281'
-[ipset]:                                             net.md#ipset                                       '```&#10;$ ipset&#10;```&#10;Create a "set" of IP addresses to which firewall rules can be applied&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 282'
-[iw]:                                                network.md#iw                                      '```&#10;$ iw&#10;```&#10;Show or manipulate wireless devices and their configuration'
-[iwconfig]:                                          net.md#iwconfig                                    '```&#10;$ iwconfig&#10;```&#10;Display or set information about wireless network interfaces.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 25'
-[iwlist]:                                            network.md#iwlist                                  '```&#10;$ iwlist&#10;```&#10;Get detailed wireless information about a wireless interface'
-[journalctl]:                                        init.md#journalctl                                 '```&#10;$ journalctl&#10;```&#10;Query the systemd journal&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 253'
-[kill]:                                              info.md#kill                                       '```&#10;$ kill&#10;```&#10;Change the state of a process&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 171'
-[kinit]:                                             net.md#kinit                                       '```&#10;$ kinit&#10;```&#10;Kerberos utility to obtain an individual ticket, which is then cached on the local system.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 239'
-[klist]:                                             net.md#klist                                       '```&#10;$ klist&#10;```&#10;Display a list of cached Kerberos tickets&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 239'
-[last]:                                              sysadmin.md#last                                   '```&#10;$ last&#10;```&#10;Display information about current and previous logins&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 98'
-[lastb]:                                             sysadmin.md#lastb                                  '```&#10;$ lastb&#10;```&#10;Display failed login attempts&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 255'
-[ldd]:                                               build.md#ldd                                       '```&#10;$ ldd&#10;```&#10;Display shared libraries used by a specified command&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 87'
-[less]:                                              text.md#less                                       '```&#10;$ less&#10;```&#10;Display text one page at a time; more capable than `more`.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 116'
-[lex]:                                               #lex                                               '```&#10;$ lex&#10;```&#10;Generate a lexical analysis program based on the regular expressions and C statements contained in one or more input files&#10;Lexical analyzer generator written by Eric Schmidt'
-[ln]:                                                file.md#ln                                         '```&#10;$ ln&#10;```&#10;Create a link&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 132'
-[loadaverage]:                                       benchmarking.md#loadaverage                        '```&#10;$ loadaverage&#10;```&#10;Display system load average (cf. `uptime`)&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 291'
-[localectl]:                                         init.md#localectl                                  '```&#10;$ localectl&#10;```&#10;Control the system locale and keyboard layout settings&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 70'
-[locate]:                                            file.md#locate                                     '```&#10;$ locate&#10;```&#10;Search for files based on a database that is typically created daily.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 138'
-[logger]:                                            #logger                                            '```&#10;$ logger&#10;```&#10;Create a one-time file entry specified by the user'
-[loginctl]:                                          systemd.md#loginctl                                '```&#10;$ loginctl&#10;```&#10;Control the systemd login manager'
-[logrotate]:                                         benchmarking.md#logrotate                          '```&#10;$ logrotate&#10;```&#10;Utility designed to ensure the partition that holds log files has enough room to handle them by rotating log files, reducing the space they use, typically configured to run automatically as a cron job&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 250'
-[lp]:                                                #lp                                                '`lp`&#10;Send a print job to a printer&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 428'
-[lpadmin]:                                           hw.md#lpadmin                                      '```&#10;$ lpadmin&#10;```&#10;Create a printer&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 179'
-[lpc]:                                               #lpc                                               '`lpc`&#10;View status of printers&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 432'
-[lpq]:                                               #lpq                                               '`lpq`&#10;View print jobs in the print queue&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 432'
-[lpr]:                                               #lpr                                               '`lpr`&#10;Print documents to the print queue&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 432'
-[lprm]:                                              #lprm                                              '`lprm`&#10;Remove print jobs&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 432'
-[ls]:                                                file.md#ls                                         '```&#10;$ ls&#10;```&#10;List files in a directory&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 131'
-[lsattr]:                                            file.md#lsattr                                     '```&#10;$ lsattr&#10;```&#10;Display the attributes for a file&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 311'
-[lsblk]:                                             hw.md#lsblk                                        '```&#10;$ lsblk&#10;```&#10;Display block devices&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 51'
-[lscpu]:                                             benchmarking.md#lscpu                              '```&#10;$ lscpu&#10;```&#10;Display CPU architecture'
-[lsdev]:                                             hw.md#lsdev                                        '```&#10;$ lsdev&#10;```&#10;Display devices recognized by system&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 176'
-[lshw]:                                              hw.md#lshw                                         '```&#10;$ lshw&#10;```&#10;Display detailed information on system hardware&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 325'
-[lsmod]:                                             kernel.md#lsmod                                    '```&#10;$ lsmod&#10;```&#10;Display kernel modules that are loaded into memory&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 11'
-[lsof]:                                              file.md#lsof                                       '```&#10;$ lsof&#10;```&#10;Display open files, open network ports, and network connections&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 303'
-[lsof]:                                              file.md#lsof                                       '```&#10;lsof&#10;```&#10;Display open files, open network ports, and network connections&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.'
-[lspci]:                                             hw.md#lspci                                        '```&#10;$ lspci&#10;```&#10;Display devices attached to the PCI bus&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 177'
-[lsusb]:                                             hw.md#lsusb                                        '```&#10;$ lsusb&#10;```&#10;Display devices attached to the PCI bus&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 176'
-[lvdisplay]:                                         disk.md#lvdisplay                                  '```&#10;$ lvdisplay&#10;```&#10;Display information about a LV&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 45'
-[lvextend]:                                          disk.md#lvextend                                   '```&#10;$ lvextend&#10;```&#10;Extend the size of a LV (not the filesystem that resides within it)&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 45'
-[make]:                                              build.md#make                                      '```&#10;$ make&#10;```&#10;Utility for building and maintaining programs from source code using a makefile&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 86'
-[md5sum]:                                            file.md#md5sum                                     '```&#10;$ md5sum&#10;```&#10;Display MD5 checksum value for a file&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 275'
-[mdadm]:                                             disk.md#mdadm                                      '```&#10;$ mdadm&#10;```&#10;Create a software RAID device&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 45'
-[mkdir]:                                             file.md#mkdir                                      '```&#10;$ mkdir&#10;```&#10;Create a directory&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 132'
-[mkfs]:                                              disk.md#mkfs                                       '```&#10;$ mkfs&#10;```&#10;Create a filesystem on a partition; actually a frontend utility to other commands.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 48'
-[mkinitrd]:                                          kernel.md#mkinitrd                                 '```&#10;$ mkinitrd&#10;```&#10;Creates initramfs file&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 8'
-[mkswap]:                                            disk.md#mkswap                                     '```&#10;$ mkswap&#10;```&#10;Format a partition as a swap device&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 293'
-[modinfo]:                                           kernel.md#modinfo                                  '```&#10;$ modinfo&#10;```&#10;Provide details about a module&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 13'
-[modprobe]:                                          kernel.md#modprobe                                 '```&#10;$ modprobe&#10;```&#10;Add and remove modules from the kernel&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 13'
-[more]:                                              text.md#more                                       '```&#10;$ more&#10;```&#10;Display text one page at a time; superceded by `less`.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 116'
-[mount]:                                             hw.md#mount                                        '```&#10;$ mount&#10;```&#10;Manually mount a filesystem or display currently mounted filesystems&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 50'
-[mpstat]:                                            benchmarking.md#mpstat                             '`mpstat`&#10;Report processor-related statistics&#10;---&#10;Utility for monitoring CPU performance&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 635-637'
-[mtr]:                                               net.md#mtr                                         '```&#10;$ mtr&#10;```&#10;Performs a `traceroute`-like operation every second&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 285'
-[mv]:                                                file.md#mv                                         '```&#10;$ mv&#10;```&#10;Move or rename a file&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 129'
-[netcat]:                                            net.md#netcat                                      '```&#10;$ netcat&#10;```&#10;Versatile utility for TCP or UDP connections&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 284'
-[netstat]:                                           net.md#netstat                                     '```&#10;$ netstat&#10;```&#10;Print network connections, routing tables, interface statistics, masquerade connections, and multi-cast memberships&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 18'
-[nice]:                                              info.md#nice                                       '```&#10;$ nice&#10;```&#10;Specify a difference nice value than the default&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 300'
-[nl]:                                                text.md#nl                                         '```&#10;$ nl&#10;```&#10;Number lines of output&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 119'
-[nmap]:                                              net.md#nmap                                        '```&#10;$ nmap&#10;```&#10;Probe a system for open ports&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 280'
-[nmcli]:                                             net.md#nmcli                                       '```&#10;$ nmcli&#10;```&#10;Configure NetworkManager&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 26'
-[nmtui]:                                             net.md#nmtui                                       '```&#10;$ nmtui&#10;```&#10;Provide a text-based to configure NetworkManager.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 27'
-[nohup]:                                             info.md#nohup                                      '```&#10;$ nohup&#10;```&#10;Execute a command that will continue even if its parent is stopped&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 172'
-[nproc]:                                             benchmarking.md#nproc                              '```&#10;$ nproc&#10;```&#10;Display number of CPU processors or cores'
-[nslookup]:                                          net.md#nslookup                                    '```&#10;$ nslookup&#10;```&#10;Perform simple queries on DNS servers&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 19'
-[ntsysv]:                                            #ntsysv                                            '```&#10;$ ntsysv&#10;```&#10;TUI utility used to modify appropriate runtime configuration files so that they start and stop daemons when entering a particular runlevel&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 367'
-[parted]:                                            disk.md#parted                                     '```&#10;$ parted&#10;```&#10;Interactive tool that can display and modify traditional and GUID partition tables and create a filesystem on a partition.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 46'
-[partprobe]:                                         disk.md#partprobe                                  '```&#10;$ partprobe&#10;```&#10;Inform system of changes to partition table, typically used after making changes using `fdisk`&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 289'
-[passwd]:                                            sysadmin.md#passwd                                 '```&#10;$ passwd&#10;```&#10;Change a user\'s password.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 95'
-[pgrep]:                                             info.md#pgrep                                      '```&#10;$ pgrep&#10;```&#10;List PIDs associated with a program name, similar to `ps -e | grep`&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 304'
-[ping]:                                              net.md#ping                                        '```&#10;$ ping&#10;```&#10;Verify a remote host can respond to a network&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 18'
-[pkill]:                                             info.md#pkill                                      '```&#10;$ pkill&#10;```&#10;Kill a process by providing a process name, user name, or group name&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 305'
-[printenv]:                                          benchmarking.md#printenv                           '```&#10;$ printenv&#10;```&#10;Display environment variables&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 331'
-[ps]:                                                info.md#ps                                         '```&#10;$ ps&#10;```&#10;List processes that are running on the system&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 303'
-[pvdisplay]:                                         disk.md#pvdisplay                                  '```&#10;$ pvdisplay&#10;```&#10;Display information about a PV&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 45'
-[quota]:                                             sysadmin.md#quota                                  '```&#10;$ quota&#10;```&#10;Display quotas&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 100'
-[quotacheck]:                                        sysadmin.md#quotacheck                             '```&#10;$ quotacheck&#10;```&#10;Create initial quota databases&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 99'
-[raw]:                                               hw.md#raw                                          '```&#10;$ raw&#10;```&#10;Create a raw device&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 39'
-[renice]:                                            info.md#renice                                     '```&#10;$ renice&#10;```&#10;Change nice value of an existing job&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 300'
-[repquota]:                                          sysadmin.md#repquota                               '```&#10;$ repquota&#10;```&#10;Display quotas for an entire filesystem&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 101'
-[resize2fs]:                                         disk.md#resize2fs                                  '```&#10;$ resize2fs&#10;```&#10;Resize a logical volume&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 52'
-[restorecon]:                                        selinux.md#restorecon                              '```&#10;$ restorecon&#10;```&#10;Reset default security context on a file or directory&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 207'
-[rfkill]:                                            network.md#rfkill                                  '```&#10;$ rfkill&#10;```&#10;Tool for enabling and disabling wireless devices'
-[rm]:                                                file.md#rm                                         '```&#10;$ rm&#10;```&#10;Delete files and directories&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 130'
-[rmdir]:                                             file.md#rmdir                                      '```&#10;$ rmdir&#10;```&#10;Delete empty directories&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 132'
-[rmmod]:                                             kernel.md#rmmod                                    '```&#10;$ rmmod&#10;```&#10;Remove modules from the kernel&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 14'
-[route]:                                             net.md#route                                       '```&#10;$ route&#10;```&#10;Display or modify routing table&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 21'
-[rpm]:                                               package.md#rpm                                     '```&#10;$ rpm&#10;```&#10;Install, upgrade, and remove .rpm packages&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 78'
-[rsync]:                                             file.md#rsync                                      '```&#10;$ rsync&#10;```&#10;Copy files remotely; used in situations where only updated files are to be transferred in order to preserve bandwidth.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 131'
-[rsyslogd]:                                          benchmarking.md#rsyslogd                           '```&#10;$ rsyslogd&#10;```&#10;Responsible for logging of application and system events&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 249'
-[sar]:                                               benchmarking.md#sar                                '```&#10;$ sar&#10;```&#10;Displays the same information as `iostat`, but displayed as it occurs over time (typically at 10-minute intervals)&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 291'
-[scp]:                                               file.md#scp                                        '```&#10;$ scp&#10;```&#10;Copy files to and from remote systems via `ssh`&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 130'
-[semanage]:                                          selinux.md#semanage                                '```&#10;$ semanage&#10;```&#10;Edit security contexts for files and ports&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 206'
-[sestatus]:                                          selinux.md#sestatus                                '```&#10;$ sestatus&#10;```&#10;Display status of SELinux&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 205'
-[set]:                                               #set                                               '```&#10;$ set&#10;```&#10;Modify behavior of shell or display shell variables.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 330'
-[setenforce]:                                        selinux.md#setenforce                              '```&#10;$ setenforce&#10;```&#10;Change SELinux mode&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 205'
-[setfacl]:                                           file.md#setfacl                                    '```&#10;$ setfacl&#10;```&#10;Create an ACL on a file or directory.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 199'
-[setsebool]:                                         selinux.md#setsebool                               '```&#10;$ setsebool&#10;```&#10;Set an SELinux Boolean&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 206'
-[sftp]:                                              net.md#sftp                                        '```&#10;$ sftp&#10;```&#10;Securely transfer files over ssh&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 274'
-[sort]:                                              text.md#sort                                       '```&#10;$ sort&#10;```&#10;Sort text data&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 124'
-[source]:                                            #source                                            '```&#10;$ source&#10;```&#10;Execute a bash script as if the commands within it were executed directly on the command line&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 332'
-[speaker-test]:                                      audio.md#speaker-test                              '```&#10;$ speaker-test&#10;```&#10;Generates a tone that can be used to test the speakers of a computer'
-[ss]:                                                net.md#ss                                          '```&#10;$ ss&#10;```&#10;Display socket information.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 25'
-[stat]:                                              #stat                                              '```&#10;$ stat&#10;```&#10;Display file or file system status'
-[stat]:                                              file.md#stat                                       '```&#10;$ stat&#10;```&#10;See inode information of a file&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 135'
-[su]:                                                sysadmin.md#su                                     '```&#10;$ su&#10;```&#10;Allow a user to shift user accounts&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 209'
-[sudo]:                                              sysadmin.md#sudo                                   '```&#10;$ sudo&#10;```&#10;Run commands as other users (typically as the root user).&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 209'
-[sudoedit]:                                          sysadmin.md#sudoedit                               '```&#10;$ sudoedit&#10;```&#10;Edit a file using sudo&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 210'
-[swapoff]:                                           disk.md#swapoff                                    '```&#10;$ swapoff&#10;```&#10;Stop using a swap file or device&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 292'
-[swapon]:                                            disk.md#swapon                                     '```&#10;$ swapon&#10;```&#10;Begin using a swap file or device&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 292'
-[syslogd]:                                           benchmarking.md#syslogd                            '```&#10;$ syslogd&#10;```&#10;Responsible for logging of application and system events&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 249'
-[systemctl]:                                         systemd.md#systemctl                               '```&#10;$ systemctl&#10;```&#10;Control the systemd system and service manager'
-[systemd-analyze]:                                   init.md#systemd-analyze                            '```&#10;$ systemd-analyze&#10;```&#10;Determine if there are any errors in systemd configuration&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 147'
-[systemd-delta]:                                     systemd.md#systemd-delta                           '```&#10;$ systemd-delta&#10;```&#10;Find overridden configuration files'
-[tail]:                                              text.md#tail                                       '```&#10;$ tail&#10;```&#10;Display the bottom part of text data.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 115'
-[tar]:                                               archive.md#tar                                     '```&#10;$ tar&#10;```&#10;Merge multiple files into a single file&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 268'
-[tcpdump]:                                           net.md#tcpdump                                     '```&#10;$ tcpdump&#10;```&#10;Inspect IP packets (Wireshark is a GUI-based alternative)&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 282'
-[tee]:                                               text.md#tee                                        '```&#10;$ tee&#10;```&#10;Send output to both STDOUT and to a file&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 122'
-[telinit]:                                           init.md#telinit                                    '```&#10;$ telinit&#10;```&#10;Change system to a different runlevel&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 155'
-[time]:                                              info.md#time                                       '```&#10;$ time&#10;```&#10;Determine how long it takes to run a command&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 302'
-[timedatectl]:                                       info.md#timedatectl                                '```&#10;$ timedatectl&#10;```&#10;Display system clock&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 71'
-[touch]:                                             file.md#touch                                      '```&#10;$ touch&#10;```&#10;Used to create empty files and to update modification and access timestamps of existing files.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 129'
-[tr]:                                                text.md#tr                                         '```&#10;$ tr&#10;```&#10;Translate characters from one set to another&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 123'
-[tracepath]:                                         net.md#tracepath                                   '```&#10;$ tracepath&#10;```&#10;Similar to `traceroute`, but with fewer options and no requirement for superuser privileges&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 287'
-[traceroute]:                                        net.md#traceroute                                  '```&#10;$ traceroute&#10;```&#10;Interrogate the gateways on the way to a remote system&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 285'
-[tree]:                                              file.md#tree                                       '```&#10;$ tree&#10;```&#10;Display contents of directories in a tree-like format'
-[tshark]:                                            net.md#tshark                                      '```&#10;$ tshark&#10;```&#10;Wireshark terminal interface&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 283'
-[tty]:                                               benchmarking.md#tty                                '```&#10;$ tty&#10;```&#10;Determine terminal device file for current session&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 121'
-[tune2fs]:                                           disk.md#tune2fs                                    '```&#10;$ tune2fs&#10;```&#10;Display or modify specific metadata for an ext filesystem.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 53'
-[udevadm]:                                           kernel.md#udevadm                                  '```&#10;$ udevadm&#10;```&#10;Load new rules into kernel memory, or verify they have taken effect, after changing a udev rule.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 181'
-[ulimit]:                                            sysadmin.md#ulimit                                 '```&#10;$ ulimit&#10;```&#10;Display or set a user account\'s limits&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 201'
-[umask]:                                             file.md#umask                                      '```&#10;$ umask&#10;```&#10;Set default permissions for files and directories&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 195'
-[umount]:                                            disk.md#umount                                     '```&#10;$ umount&#10;```&#10;Unmount a filesystem&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 50'
-[unlink]:                                            file.md#unlink                                     '```&#10;$ unlink&#10;```&#10;Does essentially what `rm` does, but in a subtly different way.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 135'
-[unxz]:                                              archive.md#unxz                                    '```&#10;$ unxz&#10;```&#10;Decompress an archive created with `xz`&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 270'
-[unzip]:                                             archive.md#unzip                                   '```&#10;$ unzip&#10;```&#10;Decompress a .zip archive'
-[updatedb]:                                          file.md#updatedb                                   '```&#10;$ updatedb&#10;```&#10;Create a database of all files on the operating system to be used by `locate`.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 140'
-[uptime]:                                            benchmarking.md#uptime                             '```&#10;$ uptime&#10;```&#10;Show how long the system has been running&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 291'
-[useradd]:                                           sysadmin.md#useradd                                '```&#10;$ useradd&#10;```&#10;Create a user account&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 94'
-[userdel]:                                           sysadmin.md#userdel                                '```&#10;$ userdel&#10;```&#10;Delete a user account&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 96'
-[usermod]:                                           sysadmin.md#usermod                                '```&#10;$ usermod&#10;```&#10;Modify a user account&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 94'
-[vgdisplay]:                                         disk.md#vgdisplay                                  '```&#10;$ vgdisplay&#10;```&#10;Display information about a VG&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 45'
-[vgextend]:                                          disk.md#vgextend                                   '```&#10;$ vgextend&#10;```&#10;Add a PV to an existing VG&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 45'
-[vgreduce]:                                          disk.md#vgreduce                                   '```&#10;$ vgreduce&#10;```&#10;Remove a PV from a VG&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 45'
-[vgremove]:                                          disk.md#vgremove                                   '```&#10;$ vgremove&#10;```&#10;Delete a VG&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 45'
-[visudo]:                                            sysadmin.md#visudo                                 '```&#10;$ visudo&#10;```&#10;Edit /etc/sudoers file&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 210'
-[vmstat]:                                            benchmarking.md#vmstat                             '```&#10;$ vmstat&#10;```&#10;Provides more detail than `free`&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 293'
-[w]:                                                 sysadmin.md#w                                      '```&#10;$ w&#10;```&#10;Display output similar to that of `uptime` for all logged-in users&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 97'
-[wc]:                                                text.md#wc                                         '```&#10;$ wc&#10;```&#10;Display number of lines, words, or characters of data.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 128'
-[wget]:                                              net.md#wget                                        '```&#10;$ wget&#10;```&#10;Noninteractive tool to download files from remote systems via HTTP, HTTPS, or FTP.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 89'
-[whereis]:                                           file.md#whereis                                    '```&#10;$ whereis&#10;```&#10;Search for binary executables, source code, and manual pages in standard locations as well as the PATH and `$MANPATH`&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 139'
-[which]:                                             file.md#which                                      '```&#10;$ which&#10;```&#10;Search for binary executables on the PATH&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 139'
-[who]:                                               sysadmin.md#who                                    '```&#10;$ who&#10;```&#10;Display currently users currently logged in&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 97'
-[whoami]:                                            init.md#whoami                                     '```&#10;$ whoami&#10;```&#10;Display effective user ID&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 96'
-[whois]:                                             net.md#whois                                       '```&#10;$ whois&#10;```&#10;Determine domain ownership&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 287'
-[xargs]:                                             #xargs                                             '```&#10;$ xargs&#10;```&#10;Take data from STDIN to build and execute commands&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 121'
-[xfs_info]:                                          disk.md#xfs_info                                   '```&#10;$ xfs_info&#10;```&#10;Display the geometry of an XFS filesystem (cf. `dumpe2fs`)&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 44'
-[xfs_metadump]:                                      disk.md#xfs_metadump                               '```&#10;$ xfs_metadump&#10;```&#10;Dump metadata from an unmounted XFS filesystem into a file for debugging purposes.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 44'
-[xinetd]:                                            #xinetd                                            '```&#10;$ xinetd&#10;```&#10;Internet Super Daemon provided an alternate method of connecting to various outdated network services. Should be turned off nowadays.'
-[xlsclients]:                                        X.md#xlsclients                                    '```&#10;$ xlsclients&#10;```&#10;Determine what applications are running on the legacy X11 server provided with Wayland'
-[xz]:                                                archive.md#xz                                      '```&#10;$ xz&#10;```&#10;Compress or decompress archives using the LZMA and LZMA2 compression methods.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 270'
-[yacc]:                                              #yacc                                              '```&#10;$ yacc&#10;```&#10;"yet another compiler-compiler", parser generator that converts a file containing a context-free LALR grmamar and converts it to tables for subsequent pasring, sending output to y.tab.c. Written between 1975 and 1978 by Stephen C. Johnson at Bell Labs.'
-[yum]:                                               package.md#yum                                     '```&#10;$ yum&#10;```&#10;Package manager for Red Hat systems&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 83'
-[yumdownloader]:                                     package.md#yumdownloader                           '```&#10;$ yumdownloader&#10;```&#10;Download software packages without installing them&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 84'
-[zip]:                                               archive.md#zip                                     '```&#10;$ zip&#10;```&#10;Merge multiple files into a single, compressed file&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 271'
-[zypper]:                                            package.md#zypper                                  '```&#10;$ zypper&#10;```&#10;Package manager for SUSE with a syntax similar to that of `yum`&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 86'
-
 
 # Linux Commands
-
 Topic                         | Commands
 :---                          | :---
-Ansible                       | [`ansible`][ansible] [`ansible-galaxy`][ansible-galaxy] [`ansible-playbook`][ansible-playbook] `ansible-inventory`
-[Archive](archive.md)         | [`ar`][ar] [`bunzip2`][bunzip2] [`bzip2`][bzip2] [`compress`][compress] [`cpio`][cpio] [`gunzip`][gunzip] [`gzip`][gzip] [`tar`][tar] [`unxz`][unxz] [`unzip`][unzip]  [`xz`][xz] [`zip`][zip] [`dar`][dar]
-[Audio](audio.md)             | [`alsamixer`][alsamixer] [`amixer`][amixer] [`speaker-test`][speaker-test]
-[Bash builtins](bash.md)      | **B** [`bg`][bg]  [`bind`][bind] [`break`][break] [`builtin`][builtin] <br>**C** [`caller`][caller] [`case`][case]/[`esac`][esac] [`cd`][cd] [`command`][command] [`compgen`][compgen] [`complete`][complete] [`compopt`][compopt] [`continue`][continue] <br> **D** [`declare`][declare] [`dirs`][dirs] [`disown`][disown] [`do`][do]/[`done`][done] <br>**E** [`echo`][echo] [`enable`][enable]  [`eval`][eval] [`exec`][exec] [`exit`][exit] [`export`][export] <br>**F** [`false`][false] [`fc`][fc] [`fg`][fg] [`for`][for] [`function`][function] <br>**G** [`getopts`][getopts] <br>**H** [`hash`][hash] [`help`][help] [`history`][history] <br>**I** [`if`][if]/[`fi`][fi]  <br>**J** [`jobs`][jobs] <br>**K** [`kill`][kill] <br>**L** [`let`][let] [`local`][local] [`logout`][logout]<br>**M** [`mapfile`][mapfile]<br>**P** [`popd`][popd] [`printf`][printf] [`pushd`][pushd] [`pwd`][pwd] <br>**R** [`read`][read] [`readarray`][readarray] [`readonly`][readonly] [`return`][return] <br>**S** [`select`][select] [`set`][set] [`shift`][shift] [`shopt`][shopt] [`source`][source] [`suspend`][suspend] <br>**T** [`test`][test] [`time`][time]  [`times`][times] [`trap`][trap] [`true`][true] [`type`][type] [`typeset`][typeset] <br> **U** [`ulimit`][ulimit] [`umask`][umask] [`unalias`][unalias] [`unset`][unset] [`until`][until] <br> **W** [`wait`][wait] [`while`][while] 
-[Boot](boot.md)               | [`update-grub`][update-grub]
-[Build tools](build.md)       | [`as`][as] <br>**Autotools** [`aclocal`][aclocal]  [`autoconf`][autoconf] [`autoheader`][autoheader] [`autoreconf`][autoreconf] [`autoscan`][autoscan] [`autoupdate`][autoupdate] <br>**Compiler-compilers** [`bison`][bison] [`flex`][lex] [`yacc`][yacc]
-[Distributions](distros.md)   | **Debian** [`adduser`][adduser] [`apt`][apt] [`apt-cache`] [`apt-key`] [`add-apt-repository`] <br> **Manjaro** [`mhwd`][mhwd] [`mhwd-chroot`][mhwd-chroot] [`pacman`][pacman] [`yay`][yay] <br> **Red Hat** [`dnf`][dnf] [`firewall-cmd`][firewall-cmd] [`yum`][yum] <br> **Ubuntu** [`netplan`][netplan] <br> **Mac OS X** [`pbcopy`][pbcopy] [`pbpaste`][pbpaste] [`screencapture`][screencapture]
 [Files](file.md)	            | [`fallocate`][fallocate] [`install`][install] [`ls`][ls] [`lsof`][lsof] [`setfacl`][setfacl] [`sshfs`][sshfs] [`tree`][tree]
 GNOME                         | [`gconf-editor`][gconf-editor] [`gsettings`][gsettings]
 [Hardware settings](hw.md)    | [`bluetoothctl`][bluetoothctl] [`insmod`][insmod] [`lsmod`][lsmod] [`lspci`][lspci] [`lsusb`][lsusb] [`modprobe`][modprobe] [`rmmod`][rmmod] <br> **[Printing](hw.md)** <br> [**CUPS**][CUPS] [`cupsaccept`][cupsaccept] [`cupsenable`][cupsenable] [`cupsdisable`][cupsdisable] [`cupsreject`][cupsreject] [`lp`][lp] [`cancel`][cancel] <br> [**LPD**][LPD] [`lpc`][lpc] [`lpq`][lpq] [`lpr`][lpr] [`lprm`][lprm]
@@ -542,35 +191,378 @@ Kubernetes                    | [`kubeadm`][kubeadm] [`kubectl`][kubectl]
 [Virtualization](virt.md)     | [`virt-install`][virt-install] [`virt-manager`][virt-manager]
 [X](x.md)                     | [`xdpyinfo`][xdpyinfo] [`xlsclients`][xlsclients] [`xmodmap`][xmodmap] [`Xorg`][xorg] [`xrandr`][xrandr] [`xwininfo`][xwininfo]
 
-\#  | Commands sorted alphabetically
---- | ---
-A   | [`aclocal`][aclocal] [`adduser`][adduser] [`add-apt-repository`][add-apt-repository] [`alsamixer`][alsamixer] [`apropos`][apropos] [`apt`][apt] [`apt-cache`][apt-cache] [`apt-key`][apt-key] [`ar`][ar] [`arp`][arp] [`as`][as] [`at`][at] [`ausearch`][ausearch] [`autoconf`][autoconf] [`autoheader`][autoheader] [`awk`][awk]
-B   | [`bash`][bash] [`bc`][bc] [`biff`][biff] [`blkid`][blkid] [`bmon`][bmon] [`borg`][borg] [`bpftrace`][bpftrace] [`bzcat`][bzcat] [`bzip2`][bzip2] [`bzless`][bzless] [`bzmore`][bzmore]
-C   | [`cancel`][cancel] [`cat`][cat] [`chage`][chage] [`chcon`][chcon] [`chgrp`][chgrp] [`chkconfig`][chkconfig] [`chmod`][chmod] [`chown`][chown] [`chpass`][chpass] [`chrony`][chrony] [`chsh`][chsh] [`column`][column] [`compress`][compress] [`cp`][cp] [`crontab`][crontab] [`crossystem`][crossystem] [`cryptsetup`][cryptsetup] [`curl`][curl] [`cut`][cut]
-D   | [`dar`][dar] [`date`][date] [`dbus`][dbus] [`dd`][dd] [`declare`][declare] [`depmod`][depmod] [`df`][df] [`dhclient`][dhclient] [`diff`][diff] [`dig`][dig] [`dirname`][dirname] [`dm-crypt`][dm-crypt] [`dmesg`][dmesg] [`dmidecode`][dmidecode] [`dnf`][dnf] [`doveadm`][doveadm] [`dpkg`][dpkg] [`dpkg-reconfigure`][dpkg-reconfigure] [`dracut`][dracut] [`du`][du] [`dumpe2fs`][dumpe2fs]
-E   | [`e2image`][e2image] [`e2label`][e2label] [`edquota`][edquota] [`elvis`][elvis] [`elvish`][elvish] [`espeak`][espeak] [`ethtool`][ethtool] [`exif`][exif]
-F   | [`fallocate`][fallocate] [`fam`][fam] [`fc-cache`][fc-cache] [`fdisk`][fdisk] [`file`][file] [`find`][find] [`firewall-cmd`][firewall-cmd] [`firewalld`][firewalld] [`fish`][fish] [`fmt`][fmt] [`fold`][fold] [`free`][free] [`fsck`][fsck] [`fstrim`][fstrim] [`ftp`][ftp] [`fusermount`][fusermount]
-G   | [`gconf-editor`][gconf-editor] [`gdisk`][gdisk] [`gdmsetup`][gdmsetup] [`gem`][gem] [`getent`][getent] [`getfacl`][getfacl] [`git`][git] [`gpasswd`][gpasswd] [`gpg`][gpg] [`grep`][grep] [`groupadd`][groupadd] [`groupdel`][groupdel] [`groupmod`][groupmod] [`grub`][grub] [`gsettings`][gsettings] [`gzip`][gzip]
-H   | [`hdiutil`][hdiutil] [`hdparm`][hdparm] [`head`][head] [`history`][history] [`host`][host] [`hostname`][hostname] [`hostnamectl`][hostnamectl] [`hwclock`][hwclock]
-I   | [`iconv`][iconv] [`ifconfig`][ifconfig] [`iftop`][iftop] [`imagemagick`][imagemagick] [`init`][init] [`initctl`][initctl] [`insmod`][insmod] [`install`][install] [`iostat`][iostat] [`ip`][ip] [`iperf`][iperf] [`ipset`][ipset] [`iptables`][iptables] [`iscsiadm`][iscsiadm] [`iw`][iw] [`iwconfig`][iwconfig] [`iwlist`][iwlist]
-J   | [`journalctl`][journalctl]
-K   | [`kill`][kill] [`kinit`][kinit] [`klist`][klist] [`kubeadm`][kubeadm] [`kubectl`][kubectl]
-L   | [`last`][last] [`ldapadd`][ldapadd] [`ldconfig`][ldconfig] [`ldd`][ldd] [`less`][less] [`let`][let] [`link`][link] [`locale`][locale] [`localectl`][localectl] [`loginctl`][loginctl] [`logout`][logout] [`lp`][lp] [`lpadmin`][lpadmin] [`lpstat`][lpstat] [`ls`][ls] [`lsblk`][lsblk] [`lshw`][lshw] [`lsmod`][lsmod] [`lsns`][lsns] [`lsof`][lsof] [`lspci`][lspci] [`lsusb`][lsusb] [`lvcreate`][lvcreate] [`lvdisplay`][lvdisplay] [`lvremove`][lvremove] [`lvresize`][lvresize]
-M   | [`mail`][mail] [`mailq`][mailq] [`mailstats`][mailstats] [`make`][make] [`makemap`][makemap] [`mdadm`][mdadm] [`mhwd`][mhwd] [`mhwd-chroot`][mhwd-chroot] [`mkdir`][mkdir] [`mke2fs`][mke2fs] [`mkfontscale`][mkfontscale] [`mkfs`][mkfs] [`mkinitrd`][mkinitrd] [`mkswap`][mkswap] [`mktemp`][mktemp] [`modinfo`][modinfo] [`modprobe`][modprobe] [`mongod`][mongod] [`mount`][mount] [`msmtp`][msmtp] [`mt`][mt]
-N   | [`nc`][nc] [`netplan`][netplan] [`netstat`][netstat] [`NetworkManager`][networkmanager] [`newaliases`][newaliases] [`nice`][nice] [`nl`][nl] [`nmap`][nmap] [`nmblookup`][nmblookup] [`nmcli`][nmcli] [`nohup`][nohup] [`nslookup`][nslookup] [`ntpdate`][ntpdate] [`ntsysv`][ntsysv]
-O   | [`openssl`][openssl]
-P   | [`pacman`][pacman] [`partx`][partx] [`paste`][paste] [`passwd`][passwd] [`paste`][paste] [`patch`][patch] [`pidof`][pidof] [`ping`][ping] [`pip`][pip] [`postfix`][postfix] [`postqueue`][postqueue] [`postsuper`][postsuper] [`ps`][ps] [`pvcreate`][pvcreate] [`pvdisplay`][pvdisplay] [`pvremove`][pvremove] [`pydoc`][pydoc]
-Q   | [`qmail`][qmail] [`quota`][quota] [`quotacheck`][quotacheck] [`quotaoff`][quotaoff] [`quotaon`][quotaon]
-R   | [`read`][read] [`rename`][rename] [`repquota`][repquota] [`resize2fs`][resize2fs] [`rfkill`][rfkill] [`resize4fs`][resize4fs] [`restorecon`][restorecon] [`rmmod`][rmmod] [`route`][route] [`rpm`][rpm] [`rsync`][rsync] [`runlevel`][runlevel]
-S   | [`samba`][samba] [`sc`][sc] [`screencapture`][screencapture] [`sed`][sed] [`semanage`][selinux] [`sendmail`][sendmail] [`seq`][seq] [`service`][service] [`sestatus`][sestatus] [`setenforce`][setenforce] [`setfacl`][setfacl] [`sfdisk`][sfdisk] [`shred`][shred] [`shuf`][shuf] [`shutdown`][shutdown] [`slapadd`][slapadd]  [`sleep`][sleep] [`snap`][snap] [`sort`][sort] [`sosreport`][sosreport] [`source`][source] [`speaker-test`][speaker-test] [`ss`][ss] [`ssh`][ssh] [`ssh-copy-id`][ssh-copy-id] [`ssh-keygen`][ssh-keygen] [`ssh-keyscan`][ssh-keyscan] [`sshfs`][sshfs] [`ssmtp`][ssmtp] [`startx`][startx] [`stty`][stty] [`su`][su] [`sudo`][sudo] [`swapoff`][swapoff] [`swapon`][swapon] [`sysbench`][sysbench] [`sysctl`][sysctl] [`sysvinit`][sysvinit] [`systemctl`][systemctl] [`systemd-delta`][systemd-delta]
-T   | [`tail`][tail] [`tar`][tar] [`tcpdump`][tcpdump] [`telinit`][telinit] [`test`][test] [`tig`][tig] [`timedatectl`][timedatectl] [`tmux`][tmux] [`touch`][touch] [`top`][top] [`tput`][tput] [`tr`][tr] [`tree`][tree] [`tracepath`][tracepath] [`traceroute`][traceroute] [`tshark`][tshark] [`tune2fs`][tune2fs] [`tzselect`][tzselect]
-U   | [`udevadm`][udevadm] [`umount`][umount] [`uname`][uname] [`uncompress`][uncompress] [`unshare`][unshare] [`unzip`][unzip] [`update-grub`][update-grub] [`update-rc.d`][update-rc.d] [`useradd`][useradd] [`userdel`][userdel] [`usermod`][usermod]
-V   | [`variable`][variable] [`vgcreate`][vgcreate] [`vgdisplay`][vgdisplay] [`vgextend`][vgextend] [`vgremove`][vgremove] [`vgscan`][vgscan] [`vifs`][vifs] [`visudo`][visudo]
-W   | [`w`][w] [`wall`][wall] [`watch`][watch] [`wc`][wc] [`whatis`][whatis]
-X   | [`X`][x] [`xdpyinfo`][xdpyinfo] [`xhost`][xhost] [`xinetd`][xinetd] [`Xorg`][xorg] [`xrandr`][xrandr] [`xwininfo`][xwininfo] [`xz`][xz]
-Y   | [`yay`][yay] [`yum`][yum] [`yumdownloader`][yumdownloader]
-Z   | [`zip`][zip] [`zipcloak`][zipcloak] [`zipdetails`][zipdetails] [`zipgrep`][zipgrep] [`zipinfo`][zipinfo] [`zipnote`][zipnote] [`zipsplit`][zipsplit] [`zsh`][zsh] [`zypper`][zypper]
+#### Archive
+<!-- Archive -->
+[ar]:                          #ar                             '```&#10;$ ar&#10;```&#10;Maintain a group of files that are combined into a file archive. Used most commonly to create and update library files as used by `ld`.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 16'
+[bzcat]:                       #bzcat                          '```&#10;$ bzcat&#10;```&#10;Page through .bz2 files'
+[bzip2]:                       #bzip2                          '```&#10;$ bzip2&#10;```&#10;Compress or decompress archives using the Burrows-Wheeler block-sorting text-compression algorithm.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 271'
+[bzless]:                      #bzless                         '```&#10;$ bzless&#10;```&#10;Page through .bz2 files'
+[bzmore]:                      #bzmore                         '```&#10;$ bzmore&#10;```&#10;Page through .bz2 files'
+[compress]:                    #compress                       '```&#10;$ compress&#10;```&#10;Compress and expand data&#10;Compress reduces the size of the named files using adaptive Lempel-Ziv coding. Whenever possible, each file is replaced by one with the extension .Z, while keeping the same ownership modes, access and modification times. If no files are specified, the standard input is compressed to the standard output. Compress will only attempt to compress regular files. In particular, it will ignore symbolic links. If a file has multiple hard links, compress will refuse to compress it unless the -f flag is given.'
+[cpio]:                        #cpio                           '```&#10;$ cpio&#10;```&#10;Create and extract archives, or copy files from one place to another - without compression. Each of the three control options (`-i`, `-o`, or `-p`) accepts different options.&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 93'
+[dar]:                         #dar                            '```&#10;$ dar&#10;```&#10;Backup tool that can make differential and incremental backups&#10;"`dar` manpage". _Ubuntu Manpage Repository_.'
+[gunzip]:                      #gunzip                         '```&#10;$ gunzip&#10;```&#10;Identical to `gzip -d`, typically implemented as a link to `gzip`'
+[gzcat]:                       #gzcat                          '```&#10;$ gzcat&#10;```&#10;Identical to `gzip -c`, typically implemented as a link to `gzip`'
+[gzip]:                        #gzip                           '```&#10;$ gzip&#10;```&#10;"GNU Zip". Compress or decompress archives using the Lempel-Ziv (LZ77) compression algorithm.'
+[tar]:                         #tar                            '```&#10;$ tar&#10;```&#10;Merge multiple files into a single file&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 268'
+[uncompress]:                  #uncompress                     '```&#10;$ uncompress &#10;```&#10;Aliased to `gunzip` on Ubuntu&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 480'
+[unxz]:                        #unxz                           '```&#10;$ unxz&#10;```&#10;Decompress an archive created with `xz`&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 270'
+[unzip]:                       #unzip                          '```&#10;$ unzip&#10;```&#10;Decompress a .zip archive'
+[xz]:                          #xz                             '```&#10;$ xz&#10;```&#10;Compress or decompress archives using the LZMA and LZMA2 compression methods.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 270'
+[zcat]:                        #zcat                           '```&#10;$ zcat&#10;```&#10;Uncompress one or more compressed files to STDOUT. On Linux, this program is the version related to `gzip`, which can decompress .Z and .gz files&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 238'
+[zip]:                         #zip                            '```&#10;$ zip&#10;```&#10;Merge multiple files into a single, compressed file&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 271'
+[zipcloak]:                    #zipcloak                       '```&#10;$ zipcloak&#10;```&#10;Password protect and encrypt zip files, equivalent to `zip --encrypt` or `zip -e`.&#10;_Linux Pro Magazine_. Issue 231. Feb 2020.: 37'
+[zipcmp]:                      #zipcmp                         '```&#10;$ zipcmp $FILE $OTHER&#10;```&#10;Compare files in zip archives (no man page or help option available).&#10;_Linux Pro Magazine_. Issue 231. Feb 2020.: 37'
+[zipdetails]:                  #zipdetails                     '```&#10;$ zipdetails&#10;```&#10;'
+[zipgrep]:                     #zipgrep                        '```&#10;$ zipgrep&#10;```&#10;Search for patterns within a zip archive.&#10;_Linux Pro Magazine_. Issue 231. Feb 2020.: 37'
+[zipinfo]:                     #zipinfo                        '```&#10;$ zipinfo&#10;```&#10;Display the attributes of all the files in a zip archive, including permissions, name, date created, uncompressed and compressed file sizes, and percentage compression.&#10;_Linux Pro Magazine_. Issue 231. Feb 2020.: 38'
+[zipnote]:                     #zipnote                        '```&#10;$ zipnote&#10;```&#10;Read and edit comments in archives; particularly useful for changing filenames in an archive that start with "@home" in the comment&#10;_Linux Pro Magazine_. Issue 231. Feb 2020.: 38'
+[zipsplit]:                    #zipsplit                       '```&#10;$ zipsplit&#10;```&#10;Divide existing archives into smaller ones, creating an index file to help reassemble them.&#10;_Linux Pro Magazine_. Issue 231. Feb 2020.: 38'
 
+[bzip2 -&#99;]:                 #bzip2                         '```&#10;$ bzip2 -&#99;&#10;$ bzip2 --stdout&#10;```&#10;Write output to STDOUT and do not replace the original file.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 271'
+[bzip2 -&#100;]:                #bzip2                         '```&#10;$ bzip2 -&#100;&#10;$ bzip2 --decompress&#10;```&#10;Decompress archive (equivalent to `bunzip2`)&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 271'
+[bzip2 -&#118;]:                #bzip2                         '```&#10;$ bzip2 -&#118;&#10;```&#10;Verbose&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 271'
+[bzip2 -&#102;]:                #bzip2                         '```&#10;$ bzip2 -&#102;&#10;$ bzip2 --force&#10;```&#10;force overwrite of output files'
+[bzip2 -&#122;]:                #bzip2                         '```&#10;$ bzip2 -&#122;&#10;$ bzip2 --compress&#10;```&#10;force compression'
+[compress -&#99;]:              #compress                      '```&#10;$ compress -&#99;&#10;```&#10;Display contents of the archive to STDOUT (same as using `zcat`)'
+[compress -&#102;]:             #compress                      '```&#10;$ compress -&#102;&#10;```&#10;Compress symbolic links'
+[compress -&#114;]:             #compress                      '```&#10;$ compress -&#114;&#10;```&#10;Compress files recursively within a specified directory'
+[cpio -&#48;]:                  #cpio                          '```&#10;$ cpio -&#48;&#10;$ cpio --null&#10;```&#10;With `-o` or `-p`, read a list of filenames terminated with a `NUL` byte (all zeros) instead of a newline.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 45'
+[cpio -&#97;]:                  #cpio                          '```&#10;$ cpio -&#97;&#10;$ cpio --reset-access-time&#10;```&#10;Reset access times of input files&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 43'
+[cpio -&#65;]:                  #cpio                          '```&#10;$ cpio -&#65;&#10;$ cpio --append&#10;```&#10;Append files to an archive (must be used with `-O` or `-F`)&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 43'
+[cpio -&#98;]:                  #cpio                          '```&#10;$ cpio -&#98;&#10;$ cpio --swap&#10;```&#10;Swap bytes and half-words to convert between big-endian and little-endian 32-bit integers.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 43'
+[cpio -&#66;]:                  #cpio                          '```&#10;$ cpio -&#66;&#10;```&#10;block input or output using 5120 bytes per record (512 bytes is default)&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 43'
+[cpio -&#99;]:                  #cpio                          '```&#10;$ cpio -&#99;&#10;```&#10;read or write header information as ASCII characters&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 43'
+[cpio -&#67;]:                  #cpio                          '```&#10;$ cpio -&#67; $N&#10;$ cpio --io-size $N&#10;```&#10;Like `-B`, but block size can be any positive integer `$N`&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 43'
+[cpio -&#100;]:                 #cpio                          '```&#10;$ cpio -&#100;&#10;$ cpio --make-directories&#10;```&#10;Create directories as needed&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 43'
+[cpio -&#69;]:                  #cpio                          '```&#10;$ cpio -&#69; $FILE&#10;$ cpio --pattern-file $FILE&#10;```&#10;Extract filenames listed in `$FILE` from the archive&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 43'
+[cpio -&#102;]:                 #cpio                          '```&#10;$ cpio -&#102;&#10;$ cpio --nonmatching&#10;```&#10;Reverse the sense of copying; copy all files except those that match `$PATTERNS`&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 43'
+[cpio -&#70;]:                  #cpio                          '```&#10;$ cpio -&#70; $FILE&#10;$ cpio --file $FILE&#10;```&#10;Same as `-O`&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 44'
+[cpio -&#72;]:                  #cpio                          '```&#10;$ cpio -&#72; $TYPE&#10;$ cpio --format $TYPE&#10;```&#10;Read or write header information according to `$TYPE`, whose values include:&#10;  - `bin`                 original binary format&#10;  - `crc`                 ASCII header containing expanded device numbers&#10;  - `hpbin`               obsolete binary format used by the HP-UX `cpio`&#10;  - `hpodc`               HP-UX portable format&#10;  - `newc`                SVR4 portable (ASCII) format&#10;  - `odc`                 old POSIX.1 portable (ASCII) format&#10;  - `tar`                 `tar` header&#10;  - `ustar`               IEEE/P1003 Data Interchange Standard header&#10;&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 43'
+[cpio -&#105;]:                 #cpio                          '```&#10;$ cpio -&#105; $PATTERNS&#10;$ cpio --extract $PATTERNS&#10;```&#10;Copy "in" (extract) files whose names match selected `$PATTERNS`, which can include bash filename metacharacters. If no patterns are provided, then all files are copied.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 42'
+[cpio -&#73;]:                  #cpio                          '```&#10;$ cpio -&#73; $FILE&#10;```&#10;Read `$FILE` as an input archive&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 43'
+[cpio -&#107;]:                 #cpio                          '```&#10;$ cpio -&#107;&#10;```&#10;Ignored for compatibility'
+[cpio -&#108;]:                 #cpio                          '```&#10;$ cpio -&#108;&#10;$ cpio --link&#10;```&#10;Link files instead of copying (can only be used with `-p`)&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 43'
+[cpio -&#76;]:                  #cpio                          '```&#10;$ cpio -&#76;&#10;$ cpio --dereference&#10;```&#10;Follow symbolic links&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 43'
+[cpio -&#109;]:                 #cpio                          '```&#10;$ cpio -&#109;&#10;$ cpio --preserve-modification-time&#10;```&#10;Retain previous file modification time&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 44'
+[cpio -&#77;]:                  #cpio                          '```&#10;$ cpio -&#77; $MESSAGE&#10;$ cpio --message $MESSAGE&#10;```&#10;Print `$MESSAGE` when switching media (valid only with `-I` or `-O`)&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 44'
+[cpio -&#110;]:                 #cpio                          '```&#10;$ cpio -&#110;&#10;$ cpio --numeric-uid-gid&#10;```&#10;When verbosely listing contents, show user ID and group ID numerically&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 45'
+[cpio -&#111;]:                 #cpio                          '```&#10;$ cpio -&#111;&#10;$ cpio --create&#10;```&#10;Copy "out" a list of files whose names are given on STDIN.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 42'
+[cpio -&#79;]:                  #cpio                          '```&#10;$ cpio -&#79; $FILE&#10;```&#10;Direct output to `$FILE`&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 44'
+[cpio -&#112;]:                 #cpio                          '```&#10;$ cpio -&#112; $DIRECTORY&#10;$ cpio --create $DIRECTORY&#10;```&#10;Copy (pass) files to another local directory. Destination pathnames are interpreted relative to the named `$DIRECTORY`.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 42'
+[cpio -&#114;]:                 #cpio                          '```&#10;$ cpio -&#114;&#10;$ cpio --rename&#10;```&#10;Rename files interactively&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 44'
+[cpio -&#82;]:                  #cpio                          '```&#10;$ cpio -&#82; $ID&#10;$ cpio --owner $ID&#10;```&#10;Reassign file ownership and group information to `$ID` (following the format "user:group")&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 44'
+[cpio -&#115;]:                 #cpio                          '```&#10;$ cpio -&#115;&#10;$ cpio --swap-bytes&#10;```&#10;Swap bytes of each two-byte half-word&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 44'
+[cpio -&#83;]:                  #cpio                          '```&#10;$ cpio -&#83;&#10;$ cpio --swap-halfwords&#10;```&#10;Swap half-words of each four-byte word&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 44'
+[cpio -&#116;]:                 #cpio                          '```&#10;$ cpio -&#116;&#10;$ cpio --list&#10;```&#10;Print a table of contents of the input (create no files). When used with `-v`, output resembles that of `ls -l`&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 44'
+[cpio -&#117;]:                 #cpio                          '```&#10;$ cpio -&#117;&#10;$ cpio --unconditional&#10;```&#10;Unconditional copy; old files can overwrite new ones&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 44'
+[cpio -&#118;]:                 #cpio                          '```&#10;$ cpio -&#118;&#10;$ cpio --verbose&#10;```&#10;Print a list of filenames processed&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 44'
+[cpio -&#86;]:                  #cpio                          '```&#10;$ cpio -&#86;&#10;$ cpio --dot&#10;```&#10;Print a dot for each file read or written (showing cpio working without cluttering the screen).&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 44'
+[gzip -&#99;]:                  #gzip                          '```&#10;$ gzip -&#99;&#10;```&#10;Write output to STDOUT and do not replace the original file.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 270'
+[gzip -&#100;]:                 #gzip                          '```&#10;$ gzip -&#100;&#10;```&#10;Decompress the file (equivalent to `gunzip`)&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 270'
+[gzip -&#114;]:                 #gzip                          '```&#10;$ gzip -&#114;&#10;```&#10;Recursive: Used when a directory argument is given to compress all files within it, as well as subdirectories.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 270'
+[gzip -&#118;]:                 #gzip                          '```&#10;$ gzip -&#118;&#10;```&#10;Verbose: Display percentage of compression&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 270'
+[tar -&#65;]:                   #tar                           '```&#10;$ tar -&#65;&#10;$ tar --concatenate&#10;```&#10;Append new files to an archive&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 268'
+[tar -&#99;]:                   #tar                           '```&#10;$ tar -&#99;&#10;$ tar --create&#10;```&#10;Create an archive&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 268'
+[tar -&#67;]:                   #tar                           '```&#10;$ tar -&#67; $PATH $FILES&#10;$ tar --directory $PATH $FILES&#10;```&#10;change working directory to `$PATH` before adding $FILES; makes it possible to archive files that do not share a common ancestor directory'
+[tar -&#100;]:                  #tar                           '```&#10;$ tar -&#100;&#10;```&#10;Compare the difference between the contents of an archive and the files in a directory&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 268'
+[tar -&#102;]:                  #tar                           '```&#10;$ tar -&#102;&#10;$ tar --file&#10;```&#10;Specify the name of the archive&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 268'
+[tar -&#106;]:                  #tar                           '```&#10;$ tar -&#106;&#10;$ tar --bzip2&#10;```&#10;Compress/uncompress archive using `bzip2`&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 268'
+[tar -&#74;]:                   #tar                           '```&#10;$ tar -&#74;&#10;```&#10;Compress/uncompress archive using `xz`&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 268'
+[tar -&#112;]:                  #tar                           '```&#10;$ tar -&#112;&#10;$ tar --preserve-permissions&#10;```&#10;extract information about file permissions'
+[tar -&#114;]:                  #tar                           '```&#10;$ tar -&#114;&#10;$ tar --append&#10;```&#10;append files to the end of an archive'
+[tar -&#116;]:                  #tar                           '```&#10;$ tar -&#116;&#10;$ tar --list&#10;```&#10;List the contents of an archive&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 268'
+[tar -&#117;]:                  #tar                           '```&#10;$ tar -&#117;&#10;```&#10;Update; only append newer files into an existing archive&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 268'
+[tar -&#118;]:                  #tar                           '```&#10;$ tar -&#118;&#10;$ tar --verbose&#10;```&#10;Verbose output&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 268'
+[tar -&#120;]:                  #tar                           '```&#10;$ tar -&#120;&#10;$ tar --extract&#10;```&#10;Extract the contents of an archive&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 268'
+[tar -&#122;]:                  #tar                           '```&#10;$ tar -&#122;&#10;$ tar --gzip&#10;```&#10;Compress/uncompress archive using `gzip`&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 268'
+[tar -&#84;]:                   #tar                           '```&#10;$ tar -&#84; $FILENAMES&#10;$ tar --files-from $FILENAMES&#10;```&#10; a list of filenames to be archived, one filename per line, from `$FILENAMES`'
+[uncompress -&#102;]:           #uncompress                    '```&#10;$ uncompress -&#102;&#10;```&#10;overwrite existing files without prompting, if they exist'
+[uncompress -&#114;]:           #uncompress                    '```&#10;$ uncompress -&#114;&#10;```&#10;decompress files recursively'
+[xz -&#99;]:                    #xz                            '```&#10;$ xz -&#99;&#10;```&#10;Write output to STDOUT and do not replace the original file.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 270'
+[xz -&#100;]:                   #xz                            '```&#10;$ xz -&#100;&#10;```&#10;Decompress archive (equivalent to `unxz`)&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 270'
+[xz -&#108;]:                   #xz                            '```&#10;$ xz -&#108;&#10;```&#10;List information about an existing archive&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 270'
+[xz -&#118;]:                   #xz                            '```&#10;$ xz -&#118;&#10;```&#10;Display percentage of compression&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 270'
+[zip -&#100;]:                  #zip                           '```&#10;$ zip -&#100;&#10;```&#10;Decompress archive (equivalent to `unzip`)&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 272'
+[zip -&#118;]:                  #zip                           '```&#10;$ zip -&#118;&#10;```&#10;Verbose; display percentage of compression&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 272'
+[zip -&#117;]:                  #zip                           '```&#10;$ zip -&#117;&#10;```&#10;Update an archive with new content&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 272'
+[zip -&#114;]:                  #zip                           '```&#10;$ zip -&#114;&#10;```&#10;Zip recursively&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 272'
+[zip -&#120;]:                  #zip                           '```&#10;$ zip -&#120; $FILES&#10;```&#10;Specify files to be excluded from the archive&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 272'
+
+
+**A** 
+[`ar`][ar] 
+**B** 
+[`bzcat`][bzcat] 
+[`bzip2`][bzip2] 
+[`bzless`][bzless] 
+[`bzmore`][bzmore] 
+**C** 
+[`compress`][compress] 
+[`cpio`][cpio] 
+**D** 
+[`dar`][dar] 
+**G** 
+[`gunzip`][gunzip] 
+[`gzcat`][gzcat] 
+[`gzip`][gzip] 
+**T** 
+[`tar`][tar] 
+**U** 
+[`uncompress`][uncompress] 
+[`unxz`][unxz] 
+[`unzip`][unzip] 
+**X** 
+[`xz`][xz] 
+**Z** 
+[`zcat`][zcat] 
+[`zip`][zip] 
+[`zipcloak`][zipcloak] 
+[`zipcmp`][zipcmp] 
+[`zipdetails`][zipdetails] 
+[`zipgrep`][zipgrep] 
+[`zipinfo`][zipinfo] 
+[`zipnote`][zipnote] 
+[`zipsplit`][zipsplit] 
+#### Audio
+<!-- Audio -->
+[alsamixer]:                   #alsamixer                      '```&#10;$ alsamixer&#10;```&#10;Command-line mixer'
+[amixer]:                      #amixer                         '```&#10;$ amixer&#10;```&#10;Command-line mixer for ALSA sound card driver'
+[speaker-test]:                #speaker-test                   '```&#10;$ speaker-test&#10;```&#10;Generates a tone that can be used to test the speakers of a computer'
+
+**A** 
+[`alsamixer`][alsamixer] 
+[`amixer`][amixer] 
+**S** 
+[`speaker-test`][speaker-test] 
+#### Bash builtins
+<!-- Bash builtins -->
+[alias]:                                             bash.md#alias                                      '```&#10;$ alias&#10;```&#10;Assign a shorthand `$NAME` for `$CMD`, or display all aliases if not specified. (ref. `$BASH_ALIASES`)&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 74'
+[bg]:                                                bash.md#bg                                         '```&#10;$ bg&#10;```&#10;Put current job or `$JOB` in the background&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 74'
+[bind]:                                              bash.md#bind                                       '```&#10;$ bind&#10;```&#10;Manage the readline library; nonoption arguments have the same form as in a .inputrc file.&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 75'
+[break]:                                             bash.md#break                                      '```&#10;$ break&#10;```&#10;Exit from a `for`, `while`, `select`, or `until` loop.&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 76'
+[builtin]:                                           bash.md#builtin                                    '```&#10;$ builtin&#10;```&#10;Run the shell built-in command `$CMD` with the optional given arguments `$ARGS`, bypassing functions and aliases.&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 76'
+[caller]:                                            bash.md#caller                                     '```&#10;$ caller&#10;```&#10;Print line number and source filename of the current function call or dot file&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 77'
+[case]:                                              bash.md#case                                       '```&#10;$ case&#10;```&#10;Execute `$CMDS1` if `$VALUE` matches `$PATTERN1`, etc&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 77'
+[cd]:                                                bash.md#cd                                         '```&#10;$ cd&#10;```&#10;&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 78'
+[command]:                                           bash.md#command                                    '```&#10;$ command&#10;```&#10;Execute `$CMD`, bypassing any aliases or functions that may be defined for it&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 79'
+[compgen]:                                           bash.md#compgen                                    '```&#10;$ compgen&#10;```&#10;Generate possible completions for `$STRING`&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 80'
+[complete]:                                          bash.md#complete                                   '```&#10;$ complete&#10;```&#10;Specify how to complete arguments for each `$CMD`&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 80'
+[compopt]:                                           bash.md#compopt                                    '```&#10;$ compopt&#10;```&#10;Modify existing compspecs for given `$CMD`, or for the currently executing completion when invoked without `$CMD`&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 84'
+[continue]:                                          bash.md#continue                                   '```&#10;$ continue&#10;```&#10;Skip remaining commands in a `for`, `while`, `select`, or `until` loop, resuming the next iteration, or skipping `$N` nested loops&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 85'
+[declare]:                                           bash.md#declare                                    '```&#10;$ declare&#10;```&#10;Declare variables and manage their attributes&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 85'
+[dirs]:                                              bash.md#dirs                                       '```&#10;$ dirs&#10;```&#10;Print the directory stack managed by `pushd` and `popd`&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 87'
+[disown]:                                            bash.md#disown                                     '```&#10;$ disown&#10;```&#10;Remove one or more `$JOB` from list of jobs managed by bash&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 87'
+[do]:                                                bash.md#do                                         '```&#10;$ do&#10;```&#10;Reserved word that precedes the command sequence in a `for`, `while`, `until`, or `select` statement&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 88'
+[done]:                                              bash.md#done                                       '```&#10;$ done&#10;```&#10;Reserved word that ends a `for`, `while`, `until`, or `select` statement&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 88'
+[echo]:                                              bash.md#echo                                       '```&#10;$ echo&#10;```&#10;Write `$STRING` to STDOUT&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 88'
+[enable]:                                            bash.md#enable                                     '```&#10;$ enable&#10;```&#10;Enable or disable shell builtins, allowing an external version of a command like `echo` or `test` be used.&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 89'
+[esac]:                                              bash.md#esac                                       '```&#10;$ esac&#10;```&#10;Reserved word that ends a `case` statement&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 90'
+[eval]:                                              bash.md#eval                                       '```&#10;$ eval&#10;```&#10;Execute `$ARGS` after first performing variable expansion.&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 90'
+[exec]:                                              bash.md#exec                                       '```&#10;$ exec&#10;```&#10;Execute `$CMD` in place of the current process.&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 91'
+[exit]:                                              bash.md#exit                                       '```&#10;$ exit&#10;```&#10;Exit a shell script with status `$N`&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 92'
+[export]:                                            bash.md#export                                     '```&#10;$ export&#10;```&#10;Convert `$VAR` to a global variable&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 92'
+[false]:                                             bash.md#false                                      '```&#10;$ false&#10;```&#10;Built-in command that exits with a false return value.&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 93'
+[fc]:                                                bash.md#fc                                         '```&#10;$ fc&#10;```&#10;Display or edit commands in the history list&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 93'
+[fg]:                                                bash.md#fg                                         '```&#10;$ fg&#10;```&#10;Bring `$JOB` to the foreground&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 95'
+[fi]:                                                bash.md#fi                                         '```&#10;$ fi&#10;```&#10;Reserved word that ends an `if` statement&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 95'
+[for]:                                               bash.md#for                                        '```&#10;$ for&#10;```&#10;For variable `$X`, do `$CMD`; if `$LIST` is omitted, use `$@`&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 95'
+[function]:                                          bash.md#function                                   '```&#10;$ function&#10;```&#10;Define `$NAME` as a shell function&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 97'
+[getopts]:                                           bash.md#getopts                                    '```&#10;$ getopts&#10;```&#10;Process command-line arguments and check for legal options&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 97'
+[hash]:                                              bash.md#hash                                       '```&#10;$ hash&#10;```&#10;List the current set of hashed (previously found) commands&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 98'
+[help]:                                              bash.md#help                                       '```&#10;$ help&#10;```&#10;Print usage information for each command that matches `$PATTERN` to STDOUT&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 99'
+[history]:                                           bash.md#history                                    '```&#10;$ history&#10;```&#10;Print commands in the history list or manage the history file&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 100'
+[if]:                                                bash.md#if                                         '```&#10;$ if&#10;```&#10;Begin a conditional statement&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 101'
+[jobs]:                                              bash.md#jobs                                       '```&#10;$ jobs&#10;```&#10;List all running or stopped jobs, or list those specified by `$JOBS`&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 102'
+[kill]:                                              bash.md#kill                                       '```&#10;$ kill&#10;```&#10;Terminate each specified PID&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 103'
+[let]:                                               bash.md#let                                        '```&#10;$ let&#10;```&#10;Perform arithmetic as specified by one or more `$EXPRESSIONS`&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 104'
+[local]:                                             bash.md#local                                      '```&#10;$ local&#10;```&#10;Declare local variables for use inside functions&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 105'
+[logout]:                                            bash.md#logout                                     '```&#10;$ logout&#10;```&#10;Exit a login shell, executing ~/.bash_logout if it exists&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 105'
+[mapfile]:                                           bash.md#mapfile                                    '```&#10;$ mapfile&#10;```&#10;Read STDIN into `$ARRAY`, one line per element, or `$MAPFILE` shell variable if not specified&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 105'
+[popd]:                                              bash.md#popd                                       '```&#10;$ popd&#10;```&#10;Pop the top directory off the directory stack and change to the new top directory&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 106'
+[printf]:                                            bash.md#printf                                     '```&#10;$ printf&#10;```&#10;Formatted printing using escape sequences&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 107'
+[pushd]:                                             bash.md#pushd                                      '```&#10;$ pushd&#10;```&#10;Add `$PATH` to the directory state, or rotate it if none provided&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 108'
+[pwd]:                                               bash.md#pwd                                        '```&#10;$ pwd&#10;```&#10;Display current working directory on STDOUT&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 108'
+[read]:                                              bash.md#read                                       '```&#10;$ read&#10;```&#10;Read one line from STDIN and assign each word to the corresonding `$VAR`&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 109'
+[readarray]:                                         bash.md#readarray                                  '```&#10;$ readarray&#10;```&#10;Identical to `mapfile`&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 111'
+[readonly]:                                          bash.md#readonly                                   '```&#10;$ readonly&#10;```&#10;Prevent specified shell variables $VAR1, $VAR2 from being assigned new values, optionally assigning initial values $VAL1, $VAL2&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 111'
+[return]:                                            bash.md#return                                     '```&#10;$ return&#10;```&#10;Use inside a function definition, exiting with status `$N`&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 112'
+[select]:                                            bash.md#select                                     '```&#10;$ select&#10;```&#10;&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 112'
+[set]:                                               bash.md#set                                        '```&#10;$ set&#10;```&#10;Print values of all variables known to the current shell.&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 113'
+[shift]:                                             bash.md#shift                                      '```&#10;$ shift&#10;```&#10;Shift positional arguments; intended for use in a loop.&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 119'
+[shopt]:                                             bash.md#shopt                                      '```&#10;$ shopt&#10;```&#10;Set or unset shell options.&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 119'
+[source]:                                            bash.md#source                                     '```&#10;$ source&#10;```&#10;Execute a bash script as if the commands within it were executed directly on the command line&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 332'
+[source]:                                            bash.md#source                                     '```&#10;$ source&#10;```&#10;Read and execute a file in the current shell&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 120'
+[suspend]:                                           bash.md#suspend                                    '```&#10;$ suspend&#10;```&#10;Suspend the current shell, often used to stop an `su` command&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 120'
+[test]:                                              bash.md#test                                       '```&#10;$ test&#10;```&#10;Evaluate a condition and exit with status 0 if true, or with a nonzero exit status if false.&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 120'
+[time]:                                              bash.md#time                                       '```&#10;$ time&#10;```&#10;Execute `$CMD` and print the total elapsed time, user time, and system time (in seconds). Similar to external `time` command, except that this builtin version can also time other builtin commands and all commands in a pipeline.&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 124'
+[times]:                                             bash.md#times                                      '```&#10;$ times&#10;```&#10;Print accumulated user and system process times for the shell and the processes it has run&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 125'
+[trap]:                                              bash.md#trap                                       '```&#10;$ trap&#10;```&#10;Execute `$CMD` if any `$SIGNALS` are received&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 125'
+[true]:                                              bash.md#true                                       '```&#10;$ true&#10;```&#10;Built-in command that exits with a true return value&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 127'
+[type]:                                              bash.md#type                                       '```&#10;$ type&#10;```&#10;Show whether each command name is an external command, a built-in command, an alias, shell keyword, or defined shell function&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 127'
+[typeset]:                                           bash.md#typeset                                    '```&#10;$ typeset&#10;```&#10;Identical to `declare`&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 128'
+[ulimit]:                                            bash.md#ulimit                                     '```&#10;$ ulimit&#10;```&#10;Print value of one or more resource limits&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 128'
+[umask]:                                             bash.md#umask                                      '```&#10;$ umask&#10;```&#10;Set file creation mask to octal value `$MASK`, or display it if not provided.&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 130'
+[unalias]:                                           bash.md#unalias                                    '```&#10;$ unalias&#10;```&#10;Remove `$NAMES` from the alias list.&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 130'
+[unset]:                                             bash.md#unset                                      '```&#10;$ unset&#10;```&#10;Erase definitions of functions or variables listed in `$NAMES`&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 130'
+[until]:                                             bash.md#until                                      '```&#10;$ until&#10;```&#10;Until `$CONDITION` is met, do `$CMDS`&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 131'
+[wait]:                                              bash.md#wait                                       '```&#10;$ wait&#10;```&#10;Pause until the specified `$JOB`, which can be a job number or PID, completes, or until all background jobs complete if not provided.&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 131'
+[while]:                                             bash.md#while                                      '```&#10;$ while&#10;```&#10;While `$CONDITION` is met, do `$CMDS`.&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 132'
+
+**B** 
+[`bg`][bg] 
+[`bind`][bind] 
+[`break`][break] 
+[`builtin`][builtin] 
+**C** 
+[`caller`][caller] 
+[`case`][case]/[`esac`][esac] 
+[`cd`][cd] 
+[`command`][command] 
+[`compgen`][compgen] 
+[`complete`][complete] 
+[`compopt`][compopt] 
+[`continue`][continue] 
+**D** 
+[`declare`][declare] 
+[`dirs`][dirs] 
+[`disown`][disown] 
+[`do`][do]/[`done`][done] 
+**E** 
+[`echo`][echo] 
+[`enable`][enable] 
+[`eval`][eval] 
+[`exec`][exec] 
+[`exit`][exit] 
+[`export`][export] 
+**F** 
+[`false`][false] 
+[`fc`][fc] 
+[`fg`][fg] 
+[`for`][for] 
+[`function`][function] 
+**G** 
+[`getopts`][getopts] 
+**H** 
+[`hash`][hash] 
+[`help`][help] 
+[`history`][history] 
+**I** 
+[`if`][if]/[`fi`][fi] 
+**J** 
+[`jobs`][jobs] 
+**K** 
+[`kill`][kill] 
+**L** 
+[`let`][let] 
+[`local`][local] 
+[`logout`][logout]
+**M** 
+[`mapfile`][mapfile]
+**P** 
+[`popd`][popd] 
+[`printf`][printf] 
+[`pushd`][pushd] 
+[`pwd`][pwd] 
+**R** 
+[`read`][read] 
+[`readarray`][readarray] 
+[`readonly`][readonly] 
+[`return`][return] 
+**S** 
+[`select`][select] 
+[`set`][set] 
+[`shift`][shift] 
+[`shopt`][shopt] 
+[`source`][source] 
+[`suspend`][suspend] 
+**T** 
+[`test`][test] 
+[`time`][time] 
+[`times`][times] 
+[`trap`][trap] 
+[`true`][true] 
+[`type`][type] 
+[`typeset`][typeset] 
+**U** 
+[`ulimit`][ulimit] 
+[`umask`][umask] 
+[`unalias`][unalias] 
+[`unset`][unset] 
+[`until`][until] 
+**W** 
+[`wait`][wait] 
+[`while`][while] 
+#### Boot
+[grub-install]:                boot.md#grub-install            '```&#10;$ grub-install&#10;```&#10;Install GRUB on the MBR of a hard drive&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 42'
+[lilo]:                        boot.md#lilo                    '```&#10;$ lilo&#10;```&#10;`lilo` map installer reads a configuration file and writes a map file, which contains information needed by the boot loader to locate and launch Linux kernels or other operating systems.&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 40'
+[update-grub]:                 boot.md#update-grub             '```&#10;$ update-grub&#10;```&#10;Make changes take effect for a GRUB2 configuration change'
+
+**G** 
+[`grub-install`][grub-install] 
+**L** 
+[`lilo`][lilo] 
+**U** 
+[`update-grub`][update-grub] 
+#### Build
+[aclocal]:                     #aclocal                        '```&#10;$ aclocal&#10;```&#10;Place m4 macro definitions needed by `autoconf` into a single file. `aclocal` first scans for macro definitions in m4 files in its default directory (/usr/share/aclocal) and in the file acinclude.m4, then in the configure.ac file. IT generates an aclocal.m4 file that contains definitions of all m4 macros required by `autoconf`.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 16'
+[as]:                          #as                             '```&#10;$ as&#10;```&#10;Generate an object file from each specified assembly language source file. Primarily intended to assemble the output of the GNU C compiler `gcc` for use by the linker `ld`.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 18'
+[autoconf]:                    #autoconf                       '```&#10;$ autoconf&#10;```&#10;Generate a configuration script from m4 macros defined in a template file, if given, or in a configure.ac or configure.in file in the CWD. The generated script is almost invariably called "configure".&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 21'
+[autoheader]:                  #autoheader                     '```&#10;$ autoheader&#10;```&#10;Generate a template file of C `#define` statements from m4 macros defined in a template file, if specified, or in configure.ac or configure.in in the CWD. The generated template file is almost invariably called config.h.in or config.hin&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 22'
+[automake]:                    #automake                       '```&#10;$ automake&#10;```&#10;Create GNU standards-compliant Makefile.in files from Makefile.am template files&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 23'
+[autoreconf]:                  #autoreconf                     '```&#10;$ autoreconf&#10;```&#10;Update configure scripts by running `autoconf`, `autoheader`, `aclocal`, `automake`, and `libtoolize` as needed&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 21'
+[autoscan]:                    #autoscan                       '```&#10;$ autoscan&#10;```&#10;Create or maintain a preliminary configure.ac file named configure.scan based on source files in specified directory or CWD.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 21'
+[autoupdate]:                  #autoupdate                     '```&#10;$ autoupdate&#10;```&#10;Update the configure template file or configure.ac if none is specified&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 21'
+[bison]:                       #bison                          '```&#10;$ bison&#10;```&#10;Convert specified "file.y" containing a context-free grammar into tables for subsequent parsing while sending output to a new file named "file.c". Largely compatible with `yacc`, from which it derives its name.&#10;Originated as an adaptation of Bob Corbett\'s reimplementation of `yacc` which was distributed under the Berkeley license. Now maintained as a project of the FSF under a GPL license.'
+[cc]:                          #cc                             '```&#10;$ cc&#10;```&#10;Compile one or more C (.c), assembler (.s), ore preprocessed C (.i) source files. Automatically invokes the loader `ld`, unless `-c` is suplied. In some cases, `cc` generates an object file having a .o suffix and a corresponding root name. By default, output is placed in `"a.out"&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 32'
+[ctags]:                       #ctags                          '```&#10;$ ctags $FILES&#10;```&#10;Create a list of function and macro names that are defined in the specified C, Pascal, FORTRAN, `yacc`, or `lex` source `$FILES`. Output is in three columns:&#10;  - `name`                function or macro name&#10;  - `file`                source file in which `name` is defined&#10;  - `context`             search pattern that shows the line of code containing `name`&#10;&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 48'
+[etags]:                       #etags                          '```&#10;$ etags&#10;```&#10;Create a list of function and macro names defined in a programming source file, generating tags for use by `emacs`&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 75'
+[flex]:                        #flex                           '```&#10;$ flex&#10;```&#10;"Fast Lexical Analyzer Generator", faster variant of `lex` translated into C by Vern Paxson&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 92'
+[g++]:                         #g++                            '```&#10;$ g++&#10;```&#10;Invoke `gcc` with the options necessary to make it recognize C++.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 95'
+[gcc]:                         #gcc                            '```&#10;$ gcc&#10;```&#10;"GNU Compiler Collection", formerly known as the "GNU C Compiler", compiles multiple languages to machine code.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 95'
+[gcore]:                       #gcore                          '```&#10;$ gcore&#10;```&#10;Create a core image of each running process specified, which can be used with a debugger&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 98'
+[gdb]:                         #gdb                            '```&#10;$ gdb&#10;```&#10;"GNU DeBugger", allows you to step through the execution of a program in order to find the point at which it breaks&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 99'
+[gprof]:                       #gprof                          '```&#10;$ gprof&#10;```&#10;Display call-graph profile data of C programs'
+[ldd]:                         #ldd                            '```&#10;$ ldd&#10;```&#10;Display shared libraries used by a specified command&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 87'
+[lex]:                         #lex                            '```&#10;$ lex&#10;```&#10;Generate a lexical analysis program based on the regular expressions and C statements contained in one or more input files (also `flex`)&#10;Lexical analyzer generator written by Eric Schmidt&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 119'
+[make]:                        #make                           '```&#10;$ make&#10;```&#10;Utility for building and maintaining programs from source code using a makefile&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 86'
+[xgettext]:                    #xgettext                       '```&#10;$ xgettext&#10;```&#10;Extract specially marked strings from C and C++ source files, placing them in a .po ("portable object" file for translation and compilation by `msgfmt`.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 234'
+[yacc]:                        #yacc                           '```&#10;$ yacc&#10;```&#10;"yet another compiler-compiler", parser generator that converts a file containing a context-free LALR grmamar and converts it to tables for subsequent pasring, sending output to y.tab.c. Written between 1975 and 1978 by Stephen C. Johnson at Bell Labs.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 237'
+
+**A** 
+[`aclocal`][aclocal] 
+[`as`][as] 
+[`autoconf`][autoconf] 
+[`autoheader`][autoheader] 
+[`automake`][automake] 
+[`autoreconf`][autoreconf] 
+[`autoscan`][autoscan] 
+[`autoupdate`][autoupdate] 
+**B**
+[`bison`][bison] 
+**C** 
+[`cc`][cc] 
+[`ctags`][ctags] 
+**E** 
+[`etags`][etags] 
+**F** 
+[`flex`][flex] 
+**G** 
+[`g++`][g++] 
+[`gcc`][gcc] 
+[`gcore`][gcore] 
+[`gdb`][gdb] 
+[`gprof`][gprof] 
+**L** 
+[`ldd`][ldd] 
+[`lex`][lex] 
+**M** 
+[`make`][make] 
+**X** 
+[`xgettext`][xgettext] 
+**Y**
+[`yacc`][yacc] 
+## Commands
 ### `adduser`
 ### `apropos`
 Look up one or more `keywords` in the online manpages: same as `man -k` (rf. `whatis`)
@@ -613,7 +605,6 @@ Search audit logs for today for logins of UID 500
 ```sh
 ausearch --start today --loginuid500
 ```
-
 ### `crontab`
 There are 2 types of `crontab`, taking similar syntax:
 1. User crontabs, where cron jobs take the syntax: `minute hour day month weekday cmd`
@@ -1008,30 +999,16 @@ Configuration file  | Description
 
 ## Archive commands
 
-Commands                        | Options
+[Archive commands](#archive-commands) | Options
 ---                             | ---
 [`bzip2`][bzip2]                | <code>&nbsp;</code>  <code>&nbsp;</code> <code>&nbsp;</code> [`c`][bzip2 -&#99;] [`d`][bzip2 -&#100;] <code>&nbsp;</code> [`f`][bzip2 -&#102;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`v`][bzip2 -&#118;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`z`][bzip2 -&#122;]
-[`cpio`][cpio][` -i`][cpio -&#105;]  | <code>&nbsp;</code>  <code>&nbsp;</code> [`b`][cpio -&#98;] [`c`][cpio -&#99;] [`d`][cpio -&#100;] <code>&nbsp;</code> [`f`][cpio -&#102;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`k`][cpio -&#107;] <code>&nbsp;</code> [`m`][cpio -&#109;] [`n`][cpio -&#110;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`r`][cpio -&#114;] [`s`][cpio -&#115;] [`t`][cpio -&#116;] [`u`][cpio -&#117;] [`v`][cpio -&#118;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code>  <br><code>&nbsp;</code>&nbsp;<code>&nbsp;</code> [`B`][cpio -&#66;] [`C`][cpio -&#67;] <code>&nbsp;</code> [`E`][cpio -&#69;] <code>&nbsp;</code> <code>&nbsp;</code> [`H`][cpio -&#72;] [`I`][cpio -&#73;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`M`][cpio -&#77;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`R`][cpio -&#82;] [`S`][cpio -&#83;] <code>&nbsp;</code> <code>&nbsp;</code> [`V`][cpio -&#86;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 
-[`cpio`][cpio][` -o`][cpio -&#111;]  | [`0`][cpio -&#48;]  [`a`][cpio -&#97;] <code>&nbsp;</code> [`c`][cpio -&#99;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`v`][cpio -&#118;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code>  <br><code>&nbsp;</code> [`A`][cpio -&#65;] [`B`][cpio -&#66;] [`C`][cpio -&#67;] <code>&nbsp;</code> <code>&nbsp;</code> [`F`][cpio -&#70;] <code>&nbsp;</code> [`H`][cpio -&#72;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`L`][cpio -&#76;] [`M`][cpio -&#77;] <code>&nbsp;</code> [`O`][cpio -&#79;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`V`][cpio -&#86;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 
-[`cpio`][cpio][` -p`][cpio -&#112;]  | [`0`][cpio -&#48;]  [`a`][cpio -&#97;] <code>&nbsp;</code> <code>&nbsp;</code> [`d`][cpio -&#100;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`l`][cpio -&#108;] [`m`][cpio -&#109;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`u`][cpio -&#117;] [`v`][cpio -&#118;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code>  <br><code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`L`][cpio -&#76;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`R`][cpio -&#82;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`V`][cpio -&#86;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 
+[`compress`][compress]          | <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`c`][compress -&#99;] <code>&nbsp;</code> <code>&nbsp;</code> [`f`][compress -&#102;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`r`][compress -&#114;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 
+[`cpio`][cpio]                  | [`0`][cpio -&#48;]   [`a`][cpio -&#97;] [`b`][cpio -&#98;] [`c`][cpio -&#99;] [`d`][cpio -&#100;] <code>&nbsp;</code> [`f`][cpio -&#102;] <code>&nbsp;</code> <code>&nbsp;</code> [`i`][cpio -&#105;] <code>&nbsp;</code> [`k`][cpio -&#107;] [`l`][cpio -&#108;] [`m`][cpio -&#109;] [`n`][cpio -&#110;] [`o`][cpio -&#111;] [`p`][cpio -&#112;] <code>&nbsp;</code> [`r`][cpio -&#114;] [`s`][cpio -&#115;] [`t`][cpio -&#116;] [`u`][cpio -&#117;] [`v`][cpio -&#118;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code>  <br><code>&nbsp;</code>&nbsp;[`A`][cpio -&#65;] [`B`][cpio -&#66;] [`C`][cpio -&#67;] <code>&nbsp;</code> [`E`][cpio -&#69;] [`F`][cpio -&#70;] <code>&nbsp;</code> [`H`][cpio -&#72;] [`I`][cpio -&#73;] <code>&nbsp;</code> <code>&nbsp;</code> [`L`][cpio -&#76;] [`M`][cpio -&#77;] <code>&nbsp;</code> [`O`][cpio -&#79;] <code>&nbsp;</code> <code>&nbsp;</code> [`R`][cpio -&#82;] [`S`][cpio -&#83;] <code>&nbsp;</code> <code>&nbsp;</code> [`V`][cpio -&#86;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 
 [`gzip`][gzip]                  | <code>&nbsp;</code>  <code>&nbsp;</code> <code>&nbsp;</code> [`c`][gzip -&#99;] [`d`][gzip -&#100;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`r`][gzip -&#114;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`v`][gzip -&#118;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code>
 [`tar`][tar]                    | <code>&nbsp;</code>  <code>&nbsp;</code> <code>&nbsp;</code> [`c`][tar -&#99;] [`d`][tar -&#100;] <code>&nbsp;</code> [`f`][tar -&#102;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`j`][tar -&#106;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`p`][tar -&#112;] <code>&nbsp;</code> [`r`][tar -&#114;] <code>&nbsp;</code> [`t`][tar -&#116;] [`u`][tar -&#117;] [`v`][tar -&#118;] <code>&nbsp;</code> [`x`][tar -&#120;] <code>&nbsp;</code> [`z`][tar -&#122;]  <br><code>&nbsp;</code> [`A`][tar -&#65;] <code>&nbsp;</code> [`C`][tar -&#67;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`J`][tar -&#74;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 
 [`xz`][xz]                      | <code>&nbsp;</code>  <code>&nbsp;</code> <code>&nbsp;</code> [`c`][xz -&#99;] [`d`][xz -&#100;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`l`][xz -&#108;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`v`][xz -&#118;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code>
 [`zip`][zip]                    | <code>&nbsp;</code>  <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`d`][zip -&#100;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`r`][zip -&#114;] <code>&nbsp;</code> <code>&nbsp;</code> [`u`][zip -&#117;] [`v`][zip -&#118;] <code>&nbsp;</code> [`x`][zip -&#120;] <code>&nbsp;</code> <code>&nbsp;</code>
 
-### `compress`
-Display contents of the compressed file to stdout (same as using `zcat`)
-```sh
-compress -c
-```
-Compress symbolic links
-```sh
-compress -f
-```
-Compress files recursively within a specified directory
-```sh
-compress -r
-```
 ### `cpio`
 Create an archive that contains all the files in the current working directory [<sup>Haeder: 94</sup>][Haeder]
 ```sh
