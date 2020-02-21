@@ -1,11 +1,14 @@
+<!-- Sources -->
 [ADP 57]: ../sources/README.md#adp-57 "Azure DevOps Podcast 57: \"Craig Loewen on the Windows Subsystem for Linux story\""
 [LXF 258]: https://www.linuxformat.com/archives?issue=258 '"Linux distribution reviews: Clear Linux 31530" _Linux Format_ 258'
 
+<!-- Definitions -->
 [Alpine Linux]: #alpine-linux "Security-oriented, lightweight Linux distribution used in containers and hardware."
 [Clear Linux]: #clear-linux "Rolling release distro from Intel with a custom package management system based on **bundles**, collections of packages that contain everything an application requires, including dependencies. Clear's update process also has the ability to do **delta downloads**, preserving bandwidth. It does not provide access with unusual licenses, like ZFS, Chrome, or FFmpeg."
 [Fedora CoreOS]: #fedora-coreos "Fedora edition built for running containerized workloads securely and at scale. CoreOS systems are meant to be immutable, meaning they are only configured through the provisioning process and not modified in-place."
 [WSL]: #windows-subsystem-for-linux "Linux virtual machine shipped with Windows with the ability to install several different distros."
 
+<!-- Kali Linux -->
 [Aircrack-ng]: #kali-linux 'Aircrack-ng&#10;Monitor and compromise WiFi networks'
 [BeEF]: #kali-linux 'BeEF&#10;Assess security of a web browser'
 [Apktool]: #kali-linux 'Apktool&#10;Reverse engineer Android apps'
@@ -27,12 +30,25 @@
 [WPScan]: #kali-linux 'WPScan&#10;WordPress security auditing tool'
 [Yersinia]: #kali-linux 'Yersinia&#10;Perform Layer 2 attacks'
 
+<!-- Windows Subsystem for Linux-->
+[DrvFs]: #windows-subsystem-for-linux 'DrvFs&#10;Filesystem plugin to WSL that was designed to support interoperability between WSL and the Windows filesystem. DrvFs enables WSL to mount drives with supported file systems under /mnt, such as /mnt/c, /mnt/d, etc. &#10;"Chmod/Chown WSL Improvements". _Windows Command Line_. Microsoft: 01/12/2018.'
+[lxss.sys]: #windows-subsystem-for-linux 'LXSS Manager service (lxss.sys)&#10;One of the WSL "pico drivers" that translates Linux syscalls to equivalent Windows NT calls. Where there is no reasonable mapping, lxss.sys must service the request directly.&#10;"WSL System calls". _Windows Subsystem for Linux_. Microsoft.'
+[pico driver]: #windows-subsystem-for-linux 'pico driver&#10;Reference to lsxx.sys and lxcore.sys in WSL, responsible for handling Linux syscall requests in coordination with the NT kernel.&#10;"WSL System calls". _Windows Subsystem for Linux_. Microsoft.'
+[VFS]: #windows-subsystem-for-linux 'Virtual File System (VFS)&#10;Abstraction of file system operations used by WSL, which provides an interface for user mode programs to interact with the file system and an interface that file systems have to implement.&#10;"WSL File System Support". _Windows Subsystem for Linux_. Microsoft: 06/15/2016.'
+[VolFs]: #windows-subsystem-for-linux 'VolFs&#10;The primary file system used by WSL, which is used to store the Linux system files and the contents of the home directory.&#10;VolFs supports most features the Linux VFS provides, including Linux permissions, symbolic links, FIFOs, sockets, and device files.&#10;"WSL File System Support". _Windows Subsystem for Linux_. Microsoft: 06/15/2016.'
+
 # Linux distributions
-
-\#    | Distros
----   | ---
-A-Z   | [Alpine Linux][Alpine Linux] &bull; [Clear Linux][Clear Linux] &bull; [Fedora CoreOS][Fedora CoreOS] &bull; [Kali Linux](#kali-linux) &bull; [WSL][WSL]
-
+#### Distros
+**A** 
+[Alpine Linux][Alpine Linux] 
+[Arch Linux](#arch-linux) 
+**C** 
+[Clear Linux][Clear Linux] 
+[CoreOS][Fedora CoreOS] 
+**K** 
+[Kali Linux](#kali-linux) 
+**W** 
+[Windows Subsystem for Linux][WSL]
 ## Alpine Linux
 Security-oriented, lightweight Linux distribution used in containers and hardware.
 ## Arch Linux
@@ -172,7 +188,6 @@ Work immediately began to reconstruct the remaining functionality of UNIX, which
 Source: [Article](https://web.archive.org/web/20060315152051/http://www.applelust.com/alust/terminal/archives/terminal041202.shtml)
 ## Clear Linux
 Rolling release distro from Intel with a custom package management system based on **bundles**, collections of packages that contain everything an application requires, including dependencies. Clear's update process also has the ability to do **delta downloads**, preserving bandwidth. It does not provide access with unusual licenses, like ZFS, Chrome, or FFmpeg. [^][LXF 258]
-
 ## Fedora CoreOS
 **CoreOS** is a Fedora edition built specifically for running containerized workloads securely and at scale. Because containers can be deployed across many nodes for redundancy, the system can be updated and rebooted automatically without affecting uptime. [^](https://fedoramagazine.org/introducing-fedora-coreos/ "Fedora Magazine: \"Introducing Fedora CoreOS\"")
 
@@ -193,10 +208,18 @@ N     | [Nikto][Nikto]
 S     | [SET][SET] [Skipfish][Skipfish] [Snort][Snort] [sqlmap][Sqlmap]
 W     | [Wireshark][Wireshark] [WPScan][WPScan]
 Y     | [Yersinia][Yersinia]
-
-
 ## Windows Subsystem for Linux
-**Windows Subsystem for Linux (WSL)** is shipped with Windows and tied to the Windows release cycle. Windows ships from a single massive codebase, of which WSL is part. WSL was written mostly in C and and has 3 million monthly active users. [^][ADP 57]
+**Windows Subsystem for Linux (WSL)** is shipped with Windows and tied to the Windows release cycle. Windows ships from a single massive codebase, of which WSL is part. WSL was written mostly in C and and has 3 million monthly active users. [<sup>ADP 57</sup>][ADP 57]
+#### Concepts
+**D** 
+[DrvFs][DrvFs] 
+**L** 
+[LXSS][lxss.sys]
+**P** 
+[pico drivers][pico driver]
+**V** 
+[VFS][VFS] 
+[VolFs][VolFs]
 
 WSL implements **user services** to connect to WSL distros and to run Windows-native applications like CMD.exe. WSL implements a **9P Protocol** file server to provide seamless integration of the virtualized Linux filesystem and that of the Windows host.
 
