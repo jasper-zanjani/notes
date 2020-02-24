@@ -33,17 +33,6 @@
 [ansible-playbook]:                                  ../../devops/ansible.md#ansible-playbook           '```&#10;$ ansible-playbook&#10;```&#10;Execute Ansible playbooks'
 [ansible]:                                           ../../devops/ansible.md#ansible                    '```&#10;$ ansible&#10;```&#10;Agentless configuration management and automation tool using YAML templates, developed by Red Hat'
 
-<!-- Build tools -->
-[aclocal]:                                           build.md#aclocal                                   '```&#10;aclocal&#10;```&#10;Place m4 macro definitions needed by `autoconf` into a single file. `aclocal` first scans for macro definitions in m4 files in its default directory (/usr/share/aclocal) and in the file acinclude.m4, then in the configure.ac file. IT generates an aclocal.m4 file that contains definitions of all m4 macros required by `autoconf`.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 16'
-[as]:                                                build.md#as                                        '```&#10;as&#10;```&#10;Generate an object file from each specified assembly language source file. Primarily intended to assemble the output of the GNU C compiler `gcc` for use by the linker `ld`.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 18'
-[autoconf]:                                          build.md#autoconf                                  '```&#10;autoconf&#10;```&#10;Generate a configuration script from m4 macros defined in a template file, if given, or in a configure.ac or configure.in file in the CWD. The generated script is almost invariably called "configure".&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 21'
-[autoheader]:                                        build.md#autoheader                                '```&#10;autoheader&#10;```&#10;Generate a template file of C `#define` statements from m4 macros defined in a template file, if specified, or in configure.ac or configure.in in the CWD. The generated template file is almost invariably called config.h.in or config.hin&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 22'
-[automake]:                                          build.md#automake                                  '```&#10;automake&#10;```&#10;Create GNU standards-compliant Makefile.in files from Makefile.am template files&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 23'
-[autoreconf]:                                        build.md#autoreconf                                '```&#10;autoreconf&#10;```&#10;Update configure scripts by running `autoconf`, `autoheader`, `aclocal`, `automake`, and `libtoolize` as needed&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 21'
-[autoscan]:                                          build.md#autoscan                                  '```&#10;autoscan&#10;```&#10;Create or maintain a preliminary configure.ac file named configure.scan based on source files in specified directory or CWD.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 21'
-[autoupdate]:                                        build.md#autoupdate                                '```&#10;autoupdate&#10;```&#10;Update the configure template file or configure.ac if none is specified&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 21'
-[bison]:                                             #bison                                             '```&#10;$ bison&#10;```&#10;Convert specified "file.y" containing a context-free grammar into tables for subsequent parsing while sending output to a new file named "file.c". Largely compatible with `yacc`, from which it derives its name.&#10;Originated as an adaptation of Bob Corbett\'s reimplementation of yacc which was distributed under the Berkeley license. Now maintained as a project of the FSF under a GPL license.'
-
 <!-- Concepts -->
 [CUPS]:                                              #                                                  'Common Unix Printing System (CUPS)&#10;Most common printing system used on Linux computers today&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 428'
 [LPD]:                                               #                                                  'Line Printer Daemon (LPD)&#10;Older Linux printing system&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 432'
@@ -136,45 +125,15 @@
 [uptime]:                                            info.md#uptime                                     '```&#10;$ uptime&#10;```&#10;Show how long the system has been running&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 291'
 [vmstat]:                                            info.md#vmstat                                     '```&#10;$ vmstat&#10;```&#10;Provides more detail than `free`&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 293'
 
-<!-- File -->
-[chattr]:                                            file.md#chattr                                     '```&#10;$ chattr&#10;```&#10;Change file attributes&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 311-312'
-[chgrp]:                                             file.md#chgrp                                      '```&#10;$ chgrp&#10;```&#10;Change group ownership of a file&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 198-199'
-[chmod]:                                             file.md#chmod                                      '```&#10;$ chmod&#10;```&#10;Change permissions on files&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 195-198'
-[chown]:                                             file.md#chown                                      '```&#10;$ chown&#10;```&#10;Change the user owner or group owner of a file or directory&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 198'
-[cp]:                                                file.md#cp                                         '```&#10;$ cp&#10;```&#10;Copy files or directories&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 129-130'
-[dd]:                                                file.md#dd                                         '```&#10;$ dd&#10;```&#10;Perform multiple operations related to backing up data and creating files. One common use is to make a backup of an entire drive.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 269'
-[fallocate]:                                         file.md#fallocate                                  '```&#10;$ fallocate&#10;```&#10;'
-[find]:                                              file.md#find                                       '```&#10;$ find&#10;```&#10;Search the filesystem for files and directories&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 136'
-[getfacl]:                                           file.md#getfacl                                    '```&#10;$ getfacl&#10;```&#10;Display the ACL of a file&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 199'
-[install]:                                           file.md#install                                    '```&#10;$ install&#10;```&#10;Copy files while maintaining metadata'
-[ln]:                                                file.md#ln                                         '```&#10;$ ln&#10;```&#10;Create a link&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 132'
-[locate]:                                            file.md#locate                                     '```&#10;$ locate&#10;```&#10;Search for files based on a database that is typically created daily.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 138'
-[ls]:                                                file.md#ls                                         '```&#10;$ ls&#10;```&#10;List files in a directory&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 131'
-[lsattr]:                                            file.md#lsattr                                     '```&#10;$ lsattr&#10;```&#10;Display the attributes for a file&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 311'
-[lsof]:                                              file.md#lsof                                       '```&#10;$ lsof&#10;```&#10;Display open files, open network ports, and network connections&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 303'
-[md5sum]:                                            file.md#md5sum                                     '```&#10;$ md5sum&#10;```&#10;Display MD5 checksum value for a file&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 275'
-[mkdir]:                                             file.md#mkdir                                      '```&#10;$ mkdir&#10;```&#10;Create a directory&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 132'
-[mv]:                                                file.md#mv                                         '```&#10;$ mv&#10;```&#10;Move or rename a file&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 129'
-[rm]:                                                file.md#rm                                         '```&#10;$ rm&#10;```&#10;Delete files and directories&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 130'
-[rmdir]:                                             file.md#rmdir                                      '```&#10;$ rmdir&#10;```&#10;Delete empty directories&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 132'
-[rsync]:                                             file.md#rsync                                      '```&#10;$ rsync&#10;```&#10;Copy files remotely; used in situations where only updated files are to be transferred in order to preserve bandwidth.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 131'
-[scp]:                                               file.md#scp                                        '```&#10;$ scp&#10;```&#10;Copy files to and from remote systems via `ssh`&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 130'
-[setfacl]:                                           file.md#setfacl                                    '```&#10;$ setfacl&#10;```&#10;Create an ACL on a file or directory.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 199'
-[shred]:                                             file.md#shred                                      '```&#10;$ shred&#10;```&#10;'
-[stat]:                                              file.md#stat                                       '```&#10;$ stat&#10;```&#10;See inode information of a file&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 135'
-[touch]:                                             file.md#touch                                      '```&#10;$ touch&#10;```&#10;Used to create empty files and to update modification and access timestamps of existing files.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 129'
-[tree]:                                              file.md#tree                                       '```&#10;$ tree&#10;```&#10;Display contents of directories in a tree-like format'
-[umask]:                                             file.md#umask                                      '```&#10;$ umask&#10;```&#10;Set default permissions for files and directories&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 195'
-[unlink]:                                            file.md#unlink                                     '```&#10;$ unlink&#10;```&#10;Does essentially what `rm` does, but in a subtly different way.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 135'
-[updatedb]:                                          file.md#updatedb                                   '```&#10;$ updatedb&#10;```&#10;Create a database of all files on the operating system to be used by `locate`.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 140'
-[whereis]:                                           file.md#whereis                                    '```&#10;$ whereis&#10;```&#10;Search for binary executables, source code, and manual pages in standard locations as well as the PATH and `$MANPATH`&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 139'
-[which]:                                             file.md#which                                      '```&#10;$ which&#10;```&#10;Search for binary executables on the PATH&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 139'
-
-
 # Linux Commands
+
+#### Archive
+
+
+
 Topic                         | Commands
 :---                          | :---
-[Files](file.md)	            | [`fallocate`][fallocate] [`install`][install] [`ls`][ls] [`lsof`][lsof] [`setfacl`][setfacl] [`sshfs`][sshfs] [`tree`][tree]
+Archive                       | **A** [`ar`][ar] **B** [`bzcat`][bzcat] [`bzip2`][bzip2] [`bzless`][bzless] [`bzmore`][bzmore] **C** [`compress`][compress] [`cpio`][cpio] **D** [`dar`][dar] **G** [`gunzip`][gunzip] [`gzcat`][gzcat] [`gzip`][gzip] **T** [`tar`][tar] **U** [`uncompress`][uncompress] [`unxz`][unxz] [`unzip`][unzip] **X** [`xz`][xz] **Z** [`zcat`][zcat] [`zip`][zip] [`zipcloak`][zipcloak] [`zipcmp`][zipcmp] [`zipdetails`][zipdetails] [`zipgrep`][zipgrep] [`zipinfo`][zipinfo] [`zipnote`][zipnote] [`zipsplit`][zipsplit] 
 GNOME                         | [`gconf-editor`][gconf-editor] [`gsettings`][gsettings]
 [Hardware settings](hw.md)    | [`bluetoothctl`][bluetoothctl] [`insmod`][insmod] [`lsmod`][lsmod] [`lspci`][lspci] [`lsusb`][lsusb] [`modprobe`][modprobe] [`rmmod`][rmmod] <br> **[Printing](hw.md)** <br> [**CUPS**][CUPS] [`cupsaccept`][cupsaccept] [`cupsenable`][cupsenable] [`cupsdisable`][cupsdisable] [`cupsreject`][cupsreject] [`lp`][lp] [`cancel`][cancel] <br> [**LPD**][LPD] [`lpc`][lpc] [`lpq`][lpq] [`lpr`][lpr] [`lprm`][lprm]
 [Information](info.md)        | [`stat`][stat] <br> **Benchmarking** [`free`][free] [`glances`][glances]  [`iperf`][iperf] [`lscpu`][lscpu] [`nproc`][nproc] [`top`][top] [`uptime`][uptime] <br>**Sysstat** [`iostat`][iostat] [`mpstat`][mpstat] [`sar`][sar] <br> **Date and time** [`chrony`][chrony] [`date`][date] [`hwclock`][hwclock] [`timedatectl`][timedatectl]
@@ -191,7 +150,7 @@ Kubernetes                    | [`kubeadm`][kubeadm] [`kubectl`][kubectl]
 [Virtualization](virt.md)     | [`virt-install`][virt-install] [`virt-manager`][virt-manager]
 [X](x.md)                     | [`xdpyinfo`][xdpyinfo] [`xlsclients`][xlsclients] [`xmodmap`][xmodmap] [`Xorg`][xorg] [`xrandr`][xrandr] [`xwininfo`][xwininfo]
 
-#### Archive
+## Archive
 <!-- Archive -->
 [ar]:                          #ar                             '```&#10;$ ar&#10;```&#10;Maintain a group of files that are combined into a file archive. Used most commonly to create and update library files as used by `ld`.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 16'
 [bzcat]:                       #bzcat                          '```&#10;$ bzcat&#10;```&#10;Page through .bz2 files'
@@ -289,42 +248,98 @@ Kubernetes                    | [`kubeadm`][kubeadm] [`kubectl`][kubectl]
 [zip -&#114;]:                  #zip                           '```&#10;$ zip -&#114;&#10;```&#10;Zip recursively&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 272'
 [zip -&#120;]:                  #zip                           '```&#10;$ zip -&#120; $FILES&#10;```&#10;Specify files to be excluded from the archive&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 272'
 
+[Archive commands](#archive-commands) | Options
+---                             | ---
+[`bzip2`][bzip2]                | <code>&nbsp;</code>  <code>&nbsp;</code> <code>&nbsp;</code> [`c`][bzip2 -&#99;] [`d`][bzip2 -&#100;] <code>&nbsp;</code> [`f`][bzip2 -&#102;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`v`][bzip2 -&#118;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`z`][bzip2 -&#122;]
+[`compress`][compress]          | <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`c`][compress -&#99;] <code>&nbsp;</code> <code>&nbsp;</code> [`f`][compress -&#102;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`r`][compress -&#114;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 
+[`cpio`][cpio]                  | [`0`][cpio -&#48;]   [`a`][cpio -&#97;] [`b`][cpio -&#98;] [`c`][cpio -&#99;] [`d`][cpio -&#100;] <code>&nbsp;</code> [`f`][cpio -&#102;] <code>&nbsp;</code> <code>&nbsp;</code> [`i`][cpio -&#105;] <code>&nbsp;</code> [`k`][cpio -&#107;] [`l`][cpio -&#108;] [`m`][cpio -&#109;] [`n`][cpio -&#110;] [`o`][cpio -&#111;] [`p`][cpio -&#112;] <code>&nbsp;</code> [`r`][cpio -&#114;] [`s`][cpio -&#115;] [`t`][cpio -&#116;] [`u`][cpio -&#117;] [`v`][cpio -&#118;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code>  <br><code>&nbsp;</code>&nbsp;[`A`][cpio -&#65;] [`B`][cpio -&#66;] [`C`][cpio -&#67;] <code>&nbsp;</code> [`E`][cpio -&#69;] [`F`][cpio -&#70;] <code>&nbsp;</code> [`H`][cpio -&#72;] [`I`][cpio -&#73;] <code>&nbsp;</code> <code>&nbsp;</code> [`L`][cpio -&#76;] [`M`][cpio -&#77;] <code>&nbsp;</code> [`O`][cpio -&#79;] <code>&nbsp;</code> <code>&nbsp;</code> [`R`][cpio -&#82;] [`S`][cpio -&#83;] <code>&nbsp;</code> <code>&nbsp;</code> [`V`][cpio -&#86;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 
+[`gzip`][gzip]                  | <code>&nbsp;</code>  <code>&nbsp;</code> <code>&nbsp;</code> [`c`][gzip -&#99;] [`d`][gzip -&#100;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`r`][gzip -&#114;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`v`][gzip -&#118;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code>
+[`tar`][tar]                    | <code>&nbsp;</code>  <code>&nbsp;</code> <code>&nbsp;</code> [`c`][tar -&#99;] [`d`][tar -&#100;] <code>&nbsp;</code> [`f`][tar -&#102;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`j`][tar -&#106;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`p`][tar -&#112;] <code>&nbsp;</code> [`r`][tar -&#114;] <code>&nbsp;</code> [`t`][tar -&#116;] [`u`][tar -&#117;] [`v`][tar -&#118;] <code>&nbsp;</code> [`x`][tar -&#120;] <code>&nbsp;</code> [`z`][tar -&#122;]  <br><code>&nbsp;</code> [`A`][tar -&#65;] <code>&nbsp;</code> [`C`][tar -&#67;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`J`][tar -&#74;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 
+[`xz`][xz]                      | <code>&nbsp;</code>  <code>&nbsp;</code> <code>&nbsp;</code> [`c`][xz -&#99;] [`d`][xz -&#100;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`l`][xz -&#108;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`v`][xz -&#118;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code>
+[`zip`][zip]                    | <code>&nbsp;</code>  <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`d`][zip -&#100;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`r`][zip -&#114;] <code>&nbsp;</code> <code>&nbsp;</code> [`u`][zip -&#117;] [`v`][zip -&#118;] <code>&nbsp;</code> [`x`][zip -&#120;] <code>&nbsp;</code> <code>&nbsp;</code>
 
-**A** 
-[`ar`][ar] 
-**B** 
-[`bzcat`][bzcat] 
-[`bzip2`][bzip2] 
-[`bzless`][bzless] 
-[`bzmore`][bzmore] 
-**C** 
-[`compress`][compress] 
-[`cpio`][cpio] 
-**D** 
-[`dar`][dar] 
-**G** 
-[`gunzip`][gunzip] 
-[`gzcat`][gzcat] 
-[`gzip`][gzip] 
-**T** 
-[`tar`][tar] 
-**U** 
-[`uncompress`][uncompress] 
-[`unxz`][unxz] 
-[`unzip`][unzip] 
-**X** 
-[`xz`][xz] 
-**Z** 
-[`zcat`][zcat] 
-[`zip`][zip] 
-[`zipcloak`][zipcloak] 
-[`zipcmp`][zipcmp] 
-[`zipdetails`][zipdetails] 
-[`zipgrep`][zipgrep] 
-[`zipinfo`][zipinfo] 
-[`zipnote`][zipnote] 
-[`zipsplit`][zipsplit] 
-#### Audio
+### `cpio`
+Create an archive that contains all the files in the current working directory [<sup>Haeder: 94</sup>][Haeder]
+```sh
+ls | cpio -ov > /tmp/archive.cpio
+```
+Extract all the files from the archive we just created
+```sh
+cpio -iv < /tmp/archive.cpio
+```
+### `dar`
+Create a differential (or incremental) backup of {file}, using full.bak as reference
+```sh
+dar -R /path/to/file -c diff1.bak -A full.bak
+```
+Create a full backup of {file}
+```sh
+dar -R /path/to/file -c full.bak
+```
+Restore full.bak
+```sh
+dar -x full.bak
+```
+### `gzip`
+Zip a single file in-place; each file is replaced by one with the extension `.gz` or `.z`, maintaining ownership modes, access and modification times
+```sh
+gzip -#
+gzip --fast
+gzip --best
+```
+Compress {symlink}
+```sh
+gzip -f symlink
+gzip --force symlink
+```
+Page through .gz files
+### `tar`
+Create {archive} from contents of {path}
+```sh
+tar -cf archive path
+tar --create --file archive path
+```
+Create bzip2-compressed {archive} from contents of {path}
+```sh
+tar -cfj archive path
+tar --create --file --bzip archive path
+```
+Create gzip-compressed {archive} from contents of {path}
+```sh
+tar -cfz archive path
+tar --create --file --gzip archive path
+```
+Add {file} to {archive}
+```sh
+tar -rf archive file
+tar --append --file archive file
+```
+List the contents of {archive}
+```sh
+tar -tf archive
+tar --list --file archive
+```
+Extract contents of {tarfile} in the current directory
+```sh
+tar -xf archive
+tar --extract --file archive
+```
+Extract only {file} from {archive}
+```sh
+tar -xf archive file tar--extract --file archive file
+```
+Extract contents of gzip-compressed {archive} to {path}
+```sh
+tar -xzf archive -C path
+```
+### `unzip`
+Extract compressed files in a zip archive
+### `zip`
+Archive files in InfoZIP format
+```sh
+zip zipfile *files
+```
+## Audio
 <!-- Audio -->
 [alsamixer]:                   #alsamixer                      '```&#10;$ alsamixer&#10;```&#10;Command-line mixer'
 [amixer]:                      #amixer                         '```&#10;$ amixer&#10;```&#10;Command-line mixer for ALSA sound card driver'
@@ -335,7 +350,68 @@ Kubernetes                    | [`kubeadm`][kubeadm] [`kubectl`][kubectl]
 [`amixer`][amixer] 
 **S** 
 [`speaker-test`][speaker-test] 
-#### Bash builtins
+
+#### ALSA
+**Advanced Linux Sound Architecture (ALSA)** replaced the earlier "Open Sound System".[<sup>ref</sup>][Schatz]
+
+ALSA kernel modules are designed to offer an interface that "corresponds to that of the hardware" to keep the modules simple, and similar cards will offer a similar interface. They offer two interfaces: **operational** and **configuration**
+
+**Operational interface** through the `/dev/` tree, with 3 main types of devices
+- **PCM** for recording or playing digitized sound samples
+- **CTL** for manipulating the internal mixer and routing of the card
+- **MIDI** to control the MIDI port, if it exists
+- Optionally, **sequencer** devices may also exist if the card has a builtin sound synthesizer with an associated **timer** device
+
+**Status and configuration interface** via the `/proc/asound/` tree (ref [`amixer`][amixer])
+
+PCM devices come in two varieties: **output** and **input** and are numbered from 0, which is generally for analog multichannel sound.
+
+Cards have input or output **sockets**, and the **mixer** is controlled by the CTL device and routes sound samples among devices and sockets.
+
+Controls come in 3 types;
+- **Playback** controls are associated with an output device or **copy (input-to-output)** routes
+- **Capture** controls are associated with an input device or **copy (output-to-input)** routes
+- **Feature** controls drive features of the card or mixer, usually just a switch to enable or disable the feature, though some also have levels. The **Master Volume** control is the most typical example, which allows control of the internal amplifier feature of the card. A more interesting example is that of a 3d spatializer that can be represented by a switch to enable or disable it as well as two levels.
+
+Typical channel assignments
+- **0**: front left
+- **1**: front right
+- **2**: rear left
+- **3**: rear right
+
+#### PulseAudio
+PulseAudio is a sound server for POSIX OSes and a fixture on many Linux distributions.
+
+PulseAudio is built around **sources** and **sinks** (i.e. devices) connected to **source outputs** and **sink inputs** (streams)
+- **Source** is an input device that produces samples, usually running a thread with its own event loop, generating sample chunks which are posted to all connected source outputs
+- **Source output** is a recording stream which consumes samples from a source
+- **Sink** is an output device that consumes samples, usually running a thread with its own event loop mixing sample chunks from connect sink inputs
+- **Sink input** is a playback stream, connected to a sink and producing samples for it
+
+### `alsamixer`
+Command-line mixer
+### `amixer`
+Command-line mixer for ALSA sound card driver[<sup>ref</sup>][Schatz]
+
+Display simplified list of controls 
+```sh
+amixer scontrols
+```
+Display full list of controls
+```sh
+amixer controls
+```
+Show information about a mixer device
+```sh
+amixer info
+```
+### `speaker-test`
+Test loudspeakers with a 2-speaker setup
+```sh
+speaker-test -c 2
+```
+
+## Bash builtins
 <!-- Bash builtins -->
 [alias]:                                             bash.md#alias                                      '```&#10;$ alias&#10;```&#10;Assign a shorthand `$NAME` for `$CMD`, or display all aliases if not specified. (ref. `$BASH_ALIASES`)&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 74'
 [bg]:                                                bash.md#bg                                         '```&#10;$ bg&#10;```&#10;Put current job or `$JOB` in the background&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 74'
@@ -493,7 +569,7 @@ Kubernetes                    | [`kubeadm`][kubeadm] [`kubectl`][kubectl]
 **W** 
 [`wait`][wait] 
 [`while`][while] 
-#### Boot
+## Boot
 [grub-install]:                boot.md#grub-install            '```&#10;$ grub-install&#10;```&#10;Install GRUB on the MBR of a hard drive&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 42'
 [lilo]:                        boot.md#lilo                    '```&#10;$ lilo&#10;```&#10;`lilo` map installer reads a configuration file and writes a map file, which contains information needed by the boot loader to locate and launch Linux kernels or other operating systems.&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 40'
 [update-grub]:                 boot.md#update-grub             '```&#10;$ update-grub&#10;```&#10;Make changes take effect for a GRUB2 configuration change'
@@ -504,7 +580,8 @@ Kubernetes                    | [`kubeadm`][kubeadm] [`kubectl`][kubectl]
 [`lilo`][lilo] 
 **U** 
 [`update-grub`][update-grub] 
-#### Build
+
+## Build
 [aclocal]:                     #aclocal                        '```&#10;$ aclocal&#10;```&#10;Place m4 macro definitions needed by `autoconf` into a single file. `aclocal` first scans for macro definitions in m4 files in its default directory (/usr/share/aclocal) and in the file acinclude.m4, then in the configure.ac file. IT generates an aclocal.m4 file that contains definitions of all m4 macros required by `autoconf`.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 16'
 [as]:                          #as                             '```&#10;$ as&#10;```&#10;Generate an object file from each specified assembly language source file. Primarily intended to assemble the output of the GNU C compiler `gcc` for use by the linker `ld`.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 18'
 [autoconf]:                    #autoconf                       '```&#10;$ autoconf&#10;```&#10;Generate a configuration script from m4 macros defined in a template file, if given, or in a configure.ac or configure.in file in the CWD. The generated script is almost invariably called "configure".&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 21'
@@ -526,8 +603,11 @@ Kubernetes                    | [`kubeadm`][kubeadm] [`kubectl`][kubectl]
 [ldd]:                         #ldd                            '```&#10;$ ldd&#10;```&#10;Display shared libraries used by a specified command&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 87'
 [lex]:                         #lex                            '```&#10;$ lex&#10;```&#10;Generate a lexical analysis program based on the regular expressions and C statements contained in one or more input files (also `flex`)&#10;Lexical analyzer generator written by Eric Schmidt&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 119'
 [make]:                        #make                           '```&#10;$ make&#10;```&#10;Utility for building and maintaining programs from source code using a makefile&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 86'
+[strace]:                      #strace                          '```&#10;strace&#10;```&#10;Debugging tool that displays a trace of all system calls made by a process&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 418'
 [xgettext]:                    #xgettext                       '```&#10;$ xgettext&#10;```&#10;Extract specially marked strings from C and C++ source files, placing them in a .po ("portable object" file for translation and compilation by `msgfmt`.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 234'
 [yacc]:                        #yacc                           '```&#10;$ yacc&#10;```&#10;"yet another compiler-compiler", parser generator that converts a file containing a context-free LALR grmamar and converts it to tables for subsequent pasring, sending output to y.tab.c. Written between 1975 and 1978 by Stephen C. Johnson at Bell Labs.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 237'
+
+
 
 **A** 
 [`aclocal`][aclocal] 
@@ -562,6 +642,353 @@ Kubernetes                    | [`kubeadm`][kubeadm] [`kubectl`][kubectl]
 [`xgettext`][xgettext] 
 **Y**
 [`yacc`][yacc] 
+
+#### System calls
+<!-- Syscalls -->
+[chmod()]: #system-calls 'chmod&#10;change file access permissions&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 418'
+[chown()]: #system-calls 'chown&#10;change file ownership&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 418'
+[close()]: #system-calls 'close&#10;close a file&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 418'
+[creat()]: #system-calls 'creat&#10;create a new file&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 418'
+[exec()]: #system-calls 'exec&#10;overlay a program in memory with another&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 418'
+[exit()]: #system-calls 'exit&#10;cause a process to exit&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 418'
+[fork()]: #system-calls 'fork&#10;create a copy of a process&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 418'
+[getpid()]: #system-calls 'getpid&#10;return the PID of the calling process&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 418'
+[kill()]: #system-calls 'kill&#10;send a signal to a process&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 418'
+[lseek()]: #system-calls 'lseek&#10;move to a position in the file&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 418'
+[nice()]: #system-calls 'nice&#10;change the priority of a process&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 418'
+[open()]: #system-calls 'open&#10;open an existing file&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 418'
+[read()]: #system-calls 'read&#10;read a file&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 418'
+[stat()]: #system-calls 'stat&#10;Get status information from an inode, such as the inode number, device on which it is located, owner and group information, and the size of the file&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 418'
+[unlink()]: #system-calls 'unlink&#10;unlink a fie (delete a name reference to the inode)&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 418'
+[wait()]: #system-calls 'wait&#10;cause the parent process to wait for the child to finish running before it resumes execution&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 418'
+[write()]: #system-calls 'write&#10;write a file&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 418'
+
+**C** 
+[`chmod()`][chmod()] 
+[`chown()`][chown()] 
+[`close()`][close()] 
+[`creat()`][creat()] 
+**E** 
+[`exec()`][exec()] 
+[`exit()`][exit()] 
+**F** 
+[`fork()`][fork()] 
+**G** 
+[`getpid()`][getpid()] 
+**K** 
+[`kill()`][kill()] 
+**L** 
+[`lseek()`][lseek()] 
+**N** 
+[`nice()`][nice()] 
+**O** 
+[`open()`][open()] 
+**R** 
+[`read()`][read()] 
+**S** 
+[`stat()`][stat()] 
+**U** 
+[`unlink()`][unlink()] 
+**W** 
+[`wait()`][wait()] 
+[`write()`][write()] 
+
+## File commands
+[chattr]:                      #chattr                         '```&#10;$ chattr&#10;```&#10;Change file attributes&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 311-312'
+[chgrp]:                       #chgrp                          '```&#10;$ chgrp&#10;```&#10;Change the group of one or more files, which can be a group ID number or a group name (located in "/etc/group"). You must own the file or be a privileged user to succeed with the command.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 34'
+[chmod]:                       #chmod                          '```&#10;$ chmod&#10;```&#10;Change the access mode of one or more files&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 35'
+[chown]:                       #chown                          '```&#10;$ chown&#10;```&#10;Change the ownership of one or more files, which can be either a user ID number or a login name (located in "/etc/passwd")&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 37'
+[cksum]:                       #cksum                          '```&#10;$ cksum&#10;```&#10;Calculate and print a CRC sum for each file. The CRC algorithm is based on the polynomial used for Ethernet packets&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 38'
+[cp]:                          #cp                             '```&#10;$ cp $FILE $PATH&#10;```&#10;Copy `$FILE` to `$PATH`. If `$PATH` is an existing file, it is overwritten. If the input is a directory use `-r`.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 40'
+[curl]:                        #curl                           '```&#10;$ curl&#10;```&#10;Retrieve files from the Internet, most often using FTP or HTTP (cf. `wget`)&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 49'
+[dd]:                          #dd                             '```&#10;$ dd&#10;```&#10;Perform multiple operations related to backing up data and creating files. One common use is to make a backup of an entire drive.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 269'
+[dirname]:                     #dirname                        '```&#10;$ dirname $PATH&#10;```&#10;Strip filename from `$PATH` (cf. `basename`)'
+[dos2unix]:                    #dos2unix                       '```&#10;$ dos2unix&#10;```&#10;Convert files using the DOS extended character set to their ISO standard counterparts&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 66'
+[exif]:                        #exif                           '```&#10;$ exif&#10;```&#10;View image metadata, producing columnar output'
+[fallocate]:                   #fallocate                      '```&#10;$ fallocate&#10;```&#10;Allocate and deallocate space to a file'
+[file]:                        #file                           '```&#10;$ file&#10;```&#10;View image metadata'
+[find]:                        #find                           '```&#10;$ find&#10;```&#10;Search recursively through directory trees for files or directories that match certain characters, either printing the file or directory or performing other operations on matches&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 96'
+[getfacl]:                     #getfacl                        '```&#10;$ getfacl&#10;```&#10;Display the ACL of a file&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 199'
+[install]:                     #install                        '```&#10;$ install&#10;```&#10;Copy files while maintaining metadata'
+[link]:                        #link                           '```&#10;$ link $FILE $OTHER&#10;```&#10;Create a link between two files, similar to `ln` but with no error checking'
+[ln]:                          #ln                             '```&#10;$ ln&#10;```&#10;Create a link&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 132'
+[locate]:                      #locate                         '```&#10;$ locate&#10;```&#10;Search for files based on a database that is typically created daily.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 138'
+[ls]:                          #ls                             '```&#10;$ ls&#10;```&#10;List files in a directory&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 131'
+[lsattr]:                      #lsattr                         '```&#10;$ lsattr&#10;```&#10;Display the attributes for a file&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 311'
+[lsof]:                        #lsof                           '```&#10;$ lsof&#10;```&#10;Display open files, open network ports, and network connections&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 303'
+[md5sum]:                      #md5sum                         '```&#10;$ md5sum&#10;```&#10;Display MD5 checksum value for a file&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 275'
+[mkdir]:                       #mkdir                          '```&#10;$ mkdir&#10;```&#10;Create one or more directories&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 98'
+[mktemp]:                      #mktemp                         '```&#10;$ mktemp&#10;```&#10;Create a temporary file or directory safely and print its name. These will not need to be manually cleaned up because they will be placed in the temporary directory /tmp'
+[mv]:                          #mv                             '```&#10;$ mv&#10;```&#10;Move or rename files and directories&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 98'
+[rename]:                      #rename                         '```&#10;$ rename&#10;```&#10;Rename files using regex'
+[rm]:                          #rm                             '```&#10;$ rm&#10;```&#10;Delete one or more files from the filesystem&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 99'
+[rmdir]:                       #rmdir                          '```&#10;$ rmdir&#10;```&#10;Delete empty directories&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 132'
+[rsync]:                       #rsync                          '```&#10;$ rsync&#10;```&#10;Copy files remotely; used in situations where only updated files are to be transferred in order to preserve bandwidth.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 131'
+[scp]:                         #scp                            '```&#10;$ scp&#10;```&#10;Copy files to and from remote systems via `ssh`&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 130'
+[setfacl]:                     #setfacl                        '```&#10;$ setfacl&#10;```&#10;Create an ACL on a file or directory.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 199'
+[setuid]:                      #setuid                         '```&#10;$ setuid&#10;```&#10;"set-user identification": permission bit which, if set on an executable file, will ensure that the file is granted access based on the owner of the file, rather than the use who is running it'
+[stat]:                        #stat                           '```&#10;$ stat&#10;```&#10;See inode information of a file&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 135'
+[touch]:                       #touch                          '```&#10;$ touch&#10;```&#10;Used to create empty files and to update modification and access timestamps of existing files.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 129'
+[tree]:                        #tree                           '```&#10;$ tree&#10;```&#10;Display contents of directories in a tree-like format'
+[umask]:                       #umask                          '```&#10;$ umask&#10;```&#10;Set default permissions for files and directories&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 195'
+[unlink]:                      #unlink                         '```&#10;$ unlink&#10;```&#10;Does essentially what `rm` does, but in a subtly different way.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 135'
+[updatedb]:                    #updatedb                       '```&#10;$ updatedb&#10;```&#10;Refresh (or create) the `slocate` database at /var/lib/slocate/slocate.db&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 202'
+[whereis]:                     #whereis                        '```&#10;$ whereis&#10;```&#10;Search for binary executables, source code, and manual pages in standard locations as well as the PATH and `$MANPATH`&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 139'
+[which]:                       #which                          '```&#10;$ which $CMD&#10;```&#10;Determine the location of `$CMD` and display its full path&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 200'
+
+**C** 
+[`chattr`][chattr] 
+[`chgrp`][chgrp] 
+[`chmod`][chmod] 
+[`chown`][chown] 
+[`cksum`][cksum] 
+[`cp`][cp] 
+[`curl`][curl] 
+**D** 
+[`dd`][dd] 
+[`dirname`][dirname] 
+[`dos2unix`][dos2unix] 
+**E** 
+[`exif`][exif] 
+**F** 
+[`fallocate`][fallocate] 
+[`file`][file] 
+[`find`][find] 
+**G** 
+[`getfacl`][getfacl] 
+**I** 
+[`install`][install] 
+**L** 
+[`link`][link] 
+[`ln`][ln] 
+[`locate`][locate] 
+[`ls`][ls] 
+[`lsattr`][lsattr] 
+[`lsof`][lsof] 
+**M** 
+[`md5sum`][md5sum] 
+[`mkdir`][mkdir] 
+[`mktemp`][mktemp] 
+[`mv`][mv] 
+**R** 
+[`rename`][rename] 
+[`rm`][rm] 
+[`rmdir`][rmdir] 
+[`rsync`][rsync] 
+**S** 
+[`scp`][scp] 
+[`setfacl`][setfacl] 
+[`setuid`][setuid] 
+[`stat`][stat] 
+**T** 
+[`touch`][touch] 
+[`tree`][tree] 
+**U** 
+[`umask`][umask] 
+[`unlink`][unlink] 
+[`updatedb`][updatedb] 
+**W** 
+[`whereis`][whereis] 
+[`which`][which] 
+Commands  | Options
+---       | ---
+`ls`      | <code>&nbsp;</code>   [`a`][ls -&#97;] <code>&nbsp;</code> <code>&nbsp;</code> [`d`][ls -&#100;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`h`][ls -&#104;] [`i`][ls -&#105;] <code>&nbsp;</code> <code>&nbsp;</code> [`l`][ls -&#108;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`r`][ls -&#114;] <code>&nbsp;</code> [`t`][ls -&#116;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code>  <br><code>&nbsp;</code>&nbsp;<code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`F`][ls -&#70;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`S`][ls -&#83;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`Z`][ls -&#90;] 
+
+### `exif`
+View image metadata. Unlike alternatives like `file` and ImageMagick's `identify`, `exif` produces columnar output [^][31]
+```sh
+exif image.png 
+```
+### `fallocate`
+Create a file size of 1 gigabyte
+```sh
+fallocate -l 1G $FILENAME  # gibibyte
+fallocate -l 1GB $FILENAME # gigabyte
+```
+### `install`
+Copy files while maintaining various metadata, including timestamp, owner, etc. [[9](sources.md)]
+
+Copy a file while preserving timestamp. The copy will have the `install` default of `755`, but the original's `mtime` is maintained:
+```sh
+install --preserve-timestamp example/foo .
+```
+Copy a file, setting permissions, owner, and group
+```sh
+install --preserve-timestamp --owner=jdoe --group=sudoers --mode=753
+```
+### `lsof`
+Display open files, open network ports, and network connections [[23](sources.md)]
+
+Option  | Effect
+:---    | :---
+`-i`    | display network connections
+`-n`    | prevent the conversion of IP addresses to hostnames
+`-P`    | prevent the conversion of port numbers to port names
+
+Show open network connections
+```sh
+sudo lsof -Pni
+```
+### `mkdir`
+Quickly create multiple directories using brace expansion
+```sh
+mkdir -p ~/my-app/{bin,lib,log}
+```
+Create new directory {dirname} along with all of the parents in its pathname, if they do not exist
+```sh
+mkdir -p dirname
+mkdir --parents dirname
+```
+### `rsync`
+Option  | POSIX option            | Effect
+:---    | :---                    | :---
+`-a`    | `--archive`             | copy recursively, preserving group, owner, modification times, and device-files (if super-user) (equivalent to `-rptlgoD`)
+`-b`    |                         | create a backup of every file transferred
+`-e`    | `--rsh`                 | specify remote shell to use
+`-g`    | `--group`               | preserve group
+`-o`    | `--owner`               | preserve owner
+`-p`    |                         | specify nonstandard port
+\-      | `--delete`              | remove files and folders that aren't in the sender system
+\-      | `--exclude`             | exclude files (accepts globbing)
+\-      | `--include`             | specify specific files (accepts globbing)
+\-      | `--progress`            | display a progress bar
+\-      | `--remove-source-files` | remove original files after synchronization
+
+Copy `$FILE` locally [^][44]
+```sh
+rsync -zvr $FILE $PATH
+```
+Copy `$FILE` to `$PATH` on remote `$HOST`
+```sh
+rsync $FILE $HOST:$PATH
+```
+Copy $FILE from $HOST to local $PATH
+```sh
+rsync $HOST:$FILE $PATH
+```
+Copy `$DIR` recursively [^][44]
+```sh
+rsync -zvr $DIR $PATH
+rsync -avz $DIR $PATH
+```
+Copy to remote systems over SSH [^][44]
+```sh
+rsync -zvre ssh $DIR $HOST:$REMOTEPATH
+rsync -avze ssh $DIR $HOST:$REMOTEPATH
+```
+Synchronize only specific file type [^][44]
+```sh
+rsync -zvre ssh --include '*.php' --exclude '*' $PATH
+```
+### `setfacl`
+Set file access control list
+
+Option  | POSIX option  | Description
+:---    | :---          | :---
+`-b`    | `--remove-all` | remove all extended ACL entries, retaining the base ACL entries of the owner, group, and others
+`-k`    | `--remove-default` | remove the Default ACL
+`-m`    | `--modify` | modify ACL of a directory
+`-M`    | `--modify-file` | modify ACL of a file
+`-s`    |               | overwrite or **s**et
+`-x`    | `--remove` | remove ACL entries from a directory
+`-X`    | `--remove-file` | remove ACL entries from a file
+
+Grant user {lisa} right to read {file}
+```sh
+setfacl -m u:lisa:r file
+```
+Remove named group {staff} from {file}'s ACL
+```sh
+setfacl -x g:staff file
+```
+Modify file access control list for {file} to revoke write access from all groups and all named users
+```sh
+setfacl -m m::rx file
+```
+Grant read access to **o**ther users
+```sh
+setfacl -m o::rwx file4.txt
+```
+Add user {zach} to list of users of file4.txt
+```sh
+setfacl -m u:zach:rw file4.txt
+```
+### `shred`
+Write random data to an unmounted disk for {n} passes
+```sh
+shred --iterations=n
+```
+### `tree`
+Display contents of directories in a tree-like format [^][46]
+
+Option  | Effect
+:---    | :---
+`-a`    | all files
+`-d`    | display directories only
+`-f`    | display full path prefix for each file
+`-g`    | display group name or GID for each file
+`-p`    | display permissions, similar to `ls -l`
+`-u`    | display username or UID
+`-L $N` | limit to `$N` maximum depth
+`-I $PATTERN` | suppress files matching `$PATTERN`
+`-P $PATTERN` | display only files matching `$PATTERN`
+`--prune`     | suppress empty directories
+
+## SELinux
+[sestatus]:                                          #sestatus                                '```&#10;sestatus&#10;```&#10;Display status of SELinux&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.'
+[setenforce]:                                        #setenforce                              '```&#10;setenforce&#10;```&#10;Change SELinux mode&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.'
+[semanage]:                                          #semanage                                '```&#10;$ semanage&#10;```&#10;Edit security contexts for files and ports'
+
+**R** 
+[`restorecon`][restorecon]
+**S**
+[`semanage`][semanage] 
+[`sestatus`][sestatus] 
+[`setenforce`][setenforce]
+
+Display SELinux contexts for processes
+```sh
+ps auxZ
+```
+Display SELinux context for files
+```sh
+ls -Z
+```
+
+### `restorecon`
+Restore security context default in the policy
+```sh
+restorecon -Rv website
+```
+### `sestatus`
+Display status of SELinux
+```sh
+sestatus
+```
+### `setenforce`
+Change SELinux mode
+```sh
+setenforce enforcing
+setenforce 1
+setenforce permissive
+setenforce 0
+setenforce disabled
+```
+### `semanage`
+Amend policy to add a file context
+```sh
+semanage fcontext -a -t httpd_sys_content_t website
+```
+Add a port context
+```sh
+semanage port -a -t http_port_t -p tcp 8080
+```
+Display all ports with attached types
+```sh
+semanage port -l
+```
+
+
 ## Commands
 ### `adduser`
 ### `apropos`
@@ -957,6 +1384,18 @@ Set snapshot length of capture (default 65,535B)
 ```sh
 tcpdump -s
 ```
+### `tmux`
+---     | ---
+Config  | `~/.tmux.conf`
+
+Change prefix to vim-style `$KEYCOMBO` (`C-b` by default)
+```sh
+set-option -g prefix $KEYCOMBO
+```
+Name a new session
+```sh
+tmux new-session -s 'my rails project'
+```
 ### `tput`
 Return width of current terminal window
 ```sh
@@ -985,9 +1424,13 @@ Assign label "Sales" to logical volume {/dev/vg1/Sales}
 tune2fs -L Sales /dev/vg1/Sales
 ```
 ### `watch`
-Display a dashboard that will run {cmd} every second, displaying the output
+Execute `$CMD` at periods of `$N` seconds, watching its output <sup>CLKF</sup>
 ```sh
-watch -n 0.5 iptables -vnL
+watch $CMD -n $N
+```
+Check memory usage in megabytes (`-m`) every `5` seconds <sup>Enki</sup>
+```sh
+watch -n 5 free -m
 ```
 ### `xinetd`
 Configuration file  | Description
@@ -997,102 +1440,9 @@ Configuration file  | Description
 /etc/cmd.allow      | specify who is allowed to run a command
 /etc/cmd.deny       | specify who is disallowed from running a command
 
-## Archive commands
-
-[Archive commands](#archive-commands) | Options
----                             | ---
-[`bzip2`][bzip2]                | <code>&nbsp;</code>  <code>&nbsp;</code> <code>&nbsp;</code> [`c`][bzip2 -&#99;] [`d`][bzip2 -&#100;] <code>&nbsp;</code> [`f`][bzip2 -&#102;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`v`][bzip2 -&#118;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`z`][bzip2 -&#122;]
-[`compress`][compress]          | <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`c`][compress -&#99;] <code>&nbsp;</code> <code>&nbsp;</code> [`f`][compress -&#102;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`r`][compress -&#114;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 
-[`cpio`][cpio]                  | [`0`][cpio -&#48;]   [`a`][cpio -&#97;] [`b`][cpio -&#98;] [`c`][cpio -&#99;] [`d`][cpio -&#100;] <code>&nbsp;</code> [`f`][cpio -&#102;] <code>&nbsp;</code> <code>&nbsp;</code> [`i`][cpio -&#105;] <code>&nbsp;</code> [`k`][cpio -&#107;] [`l`][cpio -&#108;] [`m`][cpio -&#109;] [`n`][cpio -&#110;] [`o`][cpio -&#111;] [`p`][cpio -&#112;] <code>&nbsp;</code> [`r`][cpio -&#114;] [`s`][cpio -&#115;] [`t`][cpio -&#116;] [`u`][cpio -&#117;] [`v`][cpio -&#118;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code>  <br><code>&nbsp;</code>&nbsp;[`A`][cpio -&#65;] [`B`][cpio -&#66;] [`C`][cpio -&#67;] <code>&nbsp;</code> [`E`][cpio -&#69;] [`F`][cpio -&#70;] <code>&nbsp;</code> [`H`][cpio -&#72;] [`I`][cpio -&#73;] <code>&nbsp;</code> <code>&nbsp;</code> [`L`][cpio -&#76;] [`M`][cpio -&#77;] <code>&nbsp;</code> [`O`][cpio -&#79;] <code>&nbsp;</code> <code>&nbsp;</code> [`R`][cpio -&#82;] [`S`][cpio -&#83;] <code>&nbsp;</code> <code>&nbsp;</code> [`V`][cpio -&#86;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 
-[`gzip`][gzip]                  | <code>&nbsp;</code>  <code>&nbsp;</code> <code>&nbsp;</code> [`c`][gzip -&#99;] [`d`][gzip -&#100;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`r`][gzip -&#114;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`v`][gzip -&#118;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code>
-[`tar`][tar]                    | <code>&nbsp;</code>  <code>&nbsp;</code> <code>&nbsp;</code> [`c`][tar -&#99;] [`d`][tar -&#100;] <code>&nbsp;</code> [`f`][tar -&#102;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`j`][tar -&#106;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`p`][tar -&#112;] <code>&nbsp;</code> [`r`][tar -&#114;] <code>&nbsp;</code> [`t`][tar -&#116;] [`u`][tar -&#117;] [`v`][tar -&#118;] <code>&nbsp;</code> [`x`][tar -&#120;] <code>&nbsp;</code> [`z`][tar -&#122;]  <br><code>&nbsp;</code> [`A`][tar -&#65;] <code>&nbsp;</code> [`C`][tar -&#67;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`J`][tar -&#74;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 
-[`xz`][xz]                      | <code>&nbsp;</code>  <code>&nbsp;</code> <code>&nbsp;</code> [`c`][xz -&#99;] [`d`][xz -&#100;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`l`][xz -&#108;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`v`][xz -&#118;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code>
-[`zip`][zip]                    | <code>&nbsp;</code>  <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`d`][zip -&#100;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`r`][zip -&#114;] <code>&nbsp;</code> <code>&nbsp;</code> [`u`][zip -&#117;] [`v`][zip -&#118;] <code>&nbsp;</code> [`x`][zip -&#120;] <code>&nbsp;</code> <code>&nbsp;</code>
-
-### `cpio`
-Create an archive that contains all the files in the current working directory [<sup>Haeder: 94</sup>][Haeder]
-```sh
-ls | cpio -ov > /tmp/archive.cpio
-```
-Extract all the files from the archive we just created
-```sh
-cpio -iv < /tmp/archive.cpio
-```
-### `dar`
-Create a differential (or incremental) backup of {file}, using full.bak as reference
-```sh
-dar -R /path/to/file -c diff1.bak -A full.bak
-```
-Create a full backup of {file}
-```sh
-dar -R /path/to/file -c full.bak
-```
-Restore full.bak
-```sh
-dar -x full.bak
-```
-### `gzip`
-Zip a single file in-place; each file is replaced by one with the extension `.gz` or `.z`, maintaining ownership modes, access and modification times
-```sh
-gzip -#
-gzip --fast
-gzip --best
-```
-Compress {symlink}
-```sh
-gzip -f symlink
-gzip --force symlink
-```
-Page through .gz files
-### `tar`
-Create {archive} from contents of {path}
-```sh
-tar -cf archive path
-tar --create --file archive path
-```
-Create bzip2-compressed {archive} from contents of {path}
-```sh
-tar -cfj archive path
-tar --create --file --bzip archive path
-```
-Create gzip-compressed {archive} from contents of {path}
-```sh
-tar -cfz archive path
-tar --create --file --gzip archive path
-```
-Add {file} to {archive}
-```sh
-tar -rf archive file
-tar --append --file archive file
-```
-List the contents of {archive}
-```sh
-tar -tf archive
-tar --list --file archive
-```
-Extract contents of {tarfile} in the current directory
-```sh
-tar -xf archive
-tar --extract --file archive
-```
-Extract only {file} from {archive}
-```sh
-tar -xf archive file tar--extract --file archive file
-```
-Extract contents of gzip-compressed {archive} to {path}
-```sh
-tar -xzf archive -C path
-```
-### `unzip`
-Extract compressed files in a zip archive
-### `zip`
-Archive files in InfoZIP format
-```sh
-zip zipfile *files
-```
 
 ## Tasks
-### Samba
+#### Samba
 Install and configure Samba server [<sup>vitux.com</sup>][https://vitux.com/how-to-install-and-configure-samba-on-ubuntu/]
 Install `samba`
 ```sh
@@ -1141,7 +1491,7 @@ This will display the Samba CLI
 ```
 smb: \>
 ```
-### Bash scripting
+#### Bash scripting
 Validating arguments [<sup>Sobell: 548</sup>][Sobell]
 ```sh 
 if [ $# != 2 ]

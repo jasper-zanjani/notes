@@ -69,7 +69,6 @@
 [wait]:                                              #wait                                       '```&#10;$ wait&#10;```&#10;&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 131'
 [while]:                                             #while                                      '```&#10;$ while&#10;```&#10;&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 132'
 
-
 <!-- `bind` options -->
 [bind -&#102;]:                 #bind                          '```&#10;$ bind -f $FILE&#10;```&#10;Read key bindings from `$FILE`&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 75'
 [bind -&#108;]:                 #bind                          '```&#10;$ bind -l&#10;```&#10;List the names of all the `readline` functions&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 75'
