@@ -14,7 +14,7 @@
 [UWP]: #uwp 'Universal Windows Platform (UWP)&#10;Universal Windows Platform provides a common app platform on every device that runs Windows 10, and UWP apps are primarily associated with the Microsoft Store.&#10;"Universal Windows Platform apps". _Wikipedia_.'
 
 <!-- `cmd` commands -->
-[adprep]:                      #adprep                         '```&#10;C:\>adprep&#10;```&#10;Prepare Active Directory for Windows Server upgrades'
+[adprep]:                      #adprep                         '```&#10;C:\>adprep&#10;```&#10;Prepare Active Directory for Windows Server upgrades&#10;Must be run on the Infrastructure Master role owner with the flag `/domainprep`.&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 29'
 [arp]:                         #arp                            '```&#10;C:\>arp&#10;```&#10;Display and modify the IP-to-MAC address translation tables used by ARP'
 [bcdedit]:                     #bcdedit                        '```&#10;C:\>bcdedit&#10;```&#10;Boot configuration data editor'
 [bootrec]:                     #bootrec                        '```&#10;C:\>bootrec&#10;```&#10;Windows Recovery Environment command that repairs a system partition'
@@ -84,6 +84,10 @@
 [diskpart rescan]:                #diskpart                      '```&#10;C:\> diskpart&#10;DISKPART> RESCAN&#10;```&#10;Look for new disks that may have been added to the computer&#10;Stanek, William R. _Microsoft Windows Command-Line_.: 141'
 [diskpart retain]:                #diskpart                      '```&#10;C:\> diskpart&#10;DISKPART> RETAIN&#10;```&#10;Prepare the selected simple volume to be used as the boot or system volume&#10;Stanek, William R. _Microsoft Windows Command-Line_.: 141'
 [diskpart select]:                #diskpart                      '```&#10;C:\> diskpart&#10;DISKPART> SELECT&#10;```&#10;Focus specified disk, partition, or volume&#10;Stanek, William R. _Microsoft Windows Command-Line_.: 141'
+
+<!-- `msiexec` commands -->
+[msiexec /&#105;]:              #msiexec                       '```&#10;C:\>msiexec /i&#10;```&#10;Install or configure a product'
+[msiexec /&#113;]:              #msiexec                       '```&#10;C:\>msiexec /q&#10;C:\>msiexec /qn&#10;```&#10;Set user interface level to "no UI"'
 
 <!-- `nbtstat` commands -->
 [nbtstat /&#97;]:               #nbtstat                       '```&#10;C:\>nbtstat /a&#10;```&#10;Display NetBIOS name table of `$HOST` (NetBIOS name)'
@@ -166,6 +170,7 @@ Commands  | Options
 [`arp`][arp]  | [`a`][arp /&#97;] [`d`][arp /&#100;] [`s`][arp /&#115;]
 [`diskpart`][diskpart] | **A** [`ACTIVE`][diskpart active] [`ADD`][diskpart add] [`ASSIGN`][diskpart assign] [`AUTOMOUNT`][diskpart automount] **B** [`BREAK`][diskpart break] **C** [`CLEAN`][diskpart clean] [`CONVERT`][diskpart convert] [`CREATE`][diskpart create]<br>**D** [`DELETE`][diskpart delete] [`DETAIL`][diskpart detail] **E** [`EXIT`][diskpart exit] [`EXTEND`][diskpart extend]  **G** [`GPT`][diskpart gpt] **H** [`HELP`][diskpart help]  **I** [`IMPORT`][diskpart import] [`INACTIVE`][diskpart inactive] **L** [`LIST`][diskpart list]<br>**O** [`ONLINE`][diskpart online] **R** [`REM`][diskpart rem] [`REMOVE`][diskpart remove] [`REPAIR`][diskpart repair] [`RESCAN`][diskpart rescan] [`RETAIN`][diskpart retain] **S** [`SELECT`][diskpart select]
 [`ipconfig`][ipconfig] | `all` `flushdns` `renew`
+[`msiexec`][msiexec] | <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`i`][msiexec /&#105;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`q`][msiexec /&#113;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [<sup>ref</sup>][https://docs.microsoft.com/en-us/windows/win32/msi/command-line-options]
 [`nbtstat`][nbtstat] | <code>&nbsp;</code>   [`a`][nbtstat /&#97;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`n`][nbtstat /&#110;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`r`][nbtstat /&#114;] [`s`][nbtstat /&#115;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code>  <br><code>&nbsp;</code>&nbsp;[`A`][nbtstat /&#65;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`R`][nbtstat /&#82;] [`S`][nbtstat /&#83;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 
 [`route`](#route) | [`print`][route print] [`add`][route add] [`change`][route change] [`delete`][route delete] <br> [`p`][route /&#112;]
 
@@ -211,7 +216,7 @@ bcdedit /set {bootmgr} path \EFI\manjaro\grubx64.efi
 ::Fedora
 bcdedit /set {bootmgr} path \EFI\fedora\shim.efi
 ```
-Enable or disable **Test Signing Mode** [<sup>Howtogeek</sup>](https://www.howtogeek.com/167723/how-to-disable-driver-signature-verification-on-64-bit-windows-8.1-so-that-you-can-install-unsigned-drivers/ "howtogeek.com - 'How to disable driver signature verification on 64-bit Windows 8.1 so that you can install unsigned drivers'")
+Enable or disable **Test Signing Mode** [<sup>ref</sup>](https://www.howtogeek.com/167723/how-to-disable-driver-signature-verification-on-64-bit-windows-8.1-so-that-you-can-install-unsigned-drivers/ "howtogeek.com - 'How to disable driver signature verification on 64-bit Windows 8.1 so that you can install unsigned drivers'")
 ```cmd
 bcdedit /set testsign on
 bcdedit /set testsign off
@@ -227,11 +232,6 @@ Use when BCD file has been corrupted
 ```cmd
 bootrec /rebuildbcd
 ```
-### `msiexec`
-Option      | Effect [Microsoft Docs][https://docs.microsoft.com/en-us/windows/win32/msi/command-line-options]
----         | ---
-`/i`        | Install or configure a product
-`/q` `/qn`  | Set user interface level to "no UI"
 ### `netsh`
 Configure DNS to be dynamically assigned
 ```cmd
@@ -257,7 +257,7 @@ Join a computer to a domain
 netdom join %computername% /domain: domainname /userd: username /password:*
 ```
 ### `ntdsutil`
-Used to transfer [FSMO](# "\"Flexible Single Master Operator\", server that is master for a particular role or function") roles between domain controllers. [<sup>Desmond 2009: 30</sup>][Desmond2009]
+Used to transfer [FSMO](# "\"Flexible Single Master Operator\", server that is master for a particular role or function") roles between domain controllers. [<sup>Desmond: 30</sup>][Desmond2009]
 ### `route`
 Basic usage
 ```sh
@@ -284,11 +284,11 @@ Display WinRM configuration
 winrm get winrm/config
 ```
 ### `wmic`
-Recover Windows product key [<sup>Fossbytes</sup>][https://fossbytes.com/how-to-find-windows-product-key-lost-cmd-powershell-registry/]
+Recover Windows product key [<sup>ref</sup>][https://fossbytes.com/how-to-find-windows-product-key-lost-cmd-powershell-registry/]
 ```cmd
 wmic path softwarelicensingservice get OA3xOriginalProductKey
 ```
-Recover serial number of a Lenovo laptop [<sup>Lenovo</sup>][https://pcsupport.lenovo.com/us/en/solutions/find-product-name]
+Recover serial number of a Lenovo laptop [<sup>ref</sup>][https://pcsupport.lenovo.com/us/en/solutions/find-product-name]
 ```cmd
 wmic bios get serialnumber
 ```
