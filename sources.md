@@ -21,7 +21,6 @@
 [20]: https://www.redhat.com/sysadmin/use-cases-nmap "redhat.com: \"Six practical use cases for nmap\""
 [21]: https://vitux.com/how-to-convert-documents-to-pdf-format-on-the-ubuntu-command-line/ "vitux.com: \"How to convert documents to PDF format on the Ubuntu Command Line\""
 [22]: https://youtu.be/qhA8HuJBa64 "YouTube: \"Linux Mail Server Postfix Architecture\""
-[23]: ../sources/clkf.md "Cannon, Jason. _Command Line Kung Fu_."
 [24]: https://itsfoss.com/gimp-fork-glimpse/ "itsfoss.com: \"Someone forked GIMP into Glimpse because gimp is an offensive word\""
 [25]: https://linuxhandbook.com/linux-send-email-ssmtp/ "linuxhandbook.com: \"Send Emails From Linux Terminal Using SSMTP\""
 [26]: https://youtu.be/qhA8HuJBa64 "YouTube: \"Linux Mail Server Postfix Architecture"
@@ -63,6 +62,9 @@
 [Dulaney]: # "Dulaney, Emmett. _Exam Cram: CompTIA Network+ N10-007_"
 [Neil]: # "Neil, Ian. _CompTIA Security+ Certification Guide_"
 [ITP Linux+]: ../sources/itp-lpic.md "ITProTV: \"CompTIA Linux+ powered by LPI\""
+
+<!-- Formerly "[23]" -->
+[Cannon]: https://github.com/jasper-zanjani/notes/master/sources/clkf.md "Cannon, Jason. _Command Line Kung Fu_."
 
 [https://computingforgeeks.com/connect-to-bluetooth-device-from-linux-terminal/]: https://computingforgeeks.com/connect-to-bluetooth-device-from-linux-terminal/ "Computing for Geeks: \"How to connect to Bluetooth device from Linux terminal\""
 [http://www.linux-magazine.com/Issues/2017/197/Command-Line-bluetoothctl#article_i1]: http://www.linux-magazine.com/Issues/2017/197/Command-Line-bluetoothctl#article_i1 "Linux Magazine: \"Blue Control\""

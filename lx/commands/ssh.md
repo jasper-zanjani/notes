@@ -1,10 +1,8 @@
 [https://gist.github.com/zentralwerkstatt/9e6c83e757cdfe430d6710585b2275c7]: https://gist.github.com/zentralwerkstatt/9e6c83e757cdfe430d6710585b2275c7 "GitHub Gist - SSH into Linux Subsystem for Windows"]
+[Cannon]: https://github.com/jasper-zanjani/notes/master/sources/clkf.md "Cannon, Jason. _Command Line Kung Fu_."
 
 # Linux SSH commands
-
-&nbsp;  | Commands
----     | ---
-&nbsp;  | [`ssh`][ssh] [`ssh-keygen`][ssh-keygen]
+[`ssh`][ssh] [`ssh-keygen`][ssh-keygen] [`ssh-keyscan`][ssh-keyscan] [`sshfs`][sshfs]
 
 ### `ssh`
 Display timer information
@@ -48,7 +46,6 @@ List currently loaded keys
 ```sh
 ssh-add -l
 ```
-
 Compare the differences between a remote and local file.  `cat` a file over SSH and pipe the output into a diff or sdiff command [[23](sources.md)j]
 ```sh
 ssh remotehost cat /path/to/remotefile | diff /path/to/localfile
@@ -71,7 +68,7 @@ Generate a fingerprint from the public key
 ```sh
 ssh-keygen -lf $FILE
 ```
-Generate host keys for WSL [<sup>GitHub</sup>][https://gist.github.com/zentralwerkstatt/9e6c83e757cdfe430d6710585b2275c7]
+Generate host keys for WSL [<sup>ref</sup>][https://gist.github.com/zentralwerkstatt/9e6c83e757cdfe430d6710585b2275c7]
 ```sh
 sudo ssh-keygen -t rsa -f /etc/ssh/ssh_host_rsa_key
 sudo ssh-keygen -t dsa -f /etc/ssh/ssh_host_dsa_key
@@ -84,7 +81,7 @@ ssh-keyscan host
 ```
 ### `sshfs`
 Mount a directory from a remote server on your local host via SSH
-[[23](sources.md)]
+[<sup>ref</sup>][Cannon]
 ```sh
 sshfs remotehost:/directory mountpoint
 ```

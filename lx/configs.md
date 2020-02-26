@@ -1,10 +1,8 @@
-[.forward]: # "Forwarding to only one address"
-[.gnupg/pubring.gpg]: # "Default storage for public `gpg` keyrings"
-[.ssh/known_hosts]: # "Public keys of SSH hosts"
-[xorg.conf]: # "User config which overrides system defaults"
-[.vim/colors/]: ../text/vim.md "Contains custom color schemes for vim"
-
-[/dev]: # "Virtual filesystem containing device files, used to access physical and virtual devices"
+[~/.forward]: # "Forwarding to only one address"
+[~/.gnupg/pubring.gpg]: # "Default storage for public `gpg` keyrings"
+[~/.ssh/known_hosts]: # "Public keys of SSH hosts"
+[~/xorg.conf]: # "User config which overrides system defaults"
+[~/.vim/colors/]: ../text/vim.md "Contains custom color schemes for vim"
 [/etc/aliases]: # "Systemwide email aliases"
 [/etc/apt/sources.list]: #etcaptsourceslist
 [/etc/apt/sources.list.d/]: # "Directory containing additional repository definitions"
@@ -44,7 +42,6 @@
 [/etc/xinetd.conf]: commands/README.md#xinetd "Master xinetd configuration file"
 [/etc/yum.conf]: #etcyumconf
 [/etc/yum.repos.d/]: # "Repository definitions with filenames that follow the pattern \"*.repo\""
-
 [/lib/systemd/system/]: # "directory containing unit configs"
 [/usr/share/config/kdm/kdmrc]: # "KDM config"
 [/usr/share/lightdm/lightdm.conf.d/]: # "lightdm configs, whose filenames follow the pattern \"50-*.conf\""
@@ -58,70 +55,84 @@
 [https://computingforgeeks.com/connect-to-bluetooth-device-from-linux-terminal/]: https://computingforgeeks.com/connect-to-bluetooth-device-from-linux-terminal/ "Computing for Geeks: \"How to connect to Bluetooth device from Linux terminal\""
 
 # Linux configuration files
-Home subdirectory           | Config files sorted alphabetically
----                         | ---
-.                           | [.forward][.forward] [.mailrc](#mailrc) mtab [xorg.conf][xorg.conf]
-.gnupg/                     | [pubring.gpg][.gnupg/pubring.gpg]
-.ssh/                       | [known_hosts][.ssh/known_hosts] 
-[.vim/colors/]              |
-
-/#  | /etc config files sorted alphabetically
---- | ---
-A   | [aliases][/etc/aliases] anacrontab
-C   | [cmd.allow](commands/README.md#xinetd) [cmd.deny](commands/README.md#xinetd)
-[`cron`](commands/README.md#crontab) | cron.allow cron.deny cron.daily cron.hourly cron.weekly cron.monthly crontab **cron.d/**
-F   | [files.dns][/etc/files.dns] [fstab][/etc/fstab]
-G   | [group][/etc/group]
-H   | [hostname][/etc/hostname] [hosts][/etc/hosts]
-I   | [inittab][/etc/inittab]
-L   | ld.so.conf [login.defs][/etc/login.defs] [logrotate.conf][/etc/logrotate.conf] [lsb-release][/etc/lsb-release]
-M   | [mtab][/etc/mtab]
-N   | [network][/etc/network] [nsswitch.conf][/etc/nsswitch.conf] ntp.conf
-P   | passwd
-R   | [resolv.conf][/etc/resolv.conf]
-S   | [services][/etc/services] [shadow][/etc/shadow] [sudoers](#etcsudoers)
-X   | [xinetd.conf][/etc/xinetd.conf]
-Y   | [yum.conf][/etc/yum.conf]
-
-/etc subdirectory                             | Config files sorted alphabetically
----                                           | ---
-apt/                                          | [sources.list][/etc/apt/sources.list] [**sources.list.d/**][/etc/apt/sources.list.d/]
-bluetooth/                                    | [main.conf][/etc/bluetooth/main.conf]
-default/                                      | [useradd][/etc/default/useradd]
-[hotplug/usb/][/etc/hotplug/usb/]             |
-[init.d/][/etc/init.d/]                       |
-[ld.so.conf.d/][/etc/ld.so.conf.d/]           |
-lightdm/                                      | lightdm.conf users.conf
-lightdm.conf.d/                               | 
-lvm                                           | [.cache][/etc/lvm/.cache]
-mail/                                         | [sendmail.mc][/etc/mail/sendmail.mc] [sendmail.cf][/etc/mail/sendmail.cf]
-modprobe.d/                                   | 
-postfix/                                      | [main.cf]
-rc.d/                                         | [rc.sysinit][/etc/rc.d/rc.sysinit]
-samba/                                        | [smb.conf][/etc/samba/smb.conf]
-selinux/                                      | config
-[skel/][/etc/skel/]                           | 
-sources.list.d/                               | 
-ssh/                                          | ssh_config sshd_config
-ssmtp/                                        | [ssmtp.conf][/etc/ssmtp/ssmtp.conf]
-sysconfig/                                    | [desktop][/etc/sysconfig/desktop] iptables **network-scripts/**
-syslog-ng/                                    | [syslog-ng.conf][/etc/syslog-ng/syslog-ng.conf]
-[systemd/system/][/etc/systemd/system/]       |
-udev/                                         | [hwdb.bin][/etc/udev/hwdb.bin]
-X11/                                          | **xdm/**&zwnj;xdm-config 
-[xinet.d/][/etc/xinetd/]                      | 
-[yum.repos.d/][/etc/yum.repos.d/]             | 
-
-Other directories                             | Config filenames sorted alphabetically
----                                           | ---
-/boot/grub/                                   | [grub.cfg][/boot/grub/grub.cfg]
-[/lib/systemd/system/][/lib/systemd/system/]  | 
-/var/log/                                     | [**audit/**&zwnj;audit.log][/var/log/audit/audit.log] [dmesg][/var/log/dmesg]
-[/var/spool/cron/][/var/spool/cron/]           | 
-[/usr/local/lib/systemd/system/](#systemd-service-files) | 
-/usr/share/config/kdm/                        | [kdmrc][/usr/share/config/kdm/kdmrc]
-[/usr/share/lightdm/lightdm.conf.d/][/usr/share/lightdm/lightdm.conf.d/] | 
-/usr/share/hwdata/                            | [pci.ids][/usr/share/hwdata/pci.ids] [pci.ids.gz][/usr/share/hwdata/pci.ids]
+[`/boot/grub/grub.cfg`][/boot/grub/grub.cfg] 
+[`/etc/X11/xdm/xdm-config`][/etc/X11/xdm/xdm-config] 
+[`/etc/aliases`][/etc/aliases] 
+[`/etc/anacrontab`][/etc/anacrontab]
+[`/etc/apt/sources.list.d/`][/etc/apt/sources.list.d/]
+[`/etc/apt/sources.list`][/etc/apt/sources.list] 
+[`/etc/bluetooth/main.conf`][/etc/bluetooth/main.conf]
+[`/etc/cmd.allow`](commands/README.md#xinetd) 
+[`/etc/cmd.deny`](commands/README.md#xinetd) 
+[`/etc/cron.allow`][/etc/cron.allow]
+[`/etc/cron.d/`][/etc/cron.d/]
+[`/etc/cron.daily`][/etc/cron.daily]
+[`/etc/cron.deny`][/etc/cron.deny]
+[`/etc/cron.hourly`][/etc/cron.hourly]
+[`/etc/cron.monthly`][/etc/cron.monthly]
+[`/etc/cron.weekly`][/etc/cron.weekly]
+[`/etc/cron`](commands/README.md#crontab) 
+[`/etc/crontab`][/etc/crontab]
+[`/etc/default/useradd`][/etc/default/useradd]
+[`/etc/files.dns`][/etc/files.dns] 
+[`/etc/fstab`][/etc/fstab] 
+[`/etc/group`][/etc/group] 
+[`/etc/hostname`][/etc/hostname] 
+[`/etc/hosts`][/etc/hosts] 
+[`/etc/inittab`][/etc/inittab] 
+[`/etc/ld.so.conf`][/etc/ld.so.conf]
+[`/etc/lightdm/lightdm.conf`][/etc/lightdm/lightdm.conf]
+[`/etc/lightdm/users.conf`][/etc/lightdm/users.conf]
+[`/etc/login.defs`][/etc/login.defs] 
+[`/etc/logrotate.conf`][/etc/logrotate.conf] 
+[`/etc/lsb-release`][/etc/lsb-release] 
+[`/etc/lvm/.cache`][/etc/lvm/.cache]
+[`/etc/mail/sendmail.cf`][/etc/mail/sendmail.cf]
+[`/etc/mail/sendmail.mc`][/etc/mail/sendmail.mc] 
+[`/etc/modprobe.d/`][/etc/modprobe.d/]
+[`/etc/mtab`][/etc/mtab] 
+[`/etc/network`][/etc/network] 
+[`/etc/nsswitch.conf`][/etc/nsswitch.conf] 
+[`/etc/ntp.conf`][/etc/ntp.conf]
+[`/etc/passwd`][/etc/passwd]
+[`/etc/postfix/main.cf`][/etc/postfix/main.cf] 
+[`/etc/rc.d/rc.sysinit`][/etc/rc.d/rc.sysinit] 
+[`/etc/resolv.conf`][/etc/resolv.conf] 
+[`/etc/samba/smb.conf`][/etc/samba/smb.conf]
+[`/etc/selinux/config`][/etc/selinux/config] 
+[`/etc/services`][/etc/services] 
+[`/etc/shadow`][/etc/shadow] 
+[`/etc/skel/`][/etc/skel/]
+[`/etc/sources.list.d/`][/etc/sources.list.d/] 
+[`/etc/ssh/ssh_config`][/etc/ssh/ssh_config] 
+[`/etc/ssh/sshd_config`][/etc/ssh/sshd_config] 
+[`/etc/ssmtp/ssmtp.conf`][/etc/ssmtp/ssmtp.conf] 
+[`/etc/sudoers`](#etcsudoers) 
+[`/etc/sysconfig/desktop`][/etc/sysconfig/desktop] 
+[`/etc/sysconfig/iptables`][/etc/sysconfig/iptables] 
+[`/etc/sysconfig/network-scripts/`][/etc/sysconfig/network-scripts/] 
+[`/etc/syslog-ng/syslog-ng.conf`][/etc/syslog-ng/syslog-ng.conf] 
+[`/etc/systemd/system/`][/etc/systemd/system/] 
+[`/etc/udev/hwdb.bin`][/etc/udev/hwdb.bin] 
+[`/etc/xinet.d/`][/etc/xinetd/] 
+[`/etc/xinetd.conf`][/etc/xinetd.conf] 
+[`/etc/yum.conf`][/etc/yum.conf]
+[`/etc/yum.repos.d/`][/etc/yum.repos.d/] 
+[`/lib/systemd/system/`][/lib/systemd/system/] 
+[`/usr/local/lib/systemd/system/`](#systemd-service-files) 
+[`/usr/share/config/kdm/kdmrc`][/usr/share/config/kdm/kdmrc] 
+[`/usr/share/hwdata/pci.ids.gz`][/usr/share/hwdata/pci.ids] 
+[`/usr/share/hwdata/pci.ids`][/usr/share/hwdata/pci.ids] 
+[`/usr/share/lightdm/lightdm.conf.d/`][/usr/share/lightdm/lightdm.conf.d/] 
+[`/var/log/audit/audit.log`][/var/log/audit/audit.log] 
+[`/var/log/dmesg`][/var/log/dmesg] 
+[`/var/spool/cron/`][/var/spool/cron/] 
+[`~/.forward`][~/.forward]
+[`~/.gnupg/pubring.gpg`][~/.gnupg/pubring.gpg]
+[`~/.mailrc`](#mailrc)
+[`~/.ssh/known_hosts`][~/.ssh/known_hosts] 
+[`~/mtab`][~/mtab]
+[`~/xorg.conf`][~/xorg.conf]
 
 ### SystemD service files
 [[45](README.md#sources)]
@@ -166,7 +177,7 @@ deb [signed-by=/usr/share/keyrings/cloud.google.gpg] http://packages.cloud.googl
 deb http://security.ubuntu.com/ubuntu trusty-security main universe
 ```
 ### /etc/bluetooth/main.conf
-Power on Bluetooth adapter at startup [^][https://computingforgeeks.com/connect-to-bluetooth-device-from-linux-terminal/]
+Power on Bluetooth adapter at startup [<sup>ref</sup>][https://computingforgeeks.com/connect-to-bluetooth-device-from-linux-terminal/]
 ```ini
 [Policy]
 AutoEnable=true
