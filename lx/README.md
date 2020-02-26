@@ -108,7 +108,7 @@ Fully-featured **desktop environments** are distinct from **window managers**, w
 ### Filesystems
 **Index node (inode)** is a data structure that stores all the information about a file except its name and data
 Most modern Linux distributions use the `ext4` filesystem, which descends from `ext3` and `ext2`, and ultimately `ext`. Other filesystems in use include `btrfs`, `xfs`, and `zfs`
-Source: [^](https://opensource.com/article/18/4/ext4-filesystem "opensource.com: \"Understanding Linux filesystems: ext4 and beyond\"")
+Source: [<sup>ref</sup>](https://opensource.com/article/18/4/ext4-filesystem "opensource.com: \"Understanding Linux filesystems: ext4 and beyond\"")
 
 #### ext
 **Extended File System** was first implemented in 1992 by Remy Card to address limitations in the MINIX filesystem, which was used to develop the first Linux kernel. It could address up to 2GB of storage and handle 255-character filenames and had only one timestap per file.
