@@ -20,10 +20,10 @@
 [https://adamtheautomator.com/powershell-random-password/]: https://adamtheautomator.com/powershell-random-password/ "How to Generate a Random Password with PowerShell"
 [https://devblogs.microsoft.com/scripting/powertip-use-powershell-to-get-computer-name/]: https://devblogs.microsoft.com/scripting/powertip-use-powershell-to-get-computer-name/
 
-[ADAC]:   ../sources/adac.md "Berkouwer, Sander. _Active Directory Administration Cookbook_."
-[WSAC]:   ../sources/wsac.md "Krause, Jordan. _Windows Server 2016 Administration Cookbook_."
-[IMWS]:   ../sources/imws.md "McCabe, John. _Introduction to Microsoft Windows Server 2016_."
-[Zacker]: ../certs/70-740.md "Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017."
+[ADAC]:   https://github.com/jasper-zanjani/notes/master/sources/adac.md "Berkouwer, Sander. _Active Directory Administration Cookbook_."
+[WSAC]:   https://github.com/jasper-zanjani/notes/master/sources/wsac.md "Krause, Jordan. _Windows Server 2016 Administration Cookbook_."
+[IMWS]:   https://github.com/jasper-zanjani/notes/master/sources/imws.md "McCabe, John. _Introduction to Microsoft Windows Server 2016_."
+[Zacker]: https://github.com/jasper-zanjani/notes/master/certs/70-740.md "Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017."
 [Jones]:  https://subscription.packtpub.com/video/virtualization_and_cloud/9781789616385 "Jones, Joshua B. _Hands-On Powershell for Active Directory_. PacktPub: 2018."
 
 <!-- Powershell automatic variables -->
@@ -190,6 +190,13 @@
 [Stop-VM]:                                           #stop-vm                                      '`Stop-VM`&#10;Shuts down, turns off, or saves a virtual machine.'
 [Suspend-VM]:                                        #suspend-vm                                   '`Suspend-VM`&#10;Suspends, or pauses, a virtual machine.'
 
+<!-- Windows Server Migration tools -->
+[Export-SmigServerSetting]:    #export-smigserversetting       '```&#10;PS C:\> Export-SmigServerSetting&#10;```&#10;Export certain Windows features and operating system settings to a migration store&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 33'
+[Get-SmigServerFeature]:       #get-smigserverfeature          '```&#10;PS C:\> Get-SmigServerFeature&#10;```&#10;Display a list of Windows features that can be migrated from the local server or ffrom a migration store&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 33'
+[Import-SmigServerSetting]:    #import-smigserversetting       '```&#10;PS C:\> Import-SmigServerSetting&#10;```&#10;Import certain Windows features and operating system settings from a migration store and apply them to the local server&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 33'
+[Receive-SmigServerData]:      #receive-smigserverdata         '```&#10;PS C:\> Receive-SmigServerData&#10;```&#10;Enable a destination server to receive migrated files, folders, permissions, and share properties from a source server (`Send-SmigServerData` cmdlet must be running on the source server at the same time)&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 33'
+[Send-SmigServerData]:         #send-smigserverdata            '```&#10;PS C:\> Send-SmigServerData&#10;```&#10;Migrate files, folders, permissions, and share properties from a source server to a destination server (`Receive-SmigServerData` cmdlet must be running on the destination server at the same time)&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 33'
+
 # PowerShell
 
 #### Tasks
@@ -329,7 +336,7 @@
 **N** `NetAdapter` [`g`][Get-NetAdapter] `NetFirewallRule` [`g`][Get-NetFirewallRule] [`n`][New-NetFirewallRule] [`s`][Set-NetFirewallRule] `NetIpAddress` [`n`][New-NetIpAddress] `NetIpConfiguration` [`g`][Get-NetIpConfiguration] `Null` [`o`][Out-Null] 
 **O** `Object` [`ForEach`][ForEach-Object] [`n`][New-Object] [`sc`][Select-Object] [`Where`][Where-Object]  `Output` [`wr`][Write-Output] 
 **P** `Partition` [`g`][Get-Partition] [`n`][New-Partition] [`r`][Remove-Partition]  `PSReadlineOption` [`g`][Get-PSReadlineOption] [`s`][Set-PSReadlineOption] `PSSession` [`dc`][Disconnect-PSSession] [`et`][Enter-PSSession] [`ex`][Exit-PSSession] [`g`][Get-PSSession] [`n`][New-PSSession] 
-**S** `Service` [`g`][Get-Service] [`s`][Set-Service] [`sa`][Start-Service] [`sp`][Stop-Service] `SmbOpenFile` [`cs`][Close-SmbOpenFile] [`g`][Get-SmbOpenFile] `SmbShare` [`n`][New-SmbShare] **T** `Table` [`f`][Format-Table] `Type` [`a`][Add-Type] 
+**S** `Service` [`g`][Get-Service] [`s`][Set-Service] [`sa`][Start-Service] [`sp`][Stop-Service] `SmbOpenFile` [`cs`][Close-SmbOpenFile] [`g`][Get-SmbOpenFile] `SmbShare` [`n`][New-SmbShare] `SmigServer` [`Export-SmigServerSetting`][Export-SmigServerSetting] [`Get-SmigServerFeature`][Get-SmigServerFeature] [`Import-SmigServerSetting`][Import-SmigServerSetting] [`Receive-SmigServerData`][Receive-SmigServerData] [`Send-SmigServerData`][Send-SmigServerData] **T** `Table` [`f`][Format-Table] `Type` [`a`][Add-Type] 
 **V** `VM` [`cr`][Compare-VM] [`db`][Debug-VM] [`ep`][Export-VM] [`g`][Get-VM] [`ip`][Import-VM] [`m`][Move-VM] [`ms`][Measure-VM] [`n`][New-VM] [`r`][Remove-VM] [`rn`][Rename-VM] [`rt`][Restart-VM] [`ru`][Resume-VM] [`s`][Set-VM] [`sa`][Start-VM] [`sp`][Stop-VM] [`ss`][Suspend-VM] [`sv`][Save-VM] `VMFirmware` [`s`][Set-VMFirmware]  `VMMemory` [`s`][Set-VMMemory] `VMNetworkAdapter` [`s`][Set-VMNetworkAdapter] `VMProcessor` [`s`][Set-VMProcessor]  `VMSwitch` [`n`][New-VMSwitch]  `Volume` [`f`][Format-Volume] 
 **W** `WebRequest` [`Invoke`][Invoke-WebRequest] `WindowsFeature` [`a`][Add-WindowsFeature] [`g`][Get-WindowsFeature] [`is`][Install-WindowsFeature] `WindowsOptionalFeature` [`e`][Enable-WindowsOptionalFeature] `WMIObject` [`g`][Get-WMIObject]
 
@@ -845,13 +852,14 @@ Install the `Az` module
 Install-Module -Name Az -AllowClobber
 ```
 ### `Install-WindowsFeature`
-Install Windows features and roles [<sup>Zacker: 15-16</sup>][Zacker]
+[Install-WindowsFeature -Name]:      #Install-WindowsFeature        '```&#10;PS C:\> Install-WindowsFeature -Name&#10;```&#10;&#10;Values can include:&#10;  - "`AD-Domain-Services"&#10;  - "Hyper-V"&#10;  - "RSAT-ADDS"&#10;  - "Web-WebServer"'
 
-Option                    | Description
----                       | ---
-`-Name`                   | `AD-Domain-Services`, `DHCP`, `Hyper-V`, `RSAT-ADDS`, `Web-WebServer`
-`-IncludeAllSubFeature`
-`-IncludeManagementTools`
+&nbsp;  | Options
+---     | ---
+&nbsp;  | [**`Name`**][Install-WindowsFeature -Name] `IncludeAllSubFeature` `IncludeManamgentTools`
+
+
+Install Windows features and roles [<sup>Zacker: 15-16</sup>][Zacker]
 
 Install a feature
 ```powershell
@@ -879,6 +887,10 @@ Install-WindowsFeature AD-Domain-Services -IncludeManagementTools
 Create a DHCP server [<sup>Jones</sup>][Jones]
 ```powershell
 Install-WindowsFeature DHCP -IncludeManagementTools
+```
+Install Windows Server Migration Tools [<sup>Zacker: 33</sup>][Zacker]
+```powershell
+Install-WindowsFeature Migration
 ```
 ### `Invoke-Command`
 Execute the commands in the block on the machines specified

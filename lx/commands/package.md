@@ -197,8 +197,6 @@ Install a package group, including optional packages [^][https://docs.fedoraproj
 ```sh
 dnf group install --with-optional virtualization
 ```
-### `dpkg`
-Manage local Debian packages
 ### `dpkg-reconfigure`
 Run a package's configuration script after it has already been installed.
 

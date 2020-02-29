@@ -14,7 +14,7 @@
 [UWP]: #uwp 'Universal Windows Platform (UWP)&#10;Universal Windows Platform provides a common app platform on every device that runs Windows 10, and UWP apps are primarily associated with the Microsoft Store.&#10;"Universal Windows Platform apps". _Wikipedia_.'
 
 <!-- `cmd` commands -->
-[adprep]:                      #adprep                         '```&#10;C:\>adprep&#10;```&#10;Prepare Active Directory for Windows Server upgrades'
+[adprep]:                      #adprep                         '```&#10;C:\>adprep&#10;```&#10;Prepare Active Directory for Windows Server upgrades&#10;Must be run on the Infrastructure Master role owner with the flag `/domainprep`.&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 29'
 [arp]:                         #arp                            '```&#10;C:\>arp&#10;```&#10;Display and modify the IP-to-MAC address translation tables used by ARP'
 [bcdedit]:                     #bcdedit                        '```&#10;C:\>bcdedit&#10;```&#10;Boot configuration data editor'
 [bootrec]:                     #bootrec                        '```&#10;C:\>bootrec&#10;```&#10;Windows Recovery Environment command that repairs a system partition'
@@ -24,6 +24,7 @@
 [logoff]:                      #logoff                         '```&#10;C:\>logoff&#10;```&#10;Log out'
 [msiexec]:                     #msiexec                        '```&#10;C:\>msiexec&#10;```&#10;Provides the means to install, modify, and perform operations on Windows Installer from the command line'
 [nbtstat]:                     #nbtstat                        '```&#10;C:\>nbtstat&#10;```&#10;Display status of NetBIOS'
+[netsh]:                       #netsh                          '```&#10;C:\>netsh&#10;```&#10;"Network services shell", command-line utility that allows you to manage the configuration of various network services on local and remote computers.&#10;Stanek, William R. _Microsoft Windows Command-Line_.: 297'
 [ntdsutil]:                    #ntdsutil                       '```&#10;C:\>ntdsutil&#10;```&#10;Used to transfer FSMO roles between domain controllers'
 [sfc]:                         #sfc                            '```&#10;C:\>sfc&#10;C:\>sfc /scannow&#10;```&#10;Scan and verify protected system files&#10;Stanek, William R. _Microsoft Windows Command-Line_.: 373'
 [slmgr]:                       #slmgr                          '```&#10;C:\>slmgr&#10;```&#10;Windows software licensing management tool'
@@ -85,6 +86,10 @@
 [diskpart retain]:                #diskpart                      '```&#10;C:\> diskpart&#10;DISKPART> RETAIN&#10;```&#10;Prepare the selected simple volume to be used as the boot or system volume&#10;Stanek, William R. _Microsoft Windows Command-Line_.: 141'
 [diskpart select]:                #diskpart                      '```&#10;C:\> diskpart&#10;DISKPART> SELECT&#10;```&#10;Focus specified disk, partition, or volume&#10;Stanek, William R. _Microsoft Windows Command-Line_.: 141'
 
+<!-- `msiexec` commands -->
+[msiexec /&#105;]:              #msiexec                       '```&#10;C:\>msiexec /i&#10;```&#10;Install or configure a product'
+[msiexec /&#113;]:              #msiexec                       '```&#10;C:\>msiexec /q&#10;C:\>msiexec /qn&#10;```&#10;Set user interface level to "no UI"'
+
 <!-- `nbtstat` commands -->
 [nbtstat /&#97;]:               #nbtstat                       '```&#10;C:\>nbtstat /a&#10;```&#10;Display NetBIOS name table of `$HOST` (NetBIOS name)'
 [nbtstat /&#65;]:               #nbtstat                       '```&#10;C:\>nbtstat /A&#10;```&#10;Display NetBIOS name table of `$HOST` (IP address)'
@@ -135,7 +140,7 @@ Topics
 **C** 
 [`cscript`][cscript] 
 **D** 
-`dir`[<sup>pwsh</sup>][Get-ChildItem]  
+`dir`[<sup>pwsh</sup>][Get-ChildItem] 
 [`diskpart`][diskpart] 
 **F** 
 `findstr`[<sup>lx</sup>][grep]
@@ -163,12 +168,13 @@ Topics
 
 Commands  | Options
 ---       | ---
-[`arp`][arp]  | [`a`][arp /&#97;] [`d`][arp /&#100;] [`s`][arp /&#115;]
-[`diskpart`][diskpart] | **A** [`ACTIVE`][diskpart active] [`ADD`][diskpart add] [`ASSIGN`][diskpart assign] [`AUTOMOUNT`][diskpart automount] **B** [`BREAK`][diskpart break] **C** [`CLEAN`][diskpart clean] [`CONVERT`][diskpart convert] [`CREATE`][diskpart create]<br>**D** [`DELETE`][diskpart delete] [`DETAIL`][diskpart detail] **E** [`EXIT`][diskpart exit] [`EXTEND`][diskpart extend]  **G** [`GPT`][diskpart gpt] **H** [`HELP`][diskpart help]  **I** [`IMPORT`][diskpart import] [`INACTIVE`][diskpart inactive] **L** [`LIST`][diskpart list]<br>**O** [`ONLINE`][diskpart online] **R** [`REM`][diskpart rem] [`REMOVE`][diskpart remove] [`REPAIR`][diskpart repair] [`RESCAN`][diskpart rescan] [`RETAIN`][diskpart retain] **S** [`SELECT`][diskpart select]
+[`arp`][arp]  | <code>&nbsp;</code> [`a`][arp /&#97;] <code>&nbsp;</code> <code>&nbsp;</code> [`d`][arp /&#100;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`s`][arp /&#115;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 
+[`diskpart`][diskpart] | **A** [`ACTIVE`][diskpart active] [`ADD`][diskpart add] [`ASSIGN`][diskpart assign] [`AUTOMOUNT`][diskpart automount] **B** [`BREAK`][diskpart break] **C** [`CLEAN`][diskpart clean] [`CONVERT`][diskpart convert] [`CREATE`][diskpart create] **D** [`DELETE`][diskpart delete] [`DETAIL`][diskpart detail] **E** [`EXIT`][diskpart exit] [`EXTEND`][diskpart extend]  **G** [`GPT`][diskpart gpt] **H** [`HELP`][diskpart help]  **I** [`IMPORT`][diskpart import] [`INACTIVE`][diskpart inactive] **L** [`LIST`][diskpart list] **O**&nbsp;[`ONLINE`][diskpart online] **R** [`REM`][diskpart rem] [`REMOVE`][diskpart remove] [`REPAIR`][diskpart repair] [`RESCAN`][diskpart rescan] [`RETAIN`][diskpart retain] **S**&nbsp;[`SELECT`][diskpart select]
 [`ipconfig`][ipconfig] | `all` `flushdns` `renew`
+[`msiexec`][msiexec] | <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`i`][msiexec /&#105;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`q`][msiexec /&#113;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [<sup>ref</sup>][https://docs.microsoft.com/en-us/windows/win32/msi/command-line-options]
 [`nbtstat`][nbtstat] | <code>&nbsp;</code>   [`a`][nbtstat /&#97;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`n`][nbtstat /&#110;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`r`][nbtstat /&#114;] [`s`][nbtstat /&#115;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code>  <br><code>&nbsp;</code>&nbsp;[`A`][nbtstat /&#65;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`R`][nbtstat /&#82;] [`S`][nbtstat /&#83;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 
-[`route`](#route) | [`print`][route print] [`add`][route add] [`change`][route change] [`delete`][route delete] <br> [`p`][route /&#112;]
-
+[`netsh`][netsh]  | **A** [`aaaa`][netsh aaaa] **B** [`bridge`][netsh bridge] **D** [`dhcp`][netsh dhcp] [`diag`][netsh diag] **I** [`interface ip`][netsh interface ip] [`interface ipv6`][netsh interface ipv6] [`interface portproxy`][netsh interface portproxy] [`ipsec`][netsh ipsec] **R** [`ras`][netsh ras] [`routing`][netsh routing] [`rpc`][netsh rpc] **W** [`wins`][netsh wins] 
+[`route`](#route) | <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`p`][route /&#112;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code>  <br> [`print`][route print] [`add`][route add] [`change`][route change] [`delete`][route delete]
 [`sfc`][sfc]  | [`scannow`][sfc /scannow]
 [`slmgr`][slmgr]  | **A** [`ato`][slmgr /ato] **D** [`dli`][slmgr /dli] [`dlv`][slmgr /dlv] **I** [`ipk`][slmgr /ipk] **R** [`rearm`][slmgr /rearm] **U** [`upk`][slmgr /upk] **X** [`xpr`][slmgr /xpr] [<sup>Howtogeek</sup>][https://www.howtogeek.com/245445/how-to-use-slmgr-to-change-remove-or-extend-your-windows-license/] [<sup>Microsoft Docs</sup>][https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn502540(v%3Dws.11)]
 
@@ -211,7 +217,7 @@ bcdedit /set {bootmgr} path \EFI\manjaro\grubx64.efi
 ::Fedora
 bcdedit /set {bootmgr} path \EFI\fedora\shim.efi
 ```
-Enable or disable **Test Signing Mode** [<sup>Howtogeek</sup>](https://www.howtogeek.com/167723/how-to-disable-driver-signature-verification-on-64-bit-windows-8.1-so-that-you-can-install-unsigned-drivers/ "howtogeek.com - 'How to disable driver signature verification on 64-bit Windows 8.1 so that you can install unsigned drivers'")
+Enable or disable **Test Signing Mode** [<sup>ref</sup>](https://www.howtogeek.com/167723/how-to-disable-driver-signature-verification-on-64-bit-windows-8.1-so-that-you-can-install-unsigned-drivers/ "howtogeek.com - 'How to disable driver signature verification on 64-bit Windows 8.1 so that you can install unsigned drivers'")
 ```cmd
 bcdedit /set testsign on
 bcdedit /set testsign off
@@ -227,12 +233,31 @@ Use when BCD file has been corrupted
 ```cmd
 bootrec /rebuildbcd
 ```
-### `msiexec`
-Option      | Effect [Microsoft Docs][https://docs.microsoft.com/en-us/windows/win32/msi/command-line-options]
----         | ---
-`/i`        | Install or configure a product
-`/q` `/qn`  | Set user interface level to "no UI"
+### `netdom`
+Alternative to [`Add-Computer`][Add-Computer] PowerShell cmdlet [<sup>Zacker: 21</sup>][Zacker]
+
+Rename a computer
+```
+netdom renamecomputer %computername% /newname: newcomputername
+```
+Join a computer to a domain
+```
+netdom join %computername% /domain: domainname /userd: username /password:*
+```
 ### `netsh`
+[netsh aaaa]:                     #netsh                         '```&#10;C:\>netsh aaaa&#10;C:\>netsh&#10;netsh>aaaa&#10;```&#10;Authentication, authorization, accounting, and auditing; context used to view and work with the AAAA database used by the Internet Authentication Service and the Routing and Remote Access Service&#10;Stanek, William R. _Microsoft Windows Command-Line_.: 297'
+[netsh bridge]:                   #netsh                         '```&#10;C:\>netsh bridge&#10;C:\>netsh&#10;netsh>bridge&#10;```&#10;L3 compatibilty mode for network bridges&#10;Stanek, William R. _Microsoft Windows Command-Line_.: 298'
+[netsh dhcp]:                     #netsh                         '```&#10;C:\>netsh dhcp&#10;C:\>netsh&#10;netsh>dhcp&#10;```&#10;DHCP servers&#10;Stanek, William R. _Microsoft Windows Command-Line_.: 297'
+[netsh diag]:                     #netsh                         '```&#10;C:\>netsh diag&#10;C:\>netsh&#10;netsh>diag&#10;```&#10;Network service parameters&#10;Stanek, William R. _Microsoft Windows Command-Line_.: 297'
+[netsh interface ip]:             #netsh                         '```&#10;C:\>netsh interface ip&#10;C:\>netsh&#10;netsh>interface ip&#10;```&#10;TCP/IP network configuration of a computer&#10;Stanek, William R. _Microsoft Windows Command-Line_.: 298'
+[netsh interface ipv6]:           #netsh                         '```&#10;C:\>netsh interface ipv6&#10;C:\>netsh&#10;netsh>interface ipv6&#10;```&#10;IPv6 network configuration of a computer&#10;Stanek, William R. _Microsoft Windows Command-Line_.: 298'
+[netsh interface portproxy]:      #netsh                         '```&#10;C:\>netsh interface portproxy&#10;C:\>netsh&#10;netsh>interface portproxy&#10;```&#10;Manage proxies between IPv4 and IPv6 networks&#10;Stanek, William R. _Microsoft Windows Command-Line_.: 298'
+[netsh ipsec]:                    #netsh                         '```&#10;C:\>netsh ipsec&#10;C:\>netsh&#10;netsh>ipsec&#10;```&#10;IPsec&#10;Stanek, William R. _Microsoft Windows Command-Line_.: 298'
+[netsh ras]:                      #netsh                         '```&#10;C:\>netsh ras&#10;C:\>netsh&#10;netsh>ras&#10;```&#10;Remote Access Server (RAS) configurations&#10;Stanek, William R. _Microsoft Windows Command-Line_.: 298'
+[netsh routing]:                  #netsh                         '```&#10;C:\>netsh routing&#10;C:\>netsh&#10;netsh>routing&#10;```&#10;Routing servers&#10;Stanek, William R. _Microsoft Windows Command-Line_.: 298'
+[netsh rpc]:                      #netsh                         '```&#10;C:\>netsh rpc&#10;C:\>netsh&#10;netsh>rpc&#10;```&#10;Remote procedure call (RPC) helper&#10;Stanek, William R. _Microsoft Windows Command-Line_.: 298'
+[netsh wins]:                     #netsh                         '```&#10;C:\>netsh wins&#10;C:\>netsh&#10;netsh>wins&#10;```&#10;WINS, used to view and manage NetBIOS resolution for pre-Windows 2000 computers&#10;Stanek, William R. _Microsoft Windows Command-Line_.: 298'
+
 Configure DNS to be dynamically assigned
 ```cmd
 netsh interface ip set dns "Wi-Fi" dhcp
@@ -245,19 +270,8 @@ Turn off Windows firewall
 ```cmd
 netsh advfirewall set allprofiles state off
 ```
-### `netdom`
-Alternative to [`Add-Computer`][Add-Computer] PowerShell cmdlet [<sup>Zacker: 21</sup>][Zacker]
-
-Rename a computer
-```
-netdom renamecomputer %computername% /newname: newcomputername
-```
-Join a computer to a domain
-```
-netdom join %computername% /domain: domainname /userd: username /password:*
-```
 ### `ntdsutil`
-Used to transfer [FSMO](# "\"Flexible Single Master Operator\", server that is master for a particular role or function") roles between domain controllers. [<sup>Desmond 2009: 30</sup>][Desmond2009]
+Used to transfer [FSMO](# "\"Flexible Single Master Operator\", server that is master for a particular role or function") roles between domain controllers. [<sup>Desmond: 30</sup>][Desmond2009]
 ### `route`
 Basic usage
 ```sh
@@ -284,11 +298,11 @@ Display WinRM configuration
 winrm get winrm/config
 ```
 ### `wmic`
-Recover Windows product key [<sup>Fossbytes</sup>][https://fossbytes.com/how-to-find-windows-product-key-lost-cmd-powershell-registry/]
+Recover Windows product key [<sup>ref</sup>][https://fossbytes.com/how-to-find-windows-product-key-lost-cmd-powershell-registry/]
 ```cmd
 wmic path softwarelicensingservice get OA3xOriginalProductKey
 ```
-Recover serial number of a Lenovo laptop [<sup>Lenovo</sup>][https://pcsupport.lenovo.com/us/en/solutions/find-product-name]
+Recover serial number of a Lenovo laptop [<sup>ref</sup>][https://pcsupport.lenovo.com/us/en/solutions/find-product-name]
 ```cmd
 wmic bios get serialnumber
 ```

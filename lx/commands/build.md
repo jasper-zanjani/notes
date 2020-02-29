@@ -13,6 +13,8 @@
 [make]:                                              #make                                               '```&#10;$ make&#10;```&#10;Utility for building and maintaining programs from source code using a makefile&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 86'
 [yacc]:                                              #yacc                                               '```&#10;$ yacc&#10;```&#10;"yet another compiler-compiler", parser generator that converts a file containing a context-free LALR grmamar and converts it to tables for subsequent pasring, sending output to y.tab.c. Written between 1975 and 1978 by Stephen C. Johnson at Bell Labs.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 237'
 
+
+
 <!-- `cc` options -->
 
 <!-- `make` options -->
@@ -22,20 +24,8 @@
 
 Commands                  | Options
 ---                       | ---
-[`aclocal`][aclocal] | 
-[`autoconf`][autoconf] | 
-[`autoheader`][autoheader] | 
-[`automake`][automake] | 
-[`autoreconf`][autoreconf] | 
-[`autoscan`][autoscan] | 
-[`autoupdate`][autoupdate] | 
-[`bison`][bison] | 
 [`cc`][cc]                | <code>&nbsp;</code>  <code>&nbsp;</code>  [`c`][cc -c]  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  [`g`][cc -g]  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  [`l`][cc -l]  <code>&nbsp;</code>  <code>&nbsp;</code>  [`o`][cc -o]  [`p`][cc -p]  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code><br>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  [`D`][cc -D]  [`E`][cc -E]  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  [`I`][cc -I]  <code>&nbsp;</code>  <code>&nbsp;</code>  [`L`][cc -L]  <code>&nbsp;</code>  <code>&nbsp;</code>  [`O`][cc -O]  [`P`][cc -P]  <code>&nbsp;</code>  <code>&nbsp;</code>  [`S`][cc -S]  <code>&nbsp;</code>  [`U`][cc -U]  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>
-[`flex`][flex] | 
-[`ldd`][ldd] | 
-[`lex`][lex] | 
 [`make`][make] | <code>&nbsp;</code>  <code>&nbsp;</code>  [`b`][make -b]  <code>&nbsp;</code>  [`d`][make -d]  [`e`][make -e]  [`f`][make -f]  <code>&nbsp;</code>  [`h`][make -h]  [`i`][make -i]  [`j`][make -j]  [`k`][make -k]  [`l`][make -l]  [`m`][make -m]  [`n`][make -n]  [`o`][make -o]  [`p`][make -p]  [`q`][make -q]  [`r`][make -r]  [`s`][make -s]  [`t`][make -t]  <code>&nbsp;</code>  [`v`][make -v]  [`w`][make -w]  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code> <br><code>&nbsp;</code>  <code>&nbsp;</code>  [`B`][make -B]  [`C`][make -C]  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  [`I`][make -I]  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  [`S`][make -S]  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  [`W`][make -W]  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>
-[`yacc`][yacc] | 
 
 ## Autotools
 GNU autotools are three packages: [`autoconf`][autoconf], [`automake`][automake], and `libtool`
