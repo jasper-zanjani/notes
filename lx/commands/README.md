@@ -1,7 +1,7 @@
 
 <!-- Sources -->
 [Eckert]: https://github.com/jasper-zanjani/notes/blob/master/sources/lglc.md 'Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012'
-
+[https://linuxconfig.org/how-to-install-the-nvidia-drivers-on-fedora-31]: https://linuxconfig.org/how-to-install-the-nvidia-drivers-on-fedora-31 '"How to install the NVIDIA drivers on Fedora 31". Linuxconfig.org: 10/17/2019.'
 [https://www.tecmint.com/rdesktop-connect-windows-desktop-from-linux/]: https://www.tecmint.com/rdesktop-connect-windows-desktop-from-linux/ "TecMint: \"rdesktop - A RDP Client to Connect Windows Desktop from Linux\""
 [https://youtu.be/ksAfmJfdub0]: https://youtu.be/ksAfmJfdub0 "YouTube: \"Easy Academic References on the Command Line\""
 [https://coderwall.com/p/kq9ghg/yakuake-scripting]: https://coderwall.com/p/kq9ghg/yakuake-scripting "coderwall.com: \"Yakuake scripting\""
@@ -23,6 +23,7 @@
 [Sobell]: https://github.com/jasper-zanjani/notes/blob/master/sources/pgl.md 'Sobell, Mark. _Practical Guide to Linux_. 2017.'
 [https://computingforgeeks.com/connect-to-bluetooth-device-from-linux-terminal/]: https://computingforgeeks.com/connect-to-bluetooth-device-from-linux-terminal/ "Computing for Geeks: \"How to connect to Bluetooth device from Linux terminal\""
 [http://www.linux-magazine.com/Issues/2017/197/Command-Line-bluetoothctl#article_i1]: http://www.linux-magazine.com/Issues/2017/197/Command-Line-bluetoothctl#article_i1 "Linux Magazine: \"Blue Control\""
+[Schatz]: http://www.volkerschatz.com/noise/alsa.html "www.volkerschatz.com: \"A close look at ALSA\""
 
 
 <!-- Configuration files -->
@@ -178,14 +179,25 @@ Kubernetes                    | [`kubeadm`][kubeadm] [`kubectl`][kubectl]
 [zipnote]:                     #zipnote                        '```&#10;$ zipnote&#10;```&#10;Read and edit comments in archives; particularly useful for changing filenames in an archive that start with "@home" in the comment&#10;_Linux Pro Magazine_. Issue 231. Feb 2020.: 38'
 [zipsplit]:                    #zipsplit                       '```&#10;$ zipsplit&#10;```&#10;Divide existing archives into smaller ones, creating an index file to help reassemble them.&#10;_Linux Pro Magazine_. Issue 231. Feb 2020.: 38'
 
+### `bzip2`
 [bzip2 -&#99;]:                 #bzip2                         '```&#10;$ bzip2 -&#99;&#10;$ bzip2 --stdout&#10;```&#10;Write output to STDOUT and do not replace the original file.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 271'
 [bzip2 -&#100;]:                #bzip2                         '```&#10;$ bzip2 -&#100;&#10;$ bzip2 --decompress&#10;```&#10;Decompress archive (equivalent to `bunzip2`)&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 271'
 [bzip2 -&#118;]:                #bzip2                         '```&#10;$ bzip2 -&#118;&#10;```&#10;Verbose&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 271'
 [bzip2 -&#102;]:                #bzip2                         '```&#10;$ bzip2 -&#102;&#10;$ bzip2 --force&#10;```&#10;force overwrite of output files'
 [bzip2 -&#122;]:                #bzip2                         '```&#10;$ bzip2 -&#122;&#10;$ bzip2 --compress&#10;```&#10;force compression'
+
+<code>&nbsp;</code>  <code>&nbsp;</code> <code>&nbsp;</code> [`c`][bzip2 -&#99;] [`d`][bzip2 -&#100;] <code>&nbsp;</code> [`f`][bzip2 -&#102;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`v`][bzip2 -&#118;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`z`][bzip2 -&#122;]
+
+### `compress`
 [compress -&#99;]:              #compress                      '```&#10;$ compress -&#99;&#10;```&#10;Display contents of the archive to STDOUT (same as using `zcat`)'
 [compress -&#102;]:             #compress                      '```&#10;$ compress -&#102;&#10;```&#10;Compress symbolic links'
 [compress -&#114;]:             #compress                      '```&#10;$ compress -&#114;&#10;```&#10;Compress files recursively within a specified directory'
+[uncompress -&#102;]:           #compress                    '```&#10;$ uncompress -&#102;&#10;```&#10;overwrite existing files without prompting, if they exist'
+[uncompress -&#114;]:           #compress                    '```&#10;$ uncompress -&#114;&#10;```&#10;decompress files recursively'
+
+<code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`c`][compress -&#99;] <code>&nbsp;</code> <code>&nbsp;</code> [`f`][compress -&#102;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`r`][compress -&#114;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 
+
+### `cpio`
 [cpio -&#48;]:                  #cpio                          '```&#10;$ cpio -&#48;&#10;$ cpio --null&#10;```&#10;With `-o` or `-p`, read a list of filenames terminated with a `NUL` byte (all zeros) instead of a newline.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 45'
 [cpio -&#97;]:                  #cpio                          '```&#10;$ cpio -&#97;&#10;$ cpio --reset-access-time&#10;```&#10;Reset access times of input files&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 43'
 [cpio -&#65;]:                  #cpio                          '```&#10;$ cpio -&#65;&#10;$ cpio --append&#10;```&#10;Append files to an archive (must be used with `-O` or `-F`)&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 43'
@@ -217,48 +229,9 @@ Kubernetes                    | [`kubeadm`][kubeadm] [`kubectl`][kubectl]
 [cpio -&#117;]:                 #cpio                          '```&#10;$ cpio -&#117;&#10;$ cpio --unconditional&#10;```&#10;Unconditional copy; old files can overwrite new ones&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 44'
 [cpio -&#118;]:                 #cpio                          '```&#10;$ cpio -&#118;&#10;$ cpio --verbose&#10;```&#10;Print a list of filenames processed&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 44'
 [cpio -&#86;]:                  #cpio                          '```&#10;$ cpio -&#86;&#10;$ cpio --dot&#10;```&#10;Print a dot for each file read or written (showing cpio working without cluttering the screen).&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 44'
-[gzip -&#99;]:                  #gzip                          '```&#10;$ gzip -&#99;&#10;```&#10;Write output to STDOUT and do not replace the original file.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 270'
-[gzip -&#100;]:                 #gzip                          '```&#10;$ gzip -&#100;&#10;```&#10;Decompress the file (equivalent to `gunzip`)&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 270'
-[gzip -&#114;]:                 #gzip                          '```&#10;$ gzip -&#114;&#10;```&#10;Recursive: Used when a directory argument is given to compress all files within it, as well as subdirectories.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 270'
-[gzip -&#118;]:                 #gzip                          '```&#10;$ gzip -&#118;&#10;```&#10;Verbose: Display percentage of compression&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 270'
-[tar -&#65;]:                   #tar                           '```&#10;$ tar -&#65;&#10;$ tar --concatenate&#10;```&#10;Append new files to an archive&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 268'
-[tar -&#99;]:                   #tar                           '```&#10;$ tar -&#99;&#10;$ tar --create&#10;```&#10;Create an archive&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 268'
-[tar -&#67;]:                   #tar                           '```&#10;$ tar -&#67; $PATH $FILES&#10;$ tar --directory $PATH $FILES&#10;```&#10;change working directory to `$PATH` before adding $FILES; makes it possible to archive files that do not share a common ancestor directory'
-[tar -&#100;]:                  #tar                           '```&#10;$ tar -&#100;&#10;```&#10;Compare the difference between the contents of an archive and the files in a directory&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 268'
-[tar -&#102;]:                  #tar                           '```&#10;$ tar -&#102;&#10;$ tar --file&#10;```&#10;Specify the name of the archive&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 268'
-[tar -&#106;]:                  #tar                           '```&#10;$ tar -&#106;&#10;$ tar --bzip2&#10;```&#10;Compress/uncompress archive using `bzip2`&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 268'
-[tar -&#74;]:                   #tar                           '```&#10;$ tar -&#74;&#10;```&#10;Compress/uncompress archive using `xz`&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 268'
-[tar -&#112;]:                  #tar                           '```&#10;$ tar -&#112;&#10;$ tar --preserve-permissions&#10;```&#10;extract information about file permissions'
-[tar -&#114;]:                  #tar                           '```&#10;$ tar -&#114;&#10;$ tar --append&#10;```&#10;append files to the end of an archive'
-[tar -&#116;]:                  #tar                           '```&#10;$ tar -&#116;&#10;$ tar --list&#10;```&#10;List the contents of an archive&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 268'
-[tar -&#117;]:                  #tar                           '```&#10;$ tar -&#117;&#10;```&#10;Update; only append newer files into an existing archive&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 268'
-[tar -&#118;]:                  #tar                           '```&#10;$ tar -&#118;&#10;$ tar --verbose&#10;```&#10;Verbose output&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 268'
-[tar -&#120;]:                  #tar                           '```&#10;$ tar -&#120;&#10;$ tar --extract&#10;```&#10;Extract the contents of an archive&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 268'
-[tar -&#122;]:                  #tar                           '```&#10;$ tar -&#122;&#10;$ tar --gzip&#10;```&#10;Compress/uncompress archive using `gzip`&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 268'
-[tar -&#84;]:                   #tar                           '```&#10;$ tar -&#84; $FILENAMES&#10;$ tar --files-from $FILENAMES&#10;```&#10; a list of filenames to be archived, one filename per line, from `$FILENAMES`'
-[uncompress -&#102;]:           #uncompress                    '```&#10;$ uncompress -&#102;&#10;```&#10;overwrite existing files without prompting, if they exist'
-[uncompress -&#114;]:           #uncompress                    '```&#10;$ uncompress -&#114;&#10;```&#10;decompress files recursively'
-[xz -&#99;]:                    #xz                            '```&#10;$ xz -&#99;&#10;```&#10;Write output to STDOUT and do not replace the original file.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 270'
-[xz -&#100;]:                   #xz                            '```&#10;$ xz -&#100;&#10;```&#10;Decompress archive (equivalent to `unxz`)&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 270'
-[xz -&#108;]:                   #xz                            '```&#10;$ xz -&#108;&#10;```&#10;List information about an existing archive&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 270'
-[xz -&#118;]:                   #xz                            '```&#10;$ xz -&#118;&#10;```&#10;Display percentage of compression&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 270'
-[zip -&#100;]:                  #zip                           '```&#10;$ zip -&#100;&#10;```&#10;Decompress archive (equivalent to `unzip`)&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 272'
-[zip -&#118;]:                  #zip                           '```&#10;$ zip -&#118;&#10;```&#10;Verbose; display percentage of compression&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 272'
-[zip -&#117;]:                  #zip                           '```&#10;$ zip -&#117;&#10;```&#10;Update an archive with new content&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 272'
-[zip -&#114;]:                  #zip                           '```&#10;$ zip -&#114;&#10;```&#10;Zip recursively&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 272'
-[zip -&#120;]:                  #zip                           '```&#10;$ zip -&#120; $FILES&#10;```&#10;Specify files to be excluded from the archive&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 272'
 
-[Archive commands](#archive-commands) | Options
----                             | ---
-[`bzip2`][bzip2]                | <code>&nbsp;</code>  <code>&nbsp;</code> <code>&nbsp;</code> [`c`][bzip2 -&#99;] [`d`][bzip2 -&#100;] <code>&nbsp;</code> [`f`][bzip2 -&#102;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`v`][bzip2 -&#118;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`z`][bzip2 -&#122;]
-[`compress`][compress]          | <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`c`][compress -&#99;] <code>&nbsp;</code> <code>&nbsp;</code> [`f`][compress -&#102;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`r`][compress -&#114;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 
-[`cpio`][cpio]                  | [`0`][cpio -&#48;]   [`a`][cpio -&#97;] [`b`][cpio -&#98;] [`c`][cpio -&#99;] [`d`][cpio -&#100;] <code>&nbsp;</code> [`f`][cpio -&#102;] <code>&nbsp;</code> <code>&nbsp;</code> [`i`][cpio -&#105;] <code>&nbsp;</code> [`k`][cpio -&#107;] [`l`][cpio -&#108;] [`m`][cpio -&#109;] [`n`][cpio -&#110;] [`o`][cpio -&#111;] [`p`][cpio -&#112;] <code>&nbsp;</code> [`r`][cpio -&#114;] [`s`][cpio -&#115;] [`t`][cpio -&#116;] [`u`][cpio -&#117;] [`v`][cpio -&#118;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code>  <br><code>&nbsp;</code>&nbsp;[`A`][cpio -&#65;] [`B`][cpio -&#66;] [`C`][cpio -&#67;] <code>&nbsp;</code> [`E`][cpio -&#69;] [`F`][cpio -&#70;] <code>&nbsp;</code> [`H`][cpio -&#72;] [`I`][cpio -&#73;] <code>&nbsp;</code> <code>&nbsp;</code> [`L`][cpio -&#76;] [`M`][cpio -&#77;] <code>&nbsp;</code> [`O`][cpio -&#79;] <code>&nbsp;</code> <code>&nbsp;</code> [`R`][cpio -&#82;] [`S`][cpio -&#83;] <code>&nbsp;</code> <code>&nbsp;</code> [`V`][cpio -&#86;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 
-[`gzip`][gzip]                  | <code>&nbsp;</code>  <code>&nbsp;</code> <code>&nbsp;</code> [`c`][gzip -&#99;] [`d`][gzip -&#100;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`r`][gzip -&#114;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`v`][gzip -&#118;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code>
-[`tar`][tar]                    | <code>&nbsp;</code>  <code>&nbsp;</code> <code>&nbsp;</code> [`c`][tar -&#99;] [`d`][tar -&#100;] <code>&nbsp;</code> [`f`][tar -&#102;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`j`][tar -&#106;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`p`][tar -&#112;] <code>&nbsp;</code> [`r`][tar -&#114;] <code>&nbsp;</code> [`t`][tar -&#116;] [`u`][tar -&#117;] [`v`][tar -&#118;] <code>&nbsp;</code> [`x`][tar -&#120;] <code>&nbsp;</code> [`z`][tar -&#122;]  <br><code>&nbsp;</code> [`A`][tar -&#65;] <code>&nbsp;</code> [`C`][tar -&#67;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`J`][tar -&#74;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 
-[`xz`][xz]                      | <code>&nbsp;</code>  <code>&nbsp;</code> <code>&nbsp;</code> [`c`][xz -&#99;] [`d`][xz -&#100;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`l`][xz -&#108;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`v`][xz -&#118;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code>
-[`zip`][zip]                    | <code>&nbsp;</code>  <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`d`][zip -&#100;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`r`][zip -&#114;] <code>&nbsp;</code> <code>&nbsp;</code> [`u`][zip -&#117;] [`v`][zip -&#118;] <code>&nbsp;</code> [`x`][zip -&#120;] <code>&nbsp;</code> <code>&nbsp;</code>
+[`0`][cpio -&#48;]   [`a`][cpio -&#97;] [`b`][cpio -&#98;] [`c`][cpio -&#99;] [`d`][cpio -&#100;] <code>&nbsp;</code> [`f`][cpio -&#102;] <code>&nbsp;</code> <code>&nbsp;</code> [`i`][cpio -&#105;] <code>&nbsp;</code> [`k`][cpio -&#107;] [`l`][cpio -&#108;] [`m`][cpio -&#109;] [`n`][cpio -&#110;] [`o`][cpio -&#111;] [`p`][cpio -&#112;] <code>&nbsp;</code> [`r`][cpio -&#114;] [`s`][cpio -&#115;] [`t`][cpio -&#116;] [`u`][cpio -&#117;] [`v`][cpio -&#118;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code>  <br><code>&nbsp;</code>&nbsp;[`A`][cpio -&#65;] [`B`][cpio -&#66;] [`C`][cpio -&#67;] <code>&nbsp;</code> [`E`][cpio -&#69;] [`F`][cpio -&#70;] <code>&nbsp;</code> [`H`][cpio -&#72;] [`I`][cpio -&#73;] <code>&nbsp;</code> <code>&nbsp;</code> [`L`][cpio -&#76;] [`M`][cpio -&#77;] <code>&nbsp;</code> [`O`][cpio -&#79;] <code>&nbsp;</code> <code>&nbsp;</code> [`R`][cpio -&#82;] [`S`][cpio -&#83;] <code>&nbsp;</code> <code>&nbsp;</code> [`V`][cpio -&#86;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 
 
-### `cpio`
 Create an archive that contains all the files in the current working directory [<sup>Haeder: 94</sup>][Haeder]
 ```sh
 ls | cpio -ov > /tmp/archive.cpio
@@ -281,6 +254,13 @@ Restore full.bak
 dar -x full.bak
 ```
 ### `gzip`
+[gzip -&#99;]:                  #gzip                          '```&#10;$ gzip -&#99;&#10;```&#10;Write output to STDOUT and do not replace the original file.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 270'
+[gzip -&#100;]:                 #gzip                          '```&#10;$ gzip -&#100;&#10;```&#10;Decompress the file (equivalent to `gunzip`)&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 270'
+[gzip -&#114;]:                 #gzip                          '```&#10;$ gzip -&#114;&#10;```&#10;Recursive: Used when a directory argument is given to compress all files within it, as well as subdirectories.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 270'
+[gzip -&#118;]:                 #gzip                          '```&#10;$ gzip -&#118;&#10;```&#10;Verbose: Display percentage of compression&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 270'
+
+<code>&nbsp;</code>  <code>&nbsp;</code> <code>&nbsp;</code> [`c`][gzip -&#99;] [`d`][gzip -&#100;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`r`][gzip -&#114;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`v`][gzip -&#118;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code>
+
 Zip a single file in-place; each file is replaced by one with the extension `.gz` or `.z`, maintaining ownership modes, access and modification times
 ```sh
 gzip -#
@@ -293,7 +273,26 @@ gzip -f symlink
 gzip --force symlink
 ```
 Page through .gz files
+
 ### `tar`
+[tar -&#65;]:                   #tar                           '```&#10;$ tar -&#65;&#10;$ tar --concatenate&#10;```&#10;Append new files to an archive&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 268'
+[tar -&#99;]:                   #tar                           '```&#10;$ tar -&#99;&#10;$ tar --create&#10;```&#10;Create an archive&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 268'
+[tar -&#67;]:                   #tar                           '```&#10;$ tar -&#67; $PATH $FILES&#10;$ tar --directory $PATH $FILES&#10;```&#10;change working directory to `$PATH` before adding $FILES; makes it possible to archive files that do not share a common ancestor directory'
+[tar -&#100;]:                  #tar                           '```&#10;$ tar -&#100;&#10;```&#10;Compare the difference between the contents of an archive and the files in a directory&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 268'
+[tar -&#102;]:                  #tar                           '```&#10;$ tar -&#102;&#10;$ tar --file&#10;```&#10;Specify the name of the archive&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 268'
+[tar -&#106;]:                  #tar                           '```&#10;$ tar -&#106;&#10;$ tar --bzip2&#10;```&#10;Compress/uncompress archive using `bzip2`&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 268'
+[tar -&#74;]:                   #tar                           '```&#10;$ tar -&#74;&#10;```&#10;Compress/uncompress archive using `xz`&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 268'
+[tar -&#112;]:                  #tar                           '```&#10;$ tar -&#112;&#10;$ tar --preserve-permissions&#10;```&#10;extract information about file permissions'
+[tar -&#114;]:                  #tar                           '```&#10;$ tar -&#114;&#10;$ tar --append&#10;```&#10;append files to the end of an archive'
+[tar -&#116;]:                  #tar                           '```&#10;$ tar -&#116;&#10;$ tar --list&#10;```&#10;List the contents of an archive&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 268'
+[tar -&#117;]:                  #tar                           '```&#10;$ tar -&#117;&#10;```&#10;Update; only append newer files into an existing archive&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 268'
+[tar -&#118;]:                  #tar                           '```&#10;$ tar -&#118;&#10;$ tar --verbose&#10;```&#10;Verbose output&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 268'
+[tar -&#120;]:                  #tar                           '```&#10;$ tar -&#120;&#10;$ tar --extract&#10;```&#10;Extract the contents of an archive&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 268'
+[tar -&#122;]:                  #tar                           '```&#10;$ tar -&#122;&#10;$ tar --gzip&#10;```&#10;Compress/uncompress archive using `gzip`&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 268'
+[tar -&#84;]:                   #tar                           '```&#10;$ tar -&#84; $FILENAMES&#10;$ tar --files-from $FILENAMES&#10;```&#10; a list of filenames to be archived, one filename per line, from `$FILENAMES`'
+
+<code>&nbsp;</code>  <code>&nbsp;</code> <code>&nbsp;</code> [`c`][tar -&#99;] [`d`][tar -&#100;] <code>&nbsp;</code> [`f`][tar -&#102;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`j`][tar -&#106;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`p`][tar -&#112;] <code>&nbsp;</code> [`r`][tar -&#114;] <code>&nbsp;</code> [`t`][tar -&#116;] [`u`][tar -&#117;] [`v`][tar -&#118;] <code>&nbsp;</code> [`x`][tar -&#120;] <code>&nbsp;</code> [`z`][tar -&#122;]  <br><code>&nbsp;</code> [`A`][tar -&#65;] <code>&nbsp;</code> [`C`][tar -&#67;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`J`][tar -&#74;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 
+
 Create {archive} from contents of {path}
 ```sh
 tar -cf archive path
@@ -332,15 +331,34 @@ Extract contents of gzip-compressed {archive} to {path}
 ```sh
 tar -xzf archive -C path
 ```
+
 ### `unzip`
 Extract compressed files in a zip archive
+
+### `xz`
+[xz -&#99;]:                    #xz                            '```&#10;$ xz -&#99;&#10;```&#10;Write output to STDOUT and do not replace the original file.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 270'
+[xz -&#100;]:                   #xz                            '```&#10;$ xz -&#100;&#10;```&#10;Decompress archive (equivalent to `unxz`)&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 270'
+[xz -&#108;]:                   #xz                            '```&#10;$ xz -&#108;&#10;```&#10;List information about an existing archive&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 270'
+[xz -&#118;]:                   #xz                            '```&#10;$ xz -&#118;&#10;```&#10;Display percentage of compression&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 270'
+
+<code>&nbsp;</code>  <code>&nbsp;</code> <code>&nbsp;</code> [`c`][xz -&#99;] [`d`][xz -&#100;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`l`][xz -&#108;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`v`][xz -&#118;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code>
+
 ### `zip`
+[zip -&#100;]:                  #zip                           '```&#10;$ zip -&#100;&#10;```&#10;Decompress archive (equivalent to `unzip`)&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 272'
+[zip -&#118;]:                  #zip                           '```&#10;$ zip -&#118;&#10;```&#10;Verbose; display percentage of compression&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 272'
+[zip -&#117;]:                  #zip                           '```&#10;$ zip -&#117;&#10;```&#10;Update an archive with new content&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 272'
+[zip -&#114;]:                  #zip                           '```&#10;$ zip -&#114;&#10;```&#10;Zip recursively&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 272'
+[zip -&#120;]:                  #zip                           '```&#10;$ zip -&#120; $FILES&#10;```&#10;Specify files to be excluded from the archive&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 272'
+
+<code>&nbsp;</code>  <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`d`][zip -&#100;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`r`][zip -&#114;] <code>&nbsp;</code> <code>&nbsp;</code> [`u`][zip -&#117;] [`v`][zip -&#118;] <code>&nbsp;</code> [`x`][zip -&#120;] <code>&nbsp;</code> <code>&nbsp;</code>
+
 Archive files in InfoZIP format
 ```sh
 zip zipfile *files
 ```
+
+
 ## Audio
-<!-- Audio -->
 [alsamixer]:                   #alsamixer                      '```&#10;$ alsamixer&#10;```&#10;Command-line mixer'
 [amixer]:                      #amixer                         '```&#10;$ amixer&#10;```&#10;Command-line mixer for ALSA sound card driver'
 [speaker-test]:                #speaker-test                   '```&#10;$ speaker-test&#10;```&#10;Generates a tone that can be used to test the speakers of a computer'
@@ -351,7 +369,7 @@ zip zipfile *files
 **S** 
 [`speaker-test`][speaker-test] 
 
-#### ALSA
+### ALSA
 **Advanced Linux Sound Architecture (ALSA)** replaced the earlier "Open Sound System".[<sup>ref</sup>][Schatz]
 
 ALSA kernel modules are designed to offer an interface that "corresponds to that of the hardware" to keep the modules simple, and similar cards will offer a similar interface. They offer two interfaces: **operational** and **configuration**
@@ -379,7 +397,7 @@ Typical channel assignments
 - **2**: rear left
 - **3**: rear right
 
-#### PulseAudio
+### PulseAudio
 PulseAudio is a sound server for POSIX OSes and a fixture on many Linux distributions.
 
 PulseAudio is built around **sources** and **sinks** (i.e. devices) connected to **source outputs** and **sink inputs** (streams)
@@ -569,17 +587,75 @@ speaker-test -c 2
 **W** 
 [`wait`][wait] 
 [`while`][while] 
+
 ## Boot
-[grub-install]:                boot.md#grub-install            '```&#10;$ grub-install&#10;```&#10;Install GRUB on the MBR of a hard drive&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 42'
-[lilo]:                        boot.md#lilo                    '```&#10;$ lilo&#10;```&#10;`lilo` map installer reads a configuration file and writes a map file, which contains information needed by the boot loader to locate and launch Linux kernels or other operating systems.&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 40'
-[update-grub]:                 boot.md#update-grub             '```&#10;$ update-grub&#10;```&#10;Make changes take effect for a GRUB2 configuration change'
+[https://www.howtoforge.com/tutorial/repair-linux-boot-with-grub-rescue/]: https://www.howtoforge.com/tutorial/repair-linux-boot-with-grub-rescue/ "howtoforge.com - \"Repair Linux boot failures in GRUB 2 rescue mode\""
+
+[grub-install]:                #grub-install            '```&#10;$ grub-install&#10;```&#10;Install GRUB on the MBR of a hard drive&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 42'
+[grub-mkconfig]: # ""
+[grub2-editenv]:               #grub2-editenv                  '```&#10;grub2-editenv&#10;```&#10;Manage the stored environment of GRUB&#10;"How to install the NVIDIA drivers on Fedora 31". Linuxconfig.org: 10/17/2019.'
+[lilo]:                        #lilo                    '```&#10;$ lilo&#10;```&#10;`lilo` map installer reads a configuration file and writes a map file, which contains information needed by the boot loader to locate and launch Linux kernels or other operating systems.&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 40'
+[update-grub]:                 #update-grub             '```&#10;$ update-grub&#10;```&#10;Make changes take effect for a GRUB2 configuration change'
 
 **G** 
 [`grub-install`][grub-install] 
+[`grub-mkconfig`][grub-mkconfig]
+[`grub2-editenv`][grub2-editenv] 
 **L** 
 [`lilo`][lilo] 
 **U** 
 [`update-grub`][update-grub] 
+
+#### GRUB Rescue prompt
+When GRUB2 is unable to find the GRUB folder or its contents are missing or corrupted, it displays the prompt `grub rescue>`. This means it failed to load the `normal` module. [<sup>ref</sup>][https://www.howtoforge.com/tutorial/repair-linux-boot-with-grub-rescue/]
+
+From GRUB rescue prompt:
+```grub
+set prefix=(hd0,1)/boot/grub
+set root=(hd0,1)
+insmod normal
+normal
+```
+After booting the system, GRUB should be updated and reinstalled:
+
+Update GRUB config file
+```sh
+update-grub
+```
+Reinstall GRUB
+```sh
+grub-install /dev/sdx
+```
+
+### `grub-install`
+Install GRUB as bootloader
+```sh
+grub-install --target=i386-pc /dev/sdb
+```
+Install boot images within a directory other than /boot
+```sh
+grub-install --boot-directory
+```
+### `grub-mkconfig`
+Generate GRUB configuration
+```sh
+grub-mkconfig -o /boot/grub/grub.cfg
+```
+### `grub2-mkconfig`
+Send output of grub2-mkconfig to the correct location for booting
+```sh
+grub2-mkconfig --output=/boot/grub2/grub.cfg
+```
+### `grub2-editenv`
+Disable the Nouveau display driver while installing the proprietary Nvidia display driver on Fedora [<sup>ref</sup>][https://linuxconfig.org/how-to-install-the-nvidia-drivers-on-fedora-31]
+```sh
+grub2-editenv - set "$(grub2-editenv - list | grep kernelopts) nouveau.modeset=0"
+```
+### `update-grub`
+Update GRUB config file
+```sh
+update-grub
+```
 
 ## Build
 [aclocal]:                     #aclocal                        '```&#10;$ aclocal&#10;```&#10;Place m4 macro definitions needed by `autoconf` into a single file. `aclocal` first scans for macro definitions in m4 files in its default directory (/usr/share/aclocal) and in the file acinclude.m4, then in the configure.ac file. IT generates an aclocal.m4 file that contains definitions of all m4 macros required by `autoconf`.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 16'
@@ -607,14 +683,14 @@ speaker-test -c 2
 [xgettext]:                    #xgettext                       '```&#10;$ xgettext&#10;```&#10;Extract specially marked strings from C and C++ source files, placing them in a .po ("portable object" file for translation and compilation by `msgfmt`.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 234'
 [yacc]:                        #yacc                           '```&#10;$ yacc&#10;```&#10;"yet another compiler-compiler", parser generator that converts a file containing a context-free LALR grmamar and converts it to tables for subsequent pasring, sending output to y.tab.c. Written between 1975 and 1978 by Stephen C. Johnson at Bell Labs.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 237'
 
-
+[autotools]: # "GNU autotools is a collection of three packages: `autoconf`, `automake`, and `libtool`"
 
 **A** 
 [`aclocal`][aclocal] 
 [`as`][as] 
-[`autoconf`][autoconf] 
+[`autoconf`][autoconf][<sup>!</sup>][autotools] 
 [`autoheader`][autoheader] 
-[`automake`][automake] 
+[`automake`][automake][<sup>!</sup>][autotools] 
 [`autoreconf`][autoreconf] 
 [`autoscan`][autoscan] 
 [`autoupdate`][autoupdate] 
@@ -636,6 +712,7 @@ speaker-test -c 2
 **L** 
 [`ldd`][ldd] 
 [`lex`][lex] 
+`libtool`[<sup>!</sup>][autotools]
 **M** 
 [`make`][make] 
 **X** 
@@ -643,55 +720,134 @@ speaker-test -c 2
 **Y**
 [`yacc`][yacc] 
 
-#### System calls
-<!-- Syscalls -->
-[chmod()]: #system-calls 'chmod&#10;change file access permissions&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 418'
-[chown()]: #system-calls 'chown&#10;change file ownership&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 418'
-[close()]: #system-calls 'close&#10;close a file&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 418'
-[creat()]: #system-calls 'creat&#10;create a new file&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 418'
-[exec()]: #system-calls 'exec&#10;overlay a program in memory with another&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 418'
-[exit()]: #system-calls 'exit&#10;cause a process to exit&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 418'
-[fork()]: #system-calls 'fork&#10;create a copy of a process&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 418'
-[getpid()]: #system-calls 'getpid&#10;return the PID of the calling process&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 418'
-[kill()]: #system-calls 'kill&#10;send a signal to a process&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 418'
-[lseek()]: #system-calls 'lseek&#10;move to a position in the file&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 418'
-[nice()]: #system-calls 'nice&#10;change the priority of a process&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 418'
-[open()]: #system-calls 'open&#10;open an existing file&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 418'
-[read()]: #system-calls 'read&#10;read a file&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 418'
-[stat()]: #system-calls 'stat&#10;Get status information from an inode, such as the inode number, device on which it is located, owner and group information, and the size of the file&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 418'
-[unlink()]: #system-calls 'unlink&#10;unlink a fie (delete a name reference to the inode)&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 418'
-[wait()]: #system-calls 'wait&#10;cause the parent process to wait for the child to finish running before it resumes execution&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 418'
-[write()]: #system-calls 'write&#10;write a file&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 418'
 
-**C** 
-[`chmod()`][chmod()] 
-[`chown()`][chown()] 
-[`close()`][close()] 
-[`creat()`][creat()] 
-**E** 
-[`exec()`][exec()] 
-[`exit()`][exit()] 
-**F** 
-[`fork()`][fork()] 
-**G** 
-[`getpid()`][getpid()] 
-**K** 
-[`kill()`][kill()] 
-**L** 
-[`lseek()`][lseek()] 
-**N** 
-[`nice()`][nice()] 
-**O** 
-[`open()`][open()] 
-**R** 
-[`read()`][read()] 
-**S** 
-[`stat()`][stat()] 
-**U** 
-[`unlink()`][unlink()] 
-**W** 
-[`wait()`][wait()] 
-[`write()`][write()] 
+
+### `autoconf`
+Other related programs are usually invoked automatically by tools in the `autoconf` suite: `autoreconf`, `autoscan`, and `autoupdate`
+### `cc`
+[cc -&#99;]:                    #cc                            '```&#10;$ cc -&#99;&#10;```&#10;suppress loading and keep any object files that were produced&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 32'
+[cc -&#68;]:                    #cc                            '```&#10;$ cc -&#68; $NAME=$DEF&#10;```&#10;supply a `#define` directive, defining `$NAME` to be `$DEF` (or 1 by default)&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 32'
+[cc -&#69;]:                    #cc                            '```&#10;$ cc -&#69;&#10;```&#10;run only the macro preprocessor, sending results to STDOUT&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 32'
+[cc -&#103;]:                   #cc                            '```&#10;$ cc -&#103;&#10;```&#10;generate more symbol-table information needed for debuggers&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 32'
+[cc -&#73;]:                    #cc                            '```&#10;$ cc -&#73; $PATH&#10;```&#10;search for include files in directory `$PATH` (in addition to standard locations). Supply a `-I` for each new `$PATH` to be searched.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 32'
+[cc -&#108;]:                   #cc                            '```&#10;$ cc -&#108; $NAME&#10;```&#10;Link source file with library files "lib$NAME.so" or "lib$NAME.a"&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 32'
+[cc -&#76;]:                    #cc                            '```&#10;$ cc -&#76; $PATH&#10;```&#10;Like `-I`, but search `$PATH` for library archives&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 32'
+[cc -&#111;]:                   #cc                            '```&#10;$ cc -&#111; $FILE&#10;```&#10;Send object output to `$FILE` instead of to a.out.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 32'
+[cc -&#79;]:                    #cc                            '```&#10;$ cc -&#79;&#10;```&#10;Optimize object code (produced from .c or .i files). Some compilers accept an additional argument to `-O` specifying the optimization level.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 32'
+[cc -&#112;]:                   #cc                            '```&#10;$ cc -&#112;&#10;```&#10;Generate benchmark code to count&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 32'
+[cc -&#80;]:                    #cc                            '```&#10;$ cc -&#80;&#10;```&#10;Run only the preprocessor and place the result in "file.i"&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 32'
+[cc -&#83;]:                    #cc                            '```&#10;$ cc -&#83;&#10;```&#10;Compile (and optimize, if `-O` is supplied), but do not assemble or load; assembler output is placed in "file.s".&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 32'
+[cc -&#85;]:                    #cc                            '```&#10;$ cc -&#85; $NAME&#10;```&#10;Remove definition of `$NAME`, as if through an `#undef` directive.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 32'
+
+<code>&nbsp;</code>   <code>&nbsp;</code> <code>&nbsp;</code> [`c`][cc -&#99;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`g`][cc -&#103;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`l`][cc -&#108;] <code>&nbsp;</code> <code>&nbsp;</code> [`o`][cc -&#111;] [`p`][cc -&#112;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code>  <br><code>&nbsp;</code>&nbsp;<code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`D`][cc -&#68;] [`E`][cc -&#69;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`I`][cc -&#73;] <code>&nbsp;</code> <code>&nbsp;</code> [`L`][cc -&#76;] <code>&nbsp;</code> <code>&nbsp;</code> [`O`][cc -&#79;] [`P`][cc -&#80;] <code>&nbsp;</code> <code>&nbsp;</code> [`S`][cc -&#83;] <code>&nbsp;</code> [`U`][cc -&#85;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 
+
+### `make`
+[make -&#98;]:                  #make                          '```&#10;$ make -&#98;&#10;```&#10;Silently accepted, but ignored, for compatibility with other versions of `make`&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 746'
+[make -&#66;]:                  #make                          '```&#10;$ make -&#66;&#10;$ make --always-make&#10;```&#10;Treat all targets as out of date. All targets are remade, no matter what the actual status is of their prerequisites&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 746'
+[make -&#67;]:                  #make                          '```&#10;$ make -&#67; $PATH&#10;$ make --directory $PATH&#10;```&#10;Change directory to `$PATH` before reading makefiles; usually used for recursive invocations of `make`.'
+[make -&#100;]:                 #make                          '```&#10;$ make -&#100;&#10;$ make --debug=a&#10;```&#10;Print debugging information in addition to regular output. This information includes which files are out of date, the file names being compared, '
+[make -&#101;]:                 #make                          '```&#10;$ make -&#101;&#10;$ make --environment-overrides&#10;```&#10;Environment variables override any macros defined in makefiles.'
+[make -&#102;]:                 #make                          '```&#10;$ make -&#102; $MAKEFILE&#10;$ make --file $MAKEFILE&#10;```&#10;Use `$MAKEFILE` as the makefile; can be used more than once to concatenate multiple makefiles. If not specified, `make` looks for "GNUmakefile", "makefile", and "Makefile" in that order.'
+[make -&#104;]:                 #make                          '```&#10;$ make -&#104;&#10;$ make --help&#10;```&#10;Print a usage summary, and then exit.'
+[make -&#105;]:                 #make                          '```&#10;$ make -&#105;&#10;$ make --ignore-errors&#10;```&#10;Ignore error codes from commands (equivalent to `.IGNORE`)'
+[make -&#73;]:                  #make                          '```&#10;$ make -&#73; $PATH&#10;$ make --include-dir $PATH&#10;```&#10;Look in `$PATH` for makefiles included with the `include` directive. Multiple options add more directories to the list, which is searched by `make` in order.'
+[make -&#106;]:                 #make                          '```&#10;$ make -&#106; $COUNT&#10;$ make --jobs $COUNT&#10;```&#10;Run commands in parallel.'
+[make -&#107;]:                 #make                          '```&#10;$ make -&#107;&#10;$ make --keep-going&#10;```&#10;Abandon the current target when it fails, but keep working with unrelated targets.'
+[make -&#108;]:                 #make                          '```&#10;$ make -&#108; $LOAD&#10;$ make --load-average $LOAD&#10;```&#10;If there are jobs running and the system load average is at least load, do not start any new jobs running.'
+[make -&#109;]:                 #make                          '```&#10;$ make -&#109;&#10;```&#10;Silently accepted, but ignored, for compatibility with other version of `make`.'
+[make -&#110;]:                 #make                          '```&#10;$ make -&#110;&#10;$ make --dry-run&#10;```&#10;Print commands but do not execute; used for testing.'
+[make -&#111;]:                 #make                          '```&#10;$ make -&#111; $FILE&#10;$ make --assume-old $FILE&#10;```&#10;Pretend that `$FILE` is older than the files that depend upon it. This avoids remaking other files that depend on `$FILE`.'
+[make -&#112;]:                 #make                          '```&#10;$ make -&#112;&#10;$ make --print-data-base&#10;```&#10;Print macro definitions, suffixes, and built-in rules. In a directory without a makefile, use `env -i make -p` to print out the default variable definitions and built-in rules.'
+[make -&#113;]:                 #make                          '```&#10;$ make -&#113;&#10;$ make --question&#10;```&#10;Query; return 0 if the target is up to date; nonzero otherwise.'
+[make -&#114;]:                 #make                          '```&#10;$ make -&#114;&#10;$ make --no-builtin-rules&#10;```&#10;Do not use the default rules. This also clears out the default list of suffixes and suffix rules.'
+[make -&#115;]:                 #make                          '```&#10;$ make -&#115;&#10;$ make --silent&#10;```&#10;Do not display command lines (same as `.SILENT`)'
+[make -&#83;]:                  #make                          '```&#10;$ make -&#83;&#10;$ make --stop&#10;```&#10;Cancel the effect of a previous `-k`. Only needed for recursive `make` invocations, where the `-k` option might be inherited via the `MAKEFLAGS` environment variable.'
+[make -&#116;]:                 #make                          '```&#10;$ make -&#116;&#10;$ make --touch&#10;```&#10;Touch the target files, causing them to be updated.'
+[make -&#118;]:                 #make                          '```&#10;$ make -&#118; Print version, copyright, and author information, and exit.&#10;$ make --version Print version, copyright, and author information, and exit.&#10;```&#10;'
+[make -&#119;]:                 #make                          '```&#10;$ make -&#119;&#10;$ make --print-directory&#10;```&#10;Print the working directory, before and after executing the makefile. Useful for recursive `make` invocations. This is usually done by default, so this option is rarely seen.'
+[make -&#87;]:                  #make                          '```&#10;$ make -&#87; $FILE&#10;$ make --assume-new $FILE&#10;```&#10;Treat $FILE as if it had just been modified. Together with `-n`, this lets you see what `make` would do if `$FILE` were modified, without actually doing anything.'
+
+<code>&nbsp;</code>   <code>&nbsp;</code> [`b`][make -&#98;] <code>&nbsp;</code> [`d`][make -&#100;] [`e`][make -&#101;] [`f`][make -&#102;] <code>&nbsp;</code> [`h`][make -&#104;] [`i`][make -&#105;] [`j`][make -&#106;] [`k`][make -&#107;] [`l`][make -&#108;] [`m`][make -&#109;] [`n`][make -&#110;] [`o`][make -&#111;] [`p`][make -&#112;] [`q`][make -&#113;] [`r`][make -&#114;] [`s`][make -&#115;] [`t`][make -&#116;] <code>&nbsp;</code> [`v`][make -&#118;] [`w`][make -&#119;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code>  <br><code>&nbsp;</code>&nbsp;<code>&nbsp;</code> [`B`][make -&#66;] [`C`][make -&#67;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`I`][make -&#73;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`S`][make -&#83;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`W`][make -&#87;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 
+
+A common formula when installing software from source is the following sequence of commands [<sup>ref</sup>](https://thoughtbot.com/blog/the-magic-behind-configure-make-make-install "thoughtbot.com: \"The magic behind configure, make, make install\"")
+```sh
+./configure
+make
+make install
+```
+Given there are 3 example files (main.cpp, message.cpp, and message.h) in a directory, it produces an executable file named `a.out`
+```sh
+g++ main.cpp message.cpp
+```
+But for large projects, with potentially thousands of files, this is impractical
+
+#### makefiles
+Makefiles are sensitive to whitespace, so indentation is significant. The format follows the pattern:
+```makefile
+{target}: {dependencies}
+  {action}
+```
+where `{target}` is the filename produced by the operation `{action}`, each of which are shell commands.
+
+For any changes in `main.o` and `message.o`, they will be recompiled into `output`, which is the executable. `g++ -c` will compile the code into an object file but not into a binary, creating `main.o`.
+```makefile
+output: main.o message.o
+  g++ main.o message.o -o output
+
+message.o: message.cpp message.h
+  g++ -c message.cpp
+  
+main.o: main.cpp
+  g++ -c main.cpp
+
+clean:
+  rm *.o output
+```
+  - 
+
+Execute the operations specified in the makefile (if executed a second time without any changes, it will produce a notification that there have been no changes):
+```sh
+make
+```
+Execute the `clean` section, removing files
+```sh
+make clean
+```
+
+Targets
+- `tinyconfig` smallest possible kernel configuration
+- `allnoconfig` answer no to every question when creating a config file
+
+#### configure script
+Responsible for preparing the software build, ensuring dependencies are available, such as a C compiler for C programs. `make` is invoked after the `configure` script has done its job. The __configure__ script converts a __Makefile.in__ template into a __Makefile__. They are not built by hand but packaged by yet another program in the __autotools__ suite, such as __autoconf__, __automake__, and others.
+
+A configure.ac file written in **m4sh** (a combination of m4 macros and shell script) is prepared. The first m4 macro called i __AC_INIT__, which initializes autoconf:
+```m4
+AC_INIT([helloworld], [0.1], [george@thoughtbot.com])
+```
+The __AM_INIT_AUTOMAKE__ macro is also called because we're using __automake__:
+```m4
+AM_INIT_AUTOMAKE
+```
+#### Other examples
+Recompile [mail.md#sendmail]
+```sh
+make -C/etc/mail
+```
+### `xgettext`
+[xgettext -&#97;]:              #xgettext                      '```&#10;$ xgettext -&#97;&#10;$ xgettext --extract-all&#10;```&#10;Extract all strings, not just those in calls to `gettext` or `dgettext` (applies to C, C++, Objective-C, Shell, Python, Lisp, EmacsLisp, librep, Scheme, Java, C#, awk, Tcl, Perl, PHP, GCC-source, and Glade)&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 234'
+[xgettext -&#99;]:              #xgettext                      '```&#10;$ xgettext -&#99; $TAG&#10;$ xgettext --add-comments $TAG&#10;```&#10;Copy source file comments marked with $TAG into the .po file as #-delimited comments&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 235'
+[xgettext -&#100;]:             #xgettext                      '```&#10;$ xgettext -&#100; $DOMAIN&#10;$ xgettext --default-domain $DOMAIN&#10;```&#10;Use $DOMAIN.po as the output file instead of messages.po&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 235'
+[xgettext -&#104;]:             #xgettext                      '```&#10;$ xgettext -&#104;&#10;$ xgettext --help&#10;```&#10;Print a help message on STDOUT&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 235'
+[xgettext -&#106;]:             #xgettext                      '```&#10;$ xgettext -&#106;&#10;$ xgettext --join-existing&#10;```&#10;Join (merge) extracted messages with those in the current .po file. Domain directives in the existing .po file are ignored&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 235'
+[xgettext -&#109;]:             #xgettext                      '```&#10;$ xgettext -&#109; $PREFIX&#10;$ xgettext --msgstr-prefix $PREFIX&#10;```&#10;Fill in each `msgstr` with $PREFIX. Intended for debugging.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 235'
+[xgettext -&#77;]:              #xgettext                      '```&#10;$ xgettext -&#77; $SUFFIX&#10;$ xgettext --mststr-suffix $SUFFIX&#10;```&#10;Fill in each `msgstr` with $SUFFIX. Intended for debugging.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 235'
+[xgettext -&#110;]:             #xgettext                      '```&#10;$ xgettext -&#110;&#10;$ xgettext --add-location&#10;```&#10;Add comments to the .po file indicating the source filename and line number where each string is used&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 235'
+[xgettext -&#112;]:             #xgettext                      '```&#10;$ xgettext -&#112; $PATH&#10;$ xgettext --output-dir $PATH&#10;```&#10;Place output files in the directory $PATH&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 235'
+[xgettext -&#115;]:             #xgettext                      '```&#10;$ xgettext -&#115;&#10;$ xgettext --sort-output&#10;```&#10;Sort the output by `msgid` (original string), with all duplicates removed.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 235'
+[xgettext -&#120;]:             #xgettext                      '```&#10;$ xgettext -&#120; $EXFILE&#10;$ xgettext --exclude-file $EXFILE&#10;```&#10;$EXFILE is a .po file with `msgid`s that are not to be extracted (and thus excluded).&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 235'
+
+<code>&nbsp;</code>   [`a`][xgettext -&#97;] <code>&nbsp;</code> [`c`][xgettext -&#99;] [`d`][xgettext -&#100;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`h`][xgettext -&#104;] <code>&nbsp;</code> [`j`][xgettext -&#106;] <code>&nbsp;</code> <code>&nbsp;</code> [`m`][xgettext -&#109;] [`n`][xgettext -&#110;] <code>&nbsp;</code> [`p`][xgettext -&#112;] <code>&nbsp;</code> <code>&nbsp;</code> [`s`][xgettext -&#115;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`x`][xgettext -&#120;] <code>&nbsp;</code> <code>&nbsp;</code>  <br><code>&nbsp;</code>&nbsp;<code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`M`][xgettext -&#77;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 
 
 ## File commands
 [chattr]:                      #chattr                         '```&#10;$ chattr&#10;```&#10;Change file attributes&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 311-312'
@@ -790,9 +946,7 @@ speaker-test -c 2
 **W** 
 [`whereis`][whereis] 
 [`which`][which] 
-Commands  | Options
----       | ---
-`ls`      | <code>&nbsp;</code>   [`a`][ls -&#97;] <code>&nbsp;</code> <code>&nbsp;</code> [`d`][ls -&#100;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`h`][ls -&#104;] [`i`][ls -&#105;] <code>&nbsp;</code> <code>&nbsp;</code> [`l`][ls -&#108;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`r`][ls -&#114;] <code>&nbsp;</code> [`t`][ls -&#116;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code>  <br><code>&nbsp;</code>&nbsp;<code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`F`][ls -&#70;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`S`][ls -&#83;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`Z`][ls -&#90;] 
+
 
 ### `exif`
 View image metadata. Unlike alternatives like `file` and ImageMagick's `identify`, `exif` produces columnar output [^][31]
@@ -816,6 +970,25 @@ Copy a file, setting permissions, owner, and group
 ```sh
 install --preserve-timestamp --owner=jdoe --group=sudoers --mode=753
 ```
+### `ls`
+[ls -&#97;]:                    #ls                            '```&#10;$ ls -a&#10;$ ls --all&#10;```&#10;List all files, including hidden files&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 131'
+[ls -&#100;]:                   #ls                            '```&#10;$ ls -d&#10;$ ls --directory&#10;```&#10;List directory name, not its contents&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 131'
+[ls -&#70;]:                    #ls                            '```&#10;$ ls -F&#10;$ ls --classify&#10;```&#10;Append a character to the end of the file to indicate its type. These characters include:&#10;  - `*`: executable file&#10;  - `/`: directory&#10;  - `@`: symbolic link&#10;&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 131'
+[ls -&#104;]:                   #ls                            '```&#10;$ ls -h&#10;```&#10;Human-readable output&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 131'
+[ls -&#105;]:                   #ls                            '```&#10;$ ls -i&#10;```&#10;Display inode value of each file&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 131'
+[ls -&#108;]:                   #ls                            '```&#10;$ ls -l&#10;```&#10;Display a long listing&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 131'
+[ls -&#114;]:                   #ls                            '```&#10;$ ls -r&#10;```&#10;Reverse the output order of the file listing&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 131'
+[ls -&#83;]:                    #ls                            '```&#10;$ ls -S&#10;```&#10;sort by file size&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 131'
+[ls -&#116;]:                   #ls                            '```&#10;$ ls -t&#10;```&#10;sort by modification time (newest first)&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 131'
+[ls -&#90;]:                    #ls                            '```&#10;$ ls -Z&#10;```&#10;Display SELinux context for files'
+[ls -&#65;]:                    #ls                            '```&#10;$ ls -A&#10;$ ls --almost-all&#10;```&#10;Like `-a`, but exclude `.` and `..`&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 129'
+[ls -&#98;]:                    #ls                            '```&#10;$ ls -b&#10;$ ls --escape&#10;```&#10;Show nonprinting characters in octal&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 129'
+[ls -&#99;]:                    #ls                            '```&#10;$ ls -c&#10;$ ls --time-ctime&#10;```&#10;List files by inode modification time&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 129'
+[ls -&#67;]:                    #ls                            '```&#10;$ ls -C&#10;$ ls --format=vertical&#10;```&#10;List files in columns&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 129'
+[ls -&#102;]:                   #ls                            '```&#10;$ ls -f&#10;```&#10;Interpret each `name` as a directory (files are ignored)&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 130'
+
+<code>&nbsp;</code>   [`a`][ls -&#97;] <code>&nbsp;</code> <code>&nbsp;</code> [`d`][ls -&#100;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`h`][ls -&#104;] [`i`][ls -&#105;] <code>&nbsp;</code> <code>&nbsp;</code> [`l`][ls -&#108;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`r`][ls -&#114;] <code>&nbsp;</code> [`t`][ls -&#116;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code>  <br><code>&nbsp;</code>&nbsp;<code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`F`][ls -&#70;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`S`][ls -&#83;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`Z`][ls -&#90;] 
+
 ### `lsof`
 Display open files, open network ports, and network connections [[23](sources.md)]
 
@@ -987,6 +1160,114 @@ Display all ports with attached types
 ```sh
 semanage port -l
 ```
+
+## Kernel
+
+### System calls
+<!-- Syscalls -->
+[chmod()]: #system-calls 'chmod&#10;change file access permissions&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 418'
+[chown()]: #system-calls 'chown&#10;change file ownership&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 418'
+[close()]: #system-calls 'close&#10;close a file&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 418'
+[creat()]: #system-calls 'creat&#10;create a new file&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 418'
+[exec()]: #system-calls 'exec&#10;overlay a program in memory with another&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 418'
+[exit()]: #system-calls 'exit&#10;cause a process to exit&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 418'
+[fork()]: #system-calls 'fork&#10;create a copy of a process&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 418'
+[getpid()]: #system-calls 'getpid&#10;return the PID of the calling process&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 418'
+[kill()]: #system-calls 'kill&#10;send a signal to a process&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 418'
+[lseek()]: #system-calls 'lseek&#10;move to a position in the file&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 418'
+[nice()]: #system-calls 'nice&#10;change the priority of a process&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 418'
+[open()]: #system-calls 'open&#10;open an existing file&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 418'
+[read()]: #system-calls 'read&#10;read a file&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 418'
+[stat()]: #system-calls 'stat&#10;Get status information from an inode, such as the inode number, device on which it is located, owner and group information, and the size of the file&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 418'
+[unlink()]: #system-calls 'unlink&#10;unlink a fie (delete a name reference to the inode)&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 418'
+[wait()]: #system-calls 'wait&#10;cause the parent process to wait for the child to finish running before it resumes execution&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 418'
+[write()]: #system-calls 'write&#10;write a file&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 418'
+
+**C** 
+[`chmod()`][chmod()] 
+[`chown()`][chown()] 
+[`close()`][close()] 
+[`creat()`][creat()] 
+**E** 
+[`exec()`][exec()] 
+[`exit()`][exit()] 
+**F** 
+[`fork()`][fork()] 
+**G** 
+[`getpid()`][getpid()] 
+**K** 
+[`kill()`][kill()] 
+**L** 
+[`lseek()`][lseek()] 
+**N** 
+[`nice()`][nice()] 
+**O** 
+[`open()`][open()] 
+**R** 
+[`read()`][read()] 
+**S** 
+[`stat()`][stat()] 
+**U** 
+[`unlink()`][unlink()] 
+**W** 
+[`wait()`][wait()] 
+[`write()`][write()] 
+
+### `dmesg`
+[dmesg -&#100;]:                #dmesg                         '```&#10;$ dmesg -d&#10;```&#10;Disable kernel messages from being sent to the console'
+[dmesg -&#101;]:                #dmesg                         '```&#10;$ dmesg -e&#10;$ dmesg --reltime&#10;```&#10;Enable kernel messages being sent to the console; display time in local time'
+
+<code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`d`][dmesg -&#100;] [`e`][dmesg -&#101;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 
+
+### `insmod`
+[insmod -&#115;]:               #insmod                        '```&#10;$ insmod -s&#10;```&#10;Direct output to `syslog` instead of STDOUT&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 16'
+[insmod -&#118;]:               #insmod                        '```&#10;$ insmod -v&#10;```&#10;Set verbose mode&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 16'
+
+<code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`s`][insmod -&#115;] <code>&nbsp;</code> <code>&nbsp;</code> [`v`][insmod -&#118;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 
+
+### `ldconfig`
+[ldconfig -&#80;]:              #ldconfig                      '```&#10;$ ldconfig -P&#10;```&#10;Display the contents of the current cache instead of recreating it&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 45'
+[ldconfig -&#118;]:             #ldconfig                      '```&#10;$ ldconfig -v&#10;```&#10;Verbose output&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 45'
+[ldconfig -&#99;]:              #ldconfig                      '```&#10;$ ldconfig -c&#10;```&#10;Change location of cache to be updated'
+[ldconfig -&#112;]:             #ldconfig                      '```&#10;$ ldconfig -p&#10;```&#10;Print current directories and libraries in cache'
+[ldconfig -&#118;]:             #ldconfig                      '```&#10;$ ldconfig -v&#10;```&#10;Display all shared libraries'
+
+<code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`c`][ldconfig -&#99;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`p`][ldconfig -&#112;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`v`][ldconfig -&#118;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 
+
+### `lsmod`
+[lsmod -&#104;]:                #lsmod                         '```&#10;$ lsmod -h&#10;$ lsmod --help&#10;```&#10;Display help information&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 13'
+[lsmod -&#86;]:                 #lsmod                         '```&#10;$ lsmod -V&#10;$ lsmod --version&#10;```&#10;Display the version&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 13'
+
+<code>&nbsp;</code>   <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`h`][lsmod -&#104;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code>  <br><code>&nbsp;</code>&nbsp;<code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`V`][lsmod -&#86;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 
+
+### `modinfo`
+[modinfo -&#97;]:               #modinfo                       '```&#10;$ modinfo -a&#10;```&#10;Display the author of the module&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 17'
+[modinfo -&#100;]:              #modinfo                       '```&#10;$ modinfo -d&#10;```&#10;Display the description of the module&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 17'
+[modinfo -&#112;]:              #modinfo                       '```&#10;$ modinfo -p&#10;```&#10;Display the typed parameters that a module supports&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 17'
+
+<code>&nbsp;</code> [`a`][modinfo -&#97;] <code>&nbsp;</code> <code>&nbsp;</code> [`d`][modinfo -&#100;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`p`][modinfo -&#112;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 
+
+### `modprobe`
+[modprobe -&#97;]:              #modprobe                      '```&#10;$ modprobe -a&#10;```&#10;Load all modules&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 18'
+[modprobe -&#99;]:              #modprobe                      '```&#10;$ modprobe -c&#10;$ modprobe --showconfig&#10;```&#10;Display a complete module configuration, including defaults and directives found in /etc/modules.conf&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 19'
+[modprobe -&#108;]:             #modprobe                      '```&#10;$ modprobe -l&#10;```&#10;List modules&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 19'
+[modprobe -&#114;]:             #modprobe                      '```&#10;$ modprobe -r&#10;$ modprobe --remove&#10;```&#10;Remove `$MODULE`, similar to `rmmod`.&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 19'
+[modprobe -&#115;]:             #modprobe                      '```&#10;$ modprobe -s&#10;```&#10;Direct output to `syslog` instead of STDOUT&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 19'
+[modprobe -&#116;]:             #modprobe                      '```&#10;$ modprobe -t $MODULETYPE&#10;```&#10;Attempt to load multiple modules found in `$MODULETYPE` until a module success or all modules in `$MODULETYPE` are exhausted.&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 19'
+[modprobe -&#118;]:             #modprobe                      '```&#10;$ modprobe -v&#10;```&#10;Verbose output&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 19'
+[modprobe -&#82;]:              #modprobe                      '```&#10;$ modprobe -R&#10;$ modprobe --resolve-alias&#10;```&#10;Display all modules that match an alias'
+[modprobe --show-depends]:                    #modprobe                      '```&#10;$ modprobe --show-depends&#10;```&#10;Show dependencies of the kernel module'
+[modprobe -&#113;]:             #modprobe                      '```&#10;$ modprobe -q&#10;```&#10;Quiet mode&#10;Rothwell, William. _CompTIA Linux+/LPIC-1 Portable Command guide_.: 3'
+
+<code>&nbsp;</code>   [`a`][modprobe -&#97;] <code>&nbsp;</code> [`c`][modprobe -&#99;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`l`][modprobe -&#108;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`q`][modprobe -&#113;] [`r`][modprobe -&#114;] [`s`][modprobe -&#115;] [`t`][modprobe -&#116;] <code>&nbsp;</code> [`v`][modprobe -&#118;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code>  <br><code>&nbsp;</code>&nbsp;<code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`R`][modprobe -&#82;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 
+
+### `rmmod`
+[rmmod -&#97;]:                 #rmmod                         '```&#10;$ rmmod -a&#10;```&#10;Remove all unused modules&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 17'
+[rmmod -&#115;]:                #rmmod                         '```&#10;$ rmmod -s&#10;```&#10;Direct output to `syslog` instead of STDOUT&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 17'
+[rmmod -&#119;]:                #rmmod                         '```&#10;$ rmmod -w&#10;```&#10;Wait until a module is no longer in use before unloading'
+
+<code>&nbsp;</code> [`a`][rmmod -&#97;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`s`][rmmod -&#115;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`w`][rmmod -&#119;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 
+
 ## Commands
 ### `adduser`
 ### `apropos`

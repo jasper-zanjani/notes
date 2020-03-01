@@ -7,6 +7,8 @@
 [https://www.linuxjournal.com/content/ansible-part-iv-putting-it-all-together]: https://www.linuxjournal.com/content/ansible-part-iv-putting-it-all-together "Ansible, Part IV: Putting it all together"
 [https://opensource.com/article/19/8/ops-tasks-ansible]: https://opensource.com/article/19/8/ops-tasks-ansible "5 ops tasks to do with Ansible"
 [https://www.tecmint.com/understand-core-components-of-ansible/]: https://www.tecmint.com/understand-core-components-of-ansible/ '"Understand Core Components of Ansible - Part 1" _TecMint_'
+[https://www.digitalocean.com/community/cheatsheets/how-to-use-ansible-cheat-sheet-guide]: https://www.digitalocean.com/community/cheatsheets/how-to-use-ansible-cheat-sheet-guide 'Erika Heidi". How to Use Ansible: A Reference Guide". Digital Ocean: 06/05/2019.'
+[My playbook]: https://github.com/jasper-zanjani/ansible/tree/master/playbooks/packages.yaml "The packages I install"
 
 [/etc/ansible/hosts]: #etcansiblehosts '/etc/ansible/hosts&#10;Ansible hosts file, defining the clients which are to be controlled by the server'
 
@@ -25,10 +27,7 @@
 [Playbook]:                   # 'Playbook&#10;YAML document that represents a sequence of scripted actions which apply changes uniformly over a set of hosts'
 [Role]:                       #roles 'Role&#10;Organize components of playbooks, allowing them to be reused'
 [Task]:                       # 'Task&#10;A single scripted action in a playbook, equivalent to an ad hoc command'
-
-[ansible -&#97;]:               #ansible                       '```&#10;$ ansible -&#97;&#10;```&#10;Specify arguments to module'
-[ansible -&#98;]:               #ansible                       '```&#10;$ ansible -&#98;&#10;```&#10;Elevate privileges by becoming the root user'
-[ansible -&#109;]:              #ansible                       '```&#10;$ ansible -&#109; $MODULE&#10;```&#10;Specify module to be executed'
+[Vault]: # 'Vault&#10;Feature of Ansible that allows you to keep sensitive data such as passwords or keys protected at rest, rather than as plaintext in playbooks or roles&#10;Two types of vaulted content:&#10;  - Vaulted files, where the full file, which can contain Ansible variables or other content, is encrypted.&#10;  - Single encrypted variables, where only specific variables within a normal "variable file" are encrypted.&#10;"Using Vault in playbooks". Ansible documentation. '
 
 # Ansible
 Ansible is an automation tool used for configuration management using human-readable YAML templates. Ansible is distinguished for being **agentless**, meaning no special software is required on the nodes it manages.
@@ -69,6 +68,8 @@ There are several areas where Ansible can be used in personal projects for learn
 [Role][Role] 
 **T** 
 [Task][Task]
+**V**
+[Vault][Vault]
 
 #### Commands
 [`ansible`](#ansible-command) 
@@ -154,8 +155,30 @@ Ansible can be used in one of two ways:
 1. Running **ad hoc** commands, that is commands executed in realtime by an administrator working at the terminal, using the [ `ansible` ](#ansible) command.
 2. Running **playbooks**, YAML documents containing **tasks** each of which are equivalent to a single ad hoc command, using the [ `ansible-playbook` ](#ansible-playbook) command. Any ad hoc command can be rewritten as a playbook, but some modules can only be used effectively as playbooks.
 
+Playbooks, in turn, can be written in **two** styles:
+1. Using "`k=v`" syntax, where keys and values are defined inline
+```yaml
+tasks:
+  - name: Install htop
+    dnf: name=htop state=latest
+```
+2. Using proper YAML syntax
+```yaml
+tasks:
+  - name: Install htop
+    dnf:
+      name: htop
+      state: latest
+```
+
+
 ### `ansible` command
-<code>&nbsp;</code> [`a`][ansible -&#97;] [`b`][ansible -&#98;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`m`][ansible -&#109;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 
+[ansible -&#97;]:               #ansible                       '```&#10;$ ansible -&#97;&#10;```&#10;Specify arguments to module'
+[ansible -&#98;]:               #ansible                       '```&#10;$ ansible -&#98;&#10;```&#10;Elevate privileges by becoming the root user'
+[ansible -&#109;]:              #ansible                       '```&#10;$ ansible -&#109; $MODULE&#10;```&#10;Specify module to be executed'
+[ansible --ask-become-pass]:    #ansible                       '```&#10;$ ansible --ask-become-pass&#10;```&#10;Prompt to provide the `sudo` password&#10;Erika Heidi". How to Use Ansible: A Reference Guide". Digital Ocean: 06/05/2019.'
+
+<code>&nbsp;</code> [`a`][ansible -&#97;] [`b`][ansible -&#98;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`m`][ansible -&#109;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <br> [`ask-become-pass`][ansible --ask-become-pass]
 
 The `ansible` command is only used for running **ad hoc** commands,  Modules are called as arguments passed to the `-m` option. 
 ```sh
@@ -169,7 +192,10 @@ Install `htop` on the localhost
 ```sh
 ansible localhost -b -m package -a "name=htop"
 ```
-### `ansible-galaxy`
+Use `--ask-become-pass` to interactively prompt for `sudo` password [<sup>ref</sup>][https://www.digitalocean.com/community/cheatsheets/how-to-use-ansible-cheat-sheet-guide]
+```sh
+ansible localhosst -b -m dnf -a "name=vim-enhanced state=latest' --ask-become-pass
+``` ### `ansible-galaxy`
 Search for roles [<sup>ref</sup>][https://www.linuxjournal.com/content/ansible-part-iv-putting-it-all-together]
 ```sh
 ansible-galaxy search $ROLE
@@ -476,6 +502,15 @@ ansible $CLIENT -b -m setup
 Filter results to `ansible_os_family`, which indicates if the OS is Debian or Red Hat [<sup>ref</sup>][https://www.linuxjournal.com/content/ansible-making-things-happen] [<sup>ref</sup>][https://www.tecmint.com/understand-core-components-of-ansible/]
 ```sh
 ansible $CLIENT -b -m setup -a "filter=*family*"
+```
+#### `snap` module
+Install VS Code [<sup>ref</sup>][My playbook]
+```yaml
+- name: Install VS Code
+  snap:
+    name: code
+    state: present
+    classic: yes   
 ```
 #### `template` module
 Works similar to mail merge in a word processor. Ansible uses the Jinja2 templating language, which has a syntax similar to Ansible variable substitution. [<sup>ref</sup>][https://www.linuxjournal.com/content/ansible-part-iii-playbooks]

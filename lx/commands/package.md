@@ -87,22 +87,22 @@
 [rpm --test]:                   #rpm                           '```&#10;$ rpm --test&#10;```&#10;Runs through all the motions except for actually writing files; useful to verify that a package will install correctly prior to making the attempt&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 54'
 
 <!-- `yum` commands -->
-[yum clean all]:                package.md#yum                 '```&#10;$ yum clean all&#10;```&#10;Clear cache'
-[yum erase]:                    package.md#yum                 '```&#10;$ yum erase $PACKAGE&#10;```&#10;Remove package as well as the cached package'
-[yum groupinstall]:             package.md#yum                 '```&#10;$ yum groupinstall $GROUP&#10;```&#10;Install package group'
-[yum groupremove]:              package.md#yum                 '```&#10;$ yum groupremove $GROUP&#10;```&#10;Remove package group'
-[yum history]:                  package.md#yum                 '```&#10;$ yum history&#10;```&#10;View command history'
-[yum info]:                     package.md#yum                 '```&#10;$ yum info $PACKAGE&#10;```&#10;Query repos for information on `$PACKAGE`'
-[yum install]:                  package.md#yum                 '```&#10;$ yum install $PACKAGE&#10;```&#10;Install package'
-[yum list]:                     package.md#yum                 '```&#10;$ yum list&#10;```&#10;List all available packages in database'
-[yum list installed]:           package.md#yum                 '```&#10;$ yum list installed&#10;```&#10;List all installed packages'
-[yum provides]:                 package.md#yum                 '```&#10;$ yum provides $FILE&#10;```&#10;Find what package a configuration `$FILE` belongs to'
-[yum remove]:                   package.md#yum                 '```&#10;$ yum remove $PACKAGE&#10;```&#10;Remove package'
-[yum repolist]:                 package.md#yum                 '```&#10;$ yum repolist&#10;```&#10;Display repositories'
-[yum repolist all]:             package.md#yum                 '```&#10;$ yum repolist all&#10;```&#10;Display both enabled and disabled repositories'
-[yum search]:                   package.md#yum                 '```&#10;$ yum search $PATTERN&#10;```&#10;Search for package name matching `$PATTERN`'
-[yum shell]:                    package.md#yum                 '```&#10;$ yum shell&#10;```&#10;Interactive shell'
-[yum update]:                   package.md#yum                 '```&#10;$ yum update&#10;```&#10;Upgrade installed packages'
+[yum clean all]:                #yum                 '```&#10;$ yum clean all&#10;```&#10;Clear cache'
+[yum erase]:                    #yum                 '```&#10;$ yum erase $PACKAGE&#10;```&#10;Remove package as well as the cached package'
+[yum groupinstall]:             #yum                 '```&#10;$ yum groupinstall $GROUP&#10;```&#10;Install package group'
+[yum groupremove]:              #yum                 '```&#10;$ yum groupremove $GROUP&#10;```&#10;Remove package group'
+[yum history]:                  #yum                 '```&#10;$ yum history&#10;```&#10;View command history'
+[yum info]:                     #yum                 '```&#10;$ yum info $PACKAGE&#10;```&#10;Query repos for information on `$PACKAGE`'
+[yum install]:                  #yum                 '```&#10;$ yum install $PACKAGE&#10;```&#10;Install package'
+[yum list]:                     #yum                 '```&#10;$ yum list&#10;```&#10;List all available packages in database'
+[yum list installed]:           #yum                 '```&#10;$ yum list installed&#10;```&#10;List all installed packages'
+[yum provides]:                 #yum                 '```&#10;$ yum provides $FILE&#10;```&#10;Find what package a configuration `$FILE` belongs to'
+[yum remove]:                   #yum                 '```&#10;$ yum remove $PACKAGE&#10;```&#10;Remove package'
+[yum repolist]:                 #yum                 '```&#10;$ yum repolist&#10;```&#10;Display repositories'
+[yum repolist all]:             #yum                 '```&#10;$ yum repolist all&#10;```&#10;Display both enabled and disabled repositories'
+[yum search]:                   #yum                 '```&#10;$ yum search $PATTERN&#10;```&#10;Search for package name matching `$PATTERN`'
+[yum shell]:                    #yum                 '```&#10;$ yum shell&#10;```&#10;Interactive shell'
+[yum update]:                   #yum                 '```&#10;$ yum update&#10;```&#10;Upgrade installed packages'
 
 # Linux package management commands
 Command | Options
@@ -220,75 +220,6 @@ gem uninstall package
 Update `$PACKAGE`
 ```sh
 gem update package
-```
-### `make`
-[make -b]:                                            #make                                              '```&#10;$ make -b&#10;```&#10;Silently accepted, but ignored, for compatibility with other versions of `make`'
-[make -B]:                                            #make                                              '```&#10;$ make -B&#10;$ make --always-make&#10;```&#10;Treat all targets as out of date. All targets are remade, no matter what the actual status is of their prerequisites'
-
-A common formula when installing software from source is the following sequence of commands [^](https://thoughtbot.com/blog/the-magic-behind-configure-make-make-install "thoughtbot.com: \"The magic behind configure, make, make install\"")
-```sh
-./configure
-make
-make install
-```
-Given there are 3 example files (main.cpp, message.cpp, and message.h) in a directory, it produces an executable file named `a.out`
-```sh
-g++ main.cpp message.cpp
-```
-But for large projects, with potentially thousands of files, this is impractical
-
-#### makefiles
-Makefiles are sensitive to whitespace, so indentation is significant. The format follows the pattern:
-```makefile
-{target}: {dependencies}
-  {action}
-```
-where `{target}` is the filename produced by the operation `{action}`, each of which are shell commands.
-
-For any changes in `main.o` and `message.o`, they will be recompiled into `output`, which is the executable. `g++ -c` will compile the code into an object file but not into a binary, creating `main.o`.
-```makefile
-output: main.o message.o
-  g++ main.o message.o -o output
-
-message.o: message.cpp message.h
-  g++ -c message.cpp
-  
-main.o: main.cpp
-  g++ -c main.cpp
-
-clean:
-  rm *.o output
-```
-  - 
-
-Execute the operations specified in the makefile (if executed a second time without any changes, it will produce a notification that there have been no changes):
-```sh
-make
-```
-Execute the `clean` section, removing files
-```sh
-make clean
-```
-
-Targets
-- `tinyconfig` smallest possible kernel configuration
-- `allnoconfig` answer no to every question when creating a config file
-
-#### configure script
-Responsible for preparing the software build, ensuring dependencies are available, such as a C compiler for C programs. `make` is invoked after the `configure` script has done its job. The __configure__ script converts a __Makefile.in__ template into a __Makefile__. They are not built by hand but packaged by yet another program in the __autotools__ suite, such as __autoconf__, __automake__, and others.
-
-A configure.ac file written in **m4sh** (a combination of m4 macros and shell script) is prepared. The first m4 macro called i __AC_INIT__, which initializes autoconf:
-```m4
-AC_INIT([helloworld], [0.1], [george@thoughtbot.com])
-```
-The __AM_INIT_AUTOMAKE__ macro is also called because we're using __automake__:
-```m4
-AM_INIT_AUTOMAKE
-```
-#### Other examples
-Recompile [mail.md#sendmail]
-```sh
-make -C/etc/mail
 ```
 ### `pacman`
 Option  | POSIX option            | Effect
