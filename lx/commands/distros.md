@@ -2,49 +2,20 @@
 [ADP 57]: ../sources/README.md#adp-57 "Azure DevOps Podcast 57: \"Craig Loewen on the Windows Subsystem for Linux story\""
 [LXF 258]: https://www.linuxformat.com/archives?issue=258 '"Linux distribution reviews: Clear Linux 31530" _Linux Format_ 258'
 
-<!-- Definitions -->
+# Linux distributions
 [Alpine Linux]: #alpine-linux "Security-oriented, lightweight Linux distribution used in containers and hardware."
 [Clear Linux]: #clear-linux "Rolling release distro from Intel with a custom package management system based on **bundles**, collections of packages that contain everything an application requires, including dependencies. Clear's update process also has the ability to do **delta downloads**, preserving bandwidth. It does not provide access with unusual licenses, like ZFS, Chrome, or FFmpeg."
 [Fedora CoreOS]: #fedora-coreos "Fedora edition built for running containerized workloads securely and at scale. CoreOS systems are meant to be immutable, meaning they are only configured through the provisioning process and not modified in-place."
 [WSL]: #windows-subsystem-for-linux "Linux virtual machine shipped with Windows with the ability to install several different distros."
 
-<!-- Kali Linux -->
-[Aircrack-ng]: #kali-linux 'Aircrack-ng&#10;Monitor and compromise WiFi networks'
-[BeEF]: #kali-linux 'BeEF&#10;Assess security of a web browser'
-[Apktool]: #kali-linux 'Apktool&#10;Reverse engineer Android apps'
-[AFB]: #kali-linux 'Autopsy Forensic Browser (AFB)&#10;Digital forensics'
-[Burp Suite Scanner]: #kali-linux 'Burp Suite Scanner&#10;GUI-based web application security scanner'
-[Hydra]: #kali-linux 'Hydra&#10;Crack login/password pairs'
-[John the Ripper]: #kali-linux 'John the Ripper&#10;Crack passwords'
-[King Phisher]: #kali-linux 'King Phisher&#10;Simulate phishing attacks'
-[Lynis]: #kali-linux 'Lynis&#10;Security auditing, compliance testing'
-[Maltego]: #kali-linux 'Maltego&#10;Data mining'
-[Metasploit Framework]: #kali-linux 'Metasploit Framework&#10;Penetration testing framework'
-[Nessus]: #kali-linux 'Nessus&#10;Paid tool to find vulnerabilities'
-[Nikto]: #kali-linux 'Nikto&#10;Web server scanner'
-[SET]: #kali-linux 'Social Engineering Toolkit (SET)'
-[Skipfish]: #kali-linux 'Skipfish&#10;Web application scanner'
-[Snort]: #kali-linux 'Snort&#10;Traffic analysis and packet logging'
-[Sqlmap]: #kali-linux 'Sqlmap&#10;Exploit SQL injection flaws'
-[Wireshark]: #kali-linux 'Wireshark&#10;Network analyzer'
-[WPScan]: #kali-linux 'WPScan&#10;WordPress security auditing tool'
-[Yersinia]: #kali-linux 'Yersinia&#10;Perform Layer 2 attacks'
-
-<!-- Windows Subsystem for Linux-->
-[DrvFs]: #windows-subsystem-for-linux 'DrvFs&#10;Filesystem plugin to WSL that was designed to support interoperability between WSL and the Windows filesystem. DrvFs enables WSL to mount drives with supported file systems under /mnt, such as /mnt/c, /mnt/d, etc. &#10;"Chmod/Chown WSL Improvements". _Windows Command Line_. Microsoft: 01/12/2018.'
-[lxss.sys]: #windows-subsystem-for-linux 'LXSS Manager service (lxss.sys)&#10;One of the WSL "pico drivers" that translates Linux syscalls to equivalent Windows NT calls. Where there is no reasonable mapping, lxss.sys must service the request directly.&#10;"WSL System calls". _Windows Subsystem for Linux_. Microsoft.'
-[pico driver]: #windows-subsystem-for-linux 'pico driver&#10;Reference to lsxx.sys and lxcore.sys in WSL, responsible for handling Linux syscall requests in coordination with the NT kernel.&#10;"WSL System calls". _Windows Subsystem for Linux_. Microsoft.'
-[VFS]: #windows-subsystem-for-linux 'Virtual File System (VFS)&#10;Abstraction of file system operations used by WSL, which provides an interface for user mode programs to interact with the file system and an interface that file systems have to implement.&#10;"WSL File System Support". _Windows Subsystem for Linux_. Microsoft: 06/15/2016.'
-[VolFs]: #windows-subsystem-for-linux 'VolFs&#10;The primary file system used by WSL, which is used to store the Linux system files and the contents of the home directory.&#10;VolFs supports most features the Linux VFS provides, including Linux permissions, symbolic links, FIFOs, sockets, and device files.&#10;"WSL File System Support". _Windows Subsystem for Linux_. Microsoft: 06/15/2016.'
-
-# Linux distributions
-#### Distros
 **A** 
 [Alpine Linux][Alpine Linux] 
 [Arch Linux](#arch-linux) 
 **C** 
 [Clear Linux][Clear Linux] 
 [CoreOS][Fedora CoreOS] 
+**F** 
+[Fedora](#fedora)
 **K** 
 [Kali Linux](#kali-linux) 
 **W** 
@@ -193,7 +164,29 @@ Rolling release distro from Intel with a custom package management system based 
 
 CoreOS systems are meant to be **immutable infrastructure**, meaning they are only configured through the provisioning process and not modified in-place. All systems start with a generic OS image, but on first boot it uses a system called **Ignition** to read an **Ignition config** (which is converted from a **Fedora CoreOS Config** file) from the cloud or a remote URL, by which it provisions itself, creating disk partitions, file systems, users, etc.\
 CoreOS automatically installs upgrades automatically without user intervention, although they can be stopped if a problem is found.
+
 ## Kali Linux
+[Aircrack-ng]: #kali-linux 'Aircrack-ng&#10;Monitor and compromise WiFi networks'
+[BeEF]: #kali-linux 'BeEF&#10;Assess security of a web browser'
+[Apktool]: #kali-linux 'Apktool&#10;Reverse engineer Android apps'
+[AFB]: #kali-linux 'Autopsy Forensic Browser (AFB)&#10;Digital forensics'
+[Burp Suite Scanner]: #kali-linux 'Burp Suite Scanner&#10;GUI-based web application security scanner'
+[Hydra]: #kali-linux 'Hydra&#10;Crack login/password pairs'
+[John the Ripper]: #kali-linux 'John the Ripper&#10;Crack passwords'
+[King Phisher]: #kali-linux 'King Phisher&#10;Simulate phishing attacks'
+[Lynis]: #kali-linux 'Lynis&#10;Security auditing, compliance testing'
+[Maltego]: #kali-linux 'Maltego&#10;Data mining'
+[Metasploit Framework]: #kali-linux 'Metasploit Framework&#10;Penetration testing framework'
+[Nessus]: #kali-linux 'Nessus&#10;Paid tool to find vulnerabilities'
+[Nikto]: #kali-linux 'Nikto&#10;Web server scanner'
+[SET]: #kali-linux 'Social Engineering Toolkit (SET)'
+[Skipfish]: #kali-linux 'Skipfish&#10;Web application scanner'
+[Snort]: #kali-linux 'Snort&#10;Traffic analysis and packet logging'
+[Sqlmap]: #kali-linux 'Sqlmap&#10;Exploit SQL injection flaws'
+[Wireshark]: #kali-linux 'Wireshark&#10;Network analyzer'
+[WPScan]: #kali-linux 'WPScan&#10;WordPress security auditing tool'
+[Yersinia]: #kali-linux 'Yersinia&#10;Perform Layer 2 attacks'
+
 
 \#    | Pentesting tools [^](https://itsfoss.com/best-kali-linux-tools/ "ItsFOSS: \"21 Best Kali Linux Tools for Hacking and Penetration Testing\"")
 ---   | ---
@@ -208,7 +201,15 @@ N     | [Nikto][Nikto]
 S     | [SET][SET] [Skipfish][Skipfish] [Snort][Snort] [sqlmap][Sqlmap]
 W     | [Wireshark][Wireshark] [WPScan][WPScan]
 Y     | [Yersinia][Yersinia]
+
 ## Windows Subsystem for Linux
+[DrvFs]: #windows-subsystem-for-linux 'DrvFs&#10;Filesystem plugin to WSL that was designed to support interoperability between WSL and the Windows filesystem. DrvFs enables WSL to mount drives with supported file systems under /mnt, such as /mnt/c, /mnt/d, etc. &#10;"Chmod/Chown WSL Improvements". _Windows Command Line_. Microsoft: 01/12/2018.'
+[lxss.sys]: #windows-subsystem-for-linux 'LXSS Manager service (lxss.sys)&#10;One of the WSL "pico drivers" that translates Linux syscalls to equivalent Windows NT calls. Where there is no reasonable mapping, lxss.sys must service the request directly.&#10;"WSL System calls". _Windows Subsystem for Linux_. Microsoft.'
+[pico driver]: #windows-subsystem-for-linux 'pico driver&#10;Reference to lsxx.sys and lxcore.sys in WSL, responsible for handling Linux syscall requests in coordination with the NT kernel.&#10;"WSL System calls". _Windows Subsystem for Linux_. Microsoft.'
+[VFS]: #windows-subsystem-for-linux 'Virtual File System (VFS)&#10;Abstraction of file system operations used by WSL, which provides an interface for user mode programs to interact with the file system and an interface that file systems have to implement.&#10;"WSL File System Support". _Windows Subsystem for Linux_. Microsoft: 06/15/2016.'
+[VolFs]: #windows-subsystem-for-linux 'VolFs&#10;The primary file system used by WSL, which is used to store the Linux system files and the contents of the home directory.&#10;VolFs supports most features the Linux VFS provides, including Linux permissions, symbolic links, FIFOs, sockets, and device files.&#10;"WSL File System Support". _Windows Subsystem for Linux_. Microsoft: 06/15/2016.'
+
+
 **Windows Subsystem for Linux (WSL)** is shipped with Windows and tied to the Windows release cycle. Windows ships from a single massive codebase, of which WSL is part. WSL was written mostly in C and and has 3 million monthly active users. [<sup>ADP 57</sup>][ADP 57]
 #### Concepts
 **D** 
@@ -227,19 +228,7 @@ In version 1, WSL worked under a **translation architecture** where system calls
 
 WSL v1 is available on Azure VMs if **nested virtualization** is enabled. WSL2 support is forthcoming.
 
-## GNOME
-Read: "How to type emoji in Linux". [opensource.com](https://opensource.com/article/19/10/how-type-emoji-linux)
-### `gconf-editor`
-GUI-based configuration editor for GNOME
-### `gsettings`
-Change function of Caps Lock key [^](https://superuser.com/questions/1196241/how-to-remap-caps-lock-on-wayland 'superuser.com - "How to remap CAPS LOCK on Wayland"')
-```sh
-gsettings set org.gnome.desktop.input-sources xkb-options "['caps:ctrl_modifier']"
-```
-Change mouse cursor size to `$SIZE`, which can be one of the values 24 (default), 32, 48, 64, or 96. [^](https://vitux.com/how-to-change-cursor-size-on-ubuntu-desktop/ "vitux.com: \"Change cursor size on Ubuntu through the command line\"")
-```sh
-gsettings set org.gnome.desktop.interface $SIZE
-```
+
 ## Mac OS X
 ### iterm2
 iterm2 can be configure as a **Guake**-style dropdown terminal:
@@ -264,22 +253,7 @@ Option  | Effect
 `-T $SECONDS` | take screenshot after `$SECONDS`
 `-t $FORMAT`  | specify file `$FORMAT` (png by default)
 `-x`    | take screenshot without shutter sound
-## Fedora
-Repos added
-- RPM Fusion
-  - `https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-31.noarch.rpm`
-  - `https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-free-release-31.noarch.rpm`
 
-Packages added:
-- `snap`
-- `breeze-cursor-theme`
-- `f30-backgrounds-gnome` .. `f20-backgrounds-gnome`
-
-Keyboard shortcuts:
-- M+Enter: `terminal-gnome`
-- M+F1, F2... workspaces
-
-Icons: `Qogir`
 ## KDE
 #### Appearance
 - __Colors__ affects the appearance of text

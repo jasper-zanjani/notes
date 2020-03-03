@@ -87,24 +87,60 @@
 [rpm --test]:                   #rpm                           '```&#10;$ rpm --test&#10;```&#10;Runs through all the motions except for actually writing files; useful to verify that a package will install correctly prior to making the attempt&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 54'
 
 <!-- `yum` commands -->
-[yum clean all]:                package.md#yum                 '```&#10;$ yum clean all&#10;```&#10;Clear cache'
-[yum erase]:                    package.md#yum                 '```&#10;$ yum erase $PACKAGE&#10;```&#10;Remove package as well as the cached package'
-[yum groupinstall]:             package.md#yum                 '```&#10;$ yum groupinstall $GROUP&#10;```&#10;Install package group'
-[yum groupremove]:              package.md#yum                 '```&#10;$ yum groupremove $GROUP&#10;```&#10;Remove package group'
-[yum history]:                  package.md#yum                 '```&#10;$ yum history&#10;```&#10;View command history'
-[yum info]:                     package.md#yum                 '```&#10;$ yum info $PACKAGE&#10;```&#10;Query repos for information on `$PACKAGE`'
-[yum install]:                  package.md#yum                 '```&#10;$ yum install $PACKAGE&#10;```&#10;Install package'
-[yum list]:                     package.md#yum                 '```&#10;$ yum list&#10;```&#10;List all available packages in database'
-[yum list installed]:           package.md#yum                 '```&#10;$ yum list installed&#10;```&#10;List all installed packages'
-[yum provides]:                 package.md#yum                 '```&#10;$ yum provides $FILE&#10;```&#10;Find what package a configuration `$FILE` belongs to'
-[yum remove]:                   package.md#yum                 '```&#10;$ yum remove $PACKAGE&#10;```&#10;Remove package'
-[yum repolist]:                 package.md#yum                 '```&#10;$ yum repolist&#10;```&#10;Display repositories'
-[yum repolist all]:             package.md#yum                 '```&#10;$ yum repolist all&#10;```&#10;Display both enabled and disabled repositories'
-[yum search]:                   package.md#yum                 '```&#10;$ yum search $PATTERN&#10;```&#10;Search for package name matching `$PATTERN`'
-[yum shell]:                    package.md#yum                 '```&#10;$ yum shell&#10;```&#10;Interactive shell'
-[yum update]:                   package.md#yum                 '```&#10;$ yum update&#10;```&#10;Upgrade installed packages'
+[yum clean all]:                #yum                 '```&#10;$ yum clean all&#10;```&#10;Clear cache'
+[yum erase]:                    #yum                 '```&#10;$ yum erase $PACKAGE&#10;```&#10;Remove package as well as the cached package'
+[yum groupinstall]:             #yum                 '```&#10;$ yum groupinstall $GROUP&#10;```&#10;Install package group'
+[yum groupremove]:              #yum                 '```&#10;$ yum groupremove $GROUP&#10;```&#10;Remove package group'
+[yum history]:                  #yum                 '```&#10;$ yum history&#10;```&#10;View command history'
+[yum info]:                     #yum                 '```&#10;$ yum info $PACKAGE&#10;```&#10;Query repos for information on `$PACKAGE`'
+[yum install]:                  #yum                 '```&#10;$ yum install $PACKAGE&#10;```&#10;Install package'
+[yum list]:                     #yum                 '```&#10;$ yum list&#10;```&#10;List all available packages in database'
+[yum list installed]:           #yum                 '```&#10;$ yum list installed&#10;```&#10;List all installed packages'
+[yum provides]:                 #yum                 '```&#10;$ yum provides $FILE&#10;```&#10;Find what package a configuration `$FILE` belongs to'
+[yum remove]:                   #yum                 '```&#10;$ yum remove $PACKAGE&#10;```&#10;Remove package'
+[yum repolist]:                 #yum                 '```&#10;$ yum repolist&#10;```&#10;Display repositories'
+[yum repolist all]:             #yum                 '```&#10;$ yum repolist all&#10;```&#10;Display both enabled and disabled repositories'
+[yum search]:                   #yum                 '```&#10;$ yum search $PATTERN&#10;```&#10;Search for package name matching `$PATTERN`'
+[yum shell]:                    #yum                 '```&#10;$ yum shell&#10;```&#10;Interactive shell'
+[yum update]:                   #yum                 '```&#10;$ yum update&#10;```&#10;Upgrade installed packages'
 
 # Linux package management commands
+Command | Options
+---     | ---
+`make` | <code>&nbsp;</code> [`b`][make -b] <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code> <br>  <code>&nbsp;</code>  [`B`][make -B]  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code>  <code>&nbsp;</code> 
+
+
+### `apt`
+Upgrade distribution
+```sh
+apt dist-upgrade
+```
+Install local {file} as a package
+```sh
+apt install file
+```
+Install {package}
+```sh
+apt install package
+```
+Search for packages matching {searchexpression}
+```sh
+apt list pattern
+```
+Remove {package}
+```sh
+apt remove package
+```
+Update package database
+```sh
+apt update
+```
+Upgrade all packages
+```sh
+apt upgrade
+```
+### `apt-cache`
+Display package information regarding package cache
 
 &nbsp;  | Commands
 ---     | ---

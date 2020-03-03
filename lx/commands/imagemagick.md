@@ -1,10 +1,12 @@
 ### `imagemagick`
+[imagemagick identify]:           #identify                   '```&#10;$ imagemagick identify&#10;```&#10;Describe the format and characteristics of one or more image files'
+[imagemagick mogrify]:            #mogrify                    '```&#10;$ imagemagick mogrify&#10;```&#10;Resize, blur, crop, despeckle, dither, draw on, flip, join, resample, etc'
 
-
-Command group   | Description
-:---            | :---
-identify        | Describe the format and characteristics of one or more image files
-mogrify         | Resize, blur, crop, despeckle, dither, draw on, flip, join, resample, etc
+#### Subcommands
+**I** 
+[`identify`][imagemagick identify] 
+**M** 
+[`mogrify`][imagemagick mogrify] 
 
 #### `identify`
 Option                            | Effect

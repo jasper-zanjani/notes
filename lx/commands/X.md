@@ -1,11 +1,18 @@
 [Haeder]:                                            #                                                  'Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.'
-[xfs]:                                               x.md#xfs                                           '```&#10;$ xfs&#10;```&#10;X fonts server&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 307'
 
-# Linux commands related to X Windows System
+## X Windows System
+[xfs]:                                               #xfs                                           '```&#10;$ xfs&#10;```&#10;X fonts server&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 307'
 
-&nbsp;  | Commands
----     | ---
-&nbsp;  | [`x`][x] [`xdpyinfo`][xdpyinfo] [`xfs`][xfs] [`xhost`][xhost] [`xlsclients`][xlsclients] [`xmodmap`][xmodmap] [`xorg`][xorg] [`xrandr`][xrandr] [`xset`][xset] [`xwininfo`][xwininfo]
+[`x`][x] 
+[`xdpyinfo`][xdpyinfo] 
+[`xfs`][xfs] 
+[`xhost`][xhost] 
+[`xlsclients`][xlsclients] 
+[`xmodmap`][xmodmap] 
+[`xorg`][xorg] 
+[`xrandr`][xrandr] 
+[`xset`][xset] 
+[`xwininfo`][xwininfo]
 
 ### `X`
 Test X11 with the config file automatically generated after `Xorg -configure`
