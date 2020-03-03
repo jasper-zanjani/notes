@@ -129,9 +129,6 @@
 # Linux Commands
 
 #### Archive
-
-
-
 Topic                         | Commands
 :---                          | :---
 Archive                       | **A** [`ar`][ar] **B** [`bzcat`][bzcat] [`bzip2`][bzip2] [`bzless`][bzless] [`bzmore`][bzmore] **C** [`compress`][compress] [`cpio`][cpio] **D** [`dar`][dar] **G** [`gunzip`][gunzip] [`gzcat`][gzcat] [`gzip`][gzip] **T** [`tar`][tar] **U** [`uncompress`][uncompress] [`unxz`][unxz] [`unzip`][unzip] **X** [`xz`][xz] **Z** [`zcat`][zcat] [`zip`][zip] [`zipcloak`][zipcloak] [`zipcmp`][zipcmp] [`zipdetails`][zipdetails] [`zipgrep`][zipgrep] [`zipinfo`][zipinfo] [`zipnote`][zipnote] [`zipsplit`][zipsplit] 
@@ -1812,4 +1809,369 @@ history | awk '{print $2' | sort | uniq -c | sort -rn | head
 Count the number of occurrences of a string
 ```sh
 | uniq -c | sort -nr
+```
+
+# Linux configs
+
+[/etc/aliases]:                                     #/etc/aliases                   '```&#10;$ cat /etc/aliases&#10;```&#10;Systemwide email aliases'
+[/etc/anacrontab]:                                  #/etc/anacrontab                '```&#10;/etc/anacrontab&#10;```&#10;Describes jobs controlled by `anacron`'
+[/etc/apt/sources.list]:                            #/etc/apt/sources.list          '```&#10;$ cat /etc/apt/sources.list&#10;$ cat /etc/apt/sources.list.d/*&#10;```&#10;`apt` repository definitions'
+[/etc/crontab]:                                     #/etc/crontab                   '```&#10;$ cat /etc/crontab&#10;$ cat /etc/cron.allow /etc/cron.deny /etc/cron.daily /etc/cron.hourly /etc/cron.monthly /etc/cron.weekly /etc/cron.d/*&#10;```&#10;Describes jobs controlled by `cron`'
+[/etc/files.dns]:                                   #/etc/files.dns                 '```&#10;$ cat /etc/files.dns&#10;```&#10;NIS+ servers for Solaris servers'
+[/etc/fstab]:                                       #/etc/fstab                     '```&#10;$ cat /etc/fstab&#10;```&#10;Filesystems to be mounted by the system at boot'
+[/etc/group]:                                       #/etc/group                     '```&#10;$ cat /etc/group&#10;```&#10;Colon-delimited file describing group membership'
+[/etc/hostname]:                                    #/etc/hostname                  '```&#10;$ cat /etc/hostname&#10;```&#10;Contains hostname'
+[/etc/hosts]:                                       #/etc/hosts                     '```&#10;$ cat /etc/hosts&#10;```&#10;Global hostnames'
+[/etc/hotplug/usb/*]:                               #/etc/hotplug/usb/*             '```&#10;$ cat /etc/hotplug/usb/*&#10;```&#10;Location of scripts executed when a hotplug device is inserted'
+[/etc/init.d/*]:                                    #/etc/init.d/*                  '```&#10;$ cat /etc/init.d/*&#10;```&#10;Sysvinit scripts run during startup and shutdown'
+[/etc/inittab]:                                     #/etc/inittab                   '```&#10;$ cat /etc/inittab&#10;```&#10;Initialization table'
+[/etc/ld.so.conf]:                                  #/etc/ld.so.conf                '```&#10;$ cat /etc/ld.so.conf&#10;$ cat /etc/ld.so.conf.d/*&#10;```&#10;Specifies directories containing shared libraries'
+[/etc/lightdm.conf]:                                #/etc/lightdm.conf              '```&#10;$ cat /etc/lightdm.conf&#10;$ cat /etc/lightdm/users.conf&#10;```&#10;LightDM'
+[/etc/login.defs]:                                  #/etc/login.defs                '```&#10;$ cat /etc/login.defs&#10;$ cat /etc/default/useradd&#10;```&#10;Default configuration values for `useradd`, `userdel`, `usermod` and `groupadd`'
+[/etc/logrotate.conf]:                              #/etc/logrotate.conf            '```&#10;$ cat /etc/logrotate.conf&#10;```&#10;'
+[/etc/lsb-release]:                                 #/etc/lsb-release               '```&#10;$ cat /etc/lsb-release&#10;```&#10;Ubuntu version'
+[/etc/modprobe.conf]:                            #/etc/modprobe.conf                                 '```&#10;$ cat /etc/modprobe.conf&#10;$ cat /etc/modprobe.d/*&#10;```&#10;Configuration files for `modprobe`'
+[/etc/mtab]:                                        #/etc/mtab                      '```&#10;$ cat /etc/mtab&#10;```&#10;Updated dynamically with information about currently mounted filesystems'
+[/etc/network]:                                     #/etc/network                   '```&#10;$ cat /etc/network&#10;```&#10;Global network settings'
+[/etc/nsswitch.conf]:                               #/etc/nsswitch.conf             '```&#10;$ cat /etc/nsswitch.conf&#10;```&#10;Controls lookup system beyond just DNS'
+[/etc/passwd]:                                      #/etc/passwd                    '```&#10;$ cat /etc/passwd&#10;```&#10;Text-based database of information about users that may log into the system'
+[/etc/postfix/main.cf]:                             #/etc/postfix/main.cf           '```&#10;$ cat /etc/postfix/main.cf&#10;```&#10;Postfix config'
+[/etc/rc.d/rc.sysinit]:                             #/etc/rc.d/rc.sysinit           '```&#10;$ cat /etc/rc.d/rc.sysinit&#10;```&#10;First script run by `init`'
+[/etc/resolv.conf]:                                 #/etc/resolv.conf               '```&#10;$ cat /etc/resolv.conf&#10;```&#10;Nameserver definitions (maximum of 6 domains with total of 256 characters)'
+[/etc/samba/smb.conf]:                              #/etc/samba/smb.conf            '```&#10;$ cat /etc/samba/smb.conf&#10;```&#10;Samba configuration file'
+[/etc/selinux/config]:                             #/etc/selinux/config                                '```&#10;$ cat /etc/selinux/config&#10;```&#10;SELinux configuration file'
+[/etc/services]:                                    #/etc/services                  '```&#10;$ cat /etc/services&#10;```&#10;Used to resolve port numbers'
+[/etc/shadow]:                                      #/etc/shadow                    '```&#10;$ cat /etc/shadow&#10;```&#10;Colon-delimited file containing password hashes for every user listed in /etc/passwd'
+[/etc/ssh/ssh_config]:                              #/etc/ssh/ssh_config            '```&#10;$ cat /etc/ssh/ssh_config&#10;```&#10;System-wide configuration file for OpenSSH which allows you to set options that modify the operation of the client programs'
+[/etc/ssh/sshd_config]:                             #/etc/ssh/sshd_config           '```&#10;$ cat /etc/ssh/sshd_config&#10;```&#10;System-wide configuration file for OpenSSH which allows you to set options that modify the operation of the daemon'
+[/etc/ssmtp/ssmtp.conf]:                            #/etc/ssmtp/ssmtp.conf          '```&#10;$ cat /etc/ssmtp/ssmtp.conf&#10;```&#10;'
+[/etc/sysconfig/desktop]:                           #/etc/sysconfig/desktop         '```&#10;$ cat /etc/sysconfig/desktop&#10;```&#10;Specify display manager and desktops on Red Hat'
+[/etc/sysconfig/iptables]:                          #/etc/sysconfig/iptables        '```&#10;$ cat /etc/sysconfig/iptables&#10;```&#10;Where `iptables` configuration is written upon running `iptables-save`'
+[/etc/sysconfig/network-scripts/]:                  #/etc/sysconfig/network-scripts/                    '```&#10;$ cat /etc/sysconfig/network-scripts/&#10;```&#10;Directory containing file configurations for each network device you may have or want to add on your system'
+[/etc/syslog-ng/syslog-ng.conf]:                    #/etc/syslog-ng/syslog-ng.conf  '```&#10;$ cat /etc/syslog-ng/syslog-ng.conf&#10;```&#10;'
+[/etc/xinetd.conf]:                                 #/etc/xinetd.conf               '```&#10;$ cat /etc/xinetd.conf&#10;$ cat /etc/xinetd/*&#10;```&#10;Master `xinetd` configuration file'
+[/etc/yum.conf]:                                    #/etc/yum.conf                  '```&#10;$ cat /etc/yum.conf&#10;$ cat /etc/yum.repos.d/*&#10;```&#10;Repository definitions with filenames that follow the pattern "*.repo"'
+[~/.forward]:                                       #~/.forward                     '```&#10;$ cat ~/.forward&#10;```&#10;Forwarding to only one address'
+[~/.gnupg/pubring.gpg]:                             #~/.gnupg/pubring.gpg           '```&#10;$ cat ~/.gnupg/pubring.gpg&#10;```&#10;Default storage for public `gpg` keyrings'
+[~/.ssh/known_hosts]:                               #~/.ssh/known_hosts             '```&#10;$ cat ~/.ssh/known_hosts&#10;```&#10;Public keys of SSH hosts'
+[~/xorg.conf]:                                      #~/xorg.conf                    '```&#10;$ cat ~/xorg.conf&#10;```&#10;User config which overrides system defaults'
+
+[/etc/bluetooth/main.conf]: #etcbluetoothmainconf "Bluetooth config"
+[/etc/hotplug/usb/]: # "Location of scripts executed when a hotplug device is inserted"
+[/etc/init.d/]: # "sysvinit scripts run during startup and shutdown"
+[/etc/mail/sendmail.mc]: # "Sendmail config which is compiled to sendmail.cf"
+[/etc/mail/sendmail.cf]: # "Sendmail config which is compiled from sendmail.mc"
+[/etc/skel/]: # "Default configs for new users"
+[/etc/systemd/system/]: #systemd-service-files "systemd service files"
+[/etc/udev/hwdb.bin]: # "udev hardware database"
+
+[/lib/systemd/system/]: # "directory containing unit configs"
+[/usr/share/config/kdm/kdmrc]: # "KDM config"
+[/usr/share/lightdm/lightdm.conf.d/]: # "lightdm configs, whose filenames follow the pattern \"50-*.conf\""
+[/usr/share/hwdata/pci.ids]: commands/README.md#lspci "PCI device names displayed by lspci"
+[/var/log/dmesg]: # "Kernel ring buffer information"
+[/var/log/audit/audit.log]: # "Audit file for SELinux, SSH"
+[/var/spool/cron/]: # "Contains user crontables"
+[/boot/grub/grub.cfg]: # "GRUB config file"
+
+[Eckert]: # "Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012."
+[https://computingforgeeks.com/connect-to-bluetooth-device-from-linux-terminal/]: https://computingforgeeks.com/connect-to-bluetooth-device-from-linux-terminal/ "Computing for Geeks: \"How to connect to Bluetooth device from Linux terminal\""
+
+###### `/etc`
+[`aliases`][/etc/aliases] 
+[`anacrontab`][/etc/anacrontab]
+[`cmd.allow`](commands/README.md#xinetd) 
+[`cmd.deny`](commands/README.md#xinetd) 
+[`crontab`][/etc/crontab]
+[`files.dns`][/etc/files.dns] 
+[`fstab`][/etc/fstab] 
+[`group`][/etc/group] 
+[`hostname`][/etc/hostname] 
+[`hosts`][/etc/hosts] 
+[`inittab`][/etc/inittab] 
+[`ld.so.conf`][/etc/ld.so.conf]
+[`lightdm.conf`][/etc/lightdm.conf]
+[`login.defs`][/etc/login.defs] 
+[`logrotate.conf`][/etc/logrotate.conf] 
+[`lsb-release`][/etc/lsb-release] 
+[`modprobe.conf`][/etc/modprobe.conf]
+[`mtab`][/etc/mtab] 
+[`network`][/etc/network] 
+[`nsswitch.conf`][/etc/nsswitch.conf] 
+[`passwd`][/etc/passwd]
+[`resolv.conf`][/etc/resolv.conf] 
+[`services`][/etc/services] 
+[`shadow`][/etc/shadow] 
+[`sudoers`](#etcsudoers) 
+[`xinetd.conf`][/etc/xinetd.conf] 
+[`yum.conf`][/etc/yum.conf]
+
+
+**`apt`**[`sources.list`][/etc/apt/sources.list] 
+**`bluetooth`**
+[`input.conf`](#etcbluetoothinputconf)
+[`main.conf`][/etc/bluetooth/main.conf]
+**`mail`**
+[`sendmail.cf`][/etc/mail/sendmail.cf]
+[`sendmail.mc`][/etc/mail/sendmail.mc] 
+**`rc.d`**
+[`rc.sysinit`][/etc/rc.d/rc.sysinit] 
+**`ssh`**
+[`ssh_config`][/etc/ssh/ssh_config] 
+[`sshd_config`][/etc/ssh/sshd_config] 
+**`sysconfig`** 
+[`desktop`][/etc/sysconfig/desktop] 
+[`iptables`][/etc/sysconfig/iptables] 
+[`network-scripts/`][/etc/sysconfig/network-scripts/] 
+**`lvm`**
+[`.cache`][/etc/lvm/.cache]
+**`postfix`**
+[`main.cf`][/etc/postfix/main.cf] 
+**`samba`**
+[`smb.conf`][/etc/samba/smb.conf]
+**`selinux`**
+[`config`][/etc/selinux/config] 
+[**`skel`**][/etc/skel/]
+**`ssmtp`**
+[`ssmtp.conf`][/etc/ssmtp/ssmtp.conf] 
+**`syslog-ng`** 
+[`syslog-ng.conf`][/etc/syslog-ng/syslog-ng.conf] 
+[**`systemd/system`**][/etc/systemd/system/] 
+**`udev`** 
+[`hwdb.bin`][/etc/udev/hwdb.bin] 
+
+###### $HOME
+`.bashrc` 
+[`.forward`][~/.forward] 
+[`.mailrc`](#mailrc) 
+`.vimrc` 
+[`xorg.conf`][~/xorg.conf] 
+**`.gnupg`** 
+[`pubring.gpg`][~/.gnupg/pubring.gpg] 
+**`.ssh`** 
+[`known_hosts`][~/.ssh/known_hosts] 
+### Others
+###### /usr
+[`local/lib/systemd/system/`](#systemd-service-files) 
+[`share/config/kdm/kdmrc`][/usr/share/config/kdm/kdmrc] 
+[`share/hwdata/pci.ids.gz`][/usr/share/hwdata/pci.ids] 
+[`share/hwdata/pci.ids`][/usr/share/hwdata/pci.ids] 
+[`share/lightdm/lightdm.conf.d/`][/usr/share/lightdm/lightdm.conf.d/] 
+###### /var
+[`log/audit/audit.log`][/var/log/audit/audit.log] 
+[`log/dmesg`][/var/log/dmesg] 
+[`spool/cron/`][/var/spool/cron/] 
+###### /lib
+[`systemd/system/`][/lib/systemd/system/] 
+###### Boot
+[`/boot/grub/grub.cfg`][/boot/grub/grub.cfg] 
+
+#### SystemD service files
+[https://www.redhat.com/sysadmin/replacing-rclocal-systemd]: https://www.redhat.com/sysadmin/replacing-rclocal-systemd "Red Hat: \"Replacing `rc.local` in systemd Linux systems\""
+
+Creating a service file [<sup>ref</sup>][https://www.redhat.com/sysadmin/replacing-rclocal-systemd]
+```ini
+[Unit]
+Description=Runs /usr/local/bin/mystartup.sh
+
+[Service]
+ExecStart=/usr/local/bin/mystartup.sh
+
+[Install]
+WantedBy=multi-user.target
+```
+### .mailrc
+```sh
+set sendmail="/usr/bin/msmtp"
+set message-sendmail-extra-arguments="-a gmail"
+```
+### /etc/default/useradd
+Default values for account creation. Properties: `EXPIRE`, `GROUP`, `HOME`, `INACTIVE`, `SHELL`, `SKEL`
+### /etc/apt/sources.list
+Repos used in [`apt`](#apt) package manager are listed in files with the URL preceded by `deb` (`deb-src` used to be used).
+```sh
+deb http://us-central1.gce.archive.ubuntu.com/ubuntu/ bionic main restricted
+deb http://us-central1.gce.archive.ubuntu.com/ubuntu/ bionic-updates main restricted
+deb http://us-central1.gce.archive.ubuntu.com/ubuntu/ bionic universe
+deb http://us-central1.gce.archive.ubuntu.com/ubuntu/ bionic-updates universe
+```
+MongoDB repo
+```sh
+deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.2 multiverse 
+```
+Gcloud
+```sh
+deb [signed-by=/usr/share/keyrings/cloud.google.gpg] http://packages.cloud.google.com/apt cloud-sdk main
+```
+"Trusty-security" repository containing [`mailx`](commands.md#mailx)
+```sh
+deb http://security.ubuntu.com/ubuntu trusty-security main universe
+```
+### /etc/bluetooth/input.conf
+Fix bluetooth mouse constantly disconnecting [<sup>ref</sup>](https://askubuntu.com/questions/1065335/bluetooth-mouse-constantly-disconnects-and-reconnects 'Ask Ubuntu: "Bluetooth mouse constantly disconnects and reconnects"')
+```ini
+UserspaceHID=true
+```
+### /etc/bluetooth/main.conf
+Power on Bluetooth adapter at startup [<sup>ref</sup>](https://askubuntu.com/questions/1065335/bluetooth-mouse-constantly-disconnects-and-reconnects 'Ask Ubuntu: "Bluetooth mouse constantly disconnects and reconnects"')
+```ini
+[Policy]
+AutoEnable=true
+```
+### /etc/lsb-release
+```ini
+DISTRIB_ID=Ubuntu
+DISTRIB_RELEASE=14.04
+DISTRIB_CODENAME=trusty
+DISTRIB_DESCRIPTION="Ubuntu 14.04.6 LTS"
+```
+### /etc/samba/smb.conf
+[https://vitux.com/how-to-install-and-configure-samba-on-ubuntu/]: https://vitux.com/how-to-install-and-configure-samba-on-ubuntu/ "vitux.com: \"How to Install and Configure Samba on Ubuntu\""
+
+Configure Samba [<sup>ref</sup>][https://vitux.com/how-to-install-and-configure-samba-on-ubuntu/]
+```ini
+[samba-share]
+comment = Samba on Ubuntu
+path = /samba
+read only = no
+browsable = yes
+```
+Configure anonymous unsecured file sharing on a shared directory [[41](#sources)]
+```ini
+[global]
+workgroup = WORKGROUP
+netbios name = rhel
+security = user
+...
+[Anonymous]
+comment = Anonymous File Server Share
+path = /srv/samba/anonymous
+browsable =yes
+writable = yes
+guest ok = yes
+read only = no
+force user = nobody
+```
+### /etc/sysconfig/desktop
+Specify desktop environment and display manager on Red Hat.
+```ini
+DESKTOP="KDE"
+DISPLAYMANAGER="KDE"
+```
+```ini
+DESKTOP="XFCE"
+DISPLAYMANAGER="XDM"
+```
+```ini
+DESKTOP="Gnome"
+DISPLAYMANAGER="GDM"
+```
+### /etc/sysconfig/network-scripts/
+Directory containing file configurations for each network device you may have or want to add on your system [<sup>ref</sup>](https://web.mit.edu/rhel-doc/5/RHEL-5-manual/Deployment_Guide-en-US/s1-networkscripts-interfaces.html "Red Hat Documentation: 13.2. Interface Configuration Files")
+```ini
+DEVICE=eth0
+IPADDR=208.164.186.1
+NETMASK=255.255.255.0
+NETWORK=208.164.186.0
+BROADCAST=208.164.186.255
+ONBOOT=yes
+BOOTPROTO=none
+USERCTL=no
+```
+### /etc/ssmtp/ssmtp.conf
+```ini
+mailhub=smtp.gmail.com:587
+UseTLS=YES
+UseSTARTTLS=YES
+```
+### /etc/yum.conf
+Exclude packages from updates permanently
+[38](#sources)
+```ini
+[main]
+exclude=kernel* php*
+```
+### /etc/sudoers
+Syntax  | Effect
+:---    | :---
+`linuxize ALL=/bin/mkdir`                 | allow sudo access to user `linuxize` only for command /bin/mkdir
+`linuxize ALL=(ALL) NOPASSWD: ALL`        | allow user `linuxize` to run `sudo` commands without authenticating himself
+`Defaults timestamp_timeout=10`           | change timeout to 10 minutes
+`Defaults:linuxize timestamp_timeout=10`  | change timeout to 10 minutes only for user <linuxize>
+### crontab
+Directive             | Effect
+---                   | ---
+`@hourly`             | equivalent to `0 * * * *`
+`@midnight` `@daily`  | equivalent to `0 0 * * *`
+`@weekly`             | equivalent to `0 0 * * 0`
+`@monthly`            | equivalent to `0 0 1 * *`
+`@annually` `@yearly` | equivalent to `0 0 1 1 *`
+`@reboot`             | run at startup
+
+Run /root/backup.sh at 0300 everyday
+```sh
+0 3 * * * /root/backup.sh
+```
+Run /path/to/script.sh at 16:30 on the 2nd of every month
+```sh
+30 16 2 * * /path/to/script.sh
+```
+Run /scripts/phpscript.php at 22:00 every weekday
+```sh
+0 22 * * 1-5 /scripts/phpscript.php
+```
+Run /path/to/perlscript.pl at 00:23, 02:23, and 04:23 everyday
+```sh
+23 0-23/2 * * * /path/to/perlscript.pl
+```
+Run `linuxcommand` at 04:05 every Sunday
+```sh
+5 4 * * sun /path/to/linuxcommand
+```
+### /etc/shadow
+Colon-delimited file containing password hashes for every user listed in [/etc/passwd][/etc/passwd]
+```
+$USERNAME:$PASSWORD:$LASTCHANGED:$MIN:$MAX:$WARN:$INACTIVE:$EXPIRE
+```
+- `$USERNAME` Login name
+- `$PASSWORD` Encrypted password; dollar signs delimit encryption hash function ([`$1`](#etcshadow "MD5"), [`$2a`](#etcshadow "Blowfish"), [`$2y`](#etcshadow "Blowfish"), [`$5`](#etcshadow "SHA-256"), or [`$6`](#etcshaodw "SHA-512")), then salt, then hash value. After locking the account with `usermod -L`, an exclamation point `!` is placed in front of this field, making the password inoperable and locking the account.  When an account has not yet had a password set, this value is `!!`
+- `$LASTCHANGED` Days since 01/01/1970 that password was last changed
+- `$MIN` minimum number of days required between password changes
+- `$MAX` maximum number of days the password is valid before user is forced to change password
+- `$WARN` number of days the password is to expire that user is warned that password must be changed
+- `$INACTIVE` number of days after password expires that account is disabled
+- `$EXPIRE` days since 01/01/1970 that account is disabled
+### /etc/group
+Colon-delimited file describing group membership
+```
+$GROUP:$PASSWORD:$GID:$USER1:$USER2:$USER3...
+```
+### /etc/resolv.conf
+Use DNS queries prior to consulting /etc/hosts
+```sh
+nameserver dns
+nameserver files
+```
+### /etc/postfix/main.cf
+[Postfix](commands/mail.md#postfix) config 
+
+Set e-mail domain name [<sup>ref</sup>][Eckert]
+```cfg
+mydomain = sample.com
+```
+Set local access to domain name [<sup>ref</sup>][Eckert]
+```cfg
+myorigin = $mydomain
+```
+Configure postfix to listen for email on all interfaces [<sup>ref</sup>][Eckert]
+```cfg
+inet_interfaces = all
+```
+Configure destination domain for email [<sup>ref</sup>][Eckert]
+```cfg
+mydestination = $myhostname, localhost.$mydomain, localhost, $mydomain
+```
+Trust email from computers on the local network [<sup>ref</sup>][Eckert]
+```cfg
+mynetworks_style = class
 ```
