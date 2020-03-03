@@ -67,53 +67,39 @@ Topics
 [UWP][UWP]
 
 ## Command Prompt
-**A** 
+
 [`access`][access.cpl] 
 [`adprep`][adprep] 
 [`appwiz`][appwiz.cpl] 
 [`arp`][arp] 
-**B** 
 [`bcdedit`][bcdedit] 
 [`bootrec`][bootrec]
-**C** 
 [`cscript`][cscript] 
-**D** 
 [`desk`][desk.cpl] 
 `dir`[<sup>pwsh</sup>][Get-ChildItem] 
 [`diskpart`][diskpart] 
-**F** 
 [`findfast.cpl`][findfast.cpl] 
 `findstr`[<sup>lx</sup>][grep]
-**G** 
 `gpupdate`[<sup>pwsh</sup>][Invoke-GPUpdate]
-**I** 
 [`inetcpl`][inetcpl.cpl] 
 [`intl`][intl.cpl] 
 [`ipconfig`][ipconfig]
-**J** 
 [`joy`][joy.cpl]
-**L** 
 [`logoff`][logoff]
-**M** 
 [`main`][main.cpl] 
 [`mlcfg32.cpl`][mlcfg32.cpl] 
 [`mmsys`][mmsys.cpl]
-**N** 
 [`nbtstat`][nbtstat] [`netsh`](#netsh) 
 [`ncpa`][ncpa.cpl]
 [`ntdsutil`][ntdsutil]
-**R** 
 [`route`](#route)
-**S** 
 [`sfc`][sfc] [`shutdown`](#shutdown) 
 [`slmgr`][slmgr] 
 [`sysdm`][sysdm.cpl]
 [`systeminfo`][systeminfo]
-**T** 
 [`timedate`][timedate.cpl]
 [`tracert`](#tracert) 
 [`traceroute`](#tracert)
-**W** 
 [`wgpocpl`][wgpocpl.cpl]
 [`winrm`](#winrm) 
 [`winver`][winver]
@@ -180,8 +166,30 @@ bootrec /rebuildbcd
 [diskpart retain]:                #diskpart                      '```&#10;C:\> diskpart&#10;DISKPART> RETAIN&#10;```&#10;Prepare the selected simple volume to be used as the boot or system volume&#10;Stanek, William R. _Microsoft Windows Command-Line_.: 141'
 [diskpart select]:                #diskpart                      '```&#10;C:\> diskpart&#10;DISKPART> SELECT&#10;```&#10;Focus specified disk, partition, or volume&#10;Stanek, William R. _Microsoft Windows Command-Line_.: 141'
 
-
-**A** [`ACTIVE`][diskpart active] [`ADD`][diskpart add] [`ASSIGN`][diskpart assign] [`AUTOMOUNT`][diskpart automount] **B** [`BREAK`][diskpart break] **C** [`CLEAN`][diskpart clean] [`CONVERT`][diskpart convert] [`CREATE`][diskpart create] **D** [`DELETE`][diskpart delete] [`DETAIL`][diskpart detail] **E** [`EXIT`][diskpart exit] [`EXTEND`][diskpart extend]  **G** [`GPT`][diskpart gpt] **H** [`HELP`][diskpart help]  **I** [`IMPORT`][diskpart import] [`INACTIVE`][diskpart inactive] **L** [`LIST`][diskpart list] **O**&nbsp;[`ONLINE`][diskpart online] **R** [`REM`][diskpart rem] [`REMOVE`][diskpart remove] [`REPAIR`][diskpart repair] [`RESCAN`][diskpart rescan] [`RETAIN`][diskpart retain] **S**&nbsp;[`SELECT`][diskpart select]
+[`ACTIVE`][diskpart ACTIVE] 
+[`ADD`][diskpart ADD] 
+[`ASSIGN`][diskpart ASSIGN] 
+[`AUTOMOUNT`][diskpart AUTOMOUNT] 
+[`BREAK`][diskpart BREAK] 
+[`CLEAN`][diskpart CLEAN] 
+[`CONVERT`][diskpart CONVERT] 
+[`CREATE`][diskpart CREATE] 
+[`DELETE`][diskpart DELETE] 
+[`DETAIL`][diskpart DETAIL] 
+[`EXIT`][diskpart EXIT] 
+[`EXTEND`][diskpart EXTEND] 
+[`GPT`][diskpart GPT] 
+[`HELP`][diskpart HELP] 
+[`IMPORT`][diskpart IMPORT] 
+[`INACTIVE`][diskpart INACTIVE] 
+[`LIST`][diskpart LIST] 
+[`ONLINE`][diskpart ONLINE] 
+[`REM`][diskpart REM] 
+[`REMOVE`][diskpart REMOVE] 
+[`REPAIR`][diskpart REPAIR] 
+[`RESCAN`][diskpart RESCAN] 
+[`RETAIN`][diskpart RETAIN] 
+[`SELECT`][diskpart SELECT] 
 
 ### `ipconfig`
 `all` `flushdns` `renew`
@@ -230,7 +238,18 @@ netdom join %computername% /domain: domainname /userd: username /password:*
 [netsh rpc]:                      #netsh                         '```&#10;C:\>netsh rpc&#10;C:\>netsh&#10;netsh>rpc&#10;```&#10;Remote procedure call (RPC) helper&#10;Stanek, William R. _Microsoft Windows Command-Line_.: 298'
 [netsh wins]:                     #netsh                         '```&#10;C:\>netsh wins&#10;C:\>netsh&#10;netsh>wins&#10;```&#10;WINS, used to view and manage NetBIOS resolution for pre-Windows 2000 computers&#10;Stanek, William R. _Microsoft Windows Command-Line_.: 298'
 
-**A** [`aaaa`][netsh aaaa] **B** [`bridge`][netsh bridge] **D** [`dhcp`][netsh dhcp] [`diag`][netsh diag] **I** [`interface ip`][netsh interface ip] [`interface ipv6`][netsh interface ipv6] [`interface portproxy`][netsh interface portproxy] [`ipsec`][netsh ipsec] **R** [`ras`][netsh ras] [`routing`][netsh routing] [`rpc`][netsh rpc] **W** [`wins`][netsh wins] 
+[`aaaa`][netsh aaaa] 
+[`bridge`][netsh bridge] 
+[`dhcp`][netsh dhcp] 
+[`diag`][netsh diag] 
+[`interface ip`][netsh interface ip] 
+[`interface ipv6`][netsh interface ipv6] 
+[`interface portproxy`][netsh interface portproxy] 
+[`ipsec`][netsh ipsec] 
+[`ras`][netsh ras] 
+[`routing`][netsh routing] 
+[`rpc`][netsh rpc] 
+[`wins`][netsh wins] 
 
 Configure DNS to be dynamically assigned
 ```cmd
@@ -281,8 +300,14 @@ shutdown /r /t 0
 [slmgr /ato]:                     #slmgr                         '```&#10;C:\> slmgr /ato&#10;```&#10;Force Windows to attempt an online activation, either with Microsoft servers or with the KMS server on the local network'
 [slmgr /rearm]:                   #slmgr                         '```&#10;C:\> slmgr /rearm&#10;```&#10;Reset activation timer to extend trial period. Each usage reduces the "rearm count" (ref. `/dlv`)'
 
+[`dli`][slmgr /dli]
+[`dlv`][slmgr /dlv]
+[`xpr`][slmgr /xpr]
+[`upk`][slmgr /upk]
+[`ipk`][slmgr /ipk]
+[`ato`][slmgr /ato]
+[`rearm`][slmgr /rearm]
 
-**A** [`ato`][slmgr /ato] **D** [`dli`][slmgr /dli] [`dlv`][slmgr /dlv] **I** [`ipk`][slmgr /ipk] **R** [`rearm`][slmgr /rearm] **U** [`upk`][slmgr /upk] **X** [`xpr`][slmgr /xpr] [<sup>Howtogeek</sup>][https://www.howtogeek.com/245445/how-to-use-slmgr-to-change-remove-or-extend-your-windows-license/] [<sup>Microsoft Docs</sup>][https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn502540(v%3Dws.11)]
 ### `tracert`
 On Windows, this command is aliased to `traceroute` which is the Linux command. [<sup>Lammle: 112<sup>][Lammle]
 
