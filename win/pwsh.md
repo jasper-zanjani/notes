@@ -200,6 +200,8 @@
 # PowerShell
 
 #### Tasks
+[**Remove Registry keys**][Remove-Item] &bull;
+[**Clear out `%temp%` folder**][Remove-Item] &bull;
 [Generate password](#generate-password) &bull;
 [Credentials](#credentials) &bull;
 [Formatting output](#output-formatting) &bull;
@@ -207,7 +209,6 @@
 [Manipulating files](#file-manipulation) &bull;
 [Text-to-speech](#text-to-speech) &bull;
 [New domain controller](#new-domain-controller) &bull;
-[**Remove Registry keys**](#registry) &bull;
 [Set new Registry keys](#registry) &bull;
 
 #### Cmdlet verbs
@@ -585,12 +586,12 @@ Import-Csv -path $List | ForEach-Object {New-ADComputer -Name $_.Name -Path $OU}
 Verify a computer has connected to a domain
 Check "Organization" in Windows about page, or navigate to Control PAnel > System and Security > System and examine the **Computer name, domain, and workgroup settings**, where the domain can be seen.
 ### `Add-DhcpServerInDC`
-[<sup>Jones</sup>][Jones]
+[<sup>ref</sup>][Jones]
 ```powershell
 Add-DhcpServerInDC -DnsName dc.corp.packtlab.com
 ```
 ### `Add-DhcpServerv4Scope`
-[<sup>Jones</sup>][Jones]
+[<sup>ref</sup>][Jones]
 ```powershell
 Add-DhcpServerv4Scope -Name "PacktLabNet" -StartRange 10.0.0.50 -EndRange 10.0.0.100 -SubnetMask 255.255.255.0
 ```
@@ -602,17 +603,17 @@ Parameter | Effect
 `Member`  | Specifies the recipient that you want to add to the group. A member can be any mail-enabled recipient in your organization. You can use any value that uniquely identifies the recipient (including Name, Alias, Distinguished name, Canonical name, Email address, or GUID).
 ### `Add-PSSnapin`
 ### `Add-Type`
-Generate a random password 20 characters long [<sup>Adam The Automator</sup>][https://adamtheautomator.com/powershell-random-password/]
+Generate a random password 20 characters long [<sup>ref</sup>][https://adamtheautomator.com/powershell-random-password/]
 ```powershell
 Add-Type -AssemblyName 'System.Web'
 [System.Web.Security.Membership]::GeneratePassword(20, 3)
 ```
 ### `Close-SmbOpenFile`
-Close an open file [<sup>MS Docs</sup>][https://docs.microsoft.com/en-us/powershell/module/smbshare/close-smbopenfile?view=win10-ps]
+Close an open file [<sup>ref</sup>][https://docs.microsoft.com/en-us/powershell/module/smbshare/close-smbopenfile?view=win10-ps]
 ```powershell
 Close-SmbOpenFile -FileId 4415226383589
 ```
-Close open files for a session [<sup>MS Docs</sup>][https://docs.microsoft.com/en-us/powershell/module/smbshare/close-smbopenfile?view=win10-ps]
+Close open files for a session [<sup>ref</sup>][https://docs.microsoft.com/en-us/powershell/module/smbshare/close-smbopenfile?view=win10-ps]
 ```powershell
 Close-SmbOpenFile -SessionId 4415226380393
 ```
@@ -620,11 +621,11 @@ Close-SmbOpenFile -SessionId 4415226380393
 Terminate a remote PowerShell session begun with [`New-PSSession`][New-PSSession] [<sup>Zacker: 22</sup>][Zacker]
 ### `Enable-PSRemoting`
 ### `Enable-WindowsOptionalFeature`
-Enable a feature in the currently running operating system [<sup>MS Docs</sup>](https://docs.microsoft.com/en-us/powershell/module/dism/enable-windowsoptionalfeature?view=win10-ps&redirectedfrom=MSDN "Microsoft Docs: \"Enable-WindowsOptionalFeature\"")
+Enable a feature in the currently running operating system [<sup>ref</sup>](https://docs.microsoft.com/en-us/powershell/module/dism/enable-windowsoptionalfeature?view=win10-ps&redirectedfrom=MSDN "Microsoft Docs: \"Enable-WindowsOptionalFeature\"")
 ```powershell
 Enable-WindowsOptionalFeature -Online -FeatureName "Hearts" -All
 ```
-Enable WSL [<sup>Reddit</sup>](https://www.reddit.com/r/bashonubuntuonwindows/comments/7smf9m/help_wsl_wont_activate_on_my_freshly_installed/ "Reddit: \"[help] WSL won't activate on my freshly installed Windows 10 version 1709\"")
+Enable WSL [<sup>ref</sup>](https://www.reddit.com/r/bashonubuntuonwindows/comments/7smf9m/help_wsl_wont_activate_on_my_freshly_installed/ "Reddit: \"[help] WSL won't activate on my freshly installed Windows 10 version 1709\"")
 ```powershell
 Enable-WindowsOptionalFeature -online -FeatureName Microsoft-Windows-Subsystem-Linux
 ```
@@ -656,7 +657,7 @@ Export-Alias -Path alias.ps1 -As Script
 ### `Export-CliXml`
 ### `Export-Csv`
 ### `Format-Volume`
-Full format of specified drive [<sup>Sum Tips</sup>][https://sumtips.com/tips-n-tricks/manage-disk-partitions-with-windows-powershell/]
+Full format of specified drive [<sup>ref</sup>][https://sumtips.com/tips-n-tricks/manage-disk-partitions-with-windows-powershell/]
 ```powershell
 Format-Volume -DriveLetter S -FileSystem FAT32 -NewFileSystemLabel SumTips -Full
 ```
@@ -671,7 +672,7 @@ Display OUs, confirming deletion has taken place
 Get-ADOrganizationalUnit  -filter * | ft
 ```
 ### `Get-ADPrincipalGroupMembership`
-[<sup>Jones</sup>][Jones]
+[<sup>ref</sup>][Jones]
 ```powershell
 Get-ADPrincipalGroupMembership sysadmin
 ```
@@ -764,7 +765,7 @@ Get-Service WinRM
 gsv winrm
 ```
 ### `Get-SmbOpenFile`
-Get information about an opened file [<sup>MS Docs</sup>][https://docs.microsoft.com/en-us/powershell/module/smbshare/get-smbopenfile?view=win10-ps]
+Get information about an opened file [<sup>ref</sup>][https://docs.microsoft.com/en-us/powershell/module/smbshare/get-smbopenfile?view=win10-ps]
 ```powershell
 Get-SmbOpenFile -FileId 4415226383569 | Select-Object -Property *
 ```
@@ -813,7 +814,7 @@ View system uptime
 Get-WmiObject -Win32_OperatingSystem -ComputerName localhost |
 Select-Object -Property @{n="Last Boot Time";e={[Management.ManagementDateTimeConvert]::ToDateTime($_.LastBootUpTime)}}
 ```
-Display Windows activation key [<sup>The Windows Club</sup>][https://www.thewindowsclub.com/find-windows-product-key]
+Display Windows activation key [<sup>ref</sup>][https://www.thewindowsclub.com/find-windows-product-key]
 ```powershell
 (Get-WmiObject -query ‘select * from SoftwareLicensingService’).OA3xOriginalProductKey
 ```
@@ -873,7 +874,7 @@ Install Hyper-V
 ```powershell
 Install-WindowsFeature -Name Hyper-V -IncludeAllSubFeature -IncludeManagementTools -Restart
 ```
-Install Web Server [<sup>Jones</sup>][Jones]
+Install Web Server [<sup>ref</sup>][Jones]
 ```powershell
 Install-WindowsFeature web-webserver -IncludeManagementTools
 ```
@@ -884,7 +885,7 @@ Create a domain controller
 ```powershell
 Install-WindowsFeature AD-Domain-Services -IncludeManagementTools
 ```
-Create a DHCP server [<sup>Jones</sup>][Jones]
+Create a DHCP server [<sup>ref</sup>][Jones]
 ```powershell
 Install-WindowsFeature DHCP -IncludeManagementTools
 ```
@@ -973,11 +974,11 @@ Option            | Description
 `IpAddress`       | Specifies IP address to be assigned to adapter
 `PrefixLength`    | Specifies subnet mask value
 
-Configure the Domain Controller in a new corporate intranet [<sup>Jones</sup>][Jones]
+Configure the Domain Controller in a new corporate intranet [<sup>ref</sup>][Jones]
 ```powershell
 New-NetIPAddress 10.0.0.1 -InterfaceAlias "Ethernet" -PrefixLength 24
 ```
-Configure the application server in a new corporate intranet [<sup>Jones</sup>][Jones]
+Configure the application server in a new corporate intranet [<sup>ref</sup>][Jones]
 ```powershell
 New-NetIpAddress 10.0.0.3 -InterfaceAlias "Ethernet" -PrefixLength 24
 ```
@@ -986,7 +987,7 @@ Configure a network adapter
 New-NetIpAddress -InterfaceIndex 6 -IpAddress 192.168.0.200 -PrefixLength 24 -DefaultGateway 192.168.0.1
 ```
 ### `New-Partition`
-Use all available size for a new partition [<sup>Sum Tips</sup>][https://sumtips.com/tips-n-tricks/manage-disk-partitions-with-windows-powershell/]
+Use all available size for a new partition [<sup>ref</sup>][https://sumtips.com/tips-n-tricks/manage-disk-partitions-with-windows-powershell/]
 ```powershell
 New-Partition -DiskNumber 1 -UseMaximumSize
 ```
@@ -1038,7 +1039,7 @@ Clear `%temp%` folder
 Remove-Item -Recurse $Env:temp
 ```
 ### `Remove-Partition`
-Remove a partition [<sup>Sum Tips</sup>][https://sumtips.com/tips-n-tricks/manage-disk-partitions-with-windows-powershell/]
+Remove a partition [<sup>ref</sup>][https://sumtips.com/tips-n-tricks/manage-disk-partitions-with-windows-powershell/]
 ```powershell
 Remove-Partition -DiskNumber 1 -PartitionNumber 1
 ```
@@ -1101,12 +1102,12 @@ With `Append` switch parameter, items can be added without clearing the clipboar
 Write-Output 'Hello' | Set-Clipboard -Append
 ```
 ### `Set-DhcpServerv4OptionValue`
-[<sup>Jones</sup>][Jones]
+[<sup>ref</sup>][Jones]
 ```powershell
 Set-DhcpServerv4OptionValue -DnsDomain corp.packtlab.com -DnsServer 10.0.0.1
 ```
 ### `Set-DnsClientServerAddress`
-Configure DNS server addresses [<sup>Zacker</sup>][Zacker]
+Configure DNS server addresses [<sup>ref</sup>][Zacker]
 
 Parameter           | Description
 ---                 | ---
@@ -1114,15 +1115,15 @@ Parameter           | Description
 `-InterfaceIndex`   |
 `-ServerAddresses`  |
 
-Configure DNS server address for a DC on a new corporate intranet [<sup>Jones</sup>][Jones]
+Configure DNS server address for a DC on a new corporate intranet [<sup>ref</sup>][Jones]
 ```powershell
 Set-DnsClientServerAddress -InterfaceAlias "Ethernet" -ServerAddresses 127.0.0.1
 ```
-Configure DNS server address for an application server on a new corporate intranet [<sup>Jones</sup>][Jones]
+Configure DNS server address for an application server on a new corporate intranet [<sup>ref</sup>][Jones]
 ```powershell
 Set-DnsClientServerAddress -InterfaceAlias "Ethernet" -ServerAddresses 10.0.0.1
 ```
-Configure DNS server addresses [<sup>Zacker</sup>][Zacker]
+Configure DNS server addresses [<sup>ref</sup>][Zacker]
 ```powershell
 Set-DnsClientServerAddress -InterfaceIndex 6 -ServerAddresses ("192.168.0.1", "192.168.0.2")
 ```
@@ -1159,7 +1160,7 @@ Change `<Tab>` behavior back to default for PowerShell
 Set-PSReadlineOption -EditMode Windows
 ```
 ### `Set-VMFirmware`
-Enable secure boot on Generation 2 Linux VMs [<sup>IMWS</sup>][IMWS]
+Enable secure boot on Generation 2 Linux VMs [<sup>ref</sup>][IMWS]
 ```powershell
 Set-VMFirmware vmname -SecureBootTemplate MicrosoftUEFICertificateAuthority
 ```
@@ -1216,19 +1217,19 @@ Copy text to clipboard
 ```powershell
 Write-Output 'Hello' | Set-Clipboard
 ```
-Create a text file [<sup>Jones</sup>][Jones]
+Create a text file [<sup>ref</sup>][Jones]
 ```powershell
 Write-Output "This is a test network file." -Path | Out-File C:\networkfiles\test.txt
 ```
 
 ## Tasks
 #### Computer information
-Display computer name [<sup>Dr. Scripto</sup>][https://devblogs.microsoft.com/scripting/powertip-use-powershell-to-get-computer-name/]
+Display computer name [<sup>ref</sup>][https://devblogs.microsoft.com/scripting/powertip-use-powershell-to-get-computer-name/]
 ```powershell
 $env:computername
 ```
 #### Generate password
-Generate a random password 20 characters long [<sup>Adam The Automator</sup>][https://adamtheautomator.com/powershell-random-password/]
+Generate a random password 20 characters long [<sup>ref</sup>][https://adamtheautomator.com/powershell-random-password/]
 ```powershell
 Add-Type -AssemblyName 'System.Web'
 [System.Web.Security.Membership]::GeneratePassword(20, 3)
@@ -1353,7 +1354,7 @@ Removing keys:
 $Hashtable.Remove('One')
 ```
 #### Registry
-Fix Windows Search bar [<sup>MS Docs</sup>][https://docs.microsoft.com/en-us/powershell/scripting/samples/working-with-registry-keys?view=powershell-7] [<sup>MS Docs</sup>][https://docs.microsoft.com/en-us/powershell/scripting/samples/working-with-registry-entries?view=powershell-7]
+Fix Windows Search bar [<sup>ref</sup>][https://docs.microsoft.com/en-us/powershell/scripting/samples/working-with-registry-keys?view=powershell-7] [<sup>MS Docs</sup>][https://docs.microsoft.com/en-us/powershell/scripting/samples/working-with-registry-entries?view=powershell-7]
 ```powershell
 New-Item -Path HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Search\BingSearchEnabled
 Set-Item $$ 0
@@ -1372,7 +1373,7 @@ Add-ADPrincipalGroupMembership -Identity "CN=SysAdmin,CN=Users,DC=corp,DC=packtl
 Get-ADPrincipalGroupMembership sysadmin
 ```
 #### Text-to-speech
-Initialize text-to-speech object [<sup>Scripting Library</sup>](https://www.scriptinglibrary.com/languages/powershell/powershell-text-to-speech/ "Powershell: Text To Speech in 3 lines of code")
+Initialize text-to-speech object [<sup>ref</sup>](https://www.scriptinglibrary.com/languages/powershell/powershell-text-to-speech/ "Powershell: Text To Speech in 3 lines of code")
 ```powershell
 Add-Type –AssemblyName System.Speech
 $tts = New-Object –TypeName System.Speech.Synthesis.SpeechSynthesizer
@@ -1389,7 +1390,7 @@ Change voice
 $tts.SelectVoice("Microsoft Zira Desktop")
 $tts.Speak('Hello, World!')
 ```
-Set output to WAV file [<sup>Think PowerShell</sup>](https://thinkpowershell.com/create-cortana-audio-files-from-text-using-powershell/ "Create Cortana Audio Files From Text Using PowerShell")
+Set output to WAV file [<sup>ref</sup>](https://thinkpowershell.com/create-cortana-audio-files-from-text-using-powershell/ "Create Cortana Audio Files From Text Using PowerShell")
 ```powershell
 $WavFileOut = Join-Path -Path $env:USERPROFILE -ChildPath "Desktop\thinkpowershell-demo.wav"
 $SpeechSynthesizer.SetOutputToWaveFile($WavFileOut)
