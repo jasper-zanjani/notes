@@ -1,5 +1,5 @@
 [adduser]:                     sysadmin.md#adduser             '```&#10;$ adduser&#10;```&#10;Create a new user or update default new user information'
-[at]:                          sysadmin.md#at                  '```&#10;$ at&#10;```&#10;'
+[at]:                                                sysadmin.md#at                                     '```&#10;$ at&#10;```&#10;Schedule one or more commands to be executed at a specific time in the future.&#10;After specifying a future time on the command-line, the `at>` prompt appears, allowing you to specify a series of shell commands which can be terminated with Ctrl+D (EOF)&#10;Rothwell, William. _CompTIA Linux+/LPIC-1 Portable Command guide_.: 195'
 [atq]:                         sysadmin.md#atq                 '```&#10;$ atq&#10;```&#10;'
 [atrm]:                        sysadmin.md#atrm                '```&#10;$ atrm&#10;```&#10;'
 [chage]:                       sysadmin.md#chage               '```&#10;$ chage&#10;```&#10;Modify password-aging features for a user.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 95'
