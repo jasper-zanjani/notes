@@ -1,15 +1,14 @@
+
+## Init systems
 [SystemD]: systemd.md "De facto standard init system for all major Linux distributions today"
 
-# Linux init systems
-## SystemD
-
-\#      | Commands sorted alphabetically
----     | ---
-H       | [`hostnamectl`][hostnamectl]
-J       | [`journalctl`][journalctl]
-L       | [`localectl`][localectl] [`loginctl`][loginctl]
-S       | [`systemctl`][systemctl] [`systemd-delta`][systemd-delta]
-T       | [`timedatectl`][timedatectl]
+[`hostnamectl`][hostnamectl]
+[`journalctl`][journalctl]
+[`localectl`][localectl] 
+[`loginctl`][loginctl]
+[`systemctl`][systemctl] 
+[`systemd-delta`][systemd-delta]
+[`timedatectl`][timedatectl]
 
 ### `hostnamectl`
 Permanently change hostname to `$HOSTNAME`

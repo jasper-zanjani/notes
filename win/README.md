@@ -29,6 +29,7 @@
 [sfc]:                         #sfc                            '```&#10;C:\>sfc&#10;C:\>sfc /scannow&#10;```&#10;Scan and verify protected system files&#10;Stanek, William R. _Microsoft Windows Command-Line_.: 373'
 [slmgr]:                       #slmgr                          '```&#10;C:\>slmgr&#10;```&#10;Windows software licensing management tool'
 [systeminfo]:                  #systeminfo                     '```&#10;C:\>systeminfo&#10;```&#10;Shows system information about the machine, including installed hotfixes and patches'
+[winver]:                                          #winver                                             '```&#10;C:\>winver&#10;```&#10;Display the "About Windows" dialog box, including Windows version and build number'
 [wmic]:                        #wmic                           '```&#10;C:\>wmic&#10;```&#10;WMI command-line (WMIC) utility provides a command-line interface for WMI.'
 
 <!-- Powershell commands -->
@@ -55,11 +56,104 @@
 [timedate.cpl]:                                      #timedate.cpl                                      '```&#10;C:\> timedate.cpl&#10;```&#10;Date/Time Properties'
 [wgpocpl.cpl]:                                       #wgpocpl.cpl                                       '```&#10;C:\> wgpocpl.cpl&#10;```&#10;Microsoft Mail Post Office'
 
+# Microsoft Windows
+
+Topics
+---
+[Desired State Configuration](dsc.md) &bull; [Powershell](pwsh.md)
+
+#### Concepts
+**U** 
+[UWP][UWP]
+
+## Command Prompt
+**A** 
+[`access`][access.cpl] 
+[`adprep`][adprep] 
+[`appwiz`][appwiz.cpl] 
+[`arp`][arp] 
+**B** 
+[`bcdedit`][bcdedit] 
+[`bootrec`][bootrec]
+**C** 
+[`cscript`][cscript] 
+**D** 
+[`desk`][desk.cpl] 
+`dir`[<sup>pwsh</sup>][Get-ChildItem] 
+[`diskpart`][diskpart] 
+**F** 
+[`findfast.cpl`][findfast.cpl] 
+`findstr`[<sup>lx</sup>][grep]
+**G** 
+`gpupdate`[<sup>pwsh</sup>][Invoke-GPUpdate]
+**I** 
+[`inetcpl`][inetcpl.cpl] 
+[`intl`][intl.cpl] 
+[`ipconfig`][ipconfig]
+**J** 
+[`joy`][joy.cpl]
+**L** 
+[`logoff`][logoff]
+**M** 
+[`main`][main.cpl] 
+[`mlcfg32.cpl`][mlcfg32.cpl] 
+[`mmsys`][mmsys.cpl]
+**N** 
+[`nbtstat`][nbtstat] [`netsh`](#netsh) 
+[`ncpa`][ncpa.cpl]
+[`ntdsutil`][ntdsutil]
+**R** 
+[`route`](#route)
+**S** 
+[`sfc`][sfc] [`shutdown`](#shutdown) 
+[`slmgr`][slmgr] 
+[`sysdm`][sysdm.cpl]
+[`systeminfo`][systeminfo]
+**T** 
+[`timedate`][timedate.cpl]
+[`tracert`](#tracert) 
+[`traceroute`](#tracert)
+**W** 
+[`wgpocpl`][wgpocpl.cpl]
+[`winrm`](#winrm) 
+[`winver`][winver]
+[`wmic`][wmic]
+
+### `adprep`
+Prepare Active Directory for Windows Server upgrades. Must be run on the Infrastructure Master role owner with the flag `/domainprep`. [<sup>Desmond 2009: 29</sup>][Desmond2009]
+### `arp`
 <!-- `arp` options -->
 [arp /&#97;]:                     #arp                           '```&#10;C:\>arp /a&#10;```&#10;Display both the IP and MAC addresses and whether they are dynamic or static entries '
 [arp /&#115;]:                    #arp                           '```&#10;C:\>arp /s&#10;```&#10;Manually add a static entry to the cache'
 [arp /&#100;]:                    #arp                           '```&#10;C:\>arp /d&#10;```&#10;Delete an entry from the cache'
 
+<code>&nbsp;</code> [`a`][arp /&#97;] <code>&nbsp;</code> <code>&nbsp;</code> [`d`][arp /&#100;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`s`][arp /&#115;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 
+### `bcdedit`
+Change Windows bootloader to Linux, while dual booting
+```cmd
+::Manjaro
+bcdedit /set {bootmgr} path \EFI\manjaro\grubx64.efi
+
+::Fedora
+bcdedit /set {bootmgr} path \EFI\fedora\shim.efi
+```
+Enable or disable **Test Signing Mode** [<sup>ref</sup>](https://www.howtogeek.com/167723/how-to-disable-driver-signature-verification-on-64-bit-windows-8.1-so-that-you-can-install-unsigned-drivers/ "howtogeek.com - 'How to disable driver signature verification on 64-bit Windows 8.1 so that you can install unsigned drivers'")
+```cmd
+bcdedit /set testsign on
+bcdedit /set testsign off
+```
+### `bootrec`
+Windows Recovery Environment command that repairs a system partition
+
+Use when boot sector not found
+```cmd
+bootrec /fixboot
+```
+Use when BCD file has been corrupted
+```cmd
+bootrec /rebuildbcd
+```
+### `diskpart`
 <!-- `diskpart` commands -->
 [diskpart active]:                #diskpart                      '```&#10;C:\> diskpart&#10;DISKPART> ACTIVE&#10;```&#10;On MBR disks, marks the partition with current focus as the active system partition, meaning it is the partition containing the operating system startup files&#10;Stanek, William R. _Microsoft Windows Command-Line_.: 141'
 [diskpart add]:                   #diskpart                      '```&#10;C:\> diskpart&#10;DISKPART> ADD DISK=n&#10;```&#10;Create a mirrored volume on the selected dynamic disk&#10;Stanek, William R. _Microsoft Windows Command-Line_.: 141'
@@ -86,10 +180,20 @@
 [diskpart retain]:                #diskpart                      '```&#10;C:\> diskpart&#10;DISKPART> RETAIN&#10;```&#10;Prepare the selected simple volume to be used as the boot or system volume&#10;Stanek, William R. _Microsoft Windows Command-Line_.: 141'
 [diskpart select]:                #diskpart                      '```&#10;C:\> diskpart&#10;DISKPART> SELECT&#10;```&#10;Focus specified disk, partition, or volume&#10;Stanek, William R. _Microsoft Windows Command-Line_.: 141'
 
+
+**A** [`ACTIVE`][diskpart active] [`ADD`][diskpart add] [`ASSIGN`][diskpart assign] [`AUTOMOUNT`][diskpart automount] **B** [`BREAK`][diskpart break] **C** [`CLEAN`][diskpart clean] [`CONVERT`][diskpart convert] [`CREATE`][diskpart create] **D** [`DELETE`][diskpart delete] [`DETAIL`][diskpart detail] **E** [`EXIT`][diskpart exit] [`EXTEND`][diskpart extend]  **G** [`GPT`][diskpart gpt] **H** [`HELP`][diskpart help]  **I** [`IMPORT`][diskpart import] [`INACTIVE`][diskpart inactive] **L** [`LIST`][diskpart list] **O**&nbsp;[`ONLINE`][diskpart online] **R** [`REM`][diskpart rem] [`REMOVE`][diskpart remove] [`REPAIR`][diskpart repair] [`RESCAN`][diskpart rescan] [`RETAIN`][diskpart retain] **S**&nbsp;[`SELECT`][diskpart select]
+
+### `ipconfig`
+`all` `flushdns` `renew`
+
+### `msiexec`
 <!-- `msiexec` commands -->
 [msiexec /&#105;]:              #msiexec                       '```&#10;C:\>msiexec /i&#10;```&#10;Install or configure a product'
 [msiexec /&#113;]:              #msiexec                       '```&#10;C:\>msiexec /q&#10;C:\>msiexec /qn&#10;```&#10;Set user interface level to "no UI"'
 
+<code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`i`][msiexec /&#105;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`q`][msiexec /&#113;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [<sup>ref</sup>][https://docs.microsoft.com/en-us/windows/win32/msi/command-line-options]
+
+### `nbtstat`
 <!-- `nbtstat` commands -->
 [nbtstat /&#97;]:               #nbtstat                       '```&#10;C:\>nbtstat /a&#10;```&#10;Display NetBIOS name table of `$HOST` (NetBIOS name)'
 [nbtstat /&#65;]:               #nbtstat                       '```&#10;C:\>nbtstat /A&#10;```&#10;Display NetBIOS name table of `$HOST` (IP address)'
@@ -99,140 +203,8 @@
 [nbtstat /&#83;]:               #nbtstat                       '```&#10;C:\>nbtstat /S&#10;```&#10;Display NetBIOS sessions table'
 [nbtstat /&#115;]:              #nbtstat                       '```&#10;C:\>nbtstat /s&#10;```&#10;Display NetBIOS sessions table, attempting to resolve remote IP addresses to hostnames'
 
-<!-- `route` commands -->
-[route print]:                    #route                         '```&#10;C:\>route print&#10;```&#10;Display routing table&#10;Lammle, Todd. _CompTIA Network+ Study Guide: Exam N10-005_. 2012.: 539'
-[route add]:                      #route                         '```&#10;C:\>route add&#10;```&#10;Add a route to the routing table&#10;Lammle, Todd. _CompTIA Network+ Study Guide: Exam N10-005_. 2012.: 539'
-[route change]:                   #route                         '```&#10;C:\>route change&#10;```&#10;Modify an existing route&#10;Lammle, Todd. _CompTIA Network+ Study Guide: Exam N10-005_. 2012.: 539'
-[route delete]:                   #route                         '```&#10;C:\>route delete&#10;```&#10;Delete a route&#10;Lammle, Todd. _CompTIA Network+ Study Guide: Exam N10-005_. 2012.: 539'
+<code>&nbsp;</code>   [`a`][nbtstat /&#97;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`n`][nbtstat /&#110;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`r`][nbtstat /&#114;] [`s`][nbtstat /&#115;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code>  <br><code>&nbsp;</code>&nbsp;[`A`][nbtstat /&#65;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`R`][nbtstat /&#82;] [`S`][nbtstat /&#83;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 
 
-<!-- `route` options -->
-[route /&#112;]:                #route                         '```&#10;C:\>route /p&#10;```&#10;Make a route persistent&#10;Lammle, Todd. _CompTIA Network+ Study Guide: Exam N10-005_. 2012.: 539'
-
-<!-- `sfc` commands -->
-[sfc /scannow]:                   #sfc                           '```&#10;C:\>sfc /scannow&#10;```&#10;Scan all protected system files, and replace corrupted files with a cached copy that is located in a compressed folder at %WinDir%\System32\dllcache'
-
-<!-- `slmgr` options -->
-[slmgr /dli]:                     #slmgr                         '```&#10;C:\> slmgr /dli&#10;```&#10;Display very basic license and activation information about the current system in a dialog box'
-[slmgr /dlv]:                     #slmgr                         '```&#10;C:\> slmgr /dlv&#10;```&#10;Display more detailed license information, including activation ID, installation ID, and other details'
-[slmgr /xpr]:                     #slmgr                         '```&#10;C:\> slmgr /xpr&#10;```&#10;Display activation status or expiration date of current license'
-[slmgr /upk]:                     #slmgr                         '```&#10;C:\> slmgr /upk&#10;```&#10;Remove the product key, placing Windows in an unactivated, unlicensed state (after restart)'
-[slmgr /ipk]:                     #slmgr                         '```&#10;C:\> slmgr /ipk&#10;```&#10;Replace product key, equivalent to changing product key in Activation screen in Settings'
-[slmgr /ato]:                     #slmgr                         '```&#10;C:\> slmgr /ato&#10;```&#10;Force Windows to attempt an online activation, either with Microsoft servers or with the KMS server on the local network'
-[slmgr /rearm]:                   #slmgr                         '```&#10;C:\> slmgr /rearm&#10;```&#10;Reset activation timer to extend trial period. Each usage reduces the "rearm count" (ref. `/dlv`)'
-
-# Microsoft Windows
-
-Topics
----
-[Desired State Configuration](dsc.md) &bull; [Powershell](pwsh.md)
-
-#### Concepts
-**U** 
-[UWP][UWP]
-
-## Command Prompt
-**A** 
-[`adprep`][adprep] 
-[`arp`][arp] 
-**B** 
-[`bcdedit`][bcdedit] 
-[`bootrec`][bootrec]
-**C** 
-[`cscript`][cscript] 
-**D** 
-`dir`[<sup>pwsh</sup>][Get-ChildItem] 
-[`diskpart`][diskpart] 
-**F** 
-`findstr`[<sup>lx</sup>][grep]
-**G** 
-`gpupdate`[<sup>pwsh</sup>][Invoke-GPUpdate]
-**I** 
-[`ipconfig`][ipconfig]
-**L** 
-[`logoff`][logoff]
-**N** 
-[`nbtstat`][nbtstat] [`netsh`](#netsh) 
-[`ntdsutil`][ntdsutil]
-**R** 
-[`route`](#route)
-**S** 
-[`sfc`][sfc] [`shutdown`](#shutdown) 
-[`slmgr`][slmgr] 
-[`systeminfo`][systeminfo]
-**T** 
-[`tracert`](#tracert) 
-[`traceroute`](#tracert)
-**W** 
-[`winrm`](#winrm) 
-[`wmic`][wmic]
-
-Commands  | Options
----       | ---
-[`arp`][arp]  | <code>&nbsp;</code> [`a`][arp /&#97;] <code>&nbsp;</code> <code>&nbsp;</code> [`d`][arp /&#100;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`s`][arp /&#115;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 
-[`diskpart`][diskpart] | **A** [`ACTIVE`][diskpart active] [`ADD`][diskpart add] [`ASSIGN`][diskpart assign] [`AUTOMOUNT`][diskpart automount] **B** [`BREAK`][diskpart break] **C** [`CLEAN`][diskpart clean] [`CONVERT`][diskpart convert] [`CREATE`][diskpart create] **D** [`DELETE`][diskpart delete] [`DETAIL`][diskpart detail] **E** [`EXIT`][diskpart exit] [`EXTEND`][diskpart extend]  **G** [`GPT`][diskpart gpt] **H** [`HELP`][diskpart help]  **I** [`IMPORT`][diskpart import] [`INACTIVE`][diskpart inactive] **L** [`LIST`][diskpart list] **O**&nbsp;[`ONLINE`][diskpart online] **R** [`REM`][diskpart rem] [`REMOVE`][diskpart remove] [`REPAIR`][diskpart repair] [`RESCAN`][diskpart rescan] [`RETAIN`][diskpart retain] **S**&nbsp;[`SELECT`][diskpart select]
-[`ipconfig`][ipconfig] | `all` `flushdns` `renew`
-[`msiexec`][msiexec] | <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`i`][msiexec /&#105;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`q`][msiexec /&#113;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [<sup>ref</sup>][https://docs.microsoft.com/en-us/windows/win32/msi/command-line-options]
-[`nbtstat`][nbtstat] | <code>&nbsp;</code>   [`a`][nbtstat /&#97;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`n`][nbtstat /&#110;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`r`][nbtstat /&#114;] [`s`][nbtstat /&#115;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code>  <br><code>&nbsp;</code>&nbsp;[`A`][nbtstat /&#65;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`R`][nbtstat /&#82;] [`S`][nbtstat /&#83;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 
-[`netsh`][netsh]  | **A** [`aaaa`][netsh aaaa] **B** [`bridge`][netsh bridge] **D** [`dhcp`][netsh dhcp] [`diag`][netsh diag] **I** [`interface ip`][netsh interface ip] [`interface ipv6`][netsh interface ipv6] [`interface portproxy`][netsh interface portproxy] [`ipsec`][netsh ipsec] **R** [`ras`][netsh ras] [`routing`][netsh routing] [`rpc`][netsh rpc] **W** [`wins`][netsh wins] 
-[`route`](#route) | <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`p`][route /&#112;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code>  <br> [`print`][route print] [`add`][route add] [`change`][route change] [`delete`][route delete]
-[`sfc`][sfc]  | [`scannow`][sfc /scannow]
-[`slmgr`][slmgr]  | **A** [`ato`][slmgr /ato] **D** [`dli`][slmgr /dli] [`dlv`][slmgr /dlv] **I** [`ipk`][slmgr /ipk] **R** [`rearm`][slmgr /rearm] **U** [`upk`][slmgr /upk] **X** [`xpr`][slmgr /xpr] [<sup>Howtogeek</sup>][https://www.howtogeek.com/245445/how-to-use-slmgr-to-change-remove-or-extend-your-windows-license/] [<sup>Microsoft Docs</sup>][https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn502540(v%3Dws.11)]
-
-#### Control Panel tools
-
-**A** 
-[`access.cpl`][access.cpl] 
-[`appwiz.cpl`][appwiz.cpl] 
-**D** 
-[`desk.cpl`][desk.cpl] 
-**F** 
-[`findfast.cpl`][findfast.cpl] 
-**I** 
-[`inetcpl.cpl`][inetcpl.cpl] 
-[`intl.cpl`][intl.cpl] 
-**J** 
-[`joy.cpl`][joy.cpl]
-**M** 
-[`main.cpl`][main.cpl] 
-[`mlcfg32.cpl`][mlcfg32.cpl] 
-[`mmsys.cpl`][mmsys.cpl]
-**N** 
-[`ncpa.cpl`][ncpa.cpl]
-**S** 
-[`sysdm.cpl`][sysdm.cpl]
-**T** 
-[`timedate.cpl`][timedate.cpl]
-**W** 
-[`wgpocpl.cpl`][wgpocpl.cpl]
-[<sup>Microsoft</sup>][https://support.microsoft.com/en-us/help/192806/how-to-run-control-panel-tools-by-typing-a-command]
-
-### `adprep`
-Prepare Active Directory for Windows Server upgrades. Must be run on the Infrastructure Master role owner with the flag `/domainprep`. [<sup>Desmond 2009: 29</sup>][Desmond2009]
-### `bcdedit`
-Change Windows bootloader to Linux, while dual booting
-```cmd
-::Manjaro
-bcdedit /set {bootmgr} path \EFI\manjaro\grubx64.efi
-
-::Fedora
-bcdedit /set {bootmgr} path \EFI\fedora\shim.efi
-```
-Enable or disable **Test Signing Mode** [<sup>ref</sup>](https://www.howtogeek.com/167723/how-to-disable-driver-signature-verification-on-64-bit-windows-8.1-so-that-you-can-install-unsigned-drivers/ "howtogeek.com - 'How to disable driver signature verification on 64-bit Windows 8.1 so that you can install unsigned drivers'")
-```cmd
-bcdedit /set testsign on
-bcdedit /set testsign off
-```
-### `bootrec`
-Windows Recovery Environment command that repairs a system partition
-
-Use when boot sector not found
-```cmd
-bootrec /fixboot
-```
-Use when BCD file has been corrupted
-```cmd
-bootrec /rebuildbcd
-```
 ### `netdom`
 Alternative to [`Add-Computer`][Add-Computer] PowerShell cmdlet [<sup>Zacker: 21</sup>][Zacker]
 
@@ -258,6 +230,8 @@ netdom join %computername% /domain: domainname /userd: username /password:*
 [netsh rpc]:                      #netsh                         '```&#10;C:\>netsh rpc&#10;C:\>netsh&#10;netsh>rpc&#10;```&#10;Remote procedure call (RPC) helper&#10;Stanek, William R. _Microsoft Windows Command-Line_.: 298'
 [netsh wins]:                     #netsh                         '```&#10;C:\>netsh wins&#10;C:\>netsh&#10;netsh>wins&#10;```&#10;WINS, used to view and manage NetBIOS resolution for pre-Windows 2000 computers&#10;Stanek, William R. _Microsoft Windows Command-Line_.: 298'
 
+**A** [`aaaa`][netsh aaaa] **B** [`bridge`][netsh bridge] **D** [`dhcp`][netsh dhcp] [`diag`][netsh diag] **I** [`interface ip`][netsh interface ip] [`interface ipv6`][netsh interface ipv6] [`interface portproxy`][netsh interface portproxy] [`ipsec`][netsh ipsec] **R** [`ras`][netsh ras] [`routing`][netsh routing] [`rpc`][netsh rpc] **W** [`wins`][netsh wins] 
+
 Configure DNS to be dynamically assigned
 ```cmd
 netsh interface ip set dns "Wi-Fi" dhcp
@@ -273,15 +247,42 @@ netsh advfirewall set allprofiles state off
 ### `ntdsutil`
 Used to transfer [FSMO](# "\"Flexible Single Master Operator\", server that is master for a particular role or function") roles between domain controllers. [<sup>Desmond: 30</sup>][Desmond2009]
 ### `route`
+<!-- `route` options -->
+[route /&#112;]:                #route                         '```&#10;C:\>route /p&#10;```&#10;Make a route persistent&#10;Lammle, Todd. _CompTIA Network+ Study Guide: Exam N10-005_. 2012.: 539'
+<!-- `route` commands -->
+[route print]:                    #route                         '```&#10;C:\>route print&#10;```&#10;Display routing table&#10;Lammle, Todd. _CompTIA Network+ Study Guide: Exam N10-005_. 2012.: 539'
+[route add]:                      #route                         '```&#10;C:\>route add&#10;```&#10;Add a route to the routing table&#10;Lammle, Todd. _CompTIA Network+ Study Guide: Exam N10-005_. 2012.: 539'
+[route change]:                   #route                         '```&#10;C:\>route change&#10;```&#10;Modify an existing route&#10;Lammle, Todd. _CompTIA Network+ Study Guide: Exam N10-005_. 2012.: 539'
+[route delete]:                   #route                         '```&#10;C:\>route delete&#10;```&#10;Delete a route&#10;Lammle, Todd. _CompTIA Network+ Study Guide: Exam N10-005_. 2012.: 539'
+
+<code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`p`][route /&#112;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code>  <br> [`print`][route print] [`add`][route add] [`change`][route change] [`delete`][route delete]
+
 Basic usage
 ```sh
 route add 192.168.2.1 mask (255.255.255.0) 192.168.2.4
 ```
+### `sfc`
+<!-- `sfc` commands -->
+[sfc /scannow]:                   #sfc                           '```&#10;C:\>sfc /scannow&#10;```&#10;Scan all protected system files, and replace corrupted files with a cached copy that is located in a compressed folder at %WinDir%\System32\dllcache'
+
+[`scannow`][sfc /scannow]
+
 ### `shutdown`
 Immediate restart [<sup>Practice Lab</sup>][pl:Sec+]
 ```cmd
 shutdown /r /t 0
 ```
+### `slmgr`
+[slmgr /dli]:                     #slmgr                         '```&#10;C:\> slmgr /dli&#10;```&#10;Display very basic license and activation information about the current system in a dialog box'
+[slmgr /dlv]:                     #slmgr                         '```&#10;C:\> slmgr /dlv&#10;```&#10;Display more detailed license information, including activation ID, installation ID, and other details'
+[slmgr /xpr]:                     #slmgr                         '```&#10;C:\> slmgr /xpr&#10;```&#10;Display activation status or expiration date of current license'
+[slmgr /upk]:                     #slmgr                         '```&#10;C:\> slmgr /upk&#10;```&#10;Remove the product key, placing Windows in an unactivated, unlicensed state (after restart)'
+[slmgr /ipk]:                     #slmgr                         '```&#10;C:\> slmgr /ipk&#10;```&#10;Replace product key, equivalent to changing product key in Activation screen in Settings'
+[slmgr /ato]:                     #slmgr                         '```&#10;C:\> slmgr /ato&#10;```&#10;Force Windows to attempt an online activation, either with Microsoft servers or with the KMS server on the local network'
+[slmgr /rearm]:                   #slmgr                         '```&#10;C:\> slmgr /rearm&#10;```&#10;Reset activation timer to extend trial period. Each usage reduces the "rearm count" (ref. `/dlv`)'
+
+
+**A** [`ato`][slmgr /ato] **D** [`dli`][slmgr /dli] [`dlv`][slmgr /dlv] **I** [`ipk`][slmgr /ipk] **R** [`rearm`][slmgr /rearm] **U** [`upk`][slmgr /upk] **X** [`xpr`][slmgr /xpr] [<sup>Howtogeek</sup>][https://www.howtogeek.com/245445/how-to-use-slmgr-to-change-remove-or-extend-your-windows-license/] [<sup>Microsoft Docs</sup>][https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn502540(v%3Dws.11)]
 ### `tracert`
 On Windows, this command is aliased to `traceroute` which is the Linux command. [<sup>Lammle: 112<sup>][Lammle]
 
@@ -297,6 +298,8 @@ Display WinRM configuration
 ```cmd
 winrm get winrm/config
 ```
+### `winver`
+
 ### `wmic`
 Recover Windows product key [<sup>ref</sup>][https://fossbytes.com/how-to-find-windows-product-key-lost-cmd-powershell-registry/]
 ```cmd

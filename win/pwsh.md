@@ -207,7 +207,7 @@
 [Manipulating files](#file-manipulation) &bull;
 [Text-to-speech](#text-to-speech) &bull;
 [New domain controller](#new-domain-controller) &bull;
-[Remove Registry keys](#registry)
+[**Remove Registry keys**](#registry) &bull;
 [Set new Registry keys](#registry) &bull;
 
 #### Cmdlet verbs
@@ -1029,9 +1029,14 @@ Rename computer
 ### `Restart-Computer`
 Restart computer
 ### `Remove-Item`
-[Remove items from Registry key](#registry)
-
-
+Remove Microsoft Office identities 
+```powershell
+Remove-Item HKCU:\Software\Microsoft\Office\16.0\Common\Identity\Identities\*
+```
+Clear `%temp%` folder
+```powershell
+Remove-Item -Recurse $Env:temp
+```
 ### `Remove-Partition`
 Remove a partition [<sup>Sum Tips</sup>][https://sumtips.com/tips-n-tricks/manage-disk-partitions-with-windows-powershell/]
 ```powershell
@@ -1353,10 +1358,6 @@ Fix Windows Search bar [<sup>MS Docs</sup>][https://docs.microsoft.com/en-us/pow
 New-Item -Path HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Search\BingSearchEnabled
 Set-Item $$ 0
 Set-ItemProperty -Path HKCU:\Software\Microsoft\Windows\CurrentVersion\Search -Name CortanaConsent -Value 0
-```
-Remove Microsoft Office identities 
-```powershell
-Remove-Item HKCU:\Software\Microsoft\Office\16.0\Common\Identity\Identities\*
 ```
 #### New domain controller
 [<sup>Jones</sup>][Jones]
