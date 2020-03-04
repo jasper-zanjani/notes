@@ -27,10 +27,10 @@
 [Jones]:  https://subscription.packtpub.com/video/virtualization_and_cloud/9781789616385 "Jones, Joshua B. _Hands-On Powershell for Active Directory_. PacktPub: 2018."
 
 <!-- Powershell automatic variables -->
-[&#36;_]:                                            #variables                                            '```&#10;PS C:\> &#36;_&#10;PS C:\> $PSItem&#10;```&#10;Pipeline object'
-[&#36;?]:                                            #variables                                            '```&#10;PS C:\> &#36;?&#10;```&#10;Execution status of the last operation'
-[&#36;^]:                                            #variables                                            '```&#10;PS C:\> &#36;^&#10;```&#10;First token in the last line received by the session'
-[&#36;&#36;]:                                        #variables                                        '```&#10;PS C:\> &#36;&#36;&#10;```&#10;Last token in the last line received by the session'
+[&#36;_]:                                            #variables                                    '```&#10;PS C:\> &#36;_&#10;PS C:\> $PSItem&#10;```&#10;Pipeline object'
+[&#36;?]:                                            #variables                                    '```&#10;PS C:\> &#36;?&#10;```&#10;Execution status of the last operation'
+[&#36;^]:                                            #variables                                    '```&#10;PS C:\> &#36;^&#10;```&#10;First token in the last line received by the session'
+[&#36;&#36;]:                                        #variables                                    '```&#10;PS C:\> &#36;&#36;&#10;```&#10;Last token in the last line received by the session'
 [$args]:                                             #variables                                    '```&#10;PS C:\> $args&#10;```&#10;Array of values for undeclared parameters passed to a function, script or script block'
 [$HOME]:                                             #variables                                    '```&#10;PS C:\> $HOME&#10;```&#10;Full path of the home directory of the user'
 [$IsLinux]:                                          #variables                                    '```&#10;PS C:\> $IsLinux&#10;```&#10;Contains `$True` if the current session is running on a Linux operating system'
@@ -41,20 +41,9 @@
 [$PSVersionTable]:                                   #variables                                    '```&#10;PS C:\> $PSVersionTable&#10;```&#10;Read-only hash table that displays details about the version of PowerShell that is running in the current session'
 [$PWD]:                                              #variables                                    '```&#10;PS C:\> $PWD&#10;```&#10;Path object that represents the full path of the current directory'
 
-[Add-Computer]:                                      #add-computer                                 "`Add-Computer` &#10; Join a computer to a domain"
-[Add-Content]:                                       #add-content                                  "`Add-Content`"
-[Add-DhcpServerInDC]:                                #add-dhcpserverindc                           "`Add-DhcpServerInDC`"
-[Add-DhcpServerv4Scope]:                             #add-dhcpserverv4scope                        "`Add-DhcpServerv4Scope` &#10; Add an IPv4 scope on the DHCP server service."
-[Add-DistributionGroupMember]:                       #add-distributiongroupmember                  "`Add-DistributionGroupMember`&#10;Add a single recipient to distribution groups and mail-enabled security groups"
-[Add-PSSnapin]:                                      #add-pssnapin                                 "`Add-PSSnapin` (alias: `asnp`) &#10; Load a given list of snap-ins (.NET assemblies containing a collection of cmdlets and/or providers for use within PowerShell) either by name or via the pipeline - last supported in PowerShell 5.1"
-[Add-Type]:                                          #add-type                                     '`Add-Type`&#10;Add a.NET Framework type (a class) to a Windows PowerShell session'
+
 [Add-WindowsFeature]:                                #install-windowsfeature                       '`Add-WindowsFeature` (alias: `Install-WindowsFeature`)'
-[Checkpoint-VM]:                                     #checkpoint-vm                                '`Checkpoint-VM`&#10;Creates a checkpoint of a virtual machine.'
-[Clear-Host]:                                        #clear-host                                   "`Clear-Host`"
-[Close-SmbOpenFile]:                                 #close-smbopenfile                            '`Close-SmbOpenFile`&#10;Close a file that is open by one of the clients of the SMB server&#10;"Close-SmbOpenFile". _Microsoft Docs_.'
-[Compress-Archive]:                                  #compress-archive                             "`Compress-Archive`"
-[Copy-Item]:                                         #copy-item                                    "`Copy-Item`"
-[Disconnect-PSSession]:                              #disconnect-pssession                         "`Disconnect-PSSession` (alias: `dnsn`) &#10; Terminate a remote PowerShell session begun with `New-PSSession`"
+
 [Enable-PSRemoting]:                                 #enable-psremoting                            "`Enable-PSRemoting` &#10; Allow remote PowerShell management"
 [Enable-WindowsOptionalFeature]:                     #enable-windowsoptionalfeature                "`Enable-WindowsOptionalFeature` &#10; Enable or restore an optional feature in a Windows image"
 [Enter-PSSession]:                                   #enter-pssession                              "`Enter-PSSession` (alias: `etsn`) &#10; Interact with the specified PowerShell session"
@@ -66,9 +55,6 @@
 [ForEach-Object]:                                    #filters                                      "`ForEach-Object` (alias: `%`, `foreach`) &#10; Perform an operation against each item in a collection of input objects."
 [Format-List]:                                       #output-formatting                            "`Format-List` (alias: `fl`) &#10; Display output in list style"
 [Format-Table]:                                      #output-formatting                            "`Format-Table` (alias: `ft`) &#10; Display output in table style"
-[Format-Volume]:                                     #format-volume                                     '```&#10;PS C:\>Format-Volume&#10;```&#10;Formats one or more existing volumes or a new volume on an existing partition.&#10;The Format-Volume cmdlet formats one or more existing volumes, or a new volume on an existing partition. This cmdlet returns the object representing the volume that was just formatted, with all properties updated to reflect the format operation.'
-[Get-Alias]:                                         #get-alias                                    "`Get-Alias` (alias `gal`) &#10; Display aliases"
-[Get-ChildItem]:                                     #get-childitem                                '```&#10;PS C:\> Get-ChildItem&#10;PS C:\> dir&#10;PS C:\> gci&#10;PS C:\> ls&#10;```&#10;Get items in one or more locations'
 [Get-Clipboard]:                                     #get-clipboard                                "`Get-Clipboard` (alias: `gcb`) &#10; Display items in clipboard"
 [Get-Command]:                                       #get-command                                  "`Get-Command` (alias: `gcm`) &#10; Display all installed commands, including aliases, applications, filters, functions, and scripts (alias: gcm)"
 [Get-Content]:                                       #get-content                                  "`Get-Content` (alias: `cat`, `gc`, `type`)"
@@ -97,48 +83,14 @@
 [Import-Csv]:                                        #import-csv                                   "`Import-Csv` (alias: `ipcsv`) &#10; Import CSV files as PowerShell objects"
 [Import-Module]:                                     #import-module                                "`Import-Module` (alias: `ipmo`) &#10; Manually import a module, rather than waiting for it to load dynamically when using one of its cmdlets"
 [Install-Module]:                                    #install-module                               "`Install-Module`"
-[Install-WindowsFeature]:                            #install-windowsfeature                       "`Install-WindowsFeature` (alias: `Add-WindowsFeature`) &#10; Install one or more roles, role services, or features on either the local or a specified remote server that is running Windows Server 2012 R2"
+[Install-WindowsFeature]:                            #install-windowsfeature                       "`Install-WindowsFeature` (alias: `Add-WindowsFeature`) &#10; "
 [Invoke-GPUpdate]:                                   #invoke-gpupdate                              '```&#10;Invoke-GPUpdate&#10;```&#10;Schedule a remote Group Policy refresh on the specified host'
-[Invoke-WebRequest]:                                 #invoke-webrequest                            "`Invoke-WebRequest`"
-[New-Alias]:                                         #new-alias                                    "`New-Alias` (alias: `nal`) &#10; Create a new alias"
-[New-Guid]:                                          #new-guid                                     "`New-Guid`"
-[New-Item]:                                          #new-item                                     "`New-Item`"
-[New-NetFirewallRule]:                               #new-netfirewallrule                          "`New-NetFirewallRule`"
-[New-NetIpAddress]:                                  #new-netipaddress                             "`New-NetIpAddress` &#10; Manually configure network interface, if a DHCP server is unavailable"
 [New-Object]:                                        #new-object                                   '```&#10;PS C:\> New-Object&#10;```&#10;Creates an instance of a Microsoft .NET Framework or COM object'
-[New-PSSession]:                                     #new-pssession                                "`New-PSSession` (`nsn`) &#10; Start a new remote PowerShell session with a remote computer"
-[New-Partition]:                                     #new-partition                                "`New-Partition`"
-[New-SmbShare]:                                      #new-smbshare                                 "`New-SmbShare`"
-[Out-Null]:                                          #out-null                                     "`Out-Null` &#10; Delete output instead of sending it down the pipeline"
-[Remove-Item]:                                       #remove-item                                  "`Remove-Item` (alias: `rm`, `ri`, `rmdir`, `rd`, `del`)"
-[Remove-Partition]:                                  #remove-partition                             "`Remove-Partition`"
-[Rename-Computer]:                                   #rename-computer                              "`Rename-Computer`"
 [Resolve-DNSName]:                                   #resolve-dnsname                              '`Resolve-DNSName`&#10;...&#10;MeasureUp Practice Lab: Security+'
 [Restart-Computer]:                                  #restart-computer                             "`Restart-Computer`"
-[Search-ADAccount]:                                  #search-adaccount                             "`Search-ADAccount`"
-[Select-Object]:                                     #filters                                      "`Select-Object` (alias: `sc`&#10; Select object or object properties"
-[Set-Alias]:                                         #set-alias                                    "`Set-Alias`"
-[Set-Clipboard]:                                     #set-clipboard                                "`Set-Clipboard (alias: `scb`): &#10; Set the current Windows clipboard entry"
-[Set-DhcpServerv4OptionValue]:                       #set-dhcpserverv4optionvalue                  "`Set-DhcpServerv4OptionValue`"
-[Set-DnsClientServerAddress]:                        #set-dnsclientserveraddress                   "`Set-DnsClientServerAddress` &#10; Set DNS server addresses associated with the TCP/IP properties on an interface"
-[Set-ExecutionPolicy]:                               #set-executionpolicy                          "`Set-ExecutionPolicy` &#10; Change user preference for the Windows PowerShell execution policy"
-[Set-Location]:                                      #set-location                                 "`Set-Location` (alias: `cd`, `sl`, `chdir`) &#10; Set present working directory"
-[Set-NetFirewallRule]:                               #set-netfirewallrule                          "`Set-NetFirewallRule`"
-[Set-PSReadlineOption]:                              #set-psreadlineoption                         "`Set-PSReadlineOption`"
-[Set-Service]:                                       #set-service                                       '```&#10;PS C:\> Set-Service&#10;```&#10;Starts, stops, and suspends a service, and changes its properties'
-[Start-DscConfiguration]:                            #start-dscconfiguration                       "`Start-DscConfiguration` (alias: `sacfg`) &#10; Apply configuration to nodes"
-[Start-Job]:                                         #start-job                                    "`Start-Job` (alias: `sajb`)"
-[Start-Service]:                                     #start-service                                "`Start-Service` (alias: `sasv`) &#10; Start one or more stopped services"
-[Stop-Computer]:                                     #stop-computer                                "`Stop-Computer`"
-[Stop-Service]:                                      #stop-service                                 "```&#10;PS C:\> Stop-Service&#10;PS C:\> spsv&#10;```&#10;Stop one or more services"
-[Update-DistributionGroupMember]:                    #update-distributiongroupmember               "`Update-DistributionGroupMember`&#10;Replace all members of distribution groups and mail-enabled security groups"
-[Update-Help]:                                       #update-help                                  "`Update-Help` &#10; Download help files"
-[Where-Object]:                                      #filters                                      "`Where-Object` (alias: `?`, `where`) &#10; Select objects from a collection based on their property values"
-[Write-Host]:                                        #write-host                                   "`Write-Host`"
-[Write-Output]:                                      #write-output                                 "`Write-Output` (alias: `echo`, `write`) &#10; Send the specified objects to the next command in the pipeline. If the command is the last command in the pipeline, the objects are displayed in the console."
-[Measure-Object]:              #measure-object                 '```&#10;PS C:\> Measure-Object&#10;```&#10;Calculates the numeric properties of objects, and the characters, words, and lines in string objects, such as files of text.&#10;"Measure-Object". Microsoft Powershell documentation.'
 
-<!-- Active Directory cmdlets -->
+
+[Search-ADAccount]:                                  #search-adaccount                             "`Search-ADAccount`"
 [Add-ADPrincipalGroupMembership]:                    #add-adprincipalgroupmembership               "`Add-ADPrincipalGroupMembership` &#10; Add a member to one or more Active Directory groups"
 [New-ADOrganizationalUnit]:                          #new-adorganizationalunit                     "`New-ADOrganizationalUnit`"
 [New-ADUser]:                                        #new-aduser                                   "`New-ADUser` &#10; Create a new Active Directory user"
@@ -161,6 +113,7 @@
 
 <!-- Hyper-V cmdlets -->
 [Add-VMSwitch]:                                      # '`Add-VMSwitch`&#10;Adds a virtual switch to an Ethernet resource pool.'
+[Checkpoint-VM]:                                     #checkpoint-vm                                '`Checkpoint-VM`&#10;Creates a checkpoint of a virtual machine.'
 [Compare-VM]:                                        #compare-vm                                   '`Compare-VM`&#10;Compares a virtual machine and a virtual machine host for compatibility, returning a compatibility report.'
 [Debug-VM]:                                          #debug-vm                                     '`Debug-VM`&#10;Debugs a virtual machine.'
 [Export-VM]:                                         #export-vm                                    '`Export-VM`&#10;Exports a virtual machine to disk.'
