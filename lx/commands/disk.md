@@ -70,7 +70,6 @@ Disable headers
 ```bash
 partx -o START -g --nr 5 /dev/sda
 ```
-## Logical volume management
 ### `lvcreate`
 Create a 20 gigabyte logical volume named "Marketing" from volume group {vg1}
 ```sh

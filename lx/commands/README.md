@@ -28,16 +28,16 @@
 
 Topic                         | Commands
 :---                          | :---
+[Applications](#applications) | [`git`][git] [`imagemagick](#imagemagick) [`mongod`](#mongod) **`GNOME`** [`gsettings`][gsettings] [`gconf-editor`][gconf-editor]
 [Archive](#archive)           | [`ar`][ar] [`bzcat`][bzcat] [`bzip2`][bzip2] [`bzless`][bzless] [`bzmore`][bzmore] [`compress`][compress] [`cpio`][cpio] [`dar`][dar] [`gunzip`][gunzip] [`gzcat`][gzcat] [`gzip`][gzip] [`tar`][tar] [`uncompress`][uncompress] [`unxz`][unxz] [`unzip`][unzip] [`xz`][xz] [`zcat`][zcat] [`zip`][zip] [`zipcloak`][zipcloak] [`zipcmp`][zipcmp] [`zipdetails`][zipdetails] [`zipgrep`][zipgrep] [`zipinfo`][zipinfo] [`zipnote`][zipnote] [`zipsplit`][zipsplit] 
-GNOME                         | [`gconf-editor`][gconf-editor] [`gsettings`][gsettings]
-[Hardware settings](hw.md)    | [`bluetoothctl`][bluetoothctl] [`insmod`][insmod] [`lsmod`][lsmod] [`lspci`][lspci] [`lsusb`][lsusb] [`modprobe`][modprobe] [`rmmod`][rmmod] <br> **[Printing](hw.md)** <br> [**CUPS**][CUPS] [`cupsaccept`][cupsaccept] [`cupsenable`][cupsenable] [`cupsdisable`][cupsdisable] [`cupsreject`][cupsreject] [`lp`][lp] [`cancel`][cancel] <br> [**LPD**][LPD] [`lpc`][lpc] [`lpq`][lpq] [`lpr`][lpr] [`lprm`][lprm]
+[Hardware settings](#hw)    | [`bluetoothctl`][bluetoothctl] [`insmod`][insmod] [`lsmod`][lsmod] [`lspci`][lspci] [`lsusb`][lsusb] [`modprobe`][modprobe] [`rmmod`][rmmod] <br> **[Printing](hw.md)** <br> [**CUPS**][CUPS] [`cupsaccept`][cupsaccept] [`cupsenable`][cupsenable] [`cupsdisable`][cupsdisable] [`cupsreject`][cupsreject] [`lp`][lp] [`cancel`][cancel] <br> [**LPD**][LPD] [`lpc`][lpc] [`lpq`][lpq] [`lpr`][lpr] [`lprm`][lprm]
 [Information](#diagnostic-and-benchmarking) | [`ausearch`][ausearch] [`bpftrace`][bpftrace] [`date`][date] [`df`][df] [`du`][du] [`free`][free] [`glances`][glances] [`hwclock`][hwclock] [`loadaverage`][loadaverage] [`logger`][logger] [`logrotate`][logrotate] [`man`][man] [`mpstat`][mpstat] [`nproc`][nproc] [`printenv`][printenv] [`rsyslogd`][rsyslogd] [`sar`][sar] [`sysbench`][sysbench] [`syslogd`][syslogd] [`time`][time] [`timedatectl`][timedatectl] [`tty`][tty] [`uname`][uname] [`uptime`][uptime] [`vmstat`][vmstat] 
-[Init](init.md)               | **Systemd** [`hostnamectl`][hostnamectl] [`journalctl`][journalctl] [`localectl`][localectl] [`systemctl`][systemd-delta] [`systemd-delta`][systemd-delta] [`timedatectl`][timedatectl] <br> **Sysvinit** [`chkconfig`][chkconfig] [`init`][init] [`service`][service] [`telinit`][telinit] &bull; **Upstart** [`initctl`][initctl]
+[Init](#init-systems)               | [`hostnamectl`][hostnamectl] [`journalctl`][journalctl] [`localectl`][localectl] [`systemctl`][systemd-delta] [`systemd-delta`][systemd-delta] [`timedatectl`][timedatectl] <br> **Sysvinit** [`chkconfig`][chkconfig] [`init`][init] [`service`][service] [`telinit`][telinit] &bull; **Upstart** [`initctl`][initctl]
 Kubernetes                    | [`kubeadm`][kubeadm] [`kubectl`][kubectl]
 [Mail](mail.md)               | [`mail`][mail] [`mailmerge`][mailmerge] [`mailx`][mailx] [`msmtp`][msmtp] <br> **SMTP servers** [`exim`][exim] [`qmail`][qmail] [`postfix`][postfix] [`sendmail`][sendmail]
 [Network](#networking)        | [`arp`][arp] [`bmon`][bmon] [`brctl`][brctl] [`curl`][curl] [`dig`][dig] [`ethtool`][ethtool] [`firewall-cmd`][firewall-cmd] [`host`][host] [`hping3`][hping3] [`ifconfig`][ifconfig] [`iftop`][iftop] [`ifup-wireless`][ifup-wireless] [`ip`][ip] [`iperf`][iperf] [`ipset`][ipset] [`iscsiadm`][iscsiadm] [`iw`][iw] [`iwconfig`][iwconfig] [`iwlist`][iwlist] [`kinit`][kinit] [`klist`][klist] [`mtr`][mtr] [`netcat`][netcat] [`netplan`][netplan] [`netstat`][netstat] [`nmap`][nmap] [`nmblookup`][nmblookup] [`nmcli`][nmcli] [`nmtui`][nmtui] [`nslookup`][nslookup] [`rfkill`][rfkill] [`route`][route] [`sftp`][sftp] [`ss`][ss] [`tcpdump`][tcpdump] [`tracepath`][tracepath] [`traceroute`][traceroute] [`tshark`][tshark] [`wget`][wget] [`whois`][whois] [`xinetd`][xinetd] 
 [Package managers](package.md)| [`apt`][apt] [`brew`][brew] [`dnf`][dnf] [`dpkg`][dpkg] [`gem`][gem] [`pacman`][pacman] [`pip`][pip] [`rpm`][rpm] [`snap`][snap] [`yay`][yay] [`yum`][yum]
-[Remote connections](ssh.md)  | [`rsync`][rsync] [`ssh`][ssh] [`ssh-keygen`][ssh-keygen] [`ssh-keyscan`][ssh-keyscan] [`sshfs`][sshfs]
+[Remote administration](#remote-administration)  | [`rsync`][rsync] [`ssh`][ssh] [`ssh-keygen`][ssh-keygen] [`ssh-keyscan`][ssh-keyscan] [`sshfs`][sshfs]
 [SELinux](#selinux)         | [`chcon`][chcon] [`getenforce`][getenforce] [`getsebool`][getsebool] [`restorecon`][restorecon] [`semanage`][semanage] [`sestatus`][sestatus] [`setenforce`][setenforce] [`setsebool`][setsebool] 
 [System administration](#system-administration) | [`adduser`][adduser] [`at`][at] [`atq`][atq] [`atrm`][atrm] [`chage`][chage] [`edquota`][edquota] [`gpasswd`][gpasswd] [`groupadd`][groupadd] [`groupdel`][groupdel] [`groupmod`][groupmod] [`last`][last] [`lastb`][lastb] [`passwd`][passwd] [`quota`][quota] [`quotacheck`][quotacheck] [`quotaoff`][quotaoff] [`quotaon`][quotaon] [`repquota`][repquota] [`su`][su] [`sudo`][sudo] [`sudoedit`][sudoedit] [`useradd`][useradd] [`userdel`][userdel] [`usermod`][usermod] [`visudo`][visudo] [`w`][w] [`who`][who] [`whoami`][whoami] 
 [Text filters](text.md)       | [`awk`][awk] [`cat`][cat] [`copy`][copy] [`grep`][grep] [`head`][head] [`nl`][nl] [`paste`][paste] [`sed`][sed] [`shuf`][shuf] [`sort`][sort] [`tail`][tail] [`tr`][tr]
@@ -45,7 +45,72 @@ Kubernetes                    | [`kubeadm`][kubeadm] [`kubectl`][kubectl]
 [Virtualization](#virtualization) | [`virt-install`][virt-install] [`virt-manager`][virt-manager]
 [X](#x-windows-system)        | [`x`][x] [`xdpyinfo`][xdpyinfo] [`xfs`][xfs] [`xhost`][xhost] [`xlsclients`][xlsclients] [`xmodmap`][xmodmap] [`xorg`][xorg] [`xrandr`][xrandr] [`xset`][xset] [`xwininfo`][xwininfo] 
 
+## Applications
+### `imagemagick`
+[CLKF]: https://github.com/jasper-zanjani/notes/tree/master/sources/clkf.md "Cannon, Jason. _Command Line Kung Fu_."
+[https://www.ostechnix.com/how-to-view-image-metadata-on-linux/]: https://www.ostechnix.com/how-to-view-image-metadata-on-linux/ "ostechnix.com - How to view image metadata on Linux"
+[https://vitux.com/how-to-change-cursor-size-on-ubuntu-desktop/]: https://vitux.com/how-to-change-cursor-size-on-ubuntu-desktop/ 'vitux.com: "Change cursor size on Ubuntu through the command line"'
+[https://superuser.com/questions/1196241/how-to-remap-caps-lock-on-wayland]: https://superuser.com/questions/1196241/how-to-remap-caps-lock-on-wayland 'superuser.com - "How to remap CAPS LOCK on Wayland"'
 
+[imagemagick identify]:           #identify                   '```&#10;$ imagemagick identify&#10;```&#10;Describe the format and characteristics of one or more image files'
+[imagemagick mogrify]:            #mogrify                    '```&#10;$ imagemagick mogrify&#10;```&#10;Resize, blur, crop, despeckle, dither, draw on, flip, join, resample, etc'
+
+[`identify`][imagemagick identify] 
+[`mogrify`][imagemagick mogrify] 
+
+#### `identify`
+Option                            | Effect
+:---                              | :---
+`-format {string}`                | display formatted image characteristics; {string} is formatted string using `%[key]` escape sequences<br/> **%w** current width in pixels <br/> **%h** current height in pixels
+
+#### `mogrify`
+Option               | Effect
+:---                 | :---
+`-write $FILENAME`   | save to `filename`
+`-resize $Xx$Y`      | resize image to `$X` pixels by `$Y` pixels
+`-crop $SIZE$OFFSET` | 
+`-gravity $TYPE`     | set current gravity suggestion for various other options <br>possible values `NorthWest`, `North`, `NorthEast`, `West`, `Center`, `East`, `SouthWest`, `South`, or `SouthEast`
+  
+Argument patterns 
+---           | ---
+{geometry}    | **{size}{offset}**
+{size}        | **{scale}%** height and weight are both scaled by a specified percentage<br/> **{width}x{height}** maximum values of height and width<br/> **{width}x{height}^** minimum values of height and width<br/>
+{offset}      | also affected by `-gravity` setting<br/> **`+0+0`** top-left corner
+gravity       | 
+
+Resize images
+```sh
+magick mogrify -resize 1920x1200 -write mars-bg.jpg pia22511.jpg
+magick identify -format "%w x %h" pia22511.jpg
+```
+Save the output of a command as an image (`convert` is from the ImageMagick software suite) [<sup>ref</sup>][CLKF]
+```sh
+cmd | convert label:@- image.png
+``` 
+View image metadata (`identify` is from the ImageMagick software suite) [<sup>ref</sup>][https://www.ostechnix.com/how-to-view-image-metadata-on-linux/]
+```sh
+identify image.png # => dimensions, color depth, color profile
+identify -verbose image.png
+```
+
+### `gconf-editor`
+GUI-based configuration editor for GNOME
+
+### `gsettings`
+Change function of Caps Lock key [<sup>ref</sup>][https://superuser.com/questions/1196241/how-to-remap-caps-lock-on-wayland]
+```sh
+gsettings set org.gnome.desktop.input-sources xkb-options "['caps:ctrl_modifier']"
+```
+Change mouse cursor size to `$SIZE`, which can be one of the values 24 (default), 32, 48, 64, or 96. [<sup>ref</sup>][https://vitux.com/how-to-change-cursor-size-on-ubuntu-desktop/]
+```sh
+gsettings set org.gnome.desktop.interface $SIZE
+```
+
+### `mongod`
+Run MongoDB service in the background on port 80
+```sh
+mongod --dbpath $HOME/db --port 80 --fork --logpath /var/tmp/mongodb
+```
 ## Archive
 [ar]:                          #ar                             '```&#10;$ ar&#10;```&#10;Maintain a group of files that are combined into a file archive. Used most commonly to create and update library files as used by `ld`.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 16'
 [bzcat]:                       #bzcat                          '```&#10;$ bzcat&#10;```&#10;Page through .bz2 files'
@@ -349,84 +414,82 @@ speaker-test -c 2
 
 ## Bash builtins
 <!-- Bash builtins -->
-[alias]:                                             bash.md#alias                                      '```&#10;$ alias&#10;```&#10;Assign a shorthand `$NAME` for `$CMD`, or display all aliases if not specified. (ref. `$BASH_ALIASES`)&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 74'
-[bg]:                                                bash.md#bg                                         '```&#10;$ bg&#10;```&#10;Put current job or `$JOB` in the background&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 74'
-[bind]:                                              bash.md#bind                                       '```&#10;$ bind&#10;```&#10;Manage the readline library; nonoption arguments have the same form as in a .inputrc file.&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 75'
-[break]:                                             bash.md#break                                      '```&#10;$ break&#10;```&#10;Exit from a `for`, `while`, `select`, or `until` loop.&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 76'
-[builtin]:                                           bash.md#builtin                                    '```&#10;$ builtin&#10;```&#10;Run the shell built-in command `$CMD` with the optional given arguments `$ARGS`, bypassing functions and aliases.&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 76'
-[caller]:                                            bash.md#caller                                     '```&#10;$ caller&#10;```&#10;Print line number and source filename of the current function call or dot file&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 77'
-[case]:                                              bash.md#case                                       '```&#10;$ case&#10;```&#10;Execute `$CMDS1` if `$VALUE` matches `$PATTERN1`, etc&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 77'
-[cd]:                                                bash.md#cd                                         '```&#10;$ cd&#10;```&#10;&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 78'
-[command]:                                           bash.md#command                                    '```&#10;$ command&#10;```&#10;Execute `$CMD`, bypassing any aliases or functions that may be defined for it&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 79'
-[compgen]:                                           bash.md#compgen                                    '```&#10;$ compgen&#10;```&#10;Generate possible completions for `$STRING`&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 80'
-[complete]:                                          bash.md#complete                                   '```&#10;$ complete&#10;```&#10;Specify how to complete arguments for each `$CMD`&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 80'
-[compopt]:                                           bash.md#compopt                                    '```&#10;$ compopt&#10;```&#10;Modify existing compspecs for given `$CMD`, or for the currently executing completion when invoked without `$CMD`&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 84'
-[continue]:                                          bash.md#continue                                   '```&#10;$ continue&#10;```&#10;Skip remaining commands in a `for`, `while`, `select`, or `until` loop, resuming the next iteration, or skipping `$N` nested loops&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 85'
-[declare]:                                           bash.md#declare                                    '```&#10;$ declare&#10;```&#10;Declare variables and manage their attributes&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 85'
-[dirs]:                                              bash.md#dirs                                       '```&#10;$ dirs&#10;```&#10;Print the directory stack managed by `pushd` and `popd`&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 87'
-[disown]:                                            bash.md#disown                                     '```&#10;$ disown&#10;```&#10;Remove one or more `$JOB` from list of jobs managed by bash&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 87'
-[do]:                                                bash.md#do                                         '```&#10;$ do&#10;```&#10;Reserved word that precedes the command sequence in a `for`, `while`, `until`, or `select` statement&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 88'
-[done]:                                              bash.md#done                                       '```&#10;$ done&#10;```&#10;Reserved word that ends a `for`, `while`, `until`, or `select` statement&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 88'
-[echo]:                                              bash.md#echo                                       '```&#10;$ echo&#10;```&#10;Write `$STRING` to STDOUT&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 88'
-[enable]:                                            bash.md#enable                                     '```&#10;$ enable&#10;```&#10;Enable or disable shell builtins, allowing an external version of a command like `echo` or `test` be used.&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 89'
-[esac]:                                              bash.md#esac                                       '```&#10;$ esac&#10;```&#10;Reserved word that ends a `case` statement&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 90'
-[eval]:                                              bash.md#eval                                       '```&#10;$ eval&#10;```&#10;Execute `$ARGS` after first performing variable expansion.&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 90'
-[exec]:                                              bash.md#exec                                       '```&#10;$ exec&#10;```&#10;Execute `$CMD` in place of the current process.&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 91'
-[exit]:                                              bash.md#exit                                       '```&#10;$ exit&#10;```&#10;Exit a shell script with status `$N`&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 92'
-[export]:                                            bash.md#export                                     '```&#10;$ export&#10;```&#10;Convert `$VAR` to a global variable&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 92'
-[false]:                                             bash.md#false                                      '```&#10;$ false&#10;```&#10;Built-in command that exits with a false return value.&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 93'
-[fc]:                                                bash.md#fc                                         '```&#10;$ fc&#10;```&#10;Display or edit commands in the history list&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 93'
-[fg]:                                                bash.md#fg                                         '```&#10;$ fg&#10;```&#10;Bring `$JOB` to the foreground&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 95'
-[fi]:                                                bash.md#fi                                         '```&#10;$ fi&#10;```&#10;Reserved word that ends an `if` statement&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 95'
-[for]:                                               bash.md#for                                        '```&#10;$ for&#10;```&#10;For variable `$X`, do `$CMD`; if `$LIST` is omitted, use `$@`&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 95'
-[function]:                                          bash.md#function                                   '```&#10;$ function&#10;```&#10;Define `$NAME` as a shell function&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 97'
-[getopts]:                                           bash.md#getopts                                    '```&#10;$ getopts&#10;```&#10;Process command-line arguments and check for legal options&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 97'
-[hash]:                                              bash.md#hash                                       '```&#10;$ hash&#10;```&#10;List the current set of hashed (previously found) commands&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 98'
-[help]:                                              bash.md#help                                       '```&#10;$ help&#10;```&#10;Print usage information for each command that matches `$PATTERN` to STDOUT&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 99'
-[history]:                                           bash.md#history                                    '```&#10;$ history&#10;```&#10;Print commands in the history list or manage the history file&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 100'
-[if]:                                                bash.md#if                                         '```&#10;$ if&#10;```&#10;Begin a conditional statement&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 101'
-[jobs]:                                              bash.md#jobs                                       '```&#10;$ jobs&#10;```&#10;List all running or stopped jobs, or list those specified by `$JOBS`&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 102'
-[kill]:                                              bash.md#kill                                       '```&#10;$ kill&#10;```&#10;Terminate each specified PID&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 103'
-[let]:                                               bash.md#let                                        '```&#10;$ let&#10;```&#10;Perform arithmetic as specified by one or more `$EXPRESSIONS`&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 104'
-[local]:                                             bash.md#local                                      '```&#10;$ local&#10;```&#10;Declare local variables for use inside functions&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 105'
-[logout]:                                            bash.md#logout                                     '```&#10;$ logout&#10;```&#10;Exit a login shell, executing ~/.bash_logout if it exists&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 105'
-[mapfile]:                                           bash.md#mapfile                                    '```&#10;$ mapfile&#10;```&#10;Read STDIN into `$ARRAY`, one line per element, or `$MAPFILE` shell variable if not specified&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 105'
-[popd]:                                              bash.md#popd                                       '```&#10;$ popd&#10;```&#10;Pop the top directory off the directory stack and change to the new top directory&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 106'
-[printf]:                                            bash.md#printf                                     '```&#10;$ printf&#10;```&#10;Formatted printing using escape sequences&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 107'
-[pushd]:                                             bash.md#pushd                                      '```&#10;$ pushd&#10;```&#10;Add `$PATH` to the directory state, or rotate it if none provided&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 108'
-[pwd]:                                               bash.md#pwd                                        '```&#10;$ pwd&#10;```&#10;Display current working directory on STDOUT&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 108'
-[read]:                                              bash.md#read                                       '```&#10;$ read&#10;```&#10;Read one line from STDIN and assign each word to the corresonding `$VAR`&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 109'
-[readarray]:                                         bash.md#readarray                                  '```&#10;$ readarray&#10;```&#10;Identical to `mapfile`&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 111'
-[readonly]:                                          bash.md#readonly                                   '```&#10;$ readonly&#10;```&#10;Prevent specified shell variables $VAR1, $VAR2 from being assigned new values, optionally assigning initial values $VAL1, $VAL2&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 111'
-[return]:                                            bash.md#return                                     '```&#10;$ return&#10;```&#10;Use inside a function definition, exiting with status `$N`&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 112'
-[select]:                                            bash.md#select                                     '```&#10;$ select&#10;```&#10;&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 112'
-[set]:                                               bash.md#set                                        '```&#10;$ set&#10;```&#10;Print values of all variables known to the current shell.&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 113'
-[shift]:                                             bash.md#shift                                      '```&#10;$ shift&#10;```&#10;Shift positional arguments; intended for use in a loop.&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 119'
-[shopt]:                                             bash.md#shopt                                      '```&#10;$ shopt&#10;```&#10;Set or unset shell options.&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 119'
-[source]:                                            bash.md#source                                     '```&#10;$ source&#10;```&#10;Execute a bash script as if the commands within it were executed directly on the command line&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 332'
-[source]:                                            bash.md#source                                     '```&#10;$ source&#10;```&#10;Read and execute a file in the current shell&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 120'
-[suspend]:                                           bash.md#suspend                                    '```&#10;$ suspend&#10;```&#10;Suspend the current shell, often used to stop an `su` command&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 120'
-[test]:                                              bash.md#test                                       '```&#10;$ test&#10;```&#10;Evaluate a condition and exit with status 0 if true, or with a nonzero exit status if false.&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 120'
-[time]:                                              bash.md#time                                       '```&#10;$ time&#10;```&#10;Execute `$CMD` and print the total elapsed time, user time, and system time (in seconds). Similar to external `time` command, except that this builtin version can also time other builtin commands and all commands in a pipeline.&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 124'
-[times]:                                             bash.md#times                                      '```&#10;$ times&#10;```&#10;Print accumulated user and system process times for the shell and the processes it has run&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 125'
-[trap]:                                              bash.md#trap                                       '```&#10;$ trap&#10;```&#10;Execute `$CMD` if any `$SIGNALS` are received&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 125'
-[true]:                                              bash.md#true                                       '```&#10;$ true&#10;```&#10;Built-in command that exits with a true return value&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 127'
-[type]:                                              bash.md#type                                       '```&#10;$ type&#10;```&#10;Show whether each command name is an external command, a built-in command, an alias, shell keyword, or defined shell function&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 127'
-[typeset]:                                           bash.md#typeset                                    '```&#10;$ typeset&#10;```&#10;Identical to `declare`&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 128'
-[ulimit]:                                            bash.md#ulimit                                     '```&#10;$ ulimit&#10;```&#10;Print value of one or more resource limits&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 128'
-[umask]:                                             bash.md#umask                                      '```&#10;$ umask&#10;```&#10;Set file creation mask to octal value `$MASK`, or display it if not provided.&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 130'
-[unalias]:                                           bash.md#unalias                                    '```&#10;$ unalias&#10;```&#10;Remove `$NAMES` from the alias list.&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 130'
-[unset]:                                             bash.md#unset                                      '```&#10;$ unset&#10;```&#10;Erase definitions of functions or variables listed in `$NAMES`&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 130'
-[until]:                                             bash.md#until                                      '```&#10;$ until&#10;```&#10;Until `$CONDITION` is met, do `$CMDS`&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 131'
-[wait]:                                              bash.md#wait                                       '```&#10;$ wait&#10;```&#10;Pause until the specified `$JOB`, which can be a job number or PID, completes, or until all background jobs complete if not provided.&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 131'
-[while]:                                             bash.md#while                                      '```&#10;$ while&#10;```&#10;While `$CONDITION` is met, do `$CMDS`.&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 132'
+[alias]:                                             #alias                                      '```&#10;$ alias&#10;```&#10;Assign a shorthand `$NAME` for `$CMD`, or display all aliases if not specified. (ref. `$BASH_ALIASES`)&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 74'
+[bg]:                                                #bg                                         '```&#10;$ bg&#10;```&#10;Put current job or `$JOB` in the background&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 74'
+[bind]:                                              #bind                                       '```&#10;$ bind&#10;```&#10;Manage the readline library; nonoption arguments have the same form as in a .inputrc file.&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 75'
+[break]:                                             #break                                      '```&#10;$ break&#10;```&#10;Exit from a `for`, `while`, `select`, or `until` loop.&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 76'
+[builtin]:                                           #builtin                                    '```&#10;$ builtin&#10;```&#10;Run the shell built-in command `$CMD` with the optional given arguments `$ARGS`, bypassing functions and aliases.&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 76'
+[caller]:                                            #caller                                     '```&#10;$ caller&#10;```&#10;Print line number and source filename of the current function call or dot file&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 77'
+[case]:                                              #case                                       '```&#10;$ case&#10;```&#10;Execute `$CMDS1` if `$VALUE` matches `$PATTERN1`, etc&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 77'
+[cd]:                                                #cd                                         '```&#10;$ cd&#10;```&#10;&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 78'
+[command]:                                           #command                                    '```&#10;$ command&#10;```&#10;Execute `$CMD`, bypassing any aliases or functions that may be defined for it&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 79'
+[compgen]:                                           #compgen                                    '```&#10;$ compgen&#10;```&#10;Generate possible completions for `$STRING`&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 80'
+[complete]:                                          #complete                                   '```&#10;$ complete&#10;```&#10;Specify how to complete arguments for each `$CMD`&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 80'
+[compopt]:                                           #compopt                                    '```&#10;$ compopt&#10;```&#10;Modify existing compspecs for given `$CMD`, or for the currently executing completion when invoked without `$CMD`&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 84'
+[continue]:                                          #continue                                   '```&#10;$ continue&#10;```&#10;Skip remaining commands in a `for`, `while`, `select`, or `until` loop, resuming the next iteration, or skipping `$N` nested loops&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 85'
+[declare]:                                           #declare                                    '```&#10;$ declare&#10;```&#10;Declare variables and manage their attributes&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 85'
+[dirs]:                                              #dirs                                       '```&#10;$ dirs&#10;```&#10;Print the directory stack managed by `pushd` and `popd`&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 87'
+[disown]:                                            #disown                                     '```&#10;$ disown&#10;```&#10;Remove one or more `$JOB` from list of jobs managed by bash&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 87'
+[do]:                                                #do                                         '```&#10;$ do&#10;```&#10;Reserved word that precedes the command sequence in a `for`, `while`, `until`, or `select` statement&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 88'
+[done]:                                              #done                                       '```&#10;$ done&#10;```&#10;Reserved word that ends a `for`, `while`, `until`, or `select` statement&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 88'
+[echo]:                                              #echo                                       '```&#10;$ echo&#10;```&#10;Write `$STRING` to STDOUT&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 88'
+[enable]:                                            #enable                                     '```&#10;$ enable&#10;```&#10;Enable or disable shell builtins, allowing an external version of a command like `echo` or `test` be used.&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 89'
+[esac]:                                              #esac                                       '```&#10;$ esac&#10;```&#10;Reserved word that ends a `case` statement&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 90'
+[eval]:                                              #eval                                       '```&#10;$ eval&#10;```&#10;Execute `$ARGS` after first performing variable expansion.&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 90'
+[exec]:                                              #exec                                       '```&#10;$ exec&#10;```&#10;Execute `$CMD` in place of the current process.&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 91'
+[exit]:                                              #exit                                       '```&#10;$ exit&#10;```&#10;Exit a shell script with status `$N`&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 92'
+[export]:                                            #export                                     '```&#10;$ export&#10;```&#10;Convert `$VAR` to a global variable&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 92'
+[false]:                                             #false                                      '```&#10;$ false&#10;```&#10;Built-in command that exits with a false return value.&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 93'
+[fc]:                                                #fc                                         '```&#10;$ fc&#10;```&#10;Display or edit commands in the history list&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 93'
+[fg]:                                                #fg                                         '```&#10;$ fg&#10;```&#10;Bring `$JOB` to the foreground&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 95'
+[fi]:                                                #fi                                         '```&#10;$ fi&#10;```&#10;Reserved word that ends an `if` statement&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 95'
+[for]:                                               #for                                        '```&#10;$ for&#10;```&#10;For variable `$X`, do `$CMD`; if `$LIST` is omitted, use `$@`&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 95'
+[function]:                                          #function                                   '```&#10;$ function&#10;```&#10;Define `$NAME` as a shell function&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 97'
+[getopts]:                                           #getopts                                    '```&#10;$ getopts&#10;```&#10;Process command-line arguments and check for legal options&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 97'
+[hash]:                                              #hash                                       '```&#10;$ hash&#10;```&#10;List the current set of hashed (previously found) commands&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 98'
+[help]:                                              #help                                       '```&#10;$ help&#10;```&#10;Print usage information for each command that matches `$PATTERN` to STDOUT&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 99'
+[history]:                                           #history                                    '```&#10;$ history&#10;```&#10;Print commands in the history list or manage the history file&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 100'
+[if]:                                                #if                                         '```&#10;$ if&#10;```&#10;Begin a conditional statement&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 101'
+[jobs]:                                              #jobs                                       '```&#10;$ jobs&#10;```&#10;List all running or stopped jobs, or list those specified by `$JOBS`&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 102'
+[kill]:                                              #kill                                       '```&#10;$ kill&#10;```&#10;Terminate each specified PID&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 103'
+[let]:                                               #let                                        '```&#10;$ let&#10;```&#10;Perform arithmetic as specified by one or more `$EXPRESSIONS`&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 104'
+[local]:                                             #local                                      '```&#10;$ local&#10;```&#10;Declare local variables for use inside functions&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 105'
+[logout]:                                            #logout                                     '```&#10;$ logout&#10;```&#10;Exit a login shell, executing ~/.bash_logout if it exists&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 105'
+[mapfile]:                                           #mapfile                                    '```&#10;$ mapfile&#10;```&#10;Read STDIN into `$ARRAY`, one line per element, or `$MAPFILE` shell variable if not specified&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 105'
+[popd]:                                              #popd                                       '```&#10;$ popd&#10;```&#10;Pop the top directory off the directory stack and change to the new top directory&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 106'
+[printf]:                                            #printf                                     '```&#10;$ printf&#10;```&#10;Formatted printing using escape sequences&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 107'
+[pushd]:                                             #pushd                                      '```&#10;$ pushd&#10;```&#10;Add `$PATH` to the directory state, or rotate it if none provided&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 108'
+[pwd]:                                               #pwd                                        '```&#10;$ pwd&#10;```&#10;Display current working directory on STDOUT&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 108'
+[read]:                                              #read                                       '```&#10;$ read&#10;```&#10;Read one line from STDIN and assign each word to the corresonding `$VAR`&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 109'
+[readarray]:                                         #readarray                                  '```&#10;$ readarray&#10;```&#10;Identical to `mapfile`&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 111'
+[readonly]:                                          #readonly                                   '```&#10;$ readonly&#10;```&#10;Prevent specified shell variables $VAR1, $VAR2 from being assigned new values, optionally assigning initial values $VAL1, $VAL2&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 111'
+[return]:                                            #return                                     '```&#10;$ return&#10;```&#10;Use inside a function definition, exiting with status `$N`&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 112'
+[select]:                                            #select                                     '```&#10;$ select&#10;```&#10;&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 112'
+[set]:                                               #set                                        '```&#10;$ set&#10;```&#10;Print values of all variables known to the current shell.&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 113'
+[shift]:                                             #shift                                      '```&#10;$ shift&#10;```&#10;Shift positional arguments; intended for use in a loop.&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 119'
+[shopt]:                                             #shopt                                      '```&#10;$ shopt&#10;```&#10;Set or unset shell options.&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 119'
+[source]:                                            #source                                     '```&#10;$ source&#10;```&#10;Execute a bash script as if the commands within it were executed directly on the command line&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 332'
+[source]:                                            #source                                     '```&#10;$ source&#10;```&#10;Read and execute a file in the current shell&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 120'
+[suspend]:                                           #suspend                                    '```&#10;$ suspend&#10;```&#10;Suspend the current shell, often used to stop an `su` command&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 120'
+[test]:                                              #test                                       '```&#10;$ test&#10;```&#10;Evaluate a condition and exit with status 0 if true, or with a nonzero exit status if false.&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 120'
+[time]:                                              #time                                       '```&#10;$ time&#10;```&#10;Execute `$CMD` and print the total elapsed time, user time, and system time (in seconds). Similar to external `time` command, except that this builtin version can also time other builtin commands and all commands in a pipeline.&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 124'
+[times]:                                             #times                                      '```&#10;$ times&#10;```&#10;Print accumulated user and system process times for the shell and the processes it has run&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 125'
+[trap]:                                              #trap                                       '```&#10;$ trap&#10;```&#10;Execute `$CMD` if any `$SIGNALS` are received&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 125'
+[true]:                                              #true                                       '```&#10;$ true&#10;```&#10;Built-in command that exits with a true return value&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 127'
+[type]:                                              #type                                       '```&#10;$ type&#10;```&#10;Show whether each command name is an external command, a built-in command, an alias, shell keyword, or defined shell function&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 127'
+[typeset]:                                           #typeset                                    '```&#10;$ typeset&#10;```&#10;Identical to `declare`&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 128'
+[ulimit]:                                            #ulimit                                     '```&#10;$ ulimit&#10;```&#10;Print value of one or more resource limits&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 128'
+[umask]:                                             #umask                                      '```&#10;$ umask&#10;```&#10;Set file creation mask to octal value `$MASK`, or display it if not provided.&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 130'
+[unalias]:                                           #unalias                                    '```&#10;$ unalias&#10;```&#10;Remove `$NAMES` from the alias list.&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 130'
+[unset]:                                             #unset                                      '```&#10;$ unset&#10;```&#10;Erase definitions of functions or variables listed in `$NAMES`&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 130'
+[until]:                                             #until                                      '```&#10;$ until&#10;```&#10;Until `$CONDITION` is met, do `$CMDS`&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 131'
+[wait]:                                              #wait                                       '```&#10;$ wait&#10;```&#10;Pause until the specified `$JOB`, which can be a job number or PID, completes, or until all background jobs complete if not provided.&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 131'
+[while]:                                             #while                                      '```&#10;$ while&#10;```&#10;While `$CONDITION` is met, do `$CMDS`.&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 132'
 
-**B** 
 [`bg`][bg] 
 [`bind`][bind] 
 [`break`][break] 
 [`builtin`][builtin] 
-**C** 
 [`caller`][caller] 
 [`case`][case]/[`esac`][esac] 
 [`cd`][cd] 
@@ -435,60 +498,46 @@ speaker-test -c 2
 [`complete`][complete] 
 [`compopt`][compopt] 
 [`continue`][continue] 
-**D** 
 [`declare`][declare] 
 [`dirs`][dirs] 
 [`disown`][disown] 
 [`do`][do]/[`done`][done] 
-**E** 
 [`echo`][echo] 
 [`enable`][enable] 
 [`eval`][eval] 
 [`exec`][exec] 
 [`exit`][exit] 
 [`export`][export] 
-**F** 
 [`false`][false] 
 [`fc`][fc] 
 [`fg`][fg] 
 [`for`][for] 
 [`function`][function] 
-**G** 
 [`getopts`][getopts] 
-**H** 
 [`hash`][hash] 
 [`help`][help] 
 [`history`][history] 
-**I** 
 [`if`][if]/[`fi`][fi] 
-**J** 
 [`jobs`][jobs] 
-**K** 
 [`kill`][kill] 
-**L** 
 [`let`][let] 
 [`local`][local] 
 [`logout`][logout]
-**M** 
 [`mapfile`][mapfile]
-**P** 
 [`popd`][popd] 
 [`printf`][printf] 
 [`pushd`][pushd] 
 [`pwd`][pwd] 
-**R** 
 [`read`][read] 
 [`readarray`][readarray] 
 [`readonly`][readonly] 
 [`return`][return] 
-**S** 
 [`select`][select] 
 [`set`][set] 
 [`shift`][shift] 
 [`shopt`][shopt] 
 [`source`][source] 
 [`suspend`][suspend] 
-**T** 
 [`test`][test] 
 [`time`][time] 
 [`times`][times] 
@@ -496,13 +545,11 @@ speaker-test -c 2
 [`true`][true] 
 [`type`][type] 
 [`typeset`][typeset] 
-**U** 
 [`ulimit`][ulimit] 
 [`umask`][umask] 
 [`unalias`][unalias] 
 [`unset`][unset] 
 [`until`][until] 
-**W** 
 [`wait`][wait] 
 [`while`][while] 
 
@@ -515,13 +562,10 @@ speaker-test -c 2
 [lilo]:                        #lilo                    '```&#10;$ lilo&#10;```&#10;`lilo` map installer reads a configuration file and writes a map file, which contains information needed by the boot loader to locate and launch Linux kernels or other operating systems.&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 40'
 [update-grub]:                 #update-grub             '```&#10;$ update-grub&#10;```&#10;Make changes take effect for a GRUB2 configuration change'
 
-**G** 
 [`grub-install`][grub-install] 
 [`grub-mkconfig`][grub-mkconfig]
 [`grub2-editenv`][grub2-editenv] 
-**L** 
 [`lilo`][lilo] 
-**U** 
 [`update-grub`][update-grub] 
 
 #### GRUB Rescue prompt
@@ -603,7 +647,6 @@ update-grub
 
 [autotools]: # "GNU autotools is a collection of three packages: `autoconf`, `automake`, and `libtool`"
 
-**A** 
 [`aclocal`][aclocal] 
 [`as`][as] 
 [`autoconf`][autoconf][<sup>!</sup>][autotools] 
@@ -612,33 +655,22 @@ update-grub
 [`autoreconf`][autoreconf] 
 [`autoscan`][autoscan] 
 [`autoupdate`][autoupdate] 
-**B**
 [`bison`][bison] 
-**C** 
 [`cc`][cc] 
 [`ctags`][ctags] 
-**E** 
 [`etags`][etags] 
-**F** 
 [`flex`][flex] 
-**G** 
 [`g++`][g++] 
 [`gcc`][gcc] 
 [`gcore`][gcore] 
 [`gdb`][gdb] 
 [`gprof`][gprof] 
-**L** 
 [`ldd`][ldd] 
 [`lex`][lex] 
 `libtool`[<sup>!</sup>][autotools]
-**M** 
 [`make`][make] 
-**X** 
 [`xgettext`][xgettext] 
-**Y**
 [`yacc`][yacc] 
-
-
 
 ### `autoconf`
 Other related programs are usually invoked automatically by tools in the `autoconf` suite: `autoreconf`, `autoscan`, and `autoupdate`
@@ -842,8 +874,15 @@ Search audit logs for today for logins of UID 500
 ausearch --start today --loginuid500
 ```
 ### `date`
+[date -&#100;]:                 #date                          '```&#10;$ date -d $DATE&#10;$ date --date $DATE&#10;```&#10;Display `$DATE`, which should be quoted&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 53'
+[date -&#102;]:                 #date                          '```&#10;$ date -f $DATEFILE&#10;$ date --file $DATEFILE&#10;```&#10;Like `-d`, but printed once for each line of `$DATEFILE`&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 53'
+[date -&#73;]:                  #date                          '```&#10;$ date -I&#10;$ date --iso-8601&#10;```&#10;Display in ISO-8601 format&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 53'
+[date -&#114;]:                 #date                          '```&#10;$ date -r $FILE&#10;$ date --reference $FILE&#10;```&#10;Display the time `$FILE` was last modified.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 53'
+[date -&#82;]:                  #date                          '```&#10;$ date -R&#10;$ date --rfc-822&#10;```&#10;Display the date in RFC 822 format&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 53'
+[date -&#115;]:                 #date                          '```&#10;$ date -s $DATE&#10;$ date --set $DATE&#10;```&#10;Set date to `$DATE`&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 53'
+[date -&#117;]:                 #date                          '```&#10;$ date -u&#10;$ date --utc&#10;```&#10;Print or set UTC time'
 
-<!-- `date` metacharacters -->
+
 [date +%&#97;]:                 #date                          '```&#10;$ date +%a&#10;```&#10;Abbreviated weekday&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 52'
 [date +%&#65;]:                 #date                          '```&#10;$ date +%A&#10;```&#10;Full weekday&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 52'
 [date +%&#98;]:                 #date                          '```&#10;$ date +%b&#10;```&#10;Abbreviated month name&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 52'
@@ -883,8 +922,26 @@ ausearch --start today --loginuid500
 [date +%&#121;]:                #date                          '```&#10;$ date +%y&#10;```&#10;Last two digits of year (00-99)&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 52'
 [date +%&#90;]:                 #date                          '```&#10;$ date +%Z&#10;```&#10;Time-zone name&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 52'
 
+<code>&nbsp;</code>   <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`d`][date -&#100;] <code>&nbsp;</code> [`f`][date -&#102;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`r`][date -&#114;] [`s`][date -&#115;] <code>&nbsp;</code> [`u`][date -&#117;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code>  <br><code>&nbsp;</code>&nbsp;<code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`I`][date -&#73;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`R`][date -&#82;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 
+
+#### Metacharacters
 <code>&nbsp;</code>   [`a`][date +%&#97;] [`b`][date +%&#98;] [`c`][date +%&#99;] [`d`][date +%&#100;] [`e`][date +%&#101;] <code>&nbsp;</code> [`g`][date +%&#103;] [`h`][date +%&#104;] <code>&nbsp;</code> [`j`][date +%&#106;] [`k`][date +%&#107;] [`l`][date +%&#108;] [`m`][date +%&#109;] [`n`][date +%&#110;] <code>&nbsp;</code> [`p`][date +%&#112;] <code>&nbsp;</code> [`r`][date +%&#114;] [`s`][date +%&#115;] [`t`][date +%&#116;] [`u`][date +%&#117;] <code>&nbsp;</code> [`w`][date +%&#119;] [`x`][date +%&#120;] [`y`][date +%&#121;] <code>&nbsp;</code>  <br><code>&nbsp;</code>&nbsp;[`A`][date +%&#65;] [`B`][date +%&#66;] <code>&nbsp;</code> [`D`][date +%&#68;] <code>&nbsp;</code> [`F`][date +%&#70;] [`G`][date +%&#71;] [`H`][date +%&#72;] [`I`][date +%&#73;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`M`][date +%&#77;] [`N`][date +%&#78;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`R`][date +%&#82;] [`S`][date +%&#83;] [`T`][date +%&#84;] [`U`][date +%&#85;] [`V`][date +%&#86;] [`W`][date +%&#87;] [`X`][date +%&#88;] [`Y`][date +%&#89;] [`Z`][date +%&#90;] 
 
+
+Set only the year using `"next year"` or `"last year"`
+```sh
+date -s "next year"
+date -s "last year"
+```
+Set only the day
+```sh
+date -s "next day"
+date -s "monday"
+```
+Display the date fifty days into the future [devconnected.com][https://devconnected.com/user-administration-complete-guide-on-linux/#Setting_an_account_expiration_date_easily]
+```sh
+date -d '+50days' +%F
+```
 ### `df`
 <!-- `df` options -->
 [df -&#97;]:                    #df                            '```&#10;$ df -&#97;&#10;$ df --all&#10;```&#10;Provide information about all filesystems, even ones marked in /etc/mnttab to be ignored&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 57'
@@ -1298,6 +1355,220 @@ Option  | Effect
 `-P $PATTERN` | display only files matching `$PATTERN`
 `--prune`     | suppress empty directories
 
+## Hardware
+### `bluetoothctl`
+[bluetoothctl devices]:           hw.md#bluetoothctl             '```&#10;$ bluetoothctl&#10;[bluetooth]# devices&#10;```&#10;List available devices'
+[bluetoothctl list]:              hw.md#bluetoothctl             '```&#10;$ bluetoothctl&#10;[bluetooth]# list&#10;```&#10;Display available controllers'
+[bluetoothctl pair]:              hw.md#bluetoothctl             '```&#10;$ bluetoothctl&#10;[bluetooth]# pair&#10;```&#10;Pair with `$DEVICE`, which is the MAC address of the pairable device'
+[bluetoothctl pairable on]:       hw.md#bluetoothctl             '```&#10;$ bluetoothctl&#10;[bluetooth]# pairable on&#10;```&#10;Prepare controller for pairing'
+[bluetoothctl scan on]:           hw.md#bluetoothctl             '```&#10;$ bluetoothctl&#10;[bluetooth]# scan on&#10;```&#10;Receive a list of detected devices'
+[bluetoothctl select]:            hw.md#bluetoothctl             '```&#10;$ bluetoothctl&#10;[bluetooth]# select&#10;```&#10;Select controller to pair, if the system has more than one'
+[bluetoothctl show]:              hw.md#bluetoothctl             '```&#10;$ bluetoothctl&#10;[bluetooth]# show&#10;```&#10;Display more detailed inormation about available controllers'
+
+[<sup>ref</sup>][http://www.linux-magazine.com/Issues/2017/197/Command-Line-bluetoothctl#article_i1] [<sup>ref</sup>][https://computingforgeeks.com/connect-to-bluetooth-device-from-linux-terminal/]
+
+[`device`][bluetoothctl devices] &bull; [`list`][bluetoothctl list] &bull; [`pair`][bluetoothctl pair] &bull; [`pairable on`][bluetoothctl pairable on] [`scan on`][bluetoothctl scan on] [`select`][bluetoothctl select] [`show`][bluetoothctl show]
+
+
+## Init systems
+[SystemD]: systemd.md "De facto standard init system for all major Linux distributions today"
+
+[**Systemd**][SystemD] which starts processes in parallel has become de facto standard for all major Linux distributions.
+**SystemVinit** is a daemon process which was used by most distros until recently. Processes started serially and synchronously, wasting system resources; for years, a common hack was to run services in the background, simulating a sort of parallel processing
+**Upstart** was developed by Canonical for Ubuntu, but abandoned in 2014. 
+
+&nbsp;              | Commands
+---                 | ---
+[SystemD][SystemD]  | [`hostnamectl`][hostnamectl][`journalctl`][journalctl][`localectl`][localectl] [`loginctl`][loginctl][`systemctl`][systemctl] [`systemd-delta`][systemd-delta]`[`timedatectl`][timedatectl]
+Sysvinit            | `chkconfig` `init` `runlevel` `service` `telinit
+Upstart             | `initctl`
+
+### `hostnamectl`
+Permanently change hostname to `$HOSTNAME`
+```sh
+hostnamectl set-hostname $HOSTNAME
+```
+### `journalctl`
+Show current disk usage of all journal files
+```sh
+journalctl --disk-usage
+```
+Continuously update the display as new log entries are created
+```sh
+journalctl -f
+```
+Display output in reverse (newest entries first)
+```sh
+journalctl -r
+```
+### `localectl`
+Change locale to French
+```sh
+localectl set-locale LANG=fr_FR.utf8
+```
+### `loginctl`
+Control the systemd login manager
+### `systemctl`
+Disable `$SERVICE`, ensuring it does not run on boot
+```sh
+systemctl disable service
+systemctl disable NetworkManager.service
+```
+Make `$SERVICE` run on boot 
+```sh
+systemctl enable $SERVICE
+```
+Configure iptables to start on boot and start it immediately
+```sh
+systemctl enable --now iptables
+```
+Display default target (on a systemd-controlled system)
+```sh
+systemctl get-default 
+```
+Change signal type sent to process to be killed
+```sh
+systemctl kill -s
+```
+Equivalent to chkconfig --list
+```sh
+systemctl list-unit-files --type=service
+```
+List available service units
+```sh
+systemctl list-units
+```
+Prevent firewalld from being started inadvertently by another process
+```sh
+systemctl mask firewalld
+```
+Reboot the system
+```sh
+systemctl reboot
+```
+Restart `$SERVICE`
+```sh
+systemctl restart $SERVICE
+systemctl restart iptables
+systemctl restart network.service
+```
+Configure system to boot to a GUI
+```sh
+systemctl set-default graphical.target
+```
+Start `$SERVICE`
+```sh
+systemctl start $SERVICE
+```
+Check status of `$SERVICE`
+```sh
+systemctl status $SERVICE
+sudo systemctl is-active $SERVICE
+```
+Terminate `$SERVICE`
+```sh
+systemctl stop $SERVICE
+```
+Stop `$SERVICE`
+```sh
+systemctl stop $SERVICE
+```
+Suspend the system
+```sh
+systemctl suspend
+```
+
+#### Runlevels
+Runlevel                      | Description
+---                           | ---
+`poweroff.target`             | systemd equivalent to runlevel `0`
+`rescue.target`               | systemd equivalent to runlevel `1`
+`multi-user.target`           | systemd equivalent to runlevel `3`
+`graphical.target`            | systemd equivalent to runlevel `5`
+`reboot.target`               | systemd equivalent to runlevel `6`
+`emergency.target`            | systemd equivalent to runlevel `emergency`
+
+?
+```sh
+systemctl isolate --now service
+```
+Change target to runlevel emergency
+```sh
+systemctl isolate emergency.target
+```
+### `systemd-delta`
+Show files that are overridden with systemd\
+Display differences among files when they are overridden
+```sh
+systemd-delta --diff
+```
+### `timedatectl`
+### `chkconfig`
+Turn services on or off for runlevels
+Without arguments, `chkconfig` defaults to runlevels 3 or 5:
+```sh
+chkconfig
+```
+Display all services and runlevels
+```sh
+chkconfig --list
+```
+Turn {daemon} on for runlevels 3 and 5
+```sh
+chkconfig --level 35 daemon on
+```
+Turn {daemon} off
+```sh
+chkconfig daemon off
+chkconfig NetworkManager off
+```
+Turn {daemon} service on
+```sh
+chkconfig daemon on
+```
+### `init`
+Access different runlevels
+```sh
+init 
+```
+Switch to runlevel {n}
+```sh
+init n
+init 6 # reboot
+```
+### `runlevel`
+Show runlevel for system
+```sh
+runlevel 
+```
+### `service`
+Restart network service 
+```sh
+service network restart
+```
+Check status of {daemon}
+```sh
+service daemon status
+```
+Stop {daemon}
+```sh
+service daemon stop
+service mongodb stop
+```
+### `telinit`
+Refresh system after changes to `/etc/inittab`
+```sh
+telinit 
+```
+Cause operation to not send any notice to logged-on users
+```sh
+telinit--no-wall
+```
+### `initctl`
+Reload configuration files (on Upstart-controlled system)
+```sh
+initctl reload
+```
 
 ## Kernel
 
@@ -2079,6 +2350,98 @@ ss --tcp --processes
 
 <code>&nbsp;</code>   <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`f`][traceroute -&#102;] <code>&nbsp;</code> <code>&nbsp;</code> [`i`][traceroute -&#105;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`n`][traceroute -&#110;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`s`][traceroute -&#115;] [`t`][traceroute -&#116;] <code>&nbsp;</code> [`v`][traceroute -&#118;] [`w`][traceroute -&#119;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code>  <br><code>&nbsp;</code>&nbsp;<code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`T`][traceroute -&#84;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 
 
+
+[https://gist.github.com/zentralwerkstatt/9e6c83e757cdfe430d6710585b2275c7]: https://gist.github.com/zentralwerkstatt/9e6c83e757cdfe430d6710585b2275c7 "GitHub Gist - SSH into Linux Subsystem for Windows"]
+[Cannon]: https://github.com/jasper-zanjani/notes/master/sources/clkf.md "Cannon, Jason. _Command Line Kung Fu_."
+
+## Remote administration
+[`ssh`][ssh] 
+[`ssh-keygen`][ssh-keygen] 
+[`ssh-keyscan`][ssh-keyscan] 
+[`sshfs`][sshfs]
+
+### `ssh`
+Display timer information
+```sh
+ss -o
+ss --options
+```
+Request a SSHv1 connection to {user@host}
+```sh
+ssh -1 user@host
+```
+Request a SSHv2 connection to {user@host}
+```sh
+ssh -2 user@host
+```
+Request a IPv4 connection to {user@host}
+```sh
+ssh -4 user@host
+```
+Request a IPv6 connection to {user@host}
+```sh
+ssh -6 user@host
+```
+Enable the use of a key for authentication
+```sh
+ssh -i privatekey
+```
+Ssh to {user} at {host} and {hostport} from {port}
+```sh
+ssh -L port:host:hostport user@host
+```
+Set the port for the remote host
+```sh
+ssh -p
+```
+Initiate a SSH session with {user@host}, enabling X forwarding
+```sh
+ssh -Y user@host
+```
+List currently loaded keys
+```sh
+ssh-add -l
+```
+Compare the differences between a remote and local file.  `cat` a file over SSH and pipe the output into a diff or sdiff command [[23](sources.md)j]
+```sh
+ssh remotehost cat /path/to/remotefile | diff /path/to/localfile
+```
+Create an SSH tunnel to access remote resources
+Tunnel into a server to access a website which your local machine may not; `-L` creates the SSH tunnel; first port is the port that will be opened on the local machine [[23](sources.md)]
+```sh
+ssh -N -L localport:host:remoteport remotehost
+```
+### `ssh-keygen`
+Generate a MD5 fingerprint from public key at `$FILE`
+```sh
+ssh-keygen -E md5-lf $FILE
+```
+Generate a SHA512 fingerprint from public key at {file}
+```sh
+ssh-keygen -E sha512 -lf $FILE
+```
+Generate a fingerprint from the public key
+```sh
+ssh-keygen -lf $FILE
+```
+Generate host keys for WSL [<sup>ref</sup>][https://gist.github.com/zentralwerkstatt/9e6c83e757cdfe430d6710585b2275c7]
+```sh
+sudo ssh-keygen -t rsa -f /etc/ssh/ssh_host_rsa_key
+sudo ssh-keygen -t dsa -f /etc/ssh/ssh_host_dsa_key
+sudo ssh-keygen -t ecdsa -f /etc/ssh/ssh_host_ecdsa_key
+```
+### `ssh-keyscan`
+Display the public key of `$HOST`
+```sh
+ssh-keyscan host
+```
+### `sshfs`
+Mount a directory from a remote server on your local host via SSH
+[<sup>ref</sup>][Cannon]
+```sh
+sshfs remotehost:/directory mountpoint
+```
+
 ## SELinux
 [chcon]:                       #chcon                          '```&#10;$ chcon&#10;```&#10;Change context of a file or directory&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 207'
 [getenforce]:                  #getenforce                     '```&#10;$ getenforce&#10;```&#10;Determine the current SELinux mode&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 205'
@@ -2583,75 +2946,7 @@ Assign virtual name "storage1" to encrypted disk /dev/sdb1
 ```sh
 cryptsetup luksOpen /dev/sdb1 storage1
 ```
-### `date`
-[date -&#100;]:                 #date                          '```&#10;$ date -d $DATE&#10;$ date --date $DATE&#10;```&#10;Display `$DATE`, which should be quoted&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 53'
-[date -&#102;]:                 #date                          '```&#10;$ date -f $DATEFILE&#10;$ date --file $DATEFILE&#10;```&#10;Like `-d`, but printed once for each line of `$DATEFILE`&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 53'
-[date -&#73;]:                  #date                          '```&#10;$ date -I&#10;$ date --iso-8601&#10;```&#10;Display in ISO-8601 format&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 53'
-[date -&#114;]:                 #date                          '```&#10;$ date -r $FILE&#10;$ date --reference $FILE&#10;```&#10;Display the time `$FILE` was last modified.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 53'
-[date -&#82;]:                  #date                          '```&#10;$ date -R&#10;$ date --rfc-822&#10;```&#10;Display the date in RFC 822 format&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 53'
-[date -&#115;]:                 #date                          '```&#10;$ date -s $DATE&#10;$ date --set $DATE&#10;```&#10;Set date to `$DATE`&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 53'
-[date -&#117;]:                 #date                          '```&#10;$ date -u&#10;$ date --utc&#10;```&#10;Print or set UTC time'
 
-
-[date +%&#97;]:                 #date                          '```&#10;$ date +%a&#10;```&#10;Abbreviated weekday&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 52'
-[date +%&#65;]:                 #date                          '```&#10;$ date +%A&#10;```&#10;Full weekday&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 52'
-[date +%&#98;]:                 #date                          '```&#10;$ date +%b&#10;```&#10;Abbreviated month name&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 52'
-[date +%&#66;]:                 #date                          '```&#10;$ date +%B&#10;```&#10;Full month name&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 52'
-[date +%&#99;]:                 #date                          '```&#10;$ date +%c&#10;```&#10;Country-specific date and time format (default is `%a %b %e %T %Z %Y`)&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 52'
-[date +%&#68;]:                 #date                          '```&#10;$ date +%D&#10;```&#10;Date in `%m/%d/%y` format&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 52'
-[date +%&#100;]:                #date                          '```&#10;$ date +%d&#10;```&#10;Day of month (01-31)&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 51'
-[date +%&#101;]:                #date                          '```&#10;$ date +%e&#10;```&#10;Day of month (1-31); pad single digits with a space.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 52'
-[date +%&#70;]:                 #date                          '```&#10;$ date +%F&#10;```&#10;ISO 8601 date format (`%Y-%m-%d`)&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 52'
-[date +%&#103;]:                #date                          '```&#10;$ date +%g&#10;```&#10;Week-based year within century (00-99)&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 52'
-[date +%&#71;]:                 #date                          '```&#10;$ date +%G&#10;```&#10;Week-based year, including the century (0000-9999)&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 52'
-[date +%&#72;]:                 #date                          '```&#10;$ date +%H&#10;```&#10;Hour in 24-hour format (00-23)&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 52'
-[date +%&#104;]:                #date                          '```&#10;$ date +%h&#10;```&#10;Same as `%b`&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 52'
-[date +%&#73;]:                 #date                          '```&#10;$ date +%I&#10;```&#10;Hour in 12-hour format (01-12)&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 52'
-[date +%&#106;]:                #date                          '```&#10;$ date +%j&#10;```&#10;Julian day of year (001-366)&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 52'
-[date +%&#107;]:                #date                          '```&#10;$ date +%k&#10;```&#10;Hour in 24-hour format (0-23); single digits are preceded by a space&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 52'
-[date +%&#108;]:                #date                          '```&#10;$ date +%l&#10;```&#10;Hour in 12-hour format (1-12); single digits are preceded by a space&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 52'
-[date +%&#77;]:                 #date                          '```&#10;$ date +%M&#10;```&#10;Minute (00-59)&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 52'
-[date +%&#109;]:                #date                          '```&#10;$ date +%m&#10;```&#10;Month of year (01-12)&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 51'
-[date +%&#110;]:                #date                          '```&#10;$ date +%n&#10;```&#10;insert a newline&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 51'
-[date +%&#78;]:                 #date                          '```&#10;$ date +%N&#10;```&#10;Number of nanoseconds within the current second&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 52'
-[date +%&#112;]:                #date                          '```&#10;$ date +%p&#10;```&#10;String to indicate AM or PM&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 52'
-[date +%&#82;]:                 #date                          '```&#10;$ date +%R&#10;```&#10;Time in `%H:%M` format&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 52'
-[date +%&#114;]:                #date                          '```&#10;$ date +%r&#10;```&#10;Time in `%I:%M:%SS %p` format&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 52'
-[date +%&#115;]:                #date                          '```&#10;$ date +%s&#10;```&#10;Date and seconds since the Epoch&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 52'
-[date +%&#83;]:                 #date                          '```&#10;$ date +%S&#10;```&#10;Second (00-61); 61 permits leap seconds and double leap seconds.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 52'
-[date +%&#116;]:                #date                          '```&#10;$ date +%t&#10;```&#10;insert a tab&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 51'
-[date +%&#84;]:                 #date                          '```&#10;$ date +%T&#10;```&#10;Time in `%H:%M:%S` format&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 52'
-[date +%&#85;]:                 #date                          '```&#10;$ date +%U&#10;```&#10;Week number in year (00-53); start week on Sunday&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 52'
-[date +%&#117;]:                #date                          '```&#10;$ date +%u&#10;```&#10;Weekday as a decimal number (1-7, Sunday = 1)&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 52'
-[date +%&#86;]:                 #date                          '```&#10;$ date +%V&#10;```&#10;ISO-8601 week number (01-53)&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 52'
-[date +%&#119;]:                #date                          '```&#10;$ date +%w&#10;```&#10;Day of week (Sunday = 0)&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 52'
-[date +%&#87;]:                 #date                          '```&#10;$ date +%W&#10;```&#10;Week number in year (00-53); start week on Sunday&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 52'
-[date +%&#120;]:                #date                          '```&#10;$ date +%x&#10;```&#10;Country-specific date format&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 52'
-[date +%&#88;]:                 #date                          '```&#10;$ date +%X&#10;```&#10;Country-specific time format&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 52'
-[date +%&#89;]:                 #date                          '```&#10;$ date +%Y&#10;```&#10;Four-digit year (e.g. 1996)&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 52'
-[date +%&#121;]:                #date                          '```&#10;$ date +%y&#10;```&#10;Last two digits of year (00-99)&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 52'
-[date +%&#90;]:                 #date                          '```&#10;$ date +%Z&#10;```&#10;Time-zone name&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 52'
-
-<code>&nbsp;</code>   <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`d`][date -&#100;] <code>&nbsp;</code> [`f`][date -&#102;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`r`][date -&#114;] [`s`][date -&#115;] <code>&nbsp;</code> [`u`][date -&#117;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code>  <br><code>&nbsp;</code>&nbsp;<code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`I`][date -&#73;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`R`][date -&#82;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 
-
-#### Metacharacters
-<code>&nbsp;</code>   [`a`][date +%&#97;] [`b`][date +%&#98;] [`c`][date +%&#99;] [`d`][date +%&#100;] [`e`][date +%&#101;] <code>&nbsp;</code> [`g`][date +%&#103;] [`h`][date +%&#104;] <code>&nbsp;</code> [`j`][date +%&#106;] [`k`][date +%&#107;] [`l`][date +%&#108;] [`m`][date +%&#109;] [`n`][date +%&#110;] <code>&nbsp;</code> [`p`][date +%&#112;] <code>&nbsp;</code> [`r`][date +%&#114;] [`s`][date +%&#115;] [`t`][date +%&#116;] [`u`][date +%&#117;] <code>&nbsp;</code> [`w`][date +%&#119;] [`x`][date +%&#120;] [`y`][date +%&#121;] <code>&nbsp;</code>  <br><code>&nbsp;</code>&nbsp;[`A`][date +%&#65;] [`B`][date +%&#66;] <code>&nbsp;</code> [`D`][date +%&#68;] <code>&nbsp;</code> [`F`][date +%&#70;] [`G`][date +%&#71;] [`H`][date +%&#72;] [`I`][date +%&#73;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`M`][date +%&#77;] [`N`][date +%&#78;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`R`][date +%&#82;] [`S`][date +%&#83;] [`T`][date +%&#84;] [`U`][date +%&#85;] [`V`][date +%&#86;] [`W`][date +%&#87;] [`X`][date +%&#88;] [`Y`][date +%&#89;] [`Z`][date +%&#90;] 
-
-
-Set only the year using `"next year"` or `"last year"`
-```sh
-date -s "next year"
-date -s "last year"
-```
-Set only the day
-```sh
-date -s "next day"
-date -s "monday"
-```
-Display the date fifty days into the future [devconnected.com][https://devconnected.com/user-administration-complete-guide-on-linux/#Setting_an_account_expiration_date_easily]
-```sh
-date -d '+50days' +%F
-```
 ### `dd`
 Implement a simple CPU benchmark by writing 1 GB of zeroes and piping it to md5sum
 ```sh
@@ -2776,28 +3071,7 @@ Specify {filesystemtype} to be created
 ```sh
 mkfs -T filesystemtype
 ```
-### `mongod`
-Run MongoDB service in the background on port 80
-```sh
-mongod --dbpath $HOME/db --port 80 --fork --logpath /var/tmp/mongodb
-```
-### `netplan`
-Config file   | Description
-:---          | :---
-/etc/netplan/ | directory containing various configuration files and scripts
-/etc/nplan/99_config.yaml | netplan config
 
-Apply network configuration settings
-```sh
-netplan apply
-```
-### `networkmanager`
-Stop NetworkManager service
-```sh
-chkconfig NetworkManager off               # Upstart
-systemctl disable NetworkManager.service   # Systemd
-service NetworkManager stop                # sysvinit
-```
 ### `newaliases`
 Refresh the mail system after a change to the [ /etc/aliases ](#configs) file; Must be run after making a change to email aliases on a server running [ `postfix` ](#postfix)
 ### `nice`
@@ -2850,32 +3124,6 @@ rename 'y/A-Z/a-z/' *
 Human-readable
 ```sh
 repquota -sh
-```
-### `route`
-Display and manipulate the routing table\
-Display routing table
-```
-route -n
-```
-Add a default gateway
-```
-route add default gw 192.168.0.1
-```
-Remove a default gateway
-```
-route del default gw 192.168.0.1
-```
-Give a particular network a different gateway
-```
-route add -net 192.168.1.0 netmask 255.255.255.0 gw 192.168.0.1
-```
-Add a route to the server for the network 192.168.51.0/24 through the gateway 192.168.51.1
-```sh
-route add -net192.168.51.0 netmask 255.255.255.0 gw 192.168.51.1
-```
-Add default gateway at {ipaddr}
-```sh
-route add default gw ipaddr
 ```
 ### `screen`
 Share your screen session with another user
@@ -2995,13 +3243,6 @@ Check memory usage in megabytes (`-m`) every `5` seconds <sup>Enki</sup>
 ```sh
 watch -n 5 free -m
 ```
-### `xinetd`
-Configuration file  | Description
-:---                | :---
-/etc/xinet.d/       | config files
-/etc/xinetd.conf    | master xinetd configuration
-/etc/cmd.allow      | specify who is allowed to run a command
-/etc/cmd.deny       | specify who is disallowed from running a command
 
 ## Virtualization
 [virt-install]: #virt-install '`virt-install`&#10;Command-line tool for creating new KVM, Xen, or Linux container guests using the libvirt hypervisor management library'
@@ -3096,7 +3337,7 @@ xset fp+ /usr/local/fonts
 ```
 
 ## Tasks
-X forwarding
+#### X forwarding
 ```sh
 ssh -Y user@host
 ```
@@ -3105,8 +3346,6 @@ Have remote system use local computer {me.luna.edu}'s X display
 export DISPLAY=me.luna.edu:0
 ```
 
-
-## Tasks
 #### Samba
 Install and configure Samba server [<sup>vitux.com</sup>][https://vitux.com/how-to-install-and-configure-samba-on-ubuntu/]
 Install `samba`

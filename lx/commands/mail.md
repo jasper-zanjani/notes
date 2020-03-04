@@ -1,3 +1,5 @@
+## Mail
+
 &nbsp;  | Commands sorted alphabetically
 ---     | ---
 &nbsp;  | `mailmerge` `mailq` `mailstats` `msmtp` &bull; `postfix` `postqueue` `postsuper` &bull; `qmail` &bull; `sendmail` `ssmtp`

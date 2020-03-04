@@ -1,18 +1,18 @@
-[cat]:                                               text.md#cat                                        '```&#10;$ cat&#10;```&#10;Display contents of text files&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 115'
-[cut]:                                               text.md#cut                                        '```&#10;$ cut&#10;```&#10;Display "sections" of data&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 128'
-[diff]:                                              text.md#diff                                       '```&#10;$ diff&#10;```&#10;Compare two files&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 140'
-[echo]:                                              text.md#echo                                       '```&#10;$ echo&#10;```&#10;Display the value of variables&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 331'
-[egrep]:                                             text.md#egrep                                      '```&#10;$ egrep&#10;```&#10;Equivalent to `grep -E`&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 128'
-[grep]:                                              text.md#grep                                       '```&#10;$ grep&#10;```&#10;Search files for lines that contain a specific pattern&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 114'
-[head]:                                              text.md#head                                       '```&#10;$ head&#10;```&#10;Display the top part of text data&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 116'
-[less]:                                              text.md#less                                       '```&#10;$ less&#10;```&#10;Display text one page at a time; more capable than `more`.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 116'
-[more]:                                              text.md#more                                       '```&#10;$ more&#10;```&#10;Display text one page at a time; superceded by `less`.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 116'
-[nl]:                                                text.md#nl                                         '```&#10;$ nl&#10;```&#10;Number lines of output&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 119'
-[sort]:                                              text.md#sort                                       '```&#10;$ sort&#10;```&#10;Sort text data&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 124'
-[tail]:                                              text.md#tail                                       '```&#10;$ tail&#10;```&#10;Display the bottom part of text data.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 115'
-[tee]:                                               text.md#tee                                        '```&#10;$ tee&#10;```&#10;Send output to both STDOUT and to a file&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 122'
-[tr]:                                                text.md#tr                                         '```&#10;$ tr&#10;```&#10;Translate characters from one set to another&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 123'
-[wc]:                                                text.md#wc                                         '```&#10;$ wc&#10;```&#10;Display number of lines, words, or characters of data.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 128'
+[cat]:                                               #cat                                        '```&#10;$ cat&#10;```&#10;Display contents of text files&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 115'
+[cut]:                                               #cut                                        '```&#10;$ cut&#10;```&#10;Display "sections" of data&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 128'
+[diff]:                                              #diff                                       '```&#10;$ diff&#10;```&#10;Compare two files&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 140'
+[echo]:                                              #echo                                       '```&#10;$ echo&#10;```&#10;Display the value of variables&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 331'
+[egrep]:                                             #egrep                                      '```&#10;$ egrep&#10;```&#10;Equivalent to `grep -E`&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 128'
+[grep]:                                              #grep                                       '```&#10;$ grep&#10;```&#10;Search files for lines that contain a specific pattern&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 114'
+[head]:                                              #head                                       '```&#10;$ head&#10;```&#10;Display the top part of text data&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 116'
+[less]:                                              #less                                       '```&#10;$ less&#10;```&#10;Display text one page at a time; more capable than `more`.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 116'
+[more]:                                              #more                                       '```&#10;$ more&#10;```&#10;Display text one page at a time; superceded by `less`.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 116'
+[nl]:                                                #nl                                         '```&#10;$ nl&#10;```&#10;Number lines of output&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 119'
+[sort]:                                              #sort                                       '```&#10;$ sort&#10;```&#10;Sort text data&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 124'
+[tail]:                                              #tail                                       '```&#10;$ tail&#10;```&#10;Display the bottom part of text data.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 115'
+[tee]:                                               #tee                                        '```&#10;$ tee&#10;```&#10;Send output to both STDOUT and to a file&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 122'
+[tr]:                                                #tr                                         '```&#10;$ tr&#10;```&#10;Translate characters from one set to another&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 123'
+[wc]:                                                #wc                                         '```&#10;$ wc&#10;```&#10;Display number of lines, words, or characters of data.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 128'
 
 <!-- `cat` options -->
 [cat -A]:                                             #cat                                               '```&#10;$ cat -A&#10;```&#10;same as `-vET`&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 115'
@@ -62,7 +62,7 @@
 [diff -X]:                                            #diff                                              '```&#10;$ diff -X $FILE&#10;$ diff --exclude-from $FILE&#10;```&#10;Do not compare files in a directory whose names match patterns described in `$FILE`'
 [diff -y]:                                            #diff                                              '```&#10;$ diff -y&#10;$ diff --side-by-side&#10;```&#10;Two-column output&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 61'
 
-# Linux text filtering commands
+## Text
 
 Commands              | Options
 ---                   | ---
