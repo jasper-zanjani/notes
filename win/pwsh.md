@@ -199,7 +199,7 @@
 
 # PowerShell
 
-#### Tasks
+###### Tasks
 [**Remove Registry keys**][Remove-Item] &bull;
 [**Clear out `%temp%` folder**][Remove-Item] &bull;
 [Generate password](#generate-password) &bull;
@@ -211,15 +211,13 @@
 [New domain controller](#new-domain-controller) &bull;
 [Set new Registry keys](#registry) &bull;
 
-#### Cmdlet verbs
-**A** 
+###### Cmdlet verbs
 [`a`](# "`Add-`") [`ap`](# "`Approve-`&#10;Confirms or agrees to the status of a resource or process.") 
 [`as`](# "`Assert-`&#10;Affirms the state of a resource.") 
-**B** 
 [`ba`](# "`Backup-`&#10;Stores data by replicating it.") 
 [`bd`](# "`Build-`&#10;Creates an artifact (usually a binary or document) out of some set of input files (usually source code or declarative documents)") 
 [`bl`](# "`Block-`&#10;Restricts access to a resource. This verb is paired with Unblock.") 
-**C** [`cc`](# "`Connect-`&#10;Creates a link between a source and a destination. This verb is paired with Disconnect.") 
+[`cc`](# "`Connect-`&#10;Creates a link between a source and a destination. This verb is paired with Disconnect.") 
 [`cf`](# "`Convertfrom-`&#10;Converts one primary type of input (the cmdlet noun indicates the input) to one or more supported output types.") 
 [`ch`](# "`Checkpoint-`&#10;Creates a snapshot of the current state of the data or of its configuration.") 
 [`cm`](# "`Compress-`&#10;Compacts the data of a resource. Pairs with Expand.") 
@@ -229,56 +227,43 @@
 [`cs`](# "`Close-`") 
 [`ct`](# "`Convertto-`&#10;Converts from one or more types of input to a primary output type (the cmdlet noun indicates the output type).") 
 [`cv`](# "`Convert-`&#10;Changes the data from one representation to another when the cmdlet supports bidirectional conversion or when the cmdlet supports conversion between multiple data types.") 
-**D** 
 [`d`](# "`Disable-`&#10;Configures a resource to an unavailable or inactive state. For example, the Disable-PSBreakpoint cmdlet makes a breakpoint inactive. This verb is paired with Enable.") 
 [`db`](# "`Debug-`&#10;Examines a resource to diagnose operational problems.") 
 [`dc`](# "`Disconnect-`&#10;Breaks the link between a source and a destination. This verb is paired with Connect.") 
 [`dm`](# "`Dismount-`&#10;Detaches a named entity from a location. This verb is paired with Mount.") 
 [`dn`](# "`Deny-`&#10;Refuses, objects, blocks, or opposes the state of a resource or process.") 
 [`dp`](# "`Deploy-`&#10;Sends an application, website, or solution to a remote target[s] in such a way that a consumer of that solution can access it after deployment is complete") 
-**E** 
 [`e`](# "`Enable-`&#10;Configures a resource to an available or active state. For example, the Enable-PSBreakpoint cmdlet makes a breakpoint active. This verb is paired with Disable.") 
 [`ed`](# "`Edit-`&#10;Modifies existing data by adding or removing content.") 
 [`en`](# "`Expand-`&#10;Restores the data of a resource that has been compressed to its original state. This verb is paired with Compress.") 
 [`ep`](# "`Export-`&#10;Encapsulates the primary input into a persistent data store, such as a file, or into an interchange format. This verb is paired with Import.") 
 [`et`](# "`Enter-`") 
 [`ex`](# "`Exit-`") 
-**F** 
 [`f`](# "`Format-`") 
-**G** 
 [`g`](# "`g`") 
 [`gp`](# "`Group-`&#10;Arranges or associates one or more resources.") 
 [`gr`](# "`Grant-`&#10;Allows access to a resource. This verb is paired with Revoke.") 
-**H** 
 [`h`](# "`Hide-`") 
-**I** 
 [`i`](# "`Invoke-`&#10;Performs an action, such as running a command or a method.") 
 [`in`](# "`Initialize-`&#10;Prepares a resource for use, and sets it to a default state.") 
 [`ip`](# "`Import-`&#10;Creates a resource from data that is stored in a persistent data store (such as a file) or in an interchange format. For example, the Import-CSV cmdlet imports data from a comma-separated value (CSV) file to objects that can be used by other cmdlets. This verb is paired with Export.") 
 [`is`](# "`Install-`&#10;Places a resource in a location, and optionally initializes it. This verb is paired with Uninstall.") 
-**J** 
 [`j`](# "`Join-`") 
-**L** 
 [`l`](# "`Limit-`&#10;Applies constraints to a resource.") 
 [`lk`](# "`Lock-`") 
-**M** 
 [`m`](# "`Move`") 
 [`mg`](# "`Merge-`&#10;Creates a single resource from multiple resources.") 
 [`ms`](# "`Measure-`&#10;Identifies resources that are consumed by a specified operation, or retrieves statistics about a resource.") 
 [`mt`](# "`Mount-`&#10;Attaches a named entity to a location. This verb is paired with Dismount.") 
-**N** 
 [`n`](# "`New-`&#10;Creates a resource. (The `Set-` verb can also be used when creating a resource that includes data, such as the `Set-Variable` cmdlet.)") 
-**O** 
 [`o`](# "`Out-`&#10;Sends data out of the environment. For example, the Out-Printer cmdlet sends data to a printer.") 
 [`op`](# "`Open-`") 
 [`om`](# "`Optimize-`") 
-**P** 
 [`pb`](# "`Publish-`&#10;Makes a resource available to others. This verb is paired with Unpublish.") 
 [`pi`](# "`Ping-`&#10;Use the Test verb.") 
 [`pop`](# "`Pop-`") 
 [`pt`](# "`Protect-`&#10;Safeguards a resource from attack or loss. This verb is paired with Unprotect.") 
 [`pu`](# "`Push-`") 
-**R** 
 [`r`](# "`Remove-`") 
 [`rc`](# "`Receive-`&#10;Accepts information sent from a source. This verb is paired with Send.") 
 [`rd`](# "`Read-`&#10;Acquires information from a source. This verb is paired with Write.") 
@@ -293,7 +278,6 @@
 [`rt`](# "`Restart-`&#10;Stops an operation and then starts it again. For example, the Restart-Service cmdlet stops and then starts a service.") 
 [`ru`](# "`Resume-`&#10;Starts an operation that has been suspended. For example, the Resume-Service cmdlet starts a service that has been suspended. This verb is paired with Suspend.") 
 [`rv`](# "`Resolve-`&#10;Maps a shorthand representation of a resource to a more complete representation.")
-**S** 
 [`s`](# "`Set-`") 
 [`sa`](# "`Start-`&#10;Initiates an operation. For example, the Start-Service cmdlet starts a service. This verb is paired with Stop.") 
 [`sb`](# "`Submit-`&#10;Presents a resource for approval.") 
@@ -309,10 +293,8 @@
 [`sv`](# "`Save-`&#10;Preserves data to avoid loss.") 
 [`sw`](# "`Switch-`") 
 [`sy`](# "`Sync-`&#10;Assures that two or more resources are in the same state.") 
-**T** 
 [`t`](# "`Test-`&#10;Verifies the operation or consistency of a resource.") 
 [`tr`](# "`Trace-`&#10;Tracks the activities of a resource.") 
-**U** 
 [`u`](# "`Use-`&#10;Uses or includes a resource to do something.") 
 [`ub`](# "`Unpublish-`&#10;Makes a resource unavailable to others. This verb is paired with Publish.") 
 [`ud`](# "`Update-`&#10;Brings a resource up-to-date to maintain its state, accuracy, conformance, or compliance. For example, the Update-FormatData cmdlet updates and adds formatting files to the current PowerShell console.") 
@@ -321,12 +303,11 @@
 [`up`](# "`Unprotect-`&#10;Removes safeguards from a resource that were added to prevent it from attack or loss. This verb is paired with Protect.") 
 [`ur`](# "`Unregister-`&#10;Removes the entry for a resource from a repository. This verb is paired with Register.") 
 [`us`](# "`Uninstall-`&#10;Removes a resource from an indicated location. This verb is paired with Install.")
-**W** 
 [`w`](# "`Wait-`&#10;Pauses an operation until a specified event occurs. For example, the Wait-Job cmdlet pauses operations until one or more of the background jobs are complete.") 
 [`wc`](# "`Watch-`") 
 [`wr`](# "`Write-`&#10;Adds information to a target. This verb is paired with Read.") 
 
-#### Cmdlets
+###### Cmdlets
 **A**  `Alias`&nbsp;[`ep`][Export-Alias]&nbsp;[`g`][Get-Alias]&nbsp;[`n`][New-Alias]&nbsp;[`s`][Set-Alias]&nbsp; `Archive`&nbsp;[`cm`][Compress-Archive]&nbsp;[`en`][Expand-Archive] `ADAccount`&nbsp;[`sr`][Search-ADAccount]&nbsp;[`uk`][Unlock-ADAccount]&nbsp; `ADAccountPassword`&nbsp;[`s`][Set-ADAccountPassword]&nbsp; `ADDSDomain`&nbsp;[`is`][Install-ADDSDomain]&nbsp; `ADDSDomainController`&nbsp;[`is`][Install-ADDSDomainController]&nbsp;[`us`][Uninstall-ADDSDomainController]&nbsp; `ADDSForest`&nbsp;[`g`][Get-ADDSForest]&nbsp;[`is`][Install-ADDSForest]&nbsp; `ADObject` [`s`][Set-ADObject]&nbsp; `ADOrganizationalUnit`&nbsp;[`g`][Get-ADOrganizationalUnit]&nbsp;[`n`][New-ADOrganizationalUnit]&nbsp;[`r`][Remove-ADOrganizationalUnit]&nbsp;[`s`][Set-ADOrganizationalUnit]&nbsp; `ADPrincipalGroupMembership`&nbsp;[`a`][Add-ADPrincipalGroupMembership]&nbsp;[`g`][Get-ADPrincipalGroupMembership]&nbsp; `ADUser`&nbsp;[`g`][Get-ADUser]&nbsp;[`n`][New-ADUser] 
 **C** `ChildItem`&nbsp;[`g`][Get-ChildItem]&nbsp; `Clipboard`&nbsp;[`g`][Get-Clipboard]&nbsp;[`s`][Set-Clipboard]&nbsp; `Computer`&nbsp;[`a`][Add-Computer]&nbsp;[`rn`][Rename-Computer]&nbsp;[`rt`][Restart-Computer]&nbsp;[`sp`][Stop-Computer]&nbsp; `Content`&nbsp;[`a`][Add-Content]&nbsp; `Credential` [`g`][Get-Credential]  `Csv` [`ep`][Export-Csv] [`ip`][Import-Csv] **D** `Disk` [`g`][Get-Disk] `DistributionGroupMember` [`a`][Add-DistributionGroupMember] [`g`][Get-DistributionGroupMember] [`ud`][Update-DistributionGroupMember]  `DNSClientServerAddress` [`s`][Set-DnsClientServerAddress] `DNSName`&nbsp;[`rv`][Resolve-DNSName] `DhcpServerInDC` [`a`][Add-DhcpServerInDC] `DhcpServerV4Scope` [`a`][Add-DhcpServerv4Scope] `DhcpServerv4OptionValue` [`s`][Set-DhcpServerv4OptionValue]
 **E** `ExecutionPolicy` [`s`][Set-ExecutionPolicy] 
@@ -341,20 +322,20 @@
 **V** `VM` [`cr`][Compare-VM] [`db`][Debug-VM] [`ep`][Export-VM] [`g`][Get-VM] [`ip`][Import-VM] [`m`][Move-VM] [`ms`][Measure-VM] [`n`][New-VM] [`r`][Remove-VM] [`rn`][Rename-VM] [`rt`][Restart-VM] [`ru`][Resume-VM] [`s`][Set-VM] [`sa`][Start-VM] [`sp`][Stop-VM] [`ss`][Suspend-VM] [`sv`][Save-VM] `VMFirmware` [`s`][Set-VMFirmware]  `VMMemory` [`s`][Set-VMMemory] `VMNetworkAdapter` [`s`][Set-VMNetworkAdapter] `VMProcessor` [`s`][Set-VMProcessor]  `VMSwitch` [`n`][New-VMSwitch]  `Volume` [`f`][Format-Volume] 
 **W** `WebRequest` [`Invoke`][Invoke-WebRequest] `WindowsFeature` [`a`][Add-WindowsFeature] [`g`][Get-WindowsFeature] [`is`][Install-WindowsFeature] `WindowsOptionalFeature` [`e`][Enable-WindowsOptionalFeature] `WMIObject` [`g`][Get-WMIObject]
 
-#### Bash equivalents
+###### Bash equivalents
 [`$!`][&#36;&#36;] [`!$`][&#36;&#36;] [`$?`][&#36;?] [`&`][Start-Job] [`>>`][Add-Content] 
-**A** [`alias`][New-Alias] [`awk`][Select-Object] 
-**B** `bzip2` 
-**C** [`cat`][Get-Content] [`cd`][Set-Location] [`cp`][Copy-Item] 
-**E** [`echo`][Write-Host] &bull; [`find`][Get-ChildItem] &bull; [`grep`][Where-Object] 
-**L** [`less`](#out-host "`Out-Host -Paging`") [`ls`][Get-ChildItem] &bull; 
-**M** [`man`][Get-Help] [`mkdir`](#new-item "`New-Item -ItemType Directory`") [`more`](#out-host "`Out-Host -Paging`")
-**P** [`print`][Write-Host] [`printf`][Write-Host] [`pwd`][Get-Location]
-**R** [`reset`][Clear-Host] [`rm`][Remove-Item]
-**S** [`sed`][Select-Object] [`shutdown`][Stop-Computer] [`-r`][Restart-Computer]
-**T** [`tail`][Get-Content] [`touch`][New-Item]
-**U** [`uniq`](#select-object "`Select-Object -Unique`")
-**W** [`wc`][Measure-Object] [`which`][Get-Command]
+[`alias`][New-Alias] [`awk`][Select-Object] 
+`bzip2` 
+[`cat`][Get-Content] [`cd`][Set-Location] [`cp`][Copy-Item] 
+[`echo`][Write-Host] &bull; [`find`][Get-ChildItem] &bull; [`grep`][Where-Object] 
+[`less`](#out-host "`Out-Host -Paging`") [`ls`][Get-ChildItem] &bull; 
+[`man`][Get-Help] [`mkdir`](#new-item "`New-Item -ItemType Directory`") [`more`](#out-host "`Out-Host -Paging`")
+[`print`][Write-Host] [`printf`][Write-Host] [`pwd`][Get-Location]
+[`reset`][Clear-Host] [`rm`][Remove-Item]
+[`sed`][Select-Object] [`shutdown`][Stop-Computer] [`-r`][Restart-Computer]
+[`tail`][Get-Content] [`touch`][New-Item]
+[`uniq`](#select-object "`Select-Object -Unique`")
+[`wc`][Measure-Object] [`which`][Get-Command]
 
 #### Topics
 **Clipboard**  [`Get-Clipboard`](#get-clipboard) [`New-Guid`](#new-guid) [`Set-Clipboard`](#set-clipboard) [`Write-Output`](#write-output)
@@ -370,10 +351,10 @@
 
 #### Variables
 [`$_`][&#36;_] [`$?`][&#36;?] [`$^`][&#36;^] [`$$`][&#36;&#36;] 
-**A** [`$args`][$args] 
-**H** [`$HOME`][$HOME] 
-**I** [`$IsLinux`][$IsLinux] [`$IsMacOS`][$IsMacOS] [`$IsWindows`][$IsWindows] 
-**P** [`$PID`][$PID] [`$PSCulture`][$PSCulture] [`$PSVersionTable`][$PSVersionTable] [`$PWD`][$PWD]
+[`$args`][$args] 
+[`$HOME`][$HOME] 
+[`$IsLinux`][$IsLinux] [`$IsMacOS`][$IsMacOS] [`$IsWindows`][$IsWindows] 
+[`$PID`][$PID] [`$PSCulture`][$PSCulture] [`$PSVersionTable`][$PSVersionTable] [`$PWD`][$PWD]
 
 ## Syntax
 The `Throw` keyword generates a terminating error
