@@ -1,5 +1,11 @@
 # Observations on the learning process
 
+After several weeks of refining my note-taking technique with regard to syntax, I believe I have settled on an improved workflow.
+
+For all command-line syntax:
+1. Note the command itself within `Terms` spreadsheet
+2. If any options are encountered, document them in `Options`
+
 #### Finding magic numbers
 Before understanding the "lay of the land", or rather the best epistemology for a unit of information, you are first confronted with a list of information without context. This happened while studying for the Network+. On the topic of authentication, I learned a list of material, basically concepts associated with AAA. 
 ```markdown

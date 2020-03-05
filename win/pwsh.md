@@ -41,14 +41,14 @@
 [$PSVersionTable]:                                   #variables                                    '```&#10;PS C:\> $PSVersionTable&#10;```&#10;Read-only hash table that displays details about the version of PowerShell that is running in the current session'
 [$PWD]:                                              #variables                                    '```&#10;PS C:\> $PWD&#10;```&#10;Path object that represents the full path of the current directory'
 
-[Add-Computer]:                                   #add-computer                                      '```&#10;PS C:\> Add-Computer&#10;```&#10;Join a computer to a domain'
-[Add-Content]:                                    #add-content                                       '```&#10;PS C:\> Add-Content&#10;```&#10;'
-[Add-DhcpServerInDC]:                             #add-dhcpserverindc                                '```&#10;PS C:\> Add-DhcpServerInDC&#10;```&#10;'
-[Add-DhcpServerv4Scope]:                          #add-dhcpserverv4scope                             '```&#10;PS C:\> Add-DhcpServerv4Scope&#10;```&#10;Add an IPv4 scope on the DHCP server service.'
-[Add-DistributionGroupMember]:                    #add-distributiongroupmember                       '```&#10;PS C:\> Add-DistributionGroupMember&#10;```&#10;Add a single recipient to distribution groups and mail-enabled security groups'
-[Add-PSSnapin]:                                 #add-pssnapin                                      '```&#10;PS C:\> Add-PSSnapin&#10;PS C:\> asnp&#10;```&#10;Load a given list of snap-ins (.NET assemblies containing a collection of cmdlets and/or providers for use within PowerShell) either by name or via the pipeline - last supported in PowerShell 5.1'
+[Add-Computer]:                                      #add-computer                                      '```&#10;PS C:\> Add-Computer&#10;```&#10;Join a computer to a domain'
+[Add-Content]:                                       #add-content                                       '```&#10;PS C:\> Add-Content&#10;```&#10;'
+[Add-DhcpServerInDC]:                                #add-dhcpserverindc                                '```&#10;PS C:\> Add-DhcpServerInDC&#10;```&#10;'
+[Add-DhcpServerv4Scope]:                             #add-dhcpserverv4scope                             '```&#10;PS C:\> Add-DhcpServerv4Scope&#10;```&#10;Add an IPv4 scope on the DHCP server service.'
+[Add-DistributionGroupMember]:                       #add-distributiongroupmember                       '```&#10;PS C:\> Add-DistributionGroupMember&#10;```&#10;Add a single recipient to distribution groups and mail-enabled security groups'
+[Add-PSSnapin]:                                   #add-pssnapin                                      '```&#10;PS C:\> Add-PSSnapin&#10;PS C:\> asnp&#10;```&#10;Load a given list of snap-ins (.NET assemblies containing a collection of cmdlets and/or providers for use within PowerShell) either by name or via the pipeline - last supported in PowerShell 5.1'
 [Add-Type]:                                       #add-type                                          '```&#10;PS C:\> Add-Type&#10;```&#10;add a.NET Framework type (a class) to a Windows PowerShell session'
-[Add-WindowsFeature]:                           #add-windowsfeature                                '```&#10;PS C:\> Add-WindowsFeature&#10;PS C:\> Install-WindowsFeature&#10;```&#10;Install one or more roles, role services, or features on either the local or a specified remote server that is running Windows Server 2012 R2'
+[Add-WindowsFeature]:                             #add-windowsfeature                                '```&#10;PS C:\> Add-WindowsFeature&#10;PS C:\> Install-WindowsFeature&#10;```&#10;Install one or more roles, role services, or features on either the local or a specified remote server that is running Windows Server 2012 R2'
 [Clear-Host]:                                     #clear-host                                        '```&#10;PS C:\> Clear-Host&#10;```&#10;'
 [Clear-Host]:                                     #clear-host                                        '```&#10;PS C:\> Clear-Host&#10;```&#10;'
 [Close-SmbOpenFile]:                              #close-smbopenfile                                 '```&#10;PS C:\> Close-SmbOpenFile&#10;```&#10;Close a file that is open by one of the clients of the SMB server'
@@ -56,13 +56,14 @@
 [Close-SmbOpenFile]:                              close-smbopenfile#close-smbopenfile                '```&#10;PS C:\> Close-SmbOpenFile&#10;```&#10;Close a file that is open by one of the clients of the SMB server&#10;"Close-SmbOpenFile". _Microsoft Docs_.'
 [Compress-Archive]:                               #compress-archive                                  '```&#10;PS C:\> Compress-Archive&#10;```&#10;'
 [Copy-Item]:                                      #copy-item                                         '```&#10;PS C:\> Copy-Item&#10;```&#10;'
-[Disconnect-PSSession]:                        #disconnect-pssession                              '```&#10;PS C:\> Disconnect-PSSession&#10;PS C:\> dnsn&#10;```&#10;Terminate a remote PowerShell session begun with `New-PSSession`'
+[Disconnect-PSSession]:                           #disconnect-pssession                              '```&#10;PS C:\> Disconnect-PSSession&#10;PS C:\> dnsn&#10;```&#10;Terminate a remote PowerShell session begun with `New-PSSession`'
+[Edit-NanoServerImage]:                           #edit-nanoserverimage '```&#10;PS C:\> Edit-NanoServerImage&#10;```&#10;Add a role or feature to an existing Nano Server VHD file&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 49'
 [Enable-PSRemoting]:                              #enable-psremoting                                 '```&#10;PS C:\> Enable-PSRemoting&#10;```&#10;Allow remote Powershell management'
 [Enable-WindowsOptionalFeature]:                  #enable-windowsoptionalfeature                     '```&#10;PS C:\> Enable-WindowsOptionalFeature&#10;```&#10;Enable or restore an optional feature in a Windows image'
-[Enter-PSSession]:                             #enter-pssession                                   '```&#10;PS C:\> Enter-PSSession&#10;PS C:\> etsn&#10;```&#10;Interact with the specified PowerShell session'
-[Exit-PSSession]:                              #exit-pssession                                    '```&#10;PS C:\> Exit-PSSession&#10;PS C:\> exsn&#10;```&#10;End an interactive session with a remote computer'
+[Enter-PSSession]:                                #enter-pssession                                   '```&#10;PS C:\> Enter-PSSession&#10;PS C:\> etsn&#10;```&#10;Interact with the specified PowerShell session'
+[Exit-PSSession]:                                 #exit-pssession                                    '```&#10;PS C:\> Exit-PSSession&#10;PS C:\> exsn&#10;```&#10;End an interactive session with a remote computer'
 [Expand-Archive]:                                 #expand-archive                                    '```&#10;PS C:\> Expand-Archive&#10;```&#10;Decompress archives'
-[Export-Alias]:                                #export-alias                                      '```&#10;PS C:\> Export-Alias&#10;PS C:\> epal&#10;```&#10;Export information about currently defined aliases to a file.'
+[Export-Alias]:                                   #export-alias                                      '```&#10;PS C:\> Export-Alias&#10;PS C:\> epal&#10;```&#10;Export information about currently defined aliases to a file.'
 [Export-CliXml]:                                  #export-clixml                                     '```&#10;PS C:\> Export-CliXml&#10;```&#10;Serialize a PowerShell object as a Common Language Infrastructure (CLI) XML file'
 [Export-Csv]:                                     #export-csv                                        '```&#10;PS C:\> Export-Csv&#10;```&#10;Export PowerShell objects to CSV'
 [Export-SmigServerSetting]:                       #export-smigserversetting                          '```&#10;PS C:\> Export-SmigServerSetting&#10;```&#10;Export certain Windows features and operating system settings to a migration store&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 33'
@@ -201,12 +202,14 @@
 [Stop-VM]:                                           #stop-vm                                      '`Stop-VM`&#10;Shuts down, turns off, or saves a virtual machine.'
 [Suspend-VM]:                                        #suspend-vm                                   '`Suspend-VM`&#10;Suspends, or pauses, a virtual machine.'
 
-<!-- Windows Server Migration tools -->
+<!-- Cmdlets from 70-740 -->
 [Export-SmigServerSetting]:    #export-smigserversetting       '```&#10;PS C:\> Export-SmigServerSetting&#10;```&#10;Export certain Windows features and operating system settings to a migration store&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 33'
 [Get-SmigServerFeature]:       #get-smigserverfeature          '```&#10;PS C:\> Get-SmigServerFeature&#10;```&#10;Display a list of Windows features that can be migrated from the local server or ffrom a migration store&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 33'
 [Import-SmigServerSetting]:    #import-smigserversetting       '```&#10;PS C:\> Import-SmigServerSetting&#10;```&#10;Import certain Windows features and operating system settings from a migration store and apply them to the local server&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 33'
 [Receive-SmigServerData]:      #receive-smigserverdata         '```&#10;PS C:\> Receive-SmigServerData&#10;```&#10;Enable a destination server to receive migrated files, folders, permissions, and share properties from a source server (`Send-SmigServerData` cmdlet must be running on the source server at the same time)&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 33'
 [Send-SmigServerData]:         #send-smigserverdata            '```&#10;PS C:\> Send-SmigServerData&#10;```&#10;Migrate files, folders, permissions, and share properties from a source server to a destination server (`Receive-SmigServerData` cmdlet must be running on the destination server at the same time)&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 33'
+[New-NanoServerImage]: #new-nanoserverimage '```&#10;PS C:\> New-NanoServerImage&#10;PS C:\> New-NanoServerImage -DeploymentType guest|host -Edition standard|datacenter -MediaPath root -TargetPath $PATH -ComputerName $NAME&#10;```&#10;Used to create a Nano Server VHD file for Nano Server installation&#10;Required parameters:&#10;  `DeploymentType` specified whether the image file should be used on a Hyper-V VM ("Guest") or a physical server ("Host")&#10;  `Edition` specifies whether to install the Standard or Datacenter edition of Nano Server&#10;  `MediaPath` specifies the path to the root of the WS2016 installation disk or mounted image&#10;  `BasePath` specifies a path on the local system where the cmdlet creates a copy of the installation files from the location specified in `MediaPath`&#10;  `TargetPath` specifies the full path and filename of the new image to be created with the filename extension (".vhd" or ".vhdx") specifying Generation 1 or Generation 2 image.&#10;  `ComputerName` specifies the computer name that should be assigned to the new image&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 44'
+[Edit-NanoServerImage]: #edit-nanoserverimage '```&#10;PS C:\> Edit-NanoServerImage&#10;```&#10;Add a role or feature to an existing Nano Server VHD file&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 49'
 
 # PowerShell
 
@@ -356,6 +359,7 @@
 **`List`**&nbsp;[`f`][Format-List] 
 **`Location`**&nbsp;[`g`][Get-Location] [`s`][Set-Location] 
 **`Module`**&nbsp;[`ip`][Import-Module]&nbsp;[`is`][Install-Module] 
+**`NanoServerImage`** [`n`][New-NanoServerImage] [`e`][Edit-NanoServerImage]
 **`NetAdapter`**&nbsp;[`g`][Get-NetAdapter] 
 **`NetFirewallRule`**&nbsp;[`g`][Get-NetFirewallRule] [`n`][New-NetFirewallRule] [`s`][Set-NetFirewallRule] 
 **`NetIpAddress`**&nbsp;[`n`][New-NetIpAddress] 
@@ -659,6 +663,15 @@ Close-SmbOpenFile -SessionId 4415226380393
 ```
 ### `Disconnect-PSSession`
 Terminate a remote PowerShell session begun with [`New-PSSession`][New-PSSession] [<sup>Zacker: 22</sup>][Zacker]
+### `Edit-NanoServerImage`
+[Edit-NanoServerImage -BasePath]:        #Edit-NanoServerImage          '```&#10;PS C:\> Edit-NanoServerImage -BasePath&#10;```&#10;Path on the local system where you have previously created a copy of the Nano Server installation files using `New-NanoServerImage -BasePath`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 49'
+[Edit-NanoServerImage -TargetPath]:        #Edit-NanoServerImage          '```&#10;PS C:\> Edit-NanoServerImage -TargetPath&#10;```&#10;Full path and filename of an existing Nano Server image to be modified&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 49'
+[Edit-NanoServerImage -Packages]:        #Edit-NanoServerImage          '```&#10;PS C:\> Edit-NanoServerImage -Packages&#10;```&#10;Nano Center packages to be installed to the image file specified in `-TargetPath`.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 49'
+
+[`BasePath`][Edit-NanoServerImage -BasePath]
+[`TargetPath`][Edit-NanoServerImage -TargetPath]
+[`Packages`][Edit-NanoServerImage -Packages]
+
 ### `Enable-PSRemoting`
 ### `Enable-WindowsOptionalFeature`
 Enable a feature in the currently running operating system [<sup>ref</sup>](https://docs.microsoft.com/en-us/powershell/module/dism/enable-windowsoptionalfeature?view=win10-ps&redirectedfrom=MSDN "Microsoft Docs: \"Enable-WindowsOptionalFeature\"")
@@ -999,6 +1012,21 @@ New-Guid
 ```powershell
 New-NetIPAddress 10.0.0.3 -InterfaceAlias "Ethernet' -PrefixLength 24
 ```
+### `New-NanoServerImage`
+[New-NanoServerImage -DeploymentType]:         #New-NanoServerImage           '```&#10;PS C:\> New-NanoServerImage -DeploymentType&#10;```&#10;Whether image file should be used on a Hyper-V VM ("Guest") or a physical server ("Host")&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 44'
+[New-NanoServerImage -Edition]:         #New-NanoServerImage           '```&#10;PS C:\> New-NanoServerImage -Edition&#10;```&#10;""Standard"" or ""Datacenter"" edition of Nano Server&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 44'
+[New-NanoServerImage -MediaPath]:         #New-NanoServerImage           '```&#10;PS C:\> New-NanoServerImage -MediaPath&#10;```&#10;Path to the root of the WS2016 installation disk or mounted image&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 44'
+[New-NanoServerImage -BasePath]:         #New-NanoServerImage           '```&#10;PS C:\> New-NanoServerImage -BasePath&#10;```&#10;Path on the local system where the cmdlet cdreates a copy of the installation files from the location specified in `-MediaPath`.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 44'
+[New-NanoServerImage -TargetPath]:         #New-NanoServerImage           '```&#10;PS C:\> New-NanoServerImage -TargetPath&#10;```&#10;Full path and filename of the new image to be created, including the filename extension which specifies whether the new image should be Generation 1 (".vhd") or Generation 2 (".vhdx").&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 44'
+[New-NanoServerImage -ComputerName]:         #New-NanoServerImage           '```&#10;PS C:\> New-NanoServerImage -ComputerName&#10;```&#10;Computer name that should be assigned to the new image.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 44'
+
+[`BasePath`][New-NanoServerImage -BasePath]
+[`ComputerName`][New-NanoServerImage -ComputerName]
+[`DeploymentType`][New-NanoServerImage -DeploymentType]
+[`Edition`][New-NanoServerImage -Edition]
+[`MediaPath`][New-NanoServerImage -MediaPath]
+[`TargetPath`][New-NanoServerImage -TargetPath]
+
 ### `New-NetFirewallRule`
 Set a new firewall rule for incoming WinRM connections
 ```powershell
