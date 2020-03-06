@@ -210,6 +210,31 @@
 [Send-SmigServerData]:         #send-smigserverdata            '```&#10;PS C:\> Send-SmigServerData&#10;```&#10;Migrate files, folders, permissions, and share properties from a source server to a destination server (`Receive-SmigServerData` cmdlet must be running on the destination server at the same time)&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 33'
 [New-NanoServerImage]: #new-nanoserverimage '```&#10;PS C:\> New-NanoServerImage&#10;PS C:\> New-NanoServerImage -DeploymentType guest|host -Edition standard|datacenter -MediaPath root -TargetPath $PATH -ComputerName $NAME&#10;```&#10;Used to create a Nano Server VHD file for Nano Server installation&#10;Required parameters:&#10;  `DeploymentType` specified whether the image file should be used on a Hyper-V VM ("Guest") or a physical server ("Host")&#10;  `Edition` specifies whether to install the Standard or Datacenter edition of Nano Server&#10;  `MediaPath` specifies the path to the root of the WS2016 installation disk or mounted image&#10;  `BasePath` specifies a path on the local system where the cmdlet creates a copy of the installation files from the location specified in `MediaPath`&#10;  `TargetPath` specifies the full path and filename of the new image to be created with the filename extension (".vhd" or ".vhdx") specifying Generation 1 or Generation 2 image.&#10;  `ComputerName` specifies the computer name that should be assigned to the new image&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 44'
 [Edit-NanoServerImage]: #edit-nanoserverimage '```&#10;PS C:\> Edit-NanoServerImage&#10;```&#10;Add a role or feature to an existing Nano Server VHD file&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 49'
+[Add-AppxProvisionedPackage]: #add-appxprovisionedpackage '```&#10;PS C:\> Add-AppxProvisionedPackage&#10;```&#10;&#10;Equivalent to `Dism.exe /Image:foldername /Add-ProvisionedAppxPackage`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
+[Add-WindowsDriver]: #add-windowsdriver '```&#10;PS C:\> Add-WindowsDriver&#10;```&#10;&#10;Equivalent to `Dism.exe /Image:foldername /Add-Drive`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
+[Add-WindowsImage]: #add-windowsimage '```&#10;PS C:\> Add-WindowsImage&#10;```&#10;&#10;Equivalent to `dism.exe /Append-Image`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
+[Add-WindowsPackage]: #add-windowspackage '```&#10;PS C:\> Add-WindowsPackage&#10;```&#10;&#10;Equivalent to `Dism.exe /Image:foldername /Add-Package`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
+[Apply-WindowsUnattend]: #apply-windowsunattend '```&#10;PS C:\> Apply-WindowsUnattend&#10;```&#10;&#10;Equivalent to `Dism.exe /Image:foldername /Apply-Unattend`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
+[Disable-WindowsOptionalFeature]: #disable-windowsoptionalfeature '```&#10;PS C:\> Disable-WindowsOptionalFeature&#10;```&#10;&#10;Equivalent to `Dism.exe /Image:foldername /Disable-Feature`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
+[Dismount-WindowsImage]: #dismount-windowsimage '```&#10;PS C:\> Dismount-WindowsImage&#10;```&#10;&#10;Equivalent to `Dism.exe /Unmount-Image`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
+[Enable-WindowsOptionalFeature]: #enable-windowsoptionalfeature '```&#10;PS C:\> Enable-WindowsOptionalFeature&#10;```&#10;&#10;Equivalent to `Dism.exe /Image:foldername /Enable-Feature`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
+[Expand-WindowsImage]: #expand-windowsimage '```&#10;PS C:\> Expand-WindowsImage&#10;```&#10;&#10;Equivalent to `Dism.exe /Apply-Image`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
+[Export-WindowsDriver]: #export-windowsdriver '```&#10;PS C:\> Export-WindowsDriver&#10;```&#10;&#10;Equivalent to `Dism.exe /Image:foldername /Export-Driver`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
+[Export-WindowsImage]: #export-windowsimage '```&#10;PS C:\> Export-WindowsImage&#10;```&#10;&#10;Equivalent to `Dism.exe /Export-Image`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
+[Get-AppxProvisionedPackage]: #get-appxprovisionedpackage '```&#10;PS C:\> Get-AppxProvisionedPackage&#10;```&#10;&#10;Equivalent to `Dism.exe /Image:foldername /Get-ProvisionedAppxPackages`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 78'
+[Get-WindowsDriver]: #get-windowsdriver '```&#10;PS C:\> Get-WindowsDriver&#10;```&#10;&#10;Equivalent to `Dism.exe /Image:foldername /Get-Drivers`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 78'
+[Get-WindowsImage]: #get-windowsimage '```&#10;PS C:\> Get-WindowsImage&#10;```&#10;&#10;Equivalent to `Dism.exe /Get-ImageInfo`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
+[Get-WindowsImageContent]: #get-windowsimagecontent '```&#10;PS C:\> Get-WindowsImageContent&#10;```&#10;&#10;Equivalent to `Dism.exe /List-Image`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
+[Get-WindowsOptionalFeature]: #get-windowsoptionalfeature '```&#10;PS C:\> Get-WindowsOptionalFeature&#10;```&#10;&#10;Equivalent to `Dism.exe /Image:foldername /Get-Features`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 78'
+[Get-WindowsPackage]: #get-windowspackage '```&#10;PS C:\> Get-WindowsPackage&#10;```&#10;&#10;Equivalent to `Dism.exe /Image:foldername /Get-Packages`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 78'
+[Mount-WindowsImage]: #mount-windowsimage '```&#10;PS C:\> Mount-WindowsImage&#10;```&#10;&#10;Equivalent to `Dism.exe /Mount-image`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
+[New-WindowsImage]: #new-windowsimage '```&#10;PS C:\> New-WindowsImage&#10;```&#10;&#10;Equivalent to `Dism.exe /Capture-Image`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
+[Remove-AppxProvisionedPackage]: #remove-appxprovisionedpackage '```&#10;PS C:\> Remove-AppxProvisionedPackage&#10;```&#10;&#10;Equivalent to `Dism.exe /Image:foldername /Remove-ProvisionedAppxPackage`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 78'
+[Remove-WindowsDriver]: #remove-windowsdriver '```&#10;PS C:\> Remove-WindowsDriver&#10;```&#10;&#10;Equivalent to `Dism.exe /Image:foldername /Remove-Driver`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 78'
+[Remove-WindowsImage]: #remove-windowsimage '```&#10;PS C:\> Remove-WindowsImage&#10;```&#10;&#10;Equivalent to `Dism.exe /Remove-Image`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
+[Remove-WindowsPackage]: #remove-windowspackage '```&#10;PS C:\> Remove-WindowsPackage&#10;```&#10;&#10;Equivalent to `Dism.exe /Image:foldername /Remove-Package`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 78'
+[Save-WindowsImage]: #save-windowsimage '```&#10;PS C:\> Save-WindowsImage&#10;```&#10;&#10;Equivalent to `Dism.exe /Commit-Image`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
+[Set-AppxProvisionedDataFile]: #set-appxprovisioneddatafile '```&#10;PS C:\> Set-AppxProvisionedDataFile&#10;```&#10;&#10;Equivalent to `Dism.exe /Image:foldername /Set-ProvisionedAppxDataFile`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 78'
 
 # PowerShell
 
@@ -226,100 +251,100 @@
 [Set new Registry keys](#registry) &bull;
 
 ###### Cmdlet verbs
-[`a`](# "`Add-`") [`ap`](# "`Approve-`&#10;Confirms or agrees to the status of a resource or process.") 
-[`as`](# "`Assert-`&#10;Affirms the state of a resource.") 
-[`ba`](# "`Backup-`&#10;Stores data by replicating it.") 
-[`bd`](# "`Build-`&#10;Creates an artifact (usually a binary or document) out of some set of input files (usually source code or declarative documents)") 
-[`bl`](# "`Block-`&#10;Restricts access to a resource. This verb is paired with Unblock.") 
-[`cc`](# "`Connect-`&#10;Creates a link between a source and a destination. This verb is paired with Disconnect.") 
-[`cf`](# "`Convertfrom-`&#10;Converts one primary type of input (the cmdlet noun indicates the input) to one or more supported output types.") 
-[`ch`](# "`Checkpoint-`&#10;Creates a snapshot of the current state of the data or of its configuration.") 
-[`cm`](# "`Compress-`&#10;Compacts the data of a resource. Pairs with Expand.") 
-[`cn`](# "`Confirm-`&#10;Acknowledges, verifies, or validates the state of a resource or process.") 
-[`cp`](# "`Complete-`&#10;Concludes an operation.&#10;---&#10;`Copy-`&#10;Copies a resource to another name or to another container. For example, the Copy-Item cmdlet that is used to access stored data copies an item from one location in the data store to another location.") 
-[`cr`](# "`Compare-`&#10;Evaluates the data from one resource against the data from another resource.") 
-[`cs`](# "`Close-`") 
-[`ct`](# "`Convertto-`&#10;Converts from one or more types of input to a primary output type (the cmdlet noun indicates the output type).") 
-[`cv`](# "`Convert-`&#10;Changes the data from one representation to another when the cmdlet supports bidirectional conversion or when the cmdlet supports conversion between multiple data types.") 
-[`d`](# "`Disable-`&#10;Configures a resource to an unavailable or inactive state. For example, the Disable-PSBreakpoint cmdlet makes a breakpoint inactive. This verb is paired with Enable.") 
-[`db`](# "`Debug-`&#10;Examines a resource to diagnose operational problems.") 
-[`dc`](# "`Disconnect-`&#10;Breaks the link between a source and a destination. This verb is paired with Connect.") 
-[`dm`](# "`Dismount-`&#10;Detaches a named entity from a location. This verb is paired with Mount.") 
-[`dn`](# "`Deny-`&#10;Refuses, objects, blocks, or opposes the state of a resource or process.") 
-[`dp`](# "`Deploy-`&#10;Sends an application, website, or solution to a remote target[s] in such a way that a consumer of that solution can access it after deployment is complete") 
-[`e`](# "`Enable-`&#10;Configures a resource to an available or active state. For example, the Enable-PSBreakpoint cmdlet makes a breakpoint active. This verb is paired with Disable.") 
-[`ed`](# "`Edit-`&#10;Modifies existing data by adding or removing content.") 
-[`en`](# "`Expand-`&#10;Restores the data of a resource that has been compressed to its original state. This verb is paired with Compress.") 
-[`ep`](# "`Export-`&#10;Encapsulates the primary input into a persistent data store, such as a file, or into an interchange format. This verb is paired with Import.") 
-[`et`](# "`Enter-`") 
-[`ex`](# "`Exit-`") 
-[`f`](# "`Format-`") 
-[`g`](# "`g`") 
-[`gp`](# "`Group-`&#10;Arranges or associates one or more resources.") 
-[`gr`](# "`Grant-`&#10;Allows access to a resource. This verb is paired with Revoke.") 
-[`h`](# "`Hide-`") 
-[`i`](# "`Invoke-`&#10;Performs an action, such as running a command or a method.") 
-[`in`](# "`Initialize-`&#10;Prepares a resource for use, and sets it to a default state.") 
-[`ip`](# "`Import-`&#10;Creates a resource from data that is stored in a persistent data store (such as a file) or in an interchange format. For example, the Import-CSV cmdlet imports data from a comma-separated value (CSV) file to objects that can be used by other cmdlets. This verb is paired with Export.") 
-[`is`](# "`Install-`&#10;Places a resource in a location, and optionally initializes it. This verb is paired with Uninstall.") 
-[`j`](# "`Join-`") 
-[`l`](# "`Limit-`&#10;Applies constraints to a resource.") 
-[`lk`](# "`Lock-`") 
-[`m`](# "`Move`") 
-[`mg`](# "`Merge-`&#10;Creates a single resource from multiple resources.") 
-[`ms`](# "`Measure-`&#10;Identifies resources that are consumed by a specified operation, or retrieves statistics about a resource.") 
-[`mt`](# "`Mount-`&#10;Attaches a named entity to a location. This verb is paired with Dismount.") 
-[`n`](# "`New-`&#10;Creates a resource. (The `Set-` verb can also be used when creating a resource that includes data, such as the `Set-Variable` cmdlet.)") 
-[`o`](# "`Out-`&#10;Sends data out of the environment. For example, the Out-Printer cmdlet sends data to a printer.") 
-[`op`](# "`Open-`") 
-[`om`](# "`Optimize-`") 
-[`pb`](# "`Publish-`&#10;Makes a resource available to others. This verb is paired with Unpublish.") 
-[`pi`](# "`Ping-`&#10;Use the Test verb.") 
-[`pop`](# "`Pop-`") 
-[`pt`](# "`Protect-`&#10;Safeguards a resource from attack or loss. This verb is paired with Unprotect.") 
-[`pu`](# "`Push-`") 
-[`r`](# "`Remove-`") 
-[`rc`](# "`Receive-`&#10;Accepts information sent from a source. This verb is paired with Send.") 
-[`rd`](# "`Read-`&#10;Acquires information from a source. This verb is paired with Write.") 
-[`re`](# "`Redo-`") 
-[`rg`](# "`Register-`&#10;Creates an entry for a resource in a repository such as a database. This verb is paired with Unregister.") 
-[`rk`](# "`Revoke-`&#10;Specifies an action that does not allow access to a resource. This verb is paired with Grant.") 
-[`rn`](# "`Rename-`") 
-[`rp`](# "`Repair-`&#10;Restores a resource to a usable condition") 
-[`rq`](# "`Request-`&#10;Asks for a resource or asks for permissions.") 
-[`rr`](# "`Restore-`&#10;Sets a resource to a predefined state, such as a state set by Checkpoint. For example, the Restore-Computer cmdlet starts a system restore on the local computer.") 
-[`rs`](# "`Reset`") 
-[`rt`](# "`Restart-`&#10;Stops an operation and then starts it again. For example, the Restart-Service cmdlet stops and then starts a service.") 
-[`ru`](# "`Resume-`&#10;Starts an operation that has been suspended. For example, the Resume-Service cmdlet starts a service that has been suspended. This verb is paired with Suspend.") 
-[`rv`](# "`Resolve-`&#10;Maps a shorthand representation of a resource to a more complete representation.")
-[`s`](# "`Set-`") 
-[`sa`](# "`Start-`&#10;Initiates an operation. For example, the Start-Service cmdlet starts a service. This verb is paired with Stop.") 
-[`sb`](# "`Submit-`&#10;Presents a resource for approval.") 
-[`sc`](# "`Select-`") 
-[`sd`](# "`Send-`&#10;Delivers information to a destination. This verb is paired with Receive.") 
-[`sh`](# "`Show-`") 
-[`sk`](# "`Skip-`") 
-[`sl`](# "`Split-`") 
-[`sp`](# "`Stop-`&#10;Discontinues an activity. This verb is paired with Start.") 
-[`sr`](# "`Search-`") 
-[`ss`](# "`Suspend-`&#10;Pauses an activity. For example, the Suspend-Service cmdlet pauses a service. This verb is paired with Resume.") 
-[`st`](# "`Step-`") 
-[`sv`](# "`Save-`&#10;Preserves data to avoid loss.") 
-[`sw`](# "`Switch-`") 
-[`sy`](# "`Sync-`&#10;Assures that two or more resources are in the same state.") 
-[`t`](# "`Test-`&#10;Verifies the operation or consistency of a resource.") 
-[`tr`](# "`Trace-`&#10;Tracks the activities of a resource.") 
-[`u`](# "`Use-`&#10;Uses or includes a resource to do something.") 
-[`ub`](# "`Unpublish-`&#10;Makes a resource unavailable to others. This verb is paired with Publish.") 
-[`ud`](# "`Update-`&#10;Brings a resource up-to-date to maintain its state, accuracy, conformance, or compliance. For example, the Update-FormatData cmdlet updates and adds formatting files to the current PowerShell console.") 
-[`uk`](# "`Unlock-`") 
-[`ul`](# "`Unblock-`&#10;Removes restrictions to a resource. This verb is paired with Block.") [`un`](# "`Undo-`") 
-[`up`](# "`Unprotect-`&#10;Removes safeguards from a resource that were added to prevent it from attack or loss. This verb is paired with Protect.") 
-[`ur`](# "`Unregister-`&#10;Removes the entry for a resource from a repository. This verb is paired with Register.") 
-[`us`](# "`Uninstall-`&#10;Removes a resource from an indicated location. This verb is paired with Install.")
-[`w`](# "`Wait-`&#10;Pauses an operation until a specified event occurs. For example, the Wait-Job cmdlet pauses operations until one or more of the background jobs are complete.") 
-[`wc`](# "`Watch-`") 
-[`wr`](# "`Write-`&#10;Adds information to a target. This verb is paired with Read.") 
+[`a`  ](#cmdlet-verbs  "```&#10;PS C:\> Add-&#10;```") [`ap`](# "`Approve-`&#10;Confirms or agrees to the status of a resource or process.") 
+[`as` ](#cmdlet-verbs  "```&#10;PS C:\> Assert-&#10;```&#10;Affirms the state of a resource.") 
+[`ba` ](#cmdlet-verbs  "```&#10;PS C:\> Backup-&#10;```&#10;Stores data by replicating it.") 
+[`bd` ](#cmdlet-verbs  "```&#10;PS C:\> Build-&#10;```&#10;Creates an artifact (usually a binary or document) out of some set of input files (usually source code or declarative documents)") 
+[`bl` ](#cmdlet-verbs  "```&#10;PS C:\> Block-&#10;```&#10;Restricts access to a resource. This verb is paired with Unblock.") 
+[`cc` ](#cmdlet-verbs  "```&#10;PS C:\> Connect-&#10;```&#10;Creates a link between a source and a destination. This verb is paired with Disconnect.") 
+[`cf` ](#cmdlet-verbs  "```&#10;PS C:\> Convertfrom-&#10;```&#10;Converts one primary type of input (the cmdlet noun indicates the input) to one or more supported output types.") 
+[`ch` ](#cmdlet-verbs  "```&#10;PS C:\> Checkpoint-&#10;```&#10;Creates a snapshot of the current state of the data or of its configuration.") 
+[`cm` ](#cmdlet-verbs  "```&#10;PS C:\> Compress-&#10;```&#10;Compacts the data of a resource. Pairs with Expand.") 
+[`cn` ](#cmdlet-verbs  "```&#10;PS C:\> Confirm-&#10;```&#10;Acknowledges, verifies, or validates the state of a resource or process.") 
+[`cp` ](#cmdlet-verbs  "```&#10;PS C:\> Complete-&#10;```&#10;Concludes an operation.&#10;---&#10;`Copy-`&#10;Copies a resource to another name or to another container. For example, the Copy-Item cmdlet that is used to access stored data copies an item from one location in the data store to another location.") 
+[`cr` ](#cmdlet-verbs  "```&#10;PS C:\> Compare-&#10;```&#10;Evaluates the data from one resource against the data from another resource.") 
+[`cs` ](#cmdlet-verbs  "```&#10;PS C:\> Close-&#10;```") 
+[`ct` ](#cmdlet-verbs  "```&#10;PS C:\> Convertto-&#10;```&#10;Converts from one or more types of input to a primary output type (the cmdlet noun indicates the output type).") 
+[`cv` ](#cmdlet-verbs  "```&#10;PS C:\> Convert-&#10;```&#10;Changes the data from one representation to another when the cmdlet supports bidirectional conversion or when the cmdlet supports conversion between multiple data types.") 
+[`d`  ](#cmdlet-verbs  "```&#10;PS C:\> Disable-&#10;```&#10;Configures a resource to an unavailable or inactive state. For example, the Disable-PSBreakpoint cmdlet makes a breakpoint inactive. This verb is paired with Enable.") 
+[`db` ](#cmdlet-verbs  "```&#10;PS C:\> Debug-&#10;```&#10;Examines a resource to diagnose operational problems.") 
+[`dc` ](#cmdlet-verbs  "```&#10;PS C:\> Disconnect-&#10;```&#10;Breaks the link between a source and a destination. This verb is paired with Connect.") 
+[`dm` ](#cmdlet-verbs  "```&#10;PS C:\> Dismount-&#10;```&#10;Detaches a named entity from a location. This verb is paired with Mount.") 
+[`dn` ](#cmdlet-verbs  "```&#10;PS C:\> Deny-&#10;```&#10;Refuses, objects, blocks, or opposes the state of a resource or process.") 
+[`dp` ](#cmdlet-verbs  "```&#10;PS C:\> Deploy-&#10;```&#10;Sends an application, website, or solution to a remote target[s] in such a way that a consumer of that solution can access it after deployment is complete") 
+[`e`  ](#cmdlet-verbs  "```&#10;PS C:\> Enable-&#10;```&#10;Configures a resource to an available or active state. For example, the Enable-PSBreakpoint cmdlet makes a breakpoint active. This verb is paired with Disable.") 
+[`ed` ](#cmdlet-verbs  "```&#10;PS C:\> Edit-&#10;```&#10;Modifies existing data by adding or removing content.") 
+[`en` ](#cmdlet-verbs  "```&#10;PS C:\> Expand-&#10;```&#10;Restores the data of a resource that has been compressed to its original state. This verb is paired with Compress.") 
+[`ep` ](#cmdlet-verbs  "```&#10;PS C:\> Export-&#10;```&#10;Encapsulates the primary input into a persistent data store, such as a file, or into an interchange format. This verb is paired with Import.") 
+[`et` ](#cmdlet-verbs  "```&#10;PS C:\> Enter-&#10;```") 
+[`ex` ](#cmdlet-verbs  "```&#10;PS C:\> Exit-&#10;```") 
+[`f`  ](#cmdlet-verbs  "```&#10;PS C:\> Format-&#10;```") 
+[`g`  ](#cmdlet-verbs  "```&#10;PS C:\> Get-&#10;``") 
+[`gp` ](#cmdlet-verbs  "```&#10;PS C:\> Group-&#10;```&#10;Arranges or associates one or more resources.") 
+[`gr` ](#cmdlet-verbs  "```&#10;PS C:\> Grant-&#10;```&#10;Allows access to a resource. This verb is paired with Revoke.") 
+[`h`  ](#cmdlet-verbs  "```&#10;PS C:\> Hide-&#10;```") 
+[`i`  ](#cmdlet-verbs  "```&#10;PS C:\> Invoke-&#10;```&#10;Performs an action, such as running a command or a method.") 
+[`in` ](#cmdlet-verbs  "```&#10;PS C:\> Initialize-&#10;```&#10;Prepares a resource for use, and sets it to a default state.") 
+[`ip` ](#cmdlet-verbs  "```&#10;PS C:\> Import-&#10;```&#10;Creates a resource from data that is stored in a persistent data store (such as a file) or in an interchange format. For example, the Import-CSV cmdlet imports data from a comma-separated value (CSV) file to objects that can be used by other cmdlets. This verb is paired with Export.") 
+[`is` ](#cmdlet-verbs  "```&#10;PS C:\> Install-&#10;```&#10;Places a resource in a location, and optionally initializes it. This verb is paired with Uninstall.") 
+[`j`  ](#cmdlet-verbs  "```&#10;PS C:\> Join-&#10;```") 
+[`l`  ](#cmdlet-verbs  "```&#10;PS C:\> Limit-&#10;```&#10;Applies constraints to a resource.") 
+[`lk` ](#cmdlet-verbs  "```&#10;PS C:\> Lock-&#10;```") 
+[`m`  ](#cmdlet-verbs  "```&#10;PS C:\> Move`&#10;``") 
+[`mg` ](#cmdlet-verbs  "```&#10;PS C:\> Merge-&#10;```&#10;Creates a single resource from multiple resources.") 
+[`ms` ](#cmdlet-verbs  "```&#10;PS C:\> Measure-&#10;```&#10;Identifies resources that are consumed by a specified operation, or retrieves statistics about a resource.") 
+[`mt` ](#cmdlet-verbs  "```&#10;PS C:\> Mount-&#10;```&#10;Attaches a named entity to a location. This verb is paired with Dismount.") 
+[`n`  ](#cmdlet-verbs  "```&#10;PS C:\> New-&#10;```&#10;Creates a resource. (The `Set-` verb can also be used when creating a resource that includes data, such as the `Set-Variable` cmdlet.)") 
+[`o`  ](#cmdlet-verbs  "```&#10;PS C:\> Out-&#10;```&#10;Sends data out of the environment. For example, the Out-Printer cmdlet sends data to a printer.") 
+[`op` ](#cmdlet-verbs  "```&#10;PS C:\> Open-&#10;```") 
+[`om` ](#cmdlet-verbs  "```&#10;PS C:\> Optimize-&#10;```") 
+[`pb` ](#cmdlet-verbs  "```&#10;PS C:\> Publish-&#10;```&#10;Makes a resource available to others. This verb is paired with Unpublish.") 
+[`pi` ](#cmdlet-verbs  "```&#10;PS C:\> Ping-&#10;```&#10;Use the Test verb.") 
+[`pop`](#cmdlet-verbs  "```&#10;PS C:\> Pop-&#10;```") 
+[`pt` ](#cmdlet-verbs  "```&#10;PS C:\> Protect-&#10;```&#10;Safeguards a resource from attack or loss. This verb is paired with Unprotect.") 
+[`pu` ](#cmdlet-verbs  "```&#10;PS C:\> Push-&#10;```") 
+[`r`  ](#cmdlet-verbs  "```&#10;PS C:\> Remove-&#10;```") 
+[`rc` ](#cmdlet-verbs  "```&#10;PS C:\> Receive-&#10;```&#10;Accepts information sent from a source. This verb is paired with Send.") 
+[`rd` ](#cmdlet-verbs  "```&#10;PS C:\> Read-&#10;```&#10;Acquires information from a source. This verb is paired with Write.") 
+[`re` ](#cmdlet-verbs  "```&#10;PS C:\> Redo-&#10;```") 
+[`rg` ](#cmdlet-verbs  "```&#10;PS C:\> Register-&#10;```&#10;Creates an entry for a resource in a repository such as a database. This verb is paired with Unregister.") 
+[`rk` ](#cmdlet-verbs  "```&#10;PS C:\> Revoke-&#10;```&#10;Specifies an action that does not allow access to a resource. This verb is paired with Grant.") 
+[`rn` ](#cmdlet-verbs  "```&#10;PS C:\> Rename-&#10;```") 
+[`rp` ](#cmdlet-verbs  "```&#10;PS C:\> Repair-&#10;```&#10;Restores a resource to a usable condition") 
+[`rq` ](#cmdlet-verbs  "```&#10;PS C:\> Request-&#10;```&#10;Asks for a resource or asks for permissions.") 
+[`rr` ](#cmdlet-verbs  "```&#10;PS C:\> Restore-&#10;```&#10;Sets a resource to a predefined state, such as a state set by Checkpoint. For example, the Restore-Computer cmdlet starts a system restore on the local computer.") 
+[`rs` ](#cmdlet-verbs  "```&#10;PS C:\> Reset`&#10;``") 
+[`rt` ](#cmdlet-verbs  "```&#10;PS C:\> Restart-&#10;```&#10;Stops an operation and then starts it again. For example, the Restart-Service cmdlet stops and then starts a service.") 
+[`ru` ](#cmdlet-verbs  "```&#10;PS C:\> Resume-&#10;```&#10;Starts an operation that has been suspended. For example, the Resume-Service cmdlet starts a service that has been suspended. This verb is paired with Suspend.") 
+[`rv` ](#cmdlet-verbs  "```&#10;PS C:\> Resolve-&#10;```&#10;Maps a shorthand representation of a resource to a more complete representation.")
+[`s`  ](#cmdlet-verbs  "```&#10;PS C:\> Set-&#10;```") 
+[`sa` ](#cmdlet-verbs  "```&#10;PS C:\> Start-&#10;```&#10;Initiates an operation. For example, the Start-Service cmdlet starts a service. This verb is paired with Stop.") 
+[`sb` ](#cmdlet-verbs  "```&#10;PS C:\> Submit-&#10;```&#10;Presents a resource for approval.") 
+[`sc` ](#cmdlet-verbs  "```&#10;PS C:\> Select-&#10;```") 
+[`sd` ](#cmdlet-verbs  "```&#10;PS C:\> Send-&#10;```&#10;Delivers information to a destination. This verb is paired with Receive.") 
+[`sh` ](#cmdlet-verbs  "```&#10;PS C:\> Show-&#10;```") 
+[`sk` ](#cmdlet-verbs  "```&#10;PS C:\> Skip-&#10;```") 
+[`sl` ](#cmdlet-verbs  "```&#10;PS C:\> Split-&#10;```") 
+[`sp` ](#cmdlet-verbs  "```&#10;PS C:\> Stop-&#10;```&#10;Discontinues an activity. This verb is paired with Start.") 
+[`sr` ](#cmdlet-verbs  "```&#10;PS C:\> Search-&#10;```") 
+[`ss` ](#cmdlet-verbs  "```&#10;PS C:\> Suspend-&#10;```&#10;Pauses an activity. For example, the Suspend-Service cmdlet pauses a service. This verb is paired with Resume.") 
+[`st` ](#cmdlet-verbs  "```&#10;PS C:\> Step-&#10;```") 
+[`sv` ](#cmdlet-verbs  "```&#10;PS C:\> Save-&#10;```&#10;Preserves data to avoid loss.") 
+[`sw` ](#cmdlet-verbs  "```&#10;PS C:\> Switch-&#10;```") 
+[`sy` ](#cmdlet-verbs  "```&#10;PS C:\> Sync-&#10;```&#10;Assures that two or more resources are in the same state.") 
+[`t`  ](#cmdlet-verbs  "```&#10;PS C:\> Test-&#10;```&#10;Verifies the operation or consistency of a resource.") 
+[`tr` ](#cmdlet-verbs  "```&#10;PS C:\> Trace-&#10;```&#10;Tracks the activities of a resource.") 
+[`u`  ](#cmdlet-verbs  "```&#10;PS C:\> Use-&#10;```&#10;Uses or includes a resource to do something.") 
+[`ub` ](#cmdlet-verbs  "```&#10;PS C:\> Unpublish-&#10;```&#10;Makes a resource unavailable to others. This verb is paired with Publish.") 
+[`ud` ](#cmdlet-verbs  "```&#10;PS C:\> Update-&#10;```&#10;Brings a resource up-to-date to maintain its state, accuracy, conformance, or compliance. For example, the Update-FormatData cmdlet updates and adds formatting files to the current PowerShell console.") 
+[`uk` ](#cmdlet-verbs  "```&#10;PS C:\> Unlock-&#10;```") 
+[`ul` ](#cmdlet-verbs  "```&#10;PS C:\> Unblock-&#10;```&#10;Removes restrictions to a resource. This verb is paired with Block.") [`un`](# "`Undo-`") 
+[`up` ](#cmdlet-verbs  "```&#10;PS C:\> Unprotect-&#10;```&#10;Removes safeguards from a resource that were added to prevent it from attack or loss. This verb is paired with Protect.") 
+[`ur` ](#cmdlet-verbs  "```&#10;PS C:\> Unregister-&#10;```&#10;Removes the entry for a resource from a repository. This verb is paired with Register.") 
+[`us` ](#cmdlet-verbs  "```&#10;PS C:\> Uninstall-&#10;```&#10;Removes a resource from an indicated location. This verb is paired with Install.")
+[`w`  ](#cmdlet-verbs  "```&#10;PS C:\> Wait-&#10;```&#10;Pauses an operation until a specified event occurs. For example, the Wait-Job cmdlet pauses operations until one or more of the background jobs are complete.") 
+[`wc` ](#cmdlet-verbs  "```&#10;PS C:\> Watch-&#10;```") 
+[`wr` ](#cmdlet-verbs  "```&#10;PS C:\> Write-&#10;```&#10;Adds information to a target. This verb is paired with Read.") 
 
 ###### Cmdlets
 **`Alias`**&nbsp;[`ep`][Export-Alias]&nbsp;[`g`][Get-Alias]&nbsp;[`n`][New-Alias]&nbsp;[`s`][Set-Alias]&nbsp; 
@@ -388,23 +413,43 @@
 `Switch` [`n`][New-VMSwitch] 
 **`Volume`** [`f`][Format-Volume] 
 **`WebRequest`**&nbsp;[`Invoke`][Invoke-WebRequest] 
-**`Windows`**
-`Feature`&nbsp;[`a`][Add-WindowsFeature] [`g`][Get-WindowsFeature] 
-`OptionalFeature`&nbsp;[`e`][Enable-WindowsOptionalFeature] 
 **`WMIObject`**&nbsp;[`g`][Get-WMIObject]
+**`AppxProvisioned`** `DataFile`[`s`][Set-AppxProvisionedDataFile] `Package`[`a`][Add-AppxProvisionedPackage] [`g`][Get-AppxProvisionedPackage] [`r`][Remove-AppxProvisionedPackage] 
+**`WindowsDriver`** [`a`][Add-WindowsDriver] [`ep`][Export-WindowsDriver] [`g`][Get-WindowsDriver] [`r`][Remove-WindowsDriver] 
+**`WindowsFeature`** `Feature`&nbsp;[`a`][Add-WindowsFeature] [`g`][Get-WindowsFeature] `OptionalFeature`&nbsp;[`e`][Enable-WindowsOptionalFeature] 
+**`WindowsImage`** [`a`][Add-WindowsImage] [`en`][Expand-WindowsImage] [`n`][New-WindowsImage] [`sv`][Save-WindowsImage] [`ep`][Export-WindowsImage] [`g`][Get-WindowsImage] [`mt`][Mount-WindowsImage] [`r`][Remove-WindowsImage] [`dm`][Dismount-WindowsImage] `Content` [`g`][Get-WindowsImageContent] 
+**`WindowsOptionalFeature`** [`d`][Disable-WindowsOptionalFeature] [`e`][Enable-WindowsOptionalFeature] [`g`][Get-WindowsOptionalFeature] **`WindowsPackage`**[`a`][Add-WindowsPackage]  [`g`][Get-WindowsPackage] [`r`][Remove-WindowsPackage] 
+**`WindowsUnattend`** [`Apply`][Apply-WindowsUnattend] 
 
 ###### Bash equivalents
-[`$!`][&#36;&#36;] [`!$`][&#36;&#36;] [`$?`][&#36;?] [`&`][Start-Job] [`>>`][Add-Content] 
-[`alias`][New-Alias] [`awk`][Select-Object] 
+[`$!`][&#36;&#36;] 
+[`!$`][&#36;&#36;] 
+[`$?`][&#36;?] 
+[`&`][Start-Job] 
+[`>>`][Add-Content] 
+[`alias`][New-Alias] 
+[`awk`][Select-Object] 
 `bzip2` 
-[`cat`][Get-Content] [`cd`][Set-Location] [`cp`][Copy-Item] 
-[`echo`][Write-Host] &bull; [`find`][Get-ChildItem] &bull; [`grep`][Where-Object] 
-[`less`](#out-host "`Out-Host -Paging`") [`ls`][Get-ChildItem] &bull; 
-[`man`][Get-Help] [`mkdir`](#new-item "`New-Item -ItemType Directory`") [`more`](#out-host "`Out-Host -Paging`")
-[`print`][Write-Host] [`printf`][Write-Host] [`pwd`][Get-Location]
-[`reset`][Clear-Host] [`rm`][Remove-Item]
-[`sed`][Select-Object] [`shutdown`][Stop-Computer] [`-r`][Restart-Computer]
-[`tail`][Get-Content] [`touch`][New-Item]
+[`cat`][Get-Content] 
+[`cd`][Set-Location] 
+[`cp`][Copy-Item] 
+[`echo`][Write-Host] 
+[`find`][Get-ChildItem] 
+[`grep`][Where-Object] 
+[`less`](#out-host "`Out-Host -Paging`") 
+[`ls`][Get-ChildItem] &bull; 
+[`man`][Get-Help] 
+[`mkdir`](#new-item "`New-Item -ItemType Directory`") 
+[`more`](#out-host "`Out-Host -Paging`")
+[`print`][Write-Host] 
+[`printf`][Write-Host] 
+[`pwd`][Get-Location]
+[`reset`][Clear-Host] 
+[`rm`][Remove-Item]
+[`sed`][Select-Object] 
+[`shutdown`][Stop-Computer][` -r`][Restart-Computer]
+[`tail`][Get-Content] 
+[`touch`][New-Item]
 [`uniq`](#select-object "`Select-Object -Unique`")
 [`wc`][Measure-Object] [`which`][Get-Command]
 
@@ -423,7 +468,7 @@
 [`$PSVersionTable`][$PSVersionTable] 
 [`$PWD`][$PWD]
 
-#### Topics
+###### Cmdlets by topic
 **Clipboard**  [`Get-Clipboard`](#get-clipboard) [`New-Guid`](#new-guid) [`Set-Clipboard`](#set-clipboard) [`Write-Output`](#write-output)
 **Disk management** [`Format-Volume`](#format-volume) [`Get-Disk`](#get-disk) [`Get-Partition`](#get-partition) [`New-Partition`](#new-partition) [`Remove-Partition`](#remove-partition)
 **Environment** [`Get-Module`][Get-Module] [`Import-Module`][Import-Module] [`Set-ExecutionPolicy`][Set-ExecutionPolicy] [`Set-Location`][Set-Location]
@@ -468,19 +513,6 @@ Syntax          | Effect
 `-like`         | wildcard pattern
 `-match`        | regex pattern
 `-is`           | type comparison
-
-Syntax                        | Effect
-:---                          | :---
-`Get-Alias Definition -eq Get-ChildItem`|display items that point to `Get-ChildItem`
-`Get-Command \| measure`      | piping to `measure` is similar to `wc`, will count lines
-`Get-Command -Module ActiveDirectory`|display cmdlets available under a specified module
-`Get-Command *smb*`           | use a wildcard
-`Get-Module -ListAvailable`   | display installed PowerShell modules
-`Invoke-History`              | run a command from the history
-`New-Alias ip Get-NetIPAddress`|establish a new alias
-`Set-Alias ip Get-NetAdapter` |edit an existing alias
-`New-PSDrive -Name scripts -PSProvider FileSystem -Root "C:\Scripts"`|map a directory to a drive
-`Remove-PSDrive -Name scripts`|remove a drive
 
 #### Filters
 Filtering results can be done with 5 commands:
@@ -672,6 +704,10 @@ Terminate a remote PowerShell session begun with [`New-PSSession`][New-PSSession
 [`TargetPath`][Edit-NanoServerImage -TargetPath]
 [`Packages`][Edit-NanoServerImage -Packages]
 
+Add the Web Server (IIS) role to an image file[<sup>Zacker: 49</sup>][Zacker]
+```powershell
+Edit-NanoServerImage -BasePath C:\nanoserver\base -TargetPAth C:\nanoserver\nano1.vhdx -Packages microsoft-nanoserver-iis-package
+```
 ### `Enable-PSRemoting`
 ### `Enable-WindowsOptionalFeature`
 Enable a feature in the currently running operating system [<sup>ref</sup>](https://docs.microsoft.com/en-us/powershell/module/dism/enable-windowsoptionalfeature?view=win10-ps&redirectedfrom=MSDN "Microsoft Docs: \"Enable-WindowsOptionalFeature\"")
@@ -763,6 +799,11 @@ Retrieve various properties of an image in clipboard
 Get-Clipboard -Format Image
 ```
 ### `Get-Command`
+### `Get-ComputerInfo`
+Equivalent to output of [`HOSTNAME.exe`](README.md#hostname)
+```pwsh
+(Get-ComputerInfo).CsName
+```
 ### `Get-Content`
 Make a PowerShell object from a JSON file
 ```powershell
@@ -770,17 +811,23 @@ Get-Content -Path file.json | ConvertFrom-Json
 ```
 ### `Get-Disk`
 ### `Get-Help`
-\#    | Options
----   | ---
-**A-Z** | [`-Detailed`](#get-help "`Get-Help -Detailed`&#10;Display detailed help for a command") [`-Examples`](#get-help "`Get-Help -Examples`&#10;Display usage examples") [`-Full`](#get-help "`Get-Help -Full`&#10;Display entire help file for a command") [`-Online`](#get-help "`Get-Help -Online`&#10;Navigate to online help page for a command") [`-ShowWindow`](#get-help "`Get-Help -ShowWindow`&#10;Display help output in a window") 
+[Get-Help -Detailed]:           #Get-Help                      '```&#10;PS C:\> Get-Help -Detailed&#10;```&#10;Display detailed help for a command'
+[Get-Help -Examples]:           #Get-Help                      '```&#10;PS C:\> Get-Help -Examples&#10;```&#10;Display usage examples'
+[Get-Help -Online]:             #Get-Help                      '```&#10;PS C:\> Get-Help -Online&#10;```&#10;Navigate to online help page for a command.'
+[Get-Help -ShowWindow]:         #Get-Help                      '```&#10;PS C:\> Get-Help -ShowWindow&#10;```&#10;Display help output in a window.'
+[Get-Help -Full]:               #Get-Help                      '```&#10;PS C:\> Get-Help -Full&#10;```&#10;Display entire help file for a command'
+
+[`Detailed`][Get-Help -Detailed]
+[`Examples`][Get-Help -Examples]
+[`Full`][Get-Help -Full]
+[`Online`][Get-Help -Online]
+[`ShowWindow`][Get-Help -ShowWindow]
+
 ### `Get-Member`
 ### `Get-Module`
 ### `Get-NetAdapter`
 Display available network interfaces [<sup>Zacker: 19</sup>][Zacker]
 
-Option  | Description
----     | ---
-...
 ### `Get-NetFirewallRule`
 Display all firewall rules
 ```powershell
@@ -861,6 +908,19 @@ Display a branching view of available Windows roles, role services, and features
 ```powershell
 Get-WindowsFeature
 ```
+### `Get-WindowsImage`
+[Get-WindowsImage -Mounted]: #Get-WindowsImage '```&#10;PS C:\> Get-WindowsImage -Mounted&#10;```&#10;&#10;Equivalent to `Dism.exe /Get-MountedImageInfo`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
+
+[`Mounted`][Get-WindowsImage -Mounted]
+
+### `Get-WindowsOptionalFeature`
+[Get-WindowsOptionalFeature -FeatureName]: #Get-WindowsOptionalFeature '```&#10;PS C:\> Get-WindowsOptionalFeature -FeatureName&#10;```&#10;&#10;Equivalent to `Dism.exe /Image:foldername /Get-Featureinfo`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 78'
+[`FeatureName`][Get-WindowsOptionalFeature -FeatureName]
+### `Get-WindowsPackage`
+[Get-WindowsPackage -PackagePath]: #Get-WindowsPackage '```&#10;PS C:\> Get-WindowsPackage -PackagePath&#10;```&#10;&#10;Equivalent to `Dism.exe /Image:foldername /Get-Packageinfo`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
+[Get-WindowsPackage -PackageName]: #Get-WindowsPackage '```&#10;PS C:\> Get-WindowsPackage -PackageName&#10;```&#10;&#10;Equivalent to `Dism.exe /Image:foldername /Get-Packageinfo`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
+[`PackageName`][Get-WindowsPackage -PackageName] 
+[`PackagePath`][Get-WindowsPackage -PackagePath]
 ### `Get-WmiObject`
 View system uptime
 ```powershell
@@ -978,6 +1038,11 @@ Request data from a website impersonating a browser
 ```powershell
 Invoke-WebRequest -Uri http://microsoft.com -UserAgent ([Microsoft.PowerShell.Commands.PSUserAgent]::Chrome)
 ```
+### `Mount-WindowsImage`
+[Mount-WindowsImage -Remount]: #Mount-WindowsImage '```&#10;PS C:\> Mount-WindowsImage -Remount&#10;```&#10;&#10;Equivalent to `Dism.exe /Remount-Image`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
+
+[`Remount`][Mount-WindowsImage -Remount]
+
 ### `New-ADComputer`
 ### `New-ADOrganizationalUnit`
 Create a new Organizational Unit
@@ -1080,6 +1145,11 @@ New-PSSession -ComputerName core02
 [`New-SmbShare`][New-SmbShare]
 ```powershell
 New-SmbShare -Name files -Path C:\networkfiles -ChangeAccess CORP\SysAdmin
+```
+### `New-VM`
+Create a Nano Server VM from an image file [<sup>Zacker: 47</sup>][Zacker]
+```powershell
+New-VM -Name "nano2" -Generation 2 -MemoryStartupBytes 1GB -VHDPath "F:\hyper-v\virtual hard disks\nano2.vhdx"
 ```
 ### `New-VMSwitch`
 Turn on NAT on the nested Hyper-V VM
@@ -1196,6 +1266,11 @@ Configure DNS server addresses [<sup>ref</sup>][Zacker]
 Set-DnsClientServerAddress -InterfaceIndex 6 -ServerAddresses ("192.168.0.1", "192.168.0.2")
 ```
 ### `Set-ExecutionPolicy`
+### `Set-Item`
+Add an IP address to the Trusted Hosts list, bypassing the use of Kerberos to authenticate the session [<sup>Zacker: 56</sup>][Zacker]
+```powershell
+Set-Item wsman:\localhost\client\trustedhosts "192.168.10.41"
+```
 ### `Set-Location`
 ### `Set-NetFirewallRule`
 Set firewall rule for COM+ Network Access (DCOM-In)

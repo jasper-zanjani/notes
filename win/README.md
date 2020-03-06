@@ -20,6 +20,7 @@
 [bootrec]:                     #bootrec                        '```&#10;C:\>bootrec&#10;```&#10;Windows Recovery Environment command that repairs a system partition'
 [cscript]:                     #cscript                        '```&#10;C:\>cscript&#10;```&#10;Starts a script so that it runs in a command-line environment'
 [diskpart]:                    #diskpart                       '```&#10;C:\>diskpart&#10;```&#10;Text-mode command interpreter used to convert disk types, create partitions and volumes, and configure RAID&#10;Stanek, William R. _Microsoft Windows Command-Line_.: 141'
+[hostname]: #hostname '```&#10;C:\>hostname&#10;C:\>HOSTNAME.exe&#10;```&#10;Display computer name'
 [ipconfig]:                    #ipconfig                       '```&#10;C:\>ipconfig&#10;```&#10;Display TCP/IP configuration'
 [logoff]:                      #logoff                         '```&#10;C:\>logoff&#10;```&#10;Log out'
 [msiexec]:                     #msiexec                        '```&#10;C:\>msiexec&#10;```&#10;Provides the means to install, modify, and perform operations on Windows Installer from the command line'
@@ -81,6 +82,7 @@ Topics
 [`findfast.cpl`][findfast.cpl] 
 `findstr`[<sup>lx</sup>][grep]
 `gpupdate`[<sup>pwsh</sup>][Invoke-GPUpdate]
+[`hostname`][hostname][<sup>pwsh</sup>](pwsh.md#get-computerinfo "```&#10;PS C:\> (Get-ComputerInfo).CsName&#10;```")
 [`inetcpl`][inetcpl.cpl] 
 [`intl`][intl.cpl] 
 [`ipconfig`][ipconfig]
