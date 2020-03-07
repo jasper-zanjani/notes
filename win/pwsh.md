@@ -468,18 +468,6 @@
 [`$PSVersionTable`][$PSVersionTable] 
 [`$PWD`][$PWD]
 
-###### Cmdlets by topic
-**Clipboard**  [`Get-Clipboard`](#get-clipboard) [`New-Guid`](#new-guid) [`Set-Clipboard`](#set-clipboard) [`Write-Output`](#write-output)
-**Disk management** [`Format-Volume`](#format-volume) [`Get-Disk`](#get-disk) [`Get-Partition`](#get-partition) [`New-Partition`](#new-partition) [`Remove-Partition`](#remove-partition)
-**Environment** [`Get-Module`][Get-Module] [`Import-Module`][Import-Module] [`Set-ExecutionPolicy`][Set-ExecutionPolicy] [`Set-Location`][Set-Location]
-**Filters** [`Where-Object`][Where-Object] [`Select-Object`][Select-Object] [`Select-String`](#filters) [`Out-GridView`](#filters) [`ForEach-Object`][ForEach-Object]
-**Firewall** [`Get-NetFirewallRule`](#get-netfirewallrule) [`New-NetFirewallRule`](#new-netfirewallrule) [`Set-NetFirewallRule`](#set-netfirewallrule)
-**Formatting** [`Format-List`][Format-List] [`Format-Table`][Format-Table] [`Format-Wide`](#output-formatting)
-**Hyper-V**  [`New-VMSwitch`][New-VMSwitch] [`Set-VMFirmware`][Set-VMFirmware] [`Set-VMMemory`](#set-vmmemory) [`Set-VMNetworkAdapter`](#set-vmnetworkadapter) [`Set-VMProcessor`](#set-vmprocessor)
-**O365** `DistributionGroupMember` [`a`][Add-DistributionGroupMember] [`g`][Get-DistributionGroupMember] [`ud`][Update-DistributionGroupMember]
-**Remote administration** [`Enable-PSRemoting`][Enable-PSRemoting] [`Invoke-Command`](#invoke-command) `PSSession` [`dc`][Disconnect-PSSession] [`et`][Enter-PSSession] [`ex`](#exit-pssession) [`g`](#get-pssession) [`n`][New-PSSession]
-**System administration** [`Get-Alias`][Get-Alias] [`Get-Command`][Get-Command] [`Get-Help`][Get-Help] [`Get-History`][Get-History] [`Get-Module`][Get-Module] `Get-Process` `Get-PSDrive` [`Get-Service`][Get-Service] [`Update-Help`][Update-Help]
-
 ## Syntax
 The `Throw` keyword generates a terminating error
 

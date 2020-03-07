@@ -30,8 +30,9 @@ Topic                         | Commands
 :---                          | :---
 [Applications](#applications) | [`git`][git] [`imagemagick](#imagemagick) [`mongod`](#mongod) **`GNOME`** [`gsettings`][gsettings] [`gconf-editor`][gconf-editor]
 [Archive](#archive)           | [`ar`][ar] [`bzcat`][bzcat] [`bzip2`][bzip2] [`bzless`][bzless] [`bzmore`][bzmore] [`compress`][compress] [`cpio`][cpio] [`dar`][dar] [`gunzip`][gunzip] [`gzcat`][gzcat] [`gzip`][gzip] [`tar`][tar] [`uncompress`][uncompress] [`unxz`][unxz] [`unzip`][unzip] [`xz`][xz] [`zcat`][zcat] [`zip`][zip] [`zipcloak`][zipcloak] [`zipcmp`][zipcmp] [`zipdetails`][zipdetails] [`zipgrep`][zipgrep] [`zipinfo`][zipinfo] [`zipnote`][zipnote] [`zipsplit`][zipsplit] 
+[Bash](#bash-builtins)        | [`bg`][bg] [`bind`][bind] [`break`][break] [`builtin`][builtin] [`caller`][caller] [`case`][case]/[`esac`][esac] [`cd`][cd] [`command`][command] [`compgen`][compgen] [`complete`][complete] [`compopt`][compopt] [`continue`][continue] [`declare`][declare] [`dirs`][dirs] [`disown`][disown] [`do`][do]/[`done`][done] [`echo`][echo] [`enable`][enable] [`eval`][eval] [`exec`][exec] [`exit`][exit] [`export`][export] [`false`][false] [`fc`][fc] [`fg`][fg] [`for`][for] [`function`][function] [`getopts`][getopts] [`hash`][hash] [`help`][help] [`history`][history] [`if`][if]/[`fi`][fi] [`jobs`][jobs] [`kill`][kill] [`let`][let] [`local`][local] [`logout`][logout][`mapfile`][mapfile][`popd`][popd] [`printf`][printf] [`pushd`][pushd] [`pwd`][pwd] [`read`][read] [`readarray`][readarray] [`readonly`][readonly] [`return`][return] [`select`][select] [`set`][set] [`shift`][shift] [`shopt`][shopt] [`source`][source] [`suspend`][suspend] [`test`][test] [`time`][time] [`times`][times] [`trap`][trap] [`true`][true] [`type`][type] [`typeset`][typeset] [`ulimit`][ulimit] [`umask`][umask] [`unalias`][unalias] [`unset`][unset] [`until`][until] [`wait`][wait] [`while`][while] 
 [Hardware settings](#hw)    | [`bluetoothctl`][bluetoothctl] [`insmod`][insmod] [`lsmod`][lsmod] [`lspci`][lspci] [`lsusb`][lsusb] [`modprobe`][modprobe] [`rmmod`][rmmod] <br> **[Printing](hw.md)** <br> [**CUPS**][CUPS] [`cupsaccept`][cupsaccept] [`cupsenable`][cupsenable] [`cupsdisable`][cupsdisable] [`cupsreject`][cupsreject] [`lp`][lp] [`cancel`][cancel] <br> [**LPD**][LPD] [`lpc`][lpc] [`lpq`][lpq] [`lpr`][lpr] [`lprm`][lprm]
-[Information](#diagnostic-and-benchmarking) | [`ausearch`][ausearch] [`bpftrace`][bpftrace] [`date`][date] [`df`][df] [`du`][du] [`free`][free] [`glances`][glances] [`hwclock`][hwclock] [`loadaverage`][loadaverage] [`logger`][logger] [`logrotate`][logrotate] [`man`][man] [`mpstat`][mpstat] [`nproc`][nproc] [`printenv`][printenv] [`rsyslogd`][rsyslogd] [`sar`][sar] [`sysbench`][sysbench] [`syslogd`][syslogd] [`time`][time] [`timedatectl`][timedatectl] [`tty`][tty] [`uname`][uname] [`uptime`][uptime] [`vmstat`][vmstat] 
+[Information](#diagnostic-and-benchmarking) | [`ausearch`][ausearch] [`bpftrace`][bpftrace] [`date`][date] [`df`][df] [`du`][du] [`free`][free] [`glances`][glances] [`hwclock`][hwclock] [`loadaverage`][loadaverage] [`logger`][logger] [`logrotate`][logrotate] [`lsb_release`][lsb_release] [`man`][man] [`mpstat`][mpstat] [`nproc`][nproc] [`printenv`][printenv] [`rsyslogd`][rsyslogd] [`sar`][sar] [`sysbench`][sysbench] [`syslogd`][syslogd] [`time`][time] [`timedatectl`][timedatectl] [`tty`][tty] [`uname`][uname] [`uptime`][uptime] [`vmstat`][vmstat] 
 [Init](#init-systems)               | [`hostnamectl`][hostnamectl] [`journalctl`][journalctl] [`localectl`][localectl] [`systemctl`][systemd-delta] [`systemd-delta`][systemd-delta] [`timedatectl`][timedatectl] <br> **Sysvinit** [`chkconfig`][chkconfig] [`init`][init] [`service`][service] [`telinit`][telinit] &bull; **Upstart** [`initctl`][initctl]
 Kubernetes                    | [`kubeadm`][kubeadm] [`kubectl`][kubectl]
 [Mail](mail.md)               | [`mail`][mail] [`mailmerge`][mailmerge] [`mailx`][mailx] [`msmtp`][msmtp] <br> **SMTP servers** [`exim`][exim] [`qmail`][qmail] [`postfix`][postfix] [`sendmail`][sendmail]
@@ -43,7 +44,7 @@ Kubernetes                    | [`kubeadm`][kubeadm] [`kubectl`][kubectl]
 [Text filters](text.md)       | [`awk`][awk] [`cat`][cat] [`copy`][copy] [`grep`][grep] [`head`][head] [`nl`][nl] [`paste`][paste] [`sed`][sed] [`shuf`][shuf] [`sort`][sort] [`tail`][tail] [`tr`][tr]
 [Version control](git.md)     | [`git`][git] [`tig`][tig]
 [Virtualization](#virtualization) | [`virt-install`][virt-install] [`virt-manager`][virt-manager]
-[X](#x-windows-system)        | [`x`][x] [`xdpyinfo`][xdpyinfo] [`xfs`][xfs] [`xhost`][xhost] [`xlsclients`][xlsclients] [`xmodmap`][xmodmap] [`xorg`][xorg] [`xrandr`][xrandr] [`xset`][xset] [`xwininfo`][xwininfo] 
+[X](#x-windows-system)        | [`cvt`][cvt] [`x`][x] [`xdpyinfo`][xdpyinfo] [`xfs`][xfs] [`xhost`][xhost] [`xlsclients`][xlsclients] [`xmodmap`][xmodmap] [`xorg`][xorg] [`xrandr`][xrandr] [`xset`][xset] [`xwininfo`][xwininfo] 
 
 ## Applications
 ### `imagemagick`
@@ -821,6 +822,7 @@ make -C/etc/mail
 [loadaverage]:                 #loadaverage                    '```&#10;$ loadaverage&#10;```&#10;Display system load average (cf. `uptime`)&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 291'
 [logger]:                      #logger                         '```&#10;$ logger&#10;```&#10;Create a one-time file entry specified by the user&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 342'
 [logrotate]:                   #logrotate                      '```&#10;$ logrotate&#10;```&#10;Rename ("rotate") log files on a cyclic basis using /etc/logrotate.conf to determine behavior&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 445'
+[lsb_release]: #lsb_release '```&#10;$ lsb_release&#10;```&#10;&#10;Print distribution-specific information'
 [man]:                         #man                            '```&#10;$ man&#10;```&#10;Format and display system manual pages&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 75'
 [mpstat]:                      #mpstat                         '```&#10;$ mpstat&#10;```&#10;utility for monitoring CPU performance&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 635-637'
 [nproc]:                       #nproc                          '```&#10;$ nproc&#10;```&#10;Display number of CPU processors or cores&#10;Olushile, Paul. _Linux 5 Performance Monitoring and Tuning_.'
@@ -847,6 +849,7 @@ make -C/etc/mail
 [`loadaverage`][loadaverage] 
 [`logger`][logger] 
 [`logrotate`][logrotate] 
+[`lsb_release`][lsb_release]
 [`man`][man] 
 [`mpstat`][mpstat] 
 [`nproc`][nproc] 
@@ -993,6 +996,11 @@ Config                | Description
 ### `ioping`
 Displays disk latency in the same way that `ping` shows network latency [<sup>ref</sup>][L5PMT-disk]
 ### `iotop`
+### `lsb_release`
+Display version of Ubuntu
+```sh
+lsb_release -sc
+```
 ### `lscpu`
 Display CPU architecture information [<sup>ref</sup>][L5PMT-cpu]
 ### `mpstat`
@@ -3946,7 +3954,7 @@ watch -n 5 free -m
 ## X Windows System
 
 [Haeder]:                                            #                                                  'Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.'
-
+[cvt]: #cvt '```&#10;$ cvt&#10;```&#10;&#10;Calculate VESA CVT mode lines'
 [x]:                           #x                              '```&#10;$ x&#10;```&#10;Start the graphical interface from the command-line'
 [xdpyinfo]:                    #xdpyinfo                       '```&#10;$ xdpyinfo&#10;```&#10;Show detailed information about display'
 [xfs]:                         #xfs                            '```&#10;$ xfs&#10;```&#10;X fonts server; small daemon that sends fonts to clients on both local and remote systems.&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 307'
@@ -3957,7 +3965,7 @@ watch -n 5 free -m
 [xrandr]:                      #xrandr                         '```&#10;$ xrandr&#10;```&#10;Set size, orientation, and reflection of video output'
 [xset]:                        #xset                           '```&#10;$ xset&#10;```&#10;Set various user preference options of the display&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 307'
 [xwininfo]:                    #xwininfo                       '```&#10;$ xwininfo&#10;```&#10;Utility that provides information about a clicked window, including dimensions, position, etc'
-
+[`cvt`][cvt] 
 [`x`][x] 
 [`xdpyinfo`][xdpyinfo] 
 [`xfs`][xfs] 
@@ -4028,7 +4036,16 @@ Dynamically add fonts [<sup>Haeder: 307</sup>][Haeder]
 xset fp+ /usr/local/fonts
 ```
 
-## Tasks
+# Tasks
+#### Custom resolution
+Specify a custom resolution in a VM [<sup>ref</sup>](https://stafwag.github.io/blog/blog/2018/04/22/high-screen-resolution-on-a-kvm-virtual-machine-with-qxl/ 'stafwag.github.io: "High screen resolution on a KVM virtual machine with QXL")
+```sh
+cvt 2560 1440
+xrandr --newmode "2560x1440_60.00" 312.25 2560 2752 3024 3488  1440 1443 1448 1493 -hsync +vsync
+xrandr --addmode Virtual-1 2560x1440_60.00
+xrandr --output Virtual-1 --mode 2560x1440_60.0
+```
+
 #### X forwarding
 ```sh
 ssh -Y user@host
