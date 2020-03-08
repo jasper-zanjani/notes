@@ -26,25 +26,25 @@
 [http://www.linux-magazine.com/Issues/2017/197/Command-Line-bluetoothctl#article_i1]: http://www.linux-magazine.com/Issues/2017/197/Command-Line-bluetoothctl#article_i1 "Linux Magazine: \"Blue Control\""
 [Schatz]: http://www.volkerschatz.com/noise/alsa.html "www.volkerschatz.com: \"A close look at ALSA\""
 
-Topic                         | Commands
-:---                          | :---
-[Applications](#applications) | [`git`][git] [`imagemagick](#imagemagick) [`mongod`](#mongod) **`GNOME`** [`gsettings`][gsettings] [`gconf-editor`][gconf-editor]
-[Archive](#archive)           | [`ar`][ar] [`bzcat`][bzcat] [`bzip2`][bzip2] [`bzless`][bzless] [`bzmore`][bzmore] [`compress`][compress] [`cpio`][cpio] [`dar`][dar] [`gunzip`][gunzip] [`gzcat`][gzcat] [`gzip`][gzip] [`tar`][tar] [`uncompress`][uncompress] [`unxz`][unxz] [`unzip`][unzip] [`xz`][xz] [`zcat`][zcat] [`zip`][zip] [`zipcloak`][zipcloak] [`zipcmp`][zipcmp] [`zipdetails`][zipdetails] [`zipgrep`][zipgrep] [`zipinfo`][zipinfo] [`zipnote`][zipnote] [`zipsplit`][zipsplit] 
-[Bash](#bash-builtins)        | [`bg`][bg] [`bind`][bind] [`break`][break] [`builtin`][builtin] [`caller`][caller] [`case`][case]/[`esac`][esac] [`cd`][cd] [`command`][command] [`compgen`][compgen] [`complete`][complete] [`compopt`][compopt] [`continue`][continue] [`declare`][declare] [`dirs`][dirs] [`disown`][disown] [`do`][do]/[`done`][done] [`echo`][echo] [`enable`][enable] [`eval`][eval] [`exec`][exec] [`exit`][exit] [`export`][export] [`false`][false] [`fc`][fc] [`fg`][fg] [`for`][for] [`function`][function] [`getopts`][getopts] [`hash`][hash] [`help`][help] [`history`][history] [`if`][if]/[`fi`][fi] [`jobs`][jobs] [`kill`][kill] [`let`][let] [`local`][local] [`logout`][logout][`mapfile`][mapfile][`popd`][popd] [`printf`][printf] [`pushd`][pushd] [`pwd`][pwd] [`read`][read] [`readarray`][readarray] [`readonly`][readonly] [`return`][return] [`select`][select] [`set`][set] [`shift`][shift] [`shopt`][shopt] [`source`][source] [`suspend`][suspend] [`test`][test] [`time`][time] [`times`][times] [`trap`][trap] [`true`][true] [`type`][type] [`typeset`][typeset] [`ulimit`][ulimit] [`umask`][umask] [`unalias`][unalias] [`unset`][unset] [`until`][until] [`wait`][wait] [`while`][while] 
-[Hardware settings](#hw)    | [`bluetoothctl`][bluetoothctl] [`insmod`][insmod] [`lsmod`][lsmod] [`lspci`][lspci] [`lsusb`][lsusb] [`modprobe`][modprobe] [`rmmod`][rmmod] <br> **[Printing](hw.md)** <br> [**CUPS**][CUPS] [`cupsaccept`][cupsaccept] [`cupsenable`][cupsenable] [`cupsdisable`][cupsdisable] [`cupsreject`][cupsreject] [`lp`][lp] [`cancel`][cancel] <br> [**LPD**][LPD] [`lpc`][lpc] [`lpq`][lpq] [`lpr`][lpr] [`lprm`][lprm]
+Topic                                       | Commands
+:---                                        | :---
+[Applications](#applications)               | [`git`][git] [`imagemagick](#imagemagick) [`mongod`](#mongod) **`GNOME`** [`gsettings`][gsettings] [`gconf-editor`][gconf-editor]
+[Archive](#archive)                         | [`ar`][ar] [`bzcat`][bzcat] [`bzip2`][bzip2] [`bzless`][bzless] [`bzmore`][bzmore] [`compress`][compress] [`cpio`][cpio] [`dar`][dar] [`gunzip`][gunzip] [`gzcat`][gzcat] [`gzip`][gzip] [`tar`][tar] [`uncompress`][uncompress] [`unxz`][unxz] [`unzip`][unzip] [`xz`][xz] [`zcat`][zcat] [`zip`][zip] [`zipcloak`][zipcloak] [`zipcmp`][zipcmp] [`zipdetails`][zipdetails] [`zipgrep`][zipgrep] [`zipinfo`][zipinfo] [`zipnote`][zipnote] [`zipsplit`][zipsplit] 
+[Bash](#bash-builtins)                      | [`bg`][bg] [`bind`][bind] [`break`][break] [`builtin`][builtin] [`caller`][caller] [`case`][case]/[`esac`][esac] [`cd`][cd] [`command`][command] [`compgen`][compgen] [`complete`][complete] [`compopt`][compopt] [`continue`][continue] [`declare`][declare] [`dirs`][dirs] [`disown`][disown] [`do`][do]/[`done`][done] [`echo`][echo] [`enable`][enable] [`eval`][eval] [`exec`][exec] [`exit`][exit] [`export`][export] [`false`][false] [`fc`][fc] [`fg`][fg] [`for`][for] [`function`][function] [`getopts`][getopts] [`hash`][hash] [`help`][help] [`history`][history] [`if`][if]/[`fi`][fi] [`jobs`][jobs] [`kill`][kill] [`let`][let] [`local`][local] [`logout`][logout][`mapfile`][mapfile][`popd`][popd] [`printf`][printf] [`pushd`][pushd] [`pwd`][pwd] [`read`][read] [`readarray`][readarray] [`readonly`][readonly] [`return`][return] [`select`][select] [`set`][set] [`shift`][shift] [`shopt`][shopt] [`source`][source] [`suspend`][suspend] [`test`][test] [`time`][time] [`times`][times] [`trap`][trap] [`true`][true] [`type`][type] [`typeset`][typeset] [`ulimit`][ulimit] [`umask`][umask] [`unalias`][unalias] [`unset`][unset] [`until`][until] [`wait`][wait] [`while`][while] 
+[Hardware settings](#hw)                    | [`bluetoothctl`][bluetoothctl] [`insmod`][insmod] [`lsmod`][lsmod] [`lspci`][lspci] [`lsusb`][lsusb] [`modprobe`][modprobe] [`rmmod`][rmmod] <br> **[Printing](hw.md)** <br> [**CUPS**][CUPS] [`cupsaccept`][cupsaccept] [`cupsenable`][cupsenable] [`cupsdisable`][cupsdisable] [`cupsreject`][cupsreject] [`lp`][lp] [`cancel`][cancel] <br> [**LPD**][LPD] [`lpc`][lpc] [`lpq`][lpq] [`lpr`][lpr] [`lprm`][lprm]
 [Information](#diagnostic-and-benchmarking) | [`ausearch`][ausearch] [`bpftrace`][bpftrace] [`date`][date] [`df`][df] [`du`][du] [`free`][free] [`glances`][glances] [`hwclock`][hwclock] [`loadaverage`][loadaverage] [`logger`][logger] [`logrotate`][logrotate] [`lsb_release`][lsb_release] [`man`][man] [`mpstat`][mpstat] [`nproc`][nproc] [`printenv`][printenv] [`rsyslogd`][rsyslogd] [`sar`][sar] [`sysbench`][sysbench] [`syslogd`][syslogd] [`time`][time] [`timedatectl`][timedatectl] [`tty`][tty] [`uname`][uname] [`uptime`][uptime] [`vmstat`][vmstat] 
-[Init](#init-systems)               | [`hostnamectl`][hostnamectl] [`journalctl`][journalctl] [`localectl`][localectl] [`systemctl`][systemd-delta] [`systemd-delta`][systemd-delta] [`timedatectl`][timedatectl] <br> **Sysvinit** [`chkconfig`][chkconfig] [`init`][init] [`service`][service] [`telinit`][telinit] &bull; **Upstart** [`initctl`][initctl]
-Kubernetes                    | [`kubeadm`][kubeadm] [`kubectl`][kubectl]
-[Mail](mail.md)               | [`mail`][mail] [`mailmerge`][mailmerge] [`mailx`][mailx] [`msmtp`][msmtp] <br> **SMTP servers** [`exim`][exim] [`qmail`][qmail] [`postfix`][postfix] [`sendmail`][sendmail]
-[Network](#networking)        | [`arp`][arp] [`bmon`][bmon] [`brctl`][brctl] [`curl`][curl] [`dig`][dig] [`ethtool`][ethtool] [`firewall-cmd`][firewall-cmd] [`host`][host] [`hping3`][hping3] [`ifconfig`][ifconfig] [`iftop`][iftop] [`ifup-wireless`][ifup-wireless] [`ip`][ip] [`iperf`][iperf] [`ipset`][ipset] [`iscsiadm`][iscsiadm] [`iw`][iw] [`iwconfig`][iwconfig] [`iwlist`][iwlist] [`kinit`][kinit] [`klist`][klist] [`mtr`][mtr] [`netcat`][netcat] [`netplan`][netplan] [`netstat`][netstat] [`nmap`][nmap] [`nmblookup`][nmblookup] [`nmcli`][nmcli] [`nmtui`][nmtui] [`nslookup`][nslookup] [`rfkill`][rfkill] [`route`][route] [`sftp`][sftp] [`ss`][ss] [`tcpdump`][tcpdump] [`tracepath`][tracepath] [`traceroute`][traceroute] [`tshark`][tshark] [`wget`][wget] [`whois`][whois] [`xinetd`][xinetd] 
-[Package managers](package.md)| [`apt`][apt] [`brew`][brew] [`dnf`][dnf] [`dpkg`][dpkg] [`gem`][gem] [`pacman`][pacman] [`pip`][pip] [`rpm`][rpm] [`snap`][snap] [`yay`][yay] [`yum`][yum]
+[Init](#init-systems)                       | [`hostnamectl`][hostnamectl] [`journalctl`][journalctl] [`localectl`][localectl] [`systemctl`][systemd-delta] [`systemd-delta`][systemd-delta] [`timedatectl`][timedatectl] <br> **Sysvinit** [`chkconfig`][chkconfig] [`init`][init] [`service`][service] [`telinit`][telinit] &bull; **Upstart** [`initctl`][initctl]
+Kubernetes                                  | [`kubeadm`][kubeadm] [`kubectl`][kubectl]
+[Mail](#mail)                               | [`mail`][mail] [`mailmerge`][mailmerge] [`mailx`][mailx] [`msmtp`][msmtp] <br> **SMTP servers** [`exim`][exim] [`qmail`][qmail] [`postfix`][postfix] [`sendmail`][sendmail]
+[Network](#networking)                      | [`arp`][arp] [`bmon`][bmon] [`brctl`][brctl] [`curl`][curl] [`dig`][dig] [`ethtool`][ethtool] [`firewall-cmd`][firewall-cmd] [`host`][host] [`hping3`][hping3] [`ifconfig`][ifconfig] [`iftop`][iftop] [`ifup-wireless`][ifup-wireless] [`ip`][ip] [`iperf`][iperf] [`ipset`][ipset] [`iscsiadm`][iscsiadm] [`iw`][iw] [`iwconfig`][iwconfig] [`iwlist`][iwlist] [`kinit`][kinit] [`klist`][klist] [`mtr`][mtr] [`netcat`][netcat] [`netplan`][netplan] [`netstat`][netstat] [`nmap`][nmap] [`nmblookup`][nmblookup] [`nmcli`][nmcli] [`nmtui`][nmtui] [`nslookup`][nslookup] [`rfkill`][rfkill] [`route`][route] [`sftp`][sftp] [`ss`][ss] [`tcpdump`][tcpdump] [`tracepath`][tracepath] [`traceroute`][traceroute] [`tshark`][tshark] [`wget`][wget] [`whois`][whois] [`xinetd`][xinetd] 
+[Package managers](#package-managers)       | [`apt`][apt] [`brew`][brew] [`dnf`][dnf] [`dpkg`][dpkg] [`gem`][gem] [`pacman`][pacman] [`pip`][pip] [`rpm`][rpm] [`snap`][snap] [`yay`][yay] [`yum`][yum]
 [Remote administration](#remote-administration)  | [`rsync`][rsync] [`ssh`][ssh] [`ssh-keygen`][ssh-keygen] [`ssh-keyscan`][ssh-keyscan] [`sshfs`][sshfs]
-[SELinux](#selinux)         | [`chcon`][chcon] [`getenforce`][getenforce] [`getsebool`][getsebool] [`restorecon`][restorecon] [`semanage`][semanage] [`sestatus`][sestatus] [`setenforce`][setenforce] [`setsebool`][setsebool] 
+[SELinux](#selinux)                         | [`chcon`][chcon] [`getenforce`][getenforce] [`getsebool`][getsebool] [`restorecon`][restorecon] [`semanage`][semanage] [`sestatus`][sestatus] [`setenforce`][setenforce] [`setsebool`][setsebool] 
 [System administration](#system-administration) | [`adduser`][adduser] [`at`][at] [`atq`][atq] [`atrm`][atrm] [`chage`][chage] [`edquota`][edquota] [`gpasswd`][gpasswd] [`groupadd`][groupadd] [`groupdel`][groupdel] [`groupmod`][groupmod] [`last`][last] [`lastb`][lastb] [`passwd`][passwd] [`quota`][quota] [`quotacheck`][quotacheck] [`quotaoff`][quotaoff] [`quotaon`][quotaon] [`repquota`][repquota] [`su`][su] [`sudo`][sudo] [`sudoedit`][sudoedit] [`useradd`][useradd] [`userdel`][userdel] [`usermod`][usermod] [`visudo`][visudo] [`w`][w] [`who`][who] [`whoami`][whoami] 
-[Text filters](text.md)       | [`awk`][awk] [`cat`][cat] [`copy`][copy] [`grep`][grep] [`head`][head] [`nl`][nl] [`paste`][paste] [`sed`][sed] [`shuf`][shuf] [`sort`][sort] [`tail`][tail] [`tr`][tr]
-[Version control](git.md)     | [`git`][git] [`tig`][tig]
-[Virtualization](#virtualization) | [`virt-install`][virt-install] [`virt-manager`][virt-manager]
-[X](#x-windows-system)        | [`cvt`][cvt] [`x`][x] [`xdpyinfo`][xdpyinfo] [`xfs`][xfs] [`xhost`][xhost] [`xlsclients`][xlsclients] [`xmodmap`][xmodmap] [`xorg`][xorg] [`xrandr`][xrandr] [`xset`][xset] [`xwininfo`][xwininfo] 
+[Text filters](text.md)                     | [`awk`][awk] [`cat`][cat] [`copy`][copy] [`grep`][grep] [`head`][head] [`nl`][nl] [`paste`][paste] [`sed`][sed] [`shuf`][shuf] [`sort`][sort] [`tail`][tail] [`tr`][tr]
+[Version control](git.md)                   | [`git`][git] [`tig`][tig]
+[Virtualization](#virtualization)           | [`virt-install`][virt-install] [`virt-manager`][virt-manager]
+[X](#x-windows-system)                      | [`cvt`][cvt] [`x`][x] [`xdpyinfo`][xdpyinfo] [`xfs`][xfs] [`xhost`][xhost] [`xlsclients`][xlsclients] [`xmodmap`][xmodmap] [`xorg`][xorg] [`xrandr`][xrandr] [`xset`][xset] [`xwininfo`][xwininfo] 
 
 ## Applications
 ### `imagemagick`
@@ -781,7 +781,7 @@ The __AM_INIT_AUTOMAKE__ macro is also called because we're using __automake__:
 AM_INIT_AUTOMAKE
 ```
 #### Other examples
-Recompile [mail.md#sendmail]
+Recompile [#sendmail]
 ```sh
 make -C/etc/mail
 ```
@@ -1037,7 +1037,7 @@ Report memory map of a process (part of "sysstat" package). [<sup>ref</sup>][L5P
 <code>&nbsp;</code>   <code>&nbsp;</code> [`b`][sar -&#98;] <code>&nbsp;</code> [`d`][sar -&#100;] <code>&nbsp;</code> [`f`][sar -&#102;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`n`][sar -&#110;] [`o`][sar -&#111;] <code>&nbsp;</code> [`q`][sar -&#113;] [`r`][sar -&#114;] <code>&nbsp;</code> <code>&nbsp;</code> [`u`][sar -&#117;] [`v`][sar -&#118;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code>  <br><code>&nbsp;</code>&nbsp;[`A`][sar -&#65;] [`B`][sar -&#66;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`P`][sar -&#80;] <code>&nbsp;</code> [`R`][sar -&#82;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`W`][sar -&#87;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 
 
 ### `sosreport`
-**SOS** is an open-source data collection tool that can be used to collect system configuration details and diagnostic information from a Unix-like operating system. It is installed by default on Ubuntu Server. [^][39]
+**SOS** is an open-source data collection tool that can be used to collect system configuration details and diagnostic information from a Unix-like operating system. It is installed by default on Ubuntu Server. [<sup>ref</sup>][39]
 
 Collect system configuration details (without arguments, the report will be generated and stored in `$TMPDIR`)
 ```sh
@@ -1291,7 +1291,7 @@ lvresize -L +10G /dev/vg1/Marketing
 
 
 ### `exif`
-View image metadata. Unlike alternatives like `file` and ImageMagick's `identify`, `exif` produces columnar output [^][31]
+View image metadata. Unlike alternatives like `file` and ImageMagick's `identify`, `exif` produces columnar output [<sup>ref</sup>][31]
 ```sh
 exif image.png 
 ```
@@ -1369,7 +1369,7 @@ Option  | POSIX option            | Effect
 \-      | `--progress`            | display a progress bar
 \-      | `--remove-source-files` | remove original files after synchronization
 
-Copy `$FILE` locally [^][44]
+Copy `$FILE` locally [<sup>ref</sup>][44]
 ```sh
 rsync -zvr $FILE $PATH
 ```
@@ -1381,17 +1381,17 @@ Copy $FILE from $HOST to local $PATH
 ```sh
 rsync $HOST:$FILE $PATH
 ```
-Copy `$DIR` recursively [^][44]
+Copy `$DIR` recursively [<sup>ref</sup>][44]
 ```sh
 rsync -zvr $DIR $PATH
 rsync -avz $DIR $PATH
 ```
-Copy to remote systems over SSH [^][44]
+Copy to remote systems over SSH [<sup>ref</sup>][44]
 ```sh
 rsync -zvre ssh $DIR $HOST:$REMOTEPATH
 rsync -avze ssh $DIR $HOST:$REMOTEPATH
 ```
-Synchronize only specific file type [^][44]
+Synchronize only specific file type [<sup>ref</sup>][44]
 ```sh
 rsync -zvre ssh --include '*.php' --exclude '*' $PATH
 ```
@@ -1434,7 +1434,7 @@ Write random data to an unmounted disk for {n} passes
 shred --iterations=n
 ```
 ### `tree`
-Display contents of directories in a tree-like format [^][46]
+Display contents of directories in a tree-like format [<sup>ref</sup>][46]
 
 Option  | Effect
 :---    | :---
@@ -1772,7 +1772,7 @@ initctl reload
 <code>&nbsp;</code> [`a`][rmmod -&#97;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`s`][rmmod -&#115;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`w`][rmmod -&#119;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 
 
 ## Mail
-[pine]: ../lx/commands/mail.md#pine "\"Program for Internet news and email\", popular MUA during the 1990s which has since been replaced by Alpine."
+[pine]: #pine "\"Program for Internet news and email\", popular MUA during the 1990s which has since been replaced by Alpine."
 [Eckert]: # "Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012."
 
 `mailmerge` 
@@ -1844,7 +1844,7 @@ Display the current mail queue on a Postfix server
 ### `mailstats`
 Gather and display statistics about mail processed on a server running [ `sendmail` ](#sendmail)
 ### `msmtp`
-[^][51]
+[<sup>ref</sup>][51]
 
 ~/.msmtprc
 ### `postqueue`
@@ -1871,7 +1871,7 @@ Before mail is queued for delivery, it goes through a cleanup daemon, which can 
 ### `qmail`
 Mail Transfer Agent (MTA) designed as a drop-in replacement for Sendmail, notable for being the first to be "security-aware". Its various modular subcomponents run independently and are mutually untrustful. It uses SMTP to exchange messages with other MTAs. It was written by Dan Bernstein, a professor of mathematics famous for litigating against the US government with regard to export controls on encryption algorithms. Deprecated and removed from Arch repos in 2005. [[27](sources.md)]
 ### `sendmail`
-Mail daemon once the de facto standard for accepting and redirecting mail on Linux distributions, long ago fallen into disuse. It was infamous for its difficulty to set up, with roots in ARPANET itself. [^][Eckert]
+Mail daemon once the de facto standard for accepting and redirecting mail on Linux distributions, long ago fallen into disuse. It was infamous for its difficulty to set up, with roots in ARPANET itself. [<sup>ref</sup>][Eckert]
 ### `ssmtp`
 Installable client program [[25](sources.md)]
 
@@ -2043,9 +2043,9 @@ dig example.com soa
 **A** [`add-port`][firewall-cmd --add-port] [`add-service`][firewall-cmd --add-service] <br>**G** [`get-active-zones`][firewall-cmd --get-active-zones] [`get-default-zone`][firewall-cmd --get-default-zone] [`get-services`][firewall-cmd --get-services] <br>**L** [`list-services`][firewall-cmd --list-services] <br>**N** [`new-zone`][firewall-cmd --new-zone] <br>**P** [`permanent`][firewall-cmd --permanent] <br>**R** [`reload`][firewall-cmd --reload] [`remove-service`][firewall-cmd --remove-service] <br>**S** [`state`][firewall-cmd --state]
 
 ### `hping3`
-Hping3 crafts "SYN" (sequence) packets from random spoofed IP addresses and sends them out at very short intervals. [^][Sec+ Lab]
+Hping3 crafts "SYN" (sequence) packets from random spoofed IP addresses and sends them out at very short intervals. [<sup>ref</sup>][Sec+ Lab]
 
-Option  | POSIX option            | Effect [^][https://tools.kali.org/information-gathering/hping3]
+Option  | POSIX option            | Effect [<sup>ref</sup>][https://tools.kali.org/information-gathering/hping3]
 :---    | :---                    | :---
 `-i`    | `--interval`            | wait for specified number of microseconds
 `-p`    | `--destport`            | destination port 
@@ -2416,11 +2416,11 @@ Xmas scan
 ```sh
 nmap -sX
 ```
-Scan a range of IPs [^][Sec+ Lab]
+Scan a range of IPs [<sup>ref</sup>][Sec+ Lab]
 ```sh
 nmap 192.168.27.0/24 > hosts.txt
 ```
-Identify operating system and scan ports using TCP SYN packets [^][Sec+ Lab]
+Identify operating system and scan ports using TCP SYN packets [<sup>ref</sup>][Sec+ Lab]
 ```sh
 nmap -O -sS 192.168.27.0/24 > hosts.txt
 ```
@@ -2472,7 +2472,7 @@ nslookup -port=portno url
 
 Tool for enabling and disabling wireless devices
 
-Unblock Bluetooth, if it is blocked [^][https://computingforgeeks.com/connect-to-bluetooth-device-from-linux-terminal/]
+Unblock Bluetooth, if it is blocked [<sup>ref</sup>][https://computingforgeeks.com/connect-to-bluetooth-device-from-linux-terminal/]
 ```sh
 rfkill unblock bluetooth
 ```
@@ -2568,23 +2568,23 @@ ss --tcp --processes
 [https://docs.fedoraproject.org/en-US/quick-docs/getting-started-with-virtualization/]: https://docs.fedoraproject.org/en-US/quick-docs/getting-started-with-virtualization/ "Fedora Docs: \"Getting started with virtualization\""
 [LPM 231 Regolith Linux]: www.linux-magazine.com/Issues/2020/231 '"Timely Tiling: Exploring the i3 tiling window manager with Regolith Linux". _Linux Pro Magazine_. Issue 231'
 
-[alien]:                       package.md#alien                '```&#10;$ alien&#10;```&#10;Convert between or install package types native to other distributions, including Red Hat .rpm, Stampede .slp, Slackware .tgz, and generic .tar.gz files.&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 52'
-[add-apt-repository]:          package.md#add-apt-repository   '```&#10;$ add-apt-repository&#10;```&#10;'
-[apt]:                         package.md#apt                  '```&#10;$ apt&#10;```&#10;'
-[apt-cache]:                   package.md#apt-cache            '```&#10;$ apt-cache&#10;```&#10;Display package information regarding the package cache&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 81'
-[apt-get]:                     package.md#apt-get              '```&#10;$ apt-get&#10;```&#10;'
-[dnf]:                         package.md#dnf                  '```&#10;$ dnf&#10;```&#10;Package manager for Red Hat systems that supercedes `yum`&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 86'
-[dpkg]:                        package.md#dpkg                 '```&#10;$ dpkg&#10;```&#10;Manage local Debian packages&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 79'
-[dpkg-reconfigure]:            package.md#dpkg-reconfigure     '```&#10;$ dpkg-reconfigure&#10;```&#10;Run the configuration script again for a package that has already been installed.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 80'
-[gem]:                         package.md#gem                  '```&#10;$ gem&#10;```&#10;'
-[pacman]:                      package.md#pacman               '```&#10;$ pacman&#10;```&#10;'
-[pip]:                         package.md#pip                  '```&#10;$ pip&#10;```&#10;'
-[rpm]:                         package.md#rpm                  '```&#10;$ rpm&#10;```&#10;Install, upgrade, and remove .rpm packages&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 78'
-[snap]:                        package.md#snap                 '```&#10;$ snap&#10;```&#10;'
-[yay]:                         package.md#yay                  '```&#10;$ yay&#10;```&#10;'
-[yum]:                         package.md#yum                  '```&#10;$ yum&#10;```&#10;Package manager for Red Hat systems&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 83'
-[yumdownloader]:               package.md#yumdownloader        '```&#10;$ yumdownloader&#10;```&#10;Download software packages without installing them&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 84'
-[zypper]:                      package.md#zypper               '```&#10;$ zypper&#10;```&#10;Package manager for SUSE with a syntax similar to that of `yum`&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 86'
+[alien]:                       #alien                '```&#10;$ alien&#10;```&#10;Convert between or install package types native to other distributions, including Red Hat .rpm, Stampede .slp, Slackware .tgz, and generic .tar.gz files.&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 52'
+[add-apt-repository]:          #add-apt-repository   '```&#10;$ add-apt-repository&#10;```&#10;'
+[apt]:                         #apt                  '```&#10;$ apt&#10;```&#10;'
+[apt-cache]:                   #apt-cache            '```&#10;$ apt-cache&#10;```&#10;Display package information regarding the package cache&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 81'
+[apt-get]:                     #apt-get              '```&#10;$ apt-get&#10;```&#10;'
+[dnf]:                         #dnf                  '```&#10;$ dnf&#10;```&#10;Package manager for Red Hat systems that supercedes `yum`&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 86'
+[dpkg]:                        #dpkg                 '```&#10;$ dpkg&#10;```&#10;Manage local Debian packages&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 79'
+[dpkg-reconfigure]:            #dpkg-reconfigure     '```&#10;$ dpkg-reconfigure&#10;```&#10;Run the configuration script again for a package that has already been installed.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 80'
+[gem]:                         #gem                  '```&#10;$ gem&#10;```&#10;'
+[pacman]:                      #pacman               '```&#10;$ pacman&#10;```&#10;'
+[pip]:                         #pip                  '```&#10;$ pip&#10;```&#10;'
+[rpm]:                         #rpm                  '```&#10;$ rpm&#10;```&#10;Install, upgrade, and remove .rpm packages&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 78'
+[snap]:                        #snap                 '```&#10;$ snap&#10;```&#10;'
+[yay]:                         #yay                  '```&#10;$ yay&#10;```&#10;'
+[yum]:                         #yum                  '```&#10;$ yum&#10;```&#10;Package manager for Red Hat systems&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 83'
+[yumdownloader]:               #yumdownloader        '```&#10;$ yumdownloader&#10;```&#10;Download software packages without installing them&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 84'
+[zypper]:                      #zypper               '```&#10;$ zypper&#10;```&#10;Package manager for SUSE with a syntax similar to that of `yum`&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 86'
 
 [`add-apt-repository`][add-apt-repository] 
 [`alien`][alien] 
@@ -2606,12 +2606,12 @@ ss --tcp --processes
 
 ### `apt`
 <!-- `apt` commands -->
-[apt dist-upgrade]:             package.md#apt                 '```&#10;$ apt dist-upgrade&#10;```&#10;Upgrade distribution'
-[apt install]:                  package.md#apt                 '```&#10;$ apt install $PACKAGE&#10;```&#10;Install `$PACKAGE`'
-[apt list]:                     package.md#apt                 '```&#10;$ apt list $PATTERN&#10;```&#10;Search for packages matching `$PATTERN`'
-[apt remove]:                   package.md#apt                 '```&#10;$ apt remove $PACKAGE&#10;```&#10;Remove `$PACKAGE'
-[apt update]:                   package.md#apt                 '```&#10;$ apt update&#10;```&#10;Update package database'
-[apt upgrade]:                  package.md#apt                 '```&#10;$ apt upgrade&#10;```&#10;Upgrade all packages'
+[apt dist-upgrade]:             #apt                 '```&#10;$ apt dist-upgrade&#10;```&#10;Upgrade distribution'
+[apt install]:                  #apt                 '```&#10;$ apt install $PACKAGE&#10;```&#10;Install `$PACKAGE`'
+[apt list]:                     #apt                 '```&#10;$ apt list $PATTERN&#10;```&#10;Search for packages matching `$PATTERN`'
+[apt remove]:                   #apt                 '```&#10;$ apt remove $PACKAGE&#10;```&#10;Remove `$PACKAGE'
+[apt update]:                   #apt                 '```&#10;$ apt update&#10;```&#10;Update package database'
+[apt upgrade]:                  #apt                 '```&#10;$ apt upgrade&#10;```&#10;Upgrade all packages'
 
 
 [`dist-upgrade`][apt dist-upgrade] [`install`][apt install] [`list`][apt list] [`remove`][apt remove] [`update`][apt update] [`upgrade`][apt upgrade] 
@@ -2655,13 +2655,13 @@ apt upgrade
 ### `apt-cache`
 
 <!-- `apt-cache` commands -->
-[apt-cache dump]:               package.md#apt-cache           '```&#10;$ apt-cache dump&#10;```&#10;Display basic information about each available package and its dependencies'
-[apt-cache search]:             package.md#apt-cache           '```&#10;$ apt-cache search&#10;```&#10;Display all packages with the search term listed in the package name or description'
-[apt-cache showpkg]:            package.md#apt-cache           '```&#10;$ apt-cache showpkg&#10;```&#10;Display information about a package'
-[apt-cache stats]:              package.md#apt-cache           '```&#10;$ apt-cache stats&#10;```&#10;Display statistics about the package cache'
-[apt-cache showsrc]:            package.md#apt-cache           '```&#10;$ apt-cache showsrc&#10;```&#10;Display information about a source package'
-[apt-cache depends]:            package.md#apt-cache           '```&#10;$ apt-cache depends&#10;```&#10;Display dependencies of a package'
-[apt-cache rdepends]:           package.md#apt-cache           '```&#10;$ apt-cache rdepends&#10;```&#10;Display reverse dependencies of a package, i.e. what packages for which this package is a dependency.'
+[apt-cache dump]:               #apt-cache           '```&#10;$ apt-cache dump&#10;```&#10;Display basic information about each available package and its dependencies'
+[apt-cache search]:             #apt-cache           '```&#10;$ apt-cache search&#10;```&#10;Display all packages with the search term listed in the package name or description'
+[apt-cache showpkg]:            #apt-cache           '```&#10;$ apt-cache showpkg&#10;```&#10;Display information about a package'
+[apt-cache stats]:              #apt-cache           '```&#10;$ apt-cache stats&#10;```&#10;Display statistics about the package cache'
+[apt-cache showsrc]:            #apt-cache           '```&#10;$ apt-cache showsrc&#10;```&#10;Display information about a source package'
+[apt-cache depends]:            #apt-cache           '```&#10;$ apt-cache depends&#10;```&#10;Display dependencies of a package'
+[apt-cache rdepends]:           #apt-cache           '```&#10;$ apt-cache rdepends&#10;```&#10;Display reverse dependencies of a package, i.e. what packages for which this package is a dependency.'
 
 
 [`depends`][apt-cache depends] [`dump`][apt-cache dump] [`rdepends`][apt-cache rdepends] [`search`][apt-cache search] [`showpkg`][apt-cache showpkg] [`showsrc`][apt-cache showsrc] [`stats`][apt-cache stats] 
@@ -2695,15 +2695,15 @@ View all packages installed by user
 ```sh
 dnf history userinstalled
 ```
-Display information about a **package group** [^][https://docs.fedoraproject.org/en-US/quick-docs/getting-started-with-virtualization/]
+Display information about a **package group** [<sup>ref</sup>][https://docs.fedoraproject.org/en-US/quick-docs/getting-started-with-virtualization/]
 ```sh
 dnf groupinfo virtualization
 ```
-Install a package group [^][https://docs.fedoraproject.org/en-US/quick-docs/getting-started-with-virtualization/]
+Install a package group [<sup>ref</sup>][https://docs.fedoraproject.org/en-US/quick-docs/getting-started-with-virtualization/]
 ```sh
 dnf install @virtualization
 ```
-Install a package group, including optional packages [^][https://docs.fedoraproject.org/en-US/quick-docs/getting-started-with-virtualization/]
+Install a package group, including optional packages [<sup>ref</sup>][https://docs.fedoraproject.org/en-US/quick-docs/getting-started-with-virtualization/]
 ```sh
 dnf group install --with-optional virtualization
 ```
@@ -2932,34 +2932,22 @@ Display version of Fedora
 rpm -E %fedora
 ```
 ### `snap`
-Disable snap `$PACKAGE
-```sh
-snap disable $PACKAGE
-```
-Enable disabled snap `$PACKAGE`
-```sh
-snap enable $PACKAGE
-```
-Display information about `$PACKAGE`
-```sh
-snap info --verbose $PACKAGE
-```
-Install snap `$PACKAGE`
-```sh
-snap install $PACKAGE
-```
-Display logs of snap `$PACKAGE`
-```sh
-snap logs $PACKAGE
-```
-Check for snap updates
-```sh
-snap refresh
-```
-Uninstall snap `$PACKAGE`
-```sh
-snap remove $PACKAGE
-```
+[snap disable]:                       #snap                          '```&#10;$ snap disable $SNAP&#10;```&#10;Disable snap'
+[snap enable]:                        #snap                          '```&#10;$ snap enable $SNAP&#10;```&#10;Enable disabled snap'
+[snap info]:                          #snap                          '```&#10;$ snap info $SNAP&#10;```&#10;Display information about `$SNAP`'
+[snap install]:                       #snap                          '```&#10;$ snap install $SNAP&#10;```&#10;Install snap'
+[snap logs]:                          #snap                          '```&#10;$ snap logs $SNAP&#10;```&#10;Display logs of snap'
+[snap refresh]:                       #snap                          '```&#10;$ snap refresh $SNAP&#10;```&#10;Check for snap updates'
+[snap remove]:                        #snap                          '```&#10;$ snap remove $SNAP&#10;```&#10;Uninstall snap'
+
+[`disable`][snap disable] 
+[`enable`][snap enable] 
+[`info`][snap info] 
+[`install`][snap install] 
+[`logs`][snap logs] 
+[`refresh`][snap refresh] 
+[`remove`][snap remove] 
+
 ### `yay`
 Display all AUR packages that need to be updated (deprecated)
 ```sh
@@ -2997,6 +2985,9 @@ yay -Yc
 yay --yay --clean
 ```
 ### `yum`
+[yum -&#121;]: #yum '```&#10;$ yum -y&#10;$ yum --assumeyes&#10;```&#10;Respond to any prompt with "yes" automatically'
+[yum -&#120;]: #yum '```&#10;$ yum -x&#10;$ yum --exclude&#10;```&#10;Exclude specific packages from updates'
+
 
 <!-- `yum` commands -->
 [yum clean all]:                #yum                 '```&#10;$ yum clean all&#10;```&#10;Clear cache'
@@ -3016,6 +3007,8 @@ yay --yay --clean
 [yum shell]:                    #yum                 '```&#10;$ yum shell&#10;```&#10;Interactive shell'
 [yum update]:                   #yum                 '```&#10;$ yum update&#10;```&#10;Upgrade installed packages'
 
+<code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`x`][yum -&#120;] [`y`][yum -&#121;] <code>&nbsp;</code> 
+
 [`clean all`][yum clean all] 
 [`erase`][yum erase] 
 [`groupinstall`][yum groupinstall] 
@@ -3032,27 +3025,6 @@ yay --yay --clean
 [`search`][yum search] 
 [`shell`][yum shell] 
 [`update`][yum update] 
-
-Yellow Dog Updater, Modified package manager (Yellow Dog was a variation of Red Hat for PowerPC architectures), package manager more commonly used today. [[35](sources.md), [37](sources.md)]
-
-Option  | POSIX option            | Effect
-:---    | :---                    | :---
-`-y`    | `--assumeyes`           | respond to any prompt with "yes" automatically
-`-x`    | `--exclude`             | exclude specific packages from updates [[38](sources.md)]
-
-Install `$PACKAGE` from a specific `$REPO`
-```sh
-yum --enablerepo=$REPO install $PACKAGE
-```
-Remove `$PACKAGE` without confirmation
-```sh
-yum -y remove $PACKAGE
-```
-Exclude some packages from update
-```sh
-yum update --exclude=kernel
-yum update --exclude=httpd,php
-```
 
 ## Remote administration
 [`ssh`][ssh] 
@@ -3206,36 +3178,36 @@ semanage port -l
 
 ## System administration
 
-[adduser]:                     sysadmin.md#adduser             '```&#10;$ adduser&#10;```&#10;Create a new user or update default new user information'
-[at]:                          sysadmin.md#at                                     '```&#10;$ at&#10;```&#10;Schedule one or more commands to be executed at a specific time in the future.&#10;After specifying a future time on the command-line, the `at>` prompt appears, allowing you to specify a series of shell commands which can be terminated with Ctrl+D (EOF)&#10;Rothwell, William. _CompTIA Linux+/LPIC-1 Portable Command guide_.: 195'
-[atq]:                         sysadmin.md#atq                 '```&#10;$ atq&#10;```&#10;'
-[atrm]:                        sysadmin.md#atrm                '```&#10;$ atrm&#10;```&#10;'
-[chage]:                       sysadmin.md#chage               '```&#10;$ chage&#10;```&#10;Modify password-aging features for a user.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 95'
-[edquota]:                     sysadmin.md#edquota             '```&#10;$ edquota&#10;```&#10;Create or edit disk quota of `$USER`&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 99'
-[getent]:                      sysadmin.md#getent              '```&#10;$ getent&#10;```&#10;List values stored in colon-delimited user and group account databases like /etc/passwd&#10;Rothwell, William. _CompTIA Linux+/LPIC-1 Portable Command guide_.: 185'
-[gpasswd]:                     sysadmin.md#gpasswd             '```&#10;$ gpasswd&#10;```&#10;Interactively set the password for `$GROUP`&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 326'
-[groupadd]:                    sysadmin.md#groupadd            '```&#10;$ groupadd&#10;```&#10;Add `$GROUP` to the system&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 325'
-[groupdel]:                    sysadmin.md#groupdel            '```&#10;$ groupdel&#10;```&#10;Delete `$GROUP` from the system&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 325'
-[groupmod]:                    sysadmin.md#groupmod            '```&#10;$ groupmod&#10;```&#10;Modify the parameters of `$GROUP`&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 325'
-[last]:                        sysadmin.md#last                '```&#10;$ last&#10;```&#10;Display history of successful logins'
-[lastb]:                       sysadmin.md#lastb               '```&#10;$ lastb&#10;```&#10;Display failed login attempts&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 255'
-[passwd]:                      sysadmin.md#passwd              '```&#10;$ passwd&#10;```&#10;Interactively set the password for `$USER`&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 325'
-[quota]:                       sysadmin.md#quota               '```&#10;$ quota&#10;```&#10;Display quota limits on user or group&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 169'
-[quotacheck]:                  sysadmin.md#quotacheck          '```&#10;$ quotacheck&#10;```&#10;Examine filesystems and compile quota databases&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 171'
-[quotaoff]:                    sysadmin.md#quotaoff            '```&#10;$ quotaoff&#10;```&#10;Disable disk quotas on one or more filesystems&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 171'
-[quotaon]:                     sysadmin.md#quotaon             '```&#10;$ quotaon&#10;```&#10;Enable previously configure disk quotas on one or more filesystems&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 170'
-[repquota]:                    sysadmin.md#repquota            '```&#10;$ repquota&#10;```&#10;Display quotas for an entire filesystem&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 101'
-[su]:                          sysadmin.md#su                  '```&#10;$ su&#10;```&#10;Allow a user to shift user accounts&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 209'
-[sudo]:                        sysadmin.md#sudo                '```&#10;$ sudo&#10;```&#10;Run commands as other users (typically as the root user).&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 209'
-[sudoedit]:                    sysadmin.md#sudoedit            '```&#10;$ sudoedit&#10;```&#10;Edit a file using sudo&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 210'
-[ulimit]:                      sysadmin.md#ulimit              '```&#10;$ ulimit&#10;```&#10;Display or set a account limits of `$USER`&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 201'
-[useradd]:                     sysadmin.md#useradd             '```&#10;$ useradd&#10;```&#10;Create a user account&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 94'
-[userdel]:                     sysadmin.md#userdel             '```&#10;$ userdel&#10;```&#10;Delete a user account&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 96'
-[usermod]:                     sysadmin.md#usermod             '```&#10;$ usermod&#10;```&#10;Modify a user account&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 94'
-[visudo]:                      sysadmin.md#visudo              '```&#10;$ visudo&#10;```&#10;Safely edit the /etc/sudoers file'
-[w]:                           sysadmin.md#w                   '```&#10;$ w&#10;```&#10;Display output similar to that of `uptime` for all logged-in users&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 97'
-[who]:                         sysadmin.md#who                 '```&#10;$ who&#10;```&#10;Display currently users currently logged in&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 97'
-[whoami]:                      sysadmin.md#whoami              '```&#10;$ whoami&#10;```&#10;Display effective user ID&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 96'
+[adduser]:                     #adduser             '```&#10;$ adduser&#10;```&#10;Create a new user or update default new user information'
+[at]:                          #at                                     '```&#10;$ at&#10;```&#10;Schedule one or more commands to be executed at a specific time in the future.&#10;After specifying a future time on the command-line, the `at>` prompt appears, allowing you to specify a series of shell commands which can be terminated with Ctrl+D (EOF)&#10;Rothwell, William. _CompTIA Linux+/LPIC-1 Portable Command guide_.: 195'
+[atq]:                         #atq                 '```&#10;$ atq&#10;```&#10;'
+[atrm]:                        #atrm                '```&#10;$ atrm&#10;```&#10;'
+[chage]:                       #chage               '```&#10;$ chage&#10;```&#10;Modify password-aging features for a user.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 95'
+[edquota]:                     #edquota             '```&#10;$ edquota&#10;```&#10;Create or edit disk quota of `$USER`&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 99'
+[getent]:                      #getent              '```&#10;$ getent&#10;```&#10;List values stored in colon-delimited user and group account databases like /etc/passwd&#10;Rothwell, William. _CompTIA Linux+/LPIC-1 Portable Command guide_.: 185'
+[gpasswd]:                     #gpasswd             '```&#10;$ gpasswd&#10;```&#10;Interactively set the password for `$GROUP`&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 326'
+[groupadd]:                    #groupadd            '```&#10;$ groupadd&#10;```&#10;Add `$GROUP` to the system&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 325'
+[groupdel]:                    #groupdel            '```&#10;$ groupdel&#10;```&#10;Delete `$GROUP` from the system&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 325'
+[groupmod]:                    #groupmod            '```&#10;$ groupmod&#10;```&#10;Modify the parameters of `$GROUP`&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 325'
+[last]:                        #last                '```&#10;$ last&#10;```&#10;Display history of successful logins'
+[lastb]:                       #lastb               '```&#10;$ lastb&#10;```&#10;Display failed login attempts&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 255'
+[passwd]:                      #passwd              '```&#10;$ passwd&#10;```&#10;Interactively set the password for `$USER`&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 325'
+[quota]:                       #quota               '```&#10;$ quota&#10;```&#10;Display quota limits on user or group&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 169'
+[quotacheck]:                  #quotacheck          '```&#10;$ quotacheck&#10;```&#10;Examine filesystems and compile quota databases&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 171'
+[quotaoff]:                    #quotaoff            '```&#10;$ quotaoff&#10;```&#10;Disable disk quotas on one or more filesystems&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 171'
+[quotaon]:                     #quotaon             '```&#10;$ quotaon&#10;```&#10;Enable previously configure disk quotas on one or more filesystems&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 170'
+[repquota]:                    #repquota            '```&#10;$ repquota&#10;```&#10;Display quotas for an entire filesystem&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 101'
+[su]:                          #su                  '```&#10;$ su&#10;```&#10;Allow a user to shift user accounts&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 209'
+[sudo]:                        #sudo                '```&#10;$ sudo&#10;```&#10;Run commands as other users (typically as the root user).&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 209'
+[sudoedit]:                    #sudoedit            '```&#10;$ sudoedit&#10;```&#10;Edit a file using sudo&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 210'
+[ulimit]:                      #ulimit              '```&#10;$ ulimit&#10;```&#10;Display or set a account limits of `$USER`&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 201'
+[useradd]:                     #useradd             '```&#10;$ useradd&#10;```&#10;Create a user account&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 94'
+[userdel]:                     #userdel             '```&#10;$ userdel&#10;```&#10;Delete a user account&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 96'
+[usermod]:                     #usermod             '```&#10;$ usermod&#10;```&#10;Modify a user account&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 94'
+[visudo]:                      #visudo              '```&#10;$ visudo&#10;```&#10;Safely edit the /etc/sudoers file'
+[w]:                           #w                   '```&#10;$ w&#10;```&#10;Display output similar to that of `uptime` for all logged-in users&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 97'
+[who]:                         #who                 '```&#10;$ who&#10;```&#10;Display currently users currently logged in&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 97'
+[whoami]:                      #whoami              '```&#10;$ whoami&#10;```&#10;Display effective user ID&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 96'
 
 [`adduser`][adduser] 
 [`at`][at] 
@@ -3664,7 +3636,7 @@ Find all files in {$PATH} that are owned by {user}
 find $PATH -user username
 ```
 Find recently modified files/folders
-There are 3 timestamps associated with files in Linux [^][42]
+There are 3 timestamps associated with files in Linux [<sup>ref</sup>][42]
 - `atime` "access time": last time file was accessed by a command or application
 - `mtime` "modify time": last time file's contents were modified
 - `ctime` "change time": last time file's attribute was modified 
@@ -3746,7 +3718,7 @@ Display dependencies of {program}
 ldd program
 ```
 ### `lowriter`
-`lowriter` is a command-line utility installed with LibreOffice Writer. [^][21]
+`lowriter` is a command-line utility installed with LibreOffice Writer. [<sup>ref</sup>][21]
 
 Convert a single file to PDF
 ```sh
@@ -3831,7 +3803,7 @@ Share your screen session with another user
 screen -x user/session
 ```
 ### `sfdisk`
-Script-based partition table editor, similar to [`fdisk`](#fdisk) and [`gdisk`](#gdisk), which can be run interactively. It does not interface with GPT format, neither is it designed for large partitions. [^][11]
+Script-based partition table editor, similar to [`fdisk`](#fdisk) and [`gdisk`](#gdisk), which can be run interactively. It does not interface with GPT format, neither is it designed for large partitions. [<sup>ref</sup>][11]
 
 List partitions on all devices
 
@@ -4084,11 +4056,11 @@ path = /samba
 read only = no
 browsable = yes
 ```
-Set up a Samba account for {user} 
+Set up a Samba account for `$USER`
 ```sh
-sudo smbpasswd -a user
+sudo smbpasswd -a $USER
 ```
-Restart Samba service [<sup>vitux.com</sup>][https://vitux.com/how-to-install-and-configure-samba-on-ubuntu/] [<sup>tecmint.com</sup>][https://www.tecmint.com/install-samba-on-rhel-8-for-file-sharing-on-windows/]
+Restart Samba service [<sup>ref</sup>][https://vitux.com/how-to-install-and-configure-samba-on-ubuntu/] [<sup>tecmint.com</sup>][https://www.tecmint.com/install-samba-on-rhel-8-for-file-sharing-on-windows/]
 ```sh
 sudo systemctl restart smbd.service
 ```
@@ -4096,9 +4068,9 @@ Install and configure Samba as a client
 ```sh
 sudo apt install smbclient 
 ```
-Access samba share at {$shareName} at server {$ipAddress} using user credential {$user}
+Access samba share at `$SHARE` at server `$HOST` using user credential `$USER`
 ```sh
-sudo smbclient //$ipAddress/$shareName -U $user
+sudo smbclient //$HOST/$USER -U $USER
 ```
 This will display the Samba CLI
 ```
@@ -4113,11 +4085,11 @@ then
   exit 1
 fi
 ```
-[<sup>YouTube</sup>][https://youtu.be/ksAfmJfdub0]
+[<sup>ref</sup>][https://youtu.be/ksAfmJfdub0]
 ```sh
 [ -z "$1" ] && echo "..." && exit 1
 ```
-[<sup>coderwall.com</sup>][https://coderwall.com/p/kq9ghg/yakuake-scripting]
+[<sup>ref</sup>][https://coderwall.com/p/kq9ghg/yakuake-scripting]
 ```sh
 if [ ! -z "$2" ] ; then ...; fi
 ```
@@ -4490,7 +4462,7 @@ nameserver dns
 nameserver files
 ```
 ### /etc/postfix/main.cf
-[Postfix](commands/mail.md#postfix) config 
+[Postfix](#postfix) config 
 
 Set e-mail domain name [<sup>ref</sup>][Eckert]
 ```cfg
