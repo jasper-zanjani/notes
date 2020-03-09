@@ -28,7 +28,7 @@
 
 Topic                                       | Commands
 :---                                        | :---
-[Applications](#applications)               | [`git`][git] [`imagemagick](#imagemagick) [`mongod`](#mongod) **`GNOME`** [`gsettings`][gsettings] [`gconf-editor`][gconf-editor]
+[Applications](#applications)               | [`git`][git] [`imagemagick`](#imagemagick) [`mongod`](#mongod) **`GNOME`** [`gsettings`][gsettings] [`gconf-editor`][gconf-editor]
 [Archive](#archive)                         | [`ar`][ar] [`bzcat`][bzcat] [`bzip2`][bzip2] [`bzless`][bzless] [`bzmore`][bzmore] [`compress`][compress] [`cpio`][cpio] [`dar`][dar] [`gunzip`][gunzip] [`gzcat`][gzcat] [`gzip`][gzip] [`tar`][tar] [`uncompress`][uncompress] [`unxz`][unxz] [`unzip`][unzip] [`xz`][xz] [`zcat`][zcat] [`zip`][zip] [`zipcloak`][zipcloak] [`zipcmp`][zipcmp] [`zipdetails`][zipdetails] [`zipgrep`][zipgrep] [`zipinfo`][zipinfo] [`zipnote`][zipnote] [`zipsplit`][zipsplit] 
 [Bash](#bash-builtins)                      | [`bg`][bg] [`bind`][bind] [`break`][break] [`builtin`][builtin] [`caller`][caller] [`case`][case]/[`esac`][esac] [`cd`][cd] [`command`][command] [`compgen`][compgen] [`complete`][complete] [`compopt`][compopt] [`continue`][continue] [`declare`][declare] [`dirs`][dirs] [`disown`][disown] [`do`][do]/[`done`][done] [`echo`][echo] [`enable`][enable] [`eval`][eval] [`exec`][exec] [`exit`][exit] [`export`][export] [`false`][false] [`fc`][fc] [`fg`][fg] [`for`][for] [`function`][function] [`getopts`][getopts] [`hash`][hash] [`help`][help] [`history`][history] [`if`][if]/[`fi`][fi] [`jobs`][jobs] [`kill`][kill] [`let`][let] [`local`][local] [`logout`][logout][`mapfile`][mapfile][`popd`][popd] [`printf`][printf] [`pushd`][pushd] [`pwd`][pwd] [`read`][read] [`readarray`][readarray] [`readonly`][readonly] [`return`][return] [`select`][select] [`set`][set] [`shift`][shift] [`shopt`][shopt] [`source`][source] [`suspend`][suspend] [`test`][test] [`time`][time] [`times`][times] [`trap`][trap] [`true`][true] [`type`][type] [`typeset`][typeset] [`ulimit`][ulimit] [`umask`][umask] [`unalias`][unalias] [`unset`][unset] [`until`][until] [`wait`][wait] [`while`][while] 
 [Hardware settings](#hw)                    | [`bluetoothctl`][bluetoothctl] [`insmod`][insmod] [`lsmod`][lsmod] [`lspci`][lspci] [`lsusb`][lsusb] [`modprobe`][modprobe] [`rmmod`][rmmod] <br> **[Printing](hw.md)** <br> [**CUPS**][CUPS] [`cupsaccept`][cupsaccept] [`cupsenable`][cupsenable] [`cupsdisable`][cupsdisable] [`cupsreject`][cupsreject] [`lp`][lp] [`cancel`][cancel] <br> [**LPD**][LPD] [`lpc`][lpc] [`lpq`][lpq] [`lpr`][lpr] [`lprm`][lprm]
@@ -41,8 +41,7 @@ Kubernetes                                  | [`kubeadm`][kubeadm] [`kubectl`][k
 [Remote administration](#remote-administration)  | [`rsync`][rsync] [`ssh`][ssh] [`ssh-keygen`][ssh-keygen] [`ssh-keyscan`][ssh-keyscan] [`sshfs`][sshfs]
 [SELinux](#selinux)                         | [`chcon`][chcon] [`getenforce`][getenforce] [`getsebool`][getsebool] [`restorecon`][restorecon] [`semanage`][semanage] [`sestatus`][sestatus] [`setenforce`][setenforce] [`setsebool`][setsebool] 
 [System administration](#system-administration) | [`adduser`][adduser] [`at`][at] [`atq`][atq] [`atrm`][atrm] [`chage`][chage] [`edquota`][edquota] [`gpasswd`][gpasswd] [`groupadd`][groupadd] [`groupdel`][groupdel] [`groupmod`][groupmod] [`last`][last] [`lastb`][lastb] [`passwd`][passwd] [`quota`][quota] [`quotacheck`][quotacheck] [`quotaoff`][quotaoff] [`quotaon`][quotaon] [`repquota`][repquota] [`su`][su] [`sudo`][sudo] [`sudoedit`][sudoedit] [`useradd`][useradd] [`userdel`][userdel] [`usermod`][usermod] [`visudo`][visudo] [`w`][w] [`who`][who] [`whoami`][whoami] 
-[Text filters](text.md)                     | [`awk`][awk] [`cat`][cat] [`copy`][copy] [`grep`][grep] [`head`][head] [`nl`][nl] [`paste`][paste] [`sed`][sed] [`shuf`][shuf] [`sort`][sort] [`tail`][tail] [`tr`][tr]
-[Version control](git.md)                   | [`git`][git] [`tig`][tig]
+[Text filters](#text)                     | [`cat`][cat] [`cmp`][cmp] [`comm`][comm] [`csplit`][csplit] [`cut`][cut] [`diff`][diff] [`diff3`][diff3] [`ed`][ed] [`egrep`][egrep] [`ex`][ex] [`expand`][expand] [`fgrep`][fgrep] [`fmt`][fmt] [`gettext`][gettext] [`grep`][grep] [`groff`][groff] [`head`][head] [`join`][join] [`less`][less] [`look`][look] [`more`][more] [`nl`][nl] [`od`][od] [`paste`][paste] [`pr`][pr] [`sed`][sed] [`shuf`][shuf] [`sort`][sort] [`split`][split] [`tac`][tac] [`tail`][tail] [`tee`][tee] [`tr`][tr] [`unexpand`][unexpand] [`uniq`][uniq] [`wc`][wc] 
 [Virtualization](#virtualization)           | [`virt-install`][virt-install] [`virt-manager`][virt-manager]
 [X](#x-windows-system)                      | [`cvt`][cvt] [`x`][x] [`xdpyinfo`][xdpyinfo] [`xfs`][xfs] [`xhost`][xhost] [`xlsclients`][xlsclients] [`xmodmap`][xmodmap] [`xorg`][xorg] [`xrandr`][xrandr] [`xset`][xset] [`xwininfo`][xwininfo] 
 
@@ -3895,7 +3894,6 @@ watch -n 5 free -m
 ## Text
 [cat]: #cat '```&#10;$ cat&#10;```&#10;Display contents of text files&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 115'
 [cmp]: #cmp '```&#10;$ cmp $FILE $OTHER&#10;```&#10;Compare `$FILE` with `$OTHER`, or STDIN if one or the other is not provided (cf. `comm` and `diff`). Exits with 0 if files are identical or 1 if they are not.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 39'
-[cmp]: #cmp '```&#10;$ cmp&#10;```&#10;Compare two files&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 610'
 [comm]: #comm '```&#10;$ comm $FILE $OTHER&#10;```&#10;Compare lines common to the sorted files `$FILE` and `$OTHER`. Output is in 3 colums: lines unique to `$FILE`, lines unique to `$OTHER`, and lines common to both.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 39'
 [csplit]: #csplit '```&#10;$ csplit&#10;```&#10;Separate `$FILE` into sections and place sections in files named "xx00" through "xxn" (n < 100)&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 46'
 [cut]: #cut '```&#10;$ cut&#10;```&#10;Select a list of columns or fields from one or more files&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 50'
@@ -3932,7 +3930,6 @@ watch -n 5 free -m
 [wc]: #wc '```&#10;$ wc&#10;```&#10;Display number of lines, words, or characters of data.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 128'
 
 [`cat`][cat] 
-[`cmp`][cmp] 
 [`cmp`][cmp] 
 [`comm`][comm] 
 [`csplit`][csplit] 
