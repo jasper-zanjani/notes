@@ -2,24 +2,20 @@
 [ADP 57]: ../sources/README.md#adp-57 "Azure DevOps Podcast 57: \"Craig Loewen on the Windows Subsystem for Linux story\""
 [LXF 258]: https://www.linuxformat.com/archives?issue=258 '"Linux distribution reviews: Clear Linux 31530" _Linux Format_ 258'
 
-# Linux distributions
+## Distributions
 [Alpine Linux]: #alpine-linux "Security-oriented, lightweight Linux distribution used in containers and hardware."
 [Clear Linux]: #clear-linux "Rolling release distro from Intel with a custom package management system based on **bundles**, collections of packages that contain everything an application requires, including dependencies. Clear's update process also has the ability to do **delta downloads**, preserving bandwidth. It does not provide access with unusual licenses, like ZFS, Chrome, or FFmpeg."
 [Fedora CoreOS]: #fedora-coreos "Fedora edition built for running containerized workloads securely and at scale. CoreOS systems are meant to be immutable, meaning they are only configured through the provisioning process and not modified in-place."
 [WSL]: #windows-subsystem-for-linux "Linux virtual machine shipped with Windows with the ability to install several different distros."
 
-**A** 
-[Alpine Linux][Alpine Linux] 
-[Arch Linux](#arch-linux) 
-**C** 
-[Clear Linux][Clear Linux] 
+[Alpine ][Alpine Linux] 
+[Arch ](#arch-linux) 
+[Clear ][Clear Linux] 
 [CoreOS][Fedora CoreOS] 
-**F** 
 [Fedora](#fedora)
-**K** 
-[Kali Linux](#kali-linux) 
-**W** 
-[Windows Subsystem for Linux][WSL]
+[Kali ](#kali-linux) 
+[WSL][WSL]
+
 ## Alpine Linux
 Security-oriented, lightweight Linux distribution used in containers and hardware.
 ## Arch Linux

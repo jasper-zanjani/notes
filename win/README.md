@@ -14,24 +14,24 @@
 [UWP]: #uwp 'Universal Windows Platform (UWP)&#10;Universal Windows Platform provides a common app platform on every device that runs Windows 10, and UWP apps are primarily associated with the Microsoft Store.&#10;"Universal Windows Platform apps". _Wikipedia_.'
 
 <!-- `cmd` commands -->
-[adprep]:                      #adprep                         '```&#10;C:\>adprep&#10;```&#10;Prepare Active Directory for Windows Server upgrades&#10;Must be run on the Infrastructure Master role owner with the flag `/domainprep`.&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 29'
-[arp]:                         #arp                            '```&#10;C:\>arp&#10;```&#10;Display and modify the IP-to-MAC address translation tables used by ARP'
-[bcdedit]:                     #bcdedit                        '```&#10;C:\>bcdedit&#10;```&#10;Boot configuration data editor'
-[bootrec]:                     #bootrec                        '```&#10;C:\>bootrec&#10;```&#10;Windows Recovery Environment command that repairs a system partition'
-[cscript]:                     #cscript                        '```&#10;C:\>cscript&#10;```&#10;Starts a script so that it runs in a command-line environment'
-[diskpart]:                    #diskpart                       '```&#10;C:\>diskpart&#10;```&#10;Text-mode command interpreter used to convert disk types, create partitions and volumes, and configure RAID&#10;Stanek, William R. _Microsoft Windows Command-Line_.: 141'
-[hostname]: #hostname '```&#10;C:\>hostname&#10;C:\>HOSTNAME.exe&#10;```&#10;Display computer name'
-[ipconfig]:                    #ipconfig                       '```&#10;C:\>ipconfig&#10;```&#10;Display TCP/IP configuration'
-[logoff]:                      #logoff                         '```&#10;C:\>logoff&#10;```&#10;Log out'
-[msiexec]:                     #msiexec                        '```&#10;C:\>msiexec&#10;```&#10;Provides the means to install, modify, and perform operations on Windows Installer from the command line'
-[nbtstat]:                     #nbtstat                        '```&#10;C:\>nbtstat&#10;```&#10;Display status of NetBIOS'
-[netsh]:                       #netsh                          '```&#10;C:\>netsh&#10;```&#10;"Network services shell", command-line utility that allows you to manage the configuration of various network services on local and remote computers.&#10;Stanek, William R. _Microsoft Windows Command-Line_.: 297'
-[ntdsutil]:                    #ntdsutil                       '```&#10;C:\>ntdsutil&#10;```&#10;Used to transfer FSMO roles between domain controllers'
-[sfc]:                         #sfc                            '```&#10;C:\>sfc&#10;C:\>sfc /scannow&#10;```&#10;Scan and verify protected system files&#10;Stanek, William R. _Microsoft Windows Command-Line_.: 373'
-[slmgr]:                       #slmgr                          '```&#10;C:\>slmgr&#10;```&#10;Windows software licensing management tool'
-[systeminfo]:                  #systeminfo                     '```&#10;C:\>systeminfo&#10;```&#10;Shows system information about the machine, including installed hotfixes and patches'
-[winver]:                                          #winver                                             '```&#10;C:\>winver&#10;```&#10;Display the "About Windows" dialog box, including Windows version and build number'
-[wmic]:                        #wmic                           '```&#10;C:\>wmic&#10;```&#10;WMI command-line (WMIC) utility provides a command-line interface for WMI.'
+[adprep]:         #adprep                         '```&#10;C:\>adprep&#10;```&#10;Prepare Active Directory for Windows Server upgrades&#10;Must be run on the Infrastructure Master role owner with the flag `/domainprep`.&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 29'
+[arp]:            #arp                            '```&#10;C:\>arp&#10;```&#10;Display and modify the IP-to-MAC address translation tables used by ARP'
+[bcdedit]:        #bcdedit                        '```&#10;C:\>bcdedit&#10;```&#10;Boot configuration data editor'
+[bootrec]:        #bootrec                        '```&#10;C:\>bootrec&#10;```&#10;Windows Recovery Environment command that repairs a system partition'
+[cscript]:        #cscript                        '```&#10;C:\>cscript&#10;```&#10;Starts a script so that it runs in a command-line environment'
+[diskpart]:       #diskpart                       '```&#10;C:\>diskpart&#10;```&#10;Text-mode command interpreter used to convert disk types, create partitions and volumes, and configure RAID&#10;Stanek, William R. _Microsoft Windows Command-Line_.: 141'
+[hostname]:       #hostname                       '```&#10;C:\>hostname&#10;C:\>HOSTNAME.exe&#10;```&#10;Display computer name'
+[ipconfig]:       #ipconfig                       '```&#10;C:\>ipconfig&#10;```&#10;Display TCP/IP configuration'
+[logoff]:         #logoff                         '```&#10;C:\>logoff&#10;```&#10;Log out'
+[msiexec]:        #msiexec                        '```&#10;C:\>msiexec&#10;```&#10;Provides the means to install, modify, and perform operations on Windows Installer from the command line'
+[nbtstat]:        #nbtstat                        '```&#10;C:\>nbtstat&#10;```&#10;Display status of NetBIOS'
+[netsh]:          #netsh                          '```&#10;C:\>netsh&#10;```&#10;"Network services shell", command-line utility that allows you to manage the configuration of various network services on local and remote computers.&#10;Stanek, William R. _Microsoft Windows Command-Line_.: 297'
+[ntdsutil]:       #ntdsutil                       '```&#10;C:\>ntdsutil&#10;```&#10;Used to transfer FSMO roles between domain controllers'
+[sfc]:            #sfc                            '```&#10;C:\>sfc&#10;C:\>sfc /scannow&#10;```&#10;Scan and verify protected system files&#10;Stanek, William R. _Microsoft Windows Command-Line_.: 373'
+[slmgr]:          #slmgr                          '```&#10;C:\>slmgr&#10;```&#10;Windows software licensing management tool'
+[systeminfo]:     #systeminfo                     '```&#10;C:\>systeminfo&#10;```&#10;Shows system information about the machine, including installed hotfixes and patches'
+[winver]:         #winver                                             '```&#10;C:\>winver&#10;```&#10;Display the "About Windows" dialog box, including Windows version and build number'
+[wmic]:           #wmic                           '```&#10;C:\>wmic&#10;```&#10;WMI command-line (WMIC) utility provides a command-line interface for WMI.'
 
 <!-- Powershell commands -->
 [Add-Computer]:                                      pwsh.md#add-computer                               '```&#10;PS C:\> Add-Computer&#10;```&#10;Join a computer to a domain'
@@ -42,20 +42,20 @@
 [grep]: https://github.com/jasper-zanjani/notes/blob/master/lx/commands/README.md#grep '```&#10;$ grep&#10;```&#10;Search `$FILES` for lines containing a match to regex `$PATTERN`&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 126'
 
 <!-- Control Panel binaries -->
-[access.cpl]:                                        #access.cpl                                        '```&#10;C:\> access.cpl&#10;```&#10;Accessibility Options'
-[appwiz.cpl]:                                        #appwiz.cpl                                        '```&#10;C:\> appwiz.cpl&#10;```&#10;Add/Remove Programs'
-[desk.cpl]:                                          #desk.cpl                                          '```&#10;C:\> desk.cpl&#10;```&#10;Display Properties'
-[findfast.cpl]:                                      #findfast.cpl                                      '```&#10;C:\> findfast.cpl&#10;```&#10;FindFast'
-[inetcpl.cpl]:                                       #inetcpl.cpl                                       '```&#10;C:\> inetcpl.cpl&#10;```&#10;Internet Properties'
-[intl.cpl]:                                          #intl.cpl                                          '```&#10;C:\> intl.cpl&#10;```&#10;Regional Settings'
-[joy.cpl]:                                           #joy.cpl                                           '```&#10;C:\> joy.cpl&#10;```&#10;Joystick Properties'
-[main.cpl]:                                          #main.cpl                                          '```&#10;C:\> main.cpl&#10;```&#10;Mouse Properties'
-[mlcfg32.cpl]:                                       #mlcfg32.cpl                                       '```&#10;C:\> mlcfg32.cpl&#10;```&#10;Microsoft Exchange (or Windows Messaging)'
-[mmsys.cpl]:                                         #mmsys.cpl                                         '```&#10;C:\> mmsys.cpl&#10;```&#10;Sound Properties'
-[ncpa.cpl]:                                          #ncpa.cpl                                          '```&#10;C:\> ncpa.cpl&#10;```&#10;Network Settings'
-[sysdm.cpl]:                                         #sysdm.cpl                                         '```&#10;C:\> sysdm.cpl&#10;```&#10;System Properties'
-[timedate.cpl]:                                      #timedate.cpl                                      '```&#10;C:\> timedate.cpl&#10;```&#10;Date/Time Properties'
-[wgpocpl.cpl]:                                       #wgpocpl.cpl                                       '```&#10;C:\> wgpocpl.cpl&#10;```&#10;Microsoft Mail Post Office'
+[access.cpl]:     #access.cpl           '```&#10;C:\> access.cpl&#10;```&#10;Accessibility Options'
+[appwiz.cpl]:     #appwiz.cpl           '```&#10;C:\> appwiz.cpl&#10;```&#10;Add/Remove Programs'
+[desk.cpl]:       #desk.cpl             '```&#10;C:\> desk.cpl&#10;```&#10;Display Properties'
+[findfast.cpl]:   #findfast.cpl         '```&#10;C:\> findfast.cpl&#10;```&#10;FindFast'
+[inetcpl.cpl]:    #inetcpl.cpl          '```&#10;C:\> inetcpl.cpl&#10;```&#10;Internet Properties'
+[intl.cpl]:       #intl.cpl             '```&#10;C:\> intl.cpl&#10;```&#10;Regional Settings'
+[joy.cpl]:        #joy.cpl              '```&#10;C:\> joy.cpl&#10;```&#10;Joystick Properties'
+[main.cpl]:       #main.cpl             '```&#10;C:\> main.cpl&#10;```&#10;Mouse Properties'
+[mlcfg32.cpl]:    #mlcfg32.cpl          '```&#10;C:\> mlcfg32.cpl&#10;```&#10;Microsoft Exchange (or Windows Messaging)'
+[mmsys.cpl]:      #mmsys.cpl            '```&#10;C:\> mmsys.cpl&#10;```&#10;Sound Properties'
+[ncpa.cpl]:       #ncpa.cpl             '```&#10;C:\> ncpa.cpl&#10;```&#10;Network Settings'
+[sysdm.cpl]:      #sysdm.cpl            '```&#10;C:\> sysdm.cpl&#10;```&#10;System Properties'
+[timedate.cpl]:   #timedate.cpl         '```&#10;C:\> timedate.cpl&#10;```&#10;Date/Time Properties'
+[wgpocpl.cpl]:    #wgpocpl.cpl          '```&#10;C:\> wgpocpl.cpl&#10;```&#10;Microsoft Mail Post Office'
 
 # Microsoft Windows
 
@@ -71,7 +71,7 @@ Topics
 
 [`access`][access.cpl] 
 [`adprep`][adprep] 
-[`appwiz`][appwiz.cpl] 
+[`appwiz.cpl`][appwiz.cpl] 
 [`arp`][arp] 
 [`bcdedit`][bcdedit] 
 [`bootrec`][bootrec]
@@ -83,10 +83,10 @@ Topics
 `findstr`[<sup>lx</sup>][grep]
 `gpupdate`[<sup>pwsh</sup>][Invoke-GPUpdate]
 [`hostname`][hostname][<sup>pwsh</sup>](pwsh.md#get-computerinfo "```&#10;PS C:\> (Get-ComputerInfo).CsName&#10;```")
-[`inetcpl`][inetcpl.cpl] 
-[`intl`][intl.cpl] 
+[`inetcpl.cpl`][inetcpl.cpl] 
+[`intl.cpl`][intl.cpl] 
 [`ipconfig`][ipconfig]
-[`joy`][joy.cpl]
+[`joy.cpl`][joy.cpl]
 [`logoff`][logoff]
 [`main`][main.cpl] 
 [`mlcfg32.cpl`][mlcfg32.cpl] 
@@ -97,12 +97,12 @@ Topics
 [`route`](#route)
 [`sfc`][sfc] [`shutdown`](#shutdown) 
 [`slmgr`][slmgr] 
-[`sysdm`][sysdm.cpl]
+[`sysdm.cpl`][sysdm.cpl]
 [`systeminfo`][systeminfo]
-[`timedate`][timedate.cpl]
+[`timedate.cpl`][timedate.cpl]
 [`tracert`](#tracert) 
 [`traceroute`](#tracert)
-[`wgpocpl`][wgpocpl.cpl]
+[`wgpocpl.cpl`][wgpocpl.cpl]
 [`winrm`](#winrm) 
 [`winver`][winver]
 [`wmic`][wmic]
