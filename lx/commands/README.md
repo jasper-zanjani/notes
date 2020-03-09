@@ -1,30 +1,45 @@
 # Linux Commands
 
 <!-- Sources -->
-[Eckert]: https://github.com/jasper-zanjani/notes/blob/master/sources/lglc.md 'Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012'
-[https://linuxconfig.org/how-to-install-the-nvidia-drivers-on-fedora-31]: https://linuxconfig.org/how-to-install-the-nvidia-drivers-on-fedora-31 '"How to install the NVIDIA drivers on Fedora 31". Linuxconfig.org: 10/17/2019.'
-[https://www.tecmint.com/rdesktop-connect-windows-desktop-from-linux/]: https://www.tecmint.com/rdesktop-connect-windows-desktop-from-linux/ "TecMint: \"rdesktop - A RDP Client to Connect Windows Desktop from Linux\""
-[https://youtu.be/ksAfmJfdub0]: https://youtu.be/ksAfmJfdub0 "YouTube: \"Easy Academic References on the Command Line\""
-[https://coderwall.com/p/kq9ghg/yakuake-scripting]: https://coderwall.com/p/kq9ghg/yakuake-scripting "coderwall.com: \"Yakuake scripting\""
-[https://opensource.com/article/19/8/introduction-bpftrace]: https://opensource.com/article/19/8/introduction-bpftrace "opensource.com: \"An introduction to bpftrace for Linux\""
+[https://opensource.com/article/19/10/namespaces-and-containers-linux]: https://opensource.com/article/19/10/namespaces-and-containers-linux 'opensource.com - "Demistifying namespaces and containers in Linux"'
 [21]: https://vitux.com/how-to-convert-documents-to-pdf-format-on-the-ubuntu-command-line/ "vitux.com: \"How to convert documents to PDF format on the Ubuntu Command Line\""
-[CLKF]: ../sources/clkf.md "Cannon, Jason. _Command Line Kung Fu_."
 [29]: https://www.ostechnix.com/the-mktemp-command-tutorial-with-examples-for-beginners/ "The mktemp Command Tutorial With examples"
-[https://www.ostechnix.com/how-to-view-image-metadata-on-linux/]: https://www.ostechnix.com/how-to-view-image-metadata-on-linux/ "ostechnix.com: \"How to view image metadata\""
-[https://www.networkworld.com/article/3433865/how-to-rename-a-group-of-files-on-linux.html#tk.rss_linux]: https://www.networkworld.com/article/3433865/how-to-rename-a-group-of-files-on-linux.html#tk.rss_linux "networkworld.com: \"How to rename a group of files on Linux\""
 [36]: https://www.networkworld.com/article/3435279/unix-as-a-second-language-the-touch-command.html#tk.rss_linux "networkworld.com: \"Unix as a Second Language: The touch command\""
 [39]: https://www.howtoforge.com/how-to-install-and-use-sosreport-on-ubuntu-1804/ "howtoforge.com: \"How to install and use sosreport on Ubuntu\""
-[https://vitux.com/how-to-install-and-configure-samba-on-ubuntu/]: https://vitux.com/how-to-install-and-configure-samba-on-ubuntu/ "vitux.com: \"How to Install and Configure Samba on Ubuntu\""
-[https://www.tecmint.com/install-samba-on-rhel-8-for-file-sharing-on-windows/]: https://www.tecmint.com/install-samba-on-rhel-8-for-file-sharing-on-windows/ "tecmint.com: \"Install Samba4 on RHEL 8 for File Sharing on Windows\""
 [42]: https://www.2daygeek.com/check-find-recently-modified-files-folders-linux/ "2daygeek: \"How to find recently modified files/folders in Linux\""
 [46]: https://www.tecmint.com/linux-tree-command-examples/ "tecmint.com: \"Linux tree command usage examples for beginners\""
-[https://devconnected.com/user-administration-complete-guide-on-linux/#Setting_an_account_expiration_date_easily]: https://devconnected.com/user-administration-complete-guide-on-linux/#Setting_an_account_expiration_date_easily "devconnected.com: \"User administration complete guide on Linux\""
-[https://www.redhat.com/sysadmin/raid-intro]: https://www.redhat.com/sysadmin/raid-intro "redhat.com: \"RAID for those who avoid it\""
 [59]: https://docs.fedoraproject.org/en-US/quick-docs/adding-new-fonts-fedora/ "Fedora Docs - Adding new fonts in Fedora"
-[Sobell]: https://github.com/jasper-zanjani/notes/blob/master/sources/pgl.md 'Sobell, Mark. _Practical Guide to Linux_. 2017.'
-[https://computingforgeeks.com/connect-to-bluetooth-device-from-linux-terminal/]: https://computingforgeeks.com/connect-to-bluetooth-device-from-linux-terminal/ "Computing for Geeks: \"How to connect to Bluetooth device from Linux terminal\""
-[http://www.linux-magazine.com/Issues/2017/197/Command-Line-bluetoothctl#article_i1]: http://www.linux-magazine.com/Issues/2017/197/Command-Line-bluetoothctl#article_i1 "Linux Magazine: \"Blue Control\""
+[CLKF]: ../sources/clkf.md "Cannon, Jason. _Command Line Kung Fu_."
+[Eckert]: https://github.com/jasper-zanjani/notes/blob/master/sources/lglc.md 'Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012'
+[L5PMT-cpu]: https://subscription.packtpub.com/video/programming/9781838559250/p1/video1_2/cpu-run-queue-and-load-average 'Linux 5 Performance Monitoring and Tuning: "CPU - Run Queue and Load Average"'
+[L5PMT-disk]: https://subscription.packtpub.com/video/programming/9781838559250/p1/video1_5/disk-io-operations-on-linux 'Linux 5 Performance Monitoring and Tuning: "Disk IO Operations on Linux"'
+[L5PMT-glances]: https://subscription.packtpub.com/video/programming/9781838559250/p1/video1_3/glances-tool 'Linux 5 Performance Monitoring and Tuning: "Glances Tool"'
+[L5PMT-memory]: https://subscription.packtpub.com/video/programming/9781838559250/p1/video1_4/memory-and-swap-management-on-linux 'Linux 5 Performance Monitoring and Tuning: "Memory and Swap Management on Linux"'
+[L5PMT-network]: https://subscription.packtpub.com/video/programming/9781838559250/p1/video1_6/monitoring-and-understanding-network 'Linux 5 Performance Monitoring and Tuning: "Monitoring and Understanding Network"'
+[L5PMT-subsystem]: https://subscription.packtpub.com/video/programming/9781838559250/p2/video2_1/subsystem-analysis-with-vmstat 'Linux 5 Performance Monitoring and Tuning: "Subsystem Analysis with vmstat"'
+[LPM 231 Regolith Linux]: www.linux-magazine.com/Issues/2020/231 '"Timely Tiling: Exploring the i3 tiling window manager with Regolith Linux". _Linux Pro Magazine_. Issue 231'
 [Schatz]: http://www.volkerschatz.com/noise/alsa.html "www.volkerschatz.com: \"A close look at ALSA\""
+[Sec+ Lab]: https://pts.measureup.com/web/index.php#dashboard.php "Practice Lab: CompTIA Security+ (SY0-501)"
+[Sobell]: https://github.com/jasper-zanjani/notes/blob/master/sources/pgl.md 'Sobell, Mark. _Practical Guide to Linux_. 2017.'
+[http://www.linux-magazine.com/Issues/2017/197/Command-Line-bluetoothctl#article_i1]: http://www.linux-magazine.com/Issues/2017/197/Command-Line-bluetoothctl#article_i1 "Linux Magazine: \"Blue Control\""
+[https://coderwall.com/p/kq9ghg/yakuake-scripting]: https://coderwall.com/p/kq9ghg/yakuake-scripting "coderwall.com: \"Yakuake scripting\""
+[https://computingforgeeks.com/connect-to-bluetooth-device-from-linux-terminal/]: https://computingforgeeks.com/connect-to-bluetooth-device-from-linux-terminal/ "Computing for Geeks: \"How to connect to Bluetooth device from Linux terminal\""
+[https://devconnected.com/user-administration-complete-guide-on-linux/#Setting_an_account_expiration_date_easily]: https://devconnected.com/user-administration-complete-guide-on-linux/#Setting_an_account_expiration_date_easily "devconnected.com: \"User administration complete guide on Linux\""
+[https://docs.fedoraproject.org/en-US/quick-docs/getting-started-with-virtualization/]: https://docs.fedoraproject.org/en-US/quick-docs/getting-started-with-virtualization/ "Fedora Docs: \"Getting started with virtualization\""
+[https://linuxconfig.org/how-to-install-the-nvidia-drivers-on-fedora-31]: https://linuxconfig.org/how-to-install-the-nvidia-drivers-on-fedora-31 '"How to install the NVIDIA drivers on Fedora 31". Linuxconfig.org: 10/17/2019.'
+[https://opensource.com/article/19/8/introduction-bpftrace]: https://opensource.com/article/19/8/introduction-bpftrace "opensource.com: \"An introduction to bpftrace for Linux\""
+[https://tools.kali.org/information-gathering/hping3]: https://tools.kali.org/information-gathering/hping3 "tools.kali.org: \"hping3 - Active Network Smashing Tool\""
+[https://vitux.com/how-to-install-and-configure-samba-on-ubuntu/]: https://vitux.com/how-to-install-and-configure-samba-on-ubuntu/ "vitux.com: \"How to Install and Configure Samba on Ubuntu\""
+[https://www.networkworld.com/article/3433865/how-to-rename-a-group-of-files-on-linux.html#tk.rss_linux]: https://www.networkworld.com/article/3433865/how-to-rename-a-group-of-files-on-linux.html#tk.rss_linux "networkworld.com: \"How to rename a group of files on Linux\""
+[https://www.networkworld.com/article/3447936/viewing-network-bandwidth-usage-with-bmon.html]: https://www.networkworld.com/article/3447936/viewing-network-bandwidth-usage-with-bmon.html "Network World: \"Viewing network bandwidth usage with bmon\""
+[https://www.networkworld.com/video/99387/how-to-use-the-bmon-command-2-minute-linux-tips]: https://www.networkworld.com/video/99387/how-to-use-the-bmon-command-2-minute-linux-tips "Network World: How to use the bmon command: 2-Minute Linux Tips"
+[https://www.ostechnix.com/how-to-view-image-metadata-on-linux/]: https://www.ostechnix.com/how-to-view-image-metadata-on-linux/ "ostechnix.com: \"How to view image metadata\""
+[https://www.redhat.com/sysadmin/raid-intro]: https://www.redhat.com/sysadmin/raid-intro "redhat.com: \"RAID for those who avoid it\""
+[https://www.tecmint.com/install-samba-on-rhel-8-for-file-sharing-on-windows/]: https://www.tecmint.com/install-samba-on-rhel-8-for-file-sharing-on-windows/ "tecmint.com: \"Install Samba4 on RHEL 8 for File Sharing on Windows\""
+[https://www.tecmint.com/rdesktop-connect-windows-desktop-from-linux/]: https://www.tecmint.com/rdesktop-connect-windows-desktop-from-linux/ "TecMint: \"rdesktop - A RDP Client to Connect Windows Desktop from Linux\""
+[https://youtu.be/KkMWXVx-Ul8]: https://youtu.be/KkMWXVx-Ul8 "YouTube: How to Benchmark your Linux system, Hak5 1502.1"
+[https://youtu.be/ksAfmJfdub0]: https://youtu.be/ksAfmJfdub0 "YouTube: \"Easy Academic References on the Command Line\""
+
 
 Topic                                       | Commands
 :---                                        | :---
@@ -38,6 +53,7 @@ Kubernetes                                  | [`kubeadm`][kubeadm] [`kubectl`][k
 [Mail](#mail)                               | [`mail`][mail] [`mailmerge`][mailmerge] [`mailx`][mailx] [`msmtp`][msmtp] <br> **SMTP servers** [`exim`][exim] [`qmail`][qmail] [`postfix`][postfix] [`sendmail`][sendmail]
 [Network](#networking)                      | [`arp`][arp] [`bmon`][bmon] [`brctl`][brctl] [`curl`][curl] [`dig`][dig] [`ethtool`][ethtool] [`firewall-cmd`][firewall-cmd] [`host`][host] [`hping3`][hping3] [`ifconfig`][ifconfig] [`iftop`][iftop] [`ifup-wireless`][ifup-wireless] [`ip`][ip] [`iperf`][iperf] [`ipset`][ipset] [`iscsiadm`][iscsiadm] [`iw`][iw] [`iwconfig`][iwconfig] [`iwlist`][iwlist] [`kinit`][kinit] [`klist`][klist] [`mtr`][mtr] [`netcat`][netcat] [`netplan`][netplan] [`netstat`][netstat] [`nmap`][nmap] [`nmblookup`][nmblookup] [`nmcli`][nmcli] [`nmtui`][nmtui] [`nslookup`][nslookup] [`rfkill`][rfkill] [`route`][route] [`sftp`][sftp] [`ss`][ss] [`tcpdump`][tcpdump] [`tracepath`][tracepath] [`traceroute`][traceroute] [`tshark`][tshark] [`wget`][wget] [`whois`][whois] [`xinetd`][xinetd] 
 [Package managers](#package-managers)       | [`apt`][apt] [`brew`][brew] [`dnf`][dnf] [`dpkg`][dpkg] [`gem`][gem] [`pacman`][pacman] [`pip`][pip] [`rpm`][rpm] [`snap`][snap] [`yay`][yay] [`yum`][yum]
+[Process control](#process-control)         | [`ps`][ps] [`unshare`][unshare]
 [Remote administration](#remote-administration)  | [`rsync`][rsync] [`ssh`][ssh] [`ssh-keygen`][ssh-keygen] [`ssh-keyscan`][ssh-keyscan] [`sshfs`][sshfs]
 [SELinux](#selinux)                         | [`chcon`][chcon] [`getenforce`][getenforce] [`getsebool`][getsebool] [`restorecon`][restorecon] [`semanage`][semanage] [`sestatus`][sestatus] [`setenforce`][setenforce] [`setsebool`][setsebool] 
 [System administration](#system-administration) | [`adduser`][adduser] [`at`][at] [`atq`][atq] [`atrm`][atrm] [`chage`][chage] [`edquota`][edquota] [`gpasswd`][gpasswd] [`groupadd`][groupadd] [`groupdel`][groupdel] [`groupmod`][groupmod] [`last`][last] [`lastb`][lastb] [`passwd`][passwd] [`quota`][quota] [`quotacheck`][quotacheck] [`quotaoff`][quotaoff] [`quotaon`][quotaon] [`repquota`][repquota] [`su`][su] [`sudo`][sudo] [`sudoedit`][sudoedit] [`useradd`][useradd] [`userdel`][userdel] [`usermod`][usermod] [`visudo`][visudo] [`w`][w] [`who`][who] [`whoami`][whoami] 
@@ -554,8 +570,6 @@ speaker-test -c 2
 [`while`][while] 
 
 ## Boot
-[https://www.howtoforge.com/tutorial/repair-linux-boot-with-grub-rescue/]: https://www.howtoforge.com/tutorial/repair-linux-boot-with-grub-rescue/ "howtoforge.com - \"Repair Linux boot failures in GRUB 2 rescue mode\""
-
 [grub-install]:                #grub-install            '```&#10;$ grub-install&#10;```&#10;Install GRUB on the MBR of a hard drive&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 42'
 [grub-mkconfig]: # ""
 [grub2-editenv]:               #grub2-editenv                  '```&#10;grub2-editenv&#10;```&#10;Manage the stored environment of GRUB&#10;"How to install the NVIDIA drivers on Fedora 31". Linuxconfig.org: 10/17/2019.'
@@ -569,7 +583,7 @@ speaker-test -c 2
 [`update-grub`][update-grub] 
 
 #### GRUB Rescue prompt
-When GRUB2 is unable to find the GRUB folder or its contents are missing or corrupted, it displays the prompt `grub rescue>`. This means it failed to load the `normal` module. [<sup>ref</sup>][https://www.howtoforge.com/tutorial/repair-linux-boot-with-grub-rescue/]
+When GRUB2 is unable to find the GRUB folder or its contents are missing or corrupted, it displays the prompt `grub rescue>`. This means it failed to load the `normal` module. [<sup>ref</sup>](https://www.howtoforge.com/tutorial/repair-linux-boot-with-grub-rescue/ "howtoforge.com - \"Repair Linux boot failures in GRUB 2 rescue mode\"")
 
 From GRUB rescue prompt:
 ```grub
@@ -800,16 +814,6 @@ make -C/etc/mail
 <code>&nbsp;</code>   [`a`][xgettext -&#97;] <code>&nbsp;</code> [`c`][xgettext -&#99;] [`d`][xgettext -&#100;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`h`][xgettext -&#104;] <code>&nbsp;</code> [`j`][xgettext -&#106;] <code>&nbsp;</code> <code>&nbsp;</code> [`m`][xgettext -&#109;] [`n`][xgettext -&#110;] <code>&nbsp;</code> [`p`][xgettext -&#112;] <code>&nbsp;</code> <code>&nbsp;</code> [`s`][xgettext -&#115;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`x`][xgettext -&#120;] <code>&nbsp;</code> <code>&nbsp;</code>  <br><code>&nbsp;</code>&nbsp;<code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`M`][xgettext -&#77;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 
 
 ## Diagnostic and benchmarking
-[Eckert]: # "Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012."
-[L5PMT-glances]: https://subscription.packtpub.com/video/programming/9781838559250/p1/video1_3/glances-tool 'Linux 5 Performance Monitoring and Tuning: "Glances Tool"'
-[L5PMT-cpu]: https://subscription.packtpub.com/video/programming/9781838559250/p1/video1_2/cpu-run-queue-and-load-average 'Linux 5 Performance Monitoring and Tuning: "CPU - Run Queue and Load Average"'
-[L5PMT-memory]: https://subscription.packtpub.com/video/programming/9781838559250/p1/video1_4/memory-and-swap-management-on-linux 'Linux 5 Performance Monitoring and Tuning: "Memory and Swap Management on Linux"'
-[L5PMT-disk]: https://subscription.packtpub.com/video/programming/9781838559250/p1/video1_5/disk-io-operations-on-linux 'Linux 5 Performance Monitoring and Tuning: "Disk IO Operations on Linux"'
-[L5PMT-network]: https://subscription.packtpub.com/video/programming/9781838559250/p1/video1_6/monitoring-and-understanding-network 'Linux 5 Performance Monitoring and Tuning: "Monitoring and Understanding Network"'
-[L5PMT-subsystem]: https://subscription.packtpub.com/video/programming/9781838559250/p2/video2_1/subsystem-analysis-with-vmstat 'Linux 5 Performance Monitoring and Tuning: "Subsystem Analysis with vmstat"'
-[https://youtu.be/KkMWXVx-Ul8]: https://youtu.be/KkMWXVx-Ul8 "YouTube: How to Benchmark your Linux system, Hak5 1502.1"
-
-
 [ausearch]:                    #ausearch                       '```&#10;$ ausearch&#10;```&#10;Display audit logs'
 [bpftrace]:                    #bpftrace                       '```&#10;$ bpftrace&#10;```&#10;New open-source tracer for analyzing production performance problems and troubleshooting software&#10;"An introduction to `bpftrace` for Linux". _opensource.com_'
 [date]:                        #date                           '```&#10;$ date&#10;```&#10;Print the current date and time, specifying a format.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 51'
@@ -1771,9 +1775,8 @@ initctl reload
 <code>&nbsp;</code> [`a`][rmmod -&#97;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`s`][rmmod -&#115;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`w`][rmmod -&#119;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 
 
 ## Mail
-[pine]: #pine "\"Program for Internet news and email\", popular MUA during the 1990s which has since been replaced by Alpine."
-[Eckert]: # "Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012."
 
+[pine]: #pine "\"Program for Internet news and email\", popular MUA during the 1990s which has since been replaced by Alpine."
 `mailmerge` 
 `mailq` 
 `mailstats` 
@@ -1886,13 +1889,6 @@ ssmtp -au recipient -ap pw user@host < msg
 "Program for Internet news and email", a popular [MUA](# "\"mail user agent\", program that allows a user to view mail, such as mutt, pine, printmail, elm, mail, Thunderbird, Evolution, and Eudora") during the 1990s which has since been superceded by Alpine.
 
 ## Networking
-
-[Sec+ Lab]: https://pts.measureup.com/web/index.php#dashboard.php "Practice Lab: CompTIA Security+ (SY0-501)"
-[https://tools.kali.org/information-gathering/hping3]: https://tools.kali.org/information-gathering/hping3 "tools.kali.org: \"hping3 - Active Network Smashing Tool\""
-[https://computingforgeeks.com/connect-to-bluetooth-device-from-linux-terminal/]: https://computingforgeeks.com/connect-to-bluetooth-device-from-linux-terminal/ "Computing for Geeks: \"How to connect to Bluetooth device from Linux terminal\""
-[https://www.networkworld.com/article/3447936/viewing-network-bandwidth-usage-with-bmon.html]: https://www.networkworld.com/article/3447936/viewing-network-bandwidth-usage-with-bmon.html "Network World: \"Viewing network bandwidth usage with bmon\""
-[https://www.networkworld.com/video/99387/how-to-use-the-bmon-command-2-minute-linux-tips]: https://www.networkworld.com/video/99387/how-to-use-the-bmon-command-2-minute-linux-tips "Network World: How to use the bmon command: 2-Minute Linux Tips"
-
 [arp]:                         #arp                            '```&#10;$ arp&#10;```&#10;'
 [bmon]:                        #bmon                           '```&#10;$ bmon&#10;```&#10;Terminal-based graphical bandwidth monitor'
 [brctl]:                       #brctl                          '```&#10;$ brctl&#10;```&#10;Create, modify, or view an Ethernet bridge, which connects separate networks into a single network from the perspective of users.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 27'
@@ -2563,10 +2559,6 @@ ss --tcp --processes
 [Cannon]: https://github.com/jasper-zanjani/notes/master/sources/clkf.md "Cannon, Jason. _Command Line Kung Fu_."
 
 ## Package managers
-
-[https://docs.fedoraproject.org/en-US/quick-docs/getting-started-with-virtualization/]: https://docs.fedoraproject.org/en-US/quick-docs/getting-started-with-virtualization/ "Fedora Docs: \"Getting started with virtualization\""
-[LPM 231 Regolith Linux]: www.linux-magazine.com/Issues/2020/231 '"Timely Tiling: Exploring the i3 tiling window manager with Regolith Linux". _Linux Pro Magazine_. Issue 231'
-
 [alien]:                       #alien                '```&#10;$ alien&#10;```&#10;Convert between or install package types native to other distributions, including Red Hat .rpm, Stampede .slp, Slackware .tgz, and generic .tar.gz files.&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 52'
 [add-apt-repository]:          #add-apt-repository   '```&#10;$ add-apt-repository&#10;```&#10;'
 [apt]:                         #apt                  '```&#10;$ apt&#10;```&#10;'
@@ -3001,6 +2993,14 @@ rpm -E %fedora
 [`search`][yum search] 
 [`shell`][yum shell] 
 [`update`][yum update] 
+
+## Process control
+### `unshare`
+Run a program in a namespace **unshared** from its parent process. [<sup>ref</sup>][https://opensource.com/article/19/10/namespaces-and-containers-linux]
+```sh
+sudo unshare --fork --pid --mount-proc zsh
+```
+
 
 ## Remote administration
 [`ssh`][ssh] 
@@ -4823,9 +4823,6 @@ Count the number of occurrences of a string
 [/var/log/audit/audit.log]: # "Audit file for SELinux, SSH"
 [/var/spool/cron/]: # "Contains user crontables"
 [/boot/grub/grub.cfg]: # "GRUB config file"
-
-[Eckert]: # "Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012."
-[https://computingforgeeks.com/connect-to-bluetooth-device-from-linux-terminal/]: https://computingforgeeks.com/connect-to-bluetooth-device-from-linux-terminal/ "Computing for Geeks: \"How to connect to Bluetooth device from Linux terminal\""
 
 ###### `/etc`
 [`aliases`][/etc/aliases] 
