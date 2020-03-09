@@ -1,13 +1,4 @@
 <!-- Sources -->
-
-[21]: https://vitux.com/how-to-convert-documents-to-pdf-format-on-the-ubuntu-command-line/ "vitux.com: \"How to convert documents to PDF format on the Ubuntu Command Line\""
-[29]: https://www.ostechnix.com/the-mktemp-command-tutorial-with-examples-for-beginners/ "The mktemp Command Tutorial With examples"
-[36]: https://www.networkworld.com/article/3435279/unix-as-a-second-language-the-touch-command.html#tk.rss_linux "networkworld.com: \"Unix as a Second Language: The touch command\""
-[39]: https://www.howtoforge.com/how-to-install-and-use-sosreport-on-ubuntu-1804/ "howtoforge.com: \"How to install and use sosreport on Ubuntu\""
-[42]: https://www.2daygeek.com/check-find-recently-modified-files-folders-linux/ "2daygeek: \"How to find recently modified files/folders in Linux\""
-[46]: https://www.tecmint.com/linux-tree-command-examples/ "tecmint.com: \"Linux tree command usage examples for beginners\""
-[59]: https://docs.fedoraproject.org/en-US/quick-docs/adding-new-fonts-fedora/ "Fedora Docs - Adding new fonts in Fedora"
-[ADP 57]: ../sources/README.md#adp-57 "Azure DevOps Podcast 57: \"Craig Loewen on the Windows Subsystem for Linux story\""
 [CLKF]: https://github.com/jasper-zanjani/notes/tree/master/sources/clkf.md "Cannon, Jason. _Command Line Kung Fu_."
 [Eckert]: https://github.com/jasper-zanjani/notes/blob/master/sources/lglc.md 'Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012'
 [Haeder]: # 'Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.'
@@ -27,7 +18,6 @@
 [https://computingforgeeks.com/connect-to-bluetooth-device-from-linux-terminal/]: https://computingforgeeks.com/connect-to-bluetooth-device-from-linux-terminal/ "Computing for Geeks: \"How to connect to Bluetooth device from Linux terminal\""
 [https://devconnected.com/user-administration-complete-guide-on-linux/#Setting_an_account_expiration_date_easily]: https://devconnected.com/user-administration-complete-guide-on-linux/#Setting_an_account_expiration_date_easily "devconnected.com: \"User administration complete guide on Linux\""
 [https://docs.fedoraproject.org/en-US/quick-docs/getting-started-with-virtualization/]: https://docs.fedoraproject.org/en-US/quick-docs/getting-started-with-virtualization/ "Fedora Docs: \"Getting started with virtualization\""
-[https://linuxconfig.org/how-to-install-the-nvidia-drivers-on-fedora-31]: https://linuxconfig.org/how-to-install-the-nvidia-drivers-on-fedora-31 '"How to install the NVIDIA drivers on Fedora 31". Linuxconfig.org: 10/17/2019.'
 [https://opensource.com/article/19/10/namespaces-and-containers-linux]: https://opensource.com/article/19/10/namespaces-and-containers-linux 'opensource.com - "Demistifying namespaces and containers in Linux"'
 [https://opensource.com/article/19/8/introduction-bpftrace]: https://opensource.com/article/19/8/introduction-bpftrace "opensource.com: \"An introduction to bpftrace for Linux\""
 [https://superuser.com/questions/1196241/how-to-remap-caps-lock-on-wayland]: https://superuser.com/questions/1196241/how-to-remap-caps-lock-on-wayland 'superuser.com - "How to remap CAPS LOCK on Wayland"'
@@ -37,7 +27,6 @@
 [https://www.networkworld.com/article/3433865/how-to-rename-a-group-of-files-on-linux.html#tk.rss_linux]: https://www.networkworld.com/article/3433865/how-to-rename-a-group-of-files-on-linux.html#tk.rss_linux "networkworld.com: \"How to rename a group of files on Linux\""
 [https://www.networkworld.com/article/3447936/viewing-network-bandwidth-usage-with-bmon.html]: https://www.networkworld.com/article/3447936/viewing-network-bandwidth-usage-with-bmon.html "Network World: \"Viewing network bandwidth usage with bmon\""
 [https://www.networkworld.com/video/99387/how-to-use-the-bmon-command-2-minute-linux-tips]: https://www.networkworld.com/video/99387/how-to-use-the-bmon-command-2-minute-linux-tips "Network World: How to use the bmon command: 2-Minute Linux Tips"
-[https://www.ostechnix.com/how-to-view-image-metadata-on-linux/]: https://www.ostechnix.com/how-to-view-image-metadata-on-linux/ "ostechnix.com - How to view image metadata on Linux"
 [https://www.ostechnix.com/how-to-view-image-metadata-on-linux/]: https://www.ostechnix.com/how-to-view-image-metadata-on-linux/ "ostechnix.com: \"How to view image metadata\""
 [https://www.redhat.com/sysadmin/raid-intro]: https://www.redhat.com/sysadmin/raid-intro "redhat.com: \"RAID for those who avoid it\""
 [https://www.tecmint.com/install-samba-on-rhel-8-for-file-sharing-on-windows/]: https://www.tecmint.com/install-samba-on-rhel-8-for-file-sharing-on-windows/ "tecmint.com: \"Install Samba4 on RHEL 8 for File Sharing on Windows\""
@@ -45,88 +34,8 @@
 [https://youtu.be/KkMWXVx-Ul8]: https://youtu.be/KkMWXVx-Ul8 "YouTube: How to Benchmark your Linux system, Hak5 1502.1"
 [https://youtu.be/ksAfmJfdub0]: https://youtu.be/ksAfmJfdub0 "YouTube: \"Easy Academic References on the Command Line\""
 
-<!-- Bash builtins -->
-[alias]:                      #alias          '```&#10;$ alias&#10;```&#10;Assign a shorthand `$NAME` for `$CMD`, or display all aliases if not specified. (ref. `$BASH_ALIASES`)&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 74'
-[bg]:                         #bg             '```&#10;$ bg&#10;```&#10;Put current job or `$JOB` in the background&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 74'
-[bind]:                       #bind           '```&#10;$ bind&#10;```&#10;Manage the readline library; nonoption arguments have the same form as in a .inputrc file.&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 75'
-[break]:                      #break          '```&#10;$ break&#10;```&#10;Exit from a `for`, `while`, `select`, or `until` loop.&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 76'
-[builtin]:                    #builtin        '```&#10;$ builtin&#10;```&#10;Run the shell built-in command `$CMD` with the optional given arguments `$ARGS`, bypassing functions and aliases.&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 76'
-[caller]:                     #caller         '```&#10;$ caller&#10;```&#10;Print line number and source filename of the current function call or dot file&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 77'
-[case]:                       #case           '```&#10;$ case&#10;```&#10;Execute `$CMDS1` if `$VALUE` matches `$PATTERN1`, etc&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 77'
-[cd]:                         #cd             '```&#10;$ cd&#10;```&#10;&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 78'
-[command]:                    #command        '```&#10;$ command&#10;```&#10;Execute `$CMD`, bypassing any aliases or functions that may be defined for it&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 79'
-[compgen]:                    #compgen        '```&#10;$ compgen&#10;```&#10;Generate possible completions for `$STRING`&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 80'
-[complete]:                   #complete       '```&#10;$ complete&#10;```&#10;Specify how to complete arguments for each `$CMD`&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 80'
-[compopt]:                    #compopt        '```&#10;$ compopt&#10;```&#10;Modify existing compspecs for given `$CMD`, or for the currently executing completion when invoked without `$CMD`&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 84'
-[continue]:                   #continue       '```&#10;$ continue&#10;```&#10;Skip remaining commands in a `for`, `while`, `select`, or `until` loop, resuming the next iteration, or skipping `$N` nested loops&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 85'
-[declare]:                    #declare        '```&#10;$ declare&#10;```&#10;Declare variables and manage their attributes&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 85'
-[dirs]:                       #dirs           '```&#10;$ dirs&#10;```&#10;Print the directory stack managed by `pushd` and `popd`&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 87'
-[disown]:                     #disown         '```&#10;$ disown&#10;```&#10;Remove one or more `$JOB` from list of jobs managed by bash&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 87'
-[do]:                         #do             '```&#10;$ do&#10;```&#10;Reserved word that precedes the command sequence in a `for`, `while`, `until`, or `select` statement&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 88'
-[done]:                       #done           '```&#10;$ done&#10;```&#10;Reserved word that ends a `for`, `while`, `until`, or `select` statement&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 88'
-[echo]:                       #echo           '```&#10;$ echo&#10;```&#10;Write `$STRING` to STDOUT&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 88'
-[enable]:                     #enable         '```&#10;$ enable&#10;```&#10;Enable or disable shell builtins, allowing an external version of a command like `echo` or `test` be used.&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 89'
-[esac]:                       #esac           '```&#10;$ esac&#10;```&#10;Reserved word that ends a `case` statement&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 90'
-[eval]:                       #eval           '```&#10;$ eval&#10;```&#10;Execute `$ARGS` after first performing variable expansion.&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 90'
-[exec]:                       #exec           '```&#10;$ exec&#10;```&#10;Execute `$CMD` in place of the current process.&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 91'
-[exit]:                       #exit           '```&#10;$ exit&#10;```&#10;Exit a shell script with status `$N`&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 92'
-[export]:                     #export         '```&#10;$ export&#10;```&#10;Convert `$VAR` to a global variable&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 92'
-[false]:                      #false          '```&#10;$ false&#10;```&#10;Built-in command that exits with a false return value.&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 93'
-[fc]:                         #fc             '```&#10;$ fc&#10;```&#10;Display or edit commands in the history list&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 93'
-[fg]:                         #fg             '```&#10;$ fg&#10;```&#10;Bring `$JOB` to the foreground&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 95'
-[fi]:                         #fi             '```&#10;$ fi&#10;```&#10;Reserved word that ends an `if` statement&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 95'
-[for]:                        #for            '```&#10;$ for&#10;```&#10;For variable `$X`, do `$CMD`; if `$LIST` is omitted, use `$@`&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 95'
-[function]:                   #function       '```&#10;$ function&#10;```&#10;Define `$NAME` as a shell function&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 97'
-[getopts]:                    #getopts        '```&#10;$ getopts&#10;```&#10;Process command-line arguments and check for legal options&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 97'
-[hash]:                       #hash           '```&#10;$ hash&#10;```&#10;List the current set of hashed (previously found) commands&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 98'
-[help]:                       #help           '```&#10;$ help&#10;```&#10;Print usage information for each command that matches `$PATTERN` to STDOUT&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 99'
-[history]:                    #history        '```&#10;$ history&#10;```&#10;Print commands in the history list or manage the history file&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 100'
-[if]:                         #if             '```&#10;$ if&#10;```&#10;Begin a conditional statement&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 101'
-[jobs]:                       #jobs           '```&#10;$ jobs&#10;```&#10;List all running or stopped jobs, or list those specified by `$JOBS`&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 102'
-[kill]:                       #kill           '```&#10;$ kill&#10;```&#10;Terminate each specified PID&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 103'
-[let]:                        #let            '```&#10;$ let&#10;```&#10;Perform arithmetic as specified by one or more `$EXPRESSIONS`&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 104'
-[local]:                      #local          '```&#10;$ local&#10;```&#10;Declare local variables for use inside functions&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 105'
-[logout]:                     #logout         '```&#10;$ logout&#10;```&#10;Exit a login shell, executing ~/.bash_logout if it exists&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 105'
-[mapfile]:                    #mapfile        '```&#10;$ mapfile&#10;```&#10;Read STDIN into `$ARRAY`, one line per element, or `$MAPFILE` shell variable if not specified&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 105'
-[popd]:                       #popd           '```&#10;$ popd&#10;```&#10;Pop the top directory off the directory stack and change to the new top directory&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 106'
-[printf]:                     #printf         '```&#10;$ printf&#10;```&#10;Formatted printing using escape sequences&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 107'
-[pushd]:                      #pushd          '```&#10;$ pushd&#10;```&#10;Add `$PATH` to the directory state, or rotate it if none provided&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 108'
-[pwd]:                        #pwd            '```&#10;$ pwd&#10;```&#10;Display current working directory on STDOUT&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 108'
-[read]:                       #read           '```&#10;$ read&#10;```&#10;Read one line from STDIN and assign each word to the corresonding `$VAR`&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 109'
-[readarray]:                  #readarray      '```&#10;$ readarray&#10;```&#10;Identical to `mapfile`&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 111'
-[readonly]:                   #readonly       '```&#10;$ readonly&#10;```&#10;Prevent specified shell variables $VAR1, $VAR2 from being assigned new values, optionally assigning initial values $VAL1, $VAL2&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 111'
-[return]:                     #return         '```&#10;$ return&#10;```&#10;Use inside a function definition, exiting with status `$N`&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 112'
-[select]:                     #select         '```&#10;$ select&#10;```&#10;&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 112'
-[set]:                        #set            '```&#10;$ set&#10;```&#10;Print values of all variables known to the current shell.&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 113'
-[shift]:                      #shift          '```&#10;$ shift&#10;```&#10;Shift positional arguments; intended for use in a loop.&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 119'
-[shopt]:                      #shopt          '```&#10;$ shopt&#10;```&#10;Set or unset shell options.&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 119'
-[source]:                     #source         '```&#10;$ source&#10;```&#10;Execute a bash script as if the commands within it were executed directly on the command line&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 332'
-[source]:                     #source         '```&#10;$ source&#10;```&#10;Read and execute a file in the current shell&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 120'
-[suspend]:                    #suspend        '```&#10;$ suspend&#10;```&#10;Suspend the current shell, often used to stop an `su` command&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 120'
-[test]:                       #test           '```&#10;$ test&#10;```&#10;Evaluate a condition and exit with status 0 if true, or with a nonzero exit status if false.&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 120'
-[time]:                       #time           '```&#10;$ time&#10;```&#10;Execute `$CMD` and print the total elapsed time, user time, and system time (in seconds). Similar to external `time` command, except that this builtin version can also time other builtin commands and all commands in a pipeline.&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 124'
-[times]:                      #times          '```&#10;$ times&#10;```&#10;Print accumulated user and system process times for the shell and the processes it has run&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 125'
-[trap]:                       #trap           '```&#10;$ trap&#10;```&#10;Execute `$CMD` if any `$SIGNALS` are received&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 125'
-[true]:                       #true           '```&#10;$ true&#10;```&#10;Built-in command that exits with a true return value&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 127'
-[type]:                       #type           '```&#10;$ type&#10;```&#10;Show whether each command name is an external command, a built-in command, an alias, shell keyword, or defined shell function&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 127'
-[typeset]:                    #typeset        '```&#10;$ typeset&#10;```&#10;Identical to `declare`&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 128'
-[ulimit]:                     #ulimit         '```&#10;$ ulimit&#10;```&#10;Print value of one or more resource limits&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 128'
-[umask]:                      #umask          '```&#10;$ umask&#10;```&#10;Set file creation mask to octal value `$MASK`, or display it if not provided.&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 130'
-[unalias]:                    #unalias        '```&#10;$ unalias&#10;```&#10;Remove `$NAMES` from the alias list.&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 130'
-[unset]:                      #unset          '```&#10;$ unset&#10;```&#10;Erase definitions of functions or variables listed in `$NAMES`&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 130'
-[until]:                      #until          '```&#10;$ until&#10;```&#10;Until `$CONDITION` is met, do `$CMDS`&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 131'
-[wait]:                       #wait           '```&#10;$ wait&#10;```&#10;Pause until the specified `$JOB`, which can be a job number or PID, completes, or until all background jobs complete if not provided.&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 131'
-[while]:                      #while          '```&#10;$ while&#10;```&#10;While `$CONDITION` is met, do `$CMDS`.&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 132'
-
 # Linux
-[Configs](#linux-configs) &bull; [Commands](#linux-commands) &bull; [Tasks](#tasks)
-
-Topic                           | Contents
-:---                            | :---
-Desktop environments            | [GNOME](gnome.md) [KDE](#kde) [i3](i3.md)
-Distributions                   | [Arch Linux](distributions.md#arch-linux) [BSD](distributions.md#bsd) [Clear Linux](distributions.md#clear-linux) [Fedora CoreOS](#distributions.md#fedora-coreos) [Kali Linux](distributions.md#kali-linux) [Mac OS X](macosx.md)
-Packaging                       | [Flatpak](#flatpak)
-Others                          | [Boot sequence](#boot-sequence) [Namespaces](#namespaces) [PulseAudio](pulseaudio.md) [RAID](#raid) [Runlevels](#runlevels) [X](X.md)
+[Configs](#linux-configs) &bull; [Commands](#linux-commands) &bull; [Distros](#linux-distributions-and-desktop-environments) &bull; [Tasks](#tasks)
 
 #### Concepts
 [syscall]: # 'system call (syscall)&#10;Service provided by the kernel that can be called from user mode which typically handles device access requests or other privileged operations.&#10;For most cases, making a syscall breaks down into 3 steps:&#10;  1. Marshall parameters - user mode puts the syscall parameters and number at locations defined by the ABI.&#10;  2. Special instruction - user mode uses a special processor instruction to transition to kernel mode for the syscall.&#10;  3. Handle the return - after the syscall is serviced, the kernel uses a special processor instruction to return to user mode and user mode checks the return value.&#10;"WSL System calls". _Windows Subsystem for Linux_. Microsoft.'
@@ -153,6 +62,7 @@ Others                          | [Boot sequence](#boot-sequence) [Namespaces](#
 [Fedora](#fedora)
 [GNOME](#gnome)
 [Kali ](#kali-linux) 
+[KDE](#kde)
 [WSL][WSL]
 
 Fully-featured **desktop environments** are distinct from **window managers**, which are more focused in scope
@@ -299,8 +209,6 @@ CoreOS automatically installs upgrades automatically without user intervention, 
 ## GNOME
 [gconf-editor]: #gconf-editor '```&#10;$ gconf-editor&#10;```&#10;GUI-based configuration editor for GNOME'
 
-
-
 ### `gsettings`
 Change function of Caps Lock key [<sup>ref</sup>][https://superuser.com/questions/1196241/how-to-remap-caps-lock-on-wayland]
 ```sh
@@ -353,7 +261,7 @@ Y     | [Yersinia][Yersinia]
 [VolFs]: #windows-subsystem-for-linux 'VolFs&#10;The primary file system used by WSL, which is used to store the Linux system files and the contents of the home directory.&#10;VolFs supports most features the Linux VFS provides, including Linux permissions, symbolic links, FIFOs, sockets, and device files.&#10;"WSL File System Support". _Windows Subsystem for Linux_. Microsoft: 06/15/2016.'
 
 
-**Windows Subsystem for Linux (WSL)** is shipped with Windows and tied to the Windows release cycle. Windows ships from a single massive codebase, of which WSL is part. WSL was written mostly in C and and has 3 million monthly active users. [<sup>ADP 57</sup>][ADP 57]
+**Windows Subsystem for Linux (WSL)** is shipped with Windows and tied to the Windows release cycle. Windows ships from a single massive codebase, of which WSL is part. WSL was written mostly in C and and has 3 million monthly active users. <sup>[ADP 57](https://github.com/jasper-zanjani/notes/tree/master/sources/README.md#adp-57 "Azure DevOps Podcast 57: \"Craig Loewen on the Windows Subsystem for Linux story\"")</sup>
 
 [DrvFs][DrvFs] 
 [LXSS][lxss.sys]
@@ -491,26 +399,408 @@ Similar to DLL files on Windows systems, .so ("shared object") library files on 
 This attack can be detected using the **[osquery](https://osquery.io/)** tool. This tool represents the system as a relational database which can then be queried, in particular against the **process_envs** table.
 
 # Linux commands
+<!-- Archive commands -->
+[ar]: #ar '```&#10;$ ar&#10;```&#10;Maintain a group of files that are combined into a file archive. Used most commonly to create and update library files as used by `ld`.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 16'
+[bzcat]: #bzcat '```&#10;$ bzcat&#10;```&#10;Page through .bz2 files'
+[bzip2]: #bzip2 '```&#10;$ bzip2&#10;```&#10;Compress or decompress archives using the Burrows-Wheeler block-sorting text-compression algorithm.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 271'
+[bzless]: #bzless '```&#10;$ bzless&#10;```&#10;Page through .bz2 files'
+[bzmore]: #bzmore '```&#10;$ bzmore&#10;```&#10;Page through .bz2 files'
+[compress]: #compress '```&#10;$ compress&#10;```&#10;Compress and expand data&#10;Compress reduces the size of the named files using adaptive Lempel-Ziv coding. Whenever possible, each file is replaced by one with the extension .Z, while keeping the same ownership modes, access and modification times. If no files are specified, the standard input is compressed to the standard output. Compress will only attempt to compress regular files. In particular, it will ignore symbolic links. If a file has multiple hard links, compress will refuse to compress it unless the -f flag is given.'
+[cpio]: #cpio '```&#10;$ cpio&#10;```&#10;Create and extract archives, or copy files from one place to another - without compression. Each of the three control options (`-i`, `-o`, or `-p`) accepts different options.&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 93'
+[dar]: #dar '```&#10;$ dar&#10;```&#10;Backup tool that can make differential and incremental backups&#10;"`dar` manpage". _Ubuntu Manpage Repository_.'
+[gunzip]: #gunzip '```&#10;$ gunzip&#10;```&#10;Identical to `gzip -d`, typically implemented as a link to `gzip`'
+[gzcat]: #gzcat '```&#10;$ gzcat&#10;```&#10;Identical to `gzip -c`, typically implemented as a link to `gzip`'
+[gzip]: #gzip '```&#10;$ gzip&#10;```&#10;"GNU Zip". Compress or decompress archives using the Lempel-Ziv (LZ77) compression algorithm.'
+[tar]: #tar '```&#10;$ tar&#10;```&#10;Merge multiple files into a single file&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 268'
+[uncompress]: #uncompress '```&#10;$ uncompress&#10;```&#10;Aliased to `gunzip` on Ubuntu&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 480'
+[unxz]: #unxz '```&#10;$ unxz&#10;```&#10;Decompress an archive created with `xz`&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 270'
+[unzip]: #unzip '```&#10;$ unzip&#10;```&#10;Decompress a .zip archive'
+[xz]: #xz '```&#10;$ xz&#10;```&#10;Compress or decompress archives using the LZMA and LZMA2 compression methods.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 270'
+[zcat]: #zcat '```&#10;$ zcat&#10;```&#10;Uncompress one or more compressed files to STDOUT. On Linux, this program is the version related to `gzip`, which can decompress .Z and .gz files&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 238'
+[zip]: #zip '```&#10;$ zip&#10;```&#10;Merge multiple files into a single, compressed file&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 271'
+[zipcloak]: #zipcloak '```&#10;$ zipcloak&#10;```&#10;Password protect and encrypt zip files, equivalent to `zip --encrypt` or `zip -e`.&#10;_Linux Pro Magazine_. Issue 231. Feb 2020.: 37'
+[zipcmp]: #zipcmp '```&#10;$ zipcmp $FILE $OTHER&#10;```&#10;Compare files in zip archives (no man page or help option available).&#10;_Linux Pro Magazine_. Issue 231. Feb 2020.: 37'
+[zipdetails]: #zipdetails '```&#10;$ zipdetails&#10;```&#10;'
+[zipgrep]: #zipgrep '```&#10;$ zipgrep&#10;```&#10;Search for patterns within a zip archive.&#10;_Linux Pro Magazine_. Issue 231. Feb 2020.: 37'
+[zipinfo]: #zipinfo '```&#10;$ zipinfo&#10;```&#10;Display the attributes of all the files in a zip archive, including permissions, name, date created, uncompressed and compressed file sizes, and percentage compression.&#10;_Linux Pro Magazine_. Issue 231. Feb 2020.: 38'
+[zipnote]: #zipnote '```&#10;$ zipnote&#10;```&#10;Read and edit comments in archives; particularly useful for changing filenames in an archive that start with "@home" in the comment&#10;_Linux Pro Magazine_. Issue 231. Feb 2020.: 38'
+[zipsplit]: #zipsplit '```&#10;$ zipsplit&#10;```&#10;Divide existing archives into smaller ones, creating an index file to help reassemble them.&#10;_Linux Pro Magazine_. Issue 231. Feb 2020.: 38'
 
-Topic                                           | Commands
-:---                                            | :---
-[Applications](#applications)                   | [`git`][git] [`imagemagick`](#imagemagick) [`mongod`](#mongod) **`GNOME`** [`gsettings`][gsettings] [`gconf-editor`][gconf-editor]
-[Archive](#archive)                             | [`ar`][ar] [`bzcat`][bzcat] [`bzip2`][bzip2] [`bzless`][bzless] [`bzmore`][bzmore] [`compress`][compress] [`cpio`][cpio] [`dar`][dar] [`gunzip`][gunzip] [`gzcat`][gzcat] [`gzip`][gzip] [`tar`][tar] [`uncompress`][uncompress] [`unxz`][unxz] [`unzip`][unzip] [`xz`][xz] [`zcat`][zcat] [`zip`][zip] [`zipcloak`][zipcloak] [`zipcmp`][zipcmp] [`zipdetails`][zipdetails] [`zipgrep`][zipgrep] [`zipinfo`][zipinfo] [`zipnote`][zipnote] [`zipsplit`][zipsplit] 
-[Bash](#bash-builtins)                          | [`bg`][bg] [`bind`][bind] [`break`][break] [`builtin`][builtin] [`caller`][caller] [`case`][case]/[`esac`][esac] [`cd`][cd] [`command`][command] [`compgen`][compgen] [`complete`][complete] [`compopt`][compopt] [`continue`][continue] [`declare`][declare] [`dirs`][dirs] [`disown`][disown] [`do`][do]/[`done`][done] [`echo`][echo] [`enable`][enable] [`eval`][eval] [`exec`][exec] [`exit`][exit] [`export`][export] [`false`][false] [`fc`][fc] [`fg`][fg] [`for`][for] [`function`][function] [`getopts`][getopts] [`hash`][hash] [`help`][help] [`history`][history] [`if`][if]/[`fi`][fi] [`jobs`][jobs] [`kill`][kill] [`let`][let] [`local`][local] [`logout`][logout][`mapfile`][mapfile][`popd`][popd] [`printf`][printf] [`pushd`][pushd] [`pwd`][pwd] [`read`][read] [`readarray`][readarray] [`readonly`][readonly] [`return`][return] [`select`][select] [`set`][set] [`shift`][shift] [`shopt`][shopt] [`source`][source] [`suspend`][suspend] [`test`][test] [`time`][time] [`times`][times] [`trap`][trap] [`true`][true] [`type`][type] [`typeset`][typeset] [`ulimit`][ulimit] [`umask`][umask] [`unalias`][unalias] [`unset`][unset] [`until`][until] [`wait`][wait] [`while`][while] 
-[Hardware settings](#hw)                        | [`bluetoothctl`][bluetoothctl] [`insmod`][insmod] [`lsmod`][lsmod] [`lspci`][lspci] [`lsusb`][lsusb] [`modprobe`][modprobe] [`rmmod`][rmmod] <br> **[Printing](hw.md)** <br> [**CUPS**][CUPS] [`cupsaccept`][cupsaccept] [`cupsenable`][cupsenable] [`cupsdisable`][cupsdisable] [`cupsreject`][cupsreject] [`lp`][lp] [`cancel`][cancel] <br> [**LPD**][LPD] [`lpc`][lpc] [`lpq`][lpq] [`lpr`][lpr] [`lprm`][lprm]
-[Information](#diagnostic-and-benchmarking)     | [`ausearch`][ausearch] [`bpftrace`][bpftrace] [`date`][date] [`df`][df] [`du`][du] [`free`][free] [`glances`][glances] [`hwclock`][hwclock] [`loadaverage`][loadaverage] [`logger`][logger] [`logrotate`][logrotate] [`lsb_release`][lsb_release] [`man`][man] [`mpstat`][mpstat] [`nproc`][nproc] [`printenv`][printenv] [`rsyslogd`][rsyslogd] [`sar`][sar] [`sysbench`][sysbench] [`syslogd`][syslogd] [`time`][time] [`timedatectl`][timedatectl] [`tty`][tty] [`uname`][uname] [`uptime`][uptime] [`vmstat`][vmstat] 
-[Init](#init-systems)                           | [`hostnamectl`][hostnamectl] [`journalctl`][journalctl] [`localectl`][localectl] [`systemctl`][systemd-delta] [`systemd-delta`][systemd-delta] [`timedatectl`][timedatectl] <br> **Sysvinit** [`chkconfig`][chkconfig] [`init`][init] [`service`][service] [`telinit`][telinit] &bull; **Upstart** [`initctl`][initctl]
-Kubernetes                                      | [`kubeadm`][kubeadm] [`kubectl`][kubectl]
-[Mail](#mail)                                   | [`mail`][mail] [`mailmerge`][mailmerge] [`mailx`][mailx] [`msmtp`][msmtp] <br> **SMTP servers** [`exim`][exim] [`qmail`][qmail] [`postfix`][postfix] [`sendmail`][sendmail]
-[Network](#networking)                          | [`arp`][arp] [`bmon`][bmon] [`brctl`][brctl] [`curl`][curl] [`dig`][dig] [`ethtool`][ethtool] [`firewall-cmd`][firewall-cmd] [`host`][host] [`hping3`][hping3] [`ifconfig`][ifconfig] [`iftop`][iftop] [`ifup-wireless`][ifup-wireless] [`ip`][ip] [`iperf`][iperf] [`ipset`][ipset] [`iscsiadm`][iscsiadm] [`iw`][iw] [`iwconfig`][iwconfig] [`iwlist`][iwlist] [`kinit`][kinit] [`klist`][klist] [`mtr`][mtr] [`netcat`][netcat] [`netplan`][netplan] [`netstat`][netstat] [`nmap`][nmap] [`nmblookup`][nmblookup] [`nmcli`][nmcli] [`nmtui`][nmtui] [`nslookup`][nslookup] [`rfkill`][rfkill] [`route`][route] [`sftp`][sftp] [`ss`][ss] [`tcpdump`][tcpdump] [`tracepath`][tracepath] [`traceroute`][traceroute] [`tshark`][tshark] [`wget`][wget] [`whois`][whois] [`xinetd`][xinetd] 
-[Package managers](#package-managers)           | [`apt`][apt] [`brew`][brew] [`dnf`][dnf] [`dpkg`][dpkg] [`gem`][gem] [`pacman`][pacman] [`pip`][pip] [`rpm`][rpm] [`snap`][snap] [`yay`][yay] [`yum`][yum]
-[Process control](#process-control)             | [`ps`][ps] [`unshare`][unshare]
-[Remote administration](#remote-administration) | [`rsync`][rsync] [`ssh`][ssh] [`ssh-keygen`][ssh-keygen] [`ssh-keyscan`][ssh-keyscan] [`sshfs`][sshfs]
-[SELinux](#selinux)                             | [`chcon`][chcon] [`getenforce`][getenforce] [`getsebool`][getsebool] [`restorecon`][restorecon] [`semanage`][semanage] [`sestatus`][sestatus] [`setenforce`][setenforce] [`setsebool`][setsebool] 
+<!-- Audio commands -->
+[alsamixer]:                   #alsamixer                      '```&#10;$ alsamixer&#10;```&#10;Command-line mixer'
+[amixer]:                      #amixer                         '```&#10;$ amixer&#10;```&#10;Command-line mixer for ALSA sound card driver'
+[speaker-test]:                #speaker-test                   '```&#10;$ speaker-test&#10;```&#10;Generates a tone that can be used to test the speakers of a computer'
+
+<!-- Bash builtins -->
+[alias]:                       #alias                                      '```&#10;$ alias&#10;```&#10;Assign a shorthand `$NAME` for `$CMD`, or display all aliases if not specified. (ref. `$BASH_ALIASES`)&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 74'
+[bg]:                          #bg                                         '```&#10;$ bg&#10;```&#10;Put current job or `$JOB` in the background&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 74'
+[bind]:                        #bind                                       '```&#10;$ bind&#10;```&#10;Manage the readline library; nonoption arguments have the same form as in a .inputrc file.&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 75'
+[break]:                       #break                                      '```&#10;$ break&#10;```&#10;Exit from a `for`, `while`, `select`, or `until` loop.&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 76'
+[builtin]:                     #builtin                                    '```&#10;$ builtin&#10;```&#10;Run the shell built-in command `$CMD` with the optional given arguments `$ARGS`, bypassing functions and aliases.&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 76'
+[caller]:                      #caller                                     '```&#10;$ caller&#10;```&#10;Print line number and source filename of the current function call or dot file&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 77'
+[case]:                        #case                                       '```&#10;$ case&#10;```&#10;Execute `$CMDS1` if `$VALUE` matches `$PATTERN1`, etc&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 77'
+[cd]:                          #cd                                         '```&#10;$ cd&#10;```&#10;&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 78'
+[command]:                     #command                                    '```&#10;$ command&#10;```&#10;Execute `$CMD`, bypassing any aliases or functions that may be defined for it&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 79'
+[compgen]:                     #compgen                                    '```&#10;$ compgen&#10;```&#10;Generate possible completions for `$STRING`&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 80'
+[complete]:                    #complete                                   '```&#10;$ complete&#10;```&#10;Specify how to complete arguments for each `$CMD`&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 80'
+[compopt]:                     #compopt                                    '```&#10;$ compopt&#10;```&#10;Modify existing compspecs for given `$CMD`, or for the currently executing completion when invoked without `$CMD`&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 84'
+[continue]:                    #continue                                   '```&#10;$ continue&#10;```&#10;Skip remaining commands in a `for`, `while`, `select`, or `until` loop, resuming the next iteration, or skipping `$N` nested loops&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 85'
+[declare]:                     #declare                                    '```&#10;$ declare&#10;```&#10;Declare variables and manage their attributes&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 85'
+[dirs]:                        #dirs                                       '```&#10;$ dirs&#10;```&#10;Print the directory stack managed by `pushd` and `popd`&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 87'
+[disown]:                      #disown                                     '```&#10;$ disown&#10;```&#10;Remove one or more `$JOB` from list of jobs managed by bash&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 87'
+[do]:                          #do                                         '```&#10;$ do&#10;```&#10;Reserved word that precedes the command sequence in a `for`, `while`, `until`, or `select` statement&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 88'
+[done]:                        #done                                       '```&#10;$ done&#10;```&#10;Reserved word that ends a `for`, `while`, `until`, or `select` statement&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 88'
+[echo]:                        #echo                                       '```&#10;$ echo&#10;```&#10;Write `$STRING` to STDOUT&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 88'
+[enable]:                      #enable                                     '```&#10;$ enable&#10;```&#10;Enable or disable shell builtins, allowing an external version of a command like `echo` or `test` be used.&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 89'
+[esac]:                        #esac                                       '```&#10;$ esac&#10;```&#10;Reserved word that ends a `case` statement&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 90'
+[eval]:                        #eval                                       '```&#10;$ eval&#10;```&#10;Execute `$ARGS` after first performing variable expansion.&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 90'
+[exec]:                        #exec                                       '```&#10;$ exec&#10;```&#10;Execute `$CMD` in place of the current process.&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 91'
+[exit]:                        #exit                                       '```&#10;$ exit&#10;```&#10;Exit a shell script with status `$N`&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 92'
+[export]:                      #export                                     '```&#10;$ export&#10;```&#10;Convert `$VAR` to a global variable&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 92'
+[false]:                       #false                                      '```&#10;$ false&#10;```&#10;Built-in command that exits with a false return value.&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 93'
+[fc]:                          #fc                                         '```&#10;$ fc&#10;```&#10;Display or edit commands in the history list&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 93'
+[fg]:                          #fg                                         '```&#10;$ fg&#10;```&#10;Bring `$JOB` to the foreground&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 95'
+[fi]:                          #fi                                         '```&#10;$ fi&#10;```&#10;Reserved word that ends an `if` statement&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 95'
+[for]:                         #for                                        '```&#10;$ for&#10;```&#10;For variable `$X`, do `$CMD`; if `$LIST` is omitted, use `$@`&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 95'
+[function]:                    #function                                   '```&#10;$ function&#10;```&#10;Define `$NAME` as a shell function&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 97'
+[getopts]:                     #getopts                                    '```&#10;$ getopts&#10;```&#10;Process command-line arguments and check for legal options&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 97'
+[hash]:                        #hash                                       '```&#10;$ hash&#10;```&#10;List the current set of hashed (previously found) commands&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 98'
+[help]:                        #help                                       '```&#10;$ help&#10;```&#10;Print usage information for each command that matches `$PATTERN` to STDOUT&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 99'
+[history]:                     #history                                    '```&#10;$ history&#10;```&#10;Print commands in the history list or manage the history file&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 100'
+[if]:                          #if                                         '```&#10;$ if&#10;```&#10;Begin a conditional statement&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 101'
+[jobs]:                        #jobs                                       '```&#10;$ jobs&#10;```&#10;List all running or stopped jobs, or list those specified by `$JOBS`&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 102'
+[kill]:                        #kill                                       '```&#10;$ kill&#10;```&#10;Terminate each specified PID&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 103'
+[let]:                         #let                                        '```&#10;$ let&#10;```&#10;Perform arithmetic as specified by one or more `$EXPRESSIONS`&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 104'
+[local]:                       #local                                      '```&#10;$ local&#10;```&#10;Declare local variables for use inside functions&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 105'
+[logout]:                      #logout                                     '```&#10;$ logout&#10;```&#10;Exit a login shell, executing ~/.bash_logout if it exists&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 105'
+[mapfile]:                     #mapfile                                    '```&#10;$ mapfile&#10;```&#10;Read STDIN into `$ARRAY`, one line per element, or `$MAPFILE` shell variable if not specified&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 105'
+[popd]:                        #popd                                       '```&#10;$ popd&#10;```&#10;Pop the top directory off the directory stack and change to the new top directory&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 106'
+[printf]:                      #printf                                     '```&#10;$ printf&#10;```&#10;Formatted printing using escape sequences&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 107'
+[pushd]:                       #pushd                                      '```&#10;$ pushd&#10;```&#10;Add `$PATH` to the directory state, or rotate it if none provided&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 108'
+[pwd]:                         #pwd                                        '```&#10;$ pwd&#10;```&#10;Display current working directory on STDOUT&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 108'
+[read]:                        #read                                       '```&#10;$ read&#10;```&#10;Read one line from STDIN and assign each word to the corresonding `$VAR`&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 109'
+[readarray]:                   #readarray                                  '```&#10;$ readarray&#10;```&#10;Identical to `mapfile`&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 111'
+[readonly]:                    #readonly                                   '```&#10;$ readonly&#10;```&#10;Prevent specified shell variables $VAR1, $VAR2 from being assigned new values, optionally assigning initial values $VAL1, $VAL2&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 111'
+[return]:                      #return                                     '```&#10;$ return&#10;```&#10;Use inside a function definition, exiting with status `$N`&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 112'
+[select]:                      #select                                     '```&#10;$ select&#10;```&#10;&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 112'
+[set]:                         #set                                        '```&#10;$ set&#10;```&#10;Print values of all variables known to the current shell.&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 113'
+[shift]:                       #shift                                      '```&#10;$ shift&#10;```&#10;Shift positional arguments; intended for use in a loop.&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 119'
+[shopt]:                       #shopt                                      '```&#10;$ shopt&#10;```&#10;Set or unset shell options.&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 119'
+[source]:                      #source                                     '```&#10;$ source&#10;```&#10;Execute a bash script as if the commands within it were executed directly on the command line&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 332'
+[source]:                      #source                                     '```&#10;$ source&#10;```&#10;Read and execute a file in the current shell&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 120'
+[suspend]:                     #suspend                                    '```&#10;$ suspend&#10;```&#10;Suspend the current shell, often used to stop an `su` command&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 120'
+[test]:                        #test                                       '```&#10;$ test&#10;```&#10;Evaluate a condition and exit with status 0 if true, or with a nonzero exit status if false.&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 120'
+[time]:                        #time                                       '```&#10;$ time&#10;```&#10;Execute `$CMD` and print the total elapsed time, user time, and system time (in seconds). Similar to external `time` command, except that this builtin version can also time other builtin commands and all commands in a pipeline.&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 124'
+[times]:                       #times                                      '```&#10;$ times&#10;```&#10;Print accumulated user and system process times for the shell and the processes it has run&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 125'
+[trap]:                        #trap                                       '```&#10;$ trap&#10;```&#10;Execute `$CMD` if any `$SIGNALS` are received&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 125'
+[true]:                        #true                                       '```&#10;$ true&#10;```&#10;Built-in command that exits with a true return value&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 127'
+[type]:                        #type                                       '```&#10;$ type&#10;```&#10;Show whether each command name is an external command, a built-in command, an alias, shell keyword, or defined shell function&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 127'
+[typeset]:                     #typeset                                    '```&#10;$ typeset&#10;```&#10;Identical to `declare`&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 128'
+[ulimit]:                      #ulimit                                     '```&#10;$ ulimit&#10;```&#10;Print value of one or more resource limits&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 128'
+[umask]:                       #umask                                      '```&#10;$ umask&#10;```&#10;Set file creation mask to octal value `$MASK`, or display it if not provided.&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 130'
+[unalias]:                     #unalias                                    '```&#10;$ unalias&#10;```&#10;Remove `$NAMES` from the alias list.&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 130'
+[unset]:                       #unset                                      '```&#10;$ unset&#10;```&#10;Erase definitions of functions or variables listed in `$NAMES`&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 130'
+[until]:                       #until                                      '```&#10;$ until&#10;```&#10;Until `$CONDITION` is met, do `$CMDS`&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 131'
+[wait]:                        #wait                                       '```&#10;$ wait&#10;```&#10;Pause until the specified `$JOB`, which can be a job number or PID, completes, or until all background jobs complete if not provided.&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 131'
+[while]:                       #while                                      '```&#10;$ while&#10;```&#10;While `$CONDITION` is met, do `$CMDS`.&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 132'
+
+<!-- Boot commands -->
+[grub-install]:                #grub-install            '```&#10;$ grub-install&#10;```&#10;Install GRUB on the MBR of a hard drive&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 42'
+[grub-mkconfig]:                # ""
+[grub2-editenv]:               #grub2-editenv                  '```&#10;grub2-editenv&#10;```&#10;Manage the stored environment of GRUB&#10;"How to install the NVIDIA drivers on Fedora 31". Linuxconfig.org: 10/17/2019.'
+[lilo]:                        #lilo                    '```&#10;$ lilo&#10;```&#10;`lilo` map installer reads a configuration file and writes a map file, which contains information needed by the boot loader to locate and launch Linux kernels or other operating systems.&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 40'
+[update-grub]:                 #update-grub             '```&#10;$ update-grub&#10;```&#10;Make changes take effect for a GRUB2 configuration change'
+
+<!-- Build tools-->
+[aclocal]:                     #aclocal                        '```&#10;$ aclocal&#10;```&#10;Place m4 macro definitions needed by `autoconf` into a single file. `aclocal` first scans for macro definitions in m4 files in its default directory (/usr/share/aclocal) and in the file acinclude.m4, then in the configure.ac file. IT generates an aclocal.m4 file that contains definitions of all m4 macros required by `autoconf`.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 16'
+[as]:                          #as                             '```&#10;$ as&#10;```&#10;Generate an object file from each specified assembly language source file. Primarily intended to assemble the output of the GNU C compiler `gcc` for use by the linker `ld`.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 18'
+[autoconf]:                    #autoconf                       '```&#10;$ autoconf&#10;```&#10;Generate a configuration script from m4 macros defined in a template file, if given, or in a configure.ac or configure.in file in the CWD. The generated script is almost invariably called "configure".&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 21'
+[autoheader]:                  #autoheader                     '```&#10;$ autoheader&#10;```&#10;Generate a template file of C `#define` statements from m4 macros defined in a template file, if specified, or in configure.ac or configure.in in the CWD. The generated template file is almost invariably called config.h.in or config.hin&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 22'
+[automake]:                    #automake                       '```&#10;$ automake&#10;```&#10;Create GNU standards-compliant Makefile.in files from Makefile.am template files&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 23'
+[autoreconf]:                  #autoreconf                     '```&#10;$ autoreconf&#10;```&#10;Update configure scripts by running `autoconf`, `autoheader`, `aclocal`, `automake`, and `libtoolize` as needed&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 21'
+[autoscan]:                    #autoscan                       '```&#10;$ autoscan&#10;```&#10;Create or maintain a preliminary configure.ac file named configure.scan based on source files in specified directory or CWD.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 21'
+[autoupdate]:                  #autoupdate                     '```&#10;$ autoupdate&#10;```&#10;Update the configure template file or configure.ac if none is specified&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 21'
+[bison]:                       #bison                          '```&#10;$ bison&#10;```&#10;Convert specified "file.y" containing a context-free grammar into tables for subsequent parsing while sending output to a new file named "file.c". Largely compatible with `yacc`, from which it derives its name.&#10;Originated as an adaptation of Bob Corbett\'s reimplementation of `yacc` which was distributed under the Berkeley license. Now maintained as a project of the FSF under a GPL license.'
+[cc]:                          #cc                             '```&#10;$ cc&#10;```&#10;Compile one or more C (.c), assembler (.s), ore preprocessed C (.i) source files. Automatically invokes the loader `ld`, unless `-c` is suplied. In some cases, `cc` generates an object file having a .o suffix and a corresponding root name. By default, output is placed in `"a.out"&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 32'
+[ctags]:                       #ctags                          '```&#10;$ ctags $FILES&#10;```&#10;Create a list of function and macro names that are defined in the specified C, Pascal, FORTRAN, `yacc`, or `lex` source `$FILES`. Output is in three columns:&#10;  - `name`                function or macro name&#10;  - `file`                source file in which `name` is defined&#10;  - `context`             search pattern that shows the line of code containing `name`&#10;&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 48'
+[etags]:                       #etags                          '```&#10;$ etags&#10;```&#10;Create a list of function and macro names defined in a programming source file, generating tags for use by `emacs`&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 75'
+[flex]:                        #flex                           '```&#10;$ flex&#10;```&#10;"Fast Lexical Analyzer Generator", faster variant of `lex` translated into C by Vern Paxson&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 92'
+[g++]:                         #g++                            '```&#10;$ g++&#10;```&#10;Invoke `gcc` with the options necessary to make it recognize C++.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 95'
+[gcc]:                         #gcc                            '```&#10;$ gcc&#10;```&#10;"GNU Compiler Collection", formerly known as the "GNU C Compiler", compiles multiple languages to machine code.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 95'
+[gcore]:                       #gcore                          '```&#10;$ gcore&#10;```&#10;Create a core image of each running process specified, which can be used with a debugger&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 98'
+[gdb]:                         #gdb                            '```&#10;$ gdb&#10;```&#10;"GNU DeBugger", allows you to step through the execution of a program in order to find the point at which it breaks&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 99'
+[gprof]:                       #gprof                          '```&#10;$ gprof&#10;```&#10;Display call-graph profile data of C programs'
+[ldd]:                         #ldd                            '```&#10;$ ldd&#10;```&#10;Display shared libraries used by a specified command&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 87'
+[lex]:                         #lex                            '```&#10;$ lex&#10;```&#10;Generate a lexical analysis program based on the regular expressions and C statements contained in one or more input files (also `flex`)&#10;Lexical analyzer generator written by Eric Schmidt&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 119'
+[make]:                        #make                           '```&#10;$ make&#10;```&#10;Utility for building and maintaining programs from source code using a makefile&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 86'
+[strace]:                      #strace                          '```&#10;strace&#10;```&#10;Debugging tool that displays a trace of all system calls made by a process&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 418'
+[xgettext]:                    #xgettext                       '```&#10;$ xgettext&#10;```&#10;Extract specially marked strings from C and C++ source files, placing them in a .po ("portable object" file for translation and compilation by `msgfmt`.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 234'
+[yacc]:                        #yacc                           '```&#10;$ yacc&#10;```&#10;"yet another compiler-compiler", parser generator that converts a file containing a context-free LALR grmamar and converts it to tables for subsequent pasring, sending output to y.tab.c. Written between 1975 and 1978 by Stephen C. Johnson at Bell Labs.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 237'
+
+[autotools]: # "GNU autotools is a collection of three packages: `autoconf`, `automake`, and `libtool`"
+
+<!-- Diagnostic and benchmarking commands -->
+[ausearch]:                    #ausearch                       '```&#10;$ ausearch&#10;```&#10;Display audit logs'
+[bpftrace]:                    #bpftrace                       '```&#10;$ bpftrace&#10;```&#10;New open-source tracer for analyzing production performance problems and troubleshooting software&#10;"An introduction to `bpftrace` for Linux". _opensource.com_'
+[date]:                        #date                           '```&#10;$ date&#10;```&#10;Print the current date and time, specifying a format.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 51'
+[df]:                          #df                             '```&#10;$ df&#10;```&#10;Display usage of partitions and logical devices&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 49'
+[du]:                          #du                             '```&#10;$ du $DIRS&#10;```&#10;Display disk utilization information for `$DIRS`&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 153'
+[free]:                        #free                           '```&#10;$ free&#10;```&#10;Display amount of free and used memory&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 114'
+[glances]:                     #glances                        '```&#10;$ glances&#10;```&#10;Cross-platform monitoring tool, written in Python&#10;Olushile, Paul. _Linux 5 Performance Monitoring and Tuning_.'
+[hwclock]:                     #hwclock                        '```&#10;$ hwclock&#10;```&#10;Access the BIOS clock&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 340'
+[loadaverage]:                 #loadaverage                    '```&#10;$ loadaverage&#10;```&#10;Display system load average (cf. `uptime`)&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 291'
+[logger]:                      #logger                         '```&#10;$ logger&#10;```&#10;Create a one-time file entry specified by the user&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 342'
+[logrotate]:                   #logrotate                      '```&#10;$ logrotate&#10;```&#10;Rename ("rotate") log files on a cyclic basis using /etc/logrotate.conf to determine behavior&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 445'
+[lsb_release]:                 #lsb_release                    '```&#10;$ lsb_release&#10;```&#10;&#10;Print distribution-specific information'
+[man]:                         #man                            '```&#10;$ man&#10;```&#10;Format and display system manual pages&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 75'
+[mpstat]:                      #mpstat                         '```&#10;$ mpstat&#10;```&#10;utility for monitoring CPU performance&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 635-637'
+[nproc]:                       #nproc                          '```&#10;$ nproc&#10;```&#10;Display number of CPU processors or cores&#10;Olushile, Paul. _Linux 5 Performance Monitoring and Tuning_.'
+[printenv]:                    #printenv                       '```&#10;$ printenv&#10;```&#10;Display environment variables&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 331'
+[rsyslogd]:                    #rsyslogd                       '```&#10;$ rsyslogd&#10;```&#10;Responsible for logging of application and system events&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 249'
+[sar]:                         #sar                            '```&#10;$ sar&#10;```&#10;Displays the same information as `iostat`, but displayed as it occurs over time (typically at 10-minute intervals)&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 291'
+[sysbench]:                    #sysbench                       '```&#10;$ sysbench&#10;```&#10;Multi-threaded benchmark tool for database systems'
+[syslogd]:                     #syslogd                        '```&#10;$ syslogd&#10;```&#10;Responsible for logging of application and system events&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 249'
+[time]:                        #time                           '```&#10;$ time&#10;```&#10;Determine how long it takes to run a command&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 302'
+[timedatectl]:                 #timedatectl                    '```&#10;$ timedatectl&#10;```&#10;Display system clock&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 71'
+[tty]:                         #tty                            '```&#10;$ tty&#10;```&#10;Determine terminal device file for current session&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 121'
+[uname]:                       #uname                          '```&#10;$ uname&#10;```&#10;Print the current Unix system name&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 221'
+[uptime]:                      #uptime                         '```&#10;$ uptime&#10;```&#10;Display current time, how long the system has been running, how many users are currently logged on, and the system load averages for the past 1, 5, and 15 minutes&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 114'
+[vmstat]:                      #vmstat                         '```&#10;$ vmstat&#10;```&#10;provides more detail than `free`&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 293'
+
+<!-- Disk commands -->
+[blkid]:                                             #blkid                                      '```&#10;$ blkid&#10;```&#10;Display label and UUIDs of block devices.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 51'
+[dumpe2fs]:                                          #dumpe2fs                                   '```&#10;$ dumpe2fs&#10;```&#10;Display filesystem metadata&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 51'
+[e2label]:                                           #e2label                                    '```&#10;$ e2label&#10;```&#10;Change the label of a filesystem&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 53'
+[fsck]:                                              #fsck                                       '```&#10;$ fsck&#10;```&#10;Find filesystem problems on unmounted filesystems&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 52'
+[ioping]:                                            #ioping                                     '```&#10;$ ioping&#10;```&#10;Perform simple latency tests on a disk&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 288'
+[iostat]:                                            #iostat                                     '```&#10;$ iostat&#10;```&#10;Display input/output statistics on devices, including partitions&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 48'
+[mdadm]:                                             #mdadm                                      '```&#10;$ mdadm&#10;```&#10;Create a software RAID device&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 45'
+[mkfs]:                                              #mkfs                                       '```&#10;$ mkfs&#10;```&#10;Create a filesystem on a partition; actually a frontend utility to other commands.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 48'
+[mkswap]:                                            #mkswap                                     '```&#10;$ mkswap&#10;```&#10;Format a partition as a swap device&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 293'
+[parted]:                                            #parted                                     '```&#10;$ parted&#10;```&#10;Interactive tool that can display and modify traditional and GUID partition tables and create a filesystem on a partition.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 46'
+[partprobe]:                                         #partprobe                                  '```&#10;$ partprobe&#10;```&#10;Inform system of changes to partition table, typically used after making changes using `fdisk`&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 289'
+[partx]:                                           #partx                                              '```&#10;$ partx&#10;```&#10;Utility that provides information on drive partitions to the Linux kernel'
+[resize2fs]:                                         #resize2fs                                  '```&#10;$ resize2fs&#10;```&#10;Resize a logical volume&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 52'
+[swapoff]:                                           #swapoff                                    '```&#10;$ swapoff&#10;```&#10;Stop using a swap file or device&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 292'
+[swapon]:                                            #swapon                                     '```&#10;$ swapon&#10;```&#10;Begin using a swap file or device&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 292'
+[tune2fs]:                                           #tune2fs                                    '```&#10;$ tune2fs&#10;```&#10;Display or modify specific metadata for an ext filesystem.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 53'
+[umount]:                                            #umount                                     '```&#10;$ umount&#10;```&#10;Unmount a filesystem&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 50'
+[xfs_info]:                                          #xfs_info                                   '```&#10;$ xfs_info&#10;```&#10;Display the geometry of an XFS filesystem (cf. `dumpe2fs`)&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 44'
+[xfs_metadump]:                                      #xfs_metadump                               '```&#10;$ xfs_metadump&#10;```&#10;Dump metadata from an unmounted XFS filesystem into a file for debugging purposes.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 44'
+
+[SystemD]: #init-systems "De facto standard init system for all major Linux distributions today"
+
+<!-- File commands -->
+[chattr]:                      #chattr                         '```&#10;$ chattr&#10;```&#10;Change file attributes&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 311-312'
+[chgrp]:                       #chgrp                          '```&#10;$ chgrp&#10;```&#10;Change the group of one or more files, which can be a group ID number or a group name (located in "/etc/group"). You must own the file or be a privileged user to succeed with the command.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 34'
+[chmod]:                       #chmod                          '```&#10;$ chmod&#10;```&#10;Change the access mode of one or more files&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 35'
+[chown]:                       #chown                          '```&#10;$ chown&#10;```&#10;Change the ownership of one or more files, which can be either a user ID number or a login name (located in "/etc/passwd")&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 37'
+[cksum]:                       #cksum                          '```&#10;$ cksum&#10;```&#10;Calculate and print a CRC sum for each file. The CRC algorithm is based on the polynomial used for Ethernet packets&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 38'
+[cp]:                          #cp                             '```&#10;$ cp $FILE $PATH&#10;```&#10;Copy `$FILE` to `$PATH`. If `$PATH` is an existing file, it is overwritten. If the input is a directory use `-r`.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 40'
+[curl]:                        #curl                           '```&#10;$ curl&#10;```&#10;Retrieve files from the Internet, most often using FTP or HTTP (cf. `wget`)&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 49'
+[dd]:                          #dd                             '```&#10;$ dd&#10;```&#10;Perform multiple operations related to backing up data and creating files. One common use is to make a backup of an entire drive.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 269'
+[dirname]:                     #dirname                        '```&#10;$ dirname $PATH&#10;```&#10;Strip filename from `$PATH` (cf. `basename`)'
+[dos2unix]:                    #dos2unix                       '```&#10;$ dos2unix&#10;```&#10;Convert files using the DOS extended character set to their ISO standard counterparts&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 66'
+[exif]:                        #exif                           '```&#10;$ exif&#10;```&#10;View image metadata, producing columnar output'
+[fallocate]:                   #fallocate                      '```&#10;$ fallocate&#10;```&#10;Allocate and deallocate space to a file'
+[file]:                        #file                           '```&#10;$ file&#10;```&#10;View image metadata'
+[find]:                        #find                           '```&#10;$ find&#10;```&#10;Search recursively through directory trees for files or directories that match certain characters, either printing the file or directory or performing other operations on matches&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 96'
+[getfacl]:                     #getfacl                        '```&#10;$ getfacl&#10;```&#10;Display the ACL of a file&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 199'
+[install]:                     #install                        '```&#10;$ install&#10;```&#10;Copy files while maintaining metadata'
+[link]:                        #link                           '```&#10;$ link $FILE $OTHER&#10;```&#10;Create a link between two files, similar to `ln` but with no error checking'
+[ln]:                          #ln                             '```&#10;$ ln&#10;```&#10;Create a link&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 132'
+[locate]:                      #locate                         '```&#10;$ locate&#10;```&#10;Search for files based on a database that is typically created daily.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 138'
+[ls]:                          #ls                             '```&#10;$ ls&#10;```&#10;List files in a directory&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 131'
+[lsattr]:                      #lsattr                         '```&#10;$ lsattr&#10;```&#10;Display the attributes for a file&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 311'
+[lsof]:                        #lsof                           '```&#10;$ lsof&#10;```&#10;Display open files, open network ports, and network connections&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 303'
+[md5sum]:                      #md5sum                         '```&#10;$ md5sum&#10;```&#10;Display MD5 checksum value for a file&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 275'
+[mkdir]:                       #mkdir                          '```&#10;$ mkdir&#10;```&#10;Create one or more directories&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 98'
+[mktemp]:                      #mktemp                         '```&#10;$ mktemp&#10;```&#10;Create a temporary file or directory safely and print its name. These will not need to be manually cleaned up because they will be placed in the temporary directory /tmp'
+[mv]:                          #mv                             '```&#10;$ mv&#10;```&#10;Move or rename files and directories&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 98'
+[rename]:                      #rename                         '```&#10;$ rename&#10;```&#10;Rename files using regex'
+[rm]:                          #rm                             '```&#10;$ rm&#10;```&#10;Delete one or more files from the filesystem&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 99'
+[rmdir]:                       #rmdir                          '```&#10;$ rmdir&#10;```&#10;Delete empty directories&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 132'
+[rsync]:                       #rsync                          '```&#10;$ rsync&#10;```&#10;Copy files remotely; used in situations where only updated files are to be transferred in order to preserve bandwidth.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 131'
+[scp]:                         #scp                            '```&#10;$ scp&#10;```&#10;Copy files to and from remote systems via `ssh`&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 130'
+[setfacl]:                     #setfacl                        '```&#10;$ setfacl&#10;```&#10;Create an ACL on a file or directory.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 199'
+[setuid]:                      #setuid                         '```&#10;$ setuid&#10;```&#10;"set-user identification": permission bit which, if set on an executable file, will ensure that the file is granted access based on the owner of the file, rather than the use who is running it'
+[stat]:                        #stat                           '```&#10;$ stat&#10;```&#10;See inode information of a file&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 135'
+[touch]:                       #touch                          '```&#10;$ touch&#10;```&#10;Used to create empty files and to update modification and access timestamps of existing files.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 129'
+[tree]:                        #tree                           '```&#10;$ tree&#10;```&#10;Display contents of directories in a tree-like format'
+[umask]:                       #umask                          '```&#10;$ umask&#10;```&#10;Set default permissions for files and directories&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 195'
+[unlink]:                      #unlink                         '```&#10;$ unlink&#10;```&#10;Does essentially what `rm` does, but in a subtly different way.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 135'
+[updatedb]:                    #updatedb                       '```&#10;$ updatedb&#10;```&#10;Refresh (or create) the `slocate` database at /var/lib/slocate/slocate.db&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 202'
+[whereis]:                     #whereis                        '```&#10;$ whereis&#10;```&#10;Search for binary executables, source code, and manual pages in standard locations as well as the PATH and `$MANPATH`&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 139'
+[which]:                       #which                          '```&#10;$ which $CMD&#10;```&#10;Determine the location of `$CMD` and display its full path&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 200'
+
+<!-- Kernel commands -->
+[dbus-monitor]: #dbus-monitor '```&#10;$ dbus-monitor&#10;```&#10;Monitor messages going through a D-Bus message bus'
+[depmod]: #depmod '```&#10;$ depmod&#10;```&#10;Builds the modules.dep file, which contains module dependencies and is used by `modprobe` to determine which modules need to be loaded&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 15'
+[dmesg]: #dmesg '```&#10;$ dmesg&#10;```&#10;Display in-memory copy of the kernel ring buffer&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 178'
+[dracut]: #dracut '```&#10;$ dracut&#10;```&#10;Executed by `mkinitrd` but rarely used manually&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 8'
+[insmod]: #insmod '```&#10;$ insmod&#10;```&#10;Insert a module into the running kernel&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 15'
+[journalctl]: #journalctl '```&#10;$ journalctl&#10;```&#10;&#10;Rothwell, William. _CompTIA Linux+/LPIC-1 Portable Command guide_.: 219'
+[ldconfig]: #ldconfig '```&#10;$ ldconfig $LIBDIRS&#10;```&#10;Update the ld.so cache file with shared libraries specified on the command line in /usr/lib, /lib, directories found in /etc/ld.so.conf, and `$LIBDIRS`&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 45'
+[lsmod]: #lsmod '```&#10;$ lsmod&#10;```&#10;Display kernel modules that are loaded into memory&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 11'
+[mkinitrd]: #mkinitrd '```&#10;$ mkinitrd&#10;```&#10;Creates initramfs file&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 8'
+[modinfo]: #modinfo '```&#10;$ modinfo&#10;```&#10;Display information about a module from its `module_object_file`&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 17'
+[modprobe]: #modprobe '```&#10;$ modprobe&#10;```&#10;Insert modules, like `insmod`. In fact, `modprobe` is a wrapper around `insmod` which provides additional functionality.&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 18'
+[rmmod]: #rmmod '```&#10;$ rmmod&#10;```&#10;Remove modules from the running kernel.&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 16'
+[udevadm]: #udevadm '```&#10;$ udevadm&#10;```&#10;Load new rules into kernel memory, or verify they have taken effect, after changing a udev rule.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 181'
+
+<!-- Package managers -->
+[alien]:                       #alien                '```&#10;$ alien&#10;```&#10;Convert between or install package types native to other distributions, including Red Hat .rpm, Stampede .slp, Slackware .tgz, and generic .tar.gz files.&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 52'
+[add-apt-repository]:          #add-apt-repository   '```&#10;$ add-apt-repository&#10;```&#10;'
+[apt]:                         #apt                  '```&#10;$ apt&#10;```&#10;'
+[apt-cache]:                   #apt-cache            '```&#10;$ apt-cache&#10;```&#10;Display package information regarding the package cache&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 81'
+[apt-get]:                     #apt-get              '```&#10;$ apt-get&#10;```&#10;'
+[dnf]:                         #dnf                  '```&#10;$ dnf&#10;```&#10;Package manager for Red Hat systems that supercedes `yum`&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 86'
+[dpkg]:                        #dpkg                 '```&#10;$ dpkg&#10;```&#10;Manage local Debian packages&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 79'
+[dpkg-reconfigure]:            #dpkg-reconfigure     '```&#10;$ dpkg-reconfigure&#10;```&#10;Run the configuration script again for a package that has already been installed.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 80'
+[gem]:                         #gem                  '```&#10;$ gem&#10;```&#10;'
+[pacman]:                      #pacman               '```&#10;$ pacman&#10;```&#10;'
+[pip]:                         #pip                  '```&#10;$ pip&#10;```&#10;'
+[rpm]:                         #rpm                  '```&#10;$ rpm&#10;```&#10;Install, upgrade, and remove .rpm packages&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 78'
+[snap]:                        #snap                 '```&#10;$ snap&#10;```&#10;'
+[yay]:                         #yay                  '```&#10;$ yay&#10;```&#10;'
+[yum]:                         #yum                  '```&#10;$ yum&#10;```&#10;Package manager for Red Hat systems&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 83'
+[yumdownloader]:               #yumdownloader        '```&#10;$ yumdownloader&#10;```&#10;Download software packages without installing them&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 84'
+[zypper]:                      #zypper               '```&#10;$ zypper&#10;```&#10;Package manager for SUSE with a syntax similar to that of `yum`&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 86'
+
+<!-- Process control -->
+[bg]: #bg '```&#10;$ bg&#10;```&#10;Restart a suspended process in the background. Specify the number of the job according to the output of `jobs`, preceded by "%".&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 171'
+[fg]: #fg '```&#10;$ fg $JOB&#10;```&#10;Place `$JOB` in the foreground&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 119'
+[jobs]: #jobs '```&#10;$ jobs&#10;```&#10;List active jobs&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 119'
+[kill]: #kill '```&#10;$ kill&#10;```&#10;Send signals to processes&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 116'
+[killall]: #killall '```&#10;$ killall&#10;```&#10;Stop all processes of a given name&#10;Rothwell, William. _CompTIA Linux+/LPIC-1 Portable Command guide_.: 96'
+[lsns]: #lsns '```&#10;$ lsns&#10;```&#10;List existing namespaces. Namespace with which PIDs can also be accessed'
+[nice]: #nice '```&#10;$ nice&#10;```&#10;Assign a nice number to a new process at start time.&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 120'
+[nohup]: #nohup '```&#10;$ nohup&#10;```&#10;Run a command immune to hangups, with output to a non-TTY terminal.&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 119'
+[pgrep]: #pgrep '```&#10;$ pgrep&#10;```&#10;List PIDs associated with a program name, similar to `ps -e | grep`&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 304'
+[pidof]: #pidof '```&#10;$ pidof&#10;```&#10;Query system to discover the PID of any named application'
+[pkill]: #pkill '```&#10;$ pkill&#10;```&#10;Kill a process by providing a process name, user name, or group name&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 305'
+[ps]: #ps '```&#10;$ ps&#10;```&#10;List processes that are running on the system&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 303'
+[pstree]: #pstree '```&#10;$ pstree&#10;```&#10;Display a hierarchical list of processes in a tree format; handy for understanding how parent/child process relationships are setup&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 110'
+[renice]: #renice '```&#10;$ renice&#10;```&#10;Alter the nice number of a running process&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 122'
+[strace]: #system-calls '```&#10;$ strace&#10;```&#10;debugging tool that displays a trace of all system calls made by a process&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 418'
+[top]: #top '```&#10;$ top&#10;```&#10;Display continuously updated display of processes similar to `ps`&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 112'
+
+<!-- SELinux -->
+[chcon]:                       #chcon                          '```&#10;$ chcon&#10;```&#10;Change context of a file or directory&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 207'
+[getenforce]:                  #getenforce                     '```&#10;$ getenforce&#10;```&#10;Determine the current SELinux mode&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 205'
+[getsebool]:                   #getsebool                      '```&#10;$ getsebool&#10;```&#10;Display names and values of SELinux Booleans&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 206'
+[restorecon]:                  #restorecon                     '```&#10;$ restorecon&#10;```&#10;Reset default security context on a file or directory&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 207'
+[semanage]:                    #semanage                       '```&#10;$ semanage&#10;```&#10;Edit security contexts for files and ports&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 206'
+[sestatus]:                    #sestatus                       '```&#10;$ sestatus&#10;```&#10;Display status of SELinux&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 205'
+[setenforce]:                  #setenforce                     '```&#10;$ setenforce&#10;```&#10;Change SELinux mode&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 205'
+[setsebool]:                   #setsebool                      '```&#10;$ setsebool&#10;```&#10;Set an SELinux Boolean&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 206'
+
+<!-- System administration commands -->
+[adduser]:                     #adduser             '```&#10;$ adduser&#10;```&#10;Create a new user or update default new user information'
+[at]:                          #at                                     '```&#10;$ at&#10;```&#10;Schedule one or more commands to be executed at a specific time in the future.&#10;After specifying a future time on the command-line, the `at>` prompt appears, allowing you to specify a series of shell commands which can be terminated with Ctrl+D (EOF)&#10;Rothwell, William. _CompTIA Linux+/LPIC-1 Portable Command guide_.: 195'
+[atq]:                         #atq                 '```&#10;$ atq&#10;```&#10;'
+[atrm]:                        #atrm                '```&#10;$ atrm&#10;```&#10;'
+[chage]:                       #chage               '```&#10;$ chage&#10;```&#10;Modify password-aging features for a user.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 95'
+[edquota]:                     #edquota             '```&#10;$ edquota&#10;```&#10;Create or edit disk quota of `$USER`&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 99'
+[getent]:                      #getent              '```&#10;$ getent&#10;```&#10;List values stored in colon-delimited user and group account databases like /etc/passwd&#10;Rothwell, William. _CompTIA Linux+/LPIC-1 Portable Command guide_.: 185'
+[gpasswd]:                     #gpasswd             '```&#10;$ gpasswd&#10;```&#10;Interactively set the password for `$GROUP`&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 326'
+[groupadd]:                    #groupadd            '```&#10;$ groupadd&#10;```&#10;Add `$GROUP` to the system&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 325'
+[groupdel]:                    #groupdel            '```&#10;$ groupdel&#10;```&#10;Delete `$GROUP` from the system&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 325'
+[groupmod]:                    #groupmod            '```&#10;$ groupmod&#10;```&#10;Modify the parameters of `$GROUP`&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 325'
+[last]:                        #last                '```&#10;$ last&#10;```&#10;Display history of successful logins'
+[lastb]:                       #lastb               '```&#10;$ lastb&#10;```&#10;Display failed login attempts&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 255'
+[passwd]:                      #passwd              '```&#10;$ passwd&#10;```&#10;Interactively set the password for `$USER`&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 325'
+[quota]:                       #quota               '```&#10;$ quota&#10;```&#10;Display quota limits on user or group&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 169'
+[quotacheck]:                  #quotacheck          '```&#10;$ quotacheck&#10;```&#10;Examine filesystems and compile quota databases&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 171'
+[quotaoff]:                    #quotaoff            '```&#10;$ quotaoff&#10;```&#10;Disable disk quotas on one or more filesystems&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 171'
+[quotaon]:                     #quotaon             '```&#10;$ quotaon&#10;```&#10;Enable previously configure disk quotas on one or more filesystems&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 170'
+[repquota]:                    #repquota            '```&#10;$ repquota&#10;```&#10;Display quotas for an entire filesystem&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 101'
+[su]:                          #su                  '```&#10;$ su&#10;```&#10;Allow a user to shift user accounts&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 209'
+[sudo]:                        #sudo                '```&#10;$ sudo&#10;```&#10;Run commands as other users (typically as the root user).&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 209'
+[sudoedit]:                    #sudoedit            '```&#10;$ sudoedit&#10;```&#10;Edit a file using sudo&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 210'
+[ulimit]:                      #ulimit              '```&#10;$ ulimit&#10;```&#10;Display or set a account limits of `$USER`&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 201'
+[useradd]:                     #useradd             '```&#10;$ useradd&#10;```&#10;Create a user account&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 94'
+[userdel]:                     #userdel             '```&#10;$ userdel&#10;```&#10;Delete a user account&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 96'
+[usermod]:                     #usermod             '```&#10;$ usermod&#10;```&#10;Modify a user account&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 94'
+[visudo]:                      #visudo              '```&#10;$ visudo&#10;```&#10;Safely edit the /etc/sudoers file'
+[w]:                           #w                   '```&#10;$ w&#10;```&#10;Display output similar to that of `uptime` for all logged-in users&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 97'
+[who]:                         #who                 '```&#10;$ who&#10;```&#10;Display currently users currently logged in&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 97'
+[whoami]:                      #whoami              '```&#10;$ whoami&#10;```&#10;Display effective user ID&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 96'
+
+
+<!-- Text commands -->
+[cat]: #cat '```&#10;$ cat&#10;```&#10;Display contents of text files&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 115'
+[cmp]: #cmp '```&#10;$ cmp $FILE $OTHER&#10;```&#10;Compare `$FILE` with `$OTHER`, or STDIN if one or the other is not provided (cf. `comm` and `diff`). Exits with 0 if files are identical or 1 if they are not.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 39'
+[comm]: #comm '```&#10;$ comm $FILE $OTHER&#10;```&#10;Compare lines common to the sorted files `$FILE` and `$OTHER`. Output is in 3 colums: lines unique to `$FILE`, lines unique to `$OTHER`, and lines common to both.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 39'
+[csplit]: #csplit '```&#10;$ csplit&#10;```&#10;Separate `$FILE` into sections and place sections in files named "xx00" through "xxn" (n < 100)&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 46'
+[cut]: #cut '```&#10;$ cut&#10;```&#10;Select a list of columns or fields from one or more files&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 50'
+[diff]: #diff '```&#10;$ diff $FILE $OTHER&#10;```&#10;Report lines that differ between `$FILE` and `$OTHER`. Output consists of lines of context from each file, with `$FILE` text flagged by a "&lt;" and `$OTHER` text by a "&gt;". (cf. `cmp`, `comm`, `diff3`, `dircmp`, and `sdiff`).&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 58'
+[diff3]: #diff3 '```&#10;$ diff3&#10;```&#10;Compare three files and report differences&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 63'
+[ed]: #ed '```&#10;$ ed&#10;```&#10;Line-oriented text editor, superceded by `vi` and `ex`&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 70'
+[egrep]: #egrep '```&#10;$ egrep&#10;```&#10;Equivalent to `grep -E`&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 128'
+[ex]: #ex '```&#10;$ ex&#10;```&#10;Line-oriented text editor, a superset of `ed` and the root of `vi`.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 78'
+[expand]: #expand '```&#10;$ expand&#10;```&#10;Convert Tabs to spaces&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 79'
+[fgrep]: #fgrep '```&#10;$ fgrep $PATTERN&#10;```&#10;Search one or more files for lines that match a literal, text-string `$PATTERN`&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 82'
+[fmt]: #fmt '```&#10;$ fmt&#10;```&#10;Format text to a specified width by filling lines and removing newline characters&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 79'
+[gettext]: #gettext '```&#10;$ gettext $STRING&#10;```&#10;Translate `$STRING`&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 99'
+[grep]: #grep '```&#10;$ grep $PATTERN $FILES&#10;```&#10;Search `$FILES` for lines containing a match to regex `$PATTERN`&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 126'
+[groff]: #groff '```&#10;$ groff&#10;```&#10;Format documents to screen or for laser printing; GNU version of `troff`'
+[head]: #head '```&#10;$ head&#10;```&#10;Print the first few lines of one or more files&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 79'
+[join]: #join '```&#10;$ join $FILE $OTHER&#10;```&#10;Print a line for each pair of input lines, one each from `$FILE` and `$OTHER`, that have identical join fields.&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 80'
+[less]: #less '```&#10;$ less&#10;```&#10;Pager&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 116'
+[look]: #look '```&#10;$ look&#10;```&#10;Look through a sorted file and print all lines that begin with `$STRING`&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 124'
+[more]: #more '```&#10;$ more&#10;```&#10;Display text one page at a time; superceded by `less`.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 116'
+[nl]: #nl '```&#10;$ nl&#10;```&#10;Number the lines of files, which are concatenated in the output.&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 81'
+[od]: #od '```&#10;$ od&#10;```&#10;Dump files in octal and other formats&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 82'
+[paste]: #paste '```&#10;$ paste&#10;```&#10;Paste together corresponding lines of one or more files into vertical columns, similar to but simpler than `join`.&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 83'
+[pr]: #pr '```&#10;$ pr&#10;```&#10;Convert a text file into a paginated, columnar version, with headers and page fills&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 84'
+[sed]: #sed '```&#10;$ sed&#10;```&#10;"Stream editor", powerful filtering program found on nearly every Unix system.&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 128'
+[shuf]: #shuf '```&#10;$ shuf&#10;```&#10;Randomly permute input'
+[sort]: #sort '```&#10;$ sort&#10;```&#10;Sort text data&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 124'
+[split]: #split '```&#10;$ split $INFILE $OUTFILE&#10;```&#10;Split `$INFILE` into a specified number of line groups, named `$OUTFILE`aa, `$OUTFILE`ab, etc&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 86'
+[tac]: #tac '```&#10;$ tac&#10;```&#10;Print text files to STDOUT with lines in reverse order&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 87'
+[tail]: #tail '```&#10;$ tail&#10;```&#10;Display the bottom part of text data.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 115'
+[tee]: #tee '```&#10;$ tee&#10;```&#10;Send output to both STDOUT and to a file&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 122'
+[tr]: #tr '```&#10;$ tr&#10;```&#10;Translate characters from one set to another&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 123'
+[unexpand]: #unexpand '```&#10;$ unexpand&#10;```&#10;Convert spaces to tabs&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 89'
+[uniq]: #uniq '```&#10;$ uniq $INPUT $OUTPUT&#10;```&#10;Write $INPUT to $OUTPUT, eliminating adjacent duplicate lines&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 89'
+[wc]: #wc '```&#10;$ wc&#10;```&#10;Display number of lines, words, or characters of data.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 128'
+
+
+<!-- X window system commands -->
+[cvt]: #cvt '```&#10;$ cvt&#10;```&#10;&#10;Calculate VESA CVT mode lines'
+[x]:                           #x                              '```&#10;$ x&#10;```&#10;Start the graphical interface from the command-line'
+[xdpyinfo]:                    #xdpyinfo                       '```&#10;$ xdpyinfo&#10;```&#10;Show detailed information about display'
+[xfs]:                         #xfs                            '```&#10;$ xfs&#10;```&#10;X fonts server; small daemon that sends fonts to clients on both local and remote systems.&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 307'
+[xhost]:                       #xhost                          '```&#10;$ xhost&#10;```&#10;Set access controls to X server'
+[xlsclients]:                  #xlsclients                     '```&#10;$ xlsclients&#10;```&#10;Determine what applications are running on the legacy X11 server provided with Wayland.'
+[xmodmap]:                     #xmodmap                        '```&#10;$ xmodmap&#10;```&#10;Utility for modifying keymaps and pointer button mappings in X'
+[xorg]:                        #xorg                           '```&#10;$ xorg&#10;```&#10;Full featured X server that was originally designed for UNIX and UNIX-like operating systems running on Intel x86 hardware'
+[xrandr]:                      #xrandr                         '```&#10;$ xrandr&#10;```&#10;Set size, orientation, and reflection of video output'
+[xset]:                        #xset                           '```&#10;$ xset&#10;```&#10;Set various user preference options of the display&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 307'
+[xwininfo]:                    #xwininfo                       '```&#10;$ xwininfo&#10;```&#10;Utility that provides information about a clicked window, including dimensions, position, etc'
+
+
+Topic                                       | Commands
+:---                                        | :---
+[Applications](#applications)               | [`git`][git] [`imagemagick`](#imagemagick) [`mongod`](#mongod) **GNOME** [`gsettings`][gsettings] [`gconf-editor`][gconf-editor] **KDE** 
+[Archive](#archive)                         | [`ar`][ar] [`bzcat`][bzcat] [`bzip2`][bzip2] [`bzless`][bzless] [`bzmore`][bzmore] [`compress`][compress] [`cpio`][cpio] [`dar`][dar] [`gunzip`][gunzip] [`gzcat`][gzcat] [`gzip`][gzip] [`tar`][tar] [`uncompress`][uncompress] [`unxz`][unxz] [`unzip`][unzip] [`xz`][xz] [`zcat`][zcat] [`zip`][zip] [`zipcloak`][zipcloak] [`zipcmp`][zipcmp] [`zipdetails`][zipdetails] [`zipgrep`][zipgrep] [`zipinfo`][zipinfo] [`zipnote`][zipnote] [`zipsplit`][zipsplit] 
+[Bash](#bash-builtins)                      | [`bg`][bg] [`bind`][bind] [`break`][break] [`builtin`][builtin] [`caller`][caller] [`case`][case]/[`esac`][esac] [`cd`][cd] [`command`][command] [`compgen`][compgen] [`complete`][complete] [`compopt`][compopt] [`continue`][continue] [`declare`][declare] [`dirs`][dirs] [`disown`][disown] [`do`][do]/[`done`][done] [`echo`][echo] [`enable`][enable] [`eval`][eval] [`exec`][exec] [`exit`][exit] [`export`][export] [`false`][false] [`fc`][fc] [`fg`][fg] [`for`][for] [`function`][function] [`getopts`][getopts] [`hash`][hash] [`help`][help] [`history`][history] [`if`][if]/[`fi`][fi] [`jobs`][jobs] [`kill`][kill] [`let`][let] [`local`][local] [`logout`][logout][`mapfile`][mapfile][`popd`][popd] [`printf`][printf] [`pushd`][pushd] [`pwd`][pwd] [`read`][read] [`readarray`][readarray] [`readonly`][readonly] [`return`][return] [`select`][select] [`set`][set] [`shift`][shift] [`shopt`][shopt] [`source`][source] [`suspend`][suspend] [`test`][test] [`time`][time] [`times`][times] [`trap`][trap] [`true`][true] [`type`][type] [`typeset`][typeset] [`ulimit`][ulimit] [`umask`][umask] [`unalias`][unalias] [`unset`][unset] [`until`][until] [`wait`][wait] [`while`][while] 
+[Hardware settings](#hw)                    | [`bluetoothctl`][bluetoothctl] [`insmod`][insmod] [`lsmod`][lsmod] [`lspci`][lspci] [`lsusb`][lsusb] [`modprobe`][modprobe] [`rmmod`][rmmod] <br> **[Printing](hw.md)** <br> [**CUPS**][CUPS] [`cupsaccept`][cupsaccept] [`cupsenable`][cupsenable] [`cupsdisable`][cupsdisable] [`cupsreject`][cupsreject] [`lp`][lp] [`cancel`][cancel] <br> [**LPD**][LPD] [`lpc`][lpc] [`lpq`][lpq] [`lpr`][lpr] [`lprm`][lprm]
+[Information](#diagnostic-and-benchmarking) | [`ausearch`][ausearch] [`bpftrace`][bpftrace] [`date`][date] [`df`][df] [`du`][du] [`free`][free] [`glances`][glances] [`hwclock`][hwclock] [`loadaverage`][loadaverage] [`logger`][logger] [`logrotate`][logrotate] [`lsb_release`][lsb_release] [`man`][man] [`mpstat`][mpstat] [`nproc`][nproc] [`printenv`][printenv] [`rsyslogd`][rsyslogd] [`sar`][sar] [`sysbench`][sysbench] [`syslogd`][syslogd] [`time`][time] [`timedatectl`][timedatectl] [`tty`][tty] [`uname`][uname] [`uptime`][uptime] [`vmstat`][vmstat] 
+[Init](#init-systems)                       | [`hostnamectl`][hostnamectl] [`journalctl`][journalctl] [`localectl`][localectl] [`systemctl`][systemd-delta] [`systemd-delta`][systemd-delta] [`timedatectl`][timedatectl] <br> **Sysvinit** [`chkconfig`][chkconfig] [`init`][init] [`service`][service] [`telinit`][telinit] &bull; **Upstart** [`initctl`][initctl]
+[Kernel](#kernel)                           | [`dbus-monitor`][dbus-monitor] [`depmod`][depmod] [`dmesg`][dmesg] [`dracut`][dracut] [`insmod`][insmod] [`journalctl`][journalctl] [`ldconfig`][ldconfig] [`lsmod`][lsmod] [`mkinitrd`][mkinitrd] [`modinfo`][modinfo] [`modprobe`][modprobe] [`rmmod`][rmmod] [`udevadm`][udevadm] 
+Kubernetes                                  | [`kubeadm`][kubeadm] [`kubectl`][kubectl]
+[Mail](#mail)                               | [`mail`][mail] [`mailmerge`][mailmerge] [`mailx`][mailx] [`msmtp`][msmtp] <br> **SMTP servers** [`exim`][exim] [`qmail`][qmail] [`postfix`][postfix] [`sendmail`][sendmail]
+[Network](#networking)                      | [`arp`][arp] [`bmon`][bmon] [`brctl`][brctl] [`curl`][curl] [`dig`][dig] [`ethtool`][ethtool] [`firewall-cmd`][firewall-cmd] [`host`][host] [`hping3`][hping3] [`ifconfig`][ifconfig] [`iftop`][iftop] [`ifup-wireless`][ifup-wireless] [`ip`][ip] [`iperf`][iperf] [`ipset`][ipset] [`iscsiadm`][iscsiadm] [`iw`][iw] [`iwconfig`][iwconfig] [`iwlist`][iwlist] [`kinit`][kinit] [`klist`][klist] [`mtr`][mtr] [`netcat`][netcat] [`netplan`][netplan] [`netstat`][netstat] [`nmap`][nmap] [`nmblookup`][nmblookup] [`nmcli`][nmcli] [`nmtui`][nmtui] [`nslookup`][nslookup] [`rfkill`][rfkill] [`route`][route] [`sftp`][sftp] [`ss`][ss] [`tcpdump`][tcpdump] [`tracepath`][tracepath] [`traceroute`][traceroute] [`tshark`][tshark] [`wget`][wget] [`whois`][whois] [`xinetd`][xinetd] 
+[Package managers](#package-managers)       | [`apt`][apt] [`brew`][brew] [`dnf`][dnf] [`dpkg`][dpkg] [`gem`][gem] [`pacman`][pacman] [`pip`][pip] [`rpm`][rpm] [`snap`][snap] [`yay`][yay] [`yum`][yum]
+[Process control](#process-control)         | [`ps`][ps] [`unshare`][unshare]
+[Remote administration](#remote-administration)  | [`rsync`][rsync] [`ssh`][ssh] [`ssh-keygen`][ssh-keygen] [`ssh-keyscan`][ssh-keyscan] [`sshfs`][sshfs]
+[SELinux](#selinux)                         | [`chcon`][chcon] [`getenforce`][getenforce] [`getsebool`][getsebool] [`restorecon`][restorecon] [`semanage`][semanage] [`sestatus`][sestatus] [`setenforce`][setenforce] [`setsebool`][setsebool] 
 [System administration](#system-administration) | [`adduser`][adduser] [`at`][at] [`atq`][atq] [`atrm`][atrm] [`chage`][chage] [`edquota`][edquota] [`gpasswd`][gpasswd] [`groupadd`][groupadd] [`groupdel`][groupdel] [`groupmod`][groupmod] [`last`][last] [`lastb`][lastb] [`passwd`][passwd] [`quota`][quota] [`quotacheck`][quotacheck] [`quotaoff`][quotaoff] [`quotaon`][quotaon] [`repquota`][repquota] [`su`][su] [`sudo`][sudo] [`sudoedit`][sudoedit] [`useradd`][useradd] [`userdel`][userdel] [`usermod`][usermod] [`visudo`][visudo] [`w`][w] [`who`][who] [`whoami`][whoami] 
-[Text filters](#text)                           | [`cat`][cat] [`cmp`][cmp] [`comm`][comm] [`csplit`][csplit] [`cut`][cut] [`diff`][diff] [`diff3`][diff3] [`ed`][ed] [`egrep`][egrep] [`ex`][ex] [`expand`][expand] [`fgrep`][fgrep] [`fmt`][fmt] [`gettext`][gettext] [`grep`][grep] [`groff`][groff] [`head`][head] [`join`][join] [`less`][less] [`look`][look] [`more`][more] [`nl`][nl] [`od`][od] [`paste`][paste] [`pr`][pr] [`sed`][sed] [`shuf`][shuf] [`sort`][sort] [`split`][split] [`tac`][tac] [`tail`][tail] [`tee`][tee] [`tr`][tr] [`unexpand`][unexpand] [`uniq`][uniq] [`wc`][wc] 
-[Virtualization](#virtualization)               | [`virt-install`][virt-install] [`virt-manager`][virt-manager]
-[X](#x-windows-system)                          | [`cvt`][cvt] [`x`][x] [`xdpyinfo`][xdpyinfo] [`xfs`][xfs] [`xhost`][xhost] [`xlsclients`][xlsclients] [`xmodmap`][xmodmap] [`xorg`][xorg] [`xrandr`][xrandr] [`xset`][xset] [`xwininfo`][xwininfo] 
+[Text filters](#text)                     | [`cat`][cat] [`cmp`][cmp] [`comm`][comm] [`csplit`][csplit] [`cut`][cut] [`diff`][diff] [`diff3`][diff3] [`ed`][ed] [`egrep`][egrep] [`ex`][ex] [`expand`][expand] [`fgrep`][fgrep] [`fmt`][fmt] [`gettext`][gettext] [`grep`][grep] [`groff`][groff] [`head`][head] [`join`][join] [`less`][less] [`look`][look] [`more`][more] [`nl`][nl] [`od`][od] [`paste`][paste] [`pr`][pr] [`sed`][sed] [`shuf`][shuf] [`sort`][sort] [`split`][split] [`tac`][tac] [`tail`][tail] [`tee`][tee] [`tr`][tr] [`unexpand`][unexpand] [`uniq`][uniq] [`wc`][wc] 
+[Virtualization](#virtualization)           | [`virt-install`][virt-install] [`virt-manager`][virt-manager]
+[X](#x-windows-system)                      | [`cvt`][cvt] [`x`][x] [`xdpyinfo`][xdpyinfo] [`xfs`][xfs] [`xhost`][xhost] [`xlsclients`][xlsclients] [`xmodmap`][xmodmap] [`xorg`][xorg] [`xrandr`][xrandr] [`xset`][xset] [`xwininfo`][xwininfo] 
 
 ## Applications
 ### `imagemagick`
@@ -926,7 +1216,7 @@ git rev-list --author=olaf HEAD | tig show --stdin
 
 [`0`][cpio -&#48;]   [`a`][cpio -&#97;] [`b`][cpio -&#98;] [`c`][cpio -&#99;] [`d`][cpio -&#100;] <code>&nbsp;</code> [`f`][cpio -&#102;] <code>&nbsp;</code> <code>&nbsp;</code> [`i`][cpio -&#105;] <code>&nbsp;</code> [`k`][cpio -&#107;] [`l`][cpio -&#108;] [`m`][cpio -&#109;] [`n`][cpio -&#110;] [`o`][cpio -&#111;] [`p`][cpio -&#112;] <code>&nbsp;</code> [`r`][cpio -&#114;] [`s`][cpio -&#115;] [`t`][cpio -&#116;] [`u`][cpio -&#117;] [`v`][cpio -&#118;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code>  <br><code>&nbsp;</code>&nbsp;[`A`][cpio -&#65;] [`B`][cpio -&#66;] [`C`][cpio -&#67;] <code>&nbsp;</code> [`E`][cpio -&#69;] [`F`][cpio -&#70;] <code>&nbsp;</code> [`H`][cpio -&#72;] [`I`][cpio -&#73;] <code>&nbsp;</code> <code>&nbsp;</code> [`L`][cpio -&#76;] [`M`][cpio -&#77;] <code>&nbsp;</code> [`O`][cpio -&#79;] <code>&nbsp;</code> <code>&nbsp;</code> [`R`][cpio -&#82;] [`S`][cpio -&#83;] <code>&nbsp;</code> <code>&nbsp;</code> [`V`][cpio -&#86;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 
 
-Create an archive that contains all the files in the current working directory [<sup>Haeder: 94</sup>][Haeder]
+Create an archive that contains all the files in the current working directory <sup>[Haeder][Haeder]: 94</sup>
 ```sh
 ls | cpio -ov > /tmp/archive.cpio
 ```
@@ -1062,7 +1352,7 @@ zip zipfile *files
 [`speaker-test`][speaker-test] 
 
 ### ALSA
-**Advanced Linux Sound Architecture (ALSA)** replaced the earlier "Open Sound System".[<sup>ref</sup>][Schatz]
+**Advanced Linux Sound Architecture (ALSA)** replaced the earlier "Open Sound System".<sup>[Schatz][Schatz]</sup>
 
 ALSA kernel modules are designed to offer an interface that "corresponds to that of the hardware" to keep the modules simple, and similar cards will offer a similar interface. They offer two interfaces: **operational** and **configuration**
 
@@ -1101,7 +1391,7 @@ PulseAudio is built around **sources** and **sinks** (i.e. devices) connected to
 ### `alsamixer`
 Command-line mixer
 ### `amixer`
-Command-line mixer for ALSA sound card driver[<sup>ref</sup>][Schatz]
+Command-line mixer for ALSA sound card driver <sup>[Schatz][Schatz]</sup>
 
 Display simplified list of controls 
 ```sh
@@ -1191,12 +1481,6 @@ speaker-test -c 2
 [`while`][while] 
 
 ## Boot
-[grub-install]:                #grub-install            '```&#10;$ grub-install&#10;```&#10;Install GRUB on the MBR of a hard drive&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 42'
-[grub-mkconfig]: # ""
-[grub2-editenv]:               #grub2-editenv                  '```&#10;grub2-editenv&#10;```&#10;Manage the stored environment of GRUB&#10;"How to install the NVIDIA drivers on Fedora 31". Linuxconfig.org: 10/17/2019.'
-[lilo]:                        #lilo                    '```&#10;$ lilo&#10;```&#10;`lilo` map installer reads a configuration file and writes a map file, which contains information needed by the boot loader to locate and launch Linux kernels or other operating systems.&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 40'
-[update-grub]:                 #update-grub             '```&#10;$ update-grub&#10;```&#10;Make changes take effect for a GRUB2 configuration change'
-
 [`grub-install`][grub-install] 
 [`grub-mkconfig`][grub-mkconfig]
 [`grub2-editenv`][grub2-editenv] 
@@ -1215,7 +1499,7 @@ Microcontrollers may be listening when the system is nominally off; they typical
 Linux kernel is typically named **vmlinux** (or **vmlinuz** when compressed). Kernel ring buffer contains messages related to the Linux kernel. A ring buffer is a data structure that is always the same size; old messages are discarded as new ones come in, once the buffer is full. `dmesg` is used to see its contents, and the messages are also stored in `/var/log/dmesg`
 
 #### GRUB Rescue prompt
-When GRUB2 is unable to find the GRUB folder or its contents are missing or corrupted, it displays the prompt `grub rescue>`. This means it failed to load the `normal` module. [<sup>ref</sup>](https://www.howtoforge.com/tutorial/repair-linux-boot-with-grub-rescue/ "howtoforge.com - \"Repair Linux boot failures in GRUB 2 rescue mode\"")
+When GRUB2 is unable to find the GRUB folder or its contents are missing or corrupted, it displays the prompt `grub rescue>`. This means it failed to load the `normal` module. <sup>[howtoforge.com](https://www.howtoforge.com/tutorial/repair-linux-boot-with-grub-rescue/ "Repair Linux boot failures in GRUB 2 rescue mode")</sup>
 
 From GRUB rescue prompt:
 ```grub
@@ -1255,7 +1539,7 @@ Send output of grub2-mkconfig to the correct location for booting
 grub2-mkconfig --output=/boot/grub2/grub.cfg
 ```
 ### `grub2-editenv`
-Disable the Nouveau display driver while installing the proprietary Nvidia display driver on Fedora [<sup>ref</sup>][https://linuxconfig.org/how-to-install-the-nvidia-drivers-on-fedora-31]
+Disable the Nouveau display driver while installing the proprietary Nvidia display driver on Fedora <sup>[linuxconfig.org](https://linuxconfig.org/how-to-install-the-nvidia-drivers-on-fedora-31 "How to install the NVIDIA drivers on Fedora 31")</sup>
 ```sh
 grub2-editenv - set "$(grub2-editenv - list | grep kernelopts) nouveau.modeset=0"
 ```
@@ -1684,7 +1968,7 @@ Report memory map of a process (part of "sysstat" package). [<sup>ref</sup>][L5P
 <code>&nbsp;</code>   <code>&nbsp;</code> [`b`][sar -&#98;] <code>&nbsp;</code> [`d`][sar -&#100;] <code>&nbsp;</code> [`f`][sar -&#102;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`n`][sar -&#110;] [`o`][sar -&#111;] <code>&nbsp;</code> [`q`][sar -&#113;] [`r`][sar -&#114;] <code>&nbsp;</code> <code>&nbsp;</code> [`u`][sar -&#117;] [`v`][sar -&#118;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code>  <br><code>&nbsp;</code>&nbsp;[`A`][sar -&#65;] [`B`][sar -&#66;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`P`][sar -&#80;] <code>&nbsp;</code> [`R`][sar -&#82;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`W`][sar -&#87;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 
 
 ### `sosreport`
-**SOS** is an open-source data collection tool that can be used to collect system configuration details and diagnostic information from a Unix-like operating system. It is installed by default on Ubuntu Server. [<sup>ref</sup>][39]
+**SOS** is an open-source data collection tool that can be used to collect system configuration details and diagnostic information from a Unix-like operating system. It is installed by default on Ubuntu Server. <sup>[howtoforge.com](https://www.howtoforge.com/how-to-install-and-use-sosreport-on-ubuntu-1804/ "howtoforge.com: \"How to install and use sosreport on Ubuntu\"")</sup>
 
 Collect system configuration details (without arguments, the report will be generated and stored in `$TMPDIR`)
 ```sh
@@ -2080,8 +2364,11 @@ Write random data to an unmounted disk for {n} passes
 ```sh
 shred --iterations=n
 ```
+### `touch`
+<sup>[Network World](https://www.networkworld.com/article/3435279/unix-as-a-second-language-the-touch-command.html#tk.rss_linux "networkworld.com: \"Unix as a Second Language: The touch command\"")</sup>
+
 ### `tree`
-Display contents of directories in a tree-like format [<sup>ref</sup>][46]
+Display contents of directories in a tree-like format <sup>[tecmint.com]</sup>(https://www.tecmint.com/linux-tree-command-examples/ "tecmint.com: \"Linux tree command usage examples for beginners\"")
 
 Option  | Effect
 :---    | :---
@@ -2312,6 +2599,19 @@ initctl reload
 ```
 
 ## Kernel
+[`dbus-monitor`][dbus-monitor] 
+[`depmod`][depmod] 
+[`dmesg`][dmesg] 
+[`dracut`][dracut] 
+[`insmod`][insmod] 
+[`journalctl`][journalctl] 
+[`ldconfig`][ldconfig] 
+[`lsmod`][lsmod] 
+[`mkinitrd`][mkinitrd] 
+[`modinfo`][modinfo] 
+[`modprobe`][modprobe] 
+[`rmmod`][rmmod] 
+[`udevadm`][udevadm] 
 
 ### System calls
 <!-- Syscalls -->
@@ -2419,6 +2719,13 @@ initctl reload
 <code>&nbsp;</code> [`a`][rmmod -&#97;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`s`][rmmod -&#115;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`w`][rmmod -&#119;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 
 
 ## Mail
+[MDA]: #mail 'mail delivery agent (MDA)&#10;service that downloads email from an MTA, such as procmail and fetchmail&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 23'
+[MTA]: #mail 'mail transfer agent (MTA)&#10;email server, such as sendmail, postfix, smail, and qmail&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 23'
+[MUA]: #mail 'mail user agent (MUA)&#10;program that allows a user to view mail, such as mutt, pine, printmail, elm, mail, Thunderbird, Evolution, and Eudora&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 23'
+
+[MDA][MDA] 
+[MTA][MTA] 
+[MUA][MUA]
 
 [pine]: #pine "\"Program for Internet news and email\", popular MUA during the 1990s which has since been replaced by Alpine."
 `mailmerge` 
@@ -2664,7 +2971,6 @@ Display Start of Authority information for a domain
 dig example.com soa
 ```
 ### `firewall-cmd`
-
 <!-- `firewall-cmd` options -->
 [firewall-cmd --state]:                #firewall-cmd                  '```&#10;$ firewall-cmd --state&#10;```&#10;Display status of service'
 [firewall-cmd --get-default-zone]:                #firewall-cmd                  '```&#10;$ firewall-cmd --get-default-zone&#10;```&#10;Display default zone'
@@ -2678,11 +2984,20 @@ dig example.com soa
 [firewall-cmd --remove-service]:                #firewall-cmd                  '```&#10;$ firewall-cmd --remove-service&#10;```&#10;Remove service'
 [firewall-cmd --add-port]:                #firewall-cmd                  '```&#10;$ firewall-cmd --add-port $PORTS/$PROTOCOL&#10;```&#10;Add nonstandard `$PORTS`, which can be a single port or a range.'
 
-
-**A** [`add-port`][firewall-cmd --add-port] [`add-service`][firewall-cmd --add-service] <br>**G** [`get-active-zones`][firewall-cmd --get-active-zones] [`get-default-zone`][firewall-cmd --get-default-zone] [`get-services`][firewall-cmd --get-services] <br>**L** [`list-services`][firewall-cmd --list-services] <br>**N** [`new-zone`][firewall-cmd --new-zone] <br>**P** [`permanent`][firewall-cmd --permanent] <br>**R** [`reload`][firewall-cmd --reload] [`remove-service`][firewall-cmd --remove-service] <br>**S** [`state`][firewall-cmd --state]
+[`add-port`][firewall-cmd --add-port] 
+[`add-service`][firewall-cmd --add-service] 
+[`get-active-zones`][firewall-cmd --get-active-zones] 
+[`get-default-zone`][firewall-cmd --get-default-zone] 
+[`get-services`][firewall-cmd --get-services] 
+[`list-services`][firewall-cmd --list-services] 
+[`new-zone`][firewall-cmd --new-zone] 
+[`permanent`][firewall-cmd --permanent] 
+[`reload`][firewall-cmd --reload] 
+[`remove-service`][firewall-cmd --remove-service] 
+[`state`][firewall-cmd --state]
 
 ### `hping3`
-Hping3 crafts "SYN" (sequence) packets from random spoofed IP addresses and sends them out at very short intervals. [<sup>ref</sup>][Sec+ Lab]
+Hping3 crafts "SYN" (sequence) packets from random spoofed IP addresses and sends them out at very short intervals. <sup>[Sec+ Lab][Sec+ Lab]</sup>
 
 Option  | POSIX option            | Effect [<sup>ref</sup>][https://tools.kali.org/information-gathering/hping3]
 :---    | :---                    | :---
@@ -2765,7 +3080,6 @@ Change the default gateway to 192.168.1.1 on eth0
 ```sh
 ip route change default via 192.168.1.1 dev eth0
 ```
-
 Turn on interface `wlp2s0`
 ```sh
 sudo ip link set wlp2s0 up
@@ -2819,8 +3133,9 @@ iptables -vnL --lines
 ```
 ### `iptables-save`
 ### `iw`
-Show or manipulate wireless devices and their configuration; followed by `dev`, `phy`, or `reg` depending on the device.\
-Check the name of network device [[59](sources.md)]
+Show or manipulate wireless devices and their configuration; followed by `dev`, `phy`, or `reg` depending on the device.
+
+Check the name of network device <sup>[Fedora Docs](https://docs.fedoraproject.org/en-US/quick-docs/adding-new-fonts-fedora/ "Fedora Docs - Adding new fonts in Fedora")</sup>
 ```sh
 iw dev
 ```
@@ -3203,24 +3518,6 @@ ss --tcp --processes
 [Cannon]: https://github.com/jasper-zanjani/notes/master/sources/clkf.md "Cannon, Jason. _Command Line Kung Fu_."
 
 ## Package managers
-[alien]:                       #alien                '```&#10;$ alien&#10;```&#10;Convert between or install package types native to other distributions, including Red Hat .rpm, Stampede .slp, Slackware .tgz, and generic .tar.gz files.&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 52'
-[add-apt-repository]:          #add-apt-repository   '```&#10;$ add-apt-repository&#10;```&#10;'
-[apt]:                         #apt                  '```&#10;$ apt&#10;```&#10;'
-[apt-cache]:                   #apt-cache            '```&#10;$ apt-cache&#10;```&#10;Display package information regarding the package cache&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 81'
-[apt-get]:                     #apt-get              '```&#10;$ apt-get&#10;```&#10;'
-[dnf]:                         #dnf                  '```&#10;$ dnf&#10;```&#10;Package manager for Red Hat systems that supercedes `yum`&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 86'
-[dpkg]:                        #dpkg                 '```&#10;$ dpkg&#10;```&#10;Manage local Debian packages&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 79'
-[dpkg-reconfigure]:            #dpkg-reconfigure     '```&#10;$ dpkg-reconfigure&#10;```&#10;Run the configuration script again for a package that has already been installed.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 80'
-[gem]:                         #gem                  '```&#10;$ gem&#10;```&#10;'
-[pacman]:                      #pacman               '```&#10;$ pacman&#10;```&#10;'
-[pip]:                         #pip                  '```&#10;$ pip&#10;```&#10;'
-[rpm]:                         #rpm                  '```&#10;$ rpm&#10;```&#10;Install, upgrade, and remove .rpm packages&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 78'
-[snap]:                        #snap                 '```&#10;$ snap&#10;```&#10;'
-[yay]:                         #yay                  '```&#10;$ yay&#10;```&#10;'
-[yum]:                         #yum                  '```&#10;$ yum&#10;```&#10;Package manager for Red Hat systems&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 83'
-[yumdownloader]:               #yumdownloader        '```&#10;$ yumdownloader&#10;```&#10;Download software packages without installing them&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 84'
-[zypper]:                      #zypper               '```&#10;$ zypper&#10;```&#10;Package manager for SUSE with a syntax similar to that of `yum`&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 86'
-
 [`add-apt-repository`][add-apt-repository] 
 [`alien`][alien] 
 [`apt-cache`][apt-cache] 
@@ -3639,6 +3936,23 @@ rpm -E %fedora
 [`update`][yum update] 
 
 ## Process control
+[`bg`][bg] 
+[`fg`][fg] 
+[`jobs`][jobs] 
+[`kill`][kill] 
+[`killall`][killall] 
+[`lsns`][lsns] 
+[`nice`][nice] 
+[`nohup`][nohup] 
+[`pgrep`][pgrep] 
+[`pidof`][pidof] 
+[`pkill`][pkill] 
+[`ps`][ps] 
+[`pstree`][pstree] 
+[`renice`][renice] 
+[`strace`][strace] 
+[`top`][top] 
+
 - every process has a parent; a process can **spawn** children
 - a process runs in its own **user address space**, a protected space which can't be disturbed by other users
 - all processes on a Linux system are child processes of a common parent: the `init` process which is executed by the kernel at boot time (PID 1)
@@ -3695,105 +4009,7 @@ Run a program in a namespace **unshared** from its parent process. [<sup>ref</su
 sudo unshare --fork --pid --mount-proc zsh
 ```
 
-
-## Remote administration
-[`ssh`][ssh] 
-[`ssh-keygen`][ssh-keygen] 
-[`ssh-keyscan`][ssh-keyscan] 
-[`sshfs`][sshfs]
-
-### `ssh`
-Display timer information
-```sh
-ss -o
-ss --options
-```
-Request a SSHv1 connection to {user@host}
-```sh
-ssh -1 user@host
-```
-Request a SSHv2 connection to {user@host}
-```sh
-ssh -2 user@host
-```
-Request a IPv4 connection to {user@host}
-```sh
-ssh -4 user@host
-```
-Request a IPv6 connection to {user@host}
-```sh
-ssh -6 user@host
-```
-Enable the use of a key for authentication
-```sh
-ssh -i privatekey
-```
-Ssh to {user} at {host} and {hostport} from {port}
-```sh
-ssh -L port:host:hostport user@host
-```
-Set the port for the remote host
-```sh
-ssh -p
-```
-Initiate a SSH session with {user@host}, enabling X forwarding
-```sh
-ssh -Y user@host
-```
-List currently loaded keys
-```sh
-ssh-add -l
-```
-Compare the differences between a remote and local file.  `cat` a file over SSH and pipe the output into a diff or sdiff command [[23](sources.md)j]
-```sh
-ssh remotehost cat /path/to/remotefile | diff /path/to/localfile
-```
-Create an SSH tunnel to access remote resources
-Tunnel into a server to access a website which your local machine may not; `-L` creates the SSH tunnel; first port is the port that will be opened on the local machine [[23](sources.md)]
-```sh
-ssh -N -L localport:host:remoteport remotehost
-```
-### `ssh-keygen`
-Generate a MD5 fingerprint from public key at `$FILE`
-```sh
-ssh-keygen -E md5-lf $FILE
-```
-Generate a SHA512 fingerprint from public key at {file}
-```sh
-ssh-keygen -E sha512 -lf $FILE
-```
-Generate a fingerprint from the public key
-```sh
-ssh-keygen -lf $FILE
-```
-Generate host keys for WSL [<sup>ref</sup>][https://gist.github.com/zentralwerkstatt/9e6c83e757cdfe430d6710585b2275c7]
-```sh
-sudo ssh-keygen -t rsa -f /etc/ssh/ssh_host_rsa_key
-sudo ssh-keygen -t dsa -f /etc/ssh/ssh_host_dsa_key
-sudo ssh-keygen -t ecdsa -f /etc/ssh/ssh_host_ecdsa_key
-```
-### `ssh-keyscan`
-Display the public key of `$HOST`
-```sh
-ssh-keyscan host
-```
-### `sshfs`
-Mount a directory from a remote server on your local host via SSH
-[<sup>ref</sup>][Cannon]
-```sh
-sshfs remotehost:/directory mountpoint
-```
-
 ## SELinux
-[chcon]:                       #chcon                          '```&#10;$ chcon&#10;```&#10;Change context of a file or directory&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 207'
-[getenforce]:                  #getenforce                     '```&#10;$ getenforce&#10;```&#10;Determine the current SELinux mode&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 205'
-[getsebool]:                   #getsebool                      '```&#10;$ getsebool&#10;```&#10;Display names and values of SELinux Booleans&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 206'
-[restorecon]:                  #restorecon                     '```&#10;$ restorecon&#10;```&#10;Reset default security context on a file or directory&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 207'
-[semanage]:                    #semanage                       '```&#10;$ semanage&#10;```&#10;Edit security contexts for files and ports&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 206'
-[sestatus]:                    #sestatus                       '```&#10;$ sestatus&#10;```&#10;Display status of SELinux&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 205'
-[setenforce]:                  #setenforce                     '```&#10;$ setenforce&#10;```&#10;Change SELinux mode&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 205'
-[setsebool]:                   #setsebool                      '```&#10;$ setsebool&#10;```&#10;Set an SELinux Boolean&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 206'
-
 [`chcon`][chcon] 
 [`getenforce`][getenforce] 
 [`getsebool`][getsebool] 
@@ -3847,38 +4063,6 @@ semanage port -l
 
 
 ## System administration
-
-[adduser]:                     #adduser             '```&#10;$ adduser&#10;```&#10;Create a new user or update default new user information'
-[at]:                          #at                                     '```&#10;$ at&#10;```&#10;Schedule one or more commands to be executed at a specific time in the future.&#10;After specifying a future time on the command-line, the `at>` prompt appears, allowing you to specify a series of shell commands which can be terminated with Ctrl+D (EOF)&#10;Rothwell, William. _CompTIA Linux+/LPIC-1 Portable Command guide_.: 195'
-[atq]:                         #atq                 '```&#10;$ atq&#10;```&#10;'
-[atrm]:                        #atrm                '```&#10;$ atrm&#10;```&#10;'
-[chage]:                       #chage               '```&#10;$ chage&#10;```&#10;Modify password-aging features for a user.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 95'
-[edquota]:                     #edquota             '```&#10;$ edquota&#10;```&#10;Create or edit disk quota of `$USER`&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 99'
-[getent]:                      #getent              '```&#10;$ getent&#10;```&#10;List values stored in colon-delimited user and group account databases like /etc/passwd&#10;Rothwell, William. _CompTIA Linux+/LPIC-1 Portable Command guide_.: 185'
-[gpasswd]:                     #gpasswd             '```&#10;$ gpasswd&#10;```&#10;Interactively set the password for `$GROUP`&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 326'
-[groupadd]:                    #groupadd            '```&#10;$ groupadd&#10;```&#10;Add `$GROUP` to the system&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 325'
-[groupdel]:                    #groupdel            '```&#10;$ groupdel&#10;```&#10;Delete `$GROUP` from the system&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 325'
-[groupmod]:                    #groupmod            '```&#10;$ groupmod&#10;```&#10;Modify the parameters of `$GROUP`&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 325'
-[last]:                        #last                '```&#10;$ last&#10;```&#10;Display history of successful logins'
-[lastb]:                       #lastb               '```&#10;$ lastb&#10;```&#10;Display failed login attempts&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 255'
-[passwd]:                      #passwd              '```&#10;$ passwd&#10;```&#10;Interactively set the password for `$USER`&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 325'
-[quota]:                       #quota               '```&#10;$ quota&#10;```&#10;Display quota limits on user or group&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 169'
-[quotacheck]:                  #quotacheck          '```&#10;$ quotacheck&#10;```&#10;Examine filesystems and compile quota databases&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 171'
-[quotaoff]:                    #quotaoff            '```&#10;$ quotaoff&#10;```&#10;Disable disk quotas on one or more filesystems&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 171'
-[quotaon]:                     #quotaon             '```&#10;$ quotaon&#10;```&#10;Enable previously configure disk quotas on one or more filesystems&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 170'
-[repquota]:                    #repquota            '```&#10;$ repquota&#10;```&#10;Display quotas for an entire filesystem&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 101'
-[su]:                          #su                  '```&#10;$ su&#10;```&#10;Allow a user to shift user accounts&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 209'
-[sudo]:                        #sudo                '```&#10;$ sudo&#10;```&#10;Run commands as other users (typically as the root user).&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 209'
-[sudoedit]:                    #sudoedit            '```&#10;$ sudoedit&#10;```&#10;Edit a file using sudo&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 210'
-[ulimit]:                      #ulimit              '```&#10;$ ulimit&#10;```&#10;Display or set a account limits of `$USER`&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 201'
-[useradd]:                     #useradd             '```&#10;$ useradd&#10;```&#10;Create a user account&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 94'
-[userdel]:                     #userdel             '```&#10;$ userdel&#10;```&#10;Delete a user account&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 96'
-[usermod]:                     #usermod             '```&#10;$ usermod&#10;```&#10;Modify a user account&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 94'
-[visudo]:                      #visudo              '```&#10;$ visudo&#10;```&#10;Safely edit the /etc/sudoers file'
-[w]:                           #w                   '```&#10;$ w&#10;```&#10;Display output similar to that of `uptime` for all logged-in users&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 97'
-[who]:                         #who                 '```&#10;$ who&#10;```&#10;Display currently users currently logged in&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 97'
-[whoami]:                      #whoami              '```&#10;$ whoami&#10;```&#10;Display effective user ID&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 96'
-
 [`adduser`][adduser] 
 [`at`][at] 
 [`atq`][atq] 
@@ -4310,7 +4494,7 @@ Find all files in {$PATH} that are owned by {user}
 find $PATH -user username
 ```
 Find recently modified files/folders
-There are 3 timestamps associated with files in Linux [<sup>ref</sup>][42]
+There are 3 timestamps associated with files in Linux <sup>[2daygeek.com](https://www.2daygeek.com/check-find-recently-modified-files-folders-linux/ "How to find recently modified files/folders in Linux")</sup>
 - `atime` "access time": last time file was accessed by a command or application
 - `mtime` "modify time": last time file's contents were modified
 - `ctime` "change time": last time file's attribute was modified 
@@ -4392,7 +4576,7 @@ Display dependencies of {program}
 ldd program
 ```
 ### `lowriter`
-`lowriter` is a command-line utility installed with LibreOffice Writer. [<sup>ref</sup>][21]
+`lowriter` is a command-line utility installed with LibreOffice Writer. <sup>[vitux.com](https://vitux.com/how-to-convert-documents-to-pdf-format-on-the-ubuntu-command-line/ "vitux.com: \"How to convert documents to PDF format on the Ubuntu Command Line\"")</sup>
 
 Convert a single file to PDF
 ```sh
@@ -4448,7 +4632,7 @@ Display all installed Python modules
 pydoc modules
 ```
 ### `rename`
-`rename` uses regular expressions [Network World][https://www.networkworld.com/article/3433865/how-to-rename-a-group-of-files-on-linux.html#tk.rss_linux]
+`rename` uses regular expressions <sup>[Network World][https://www.networkworld.com/article/3433865/how-to-rename-a-group-of-files-on-linux.html#tk.rss_linux]</sup>
 
 Option  | POSIX option            | Effect
 :---    | :---                    | :---
@@ -5684,29 +5868,29 @@ nameserver files
 ### /etc/postfix/main.cf
 [Postfix](#postfix) config 
 
-Set e-mail domain name [<sup>ref</sup>][Eckert]
+Set e-mail domain name <sup>[Eckert][Eckert]</sup>
 ```cfg
 mydomain = sample.com
 ```
-Set local access to domain name [<sup>ref</sup>][Eckert]
+Set local access to domain name <sup>[Eckert][Eckert]</sup>
 ```cfg
 myorigin = $mydomain
 ```
-Configure postfix to listen for email on all interfaces [<sup>ref</sup>][Eckert]
+Configure postfix to listen for email on all interfaces <sup>[Eckert][Eckert]</sup>
 ```cfg
 inet_interfaces = all
 ```
-Configure destination domain for email [<sup>ref</sup>][Eckert]
+Configure destination domain for email <sup>[Eckert][Eckert]</sup>
 ```cfg
 mydestination = $myhostname, localhost.$mydomain, localhost, $mydomain
 ```
-Trust email from computers on the local network [<sup>ref</sup>][Eckert]
+Trust email from computers on the local network <sup>[Eckert][Eckert]</sup>
 ```cfg
 mynetworks_style = class
 ```
 # Tasks
 #### Custom resolution
-Specify a custom resolution in a VM [<sup>ref</sup>](https://stafwag.github.io/blog/blog/2018/04/22/high-screen-resolution-on-a-kvm-virtual-machine-with-qxl/ 'stafwag.github.io: "High screen resolution on a KVM virtual machine with QXL")
+Specify a custom resolution in a VM <sup>[github.io](https://stafwag.github.io/blog/blog/2018/04/22/high-screen-resolution-on-a-kvm-virtual-machine-with-qxl/ 'stafwag.github.io: "High screen resolution on a KVM virtual machine with QXL")</sup>
 ```sh
 cvt 2560 1440
 xrandr --newmode "2560x1440_60.00" 312.25 2560 2752 3024 3488  1440 1443 1448 1493 -hsync +vsync
@@ -5724,7 +5908,7 @@ export DISPLAY=me.luna.edu:0
 ```
 
 #### Samba
-Install and configure Samba server [<sup>vitux.com</sup>][https://vitux.com/how-to-install-and-configure-samba-on-ubuntu/]
+Install and configure Samba server <sup>[vitux.com][https://vitux.com/how-to-install-and-configure-samba-on-ubuntu/]</sup>
 Install `samba`
 ```sh
 sudo apt install samba
@@ -5756,7 +5940,7 @@ Set up a Samba account for `$USER`
 ```sh
 sudo smbpasswd -a $USER
 ```
-Restart Samba service [<sup>ref</sup>][https://vitux.com/how-to-install-and-configure-samba-on-ubuntu/] [<sup>tecmint.com</sup>][https://www.tecmint.com/install-samba-on-rhel-8-for-file-sharing-on-windows/]
+Restart Samba service <sup>[vitux.com][https://vitux.com/how-to-install-and-configure-samba-on-ubuntu/] [tecmint.com][https://www.tecmint.com/install-samba-on-rhel-8-for-file-sharing-on-windows/]</sup>
 ```sh
 sudo systemctl restart smbd.service
 ```
@@ -5773,7 +5957,7 @@ This will display the Samba CLI
 smb: \>
 ```
 #### Bash scripting
-Validating arguments [<sup>Sobell: 548</sup>][Sobell]
+Validating arguments <sup>[Sobell][Sobell]: 548</sup>
 ```sh 
 if [ $# != 2 ]
 then 
@@ -5789,7 +5973,7 @@ fi
 ```sh
 if [ ! -z "$2" ] ; then ...; fi
 ```
-Placed in a while loop, if user responds with anything except "y" (the read command will read only the first letter) the loop will terminate [<sup>CLKF</sup>][CLKF]
+Placed in a while loop, if user responds with anything except "y" (the read command will read only the first letter) the loop will terminate <sup>[Cannon][CLKF]</sup>
 ```bash
 read -p "Backup another server? (y/n)" -n 1
 ["$BACKUP_AGAIN"="y"] || break
@@ -5819,7 +6003,7 @@ Change hostname
 ```bash
 sudo hostnamectl set-hostname newhostname
 ```
-Check kernel version <sup>[ref](https://linuxize.com/post/how-to-check-the-kernel-version-in-linux/ "linuxize.com: \"How to check the Kernel version in Linux\"")</sup>
+Check kernel version <sup>[linuxize.com](https://linuxize.com/post/how-to-check-the-kernel-version-in-linux/ "linuxize.com: \"How to check the Kernel version in Linux\"")</sup>
 ```bash
 uname -srm
 ```
