@@ -2949,41 +2949,18 @@ rpm -E %fedora
 [`remove`][snap remove] 
 
 ### `yay`
-Display all AUR packages that need to be updated (deprecated)
-```sh
-yay -Pu
-yay --show --upgrades package
-```
-List all install packages, filtering output to packages that are out-of-date on the local system
-```sh
-yay -Qu
-yay --query --upgrades
-```
-Install {pkg} from the AUR
-```sh
-yay -S package
-yay --sync package
-```
-Display information about {package}
-```sh
-yay -Si package
-yay --sync --info package
-```
-Search for {pkg} in AUR repos
-```sh
-yay -Ss package
-yay --sync --search package
-```
-Update all packages from AUR and official repos
-```sh
-yay -Syu
-yay --sync --refresh --sysupgrade
-```
-Remove unwanted dependencies of now-removed installations of AUR repos
-```sh
-yay -Yc
-yay --yay --clean
-```
+[yay -&#81;]: #yay '```&#10;$ yay -Q&#10;$ yay --query&#10;```&#10;'
+[yay -&#117;]: #yay '```&#10;$ yay -u&#10;$ yay --upgrades&#10;```&#10;'
+[yay -&#83;]: #yay '```&#10;$ yay -S&#10;$ yay --sync&#10;```&#10;'
+[yay -&#105;]: #yay '```&#10;$ yay -i&#10;$ yay --info&#10;```&#10;'
+[yay -&#115;]: #yay '```&#10;$ yay -s&#10;$ yay --search&#10;```&#10;'
+[yay -&#121;]: #yay '```&#10;$ yay -y&#10;$ yay --refresh&#10;```&#10;'
+[yay -&#117;]: #yay '```&#10;$ yay -u&#10;$ yay --upgrades&#10;```&#10;'
+[yay -&#99;]: #yay '```&#10;$ yay -c&#10;$ yay --clean&#10;```&#10;'
+[yay -&#80;]: #yay '```&#10;$ yay -P&#10;$ yay --show&#10;```&#10;'
+
+<code>&nbsp;</code>   <code>&nbsp;</code> <code>&nbsp;</code> [`c`][yay -&#99;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`i`][yay -&#105;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`s`][yay -&#115;] <code>&nbsp;</code> [`u`][yay -&#117;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`y`][yay -&#121;] <code>&nbsp;</code>  <br><code>&nbsp;</code>&nbsp;<code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`P`][yay -&#80;] [`Q`][yay -&#81;] <code>&nbsp;</code> [`S`][yay -&#83;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 
+
 ### `yum`
 [yum -&#121;]: #yum '```&#10;$ yum -y&#10;$ yum --assumeyes&#10;```&#10;Respond to any prompt with "yes" automatically'
 [yum -&#120;]: #yum '```&#10;$ yum -x&#10;$ yum --exclude&#10;```&#10;Exclude specific packages from updates'
@@ -3915,7 +3892,674 @@ Check memory usage in megabytes (`-m`) every `5` seconds <sup>Enki</sup>
 ```sh
 watch -n 5 free -m
 ```
+## Text
+[cat]: #cat '```&#10;$ cat&#10;```&#10;Display contents of text files&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 115'
+[cmp]: #cmp '```&#10;$ cmp $FILE $OTHER&#10;```&#10;Compare `$FILE` with `$OTHER`, or STDIN if one or the other is not provided (cf. `comm` and `diff`). Exits with 0 if files are identical or 1 if they are not.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 39'
+[cmp]: #cmp '```&#10;$ cmp&#10;```&#10;Compare two files&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 610'
+[comm]: #comm '```&#10;$ comm $FILE $OTHER&#10;```&#10;Compare lines common to the sorted files `$FILE` and `$OTHER`. Output is in 3 colums: lines unique to `$FILE`, lines unique to `$OTHER`, and lines common to both.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 39'
+[csplit]: #csplit '```&#10;$ csplit&#10;```&#10;Separate `$FILE` into sections and place sections in files named "xx00" through "xxn" (n < 100)&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 46'
+[cut]: #cut '```&#10;$ cut&#10;```&#10;Select a list of columns or fields from one or more files&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 50'
+[diff]: #diff '```&#10;$ diff $FILE $OTHER&#10;```&#10;Report lines that differ between `$FILE` and `$OTHER`. Output consists of lines of context from each file, with `$FILE` text flagged by a "&lt;" and `$OTHER` text by a "&gt;". (cf. `cmp`, `comm`, `diff3`, `dircmp`, and `sdiff`).&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 58'
+[diff3]: #diff3 '```&#10;$ diff3&#10;```&#10;Compare three files and report differences&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 63'
+[ed]: #ed '```&#10;$ ed&#10;```&#10;Line-oriented text editor, superceded by `vi` and `ex`&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 70'
+[egrep]: #egrep '```&#10;$ egrep&#10;```&#10;Equivalent to `grep -E`&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 128'
+[ex]: #ex '```&#10;$ ex&#10;```&#10;Line-oriented text editor, a superset of `ed` and the root of `vi`.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 78'
+[expand]: #expand '```&#10;$ expand&#10;```&#10;Convert Tabs to spaces&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 79'
+[fgrep]: #fgrep '```&#10;$ fgrep $PATTERN&#10;```&#10;Search one or more files for lines that match a literal, text-string `$PATTERN`&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 82'
+[fmt]: #fmt '```&#10;$ fmt&#10;```&#10;Format text to a specified width by filling lines and removing newline characters&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 79'
+[gettext]: #gettext '```&#10;$ gettext $STRING&#10;```&#10;Translate `$STRING`&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 99'
+[grep]: #grep '```&#10;$ grep $PATTERN $FILES&#10;```&#10;Search `$FILES` for lines containing a match to regex `$PATTERN`&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 126'
+[groff]: #groff '```&#10;$ groff&#10;```&#10;Format documents to screen or for laser printing; GNU version of `troff`'
+[head]: #head '```&#10;$ head&#10;```&#10;Print the first few lines of one or more files&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 79'
+[join]: #join '```&#10;$ join $FILE $OTHER&#10;```&#10;Print a line for each pair of input lines, one each from `$FILE` and `$OTHER`, that have identical join fields.&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 80'
+[less]: #less '```&#10;$ less&#10;```&#10;Pager&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 116'
+[look]: #look '```&#10;$ look&#10;```&#10;Look through a sorted file and print all lines that begin with `$STRING`&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 124'
+[more]: #more '```&#10;$ more&#10;```&#10;Display text one page at a time; superceded by `less`.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 116'
+[nl]: #nl '```&#10;$ nl&#10;```&#10;Number the lines of files, which are concatenated in the output.&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 81'
+[od]: #od '```&#10;$ od&#10;```&#10;Dump files in octal and other formats&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 82'
+[paste]: #paste '```&#10;$ paste&#10;```&#10;Paste together corresponding lines of one or more files into vertical columns, similar to but simpler than `join`.&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 83'
+[pr]: #pr '```&#10;$ pr&#10;```&#10;Convert a text file into a paginated, columnar version, with headers and page fills&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 84'
+[sed]: #sed '```&#10;$ sed&#10;```&#10;"Stream editor", powerful filtering program found on nearly every Unix system.&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 128'
+[shuf]: #shuf '```&#10;$ shuf&#10;```&#10;Randomly permute input'
+[sort]: #sort '```&#10;$ sort&#10;```&#10;Sort text data&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 124'
+[split]: #split '```&#10;$ split $INFILE $OUTFILE&#10;```&#10;Split `$INFILE` into a specified number of line groups, named `$OUTFILE`aa, `$OUTFILE`ab, etc&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 86'
+[tac]: #tac '```&#10;$ tac&#10;```&#10;Print text files to STDOUT with lines in reverse order&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 87'
+[tail]: #tail '```&#10;$ tail&#10;```&#10;Display the bottom part of text data.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 115'
+[tee]: #tee '```&#10;$ tee&#10;```&#10;Send output to both STDOUT and to a file&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 122'
+[tr]: #tr '```&#10;$ tr&#10;```&#10;Translate characters from one set to another&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 123'
+[unexpand]: #unexpand '```&#10;$ unexpand&#10;```&#10;Convert spaces to tabs&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 89'
+[uniq]: #uniq '```&#10;$ uniq $INPUT $OUTPUT&#10;```&#10;Write $INPUT to $OUTPUT, eliminating adjacent duplicate lines&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 89'
+[wc]: #wc '```&#10;$ wc&#10;```&#10;Display number of lines, words, or characters of data.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 128'
 
+[`cat`][cat] 
+[`cmp`][cmp] 
+[`cmp`][cmp] 
+[`comm`][comm] 
+[`csplit`][csplit] 
+[`cut`][cut] 
+[`diff`][diff] 
+[`diff3`][diff3] 
+[`ed`][ed] 
+[`egrep`][egrep] 
+[`ex`][ex] 
+[`expand`][expand] 
+[`fgrep`][fgrep] 
+[`fmt`][fmt] 
+[`gettext`][gettext] 
+[`grep`][grep] 
+[`groff`][groff] 
+[`head`][head] 
+[`join`][join] 
+[`less`][less] 
+[`look`][look] 
+[`more`][more] 
+[`nl`][nl] 
+[`od`][od] 
+[`paste`][paste] 
+[`pr`][pr] 
+[`sed`][sed] 
+[`shuf`][shuf] 
+[`sort`][sort] 
+[`split`][split] 
+[`tac`][tac] 
+[`tail`][tail] 
+[`tee`][tee] 
+[`tr`][tr] 
+[`unexpand`][unexpand] 
+[`uniq`][uniq] 
+[`wc`][wc] 
+
+### `awk`
+###### Options
+[awk -&#70;]: #awk '```&#10;$ awk -F $C&#10;```&#10;Set field separator to `$C`'
+[awk -&#102;]: #awk '```&#10;$ awk -f $PROGRAMFILE&#10;```&#10;Specify awk program-file `$PROGRAMFILE`'
+[awk -&#118;]: #awk '```&#10;$ awk -v $VAR=$VAL&#10;$ awk --assign $VAR=$VAL&#10;```&#10;Set variable `$VAR` to value `$VAL` before script is executed'
+
+<code>&nbsp;</code>   <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`f`][awk -&#102;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`v`][awk -&#118;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code>  <br><code>&nbsp;</code>&nbsp;<code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`F`][awk -&#70;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 
+
+###### Variables
+[awk ARGC]: #awk '```&#10;$ ARGC&#10;```&#10;&#10;Number of arguments in command line'
+[awk ARGV]: #awk '```&#10;$ ARGV&#10;```&#10;&#10;List of arguments'
+[awk FILENAME]: #awk '```&#10;$ FILENAME&#10;```&#10;&#10;Current input filename'
+[awk FNR]: #awk '```&#10;$ FNR&#10;```&#10;&#10;Number of the current record relative to the current input file'
+[awk FS]: #awk '```&#10;$ FS&#10;```&#10;&#10;Field separator (whitespace by default)'
+[awk NF]: #awk '```&#10;$ NF&#10;```&#10;&#10;Number of fields for the current input record'
+[awk NR]: #awk '```&#10;$ NR&#10;```&#10;&#10;Number of the current input record'
+[awk OFS]: #awk '```&#10;$ OFS&#10;```&#10;&#10;Output field separator (space by default)'
+[awk ORS]: #awk '```&#10;$ ORS&#10;```&#10;&#10;Output record separator'
+[awk RS]: #awk '```&#10;$ RS&#10;```&#10;&#10;Record separator (newline by default)'
+
+[`ARGC`][awk ARGC] 
+[`ARGV`][AWK ARGV] 
+[`FILENAME`][AWK FILENAME] 
+[`FNR`][AWK FNR] 
+[`FS`][AWK FS] 
+[`NF`][AWK NF] 
+[`NR`][AWK NR] 
+[`OFS`][AWK OFS] 
+[`ORS`][AWK ORS] 
+[`RS`][AWK RS] 
+
+###### Functions
+[awk gsub()]: #gsub() '```&#10;$ gsub()&#10;$ gsub($PATTERN,$SUBSTITUTION,$STRING)&#10;```&#10;&#10;Replace all instances of `$PATTERN` with `$SUBSTITUTION` in `$STRING` (`$0` if not specified)'
+[awk sub()]: #sub() '```&#10;$ sub()&#10;$ sub($PATTERN,$SUBSTITUTION,$STRING)&#10;```&#10;&#10;Replace first instance of `$PATTERN` with `$SUBSTITUTION` in `$STRING` (`$0` if not specified)'
+[awk index()]: #index() '```&#10;$ index()&#10;$ index($SUBSTR,$STRING)&#10;```&#10;&#10;Return (1-indexed) position of `$SUBSTR` within `$STRING` (or `$0` if not specified)'
+[awk length()]: #length() '```&#10;$ length()&#10;$ length($STRING)&#10;```&#10;&#10;Return length of `$STRING` (or `$0` if not specified)'
+[awk match()]: #match() '```&#10;$ match()&#10;$ match($STRING,$PATTERN)&#10;```&#10;&#10;Return position in `$STRING` where `$PATTERN` begins, or 0 if not found'
+[awk printf()]: #printf() '```&#10;$ printf()&#10;$ printf "$CTRLSTR", *args&#10;```&#10;&#10;The "control-string" `$CTRLSTR` is interpolated with expressions called **conversion specifications**, with the syntax `%[-][x[.y]]conv` where `x` represents minimum field width, `y` number of places to the right of a decimal point in a number, and `conv` can be one of the following values&#10;  - `d` integer&#10;  - `e` exponential notation&#10;  - `f` floating point number&#10;  - `g` use `f` or `e`, whichever is shorter&#10;  - `o` unsigned octal&#10;  - `s` string&#10;  - `x` unsigned hexadecimal&#10;Olushile, Paul. _Linux 5 Performance Monitoring and Tuning_.: 534'
+[awk split()]: #split() '```&#10;$ split()&#10;$ split($STRING,$ARRAY,$DELIM)&#10;```&#10;&#10;Break up `$STRING` by `$DELIM` and store the fields in `$ARRAY`&#10;"Universal Windows Platform apps". _Wikipedia_.: 481'
+[awk substr()]: #substr() '```&#10;$ substr()&#10;$ substr($STRING,$N,$M)&#10;```&#10;&#10;Extract a substring from `$STRING`, where `$N` represents the starting position and `$M` the number of characters to be extracted from that point'
+[awk tolower()]: #tolower() '```&#10;$ tolower()&#10;$ tolower($STRING)&#10;```&#10;&#10;Convert `$STRING` to lowercase letters'
+[awk toupper()]: #toupper() '```&#10;$ toupper()&#10;$ toupper($STRING)&#10;```&#10;&#10;Convert `$STRING` to uppercase letters'
+
+[`gsub()`][awk gsub()] 
+[`sub()`][awk sub()] 
+[`index()`][awk index()] 
+[`length()`][awk length()] 
+[`match()`][awk match()] 
+[`printf()`][awk printf()] 
+[`split()`][awk split()] 
+[`substr()`][awk substr()] 
+[`tolower()`][awk tolower()] 
+[`toupper()`][awk toupper()] 
+
+#### 
+
+>"The basic function of awk is to search files for lines that contain certain patterns." ([GEAP](../sources/README.md): 17
+
+Pattern-scanning utility and processing language, one of the two primary commands which accept regular expressions in Unix systems.
+
+`awk` **programs** can be defined **inline** or in a **program-file** ([PGL](../sources/README.md): 528)
+  - inline: `awk options 'program' input-files`
+  - **program-file**, also "source-file" ([GEAP](../sources/README.md):18): `awk options -f program-file input-files` 
+
+`awk` programs can be run without defining **input-files**, in which case awk will accept input from STDIN
+
+`awk` **programs** are the equivalent of sed "instructions", and similarly combine **patterns** and **actions** ([PGL](../sources/README.md): 530, [GEAP](../sources/README.md): 17)
+
+Patterns can be:
+- regular expressions or fixed strings
+- line numbers using builtin variable `NR`
+- predefined patterns `BEGIN` or `END`, whose actions are executed before and after processing any lines of the data file, respectively
+
+
+change ":" to newlines in PATH variable; equivalent to `echo $PATH \| tr ":" "\n"` 
+```sh
+echo $PATH | awk 'BEGIN {RS=":"} {print}'
+```
+print the first field of all files in the current directory, taking semicolon `;` as the field separator, outputting filename, line number, and first field of matches, with colon `:` between the filename and line number
+```sh
+awk 'BEGIN {FS=";"} /enable/ {print FILENAME ":" FNR,$1}' *
+```
+search for string `MA` in all files, outputting filename, line, and line number for matches
+```sh
+awk '/MA/ {OFS=" " print FILENAME OFS FNR OFS $0} *
+``` 
+change field separator (`FS`) to a colon (`:`) and run `awkscr`
+```sh
+awk -F: -f awkscr /etc/passwd
+```
+flag also works for awk
+```sh
+awk -f script files` `-f
+```
+print the first field of each line in the input file
+```sh
+awk '{ print $1 }' list
+```
+equivalent to `grep MA *` (`{print}` is implied)
+```sh
+awk '/MA/' * | awk '/MA/ {print}' *
+```
+`-F` flag is followed by field separator
+```sh
+awk -F, '/MA/ { print $1 }' list
+```
+pipe output of `free` to `awk` to get free memory and total memory
+```sh
+free -h | awk '/^Mem|/ {print $3 "/" $2}
+```
+pipe output of `sensors` to `awk` to get CPU temperature
+```sh
+sensors | awk '/^temp1/ {print $2}
+```
+replace initial "fake." with "real;" in file `fake_isbn`
+```sh
+awk 'sub(^fake.,"real;")' fake_isbn
+```
+print all lines
+```sh
+awk '1 { print }' file
+```
+remove file header
+```sh
+awk 'NR>1' file
+```
+remove file header
+```sh
+awk 'NR>1 { print } file
+```
+print lines in a range
+```sh
+awk 'NR>1 && NR < 4' file
+```
+remove whitespace-only lines
+```sh
+awk 'NF' file
+```
+remove all blank lines
+```sh
+awk '1' RS='' file
+```
+extract fields
+```sh
+awk '{ print $1, $3}' FS=, OFS=, file
+```
+perform column-wise calculations
+```sh
+awk '{ SUM=SUM+$1 } END { print SUM }' FS=, OFS=, file
+```
+count the number of nonempty lines
+```sh
+awk '/./ { COUNT+=1 } END { print COUNT }' file
+```
+count the number of nonempty lines
+```sh
+awk 'NF { COUNT+=1 } END { print COUNT }' file
+```
+count the number of nonempty lines
+```sh
+awk '+$1 { COUNT+=1 } END { print COUNT }' file
+```
+Arrays
+```sh
+awk '+$1 { CREDITS[$3]+=$1 } END { for (NAME in CREDITS) print NAME, CREDITS[NAME] }' FS=, file
+```
+Identify duplicate lines
+```sh
+awk 'a[$0]++' file
+```
+Remove duplicate lines
+```sh
+awk '!a[$0]++' file
+```
+Remove multiple spaces
+```sh
+awk '$1=$1' file
+```
+Join lines
+```sh
+awk '{ print $3 }' FS=, ORS=' ' file; echo
+```
+```sh
+awk '+$1 { SUM+=$1; NUM+=1 } END { printf("AVG=%f",SUM/NUM); }' FS=, file` | format 
+```
+```sh
+awk '+$1 { SUM+=$1; NUM+=1 } END { printf("AVG=%6.1f",SUM/NUM); }' FS=, file
+```
+Convert to uppercase 
+```sh
+awk '$3 { print toupper($0); }' file
+```
+Change part of a string
+```sh
+awk '{ $3 = toupper(substr($3,1,1)) substr($3,2) } $3' FS=, OFS=, file
+```
+Split the second field ("EXPDATE") by spaces, storing the result into the array DATE; then print credits ($1) and username ($3) as well as the month (DATE[2]) and year (DATE[3]) 
+```sh
+awk '+$1 { split($2, DATE, " "); print $1,$3, DATE[2], DATE[3] }' FS=, OFS=, file
+```
+```sh
+awk '+$1 { split($4, GRP, ":"); print $3, GRP[1], GRP[2] }' FS=, file
+```
+```sh
+awk '+$1 { split($4, GRP, /:+/); print $3, GRP[1], GRP[2] }' FS=, file
+``` 
+Search and replace with comma 
+```sh
+awk '+$1 { gsub(/ +/, "-", $2); print }' FS=, file
+```
+Adding date 
+```sh
+awk 'BEGIN { printf("UPDATED: "); system("date") } /^UPDATED:/ { next } 1' file
+```
+Modify a field externally 
+```sh
+awk '+$1 { CMD | getline $5; close(CMD); print }' CMD="uuid -v4" FS=, OFS=, file
+```
+Invoke dynamically generated command
+```sh
+awk '+$1 { cmd = sprintf(FMT, $2); cmd | getline $2; close(cmd); print }' FMT='date -I -d "%s"'  FS=, file
+```
+Join data
+```sh
+awk '+$1 { CMD | getline $5; print }' CMD='od -vAn -w4 -t x /dev/urandom' FS=, file
+```
+Add up all first records to {sum}, then print that number out at the end
+```sh
+awk '{sum += $1} END {print sum}' file
+```
+
+### `cat`
+[cat -&#65;]: #cat '```&#10;$ cat -A&#10;```&#10;Display nonprinting characters; display `$` at the end of each line and `^I` for Tab characters&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 78'
+[cat -&#98;]: #cat '```&#10;$ cat -b&#10;$ cat --number-nonblank&#10;```&#10;number all nonblank output lines&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 32'
+[cat -&#69;]: #cat '```&#10;$ cat -E&#10;$ cat --show-ends&#10;```&#10;print "$" at the end of each line&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 32'
+[cat -&#101;]: #cat '```&#10;$ cat -e&#10;```&#10;same as `-vE`&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 32'
+[cat -&#110;]: #cat '```&#10;$ cat -n&#10;$ cat --number&#10;```&#10;number lines, including blank lines&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 32'
+[cat -&#115;]: #cat '```&#10;$ cat -s&#10;$ cat --squeeze-blank&#10;```&#10;collapse multiple blank lines to a single one&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 32'
+[cat -&#116;]: #cat '```&#10;$ cat -t&#10;```&#10;same as `-vT`&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 32'
+[cat -&#84;]: #cat '```&#10;$ cat -T&#10;$ cat --show-tabs&#10;```&#10;print TAB characters as "^I"&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 32'
+[cat -&#117;]: #cat '```&#10;$ cat -u&#10;```&#10;ignored; retained for Unix compatibility&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 32'
+[cat -&#118;]: #cat '```&#10;$ cat -v&#10;$ cat --show-nonprinting&#10;```&#10;display conrol characters and nonprinting characters, except LINEFEED and TAB&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 32'
+
+<code>&nbsp;</code>   <code>&nbsp;</code> [`b`][cat -&#98;] <code>&nbsp;</code> <code>&nbsp;</code> [`e`][cat -&#101;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`n`][cat -&#110;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`s`][cat -&#115;] [`t`][cat -&#116;] [`u`][cat -&#117;] [`v`][cat -&#118;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code>  <br><code>&nbsp;</code>&nbsp;[`A`][cat -&#65;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`E`][cat -&#69;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`T`][cat -&#84;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 
+
+### `diff`
+[diff -&#97;]: #diff '```&#10;$ diff -a&#10;$ diff --text&#10;```&#10;Treat all files as text files&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 60'
+[diff -&#98;]: #diff '```&#10;$ diff -b&#10;$ diff --ignore-space-change&#10;```&#10;Treat successive blanks as one, including end-of-line blanks&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 59'
+[diff -&#66;]: #diff '```&#10;$ diff -B&#10;$ diff --ignore-blank-lines&#10;```&#10;Ignore blank lines in files&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 60'
+[diff -&#99;]: #diff '```&#10;$ diff -c&#10;```&#10;Produce output in "context diff" format, with three lines of context&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 59'
+[diff -&#67;]: #diff '```&#10;$ diff -C&#10;$ diff --$N&#10;```&#10;Like `-c`, but produce `$N` lines of context&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 59'
+[diff -&#68;]: #diff '```&#10;$ diff -D $SYMBOL&#10;$ diff --ifdef $SYMBOL&#10;```&#10;Merge files into a single one, containing conditional C preprocessor directives (`#ifdef`)&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 59'
+[diff -&#100;]: #diff '```&#10;$ diff -d&#10;$ diff --minimal&#10;```&#10;Ignore segments of numerous changes and output a smaller set of changes, to speed up comparison.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 60'
+[diff -&#101;]: #diff '```&#10;$ diff -e&#10;$ diff --ed&#10;```&#10;Produce an `ed` script to recreate `$OTHER` from `$FILE`&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 59'
+[diff -&#69;]: #diff '```&#10;$ diff -E&#10;$ diff --ignore-tab-expansion&#10;```&#10;Ignore differences due to expanding tabs&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 60'
+[diff -&#102;]: #diff '```&#10;$ diff -f&#10;$ diff --forward-ed&#10;```&#10;Produce an `ed` script to recreate `$FILE` from `$OTHER`&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 59'
+[diff -&#70;]: #diff '```&#10;$ diff -F $PATTERN&#10;$ diff --show-function-line $PATTERN&#10;```&#10;For context and unified diffs, show the most recent line containing regex `$PATTERN` before each block of changed lines&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 60'
+[diff -&#104;]: #diff '```&#10;$ diff -h&#10;```&#10;Ignored by GNU `diff`&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 59'
+[diff -&#105;]: #diff '```&#10;$ diff -i&#10;$ diff --ignore-case&#10;```&#10;Case-insensitive comparison&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 59'
+[diff -&#108;]: #diff '```&#10;$ diff -l&#10;$ diff --paginate&#10;```&#10;Long format; output is paginated by `pr` so that diff listings for each file begin on a new page.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 59'
+[diff -&#76;]: #diff '```&#10;$ diff -L $LABEL&#10;$ diff --label $LABEL&#10;```&#10;For context and unified diffs, print `$LABEL` in place of the filename being compared; use once for `$FILE` and again for `$OTHER`&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 60'
+[diff -&#110;]: #diff '```&#10;$ diff -n&#10;$ diff --rcs&#10;```&#10;Like `-f`, but counts changed lines the way `rcsdiff` does&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 59'
+[diff --normal]: #diff '```&#10;$ diff --normal&#10;```&#10;Produce a normal diff (default)&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 60'
+[diff -&#78;]: #diff '```&#10;$ diff -N&#10;$ diff --new-file&#10;```&#10;Treat nonexistent files as empty&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 61'
+[diff -&#112;]: #diff '```&#10;$ diff -p&#10;$ diff --show-c-function&#10;```&#10;When handling files in C or C-like languages such as Java, show the function containing each block of changed lines.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 61'
+[diff -&#113;]: #diff '```&#10;$ diff -q&#10;$ diff --brief&#10;```&#10;Output only when files differ&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 61'
+[diff -&#114;]: #diff '```&#10;$ diff -r&#10;$ diff --recursive&#10;```&#10;Run `diff` recursively for files in common subdirectories&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 59'
+[diff -&#115;]: #diff '```&#10;$ diff -s&#10;$ diff --report-identical-files&#10;```&#10;Report files that are identical&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 60'
+[diff -&#83;]: #diff '```&#10;$ diff -S $FILENAME&#10;$ diff --starting-file $FILENAME&#10;```&#10;Begin directory comparisons with `$FILE`, skipping files whose filenames alphabetically precede `$FILENAME`&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 60'
+[diff -&#116;]: #diff '```&#10;$ diff -t&#10;$ diff --expand-tabs&#10;```&#10;Expand tabs in output lines; usefulf or preserving indentation changed by `-c`&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 59'
+[diff -&#84;]: #diff '```&#10;$ diff -T&#10;$ diff --initial-tab&#10;```&#10;Insert initial tabs into output to line up tabs properly&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 61'
+[diff -&#117;]: #diff '```&#10;$ diff -u&#10;```&#10;Produce output in "unified `diff`" format, with 3 lines of context&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 59'
+[diff -&#85;]: #diff '```&#10;$ diff -U $N&#10;$ diff --unified $N&#10;```&#10;Like `-u`, but produces output with `$N` lines of context&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 59'
+[diff -&#118;]: #diff '```&#10;$ diff -v&#10;$ diff --version&#10;```&#10;Print version number.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 61'
+[diff -&#119;]: #diff '```&#10;$ diff -w&#10;$ diff --ignore-all-space&#10;```&#10;Ignore spaces and tabs&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 59'
+[diff -&#87;]: #diff '```&#10;$ diff -W $N&#10;$ diff --width $N&#10;```&#10;For two-column output (`-y`), produce columns with a maximum width of `$N` characters (130 by default)&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 61'
+[diff -&#120;]: #diff '```&#10;$ diff -x $PATTERN&#10;$ diff --exclude $PATTERN&#10;```&#10;Do not compare files in a directory whose names match regex `$PATTERN`&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 61'
+[diff -&#88;]: #diff '```&#10;$ diff -X $FILE&#10;$ diff --exclude-from $FILE&#10;```&#10;Do not compare files in a directory whose names match patterns described in `$FILE`&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 61'
+[diff -&#121;]: #diff '```&#10;$ diff -y&#10;$ diff --side-by-side&#10;```&#10;Two-column output&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 61'
+
+[diff --binary]: #diff '```&#10;$ diff --binary&#10;```&#10;Read and write data in binary mode&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 60'
+[diff --from-file]: #diff '```&#10;$ diff --from-file $FILE&#10;```&#10;&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 60'
+[diff --left-column]: #diff '```&#10;$ diff --left-column&#10;```&#10;For two-column output (`-y`, show only the left column of common lines&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 60'
+[diff --no-ignore-file-name-case]: #diff '```&#10;$ diff --no-ignore-file-name-case&#10;```&#10;Cancel the effect of a previous `--ignore-file-name-case` option&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 60'
+[diff --sdiff-merge-assist]: #diff '```&#10;$ diff --sdiff-merge-assist&#10;```&#10;Produce `sdiff`-style output. Used by GNU `sdiff` when invoking `diff`.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 61'
+[diff --strip-trailing-cr]: #diff '```&#10;$ diff --strip-trailing-cr&#10;```&#10;Remove carriage return characters at the end of input lines.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 61'
+[diff --to-file]: #diff '```&#10;$ diff --to-file $FILE&#10;```&#10;Compare each operand to `$FILE`, which may be a directory&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 61'
+[diff --suppress-common-lines]: #diff '```&#10;$ diff --suppress-common-lines&#10;```&#10;For two-column output (`-y`), do not show common lines.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 61'
+[diff --unidirectional-new-file]: #diff '```&#10;$ diff --unidirectional-new-file&#10;```&#10;When doing directory comparisons, if a file is found only in the second directory, pretend it is present but empty in the first one.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 61'
+
+<code>&nbsp;</code>   [`a`][diff -&#97;] [`b`][diff -&#98;] [`c`][diff -&#99;] [`d`][diff -&#100;] [`e`][diff -&#101;] [`f`][diff -&#102;] <code>&nbsp;</code> [`h`][diff -&#104;] [`i`][diff -&#105;] <code>&nbsp;</code> <code>&nbsp;</code> [`l`][diff -&#108;] <code>&nbsp;</code> [`n`][diff -&#110;] <code>&nbsp;</code> [`p`][diff -&#112;] [`q`][diff -&#113;] [`r`][diff -&#114;] [`s`][diff -&#115;] [`t`][diff -&#116;] [`u`][diff -&#117;] [`v`][diff -&#118;] [`w`][diff -&#119;] [`x`][diff -&#120;] [`y`][diff -&#121;] <code>&nbsp;</code>  <br><code>&nbsp;</code>&nbsp;<code>&nbsp;</code> [`B`][diff -&#66;] [`C`][diff -&#67;] [`D`][diff -&#68;] [`E`][diff -&#69;] [`F`][diff -&#70;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`L`][diff -&#76;] <code>&nbsp;</code> [`N`][diff -&#78;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`S`][diff -&#83;] [`T`][diff -&#84;] [`U`][diff -&#85;] <code>&nbsp;</code> [`W`][diff -&#87;] [`X`][diff -&#88;] <code>&nbsp;</code> <code>&nbsp;</code> 
+
+[`binary`][diff --binary]
+[`from-file`][diff --from-file]
+[`left-column`][diff --left-column]
+[`no-ignore-file-name-case`][diff --no-ignore-file-name-case]
+[`sdiff-merge-assist`][diff --sdiff-merge-assist]
+[`strip-trailing-cr`][diff --strip-trailing-cr]
+[`to-file`][diff --to-file]
+[`suppress-common-lines`][diff --suppress-common-lines]
+[`unidirectional-new-file`][diff --unidirectional-new-file]
+
+### `fold`
+Display text of `$FILE`, wrapping long lines
+```sh
+fold $FILE
+```
+### `grep`
+[grep -&#99;]: #grep '```&#10;$ grep -c&#10;$ grep --count&#10;```&#10;Display only a count of matched lines, but not the lines themselves.&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 126'
+[grep -&#104;]: #grep '```&#10;$ grep -h&#10;```&#10;Display matched lines, but do not include filenames for multiple file input.&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 126'
+[grep -&#105;]: #grep '```&#10;$ grep -i&#10;```&#10;Case-insensitive search.&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 126'
+[grep -&#110;]: #grep '```&#10;$ grep -n&#10;$ grep --line-number&#10;```&#10;Display matched lines prefixed with their line numbers.&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 126'
+[grep -&#118;]: #grep '```&#10;$ grep -v&#10;$ grep --invert-match&#10;```&#10;Print all lines that do not match `$PATTERN`&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 126'
+[grep -&#69;]: #grep '```&#10;$ grep -E&#10;```&#10;Interpret `$PATTERN` as an extended regular expression&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 126'
+[grep -&#108;]: #grep '```&#10;$ grep -l&#10;$ grep --files-with-matches&#10;```&#10;Display filenames that match the pattern, rather than the lines of matches themselves&#10;Rothwell, William. _CompTIA Linux+/LPIC-1 Portable Command guide_.: 100'
+[grep -&#119;]: #grep '```&#10;$ grep -w&#10;```&#10;Match whole words only&#10;Rothwell, William. _CompTIA Linux+/LPIC-1 Portable Command guide_.: 100'
+[grep -&#114;]: #grep '```&#10;$ grep -r&#10;```&#10;Recursively search all the files in the directory structure&#10;Rothwell, William. _CompTIA Linux+/LPIC-1 Portable Command guide_.: 100'
+[grep -&#102;]: #grep '```&#10;$ grep -f&#10;```&#10;Fixed strings; all characters in the pattern will be treated as regular characters&#10;Rothwell, William. _CompTIA Linux+/LPIC-1 Portable Command guide_.: 100'
+[grep -&#65;]: #grep '```&#10;$ grep -A $N&#10;```&#10;print `$N` lines of trailing context from the file after each match'
+[grep -&#66;]: #grep '```&#10;$ grep -B $N&#10;```&#10;print `$N` lines of leading context from the file after each match'
+[grep -&#67;]: #grep '```&#10;$ grep -C $N&#10;```&#10;print `$N` lines of leading and trailing context surrounding each match'
+[grep -&#69;]: #grep '```&#10;$ grep -E&#10;$ grep --extended-regexp&#10;```&#10;force grep to use extended regular expressions, making it similar to `egrep`'
+[grep -&#70;]: #grep '```&#10;$ grep -F&#10;$ grep --fixed-strings&#10;```&#10;force grep to interpret pattern as fixed strings, making it similar to `fgrep`'
+[grep -&#72;]: #grep '```&#10;$ grep -H&#10;```&#10;always print filename headers with output lines'
+
+<code>&nbsp;</code>   <code>&nbsp;</code> <code>&nbsp;</code> [`c`][grep -&#99;] <code>&nbsp;</code> <code>&nbsp;</code> [`f`][grep -&#102;] <code>&nbsp;</code> [`h`][grep -&#104;] [`i`][grep -&#105;] <code>&nbsp;</code> <code>&nbsp;</code> [`l`][grep -&#108;] <code>&nbsp;</code> [`n`][grep -&#110;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`r`][grep -&#114;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`v`][grep -&#118;] [`w`][grep -&#119;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code>  <br><code>&nbsp;</code>&nbsp;[`A`][grep -&#65;] [`B`][grep -&#66;] [`C`][grep -&#67;] <code>&nbsp;</code> [`E`][grep -&#69;] [`F`][grep -&#70;] <code>&nbsp;</code> [`H`][grep -&#72;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 
+
+### `head`
+[head -&#99;]: #head '```&#10;$ head -c $N&#10;```&#10;Print the first `$N` bytes. If `$N` is followed by "k" or "m", the first `$N` kilobytes or megabytes, respectively.&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 80'
+[head -&#110;]: #head '```&#10;$ head -n $N&#10;```&#10;Print the first `$N` lines (10 by default)&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 80'
+
+<code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`c`][head -&#99;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`n`][head -&#110;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 
+
+Print first 8 characters of `$FILE`
+```sh
+head -c8 $FILE
+```
+### `nl`
+[nl -&#98;]: #nl '```&#10;$ nl -b $STYLE&#10;$ nl --body-numbering $STYLE&#10;```&#10;Set body numbering style to `$STYLE`:&#10;  - `A`: Number all lines&#10;  - `t`: Number only nonempty lines&#10;  - `n`: Do not number lines&#10;  - `p$REGEXP`: Number only lines that contain a match for `$PATTERN`&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 81'
+[nl -&#102;]: #nl '```&#10;$ nl -f $STYLE&#10;```&#10;Set footer numbering style to `$STYLE`:&#10;  - `A`: Number all lines&#10;  - `t`: Number only nonempty lines&#10;  - `n`: Do not number lines&#10;  - `p$REGEXP`: Number only lines that contain a match for `$PATTERN`&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 81'
+[nl -&#104;]: #nl '```&#10;$ nl -h $STYLE&#10;```&#10;Set header numbering style to `$STYLE`:&#10;  - `A`: Number all lines&#10;  - `t`: Number only nonempty lines&#10;  - `n`: Do not number lines&#10;  - `p$REGEXP`: Number only lines that contain a match for `$PATTERN`&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 81'
+
+<code>&nbsp;</code> <code>&nbsp;</code> [`b`][nl -&#98;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`f`][nl -&#102;] <code>&nbsp;</code> [`h`][nl -&#104;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 
+
+
+Number all lines, including blank lines
+```sh
+nl -b a file
+nl --body-numbering=a file
+```
+### `sed`
+Run sed commands in `$SCRIPT` on `$FILE`
+```sh
+sed -f $SCRIPT $FILE
+```
+Suppress automatic printing of pattern space
+```sh
+sed -n
+sed --quiet
+sed --silent
+```
+`sed` ("Stream-oriented editor") is typically used for applying repetitive edits across all lines of multiple files. In particular it is, alongside `awk` one of the two primary commands which accept regular expressions in Unix systems. 
+
+Option  | POSIX option            | Effect
+:---    | :---                    | :---
+`-e`    |                         | when providing more than one instruction, this flag precedes every one
+`-f`    | `--file`                | read from a **command file** (called a **program file** in some places [[PGL](../sources/README.md): 564]
+`-i`    |                         | edit the file in-place instead of outputting to stdout
+`-n`    |                         | suppress duplicate line printing; only print lines specified with the `p` command 
+
+Script syntax | Effect
+---           | ---
+`#`           | comments begin with **octothorpe**
+`#n`          | If first line of script begins with these two characters, it is equivalent to using the `-n` flag
+
+Invocation syntax has two forms:
+```sh
+# Inline
+sed options 'instruction' $FILE
+
+# "Command file"
+sed options -f $SCRIPT $FILE
+```
+`sed` instructions are made of **addresses** and **procedures** . Sources do not use consistent terminology to describe the two components of most sed commands:
+
+:---                                | :---
+`sed 'pattern {procedure}' file`    | [[SA](../sources/README.md): 14]
+`sed 'address {action}' file`       | [[YUG](../sources/README.md): 449]
+`sed 'address {instruction}' file`  | [[PGL](../sources/README.md): 565]
+
+Zero, one, or two addresses can precede a procedure.
+  - In the absence of an address, the procedure is executed over every line of input
+  - With one address, the procedure will be executed over every line of input that matches
+  - With two addresses, the procedure will be executed over groups of lines whereby:
+    - The first address selects the first line in the first group
+    - The second address selects the next subsequent line that it matches, which becomes the last line in the first group
+    - If no match for the second address is found, it point to the end of the file
+    - After the match, the selection process for the next group begins by searching for a match to the first address
+Addressing can be done in one of two ways:
+  1. **Line addressing**, specifying line numbers separated by a comma (e.g. `3,7p`); `$` represents the last line of input
+  2. **Context addressing**, using a regular expression enclosed by forward slashes (e.g. `/From:/p`)
+
+Procedure   | Description
+:---        | :---  
+`!c`        | negation operator can be used with any procedure {c}
+`a`         | append text to the addressed lines
+`d`         | cause sed not to display the addressed lines ("delete"); can emulate `grep -v`, which selects lines which do _not_ match the specified pattern
+`i`         | prepend text to the addressed lines
+`n`         | write out the currently selected line if appropriate, read the next input line, and start processing the new line with the next instruction
+`x`         | where {x} is a number, specifying occurrence (e.g. `2` would replace only the second occurrence of each pattern per line)
+`g`         | replace all occurrences
+`p`         | print original content (e.g. `sed -n 's/test/another test/p' myfile`)
+`w outputfile`        | write results to {outputfile} (e.g. `sed 's/test/another test/w output' myfile`)
+`s/pattern/replacement/flags`         | replace regex {pattern} with {replacement} ("substitute")
+`g`         | replace **all** instances of the search pattern with the replacement, rather than the first instance (global)
+`&`         | known as the **repeated pattern**, represents the represents the entire source string; the only special character used in the replacement string - all other characters are treated literally
+
+Edit the file in-place, but save a backup copy of the original with {suffix} appended to - the filename
+```sh
+-i=suffix
+```
+Display first 3 lines <sup>[YUG](https://github.com/jasper-zanjani/tree/master/sources/README.md): 450</sup>
+```sh
+sed '3q' emp.lst
+```
+Display first 5 lines, similar to `head -5 emp.lst` [[PGL](../sources/README.md):569]
+```sh
+sed '5q' new
+```
+Pipe output of `ps` to `sed`, displaying top 10 memory-intensive processes
+```sh
+ps axch -o cmd,%mem --sort=-%mem | sed 11q
+```
+Pipe output of `ps` to `sed`, displaying top 10 CPU-intensive processes
+```sh
+ps axch -o cmd:15,%cpu --sort=-%cpu | sed 11q
+```
+Display first two lines of file
+Without `-n`, each line will be printed twice
+```sh
+sed -n '1,2p' emp.lst
+```
+Prepending `!` to the procedure reverses the sense of the command <sup>[YUG](https://github.com/jasper-zanjani/tree/master/sources/README.md): 450</sup>
+```sh
+sed -n '3,$!p' emp.lst
+```
+Display a range of lines
+```sh
+sed -n '9,11p' emp.lst
+```
+Use the `-e` flag to precede multiple instructions
+```sh
+sed -n -e '1,2p' -e '7,9p' -e '$p' emp.lst
+```
+Delete lines
+Delete second line alone
+```sh
+sed '2d' myfile
+```
+Delete a range of lines: from the 2nd through the 3rd
+```sh
+sed '2,3d' myfile
+```
+Delete a range of lines, from the first occurrence of 'second' to the line with the first occurrence of 'fourth'
+```sh
+sed '/second/,/fourth/d' myfile
+```
+Print all of a file except for specific lines
+Suppress any line with 'test' in it
+```sh
+sed '/test/d' myfile
+```
+Suppress from the 3rd line to EOF
+```sh
+sed '3,$d' myfile
+```
+Replace text
+Replace the first instance of the `|` character with `:` and display the first two lines [[YUG](../sources/README.md):455]
+```sh
+sed 's/|/:/ emp.lst | head -2
+```
+Replace all instances of the `|` character with `:`, displaying the first two lines [[YUG](../sources/README.md):455]
+```sh
+sed 's/|/:/g' emp.lst | head -2
+```
+Substitute HTML tags:
+```sh
+sed 's/<I>/<EM>/g'
+```
+These commands will replace "director" with "executive director"
+```sh
+sed 's/director/executive director/' emp.lst
+```
+```sh
+sed 's/director/executive &/' emp.lst
+```
+```sh
+sed '/director/s//executive &/' emp.lst
+```
+[[YUG](../sources/README.md): 456-457]
+Searching for text\
+Equivalent to `grep MA *`
+```sh
+sed -n '/MA/p' *
+```
+Stringing sed statements together with pipe
+Take lines beginning with "fake" and remove all instances of "fake.", piping them... remove all parentheses with content and count lines of output (results)
+```sh
+sed -n '/^fake/s/fake\.//p' * | sed -nr 's/\(.*\)//p' | wc -l
+```
+Take lines of all files in CWD beginning with "fake" and remove all instances of string "fake." Then remove all parentheses with any content within them and print only the top 10 lines
+```sh
+sed -ne '/^fake/p' * | sed -n 's/fake\.//p' | sed -nr 's/\(.*\)//p' | sed 11q
+```
+Count the number of pipes replaced by piping output to `cmp`, which will use the `-l` option to output byte numbers of differing values, then counting the lines of output (YUG:456)
+```sh
+sed 's/|/:/g' emp.lst | cmp -l - emp.lst | wc -l
+```
+### `seq`
+Sequence from 1 to 15
+```sh
+seq -f "%03g" 15
+```
+Sequence from 5 to 99, separated by a space instead of a newline
+```sh
+seq -s " " 5 99
+```
+Sequence every third number from 5 to 20
+```sh
+seq 5 320
+```
+Sequence from 1 to 8
+```sh
+seq 8
+```
+### `shuf`
+Print random selection of integers from {x} to {y} (inclusive) without replacement
+```sh
+shuf -i x-y
+```
+Print random selection of integers from {x} to {y} (inclusive), with replacement
+```sh
+shuf -i x-y -r
+```
+Shuffle items separated by newline in file `cards.txt`, displaying only one [[10](sources.md)]
+```sh
+shuf -n 1 items.txt
+```
+### `sort`
+Option  | Effect
+:---    | :---
+`-k $N` | sort by column number `$N`
+`-r`    | reverse sort order
+`-t $X` | set delimiter to character `$X`
+
+Sort by space-delimited columns. Processes consuming the most memory will be at the bottom [[23](sources.md)]
+```sh
+ps aux | sort -nk 4
+```
+Processes consuming the most CPU will be at the bottom
+```sh
+ps aux | sort -nk 3
+```
+### `tail`
+Output last lines beginning at 30th line from the start
+```sh
+tail -n=+30
+tail --lines=+30
+```
+### `tr`
+[tr -&#99;]: #tr '```&#10;$ tr -c&#10;```&#10;Use the complement of (or all characters not in) `$STRING`&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 88'
+[tr -&#100;]: #tr '```&#10;$ tr -d&#10;```&#10;Delete characters in `$STRING` from the output&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 88'
+[tr -&#115;]: #tr '```&#10;$ tr -s&#10;```&#10;Squeeze out repeated output characters in `$STRING`&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 88'
+
+<code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`c`][tr -&#99;] [`d`][tr -&#100;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`s`][tr -&#115;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 
+
+Change the case of a string [[23](sources.md)]
+```sh
+tr [:upper:] [:lower:]
+```
+Remove a character or set of characters from a string or line of output
+```sh
+tr -d "text"
+```
+### `wc`
+[wc -&#99;]: #wc '```&#10;$ wc -c&#10;```&#10;Display only the number of bytes&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 128'
+[wc -&#109;]: #wc '```&#10;$ wc -m&#10;```&#10;Display only the number of characters&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 128'
+[wc -&#108;]: #wc '```&#10;$ wc -l&#10;```&#10;Display only the number of lines&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 128'
+[wc -&#119;]: #wc '```&#10;$ wc -w&#10;```&#10;Display only the number of words&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 128'
+
+<code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`c`][wc -&#99;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`l`][wc -&#108;] [`m`][wc -&#109;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`w`][wc -&#119;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 
 ## Virtualization
 [virt-install]: #virt-install '`virt-install`&#10;Command-line tool for creating new KVM, Xen, or Linux container guests using the libvirt hypervisor management library'
 [virt-manager]: #virt-manager '`virt-manager`&#10;"Virtual Machine Manager", GUI tool for managing VMs developed by Red Hat'

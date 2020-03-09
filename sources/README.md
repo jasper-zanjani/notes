@@ -277,8 +277,9 @@ There are two main types of container engine installers: normal ones that instal
 357 | Talking DevOps with Gene Kim  | [Notes](#runas-357) [Web](http://runasradio.com/Shows/Show/357)
 
 #### RunAs 616
-**Just Enough Admin** ("GEE-ah") breaking things into microservices\
-**Azure Stack** is an appliance. **AWS Outpost** is a new product that competes directly with Azure Stack.
+- **Just Enough Admin** ("GEE-ah") breaking things into microservices
+- **Azure Stack** is an appliance. 
+- **AWS Outpost** is a new product that competes directly with Azure Stack.
 
 #### RunAs 534
 3 enduring use cases for **Azure Stack**
