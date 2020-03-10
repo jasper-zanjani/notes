@@ -20,6 +20,7 @@
 [bootrec]:        #bootrec                        '```&#10;C:\>bootrec&#10;```&#10;Windows Recovery Environment command that repairs a system partition'
 [cscript]:        #cscript                        '```&#10;C:\>cscript&#10;```&#10;Starts a script so that it runs in a command-line environment'
 [diskpart]:       #diskpart                       '```&#10;C:\>diskpart&#10;```&#10;Text-mode command interpreter used to convert disk types, create partitions and volumes, and configure RAID&#10;Stanek, William R. _Microsoft Windows Command-Line_.: 141'
+[dism.exe]: #dism.exe '```&#10;C:\>dism.exe&#10;```&#10;"Deployment Image Servicing and Management", enables modification of VHD and Windows Imaging files while they are offline&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 70'
 [hostname]:       #hostname                       '```&#10;C:\>hostname&#10;C:\>HOSTNAME.exe&#10;```&#10;Display computer name'
 [ipconfig]:       #ipconfig                       '```&#10;C:\>ipconfig&#10;```&#10;Display TCP/IP configuration'
 [logoff]:         #logoff                         '```&#10;C:\>logoff&#10;```&#10;Log out'
@@ -193,6 +194,84 @@ bootrec /rebuildbcd
 [`RETAIN`][diskpart RETAIN] 
 [`SELECT`][diskpart SELECT] 
 
+### `dism.exe`
+[dism.exe /Add-Driver]: #dism.exe '```&#10;C:\>dism.exe /Add-Driver&#10;```&#10;&#10;Equivalent to `Add-WindowsDriver`&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 77'
+[dism.exe /Add-Package]: #dism.exe '```&#10;C:\>dism.exe /Add-Package&#10;```&#10;&#10;Equivalent to `Add-WindowsPackage`&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 77'
+[dism.exe /Add-ProvisionedAppxPackage]: #dism.exe '```&#10;C:\>dism.exe /Add-ProvisionedAppxPackage&#10;```&#10;&#10;Equivalent to `Add-AppxProvisionedPackage`&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 77'
+[dism.exe /Append-Image]: #dism.exe '```&#10;C:\>dism.exe /Append-Image&#10;```&#10;&#10;Equivalent to `Add-WindowsImage`&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 77'
+[dism.exe /Apply-Image]: #dism.exe '```&#10;C:\>dism.exe /Apply-Image&#10;```&#10;&#10;Equivalent to `Expand-WindowsImage`&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 77'
+[dism.exe /Apply-Unattend]: #dism.exe '```&#10;C:\>dism.exe /Apply-Unattend&#10;```&#10;&#10;Equivalent to `Apply-WindowsUnattend`&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 77'
+[dism.exe /Capture-Image]: #dism.exe '```&#10;C:\>dism.exe /Capture-Image&#10;```&#10;&#10;Equivalent to `New-WindowsImage`&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 77'
+[dism.exe /Commit-Image]: #dism.exe '```&#10;C:\>dism.exe /Commit-Image&#10;```&#10;&#10;Equivalent to `Save-WindowsImage`&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 77'
+[dism.exe /Disable-Feature]: #dism.exe '```&#10;C:\>dism.exe /Disable-Feature&#10;```&#10;&#10;Equivalent to `Disable-WindowsOptionalFeature`&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 77'
+[dism.exe /Enable-Feature]: #dism.exe '```&#10;C:\>dism.exe /Enable-Feature&#10;```&#10;&#10;Equivalent to `Enable-WindowsOptionalFeature`&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 77'
+[dism.exe /Export-Driver]: #dism.exe '```&#10;C:\>dism.exe /Export-Driver&#10;```&#10;&#10;Equivalent to `Export-WindowsDriver`&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 77'
+[dism.exe /Export-Image]: #dism.exe '```&#10;C:\>dism.exe /Export-Image&#10;```&#10;&#10;Equivalent to `Export-WindowsImage`&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 77'
+[dism.exe /Get-Driverinfo]: #dism.exe '```&#10;C:\>dism.exe /Get-Driverinfo&#10;```&#10;&#10;Equivalent to `Get-WindowsDriver -Driver`&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 77'
+[dism.exe /Get-Drivers]: #dism.exe '```&#10;C:\>dism.exe /Get-Drivers&#10;```&#10;&#10;Equivalent to `Get-WindowsDriver`&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 77'
+[dism.exe /Get-Featureinfo]: #dism.exe '```&#10;C:\>dism.exe /Get-Featureinfo&#10;```&#10;&#10;Equivalent to `Get-WindowsOptionalFeature -FeatureName`&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 77'
+[dism.exe /Get-Features]: #dism.exe '```&#10;C:\>dism.exe /Get-Features&#10;```&#10;&#10;Equivalent to `Get-WindowsOptionalFeature`&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 77'
+[dism.exe /Get-ImageInfo]: #dism.exe '```&#10;C:\>dism.exe /Get-ImageInfo&#10;```&#10;&#10;Equivalent to `Get-WindowsImage`&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 77'
+[dism.exe /Get-MountedImageInfo]: #dism.exe '```&#10;C:\>dism.exe /Get-MountedImageInfo&#10;```&#10;&#10;Equivalent to `Get-WindowsImage -Mounted`&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 77'
+[dism.exe /Get-Packageinfo]: #dism.exe '```&#10;C:\>dism.exe /Get-Packageinfo&#10;```&#10;&#10;Equivalent to `Get-WindowsPackage -PackagePath` or `Get-WindowsPackage -PackageName`&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 77'
+[dism.exe /Get-Packages]: #dism.exe '```&#10;C:\>dism.exe /Get-Packages&#10;```&#10;&#10;Equivalent to `Get-WindowsPackage`&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 77'
+[dism.exe /Get-ProvisionedAppxPackages]: #dism.exe '```&#10;C:\>dism.exe /Get-ProvisionedAppxPackages&#10;```&#10;&#10;Equivalent to `Get-AppxProvisionedPackage`&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 77'
+[dism.exe /List-Image]: #dism.exe '```&#10;C:\>dism.exe /List-Image&#10;```&#10;&#10;Equivalent to `Get-WindowsImageontent`&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 77'
+[dism.exe /Remount-Image]: #dism.exe '```&#10;C:\>dism.exe /Remount-Image&#10;```&#10;&#10;Equivalent to `Mount-WindowsImage -Remount`&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 77'
+[dism.exe /Remove-Driver]: #dism.exe '```&#10;C:\>dism.exe /Remove-Driver&#10;```&#10;&#10;Equivalent to `Remove-WindowsDriver`&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 77'
+[dism.exe /Remove-Image]: #dism.exe '```&#10;C:\>dism.exe /Remove-Image&#10;```&#10;&#10;Equivalent to `Remove-WindowsImage`&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 77'
+[dism.exe /Remove-Package]: #dism.exe '```&#10;C:\>dism.exe /Remove-Package&#10;```&#10;&#10;Equivalent to `Remove-WindowsPackage`&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 77'
+[dism.exe /Remove-ProvisionedAppxPackage]: #dism.exe '```&#10;C:\>dism.exe /Remove-ProvisionedAppxPackage&#10;```&#10;&#10;Equivalent to `Remove-AppxProvisionedPackage`&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 77'
+[dism.exe /Set-ProvisionedAppxDataFile]: #dism.exe '```&#10;C:\>dism.exe /Set-ProvisionedAppxDataFile&#10;```&#10;&#10;Equivalent to `Set-AppXProvisionedDataFile`&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 77'
+[dism.exe /Unmount-Image]: #dism.exe '```&#10;C:\>dism.exe /Unmount-Image&#10;```&#10;&#10;Equivalent to `Dismount-WindowsImage`&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 77'
+
+[`Add-Driver`][dism.exe /Add-Driver]
+[`Add-Package`][dism.exe /Add-Package]
+[`Add-ProvisionedAppxPackage`][dism.exe /Add-ProvisionedAppxPackage]
+[`Append-Image`][dism.exe /Append-Image]
+[`Apply-Image`][dism.exe /Apply-Image]
+[`Apply-Unattend`][dism.exe /Apply-Unattend]
+[`Capture-Image`][dism.exe /Capture-Image]
+[`Commit-Image`][dism.exe /Commit-Image]
+[`Disable-Feature`][dism.exe /Disable-Feature]
+[`Enable-Feature`][dism.exe /Enable-Feature]
+[`Export-Driver`][dism.exe /Export-Driver]
+[`Export-Image`][dism.exe /Export-Image]
+[`Get-Driverinfo`][dism.exe /Get-Driverinfo]
+[`Get-Drivers`][dism.exe /Get-Drivers]
+[`Get-Featureinfo`][dism.exe /Get-Featureinfo]
+[`Get-Features`][dism.exe /Get-Features]
+[`Get-ImageInfo`][dism.exe /Get-ImageInfo]
+[`Get-MountedImageInfo`][dism.exe /Get-MountedImageInfo]
+[`Get-Packageinfo`][dism.exe /Get-Packageinfo]
+[`Get-Packages`][dism.exe /Get-Packages]
+[`Get-ProvisionedAppxPackages`][dism.exe /Get-ProvisionedAppxPackages]
+[`List-Image`][dism.exe /List-Image]
+[`Remount-Image`][dism.exe /Remount-Image]
+[`Remove-Driver`][dism.exe /Remove-Driver]
+[`Remove-Image`][dism.exe /Remove-Image]
+[`Remove-Package`][dism.exe /Remove-Package]
+[`Remove-ProvisionedAppxPackage`][dism.exe /Remove-ProvisionedAppxPackage]
+[`Set-ProvisionedAppxDataFile`][dism.exe /Set-ProvisionedAppxDataFile]
+[`Unmount-Image`][dism.exe /Unmount-Image]
+
+
+Mount an image <sup>[Zacker][Zacker]: 71</sup>
+```cmd
+dism /mount-image /imagefile:$FILENAME /index:$N /name:$IMAGENAME /mountdir:$PATH
+```
+Add a driver to an image file that you have already mounted <sup>[Zacker][Zacker]: 72</sup>
+```cmd
+dism /image:$FOLDERNAME /add-driver /driver:$DRIVERNAME /recurse
+```
+Commit changes and unmount the image <sup>[Zacker][Zacker]: 75</sup>
+```cmd
+dism /unmount-image /mountdir:c:\mount /commit
+```
+Determine exact name of Windows features that can be enabled and disabled <sup>[Zacker][Zacker]: 75</sup>
+```cmd
+dism /image:c:\mount /get-features
+```
 ### `ipconfig`
 `all` `flushdns` `renew`
 
