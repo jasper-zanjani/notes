@@ -43,7 +43,6 @@
 [SysFs]: # 'SysFs&#10;Pseudo file system provided by the Linux kernel that exports information about various kernel subsystems, hardware devices, and associated device drivers from the device model of the kernel to user space through virtual files.&#10;"sysfs". _Wikipedia_.'
 [TmpFs]: # 'TmpFs&#10;Temporary file storage paradigm implemented in many Unix-like operating systems. It is intended to appear as a mounted file system, but data is stored in volatile memory instead of a persistent storage device.&#10;"tmpfs". Wikipedia.'
 
-
 [ProcFs][ProcFs] 
 [syscall][syscall] 
 [SysFs][SysFs] 
@@ -206,18 +205,6 @@ Rolling release distro from Intel with a custom package management system based 
 
 CoreOS systems are meant to be **immutable infrastructure**, meaning they are only configured through the provisioning process and not modified in-place. All systems start with a generic OS image, but on first boot it uses a system called **Ignition** to read an **Ignition config** (which is converted from a **Fedora CoreOS Config** file) from the cloud or a remote URL, by which it provisions itself, creating disk partitions, file systems, users, etc.\
 CoreOS automatically installs upgrades automatically without user intervention, although they can be stopped if a problem is found.
-## GNOME
-[gconf-editor]: #gconf-editor '```&#10;$ gconf-editor&#10;```&#10;GUI-based configuration editor for GNOME'
-
-### `gsettings`
-Change function of Caps Lock key [<sup>ref</sup>][https://superuser.com/questions/1196241/how-to-remap-caps-lock-on-wayland]
-```sh
-gsettings set org.gnome.desktop.input-sources xkb-options "['caps:ctrl_modifier']"
-```
-Change mouse cursor size to `$SIZE`, which can be one of the values 24 (default), 32, 48, 64, or 96. [<sup>ref</sup>][https://vitux.com/how-to-change-cursor-size-on-ubuntu-desktop/]
-```sh
-gsettings set org.gnome.desktop.interface $SIZE
-```
 ## Kali Linux
 [Aircrack-ng]: #kali-linux 'Aircrack-ng&#10;Monitor and compromise WiFi networks'
 [BeEF]: #kali-linux 'BeEF&#10;Assess security of a web browser'
@@ -323,36 +310,6 @@ Default shortcuts are found in **Workspace > Shortcuts > Global Shortcuts**
 - "Run Command" refers to `krunner`, a single-line application launcher similar to the Run command on Windows.
 - **Alt-t** : open a terminal window
 
-### `krunner`
-Single-line application launcher similar to the Run command on Windows.
-### `kstart`
-
-Restarting KDE Plasma 4 <sup>[ref](https://www.lifewire.com/kubuntu-p2-2202573)</sup>
-```sh
-killall plasma-desktop
-kstart plasma-desktop
-```
-Restarting KDE Plasma 5 <sup>[ref](https://www.lifewire.com/kubuntu-p2-2202573)</sup>
-```sh
-killall plasmashell
-kstart plasmashell
-```
-```sh
-kquitapp5 plasmashell
-kstart plasmashell
-```
-### `kquitapp`
-Allows you to quit a dbus enabled application. Two options:
-
-Specify service to be stopped
-```sh
-kquitapp --service
-```
-Specify path to dbus interface 
-```sh
-kquitapp --path
-```
-
 ### System logging
 Traditionally, `syslogd` was the daemon in charge of this, but recently alternatives such as `rsyslog` and `syslog-ng` have emerged. 
 
@@ -399,6 +356,9 @@ Similar to DLL files on Windows systems, .so ("shared object") library files on 
 This attack can be detected using the **[osquery](https://osquery.io/)** tool. This tool represents the system as a relational database which can then be queried, in particular against the **process_envs** table.
 
 # Linux commands
+<!-- Applications -->
+[gconf-editor]: #gconf-editor '```&#10;$ gconf-editor&#10;```&#10;GUI-based configuration editor for GNOME'
+
 <!-- Archive commands -->
 [ar]: #ar '```&#10;$ ar&#10;```&#10;Maintain a group of files that are combined into a file archive. Used most commonly to create and update library files as used by `ld`.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 16'
 [bzcat]: #bzcat '```&#10;$ bzcat&#10;```&#10;Page through .bz2 files'
@@ -783,7 +743,7 @@ This attack can be detected using the **[osquery](https://osquery.io/)** tool. T
 
 Topic                                       | Commands
 :---                                        | :---
-[Applications](#applications)               | [`git`][git] [`imagemagick`](#imagemagick) [`mongod`](#mongod) **GNOME** [`gsettings`][gsettings] [`gconf-editor`][gconf-editor] **KDE** 
+[Applications](#applications)               | [`git`][git] [`imagemagick`](#imagemagick) [`mongod`](#mongod) **GNOME** [`gsettings`][gsettings] [`gconf-editor`][gconf-editor] **KDE** `krunner` `kstart` `kquitapp`
 [Archive](#archive)                         | [`ar`][ar] [`bzcat`][bzcat] [`bzip2`][bzip2] [`bzless`][bzless] [`bzmore`][bzmore] [`compress`][compress] [`cpio`][cpio] [`dar`][dar] [`gunzip`][gunzip] [`gzcat`][gzcat] [`gzip`][gzip] [`tar`][tar] [`uncompress`][uncompress] [`unxz`][unxz] [`unzip`][unzip] [`xz`][xz] [`zcat`][zcat] [`zip`][zip] [`zipcloak`][zipcloak] [`zipcmp`][zipcmp] [`zipdetails`][zipdetails] [`zipgrep`][zipgrep] [`zipinfo`][zipinfo] [`zipnote`][zipnote] [`zipsplit`][zipsplit] 
 [Bash](#bash-builtins)                      | [`bg`][bg] [`bind`][bind] [`break`][break] [`builtin`][builtin] [`caller`][caller] [`case`][case]/[`esac`][esac] [`cd`][cd] [`command`][command] [`compgen`][compgen] [`complete`][complete] [`compopt`][compopt] [`continue`][continue] [`declare`][declare] [`dirs`][dirs] [`disown`][disown] [`do`][do]/[`done`][done] [`echo`][echo] [`enable`][enable] [`eval`][eval] [`exec`][exec] [`exit`][exit] [`export`][export] [`false`][false] [`fc`][fc] [`fg`][fg] [`for`][for] [`function`][function] [`getopts`][getopts] [`hash`][hash] [`help`][help] [`history`][history] [`if`][if]/[`fi`][fi] [`jobs`][jobs] [`kill`][kill] [`let`][let] [`local`][local] [`logout`][logout][`mapfile`][mapfile][`popd`][popd] [`printf`][printf] [`pushd`][pushd] [`pwd`][pwd] [`read`][read] [`readarray`][readarray] [`readonly`][readonly] [`return`][return] [`select`][select] [`set`][set] [`shift`][shift] [`shopt`][shopt] [`source`][source] [`suspend`][suspend] [`test`][test] [`time`][time] [`times`][times] [`trap`][trap] [`true`][true] [`type`][type] [`typeset`][typeset] [`ulimit`][ulimit] [`umask`][umask] [`unalias`][unalias] [`unset`][unset] [`until`][until] [`wait`][wait] [`while`][while] 
 [Hardware settings](#hw)                    | [`bluetoothctl`][bluetoothctl] [`insmod`][insmod] [`lsmod`][lsmod] [`lspci`][lspci] [`lsusb`][lsusb] [`modprobe`][modprobe] [`rmmod`][rmmod] <br> **[Printing](hw.md)** <br> [**CUPS**][CUPS] [`cupsaccept`][cupsaccept] [`cupsenable`][cupsenable] [`cupsdisable`][cupsdisable] [`cupsreject`][cupsreject] [`lp`][lp] [`cancel`][cancel] <br> [**LPD**][LPD] [`lpc`][lpc] [`lpq`][lpq] [`lpr`][lpr] [`lprm`][lprm]
@@ -845,7 +805,6 @@ View image metadata (`identify` is from the ImageMagick software suite) [<sup>re
 identify image.png # => dimensions, color depth, color profile
 identify -verbose image.png
 ```
-
 ### `git`
 Remove untracked files
 ```sh
@@ -1109,6 +1068,44 @@ tig grep -i foo lib/Bar
 Pipe a list of commit IDs to tig
 ```sh
 git rev-list --author=olaf HEAD | tig show --stdin
+```
+### `gsettings`
+Change function of Caps Lock key [<sup>ref</sup>][https://superuser.com/questions/1196241/how-to-remap-caps-lock-on-wayland]
+```sh
+gsettings set org.gnome.desktop.input-sources xkb-options "['caps:ctrl_modifier']"
+```
+Change mouse cursor size to `$SIZE`, which can be one of the values 24 (default), 32, 48, 64, or 96. [<sup>ref</sup>][https://vitux.com/how-to-change-cursor-size-on-ubuntu-desktop/]
+```sh
+gsettings set org.gnome.desktop.interface $SIZE
+```
+### `krunner`
+Single-line application launcher similar to the Run command on Windows.
+### `kstart`
+
+Restarting KDE Plasma 4 <sup>[ref](https://www.lifewire.com/kubuntu-p2-2202573)</sup>
+```sh
+killall plasma-desktop
+kstart plasma-desktop
+```
+Restarting KDE Plasma 5 <sup>[ref](https://www.lifewire.com/kubuntu-p2-2202573)</sup>
+```sh
+killall plasmashell
+kstart plasmashell
+```
+```sh
+kquitapp5 plasmashell
+kstart plasmashell
+```
+### `kquitapp`
+Allows you to quit a dbus enabled application. Two options:
+
+Specify service to be stopped
+```sh
+kquitapp --service
+```
+Specify path to dbus interface 
+```sh
+kquitapp --path
 ```
 ## Archive
 [ar]:                          #ar                             '```&#10;$ ar&#10;```&#10;Maintain a group of files that are combined into a file archive. Used most commonly to create and update library files as used by `ld`.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 16'
@@ -2597,7 +2594,6 @@ Reload configuration files (on Upstart-controlled system)
 ```sh
 initctl reload
 ```
-
 ## Kernel
 [`dbus-monitor`][dbus-monitor] 
 [`depmod`][depmod] 
@@ -4001,7 +3997,6 @@ nice -5 cmd &
   - first heard about in Linux Unplugged 289, in the context of Fedora supporting v2 whereas most userspace applications support v1
 
 Process IDs in the same **namespace** can have access to one another, whereas those in different namespaces cannot. Spawning a process in a new namespace prevents it from seeing the host's context, so an interactive shell like `zsh` spawned in its own namespace will report its PID as `1`, even though the host will assign its own PID. This is the concept behind [**containers**](../devops/README.md#containers). [[55](sources.md)]
-
 
 ### `unshare`
 Run a program in a namespace **unshared** from its parent process. [<sup>ref</sup>][https://opensource.com/article/19/10/namespaces-and-containers-linux]
@@ -5805,12 +5800,22 @@ Exclude packages from updates permanently
 exclude=kernel* php*
 ```
 ### /etc/sudoers
-Syntax  | Effect
-:---    | :---
-`linuxize ALL=/bin/mkdir`                 | allow sudo access to user `linuxize` only for command /bin/mkdir
-`linuxize ALL=(ALL) NOPASSWD: ALL`        | allow user `linuxize` to run `sudo` commands without authenticating himself
-`Defaults timestamp_timeout=10`           | change timeout to 10 minutes
-`Defaults:linuxize timestamp_timeout=10`  | change timeout to 10 minutes only for user <linuxize>
+Allow sudo access to user `linuxize` only for command `/bin/mkdir`
+```
+linuxize ALL=/bin/mkdir
+```
+Allow user `linuxize` to run `sudo` commands without authenticating himself
+```
+linuxize ALL=(ALL) NOPASSWD: ALL
+```
+Change timeout to 10 minutes
+```
+Defaults timestamp_timeout=10
+```
+Change timeout to 10 minutes only for user `linuxize`
+```
+Defaults:linuxize timestamp_timeout=10
+```
 ### crontab
 Directive             | Effect
 ---                   | ---
@@ -5897,7 +5902,6 @@ xrandr --newmode "2560x1440_60.00" 312.25 2560 2752 3024 3488  1440 1443 1448 14
 xrandr --addmode Virtual-1 2560x1440_60.00
 xrandr --output Virtual-1 --mode 2560x1440_60.0
 ```
-
 #### X forwarding
 ```sh
 ssh -Y user@host
@@ -5906,7 +5910,6 @@ Have remote system use local computer {me.luna.edu}'s X display
 ```sh
 export DISPLAY=me.luna.edu:0
 ```
-
 #### Samba
 Install and configure Samba server <sup>[vitux.com][https://vitux.com/how-to-install-and-configure-samba-on-ubuntu/]</sup>
 Install `samba`
