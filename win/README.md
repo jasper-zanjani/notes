@@ -252,6 +252,7 @@ netdom join %computername% /domain: domainname /userd: username /password:*
 [`routing`][netsh routing] 
 [`rpc`][netsh rpc] 
 [`wins`][netsh wins] 
+`wlan`
 
 Configure DNS to be dynamically assigned
 ```cmd
@@ -264,6 +265,10 @@ netsh wlan delete profile name=*
 Turn off Windows firewall
 ```cmd
 netsh advfirewall set allprofiles state off
+```
+Show Wi-Fi passwords <sup>[helpdeskgeek.com](https://helpdeskgeek.com/how-to/find-the-wifi-password-in-windows-10-using-cmd/ "Find the WiFi Password in Windows 10 Using CMD")</sup>
+```cmd
+netsh wlan show profile wifi key=clear
 ```
 ### `ntdsutil`
 Used to transfer [FSMO](# "\"Flexible Single Master Operator\", server that is master for a particular role or function") roles between domain controllers. [<sup>Desmond: 30</sup>][Desmond2009]
