@@ -44,31 +44,21 @@ There are several areas where Ansible can be used in personal projects for learn
 5. Debug a system performance problem. 
 
 #### Concepts
-**A** 
 [Ad hoc command][Ad Hoc] 
 [Ansible Galaxy][Ansible Galaxy] 
 [Ansible Tower][Ansible Tower] 
 [Ansible Vault][Ansible Vault] 
 [AWX][AWX] 
-**E** 
 [EPEL][EPEL] 
-**F** 
 [Fact][Fact] 
-**H** 
 [Handler][Handler] 
-**I** 
 [Inventory][Inventory]
-**M** 
 [Module][Module] 
 [Module Library][Module Library] 
-**P** 
 [Play][Play] 
 [Playbook][Playbook] 
-**R** 
 [Role][Role] 
-**T** 
 [Task][Task]
-**V**
 [Vault][Vault]
 
 #### Commands
@@ -78,32 +68,22 @@ There are several areas where Ansible can be used in personal projects for learn
 [`ansible-playbook`](#ansible-playbook)
 
 #### Modules
-**A** 
 [`apt`](#package-management) 
 [`archive`](#archive-module) 
-**C** 
 [`cli_config`](#cli_config) 
 [`command`](#command-module) 
 [`copy`](#copy-module) 
-**D** 
 [`debug`](#debug-module) 
 [`dnf`](#package-management) 
-**F** 
 [`file`](#file-module) 
-**G** 
 [`git`](#git-module) 
-**L** 
 [`lineinfile`](#lineinfile-module) 
-**P** 
 [`package`](#package-management) 
 [`ping`](#ping-module) 
-**R**&nbsp;
 [`raw`](#raw-module) 
-**S** 
 [`service`](#service-module) 
 [`setup`](#setup-module) 
 [`shell`](#shell-module) 
-**T** 
 [`template`](#template-module)
 
 #### Configuration
