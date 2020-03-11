@@ -35,7 +35,16 @@
 [https://youtu.be/ksAfmJfdub0]: https://youtu.be/ksAfmJfdub0 "YouTube: \"Easy Academic References on the Command Line\""
 
 # Linux
-[Configs](#linux-configs) &bull; [Commands](#linux-commands) &bull; [Distros](#linux-distributions-and-desktop-environments) &bull; [Tasks](#tasks)
+
+[**Set custom resolution on a VM**](#custom-resolution) &bull;
+[X forwarding](#x-forwarding) &bull;
+[Samba](#samba) &bull;
+[Bash scripting](#bash-scripting) &bull;
+[Diagnosing network problems](#diagnosing-network-problems) &bull;
+
+[Configs](#linux-configs) &bull; 
+[Commands](#linux-commands) &bull; 
+[Distros](#linux-distributions-and-desktop-environments) &bull;
 
 #### Concepts
 [syscall]: # 'system call (syscall)&#10;Service provided by the kernel that can be called from user mode which typically handles device access requests or other privileged operations.&#10;For most cases, making a syscall breaks down into 3 steps:&#10;  1. Marshall parameters - user mode puts the syscall parameters and number at locations defined by the ABI.&#10;  2. Special instruction - user mode uses a special processor instruction to transition to kernel mode for the syscall.&#10;  3. Handle the return - after the syscall is serviced, the kernel uses a special processor instruction to return to user mode and user mode checks the return value.&#10;"WSL System calls". _Windows Subsystem for Linux_. Microsoft.'
@@ -5912,6 +5921,7 @@ export DISPLAY=me.luna.edu:0
 ```
 #### Samba
 Install and configure Samba server <sup>[vitux.com][https://vitux.com/how-to-install-and-configure-samba-on-ubuntu/]</sup>
+
 Install `samba`
 ```sh
 sudo apt install samba
@@ -5968,11 +5978,15 @@ then
   exit 1
 fi
 ```
-[<sup>ref</sup>][https://youtu.be/ksAfmJfdub0]
+
+<sup>[YouTube][https://youtu.be/ksAfmJfdub0]</sup>
+
 ```sh
 [ -z "$1" ] && echo "..." && exit 1
 ```
-[<sup>ref</sup>][https://coderwall.com/p/kq9ghg/yakuake-scripting]
+
+<sup>[coderwall.com][https://coderwall.com/p/kq9ghg/yakuake-scripting]</sup>
+
 ```sh
 if [ ! -z "$2" ] ; then ...; fi
 ```

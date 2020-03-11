@@ -26,21 +26,6 @@
 [WSAC]:   https://github.com/jasper-zanjani/notes/master/sources/wsac.md "Krause, Jordan. _Windows Server 2016 Administration Cookbook_."
 [Zacker]: https://github.com/jasper-zanjani/notes/master/certs/70-740.md "Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017."
 
-<!-- Powershell automatic variables -->
-[&#36;_]:                                            #variables                                    '```&#10;PS C:\> &#36;_&#10;PS C:\> $PSItem&#10;```&#10;Pipeline object'
-[&#36;?]:                                            #variables                                    '```&#10;PS C:\> &#36;?&#10;```&#10;Execution status of the last operation'
-[&#36;^]:                                            #variables                                    '```&#10;PS C:\> &#36;^&#10;```&#10;First token in the last line received by the session'
-[&#36;&#36;]:                                        #variables                                    '```&#10;PS C:\> &#36;&#36;&#10;```&#10;Last token in the last line received by the session'
-[$args]:                                             #variables                                    '```&#10;PS C:\> $args&#10;```&#10;Array of values for undeclared parameters passed to a function, script or script block'
-[$HOME]:                                             #variables                                    '```&#10;PS C:\> $HOME&#10;```&#10;Full path of the home directory of the user'
-[$IsLinux]:                                          #variables                                    '```&#10;PS C:\> $IsLinux&#10;```&#10;Contains `$True` if the current session is running on a Linux operating system'
-[$IsMacOS]:                                          #variables                                    '```&#10;PS C:\> $IsMacOS&#10;```&#10;Contains `$True` if the current session is running on an OS X operating system'
-[$IsWindows]:                                        #variables                                    '```&#10;PS C:\> $IsWindows&#10;```&#10;Contains `$True` if the current session is running on a Windows operating system'
-[$PID]:                                              #variables                                    '```&#10;PS C:\> $PID&#10;```&#10;Contains process identifier (PID) of the process that is hosting the current PowerShell session'
-[$PSCulture]:                                        #variables                                    '```&#10;PS C:\> $PSCulture&#10;```&#10;Name of the culture currently in use in the operating system'
-[$PSVersionTable]:                                   #variables                                    '```&#10;PS C:\> $PSVersionTable&#10;```&#10;Read-only hash table that displays details about the version of PowerShell that is running in the current session'
-[$PWD]:                                              #variables                                    '```&#10;PS C:\> $PWD&#10;```&#10;Path object that represents the full path of the current directory'
-
 [Add-Computer]:                                      #add-computer                                      '```&#10;PS C:\> Add-Computer&#10;```&#10;Join a computer to a domain'
 [Add-Content]:                                       #add-content                                       '```&#10;PS C:\> Add-Content&#10;```&#10;'
 [Add-DhcpServerInDC]:                                #add-dhcpserverindc                                '```&#10;PS C:\> Add-DhcpServerInDC&#10;```&#10;'
@@ -74,6 +59,7 @@
 [Get-ChildItem]:                               #get-childitem                                     '```&#10;PS C:\> Get-ChildItem&#10;PS C:\> dir&#10;PS C:\> gci&#10;PS C:\> ls&#10;```&#10;Get items in one or more locations'
 [Get-Clipboard]:                               #get-clipboard                                     '```&#10;PS C:\> Get-Clipboard&#10;PS C:\> gcb&#10;```&#10;Display items in clipboard'
 [Get-Command]:                                 #get-command                                       '```&#10;PS C:\> Get-Command&#10;PS C:\> gcm&#10;```&#10;Display all installed commands, including aliases, applications, filters, functions, and scripts'
+[Get-ComputerInfo]: #get-computerinfo '```&#10;PS C:\> Get-ComputerInfo&#10;PS C:\> gin&#10;```&#10;Retrieve a consolidated object of system and operating system properties&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 274'
 [Get-Content]:                                  #get-content                                       '```&#10;PS C:\> Get-Content&#10;PS C:\> cat&#10;PS C:\> gc&#10;PS C:\> type&#10;```&#10;'
 [Get-Credential]:                                 #get-credential                                    '```&#10;PS C:\> Get-Credential&#10;```&#10;'
 [Get-Disk]:                                       #get-disk                                          '```&#10;PS C:\> Get-Disk&#10;```&#10;'
@@ -142,7 +128,7 @@
 [Update-DistributionGroupMember]:                 #update-distributiongroupmember                    '```&#10;PS C:\> Update-DistributionGroupMember&#10;```&#10;Replace all members of distribution groups and mail-enabled security groups'
 [Update-Help]:                                    #update-help                                       '```&#10;PS C:\> Update-Help&#10;```&#10;Download help files'
 [Where-Object]:                                 #where-object                                      '```&#10;PS C:\> Where-Object&#10;PS C:\> ?&#10;PS C:\> where&#10;```&#10;Select objects from a collection based on their property values'
-[Write-Host]:                                     #write-host                                        '```&#10;PS C:\> Write-Host&#10;```&#10;'
+[Write-Host]: #write-host '```&#10;PS C:\> Write-Host&#10;```&#10;Write customized output to a host (equivalent to `echo`).'
 [Write-Output]:                                #write-output                                      '```&#10;PS C:\> Write-Output&#10;PS C:\> echo&#10;PS C:\> write&#10;```&#10;Send the specified objects to the next command in the pipeline. If the command is the last command in the pipeline, the objects are displayed in the console'
 
 
@@ -236,8 +222,12 @@
 [Set-AppxProvisionedDataFile]: #set-appxprovisioneddatafile '```&#10;PS C:\> Set-AppxProvisionedDataFile&#10;```&#10;&#10;Equivalent to `Dism.exe /Image:foldername /Set-ProvisionedAppxDataFile`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 78'
 
 # PowerShell
+###### Concepts
+[Automatic variable]: #automatic-variables 'Automatic variable&#10;Variables that store state information for PowerShell and are created and maintained by Powershell.'
 
+[Automatic variable][Automatic variable] &bull;
 ###### Tasks
+[**Display computer name**][Get-ComputerInfo] &bull;
 [**Remove Registry keys**][Remove-Item] &bull;
 [**Clear out `%temp%` folder**][Remove-Item] &bull;
 [Generate password](#generate-password) &bull;
@@ -346,79 +336,100 @@
 [`wr` ](#cmdlet-verbs  "```&#10;PS C:\> Write-&#10;```&#10;Adds information to a target. This verb is paired with Read.") 
 
 ###### Cmdlets
-**`Alias`**&nbsp;[`ep`][Export-Alias]&nbsp;[`g`][Get-Alias]&nbsp;[`n`][New-Alias]&nbsp;[`s`][Set-Alias]&nbsp; 
-**`Archive`**&nbsp;[`cm`][Compress-Archive]&nbsp;[`en`][Expand-Archive] 
-**`AD`**
-`Account`&nbsp;[`sr`][Search-ADAccount]&nbsp;[`uk`][Unlock-ADAccount]&nbsp; 
-`AccountPassword`&nbsp;[`s`][Set-ADAccountPassword]&nbsp; 
-`Object` [`s`][Set-ADObject]&nbsp; 
-`OrganizationalUnit`&nbsp;[`g`][Get-ADOrganizationalUnit]&nbsp;[`n`][New-ADOrganizationalUnit]&nbsp;[`r`][Remove-ADOrganizationalUnit]&nbsp;[`s`][Set-ADOrganizationalUnit]&nbsp; 
-`PrincipalGroupMembership`&nbsp;[`a`][Add-ADPrincipalGroupMembership]&nbsp;[`g`][Get-ADPrincipalGroupMembership]&nbsp; 
-`User`&nbsp;[`g`][Get-ADUser]&nbsp;[`n`][New-ADUser] 
-**`ADDS`**
-`Domain`&nbsp;[`is`][Install-ADDSDomain]&nbsp; 
-`DomainController`&nbsp;[`is`][Install-ADDSDomainController]&nbsp;[`us`][Uninstall-ADDSDomainController]&nbsp; 
-`Forest`&nbsp;[`g`][Get-ADDSForest]&nbsp;[`is`][Install-ADDSForest]&nbsp; 
-**`ChildItem`**&nbsp;[`g`][Get-ChildItem]&nbsp; 
-**`Clipboard`**&nbsp;[`g`][Get-Clipboard]&nbsp;[`s`][Set-Clipboard]&nbsp; 
-**`Computer`**&nbsp;[`a`][Add-Computer]&nbsp;[`rn`][Rename-Computer]&nbsp;[`rt`][Restart-Computer]&nbsp;[`sp`][Stop-Computer]&nbsp; 
-**`Content`**&nbsp;[`a`][Add-Content]&nbsp; 
-**`Credential`** [`g`][Get-Credential] 
-**`Csv`**&nbsp;[`ep`][Export-Csv] [`ip`][Import-Csv] 
-**`Disk`** [`g`][Get-Disk] 
-**`DistributionGroupMember`**&nbsp;[`a`][Add-DistributionGroupMember]&nbsp;[`g`][Get-DistributionGroupMember]&nbsp;[`ud`][Update-DistributionGroupMember] 
-**`DNS`**
-`ClientServerAddress` [`s`][Set-DnsClientServerAddress] 
-`Name`&nbsp;[`rv`][Resolve-DNSName] 
-**`DhcpServer`**
-`InDC` [`a`][Add-DhcpServerInDC] 
-`V4Scope` [`a`][Add-DhcpServerv4Scope] 
-`v4OptionValue` [`s`][Set-DhcpServerv4OptionValue]
-**`ExecutionPolicy`**&nbsp;[`s`][Set-ExecutionPolicy] 
-**`GPUpdate`**&nbsp;[`i`][Invoke-GPUpdate] 
-**`Guid`**&nbsp;[`n`][New-Guid] 
-**`Help`**&nbsp;[`g`][Get-Help] [`ud`][Update-Help] 
-**`History`**&nbsp;[`g`][Get-History]
-**`Item`**&nbsp;[`cp`][Copy-Item] [`g`][Get-Item] [`n`][New-Item] [`r`][Remove-Item] 
-**`List`**&nbsp;[`f`][Format-List] 
-**`Location`**&nbsp;[`g`][Get-Location] [`s`][Set-Location] 
-**`Module`**&nbsp;[`ip`][Import-Module]&nbsp;[`is`][Install-Module] 
-**`NanoServerImage`** [`n`][New-NanoServerImage] [`e`][Edit-NanoServerImage]
-**`NetAdapter`**&nbsp;[`g`][Get-NetAdapter] 
-**`NetFirewallRule`**&nbsp;[`g`][Get-NetFirewallRule] [`n`][New-NetFirewallRule] [`s`][Set-NetFirewallRule] 
-**`NetIpAddress`**&nbsp;[`n`][New-NetIpAddress] 
-**`NetIpConfiguration`**&nbsp;[`g`][Get-NetIpConfiguration] 
-**`Null`**&nbsp;[`o`][Out-Null] 
-**`Object`**&nbsp;[`ForEach`][ForEach-Object] [`n`][New-Object] [`sc`][Select-Object] [`w`][Where-Object] 
-**`Output`**&nbsp;[`wr`][Write-Output] 
-**`Partition`**&nbsp;[`g`][Get-Partition] [`n`][New-Partition] [`r`][Remove-Partition] 
-**`PS`**
-`ReadlineOption` [`g`][Get-PSReadlineOption] [`s`][Set-PSReadlineOption] 
-`Session` [`dc`][Disconnect-PSSession] [`et`][Enter-PSSession] [`ex`][Exit-PSSession] [`g`][Get-PSSession] [`n`][New-PSSession] 
-**`Service`** [`g`][Get-Service] [`s`][Set-Service] [`sa`][Start-Service] [`sp`][Stop-Service] 
-**`SmbOpenFile`** [`cs`][Close-SmbOpenFile] [`g`][Get-SmbOpenFile] 
-**`SmbShare`** [`n`][New-SmbShare] 
-**`SmigServer`** 
-`Data` [`rc`][Receive-SmigServerData] [`sd`][Send-SmigServerData] 
-`Feature` [`g`][Get-SmigServerFeature]
-`Setting` [`ex`][Export-SmigServerSetting] [`ip`][Import-SmigServerSetting] 
-**`Table`** [`f`][Format-Table] 
-**`Type`** [`a`][Add-Type] 
-**`VM`**&nbsp;[`cr`][Compare-VM] [`db`][Debug-VM] [`ep`][Export-VM] [`g`][Get-VM] [`ip`][Import-VM] [`m`][Move-VM] [`ms`][Measure-VM] [`n`][New-VM] [`r`][Remove-VM] [`rn`][Rename-VM] [`rt`][Restart-VM] [`ru`][Resume-VM] [`s`][Set-VM] [`sa`][Start-VM] [`sp`][Stop-VM] [`ss`][Suspend-VM] [`sv`][Save-VM] 
-`Firmware` [`s`][Set-VMFirmware] 
-`Memory` [`s`][Set-VMMemory] 
-`NetworkAdapter` [`s`][Set-VMNetworkAdapter] 
-`Processor` [`s`][Set-VMProcessor] 
-`Switch` [`n`][New-VMSwitch] 
-**`Volume`** [`f`][Format-Volume] 
-**`WebRequest`**&nbsp;[`Invoke`][Invoke-WebRequest] 
-**`WMIObject`**&nbsp;[`g`][Get-WMIObject]
-**`AppxProvisioned`** `DataFile`[`s`][Set-AppxProvisionedDataFile] `Package`[`a`][Add-AppxProvisionedPackage] [`g`][Get-AppxProvisionedPackage] [`r`][Remove-AppxProvisionedPackage] 
-**`WindowsDriver`** [`a`][Add-WindowsDriver] [`ep`][Export-WindowsDriver] [`g`][Get-WindowsDriver] [`r`][Remove-WindowsDriver] 
-**`WindowsFeature`** `Feature`&nbsp;[`a`][Add-WindowsFeature] [`g`][Get-WindowsFeature] `OptionalFeature`&nbsp;[`e`][Enable-WindowsOptionalFeature] 
-**`WindowsImage`** [`a`][Add-WindowsImage] [`en`][Expand-WindowsImage] [`n`][New-WindowsImage] [`sv`][Save-WindowsImage] [`ep`][Export-WindowsImage] [`g`][Get-WindowsImage] [`mt`][Mount-WindowsImage] [`r`][Remove-WindowsImage] [`dm`][Dismount-WindowsImage] `Content` [`g`][Get-WindowsImageContent] 
-**`WindowsOptionalFeature`** [`d`][Disable-WindowsOptionalFeature] [`e`][Enable-WindowsOptionalFeature] [`g`][Get-WindowsOptionalFeature] **`WindowsPackage`**[`a`][Add-WindowsPackage]  [`g`][Get-WindowsPackage] [`r`][Remove-WindowsPackage] 
-**`WindowsUnattend`** [`Apply`][Apply-WindowsUnattend] 
+<code>Alias&nbsp;[ep][Export-Alias]&nbsp;[g][Get-Alias]&nbsp;[n][New-Alias]&nbsp;[s][Set-Alias]</code> 
+
+
+<code>Archive&nbsp;[cm][Compress-Archive]&nbsp;[en][Expand-Archive]</code> 
+<code>ChildItem&nbsp;[g][Get-ChildItem]</code> 
+<code>Clipboard&nbsp;[g][Get-Clipboard]&nbsp;[s][Set-Clipboard]</code> 
+<code>Computer&nbsp;[a][Add-Computer]&nbsp;[rn][Rename-Computer]&nbsp;[rt][Restart-Computer]&nbsp;[sp][Stop-Computer]</code> 
+<code>Content&nbsp;[a][Add-Content]</code> 
+<code>Credential [g][Get-Credential]</code> 
+<code>Csv&nbsp;[ep][Export-Csv]&nbsp;[ip][Import-Csv]</code> 
+<code>Disk&nbsp;[g][Get-Disk]</code> 
+<code>DistributionGroupMember&nbsp;[a][Add-DistributionGroupMember]&nbsp;[g][Get-DistributionGroupMember]&nbsp;[ud][Update-DistributionGroupMember] </code> 
+<code>ExecutionPolicy&nbsp;[s][Set-ExecutionPolicy]</code> 
+<code>GPUpdate&nbsp;[i][Invoke-GPUpdate]</code> 
+<code>Guid&nbsp;[n][New-Guid]</code> 
+<code>Help&nbsp;[g][Get-Help] [ud][Update-Help]</code> 
+<code>History&nbsp;[g][Get-History]</code> 
+<code>List&nbsp;[f][Format-List]</code> 
+<code>Location&nbsp;[g][Get-Location] [s][Set-Location]</code> 
+<code>Module&nbsp;[ip][Import-Module]&nbsp;[is][Install-Module]</code> 
+<code>Null&nbsp;[o][Out-Null]</code> 
+<code>Object&nbsp;[ForEach][ForEach-Object]&nbsp;[n][New-Object]&nbsp;[sc][Select-Object]&nbsp;[w][Where-Object]</code>
+<code>Output&nbsp;[wr][Write-Output]</code> 
+<code>Partition&nbsp;[g][Get-Partition] [n][New-Partition] [r][Remove-Partition]</code> 
+<code>Service&nbsp;[g][Get-Service] [s][Set-Service] [sa][Start-Service] [sp][Stop-Service]</code> 
+<code>SmbOpenFile&nbsp;[cs][Close-SmbOpenFile] [g][Get-SmbOpenFile]</code> 
+<code>SmbShare&nbsp;[n][New-SmbShare]</code> 
+<code>Table&nbsp;[f][Format-Table]</code> 
+<code>Type&nbsp;[a][Add-Type]</code> 
+<code>Volume&nbsp;[f][Format-Volume]</code> 
+<code>WMIObject&nbsp;[g][Get-WMIObject]</code> 
+<code>WebRequest&nbsp;[Invoke][Invoke-WebRequest]</code>
+<code>[Host](#host)&nbsp;[oh][Out-Host]&nbsp;[rd][Read-Host]&nbsp;[wr][Write-Host]</code>
+<code>[Item](#item)&nbsp;[cp][Copy-Item]&nbsp;[g][Get-Item]&nbsp;[n][New-Item]&nbsp;[r][Remove-Item] </code>
+<code>[NanoServerImage](#nanoserverimage)&nbsp;[n][New-NanoServerImage] [e][Edit-NanoServerImage]</code> 
+
+**AD** 
+<code>Account&nbsp;[sr][Search-ADAccount]&nbsp;[uk][Unlock-ADAccount]&nbsp;</code> 
+<code>AccountPassword&nbsp;[s][Set-ADAccountPassword]&nbsp;</code> 
+<code>Object&nbsp;[s][Set-ADObject]&nbsp;</code> 
+<code>OrganizationalUnit&nbsp;[g][Get-ADOrganizationalUnit]&nbsp;[n][New-ADOrganizationalUnit]&nbsp;[r][Remove-ADOrganizationalUnit]&nbsp;[s][Set-ADOrganizationalUnit]&nbsp;</code> 
+<code>PrincipalGroupMembership&nbsp;[a][Add-ADPrincipalGroupMembership]&nbsp;[g][Get-ADPrincipalGroupMembership]&nbsp;</code>
+<code>User&nbsp;[g][Get-ADUser]&nbsp;[n][New-ADUser]</code>
+
+**ADDS**&nbsp;
+<code>Domain&nbsp;[`is`][Install-ADDSDomain]</code>
+<code>DomainController&nbsp;[is][Install-ADDSDomainController]&nbsp;[us][Uninstall-ADDSDomainController]</code>
+<code>Forest&nbsp;[g][Get-ADDSForest]&nbsp;[is][Install-ADDSForest]&nbsp;</code>
+
+**AppxProvisioned**
+<code>DataFile&nbsp;[s][Set-AppxProvisionedDataFile]</code> 
+<code>Package&nbsp;[a][Add-AppxProvisionedPackage] [g][Get-AppxProvisionedPackage] [r][Remove-AppxProvisionedPackage]</code> 
+
+**DNS**
+<code>ClientServerAddress&nbsp;[s][Set-DnsClientServerAddress]</code> 
+<code>Name&nbsp;[rv][Resolve-DNSName]</code> 
+
+**DhcpServer**
+<code>InDC [a][Add-DhcpServerInDC]</code> 
+<code>V4Scope [a][Add-DhcpServerv4Scope]</code> 
+<code>v4OptionValue [s][Set-DhcpServerv4OptionValue]</code> 
+
+**Net**
+<code>Adapter&nbsp;[`g`][Get-NetAdapter]</code>
+<code>FirewallRule&nbsp;[g][Get-NetFirewallRule] [n][New-NetFirewallRule] [s][Set-NetFirewallRule]</code>
+<code>IpAddress&nbsp;[n][New-NetIpAddress]</code>
+<code>IpConfiguration&nbsp;[g][Get-NetIpConfiguration]</code>
+
+**PS**
+<code>ReadlineOption&nbsp;[g][Get-PSReadlineOption] [s][Set-PSReadlineOption]</code> 
+<code>[Session](#pssession)&nbsp;[dc][Disconnect-PSSession] [et][Enter-PSSession] [ex][Exit-PSSession] [g][Get-PSSession] [n][New-PSSession]</code> 
+
+**SmigServer** 
+<code>Data [rc][Receive-SmigServerData] [sd][Send-SmigServerData]</code> 
+<code>Feature [g][Get-SmigServerFeature]</code> 
+<code>Setting [ex][Export-SmigServerSetting] [ip][Import-SmigServerSetting]</code>
+
+**_VM_**
+<code>[cr][Compare-VM]&nbsp;[db][Debug-VM]&nbsp;[ep][Export-VM]&nbsp;[g][Get-VM]&nbsp;[ip][Import-VM]&nbsp;[m][Move-VM]&nbsp;[ms][Measure-VM]&nbsp;[n][New-VM]&nbsp;[r][Remove-VM]&nbsp;[rn][Rename-VM]&nbsp;[rt][Restart-VM]&nbsp;[ru][Resume-VM]&nbsp;[s][Set-VM]&nbsp;[sa][Start-VM]&nbsp;[sp][Stop-VM]&nbsp;[ss][Suspend-VM]&nbsp;[sv][Save-VM]</code>
+<code>Firmware&nbsp;[s][Set-VMFirmware]</code> 
+<code>Memory&nbsp;[s][Set-VMMemory]</code> 
+<code>NetworkAdapter&nbsp;[s][Set-VMNetworkAdapter]</code> 
+<code>Processor&nbsp;[s][Set-VMProcessor]</code> 
+<code>Switch&nbsp;[n][New-VMSwitch]</code> 
+
+**Windows**
+<code>Driver&nbsp;[a][Add-WindowsDriver] [ep][Export-WindowsDriver] [g][Get-WindowsDriver] [r][Remove-WindowsDriver]</code> 
+<code>Feature&nbsp;[a][Add-WindowsFeature] [g][Get-WindowsFeature]</code> 
+<code>OptionalFeature&nbsp;[e][Enable-WindowsOptionalFeature]</code> 
+<code>Image&nbsp;[a][Add-WindowsImage] [en][Expand-WindowsImage] [n][New-WindowsImage] [sv][Save-WindowsImage] [ep][Export-WindowsImage] [g][Get-WindowsImage] [mt][Mount-WindowsImage] [r][Remove-WindowsImage] [dm][Dismount-WindowsImage]</code>
+<code>ImageContent&nbsp;[g][Get-WindowsImageContent]</code>
+<code>OptionalFeature&nbsp;[d][Disable-WindowsOptionalFeature] [e][Enable-WindowsOptionalFeature] [g][Get-WindowsOptionalFeature] </code>
+<code>Package[a][Add-WindowsPackage] [g][Get-WindowsPackage] [r][Remove-WindowsPackage]</code>
+<code>Unattend&nbsp;[Apply][Apply-WindowsUnattend]</code>
 
 ###### Bash equivalents
 [`$!`][&#36;&#36;] 
@@ -452,7 +463,25 @@
 [`uniq`](#select-object "`Select-Object -Unique`")
 [`wc`][Measure-Object] [`which`][Get-Command]
 
-###### Variables
+#### Variables
+
+###### Automatic variables
+<!-- Powershell automatic variables -->
+[&#36;_]:                                            #variables                                    '```&#10;PS C:\> &#36;_&#10;PS C:\> $PSItem&#10;```&#10;Pipeline object'
+[&#36;?]:                                            #variables                                    '```&#10;PS C:\> &#36;?&#10;```&#10;Execution status of the last operation'
+[&#36;^]:                                            #variables                                    '```&#10;PS C:\> &#36;^&#10;```&#10;First token in the last line received by the session'
+[&#36;&#36;]:                                        #variables                                    '```&#10;PS C:\> &#36;&#36;&#10;```&#10;Last token in the last line received by the session'
+[$args]:                                             #variables                                    '```&#10;PS C:\> $args&#10;```&#10;Array of values for undeclared parameters passed to a function, script or script block'
+[$HOME]:                                             #variables                                    '```&#10;PS C:\> $HOME&#10;```&#10;Full path of the home directory of the user'
+[$IsLinux]:                                          #variables                                    '```&#10;PS C:\> $IsLinux&#10;```&#10;Contains `$True` if the current session is running on a Linux operating system'
+[$IsMacOS]:                                          #variables                                    '```&#10;PS C:\> $IsMacOS&#10;```&#10;Contains `$True` if the current session is running on an OS X operating system'
+[$IsWindows]:                                        #variables                                    '```&#10;PS C:\> $IsWindows&#10;```&#10;Contains `$True` if the current session is running on a Windows operating system'
+[$PID]:                                              #variables                                    '```&#10;PS C:\> $PID&#10;```&#10;Contains process identifier (PID) of the process that is hosting the current PowerShell session'
+[$PSCulture]:                                        #variables                                    '```&#10;PS C:\> $PSCulture&#10;```&#10;Name of the culture currently in use in the operating system'
+[$PSVersionTable]:                                   #variables                                    '```&#10;PS C:\> $PSVersionTable&#10;```&#10;Read-only hash table that displays details about the version of PowerShell that is running in the current session'
+[$PWD]:                                              #variables                                    '```&#10;PS C:\> $PWD&#10;```&#10;Path object that represents the full path of the current directory'
+
+
 [`$_`][&#36;_] 
 [`$?`][&#36;?] 
 [`$^`][&#36;^] 
@@ -467,11 +496,17 @@
 [`$PSVersionTable`][$PSVersionTable] 
 [`$PWD`][$PWD]
 
-## Syntax
-The `Throw` keyword generates a terminating error
+###### Environment variables
+[USERPROFILE]:                 #variables                               '```&#10;PS C:\> Write-Host $Env:USERPROFILE&#10;```&#10;Location of profile directory of current user (i.e. "C:\Users\jsmith")'
+[USERNAME]:                    #variables                               '```&#10;PS C:\> Write-Host $Env:USERNAME&#10;```&#10;Name of current user (i.e. "jsmith").'
+[APPDATA]:                     #variables                               '```&#10;PS C:\> Write-Host $Env:APPDATA&#10;```&#10;The file-system directory that serves as a common repository for application-specific data (i.e. "C:\Users\jsmith\AppData\Roaming").'
+[LOCALAPPDATA]:                #variables                               '```&#10;PS C:\> Write-Host $Env:LOCALAPPDATA&#10;```&#10;The file-system directory that serves as a data repository for local, non-roaming applications (i.e. "C:\Users\jsmith\AppData\Local").'
 
-#### Variables
-**Automatic variables** are variables that store state information for PowerShell and are created and maintained by Powershell.
+[`APPDATA`][APPDATA]
+[`LOCALAPPDATA`][LOCALAPPDATA] 
+[`USERNAME`][USERNAME] 
+[`USERPROFILE`][USERPROFILE] 
+
 
 Variables can be typed by preceding their identifier with the datatype in brackets
 ```powershell
@@ -485,7 +520,6 @@ $Number = [int]'04'
 $FailedCast = [int]'Hello'
 ```
 
-#### Profiles
 Syntax                            | Effect
 :---                              | :---
 `$profile`                        | display file of current profile
@@ -493,6 +527,11 @@ Syntax                            | Effect
 `$profile.CurrentUserAllHosts`    | %UserProfile%\Documents\WindowsPowerShell\profile.ps1
 `$profile.AllUsersAllHosts`       | %windir%\System32\WindowsPowerShell\v1.0\profile.ps1
 `$profile.AllUsersCurrentHost`    | %windir%\System32\WindowsPowerShell\v1.0\Microsoft.PowerShell_profile.ps1
+
+
+
+## Syntax
+The `Throw` keyword generates a terminating error
 
 #### Comparison operators
 Syntax          | Effect
@@ -751,7 +790,8 @@ Enable WSL [<sup>ref</sup>](https://www.reddit.com/r/bashonubuntuonwindows/comme
 ```powershell
 Enable-WindowsOptionalFeature -online -FeatureName Microsoft-Windows-Subsystem-Linux
 ```
-### `Enter-PSSession`
+### `PSSession`
+#### `Enter-PSSession`
 Interact with the specified PowerShell session
 ```powershell
 Enter-PSSession -id 1
@@ -760,11 +800,29 @@ Start and enter a new PS session to specified computer with provided credentials
 ```powershell
 Enter-PSSession -ComputerName o365-dc01 -Credential officeprodemoco\joey
 ```
-### `Exit-PSSession`
+#### `Exit-PSSession`
 Exit a remote PowerShell session [<sup>Zacker: 22</sup>][Zacker]
 End the PowerShell session with the specified computer
 ```powershell
 Exit-PSSession -ComputerName demodc
+```
+#### `Get-PSSession`
+Display PowerShell sessions
+```powershell
+Get-PSSession
+```
+#### `New-PSSession`
+Option  | Description
+---     | ---
+`-ComputerName`
+
+Manage a Windows Server remotely [Zacker: 21][Zacker]
+```powershell
+New-PSSession -ComputerName rtmsvrd
+```
+Start a new PowerShell session, connecting to the specified computer
+```powershell
+New-PSSession -ComputerName core02
 ```
 ### `Expand-Archive`
 Decompress archives
@@ -835,7 +893,9 @@ Get-Clipboard -Format Image
 ### `Get-ComputerInfo`
 Equivalent to output of [`HOSTNAME.exe`](README.md#hostname)
 ```pwsh
-(Get-ComputerInfo).CsName
+Get-ComputerInfo -Property CsName
+gin.CsName
+$Env:computername
 ```
 ### `Get-Content`
 Make a PowerShell object from a JSON file
@@ -884,11 +944,7 @@ Display options available in the module
 ```powershell
 Get-PSReadlineOption
 ```
-### `Get-PSSession`
-Display PowerShell sessions
-```powershell
-Get-PSSession
-```
+
 ### `Get-Service`
 Display status of &lt;WinRM&gt; service
 ```powershell
@@ -964,6 +1020,10 @@ Display Windows activation key [<sup>ref</sup>][https://www.thewindowsclub.com/f
 ```powershell
 (Get-WmiObject -query ‘select * from SoftwareLicensingService’).OA3xOriginalProductKey
 ```
+### `Host`
+#### `Out-Host`
+#### `Read-Host`
+#### `Write-Host`
 ### `Import-CliXml`
 ### `Import-Csv`
 Add a CSV full of users
@@ -1001,41 +1061,33 @@ Install-Module -Name Az -AllowClobber
 ### `Install-WindowsFeature`
 [Install-WindowsFeature -Name]:      #Install-WindowsFeature        '```&#10;PS C:\> Install-WindowsFeature -Name&#10;```&#10;&#10;Values can include:&#10;  - "`AD-Domain-Services"&#10;  - "Hyper-V"&#10;  - "RSAT-ADDS"&#10;  - "Web-WebServer"'
 
-&nbsp;  | Options
----     | ---
-&nbsp;  | [**`Name`**][Install-WindowsFeature -Name] `IncludeAllSubFeature` `IncludeManamgentTools`
-
-
-Install Windows features and roles [<sup>Zacker: 15-16</sup>][Zacker]
+[**`Name`**][Install-WindowsFeature -Name] `IncludeAllSubFeature` `IncludeManamgentTools`
 
 Install a feature
 ```powershell
 Install-WindowsFeature -Name $featurename -IncludeAllSubFeature -IncludeManagementTools
-```
-Remote Server Adminstration Tools for PowerShell
-```powershell
+
+# Remote Server Adminstration Tools for PowerShell
 Install-WindowsFeature -Name RSAT-ADDS -IncludeAllSubFeature
-```
-Install Hyper-V
-```powershell
+
+# Install Hyper-V
 Install-WindowsFeature -Name Hyper-V -IncludeAllSubFeature -IncludeManagementTools -Restart
 ```
-Install Web Server [<sup>ref</sup>][Jones]
+Install Web Server <sup>[Jones][Jones]</sup>
 ```powershell
 Install-WindowsFeature web-webserver -IncludeManagementTools
-```
-```powershell
+
 Install-WindowsFeature Web-Server,Web-Common-Http,Web-Mgmt-Console -Restart
 ```
 Create a domain controller
 ```powershell
 Install-WindowsFeature AD-Domain-Services -IncludeManagementTools
 ```
-Create a DHCP server [<sup>ref</sup>][Jones]
+Create a DHCP server <sup>[Jones][Jones]</sup>
 ```powershell
 Install-WindowsFeature DHCP -IncludeManagementTools
 ```
-Install Windows Server Migration Tools [<sup>Zacker: 33</sup>][Zacker]
+Install Windows Server Migration Tools <sup>[Zacker][Zacker]: 33</sup>
 ```powershell
 Install-WindowsFeature Migration
 ```
@@ -1107,9 +1159,28 @@ New-Guid
 (New-Guid).Guid | clip
 ```
 ### `Item`
+#### `Get-Item
 #### `New-Item`
+[New-Item &#84;]: #New-Item '```&#10;PS C:\> New-Item Type&#10;PS C:\> New-Item -ItemType&#10;```&#10;&#10;Specify the provider-specified type of the new item; values depend on the context.'
+
+`Name`
+[`Type`][New-Item &#84;]
+`Value`
+
+Create a folder
 ```powershell
-New-NetIPAddress 10.0.0.3 -InterfaceAlias "Ethernet' -PrefixLength 24
+New-Item -ItemType "directory" Folder
+ni -Type "directory" Folder
+```
+#### `Remove-Item`
+Clear `%temp%` folder, suppressing errors
+```powershell
+ri -r $Env:temp -ea 0
+Remove-Item -Recurse $Env:temp -ErrorAction 'silentlycontinue'
+```
+Remove Microsoft Office identities from Registry
+```powershell
+Remove-Item HKCU:\Software\Microsoft\Office\16.0\Common\Identity\Identities\*
 ```
 #### `Set-Item`
 Add an IP address to the Trusted Hosts list, bypassing the use of Kerberos to authenticate the session <sup>[Zacker][Zacker]: 56</sup>
@@ -1122,20 +1193,25 @@ Set a new firewall rule for incoming WinRM connections
 New-NetFirewallRule -DisplayName "WinRMHTTP" -Direction Inbound -LocalPort 5985 -Protocol TCP -Action Allow
 ```
 ### `New-NetIpAddress`
-Manually configure network interface, if a DHCP server is unavailable [<sup>Zacker: 19</sup>][Zacker]
+[New-NetIpAddress -DefaultGateway]: #New-NetIpAddress '```&#10;PS C:\> New-NetIpAddress -DefaultGateway&#10;```&#10;Specify IP address of local router that computer should use to access other networks'
+[New-NetIpAddress -InterfaceIndex]: #New-NetIpAddress '```&#10;PS C:\> New-NetIpAddress -InterfaceIndex&#10;```&#10;Specify adapter to be configured using interface numbers as displayed by `Get-NetAdapter`'
+[New-NetIpAddress -IpAddress]: #New-NetIpAddress '```&#10;PS C:\> New-NetIpAddress -IpAddress&#10;```&#10;Specify IP address to be assigned to adapter'
+[New-NetIpAddress -PrefixLength]: #New-NetIpAddress '```&#10;PS C:\> New-NetIpAddress -PrefixLength&#10;```&#10;Specify subnet mask value'
 
-Option            | Description
----               | ---
-`DefaultGateway`  | Specifies IP address of local router that computer should use to access other networks
-`InterfaceIndex`  | Identifies adapter to be configured using interface numbers as displayed by [`Get-NetAdapter`](#get-netadapter)
-`IpAddress`       | Specifies IP address to be assigned to adapter
-`PrefixLength`    | Specifies subnet mask value
+[`DefaultGateway`][New-NetIpAddress -DefaultGateway]
+[`InterfaceIndex`][New-NetIpAddress -InterfaceIndex]
+[`IpAddress`][New-NetIpAddress -IpAddress]
+[`PrefixLength`][New-NetIpAddress -PrefixLength]
 
-Configure the Domain Controller in a new corporate intranet [<sup>ref</sup>][Jones]
+Manually configure network interface, if a DHCP server is unavailable <sup>[Zacker][Zacker]: 19</sup>
+```powershell
+New-NetIPAddress 10.0.0.3 -InterfaceAlias "Ethernet' -PrefixLength 24
+```
+Configure the Domain Controller in a new corporate intranet <sup>[Jones][Jones]</sup>
 ```powershell
 New-NetIPAddress 10.0.0.1 -InterfaceAlias "Ethernet" -PrefixLength 24
 ```
-Configure the application server in a new corporate intranet [<sup>ref</sup>][Jones]
+Configure the application server in a new corporate intranet <sup>[Jones][Jones]</sup>
 ```powershell
 New-NetIpAddress 10.0.0.3 -InterfaceAlias "Ethernet" -PrefixLength 24
 ```
@@ -1151,19 +1227,6 @@ New-Partition -DiskNumber 1 -UseMaximumSize
 Automatically assign a drive letter
 ```powershell
 New-Partition -DiskNumber 1 -UseMaximumSize -AssignDriveLetter
-```
-### `New-PSSession`
-Option  | Description
----     | ---
-`-ComputerName`
-
-Manage a Windows Server remotely [Zacker: 21][Zacker]
-```powershell
-New-PSSession -ComputerName rtmsvrd
-```
-Start a new PowerShell session, connecting to the specified computer
-```powershell
-New-PSSession -ComputerName core02
 ```
 ### `New-SmbShare`
 [`New-SmbShare`][New-SmbShare]
@@ -1191,15 +1254,7 @@ Remove-ADOrganizationalUnit -Identity "OU=GNV, DC=officeprodemoco, DC=onmicrosof
 Rename computer
 ### `Restart-Computer`
 Restart computer
-### `Remove-Item`
-Remove Microsoft Office identities 
-```powershell
-Remove-Item HKCU:\Software\Microsoft\Office\16.0\Common\Identity\Identities\*
-```
-Clear `%temp%` folder
-```powershell
-Remove-Item -Recurse $Env:temp
-```
+
 ### `Remove-Partition`
 Remove a partition [<sup>ref</sup>][https://sumtips.com/tips-n-tricks/manage-disk-partitions-with-windows-powershell/]
 ```powershell

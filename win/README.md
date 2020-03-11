@@ -37,10 +37,13 @@
 <!-- Powershell commands -->
 [Add-Computer]:                                      pwsh.md#add-computer                               '```&#10;PS C:\> Add-Computer&#10;```&#10;Join a computer to a domain'
 [Get-ChildItem]:                                     pwsh.md#get-childitem                              '```&#10;PS C:\> Get-ChildItem&#10;PS C:\> dir&#10;PS C:\> gci&#10;PS C:\> ls&#10;```&#10;Get items in one or more locations'
+[Get-ComputerInfo]: #get-computerinfo '```&#10;PS C:\> Get-ComputerInfo&#10;PS C:\> gin&#10;```&#10;Retrieve a consolidated object of system and operating system properties&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 274'
 [Invoke-GPUpdate]:                                   pwsh.md#invoke-gpupdate                            '```&#10;Invoke-GPUpdate&#10;```&#10;Schedule a remote Group Policy refresh on the specified host'
+[Write-Host]: #write-host '```&#10;PS C:\> Write-Host&#10;```&#10;Write customized output to a host (equivalent to `echo`).'
 
 <!-- Linux commands -->
 [grep]: https://github.com/jasper-zanjani/notes/blob/master/lx/commands/README.md#grep '```&#10;$ grep&#10;```&#10;Search `$FILES` for lines containing a match to regex `$PATTERN`&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 126'
+[lx echo]:                        #echo                                       '```&#10;$ echo&#10;```&#10;Write `$STRING` to STDOUT&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 88'
 
 <!-- Control Panel binaries -->
 [access.cpl]:     #access.cpl           '```&#10;C:\> access.cpl&#10;```&#10;Accessibility Options'
@@ -64,7 +67,7 @@ Topics
 ---
 [Desired State Configuration](dsc.md) &bull; [Powershell](pwsh.md)
 
-#### Concepts
+###### Concepts
 **U** 
 [UWP][UWP]
 
@@ -78,12 +81,13 @@ Topics
 [`bootrec`][bootrec]
 [`cscript`][cscript] 
 [`desk`][desk.cpl] 
-`dir`[<sup>pwsh</sup>][Get-ChildItem] 
+`dir`<sup>[pwsh>][Get-ChildItem]</sup>
 [`diskpart`][diskpart] 
+[`echo`](#echo) <sup>[lx][lx echo] [pwsh][Write-Host]</sup>
 [`findfast.cpl`][findfast.cpl] 
-`findstr`[<sup>lx</sup>][grep]
-`gpupdate`[<sup>pwsh</sup>][Invoke-GPUpdate]
-[`hostname`][hostname][<sup>pwsh</sup>](pwsh.md#get-computerinfo "```&#10;PS C:\> (Get-ComputerInfo).CsName&#10;```")
+`findstr`<sup>[lx][grep]</sup>
+`gpupdate`<sup>[pwsh][Invoke-GPUpdate]</sup>
+[`hostname`][hostname]<sup>[pwsh][Get-ComputerInfo]</sup>
 [`inetcpl.cpl`][inetcpl.cpl] 
 [`intl.cpl`][intl.cpl] 
 [`ipconfig`][ipconfig]
@@ -91,7 +95,7 @@ Topics
 [`logoff`][logoff]
 [`main`][main.cpl] 
 [`mlcfg32.cpl`][mlcfg32.cpl] 
-[`mmsys`][mmsys.cpl]
+[`mmsys.cpl`][mmsys.cpl]
 [`nbtstat`][nbtstat] [`netsh`](#netsh) 
 [`ncpa`][ncpa.cpl]
 [`ntdsutil`][ntdsutil]
@@ -108,16 +112,28 @@ Topics
 [`winver`][winver]
 [`wmic`][wmic]
 
-### `adprep`
-Prepare Active Directory for Windows Server upgrades. Must be run on the Infrastructure Master role owner with the flag `/domainprep`. [<sup>Desmond 2009: 29</sup>][Desmond2009]
-### `arp`
+###### Variables
+[USERPROFILE]:                 #variables                               '```&#10;C:\> echo %USERPROFILE%&#10;```&#10;Location of profile directory of current user (i.e. "C:\Users\jsmith")'
+[USERNAME]:                    #variables                               '```&#10;C:\> echo %USERNAME%&#10;```&#10;Name of current user (i.e. "jsmith").'
+[APPDATA]:                     #variables                               '```&#10;C:\> echo %APPDATA%&#10;```&#10;The file-system directory that serves as a common repository for application-specific data (i.e. "C:\Users\jsmith\AppData\Roaming").'
+[LOCALAPPDATA]:                #variables                               '```&#10;C:\> echo %LOCALAPPDATA%&#10;```&#10;The file-system directory that serves as a data repository for local, non-roaming applications (i.e. "C:\Users\jsmith\AppData\Local").'
+
+[`USERPROFILE`][USERPROFILE] 
+[`USERNAME`][USERNAME] 
+[`APPDATA`][APPDATA] 
+[`LOCALAPPDATA`][LOCALAPPDATA] 
+
+###### `adprep`
+Prepare Active Directory for Windows Server upgrades. Must be run on the Infrastructure Master role owner with the flag `/domainprep`. <sup>[Desmond][Desmond2009]: 29</sup>
+###### `arp`
 <!-- `arp` options -->
 [arp /&#97;]:                     #arp                           '```&#10;C:\>arp /a&#10;```&#10;Display both the IP and MAC addresses and whether they are dynamic or static entries '
 [arp /&#115;]:                    #arp                           '```&#10;C:\>arp /s&#10;```&#10;Manually add a static entry to the cache'
 [arp /&#100;]:                    #arp                           '```&#10;C:\>arp /d&#10;```&#10;Delete an entry from the cache'
 
 <code>&nbsp;</code> [`a`][arp /&#97;] <code>&nbsp;</code> <code>&nbsp;</code> [`d`][arp /&#100;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`s`][arp /&#115;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 
-### `bcdedit`
+
+###### `bcdedit`
 Change Windows bootloader to Linux, while dual booting
 ```cmd
 ::Manjaro
@@ -131,7 +147,7 @@ Enable or disable **Test Signing Mode** [<sup>ref</sup>](https://www.howtogeek.c
 bcdedit /set testsign on
 bcdedit /set testsign off
 ```
-### `bootrec`
+###### `bootrec`
 Windows Recovery Environment command that repairs a system partition
 
 Use when boot sector not found
@@ -142,7 +158,7 @@ Use when BCD file has been corrupted
 ```cmd
 bootrec /rebuildbcd
 ```
-### `diskpart`
+###### `diskpart`
 <!-- `diskpart` commands -->
 [diskpart active]:                #diskpart                      '```&#10;C:\> diskpart&#10;DISKPART> ACTIVE&#10;```&#10;On MBR disks, marks the partition with current focus as the active system partition, meaning it is the partition containing the operating system startup files&#10;Stanek, William R. _Microsoft Windows Command-Line_.: 141'
 [diskpart add]:                   #diskpart                      '```&#10;C:\> diskpart&#10;DISKPART> ADD DISK=n&#10;```&#10;Create a mirrored volume on the selected dynamic disk&#10;Stanek, William R. _Microsoft Windows Command-Line_.: 141'
@@ -194,7 +210,7 @@ bootrec /rebuildbcd
 [`RETAIN`][diskpart RETAIN] 
 [`SELECT`][diskpart SELECT] 
 
-### `dism.exe`
+###### `dism.exe`
 [dism.exe /Add-Driver]: #dism.exe '```&#10;C:\>dism.exe /Add-Driver&#10;```&#10;&#10;Equivalent to `Add-WindowsDriver`&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 77'
 [dism.exe /Add-Package]: #dism.exe '```&#10;C:\>dism.exe /Add-Package&#10;```&#10;&#10;Equivalent to `Add-WindowsPackage`&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 77'
 [dism.exe /Add-ProvisionedAppxPackage]: #dism.exe '```&#10;C:\>dism.exe /Add-ProvisionedAppxPackage&#10;```&#10;&#10;Equivalent to `Add-AppxProvisionedPackage`&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 77'
@@ -272,17 +288,17 @@ Determine exact name of Windows features that can be enabled and disabled <sup>[
 ```cmd
 dism /image:c:\mount /get-features
 ```
-### `ipconfig`
+###### `ipconfig`
 `all` `flushdns` `renew`
 
-### `msiexec`
+###### `msiexec`
 <!-- `msiexec` commands -->
 [msiexec /&#105;]:              #msiexec                       '```&#10;C:\>msiexec /i&#10;```&#10;Install or configure a product'
 [msiexec /&#113;]:              #msiexec                       '```&#10;C:\>msiexec /q&#10;C:\>msiexec /qn&#10;```&#10;Set user interface level to "no UI"'
 
 <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`i`][msiexec /&#105;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`q`][msiexec /&#113;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [<sup>ref</sup>][https://docs.microsoft.com/en-us/windows/win32/msi/command-line-options]
 
-### `nbtstat`
+###### `nbtstat`
 <!-- `nbtstat` commands -->
 [nbtstat /&#97;]:               #nbtstat                       '```&#10;C:\>nbtstat /a&#10;```&#10;Display NetBIOS name table of `$HOST` (NetBIOS name)'
 [nbtstat /&#65;]:               #nbtstat                       '```&#10;C:\>nbtstat /A&#10;```&#10;Display NetBIOS name table of `$HOST` (IP address)'
@@ -294,7 +310,7 @@ dism /image:c:\mount /get-features
 
 <code>&nbsp;</code>   [`a`][nbtstat /&#97;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`n`][nbtstat /&#110;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`r`][nbtstat /&#114;] [`s`][nbtstat /&#115;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code>  <br><code>&nbsp;</code>&nbsp;[`A`][nbtstat /&#65;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`R`][nbtstat /&#82;] [`S`][nbtstat /&#83;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 
 
-### `netdom`
+###### `netdom`
 Alternative to [`Add-Computer`][Add-Computer] PowerShell cmdlet [<sup>Zacker: 21</sup>][Zacker]
 
 Rename a computer
@@ -305,7 +321,7 @@ Join a computer to a domain
 ```
 netdom join %computername% /domain: domainname /userd: username /password:*
 ```
-### `netsh`
+###### `netsh`
 [netsh aaaa]:                     #netsh                         '```&#10;C:\>netsh aaaa&#10;C:\>netsh&#10;netsh>aaaa&#10;```&#10;Authentication, authorization, accounting, and auditing; context used to view and work with the AAAA database used by the Internet Authentication Service and the Routing and Remote Access Service&#10;Stanek, William R. _Microsoft Windows Command-Line_.: 297'
 [netsh bridge]:                   #netsh                         '```&#10;C:\>netsh bridge&#10;C:\>netsh&#10;netsh>bridge&#10;```&#10;L3 compatibilty mode for network bridges&#10;Stanek, William R. _Microsoft Windows Command-Line_.: 298'
 [netsh dhcp]:                     #netsh                         '```&#10;C:\>netsh dhcp&#10;C:\>netsh&#10;netsh>dhcp&#10;```&#10;DHCP servers&#10;Stanek, William R. _Microsoft Windows Command-Line_.: 297'
@@ -349,9 +365,9 @@ Show Wi-Fi passwords <sup>[helpdeskgeek.com](https://helpdeskgeek.com/how-to/fin
 ```cmd
 netsh wlan show profile wifi key=clear
 ```
-### `ntdsutil`
+###### `ntdsutil`
 Used to transfer [FSMO](# "\"Flexible Single Master Operator\", server that is master for a particular role or function") roles between domain controllers. [<sup>Desmond: 30</sup>][Desmond2009]
-### `route`
+###### `route`
 <!-- `route` options -->
 [route /&#112;]:                #route                         '```&#10;C:\>route /p&#10;```&#10;Make a route persistent&#10;Lammle, Todd. _CompTIA Network+ Study Guide: Exam N10-005_. 2012.: 539'
 <!-- `route` commands -->
@@ -366,18 +382,18 @@ Basic usage
 ```sh
 route add 192.168.2.1 mask (255.255.255.0) 192.168.2.4
 ```
-### `sfc`
+###### `sfc`
 <!-- `sfc` commands -->
 [sfc /scannow]:                   #sfc                           '```&#10;C:\>sfc /scannow&#10;```&#10;Scan all protected system files, and replace corrupted files with a cached copy that is located in a compressed folder at %WinDir%\System32\dllcache'
 
 [`scannow`][sfc /scannow]
 
-### `shutdown`
+###### `shutdown`
 Immediate restart [<sup>Practice Lab</sup>][pl:Sec+]
 ```cmd
 shutdown /r /t 0
 ```
-### `slmgr`
+###### `slmgr`
 [slmgr /dli]:                     #slmgr                         '```&#10;C:\> slmgr /dli&#10;```&#10;Display very basic license and activation information about the current system in a dialog box'
 [slmgr /dlv]:                     #slmgr                         '```&#10;C:\> slmgr /dlv&#10;```&#10;Display more detailed license information, including activation ID, installation ID, and other details'
 [slmgr /xpr]:                     #slmgr                         '```&#10;C:\> slmgr /xpr&#10;```&#10;Display activation status or expiration date of current license'
@@ -394,13 +410,13 @@ shutdown /r /t 0
 [`ato`][slmgr /ato]
 [`rearm`][slmgr /rearm]
 
-### `tracert`
+###### `tracert`
 On Windows, this command is aliased to `traceroute` which is the Linux command. [<sup>Lammle: 112<sup>][Lammle]
 
 Option  | Effect
 :---    | :---
 `-6`    | IPv6, aliased to `traceroute6`
-### `winrm`
+###### `winrm`
 List all WinRM listeners  
 ```cmd
 winrm enumerate winrm/config/listener
@@ -409,9 +425,9 @@ Display WinRM configuration
 ```cmd
 winrm get winrm/config
 ```
-### `winver`
+###### `winver`
 
-### `wmic`
+###### `wmic`
 Recover Windows product key [<sup>ref</sup>][https://fossbytes.com/how-to-find-windows-product-key-lost-cmd-powershell-registry/]
 ```cmd
 wmic path softwarelicensingservice get OA3xOriginalProductKey
