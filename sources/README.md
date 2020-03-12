@@ -172,20 +172,30 @@ Courses     |           | [Azure](itp-azure.md) [Linux+](itp-linux-plus.md) [LPI
 71          | `containerd` with Derek McGowan | [Notes](#k8s-71) [Web](https://kubernetespodcast.com/episode/071-containerd/)
 
 #### K8S 71
-Containerd is a container runtime that manages all the resources related to containers. It sits right below the Kubernetes `kubelet` as well as Docker. Beneath containerd there is the runtime, most commonly **runC**, which is the reference implementation of the OCR open container.\
-Containerd was originally designed to interface directly with runC so that Docker could be decoupled from the actual containers. Since then, containerd grew to include image resources, which means it could entirely replace Docker.\
-`ctr` is an unsupported tool that used for debugging containerd.\
-Container metrics (logging and monitoring information) is exposed through **Prometheus**. \
+Containerd is a container runtime that manages all the resources related to containers. It sits right below the Kubernetes `kubelet` as well as Docker. Beneath containerd there is the runtime, most commonly **runC**, which is the reference implementation of the OCR open container.
+
+Containerd was originally designed to interface directly with runC so that Docker could be decoupled from the actual containers. Since then, containerd grew to include image resources, which means it could entirely replace Docker.
+
+`ctr` is an unsupported tool that used for debugging containerd.
+
+Container metrics (logging and monitoring information) is exposed through **Prometheus**.
+
 #### K8S 70
-Windows server containers, like Linux containers, package dependencies. Windows offers two base images: **Windows Server Core** and **Nano Server**. Windows Server containers are focused on running headless applications.\
-The differences between Windows and Linux containers originate in historical differences. Linux was developed with the goal of producing a stable kernel with a consistent application binary interface and limited syscalls in order to move applications from other commercial Unix-type OSes. In contrast, Windows was developed to be an entire operating system, not just a kernel, including APIs like Win16 and Win32. The border between kernel and user mode was always much blurrier than in Linux. The concept of a **session** was innovated to handle the problem of what to do when multiple users are making inputs simultaneously. A Windows container is essentially equivalent to a headless session.\
-Every Windows installation has its own security database that is handled by the local security agent, and for every new user a unique binary identifier is generated that is unique to that database. Containers also create their own database upon creation. Without Active Directory, every container is completely isolated. Active Directory has been around since Windows Server 2000, but the replication interval for AD databases is too long for container applications. The solution is **Group-Managed Service Accounts**, which is a **security principal** that can be used by multiple users and computers. This turned out to be perfect for containers, but it still required the machine to be domain-joined, which is something we wanted to avoid for containers because of the delay in replication, as mentioned.\
-The initial target for Windows Server 2016 was support for Docker and Docker Swarm, which implemented a **network plugin** model and a **storage plugin** model, which were deferred but still tightly coupled to the Docker engine. In Kubernetes, network and storage management was handled by the kubelet calling additional plugins like the **Container Network Interface** or the **Container Storage Interface** with a different order of operations. This necessitated the development of network namespaces in Windows, which were released in 2017 and 2018 for Windows Server, which allowed the creation of multiple containers with the same IP and the same virtual NIC. Storage also necessitated the creation of a mapped volume using symlinks in order to create a filesystem.\
-For the network control plane, configuration was exposed in what's called the **Host Networking Service (HNS)**. Another service called the **Virtual Networking Platform** made it possible to write granular rules governing how individual packets are forwarded, rewritten, and how policy is applied to them. This functions analogously to `iptables`. KubeProxy was updated to talk to the HNS to set those up.\
-If you have a Windows 10 machine, Docker for Windows can run containers on Linux or Windows, and you can switch between them using the system tray icon. Go to [aka.ms/windowscontainers](https://aka.ms/windowscontainers). If you don't have a machine, all the major cloud providers allow you to form a Windows Server or Windows 10 VM. \
+Windows server containers, like Linux containers, package dependencies. Windows offers two base images: **Windows Server Core** and **Nano Server**. Windows Server containers are focused on running headless applications.
+
+The differences between Windows and Linux containers originate in historical differences. Linux was developed with the goal of producing a stable kernel with a consistent application binary interface and limited syscalls in order to move applications from other commercial Unix-type OSes. In contrast, Windows was developed to be an entire operating system, not just a kernel, including APIs like Win16 and Win32. The border between kernel and user mode was always much blurrier than in Linux. The concept of a **session** was innovated to handle the problem of what to do when multiple users are making inputs simultaneously. A Windows container is essentially equivalent to a headless session.
+
+Every Windows installation has its own security database that is handled by the local security agent, and for every new user a unique binary identifier is generated that is unique to that database. Containers also create their own database upon creation. Without Active Directory, every container is completely isolated. Active Directory has been around since Windows Server 2000, but the replication interval for AD databases is too long for container applications. The solution is **Group-Managed Service Accounts**, which is a **security principal** that can be used by multiple users and computers. This turned out to be perfect for containers, but it still required the machine to be domain-joined, which is something we wanted to avoid for containers because of the delay in replication, as mentioned.
+
+The initial target for Windows Server 2016 was support for Docker and Docker Swarm, which implemented a **network plugin** model and a **storage plugin** model, which were deferred but still tightly coupled to the Docker engine. In Kubernetes, network and storage management was handled by the kubelet calling additional plugins like the **Container Network Interface** or the **Container Storage Interface** with a different order of operations. This necessitated the development of network namespaces in Windows, which were released in 2017 and 2018 for Windows Server, which allowed the creation of multiple containers with the same IP and the same virtual NIC. Storage also necessitated the creation of a mapped volume using symlinks in order to create a filesystem.
+
+For the network control plane, configuration was exposed in what's called the **Host Networking Service (HNS)**. Another service called the **Virtual Networking Platform** made it possible to write granular rules governing how individual packets are forwarded, rewritten, and how policy is applied to them. This functions analogously to `iptables`. KubeProxy was updated to talk to the HNS to set those up.
+
+If you have a Windows 10 machine, Docker for Windows can run containers on Linux or Windows, and you can switch between them using the system tray icon. Go to [aka.ms/windowscontainers](https://aka.ms/windowscontainers). If you don't have a machine, all the major cloud providers allow you to form a Windows Server or Windows 10 VM.
+
 Get connected with the Kubernetes community repo, every SIG has a folder in there which links to our weekly meetings and agenda. Get an invite to the Kubernetes Slack server and join the SIG Windows Slack channel.
 #### K8S 67
-Orka is a virtualization layer for Mac build infrastructure offered by hosting company MacStadium. iPhone architecture and security make building for that platform very different. Virtual Mac instances first became possible in Snow Leopard, but the EULA allows only 2 VMs per machine. MacStadium is an enterprise-scale cloud for Apple. A typical lifecycle for an iOS build begins with a simulator, followed by a physical test, typically in a build farm of physical iOS devices.  
+Orka is a virtualization layer for Mac build infrastructure offered by hosting company MacStadium. iPhone architecture and security make building for that platform very different. Virtual Mac instances first became possible in Snow Leopard, but the EULA allows only 2 VMs per machine. MacStadium is an enterprise-scale cloud for Apple. A typical lifecycle for an iOS build begins with a simulator, followed by a physical test, typically in a build farm of physical iOS devices.
 #### K8S 13
 **Cloud Services Platform**: Google hybrid cloud software, comprising a set of software and services that work both on-premises and in GCP and are managed by GCP\
 3 components that form the core of Cloud services Platform:
@@ -195,9 +205,12 @@ Orka is a virtualization layer for Mac build infrastructure offered by hosting c
 
 **Kubernetes Operators**: allow you to deploy and manage applications on Kubernetes clusters, such as Spark Operator, Airflow Operator, etc.
 #### K8S 12
-Kubernetes started at Google at the same time as Google Compute Engine, as developers thought deeply about how to improve the value proposition of virtual machines. Joe Beda was an early user of Borg, and him and others pushed for it to be released as a product. However, it was decided that Borg and Omega specifically were too closely aligned with internal Google products, so a new open-source product was imagined, although there was internal resistance to opening it up to the community completely.\
-Red Hat's buy-in early in the history of Kubernetes by deciding to use Kubernetes as a basis. Namespaces are called projects in OpenShift.\
-Joe Beda is an advocate of a microkernel, minimalist architecture for the Kubernetes core with additional features layered on top. Beda is also 
+Kubernetes started at Google at the same time as Google Compute Engine, as developers thought deeply about how to improve the value proposition of virtual machines. Joe Beda was an early user of Borg, and him and others pushed for it to be released as a product. However, it was decided that Borg and Omega specifically were too closely aligned with internal Google products, so a new open-source product was imagined, although there was internal resistance to opening it up to the community completely.
+
+Red Hat's buy-in early in the history of Kubernetes by deciding to use Kubernetes as a basis. Namespaces are called projects in OpenShift.
+
+Joe Beda is an advocate of a microkernel, minimalist architecture for the Kubernetes core with additional features layered on top.
+
 ### Late Night Linux
 \#          | Title     | Links
 :---        | :---      | :---
@@ -233,9 +246,12 @@ Joe Beda is an advocate of a microkernel, minimalist architecture for the Kubern
 - Reinventing Home Directories
 - Twitch becomes premiere sponsor of OBS
 #### LU 318
-Philip Muller discussed the transition of Manjaro to a for-profit business model.\
-Chrome OS has become Linux for the masses, in particular now that support for Linux applications has improved, and it has had great success penetrating the education market.\
-CloudReady OS allows you to install Chrome OS on other hardware. It is available in free and paid commercial editions. They are essentially reselling a version of Chrome OS with their commercial support which can be installed on any x86 machine. It offers a choice of Linux distros, or even a combination of them, including Debian.\
+Philip Muller discussed the transition of Manjaro to a for-profit business model.
+
+Chrome OS has become Linux for the masses, in particular now that support for Linux applications has improved, and it has had great success penetrating the education market.
+
+CloudReady OS allows you to install Chrome OS on other hardware. It is available in free and paid commercial editions. They are essentially reselling a version of Chrome OS with their commercial support which can be installed on any x86 machine. It offers a choice of Linux distros, or even a combination of them, including Debian.
+
 Chris reflects on how Chrome OS has evolved since he first tried it in 2014. It has become much more complicated and powerful since its launch, and grudgingly admits he likes it, in particular how users can login with their own unique Linux environments.
 #### LU 289
 Clear Linux
@@ -254,10 +270,12 @@ Description | Links
 Contact     | [Web](http://podcast.podctl.com/) [Twitter](https://www.twitter.com/podctl) 
 5           | [Notes](#podctl-5) [Web](http://podcast.podctl.com/110399/563052-understanding-the-cloud-native-ecosystem)
 #### PodCTL 5
-**Pivotal Container Services (PKS)** started as a project between Google and Pivotal originally called "Kubo" which takes the BOSH installer from Cloud Foundry Foundation and installs a Kubernetes instance. Kubernetes doesn't have an official installer, and many open-source solutions have been implemented. **Time to Success** is a metric used by developers that want to test out new products or technologies. **MiniKube** is the most commonly used Kubernetes Engine for installation on a laptop for experimentation or learning purposes. **MiniShift** is to OpenShift what MiniKube is to Kubernetes. Both of these tools provide a **single-node**, **single-master** environment. \
-**Kubeadm** is the official Kubernetes installer from the CNCF, but it is not widely used because it doesn't deploy multiple Kubernetes masters. Kubernetes has the concept of masters that provide the **control plane** and **workers** which run Kubelets. In reality, the masters are just Kubernetes worker nodes that are running only Kubernetes core services, and those are the first pods that are deployed by K8S.
-**Kargo** builds highly available containers.\
-There are two main types of container engine installers: normal ones that install locally and interactively ask what Linux host is desired, and thne another type that interfaces with an IaaS provider and demands resources from it. The tools typically defined as configuration management tools like Chef, Ansible, Puppet, Salt, and Terraform are also typically used to package containerized software and can perform orchestration. Kargo, for example, uses Terraform to build the nodes and then Ansible to do the actual installation. OpenShift's installer uses Ansible.\
+**Pivotal Container Services (PKS)** started as a project between Google and Pivotal originally called "Kubo" which takes the BOSH installer from Cloud Foundry Foundation and installs a Kubernetes instance. Kubernetes doesn't have an official installer, and many open-source solutions have been implemented. **Time to Success** is a metric used by developers that want to test out new products or technologies. **MiniKube** is the most commonly used Kubernetes Engine for installation on a laptop for experimentation or learning purposes. **MiniShift** is to OpenShift what MiniKube is to Kubernetes. Both of these tools provide a **single-node**, **single-master** environment.
+
+**Kubeadm** is the official Kubernetes installer from the CNCF, but it is not widely used because it doesn't deploy multiple Kubernetes masters. Kubernetes has the concept of masters that provide the **control plane** and **workers** which run Kubelets. In reality, the masters are just Kubernetes worker nodes that are running only Kubernetes core services, and those are the first pods that are deployed by K8S. **Kargo** builds highly available containers.
+
+There are two main types of container engine installers: normal ones that install locally and interactively ask what Linux host is desired, and thne another type that interfaces with an IaaS provider and demands resources from it. The tools typically defined as configuration management tools like Chef, Ansible, Puppet, Salt, and Terraform are also typically used to package containerized software and can perform orchestration. Kargo, for example, uses Terraform to build the nodes and then Ansible to do the actual installation. OpenShift's installer uses Ansible.
+
 **Prometheus** has become the go-to open-source monitoring and alerting tool. Other tools include the **ELK stack**, the **EFK stack**, and **Loggly**.
 
 ### RunAs Radio
