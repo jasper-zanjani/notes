@@ -227,17 +227,18 @@
 
 [Automatic variable][Automatic variable] &bull;
 ###### Tasks
-[**Display computer name**][Get-ComputerInfo] &bull;
-[**Remove Registry keys**][Remove-Item] &bull;
-[**Clear out `%temp%` folder**][Remove-Item] &bull;
-[Generate password](#generate-password) &bull;
-[Credentials](#credentials) &bull;
-[Formatting output](#output-formatting) &bull;
-[Hash tables](#hash-tables) &bull;
-[Manipulating files](#file-manipulation) &bull;
-[Text-to-speech](#text-to-speech) &bull;
-[New domain controller](#new-domain-controller) &bull;
-[Set new Registry keys](#registry) &bull;
+- [**Display computer name**][Get-ComputerInfo]
+- [**Remove Registry keys**][Remove-Item]
+- [**Clear out `%temp%` folder**][Remove-Item]
+- [**Reset AD user's password**][Set-ADAccountPassword]
+- [Generate password](#generate-password)
+- [Credentials](#credentials)
+- [Formatting output](#output-formatting)
+- [Hash tables](#hash-tables)
+- [Manipulating files](#file-manipulation)
+- [Text-to-speech](#text-to-speech)
+- [New domain controller](#new-domain-controller)
+- [Set new Registry keys](#registry)
 
 ###### Cmdlet verbs
 [`a`  ](#cmdlet-verbs  "```&#10;PS C:\> Add-&#10;```") [`ap`](# "`Approve-`&#10;Confirms or agrees to the status of a resource or process.") 
@@ -1291,7 +1292,7 @@ Search-ADAccount -AccountExpiring -DateTime "3/18/2019"
 ### `Set-ADAccountPassword`
 Reset password
 ```powershell
-Set-ADAccountPassword -Identity MBentley -Reset -NewPassword (ConvertTo-SecureString -AsPlainText "What is 255.255.255.240" -Force`)
+Set-ADAccountPassword -Identity MBentley -Reset -NewPassword (ConvertTo-SecureString -AsPlainText "What is 255.255.255.240" -Force)
 ```
 ### `Set-ADObject`
 Protect users in a specified OU from accidental deletion
@@ -1324,7 +1325,8 @@ Write-Output 'Hello' | Set-Clipboard -Append
 Set-DhcpServerv4OptionValue -DnsDomain corp.packtlab.com -DnsServer 10.0.0.1
 ```
 ### `Set-DnsClientServerAddress`
-Configure DNS server addresses [<sup>ref</sup>][Zacker]
+Configure DNS server addresses 
+<sup>[Zacker][Zacker]</sup>
 
 Parameter           | Description
 ---                 | ---
@@ -1345,7 +1347,6 @@ Configure DNS server addresses [<sup>ref</sup>][Zacker]
 Set-DnsClientServerAddress -InterfaceIndex 6 -ServerAddresses ("192.168.0.1", "192.168.0.2")
 ```
 ### `Set-ExecutionPolicy`
-
 ### `Set-Location`
 ### `Set-NetFirewallRule`
 Set firewall rule for COM+ Network Access (DCOM-In)
