@@ -572,7 +572,7 @@
 `cupsreject`
 `lp`
 `cancel`
-[**LPD**][LPD]
+**LPD**
 `lpc`
 `lpq`
 `lpr`
@@ -638,14 +638,15 @@
 [`udevadm`][udevadm] 
 
 **[Mail](#mail)** 
-[`mail`][mail]
-[`mailmerge`][mailmerge]
-[`mailx`][mailx]
-[`msmtp`][msmtp] <br> **SMTP servers**
-[`exim`][exim]
-[`qmail`][qmail]
-[`postfix`][postfix]
-[`sendmail`][sendmail]
+`mail`
+`mailmerge`
+`mailx`
+`msmtp`
+**SMTP servers**
+`exim`
+`qmail`
+`postfix`
+`sendmail`
 
 **[Network](#networking)** 
 [`arp`][arp]
@@ -692,7 +693,7 @@
 
 **[Package managers](#package-managers)** 
 [`apt`][apt]
-[`brew`][brew]
+`brew`
 [`dnf`][dnf]
 [`dpkg`][dpkg]
 [`gem`][gem]
@@ -705,17 +706,17 @@
 
 **[Process control](#process-control)** 
 [`ps`][ps]
-[`unshare`][unshare]
+`unshare`
 **Kubernetes**
-[`kubeadm`][kubeadm]
-[`kubectl`][kubectl]
+`kubeadm`
+`kubectl`
 
 **[Remote administration](#remote-administration)** 
 [`rsync`][rsync]
-[`ssh`][ssh]
-[`ssh-keygen`][ssh-keygen]
-[`ssh-keyscan`][ssh-keyscan]
-[`sshfs`][sshfs]
+`ssh`
+`ssh-keygen`
+`ssh-keyscan`
+`sshfs`
 
 **[SELinux][SELinux]** 
 [`chcon`][chcon]
@@ -911,7 +912,6 @@ WSL implements **user services** to connect to WSL distros and to run Windows-na
 In version 1, WSL worked under a **translation architecture** where system calls were translated to NT kernel calls. This meant that applications that used system calls that were newer or more difficult to implement, like GUI applications or Docker, did not run on v1. But WSL2 shifted to a **lighweight virtualization** model using the Linux kernel. Now Docker runs on WSL2 and GUI applications can run by using an X server.
 
 WSL v1 is available on Azure VMs if **nested virtualization** is enabled. WSL2 support is forthcoming.
-
 
 ### Mac OS X
 Configure `iterm2` as a **Guake**-style dropdown terminal 
