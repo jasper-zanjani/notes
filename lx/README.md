@@ -73,6 +73,14 @@
 ###### Commands
 <!-- Applications -->
 [gconf-editor]: #gconf-editor '```&#10;$ gconf-editor&#10;```&#10;GUI-based configuration editor for GNOME'
+[kquitapp]: #kquitapp '```&#10;$ kquitapp&#10;```&#10;Allows you to quit a dbus enabled application'
+[krunner]: #krunner '```&#10;$ krunner&#10;```&#10;Single-line application launcher, similar to dmenu or the Run command on Windows'
+[kstart]: #kstart '```&#10;$ kstart&#10;```&#10;When used to launch an application, prevents the application from being tied to the terminal'
+[smbclient]: #smbclient '```&#10;smbclient&#10;```&#10;Connect to a Samba server&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 592'
+[smbpasswd]: #smbpasswd '```&#10;$ smbpasswd&#10;```&#10;Create a Samba password&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 591'
+[smbstatus]: #smbstatus '```&#10;$ smbstatus&#10;```&#10;Display current Samba connections'
+[switchdesk]: #switchdesk '```&#10;switchdesk&#10;```&#10;Simply switch between various desktop environments&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 315'
+
 
 <!-- Archive commands -->
 [ar]: #ar '```&#10;$ ar&#10;```&#10;Maintain a group of files that are combined into a file archive. Used most commonly to create and update library files as used by `ld`.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 16'
@@ -355,6 +363,23 @@
 [rmmod]: #rmmod '```&#10;$ rmmod&#10;```&#10;Remove modules from the running kernel.&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 16'
 [udevadm]: #udevadm '```&#10;$ udevadm&#10;```&#10;Load new rules into kernel memory, or verify they have taken effect, after changing a udev rule.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 181'
 
+<!-- Mail commands -->
+[biff]: #biff '```&#10;$ biff&#10;```&#10;Turn mail notifications on or off. With no arguments, `biff` indicates the current status&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 27'
+[exim]: #exim '```&#10;$ exim&#10;```&#10;'
+[mail]: #mail '```&#10;$ mail&#10;```&#10;&#10;Rothwell, William. _CompTIA Linux+/LPIC-1 Portable Command guide_.: 222'
+[mailmerge]: #mailmerge '```&#10;$ mailmerge&#10;```&#10;'
+[mailq]: #mailq '```&#10;$ mailq&#10;```&#10;&#10;Rothwell, William. _CompTIA Linux+/LPIC-1 Portable Command guide_.: 223'
+[mailx]: #mailx '```&#10;$ mailx&#10;```&#10;'
+[makemap]: #makemap '```&#10;$ makemap&#10;```&#10;Execute after making a change to the `sendmail` access database /etc/access'
+[msmtp]: #msmtp '```&#10;$ msmtp&#10;```&#10;'
+[newaliases]: #newaliases '```&#10;$ newaliases&#10;```&#10;&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 602'
+[pine]: #pine '```&#10;$ pine&#10;```&#10;"Program for Internet news and email", popular MUA during the 1990s which has since been replaced by Alpine'
+[postalias]: #postalias '```&#10;$ postalias&#10;```&#10;&#10;Rothwell, William. _CompTIA Linux+/LPIC-1 Portable Command guide_.: 224'
+[postfix]: #postfix '```&#10;$ postfix&#10;```&#10;'
+[postqueue]: #postqueue '```&#10;postqueue&#10;```&#10;&#10;Rothwell, William. _CompTIA Linux+/LPIC-1 Portable Command guide_.: 224'
+[qmail]: #qmail '```&#10;$ qmail&#10;```&#10;'
+[sendmail]: #sendmail '```&#10;$ sendmail&#10;```&#10;'
+
 <!-- Network commands -->
 [bmon]: #bmon '```&#10;$ bmon&#10;```&#10;Terminal-based graphical bandwidth monitor'
 [brctl]: #brctl '```&#10;$ brctl&#10;```&#10;Create, modify, or view an Ethernet bridge, which connects separate networks into a single network from the perspective of users.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 27'
@@ -587,9 +612,14 @@
 `gsettings`
 [`gconf-editor`][gconf-editor] 
 **KDE** 
-`krunner` 
-`kstart` 
-`kquitapp`
+[`kquitapp`][kquitapp] 
+[`krunner`][krunner] 
+[`kstart`][kstart] 
+**SMB**
+[`smbclient`][smbclient] 
+[`smbpasswd`][smbpasswd] 
+[`smbstatus`][smbstatus] 
+
 
 **[Archive](#archive)** 
 [`ar`][ar] 
@@ -854,15 +884,24 @@
 [`udevadm`][udevadm] 
 
 **[Mail](#mail)** 
-`mail`
-`mailmerge`
-`mailx`
-`msmtp`
+[`biff`][biff] 
+[`makemap`][makemap] 
+[`newaliases`][newaliases] 
+[`pine`][pine] 
+[`mail`][mail] 
+[`mailmerge`][mailmerge] 
+[`mailq`][mailq] 
+[`mailx`][mailx] 
+[`msmtp`][msmtp] 
+[`newaliases`][newaliases] 
+[`postalias`][postalias] 
+[`postqueue`][postqueue] 
+
 **SMTP servers**
-`exim`
-`qmail`
-`postfix`
-`sendmail`
+[`exim`][exim] 
+[`postfix`][postfix] 
+[`qmail`][qmail] 
+[`sendmail`][sendmail] 
 
 **[Network](#networking)** 
 [`bmon`][bmon] 
@@ -1275,6 +1314,22 @@ This attack can be detected using the **[osquery](https://osquery.io/)** tool. T
 
 # Linux commands
 ## Applications
+`git`
+[`imagemagick`](#imagemagick) 
+[`mongod`](#mongod) 
+**GNOME** 
+`gsettings`
+[`gconf-editor`][gconf-editor] 
+**KDE** 
+[`kquitapp`][kquitapp] 
+[`krunner`][krunner] 
+[`kstart`][kstart] 
+**SMB**
+[`smbclient`][smbclient] 
+[`smbpasswd`][smbpasswd] 
+[`smbstatus`][smbstatus] 
+
+
 ### `imagemagick`
 
 [imagemagick identify]:           #identify                   '```&#10;$ imagemagick identify&#10;```&#10;Describe the format and characteristics of one or more image files'
@@ -3215,16 +3270,20 @@ initctl reload
 [MUA][MUA]
 
 [pine]: #pine "\"Program for Internet news and email\", popular MUA during the 1990s which has since been replaced by Alpine."
-`mailmerge` 
-`mailq` 
-`mailstats` 
-`msmtp` 
-`postfix` 
-`postqueue` 
-`postsuper` 
-`qmail` 
-`sendmail` 
-`ssmtp`
+[`biff`][biff] 
+[`mail`][mail] 
+[`mailmerge`][mailmerge] 
+[`mailq`][mailq] 
+[`mailx`][mailx] 
+[`makemap`][makemap] 
+[`msmtp`][msmtp] 
+[`newaliases`][newaliases] 
+[`newaliases`][newaliases] 
+[`postalias`][postalias] 
+[`postfix`][postfix] 
+[`postqueue`][postqueue] 
+[`qmail`][qmail] 
+[`sendmail`][sendmail] 
 
 ### `mail`
 **Mail User Agent (MUA)** which accepts interactive input using the `&` prompt
