@@ -2213,33 +2213,6 @@ make -C/etc/mail
 <code>&nbsp;</code>   [`a`][xgettext -&#97;] <code>&nbsp;</code> [`c`][xgettext -&#99;] [`d`][xgettext -&#100;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`h`][xgettext -&#104;] <code>&nbsp;</code> [`j`][xgettext -&#106;] <code>&nbsp;</code> <code>&nbsp;</code> [`m`][xgettext -&#109;] [`n`][xgettext -&#110;] <code>&nbsp;</code> [`p`][xgettext -&#112;] <code>&nbsp;</code> <code>&nbsp;</code> [`s`][xgettext -&#115;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`x`][xgettext -&#120;] <code>&nbsp;</code> <code>&nbsp;</code>  <br><code>&nbsp;</code>&nbsp;<code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`M`][xgettext -&#77;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 
 
 ## Diagnostic and benchmarking
-[ausearch]:                    #ausearch                       '```&#10;$ ausearch&#10;```&#10;Display audit logs'
-[bpftrace]:                    #bpftrace                       '```&#10;$ bpftrace&#10;```&#10;New open-source tracer for analyzing production performance problems and troubleshooting software&#10;"An introduction to `bpftrace` for Linux". _opensource.com_'
-[date]:                        #date                           '```&#10;$ date&#10;```&#10;Print the current date and time, specifying a format.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 51'
-[df]:                          #df                             '```&#10;$ df&#10;```&#10;Display usage of partitions and logical devices&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 49'
-[du]:                          #du                             '```&#10;$ du $DIRS&#10;```&#10;Display disk utilization information for `$DIRS`&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 153'
-[free]:                        #free                           '```&#10;$ free&#10;```&#10;Display amount of free and used memory&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 114'
-[glances]:                     #glances                        '```&#10;$ glances&#10;```&#10;Cross-platform monitoring tool, written in Python&#10;Olushile, Paul. _Linux 5 Performance Monitoring and Tuning_.'
-[hwclock]:                     #hwclock                        '```&#10;$ hwclock&#10;```&#10;Access the BIOS clock&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 340'
-[loadaverage]:                 #loadaverage                    '```&#10;$ loadaverage&#10;```&#10;Display system load average (cf. `uptime`)&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 291'
-[logger]:                      #logger                         '```&#10;$ logger&#10;```&#10;Create a one-time file entry specified by the user&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 342'
-[logrotate]:                   #logrotate                      '```&#10;$ logrotate&#10;```&#10;Rename ("rotate") log files on a cyclic basis using /etc/logrotate.conf to determine behavior&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 445'
-[lsb_release]: #lsb_release '```&#10;$ lsb_release&#10;```&#10;&#10;Print distribution-specific information'
-[man]:                         #man                            '```&#10;$ man&#10;```&#10;Format and display system manual pages&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 75'
-[mpstat]:                      #mpstat                         '```&#10;$ mpstat&#10;```&#10;utility for monitoring CPU performance&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 635-637'
-[nproc]:                       #nproc                          '```&#10;$ nproc&#10;```&#10;Display number of CPU processors or cores&#10;Olushile, Paul. _Linux 5 Performance Monitoring and Tuning_.'
-[printenv]:                    #printenv                       '```&#10;$ printenv&#10;```&#10;Display environment variables&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 331'
-[rsyslogd]:                    #rsyslogd                       '```&#10;$ rsyslogd&#10;```&#10;Responsible for logging of application and system events&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 249'
-[sar]:                         #sar                            '```&#10;$ sar&#10;```&#10;Displays the same information as `iostat`, but displayed as it occurs over time (typically at 10-minute intervals)&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 291'
-[sysbench]:                    #sysbench                       '```&#10;$ sysbench&#10;```&#10;Multi-threaded benchmark tool for database systems'
-[syslogd]:                     #syslogd                        '```&#10;$ syslogd&#10;```&#10;Responsible for logging of application and system events&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 249'
-[time]:                        #time                           '```&#10;$ time&#10;```&#10;Determine how long it takes to run a command&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 302'
-[timedatectl]:                 #timedatectl                    '```&#10;$ timedatectl&#10;```&#10;Display system clock&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 71'
-[tty]:                         #tty                            '```&#10;$ tty&#10;```&#10;Determine terminal device file for current session&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 121'
-[uname]:                       #uname                          '```&#10;$ uname&#10;```&#10;Print the current Unix system name&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 221'
-[uptime]:                      #uptime                         '```&#10;$ uptime&#10;```&#10;Display current time, how long the system has been running, how many users are currently logged on, and the system load averages for the past 1, 5, and 15 minutes&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 114'
-[vmstat]:                      #vmstat                         '```&#10;$ vmstat&#10;```&#10;provides more detail than `free`&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 293'
-
 [`ausearch`][ausearch] 
 [`bpftrace`][bpftrace] 
 [`date`][date] 
@@ -2267,7 +2240,7 @@ make -C/etc/mail
 [`uptime`][uptime] 
 [`vmstat`][vmstat] 
 
-### `ausearch`
+#### `ausearch`
 Display audit logs from {startdate} to {enddate}
 ```sh
 ausearch --start startdate--end enddate
@@ -2276,7 +2249,7 @@ Search audit logs for today for logins of UID 500
 ```sh
 ausearch --start today --loginuid500
 ```
-### `date`
+#### `date`
 [date -&#100;]:                 #date                          '```&#10;$ date -d $DATE&#10;$ date --date $DATE&#10;```&#10;Display `$DATE`, which should be quoted&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 53'
 [date -&#102;]:                 #date                          '```&#10;$ date -f $DATEFILE&#10;$ date --file $DATEFILE&#10;```&#10;Like `-d`, but printed once for each line of `$DATEFILE`&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 53'
 [date -&#73;]:                  #date                          '```&#10;$ date -I&#10;$ date --iso-8601&#10;```&#10;Display in ISO-8601 format&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 53'
@@ -2327,7 +2300,7 @@ ausearch --start today --loginuid500
 
 <code>&nbsp;</code>   <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`d`][date -&#100;] <code>&nbsp;</code> [`f`][date -&#102;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`r`][date -&#114;] [`s`][date -&#115;] <code>&nbsp;</code> [`u`][date -&#117;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code>  <br><code>&nbsp;</code>&nbsp;<code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`I`][date -&#73;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`R`][date -&#82;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 
 
-#### Metacharacters
+###### Metacharacters
 <code>&nbsp;</code>   [`a`][date +%&#97;] [`b`][date +%&#98;] [`c`][date +%&#99;] [`d`][date +%&#100;] [`e`][date +%&#101;] <code>&nbsp;</code> [`g`][date +%&#103;] [`h`][date +%&#104;] <code>&nbsp;</code> [`j`][date +%&#106;] [`k`][date +%&#107;] [`l`][date +%&#108;] [`m`][date +%&#109;] [`n`][date +%&#110;] <code>&nbsp;</code> [`p`][date +%&#112;] <code>&nbsp;</code> [`r`][date +%&#114;] [`s`][date +%&#115;] [`t`][date +%&#116;] [`u`][date +%&#117;] <code>&nbsp;</code> [`w`][date +%&#119;] [`x`][date +%&#120;] [`y`][date +%&#121;] <code>&nbsp;</code>  <br><code>&nbsp;</code>&nbsp;[`A`][date +%&#65;] [`B`][date +%&#66;] <code>&nbsp;</code> [`D`][date +%&#68;] <code>&nbsp;</code> [`F`][date +%&#70;] [`G`][date +%&#71;] [`H`][date +%&#72;] [`I`][date +%&#73;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`M`][date +%&#77;] [`N`][date +%&#78;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`R`][date +%&#82;] [`S`][date +%&#83;] [`T`][date +%&#84;] [`U`][date +%&#85;] [`V`][date +%&#86;] [`W`][date +%&#87;] [`X`][date +%&#88;] [`Y`][date +%&#89;] [`Z`][date +%&#90;] 
 
 
@@ -2345,7 +2318,7 @@ Display the date fifty days into the future [devconnected.com][https://devconnec
 ```sh
 date -d '+50days' +%F
 ```
-### `df`
+#### `df`
 <!-- `df` options -->
 [df -&#97;]:                    #df                            '```&#10;$ df -&#97;&#10;$ df --all&#10;```&#10;Provide information about all filesystems, even ones marked in /etc/mnttab to be ignored&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 57'
 [df -&#66;]:                    #df                            '```&#10;$ df -&#66; $N&#10;$ df --block-size $N&#10;```&#10;Show space as `$N`-byte blocks. Historically, the default has been 512 B, but Linux uses 1,024 B.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 58'
@@ -2363,7 +2336,7 @@ date -d '+50days' +%F
 
 <code>&nbsp;</code>   [`a`][df -&#97;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`h`][df -&#104;] [`i`][df -&#105;] <code>&nbsp;</code> [`k`][df -&#107;] [`l`][df -&#108;] [`m`][df -&#109;] <code>&nbsp;</code> [`o`][df -&#111;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`t`][df -&#116;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`x`][df -&#120;] <code>&nbsp;</code> <code>&nbsp;</code>  <br><code>&nbsp;</code>&nbsp;<code>&nbsp;</code> [`B`][df -&#66;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`H`][df -&#72;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`P`][df -&#80;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`T`][df -&#84;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 
 
-### `du`
+#### `du`
 <!-- `du` options -->
 [du -&#48;]:                    #du                            '```&#10;$ du -0&#10;$ du --null&#10;```&#10;End each output line with a binary zero (NUL) character instead of a newline&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 68'
 [du -&#97;]:                    #du                            '```&#10;$ du -a&#10;$ du --all&#10;```&#10;Print usage for all files, not just subdirectories&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 67'
@@ -2384,19 +2357,19 @@ date -d '+50days' +%F
 
 [`0`][du -&#48;]   [`a`][du -&#97;] [`b`][du -&#98;] [`c`][du -&#99;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`h`][du -&#104;] <code>&nbsp;</code> <code>&nbsp;</code> [`k`][du -&#107;] [`l`][du -&#108;] [`m`][du -&#109;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`s`][du -&#115;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`x`][du -&#120;] <code>&nbsp;</code> <code>&nbsp;</code>  <br><code>&nbsp;</code>&nbsp;<code>&nbsp;</code> [`B`][du -&#66;] <code>&nbsp;</code> [`D`][du -&#68;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`L`][du -&#76;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`P`][du -&#80;] <code>&nbsp;</code> <code>&nbsp;</code> [`S`][du -&#83;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`X`][du -&#88;] <code>&nbsp;</code> <code>&nbsp;</code> 
 
-### `free`
+#### `free`
 Display amount of free and used memory in the system [<sup>ref</sup>][L5PMT-memory]
 ```sh
 free -m
 ```
-### `glances`
+#### `glances`
 Cross-platform monitoring tool, written in Python. [<sup>ref</sup>][L5PMT-glances]
 
 Config                | Description
 ---                   | ---
 /etc/default/glances  | Change value of `RUN` to `"True"` in order to have glances run on startup [<sup>ref</sup>][L5PMT-glances]
 
-### `hwclock`
+#### `hwclock`
 Connection to an NTP server is necessary for a variety of services.
 
 Linux systems have two clocks:
@@ -2407,31 +2380,31 @@ Manually synchronize hardware clock to system clock (generally only required if 
 ```bash
 hwclock --hctosys
 ```
-### `ioping`
+#### `ioping`
 Displays disk latency in the same way that `ping` shows network latency [<sup>ref</sup>][L5PMT-disk]
-### `iotop`
-### `lsb_release`
+#### `iotop`
+#### `lsb_release`
 Display version of Ubuntu
 ```sh
 lsb_release -sc
 ```
-### `lscpu`
+#### `lscpu`
 Display CPU architecture information [<sup>ref</sup>][L5PMT-cpu]
-### `mpstat`
+#### `mpstat`
 Report processor-related statistics (part of "sysstat" package). [<sup>ref</sup>][L5PMT-network]
 ```sh
 mpstat -P all
 ```
-### `netstat`
+#### `netstat`
 ```sh
 netstat -tulpn
 ```
-### `nproc`
+#### `nproc`
 Display number of CPU processors or cores [<sup>ref</sup>][L5PMT-cpu]
-### `pmap`
+#### `pmap`
 Report memory map of a process (part of "sysstat" package). [<sup>ref</sup>][L5PMT-network]
 
-### `sar`
+#### `sar`
 <!-- `sar` options -->
 [sar -&#65;]:                   #sar                           '```&#10;$ sar -&#65;&#10;```&#10;display the most information: equivalent to all options'
 [sar -&#98;]:                   #sar                           '```&#10;$ sar -&#98;&#10;```&#10;display input/output statistics'
@@ -2450,7 +2423,7 @@ Report memory map of a process (part of "sysstat" package). [<sup>ref</sup>][L5P
 
 <code>&nbsp;</code>   <code>&nbsp;</code> [`b`][sar -&#98;] <code>&nbsp;</code> [`d`][sar -&#100;] <code>&nbsp;</code> [`f`][sar -&#102;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`n`][sar -&#110;] [`o`][sar -&#111;] <code>&nbsp;</code> [`q`][sar -&#113;] [`r`][sar -&#114;] <code>&nbsp;</code> <code>&nbsp;</code> [`u`][sar -&#117;] [`v`][sar -&#118;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code>  <br><code>&nbsp;</code>&nbsp;[`A`][sar -&#65;] [`B`][sar -&#66;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`P`][sar -&#80;] <code>&nbsp;</code> [`R`][sar -&#82;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`W`][sar -&#87;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 
 
-### `sosreport`
+#### `sosreport`
 **SOS** is an open-source data collection tool that can be used to collect system configuration details and diagnostic information from a Unix-like operating system. It is installed by default on Ubuntu Server. <sup>[howtoforge.com](https://www.howtoforge.com/how-to-install-and-use-sosreport-on-ubuntu-1804/ "howtoforge.com: \"How to install and use sosreport on Ubuntu\"")</sup>
 
 Collect system configuration details (without arguments, the report will be generated and stored in `$TMPDIR`)
@@ -2469,7 +2442,7 @@ Generate report for only specific plugins
 ```sh
 sosreport -o apache --batch
 ```
-### `sysbench`
+#### `sysbench`
 Benchmark CPU by calculating prime numbers [<sup>YouTube</sup>][https://youtu.be/KkMWXVx-Ul8]
 ```sh
 sysbench --test=cpu --cpu-max-prime=20000 run
@@ -2478,7 +2451,7 @@ File I/O benchmarking [<sup>YouTube</sup>][https://youtu.be/KkMWXVx-Ul8]
 ```sh
 sysbench --test=fileio --file-total-size=10G --file-test-mode=rndrw --init-rng=on --max-time=300 --max-requests=0 run
 ```
-### `uname`
+#### `uname`
 <!-- `uname` options -->
 [uname -&#97;]:                 #uname                         '```&#10;$ uname -a&#10;$ uname --all&#10;```&#10;Report the information supplied by all the other options&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 221'
 [uname -&#109;]:                #uname                         '```&#10;$ uname -m&#10;$ uname --machine&#10;```&#10;Hardware name&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 221'
@@ -2492,7 +2465,7 @@ sysbench --test=fileio --file-total-size=10G --file-test-mode=rndrw --init-rng=o
 
 <code>&nbsp;</code> [`a`][uname -&#97;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`i`][uname -&#105;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`m`][uname -&#109;] [`n`][uname -&#110;] [`o`][uname -&#111;] [`p`][uname -&#112;] <code>&nbsp;</code> [`r`][uname -&#114;] [`s`][uname -&#115;] <code>&nbsp;</code> <code>&nbsp;</code> [`v`][uname -&#118;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 
 
-### `uptime`
+#### `uptime`
 [<sup>ref</sup>][L5PMT-cpu]
 ### `vmstat`
 
@@ -2515,8 +2488,6 @@ Output header | Description [<sup>ref</sup>][Eckert]
 `id`          | CPU idle time
 `wa`          | time spent waiting for I/O
 `st`          | time stolen from a virtual machine
-
-
 
 ## Disk
 [`blkid`][blkid] 
