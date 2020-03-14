@@ -47,6 +47,7 @@
 [SystemD]: systemd.md "De facto standard init system for all major Linux distributions today"
 [target]: #targets 'target&#10;systemd term for the operational modes that sysvinit calls "run levels"&#10;Nemeth, Evi. _Unix and Linux System Administration Handbook, 5th ed._: 43'
 [TmpFs]: # 'TmpFs&#10;Temporary file storage paradigm implemented in many Unix-like operating systems. It is intended to appear as a mounted file system, but data is stored in volatile memory instead of a persistent storage device.&#10;"tmpfs". Wikipedia.'
+[configure script]: # 'configure script&#10;Script that converts a Makefile.in template into a Makefile, responsible for preparing the software build, ensuring dependencies are available, such as a C compiler for C programs.&#10;Not typically built by hand but packaged by another program in the `autotools` suite, like `autoconf`, `automake`, etc. '
 
 ###### Tasks
 - [**Set custom resolution on a VM**](#custom-resolution)
@@ -67,6 +68,7 @@
 [SysFs][SysFs] 
 [target][target]
 [TmpFs][TmpFs] 
+[configure script][configure script]
 
 ###### Commands
 <!-- Applications -->
@@ -198,15 +200,14 @@
 [ctags]: #ctags '```&#10;$ ctags $FILES&#10;```&#10;Create a list of function and macro names that are defined in the specified C, Pascal, FORTRAN, `yacc`, or `lex` source `$FILES`. Output is in three columns:&#10;  - `name`                function or macro name&#10;  - `file`                source file in which `name` is defined&#10;  - `context`             search pattern that shows the line of code containing `name`&#10;&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 48'
 [etags]: #etags '```&#10;$ etags&#10;```&#10;Create a list of function and macro names defined in a programming source file, generating tags for use by `emacs`&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 75'
 [flex]: #flex '```&#10;$ flex&#10;```&#10;"Fast Lexical Analyzer Generator", faster variant of `lex` translated into C by Vern Paxson&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 92'
-[g++]: #g+                            '```&#10;$ g++&#10;```&#10;Invoke `gcc` with the options necessary to make it recognize C++.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 95'
+[g++]: #g++ '```&#10;$ g++&#10;```&#10;Invoke `gcc` with the options necessary to make it recognize C++.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 95'
 [gcc]: #gcc '```&#10;$ gcc&#10;```&#10;"GNU Compiler Collection", formerly known as the "GNU C Compiler", compiles multiple languages to machine code.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 95'
 [gcore]: #gcore '```&#10;$ gcore&#10;```&#10;Create a core image of each running process specified, which can be used with a debugger&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 98'
 [gdb]: #gdb '```&#10;$ gdb&#10;```&#10;"GNU DeBugger", allows you to step through the execution of a program in order to find the point at which it breaks&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 99'
 [gprof]: #gprof '```&#10;$ gprof&#10;```&#10;Display call-graph profile data of C programs'
-[ldd]: #ldd '```&#10;$ ldd&#10;```&#10;Display shared libraries used by a specified command&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 87'
+[ldd]: #ldd '```&#10;$ ldd $FILE&#10;```&#10;List dynamic dependencies: shared objects that would be loaded if `$FILE` were executed&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 115'
 [lex]: #lex '```&#10;$ lex&#10;```&#10;Generate a lexical analysis program based on the regular expressions and C statements contained in one or more input files (also `flex`)&#10;Lexical analyzer generator written by Eric Schmidt&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 119'
 [make]: #make '```&#10;$ make&#10;```&#10;Utility for building and maintaining programs from source code using a makefile&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 86'
-[strace]: #strace '```&#10;strace&#10;```&#10;Debugging tool that displays a trace of all system calls made by a process&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 418'
 [xgettext]: #xgettext '```&#10;$ xgettext&#10;```&#10;Extract specially marked strings from C and C++ source files, placing them in a .po ("portable object" file for translation and compilation by `msgfmt`.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 234'
 [yacc]: #yacc '```&#10;$ yacc&#10;```&#10;"yet another compiler-compiler", parser generator that converts a file containing a context-free LALR grmamar and converts it to tables for subsequent pasring, sending output to y.tab.c. Written between 1975 and 1978 by Stephen C. Johnson at Bell Labs.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 237'
 
@@ -684,6 +685,31 @@
 [`until`][until]
 [`wait`][wait]
 [`while`][while] 
+
+**Build tools**
+[`aclocal`][aclocal] 
+[`as`][as] 
+[`autoconf`][autoconf] 
+[`autoheader`][autoheader] 
+[`automake`][automake] 
+[`autoreconf`][autoreconf] 
+[`autoscan`][autoscan] 
+[`autoupdate`][autoupdate] 
+[`bison`][bison] 
+[`cc`][cc] 
+[`ctags`][ctags] 
+[`etags`][etags] 
+[`flex`][flex] 
+[`g++`][g++] 
+[`gcc`][gcc] 
+[`gcore`][gcore] 
+[`gdb`][gdb] 
+[`gprof`][gprof] 
+[`ldd`][ldd] 
+[`lex`][lex] 
+[`make`][make] 
+[`xgettext`][xgettext] 
+[`yacc`][yacc] 
 
 **[Disk](#disk)**
 [`blkid`][blkid] 
@@ -2002,7 +2028,7 @@ Reinstall GRUB
 grub-install /dev/sdx
 ```
 
-### `grub-install`
+#### `grub-install`
 Install GRUB as bootloader
 ```sh
 grub-install --target=i386-pc /dev/sdb
@@ -2011,60 +2037,33 @@ Install boot images within a directory other than /boot
 ```sh
 grub-install --boot-directory
 ```
-### `grub-mkconfig`
+#### `grub-mkconfig`
 Generate GRUB configuration
 ```sh
 grub-mkconfig -o /boot/grub/grub.cfg
 ```
-### `grub2-mkconfig`
+#### `grub2-mkconfig`
 Send output of grub2-mkconfig to the correct location for booting
 ```sh
 grub2-mkconfig --output=/boot/grub2/grub.cfg
 ```
-### `grub2-editenv`
+#### `grub2-editenv`
 Disable the Nouveau display driver while installing the proprietary Nvidia display driver on Fedora <sup>[linuxconfig.org](https://linuxconfig.org/how-to-install-the-nvidia-drivers-on-fedora-31 "How to install the NVIDIA drivers on Fedora 31")</sup>
 ```sh
 grub2-editenv - set "$(grub2-editenv - list | grep kernelopts) nouveau.modeset=0"
 ```
-### `update-grub`
+#### `update-grub`
 Update GRUB config file
 ```sh
 update-grub
 ```
 
 ## Build
-[aclocal]:                     #aclocal                        '```&#10;$ aclocal&#10;```&#10;Place m4 macro definitions needed by `autoconf` into a single file. `aclocal` first scans for macro definitions in m4 files in its default directory (/usr/share/aclocal) and in the file acinclude.m4, then in the configure.ac file. IT generates an aclocal.m4 file that contains definitions of all m4 macros required by `autoconf`.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 16'
-[as]:                          #as                             '```&#10;$ as&#10;```&#10;Generate an object file from each specified assembly language source file. Primarily intended to assemble the output of the GNU C compiler `gcc` for use by the linker `ld`.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 18'
-[autoconf]:                    #autoconf                       '```&#10;$ autoconf&#10;```&#10;Generate a configuration script from m4 macros defined in a template file, if given, or in a configure.ac or configure.in file in the CWD. The generated script is almost invariably called "configure".&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 21'
-[autoheader]:                  #autoheader                     '```&#10;$ autoheader&#10;```&#10;Generate a template file of C `#define` statements from m4 macros defined in a template file, if specified, or in configure.ac or configure.in in the CWD. The generated template file is almost invariably called config.h.in or config.hin&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 22'
-[automake]:                    #automake                       '```&#10;$ automake&#10;```&#10;Create GNU standards-compliant Makefile.in files from Makefile.am template files&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 23'
-[autoreconf]:                  #autoreconf                     '```&#10;$ autoreconf&#10;```&#10;Update configure scripts by running `autoconf`, `autoheader`, `aclocal`, `automake`, and `libtoolize` as needed&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 21'
-[autoscan]:                    #autoscan                       '```&#10;$ autoscan&#10;```&#10;Create or maintain a preliminary configure.ac file named configure.scan based on source files in specified directory or CWD.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 21'
-[autoupdate]:                  #autoupdate                     '```&#10;$ autoupdate&#10;```&#10;Update the configure template file or configure.ac if none is specified&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 21'
-[bison]:                       #bison                          '```&#10;$ bison&#10;```&#10;Convert specified "file.y" containing a context-free grammar into tables for subsequent parsing while sending output to a new file named "file.c". Largely compatible with `yacc`, from which it derives its name.&#10;Originated as an adaptation of Bob Corbett\'s reimplementation of `yacc` which was distributed under the Berkeley license. Now maintained as a project of the FSF under a GPL license.'
-[cc]:                          #cc                             '```&#10;$ cc&#10;```&#10;Compile one or more C (.c), assembler (.s), ore preprocessed C (.i) source files. Automatically invokes the loader `ld`, unless `-c` is suplied. In some cases, `cc` generates an object file having a .o suffix and a corresponding root name. By default, output is placed in `"a.out"&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 32'
-[ctags]:                       #ctags                          '```&#10;$ ctags $FILES&#10;```&#10;Create a list of function and macro names that are defined in the specified C, Pascal, FORTRAN, `yacc`, or `lex` source `$FILES`. Output is in three columns:&#10;  - `name`                function or macro name&#10;  - `file`                source file in which `name` is defined&#10;  - `context`             search pattern that shows the line of code containing `name`&#10;&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 48'
-[etags]:                       #etags                          '```&#10;$ etags&#10;```&#10;Create a list of function and macro names defined in a programming source file, generating tags for use by `emacs`&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 75'
-[flex]:                        #flex                           '```&#10;$ flex&#10;```&#10;"Fast Lexical Analyzer Generator", faster variant of `lex` translated into C by Vern Paxson&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 92'
-[g++]:                         #g++                            '```&#10;$ g++&#10;```&#10;Invoke `gcc` with the options necessary to make it recognize C++.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 95'
-[gcc]:                         #gcc                            '```&#10;$ gcc&#10;```&#10;"GNU Compiler Collection", formerly known as the "GNU C Compiler", compiles multiple languages to machine code.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 95'
-[gcore]:                       #gcore                          '```&#10;$ gcore&#10;```&#10;Create a core image of each running process specified, which can be used with a debugger&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 98'
-[gdb]:                         #gdb                            '```&#10;$ gdb&#10;```&#10;"GNU DeBugger", allows you to step through the execution of a program in order to find the point at which it breaks&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 99'
-[gprof]:                       #gprof                          '```&#10;$ gprof&#10;```&#10;Display call-graph profile data of C programs'
-[ldd]:                         #ldd                            '```&#10;$ ldd&#10;```&#10;Display shared libraries used by a specified command&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 87'
-[lex]:                         #lex                            '```&#10;$ lex&#10;```&#10;Generate a lexical analysis program based on the regular expressions and C statements contained in one or more input files (also `flex`)&#10;Lexical analyzer generator written by Eric Schmidt&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 119'
-[make]:                        #make                           '```&#10;$ make&#10;```&#10;Utility for building and maintaining programs from source code using a makefile&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 86'
-[strace]:                      #strace                          '```&#10;strace&#10;```&#10;Debugging tool that displays a trace of all system calls made by a process&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 418'
-[xgettext]:                    #xgettext                       '```&#10;$ xgettext&#10;```&#10;Extract specially marked strings from C and C++ source files, placing them in a .po ("portable object" file for translation and compilation by `msgfmt`.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 234'
-[yacc]:                        #yacc                           '```&#10;$ yacc&#10;```&#10;"yet another compiler-compiler", parser generator that converts a file containing a context-free LALR grmamar and converts it to tables for subsequent pasring, sending output to y.tab.c. Written between 1975 and 1978 by Stephen C. Johnson at Bell Labs.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 237'
-
-[autotools]: # "GNU autotools is a collection of three packages: `autoconf`, `automake`, and `libtool`"
-
 [`aclocal`][aclocal] 
 [`as`][as] 
-[`autoconf`][autoconf][<sup>!</sup>][autotools] 
+[`autoconf`][autoconf] 
 [`autoheader`][autoheader] 
-[`automake`][automake][<sup>!</sup>][autotools] 
+[`automake`][automake] 
 [`autoreconf`][autoreconf] 
 [`autoscan`][autoscan] 
 [`autoupdate`][autoupdate] 
@@ -2080,14 +2079,13 @@ update-grub
 [`gprof`][gprof] 
 [`ldd`][ldd] 
 [`lex`][lex] 
-`libtool`[<sup>!</sup>][autotools]
 [`make`][make] 
 [`xgettext`][xgettext] 
 [`yacc`][yacc] 
 
-### `autoconf`
+#### `autoconf`
 Other related programs are usually invoked automatically by tools in the `autoconf` suite: `autoreconf`, `autoscan`, and `autoupdate`
-### `cc`
+#### `cc`
 [cc -&#99;]:                    #cc                            '```&#10;$ cc -&#99;&#10;```&#10;suppress loading and keep any object files that were produced&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 32'
 [cc -&#68;]:                    #cc                            '```&#10;$ cc -&#68; $NAME=$DEF&#10;```&#10;supply a `#define` directive, defining `$NAME` to be `$DEF` (or 1 by default)&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 32'
 [cc -&#69;]:                    #cc                            '```&#10;$ cc -&#69;&#10;```&#10;run only the macro preprocessor, sending results to STDOUT&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 32'
@@ -2104,7 +2102,7 @@ Other related programs are usually invoked automatically by tools in the `autoco
 
 <code>&nbsp;</code>   <code>&nbsp;</code> <code>&nbsp;</code> [`c`][cc -&#99;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`g`][cc -&#103;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`l`][cc -&#108;] <code>&nbsp;</code> <code>&nbsp;</code> [`o`][cc -&#111;] [`p`][cc -&#112;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code>  <br><code>&nbsp;</code>&nbsp;<code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`D`][cc -&#68;] [`E`][cc -&#69;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`I`][cc -&#73;] <code>&nbsp;</code> <code>&nbsp;</code> [`L`][cc -&#76;] <code>&nbsp;</code> <code>&nbsp;</code> [`O`][cc -&#79;] [`P`][cc -&#80;] <code>&nbsp;</code> <code>&nbsp;</code> [`S`][cc -&#83;] <code>&nbsp;</code> [`U`][cc -&#85;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 
 
-### `make`
+#### `make`
 [make -&#98;]:                  #make                          '```&#10;$ make -&#98;&#10;```&#10;Silently accepted, but ignored, for compatibility with other versions of `make`&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 746'
 [make -&#66;]:                  #make                          '```&#10;$ make -&#66;&#10;$ make --always-make&#10;```&#10;Treat all targets as out of date. All targets are remade, no matter what the actual status is of their prerequisites&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 746'
 [make -&#67;]:                  #make                          '```&#10;$ make -&#67; $PATH&#10;$ make --directory $PATH&#10;```&#10;Change directory to `$PATH` before reading makefiles; usually used for recursive invocations of `make`.'
@@ -2132,11 +2130,15 @@ Other related programs are usually invoked automatically by tools in the `autoco
 
 <code>&nbsp;</code>   <code>&nbsp;</code> [`b`][make -&#98;] <code>&nbsp;</code> [`d`][make -&#100;] [`e`][make -&#101;] [`f`][make -&#102;] <code>&nbsp;</code> [`h`][make -&#104;] [`i`][make -&#105;] [`j`][make -&#106;] [`k`][make -&#107;] [`l`][make -&#108;] [`m`][make -&#109;] [`n`][make -&#110;] [`o`][make -&#111;] [`p`][make -&#112;] [`q`][make -&#113;] [`r`][make -&#114;] [`s`][make -&#115;] [`t`][make -&#116;] <code>&nbsp;</code> [`v`][make -&#118;] [`w`][make -&#119;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code>  <br><code>&nbsp;</code>&nbsp;<code>&nbsp;</code> [`B`][make -&#66;] [`C`][make -&#67;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`I`][make -&#73;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`S`][make -&#83;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`W`][make -&#87;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 
 
-A common formula when installing software from source is the following sequence of commands [<sup>ref</sup>](https://thoughtbot.com/blog/the-magic-behind-configure-make-make-install "thoughtbot.com: \"The magic behind configure, make, make install\"")
+A common formula when installing software from source is the following sequence of commands <sup>[thoughtbot.com](https://thoughtbot.com/blog/the-magic-behind-configure-make-make-install "thoughtbot.com: \"The magic behind configure, make, make install\"")</sup>
 ```sh
 ./configure
 make
 make install
+```
+Recompile `sendmail`
+```sh
+make -C/etc/mail
 ```
 Given there are 3 example files (main.cpp, message.cpp, and message.h) in a directory, it produces an executable file named `a.out`
 ```sh
@@ -2144,8 +2146,8 @@ g++ main.cpp message.cpp
 ```
 But for large projects, with potentially thousands of files, this is impractical
 
-#### makefiles
-Makefiles are sensitive to whitespace, so indentation is significant. The format follows the pattern:
+###### makefiles
+**Makefiles** are sensitive to whitespace, so indentation is significant. The format follows the pattern:
 ```makefile
 {target}: {dependencies}
   {action}
@@ -2166,8 +2168,6 @@ main.o: main.cpp
 clean:
   rm *.o output
 ```
-  - 
-
 Execute the operations specified in the makefile (if executed a second time without any changes, it will produce a notification that there have been no changes):
 ```sh
 make
@@ -2176,12 +2176,11 @@ Execute the `clean` section, removing files
 ```sh
 make clean
 ```
-
 Targets
 - `tinyconfig` smallest possible kernel configuration
 - `allnoconfig` answer no to every question when creating a config file
 
-#### configure script
+###### configure script
 Responsible for preparing the software build, ensuring dependencies are available, such as a C compiler for C programs. `make` is invoked after the `configure` script has done its job. The **configure** script converts a **Makefile.in** template into a **Makefile**. They are not built by hand but packaged by yet another program in the **autotools** suite, such as **autoconf**, **automake**, and others.
 
 A configure.ac file written in **m4sh** (a combination of m4 macros and shell script) is prepared. The first m4 macro called i **AC_INIT**, which initializes autoconf:
@@ -2191,11 +2190,6 @@ AC_INIT([helloworld], [0.1], [george@thoughtbot.com])
 The **AM_INIT_AUTOMAKE** macro is also called because we're using **automake**:
 ```m4
 AM_INIT_AUTOMAKE
-```
-#### Other examples
-Recompile [#sendmail]
-```sh
-make -C/etc/mail
 ```
 ### `xgettext`
 [xgettext -&#97;]:              #xgettext                      '```&#10;$ xgettext -&#97;&#10;$ xgettext --extract-all&#10;```&#10;Extract all strings, not just those in calls to `gettext` or `dgettext` (applies to C, C++, Objective-C, Shell, Python, Lisp, EmacsLisp, librep, Scheme, Java, C#, awk, Tcl, Perl, PHP, GCC-source, and Glade)&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 234'
