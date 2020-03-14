@@ -240,24 +240,61 @@
 
 <!-- Disk commands -->
 [blkid]: #blkid '```&#10;$ blkid&#10;```&#10;Display label and UUIDs of block devices.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 51'
-[dumpe2fs]: #dumpe2fs '```&#10;$ dumpe2fs&#10;```&#10;Display filesystem metadata&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 51'
-[e2label]: #e2label '```&#10;$ e2label&#10;```&#10;Change the label of a filesystem&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 53'
-[fsck]: #fsck '```&#10;$ fsck&#10;```&#10;Find filesystem problems on unmounted filesystems&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 52'
+[cryptsetup]: #cryptsetup '```&#10;$ cryptsetup&#10;```&#10;Encrypt a whole disk'
+[dd]: #dd '```&#10;$ dd&#10;```&#10;Convert and copy files, operating directly on block devices rather than through the filesystem layer&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 95'
+[dm-crypt]: #dm-crypt '```&#10;$ dm-crypt&#10;```&#10;Disk encryption subsystem which serves as the backend to `cryptsetup`'
+[dumpe2fs]: #dumpe2fs '```&#10;$ dumpe2fs&#10;```&#10;Display filesystem metadata&#10;Rothwell, William. _CompTIA Linux+/LPIC-1 Portable Command guide_.: 122'
+[e2fsck]: #e2fsck '```&#10;$ e2fsck&#10;```&#10;Execute filesystem-specific utilities (executed by `fsck`)&#10;Rothwell, William. _CompTIA Linux+/LPIC-1 Portable Command guide_.: 121'
+[e2label]: #e2label '```&#10;$ e2label $DEVICE $NAME&#10;```&#10;Create an image of important metadata for an ext3 filesystem; Assign label `$NAME` to `$DEVICE`&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 53'
+[eject]: #eject '```&#10;$ eject&#10;```&#10;Eject removable media, such as a floppy disk or CD-ROM&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 74'
+[fdformat]: #fdformat '```&#10;$ fdformat $DEVICE&#10;```&#10;Format floppy disks and PCMCIA memory cards&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 81'
+[fdisk]: #fdisk '```&#10;$ fdisk&#10;```&#10;Text-based program used to manipulate or display the partition table for block devices.&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 145'
+[fsck]: #fsck '```&#10;$ fsck $FILESYSTEM&#10;```&#10;Check `$FILESYSTEM` for errors&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 158'
+[fstrim]: #fstrim '```&#10;$ fstrim&#10;```&#10;Discard unused blocks on a mounted filesystem'
+[gdisk]: #gdisk '```&#10;$ gdisk&#10;```&#10;Interactive tool that allows you to display and modify GUID partition tables&#10;Rothwell, William. _CompTIA Linux+/LPIC-1 Portable Command guide_.: 114'
+[hdiutil]: #hdiutil '```&#10;$ hdiutil&#10;```&#10;Manipulate disk images'
+[hdparm]: #hdparm '```&#10;$ hdparm&#10;```&#10;Get/set SATA/IDE device parameters'
 [ioping]: #ioping '```&#10;$ ioping&#10;```&#10;Perform simple latency tests on a disk&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 288'
-[iostat]: #iostat '```&#10;$ iostat&#10;```&#10;Display input/output statistics on devices, including partitions&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 48'
-[mdadm]: #mdadm '```&#10;$ mdadm&#10;```&#10;Create a software RAID device&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 45'
-[mkfs]: #mkfs '```&#10;$ mkfs&#10;```&#10;Create a filesystem on a partition; actually a frontend utility to other commands.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 48'
+[lsblk]: #lsblk '```&#10;$ lsblk&#10;```&#10;Display information about all block devices'
+[mdadm]: #mdadm '```&#10;$ mdadm&#10;```&#10;Create and manager software RAID devices&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 45'
+[mke2fs]: #mke2fs '```&#10;$ mke2fs&#10;```&#10;Create ext2/ext3/ext4 filesystems.&#10;Rothwell, William. _CompTIA Linux+/LPIC-1 Portable Command guide_.: 121'
+[mkfs]: #mkfs '```&#10;$ mkfs&#10;```&#10;Frontend program for filesystem-specific creation tools such as `mkfs.ext2` and `mkfs.msdos`, which are in turn linked to `mke2fs` and `mkdosfs`&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 149'
 [mkswap]: #mkswap '```&#10;$ mkswap&#10;```&#10;Format a partition as a swap device&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 293'
-[parted]: #parted '```&#10;$ parted&#10;```&#10;Interactive tool that can display and modify traditional and GUID partition tables and create a filesystem on a partition.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 46'
+[mount]: #mount '```&#10;$ mount&#10;```&#10;Mount filesystems into the filesystem hierarchy&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 163'
+[mt]: #mt '```&#10;$ mt&#10;```&#10;Control magnetic tape drive operation; operates on environment variable `$TAPE`'
+[parted]: #parted '```&#10;$ parted&#10;```&#10;Interactive tool that allows you to display and modify both traditional and GUID partition tables.&#10;Rothwell, William. _CompTIA Linux+/LPIC-1 Portable Command guide_.: 115'
 [partprobe]: #partprobe '```&#10;$ partprobe&#10;```&#10;Inform system of changes to partition table, typically used after making changes using `fdisk`&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 289'
 [partx]: #partx '```&#10;$ partx&#10;```&#10;Utility that provides information on drive partitions to the Linux kernel'
 [resize2fs]: #resize2fs '```&#10;$ resize2fs&#10;```&#10;Resize a logical volume&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 52'
+[resize4fs]: #resize4fs '```&#10;$ resize4fs&#10;```&#10;Resize ext4 filesystem'
+[sfdisk]: #sfdisk '```&#10;$ sfdisk&#10;```&#10;Script-based partition table editor, similar to `fdisk` and `gdisk`; does not interface with GPT format and not designed for large partitions.'
 [swapoff]: #swapoff '```&#10;$ swapoff&#10;```&#10;Stop using a swap file or device&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 292'
-[swapon]: #swapon '```&#10;$ swapon&#10;```&#10;Begin using a swap file or device&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 292'
-[tune2fs]: #tune2fs '```&#10;$ tune2fs&#10;```&#10;Display or modify specific metadata for an ext filesystem.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 53'
-[umount]: #umount '```&#10;$ umount&#10;```&#10;Unmount a filesystem&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 50'
-[xfs_info]: #xfs_info '```&#10;$ xfs_info&#10;```&#10;Display the geometry of an XFS filesystem (cf. `dumpe2fs`)&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 44'
-[xfs_metadump]: #xfs_metadump '```&#10;$ xfs_metadump&#10;```&#10;Dump metadata from an unmounted XFS filesystem into a file for debugging purposes.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 44'
+[swapon]: #swapon '```&#10;$ swapon&#10;```&#10;Take a valid swap device and enable it to be used as virtual memory on the system.&#10;Rothwell, William. _CompTIA Linux+/LPIC-1 Portable Command guide_.: 117'
+[tune2fs]: #tune2fs '```&#10;$ tune2fs $DEVICE&#10;```&#10;Modify tunable parameters on the ext2 or ext3 filesystem on `$DEVICE`&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 155'
+[umount]: #umount '```&#10;$ umount&#10;```&#10;Unmount filesystems from filesystem hierarchy&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 167'
+[vifs]: #vifs '```&#10;$ vifs&#10;```&#10;Safely edit /etc/fstab file'
+[xfs_info]: #xfs_info '```&#10;$ xfs_info $DEVICE&#10;```&#10;Display information about the XFS partition&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 157'
+[xfs_metadump]: #xfs_metadump '```&#10;$ xfs_metadump&#10;```&#10;Debugging tool that copies the metadata from an XFS filesystem to a file.&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 160'
+[df]: #df '```&#10;$ df $NAME&#10;```&#10;Report the number of free disk blocks and inodes available on all mounted filesystems or on the given $NAME, which can be a device name, directory name of a mount point, directory, or remote filesystem name&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 56'
+[iostat]: #iostat '```&#10;$ iostat&#10;```&#10;Display input/output statistics on devices, including partitions&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 48'
+[lvcreate]: #lvcreate '```&#10;$ lvcreate&#10;```&#10;&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 223'
+[lvdisplay]: #lvdisplay '```&#10;$ lvdisplay&#10;```&#10;&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 223'
+[lvextend]: #lvextend '```&#10;$ lvextend&#10;```&#10;&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 225'
+[lvremove]: #lvremove '```&#10;lvremove&#10;```&#10;'
+[lvs]: #lvs '```&#10;lvs&#10;```&#10;'
+[lvscan]: #lvscan '```&#10;lvscan&#10;```&#10;&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 225'
+[pvcreate]: #pvcreate '```&#10;pvcreate&#10;```&#10;Convert existing devices into LVM physical volumes&#10;Rothwell, William. _CompTIA Linux+/LPIC-1 Portable Command guide_.: 21'
+[pvdisplay]: #pvdisplay '```&#10;pvdisplay&#10;```&#10;Display information about a PV&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 45'
+[pvremove]: #pvremove '```&#10;pvremove&#10;```&#10;'
+[pvs]: #pvs '```&#10;pvs&#10;```&#10;'
+[pvscan]: #pvscan '```&#10;pvscan&#10;```&#10;&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 225'
+[vgcreate]: #vgcreate '```&#10;vgcreate&#10;```&#10;&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 222'
+[vgdisplay]: #vgdisplay '```&#10;vgdisplay&#10;```&#10;Display information about a VG&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 45'
+[vgextend]: #vgextend '```&#10;vgextend&#10;```&#10;Add a PV to an existing VG&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 45'
+[vgreduce]: #vgreduce '```&#10;vgreduce&#10;```&#10;Remove a PV from a VG&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 45'
+[vgremove]: #vgremove '```&#10;$ vgremove&#10;```&#10;Delete a VG&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 45'
+[vgs]: #vgs '```&#10;$ vgs&#10;```&#10;'
+[vgscan]: #vgscan '```&#10;vgscan&#10;```&#10;&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 225'
 
 <!-- File commands -->
 [chattr]: #chattr '```&#10;$ chattr&#10;```&#10;Change file attributes&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 311-312'
@@ -317,26 +354,81 @@
 [rmmod]: #rmmod '```&#10;$ rmmod&#10;```&#10;Remove modules from the running kernel.&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 16'
 [udevadm]: #udevadm '```&#10;$ udevadm&#10;```&#10;Load new rules into kernel memory, or verify they have taken effect, after changing a udev rule.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 181'
 
+<!-- Network commands -->
+[bmon]: #bmon '```&#10;$ bmon&#10;```&#10;Terminal-based graphical bandwidth monitor'
+[brctl]: #brctl '```&#10;$ brctl&#10;```&#10;Create, modify, or view an Ethernet bridge, which connects separate networks into a single network from the perspective of users.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 27'
+[curl]: #curl '```&#10;$ curl&#10;```&#10;Noninteractively transfer data from a large number of protocols, including FTP, FTPS, HTTP, SCP, SFTP, SMB, SMBS, Telnet, and TFTP&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 90'
+[dig]: #dig '```&#10;$ dig&#10;```&#10;Query DNS servers&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 64'
+[ethtool]: #ethtool '```&#10;$ ethtool&#10;```&#10;Display and configure network device settings.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 22'
+[firewall-cmd]: #firewall-cmd '```&#10;$ firewall-cmd&#10;```&#10;In Red Hat systems, the successor to `iptables` and like it a frontend to the `netfilter` protocols; places network traffic into "zones". Commands have to be written twice: once to affect running config and again to have the change saved'
+[host]: #host '```&#10;$ host&#10;```&#10;Perform simple DNS queries&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 20'
+[hping3]: #hping3 '```&#10;$ hping3&#10;```&#10;Active network smashing tool'
+[ifconfig]: #ifconfig '```&#10;$ ifconfig&#10;```&#10;Obsolete program that configures network interfaces&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 386'
+[iftop]: #iftop '```&#10;$ iftop&#10;```&#10;Display network connections using the most bandwidth&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 281'
+[ifup-wireless]: #ifup-wireless '```&#10;$ ifup-wireless&#10;```&#10;Configure wireless networks&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 28'
+[ip]: #ip '```&#10;$ ip&#10;```&#10;Newer alternative to the old `ifconfig`&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 21'
+[iperf]: #iperf '```&#10;$ iperf&#10;```&#10;Create tests of the throughput between two systems, requiring setup on both client and server&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 281'
+[ipset]: #ipset '```&#10;$ ipset&#10;```&#10;Create a "set" of IP addresses to which firewall rules can be applied&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 282'
+[iscsiadm]: #iscsiadm '```&#10;$ iscsiadm&#10;```&#10;Command-line utility allowing discovery and login to iSCSI targets'
+[iw]: #iw '```&#10;$ iw&#10;```&#10;Show or manipulate wireless devices and their configuration'
+[iwconfig]: #iwconfig '```&#10;$ iwconfig&#10;```&#10;Display or set information about wireless network interfaces.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 25'
+[iwlist]: #iwlist '```&#10;$ iwlist&#10;```&#10;Get detailed wireless information about a wireless interface'
+[kinit]: #kinit '```&#10;$ kinit&#10;```&#10;Kerberos utility to obtain an individual ticket, which is then cached on the local system.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 239'
+[klist]: #klist '```&#10;$ klist&#10;```&#10;Display a list of cached Kerberos tickets&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 239'
+[mtr]: #mtr '```&#10;$ mtr&#10;```&#10;Performs a `traceroute`-like operation every second&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 285'
+[netcat]: #netcat '```&#10;$ netcat&#10;```&#10;Versatile utility for TCP or UDP connections&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 284'
+[netplan]: #netplan '```&#10;$ netplan&#10;```&#10;Ubuntu network configuration tool'
+[netstat]: #netstat '```&#10;$ netstat&#10;```&#10;Print network connections, routing tables, interface statistics, masquerade connections, and multi-cast memberships&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 18'
+[nmap]: #nmap '```&#10;$ nmap&#10;```&#10;Probe a system for open ports&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 280'
+[nmblookup]: #nmblookup '```&#10;$ nmblookup&#10;```&#10;Test NetBIOS name resolution&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 591'
+[nmcli]: #nmcli '```&#10;$ nmcli&#10;```&#10;Configure NetworkManager&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 26'
+[nmtui]: #nmtui '```&#10;$ nmtui&#10;```&#10;Provide a text-based to configure NetworkManager.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 27'
+[nslookup]: #nslookup '```&#10;$ nslookup&#10;```&#10;Perform simple queries on DNS servers&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 19'
+[ping]: #ping '```&#10;$ ping&#10;```&#10;Verify a remote host can respond to a network&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 18'
+[rfkill]: #rfkill '```&#10;$ rfkill&#10;```&#10;tool for enabling and disabling wireless devices'
+[route]: #route '```&#10;$ route&#10;```&#10;Display or modify routing table&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 21'
+[sftp]: #sftp '```&#10;$ sftp&#10;```&#10;Securely transfer files over ssh&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 274'
+[ss]: #ss '```&#10;ss&#10;```&#10;Display socket information.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 25'
+[ssh]: #ssh '```&#10;ssh&#10;```&#10;&#10;Rothwell, William. _CompTIA Linux+/LPIC-1 Portable Command guide_.: 266'
+[ssh-add]: #ssh-add '```&#10;ssh-add&#10;```&#10;&#10;Rothwell, William. _CompTIA Linux+/LPIC-1 Portable Command guide_.: 268'
+[ssh-agent]: #ssh-agent '```&#10;ssh-agent&#10;```&#10;&#10;Rothwell, William. _CompTIA Linux+/LPIC-1 Portable Command guide_.: 268'
+[ssh-keygen]: #ssh-keygen '```&#10;ssh-keygen&#10;```&#10;&#10;Rothwell, William. _CompTIA Linux+/LPIC-1 Portable Command guide_.: 267'
+[ssh-keyscan]: #ssh-keyscan '```&#10;ssh-keyscan&#10;```&#10;'
+[stty]: #stty '```&#10;$ stty&#10;```&#10;'
+[tcpdump]: #tcpdump '```&#10;$ tcpdump&#10;```&#10;Inspect IP packets (Wireshark is a GUI-based alternative)&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 282'
+[tracepath]: #tracepath '```&#10;tracepath&#10;```&#10;Similar to `traceroute`, but with fewer options and no requirement for superuser privileges&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 287'
+[tracepath6]: #tracepath6 '```&#10;tracepath6&#10;```&#10;&#10;Rothwell, William. _CompTIA Linux+/LPIC-1 Portable Command guide_.: 246'
+[traceroute]: #traceroute '```&#10;traceroute&#10;```&#10;Follow the path a packet takes between two hosts&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 285'
+[tshark]: #tshark '```&#10;tshark&#10;```&#10;Wireshark terminal interface&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 283'
+[wget]: #wget '```&#10;$ wget&#10;```&#10;Noninteractive tool to download files from remote systems via HTTP, HTTPS, or FTP.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 89'
+[whois]: #whois '```&#10;$ whois&#10;```&#10;Determine domain ownership&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 287'
+[xinetd]: #xinetd '```&#10;$ xinetd&#10;```&#10;Internet Super Daemon provided an alternate method of connecting to various outdated network services. Should be turned off nowadays.'
+
 <!-- Package managers -->
-[alien]: #alien '```&#10;$ alien&#10;```&#10;Convert between or install package types native to other distributions, including Red Hat .rpm, Stampede .slp, Slackware .tgz, and generic .tar.gz files.&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 52'
 [add-apt-repository]: #add-apt-repository '```&#10;$ add-apt-repository&#10;```&#10;'
+[alien]: #alien '```&#10;$ alien&#10;```&#10;Convert between or install package types native to other distributions, including Red Hat .rpm, Stampede .slp, Slackware .tgz, and generic .tar.gz files.&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 52'
 [apt]: #apt '```&#10;$ apt&#10;```&#10;'
 [apt-cache]: #apt-cache '```&#10;$ apt-cache&#10;```&#10;Display package information regarding the package cache&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 81'
-[apt-get]: #apt-get '```&#10;$ apt-get&#10;```&#10;'
+[apt-get]: #apt-get '```&#10;$ apt-get&#10;```&#10;Part of the Advanced Package Tool (APT) management system.&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 50'
+[brew]: #brew '```&#10;$ brew&#10;```&#10;'
 [dnf]: #dnf '```&#10;$ dnf&#10;```&#10;Package manager for Red Hat systems that supercedes `yum`&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 86'
-[dpkg]: #dpkg '```&#10;$ dpkg&#10;```&#10;Manage local Debian packages&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 79'
-[dpkg-reconfigure]: #dpkg-reconfigure '```&#10;$ dpkg-reconfigure&#10;```&#10;Run the configuration script again for a package that has already been installed.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 80'
+[dpkg]: #dpkg '```&#10;$ dpkg&#10;```&#10;Manage local Debian packages&#10;Rothwell, William. _CompTIA Linux+/LPIC-1 Portable Command guide_.: 39'
+[dpkg-reconfigure]: #dpkg-reconfigure '```&#10;$ dpkg-reconfigure&#10;```&#10;Run the configuration script that is typically installed as part of the installation process.&#10;Rothwell, William. _CompTIA Linux+/LPIC-1 Portable Command guide_.: 39'
+[dselect]: #dselect '```&#10;$ dselect&#10;```&#10;Interactive, menu-driven frontend tool for `dpkg`, usually invoked without parameters. It allows you to interactively manage packages by selecting them for installation, removal, configuration, etc.&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 51'
 [gem]: #gem '```&#10;$ gem&#10;```&#10;'
 [pacman]: #pacman '```&#10;$ pacman&#10;```&#10;'
 [pip]: #pip '```&#10;$ pip&#10;```&#10;'
 [rpm]: #rpm '```&#10;$ rpm&#10;```&#10;Install, upgrade, and remove .rpm packages&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 78'
-[snap]: #snap '```&#10;$ snap&#10;```&#10;'
+[snap]: #snap '```&#10;snap&#10;```&#10;'
 [yay]: #yay '```&#10;$ yay&#10;```&#10;'
 [yum]: #yum '```&#10;$ yum&#10;```&#10;Package manager for Red Hat systems&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 83'
-[yumdownloader]: #yumdownloader        '```&#10;$ yumdownloader&#10;```&#10;Download software packages without installing them&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 84'
-[zypper]: #zypper               '```&#10;$ zypper&#10;```&#10;Package manager for SUSE with a syntax similar to that of `yum`&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 86'
+[yumdownloader]: #yumdownloader '```&#10;$ yumdownloader&#10;```&#10;Download software packages without installing them&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 84'
+[zypper]: #zypper '```&#10;$ zypper&#10;```&#10;Package manager for SUSE with a syntax similar to that of `yum`&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 86'
 
 <!-- Process control -->
+[at]: #at '```&#10;$ at&#10;```&#10;Schedule one or more commands to be executed at a specific time in the future.&#10;After specifying a future time on the command-line, the `at>` prompt appears, allowing you to specify a series of shell commands which can be terminated with Ctrl+D (EOF)&#10;Rothwell, William. _CompTIA Linux+/LPIC-1 Portable Command guide_.: 195'
+[atq]: #atq '```&#10;$ atq&#10;```&#10;'
+[atrm]: #atrm '```&#10;$ atrm&#10;```&#10;'
 [bg]: #bg '```&#10;$ bg&#10;```&#10;Restart a suspended process in the background. Specify the number of the job according to the output of `jobs`, preceded by "%".&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 171'
 [fg]: #fg '```&#10;$ fg $JOB&#10;```&#10;Place `$JOB` in the foreground&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 119'
 [jobs]: #jobs '```&#10;$ jobs&#10;```&#10;List active jobs&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 119'
@@ -354,6 +446,21 @@
 [strace]: #system-calls '```&#10;$ strace&#10;```&#10;debugging tool that displays a trace of all system calls made by a process&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 418'
 [top]: #top '```&#10;$ top&#10;```&#10;Display continuously updated display of processes similar to `ps`&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 112'
 
+<!-- Remote administration -->
+[curl]: #curl '```&#10;$ curl&#10;```&#10;Noninteractively transfer data from a large number of protocols, including FTP, FTPS, HTTP, SCP, SFTP, SMB, SMBS, Telnet, and TFTP&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 90'
+[ftp]: #ftp '```&#10;$ ftp&#10;```&#10;Establish an interactive FTP connection with a host to transfer files interactively.&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 378'
+[rsync]: #rsync '```&#10;rsync&#10;```&#10;Copy files remotely; used in situations where only updated files are to be transferred in order to preserve bandwidth.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 131'
+[ssh]: #ssh '```&#10;$ ssh&#10;```&#10;&#10;Rothwell, William. _CompTIA Linux+/LPIC-1 Portable Command guide_.: 266'
+[ssh-add]: #ssh-add '```&#10;$ ssh-add&#10;```&#10;&#10;Rothwell, William. _CompTIA Linux+/LPIC-1 Portable Command guide_.: 268'
+[ssh-agent]: #ssh-agent '```&#10;$ ssh-agent&#10;```&#10;&#10;Rothwell, William. _CompTIA Linux+/LPIC-1 Portable Command guide_.: 268'
+[ssh-keygen]: #ssh-keygen '```&#10;$ ssh-keygen&#10;```&#10;&#10;Rothwell, William. _CompTIA Linux+/LPIC-1 Portable Command guide_.: 267'
+[ssh-keyscan]: #ssh-keyscan '```&#10;$ ssh-keyscan&#10;```&#10;'
+[stty]: #stty '```&#10;stty&#10;```&#10;'
+[telnet]: #telnet '```&#10;telnet&#10;```&#10;Establish a connection to a host.&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 380'
+[vncpasswd]: #vncpasswd '```&#10;$ vncpasswd&#10;```&#10;&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 561'
+[vncviewer]: #vncviewer '```&#10;$ vncviewer&#10;```&#10;&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 561'
+[sshfs]: #sshfs '```&#10;sshfs&#10;```&#10;'
+
 <!-- SELinux -->
 [chcon]: #chcon '```&#10;$ chcon&#10;```&#10;Change context of a file or directory&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 207'
 [getenforce]: #getenforce '```&#10;$ getenforce&#10;```&#10;Determine the current SELinux mode&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 205'
@@ -364,37 +471,60 @@
 [setenforce]: #setenforce '```&#10;$ setenforce&#10;```&#10;Change SELinux mode&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 205'
 [setsebool]: #setsebool '```&#10;$ setsebool&#10;```&#10;Set an SELinux Boolean&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 206'
 
+<!-- Shell and environment commands -->
+[apropos]: #apropos '```&#10;$ apropos $KEYWORDS&#10;```&#10;Look up one or more `$KEYWORDS` in the online manpages (equivalent to `man -k`)'
+[env]: #env '```&#10;$ env&#10;```&#10;Display the current environment, or set them to a new value if specified.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 75'
+[export]: #export '```&#10;$ export&#10;```&#10;Convert an existing local variable to an environment vairable&#10;Rothwell, William. _CompTIA Linux+/LPIC-1 Portable Command guide_.: 53'
+[history]: #history '```&#10;$ history&#10;```&#10;Display the contents of the history command list&#10;Rothwell, William. _CompTIA Linux+/LPIC-1 Portable Command guide_.: 57'
+[man]: #man '```&#10;$ man&#10;```&#10;Discover additional information about a command&#10;Rothwell, William. _CompTIA Linux+/LPIC-1 Portable Command guide_.: 55'
+[nohup]: #nohup '```&#10;$ nohup&#10;```&#10;Start a child process which will not end when the parent does.&#10;Rothwell, William. _CompTIA Linux+/LPIC-1 Portable Command guide_.: 92'
+[pwd]: #pwd '```&#10;$ pwd&#10;```&#10;Display the current directory of the shell&#10;Rothwell, William. _CompTIA Linux+/LPIC-1 Portable Command guide_.: 54'
+[sleep]: #sleep '```&#10;sleep $N&#10;```&#10;Wait `$N` seconds before executing another command'
+[su]: #su '```&#10;su&#10;```&#10;&#10;Rothwell, William. _CompTIA Linux+/LPIC-1 Portable Command guide_.: 254'
+[sudo]: #sudo '```&#10;$ sudo&#10;```&#10;&#10;Rothwell, William. _CompTIA Linux+/LPIC-1 Portable Command guide_.: 253'
+[tee]: #tee '```&#10;tee&#10;```&#10;Send STDOUT to the terminal and to a file&#10;Rothwell, William. _CompTIA Linux+/LPIC-1 Portable Command guide_.: 86'
+[unalias]: #unalias '```&#10;unalias&#10;```&#10;&#10;Rothwell, William. _CompTIA Linux+/LPIC-1 Portable Command guide_.: 157'
+[watch]: #watch '```&#10;watch&#10;```&#10;Repeat a command at regular intervals and watch its changing output'
+[whatis]: #whatis '```&#10;whatis&#10;```&#10;Look up one or more commands in the online manpages and display a brief description'
+[where]: #where '```&#10;where&#10;```&#10;&#10;Rothwell, William. _CompTIA Linux+/LPIC-1 Portable Command guide_.: 167'
+[whereis]: #whereis '```&#10;whereis&#10;```&#10;&#10;Rothwell, William. _CompTIA Linux+/LPIC-1 Portable Command guide_.: 147'
+[which]: #which '```&#10;which&#10;```&#10;&#10;Rothwell, William. _CompTIA Linux+/LPIC-1 Portable Command guide_.: 147'
+[xargs]: #xargs '```&#10;xargs $CMD&#10;```&#10;Execute `$CMD` followed by optional arguments.&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 107'
+
 <!-- System administration commands -->
-[adduser]: #adduser '```&#10;$ adduser&#10;```&#10;Create a new user or update default new user information'
-[at]: #at '```&#10;$ at&#10;```&#10;Schedule one or more commands to be executed at a specific time in the future.&#10;After specifying a future time on the command-line, the `at>` prompt appears, allowing you to specify a series of shell commands which can be terminated with Ctrl+D (EOF)&#10;Rothwell, William. _CompTIA Linux+/LPIC-1 Portable Command guide_.: 195'
-[atq]: #atq '```&#10;$ atq&#10;```&#10;'
-[atrm]: #atrm '```&#10;$ atrm&#10;```&#10;'
-[chage]: #chage '```&#10;$ chage&#10;```&#10;Modify password-aging features for a user.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 95'
-[edquota]: #edquota '```&#10;$ edquota&#10;```&#10;Create or edit disk quota of `$USER`&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 99'
-[getent]: #getent '```&#10;$ getent&#10;```&#10;List values stored in colon-delimited user and group account databases like /etc/passwd&#10;Rothwell, William. _CompTIA Linux+/LPIC-1 Portable Command guide_.: 185'
-[gpasswd]: #gpasswd '```&#10;$ gpasswd&#10;```&#10;Interactively set the password for `$GROUP`&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 326'
-[groupadd]: #groupadd '```&#10;$ groupadd&#10;```&#10;Add `$GROUP` to the system&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 325'
-[groupdel]: #groupdel '```&#10;$ groupdel&#10;```&#10;Delete `$GROUP` from the system&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 325'
-[groupmod]: #groupmod '```&#10;$ groupmod&#10;```&#10;Modify the parameters of `$GROUP`&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 325'
-[last]: #last '```&#10;$ last&#10;```&#10;Display history of successful logins'
+[adduser]: #adduser '```&#10;$ adduser&#10;```&#10;create a new user or update default new user information'
+[chage]: #chage '```&#10;$ chage&#10;```&#10;Maintain the password aging limits on a user account&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 416'
+[chgrp]: #chgrp '```&#10;$ chgrp&#10;```&#10;&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 155'
+[chmod]: #chmod '```&#10;$ chmod&#10;```&#10;&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 159'
+[edquota]: #edquota '```&#10;$ edquota $USER&#10;```&#10;Create or edit disk quota of `$USER`&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 99'
+[gpasswd]: #gpasswd '```&#10;$ gpasswd $GROUP&#10;```&#10;Interactively set the password for `$GROUP`&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 326'
+[groupadd]: #groupadd '```&#10;$ groupadd $GROUP&#10;```&#10;Add `$GROUP` to the system&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 325'
+[groupdel]: #groupdel '```&#10;$ groupdel $GROUP&#10;```&#10;Delete `$GROUP` from the system&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 325'
+[groupmod]: #groupmod '```&#10;$ groupmod $GROUP&#10;```&#10;Modify the parameters of `$GROUP`&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 325'
+[groups]: #groups '```&#10;$ groups $USER&#10;```&#10;Show the groups that `$USER` belongs to (default is effective user)'
+[last]: #last '```&#10;$ last $USER&#10;```&#10;Display history of successful logins'
 [lastb]: #lastb '```&#10;$ lastb&#10;```&#10;Display failed login attempts&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 255'
-[passwd]: #passwd '```&#10;$ passwd&#10;```&#10;Interactively set the password for `$USER`&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 325'
+[passwd]: #passwd '```&#10;$ passwd $USER&#10;```&#10;Interactively set the password for `$USER`&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 325'
 [quota]: #quota '```&#10;$ quota&#10;```&#10;Display quota limits on user or group&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 169'
 [quotacheck]: #quotacheck '```&#10;$ quotacheck&#10;```&#10;Examine filesystems and compile quota databases&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 171'
 [quotaoff]: #quotaoff '```&#10;$ quotaoff&#10;```&#10;Disable disk quotas on one or more filesystems&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 171'
 [quotaon]: #quotaon '```&#10;$ quotaon&#10;```&#10;Enable previously configure disk quotas on one or more filesystems&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 170'
 [repquota]: #repquota '```&#10;$ repquota&#10;```&#10;Display quotas for an entire filesystem&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 101'
 [su]: #su '```&#10;$ su&#10;```&#10;Allow a user to shift user accounts&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 209'
-[sudo]: #sudo '```&#10;$ sudo&#10;```&#10;Run commands as other users (typically as the root user).&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 209'
-[sudoedit]: #sudoedit '```&#10;$ sudoedit&#10;```&#10;Edit a file using sudo&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 210'
-[ulimit]: #ulimit '```&#10;$ ulimit&#10;```&#10;Display or set a account limits of `$USER`&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 201'
-[useradd]: #useradd '```&#10;$ useradd&#10;```&#10;Create a user account&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 94'
-[userdel]: #userdel '```&#10;$ userdel&#10;```&#10;Delete a user account&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 96'
-[usermod]: #usermod '```&#10;$ usermod&#10;```&#10;Modify a user account&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 94'
-[visudo]: #visudo '```&#10;$ visudo&#10;```&#10;Safely edit the /etc/sudoers file'
-[w]: #w '```&#10;$ w&#10;```&#10;Display output similar to that of `uptime` for all logged-in users&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 97'
-[who]: #who '```&#10;$ who&#10;```&#10;Display currently users currently logged in&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 97'
-[whoami]: #whoami '```&#10;$ whoami&#10;```&#10;Display effective user ID&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 96'
+[sudo]: #sudo '```&#10;sudo&#10;```&#10;Run commands as other users (typically as the root user).&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 209'
+[sudoedit]: #sudoedit '```&#10;sudoedit&#10;```&#10;Edit a file using sudo&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 210'
+[timedatectl]: #timedatectl '```&#10;timedatectl&#10;```&#10;&#10;Rothwell, William. _CompTIA Linux+/LPIC-1 Portable Command guide_.: 205'
+[tzconfig]: #tzconfig '```&#10;tzconfig&#10;```&#10;Set time zone by setting a symbolic link from /etc/localtime to a file in /usr/share/zoneinfo&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 330'
+[tzselect]: #tzselect '```&#10;tzselect&#10;```&#10;Menu-based script that interactively determines appropriate value for `$TZ` environment variable&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 331'
+[ulimit]: #ulimit '```&#10;ulimit $USER&#10;```&#10;Display or set a account limits of `$USER`&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 201'
+[useradd]: #useradd '```&#10;useradd $USER&#10;```&#10;Create the account `$USER` according to system defaults and specified options.&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 323'
+[userdel]: #userdel '```&#10;userdel $USER&#10;```&#10;Delete an existing user account&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 324'
+[usermod]: #usermod '```&#10;usermod&#10;```&#10;Modify a user account&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 94'
+[visudo]: #visudo '```&#10;visudo&#10;```&#10;Safely edit the /etc/sudoers file'
+[w]: #w '```&#10;w&#10;```&#10;Display output similar to that of `uptime` for all logged-in users&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 97'
+[wall]: #wall '```&#10;wall&#10;```&#10;Broadcast a message to all users who are currently logged in&#10;Rothwell, William. _CompTIA Linux+/LPIC-1 Portable Command guide_.: 16'
+[who]: #who '```&#10;who&#10;```&#10;Display currently users currently logged in&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 97'
+[whoami]: #whoami '```&#10;whoami&#10;```&#10;Display effective user ID&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 96'
 
 <!-- Text commands -->
 [cat]: #cat '```&#10;$ cat&#10;```&#10;Display contents of text files&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 115'
@@ -555,6 +685,66 @@
 [`wait`][wait]
 [`while`][while] 
 
+**[Disk](#disk)**
+[`blkid`][blkid] 
+[`cryptsetup`][cryptsetup] 
+[`dd`][dd] 
+[`df`][df] 
+[`dm-crypt`][dm-crypt] 
+[`dumpe2fs`][dumpe2fs] 
+[`e2fsck`][e2fsck] 
+[`e2label`][e2label] 
+[`eject`][eject] 
+[`fdformat`][fdformat] 
+[`fdisk`][fdisk] 
+[`fsck`][fsck] 
+[`fstrim`][fstrim] 
+[`gdisk`][gdisk] 
+[`hdiutil`][hdiutil] 
+[`hdparm`][hdparm] 
+[`ioping`][ioping] 
+[`iostat`][iostat] 
+[`lsblk`][lsblk] 
+[`mdadm`][mdadm] 
+[`mke2fs`][mke2fs] 
+[`mkfs`][mkfs] 
+[`mkswap`][mkswap] 
+[`mount`][mount] 
+[`mt`][mt] 
+[`parted`][parted] 
+[`partprobe`][partprobe] 
+[`partx`][partx] 
+[`resize2fs`][resize2fs] 
+[`resize4fs`][resize4fs] 
+[`sfdisk`][sfdisk] 
+[`swapoff`][swapoff] 
+[`swapon`][swapon] 
+[`tune2fs`][tune2fs] 
+[`umount`][umount] 
+[`vifs`][vifs] 
+[`xfs_info`][xfs_info] 
+[`xfs_metadump`][xfs_metadump] 
+
+**Logical volume management**
+[`lvcreate`][lvcreate] 
+[`lvdisplay`][lvdisplay] 
+[`lvextend`][lvextend] 
+[`lvremove`][lvremove] 
+[`lvs`][lvs] 
+[`lvscan`][lvscan] 
+[`pvcreate`][pvcreate] 
+[`pvdisplay`][pvdisplay] 
+[`pvremove`][pvremove] 
+[`pvs`][pvs] 
+[`pvscan`][pvscan] 
+[`vgcreate`][vgcreate] 
+[`vgdisplay`][vgdisplay] 
+[`vgextend`][vgextend] 
+[`vgreduce`][vgreduce] 
+[`vgremove`][vgremove] 
+[`vgs`][vgs] 
+[`vgscan`][vgscan] 
+
 **[Hardware settings](#hw)**
 `bluetoothctl`
 [`insmod`][insmod]
@@ -649,74 +839,116 @@
 `sendmail`
 
 **[Network](#networking)** 
-[`arp`][arp]
-[`bmon`][bmon]
-[`brctl`][brctl]
-[`curl`][curl]
-[`dig`][dig]
-[`ethtool`][ethtool]
-[`firewall-cmd`][firewall-cmd]
-[`host`][host]
-[`hping3`][hping3]
-[`ifconfig`][ifconfig]
-[`iftop`][iftop]
-[`ifup-wireless`][ifup-wireless]
-[`ip`][ip]
-[`iperf`][iperf]
-[`ipset`][ipset]
-[`iscsiadm`][iscsiadm]
-[`iw`][iw]
-[`iwconfig`][iwconfig]
-[`iwlist`][iwlist]
-[`kinit`][kinit]
-[`klist`][klist]
-[`mtr`][mtr]
-[`netcat`][netcat]
-[`netplan`][netplan]
-[`netstat`][netstat]
-[`nmap`][nmap]
-[`nmblookup`][nmblookup]
-[`nmcli`][nmcli]
-[`nmtui`][nmtui]
-[`nslookup`][nslookup]
-[`rfkill`][rfkill]
-[`route`][route]
-[`sftp`][sftp]
-[`ss`][ss]
-[`tcpdump`][tcpdump]
-[`tracepath`][tracepath]
-[`traceroute`][traceroute]
-[`tshark`][tshark]
-[`wget`][wget]
-[`whois`][whois]
+[`bmon`][bmon] 
+[`brctl`][brctl] 
+[`curl`][curl] 
+[`dig`][dig] 
+[`ethtool`][ethtool] 
+[`firewall-cmd`][firewall-cmd] 
+[`host`][host] 
+[`hping3`][hping3] 
+[`ifconfig`][ifconfig] 
+[`iftop`][iftop] 
+[`ifup-wireless`][ifup-wireless] 
+[`ip`][ip] 
+[`iperf`][iperf] 
+[`ipset`][ipset] 
+[`iscsiadm`][iscsiadm] 
+[`iw`][iw] 
+[`iwconfig`][iwconfig] 
+[`iwlist`][iwlist] 
+[`kinit`][kinit] 
+[`klist`][klist] 
+[`mtr`][mtr] 
+[`netcat`][netcat] 
+[`netplan`][netplan] 
+[`netstat`][netstat] 
+[`nmap`][nmap] 
+[`nmblookup`][nmblookup] 
+[`nmcli`][nmcli] 
+[`nmtui`][nmtui] 
+[`nslookup`][nslookup] 
+[`ping`][ping] 
+[`rfkill`][rfkill] 
+[`route`][route] 
+[`sftp`][sftp] 
+[`ss`][ss] 
+[`ssh`][ssh] 
+[`ssh-add`][ssh-add] 
+[`ssh-agent`][ssh-agent] 
+[`ssh-keygen`][ssh-keygen] 
+[`ssh-keyscan`][ssh-keyscan] 
+[`stty`][stty] 
+[`tcpdump`][tcpdump] 
+[`tracepath`][tracepath] 
+[`tracepath6`][tracepath6] 
+[`traceroute`][traceroute] 
+[`tshark`][tshark] 
+[`wget`][wget] 
+[`whois`][whois] 
 [`xinetd`][xinetd] 
 
 **[Package managers](#package-managers)** 
-[`apt`][apt]
-`brew`
-[`dnf`][dnf]
-[`dpkg`][dpkg]
-[`gem`][gem]
-[`pacman`][pacman]
-[`pip`][pip]
-[`rpm`][rpm]
-[`snap`][snap]
-[`yay`][yay]
-[`yum`][yum]
+[`add-apt-repository`][add-apt-repository] 
+[`alien`][alien] 
+[`apt`][apt] 
+[`apt-cache`][apt-cache] 
+[`apt-get`][apt-get] 
+[`brew`][brew] 
+[`dnf`][dnf] 
+[`dpkg`][dpkg] 
+[`dpkg-reconfigure`][dpkg-reconfigure] 
+[`dselect`][dselect] 
+[`gem`][gem] 
+[`pacman`][pacman] 
+[`pip`][pip] 
+[`rpm`][rpm] 
+[`snap`][snap] 
+[`yay`][yay] 
+[`yum`][yum] 
+[`yumdownloader`][yumdownloader] 
+[`zypper`][zypper] 
 
 **[Process control](#process-control)** 
-[`ps`][ps]
+[`at`][at] 
+[`atq`][atq] 
+[`atrm`][atrm] 
+[`bg`][bg] 
+[`fg`][fg] 
+[`jobs`][jobs] 
+[`kill`][kill] 
+[`killall`][killall] 
+[`lsns`][lsns] 
+[`nice`][nice] 
+[`nohup`][nohup] 
+[`pgrep`][pgrep] 
+[`pidof`][pidof] 
+[`pkill`][pkill] 
+[`ps`][ps] 
+[`pstree`][pstree] 
+[`renice`][renice] 
+[`strace`][strace] 
+[`top`][top] 
 `unshare`
+
 **Kubernetes**
 `kubeadm`
 `kubectl`
 
 **[Remote administration](#remote-administration)** 
-[`rsync`][rsync]
-`ssh`
-`ssh-keygen`
-`ssh-keyscan`
-`sshfs`
+[`curl`][curl] 
+[`ftp`][ftp] 
+[`rsync`][rsync] 
+[`ssh`][ssh] 
+[`ssh-add`][ssh-add] 
+[`ssh-agent`][ssh-agent] 
+[`ssh-keygen`][ssh-keygen] 
+[`ssh-keyscan`][ssh-keyscan] 
+[`stty`][stty] 
+[`telnet`][telnet] 
+[`vncpasswd`][vncpasswd] 
+[`vncviewer`][vncviewer] 
+[`sshfs`][sshfs] 
 
 **[SELinux][SELinux]** 
 [`chcon`][chcon]
@@ -729,33 +961,38 @@
 [`setsebool`][setsebool] 
 
 **[System administration](#system-administration)** 
-[`adduser`][adduser]
-[`at`][at]
-[`atq`][atq]
-[`atrm`][atrm]
-[`chage`][chage]
-[`edquota`][edquota]
-[`gpasswd`][gpasswd]
-[`groupadd`][groupadd]
-[`groupdel`][groupdel]
-[`groupmod`][groupmod]
-[`last`][last]
-[`lastb`][lastb]
-[`passwd`][passwd]
-[`quota`][quota]
-[`quotacheck`][quotacheck]
-[`quotaoff`][quotaoff]
-[`quotaon`][quotaon]
-[`repquota`][repquota]
-[`su`][su]
-[`sudo`][sudo]
-[`sudoedit`][sudoedit]
-[`useradd`][useradd]
-[`userdel`][userdel]
-[`usermod`][usermod]
-[`visudo`][visudo]
-[`w`][w]
-[`who`][who]
+[`adduser`][adduser] 
+[`chage`][chage] 
+[`chgrp`][chgrp] 
+[`chmod`][chmod] 
+[`edquota`][edquota] 
+[`gpasswd`][gpasswd] 
+[`groupadd`][groupadd] 
+[`groupdel`][groupdel] 
+[`groupmod`][groupmod] 
+[`groups`][groups] 
+[`last`][last] 
+[`lastb`][lastb] 
+[`passwd`][passwd] 
+[`quota`][quota] 
+[`quotacheck`][quotacheck] 
+[`quotaoff`][quotaoff] 
+[`quotaon`][quotaon] 
+[`repquota`][repquota] 
+[`su`][su] 
+[`sudo`][sudo] 
+[`sudoedit`][sudoedit] 
+[`timedatectl`][timedatectl] 
+[`tzconfig`][tzconfig] 
+[`tzselect`][tzselect] 
+[`ulimit`][ulimit] 
+[`useradd`][useradd] 
+[`userdel`][userdel] 
+[`usermod`][usermod] 
+[`visudo`][visudo] 
+[`w`][w] 
+[`wall`][wall] 
+[`who`][who] 
 [`whoami`][whoami] 
 
 **[Text filters](#text)** 
@@ -835,10 +1072,10 @@
 
 Fully-featured **desktop environments** are distinct from **window managers**, which are more focused in scope
 
-## Alpine Linux
+### Alpine Linux
 Security-oriented, lightweight Linux distribution used in containers and hardware.
-## Arch Linux
-## BSD
+### Arch Linux
+### BSD
 **Berkeley Software Distribution (BSD)** began in the 70s and was based on AT&T original code. First source distributions required user to purchase a source license from AT&T, since much of the BSD source was derivative of UNIX.
 
 Berkeley finally released a "wholly-BSD" product as **Network Release 1** in 1989, which satisfied vendor demand for the TCP/IP networking code for PC.
@@ -847,16 +1084,15 @@ Work immediately began to reconstruct the remaining functionality of UNIX, which
 
 **Unix System Laboratories (USL)** sued BSDI after BSDI attempted to market its product as a real UNIX, and other BSD distributions were affected by disputed code. Ultimately 3 out of the 18,000 files that made up the Network Release 2 distribution were removed, which became known as 4.4BSD-lite, released in 1994. This legal dispute was partly to blame for Linux's rapid ascent in popularity.\
 Source: [Article](https://web.archive.org/web/20060315152051/http://www.applelust.com/alust/terminal/archives/terminal041202.shtml)
-## Clear Linux
+### Clear Linux
 Rolling release distro from Intel with a custom package management system based on **bundles**, collections of packages that contain everything an application requires, including dependencies. Clear's update process also has the ability to do **delta downloads**, preserving bandwidth. It does not provide access with unusual licenses, like ZFS, Chrome, or FFmpeg. [^][LXF 258]
-## Fedora
-
-## Fedora CoreOS
+### Fedora
+### Fedora CoreOS
 **CoreOS** is a Fedora edition built specifically for running containerized workloads securely and at scale. Because containers can be deployed across many nodes for redundancy, the system can be updated and rebooted automatically without affecting uptime. [^](https://fedoramagazine.org/introducing-fedora-coreos/ "Fedora Magazine: \"Introducing Fedora CoreOS\"")
 
 CoreOS systems are meant to be **immutable infrastructure**, meaning they are only configured through the provisioning process and not modified in-place. All systems start with a generic OS image, but on first boot it uses a system called **Ignition** to read an **Ignition config** (which is converted from a **Fedora CoreOS Config** file) from the cloud or a remote URL, by which it provisions itself, creating disk partitions, file systems, users, etc.\
 CoreOS automatically installs upgrades automatically without user intervention, although they can be stopped if a problem is found.
-## Kali Linux
+### Kali Linux
 [Aircrack-ng]: #kali-linux 'Aircrack-ng&#10;Monitor and compromise WiFi networks'
 [BeEF]: #kali-linux 'BeEF&#10;Assess security of a web browser'
 [Apktool]: #kali-linux 'Apktool&#10;Reverse engineer Android apps'
@@ -878,20 +1114,28 @@ CoreOS automatically installs upgrades automatically without user intervention, 
 [WPScan]: #kali-linux 'WPScan&#10;WordPress security auditing tool'
 [Yersinia]: #kali-linux 'Yersinia&#10;Perform Layer 2 attacks'
 
-\#    | Pentesting tools [^](https://itsfoss.com/best-kali-linux-tools/ "ItsFOSS: \"21 Best Kali Linux Tools for Hacking and Penetration Testing\"")
----   | ---
-A     | [Aircrack-ng][Aircrack-ng] [Apktool][Apktool] [Autopsy Forensic Browser][AFB]
-B     | [BeEF][BeEF] [Burp Suite Scanner][Burp Suite Scanner]
-H     | [Hydra][Hydra]
-J     | [John the Ripper][John the Ripper]
-K     | [King Phisher][King Phisher]
-L     | [Lynis][Lynis]
-M     | [Maltego][Maltego] [Metasploit][Metasploit Framework]
-N     | [Nikto][Nikto]
-S     | [SET][SET] [Skipfish][Skipfish] [Snort][Snort] [sqlmap][Sqlmap]
-W     | [Wireshark][Wireshark] [WPScan][WPScan]
-Y     | [Yersinia][Yersinia]
-## Windows Subsystem for Linux
+###### Pentesting tools 
+<sup>[itsfoss.com](https://itsfoss.com/best-kali-linux-tools/ "ItsFOSS: \"21 Best Kali Linux Tools for Hacking and Penetration Testing\"")</sup>
+
+[Aircrack-ng][Aircrack-ng] 
+[Apktool][Apktool] 
+[Autopsy Forensic Browser][AFB]
+[BeEF][BeEF] 
+[Burp Suite Scanner][Burp Suite Scanner]
+[Hydra][Hydra]
+[John the Ripper][John the Ripper]
+[King Phisher][King Phisher]
+[Lynis][Lynis]
+[Maltego][Maltego] 
+[Metasploit][Metasploit Framework]
+[Nikto][Nikto]
+[SET][SET] 
+[Skipfish][Skipfish] 
+[Snort][Snort] 
+[sqlmap][Sqlmap]
+[Wireshark][Wireshark] [WPScan][WPScan]
+[Yersinia][Yersinia]
+### Windows Subsystem for Linux
 [DrvFs]: #windows-subsystem-for-linux 'DrvFs&#10;Filesystem plugin to WSL that was designed to support interoperability between WSL and the Windows filesystem. DrvFs enables WSL to mount drives with supported file systems under /mnt, such as /mnt/c, /mnt/d, etc. &#10;"Chmod/Chown WSL Improvements". _Windows Command Line_. Microsoft: 01/12/2018.'
 [lxss.sys]: #windows-subsystem-for-linux 'LXSS Manager service (lxss.sys)&#10;One of the WSL "pico drivers" that translates Linux syscalls to equivalent Windows NT calls. Where there is no reasonable mapping, lxss.sys must service the request directly.&#10;"WSL System calls". _Windows Subsystem for Linux_. Microsoft.'
 [pico driver]: #windows-subsystem-for-linux 'pico driver&#10;Reference to lsxx.sys and lxcore.sys in WSL, responsible for handling Linux syscall requests in coordination with the NT kernel.&#10;"WSL System calls". _Windows Subsystem for Linux_. Microsoft.'
@@ -912,15 +1156,13 @@ WSL implements **user services** to connect to WSL distros and to run Windows-na
 In version 1, WSL worked under a **translation architecture** where system calls were translated to NT kernel calls. This meant that applications that used system calls that were newer or more difficult to implement, like GUI applications or Docker, did not run on v1. But WSL2 shifted to a **lighweight virtualization** model using the Linux kernel. Now Docker runs on WSL2 and GUI applications can run by using an X server.
 
 WSL v1 is available on Azure VMs if **nested virtualization** is enabled. WSL2 support is forthcoming.
-
 ### Mac OS X
 Configure `iterm2` as a **Guake**-style dropdown terminal 
 <sup>
 [ref](https://superuser.com/questions/951393/pin-os-x-terminal-window-always-on-top-in-macos-yosemite) 
 [ref](https://www.sharmaprakash.com.np/guake-like-dropdown-terminal-in-mac/#assign-hotkey) 
 </sup>
-
-### `open`
+#### `open`
 Open path in Finder
 ```
 open path
@@ -929,7 +1171,7 @@ Open an application from Terminal
 ```
 open -a /Applications/application.app
 ```
-### `screencapture`
+#### `screencapture`
 Take a screenshot on Mac OS X [48](sources.md)
 
 Option  | Effect
@@ -938,7 +1180,7 @@ Option  | Effect
 `-T $SECONDS` | take screenshot after `$SECONDS`
 `-t $FORMAT`  | specify file `$FORMAT` (png by default)
 `-x`    | take screenshot without shutter sound
-## KDE
+### KDE
 Appearance
 - **Colors** affects the appearance of text
 - **Workspace Theme** > **Look and Feel** allows selection of Look and Feel Themes that affect window appearance
@@ -2277,48 +2519,90 @@ Output header | Description [<sup>ref</sup>][Eckert]
 
 
 ## Disk
-
-[blkid]:                                             #blkid                                      '```&#10;$ blkid&#10;```&#10;Display label and UUIDs of block devices.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 51'
-[dumpe2fs]:                                          #dumpe2fs                                   '```&#10;$ dumpe2fs&#10;```&#10;Display filesystem metadata&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 51'
-[e2label]:                                           #e2label                                    '```&#10;$ e2label&#10;```&#10;Change the label of a filesystem&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 53'
-[fsck]:                                              #fsck                                       '```&#10;$ fsck&#10;```&#10;Find filesystem problems on unmounted filesystems&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 52'
-[ioping]:                                            #ioping                                     '```&#10;$ ioping&#10;```&#10;Perform simple latency tests on a disk&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 288'
-[iostat]:                                            #iostat                                     '```&#10;$ iostat&#10;```&#10;Display input/output statistics on devices, including partitions&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 48'
-[mdadm]:                                             #mdadm                                      '```&#10;$ mdadm&#10;```&#10;Create a software RAID device&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 45'
-[mkfs]:                                              #mkfs                                       '```&#10;$ mkfs&#10;```&#10;Create a filesystem on a partition; actually a frontend utility to other commands.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 48'
-[mkswap]:                                            #mkswap                                     '```&#10;$ mkswap&#10;```&#10;Format a partition as a swap device&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 293'
-[parted]:                                            #parted                                     '```&#10;$ parted&#10;```&#10;Interactive tool that can display and modify traditional and GUID partition tables and create a filesystem on a partition.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 46'
-[partprobe]:                                         #partprobe                                  '```&#10;$ partprobe&#10;```&#10;Inform system of changes to partition table, typically used after making changes using `fdisk`&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 289'
-[partx]:                                           #partx                                              '```&#10;$ partx&#10;```&#10;Utility that provides information on drive partitions to the Linux kernel'
-[resize2fs]:                                         #resize2fs                                  '```&#10;$ resize2fs&#10;```&#10;Resize a logical volume&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 52'
-[swapoff]:                                           #swapoff                                    '```&#10;$ swapoff&#10;```&#10;Stop using a swap file or device&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 292'
-[swapon]:                                            #swapon                                     '```&#10;$ swapon&#10;```&#10;Begin using a swap file or device&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 292'
-[tune2fs]:                                           #tune2fs                                    '```&#10;$ tune2fs&#10;```&#10;Display or modify specific metadata for an ext filesystem.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 53'
-[umount]:                                            #umount                                     '```&#10;$ umount&#10;```&#10;Unmount a filesystem&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 50'
-[xfs_info]:                                          #xfs_info                                   '```&#10;$ xfs_info&#10;```&#10;Display the geometry of an XFS filesystem (cf. `dumpe2fs`)&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 44'
-[xfs_metadump]:                                      #xfs_metadump                               '```&#10;$ xfs_metadump&#10;```&#10;Dump metadata from an unmounted XFS filesystem into a file for debugging purposes.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 44'
-
 [`blkid`][blkid] 
+[`cryptsetup`][cryptsetup] 
+[`dd`][dd] 
+[`df`][df] 
+[`dm-crypt`][dm-crypt] 
 [`dumpe2fs`][dumpe2fs] 
+[`e2fsck`][e2fsck] 
 [`e2label`][e2label] 
+[`eject`][eject] 
+[`fdformat`][fdformat] 
+[`fdisk`][fdisk] 
 [`fsck`][fsck] 
+[`fstrim`][fstrim] 
+[`gdisk`][gdisk] 
+[`hdiutil`][hdiutil] 
+[`hdparm`][hdparm] 
 [`ioping`][ioping] 
 [`iostat`][iostat] 
+[`lsblk`][lsblk] 
 [`mdadm`][mdadm] 
+[`mke2fs`][mke2fs] 
 [`mkfs`][mkfs] 
 [`mkswap`][mkswap] 
+[`mount`][mount] 
+[`mt`][mt] 
 [`parted`][parted] 
 [`partprobe`][partprobe] 
 [`partx`][partx] 
 [`resize2fs`][resize2fs] 
+[`resize4fs`][resize4fs] 
+[`sfdisk`][sfdisk] 
 [`swapoff`][swapoff] 
 [`swapon`][swapon] 
 [`tune2fs`][tune2fs] 
 [`umount`][umount] 
+[`vifs`][vifs] 
 [`xfs_info`][xfs_info] 
 [`xfs_metadump`][xfs_metadump] 
 
-### `partx`
+**Logical volume management**
+[`lvcreate`][lvcreate] 
+[`lvdisplay`][lvdisplay] 
+[`lvextend`][lvextend] 
+[`lvremove`][lvremove] 
+[`lvs`][lvs] 
+[`lvscan`][lvscan] 
+[`pvcreate`][pvcreate] 
+[`pvdisplay`][pvdisplay] 
+[`pvremove`][pvremove] 
+[`pvs`][pvs] 
+[`pvscan`][pvscan] 
+[`vgcreate`][vgcreate] 
+[`vgdisplay`][vgdisplay] 
+[`vgextend`][vgextend] 
+[`vgreduce`][vgreduce] 
+[`vgremove`][vgremove] 
+[`vgs`][vgs] 
+[`vgscan`][vgscan] 
+
+
+#### `cryptsetup`
+Incorporate full-disk encryption on /dev/sdb1, asking for passphrase twice
+```sh
+cryptsetup --verify-passphrase luksFormat /dev/sdb1
+```
+Assign virtual name "storage1" to encrypted disk /dev/sdb1
+```sh
+cryptsetup luksOpen /dev/sdb1 storage1
+```
+#### `lvcreate`
+Create a 20 gigabyte logical volume named "Marketing" from volume group {vg1}
+```sh
+lvcreate -L 20G vg1 -n Marketing
+```
+Create logical volume named `lv1` of size 500G from volume group `vg1`
+```sh
+lvcreate -L 500G vg1 -n lv1
+```
+#### `lvresize`
+Resize existent logical volume {Marketing} in volume group {vg1} to have an additional 10 gigabytes of space
+```sh
+lvresize -L +10G /dev/vg1/Marketing
+```
+#### `partx`
 `partx` is a utility that provides information on drive partitions to the Linux kernel. [[12](sources.md)]
 Display partition table of a drive
 ```bash
@@ -2347,20 +2631,6 @@ partx -d --nr -1:-1 /dev/sda
 Disable headers
 ```bash
 partx -o START -g --nr 5 /dev/sda
-```
-### `lvcreate`
-Create a 20 gigabyte logical volume named "Marketing" from volume group {vg1}
-```sh
-lvcreate -L 20G vg1 -n Marketing
-```
-Create logical volume named `lv1` of size 500G from volume group `vg1`
-```sh
-lvcreate -L 500G vg1 -n lv1
-```
-### `lvresize`
-Resize existent logical volume {Marketing} in volume group {vg1} to have an additional 10 gigabytes of space
-```sh
-lvresize -L +10G /dev/vg1/Marketing
 ```
 
 ## File commands
@@ -3092,50 +3362,6 @@ ssmtp -au recipient -ap pw user@host < msg
 "Program for Internet news and email", a popular [MUA](# "\"mail user agent\", program that allows a user to view mail, such as mutt, pine, printmail, elm, mail, Thunderbird, Evolution, and Eudora") during the 1990s which has since been superceded by Alpine.
 
 ## Networking
-[arp]:                         #arp                            '```&#10;$ arp&#10;```&#10;'
-[bmon]:                        #bmon                           '```&#10;$ bmon&#10;```&#10;Terminal-based graphical bandwidth monitor'
-[brctl]:                       #brctl                          '```&#10;$ brctl&#10;```&#10;Create, modify, or view an Ethernet bridge, which connects separate networks into a single network from the perspective of users.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 27'
-[curl]:                        #curl                           '```&#10;$ curl&#10;```&#10;Noninteractively transfer data from a large number of protocols, including FTP, FTPS, HTTP, SCP, SFTP, SMB, SMBS, Telnet, and TFTP&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 90'
-[dig]:                         #dig                            '```&#10;$ dig&#10;```&#10;Query DNS servers'
-[ethtool]:                     #ethtool                        '```&#10;$ ethtool&#10;```&#10;Display and configure network device settings.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 22'
-[firewall-cmd]:                #firewall-cmd                   '```&#10;$ firewall-cmd&#10;```&#10;In Red Hat systems, the successor to `iptables` and like it a frontend to the `netfilter` protocols; places network traffic into "zones". Commands have to be written twice: once to affect running config and again to have the change saved'
-[host]:                        #host                           '```&#10;$ host&#10;```&#10;Perform simple DNS queries&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 20'
-[hping3]:                      #hping3                         '```&#10;$ hping3&#10;```&#10;Active network smashing tool'
-[ifconfig]:                    #ifconfig                       '```&#10;$ ifconfig&#10;```&#10;Obsolete program that configures network interfaces'
-[iftop]:                       #iftop                          '```&#10;$ iftop&#10;```&#10;Display network connections using the most bandwidth&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 281'
-[ifup-wireless]:               #ifup-wireless                  '```&#10;$ ifup-wireless&#10;```&#10;Configure wireless networks&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 28'
-[ip]:                          #ip                             '```&#10;$ ip&#10;```&#10;Newer alternative to the old `ifconfig`&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 21'
-[iperf]:                       #iperf                          '```&#10;$ iperf&#10;```&#10;Create tests of the throughput between two systems, requiring setup on both client and server&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 281'
-[ipset]:                       #ipset                          '```&#10;$ ipset&#10;```&#10;Create a "set" of IP addresses to which firewall rules can be applied&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 282'
-[iscsiadm]:                    #iscsiadm                       '```&#10;$ iscsiadm&#10;```&#10;Command-line utility allowing discovery and login to iSCSI targets'
-[iw]:                          #iw                             '```&#10;$ iw&#10;```&#10;Show or manipulate wireless devices and their configuration'
-[iwconfig]:                    #iwconfig                       '```&#10;$ iwconfig&#10;```&#10;Display or set information about wireless network interfaces.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 25'
-[iwlist]:                      #iwlist                         '```&#10;$ iwlist&#10;```&#10;Get detailed wireless information about a wireless interface'
-[kinit]:                       #kinit                          '```&#10;$ kinit&#10;```&#10;Kerberos utility to obtain an individual ticket, which is then cached on the local system.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 239'
-[klist]:                       #klist                          '```&#10;$ klist&#10;```&#10;Display a list of cached Kerberos tickets&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 239'
-[mtr]:                         #mtr                            '```&#10;$ mtr&#10;```&#10;Performs a `traceroute`-like operation every second&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 285'
-[netcat]:                      #netcat                         '```&#10;$ netcat&#10;```&#10;Versatile utility for TCP or UDP connections&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 284'
-[netplan]:                     #netplan                        '```&#10;$ netplan&#10;```&#10;Ubuntu network configuration tool'
-[netstat]:                     #netstat                        '```&#10;$ netstat&#10;```&#10;Print network connections, routing tables, interface statistics, masquerade connections, and multi-cast memberships&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 18'
-[nmap]:                        #nmap                           '```&#10;$ nmap&#10;```&#10;Probe a system for open ports&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 280'
-[nmblookup]:                   #nmblookup                      '```&#10;$ nmblookup&#10;```&#10;Test NetBIOS name resolution'
-[nmcli]:                       #nmcli                          '```&#10;$ nmcli&#10;```&#10;Configure NetworkManager&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 26'
-[nmtui]:                       #nmtui                          '```&#10;$ nmtui&#10;```&#10;Provide a text-based to configure NetworkManager.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 27'
-[nslookup]:                    #nslookup                       '```&#10;$ nslookup&#10;```&#10;Perform simple queries on DNS servers&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 19'
-[rfkill]:                      #rfkill                         '```&#10;$ rfkill&#10;```&#10;tool for enabling and disabling wireless devices'
-[route]:                       #route                          '```&#10;$ route&#10;```&#10;Display or modify routing table&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 21'
-[sftp]:                        #sftp                           '```&#10;$ sftp&#10;```&#10;Securely transfer files over ssh&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 274'
-[ss]:                          #ss                             '```&#10;$ ss&#10;```&#10;Display socket information.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 25'
-[tcpdump]:                     #tcpdump                        '```&#10;$ tcpdump&#10;```&#10;Inspect IP packets (Wireshark is a GUI-based alternative)&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 282'
-[tracepath]:                   #tracepath                      '```&#10;$ tracepath&#10;```&#10;Similar to `traceroute`, but with fewer options and no requirement for superuser privileges'
-[traceroute]:                  #traceroute                     '```&#10;$ traceroute&#10;```&#10;Follow the path a packet takes between two hosts'
-[tshark]:                      #tshark                         '```&#10;$ tshark&#10;```&#10;Wireshark terminal interface&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 283'
-[wget]:                        #wget                           '```&#10;$ wget&#10;```&#10;Noninteractive tool to download files from remote systems via HTTP, HTTPS, or FTP.&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 89'
-[whois]:                       #whois                          '```&#10;$ whois&#10;```&#10;Determine domain ownership&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 287'
-[xinetd]:                      #xinetd                         '```&#10;$ xinetd&#10;```&#10;Internet Super Daemon provided an alternate method of connecting to various outdated network services. Should be turned off nowadays.'
-
-
-[`arp`][arp] 
 [`bmon`][bmon] 
 [`brctl`][brctl] 
 [`curl`][curl] 
@@ -3165,17 +3391,26 @@ ssmtp -au recipient -ap pw user@host < msg
 [`nmcli`][nmcli] 
 [`nmtui`][nmtui] 
 [`nslookup`][nslookup] 
+[`ping`][ping] 
 [`rfkill`][rfkill] 
 [`route`][route] 
 [`sftp`][sftp] 
 [`ss`][ss] 
+[`ssh`][ssh] 
+[`ssh-add`][ssh-add] 
+[`ssh-agent`][ssh-agent] 
+[`ssh-keygen`][ssh-keygen] 
+[`ssh-keyscan`][ssh-keyscan] 
+[`stty`][stty] 
 [`tcpdump`][tcpdump] 
 [`tracepath`][tracepath] 
+[`tracepath6`][tracepath6] 
 [`traceroute`][traceroute] 
 [`tshark`][tshark] 
 [`wget`][wget] 
 [`whois`][whois] 
 [`xinetd`][xinetd] 
+
 
 ### `bmon`
 [<sup>ref</sup>][https://www.networkworld.com/video/99387/how-to-use-the-bmon-command-2-minute-linux-tips] 
@@ -3772,20 +4007,22 @@ ss --tcp --processes
 ## Package managers
 [`add-apt-repository`][add-apt-repository] 
 [`alien`][alien] 
+[`apt`][apt] 
 [`apt-cache`][apt-cache] 
 [`apt-get`][apt-get] 
-[`apt`][apt] 
+[`brew`][brew] 
 [`dnf`][dnf] 
-[`dpkg-reconfigure`][dpkg-reconfigure] 
 [`dpkg`][dpkg] 
+[`dpkg-reconfigure`][dpkg-reconfigure] 
+[`dselect`][dselect] 
 [`gem`][gem] 
 [`pacman`][pacman] 
 [`pip`][pip] 
 [`rpm`][rpm] 
 [`snap`][snap] 
-[`yay`][yay]
+[`yay`][yay] 
 [`yum`][yum] 
-[`yumdownloader`][yumdownloader]
+[`yumdownloader`][yumdownloader] 
 [`zypper`][zypper] 
 
 ### `apt`
@@ -4260,6 +4497,22 @@ Run a program in a namespace **unshared** from its parent process. [<sup>ref</su
 sudo unshare --fork --pid --mount-proc zsh
 ```
 
+## Remote administration
+[`curl`][curl] 
+[`ftp`][ftp] 
+[`rsync`][rsync] 
+[`ssh`][ssh] 
+[`ssh-add`][ssh-add] 
+[`ssh-agent`][ssh-agent] 
+[`ssh-keygen`][ssh-keygen] 
+[`ssh-keyscan`][ssh-keyscan] 
+[`stty`][stty] 
+[`telnet`][telnet] 
+[`vncpasswd`][vncpasswd] 
+[`vncviewer`][vncviewer] 
+[`sshfs`][sshfs] 
+
+
 ## SELinux
 [`chcon`][chcon] 
 [`getenforce`][getenforce] 
@@ -4311,19 +4564,37 @@ Display all ports with attached types
 ```sh
 semanage port -l
 ```
-
+## Shell and environment commands
+[`apropos`][apropos] 
+[`env`][env] 
+[`export`][export] 
+[`history`][history] 
+[`man`][man] 
+[`nohup`][nohup] 
+[`pwd`][pwd] 
+[`sleep`][sleep] 
+[`su`][su] 
+[`sudo`][sudo] 
+[`tee`][tee] 
+[`unalias`][unalias] 
+[`watch`][watch] 
+[`whatis`][whatis] 
+[`where`][where] 
+[`whereis`][whereis] 
+[`which`][which] 
+[`xargs`][xargs] 
 
 ## System administration
 [`adduser`][adduser] 
-[`at`][at] 
-[`atq`][atq] 
-[`atrm`][atrm] 
 [`chage`][chage] 
+[`chgrp`][chgrp] 
+[`chmod`][chmod] 
 [`edquota`][edquota] 
 [`gpasswd`][gpasswd] 
 [`groupadd`][groupadd] 
 [`groupdel`][groupdel] 
 [`groupmod`][groupmod] 
+[`groups`][groups] 
 [`last`][last] 
 [`lastb`][lastb] 
 [`passwd`][passwd] 
@@ -4335,11 +4606,16 @@ semanage port -l
 [`su`][su] 
 [`sudo`][sudo] 
 [`sudoedit`][sudoedit] 
+[`timedatectl`][timedatectl] 
+[`tzconfig`][tzconfig] 
+[`tzselect`][tzselect] 
+[`ulimit`][ulimit] 
 [`useradd`][useradd] 
 [`userdel`][userdel] 
 [`usermod`][usermod] 
 [`visudo`][visudo] 
 [`w`][w] 
+[`wall`][wall] 
 [`who`][who] 
 [`whoami`][whoami] 
 
@@ -4717,17 +4993,6 @@ userdel -r  user
 <code>&nbsp;</code>   [`a`][usermod -&#97;] <code>&nbsp;</code> [`c`][usermod -&#99;] [`d`][usermod -&#100;] <code>&nbsp;</code> <code>&nbsp;</code> [`g`][usermod -&#103;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`l`][usermod -&#108;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`s`][usermod -&#115;] <code>&nbsp;</code> [`u`][usermod -&#117;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code>  <br><code>&nbsp;</code>&nbsp;<code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`G`][usermod -&#71;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`L`][usermod -&#76;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`U`][usermod -&#85;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 
 
 ## Commands
-
-### `cryptsetup`
-Incorporate full-disk encryption on /dev/sdb1, asking for passphrase twice
-```sh
-cryptsetup --verify-passphrase luksFormat /dev/sdb1
-```
-Assign virtual name "storage1" to encrypted disk /dev/sdb1
-```sh
-cryptsetup luksOpen /dev/sdb1 storage1
-```
-
 ### `dd`
 Implement a simple CPU benchmark by writing 1 GB of zeroes and piping it to md5sum
 ```sh
@@ -5872,37 +6137,54 @@ xset fp+ /usr/local/fonts
 [`xinetd.conf`][/etc/xinetd.conf] 
 [`yum.conf`][/etc/yum.conf]
 
+**`ansible`**
+[`ansible.conf`][/etc/ansible/ansible.conf]
 
-**`apt`**[`sources.list`][/etc/apt/sources.list] 
+**`apt`**
+[`sources.list`][/etc/apt/sources.list] 
+
 **`bluetooth`**
 [`input.conf`](#etcbluetoothinputconf)
 [`main.conf`][/etc/bluetooth/main.conf]
+
 **`mail`**
 [`sendmail.cf`][/etc/mail/sendmail.cf]
 [`sendmail.mc`][/etc/mail/sendmail.mc] 
+
 **`rc.d`**
 [`rc.sysinit`][/etc/rc.d/rc.sysinit] 
+
 **`ssh`**
 [`ssh_config`][/etc/ssh/ssh_config] 
 [`sshd_config`][/etc/ssh/sshd_config] 
+
 **`sysconfig`** 
 [`desktop`][/etc/sysconfig/desktop] 
 [`iptables`][/etc/sysconfig/iptables] 
 [`network-scripts/`][/etc/sysconfig/network-scripts/] 
+
 **`lvm`**
 [`.cache`][/etc/lvm/.cache]
+
 **`postfix`**
 [`main.cf`][/etc/postfix/main.cf] 
+
 **`samba`**
 [`smb.conf`][/etc/samba/smb.conf]
+
 **`selinux`**
 [`config`][/etc/selinux/config] 
+
 [**`skel`**][/etc/skel/]
+
 **`ssmtp`**
 [`ssmtp.conf`][/etc/ssmtp/ssmtp.conf] 
+
 **`syslog-ng`** 
 [`syslog-ng.conf`][/etc/syslog-ng/syslog-ng.conf] 
+
 [**`systemd/system`**][/etc/systemd/system/] 
+
 **`udev`** 
 [`hwdb.bin`][/etc/udev/hwdb.bin] 
 
@@ -5982,6 +6264,8 @@ Run `linuxcommand` at 04:05 every Sunday
 set sendmail="/usr/bin/msmtp"
 set message-sendmail-extra-arguments="-a gmail"
 ```
+### /etc/ansible
+##### /etc/ansible/ansible.conf
 ### /etc/apt/sources.list
 Repos used in [`apt`](#apt) package manager are listed in files with the URL preceded by `deb` (`deb-src` used to be used).
 ```sh
@@ -6079,6 +6363,7 @@ Change timeout to 10 minutes only for user `linuxize`
 Defaults:linuxize timestamp_timeout=10
 ```
 ### /etc/sysconfig/desktop
+##### /etc/sysconfig/desktop
 Specify desktop environment and display manager on Red Hat.
 ```ini
 DESKTOP="KDE"
@@ -6092,7 +6377,7 @@ DISPLAYMANAGER="XDM"
 DESKTOP="Gnome"
 DISPLAYMANAGER="GDM"
 ```
-### /etc/sysconfig/network-scripts/
+##### /etc/sysconfig/network-scripts/
 Directory containing file configurations for each network device you may have or want to add on your system [<sup>ref</sup>](https://web.mit.edu/rhel-doc/5/RHEL-5-manual/Deployment_Guide-en-US/s1-networkscripts-interfaces.html "Red Hat Documentation: 13.2. Interface Configuration Files")
 ```ini
 DEVICE=eth0
