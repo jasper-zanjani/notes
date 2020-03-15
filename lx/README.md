@@ -69,6 +69,7 @@
 [kquitapp]: #kquitapp '```&#10;$ kquitapp&#10;```&#10;Allows you to quit a dbus enabled application'
 [krunner]: #krunner '```&#10;$ krunner&#10;```&#10;Single-line application launcher, similar to dmenu or the Run command on Windows'
 [kstart]: #kstart '```&#10;$ kstart&#10;```&#10;When used to launch an application, prevents the application from being tied to the terminal'
+[lowriter]: #lowriter '```&#10;$ lowriter&#10;```&#10;Command-line utility installed with LibreOffice Writer'
 [smbclient]: #smbclient '```&#10;smbclient&#10;```&#10;Connect to a Samba server&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 592'
 [smbpasswd]: #smbpasswd '```&#10;$ smbpasswd&#10;```&#10;Create a Samba password&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 591'
 [smbstatus]: #smbstatus '```&#10;$ smbstatus&#10;```&#10;Display current Samba connections'
@@ -228,6 +229,7 @@
 [man]: #man '```&#10;$ man&#10;```&#10;Format and display system manual pages&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 75'
 [mpstat]: #mpstat '```&#10;$ mpstat&#10;```&#10;utility for monitoring CPU performance&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 635-637'
 [nproc]: #nproc '```&#10;$ nproc&#10;```&#10;Display number of CPU processors or cores&#10;Olushile, Paul. _Linux 5 Performance Monitoring and Tuning_.'
+[ntpdate]: #ntpdate '```&#10;$ ntpdate&#10;```&#10;Set the time of the local system to match a remote NTP host&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 336'
 [printenv]: #printenv '```&#10;$ printenv&#10;```&#10;Display environment variables&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 331'
 [rsyslogd]: #rsyslogd '```&#10;$ rsyslogd&#10;```&#10;Responsible for logging of application and system events&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 249'
 [sar]: #sar '```&#10;$ sar&#10;```&#10;Displays the same information as `iostat`, but displayed as it occurs over time (typically at 10-minute intervals)&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 291'
@@ -260,7 +262,7 @@
 [lsblk]: #lsblk '```&#10;$ lsblk&#10;```&#10;Display information about all block devices'
 [mdadm]: #mdadm '```&#10;$ mdadm&#10;```&#10;Create and manager software RAID devices&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 45'
 [mke2fs]: #mke2fs '```&#10;$ mke2fs&#10;```&#10;Create ext2/ext3/ext4 filesystems.&#10;Rothwell, William. _CompTIA Linux+/LPIC-1 Portable Command guide_.: 121'
-[mkfs]: #mkfs '```&#10;$ mkfs&#10;```&#10;Frontend program for filesystem-specific creation tools such as `mkfs.ext2` and `mkfs.msdos`, which are in turn linked to `mke2fs` and `mkdosfs`&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 149'
+[mkfs]: #mkfs '```&#10;$ mkfs&#10;```&#10;Deprecated frontend program for filesystem-specific creation tools such as `mkfs.ext2` and `mkfs.msdos`, which are in turn linked to `mke2fs` and `mkdosfs`&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 149'
 [mkswap]: #mkswap '```&#10;$ mkswap&#10;```&#10;Format a partition as a swap device&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 293'
 [mount]: #mount '```&#10;$ mount&#10;```&#10;Mount filesystems into the filesystem hierarchy&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 163'
 [mt]: #mt '```&#10;$ mt&#10;```&#10;Control magnetic tape drive operation; operates on environment variable `$TAPE`'
@@ -754,6 +756,7 @@
 [`hdparm`][hdparm] 
 [`ioping`][ioping] 
 [`iostat`][iostat] 
+[`iscsiadm`][iscsiadm] 
 [`lsblk`][lsblk] 
 [`mdadm`][mdadm] 
 [`mke2fs`][mke2fs] 
@@ -835,6 +838,7 @@
 [`man`][man]
 [`mpstat`][mpstat]
 [`nproc`][nproc]
+[`ntpdate`][ntpdate]
 [`printenv`][printenv]
 [`rsyslogd`][rsyslogd]
 [`sar`][sar]
@@ -1324,49 +1328,6 @@ This attack can be detected using the **[osquery](https://osquery.io/)** tool. T
 [`smbpasswd`][smbpasswd] 
 [`smbstatus`][smbstatus] 
 
-
-### `imagemagick`
-
-[imagemagick identify]:           #identify                   '```&#10;$ imagemagick identify&#10;```&#10;Describe the format and characteristics of one or more image files'
-[imagemagick mogrify]:            #mogrify                    '```&#10;$ imagemagick mogrify&#10;```&#10;Resize, blur, crop, despeckle, dither, draw on, flip, join, resample, etc'
-
-[`identify`][imagemagick identify] 
-[`mogrify`][imagemagick mogrify] 
-
-#### `identify`
-Option                            | Effect
-:---                              | :---
-`-format {string}`                | display formatted image characteristics; {string} is formatted string using `%[key]` escape sequences<br/> **%w** current width in pixels <br/> **%h** current height in pixels
-
-#### `mogrify`
-Option               | Effect
-:---                 | :---
-`-write $FILENAME`   | save to `filename`
-`-resize $Xx$Y`      | resize image to `$X` pixels by `$Y` pixels
-`-crop $SIZE$OFFSET` | 
-`-gravity $TYPE`     | set current gravity suggestion for various other options <br>possible values `NorthWest`, `North`, `NorthEast`, `West`, `Center`, `East`, `SouthWest`, `South`, or `SouthEast`
-  
-Argument patterns 
----           | ---
-{geometry}    | **{size}{offset}**
-{size}        | **{scale}%** height and weight are both scaled by a specified percentage<br/> **{width}x{height}** maximum values of height and width<br/> **{width}x{height}^** minimum values of height and width<br/>
-{offset}      | also affected by `-gravity` setting<br/> **`+0+0`** top-left corner
-gravity       | 
-
-Resize images
-```sh
-magick mogrify -resize 1920x1200 -write mars-bg.jpg pia22511.jpg
-magick identify -format "%w x %h" pia22511.jpg
-```
-Save the output of a command as an image (`convert` is from the ImageMagick software suite) [<sup>ref</sup>][CLKF]
-```sh
-cmd | convert label:@- image.png
-``` 
-View image metadata (`identify` is from the ImageMagick software suite) <sup>[ostechnix.com](https://www.ostechnix.com/how-to-view-image-metadata-on-linux/ "How to view image metadata")</sup>
-```sh
-identify image.png # => dimensions, color depth, color profile
-identify -verbose image.png
-```
 ### `git`
 Remove untracked files
 ```sh
@@ -1591,6 +1552,97 @@ The files are presented unstaged, and can be added to new commits as needed. Fin
 ```sh
 git rebase --continue
 ```
+### `gsettings`
+Change function of Caps Lock key [<sup>ref</sup>][https://superuser.com/questions/1196241/how-to-remap-caps-lock-on-wayland]
+```sh
+gsettings set org.gnome.desktop.input-sources xkb-options "['caps:ctrl_modifier']"
+```
+Change mouse cursor size to `$SIZE`, which can be one of the values 24 (default), 32, 48, 64, or 96. [<sup>ref</sup>][https://vitux.com/how-to-change-cursor-size-on-ubuntu-desktop/]
+```sh
+gsettings set org.gnome.desktop.interface $SIZE
+```
+### `imagemagick`
+
+[imagemagick identify]:           #identify                   '```&#10;$ imagemagick identify&#10;```&#10;Describe the format and characteristics of one or more image files'
+[imagemagick mogrify]:            #mogrify                    '```&#10;$ imagemagick mogrify&#10;```&#10;Resize, blur, crop, despeckle, dither, draw on, flip, join, resample, etc'
+
+[`identify`][imagemagick identify] 
+[`mogrify`][imagemagick mogrify] 
+
+#### `identify`
+Option                            | Effect
+:---                              | :---
+`-format {string}`                | display formatted image characteristics; {string} is formatted string using `%[key]` escape sequences<br/> **%w** current width in pixels <br/> **%h** current height in pixels
+
+#### `mogrify`
+Option               | Effect
+:---                 | :---
+`-write $FILENAME`   | save to `filename`
+`-resize $Xx$Y`      | resize image to `$X` pixels by `$Y` pixels
+`-crop $SIZE$OFFSET` | 
+`-gravity $TYPE`     | set current gravity suggestion for various other options <br>possible values `NorthWest`, `North`, `NorthEast`, `West`, `Center`, `East`, `SouthWest`, `South`, or `SouthEast`
+  
+Argument patterns 
+---           | ---
+{geometry}    | **{size}{offset}**
+{size}        | **{scale}%** height and weight are both scaled by a specified percentage<br/> **{width}x{height}** maximum values of height and width<br/> **{width}x{height}^** minimum values of height and width<br/>
+{offset}      | also affected by `-gravity` setting<br/> **`+0+0`** top-left corner
+gravity       | 
+
+Resize images
+```sh
+magick mogrify -resize 1920x1200 -write mars-bg.jpg pia22511.jpg
+magick identify -format "%w x %h" pia22511.jpg
+```
+Save the output of a command as an image (`convert` is from the ImageMagick software suite) [<sup>ref</sup>][CLKF]
+```sh
+cmd | convert label:@- image.png
+``` 
+View image metadata (`identify` is from the ImageMagick software suite) <sup>[ostechnix.com](https://www.ostechnix.com/how-to-view-image-metadata-on-linux/ "How to view image metadata")</sup>
+```sh
+identify image.png # => dimensions, color depth, color profile
+identify -verbose image.png
+```
+### `krunner`
+Single-line application launcher similar to the Run command on Windows.
+### `kquitapp`
+Allows you to quit a dbus enabled application. Two options:
+
+Specify service to be stopped
+```sh
+kquitapp --service
+```
+Specify path to dbus interface 
+```sh
+kquitapp --path
+```
+### `kstart`
+
+Restarting KDE Plasma 4 <sup>[ref](https://www.lifewire.com/kubuntu-p2-2202573)</sup>
+```sh
+killall plasma-desktop
+kstart plasma-desktop
+```
+Restarting KDE Plasma 5 <sup>[ref](https://www.lifewire.com/kubuntu-p2-2202573)</sup>
+```sh
+killall plasmashell
+kstart plasmashell
+```
+```sh
+kquitapp5 plasmashell
+kstart plasmashell
+```
+### `lowriter`
+`lowriter` is a command-line utility installed with LibreOffice Writer. <sup>[vitux.com](https://vitux.com/how-to-convert-documents-to-pdf-format-on-the-ubuntu-command-line/ "vitux.com: \"How to convert documents to PDF format on the Ubuntu Command Line\"")</sup>
+
+Convert a single file to PDF
+```sh
+lowriter --convert-to pdf filename.doc
+```
+Convert a batch of files using globbing
+```sh
+lowriter --convert-to pdf *.docx
+```
 ### `mongod`
 Run MongoDB service in the background on port 80
 ```sh
@@ -1631,44 +1683,8 @@ Pipe a list of commit IDs to tig
 ```sh
 git rev-list --author=olaf HEAD | tig show --stdin
 ```
-### `gsettings`
-Change function of Caps Lock key [<sup>ref</sup>][https://superuser.com/questions/1196241/how-to-remap-caps-lock-on-wayland]
-```sh
-gsettings set org.gnome.desktop.input-sources xkb-options "['caps:ctrl_modifier']"
-```
-Change mouse cursor size to `$SIZE`, which can be one of the values 24 (default), 32, 48, 64, or 96. [<sup>ref</sup>][https://vitux.com/how-to-change-cursor-size-on-ubuntu-desktop/]
-```sh
-gsettings set org.gnome.desktop.interface $SIZE
-```
-### `krunner`
-Single-line application launcher similar to the Run command on Windows.
-### `kstart`
 
-Restarting KDE Plasma 4 <sup>[ref](https://www.lifewire.com/kubuntu-p2-2202573)</sup>
-```sh
-killall plasma-desktop
-kstart plasma-desktop
-```
-Restarting KDE Plasma 5 <sup>[ref](https://www.lifewire.com/kubuntu-p2-2202573)</sup>
-```sh
-killall plasmashell
-kstart plasmashell
-```
-```sh
-kquitapp5 plasmashell
-kstart plasmashell
-```
-### `kquitapp`
-Allows you to quit a dbus enabled application. Two options:
 
-Specify service to be stopped
-```sh
-kquitapp --service
-```
-Specify path to dbus interface 
-```sh
-kquitapp --path
-```
 ## Archive
 [ar]:                          #ar                             '```&#10;$ ar&#10;```&#10;Maintain a group of files that are combined into a file archive. Used most commonly to create and update library files as used by `ld`.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 16'
 [bzcat]:                       #bzcat                          '```&#10;$ bzcat&#10;```&#10;Page through .bz2 files'
@@ -2265,6 +2281,7 @@ AM_INIT_AUTOMAKE
 [`free`][free] 
 [`glances`][glances] 
 [`hwclock`][hwclock] 
+[`ldd`][ldd] 
 [`loadaverage`][loadaverage] 
 [`logger`][logger] 
 [`logrotate`][logrotate] 
@@ -2272,6 +2289,7 @@ AM_INIT_AUTOMAKE
 [`man`][man] 
 [`mpstat`][mpstat] 
 [`nproc`][nproc] 
+[`ntpdate`][ntpdate] 
 [`printenv`][printenv] 
 [`rsyslogd`][rsyslogd] 
 [`sar`][sar] 
@@ -2432,6 +2450,11 @@ Display version of Ubuntu
 ```sh
 lsb_release -sc
 ```
+### `ldd`
+Display dependencies of `$PROGRAM`
+```sh
+ldd $PROGRAM
+```
 #### `lscpu`
 Display CPU architecture information [<sup>ref</sup>][L5PMT-cpu]
 #### `mpstat`
@@ -2445,9 +2468,13 @@ netstat -tulpn
 ```
 #### `nproc`
 Display number of CPU processors or cores [<sup>ref</sup>][L5PMT-cpu]
+#### `ntpdate`
+Synchronize system clock to that of an online Network Time Protocol server
+```sh
+ntpdate -upool.ntp.org
+```
 #### `pmap`
 Report memory map of a process (part of "sysstat" package). [<sup>ref</sup>][L5PMT-network]
-
 #### `sar`
 <!-- `sar` options -->
 [sar -&#65;]:                   #sar                           '```&#10;$ sar -&#65;&#10;```&#10;display the most information: equivalent to all options'
@@ -2486,7 +2513,7 @@ Generate report for only specific plugins
 ```sh
 sosreport -o apache --batch
 ```
-### `sysbench`
+#### `sysbench`
 Benchmark CPU by calculating prime numbers <sup>[YouTube](https://youtu.be/KkMWXVx-Ul8 "How to Benchmark your Linux system, Hak5 1502.1")</sup>
 ```sh
 sysbench --test=cpu --cpu-max-prime=20000 run
@@ -2495,6 +2522,8 @@ File I/O benchmarking <sup>[YouTube](https://youtu.be/KkMWXVx-Ul8 "How to Benchm
 ```sh
 sysbench --test=fileio --file-total-size=10G --file-test-mode=rndrw --init-rng=on --max-time=300 --max-requests=0 run
 ```
+#### `syslog`
+System logging facility used for messages from the kernel
 #### `uname`
 <!-- `uname` options -->
 [uname -&#97;]:                 #uname                         '```&#10;$ uname -a&#10;$ uname --all&#10;```&#10;Report the information supplied by all the other options&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 221'
@@ -2552,6 +2581,7 @@ Output header | Description [<sup>ref</sup>][Eckert]
 [`hdparm`][hdparm] 
 [`ioping`][ioping] 
 [`iostat`][iostat] 
+[`iscsiadm`][iscsiadm] 
 [`lsblk`][lsblk] 
 [`mdadm`][mdadm] 
 [`mke2fs`][mke2fs] 
@@ -2604,6 +2634,11 @@ Assign virtual name "storage1" to encrypted disk /dev/sdb1
 ```sh
 cryptsetup luksOpen /dev/sdb1 storage1
 ```
+#### `dd`
+Implement a simple CPU benchmark by writing 1 GB of zeroes and piping it to md5sum
+```sh
+dd if=/dev/zero bs=1M count=1024 | md5sum
+```
 #### `fdisk`
 [fdisk -&#98;]: #fdisk '```&#10;$ fdisk -b&#10;$ fdisk --sector-size&#10;```&#10;Specify the sector size of the disk'
 [fdisk -&#66;]: #fdisk '```&#10;$ fdisk -B&#10;$ fdisk --protect-boot&#10;```&#10;Do not erase the beginning of the first disk sector when creating a new disk label.'
@@ -2651,6 +2686,11 @@ cryptsetup luksOpen /dev/sdb1 storage1
 
 <code>&nbsp;</code>   [`a`][fdisk &#97;] [`b`][fdisk &#98;] [`c`][fdisk &#99;] [`d`][fdisk &#100;] <code>&nbsp;</code> <code>&nbsp;</code> [`g`][fdisk &#103;] <code>&nbsp;</code> [`i`][fdisk &#105;] <code>&nbsp;</code> <code>&nbsp;</code> [`l`][fdisk &#108;] [`m`][fdisk &#109;] [`n`][fdisk &#110;] [`o`][fdisk &#111;] [`p`][fdisk &#112;] [`q`][fdisk &#113;] <code>&nbsp;</code> [`s`][fdisk &#115;] [`t`][fdisk &#116;] [`u`][fdisk &#117;] [`v`][fdisk &#118;] [`w`][fdisk &#119;] [`x`][fdisk &#120;] <code>&nbsp;</code> <code>&nbsp;</code>  <br><code>&nbsp;</code>&nbsp;<code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`F`][fdisk &#70;] [`G`][fdisk &#71;] <code>&nbsp;</code> [`I`][fdisk &#73;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`O`][fdisk &#79;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 
 
+#### `iscsiadm`
+Discover iSCSI targets
+```sh
+iscsiadm discovery
+```
 #### `lvcreate`
 Create a 20 gigabyte logical volume named "Marketing" from volume group {vg1}
 ```sh
@@ -2664,6 +2704,15 @@ lvcreate -L 500G vg1 -n lv1
 Resize existent logical volume {Marketing} in volume group {vg1} to have an additional 10 gigabytes of space
 ```sh
 lvresize -L +10G /dev/vg1/Marketing
+```
+#### `mkfs`
+Create an ext4 filesystem on {partition}
+```sh
+mkfs -t ext4 partition
+```
+Specify {filesystemtype} to be created
+```sh
+mkfs -T filesystemtype
 ```
 #### `partx`
 `partx` is a utility that provides information on drive partitions to the Linux kernel. [[12](sources.md)]
@@ -2694,6 +2743,59 @@ partx -d --nr -1:-1 /dev/sda
 Disable headers
 ```bash
 partx -o START -g --nr 5 /dev/sda
+```
+#### `sfdisk`
+Script-based partition table editor, similar to [`fdisk`](#fdisk) and [`gdisk`](#gdisk), which can be run interactively. It does not interface with GPT format, neither is it designed for large partitions. [<sup>ref</sup>][11]
+
+List partitions on all devices
+
+Display size of {partition} or {device}
+This command produces the size of {partition} (i.e. `/dev/sda1`) or even {device} (`/dev/sda`) in blocks
+```sh
+sfdisk -s partition
+sfdisk -s device
+```
+Apply consistency checks to {partition} or {device}
+```sh
+sfdisk -V partition
+sfdisk --verify device
+```
+Create a partition
+```sh
+sfdisk device
+```
+Save sectors changed
+This command will allow recovery using the following command
+```sh
+sfdisk /dev/hdd -O hdd-partition-sectors.save
+```
+Recovery
+Man page indicates this flag is no longer supported, and recommends use of `dd` instead.
+```sh
+sfdisk /dev/hdd -I hdd-partition-sectors.save
+```
+### `swapon`
+Instruct system to begin using {partition} as a swap file
+```sh
+swapon partition
+```
+### `tune2fs`
+Adjust various ...
+Run `fsck` on {/dev/sdb1} on every boot
+```sh
+tune2fs -c 1 /dev/sdb1
+```
+Run `fsck` on {/dev/sda1} at intervals of 60 mounts or 6 months
+```sh
+tune2fs -c 60 -i 6m /dev/sda1
+```
+Enable journaling on ext2 partition {/dev/sdc1}
+```sh
+tune2fs -j /dev/sdc1
+```
+Assign label "Sales" to logical volume {/dev/vg1/Sales}
+```sh
+tune2fs -L Sales /dev/vg1/Sales
 ```
 
 ## File commands
@@ -2739,7 +2841,6 @@ partx -o START -g --nr 5 /dev/sda
 [whereis]:                     #whereis                        '```&#10;$ whereis&#10;```&#10;Search for binary executables, source code, and manual pages in standard locations as well as the PATH and `$MANPATH`&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 139'
 [which]:                       #which                          '```&#10;$ which $CMD&#10;```&#10;Determine the location of `$CMD` and display its full path&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 200'
 
-**C** 
 [`chattr`][chattr] 
 [`chgrp`][chgrp] 
 [`chmod`][chmod] 
@@ -2747,50 +2848,38 @@ partx -o START -g --nr 5 /dev/sda
 [`cksum`][cksum] 
 [`cp`][cp] 
 [`curl`][curl] 
-**D** 
 [`dd`][dd] 
 [`dirname`][dirname] 
 [`dos2unix`][dos2unix] 
-**E** 
 [`exif`][exif] 
-**F** 
 [`fallocate`][fallocate] 
 [`file`][file] 
 [`find`][find] 
-**G** 
 [`getfacl`][getfacl] 
-**I** 
 [`install`][install] 
-**L** 
 [`link`][link] 
 [`ln`][ln] 
 [`locate`][locate] 
 [`ls`][ls] 
 [`lsattr`][lsattr] 
 [`lsof`][lsof] 
-**M** 
 [`md5sum`][md5sum] 
 [`mkdir`][mkdir] 
 [`mktemp`][mktemp] 
 [`mv`][mv] 
-**R** 
 [`rename`][rename] 
 [`rm`][rm] 
 [`rmdir`][rmdir] 
 [`rsync`][rsync] 
-**S** 
 [`scp`][scp] 
 [`setfacl`][setfacl] 
 [`setuid`][setuid] 
 [`stat`][stat] 
-**T** 
 [`touch`][touch] 
 [`tree`][tree] 
-**U** 
 [`umask`][umask] 
 [`unlink`][unlink] 
 [`updatedb`][updatedb] 
-**W** 
 [`whereis`][whereis] 
 [`which`][which] 
 
@@ -2805,6 +2894,39 @@ Create a file size of 1 gigabyte
 ```sh
 fallocate -l 1G $FILENAME  # gibibyte
 fallocate -l 1GB $FILENAME # gigabyte
+```
+### `file`
+View image metadata <sup>[ostechnix.com](https://www.ostechnix.com/how-to-view-image-metadata-on-linux/ "How to view image metadata")</sup>
+```sh
+file image.png # => file type, dimensions, color depth
+```
+### `find`
+Search for files in a directory hierarchy
+Find all files in {$PATH} that are owned by {user}
+```sh
+find $PATH -user username
+```
+Find recently modified files/folders
+There are 3 timestamps associated with files in Linux <sup>[2daygeek.com](https://www.2daygeek.com/check-find-recently-modified-files-folders-linux/ "How to find recently modified files/folders in Linux")</sup>
+- `atime` "access time": last time file was accessed by a command or application
+- `mtime` "modify time": last time file's contents were modified
+- `ctime` "change time": last time file's attribute was modified 
+
+Numerical arguments can be specified in 3 ways:
+- `+n` greater than {n} days ago
+- `-n` less than {n} days ago
+- `n` exactly {n} days ago
+```sh
+find $PATH -type f -mtime +120 -ls # Find only files that were modified more than 120 days ago
+find $PATH -type f -mtime -15 -ls # Modified less than 15 days ago
+find $PATH -type f -mtime 10 -ls # Modified exactly 10 days ago
+
+# Find files modified over the past day
+find $PATH -type f -newermt "1 day ago" -ls
+find $PATH -type f -newermt "-24 hours" -ls
+find $PATH -type f -newermt "yesterday" -ls
+
+find $PATH -type f -ctime -1 -ls # Find files created today
 ```
 ### `install`
 Copy files while maintaining various metadata, including timestamp, owner, etc. [[9](sources.md)]
@@ -2858,6 +2980,25 @@ Create new directory {dirname} along with all of the parents in its pathname, if
 ```sh
 mkdir -p dirname
 mkdir --parents dirname
+```
+### `rename`
+`rename` uses regular expressions <sup>[Network World][https://www.networkworld.com/article/3433865/how-to-rename-a-group-of-files-on-linux.html#tk.rss_linux]</sup>
+
+Option  | POSIX option            | Effect
+:---    | :---                    | :---
+`-n`    | `--nono`                | dry-run: describe the changes the command would make, without actually doing them
+
+Rename multiple files
+```sh
+# Renaming file.old to file.new
+rename 's/old/new/' this.old
+
+# Use globbing to rename all matching files
+rename 's/old/new/' *.old
+rename 's/report/review/' *
+
+# Change all uppercase letters to lowercase
+rename 'y/A-Z/a-z/' *
 ```
 ### `rsync`
 [rsync -&#116;]: #rsync '```&#10;$ rsync -t&#10;```&#10;Preserve original modification timestamp&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 132'
@@ -3286,6 +3427,11 @@ initctl reload
 
 <code>&nbsp;</code>   <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`h`][lsmod -&#104;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code>  <br><code>&nbsp;</code>&nbsp;<code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`V`][lsmod -&#86;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 
 
+Display currently loaded modules. Output in three columns:
+1. Module name
+2. Module size (bytes)
+3. Processes, filesystems, or other modules using the module
+
 ### `modinfo`
 [modinfo -&#97;]:               #modinfo                       '```&#10;$ modinfo -a&#10;```&#10;Display the author of the module&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 17'
 [modinfo -&#100;]:              #modinfo                       '```&#10;$ modinfo -d&#10;```&#10;Display the description of the module&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 17'
@@ -3405,9 +3551,12 @@ Display the current mail queue on a Postfix server
 ### `mailstats`
 Gather and display statistics about mail processed on a server running [ `sendmail` ](#sendmail)
 ### `msmtp`
-[<sup>ref</sup>][51]
+<sup>[vitux.com](https://vitux.com/how-to-use-gmail-from-the-ubuntu-terminal-to-send-emails/ "How to use Gmail from the Ubuntu terminal to send emails")</sup>
 
 ~/.msmtprc
+
+### `newaliases`
+Refresh the mail system after a change to the [ /etc/aliases ](#configs) file; Must be run after making a change to email aliases on a server running [ `postfix` ](#postfix)
 ### `postqueue`
 Cause mail queue to be processed on a Postfix server
 ```sh
@@ -3462,7 +3611,6 @@ ssmtp -au recipient -ap pw user@host < msg
 [`ip`][ip] 
 [`iperf`][iperf] 
 [`ipset`][ipset] 
-[`iscsiadm`][iscsiadm] 
 [`iw`][iw] 
 [`iwconfig`][iwconfig] 
 [`iwlist`][iwlist] 
@@ -3568,6 +3716,18 @@ dig example.com soa
 [`reload`][firewall-cmd --reload] 
 [`remove-service`][firewall-cmd --remove-service] 
 [`state`][firewall-cmd --state]
+
+Successor to `iptables` in Red Hat, and like its predecessor a frontend to the netfilter protocols. Places network traffic into zones. Commands have to be written twice: once to affect running config and again to have the change saved
+
+Configuration file                          | Description
+:---                                        | :---
+/etc/sysconfig/network-scripts/ifcfg-ens33  | interface settings
+/usr/lib/firewalld/services                 | .xml files that define services ("ZONE=public")
+
+Add a new zone, and write the change to disk
+```
+firewall-cmd --new-zone=testlab  --permanent
+```
 
 ### `hping3`
 Hping3 crafts "SYN" (sequence) packets from random spoofed IP addresses and sends them out at very short intervals. <sup>[Sec+ Lab][Sec+ Lab]</sup>
@@ -3952,8 +4112,6 @@ Identify operating system and scan ports using TCP SYN packets [<sup>ref</sup>][
 nmap -O -sS 192.168.27.0/24 > hosts.txt
 ```
 
-
-[Sec+ Lab]: https://pts.measureup.com/web/index.php#dashboard.php "Practice Lab: CompTIA Security+ (SY0-501)"
 ### `nslookup`
 Perform a DNS lookup in an interactive shell with cleaner output than **dig**. Enter a domain name and you get output in two sections. 
 Retrieve IP address of {host}
@@ -4072,7 +4230,17 @@ Display active TCP connections
 ss -tp
 ss --tcp --processes
 ```
+### `tcpdump`
+Inspect actual IP packets
 
+All network data will be displayed to STDOUT
+```
+tcpdump -i eth0   
+```
+Set snapshot length of capture (default 65,535B)
+```sh
+tcpdump -s
+```
 ### `traceroute`
 <!-- `traceroute` options -->
 [traceroute -&#102;]:           #traceroute                    '```&#10;$ traceroute -&#102; $TTL&#10;```&#10;Set time-to-live value to `$TTL` (1 by default)'
@@ -4104,6 +4272,7 @@ ss --tcp --processes
 [`gem`][gem] 
 [`pacman`][pacman] 
 [`pip`][pip] 
+`pydoc`
 [`rpm`][rpm] 
 [`snap`][snap] 
 [`yay`][yay] 
@@ -4393,6 +4562,11 @@ Display information about {package}
 ```sh
 pip show package
 ```
+### `pydoc`
+Display all installed Python modules
+```sh
+pydoc modules
+```
 ### `rpm`
 
 <!-- `rpm` options -->
@@ -4576,7 +4750,13 @@ nice -5 cmd &
   - first heard about in Linux Unplugged 289, in the context of Fedora supporting v2 whereas most userspace applications support v1
 
 Process IDs in the same **namespace** can have access to one another, whereas those in different namespaces cannot. Spawning a process in a new namespace prevents it from seeing the host's context, so an interactive shell like `zsh` spawned in its own namespace will report its PID as `1`, even though the host will assign its own PID. This is the concept behind [**containers**](../devops/README.md#containers). [[55](sources.md)]
-
+### `nice`
+Run `$CMD` at a nice value of (positive) 10
+```sh
+nice -10 $CMD
+nice -n 10
+nice $CMD
+```
 ### `unshare`
 Run a program in a namespace **unshared** from its parent process. [<sup>ref</sup>][https://opensource.com/article/19/10/namespaces-and-containers-linux]
 ```sh
@@ -4599,10 +4779,11 @@ sudo unshare --fork --pid --mount-proc zsh
 [`sshfs`][sshfs] 
 
 
-## SELinux
+## Security
 [`chcon`][chcon] 
 [`getenforce`][getenforce] 
 [`getsebool`][getsebool] 
+`gpg`
 [`restorecon`][restorecon] 
 [`semanage`][semanage] 
 [`sestatus`][sestatus] 
@@ -4617,7 +4798,44 @@ Display SELinux context for files
 ```sh
 ls -Z
 ```
-
+### `gpg`
+Decrypt file
+```sh
+gpg file.txt
+```
+Export GPG public key
+```sh
+gpg --export --output ~/jdoe.pub
+```
+Import another person's public key
+```sh
+gpg --import jdoe.pub
+```
+List available GPG keys
+```sh
+gpg --list-key
+```
+Encrypt a file
+```sh
+gpg --encrypt -r jdoe@dplaptop.lab.itpro.tv ./file.txt
+```
+Sign {file} without encrypting it (produces file.asc)
+```sh
+gpg --clearsign file
+```
+Generate a key
+```sh
+gpg --generate-key
+gpg --gen-key
+```
+Import another person's public key
+```sh
+gpg --import ~/jdoe.pub
+```
+Send keys to {keyserver}
+```sh
+gpg --send-keys keyIDs --keyserver keyserver
+```
 ### `restorecon`
 Restore security context default in the policy
 ```sh
@@ -4662,6 +4880,7 @@ semanage port -l
 [`su`][su] 
 [`sudo`][sudo] 
 [`tee`][tee] 
+`tmux`
 [`unalias`][unalias] 
 [`watch`][watch] 
 [`whatis`][whatis] 
@@ -4669,7 +4888,46 @@ semanage port -l
 [`whereis`][whereis] 
 [`which`][which] 
 [`xargs`][xargs] 
+#### `screen`
+Share your screen session with another user
+```sh
+screen -x user/session
+```
+### `stty`
+Return number of rows and columns of the terminal
+```sh
+stty size
+```
+#### `tmux`
+---     | ---
+Config  | `~/.tmux.conf`
 
+Change prefix to vim-style `$KEYCOMBO` (`C-b` by default)
+```sh
+set-option -g prefix $KEYCOMBO
+```
+Name a new session
+```sh
+tmux new-session -s 'my rails project'
+```
+#### `tput`
+Return width of current terminal window
+```sh
+tput cols 
+```
+Return height of current terminal window
+```sh
+tput lines
+```
+#### `watch`
+Execute `$CMD` at periods of `$N` seconds, watching its output <sup>CLKF</sup>
+```sh
+watch $CMD -n $N
+```
+Check memory usage in megabytes (`-m`) every `5` seconds <sup>Enki</sup>
+```sh
+watch -n 5 free -m
+```
 ## System administration
 [`adduser`][adduser] 
 [`chage`][chage] 
@@ -4689,6 +4947,7 @@ semanage port -l
 [`quotaoff`][quotaoff] 
 [`quotaon`][quotaon] 
 [`repquota`][repquota] 
+`shutdown`
 [`su`][su] 
 [`sudo`][sudo] 
 [`sudoedit`][sudoedit] 
@@ -4950,6 +5209,11 @@ Add user {zach} to list of users of file4.txt
 ```sh
 setfacl -m u:zach:rw file4.txt
 ```
+### `shutdown`
+Shut down at 8 pm
+```sh
+shutdown 20:00
+```
 ### `sudo`
 `sudo` is installed by default on most distros, but it can be installed. [[52](sources.md)]\
 In order to use `sudo`, users have to be added to special groups that vary based on distribution. The group `wheel` grants access to `sudo` on Red Hat derivatives, while there is a group named `sudo` on Debian, Ubuntu, and derivatives to do the same thing.\
@@ -5078,297 +5342,6 @@ userdel -r  user
 
 <code>&nbsp;</code>   [`a`][usermod -&#97;] <code>&nbsp;</code> [`c`][usermod -&#99;] [`d`][usermod -&#100;] <code>&nbsp;</code> <code>&nbsp;</code> [`g`][usermod -&#103;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`l`][usermod -&#108;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`s`][usermod -&#115;] <code>&nbsp;</code> [`u`][usermod -&#117;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code>  <br><code>&nbsp;</code>&nbsp;<code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`G`][usermod -&#71;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`L`][usermod -&#76;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`U`][usermod -&#85;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 
 
-## Commands
-### `dd`
-Implement a simple CPU benchmark by writing 1 GB of zeroes and piping it to md5sum
-```sh
-dd if=/dev/zero bs=1M count=1024 | md5sum
-```
-### `file`
-View image metadata <sup>[ostechnix.com](https://www.ostechnix.com/how-to-view-image-metadata-on-linux/ "How to view image metadata")</sup>
-```sh
-file image.png # => file type, dimensions, color depth
-```
-### `find`
-Search for files in a directory hierarchy
-Find all files in {$PATH} that are owned by {user}
-```sh
-find $PATH -user username
-```
-Find recently modified files/folders
-There are 3 timestamps associated with files in Linux <sup>[2daygeek.com](https://www.2daygeek.com/check-find-recently-modified-files-folders-linux/ "How to find recently modified files/folders in Linux")</sup>
-- `atime` "access time": last time file was accessed by a command or application
-- `mtime` "modify time": last time file's contents were modified
-- `ctime` "change time": last time file's attribute was modified 
-
-Numerical arguments can be specified in 3 ways:
-- `+n` greater than {n} days ago
-- `-n` less than {n} days ago
-- `n` exactly {n} days ago
-```sh
-find $PATH -type f -mtime +120 -ls # Find only files that were modified more than 120 days ago
-find $PATH -type f -mtime -15 -ls # Modified less than 15 days ago
-find $PATH -type f -mtime 10 -ls # Modified exactly 10 days ago
-
-# Find files modified over the past day
-find $PATH -type f -newermt "1 day ago" -ls
-find $PATH -type f -newermt "-24 hours" -ls
-find $PATH -type f -newermt "yesterday" -ls
-
-find $PATH -type f -ctime -1 -ls # Find files created today
-```
-### `firewall-cmd`
-Successor to `iptables` in Red Hat, and like its predecessor a frontend to the netfilter protocols. Places network traffic into zones. Commands have to be written twice: once to affect running config and again to have the change saved
-
-Configuration file                          | Description
-:---                                        | :---
-/etc/sysconfig/network-scripts/ifcfg-ens33  | interface settings
-/usr/lib/firewalld/services                 | .xml files that define services ("ZONE=public")
-
-Add a new zone, and write the change to disk
-```
-firewall-cmd --new-zone=testlab  --permanent
-```
-### `gpg`
-Decrypt file
-```sh
-gpg file.txt
-```
-Export GPG public key
-```sh
-gpg --export --output ~/jdoe.pub
-```
-Import another person's public key
-```sh
-gpg --import jdoe.pub
-```
-List available GPG keys
-```sh
-gpg --list-key
-```
-Encrypt a file
-```sh
-gpg --encrypt -r jdoe@dplaptop.lab.itpro.tv ./file.txt
-```
-Sign {file} without encrypting it (produces file.asc)
-```sh
-gpg --clearsign file
-```
-Generate a key
-```sh
-gpg --generate-key
-gpg --gen-key
-```
-Import another person's public key
-```sh
-gpg --import ~/jdoe.pub
-```
-Send keys to {keyserver}
-```sh
-gpg --send-keys keyIDs --keyserver keyserver
-```
-### `iscsiadm`
-Discover iSCSI targets
-```sh
-iscsiadm discovery
-```
-### `ldd`
-Display dependencies of {program}
-```sh
-ldd program
-```
-### `lowriter`
-`lowriter` is a command-line utility installed with LibreOffice Writer. <sup>[vitux.com](https://vitux.com/how-to-convert-documents-to-pdf-format-on-the-ubuntu-command-line/ "vitux.com: \"How to convert documents to PDF format on the Ubuntu Command Line\"")</sup>
-
-Convert a single file to PDF
-```sh
-lowriter --convert-to pdf filename.doc
-```
-Convert a batch of files using globbing
-```sh
-lowriter --convert-to pdf *.docx
-```
-### `lsmod`
-Display currently loaded modules. Output in three columns:
-1. Module name
-2. Module size (bytes)
-3. Processes, filesystems, or other modules using the module
-
-### `mkfs`
-Create an ext4 filesystem on {partition}
-```sh
-mkfs -t ext4 partition
-```
-Specify {filesystemtype} to be created
-```sh
-mkfs -T filesystemtype
-```
-
-### `newaliases`
-Refresh the mail system after a change to the [ /etc/aliases ](#configs) file; Must be run after making a change to email aliases on a server running [ `postfix` ](#postfix)
-### `nice`
-Run `$CMD` at a nice value of (positive) 10
-```sh
-nice -10 $CMD
-nice -n 10
-nice $CMD
-```
-### `ntpdate`
-Synchronize system clock to that of an online Network Time Protocol server
-```sh
-ntpdate -upool.ntp.org
-```
-### `paste`
-Merge lines of files\
-Make a .csv file from two lists
-```sh
-paste -d ',' file1 file2
-```
-Transpose rows
-```sh
-paste -s file1 file2
-```
-### `pydoc`
-Display all installed Python modules
-```sh
-pydoc modules
-```
-### `rename`
-`rename` uses regular expressions <sup>[Network World][https://www.networkworld.com/article/3433865/how-to-rename-a-group-of-files-on-linux.html#tk.rss_linux]</sup>
-
-Option  | POSIX option            | Effect
-:---    | :---                    | :---
-`-n`    | `--nono`                | dry-run: describe the changes the command would make, without actually doing them
-
-Rename multiple files
-```sh
-# Renaming file.old to file.new
-rename 's/old/new/' this.old
-
-# Use globbing to rename all matching files
-rename 's/old/new/' *.old
-rename 's/report/review/' *
-
-# Change all uppercase letters to lowercase
-rename 'y/A-Z/a-z/' *
-```
-### `repquota`
-Human-readable
-```sh
-repquota -sh
-```
-### `screen`
-Share your screen session with another user
-```sh
-screen -x user/session
-```
-### `sfdisk`
-Script-based partition table editor, similar to [`fdisk`](#fdisk) and [`gdisk`](#gdisk), which can be run interactively. It does not interface with GPT format, neither is it designed for large partitions. [<sup>ref</sup>][11]
-
-List partitions on all devices
-
-Display size of {partition} or {device}
-This command produces the size of {partition} (i.e. `/dev/sda1`) or even {device} (`/dev/sda`) in blocks
-```sh
-sfdisk -s partition
-sfdisk -s device
-```
-Apply consistency checks to {partition} or {device}
-```sh
-sfdisk -V partition
-sfdisk --verify device
-```
-Create a partition
-```sh
-sfdisk device
-```
-Save sectors changed
-This command will allow recovery using the following command
-```sh
-sfdisk /dev/hdd -O hdd-partition-sectors.save
-```
-Recovery
-Man page indicates this flag is no longer supported, and recommends use of `dd` instead.
-```sh
-sfdisk /dev/hdd -I hdd-partition-sectors.save
-```
-### `shutdown`
-Shut down at 8 pm
-```sh
-shutdown 20:00
-```
-### `stty`
-Return number of rows and columns of the terminal
-```sh
-stty size
-```
-### `swapon`
-Instruct system to begin using {partition} as a swap file
-```sh
-swapon partition
-```
-
-### `syslog`
-System logging facility used for messages from the kernel
-### `tcpdump`
-Inspect actual IP packets
-
-All network data will be displayed to STDOUT
-```
-tcpdump -i eth0   
-```
-Set snapshot length of capture (default 65,535B)
-```sh
-tcpdump -s
-```
-### `tmux`
----     | ---
-Config  | `~/.tmux.conf`
-
-Change prefix to vim-style `$KEYCOMBO` (`C-b` by default)
-```sh
-set-option -g prefix $KEYCOMBO
-```
-Name a new session
-```sh
-tmux new-session -s 'my rails project'
-```
-### `tput`
-Return width of current terminal window
-```sh
-tput cols 
-```
-Return height of current terminal window
-```sh
-tput lines
-```
-### `tune2fs`
-Adjust various ...
-Run `fsck` on {/dev/sdb1} on every boot
-```sh
-tune2fs -c 1 /dev/sdb1
-```
-Run `fsck` on {/dev/sda1} at intervals of 60 mounts or 6 months
-```sh
-tune2fs -c 60 -i 6m /dev/sda1
-```
-Enable journaling on ext2 partition {/dev/sdc1}
-```sh
-tune2fs -j /dev/sdc1
-```
-Assign label "Sales" to logical volume {/dev/vg1/Sales}
-```sh
-tune2fs -L Sales /dev/vg1/Sales
-```
-### `watch`
-Execute `$CMD` at periods of `$N` seconds, watching its output <sup>CLKF</sup>
-```sh
-watch $CMD -n $N
-```
-Check memory usage in megabytes (`-m`) every `5` seconds <sup>Enki</sup>
-```sh
-watch -n 5 free -m
-```
 ## Text
 [cat]: #cat '```&#10;$ cat&#10;```&#10;Display contents of text files&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 115'
 [cmp]: #cmp '```&#10;$ cmp $FILE $OTHER&#10;```&#10;Compare `$FILE` with `$OTHER`, or STDIN if one or the other is not provided (cf. `comm` and `diff`). Exits with 0 if files are identical or 1 if they are not.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 39'
@@ -5791,6 +5764,17 @@ Number all lines, including blank lines
 ```sh
 nl -b a file
 nl --body-numbering=a file
+```
+### `paste`
+Merge lines of files
+
+Make a .csv file from two lists
+```sh
+paste -d ',' file1 file2
+```
+Transpose rows
+```sh
+paste -s file1 file2
 ```
 ### `sed`
 [sed -&#110;]: #sed '```&#10;$ sed -n&#10;$ sed --quiet&#10;```&#10;Suppress automatic printing of pattern space'
