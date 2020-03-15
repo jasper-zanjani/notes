@@ -27,14 +27,6 @@
 [https://vitux.com/how-to-change-cursor-size-on-ubuntu-desktop/]: https://vitux.com/how-to-change-cursor-size-on-ubuntu-desktop/ 'vitux.com: "Change cursor size on Ubuntu through the command line"'
 [https://vitux.com/how-to-install-and-configure-samba-on-ubuntu/]: https://vitux.com/how-to-install-and-configure-samba-on-ubuntu/ "vitux.com: \"How to Install and Configure Samba on Ubuntu\""
 [https://www.networkworld.com/article/3433865/how-to-rename-a-group-of-files-on-linux.html#tk.rss_linux]: https://www.networkworld.com/article/3433865/how-to-rename-a-group-of-files-on-linux.html#tk.rss_linux "networkworld.com: \"How to rename a group of files on Linux\""
-[https://www.networkworld.com/article/3447936/viewing-network-bandwidth-usage-with-bmon.html]: https://www.networkworld.com/article/3447936/viewing-network-bandwidth-usage-with-bmon.html "Network World: \"Viewing network bandwidth usage with bmon\""
-[https://www.networkworld.com/video/99387/how-to-use-the-bmon-command-2-minute-linux-tips]: https://www.networkworld.com/video/99387/how-to-use-the-bmon-command-2-minute-linux-tips "Network World: How to use the bmon command: 2-Minute Linux Tips"
-[https://www.ostechnix.com/how-to-view-image-metadata-on-linux/]: https://www.ostechnix.com/how-to-view-image-metadata-on-linux/ "ostechnix.com: \"How to view image metadata\""
-[https://www.redhat.com/sysadmin/raid-intro]: https://www.redhat.com/sysadmin/raid-intro "redhat.com: \"RAID for those who avoid it\""
-[https://www.tecmint.com/install-samba-on-rhel-8-for-file-sharing-on-windows/]: https://www.tecmint.com/install-samba-on-rhel-8-for-file-sharing-on-windows/ "tecmint.com: \"Install Samba4 on RHEL 8 for File Sharing on Windows\""
-[https://www.tecmint.com/rdesktop-connect-windows-desktop-from-linux/]: https://www.tecmint.com/rdesktop-connect-windows-desktop-from-linux/ "TecMint: \"rdesktop - A RDP Client to Connect Windows Desktop from Linux\""
-[https://youtu.be/KkMWXVx-Ul8]: https://youtu.be/KkMWXVx-Ul8 "YouTube: How to Benchmark your Linux system, Hak5 1502.1"
-[https://youtu.be/ksAfmJfdub0]: https://youtu.be/ksAfmJfdub0 "YouTube: \"Easy Academic References on the Command Line\""
 [ULSAH]: # 'Nemeth, Evi. _Unix and Linux System Administration Handbook, 5th ed._'
 
 <!-- Concepts -->
@@ -67,6 +59,7 @@
 [syscall][syscall] 
 [SysFs][SysFs] 
 [target][target]
+[SystemD][SystemD]
 [TmpFs][TmpFs] 
 [configure script][configure script]
 
@@ -292,6 +285,7 @@
 [lvremove]: #lvremove '```&#10;lvremove&#10;```&#10;'
 [lvs]: #lvs '```&#10;lvs&#10;```&#10;'
 [lvscan]: #lvscan '```&#10;lvscan&#10;```&#10;&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 225'
+[mkntfs]: #mkntfs '```&#10;mkntfs&#10;mkfs.ntfs&#10;```&#10;Create an NTFS file system'
 [pvcreate]: #pvcreate '```&#10;pvcreate&#10;```&#10;Convert existing devices into LVM physical volumes&#10;Rothwell, William. _CompTIA Linux+/LPIC-1 Portable Command guide_.: 21'
 [pvdisplay]: #pvdisplay '```&#10;pvdisplay&#10;```&#10;Display information about a PV&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 45'
 [pvremove]: #pvremove '```&#10;pvremove&#10;```&#10;'
@@ -764,6 +758,7 @@
 [`mdadm`][mdadm] 
 [`mke2fs`][mke2fs] 
 [`mkfs`][mkfs] 
+[`mkntfs`][mkntfs]
 [`mkswap`][mkswap] 
 [`mount`][mount] 
 [`mt`][mt] 
@@ -1367,7 +1362,7 @@ Save the output of a command as an image (`convert` is from the ImageMagick soft
 ```sh
 cmd | convert label:@- image.png
 ``` 
-View image metadata (`identify` is from the ImageMagick software suite) [<sup>ref</sup>][https://www.ostechnix.com/how-to-view-image-metadata-on-linux/]
+View image metadata (`identify` is from the ImageMagick software suite) <sup>[ostechnix.com](https://www.ostechnix.com/how-to-view-image-metadata-on-linux/ "How to view image metadata")</sup>
 ```sh
 identify image.png # => dimensions, color depth, color profile
 identify -verbose image.png
@@ -2491,12 +2486,12 @@ Generate report for only specific plugins
 ```sh
 sosreport -o apache --batch
 ```
-#### `sysbench`
-Benchmark CPU by calculating prime numbers [<sup>YouTube</sup>][https://youtu.be/KkMWXVx-Ul8]
+### `sysbench`
+Benchmark CPU by calculating prime numbers <sup>[YouTube](https://youtu.be/KkMWXVx-Ul8 "How to Benchmark your Linux system, Hak5 1502.1")</sup>
 ```sh
 sysbench --test=cpu --cpu-max-prime=20000 run
 ```
-File I/O benchmarking [<sup>YouTube</sup>][https://youtu.be/KkMWXVx-Ul8]
+File I/O benchmarking <sup>[YouTube](https://youtu.be/KkMWXVx-Ul8 "How to Benchmark your Linux system, Hak5 1502.1")</sup>
 ```sh
 sysbench --test=fileio --file-total-size=10G --file-test-mode=rndrw --init-rng=on --max-time=300 --max-requests=0 run
 ```
@@ -2561,6 +2556,7 @@ Output header | Description [<sup>ref</sup>][Eckert]
 [`mdadm`][mdadm] 
 [`mke2fs`][mke2fs] 
 [`mkfs`][mkfs] 
+[`mkntfs`][mkntfs]
 [`mkswap`][mkswap] 
 [`mount`][mount] 
 [`mt`][mt] 
@@ -2608,6 +2604,53 @@ Assign virtual name "storage1" to encrypted disk /dev/sdb1
 ```sh
 cryptsetup luksOpen /dev/sdb1 storage1
 ```
+#### `fdisk`
+[fdisk -&#98;]: #fdisk '```&#10;$ fdisk -b&#10;$ fdisk --sector-size&#10;```&#10;Specify the sector size of the disk'
+[fdisk -&#66;]: #fdisk '```&#10;$ fdisk -B&#10;$ fdisk --protect-boot&#10;```&#10;Do not erase the beginning of the first disk sector when creating a new disk label.'
+[fdisk -&#99;]: #fdisk '```&#10;$ fdisk -c&#10;$ fdisk --compatibility&#10;```&#10;Specify the compatibility mode, "dos" or "nondos" ("nondos" by default)'
+[fdisk -&#104;]: #fdisk '```&#10;$ fdisk -h&#10;$ fdisk --help&#10;```&#10;Display help'
+[fdisk -&#76;]: #fdisk '```&#10;$ fdisk -L $WHEN&#10;$ fdisk --color $WHEN&#10;```&#10;Colorize output.'
+[fdisk -&#108;]: #fdisk '```&#10;$ fdisk -l&#10;$ fdisk --list&#10;```&#10;List the partition tables for the specified devices and then exit.'
+[fdisk -&#111;]: #fdisk '```&#10;$ fdisk -o&#10;$ fdisk --output&#10;```&#10;Specify the output columns to print.'
+[fdisk -&#115;]: #fdisk '```&#10;$ fdisk -s&#10;$ fdisk --getsz&#10;```&#10;Print the size in 512-byte sectors of each given block device (deprecated in favor of `blockdev`)'
+[fdisk -&#116;]: #fdisk '```&#10;$ fdisk -t&#10;$ fdisk --type&#10;```&#10;Enable support only for disklabels of the specified type, and disable support for all other types.'
+[fdisk -&#117;]: #fdisk '```&#10;$ fdisk -u $UNIT&#10;$ fdisk --units $UNIT&#10;```&#10;When listing partition tables, show sizes in "sectors" or in "cylinders" ("sectors" by default).'
+[fdisk -&#67;]: #fdisk '```&#10;$ fdisk -C $N&#10;$ fdisk --cylinders $N&#10;```&#10;Specify the number of cylinders of the disk'
+[fdisk -&#72;]: #fdisk '```&#10;$ fdisk -H $N&#10;$ fdisk --heads $N&#10;```&#10;Specify the number of heads of the disk'
+[fdisk -&#83;]: #fdisk '```&#10;$ fdisk -S $N&#10;$ fdisk --sectors $N&#10;```&#10;Specify the number of sectors per track of the disk.'
+[fdisk -&#119;]: #fdisk '```&#10;$ fdisk -w $WHEN&#10;$ fdisk --wipe $WHEN&#10;```&#10;Wipe filesystem, RAID, and partition-table signatures from the device, in order to avoid possible collisions.'
+[fdisk -&#87;]: #fdisk '```&#10;$ fdisk -W $WHEN&#10;$ fdisk --wipe-partition $WHEN&#10;```&#10;Wipe filesystem, RAID, and partition-table signatures from a newly created partitions, in order to avoid possible collisions.'
+[fdisk -&#86;]: #fdisk '```&#10;$ fdisk -V&#10;$ fdisk --version&#10;```&#10;Display version information and exit.'
+
+[fdisk &#97;]: #fdisk '```&#10;$ fdisk&#10;Command (m for help): a&#10;```&#10;Toggle a bootable flag'
+[fdisk &#98;]: #fdisk '```&#10;$ fdisk&#10;Command (m for help): b&#10;```&#10;Edit nested BSD disklabel'
+[fdisk &#99;]: #fdisk '```&#10;$ fdisk&#10;Command (m for help): c&#10;```&#10;Toggle the DOS compatibility flag'
+[fdisk &#100;]: #fdisk '```&#10;$ fdisk&#10;Command (m for help): d&#10;```&#10;Delete a partition'
+[fdisk &#70;]: #fdisk '```&#10;$ fdisk&#10;Command (m for help): F&#10;```&#10;List free unpartitioned space'
+[fdisk &#108;]: #fdisk '```&#10;$ fdisk&#10;Command (m for help): l&#10;```&#10;List known partition types'
+[fdisk &#110;]: #fdisk '```&#10;$ fdisk&#10;Command (m for help): n&#10;```&#10;Add a new partition'
+[fdisk &#112;]: #fdisk '```&#10;$ fdisk&#10;Command (m for help): p&#10;```&#10;Print the partition table'
+[fdisk &#116;]: #fdisk '```&#10;$ fdisk&#10;Command (m for help): t&#10;```&#10;Change a partition type'
+[fdisk &#118;]: #fdisk '```&#10;$ fdisk&#10;Command (m for help): v&#10;```&#10;Verify the partition table'
+[fdisk &#105;]: #fdisk '```&#10;$ fdisk&#10;Command (m for help): i&#10;```&#10;Print information about a partition'
+[fdisk &#109;]: #fdisk '```&#10;$ fdisk&#10;Command (m for help): m&#10;```&#10;Print the help menu'
+[fdisk &#117;]: #fdisk '```&#10;$ fdisk&#10;Command (m for help): u&#10;```&#10;Change display/entry units'
+[fdisk &#120;]: #fdisk '```&#10;$ fdisk&#10;Command (m for help): x&#10;```&#10;Extra functionality (experts only)'
+[fdisk &#73;]: #fdisk '```&#10;$ fdisk&#10;Command (m for help): I&#10;```&#10;Load disk layout from `sfdisk` script file'
+[fdisk &#79;]: #fdisk '```&#10;$ fdisk&#10;Command (m for help): O&#10;```&#10;Dump disk layout to `sfdisk` script file'
+[fdisk &#119;]: #fdisk '```&#10;$ fdisk&#10;Command (m for help): w&#10;```&#10;Write table to disk and exit'
+[fdisk &#113;]: #fdisk '```&#10;$ fdisk&#10;Command (m for help): q&#10;```&#10;Quit without saving changes'
+[fdisk &#103;]: #fdisk '```&#10;$ fdisk&#10;Command (m for help): g&#10;```&#10;Create a new empty GPT partition table'
+[fdisk &#71;]: #fdisk '```&#10;$ fdisk&#10;Command (m for help): G&#10;```&#10;Create a new empty SGI (IRIX) partition table'
+[fdisk &#111;]: #fdisk '```&#10;$ fdisk&#10;Command (m for help): o&#10;```&#10;Create a new empty DOS partition table.'
+[fdisk &#115;]: #fdisk '```&#10;$ fdisk&#10;Command (m for help): s&#10;```&#10;Create a new empty Sun partition table.'
+
+<code>&nbsp;</code>   <code>&nbsp;</code> [`b`][fdisk -&#98;] [`c`][fdisk -&#99;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`h`][fdisk -&#104;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`l`][fdisk -&#108;] <code>&nbsp;</code> <code>&nbsp;</code> [`o`][fdisk -&#111;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`s`][fdisk -&#115;] [`t`][fdisk -&#116;] [`u`][fdisk -&#117;] <code>&nbsp;</code> [`w`][fdisk -&#119;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code>  <br><code>&nbsp;</code>&nbsp;<code>&nbsp;</code> [`B`][fdisk -&#66;] [`C`][fdisk -&#67;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`H`][fdisk -&#72;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`L`][fdisk -&#76;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`S`][fdisk -&#83;] <code>&nbsp;</code> <code>&nbsp;</code> [`V`][fdisk -&#86;] [`W`][fdisk -&#87;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 
+
+###### Commands
+
+<code>&nbsp;</code>   [`a`][fdisk &#97;] [`b`][fdisk &#98;] [`c`][fdisk &#99;] [`d`][fdisk &#100;] <code>&nbsp;</code> <code>&nbsp;</code> [`g`][fdisk &#103;] <code>&nbsp;</code> [`i`][fdisk &#105;] <code>&nbsp;</code> <code>&nbsp;</code> [`l`][fdisk &#108;] [`m`][fdisk &#109;] [`n`][fdisk &#110;] [`o`][fdisk &#111;] [`p`][fdisk &#112;] [`q`][fdisk &#113;] <code>&nbsp;</code> [`s`][fdisk &#115;] [`t`][fdisk &#116;] [`u`][fdisk &#117;] [`v`][fdisk &#118;] [`w`][fdisk &#119;] [`x`][fdisk &#120;] <code>&nbsp;</code> <code>&nbsp;</code>  <br><code>&nbsp;</code>&nbsp;<code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`F`][fdisk &#70;] [`G`][fdisk &#71;] <code>&nbsp;</code> [`I`][fdisk &#73;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`O`][fdisk &#79;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 
+
 #### `lvcreate`
 Create a 20 gigabyte logical volume named "Marketing" from volume group {vg1}
 ```sh
@@ -2817,21 +2860,28 @@ mkdir -p dirname
 mkdir --parents dirname
 ```
 ### `rsync`
-Option  | POSIX option            | Effect
-:---    | :---                    | :---
-`-a`    | `--archive`             | copy recursively, preserving group, owner, modification times, and device-files (if super-user) (equivalent to `-rptlgoD`)
-`-b`    |                         | create a backup of every file transferred
-`-e`    | `--rsh`                 | specify remote shell to use
-`-g`    | `--group`               | preserve group
-`-o`    | `--owner`               | preserve owner
-`-p`    |                         | specify nonstandard port
-\-      | `--delete`              | remove files and folders that aren't in the sender system
-\-      | `--exclude`             | exclude files (accepts globbing)
-\-      | `--include`             | specify specific files (accepts globbing)
-\-      | `--progress`            | display a progress bar
-\-      | `--remove-source-files` | remove original files after synchronization
+[rsync -&#116;]: #rsync '```&#10;$ rsync -t&#10;```&#10;Preserve original modification timestamp&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 132'
+[rsync -&#118;]: #rsync '```&#10;$ rsync -v&#10;$ rsync --verbose&#10;```&#10;Verbose output&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 132'
+[rsync -&#114;]: #rsync '```&#10;$ rsync -r&#10;```&#10;Recursive (transfer entire directory)&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 132'
+[rsync -&#108;]: #rsync '```&#10;$ rsync -l&#10;```&#10;Maintain symbolic links&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 132'
+[rsync -&#112;]: #rsync '```&#10;$ rsync -p&#10;```&#10;Preserve original permissions&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 132'
+[rsync -&#97;]: #rsync '```&#10;$ rsync -a&#10;$ rsync --archive&#10;```&#10;Copy recursively, preserving group, owner, modification times, and device-files (if super-user) (equivalent to `-rptlgoD`)'
+[rsync -&#98;]: #rsync '```&#10;$ rsync -b&#10;```&#10;Create a backup of every file transferred'
+[rsync -&#101;]: #rsync '```&#10;$ rsync -e&#10;$ rsync --rsh&#10;```&#10;Specify remote shell to use'
+[rsync -&#103;]: #rsync '```&#10;$ rsync -g&#10;$ rsync --group&#10;```&#10;Preserve group'
+[rsync -&#111;]: #rsync '```&#10;$ rsync -o&#10;$ rsync --owner&#10;```&#10;Preserve owner'
+[rsync --delete]: #rsync '```&#10;$ rsync --delete&#10;```&#10;Remove files and folders that are not in the sender system'
+[rsync --exclude]: #rsync '```&#10;$ rsync --exclude&#10;```&#10;Exclude files (accepts globbing)'
+[rsync --include]: #rsync '```&#10;$ rsync --include&#10;```&#10;Specify specific files (accepts globbing)'
+[rsync --progress]: #rsync '```&#10;$ rsync --progress&#10;```&#10;Display a progress bar'
+[rsync --remove-source-files]: #rsync '```&#10;$ rsync --remove-source-files&#10;```&#10;Remove original files after synchronization'
+[rsync -&#122;]: #rsync '```&#10;$ rsync -z&#10;$ rsync --compress&#10;```&#10;Compress file data during the transfer'
 
-Copy `$FILE` locally [<sup>ref</sup>][44]
+<code>&nbsp;</code> [`a`][rsync -&#97;] [`b`][rsync -&#98;] <code>&nbsp;</code> <code>&nbsp;</code> [`e`][rsync -&#101;] <code>&nbsp;</code> [`g`][rsync -&#103;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`l`][rsync -&#108;] <code>&nbsp;</code> <code>&nbsp;</code> [`o`][rsync -&#111;] [`p`][rsync -&#112;] <code>&nbsp;</code> [`r`][rsync -&#114;] <code>&nbsp;</code> [`t`][rsync -&#116;] <code>&nbsp;</code> [`v`][rsync -&#118;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`z`][rsync -&#122;] 
+
+[https://www.2daygeek.com/linux-rsync-command-local-remote-file-synchronization/]: https://www.2daygeek.com/linux-rsync-command-local-remote-file-synchronization/ "rsync (Remote Sync) command examples and usage"
+
+Copy `$FILE` locally <sup>[2daygeek.com][https://www.2daygeek.com/linux-rsync-command-local-remote-file-synchronization/]</sup>
 ```sh
 rsync -zvr $FILE $PATH
 ```
@@ -2843,17 +2893,17 @@ Copy $FILE from $HOST to local $PATH
 ```sh
 rsync $HOST:$FILE $PATH
 ```
-Copy `$DIR` recursively [<sup>ref</sup>][44]
+Copy `$DIR` recursively <sup>[2daygeek.com][https://www.2daygeek.com/linux-rsync-command-local-remote-file-synchronization/]</sup>
 ```sh
 rsync -zvr $DIR $PATH
 rsync -avz $DIR $PATH
 ```
-Copy to remote systems over SSH [<sup>ref</sup>][44]
+Copy to remote systems over SSH <sup>[2daygeek.com][https://www.2daygeek.com/linux-rsync-command-local-remote-file-synchronization/]</sup>
 ```sh
 rsync -zvre ssh $DIR $HOST:$REMOTEPATH
 rsync -avze ssh $DIR $HOST:$REMOTEPATH
 ```
-Synchronize only specific file type [<sup>ref</sup>][44]
+Synchronize only specific file type <sup>[2daygeek.com][https://www.2daygeek.com/linux-rsync-command-local-remote-file-synchronization/]</sup>
 ```sh
 rsync -zvre ssh --include '*.php' --exclude '*' $PATH
 ```
@@ -2930,16 +2980,32 @@ Option  | Effect
 
 
 ## Init systems
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 [**Systemd**][SystemD] which starts processes in parallel has become de facto standard for all major Linux distributions.
 **SystemVinit** is a daemon process which was used by most distros until recently. Processes started serially and synchronously, wasting system resources; for years, a common hack was to run services in the background, simulating a sort of parallel processing
 **Upstart** was developed by Canonical for Ubuntu, but abandoned in 2014. 
 
-&nbsp;              | Commands
----                 | ---
-[SystemD][SystemD]  | [`hostnamectl`][hostnamectl][`journalctl`][journalctl][`localectl`][localectl] [`loginctl`][loginctl][`systemctl`][systemctl] [`systemd-delta`][systemd-delta]`[`timedatectl`][timedatectl]
-Sysvinit            | `chkconfig` `init` `runlevel` `service` `telinit
-Upstart             | `initctl`
+[**SystemD**][SystemD]
+[`hostnamectl`][hostnamectl]
+[`journalctl`][journalctl]
+[`localectl`][localectl]
+[`loginctl`][loginctl]
+[`systemctl`][systemctl]
+[`systemd-delta`][systemd-delta]
+[`timedatectl`][timedatectl]
+
+**Sysvinit**
+`chkconfig`
+`init`
+`runlevel`
+`service`
+`telinit
+
+**Upstart**
+`initctl`
 
 ### `hostnamectl`
 Permanently change hostname to `$HOSTNAME`
@@ -3175,33 +3241,21 @@ initctl reload
 [wait()]: #system-calls 'wait&#10;cause the parent process to wait for the child to finish running before it resumes execution&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 418'
 [write()]: #system-calls 'write&#10;write a file&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 418'
 
-**C** 
 [`chmod()`][chmod()] 
 [`chown()`][chown()] 
 [`close()`][close()] 
 [`creat()`][creat()] 
-**E** 
 [`exec()`][exec()] 
 [`exit()`][exit()] 
-**F** 
 [`fork()`][fork()] 
-**G** 
 [`getpid()`][getpid()] 
-**K** 
 [`kill()`][kill()] 
-**L** 
 [`lseek()`][lseek()] 
-**N** 
 [`nice()`][nice()] 
-**O** 
 [`open()`][open()] 
-**R** 
 [`read()`][read()] 
-**S** 
 [`stat()`][stat()] 
-**U** 
 [`unlink()`][unlink()] 
-**W** 
 [`wait()`][wait()] 
 [`write()`][write()] 
 
@@ -3259,6 +3313,14 @@ initctl reload
 [rmmod -&#119;]:                #rmmod                         '```&#10;$ rmmod -w&#10;```&#10;Wait until a module is no longer in use before unloading'
 
 <code>&nbsp;</code> [`a`][rmmod -&#97;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`s`][rmmod -&#115;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`w`][rmmod -&#119;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 
+
+### `sysctl`
+View and configure kernel parameters at runtime
+
+Display current hostname as known to the kernel
+```sh
+sysctl -n kernel.hostname
+```
 
 ## Mail
 [MDA]: #mail 'mail delivery agent (MDA)&#10;service that downloads email from an MTA, such as procmail and fetchmail&#10;Eckert, Jason. _Linux+ Guide to Linux Certification_. Course Technology, 2012: 23'
@@ -5023,7 +5085,7 @@ Implement a simple CPU benchmark by writing 1 GB of zeroes and piping it to md5s
 dd if=/dev/zero bs=1M count=1024 | md5sum
 ```
 ### `file`
-View image metadata [<sup>ostechnix.com</sup>][https://www.ostechnix.com/how-to-view-image-metadata-on-linux/]
+View image metadata <sup>[ostechnix.com](https://www.ostechnix.com/how-to-view-image-metadata-on-linux/ "How to view image metadata")</sup>
 ```sh
 file image.png # => file type, dimensions, color depth
 ```
@@ -5245,13 +5307,7 @@ Instruct system to begin using {partition} as a swap file
 ```sh
 swapon partition
 ```
-### `sysctl`
-View and configure kernel parameters at runtime
 
-Display current hostname as known to the kernel
-```sh
-sysctl -n kernel.hostname
-```
 ### `syslog`
 System logging facility used for messages from the kernel
 ### `tcpdump`
@@ -6521,7 +6577,7 @@ Set up a Samba account for `$USER`
 ```sh
 sudo smbpasswd -a $USER
 ```
-Restart Samba service <sup>[vitux.com][https://vitux.com/how-to-install-and-configure-samba-on-ubuntu/] [tecmint.com][https://www.tecmint.com/install-samba-on-rhel-8-for-file-sharing-on-windows/]</sup>
+Restart Samba service <sup>[vitux.com][https://vitux.com/how-to-install-and-configure-samba-on-ubuntu/] [tecmint.com](https://www.tecmint.com/install-samba-on-rhel-8-for-file-sharing-on-windows/ "Install Samba4 on RHEL 8 for File Sharing on Windows")</sup>
 ```sh
 sudo systemctl restart smbd.service
 ```
@@ -6546,8 +6602,7 @@ then
   exit 1
 fi
 ```
-<sup>[YouTube][https://youtu.be/ksAfmJfdub0]</sup>
-
+<sup>[YouTube](https://youtu.be/ksAfmJfdub0 "Easy Academic References on the Command Line")</sup>
 ```sh
 [ -z "$1" ] && echo "..." && exit 1
 ```
