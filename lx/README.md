@@ -4778,6 +4778,43 @@ sudo unshare --fork --pid --mount-proc zsh
 [`vncviewer`][vncviewer] 
 [`sshfs`][sshfs] 
 
+#### `curl`
+[curl -&#35;]: #curl '```&#10;$ curl -#&#10;$ curl --progress-bar&#10;```&#10;Print progress information as a progress bar instead of as statistics&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 50'
+[curl -&#67;]: #curl '```&#10;$ curl -C $OFFSET&#10;$ curl --continue-at $OFFSET&#10;```&#10;continue a previous file transfer at `$OFFSET` bytes&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 49'
+[curl -&#102;]: #curl '```&#10;$ curl -f&#10;$ curl --fail&#10;```&#10;Fail silently upon HTTP server errors. Mainly useful for scripts.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 49'
+[curl -&#104;]: #curl '```&#10;$ curl -h&#10;$ curl --help&#10;```&#10;Print a brief help message.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 49'
+[curl -&#75;]: #curl '```&#10;$ curl -K $CONFIGFILE&#10;$ curl --config $CONFIGFILE&#10;```&#10;Use `$CONFIGFILE` as the configuration file, instead of the default "$HOME/.curlrc". Use `-` to read configuration information from STDIN.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 49'
+[curl -&#109;]: #curl '```&#10;$ curl -m $SECONDS&#10;$ curl --max-time $SECONDS&#10;```&#10;Do not exceed `$SECONDS` for the entire operation.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 50'
+[curl -&#77;]: #curl '```&#10;$ curl -M&#10;$ curl --manual&#10;```&#10;Display full help text (> 2400 lines) in the form of a manpage.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 50'
+[curl -&#111;]: #curl '```&#10;$ curl -o $FILE&#10;$ curl --output $FILE&#10;```&#10;Write output to `$FILE` instead of to STDOUT&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 50'
+[curl -&#113;]: #curl '```&#10;$ curl -q&#10;```&#10;When used as the first parameter, do not read "$HOME/.curlrc"&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 50'
+[curl -&#115;]: #curl '```&#10;$ curl -s&#10;$ curl --silent&#10;```&#10;Do not print a progress meter or any error messages.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 50'
+[curl -&#83;]: #curl '```&#10;$ curl -S&#10;$ curl --show-error&#10;```&#10;With `-s`, do display error messages.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 50'
+[curl -&#84;]: #curl '```&#10;$ curl -T $FILE&#10;$ curl --upload-file $FILE&#10;```&#10;Upload `$FILE` to the URL on the command line.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 50'
+[curl -&#117;]: #curl '```&#10;$ curl -u $USER:$PASSWORD&#10;$ curl --user $USER:$PASSWORD&#10;```&#10;Supply `$USER` and `$PASSWORD` to the server for authentication.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 50'
+[curl -&#85;]: #curl '```&#10;$ curl -U $USER:$PASSWORD&#10;$ curl --proxy-user $USER:$PASSWORD&#10;```&#10;Supply `$USER` and `$PASSWORD` to the server for proxy authentication.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 50'
+[curl -&#118;]: #curl '```&#10;$ curl -v&#10;$ curl --verbose&#10;```&#10;Be verbose during file retrieval.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 50'
+[curl -&#86;]: #curl '```&#10;$ curl -V&#10;$ curl --version&#10;```&#10;Print version and supported-feature information&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 50'
+[curl -&#120;]: #curl '```&#10;$ curl -x $PROXYHOST:$PORT&#10;$ curl --proxy $PROXYHOST:$PORT&#10;```&#10;Use `$PROXYHOST` (and the optional `$PORT` which is 1080 by default), as the HTTP proxy&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 50'
+[curl --connect-timeout]: #curl '```&#10;$ curl --connect-timeout $SECONDS&#10;```&#10;Limit connection phase to `$SECONDS` seconds&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 49'
+[curl --create-dirs]: #curl '```&#10;$ curl --create-dirs&#10;```&#10;When used with `-o`, create local directories as needed&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 49'
+[curl --disable-epsv]: #curl '```&#10;$ curl --disable-epsv&#10;```&#10;Do not use the `EPSV` FTP command for passive FTP transfer. Normally `curl` tries `EPSV` before `PASV`.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 49'
+[curl --ftp-pasv]: #curl '```&#10;$ curl --ftp-pasv&#10;```&#10;Use the FTP `PASV` command (default)&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 49'
+[curl --limit-rate]: #curl '```&#10;$ curl --limit-rate $SPEED&#10;```&#10;Limit transfers to `$SPEED` (bytes per second by default). Other possible units, placed at the end of the argument, include:&#10;  - `k`,`K`               kilboytes&#10;  - `m`,`M`               megabytes&#10;  - `g`,`G`               gigabytes&#10;&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 49'
+[curl --max-filesize]: #curl '```&#10;$ curl --max-filesize $BYTES&#10;```&#10;Do not download a file exceeding `$BYTES` in size.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 49'
+[curl --url]: #curl '```&#10;$ curl --url $URL&#10;```&#10;Retrieve `$URL`&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 50'
+[curl -&#79;]: #curl '```&#10;$ curl -O $URL&#10;$ curl --remote-name $URL&#10;```&#10;download `$URL` saving output under the filename indicated by `$URL` itself'
+[curl -&#100;]: #curl '```&#10;$ curl -d $NAME=$VALUE&#10;```&#10;Post form-encoded `$NAME` with value `$VALUE`'
+[curl -&#76;]: #curl '```&#10;$ curl -L&#10;$ curl --location&#10;```&#10;Follow redirects'
+
+[`#`][curl -&#35;]   <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`d`][curl -&#100;] <code>&nbsp;</code> [`f`][curl -&#102;] <code>&nbsp;</code> [`h`][curl -&#104;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`m`][curl -&#109;] <code>&nbsp;</code> [`o`][curl -&#111;] <code>&nbsp;</code> [`q`][curl -&#113;] <code>&nbsp;</code> [`s`][curl -&#115;] <code>&nbsp;</code> [`u`][curl -&#117;] [`v`][curl -&#118;] <code>&nbsp;</code> [`x`][curl -&#120;] <code>&nbsp;</code> <code>&nbsp;</code>  <br><code>&nbsp;</code>&nbsp;<code>&nbsp;</code> <code>&nbsp;</code> [`C`][curl -&#67;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`K`][curl -&#75;] [`L`][curl -&#76;] [`M`][curl -&#77;] <code>&nbsp;</code> [`O`][curl -&#79;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`S`][curl -&#83;] [`T`][curl -&#84;] [`U`][curl -&#85;] [`V`][curl -&#86;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code>\
+[`connect-timeout`][curl --connect-timeout]
+[`create-dirs`][curl --create-dirs]
+[`disable-epsv`][curl --disable-epsv]
+[`ftp-pasv`][curl --ftp-pasv]
+[`limit-rate`][curl --limit-rate]
+[`max-filesize`][curl --max-filesize]
+[`url`][curl --url]
 
 ## Security
 [`chcon`][chcon] 
@@ -5024,6 +5061,42 @@ Set `setuid` permission on `$FILE`
 ```sh
 chmod +s file
 ```
+### `chown`
+[chown -&#99;]: #chown '```&#10;$ chown -c&#10;$ chown --changes&#10;```&#10;Print information about files that are changed&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 38'
+[chown -&#102;]: #chown '```&#10;$ chown -f&#10;$ chown --quiet&#10;```&#10;Do not print error messages about files that cannot be changed.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 37'
+[chown -&#104;]: #chown '```&#10;$ chown -h&#10;$ chown --no-dereference&#10;```&#10;Change the owner on symbolic links&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 37'
+[chown -&#72;]: #chown '```&#10;$ chown -H&#10;```&#10;When used with `-R`, if a command-line argument is a symbolic link to a directory, recursively traverse the directory.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 37'
+[chown -&#76;]: #chown '```&#10;$ chown -L&#10;```&#10;When used with `-R`, if any symbolic link points to a directory, recursively traverse the directory&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 37'
+[chown -&#80;]: #chown '```&#10;$ chown -P&#10;```&#10;When used with `-R`, do not follow any symbolic links (default).&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 38'
+[chown -&#82;]: #chown '```&#10;$ chown -R&#10;$ chown --recursive&#10;```&#10;Recursively descend through the directory, including subdirectories and symbolic links. When used with `-H`, `-L`, and `-P` the latest takes precedence.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 37'
+[chown -&#118;]: #chown '```&#10;$ chown -v&#10;$ chown --verbose&#10;```&#10;Verbose output&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 38'
+[chown --dereference]: #chown '```&#10;$ chown --dereference&#10;```&#10;Change the group of the file pointed to by a symbolic link, not the group of the symbolic link itself (default)&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 38'
+[chown --no-preserve-root]: #chown '```&#10;$ chown --no-preserve-root&#10;```&#10;Do not treat the root directory specially (default)&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 38'
+[chown --preserve-root]: #chown '```&#10;$ chown --preserve-root&#10;```&#10;Do not operate recusrsively on the root directory.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 38'
+[chown --reference]: #chown '```&#10;$ chown --reference $FILENAME&#10;```&#10;change the group to that associated with `$FILENAME`. In this case, `$NEWGROUP` is not specified&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 38'
+
+<code>&nbsp;</code>   <code>&nbsp;</code> <code>&nbsp;</code> [`c`][chown -&#99;] <code>&nbsp;</code> <code>&nbsp;</code> [`f`][chown -&#102;] <code>&nbsp;</code> [`h`][chown -&#104;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`v`][chown -&#118;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code>  <br><code>&nbsp;</code>&nbsp;<code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`H`][chown -&#72;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`L`][chown -&#76;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`P`][chown -&#80;] <code>&nbsp;</code> [`R`][chown -&#82;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 
+
+Change a file or directory's ownership. To change the user and group owner of a file to {user} and {group}, `chown`'s syntax is of the format `user:group` [[32](sources.md)].
+```sh
+chown susan:delta file          # Assign {file} to user `susan` and group `delta`
+chown alan file                 # Assign {file} to user `alan`
+chown alan: file                # Assign {file} to user and group `alan`
+chown :gamma file               # Assign {file} to the group `gamma`
+```
+Recursively grant {user} ownership to {path}
+```sh
+chown -R user path
+```
+Assign {path} to `susan` and group `delta`, recursively and with verbose output
+```sh
+chown --verbose --recursive susan:delta path 
+chown -vR susan:delta path
+```
+```sh
+chown -vR --reference=. path    # Use a `reference` file to match the configuration of a particular file
+chown -cfR --preserve-root alan # `preserve-root` prevents changes to files in the root directory, but has no effect when not used with `recursive`
+```
 ### `chpass`
 Change default shell to Fish
 ```sh
@@ -5048,27 +5121,6 @@ chsh-s /bin/bash
 Change the user's default shell to Fish
 ```sh
 chsh-s /usr/local/bin/fish
-```
-### `chown`
-Change a file or directory's ownership. To change the user and group owner of a file to {user} and {group}, `chown`'s syntax is of the format `user:group` [[32](sources.md)].
-```sh
-chown susan:delta file          # Assign {file} to user `susan` and group `delta`
-chown alan file                 # Assign {file} to user `alan`
-chown alan: file                # Assign {file} to user and group `alan`
-chown :gamma file               # Assign {file} to the group `gamma`
-```
-Recursively grant {user} ownership to {path}
-```sh
-chown -R user path
-```
-Assign {path} to `susan` and group `delta`, recursively and with verbose output
-```sh
-chown --verbose --recursive susan:delta path 
-chown -vR susan:delta path
-```
-```sh
-chown -vR --reference=. path    # Use a `reference` file to match the configuration of a particular file
-chown -cfR --preserve-root alan # `preserve-root` prevents changes to files in the root directory, but has no effect when not used with `recursive`
 ```
 ### `free`
 [free -&#98;]:                  #free                          '```&#10;$ free -b&#10;```&#10;Show memory usage in bytes&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 114'
