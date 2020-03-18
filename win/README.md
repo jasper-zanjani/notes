@@ -97,6 +97,7 @@ Topics
 [`main`][main.cpl] 
 [`mlcfg32.cpl`][mlcfg32.cpl] 
 [`mmsys.cpl`][mmsys.cpl]
+[`ms-settings:`](#settings)
 [`nbtstat`][nbtstat] [`netsh`](#netsh) 
 [`ncpa`][ncpa.cpl]
 [`ntdsutil`][ntdsutil]
