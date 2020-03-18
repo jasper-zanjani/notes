@@ -3121,11 +3121,6 @@ Option  | Effect
 
 
 ## Init systems
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
-[**Systemd**][SystemD] which starts processes in parallel has become de facto standard for all major Linux distributions.
 **SystemVinit** is a daemon process which was used by most distros until recently. Processes started serially and synchronously, wasting system resources; for years, a common hack was to run services in the background, simulating a sort of parallel processing
 **Upstart** was developed by Canonical for Ubuntu, but abandoned in 2014. 
 

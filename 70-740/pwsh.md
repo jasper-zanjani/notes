@@ -226,6 +226,7 @@
 [Automatic variable]: #automatic-variables 'Automatic variable&#10;Variables that store state information for PowerShell and are created and maintained by Powershell.'
 
 [Automatic variable][Automatic variable] &bull;
+
 ###### Tasks
 - [**Display computer name**][Get-ComputerInfo]
 - [**Remove Registry keys**][Remove-Item]
@@ -239,6 +240,7 @@
 - [Text-to-speech](#text-to-speech)
 - [New domain controller](#new-domain-controller)
 - [Set new Registry keys](#registry)
+- [Create a new VHDX file, mount and initialize it, and create and format a partition within it](#vhdx-file)
 
 ###### Cmdlet verbs
 [`a`  ](#cmdlet-verbs  "```&#10;PS C:\> Add-&#10;```") [`ap`](# "`Approve-`&#10;Confirms or agrees to the status of a resource or process.") 
@@ -360,7 +362,7 @@
 <code>Null&nbsp;[o][Out-Null]</code> 
 <code>Object&nbsp;[ForEach][ForEach-Object]&nbsp;[n][New-Object]&nbsp;[sc][Select-Object]&nbsp;[w][Where-Object]</code>
 <code>Output&nbsp;[wr][Write-Output]</code> 
-<code>Partition&nbsp;[g][Get-Partition] [n][New-Partition] [r][Remove-Partition]</code> 
+<code>Partition&nbsp;[f][Format-Partition]&nbsp;[g][Get-Partition] [n][New-Partition] [r][Remove-Partition]</code> 
 <code>Service&nbsp;[g][Get-Service] [s][Set-Service] [sa][Start-Service] [sp][Stop-Service]</code> 
 <code>SmbOpenFile&nbsp;[cs][Close-SmbOpenFile] [g][Get-SmbOpenFile]</code> 
 <code>SmbShare&nbsp;[n][New-SmbShare]</code> 
@@ -373,7 +375,7 @@
 <code>[Item](#item)&nbsp;[cp][Copy-Item]&nbsp;[g][Get-Item]&nbsp;[n][New-Item]&nbsp;[r][Remove-Item] </code>
 <code>[NanoServerImage](#nanoserverimage)&nbsp;[n][New-NanoServerImage] [e][Edit-NanoServerImage]</code> 
 
-**AD** 
+[**AD**](#ad)
 <code>Account&nbsp;[sr][Search-ADAccount]&nbsp;[uk][Unlock-ADAccount]&nbsp;</code> 
 <code>AccountPassword&nbsp;[s][Set-ADAccountPassword]&nbsp;</code> 
 <code>Object&nbsp;[s][Set-ADObject]&nbsp;</code> 
@@ -405,6 +407,9 @@
 <code>IpAddress&nbsp;[n][New-NetIpAddress]</code>
 <code>IpConfiguration&nbsp;[g][Get-NetIpConfiguration]</code>
 
+**Partition**
+<code>[n][New-Partition]&nbsp;</code>
+
 **PS**
 <code>ReadlineOption&nbsp;[g][Get-PSReadlineOption] [s][Set-PSReadlineOption]</code> 
 <code>[Session](#pssession)&nbsp;[dc][Disconnect-PSSession] [et][Enter-PSSession] [ex][Exit-PSSession] [g][Get-PSSession] [n][New-PSSession]</code> 
@@ -413,6 +418,9 @@
 <code>Data [rc][Receive-SmigServerData] [sd][Send-SmigServerData]</code> 
 <code>Feature [g][Get-SmigServerFeature]</code> 
 <code>Setting [ex][Export-SmigServerSetting] [ip][Import-SmigServerSetting]</code>
+
+**VHD**
+<code>[mt][Mount-VHD]&nbsp;[n][New-VHD]&nbsp;</code>
 
 **_VM_**
 <code>[cr][Compare-VM]&nbsp;[db][Debug-VM]&nbsp;[ep][Export-VM]&nbsp;[g][Get-VM]&nbsp;[ip][Import-VM]&nbsp;[m][Move-VM]&nbsp;[ms][Measure-VM]&nbsp;[n][New-VM]&nbsp;[r][Remove-VM]&nbsp;[rn][Rename-VM]&nbsp;[rt][Restart-VM]&nbsp;[ru][Resume-VM]&nbsp;[s][Set-VM]&nbsp;[sa][Start-VM]&nbsp;[sp][Stop-VM]&nbsp;[ss][Suspend-VM]&nbsp;[sv][Save-VM]</code>
@@ -657,11 +665,156 @@ $Values = do { 'eat me!' } while ($false) # => @('eat me!')
 ```
 
 ## Cmdlets
-### `Add-ADPrincipalGroupMembership`
+### `AD`
+#### `New-ADUser`
+[Jones][Jones]
+```powershell
+New-ADUser -SamAccountNAme SysAdmin -AccountPassword (Read-Host 'Set user password' -AsSecureString) -Name "SysAdmin" -Enabled $true -PAsswordNeverExpires $true -ChangePasswordAtLogon $false
+```
+Create a new user (disabled by default)
+```powershell
+New-ADUser -Name "Walter Mitty"
+```
+Users are disabled by default, so you must enable them by setting the `-Enabled` switch parameter:
+```powershell
+New-ADUser -Name "Marty McFly" -Enabled $true -GivenName "Martin" -Surname "McFly" -AccountPassword ( ConvertTo-SecureString "P@ssw0rd!" -AsPlainText -Force) 
+```
+#### `Search-ADAccount`
+
+Option                        | Effect
+:---                          | :---
+`-AccountDisabled`            | filter disabled accounts
+`-AccountExpired`             | filter expired accounts
+`-ComputersOnly`              | filter computer accounts
+`-LockedOut`                  | filter locked out accounts
+`-PasswordExpired`            | filter accounts with expired passwords
+`-PasswordNeverExpires`       | filter accounts with passwords that will never expire
+`-UsersOnly`                  | filter users
+
+Display accounts that have been inactive for the last 90 days
+```powershell
+Search-ADAccount -AccountInactive -TimeSpan 90.00:00:00
+```
+Display accounts expiring on a particular date
+```powershell
+Search-ADAccount -AccountExpiring -DateTime "3/18/2019"
+``` 
+#### `Set-ADAccountPassword`
+Reset password
+```powershell
+Set-ADAccountPassword -Identity MBentley -Reset -NewPassword (ConvertTo-SecureString -AsPlainText "What is 255.255.255.240" -Force)
+```
+#### `Set-ADObject`
+Protect users in a specified OU from accidental deletion
+```powershell
+Get-ADUser -Filter * -SearchBase "OU=RoadCrew,OU=office365,DC=officeprodemoco,DC=com" ` | 
+Set-ADObject -ProtectedFromAccidentalDeletion $true
+```
+#### `Set-ADOrganizationalUnit`
+Remove accidental deletion protection
+```powershell
+Set-ADOrganizationalUnit -Name GNV -ProtectedFromAccidentalDeletion $False -Identity "OU=GNV, DC=officeprodemoco, DC=onmicrosoft, DC=com" 
+```
+#### `Install-ADDSForest`
+Add a new forest
+```powershell
+# This will prompt for safe mode administrator password
+Install-ADDSForest -DomainName example.com -InstallDNS
+```
+If the system fails to automatically create a NetBIOS name, it can be manually specified with the named parameter `-DomainNetbiosName`
+#### `Install-ADDSDomain`
+Add a new domain
+`Install-ADDSDomain` only requires the following two parameters:
+  - `-NewDomainName` if the value set for `-DomainType` is set to `ChildDomain` (which it is by default), a single label domain name can be used.
+  - `ParentDomainName` the name of an existing parent domain
+```powershell
+Install-ADDSDomain -NewDomainName hq -ParentDomainName pythagoras.net
+```
+```powershell
+Install-ADDSDomain -Credential (Get-Credential CORP\EnterpriseAdmin1) -NewDomainName child -ParentDomainName corp.contoso.com -InstallDNS -CreateDNSDelegation -DomainMode Win2003 -ReplicationSourceDC DC1.corp.contoso.com -SiteName Houston -DatabasePath "D:\NTDS" -SYSVOLPath "D:\SYSVOL" -LogPath "E:\Logs" -NoRebootOnCompletion
+```
+#### `New-ADComputer`
+#### `New-ADOrganizationalUnit`
+Create a new Organizational Unit
+```powershell
+New-ADOrganizationalUnit -Name GNV -Credential officeprodemoco\joey
+```
+#### `Add-ADPrincipalGroupMembership`
 ```powershell
 Add-ADPrincipalGroupMembership -Identity "CN=SysAdmin,CN=Users,DC=corp,DC=packtlab,DC=com" -MemberOf "CN=Enterprise Admins,CN=Users,DC=corp,DC=packtlab,DC=com","CN=Domain Admins,CN=Users,DC=corp,DC=packtlab,DC=com"
 ```
-### `Add-Computer`
+#### `Get-ADForest`
+Display installed forests
+```powershell
+Get-ADForest | select -ExpandProperty domains
+```
+#### `Get-ADOrganizationalUnit`
+Display OUs, confirming deletion has taken place
+```powershell
+Get-ADOrganizationalUnit  -filter * | ft
+```
+#### `Get-ADPrincipalGroupMembership`
+[<sup>ref</sup>][Jones]
+```powershell
+Get-ADPrincipalGroupMembership sysadmin
+```
+#### `Get-ADUser`
+Display information for Active Directory user `mike`
+```powershell
+Get-ADUser -Identity mike
+```
+Display Protection from Accidental Deletion
+```powershell
+Get-ADUser -Filter *  -Properties ProtectedFromAccidentalDeletion
+  -SearchBase "OU=RoadCrew,OU=office365,DC=officeprodemoco,DC=com,DC=onmicrosoft"  `
+```
+Display information on user, confirming successful creation
+```powershell
+Get-ADUser "Marty McFly" | Select-Object Name
+```
+#### `Uninstall-ADDSDomainController`
+Demote a domain controller (consummate with uninstalling the AD Domain Controller role)
+```powershell
+# When removing the last domain controller of a domain, additional options need to be specified that result in the obliteration of the domain, its forest, and associated data.
+Uninstall-ADDSDomainController -LocalAdministratorPassword (ConvertTo-SecureString $pw -AsPlainText -Force) -LastDomainControllerInDomain -RemoveApplicationPartitions
+```
+#### `Unlock-ADAccount`
+Unlock account
+```powershell
+Unlock-ADAccount -identity wbryan
+```
+#### `Remove-ADOrganizationalUnit`
+Remove an OU
+```powershell
+Remove-ADOrganizationalUnit -Identity "OU=GNV, DC=officeprodemoco, DC=onmicrosoft, DC=com" -confirm:$False
+```
+### `Alias`
+#### `Export-Alias`
+Export session aliases to a ".ps1" file
+```powershell
+Export-Alias -Path alias.ps1 -As Script
+```
+#### `Get-Alias`
+Display aliases
+```powershell
+Get-Alias
+```
+Display items that point to `Get-ChildItem`
+```powershell
+Get-Alias -Definition Get-ChildItem
+```
+#### `New-Alias`
+Establish a new alias
+```powershell
+New-Alias ip Get-NetIPAddress
+```
+#### `Set-Alias`
+Edit an existing alias
+```powershell
+Set-Alias ip Get-NetAdapter
+```
+### `Computer`
+#### `Add-Computer`
 Join a computer to a domain [<sup>Zacker: 20</sup>][Zacker]
 
 Option  | Description
@@ -688,15 +841,25 @@ Import-Csv -path $List | ForEach-Object {New-ADComputer -Name $_.Name -Path $OU}
 ```
 Verify a computer has connected to a domain
 Check "Organization" in Windows about page, or navigate to Control PAnel > System and Security > System and examine the **Computer name, domain, and workgroup settings**, where the domain can be seen.
-### `Add-DhcpServerInDC`
+#### `Rename-Computer`
+Rename computer
+#### `Restart-Computer`
+Restart computer
+### `Dhcp`
+#### `Add-DhcpServerv4Scope`
+[<sup>ref</sup>][Jones]
+```powershell
+Add-DhcpServerv4Scope -Name "PacktLabNet" -StartRange 10.0.0.50 -EndRange 10.0.0.100 -SubnetMask 255.255.255.0
+```
+#### `Add-DhcpServerInDC`
 [<sup>ref</sup>][Jones]
 ```powershell
 Add-DhcpServerInDC -DnsName dc.corp.packtlab.com
 ```
-### `Add-DhcpServerv4Scope`
+#### `Set-DhcpServerv4OptionValue`
 [<sup>ref</sup>][Jones]
 ```powershell
-Add-DhcpServerv4Scope -Name "PacktLabNet" -StartRange 10.0.0.50 -EndRange 10.0.0.100 -SubnetMask 255.255.255.0
+Set-DhcpServerv4OptionValue -DnsDomain corp.packtlab.com -DnsServer 10.0.0.1
 ```
 ### `Add-DistributionGroupMember`
 
@@ -704,24 +867,12 @@ Parameter | Effect
 ---       | ---
 `Identity`| Specifies the group that you want to modify. You can use any value that uniquely identifies the group (including Name, Alias, Distinguished name, Canonical name, Email address, or GUID).
 `Member`  | Specifies the recipient that you want to add to the group. A member can be any mail-enabled recipient in your organization. You can use any value that uniquely identifies the recipient (including Name, Alias, Distinguished name, Canonical name, Email address, or GUID).
-### `Add-PSSnapin`
 ### `Add-Type`
 Generate a random password 20 characters long [<sup>ref</sup>][https://adamtheautomator.com/powershell-random-password/]
 ```powershell
 Add-Type -AssemblyName 'System.Web'
 [System.Web.Security.Membership]::GeneratePassword(20, 3)
 ```
-### `Close-SmbOpenFile`
-Close an open file [<sup>ref</sup>][https://docs.microsoft.com/en-us/powershell/module/smbshare/close-smbopenfile?view=win10-ps]
-```powershell
-Close-SmbOpenFile -FileId 4415226383589
-```
-Close open files for a session [<sup>ref</sup>][https://docs.microsoft.com/en-us/powershell/module/smbshare/close-smbopenfile?view=win10-ps]
-```powershell
-Close-SmbOpenFile -SessionId 4415226380393
-```
-### `Disconnect-PSSession`
-Terminate a remote PowerShell session begun with [`New-PSSession`][New-PSSession] [<sup>Zacker: 22</sup>][Zacker]
 ### `NanoServerImage`
 Options for configuring a network adapter
 
@@ -780,18 +931,31 @@ Create a new Nano Server image with a static IP <sup>[Zacker][Zacker]: 52</sup>
 ```powershell
 New-NanoServerImage -DeploymentType Guest -Edition Standard -MediaPath D:\ -TargetPath C:\temp\nanoserver4.vhdx -ComputerName nano4 -Domain contoso.com -InterfaceNameorIndex ethernet -Ipv4Address 192.168.10.41 -Ipv4SubnetMask 255.255.255.0 -Ipv4Gateway 192.168.10.1 -Ipv4Dns 192.168.10.2
 ```
-
-### `Enable-PSRemoting`
-### `Enable-WindowsOptionalFeature`
-Enable a feature in the currently running operating system [<sup>ref</sup>](https://docs.microsoft.com/en-us/powershell/module/dism/enable-windowsoptionalfeature?view=win10-ps&redirectedfrom=MSDN "Microsoft Docs: \"Enable-WindowsOptionalFeature\"")
+### `PSReadlineOption`
+#### `Get-PSReadlineOption`
+Display options available in the module
 ```powershell
-Enable-WindowsOptionalFeature -Online -FeatureName "Hearts" -All
+Get-PSReadlineOption
 ```
-Enable WSL [<sup>ref</sup>](https://www.reddit.com/r/bashonubuntuonwindows/comments/7smf9m/help_wsl_wont_activate_on_my_freshly_installed/ "Reddit: \"[help] WSL won't activate on my freshly installed Windows 10 version 1709\"")
+#### `Set-PSReadlineOption`
+Set history to only save unique commands
 ```powershell
-Enable-WindowsOptionalFeature -online -FeatureName Microsoft-Windows-Subsystem-Linux
+Set-PSReadlineOption -HistoryNoDuplicates:$true
 ```
+Enable bash-like ambiguous command completion, where tab brings up a menu of matches
+```powershell
+Set-PSReadlineOption -EditMode Emacs
+```
+Change `<Tab>` behavior back to default for PowerShell
+```powershell
+Set-PSReadlineOption -EditMode Windows
+```
+### `PSRemoting`
+#### `Enable-PSRemoting`
 ### `PSSession`
+#### `Add-PSSnapin`
+#### `Disconnect-PSSession`
+Terminate a remote PowerShell session begun with [`New-PSSession`][New-PSSession] <sup>[Zacker</sup>][Zacker]: 22</sup>
 #### `Enter-PSSession`
 Interact with the specified PowerShell session
 ```powershell
@@ -830,11 +994,6 @@ Decompress archives
 ```powershell
 Expand-Archive
 ```
-### `Export-Alias`
-Export session aliases to a ".ps1" file
-```powershell
-Export-Alias -Path alias.ps1 -As Script
-```
 ### `Export-CliXml`
 ### `Export-Csv`
 ### `Format-Volume`
@@ -842,46 +1001,9 @@ Full format of specified drive [<sup>ref</sup>][https://sumtips.com/tips-n-trick
 ```powershell
 Format-Volume -DriveLetter S -FileSystem FAT32 -NewFileSystemLabel SumTips -Full
 ```
-### `Get-ADForest`
-Display installed forests
-```powershell
-Get-ADForest | select -ExpandProperty domains
-```
-### `Get-ADOrganizationalUnit`
-Display OUs, confirming deletion has taken place
-```powershell
-Get-ADOrganizationalUnit  -filter * | ft
-```
-### `Get-ADPrincipalGroupMembership`
-[<sup>ref</sup>][Jones]
-```powershell
-Get-ADPrincipalGroupMembership sysadmin
-```
-### `Get-ADUser`
-Display information for Active Directory user `mike`
-```powershell
-Get-ADUser -Identity mike
-```
-Display Protection from Accidental Deletion
-```powershell
-Get-ADUser -Filter *  -Properties ProtectedFromAccidentalDeletion
-  -SearchBase "OU=RoadCrew,OU=office365,DC=officeprodemoco,DC=com,DC=onmicrosoft"  `
-```
-Display information on user, confirming successful creation
-```powershell
-Get-ADUser "Marty McFly" | Select-Object Name
-```
-### `Get-Alias`
-Display aliases
-```powershell
-Get-Alias
-```
-Display items that point to `Get-ChildItem`
-```powershell
-Get-Alias -Definition Get-ChildItem
-```
 ### `Get-ChildItem`
-### `Get-Clipboard`
+### `Clipboard`
+#### `Get-Clipboard`
 Interpret items in clipboard as files
 ```powershell
 Get-Clipboard -Format FileDropList
@@ -889,6 +1011,15 @@ Get-Clipboard -Format FileDropList
 Retrieve various properties of an image in clipboard
 ```powershell
 Get-Clipboard -Format Image
+```
+#### `Set-Clipboard`
+Copy text to clipboard
+```powershell
+Write-Output 'Hello' | Set-Clipboard
+```
+With `Append` switch parameter, items can be added without clearing the clipboard:
+```powershell
+Write-Output 'Hello' | Set-Clipboard -Append
 ```
 ### `Get-Command`
 ### `Get-ComputerInfo`
@@ -916,12 +1047,10 @@ Get-Content -Path file.json | ConvertFrom-Json
 [`Full`][Get-Help -Full]
 [`Online`][Get-Help -Online]
 [`ShowWindow`][Get-Help -ShowWindow]
-
 ### `Get-Member`
 ### `Get-Module`
 ### `Get-NetAdapter`
 Display available network interfaces [<sup>Zacker: 19</sup>][Zacker]
-
 ### `Get-NetFirewallRule`
 Display all firewall rules
 ```powershell
@@ -940,126 +1069,83 @@ Display a list of existing partitions, their drive letters, and the disk they ar
 ```powershell
 Get-Disk | Get-Partition
 ```
-### `Get-PSReadlineOption`
-Display options available in the module
+### `VHD`
+#### `Mount-VHD`
+[Task](#vhdx-file)
+
+#### `New-VHD`
+[Task](#vhdx-file)
+### `VM`
+Install Hyper-V Powershell module <sup>[Zacker][Zacker]: 90</sup>
 ```powershell
-Get-PSReadlineOption
+Install-WindowsFeature -Name hyper-v-powershell
 ```
 
-### `Get-Service`
-Display status of &lt;WinRM&gt; service
+#### `Set-VMFirmware`
+Enable secure boot on Generation 2 Linux VMs [<sup>ref</sup>][IMWS]
 ```powershell
-Get-Service WinRM
+Set-VMFirmware vmname -SecureBootTemplate MicrosoftUEFICertificateAuthority
 ```
+#### `New-VM`
+Create a Nano Server VM from an image file [<sup>Zacker: 47</sup>][Zacker]
 ```powershell
-gsv winrm
+New-VM -Name "nano2" -Generation 2 -MemoryStartupBytes 1GB -VHDPath "F:\hyper-v\virtual hard disks\nano2.vhdx"
 ```
-### `Get-SmbOpenFile`
-Get information about an opened file [<sup>ref</sup>][https://docs.microsoft.com/en-us/powershell/module/smbshare/get-smbopenfile?view=win10-ps]
+#### `New-VMSwitch`
+Turn on NAT on the nested Hyper-V VM
 ```powershell
-Get-SmbOpenFile -FileId 4415226383569 | Select-Object -Property *
+New-VMSwitch -name VMNAT -SwitchType Internal
+New-NetNAT -Name LocalNAT -InternalIPInterfaceAddressPrefix "192.168.100.0/24"
 ```
-Example output:
-```
-ClientComputerName    : 192.168.102.14 
-ClientUserName        : Contoso\Contoso-HV2$ 
-ClusterNodeName       : Contoso-FS2 
-ContinuouslyAvailable : True 
-Encrypted             : False 
-FileId                : 4415226383569 
-Locks                 : 1 
-Path                  : C:\ClusterStorage\Volume2\VMS\VM4.VHDX 
-Permissions           : 1179785 
-ScopeName             : Contoso-SO 
-SessionId             : 4415226380393 
-ShareRelativePath     : VM4.VHDX 
-PSComputerName        : 
-CimClass              : ROOT/Microsoft/Windows/SMB:MSFT_SmbOpenFile 
-CimInstanceProperties : {ClientComputerName, ClientUserName, ClusterNodeName, ContinuouslyAvailable...} 
-CimSystemProperties   : Microsoft.Management.Infrastructure.CimSystemProperties
-```
-Get information about a file opened for an SMB client [<sup>MS Docs</sup>][https://docs.microsoft.com/en-us/powershell/module/smbshare/get-smbopenfile?view=win10-ps]
+#### `Set-VMMemory`
+Disable dynamic memory on a virtual host (nested virtualization)
 ```powershell
-Get-SmbOpenFile -SessionId 4415226380393
+Set-VMMemory -VMName SRV01 -DynamicMemoryEnabled $false
 ```
-Example output:
+#### `Set-VMNetworkAdapter`
+Turn on MAC address spoofing on a virtual host (nested virtualization)
+```powershell
+Set-VMNetworkAdapter -VMName SVR01 -Name "NetworkAdapter" -MACAddressSpoofing On
 ```
-FileId              SessionId           Path                ShareRelativePath   ClientComputerName  ClientUserName 
-------              ---------           ----                -----------------   ------------------  -------------- 
-4415226383517       4415226380393       C:\ClusterStorag... VM4\VIRTUAL MACH... 192.168.102.14      Contoso\Contoso-HV2$ 
-4415226383521       4415226380393       C:\ClusterStorag... VM4\Virtual Mach... 192.168.102.14      Contoso\Contoso-HV2$ 
-4415226383529       4415226380393       C:\ClusterStorag... VM4\Virtual Mach... 192.168.102.14      Contoso\Contoso-HV2$ 
-4415226383569       4415226380393       C:\ClusterStorag... VM4.VHDX            192.168.102.14      Contoso\Contoso-HV2$ 
-4415226383589       4415226380393       C:\ClusterStorag... VM4.VHDX            192.168.102.14      Contoso\Contoso-HV2$
+#### `Set-VMProcessor`
+Configure 2 virtual processors on a virtual host (nested virtualization)
+```powershell
+Set-VMProcessor -VMName SVR01 -Count 2
 ```
-### `Get-WindowsFeature`
+### `Windows`
+#### `Mount-WindowsImage`
+[Mount-WindowsImage -Remount]: #Mount-WindowsImage '```&#10;PS C:\> Mount-WindowsImage -Remount&#10;```&#10;&#10;Equivalent to `Dism.exe /Remount-Image`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
+
+[`Remount`][Mount-WindowsImage -Remount]
+#### `Enable-WindowsOptionalFeature`
+Enable a feature in the currently running operating system [<sup>ref</sup>](https://docs.microsoft.com/en-us/powershell/module/dism/enable-windowsoptionalfeature?view=win10-ps&redirectedfrom=MSDN "Microsoft Docs: \"Enable-WindowsOptionalFeature\"")
+```powershell
+Enable-WindowsOptionalFeature -Online -FeatureName "Hearts" -All
+```
+Enable WSL [<sup>ref</sup>](https://www.reddit.com/r/bashonubuntuonwindows/comments/7smf9m/help_wsl_wont_activate_on_my_freshly_installed/ "Reddit: \"[help] WSL won't activate on my freshly installed Windows 10 version 1709\"")
+```powershell
+Enable-WindowsOptionalFeature -online -FeatureName Microsoft-Windows-Subsystem-Linux
+```
+#### `Get-WindowsFeature`
 Display installable Windows roles, role services, and features
 Display a branching view of available Windows roles, role services, and features
 ```powershell
 Get-WindowsFeature
 ```
-### `Get-WindowsImage`
+#### `Get-WindowsImage`
 [Get-WindowsImage -Mounted]: #Get-WindowsImage '```&#10;PS C:\> Get-WindowsImage -Mounted&#10;```&#10;&#10;Equivalent to `Dism.exe /Get-MountedImageInfo`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
 
 [`Mounted`][Get-WindowsImage -Mounted]
 
-### `Get-WindowsOptionalFeature`
+#### `Get-WindowsOptionalFeature`
 [Get-WindowsOptionalFeature -FeatureName]: #Get-WindowsOptionalFeature '```&#10;PS C:\> Get-WindowsOptionalFeature -FeatureName&#10;```&#10;&#10;Equivalent to `Dism.exe /Image:foldername /Get-Featureinfo`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 78'
 [`FeatureName`][Get-WindowsOptionalFeature -FeatureName]
-### `Get-WindowsPackage`
+#### `Get-WindowsPackage`
 [Get-WindowsPackage -PackagePath]: #Get-WindowsPackage '```&#10;PS C:\> Get-WindowsPackage -PackagePath&#10;```&#10;&#10;Equivalent to `Dism.exe /Image:foldername /Get-Packageinfo`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
 [Get-WindowsPackage -PackageName]: #Get-WindowsPackage '```&#10;PS C:\> Get-WindowsPackage -PackageName&#10;```&#10;&#10;Equivalent to `Dism.exe /Image:foldername /Get-Packageinfo`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
 [`PackageName`][Get-WindowsPackage -PackageName] 
 [`PackagePath`][Get-WindowsPackage -PackagePath]
-### `Get-WmiObject`
-View system uptime
-```powershell
-Get-WmiObject -Win32_OperatingSystem -ComputerName localhost |
-Select-Object -Property @{n="Last Boot Time";e={[Management.ManagementDateTimeConvert]::ToDateTime($_.LastBootUpTime)}}
-```
-Display Windows activation key [<sup>ref</sup>][https://www.thewindowsclub.com/find-windows-product-key]
-```powershell
-(Get-WmiObject -query ‘select * from SoftwareLicensingService’).OA3xOriginalProductKey
-```
-### `Host`
-#### `Out-Host`
-#### `Read-Host`
-#### `Write-Host`
-### `Import-CliXml`
-### `Import-Csv`
-Add a CSV full of users
-```powershell
-Import-Csv users.csv | foreach { New-ADUser -SamAccountName $_.SAM -GivenName $_.Last -DisplayName $_.DisplayName -Name $_.Name -Description $_.Description -Enabled $True -AccountPassword (ConvertToSecureString $_.Password -AsPlainText -Force) }
-``` 
-### `Import-Module`
-Import `SmbShare` module
-```powershell
-Import-Module SmbShare
-```
-### `Install-ADDSForest`
-Add a new forest
-```powershell
-# This will prompt for safe mode administrator password
-Install-ADDSForest -DomainName example.com -InstallDNS
-```
-If the system fails to automatically create a NetBIOS name, it can be manually specified with the named parameter `-DomainNetbiosName`
-### `Install-ADDSDomain`
-Add a new domain
-`Install-ADDSDomain` only requires the following two parameters:
-  - `-NewDomainName` if the value set for `-DomainType` is set to `ChildDomain` (which it is by default), a single label domain name can be used.
-  - `ParentDomainName` the name of an existing parent domain
-```powershell
-Install-ADDSDomain -NewDomainName hq -ParentDomainName pythagoras.net
-```
-```powershell
-Install-ADDSDomain -Credential (Get-Credential CORP\EnterpriseAdmin1) -NewDomainName child -ParentDomainName corp.contoso.com -InstallDNS -CreateDNSDelegation -DomainMode Win2003 -ReplicationSourceDC DC1.corp.contoso.com -SiteName Houston -DatabasePath "D:\NTDS" -SYSVOLPath "D:\SYSVOL" -LogPath "E:\Logs" -NoRebootOnCompletion
-```
-### `Install-Module`
-Install the `Az` module
-```powershell
-Install-Module -Name Az -AllowClobber
-```
-### `Install-WindowsFeature`
+#### `Install-WindowsFeature`
 [Install-WindowsFeature -Name]:      #Install-WindowsFeature        '```&#10;PS C:\> Install-WindowsFeature -Name&#10;```&#10;&#10;Values can include:&#10;  - "`AD-Domain-Services"&#10;  - "Hyper-V"&#10;  - "RSAT-ADDS"&#10;  - "Web-WebServer"'
 
 [**`Name`**][Install-WindowsFeature -Name] `IncludeAllSubFeature` `IncludeManamgentTools`
@@ -1091,6 +1177,37 @@ Install-WindowsFeature DHCP -IncludeManagementTools
 Install Windows Server Migration Tools <sup>[Zacker][Zacker]: 33</sup>
 ```powershell
 Install-WindowsFeature Migration
+```
+### `Get-WmiObject`
+View system uptime
+```powershell
+Get-WmiObject -Win32_OperatingSystem -ComputerName localhost |
+Select-Object -Property @{n="Last Boot Time";e={[Management.ManagementDateTimeConvert]::ToDateTime($_.LastBootUpTime)}}
+```
+Display Windows activation key [<sup>ref</sup>][https://www.thewindowsclub.com/find-windows-product-key]
+```powershell
+(Get-WmiObject -query ‘select * from SoftwareLicensingService’).OA3xOriginalProductKey
+```
+### `Host`
+#### `Out-Host`
+#### `Read-Host`
+#### `Write-Host`
+### `Import-CliXml`
+### `Import-Csv`
+Add a CSV full of users
+```powershell
+Import-Csv users.csv | foreach { New-ADUser -SamAccountName $_.SAM -GivenName $_.Last -DisplayName $_.DisplayName -Name $_.Name -Description $_.Description -Enabled $True -AccountPassword (ConvertToSecureString $_.Password -AsPlainText -Force) }
+``` 
+### `Module`
+#### `Import-Module`
+Import `SmbShare` module
+```powershell
+Import-Module SmbShare
+```
+#### `Install-Module`
+Install the `Az` module
+```powershell
+Install-Module -Name Az -AllowClobber
 ```
 ### `Invoke-Command`
 Execute the commands in the block on the machines specified
@@ -1124,35 +1241,7 @@ Request data from a website impersonating a browser
 ```powershell
 Invoke-WebRequest -Uri http://microsoft.com -UserAgent ([Microsoft.PowerShell.Commands.PSUserAgent]::Chrome)
 ```
-### `Mount-WindowsImage`
-[Mount-WindowsImage -Remount]: #Mount-WindowsImage '```&#10;PS C:\> Mount-WindowsImage -Remount&#10;```&#10;&#10;Equivalent to `Dism.exe /Remount-Image`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
 
-[`Remount`][Mount-WindowsImage -Remount]
-
-### `New-ADComputer`
-### `New-ADOrganizationalUnit`
-Create a new Organizational Unit
-```powershell
-New-ADOrganizationalUnit -Name GNV -Credential officeprodemoco\joey
-```
-### `New-ADUser`
-[Jones][Jones]
-```powershell
-New-ADUser -SamAccountNAme SysAdmin -AccountPassword (Read-Host 'Set user password' -AsSecureString) -Name "SysAdmin" -Enabled $true -PAsswordNeverExpires $true -ChangePasswordAtLogon $false
-```
-Create a new user (disabled by default)
-```powershell
-New-ADUser -Name "Walter Mitty"
-```
-Users are disabled by default, so you must enable them by setting the `-Enabled` switch parameter:
-```powershell
-New-ADUser -Name "Marty McFly" -Enabled $true -GivenName "Martin" -Surname "McFly" -AccountPassword ( ConvertTo-SecureString "P@ssw0rd!" -AsPlainText -Force) 
-```
-### `New-Alias`
-Establish a new alias
-```powershell
-New-Alias ip Get-NetIPAddress
-```
 ### `New-Guid`
 Generate a GUID
 ```powershell
@@ -1229,33 +1318,7 @@ Automatically assign a drive letter
 ```powershell
 New-Partition -DiskNumber 1 -UseMaximumSize -AssignDriveLetter
 ```
-### `New-SmbShare`
-[`New-SmbShare`][New-SmbShare]
-```powershell
-New-SmbShare -Name files -Path C:\networkfiles -ChangeAccess CORP\SysAdmin
-```
-### `New-VM`
-Create a Nano Server VM from an image file [<sup>Zacker: 47</sup>][Zacker]
-```powershell
-New-VM -Name "nano2" -Generation 2 -MemoryStartupBytes 1GB -VHDPath "F:\hyper-v\virtual hard disks\nano2.vhdx"
-```
-### `New-VMSwitch`
-Turn on NAT on the nested Hyper-V VM
-```powershell
-New-VMSwitch -name VMNAT -SwitchType Internal
-New-NetNAT -Name LocalNAT -InternalIPInterfaceAddressPrefix "192.168.100.0/24"
-```
 ### `Out-Null`
-### `Remove-ADOrganizationalUnit`
-Remove an OU
-```powershell
-Remove-ADOrganizationalUnit -Identity "OU=GNV, DC=officeprodemoco, DC=onmicrosoft, DC=com" -confirm:$False
-```
-### `Rename-Computer`
-Rename computer
-### `Restart-Computer`
-Restart computer
-
 ### `Remove-Partition`
 Remove a partition [<sup>ref</sup>][https://sumtips.com/tips-n-tricks/manage-disk-partitions-with-windows-powershell/]
 ```powershell
@@ -1265,64 +1328,9 @@ Remove a partition without confirmation
 ```powershell
 Remove-Partition -DiskNumber 1 -PartitionNumber 1 -Confirm:$false
 ```
-### `Resolve-DNSNAme`
+### `Resolve-DnsName`
 ```pwsh
 Resolve-DNSName -Name secure.practicelabs.com.trustanchors -Type dnskey -Server plabdm01
-```
-### `Search-ADAccount`
-
-Option                        | Effect
-:---                          | :---
-`-AccountDisabled`            | filter disabled accounts
-`-AccountExpired`             | filter expired accounts
-`-ComputersOnly`              | filter computer accounts
-`-LockedOut`                  | filter locked out accounts
-`-PasswordExpired`            | filter accounts with expired passwords
-`-PasswordNeverExpires`       | filter accounts with passwords that will never expire
-`-UsersOnly`                  | filter users
-
-Display accounts that have been inactive for the last 90 days
-```powershell
-Search-ADAccount -AccountInactive -TimeSpan 90.00:00:00
-```
-Display accounts expiring on a particular date
-```powershell
-Search-ADAccount -AccountExpiring -DateTime "3/18/2019"
-``` 
-### `Set-ADAccountPassword`
-Reset password
-```powershell
-Set-ADAccountPassword -Identity MBentley -Reset -NewPassword (ConvertTo-SecureString -AsPlainText "What is 255.255.255.240" -Force)
-```
-### `Set-ADObject`
-Protect users in a specified OU from accidental deletion
-```powershell
-Get-ADUser -Filter * -SearchBase "OU=RoadCrew,OU=office365,DC=officeprodemoco,DC=com" ` | 
-Set-ADObject -ProtectedFromAccidentalDeletion $true
-```
-### `Set-ADOrganizationalUnit`
-Remove accidental deletion protection
-```powershell
-Set-ADOrganizationalUnit -Name GNV -ProtectedFromAccidentalDeletion $False -Identity "OU=GNV, DC=officeprodemoco, DC=onmicrosoft, DC=com" 
-```
-### `Set-Alias`
-Edit an existing alias
-```powershell
-Set-Alias ip Get-NetAdapter
-```
-### `Set-Clipboard`
-Copy text to clipboard
-```powershell
-Write-Output 'Hello' | Set-Clipboard
-```
-With `Append` switch parameter, items can be added without clearing the clipboard:
-```powershell
-Write-Output 'Hello' | Set-Clipboard -Append
-```
-### `Set-DhcpServerv4OptionValue`
-[<sup>ref</sup>][Jones]
-```powershell
-Set-DhcpServerv4OptionValue -DnsDomain corp.packtlab.com -DnsServer 10.0.0.1
 ```
 ### `Set-DnsClientServerAddress`
 Configure DNS server addresses 
@@ -1365,38 +1373,29 @@ Set firewall rule for Remote Event Log Management (RPC-EPMAP)
 ```powershell
 Set-NetFirewallRule -name RemoteEventLogSvc-RPCSS-TCP -Enabled True
 ```
-### `Set-PSReadlineOption`
-Set history to only save unique commands
+### `Smb`
+#### `Get-SmbOpenFile`
+Get information about an opened file <sup>[MS Docs][https://docs.microsoft.com/en-us/powershell/module/smbshare/get-smbopenfile?view=win10-ps]</sup>
 ```powershell
-Set-PSReadlineOption -HistoryNoDuplicates:$true
+Get-SmbOpenFile -FileId 4415226383569 | Select-Object -Property *
 ```
-Enable bash-like ambiguous command completion, where tab brings up a menu of matches
+Get information about a file opened for an SMB client <sup>[MS Docs][https://docs.microsoft.com/en-us/powershell/module/smbshare/get-smbopenfile?view=win10-ps]</sup>
 ```powershell
-Set-PSReadlineOption -EditMode Emacs
+Get-SmbOpenFile -SessionId 4415226380393
 ```
-Change `<Tab>` behavior back to default for PowerShell
+#### `Close-SmbOpenFile`
+Close an open file [<sup>ref</sup>][https://docs.microsoft.com/en-us/powershell/module/smbshare/close-smbopenfile?view=win10-ps]
 ```powershell
-Set-PSReadlineOption -EditMode Windows
+Close-SmbOpenFile -FileId 4415226383589
 ```
-### `Set-VMFirmware`
-Enable secure boot on Generation 2 Linux VMs [<sup>ref</sup>][IMWS]
+Close open files for a session [<sup>ref</sup>][https://docs.microsoft.com/en-us/powershell/module/smbshare/close-smbopenfile?view=win10-ps]
 ```powershell
-Set-VMFirmware vmname -SecureBootTemplate MicrosoftUEFICertificateAuthority
+Close-SmbOpenFile -SessionId 4415226380393
 ```
-### `Set-VMMemory`
-Disable dynamic memory on a virtual host (nested virtualization)
+#### `New-SmbShare`
+[`New-SmbShare`][New-SmbShare]
 ```powershell
-Set-VMMemory -VMName SRV01 -DynamicMemoryEnabled $false
-```
-### `Set-VMNetworkAdapter`
-Turn on MAC address spoofing on a virtual host (nested virtualization)
-```powershell
-Set-VMNetworkAdapter -VMName SVR01 -Name "NetworkAdapter" -MACAddressSpoofing On
-```
-### `Set-VMProcessor`
-Configure 2 virtual processors on a virtual host (nested virtualization)
-```powershell
-Set-VMProcessor -VMName SVR01 -Count 2
+New-SmbShare -Name files -Path C:\networkfiles -ChangeAccess CORP\SysAdmin
 ```
 ### `Start-DscConfiguration`
 Used to erect a **push architecture** in [DSC](dsc.md). [<sup>Zacker: 27</sup>][Zacker]
@@ -1404,30 +1403,26 @@ Used to erect a **push architecture** in [DSC](dsc.md). [<sup>Zacker: 27</sup>][
 Option  | Description
 ---     | ---
 `-Path`
-### `Set-Service`
+### `Service`
+#### `Get-Service`
+Display status of &lt;WinRM&gt; service
+```powershell
+Get-Service WinRM
+gsv winrm
+```
+#### `Set-Service`
 ```powershell
 Set-Service WtcOtg -StartupType Disabled
 ```
-### `Start-Service`
+#### `Start-Service`
 Start the `WinRM` service
 ```powershell
 sasv winrm
 ```
-### `Stop-Service`
+#### `Stop-Service`
 Stop the WebTitan service
 ```powershell
 Stop-Service WtcOtg
-```
-### `Uninstall-ADDSDomainController`
-Demote a domain controller (consummate with uninstalling the AD Domain Controller role)
-```powershell
-# When removing the last domain controller of a domain, additional options need to be specified that result in the obliteration of the domain, its forest, and associated data.
-Uninstall-ADDSDomainController -LocalAdministratorPassword (ConvertTo-SecureString $pw -AsPlainText -Force) -LastDomainControllerInDomain -RemoveApplicationPartitions
-```
-### `Unlock-ADAccount`
-Unlock account
-```powershell
-Unlock-ADAccount -identity wbryan
 ```
 ### `Update-Help`
 Download help files
@@ -1614,4 +1609,12 @@ Set output to WAV file [<sup>ref</sup>](https://thinkpowershell.com/create-corta
 $WavFileOut = Join-Path -Path $env:USERPROFILE -ChildPath "Desktop\thinkpowershell-demo.wav"
 $SpeechSynthesizer.SetOutputToWaveFile($WavFileOut)
 ```
-
+#### VHDX file
+Create a new 256 GB dynamic VHDX file, mount it, initialize it, and create and format the partition <sup>[Zacker][Zacker]: 91</sup>
+```powershell
+New-VHD -Path C:\Data\disk1.vhdx -SizeBytes 256GB -Dynamic | 
+Mount-VHD -Passthru |
+Initialize-Disk -PassThru |
+New-Partition -DriveLetter X -UseMaximumSize | 
+Format-Volume -Filesystem ntfs -FileSystemLabel data1 -Confirm:$False -Force
+```
