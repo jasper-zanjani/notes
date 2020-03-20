@@ -25,7 +25,7 @@
 [ipconfig]:       #ipconfig                       '```&#10;C:\>ipconfig&#10;```&#10;Display TCP/IP configuration'
 [logoff]:         #logoff                         '```&#10;C:\>logoff&#10;```&#10;Log out'
 [msiexec]:        #msiexec                        '```&#10;C:\>msiexec&#10;```&#10;Provides the means to install, modify, and perform operations on Windows Installer from the command line'
-[ms-settings]: #ms-settings '```&#10;ms-settings&#10;```&#10;Special protocol which can be used to open Settings pages and other Modern apps which have well known URIs'
+[ms-settings:]: #settings '```&#10;ms-settings:&#10;```&#10;Special protocol which can be used to open Settings pages and other Modern apps which have well known URIs'
 [nbtstat]:        #nbtstat                        '```&#10;C:\>nbtstat&#10;```&#10;Display status of NetBIOS'
 [netsh]:          #netsh                          '```&#10;C:\>netsh&#10;```&#10;"Network services shell", command-line utility that allows you to manage the configuration of various network services on local and remote computers.&#10;Stanek, William R. _Microsoft Windows Command-Line_.: 297'
 [ntdsutil]:       #ntdsutil                       '```&#10;C:\>ntdsutil&#10;```&#10;Used to transfer FSMO roles between domain controllers'
@@ -97,7 +97,7 @@ Topics
 [`main`][main.cpl] 
 [`mlcfg32.cpl`][mlcfg32.cpl] 
 [`mmsys.cpl`][mmsys.cpl]
-[`ms-settings:`](#settings)
+[`ms-settings:`][ms-settings:]
 [`nbtstat`][nbtstat] [`netsh`](#netsh) 
 [`ncpa`][ncpa.cpl]
 [`ntdsutil`][ntdsutil]
@@ -385,6 +385,7 @@ Basic usage
 route add 192.168.2.1 mask (255.255.255.0) 192.168.2.4
 ```
 ###### Settings
+[ms-settings:appsfeatures]: #ms-settings '```&#10;ms-settings:appsfeaturesappsfeatures&#10;```&#10;Open Apps & features page in Settings on Windows 10'
 [ms-settings:batterysaver]: #settings '```&#10;ms-settings:batterysaverbatterysaver&#10;```&#10;Open Battery Saver page in Settings on Windows 10&#10;"How to open various Settings pages directly in Windows 10". winaero.com'
 [ms-settings:batterysaver-settings]: #settings '```&#10;ms-settings:batterysaver-settingsbatterysaver-settings&#10;```&#10;Open Battery Saver Settings page in Settings on Windows 10&#10;"How to open various Settings pages directly in Windows 10". winaero.com'
 [ms-settings:batterysaver-usagedetails]: #settings '```&#10;ms-settings:batterysaver-usagedetailsbatterysaver-usagedetails&#10;```&#10;Open Battery use page in Settings on Windows 10&#10;"How to open various Settings pages directly in Windows 10". winaero.com'
@@ -448,6 +449,7 @@ route add 192.168.2.1 mask (255.255.255.0) 192.168.2.4
 [ms-settings:tabletmode]: #settings '```&#10;ms-settings:tabletmodetabletmode&#10;```&#10;Open Tablet mode page in Settings on Windows 10&#10;"How to open various Settings pages directly in Windows 10". winaero.com'
 [ms-settings:privacy]: #settings '```&#10;ms-settings:privacyprivacy&#10;```&#10;Open Privacy page in Settings on Windows 10&#10;"How to open various Settings pages directly in Windows 10". winaero.com'
 
+[`appsfeatures`][ms-settings:appsfeatures]
 [`batterysaver-settings`][ms-settings:batterysaver-settings]
 [`batterysaver-usagedetails`][ms-settings:batterysaver-usagedetails]
 [`batterysaver`][ms-settings:batterysaver]

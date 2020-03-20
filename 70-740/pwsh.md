@@ -165,7 +165,9 @@
 [Get-VM]:                                            #get-vm                                       '`Get-VM`&#10;Gets the virtual machines from one or more Hyper-V hosts.'
 [Import-VM]:                                         #import-vm                                    '`Import-VM`&#10;Imports a virtual machine from a file.'
 [Measure-VM]:                                        #measure-vm                                   '`Measure-VM`&#10;Reports resource utilization data for one or more virtual machines.'
+[Mount-VHD]: #mount-vhd '```&#10;Mount-VHD&#10;```&#10;Mounts one or more virtual hard disks.'
 [Move-VM]:                                           #move-vm                                      '`Move-VM`&#10;Moves a virtual machine to a new Hyper-V host.'
+[New-VHD]: #new-vhd '```&#10;New-VHD&#10;```&#10;Creates one or more new virtual hard disks.'
 [New-VMSwitch]:                                      # '`New-VMSwitch`&#10;Creates a new virtual switch on one or more virtual machine hosts.'
 [New-VMSwitch]:                                      #new-vmswitch                                 "`New-VMSwitch`"
 [New-VM]:                                            #new-vm                                       '`New-VM`&#10;Creates a new virtual machine.'
@@ -754,7 +756,7 @@ Display OUs, confirming deletion has taken place
 Get-ADOrganizationalUnit  -filter * | ft
 ```
 #### `Get-ADPrincipalGroupMembership`
-[<sup>ref</sup>][Jones]
+<sup>[Jones][Jones]</sup>
 ```powershell
 Get-ADPrincipalGroupMembership sysadmin
 ```
@@ -847,17 +849,17 @@ Rename computer
 Restart computer
 ### `Dhcp`
 #### `Add-DhcpServerv4Scope`
-[<sup>ref</sup>][Jones]
+<sup>[Jones][Jones]</sup>
 ```powershell
 Add-DhcpServerv4Scope -Name "PacktLabNet" -StartRange 10.0.0.50 -EndRange 10.0.0.100 -SubnetMask 255.255.255.0
 ```
 #### `Add-DhcpServerInDC`
-[<sup>ref</sup>][Jones]
+<sup>[Jones][Jones]</sup>
 ```powershell
 Add-DhcpServerInDC -DnsName dc.corp.packtlab.com
 ```
 #### `Set-DhcpServerv4OptionValue`
-[<sup>ref</sup>][Jones]
+<sup>[Jones][Jones]</sup>
 ```powershell
 Set-DhcpServerv4OptionValue -DnsDomain corp.packtlab.com -DnsServer 10.0.0.1
 ```
@@ -868,7 +870,7 @@ Parameter | Effect
 `Identity`| Specifies the group that you want to modify. You can use any value that uniquely identifies the group (including Name, Alias, Distinguished name, Canonical name, Email address, or GUID).
 `Member`  | Specifies the recipient that you want to add to the group. A member can be any mail-enabled recipient in your organization. You can use any value that uniquely identifies the recipient (including Name, Alias, Distinguished name, Canonical name, Email address, or GUID).
 ### `Add-Type`
-Generate a random password 20 characters long [<sup>ref</sup>][https://adamtheautomator.com/powershell-random-password/]
+Generate a random password 20 characters long <sup>[adamtheautomator.com][https://adamtheautomator.com/powershell-random-password/]</sup>
 ```powershell
 Add-Type -AssemblyName 'System.Web'
 [System.Web.Security.Membership]::GeneratePassword(20, 3)
@@ -997,7 +999,7 @@ Expand-Archive
 ### `Export-CliXml`
 ### `Export-Csv`
 ### `Format-Volume`
-Full format of specified drive [<sup>ref</sup>][https://sumtips.com/tips-n-tricks/manage-disk-partitions-with-windows-powershell/]
+Full format of specified drive <sup>[sumtips.com][https://sumtips.com/tips-n-tricks/manage-disk-partitions-with-windows-powershell/]</sup>
 ```powershell
 Format-Volume -DriveLetter S -FileSystem FAT32 -NewFileSystemLabel SumTips -Full
 ```
@@ -1071,10 +1073,11 @@ Get-Disk | Get-Partition
 ```
 ### `VHD`
 #### `Mount-VHD`
-[Task](#vhdx-file)
+- [VHDX file](#vhdx-file)
 
 #### `New-VHD`
-[Task](#vhdx-file)
+- [VHDX file](#vhdx-file)
+
 ### `VM`
 Install Hyper-V Powershell module <sup>[Zacker][Zacker]: 90</sup>
 ```powershell
@@ -1082,12 +1085,12 @@ Install-WindowsFeature -Name hyper-v-powershell
 ```
 
 #### `Set-VMFirmware`
-Enable secure boot on Generation 2 Linux VMs [<sup>ref</sup>][IMWS]
+Enable secure boot on Generation 2 Linux VMs <sup>[IMWS][IMWS]</sup>
 ```powershell
 Set-VMFirmware vmname -SecureBootTemplate MicrosoftUEFICertificateAuthority
 ```
 #### `New-VM`
-Create a Nano Server VM from an image file [<sup>Zacker: 47</sup>][Zacker]
+Create a Nano Server VM from an image file <sup>[Zacker][Zacker]: 47</sup>
 ```powershell
 New-VM -Name "nano2" -Generation 2 -MemoryStartupBytes 1GB -VHDPath "F:\hyper-v\virtual hard disks\nano2.vhdx"
 ```
@@ -1118,11 +1121,11 @@ Set-VMProcessor -VMName SVR01 -Count 2
 
 [`Remount`][Mount-WindowsImage -Remount]
 #### `Enable-WindowsOptionalFeature`
-Enable a feature in the currently running operating system [<sup>ref</sup>](https://docs.microsoft.com/en-us/powershell/module/dism/enable-windowsoptionalfeature?view=win10-ps&redirectedfrom=MSDN "Microsoft Docs: \"Enable-WindowsOptionalFeature\"")
+Enable a feature in the currently running operating system <sup>[docs.microsoft.com](https://docs.microsoft.com/en-us/powershell/module/dism/enable-windowsoptionalfeature?view=win10-ps&redirectedfrom=MSDN "Microsoft Docs: \"Enable-WindowsOptionalFeature\"")</sup>
 ```powershell
 Enable-WindowsOptionalFeature -Online -FeatureName "Hearts" -All
 ```
-Enable WSL [<sup>ref</sup>](https://www.reddit.com/r/bashonubuntuonwindows/comments/7smf9m/help_wsl_wont_activate_on_my_freshly_installed/ "Reddit: \"[help] WSL won't activate on my freshly installed Windows 10 version 1709\"")
+Enable WSL <sup>[Reddit](https://www.reddit.com/r/bashonubuntuonwindows/comments/7smf9m/help_wsl_wont_activate_on_my_freshly_installed/ "Reddit: \"[help] WSL won't activate on my freshly installed Windows 10 version 1709\"")</sup>
 ```powershell
 Enable-WindowsOptionalFeature -online -FeatureName Microsoft-Windows-Subsystem-Linux
 ```
@@ -1184,7 +1187,7 @@ View system uptime
 Get-WmiObject -Win32_OperatingSystem -ComputerName localhost |
 Select-Object -Property @{n="Last Boot Time";e={[Management.ManagementDateTimeConvert]::ToDateTime($_.LastBootUpTime)}}
 ```
-Display Windows activation key [<sup>ref</sup>][https://www.thewindowsclub.com/find-windows-product-key]
+Display Windows activation key <sup>[thewindowsclub.com][https://www.thewindowsclub.com/find-windows-product-key]</sup>
 ```powershell
 (Get-WmiObject -query ‘select * from SoftwareLicensingService’).OA3xOriginalProductKey
 ```
@@ -1310,7 +1313,7 @@ Configure a network adapter
 New-NetIpAddress -InterfaceIndex 6 -IpAddress 192.168.0.200 -PrefixLength 24 -DefaultGateway 192.168.0.1
 ```
 ### `New-Partition`
-Use all available size for a new partition [<sup>ref</sup>][https://sumtips.com/tips-n-tricks/manage-disk-partitions-with-windows-powershell/]
+Use all available size for a new partition <sup>[sumtips.com][https://sumtips.com/tips-n-tricks/manage-disk-partitions-with-windows-powershell/]</sup>
 ```powershell
 New-Partition -DiskNumber 1 -UseMaximumSize
 ```
@@ -1320,7 +1323,7 @@ New-Partition -DiskNumber 1 -UseMaximumSize -AssignDriveLetter
 ```
 ### `Out-Null`
 ### `Remove-Partition`
-Remove a partition [<sup>ref</sup>][https://sumtips.com/tips-n-tricks/manage-disk-partitions-with-windows-powershell/]
+Remove a partition <sup>[sumtips.com][https://sumtips.com/tips-n-tricks/manage-disk-partitions-with-windows-powershell/]</sup>
 ```powershell
 Remove-Partition -DiskNumber 1 -PartitionNumber 1
 ```
@@ -1342,15 +1345,15 @@ Parameter           | Description
 `-InterfaceIndex`   |
 `-ServerAddresses`  |
 
-Configure DNS server address for a DC on a new corporate intranet [<sup>ref</sup>][Jones]
+Configure DNS server address for a DC on a new corporate intranet <sup>[Jones][Jones]</sup>
 ```powershell
 Set-DnsClientServerAddress -InterfaceAlias "Ethernet" -ServerAddresses 127.0.0.1
 ```
-Configure DNS server address for an application server on a new corporate intranet [<sup>ref</sup>][Jones]
+Configure DNS server address for an application server on a new corporate intranet <sup>[Jones][Jones]</sup>
 ```powershell
 Set-DnsClientServerAddress -InterfaceAlias "Ethernet" -ServerAddresses 10.0.0.1
 ```
-Configure DNS server addresses [<sup>ref</sup>][Zacker]
+Configure DNS server addresses <sup>[Zacker][Zacker]</sup>
 ```powershell
 Set-DnsClientServerAddress -InterfaceIndex 6 -ServerAddresses ("192.168.0.1", "192.168.0.2")
 ```
@@ -1384,11 +1387,11 @@ Get information about a file opened for an SMB client <sup>[MS Docs][https://doc
 Get-SmbOpenFile -SessionId 4415226380393
 ```
 #### `Close-SmbOpenFile`
-Close an open file [<sup>ref</sup>][https://docs.microsoft.com/en-us/powershell/module/smbshare/close-smbopenfile?view=win10-ps]
+Close an open file <sup>[docs.microsoft.com][https://docs.microsoft.com/en-us/powershell/module/smbshare/close-smbopenfile?view=win10-ps]</sup>
 ```powershell
 Close-SmbOpenFile -FileId 4415226383589
 ```
-Close open files for a session [<sup>ref</sup>][https://docs.microsoft.com/en-us/powershell/module/smbshare/close-smbopenfile?view=win10-ps]
+Close open files for a session <sup>[docs.microsoft.com][https://docs.microsoft.com/en-us/powershell/module/smbshare/close-smbopenfile?view=win10-ps]</sup>
 ```powershell
 Close-SmbOpenFile -SessionId 4415226380393
 ```
@@ -1398,7 +1401,7 @@ Close-SmbOpenFile -SessionId 4415226380393
 New-SmbShare -Name files -Path C:\networkfiles -ChangeAccess CORP\SysAdmin
 ```
 ### `Start-DscConfiguration`
-Used to erect a **push architecture** in [DSC](dsc.md). [<sup>Zacker: 27</sup>][Zacker]
+Used to erect a **push architecture** in [DSC](dsc.md). <sup>[Zacker][Zacker]: 27</sup>
 
 Option  | Description
 ---     | ---
@@ -1431,19 +1434,19 @@ Copy text to clipboard
 ```powershell
 Write-Output 'Hello' | Set-Clipboard
 ```
-Create a text file [<sup>ref</sup>][Jones]
+Create a text file <sup>[Jones][Jones]</sup>
 ```powershell
 Write-Output "This is a test network file." -Path | Out-File C:\networkfiles\test.txt
 ```
 
 ## Tasks
 #### Computer information
-Display computer name [<sup>ref</sup>][https://devblogs.microsoft.com/scripting/powertip-use-powershell-to-get-computer-name/]
+Display computer name <sup>[devblogs.microsoft.com][https://devblogs.microsoft.com/scripting/powertip-use-powershell-to-get-computer-name/]</sup>
 ```powershell
 $env:computername
 ```
 #### Generate password
-Generate a random password 20 characters long [<sup>ref</sup>][https://adamtheautomator.com/powershell-random-password/]
+Generate a random password 20 characters long <sup>[adamtheautomator.com][https://adamtheautomator.com/powershell-random-password/]</sup>
 ```powershell
 Add-Type -AssemblyName 'System.Web'
 [System.Web.Security.Membership]::GeneratePassword(20, 3)
@@ -1568,7 +1571,7 @@ Removing keys:
 $Hashtable.Remove('One')
 ```
 #### Registry
-Fix Windows Search bar [<sup>ref</sup>][https://docs.microsoft.com/en-us/powershell/scripting/samples/working-with-registry-keys?view=powershell-7] [<sup>MS Docs</sup>][https://docs.microsoft.com/en-us/powershell/scripting/samples/working-with-registry-entries?view=powershell-7]
+Fix Windows Search bar <sup>[docs.microsoft.com][https://docs.microsoft.com/en-us/powershell/scripting/samples/working-with-registry-keys?view=powershell-7] [<sup>MS Docs</sup>][https://docs.microsoft.com/en-us/powershell/scripting/samples/working-with-registry-entries?view=powershell-7]</sup>
 ```powershell
 New-Item -Path HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Search\BingSearchEnabled
 Set-Item $$ 0
@@ -1587,7 +1590,7 @@ Add-ADPrincipalGroupMembership -Identity "CN=SysAdmin,CN=Users,DC=corp,DC=packtl
 Get-ADPrincipalGroupMembership sysadmin
 ```
 #### Text-to-speech
-Initialize text-to-speech object [<sup>ref</sup>](https://www.scriptinglibrary.com/languages/powershell/powershell-text-to-speech/ "Powershell: Text To Speech in 3 lines of code")
+Initialize text-to-speech object <sup>[scriptinglibrary.com](https://www.scriptinglibrary.com/languages/powershell/powershell-text-to-speech/ "Powershell: Text To Speech in 3 lines of code")</sup>
 ```powershell
 Add-Type –AssemblyName System.Speech
 $tts = New-Object –TypeName System.Speech.Synthesis.SpeechSynthesizer
@@ -1604,13 +1607,15 @@ Change voice
 $tts.SelectVoice("Microsoft Zira Desktop")
 $tts.Speak('Hello, World!')
 ```
-Set output to WAV file [<sup>ref</sup>](https://thinkpowershell.com/create-cortana-audio-files-from-text-using-powershell/ "Create Cortana Audio Files From Text Using PowerShell")
+Set output to WAV file <sup>[thinkpowershell.com](https://thinkpowershell.com/create-cortana-audio-files-from-text-using-powershell/ "Create Cortana Audio Files From Text Using PowerShell")</sup>
 ```powershell
 $WavFileOut = Join-Path -Path $env:USERPROFILE -ChildPath "Desktop\thinkpowershell-demo.wav"
 $SpeechSynthesizer.SetOutputToWaveFile($WavFileOut)
 ```
 #### VHDX file
-Create a new 256 GB dynamic VHDX file, mount it, initialize it, and create and format the partition <sup>[Zacker][Zacker]: 91</sup>
+[VHDX]: # 'VHDX&#10;Newer hard disk image format and file name extension.&#10;VHDX image files can be as large as 64 TB, and they also support 4 KB logical sector sizes to provide compatibility with 4 KB native drives. VHDX files can be read only by servers running Windows Server 2012 or later or workstations running Windows 8 or later.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 88'
+
+Create a new 256 GB dynamic [VHDX][VHDX] file, mount it, initialize it, and create and format the partition <sup>[Zacker][Zacker]: 91</sup>
 ```powershell
 New-VHD -Path C:\Data\disk1.vhdx -SizeBytes 256GB -Dynamic | 
 Mount-VHD -Passthru |
