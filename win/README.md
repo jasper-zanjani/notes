@@ -385,133 +385,190 @@ Basic usage
 route add 192.168.2.1 mask (255.255.255.0) 192.168.2.4
 ```
 ###### Settings
-[ms-settings:appsfeatures]: #ms-settings '```&#10;ms-settings:appsfeaturesappsfeatures&#10;```&#10;Open Apps & features page in Settings on Windows 10'
-[ms-settings:batterysaver]: #settings '```&#10;ms-settings:batterysaverbatterysaver&#10;```&#10;Open Battery Saver page in Settings on Windows 10&#10;"How to open various Settings pages directly in Windows 10". winaero.com'
-[ms-settings:batterysaver-settings]: #settings '```&#10;ms-settings:batterysaver-settingsbatterysaver-settings&#10;```&#10;Open Battery Saver Settings page in Settings on Windows 10&#10;"How to open various Settings pages directly in Windows 10". winaero.com'
-[ms-settings:batterysaver-usagedetails]: #settings '```&#10;ms-settings:batterysaver-usagedetailsbatterysaver-usagedetails&#10;```&#10;Open Battery use page in Settings on Windows 10&#10;"How to open various Settings pages directly in Windows 10". winaero.com'
-[ms-settings:bluetooth]: #settings '```&#10;ms-settings:bluetoothbluetooth&#10;```&#10;Open Bluetooth page in Settings on Windows 10&#10;"How to open various Settings pages directly in Windows 10". winaero.com'
-[ms-settings:colors]: #settings '```&#10;ms-settings:colorscolors&#10;```&#10;Open Colors page in Settings on Windows 10&#10;"How to open various Settings pages directly in Windows 10". winaero.com'
-[ms-settings:datausage]: #settings '```&#10;ms-settings:datausagedatausage&#10;```&#10;Open Data Usage page in Settings on Windows 10&#10;"How to open various Settings pages directly in Windows 10". winaero.com'
-[ms-settings:dateandtime]: #settings '```&#10;ms-settings:dateandtimedateandtime&#10;```&#10;Open Date and Time page in Settings on Windows 10&#10;"How to open various Settings pages directly in Windows 10". winaero.com'
-[ms-settings:easeofaccess-closedcaptioning]: #settings '```&#10;ms-settings:easeofaccess-closedcaptioningeaseofaccess-closedcaptioning&#10;```&#10;Open Closed Captioning page in Settings on Windows 10&#10;"How to open various Settings pages directly in Windows 10". winaero.com'
-[ms-settings:easeofaccess-highcontrast]: #settings '```&#10;ms-settings:easeofaccess-highcontrasteaseofaccess-highcontrast&#10;```&#10;Open High Contrast page in Settings on Windows 10&#10;"How to open various Settings pages directly in Windows 10". winaero.com'
-[ms-settings:easeofaccess-magnifier]: #settings '```&#10;ms-settings:easeofaccess-magnifiereaseofaccess-magnifier&#10;```&#10;Open Magnifier page in Settings on Windows 10&#10;"How to open various Settings pages directly in Windows 10". winaero.com'
-[ms-settings:easeofaccess-narrator]: #settings '```&#10;ms-settings:easeofaccess-narratoreaseofaccess-narrator&#10;```&#10;Open Narrator page in Settings on Windows 10&#10;"How to open various Settings pages directly in Windows 10". winaero.com'
-[ms-settings:easeofaccess-keyboard]: #settings '```&#10;ms-settings:easeofaccess-keyboardeaseofaccess-keyboard&#10;```&#10;Open Keyboard page in Settings on Windows 10&#10;"How to open various Settings pages directly in Windows 10". winaero.com'
-[ms-settings:easeofaccess-mouse]: #settings '```&#10;ms-settings:easeofaccess-mouseeaseofaccess-mouse&#10;```&#10;Open Mouse page in Settings on Windows 10&#10;"How to open various Settings pages directly in Windows 10". winaero.com'
-[ms-settings:easeofaccess-otheroptions]: #settings '```&#10;ms-settings:easeofaccess-otheroptionseaseofaccess-otheroptions&#10;```&#10;Open Other Options (Ease of Access) page in Settings on Windows 10&#10;"How to open various Settings pages directly in Windows 10". winaero.com'
-[ms-settings:lockscreen]: #settings '```&#10;ms-settings:lockscreenlockscreen&#10;```&#10;Open Lockscreen page in Settings on Windows 10&#10;"How to open various Settings pages directly in Windows 10". winaero.com'
-[ms-settings:maps]: #settings '```&#10;ms-settings:mapsmaps&#10;```&#10;Open Offline maps page in Settings on Windows 10&#10;"How to open various Settings pages directly in Windows 10". winaero.com'
-[ms-settings:network-airplanemode]: #settings '```&#10;ms-settings:network-airplanemodenetwork-airplanemode&#10;```&#10;Open Airplane mode page in Settings on Windows 10&#10;"How to open various Settings pages directly in Windows 10". winaero.com'
-[ms-settings:network-proxy]: #settings '```&#10;ms-settings:network-proxynetwork-proxy&#10;```&#10;Open Proxy page in Settings on Windows 10&#10;"How to open various Settings pages directly in Windows 10". winaero.com'
-[ms-settings:network-vpn]: #settings '```&#10;ms-settings:network-vpnnetwork-vpn&#10;```&#10;Open VPN page in Settings on Windows 10&#10;"How to open various Settings pages directly in Windows 10". winaero.com'
-[ms-settings:notifications]: #settings '```&#10;ms-settings:notificationsnotifications&#10;```&#10;Open Notifications & actions page in Settings on Windows 10&#10;"How to open various Settings pages directly in Windows 10". winaero.com'
-[ms-settings:privacy-accountinfo]: #settings '```&#10;ms-settings:privacy-accountinfoprivacy-accountinfo&#10;```&#10;Open Account info page in Settings on Windows 10&#10;"How to open various Settings pages directly in Windows 10". winaero.com'
-[ms-settings:privacy-calendar]: #settings '```&#10;ms-settings:privacy-calendarprivacy-calendar&#10;```&#10;Open Calendar page in Settings on Windows 10&#10;"How to open various Settings pages directly in Windows 10". winaero.com'
-[ms-settings:privacy-contacts]: #settings '```&#10;ms-settings:privacy-contactsprivacy-contacts&#10;```&#10;Open Contacts page in Settings on Windows 10&#10;"How to open various Settings pages directly in Windows 10". winaero.com'
-[ms-settings:privacy-customdevices]: #settings '```&#10;ms-settings:privacy-customdevicesprivacy-customdevices&#10;```&#10;Open Other Devices page in Settings on Windows 10&#10;"How to open various Settings pages directly in Windows 10". winaero.com'
-[ms-settings:privacy-feedback]: #settings '```&#10;ms-settings:privacy-feedbackprivacy-feedback&#10;```&#10;Open Feedback page in Settings on Windows 10&#10;"How to open various Settings pages directly in Windows 10". winaero.com'
-[ms-settings:privacy-location]: #settings '```&#10;ms-settings:privacy-locationprivacy-location&#10;```&#10;Open Location page in Settings on Windows 10&#10;"How to open various Settings pages directly in Windows 10". winaero.com'
-[ms-settings:privacy-messaging]: #settings '```&#10;ms-settings:privacy-messagingprivacy-messaging&#10;```&#10;Open Messaging page in Settings on Windows 10&#10;"How to open various Settings pages directly in Windows 10". winaero.com'
-[ms-settings:privacy-microphone]: #settings '```&#10;ms-settings:privacy-microphoneprivacy-microphone&#10;```&#10;Open Microphone page in Settings on Windows 10&#10;"How to open various Settings pages directly in Windows 10". winaero.com'
-[ms-settings:privacy-motion]: #settings '```&#10;ms-settings:privacy-motionprivacy-motion&#10;```&#10;Open Motion page in Settings on Windows 10&#10;"How to open various Settings pages directly in Windows 10". winaero.com'
-[ms-settings:privacy-radios]: #settings '```&#10;ms-settings:privacy-radiosprivacy-radios&#10;```&#10;Open Radios page in Settings on Windows 10&#10;"How to open various Settings pages directly in Windows 10". winaero.com'
-[ms-settings:privacy-speechtyping]: #settings '```&#10;ms-settings:privacy-speechtypingprivacy-speechtyping&#10;```&#10;Open Speech, inking, & typing page in Settings on Windows 10&#10;"How to open various Settings pages directly in Windows 10". winaero.com'
-[ms-settings:privacy-webcam]: #settings '```&#10;ms-settings:privacy-webcamprivacy-webcam&#10;```&#10;Open Camera page in Settings on Windows 10&#10;"How to open various Settings pages directly in Windows 10". winaero.com'
-[ms-settings:regionlanguage]: #settings '```&#10;ms-settings:regionlanguageregionlanguage&#10;```&#10;Open Region & language page in Settings on Windows 10&#10;"How to open various Settings pages directly in Windows 10". winaero.com'
-[ms-settings:speech]: #settings '```&#10;ms-settings:speechspeech&#10;```&#10;Open Speech page in Settings on Windows 10&#10;"How to open various Settings pages directly in Windows 10". winaero.com'
-[ms-settings:windowsupdate]: #settings '```&#10;ms-settings:windowsupdatewindowsupdate&#10;```&#10;Open Windows Update page in Settings on Windows 10&#10;"How to open various Settings pages directly in Windows 10". winaero.com'
-[ms-settings:workplace]: #settings '```&#10;ms-settings:workplaceworkplace&#10;```&#10;Open Work access page in Settings on Windows 10&#10;"How to open various Settings pages directly in Windows 10". winaero.com'
-[ms-settings:connecteddevices]: #settings '```&#10;ms-settings:connecteddevicesconnecteddevices&#10;```&#10;Open Connected devices page in Settings on Windows 10&#10;"How to open various Settings pages directly in Windows 10". winaero.com'
-[ms-settings:developers]: #settings '```&#10;ms-settings:developersdevelopers&#10;```&#10;Open For developers page in Settings on Windows 10&#10;"How to open various Settings pages directly in Windows 10". winaero.com'
-[ms-settings:display]: #settings '```&#10;ms-settings:displaydisplay&#10;```&#10;Open Display page in Settings on Windows 10&#10;"How to open various Settings pages directly in Windows 10". winaero.com'
-[ms-settings:mousetouchpad]: #settings '```&#10;ms-settings:mousetouchpadmousetouchpad&#10;```&#10;Open Mouse & touchpad page in Settings on Windows 10&#10;"How to open various Settings pages directly in Windows 10". winaero.com'
-[ms-settings:network-cellular]: #settings '```&#10;ms-settings:network-cellularnetwork-cellular&#10;```&#10;Open Cellular page in Settings on Windows 10&#10;"How to open various Settings pages directly in Windows 10". winaero.com'
-[ms-settings:network-dialup]: #settings '```&#10;ms-settings:network-dialupnetwork-dialup&#10;```&#10;Open Dial-up page in Settings on Windows 10&#10;"How to open various Settings pages directly in Windows 10". winaero.com'
-[ms-settings:network-directaccess]: #settings '```&#10;ms-settings:network-directaccessnetwork-directaccess&#10;```&#10;Open DirectAccess page in Settings on Windows 10&#10;"How to open various Settings pages directly in Windows 10". winaero.com'
-[ms-settings:network-ethernet]: #settings '```&#10;ms-settings:network-ethernetnetwork-ethernet&#10;```&#10;Open Ethernet page in Settings on Windows 10&#10;"How to open various Settings pages directly in Windows 10". winaero.com'
-[ms-settings:network-mobilehotspot]: #settings '```&#10;ms-settings:network-mobilehotspotnetwork-mobilehotspot&#10;```&#10;Open Mobile hotspot page in Settings on Windows 10&#10;"How to open various Settings pages directly in Windows 10". winaero.com'
-[ms-settings:network-wifi]: #settings '```&#10;ms-settings:network-wifinetwork-wifi&#10;```&#10;Open Wi-Fi page in Settings on Windows 10&#10;"How to open various Settings pages directly in Windows 10". winaero.com'
-[ms-settings:network-wifisettings]: #settings '```&#10;ms-settings:network-wifisettingsnetwork-wifisettings&#10;```&#10;Open Manage Wi-Fi Settings page in Settings on Windows 10&#10;"How to open various Settings pages directly in Windows 10". winaero.com'
-[ms-settings:optionalfeatures]: #settings '```&#10;ms-settings:optionalfeaturesoptionalfeatures&#10;```&#10;Open Optional features page in Settings on Windows 10&#10;"How to open various Settings pages directly in Windows 10". winaero.com'
-[ms-settings:otherusers]: #settings '```&#10;ms-settings:otherusersotherusers&#10;```&#10;Open Family & other users page in Settings on Windows 10&#10;"How to open various Settings pages directly in Windows 10". winaero.com'
-[ms-settings:personalization]: #settings '```&#10;ms-settings:personalizationpersonalization&#10;```&#10;Open Personalization page in Settings on Windows 10&#10;"How to open various Settings pages directly in Windows 10". winaero.com'
-[ms-settings:personalization-background]: #settings '```&#10;ms-settings:personalization-backgroundpersonalization-background&#10;```&#10;Open Backgrounds page in Settings on Windows 10&#10;"How to open various Settings pages directly in Windows 10". winaero.com'
-[ms-settings:personalization-colors]: #settings '```&#10;ms-settings:personalization-colorspersonalization-colors&#10;```&#10;Open Colors page in Settings on Windows 10&#10;"How to open various Settings pages directly in Windows 10". winaero.com'
-[ms-settings:personalization-start]: #settings '```&#10;ms-settings:personalization-startpersonalization-start&#10;```&#10;Open Start page in Settings on Windows 10&#10;"How to open various Settings pages directly in Windows 10". winaero.com'
-[ms-settings:powersleep]: #settings '```&#10;ms-settings:powersleeppowersleep&#10;```&#10;Open Power & sleep page in Settings on Windows 10&#10;"How to open various Settings pages directly in Windows 10". winaero.com'
-[ms-settings:proximity]: #settings '```&#10;ms-settings:proximityproximity&#10;```&#10;Open Proximity page in Settings on Windows 10&#10;"How to open various Settings pages directly in Windows 10". winaero.com'
-[ms-settings:screenrotation]: #settings '```&#10;ms-settings:screenrotationscreenrotation&#10;```&#10;Open Display page in Settings on Windows 10&#10;"How to open various Settings pages directly in Windows 10". winaero.com'
-[ms-settings:signinoptions]: #settings '```&#10;ms-settings:signinoptionssigninoptions&#10;```&#10;Open Sign-in options page in Settings on Windows 10&#10;"How to open various Settings pages directly in Windows 10". winaero.com'
-[ms-settings:storagesense]: #settings '```&#10;ms-settings:storagesensestoragesense&#10;```&#10;Open Storage Sense page in Settings on Windows 10&#10;"How to open various Settings pages directly in Windows 10". winaero.com'
-[ms-settings:themes]: #settings '```&#10;ms-settings:themesthemes&#10;```&#10;Open Themes page in Settings on Windows 10&#10;"How to open various Settings pages directly in Windows 10". winaero.com'
-[ms-settings:typing]: #settings '```&#10;ms-settings:typingtyping&#10;```&#10;Open Typing page in Settings on Windows 10&#10;"How to open various Settings pages directly in Windows 10". winaero.com'
-[ms-settings:tabletmode]: #settings '```&#10;ms-settings:tabletmodetabletmode&#10;```&#10;Open Tablet mode page in Settings on Windows 10&#10;"How to open various Settings pages directly in Windows 10". winaero.com'
-[ms-settings:privacy]: #settings '```&#10;ms-settings:privacyprivacy&#10;```&#10;Open Privacy page in Settings on Windows 10&#10;"How to open various Settings pages directly in Windows 10". winaero.com'
+[ms-settings:about]: #settings '```&#10;ms-settings:about&#10;```&#10;Open About page in Settings on Windows 10'
+[ms-settings:activation]: #settings '```&#10;ms-settings:activation&#10;```&#10;Open Activation page in Settings on Windows 10'
+[ms-settings:apps-volume]: #settings '```&#10;ms-settings:apps-volume&#10;```&#10;Open App volume and device preferences page in Settings on Windows 10'
+[ms-settings:appsfeatures]: #settings '```&#10;ms-settings:appsfeatures&#10;```&#10;Open Apps & Features page in Settings on Windows 10'
+[ms-settings:appsforwebsites]: #settings '```&#10;ms-settings:appsforwebsites&#10;```&#10;Open Apps for websites page in Settings on Windows 10'
+[ms-settings:assignedaccess]: #settings '```&#10;ms-settings:assignedaccess&#10;```&#10;Open Set up a kiosk page in Settings on Windows 10'
+[ms-settings:autoplay]: #settings '```&#10;ms-settings:autoplay&#10;```&#10;Open AutoPlay page in Settings on Windows 10'
+[ms-settings:backup]: #settings '```&#10;ms-settings:backup&#10;```&#10;Open Backup page in Settings on Windows 10'
+[ms-settings:batterysaver]: #settings '```&#10;ms-settings:batterysaver&#10;```&#10;Open Battery Saver page in Settings on Windows 10'
+[ms-settings:bluetooth]: #settings '```&#10;ms-settings:bluetooth&#10;```&#10;Open Bluetooth page in Settings on Windows 10'
+[ms-settings:camera]: #settings '```&#10;ms-settings:camera&#10;```&#10;Open Default camera page in Settings on Windows 10'
+[ms-settings:clipboard]: #settings '```&#10;ms-settings:clipboard&#10;```&#10;Open Clipboard page in Settings on Windows 10'
+[ms-settings:colors]: #settings '```&#10;ms-settings:colors&#10;```&#10;Open Colors page in Settings on Windows 10'
+[ms-settings:connecteddevices]: #settings '```&#10;ms-settings:connecteddevices&#10;```&#10;Open Connected devices page in Settings on Windows 10'
+[ms-settings:cortana]: #settings '```&#10;ms-settings:cortana&#10;```&#10;Open Talk to Cortana page in Settings on Windows 10'
+[ms-settings:crossdevice]: #settings '```&#10;ms-settings:crossdevice&#10;```&#10;Open Shared experiences page in Settings on Windows 10'
+[ms-settings:datausage]: #settings '```&#10;ms-settings:datausage&#10;```&#10;Open Data usage page in Settings on Windows 10'
+[ms-settings:dateandtime]: #settings '```&#10;ms-settings:dateandtime&#10;```&#10;Open Date & time page in Settings on Windows 10'
+[ms-settings:defaultapps]: #settings '```&#10;ms-settings:defaultapps&#10;```&#10;Open Default apps page in Settings on Windows 10'
+[ms-settings:delivery-optimization]: #settings '```&#10;ms-settings:delivery-optimization&#10;```&#10;Open Delivery Optimization page in Settings on Windows 10'
+[ms-settings:developers]: #settings '```&#10;ms-settings:developers&#10;```&#10;Open For developers page in Settings on Windows 10'
+[ms-settings:deviceencryption]: #settings '```&#10;ms-settings:deviceencryption&#10;```&#10;Open Encryption page in Settings on Windows 10'
+[ms-settings:devices-touchpad]: #settings '```&#10;ms-settings:devices-touchpad&#10;```&#10;Open Touchpad page in Settings on Windows 10'
+[ms-settings:display]: #settings '```&#10;ms-settings:display&#10;```&#10;Open Display page in Settings on Windows 10'
+[ms-settings:easeofaccess-display]: #settings '```&#10;ms-settings:easeofaccess-display&#10;```&#10;Open Display page in Settings on Windows 10'
+[ms-settings:emailandaccounts]: #settings '```&#10;ms-settings:emailandaccounts&#10;```&#10;Open Email & app accounts page in Settings on Windows 10'
+[ms-settings:findmydevice]: #settings '```&#10;ms-settings:findmydevice&#10;```&#10;Open Find My Device page in Settings on Windows 10'
+[ms-settings:fonts]: #settings '```&#10;ms-settings:fonts&#10;```&#10;Open Fonts page in Settings on Windows 10'
+[ms-settings:keyboard]: #settings '```&#10;ms-settings:keyboard&#10;```&#10;Open Language page in Settings on Windows 10'
+[ms-settings:lockscreen]: #settings '```&#10;ms-settings:lockscreen&#10;```&#10;Open Lockscreen page in Settings on Windows 10'
+[ms-settings:maps]: #settings '```&#10;ms-settings:maps&#10;```&#10;Open Offline maps page in Settings on Windows 10'
+[ms-settings:messaging]: #settings '```&#10;ms-settings:messaging&#10;```&#10;Open Messaging page in Settings on Windows 10'
+[ms-settings:mobile-devices]: #settings '```&#10;ms-settings:mobile-devices&#10;```&#10;Open Your phone page in Settings on Windows 10'
+[ms-settings:mousetouchpad]: #settings '```&#10;ms-settings:mousetouchpad&#10;```&#10;Open Mouse & touchpad page in Settings on Windows 10'
+[ms-settings:multitasking]: #settings '```&#10;ms-settings:multitasking&#10;```&#10;Open Multitasking page in Settings on Windows 10'
+[ms-settings:network]: #settings '```&#10;ms-settings:network&#10;```&#10;Open Status page in Settings on Windows 10'
+[ms-settings:network-wifi]: #settings '```&#10;ms-settings:network-wifi&#10;```&#10;Open Wi-Fi page in Settings on Windows 10'
+[ms-settings:nfctransactions]: #settings '```&#10;ms-settings:nfctransactions&#10;```&#10;Open NFC page in Settings on Windows 10'
+[ms-settings:nightlight]: #settings '```&#10;ms-settings:nightlight&#10;```&#10;Open Night light settings page in Settings on Windows 10'
+[ms-settings:notifications]: #settings '```&#10;ms-settings:notifications&#10;```&#10;Open Notifications & actions page in Settings on Windows 10'
+[ms-settings:optionalfeatures]: #settings '```&#10;ms-settings:optionalfeatures&#10;```&#10;Open Optional features page in Settings on Windows 10'
+[ms-settings:otherusers]: #settings '```&#10;ms-settings:otherusers&#10;```&#10;Open Family & other people page in Settings on Windows 10'
+[ms-settings:pen]: #settings '```&#10;ms-settings:pen&#10;```&#10;Open Pen & Windows Ink page in Settings on Windows 10'
+[ms-settings:personalization]: #settings '```&#10;ms-settings:personalization&#10;```&#10;Open Personalization (category) page in Settings on Windows 10'
+[ms-settings:personalization-background]: #settings '```&#10;ms-settings:personalization-background&#10;```&#10;Open Background page in Settings on Windows 10'
+[ms-settings:personalization-colors]: #settings '```&#10;ms-settings:personalization-colors&#10;```&#10;Open Colors page in Settings on Windows 10'
+[ms-settings:personalization-start]: #settings '```&#10;ms-settings:personalization-start&#10;```&#10;Open Start page in Settings on Windows 10'
+[ms-settings:personalization-start-places]: #settings '```&#10;ms-settings:personalization-start-places&#10;```&#10;Open Choose which folders appear on Start page in Settings on Windows 10'
+[ms-settings:phone]: #settings '```&#10;ms-settings:phone&#10;```&#10;Open Phone page in Settings on Windows 10'
+[ms-settings:powersleep]: #settings '```&#10;ms-settings:powersleep&#10;```&#10;Open Power & sleep page in Settings on Windows 10'
+[ms-settings:printers]: #settings '```&#10;ms-settings:printers&#10;```&#10;Open Printers & scanners page in Settings on Windows 10'
+[ms-settings:privacy]: #settings '```&#10;ms-settings:privacy&#10;```&#10;Open Privacy page in Settings on Windows 10'
+[ms-settings:project]: #settings '```&#10;ms-settings:project&#10;```&#10;Open Projecting to this PC page in Settings on Windows 10'
+[ms-settings:proximity]: #settings '```&#10;ms-settings:proximity&#10;```&#10;Open Proximity page in Settings on Windows 10'
+[ms-settings:quiethours]: #settings '```&#10;ms-settings:quiethours&#10;```&#10;Open Focus assist page in Settings on Windows 10'
+[ms-settings:quietmomentsgame]: #settings '```&#10;ms-settings:quietmomentsgame&#10;```&#10;Open Playing a game full screen page in Settings on Windows 10'
+[ms-settings:quietmomentspresentation]: #settings '```&#10;ms-settings:quietmomentspresentation&#10;```&#10;Open Duplicating my display page in Settings on Windows 10'
+[ms-settings:quietmomentsscheduled]: #settings '```&#10;ms-settings:quietmomentsscheduled&#10;```&#10;Open During these hours page in Settings on Windows 10'
+[ms-settings:recovery]: #settings '```&#10;ms-settings:recovery&#10;```&#10;Open Recovery page in Settings on Windows 10'
+[ms-settings:regionformatting]: #settings '```&#10;ms-settings:regionformatting&#10;```&#10;Open Region page in Settings on Windows 10'
+[ms-settings:regionlanguage]: #settings '```&#10;ms-settings:regionlanguage&#10;```&#10;Open Region & language page in Settings on Windows 10'
+[ms-settings:remotedesktop]: #settings '```&#10;ms-settings:remotedesktop&#10;```&#10;Open Remote Desktop page in Settings on Windows 10'
+[ms-settings:savelocations]: #settings '```&#10;ms-settings:savelocations&#10;```&#10;Open Default Save Locations page in Settings on Windows 10'
+[ms-settings:screenrotation]: #settings '```&#10;ms-settings:screenrotation&#10;```&#10;Open Display page in Settings on Windows 10'
+[ms-settings:signinoptions]: #settings '```&#10;ms-settings:signinoptions&#10;```&#10;Open Sign-in options page in Settings on Windows 10'
+[ms-settings:signinoptions-launchfaceenrollment]: #settings '```&#10;ms-settings:signinoptions-launchfaceenrollment&#10;```&#10;Open Windows Hello setup page in Settings on Windows 10'
+[ms-settings:sound]: #settings '```&#10;ms-settings:sound&#10;```&#10;Open Sound page in Settings on Windows 10'
+[ms-settings:speech]: #settings '```&#10;ms-settings:speech&#10;```&#10;Open Speech page in Settings on Windows 10'
+[ms-settings:speech]: #settings '```&#10;ms-settings:speech&#10;```&#10;Open Speech page in Settings on Windows 10'
+[ms-settings:startupapps]: #settings '```&#10;ms-settings:startupapps&#10;```&#10;Open Startup apps page in Settings on Windows 10'
+[ms-settings:storagepolicies]: #settings '```&#10;ms-settings:storagepolicies&#10;```&#10;Open Storage Sense page in Settings on Windows 10'
+[ms-settings:storagesense]: #settings '```&#10;ms-settings:storagesense&#10;```&#10;Open Storage Sense page in Settings on Windows 10'
+[ms-settings:surfacehub-accounts]: #settings '```&#10;ms-settings:surfacehub-accounts&#10;```&#10;Open Accounts page in Settings on Windows 10'
+[ms-settings:surfacehub-calling]: #settings '```&#10;ms-settings:surfacehub-calling&#10;```&#10;Open Team Conferencing page in Settings on Windows 10'
+[ms-settings:surfacehub-devicemanagenent]: #settings '```&#10;ms-settings:surfacehub-devicemanagenent&#10;```&#10;Open Team device management page in Settings on Windows 10'
+[ms-settings:surfacehub-sessioncleanup]: #settings '```&#10;ms-settings:surfacehub-sessioncleanup&#10;```&#10;Open Session cleanup page in Settings on Windows 10'
+[ms-settings:surfacehub-welcome]: #settings '```&#10;ms-settings:surfacehub-welcome&#10;```&#10;Open Welcome screen page in Settings on Windows 10'
+[ms-settings:sync]: #settings '```&#10;ms-settings:sync&#10;```&#10;Open Sync your settings page in Settings on Windows 10'
+[ms-settings:tabletmode]: #settings '```&#10;ms-settings:tabletmode&#10;```&#10;Open Tablet mode page in Settings on Windows 10'
+[ms-settings:taskbar]: #settings '```&#10;ms-settings:taskbar&#10;```&#10;Open Taskbar page in Settings on Windows 10'
+[ms-settings:themes]: #settings '```&#10;ms-settings:themes&#10;```&#10;Open Themes page in Settings on Windows 10'
+[ms-settings:troubleshoot]: #settings '```&#10;ms-settings:troubleshoot&#10;```&#10;Open Troubleshoot page in Settings on Windows 10'
+[ms-settings:typing]: #settings '```&#10;ms-settings:typing&#10;```&#10;Open Typing page in Settings on Windows 10'
+[ms-settings:usb]: #settings '```&#10;ms-settings:usb&#10;```&#10;Open USB page in Settings on Windows 10'
+[ms-settings:videoplayback]: #settings '```&#10;ms-settings:videoplayback&#10;```&#10;Open Video playback page in Settings on Windows 10'
+[ms-settings:wheel]: #settings '```&#10;ms-settings:wheel&#10;```&#10;Open Wheel page in Settings on Windows 10'
+[ms-settings:windowsdefender]: #settings '```&#10;ms-settings:windowsdefender&#10;```&#10;Open Windows Security page in Settings on Windows 10'
+[ms-settings:windowsinsider]: #settings '```&#10;ms-settings:windowsinsider&#10;```&#10;Open Windows Insider Program page in Settings on Windows 10'
+[ms-settings:windowsupdate]: #settings '```&#10;ms-settings:windowsupdate&#10;```&#10;Open Windows Update page in Settings on Windows 10'
+[ms-settings:workplace]: #settings '```&#10;ms-settings:workplace&#10;```&#10;Open Access work or school page in Settings on Windows 10'
+[ms-settings:yourinfo]: #settings '```&#10;ms-settings:yourinfo&#10;```&#10;Open Your info page in Settings on Windows 10'
 
+
+[`about`][ms-settings:about]
+[`activation`][ms-settings:activation]
+[`apps-volume`][ms-settings:apps-volume]
 [`appsfeatures`][ms-settings:appsfeatures]
-[`batterysaver-settings`][ms-settings:batterysaver-settings]
-[`batterysaver-usagedetails`][ms-settings:batterysaver-usagedetails]
+[`appsforwebsites`][ms-settings:appsforwebsites]
+[`assignedaccess`][ms-settings:assignedaccess]
+[`autoplay`][ms-settings:autoplay]
+[`backup`][ms-settings:backup]
 [`batterysaver`][ms-settings:batterysaver]
 [`bluetooth`][ms-settings:bluetooth]
+[`camera`][ms-settings:camera]
+[`clipboard`][ms-settings:clipboard]
 [`colors`][ms-settings:colors]
 [`connecteddevices`][ms-settings:connecteddevices]
+[`cortana`][ms-settings:cortana]
+[`crossdevice`][ms-settings:crossdevice]
 [`datausage`][ms-settings:datausage]
 [`dateandtime`][ms-settings:dateandtime]
+[`defaultapps`][ms-settings:defaultapps]
+[`delivery-optimization`][ms-settings:delivery-optimization]
 [`developers`][ms-settings:developers]
+[`deviceencryption`][ms-settings:deviceencryption]
+[`devices-touchpad`][ms-settings:devices-touchpad]
 [`display`][ms-settings:display]
-[`easeofaccess-closedcaptioning`][ms-settings:easeofaccess-closedcaptioning]
-[`easeofaccess-highcontrast`][ms-settings:easeofaccess-highcontrast]
-[`easeofaccess-keyboard`][ms-settings:easeofaccess-keyboard]
-[`easeofaccess-magnifier`][ms-settings:easeofaccess-magnifier]
-[`easeofaccess-mouse`][ms-settings:easeofaccess-mouse]
-[`easeofaccess-narrator`][ms-settings:easeofaccess-narrator]
-[`easeofaccess-otheroptions`][ms-settings:easeofaccess-otheroptions]
+[`easeofaccess-display`][ms-settings:easeofaccess-display]
+[`emailandaccounts`][ms-settings:emailandaccounts]
+[`findmydevice`][ms-settings:findmydevice]
+[`fonts`][ms-settings:fonts]
+[`keyboard`][ms-settings:keyboard]
 [`lockscreen`][ms-settings:lockscreen]
 [`maps`][ms-settings:maps]
+[`messaging`][ms-settings:messaging]
+[`mobile-devices`][ms-settings:mobile-devices]
 [`mousetouchpad`][ms-settings:mousetouchpad]
-[`network-airplanemode`][ms-settings:network-airplanemode]
-[`network-cellular`][ms-settings:network-cellular]
-[`network-dialup`][ms-settings:network-dialup]
-[`network-directaccess`][ms-settings:network-directaccess]
-[`network-ethernet`][ms-settings:network-ethernet]
-[`network-mobilehotspot`][ms-settings:network-mobilehotspot]
-[`network-proxy`][ms-settings:network-proxy]
-[`network-vpn`][ms-settings:network-vpn]
+[`multitasking`][ms-settings:multitasking]
+[`network`][ms-settings:network]
 [`network-wifi`][ms-settings:network-wifi]
-[`network-wifisettings`][ms-settings:network-wifisettings]
+[`nfctransactions`][ms-settings:nfctransactions]
+[`nightlight`][ms-settings:nightlight]
 [`notifications`][ms-settings:notifications]
 [`optionalfeatures`][ms-settings:optionalfeatures]
 [`otherusers`][ms-settings:otherusers]
+[`pen`][ms-settings:pen]
+[`personalization`][ms-settings:personalization]
 [`personalization-background`][ms-settings:personalization-background]
 [`personalization-colors`][ms-settings:personalization-colors]
 [`personalization-start`][ms-settings:personalization-start]
-[`personalization`][ms-settings:personalization]
+[`personalization-start-places`][ms-settings:personalization-start-places]
+[`phone`][ms-settings:phone]
 [`powersleep`][ms-settings:powersleep]
-[`privacy-accountinfo`][ms-settings:privacy-accountinfo]
-[`privacy-calendar`][ms-settings:privacy-calendar]
-[`privacy-contacts`][ms-settings:privacy-contacts]
-[`privacy-customdevices`][ms-settings:privacy-customdevices]
-[`privacy-feedback`][ms-settings:privacy-feedback]
-[`privacy-location`][ms-settings:privacy-location]
-[`privacy-messaging`][ms-settings:privacy-messaging]
-[`privacy-microphone`][ms-settings:privacy-microphone]
-[`privacy-motion`][ms-settings:privacy-motion]
-[`privacy-radios`][ms-settings:privacy-radios]
-[`privacy-speechtyping`][ms-settings:privacy-speechtyping]
-[`privacy-webcam`][ms-settings:privacy-webcam]
+[`printers`][ms-settings:printers]
 [`privacy`][ms-settings:privacy]
+[`project`][ms-settings:project]
 [`proximity`][ms-settings:proximity]
+[`quiethours`][ms-settings:quiethours]
+[`quietmomentsgame`][ms-settings:quietmomentsgame]
+[`quietmomentspresentation`][ms-settings:quietmomentspresentation]
+[`quietmomentsscheduled`][ms-settings:quietmomentsscheduled]
+[`recovery`][ms-settings:recovery]
+[`regionformatting`][ms-settings:regionformatting]
 [`regionlanguage`][ms-settings:regionlanguage]
+[`remotedesktop`][ms-settings:remotedesktop]
+[`savelocations`][ms-settings:savelocations]
 [`screenrotation`][ms-settings:screenrotation]
 [`signinoptions`][ms-settings:signinoptions]
+[`signinoptions-launchfaceenrollment`][ms-settings:signinoptions-launchfaceenrollment]
+[`sound`][ms-settings:sound]
 [`speech`][ms-settings:speech]
+[`speech`][ms-settings:speech]
+[`startupapps`][ms-settings:startupapps]
+[`storagepolicies`][ms-settings:storagepolicies]
 [`storagesense`][ms-settings:storagesense]
+[`surfacehub-accounts`][ms-settings:surfacehub-accounts]
+[`surfacehub-calling`][ms-settings:surfacehub-calling]
+[`surfacehub-devicemanagenent`][ms-settings:surfacehub-devicemanagenent]
+[`surfacehub-sessioncleanup`][ms-settings:surfacehub-sessioncleanup]
+[`surfacehub-welcome`][ms-settings:surfacehub-welcome]
+[`sync`][ms-settings:sync]
 [`tabletmode`][ms-settings:tabletmode]
+[`taskbar`][ms-settings:taskbar]
 [`themes`][ms-settings:themes]
+[`troubleshoot`][ms-settings:troubleshoot]
 [`typing`][ms-settings:typing]
+[`usb`][ms-settings:usb]
+[`videoplayback`][ms-settings:videoplayback]
+[`wheel`][ms-settings:wheel]
+[`windowsdefender`][ms-settings:windowsdefender]
+[`windowsinsider`][ms-settings:windowsinsider]
 [`windowsupdate`][ms-settings:windowsupdate]
 [`workplace`][ms-settings:workplace]
+[`yourinfo`][ms-settings:yourinfo]
 
 ###### `sfc`
 <!-- `sfc` commands -->

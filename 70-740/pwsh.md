@@ -245,6 +245,7 @@
 - [New domain controller](#new-domain-controller)
 - [Set new Registry keys](#registry)
 - [Create a new VHDX file, mount and initialize it, and create and format a partition within it](#vhdx-file)
+- [Restart Wi-Fi adapter](#restart-wi-fi-adapter)
 
 ###### Cmdlet verbs
 [`a`  ](#cmdlet-verbs  "```&#10;PS C:\> Add-&#10;```") [`ap`](# "`Approve-`&#10;Confirms or agrees to the status of a resource or process.") 
@@ -344,9 +345,7 @@
 
 ###### Cmdlets
 <code>Alias&nbsp;[ep][Export-Alias]&nbsp;[g][Get-Alias]&nbsp;[n][New-Alias]&nbsp;[s][Set-Alias]</code> 
-
-
-<code>Archive&nbsp;[cm][Compress-Archive]&nbsp;[en][Expand-Archive]</code> 
+<code>[Archive](#archive)&nbsp;[cm][Compress-Archive]&nbsp;[en][Expand-Archive]</code> 
 <code>ChildItem&nbsp;[g][Get-ChildItem]</code> 
 <code>Clipboard&nbsp;[g][Get-Clipboard]&nbsp;[s][Set-Clipboard]</code> 
 <code>Computer&nbsp;[a][Add-Computer]&nbsp;[rn][Rename-Computer]&nbsp;[rt][Restart-Computer]&nbsp;[sp][Stop-Computer]</code> 
@@ -379,7 +378,7 @@
 <code>[Item](#item)&nbsp;[cp][Copy-Item]&nbsp;[g][Get-Item]&nbsp;[n][New-Item]&nbsp;[r][Remove-Item] </code>
 <code>[NanoServerImage](#nanoserverimage)&nbsp;[n][New-NanoServerImage] [e][Edit-NanoServerImage]</code> 
 
-[**AD**](#ad)
+[**AD**](#active-directory)
 <code>Account&nbsp;[sr][Search-ADAccount]&nbsp;[uk][Unlock-ADAccount]&nbsp;</code> 
 <code>AccountPassword&nbsp;[s][Set-ADAccountPassword]&nbsp;</code> 
 <code>Object&nbsp;[s][Set-ADObject]&nbsp;</code> 
@@ -674,7 +673,8 @@ $Values = do { 'eat me!' } while ($false) # => @('eat me!')
 ```
 
 ## Cmdlets
-##### `AD`
+#### Active Directory
+##### `ADUser`
 ###### `New-ADUser`
 [Jones][Jones]
 ```powershell
@@ -688,17 +688,23 @@ Users are disabled by default, so you must enable them by setting the `-Enabled`
 ```powershell
 New-ADUser -Name "Marty McFly" -Enabled $true -GivenName "Martin" -Surname "McFly" -AccountPassword ( ConvertTo-SecureString "P@ssw0rd!" -AsPlainText -Force) 
 ```
+##### `ADAccount`
 ###### `Search-ADAccount`
+[Search-ADAccount -AccountDisabled]: #Search-ADAccount '```&#10;PS C:\> Search-ADAccount -AccountDisabledAccountDisabled&#10;```&#10;Filter disabled accounts'
+[Search-ADAccount -AccountExpired]: #Search-ADAccount '```&#10;PS C:\> Search-ADAccount -AccountExpiredAccountExpired&#10;```&#10;Filter expired accounts'
+[Search-ADAccount -ComputersOnly]: #Search-ADAccount '```&#10;PS C:\> Search-ADAccount -ComputersOnlyComputersOnly&#10;```&#10;Filter computer accounts'
+[Search-ADAccount -LockedOut]: #Search-ADAccount '```&#10;PS C:\> Search-ADAccount -LockedOutLockedOut&#10;```&#10;Filter locked out accounts'
+[Search-ADAccount -PasswordExpired]: #Search-ADAccount '```&#10;PS C:\> Search-ADAccount -PasswordExpiredPasswordExpired&#10;```&#10;Filter accounts with expired passwords'
+[Search-ADAccount -PasswordNeverExpires]: #Search-ADAccount '```&#10;PS C:\> Search-ADAccount -PasswordNeverExpiresPasswordNeverExpires&#10;```&#10;Filter accounts with passwords that will never expire'
+[Search-ADAccount -UsersOnly]: #Search-ADAccount '```&#10;PS C:\> Search-ADAccount -UsersOnlyUsersOnly&#10;```&#10;Filter users'
 
-Option                        | Effect
-:---                          | :---
-`-AccountDisabled`            | filter disabled accounts
-`-AccountExpired`             | filter expired accounts
-`-ComputersOnly`              | filter computer accounts
-`-LockedOut`                  | filter locked out accounts
-`-PasswordExpired`            | filter accounts with expired passwords
-`-PasswordNeverExpires`       | filter accounts with passwords that will never expire
-`-UsersOnly`                  | filter users
+[`AccountDisabled`][Search-ADAccount -AccountDisabled]
+[`AccountExpired`][Search-ADAccount -AccountExpired]
+[`ComputersOnly`][Search-ADAccount -ComputersOnly]
+[`LockedOut`][Search-ADAccount -LockedOut]
+[`PasswordExpired`][Search-ADAccount -PasswordExpired]
+[`PasswordNeverExpires`][Search-ADAccount -PasswordNeverExpires]
+[`UsersOnly`][Search-ADAccount -UsersOnly]
 
 Display accounts that have been inactive for the last 90 days
 ```powershell
@@ -707,23 +713,46 @@ Search-ADAccount -AccountInactive -TimeSpan 90.00:00:00
 Display accounts expiring on a particular date
 ```powershell
 Search-ADAccount -AccountExpiring -DateTime "3/18/2019"
-``` 
+```
+###### `Unlock-ADAccount`
+Unlock account
+```powershell
+Unlock-ADAccount -identity wbryan
+```
 ###### `Set-ADAccountPassword`
 Reset password
 ```powershell
 Set-ADAccountPassword -Identity MBentley -Reset -NewPassword (ConvertTo-SecureString -AsPlainText "What is 255.255.255.240" -Force)
 ```
+##### `ADObject`
 ###### `Set-ADObject`
 Protect users in a specified OU from accidental deletion
 ```powershell
 Get-ADUser -Filter * -SearchBase "OU=RoadCrew,OU=office365,DC=officeprodemoco,DC=com" ` | 
 Set-ADObject -ProtectedFromAccidentalDeletion $true
 ```
+##### `ADOrganizationalUnit`
+###### `Get-ADOrganizationalUnit`
+Display OUs, confirming deletion has taken place
+```powershell
+Get-ADOrganizationalUnit  -filter * | ft
+```
+###### `New-ADOrganizationalUnit`
+Create a new Organizational Unit
+```powershell
+New-ADOrganizationalUnit -Name GNV -Credential officeprodemoco\joey
+```
+###### `Remove-ADOrganizationalUnit`
+Remove an OU
+```powershell
+Remove-ADOrganizationalUnit -Identity "OU=GNV, DC=officeprodemoco, DC=onmicrosoft, DC=com" -confirm:$False
+```
 ###### `Set-ADOrganizationalUnit`
 Remove accidental deletion protection
 ```powershell
 Set-ADOrganizationalUnit -Name GNV -ProtectedFromAccidentalDeletion $False -Identity "OU=GNV, DC=officeprodemoco, DC=onmicrosoft, DC=com" 
 ```
+##### `ADDSForest`
 ###### `Install-ADDSForest`
 Add a new forest
 ```powershell
@@ -731,6 +760,7 @@ Add a new forest
 Install-ADDSForest -DomainName example.com -InstallDNS
 ```
 If the system fails to automatically create a NetBIOS name, it can be manually specified with the named parameter `-DomainNetbiosName`
+##### `ADDSDomain`
 ###### `Install-ADDSDomain`
 Add a new domain
 `Install-ADDSDomain` only requires the following two parameters:
@@ -742,32 +772,32 @@ Install-ADDSDomain -NewDomainName hq -ParentDomainName pythagoras.net
 ```powershell
 Install-ADDSDomain -Credential (Get-Credential CORP\EnterpriseAdmin1) -NewDomainName child -ParentDomainName corp.contoso.com -InstallDNS -CreateDNSDelegation -DomainMode Win2003 -ReplicationSourceDC DC1.corp.contoso.com -SiteName Houston -DatabasePath "D:\NTDS" -SYSVOLPath "D:\SYSVOL" -LogPath "E:\Logs" -NoRebootOnCompletion
 ```
-###### `New-ADComputer`
-###### `New-ADOrganizationalUnit`
-Create a new Organizational Unit
+###### `Uninstall-ADDSDomainController`
+Demote a domain controller (consummate with uninstalling the AD Domain Controller role)
 ```powershell
-New-ADOrganizationalUnit -Name GNV -Credential officeprodemoco\joey
+# When removing the last domain controller of a domain, additional options need to be specified that result in the obliteration of the domain, its forest, and associated data.
+Uninstall-ADDSDomainController -LocalAdministratorPassword (ConvertTo-SecureString $pw -AsPlainText -Force) -LastDomainControllerInDomain -RemoveApplicationPartitions
 ```
+##### `ADComputer`
+###### `New-ADComputer`
+##### `ADPrincipalGroupMembership`
 ###### `Add-ADPrincipalGroupMembership`
 ```powershell
 Add-ADPrincipalGroupMembership -Identity "CN=SysAdmin,CN=Users,DC=corp,DC=packtlab,DC=com" -MemberOf "CN=Enterprise Admins,CN=Users,DC=corp,DC=packtlab,DC=com","CN=Domain Admins,CN=Users,DC=corp,DC=packtlab,DC=com"
 ```
+##### `ADForest`
 ###### `Get-ADForest`
 Display installed forests
 ```powershell
 Get-ADForest | select -ExpandProperty domains
 ```
-###### `Get-ADOrganizationalUnit`
-Display OUs, confirming deletion has taken place
-```powershell
-Get-ADOrganizationalUnit  -filter * | ft
-```
 ###### `Get-ADPrincipalGroupMembership`
 <sup>[Jones][Jones]</sup>
+
 ```powershell
 Get-ADPrincipalGroupMembership sysadmin
 ```
-
+##### `ADUser`
 ###### `Get-ADUser`
 Display information for Active Directory user `mike`
 ```powershell
@@ -782,22 +812,15 @@ Display information on user, confirming successful creation
 ```powershell
 Get-ADUser "Marty McFly" | Select-Object Name
 ```
-###### `Uninstall-ADDSDomainController`
-Demote a domain controller (consummate with uninstalling the AD Domain Controller role)
-```powershell
-# When removing the last domain controller of a domain, additional options need to be specified that result in the obliteration of the domain, its forest, and associated data.
-Uninstall-ADDSDomainController -LocalAdministratorPassword (ConvertTo-SecureString $pw -AsPlainText -Force) -LastDomainControllerInDomain -RemoveApplicationPartitions
-```
-###### `Unlock-ADAccount`
-Unlock account
-```powershell
-Unlock-ADAccount -identity wbryan
-```
-###### `Remove-ADOrganizationalUnit`
-Remove an OU
-```powershell
-Remove-ADOrganizationalUnit -Identity "OU=GNV, DC=officeprodemoco, DC=onmicrosoft, DC=com" -confirm:$False
-```
+##### `DistributionGroupMember`
+###### `Add-DistributionGroupMember`
+[Add-DistributionGroupMember -Identity]: #Add-DistributionGroupMember '```&#10;PS C:\> Add-DistributionGroupMember -IdentityIdentity&#10;```&#10;Specifies the group that you want to modify. You can use any value that uniquely identifies the group (including Name, Alias, Distinguished name, Canonical name, Email address, or GUID).'
+[Add-DistributionGroupMember -Member]: #Add-DistributionGroupMember '```&#10;PS C:\> Add-DistributionGroupMember -MemberMember&#10;```&#10;Specifies the recipient that you want to add to the group. A member can be any mail-enabled recipient in your organization. You can use any value that uniquely identifies the recipient (including Name, Alias, Distinguished name, Canonical name, Email address, or GUID).'
+
+[`Identity`][Add-DistributionGroupMember -Identity]
+[`Member`][Add-DistributionGroupMember -Member]
+
+#### Commands and Powershell environment
 ##### `Alias`
 ###### `Export-Alias`
 Export session aliases to a ".ps1" file
@@ -823,15 +846,34 @@ Edit an existing alias
 ```powershell
 Set-Alias ip Get-NetAdapter
 ```
+##### `Clipboard`
+###### `Get-Clipboard`
+Interpret items in clipboard as files
+```powershell
+Get-Clipboard -Format FileDropList
+```
+Retrieve various properties of an image in clipboard
+```powershell
+Get-Clipboard -Format Image
+```
+###### `Set-Clipboard`
+Copy text to clipboard
+```powershell
+Write-Output 'Hello' | Set-Clipboard
+```
+With `Append` switch parameter, items can be added without clearing the clipboard:
+```powershell
+Write-Output 'Hello' | Set-Clipboard -Append
+```
 ##### `Computer`
 ###### `Add-Computer`
-Join a computer to a domain [<sup>Zacker: 20</sup>][Zacker]
+[Add-Computer -NewName]: #add-computer '```&#10;PS C:\> Add-Computer -NewNameNewName&#10;```&#10;Specify a computer name that you want to assign to the computer&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 20'
+[Add-Computer -DomainName]: #Add-Computer '```&#10;PS C:\> Add-Computer -DomainNameDomainName&#10;```&#10;Specify the name of the domain that you want the computer to join&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 20'
+[Add-Computer -Credential]: #Add-Computer '```&#10;PS C:\> Add-Computer -CredentialCredential&#10;```&#10;Specify the domain and account names for a domain user with domain join privileges&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 20'
 
-Option  | Description
----     | ---
-`Credential`
-`DomainName`
-`NewName`
+[`NewName`][Add-Computer -NewName]
+[`DomainName`][Add-Computer -DomainName]
+[`Credential`][Add-Computer -Credential]
 
 Rename a computer and join it to a domain
 ```powershell
@@ -855,34 +897,421 @@ Check "Organization" in Windows about page, or navigate to Control PAnel > Syste
 Rename computer
 ###### `Restart-Computer`
 Restart computer
-##### `Dhcp`
-###### `Add-DhcpServerv4Scope`
-<sup>[Jones][Jones]</sup>
+##### `ChildItem`
+###### `Get-ChildItem`
+##### `Command`
+###### `Get-Command`
+###### `Invoke-Command`
+Execute the commands in the block on the machines specified
 ```powershell
-Add-DhcpServerv4Scope -Name "PacktLabNet" -StartRange 10.0.0.50 -EndRange 10.0.0.100 -SubnetMask 255.255.255.0
+Invoke-Command -ComputerName core01,core02 -Scriptblock {ipconfig /all}
 ```
-###### `Add-DhcpServerInDC`
-<sup>[Jones][Jones]</sup>
+##### `ComputerInfo`
+###### `Get-ComputerInfo`
+Equivalent to output of [`HOSTNAME.exe`](README.md#hostname) (ref [Task](#computer-information))
 ```powershell
-Add-DhcpServerInDC -DnsName dc.corp.packtlab.com
+Get-ComputerInfo -Property CsName
+gin.CsName
 ```
-###### `Set-DhcpServerv4OptionValue`
-<sup>[Jones][Jones]</sup>
-```powershell
-Set-DhcpServerv4OptionValue -DnsDomain corp.packtlab.com -DnsServer 10.0.0.1
-```
-###### `Add-DistributionGroupMember`
+##### `DscConfiguration`
+###### `Start-DscConfiguration`
+Used to erect a **push architecture** in [DSC](dsc.md). <sup>[Zacker][Zacker]: 27</sup>
 
-Parameter | Effect
----       | ---
-`Identity`| Specifies the group that you want to modify. You can use any value that uniquely identifies the group (including Name, Alias, Distinguished name, Canonical name, Email address, or GUID).
-`Member`  | Specifies the recipient that you want to add to the group. A member can be any mail-enabled recipient in your organization. You can use any value that uniquely identifies the recipient (including Name, Alias, Distinguished name, Canonical name, Email address, or GUID).
+Option  | Description
+---     | ---
+`-Path`
+##### `ExecutionPolicy
+###### `Set-ExecutionPolicy`
+##### `Help`
+###### `Get-Help`
+[Get-Help -Detailed]:           #Get-Help                      '```&#10;PS C:\> Get-Help -Detailed&#10;```&#10;Display detailed help for a command'
+[Get-Help -Examples]:           #Get-Help                      '```&#10;PS C:\> Get-Help -Examples&#10;```&#10;Display usage examples'
+[Get-Help -Online]:             #Get-Help                      '```&#10;PS C:\> Get-Help -Online&#10;```&#10;Navigate to online help page for a command.'
+[Get-Help -ShowWindow]:         #Get-Help                      '```&#10;PS C:\> Get-Help -ShowWindow&#10;```&#10;Display help output in a window.'
+[Get-Help -Full]:               #Get-Help                      '```&#10;PS C:\> Get-Help -Full&#10;```&#10;Display entire help file for a command'
+
+[`Detailed`][Get-Help -Detailed]
+[`Examples`][Get-Help -Examples]
+[`Full`][Get-Help -Full]
+[`Online`][Get-Help -Online]
+[`ShowWindow`][Get-Help -ShowWindow]
+###### `Update-Help`
+Download help files
+##### `Host`
+###### `Out-Host`
+###### `Read-Host`
+###### `Write-Host`
+##### `Location`
+###### `Set-Location`
+##### `Member`
+###### `Get-Member`
+##### `Module`
+###### `Get-Module`
+###### `Import-Module`
+Import `SmbShare` module
+```powershell
+Import-Module SmbShare
+```
+###### `Install-Module`
+Install the `Az` module
+```powershell
+Install-Module -Name Az -AllowClobber
+```
+##### `Output`
+###### `Write-Output`
+Copy text to clipboard
+```powershell
+Write-Output 'Hello' | Set-Clipboard
+```
+Create a text file <sup>[Jones][Jones]</sup>
+```powershell
+Write-Output "This is a test network file." -Path | Out-File C:\networkfiles\test.txt
+```
+##### `PSReadlineOption`
+###### `Get-PSReadlineOption`
+Display options available in the module
+```powershell
+Get-PSReadlineOption
+```
+###### `Set-PSReadlineOption`
+Set history to only save unique commands
+```powershell
+Set-PSReadlineOption -HistoryNoDuplicates:$true
+```
+Enable bash-like ambiguous command completion, where tab brings up a menu of matches
+```powershell
+Set-PSReadlineOption -EditMode Emacs
+```
+Change `<Tab>` behavior back to default for PowerShell
+```powershell
+Set-PSReadlineOption -EditMode Windows
+```
+##### `PSRemoting`
+###### `Enable-PSRemoting`
+##### `PSSession`
+###### `Disconnect-PSSession`
+Terminate a remote PowerShell session begun with [`New-PSSession`][New-PSSession] <sup>[Zacker][Zacker]: 22</sup>
+###### `Enter-PSSession`
+Interact with the specified PowerShell session
+```powershell
+Enter-PSSession -id 1
+```
+Start and enter a new PS session to specified computer with provided credentials. This will change the prompt to show the name of the remote machine in brackets.
+```powershell
+Enter-PSSession -ComputerName o365-dc01 -Credential officeprodemoco\joey
+```
+###### `Exit-PSSession`
+Exit a remote PowerShell session <sup>[Zacker][Zacker]: 22</sup>
+End the PowerShell session with the specified computer
+```powershell
+Exit-PSSession -ComputerName demodc
+```
+###### `Get-PSSession`
+Display PowerShell sessions
+```powershell
+Get-PSSession
+```
+###### `New-PSSession`
+Option  | Description
+---     | ---
+`-ComputerName`
+
+Manage a Windows Server remotely <sup>[Zacker][Zacker]: 21</sup>
+```powershell
+New-PSSession -ComputerName rtmsvrd
+```
+Start a new PowerShell session, connecting to the specified computer
+```powershell
+New-PSSession -ComputerName core02
+```
+##### `PSSnapin`
+###### `Add-PSSnapin`
+##### `Type`
 ###### `Add-Type`
 Generate a random password 20 characters long <sup>[adamtheautomator.com][https://adamtheautomator.com/powershell-random-password/]</sup>
 ```powershell
 Add-Type -AssemblyName 'System.Web'
 [System.Web.Security.Membership]::GeneratePassword(20, 3)
 ```
+#### Networking
+##### `Dhcp`
+###### `Add-DhcpServerv4Scope`
+<sup>[Jones][Jones]</sup>
+
+```powershell
+Add-DhcpServerv4Scope -Name "PacktLabNet" -StartRange 10.0.0.50 -EndRange 10.0.0.100 -SubnetMask 255.255.255.0
+```
+###### `Add-DhcpServerInDC`
+<sup>[Jones][Jones]</sup>
+
+```powershell
+Add-DhcpServerInDC -DnsName dc.corp.packtlab.com
+```
+###### `Set-DhcpServerv4OptionValue`
+<sup>[Jones][Jones]</sup>
+
+```powershell
+Set-DhcpServerv4OptionValue -DnsDomain corp.packtlab.com -DnsServer 10.0.0.1
+```
+##### `DnsClientServerAddress`
+###### `Set-DnsClientServerAddress`
+Configure DNS server addresses <sup>[Zacker][Zacker]</sup>
+
+Parameter           | Description
+---                 | ---
+`-InterfaceAlias`   |
+`-InterfaceIndex`   |
+`-ServerAddresses`  |
+
+Configure DNS server address for a DC on a new corporate intranet <sup>[Jones][Jones]</sup>
+```powershell
+Set-DnsClientServerAddress -InterfaceAlias "Ethernet" -ServerAddresses 127.0.0.1
+```
+Configure DNS server address for an application server on a new corporate intranet <sup>[Jones][Jones]</sup>
+```powershell
+Set-DnsClientServerAddress -InterfaceAlias "Ethernet" -ServerAddresses 10.0.0.1
+```
+Configure DNS server addresses <sup>[Zacker][Zacker]</sup>
+```powershell
+Set-DnsClientServerAddress -InterfaceIndex 6 -ServerAddresses ("192.168.0.1", "192.168.0.2")
+```
+##### `DnsName`
+###### `Resolve-DnsName`
+```powershell
+Resolve-DNSName -Name secure.practicelabs.com.trustanchors -Type dnskey -Server plabdm01
+```
+##### `NetAdapter`
+###### `Get-NetAdapter`
+Display available network interfaces <sup>[Zacker][Zacker]: 19</sup>
+##### `NetFirewallRule`
+###### `Get-NetFirewallRule`
+Display all firewall rules
+```powershell
+Get-NetFirewallRule
+```
+Display active firewall rules for inbound connections
+```powershell
+Get-NetFirewallRule -Enabled True -Direction Inbound
+```
+Display programs associated with firewall rules
+```powershell
+Get-NetFirewallRule | %{$_.Name; $_ | Get-NetFirewallApplicationFilter}
+```
+###### `New-NetFirewallRule`
+Set a new firewall rule for incoming WinRM connections
+```powershell
+New-NetFirewallRule -DisplayName "WinRMHTTP" -Direction Inbound -LocalPort 5985 -Protocol TCP -Action Allow
+```
+###### `Set-NetFirewallRule`
+Set firewall rule for COM+ Network Access (DCOM-In)
+```powershell
+Set-NetFirewallRule -name COMPlusNetworkAccess-DCOM-In -Enabled True
+```
+Set firewall rule for Remote Event Log Management (NP-In)
+```powershell
+Set-NetFirewallRule -name RemoteEventLogSvc-In-TCP -Enabled True
+```
+Set firewall rule for Remote Event Log Management (RPC)
+```powershell
+Set-NetFirewallRule -name RemoteEventLogSvc-NP-In-TCP -Enabled True
+```
+Set firewall rule for Remote Event Log Management (RPC-EPMAP)
+```powershell
+Set-NetFirewallRule -name RemoteEventLogSvc-RPCSS-TCP -Enabled True
+```
+##### `NetIpAddress`
+###### `New-NetIpAddress`
+[New-NetIpAddress -DefaultGateway]: #New-NetIpAddress '```&#10;PS C:\> New-NetIpAddress -DefaultGateway&#10;```&#10;Specify IP address of local router that computer should use to access other networks'
+[New-NetIpAddress -InterfaceIndex]: #New-NetIpAddress '```&#10;PS C:\> New-NetIpAddress -InterfaceIndex&#10;```&#10;Specify adapter to be configured using interface numbers as displayed by `Get-NetAdapter`'
+[New-NetIpAddress -IpAddress]: #New-NetIpAddress '```&#10;PS C:\> New-NetIpAddress -IpAddress&#10;```&#10;Specify IP address to be assigned to adapter'
+[New-NetIpAddress -PrefixLength]: #New-NetIpAddress '```&#10;PS C:\> New-NetIpAddress -PrefixLength&#10;```&#10;Specify subnet mask value'
+
+[`DefaultGateway`][New-NetIpAddress -DefaultGateway]
+[`InterfaceIndex`][New-NetIpAddress -InterfaceIndex]
+[`IpAddress`][New-NetIpAddress -IpAddress]
+[`PrefixLength`][New-NetIpAddress -PrefixLength]
+
+Manually configure network interface, if a DHCP server is unavailable <sup>[Zacker][Zacker]: 19</sup>
+```powershell
+New-NetIPAddress 10.0.0.3 -InterfaceAlias "Ethernet' -PrefixLength 24
+```
+Configure the Domain Controller in a new corporate intranet <sup>[Jones][Jones]</sup>
+```powershell
+New-NetIPAddress 10.0.0.1 -InterfaceAlias "Ethernet" -PrefixLength 24
+```
+Configure the application server in a new corporate intranet <sup>[Jones][Jones]</sup>
+```powershell
+New-NetIpAddress 10.0.0.3 -InterfaceAlias "Ethernet" -PrefixLength 24
+```
+Configure a network adapter 
+```powershell
+New-NetIpAddress -InterfaceIndex 6 -IpAddress 192.168.0.200 -PrefixLength 24 -DefaultGateway 192.168.0.1
+```
+##### `WebRequest`
+###### `Invoke-WebRequest`
+Download a file over HTTP/HTTPS
+```powershell
+Invoke-WebRequest -Uri http://example.com/path/to/file -OutFile \\path\to\local\file
+```
+Resume a partial download
+```powershell
+Invoke-WebRequest -Uri http://example.com/path/to/file -Resume -Outfile \\path\to\local\file
+```
+Transfer a file over FTP/SFTP
+```powershell
+Invoke-WebRequest ftp://ftp.example.com/file -Outfile C:\path\to\file -Credential ftpuseraccount
+```
+Resolve shortened URLs
+```powershell
+$Uri = 'short-url/extension' 
+$Web = Invoke-WebRequest -Uri 
+$Uri -UseBasicParsing  $Web.BaseResponse.ResponseUri.AbsoluteUri
+```
+Scrape links from a website
+```powershell
+(Invoke-WebRequest -Uri "https://techrepublic.com").Links.Href
+```
+Request data from a website impersonating a browser
+```powershell
+Invoke-WebRequest -Uri http://microsoft.com -UserAgent ([Microsoft.PowerShell.Commands.PSUserAgent]::Chrome)
+```
+#### Disks
+##### `Partition`
+###### `Get-Partition`
+Display a list of existing partitions, their drive letters, and the disk they are associated with <sup>[sumtips.com][https://sumtips.com/tips-n-tricks/manage-disk-partitions-with-windows-powershell/]</sup>
+```powershell
+Get-Disk | Get-Partition
+```
+###### `New-Partition`
+Use all available size for a new partition <sup>[sumtips.com][https://sumtips.com/tips-n-tricks/manage-disk-partitions-with-windows-powershell/]</sup>
+```powershell
+New-Partition -DiskNumber 1 -UseMaximumSize
+```
+Automatically assign a drive letter
+```powershell
+New-Partition -DiskNumber 1 -UseMaximumSize -AssignDriveLetter
+```
+###### `Remove-Partition`
+Remove a partition <sup>[sumtips.com][https://sumtips.com/tips-n-tricks/manage-disk-partitions-with-windows-powershell/]</sup>
+```powershell
+Remove-Partition -DiskNumber 1 -PartitionNumber 1
+```
+Remove a partition without confirmation
+```powershell
+Remove-Partition -DiskNumber 1 -PartitionNumber 1 -Confirm:$false
+```
+##### `Volume`
+###### `Format-Volume`
+Full format of specified drive <sup>[sumtips.com][https://sumtips.com/tips-n-tricks/manage-disk-partitions-with-windows-powershell/]</sup>
+```powershell
+Format-Volume -DriveLetter S -FileSystem FAT32 -NewFileSystemLabel SumTips -Full
+```
+##### `Disk`
+###### `Get-Disk`
+Display a list of existing partitions, their drive letters, and the disk they are associated with <sup>[sumtips.com][https://sumtips.com/tips-n-tricks/manage-disk-partitions-with-windows-powershell/]</sup>
+```powershell
+Get-Disk | Get-Partition
+```
+#### Files
+##### `Archive`
+###### `Compress-Archive`
+###### `Expand-Archive`
+Decompress archives
+```powershell
+Expand-Archive
+```
+##### `CliXml`
+###### `Export-CliXml`
+###### `Import-CliXml`
+##### `Content`
+###### `Get-Content`
+Make a PowerShell object from a JSON file
+```powershell
+Get-Content -Path file.json | ConvertFrom-Json
+```
+##### `Csv`
+###### `Export-Csv`
+###### `Import-Csv`
+Add a CSV full of users
+```powershell
+Import-Csv users.csv | foreach { New-ADUser -SamAccountName $_.SAM -GivenName $_.Last -DisplayName $_.DisplayName -Name $_.Name -Description $_.Description -Enabled $True -AccountPassword (ConvertToSecureString $_.Password -AsPlainText -Force) }
+```
+##### `Item`
+###### `Get-Item
+###### `New-Item`
+[New-Item &#84;]: #New-Item '```&#10;PS C:\> New-Item Type&#10;PS C:\> New-Item -ItemType&#10;```&#10;&#10;Specify the provider-specified type of the new item; values depend on the context.'
+
+`Name`
+[`Type`][New-Item &#84;]
+`Value`
+
+Create a folder
+```powershell
+New-Item -ItemType "directory" Folder
+ni -Type "directory" Folder
+```
+###### `Remove-Item`
+Clear `%temp%` folder, suppressing errors
+```powershell
+ri -r $Env:temp -ea 0
+Remove-Item -Recurse $Env:temp -ErrorAction 'silentlycontinue'
+```
+Remove Microsoft Office identities from Registry
+```powershell
+Remove-Item HKCU:\Software\Microsoft\Office\16.0\Common\Identity\Identities\*
+```
+###### `Set-Item`
+Add an IP address to the Trusted Hosts list, bypassing the use of Kerberos to authenticate the session <sup>[Zacker][Zacker]: 56</sup>
+```powershell
+Set-Item wsman:\localhost\client\trustedhosts "192.168.10.41"
+```
+##### `Null`
+###### `Out-Null`
+#### Hyper-V
+##### `VHD`
+###### `Mount-VHD`
+- [VHDX file](#vhdx-file)
+
+###### `New-VHD`
+- [VHDX file](#vhdx-file)
+##### `VM`
+Install Hyper-V Powershell module <sup>[Zacker][Zacker]: 90</sup>
+```powershell
+Install-WindowsFeature -Name hyper-v-powershell
+```
+
+###### `Set-VMFirmware`
+Enable secure boot on Generation 2 Linux VMs <sup>[IMWS][IMWS]</sup>
+```powershell
+Set-VMFirmware vmname -SecureBootTemplate MicrosoftUEFICertificateAuthority
+```
+###### `New-VM`
+Create a Nano Server VM from an image file <sup>[Zacker][Zacker]: 47</sup>
+```powershell
+New-VM -Name "nano2" -Generation 2 -MemoryStartupBytes 1GB -VHDPath "F:\hyper-v\virtual hard disks\nano2.vhdx"
+```
+###### `New-VMSwitch`
+Turn on NAT on the nested Hyper-V VM
+```powershell
+New-VMSwitch -name VMNAT -SwitchType Internal
+New-NetNAT -Name LocalNAT -InternalIPInterfaceAddressPrefix "192.168.100.0/24"
+```
+###### `Set-VMMemory`
+Disable dynamic memory on a virtual host (nested virtualization)
+```powershell
+Set-VMMemory -VMName SRV01 -DynamicMemoryEnabled $false
+```
+###### `Set-VMNetworkAdapter`
+Turn on MAC address spoofing on a virtual host (nested virtualization)
+```powershell
+Set-VMNetworkAdapter -VMName SVR01 -Name "NetworkAdapter" -MACAddressSpoofing On
+```
+###### `Set-VMProcessor`
+Configure 2 virtual processors on a virtual host (nested virtualization)
+```powershell
+Set-VMProcessor -VMName SVR01 -Count 2
+```
+#### Windows objects
 ##### `NanoServerImage`
 Options for configuring a network adapter
 
@@ -941,228 +1370,43 @@ Create a new Nano Server image with a static IP <sup>[Zacker][Zacker]: 52</sup>
 ```powershell
 New-NanoServerImage -DeploymentType Guest -Edition Standard -MediaPath D:\ -TargetPath C:\temp\nanoserver4.vhdx -ComputerName nano4 -Domain contoso.com -InterfaceNameorIndex ethernet -Ipv4Address 192.168.10.41 -Ipv4SubnetMask 255.255.255.0 -Ipv4Gateway 192.168.10.1 -Ipv4Dns 192.168.10.2
 ```
-##### `PSReadlineOption`
-###### `Get-PSReadlineOption`
-Display options available in the module
+##### `Service`
+###### `Get-Service`
+Display status of &lt;WinRM&gt; service
 ```powershell
-Get-PSReadlineOption
+Get-Service WinRM
+gsv winrm
 ```
-###### `Set-PSReadlineOption`
-Set history to only save unique commands
+###### `Set-Service`
 ```powershell
-Set-PSReadlineOption -HistoryNoDuplicates:$true
+Set-Service WtcOtg -StartupType Disabled
 ```
-Enable bash-like ambiguous command completion, where tab brings up a menu of matches
+###### `Start-Service`
+Start the `WinRM` service
 ```powershell
-Set-PSReadlineOption -EditMode Emacs
+sasv winrm
 ```
-Change `<Tab>` behavior back to default for PowerShell
+###### `Stop-Service`
+Stop the WebTitan service
 ```powershell
-Set-PSReadlineOption -EditMode Windows
+Stop-Service WtcOtg
 ```
-##### `PSRemoting`
-###### `Enable-PSRemoting`
-##### `PSSession`
-###### `Add-PSSnapin`
-###### `Disconnect-PSSession`
-Terminate a remote PowerShell session begun with [`New-PSSession`][New-PSSession] <sup>[Zacker</sup>][Zacker]: 22</sup>
-###### `Enter-PSSession`
-Interact with the specified PowerShell session
-```powershell
-Enter-PSSession -id 1
-```
-Start and enter a new PS session to specified computer with provided credentials. This will change the prompt to show the name of the remote machine in brackets.
-```powershell
-Enter-PSSession -ComputerName o365-dc01 -Credential officeprodemoco\joey
-```
-###### `Exit-PSSession`
-Exit a remote PowerShell session <sup>[Zacker][Zacker]: 22</sup>
-End the PowerShell session with the specified computer
-```powershell
-Exit-PSSession -ComputerName demodc
-```
-###### `Get-PSSession`
-Display PowerShell sessions
-```powershell
-Get-PSSession
-```
-###### `New-PSSession`
-Option  | Description
----     | ---
-`-ComputerName`
+##### `WindowsImage`
+###### `Get-WindowsImage`
+[Get-WindowsImage -Mounted]: #Get-WindowsImage '```&#10;PS C:\> Get-WindowsImage -Mounted&#10;```&#10;&#10;Equivalent to `Dism.exe /Get-MountedImageInfo`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
 
-Manage a Windows Server remotely <sup>[Zacker][Zacker]: 21</sup>
-```powershell
-New-PSSession -ComputerName rtmsvrd
-```
-Start a new PowerShell session, connecting to the specified computer
-```powershell
-New-PSSession -ComputerName core02
-```
-###### `Expand-Archive`
-Decompress archives
-```powershell
-Expand-Archive
-```
-###### `Export-CliXml`
-###### `Export-Csv`
-###### `Format-Volume`
-Full format of specified drive <sup>[sumtips.com][https://sumtips.com/tips-n-tricks/manage-disk-partitions-with-windows-powershell/]</sup>
-```powershell
-Format-Volume -DriveLetter S -FileSystem FAT32 -NewFileSystemLabel SumTips -Full
-```
-###### `Get-ChildItem`
-##### `Clipboard`
-###### `Get-Clipboard`
-Interpret items in clipboard as files
-```powershell
-Get-Clipboard -Format FileDropList
-```
-Retrieve various properties of an image in clipboard
-```powershell
-Get-Clipboard -Format Image
-```
-###### `Set-Clipboard`
-Copy text to clipboard
-```powershell
-Write-Output 'Hello' | Set-Clipboard
-```
-With `Append` switch parameter, items can be added without clearing the clipboard:
-```powershell
-Write-Output 'Hello' | Set-Clipboard -Append
-```
-###### `Get-Command`
-###### `Get-ComputerInfo`
-Equivalent to output of [`HOSTNAME.exe`](README.md#hostname)
-```pwsh
-Get-ComputerInfo -Property CsName
-gin.CsName
-$Env:computername
-```
-###### `Get-Content`
-Make a PowerShell object from a JSON file
-```powershell
-Get-Content -Path file.json | ConvertFrom-Json
-```
-###### `Get-Disk`
-Display a list of existing partitions, their drive letters, and the disk they are associated with <sup>[sumtips.com][https://sumtips.com/tips-n-tricks/manage-disk-partitions-with-windows-powershell/]</sup>
-```powershell
-Get-Disk | Get-Partition
-```
-##### `Help`
-###### `Get-Help`
-[Get-Help -Detailed]:           #Get-Help                      '```&#10;PS C:\> Get-Help -Detailed&#10;```&#10;Display detailed help for a command'
-[Get-Help -Examples]:           #Get-Help                      '```&#10;PS C:\> Get-Help -Examples&#10;```&#10;Display usage examples'
-[Get-Help -Online]:             #Get-Help                      '```&#10;PS C:\> Get-Help -Online&#10;```&#10;Navigate to online help page for a command.'
-[Get-Help -ShowWindow]:         #Get-Help                      '```&#10;PS C:\> Get-Help -ShowWindow&#10;```&#10;Display help output in a window.'
-[Get-Help -Full]:               #Get-Help                      '```&#10;PS C:\> Get-Help -Full&#10;```&#10;Display entire help file for a command'
-
-[`Detailed`][Get-Help -Detailed]
-[`Examples`][Get-Help -Examples]
-[`Full`][Get-Help -Full]
-[`Online`][Get-Help -Online]
-[`ShowWindow`][Get-Help -ShowWindow]
-###### `Update-Help`
-Download help files
-###### `Get-Member`
-###### `Get-Module`
-###### `Get-NetAdapter`
-Display available network interfaces <sup>[Zacker][Zacker]: 19</sup>
-###### `Get-NetFirewallRule`
-Display all firewall rules
-```powershell
-Get-NetFirewallRule
-```
-Display active firewall rules for inbound connections
-```powershell
-Get-NetFirewallRule -Enabled True -Direction Inbound
-```
-Display programs associated with firewall rules
-```powershell
-Get-NetFirewallRule | %{$_.Name; $_ | Get-NetFirewallApplicationFilter}
-```
-###### `Get-Partition`
-Display a list of existing partitions, their drive letters, and the disk they are associated with <sup>[sumtips.com][https://sumtips.com/tips-n-tricks/manage-disk-partitions-with-windows-powershell/]</sup>
-```powershell
-Get-Disk | Get-Partition
-```
-##### `VHD`
-###### `Mount-VHD`
-- [VHDX file](#vhdx-file)
-
-###### `New-VHD`
-- [VHDX file](#vhdx-file)
-
-##### `VM`
-Install Hyper-V Powershell module <sup>[Zacker][Zacker]: 90</sup>
-```powershell
-Install-WindowsFeature -Name hyper-v-powershell
-```
-
-###### `Set-VMFirmware`
-Enable secure boot on Generation 2 Linux VMs <sup>[IMWS][IMWS]</sup>
-```powershell
-Set-VMFirmware vmname -SecureBootTemplate MicrosoftUEFICertificateAuthority
-```
-###### `New-VM`
-Create a Nano Server VM from an image file <sup>[Zacker][Zacker]: 47</sup>
-```powershell
-New-VM -Name "nano2" -Generation 2 -MemoryStartupBytes 1GB -VHDPath "F:\hyper-v\virtual hard disks\nano2.vhdx"
-```
-###### `New-VMSwitch`
-Turn on NAT on the nested Hyper-V VM
-```powershell
-New-VMSwitch -name VMNAT -SwitchType Internal
-New-NetNAT -Name LocalNAT -InternalIPInterfaceAddressPrefix "192.168.100.0/24"
-```
-###### `Set-VMMemory`
-Disable dynamic memory on a virtual host (nested virtualization)
-```powershell
-Set-VMMemory -VMName SRV01 -DynamicMemoryEnabled $false
-```
-###### `Set-VMNetworkAdapter`
-Turn on MAC address spoofing on a virtual host (nested virtualization)
-```powershell
-Set-VMNetworkAdapter -VMName SVR01 -Name "NetworkAdapter" -MACAddressSpoofing On
-```
-###### `Set-VMProcessor`
-Configure 2 virtual processors on a virtual host (nested virtualization)
-```powershell
-Set-VMProcessor -VMName SVR01 -Count 2
-```
-##### `Windows`
+[`Mounted`][Get-WindowsImage -Mounted]
 ###### `Mount-WindowsImage`
 [Mount-WindowsImage -Remount]: #Mount-WindowsImage '```&#10;PS C:\> Mount-WindowsImage -Remount&#10;```&#10;&#10;Equivalent to `Dism.exe /Remount-Image`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
 
 [`Remount`][Mount-WindowsImage -Remount]
-###### `Enable-WindowsOptionalFeature`
-Enable a feature in the currently running operating system <sup>[docs.microsoft.com](https://docs.microsoft.com/en-us/powershell/module/dism/enable-windowsoptionalfeature?view=win10-ps&redirectedfrom=MSDN "Microsoft Docs: \"Enable-WindowsOptionalFeature\"")</sup>
-```powershell
-Enable-WindowsOptionalFeature -Online -FeatureName "Hearts" -All
-```
-Enable WSL <sup>[Reddit](https://www.reddit.com/r/bashonubuntuonwindows/comments/7smf9m/help_wsl_wont_activate_on_my_freshly_installed/ "Reddit: \"[help] WSL won't activate on my freshly installed Windows 10 version 1709\"")</sup>
-```powershell
-Enable-WindowsOptionalFeature -online -FeatureName Microsoft-Windows-Subsystem-Linux
-```
+##### `WindowsFeature`
 ###### `Get-WindowsFeature`
 Display installable Windows roles, role services, and features
 Display a branching view of available Windows roles, role services, and features
 ```powershell
 Get-WindowsFeature
 ```
-###### `Get-WindowsImage`
-[Get-WindowsImage -Mounted]: #Get-WindowsImage '```&#10;PS C:\> Get-WindowsImage -Mounted&#10;```&#10;&#10;Equivalent to `Dism.exe /Get-MountedImageInfo`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
-
-[`Mounted`][Get-WindowsImage -Mounted]
-
-###### `Get-WindowsOptionalFeature`
-[Get-WindowsOptionalFeature -FeatureName]: #Get-WindowsOptionalFeature '```&#10;PS C:\> Get-WindowsOptionalFeature -FeatureName&#10;```&#10;&#10;Equivalent to `Dism.exe /Image:foldername /Get-Featureinfo`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 78'
-[`FeatureName`][Get-WindowsOptionalFeature -FeatureName]
-###### `Get-WindowsPackage`
-[Get-WindowsPackage -PackagePath]: #Get-WindowsPackage '```&#10;PS C:\> Get-WindowsPackage -PackagePath&#10;```&#10;&#10;Equivalent to `Dism.exe /Image:foldername /Get-Packageinfo`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
-[Get-WindowsPackage -PackageName]: #Get-WindowsPackage '```&#10;PS C:\> Get-WindowsPackage -PackageName&#10;```&#10;&#10;Equivalent to `Dism.exe /Image:foldername /Get-Packageinfo`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
-[`PackageName`][Get-WindowsPackage -PackageName] 
-[`PackagePath`][Get-WindowsPackage -PackagePath]
 ###### `Install-WindowsFeature`
 [Install-WindowsFeature -Name]:      #Install-WindowsFeature        '```&#10;PS C:\> Install-WindowsFeature -Name&#10;```&#10;&#10;Values can include:&#10;  - "`AD-Domain-Services"&#10;  - "Hyper-V"&#10;  - "RSAT-ADDS"&#10;  - "Web-WebServer"'
 
@@ -1196,6 +1440,26 @@ Install Windows Server Migration Tools <sup>[Zacker][Zacker]: 33</sup>
 ```powershell
 Install-WindowsFeature Migration
 ```
+##### `WindowsOptionalFeature`
+###### `Enable-WindowsOptionalFeature`
+Enable a feature in the currently running operating system <sup>[docs.microsoft.com](https://docs.microsoft.com/en-us/powershell/module/dism/enable-windowsoptionalfeature?view=win10-ps&redirectedfrom=MSDN "Microsoft Docs: \"Enable-WindowsOptionalFeature\"")</sup>
+```powershell
+Enable-WindowsOptionalFeature -Online -FeatureName "Hearts" -All
+```
+Enable WSL <sup>[Reddit](https://www.reddit.com/r/bashonubuntuonwindows/comments/7smf9m/help_wsl_wont_activate_on_my_freshly_installed/ "Reddit: \"[help] WSL won't activate on my freshly installed Windows 10 version 1709\"")</sup>
+```powershell
+Enable-WindowsOptionalFeature -online -FeatureName Microsoft-Windows-Subsystem-Linux
+```
+###### `Get-WindowsOptionalFeature`
+[Get-WindowsOptionalFeature -FeatureName]: #Get-WindowsOptionalFeature '```&#10;PS C:\> Get-WindowsOptionalFeature -FeatureName&#10;```&#10;&#10;Equivalent to `Dism.exe /Image:foldername /Get-Featureinfo`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 78'
+[`FeatureName`][Get-WindowsOptionalFeature -FeatureName]
+##### `WindowsPackage`
+###### `Get-WindowsPackage`
+[Get-WindowsPackage -PackagePath]: #Get-WindowsPackage '```&#10;PS C:\> Get-WindowsPackage -PackagePath&#10;```&#10;&#10;Equivalent to `Dism.exe /Image:foldername /Get-Packageinfo`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
+[Get-WindowsPackage -PackageName]: #Get-WindowsPackage '```&#10;PS C:\> Get-WindowsPackage -PackageName&#10;```&#10;&#10;Equivalent to `Dism.exe /Image:foldername /Get-Packageinfo`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
+[`PackageName`][Get-WindowsPackage -PackageName] 
+[`PackagePath`][Get-WindowsPackage -PackagePath]
+##### `WmiObject`
 ###### `Get-WmiObject`
 View system uptime
 ```powershell
@@ -1206,59 +1470,13 @@ Display Windows activation key <sup>[thewindowsclub.com][https://www.thewindowsc
 ```powershell
 (Get-WmiObject -query ‘select * from SoftwareLicensingService’).OA3xOriginalProductKey
 ```
-##### `Host`
-###### `Out-Host`
-###### `Read-Host`
-###### `Write-Host`
-###### `Import-CliXml`
-###### `Import-Csv`
-Add a CSV full of users
+Get Wireless network adapter
 ```powershell
-Import-Csv users.csv | foreach { New-ADUser -SamAccountName $_.SAM -GivenName $_.Last -DisplayName $_.DisplayName -Name $_.Name -Description $_.Description -Enabled $True -AccountPassword (ConvertToSecureString $_.Password -AsPlainText -Force) }
-``` 
-##### `Module`
-###### `Import-Module`
-Import `SmbShare` module
-```powershell
-Import-Module SmbShare
+Get-WmiObject -Class Win32_NetworkAdapter | Where-Object {$_.Name -like "*Wireless*"}
 ```
-###### `Install-Module`
-Install the `Az` module
-```powershell
-Install-Module -Name Az -AllowClobber
-```
-###### `Invoke-Command`
-Execute the commands in the block on the machines specified
-```powershell
-Invoke-Command -ComputerName core01,core02 -Scriptblock {ipconfig /all}
-```
-###### `Invoke-WebRequest`
-Download a file over HTTP/HTTPS
-```powershell
-Invoke-WebRequest -Uri http://example.com/path/to/file -OutFile \\path\to\local\file
-```
-Resume a partial download
-```powershell
-Invoke-WebRequest -Uri http://example.com/path/to/file -Resume -Outfile \\path\to\local\file
-```
-Transfer a file over FTP/SFTP
-```powershell
-Invoke-WebRequest ftp://ftp.example.com/file -Outfile C:\path\to\file -Credential ftpuseraccount
-```
-Resolve shortened URLs
-```powershell
-$Uri = 'short-url/extension' 
-$Web = Invoke-WebRequest -Uri 
-$Uri -UseBasicParsing  $Web.BaseResponse.ResponseUri.AbsoluteUri
-```
-Scrape links from a website
-```powershell
-(Invoke-WebRequest -Uri "https://techrepublic.com").Links.Href
-```
-Request data from a website impersonating a browser
-```powershell
-Invoke-WebRequest -Uri http://microsoft.com -UserAgent ([Microsoft.PowerShell.Commands.PSUserAgent]::Chrome)
-```
+
+
+
 
 ###### `New-Guid`
 Generate a GUID
@@ -1266,133 +1484,8 @@ Generate a GUID
 New-Guid
 (New-Guid).Guid | clip
 ```
-##### `Item`
-###### `Get-Item
-###### `New-Item`
-[New-Item &#84;]: #New-Item '```&#10;PS C:\> New-Item Type&#10;PS C:\> New-Item -ItemType&#10;```&#10;&#10;Specify the provider-specified type of the new item; values depend on the context.'
-
-`Name`
-[`Type`][New-Item &#84;]
-`Value`
-
-Create a folder
-```powershell
-New-Item -ItemType "directory" Folder
-ni -Type "directory" Folder
-```
-###### `Remove-Item`
-Clear `%temp%` folder, suppressing errors
-```powershell
-ri -r $Env:temp -ea 0
-Remove-Item -Recurse $Env:temp -ErrorAction 'silentlycontinue'
-```
-Remove Microsoft Office identities from Registry
-```powershell
-Remove-Item HKCU:\Software\Microsoft\Office\16.0\Common\Identity\Identities\*
-```
-###### `Set-Item`
-Add an IP address to the Trusted Hosts list, bypassing the use of Kerberos to authenticate the session <sup>[Zacker][Zacker]: 56</sup>
-```powershell
-Set-Item wsman:\localhost\client\trustedhosts "192.168.10.41"
-```
-###### `New-NetFirewallRule`
-Set a new firewall rule for incoming WinRM connections
-```powershell
-New-NetFirewallRule -DisplayName "WinRMHTTP" -Direction Inbound -LocalPort 5985 -Protocol TCP -Action Allow
-```
-###### `New-NetIpAddress`
-[New-NetIpAddress -DefaultGateway]: #New-NetIpAddress '```&#10;PS C:\> New-NetIpAddress -DefaultGateway&#10;```&#10;Specify IP address of local router that computer should use to access other networks'
-[New-NetIpAddress -InterfaceIndex]: #New-NetIpAddress '```&#10;PS C:\> New-NetIpAddress -InterfaceIndex&#10;```&#10;Specify adapter to be configured using interface numbers as displayed by `Get-NetAdapter`'
-[New-NetIpAddress -IpAddress]: #New-NetIpAddress '```&#10;PS C:\> New-NetIpAddress -IpAddress&#10;```&#10;Specify IP address to be assigned to adapter'
-[New-NetIpAddress -PrefixLength]: #New-NetIpAddress '```&#10;PS C:\> New-NetIpAddress -PrefixLength&#10;```&#10;Specify subnet mask value'
-
-[`DefaultGateway`][New-NetIpAddress -DefaultGateway]
-[`InterfaceIndex`][New-NetIpAddress -InterfaceIndex]
-[`IpAddress`][New-NetIpAddress -IpAddress]
-[`PrefixLength`][New-NetIpAddress -PrefixLength]
-
-Manually configure network interface, if a DHCP server is unavailable <sup>[Zacker][Zacker]: 19</sup>
-```powershell
-New-NetIPAddress 10.0.0.3 -InterfaceAlias "Ethernet' -PrefixLength 24
-```
-Configure the Domain Controller in a new corporate intranet <sup>[Jones][Jones]</sup>
-```powershell
-New-NetIPAddress 10.0.0.1 -InterfaceAlias "Ethernet" -PrefixLength 24
-```
-Configure the application server in a new corporate intranet <sup>[Jones][Jones]</sup>
-```powershell
-New-NetIpAddress 10.0.0.3 -InterfaceAlias "Ethernet" -PrefixLength 24
-```
-Configure a network adapter 
-```powershell
-New-NetIpAddress -InterfaceIndex 6 -IpAddress 192.168.0.200 -PrefixLength 24 -DefaultGateway 192.168.0.1
-```
-###### `New-Partition`
-Use all available size for a new partition <sup>[sumtips.com][https://sumtips.com/tips-n-tricks/manage-disk-partitions-with-windows-powershell/]</sup>
-```powershell
-New-Partition -DiskNumber 1 -UseMaximumSize
-```
-Automatically assign a drive letter
-```powershell
-New-Partition -DiskNumber 1 -UseMaximumSize -AssignDriveLetter
-```
-###### `Out-Null`
-###### `Remove-Partition`
-Remove a partition <sup>[sumtips.com][https://sumtips.com/tips-n-tricks/manage-disk-partitions-with-windows-powershell/]</sup>
-```powershell
-Remove-Partition -DiskNumber 1 -PartitionNumber 1
-```
-Remove a partition without confirmation
-```powershell
-Remove-Partition -DiskNumber 1 -PartitionNumber 1 -Confirm:$false
-```
-###### `Resolve-DnsName`
-```pwsh
-Resolve-DNSName -Name secure.practicelabs.com.trustanchors -Type dnskey -Server plabdm01
-```
-###### `Set-DnsClientServerAddress`
-Configure DNS server addresses 
-<sup>[Zacker][Zacker]</sup>
-
-Parameter           | Description
----                 | ---
-`-InterfaceAlias`   |
-`-InterfaceIndex`   |
-`-ServerAddresses`  |
-
-Configure DNS server address for a DC on a new corporate intranet <sup>[Jones][Jones]</sup>
-```powershell
-Set-DnsClientServerAddress -InterfaceAlias "Ethernet" -ServerAddresses 127.0.0.1
-```
-Configure DNS server address for an application server on a new corporate intranet <sup>[Jones][Jones]</sup>
-```powershell
-Set-DnsClientServerAddress -InterfaceAlias "Ethernet" -ServerAddresses 10.0.0.1
-```
-Configure DNS server addresses <sup>[Zacker][Zacker]</sup>
-```powershell
-Set-DnsClientServerAddress -InterfaceIndex 6 -ServerAddresses ("192.168.0.1", "192.168.0.2")
-```
-###### `Set-ExecutionPolicy`
-###### `Set-Location`
-###### `Set-NetFirewallRule`
-Set firewall rule for COM+ Network Access (DCOM-In)
-```powershell
-Set-NetFirewallRule -name COMPlusNetworkAccess-DCOM-In -Enabled True
-```
-Set firewall rule for Remote Event Log Management (NP-In)
-```powershell
-Set-NetFirewallRule -name RemoteEventLogSvc-In-TCP -Enabled True
-```
-Set firewall rule for Remote Event Log Management (RPC)
-```powershell
-Set-NetFirewallRule -name RemoteEventLogSvc-NP-In-TCP -Enabled True
-```
-Set firewall rule for Remote Event Log Management (RPC-EPMAP)
-```powershell
-Set-NetFirewallRule -name RemoteEventLogSvc-RPCSS-TCP -Enabled True
-```
-### File shares
-##### `Smb`
+#### File shares
+##### `SmbOpenFile`
 ###### `Get-SmbOpenFile`
 Get information about an opened file <sup>[MS Docs][https://docs.microsoft.com/en-us/powershell/module/smbshare/get-smbopenfile?view=win10-ps]</sup>
 ```powershell
@@ -1411,8 +1504,8 @@ Close open files for a session <sup>[docs.microsoft.com][https://docs.microsoft.
 ```powershell
 Close-SmbOpenFile -SessionId 4415226380393
 ```
+##### `SmbShare`
 ###### `New-SmbShare`
-[`New-SmbShare`][New-SmbShare]
 ```powershell
 New-SmbShare -Name files -Path C:\networkfiles -ChangeAccess CORP\SysAdmin
 ```
@@ -1420,55 +1513,20 @@ Create a new share called `Data` from the `C:\Docs` folder with the `Allow Full 
 ```powershell
 New-SmbShare -Name Data -Path C:\Docs -FullAccess Everyone
 ```
-###### `Get-SmbSession`
-
+##### `SmbSession`
 ###### `Close-SmbSession`
 ```powershell
 Close-SmbSession -SessionId 154618822713
 ```
-###### `Start-DscConfiguration`
-Used to erect a **push architecture** in [DSC](dsc.md). <sup>[Zacker][Zacker]: 27</sup>
-
-Option  | Description
----     | ---
-`-Path`
-##### `Service`
-###### `Get-Service`
-Display status of &lt;WinRM&gt; service
-```powershell
-Get-Service WinRM
-gsv winrm
-```
-###### `Set-Service`
-```powershell
-Set-Service WtcOtg -StartupType Disabled
-```
-###### `Start-Service`
-Start the `WinRM` service
-```powershell
-sasv winrm
-```
-###### `Stop-Service`
-Stop the WebTitan service
-```powershell
-Stop-Service WtcOtg
-```
-
-###### `Write-Output`
-Copy text to clipboard
-```powershell
-Write-Output 'Hello' | Set-Clipboard
-```
-Create a text file <sup>[Jones][Jones]</sup>
-```powershell
-Write-Output "This is a test network file." -Path | Out-File C:\networkfiles\test.txt
-```
+###### `Get-SmbSession`
 
 ## Tasks
 #### Computer information
 Display computer name <sup>[devblogs.microsoft.com][https://devblogs.microsoft.com/scripting/powertip-use-powershell-to-get-computer-name/]</sup>
 ```powershell
-$env:computername
+Get-ComputerInfo -Property CsName
+gin.CsName
+$Env:computername
 ```
 #### Generate password
 Generate a random password 20 characters long <sup>[adamtheautomator.com][https://adamtheautomator.com/powershell-random-password/]</sup>
@@ -1596,7 +1654,7 @@ Removing keys:
 $Hashtable.Remove('One')
 ```
 #### Registry
-Fix Windows Search bar <sup>[docs.microsoft.com][https://docs.microsoft.com/en-us/powershell/scripting/samples/working-with-registry-keys?view=powershell-7] [<sup>MS Docs</sup>][https://docs.microsoft.com/en-us/powershell/scripting/samples/working-with-registry-entries?view=powershell-7]</sup>
+Fix Windows Search bar <sup>[docs.microsoft.com][https://docs.microsoft.com/en-us/powershell/scripting/samples/working-with-registry-keys?view=powershell-7]</sup>
 ```powershell
 New-Item -Path HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Search\BingSearchEnabled
 Set-Item $$ 0
@@ -1648,3 +1706,10 @@ Initialize-Disk -PassThru |
 New-Partition -DriveLetter X -UseMaximumSize | 
 Format-Volume -Filesystem ntfs -FileSystemLabel data1 -Confirm:$False -Force
 ```
+#### Restart Wi-Fi adapter
+```powershell
+$adaptor = Get-WmiObject -Class Win32_NetworkAdapter | Where-Object {$_.Name -like "*Wireless*"}
+$adaptor.Disable()
+$adaptor.Enable()
+```
+
