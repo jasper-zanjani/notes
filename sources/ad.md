@@ -1,35 +1,45 @@
 # Active Directory
-[AD]: # 'Active Directory (AD)&#10;Microsoft network operating system, built on top of Windows Server&#10;AD has origins in Windows NT 3.0, which combined features of the LAN Manager protocols with the OS/2 operating system.&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 3'
-[X.500]: # 'X.500&#10;ITU and ISO-developed series of directory service standards based on OSI protocol stack; superceded by LDAP&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 5'
-[SAM]: # 'Security Accounts Manager (SAM)&#10;Database used in Windows NT that had a maximum recommended size of 40 MB&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 7'
-[ESE]: # 'Extensible Storage Engine (ESE)&#10;Exchange database which provided the basis for Active Directory, developed to hold millions of objects with a maximum database size of 16 TB&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 8'
-[simple trust]: # 'simple trust&#10;trust model used by Windows NT where every domain had to have a manually set trust relationship with any other domain (cf. "transitive trust")&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 9'
-[transitive trust]: # 'transitive trust&#10;trust model used by Active Directory, whereby if A trusts B and B trusts C, then A also trusts C (cf "simple trust)&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 9'
 [ADAM]: #ad-lds 'Active Directory Application Mode (ADAM)&#10;standalone LDAP service similar to full Active Directory, but without DNS, Group Policy, or Kerberos requirements (ref. AD LDS)&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.'
 [ADFS]: # 'Active Directory Federated Services (ADFS)&#10;standards-based technology that enables distributed identification, authentication, and authorization across organizational and platform boundaries; used by the Web Application Proxy role service of Remote Access role to authenticate corporate users to allow access to intranet web applications from the outside&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.'
-[IMU]: # 'Identity Management for Unix (IMU)&#10;manage user accounts and passwords on Windows and Unix via NIS; automatically synchronize passwords between Windows and Unix&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.'
-[DIT]: # 'Directory Information Tree (DIT)&#10;ESE database file that stores Active Directory objects in flat database rows and columns&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.'
-[Multimaster]: # 'Multimaster&#10;Windows NT domain model with multiple user domains (each of which having two-way trust with the others), and multiple resource domains (each of which had one-way trust with every user domain); each trust had to be manually set&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 8'
-[Single-domain]: # 'Single-domain&#10;Windows NT domain model with only one domain and no trusts&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 8'
-[Single-master]: # 'Single-master&#10;Windows NT domain model with a single user (or account) domain and multiple resource domains, each of which had one-way trusts with the user domain&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 8'
+[AD]: # 'Active Directory (AD)&#10;Microsoft network operating system, built on top of Windows Server&#10;AD has origins in Windows NT 3.0, which combined features of the LAN Manager protocols with the OS/2 operating system.&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 3'
 [Complete-trust]: # 'Complete-trust&#10;Windows NT domain model where any domain could create accounts, and each could access shared resources in any other domain&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 9'
-[GUID]: # 'Globally Unique Identifier (GUID)&#10;128-bit number assigned to Active Directory objects by the system at the time of their creation; Microsoft implementation of the UUID concept&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.'
-[DN]: #distinguished-names 'distinguished name (DN)&#10;Hierarchical paths used to uniquely reference any object in LDAP or Active Directory which typically take the form of comma-delimited prefix-name pairs&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.'
 [DC]: # 'domain controller (DC)&#10;Server that responds to security authentication requests within a Windows Server domain&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 21'
-[domain tree]: # 'domain tree&#10;series of domains connected together hierarchically using a contiguous naming scheme&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 21'
-[forest]: # 'forest&#10;collection of one or more domain trees which share a common Configuration container and Schema and are connected together through transitive trusts&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 21'
-[forest trust]: # 'forest trust&#10;single transitive trust between two forest root domains&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 23'
-[OU]: # 'organizational unit (OU)&#10;Primary container type used to house objects in Active Directory&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 24'
-[GC]: # 'Global Catalog (GC)&#10;Read-only catalog of all objects in an Active Directory forest, used to perform forest-wide searches.&#10;Accessible via LDAP over port 3268.&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 25'
-[FSMO]: # 'Flexible Single Master Operator (FSMO)&#10;Role that a server may own in an Active Directory domain that makes it the master for a particular function or role.&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 26'
-[Schema Master]: # 'Schema Master&#10;Forest-wide domain controller role allowing changes to be made to the Active Directory Schema&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 26'
+[DIT]: # 'Directory Information Tree (DIT)&#10;ESE database file that stores Active Directory objects in flat database rows and columns&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.'
+[DN]: #distinguished-names 'distinguished name (DN)&#10;Hierarchical paths used to uniquely reference any object in LDAP or Active Directory which typically take the form of comma-delimited prefix-name pairs&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.'
 [Domain Naming Master]: # 'Domain Naming Master&#10;Forest-wide domain controller role that controls changes to the forest-wide namespace&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 26'
+[ESE]: # 'Extensible Storage Engine (ESE)&#10;Exchange database which provided the basis for Active Directory, developed to hold millions of objects with a maximum database size of 16 TB&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 8'
+[FSMO]: # 'Flexible Single Master Operator (FSMO)&#10;Role that a server may own in an Active Directory domain that makes it the master for a particular function or role.&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 26'
+[GC]: # 'Global Catalog (GC)&#10;Read-only catalog of all objects in an Active Directory forest, used to perform forest-wide searches.&#10;Accessible via LDAP over port 3268.&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 25'
+[GUID]: # 'Globally Unique Identifier (GUID)&#10;128-bit number assigned to Active Directory objects by the system at the time of their creation; Microsoft implementation of the UUID concept&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.'
+[IMU]: # 'Identity Management for Unix (IMU)&#10;manage user accounts and passwords on Windows and Unix via NIS; automatically synchronize passwords between Windows and Unix&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.'
+[Infrastructure Master]: # 'Infrastructure Master&#10;Domain-wide domain controller role that maintains references to objects in other domains ("phantoms")&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 28'
+[Multimaster]: # 'Multimaster&#10;Windows NT domain model with multiple user domains (each of which having two-way trust with the others), and multiple resource domains (each of which had one-way trust with every user domain); each trust had to be manually set&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 8'
+[NTP]: # 'Network Time Protocol (NTP)&#10;facilitaties time synchronization&#10;Dulaney, Emmett. _CompTIA Network+ N10-007 Exam Cram, 6th Edition_.: 51-52'
+[OU]: # 'organizational unit (OU)&#10;Primary container type used to house objects in Active Directory&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 24'
 [PDC Emulator]: # 'PDC Emulator&#10;Domain-wide domain controller role that replicates the NT SAM database to NT 4.0 and Windows 3.51 BDCs&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 26'
 [RID Master]: # 'RID Master&#10;Domain-wide domain controller role that maintains a pool of unique RID values to ensure that all SIDs in a domain are unique.&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 27'
-[Infrastructure Master]: # 'Infrastructure Master&#10;Domain-wide domain controller role that maintains references to objects in other domains ("phantoms")&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 28'
-[NTP]: # 'Network Time Protocol (NTP)&#10;facilitaties time synchronization&#10;Dulaney, Emmett. _CompTIA Network+ N10-007 Exam Cram, 6th Edition_.: 51-52'
+[SAM]: # 'Security Accounts Manager (SAM)&#10;Database used in Windows NT that had a maximum recommended size of 40 MB&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 7'
+[Schema Master]: # 'Schema Master&#10;Forest-wide domain controller role allowing changes to be made to the Active Directory Schema&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 26'
+[Single-domain]: # 'Single-domain&#10;Windows NT domain model with only one domain and no trusts&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 8'
+[Single-master]: # 'Single-master&#10;Windows NT domain model with a single user (or account) domain and multiple resource domains, each of which had one-way trusts with the user domain&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 8'
+[X.500]: # 'X.500&#10;ITU and ISO-developed series of directory service standards based on OSI protocol stack; superceded by LDAP&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 5'
+[domain tree]: # 'domain tree&#10;series of domains connected together hierarchically using a contiguous naming scheme&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 21'
+[forest trust]: # 'forest trust&#10;single transitive trust between two forest root domains&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 23'
+[forest]: # 'forest&#10;collection of one or more domain trees which share a common Configuration container and Schema and are connected together through transitive trusts&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 21'
+[simple trust]: # 'simple trust&#10;trust model used by Windows NT where every domain had to have a manually set trust relationship with any other domain (cf. "transitive trust")&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 9'
+[transitive trust]: # 'transitive trust&#10;trust model used by Active Directory, whereby if A trusts B and B trusts C, then A also trusts C (cf "simple trust)&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 9'
+[distribution group]: # 'distribution group&#10;Active Directory group type used for mailing lists&#10;If a group is of type distribution, its SID is not added to a user security token during logon, so it cannot be used for logon purposes.&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 38'
+[security group]: # 'security group&#10;&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 38'
+[Domain Naming Context]: # 'Domain Naming Context&#10;contains data specific to the domain, like users, groups, and computers&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 43'
+[Schema Naming Context]: # 'Schema Naming Context&#10;contains the set of object class and attribute definitions for the types of data that can be stored in AD&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 43'
+[Configuration Naming Context]: # 'Configuration Naming Context&#10;contains data pertaining to the configuration of the forest, like naming contexts, LDAP policies, sites, subnets, and Microsoft Exchange&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 43'
+[OID]: # 'Object Identifier (OID)&#10;Sequence of integers that describe the unique path to the branch holding any schema object.&#10;Root branches are globally unique and maintained by IANA. OID namespaces are known as Enterprise Numbers.&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 55'
+
+
+
 
 #### Active Directory Fundamentals
+###### Terms
 - [Active Directory Application Mode (ADAM)][ADAM] 
 - [Active Directory Federated Services (ADFS)][ADFS] 
 - [Directory Information Tree (DIT)][DIT] 
@@ -51,6 +61,12 @@
   - [Complete trust][Complete-trust]
 - [organizational unit][OU]
 - [Global Catalog][GC]
+- Groups:
+  - [Domain local][domain local group]
+  - [Domain global][domain global group]
+  - [Universal][universal group]
+  - [Distribution][distribution group]
+  - [Security][security group]
 
 ###### History
 [Active Directory][AD] has its origins in 1990 when Microsoft released Windows NT 3.0, its first Network Operating System (NOS).
@@ -64,6 +80,7 @@ Domain models   | [Multimaster][Multimaster] [Single-domain][Single-domain] [Sin
 Name resolution | [WINS](#glossary "obsolete system that resolves NetBIOS names to IP addresses on Windows networks; required by Windows NT") | DNS
 Schemas         | Not extensible | Extensible
 
+###### Major components
 AD objects, which can be **containers** or **non-containers** (leaf nodes), are stored in a [DIT][DIT] file. 
 Each object is identified by a [GUID][GUID] but also commonly referred to by [distinguished name][DN] (i.e. `dc=mycorp,dc=com`)
 
@@ -87,6 +104,24 @@ The most common container type is the [OU][OU].
 
 Because Kerberos, which underlies AD, is sensitive to time differences all computers on a domain must have clocks synchronized to within 5 minutes.
 [NTP][NTP] can be useful for this.
+
+Groups can have three different **scopes**:
+- [Domain local][domain local group]
+- [Domain global][domain global group]
+- [Universal][universal group]
+
+Groups and be of two **types**:
+- [Distribution][distribution group]
+- [Security][security group]
+
+#### Naming contexts
+Predefined [NCs][NC] within AD:
+- [Domain Naming Context][Domain Naming Context] 
+- [Schema Naming Context][Schema Naming Context] 
+- [Configuration Naming Context][Configuration Naming Context] 
+
+#### Schema
+[OID][OID]
 
 #### SID
 A Windows SID is generally composed of 2 fixed fields and up to 15 additional fields, all separated by dashes:
@@ -132,8 +167,8 @@ Service account | `NT AUTHORITY\NetworkService` | `LocalSystem`
 #### Table of Contents, 4th edition
 1. [A brief introduction](#history "Reviews the evolution of the Microsoft NOS and some of the major features and benefits of Active Directory.") &bull; [LDAP](#ldap "LDAP originated in 1993 as a lighter-weight alternative to X.500, but it did not gain traction until its third major version was released in 1997.") [WinNT](#windows-nt "Microsoft's first NOS was WinNT 3.0, combining features of LAN Manager protocols and OS/2 (1990).") [WS 2003](#windows-server-2003 "The concept of mixed and native operation modes introduced in Windows Server 2000 was further refined into that of domain and forest functional levels in Windows Server 2003.") [WS 2008](#windows-server-2008 "Windows Server 2008 introduced RODCs and Server Core.")
 2. [Active Directory fundamentals](#active-directory-fundamentals "Provides a high-level look at how objects are stored in Active Directory and explains some of the internal structures and concepts that it relies on.") &bull; [Objects](#objects "Active Directory objects can be either leaf nodes or containers and are stored in a DIT file.") [Uniquely identifying objects](#objects "GUIDs and distinguished names are used to uniquely identify objects in Active Directory.")
-3. [Naming contexts and application partisions](# "Reviews the predefined Naming Contexts within Active Directory, what is contained within each, and the purpose of Application Partitions") &bull; 
-4. [Active Directory Schema](# "Gives you information on how the blueprint for each object and each object's attributes are stored in Active Directory.")
+3. [Naming contexts and application partisions](#naming-contexts "Reviews the predefined Naming Contexts within Active Directory, what is contained within each, and the purpose of Application Partitions") &bull; 
+4. [Active Directory Schema](#schema "Gives you information on how the blueprint for each object and each object's attributes are stored in Active Directory.")
 5. [Site topology and replication](# "Details how the actual replication process for data takes place between domain controllers.")
 6. [Active Directory and DNS](# "Describes the importance of the Domain Name System (DNS) and what it is used for within Active Directory.")
 7. [Read-Only Domain Controllers](# "Describes the deployment and operation of Read-Only Domain Controllers (RODCs).") &bull; [RODC][RODC]
