@@ -1,4 +1,5 @@
 # Active Directory
+[AD]: # 'Active Directory (AD)&#10;Microsoft network operating system, built on top of Windows Server&#10;AD has origins in Windows NT 3.0, which combined features of the LAN Manager protocols with the OS/2 operating system.&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 3'
 
 #### Table of Contents, 4th edition
 1. [A brief introduction](#history "Reviews the evolution of the Microsoft NOS and some of the major features and benefits of Active Directory.") &bull; [LDAP](#ldap "LDAP originated in 1993 as a lighter-weight alternative to X.500, but it did not gain traction until its third major version was released in 1997.") [WinNT](#windows-nt "Microsoft's first NOS was WinNT 3.0, combining features of LAN Manager protocols and OS/2 (1990).") [WS 2003](#windows-server-2003 "The concept of mixed and native operation modes introduced in Windows Server 2000 was further refined into that of domain and forest functional levels in Windows Server 2003.") [WS 2008](#windows-server-2008 "Windows Server 2008 introduced RODCs and Server Core.")
@@ -58,11 +59,13 @@
 20. Active Directory Lightweight Directory Services
 21. Active Directory Federation Services
 
+#### Active Directory Fundamentals
+[Active Directory][AD] has its origins in 1990 when Microsoft released Windows NT 3.0, its first Network Operating System (NOS).  
+
 ## History
 #### LDAP
 LDAP originated in 1993 as a lighter-weight alternative to [X.500](#glossary "ITU and ISO-developed series of directory service standards based on OSI protocol stack; superceded by LDAP"), but it did not gain traction until its third major version was released in 1997.
 
-#### Windows NT
 Active Directory, like its predecessor WinNT, provides directory services; [`dcpromo.exe`](#glossary "wizard that promotes a member server to domain controller") can be used to promote and demote domain controllers.\
 Microsoft's first [NOS](#glossary "networked environment in which various types of resources, such as user, group, and computer accounts, are stored in a central repository that is controlled by administrators and accessible to end users") was WinNT 3.0, combining features of LAN Manager protocols and OS/2 (1990). NT allowed administrative delegation only at the domain, but Active Directory allows administrators to define administrative boundaries at the forest, domain, or Organizational Unit.\
 In Active Directory, all domains within a forest trust each other via **transitive trust**, which results in a [**Complete-trust**](#glossary "Windows NT domain model where any domain could create accounts, and each could access shared resources in any other domain") model within the forest. Domain models available in NT included [Single-domain](#glossary "Windows NT domain model with only one domain and no trusts"), 
@@ -151,53 +154,3 @@ Schema          | 44 classes and 268 attributes |
 Service account | `NT AUTHORITY\NetworkService` | `LocalSystem`
 
 ## Index
-
-#### PowerShell cmdlets
-\#      | PowerShell cmdlets (nouns sorted alphabetically)
----     | ---
-C       | **`CliXml`** [`Export`][Export-CliXml] [`Import`][Import-CliXml] &bull; **`Command`** [`Get`][Get-Command] &bull; **`Csv`** [`Export`][Export-Csv] [`Import`][Import-Csv]
-E       | **`ExecutionPolicy`** [`Set`][Set-ExecutionPolicy]
-H       | **`Help`** [`Get`][Get-Help]
-L       | **`List`** [`Format`][Format-List] **`Location`** [`Set`][Set-Location]
-M       | **`Member`** [`Get`][Get-Member]
-N       | **`Null`** [`Out`][Out-Null]
-O       | **`Object`** [`ForEach`][ForEach-Object] [`Where`][Where-Object]
-P       | **`PSSnapin`** [`Add`][Add-PSSnapin] [`Get`][Get-PSSnapin]
-
-#### Windows objects
-\#      | Windows objects
----     | ---
-D       | [`domainDNS`](# "class from which application partition objects must be derived")
-S       | [`serviceConnectionPoint`][SCP]
-
-#### LDAP controls
-\#      | LDAP controls
----     | ---
-L       | [`LDAP_SERVER_SEARCH_OPTIONS_OID`](# "control that enables full instance search functionality on AD LDS")
-S       | [`SERVER_SEARCH_FLAG_PHANTOM_ROOT`](# "control that enables full instance search functionality on AD LDS")
-
-
-[Desmond2009]: # "Desmond, Brian et al. _Active Directory_. O'Reilly Media, 2009."
-[Desmond2013]: # "Desmond, Brian et al. _Active Directory_. O'Reilly Media, 2013."
-
-[AD LDS]: #ad-lds "\"Active Directory Lightweight Directory Services\", standalone LDAP service similar to full Active Directory, but without DNS, Group Policy, or Kerberos requirements (previously known as ADAM)"
-[RODC]: #rodc "\"Read-Only Domain Controller\", do not allow writes and do not store passwords or other secrets by default; adds security to DCs in locations that are less physically secure"
-[SCP]: #ad-lds "\"serviceConnectionPoint\", object that AD LDS can publish, usually under the computer object on which the service is installed, that maintains key pieces about the AD LDS installation in the `keywords` and `serviceBindingInformation` attributes"
-[SID]: #sid "\"Security Identifier\", unique, variable-length identifier used to identify a trustee or security principal, composed of 2 fixed fields and 15 additional fields, all separated by dashes"
-
-[Add-PSSnapin]:         # "Load a given list of snap-ins (.NET assemblies containing a collection of cmdlets and/or providers for use within PowerShell) either by name or via the pipeline - last supported in PowerShell 5.1"
-[Export-CliXml]:        ../win/pwsh.md#export-clixml "Serialize a PowerShell object as a Common Language Infrastructure (CLI) XML file"
-[Export-Csv]:           ../win/pwsh.md#export-csv "Export PowerShell objects to CSV"
-[ForEach-Object]:       ../win/pwsh.md#filters "(alias: %)"
-[Format-List]:          ../win/pwsh.md#format-list "Display output in list style (alias: fl)"
-[Format-Table]:         ../win/pwsh.md#format-table "Display output in table style (alias: ft)"
-[Get-Command]:          ../win/pwsh.md#get-command "Display all installed commands, including aliases, applications, filters, functions, and scripts (alias: gcm)"
-[Get-Help]:             ../win/pwsh.md#get-help "Display help file for cmdlets"
-[Get-Member]:           ../win/pwsh.md#get-member "Display properties and methods of a PowerShell object (alias: gm)"
-[Get-PSSnapin]:         #                                   "Display currently loaded snapins (.NET assemblies containing a collection of cmdlets and/or providers for use within PowerShell) - last supported in PowerShell 5.1"
-[Import-Csv]:           ../win/pwsh.md#import-csv "Import CSV files as PowerShell objects"
-[Import-CliXml]:        ../win/pwsh.md#import-clixml "Import a Common Language Infrastructure (CLI) XML file with data that represents Microsoft .NET Framework objects and create PowerShell objects from it"
-[Out-Null]:             ../win/pwsh.md#out-null "Dispose of information piped to it, in lieu of displaying it"
-[Set-Location]:         ../win/pwsh.md#set-location "Set present working directory (alias: cd)"
-[Set-ExecutionPolicy]:  ../win/pwsh.md#set-executionpolicy  "Change PowerShell execution policy for Windows computers (Windows only)"
-[Where-Object]:         ../win/pwsh.md#filters              "(alias: ?)"
