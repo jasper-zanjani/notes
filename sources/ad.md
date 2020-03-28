@@ -1,5 +1,6 @@
 # Active Directory
-[ADAM]: #ad-lds 'Active Directory Application Mode (ADAM)&#10;standalone LDAP service similar to full Active Directory, but without DNS, Group Policy, or Kerberos requirements (ref. AD LDS)&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.'
+[adfind]: https://github.com/jasper-zanjani/notes/tree/primary/win/README.md#adfind '```&#10;adfind&#10;```&#10;Command-line utility that can be used to query Active Directory attributes&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 53'
+[AD LDS]: #ad-lds 'Active Directory Lightweight Directory Services (AD LDS)&#10;standalone LDAP service similar to full Active Directory, but without DNS, Group Policy, or Kerberos requirements (previously known as Active Directory Application Mode "ADAM")&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 457'
 [ADFS]: # 'Active Directory Federated Services (ADFS)&#10;standards-based technology that enables distributed identification, authentication, and authorization across organizational and platform boundaries; used by the Web Application Proxy role service of Remote Access role to authenticate corporate users to allow access to intranet web applications from the outside&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.'
 [AD]: # 'Active Directory (AD)&#10;Microsoft network operating system, built on top of Windows Server&#10;AD has origins in Windows NT 3.0, which combined features of the LAN Manager protocols with the OS/2 operating system.&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 3'
 [Complete-trust]: # 'Complete-trust&#10;Windows NT domain model where any domain could create accounts, and each could access shared resources in any other domain&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 9'
@@ -34,39 +35,68 @@
 [Schema Naming Context]: # 'Schema Naming Context&#10;contains the set of object class and attribute definitions for the types of data that can be stored in AD&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 43'
 [Configuration Naming Context]: # 'Configuration Naming Context&#10;contains data pertaining to the configuration of the forest, like naming contexts, LDAP policies, sites, subnets, and Microsoft Exchange&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 43'
 [OID]: # 'Object Identifier (OID)&#10;Sequence of integers that describe the unique path to the branch holding any schema object.&#10;Root branches are globally unique and maintained by IANA. OID namespaces are known as Enterprise Numbers.&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 55'
-
-
-
+[identifier authority]: #sid 'identifier authority&#10;Component of a SID that follows `S-1` that uniquely identifies the authority involved&#10;Possible values include:&nbsp;  - 0, NULL&nbsp;  - 1, World&nbsp;  - 2, Local&nbsp;  - 5, NT Authority&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 28'
+[sub-authority]: #sid 'sub-authority&#10;Component of a SID that follows the identifier authority, the last of which is called the RID.&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 28'
+[SID]: #sid 'security identifier (SID)&#10;A unique, variable-length identifier used to identify a trustee or security principal of the format `S-1-id-s1-s2-s3-...-s15`&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 28'
+[NC]: # 'naming context (NC)&#10;data partition in Active Directory, each of which represents a different type of data&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 43'
+[schema]: # 'schema&#10;blueprint for data storage in Active Directory&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 53'
+[attribute]: # 'attribute&#10;defines the pieces of information that a class, and thus an instance of that class, can hold&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 53'
+[syntax]: # 'syntax&#10;Define the type of data that can be placed into an Active Directory attribute&#10;For example, an attribute defined with a syntax of "Boolean" can store True, False, or null as its value.&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 53'
+[site topology]: #site-topology 'site topology&#10;map that describes the network connectivity, Active Directory Replication guidelines, and locations for resources as it relates to the Active Directory forest&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 85'
+[site]: #site-topology 'site&#10;a collection of well-connected AD subnets; typically used to group subnets together into a logical collection to help define replication flow and resource location boundaries&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 87'
+[subnet]: #site-topology 'subnet&#10;portion of the IP space of a network&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 86'
+[site link]: #site-topology 'site link&#10;defines what sites are connected to each other and the relative cost of the connection&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 89'
+[connection object]: #site-topology 'connection object&#10;specifies which domain controllers replicate with which other domain controllers, how often, and which naming contexts are involved&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 92'
 
 #### Active Directory Fundamentals
 ###### Terms
-- [Active Directory Application Mode (ADAM)][ADAM] 
-- [Active Directory Federated Services (ADFS)][ADFS] 
-- [Directory Information Tree (DIT)][DIT] 
-- [Extensible Storage Engine (ESE)][ESE] 
-- [Identity Management for Unix (IMU)][IMU] 
-- [Security Accounts Manager (SAM)][SAM]
-- [Domain Controller (DC)][DC]
-- [Distinguished Name (DN)][DN]
-- [domain tree][domain tree]
-- [X.500][X.500]
-- [forest][forest]
-- [forest trust][forest trust]
-- [simple trust][simple trust] 
-- [transitive trust][transitive trust]
-- Domain models: 
-  - [Multimaster][Multimaster]
-  - [Single-domain][Single-domain] 
-  - [Single-master][Single-master] 
-  - [Complete trust][Complete-trust]
-- [organizational unit][OU]
-- [Global Catalog][GC]
+- Active Directory components
+  - [Active Directory Application Mode (ADAM)][ADAM] 
+  - [Active Directory Federated Services (ADFS)][ADFS] 
+  - [Directory Information Tree (DIT)][DIT] 
+  - [Extensible Storage Engine (ESE)][ESE] 
+  - [Identity Management for Unix (IMU)][IMU] 
+  - [Security Accounts Manager (SAM)][SAM]
+  - [Global Catalog][GC]
+- Active Directory concepts
+  - [Domain Controller (DC)][DC]
+  - [Distinguished Name (DN)][DN]
+  - [domain tree][domain tree]
+  - [forest][forest]
+  - [organizational unit][OU]
+  - Trust
+    - [forest trust][forest trust]
+    - [simple trust][simple trust] 
+    - [transitive trust][transitive trust]
+  - Domain models: 
+    - [Multimaster][Multimaster]
+    - [Single-domain][Single-domain] 
+    - [Single-master][Single-master] 
+    - [Complete trust][Complete-trust]
+- [AD LDS][AD LDS]
+  - Instance
+  - Configuration set
+  - Replica
+  - Partition/naming context
+  - Application partition
+  - Configuration partition
+  - Schema partition
+  - Bindable object
+  - Bindable proxy object
 - Groups:
   - [Domain local][domain local group]
   - [Domain global][domain global group]
   - [Universal][universal group]
   - [Distribution][distribution group]
   - [Security][security group]
+- [Schema][schema]
+  - [attribute][attribute]
+  - [syntax][syntax]
+- [Site topology][site topology]
+  - [site][site] 
+  - [subnet][subnet] 
+  - [site link][site link] 
+  - [connection object][connection object] 
 
 ###### History
 [Active Directory][AD] has its origins in 1990 when Microsoft released Windows NT 3.0, its first Network Operating System (NOS).
@@ -121,35 +151,17 @@ Predefined [NCs][NC] within AD:
 - [Configuration Naming Context][Configuration Naming Context] 
 
 #### Schema
+Each object in AD is an instance of a class defined in the [schema][schema].
+The schema version can be queried from the command-line with [`adfind`][adfind]
 [OID][OID]
 
 #### SID
 A Windows SID is generally composed of 2 fixed fields and up to 15 additional fields, all separated by dashes:
-```
-S-v-id-s1-s2-s3-s4-...-s15
-```
-Fixed fields:
-- `v` is always `1`
-- `id` is called the **identifier authority** and can have various values:
-  - `0` "NULL"
-  - `1` "World"
-  - `2` "Local"
-  - `5` "NT Authority
 
-Well-known SIDs
-- `S-1-5-10` NT Authority/Self
-- `S-1-1-0` Everyone
+<code> S-v-[id][identifier authority]-[s1][sub-authority]-[s2][sub-authority]-[s3][sub-authority]-[s4][sub-authority]-[s5][sub-authority]-[s6][sub-authority]-[s7][sub-authority]-[s8][sub-authority]-[s9][sub-authority]-[s10][sub-authority]-[s11][sub-authority]-[s12][sub-authority]-[s13][sub-authority]-[s14][sub-authority]-[s15][sub-authority] </code>
 
-The fields `s1`-`s15` are called **sub-authorities** and are optional, and most SIDs only have a few of them populated. The last sub-identifier is called the **RID** and is the value that a domain or computer increments to create unique SIDs.\
-Well-known RIDs
-- `500` built-in administrator account
-- `514` Readers
-- `513` Users
-- `512` Administrators
-
-## RODC
-## AD LDS
-AD LDS (previously known as [ADAM](#ad-lds "\"Active Directory Application Mode\", standalone LDAP service similar to full Active Directory, but without DNS, Group Policy, or Kerberos requirements (ref. AD LDS)")) offers a pared-down version of AD that is easy to set up and tear down. It was first released in November 2003 and offers security benefits because it doesn't enable so many services by default. It was renamed AD LDS with the release of Windows Server 2008. [[^][Desmond2009]: 457-458]\
+#### AD LDS
+[AD LDS][AD LDS] offers a pared-down version of AD that is easy to set up and tear down. It was first released in November 2003 as Active Directory Application Mode (ADAM) V1.0 and offers security benefits because it doesn't enable so many services by default. It was renamed AD LDS with the release of Windows Server 2008.
 
 Differences between AD and AD LDS
 - AD LDS is a standalone application run from a `dsamain.exe` process (rather than `lsass.exe`), which means it can be started or stopped on demand without rebooting and multiple instances can be run.
@@ -164,15 +176,18 @@ Schema          | 44 classes and 268 attributes |
 [SID][SID]      | `S-v-id-s1-s2-s3-...-s15` | `S-v-id1-id2-r1-r2-r3-r4`
 Service account | `NT AUTHORITY\NetworkService` | `LocalSystem`
 
+#### Site topology
+A [site topology][site topology] is a map of the [sites][site], [subnets][subnet], [site links][site link], site link bridges, and [connection objects][connection object] as it relates to a forest.
+
 #### Table of Contents, 4th edition
-1. [A brief introduction](#history "Reviews the evolution of the Microsoft NOS and some of the major features and benefits of Active Directory.") &bull; [LDAP](#ldap "LDAP originated in 1993 as a lighter-weight alternative to X.500, but it did not gain traction until its third major version was released in 1997.") [WinNT](#windows-nt "Microsoft's first NOS was WinNT 3.0, combining features of LAN Manager protocols and OS/2 (1990).") [WS 2003](#windows-server-2003 "The concept of mixed and native operation modes introduced in Windows Server 2000 was further refined into that of domain and forest functional levels in Windows Server 2003.") [WS 2008](#windows-server-2008 "Windows Server 2008 introduced RODCs and Server Core.")
-2. [Active Directory fundamentals](#active-directory-fundamentals "Provides a high-level look at how objects are stored in Active Directory and explains some of the internal structures and concepts that it relies on.") &bull; [Objects](#objects "Active Directory objects can be either leaf nodes or containers and are stored in a DIT file.") [Uniquely identifying objects](#objects "GUIDs and distinguished names are used to uniquely identify objects in Active Directory.")
-3. [Naming contexts and application partisions](#naming-contexts "Reviews the predefined Naming Contexts within Active Directory, what is contained within each, and the purpose of Application Partitions") &bull; 
-4. [Active Directory Schema](#schema "Gives you information on how the blueprint for each object and each object's attributes are stored in Active Directory.")
-5. [Site topology and replication](# "Details how the actual replication process for data takes place between domain controllers.")
-6. [Active Directory and DNS](# "Describes the importance of the Domain Name System (DNS) and what it is used for within Active Directory.")
-7. [Read-Only Domain Controllers](# "Describes the deployment and operation of Read-Only Domain Controllers (RODCs).") &bull; [RODC][RODC]
-8. [Group Policy primer](# "Gives you a detailed introduction to the capabilities of Group Policy Objects and how to manage them.")
+1.  [A brief introduction](#history "Reviews the evolution of the Microsoft NOS and some of the major features and benefits of Active Directory.") &bull; [LDAP](#ldap "LDAP originated in 1993 as a lighter-weight alternative to X.500, but it did not gain traction until its third major version was released in 1997.") [WinNT](#windows-nt "Microsoft's first NOS was WinNT 3.0, combining features of LAN Manager protocols and OS/2 (1990).") [WS 2003](#windows-server-2003 "The concept of mixed and native operation modes introduced in Windows Server 2000 was further refined into that of domain and forest functional levels in Windows Server 2003.") [WS 2008](#windows-server-2008 "Windows Server 2008 introduced RODCs and Server Core.")
+2.  [Active Directory fundamentals](#active-directory-fundamentals "Provides a high-level look at how objects are stored in Active Directory and explains some of the internal structures and concepts that it relies on.") &bull; [Objects](#objects "Active Directory objects can be either leaf nodes or containers and are stored in a DIT file.") [Uniquely identifying objects](#objects "GUIDs and distinguished names are used to uniquely identify objects in Active Directory.")
+3.  [Naming contexts and application partisions](#naming-contexts "Reviews the predefined Naming Contexts within Active Directory, what is contained within each, and the purpose of Application Partitions") &bull; 
+4.  [Active Directory Schema](#schema "Gives you information on how the blueprint for each object and each object's attributes are stored in Active Directory.")
+5.  [Site topology and replication](#site-topology "Details how the actual replication process for data takes place between domain controllers.")
+6.  [Active Directory and DNS](# "Describes the importance of the Domain Name System (DNS) and what it is used for within Active Directory.")
+7.  [Read-Only Domain Controllers](# "Describes the deployment and operation of Read-Only Domain Controllers (RODCs).") &bull; [RODC][RODC]
+8.  [Group Policy primer](# "Gives you a detailed introduction to the capabilities of Group Policy Objects and how to manage them.")
 9.  [Fine-grained password policies](# "Comprehensive coverage of how to design, implement, and manage fine-grained password policies.")
 10. [Designing the namespace](# "Introduces the steps and techniques involved in properly preparing a design that reduces the number of domains and increases administrative control through the use of Organizational Units.")
 11. [Creating a site topology](# "Shows you how to design a representation of your physical inrastructure within Active Diretory to gain very fine-grained control over intrasite and intersite replication.")
@@ -198,27 +213,4 @@ Service account | `NT AUTHORITY\NetworkService` | `LocalSystem`
 31. [Scripting Active Directory with PowerShell](# "Describes how to manage and manipulate Active Directory using Windows PowerShell.")
 32. [Scripting Basic Exchange 2003 tasks](# "Tackles common Active Directory-related user and group management tasks for Microsoft Exchange 2000/2003.")
 33. [Scripting Basic Exchange 2007 tasks](# "Tackles common Active Directory-related tasks for Microsoft Exchange 2007 using Windows PowerShell.")
-
-#### Table of Contents, 5th edition
-1. A brief introduction
-2. Active Directory fundamentals
-3. Active Directory management tools
-4. Naming contexts and application partitions
-5. Active Directory Schema
-6. Site topology and Active Directory replication
-7. Searching Active Directory
-8. Active Directory and DNS
-9. Domain Controllers
-10. Authentication and security protocols
-11. Group Policy Primer
-12. Fine-grained password policies
-13. Designing the Active Directory structure
-14. Creating a site topology
-15. Planning for Group Policy
-16. Active Directory Security: permissions and auditing
-17. Designing and implementing Schema extensions
-18. Backup, recovery, and maintenance
-19. Upgrading Active Directory
-20. Active Directory Lightweight Directory Services
-21. Active Directory Federation Services
 

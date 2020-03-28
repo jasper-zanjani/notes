@@ -146,6 +146,7 @@
 [Get-ADUser]:                                        #get-aduser                                   "`Get-ADUser` &#10; Get one or more Active Directory Users"
 [Search-ADAccount]:                                  #search-adaccount                             "`Search-ADAccount`"
 [Set-ADAccountPassword]:                             #set-adaccountpassword                        "`Set-ADAccountPassword`"
+[Get-ADObject]: #get-adobject '```&#10;PS C:\> Get-ADObject&#10;```&#10;Get one or more Active Directory objects'
 [Set-ADObject]:                                      #set-adobject                                 "`Set-ADObject`"
 [Set-ADOrganizationalUnit]:                          #set-adorganizationalunit                     "`Set-ADOrganizationalUnit`"
 [Uninstall-ADDSDomainController]:                    #uninstall-addsdomaincontroller               "`Uninstall-ADDSDomainController`"
@@ -381,7 +382,7 @@
 [**AD**](#active-directory)
 <code>Account&nbsp;[sr][Search-ADAccount]&nbsp;[uk][Unlock-ADAccount]&nbsp;</code> 
 <code>AccountPassword&nbsp;[s][Set-ADAccountPassword]&nbsp;</code> 
-<code>Object&nbsp;[s][Set-ADObject]&nbsp;</code> 
+<code>Object&nbsp;[g][Get-ADObject]&nbsp;[s][Set-ADObject]&nbsp;</code> 
 <code>OrganizationalUnit&nbsp;[g][Get-ADOrganizationalUnit]&nbsp;[n][New-ADOrganizationalUnit]&nbsp;[r][Remove-ADOrganizationalUnit]&nbsp;[s][Set-ADOrganizationalUnit]&nbsp;</code> 
 <code>PrincipalGroupMembership&nbsp;[a][Add-ADPrincipalGroupMembership]&nbsp;[g][Get-ADPrincipalGroupMembership]&nbsp;</code>
 <code>User&nbsp;[g][Get-ADUser]&nbsp;[n][New-ADUser]</code>
@@ -725,6 +726,11 @@ Reset password
 Set-ADAccountPassword -Identity MBentley -Reset -NewPassword (ConvertTo-SecureString -AsPlainText "What is 255.255.255.240" -Force)
 ```
 ##### `ADObject`
+###### `Get-ADObject`
+Display version of Active Directory schema <sup>[nolabnoparty.com](https://nolabnoparty.com/en/finding-active-directory-schema-version/ "Finding the Active Directory schema version")</sup>
+```powershell
+Get-ADObject "cn=schema,cn=configuration,dc=domain,dc=com" -properties objectversion
+```
 ###### `Set-ADObject`
 Protect users in a specified OU from accidental deletion
 ```powershell

@@ -13,8 +13,11 @@
 <!-- Concepts -->
 [UWP]: #uwp 'Universal Windows Platform (UWP)&#10;Universal Windows Platform provides a common app platform on every device that runs Windows 10, and UWP apps are primarily associated with the Microsoft Store.&#10;"Universal Windows Platform apps". _Wikipedia_.'
 
-<!-- `cmd` commands -->
+<!-- Active Directory -->
+[adfind]: #adfind '```&#10;adfind&#10;```&#10;Command-line utility that can be used to query Active Directory attributes&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 53'
 [adprep]:         #adprep                         '```&#10;C:\>adprep&#10;```&#10;Prepare Active Directory for Windows Server upgrades&#10;Must be run on the Infrastructure Master role owner with the flag `/domainprep`.&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 29'
+
+<!-- `cmd` commands -->
 [arp]:            #arp                            '```&#10;C:\>arp&#10;```&#10;Display and modify the IP-to-MAC address translation tables used by ARP'
 [bcdedit]:        #bcdedit                        '```&#10;C:\>bcdedit&#10;```&#10;Boot configuration data editor'
 [bootrec]:        #bootrec                        '```&#10;C:\>bootrec&#10;```&#10;Windows Recovery Environment command that repairs a system partition'
@@ -29,6 +32,7 @@
 [nbtstat]:        #nbtstat                        '```&#10;C:\>nbtstat&#10;```&#10;Display status of NetBIOS'
 [netsh]:          #netsh                          '```&#10;C:\>netsh&#10;```&#10;"Network services shell", command-line utility that allows you to manage the configuration of various network services on local and remote computers.&#10;Stanek, William R. _Microsoft Windows Command-Line_.: 297'
 [ntdsutil]:       #ntdsutil                       '```&#10;C:\>ntdsutil&#10;```&#10;Used to transfer FSMO roles between domain controllers'
+[regsvr32]: #regsvr32 ''
 [sfc]:            #sfc                            '```&#10;C:\>sfc&#10;C:\>sfc /scannow&#10;```&#10;Scan and verify protected system files&#10;Stanek, William R. _Microsoft Windows Command-Line_.: 373'
 [slmgr]:          #slmgr                          '```&#10;C:\>slmgr&#10;```&#10;Windows software licensing management tool'
 [systeminfo]:     #systeminfo                     '```&#10;C:\>systeminfo&#10;```&#10;Shows system information about the machine, including installed hotfixes and patches'
@@ -73,57 +77,69 @@ Topics
 [UWP][UWP]
 
 ## Command Prompt
-
-[`access`][access.cpl] 
-[`adprep`][adprep] 
-[`appwiz.cpl`][appwiz.cpl] 
 [`arp`][arp] 
 [`bcdedit`][bcdedit] 
 [`bootrec`][bootrec]
 [`cscript`][cscript] 
-[`desk`][desk.cpl] 
 `dir`<sup>[pwsh>][Get-ChildItem]</sup>
 [`diskpart`][diskpart] 
 [`echo`](#echo) <sup>[lx][lx echo] [pwsh][Write-Host]</sup>
-[`findfast.cpl`][findfast.cpl] 
 `findstr`<sup>[lx][grep]</sup>
 `gpupdate`<sup>[pwsh][Invoke-GPUpdate]</sup>
 [`hostname`][hostname]<sup>[pwsh][Get-ComputerInfo]</sup>
-[`inetcpl.cpl`][inetcpl.cpl] 
-[`intl.cpl`][intl.cpl] 
 [`ipconfig`][ipconfig]
-[`joy.cpl`][joy.cpl]
 [`logoff`][logoff]
-[`main`][main.cpl] 
-[`mlcfg32.cpl`][mlcfg32.cpl] 
-[`mmsys.cpl`][mmsys.cpl]
 [`ms-settings:`][ms-settings:]
 [`nbtstat`][nbtstat] [`netsh`](#netsh) 
-[`ncpa`][ncpa.cpl]
 [`ntdsutil`][ntdsutil]
+[`regsvr32`][regsvr32]
 [`route`](#route)
 [`sfc`][sfc] [`shutdown`](#shutdown) 
 [`slmgr`][slmgr] 
-[`sysdm.cpl`][sysdm.cpl]
 [`systeminfo`][systeminfo]
-[`timedate.cpl`][timedate.cpl]
 [`tracert`](#tracert) 
 [`traceroute`](#tracert)
-[`wgpocpl.cpl`][wgpocpl.cpl]
 [`winrm`](#winrm) 
 [`winver`][winver]
 [`wmic`][wmic]
 
+###### Active Directory
+[`adprep`][adprep] 
+[`adfind`][adfind]
+[`dsquery`][dsquery]
+
+###### Control Panel
+[`access`][access.cpl] 
+[`appwiz`][appwiz.cpl] 
+[`desk`][desk.cpl] 
+[`findfast`][findfast.cpl] 
+[`inetcpl`][inetcpl.cpl] 
+[`intl`][intl.cpl] 
+[`joy`][joy.cpl]
+[`main`][main.cpl] 
+[`mlcfg32`][mlcfg32.cpl] 
+[`mmsys`][mmsys.cpl]
+[`ncpa`][ncpa.cpl]
+[`sysdm`][sysdm.cpl]
+[`timedate`][timedate.cpl]
+[`wgpocpl`][wgpocpl.cpl]
+
 ###### Variables
-[USERPROFILE]:                 #variables                               '```&#10;C:\> echo %USERPROFILE%&#10;```&#10;Location of profile directory of current user (i.e. "C:\Users\jsmith")'
-[USERNAME]:                    #variables                               '```&#10;C:\> echo %USERNAME%&#10;```&#10;Name of current user (i.e. "jsmith").'
-[APPDATA]:                     #variables                               '```&#10;C:\> echo %APPDATA%&#10;```&#10;The file-system directory that serves as a common repository for application-specific data (i.e. "C:\Users\jsmith\AppData\Roaming").'
-[LOCALAPPDATA]:                #variables                               '```&#10;C:\> echo %LOCALAPPDATA%&#10;```&#10;The file-system directory that serves as a data repository for local, non-roaming applications (i.e. "C:\Users\jsmith\AppData\Local").'
+[USERPROFILE]: #variables '```&#10;C:\> echo %USERPROFILE%&#10;```&#10;Location of profile directory of current user (i.e. "C:\Users\jsmith")'
+[USERNAME]: #variables '```&#10;C:\> echo %USERNAME%&#10;```&#10;Name of current user (i.e. "jsmith").'
+[APPDATA]: #variables '```&#10;C:\> echo %APPDATA%&#10;```&#10;The file-system directory that serves as a common repository for application-specific data (i.e. "C:\Users\jsmith\AppData\Roaming").'
+[LOCALAPPDATA]: #variables '```&#10;C:\> echo %LOCALAPPDATA%&#10;```&#10;The file-system directory that serves as a data repository for local, non-roaming applications (i.e. "C:\Users\jsmith\AppData\Local").'
 
 [`USERPROFILE`][USERPROFILE] 
 [`USERNAME`][USERNAME] 
 [`APPDATA`][APPDATA] 
 [`LOCALAPPDATA`][LOCALAPPDATA] 
+
+###### `adfind`
+Query the schema version associated with Active Directory <sup>[Desmond][Desmond2009]: 53</sup>
+```cmd
+adfind -schema -s base objectVersion
+```
 
 ###### `adprep`
 Prepare Active Directory for Windows Server upgrades. Must be run on the Infrastructure Master role owner with the flag `/domainprep`. <sup>[Desmond][Desmond2009]: 29</sup>
@@ -290,6 +306,12 @@ Determine exact name of Windows features that can be enabled and disabled <sup>[
 ```cmd
 dism /image:c:\mount /get-features
 ```
+###### `dsquery`
+Find the Active Directory Schema version from the command-line <sup>[nolabnoparty.com](https://nolabnoparty.com/en/finding-active-directory-schema-version/ "Finding the Active Directory schema version") [pwsh](https://github.com/jasper-zanjani/notes/tree/primary/70-740/pwsh.md#get-adobject "Get-ADObject")</sup>
+```cmd
+dsquery * cn=schema,cn=configuration,dc=domain,dc=com -scope base -attr objectVersion"
+```
+
 ###### `ipconfig`
 `all` `flushdns` `renew`
 
@@ -369,6 +391,13 @@ netsh wlan show profile wifi key=clear
 ```
 ###### `ntdsutil`
 Used to transfer [FSMO](# "\"Flexible Single Master Operator\", server that is master for a particular role or function") roles between domain controllers. [<sup>Desmond: 30</sup>][Desmond2009]
+
+###### `regsvr32`
+Register a DLL dependency in order to enable the Active Directory Schema MMC snap-in on a DC <sup>[Desmond][Desmond2009]: 54</sup>
+```cmd
+regsvr32 schmmgmt.dll
+```
+
 ###### `route`
 <!-- `route` options -->
 [route /&#112;]:                #route                         '```&#10;C:\>route /p&#10;```&#10;Make a route persistent&#10;Lammle, Todd. _CompTIA Network+ Study Guide: Exam N10-005_. 2012.: 539'
@@ -590,13 +619,13 @@ shutdown /r /t 0
 [slmgr /ato]:                     #slmgr                         '```&#10;C:\> slmgr /ato&#10;```&#10;Force Windows to attempt an online activation, either with Microsoft servers or with the KMS server on the local network'
 [slmgr /rearm]:                   #slmgr                         '```&#10;C:\> slmgr /rearm&#10;```&#10;Reset activation timer to extend trial period. Each usage reduces the "rearm count" (ref. `/dlv`)'
 
+[`ato`][slmgr /ato]
 [`dli`][slmgr /dli]
 [`dlv`][slmgr /dlv]
-[`xpr`][slmgr /xpr]
-[`upk`][slmgr /upk]
 [`ipk`][slmgr /ipk]
-[`ato`][slmgr /ato]
 [`rearm`][slmgr /rearm]
+[`upk`][slmgr /upk]
+[`xpr`][slmgr /xpr]
 
 ###### `tracert`
 On Windows, this command is aliased to `traceroute` which is the Linux command. [<sup>Lammle: 112<sup>][Lammle]

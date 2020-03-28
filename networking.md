@@ -52,3 +52,26 @@ Description | Image
 **RAID 6**  | ![RAID 6](img/RAID-6.png)
 **RAID 10** Multiple RAID 1 arrays are treated as drives in a RAID 0, so data is striped across mirrored arrays. | 
 **RAID 50** Multiple RAID 5 arrays contained in a RAID 0, and because there are at least of such arrays involved the minimum number of drives is **6**. | 
+
+### DNS
+
+###### Resource records
+[A record]: #dns 'A record&#10;IPv4 address record&#10;Dulaney, Emmett. _CompTIA Network+ N10-007 Exam Cram, 6th Edition_.: 71'
+[AAAA record]: #dns 'AAAA record&#10;IPv6 address record&#10;Dulaney, Emmett. _CompTIA Network+ N10-007 Exam Cram, 6th Edition_.: 70'
+[CNAME record]: #dns 'CNAME record&#10;"canonical name record", hostnames or aliases for hosts in the domain; gives a single computer multiple names&#10;Dulaney, Emmett. _CompTIA Network+ N10-007 Exam Cram, 6th Edition_.: 70'
+[MX record]: #dns 'MX record&#10;"mail exchange record", stores information about where mail for the domain should be delivered&#10;Dulaney, Emmett. _CompTIA Network+ N10-007 Exam Cram, 6th Edition_.: 71'
+[NS record]: #dns 'NS record&#10;"name server record", stores information that identifies name servers in the domain that store information for that domain&#10;Dulaney, Emmett. _CompTIA Network+ N10-007 Exam Cram, 6th Edition_.: 70'
+[PTR record]: #dns 'PTR record&#10;"pointer record", records used for reverse lookup, or resolving IP addresses to hostnames&#10;Dulaney, Emmett. _CompTIA Network+ N10-007 Exam Cram, 6th Edition_.: 70'
+[SOA record]: #dns 'SOA record&#10;"start of authority record", contains data on DNS zones and other records; each zone cdontains a single SOA record&#10;Dulaney, Emmett. _CompTIA Network+ N10-007 Exam Cram, 6th Edition_.: 70'
+[SRV record]: #dns 'SRV record&#10;"service locator", generalized service location record, used for newer protocols instead of protocol-specific records (i.e. MX)&#10;Dulaney, Emmett. _CompTIA Network+ N10-007 Exam Cram, 6th Edition_.: 70'
+[TXT record]: #dns 'TXT record&#10;"text record", originally created to carry human-readable text in a DNS record, but today more commonly holds machine-readable data&#10;Dulaney, Emmett. _CompTIA Network+ N10-007 Exam Cram, 6th Edition_.: 71'
+
+[`A`][A record] 
+[`AAAA`][AAAA record] 
+[`CNAME`][CNAME record] 
+[`MX`][MX record] 
+[`NS`][NS record] 
+[`PTR`][PTR record] 
+[`SOA`][SOA record] 
+[`SRV`][SRV record] 
+[`TXT`][TXT record] 
