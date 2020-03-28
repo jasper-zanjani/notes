@@ -73,7 +73,7 @@
 <code>[17](# "Upgrading to Windows Server 2003 R2&#10;---&#10;Outlines the process to upgrade your existing Active Directory to Windows Server 2003 R2.")</code> 
 <code>[18](# "Upgrading to Windows Server 2008&#10;---&#10;Outlines the process to upgrade your existing Active Directory to Windows Server 2008.")</code> 
 <code>[19](# "Integrating Microsoft Exchange&#10;---&#10;Covers some of the important Active Directory-related issues when implementing Microsoft Exchange.")</code> 
-<code>[20](# "Active Directory Lightweight Directory Service (a.k.a. ADAM)&#10;---&#10;Introduces Active Directory Lightweight Directory Services (AD LDS, formerly ADAM).") /code>\ 
+<code>[20](# "Active Directory Lightweight Directory Service (a.k.a. ADAM)&#10;---&#10;Introduces Active Directory Lightweight Directory Services (AD LDS, formerly ADAM).") </code>\
 <code>[21](# "Scripting with ADSI&#10;---&#10;Introduces ADSI scripting by leading you through a series of step-by-step examples.")</code> 
 <code>[22](# "IADs and the Property Cache&#10;---&#10;Delves into the concept of the property cache used extensively by ADSI and shows you how to properly manipulate any attribute of any object within it.")</code> 
 <code>[23](# "Using ADO for searching&#10;---&#10;Demonstrates how to make use of a technology normally reserved for databases and now extended to allow rapid searching for objects in Active Directory.")</code> 
