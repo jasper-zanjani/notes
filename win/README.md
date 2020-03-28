@@ -306,6 +306,10 @@ Determine exact name of Windows features that can be enabled and disabled <sup>[
 ```cmd
 dism /image:c:\mount /get-features
 ```
+
+###### `dsamain`
+
+
 ###### `dsquery`
 Find the Active Directory Schema version from the command-line <sup>[nolabnoparty.com](https://nolabnoparty.com/en/finding-active-directory-schema-version/ "Finding the Active Directory schema version") [pwsh](https://github.com/jasper-zanjani/notes/tree/primary/70-740/pwsh.md#get-adobject "Get-ADObject")</sup>
 ```cmd

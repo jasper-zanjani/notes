@@ -35,7 +35,7 @@
 [Schema Naming Context]: # 'Schema Naming Context&#10;contains the set of object class and attribute definitions for the types of data that can be stored in AD&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 43'
 [Configuration Naming Context]: # 'Configuration Naming Context&#10;contains data pertaining to the configuration of the forest, like naming contexts, LDAP policies, sites, subnets, and Microsoft Exchange&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 43'
 [OID]: # 'Object Identifier (OID)&#10;Sequence of integers that describe the unique path to the branch holding any schema object.&#10;Root branches are globally unique and maintained by IANA. OID namespaces are known as Enterprise Numbers.&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 55'
-[identifier authority]: #sid 'identifier authority&#10;Component of a SID that follows `S-1` that uniquely identifies the authority involved&#10;Possible values include:&nbsp;  - 0, NULL&nbsp;  - 1, World&nbsp;  - 2, Local&nbsp;  - 5, NT Authority&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 28'
+[identifier authority]: #sid 'identifier authority&#10;Component of a SID that follows `S-1` that uniquely identifies the authority involved&#10;Possible values include:&#10;  - 0, NULL&#10;  - 1, World&#10;  - 2, Local&#10;  - 5, NT Authority&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 28'
 [sub-authority]: #sid 'sub-authority&#10;Component of a SID that follows the identifier authority, the last of which is called the RID.&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 28'
 [SID]: #sid 'security identifier (SID)&#10;A unique, variable-length identifier used to identify a trustee or security principal of the format `S-1-id-s1-s2-s3-...-s15`&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 28'
 [NC]: # 'naming context (NC)&#10;data partition in Active Directory, each of which represents a different type of data&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 43'
@@ -48,10 +48,17 @@
 [site link]: #site-topology 'site link&#10;defines what sites are connected to each other and the relative cost of the connection&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 89'
 [connection object]: #site-topology 'connection object&#10;specifies which domain controllers replicate with which other domain controllers, how often, and which naming contexts are involved&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 92'
 
-#### Active Directory Fundamentals
-###### Terms
 - Active Directory components
-  - [Active Directory Application Mode (ADAM)][ADAM] 
+  - [Active Directory Lightweight Directory Services (AD LDS))][AD LDS] 
+    - Instance
+    - Configuration set
+    - Replica
+    - Partition/naming context
+    - Application partition
+    - Configuration partition
+    - Schema partition
+    - Bindable object
+    - Bindable proxy object
   - [Active Directory Federated Services (ADFS)][ADFS] 
   - [Directory Information Tree (DIT)][DIT] 
   - [Extensible Storage Engine (ESE)][ESE] 
@@ -73,16 +80,6 @@
     - [Single-domain][Single-domain] 
     - [Single-master][Single-master] 
     - [Complete trust][Complete-trust]
-- [AD LDS][AD LDS]
-  - Instance
-  - Configuration set
-  - Replica
-  - Partition/naming context
-  - Application partition
-  - Configuration partition
-  - Schema partition
-  - Bindable object
-  - Bindable proxy object
 - Groups:
   - [Domain local][domain local group]
   - [Domain global][domain global group]
@@ -97,6 +94,47 @@
   - [subnet][subnet] 
   - [site link][site link] 
   - [connection object][connection object] 
+
+#### Table of Contents
+###### 4th edition
+
+<code> [01](#history "A brief introduction&#10;---&#10;Reviews the evolution of the Microsoft NOS and some of the major features and benefits of Active Directory.") </code>
+<code> [02](#fundamentals "Active Directory fundamentals&#10;---&#10;Provides a high-level look at how objects are stored in Active Directory and explains some of the internal structures and concepts that it relies on.") </code>
+<code> [03](#naming-contexts "Naming contexts and application partisions&#10;---&#10;Reviews the predefined Naming Contexts within Active Directory, what is contained within each, and the purpose of Application Partitions") </code>
+<code> [04](#schema "Active Directory Schema&#10;---&#10;Gives you information on how the blueprint for each object and each object's attributes are stored in Active Directory.") </code>
+<code> [05](#site-topology "Site topology and replication&#10;---&#10;Details how the actual replication process for data takes place between domain controllers.") </code>
+<code> [06](# "Active Directory and DNS&#10;---&#10;Describes the importance of the Domain Name System (DNS) and what it is used for within Active Directory.") </code>
+<code> [07](# "Read-Only Domain Controllers&#10;---&#10;Describes the deployment and operation of Read-Only Domain Controllers (RODCs).") </code>
+<code> [08](# "Group Policy primer&#10;---&#10;Gives you a detailed introduction to the capabilities of Group Policy Objects and how to manage them.") </code>
+<code> [09](# "Fine-grained password policies&#10;---&#10;Comprehensive coverage of how to design, implement, and manage fine-grained password policies.") </code>
+<code> [10](# "Designing the namespace&#10;---&#10;Introduces the steps and techniques involved in properly preparing a design that reduces the number of domains and increases administrative control through the use of Organizational Units.") </code>
+<code> [11](# "Creating a site topology&#10;---&#10;Shows you how to design a representation of your physical inrastructure within Active Diretory to gain very fine-grained control over intrasite and intersite replication.") </code>
+<code> [12](# "Designing organization-wide group policies&#10;---&#10;Explains how Group Policy Objects function in Active Directory and how you can properly design an Active Directory structure to make the most effective use of these functions.") </code>
+<code> [13](# "Active Dirctory Security: permissions and auditing&#10;---&#10;Describes how you can design effective security f0or all areas of your Active Directory, in terms of both access to objects and their properties; includes information on how to design effective security access logginging in any areas you choose.") </code>
+<code> [14](# "Designing and implementing Schema extensions&#10;---&#10;Covers procedures for extending the classes and attributes in the Active Directory schema.") </code>
+<code> [15](# "Backup, recovery, and maintenance&#10;---&#10;Describes how you can backup and restore Active Directory down to the object level or the entire directory.") </code>
+<code> [16](# "Upgrading to Windows Server 2003&#10;---&#10;Outlines how you can upgrade your existing Active Directory infrastructure to Windows Server 2003.") </code>
+<code> [17](# "Upgrading to Windows Server 2003 R2&#10;---&#10;Outlines the process to upgrade your existing Active Directory to Windows Server 2003 R2.") </code>
+<code> [18](# "Upgrading to Windows Server 2008&#10;---&#10;Outlines the process to upgrade your existing Active Directory to Windows Server 2008.") </code>
+<code> [19](# "Integrating Microsoft Exchange&#10;---&#10;Covers some of the important Active Directory-related issues when implementing Microsoft Exchange.") </code>
+<code> [20](# "Active Directory Lightweight Directory Service (a.k.a. ADAM)&#10;---&#10;Introduces Active Directory Lightweight Directory Services (AD LDS, formerly ADAM).") </code>
+
+<code> [21](# "Scripting with ADSI&#10;---&#10;Introduces ADSI scripting by leading you through a series of step-by-step examples.") </code>
+<code> [22](# "IADs and the Property Cache&#10;---&#10;Delves into the concept of the property cache used extensively by ADSI and shows you how to properly manipulate any attribute of any object within it.") </code>
+<code> [23](# "Using ADO for searching&#10;---&#10;Demonstrates how to make use of a technology normally reserved for databases and now extended to allow rapid searching for objects in Active Directory.") </code>
+<code> [24](# "Users and groups&#10;---&#10;Gives you the lowdown on how to rapidly create users and groups, giving them whatever attributes you desire.") </code>
+<code> [25](# "Permissions and auditing&#10;---&#10;Describes how each object contains its own list of permissions and auditing entries that governs how it can be accessed and how access is logged.") </code>
+<code> [26](# "Extending the Schema and the Active Directory snap-ins&#10;---&#10;Covers the creation of new classes and attributes programmatically in the schema, and modification of the existing Active Directory snap-ins to perform additional customized functions.") </code>
+<code> [27](# "Scripting with WMI&#10;---&#10;Gives a quick overview of WMI and goes through several examples for managing a system, including services, the registry, and the event log. Accessing AD with WMI is also covered, along with the TrustMon and Replication WMI Providers.") </code>
+<code> [28](# "Scripting DNS&#10;---&#10;Describes how to manipulate DNS server configuration, zones, and resource records with the WMI DNS Provider.") </code>
+<code> [29](# "Programming the Directory with the .NET framework&#10;---&#10;Starts off by providing some background information on the .NET Framework and then dives into several examples using the System.DirectoryServices namespaces with VB.NET.") </code>
+<code> [30](# "PowerShell Basics&#10;---&#10;Provides a jumpstart to Windows PowerShell and a quick reference for PowerShell scripting concepts.")  </code>
+<code> [31](# "Scripting Active Directory with PowerShell&#10;---&#10;Describes how to manage and manipulate Active Directory using Windows PowerShell.") </code>
+<code> [32](# "Scripting Basic Exchange 2003 tasks&#10;---&#10;Tackles common Active Directory-related user and group management tasks for Microsoft Exchange 2000/2003.") </code>
+<code> [33](# "Scripting Basic Exchange 2007 tasks&#10;---&#10;Tackles common Active Directory-related tasks for Microsoft Exchange 2007 using Windows PowerShell.") </code>
+
+
+#### Fundamentals
 
 ###### History
 [Active Directory][AD] has its origins in 1990 when Microsoft released Windows NT 3.0, its first Network Operating System (NOS).
@@ -155,7 +193,7 @@ Each object in AD is an instance of a class defined in the [schema][schema].
 The schema version can be queried from the command-line with [`adfind`][adfind]
 [OID][OID]
 
-#### SID
+###### SID
 A Windows SID is generally composed of 2 fixed fields and up to 15 additional fields, all separated by dashes:
 
 <code> S-v-[id][identifier authority]-[s1][sub-authority]-[s2][sub-authority]-[s3][sub-authority]-[s4][sub-authority]-[s5][sub-authority]-[s6][sub-authority]-[s7][sub-authority]-[s8][sub-authority]-[s9][sub-authority]-[s10][sub-authority]-[s11][sub-authority]-[s12][sub-authority]-[s13][sub-authority]-[s14][sub-authority]-[s15][sub-authority] </code>
@@ -167,50 +205,5 @@ Differences between AD and AD LDS
 - AD LDS is a standalone application run from a `dsamain.exe` process (rather than `lsass.exe`), which means it can be started or stopped on demand without rebooting and multiple instances can be run.
 - AD LDS lacks the [global catalog](#gc "read-only catalog of all objects in a forest which contains a subset of attributes for each object; used to perform forest-wide searches") functionality (removing [NSPI](# "\"Name Service Provider Interface\", feature supported by Active Directory's global catalog") and [AB](# "\"Address Book\", feature supported by Active Directory's global catalog") as well)
 
-Feature         | AD LDS        | Active Directory
----             | ---           | ---
-LDAP port       | Configurable  | Static
-Resource location | `serviceConnectionPoint` objects | SRV DNS records
-Global catalog  | No            | Yes
-Schema          | 44 classes and 268 attributes | 
-[SID][SID]      | `S-v-id-s1-s2-s3-...-s15` | `S-v-id1-id2-r1-r2-r3-r4`
-Service account | `NT AUTHORITY\NetworkService` | `LocalSystem`
-
 #### Site topology
 A [site topology][site topology] is a map of the [sites][site], [subnets][subnet], [site links][site link], site link bridges, and [connection objects][connection object] as it relates to a forest.
-
-#### Table of Contents, 4th edition
-1.  [A brief introduction](#history "Reviews the evolution of the Microsoft NOS and some of the major features and benefits of Active Directory.") &bull; [LDAP](#ldap "LDAP originated in 1993 as a lighter-weight alternative to X.500, but it did not gain traction until its third major version was released in 1997.") [WinNT](#windows-nt "Microsoft's first NOS was WinNT 3.0, combining features of LAN Manager protocols and OS/2 (1990).") [WS 2003](#windows-server-2003 "The concept of mixed and native operation modes introduced in Windows Server 2000 was further refined into that of domain and forest functional levels in Windows Server 2003.") [WS 2008](#windows-server-2008 "Windows Server 2008 introduced RODCs and Server Core.")
-2.  [Active Directory fundamentals](#active-directory-fundamentals "Provides a high-level look at how objects are stored in Active Directory and explains some of the internal structures and concepts that it relies on.") &bull; [Objects](#objects "Active Directory objects can be either leaf nodes or containers and are stored in a DIT file.") [Uniquely identifying objects](#objects "GUIDs and distinguished names are used to uniquely identify objects in Active Directory.")
-3.  [Naming contexts and application partisions](#naming-contexts "Reviews the predefined Naming Contexts within Active Directory, what is contained within each, and the purpose of Application Partitions") &bull; 
-4.  [Active Directory Schema](#schema "Gives you information on how the blueprint for each object and each object's attributes are stored in Active Directory.")
-5.  [Site topology and replication](#site-topology "Details how the actual replication process for data takes place between domain controllers.")
-6.  [Active Directory and DNS](# "Describes the importance of the Domain Name System (DNS) and what it is used for within Active Directory.")
-7.  [Read-Only Domain Controllers](# "Describes the deployment and operation of Read-Only Domain Controllers (RODCs).") &bull; [RODC][RODC]
-8.  [Group Policy primer](# "Gives you a detailed introduction to the capabilities of Group Policy Objects and how to manage them.")
-9.  [Fine-grained password policies](# "Comprehensive coverage of how to design, implement, and manage fine-grained password policies.")
-10. [Designing the namespace](# "Introduces the steps and techniques involved in properly preparing a design that reduces the number of domains and increases administrative control through the use of Organizational Units.")
-11. [Creating a site topology](# "Shows you how to design a representation of your physical inrastructure within Active Diretory to gain very fine-grained control over intrasite and intersite replication.")
-12. [Designing organization-wide group policies](# "Explains how Group Policy Objects function in Active Directory and how you can properly design an Active Directory structure to make the most effective use of these functions.")
-13. [Active Dirctory Security: permissions and auditing](# "Describes how you can design effective security f0or all areas of your Active Directory, in terms of both access to objects and their properties; includes information on how to design effective security access logginging in any areas you choose.")
-14. [Designing and implementing Schema extensions](# "Covers procedures for extending the classes and attributes in the Active Directory schema.")
-15. [Backup, recovery, and maintenance](# "Describes how you can backup and restore Active Directory down to the object level or the entire directory.")
-16. [Upgrading to Windows Server 2003](# "Outlines how you can upgrade your existing Active Directory infrastructure to Windows Server 2003.")
-17. [Upgrading to Windows Server 2003 R2](# "Outlines the process to upgrade your existing Active Directory to Windows Server 2003 R2.")
-18. [Upgrading to Windows Server 2008](# "Outlines the process to upgrade your existing Active Directory to Windows Server 2008.")
-19. [Integrating Microsoft Exchange](# "Covers some of the important Active Directory-related issues when implementing Microsoft Exchange.")
-20. [Active Directory Lightweight Directory Service (a.k.a. ADAM)](# "Introduces Active Directory Lightweight Directory Services (AD LDS, formerly ADAM).") [AD LDS][AD LDS]
-21. [Scripting with ADSI](# "Introduces ADSI scripting by leading you through a series of step-by-step examples.")
-22. [IADs and the Property Cache](# "Delves into the concept of the property cache used extensively by ADSI and shows you how to properly manipulate any attribute of any object within it.")
-23. [Using ADO for searching](# "Demonstrates how to make use of a technology normally reserved for databases and now extended to allow rapid searching for objects in Active Directory.")
-24. [Users and groups](# "Gives you the lowdown on how to rapidly create users and groups, giving them whatever attributes you desire.")
-25. [Permissions and auditing](# "Describes how each object contains its own list of permissions and auditing entries that governs how it can be accessed and how access is logged.")
-26. [Extending the Schema and the Active Directory snap-ins](# "Covers the creation of new classes and attributes programmatically in the schema, and modification of the existing Active Directory snap-ins to perform additional customized functions.")
-27. [Scripting with WMI](# "Gives a quick overview of WMI and goes through several examples for managing a system, including services, the registry, and the event log. Accessing AD with WMI is also covered, along with the TrustMon and Replication WMI Providers.")
-28. [Scripting DNS](# "Describes how to manipulate DNS server configuration, zones, and resource records with the WMI DNS Provider.")
-29. [Programming the Directory with the .NET framework](# "Starts off by providing some background information on the .NET Framework and then dives into several examples using the System.DirectoryServices namespaces with VB.NET.")
-30. [PowerShell Basics](# "Provides a jumpstart to Windows PowerShell and a quick reference for PowerShell scripting concepts.") &bull; 
-31. [Scripting Active Directory with PowerShell](# "Describes how to manage and manipulate Active Directory using Windows PowerShell.")
-32. [Scripting Basic Exchange 2003 tasks](# "Tackles common Active Directory-related user and group management tasks for Microsoft Exchange 2000/2003.")
-33. [Scripting Basic Exchange 2007 tasks](# "Tackles common Active Directory-related tasks for Microsoft Exchange 2007 using Windows PowerShell.")
-
