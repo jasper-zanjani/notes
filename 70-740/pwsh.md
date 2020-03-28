@@ -345,8 +345,11 @@
 [`wr` ](#cmdlet-verbs  "```&#10;PS C:\> Write-&#10;```&#10;Adds information to a target. This verb is paired with Read.") 
 
 ###### Cmdlets
-<code>Alias&nbsp;[ep][Export-Alias]&nbsp;[g][Get-Alias]&nbsp;[n][New-Alias]&nbsp;[s][Set-Alias]</code> 
 <code>[Archive](#archive)&nbsp;[cm][Compress-Archive]&nbsp;[en][Expand-Archive]</code> 
+<code>[Host](#host)&nbsp;[oh][Out-Host]&nbsp;[rd][Read-Host]&nbsp;[wr][Write-Host]</code>
+<code>[Item](#item)&nbsp;[cp][Copy-Item]&nbsp;[g][Get-Item]&nbsp;[n][New-Item]&nbsp;[r][Remove-Item] </code>
+<code>[NanoServerImage](#nanoserverimage)&nbsp;[n][New-NanoServerImage] [e][Edit-NanoServerImage]</code> 
+<code>Alias&nbsp;[ep][Export-Alias]&nbsp;[g][Get-Alias]&nbsp;[n][New-Alias]&nbsp;[s][Set-Alias]</code> 
 <code>ChildItem&nbsp;[g][Get-ChildItem]</code> 
 <code>Clipboard&nbsp;[g][Get-Clipboard]&nbsp;[s][Set-Clipboard]</code> 
 <code>Computer&nbsp;[a][Add-Computer]&nbsp;[rn][Rename-Computer]&nbsp;[rt][Restart-Computer]&nbsp;[sp][Stop-Computer]</code> 
@@ -373,11 +376,8 @@
 <code>Table&nbsp;[f][Format-Table]</code> 
 <code>Type&nbsp;[a][Add-Type]</code> 
 <code>Volume&nbsp;[f][Format-Volume]</code> 
-<code>WMIObject&nbsp;[g][Get-WMIObject]</code> 
 <code>WebRequest&nbsp;[Invoke][Invoke-WebRequest]</code>
-<code>[Host](#host)&nbsp;[oh][Out-Host]&nbsp;[rd][Read-Host]&nbsp;[wr][Write-Host]</code>
-<code>[Item](#item)&nbsp;[cp][Copy-Item]&nbsp;[g][Get-Item]&nbsp;[n][New-Item]&nbsp;[r][Remove-Item] </code>
-<code>[NanoServerImage](#nanoserverimage)&nbsp;[n][New-NanoServerImage] [e][Edit-NanoServerImage]</code> 
+<code>WMIObject&nbsp;[g][Get-WMIObject]</code> 
 
 [**AD**](#active-directory)
 <code>Account&nbsp;[sr][Search-ADAccount]&nbsp;[uk][Unlock-ADAccount]&nbsp;</code> 
