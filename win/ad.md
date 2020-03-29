@@ -52,6 +52,12 @@
 [WMI provider]: #wmi 'WMI provider&#10;provided by each individual managed component and associated with a namespace&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 637'
 [CIM Repository]: #wmi 'CIM Repository&#10;primary warehouse for management data, containing the static data that does not change frequently (memory, disk size, etc)&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 637'
 [CIMOM]: #wmi 'CIM Object Manager (CIMOM)&#10;handles requests from clients, retrieves data from the CIM Repository, and returns it to the client&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 637'
+[Data table]: # 'Data table&#10;holds the bulk of data in the Active Directory DIT database&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2013.: 152'
+[Hidden table]: # 'Hidden table&#10;single-row table AD uses at startup to find configuration-related information in the Data Table&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2013.: 152'
+[Link table]: # 'Link table&#10;Stores data stored in linked attributes, such as group membership&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2013.: 153'
+[Security descriptor table]: # 'Security descriptor table&#10;Delivers single-instance storage of ACLs in AD&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2013.: 155'
+[.NET Framework]: #.net '.NET Framework&#10;set of APIs associated with the C# programming language that facilitate the management of Microsoft-based products and development of Windows applications&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2013.: 504'
+[.NET]: #.net '.NET&#10;open-source development platform that includes languages and libraries'
 
 #### Table of Contents
 <code>[**01**](#history "A brief introduction&#10;---&#10;Reviews the evolution of the Microsoft NOS and some of the major features and benefits of Active Directory.")</code> 
@@ -102,6 +108,11 @@
     - Bindable proxy object
   - [Active Directory Federated Services (ADFS)][ADFS] 
   - [Directory Information Tree (DIT)][DIT] 
+    - Key tables:
+      - [Data table][Data table]
+      - [Link table][Link table]
+      - [Hidden table][Hidden table]
+      - [Security descriptor table][Security descriptor table]
   - [Extensible Storage Engine (ESE)][ESE] 
   - [Identity Management for Unix (IMU)][IMU] 
   - [Security Accounts Manager (SAM)][SAM]
@@ -209,6 +220,10 @@ A [site topology][site topology] is a map of the [sites][site], [subnets][subnet
 #### WMI
 An industry effort to develop a model for managing systems and devices for vendor use arose in the 1990s which resulted in [CIM][CIM], which provides the basis for [WMI][WMI].
 The WMI architecture is composed of two main layers: the CIM infrastructure ([CIMOM][CIMOM] and [CIM Repository][CIM Repository]) and the [WMI providers][WMI provider]
-###### WMI providers
-
 Each provider is associated with a namespace, which is similar in concept to a filesystem.
+
+#### .NET
+The [.NET Framework][.NET Framework] was developed with the intention of replacing the old Win32 and COM APIs. It has two major components:
+- Common Language Runtime (CLR)
+- .NET Framework class library
+#### Searching Active Directory

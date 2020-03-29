@@ -665,7 +665,7 @@ Display information about installed RAM
 ```cmd
 wmic memorychip list full
 ```
-List all objects of type `Win32_LogicalDisk` using that class's alias `logicaldisk`. <sup>[Desmond][Desmond2009]: 642</sup>
+List all objects of type `Win32_LogicalDisk` using that class's alias `logicaldisk`. <sup>[Desmond][Desmond2009]: 642 [pwsh](pwsh.md '```&#10;PS C:\> Get-WmiObject -query "SELECT * FROM Win32_LogicalDisk"&#10;PS C:\> gwmi -q "select * from win32_logicaldisk"&#10;```') </sup>
 ```cmd
 wmic logicaldisk list brief
 ```
