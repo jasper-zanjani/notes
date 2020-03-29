@@ -13,144 +13,6 @@
 [WSAC]:   https://github.com/jasper-zanjani/notes/master/sources/wsac.md "Krause, Jordan. _Windows Server 2016 Administration Cookbook_."
 [Zacker]: https://github.com/jasper-zanjani/notes/master/certs/70-740.md "Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017."
 
-[Add-Computer]:                                      #add-computer                                      '```&#10;PS C:\> Add-Computer&#10;```&#10;Join a computer to a domain'
-[Add-Content]:                                       #add-content                                       '```&#10;PS C:\> Add-Content&#10;```&#10;'
-[Add-DhcpServerInDC]:                                #add-dhcpserverindc                                '```&#10;PS C:\> Add-DhcpServerInDC&#10;```&#10;'
-[Add-DhcpServerv4Scope]:                             #add-dhcpserverv4scope                             '```&#10;PS C:\> Add-DhcpServerv4Scope&#10;```&#10;Add an IPv4 scope on the DHCP server service.'
-[Add-DistributionGroupMember]:                       #add-distributiongroupmember                       '```&#10;PS C:\> Add-DistributionGroupMember&#10;```&#10;Add a single recipient to distribution groups and mail-enabled security groups'
-[Add-PSSnapin]:                                   #add-pssnapin                                      '```&#10;PS C:\> Add-PSSnapin&#10;PS C:\> asnp&#10;```&#10;Load a given list of snap-ins (.NET assemblies containing a collection of cmdlets and/or providers for use within PowerShell) either by name or via the pipeline - last supported in PowerShell 5.1'
-[Add-Type]:                                       #add-type                                          '```&#10;PS C:\> Add-Type&#10;```&#10;add a.NET Framework type (a class) to a Windows PowerShell session'
-[Add-WindowsFeature]:                             #add-windowsfeature                                '```&#10;PS C:\> Add-WindowsFeature&#10;PS C:\> Install-WindowsFeature&#10;```&#10;Install one or more roles, role services, or features on either the local or a specified remote server that is running Windows Server 2012 R2'
-[Clear-Host]:                                     #clear-host                                        '```&#10;PS C:\> Clear-Host&#10;```&#10;'
-[Clear-Host]:                                     #clear-host                                        '```&#10;PS C:\> Clear-Host&#10;```&#10;'
-[Close-SmbOpenFile]:                              #close-smbopenfile                                 '```&#10;PS C:\> Close-SmbOpenFile&#10;```&#10;Close a file that is open by one of the clients of the SMB server'
-[Close-SmbOpenFile]:                              #close-smbopenfile                                 '```&#10;PS C:\> Close-SmbOpenFile&#10;```&#10;Close a file that is open by one of the clients of the SMB server'
-[Close-SmbOpenFile]:                              close-smbopenfile#close-smbopenfile                '```&#10;PS C:\> Close-SmbOpenFile&#10;```&#10;Close a file that is open by one of the clients of the SMB server&#10;"Close-SmbOpenFile". _Microsoft Docs_.'
-[Compress-Archive]:                               #compress-archive                                  '```&#10;PS C:\> Compress-Archive&#10;```&#10;'
-[Copy-Item]:                                      #copy-item                                         '```&#10;PS C:\> Copy-Item&#10;```&#10;'
-[Disconnect-PSSession]:                           #disconnect-pssession                              '```&#10;PS C:\> Disconnect-PSSession&#10;PS C:\> dnsn&#10;```&#10;Terminate a remote PowerShell session begun with `New-PSSession`'
-[Enable-PSRemoting]:                              #enable-psremoting                                 '```&#10;PS C:\> Enable-PSRemoting&#10;```&#10;Allow remote Powershell management'
-[Enable-WindowsOptionalFeature]:                  #enable-windowsoptionalfeature                     '```&#10;PS C:\> Enable-WindowsOptionalFeature&#10;```&#10;Enable or restore an optional feature in a Windows image'
-[Enter-PSSession]:                                #enter-pssession                                   '```&#10;PS C:\> Enter-PSSession&#10;PS C:\> etsn&#10;```&#10;Interact with the specified PowerShell session'
-[Exit-PSSession]:                                 #exit-pssession                                    '```&#10;PS C:\> Exit-PSSession&#10;PS C:\> exsn&#10;```&#10;End an interactive session with a remote computer'
-[Expand-Archive]:                                 #expand-archive                                    '```&#10;PS C:\> Expand-Archive&#10;```&#10;Decompress archives'
-[Export-Alias]:                                   #export-alias                                      '```&#10;PS C:\> Export-Alias&#10;PS C:\> epal&#10;```&#10;Export information about currently defined aliases to a file.'
-[Export-CliXml]:                                  #export-clixml                                     '```&#10;PS C:\> Export-CliXml&#10;```&#10;Serialize a PowerShell object as a Common Language Infrastructure (CLI) XML file'
-[Export-Csv]:                                     #export-csv                                        '```&#10;PS C:\> Export-Csv&#10;```&#10;Export PowerShell objects to CSV'
-[Export-SmigServerSetting]:                       #export-smigserversetting                          '```&#10;PS C:\> Export-SmigServerSetting&#10;```&#10;Export certain Windows features and operating system settings to a migration store&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 33'
-[ForEach-Object]:                               #foreach-object                                    '```&#10;PS C:\> ForEach-Object&#10;PS C:\> %&#10;PS C:\> foreach&#10;```&#10;Perform an operation against each item in a collection of input objects.'
-[Format-List]:                                 #format-list                                       '```&#10;PS C:\> Format-List&#10;PS C:\> fl&#10;```&#10;'
-[Format-Table]:                                #format-table                                      '```&#10;PS C:\> Format-Table&#10;PS C:\> ft&#10;```&#10;'
-[Get-Alias]:                                   #get-alias                                         '```&#10;PS C:\> Get-Alias&#10;PS C:\> gal&#10;```&#10;Display aliases'
-[Get-ChildItem]:                               #get-childitem                                     '```&#10;PS C:\> Get-ChildItem&#10;PS C:\> dir&#10;PS C:\> gci&#10;PS C:\> ls&#10;```&#10;Get items in one or more locations'
-[Get-Clipboard]:                               #get-clipboard                                     '```&#10;PS C:\> Get-Clipboard&#10;PS C:\> gcb&#10;```&#10;Display items in clipboard'
-[Get-Command]:                                 #get-command                                       '```&#10;PS C:\> Get-Command&#10;PS C:\> gcm&#10;```&#10;Display all installed commands, including aliases, applications, filters, functions, and scripts'
-[Get-ComputerInfo]: #get-computerinfo '```&#10;PS C:\> Get-ComputerInfo&#10;PS C:\> gin&#10;```&#10;Retrieve a consolidated object of system and operating system properties&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 274'
-[Get-Content]:                                  #get-content                                       '```&#10;PS C:\> Get-Content&#10;PS C:\> cat&#10;PS C:\> gc&#10;PS C:\> type&#10;```&#10;'
-[Get-Credential]:                                 #get-credential                                    '```&#10;PS C:\> Get-Credential&#10;```&#10;'
-[Get-DistributionGroupMember]:                    #get-distributiongroupmember                       '```&#10;PS C:\> Get-DistributionGroupMember&#10;```&#10;View members of distribution groups and mail-enabled security groups'
-[Get-Help]:                                       #get-help                                          '```&#10;PS C:\> Get-Help&#10;```&#10;Display help file for cmdlets'
-[Get-History]:                                 #get-history                                       '```&#10;PS C:\> Get-History&#10;PS C:\> h&#10;PS C:\> history&#10;PS C:\> ghy&#10;```&#10;Display history of inputted commands'
-[Get-Item]:                                       #get-item                                          '```&#10;PS C:\> Get-Item&#10;```&#10;'
-[Get-Location]:                                   #get-location                                      '```&#10;PS C:\> Get-Location&#10;```&#10;'
-[Get-Member]:                                  #get-member                                        '```&#10;PS C:\> Get-Member&#10;PS C:\> gm&#10;```&#10;Display properties and methods of a Powershell object'
-[Get-Module]:                                  #get-module                                        '```&#10;PS C:\> Get-Module&#10;PS C:\> gmo&#10;```&#10;Display currently loaded Powershell modules'
-[Get-NetAdapter]:                                 #get-netadapter                                    '```&#10;PS C:\> Get-NetAdapter&#10;```&#10;Display available network interfaces'
-[Get-NetFirewallRule]:                            #get-netfirewallrule                               '```&#10;PS C:\> Get-NetFirewallRule&#10;```&#10;'
-[Get-NetIpConfiguration]:                      #get-netipconfiguration                            '```&#10;PS C:\> Get-NetIpConfiguration&#10;PS C:\> gip&#10;```&#10;Produce output similar to `ipconfig`'
-[Get-PSDrive]:                                 #get-psdrive                                       '```&#10;PS C:\> Get-PSDrive&#10;PS C:\> gdr&#10;```&#10;Display mapped drives'
-[Get-PSReadlineOption]:                           #get-psreadlineoption                              '```&#10;PS C:\> Get-PSReadlineOption&#10;```&#10;'
-[Get-PSSession]:                               #get-pssession                                     '```&#10;PS C:\> Get-PSSession&#10;PS C:\> gsn&#10;```&#10;Get the Windows Powershell sessions on local and remote computers'
-[Get-Process]:                                 #get-process                                       '```&#10;PS C:\> Get-Process&#10;PS C:\> gps ps&#10;```&#10;Display running processes'
-[Get-Service]:                                 #get-service                                       '```&#10;PS C:\> Get-Service&#10;PS C:\> gsv&#10;```&#10;Display services'
-[Get-SmbOpenFile]:                                get-smbopenfile#get-smbopenfile                    '```&#10;PS C:\> Get-SmbOpenFile&#10;```&#10;Retrieve basic information about the files that are open on behalf of the clients of the Server Message Block (SMB) server&#10;"Get-SmbOpenFile". _Microsoft Docs_.'
-[Get-SmigServerFeature]:                          #get-smigserverfeature                             '```&#10;PS C:\> Get-SmigServerFeature&#10;```&#10;Display a list of Windows features that can be migrated from the local server or ffrom a migration store&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 33'
-[Get-WMIObject]: #get-wmiobject '```&#10;PS C:\> Get-WMIObject&#10;PS C:\> gwmi&#10;```&#10;Gets instances of Windows Management Instrumentation (WMI) classes or information about the available classes.&#10;Superseded by `Get-CimInstance` since Powershell 3.0'
-[Get-WindowsFeature]:                             #get-windowsfeature                                '```&#10;PS C:\> Get-WindowsFeature&#10;```&#10;'
-[Import-CliXml]:                                  #import-clixml                                     '```&#10;PS C:\> Import-CliXml&#10;```&#10;Import a Common Language Infrastructure (CLI) XML file with data that represents Microsoft .NET Framework objects and create PowerShell objects from it'
-[Import-Csv]:                                  #import-csv                                        '```&#10;PS C:\> Import-Csv&#10;PS C:\> ipcsv&#10;```&#10;'
-[Import-Module]:                               #import-module                                     '```&#10;PS C:\> Import-Module&#10;PS C:\> ipmo&#10;```&#10;'
-[Import-SmigServerSetting]:                       #import-smigserversetting                          '```&#10;PS C:\> Import-SmigServerSetting&#10;```&#10;Import certain Windows features and operating system settings from a migration store and apply them to the local server&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 33'
-[Install-Module]:                                 #install-module                                    '```&#10;PS C:\> Install-Module&#10;```&#10;'
-[Invoke-GPUpdate]:                                #invoke-gpupdate                                   '```&#10;PS C:\> Invoke-GPUpdate&#10;```&#10;Schedule a remote Group Policy refresh on the specified host'
-[Invoke-WebRequest]:                              #invoke-webrequest                                 '```&#10;PS C:\> Invoke-WebRequest&#10;```&#10;'
-[Measure-Object]:                                 #measure-object                                    '```&#10;PS C:\> Measure-Object&#10;```&#10;Calculates the numeric properties of objects, and the characters, words, and lines in string objects, such as files of text.'
-[New-Alias]:                                   #new-alias                                         '```&#10;PS C:\> New-Alias&#10;PS C:\> nal&#10;```&#10;Create a new alias'
-[New-Guid]:                                       #new-guid                                          '```&#10;PS C:\> New-Guid&#10;```&#10;'
-[New-Item]:                                       #new-item                                          '```&#10;PS C:\> New-Item&#10;```&#10;'
-[New-NetFirewallRule]:                            #new-netfirewallrule                               '```&#10;PS C:\> New-NetFirewallRule&#10;```&#10;'
-[New-NetIpAddress]:                               #new-netipaddress                                  '```&#10;PS C:\> New-NetIpAddress&#10;```&#10;Manually configure network interface, if a DHCP server is unavailable'
-[New-Object]:                                     #new-object                                        '```&#10;PS C:\> New-Object&#10;```&#10;Create an instance of a Microsoft .NET Framework or COM object'
-[New-PSSession]:                               #new-pssession                                     '```&#10;PS C:\> New-PSSession&#10;PS C:\> nsn&#10;```&#10;Start a new remote PowerShell session with a remote computer'
-[New-PSSession]:                               #new-pssession                                     '```&#10;PS C:\> New-PSSession&#10;PS C:\> nsn&#10;```&#10;Start a new remote PowerShell session with a remote computer'
-[New-Partition]:                                  #new-partition                                     '```&#10;PS C:\> New-Partition&#10;```&#10;'
-[New-SmbShare]:                                   #new-smbshare                                      '```&#10;PS C:\> New-SmbShare&#10;```&#10;'
-[New-VFD]:                                        #new-vfd                                           '```&#10;PS C:\> New-VFD&#10;```&#10;Creates a virtual floppy disk.'
-[Out-Null]:                                       #out-null                                          '```&#10;PS C:\> Out-Null&#10;```&#10;Delete output instead of sending it down the pipeline'
-[Receive-SmigServerData]:                         #receive-smigserverdata                            '```&#10;PS C:\> Receive-SmigServerData&#10;```&#10;Enable a destination server to receive migrated files, folders, permissions, and share properties from a source server (`Send-SmigServerData` cmdlet must be running on the source server at the same time)&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 33'
-[Remove-Item]:                                 #remove-item                                       '```&#10;PS C:\> Remove-Item&#10;PS C:\> rm&#10;PS C:\> ri&#10;PS C:\> rmdir&#10;PS C:\> rd&#10;PS C:\> del&#10;```&#10;'
-[Rename-Computer]:                                #rename-computer                                   '```&#10;PS C:\> Rename-Computer&#10;```&#10;'
-[Resolve-DNSName]:                                #resolve-dnsname                                   '```&#10;PS C:\> Resolve-DNSName&#10;```&#10;...&#10;MeasureUp Practice Lab: Security+'
-[Restart-Computer]:                               #restart-computer                                  '```&#10;PS C:\> Restart-Computer&#10;```&#10;'
-[Select-Object]:                               #select-object                                     '```&#10;PS C:\> Select-Object&#10;PS C:\> sc&#10;```&#10;Select object or object properties'
-[Send-SmigServerData]:                            #send-smigserverdata                               '```&#10;PS C:\> Send-SmigServerData&#10;```&#10;Migrate files, folders, permissions, and share properties from a source server to a destination server (`Receive-SmigServerData` cmdlet must be running on the destination server at the same time)&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 33'
-[Set-Alias]:                                      #set-alias                                         '```&#10;PS C:\> Set-Alias&#10;```&#10;'
-[Set-Clipboard]:                               #set-clipboard                                     '```&#10;PS C:\> Set-Clipboard&#10;PS C:\> scb&#10;```&#10;Set the current Windows clipboard entry'
-[Set-DhcpServerv4OptionValue]:                    #set-dhcpserverv4optionvalue                       '```&#10;PS C:\> Set-DhcpServerv4OptionValue&#10;```&#10;'
-[Set-DnsClientServerAddress]:                     #set-dnsclientserveraddress                        '```&#10;PS C:\> Set-DnsClientServerAddress&#10;```&#10;Set DNS server addresses associated with the TCP/IP properties on an interface'
-[Set-ExecutionPolicy]:                            #set-executionpolicy                               '```&#10;PS C:\> Set-ExecutionPolicy&#10;```&#10;Change user preference for the Windows PowerShell execution policy'
-[Set-Location]:                                 #set-location                                      '```&#10;PS C:\> Set-Location&#10;PS C:\> cd&#10;```&#10;Set present working directory'
-[Set-NetFirewallRule]:                            #set-netfirewallrule                               '```&#10;PS C:\> Set-NetFirewallRule&#10;```&#10;'
-[Set-PSReadlineOption]:                           #set-psreadlineoption                              '```&#10;PS C:\> Set-PSReadlineOption&#10;```&#10;'
-[Set-Service]:                                    #set-service                                       '```&#10;PS C:\> Set-Service&#10;```&#10;Starts, stops, and suspends a service, and changes its properties'
-[Start-DscConfiguration]:                      #start-dscconfiguration                            '```&#10;PS C:\> Start-DscConfiguration&#10;PS C:\> sacfg&#10;```&#10;Apply configuration to nodes'
-[Start-Job]:                                   #start-job                                         '```&#10;PS C:\> Start-Job&#10;PS C:\> sajb&#10;```&#10;'
-[Start-Service]:                               #start-service                                     '```&#10;PS C:\> Start-Service&#10;PS C:\> sasv&#10;```&#10;Start one or more stopped services'
-[Stop-Computer]:                                  #stop-computer                                     '```&#10;PS C:\> Stop-Computer&#10;```&#10;'
-[Stop-Service]:                                #stop-service                                      '```&#10;PS C:\> Stop-Service&#10;PS C:\> spsv&#10;```&#10;Stop one or more services'
-[Update-DistributionGroupMember]:                 #update-distributiongroupmember                    '```&#10;PS C:\> Update-DistributionGroupMember&#10;```&#10;Replace all members of distribution groups and mail-enabled security groups'
-[Update-Help]:                                    #update-help                                       '```&#10;PS C:\> Update-Help&#10;```&#10;Download help files'
-[Where-Object]:                                 #where-object                                      '```&#10;PS C:\> Where-Object&#10;PS C:\> ?&#10;PS C:\> where&#10;```&#10;Select objects from a collection based on their property values'
-[Write-Host]: #write-host '```&#10;PS C:\> Write-Host&#10;```&#10;Write customized output to a host (equivalent to `echo`).'
-[Write-Output]:                                #write-output                                      '```&#10;PS C:\> Write-Output&#10;PS C:\> echo&#10;PS C:\> write&#10;```&#10;Send the specified objects to the next command in the pipeline. If the command is the last command in the pipeline, the objects are displayed in the console'
-
-<!-- Cmdlets from 70-740 -->
-[Add-AppxProvisionedPackage]: #add-appxprovisionedpackage '```&#10;PS C:\> Add-AppxProvisionedPackage&#10;```&#10;&#10;Equivalent to `Dism.exe /Image:foldername /Add-ProvisionedAppxPackage`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
-[Add-WindowsDriver]: #add-windowsdriver '```&#10;PS C:\> Add-WindowsDriver&#10;```&#10;&#10;Equivalent to `Dism.exe /Image:foldername /Add-Drive`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
-[Add-WindowsImage]: #add-windowsimage '```&#10;PS C:\> Add-WindowsImage&#10;```&#10;&#10;Equivalent to `dism.exe /Append-Image`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
-[Add-WindowsPackage]: #add-windowspackage '```&#10;PS C:\> Add-WindowsPackage&#10;```&#10;&#10;Equivalent to `Dism.exe /Image:foldername /Add-Package`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
-[Apply-WindowsUnattend]: #apply-windowsunattend '```&#10;PS C:\> Apply-WindowsUnattend&#10;```&#10;&#10;Equivalent to `Dism.exe /Image:foldername /Apply-Unattend`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
-[Close-SmbSession]: #close-smbsession '```&#10;PS C:\> Close-SmbSession&#10;```&#10;Ends forcibly the SMB session.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 107'
-[Disable-WindowsOptionalFeature]: #disable-windowsoptionalfeature '```&#10;PS C:\> Disable-WindowsOptionalFeature&#10;```&#10;&#10;Equivalent to `Dism.exe /Image:foldername /Disable-Feature`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
-[Dismount-WindowsImage]: #dismount-windowsimage '```&#10;PS C:\> Dismount-WindowsImage&#10;```&#10;&#10;Equivalent to `Dism.exe /Unmount-Image`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
-[Edit-NanoServerImage]: #nanoserverimage '```&#10;PS C:\> Edit-NanoServerImage&#10;```&#10;Add a role or feature to an existing Nano Server VHD file&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 49'
-[Enable-DedupVolume]: #enable-dedupvolume '```&#10;PS C:\> Enable-DedupVolume&#10;```&#10;&#10;Enable deduplication for a volume&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 157'
-[Enable-WindowsOptionalFeature]: #enable-windowsoptionalfeature '```&#10;PS C:\> Enable-WindowsOptionalFeature&#10;```&#10;&#10;Equivalent to `Dism.exe /Image:foldername /Enable-Feature`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
-[Expand-WindowsImage]: #expand-windowsimage '```&#10;PS C:\> Expand-WindowsImage&#10;```&#10;&#10;Equivalent to `Dism.exe /Apply-Image`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
-[Export-SmigServerSetting]:    #export-smigserversetting       '```&#10;PS C:\> Export-SmigServerSetting&#10;```&#10;Export certain Windows features and operating system settings to a migration store&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 33'
-[Export-WindowsDriver]: #export-windowsdriver '```&#10;PS C:\> Export-WindowsDriver&#10;```&#10;&#10;Equivalent to `Dism.exe /Image:foldername /Export-Driver`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
-[Export-WindowsImage]: #export-windowsimage '```&#10;PS C:\> Export-WindowsImage&#10;```&#10;&#10;Equivalent to `Dism.exe /Export-Image`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
-[Get-AppxProvisionedPackage]: #get-appxprovisionedpackage '```&#10;PS C:\> Get-AppxProvisionedPackage&#10;```&#10;&#10;Equivalent to `Dism.exe /Image:foldername /Get-ProvisionedAppxPackages`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 78'
-[Get-SmbSession]: #get-smbsession '```&#10;Get-SmbSession&#10;```&#10;Retrieves information about the SMB sessions that are currently established between the SMB server and the associated clients.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 107'
-[Get-SmigServerFeature]:       #get-smigserverfeature          '```&#10;PS C:\> Get-SmigServerFeature&#10;```&#10;Display a list of Windows features that can be migrated from the local server or ffrom a migration store&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 33'
-[Get-WindowsDriver]: #get-windowsdriver '```&#10;PS C:\> Get-WindowsDriver&#10;```&#10;&#10;Equivalent to `Dism.exe /Image:foldername /Get-Drivers`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 78'
-[Get-WindowsImage]: #get-windowsimage '```&#10;PS C:\> Get-WindowsImage&#10;```&#10;&#10;Equivalent to `Dism.exe /Get-ImageInfo`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
-[Get-WindowsImageContent]: #get-windowsimagecontent '```&#10;PS C:\> Get-WindowsImageContent&#10;```&#10;&#10;Equivalent to `Dism.exe /List-Image`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
-[Get-WindowsOptionalFeature]: #get-windowsoptionalfeature '```&#10;PS C:\> Get-WindowsOptionalFeature&#10;```&#10;&#10;Equivalent to `Dism.exe /Image:foldername /Get-Features`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 78'
-[Get-WindowsPackage]: #get-windowspackage '```&#10;PS C:\> Get-WindowsPackage&#10;```&#10;&#10;Equivalent to `Dism.exe /Image:foldername /Get-Packages`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 78'
-[Import-SmigServerSetting]:    #import-smigserversetting       '```&#10;PS C:\> Import-SmigServerSetting&#10;```&#10;Import certain Windows features and operating system settings from a migration store and apply them to the local server&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 33'
-[Mount-WindowsImage]: #mount-windowsimage '```&#10;PS C:\> Mount-WindowsImage&#10;```&#10;&#10;Equivalent to `Dism.exe /Mount-image`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
-[New-NanoServerImage]: #nanoserverimage '```&#10;PS C:\> New-NanoServerImage&#10;PS C:\> New-NanoServerImage -DeploymentType guest|host -Edition standard|datacenter -MediaPath root -TargetPath $PATH -ComputerName $NAME&#10;```&#10;Used to create a Nano Server VHD file for Nano Server installation&#10;Required parameters:&#10;  `DeploymentType` specified whether the image file should be used on a Hyper-V VM ("Guest") or a physical server ("Host")&#10;  `Edition` specifies whether to install the Standard or Datacenter edition of Nano Server&#10;  `MediaPath` specifies the path to the root of the WS2016 installation disk or mounted image&#10;  `BasePath` specifies a path on the local system where the cmdlet creates a copy of the installation files from the location specified in `MediaPath`&#10;  `TargetPath` specifies the full path and filename of the new image to be created with the filename extension (".vhd" or ".vhdx") specifying Generation 1 or Generation 2 image.&#10;  `ComputerName` specifies the computer name that should be assigned to the new image&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 44'
-[New-WindowsImage]: #new-windowsimage '```&#10;PS C:\> New-WindowsImage&#10;```&#10;&#10;Equivalent to `Dism.exe /Capture-Image`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
-[Receive-SmigServerData]:      #receive-smigserverdata         '```&#10;PS C:\> Receive-SmigServerData&#10;```&#10;Enable a destination server to receive migrated files, folders, permissions, and share properties from a source server (`Send-SmigServerData` cmdlet must be running on the source server at the same time)&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 33'
-[Remove-AppxProvisionedPackage]: #remove-appxprovisionedpackage '```&#10;PS C:\> Remove-AppxProvisionedPackage&#10;```&#10;&#10;Equivalent to `Dism.exe /Image:foldername /Remove-ProvisionedAppxPackage`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 78'
-[Remove-WindowsDriver]: #remove-windowsdriver '```&#10;PS C:\> Remove-WindowsDriver&#10;```&#10;&#10;Equivalent to `Dism.exe /Image:foldername /Remove-Driver`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 78'
-[Remove-WindowsImage]: #remove-windowsimage '```&#10;PS C:\> Remove-WindowsImage&#10;```&#10;&#10;Equivalent to `Dism.exe /Remove-Image`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
-[Remove-WindowsPackage]: #remove-windowspackage '```&#10;PS C:\> Remove-WindowsPackage&#10;```&#10;&#10;Equivalent to `Dism.exe /Image:foldername /Remove-Package`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 78'
-[Save-WindowsImage]: #save-windowsimage '```&#10;PS C:\> Save-WindowsImage&#10;```&#10;&#10;Equivalent to `Dism.exe /Commit-Image`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
-[Send-SmigServerData]:         #send-smigserverdata            '```&#10;PS C:\> Send-SmigServerData&#10;```&#10;Migrate files, folders, permissions, and share properties from a source server to a destination server (`Receive-SmigServerData` cmdlet must be running on the destination server at the same time)&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 33'
-[Set-AppxProvisionedDataFile]: #set-appxprovisioneddatafile '```&#10;PS C:\> Set-AppxProvisionedDataFile&#10;```&#10;&#10;Equivalent to `Dism.exe /Image:foldername /Set-ProvisionedAppxDataFile`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 78'
-
 # PowerShell
 ## Contents
 ###### Concepts
@@ -172,7 +34,9 @@
 - [Create a new VHDX file, mount and initialize it, and create and format a partition within it](#vhdx-file)
 - [Restart Wi-Fi adapter](#restart-wi-fi-adapter)
 
-###### Cmdlet verbs
+
+#### Cmdlets
+##### Cmdlet verbs
 [<code>&nbsp;a</code>](#cmdlet-verbs  "```&#10;PS C:\> Add-&#10;```") 
 [`ap`](#cmdlet-verbs "`Approve-`&#10;Confirms or agrees to the status of a resource or process.") 
 [`as` ](#cmdlet-verbs  "```&#10;PS C:\> Assert-&#10;```&#10;Affirms the state of a resource.") 
@@ -270,8 +134,7 @@
 [`wc` ](#cmdlet-verbs  "```&#10;PS C:\> Watch-&#10;```") 
 [`wr` ](#cmdlet-verbs  "```&#10;PS C:\> Write-&#10;```&#10;Adds information to a target. This verb is paired with Read.") 
 
-#### Cmdlets
-###### Active Directory cmdlets
+##### Active Directory cmdlets
 <!-- Active Directory cmdlets -->
 [Search-ADAccount]:                                  #search-adaccount                             "`Search-ADAccount`"
 [Add-ADPrincipalGroupMembership]:                    #add-adprincipalgroupmembership               "`Add-ADPrincipalGroupMembership` &#10; Add a member to one or more Active Directory groups"
@@ -296,7 +159,6 @@
 
 <code>DistributionGroupMember&nbsp;[a][Add-DistributionGroupMember]&nbsp;[g][Get-DistributionGroupMember]&nbsp;[ud][Update-DistributionGroupMember] </code> 
 <code>GPUpdate&nbsp;[i][Invoke-GPUpdate]</code> 
-
 [**AD**](#active-directory)
 <code>Account&nbsp;[sr][Search-ADAccount]&nbsp;[uk][Unlock-ADAccount]&nbsp;</code> 
 <code>AccountPassword&nbsp;[s][Set-ADAccountPassword]&nbsp;</code> 
@@ -304,13 +166,12 @@
 <code>OrganizationalUnit&nbsp;[g][Get-ADOrganizationalUnit]&nbsp;[n][New-ADOrganizationalUnit]&nbsp;[r][Remove-ADOrganizationalUnit]&nbsp;[s][Set-ADOrganizationalUnit]&nbsp;</code> 
 <code>PrincipalGroupMembership&nbsp;[a][Add-ADPrincipalGroupMembership]&nbsp;[g][Get-ADPrincipalGroupMembership]&nbsp;</code>
 <code>User&nbsp;[g][Get-ADUser]&nbsp;[n][New-ADUser]</code>
-
-**ADDS**&nbsp;
+**ADDS**
 <code>Domain&nbsp;[`is`][Install-ADDSDomain]</code>
 <code>DomainController&nbsp;[is][Install-ADDSDomainController]&nbsp;[us][Uninstall-ADDSDomainController]</code>
 <code>Forest&nbsp;[g][Get-ADDSForest]&nbsp;[is][Install-ADDSForest]&nbsp;</code>
 
-###### Failover cluster cmdlets
+##### Failover cluster cmdlets
 <!-- Failover clusters -->
 [Add-ClusterDisk]: #add-clusterdisk '```&#10;PS C:\> Add-ClusterDisk&#10;```&#10;Allow an admin to add a new disk to a failover cluster'
 [Add-ClusterFileServerRole]: #add-clusterfileserverrole '```&#10;PS C:\> Add-ClusterFileServerRole&#10;```&#10;This command allows an admin to create a clustered file server'
@@ -333,6 +194,7 @@
 [Stop-Cluster]: #stop-cluster '```&#10;PS C:\> Stop-Cluster&#10;```&#10;Stop the Cluster service on all nodes'
 [Stop-ClusterNode]: #stop-clusternode '```&#10;PS C:\> Stop-ClusterNode&#10;```&#10;Stop the Cluster service on a node'
 [Test-Cluster]: #test-cluster '```&#10;PS C:\> Test-Cluster&#10;```&#10;Complete validation tests for a cluster'
+[Add-ClusterScaleOutFileServer]: #add-clusterscaleoutfileserver '```&#10;PS C:\> Add-ClusterScaleOutFileServer&#10;```&#10;Install the Scale-out File Server role&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 339'
 
 [**Cluster**](#failover-clusters)
 <code>[g][Get-Cluster]&nbsp;[n][New-Cluster]&nbsp;[r][Remove-Cluster]&nbsp;[sa][Start-Cluster]&nbsp;[sp][Stop-Cluster]&nbsp;[t][Test-Cluster]</code>
@@ -345,12 +207,14 @@
 <code>Quorum&nbsp;[g][Get-ClusterQuorum]</code>
 <code>Resource&nbsp;[a][Add-ClusterResource]</code>
 <code>ResourceDependency&nbsp;[a][Add-ClusterResourceDependency]</code>
+<code>ScaleOutFileServer&nbsp;[a][Add-ClusterScaleOutFileServer]</code>
 <code>ServerRole&nbsp;[a][Add-ClusterServerRole]</code>
 <code>SharedVolume&nbsp;a</code>
+<code>StorageSpacesDirect&nbsp;[e][Enable-ClusterStorageSpacesDirect]</code>
 <code>VirtualMachineRole&nbsp;a</code>
 <code>VMMonitoredItem&nbsp;a</code>
 
-###### Disk-related cmdlets
+##### Disk-related cmdlets
 [Enable-DedupVolume]: #enable-dedupvolume '```&#10;PS C:\> Enable-DedupVolume&#10;```&#10;Enable deduplication for a volume&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 157'
 [Set-Disk]: #set-disk '```&#10;PS C:\> Set-Disk&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 226'
 [Mount-DiskImage]: #mount-diskimage '```&#10;PS C:\> Mount-DiskImage&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 92'
@@ -367,7 +231,7 @@
 <code>Partition&nbsp;[f][Format-Partition]&nbsp;[g][Get-Partition] [n][New-Partition] [r][Remove-Partition]</code> 
 <code>Volume&nbsp;[f][Format-Volume]&nbsp;[n][New-Volume]</code> 
 
-###### File cmdlets
+##### File cmdlets
 [Copy-Item]: #copy-item '```&#10;PS C:\> Copy-Item&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 180'
 [Set-Item]: #set-item '```&#10;PS C:\> Set-Item&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 56'
 [Add-Content]: #add-content '```&#10;PS C:\> Add-Content&#10;```&#10;'
@@ -388,7 +252,7 @@
 <code>Item&nbsp;[cp][Copy-Item]&nbsp;[g][Get-Item]&nbsp;[n][New-Item]&nbsp;[r][Remove-Item] </code>
 <code>Null&nbsp;[o][Out-Null]</code> 
 
-###### File share cmdlets
+##### File share cmdlets
 [Get-SmbClientConfiguration]: #get-smbclientconfiguration '```&#10;PS C:\> Get-SmbClientConfiguration&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 111'
 [Close-SmbOpenFile]: #close-smbopenfile '```&#10;PS C:\> Close-SmbOpenFile&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 108'
 [Get-SmbOpenFile]: #get-smbopenfile '```&#10;PS C:\> Get-SmbOpenFile&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 108'
@@ -418,7 +282,7 @@
 <code>Share&nbsp;[n][New-SmbShare]&nbsp;[r][Remove-SmbShare]</code>
 <code>ShareAccess&nbsp;[g][Get-SmbShareAccess]&nbsp;[bl][Block-SmbShareAccess]&nbsp;[gr][Grant-SmbShareAccess]&nbsp;[rk][Revoke-SmbShareAccess]&nbsp;[uk][Unblock-SmbShareAccess]</code>
 
-###### Network-related cmdlets
+##### Network-related cmdlets
 [Set-DnsClientServerAddress]: #set-dnsclientserveraddress '```&#10;PS C:\> Set-DnsClientServerAddress&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 20'
 [Get-NetAdapter]: #get-netadapter '```&#10;PS C:\> Get-NetAdapter&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 19'
 [Set-NetAdapterVmq]: #set-netadaptervmq '```&#10;PS C:\> Set-NetAdapterVmq&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 253'
@@ -443,23 +307,20 @@
 [Enable-NetFirewallRule]: #enable-netfirewallrule '```&#10;PS C:\> Enable-NetFirewallRule&#10;```&#10;Enable a previously disabled Windows Firewall rule'
 
 <code>WebRequest&nbsp;[Invoke][Invoke-WebRequest]</code>
-
 **DNS**
 <code>ClientServerAddress&nbsp;[s][Set-DnsClientServerAddress]</code> 
 <code>Name&nbsp;[rv][Resolve-DNSName]</code> 
-
 **DhcpServer**
 <code>InDC [a][Add-DhcpServerInDC]</code> 
 <code>V4Scope [a][Add-DhcpServerv4Scope]</code> 
 <code>v4OptionValue [s][Set-DhcpServerv4OptionValue]</code> 
-
 **Net**
 <code>Adapter&nbsp;[`g`][Get-NetAdapter]</code>
 <code>FirewallRule&nbsp;[e][Enable-NetFirewallRule]&nbsp;[g][Get-NetFirewallRule]&nbsp;[n][New-NetFirewallRule]&nbsp;[s][Set-NetFirewallRule]</code>
 <code>IpAddress&nbsp;[n][New-NetIpAddress]</code>
 <code>IpConfiguration&nbsp;[g][Get-NetIpConfiguration]</code>
 
-###### Shell environment cmdlets
+##### Shell environment cmdlets
 [Add-Computer]: #add-computer '```&#10;PS C:\> Add-Computer&#10;```&#10;Join a computer to a domain'
 [Add-PSSnapin]: #add-pssnapin '```&#10;PS C:\> Add-PSSnapin&#10;PS C:\> asnp&#10;```&#10;Load a given list of snap-ins (.NET assemblies containing a collection of cmdlets and/or providers for use within PowerShell) either by name or via the pipeline - last supported in PowerShell 5.1'
 [Add-Type]: #add-type '```&#10;PS C:\> Add-Type&#10;```&#10;add a.NET Framework type (a class) to a Windows PowerShell session'
@@ -521,13 +382,12 @@
 <code>Output&nbsp;[wr][Write-Output]</code> 
 <code>Table&nbsp;[f][Format-Table]</code> 
 <code>Type&nbsp;[a][Add-Type]</code> 
-
 **PS**
 <code>ReadlineOption&nbsp;[g][Get-PSReadlineOption] [s][Set-PSReadlineOption]</code> 
 <code>[Session](#pssession)&nbsp;[dc][Disconnect-PSSession] [et][Enter-PSSession] [ex][Exit-PSSession] [g][Get-PSSession] [n][New-PSSession]</code> 
 
 
-###### Hyper-V cmdlets
+##### Hyper-V cmdlets
 <!-- Hyper-V cmdlets -->
 [Add-VMNetworkAdapter]: #add-vmnetworkadapter '```&#10;PS C:\> Add-VMNetworkAdapter&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 237'
 [Add-VMSwitch]:                                      # '`Add-VMSwitch`&#10;Adds a virtual switch to an Ethernet resource pool.'
@@ -569,7 +429,6 @@
 
 **VHD**
 <code>[mt][Mount-VHD]&nbsp;[n][New-VHD]&nbsp;</code>
-
 **VM**
 <code>[cr][Compare-VM]&nbsp;[db][Debug-VM]&nbsp;[ep][Export-VM]&nbsp;[g][Get-VM]&nbsp;[ip][Import-VM]&nbsp;[m][Move-VM]&nbsp;[ms][Measure-VM]&nbsp;[n][New-VM]&nbsp;[r][Remove-VM]&nbsp;[rn][Rename-VM]&nbsp;[rt][Restart-VM]&nbsp;[ru][Resume-VM]&nbsp;[s][Set-VM]&nbsp;[sa][Start-VM]&nbsp;[sp][Stop-VM]&nbsp;[ss][Suspend-VM]&nbsp;[sv][Save-VM]</code>
 <code>Firmware&nbsp;[s][Set-VMFirmware]</code> 
@@ -578,7 +437,7 @@
 <code>Processor&nbsp;[s][Set-VMProcessor]</code> 
 <code>Switch&nbsp;[n][New-VMSwitch]</code> 
 
-###### Server migration cmdlets
+##### Server migration cmdlets
 [Set-AppxProvisionedDataFile]: #https://github.com/jasper-zanjani/notes/tree/master/win/pwsh.md '```&#10;PS C:\> Set-AppxProvisionedDataFile&#10;```&#10;&#10;Equivalent to `Dism.exe /Image:foldername /Set-ProvisionedAppxDataFile`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 78'
 [Add-AppxProvisionedPackage]: #https://github.com/jasper-zanjani/notes/tree/master/win/pwsh.md '```&#10;PS C:\> Add-AppxProvisionedPackage&#10;```&#10;&#10;Equivalent to `Dism.exe /Image:foldername /Add-ProvisionedAppxPackage`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
 [Get-AppxProvisionedPackage]: #https://github.com/jasper-zanjani/notes/tree/master/win/pwsh.md '```&#10;PS C:\> Get-AppxProvisionedPackage&#10;```&#10;&#10;Equivalent to `Dism.exe /Image:foldername /Get-ProvisionedAppxPackages`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 78'
@@ -592,13 +451,12 @@
 **AppxProvisioned**
 <code>DataFile&nbsp;[s][Set-AppxProvisionedDataFile]</code> 
 <code>Package&nbsp;[a][Add-AppxProvisionedPackage] [g][Get-AppxProvisionedPackage] [r][Remove-AppxProvisionedPackage]</code> 
-
 **SmigServer** 
 <code>Data [rc][Receive-SmigServerData] [sd][Send-SmigServerData]</code> 
 <code>Feature [g][Get-SmigServerFeature]</code> 
 <code>Setting [ex][Export-SmigServerSetting] [ip][Import-SmigServerSetting]</code>
 
-###### Windows objects cmdlets
+##### Windows objects cmdlets
 [Add-WindowsDriver]: #https://github.com/jasper-zanjani/notes/tree/master/win/pwsh.md '```&#10;PS C:\> Add-WindowsDriver&#10;```&#10;&#10;Equivalent to `Dism.exe /Image:foldername /Add-Drive`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
 [Add-WindowsFeature]: #add-windowsfeature '```&#10;PS C:\> Add-WindowsFeature&#10;PS C:\> Install-WindowsFeature&#10;```&#10;Install one or more roles, role services, or features on either the local or a specified remote server that is running Windows Server 2012 R2'
 [Add-WindowsImage]: #https://github.com/jasper-zanjani/notes/tree/master/win/pwsh.md '```&#10;PS C:\> Add-WindowsImage&#10;```&#10;&#10;Equivalent to `dism.exe /Append-Image`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
@@ -637,7 +495,6 @@
 <code>NanoServerImage&nbsp;[n][New-NanoServerImage] [e][Edit-NanoServerImage]</code> 
 <code>Service&nbsp;[g][Get-Service] [s][Set-Service] [sa][Start-Service] [sp][Stop-Service]</code> 
 <code>WMIObject&nbsp;[g][Get-WMIObject]</code> 
-
 **Windows**
 <code>Driver&nbsp;[a][Add-WindowsDriver] [ep][Export-WindowsDriver] [g][Get-WindowsDriver] [r][Remove-WindowsDriver]</code> 
 <code>Feature&nbsp;[a][Add-WindowsFeature] [g][Get-WindowsFeature]</code> 
@@ -648,7 +505,7 @@
 <code>Package[a][Add-WindowsPackage] [g][Get-WindowsPackage] [r][Remove-WindowsPackage]</code>
 <code>Unattend&nbsp;[Apply][Apply-WindowsUnattend]</code>
 
-###### Bash equivalents
+##### Bash equivalents
 [`$!`][&#36;&#36;] 
 [`!$`][&#36;&#36;] 
 [`$?`][&#36;?] 
@@ -679,6 +536,9 @@
 [`touch`][New-Item]
 [`uniq`](#select-object "`Select-Object -Unique`")
 [`wc`][Measure-Object] [`which`][Get-Command]
+
+##### Cmdlets covered in 70-740
+
 
 #### Variables
 
@@ -1739,6 +1599,12 @@ New-Cluster cluster1 -Node node1,node2 -StaticAddress 10.0.0.1 -NoStorage -Admin
 Create a cluster, but prevent the system from automatically searching for and adding storage. <sup>[Zacker][Zacker]: 354</sup>
 ```powershell
 New-Cluster -Name cluster1 -node server1,server2,server3,server4 -NoStorage
+```
+##### `ClusterScaleOutFileServer`
+###### `Add-ClusterScaleOutFileServer`
+Install the Scale-out File Server role <sup>[Zacker][Zacker]: 339</sup>
+```powershell
+Add-ClusterScaleOutFileServer
 ```
 ##### `ClusterStorageSpacesDirect`
 ###### `Enable-ClusterStorageSpacesDirect`
