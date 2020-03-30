@@ -195,6 +195,7 @@
 [Stop-ClusterNode]: #stop-clusternode '```&#10;PS C:\> Stop-ClusterNode&#10;```&#10;Stop the Cluster service on a node'
 [Test-Cluster]: #test-cluster '```&#10;PS C:\> Test-Cluster&#10;```&#10;Complete validation tests for a cluster'
 [Add-ClusterScaleOutFileServer]: #add-clusterscaleoutfileserver '```&#10;PS C:\> Add-ClusterScaleOutFileServer&#10;```&#10;Install the Scale-out File Server role&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 339'
+[Suspend-ClusterNode]: #suspend-clusternode '```&#10;PS C:\> Suspend-ClusterNode&#10;```&#10;Pause the activity of a failover cluster node&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 374'
 
 [**Cluster**](#failover-clusters)
 <code>[g][Get-Cluster]&nbsp;[n][New-Cluster]&nbsp;[r][Remove-Cluster]&nbsp;[sa][Start-Cluster]&nbsp;[sp][Stop-Cluster]&nbsp;[t][Test-Cluster]</code>
@@ -203,7 +204,7 @@
 <code>FileServerRole&nbsp;[a][Add-ClusterFileServerRole]</code>
 <code>GenericApplicationRole&nbsp;[a][Add-ClusterGenericApplicationRole]</code>
 <code>Group&nbsp;[a][Add-ClusterGroup]</code>
-<code>Node&nbsp;[a][Add-ClusterNode]&nbsp;[g][Get-ClusterNode]&nbsp;[r][Remove-ClusterNode]&nbsp;[sp][Stop-ClusterNode]&nbsp;ss</code>
+<code>Node&nbsp;[a][Add-ClusterNode]&nbsp;[g][Get-ClusterNode]&nbsp;[r][Remove-ClusterNode]&nbsp;[sp][Stop-ClusterNode]&nbsp;[ss][Suspend-ClusterNode]</code>
 <code>Quorum&nbsp;[g][Get-ClusterQuorum]</code>
 <code>Resource&nbsp;[a][Add-ClusterResource]</code>
 <code>ResourceDependency&nbsp;[a][Add-ClusterResourceDependency]</code>
@@ -426,6 +427,7 @@
 [Stop-VM]:                                           #stop-vm                                      '`Stop-VM`&#10;Shuts down, turns off, or saves a virtual machine.'
 [Suspend-VM]:                                        #suspend-vm                                   '`Suspend-VM`&#10;Suspends, or pauses, a virtual machine.'
 [Update-VMVersion]: #update-vmversion '```&#10;PS C:\> Update-VMVersion&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 209'
+[Remove-VMNetworkAdapter]: #remove-vmnetworkadapter '```&#10;PS C:\> Remove-VMNetworkAdapter&#10;```&#10;Removes one or more virtual network adapters from a virtual machine.'
 
 **VHD**
 <code>[mt][Mount-VHD]&nbsp;[n][New-VHD]&nbsp;</code>
@@ -433,7 +435,7 @@
 <code>[cr][Compare-VM]&nbsp;[db][Debug-VM]&nbsp;[ep][Export-VM]&nbsp;[g][Get-VM]&nbsp;[ip][Import-VM]&nbsp;[m][Move-VM]&nbsp;[ms][Measure-VM]&nbsp;[n][New-VM]&nbsp;[r][Remove-VM]&nbsp;[rn][Rename-VM]&nbsp;[rt][Restart-VM]&nbsp;[ru][Resume-VM]&nbsp;[s][Set-VM]&nbsp;[sa][Start-VM]&nbsp;[sp][Stop-VM]&nbsp;[ss][Suspend-VM]&nbsp;[sv][Save-VM]</code>
 <code>Firmware&nbsp;[s][Set-VMFirmware]</code> 
 <code>Memory&nbsp;[s][Set-VMMemory]</code> 
-<code>NetworkAdapter&nbsp;[s][Set-VMNetworkAdapter]</code> 
+<code>NetworkAdapter&nbsp;[a][Add-VMNetworkAdapter]&nbsp;[r][Remove-VMNnetworkAdapter]&nbsp;[s][Set-VMNetworkAdapter]</code> 
 <code>Processor&nbsp;[s][Set-VMProcessor]</code> 
 <code>Switch&nbsp;[n][New-VMSwitch]</code> 
 
@@ -1392,11 +1394,6 @@ Disable dynamic memory on a virtual host (nested virtualization)
 ```powershell
 Set-VMMemory -VMName SRV01 -DynamicMemoryEnabled $false
 ```
-###### `Set-VMNetworkAdapter`
-Turn on MAC address spoofing on a virtual host (nested virtualization)
-```powershell
-Set-VMNetworkAdapter -VMName SVR01 -Name "NetworkAdapter" -MACAddressSpoofing On
-```
 ###### `Set-VMProcessor`
 Configure 2 virtual processors on a virtual host (nested virtualization)
 ```powershell
@@ -1407,11 +1404,33 @@ Configure a server's replica configuration <sup>[Zacker][Zacker]: 300</sup>
 ```powershell
 Set-VmReplicationServer -ReplicationEnabled $true -AllowedAuthenticationType kerberos -ReplicationAllowedFromAnyServer $true -DefaultStorageLocation D:\replicas
 ```
+##### `VMSwitch`
 ###### `New-VMSwitch`
+Create a new virtual switch <sup>[Zacker][Zacker]: 242</sup>
+```powershell
+New-VMSwitch -Name lan1 -NetAdapterName "Ethernet 2"
+New-VMSwitch -Name private1 -SwitchType private
+```
 Turn on NAT on the nested Hyper-V VM
 ```powershell
 New-VMSwitch -name VMNAT -SwitchType Internal
 New-NetNAT -Name LocalNAT -InternalIPInterfaceAddressPrefix "192.168.100.0/24"
+```
+##### `VMNetworkAdapter`
+###### `Add-VMNetworkAdapter`
+Create a network adapter <sup>[Zacker][Zacker]: 237</sup>
+```powershell
+Add-VMNetworkAdapter -VMName server1 -SwitchName private1
+```
+###### `Remove-VMNetworkAdapter`
+Remove a network adapter <sup>[Zacker][Zacker]: 237</sup>
+```powershell
+Remove-VMNetworkAdapter -VMName server1 -VMNetworkAdapter nic1
+```
+###### `Set-VMNetworkAdapter`
+Turn on MAC address spoofing on a virtual host (nested virtualization)
+```powershell
+Set-VMNetworkAdapter -VMName SVR01 -Name "NetworkAdapter" -MACAddressSpoofing On
 ```
 #### Windows objects
 ##### `Guid`
@@ -1599,6 +1618,12 @@ New-Cluster cluster1 -Node node1,node2 -StaticAddress 10.0.0.1 -NoStorage -Admin
 Create a cluster, but prevent the system from automatically searching for and adding storage. <sup>[Zacker][Zacker]: 354</sup>
 ```powershell
 New-Cluster -Name cluster1 -node server1,server2,server3,server4 -NoStorage
+```
+##### `ClusterNode`
+###### `Suspend-ClusterNode`
+Pause a node and move ("drain") its workloads with `-Drain`. <sup>[Microsoft Docs](https://docs.microsoft.com/en-us/powershell/module/failoverclusters/suspend-clusternode "Suspend-ClusterNode")
+```powershell
+Suspend-ClusterNode -Name "node1" -Target "node2" -Drain
 ```
 ##### `ClusterScaleOutFileServer`
 ###### `Add-ClusterScaleOutFileServer`
