@@ -12,18 +12,16 @@
 [Jones]:  https://subscription.packtpub.com/video/virtualization_and_cloud/9781789616385 "Jones, Joshua B. _Hands-On Powershell for Active Directory_. PacktPub: 2018."
 [WSAC]:   https://github.com/jasper-zanjani/notes/master/sources/wsac.md "Krause, Jordan. _Windows Server 2016 Administration Cookbook_."
 [Zacker]: https://github.com/jasper-zanjani/notes/master/certs/70-740.md "Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017."
+[Holmes]: # 'Holmes, Lee. _Windows PowerShell Cookbook_. O\'Reilly Media, 2013.'
 
 # PowerShell
 ## Contents
-###### Concepts
-[Automatic variable]: #automatic-variables 'Automatic variable&#10;Variables that store state information for PowerShell and are created and maintained by Powershell.'
-- [Automatic variable][Automatic variable]
 ###### Tasks
 - [**Display computer name**][Get-ComputerInfo]
 - [**Remove Registry keys**][Remove-Item]
 - [**Clear out `%temp%` folder**][Remove-Item]
 - [**Reset AD user's password**][Set-ADAccountPassword]
-- [Generate password](#generate-password)
+- [**Generate password**](#generate-password)
 - [Credentials](#credentials)
 - [Formatting output](#output-formatting)
 - [Hash tables](#hash-tables)
@@ -33,6 +31,7 @@
 - [Set new Registry keys](#registry)
 - [Create a new VHDX file, mount and initialize it, and create and format a partition within it](#vhdx-file)
 - [Restart Wi-Fi adapter](#restart-wi-fi-adapter)
+- [Safely combine related Registry modifications](#registry)
 
 
 #### Cmdlets
@@ -156,6 +155,10 @@
 [Unlock-ADAccount]:                                  #unlock-adaccount                             "`Unlock-ADAccount`"
 [Remove-ADOrganizationalUnit]:                       #remove-adorganizationalunit                  "`Remove-ADOrganizationalUnit`"
 [Install-ADDSDomainController]: #install-addsdomaincontroller '```&#10;PS C:\> Install-ADDSDomainController&#10;```&#10;Installs a new domain controller in an Active Directory domain'
+[Invoke-GPUpdate]: #invoke-gpupdate '```&#10;PS C:\> Invoke-GPUpdate&#10;```&#10;Schedule a remote Group Policy refresh on the specified host'
+[Add-DistributionGroupMember]: #add-distributiongroupmember '```&#10;PS C:\> Add-DistributionGroupMember&#10;```&#10;Add a single recipient to distribution groups and mail-enabled security groups'
+[Get-DistributionGroupMember]: #get-distributiongroupmember '```&#10;PS C:\> Get-DistributionGroupMember&#10;```&#10;View members of distribution groups and mail-enabled security groups'
+[Update-DistributionGroupMember]: #update-distributiongroupmember '```&#10;PS C:\> Update-DistributionGroupMember&#10;```&#10;Replace all members of distribution groups and mail-enabled security groups'
 
 <code>DistributionGroupMember&nbsp;[a][Add-DistributionGroupMember]&nbsp;[g][Get-DistributionGroupMember]&nbsp;[ud][Update-DistributionGroupMember] </code> 
 <code>GPUpdate&nbsp;[i][Invoke-GPUpdate]</code> 
@@ -196,6 +199,7 @@
 [Test-Cluster]: #test-cluster '```&#10;PS C:\> Test-Cluster&#10;```&#10;Complete validation tests for a cluster'
 [Add-ClusterScaleOutFileServer]: #add-clusterscaleoutfileserver '```&#10;PS C:\> Add-ClusterScaleOutFileServer&#10;```&#10;Install the Scale-out File Server role&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 339'
 [Suspend-ClusterNode]: #suspend-clusternode '```&#10;PS C:\> Suspend-ClusterNode&#10;```&#10;Pause the activity of a failover cluster node&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 374'
+[Enable-ClusterStorageSpacesDirect]: #enable-clusterstoragespacesdirect '```&#10;PS C:\> Enable-ClusterStorageSpacesDirect&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 354'
 
 [**Cluster**](#failover-clusters)
 <code>[g][Get-Cluster]&nbsp;[n][New-Cluster]&nbsp;[r][Remove-Cluster]&nbsp;[sa][Start-Cluster]&nbsp;[sp][Stop-Cluster]&nbsp;[t][Test-Cluster]</code>
@@ -229,7 +233,7 @@
 [**Disks**](#disks)
 <code>DedupVolume&nbsp;[en][Enable-DedupVolume]</code>
 <code>Disk&nbsp;[g][Get-Disk]</code> 
-<code>Partition&nbsp;[f][Format-Partition]&nbsp;[g][Get-Partition] [n][New-Partition] [r][Remove-Partition]</code> 
+<code>Partition&nbsp;f&nbsp;[g][Get-Partition] [n][New-Partition] [r][Remove-Partition]</code> 
 <code>Volume&nbsp;[f][Format-Volume]&nbsp;[n][New-Volume]</code> 
 
 ##### File cmdlets
@@ -258,7 +262,6 @@
 [Close-SmbOpenFile]: #close-smbopenfile '```&#10;PS C:\> Close-SmbOpenFile&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 108'
 [Get-SmbOpenFile]: #get-smbopenfile '```&#10;PS C:\> Get-SmbOpenFile&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 108'
 [Set-SmbPathAcl]: #set-smbpathacl '```&#10;PS C:\> Set-SmbPathAcl&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 340'
-[Get-SmbServerConfiguration]: #get-smbserverconfiguration '```&#10;PS C:\> Get-SmbServerConfiguration&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 109'
 [Set-SmbServerConfiguration]: #set-smbserverconfiguration '```&#10;PS C:\> Set-SmbServerConfiguration&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 109'
 [Close-SmbSession]: #close-smbsession '```&#10;PS C:\> Close-SmbSession&#10;```&#10;Ends forcibly the SMB session.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 107'
 [Get-SmbSession]: #get-smbsession '```&#10;PS C:\> Get-SmbSession&#10;```&#10;Retrieves information about the SMB sessions that are currently established between the SMB server and the associated clients.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 107'
@@ -270,15 +273,13 @@
 [Revoke-SmbShareAccess]: #revoke-smbshareaccess '```&#10;PS C:\> Revoke-SmbShareAccess&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 109'
 [Unblock-SmbShareAccess]: #unblock-smbshareaccess '```&#10;PS C:\> Unblock-SmbShareAccess&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 109'
 [Close-SmbOpenFile]: #close-smbopenfile '```&#10;PS C:\> Close-SmbOpenFile&#10;```&#10;Close a file that is open by one of the clients of the SMB server&#10;"Close-SmbOpenFile". _Microsoft Docs_.'
-[Close-SmbOpenFile]: #close-smbopenfile '```&#10;PS C:\> Close-SmbOpenFile&#10;```&#10;Close a file that is open by one of the clients of the SMB server'
-[Close-SmbOpenFile]: #close-smbopenfile '```&#10;PS C:\> Close-SmbOpenFile&#10;```&#10;Close a file that is open by one of the clients of the SMB server'
 [Get-SmbOpenFile]: #get-smbopenfile '```&#10;PS C:\> Get-SmbOpenFile&#10;```&#10;Retrieve basic information about the files that are open on behalf of the clients of the Server Message Block (SMB) server&#10;"Get-SmbOpenFile". _Microsoft Docs_.'
 [New-SmbShare]: #new-smbshare '```&#10;PS C:\> New-SmbShare&#10;```&#10;'
 
 [**Smb**](#smb)
 <code>ClientConfiguration&nbsp;[g][Get-SmbClientConfiguration]</code>
 <code>OpenFile&nbsp;[g][Get-SmbOpenFile]&nbsp;[cs][Close-SmbOpenFile]</code>
-<code>ServerConfiguration&nbsp;[g][Get-SmbServerConfiguration]&nbsp;[s][Set-SmbServerConfiguration]</code>
+<code>ServerConfiguration&nbsp;g&nbsp;[s][Set-SmbServerConfiguration]</code>
 <code>Session&nbsp;[cs][Close-SmbSession]&nbsp;[g][Get-SmbSession]</code>
 <code>Share&nbsp;[n][New-SmbShare]&nbsp;[r][Remove-SmbShare]</code>
 <code>ShareAccess&nbsp;[g][Get-SmbShareAccess]&nbsp;[bl][Block-SmbShareAccess]&nbsp;[gr][Grant-SmbShareAccess]&nbsp;[rk][Revoke-SmbShareAccess]&nbsp;[uk][Unblock-SmbShareAccess]</code>
@@ -307,7 +308,7 @@
 [Get-NetIpConfiguration]:                            #get-netipconfiguration                            '```&#10;PS C:\> Get-NetIpConfiguration&#10;PS C:\> gip&#10;```&#10;Produce output similar to `ipconfig`'
 [Enable-NetFirewallRule]: #enable-netfirewallrule '```&#10;PS C:\> Enable-NetFirewallRule&#10;```&#10;Enable a previously disabled Windows Firewall rule'
 
-<code>WebRequest&nbsp;[Invoke][Invoke-WebRequest]</code>
+<code>WebRequest&nbsp;i</code>
 **DNS**
 <code>ClientServerAddress&nbsp;[s][Set-DnsClientServerAddress]</code> 
 <code>Name&nbsp;[rv][Resolve-DNSName]</code> 
@@ -316,7 +317,7 @@
 <code>V4Scope [a][Add-DhcpServerv4Scope]</code> 
 <code>v4OptionValue [s][Set-DhcpServerv4OptionValue]</code> 
 **Net**
-<code>Adapter&nbsp;[`g`][Get-NetAdapter]</code>
+<code>Adapter&nbsp;[g][Get-NetAdapter]</code>
 <code>FirewallRule&nbsp;[e][Enable-NetFirewallRule]&nbsp;[g][Get-NetFirewallRule]&nbsp;[n][New-NetFirewallRule]&nbsp;[s][Set-NetFirewallRule]</code>
 <code>IpAddress&nbsp;[n][New-NetIpAddress]</code>
 <code>IpConfiguration&nbsp;[g][Get-NetIpConfiguration]</code>
@@ -326,12 +327,9 @@
 [Add-PSSnapin]: #add-pssnapin '```&#10;PS C:\> Add-PSSnapin&#10;PS C:\> asnp&#10;```&#10;Load a given list of snap-ins (.NET assemblies containing a collection of cmdlets and/or providers for use within PowerShell) either by name or via the pipeline - last supported in PowerShell 5.1'
 [Add-Type]: #add-type '```&#10;PS C:\> Add-Type&#10;```&#10;add a.NET Framework type (a class) to a Windows PowerShell session'
 [Clear-Host]: #clear-host '```&#10;PS C:\> Clear-Host&#10;```&#10;'
-[Clear-Host]: #clear-host '```&#10;PS C:\> Clear-Host&#10;```&#10;'
 [Disconnect-PSSession]: #disconnect-pssession '```&#10;PS C:\> Disconnect-PSSession&#10;PS C:\> dnsn&#10;```&#10;Terminate a remote PowerShell session begun with `New-PSSession`'
 [Enable-PSRemoting]: #enable-psremoting '```&#10;PS C:\> Enable-PSRemoting&#10;```&#10;Allow remote Powershell management'
-[Enter-PsSession]: #enter-pssession '```&#10;PS C:\> Enter-PsSession&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 22'
 [Enter-PSSession]: #enter-pssession '```&#10;PS C:\> Enter-PSSession&#10;PS C:\> etsn&#10;```&#10;Interact with the specified PowerShell session'
-[Exit-PsSession]: #exit-pssession '```&#10;PS C:\> Exit-PsSession&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 177'
 [Exit-PSSession]: #exit-pssession '```&#10;PS C:\> Exit-PSSession&#10;PS C:\> exsn&#10;```&#10;End an interactive session with a remote computer'
 [Export-Alias]: #export-alias '```&#10;PS C:\> Export-Alias&#10;PS C:\> epal&#10;```&#10;Export information about currently defined aliases to a file.'
 [Get-Alias]: #get-alias '```&#10;PS C:\> Get-Alias&#10;PS C:\> gal&#10;```&#10;Display aliases'
@@ -366,6 +364,14 @@
 [Write-Host]: #write-host '```&#10;PS C:\> Write-Host&#10;```&#10;'
 [Write-Host]: #write-host '```&#10;PS C:\> Write-Host&#10;```&#10;Write customized output to a host (equivalent to `echo`).'
 [Write-Output]: #write-output '```&#10;PS C:\> Write-Output&#10;PS C:\> echo write&#10;```&#10;Send the specified objects to the next command in the pipeline. If the command is the last command in the pipeline, the objects are displayed in the console'
+[Get-ComputerInfo]: #get-computerinfo '```&#10;PS C:\> Get-ComputerInfo&#10;PS C:\> gin&#10;```&#10;Retrieve a consolidated object of system and operating system properties&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 274'
+[Measure-Object]: #measure-object '```&#10;Measure-Object&#10;```&#10;Calculates the numeric properties of objects, and the characters, words, and lines in string objects, such as files of text.'
+[ForEach-Object]: #foreach-object '```&#10;ForEach-Object&#10;% foreach&#10;```&#10;Perform an operation against each item in a collection of input objects.'
+[New-Object]: #new-object '```&#10;New-Object&#10;```&#10;Create an instance of a Microsoft .NET Framework or COM object'
+[Select-Object]: #select-object '```&#10;Select-Object&#10;sc&#10;```&#10;Select object or object properties'
+[Where-Object]: #where-object '```&#10;Where-Object&#10;? where&#10;```&#10;Select objects from a collection based on their property values'
+[Start-Transaction]: #start-transaction '```&#10;Start-Transaction&#10;```&#10;Start a new transaction'
+[Complete-Transaction]: #complete-transaction '```&#10;Complete-Transaction&#10;```&#10;Commit the transaction'
 
 <code>Alias&nbsp;[ep][Export-Alias]&nbsp;[g][Get-Alias]&nbsp;[n][New-Alias]&nbsp;[s][Set-Alias]</code> 
 <code>ChildItem&nbsp;[g][Get-ChildItem]</code> 
@@ -382,6 +388,7 @@
 <code>Object&nbsp;[ForEach][ForEach-Object]&nbsp;[n][New-Object]&nbsp;[sc][Select-Object]&nbsp;[w][Where-Object]</code>
 <code>Output&nbsp;[wr][Write-Output]</code> 
 <code>Table&nbsp;[f][Format-Table]</code> 
+<code>Transaction&nbsp;[sa][Start-Transaction]&nbsp;[cp][Complete-Transaction]</code>
 <code>Type&nbsp;[a][Add-Type]</code> 
 **PS**
 <code>ReadlineOption&nbsp;[g][Get-PSReadlineOption] [s][Set-PSReadlineOption]</code> 
@@ -493,7 +500,7 @@
 [Start-Service]: #start-service '```&#10;PS C:\> Start-Service&#10;PS C:\> sasv&#10;```&#10;Start one or more stopped services'
 [Stop-Service]: #stop-service '```&#10;PS C:\> Stop-Service&#10;PS C:\> spsv&#10;```&#10;Stop one or more services'
 
-<code>Guid&nbsp;[n][New-Guid]</code> 
+<code>Guid&nbsp;n</code> 
 <code>NanoServerImage&nbsp;[n][New-NanoServerImage] [e][Edit-NanoServerImage]</code> 
 <code>Service&nbsp;[g][Get-Service] [s][Set-Service] [sa][Start-Service] [sp][Stop-Service]</code> 
 <code>WMIObject&nbsp;[g][Get-WMIObject]</code> 
@@ -523,7 +530,7 @@
 [`find`][Get-ChildItem] 
 [`grep`][Where-Object] 
 [`less`](#out-host "`Out-Host -Paging`") 
-[`ls`][Get-ChildItem] &bull; 
+[`ls`][Get-ChildItem] 
 [`man`][Get-Help] 
 [`mkdir`](#new-item "`New-Item -ItemType Directory`") 
 [`more`](#out-host "`Out-Host -Paging`")
@@ -541,10 +548,15 @@
 
 ##### Cmdlets covered in 70-740
 
+## Syntax
+The `Throw` keyword generates a terminating error
 
 #### Variables
-
 ###### Automatic variables
+[Automatic variable]: #automatic-variables 'Automatic variable&#10;Variables that store state information for PowerShell and are created and maintained by Powershell.'
+
+[Automatic][Automatic variable] variables are equivalent to environment variables in Linux and also prefixed with `$`.
+
 <!-- Powershell automatic variables -->
 [&#36;_]:                                            #variables                                    '```&#10;PS C:\> &#36;_&#10;PS C:\> $PSItem&#10;```&#10;Pipeline object'
 [&#36;?]:                                            #variables                                    '```&#10;PS C:\> &#36;?&#10;```&#10;Execution status of the last operation'
@@ -557,35 +569,48 @@
 [$IsWindows]:                                        #variables                                    '```&#10;PS C:\> $IsWindows&#10;```&#10;Contains `$True` if the current session is running on a Windows operating system'
 [$PID]:                                              #variables                                    '```&#10;PS C:\> $PID&#10;```&#10;Contains process identifier (PID) of the process that is hosting the current PowerShell session'
 [$PSCulture]:                                        #variables                                    '```&#10;PS C:\> $PSCulture&#10;```&#10;Name of the culture currently in use in the operating system'
+[$PSHome]: #variables '```&#10;PS C:\> Write-Host $$PSHome&#10;```&#10;Full path of installation directory for Windows Powershell (typically %windir%\System32\WindowsPowerShell\v1.0)'
 [$PSVersionTable]:                                   #variables                                    '```&#10;PS C:\> $PSVersionTable&#10;```&#10;Read-only hash table that displays details about the version of PowerShell that is running in the current session'
 [$PWD]:                                              #variables                                    '```&#10;PS C:\> $PWD&#10;```&#10;Path object that represents the full path of the current directory'
+[$profile.CurrentUserCurrentHost]: #variables '```&#10;PS C:\> Write-Host $$profile.CurrentUserCurrentHost&#10;PS C:\> Write-Host $$profile&#10;```&#10;Filename of current profile (typically %USERPROFILE%\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1)&#10;Microsoft Docs. "About Profiles"'
+[$profile.CurrentUserAllHosts]: #variables '```&#10;PS C:\> Write-Host $$profile.CurrentUserAllHosts&#10;```&#10;Typically %USERPROFILE%\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1&#10;Microsoft Docs. "About Profiles"'
+[$profile.AllUsersAllHosts]: #variables '```&#10;PS C:\> Write-Host $$profile.AllUsersAllHosts&#10;```&#10;Typically $PSHome\profile.ps1'
+[$profile.AllUsersCurrentHost]: #variables '```&#10;PS C:\> Write-Host $$profile.AllUsersCurrentHost&#10;```&#10;Typically $PSHome\Microsoft.PowerShell_profile.ps1'
 
+[` $_`][&#36;_] 
+[` $?`][&#36;?] 
+[` $^`][&#36;^] 
+[` $$`][&#36;&#36;] 
+[` $args`][$args] 
+[` $HOME`][$HOME] 
+[` $IsLinux`][$IsLinux] 
+[` $IsMacOS`][$IsMacOS] 
+[` $IsWindows`][$IsWindows] 
+[` $PID`][$PID] 
+[` $PSCulture`][$PSCulture] 
+[` $PSVersionTable`][$PSVersionTable] 
+[` $PWD`][$PWD]
 
-[`$_`][&#36;_] 
-[`$?`][&#36;?] 
-[`$^`][&#36;^] 
-[`$$`][&#36;&#36;] 
-[`$args`][$args] 
-[`$HOME`][$HOME] 
-[`$IsLinux`][$IsLinux] 
-[`$IsMacOS`][$IsMacOS] 
-[`$IsWindows`][$IsWindows] 
-[`$PID`][$PID] 
-[`$PSCulture`][$PSCulture] 
-[`$PSVersionTable`][$PSVersionTable] 
-[`$PWD`][$PWD]
+**` $profile`**
+[`AllUsersAllHosts`][ $profile.AllUsersAllHosts] 
+[`AllUsersCurrentHost`][ $profile.AllUsersCurrentHost] 
+[`CurrentUserAllHosts`][ $profile.CurrentUserAllHosts] 
+[`CurrentUserCurrentHost`][ $profile.CurrentUserCurrentHost] 
 
 ###### Environment variables
+Windows environment variables are actually accessed with the syntax `$Env:var`.
+
 [USERPROFILE]:                 #variables                               '```&#10;PS C:\> Write-Host $Env:USERPROFILE&#10;```&#10;Location of profile directory of current user (i.e. "C:\Users\jsmith")'
 [USERNAME]:                    #variables                               '```&#10;PS C:\> Write-Host $Env:USERNAME&#10;```&#10;Name of current user (i.e. "jsmith").'
 [APPDATA]:                     #variables                               '```&#10;PS C:\> Write-Host $Env:APPDATA&#10;```&#10;The file-system directory that serves as a common repository for application-specific data (i.e. "C:\Users\jsmith\AppData\Roaming").'
 [LOCALAPPDATA]:                #variables                               '```&#10;PS C:\> Write-Host $Env:LOCALAPPDATA&#10;```&#10;The file-system directory that serves as a data repository for local, non-roaming applications (i.e. "C:\Users\jsmith\AppData\Local").'
+[WINDIR]: #variables '```&#10;PS C:\> Write-Host $Env:WINDIR&#10;```&#10;Windows folder in the system drive'
 
 [`APPDATA`][APPDATA]
 [`LOCALAPPDATA`][LOCALAPPDATA] 
 [`USERNAME`][USERNAME] 
 [`USERPROFILE`][USERPROFILE] 
-
+[`WINDIR`][WINDIR]
 
 Variables can be typed by preceding their identifier with the datatype in brackets
 ```powershell
@@ -598,19 +623,6 @@ Compatible data can be **cast** or converted by simply specifying the type in an
 $Number = [int]'04'
 $FailedCast = [int]'Hello'
 ```
-
-Syntax                            | Effect
-:---                              | :---
-`$profile`                        | display file of current profile
-`$profile.CurrentUserCurrentHost` | %UserProfile%\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1
-`$profile.CurrentUserAllHosts`    | %UserProfile%\Documents\WindowsPowerShell\profile.ps1
-`$profile.AllUsersAllHosts`       | %windir%\System32\WindowsPowerShell\v1.0\profile.ps1
-`$profile.AllUsersCurrentHost`    | %windir%\System32\WindowsPowerShell\v1.0\Microsoft.PowerShell_profile.ps1
-
-
-
-## Syntax
-The `Throw` keyword generates a terminating error
 
 #### Comparison operators
 Syntax          | Effect
@@ -968,6 +980,10 @@ Restart computer
 ###### `Get-ChildItem`
 ##### `Command`
 ###### `Get-Command`
+Display source code of a function <sup>[Microsoft Docs](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_functions "About Functions"</sup>
+```powershell
+(Get-Command mkdir).Definition
+```
 ###### `Invoke-Command`
 Execute the commands in the block on the machines specified
 ```powershell
@@ -975,7 +991,7 @@ Invoke-Command -ComputerName core01,core02 -Scriptblock {ipconfig /all}
 ```
 ##### `ComputerInfo`
 ###### `Get-ComputerInfo`
-Equivalent to output of [`HOSTNAME.exe`](README.md#hostname) (ref [Task](#computer-information))
+Display computer name <sup>[cmd](README.md#hostname)</sup>
 ```powershell
 Get-ComputerInfo -Property CsName
 gin.CsName
@@ -1812,6 +1828,12 @@ Fix Windows Search bar <sup>[docs.microsoft.com][https://docs.microsoft.com/en-u
 New-Item -Path HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Search\BingSearchEnabled
 Set-Item $$ 0
 Set-ItemProperty -Path HKCU:\Software\Microsoft\Windows\CurrentVersion\Search -Name CortanaConsent -Value 0
+```
+Safely combine related registry modifications using [`Start-Transaction`][Start-Transaction] and [`Complete-Transaction`][Complete-Transaction] <sup>[Holmes][Holmes]: 604</sup>
+```powershell
+Start-Transaction
+New-Item TempKey -UseTransaction
+Complete-Transaction
 ```
 #### New domain controller
 [<sup>Jones</sup>][Jones]
