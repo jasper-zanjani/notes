@@ -67,7 +67,8 @@
 
 ###### Tasks
 <!-- Powershell commands -->
-[Add-Computer]: pwsh.md#add-computer '```&#10;PS C:\> Add-Computer&#10;```&#10;Join a computer to a domain&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 20'[Get-ChildItem]:                                     pwsh.md#get-childitem                              '```&#10;PS C:\> Get-ChildItem&#10;PS C:\> dir&#10;PS C:\> gci&#10;PS C:\> ls&#10;```&#10;Get items in one or more locations'
+[Add-Computer]: pwsh.md#add-computer '```&#10;PS C:\> Add-Computer&#10;```&#10;Join a computer to a domain&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 20'
+[Get-ChildItem]: pwsh.md#get-childitem '```&#10;PS C:\> Get-ChildItem&#10;PS C:\> dir&#10;PS C:\> gci&#10;PS C:\> ls&#10;```&#10;Get items in one or more locations'
 [Get-ComputerInfo]: pwsh.md#get-computerinfo '```&#10;PS C:\> Get-ComputerInfo&#10;PS C:\> gin&#10;```&#10;Retrieve a consolidated object of system and operating system properties&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 274'
 [Invoke-GPUpdate]: pwsh.md#invoke-gpupdate '```&#10;PS C:\> Invoke-GPUpdate&#10;```&#10;Schedule a remote Group Policy refresh on the specified host'
 [Write-Host]: pwsh.md#write-host '```&#10;PS C:\> Write-Host&#10;```&#10;Write customized output to a host (equivalent to `echo`).'
