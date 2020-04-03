@@ -22,6 +22,7 @@
 - [**Clear out `%temp%` folder**][Remove-Item]
 - [**Reset AD user's password**][Set-ADAccountPassword]
 - [**Generate password**](#generate-password)
+- [Add a member to a group](#add-a-member-to-a-group)
 - [Credentials](#credentials)
 - [Formatting output](#output-formatting)
 - [Hash tables](#hash-tables)
@@ -32,6 +33,7 @@
 - [Create a new VHDX file, mount and initialize it, and create and format a partition within it](#vhdx-file)
 - [Restart Wi-Fi adapter](#restart-wi-fi-adapter)
 - [Safely combine related Registry modifications](#registry)
+- [Set DNS server to DHCP][Set-DnsClientServerAddress]
 
 
 #### Cmdlets
@@ -159,12 +161,14 @@
 [Add-DistributionGroupMember]: #add-distributiongroupmember '```&#10;PS C:\> Add-DistributionGroupMember&#10;```&#10;Add a single recipient to distribution groups and mail-enabled security groups'
 [Get-DistributionGroupMember]: #get-distributiongroupmember '```&#10;PS C:\> Get-DistributionGroupMember&#10;```&#10;View members of distribution groups and mail-enabled security groups'
 [Update-DistributionGroupMember]: #update-distributiongroupmember '```&#10;PS C:\> Update-DistributionGroupMember&#10;```&#10;Replace all members of distribution groups and mail-enabled security groups'
+[Add-ADGroupMember]: #add-adgroupmember '```&#10;Add-ADGroupMember&#10;```&#10;Add one or more members to an AD group&#10;Microsoft Docs. "Add-ADGroupMember".'
 
 <code>DistributionGroupMember&nbsp;[a][Add-DistributionGroupMember]&nbsp;[g][Get-DistributionGroupMember]&nbsp;[ud][Update-DistributionGroupMember] </code> 
 <code>GPUpdate&nbsp;[i][Invoke-GPUpdate]</code> 
 [**AD**](#active-directory)
 <code>Account&nbsp;[sr][Search-ADAccount]&nbsp;[uk][Unlock-ADAccount]&nbsp;</code> 
 <code>AccountPassword&nbsp;[s][Set-ADAccountPassword]&nbsp;</code> 
+<code>GroupMember&nbsp;[a][Add-ADGroupMember]</code>
 <code>Object&nbsp;[g][Get-ADObject]&nbsp;[s][Set-ADObject]&nbsp;</code> 
 <code>OrganizationalUnit&nbsp;[g][Get-ADOrganizationalUnit]&nbsp;[n][New-ADOrganizationalUnit]&nbsp;[r][Remove-ADOrganizationalUnit]&nbsp;[s][Set-ADOrganizationalUnit]&nbsp;</code> 
 <code>PrincipalGroupMembership&nbsp;[a][Add-ADPrincipalGroupMembership]&nbsp;[g][Get-ADPrincipalGroupMembership]&nbsp;</code>
@@ -250,10 +254,12 @@
 [New-Item]: #new-item '```&#10;PS C:\> New-Item&#10;PS C:\> ni&#10;```&#10;Create a new item and set its value. The type of item created depends on the context.'
 [Out-Null]: #out-null '```&#10;PS C:\> Out-Null&#10;```&#10;Delete output instead of sending it down the pipeline'
 [Remove-Item]: #remove-item '```&#10;PS C:\> Remove-Item&#10;PS C:\> rm ri rmdir rd del&#10;```&#10;'
+[Set-FileStorageTier]: #set-filestoragetier '```&#10;Set-FileStorageTier&#10;```&#10;Assign a file to a storage tier&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 133'
 
 <code>Archive&nbsp;[cm][Compress-Archive]&nbsp;[en][Expand-Archive]</code> 
 <code>Content&nbsp;[a][Add-Content]</code> 
 <code>Csv&nbsp;[ep][Export-Csv]&nbsp;[ip][Import-Csv]</code> 
+<code>FileStorageTier&nbsp;[s][Set-FileStorageTier]</code>
 <code>Item&nbsp;[cp][Copy-Item]&nbsp;[g][Get-Item]&nbsp;[n][New-Item]&nbsp;[r][Remove-Item] </code>
 <code>Null&nbsp;[o][Out-Null]</code> 
 
@@ -285,30 +291,27 @@
 <code>ShareAccess&nbsp;[g][Get-SmbShareAccess]&nbsp;[bl][Block-SmbShareAccess]&nbsp;[gr][Grant-SmbShareAccess]&nbsp;[rk][Revoke-SmbShareAccess]&nbsp;[uk][Unblock-SmbShareAccess]</code>
 
 ##### Network-related cmdlets
-[Set-DnsClientServerAddress]: #set-dnsclientserveraddress '```&#10;PS C:\> Set-DnsClientServerAddress&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 20'
-[Get-NetAdapter]: #get-netadapter '```&#10;PS C:\> Get-NetAdapter&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 19'
-[Set-NetAdapterVmq]: #set-netadaptervmq '```&#10;PS C:\> Set-NetAdapterVmq&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 253'
-[Get-NetAdapterVmqQueue]: #get-netadaptervmqqueue '```&#10;PS C:\> Get-NetAdapterVmqQueue&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 252'
-[New-NetIpAddress]: #new-netipaddress '```&#10;PS C:\> New-NetIpAddress&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 19'
-[Set-NetQoSbcdxSetting]: #set-netqosbcdxsetting '```&#10;PS C:\> Set-NetQoSbcdxSetting&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 143'
-[New-NetQosPolicy]: #new-netqospolicy '```&#10;PS C:\> New-NetQosPolicy&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 144'
-[New-NetQosTrafficClass]: #new-netqostrafficclass '```&#10;PS C:\> New-NetQosTrafficClass&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 144'
-[Add-DhcpServerv4Scope]: #add-dhcpserverv4scope '```&#10;PS C:\> Add-DhcpServerv4Scope&#10;```&#10;Add an IPv4 scope on the DHCP server service.'
 [Add-DhcpServerInDC]: #add-dhcpserverindc '```&#10;PS C:\> Add-DhcpServerInDC&#10;```&#10;'
+[Add-DhcpServerv4Scope]: #add-dhcpserverv4scope '```&#10;PS C:\> Add-DhcpServerv4Scope&#10;```&#10;Add an IPv4 scope on the DHCP server service.'
+[Enable-NetFirewallRule]: #enable-netfirewallrule '```&#10;PS C:\> Enable-NetFirewallRule&#10;```&#10;Enable a previously disabled Windows Firewall rule'
+[Get-NetAdapter]: #get-netadapter '```&#10;PS C:\> Get-NetAdapter&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 19'
 [Get-NetAdapter]: #get-netadapter '```&#10;PS C:\> Get-NetAdapter&#10;```&#10;Display available network interfaces'
+[Get-NetAdapterVmqQueue]: #get-netadaptervmqqueue '```&#10;PS C:\> Get-NetAdapterVmqQueue&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 252'
 [Get-NetFirewallRule]: #get-netfirewallrule '```&#10;PS C:\> Get-NetFirewallRule&#10;```&#10;'
 [Get-NetIpConfiguration]: #get-netipconfiguration '```&#10;PS C:\> Get-NetIpConfiguration&#10;PS C:\> gip&#10;```&#10;Produce output similar to `ipconfig`'
+[Invoke-WebRequest]: #invoke-webrequest '```&#10;PS C:\> Invoke-WebRequest&#10;PS C:\> iwr&#10;```&#10;'
 [New-NetFirewallRule]: #new-netfirewallrule '```&#10;PS C:\> New-NetFirewallRule&#10;```&#10;'
-[New-NetIpAddress]: #new-netipaddress '```&#10;PS C:\> New-NetIpAddress&#10;```&#10;Manually configure network interface, if a DHCP server is unavailable'
+[New-NetIpAddress]: #new-netipaddress '```&#10;PS C:\> New-NetIpAddress&#10;```&#10;Manually configure network interface, if a DHCP server is unavailable&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 19'
+[New-NetQosPolicy]: #new-netqospolicy '```&#10;PS C:\> New-NetQosPolicy&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 144'
+[New-NetQosTrafficClass]: #new-netqostrafficclass '```&#10;PS C:\> New-NetQosTrafficClass&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 144'
 [Resolve-DNSName]: #resolve-dnsname '```&#10;PS C:\> Resolve-DNSName&#10;```&#10;...&#10;MeasureUp Practice Lab: Security+'
 [Set-DhcpServerv4OptionValue]: #set-dhcpserverv4optionvalue '```&#10;PS C:\> Set-DhcpServerv4OptionValue&#10;```&#10;'
-[Set-DnsClientServerAddress]: #set-dnsclientserveraddress '```&#10;PS C:\> Set-DnsClientServerAddress&#10;```&#10;Set DNS server addresses associated with the TCP/IP properties on an interface'
+[Set-DnsClientServerAddress]: #set-dnsclientserveraddress '```&#10;PS C:\> Set-DnsClientServerAddress&#10;```&#10;Set DNS server addresses associated with the TCP/IP properties on an interface&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 20'
+[Set-NetAdapterVmq]: #set-netadaptervmq '```&#10;PS C:\> Set-NetAdapterVmq&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 253'
 [Set-NetFirewallRule]: #set-netfirewallrule '```&#10;PS C:\> Set-NetFirewallRule&#10;```&#10;'
-[Enable-NetFirewallRule]: #enable-netfirewallrule '```&#10;PS C:\> Enable-NetFirewallRule&#10;```&#10;Enable a previously disabled Windows Firewall rule'
-[Get-NetIpConfiguration]:                            #get-netipconfiguration                            '```&#10;PS C:\> Get-NetIpConfiguration&#10;PS C:\> gip&#10;```&#10;Produce output similar to `ipconfig`'
-[Enable-NetFirewallRule]: #enable-netfirewallrule '```&#10;PS C:\> Enable-NetFirewallRule&#10;```&#10;Enable a previously disabled Windows Firewall rule'
+[Set-NetQoSbcdxSetting]: #set-netqosbcdxsetting '```&#10;PS C:\> Set-NetQoSbcdxSetting&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 143'
 
-<code>WebRequest&nbsp;i</code>
+<code>WebRequest&nbsp;[i][Invoke-WebRequest]</code>
 **DNS**
 <code>ClientServerAddress&nbsp;[s][Set-DnsClientServerAddress]</code> 
 <code>Name&nbsp;[rv][Resolve-DNSName]</code> 
@@ -346,9 +349,7 @@
 [Import-Module]: #import-module '```&#10;PS C:\> Import-Module&#10;PS C:\> ipmo&#10;```&#10;'
 [Install-Module]: #install-module '```&#10;PS C:\> Install-Module&#10;```&#10;'
 [New-Alias]: #new-alias '```&#10;PS C:\> New-Alias&#10;PS C:\> nal&#10;```&#10;Create a new alias'
-[New-PsSession]: #new-pssession '```&#10;PS C:\> New-PsSession&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 21'
-[New-PSSession]: #new-pssession '```&#10;PS C:\> New-PSSession&#10;PS C:\> nsn&#10;```&#10;Start a new remote PowerShell session with a remote computer'
-[New-PSSession]: #new-pssession '```&#10;PS C:\> New-PSSession&#10;PS C:\> nsn&#10;```&#10;Start a new remote PowerShell session with a remote computer'
+[New-PSSession]: #new-pssession '```&#10;New-PSSession&#10;nsn&#10;```&#10;Start a new remote PowerShell session with a remote computer&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 21'
 [Out-Host]: #out-host '```&#10;PS C:\> Out-Host&#10;PS C:\> oh&#10;```&#10;'
 [Rename-Computer]: #rename-computer '```&#10;PS C:\> Rename-Computer&#10;```&#10;'
 [Restart-Computer]: #restart-computer '```&#10;PS C:\> Restart-Computer&#10;```&#10;'
@@ -357,21 +358,22 @@
 [Set-ExecutionPolicy]: #set-executionpolicy '```&#10;PS C:\> Set-ExecutionPolicy&#10;```&#10;Change user preference for the Windows PowerShell execution policy'
 [Set-Location]: #set-location '```&#10;PS C:\> Set-Location&#10;PS C:\> cd&#10;```&#10;Set present working directory'
 [Set-PSReadlineOption]: #set-psreadlineoption '```&#10;PS C:\> Set-PSReadlineOption&#10;```&#10;'
-[Start-DscConfiguration]: #start-dscconfiguration '```&#10;PS C:\> Start-DscConfiguration&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 27'
-[Start-DscConfiguration]: #start-dscconfiguration '```&#10;PS C:\> Start-DscConfiguration&#10;PS C:\> sacfg&#10;```&#10;Apply configuration to nodes'
+[Start-DscConfiguration]: #start-dscconfiguration '```&#10;PS C:\> Start-DscConfiguration&#10;```&#10;Apply configuration to nodes&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 27'
 [Stop-Computer]: #stop-computer '```&#10;PS C:\> Stop-Computer&#10;```&#10;'
 [Update-Help]: #update-help '```&#10;PS C:\> Update-Help&#10;```&#10;Download help files'
-[Write-Host]: #write-host '```&#10;PS C:\> Write-Host&#10;```&#10;'
 [Write-Host]: #write-host '```&#10;PS C:\> Write-Host&#10;```&#10;Write customized output to a host (equivalent to `echo`).'
 [Write-Output]: #write-output '```&#10;PS C:\> Write-Output&#10;PS C:\> echo write&#10;```&#10;Send the specified objects to the next command in the pipeline. If the command is the last command in the pipeline, the objects are displayed in the console'
 [Get-ComputerInfo]: #get-computerinfo '```&#10;PS C:\> Get-ComputerInfo&#10;PS C:\> gin&#10;```&#10;Retrieve a consolidated object of system and operating system properties&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 274'
-[Measure-Object]: #measure-object '```&#10;Measure-Object&#10;```&#10;Calculates the numeric properties of objects, and the characters, words, and lines in string objects, such as files of text.'
-[ForEach-Object]: #foreach-object '```&#10;ForEach-Object&#10;% foreach&#10;```&#10;Perform an operation against each item in a collection of input objects.'
 [New-Object]: #new-object '```&#10;New-Object&#10;```&#10;Create an instance of a Microsoft .NET Framework or COM object'
-[Select-Object]: #select-object '```&#10;Select-Object&#10;sc&#10;```&#10;Select object or object properties'
-[Where-Object]: #where-object '```&#10;Where-Object&#10;? where&#10;```&#10;Select objects from a collection based on their property values'
 [Start-Transaction]: #start-transaction '```&#10;Start-Transaction&#10;```&#10;Start a new transaction'
 [Complete-Transaction]: #complete-transaction '```&#10;Complete-Transaction&#10;```&#10;Commit the transaction'
+[Start-Job]: #start-job '```&#10;Start-Job&#10;sajb&#10;```&#10;Start a background job'
+
+[Measure-Object]: #measure-object '```&#10;PS C:\> Measure-Object&#10;PS C:\> measure&#10;```&#10;Calculates the numeric properties of objects, and the characters, words, and lines in string objects, such as files of text.'
+[ForEach-Object]: #foreach-object '```&#10;PS C:\> ForEach-Object&#10;PS C:\> %&#10;```&#10;Perform an operation against each item in a collection of input objects.'
+[New-Object]: #new-object '```&#10;PS C:\> New-Object&#10;```&#10;Create an instance of a Microsoft .NET Framework or COM object'
+[Select-Object]: #select-object '```&#10;PS C:\> Select-Object&#10;PS C:\> select&#10;```&#10;Select object or object properties'
+[Where-Object]: #where-object '```&#10;PS C:\> Where-Object&#10;PS C:\> ?&#10;```&#10;Select objects from a collection based on their property values'
 
 <code>Alias&nbsp;[ep][Export-Alias]&nbsp;[g][Get-Alias]&nbsp;[n][New-Alias]&nbsp;[s][Set-Alias]</code> 
 <code>ChildItem&nbsp;[g][Get-ChildItem]</code> 
@@ -382,10 +384,11 @@
 <code>Help&nbsp;[g][Get-Help]&nbsp;[ud][Update-Help]</code> 
 <code>History&nbsp;[g][Get-History]</code> 
 <code>Host&nbsp;[oh][Out-Host]&nbsp;[rd][Read-Host]&nbsp;[wr][Write-Host]</code>
+<code>Job&nbsp;[sa][Start-Job]
 <code>List&nbsp;[f][Format-List]</code> 
 <code>Location&nbsp;[g][Get-Location] [s][Set-Location]</code> 
 <code>Module&nbsp;[ip][Import-Module]&nbsp;[is][Install-Module]</code> 
-<code>Object&nbsp;[ForEach][ForEach-Object]&nbsp;[n][New-Object]&nbsp;[sc][Select-Object]&nbsp;[w][Where-Object]</code>
+<code>Object&nbsp;[%][ForEach-Object]&nbsp;[?][Where-Object]&nbsp;[ms][Measure-Object]&nbsp;[n][New-Object]&nbsp;[sc][Select-Object]</code>
 <code>Output&nbsp;[wr][Write-Output]</code> 
 <code>Table&nbsp;[f][Format-Table]</code> 
 <code>Transaction&nbsp;[sa][Start-Transaction]&nbsp;[cp][Complete-Transaction]</code>
@@ -397,15 +400,18 @@
 
 ##### Hyper-V cmdlets
 <!-- Hyper-V cmdlets -->
-[Add-VMNetworkAdapter]: #add-vmnetworkadapter '```&#10;PS C:\> Add-VMNetworkAdapter&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 237'
+[Add-VMNetworkAdapter]: #add-vmnetworkadapter '```&#10;PS C:\> Add-VMNetworkAdapter&#10;```&#10;Adds a virtual network adapter to a virtual machine.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 237'
 [Add-VMSwitch]:                                      # '`Add-VMSwitch`&#10;Adds a virtual switch to an Ethernet resource pool.'
 [Checkpoint-VM]:                                     #checkpoint-vm                                '`Checkpoint-VM`&#10;Creates a checkpoint of a virtual machine.'
-[Compare-VM]:                                        #compare-vm                                   '`Compare-VM`&#10;Compares a virtual machine and a virtual machine host for compatibility, returning a compatibility report.'
 [Compare-VM]: #compare-vm '```&#10;PS C:\> Compare-VM&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 212'
+[Connect-VMNetworkAdapter]: #connect-vmnetworkadapter '```&#10;PS C:\> Connect-VMNetworkAdapter&#10;```&#10;Connects a virtual network adapter to a virtual switch.'
 [Debug-VM]:                                          #debug-vm                                     '`Debug-VM`&#10;Debugs a virtual machine.'
+[Disconnect-VMNetworkAdapter]: #disconnect-vmnetworkadapter '```&#10;PS C:\> Disconnect-VMNetworkAdapter&#10;```&#10;Disconnects a virtual network adapter from a virtual switch or Ethernet resource pool.'
 [Export-VM]: #export-vm '```&#10;PS C:\> Export-VM&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 210'
 [Get-VM]: #get-vm '```&#10;PS C:\> Get-VM&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 177'
 [Get-VMHostSupportedVersion]: #get-vmhostsupportedversion '```&#10;PS C:\> Get-VMHostSupportedVersion&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 209'
+[Get-VMNetworkAdapter]: #get-vmnetworkadapter '```&#10;PS C:\> Get-VMNetworkAdapter&#10;```&#10;Gets the virtual network adapters of a virtual machine, snapshot, management operating system, or of a virtual machine and management operating system.'
+[Get-VMProcessor]: #get-vmprocessor '```&#10;PS C:\> Get-VMProcessor&#10;```&#10;Gets the processor of a virtual machine or snapshot.'
 [Get-VMSwitch]:                                      # '`Get-VMSwitch`&#10;Gets virtual switches from one or more virtual Hyper-V hosts.'
 [Import-VM]: #import-vm '```&#10;PS C:\> Import-VM&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 211'
 [Measure-VM]: #measure-vm '```&#10;PS C:\> Measure-VM&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 194, 234-235'
@@ -416,8 +422,10 @@
 [New-VMSwitch]:                                      # '`New-VMSwitch`&#10;Creates a new virtual switch on one or more virtual machine hosts.'
 [Optimize-VM]: #optimize-vm '```&#10;PS C:\> Optimize-VM&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 228'
 [Remove-VM]:                                         #remove-vm                                    '`Remove-VM`&#10;Deletes a virtual machine.'
+[Remove-VMNetworkAdapter]: #remove-vmnetworkadapter '```&#10;PS C:\> Remove-VMNetworkAdapter&#10;```&#10;Removes one or more virtual network adapters from a virtual machine.'
 [Remove-VMSwitch]:                                   # '`Remove-VMSwitch`&#10;Deletes a virtual switch.'
 [Rename-VM]:                                         #rename-vm                                    '`Rename-VM`&#10;Renames a virtual machine.'
+[Rename-VMNetworkAdapter]: #rename-vmnetworkadapter '```&#10;PS C:\> Rename-VMNetworkAdapter&#10;```&#10;Renames a virtual network adapter on a virtual machine or on the management operating system.'
 [Rename-VMSwitch]:                                   # '`Rename-VMSwitch`&#10;Renames a virtual switch.'
 [Repair-VM]:                                         #repair-vm                                    '`Repair-VM`&#10;Repairs one or more virtual machines.'
 [Reset-VMResourceMetering]: #reset-vmresourcemetering '```&#10;PS C:\> Reset-VMResourceMetering&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 195'
@@ -427,14 +435,16 @@
 [Set-VM]: #set-vm '```&#10;PS C:\> Set-VM&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 231'
 [Set-VMFirmware]: #set-vmfirmware '```&#10;PS C:\> Set-VMFirmware&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 208'
 [Set-VMMemory]: #set-vmmemory '```&#10;PS C:\> Set-VMMemory&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 185'
-[Set-VMNetworkAdapter]: #set-vmnetworkadapter '```&#10;PS C:\> Set-VMNetworkAdapter&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 255'
+[Set-VMNetworkAdapter]: #set-vmnetworkadapter '```&#10;PS C:\> Set-VMNetworkAdapter&#10;```&#10;Configures features of the virtual network adapter in a virtual machine or the management operating system.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 255'
+[Set-VMProcessor]: #set-vmprocessor '```&#10;PS C:\> Set-VMProcessor&#10;```&#10;Configures one or more processors of a virtual machine.'
 [Set-VmReplicationServer]: #set-vmreplicationserver '```&#10;PS C:\> Set-VmReplicationServer&#10;```&#10;Configure a host as a Replica server&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 300'
 [Set-VMSwitch]:                                      # '`Set-VMSwitch`&#10;Configures a virtual switch.'
 [Start-VM]:                                          #start-vm                                     '`Start-VM`&#10;Starts a virtual machine.'
 [Stop-VM]:                                           #stop-vm                                      '`Stop-VM`&#10;Shuts down, turns off, or saves a virtual machine.'
 [Suspend-VM]:                                        #suspend-vm                                   '`Suspend-VM`&#10;Suspends, or pauses, a virtual machine.'
+[Test-VMNetworkAdapter]: #test-vmnetworkadapter '```&#10;PS C:\> Test-VMNetworkAdapter&#10;```&#10;Tests connectivity between virtual machines.'
 [Update-VMVersion]: #update-vmversion '```&#10;PS C:\> Update-VMVersion&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 209'
-[Remove-VMNetworkAdapter]: #remove-vmnetworkadapter '```&#10;PS C:\> Remove-VMNetworkAdapter&#10;```&#10;Removes one or more virtual network adapters from a virtual machine.'
+
 
 **VHD**
 <code>[mt][Mount-VHD]&nbsp;[n][New-VHD]&nbsp;</code>
@@ -442,15 +452,15 @@
 <code>[cr][Compare-VM]&nbsp;[db][Debug-VM]&nbsp;[ep][Export-VM]&nbsp;[g][Get-VM]&nbsp;[ip][Import-VM]&nbsp;[m][Move-VM]&nbsp;[ms][Measure-VM]&nbsp;[n][New-VM]&nbsp;[r][Remove-VM]&nbsp;[rn][Rename-VM]&nbsp;[rt][Restart-VM]&nbsp;[ru][Resume-VM]&nbsp;[s][Set-VM]&nbsp;[sa][Start-VM]&nbsp;[sp][Stop-VM]&nbsp;[ss][Suspend-VM]&nbsp;[sv][Save-VM]</code>
 <code>Firmware&nbsp;[s][Set-VMFirmware]</code> 
 <code>Memory&nbsp;[s][Set-VMMemory]</code> 
-<code>NetworkAdapter&nbsp;[a][Add-VMNetworkAdapter]&nbsp;[r][Remove-VMNnetworkAdapter]&nbsp;[s][Set-VMNetworkAdapter]</code> 
+<code>NetworkAdapter&nbsp;[a][Add-VMNetworkAdapter]&nbsp;[r][Remove-VMNetworkAdapter]&nbsp;[s][Set-VMNetworkAdapter]</code> 
 <code>Processor&nbsp;[s][Set-VMProcessor]</code> 
 <code>Switch&nbsp;[n][New-VMSwitch]</code> 
 
 ##### Server migration cmdlets
-[Set-AppxProvisionedDataFile]: #https://github.com/jasper-zanjani/notes/tree/master/win/pwsh.md '```&#10;PS C:\> Set-AppxProvisionedDataFile&#10;```&#10;&#10;Equivalent to `Dism.exe /Image:foldername /Set-ProvisionedAppxDataFile`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 78'
-[Add-AppxProvisionedPackage]: #https://github.com/jasper-zanjani/notes/tree/master/win/pwsh.md '```&#10;PS C:\> Add-AppxProvisionedPackage&#10;```&#10;&#10;Equivalent to `Dism.exe /Image:foldername /Add-ProvisionedAppxPackage`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
-[Get-AppxProvisionedPackage]: #https://github.com/jasper-zanjani/notes/tree/master/win/pwsh.md '```&#10;PS C:\> Get-AppxProvisionedPackage&#10;```&#10;&#10;Equivalent to `Dism.exe /Image:foldername /Get-ProvisionedAppxPackages`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 78'
-[Remove-AppxProvisionedPackage]: #https://github.com/jasper-zanjani/notes/tree/master/win/pwsh.md '```&#10;PS C:\> Remove-AppxProvisionedPackage&#10;```&#10;&#10;Equivalent to `Dism.exe /Image:foldername /Remove-ProvisionedAppxPackage`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 78'
+[Set-AppxProvisionedDataFile]: # '```&#10;PS C:\> Set-AppxProvisionedDataFile&#10;```&#10;&#10;Equivalent to `Dism.exe /Image:foldername /Set-ProvisionedAppxDataFile`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 78'
+[Add-AppxProvisionedPackage]: # '```&#10;PS C:\> Add-AppxProvisionedPackage&#10;```&#10;&#10;Equivalent to `Dism.exe /Image:foldername /Add-ProvisionedAppxPackage`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
+[Get-AppxProvisionedPackage]: # '```&#10;PS C:\> Get-AppxProvisionedPackage&#10;```&#10;&#10;Equivalent to `Dism.exe /Image:foldername /Get-ProvisionedAppxPackages`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 78'
+[Remove-AppxProvisionedPackage]: # '```&#10;PS C:\> Remove-AppxProvisionedPackage&#10;```&#10;&#10;Equivalent to `Dism.exe /Image:foldername /Remove-ProvisionedAppxPackage`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 78'
 [Receive-SmigServerData]: #receive-smigserverdata '```&#10;PS C:\> Receive-SmigServerData&#10;```&#10;Enable a destination server to receive migrated files, folders, permissions, and share properties from a source server (`Send-SmigServerData` cmdlet must be running on the source server at the same time)&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 33'
 [Send-SmigServerData]: #send-smigserverdata '```&#10;PS C:\> Send-SmigServerData&#10;```&#10;Migrate files, folders, permissions, and share properties from a source server to a destination server (`Receive-SmigServerData` cmdlet must be running on the destination server at the same time)&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 33'
 [Get-SmigServerFeature]: #get-smigserverfeature '```&#10;PS C:\> Get-SmigServerFeature&#10;```&#10;Display a list of Windows features that can be migrated from the local server or ffrom a migration store&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 33'
@@ -515,8 +525,7 @@
 <code>Unattend&nbsp;[Apply][Apply-WindowsUnattend]</code>
 
 ##### Bash equivalents
-[`$!`][&#36;&#36;] 
-[`!$`][&#36;&#36;] 
+[`$!`][&#36;&#36;]/[`!$`][&#36;&#36;] 
 [`$?`][&#36;?] 
 [`&`][Start-Job] 
 [`>>`][Add-Content] 
@@ -558,24 +567,24 @@ The `Throw` keyword generates a terminating error
 [Automatic][Automatic variable] variables are equivalent to environment variables in Linux and also prefixed with `$`.
 
 <!-- Powershell automatic variables -->
-[&#36;_]:                                            #variables                                    '```&#10;PS C:\> &#36;_&#10;PS C:\> $PSItem&#10;```&#10;Pipeline object'
-[&#36;?]:                                            #variables                                    '```&#10;PS C:\> &#36;?&#10;```&#10;Execution status of the last operation'
-[&#36;^]:                                            #variables                                    '```&#10;PS C:\> &#36;^&#10;```&#10;First token in the last line received by the session'
-[&#36;&#36;]:                                        #variables                                    '```&#10;PS C:\> &#36;&#36;&#10;```&#10;Last token in the last line received by the session'
-[$args]:                                             #variables                                    '```&#10;PS C:\> $args&#10;```&#10;Array of values for undeclared parameters passed to a function, script or script block'
-[$HOME]:                                             #variables                                    '```&#10;PS C:\> $HOME&#10;```&#10;Full path of the home directory of the user'
-[$IsLinux]:                                          #variables                                    '```&#10;PS C:\> $IsLinux&#10;```&#10;Contains `$True` if the current session is running on a Linux operating system'
-[$IsMacOS]:                                          #variables                                    '```&#10;PS C:\> $IsMacOS&#10;```&#10;Contains `$True` if the current session is running on an OS X operating system'
-[$IsWindows]:                                        #variables                                    '```&#10;PS C:\> $IsWindows&#10;```&#10;Contains `$True` if the current session is running on a Windows operating system'
-[$PID]:                                              #variables                                    '```&#10;PS C:\> $PID&#10;```&#10;Contains process identifier (PID) of the process that is hosting the current PowerShell session'
-[$PSCulture]:                                        #variables                                    '```&#10;PS C:\> $PSCulture&#10;```&#10;Name of the culture currently in use in the operating system'
+[&#36;_]: #variables '```&#10;PS C:\> &#36;_&#10;PS C:\> $PSItem&#10;```&#10;Pipeline object'
+[&#36;?]: #variables '```&#10;PS C:\> &#36;?&#10;```&#10;Execution status of the last operation'
+[&#36;^]: #variables '```&#10;PS C:\> &#36;^&#10;```&#10;First token in the last line received by the session'
+[&#36;&#36;]: #variables '```&#10;PS C:\> &#36;&#36;&#10;```&#10;Last token in the last line received by the session'
+[$args]: #variables '```&#10;PS C:\> $args&#10;```&#10;Array of values for undeclared parameters passed to a function, script or script block'
+[$HOME]: #variables '```&#10;PS C:\> $HOME&#10;```&#10;Full path of the home directory of the user'
+[$IsLinux]: #variables '```&#10;PS C:\> $IsLinux&#10;```&#10;Contains `$True` if the current session is running on a Linux operating system'
+[$IsMacOS]: #variables '```&#10;PS C:\> $IsMacOS&#10;```&#10;Contains `$True` if the current session is running on an OS X operating system'
+[$IsWindows]: #variables '```&#10;PS C:\> $IsWindows&#10;```&#10;Contains `$True` if the current session is running on a Windows operating system'
+[$PID]: #variables '```&#10;PS C:\> $PID&#10;```&#10;Contains process identifier (PID) of the process that is hosting the current PowerShell session'
+[$PSCulture]: #variables '```&#10;PS C:\> $PSCulture&#10;```&#10;Name of the culture currently in use in the operating system'
 [$PSHome]: #variables '```&#10;PS C:\> Write-Host $$PSHome&#10;```&#10;Full path of installation directory for Windows Powershell (typically %windir%\System32\WindowsPowerShell\v1.0)'
-[$PSVersionTable]:                                   #variables                                    '```&#10;PS C:\> $PSVersionTable&#10;```&#10;Read-only hash table that displays details about the version of PowerShell that is running in the current session'
-[$PWD]:                                              #variables                                    '```&#10;PS C:\> $PWD&#10;```&#10;Path object that represents the full path of the current directory'
-[$profile.CurrentUserCurrentHost]: #variables '```&#10;PS C:\> Write-Host $$profile.CurrentUserCurrentHost&#10;PS C:\> Write-Host $$profile&#10;```&#10;Filename of current profile (typically %USERPROFILE%\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1)&#10;Microsoft Docs. "About Profiles"'
-[$profile.CurrentUserAllHosts]: #variables '```&#10;PS C:\> Write-Host $$profile.CurrentUserAllHosts&#10;```&#10;Typically %USERPROFILE%\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1&#10;Microsoft Docs. "About Profiles"'
-[$profile.AllUsersAllHosts]: #variables '```&#10;PS C:\> Write-Host $$profile.AllUsersAllHosts&#10;```&#10;Typically $PSHome\profile.ps1'
-[$profile.AllUsersCurrentHost]: #variables '```&#10;PS C:\> Write-Host $$profile.AllUsersCurrentHost&#10;```&#10;Typically $PSHome\Microsoft.PowerShell_profile.ps1'
+[$PSVersionTable]: #variables '```&#10;PS C:\> $PSVersionTable&#10;```&#10;Read-only hash table that displays details about the version of PowerShell that is running in the current session'
+[$PWD]: #variables '```&#10;PS C:\> $PWD&#10;```&#10;Path object that represents the full path of the current directory'
+[$profile.CurrentUserCurrentHost]: #variables '```&#10;PS C:\> Write-Host $profile.CurrentUserCurrentHost&#10;PS C:\> Write-Host $profile&#10;```&#10;Filename of current profile (typically %USERPROFILE%\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1)&#10;Microsoft Docs. "About Profiles"'
+[$profile.CurrentUserAllHosts]: #variables '```&#10;PS C:\> Write-Host $profile.CurrentUserAllHosts&#10;```&#10;Typically %USERPROFILE%\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1&#10;Microsoft Docs. "About Profiles"'
+[$profile.AllUsersAllHosts]: #variables '```&#10;PS C:\> Write-Host $profile.AllUsersAllHosts&#10;```&#10;Typically $PSHome\profile.ps1'
+[$profile.AllUsersCurrentHost]: #variables '```&#10;PS C:\> Write-Host $profile.AllUsersCurrentHost&#10;```&#10;Typically $PSHome\Microsoft.PowerShell_profile.ps1'
 
 [` $_`][&#36;_] 
 [` $?`][&#36;?] 
@@ -636,7 +645,6 @@ Filtering results can be done with 5 commands:
 - `Where-Object` (aliased to `where` and `?`): the most commonly used such command
 - `Select-Object` (aliased to `sc`ed to specify specific columns of information to be displayed
 - `Select-String` (aliased to `sls`)
-- `Out-GridView`
 - `ForEach-Object` (aliased to `foreach` and `%`) There are two different ways to construct a `ForEach-Object` statement:
   1. __Script block__, within which the variable `$_` represents the current object
   2. __Operation statement__, more naturalistic, where you specify a property value or call a method.
@@ -798,6 +806,9 @@ Reset password
 ```powershell
 Set-ADAccountPassword -Identity MBentley -Reset -NewPassword (ConvertTo-SecureString -AsPlainText "What is 255.255.255.240" -Force)
 ```
+##### `ADGroupMember`
+###### `Add-ADGroupMember`
+[Add a member to a group](#add-a-member-to-a-group)
 ##### `ADObject`
 ###### `Get-ADObject`
 Display version of Active Directory schema <sup>[nolabnoparty.com](https://nolabnoparty.com/en/finding-active-directory-schema-version/ "Finding the Active Directory schema version")</sup>
@@ -1138,25 +1149,22 @@ Set-DhcpServerv4OptionValue -DnsDomain corp.packtlab.com -DnsServer 10.0.0.1
 ```
 ##### `DnsClientServerAddress`
 ###### `Set-DnsClientServerAddress`
-Configure DNS server addresses <sup>[Zacker][Zacker]</sup>
-
-Parameter           | Description
----                 | ---
-`-InterfaceAlias`   |
-`-InterfaceIndex`   |
-`-ServerAddresses`  |
+`InterfaceAlias`
+`InterfaceIndex`
+`ResetServerAddresses`
+`ServerAddresses`
 
 Configure DNS server address for a DC on a new corporate intranet <sup>[Jones][Jones]</sup>
 ```powershell
 Set-DnsClientServerAddress -InterfaceAlias "Ethernet" -ServerAddresses 127.0.0.1
 ```
-Configure DNS server address for an application server on a new corporate intranet <sup>[Jones][Jones]</sup>
-```powershell
-Set-DnsClientServerAddress -InterfaceAlias "Ethernet" -ServerAddresses 10.0.0.1
-```
-Configure DNS server addresses <sup>[Zacker][Zacker]</sup>
+Configure DNS server addresses for a network interface while setting up Server Core<sup>[Zacker][Zacker]: 20</sup>
 ```powershell
 Set-DnsClientServerAddress -InterfaceIndex 6 -ServerAddresses ("192.168.0.1", "192.168.0.2")
+```
+Set an interface to get its DNS server from DHCP <sup>[docs.microsoft.com](https://docs.microsoft.com/en-us/powershell/module/dnsclient/set-dnsclientserveraddress "Set-DnsClientServerAddress")
+```powershell
+Set-DnsClientServerAddress -InterfaceIndex 12 -ResetServerAddresses
 ```
 ##### `DnsName`
 ###### `Resolve-DnsName`
@@ -1338,7 +1346,7 @@ Add a CSV full of users
 Import-Csv users.csv | foreach { New-ADUser -SamAccountName $_.SAM -GivenName $_.Last -DisplayName $_.DisplayName -Name $_.Name -Description $_.Description -Enabled $True -AccountPassword (ConvertToSecureString $_.Password -AsPlainText -Force) }
 ```
 ##### `Item`
-###### `Get-Item
+###### `Get-Item`
 ###### `New-Item`
 [New-Item &#84;]: #New-Item '```&#10;PS C:\> New-Item Type&#10;PS C:\> New-Item -ItemType&#10;```&#10;&#10;Specify the provider-specified type of the new item; values depend on the context.'
 
@@ -1368,6 +1376,9 @@ Set-Item wsman:\localhost\client\trustedhosts "192.168.10.41"
 ```
 ##### `Null`
 ###### `Out-Null`
+#### Filters
+##### `Object`
+
 #### Hyper-V
 ##### `VHD`
 ###### `Mount-VHD`
@@ -1552,16 +1563,18 @@ Display a branching view of available Windows roles, role services, and features
 Get-WindowsFeature
 ```
 ###### `Install-WindowsFeature`
-[Install-WindowsFeature -Name]:      #Install-WindowsFeature        '```&#10;PS C:\> Install-WindowsFeature -Name&#10;```&#10;&#10;Values can include:&#10;  - "`AD-Domain-Services"&#10;  - "Hyper-V"&#10;  - "RSAT-ADDS"&#10;  - "Web-WebServer"'
+[Install-WindowsFeature -Name]: #Install-WindowsFeature '```&#10;PS C:\> Install-WindowsFeature -Name&#10;```&#10;&#10;Values can include:&#10;  - "`AD-Domain-Services"&#10;  - "Hyper-V"&#10;  - "RSAT-ADDS"&#10;  - "Web-WebServer"'
 
-[**`Name`**][Install-WindowsFeature -Name] `IncludeAllSubFeature` `IncludeManamgentTools`
+[**`Name`**][Install-WindowsFeature -Name] 
+`IncludeAllSubFeature` 
+`IncludeManamgentTools`
 
-Install a feature
+Install a feature <sup>[Zacker][Zacker]: 15</sup>
 ```powershell
 Install-WindowsFeature -Name $featurename -IncludeAllSubFeature -IncludeManagementTools
 
 # Remote Server Adminstration Tools for PowerShell
-Install-WindowsFeature -Name RSAT-ADDS -IncludeAllSubFeature
+Install-WindowsFeature -Name rsat-adds -IncludeAllSubFeature
 
 # Install Hyper-V
 Install-WindowsFeature -Name Hyper-V -IncludeAllSubFeature -IncludeManagementTools -Restart
@@ -1887,4 +1900,7 @@ $adaptor = Get-WmiObject -Class Win32_NetworkAdapter | Where-Object {$_.Name -li
 $adaptor.Disable()
 $adaptor.Enable()
 ```
-
+#### Add a member to a group
+```powershell
+Add-ADGroupMember -Identity $group -Members $user1,$user2
+```

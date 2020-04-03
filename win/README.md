@@ -39,12 +39,6 @@
 [winver]:         #winver                                             '```&#10;C:\>winver&#10;```&#10;Display the "About Windows" dialog box, including Windows version and build number'
 [wmic]:           #wmic                           '```&#10;C:\>wmic&#10;```&#10;WMI command-line (WMIC) utility provides a command-line interface for WMI.'
 
-<!-- Powershell commands -->
-[Add-Computer]:                                      pwsh.md#add-computer                               '```&#10;PS C:\> Add-Computer&#10;```&#10;Join a computer to a domain'
-[Get-ChildItem]:                                     pwsh.md#get-childitem                              '```&#10;PS C:\> Get-ChildItem&#10;PS C:\> dir&#10;PS C:\> gci&#10;PS C:\> ls&#10;```&#10;Get items in one or more locations'
-[Get-ComputerInfo]: #get-computerinfo '```&#10;PS C:\> Get-ComputerInfo&#10;PS C:\> gin&#10;```&#10;Retrieve a consolidated object of system and operating system properties&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 274'
-[Invoke-GPUpdate]:                                   pwsh.md#invoke-gpupdate                            '```&#10;Invoke-GPUpdate&#10;```&#10;Schedule a remote Group Policy refresh on the specified host'
-[Write-Host]: #write-host '```&#10;PS C:\> Write-Host&#10;```&#10;Write customized output to a host (equivalent to `echo`).'
 
 <!-- Linux commands -->
 [grep]: https://github.com/jasper-zanjani/notes/blob/master/lx/commands/README.md#grep '```&#10;$ grep&#10;```&#10;Search `$FILES` for lines containing a match to regex `$PATTERN`&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 126'
@@ -68,9 +62,23 @@
 
 # Microsoft Windows
 
-Topics
----
-[Desired State Configuration](dsc.md) &bull; [Powershell](pwsh.md)
+- [Desired State Configuration](dsc.md)
+- [Powershell](pwsh.md)
+
+###### Tasks
+<!-- Powershell commands -->
+[Add-Computer]: pwsh.md#add-computer '```&#10;PS C:\> Add-Computer&#10;```&#10;Join a computer to a domain&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 20'[Get-ChildItem]:                                     pwsh.md#get-childitem                              '```&#10;PS C:\> Get-ChildItem&#10;PS C:\> dir&#10;PS C:\> gci&#10;PS C:\> ls&#10;```&#10;Get items in one or more locations'
+[Get-ComputerInfo]: pwsh.md#get-computerinfo '```&#10;PS C:\> Get-ComputerInfo&#10;PS C:\> gin&#10;```&#10;Retrieve a consolidated object of system and operating system properties&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 274'
+[Invoke-GPUpdate]: pwsh.md#invoke-gpupdate '```&#10;PS C:\> Invoke-GPUpdate&#10;```&#10;Schedule a remote Group Policy refresh on the specified host'
+[Write-Host]: pwsh.md#write-host '```&#10;PS C:\> Write-Host&#10;```&#10;Write customized output to a host (equivalent to `echo`).'
+
+- [Display computer name][Get-ComputerInfo]
+- [Remove Registry keys][Remove-Item]
+- [Clear out `%temp%` folder][Remove-Item]
+- [Reset AD user's password][Set-ADAccountPassword]
+- [Generate password](pwsh.md#generate-password)
+- [Add a member to a group](pwsh.md#add-a-member-to-a-group)
+- [Log off][logoff]
 
 ###### Concepts
 **U** 
@@ -81,7 +89,7 @@ Topics
 [`bcdedit`][bcdedit] 
 [`bootrec`][bootrec]
 [`cscript`][cscript] 
-`dir`<sup>[pwsh>][Get-ChildItem]</sup>
+`dir`<sup>[pwsh][Get-ChildItem]</sup>
 [`diskpart`][diskpart] 
 [`echo`](#echo) <sup>[lx][lx echo] [pwsh][Write-Host]</sup>
 `findstr`<sup>[lx][grep]</sup>
@@ -319,6 +327,9 @@ dsquery * cn=schema,cn=configuration,dc=domain,dc=com -scope base -attr objectVe
 ###### `ipconfig`
 `all` `flushdns` `renew`
 
+###### `logoff`
+Equivalent to `shutdown -L`
+
 ###### `msiexec`
 <!-- `msiexec` commands -->
 [msiexec /&#105;]:              #msiexec                       '```&#10;C:\>msiexec /i&#10;```&#10;Install or configure a product'
@@ -418,103 +429,103 @@ Basic usage
 route add 192.168.2.1 mask (255.255.255.0) 192.168.2.4
 ```
 ###### Settings
-[ms-settings:about]: #settings '```&#10;ms-settings:about&#10;```&#10;Open About page in Settings on Windows 10'
-[ms-settings:activation]: #settings '```&#10;ms-settings:activation&#10;```&#10;Open Activation page in Settings on Windows 10'
-[ms-settings:apps-volume]: #settings '```&#10;ms-settings:apps-volume&#10;```&#10;Open App volume and device preferences page in Settings on Windows 10'
-[ms-settings:appsfeatures]: #settings '```&#10;ms-settings:appsfeatures&#10;```&#10;Open Apps & Features page in Settings on Windows 10'
-[ms-settings:appsforwebsites]: #settings '```&#10;ms-settings:appsforwebsites&#10;```&#10;Open Apps for websites page in Settings on Windows 10'
-[ms-settings:assignedaccess]: #settings '```&#10;ms-settings:assignedaccess&#10;```&#10;Open Set up a kiosk page in Settings on Windows 10'
-[ms-settings:autoplay]: #settings '```&#10;ms-settings:autoplay&#10;```&#10;Open AutoPlay page in Settings on Windows 10'
-[ms-settings:backup]: #settings '```&#10;ms-settings:backup&#10;```&#10;Open Backup page in Settings on Windows 10'
-[ms-settings:batterysaver]: #settings '```&#10;ms-settings:batterysaver&#10;```&#10;Open Battery Saver page in Settings on Windows 10'
-[ms-settings:bluetooth]: #settings '```&#10;ms-settings:bluetooth&#10;```&#10;Open Bluetooth page in Settings on Windows 10'
-[ms-settings:camera]: #settings '```&#10;ms-settings:camera&#10;```&#10;Open Default camera page in Settings on Windows 10'
-[ms-settings:clipboard]: #settings '```&#10;ms-settings:clipboard&#10;```&#10;Open Clipboard page in Settings on Windows 10'
-[ms-settings:colors]: #settings '```&#10;ms-settings:colors&#10;```&#10;Open Colors page in Settings on Windows 10'
-[ms-settings:connecteddevices]: #settings '```&#10;ms-settings:connecteddevices&#10;```&#10;Open Connected devices page in Settings on Windows 10'
-[ms-settings:cortana]: #settings '```&#10;ms-settings:cortana&#10;```&#10;Open Talk to Cortana page in Settings on Windows 10'
-[ms-settings:crossdevice]: #settings '```&#10;ms-settings:crossdevice&#10;```&#10;Open Shared experiences page in Settings on Windows 10'
-[ms-settings:datausage]: #settings '```&#10;ms-settings:datausage&#10;```&#10;Open Data usage page in Settings on Windows 10'
-[ms-settings:dateandtime]: #settings '```&#10;ms-settings:dateandtime&#10;```&#10;Open Date & time page in Settings on Windows 10'
-[ms-settings:defaultapps]: #settings '```&#10;ms-settings:defaultapps&#10;```&#10;Open Default apps page in Settings on Windows 10'
-[ms-settings:delivery-optimization]: #settings '```&#10;ms-settings:delivery-optimization&#10;```&#10;Open Delivery Optimization page in Settings on Windows 10'
-[ms-settings:developers]: #settings '```&#10;ms-settings:developers&#10;```&#10;Open For developers page in Settings on Windows 10'
-[ms-settings:deviceencryption]: #settings '```&#10;ms-settings:deviceencryption&#10;```&#10;Open Encryption page in Settings on Windows 10'
-[ms-settings:devices-touchpad]: #settings '```&#10;ms-settings:devices-touchpad&#10;```&#10;Open Touchpad page in Settings on Windows 10'
-[ms-settings:display]: #settings '```&#10;ms-settings:display&#10;```&#10;Open Display page in Settings on Windows 10'
-[ms-settings:easeofaccess-display]: #settings '```&#10;ms-settings:easeofaccess-display&#10;```&#10;Open Display page in Settings on Windows 10'
-[ms-settings:emailandaccounts]: #settings '```&#10;ms-settings:emailandaccounts&#10;```&#10;Open Email & app accounts page in Settings on Windows 10'
-[ms-settings:findmydevice]: #settings '```&#10;ms-settings:findmydevice&#10;```&#10;Open Find My Device page in Settings on Windows 10'
-[ms-settings:fonts]: #settings '```&#10;ms-settings:fonts&#10;```&#10;Open Fonts page in Settings on Windows 10'
-[ms-settings:keyboard]: #settings '```&#10;ms-settings:keyboard&#10;```&#10;Open Language page in Settings on Windows 10'
-[ms-settings:lockscreen]: #settings '```&#10;ms-settings:lockscreen&#10;```&#10;Open Lockscreen page in Settings on Windows 10'
-[ms-settings:maps]: #settings '```&#10;ms-settings:maps&#10;```&#10;Open Offline maps page in Settings on Windows 10'
-[ms-settings:messaging]: #settings '```&#10;ms-settings:messaging&#10;```&#10;Open Messaging page in Settings on Windows 10'
-[ms-settings:mobile-devices]: #settings '```&#10;ms-settings:mobile-devices&#10;```&#10;Open Your phone page in Settings on Windows 10'
-[ms-settings:mousetouchpad]: #settings '```&#10;ms-settings:mousetouchpad&#10;```&#10;Open Mouse & touchpad page in Settings on Windows 10'
-[ms-settings:multitasking]: #settings '```&#10;ms-settings:multitasking&#10;```&#10;Open Multitasking page in Settings on Windows 10'
-[ms-settings:network]: #settings '```&#10;ms-settings:network&#10;```&#10;Open Status page in Settings on Windows 10'
-[ms-settings:network-wifi]: #settings '```&#10;ms-settings:network-wifi&#10;```&#10;Open Wi-Fi page in Settings on Windows 10'
-[ms-settings:nfctransactions]: #settings '```&#10;ms-settings:nfctransactions&#10;```&#10;Open NFC page in Settings on Windows 10'
-[ms-settings:nightlight]: #settings '```&#10;ms-settings:nightlight&#10;```&#10;Open Night light settings page in Settings on Windows 10'
-[ms-settings:notifications]: #settings '```&#10;ms-settings:notifications&#10;```&#10;Open Notifications & actions page in Settings on Windows 10'
-[ms-settings:optionalfeatures]: #settings '```&#10;ms-settings:optionalfeatures&#10;```&#10;Open Optional features page in Settings on Windows 10'
-[ms-settings:otherusers]: #settings '```&#10;ms-settings:otherusers&#10;```&#10;Open Family & other people page in Settings on Windows 10'
-[ms-settings:pen]: #settings '```&#10;ms-settings:pen&#10;```&#10;Open Pen & Windows Ink page in Settings on Windows 10'
-[ms-settings:personalization]: #settings '```&#10;ms-settings:personalization&#10;```&#10;Open Personalization (category) page in Settings on Windows 10'
-[ms-settings:personalization-background]: #settings '```&#10;ms-settings:personalization-background&#10;```&#10;Open Background page in Settings on Windows 10'
-[ms-settings:personalization-colors]: #settings '```&#10;ms-settings:personalization-colors&#10;```&#10;Open Colors page in Settings on Windows 10'
-[ms-settings:personalization-start]: #settings '```&#10;ms-settings:personalization-start&#10;```&#10;Open Start page in Settings on Windows 10'
-[ms-settings:personalization-start-places]: #settings '```&#10;ms-settings:personalization-start-places&#10;```&#10;Open Choose which folders appear on Start page in Settings on Windows 10'
-[ms-settings:phone]: #settings '```&#10;ms-settings:phone&#10;```&#10;Open Phone page in Settings on Windows 10'
-[ms-settings:powersleep]: #settings '```&#10;ms-settings:powersleep&#10;```&#10;Open Power & sleep page in Settings on Windows 10'
-[ms-settings:printers]: #settings '```&#10;ms-settings:printers&#10;```&#10;Open Printers & scanners page in Settings on Windows 10'
-[ms-settings:privacy]: #settings '```&#10;ms-settings:privacy&#10;```&#10;Open Privacy page in Settings on Windows 10'
-[ms-settings:project]: #settings '```&#10;ms-settings:project&#10;```&#10;Open Projecting to this PC page in Settings on Windows 10'
-[ms-settings:proximity]: #settings '```&#10;ms-settings:proximity&#10;```&#10;Open Proximity page in Settings on Windows 10'
-[ms-settings:quiethours]: #settings '```&#10;ms-settings:quiethours&#10;```&#10;Open Focus assist page in Settings on Windows 10'
-[ms-settings:quietmomentsgame]: #settings '```&#10;ms-settings:quietmomentsgame&#10;```&#10;Open Playing a game full screen page in Settings on Windows 10'
-[ms-settings:quietmomentspresentation]: #settings '```&#10;ms-settings:quietmomentspresentation&#10;```&#10;Open Duplicating my display page in Settings on Windows 10'
-[ms-settings:quietmomentsscheduled]: #settings '```&#10;ms-settings:quietmomentsscheduled&#10;```&#10;Open During these hours page in Settings on Windows 10'
-[ms-settings:recovery]: #settings '```&#10;ms-settings:recovery&#10;```&#10;Open Recovery page in Settings on Windows 10'
-[ms-settings:regionformatting]: #settings '```&#10;ms-settings:regionformatting&#10;```&#10;Open Region page in Settings on Windows 10'
-[ms-settings:regionlanguage]: #settings '```&#10;ms-settings:regionlanguage&#10;```&#10;Open Region & language page in Settings on Windows 10'
-[ms-settings:remotedesktop]: #settings '```&#10;ms-settings:remotedesktop&#10;```&#10;Open Remote Desktop page in Settings on Windows 10'
-[ms-settings:savelocations]: #settings '```&#10;ms-settings:savelocations&#10;```&#10;Open Default Save Locations page in Settings on Windows 10'
-[ms-settings:screenrotation]: #settings '```&#10;ms-settings:screenrotation&#10;```&#10;Open Display page in Settings on Windows 10'
-[ms-settings:signinoptions]: #settings '```&#10;ms-settings:signinoptions&#10;```&#10;Open Sign-in options page in Settings on Windows 10'
-[ms-settings:signinoptions-launchfaceenrollment]: #settings '```&#10;ms-settings:signinoptions-launchfaceenrollment&#10;```&#10;Open Windows Hello setup page in Settings on Windows 10'
-[ms-settings:sound]: #settings '```&#10;ms-settings:sound&#10;```&#10;Open Sound page in Settings on Windows 10'
-[ms-settings:speech]: #settings '```&#10;ms-settings:speech&#10;```&#10;Open Speech page in Settings on Windows 10'
-[ms-settings:speech]: #settings '```&#10;ms-settings:speech&#10;```&#10;Open Speech page in Settings on Windows 10'
-[ms-settings:startupapps]: #settings '```&#10;ms-settings:startupapps&#10;```&#10;Open Startup apps page in Settings on Windows 10'
-[ms-settings:storagepolicies]: #settings '```&#10;ms-settings:storagepolicies&#10;```&#10;Open Storage Sense page in Settings on Windows 10'
-[ms-settings:storagesense]: #settings '```&#10;ms-settings:storagesense&#10;```&#10;Open Storage Sense page in Settings on Windows 10'
-[ms-settings:surfacehub-accounts]: #settings '```&#10;ms-settings:surfacehub-accounts&#10;```&#10;Open Accounts page in Settings on Windows 10'
-[ms-settings:surfacehub-calling]: #settings '```&#10;ms-settings:surfacehub-calling&#10;```&#10;Open Team Conferencing page in Settings on Windows 10'
-[ms-settings:surfacehub-devicemanagenent]: #settings '```&#10;ms-settings:surfacehub-devicemanagenent&#10;```&#10;Open Team device management page in Settings on Windows 10'
-[ms-settings:surfacehub-sessioncleanup]: #settings '```&#10;ms-settings:surfacehub-sessioncleanup&#10;```&#10;Open Session cleanup page in Settings on Windows 10'
-[ms-settings:surfacehub-welcome]: #settings '```&#10;ms-settings:surfacehub-welcome&#10;```&#10;Open Welcome screen page in Settings on Windows 10'
-[ms-settings:sync]: #settings '```&#10;ms-settings:sync&#10;```&#10;Open Sync your settings page in Settings on Windows 10'
-[ms-settings:tabletmode]: #settings '```&#10;ms-settings:tabletmode&#10;```&#10;Open Tablet mode page in Settings on Windows 10'
-[ms-settings:taskbar]: #settings '```&#10;ms-settings:taskbar&#10;```&#10;Open Taskbar page in Settings on Windows 10'
-[ms-settings:themes]: #settings '```&#10;ms-settings:themes&#10;```&#10;Open Themes page in Settings on Windows 10'
-[ms-settings:troubleshoot]: #settings '```&#10;ms-settings:troubleshoot&#10;```&#10;Open Troubleshoot page in Settings on Windows 10'
-[ms-settings:typing]: #settings '```&#10;ms-settings:typing&#10;```&#10;Open Typing page in Settings on Windows 10'
-[ms-settings:usb]: #settings '```&#10;ms-settings:usb&#10;```&#10;Open USB page in Settings on Windows 10'
-[ms-settings:videoplayback]: #settings '```&#10;ms-settings:videoplayback&#10;```&#10;Open Video playback page in Settings on Windows 10'
-[ms-settings:wheel]: #settings '```&#10;ms-settings:wheel&#10;```&#10;Open Wheel page in Settings on Windows 10'
-[ms-settings:windowsdefender]: #settings '```&#10;ms-settings:windowsdefender&#10;```&#10;Open Windows Security page in Settings on Windows 10'
-[ms-settings:windowsinsider]: #settings '```&#10;ms-settings:windowsinsider&#10;```&#10;Open Windows Insider Program page in Settings on Windows 10'
-[ms-settings:windowsupdate]: #settings '```&#10;ms-settings:windowsupdate&#10;```&#10;Open Windows Update page in Settings on Windows 10'
-[ms-settings:workplace]: #settings '```&#10;ms-settings:workplace&#10;```&#10;Open Access work or school page in Settings on Windows 10'
-[ms-settings:yourinfo]: #settings '```&#10;ms-settings:yourinfo&#10;```&#10;Open Your info page in Settings on Windows 10'
+[ms-settings:about]: #settings '```&#10;C:\>start ms-settings:about&#10;```&#10;Open About page in Settings on Windows 10&#10;"Launch the Windows Settings app." Microsoft Docs.'
+[ms-settings:activation]: #settings '```&#10;C:\>start ms-settings:activation&#10;```&#10;Open Activation page in Settings on Windows 10&#10;"Launch the Windows Settings app." Microsoft Docs.'
+[ms-settings:apps-volume]: #settings '```&#10;C:\>start ms-settings:apps-volume&#10;```&#10;Open App volume and device preferences page in Settings on Windows 10&#10;"Launch the Windows Settings app." Microsoft Docs.'
+[ms-settings:appsfeatures]: #settings '```&#10;C:\>start ms-settings:appsfeatures&#10;```&#10;Open Apps & Features page in Settings on Windows 10&#10;"Launch the Windows Settings app." Microsoft Docs.'
+[ms-settings:appsforwebsites]: #settings '```&#10;C:\>start ms-settings:appsforwebsites&#10;```&#10;Open Apps for websites page in Settings on Windows 10&#10;"Launch the Windows Settings app." Microsoft Docs.'
+[ms-settings:assignedaccess]: #settings '```&#10;C:\>start ms-settings:assignedaccess&#10;```&#10;Open Set up a kiosk page in Settings on Windows 10&#10;"Launch the Windows Settings app." Microsoft Docs.'
+[ms-settings:autoplay]: #settings '```&#10;C:\>start ms-settings:autoplay&#10;```&#10;Open AutoPlay page in Settings on Windows 10&#10;"Launch the Windows Settings app." Microsoft Docs.'
+[ms-settings:backup]: #settings '```&#10;C:\>start ms-settings:backup&#10;```&#10;Open Backup page in Settings on Windows 10&#10;"Launch the Windows Settings app." Microsoft Docs.'
+[ms-settings:batterysaver]: #settings '```&#10;C:\>start ms-settings:batterysaver&#10;```&#10;Open Battery Saver page in Settings on Windows 10&#10;"Launch the Windows Settings app." Microsoft Docs.'
+[ms-settings:bluetooth]: #settings '```&#10;C:\>start ms-settings:bluetooth&#10;```&#10;Open Bluetooth page in Settings on Windows 10&#10;"Launch the Windows Settings app." Microsoft Docs.'
+[ms-settings:camera]: #settings '```&#10;C:\>start ms-settings:camera&#10;```&#10;Open Default camera page in Settings on Windows 10&#10;"Launch the Windows Settings app." Microsoft Docs.'
+[ms-settings:clipboard]: #settings '```&#10;C:\>start ms-settings:clipboard&#10;```&#10;Open Clipboard page in Settings on Windows 10&#10;"Launch the Windows Settings app." Microsoft Docs.'
+[ms-settings:colors]: #settings '```&#10;C:\>start ms-settings:colors&#10;```&#10;Open Colors page in Settings on Windows 10&#10;"Launch the Windows Settings app." Microsoft Docs.'
+[ms-settings:connecteddevices]: #settings '```&#10;C:\>start ms-settings:connecteddevices&#10;```&#10;Open Connected devices page in Settings on Windows 10&#10;"Launch the Windows Settings app." Microsoft Docs.'
+[ms-settings:cortana]: #settings '```&#10;C:\>start ms-settings:cortana&#10;```&#10;Open Talk to Cortana page in Settings on Windows 10&#10;"Launch the Windows Settings app." Microsoft Docs.'
+[ms-settings:crossdevice]: #settings '```&#10;C:\>start ms-settings:crossdevice&#10;```&#10;Open Shared experiences page in Settings on Windows 10&#10;"Launch the Windows Settings app." Microsoft Docs.'
+[ms-settings:datausage]: #settings '```&#10;C:\>start ms-settings:datausage&#10;```&#10;Open Data usage page in Settings on Windows 10&#10;"Launch the Windows Settings app." Microsoft Docs.'
+[ms-settings:dateandtime]: #settings '```&#10;C:\>start ms-settings:dateandtime&#10;```&#10;Open Date & time page in Settings on Windows 10&#10;"Launch the Windows Settings app." Microsoft Docs.'
+[ms-settings:defaultapps]: #settings '```&#10;C:\>start ms-settings:defaultapps&#10;```&#10;Open Default apps page in Settings on Windows 10&#10;"Launch the Windows Settings app." Microsoft Docs.'
+[ms-settings:delivery-optimization]: #settings '```&#10;C:\>start ms-settings:delivery-optimization&#10;```&#10;Open Delivery Optimization page in Settings on Windows 10&#10;"Launch the Windows Settings app." Microsoft Docs.'
+[ms-settings:developers]: #settings '```&#10;C:\>start ms-settings:developers&#10;```&#10;Open For developers page in Settings on Windows 10&#10;"Launch the Windows Settings app." Microsoft Docs.'
+[ms-settings:deviceencryption]: #settings '```&#10;C:\>start ms-settings:deviceencryption&#10;```&#10;Open Encryption page in Settings on Windows 10&#10;"Launch the Windows Settings app." Microsoft Docs.'
+[ms-settings:devices-touchpad]: #settings '```&#10;C:\>start ms-settings:devices-touchpad&#10;```&#10;Open Touchpad page in Settings on Windows 10&#10;"Launch the Windows Settings app." Microsoft Docs.'
+[ms-settings:display]: #settings '```&#10;C:\>start ms-settings:display&#10;```&#10;Open Display page in Settings on Windows 10&#10;"Launch the Windows Settings app." Microsoft Docs.'
+[ms-settings:easeofaccess-display]: #settings '```&#10;C:\>start ms-settings:easeofaccess-display&#10;```&#10;Open Display page in Settings on Windows 10&#10;"Launch the Windows Settings app." Microsoft Docs.'
+[ms-settings:emailandaccounts]: #settings '```&#10;C:\>start ms-settings:emailandaccounts&#10;```&#10;Open Email & app accounts page in Settings on Windows 10&#10;"Launch the Windows Settings app." Microsoft Docs.'
+[ms-settings:findmydevice]: #settings '```&#10;C:\>start ms-settings:findmydevice&#10;```&#10;Open Find My Device page in Settings on Windows 10&#10;"Launch the Windows Settings app." Microsoft Docs.'
+[ms-settings:fonts]: #settings '```&#10;C:\>start ms-settings:fonts&#10;```&#10;Open Fonts page in Settings on Windows 10&#10;"Launch the Windows Settings app." Microsoft Docs.'
+[ms-settings:keyboard]: #settings '```&#10;C:\>start ms-settings:keyboard&#10;```&#10;Open Language page in Settings on Windows 10&#10;"Launch the Windows Settings app." Microsoft Docs.'
+[ms-settings:lockscreen]: #settings '```&#10;C:\>start ms-settings:lockscreen&#10;```&#10;Open Lockscreen page in Settings on Windows 10&#10;"Launch the Windows Settings app." Microsoft Docs.'
+[ms-settings:maps]: #settings '```&#10;C:\>start ms-settings:maps&#10;```&#10;Open Offline maps page in Settings on Windows 10&#10;"Launch the Windows Settings app." Microsoft Docs.'
+[ms-settings:messaging]: #settings '```&#10;C:\>start ms-settings:messaging&#10;```&#10;Open Messaging page in Settings on Windows 10&#10;"Launch the Windows Settings app." Microsoft Docs.'
+[ms-settings:mobile-devices]: #settings '```&#10;C:\>start ms-settings:mobile-devices&#10;```&#10;Open Your phone page in Settings on Windows 10&#10;"Launch the Windows Settings app." Microsoft Docs.'
+[ms-settings:mousetouchpad]: #settings '```&#10;C:\>start ms-settings:mousetouchpad&#10;```&#10;Open Mouse & touchpad page in Settings on Windows 10&#10;"Launch the Windows Settings app." Microsoft Docs.'
+[ms-settings:multitasking]: #settings '```&#10;C:\>start ms-settings:multitasking&#10;```&#10;Open Multitasking page in Settings on Windows 10&#10;"Launch the Windows Settings app." Microsoft Docs.'
+[ms-settings:network]: #settings '```&#10;C:\>start ms-settings:network&#10;```&#10;Open Status page in Settings on Windows 10&#10;"Launch the Windows Settings app." Microsoft Docs.'
+[ms-settings:network-wifi]: #settings '```&#10;C:\>start ms-settings:network-wifi&#10;```&#10;Open Wi-Fi page in Settings on Windows 10&#10;"Launch the Windows Settings app." Microsoft Docs.'
+[ms-settings:nfctransactions]: #settings '```&#10;C:\>start ms-settings:nfctransactions&#10;```&#10;Open NFC page in Settings on Windows 10&#10;"Launch the Windows Settings app." Microsoft Docs.'
+[ms-settings:nightlight]: #settings '```&#10;C:\>start ms-settings:nightlight&#10;```&#10;Open Night light settings page in Settings on Windows 10&#10;"Launch the Windows Settings app." Microsoft Docs.'
+[ms-settings:notifications]: #settings '```&#10;C:\>start ms-settings:notifications&#10;```&#10;Open Notifications & actions page in Settings on Windows 10&#10;"Launch the Windows Settings app." Microsoft Docs.'
+[ms-settings:optionalfeatures]: #settings '```&#10;C:\>start ms-settings:optionalfeatures&#10;```&#10;Open Optional features page in Settings on Windows 10&#10;"Launch the Windows Settings app." Microsoft Docs.'
+[ms-settings:otherusers]: #settings '```&#10;C:\>start ms-settings:otherusers&#10;```&#10;Open Family & other people page in Settings on Windows 10&#10;"Launch the Windows Settings app." Microsoft Docs.'
+[ms-settings:pen]: #settings '```&#10;C:\>start ms-settings:pen&#10;```&#10;Open Pen & Windows Ink page in Settings on Windows 10&#10;"Launch the Windows Settings app." Microsoft Docs.'
+[ms-settings:personalization]: #settings '```&#10;C:\>start ms-settings:personalization&#10;```&#10;Open Personalization (category) page in Settings on Windows 10&#10;"Launch the Windows Settings app." Microsoft Docs.'
+[ms-settings:personalization-background]: #settings '```&#10;C:\>start ms-settings:personalization-background&#10;```&#10;Open Background page in Settings on Windows 10&#10;"Launch the Windows Settings app." Microsoft Docs.'
+[ms-settings:personalization-colors]: #settings '```&#10;C:\>start ms-settings:personalization-colors&#10;```&#10;Open Colors page in Settings on Windows 10&#10;"Launch the Windows Settings app." Microsoft Docs.'
+[ms-settings:personalization-start]: #settings '```&#10;C:\>start ms-settings:personalization-start&#10;```&#10;Open Start page in Settings on Windows 10&#10;"Launch the Windows Settings app." Microsoft Docs.'
+[ms-settings:personalization-start-places]: #settings '```&#10;C:\>start ms-settings:personalization-start-places&#10;```&#10;Open Choose which folders appear on Start page in Settings on Windows 10&#10;"Launch the Windows Settings app." Microsoft Docs.'
+[ms-settings:phone]: #settings '```&#10;C:\>start ms-settings:phone&#10;```&#10;Open Phone page in Settings on Windows 10&#10;"Launch the Windows Settings app." Microsoft Docs.'
+[ms-settings:powersleep]: #settings '```&#10;C:\>start ms-settings:powersleep&#10;```&#10;Open Power & sleep page in Settings on Windows 10&#10;"Launch the Windows Settings app." Microsoft Docs.'
+[ms-settings:printers]: #settings '```&#10;C:\>start ms-settings:printers&#10;```&#10;Open Printers & scanners page in Settings on Windows 10&#10;"Launch the Windows Settings app." Microsoft Docs.'
+[ms-settings:privacy]: #settings '```&#10;C:\>start ms-settings:privacy&#10;```&#10;Open Privacy page in Settings on Windows 10&#10;"Launch the Windows Settings app." Microsoft Docs.'
+[ms-settings:project]: #settings '```&#10;C:\>start ms-settings:project&#10;```&#10;Open Projecting to this PC page in Settings on Windows 10&#10;"Launch the Windows Settings app." Microsoft Docs.'
+[ms-settings:proximity]: #settings '```&#10;C:\>start ms-settings:proximity&#10;```&#10;Open Proximity page in Settings on Windows 10&#10;"Launch the Windows Settings app." Microsoft Docs.'
+[ms-settings:quiethours]: #settings '```&#10;C:\>start ms-settings:quiethours&#10;```&#10;Open Focus assist page in Settings on Windows 10&#10;"Launch the Windows Settings app." Microsoft Docs.'
+[ms-settings:quietmomentsgame]: #settings '```&#10;C:\>start ms-settings:quietmomentsgame&#10;```&#10;Open Playing a game full screen page in Settings on Windows 10&#10;"Launch the Windows Settings app." Microsoft Docs.'
+[ms-settings:quietmomentspresentation]: #settings '```&#10;C:\>start ms-settings:quietmomentspresentation&#10;```&#10;Open Duplicating my display page in Settings on Windows 10&#10;"Launch the Windows Settings app." Microsoft Docs.'
+[ms-settings:quietmomentsscheduled]: #settings '```&#10;C:\>start ms-settings:quietmomentsscheduled&#10;```&#10;Open During these hours page in Settings on Windows 10&#10;"Launch the Windows Settings app." Microsoft Docs.'
+[ms-settings:recovery]: #settings '```&#10;C:\>start ms-settings:recovery&#10;```&#10;Open Recovery page in Settings on Windows 10&#10;"Launch the Windows Settings app." Microsoft Docs.'
+[ms-settings:regionformatting]: #settings '```&#10;C:\>start ms-settings:regionformatting&#10;```&#10;Open Region page in Settings on Windows 10&#10;"Launch the Windows Settings app." Microsoft Docs.'
+[ms-settings:regionlanguage]: #settings '```&#10;C:\>start ms-settings:regionlanguage&#10;```&#10;Open Region & language page in Settings on Windows 10&#10;"Launch the Windows Settings app." Microsoft Docs.'
+[ms-settings:remotedesktop]: #settings '```&#10;C:\>start ms-settings:remotedesktop&#10;```&#10;Open Remote Desktop page in Settings on Windows 10&#10;"Launch the Windows Settings app." Microsoft Docs.'
+[ms-settings:savelocations]: #settings '```&#10;C:\>start ms-settings:savelocations&#10;```&#10;Open Default Save Locations page in Settings on Windows 10&#10;"Launch the Windows Settings app." Microsoft Docs.'
+[ms-settings:screenrotation]: #settings '```&#10;C:\>start ms-settings:screenrotation&#10;```&#10;Open Display page in Settings on Windows 10&#10;"Launch the Windows Settings app." Microsoft Docs.'
+[ms-settings:signinoptions]: #settings '```&#10;C:\>start ms-settings:signinoptions&#10;```&#10;Open Sign-in options page in Settings on Windows 10&#10;"Launch the Windows Settings app." Microsoft Docs.'
+[ms-settings:signinoptions-launchfaceenrollment]: #settings '```&#10;C:\>start ms-settings:signinoptions-launchfaceenrollment&#10;```&#10;Open Windows Hello setup page in Settings on Windows 10&#10;"Launch the Windows Settings app." Microsoft Docs.'
+[ms-settings:sound]: #settings '```&#10;C:\>start ms-settings:sound&#10;```&#10;Open Sound page in Settings on Windows 10&#10;"Launch the Windows Settings app." Microsoft Docs.'
+[ms-settings:speech]: #settings '```&#10;C:\>start ms-settings:speech&#10;```&#10;Open Speech page in Settings on Windows 10&#10;"Launch the Windows Settings app." Microsoft Docs.'
+[ms-settings:speech]: #settings '```&#10;C:\>start ms-settings:speech&#10;```&#10;Open Speech page in Settings on Windows 10&#10;"Launch the Windows Settings app." Microsoft Docs.'
+[ms-settings:startupapps]: #settings '```&#10;C:\>start ms-settings:startupapps&#10;```&#10;Open Startup apps page in Settings on Windows 10&#10;"Launch the Windows Settings app." Microsoft Docs.'
+[ms-settings:storagepolicies]: #settings '```&#10;C:\>start ms-settings:storagepolicies&#10;```&#10;Open Storage Sense page in Settings on Windows 10&#10;"Launch the Windows Settings app." Microsoft Docs.'
+[ms-settings:storagesense]: #settings '```&#10;C:\>start ms-settings:storagesense&#10;```&#10;Open Storage Sense page in Settings on Windows 10&#10;"Launch the Windows Settings app." Microsoft Docs.'
+[ms-settings:surfacehub-accounts]: #settings '```&#10;C:\>start ms-settings:surfacehub-accounts&#10;```&#10;Open Accounts page in Settings on Windows 10&#10;"Launch the Windows Settings app." Microsoft Docs.'
+[ms-settings:surfacehub-calling]: #settings '```&#10;C:\>start ms-settings:surfacehub-calling&#10;```&#10;Open Team Conferencing page in Settings on Windows 10&#10;"Launch the Windows Settings app." Microsoft Docs.'
+[ms-settings:surfacehub-devicemanagenent]: #settings '```&#10;C:\>start ms-settings:surfacehub-devicemanagenent&#10;```&#10;Open Team device management page in Settings on Windows 10&#10;"Launch the Windows Settings app." Microsoft Docs.'
+[ms-settings:surfacehub-sessioncleanup]: #settings '```&#10;C:\>start ms-settings:surfacehub-sessioncleanup&#10;```&#10;Open Session cleanup page in Settings on Windows 10&#10;"Launch the Windows Settings app." Microsoft Docs.'
+[ms-settings:surfacehub-welcome]: #settings '```&#10;C:\>start ms-settings:surfacehub-welcome&#10;```&#10;Open Welcome screen page in Settings on Windows 10&#10;"Launch the Windows Settings app." Microsoft Docs.'
+[ms-settings:sync]: #settings '```&#10;C:\>start ms-settings:sync&#10;```&#10;Open Sync your settings page in Settings on Windows 10&#10;"Launch the Windows Settings app." Microsoft Docs.'
+[ms-settings:tabletmode]: #settings '```&#10;C:\>start ms-settings:tabletmode&#10;```&#10;Open Tablet mode page in Settings on Windows 10&#10;"Launch the Windows Settings app." Microsoft Docs.'
+[ms-settings:taskbar]: #settings '```&#10;C:\>start ms-settings:taskbar&#10;```&#10;Open Taskbar page in Settings on Windows 10&#10;"Launch the Windows Settings app." Microsoft Docs.'
+[ms-settings:themes]: #settings '```&#10;C:\>start ms-settings:themes&#10;```&#10;Open Themes page in Settings on Windows 10&#10;"Launch the Windows Settings app." Microsoft Docs.'
+[ms-settings:troubleshoot]: #settings '```&#10;C:\>start ms-settings:troubleshoot&#10;```&#10;Open Troubleshoot page in Settings on Windows 10&#10;"Launch the Windows Settings app." Microsoft Docs.'
+[ms-settings:typing]: #settings '```&#10;C:\>start ms-settings:typing&#10;```&#10;Open Typing page in Settings on Windows 10&#10;"Launch the Windows Settings app." Microsoft Docs.'
+[ms-settings:usb]: #settings '```&#10;C:\>start ms-settings:usb&#10;```&#10;Open USB page in Settings on Windows 10&#10;"Launch the Windows Settings app." Microsoft Docs.'
+[ms-settings:videoplayback]: #settings '```&#10;C:\>start ms-settings:videoplayback&#10;```&#10;Open Video playback page in Settings on Windows 10&#10;"Launch the Windows Settings app." Microsoft Docs.'
+[ms-settings:wheel]: #settings '```&#10;C:\>start ms-settings:wheel&#10;```&#10;Open Wheel page in Settings on Windows 10&#10;"Launch the Windows Settings app." Microsoft Docs.'
+[ms-settings:windowsdefender]: #settings '```&#10;C:\>start ms-settings:windowsdefender&#10;```&#10;Open Windows Security page in Settings on Windows 10&#10;"Launch the Windows Settings app." Microsoft Docs.'
+[ms-settings:windowsinsider]: #settings '```&#10;C:\>start ms-settings:windowsinsider&#10;```&#10;Open Windows Insider Program page in Settings on Windows 10&#10;"Launch the Windows Settings app." Microsoft Docs.'
+[ms-settings:windowsupdate]: #settings '```&#10;C:\>start ms-settings:windowsupdate&#10;```&#10;Open Windows Update page in Settings on Windows 10&#10;"Launch the Windows Settings app." Microsoft Docs.'
+[ms-settings:workplace]: #settings '```&#10;C:\>start ms-settings:workplace&#10;```&#10;Open Access work or school page in Settings on Windows 10&#10;"Launch the Windows Settings app." Microsoft Docs.'
+[ms-settings:yourinfo]: #settings '```&#10;C:\>start ms-settings:yourinfo&#10;```&#10;Open Your info page in Settings on Windows 10&#10;"Launch the Windows Settings app." Microsoft Docs.'
 
 
 [`about`][ms-settings:about]
 [`activation`][ms-settings:activation]
 [`apps-volume`][ms-settings:apps-volume]
-[`appsfeatures`][ms-settings:appsfeatures]
+[**`appsfeatures`**][ms-settings:appsfeatures]
 [`appsforwebsites`][ms-settings:appsforwebsites]
 [`assignedaccess`][ms-settings:assignedaccess]
 [`autoplay`][ms-settings:autoplay]
@@ -554,14 +565,14 @@ route add 192.168.2.1 mask (255.255.255.0) 192.168.2.4
 [`optionalfeatures`][ms-settings:optionalfeatures]
 [`otherusers`][ms-settings:otherusers]
 [`pen`][ms-settings:pen]
-[`personalization`][ms-settings:personalization]
+[**`personalization`**][ms-settings:personalization]
 [`personalization-background`][ms-settings:personalization-background]
 [`personalization-colors`][ms-settings:personalization-colors]
 [`personalization-start`][ms-settings:personalization-start]
 [`personalization-start-places`][ms-settings:personalization-start-places]
 [`phone`][ms-settings:phone]
 [`powersleep`][ms-settings:powersleep]
-[`printers`][ms-settings:printers]
+[**`printers`**][ms-settings:printers]
 [`privacy`][ms-settings:privacy]
 [`project`][ms-settings:project]
 [`proximity`][ms-settings:proximity]
@@ -599,29 +610,33 @@ route add 192.168.2.1 mask (255.255.255.0) 192.168.2.4
 [`wheel`][ms-settings:wheel]
 [`windowsdefender`][ms-settings:windowsdefender]
 [`windowsinsider`][ms-settings:windowsinsider]
-[`windowsupdate`][ms-settings:windowsupdate]
+[**`windowsupdate`**][ms-settings:windowsupdate]
 [`workplace`][ms-settings:workplace]
 [`yourinfo`][ms-settings:yourinfo]
 
 ###### `sfc`
 <!-- `sfc` commands -->
-[sfc /scannow]:                   #sfc                           '```&#10;C:\>sfc /scannow&#10;```&#10;Scan all protected system files, and replace corrupted files with a cached copy that is located in a compressed folder at %WinDir%\System32\dllcache'
+[sfc /scannow]: #sfc '```&#10;C:\>sfc /scannow&#10;```&#10;Scan all protected system files, and replace corrupted files with a cached copy that is located in a compressed folder at %WinDir%\System32\dllcache'
 
 [`scannow`][sfc /scannow]
 
 ###### `shutdown`
-Immediate restart [<sup>Practice Lab</sup>][pl:Sec+]
+Immediate restart <sup>[Practice Lab][pl:Sec+]</sup>
 ```cmd
 shutdown /r /t 0
 ```
+Log off <sup>[windows-commandline.com](https://www.windows-commandline.com/windows-logoff-command-line/ "Windows: logoff from command line")</sup>
+```cmd
+shutdown /L
+```
 ###### `slmgr`
-[slmgr /dli]:                     #slmgr                         '```&#10;C:\> slmgr /dli&#10;```&#10;Display very basic license and activation information about the current system in a dialog box'
-[slmgr /dlv]:                     #slmgr                         '```&#10;C:\> slmgr /dlv&#10;```&#10;Display more detailed license information, including activation ID, installation ID, and other details'
-[slmgr /xpr]:                     #slmgr                         '```&#10;C:\> slmgr /xpr&#10;```&#10;Display activation status or expiration date of current license'
-[slmgr /upk]:                     #slmgr                         '```&#10;C:\> slmgr /upk&#10;```&#10;Remove the product key, placing Windows in an unactivated, unlicensed state (after restart)'
-[slmgr /ipk]:                     #slmgr                         '```&#10;C:\> slmgr /ipk&#10;```&#10;Replace product key, equivalent to changing product key in Activation screen in Settings'
-[slmgr /ato]:                     #slmgr                         '```&#10;C:\> slmgr /ato&#10;```&#10;Force Windows to attempt an online activation, either with Microsoft servers or with the KMS server on the local network'
-[slmgr /rearm]:                   #slmgr                         '```&#10;C:\> slmgr /rearm&#10;```&#10;Reset activation timer to extend trial period. Each usage reduces the "rearm count" (ref. `/dlv`)'
+[slmgr /dli]: #slmgr '```&#10;C:\> slmgr /dli&#10;```&#10;Display very basic license and activation information about the current system in a dialog box'
+[slmgr /dlv]: #slmgr '```&#10;C:\> slmgr /dlv&#10;```&#10;Display more detailed license information, including activation ID, installation ID, and other details'
+[slmgr /xpr]: #slmgr '```&#10;C:\> slmgr /xpr&#10;```&#10;Display activation status or expiration date of current license'
+[slmgr /upk]: #slmgr '```&#10;C:\> slmgr /upk&#10;```&#10;Remove the product key, placing Windows in an unactivated, unlicensed state (after restart)'
+[slmgr /ipk]: #slmgr '```&#10;C:\> slmgr /ipk&#10;```&#10;Replace product key, equivalent to changing product key in Activation screen in Settings'
+[slmgr /ato]: #slmgr '```&#10;C:\> slmgr /ato&#10;```&#10;Force Windows to attempt an online activation, either with Microsoft servers or with the KMS server on the local network'
+[slmgr /rearm]: #slmgr '```&#10;C:\> slmgr /rearm&#10;```&#10;Reset activation timer to extend trial period. Each usage reduces the "rearm count" (ref. `/dlv`)'
 
 [`ato`][slmgr /ato]
 [`dli`][slmgr /dli]
@@ -632,12 +647,16 @@ shutdown /r /t 0
 [`xpr`][slmgr /xpr]
 
 ###### `tracert`
-On Windows, this command is aliased to `traceroute` which is the Linux command. [<sup>Lammle: 112<sup>][Lammle]
+On Windows, this command is aliased to `traceroute` which is the Linux command. <sup>[Lammle][Lammle]: 112</sup>
 
 Option  | Effect
 :---    | :---
 `-6`    | IPv6, aliased to `traceroute6`
+
 ###### `winrm`
+`enumerate`
+`get`
+
 List all WinRM listeners  
 ```cmd
 winrm enumerate winrm/config/listener
@@ -649,11 +668,11 @@ winrm get winrm/config
 ###### `winver`
 
 ###### `wmic`
-Recover Windows product key [<sup>ref</sup>][https://fossbytes.com/how-to-find-windows-product-key-lost-cmd-powershell-registry/]
+Recover Windows product key <sup>[fossbytes.com][https://fossbytes.com/how-to-find-windows-product-key-lost-cmd-powershell-registry/]</sup>
 ```cmd
 wmic path softwarelicensingservice get OA3xOriginalProductKey
 ```
-Recover serial number of a Lenovo laptop [<sup>ref</sup>][https://pcsupport.lenovo.com/us/en/solutions/find-product-name]
+Recover serial number of a Lenovo laptop <sup>[pcsupport.lenovo.com][https://pcsupport.lenovo.com/us/en/solutions/find-product-name]</sup>
 ```cmd
 wmic bios get serialnumber
 ```
