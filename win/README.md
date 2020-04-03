@@ -72,6 +72,8 @@
 [Get-ComputerInfo]: pwsh.md#get-computerinfo '```&#10;PS C:\> Get-ComputerInfo&#10;PS C:\> gin&#10;```&#10;Retrieve a consolidated object of system and operating system properties&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 274'
 [Invoke-GPUpdate]: pwsh.md#invoke-gpupdate '```&#10;PS C:\> Invoke-GPUpdate&#10;```&#10;Schedule a remote Group Policy refresh on the specified host'
 [Write-Host]: pwsh.md#write-host '```&#10;PS C:\> Write-Host&#10;```&#10;Write customized output to a host (equivalent to `echo`).'
+[Remove-Item]: #remove-item '```&#10;PS C:\> Remove-Item&#10;PS C:\> ri&#10;```&#10;'
+[Set-ADAccountPassword]: #set-adaccountpassword '```&#10;PS C:\> Set-ADAccountPassword&#10;```&#10;'
 
 - [Display computer name][Get-ComputerInfo]
 - [Remove Registry keys][Remove-Item]

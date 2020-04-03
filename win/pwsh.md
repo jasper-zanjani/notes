@@ -149,7 +149,7 @@
 [Get-ADPrincipalGroupMembership]:                    #get-adprincipalgroupmembership               "`Get-ADPrincipalGroupMembership` &#10; Get the Active Directory groups that have a specified user, computer, group, or service account"
 [Get-ADUser]:                                        #get-aduser                                   "`Get-ADUser` &#10; Get one or more Active Directory Users"
 [Search-ADAccount]:                                  #search-adaccount                             "`Search-ADAccount`"
-[Set-ADAccountPassword]:                             #set-adaccountpassword                        "`Set-ADAccountPassword`"
+[Set-ADAccountPassword]: #set-adaccountpassword '```&#10;PS C:\> Set-ADAccountPassword&#10;```&#10;'
 [Get-ADObject]: #get-adobject '```&#10;PS C:\> Get-ADObject&#10;```&#10;Get one or more Active Directory objects'
 [Set-ADObject]:                                      #set-adobject                                 "`Set-ADObject`"
 [Set-ADOrganizationalUnit]:                          #set-adorganizationalunit                     "`Set-ADOrganizationalUnit`"
