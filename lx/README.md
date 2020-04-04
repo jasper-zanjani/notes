@@ -41,11 +41,13 @@
 [TmpFs]: # 'TmpFs&#10;Temporary file storage paradigm implemented in many Unix-like operating systems. It is intended to appear as a mounted file system, but data is stored in volatile memory instead of a persistent storage device.&#10;"tmpfs". Wikipedia.'
 [configure script]: # 'configure script&#10;Script that converts a Makefile.in template into a Makefile, responsible for preparing the software build, ensuring dependencies are available, such as a C compiler for C programs.&#10;Not typically built by hand but packaged by another program in the `autotools` suite, like `autoconf`, `automake`, etc. '
 
-###### Tasks
-- [**Set custom resolution on a VM**](#custom-resolution)
-- [Bash scripting](#bash-scripting)
 - [Commands](#linux-commands)
 - [Configs](#linux-configs)
+
+###### Tasks
+- Set up SSH server on WSL
+- [**Set custom resolution on a VM**](#custom-resolution)
+- [Bash scripting](#bash-scripting)
 - [Diagnosing network problems](#diagnosing-network-problems)
 - [Distros](#linux-distributions-and-desktop-environments)
 - [Samba](#samba)
@@ -852,19 +854,19 @@
 [`vmstat`][vmstat] 
 
 **[Init](#init-systems)**
-**[Systemd][SystemD]**
+_[Systemd][SystemD]_
 `hostnamectl`
 [`journalctl`][journalctl]
 `localectl`
 `systemctl`
 `systemd-delta`
 [`timedatectl`][timedatectl] 
-**Sysvinit**
+_Sysvinit_
 `chkconfig`
 `init`
 `service`
 `telinit`
-**Upstart**
+_Upstart_
 `initctl`
 
 **[Kernel](#kernel)**

@@ -34,11 +34,12 @@
 [ntdsutil]:       #ntdsutil                       '```&#10;C:\>ntdsutil&#10;```&#10;Used to transfer FSMO roles between domain controllers'
 [regsvr32]: #regsvr32 ''
 [sfc]:            #sfc                            '```&#10;C:\>sfc&#10;C:\>sfc /scannow&#10;```&#10;Scan and verify protected system files&#10;Stanek, William R. _Microsoft Windows Command-Line_.: 373'
-[slmgr]:          #slmgr                          '```&#10;C:\>slmgr&#10;```&#10;Windows software licensing management tool'
+[slmgr]:          #slmgr.vbs                          '```&#10;C:\>slmgr&#10;```&#10;Windows software licensing management tool'
 [systeminfo]:     #systeminfo                     '```&#10;C:\>systeminfo&#10;```&#10;Shows system information about the machine, including installed hotfixes and patches'
 [winver]:         #winver                                             '```&#10;C:\>winver&#10;```&#10;Display the "About Windows" dialog box, including Windows version and build number'
 [wmic]:           #wmic                           '```&#10;C:\>wmic&#10;```&#10;WMI command-line (WMIC) utility provides a command-line interface for WMI.'
-
+[Configure-SMRemoting.exe]: #configure-smremoting.exe '```&#10;C:\>Configure-SMRemoting.exe&#10;```&#10;Enable remote management using Server Manager'
+[cmdkey.exe]: #cmdkey.exe '```&#10;C:\>cmdkey.exe&#10;```&#10;Creates, lists, and deletes stored user names and passwords or credentials'
 
 <!-- Linux commands -->
 [grep]: https://github.com/jasper-zanjani/notes/blob/master/lx/commands/README.md#grep '```&#10;$ grep&#10;```&#10;Search `$FILES` for lines containing a match to regex `$PATTERN`&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 126'
@@ -187,6 +188,28 @@ Use when BCD file has been corrupted
 ```cmd
 bootrec /rebuildbcd
 ```
+###### `cmdkey`
+[cmdkey /add]: #cmdkey '```&#10;C:\>cmdkey /add&#10;```&#10;Add a user name and password to the list'
+[cmdkey /generic]: #cmdkey '```&#10;C:\>cmdkey /generic&#10;```&#10;Add generic credentials to the list'
+[cmdkey /smartcard]: #cmdkey '```&#10;C:\>cmdkey /smartcard&#10;```&#10;Retrieves the credential from a smart card'
+[cmdkey /user]: #cmdkey '```&#10;C:\>cmdkey /user&#10;```&#10;Specify user or account name to store with this entry.'
+[cmdkey /pass]: #cmdkey '```&#10;C:\>cmdkey /pass&#10;```&#10;Specify password to store with this entry'
+[cmdkey /delete]: #cmdkey '```&#10;C:\>cmdkey /delete&#10;```&#10;Delete a user name and password from the list.'
+[cmdkey /list]: #cmdkey '```&#10;C:\>cmdkey /list&#10;```&#10;Display the list of stored user names and credentials.'
+
+[`add`][cmdkey /add]
+[`delete`][cmdkey /delete]
+[`generic`][cmdkey /generic]
+[`list`][cmdkey /list]
+[`pass`][cmdkey /pass]
+[`smartcard`][cmdkey /smartcard]
+[`user`][cmdkey /user]
+
+Add a user name and password for user `Mikedan` to access computer `Server01` with the password `Kleo` <sup>[docs.microsoft.com](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/cmdkey "cmdkey")
+```cmd
+cmdkey /add:server01 /user:mikedan /pass:Kleo
+```
+
 ###### `diskpart`
 <!-- `diskpart` commands -->
 [diskpart active]:                #diskpart                      '```&#10;C:\> diskpart&#10;DISKPART> ACTIVE&#10;```&#10;On MBR disks, marks the partition with current focus as the active system partition, meaning it is the partition containing the operating system startup files&#10;Stanek, William R. _Microsoft Windows Command-Line_.: 141'
@@ -391,7 +414,7 @@ netdom join %computername% /domain: domainname /userd: username /password:*
 [`wins`][netsh wins] 
 `wlan`
 
-Configure DNS to be dynamically assigned
+Configure DNS to be dynamically assigned <sup>[pwsh](pwsh.md#set-dnsclientserveraddress '```&#10;PS C:\> Set-DnsClientServerAddress -ResetServerAddresses&#10;```')</sup>
 ```cmd
 netsh interface ip set dns "Wi-Fi" dhcp
 ```
@@ -632,14 +655,14 @@ Log off <sup>[windows-commandline.com](https://www.windows-commandline.com/windo
 ```cmd
 shutdown /L
 ```
-###### `slmgr`
-[slmgr /dli]: #slmgr '```&#10;C:\> slmgr /dli&#10;```&#10;Display very basic license and activation information about the current system in a dialog box'
-[slmgr /dlv]: #slmgr '```&#10;C:\> slmgr /dlv&#10;```&#10;Display more detailed license information, including activation ID, installation ID, and other details'
-[slmgr /xpr]: #slmgr '```&#10;C:\> slmgr /xpr&#10;```&#10;Display activation status or expiration date of current license'
-[slmgr /upk]: #slmgr '```&#10;C:\> slmgr /upk&#10;```&#10;Remove the product key, placing Windows in an unactivated, unlicensed state (after restart)'
-[slmgr /ipk]: #slmgr '```&#10;C:\> slmgr /ipk&#10;```&#10;Replace product key, equivalent to changing product key in Activation screen in Settings'
-[slmgr /ato]: #slmgr '```&#10;C:\> slmgr /ato&#10;```&#10;Force Windows to attempt an online activation, either with Microsoft servers or with the KMS server on the local network'
-[slmgr /rearm]: #slmgr '```&#10;C:\> slmgr /rearm&#10;```&#10;Reset activation timer to extend trial period. Each usage reduces the "rearm count" (ref. `/dlv`)'
+###### `slmgr.vbs`
+[slmgr /dli]: #slmgr.vbs '```&#10;C:\> slmgr /dli&#10;```&#10;Display very basic license and activation information about the current system in a dialog box'
+[slmgr /dlv]: #slmgr.vbs '```&#10;C:\> slmgr /dlv&#10;```&#10;Display more detailed license information, including activation ID, installation ID, and other details'
+[slmgr /xpr]: #slmgr.vbs '```&#10;C:\> slmgr /xpr&#10;```&#10;Display activation status or expiration date of current license'
+[slmgr /upk]: #slmgr.vbs '```&#10;C:\> slmgr /upk&#10;```&#10;Remove the product key, placing Windows in an unactivated, unlicensed state (after restart)'
+[slmgr /ipk]: #slmgr.vbs '```&#10;C:\> slmgr /ipk&#10;```&#10;Replace product key, equivalent to changing product key in Activation screen in Settings'
+[slmgr /ato]: #slmgr.vbs '```&#10;C:\> slmgr /ato&#10;```&#10;Force Windows to attempt an online activation, either with Microsoft servers or with the KMS server on the local network'
+[slmgr /rearm]: #slmgr.vbs '```&#10;C:\> slmgr /rearm&#10;```&#10;Reset activation timer to extend trial period. Each usage reduces the "rearm count" (ref. `/dlv`)'
 
 [`ato`][slmgr /ato]
 [`dli`][slmgr /dli]

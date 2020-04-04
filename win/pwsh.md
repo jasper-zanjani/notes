@@ -390,6 +390,7 @@
 <code>Module&nbsp;[ip][Import-Module]&nbsp;[is][Install-Module]</code> 
 <code>Object&nbsp;[%][ForEach-Object]&nbsp;[?][Where-Object]&nbsp;[ms][Measure-Object]&nbsp;[n][New-Object]&nbsp;[sc][Select-Object]</code>
 <code>Output&nbsp;[wr][Write-Output]</code> 
+<code>PSRemoting&nbsp;[en]</code>
 <code>Table&nbsp;[f][Format-Table]</code> 
 <code>Transaction&nbsp;[sa][Start-Transaction]&nbsp;[cp][Complete-Transaction]</code>
 <code>Type&nbsp;[a][Add-Type]</code> 
@@ -516,7 +517,7 @@
 <code>WMIObject&nbsp;[g][Get-WMIObject]</code> 
 **Windows**
 <code>Driver&nbsp;[a][Add-WindowsDriver] [ep][Export-WindowsDriver] [g][Get-WindowsDriver] [r][Remove-WindowsDriver]</code> 
-<code>Feature&nbsp;[a][Add-WindowsFeature] [g][Get-WindowsFeature]</code> 
+<code>Feature&nbsp;[a][Install-WindowsFeature]&nbsp;[g][Get-WindowsFeature]&nbsp;[is][Install-WindowsFeature]</code> 
 <code>OptionalFeature&nbsp;[e][Enable-WindowsOptionalFeature]</code> 
 <code>Image&nbsp;[a][Add-WindowsImage] [en][Expand-WindowsImage] [n][New-WindowsImage] [sv][Save-WindowsImage] [ep][Export-WindowsImage] [g][Get-WindowsImage] [mt][Mount-WindowsImage] [r][Remove-WindowsImage] [dm][Dismount-WindowsImage]</code>
 <code>ImageContent&nbsp;[g][Get-WindowsImageContent]</code>
@@ -991,7 +992,7 @@ Restart computer
 ###### `Get-ChildItem`
 ##### `Command`
 ###### `Get-Command`
-Display source code of a function <sup>[Microsoft Docs](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_functions "About Functions"</sup>
+Display source code of a function <sup>[docs.microsoft.com](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_functions "About Functions"</sup>
 ```powershell
 (Get-Command mkdir).Definition
 ```
@@ -1180,6 +1181,17 @@ Configure the firewall to allow Hyper-V replication <sup>[Zacker][Zacker]: 301</
 ```powershell
 Enable-NetFirewallRule -DisplayName "hyper-v replica http listener (tcp-in)"
 Enable-NetFirewallRule -DisplayName "hyper-v replica https listener (tcp-in)"
+```
+Configure firewall to allow remote administration using MMC snap-ins
+```powershell
+Enable-NetFirewallRule -DisplayGroup "Remote Administration"
+```
+
+```powershell
+Enable-NetFirewallRule -name COMPlusNetworkAccess-DCOM-In
+Enable-NetFirewallRule -name RemoteEventLogSvc-In-TCP
+Enable-NetFirewallRule -name RemoteEventLogSvc-NP-In-TCP
+Enable-NetFirewallRule -name RemoteEventLogSvc-RPCSS-In-TCP
 ```
 ###### `Get-NetFirewallRule`
 Display all firewall rules
@@ -1650,7 +1662,7 @@ New-Cluster -Name cluster1 -node server1,server2,server3,server4 -NoStorage
 ```
 ##### `ClusterNode`
 ###### `Suspend-ClusterNode`
-Pause a node and move ("drain") its workloads with `-Drain`. <sup>[Microsoft Docs](https://docs.microsoft.com/en-us/powershell/module/failoverclusters/suspend-clusternode "Suspend-ClusterNode")
+Pause a node and move ("drain") its workloads with `-Drain`. <sup>[docs.microsoft.com](https://docs.microsoft.com/en-us/powershell/module/failoverclusters/suspend-clusternode "Suspend-ClusterNode")
 ```powershell
 Suspend-ClusterNode -Name "node1" -Target "node2" -Drain
 ```
