@@ -22,6 +22,7 @@
 - [**Clear out `%temp%` folder**][Remove-Item]
 - [**Reset AD user's password**][Set-ADAccountPassword]
 - [**Generate password**](#generate-password)
+- [Run `cmd` as admin][Start-Process]
 - [Add a member to a group](#add-a-member-to-a-group)
 - [Credentials](#credentials)
 - [Formatting output](#output-formatting)
@@ -241,14 +242,14 @@
 <code>Volume&nbsp;[f][Format-Volume]&nbsp;[n][New-Volume]</code> 
 
 ##### File cmdlets
+[Add-Content]: #add-content '```&#10;PS C:\> Add-Content&#10;PS C:\> ac&#10;```&#10;Append content, such as words or data, to a file'
+[Get-Content]: #get-content '```&#10;PS C:\> Get-Content&#10;PS C:\> gc&#10;```&#10;Get the content of a file'
 [Copy-Item]: #copy-item '```&#10;PS C:\> Copy-Item&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 180'
 [Set-Item]: #set-item '```&#10;PS C:\> Set-Item&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 56'
-[Add-Content]: #add-content '```&#10;PS C:\> Add-Content&#10;```&#10;'
 [Compress-Archive]: #compress-archive '```&#10;PS C:\> Compress-Archive&#10;```&#10;'
 [Copy-Item]: #copy-item '```&#10;PS C:\> Copy-Item&#10;```&#10;'
 [Expand-Archive]: #expand-archive '```&#10;PS C:\> Expand-Archive&#10;```&#10;Decompress archives'
 [Export-Csv]: #export-csv '```&#10;PS C:\> Export-Csv&#10;```&#10;Export PowerShell objects to CSV'
-[Get-Content]: #get-content '```&#10;PS C:\> Get-Content&#10;PS C:\> cat gc type&#10;```&#10;'
 [Get-Item]: #get-item '```&#10;PS C:\> Get-Item&#10;```&#10;'
 [Import-Csv]: #import-csv '```&#10;PS C:\> Import-Csv&#10;PS C:\> ipcsv&#10;```&#10;'
 [New-Item]: #new-item '```&#10;PS C:\> New-Item&#10;PS C:\> ni&#10;```&#10;Create a new item and set its value. The type of item created depends on the context.'
@@ -257,7 +258,7 @@
 [Set-FileStorageTier]: #set-filestoragetier '```&#10;Set-FileStorageTier&#10;```&#10;Assign a file to a storage tier&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 133'
 
 <code>Archive&nbsp;[cm][Compress-Archive]&nbsp;[en][Expand-Archive]</code> 
-<code>Content&nbsp;[a][Add-Content]</code> 
+<code>Content&nbsp;[a][Add-Content]&nbsp;[g][Get-Content]</code> 
 <code>Csv&nbsp;[ep][Export-Csv]&nbsp;[ip][Import-Csv]</code> 
 <code>FileStorageTier&nbsp;[s][Set-FileStorageTier]</code>
 <code>Item&nbsp;[cp][Copy-Item]&nbsp;[g][Get-Item]&nbsp;[n][New-Item]&nbsp;[r][Remove-Item] </code>
@@ -324,6 +325,13 @@
 <code>FirewallRule&nbsp;[e][Enable-NetFirewallRule]&nbsp;[g][Get-NetFirewallRule]&nbsp;[n][New-NetFirewallRule]&nbsp;[s][Set-NetFirewallRule]</code>
 <code>IpAddress&nbsp;[n][New-NetIpAddress]</code>
 <code>IpConfiguration&nbsp;[g][Get-NetIpConfiguration]</code>
+
+#### Process control cmdlets
+[Get-Process]: #get-process '```&#10;PS C:\> Get-Process&#10;PS C:\> gps&#10;```&#10;Display running processes'
+[Start-Process]: #start-process '```&#10;PS C:\> Start-Process&#10;PS C:\> saps&#10;```&#10;Start one or more processes on the local computer.'
+[Stop-Process]: #stop-process '```&#10;PS C:\> Stop-Process&#10;PS C:\> spps&#10;```&#10;Stop one or more running processes'
+
+<code>Process&nbsp;[g][Get-Process]&nbsp;[sa][Start-Process]&nbsp;[sp][Stop-Process]</code>
 
 ##### Shell environment cmdlets
 [Add-Computer]: #add-computer '```&#10;PS C:\> Add-Computer&#10;```&#10;Join a computer to a domain'
@@ -586,6 +594,7 @@ The `Throw` keyword generates a terminating error
 [$profile.CurrentUserAllHosts]: #variables '```&#10;PS C:\> Write-Host $profile.CurrentUserAllHosts&#10;```&#10;Typically %USERPROFILE%\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1&#10;Microsoft Docs. "About Profiles"'
 [$profile.AllUsersAllHosts]: #variables '```&#10;PS C:\> Write-Host $profile.AllUsersAllHosts&#10;```&#10;Typically $PSHome\profile.ps1'
 [$profile.AllUsersCurrentHost]: #variables '```&#10;PS C:\> Write-Host $profile.AllUsersCurrentHost&#10;```&#10;Typically $PSHome\Microsoft.PowerShell_profile.ps1'
+[$PSHome]: #variables '```&#10;PS C:\> Write-Host $$PSHome&#10;```&#10;Full path of installation directory for Windows Powershell (typically %windir%\System32\WindowsPowerShell\v1.0)'
 
 [` $_`][&#36;_] 
 [` $?`][&#36;?] 
@@ -598,6 +607,7 @@ The `Throw` keyword generates a terminating error
 [` $IsWindows`][$IsWindows] 
 [` $PID`][$PID] 
 [` $PSCulture`][$PSCulture] 
+[` $PSHome`][$PSHOME]
 [` $PSVersionTable`][$PSVersionTable] 
 [` $PWD`][$PWD]
 
@@ -610,10 +620,10 @@ The `Throw` keyword generates a terminating error
 ###### Environment variables
 Windows environment variables are actually accessed with the syntax `$Env:var`.
 
-[USERPROFILE]:                 #variables                               '```&#10;PS C:\> Write-Host $Env:USERPROFILE&#10;```&#10;Location of profile directory of current user (i.e. "C:\Users\jsmith")'
-[USERNAME]:                    #variables                               '```&#10;PS C:\> Write-Host $Env:USERNAME&#10;```&#10;Name of current user (i.e. "jsmith").'
-[APPDATA]:                     #variables                               '```&#10;PS C:\> Write-Host $Env:APPDATA&#10;```&#10;The file-system directory that serves as a common repository for application-specific data (i.e. "C:\Users\jsmith\AppData\Roaming").'
-[LOCALAPPDATA]:                #variables                               '```&#10;PS C:\> Write-Host $Env:LOCALAPPDATA&#10;```&#10;The file-system directory that serves as a data repository for local, non-roaming applications (i.e. "C:\Users\jsmith\AppData\Local").'
+[USERPROFILE]: #variables '```&#10;PS C:\> Write-Host $Env:USERPROFILE&#10;```&#10;Location of profile directory of current user (i.e. "C:\Users\jsmith")'
+[USERNAME]: #variables '```&#10;PS C:\> Write-Host $Env:USERNAME&#10;```&#10;Name of current user (i.e. "jsmith").'
+[APPDATA]: #variables '```&#10;PS C:\> Write-Host $Env:APPDATA&#10;```&#10;The file-system directory that serves as a common repository for application-specific data (i.e. "C:\Users\jsmith\AppData\Roaming").'
+[LOCALAPPDATA]: #variables '```&#10;PS C:\> Write-Host $Env:LOCALAPPDATA&#10;```&#10;The file-system directory that serves as a data repository for local, non-roaming applications (i.e. "C:\Users\jsmith\AppData\Local").'
 [WINDIR]: #variables '```&#10;PS C:\> Write-Host $Env:WINDIR&#10;```&#10;Windows folder in the system drive'
 
 [`APPDATA`][APPDATA]
@@ -1284,6 +1294,14 @@ Request data from a website impersonating a browser
 ```powershell
 Invoke-WebRequest -Uri http://microsoft.com -UserAgent ([Microsoft.PowerShell.Commands.PSUserAgent]::Chrome)
 ```
+#### Process control
+##### `Process`
+###### `Start-Process`
+Run a program as admin
+```powershell
+Start-Process cmd -Verb runas
+saps cmd -v runas
+```
 #### Disks
 ##### `DedupVolume`
 ###### `Enable-DedupVolume`
@@ -1345,6 +1363,12 @@ Expand-Archive
 ###### `Export-CliXml`
 ###### `Import-CliXml`
 ##### `Content`
+###### `Add-Content`
+Append a line to the `hosts` file
+```powershell
+Add-Content -Path C:\Windows\System32\drivers\etc\hosts -Value "76.184.117.203 mohsen"
+ac $Env:windir\System32\drivers\etc\hosts "76.184.117.203 mohsen"
+```
 ###### `Get-Content`
 Make a PowerShell object from a JSON file
 ```powershell

@@ -16,34 +16,36 @@
 <!-- Active Directory -->
 [adfind]: #adfind '```&#10;adfind&#10;```&#10;Command-line utility that can be used to query Active Directory attributes&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 53'
 [adprep]:         #adprep                         '```&#10;C:\>adprep&#10;```&#10;Prepare Active Directory for Windows Server upgrades&#10;Must be run on the Infrastructure Master role owner with the flag `/domainprep`.&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 29'
+[SmigDeploy.exe]: #smigdeploy.exe '```&#10;C:\>SmigDeploy.exe&#10;```&#10;Create a new folder in specified directory, registering Windows Server Migration Tools on the source server and opening a Powershell window in which they can be used&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 34'
 
 <!-- `cmd` commands -->
 [arp]:            #arp                            '```&#10;C:\>arp&#10;```&#10;Display and modify the IP-to-MAC address translation tables used by ARP'
 [bcdedit]:        #bcdedit                        '```&#10;C:\>bcdedit&#10;```&#10;Boot configuration data editor'
 [bootrec]:        #bootrec                        '```&#10;C:\>bootrec&#10;```&#10;Windows Recovery Environment command that repairs a system partition'
+[cmdkey.exe]: #cmdkey.exe '```&#10;C:\>cmdkey.exe&#10;```&#10;Creates, lists, and deletes stored user names and passwords or credentials'
+[Configure-SMRemoting.exe]: #configure-smremoting.exe '```&#10;C:\>Configure-SMRemoting.exe&#10;```&#10;Enable remote management using Server Manager'
 [cscript]:        #cscript                        '```&#10;C:\>cscript&#10;```&#10;Starts a script so that it runs in a command-line environment'
 [diskpart]:       #diskpart                       '```&#10;C:\>diskpart&#10;```&#10;Text-mode command interpreter used to convert disk types, create partitions and volumes, and configure RAID&#10;Stanek, William R. _Microsoft Windows Command-Line_.: 141'
 [dism.exe]: #dism.exe '```&#10;C:\>dism.exe&#10;```&#10;"Deployment Image Servicing and Management", enables modification of VHD and Windows Imaging files while they are offline&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 70'
 [hostname]:       #hostname                       '```&#10;C:\>hostname&#10;C:\>HOSTNAME.exe&#10;```&#10;Display computer name'
 [ipconfig]:       #ipconfig                       '```&#10;C:\>ipconfig&#10;```&#10;Display TCP/IP configuration'
 [logoff]:         #logoff                         '```&#10;C:\>logoff&#10;```&#10;Log out'
-[msiexec]:        #msiexec                        '```&#10;C:\>msiexec&#10;```&#10;Provides the means to install, modify, and perform operations on Windows Installer from the command line'
 [ms-settings:]: #settings '```&#10;ms-settings:&#10;```&#10;Special protocol which can be used to open Settings pages and other Modern apps which have well known URIs'
+[msiexec]:        #msiexec                        '```&#10;C:\>msiexec&#10;```&#10;Provides the means to install, modify, and perform operations on Windows Installer from the command line'
 [nbtstat]:        #nbtstat                        '```&#10;C:\>nbtstat&#10;```&#10;Display status of NetBIOS'
 [netsh]:          #netsh                          '```&#10;C:\>netsh&#10;```&#10;"Network services shell", command-line utility that allows you to manage the configuration of various network services on local and remote computers.&#10;Stanek, William R. _Microsoft Windows Command-Line_.: 297'
 [ntdsutil]:       #ntdsutil                       '```&#10;C:\>ntdsutil&#10;```&#10;Used to transfer FSMO roles between domain controllers'
 [regsvr32]: #regsvr32 ''
-[sfc]:            #sfc                            '```&#10;C:\>sfc&#10;C:\>sfc /scannow&#10;```&#10;Scan and verify protected system files&#10;Stanek, William R. _Microsoft Windows Command-Line_.: 373'
-[slmgr]:          #slmgr.vbs                          '```&#10;C:\>slmgr&#10;```&#10;Windows software licensing management tool'
-[systeminfo]:     #systeminfo                     '```&#10;C:\>systeminfo&#10;```&#10;Shows system information about the machine, including installed hotfixes and patches'
-[winver]:         #winver                                             '```&#10;C:\>winver&#10;```&#10;Display the "About Windows" dialog box, including Windows version and build number'
-[wmic]:           #wmic                           '```&#10;C:\>wmic&#10;```&#10;WMI command-line (WMIC) utility provides a command-line interface for WMI.'
-[Configure-SMRemoting.exe]: #configure-smremoting.exe '```&#10;C:\>Configure-SMRemoting.exe&#10;```&#10;Enable remote management using Server Manager'
-[cmdkey.exe]: #cmdkey.exe '```&#10;C:\>cmdkey.exe&#10;```&#10;Creates, lists, and deletes stored user names and passwords or credentials'
+[runas]: #runas '```&#10;C:\>runas&#10;```&#10;Run specific tools and programs with different permissions than those provided by the current login of the user.'
+[sfc]: #sfc                            '```&#10;C:\>sfc&#10;C:\>sfc /scannow&#10;```&#10;Scan and verify protected system files&#10;Stanek, William R. _Microsoft Windows Command-Line_.: 373'
+[slmgr]: #slmgr.vbs                          '```&#10;C:\>slmgr&#10;```&#10;Windows software licensing management tool'
+[systeminfo]: #systeminfo                     '```&#10;C:\>systeminfo&#10;```&#10;Shows system information about the machine, including installed hotfixes and patches'
+[winver]: #winver                                             '```&#10;C:\>winver&#10;```&#10;Display the "About Windows" dialog box, including Windows version and build number'
+[wmic]: #wmic                           '```&#10;C:\>wmic&#10;```&#10;WMI command-line (WMIC) utility provides a command-line interface for WMI.'
 
 <!-- Linux commands -->
 [grep]: https://github.com/jasper-zanjani/notes/blob/master/lx/commands/README.md#grep '```&#10;$ grep&#10;```&#10;Search `$FILES` for lines containing a match to regex `$PATTERN`&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 126'
-[lx echo]:                        #echo                                       '```&#10;$ echo&#10;```&#10;Write `$STRING` to STDOUT&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 88'
+[lx echo]: https://github.com/jasper-zanjani/notes/blob/master/lx/commands/README.md#echo '```&#10;$ echo&#10;```&#10;Write `$STRING` to STDOUT&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 88'
 
 <!-- Control Panel binaries -->
 [access.cpl]:     #access.cpl           '```&#10;C:\> access.cpl&#10;```&#10;Accessibility Options'
@@ -92,21 +94,25 @@
 [`arp`][arp] 
 [`bcdedit`][bcdedit] 
 [`bootrec`][bootrec]
+[`cmdkey`][cmdkey.exe]
 [`cscript`][cscript] 
-`dir`<sup>[pwsh][Get-ChildItem]</sup>
+`dir` <sup>[pwsh][Get-ChildItem]</sup>
 [`diskpart`][diskpart] 
 [`echo`](#echo) <sup>[lx][lx echo] [pwsh][Write-Host]</sup>
-`findstr`<sup>[lx][grep]</sup>
+`findstr` <sup>[lx][grep]</sup>
 `gpupdate`<sup>[pwsh][Invoke-GPUpdate]</sup>
-[`hostname`][hostname]<sup>[pwsh][Get-ComputerInfo]</sup>
+[`hostname`][hostname] <sup>[pwsh][Get-ComputerInfo]</sup>
 [`ipconfig`][ipconfig]
 [`logoff`][logoff]
 [`ms-settings:`][ms-settings:]
-[`nbtstat`][nbtstat] [`netsh`](#netsh) 
+[`nbtstat`][nbtstat] 
+[`netsh`](#netsh) 
 [`ntdsutil`][ntdsutil]
 [`regsvr32`][regsvr32]
 [`route`](#route)
-[`sfc`][sfc] [`shutdown`](#shutdown) 
+[`runas`][runas] <sup>[lx](https://github.com/jasper-zanjani/lx/README.md '```sh&#10;$ sudo&#10;```')</sup>
+[`sfc`][sfc] 
+[`shutdown`](#shutdown) 
 [`slmgr`][slmgr] 
 [`systeminfo`][systeminfo]
 [`tracert`](#tracert) 
@@ -119,6 +125,7 @@
 [`adprep`][adprep] 
 [`adfind`][adfind]
 [`dsquery`][dsquery]
+[`smigdeploy`][SmigDeploy.exe]
 
 ###### Control Panel
 [`access`][access.cpl] 
@@ -454,6 +461,26 @@ Basic usage
 ```sh
 route add 192.168.2.1 mask (255.255.255.0) 192.168.2.4
 ```
+###### `runas`
+[runas /profile]: #runas '```&#10;C:\>runas /profile&#10;```&#10;Load the user's profile (default).'
+[runas /no profile]: #runas '```&#10;C:\>runas /no profile&#10;```&#10;Specify that the user's profile is not to be loaded.'
+[runas /env]: #runas '```&#10;C:\>runas /env&#10;```&#10;Specify that the current network environment be used instead of the local environment of the user.'
+[runas /netonly]: #runas '```&#10;C:\>runas /netonly&#10;```&#10;Indicate that the user information specified is for remote access only'
+[runas /savecred]: #runas '```&#10;C:\>runas /savecred&#10;```&#10;Indicate if credentials have been previously saved by this user'
+[runas /smartcard]: #runas '```&#10;C:\>runas /smartcard&#10;```&#10;Retrieve the credential from a smart card'
+[runas /showtrustlevels]: #runas '```&#10;C:\>runas /showtrustlevels&#10;```&#10;Display the trust levels that can be used as arguments to `/trustlevel`'
+[runas /trustlevel]: #runas '```&#10;C:\>runas /trustlevel&#10;```&#10;Specify the level of authorization at which the application is to run'
+[runas /user:]: #runas '```&#10;C:\>runas /user: $USER "$PROGRAM"&#10;```&#10;Specify the name of the user account under which to run the program'
+
+[`env`][runas /env]
+[`netonly`][runas /netonly]
+[`profile`][runas /profile]/[`no profile`][runas /no profile]
+[`savecred`][runas /savecred]
+[`showtrustlevels`][runas /showtrustlevels]
+[`smartcard`][runas /smartcard]
+[`trustlevel`][runas /trustlevel]
+[`user:`][runas /user:]
+
 ###### Settings
 [ms-settings:about]: #settings '```&#10;C:\>start ms-settings:about&#10;```&#10;Open About page in Settings on Windows 10&#10;"Launch the Windows Settings app." Microsoft Docs.'
 [ms-settings:activation]: #settings '```&#10;C:\>start ms-settings:activation&#10;```&#10;Open Activation page in Settings on Windows 10&#10;"Launch the Windows Settings app." Microsoft Docs.'
