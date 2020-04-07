@@ -168,8 +168,9 @@ tasks:
 [ansible -&#75;]:  #ansible '```&#10;$ ansible -K&#10;$ ansible --ask-become-pass&#10;```&#10;Ask for privilege escalation password.&#10;"Understanding privilege escalation: become". Ansible documentation.'
 [ansible --list-hosts]: #ansible '```&#10;$ ansible --list-hosts&#10;```&#10;Display a list of matching hosts'
 [ansible -&#117;]: #ansible '```&#10;$ ansible -&#117;&#10;$ ansible --user&#10;```&#10;Specify a remote user'
+[ansible -&#111;]: #ansible '```&#10;$ ansible -&#111;&#10;$ ansible --one-line&#10;```&#10;Condense output'
 
-<code>&nbsp;</code>   [`a`][ansible -&#97;] [`b`][ansible -&#98;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`i`][ansible -&#105;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`m`][ansible -&#109;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`u`][ansible -&#117;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code>  <br><code>&nbsp;</code>&nbsp;<code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`K`][ansible -&#75;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 
+<code>&nbsp;</code>   [`a`][ansible -&#97;] [`b`][ansible -&#98;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`i`][ansible -&#105;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`m`][ansible -&#109;] <code>&nbsp;</code> [`o`][ansible -&#111;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`u`][ansible -&#117;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code>  <br><code>&nbsp;</code>&nbsp;<code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`K`][ansible -&#75;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 
 
 [`list-hosts`][ansible --list-hosts]
 
@@ -296,7 +297,7 @@ Conditional logic is implemented with each task by defining a condition as the v
 ```
 ## Modules
 #### `archive` module
-Compress files [<sup>ref</sup>][https://opensource.com/article/19/9/must-know-ansible-modules]
+Compress files <sup>[opensource.com][https://opensource.com/article/19/9/must-know-ansible-modules]</sup>
 ```yaml
 - name: Compress directory /path/to/foo/ into /path/to/foo.tgz
   archive:
@@ -313,7 +314,7 @@ Compress files [<sup>ref</sup>][https://opensource.com/article/19/9/must-know-an
     format: bz2
 ```
 #### `cli_config`
-Platform-agnostic way of pushing text-based configurations to network devices over the **network_cli_connection** plugin [<sup>ref</sup>][https://opensource.com/article/19/9/must-know-ansible-modules]
+Platform-agnostic way of pushing text-based configurations to network devices over the **network_cli_connection** plugin <sup>[opensource.com][https://opensource.com/article/19/9/must-know-ansible-modules]</sup>
 ```yaml
 # Set hostname for a switch and exit with a commit message
 - name: commit with comment
@@ -334,7 +335,10 @@ Platform-agnostic way of pushing text-based configurations to network devices ov
 #### `command` module
 Safest module to execute remote commands on client machine, requires Python. When Ansible execute commands using the Command module, they are not processed through the user's shell (meaning environment variables like [ `$HOME` ](../lx/commands/bash.md) and output redirection are not available).
 
-Takes command name followed by a list of space-delimited arguments. [<sup>ref</sup>][https://opensource.com/article/19/9/must-know-ansible-modules]
+Takes command name followed by a list of space-delimited arguments. <sup>[opensource.com][https://opensource.com/article/19/9/must-know-ansible-modules]</sup>
+```sh
+ansible all -i inventory -m command -a 'cat /etc/motd' -u ansible
+```
 ```yaml
 - name: return motd to registered var
   command: cat /etc/motd
@@ -350,9 +354,15 @@ Takes command name followed by a list of space-delimited arguments. [<sup>ref</s
     creates: /path/to/database
 ```
 #### `copy` module
-Copy files from the server to nodes (cf. [`file`](#file-module)). Useful when updating configuration files.
+Copy files from the server to nodes (cf. [`file`](#file-module)).
+Useful when updating configuration files.
 
-This will look in the current directory on the Ansible server for `updated.conf` and then copy it to each client. [<sup>ref</sup>][https://opensource.com/article/19/9/must-know-ansible-modules]
+Place a text message into a file through an ad-hoc command
+```sh
+ansible all -i inventory -m copy -a 'content="Managed by Ansible\n" dest=/etc/motd' -b -u ansible
+```
+
+Copy `updated.conf` from the control node to each client. <sup>[opensource.com][https://opensource.com/article/19/9/must-know-ansible-modules]</sup>
 ```sh
 ansible $CLIENT -b -m copy -a "src=./updated.conf dest=/etc/ntp.conf owner=root group=root mode=0644 backup=yes"
 ```
@@ -427,7 +437,7 @@ Create a folder using an ad hoc command [<sup>ref</sup>][https://www.linuxjourna
 ```sh
 ansible $CLIENT -b -m file -a "path=/etc/newfolder state=directory mode=0755"
 ```
-Create a folder using a playbook [<sup>ref</sup>][https://opensource.com/article/19/9/must-know-ansible-modules]
+Create a folder using a playbook <sup>[opensource.com][https://opensource.com/article/19/9/must-know-ansible-modules]</sup>
 ```yaml
 - name: Create a directory if it does not exist
   file:
@@ -436,7 +446,7 @@ Create a folder using a playbook [<sup>ref</sup>][https://opensource.com/article
     mode: '0755'
 ```
 #### `git` module
-Manage git checkouts of repos [<sup>ref</sup>][https://opensource.com/article/19/9/must-know-ansible-modules]
+Manage git checkouts of repos <sup>[opensource.com][https://opensource.com/article/19/9/must-know-ansible-modules]</sup>
 ```yaml
 # Create git archive from repo
 - git:
@@ -451,7 +461,7 @@ Manage git checkouts of repos [<sup>ref</sup>][https://opensource.com/article/19
     separate_git_dir: /src/ansible-examples.git
 ```
 #### `lineinfile` module
-Manages lines in a text file, mostly used to ensure a particular line is present or changed in a config. [<sup>ref</sup>][https://opensource.com/article/19/9/must-know-ansible-modules]
+Manages lines in a text file, mostly used to ensure a particular line is present or changed in a config. <sup>[opensource.com][https://opensource.com/article/19/9/must-know-ansible-modules]</sup>
 ```yaml
 - name: Ensure SELinux is set to enforcing mode
   lineinfile:
@@ -557,7 +567,7 @@ Install Apache2 using the `apt` module in an ad hoc command [<sup>ref</sup>][htt
 ```sh
 ansible $CLIENT -b -m apt -a "update_cache=yes name=apache2 state=latest"
 ```
-Install Apache and MariaDB [<sup>ref</sup>][https://opensource.com/article/19/9/must-know-ansible-modules]
+Install Apache and MariaDB <sup>[opensource.com][https://opensource.com/article/19/9/must-know-ansible-modules]</sup>
 ```yaml
 - name: install the latest version of Apache and MariaDB
   dnf:
@@ -566,7 +576,7 @@ Install Apache and MariaDB [<sup>ref</sup>][https://opensource.com/article/19/9/
       - mariadb-server
     state: latest
 ```
-Install PostgreSQL and NGINX [<sup>ref</sup>][https://opensource.com/article/19/9/must-know-ansible-modules]
+Install PostgreSQL and NGINX <sup>[opensource.com][https://opensource.com/article/19/9/must-know-ansible-modules]</sup>
 ```yaml
 - name: Install a list of packages
   yum:
@@ -576,10 +586,12 @@ Install PostgreSQL and NGINX [<sup>ref</sup>][https://opensource.com/article/19/
       - postgresql-server
     state: present
 ```
-#### `state` directive
-In the `package` module, `state` indicates what action to take with regard to the specified package. [<sup>ref</sup>][https://www.linuxjournal.com/content/ansible-making-things-happen]
-`state` value | Effect
-:---          | :---
-`absent`      | remove the package, if installed
-`latest`      | get the latest version, upgrading if needed
-`present`     | make sure package is installed, but don't upgrade if it is
+## Tasks
+Install htop on local computer
+```sh
+ansible localhost -m package 'name=htop state=present' -b
+```
+Simple ad-hoc installation to `all` group defined in local inventory file
+```sh
+ansible all -i inventory -m apt -a 'name=htop state=present' -b -u ansible
+```
