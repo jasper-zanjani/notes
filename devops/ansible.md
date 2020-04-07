@@ -86,23 +86,6 @@ There are several areas where Ansible can be used in personal projects for learn
 [`shell`](#shell-module) 
 [`template`](#template-module)
 
-#### Configuration
-`/etc/ansible/ansible.cfg` 
-[`/etc/ansible/hosts`][/etc/ansible/hosts] 
-[`/etc/ansible/roles`](#roles)
-
-###### /etc/ansible/hosts
-Individual hosts can be listed in **groups** (bracketed sections). Plain-text passwords would also be stored here. [[4](#sources)]\
-Typical appearance:
-```ini
-[webservers]
-blogserver ansible_host=192.168.1.5
-wikiserver ansible_host=192.168.1.10
-
-[dbservers]
-mysql_1 ansible_host=192.168.1.22
-pgsql_1 ansible_host=192.168.1.23
-```
 #### Roles
 A playbook may also contain [**roles**][Role], which organize the components of playbooks and allow them to be reused. By creating a system of subfolders within a folder named `roles` (either in the current working directory or in **/etc/ansible/roles/**, complicated playbooks can be broken up into multiple files. Folders with names like `tasks`, `handlers`, `vars`, etc must each contain `main.yml`. Then the role can be specified by folder name.
 
@@ -130,6 +113,31 @@ The role can be specified in a very simple playbook:
     - webserver
 ```
 
+## Configs
+`/etc/ansible/ansible.cfg` is the default, system-wide config which takes lower precedence than, and is overridden by, more specific configs.
+The user specific `~/.ansible.cfg` or project-specific `ansible.cfg` take precedence.
+
+[`/etc/ansible/hosts`][/etc/ansible/hosts] 
+[`/etc/ansible/roles`](#roles)
+
+###### /etc/sudoers.d/user
+Privilege escalation needs a sudo configuration, and a suitable sudoers file for the ansible user on Ansible-managed hosts could look like the following
+```
+user ALL=(ALL) NOPASSWD: ALL
+```
+###### /etc/ansible/hosts
+Individual hosts can be listed in **groups** (bracketed sections). Plain-text passwords would also be stored here. [[4](#sources)]\
+Typical appearance:
+```ini
+[webservers]
+blogserver ansible_host=192.168.1.5
+wikiserver ansible_host=192.168.1.10
+
+[dbservers]
+mysql_1 ansible_host=192.168.1.22
+pgsql_1 ansible_host=192.168.1.23
+```
+
 ## Syntax
 Ansible can be used in one of two ways:
 1. Running **ad hoc** commands, that is commands executed in realtime by an administrator working at the terminal, using the [ `ansible` ](#ansible) command.
@@ -151,14 +159,20 @@ tasks:
       state: latest
 ```
 
+## Commands
+###### `ansible` command
+[ansible -&#97;]:  #ansible  '```&#10;$ ansible -&#97;&#10;```&#10;Specify arguments to module'
+[ansible -&#98;]:  #ansible  '```&#10;$ ansible -&#98;&#10;```&#10;Elevate privileges by becoming the root user'
+[ansible -&#109;]: #ansible '```&#10;$ ansible -&#109; $MODULE&#10;```&#10;Specify module to be executed'
+[ansible -&#105;]: #ansible '```&#10;$ ansible -&#105;&#10;$ ansible --inventory&#10;```&#10;Specify inventory host path or comma separated host list'
+[ansible -&#75;]:  #ansible '```&#10;$ ansible -K&#10;$ ansible --ask-become-pass&#10;```&#10;Ask for privilege escalation password.&#10;"Understanding privilege escalation: become". Ansible documentation.'
+[ansible --list-hosts]: #ansible '```&#10;$ ansible --list-hosts&#10;```&#10;Display a list of matching hosts'
+[ansible -&#117;]: #ansible '```&#10;$ ansible -&#117;&#10;$ ansible --user&#10;```&#10;Specify a remote user'
 
-### `ansible` command
-[ansible -&#97;]:               #ansible                       '```&#10;$ ansible -&#97;&#10;```&#10;Specify arguments to module'
-[ansible -&#98;]:               #ansible                       '```&#10;$ ansible -&#98;&#10;```&#10;Elevate privileges by becoming the root user'
-[ansible -&#109;]:              #ansible                       '```&#10;$ ansible -&#109; $MODULE&#10;```&#10;Specify module to be executed'
-[ansible --ask-become-pass]:    #ansible                       '```&#10;$ ansible --ask-become-pass&#10;```&#10;Prompt to provide the `sudo` password&#10;Erika Heidi". How to Use Ansible: A Reference Guide". Digital Ocean: 06/05/2019.'
+<code>&nbsp;</code>   [`a`][ansible -&#97;] [`b`][ansible -&#98;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`i`][ansible -&#105;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`m`][ansible -&#109;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`u`][ansible -&#117;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code>  <br><code>&nbsp;</code>&nbsp;<code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`K`][ansible -&#75;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 
 
-<code>&nbsp;</code> [`a`][ansible -&#97;] [`b`][ansible -&#98;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`m`][ansible -&#109;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <br> [`ask-become-pass`][ansible --ask-become-pass]
+[`list-hosts`][ansible --list-hosts]
+
 
 The `ansible` command is only used for running **ad hoc** commands,  Modules are called as arguments passed to the `-m` option. 
 ```sh
@@ -175,7 +189,12 @@ ansible localhost -b -m package -a "name=htop"
 Use `--ask-become-pass` to interactively prompt for `sudo` password [<sup>ref</sup>][https://www.digitalocean.com/community/cheatsheets/how-to-use-ansible-cheat-sheet-guide]
 ```sh
 ansible localhosst -b -m dnf -a "name=vim-enhanced state=latest' --ask-become-pass
-``` ### `ansible-galaxy`
+```
+List hosts in project-local inventory file
+```sh
+ansible all -i inventory --list-hosts
+```
+###### `ansible-galaxy`
 Search for roles [<sup>ref</sup>][https://www.linuxjournal.com/content/ansible-part-iv-putting-it-all-together]
 ```sh
 ansible-galaxy search $ROLE
@@ -197,8 +216,8 @@ Upload a role [<sup>ref</sup>][https://www.linuxjournal.com/content/ansible-part
 ansible-galaxy import $USERNAME $REPONAME
 ansible-galaxy import --no-wait $USERNAME $REPONAME # send job to background
 ```
-### `ansible-inventory`
-### `ansible-playbook`
+###### `ansible-inventory`
+###### `ansible-playbook`
 Playbooks are executed with the `ansible-playbook` command
 ```sh
 ansible-playbook -i $CLIENT $PLAYBOOK

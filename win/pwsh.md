@@ -326,7 +326,7 @@
 <code>IpAddress&nbsp;[n][New-NetIpAddress]</code>
 <code>IpConfiguration&nbsp;[g][Get-NetIpConfiguration]</code>
 
-#### Process control cmdlets
+##### Process control cmdlets
 [Get-Process]: #get-process '```&#10;PS C:\> Get-Process&#10;PS C:\> gps&#10;```&#10;Display running processes'
 [Start-Process]: #start-process '```&#10;PS C:\> Start-Process&#10;PS C:\> saps&#10;```&#10;Start one or more processes on the local computer.'
 [Stop-Process]: #stop-process '```&#10;PS C:\> Stop-Process&#10;PS C:\> spps&#10;```&#10;Stop one or more running processes'
@@ -383,6 +383,10 @@
 [Select-Object]: #select-object '```&#10;PS C:\> Select-Object&#10;PS C:\> select&#10;```&#10;Select object or object properties'
 [Where-Object]: #where-object '```&#10;PS C:\> Where-Object&#10;PS C:\> ?&#10;```&#10;Select objects from a collection based on their property values'
 
+[Get-PSDrive]: #get-psdrive '```&#10;PS C:\> Get-PSDrive&#10;PS C:\> gdr&#10;```&#10;Display mapped drives'
+[New-PSDrive]: #new-psdrive '```&#10;PS C:\> New-PSDrive&#10;PS C:\> ndr&#10;```&#10;Create temporary and persistent mapped network drives.'
+[Remove-PSDrive]: #remove-psdrive '```&#10;PS C:\> Remove-PSDrive&#10;PS C:\> rdr&#10;```&#10;Delete temporary PowerShell drives and disconnect mapped network drives'
+
 <code>Alias&nbsp;[ep][Export-Alias]&nbsp;[g][Get-Alias]&nbsp;[n][New-Alias]&nbsp;[s][Set-Alias]</code> 
 <code>ChildItem&nbsp;[g][Get-ChildItem]</code> 
 <code>Clipboard&nbsp;[g][Get-Clipboard]&nbsp;[s][Set-Clipboard]</code> 
@@ -398,6 +402,7 @@
 <code>Module&nbsp;[ip][Import-Module]&nbsp;[is][Install-Module]</code> 
 <code>Object&nbsp;[%][ForEach-Object]&nbsp;[?][Where-Object]&nbsp;[ms][Measure-Object]&nbsp;[n][New-Object]&nbsp;[sc][Select-Object]</code>
 <code>Output&nbsp;[wr][Write-Output]</code> 
+<code>PSDrive&nbsp;[g][Get-PSDrive]&nbsp;[n][New-PSDrive]&nbsp;[r][Remove-PSDrive]</code>
 <code>PSRemoting&nbsp;[en]</code>
 <code>Table&nbsp;[f][Format-Table]</code> 
 <code>Transaction&nbsp;[sa][Start-Transaction]&nbsp;[cp][Complete-Transaction]</code>
@@ -1085,6 +1090,12 @@ Write-Output 'Hello' | Set-Clipboard
 Create a text file <sup>[Jones][Jones]</sup>
 ```powershell
 Write-Output "This is a test network file." -Path | Out-File C:\networkfiles\test.txt
+```
+##### `PSDrive`
+###### `New-PSDrive`
+Start a new PSDrive using the `HKEY_CLASSES_ROOT` Windows Registry hive <sup>[powershelleverydayfaq.blogspot.com](http://powershelleverydayfaq.blogspot.com/2012/06/how-to-query-hkeyclassesroot.html "How to query HKEY_CLASSES_ROOT")</sup>
+```powershell
+ndr -Name HKCR -PSProvider Registry -Root HKEY_CLASSES_ROOT
 ```
 ##### `PSReadlineOption`
 ###### `Get-PSReadlineOption`
