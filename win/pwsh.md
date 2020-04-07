@@ -173,7 +173,7 @@
 <code>Object&nbsp;[g][Get-ADObject]&nbsp;[s][Set-ADObject]&nbsp;</code> 
 <code>OrganizationalUnit&nbsp;[g][Get-ADOrganizationalUnit]&nbsp;[n][New-ADOrganizationalUnit]&nbsp;[r][Remove-ADOrganizationalUnit]&nbsp;[s][Set-ADOrganizationalUnit]&nbsp;</code> 
 <code>PrincipalGroupMembership&nbsp;[a][Add-ADPrincipalGroupMembership]&nbsp;[g][Get-ADPrincipalGroupMembership]&nbsp;</code>
-<code>User&nbsp;[g][Get-ADUser]&nbsp;[n][New-ADUser]</code>
+<code>User&nbsp;[g][Get-ADUser]&nbsp;[n][New-ADUser]&nbsp;[s][Set-ADUser]</code>
 **ADDS**
 <code>Domain&nbsp;[`is`][Install-ADDSDomain]</code>
 <code>DomainController&nbsp;[is][Install-ADDSDomainController]&nbsp;[us][Uninstall-ADDSDomainController]</code>
@@ -780,6 +780,20 @@ New-ADUser -Name "Walter Mitty"
 Users are disabled by default, so you must enable them by setting the `-Enabled` switch parameter:
 ```powershell
 New-ADUser -Name "Marty McFly" -Enabled $true -GivenName "Martin" -Surname "McFly" -AccountPassword ( ConvertTo-SecureString "P@ssw0rd!" -AsPlainText -Force) 
+```
+###### `Get-ADUser`
+Retrieve `LogonWorkstations` property, which is not included in the default object returned by the command
+```powershell
+Get-ADUSer $user -Properties LogonWorkstations
+```
+Filter all accounts with `LogonWorkstations` set to something
+```powershell
+Get-ADUser -Filter * -Properties LogonWorkstations |? LogonWorkstations -ne $null
+```
+###### `Set-ADUser`
+Clear value of `LogonWorkstations` property
+```powershell
+Set-ADUser $user -LogonWorkstations $null
 ```
 ##### `ADAccount`
 ###### `Search-ADAccount`
