@@ -17,6 +17,8 @@
 [adfind]: #adfind '```&#10;adfind&#10;```&#10;Command-line utility that can be used to query Active Directory attributes&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 53'
 [adprep]:         #adprep                         '```&#10;C:\>adprep&#10;```&#10;Prepare Active Directory for Windows Server upgrades&#10;Must be run on the Infrastructure Master role owner with the flag `/domainprep`.&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 29'
 [SmigDeploy.exe]: #smigdeploy.exe '```&#10;C:\>SmigDeploy.exe&#10;```&#10;Create a new folder in specified directory, registering Windows Server Migration Tools on the source server and opening a Powershell window in which they can be used&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 34'
+[domain.msc]: #domain.msc '```&#10;C:\>domain.msc&#10;```&#10;Active Directory Domains and Trusts'
+[dssite.msc]: #dssite.msc '```&#10;C:\>dssite.msc&#10;```&#10;Active Directory Sites and Services'
 
 <!-- `cmd` commands -->
 [arp]:            #arp                            '```&#10;C:\>arp&#10;```&#10;Display and modify the IP-to-MAC address translation tables used by ARP'
@@ -43,10 +45,6 @@
 [winver]: #winver                                             '```&#10;C:\>winver&#10;```&#10;Display the "About Windows" dialog box, including Windows version and build number'
 [wmic]: #wmic                           '```&#10;C:\>wmic&#10;```&#10;WMI command-line (WMIC) utility provides a command-line interface for WMI.'
 
-<!-- Linux commands -->
-[grep]: https://github.com/jasper-zanjani/notes/blob/master/lx/commands/README.md#grep '```&#10;$ grep&#10;```&#10;Search `$FILES` for lines containing a match to regex `$PATTERN`&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 126'
-[lx echo]: https://github.com/jasper-zanjani/notes/blob/master/lx/commands/README.md#echo '```&#10;$ echo&#10;```&#10;Write `$STRING` to STDOUT&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 88'
-
 <!-- Control Panel binaries -->
 [access.cpl]:     #access.cpl           '```&#10;C:\> access.cpl&#10;```&#10;Accessibility Options'
 [appwiz.cpl]:     #appwiz.cpl           '```&#10;C:\> appwiz.cpl&#10;```&#10;Add/Remove Programs'
@@ -62,6 +60,10 @@
 [sysdm.cpl]:      #sysdm.cpl            '```&#10;C:\> sysdm.cpl&#10;```&#10;System Properties'
 [timedate.cpl]:   #timedate.cpl         '```&#10;C:\> timedate.cpl&#10;```&#10;Date/Time Properties'
 [wgpocpl.cpl]:    #wgpocpl.cpl          '```&#10;C:\> wgpocpl.cpl&#10;```&#10;Microsoft Mail Post Office'
+
+<!-- Linux commands -->
+[grep]: https://github.com/jasper-zanjani/notes/blob/master/lx/commands/README.md#grep '```&#10;$ grep&#10;```&#10;Search `$FILES` for lines containing a match to regex `$PATTERN`&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 126'
+[lx echo]: https://github.com/jasper-zanjani/notes/blob/master/lx/commands/README.md#echo '```&#10;$ echo&#10;```&#10;Write `$STRING` to STDOUT&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 88'
 
 # Microsoft Windows
 
@@ -124,6 +126,8 @@
 ###### Active Directory
 [`adprep`][adprep] 
 [`adfind`][adfind]
+[`domain`][domain.msc]
+[`dssite`][dssite.msc]
 [`dsquery`][dsquery]
 [`smigdeploy`][SmigDeploy.exe]
 
@@ -462,8 +466,8 @@ Basic usage
 route add 192.168.2.1 mask (255.255.255.0) 192.168.2.4
 ```
 ###### `runas`
-[runas /profile]: #runas '```&#10;C:\>runas /profile&#10;```&#10;Load the user's profile (default).'
-[runas /no profile]: #runas '```&#10;C:\>runas /no profile&#10;```&#10;Specify that the user's profile is not to be loaded.'
+[runas /profile]: #runas '```&#10;C:\>runas /profile&#10;```&#10;Load user profile (default).'
+[runas /no profile]: #runas '```&#10;C:\>runas /no profile&#10;```&#10;Specify that user profile is not to be loaded.'
 [runas /env]: #runas '```&#10;C:\>runas /env&#10;```&#10;Specify that the current network environment be used instead of the local environment of the user.'
 [runas /netonly]: #runas '```&#10;C:\>runas /netonly&#10;```&#10;Indicate that the user information specified is for remote access only'
 [runas /savecred]: #runas '```&#10;C:\>runas /savecred&#10;```&#10;Indicate if credentials have been previously saved by this user'

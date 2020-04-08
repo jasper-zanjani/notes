@@ -1434,7 +1434,7 @@ New-Item -ItemType "directory" Folder
 ni -Type "directory" Folder
 ```
 ###### `Remove-Item`
-Clear `%temp%` folder, suppressing errors
+Clear Windows Temp folder, suppressing errors
 ```powershell
 ri -r $Env:temp -ea 0
 Remove-Item -Recurse $Env:temp -ErrorAction 'silentlycontinue'
@@ -1442,6 +1442,10 @@ Remove-Item -Recurse $Env:temp -ErrorAction 'silentlycontinue'
 Remove Microsoft Office identities from Registry
 ```powershell
 Remove-Item HKCU:\Software\Microsoft\Office\16.0\Common\Identity\Identities\*
+```
+Clear Teams cache <sup>[commsverse.blog](https://commsverse.blog/2018/09/28/clear-the-microsoft-teams-client-cache/ "Clear the Microsoft Teams client cache")</sup>
+```powershell
+Remove-Item $env:APPDATA"\Microsoft\teams\application cache\cache", $env:APPDATA"\Microsoft\teams\blob_storage", $env:APPDATA"\Microsoft\teams\databases", $env:APPDATA"\Microsoft\teams\cache", $env:APPDATA"\Microsoft\teams\gpucache", $env:APPDATA"\Microsoft\teams\Local Storage", $env:APPDATA"\Microsoft\teams\Indexeddb", $env:APPDATA"\Microsoft\teams\tmp" -Recurse -ErrorAction "silentlycontinue"
 ```
 ###### `Set-Item`
 Add an IP address to the Trusted Hosts list, bypassing the use of Kerberos to authenticate the session <sup>[Zacker][Zacker]: 56</sup>
@@ -1452,6 +1456,11 @@ Set-Item wsman:\localhost\client\trustedhosts "192.168.10.41"
 ###### `Out-Null`
 #### Filters
 ##### `Object`
+###### `Measure-Object`
+###### `ForEach-Object`
+###### `New-Object`
+###### `Select-Object`
+###### `Where-Object`
 
 #### Hyper-V
 ##### `VHD`
