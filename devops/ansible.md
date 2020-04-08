@@ -62,7 +62,10 @@ There are several areas where Ansible can be used in personal projects for learn
 [Vault][Vault]
 
 #### Commands
+[ansible-doc]: #ansible-doc '```&#10;$ ansible-doc&#10;```&#10;Display information on modules installed in Ansible libraries.'
+
 [`ansible`](#ansible-command) 
+[`ansible-doc`][ansible-doc]
 [`ansible-galaxy`](#ansible-galaxy) 
 [`ansible-inventory`](#ansible-inventory) 
 [`ansible-playbook`](#ansible-playbook)
@@ -170,16 +173,14 @@ tasks:
 [ansible -&#117;]: #ansible '```&#10;$ ansible -&#117;&#10;$ ansible --user&#10;```&#10;Specify a remote user'
 [ansible -&#111;]: #ansible '```&#10;$ ansible -&#111;&#10;$ ansible --one-line&#10;```&#10;Condense output'
 
-<code>&nbsp;</code>   [`a`][ansible -&#97;] [`b`][ansible -&#98;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`i`][ansible -&#105;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`m`][ansible -&#109;] <code>&nbsp;</code> [`o`][ansible -&#111;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`u`][ansible -&#117;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code>  <br><code>&nbsp;</code>&nbsp;<code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`K`][ansible -&#75;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 
-
-[`list-hosts`][ansible --list-hosts]
-
+<code>&nbsp;</code>   [`a`][ansible -&#97;] [`b`][ansible -&#98;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`i`][ansible -&#105;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`m`][ansible -&#109;] <code>&nbsp;</code> [`o`][ansible -&#111;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`u`][ansible -&#117;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code>  <br><code>&nbsp;</code>&nbsp;<code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`K`][ansible -&#75;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <br> [`list-hosts`][ansible --list-hosts]
 
 The `ansible` command is only used for running **ad hoc** commands,  Modules are called as arguments passed to the `-m` option. 
 ```sh
 ansible $CLIENT [-b] -m $MODULE -a $ARGUMENTS
 ```
-Test network connectivity using the [`ping`](#ping-module) module [<sup>ref</sup>][https://www.linuxjournal.com/content/ansible-automation-framework-thinks-sysadmin]
+Test network connectivity using the [`ping`](#ping-module) module 
+<sup>[linuxjournal.com][https://www.linuxjournal.com/content/ansible-automation-framework-thinks-sysadmin]</sup>
 ```sh
 ansible all -m ping 
 ```
@@ -187,7 +188,8 @@ Install `htop` on the localhost
 ```sh
 ansible localhost -b -m package -a "name=htop"
 ```
-Use `--ask-become-pass` to interactively prompt for `sudo` password [<sup>ref</sup>][https://www.digitalocean.com/community/cheatsheets/how-to-use-ansible-cheat-sheet-guide]
+Use `--ask-become-pass` to interactively prompt for `sudo` password 
+<sup>[digitalocean.com][https://www.digitalocean.com/community/cheatsheets/how-to-use-ansible-cheat-sheet-guide]</sup>
 ```sh
 ansible localhosst -b -m dnf -a "name=vim-enhanced state=latest' --ask-become-pass
 ```
@@ -195,24 +197,29 @@ List hosts in project-local inventory file
 ```sh
 ansible all -i inventory --list-hosts
 ```
+###### `ansible-doc`
+[ansible-doc -&#108;]: #ansible-doc '```&#10;$ ansible-doc -&#108;&#10;$ ansible-doc --list&#10;```&#10;List available plugins'
+[ansible-doc -&#115;]: #ansible-doc '```&#10;$ ansible-doc -&#115; $MODULE&#10;$ ansible-doc --snippet $MODULE&#10;```&#10;Show playbook snippet for specified plugin'
+
+<code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`l`][ansible-doc -&#108;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`s`][ansible-doc -&#115;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 
 ###### `ansible-galaxy`
-Search for roles [<sup>ref</sup>][https://www.linuxjournal.com/content/ansible-part-iv-putting-it-all-together]
+Search for roles <sup>[linuxjournal.com][https://www.linuxjournal.com/content/ansible-part-iv-putting-it-all-together]</sup>
 ```sh
 ansible-galaxy search $ROLE
 ```
-Install `$ROLE` made  available in **Ansible Galaxy** by `$USER` into the [ system-wide ](#configuration) roles folder [<sup>ref</sup>][https://www.linuxjournal.com/content/ansible-part-iv-putting-it-all-together]
+Install `$ROLE` made  available in **Ansible Galaxy** by `$USER` into the [ system-wide ](#configuration) roles folder <sup>[linuxjournal.com][https://www.linuxjournal.com/content/ansible-part-iv-putting-it-all-together]</sup>
 ```sh
 sudo ansible-galaxy install $USER.$ROLE
 ```
-Create a skeleton structure in which you can define a new role [<sup>ref</sup>][https://www.linuxjournal.com/content/ansible-part-iv-putting-it-all-together]
+Create a skeleton structure in which you can define a new role <sup>[linuxjournal.com][https://www.linuxjournal.com/content/ansible-part-iv-putting-it-all-together]</sup>
 ```sh
 ansible-galaxy init roles/$ROLE
 ```
-Log in [<sup>ref</sup>][https://www.linuxjournal.com/content/ansible-part-iv-putting-it-all-together]
+Log in <sup>[linuxjournal.com][https://www.linuxjournal.com/content/ansible-part-iv-putting-it-all-together]</sup>
 ```sh
 ansible-galaxy login
 ```
-Upload a role [<sup>ref</sup>][https://www.linuxjournal.com/content/ansible-part-iv-putting-it-all-together]
+Upload a role <sup>[linuxjournal.com][https://www.linuxjournal.com/content/ansible-part-iv-putting-it-all-together]</sup>
 ```sh
 ansible-galaxy import $USERNAME $REPONAME
 ansible-galaxy import --no-wait $USERNAME $REPONAME # send job to background
@@ -237,9 +244,11 @@ ansible-playbook -i $CLIENT $PLAYBOOK
 ```
 
 #### Handlers
-**Handlers** are tasks that are executed when notified by a task. They are only run once, and only if the notifying task has made a change to the system. [<sup>ref</sup>][https://www.linuxjournal.com/content/ansible-part-iii-playbooks]
+**Handlers** are tasks that are executed when notified by a task. They are only run once, and only if the notifying task has made a change to the system. 
+<sup>[linuxjournal.com][https://www.linuxjournal.com/content/ansible-part-iii-playbooks]</sup>
 
-Here, `enable apache` will be called if `this installs a package` makes a change. If apache2 is already installed, the handler is not called. [<sup>ref</sup>][https://www.linuxjournal.com/content/ansible-part-iii-playbooks]
+Here, `enable apache` will be called if `this installs a package` makes a change. If apache2 is already installed, the handler is not called. 
+<sup>[linuxjournal.com][https://www.linuxjournal.com/content/ansible-part-iii-playbooks]</sup>
 ```yaml
 ---
 - hosts: webservers
@@ -255,7 +264,8 @@ Here, `enable apache` will be called if `this installs a package` makes a change
 ```
 
 #### Variable substitution
-Variable substitution is done by specifying the name of the placeholder variable and its value under `vars` as a sibling to `tasks` and `handlers` [<sup>ref</sup>][https://www.linuxjournal.com/content/ansible-part-iii-playbooks]
+Variable substitution is done by specifying the name of the placeholder variable and its value under `vars` as a sibling to `tasks` and `handlers` 
+<sup>[linuxjournal.com][https://www.linuxjournal.com/content/ansible-part-iii-playbooks]</sup>
 ```yaml
 ---
 - hosts: webservers
@@ -272,7 +282,8 @@ Variable substitution is done by specifying the name of the placeholder variable
       service: "name={{ package_name }} enabled=yes state=started" 
 ```
 #### Conditional logic
-Conditional logic is implemented with each task by defining a condition as the value for a property `when` [<sup>ref</sup>][https://www.linuxjournal.com/content/ansible-part-iii-playbooks]
+Conditional logic is implemented with each task by defining a condition as the value for a property `when` 
+<sup>[linuxjournal.com][https://www.linuxjournal.com/content/ansible-part-iii-playbooks]</sup>
 ```yaml
 ---
 - hosts: webservers
@@ -333,9 +344,11 @@ Platform-agnostic way of pushing text-based configurations to network devices ov
       dir_path: /home/user
 ```
 #### `command` module
-Safest module to execute remote commands on client machine, requires Python. When Ansible execute commands using the Command module, they are not processed through the user's shell (meaning environment variables like [ `$HOME` ](../lx/commands/bash.md) and output redirection are not available).
+Safest module to execute remote commands on client machine, requires Python. When Ansible execute commands using the Command module, they are not processed through the user's shell (meaning environment variables like [ `$HOME` ](https://github.com/jasper-zanjani/notes/blob/primary/lx/README.md#bash) and output redirection are not available).
 
-Takes command name followed by a list of space-delimited arguments. <sup>[opensource.com][https://opensource.com/article/19/9/must-know-ansible-modules]</sup>
+Takes command name followed by a list of space-delimited arguments. 
+<sup>[opensource.com][https://opensource.com/article/19/9/must-know-ansible-modules]</sup>
+
 ```sh
 ansible all -i inventory -m command -a 'cat /etc/motd' -u ansible
 ```
@@ -361,8 +374,9 @@ Place a text message into a file through an ad-hoc command
 ```sh
 ansible all -i inventory -m copy -a 'content="Managed by Ansible\n" dest=/etc/motd' -b -u ansible
 ```
+Copy `updated.conf` from the control node to each client. 
+<sup>[opensource.com][https://opensource.com/article/19/9/must-know-ansible-modules]</sup>
 
-Copy `updated.conf` from the control node to each client. <sup>[opensource.com][https://opensource.com/article/19/9/must-know-ansible-modules]</sup>
 ```sh
 ansible $CLIENT -b -m copy -a "src=./updated.conf dest=/etc/ntp.conf owner=root group=root mode=0644 backup=yes"
 ```
@@ -392,7 +406,8 @@ ansible $CLIENT -b -m copy -a "src=./updated.conf dest=/etc/ntp.conf owner=root 
     var: hostvars[inventory_hostname]
     verbosity: 4
 ```
-Display content of copy module only when verbosity of 2 is specified (i.e. `ansible-playbook demo.yaml -vv`) [<sup>ref</sup>][https://opensource.com/article/19/9/must-know-ansible-modules]
+Display content of copy module only when verbosity of 2 is specified (i.e. `ansible-playbook demo.yaml -vv`) 
+<sup>[opensource.com][https://opensource.com/article/19/9/must-know-ansible-modules]</sup>
 ```yaml
 - name: Write some content in a file /tmp/foo.txt
   copy:
@@ -406,9 +421,11 @@ Display content of copy module only when verbosity of 2 is specified (i.e. `ansi
       var: display_file_content
       verbosity: 2
 ```
-[[3](#sources)]
+
 #### `file` module
-Used for doing file manipulation on the remote system itself. [<sup>ref</sup>][https://www.linuxjournal.com/content/ansible-making-things-happen]
+Used for doing file manipulation on the remote system itself. 
+<sup>[linuxjournal.com][https://www.linuxjournal.com/content/ansible-making-things-happen]</sup>
+
 #### `state` directive
 The `state` directive can take one of several values, and indicates to Ansible what should actually be done to the target file:
 `state` value | Effect
@@ -419,7 +436,9 @@ The `state` directive can take one of several values, and indicates to Ansible w
 `link`        | create symlink
 `touch`       | create empty file
 
-Change a file's attributes [<sup>ref</sup>][https://opensource.com/article/19/9/must-know-ansible-modules]
+Change a file's attributes 
+<sup>[opensource.com][https://opensource.com/article/19/9/must-know-ansible-modules]</sup>
+
 ```yaml
 - name: Change file ownership, group and permissions
   file:
@@ -429,15 +448,19 @@ Change a file's attributes [<sup>ref</sup>][https://opensource.com/article/19/9/
     mode: '0644'
 ```
 Create a symlink 
-Ad hoc [<sup>ref</sup>][https://www.linuxjournal.com/content/ansible-making-things-happen]
+<sup>[linuxjournal.com][https://www.linuxjournal.com/content/ansible-making-things-happen]</sup>
 ```sh
 ansible $CLIENT -b -m file -a "src=/etc/ntp.conf dest=/home/user/ntp.conf owner=user group=user state=link
 ```
-Create a folder using an ad hoc command [<sup>ref</sup>][https://www.linuxjournal.com/content/ansible-making-things-happen]
+Create a folder using an ad hoc command 
+<sup>[linuxjournal.com][https://www.linuxjournal.com/content/ansible-making-things-happen]</sup>
+
 ```sh
 ansible $CLIENT -b -m file -a "path=/etc/newfolder state=directory mode=0755"
 ```
-Create a folder using a playbook <sup>[opensource.com][https://opensource.com/article/19/9/must-know-ansible-modules]</sup>
+Create a folder using a playbook 
+<sup>[opensource.com][https://opensource.com/article/19/9/must-know-ansible-modules]</sup>
+
 ```yaml
 - name: Create a directory if it does not exist
   file:
@@ -446,7 +469,9 @@ Create a folder using a playbook <sup>[opensource.com][https://opensource.com/ar
     mode: '0755'
 ```
 #### `git` module
-Manage git checkouts of repos <sup>[opensource.com][https://opensource.com/article/19/9/must-know-ansible-modules]</sup>
+Manage git checkouts of repos 
+<sup>[opensource.com][https://opensource.com/article/19/9/must-know-ansible-modules]</sup>
+
 ```yaml
 # Create git archive from repo
 - git:
@@ -461,7 +486,9 @@ Manage git checkouts of repos <sup>[opensource.com][https://opensource.com/artic
     separate_git_dir: /src/ansible-examples.git
 ```
 #### `lineinfile` module
-Manages lines in a text file, mostly used to ensure a particular line is present or changed in a config. <sup>[opensource.com][https://opensource.com/article/19/9/must-know-ansible-modules]</sup>
+Manages lines in a text file, mostly used to ensure a particular line is present or changed in a config. 
+<sup>[opensource.com][https://opensource.com/article/19/9/must-know-ansible-modules]</sup>
+
 ```yaml
 - name: Ensure SELinux is set to enforcing mode
   lineinfile:
@@ -479,7 +506,9 @@ Manages lines in a text file, mostly used to ensure a particular line is present
 #### `raw` module
 Similar to [ `shell` ](#shell-module) module, but the user's default shell is used, Ansible doesn't do any error checking, and `STDERR`, `STDOUT`, and `Return Code` are all returned
 #### `service` module
-Starts a package after installing it. [<sup>ref</sup>][https://opensource.com/article/19/9/must-know-ansible-modules]
+Starts a package after installing it. 
+<sup>[opensource.com][https://opensource.com/article/19/9/must-know-ansible-modules]</sup>
+
 ```yaml
 - name: Start service foo, based on running process /usr/bin/foo
   service:
@@ -495,20 +524,25 @@ Starts a package after installing it. [<sup>ref</sup>][https://opensource.com/ar
     args: eth0
 ```
 #### `shell` module
-The Shell module uses /bin/sh in the remote user's environment (cf. [`raw`](#raw-module) module). [<sup>ref</sup>][https://www.linuxjournal.com/content/ansible-automation-framework-thinks-sysadmin]
+The Shell module uses /bin/sh in the remote user's environment (cf. [`raw`](#raw-module) module). 
+<sup>[linuxjournal.com][https://www.linuxjournal.com/content/ansible-automation-framework-thinks-sysadmin]</sup>
 
-Test authentication by displaying results of [`uptime`](lx/commands.md#uptime) command for each host in the `webservers` group. [<sup>ref</sup>][https://www.linuxjournal.com/content/ansible-automation-framework-thinks-sysadmin]
+Test authentication by displaying results of [`uptime`](lx/commands.md#uptime) command for each host in the `webservers` group.
+<sup>[linuxjournal.com][https://www.linuxjournal.com/content/ansible-automation-framework-thinks-sysadmin]</sup>
 ```sh
 ansible -m shell -a 'uptime' webservers
 ```
 #### `setup` module
 Display [facts][Fact.] Usable almost exclusively in playbooks, although some ad hocs are available.
 
-Display all available information about the system [<sup>ref</sup>][https://www.linuxjournal.com/content/ansible-making-things-happen]
+Display all available information about the system 
+<sup>[linuxjournal.com][https://www.linuxjournal.com/content/ansible-making-things-happen]</sup>
 ```sh
 ansible $CLIENT -b -m setup
 ```
-Filter results to `ansible_os_family`, which indicates if the OS is Debian or Red Hat [<sup>ref</sup>][https://www.linuxjournal.com/content/ansible-making-things-happen] [<sup>ref</sup>][https://www.tecmint.com/understand-core-components-of-ansible/]
+Filter results to `ansible_os_family`, which indicates if the OS is Debian or Red Hat [<sup>ref</sup>][https://www.linuxjournal.com/content/ansible-making-things-happen] 
+<sup>[tecmint.com][https://www.tecmint.com/understand-core-components-of-ansible/]</sup>
+
 ```sh
 ansible $CLIENT -b -m setup -a "filter=*family*"
 ```
@@ -522,9 +556,12 @@ Install VS Code [<sup>ref</sup>][My playbook]
     classic: yes   
 ```
 #### `template` module
-Works similar to mail merge in a word processor. Ansible uses the Jinja2 templating language, which has a syntax similar to Ansible variable substitution. [<sup>ref</sup>][https://www.linuxjournal.com/content/ansible-part-iii-playbooks]
+Works similar to mail merge in a word processor. Ansible uses the Jinja2 templating language, which has a syntax similar to Ansible variable substitution.
+<sup>[linuxjournal.com][https://www.linuxjournal.com/content/ansible-part-iii-playbooks]</sup>
 
-This example creates a HTML document on each client that is customized using Ansible variables. [<sup>ref</sup>][https://www.linuxjournal.com/content/ansible-part-iii-playbooks]
+This example creates a HTML document on each client that is customized using Ansible variables. 
+<sup>[linuxjournal.com][https://www.linuxjournal.com/content/ansible-part-iii-playbooks]</sup>
+
 ```yaml
 ---
 - hosts: webservers
@@ -552,7 +589,8 @@ This example creates a HTML document on each client that is customized using Ans
        src: index.html.j2
        dest: /var/www/html/index.html
 ```
-Jinja template file [<sup>ref</sup>][https://www.linuxjournal.com/content/ansible-part-iii-playbooks]
+Jinja template file 
+<sup>[linuxjournal.com][https://www.linuxjournal.com/content/ansible-part-iii-playbooks]</sup>
 ```j2
 <html><center>
 <h1>This computer is running {{ ansible_os_family }},
@@ -562,12 +600,16 @@ and its hostname is:</h1>
 </center></html>
 ```
 ### Package management
-There is a specific module for most popular package managers, such as `dnf` and `apt`, but the `package` is generic and will install packages regardless of distribution.\
-Install Apache2 using the `apt` module in an ad hoc command [<sup>ref</sup>][https://www.linuxjournal.com/content/ansible-making-things-happen]
+There is a specific module for most popular package managers, such as `dnf` and `apt`, but the `package` is generic and will install packages regardless of distribution.
+Install Apache2 using the `apt` module in an ad hoc command 
+<sup>[linuxjournal.com][https://www.linuxjournal.com/content/ansible-making-things-happen]</sup>
+
 ```sh
 ansible $CLIENT -b -m apt -a "update_cache=yes name=apache2 state=latest"
 ```
-Install Apache and MariaDB <sup>[opensource.com][https://opensource.com/article/19/9/must-know-ansible-modules]</sup>
+Install Apache and MariaDB 
+<sup>[opensource.com][https://opensource.com/article/19/9/must-know-ansible-modules]</sup>
+
 ```yaml
 - name: install the latest version of Apache and MariaDB
   dnf:
@@ -576,7 +618,9 @@ Install Apache and MariaDB <sup>[opensource.com][https://opensource.com/article/
       - mariadb-server
     state: latest
 ```
-Install PostgreSQL and NGINX <sup>[opensource.com][https://opensource.com/article/19/9/must-know-ansible-modules]</sup>
+Install PostgreSQL and NGINX 
+<sup>[opensource.com][https://opensource.com/article/19/9/must-know-ansible-modules]</sup>
+
 ```yaml
 - name: Install a list of packages
   yum:

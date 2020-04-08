@@ -35,6 +35,7 @@
 - [Restart Wi-Fi adapter](#restart-wi-fi-adapter)
 - [Safely combine related Registry modifications](#registry)
 - [Set DNS server to DHCP][Set-DnsClientServerAddress]
+- [Add a local user to administrators](#add-a-new-local-admin)
 
 
 #### Cmdlets
@@ -89,7 +90,6 @@
 [`om` ](#cmdlet-verbs  "```&#10;PS C:\> Optimize-&#10;```") 
 [`pb` ](#cmdlet-verbs  "```&#10;PS C:\> Publish-&#10;```&#10;Makes a resource available to others. This verb is paired with Unpublish.") 
 [`pi` ](#cmdlet-verbs  "```&#10;PS C:\> Ping-&#10;```&#10;Use the Test verb.") 
-[`pop`](#cmdlet-verbs  "```&#10;PS C:\> Pop-&#10;```") 
 [`pt` ](#cmdlet-verbs  "```&#10;PS C:\> Protect-&#10;```&#10;Safeguards a resource from attack or loss. This verb is paired with Unprotect.") 
 [`pu` ](#cmdlet-verbs  "```&#10;PS C:\> Push-&#10;```") 
 [<code>&nbsp;r</code>](#cmdlet-verbs  "```&#10;PS C:\> Remove-&#10;```") 
@@ -234,12 +234,16 @@
 [Remove-Partition]: #remove-partition '```&#10;PS C:\> Remove-Partition&#10;```&#10;'
 [Get-Partition]: #get-partition '```&#10;PS C:\> Get-Partition&#10;```&#10;'
 [New-Volume]: #new-volume '```&#10;PS C:\> New-Volume&#10;```&#10;Create a volume with the specified file system'
+[Get-PSDrive]: #get-psdrive '```&#10;PS C:\> Get-PSDrive&#10;PS C:\> gdr&#10;```&#10;Display mapped drives'
+[New-PSDrive]: #new-psdrive '```&#10;PS C:\> New-PSDrive&#10;PS C:\> ndr&#10;```&#10;Create temporary and persistent mapped network drives.'
+[Remove-PSDrive]: #remove-psdrive '```&#10;PS C:\> Remove-PSDrive&#10;PS C:\> rdr&#10;```&#10;Delete temporary PowerShell drives and disconnect mapped network drives'
 
 [**Disks**](#disks)
 <code>DedupVolume&nbsp;[en][Enable-DedupVolume]</code>
 <code>Disk&nbsp;[g][Get-Disk]</code> 
 <code>Partition&nbsp;f&nbsp;[g][Get-Partition] [n][New-Partition] [r][Remove-Partition]</code> 
 <code>Volume&nbsp;[f][Format-Volume]&nbsp;[n][New-Volume]</code> 
+<code>**PSDrive**&nbsp;[g][Get-PSDrive]&nbsp;[n][New-PSDrive]&nbsp;[r][Remove-PSDrive]</code>
 
 ##### File cmdlets
 [Add-Content]: #add-content '```&#10;PS C:\> Add-Content&#10;PS C:\> ac&#10;```&#10;Append content, such as words or data, to a file'
@@ -330,8 +334,13 @@
 [Get-Process]: #get-process '```&#10;PS C:\> Get-Process&#10;PS C:\> gps&#10;```&#10;Display running processes'
 [Start-Process]: #start-process '```&#10;PS C:\> Start-Process&#10;PS C:\> saps&#10;```&#10;Start one or more processes on the local computer.'
 [Stop-Process]: #stop-process '```&#10;PS C:\> Stop-Process&#10;PS C:\> spps&#10;```&#10;Stop one or more running processes'
+[Get-Service]: #get-service '```&#10;PS C:\> Get-Service&#10;PS C:\> gsv&#10;```&#10;Display services'
+[Set-Service]: #set-service '```&#10;PS C:\> Set-Service&#10;```&#10;Starts, stops, and suspends a service, and changes its properties'
+[Start-Service]: #start-service '```&#10;PS C:\> Start-Service&#10;PS C:\> sasv&#10;```&#10;Start one or more stopped services'
+[Stop-Service]: #stop-service '```&#10;PS C:\> Stop-Service&#10;PS C:\> spsv&#10;```&#10;Stop one or more services'
 
 <code>Process&nbsp;[g][Get-Process]&nbsp;[sa][Start-Process]&nbsp;[sp][Stop-Process]</code>
+<code>Service&nbsp;[g][Get-Service]&nbsp;[s][Set-Service]&nbsp;[sa][Start-Service]&nbsp;[sp][Stop-Service]</code> 
 
 ##### Shell environment cmdlets
 [Add-Computer]: #add-computer '```&#10;PS C:\> Add-Computer&#10;```&#10;Join a computer to a domain'
@@ -383,10 +392,6 @@
 [Select-Object]: #select-object '```&#10;PS C:\> Select-Object&#10;PS C:\> select&#10;```&#10;Select object or object properties'
 [Where-Object]: #where-object '```&#10;PS C:\> Where-Object&#10;PS C:\> ?&#10;```&#10;Select objects from a collection based on their property values'
 
-[Get-PSDrive]: #get-psdrive '```&#10;PS C:\> Get-PSDrive&#10;PS C:\> gdr&#10;```&#10;Display mapped drives'
-[New-PSDrive]: #new-psdrive '```&#10;PS C:\> New-PSDrive&#10;PS C:\> ndr&#10;```&#10;Create temporary and persistent mapped network drives.'
-[Remove-PSDrive]: #remove-psdrive '```&#10;PS C:\> Remove-PSDrive&#10;PS C:\> rdr&#10;```&#10;Delete temporary PowerShell drives and disconnect mapped network drives'
-
 <code>Alias&nbsp;[ep][Export-Alias]&nbsp;[g][Get-Alias]&nbsp;[n][New-Alias]&nbsp;[s][Set-Alias]</code> 
 <code>ChildItem&nbsp;[g][Get-ChildItem]</code> 
 <code>Clipboard&nbsp;[g][Get-Clipboard]&nbsp;[s][Set-Clipboard]</code> 
@@ -396,13 +401,12 @@
 <code>Help&nbsp;[g][Get-Help]&nbsp;[ud][Update-Help]</code> 
 <code>History&nbsp;[g][Get-History]</code> 
 <code>Host&nbsp;[oh][Out-Host]&nbsp;[rd][Read-Host]&nbsp;[wr][Write-Host]</code>
-<code>Job&nbsp;[sa][Start-Job]
+<code>Job&nbsp;[sa][Start-Job]</code>
 <code>List&nbsp;[f][Format-List]</code> 
 <code>Location&nbsp;[g][Get-Location] [s][Set-Location]</code> 
 <code>Module&nbsp;[ip][Import-Module]&nbsp;[is][Install-Module]</code> 
 <code>Object&nbsp;[%][ForEach-Object]&nbsp;[?][Where-Object]&nbsp;[ms][Measure-Object]&nbsp;[n][New-Object]&nbsp;[sc][Select-Object]</code>
 <code>Output&nbsp;[wr][Write-Output]</code> 
-<code>PSDrive&nbsp;[g][Get-PSDrive]&nbsp;[n][New-PSDrive]&nbsp;[r][Remove-PSDrive]</code>
 <code>PSRemoting&nbsp;[en]</code>
 <code>Table&nbsp;[f][Format-Table]</code> 
 <code>Transaction&nbsp;[sa][Start-Transaction]&nbsp;[cp][Complete-Transaction]</code>
@@ -411,12 +415,11 @@
 <code>ReadlineOption&nbsp;[g][Get-PSReadlineOption] [s][Set-PSReadlineOption]</code> 
 <code>[Session](#pssession)&nbsp;[dc][Disconnect-PSSession] [et][Enter-PSSession] [ex][Exit-PSSession] [g][Get-PSSession] [n][New-PSSession]</code> 
 
-
 ##### Hyper-V cmdlets
 <!-- Hyper-V cmdlets -->
 [Add-VMNetworkAdapter]: #add-vmnetworkadapter '```&#10;PS C:\> Add-VMNetworkAdapter&#10;```&#10;Adds a virtual network adapter to a virtual machine.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 237'
-[Add-VMSwitch]:                                      # '`Add-VMSwitch`&#10;Adds a virtual switch to an Ethernet resource pool.'
-[Checkpoint-VM]:                                     #checkpoint-vm                                '`Checkpoint-VM`&#10;Creates a checkpoint of a virtual machine.'
+[Add-VMSwitch]: # '`Add-VMSwitch`&#10;Adds a virtual switch to an Ethernet resource pool.'
+[Checkpoint-VM]: #checkpoint-vm '`Checkpoint-VM`&#10;Creates a checkpoint of a virtual machine.'
 [Compare-VM]: #compare-vm '```&#10;PS C:\> Compare-VM&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 212'
 [Connect-VMNetworkAdapter]: #connect-vmnetworkadapter '```&#10;PS C:\> Connect-VMNetworkAdapter&#10;```&#10;Connects a virtual network adapter to a virtual switch.'
 [Debug-VM]:                                          #debug-vm                                     '`Debug-VM`&#10;Debugs a virtual machine.'
@@ -433,19 +436,19 @@
 [Move-VM]:                                           #move-vm                                      '`Move-VM`&#10;Moves a virtual machine to a new Hyper-V host.'
 [New-VHD]: #new-vhd '```&#10;New-VHD&#10;```&#10;Creates one or more new virtual hard disks.'
 [New-VM]: #new-vm '```&#10;PS C:\> New-VM&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 47, 184, 197'
-[New-VMSwitch]:                                      # '`New-VMSwitch`&#10;Creates a new virtual switch on one or more virtual machine hosts.'
+[New-VMSwitch]: # '`New-VMSwitch`&#10;Creates a new virtual switch on one or more virtual machine hosts.'
 [Optimize-VM]: #optimize-vm '```&#10;PS C:\> Optimize-VM&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 228'
-[Remove-VM]:                                         #remove-vm                                    '`Remove-VM`&#10;Deletes a virtual machine.'
+[Remove-VM]: #remove-vm '`Remove-VM`&#10;Deletes a virtual machine.'
 [Remove-VMNetworkAdapter]: #remove-vmnetworkadapter '```&#10;PS C:\> Remove-VMNetworkAdapter&#10;```&#10;Removes one or more virtual network adapters from a virtual machine.'
-[Remove-VMSwitch]:                                   # '`Remove-VMSwitch`&#10;Deletes a virtual switch.'
-[Rename-VM]:                                         #rename-vm                                    '`Rename-VM`&#10;Renames a virtual machine.'
+[Remove-VMSwitch]: # '`Remove-VMSwitch`&#10;Deletes a virtual switch.'
+[Rename-VM]: #rename-vm                                    '`Rename-VM`&#10;Renames a virtual machine.'
 [Rename-VMNetworkAdapter]: #rename-vmnetworkadapter '```&#10;PS C:\> Rename-VMNetworkAdapter&#10;```&#10;Renames a virtual network adapter on a virtual machine or on the management operating system.'
-[Rename-VMSwitch]:                                   # '`Rename-VMSwitch`&#10;Renames a virtual switch.'
-[Repair-VM]:                                         #repair-vm                                    '`Repair-VM`&#10;Repairs one or more virtual machines.'
+[Rename-VMSwitch]: # '`Rename-VMSwitch`&#10;Renames a virtual switch.'
+[Repair-VM]: #repair-vm                                    '`Repair-VM`&#10;Repairs one or more virtual machines.'
 [Reset-VMResourceMetering]: #reset-vmresourcemetering '```&#10;PS C:\> Reset-VMResourceMetering&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 195'
-[Restart-VM]:                                        #restart-vm                                   '`Restart-VM`&#10;Restarts a virtual machine.'
-[Resume-VM]:                                         #resume-vm                                    '`Resume-VM`&#10;Resumes a suspended (paused) virtual machine.'
-[Save-VM]:                                           #save-vm                                      '`Save-VM`&#10;Saves a virtual machine.'
+[Restart-VM]: #restart-vm '`Restart-VM`&#10;Restarts a virtual machine.'
+[Resume-VM]: #resume-vm '`Resume-VM`&#10;Resumes a suspended (paused) virtual machine.'
+[Save-VM]: #save-vm '`Save-VM`&#10;Saves a virtual machine.'
 [Set-VM]: #set-vm '```&#10;PS C:\> Set-VM&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 231'
 [Set-VMFirmware]: #set-vmfirmware '```&#10;PS C:\> Set-VMFirmware&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 208'
 [Set-VMMemory]: #set-vmmemory '```&#10;PS C:\> Set-VMMemory&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 185'
@@ -489,53 +492,63 @@
 <code>Feature [g][Get-SmigServerFeature]</code> 
 <code>Setting [ex][Export-SmigServerSetting] [ip][Import-SmigServerSetting]</code>
 
+##### System administration cmdlets
+[Disable-LocalUser]: #disable-localuser '```&#10;PS C:\> Disable-LocalUser&#10;PS C:\> dlu&#10;```&#10;Disable a local user account'
+[Enable-LocalUser]: #enable-localuser '```&#10;PS C:\> Enable-LocalUser&#10;PS C:\> elu&#10;```&#10;Enable a local user account'
+[Get-LocalUser]: #get-localuser '```&#10;PS C:\> Get-LocalUser&#10;PS C:\> glu&#10;```&#10;Display local user account'
+[New-LocalUser]: #new-localuser '```&#10;PS C:\> New-LocalUser&#10;PS C:\> nlu&#10;```&#10;Create a local user account'
+[Remove-LocalUser]: #remove-localuser '```&#10;PS C:\> Remove-LocalUser&#10;PS C:\> rlu&#10;```&#10;Delete a local user account'
+[Rename-LocalUser]: #rename-localuser '```&#10;PS C:\> Rename-LocalUser&#10;PS C:\> rnlu&#10;```&#10;Delete local user account'
+[Set-LocalUser]: #set-localuser '```&#10;PS C:\> Set-LocalUser&#10;PS C:\> slu&#10;```&#10;Modify a local user account'
+
+[Add-LocalGroupMember]: #add-localgroupmember '```&#10;PS C:\> Add-LocalGroupMember&#10;```&#10;Add members to a local group'
+[Get-LocalGroupMember]: #get-localgroupmember '```&#10;PS C:\> Get-LocalGroupMember&#10;```&#10;Display members of a local group'
+[Remove-LocalGroupMember]: #remove-localgroupmember '```&#10;PS C:\> Remove-LocalGroupMember&#10;```&#10;Remove members from a local group'
+
+<code>LocalGroupMember&nbsp;[g][Get-LocalGroupMember]&nbsp;[a][Add-LocalGroupMember]&nbsp;[r][Remove-LocalGroupMember]</code>
+<code>LocalUser&nbsp;[g][Get-LocalUser]&nbsp;[n][New-LocalUser]&nbsp;[r][Remove-LocalUser]&nbsp;[s][Set-LocalUser]&nbsp;[e][Enable-LocalUser]&nbsp;[d][Disable-LocalUser]&nbsp;[rn][Rename-LocalUser]</code>
+
 ##### Windows objects cmdlets
-[Add-WindowsDriver]: #https://github.com/jasper-zanjani/notes/tree/master/win/pwsh.md '```&#10;PS C:\> Add-WindowsDriver&#10;```&#10;&#10;Equivalent to `Dism.exe /Image:foldername /Add-Drive`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
+[Add-WindowsDriver]: # '```&#10;PS C:\> Add-WindowsDriver&#10;```&#10;&#10;Equivalent to `Dism.exe /Image:foldername /Add-Drive`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
 [Add-WindowsFeature]: #add-windowsfeature '```&#10;PS C:\> Add-WindowsFeature&#10;PS C:\> Install-WindowsFeature&#10;```&#10;Install one or more roles, role services, or features on either the local or a specified remote server that is running Windows Server 2012 R2'
-[Add-WindowsImage]: #https://github.com/jasper-zanjani/notes/tree/master/win/pwsh.md '```&#10;PS C:\> Add-WindowsImage&#10;```&#10;&#10;Equivalent to `dism.exe /Append-Image`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
-[Add-WindowsPackage]: #https://github.com/jasper-zanjani/notes/tree/master/win/pwsh.md '```&#10;PS C:\> Add-WindowsPackage&#10;```&#10;&#10;Equivalent to `Dism.exe /Image:foldername /Add-Package`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
-[Apply-WindowsUnattend]: #https://github.com/jasper-zanjani/notes/tree/master/win/pwsh.md '```&#10;PS C:\> Apply-WindowsUnattend&#10;```&#10;&#10;Equivalent to `Dism.exe /Image:foldername /Apply-Unattend`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
-[Disable-WindowsOptionalFeature]: #https://github.com/jasper-zanjani/notes/tree/master/win/pwsh.md '```&#10;PS C:\> Disable-WindowsOptionalFeature&#10;```&#10;&#10;Equivalent to `Dism.exe /Image:foldername /Disable-Feature`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
-[Dismount-WindowsImage]: #https://github.com/jasper-zanjani/notes/tree/master/win/pwsh.md '```&#10;PS C:\> Dismount-WindowsImage&#10;```&#10;&#10;Equivalent to `Dism.exe /Unmount-Image`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
+[Add-WindowsImage]: # '```&#10;PS C:\> Add-WindowsImage&#10;```&#10;&#10;Equivalent to `dism.exe /Append-Image`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
+[Add-WindowsPackage]: # '```&#10;PS C:\> Add-WindowsPackage&#10;```&#10;&#10;Equivalent to `Dism.exe /Image:foldername /Add-Package`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
+[Apply-WindowsUnattend]: # '```&#10;PS C:\> Apply-WindowsUnattend&#10;```&#10;&#10;Equivalent to `Dism.exe /Image:foldername /Apply-Unattend`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
+[Disable-WindowsOptionalFeature]: # '```&#10;PS C:\> Disable-WindowsOptionalFeature&#10;```&#10;&#10;Equivalent to `Dism.exe /Image:foldername /Disable-Feature`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
+[Dismount-WindowsImage]: # '```&#10;PS C:\> Dismount-WindowsImage&#10;```&#10;&#10;Equivalent to `Dism.exe /Unmount-Image`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
 [Edit-NanoServerImage]: #edit-nanoserverimage '```&#10;PS C:\> Edit-NanoServerImage&#10;```&#10;Add a role or feature to an existing Nano Server VHD file&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 49'
 [Enable-WindowsOptionalFeature]: #enable-windowsoptionalfeature '```&#10;PS C:\> Enable-WindowsOptionalFeature&#10;```&#10;Enable or restore an optional feature in a Windows image'
-[Enable-WindowsOptionalFeature]: #https://github.com/jasper-zanjani/notes/tree/master/win/pwsh.md '```&#10;PS C:\> Enable-WindowsOptionalFeature&#10;```&#10;&#10;Equivalent to `Dism.exe /Image:foldername /Enable-Feature`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
-[Expand-WindowsImage]: #https://github.com/jasper-zanjani/notes/tree/master/win/pwsh.md '```&#10;PS C:\> Expand-WindowsImage&#10;```&#10;&#10;Equivalent to `Dism.exe /Apply-Image`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
-[Export-WindowsDriver]: #https://github.com/jasper-zanjani/notes/tree/master/win/pwsh.md '```&#10;PS C:\> Export-WindowsDriver&#10;```&#10;&#10;Equivalent to `Dism.exe /Image:foldername /Export-Driver`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
-[Export-WindowsImage]: #https://github.com/jasper-zanjani/notes/tree/master/win/pwsh.md '```&#10;PS C:\> Export-WindowsImage&#10;```&#10;&#10;Equivalent to `Dism.exe /Export-Image`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
-[Get-Service]: #get-service '```&#10;PS C:\> Get-Service&#10;PS C:\> gsv&#10;```&#10;Display services'
-[Get-WindowsDriver]: #https://github.com/jasper-zanjani/notes/tree/master/win/pwsh.md '```&#10;PS C:\> Get-WindowsDriver&#10;```&#10;&#10;Equivalent to `Dism.exe /Image:foldername /Get-Drivers`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 78'
-[Get-WindowsFeature]: #get-windowsfeature '```&#10;PS C:\> Get-WindowsFeature&#10;```&#10;'
+[Enable-WindowsOptionalFeature]: # '```&#10;PS C:\> Enable-WindowsOptionalFeature&#10;```&#10;&#10;Equivalent to `Dism.exe /Image:foldername /Enable-Feature`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
+[Expand-WindowsImage]: # '```&#10;PS C:\> Expand-WindowsImage&#10;```&#10;&#10;Equivalent to `Dism.exe /Apply-Image`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
+[Export-WindowsDriver]: # '```&#10;PS C:\> Export-WindowsDriver&#10;```&#10;&#10;Equivalent to `Dism.exe /Image:foldername /Export-Driver`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
+[Export-WindowsImage]: # '```&#10;PS C:\> Export-WindowsImage&#10;```&#10;&#10;Equivalent to `Dism.exe /Export-Image`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
+[Get-WindowsDriver]: # '```&#10;PS C:\> Get-WindowsDriver&#10;```&#10;&#10;Equivalent to `Dism.exe /Image:foldername /Get-Drivers`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 78'
 [Get-WindowsFeature]: #get-windowsfeature '```&#10;PS C:\> Get-WindowsFeature&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 15'
-[Get-WindowsImage]: #https://github.com/jasper-zanjani/notes/tree/master/win/pwsh.md '```&#10;PS C:\> Get-WindowsImage&#10;```&#10;&#10;Equivalent to `Dism.exe /Get-ImageInfo`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
-[Get-WindowsImageContent]: #https://github.com/jasper-zanjani/notes/tree/master/win/pwsh.md '```&#10;PS C:\> Get-WindowsImageContent&#10;```&#10;&#10;Equivalent to `Dism.exe /List-Image`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
-[Get-WindowsOptionalFeature]: #https://github.com/jasper-zanjani/notes/tree/master/win/pwsh.md '```&#10;PS C:\> Get-WindowsOptionalFeature&#10;```&#10;&#10;Equivalent to `Dism.exe /Image:foldername /Get-Features`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 78'
-[Get-WindowsPackage]: #https://github.com/jasper-zanjani/notes/tree/master/win/pwsh.md '```&#10;PS C:\> Get-WindowsPackage&#10;```&#10;&#10;Equivalent to `Dism.exe /Image:foldername /Get-Packages`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 78'
+[Get-WindowsImage]: # '```&#10;PS C:\> Get-WindowsImage&#10;```&#10;&#10;Equivalent to `Dism.exe /Get-ImageInfo`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
+[Get-WindowsImageContent]: # '```&#10;PS C:\> Get-WindowsImageContent&#10;```&#10;&#10;Equivalent to `Dism.exe /List-Image`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
+[Get-WindowsOptionalFeature]: # '```&#10;PS C:\> Get-WindowsOptionalFeature&#10;```&#10;&#10;Equivalent to `Dism.exe /Image:foldername /Get-Features`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 78'
+[Get-WindowsPackage]: # '```&#10;PS C:\> Get-WindowsPackage&#10;```&#10;&#10;Equivalent to `Dism.exe /Image:foldername /Get-Packages`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 78'
 [Get-WMIObject]: #get-wmiobject '```&#10;PS C:\> Get-WMIObject&#10;PS C:\> gwmi&#10;```&#10;Gets instances of Windows Management Instrumentation (WMI) classes or information about the available classes.&#10;Superseded by `Get-CimInstance` since Powershell 3.0'
 [Install-WindowsFeature]: #install-windowsfeature '```&#10;PS C:\> Install-WindowsFeature&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 15, 171, 225, 377'
-[Mount-WindowsImage]: #https://github.com/jasper-zanjani/notes/tree/master/win/pwsh.md '```&#10;PS C:\> Mount-WindowsImage&#10;```&#10;&#10;Equivalent to `Dism.exe /Mount-image`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
+[Mount-WindowsImage]: # '```&#10;PS C:\> Mount-WindowsImage&#10;```&#10;&#10;Equivalent to `Dism.exe /Mount-image`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
 [New-NanoServerImage]: #new-nanoserverimage '```&#10;PS C:\> New-NanoServerImage&#10;New-NanoServerImage -DeploymentType guest|host -Edition standard|datacenter -MediaPath root -TargetPath $PATH -ComputerName $NAME&#10;```&#10;Used to create a Nano Server VHD file for Nano Server installation&#10;Required parameters:&#10;  `DeploymentType` specified whether the image file should be used on a Hyper-V VM ("Guest") or a physical server ("Host")&#10;  `Edition` specifies whether to install the Standard or Datacenter edition of Nano Server&#10;  `MediaPath` specifies the path to the root of the WS2016 installation disk or mounted image&#10;  `BasePath` specifies a path on the local system where the cmdlet creates a copy of the installation files from the location specified in `MediaPath`&#10;  `TargetPath` specifies the full path and filename of the new image to be created with the filename extension (".vhd" or ".vhdx") specifying Generation 1 or Generation 2 image.&#10;  `ComputerName` specifies the computer name that should be assigned to the new image&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 44'
-[New-WindowsImage]: #https://github.com/jasper-zanjani/notes/tree/master/win/pwsh.md '```&#10;PS C:\> New-WindowsImage&#10;```&#10;&#10;Equivalent to `Dism.exe /Capture-Image`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
-[Remove-WindowsDriver]: #https://github.com/jasper-zanjani/notes/tree/master/win/pwsh.md '```&#10;PS C:\> Remove-WindowsDriver&#10;```&#10;&#10;Equivalent to `Dism.exe /Image:foldername /Remove-Driver`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 78'
-[Remove-WindowsImage]: #https://github.com/jasper-zanjani/notes/tree/master/win/pwsh.md '```&#10;PS C:\> Remove-WindowsImage&#10;```&#10;&#10;Equivalent to `Dism.exe /Remove-Image`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
-[Remove-WindowsPackage]: #https://github.com/jasper-zanjani/notes/tree/master/win/pwsh.md '```&#10;PS C:\> Remove-WindowsPackage&#10;```&#10;&#10;Equivalent to `Dism.exe /Image:foldername /Remove-Package`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 78'
-[Save-WindowsImage]: #https://github.com/jasper-zanjani/notes/tree/master/win/pwsh.md '```&#10;PS C:\> Save-WindowsImage&#10;```&#10;&#10;Equivalent to `Dism.exe /Commit-Image`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
-[Set-Service]: #set-service '```&#10;PS C:\> Set-Service&#10;```&#10;Starts, stops, and suspends a service, and changes its properties'
-[Start-Service]: #start-service '```&#10;PS C:\> Start-Service&#10;PS C:\> sasv&#10;```&#10;Start one or more stopped services'
-[Stop-Service]: #stop-service '```&#10;PS C:\> Stop-Service&#10;PS C:\> spsv&#10;```&#10;Stop one or more services'
+[New-WindowsImage]: # '```&#10;PS C:\> New-WindowsImage&#10;```&#10;&#10;Equivalent to `Dism.exe /Capture-Image`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
+[Remove-WindowsDriver]: # '```&#10;PS C:\> Remove-WindowsDriver&#10;```&#10;&#10;Equivalent to `Dism.exe /Image:foldername /Remove-Driver`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 78'
+[Remove-WindowsImage]: # '```&#10;PS C:\> Remove-WindowsImage&#10;```&#10;&#10;Equivalent to `Dism.exe /Remove-Image`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
+[Remove-WindowsPackage]: # '```&#10;PS C:\> Remove-WindowsPackage&#10;```&#10;&#10;Equivalent to `Dism.exe /Image:foldername /Remove-Package`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 78'
+[Save-WindowsImage]: # '```&#10;PS C:\> Save-WindowsImage&#10;```&#10;&#10;Equivalent to `Dism.exe /Commit-Image`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
 
 <code>Guid&nbsp;n</code> 
 <code>NanoServerImage&nbsp;[n][New-NanoServerImage] [e][Edit-NanoServerImage]</code> 
-<code>Service&nbsp;[g][Get-Service] [s][Set-Service] [sa][Start-Service] [sp][Stop-Service]</code> 
 <code>WMIObject&nbsp;[g][Get-WMIObject]</code> 
 **Windows**
-<code>Driver&nbsp;[a][Add-WindowsDriver] [ep][Export-WindowsDriver] [g][Get-WindowsDriver] [r][Remove-WindowsDriver]</code> 
+<code>Driver&nbsp;[a][Add-WindowsDriver]&nbsp;[ep][Export-WindowsDriver]&nbsp;[g][Get-WindowsDriver]&nbsp;[r][Remove-WindowsDriver]</code> 
 <code>Feature&nbsp;[a][Install-WindowsFeature]&nbsp;[g][Get-WindowsFeature]&nbsp;[is][Install-WindowsFeature]</code> 
 <code>OptionalFeature&nbsp;[e][Enable-WindowsOptionalFeature]</code> 
-<code>Image&nbsp;[a][Add-WindowsImage] [en][Expand-WindowsImage] [n][New-WindowsImage] [sv][Save-WindowsImage] [ep][Export-WindowsImage] [g][Get-WindowsImage] [mt][Mount-WindowsImage] [r][Remove-WindowsImage] [dm][Dismount-WindowsImage]</code>
+<code>Image&nbsp;[a][Add-WindowsImage]&nbsp;[en][Expand-WindowsImage]&nbsp;[n][New-WindowsImage]&nbsp;[sv][Save-WindowsImage]&nbsp;[ep][Export-WindowsImage]&nbsp;[g][Get-WindowsImage]&nbsp;[mt][Mount-WindowsImage]&nbsp;[r][Remove-WindowsImage]&nbsp;[dm][Dismount-WindowsImage]</code>
 <code>ImageContent&nbsp;[g][Get-WindowsImageContent]</code>
-<code>OptionalFeature&nbsp;[d][Disable-WindowsOptionalFeature] [e][Enable-WindowsOptionalFeature] [g][Get-WindowsOptionalFeature] </code>
-<code>Package[a][Add-WindowsPackage] [g][Get-WindowsPackage] [r][Remove-WindowsPackage]</code>
+<code>OptionalFeature&nbsp;[d][Disable-WindowsOptionalFeature]&nbsp;[e][Enable-WindowsOptionalFeature]&nbsp;[g][Get-WindowsOptionalFeature]</code>
+<code>Package&nbsp;[a][Add-WindowsPackage]&nbsp;[g][Get-WindowsPackage]&nbsp;[r][Remove-WindowsPackage]</code>
 <code>Unattend&nbsp;[Apply][Apply-WindowsUnattend]</code>
 
 ##### Bash equivalents
@@ -1520,6 +1533,19 @@ Turn on MAC address spoofing on a virtual host (nested virtualization)
 ```powershell
 Set-VMNetworkAdapter -VMName SVR01 -Name "NetworkAdapter" -MACAddressSpoofing On
 ```
+#### System administration
+##### `LocalGroupMember`
+###### `Add-LocalGroupMember`
+###### `Get-LocalGroupMember`
+###### `Remove-LocalGroupMember`
+##### `LocalUser`
+###### `Get-LocalUser`
+###### `New-LocalUser`
+###### `Remove-LocalUser`
+###### `Disable-LocalUser`
+###### `Enable-LocalUser`
+###### `Rename-LocalUser`
+###### `Set-LocalUser`
 #### Windows objects
 ##### `Guid`
 ###### `New-Guid`
@@ -1910,7 +1936,7 @@ New-Item TempKey -UseTransaction
 Complete-Transaction
 ```
 #### New domain controller
-[<sup>Jones</sup>][Jones]
+<sup>[Jones][Jones]</sup>
 ```powershell
 Install-WindowsFeature AD-Domain-Services,DHCP -IncludeManagementTools
 Install-ADDSForest -DomainName corp.packtlab.com
@@ -1921,6 +1947,7 @@ New-AdUser -SamAccountName SysAdmin -AccountPassword (Read-Host "Set user passwo
 Add-ADPrincipalGroupMembership -Identity "CN=SysAdmin,CN=Users,DC=corp,DC=packtlab,DC=com","CN=Domain Admins,CN=Users,DC=corp,DC=packtlab,DC=com"
 Get-ADPrincipalGroupMembership sysadmin
 ```
+
 #### Text-to-speech
 Initialize text-to-speech object <sup>[scriptinglibrary.com](https://www.scriptinglibrary.com/languages/powershell/powershell-text-to-speech/ "Powershell: Text To Speech in 3 lines of code")</sup>
 ```powershell
@@ -1964,4 +1991,9 @@ $adaptor.Enable()
 #### Add a member to a group
 ```powershell
 Add-ADGroupMember -Identity $group -Members $user1,$user2
+```
+#### Add a new local admin
+```powershell
+nlu ansible
+Add-LocalGroupMember Administrators ansible
 ```
