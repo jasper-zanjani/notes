@@ -44,6 +44,7 @@
 [systeminfo]: #systeminfo                     '```&#10;C:\>systeminfo&#10;```&#10;Shows system information about the machine, including installed hotfixes and patches'
 [winver]: #winver                                             '```&#10;C:\>winver&#10;```&#10;Display the "About Windows" dialog box, including Windows version and build number'
 [wmic]: #wmic                           '```&#10;C:\>wmic&#10;```&#10;WMI command-line (WMIC) utility provides a command-line interface for WMI.'
+[wt]: #wt '```&#10;C:\>wt&#10;```&#10;Windows Terminal'
 
 <!-- Control Panel binaries -->
 [access.cpl]:     #access.cpl           '```&#10;C:\> access.cpl&#10;```&#10;Accessibility Options'
@@ -88,11 +89,14 @@
 - [Add a member to a group](pwsh.md#add-a-member-to-a-group)
 - [Log off][logoff]
 
+
+## Command Prompt
+### Contents
 ###### Concepts
 **U** 
 [UWP][UWP]
 
-## Command Prompt
+###### Commands
 [`arp`][arp] 
 [`bcdedit`][bcdedit] 
 [`bootrec`][bootrec]
@@ -122,6 +126,7 @@
 [`winrm`](#winrm) 
 [`winver`][winver]
 [`wmic`][wmic]
+[`wt`][wt]
 
 ###### Active Directory
 [`adprep`][adprep] 
@@ -147,6 +152,7 @@
 [`timedate`][timedate.cpl]
 [`wgpocpl`][wgpocpl.cpl]
 
+### Commands
 ###### Variables
 [USERPROFILE]: #variables '```&#10;C:\> echo %USERPROFILE%&#10;```&#10;Location of profile directory of current user (i.e. "C:\Users\jsmith")'
 [USERNAME]: #variables '```&#10;C:\> echo %USERNAME%&#10;```&#10;Name of current user (i.e. "jsmith").'
@@ -703,6 +709,17 @@ shutdown /L
 [`upk`][slmgr /upk]
 [`xpr`][slmgr /xpr]
 
+###### `sysdm.cpl`
+[sysdm.cpl ,3]: #sysdm.cpl '```&#10;C:\>sysdm.cpl ,3,3&#10;```&#10;Open System Properties directly to Advanced tab'
+[sysdm.cpl ,2]: #sysdm.cpl '```&#10;C:\>sysdm.cpl ,2,2&#10;```&#10;Open System Properties directly to Hardware tab'
+[sysdm.cpl ,4]: #sysdm.cpl '```&#10;C:\>sysdm.cpl ,4,4&#10;```&#10;Open System Properties directly to System Protection tab'
+[sysdm.cpl ,5]: #sysdm.cpl '```&#10;C:\>sysdm.cpl ,5,5&#10;```&#10;Open System Properties directly to Remote tab'
+
+[`2`][sysdm.cpl ,2]
+[**`3`**][sysdm.cpl ,3]
+[`4`][sysdm.cpl ,4]
+[`5`][sysdm.cpl ,5]
+
 ###### `tracert`
 On Windows, this command is aliased to `traceroute` which is the Linux command. <sup>[Lammle][Lammle]: 112</sup>
 
@@ -745,6 +762,15 @@ List all objects of type `Win32_LogicalDisk` using that class's alias `logicaldi
 ```cmd
 wmic logicaldisk list brief
 ```
+
+###### `wt`
+[https://www.bleepingcomputer.com/news/microsoft/windows-terminal-09-released-with-command-line-arguments-and-more/]: https://www.bleepingcomputer.com/news/microsoft/windows-terminal-09-released-with-command-line-arguments-and-more/ "Windows Terminal 0.9 Released with Command Line Arguments and More" 
+
+<sup>[bleepingcomputer.com][https://www.bleepingcomputer.com/news/microsoft/windows-terminal-09-released-with-command-line-arguments-and-more/]</sup>
+<sup>[bleepingcomputer.com][https://www.bleepingcomputer.com/news/microsoft/windows-terminal-09-released-with-command-line-arguments-and-more/]</sup>
+<sup>[bleepingcomputer.com][https://www.bleepingcomputer.com/news/microsoft/windows-terminal-09-released-with-command-line-arguments-and-more/]</sup>
+
+### Concepts
 #### FancyZones
 [Tutorial](https://www.youtube.com/watch?v=rTtGzZYAXgY) [Web](https://insider.windows.com/en-us/articles/announcing-the-first-preview-and-code-release-of-powertoys/) [GitHub](https://github.com/microsoft/PowerToys/tree/master/src/modules/fancyzones)
 

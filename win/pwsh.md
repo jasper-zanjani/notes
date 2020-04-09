@@ -845,6 +845,15 @@ Unlock account
 Unlock-ADAccount -identity wbryan
 ```
 ###### `Set-ADAccountPassword`
+[Set-ADAccountPassword -Identity]: #Set-ADAccountPassword '```&#10;PS C:\> Set-ADAccountPassword -IdentityIdentity&#10;```&#10;Specify an Active Directory user object.'
+[Set-ADAccountPassword -Reset]: #Set-ADAccountPassword '```&#10;PS C:\> Set-ADAccountPassword -ResetReset&#10;```&#10;Specify to reset the password on an account (requires `NewPassword`)'
+[Set-ADAccountPassword -NewPassword]: #Set-ADAccountPassword '```&#10;PS C:\> Set-ADAccountPassword -NewPasswordNewPassword&#10;```&#10;Specify a new password value'
+
+[**`Identity`**][Set-Adaccountpassword -identity] 
+[`NewPassword`][Set-ADAccountPassword -NewPassword]
+[`Reset`][Set-ADAccountPassword -Reset]
+
+
 Reset password
 ```powershell
 Set-ADAccountPassword -Identity MBentley -Reset -NewPassword (ConvertTo-SecureString -AsPlainText "What is 255.255.255.240" -Force)
