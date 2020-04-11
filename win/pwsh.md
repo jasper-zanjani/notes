@@ -1581,7 +1581,7 @@ Turn on NAT on the nested Hyper-V VM
 New-VMSwitch -name VMNAT -SwitchType Internal
 New-NetNAT -Name LocalNAT -InternalIPInterfaceAddressPrefix "192.168.100.0/24"
 ```
-###### `Set-VMSwitch` [^][msdocs:Set-VMSwitch]
+###### `Set-VMSwitch`[^][msdocs:Set-VMSwitch]
 [msdocs:Set-VMSwitch]: https://docs.microsoft.com/en-us/powershell/module/hyper-v/set-vmswitch "Set-VMSwitch"
 
 
