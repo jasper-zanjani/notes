@@ -3,7 +3,6 @@
 [https://docs.microsoft.com/en-us/powershell/module/smbshare/close-smbopenfile?view=win10-ps]: https://docs.microsoft.com/en-us/powershell/module/smbshare/close-smbopenfile?view=win10-ps '"Close-SmbOpenFile". _Microsoft Docs_.'
 [https://www.thewindowsclub.com/find-windows-product-key]:  https://www.thewindowsclub.com/find-windows-product-key "TheWindowsClub: \"How to find Windows Product Key using Command Prompt or PowerShell\""
 [https://docs.microsoft.com/en-us/powershell/scripting/samples/working-with-registry-entries?view=powershell-7]: https://docs.microsoft.com/en-us/powershell/scripting/samples/working-with-registry-entries?view=powershell-7 "Working with Registry Entries"
-[https://docs.microsoft.com/en-us/powershell/scripting/samples/working-with-registry-keys?view=powershell-7]: https://docs.microsoft.com/en-us/powershell/scripting/samples/working-with-registry-keys?view=powershell-7 "Working with Registry Keys"
 [https://adamtheautomator.com/powershell-random-password/]: https://adamtheautomator.com/powershell-random-password/ "How to Generate a Random Password with PowerShell"
 [https://devblogs.microsoft.com/scripting/powertip-use-powershell-to-get-computer-name/]: https://devblogs.microsoft.com/scripting/powertip-use-powershell-to-get-computer-name/
 
@@ -15,15 +14,22 @@
 [Holmes]: # 'Holmes, Lee. _Windows PowerShell Cookbook_. O\'Reilly Media, 2013.'
 [SOPR]: https://leanpub.com/secretsofpowershellremoting 'Don Jones et al. _Secrets of Powershell Remoting_. '
 
+[msdocs:Set-VMSwitch]: https://docs.microsoft.com/en-us/powershell/module/hyper-v/set-vmswitch "Set-VMSwitch"
+[msdocs:New-VMSwitch]: https://docs.microsoft.com/en-us/powershell/module/hyper-v/new-vmswitch "New-VMSwitch"
+[msdocs:Get-VMSwitch]: https://docs.microsoft.com/en-us/powershell/module/hyper-v/get-vmswitch "Get-VMSwitch"
+[msdocs:Add-VMSwitch]: https://docs.microsoft.com/en-us/powershell/module/hyper-v/add-vmswitch "Add-VMSwitch"
+[msdocs:Remove-VMSwitch]: https://docs.microsoft.com/en-us/powershell/module/hyper-v/remove-vmswitch "Remove-VMSwitch"
+[msdocs:Rename-VMSwitch]: https://docs.microsoft.com/en-us/powershell/module/hyper-v/rename-vmswitch "Rename-VMSwitch"
+
 
 # PowerShell
 ## Contents
-### Concepts
-#### Remoting
-[WinRM]: # 'Windows Remote Management (WinRM)&#10;Microsoft's implementation of the WSMAN protocol, which handles communications and authentication for connections for many applications.&#10;Unlike MMCs, which are based on DCOM (legacy technology), WinRM is considered firewall-friendly and is the preferred option'
+#### Concepts
+##### Remoting
+[WinRM]: # 'Windows Remote Management (WinRM)&#10;Microsoft implementation of the WSMAN protocol, which handles communications and authentication for connections for many applications.&#10;Unlike MMCs, which are based on DCOM (legacy technology), WinRM is considered firewall-friendly and is the preferred option'
 [remoting]: # 'remoting&#10;term applied to the use of WinRM in Powershell over port 5985 (or 5986 for HTTPS)'
 [endpoint]: # 'endpoint&#10;a particular configuration item in WinRM, representing a specific application for which WinRM can receive traffic'
-[listener]: # 'listener&#10;configuration item in WinRM representing the service's ability to accept incoming network traffic, associated with a TCP port number'
+[listener]: # 'listener&#10;configuration item in WinRM representing the ability of the service to accept incoming network traffic, associated with a TCP port number'
 [explicit remoting]: # 'explicit remoting&#10;opening a temporary or persistent Powershell session to a remote system&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 176'
 [implicit remoting]: # 'implicit remoting&#10;running a cmdlet specifying the `ComputerName` parameter, which directs its function to the remote system&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 177'
 
@@ -57,7 +63,7 @@ Remoting relies on [WinRM][WinRM], which is Microsoft's implementation of WSMAN.
 - [Safely combine related Registry modifications](#registry)
 - [Set DNS server to DHCP][Set-DnsClientServerAddress]
 - [Add a local user to administrators](#add-a-new-local-admin)
-
+- [Create a virtual switch with SET enabled](#create-a-virtual-switch-with-set-enabled)
 
 #### Cmdlets
 ##### Cmdlet verbs
@@ -337,6 +343,15 @@ Remoting relies on [WinRM][WinRM], which is Microsoft's implementation of WSMAN.
 [Set-NetFirewallRule]: #set-netfirewallrule '```&#10;PS C:\> Set-NetFirewallRule&#10;```&#10;'
 [Set-NetQoSbcdxSetting]: #set-netqosbcdxsetting '```&#10;PS C:\> Set-NetQoSbcdxSetting&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 143'
 
+[Enable-NetAdapterVmq]: #enable-netadaptervmq '```&#10;PS C:\> Enable-NetAdapterVmq&#10;```&#10;Enable VMQ on a specific adapter&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 252'
+[Get-NetAdapterVmq]: #get-netadaptervmq '```&#10;PS C:\> Get-NetAdapterVmq&#10;```&#10;Discover whether physical network adapters support VMQ&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 252'
+[Set-NetAdapterVmq]: #set-netadaptervmq '```&#10;PS C:\> Set-NetAdapterVmq&#10;```&#10;Modify default VMQ settings&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 253'
+[Get-NetAdapterVmqQueue]: #get-netadaptervmqqueue '```&#10;PS C:\> Get-NetAdapterVmqQueue&#10;```&#10;See which VMQ queries are assigned to which processors&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 252'
+
+[Get-NetAdapterRdma]: #get-netadapterrdma '```&#10;PS C:\> Get-NetAdapterRdma&#10;```&#10;Display the current RDMA status of network adapters&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 254'
+[Enable-NetAdapterRdma]: #enable-netadapterrdma '```&#10;PS C:\> Enable-NetAdapterRdma&#10;```&#10;Enable RDMA on adapters&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 254'
+
+<code>NetFirewallRule&nbsp;[e][Enable-NetFirewallRule]&nbsp;[g][Get-NetFirewallRule]&nbsp;[n][New-NetFirewallRule]&nbsp;[s][Set-NetFirewallRule]</code>
 <code>WebRequest&nbsp;[i][Invoke-WebRequest]</code>
 **DNS**
 <code>ClientServerAddress&nbsp;[s][Set-DnsClientServerAddress]</code> 
@@ -345,11 +360,14 @@ Remoting relies on [WinRM][WinRM], which is Microsoft's implementation of WSMAN.
 <code>InDC [a][Add-DhcpServerInDC]</code> 
 <code>V4Scope [a][Add-DhcpServerv4Scope]</code> 
 <code>v4OptionValue [s][Set-DhcpServerv4OptionValue]</code> 
-**Net**
-<code>Adapter&nbsp;[g][Get-NetAdapter]</code>
-<code>FirewallRule&nbsp;[e][Enable-NetFirewallRule]&nbsp;[g][Get-NetFirewallRule]&nbsp;[n][New-NetFirewallRule]&nbsp;[s][Set-NetFirewallRule]</code>
-<code>IpAddress&nbsp;[n][New-NetIpAddress]</code>
-<code>IpConfiguration&nbsp;[g][Get-NetIpConfiguration]</code>
+**NetAdapter**
+<code>[g][Get-NetAdapter]</code>
+<code>Rdma&nbsp;[g][Get-NetAdapterRdma]&nbsp;[e][Enable-NetAdapterRdma]</code>
+<code>Vmq&nbsp;[e][Enable-NetAdapterVmq]&nbsp;[g][Get-NetAdapterVmq]&nbsp;[s][Set-NetAdapterVmq]</code>
+<code>VmqQueue&nbsp;[g][Get-NetAdapterVmqQueue]</code>
+**NetIp**
+<code>Address&nbsp;[n][New-NetIpAddress]</code>
+<code>Configuration&nbsp;[g][Get-NetIpConfiguration]</code>
 
 ##### Process control cmdlets
 [Get-Process]: #get-process '```&#10;PS C:\> Get-Process&#10;PS C:\> gps&#10;```&#10;Display running processes'
@@ -482,7 +500,7 @@ Remoting relies on [WinRM][WinRM], which is Microsoft's implementation of WSMAN.
 [Add-VMSwitch]: #add-vmswitch '```&#10;PS C:\> Add-VMSwitch&#10;```&#10;Adds a virtual switch to an Ethernet resource pool.'
 [Get-VMSwitch]: #get-vmswitch '```&#10;PS C:\> Get-VMSwitch&#10;```&#10;Gets virtual switches from one or more virtual Hyper-V hosts.'
 [New-VMSwitch]: #new-vmswitch '```&#10;PS C:\> New-VMSwitch&#10;```&#10;Creates a new virtual switch on one or more virtual machine hosts.'
-[Remove-VMSwitch]: #remove-vmswitch '```&#10;Remove-VMSwitch&#10;```&#10;Deletes a virtual switch.'
+[Remove-VMSwitch]: #remove-vmswitch '```&#10;PS C:\> Remove-VMSwitch&#10;```&#10;Deletes a virtual switch.'
 [Rename-VMSwitch]: #rename-vmswitch '```&#10;PS C:\> Rename-VMSwitch&#10;```&#10;Renames a virtual switch.'
 [Set-VMSwitch]: #set-vmswitch '```&#10;PS C:\> Set-VMSwitch&#10;```&#10;Configures a virtual switch.'
 
@@ -610,9 +628,10 @@ Remoting relies on [WinRM][WinRM], which is Microsoft's implementation of WSMAN.
 ##### Cmdlets covered in 70-740
 
 ## Syntax
+### Keywords
 The `Throw` keyword generates a terminating error
 
-#### Variables
+### Variables
 ###### Automatic variables
 [Automatic variable]: #automatic-variables 'Automatic variable&#10;Variables that store state information for PowerShell and are created and maintained by Powershell.'
 
@@ -687,14 +706,14 @@ $Number = [int]'04'
 $FailedCast = [int]'Hello'
 ```
 
-#### Comparison operators
+#### Operators
 Syntax          | Effect
 ---             | ---
 `-like`         | wildcard pattern
 `-match`        | regex pattern
 `-is`           | type comparison
 
-#### Filters
+### Filters
 Filtering results can be done with 5 commands:
 - `Where-Object` (aliased to `where` and `?`): the most commonly used such command
 - `Select-Object` (aliased to `sc`ed to specify specific columns of information to be displayed
@@ -808,7 +827,7 @@ $Values = while ($true) {(++$Tick); if ($Tick -gt 2) { break } } # => @(1,2,3)
 $Values = do { 'eat me!' } while ($false) # => @('eat me!')
 ```
 
-## Cmdlets
+### Cmdlets
 #### Active Directory
 ##### `ADUser`
 ###### `New-ADUser`
@@ -1570,20 +1589,34 @@ Set-VmReplicationServer -ReplicationEnabled $true -AllowedAuthenticationType ker
 
 Virtual switches can be [external][external virtual switch], [internal][internal virtual switch], or [private][private virtual switch] (in order of decreasing access). <sup>[Zacker][Zacker]: 241</sup>
 
-###### `New-VMSwitch`
+###### `Add-VMSwitch`[^][msdocs:Add-VMSwitch]
+###### `Get-VMSwitch`[^][msdocs:Get-VMSwitch]
+###### `New-VMSwitch`[^][msdocs:New-VMSwitch]
+[New-VMSwitch -AllowManagementOS]: #New-VMSwitch '```&#10;PS C:\> New-VMSwitch -AllowManagementOS&#10;```&#10;Specify whether host can access the physical network adapter to which the virtual switch is bound'
+[New-VMSwitch -EnableEmbeddedTeaming]: #New-VMSwitch '```&#10;PS C:\> New-VMSwitch -EnableEmbeddedTeaming&#10;```&#10;Enable teaming for the specified virtual switch'
+
+[`AllowManagementOS`][New-VMSwitch -AllowManagementOS]
+[`EnableEmbeddedTeaming`][New-VMSwitch -EnableEmbeddedTeaming]
+
+Tasks:
+- [Create a virtual switch with SET enabled](#create-a-virtual-switch-with-set-enabled)
+
 Create a new virtual switch <sup>[Zacker][Zacker]: 242</sup>
 ```powershell
 New-VMSwitch -Name lan1 -NetAdapterName "Ethernet 2"
 New-VMSwitch -Name private1 -SwitchType private
 ```
-Turn on NAT on the nested Hyper-V VM
+Turn on NAT on a nested Hyper-V VM
 ```powershell
 New-VMSwitch -name VMNAT -SwitchType Internal
 New-NetNAT -Name LocalNAT -InternalIPInterfaceAddressPrefix "192.168.100.0/24"
 ```
+###### `Remove-VMSwitch`[^][msdocs:Remove-VMSwitch]
+###### `Rename-VMSwitch`[^][msdocs:Rename-VMSwitch]
 ###### `Set-VMSwitch`[^][msdocs:Set-VMSwitch]
-[msdocs:Set-VMSwitch]: https://docs.microsoft.com/en-us/powershell/module/hyper-v/set-vmswitch "Set-VMSwitch"
+[Set-VMSwitch -AllowManagementOS]: #Set-VMSwitch '```&#10;PS C:\> Set-VMSwitch -AllowManagementOS&#10;```&#10;Specify whether host can access the physical network adapter to which the virtual switch is bound'
 
+[`AllowManagementOS`][Set-VMSwitch -AllowManagementOS]
 
 ##### `VMNetworkAdapter`
 ###### `Add-VMNetworkAdapter`
@@ -1596,10 +1629,24 @@ Remove a network adapter <sup>[Zacker][Zacker]: 237</sup>
 ```powershell
 Remove-VMNetworkAdapter -VMName server1 -VMNetworkAdapter nic1
 ```
-###### `Set-VMNetworkAdapter`
+###### `Set-VMNetworkAdapter`[^][msdocs:Set-VMNetworkAdapter]
+[msdocs:Set-VMNetworkAdapter]: https://docs.microsoft.com/en-us/powershell/module/hyper-v/set-vmnetworkadapter "Set-VMNetworkAdapter"
+
+[Set-VMNetworkAdapter -MinimumBandwidthWeight]: #Set-VMNetworkAdapter '```&#10;PS C:\> Set-VMNetworkAdapter -MinimumBandwidthWeight&#10;```&#10;Specify how much bandwidth to allocate to the specified virtual network adapter relative to others on the same switch (value ranges 1-100)&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 256'
+[Set-VMNetworkAdapter -MinimumBandwidthAbsolute]: #Set-VMNetworkAdapter '```&#10;PS C:\> Set-VMNetworkAdapter -MinimumBandwidthAbsolute&#10;```&#10;Specify the minimum bandwidth allocated to an adapter, ensuring it is not denied access when others contend for bandwidth.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 255'
+[Set-VMNetworkAdapter -MaximumBandwidth]: #Set-VMNetworkAdapter '```&#10;PS C:\> Set-VMNetworkAdapter -MaximumBandwidth&#10;```&#10;Specify the maximum bandwidth available to an adapter; must not exceed the actual bandwidth provided by the physical network adapter.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 255'
+
+[`MaximumBandwidth`][Set-VMNetworkAdapter -MaximumBandwidth]
+[`MinimumBandwidthAbsolute`][Set-VMNetworkAdapter -MinimumBandwidthAbsolute]
+[`MinimumBandwidthWeight`][Set-VMNetworkAdapter -MinimumBandwidthWeight]
+
 Turn on MAC address spoofing on a virtual host (nested virtualization)
 ```powershell
 Set-VMNetworkAdapter -VMName SVR01 -Name "NetworkAdapter" -MACAddressSpoofing On
+```
+Set bandwidth limits on a virtual network adapter <sup>[Zacker][Zacker]: 256</sup>
+```powershell
+Set-VMNetworkAdapter -VMName server1 -Name nic1 -MinimumBandwidthWeight
 ```
 #### System administration
 ##### `LocalGroupMember`
@@ -2066,3 +2113,15 @@ nlu ansible
 Add-LocalGroupMember Administrators ansible
 ```
 #### Configure secure remoting using a self-signed certificate
+#### Create a virtual switch with SET enabled
+[SET]: 70-740.md#hyper-v-networking 'Switch Embedded Teaming (SET)&#10;Hyper-V-only variation of NIC teaming that is implemented wholly within a virtual switch&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 253'
+
+Create a virtual switch with [SET][SET] enabled. <sup>[Zacker][Zacker]: 254</sup>
+```powershell
+New-VMSwitch -Name SETSwitch -NetAdapterName "nic1","nic2" -EnableEmbeddedTeaming $true
+```
+Add new virtual network adapters to VMs
+```powershell
+Add-VMNetworkAdapter -VMName server1 -SwitchName setswitch -Name set1
+```
+Enable RDMA with [`Get-`][Get-NetAdapterRdma] and [`Enable-NetAdapterRdma`][Enable-NetAdapterRdma].
