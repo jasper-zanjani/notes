@@ -13,10 +13,31 @@
 [WSAC]:   https://github.com/jasper-zanjani/notes/master/sources/wsac.md "Krause, Jordan. _Windows Server 2016 Administration Cookbook_."
 [Zacker]: https://github.com/jasper-zanjani/notes/master/certs/70-740.md "Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017."
 [Holmes]: # 'Holmes, Lee. _Windows PowerShell Cookbook_. O\'Reilly Media, 2013.'
+[SOPR]: https://leanpub.com/secretsofpowershellremoting 'Don Jones et al. _Secrets of Powershell Remoting_. '
+
 
 # PowerShell
 ## Contents
-###### Tasks
+### Concepts
+#### Remoting
+[WinRM]: # 'Windows Remote Management (WinRM)&#10;Microsoft's implementation of the WSMAN protocol, which handles communications and authentication for connections for many applications.&#10;Unlike MMCs, which are based on DCOM (legacy technology), WinRM is considered firewall-friendly and is the preferred option'
+[remoting]: # 'remoting&#10;term applied to the use of WinRM in Powershell over port 5985 (or 5986 for HTTPS)'
+[endpoint]: # 'endpoint&#10;a particular configuration item in WinRM, representing a specific application for which WinRM can receive traffic'
+[listener]: # 'listener&#10;configuration item in WinRM representing the service's ability to accept incoming network traffic, associated with a TCP port number'
+[explicit remoting]: # 'explicit remoting&#10;opening a temporary or persistent Powershell session to a remote system&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 176'
+[implicit remoting]: # 'implicit remoting&#10;running a cmdlet specifying the `ComputerName` parameter, which directs its function to the remote system&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 177'
+
+[external virtual switch]: # 'external virtual switch&#10;bound to networking protocol stack in the host operating system and connected to a physical network interface adapter on the host, allowing VMs to access the network to which the physical adapter is connected&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 241'
+[internal virtual switch]: # 'internal virtual switch&#10;Bound to a separate instance of the networking protocol stack in the host operating system, independent from the physical network interface adapter and its connected network, it allows VMs to access the virtual network, including the host operating system.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 241'
+[private virtual switch]: # 'private virtual switch&#10;Exists only in the Hyper-V server and is accessible only to the VMs running on it, and is inaccessible to the host operating system itself.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 241'
+
+Powershell [remoting][remoting] can be done [explicitly][explicit remoting] or [implicitly][implicit remoting].
+Explicit remoting is also 1-to-1 remoting, where an interactive Powershell prompt is brought up on a remote computer.
+One-to-many or fan-out remoting is possible with implicit remoting, where a command is transmitted to many computers 
+Remoting relies on [WinRM][WinRM], which is Microsoft's implementation of WSMAN. 
+
+
+#### Tasks
 - [**Display computer name**][Get-ComputerInfo]
 - [**Remove Registry keys**][Remove-Item]
 - [**Clear out `%temp%` folder**][Remove-Item]
@@ -418,7 +439,6 @@
 ##### Hyper-V cmdlets
 <!-- Hyper-V cmdlets -->
 [Add-VMNetworkAdapter]: #add-vmnetworkadapter '```&#10;PS C:\> Add-VMNetworkAdapter&#10;```&#10;Adds a virtual network adapter to a virtual machine.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 237'
-[Add-VMSwitch]: # '`Add-VMSwitch`&#10;Adds a virtual switch to an Ethernet resource pool.'
 [Checkpoint-VM]: #checkpoint-vm '`Checkpoint-VM`&#10;Creates a checkpoint of a virtual machine.'
 [Compare-VM]: #compare-vm '```&#10;PS C:\> Compare-VM&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 212'
 [Connect-VMNetworkAdapter]: #connect-vmnetworkadapter '```&#10;PS C:\> Connect-VMNetworkAdapter&#10;```&#10;Connects a virtual network adapter to a virtual switch.'
@@ -429,21 +449,17 @@
 [Get-VMHostSupportedVersion]: #get-vmhostsupportedversion '```&#10;PS C:\> Get-VMHostSupportedVersion&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 209'
 [Get-VMNetworkAdapter]: #get-vmnetworkadapter '```&#10;PS C:\> Get-VMNetworkAdapter&#10;```&#10;Gets the virtual network adapters of a virtual machine, snapshot, management operating system, or of a virtual machine and management operating system.'
 [Get-VMProcessor]: #get-vmprocessor '```&#10;PS C:\> Get-VMProcessor&#10;```&#10;Gets the processor of a virtual machine or snapshot.'
-[Get-VMSwitch]:                                      # '`Get-VMSwitch`&#10;Gets virtual switches from one or more virtual Hyper-V hosts.'
 [Import-VM]: #import-vm '```&#10;PS C:\> Import-VM&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 211'
 [Measure-VM]: #measure-vm '```&#10;PS C:\> Measure-VM&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 194, 234-235'
 [Mount-VHD]: #mount-vhd '```&#10;Mount-VHD&#10;```&#10;Mounts one or more virtual hard disks.'
 [Move-VM]:                                           #move-vm                                      '`Move-VM`&#10;Moves a virtual machine to a new Hyper-V host.'
 [New-VHD]: #new-vhd '```&#10;New-VHD&#10;```&#10;Creates one or more new virtual hard disks.'
 [New-VM]: #new-vm '```&#10;PS C:\> New-VM&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 47, 184, 197'
-[New-VMSwitch]: # '`New-VMSwitch`&#10;Creates a new virtual switch on one or more virtual machine hosts.'
 [Optimize-VM]: #optimize-vm '```&#10;PS C:\> Optimize-VM&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 228'
 [Remove-VM]: #remove-vm '`Remove-VM`&#10;Deletes a virtual machine.'
 [Remove-VMNetworkAdapter]: #remove-vmnetworkadapter '```&#10;PS C:\> Remove-VMNetworkAdapter&#10;```&#10;Removes one or more virtual network adapters from a virtual machine.'
-[Remove-VMSwitch]: # '`Remove-VMSwitch`&#10;Deletes a virtual switch.'
 [Rename-VM]: #rename-vm                                    '`Rename-VM`&#10;Renames a virtual machine.'
 [Rename-VMNetworkAdapter]: #rename-vmnetworkadapter '```&#10;PS C:\> Rename-VMNetworkAdapter&#10;```&#10;Renames a virtual network adapter on a virtual machine or on the management operating system.'
-[Rename-VMSwitch]: # '`Rename-VMSwitch`&#10;Renames a virtual switch.'
 [Repair-VM]: #repair-vm                                    '`Repair-VM`&#10;Repairs one or more virtual machines.'
 [Reset-VMResourceMetering]: #reset-vmresourcemetering '```&#10;PS C:\> Reset-VMResourceMetering&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 195'
 [Restart-VM]: #restart-vm '`Restart-VM`&#10;Restarts a virtual machine.'
@@ -455,23 +471,32 @@
 [Set-VMNetworkAdapter]: #set-vmnetworkadapter '```&#10;PS C:\> Set-VMNetworkAdapter&#10;```&#10;Configures features of the virtual network adapter in a virtual machine or the management operating system.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 255'
 [Set-VMProcessor]: #set-vmprocessor '```&#10;PS C:\> Set-VMProcessor&#10;```&#10;Configures one or more processors of a virtual machine.'
 [Set-VmReplicationServer]: #set-vmreplicationserver '```&#10;PS C:\> Set-VmReplicationServer&#10;```&#10;Configure a host as a Replica server&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 300'
-[Set-VMSwitch]:                                      # '`Set-VMSwitch`&#10;Configures a virtual switch.'
 [Start-VM]:                                          #start-vm                                     '`Start-VM`&#10;Starts a virtual machine.'
 [Stop-VM]:                                           #stop-vm                                      '`Stop-VM`&#10;Shuts down, turns off, or saves a virtual machine.'
 [Suspend-VM]:                                        #suspend-vm                                   '`Suspend-VM`&#10;Suspends, or pauses, a virtual machine.'
 [Test-VMNetworkAdapter]: #test-vmnetworkadapter '```&#10;PS C:\> Test-VMNetworkAdapter&#10;```&#10;Tests connectivity between virtual machines.'
 [Update-VMVersion]: #update-vmversion '```&#10;PS C:\> Update-VMVersion&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 209'
 
+[Set-VMHost]: #set-vmhost '```&#10;Set-VMHost&#10;```&#10;Configure a Hyper-V host'
+
+[Add-VMSwitch]: #add-vmswitch '```&#10;PS C:\> Add-VMSwitch&#10;```&#10;Adds a virtual switch to an Ethernet resource pool.'
+[Get-VMSwitch]: #get-vmswitch '```&#10;PS C:\> Get-VMSwitch&#10;```&#10;Gets virtual switches from one or more virtual Hyper-V hosts.'
+[New-VMSwitch]: #new-vmswitch '```&#10;PS C:\> New-VMSwitch&#10;```&#10;Creates a new virtual switch on one or more virtual machine hosts.'
+[Remove-VMSwitch]: #remove-vmswitch '```&#10;Remove-VMSwitch&#10;```&#10;Deletes a virtual switch.'
+[Rename-VMSwitch]: #rename-vmswitch '```&#10;PS C:\> Rename-VMSwitch&#10;```&#10;Renames a virtual switch.'
+[Set-VMSwitch]: #set-vmswitch '```&#10;PS C:\> Set-VMSwitch&#10;```&#10;Configures a virtual switch.'
 
 **VHD**
 <code>[mt][Mount-VHD]&nbsp;[n][New-VHD]&nbsp;</code>
 **VM**
 <code>[cr][Compare-VM]&nbsp;[db][Debug-VM]&nbsp;[ep][Export-VM]&nbsp;[g][Get-VM]&nbsp;[ip][Import-VM]&nbsp;[m][Move-VM]&nbsp;[ms][Measure-VM]&nbsp;[n][New-VM]&nbsp;[r][Remove-VM]&nbsp;[rn][Rename-VM]&nbsp;[rt][Restart-VM]&nbsp;[ru][Resume-VM]&nbsp;[s][Set-VM]&nbsp;[sa][Start-VM]&nbsp;[sp][Stop-VM]&nbsp;[ss][Suspend-VM]&nbsp;[sv][Save-VM]</code>
 <code>Firmware&nbsp;[s][Set-VMFirmware]</code> 
+<code>Host&nbsp;[s][Set-VMHost]</code>
 <code>Memory&nbsp;[s][Set-VMMemory]</code> 
 <code>NetworkAdapter&nbsp;[a][Add-VMNetworkAdapter]&nbsp;[r][Remove-VMNetworkAdapter]&nbsp;[s][Set-VMNetworkAdapter]</code> 
 <code>Processor&nbsp;[s][Set-VMProcessor]</code> 
-<code>Switch&nbsp;[n][New-VMSwitch]</code> 
+<code>Switch&nbsp;[a][Add-VMSwitch]&nbsp;[g][Get-VMSwitch]&nbsp;[n][New-VMSwitch]&nbsp;[r][Remove-VMSwitch]&nbsp;[rn][Rename-VMSwitch]&nbsp;[s][Set-VMSwitch]&nbsp; 
+</code> 
 
 ##### Server migration cmdlets
 [Set-AppxProvisionedDataFile]: # '```&#10;PS C:\> Set-AppxProvisionedDataFile&#10;```&#10;&#10;Equivalent to `Dism.exe /Image:foldername /Set-ProvisionedAppxDataFile`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 78'
@@ -1048,6 +1073,12 @@ Display source code of a function <sup>[docs.microsoft.com](https://docs.microso
 (Get-Command mkdir).Definition
 ```
 ###### `Invoke-Command`
+[Invoke-Command -ThrottleLimit]: #Invoke-Command '```&#10;PS C:\> Invoke-Command -ThrottleLimit&#10;```&#10;Specify the maximum number of concurrent connections that can be established to run the command (32 by default)'
+[Invoke-Command -ScriptBlock]: #Invoke-Command '```&#10;PS C:\> Invoke-Command -ScriptBlock&#10;```&#10;Specify commands to run'
+
+[`ScriptBlock`][Invoke-Command -ScriptBlock]
+[`ThrottleLimit`][Invoke-Command -ThrottleLimit]
+
 Execute the commands in the block on the machines specified
 ```powershell
 Invoke-Command -ComputerName core01,core02 -Scriptblock {ipconfig /all}
@@ -1164,8 +1195,6 @@ Display PowerShell sessions
 Get-PSSession
 ```
 ###### `New-PSSession`
-Option  | Description
----     | ---
 `-ComputerName`
 
 Manage a Windows Server remotely <sup>[Zacker][Zacker]: 21</sup>
@@ -1503,6 +1532,17 @@ Create a Nano Server VM from an image file <sup>[Zacker][Zacker]: 47</sup>
 ```powershell
 New-VM -Name "nano2" -Generation 2 -MemoryStartupBytes 1GB -VHDPath "F:\hyper-v\virtual hard disks\nano2.vhdx"
 ```
+##### `VMHost`
+###### `Set-VMHost`
+[Set-VMHost -VirtualMachinePath]: #Set-VMHost '```&#10;PS C:\> Set-VMHost -VirtualMachinePath&#10;```&#10;Specify the default folder to store virtual machine configuration files on the Hyper-V host'
+[Set-VMHost -VirtualHardDiskPath]: #Set-VMHost '```&#10;PS C:\> Set-VMHost -VirtualHardDiskPath&#10;```&#10;Specify the default folder to store virtual hard disks on the Hyper-V host.'
+
+[`VirtualHardDiskPath`][Set-VMHost -VirtualHardDiskPath]
+[`VirtualMachinePath`][Set-VMHost -VirtualMachinePath]
+
+```powershell
+Set-VMHost -VirtualHardDiskPath 'D:\vms\Virtual Hard Disks' -VirtualMachinePath 'D:\vms\Virtual Machines'
+```
 ###### `Set-VMFirmware`
 Enable secure boot on Generation 2 Linux VMs <sup>[IMWS][IMWS]</sup>
 ```powershell
@@ -1524,6 +1564,12 @@ Configure a server's replica configuration <sup>[Zacker][Zacker]: 300</sup>
 Set-VmReplicationServer -ReplicationEnabled $true -AllowedAuthenticationType kerberos -ReplicationAllowedFromAnyServer $true -DefaultStorageLocation D:\replicas
 ```
 ##### `VMSwitch`
+[external virtual switch]: # 'external virtual switch&#10;bound to networking protocol stack in the host operating system and connected to a physical network interface adapter on the host, allowing VMs to access the network to which the physical adapter is connected&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 241'
+[internal virtual switch]: # 'internal virtual switch&#10;Bound to a separate instance of the networking protocol stack in the host operating system, independent from the physical network interface adapter and its connected network, it allows VMs to access the virtual network, including the host operating system.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 241'
+[private virtual switch]: # 'private virtual switch&#10;Exists only in the Hyper-V server and is accessible only to the VMs running on it, and is inaccessible to the host operating system itself.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 241'
+
+Virtual switches can be [external][external virtual switch], [internal][internal virtual switch], or [private][private virtual switch] (in order of decreasing access). <sup>[Zacker][Zacker]: 241</sup>
+
 ###### `New-VMSwitch`
 Create a new virtual switch <sup>[Zacker][Zacker]: 242</sup>
 ```powershell
@@ -1535,6 +1581,10 @@ Turn on NAT on the nested Hyper-V VM
 New-VMSwitch -name VMNAT -SwitchType Internal
 New-NetNAT -Name LocalNAT -InternalIPInterfaceAddressPrefix "192.168.100.0/24"
 ```
+###### `Set-VMSwitch` [^][msdocs:Set-VMSwitch]
+[msdocs:Set-VMSwitch]: https://docs.microsoft.com/en-us/powershell/module/hyper-v/set-vmswitch "Set-VMSwitch"
+
+
 ##### `VMNetworkAdapter`
 ###### `Add-VMNetworkAdapter`
 Create a network adapter <sup>[Zacker][Zacker]: 237</sup>
@@ -2015,3 +2065,4 @@ Add-ADGroupMember -Identity $group -Members $user1,$user2
 nlu ansible
 Add-LocalGroupMember Administrators ansible
 ```
+#### Configure secure remoting using a self-signed certificate

@@ -44,7 +44,7 @@
 [systeminfo]: #systeminfo                     '```&#10;C:\>systeminfo&#10;```&#10;Shows system information about the machine, including installed hotfixes and patches'
 [winver]: #winver                                             '```&#10;C:\>winver&#10;```&#10;Display the "About Windows" dialog box, including Windows version and build number'
 [wmic]: #wmic                           '```&#10;C:\>wmic&#10;```&#10;WMI command-line (WMIC) utility provides a command-line interface for WMI.'
-[wt]: #wt '```&#10;C:\>wt&#10;```&#10;Windows Terminal'
+[wt.exe]: #wt.exe '```&#10;C:\>wt&#10;```&#10;Windows Terminal'
 
 <!-- Control Panel binaries -->
 [access.cpl]:     #access.cpl           '```&#10;C:\> access.cpl&#10;```&#10;Accessibility Options'
@@ -66,12 +66,6 @@
 [grep]: https://github.com/jasper-zanjani/notes/blob/master/lx/commands/README.md#grep '```&#10;$ grep&#10;```&#10;Search `$FILES` for lines containing a match to regex `$PATTERN`&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 126'
 [lx echo]: https://github.com/jasper-zanjani/notes/blob/master/lx/commands/README.md#echo '```&#10;$ echo&#10;```&#10;Write `$STRING` to STDOUT&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 88'
 
-# Microsoft Windows
-
-- [Desired State Configuration](dsc.md)
-- [Powershell](pwsh.md)
-
-###### Tasks
 <!-- Powershell commands -->
 [Add-Computer]: pwsh.md#add-computer '```&#10;PS C:\> Add-Computer&#10;```&#10;Join a computer to a domain&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 20'
 [Get-ChildItem]: pwsh.md#get-childitem '```&#10;PS C:\> Get-ChildItem&#10;PS C:\> dir&#10;PS C:\> gci&#10;PS C:\> ls&#10;```&#10;Get items in one or more locations'
@@ -80,7 +74,15 @@
 [Write-Host]: pwsh.md#write-host '```&#10;PS C:\> Write-Host&#10;```&#10;Write customized output to a host (equivalent to `echo`).'
 [Remove-Item]: #remove-item '```&#10;PS C:\> Remove-Item&#10;PS C:\> ri&#10;```&#10;'
 [Set-ADAccountPassword]: #set-adaccountpassword '```&#10;PS C:\> Set-ADAccountPassword&#10;```&#10;'
+[Get-Clipboard]: #get-clipboard '```&#10;Get-Clipboard&#10;gcb&#10;```&#10;Display items in clipboard'
+[Set-Clipboard]: #set-clipboard '```&#10;Set-Clipboard&#10;scb&#10;```&#10;Set the current Windows clipboard entry'
 
+# Microsoft Windows
+
+- [Desired State Configuration](dsc.md)
+- [Powershell](pwsh.md)
+
+###### Tasks
 - [Display computer name][Get-ComputerInfo]
 - [Remove Registry keys][Remove-Item]
 - [Clear out `%temp%` folder][Remove-Item]
@@ -88,7 +90,6 @@
 - [Generate password](pwsh.md#generate-password)
 - [Add a member to a group](pwsh.md#add-a-member-to-a-group)
 - [Log off][logoff]
-
 
 ## Command Prompt
 ### Contents
@@ -100,6 +101,7 @@
 [`arp`][arp] 
 [`bcdedit`][bcdedit] 
 [`bootrec`][bootrec]
+`clip.exe` <sup>[pwsh][Set-Clipboard]</sup>
 [`cmdkey`][cmdkey.exe]
 [`cscript`][cscript] 
 `dir` <sup>[pwsh][Get-ChildItem]</sup>
@@ -114,6 +116,7 @@
 [`nbtstat`][nbtstat] 
 [`netsh`](#netsh) 
 [`ntdsutil`][ntdsutil]
+`paste.exe` <sup>[pwsh][Get-Clipboard]</sup>
 [`regsvr32`][regsvr32]
 [`route`](#route)
 [`runas`][runas] <sup>[lx](https://github.com/jasper-zanjani/lx/README.md '```sh&#10;$ sudo&#10;```')</sup>
@@ -126,7 +129,7 @@
 [`winrm`](#winrm) 
 [`winver`][winver]
 [`wmic`][wmic]
-[`wt`][wt]
+[`wt`][wt.exe]
 
 ###### Active Directory
 [`adprep`][adprep] 
@@ -710,10 +713,10 @@ shutdown /L
 [`xpr`][slmgr /xpr]
 
 ###### `sysdm.cpl`
-[sysdm.cpl ,3]: #sysdm.cpl '```&#10;C:\>sysdm.cpl ,3,3&#10;```&#10;Open System Properties directly to Advanced tab'
-[sysdm.cpl ,2]: #sysdm.cpl '```&#10;C:\>sysdm.cpl ,2,2&#10;```&#10;Open System Properties directly to Hardware tab'
-[sysdm.cpl ,4]: #sysdm.cpl '```&#10;C:\>sysdm.cpl ,4,4&#10;```&#10;Open System Properties directly to System Protection tab'
-[sysdm.cpl ,5]: #sysdm.cpl '```&#10;C:\>sysdm.cpl ,5,5&#10;```&#10;Open System Properties directly to Remote tab'
+[sysdm.cpl ,3]: #sysdm.cpl '```&#10;C:\>sysdm.cpl ,3&#10;```&#10;Open System Properties directly to Advanced tab'
+[sysdm.cpl ,2]: #sysdm.cpl '```&#10;C:\>sysdm.cpl ,2&#10;```&#10;Open System Properties directly to Hardware tab'
+[sysdm.cpl ,4]: #sysdm.cpl '```&#10;C:\>sysdm.cpl ,4&#10;```&#10;Open System Properties directly to System Protection tab'
+[sysdm.cpl ,5]: #sysdm.cpl '```&#10;C:\>sysdm.cpl ,5&#10;```&#10;Open System Properties directly to Remote tab'
 
 [`2`][sysdm.cpl ,2]
 [**`3`**][sysdm.cpl ,3]
@@ -763,12 +766,27 @@ List all objects of type `Win32_LogicalDisk` using that class's alias `logicaldi
 wmic logicaldisk list brief
 ```
 
-###### `wt`
+###### `wt.exe`
 [https://www.bleepingcomputer.com/news/microsoft/windows-terminal-09-released-with-command-line-arguments-and-more/]: https://www.bleepingcomputer.com/news/microsoft/windows-terminal-09-released-with-command-line-arguments-and-more/ "Windows Terminal 0.9 Released with Command Line Arguments and More" 
 
-<sup>[bleepingcomputer.com][https://www.bleepingcomputer.com/news/microsoft/windows-terminal-09-released-with-command-line-arguments-and-more/]</sup>
-<sup>[bleepingcomputer.com][https://www.bleepingcomputer.com/news/microsoft/windows-terminal-09-released-with-command-line-arguments-and-more/]</sup>
-<sup>[bleepingcomputer.com][https://www.bleepingcomputer.com/news/microsoft/windows-terminal-09-released-with-command-line-arguments-and-more/]</sup>
+[wt -&#112;]: #wt '```&#10;C:\>wt -&#112;&#10;C:\>wt -p "Ubuntu-18.04"&#10;```&#10;Specify the Windows Terminal profile that should be opened'
+[wt -&#100;]: #wt '```&#10;C:\>wt -&#100;&#10;C:\>wt -d E:\ &#10;```&#10;Specify the directory used as the starting directory for the console'
+
+<code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`d`][wt -&#100;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`p`][wt -&#112;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <br> [`split-pane`][wt] [`focus-tab`][wt]
+
+Open the default Windows Terminal profile and also an Ubuntu WSL tab <sup>[bleepingcomputer.com][https://www.bleepingcomputer.com/news/microsoft/windows-terminal-09-released-with-command-line-arguments-and-more/]</sup>
+```cmd
+wt; new-tab -p "Ubuntu-18.04"
+```
+Open a split pane of the default profile in the D:\ folder and the `cmd` profile in the E:\ folder <sup>[bleepingcomputer.com][https://www.bleepingcomputer.com/news/microsoft/windows-terminal-09-released-with-command-line-arguments-and-more/]</sup>
+```cmd
+wt -d d:\ ; split-pane -p "cmd" -d e:
+```
+Open the default profile and an Ubuntu WSL profile, but with the first tab focused <sup>[bleepingcomputer.com][https://www.bleepingcomputer.com/news/microsoft/windows-terminal-09-released-with-command-line-arguments-and-more/]</sup>
+```cmd
+wt ; new-tab -p "Ubuntu-18.04"; focus-tab -t0
+```
+
 
 ### Concepts
 #### FancyZones

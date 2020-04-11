@@ -1,8 +1,4 @@
 # Microsoft Azure
-
-
-
-
 ## Tasks
 #### Provision a Windows Server Core VM
 ```powershell
@@ -109,9 +105,9 @@ Enable-PSRemoting
 @ Command-prompt
 winrm quickconfig
 ```
-Add the VM's public IP address {ipaddr} to the trusted hosts of the local workstation (must be run as administrator):
+Add the VM's public IP address `$IP` to the trusted hosts of the local workstation (must be run as administrator):
 ```powershell
-Set-Item WSMan:\localhost\Client\TrustedHosts -Value ipaddr
+Set-Item WSMan:\localhost\Client\TrustedHosts -Value $IP
 ```
 Traffic to ports **5985** and **5986** must be allowed through [Windows firewall](#open-ports-in-windows-firewall) and, if the computer is an Azure VM, the Network Security Group.
 ```powershell
@@ -202,9 +198,9 @@ Azure methods of administering access to resources can be divided into two group
     - Service Administrator
     - Co-Administrator
   2. __Role-Based Access Controls (RBAC)__: There are more than __70__ built-in RBAC roles, allowing fine-grained access management, but __4__ of them are foundational:
-    1. __Owner__ has full access to all resources and __can__ delegate access. Service Administrator and Co-Administrators are assigned this role at the subscription scope.
-    2. __Contributor__ can create and manage all resources, but __cannot__ delegate access.
-    3. __Reader__ can view resources.
+    1. **Owner** has full access to all resources and __can__ delegate access. Service Administrator and Co-Administrators are assigned this role at the subscription scope.
+    2. **Contributor** can create and manage all resources, but __cannot__ delegate access.
+    3. **Reader** can view resources.
     4. __User Access Administrator__ only manages user access to resources.\
 Classic subscription administrators have full access to a subcription. They can access resources through Azure Portal, ARM APIs (PowerShell and CLI), and classic deployment model APIs. By default, the account that is used to sign up for a subscription is automatically set as both __Account Administrator__ and __Service Administrator__. There can only be one Account Administrator per account and only 1 Service Administrator per subscription. __Co-Administrators__ have the same access as Service Administrators, and there can be 200 of them per subscription, but cannot change the association of subscriptions to directories.\
 Current assignments for classic admins can be seen in the __Properties blade__ of a subscription in Azure Portal. Co-Administrator assignments can be added by opening the __Access Control (IAM)__ blade of a subscription, then clicking the __Add co-administrator__ button.\
