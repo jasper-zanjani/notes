@@ -17,6 +17,7 @@
 [adfind]: #adfind '```&#10;adfind&#10;```&#10;Command-line utility that can be used to query Active Directory attributes&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 53'
 [adprep]:         #adprep                         '```&#10;C:\>adprep&#10;```&#10;Prepare Active Directory for Windows Server upgrades&#10;Must be run on the Infrastructure Master role owner with the flag `/domainprep`.&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 29'
 [SmigDeploy.exe]: #smigdeploy.exe '```&#10;C:\>SmigDeploy.exe&#10;```&#10;Create a new folder in specified directory, registering Windows Server Migration Tools on the source server and opening a Powershell window in which they can be used&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 34'
+[Djoin.exe]: #djoin.exe '```&#10;C:\>Djoin.exe&#10;```&#10;Create a domain provisioning file, so a Nano Server image can be domain joined offline.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 46'
 [domain.msc]: #domain.msc '```&#10;C:\>domain.msc&#10;```&#10;Active Directory Domains and Trusts'
 [dssite.msc]: #dssite.msc '```&#10;C:\>dssite.msc&#10;```&#10;Active Directory Sites and Services'
 
@@ -126,7 +127,7 @@
 [`systeminfo`][systeminfo]
 [`tracert`](#tracert) 
 [`traceroute`](#tracert)
-[`winrm`](#winrm) 
+[`winrm`](#winrmexe) 
 [`winver`][winver]
 [`wmic`][wmic]
 [`wt`][wt.exe]
@@ -134,6 +135,7 @@
 ###### Active Directory
 [`adprep`][adprep] 
 [`adfind`][adfind]
+[`djoin`][Djoin.exe]
 [`domain`][domain.msc]
 [`dssite`][dssite.msc]
 [`dsquery`][dsquery]
@@ -730,7 +732,7 @@ Option  | Effect
 :---    | :---
 `-6`    | IPv6, aliased to `traceroute6`
 
-###### `winrm`
+###### `Winrm.exe`
 `enumerate`
 `get`
 
@@ -741,6 +743,10 @@ winrm enumerate winrm/config/listener
 Display WinRM configuration
 ```cmd
 winrm get winrm/config
+```
+Add an address to Trusted Hosts list <sup>[Zacker][Zacker]: 56</sup>
+```cmd
+winrm set winrm/config/client @{TrustedHosts="192.168.10.41"}
 ```
 ###### `winver`
 
