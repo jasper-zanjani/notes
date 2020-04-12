@@ -387,7 +387,7 @@ Remoting relies on [WinRM][WinRM], which is Microsoft's implementation of WSMAN.
 [New-PSSession]: #new-pssession '```&#10;New-PSSession&#10;nsn&#10;```&#10;Start a new remote PowerShell session with a remote computer&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 21'
 [Get-PSSession]: #get-pssession '```&#10;PS C:\> Get-PSSession&#10;PS C:\> gsn&#10;```&#10;Get the Windows Powershell sessions on local and remote computers'
 
-<code>[Session](#pssession)&nbsp;[dc][Disconnect-PSSession] [et][Enter-PSSession] [ex][Exit-PSSession] [g][Get-PSSession] [n][New-PSSession]</code> 
+<code>[Session](#pssession)&nbsp;[cc][Connect-PSSession]&nbsp;[dc][Disconnect-PSSession]&nbsp;[et][Enter-PSSession]&nbsp;[ex][Exit-PSSession]&nbsp;[g][Get-PSSession]&nbsp;[n][New-PSSession]</code> 
 <code>WSManCredSSP&nbsp;[e][Enable-WSManCredSSP]</code>
 
 ##### Shell environment cmdlets
@@ -1363,10 +1363,22 @@ saps cmd -v runas
 #### Remote administration
 ##### `PSRemoting`
 ###### `Enable-PSRemoting`
+`SkipNetworkProfileCheck`
+
 ##### `PSSession`
-###### `Disconnect-PSSession`
+[msdocs:Connect-PSSession]: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/Connect-pssession "Connect-PSSession
+[msdocs:Disconnect-PSSession]: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/Disconnect-pssession "Disconnect-PSSession
+[msdocs:Enter-PSSession]: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/enter-pssession "Enter-PSSession
+[msdocs:Exit-PSSession]: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/Exit-pssession "Exit-PSSession
+[msdocs:Get-PSSession]: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/Get-pssession "Get-PSSession
+[msdocs:New-PSSession]: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/New-pssession "New-PSSession
+
+###### `Connect-PSSession`[^][msdocs:Connect-PSSession]
+###### `Disconnect-PSSession`[^][msdocs:Disconnect-PSSession]
 Terminate a remote PowerShell session begun with [`New-PSSession`][New-PSSession] <sup>[Zacker][Zacker]: 22</sup>
-###### `Enter-PSSession`
+###### `Enter-PSSession`[^][msdocs:Enter-PSSession]
+`UseSSL`
+
 Interact with the specified PowerShell session
 ```powershell
 Enter-PSSession -id 1
@@ -1375,18 +1387,18 @@ Start and enter a new PS session to specified computer with provided credentials
 ```powershell
 Enter-PSSession -ComputerName o365-dc01 -Credential officeprodemoco\joey
 ```
-###### `Exit-PSSession`
+###### `Exit-PSSession`[^][msdocs:Exit-PSSession]
 Exit a remote PowerShell session <sup>[Zacker][Zacker]: 22</sup>
 End the PowerShell session with the specified computer
 ```powershell
 Exit-PSSession -ComputerName demodc
 ```
-###### `Get-PSSession`
+###### `Get-PSSession`[^][msdocs:Get-PSSession]
 Display PowerShell sessions
 ```powershell
 Get-PSSession
 ```
-###### `New-PSSession`
+###### `New-PSSession`[^][msdocs:New-PSSession]
 `-ComputerName`
 
 Manage a Windows Server remotely <sup>[Zacker][Zacker]: 21</sup>
@@ -1397,10 +1409,29 @@ Start a new PowerShell session, connecting to the specified computer
 ```powershell
 New-PSSession -ComputerName core02
 ```
+##### `PSSessionConfiguration`
+
+[msdocs:New-PSSessionConfigurationFile]: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/new-pssessionconfigurationfile "New-PSSessionConfigurationFile"
+[msdocs:Register-PSSessionConfiguration]: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/register-pssessionconfiguration "Register-PSSessionConfiguration"
+[msdocs:Set-PSSessionConfiguration]: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/Set-pssessionconfiguration "Set-PSSessionConfiguration"
+[msdocs:Get-PSSessionConfiguration]: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/Get-pssessionconfiguration "Get-PSSessionConfiguration"
+
+###### `Get-PSSessionConfiguration`[^][msdocs:Get-PSSessionConfiguration]
+###### `Register-PSSessionConfiguration`[^][msdocs:Register-PSSessionConfiguration]
+###### `Set-PSSessionConfiguration`[^][msdocs:Set-PSSessionConfiguration]
+###### `New-PSSessionConfigurationFile`[^][New-PSSessionConfigurationFile]
+
 ##### `WSManCredSSP`
-###### `Enable-WSManCredSSP`
+[msdocs:Enable-WSManCredSSP]: https://docs.microsoft.com/en-us/powershell/module/microsoft.wsman.management/enable-wsmancredssp "Enable-WSManCredSSP"
+
+###### `Enable-WSManCredSSP`[^][msdocs:Enable-WSManCredSSP]
+`Delegate`
+`Role`
+
 Tasks:
 - [Enable CredSSP](#enable-credssp)
+
+
 
 #### Disks
 ##### `DedupVolume`
@@ -1520,16 +1551,29 @@ Add an IP address to the Trusted Hosts list, bypassing the use of Kerberos to au
 ```powershell
 Set-Item wsman:\localhost\client\trustedhosts "192.168.10.41"
 ```
+Enable CredSSP on the local computer <sup>[Jones][SOPR]: 50</sup>
+```powershell
+Set-Item WSMAN:\localhost\client\auth\credssp -value $true
+```
+Enable CredSSP on the intermediate server when attempting to make the "second hop" <sup>[Jones][SOPR]: 50</sup>
+```powershell
+Set-Item WSMAN:\localhost\service\auth\credssp -value $true
+```
 ##### `Null`
 ###### `Out-Null`
 #### Filters
 ##### `Object`
-###### `Measure-Object`
-###### `ForEach-Object`
-###### `New-Object`
-###### `Select-Object`
-###### `Where-Object`
+[msdocs:ForEach-Object]:"https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/foreach-object "ForEach-Object"
+[msdocs:Select-Object]:"https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/Select-object "Select-Object"
+[msdocs:Measure-Object]:"https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/Measure-object "Measure-Object"
+[msdocs:New-Object]:"https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/New-object "New-Object"
+[msdocs:Where-Object]:"https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/Where-object "Where-Object"
 
+###### `Measure-Object`[^][msdocs:Measure-Object]
+###### `ForEach-Object`[^][msdocs:ForEach-Object]
+###### `New-Object`[^][msdocs:New-Object]
+###### `Select-Object`[^][msdocs:Select-Object]
+###### `Where-Object`[^][msdocs:Where-Object]
 #### Hyper-V
 ##### `VHD`
 ###### `Mount-VHD`
