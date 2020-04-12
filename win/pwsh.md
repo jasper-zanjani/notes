@@ -14,12 +14,6 @@
 [Holmes]: # 'Holmes, Lee. _Windows PowerShell Cookbook_. O\'Reilly Media, 2013.'
 [SOPR]: https://leanpub.com/secretsofpowershellremoting 'Don Jones et al. _Secrets of Powershell Remoting_. '
 
-[msdocs:Set-VMSwitch]: https://docs.microsoft.com/en-us/powershell/module/hyper-v/set-vmswitch "Set-VMSwitch"
-[msdocs:New-VMSwitch]: https://docs.microsoft.com/en-us/powershell/module/hyper-v/new-vmswitch "New-VMSwitch"
-[msdocs:Get-VMSwitch]: https://docs.microsoft.com/en-us/powershell/module/hyper-v/get-vmswitch "Get-VMSwitch"
-[msdocs:Add-VMSwitch]: https://docs.microsoft.com/en-us/powershell/module/hyper-v/add-vmswitch "Add-VMSwitch"
-[msdocs:Remove-VMSwitch]: https://docs.microsoft.com/en-us/powershell/module/hyper-v/remove-vmswitch "Remove-VMSwitch"
-[msdocs:Rename-VMSwitch]: https://docs.microsoft.com/en-us/powershell/module/hyper-v/rename-vmswitch "Rename-VMSwitch"
 
 
 # PowerShell
@@ -64,6 +58,9 @@ Remoting relies on [WinRM][WinRM], which is Microsoft's implementation of WSMAN.
 - [Set DNS server to DHCP][Set-DnsClientServerAddress]
 - [Add a local user to administrators](#add-a-new-local-admin)
 - [Create a virtual switch with SET enabled](#create-a-virtual-switch-with-set-enabled)
+- [Implement nested virtualization](#implement-nested-virtualization)
+- [Enable CredSSP](#enable-credssp)
+- [Configure Server Core](#configure-server-core)
 
 #### Cmdlets
 ##### Cmdlet verbs
@@ -381,15 +378,24 @@ Remoting relies on [WinRM][WinRM], which is Microsoft's implementation of WSMAN.
 <code>Process&nbsp;[g][Get-Process]&nbsp;[sa][Start-Process]&nbsp;[sp][Stop-Process]</code>
 <code>Service&nbsp;[g][Get-Service]&nbsp;[s][Set-Service]&nbsp;[sa][Start-Service]&nbsp;[sp][Stop-Service]</code> 
 
-##### Shell environment cmdlets
-[Add-Computer]: #add-computer '```&#10;PS C:\> Add-Computer&#10;```&#10;Join a computer to a domain'
-[Add-PSSnapin]: #add-pssnapin '```&#10;PS C:\> Add-PSSnapin&#10;PS C:\> asnp&#10;```&#10;Load a given list of snap-ins (.NET assemblies containing a collection of cmdlets and/or providers for use within PowerShell) either by name or via the pipeline - last supported in PowerShell 5.1'
-[Add-Type]: #add-type '```&#10;PS C:\> Add-Type&#10;```&#10;add a.NET Framework type (a class) to a Windows PowerShell session'
-[Clear-Host]: #clear-host '```&#10;PS C:\> Clear-Host&#10;```&#10;'
+##### Remote administration
+[Enable-WSManCredSSP]: #enable-wsmancredssp '```&#10;PS C:\> Enable-WSManCredSSP&#10;```&#10;Enable the use of CredSSP for authentication between hosts in different domains&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 176'
 [Disconnect-PSSession]: #disconnect-pssession '```&#10;PS C:\> Disconnect-PSSession&#10;PS C:\> dnsn&#10;```&#10;Terminate a remote PowerShell session begun with `New-PSSession`'
 [Enable-PSRemoting]: #enable-psremoting '```&#10;PS C:\> Enable-PSRemoting&#10;```&#10;Allow remote Powershell management'
 [Enter-PSSession]: #enter-pssession '```&#10;PS C:\> Enter-PSSession&#10;PS C:\> etsn&#10;```&#10;Interact with the specified PowerShell session'
 [Exit-PSSession]: #exit-pssession '```&#10;PS C:\> Exit-PSSession&#10;PS C:\> exsn&#10;```&#10;End an interactive session with a remote computer'
+[New-PSSession]: #new-pssession '```&#10;New-PSSession&#10;nsn&#10;```&#10;Start a new remote PowerShell session with a remote computer&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 21'
+[Get-PSSession]: #get-pssession '```&#10;PS C:\> Get-PSSession&#10;PS C:\> gsn&#10;```&#10;Get the Windows Powershell sessions on local and remote computers'
+
+<code>[Session](#pssession)&nbsp;[dc][Disconnect-PSSession] [et][Enter-PSSession] [ex][Exit-PSSession] [g][Get-PSSession] [n][New-PSSession]</code> 
+<code>WSManCredSSP&nbsp;[e][Enable-WSManCredSSP]</code>
+
+##### Shell environment cmdlets
+
+[Add-Computer]: #add-computer '```&#10;PS C:\> Add-Computer&#10;```&#10;Join a computer to a domain'
+[Add-PSSnapin]: #add-pssnapin '```&#10;PS C:\> Add-PSSnapin&#10;PS C:\> asnp&#10;```&#10;Load a given list of snap-ins (.NET assemblies containing a collection of cmdlets and/or providers for use within PowerShell) either by name or via the pipeline - last supported in PowerShell 5.1'
+[Add-Type]: #add-type '```&#10;PS C:\> Add-Type&#10;```&#10;add a.NET Framework type (a class) to a Windows PowerShell session'
+[Clear-Host]: #clear-host '```&#10;PS C:\> Clear-Host&#10;```&#10;'
 [Export-Alias]: #export-alias '```&#10;PS C:\> Export-Alias&#10;PS C:\> epal&#10;```&#10;Export information about currently defined aliases to a file.'
 [Get-Alias]: #get-alias '```&#10;PS C:\> Get-Alias&#10;PS C:\> gal&#10;```&#10;Display aliases'
 [Get-ChildItem]: #get-childitem '```&#10;PS C:\> Get-ChildItem&#10;PS C:\> dir gci ls&#10;```&#10;Get items in one or more locations'
@@ -401,11 +407,9 @@ Remoting relies on [WinRM][WinRM], which is Microsoft's implementation of WSMAN.
 [Get-Member]: #get-member '```&#10;PS C:\> Get-Member&#10;PS C:\> gm&#10;```&#10;Display properties and methods of a Powershell object'
 [Get-Module]: #get-module '```&#10;PS C:\> Get-Module&#10;PS C:\> gmo&#10;```&#10;Display currently loaded Powershell modules'
 [Get-PSReadlineOption]: #get-psreadlineoption '```&#10;PS C:\> Get-PSReadlineOption&#10;```&#10;'
-[Get-PSSession]: #get-pssession '```&#10;PS C:\> Get-PSSession&#10;PS C:\> gsn&#10;```&#10;Get the Windows Powershell sessions on local and remote computers'
 [Import-Module]: #import-module '```&#10;PS C:\> Import-Module&#10;PS C:\> ipmo&#10;```&#10;'
 [Install-Module]: #install-module '```&#10;PS C:\> Install-Module&#10;```&#10;'
 [New-Alias]: #new-alias '```&#10;PS C:\> New-Alias&#10;PS C:\> nal&#10;```&#10;Create a new alias'
-[New-PSSession]: #new-pssession '```&#10;New-PSSession&#10;nsn&#10;```&#10;Start a new remote PowerShell session with a remote computer&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 21'
 [Out-Host]: #out-host '```&#10;PS C:\> Out-Host&#10;PS C:\> oh&#10;```&#10;'
 [Rename-Computer]: #rename-computer '```&#10;PS C:\> Rename-Computer&#10;```&#10;'
 [Restart-Computer]: #restart-computer '```&#10;PS C:\> Restart-Computer&#10;```&#10;'
@@ -452,7 +456,6 @@ Remoting relies on [WinRM][WinRM], which is Microsoft's implementation of WSMAN.
 <code>Type&nbsp;[a][Add-Type]</code> 
 **PS**
 <code>ReadlineOption&nbsp;[g][Get-PSReadlineOption] [s][Set-PSReadlineOption]</code> 
-<code>[Session](#pssession)&nbsp;[dc][Disconnect-PSSession] [et][Enter-PSSession] [ex][Exit-PSSession] [g][Get-PSSession] [n][New-PSSession]</code> 
 
 ##### Hyper-V cmdlets
 <!-- Hyper-V cmdlets -->
@@ -1188,42 +1191,6 @@ Change `<Tab>` behavior back to default for PowerShell
 ```powershell
 Set-PSReadlineOption -EditMode Windows
 ```
-##### `PSRemoting`
-###### `Enable-PSRemoting`
-##### `PSSession`
-###### `Disconnect-PSSession`
-Terminate a remote PowerShell session begun with [`New-PSSession`][New-PSSession] <sup>[Zacker][Zacker]: 22</sup>
-###### `Enter-PSSession`
-Interact with the specified PowerShell session
-```powershell
-Enter-PSSession -id 1
-```
-Start and enter a new PS session to specified computer with provided credentials. This will change the prompt to show the name of the remote machine in brackets.
-```powershell
-Enter-PSSession -ComputerName o365-dc01 -Credential officeprodemoco\joey
-```
-###### `Exit-PSSession`
-Exit a remote PowerShell session <sup>[Zacker][Zacker]: 22</sup>
-End the PowerShell session with the specified computer
-```powershell
-Exit-PSSession -ComputerName demodc
-```
-###### `Get-PSSession`
-Display PowerShell sessions
-```powershell
-Get-PSSession
-```
-###### `New-PSSession`
-`-ComputerName`
-
-Manage a Windows Server remotely <sup>[Zacker][Zacker]: 21</sup>
-```powershell
-New-PSSession -ComputerName rtmsvrd
-```
-Start a new PowerShell session, connecting to the specified computer
-```powershell
-New-PSSession -ComputerName core02
-```
 ##### `PSSnapin`
 ###### `Add-PSSnapin`
 ##### `Type`
@@ -1345,10 +1312,6 @@ Set-NetFirewallRule -name RemoteEventLogSvc-RPCSS-TCP -Enabled True
 [`IpAddress`][New-NetIpAddress -IpAddress]
 [`PrefixLength`][New-NetIpAddress -PrefixLength]
 
-Manually configure network interface, if a DHCP server is unavailable <sup>[Zacker][Zacker]: 19</sup>
-```powershell
-New-NetIPAddress 10.0.0.3 -InterfaceAlias "Ethernet' -PrefixLength 24
-```
 Configure the Domain Controller in a new corporate intranet <sup>[Jones][Jones]</sup>
 ```powershell
 New-NetIPAddress 10.0.0.1 -InterfaceAlias "Ethernet" -PrefixLength 24
@@ -1397,6 +1360,48 @@ Run a program as admin
 Start-Process cmd -Verb runas
 saps cmd -v runas
 ```
+#### Remote administration
+##### `PSRemoting`
+###### `Enable-PSRemoting`
+##### `PSSession`
+###### `Disconnect-PSSession`
+Terminate a remote PowerShell session begun with [`New-PSSession`][New-PSSession] <sup>[Zacker][Zacker]: 22</sup>
+###### `Enter-PSSession`
+Interact with the specified PowerShell session
+```powershell
+Enter-PSSession -id 1
+```
+Start and enter a new PS session to specified computer with provided credentials. This will change the prompt to show the name of the remote machine in brackets.
+```powershell
+Enter-PSSession -ComputerName o365-dc01 -Credential officeprodemoco\joey
+```
+###### `Exit-PSSession`
+Exit a remote PowerShell session <sup>[Zacker][Zacker]: 22</sup>
+End the PowerShell session with the specified computer
+```powershell
+Exit-PSSession -ComputerName demodc
+```
+###### `Get-PSSession`
+Display PowerShell sessions
+```powershell
+Get-PSSession
+```
+###### `New-PSSession`
+`-ComputerName`
+
+Manage a Windows Server remotely <sup>[Zacker][Zacker]: 21</sup>
+```powershell
+New-PSSession -ComputerName rtmsvrd
+```
+Start a new PowerShell session, connecting to the specified computer
+```powershell
+New-PSSession -ComputerName core02
+```
+##### `WSManCredSSP`
+###### `Enable-WSManCredSSP`
+Tasks:
+- [Enable CredSSP](#enable-credssp)
+
 #### Disks
 ##### `DedupVolume`
 ###### `Enable-DedupVolume`
@@ -1477,6 +1482,12 @@ Add a CSV full of users
 Import-Csv users.csv | foreach { New-ADUser -SamAccountName $_.SAM -GivenName $_.Last -DisplayName $_.DisplayName -Name $_.Name -Description $_.Description -Enabled $True -AccountPassword (ConvertToSecureString $_.Password -AsPlainText -Force) }
 ```
 ##### `Item`
+###### `Copy-Item`
+Copy files to and from an open Powershell session <sup>[Zacker][Zacker]: 180</sup>
+```powershell
+Copy-Item -ToSession (Get-PSSession) -Path C:\temp\file.txt -Destination C:\users
+Copy-Item -FromSession (Get-PSSession) -Path C:\users\file.txt -Destination C:\temp
+```
 ###### `Get-Item`
 ###### `New-Item`
 [New-Item &#84;]: #New-Item '```&#10;PS C:\> New-Item Type&#10;PS C:\> New-Item -ItemType&#10;```&#10;&#10;Specify the provider-specified type of the new item; values depend on the context.'
@@ -1527,30 +1538,59 @@ Set-Item wsman:\localhost\client\trustedhosts "192.168.10.41"
 ###### `New-VHD`
 - [VHDX file](#vhdx-file)
 ##### `VM`
+[msdocs:Compare-VM]: https://docs.microsoft.com/en-us/powershell/module/hyper-v/Compare-vm "Compare-VM"
+[msdocs:Export-VM]: https://docs.microsoft.com/en-us/powershell/module/hyper-v/Export-vm "Export-VM"
+[msdocs:Get-VM]: https://docs.microsoft.com/en-us/powershell/module/hyper-v/Get-vm "Get-VM"
+[msdocs:Import-VM]: https://docs.microsoft.com/en-us/powershell/module/hyper-v/Import-vm "Import-VM"
+[msdocs:Measure-VM]: https://docs.microsoft.com/en-us/powershell/module/hyper-v/Measure-vm "Measure-VM"
+[msdocs:Move-VM]: https://docs.microsoft.com/en-us/powershell/module/hyper-v/move-vm "Move-VM"
+[msdocs:New-VM]: https://docs.microsoft.com/en-us/powershell/module/hyper-v/New-vm "New-VM"
+[msdocs:Remove-VM]: https://docs.microsoft.com/en-us/powershell/module/hyper-v/Remove-vm "Remove-VM"
+[msdocs:Rename-VM]: https://docs.microsoft.com/en-us/powershell/module/hyper-v/Rename-vm "Rename-VM"
+[msdocs:Restart-VM]: https://docs.microsoft.com/en-us/powershell/module/hyper-v/Restart-vm "Restart-VM"
+[msdocs:Resume-VM]: https://docs.microsoft.com/en-us/powershell/module/hyper-v/Resume-vm "Resume-VM"
+[msdocs:Save-VM]: https://docs.microsoft.com/en-us/powershell/module/hyper-v/Save-vm "Save-VM"
+[msdocs:Set-VM]: https://docs.microsoft.com/en-us/powershell/module/hyper-v/Set-vm "Set-VM"
+[msdocs:Start-VM]: https://docs.microsoft.com/en-us/powershell/module/hyper-v/Start-vm "Start-VM"
+[msdocs:Stop-VM]: https://docs.microsoft.com/en-us/powershell/module/hyper-v/Stop-vm "Stop-VM"
+[msdocs:Suspend-VM]: https://docs.microsoft.com/en-us/powershell/module/hyper-v/Suspend-vm "Suspend-VM"
+
 Install Hyper-V Powershell module <sup>[Zacker][Zacker]: 90</sup>
 ```powershell
 Install-WindowsFeature -Name hyper-v-powershell
 ```
-###### `Export-VM`
+###### `Compare-VM`[^][msdocs:Compare-VM]
+###### `Export-VM`[^][msdocs:Export-VM]
 Export a VM <sup>[Zacker][Zacker]: 373</sup>
 ```powershell
 Export-Vm -Name clustervm1 -Path D:\vm
 ```
-###### `Import-VM`
+###### `Get-VM`[^][msdocs:Get-VM]
+###### `Import-VM`[^][msdocs:Import-VM]
 Import a VM into the Hyper-V host <sup>[Zacker][Zacker]: 373</sup>
 ```powershell
 Import-VM -Path "D:\vm\virtual machines\5ae40946-3a98-428e-8c83-081a3c68d18c.xml" -Copy -GenerateNewId
 ```
-###### `Move-VM`
+###### `Measure-VM`[^][msdocs:Measure-VM]
+###### `Move-VM`[^][msdocs:Move-VM]
 Perform a live migraiton <sup>[Zacker][Zacker]: 307</sup>
 ```powershell
 Move-VM -VM server1 -DestinationHost hyper2
 ```
-###### `New-VM`
+###### `New-VM`[^][msdocs:New-VM]
 Create a Nano Server VM from an image file <sup>[Zacker][Zacker]: 47</sup>
 ```powershell
 New-VM -Name "nano2" -Generation 2 -MemoryStartupBytes 1GB -VHDPath "F:\hyper-v\virtual hard disks\nano2.vhdx"
 ```
+###### `Remove-VM`[^][msdocs:Remove-VM]
+###### `Rename-VM`[^][msdocs:Rename-VM]
+###### `Restart-VM`[^][msdocs:Restart-VM]
+###### `Resume-VM`[^][msdocs:Resume-VM]
+###### `Save-VM`[^][msdocs:Save-VM]
+###### `Set-VM`[^][msdocs:Set-VM]
+###### `Start-VM`[^][msdocs:Start-VM]
+###### `Stop-VM`[^][msdocs:Stop-VM]
+###### `Suspend-VM`[^][msdocs:Suspend-VM]
 ##### `VMHost`
 ###### `Set-VMHost`
 [Set-VMHost -VirtualMachinePath]: #Set-VMHost '```&#10;PS C:\> Set-VMHost -VirtualMachinePath&#10;```&#10;Specify the default folder to store virtual machine configuration files on the Hyper-V host'
@@ -1568,21 +1608,25 @@ Enable secure boot on Generation 2 Linux VMs <sup>[IMWS][IMWS]</sup>
 Set-VMFirmware vmname -SecureBootTemplate MicrosoftUEFICertificateAuthority
 ```
 ###### `Set-VMMemory`
-Disable dynamic memory on a virtual host (nested virtualization)
-```powershell
-Set-VMMemory -VMName SRV01 -DynamicMemoryEnabled $false
-```
+Tasks:
+- [Implement nested virtualization](#implement-nested-virtualization)
+
 ###### `Set-VMProcessor`
-Configure 2 virtual processors on a virtual host (nested virtualization)
-```powershell
-Set-VMProcessor -VMName SVR01 -Count 2
-```
+- [Implement nested virtualization](#implement-nested-virtualization)
+
 ###### `Set-VMReplicationServer`
 Configure a server's replica configuration <sup>[Zacker][Zacker]: 300</sup>
 ```powershell
 Set-VmReplicationServer -ReplicationEnabled $true -AllowedAuthenticationType kerberos -ReplicationAllowedFromAnyServer $true -DefaultStorageLocation D:\replicas
 ```
 ##### `VMSwitch`
+[msdocs:Set-VMSwitch]: https://docs.microsoft.com/en-us/powershell/module/hyper-v/set-vmswitch "Set-VMSwitch"
+[msdocs:New-VMSwitch]: https://docs.microsoft.com/en-us/powershell/module/hyper-v/new-vmswitch "New-VMSwitch"
+[msdocs:Get-VMSwitch]: https://docs.microsoft.com/en-us/powershell/module/hyper-v/get-vmswitch "Get-VMSwitch"
+[msdocs:Add-VMSwitch]: https://docs.microsoft.com/en-us/powershell/module/hyper-v/add-vmswitch "Add-VMSwitch"
+[msdocs:Remove-VMSwitch]: https://docs.microsoft.com/en-us/powershell/module/hyper-v/remove-vmswitch "Remove-VMSwitch"
+[msdocs:Rename-VMSwitch]: https://docs.microsoft.com/en-us/powershell/module/hyper-v/rename-vmswitch "Rename-VMSwitch"
+
 [external virtual switch]: # 'external virtual switch&#10;bound to networking protocol stack in the host operating system and connected to a physical network interface adapter on the host, allowing VMs to access the network to which the physical adapter is connected&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 241'
 [internal virtual switch]: # 'internal virtual switch&#10;Bound to a separate instance of the networking protocol stack in the host operating system, independent from the physical network interface adapter and its connected network, it allows VMs to access the virtual network, including the host operating system.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 241'
 [private virtual switch]: # 'private virtual switch&#10;Exists only in the Hyper-V server and is accessible only to the VMs running on it, and is inaccessible to the host operating system itself.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 241'
@@ -1619,12 +1663,16 @@ New-NetNAT -Name LocalNAT -InternalIPInterfaceAddressPrefix "192.168.100.0/24"
 [`AllowManagementOS`][Set-VMSwitch -AllowManagementOS]
 
 ##### `VMNetworkAdapter`
-###### `Add-VMNetworkAdapter`
+###### `Add-VMNetworkAdapter`[^][msdocs:Add-VMNetworkAdapter]
+[msdocs:Add-VMNetworkAdapter]: https://docs.microsoft.com/en-us/powershell/module/hyper-v/Add-vmnetworkadapter "Add-VMNetworkAdapter"
+
 Create a network adapter <sup>[Zacker][Zacker]: 237</sup>
 ```powershell
 Add-VMNetworkAdapter -VMName server1 -SwitchName private1
 ```
-###### `Remove-VMNetworkAdapter`
+###### `Remove-VMNetworkAdapter`[^][msdocs:Remove-VMNetworkAdapter]
+[msdocs:Remove-VMNetworkAdapter]: https://docs.microsoft.com/en-us/powershell/module/hyper-v/remove-vmnetworkadapter "Remove-VMNetworkAdapter"
+
 Remove a network adapter <sup>[Zacker][Zacker]: 237</sup>
 ```powershell
 Remove-VMNetworkAdapter -VMName server1 -VMNetworkAdapter nic1
@@ -1636,14 +1684,14 @@ Remove-VMNetworkAdapter -VMName server1 -VMNetworkAdapter nic1
 [Set-VMNetworkAdapter -MinimumBandwidthAbsolute]: #Set-VMNetworkAdapter '```&#10;PS C:\> Set-VMNetworkAdapter -MinimumBandwidthAbsolute&#10;```&#10;Specify the minimum bandwidth allocated to an adapter, ensuring it is not denied access when others contend for bandwidth.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 255'
 [Set-VMNetworkAdapter -MaximumBandwidth]: #Set-VMNetworkAdapter '```&#10;PS C:\> Set-VMNetworkAdapter -MaximumBandwidth&#10;```&#10;Specify the maximum bandwidth available to an adapter; must not exceed the actual bandwidth provided by the physical network adapter.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 255'
 
+`MACAddressSpoofing`
 [`MaximumBandwidth`][Set-VMNetworkAdapter -MaximumBandwidth]
 [`MinimumBandwidthAbsolute`][Set-VMNetworkAdapter -MinimumBandwidthAbsolute]
 [`MinimumBandwidthWeight`][Set-VMNetworkAdapter -MinimumBandwidthWeight]
 
-Turn on MAC address spoofing on a virtual host (nested virtualization)
-```powershell
-Set-VMNetworkAdapter -VMName SVR01 -Name "NetworkAdapter" -MACAddressSpoofing On
-```
+Tasks:
+- [Implement nested virtualization](#implement-nested-virtualization)
+
 Set bandwidth limits on a virtual network adapter <sup>[Zacker][Zacker]: 256</sup>
 ```powershell
 Set-VMNetworkAdapter -VMName server1 -Name nic1 -MinimumBandwidthWeight
@@ -1770,21 +1818,23 @@ Get-WindowsFeature
 [**`Name`**][Install-WindowsFeature -Name] 
 `IncludeAllSubFeature` 
 `IncludeManamgentTools`
+`Restart`
 
 Install a feature <sup>[Zacker][Zacker]: 15</sup>
 ```powershell
 Install-WindowsFeature -Name $featurename -IncludeAllSubFeature -IncludeManagementTools
-
-# Remote Server Adminstration Tools for PowerShell
+```
+Install Remote Server Adminstration Tools for PowerShell
+```powershell
 Install-WindowsFeature -Name rsat-adds -IncludeAllSubFeature
-
-# Install Hyper-V
+```
+Install Hyper-V
+```powershell
 Install-WindowsFeature -Name Hyper-V -IncludeAllSubFeature -IncludeManagementTools -Restart
 ```
 Install Web Server <sup>[Jones][Jones]</sup>
 ```powershell
 Install-WindowsFeature web-webserver -IncludeManagementTools
-
 Install-WindowsFeature Web-Server,Web-Common-Http,Web-Mgmt-Console -Restart
 ```
 Create a domain controller
@@ -1799,6 +1849,7 @@ Install Windows Server Migration Tools <sup>[Zacker][Zacker]: 33</sup>
 ```powershell
 Install-WindowsFeature Migration
 ```
+
 ##### `WindowsOptionalFeature`
 ###### `Enable-WindowsOptionalFeature`
 Enable a feature in the currently running operating system <sup>[docs.microsoft.com](https://docs.microsoft.com/en-us/powershell/module/dism/enable-windowsoptionalfeature?view=win10-ps&redirectedfrom=MSDN "Microsoft Docs: \"Enable-WindowsOptionalFeature\"")</sup>
@@ -2125,3 +2176,49 @@ Add new virtual network adapters to VMs
 Add-VMNetworkAdapter -VMName server1 -SwitchName setswitch -Name set1
 ```
 Enable RDMA with [`Get-`][Get-NetAdapterRdma] and [`Enable-NetAdapterRdma`][Enable-NetAdapterRdma].
+#### Implement nested virtualization
+Both the physical host and the nested virtual host must be running Windows Server 2016, but before installing Hyper-V on the nested host, the following configurations must be made. <sup>[Zacker][Zacker]: 181</sup>
+
+Provide nested host's processor with access to virtualization technology on the physical host
+```powershell
+Set-VMProcessor -VMName server1 -ExposeVirtualizationExtensions $true
+```
+Disable dynamic memory
+```powershell
+Set-VMMemory -VMName SRV01 -DynamicMemoryEnabled $false
+```
+Configure 2 virtual processors
+```powershell
+Set-VMProcessor -VMName SVR01 -Count 2
+```
+Turn on MAC address spoofing
+```powershell
+Set-VMNetworkAdapter -VMName SVR01 -Name "NetworkAdapter" -MACAddressSpoofing On
+```
+#### Enable CredSSP
+On the remote (managed) server <sup>[Zacker][Zacker]: 176</sup>
+```powershell
+Enable-PSRemoting
+Enable-WSManCredSSP
+```
+Add the fully-qualified domain name of the Hyper-V server to be managed to the local system's WSMan trusted hosts list
+```powershell
+Set-Item WSMan:\localhost\client\trustedhosts -Value "hypervserver.domain.com"
+```
+Enable the use of CredSSP on the client 
+```powershell
+Enable-WSManCredSSP -Role client -DelegateComputer "hypervserver.domain.com"
+```
+#### Configure Server Core
+Manually configure network interface, if a DHCP server is unavailable <sup>[Zacker][Zacker]: 19</sup>
+```powershell
+New-NetIPAddress 10.0.0.3 -InterfaceAlias "Ethernet' -PrefixLength 24
+```
+Configure the DNS server addresses for the adapter
+```powershell
+Set-DnsClientServerAddress -InterfaceIndex 6 -ServerAddresses ("192.168.0.1","192.168.0.2")
+```
+Rename the computer and join it to a domain
+```powershell
+Add-Computer -DomainNAme adatum.com -NewName Server8 -Credential adatum\administrator
+```
