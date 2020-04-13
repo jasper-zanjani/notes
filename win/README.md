@@ -43,6 +43,7 @@
 [sfc]: #sfc                            '```&#10;C:\>sfc&#10;C:\>sfc /scannow&#10;```&#10;Scan and verify protected system files&#10;Stanek, William R. _Microsoft Windows Command-Line_.: 373'
 [slmgr]: #slmgr.vbs                          '```&#10;C:\>slmgr&#10;```&#10;Windows software licensing management tool'
 [systeminfo]: #systeminfo                     '```&#10;C:\>systeminfo&#10;```&#10;Shows system information about the machine, including installed hotfixes and patches'
+[VMConnect.exe]: #vmconnect.exe '```&#10;C:\>VMConnect.exe&#10;```&#10;"Virtual Machine Connection", Hyper-V tool used to connect to a running VM and access its desktop'
 [winver]: #winver                                             '```&#10;C:\>winver&#10;```&#10;Display the "About Windows" dialog box, including Windows version and build number'
 [wmic]: #wmic                           '```&#10;C:\>wmic&#10;```&#10;WMI command-line (WMIC) utility provides a command-line interface for WMI.'
 [wt.exe]: #wt.exe '```&#10;C:\>wt&#10;```&#10;Windows Terminal'
@@ -127,6 +128,7 @@
 [`systeminfo`][systeminfo]
 [`tracert`](#tracert) 
 [`traceroute`](#tracert)
+[`VMConnect.exe`][VMConnect.exe]
 [`winrm`](#winrmexe) 
 [`winver`][winver]
 [`wmic`][wmic]
