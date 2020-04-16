@@ -1306,7 +1306,6 @@ Configure firewall to allow remote administration using MMC snap-ins
 ```powershell
 Enable-NetFirewallRule -DisplayGroup "Remote Administration"
 ```
-
 ```powershell
 Enable-NetFirewallRule -name COMPlusNetworkAccess-DCOM-In
 Enable-NetFirewallRule -name RemoteEventLogSvc-In-TCP
@@ -1348,6 +1347,7 @@ Set firewall rule for Remote Event Log Management (RPC-EPMAP)
 ```powershell
 Set-NetFirewallRule -name RemoteEventLogSvc-RPCSS-TCP -Enabled True
 ```
+
 ##### `NetIpAddress`
 ###### `New-NetIpAddress`
 [New-NetIpAddress -DefaultGateway]: #New-NetIpAddress '```&#10;PS C:\> New-NetIpAddress -DefaultGateway&#10;```&#10;Specify IP address of local router that computer should use to access other networks'
@@ -1399,6 +1399,20 @@ Scrape links from a website
 Request data from a website impersonating a browser
 ```powershell
 Invoke-WebRequest -Uri http://microsoft.com -UserAgent ([Microsoft.PowerShell.Commands.PSUserAgent]::Chrome)
+```
+Trigger Azure Automation runbook by POSTing a JSON file to a configured webhook 
+```powershell
+$uri = "https://s4events.azure-automation.net/webhooks?token=1xc1iDzrkLc7Wqot341GzameBhYavv0msLwkQQo%2bB88%3d"
+
+$vms  = @(
+  @{ Name="web1";ResourceGroup="webservers"},
+  @{ Name="web2";ResourceGroup="webservers"}
+)
+
+$body = ConvertTo-Json -InputObject $vms
+$header = @{ message="Started by Mike Pfeiffer"}
+
+Invoke-WebRequest -Method Post -Uri $uri -Body $body -Headers $header
 ```
 #### Process control
 ##### `Process`
@@ -1621,6 +1635,10 @@ Set-Item WSMAN:\localhost\service\auth\credssp -value $true
 ###### `ForEach-Object`[^][msdocs:ForEach-Object]
 ###### `New-Object`[^][msdocs:New-Object]
 ###### `Select-Object`[^][msdocs:Select-Object]
+Create a custom property <sup>[Pfeiffer](https://portal.cloudskills.io/products/azure-powershell-the-ultimate-beginners-course/categories/2529580/posts/8443858 "Azure PowerShell course") </sup>
+```powershell
+Get-AzVM | Select-Object Name,@{Name="DataDiskCount"; Expression={$_.StorageProfile.DataDisks.count}}
+```
 ###### `Where-Object`[^][msdocs:Where-Object]
 #### Hyper-V
 [msdocs:Add-VMDvdDrive]: https://docs.microsoft.com/en-us/powershell/module/hyper-v/Add-VMDvdDrive "Add-VMDvdDrive"
@@ -1904,7 +1922,7 @@ Tasks:
 
 ###### `Set-VMProcessor`
 - [Implement nested virtualization](#implement-nested-virtualization)
-
+##### `VMReplicationServer`
 ###### `Set-VMReplicationServer`
 Configure a server's replica configuration <sup>[Zacker][Zacker]: 300</sup>
 ```powershell
@@ -2675,4 +2693,12 @@ Dismount-VmHostAssignableDevice -LocationPath
 Attach the device to a guest
 ```powershell
 Add-VMAssignableDevice -VM -LocationPath
+```
+#### Configure live migration
+Live migration is possible between Hyper-V hosts that are not clustered, but they must be within the same (or trusted) domains. <sup>[Zacker][Zacker]</sup>
+```powershell
+Enable-VMMigration
+Set-VMMigrationNetwork 192.168.4.0
+Set-VMHost -VirtualMachineMigrationAuthenticationType Kerberos
+Set-VMHost -VirtualMachineMigrationPerformanceOption smbtransport
 ```
