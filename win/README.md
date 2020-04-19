@@ -7,11 +7,13 @@
 [https://pcsupport.lenovo.com/us/en/solutions/find-product-name]: https://pcsupport.lenovo.com/us/en/solutions/find-product-name "Find my product or serial number - Windows OS Command Prompt (cmd.exe) prompt"
 [Desmond2009]: https://github.com/jasper-zanjani/notes/master/sources/ad.md "Desmond, Brian et al. _Active Directory_. O'Reilly Media, 2009."
 [pl:Sec+]: https://pts.measureup.com/web/index.php#dashboard.php "Practice Lab: CompTIA Security+ (SY0-501)"
+[pl:70-740]: https://pts.measureup.com/web/index.php#dashboard.php "Practice Lab: Installation Storage and Compute with Windows Server 2016 (70-740)"
 [Lammle]: https://github.com/jasper-zanjani/notes/master/certs/n10-007.md "Lammle, Todd. _CompTIA Network+ Study Guide: Exam N10-005_. 2012."
 [Zacker]: https://github.com/jasper-zanjani/notes/master/certs/70-740.md "Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017."
 
 <!-- Concepts -->
 [UWP]: #uwp 'Universal Windows Platform (UWP)&#10;Universal Windows Platform provides a common app platform on every device that runs Windows 10, and UWP apps are primarily associated with the Microsoft Store.&#10;"Universal Windows Platform apps". _Wikipedia_.'
+[WinHTTP]: # 'Windows HTTP Services (WinHTTP)&#10;Provides a server-supported, high-level interface to the HTTP/2 and 1.1 Internet protocols. WinHTTP is designed to be used primarily in server-based scenarios by server applications that communicate with HTTP servers&#10;Windows Update uses WinHTTP to check for updates.'
 
 <!-- Active Directory -->
 [adfind]: #adfind '```&#10;adfind&#10;```&#10;Command-line utility that can be used to query Active Directory attributes&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 53'
@@ -364,6 +366,15 @@ Determine exact name of Windows features that can be enabled and disabled <sup>[
 ```cmd
 dism /image:c:\mount /get-features
 ```
+###### `djoin.exe`
+Perform an offline domain join for a Nano Server <sup>[Practice Lab][pl:70-740]</sup>
+```cmd
+djoin  /provision /domain practicelabs /machine PLABNANOSRV01 /savefile .\odjblob
+```
+Load the `odjblob` file created offline on the Nano Server.
+```cmd
+djoin /requestodj /loadfile c:\odjblob /windowspath c:\windows /localos
+```
 
 ###### `dsamain`
 
@@ -399,6 +410,12 @@ Equivalent to `shutdown -L`
 
 <code>&nbsp;</code>   [`a`][nbtstat /&#97;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`n`][nbtstat /&#110;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`r`][nbtstat /&#114;] [`s`][nbtstat /&#115;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code>  <br><code>&nbsp;</code>&nbsp;[`A`][nbtstat /&#65;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`R`][nbtstat /&#82;] [`S`][nbtstat /&#83;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 
 
+###### `net`
+Map a network location to a drive letter <sup>[Practice Lab][pl:70-740]</sup>
+```cmd
+net use x: \\192.168.0.35\c$
+```
+
 ###### `netdom`
 Alternative to [`Add-Computer`][Add-Computer] PowerShell cmdlet [<sup>Zacker: 21</sup>][Zacker]
 
@@ -425,6 +442,7 @@ netdom join %computername% /domain: domainname /userd: username /password:*
 [netsh wins]:                     #netsh                         '```&#10;C:\>netsh wins&#10;C:\>netsh&#10;netsh>wins&#10;```&#10;WINS, used to view and manage NetBIOS resolution for pre-Windows 2000 computers&#10;Stanek, William R. _Microsoft Windows Command-Line_.: 298'
 
 [`aaaa`][netsh aaaa] 
+`advfirewall`
 [`bridge`][netsh bridge] 
 [`dhcp`][netsh dhcp] 
 [`diag`][netsh diag] 
@@ -435,6 +453,7 @@ netdom join %computername% /domain: domainname /userd: username /password:*
 [`ras`][netsh ras] 
 [`routing`][netsh routing] 
 [`rpc`][netsh rpc] 
+`winhttp`
 [`wins`][netsh wins] 
 `wlan`
 
@@ -450,9 +469,18 @@ Turn off Windows firewall
 ```cmd
 netsh advfirewall set allprofiles state off
 ```
+Enable firewall rule group <sup>[Practice Lab][pl:70-740]</sup>
+```cmd
+netsh advfirewall firewall set rule group=”File and Printer Sharing” new enable=yes
+```
 Show Wi-Fi passwords <sup>[helpdeskgeek.com](https://helpdeskgeek.com/how-to/find-the-wifi-password-in-windows-10-using-cmd/ "Find the WiFi Password in Windows 10 Using CMD")</sup>
 ```cmd
 netsh wlan show profile wifi key=clear
+```
+Check/reset [WinHTTP][WinHTTP] proxy <sup>[Practice Lab][pl:70-740]</sup>
+```cmd
+netsh winhttp show proxy
+netsh winhttp reset proxy
 ```
 ###### `ntdsutil`
 Used to transfer [FSMO](# "\"Flexible Single Master Operator\", server that is master for a particular role or function") roles between domain controllers. [<sup>Desmond: 30</sup>][Desmond2009]
