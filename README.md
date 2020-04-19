@@ -55,6 +55,21 @@ bot = TwitchBot.new
 bot.write_to_chat "Hello world"
 ```
 
+## .NET
+[.NET Framework]: #.net '.NET Framework&#10;set of APIs associated with the C# programming language that facilitate the management of Microsoft-based products and development of Windows applications&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2013.: 504'
+[.NET]: #.net '.NET&#10;open-source development platform that includes languages and libraries'
+
+The .NET ecosystem has 3 **runtimes**, all of which implement the **.NET Standard Library** and rest on common **build tools**, languages, and **runtime components**
+- [**.NET Framework**][.NET Framework] released in 2002, making it the oldest runtime, and runs only on Windows. Two major components:
+  - **Common Language Runtime (CLR)** runs **managed code** and performs garbage collection
+  - **.NET Framework Class Library** (also called the **Base Class Library**) is composed of many classes, interfaces, and value types
+- **.NET Core** is cross-platform, open-source, and optimized for performance. Its application host is `dotnet.exe`
+  - **Core Common Language Runtime (CoreCLR)** is more lightweight than that of .NET Framework, but implements **Just-In Time** compilation
+  - **.NET Core Class Library** is smaller than (and actually a subset of) that of .NET Framework
+- **Mono for Xamarin** is used for mobile platforms like IOS, Android, and OS X
+
+**.NET Standard** is a specification of which APIs are available across all these runtimes. It evolved from **Portable Class Libraries (PCL)** and will eventually replace them.
+
 ## VMware
 Hypervisor, similar to Hyper-V, but provided at a cost, with a robust command-line interface via PowerShell. [^][3]
 
@@ -64,3 +79,4 @@ Hypervisor, similar to Hyper-V, but provided at a cost, with a robust command-li
 [2]: https://realpython.com/how-to-make-a-discord-bot-python/ "How to make a Discord bot in Python"
 [3]: https://www.brianbunke.com/blog/2019/09/03/powercli-101/ "VMware PowerCLI 101"
 [5]: sources/README.md/#new-stack-makers "Storage in a DevOps World"
+

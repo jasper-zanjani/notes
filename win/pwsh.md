@@ -298,31 +298,88 @@ Remoting relies on [WinRM][WinRM], which is Microsoft's implementation of WSMAN.
 <code>Null&nbsp;[o][Out-Null]</code> 
 
 ##### File share cmdlets
-[Get-SmbClientConfiguration]: #get-smbclientconfiguration '```&#10;PS C:\> Get-SmbClientConfiguration&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 111'
-[Close-SmbOpenFile]: #close-smbopenfile '```&#10;PS C:\> Close-SmbOpenFile&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 108'
-[Get-SmbOpenFile]: #get-smbopenfile '```&#10;PS C:\> Get-SmbOpenFile&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 108'
-[Set-SmbPathAcl]: #set-smbpathacl '```&#10;PS C:\> Set-SmbPathAcl&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 340'
-[Set-SmbServerConfiguration]: #set-smbserverconfiguration '```&#10;PS C:\> Set-SmbServerConfiguration&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 109'
-[Close-SmbSession]: #close-smbsession '```&#10;PS C:\> Close-SmbSession&#10;```&#10;Ends forcibly the SMB session.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 107'
-[Get-SmbSession]: #get-smbsession '```&#10;PS C:\> Get-SmbSession&#10;```&#10;Retrieves information about the SMB sessions that are currently established between the SMB server and the associated clients.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 107'
-[New-SmbShare]: #new-smbshare '```&#10;PS C:\> New-SmbShare&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 106'
-[Remove-SmbShare]: #remove-smbshare '```&#10;PS C:\> Remove-SmbShare&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 108'
-[Block-SmbShareAccess]: #block-smbshareaccess '```&#10;PS C:\> Block-SmbShareAccess&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 109'
-[Get-SmbShareAccess]: #get-smbshareaccess '```&#10;PS C:\> Get-SmbShareAccess&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 108'
-[Grant-SmbShareAccess]: #grant-smbshareaccess '```&#10;PS C:\> Grant-SmbShareAccess&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 109'
-[Revoke-SmbShareAccess]: #revoke-smbshareaccess '```&#10;PS C:\> Revoke-SmbShareAccess&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 109'
-[Unblock-SmbShareAccess]: #unblock-smbshareaccess '```&#10;PS C:\> Unblock-SmbShareAccess&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 109'
-[Close-SmbOpenFile]: #close-smbopenfile '```&#10;PS C:\> Close-SmbOpenFile&#10;```&#10;Close a file that is open by one of the clients of the SMB server&#10;"Close-SmbOpenFile". _Microsoft Docs_.'
-[Get-SmbOpenFile]: #get-smbopenfile '```&#10;PS C:\> Get-SmbOpenFile&#10;```&#10;Retrieve basic information about the files that are open on behalf of the clients of the Server Message Block (SMB) server&#10;"Get-SmbOpenFile". _Microsoft Docs_.'
-[New-SmbShare]: #new-smbshare '```&#10;PS C:\> New-SmbShare&#10;```&#10;'
+[Get-SmbBandwidthLimit]: #get-smbbandwidthlimit '```&#10;Get-SmbBandwidthLimit&#10;```&#10;Gets the list of SMB bandwidth caps for each traffic category.'
+[Remove-SmbBandwidthLimit]: #remove-smbbandwidthlimit '```&#10;Remove-SmbBandwidthLimit&#10;```&#10;Removes SMB bandwidth caps.'
+[Set-SmbBandwidthLimit]: #set-smbbandwidthlimit '```&#10;Set-SmbBandwidthLimit&#10;```&#10;Adds an SMB bandwidth cap.'
+[Get-SmbClientConfiguration]: #get-smbclientconfiguration '```&#10;Get-SmbClientConfiguration&#10;```&#10;Retrieves the SMB client configuration.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 111'
+[Set-SmbClientConfiguration]: #set-smbclientconfiguration '```&#10;Set-SmbClientConfiguration&#10;```&#10;Sets the SMB client configuration.'
+[Get-SmbClientNetworkInterface]: #get-smbclientnetworkinterface '```&#10;Get-SmbClientNetworkInterface&#10;```&#10;Retrieves the network interfaces used by the SMB client.'
+[Get-SmbConnection]: #get-smbconnection '```&#10;Get-SmbConnection&#10;```&#10;Retrieves the connections established from the SMB client to the SMB servers.'
+[Disable-SmbDelegation]: #disable-smbdelegation '```&#10;Disable-SmbDelegation&#10;```&#10;Disables a constrained delegation authorization for an SMB client and server.'
+[Enable-SmbDelegation]: #enable-smbdelegation '```&#10;Enable-SmbDelegation&#10;```&#10;Enables a constrained delegation authorization for an SMB client and server.'
+[Get-SmbDelegation]: #get-smbdelegation '```&#10;Get-SmbDelegation&#10;```&#10;Gets the constrained delegation authorizations for an SMB client.'
+[Get-SmbMapping]: #get-smbmapping '```&#10;Get-SmbMapping&#10;```&#10;Retrieves the SMB client directory mappings created for a server.'
+[New-SmbMapping]: #new-smbmapping '```&#10;New-SmbMapping&#10;```&#10;Creates an SMB mapping.'
+[Remove-SmbMapping]: #remove-smbmapping '```&#10;Remove-SmbMapping&#10;```&#10;Removes the SMB mapping to an SMB share.'
+[Get-SmbMultichannelConnection]: #get-smbmultichannelconnection '```&#10;Get-SmbMultichannelConnection&#10;```&#10;Retrieves the SMB connections made between the SMB client network interfaces and the SMB server network interfaces.'
+[Update-SmbMultichannelConnection]: #update-smbmultichannelconnection '```&#10;Update-SmbMultichannelConnection&#10;```&#10;Forces the SMB client to update the multi-channel-related information.'
+[Get-SmbMultichannelConstraint]: #get-smbmultichannelconstraint '```&#10;Get-SmbMultichannelConstraint&#10;```&#10;Retrieves the constraints that define how the SMB client uses network interfaces to connect to the servers.'
+[New-SmbMultichannelConstraint]: #new-smbmultichannelconstraint '```&#10;New-SmbMultichannelConstraint&#10;```&#10;Creates an SMB multi-channel constraint for the specified server.'
+[Remove-SmbMultichannelConstraint]: #remove-smbmultichannelconstraint '```&#10;Remove-SmbMultichannelConstraint&#10;```&#10;Removes SMB multi-channel constraints.'
+[Close-SmbOpenFile]: #close-smbopenfile '```&#10;Close-SmbOpenFile&#10;```&#10;Close a file that is open by one of the clients of the SMB server&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 108'
+[Get-SmbOpenFile]: #get-smbopenfile '```&#10;Get-SmbOpenFile&#10;```&#10;Retrieve basic information about the files that are open on behalf of the clients of the Server Message Block (SMB) server&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 108'
+[Set-SmbPathAcl]: #set-smbpathacl '```&#10;Set-SmbPathAcl&#10;```&#10;Sets the ACL for the file system folder to match the ACL used by an SMB share.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 340'
+[Get-SmbServerConfiguration]: #get-smbserverconfiguration '```&#10;Get-SmbServerConfiguration&#10;```&#10;Retrieves the SMB server configuration.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 109'
+[Set-SmbServerConfiguration]: #set-smbserverconfiguration '```&#10;Set-SmbServerConfiguration&#10;```&#10;Sets the SMB Service configuration.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 109'
+[Get-SmbServerNetworkInterface]: #get-smbservernetworkinterface '```&#10;Get-SmbServerNetworkInterface&#10;```&#10;Retrieves the network interfaces used by the SMB server.'
+[Close-SmbSession]: #close-smbsession '```&#10;Close-SmbSession&#10;```&#10;Ends forcibly the SMB session.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 107'
+[Get-SmbSession]: #get-smbsession '```&#10;Get-SmbSession&#10;```&#10;Retrieves information about the SMB sessions that are currently established between the SMB server and the associated clients.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 107'
+[New-SmbShare]: #new-smbshare '```&#10;New-SmbShare&#10;```&#10;Creates an SMB share.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 106'
+[Remove-SmbShare]: #remove-smbshare '```&#10;Remove-SmbShare&#10;```&#10;Deletes the specified SMB shares.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 108'
+[Get-SmbShare]: #get-smbshare '```&#10;Get-SmbShare&#10;```&#10;Retrieves the SMB shares on the computer.'
+[Set-SmbShare]: #set-smbshare '```&#10;Set-SmbShare&#10;```&#10;Modifies the properties of the SMB share.'
+[Block-SmbShareAccess]: #block-smbshareaccess '```&#10;Block-SmbShareAccess&#10;```&#10;Adds a deny ACE for a trustee to the security descriptor of the SMB share.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 109'
+[Get-SmbShareAccess]: #get-smbshareaccess '```&#10;Get-SmbShareAccess&#10;```&#10;Retrieves the ACL of the SMB share.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 108'
+[Grant-SmbShareAccess]: #grant-smbshareaccess '```&#10;Grant-SmbShareAccess&#10;```&#10;Adds an allow ACE for a trustee to the security descriptor of the SMB share.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 109'
+[Revoke-SmbShareAccess]: #revoke-smbshareaccess '```&#10;Revoke-SmbShareAccess&#10;```&#10;Removes all of the allow ACEs for a trustee from the security descriptor of the SMB share.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 109'
+[Unblock-SmbShareAccess]: #unblock-smbshareaccess '```&#10;Unblock-SmbShareAccess&#10;```&#10;Removes all of the deny ACEs for the trustee from the security descriptor of the SMB share.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 109'
 
 [**Smb**](#smb)
-<code>ClientConfiguration&nbsp;[g][Get-SmbClientConfiguration]</code>
+<code>BandwidthLimit
+&nbsp;[g][Get-SmbBandwidthLimit]
+&nbsp;[r][Remove-SmbBandwidthLimit]
+&nbsp;[s][Set-SmbBandwidthLimit] </code>
+<code>ClientConfiguration
+&nbsp;[g][Get-SmbClientConfiguration] 
+&nbsp;[s][Set-SmbClientConfiguration] </code>
+<code>ClientNetworkInterface
+&nbsp;[g][Get-SmbClientNetworkInterface] </code>
+<code>Connection
+&nbsp;[g][Get-SmbConnection] </code>
+<code>Delegation
+&nbsp;[d][Disable-SmbDelegation] 
+&nbsp;[e][Enable-SmbDelegation] 
+&nbsp;[g][Get-SmbDelegation] </code>
+<code>Mapping
+&nbsp;[g][Get-SmbMapping] 
+&nbsp;[n][New-SmbMapping] 
+&nbsp;[r][Remove-SmbMapping] </code>
+<code>MultiChannel
+&nbsp;[g][Get-SmbMultichannelConnection] 
+&nbsp;[ud][Update-SmbMultichannelConnection] 
+&nbsp;[g][Get-SmbMultichannelConstraint] 
+&nbsp;[n][New-SmbMultichannelConstraint] 
+&nbsp;[r][Remove-SmbMultichannelConstraint] </code>
 <code>OpenFile&nbsp;[g][Get-SmbOpenFile]&nbsp;[cs][Close-SmbOpenFile]</code>
-<code>ServerConfiguration&nbsp;g&nbsp;[s][Set-SmbServerConfiguration]</code>
-<code>Session&nbsp;[cs][Close-SmbSession]&nbsp;[g][Get-SmbSession]</code>
-<code>Share&nbsp;[n][New-SmbShare]&nbsp;[r][Remove-SmbShare]</code>
-<code>ShareAccess&nbsp;[g][Get-SmbShareAccess]&nbsp;[bl][Block-SmbShareAccess]&nbsp;[gr][Grant-SmbShareAccess]&nbsp;[rk][Revoke-SmbShareAccess]&nbsp;[uk][Unblock-SmbShareAccess]</code>
+<code>PathAcl
+&nbsp;[s][Set-SmbPathAcl] </code>
+<code>ServerConfiguration
+&nbsp;[g][Get-SmbServerConfiguration] 
+&nbsp;[s][Set-SmbServerConfiguration] </code>
+<code>ServerNetworkInterface
+&nbsp;[g][Get-SmbServerNetworkInterface] </code>
+<code>Session
+&nbsp;[ch][Close-SmbSession] 
+&nbsp;[g][Get-SmbSession] </code>
+<code>Share
+&nbsp;[n][New-SmbShare] 
+&nbsp;[r][Remove-SmbShare] </code>
+<code>ShareAccess
+&nbsp;[bl][Block-SmbShareAccess] 
+&nbsp;[g][Get-SmbShareAccess] 
+&nbsp;[gr][Grant-SmbShareAccess] 
+&nbsp;[rk][Revoke-SmbShareAccess] 
+&nbsp;[ul][Unblock-SmbShareAccess] </code>
 
 ##### Network-related cmdlets
 [Add-DhcpServerInDC]: #add-dhcpserverindc '```&#10;PS C:\> Add-DhcpServerInDC&#10;```&#10;'
@@ -1494,12 +1551,163 @@ Tasks:
 
 
 #### Disks
+###### `Get-DedupProperties`[^][msdocs:Get-DedupProperties]
+###### `Clear-Disk`[^][msdocs:Clear-Disk]
+###### `Get-Disk`[^][msdocs:Get-Disk]
+###### `Initialize-Disk`[^][msdocs:Initialize-Disk]
+###### `Set-Disk`[^][msdocs:Set-Disk]
+###### `Update-Disk`[^][msdocs:Update-Disk]
+###### `Dismount-DiskImage`[^][msdocs:Dismount-DiskImage]
+###### `Get-DiskImage`[^][msdocs:Get-DiskImage]
+###### `Mount-DiskImage`[^][msdocs:Mount-DiskImage]
+###### `Get-DiskStorageNodeView`[^][msdocs:Get-DiskStorageNodeView]
+###### `Get-FileIntegrity`[^][msdocs:Get-FileIntegrity]
+###### `Repair-FileIntegrity`[^][msdocs:Repair-FileIntegrity]
+###### `Set-FileIntegrity`[^][msdocs:Set-FileIntegrity]
+###### `Debug-FileShare`[^][msdocs:Debug-FileShare]
+###### `Get-FileShare`[^][msdocs:Get-FileShare]
+###### `New-FileShare`[^][msdocs:New-FileShare]
+###### `Remove-FileShare`[^][msdocs:Remove-FileShare]
+###### `Set-FileShare`[^][msdocs:Set-FileShare]
+###### `Block-FileShareAccess`[^][msdocs:Block-FileShareAccess]
+###### `Grant-FileShareAccess`[^][msdocs:Grant-FileShareAccess]
+###### `Revoke-FileShareAccess`[^][msdocs:Revoke-FileShareAccess]
+###### `Unblock-FileShareAccess`[^][msdocs:Unblock-FileShareAccess]
+###### `Get-FileShareAccessControlEntry`[^][msdocs:Get-FileShareAccessControlEntry]
+###### `Set-FileStorageTier`[^][msdocs:Set-FileStorageTier]
+###### `Clear-FileStorageTier`[^][msdocs:Clear-FileStorageTier]
+###### `Get-FileStorageTier`[^][msdocs:Get-FileStorageTier]
+###### `Update-HostStorageCache`[^][msdocs:Update-HostStorageCache]
+###### `Get-InitiatorId`[^][msdocs:Get-InitiatorId]
+###### `Remove-InitiatorId`[^][msdocs:Remove-InitiatorId]
+###### `Remove-InitiatorIdFromMaskingSet`[^][msdocs:Remove-InitiatorIdFromMaskingSet]
+###### `Add-InitiatorIdToMaskingSet`[^][msdocs:Add-InitiatorIdToMaskingSet]
+###### `Get-InitiatorPort`[^][msdocs:Get-InitiatorPort]
+###### `Set-InitiatorPort`[^][msdocs:Set-InitiatorPort]
+###### `Get-MaskingSet`[^][msdocs:Get-MaskingSet]
+###### `New-MaskingSet`[^][msdocs:New-MaskingSet]
+###### `Remove-MaskingSet`[^][msdocs:Remove-MaskingSet]
+###### `Rename-MaskingSet`[^][msdocs:Rename-MaskingSet]
+###### `Get-OffloadDataTransferSetting`[^][msdocs:Get-OffloadDataTransferSetting]
+###### `Get-Partition`[^][msdocs:Get-Partition]
+###### `New-Partition`[^][msdocs:New-Partition]
+###### `Remove-Partition`[^][msdocs:Remove-Partition]
+###### `Resize-Partition`[^][msdocs:Resize-Partition]
+###### `Set-Partition`[^][msdocs:Set-Partition]
+###### `Add-PartitionAccessPath`[^][msdocs:Add-PartitionAccessPath]
+###### `Remove-PartitionAccessPath`[^][msdocs:Remove-PartitionAccessPath]
+###### `Get-PartitionSupportedSize`[^][msdocs:Get-PartitionSupportedSize]
+###### `Add-PhysicalDisk`[^][msdocs:Add-PhysicalDisk]
+###### `Get-PhysicalDisk`[^][msdocs:Get-PhysicalDisk]
+###### `Remove-PhysicalDisk`[^][msdocs:Remove-PhysicalDisk]
+###### `Reset-PhysicalDisk`[^][msdocs:Reset-PhysicalDisk]
+###### `Set-PhysicalDisk`[^][msdocs:Set-PhysicalDisk]
+###### `Disable-PhysicalDiskIdentification`[^][msdocs:Disable-PhysicalDiskIdentification]
+###### `Enable-PhysicalDiskIdentification`[^][msdocs:Enable-PhysicalDiskIdentification]
+###### `Get-PhysicalDiskStorageNodeView`[^][msdocs:Get-PhysicalDiskStorageNodeView]
+###### `Get-PhysicalExtent`[^][msdocs:Get-PhysicalExtent]
+###### `Get-PhysicalExtentAssociation`[^][msdocs:Get-PhysicalExtentAssociation]
+###### `Get-ResiliencySetting`[^][msdocs:Get-ResiliencySetting]
+###### `Set-ResiliencySetting`[^][msdocs:Set-ResiliencySetting]
+###### `Get-StorageAdvancedProperty`[^][msdocs:Get-StorageAdvancedProperty]
+###### `Get-StorageDiagnosticInfo`[^][msdocs:Get-StorageDiagnosticInfo]
+###### `Start-StorageDiagnosticLog`[^][msdocs:Start-StorageDiagnosticLog]
+###### `Stop-StorageDiagnosticLog`[^][msdocs:Stop-StorageDiagnosticLog]
+###### `Get-StorageEnclosure`[^][msdocs:Get-StorageEnclosure]
+###### `Disable-StorageEnclosureIdentification`[^][msdocs:Disable-StorageEnclosureIdentification]
+###### `Enable-StorageEnclosureIdentification`[^][msdocs:Enable-StorageEnclosureIdentification]
+###### `Get-StorageEnclosureStorageNodeView`[^][msdocs:Get-StorageEnclosureStorageNodeView]
+###### `Get-StorageEnclosureVendorData`[^][msdocs:Get-StorageEnclosureVendorData]
+###### `Get-StorageFaultDomain`[^][msdocs:Get-StorageFaultDomain]
+###### `Get-StorageFileServer`[^][msdocs:Get-StorageFileServer]
+###### `New-StorageFileServer`[^][msdocs:New-StorageFileServer]
+###### `Remove-StorageFileServer`[^][msdocs:Remove-StorageFileServer]
+###### `Set-StorageFileServer`[^][msdocs:Set-StorageFileServer]
+###### `Update-StorageFirmware`[^][msdocs:Update-StorageFirmware]
+###### `Get-StorageFirmwareInformation`[^][msdocs:Get-StorageFirmwareInformation]
+###### `Get-StorageHealthAction`[^][msdocs:Get-StorageHealthAction]
+###### `Get-StorageHealthReport`[^][msdocs:Get-StorageHealthReport]
+###### `Get-StorageHealthSetting`[^][msdocs:Get-StorageHealthSetting]
+###### `Remove-StorageHealthSetting`[^][msdocs:Remove-StorageHealthSetting]
+###### `Set-StorageHealthSetting`[^][msdocs:Set-StorageHealthSetting]
+###### `Disable-StorageHighAvailability`[^][msdocs:Disable-StorageHighAvailability]
+###### `Enable-StorageHighAvailability`[^][msdocs:Enable-StorageHighAvailability]
+###### `Get-StorageJob`[^][msdocs:Get-StorageJob]
+###### `Stop-StorageJob`[^][msdocs:Stop-StorageJob]
+###### `Disable-StorageMaintenanceMode`[^][msdocs:Disable-StorageMaintenanceMode]
+###### `Enable-StorageMaintenanceMode`[^][msdocs:Enable-StorageMaintenanceMode]
+###### `Get-StorageNode`[^][msdocs:Get-StorageNode]
+###### `Get-StoragePool`[^][msdocs:Get-StoragePool]
+###### `New-StoragePool`[^][msdocs:New-StoragePool]
+###### `Optimize-StoragePool`[^][msdocs:Optimize-StoragePool]
+###### `Remove-StoragePool`[^][msdocs:Remove-StoragePool]
+###### `Set-StoragePool`[^][msdocs:Set-StoragePool]
+###### `Update-StoragePool`[^][msdocs:Update-StoragePool]
+###### `Get-StorageProvider`[^][msdocs:Get-StorageProvider]
+###### `Set-StorageProvider`[^][msdocs:Set-StorageProvider]
+###### `Update-StorageProviderCache`[^][msdocs:Update-StorageProviderCache]
+###### `Get-StorageReliabilityCounter`[^][msdocs:Get-StorageReliabilityCounter]
+###### `Reset-StorageReliabilityCounter`[^][msdocs:Reset-StorageReliabilityCounter]
+###### `Get-StorageSetting`[^][msdocs:Get-StorageSetting]
+###### `Set-StorageSetting`[^][msdocs:Set-StorageSetting]
+###### `Debug-StorageSubSystem`[^][msdocs:Debug-StorageSubSystem]
+###### `Get-StorageSubsystem`[^][msdocs:Get-StorageSubsystem]
+###### `Register-StorageSubsystem`[^][msdocs:Register-StorageSubsystem]
+###### `Set-StorageSubsystem`[^][msdocs:Set-StorageSubsystem]
+###### `Unregister-StorageSubsystem`[^][msdocs:Unregister-StorageSubsystem]
+###### `New-StorageSubsystemVirtualDisk`[^][msdocs:New-StorageSubsystemVirtualDisk]
+###### `Get-StorageTier`[^][msdocs:Get-StorageTier]
+###### `New-StorageTier`[^][msdocs:New-StorageTier]
+###### `Remove-StorageTier`[^][msdocs:Remove-StorageTier]
+###### `Resize-StorageTier`[^][msdocs:Resize-StorageTier]
+###### `Set-StorageTier`[^][msdocs:Set-StorageTier]
+###### `Get-StorageTierSupportedSize`[^][msdocs:Get-StorageTierSupportedSize]
+###### `Get-SupportedClusterSizes`[^][msdocs:Get-SupportedClusterSizes]
+###### `Get-SupportedFileSystems`[^][msdocs:Get-SupportedFileSystems]
+###### `Get-TargetPort`[^][msdocs:Get-TargetPort]
+###### `Get-TargetPortal`[^][msdocs:Get-TargetPortal]
+###### `Remove-TargetPortFromMaskingSet`[^][msdocs:Remove-TargetPortFromMaskingSet]
+###### `Add-TargetPortToMaskingSet`[^][msdocs:Add-TargetPortToMaskingSet]
+###### `Connect-VirtualDisk`[^][msdocs:Connect-VirtualDisk]
+###### `Disconnect-VirtualDisk`[^][msdocs:Disconnect-VirtualDisk]
+###### `Get-VirtualDisk`[^][msdocs:Get-VirtualDisk]
+###### `Hide-VirtualDisk`[^][msdocs:Hide-VirtualDisk]
+###### `New-VirtualDisk`[^][msdocs:New-VirtualDisk]
+###### `Remove-VirtualDisk`[^][msdocs:Remove-VirtualDisk]
+###### `Repair-VirtualDisk`[^][msdocs:Repair-VirtualDisk]
+###### `Resize-VirtualDisk`[^][msdocs:Resize-VirtualDisk]
+###### `Set-VirtualDisk`[^][msdocs:Set-VirtualDisk]
+###### `Show-VirtualDisk`[^][msdocs:Show-VirtualDisk]
+###### `New-VirtualDiskClone`[^][msdocs:New-VirtualDiskClone]
+###### `Remove-VirtualDiskFromMaskingSet`[^][msdocs:Remove-VirtualDiskFromMaskingSet]
+###### `New-VirtualDiskSnapshot`[^][msdocs:New-VirtualDiskSnapshot]
+###### `Get-VirtualDiskSupportedSize`[^][msdocs:Get-VirtualDiskSupportedSize]
+###### `Add-VirtualDiskToMaskingSet`[^][msdocs:Add-VirtualDiskToMaskingSet]
+###### `Debug-Volume`[^][msdocs:Debug-Volume]
+###### `Format-Volume`[^][msdocs:Format-Volume]
+###### `Get-Volume`[^][msdocs:Get-Volume]
+###### `New-Volume`[^][msdocs:New-Volume]
+###### `Optimize-Volume`[^][msdocs:Optimize-Volume]
+###### `Repair-Volume`[^][msdocs:Repair-Volume]
+###### `Set-Volume`[^][msdocs:Set-Volume]
+###### `Write-VolumeCache`[^][msdocs:Write-VolumeCache]
+###### `Get-VolumeCorruptionCount`[^][msdocs:Get-VolumeCorruptionCount]
+###### `Get-VolumeScrubPolicy`[^][msdocs:Get-VolumeScrubPolicy]
+###### `Set-VolumeScrubPolicy`[^][msdocs:Set-VolumeScrubPolicy]
+
+
 ##### `DedupVolume`
 ###### `Enable-DedupVolume`
 Enable deduplication <sup>[Zacker][Zacker]: 157</sup>
 ```powershell
 Enable-DedupVolume -Volume "e:" -UsageType default
 Enable-DedupVolume -Volume "\\?\\volume{26a21bda-a627-11d7-9931-806e6f6e6963}" -UsageType backup
+```
+##### `DiskImage`
+###### `Mount-DiskImage`
+Mount a VHD or VHDX file <sup>[Zacker][Zacker]: 92</sup>
+```powershell
+Mount-DiskImage -ImagePath $file
 ```
 ##### `Partition`
 ###### `Get-Partition`
@@ -1852,9 +2060,15 @@ Install-WindowsFeature -Name hyper-v-powershell
 
 ##### `VHD`
 ###### `Mount-VHD`
+Tasks:
 - [VHDX file](#vhdx-file)
 
+Mount a VHD or VHDX file <sup>[Zacker][Zacker]: 92</sup>
+```powershell
+Mount-VHD -Path $file
+```
 ###### `New-VHD`
+Tasks:
 - [VHDX file](#vhdx-file)
 ##### `VM`
 
@@ -2509,17 +2723,69 @@ Add storage to a failover cluster [created][New-Cluster] with the `-NoStorage` o
 Enable-ClusterStorageSpacesDirect
 ```
 #### File shares
+[msdocs:Block-SmbShareAccess]: https://docs.microsoft.com/en-us/powershell/module/smbshare/Block-SmbShareAccess "Block-SmbShareAccess"
+[msdocs:Close-SmbOpenFile]: https://docs.microsoft.com/en-us/powershell/module/smbshare/Close-SmbOpenFile "Close-SmbOpenFile"
+[msdocs:Close-SmbSession]: https://docs.microsoft.com/en-us/powershell/module/smbshare/Close-SmbSession "Close-SmbSession"
+[msdocs:Get-SmbClientConfiguration]: https://docs.microsoft.com/en-us/powershell/module/smbshare/Get-SmbClientConfiguration "Get-SmbClientConfiguration"
+[msdocs:Get-SmbOpenFile]: https://docs.microsoft.com/en-us/powershell/module/smbshare/Get-SmbOpenFile "Get-SmbOpenFile"
+[msdocs:Get-SmbServerConfiguration]: https://docs.microsoft.com/en-us/powershell/module/smbshare/Get-SmbServerConfiguration "Get-SmbServerConfiguration"
+[msdocs:Get-SmbSession]: https://docs.microsoft.com/en-us/powershell/module/smbshare/Get-SmbSession "Get-SmbSession"
+[msdocs:Get-SmbShareAccess]: https://docs.microsoft.com/en-us/powershell/module/smbshare/Get-SmbShareAccess "Get-SmbShareAccess"
+[msdocs:Grant-SmbShareAccess]: https://docs.microsoft.com/en-us/powershell/module/smbshare/Grant-SmbShareAccess "Grant-SmbShareAccess"
+[msdocs:New-SmbShare]: https://docs.microsoft.com/en-us/powershell/module/smbshare/New-SmbShare "New-SmbShare"
+[msdocs:Remove-SmbShare]: https://docs.microsoft.com/en-us/powershell/module/smbshare/Remove-SmbShare "Remove-SmbShare"
+[msdocs:Revoke-SmbShareAccess]: https://docs.microsoft.com/en-us/powershell/module/smbshare/Revoke-SmbShareAccess "Revoke-SmbShareAccess"
+[msdocs:Set-SmbPathAcl]: https://docs.microsoft.com/en-us/powershell/module/smbshare/Set-SmbPathAcl "Set-SmbPathAcl"
+[msdocs:Set-SmbServerConfiguration]: https://docs.microsoft.com/en-us/powershell/module/smbshare/Set-SmbServerConfiguration "Set-SmbServerConfiguration"
+[msdocs:Unblock-SmbShareAccess]: https://docs.microsoft.com/en-us/powershell/module/smbshare/Unblock-SmbShareAccess "Unblock-SmbShareAccess"
+[msdocs:Disable-SmbDelegation]: https://docs.microsoft.com/en-us/powershell/module/smbshare/Disable-SmbDelegation "Disable-SmbDelegation"
+[msdocs:Enable-SmbDelegation]: https://docs.microsoft.com/en-us/powershell/module/smbshare/Enable-SmbDelegation "Enable-SmbDelegation"
+[msdocs:Get-SmbBandwidthLimit]: https://docs.microsoft.com/en-us/powershell/module/smbshare/Get-SmbBandwidthLimit "Get-SmbBandwidthLimit"
+[msdocs:Get-SmbClientNetworkInterface]: https://docs.microsoft.com/en-us/powershell/module/smbshare/Get-SmbClientNetworkInterface "Get-SmbClientNetworkInterface"
+[msdocs:Get-SmbConnection]: https://docs.microsoft.com/en-us/powershell/module/smbshare/Get-SmbConnection "Get-SmbConnection"
+[msdocs:Get-SmbDelegation]: https://docs.microsoft.com/en-us/powershell/module/smbshare/Get-SmbDelegation "Get-SmbDelegation"
+[msdocs:Get-SmbMapping]: https://docs.microsoft.com/en-us/powershell/module/smbshare/Get-SmbMapping "Get-SmbMapping"
+[msdocs:Get-SmbMultichannelConnection]: https://docs.microsoft.com/en-us/powershell/module/smbshare/Get-SmbMultichannelConnection "Get-SmbMultichannelConnection"
+[msdocs:Get-SmbMultichannelConstraint]: https://docs.microsoft.com/en-us/powershell/module/smbshare/Get-SmbMultichannelConstraint "Get-SmbMultichannelConstraint"
+[msdocs:Get-SmbServerNetworkInterface]: https://docs.microsoft.com/en-us/powershell/module/smbshare/Get-SmbServerNetworkInterface "Get-SmbServerNetworkInterface"
+[msdocs:Get-SmbShare]: https://docs.microsoft.com/en-us/powershell/module/smbshare/Get-SmbShare "Get-SmbShare"
+[msdocs:New-SmbMapping]: https://docs.microsoft.com/en-us/powershell/module/smbshare/New-SmbMapping "New-SmbMapping"
+[msdocs:New-SmbMultichannelConstraint]: https://docs.microsoft.com/en-us/powershell/module/smbshare/New-SmbMultichannelConstraint "New-SmbMultichannelConstraint"
+[msdocs:Remove-SmbBandwidthLimit]: https://docs.microsoft.com/en-us/powershell/module/smbshare/Remove-SmbBandwidthLimit "Remove-SmbBandwidthLimit"
+[msdocs:Remove-SmbMapping]: https://docs.microsoft.com/en-us/powershell/module/smbshare/Remove-SmbMapping "Remove-SmbMapping"
+[msdocs:Remove-SmbMultichannelConstraint]: https://docs.microsoft.com/en-us/powershell/module/smbshare/Remove-SmbMultichannelConstraint "Remove-SmbMultichannelConstraint"
+[msdocs:Set-SmbBandwidthLimit]: https://docs.microsoft.com/en-us/powershell/module/smbshare/Set-SmbBandwidthLimit "Set-SmbBandwidthLimit"
+[msdocs:Set-SmbClientConfiguration]: https://docs.microsoft.com/en-us/powershell/module/smbshare/Set-SmbClientConfiguration "Set-SmbClientConfiguration"
+[msdocs:Set-SmbShare]: https://docs.microsoft.com/en-us/powershell/module/smbshare/Set-SmbShare "Set-SmbShare"
+[msdocs:Update-SmbMultichannelConnection]: https://docs.microsoft.com/en-us/powershell/module/smbshare/Update-SmbMultichannelConnection "Update-SmbMultichannelConnection"
+
+##### `SmbBandwidthLimit`
+###### `Get-SmbBandwidthLimit`[^][msdocs:Get-SmbBandwidthLimit]
+###### `Remove-SmbBandwidthLimit`[^][msdocs:Remove-SmbBandwidthLimit]
+###### `Set-SmbBandwidthLimit`[^][msdocs:Set-SmbBandwidthLimit]
+##### `SmbClientConfiguration`
+###### `Get-SmbClientConfiguration`[^][msdocs:Get-SmbClientConfiguration]
+###### `Set-SmbClientConfiguration`[^][msdocs:Set-SmbClientConfiguration]
+##### `SmbClientNetworkInterface`
+###### `Get-SmbClientNetworkInterface`[^][msdocs:Get-SmbClientNetworkInterface]
+##### `SmbConnection`
+###### `Get-SmbConnection`[^][msdocs:Get-SmbConnection]
+##### `SmbDelegation`
+###### `Disable-SmbDelegation`[^][msdocs:Disable-SmbDelegation]
+###### `Enable-SmbDelegation`[^][msdocs:Enable-SmbDelegation]
+###### `Get-SmbDelegation`[^][msdocs:Get-SmbDelegation]
+##### `SmbMapping`
+###### `Get-SmbMapping`[^][msdocs:Get-SmbMapping]
+###### `New-SmbMapping`[^][msdocs:New-SmbMapping]
+###### `Remove-SmbMapping`[^][msdocs:Remove-SmbMapping]
+##### `SmbMultiChannel`
+###### `Get-SmbMultichannelConnection`[^][msdocs:Get-SmbMultichannelConnection]
+###### `Update-SmbMultichannelConnection`[^][msdocs:Update-SmbMultichannelConnection]
+###### `Get-SmbMultichannelConstraint`[^][msdocs:Get-SmbMultichannelConstraint]
+###### `New-SmbMultichannelConstraint`[^][msdocs:New-SmbMultichannelConstraint]
+###### `Remove-SmbMultichannelConstraint`[^][msdocs:Remove-SmbMultichannelConstraint]
 ##### `SmbOpenFile`
-###### `Get-SmbOpenFile`
-Get information about an opened file <sup>[MS Docs][https://docs.microsoft.com/en-us/powershell/module/smbshare/get-smbopenfile?view=win10-ps]</sup>
-```powershell
-Get-SmbOpenFile -FileId 4415226383569 | Select-Object -Property *
-```
-Get information about a file opened for an SMB client <sup>[MS Docs][https://docs.microsoft.com/en-us/powershell/module/smbshare/get-smbopenfile?view=win10-ps]</sup>
-```powershell
-Get-SmbOpenFile -SessionId 4415226380393
-```
-###### `Close-SmbOpenFile`
+###### `Close-SmbOpenFile`[^][msdocs:Close-SmbOpenFile]
 Close an open file <sup>[docs.microsoft.com][https://docs.microsoft.com/en-us/powershell/module/smbshare/close-smbopenfile?view=win10-ps]</sup>
 ```powershell
 Close-SmbOpenFile -FileId 4415226383589
@@ -2528,21 +2794,43 @@ Close open files for a session <sup>[docs.microsoft.com][https://docs.microsoft.
 ```powershell
 Close-SmbOpenFile -SessionId 4415226380393
 ```
-##### `SmbShare`
-###### `New-SmbShare`
+###### `Get-SmbOpenFile`[^][msdocs:Get-SmbOpenFile]
+Get information about an opened file <sup>[MS Docs][https://docs.microsoft.com/en-us/powershell/module/smbshare/get-smbopenfile?view=win10-ps]</sup>
 ```powershell
-New-SmbShare -Name files -Path C:\networkfiles -ChangeAccess CORP\SysAdmin
+Get-SmbOpenFile -FileId 4415226383569 | Select-Object -Property *
 ```
-Create a new share called `Data` from the `C:\Docs` folder with the `Allow Full Control` permission granted to the `Everyone` special identity <sup>[Zacker][Zacker]: 106</sup>
+Get information about a file opened for an SMB client <sup>[MS Docs][https://docs.microsoft.com/en-us/powershell/module/smbshare/get-smbopenfile?view=win10-ps]</sup>
 ```powershell
-New-SmbShare -Name Data -Path C:\Docs -FullAccess Everyone
+Get-SmbOpenFile -SessionId 4415226380393
 ```
+###### `Set-SmbPathAcl`[^][msdocs:Set-SmbPathAcl]
+###### `Get-SmbServerConfiguration`[^][msdocs:Get-SmbServerConfiguration]
+###### `Set-SmbServerConfiguration`[^][msdocs:Set-SmbServerConfiguration]
+###### `Get-SmbServerNetworkInterface`[^][msdocs:Get-SmbServerNetworkInterface]
 ##### `SmbSession`
-###### `Close-SmbSession`
+###### `Close-SmbSession`[^][msdocs:Close-SmbSession]
 ```powershell
 Close-SmbSession -SessionId 154618822713
 ```
-###### `Get-SmbSession`
+###### `Get-SmbSession`[^][msdocs:Get-SmbSession]
+##### `SmbShare`
+###### `New-SmbShare`[^][msdocs:New-SmbShare]
+```powershell
+New-SmbShare -Name files -Path C:\networkfiles -ChangeAccess CORP\SysAdmin
+```
+Create a new share with the `Allow Full Control` permission granted to the `Everyone` special identity <sup>[Zacker][Zacker]: 106</sup>
+```powershell
+New-SmbShare -Name Data -Path C:\Docs -FullAccess Everyone
+```
+###### `Remove-SmbShare`[^][msdocs:Remove-SmbShare]
+###### `Get-SmbShare`[^][msdocs:Get-SmbShare]
+###### `Set-SmbShare`[^][msdocs:Set-SmbShare]
+##### `SmbShareAccess`
+###### `Block-SmbShareAccess`[^][msdocs:Block-SmbShareAccess]
+###### `Get-SmbShareAccess`[^][msdocs:Get-SmbShareAccess]
+###### `Grant-SmbShareAccess`[^][msdocs:Grant-SmbShareAccess]
+###### `Revoke-SmbShareAccess`[^][msdocs:Revoke-SmbShareAccess]
+###### `Unblock-SmbShareAccess`[^][msdocs:Unblock-SmbShareAccess]
 
 ## Tasks
 #### Computer information

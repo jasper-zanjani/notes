@@ -45,26 +45,26 @@
 [sfc]: #sfc                            '```&#10;C:\>sfc&#10;C:\>sfc /scannow&#10;```&#10;Scan and verify protected system files&#10;Stanek, William R. _Microsoft Windows Command-Line_.: 373'
 [slmgr]: #slmgr.vbs                          '```&#10;C:\>slmgr&#10;```&#10;Windows software licensing management tool'
 [systeminfo]: #systeminfo                     '```&#10;C:\>systeminfo&#10;```&#10;Shows system information about the machine, including installed hotfixes and patches'
-[VMConnect.exe]: #vmconnect.exe '```&#10;C:\>VMConnect.exe&#10;```&#10;"Virtual Machine Connection", Hyper-V tool used to connect to a running VM and access its desktop'
+[VMConnect.exe]: #vmconnectexe '```&#10;C:\>VMConnect.exe&#10;```&#10;"Virtual Machine Connection", Hyper-V tool used to connect to a running VM and access its desktop'
 [winver]: #winver                                             '```&#10;C:\>winver&#10;```&#10;Display the "About Windows" dialog box, including Windows version and build number'
 [wmic]: #wmic                           '```&#10;C:\>wmic&#10;```&#10;WMI command-line (WMIC) utility provides a command-line interface for WMI.'
 [wt.exe]: #wt.exe '```&#10;C:\>wt&#10;```&#10;Windows Terminal'
 
 <!-- Control Panel binaries -->
-[access.cpl]:     #access.cpl           '```&#10;C:\> access.cpl&#10;```&#10;Accessibility Options'
-[appwiz.cpl]:     #appwiz.cpl           '```&#10;C:\> appwiz.cpl&#10;```&#10;Add/Remove Programs'
-[desk.cpl]:       #desk.cpl             '```&#10;C:\> desk.cpl&#10;```&#10;Display Properties'
-[findfast.cpl]:   #findfast.cpl         '```&#10;C:\> findfast.cpl&#10;```&#10;FindFast'
-[inetcpl.cpl]:    #inetcpl.cpl          '```&#10;C:\> inetcpl.cpl&#10;```&#10;Internet Properties'
-[intl.cpl]:       #intl.cpl             '```&#10;C:\> intl.cpl&#10;```&#10;Regional Settings'
-[joy.cpl]:        #joy.cpl              '```&#10;C:\> joy.cpl&#10;```&#10;Joystick Properties'
-[main.cpl]:       #main.cpl             '```&#10;C:\> main.cpl&#10;```&#10;Mouse Properties'
-[mlcfg32.cpl]:    #mlcfg32.cpl          '```&#10;C:\> mlcfg32.cpl&#10;```&#10;Microsoft Exchange (or Windows Messaging)'
-[mmsys.cpl]:      #mmsys.cpl            '```&#10;C:\> mmsys.cpl&#10;```&#10;Sound Properties'
-[ncpa.cpl]:       #ncpa.cpl             '```&#10;C:\> ncpa.cpl&#10;```&#10;Network Settings'
-[sysdm.cpl]:      #sysdm.cpl            '```&#10;C:\> sysdm.cpl&#10;```&#10;System Properties'
-[timedate.cpl]:   #timedate.cpl         '```&#10;C:\> timedate.cpl&#10;```&#10;Date/Time Properties'
-[wgpocpl.cpl]:    #wgpocpl.cpl          '```&#10;C:\> wgpocpl.cpl&#10;```&#10;Microsoft Mail Post Office'
+[access.cpl]:     #accesscpl           '```&#10;C:\> access.cpl&#10;```&#10;Accessibility Options'
+[appwiz.cpl]:     #appwizcpl           '```&#10;C:\> appwiz.cpl&#10;```&#10;Add/Remove Programs'
+[desk.cpl]:       #deskcpl             '```&#10;C:\> desk.cpl&#10;```&#10;Display Properties'
+[findfast.cpl]:   #findfastcpl         '```&#10;C:\> findfast.cpl&#10;```&#10;FindFast'
+[inetcpl.cpl]:    #inetcplcpl          '```&#10;C:\> inetcpl.cpl&#10;```&#10;Internet Properties'
+[intl.cpl]:       #intlcpl             '```&#10;C:\> intl.cpl&#10;```&#10;Regional Settings'
+[joy.cpl]:        #joycpl              '```&#10;C:\> joy.cpl&#10;```&#10;Joystick Properties'
+[main.cpl]:       #maincpl             '```&#10;C:\> main.cpl&#10;```&#10;Mouse Properties'
+[mlcfg32.cpl]:    #mlcfg32cpl          '```&#10;C:\> mlcfg32.cpl&#10;```&#10;Microsoft Exchange (or Windows Messaging)'
+[mmsys.cpl]:      #mmsyscpl            '```&#10;C:\> mmsys.cpl&#10;```&#10;Sound Properties'
+[ncpa.cpl]:       #ncpacpl             '```&#10;C:\> ncpa.cpl&#10;```&#10;Network Settings'
+[sysdm.cpl]:      #sysdmcpl            '```&#10;C:\> sysdm.cpl&#10;```&#10;System Properties'
+[timedate.cpl]:   #timedatecpl         '```&#10;C:\> timedate.cpl&#10;```&#10;Date/Time Properties'
+[wgpocpl.cpl]:    #wgpocplcpl          '```&#10;C:\> wgpocpl.cpl&#10;```&#10;Microsoft Mail Post Office'
 
 <!-- Linux commands -->
 [grep]: https://github.com/jasper-zanjani/notes/blob/master/lx/commands/README.md#grep '```&#10;$ grep&#10;```&#10;Search `$FILES` for lines containing a match to regex `$PATTERN`&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 126'
@@ -367,6 +367,15 @@ Determine exact name of Windows features that can be enabled and disabled <sup>[
 dism /image:c:\mount /get-features
 ```
 ###### `djoin.exe`
+`domain`
+`loadfile`
+`localos`
+`machine`
+`provision`
+`requestodj`
+`savefile`
+`windowspath`
+
 Perform an offline domain join for a Nano Server <sup>[Practice Lab][pl:70-740]</sup>
 ```cmd
 djoin  /provision /domain practicelabs /machine PLABNANOSRV01 /savefile .\odjblob
@@ -380,13 +389,19 @@ djoin /requestodj /loadfile c:\odjblob /windowspath c:\windows /localos
 
 
 ###### `dsquery`
-Find the Active Directory Schema version from the command-line <sup>[nolabnoparty.com](https://nolabnoparty.com/en/finding-active-directory-schema-version/ "Finding the Active Directory schema version") [pwsh](https://github.com/jasper-zanjani/notes/tree/primary/70-740/pwsh.md#get-adobject "Get-ADObject")</sup>
+Find the Active Directory Schema version from the command-line 
+<sup>
+[nolabnoparty.com](https://nolabnoparty.com/en/finding-active-directory-schema-version/ "Finding the Active Directory schema version") 
+[pwsh](https://github.com/jasper-zanjani/notes/tree/primary/70-740/pwsh.md#get-adobject "Get-ADObject")
+</sup>
 ```cmd
 dsquery * cn=schema,cn=configuration,dc=domain,dc=com -scope base -attr objectVersion"
 ```
 
 ###### `ipconfig`
-`all` `flushdns` `renew`
+`all`
+`flushdns`
+`renew`
 
 ###### `logoff`
 Equivalent to `shutdown -L`
@@ -781,6 +796,11 @@ winrm set winrm/config/client @{TrustedHosts="192.168.10.41"}
 ###### `winver`
 
 ###### `wmic`
+`bios`
+`logicaldisk`
+`memorychip`
+`path`
+
 Recover Windows product key <sup>[fossbytes.com][https://fossbytes.com/how-to-find-windows-product-key-lost-cmd-powershell-registry/]</sup>
 ```cmd
 wmic path softwarelicensingservice get OA3xOriginalProductKey
@@ -805,8 +825,8 @@ wmic logicaldisk list brief
 ###### `wt.exe`
 [https://www.bleepingcomputer.com/news/microsoft/windows-terminal-09-released-with-command-line-arguments-and-more/]: https://www.bleepingcomputer.com/news/microsoft/windows-terminal-09-released-with-command-line-arguments-and-more/ "Windows Terminal 0.9 Released with Command Line Arguments and More" 
 
-[wt -&#112;]: #wt '```&#10;C:\>wt -&#112;&#10;C:\>wt -p "Ubuntu-18.04"&#10;```&#10;Specify the Windows Terminal profile that should be opened'
-[wt -&#100;]: #wt '```&#10;C:\>wt -&#100;&#10;C:\>wt -d E:\ &#10;```&#10;Specify the directory used as the starting directory for the console'
+[wt -&#112;]: #wtexe '```&#10;C:\>wt -&#112;&#10;C:\>wt -p "Ubuntu-18.04"&#10;```&#10;Specify the Windows Terminal profile that should be opened'
+[wt -&#100;]: #wtexe '```&#10;C:\>wt -&#100;&#10;C:\>wt -d E:\ &#10;```&#10;Specify the directory used as the starting directory for the console'
 
 <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`d`][wt -&#100;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`p`][wt -&#112;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <br> [`split-pane`][wt] [`focus-tab`][wt]
 
