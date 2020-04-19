@@ -335,51 +335,20 @@ Remoting relies on [WinRM][WinRM], which is Microsoft's implementation of WSMAN.
 [Unblock-SmbShareAccess]: #unblock-smbshareaccess '```&#10;Unblock-SmbShareAccess&#10;```&#10;Removes all of the deny ACEs for the trustee from the security descriptor of the SMB share.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 109'
 
 [**Smb**](#smb)
-<code>BandwidthLimit
-&nbsp;[g][Get-SmbBandwidthLimit]
-&nbsp;[r][Remove-SmbBandwidthLimit]
-&nbsp;[s][Set-SmbBandwidthLimit] </code>
-<code>ClientConfiguration
-&nbsp;[g][Get-SmbClientConfiguration] 
-&nbsp;[s][Set-SmbClientConfiguration] </code>
-<code>ClientNetworkInterface
-&nbsp;[g][Get-SmbClientNetworkInterface] </code>
-<code>Connection
-&nbsp;[g][Get-SmbConnection] </code>
-<code>Delegation
-&nbsp;[d][Disable-SmbDelegation] 
-&nbsp;[e][Enable-SmbDelegation] 
-&nbsp;[g][Get-SmbDelegation] </code>
-<code>Mapping
-&nbsp;[g][Get-SmbMapping] 
-&nbsp;[n][New-SmbMapping] 
-&nbsp;[r][Remove-SmbMapping] </code>
-<code>MultiChannel
-&nbsp;[g][Get-SmbMultichannelConnection] 
-&nbsp;[ud][Update-SmbMultichannelConnection] 
-&nbsp;[g][Get-SmbMultichannelConstraint] 
-&nbsp;[n][New-SmbMultichannelConstraint] 
-&nbsp;[r][Remove-SmbMultichannelConstraint] </code>
+<code>BandwidthLimit&nbsp;[g][Get-SmbBandwidthLimit]&nbsp;[r][Remove-SmbBandwidthLimit]&nbsp;[s][Set-SmbBandwidthLimit]</code>
+<code>ClientConfiguration&nbsp;[g][Get-SmbClientConfiguration]&nbsp;[s][Set-SmbClientConfiguration]</code>
+<code>ClientNetworkInterface&nbsp;[g][Get-SmbClientNetworkInterface]</code>
+<code>Connection&nbsp;[g][Get-SmbConnection]</code>
+<code>Delegation&nbsp;[d][Disable-SmbDelegation]&nbsp;[e][Enable-SmbDelegation]&nbsp;[g][Get-SmbDelegation]</code>
+<code>Mapping&nbsp;[g][Get-SmbMapping]&nbsp;[n][New-SmbMapping]&nbsp;[r][Remove-SmbMapping]</code>
+<code>MultiChannel&nbsp;[g][Get-SmbMultichannelConnection]&nbsp;[ud][Update-SmbMultichannelConnection]&nbsp;[g][Get-SmbMultichannelConstraint]&nbsp;[n][New-SmbMultichannelConstraint]&nbsp;[r][Remove-SmbMultichannelConstraint]</code>
 <code>OpenFile&nbsp;[g][Get-SmbOpenFile]&nbsp;[cs][Close-SmbOpenFile]</code>
-<code>PathAcl
-&nbsp;[s][Set-SmbPathAcl] </code>
-<code>ServerConfiguration
-&nbsp;[g][Get-SmbServerConfiguration] 
-&nbsp;[s][Set-SmbServerConfiguration] </code>
-<code>ServerNetworkInterface
-&nbsp;[g][Get-SmbServerNetworkInterface] </code>
-<code>Session
-&nbsp;[ch][Close-SmbSession] 
-&nbsp;[g][Get-SmbSession] </code>
-<code>Share
-&nbsp;[n][New-SmbShare] 
-&nbsp;[r][Remove-SmbShare] </code>
-<code>ShareAccess
-&nbsp;[bl][Block-SmbShareAccess] 
-&nbsp;[g][Get-SmbShareAccess] 
-&nbsp;[gr][Grant-SmbShareAccess] 
-&nbsp;[rk][Revoke-SmbShareAccess] 
-&nbsp;[ul][Unblock-SmbShareAccess] </code>
+<code>PathAcl&nbsp;[s][Set-SmbPathAcl]</code>
+<code>ServerConfiguration&nbsp;[g][Get-SmbServerConfiguration]&nbsp;[s][Set-SmbServerConfiguration]</code>
+<code>ServerNetworkInterface&nbsp;[g][Get-SmbServerNetworkInterface]</code>
+<code>Session&nbsp;[ch][Close-SmbSession]&nbsp;[g][Get-SmbSession]</code>
+<code>Share&nbsp;[n][New-SmbShare]&nbsp;[r][Remove-SmbShare]</code>
+<code>ShareAccess&nbsp;[bl][Block-SmbShareAccess]&nbsp;[g][Get-SmbShareAccess]&nbsp;[gr][Grant-SmbShareAccess]&nbsp;[rk][Revoke-SmbShareAccess]&nbsp;[ul][Unblock-SmbShareAccess]</code>
 
 ##### Network-related cmdlets
 [Add-DhcpServerInDC]: #add-dhcpserverindc '```&#10;PS C:\> Add-DhcpServerInDC&#10;```&#10;'
