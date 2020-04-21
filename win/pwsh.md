@@ -14,8 +14,6 @@
 [Holmes]: # 'Holmes, Lee. _Windows PowerShell Cookbook_. O\'Reilly Media, 2013.'
 [SOPR]: https://leanpub.com/secretsofpowershellremoting 'Don Jones et al. _Secrets of Powershell Remoting_. '
 
-
-
 # PowerShell
 ## Contents
 ### Concepts
@@ -255,24 +253,63 @@ Remoting relies on [WinRM][WinRM], which is Microsoft's implementation of WSMAN.
 
 ##### Disk-related cmdlets
 [Enable-DedupVolume]: #enable-dedupvolume '```&#10;PS C:\> Enable-DedupVolume&#10;```&#10;Enable deduplication for a volume&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 157'
-[Set-Disk]: #set-disk '```&#10;PS C:\> Set-Disk&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 226'
-[Mount-DiskImage]: #mount-diskimage '```&#10;PS C:\> Mount-DiskImage&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 92'
-[Format-Volume]: #format-volume '```&#10;PS C:\> Format-Volume&#10;```&#10;Formats one or more existing volumes or a new volume on an existing partition.&#10;The Format-Volume cmdlet formats one or more existing volumes, or a new volume on an existing partition. This cmdlet returns the object representing the volume that was just formatted, with all properties updated to reflect the format operation.'
-[Get-Disk]: #get-disk '```&#10;PS C:\> Get-Disk&#10;```&#10;'
-[New-Partition]: #new-partition '```&#10;PS C:\> New-Partition&#10;```&#10;'
-[Remove-Partition]: #remove-partition '```&#10;PS C:\> Remove-Partition&#10;```&#10;'
-[Get-Partition]: #get-partition '```&#10;PS C:\> Get-Partition&#10;```&#10;'
-[New-Volume]: #new-volume '```&#10;PS C:\> New-Volume&#10;```&#10;Create a volume with the specified file system'
-[Get-PSDrive]: #get-psdrive '```&#10;PS C:\> Get-PSDrive&#10;PS C:\> gdr&#10;```&#10;Display mapped drives'
-[New-PSDrive]: #new-psdrive '```&#10;PS C:\> New-PSDrive&#10;PS C:\> ndr&#10;```&#10;Create temporary and persistent mapped network drives.'
-[Remove-PSDrive]: #remove-psdrive '```&#10;PS C:\> Remove-PSDrive&#10;PS C:\> rdr&#10;```&#10;Delete temporary PowerShell drives and disconnect mapped network drives'
+[Clear-Disk]: #clear-disk '```&#10;Clear-Disk&#10;```&#10;Cleans a disk by removing all partition information and un-initializing it, erasing all data on the disk.'
+[Get-Disk]: #get-disk '```&#10;Get-Disk&#10;```&#10;Gets one or more disks visible to the operating system.'
+[Initialize-Disk]: #initialize-disk '```&#10;Initialize-Disk&#10;```&#10;Initializes a RAW disk for first time use, enabling the disk to be formatted and used to store data.'
+[Set-Disk]: #set-disk '```&#10;Set-Disk&#10;```&#10;Takes a Disk object or unique disk identifiers and a set of attributes, and updates the physical disk on the system.'
+[Update-Disk]: #update-disk '```&#10;Update-Disk&#10;```&#10;Updates cached information about the specified Disk object only'
 
-[**Disks**](#disks)
+[Mount-DiskImage]: #mount-diskimage '```&#10;PS C:\> Mount-DiskImage&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 92'
+
+[Get-Partition]: #get-partition '```&#10;Get-Partition&#10;```&#10;Returns a list of all partition objects visible on all disks, or optionally a filtered list using specified parameters.'
+[New-Partition]: #new-partition '```&#10;New-Partition&#10;```&#10;Creates a new partition on an existing Disk object.'
+[Remove-Partition]: #remove-partition '```&#10;Remove-Partition&#10;```&#10;Deletes the specified Partition object on an existing disk and any underlying Volume objects.'
+[Resize-Partition]: #resize-partition '```&#10;Resize-Partition&#10;```&#10;Resizes a partition and the underlying file system.'
+[Set-Partition]: #set-partition '```&#10;Set-Partition&#10;```&#10;Sets attributes of a partition, such as active, read-only, and offline states.'
+
+[Add-PhysicalDisk]: #add-physicaldisk '```&#10;Add-PhysicalDisk&#10;```&#10;Adds a physical disk to the specified storage pool or manually assigns a physical disk to a specific virtual disk.'
+[Get-PhysicalDisk]: #get-physicaldisk '```&#10;Get-PhysicalDisk&#10;```&#10;Gets a list of all PhysicalDisk objects visible across any available Storage Management Providers, or optionally a filtered list.'
+[Remove-PhysicalDisk]: #remove-physicaldisk '```&#10;Remove-PhysicalDisk&#10;```&#10;Removes a physical disk from a specified storage pool.'
+[Reset-PhysicalDisk]: #reset-physicaldisk '```&#10;Reset-PhysicalDisk&#10;```&#10;Resets the status of a physical disk.'
+[Set-PhysicalDisk]: #set-physicaldisk '```&#10;Set-PhysicalDisk&#10;```&#10;Sets attributes on a specific physical disk.'
+
+[Get-PSDrive]: #get-psdrive '```&#10;Get-PSDrive&#10;gdr&#10;```&#10;Gets drives in the current session.'
+[New-PSDrive]: #new-psdrive '```&#10;New-PSDrive&#10;ndr&#10;```&#10;Creates temporary and persistent mapped network drives.'
+[Remove-PSDrive]: #remove-psdrive '```&#10;Remove-PSDrive&#10;rdr&#10;```&#10;Deletes temporary PowerShell drives and disconnects mapped network drives.'
+
+[Debug-Volume]: #debug-volume '```&#10;Debug-Volume&#10;```&#10;Finds problems with a volume and recommends solutions.'
+[Format-Volume]: #format-volume '```&#10;Format-Volume&#10;```&#10;Formats one or more existing volumes or a new volume on an existing partition.'
+[Get-Volume]: #get-volume '```&#10;Get-Volume&#10;```&#10;Gets the specified Volume object, or all Volume objects if no filter is provided.'
+[New-Volume]: #new-volume '```&#10;New-Volume&#10;```&#10;Creates a volume with the specified file system.'
+[Optimize-Volume]: #optimize-volume '```&#10;Optimize-Volume&#10;```&#10;Optimizes a volume.'
+[Repair-Volume]: #repair-volume '```&#10;Repair-Volume&#10;```&#10;Performs repairs on a volume.'
+[Set-Volume]: #set-volume '```&#10;Set-Volume&#10;```&#10;Sets or changes the file system label of an existing volume.'
+
+<code>FileIntegrity&nbsp;[g][Get-FileIntegrity]&nbsp;[rp][Repair-FileIntegrity]&nbsp;[s][Set-FileIntegrity]</code>
+<code>FileStorageTier&nbsp;[s][Set-FileStorageTier]&nbsp;[ch][Clear-FileStorageTier]&nbsp;[g][Get-FileStorageTier]</code>
+<code>HostStorageCache&nbsp;[ud][Update-HostStorageCache]</code>
+<code>MaskingSet&nbsp;[g][Get-MaskingSet]&nbsp;[n][New-MaskingSet]&nbsp;[r][Remove-MaskingSet]&nbsp;[rn][Rename-MaskingSet]</code>
+<code>OffloadDataTransferSetting&nbsp;[g][Get-OffloadDataTransferSetting]</code>
+<code>PhysicalExtent&nbsp;[g][Get-PhysicalExtent]</code>
+<code>PhysicalExtentAssociation&nbsp;[g][Get-PhysicalExtentAssociation]</code>
+<code>ResiliencySetting&nbsp;[g][Get-ResiliencySetting]&nbsp;[s][Set-ResiliencySetting]</code>
+<code>SupportedClusterSizes&nbsp;[g][Get-SupportedClusterSizes]</code>
+<code>SupportedFileSystems&nbsp;[g][Get-SupportedFileSystems]</code>
+
+**`Dedup`**
 <code>DedupVolume&nbsp;[en][Enable-DedupVolume]</code>
-<code>Disk&nbsp;[g][Get-Disk]</code> 
-<code>Partition&nbsp;f&nbsp;[g][Get-Partition] [n][New-Partition] [r][Remove-Partition]</code> 
-<code>Volume&nbsp;[f][Format-Volume]&nbsp;[n][New-Volume]</code> 
-<code>**PSDrive**&nbsp;[g][Get-PSDrive]&nbsp;[n][New-PSDrive]&nbsp;[r][Remove-PSDrive]</code>
+**`Disk`**
+<code>&nbsp;[ch][Clear-Disk]&nbsp;[g][Get-Disk]&nbsp;[in][Initialize-Disk]&nbsp;[s][Set-Disk]&nbsp;[ud][Update-Disk]</code>
+**`FileShare`**
+<code>&nbsp;[db][Debug-FileShare]&nbsp;[g][Get-FileShare]&nbsp;[n][New-FileShare]&nbsp;[r][Remove-FileShare]&nbsp;[s][Set-FileShare]</code>
+**`Partition`**
+<code>&nbsp;[g][Get-Partition]&nbsp;[n][New-Partition]&nbsp;[r][Remove-Partition]&nbsp;[rs][Resize-Partition]&nbsp;[s][Set-Partition]</code> 
+**`PhysicalDisk`**
+<code>&nbsp;[a][Add-PhysicalDisk]&nbsp;[g][Get-PhysicalDisk]&nbsp;[r][Remove-PhysicalDisk]&nbsp;[rs][Reset-PhysicalDisk]&nbsp;[s][Set-PhysicalDisk]</code>
+**`PSDrive`**
+<code>&nbsp;[g][Get-PSDrive]&nbsp;[n][New-PSDrive]&nbsp;[r][Remove-PSDrive]</code>
+**`Volume`**
+<code>&nbsp;[db][Debug-Volume]&nbsp;[ep][Format-Volume]&nbsp;[g][Get-Volume]&nbsp;[n][New-Volume]&nbsp;[om][Optimize-Volume]&nbsp;[rp][Repair-Volume]&nbsp;[s][Set-Volume]</code>
 
 ##### File cmdlets
 [Add-Content]: #add-content '```&#10;PS C:\> Add-Content&#10;PS C:\> ac&#10;```&#10;Append content, such as words or data, to a file'
@@ -362,14 +399,12 @@ Remoting relies on [WinRM][WinRM], which is Microsoft's implementation of WSMAN.
 [Invoke-WebRequest]: #invoke-webrequest '```&#10;PS C:\> Invoke-WebRequest&#10;PS C:\> iwr&#10;```&#10;'
 [New-NetFirewallRule]: #new-netfirewallrule '```&#10;PS C:\> New-NetFirewallRule&#10;```&#10;'
 [New-NetIpAddress]: #new-netipaddress '```&#10;PS C:\> New-NetIpAddress&#10;```&#10;Manually configure network interface, if a DHCP server is unavailable&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 19'
-[New-NetQosPolicy]: #new-netqospolicy '```&#10;PS C:\> New-NetQosPolicy&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 144'
-[New-NetQosTrafficClass]: #new-netqostrafficclass '```&#10;PS C:\> New-NetQosTrafficClass&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 144'
 [Resolve-DNSName]: #resolve-dnsname '```&#10;PS C:\> Resolve-DNSName&#10;```&#10;...&#10;MeasureUp Practice Lab: Security+'
 [Set-DhcpServerv4OptionValue]: #set-dhcpserverv4optionvalue '```&#10;PS C:\> Set-DhcpServerv4OptionValue&#10;```&#10;'
 [Set-DnsClientServerAddress]: #set-dnsclientserveraddress '```&#10;PS C:\> Set-DnsClientServerAddress&#10;```&#10;Set DNS server addresses associated with the TCP/IP properties on an interface&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 20'
 [Set-NetAdapterVmq]: #set-netadaptervmq '```&#10;PS C:\> Set-NetAdapterVmq&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 253'
 [Set-NetFirewallRule]: #set-netfirewallrule '```&#10;PS C:\> Set-NetFirewallRule&#10;```&#10;'
-[Set-NetQoSbcdxSetting]: #set-netqosbcdxsetting '```&#10;PS C:\> Set-NetQoSbcdxSetting&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 143'
+
 
 [Enable-NetAdapterVmq]: #enable-netadaptervmq '```&#10;PS C:\> Enable-NetAdapterVmq&#10;```&#10;Enable VMQ on a specific adapter&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 252'
 [Get-NetAdapterVmq]: #get-netadaptervmq '```&#10;PS C:\> Get-NetAdapterVmq&#10;```&#10;Discover whether physical network adapters support VMQ&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 252'
@@ -378,7 +413,6 @@ Remoting relies on [WinRM][WinRM], which is Microsoft's implementation of WSMAN.
 
 [Get-NetAdapterRdma]: #get-netadapterrdma '```&#10;PS C:\> Get-NetAdapterRdma&#10;```&#10;Display the current RDMA status of network adapters&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 254'
 [Enable-NetAdapterRdma]: #enable-netadapterrdma '```&#10;PS C:\> Enable-NetAdapterRdma&#10;```&#10;Enable RDMA on adapters&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 254'
-
 [Set-NetConnectionProfile]: #set-netconnectionprofile '```&#10;Set-NetConnectionProfile&#10;```&#10;Changes the network category of a connection profile. '
 
 <code>NetConnectionProfile&nbsp;[g][Get-NetConnectionProfile]&nbsp;[s][Set-NetConnectionProfile]</code>
@@ -399,6 +433,7 @@ Remoting relies on [WinRM][WinRM], which is Microsoft's implementation of WSMAN.
 **NetIp**
 <code>Address&nbsp;[n][New-NetIpAddress]</code>
 <code>Configuration&nbsp;[g][Get-NetIpConfiguration]</code>
+
 
 ##### Process control cmdlets
 [Get-Process]: #get-process '```&#10;PS C:\> Get-Process&#10;PS C:\> gps&#10;```&#10;Display running processes'
@@ -619,6 +654,37 @@ Remoting relies on [WinRM][WinRM], which is Microsoft's implementation of WSMAN.
 [Get-DscResource]: #get-dscresource '```&#10;Get-DscResource&#10;```&#10;Gets the DSC resources present on the computer.'
 [Invoke-DscResource]: #invoke-dscresource '```&#10;Invoke-DscResource&#10;```&#10;Runs a method of a specified DSC resource.'
 
+<!-- Datacenter Bridging (DCB) -->
+[New-NetQosPolicy]: #new-netqospolicy '```&#10;PS C:\> New-NetQosPolicy&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 144'
+[New-NetQosTrafficClass]: #new-netqostrafficclass '```&#10;PS C:\> New-NetQosTrafficClass&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 144'
+[Set-NetQoSdcbxSetting]: #set-netqosdcbxsetting '```&#10;PS C:\> Set-NetQoSdcbxSetting&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 143'
+[Enable-NetQosFlowControl]: #enable-netqosflowcontrol '```&#10;Enable-NetQosFlowControl&#10;```&#10;Enables link level flow control based on the IEEE 802.1p priority.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 145'
+
+<!-- Storage Replica-->
+[Clear-SRMetadata]: #clear-srmetadata '```&#10;Clear-SRMetadata&#10;```&#10;Removes unreferenced Storage Replica metadata.'
+[Export-SRConfiguration]: #export-srconfiguration '```&#10;Export-SRConfiguration&#10;```&#10;Exports replication configuration to a Windows PowerShell script.'
+[Get-SRAccess]: #get-sraccess '```&#10;Get-SRAccess&#10;```&#10;Gets security access between failover clusters.'
+[Get-SRDelegation]: #get-srdelegation '```&#10;Get-SRDelegation&#10;```&#10;Gets security delegation on a Storage Replica server.'
+[Get-SRGroup]: #get-srgroup '```&#10;Get-SRGroup&#10;```&#10;Gets replication groups.'
+[Get-SRNetworkConstraint]: #get-srnetworkconstraint '```&#10;Get-SRNetworkConstraint&#10;```&#10;Gets replication network constraints for Storage Replica partnerships.'
+[Get-SRPartnership]: #get-srpartnership '```&#10;Get-SRPartnership&#10;```&#10;Gets replication partnerships.'
+[Grant-SRAccess]: #grant-sraccess '```&#10;Grant-SRAccess&#10;```&#10;Grants security access between failover clusters to enable replication.'
+[Grant-SRDelegation]: #grant-srdelegation '```&#10;Grant-SRDelegation&#10;```&#10;Creates a security delegation on a Storage Replica server.'
+[New-SRGroup]: #new-srgroup '```&#10;New-SRGroup&#10;```&#10;Creates a replication group.'
+[New-SRPartnership]: #new-srpartnership '```&#10;New-SRPartnership&#10;```&#10;Creates a replication partnership between two replication groups.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 151'
+[Remove-SRGroup]: #remove-srgroup '```&#10;Remove-SRGroup&#10;```&#10;Removes a replication group.'
+[Remove-SRNetworkConstraint]: #remove-srnetworkconstraint '```&#10;Remove-SRNetworkConstraint&#10;```&#10;Removes all existing replication network constraints.'
+[Remove-SRPartnership]: #remove-srpartnership '```&#10;Remove-SRPartnership&#10;```&#10;Removes a replication partnership.'
+[Revoke-SRAccess]: #revoke-sraccess '```&#10;Revoke-SRAccess&#10;```&#10;Revokes security access between failover clusters that allowed replication.'
+[Revoke-SRDelegation]: #revoke-srdelegation '```&#10;Revoke-SRDelegation&#10;```&#10;Revokes a security delegation on a Storage Replica server.'
+[Set-SRGroup]: #set-srgroup '```&#10;Set-SRGroup&#10;```&#10;Modifies settings of a replication group.'
+[Set-SRNetworkConstraint]: #set-srnetworkconstraint '```&#10;Set-SRNetworkConstraint&#10;```&#10;Creates or modifies a replication network constraint for servers and partnerships.'
+[Set-SRPartnership]: #set-srpartnership '```&#10;Set-SRPartnership&#10;```&#10;Modifies a replication partnership between two replication groups.'
+[Suspend-SRGroup]: #suspend-srgroup '```&#10;Suspend-SRGroup&#10;```&#10;Pauses replication for a replication group.'
+[Sync-SRGroup]: #sync-srgroup '```&#10;Sync-SRGroup&#10;```&#10;Starts or resumes replication for a replication group.'
+[Test-SRTopology]: #test-srtopology '```&#10;Test-SRTopology&#10;```&#10;Validates a potential replication partnership.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 151'
+
+<code>SRTopology&nbsp;[t][Test-SRTopology]
 <code>WIMBootEntry&nbsp;[g][Get-WIMBootEntry]&nbsp;[u][Update-WIMBootEntry]</code>
 **AppxProvisioned**
 <code>DataFile&nbsp;[s][Set-AppxProvisionedDataFile]</code> 
@@ -631,10 +697,25 @@ Remoting relies on [WinRM][WinRM], which is Microsoft's implementation of WSMAN.
 <code>Debug&nbsp;[d][Disable-DscDebug]&nbsp;[e][Enable-DscDebug]</code>
 <code>LocalConfigurationManager&nbsp;[g][Get-DscLocalConfigurationManager]&nbsp;[s][Set-DscLocalConfigurationManager]</code>
 <code>Resource&nbsp;[g][Get-DscResource]&nbsp;[i][Invoke-DscResource]</code>
+**NetQoS**
+<code>DcbxSetting&nbsp;[s][Set-NetQosDcbxSetting]</code>
+<code>FlowControl&nbsp;[e][Enable-NetQosFlowControl]</code>
+<code>Policy&nbsp;[n][New-NetQosPolicy]</code>
+<code>TrafficClass&nbsp;[n][New-NetQosTrafficClass]</code>
 **SmigServer** 
 <code>Data [rc][Receive-SmigServerData] [sd][Send-SmigServerData]</code> 
 <code>Feature [g][Get-SmigServerFeature]</code> 
 <code>Setting [ex][Export-SmigServerSetting] [ip][Import-SmigServerSetting]</code>
+
+**`storagereplica`**
+<code>SRAccess&nbsp;[g][Get-SRAccess]&nbsp;[gr][Grant-SRAccess]&nbsp;[rk][Revoke-SRAccess]</code>
+<code>SRConfiguration&nbsp;[ep][Export-SRConfiguration]</code>
+<code>SRDelegation&nbsp;[g][Get-SRDelegation]&nbsp;[gr][Grant-SRDelegation]&nbsp;[rk][Revoke-SRDelegation]</code>
+<code>SRGroup&nbsp;[g][Get-SRGroup]&nbsp;[n][New-SRGroup]&nbsp;[r][Remove-SRGroup]&nbsp;[s][Set-SRGroup]&nbsp;[ss][Suspend-SRGroup]&nbsp;[sy][Sync-SRGroup]</code>
+<code>SRMetadata&nbsp;[ch][Clear-SRMetadata]</code>
+<code>SRNetworkConstraint&nbsp;[g][Get-SRNetworkConstraint]&nbsp;[r][Remove-SRNetworkConstraint]&nbsp;[s][Set-SRNetworkConstraint]</code>
+<code>SRPartnership&nbsp;[g][Get-SRPartnership]&nbsp;[n][New-SRPartnership]&nbsp;[r][Remove-SRPartnership]&nbsp;[s][Set-SRPartnership]</code>
+<code>SRTopology&nbsp;[t][Test-SRTopology]</code>
 **Windows**
 <code>Capability&nbsp;[a][Add-WindowsCapability]&nbsp;[g][Get-WindowsCapability]&nbsp;[r][Remove-WindowsCapability]</code>
 <code>CorruptMountPoint&nbsp;[c][Clear-WindowsCorruptMountPoint]</code>
@@ -679,8 +760,6 @@ Remoting relies on [WinRM][WinRM], which is Microsoft's implementation of WSMAN.
 <code>WMIObject&nbsp;[g][Get-WMIObject]</code> 
 **Windows**
 <code>Feature&nbsp;[a][Install-WindowsFeature]&nbsp;[g][Get-WindowsFeature]&nbsp;[is][Install-WindowsFeature]</code> 
-
-
 
 ##### Bash equivalents
 [`$!`][&#36;&#36;]/[`!$`][&#36;&#36;] 
@@ -1667,6 +1746,10 @@ Tasks:
 
 ##### `DedupVolume`
 ###### `Enable-DedupVolume`
+[Enable-DedupVolume -UsageType]: #enable-dedupvolume '```&#10;PS C:\> Enable-DedupVolume -UsageType&#10;```&#10;Specifies the expected type of workload for the volume&#10;Acceptables values include:&#10;  - `Default`: Equivalent to "General Purpose File Server" in the GUI. This configures deduplication to be suitable to typical file server functions, like shared folders, Work Folders, and Folder Redirection.&#10;  - `HyperV`: Equivalent to "Virtual Desktop Infrastructure (VDI) Server" in the GUI. This configures Deduplication to occur in the background, with in-use and partial files optimized.&#10;  - `Backup`: Equivalent to "Virtualized Backup Server" in the GUI. Intended for use with backup applications, like Microsoft DPM. Deduplication is a priority process, and in-use files are optimized.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 156'
+
+[`UsageType`][Enable-DedupVolume -UsageType]
+
 Enable deduplication <sup>[Zacker][Zacker]: 157</sup>
 ```powershell
 Enable-DedupVolume -Volume "e:" -UsageType default
@@ -2049,8 +2132,8 @@ Export-Vm -Name clustervm1 -Path D:\vm
 ```
 ###### `Get-VM`[^][msdocs:Get-VM]
 ###### `Import-VM`[^][msdocs:Import-VM]
-[Import-VM -Copy]: #import-vm '```&#10;PS C:\> Import-VM -Copy&#10;```&#10;Specifies that the import VM should be copied to host default locations of the host, as opposed to registering the virtual machine in-place.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 211'
-[Import-VM -GenerateNewId]: #import-vm '```&#10;PS C:\> Import-VM -GenerateNewId&#10;```&#10;Specifies that the imported virtual machine should be copied and given a new unique identifier.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 212'
+[Import-VM -Copy]: #import-vm '```&#10;PS C:\> Import-VM -Copy&#10;```&#10;Specifies that the import VM should be copied to host default locations of the host, as opposed to registering the virtual machine in-place.&#10;Equivalent to the "Restore" GUI option.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 211'
+[Import-VM -GenerateNewId]: #import-vm '```&#10;PS C:\> Import-VM -GenerateNewId&#10;```&#10;Specifies that the imported virtual machine should be copied and given a new unique identifier.&#10;Equivalent to the "Copy" GUI option&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 212'
 
 [`Copy`][Import-VM -Copy]
 [`GenerateNewId`][Import-VM -GenerateNewId]
@@ -2410,12 +2493,23 @@ Install-WindowsFeature Migration
 [msdocs:Set-WindowsReservedStorageState]: https://docs.microsoft.com/en-us/powershell/module/dism/Set-WindowsReservedStorageState "Set-WindowsReservedStorageState"
 [msdocs:Use-WindowsUnattend]: https://docs.microsoft.com/en-us/powershell/module/dism/Use-WindowsUnattend "Use-WindowsUnattend"
 
-##### `Appx`
-###### `Set-AppxProvisionedDataFile`[^][msdocs:Set-AppxProvisionedDataFile]
-###### `Add-AppxProvisionedPackage`[^][msdocs:Add-AppxProvisionedPackage]
-###### `Get-AppxProvisionedPackage`[^][msdocs:Get-AppxProvisionedPackage]
-###### `Remove-AppxProvisionedPackage`[^][msdocs:Remove-AppxProvisionedPackage]
-##### `DscConfiguration`
+##### `psdesiredstateconfiguration`
+[msdocs:New-DSCCheckSum]: https://docs.microsoft.com/en-us/powershell/module/psdesiredstateconfiguration/New-DSCCheckSum "New-DSCCheckSum"
+[msdocs:Get-DscConfiguration]: https://docs.microsoft.com/en-us/powershell/module/psdesiredstateconfiguration/Get-DscConfiguration "Get-DscConfiguration"
+[msdocs:Publish-DscConfiguration]: https://docs.microsoft.com/en-us/powershell/module/psdesiredstateconfiguration/Publish-DscConfiguration "Publish-DscConfiguration"
+[msdocs:Restore-DscConfiguration]: https://docs.microsoft.com/en-us/powershell/module/psdesiredstateconfiguration/Restore-DscConfiguration "Restore-DscConfiguration"
+[msdocs:Start-DscConfiguration]: https://docs.microsoft.com/en-us/powershell/module/psdesiredstateconfiguration/Start-DscConfiguration "Start-DscConfiguration"
+[msdocs:Stop-DscConfiguration]: https://docs.microsoft.com/en-us/powershell/module/psdesiredstateconfiguration/Stop-DscConfiguration "Stop-DscConfiguration"
+[msdocs:Test-DscConfiguration]: https://docs.microsoft.com/en-us/powershell/module/psdesiredstateconfiguration/Test-DscConfiguration "Test-DscConfiguration"
+[msdocs:Update-DscConfiguration]: https://docs.microsoft.com/en-us/powershell/module/psdesiredstateconfiguration/Update-DscConfiguration "Update-DscConfiguration"
+[msdocs:Remove-DscConfigurationDocument]: https://docs.microsoft.com/en-us/powershell/module/psdesiredstateconfiguration/Remove-DscConfigurationDocument "Remove-DscConfigurationDocument"
+[msdocs:Get-DscConfigurationStatus]: https://docs.microsoft.com/en-us/powershell/module/psdesiredstateconfiguration/Get-DscConfigurationStatus "Get-DscConfigurationStatus"
+[msdocs:Disable-DscDebug]: https://docs.microsoft.com/en-us/powershell/module/psdesiredstateconfiguration/Disable-DscDebug "Disable-DscDebug"
+[msdocs:Enable-DscDebug]: https://docs.microsoft.com/en-us/powershell/module/psdesiredstateconfiguration/Enable-DscDebug "Enable-DscDebug"
+[msdocs:Get-DscLocalConfigurationManager]: https://docs.microsoft.com/en-us/powershell/module/psdesiredstateconfiguration/Get-DscLocalConfigurationManager "Get-DscLocalConfigurationManager"
+[msdocs:Set-DscLocalConfigurationManager]: https://docs.microsoft.com/en-us/powershell/module/psdesiredstateconfiguration/Set-DscLocalConfigurationManager "Set-DscLocalConfigurationManager"
+[msdocs:Get-DscResource]: https://docs.microsoft.com/en-us/powershell/module/psdesiredstateconfiguration/Get-DscResource "Get-DscResource"
+[msdocs:Invoke-DscResource]: https://docs.microsoft.com/en-us/powershell/module/psdesiredstateconfiguration/Invoke-DscResource "Invoke-DscResource"
 ###### `Get-DscConfiguration`[^][msdocs:Get-DscConfiguration]"
 ###### `Publish-DscConfiguration`[^][msdocs:Publish-DscConfiguration]
 ###### `Restore-DscConfiguration`[^][msdocs:Restore-DscConfiguration]
@@ -2428,41 +2522,159 @@ Option  | Description
 ###### `Stop-DscConfiguration`[^][msdocs:Stop-DscConfiguration]
 ###### `Test-DscConfiguration`[^][msdocs:Test-DscConfiguration]
 ###### `Update-DscConfiguration`[^][msdocs:Update-DscConfiguration]
-##### `DscConfigurationDocument`
 ###### `Remove-DscConfigurationDocument`[^][msdocs:Remove-DscConfigurationDocument]
-##### `DscConfigurationStatus`
 ###### `Get-DscConfigurationStatus`[^][msdocs:Get-DscConfigurationStatus]
-##### `DscDebug`
 ###### `Disable-DscDebug`[^][msdocs:Disable-DscDebug]
 ###### `Enable-DscDebug`[^][msdocs:Enable-DscDebug]
-##### `DscLocalConfigurationManager`
 ###### `Get-DscLocalConfigurationManager`[^][msdocs:Get-DscLocalConfigurationManager]
 ###### `Set-DscLocalConfigurationManager`[^][msdocs:Set-DscLocalConfigurationManager]
-##### `DscResource`
 ###### `Get-DscResource`[^][msdocs:Get-DscResource]
 ###### `Invoke-DscResource`[^][msdocs:Invoke-DscResource]
-
+##### `dcbqos`
+[msdocs:Enable-NetQosFlowControl]: https://docs.microsoft.com/en-us/powershell/module/dcbqos/Enable-NetQosFlowControl "Enable-NetQosFlowControl"
+[msdocs:Disable-NetQosFlowControl]: https://docs.microsoft.com/en-us/powershell/module/dcbqos/Disable-NetQosFlowControl "Disable-NetQosFlowControl"
+[msdocs:Get-NetQosDcbxSetting]: https://docs.microsoft.com/en-us/powershell/module/dcbqos/Get-NetQosDcbxSetting "Get-NetQosDcbxSetting"
+[msdocs:Get-NetQosFlowControl]: https://docs.microsoft.com/en-us/powershell/module/dcbqos/Get-NetQosFlowControl "Get-NetQosFlowControl"
+[msdocs:Get-NetQosTrafficClass]: https://docs.microsoft.com/en-us/powershell/module/dcbqos/Get-NetQosTrafficClass "Get-NetQosTrafficClass"
+[msdocs:New-NetQosTrafficClass]: https://docs.microsoft.com/en-us/powershell/module/dcbqos/New-NetQosTrafficClass "New-NetQosTrafficClass"
+[msdocs:Remove-NetQosTrafficClass]: https://docs.microsoft.com/en-us/powershell/module/dcbqos/Remove-NetQosTrafficClass "Remove-NetQosTrafficClass"
+[msdocs:Set-NetQosDcbxSetting]: https://docs.microsoft.com/en-us/powershell/module/dcbqos/Set-NetQosDcbxSetting "Set-NetQosDcbxSetting"
+[msdocs:Set-NetQosFlowControl]: https://docs.microsoft.com/en-us/powershell/module/dcbqos/Set-NetQosFlowControl "Set-NetQosFlowControl"
+[msdocs:Set-NetQosTrafficClass]: https://docs.microsoft.com/en-us/powershell/module/dcbqos/Set-NetQosTrafficClass "Set-NetQosTrafficClass"
+[msdocs:Switch-NetQosDcbxSetting]: https://docs.microsoft.com/en-us/powershell/module/dcbqos/Switch-NetQosDcbxSetting "Switch-NetQosDcbxSetting"
+[msdocs:Switch-NetQosFlowControl]: https://docs.microsoft.com/en-us/powershell/module/dcbqos/Switch-NetQosFlowControl "Switch-NetQosFlowControl"
+[msdocs:Switch-NetQosTrafficClass]: https://docs.microsoft.com/en-us/powershell/module/dcbqos/Switch-NetQosTrafficClass "Switch-NetQosTrafficClass"
+###### `Enable-NetQosFlowControl`[^][msdocs:Enable-NetQosFlowControl]
+###### `Disable-NetQosFlowControl`[^][msdocs:Disable-NetQosFlowControl]
+###### `Get-NetQosDcbxSetting`[^][msdocs:Get-NetQosDcbxSetting]
+###### `Get-NetQosFlowControl`[^][msdocs:Get-NetQosFlowControl]
+###### `Get-NetQosTrafficClass`[^][msdocs:Get-NetQosTrafficClass]
+###### `New-NetQosTrafficClass`[^][msdocs:New-NetQosTrafficClass]
+###### `Remove-NetQosTrafficClass`[^][msdocs:Remove-NetQosTrafficClass]
+###### `Set-NetQosDcbxSetting`[^][msdocs:Set-NetQosDcbxSetting]
+Set the DCBX Willing bit to false, enabling the CNA to receive only local configuration settings, namely those created with subsequent `DcbQos` cmdlets <sup>[Zacker][Zacker]: 143</sup>
+```powershell
+Set-NetQosDcbxSetting -Willing 0
+```
+###### `Set-NetQosFlowControl`[^][msdocs:Set-NetQosFlowControl]
+###### `Set-NetQosTrafficClass`[^][msdocs:Set-NetQosTrafficClass]
+###### `Switch-NetQosDcbxSetting`[^][msdocs:Switch-NetQosDcbxSetting]
+###### `Switch-NetQosFlowControl`[^][msdocs:Switch-NetQosFlowControl]
+###### `Switch-NetQosTrafficClass`[^][msdocs:Switch-NetQosTrafficClass]
+##### `storagereplica`
+[msdocs:Clear-SRMetadata]: https://docs.microsoft.com/en-us/powershell/module/storagereplica/Clear-SRMetadata "Clear-SRMetadata"
+[msdocs:Export-SRConfiguration]: https://docs.microsoft.com/en-us/powershell/module/storagereplica/Export-SRConfiguration "Export-SRConfiguration"
+[msdocs:Get-SRAccess]: https://docs.microsoft.com/en-us/powershell/module/storagereplica/Get-SRAccess "Get-SRAccess"
+[msdocs:Get-SRDelegation]: https://docs.microsoft.com/en-us/powershell/module/storagereplica/Get-SRDelegation "Get-SRDelegation"
+[msdocs:Get-SRGroup]: https://docs.microsoft.com/en-us/powershell/module/storagereplica/Get-SRGroup "Get-SRGroup"
+[msdocs:Get-SRNetworkConstraint]: https://docs.microsoft.com/en-us/powershell/module/storagereplica/Get-SRNetworkConstraint "Get-SRNetworkConstraint"
+[msdocs:Get-SRPartnership]: https://docs.microsoft.com/en-us/powershell/module/storagereplica/Get-SRPartnership "Get-SRPartnership"
+[msdocs:Grant-SRAccess]: https://docs.microsoft.com/en-us/powershell/module/storagereplica/Grant-SRAccess "Grant-SRAccess"
+[msdocs:Grant-SRDelegation]: https://docs.microsoft.com/en-us/powershell/module/storagereplica/Grant-SRDelegation "Grant-SRDelegation"
+[msdocs:New-SRGroup]: https://docs.microsoft.com/en-us/powershell/module/storagereplica/New-SRGroup "New-SRGroup"
+[msdocs:New-SRPartnership]: https://docs.microsoft.com/en-us/powershell/module/storagereplica/New-SRPartnership "New-SRPartnership"
+[msdocs:Remove-SRGroup]: https://docs.microsoft.com/en-us/powershell/module/storagereplica/Remove-SRGroup "Remove-SRGroup"
+[msdocs:Remove-SRNetworkConstraint]: https://docs.microsoft.com/en-us/powershell/module/storagereplica/Remove-SRNetworkConstraint "Remove-SRNetworkConstraint"
+[msdocs:Remove-SRPartnership]: https://docs.microsoft.com/en-us/powershell/module/storagereplica/Remove-SRPartnership "Remove-SRPartnership"
+[msdocs:Revoke-SRAccess]: https://docs.microsoft.com/en-us/powershell/module/storagereplica/Revoke-SRAccess "Revoke-SRAccess"
+[msdocs:Revoke-SRDelegation]: https://docs.microsoft.com/en-us/powershell/module/storagereplica/Revoke-SRDelegation "Revoke-SRDelegation"
+[msdocs:Set-SRGroup]: https://docs.microsoft.com/en-us/powershell/module/storagereplica/Set-SRGroup "Set-SRGroup"
+[msdocs:Set-SRNetworkConstraint]: https://docs.microsoft.com/en-us/powershell/module/storagereplica/Set-SRNetworkConstraint "Set-SRNetworkConstraint"
+[msdocs:Set-SRPartnership]: https://docs.microsoft.com/en-us/powershell/module/storagereplica/Set-SRPartnership "Set-SRPartnership"
+[msdocs:Suspend-SRGroup]: https://docs.microsoft.com/en-us/powershell/module/storagereplica/Suspend-SRGroup "Suspend-SRGroup"
+[msdocs:Sync-SRGroup]: https://docs.microsoft.com/en-us/powershell/module/storagereplica/Sync-SRGroup "Sync-SRGroup"
+[msdocs:Test-SRTopology]: https://docs.microsoft.com/en-us/powershell/module/storagereplica/Test-SRTopology "Test-SRTopology"
+###### `Clear-SRMetadata`[^][msdocs:Clear-SRMetadata]
+###### `Export-SRConfiguration`[^][msdocs:Export-SRConfiguration]
+###### `Get-SRAccess`[^][msdocs:Get-SRAccess]
+###### `Get-SRDelegation`[^][msdocs:Get-SRDelegation]
+###### `Get-SRGroup`[^][msdocs:Get-SRGroup]
+###### `Get-SRNetworkConstraint`[^][msdocs:Get-SRNetworkConstraint]
+###### `Get-SRPartnership`[^][msdocs:Get-SRPartnership]
+###### `Grant-SRAccess`[^][msdocs:Grant-SRAccess]
+###### `Grant-SRDelegation`[^][msdocs:Grant-SRDelegation]
+###### `New-SRGroup`[^][msdocs:New-SRGroup]
+###### `New-SRPartnership`[^][msdocs:New-SRPartnership]
+Establish the actual replication partnership between the source and the destination servers <sup>[Zacker][Zacker]: 154</sup>
+```powershell
+New-SRPartnership -SourceComputerName servera -SourceRgName group1 -SourceVolumeName f: -SourceLogVolumeName e: -DestinationComputerName serverb -DestinationRgName group2 -DestinationVolumeName f: -DestinationLogVolumeName e:
+```
+###### `Remove-SRGroup`[^][msdocs:Remove-SRGroup]
+###### `Remove-SRNetworkConstraint`[^][msdocs:Remove-SRNetworkConstraint]
+###### `Remove-SRPartnership`[^][msdocs:Remove-SRPartnership]
+###### `Revoke-SRAccess`[^][msdocs:Revoke-SRAccess]
+###### `Revoke-SRDelegation`[^][msdocs:Revoke-SRDelegation]
+###### `Set-SRGroup`[^][msdocs:Set-SRGroup]
+###### `Set-SRNetworkConstraint`[^][msdocs:Set-SRNetworkConstraint]
+###### `Set-SRPartnership`[^][msdocs:Set-SRPartnership]
+###### `Suspend-SRGroup`[^][msdocs:Suspend-SRGroup]
+###### `Sync-SRGroup`[^][msdocs:Sync-SRGroup]
+###### `Test-SRTopology`[^][msdocs:Test-SRTopology]
+```powershell
+Test-SRTopology -SourceComputerName servera -SourceVolumeName f: -SourceLogVolumeName e: -DestinationComputerName serverb -DestinationVolumeName f: -DestinationLogVolumeName e: -DurationInMinutes 30 -ResultPath c:\temp
+```
 ##### `WIM`
 ###### `Get-WIMBootEntry`[^][msdocs:Get-WIMBootEntry]
 ###### `Update-WIMBootEntry`[^][msdocs:Update-WIMBootEntry]
-##### `WindowsC`
+##### `dism`
+[msdocs:Set-AppxProvisionedDataFile]: https://docs.microsoft.com/en-us/powershell/module/dism/Set-AppxProvisionedDataFile "Set-AppxProvisionedDataFile"
+[msdocs:Add-AppxProvisionedPackage]: https://docs.microsoft.com/en-us/powershell/module/dism/Add-AppxProvisionedPackage "Add-AppxProvisionedPackage"
+[msdocs:Get-AppxProvisionedPackage]: https://docs.microsoft.com/en-us/powershell/module/dism/Get-AppxProvisionedPackage "Get-AppxProvisionedPackage"
+[msdocs:Remove-AppxProvisionedPackage]: https://docs.microsoft.com/en-us/powershell/module/dism/Remove-AppxProvisionedPackage "Remove-AppxProvisionedPackage"
+[msdocs:Get-WIMBootEntry]: https://docs.microsoft.com/en-us/powershell/module/dism/Get-WIMBootEntry "Get-WIMBootEntry"
+[msdocs:Update-WIMBootEntry]: https://docs.microsoft.com/en-us/powershell/module/dism/Update-WIMBootEntry "Update-WIMBootEntry"
+[msdocs:Add-WindowsCapability]: https://docs.microsoft.com/en-us/powershell/module/dism/Add-WindowsCapability "Add-WindowsCapability"
+[msdocs:Get-WindowsCapability]: https://docs.microsoft.com/en-us/powershell/module/dism/Get-WindowsCapability "Get-WindowsCapability"
+[msdocs:Remove-WindowsCapability]: https://docs.microsoft.com/en-us/powershell/module/dism/Remove-WindowsCapability "Remove-WindowsCapability"
+[msdocs:Clear-WindowsCorruptMountPoint]: https://docs.microsoft.com/en-us/powershell/module/dism/Clear-WindowsCorruptMountPoint "Clear-WindowsCorruptMountPoint"
+[msdocs:Expand-WindowsCustomDataImage]: https://docs.microsoft.com/en-us/powershell/module/dism/Expand-WindowsCustomDataImage "Expand-WindowsCustomDataImage"
+[msdocs:New-WindowsCustomImage]: https://docs.microsoft.com/en-us/powershell/module/dism/New-WindowsCustomImage "New-WindowsCustomImage"
+[msdocs:Add-WindowsDriver]: https://docs.microsoft.com/en-us/powershell/module/dism/Add-WindowsDriver "Add-WindowsDriver"
+[msdocs:Export-WindowsDriver]: https://docs.microsoft.com/en-us/powershell/module/dism/Export-WindowsDriver "Export-WindowsDriver"
+[msdocs:Get-WindowsDriver]: https://docs.microsoft.com/en-us/powershell/module/dism/Get-WindowsDriver "Get-WindowsDriver"
+[msdocs:Remove-WindowsDriver]: https://docs.microsoft.com/en-us/powershell/module/dism/Remove-WindowsDriver "Remove-WindowsDriver"
+[msdocs:Get-WindowsEdition]: https://docs.microsoft.com/en-us/powershell/module/dism/Get-WindowsEdition "Get-WindowsEdition"
+[msdocs:Set-WindowsEdition]: https://docs.microsoft.com/en-us/powershell/module/dism/Set-WindowsEdition "Set-WindowsEdition"
+[msdocs:Add-WindowsImage]: https://docs.microsoft.com/en-us/powershell/module/dism/Add-WindowsImage "Add-WindowsImage"
+[msdocs:Dismount-WindowsImage]: https://docs.microsoft.com/en-us/powershell/module/dism/Dismount-WindowsImage "Dismount-WindowsImage"
+[msdocs:Expand-WindowsImage]: https://docs.microsoft.com/en-us/powershell/module/dism/Expand-WindowsImage "Expand-WindowsImage"
+[msdocs:Export-WindowsImage]: https://docs.microsoft.com/en-us/powershell/module/dism/Export-WindowsImage "Export-WindowsImage"
+[msdocs:Get-WindowsImage]: https://docs.microsoft.com/en-us/powershell/module/dism/Get-WindowsImage "Get-WindowsImage"
+[msdocs:Mount-WindowsImage]: https://docs.microsoft.com/en-us/powershell/module/dism/Mount-WindowsImage "Mount-WindowsImage"
+[msdocs:New-WindowsImage]: https://docs.microsoft.com/en-us/powershell/module/dism/New-WindowsImage "New-WindowsImage"
+[msdocs:Remove-WindowsImage]: https://docs.microsoft.com/en-us/powershell/module/dism/Remove-WindowsImage "Remove-WindowsImage"
+[msdocs:Save-WindowsImage]: https://docs.microsoft.com/en-us/powershell/module/dism/Save-WindowsImage "Save-WindowsImage"
+[msdocs:Optimize-WindowsImage]: https://docs.microsoft.com/en-us/powershell/module/dism/Optimize-WindowsImage "Optimize-WindowsImage"
+[msdocs:Repair-WindowsImage]: https://docs.microsoft.com/en-us/powershell/module/dism/Repair-WindowsImage "Repair-WindowsImage"
+[msdocs:Split-WindowsImage]: https://docs.microsoft.com/en-us/powershell/module/dism/Split-WindowsImage "Split-WindowsImage"
+[msdocs:Get-WindowsImageContent]: https://docs.microsoft.com/en-us/powershell/module/dism/Get-WindowsImageContent "Get-WindowsImageContent"
+[msdocs:Disable-WindowsOptionalFeature]: https://docs.microsoft.com/en-us/powershell/module/dism/Disable-WindowsOptionalFeature "Disable-WindowsOptionalFeature"
+[msdocs:Enable-WindowsOptionalFeature]: https://docs.microsoft.com/en-us/powershell/module/dism/Enable-WindowsOptionalFeature "Enable-WindowsOptionalFeature"
+[msdocs:Get-WindowsOptionalFeature]: https://docs.microsoft.com/en-us/powershell/module/dism/Get-WindowsOptionalFeature "Get-WindowsOptionalFeature"
+[msdocs:Add-WindowsPackage]: https://docs.microsoft.com/en-us/powershell/module/dism/Add-WindowsPackage "Add-WindowsPackage"
+[msdocs:Get-WindowsPackage]: https://docs.microsoft.com/en-us/powershell/module/dism/Get-WindowsPackage "Get-WindowsPackage"
+[msdocs:Remove-WindowsPackage]: https://docs.microsoft.com/en-us/powershell/module/dism/Remove-WindowsPackage "Remove-WindowsPackage"
+[msdocs:Set-WindowsProductKey]: https://docs.microsoft.com/en-us/powershell/module/dism/Set-WindowsProductKey "Set-WindowsProductKey"
+[msdocs:Get-WindowsReservedStorageState]: https://docs.microsoft.com/en-us/powershell/module/dism/Get-WindowsReservedStorageState "Get-WindowsReservedStorageState"
+[msdocs:Set-WindowsReservedStorageState]: https://docs.microsoft.com/en-us/powershell/module/dism/Set-WindowsReservedStorageState "Set-WindowsReservedStorageState"
+[msdocs:Use-WindowsUnattend]: https://docs.microsoft.com/en-us/powershell/module/dism/Use-WindowsUnattend "Use-WindowsUnattend"
+###### `Set-AppxProvisionedDataFile`[^][msdocs:Set-AppxProvisionedDataFile]
+###### `Add-AppxProvisionedPackage`[^][msdocs:Add-AppxProvisionedPackage]
+###### `Get-AppxProvisionedPackage`[^][msdocs:Get-AppxProvisionedPackage]
+###### `Remove-AppxProvisionedPackage`[^][msdocs:Remove-AppxProvisionedPackage]
 ###### `Add-WindowsCapability`[^][msdocs:Add-WindowsCapability]
 ###### `Get-WindowsCapability`[^][msdocs:Get-WindowsCapability]
 ###### `Remove-WindowsCapability`[^][msdocs:Remove-WindowsCapability]
 ###### `Clear-WindowsCorruptMountPoint`[^][msdocs:Clear-WindowsCorruptMountPoint]
 ###### `Expand-WindowsCustomDataImage`[^][msdocs:Expand-WindowsCustomDataImage]
 ###### `New-WindowsCustomImage`[^][msdocs:New-WindowsCustomImage]
-##### `WindowsDriver`
 ###### `Add-WindowsDriver`[^][msdocs:Add-WindowsDriver]
 DISM only supports .inf driver files
 ###### `Export-WindowsDriver`[^][msdocs:Export-WindowsDriver]
 ###### `Get-WindowsDriver`[^][msdocs:Get-WindowsDriver]
 ###### `Remove-WindowsDriver`[^][msdocs:Remove-WindowsDriver]
-##### `WindowsEdition`
 ###### `Get-WindowsEdition`[^][msdocs:Get-WindowsEdition]
 ###### `Set-WindowsEdition`[^][msdocs:Set-WindowsEdition]
-
-##### `WindowsImage`
 ###### `Add-WindowsImage`[^][msdocs:Add-WindowsImage]
 ###### `Dismount-WindowsImage`[^][msdocs:Dismount-WindowsImage]
 ###### `Expand-WindowsImage`[^][msdocs:Expand-WindowsImage]
@@ -2480,7 +2692,6 @@ Find Windows Server 2016 images included in G:\images\WS2016.WIM
 ```powershell
 Get-WindowsImage -ImagePath G:\images\WS2016.WIM
 ```
-
 ###### `Mount-WindowsImage`[^][msdocs:Mount-WindowsImage]
 [Mount-WindowsImage -Remount]: #Mount-WindowsImage '```&#10;PS C:\> Mount-WindowsImage -Remount&#10;```&#10;&#10;Equivalent to `Dism.exe /Remount-Image`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
 
@@ -2492,8 +2703,6 @@ Get-WindowsImage -ImagePath G:\images\WS2016.WIM
 ###### `Repair-WindowsImage`[^][msdocs:Repair-WindowsImage]
 ###### `Split-WindowsImage`[^][msdocs:Split-WindowsImage]
 ###### `Get-WindowsImageContent`[^][msdocs:Get-WindowsImageContent]
-
-##### `WindowsOptionalFeature`
 ###### `Disable-WindowsOptionalFeature`[^][msdocs:Disable-WindowsOptionalFeature]
 ###### `Enable-WindowsOptionalFeature`[^][msdocs:Enable-WindowsOptionalFeature]
 Enable a feature in the currently running operating system <sup>[docs.microsoft.com](https://docs.microsoft.com/en-us/powershell/module/dism/enable-windowsoptionalfeature?view=win10-ps&redirectedfrom=MSDN "Microsoft Docs: \"Enable-WindowsOptionalFeature\"")</sup>
@@ -2507,7 +2716,6 @@ Enable-WindowsOptionalFeature -online -FeatureName Microsoft-Windows-Subsystem-L
 ###### `Get-WindowsOptionalFeature`[^][msdocs:Get-WindowsOptionalFeature]
 [Get-WindowsOptionalFeature -FeatureName]: #Get-WindowsOptionalFeature '```&#10;PS C:\> Get-WindowsOptionalFeature -FeatureName&#10;```&#10;&#10;Equivalent to `Dism.exe /Image:foldername /Get-Featureinfo`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 78'
 [`FeatureName`][Get-WindowsOptionalFeature -FeatureName]
-##### `WindowsPackage`
 ###### `Add-WindowsPackage`[^][msdocs:Add-WindowsPackage]
 ###### `Get-WindowsPackage`[^][msdocs:Get-WindowsPackage]
 [Get-WindowsPackage -PackagePath]: #Get-WindowsPackage '```&#10;PS C:\> Get-WindowsPackage -PackagePath&#10;```&#10;&#10;Equivalent to `Dism.exe /Image:foldername /Get-Packageinfo`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
