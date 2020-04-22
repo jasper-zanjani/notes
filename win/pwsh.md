@@ -1598,153 +1598,249 @@ Tasks:
 
 
 
-#### Disks
-###### `Get-DedupProperties`[^][msdocs:Get-DedupProperties]
+#### `storage`
+[msdocs:Update-StorageProviderCache]: https://docs.microsoft.com/en-us/powershell/module/storage/Update-StorageProviderCache "Update-StorageProviderCache"
+[msdocs:Get-StorageReliabilityCounter]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-StorageReliabilityCounter "Get-StorageReliabilityCounter"
+[msdocs:Reset-StorageReliabilityCounter]: https://docs.microsoft.com/en-us/powershell/module/storage/Reset-StorageReliabilityCounter "Reset-StorageReliabilityCounter"
+[msdocs:Get-StorageSetting]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-StorageSetting "Get-StorageSetting"
+[msdocs:Set-StorageSetting]: https://docs.microsoft.com/en-us/powershell/module/storage/Set-StorageSetting "Set-StorageSetting"
+[msdocs:Debug-StorageSubSystem]: https://docs.microsoft.com/en-us/powershell/module/storage/Debug-StorageSubSystem "Debug-StorageSubSystem"
+[msdocs:Get-StorageSubsystem]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-StorageSubsystem "Get-StorageSubsystem"
+[msdocs:Register-StorageSubsystem]: https://docs.microsoft.com/en-us/powershell/module/storage/Register-StorageSubsystem "Register-StorageSubsystem"
+[msdocs:Set-StorageSubsystem]: https://docs.microsoft.com/en-us/powershell/module/storage/Set-StorageSubsystem "Set-StorageSubsystem"
+[msdocs:Unregister-StorageSubsystem]: https://docs.microsoft.com/en-us/powershell/module/storage/Unregister-StorageSubsystem "Unregister-StorageSubsystem"
+[msdocs:New-StorageSubsystemVirtualDisk]: https://docs.microsoft.com/en-us/powershell/module/storage/New-StorageSubsystemVirtualDisk "New-StorageSubsystemVirtualDisk"
+[msdocs:Get-StorageTier]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-StorageTier "Get-StorageTier"
+[msdocs:New-StorageTier]: https://docs.microsoft.com/en-us/powershell/module/storage/New-StorageTier "New-StorageTier"
+[msdocs:Remove-StorageTier]: https://docs.microsoft.com/en-us/powershell/module/storage/Remove-StorageTier "Remove-StorageTier"
+[msdocs:Resize-StorageTier]: https://docs.microsoft.com/en-us/powershell/module/storage/Resize-StorageTier "Resize-StorageTier"
+[msdocs:Set-StorageTier]: https://docs.microsoft.com/en-us/powershell/module/storage/Set-StorageTier "Set-StorageTier"
+[msdocs:Get-StorageTierSupportedSize]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-StorageTierSupportedSize "Get-StorageTierSupportedSize"
+[msdocs:Get-SupportedClusterSizes]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-SupportedClusterSizes "Get-SupportedClusterSizes"
+[msdocs:Get-SupportedFileSystems]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-SupportedFileSystems "Get-SupportedFileSystems"
+[msdocs:Get-TargetPort]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-TargetPort "Get-TargetPort"
+[msdocs:Get-TargetPortal]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-TargetPortal "Get-TargetPortal"
+[msdocs:Remove-TargetPortFromMaskingSet]: https://docs.microsoft.com/en-us/powershell/module/storage/Remove-TargetPortFromMaskingSet "Remove-TargetPortFromMaskingSet"
+[msdocs:Add-TargetPortToMaskingSet]: https://docs.microsoft.com/en-us/powershell/module/storage/Add-TargetPortToMaskingSet "Add-TargetPortToMaskingSet"
+[msdocs:Connect-VirtualDisk]: https://docs.microsoft.com/en-us/powershell/module/storage/Connect-VirtualDisk "Connect-VirtualDisk"
+[msdocs:Disconnect-VirtualDisk]: https://docs.microsoft.com/en-us/powershell/module/storage/Disconnect-VirtualDisk "Disconnect-VirtualDisk"
+[msdocs:Get-VirtualDisk]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-VirtualDisk "Get-VirtualDisk"
+[msdocs:Hide-VirtualDisk]: https://docs.microsoft.com/en-us/powershell/module/storage/Hide-VirtualDisk "Hide-VirtualDisk"
+[msdocs:New-VirtualDisk]: https://docs.microsoft.com/en-us/powershell/module/storage/New-VirtualDisk "New-VirtualDisk"
+[msdocs:Remove-VirtualDisk]: https://docs.microsoft.com/en-us/powershell/module/storage/Remove-VirtualDisk "Remove-VirtualDisk"
+[msdocs:Repair-VirtualDisk]: https://docs.microsoft.com/en-us/powershell/module/storage/Repair-VirtualDisk "Repair-VirtualDisk"
+[msdocs:Resize-VirtualDisk]: https://docs.microsoft.com/en-us/powershell/module/storage/Resize-VirtualDisk "Resize-VirtualDisk"
+[msdocs:Set-VirtualDisk]: https://docs.microsoft.com/en-us/powershell/module/storage/Set-VirtualDisk "Set-VirtualDisk"
+[msdocs:Show-VirtualDisk]: https://docs.microsoft.com/en-us/powershell/module/storage/Show-VirtualDisk "Show-VirtualDisk"
+[msdocs:New-VirtualDiskClone]: https://docs.microsoft.com/en-us/powershell/module/storage/New-VirtualDiskClone "New-VirtualDiskClone"
+[msdocs:Remove-VirtualDiskFromMaskingSet]: https://docs.microsoft.com/en-us/powershell/module/storage/Remove-VirtualDiskFromMaskingSet "Remove-VirtualDiskFromMaskingSet"
+[msdocs:New-VirtualDiskSnapshot]: https://docs.microsoft.com/en-us/powershell/module/storage/New-VirtualDiskSnapshot "New-VirtualDiskSnapshot"
+[msdocs:Get-VirtualDiskSupportedSize]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-VirtualDiskSupportedSize "Get-VirtualDiskSupportedSize"
+[msdocs:Add-VirtualDiskToMaskingSet]: https://docs.microsoft.com/en-us/powershell/module/storage/Add-VirtualDiskToMaskingSet "Add-VirtualDiskToMaskingSet"
+[msdocs:Debug-Volume]: https://docs.microsoft.com/en-us/powershell/module/storage/Debug-Volume "Debug-Volume"
+[msdocs:Format-Volume]: https://docs.microsoft.com/en-us/powershell/module/storage/Format-Volume "Format-Volume"
+[msdocs:Get-Volume]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-Volume "Get-Volume"
+[msdocs:New-Volume]: https://docs.microsoft.com/en-us/powershell/module/storage/New-Volume "New-Volume"
+[msdocs:Optimize-Volume]: https://docs.microsoft.com/en-us/powershell/module/storage/Optimize-Volume "Optimize-Volume"
+[msdocs:Repair-Volume]: https://docs.microsoft.com/en-us/powershell/module/storage/Repair-Volume "Repair-Volume"
+[msdocs:Set-Volume]: https://docs.microsoft.com/en-us/powershell/module/storage/Set-Volume "Set-Volume"
+[msdocs:Write-VolumeCache]: https://docs.microsoft.com/en-us/powershell/module/storage/Write-VolumeCache "Write-VolumeCache"
+[msdocs:Get-VolumeCorruptionCount]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-VolumeCorruptionCount "Get-VolumeCorruptionCount"
+[msdocs:Get-VolumeScrubPolicy]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-VolumeScrubPolicy "Get-VolumeScrubPolicy"
+[msdocs:Set-VolumeScrubPolicy]: https://docs.microsoft.com/en-us/powershell/module/storage/Set-VolumeScrubPolicy "Set-VolumeScrubPolicy"
+
+###### `Add-InitiatorIdToMaskingSet`[^][msdocs:Add-InitiatorIdToMaskingSet]
+###### `Add-PartitionAccessPath`[^][msdocs:Add-PartitionAccessPath]
+###### `Add-PhysicalDisk`[^][msdocs:Add-PhysicalDisk]
+###### `Add-TargetPortToMaskingSet`[^][msdocs:Add-TargetPortToMaskingSet]
+###### `Add-VirtualDiskToMaskingSet`[^][msdocs:Add-VirtualDiskToMaskingSet]
+###### `Block-FileShareAccess`[^][msdocs:Block-FileShareAccess]
 ###### `Clear-Disk`[^][msdocs:Clear-Disk]
-###### `Get-Disk`[^][msdocs:Get-Disk]
-###### `Initialize-Disk`[^][msdocs:Initialize-Disk]
-###### `Set-Disk`[^][msdocs:Set-Disk]
-###### `Update-Disk`[^][msdocs:Update-Disk]
+###### `Clear-FileStorageTier`[^][msdocs:Clear-FileStorageTier]
+###### `Connect-VirtualDisk`[^][msdocs:Connect-VirtualDisk]
+###### `Debug-FileShare`[^][msdocs:Debug-FileShare]
+###### `Debug-StorageSubSystem`[^][msdocs:Debug-StorageSubSystem]
+###### `Debug-Volume`[^][msdocs:Debug-Volume]
+###### `Disable-PhysicalDiskIdentification`[^][msdocs:Disable-PhysicalDiskIdentification]
+###### `Disable-StorageEnclosureIdentification`[^][msdocs:Disable-StorageEnclosureIdentification]
+###### `Disable-StorageHighAvailability`[^][msdocs:Disable-StorageHighAvailability]
+###### `Disable-StorageMaintenanceMode`[^][msdocs:Disable-StorageMaintenanceMode]
+###### `Disconnect-VirtualDisk`[^][msdocs:Disconnect-VirtualDisk]
 ###### `Dismount-DiskImage`[^][msdocs:Dismount-DiskImage]
+###### `Enable-PhysicalDiskIdentification`[^][msdocs:Enable-PhysicalDiskIdentification]
+###### `Enable-StorageEnclosureIdentification`[^][msdocs:Enable-StorageEnclosureIdentification]
+###### `Enable-StorageHighAvailability`[^][msdocs:Enable-StorageHighAvailability]
+###### `Enable-StorageMaintenanceMode`[^][msdocs:Enable-StorageMaintenanceMode]
+###### `Format-Volume`[^][msdocs:Format-Volume]
+Full format of specified drive <sup>[sumtips.com][https://sumtips.com/tips-n-tricks/manage-disk-partitions-with-windows-powershell/]</sup>
+```powershell
+Format-Volume -DriveLetter S -FileSystem FAT32 -NewFileSystemLabel SumTips -Full
+```
+###### `Get-DedupProperties`[^][msdocs:Get-DedupProperties]
+###### `Get-Disk`[^][msdocs:Get-Disk]
+Display a list of existing partitions, their drive letters, and the disk they are associated with <sup>[sumtips.com][https://sumtips.com/tips-n-tricks/manage-disk-partitions-with-windows-powershell/]</sup>
+```powershell
+Get-Disk | Get-Partition
+```
 ###### `Get-DiskImage`[^][msdocs:Get-DiskImage]
-###### `Mount-DiskImage`[^][msdocs:Mount-DiskImage]
 ###### `Get-DiskStorageNodeView`[^][msdocs:Get-DiskStorageNodeView]
 ###### `Get-FileIntegrity`[^][msdocs:Get-FileIntegrity]
-###### `Repair-FileIntegrity`[^][msdocs:Repair-FileIntegrity]
-###### `Set-FileIntegrity`[^][msdocs:Set-FileIntegrity]
-###### `Debug-FileShare`[^][msdocs:Debug-FileShare]
 ###### `Get-FileShare`[^][msdocs:Get-FileShare]
-###### `New-FileShare`[^][msdocs:New-FileShare]
-###### `Remove-FileShare`[^][msdocs:Remove-FileShare]
-###### `Set-FileShare`[^][msdocs:Set-FileShare]
-###### `Block-FileShareAccess`[^][msdocs:Block-FileShareAccess]
-###### `Grant-FileShareAccess`[^][msdocs:Grant-FileShareAccess]
-###### `Revoke-FileShareAccess`[^][msdocs:Revoke-FileShareAccess]
-###### `Unblock-FileShareAccess`[^][msdocs:Unblock-FileShareAccess]
 ###### `Get-FileShareAccessControlEntry`[^][msdocs:Get-FileShareAccessControlEntry]
-###### `Set-FileStorageTier`[^][msdocs:Set-FileStorageTier]
-###### `Clear-FileStorageTier`[^][msdocs:Clear-FileStorageTier]
 ###### `Get-FileStorageTier`[^][msdocs:Get-FileStorageTier]
-###### `Update-HostStorageCache`[^][msdocs:Update-HostStorageCache]
 ###### `Get-InitiatorId`[^][msdocs:Get-InitiatorId]
-###### `Remove-InitiatorId`[^][msdocs:Remove-InitiatorId]
-###### `Remove-InitiatorIdFromMaskingSet`[^][msdocs:Remove-InitiatorIdFromMaskingSet]
-###### `Add-InitiatorIdToMaskingSet`[^][msdocs:Add-InitiatorIdToMaskingSet]
 ###### `Get-InitiatorPort`[^][msdocs:Get-InitiatorPort]
-###### `Set-InitiatorPort`[^][msdocs:Set-InitiatorPort]
 ###### `Get-MaskingSet`[^][msdocs:Get-MaskingSet]
-###### `New-MaskingSet`[^][msdocs:New-MaskingSet]
-###### `Remove-MaskingSet`[^][msdocs:Remove-MaskingSet]
-###### `Rename-MaskingSet`[^][msdocs:Rename-MaskingSet]
 ###### `Get-OffloadDataTransferSetting`[^][msdocs:Get-OffloadDataTransferSetting]
 ###### `Get-Partition`[^][msdocs:Get-Partition]
-###### `New-Partition`[^][msdocs:New-Partition]
-###### `Remove-Partition`[^][msdocs:Remove-Partition]
-###### `Resize-Partition`[^][msdocs:Resize-Partition]
-###### `Set-Partition`[^][msdocs:Set-Partition]
-###### `Add-PartitionAccessPath`[^][msdocs:Add-PartitionAccessPath]
-###### `Remove-PartitionAccessPath`[^][msdocs:Remove-PartitionAccessPath]
+Display a list of existing partitions, their drive letters, and the disk they are associated with <sup>[sumtips.com][https://sumtips.com/tips-n-tricks/manage-disk-partitions-with-windows-powershell/]</sup>
+```powershell
+Get-Disk | Get-Partition
+```
 ###### `Get-PartitionSupportedSize`[^][msdocs:Get-PartitionSupportedSize]
-###### `Add-PhysicalDisk`[^][msdocs:Add-PhysicalDisk]
 ###### `Get-PhysicalDisk`[^][msdocs:Get-PhysicalDisk]
-###### `Remove-PhysicalDisk`[^][msdocs:Remove-PhysicalDisk]
-###### `Reset-PhysicalDisk`[^][msdocs:Reset-PhysicalDisk]
-###### `Set-PhysicalDisk`[^][msdocs:Set-PhysicalDisk]
-###### `Disable-PhysicalDiskIdentification`[^][msdocs:Disable-PhysicalDiskIdentification]
-###### `Enable-PhysicalDiskIdentification`[^][msdocs:Enable-PhysicalDiskIdentification]
 ###### `Get-PhysicalDiskStorageNodeView`[^][msdocs:Get-PhysicalDiskStorageNodeView]
 ###### `Get-PhysicalExtent`[^][msdocs:Get-PhysicalExtent]
 ###### `Get-PhysicalExtentAssociation`[^][msdocs:Get-PhysicalExtentAssociation]
 ###### `Get-ResiliencySetting`[^][msdocs:Get-ResiliencySetting]
-###### `Set-ResiliencySetting`[^][msdocs:Set-ResiliencySetting]
 ###### `Get-StorageAdvancedProperty`[^][msdocs:Get-StorageAdvancedProperty]
 ###### `Get-StorageDiagnosticInfo`[^][msdocs:Get-StorageDiagnosticInfo]
-###### `Start-StorageDiagnosticLog`[^][msdocs:Start-StorageDiagnosticLog]
-###### `Stop-StorageDiagnosticLog`[^][msdocs:Stop-StorageDiagnosticLog]
 ###### `Get-StorageEnclosure`[^][msdocs:Get-StorageEnclosure]
-###### `Disable-StorageEnclosureIdentification`[^][msdocs:Disable-StorageEnclosureIdentification]
-###### `Enable-StorageEnclosureIdentification`[^][msdocs:Enable-StorageEnclosureIdentification]
 ###### `Get-StorageEnclosureStorageNodeView`[^][msdocs:Get-StorageEnclosureStorageNodeView]
 ###### `Get-StorageEnclosureVendorData`[^][msdocs:Get-StorageEnclosureVendorData]
 ###### `Get-StorageFaultDomain`[^][msdocs:Get-StorageFaultDomain]
 ###### `Get-StorageFileServer`[^][msdocs:Get-StorageFileServer]
-###### `New-StorageFileServer`[^][msdocs:New-StorageFileServer]
-###### `Remove-StorageFileServer`[^][msdocs:Remove-StorageFileServer]
-###### `Set-StorageFileServer`[^][msdocs:Set-StorageFileServer]
-###### `Update-StorageFirmware`[^][msdocs:Update-StorageFirmware]
 ###### `Get-StorageFirmwareInformation`[^][msdocs:Get-StorageFirmwareInformation]
 ###### `Get-StorageHealthAction`[^][msdocs:Get-StorageHealthAction]
 ###### `Get-StorageHealthReport`[^][msdocs:Get-StorageHealthReport]
 ###### `Get-StorageHealthSetting`[^][msdocs:Get-StorageHealthSetting]
-###### `Remove-StorageHealthSetting`[^][msdocs:Remove-StorageHealthSetting]
-###### `Set-StorageHealthSetting`[^][msdocs:Set-StorageHealthSetting]
-###### `Disable-StorageHighAvailability`[^][msdocs:Disable-StorageHighAvailability]
-###### `Enable-StorageHighAvailability`[^][msdocs:Enable-StorageHighAvailability]
 ###### `Get-StorageJob`[^][msdocs:Get-StorageJob]
-###### `Stop-StorageJob`[^][msdocs:Stop-StorageJob]
-###### `Disable-StorageMaintenanceMode`[^][msdocs:Disable-StorageMaintenanceMode]
-###### `Enable-StorageMaintenanceMode`[^][msdocs:Enable-StorageMaintenanceMode]
 ###### `Get-StorageNode`[^][msdocs:Get-StorageNode]
 ###### `Get-StoragePool`[^][msdocs:Get-StoragePool]
-###### `New-StoragePool`[^][msdocs:New-StoragePool]
-###### `Optimize-StoragePool`[^][msdocs:Optimize-StoragePool]
-###### `Remove-StoragePool`[^][msdocs:Remove-StoragePool]
-###### `Set-StoragePool`[^][msdocs:Set-StoragePool]
-###### `Update-StoragePool`[^][msdocs:Update-StoragePool]
 ###### `Get-StorageProvider`[^][msdocs:Get-StorageProvider]
-###### `Set-StorageProvider`[^][msdocs:Set-StorageProvider]
-###### `Update-StorageProviderCache`[^][msdocs:Update-StorageProviderCache]
 ###### `Get-StorageReliabilityCounter`[^][msdocs:Get-StorageReliabilityCounter]
-###### `Reset-StorageReliabilityCounter`[^][msdocs:Reset-StorageReliabilityCounter]
 ###### `Get-StorageSetting`[^][msdocs:Get-StorageSetting]
-###### `Set-StorageSetting`[^][msdocs:Set-StorageSetting]
-###### `Debug-StorageSubSystem`[^][msdocs:Debug-StorageSubSystem]
 ###### `Get-StorageSubsystem`[^][msdocs:Get-StorageSubsystem]
-###### `Register-StorageSubsystem`[^][msdocs:Register-StorageSubsystem]
-###### `Set-StorageSubsystem`[^][msdocs:Set-StorageSubsystem]
-###### `Unregister-StorageSubsystem`[^][msdocs:Unregister-StorageSubsystem]
-###### `New-StorageSubsystemVirtualDisk`[^][msdocs:New-StorageSubsystemVirtualDisk]
 ###### `Get-StorageTier`[^][msdocs:Get-StorageTier]
-###### `New-StorageTier`[^][msdocs:New-StorageTier]
-###### `Remove-StorageTier`[^][msdocs:Remove-StorageTier]
-###### `Resize-StorageTier`[^][msdocs:Resize-StorageTier]
-###### `Set-StorageTier`[^][msdocs:Set-StorageTier]
 ###### `Get-StorageTierSupportedSize`[^][msdocs:Get-StorageTierSupportedSize]
 ###### `Get-SupportedClusterSizes`[^][msdocs:Get-SupportedClusterSizes]
 ###### `Get-SupportedFileSystems`[^][msdocs:Get-SupportedFileSystems]
 ###### `Get-TargetPort`[^][msdocs:Get-TargetPort]
 ###### `Get-TargetPortal`[^][msdocs:Get-TargetPortal]
-###### `Remove-TargetPortFromMaskingSet`[^][msdocs:Remove-TargetPortFromMaskingSet]
-###### `Add-TargetPortToMaskingSet`[^][msdocs:Add-TargetPortToMaskingSet]
-###### `Connect-VirtualDisk`[^][msdocs:Connect-VirtualDisk]
-###### `Disconnect-VirtualDisk`[^][msdocs:Disconnect-VirtualDisk]
 ###### `Get-VirtualDisk`[^][msdocs:Get-VirtualDisk]
-###### `Hide-VirtualDisk`[^][msdocs:Hide-VirtualDisk]
-###### `New-VirtualDisk`[^][msdocs:New-VirtualDisk]
-###### `Remove-VirtualDisk`[^][msdocs:Remove-VirtualDisk]
-###### `Repair-VirtualDisk`[^][msdocs:Repair-VirtualDisk]
-###### `Resize-VirtualDisk`[^][msdocs:Resize-VirtualDisk]
-###### `Set-VirtualDisk`[^][msdocs:Set-VirtualDisk]
-###### `Show-VirtualDisk`[^][msdocs:Show-VirtualDisk]
-###### `New-VirtualDiskClone`[^][msdocs:New-VirtualDiskClone]
-###### `Remove-VirtualDiskFromMaskingSet`[^][msdocs:Remove-VirtualDiskFromMaskingSet]
-###### `New-VirtualDiskSnapshot`[^][msdocs:New-VirtualDiskSnapshot]
 ###### `Get-VirtualDiskSupportedSize`[^][msdocs:Get-VirtualDiskSupportedSize]
-###### `Add-VirtualDiskToMaskingSet`[^][msdocs:Add-VirtualDiskToMaskingSet]
-###### `Debug-Volume`[^][msdocs:Debug-Volume]
-###### `Format-Volume`[^][msdocs:Format-Volume]
 ###### `Get-Volume`[^][msdocs:Get-Volume]
-###### `New-Volume`[^][msdocs:New-Volume]
-###### `Optimize-Volume`[^][msdocs:Optimize-Volume]
-###### `Repair-Volume`[^][msdocs:Repair-Volume]
-###### `Set-Volume`[^][msdocs:Set-Volume]
-###### `Write-VolumeCache`[^][msdocs:Write-VolumeCache]
 ###### `Get-VolumeCorruptionCount`[^][msdocs:Get-VolumeCorruptionCount]
 ###### `Get-VolumeScrubPolicy`[^][msdocs:Get-VolumeScrubPolicy]
+###### `Grant-FileShareAccess`[^][msdocs:Grant-FileShareAccess]
+###### `Hide-VirtualDisk`[^][msdocs:Hide-VirtualDisk]
+###### `Initialize-Disk`[^][msdocs:Initialize-Disk]
+###### `Mount-DiskImage`[^][msdocs:Mount-DiskImage]
+Mount a VHD or VHDX file <sup>[Zacker][Zacker]: 92</sup>
+```powershell
+Mount-DiskImage -ImagePath $file
+```
+###### `New-FileShare`[^][msdocs:New-FileShare]
+###### `New-MaskingSet`[^][msdocs:New-MaskingSet]
+###### `New-StorageFileServer`[^][msdocs:New-StorageFileServer]
+###### `New-StoragePool`[^][msdocs:New-StoragePool]
+###### `New-StorageSubsystemVirtualDisk`[^][msdocs:New-StorageSubsystemVirtualDisk]
+###### `New-StorageTier`[^][msdocs:New-StorageTier]
+###### `New-VirtualDisk`[^][msdocs:New-VirtualDisk]
+###### `New-VirtualDiskClone`[^][msdocs:New-VirtualDiskClone]
+###### `New-VirtualDiskSnapshot`[^][msdocs:New-VirtualDiskSnapshot]
+###### `New-Volume`[^][msdocs:New-Volume]
+`FileSystem`
+`ProvisioningType`
+`ResiliencySettingName`
+
+
+Create a virtual disk that uses parity resiliency and two tiers, with the default friendly names of Performance for SSDs and Capacity for HDDs <sup>[Zacker][Zacker]: 355</sup>
+```powershell
+New-Volume -StoragePool "s2d*" -FriendlyName vdisk1 -Filesystem csvfs_refs -ResiliencySettingName parity -StorageTiersFriendlyNames performance,capacity -StorageTierSizes 10gb,100gb
+```
+Create a VHD with a Mirror layout <sup>[Practice Lab][pl:70-740]</sup>
+```powershell
+New-Volume -StoragePoolFriendlyName “PLABDM01-SP1” -FriendlyName “Mirror1” -Size 6GB -ResiliencySettingName “Mirror” -FileSystem NTFS -AccessPath “M:” -ProvisioningType Thin
+```
+###### `Optimize-StoragePool`[^][msdocs:Optimize-StoragePool]
+###### `Optimize-Volume`[^][msdocs:Optimize-Volume]
+###### `Register-StorageSubsystem`[^][msdocs:Register-StorageSubsystem]
+###### `Remove-FileShare`[^][msdocs:Remove-FileShare]
+###### `Remove-InitiatorId`[^][msdocs:Remove-InitiatorId]
+###### `Remove-InitiatorIdFromMaskingSet`[^][msdocs:Remove-InitiatorIdFromMaskingSet]
+###### `Remove-MaskingSet`[^][msdocs:Remove-MaskingSet]
+###### `Remove-Partition`[^][msdocs:Remove-Partition]
+Remove a partition <sup>[sumtips.com][https://sumtips.com/tips-n-tricks/manage-disk-partitions-with-windows-powershell/]</sup>
+```powershell
+Remove-Partition -DiskNumber 1 -PartitionNumber 1
+```
+Remove a partition without confirmation
+```powershell
+Remove-Partition -DiskNumber 1 -PartitionNumber 1 -Confirm:$false
+```
+###### `Remove-PartitionAccessPath`[^][msdocs:Remove-PartitionAccessPath]
+###### `Remove-PhysicalDisk`[^][msdocs:Remove-PhysicalDisk]
+###### `Remove-StorageFileServer`[^][msdocs:Remove-StorageFileServer]
+###### `Remove-StorageHealthSetting`[^][msdocs:Remove-StorageHealthSetting]
+###### `Remove-StoragePool`[^][msdocs:Remove-StoragePool]
+###### `Remove-StorageTier`[^][msdocs:Remove-StorageTier]
+###### `Remove-TargetPortFromMaskingSet`[^][msdocs:Remove-TargetPortFromMaskingSet]
+###### `Remove-VirtualDisk`[^][msdocs:Remove-VirtualDisk]
+###### `Remove-VirtualDiskFromMaskingSet`[^][msdocs:Remove-VirtualDiskFromMaskingSet]
+###### `Rename-MaskingSet`[^][msdocs:Rename-MaskingSet]
+###### `Repair-FileIntegrity`[^][msdocs:Repair-FileIntegrity]
+###### `Repair-VirtualDisk`[^][msdocs:Repair-VirtualDisk]
+###### `Repair-Volume`[^][msdocs:Repair-Volume]
+###### `Reset-PhysicalDisk`[^][msdocs:Reset-PhysicalDisk]
+###### `Reset-StorageReliabilityCounter`[^][msdocs:Reset-StorageReliabilityCounter]
+###### `Resize-Partition`[^][msdocs:Resize-Partition]
+###### `Resize-StorageTier`[^][msdocs:Resize-StorageTier]
+###### `Resize-VirtualDisk`[^][msdocs:Resize-VirtualDisk]
+###### `Revoke-FileShareAccess`[^][msdocs:Revoke-FileShareAccess]
+###### `Set-Disk`[^][msdocs:Set-Disk]
+`IsOffline`
+`IsReadOnly`
+
+Bring a disk online <sup>[Practice Lab][pl:70-740]</sup>
+```powershell
+Set-Disk -Number 3 -IsOffline $false
+```
+###### `Set-FileIntegrity`[^][msdocs:Set-FileIntegrity]
+###### `Set-FileShare`[^][msdocs:Set-FileShare]
+###### `Set-FileStorageTier`[^][msdocs:Set-FileStorageTier]
+###### `Set-InitiatorPort`[^][msdocs:Set-InitiatorPort]
+###### `Set-Partition`[^][msdocs:Set-Partition]
+###### `Set-PhysicalDisk`[^][msdocs:Set-PhysicalDisk]
+###### `Set-ResiliencySetting`[^][msdocs:Set-ResiliencySetting]
+###### `Set-StorageFileServer`[^][msdocs:Set-StorageFileServer]
+###### `Set-StorageHealthSetting`[^][msdocs:Set-StorageHealthSetting]
+###### `Set-StoragePool`[^][msdocs:Set-StoragePool]
+###### `Set-StorageProvider`[^][msdocs:Set-StorageProvider]
+###### `Set-StorageSetting`[^][msdocs:Set-StorageSetting]
+###### `Set-StorageSubsystem`[^][msdocs:Set-StorageSubsystem]
+###### `Set-StorageTier`[^][msdocs:Set-StorageTier]
+###### `Set-VirtualDisk`[^][msdocs:Set-VirtualDisk]
+###### `Set-Volume`[^][msdocs:Set-Volume]
 ###### `Set-VolumeScrubPolicy`[^][msdocs:Set-VolumeScrubPolicy]
-
-
-##### `DedupVolume`
+###### `Show-VirtualDisk`[^][msdocs:Show-VirtualDisk]
+###### `Start-StorageDiagnosticLog`[^][msdocs:Start-StorageDiagnosticLog]
+###### `Stop-StorageDiagnosticLog`[^][msdocs:Stop-StorageDiagnosticLog]
+###### `Stop-StorageJob`[^][msdocs:Stop-StorageJob]
+###### `Unblock-FileShareAccess`[^][msdocs:Unblock-FileShareAccess]
+###### `Unregister-StorageSubsystem`[^][msdocs:Unregister-StorageSubsystem]
+###### `Update-Disk`[^][msdocs:Update-Disk]
+###### `Update-HostStorageCache`[^][msdocs:Update-HostStorageCache]
+###### `Update-StorageFirmware`[^][msdocs:Update-StorageFirmware]
+###### `Update-StoragePool`[^][msdocs:Update-StoragePool]
+###### `Update-StorageProviderCache`[^][msdocs:Update-StorageProviderCache]
+###### `Write-VolumeCache`[^][msdocs:Write-VolumeCache]
+###### `New-Partition`[^][msdocs:New-Partition]
+Create a new partition mounted to F: using the ReFS filesystem <sup>[Practice Lab][pl:70-740]</sup>
+```powershell
+New-Partition -DiskNumber 3 -UseMaximumSize -DriveLetter F | Format-Volume -NewFileSystemLabel “PLABS-Test” -FileSystem ReFS
+```
+##### `deduplication`
 ###### `Enable-DedupVolume`
 [Enable-DedupVolume -UsageType]: #enable-dedupvolume '```&#10;PS C:\> Enable-DedupVolume -UsageType&#10;```&#10;Specifies the expected type of workload for the volume&#10;Acceptables values include:&#10;  - `Default`: Equivalent to "General Purpose File Server" in the GUI. This configures deduplication to be suitable to typical file server functions, like shared folders, Work Folders, and Folder Redirection.&#10;  - `HyperV`: Equivalent to "Virtual Desktop Infrastructure (VDI) Server" in the GUI. This configures Deduplication to occur in the background, with in-use and partial files optimized.&#10;  - `Backup`: Equivalent to "Virtualized Backup Server" in the GUI. Intended for use with backup applications, like Microsoft DPM. Deduplication is a priority process, and in-use files are optimized.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 156'
 
@@ -1754,53 +1850,6 @@ Enable deduplication <sup>[Zacker][Zacker]: 157</sup>
 ```powershell
 Enable-DedupVolume -Volume "e:" -UsageType default
 Enable-DedupVolume -Volume "\\?\\volume{26a21bda-a627-11d7-9931-806e6f6e6963}" -UsageType backup
-```
-##### `DiskImage`
-###### `Mount-DiskImage`
-Mount a VHD or VHDX file <sup>[Zacker][Zacker]: 92</sup>
-```powershell
-Mount-DiskImage -ImagePath $file
-```
-##### `Partition`
-###### `Get-Partition`
-Display a list of existing partitions, their drive letters, and the disk they are associated with <sup>[sumtips.com][https://sumtips.com/tips-n-tricks/manage-disk-partitions-with-windows-powershell/]</sup>
-```powershell
-Get-Disk | Get-Partition
-```
-###### `New-Partition`
-Use all available size for a new partition <sup>[sumtips.com][https://sumtips.com/tips-n-tricks/manage-disk-partitions-with-windows-powershell/]</sup>
-```powershell
-New-Partition -DiskNumber 1 -UseMaximumSize
-```
-Automatically assign a drive letter
-```powershell
-New-Partition -DiskNumber 1 -UseMaximumSize -AssignDriveLetter
-```
-###### `Remove-Partition`
-Remove a partition <sup>[sumtips.com][https://sumtips.com/tips-n-tricks/manage-disk-partitions-with-windows-powershell/]</sup>
-```powershell
-Remove-Partition -DiskNumber 1 -PartitionNumber 1
-```
-Remove a partition without confirmation
-```powershell
-Remove-Partition -DiskNumber 1 -PartitionNumber 1 -Confirm:$false
-```
-##### `Volume`
-###### `Format-Volume`
-Full format of specified drive <sup>[sumtips.com][https://sumtips.com/tips-n-tricks/manage-disk-partitions-with-windows-powershell/]</sup>
-```powershell
-Format-Volume -DriveLetter S -FileSystem FAT32 -NewFileSystemLabel SumTips -Full
-```
-###### `New-Volume`
-Create a virtual disk that uses parity resiliency and two tiers, with the default friendly names of Performance for SSDs and Capacity for HDDs <sup>[Zacker][Zacker]: 355</sup>
-```powershell
-New-Volume -StoragePool "s2d*" -FriendlyName vdisk1 -Filesystem csvfs_refs -ResiliencySettingName parity -StorageTiersFriendlyNames performance,capacity -StorageTierSizes 10gb,100gb
-```
-##### `Disk`
-###### `Get-Disk`
-Display a list of existing partitions, their drive letters, and the disk they are associated with <sup>[sumtips.com][https://sumtips.com/tips-n-tricks/manage-disk-partitions-with-windows-powershell/]</sup>
-```powershell
-Get-Disk | Get-Partition
 ```
 #### Files
 ##### `Archive`
