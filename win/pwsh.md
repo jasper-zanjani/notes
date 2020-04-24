@@ -13,6 +13,7 @@
 [Zacker]: https://github.com/jasper-zanjani/notes/master/certs/70-740.md "Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017."
 [Holmes]: # 'Holmes, Lee. _Windows PowerShell Cookbook_. O\'Reilly Media, 2013.'
 [SOPR]: https://leanpub.com/secretsofpowershellremoting 'Don Jones et al. _Secrets of Powershell Remoting_. '
+[mu:70-740]: # 'MeasureUp Practice Test. _Installation, Storage and Compute with Windows Server 2016 (70-740)_.'
 
 # PowerShell
 ## Contents
@@ -33,7 +34,6 @@ Powershell [remoting][remoting] can be done [explicitly][explicit remoting] or [
 Explicit remoting is also 1-to-1 remoting, where an interactive Powershell prompt is brought up on a remote computer.
 One-to-many or fan-out remoting is possible with implicit remoting, where a command is transmitted to many computers 
 Remoting relies on [WinRM][WinRM], which is Microsoft's implementation of WSMAN. 
-
 
 ### Tasks
 - [**Display computer name**][Get-ComputerInfo]
@@ -684,7 +684,7 @@ Remoting relies on [WinRM][WinRM], which is Microsoft's implementation of WSMAN.
 [Sync-SRGroup]: #sync-srgroup '```&#10;Sync-SRGroup&#10;```&#10;Starts or resumes replication for a replication group.'
 [Test-SRTopology]: #test-srtopology '```&#10;Test-SRTopology&#10;```&#10;Validates a potential replication partnership.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 151'
 
-<code>SRTopology&nbsp;[t][Test-SRTopology]
+<code>SRTopology&nbsp;[t][Test-SRTopology]</code>
 <code>WIMBootEntry&nbsp;[g][Get-WIMBootEntry]&nbsp;[u][Update-WIMBootEntry]</code>
 **AppxProvisioned**
 <code>DataFile&nbsp;[s][Set-AppxProvisionedDataFile]</code> 
@@ -1851,18 +1851,66 @@ Enable deduplication <sup>[Zacker][Zacker]: 157</sup>
 Enable-DedupVolume -Volume "e:" -UsageType default
 Enable-DedupVolume -Volume "\\?\\volume{26a21bda-a627-11d7-9931-806e6f6e6963}" -UsageType backup
 ```
+#### `storagereplica`
+[msdocs:Get-SRAccess]: https://docs.microsoft.com/en-us/powershell/module/storagereplica/Get-SRAccess "Get-SRAccess"
+[msdocs:Grant-SRAccess]: https://docs.microsoft.com/en-us/powershell/module/storagereplica/Grant-SRAccess "Grant-SRAccess"
+[msdocs:Revoke-SRAccess]: https://docs.microsoft.com/en-us/powershell/module/storagereplica/Revoke-SRAccess "Revoke-SRAccess"
+[msdocs:Export-SRConfiguration]: https://docs.microsoft.com/en-us/powershell/module/storagereplica/Export-SRConfiguration "Export-SRConfiguration"
+[msdocs:Get-SRDelegation]: https://docs.microsoft.com/en-us/powershell/module/storagereplica/Get-SRDelegation "Get-SRDelegation"
+[msdocs:Grant-SRDelegation]: https://docs.microsoft.com/en-us/powershell/module/storagereplica/Grant-SRDelegation "Grant-SRDelegation"
+[msdocs:Revoke-SRDelegation]: https://docs.microsoft.com/en-us/powershell/module/storagereplica/Revoke-SRDelegation "Revoke-SRDelegation"
+[msdocs:Get-SRGroup]: https://docs.microsoft.com/en-us/powershell/module/storagereplica/Get-SRGroup "Get-SRGroup"
+[msdocs:New-SRGroup]: https://docs.microsoft.com/en-us/powershell/module/storagereplica/New-SRGroup "New-SRGroup"
+[msdocs:Remove-SRGroup]: https://docs.microsoft.com/en-us/powershell/module/storagereplica/Remove-SRGroup "Remove-SRGroup"
+[msdocs:Set-SRGroup]: https://docs.microsoft.com/en-us/powershell/module/storagereplica/Set-SRGroup "Set-SRGroup"
+[msdocs:Suspend-SRGroup]: https://docs.microsoft.com/en-us/powershell/module/storagereplica/Suspend-SRGroup "Suspend-SRGroup"
+[msdocs:Sync-SRGroup]: https://docs.microsoft.com/en-us/powershell/module/storagereplica/Sync-SRGroup "Sync-SRGroup"
+[msdocs:Clear-SRMetadata]: https://docs.microsoft.com/en-us/powershell/module/storagereplica/Clear-SRMetadata "Clear-SRMetadata"
+[msdocs:Get-SRNetworkConstraint]: https://docs.microsoft.com/en-us/powershell/module/storagereplica/Get-SRNetworkConstraint "Get-SRNetworkConstraint"
+[msdocs:Remove-SRNetworkConstraint]: https://docs.microsoft.com/en-us/powershell/module/storagereplica/Remove-SRNetworkConstraint "Remove-SRNetworkConstraint"
+[msdocs:Set-SRNetworkConstraint]: https://docs.microsoft.com/en-us/powershell/module/storagereplica/Set-SRNetworkConstraint "Set-SRNetworkConstraint"
+[msdocs:Get-SRPartnership]: https://docs.microsoft.com/en-us/powershell/module/storagereplica/Get-SRPartnership "Get-SRPartnership"
+[msdocs:New-SRPartnership]: https://docs.microsoft.com/en-us/powershell/module/storagereplica/New-SRPartnership "New-SRPartnership"
+[msdocs:Remove-SRPartnership]: https://docs.microsoft.com/en-us/powershell/module/storagereplica/Remove-SRPartnership "Remove-SRPartnership"
+[msdocs:Set-SRPartnership]: https://docs.microsoft.com/en-us/powershell/module/storagereplica/Set-SRPartnership "Set-SRPartnership"
+[msdocs:Test-SRTopology]: https://docs.microsoft.com/en-us/powershell/module/storagereplica/Test-SRTopology "Test-SRTopology"
+
+###### `Clear-SRMetadata`[^][msdocs:Clear-SRMetadata]
+###### `Export-SRConfiguration`[^][msdocs:Export-SRConfiguration]
+###### `Get-SRAccess`[^][msdocs:Get-SRAccess]
+###### `Get-SRDelegation`[^][msdocs:Get-SRDelegation]
+###### `Get-SRGroup`[^][msdocs:Get-SRGroup]
+###### `Get-SRNetworkConstraint`[^][msdocs:Get-SRNetworkConstraint]
+###### `Get-SRPartnership`[^][msdocs:Get-SRPartnership]
+###### `Grant-SRAccess`[^][msdocs:Grant-SRAccess]
+###### `Grant-SRDelegation`[^][msdocs:Grant-SRDelegation]
+###### `New-SRGroup`[^][msdocs:New-SRGroup]
+###### `New-SRPartnership`[^][msdocs:New-SRPartnership]
+###### `Remove-SRGroup`[^][msdocs:Remove-SRGroup]
+###### `Remove-SRNetworkConstraint`[^][msdocs:Remove-SRNetworkConstraint]
+###### `Remove-SRPartnership`[^][msdocs:Remove-SRPartnership]
+###### `Revoke-SRAccess`[^][msdocs:Revoke-SRAccess]
+###### `Revoke-SRDelegation`[^][msdocs:Revoke-SRDelegation]
+###### `Set-SRGroup`[^][msdocs:Set-SRGroup]
+###### `Set-SRNetworkConstraint`[^][msdocs:Set-SRNetworkConstraint]
+###### `Set-SRPartnership`[^][msdocs:Set-SRPartnership]
+Reverse the direction of storage replica, in a case where the source goes down <sup>[MeasureUp][mu:70-740]</sup>
+```powershell
+Set-SRPartnership -NewSourceComputerName $replica -SourceRGName $replicarg -DestinationComputerName $src -DestinationRGName $srcrg
+```
+###### `Suspend-SRGroup`[^][msdocs:Suspend-SRGroup]
+###### `Sync-SRGroup`[^][msdocs:Sync-SRGroup]
+###### `Test-SRTopology`[^][msdocs:Test-SRTopology]
+
 #### Files
-##### `Archive`
 ###### `Compress-Archive`
 ###### `Expand-Archive`
 Decompress archives
 ```powershell
 Expand-Archive
 ```
-##### `CliXml`
 ###### `Export-CliXml`
 ###### `Import-CliXml`
-##### `Content`
 ###### `Add-Content`
 Append a line to the `hosts` file
 ```powershell
@@ -1874,7 +1922,6 @@ Make a PowerShell object from a JSON file
 ```powershell
 Get-Content -Path file.json | ConvertFrom-Json
 ```
-##### `Csv`
 ###### `Export-Csv`
 ###### `Import-Csv`
 Add a CSV full of users
@@ -2153,13 +2200,10 @@ Get-AzVM | Select-Object Name,@{Name="DataDiskCount"; Expression={$_.StorageProf
 [msdocs:Test-VMReplicationConnection]: https://docs.microsoft.com/en-us/powershell/module/hyper-v/Test-VMReplicationConnection "Test-VMReplicationConnection"
 [msdocs:Update-VMVersion]: https://docs.microsoft.com/en-us/powershell/module/hyper-v/Update-VMVersion "Update-VMVersion"
 
-
 Install Hyper-V Powershell module <sup>[Zacker][Zacker]: 90</sup>
 ```powershell
 Install-WindowsFeature -Name hyper-v-powershell
 ```
-
-##### `VHD`
 ###### `Mount-VHD`
 Tasks:
 - [VHDX file](#vhdx-file)
@@ -2171,8 +2215,6 @@ Mount-VHD -Path $file
 ###### `New-VHD`
 Tasks:
 - [VHDX file](#vhdx-file)
-##### `VM`
-
 ###### `Compare-VM`[^][msdocs:Compare-VM]
 ###### `Export-VM`[^][msdocs:Export-VM]
 Export a VM <sup>[Zacker][Zacker]: 373</sup>
@@ -2215,7 +2257,6 @@ New-VM -Name "nano2" -Generation 2 -MemoryStartupBytes 1GB -VHDPath "F:\hyper-v\
 ###### `Start-VM`[^][msdocs:Start-VM]
 ###### `Stop-VM`[^][msdocs:Stop-VM]
 ###### `Suspend-VM`[^][msdocs:Suspend-VM]
-##### `VMHost`
 ###### `Set-VMHost`
 [Set-VMHost -VirtualMachinePath]: #Set-VMHost '```&#10;PS C:\> Set-VMHost -VirtualMachinePath&#10;```&#10;Specify the default folder to store virtual machine configuration files on the Hyper-V host'
 [Set-VMHost -VirtualHardDiskPath]: #Set-VMHost '```&#10;PS C:\> Set-VMHost -VirtualHardDiskPath&#10;```&#10;Specify the default folder to store virtual hard disks on the Hyper-V host.'
@@ -2238,10 +2279,8 @@ Set-VMFirmware vmname -SecureBootTemplate MicrosoftUEFICertificateAuthority
 ###### `Set-VMMemory`
 Tasks:
 - [Implement nested virtualization](#implement-nested-virtualization)
-
 ###### `Set-VMProcessor`
 - [Implement nested virtualization](#implement-nested-virtualization)
-##### `VMReplicationServer`
 ###### `Set-VMReplicationServer`
 Configure a server's replica configuration <sup>[Zacker][Zacker]: 300</sup>
 ```powershell
@@ -2289,8 +2328,6 @@ New-NetNAT -Name LocalNAT -InternalIPInterfaceAddressPrefix "192.168.100.0/24"
 [Set-VMSwitch -AllowManagementOS]: #Set-VMSwitch '```&#10;PS C:\> Set-VMSwitch -AllowManagementOS&#10;```&#10;Specify whether host can access the physical network adapter to which the virtual switch is bound'
 
 [`AllowManagementOS`][Set-VMSwitch -AllowManagementOS]
-
-##### `VMNetworkAdapter`
 ###### `Add-VMNetworkAdapter`[^][msdocs:Add-VMNetworkAdapter]
 [Add-VMNetworkAdapter -IsLegacy]: #add-vmnetworkadapter '```&#10;PS C:\> Add-VMNetworkAdapter -IsLegacy&#10;```&#10;Specify a legacy adapter'
 
