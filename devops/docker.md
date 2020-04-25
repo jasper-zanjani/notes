@@ -4,7 +4,13 @@
 
 Microsoft maintained a [Powershell module](https://github.com/microsoft/Docker-PowerShell "PowerShell for Docker") which has been deprecated for years.
 
-## Syntax
+##### Storage
+Docker has several options for containers to store files in a persistent manner:
+- **Volumes** are stored in a part of the host filesystem which is managed by Docker (/var/lib/docker/volumes/ on Docker).
+- **Bind mounts** may be stored anywhere on the host system
+- **`tmpfs` mounts** are stored in the host system's memory only, and are available only on Linux.
+
+# Docker syntax
 ###### Command groups
 [docker:attach]: https://docs.docker.com/engine/reference/commandline/attach/ "docker attach"
 [docker:build]: https://docs.docker.com/engine/reference/commandline/build/ "docker build"
@@ -172,7 +178,6 @@ Microsoft maintained a [Powershell module](https://github.com/microsoft/Docker-P
 [`version`][docker version][^][docker:version]
 [`volume`][docker volume][^][docker:volume]
 [`wait`][docker wait][^][docker:wait]
-
 ##### `docker attach`
 Connect to a session on a running container <sup>[Zacker][Zacker]: 279</sup>
 ```sh
@@ -272,7 +277,7 @@ Tag an image on local container host <sup>[Zacker][Zacker]: 272</sup>
 ```sh
 docker tag $USERNAME/$IMAGENAME:$TAG
 ```
-# Dockerfile
+# Dockerfile syntax
 A Docker image consists of read-only **layers**, each of which represents an **instruction** that incrementally the changes the image being built up.
 ```dockerfile
 FROM alpine

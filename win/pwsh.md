@@ -525,7 +525,86 @@ Remoting relies on [WinRM][WinRM], which is Microsoft's implementation of WSMAN.
 **PS**
 <code>ReadlineOption&nbsp;[g][Get-PSReadlineOption] [s][Set-PSReadlineOption]</code> 
 
-##### Hyper-V cmdlets
+
+##### Windows Server
+
+###### `dcbqos` module
+<!-- Datacenter Bridging (DCB) -->
+[New-NetQosPolicy]: #new-netqospolicy '```&#10;PS C:\> New-NetQosPolicy&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 144'
+[New-NetQosTrafficClass]: #new-netqostrafficclass '```&#10;PS C:\> New-NetQosTrafficClass&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 144'
+[Set-NetQoSdcbxSetting]: #set-netqosdcbxsetting '```&#10;PS C:\> Set-NetQoSdcbxSetting&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 143'
+[Enable-NetQosFlowControl]: #enable-netqosflowcontrol '```&#10;Enable-NetQosFlowControl&#10;```&#10;Enables link level flow control based on the IEEE 802.1p priority.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 145'
+
+**`NetQoS`**
+<code>DcbxSetting&nbsp;[s][Set-NetQosDcbxSetting]</code>
+<code>FlowControl&nbsp;[e][Enable-NetQosFlowControl]</code>
+<code>Policy&nbsp;[n][New-NetQosPolicy]</code>
+<code>TrafficClass&nbsp;[n][New-NetQosTrafficClass]</code>
+
+###### `dism` module
+<!-- DISM module -->
+[Add-AppxProvisionedPackage]: #add-appxprovisionedpackage '```&#10;PS C:\> Add-AppxProvisionedPackage&#10;```&#10;Adds an app package (.appx) that will install for each new user to a Windows image.&#10;Equivalent to `Dism.exe /Image:foldername /Add-ProvisionedAppxPackage`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
+[Add-WindowsCapability]: #add-windowscapability '```&#10;PS C:\> Add-WindowsCapability&#10;```&#10;Installs a Windows capability package on the specified operating system image.'
+[Add-WindowsDriver]: #add-windowsdriver '```&#10;PS C:\> Add-WindowsDriver&#10;```&#10;Adds a driver to an offline Windows image.&#10;Equivalent to `Dism.exe /Image:foldername /Add-Drive`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
+[Add-WindowsImage]: #add-windowsimage '```&#10;PS C:\> Add-WindowsImage&#10;```&#10;Adds an additional image to an existing image (.wim) file.&#10;Equivalent to `dism.exe /Append-Image`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
+[Add-WindowsPackage]: #add-windowspackage '```&#10;PS C:\> Add-WindowsPackage&#10;```&#10;Adds a single .cab or .msu file to a Windows image.&#10;Equivalent to `Dism.exe /Image:foldername /Add-Package`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
+[Clear-WindowsCorruptMountPoint]: #clear-windowscorruptmountpoint '```&#10;PS C:\> Clear-WindowsCorruptMountPoint&#10;```&#10;Deletes all of the resources associated with a mounted image that has been corrupted.'
+[Disable-WindowsOptionalFeature]: #disable-windowsoptionalfeature '```&#10;PS C:\> Disable-WindowsOptionalFeature&#10;```&#10;Disables a feature in a Windows image.&#10;Equivalent to `Dism.exe /Image:foldername /Disable-Feature`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
+[Dismount-WindowsImage]: #dismount-windowsimage '```&#10;PS C:\> Dismount-WindowsImage&#10;```&#10;Dismounts a Windows image from the directory it is mapped to.&#10;Equivalent to `Dism.exe /Unmount-Image`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
+[Enable-WindowsOptionalFeature]: #enable-windowsoptionalfeature '```&#10;PS C:\> Enable-WindowsOptionalFeature&#10;```&#10;Enable or restore an optional feature in a Windows image&#10;Equivalent to `Dism.exe /Image:foldername /Enable-Feature`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
+[Expand-WindowsCustomDataImage]: #expand-windowscustomdataimage '```&#10;PS C:\> Expand-WindowsCustomDataImage&#10;```&#10;Expands a custom data image.'
+[Expand-WindowsImage]: #expand-windowsimage '```&#10;PS C:\> Expand-WindowsImage&#10;```&#10;Applies an image to a specified location.&#10;Equivalent to `Dism.exe /Apply-Image`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
+[Export-WindowsDriver]: #export-windowsdriver '```&#10;PS C:\> Export-WindowsDriver&#10;```&#10;Exports all third-party drivers from a Windows image to a destination folder.&#10;Equivalent to `Dism.exe /Image:foldername /Export-Driver`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
+[Export-WindowsImage]: #export-windowsimage '```&#10;PS C:\> Export-WindowsImage&#10;```&#10;Exports a copy of the specified image to another image file.&#10;Equivalent to `Dism.exe /Export-Image`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
+[Get-AppxProvisionedPackage]: #get-appxprovisionedpackage '```&#10;PS C:\> Get-AppxProvisionedPackage&#10;```&#10;Gets information about app packages (.appx) in an image that will be installed for each new user.&#10;Equivalent to `Dism.exe /Image:foldername /Get-ProvisionedAppxPackages`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 78'
+[Get-WIMBootEntry]: #get-wimbootentry '```&#10;PS C:\> Get-WIMBootEntry&#10;```&#10;Displays the Windows image file boot (WIMBoot) configuration entries for a specified disk volume.'
+[Get-WindowsCapability]: #get-windowscapability '```&#10;PS C:\> Get-WindowsCapability&#10;```&#10;Gets Windows capabilities for an image or a running operating system.'
+[Get-WindowsDriver]: #get-windowsdriver '```&#10;PS C:\> Get-WindowsDriver&#10;```&#10;Displays information about drivers in a Windows image.&#10;Equivalent to `Dism.exe /Image:foldername /Get-Drivers`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 78'
+[Get-WindowsEdition]: #get-windowsedition '```&#10;PS C:\> Get-WindowsEdition&#10;```&#10;Gets edition information about a Windows image.'
+[Get-WindowsImage]: #get-windowsimage '```&#10;PS C:\> Get-WindowsImage&#10;```&#10;Gets information about a Windows image in a WIM or VHD file.&#10;Equivalent to `Dism.exe /Get-ImageInfo`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
+[Get-WindowsImageContent]: #get-windowsimagecontent '```&#10;PS C:\> Get-WindowsImageContent&#10;```&#10;Displays a list of the files and folders in a specified image.&#10;Equivalent to `Dism.exe /List-Image`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
+[Get-WindowsOptionalFeature]: #get-windowsoptionalfeature '```&#10;PS C:\> Get-WindowsOptionalFeature&#10;```&#10;Gets information about optional features in a Windows image.&#10;Equivalent to `Dism.exe /Image:foldername /Get-Features`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 78'
+[Get-WindowsPackage]: #get-windowspackage '```&#10;PS C:\> Get-WindowsPackage&#10;```&#10;Gets information about packages in a Windows image.&#10;Equivalent to `Dism.exe /Image:foldername /Get-Packages`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 78'
+[Get-WindowsReservedStorageState]: #get-windowsreservedstoragestate '```&#10;PS C:\> Get-WindowsReservedStorageState&#10;```&#10;Gets the reserved storage state of the image.'
+[Mount-WindowsImage]: #mount-windowsimage '```&#10;PS C:\> Mount-WindowsImage&#10;```&#10;Mounts a Windows image in a WIM or VHD file to a directory on the local computer.&#10;Equivalent to `Dism.exe /Mount-image`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
+[New-WindowsCustomImage]: #new-windowscustomimage '```&#10;PS C:\> New-WindowsCustomImage&#10;```&#10;Captures an image of customized or serviced Windows components on a Windows Image File Boot (WIMBoot) configured device.'
+[New-WindowsImage]: #new-windowsimage '```&#10;PS C:\> New-WindowsImage&#10;```&#10;Captures an image of a drive to a new WIM file.&#10;Equivalent to `Dism.exe /Capture-Image`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
+[Optimize-WindowsImage]: #optimize-windowsimage '```&#10;PS C:\> Optimize-WindowsImage&#10;```&#10;Configures a Windows image with specified optimizations.'
+[Remove-AppxProvisionedPackage]: #remove-appxprovisionedpackage '```&#10;PS C:\> Remove-AppxProvisionedPackage&#10;```&#10;Removes an app package (.appx) from a Windows image.&#10;Equivalent to `Dism.exe /Image:foldername /Remove-ProvisionedAppxPackage`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 78'
+[Remove-WindowsCapability]: #remove-windowscapability '```&#10;PS C:\> Remove-WindowsCapability&#10;```&#10;Uninstalls a Windows capability package from an image.'
+[Remove-WindowsDriver]: #remove-windowsdriver '```&#10;PS C:\> Remove-WindowsDriver&#10;```&#10;Removes a driver from an offline Windows image.&#10;Equivalent to `Dism.exe /Image:foldername /Remove-Driver`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 78'
+[Remove-WindowsImage]: #remove-windowsimage '```&#10;PS C:\> Remove-WindowsImage&#10;```&#10;Deletes the specified volume image from a WIM file that has multiple volume images.&#10;Equivalent to `Dism.exe /Remove-Image`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
+[Remove-WindowsPackage]: #remove-windowspackage '```&#10;PS C:\> Remove-WindowsPackage&#10;```&#10;Removes a package from a Windows image.&#10;Equivalent to `Dism.exe /Image:foldername /Remove-Package`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 78'
+[Repair-WindowsImage]: #repair-windowsimage '```&#10;PS C:\> Repair-WindowsImage&#10;```&#10;Repairs a Windows image in a WIM or VHD file.'
+[Save-WindowsImage]: #save-windowsimage '```&#10;PS C:\> Save-WindowsImage&#10;```&#10;Applies changes made to a mounted image to its WIM or VHD file.&#10;Equivalent to `Dism.exe /Commit-Image`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
+[Set-AppxProvisionedDataFile]: #set-appxprovisioneddatafile '```&#10;PS C:\> Set-AppxProvisionedDataFile&#10;```&#10;Adds custom data into the specified app (.appx) package that has been provisioned in a Windows image.&#10;Equivalent to `Dism.exe /Image:foldername /Set-ProvisionedAppxDataFile`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 78'
+[Set-WindowsEdition]: #set-windowsedition '```&#10;PS C:\> Set-WindowsEdition&#10;```&#10;Changes a Windows image to a higher edition.'
+[Set-WindowsProductKey]: #set-windowsproductkey '```&#10;PS C:\> Set-WindowsProductKey&#10;```&#10;Sets the product key for the Windows image.'
+[Set-WindowsReservedStorageState]: #set-windowsreservedstoragestate '```&#10;PS C:\> Set-WindowsReservedStorageState&#10;```&#10;Sets the reserved storage state of the image.'
+[Split-WindowsImage]: #split-windowsimage '```&#10;PS C:\> Split-WindowsImage&#10;```&#10;Splits an existing .wim file into multiple read-only split .wim files.'
+[Update-WIMBootEntry]: #update-wimbootentry '```&#10;PS C:\> Update-WIMBootEntry&#10;```&#10;Updates the Windows image file boot (WIMBoot) configuration entry, associated with either the specified data source ID, the renamed image file path or the moved image file path.'
+[Use-WindowsUnattend]: #use-windowsunattend '```&#10;PS C:\> Use-WindowsUnattend&#10;```&#10;Applies an unattended answer file to a Windows image.'
+
+<code>WIMBootEntry&nbsp;[g][Get-WIMBootEntry]&nbsp;[u][Update-WIMBootEntry]</code>
+**`AppxProvisioned`**
+<code>DataFile&nbsp;[s][Set-AppxProvisionedDataFile]</code> 
+<code>Package&nbsp;[a][Add-AppxProvisionedPackage]&nbsp;[g][Get-AppxProvisionedPackage]&nbsp;[r][Remove-AppxProvisionedPackage]</code> 
+**`Windows`**
+<code>Capability&nbsp;[a][Add-WindowsCapability]&nbsp;[g][Get-WindowsCapability]&nbsp;[r][Remove-WindowsCapability]</code>
+<code>CorruptMountPoint&nbsp;[c][Clear-WindowsCorruptMountPoint]</code>
+<code>CustomDataImage&nbsp;[en][Expand-WindowsCustomDataImage]</code>
+<code>CustomImage&nbsp;[n][New-WindowsCustomImage]</code>
+<code>Driver&nbsp;[a][Add-WindowsDriver]&nbsp;[ep][Export-WindowsDriver]&nbsp;[g][Get-WindowsDriver]&nbsp;[r][Remove-WindowsDriver]</code> 
+<code>Edition&nbsp;[g][Get-WindowsEdition]&nbsp;[s][Set-WindowsEdition]</code>
+<code>Image&nbsp;[a][Add-WindowsImage]&nbsp;[dm][Dismount-WindowsImage]&nbsp;[en][Expand-WindowsImage]&nbsp;[ep][Export-windowsImage]&nbsp;[n][New-WindowsImage]&nbsp;[sv][Save-WindowsImage]&nbsp;[ep][Export-WindowsImage]&nbsp;[g][Get-WindowsImage]&nbsp;[mt][Mount-WindowsImage]&nbsp;[n][New-WindowsImage]&nbsp;[om][Optimize-WindowsImage]&nbsp;[rp][Repair-WindowsImage]&nbsp;[r][Remove-WindowsImage]&nbsp;[sl][Split-WindowsImage]</code>
+<code>ImageContent&nbsp;[g][Get-WindowsImageContent]</code>
+<code>OptionalFeature&nbsp;[d][Disable-WindowsOptionalFeature]&nbsp;[e][Enable-WindowsOptionalFeature]&nbsp;[g][Get-WindowsOptionalFeature]</code>
+<code>Package&nbsp;[a][Add-WindowsPackage]&nbsp;[g][Get-WindowsPackage]&nbsp;[r][Remove-WindowsPackage]</code>
+<code>ProductKey&nbsp;[s][Set-WindowsProductKey]</code>
+<code>ReservedStorageState&nbsp;[g][Get-WindowsReservedStorageState]&nbsp;[s][Set-WindowsReservedStorageState]</code>
+<code>Unattend&nbsp;[u][Use-WindowsUnattend]</code>
+
+###### `hyper-v` module
 <!-- Hyper-V cmdlets -->
 [Add-VMNetworkAdapter]: #add-vmnetworkadapter '```&#10;PS C:\> Add-VMNetworkAdapter&#10;```&#10;Adds a virtual network adapter to a virtual machine.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 237'
 [Checkpoint-VM]: #checkpoint-vm '`Checkpoint-VM`&#10;Creates a checkpoint of a virtual machine.'
@@ -574,9 +653,9 @@ Remoting relies on [WinRM][WinRM], which is Microsoft's implementation of WSMAN.
 [Rename-VMSwitch]: #rename-vmswitch '```&#10;PS C:\> Rename-VMSwitch&#10;```&#10;Renames a virtual switch.'
 [Set-VMSwitch]: #set-vmswitch '```&#10;PS C:\> Set-VMSwitch&#10;```&#10;Configures a virtual switch.'
 
-**VHD**
+**`VHD`**
 <code>[mt][Mount-VHD]&nbsp;[n][New-VHD]&nbsp;</code>
-**VM**
+**`VM`**
 <code>[cr][Compare-VM]&nbsp;[db][Debug-VM]&nbsp;[ep][Export-VM]&nbsp;[g][Get-VM]&nbsp;[ip][Import-VM]&nbsp;[m][Move-VM]&nbsp;[ms][Measure-VM]&nbsp;[n][New-VM]&nbsp;[r][Remove-VM]&nbsp;[rn][Rename-VM]&nbsp;[rt][Restart-VM]&nbsp;[ru][Resume-VM]&nbsp;[s][Set-VM]&nbsp;[sa][Start-VM]&nbsp;[sp][Stop-VM]&nbsp;[ss][Suspend-VM]&nbsp;[sv][Save-VM]</code>
 <code>Firmware&nbsp;[s][Set-VMFirmware]</code> 
 <code>Host&nbsp;[s][Set-VMHost]</code>
@@ -586,56 +665,27 @@ Remoting relies on [WinRM][WinRM], which is Microsoft's implementation of WSMAN.
 <code>Switch&nbsp;[a][Add-VMSwitch]&nbsp;[g][Get-VMSwitch]&nbsp;[n][New-VMSwitch]&nbsp;[r][Remove-VMSwitch]&nbsp;[rn][Rename-VMSwitch]&nbsp;[s][Set-VMSwitch]&nbsp; </code>
 <code>Version&nbsp;[u][Update-VMVersion]</code> 
 
-##### Windows Server
-[Receive-SmigServerData]: #receive-smigserverdata '```&#10;PS C:\> Receive-SmigServerData&#10;```&#10;Enable a destination server to receive migrated files, folders, permissions, and share properties from a source server (`Send-SmigServerData` cmdlet must be running on the source server at the same time)&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 33'
-[Send-SmigServerData]: #send-smigserverdata '```&#10;PS C:\> Send-SmigServerData&#10;```&#10;Migrate files, folders, permissions, and share properties from a source server to a destination server (`Receive-SmigServerData` cmdlet must be running on the destination server at the same time)&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 33'
-[Get-SmigServerFeature]: #get-smigserverfeature '```&#10;PS C:\> Get-SmigServerFeature&#10;```&#10;Display a list of Windows features that can be migrated from the local server or ffrom a migration store&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 33'
-[Export-SmigServerSetting]: #export-smigserversetting '```&#10;PS C:\> Export-SmigServerSetting&#10;```&#10;Export certain Windows features and operating system settings to a migration store&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 33'
-[Import-SmigServerSetting]: #import-smigserversetting '```&#10;PS C:\> Import-SmigServerSetting&#10;```&#10;Import certain Windows features and operating system settings from a migration store and apply them to the local server&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 33'
+###### `PackageManagement` module
+[Find-Package]: #find-package '```&#10;PS C:\> Find-Package&#10;```&#10;Finds software packages in available package sources.'
+[Get-Package]: #get-package '```&#10;PS C:\> Get-Package&#10;```&#10;Returns a list of all software packages that have been installed by using Package Management.'
+[Install-Package]: #install-package '```&#10;PS C:\> Install-Package&#10;```&#10;Installs one or more software packages.'
+[Save-Package]: #save-package '```&#10;PS C:\> Save-Package&#10;```&#10;Saves packages to the local computer without installing them.'
+[Uninstall-Package]: #uninstall-package '```&#10;PS C:\> Uninstall-Package&#10;```&#10;Uninstalls one or more software packages.'
+[Find-PackageProvider]: #find-packageprovider '```&#10;PS C:\> Find-PackageProvider&#10;```&#10;Returns a list of Package Management package providers available for installation.'
+[Get-PackageProvider]: #get-packageprovider '```&#10;PS C:\> Get-PackageProvider&#10;```&#10;Returns a list of package providers that are connected to Package Management.'
+[Import-PackageProvider]: #import-packageprovider '```&#10;PS C:\> Import-PackageProvider&#10;```&#10;Adds Package Management package providers to the current session.'
+[Install-PackageProvider]: #install-packageprovider '```&#10;PS C:\> Install-PackageProvider&#10;```&#10;Installs one or more Package Management package providers.'
+[Get-PackageSource]: #get-packagesource '```&#10;PS C:\> Get-PackageSource&#10;```&#10;Gets a list of package sources that are registered for a package provider.'
+[Register-PackageSource]: #register-packagesource '```&#10;PS C:\> Register-PackageSource&#10;```&#10;Adds a package source for a specified package provider.'
+[Set-PackageSource]: #set-packagesource '```&#10;PS C:\> Set-PackageSource&#10;```&#10;Replaces a package source for a specified package provider.'
+[Unregister-PackageSource]: #unregister-packagesource '```&#10;PS C:\> Unregister-PackageSource&#10;```&#10;Removes a registered package source.'
 
-<!-- DISM module -->
-[Set-AppxProvisionedDataFile]: #set-appxprovisioneddatafile '```&#10;PS C:\> Set-AppxProvisionedDataFile&#10;```&#10;Adds custom data into the specified app (.appx) package that has been provisioned in a Windows image.&#10;Equivalent to `Dism.exe /Image:foldername /Set-ProvisionedAppxDataFile`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 78'
-[Add-AppxProvisionedPackage]: #add-appxprovisionedpackage '```&#10;PS C:\> Add-AppxProvisionedPackage&#10;```&#10;Adds an app package (.appx) that will install for each new user to a Windows image.&#10;Equivalent to `Dism.exe /Image:foldername /Add-ProvisionedAppxPackage`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
-[Get-AppxProvisionedPackage]: #get-appxprovisionedpackage '```&#10;PS C:\> Get-AppxProvisionedPackage&#10;```&#10;Gets information about app packages (.appx) in an image that will be installed for each new user.&#10;Equivalent to `Dism.exe /Image:foldername /Get-ProvisionedAppxPackages`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 78'
-[Remove-AppxProvisionedPackage]: #remove-appxprovisionedpackage '```&#10;PS C:\> Remove-AppxProvisionedPackage&#10;```&#10;Removes an app package (.appx) from a Windows image.&#10;Equivalent to `Dism.exe /Image:foldername /Remove-ProvisionedAppxPackage`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 78'
-[Get-WIMBootEntry]: #get-wimbootentry '```&#10;PS C:\> Get-WIMBootEntry&#10;```&#10;Displays the Windows image file boot (WIMBoot) configuration entries for a specified disk volume.'
-[Update-WIMBootEntry]: #update-wimbootentry '```&#10;PS C:\> Update-WIMBootEntry&#10;```&#10;Updates the Windows image file boot (WIMBoot) configuration entry, associated with either the specified data source ID, the renamed image file path or the moved image file path.'
-[Add-WindowsCapability]: #add-windowscapability '```&#10;PS C:\> Add-WindowsCapability&#10;```&#10;Installs a Windows capability package on the specified operating system image.'
-[Get-WindowsCapability]: #get-windowscapability '```&#10;PS C:\> Get-WindowsCapability&#10;```&#10;Gets Windows capabilities for an image or a running operating system.'
-[Remove-WindowsCapability]: #remove-windowscapability '```&#10;PS C:\> Remove-WindowsCapability&#10;```&#10;Uninstalls a Windows capability package from an image.'
-[Clear-WindowsCorruptMountPoint]: #clear-windowscorruptmountpoint '```&#10;PS C:\> Clear-WindowsCorruptMountPoint&#10;```&#10;Deletes all of the resources associated with a mounted image that has been corrupted.'
-[Expand-WindowsCustomDataImage]: #expand-windowscustomdataimage '```&#10;PS C:\> Expand-WindowsCustomDataImage&#10;```&#10;Expands a custom data image.'
-[New-WindowsCustomImage]: #new-windowscustomimage '```&#10;PS C:\> New-WindowsCustomImage&#10;```&#10;Captures an image of customized or serviced Windows components on a Windows Image File Boot (WIMBoot) configured device.'
-[Add-WindowsDriver]: #add-windowsdriver '```&#10;PS C:\> Add-WindowsDriver&#10;```&#10;Adds a driver to an offline Windows image.&#10;Equivalent to `Dism.exe /Image:foldername /Add-Drive`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
-[Export-WindowsDriver]: #export-windowsdriver '```&#10;PS C:\> Export-WindowsDriver&#10;```&#10;Exports all third-party drivers from a Windows image to a destination folder.&#10;Equivalent to `Dism.exe /Image:foldername /Export-Driver`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
-[Get-WindowsDriver]: #get-windowsdriver '```&#10;PS C:\> Get-WindowsDriver&#10;```&#10;Displays information about drivers in a Windows image.&#10;Equivalent to `Dism.exe /Image:foldername /Get-Drivers`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 78'
-[Remove-WindowsDriver]: #remove-windowsdriver '```&#10;PS C:\> Remove-WindowsDriver&#10;```&#10;Removes a driver from an offline Windows image.&#10;Equivalent to `Dism.exe /Image:foldername /Remove-Driver`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 78'
-[Get-WindowsEdition]: #get-windowsedition '```&#10;PS C:\> Get-WindowsEdition&#10;```&#10;Gets edition information about a Windows image.'
-[Set-WindowsEdition]: #set-windowsedition '```&#10;PS C:\> Set-WindowsEdition&#10;```&#10;Changes a Windows image to a higher edition.'
-[Add-WindowsImage]: #add-windowsimage '```&#10;PS C:\> Add-WindowsImage&#10;```&#10;Adds an additional image to an existing image (.wim) file.&#10;Equivalent to `dism.exe /Append-Image`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
-[Dismount-WindowsImage]: #dismount-windowsimage '```&#10;PS C:\> Dismount-WindowsImage&#10;```&#10;Dismounts a Windows image from the directory it is mapped to.&#10;Equivalent to `Dism.exe /Unmount-Image`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
-[Expand-WindowsImage]: #expand-windowsimage '```&#10;PS C:\> Expand-WindowsImage&#10;```&#10;Applies an image to a specified location.&#10;Equivalent to `Dism.exe /Apply-Image`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
-[Export-WindowsImage]: #export-windowsimage '```&#10;PS C:\> Export-WindowsImage&#10;```&#10;Exports a copy of the specified image to another image file.&#10;Equivalent to `Dism.exe /Export-Image`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
-[Get-WindowsImage]: #get-windowsimage '```&#10;PS C:\> Get-WindowsImage&#10;```&#10;Gets information about a Windows image in a WIM or VHD file.&#10;Equivalent to `Dism.exe /Get-ImageInfo`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
-[Mount-WindowsImage]: #mount-windowsimage '```&#10;PS C:\> Mount-WindowsImage&#10;```&#10;Mounts a Windows image in a WIM or VHD file to a directory on the local computer.&#10;Equivalent to `Dism.exe /Mount-image`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
-[New-WindowsImage]: #new-windowsimage '```&#10;PS C:\> New-WindowsImage&#10;```&#10;Captures an image of a drive to a new WIM file.&#10;Equivalent to `Dism.exe /Capture-Image`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
-[Remove-WindowsImage]: #remove-windowsimage '```&#10;PS C:\> Remove-WindowsImage&#10;```&#10;Deletes the specified volume image from a WIM file that has multiple volume images.&#10;Equivalent to `Dism.exe /Remove-Image`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
-[Save-WindowsImage]: #save-windowsimage '```&#10;PS C:\> Save-WindowsImage&#10;```&#10;Applies changes made to a mounted image to its WIM or VHD file.&#10;Equivalent to `Dism.exe /Commit-Image`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
-[Optimize-WindowsImage]: #optimize-windowsimage '```&#10;PS C:\> Optimize-WindowsImage&#10;```&#10;Configures a Windows image with specified optimizations.'
-[Repair-WindowsImage]: #repair-windowsimage '```&#10;PS C:\> Repair-WindowsImage&#10;```&#10;Repairs a Windows image in a WIM or VHD file.'
-[Split-WindowsImage]: #split-windowsimage '```&#10;PS C:\> Split-WindowsImage&#10;```&#10;Splits an existing .wim file into multiple read-only split .wim files.'
-[Get-WindowsImageContent]: #get-windowsimagecontent '```&#10;PS C:\> Get-WindowsImageContent&#10;```&#10;Displays a list of the files and folders in a specified image.&#10;Equivalent to `Dism.exe /List-Image`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
-[Disable-WindowsOptionalFeature]: #disable-windowsoptionalfeature '```&#10;PS C:\> Disable-WindowsOptionalFeature&#10;```&#10;Disables a feature in a Windows image.&#10;Equivalent to `Dism.exe /Image:foldername /Disable-Feature`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
-[Enable-WindowsOptionalFeature]: #enable-windowsoptionalfeature '```&#10;PS C:\> Enable-WindowsOptionalFeature&#10;```&#10;Enable or restore an optional feature in a Windows image&#10;Equivalent to `Dism.exe /Image:foldername /Enable-Feature`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
-[Get-WindowsOptionalFeature]: #get-windowsoptionalfeature '```&#10;PS C:\> Get-WindowsOptionalFeature&#10;```&#10;Gets information about optional features in a Windows image.&#10;Equivalent to `Dism.exe /Image:foldername /Get-Features`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 78'
-[Add-WindowsPackage]: #add-windowspackage '```&#10;PS C:\> Add-WindowsPackage&#10;```&#10;Adds a single .cab or .msu file to a Windows image.&#10;Equivalent to `Dism.exe /Image:foldername /Add-Package`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
-[Get-WindowsPackage]: #get-windowspackage '```&#10;PS C:\> Get-WindowsPackage&#10;```&#10;Gets information about packages in a Windows image.&#10;Equivalent to `Dism.exe /Image:foldername /Get-Packages`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 78'
-[Remove-WindowsPackage]: #remove-windowspackage '```&#10;PS C:\> Remove-WindowsPackage&#10;```&#10;Removes a package from a Windows image.&#10;Equivalent to `Dism.exe /Image:foldername /Remove-Package`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 78'
-[Set-WindowsProductKey]: #set-windowsproductkey '```&#10;PS C:\> Set-WindowsProductKey&#10;```&#10;Sets the product key for the Windows image.'
-[Get-WindowsReservedStorageState]: #get-windowsreservedstoragestate '```&#10;PS C:\> Get-WindowsReservedStorageState&#10;```&#10;Gets the reserved storage state of the image.'
-[Set-WindowsReservedStorageState]: #set-windowsreservedstoragestate '```&#10;PS C:\> Set-WindowsReservedStorageState&#10;```&#10;Sets the reserved storage state of the image.'
-[Use-WindowsUnattend]: #use-windowsunattend '```&#10;PS C:\> Use-WindowsUnattend&#10;```&#10;Applies an unattended answer file to a Windows image.'
+**`Package`**
+<code>&nbsp;[ep][Find-Package][^][msdocs:Find-Package]&nbsp;[g][Get-Package][^][msdocs:Get-Package]&nbsp;[is][Install-Package][^][msdocs:Install-Package]&nbsp;[sv][Save-Package][^][msdocs:Save-Package]&nbsp;[us][Uninstall-Package][^][msdocs:Uninstall-Package]</code>
+<code>Provider&nbsp;[ep][Find-PackageProvider][^][msdocs:Find-PackageProvider]&nbsp;[g][Get-PackageProvider][^][msdocs:Get-PackageProvider]&nbsp;[ip][Import-PackageProvider][^][msdocs:Import-PackageProvider]&nbsp;[is][Install-PackageProvider][^][msdocs:Install-PackageProvider]</code>
+<code>Source&nbsp;[g][Get-PackageSource][^][msdocs:Get-PackageSource]&nbsp;[rg][Register-PackageSource][^][msdocs:Register-PackageSource]&nbsp;[s][Set-PackageSource][^][msdocs:Set-PackageSource]&nbsp;[ur][Unregister-PackageSource][^][msdocs:Unregister-PackageSource]</code>
 
+###### `psdesiredstateconfiguration` module
 <!-- DSC -->
 [New-DSCCheckSum]: #new-dscchecksum '```&#10;PS C:\> New-DSCCheckSum&#10;```&#10;Creates checksum files for DSC documents and DSC resources.'
 [Get-DscConfiguration]: #get-dscconfiguration '```&#10;Get-DscConfiguration&#10;```&#10;Gets the current configuration of the nodes.'
@@ -654,12 +704,87 @@ Remoting relies on [WinRM][WinRM], which is Microsoft's implementation of WSMAN.
 [Get-DscResource]: #get-dscresource '```&#10;Get-DscResource&#10;```&#10;Gets the DSC resources present on the computer.'
 [Invoke-DscResource]: #invoke-dscresource '```&#10;Invoke-DscResource&#10;```&#10;Runs a method of a specified DSC resource.'
 
-<!-- Datacenter Bridging (DCB) -->
-[New-NetQosPolicy]: #new-netqospolicy '```&#10;PS C:\> New-NetQosPolicy&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 144'
-[New-NetQosTrafficClass]: #new-netqostrafficclass '```&#10;PS C:\> New-NetQosTrafficClass&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 144'
-[Set-NetQoSdcbxSetting]: #set-netqosdcbxsetting '```&#10;PS C:\> Set-NetQoSdcbxSetting&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 143'
-[Enable-NetQosFlowControl]: #enable-netqosflowcontrol '```&#10;Enable-NetQosFlowControl&#10;```&#10;Enables link level flow control based on the IEEE 802.1p priority.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 145'
+**`DSC`**
+<code>CheckSum&nbsp;[n][New-DscCheckSum]</code>
+<code>Configuration&nbsp;[g][Get-DscConfiguration]&nbsp;[pb][Publish-DscConfiguration]&nbsp;[rr][Restore-DscConfiguration]&nbsp;[sa][Start-DscConfiguration]&nbsp;[sp][Stop-DscConfiguration]&nbsp;[t][Test-DscConfiguration]&nbsp;[u][Update-DscConfiguration]</code>
+<code>ConfigurationDocument&nbsp;[r][Remove-DscConfigurationDocument]</code>
+<code>ConfigurationStatus&nbsp;[g][Get-DscConfigurationStatus]</code>
+<code>Debug&nbsp;[d][Disable-DscDebug]&nbsp;[e][Enable-DscDebug]</code>
+<code>LocalConfigurationManager&nbsp;[g][Get-DscLocalConfigurationManager]&nbsp;[s][Set-DscLocalConfigurationManager]</code>
+<code>Resource&nbsp;[g][Get-DscResource]&nbsp;[i][Invoke-DscResource]</code>
 
+###### `servermigration` module
+[msdocs:Receive-SmigServerData]: https://docs.microsoft.com/en-us/powershell/module/ServerMigration/Receive-SmigServerData "Receive-SmigServerData"
+[msdocs:Send-SmigServerData]: https://docs.microsoft.com/en-us/powershell/module/ServerMigration/Send-SmigServerData "Send-SmigServerData"
+[msdocs:Get-SmigServerFeature]: https://docs.microsoft.com/en-us/powershell/module/ServerMigration/Get-SmigServerFeature "Get-SmigServerFeature"
+[msdocs:Export-SmigServerSetting]: https://docs.microsoft.com/en-us/powershell/module/ServerMigration/Export-SmigServerSetting "Export-SmigServerSetting"
+[msdocs:Import-SmigServerSetting]: https://docs.microsoft.com/en-us/powershell/module/ServerMigration/Import-SmigServerSetting "Import-SmigServerSetting"
+
+[Receive-SmigServerData]: #receive-smigserverdata '```&#10;PS C:\> Receive-SmigServerData&#10;```&#10;Enable a destination server to receive migrated files, folders, permissions, and share properties from a source server (`Send-SmigServerData` cmdlet must be running on the source server at the same time)&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 33'
+[Send-SmigServerData]: #send-smigserverdata '```&#10;PS C:\> Send-SmigServerData&#10;```&#10;Migrate files, folders, permissions, and share properties from a source server to a destination server (`Receive-SmigServerData` cmdlet must be running on the destination server at the same time)&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 33'
+[Get-SmigServerFeature]: #get-smigserverfeature '```&#10;PS C:\> Get-SmigServerFeature&#10;```&#10;Display a list of Windows features that can be migrated from the local server or ffrom a migration store&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 33'
+[Export-SmigServerSetting]: #export-smigserversetting '```&#10;PS C:\> Export-SmigServerSetting&#10;```&#10;Export certain Windows features and operating system settings to a migration store&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 33'
+[Import-SmigServerSetting]: #import-smigserversetting '```&#10;PS C:\> Import-SmigServerSetting&#10;```&#10;Import certain Windows features and operating system settings from a migration store and apply them to the local server&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 33'
+
+**`SmigServer`**
+<code>Data&nbsp;[rc][Receive-SmigServerData][^][msdocs:Receive-SmigServerData]&nbsp;[sd][Send-SmigServerData][^][msdocs:Send-SmigServerData]</code>
+<code>Feature&nbsp;[g][Get-SmigServerFeature][^][msdocs:Get-SmigServerFeature]</code>
+<code>Setting&nbsp;[ep][Export-SmigServerSetting][^][msdocs:Export-SmigServerSetting]&nbsp;[ip][Import-SmigServerSetting][^][msdocs:Import-SmigServerSetting]</code>
+
+###### `storage` module
+[msdocs:Update-StorageProviderCache]: https://docs.microsoft.com/en-us/powershell/module/storage/Update-StorageProviderCache "Update-StorageProviderCache"
+[msdocs:Get-StorageReliabilityCounter]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-StorageReliabilityCounter "Get-StorageReliabilityCounter"
+[msdocs:Reset-StorageReliabilityCounter]: https://docs.microsoft.com/en-us/powershell/module/storage/Reset-StorageReliabilityCounter "Reset-StorageReliabilityCounter"
+[msdocs:Get-StorageSetting]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-StorageSetting "Get-StorageSetting"
+[msdocs:Set-StorageSetting]: https://docs.microsoft.com/en-us/powershell/module/storage/Set-StorageSetting "Set-StorageSetting"
+[msdocs:Debug-StorageSubSystem]: https://docs.microsoft.com/en-us/powershell/module/storage/Debug-StorageSubSystem "Debug-StorageSubSystem"
+[msdocs:Get-StorageSubsystem]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-StorageSubsystem "Get-StorageSubsystem"
+[msdocs:Register-StorageSubsystem]: https://docs.microsoft.com/en-us/powershell/module/storage/Register-StorageSubsystem "Register-StorageSubsystem"
+[msdocs:Set-StorageSubsystem]: https://docs.microsoft.com/en-us/powershell/module/storage/Set-StorageSubsystem "Set-StorageSubsystem"
+[msdocs:Unregister-StorageSubsystem]: https://docs.microsoft.com/en-us/powershell/module/storage/Unregister-StorageSubsystem "Unregister-StorageSubsystem"
+[msdocs:New-StorageSubsystemVirtualDisk]: https://docs.microsoft.com/en-us/powershell/module/storage/New-StorageSubsystemVirtualDisk "New-StorageSubsystemVirtualDisk"
+[msdocs:Get-StorageTier]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-StorageTier "Get-StorageTier"
+[msdocs:New-StorageTier]: https://docs.microsoft.com/en-us/powershell/module/storage/New-StorageTier "New-StorageTier"
+[msdocs:Remove-StorageTier]: https://docs.microsoft.com/en-us/powershell/module/storage/Remove-StorageTier "Remove-StorageTier"
+[msdocs:Resize-StorageTier]: https://docs.microsoft.com/en-us/powershell/module/storage/Resize-StorageTier "Resize-StorageTier"
+[msdocs:Set-StorageTier]: https://docs.microsoft.com/en-us/powershell/module/storage/Set-StorageTier "Set-StorageTier"
+[msdocs:Get-StorageTierSupportedSize]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-StorageTierSupportedSize "Get-StorageTierSupportedSize"
+[msdocs:Get-SupportedClusterSizes]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-SupportedClusterSizes "Get-SupportedClusterSizes"
+[msdocs:Get-SupportedFileSystems]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-SupportedFileSystems "Get-SupportedFileSystems"
+[msdocs:Get-TargetPort]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-TargetPort "Get-TargetPort"
+[msdocs:Get-TargetPortal]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-TargetPortal "Get-TargetPortal"
+[msdocs:Remove-TargetPortFromMaskingSet]: https://docs.microsoft.com/en-us/powershell/module/storage/Remove-TargetPortFromMaskingSet "Remove-TargetPortFromMaskingSet"
+[msdocs:Add-TargetPortToMaskingSet]: https://docs.microsoft.com/en-us/powershell/module/storage/Add-TargetPortToMaskingSet "Add-TargetPortToMaskingSet"
+[msdocs:Connect-VirtualDisk]: https://docs.microsoft.com/en-us/powershell/module/storage/Connect-VirtualDisk "Connect-VirtualDisk"
+[msdocs:Disconnect-VirtualDisk]: https://docs.microsoft.com/en-us/powershell/module/storage/Disconnect-VirtualDisk "Disconnect-VirtualDisk"
+[msdocs:Get-VirtualDisk]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-VirtualDisk "Get-VirtualDisk"
+[msdocs:Hide-VirtualDisk]: https://docs.microsoft.com/en-us/powershell/module/storage/Hide-VirtualDisk "Hide-VirtualDisk"
+[msdocs:New-VirtualDisk]: https://docs.microsoft.com/en-us/powershell/module/storage/New-VirtualDisk "New-VirtualDisk"
+[msdocs:Remove-VirtualDisk]: https://docs.microsoft.com/en-us/powershell/module/storage/Remove-VirtualDisk "Remove-VirtualDisk"
+[msdocs:Repair-VirtualDisk]: https://docs.microsoft.com/en-us/powershell/module/storage/Repair-VirtualDisk "Repair-VirtualDisk"
+[msdocs:Resize-VirtualDisk]: https://docs.microsoft.com/en-us/powershell/module/storage/Resize-VirtualDisk "Resize-VirtualDisk"
+[msdocs:Set-VirtualDisk]: https://docs.microsoft.com/en-us/powershell/module/storage/Set-VirtualDisk "Set-VirtualDisk"
+[msdocs:Show-VirtualDisk]: https://docs.microsoft.com/en-us/powershell/module/storage/Show-VirtualDisk "Show-VirtualDisk"
+[msdocs:New-VirtualDiskClone]: https://docs.microsoft.com/en-us/powershell/module/storage/New-VirtualDiskClone "New-VirtualDiskClone"
+[msdocs:Remove-VirtualDiskFromMaskingSet]: https://docs.microsoft.com/en-us/powershell/module/storage/Remove-VirtualDiskFromMaskingSet "Remove-VirtualDiskFromMaskingSet"
+[msdocs:New-VirtualDiskSnapshot]: https://docs.microsoft.com/en-us/powershell/module/storage/New-VirtualDiskSnapshot "New-VirtualDiskSnapshot"
+[msdocs:Get-VirtualDiskSupportedSize]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-VirtualDiskSupportedSize "Get-VirtualDiskSupportedSize"
+[msdocs:Add-VirtualDiskToMaskingSet]: https://docs.microsoft.com/en-us/powershell/module/storage/Add-VirtualDiskToMaskingSet "Add-VirtualDiskToMaskingSet"
+[msdocs:Debug-Volume]: https://docs.microsoft.com/en-us/powershell/module/storage/Debug-Volume "Debug-Volume"
+[msdocs:Format-Volume]: https://docs.microsoft.com/en-us/powershell/module/storage/Format-Volume "Format-Volume"
+[msdocs:Get-Volume]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-Volume "Get-Volume"
+[msdocs:New-Volume]: https://docs.microsoft.com/en-us/powershell/module/storage/New-Volume "New-Volume"
+[msdocs:Optimize-Volume]: https://docs.microsoft.com/en-us/powershell/module/storage/Optimize-Volume "Optimize-Volume"
+[msdocs:Repair-Volume]: https://docs.microsoft.com/en-us/powershell/module/storage/Repair-Volume "Repair-Volume"
+[msdocs:Set-Volume]: https://docs.microsoft.com/en-us/powershell/module/storage/Set-Volume "Set-Volume"
+[msdocs:Write-VolumeCache]: https://docs.microsoft.com/en-us/powershell/module/storage/Write-VolumeCache "Write-VolumeCache"
+[msdocs:Get-VolumeCorruptionCount]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-VolumeCorruptionCount "Get-VolumeCorruptionCount"
+[msdocs:Get-VolumeScrubPolicy]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-VolumeScrubPolicy "Get-VolumeScrubPolicy"
+[msdocs:Set-VolumeScrubPolicy]: https://docs.microsoft.com/en-us/powershell/module/storage/Set-VolumeScrubPolicy "Set-VolumeScrubPolicy"
+
+
+
+###### `storagereplica` module
 <!-- Storage Replica-->
 [Clear-SRMetadata]: #clear-srmetadata '```&#10;Clear-SRMetadata&#10;```&#10;Removes unreferenced Storage Replica metadata.'
 [Export-SRConfiguration]: #export-srconfiguration '```&#10;Export-SRConfiguration&#10;```&#10;Exports replication configuration to a Windows PowerShell script.'
@@ -684,30 +809,6 @@ Remoting relies on [WinRM][WinRM], which is Microsoft's implementation of WSMAN.
 [Sync-SRGroup]: #sync-srgroup '```&#10;Sync-SRGroup&#10;```&#10;Starts or resumes replication for a replication group.'
 [Test-SRTopology]: #test-srtopology '```&#10;Test-SRTopology&#10;```&#10;Validates a potential replication partnership.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 151'
 
-<code>SRTopology&nbsp;[t][Test-SRTopology]</code>
-<code>WIMBootEntry&nbsp;[g][Get-WIMBootEntry]&nbsp;[u][Update-WIMBootEntry]</code>
-**AppxProvisioned**
-<code>DataFile&nbsp;[s][Set-AppxProvisionedDataFile]</code> 
-<code>Package&nbsp;[a][Add-AppxProvisionedPackage]&nbsp;[g][Get-AppxProvisionedPackage]&nbsp;[r][Remove-AppxProvisionedPackage]</code> 
-**DSC**
-<code>CheckSum&nbsp;[n][New-DscCheckSum]</code>
-<code>Configuration&nbsp;[g][Get-DscConfiguration]&nbsp;[pb][Publish-DscConfiguration]&nbsp;[rr][Restore-DscConfiguration]&nbsp;[sa][Start-DscConfiguration]&nbsp;[sp][Stop-DscConfiguration]&nbsp;[t][Test-DscConfiguration]&nbsp;[u][Update-DscConfiguration]</code>
-<code>ConfigurationDocument&nbsp;[r][Remove-DscConfigurationDocument]</code>
-<code>ConfigurationStatus&nbsp;[g][Get-DscConfigurationStatus]</code>
-<code>Debug&nbsp;[d][Disable-DscDebug]&nbsp;[e][Enable-DscDebug]</code>
-<code>LocalConfigurationManager&nbsp;[g][Get-DscLocalConfigurationManager]&nbsp;[s][Set-DscLocalConfigurationManager]</code>
-<code>Resource&nbsp;[g][Get-DscResource]&nbsp;[i][Invoke-DscResource]</code>
-**NetQoS**
-<code>DcbxSetting&nbsp;[s][Set-NetQosDcbxSetting]</code>
-<code>FlowControl&nbsp;[e][Enable-NetQosFlowControl]</code>
-<code>Policy&nbsp;[n][New-NetQosPolicy]</code>
-<code>TrafficClass&nbsp;[n][New-NetQosTrafficClass]</code>
-**SmigServer** 
-<code>Data [rc][Receive-SmigServerData] [sd][Send-SmigServerData]</code> 
-<code>Feature [g][Get-SmigServerFeature]</code> 
-<code>Setting [ex][Export-SmigServerSetting] [ip][Import-SmigServerSetting]</code>
-
-**`storagereplica`**
 <code>SRAccess&nbsp;[g][Get-SRAccess]&nbsp;[gr][Grant-SRAccess]&nbsp;[rk][Revoke-SRAccess]</code>
 <code>SRConfiguration&nbsp;[ep][Export-SRConfiguration]</code>
 <code>SRDelegation&nbsp;[g][Get-SRDelegation]&nbsp;[gr][Grant-SRDelegation]&nbsp;[rk][Revoke-SRDelegation]</code>
@@ -716,20 +817,6 @@ Remoting relies on [WinRM][WinRM], which is Microsoft's implementation of WSMAN.
 <code>SRNetworkConstraint&nbsp;[g][Get-SRNetworkConstraint]&nbsp;[r][Remove-SRNetworkConstraint]&nbsp;[s][Set-SRNetworkConstraint]</code>
 <code>SRPartnership&nbsp;[g][Get-SRPartnership]&nbsp;[n][New-SRPartnership]&nbsp;[r][Remove-SRPartnership]&nbsp;[s][Set-SRPartnership]</code>
 <code>SRTopology&nbsp;[t][Test-SRTopology]</code>
-**Windows**
-<code>Capability&nbsp;[a][Add-WindowsCapability]&nbsp;[g][Get-WindowsCapability]&nbsp;[r][Remove-WindowsCapability]</code>
-<code>CorruptMountPoint&nbsp;[c][Clear-WindowsCorruptMountPoint]</code>
-<code>CustomDataImage&nbsp;[en][Expand-WindowsCustomDataImage]</code>
-<code>CustomImage&nbsp;[n][New-WindowsCustomImage]</code>
-<code>Driver&nbsp;[a][Add-WindowsDriver]&nbsp;[ep][Export-WindowsDriver]&nbsp;[g][Get-WindowsDriver]&nbsp;[r][Remove-WindowsDriver]</code> 
-<code>Edition&nbsp;[g][Get-WindowsEdition]&nbsp;[s][Set-WindowsEdition]</code>
-<code>Image&nbsp;[a][Add-WindowsImage]&nbsp;[dm][Dismount-WindowsImage]&nbsp;[en][Expand-WindowsImage]&nbsp;[ep][Export-windowsImage]&nbsp;[n][New-WindowsImage]&nbsp;[sv][Save-WindowsImage]&nbsp;[ep][Export-WindowsImage]&nbsp;[g][Get-WindowsImage]&nbsp;[mt][Mount-WindowsImage]&nbsp;[n][New-WindowsImage]&nbsp;[om][Optimize-WindowsImage]&nbsp;[rp][Repair-WindowsImage]&nbsp;[r][Remove-WindowsImage]&nbsp;[sl][Split-WindowsImage]</code>
-<code>ImageContent&nbsp;[g][Get-WindowsImageContent]</code>
-<code>OptionalFeature&nbsp;[d][Disable-WindowsOptionalFeature]&nbsp;[e][Enable-WindowsOptionalFeature]&nbsp;[g][Get-WindowsOptionalFeature]</code>
-<code>Package&nbsp;[a][Add-WindowsPackage]&nbsp;[g][Get-WindowsPackage]&nbsp;[r][Remove-WindowsPackage]</code>
-<code>ProductKey&nbsp;[s][Set-WindowsProductKey]</code>
-<code>ReservedStorageState&nbsp;[g][Get-WindowsReservedStorageState]&nbsp;[s][Set-WindowsReservedStorageState]</code>
-<code>Unattend&nbsp;[u][Use-WindowsUnattend]</code>
 
 ##### System administration cmdlets
 [Disable-LocalUser]: #disable-localuser '```&#10;PS C:\> Disable-LocalUser&#10;PS C:\> dlu&#10;```&#10;Disable a local user account'
@@ -1600,156 +1687,6 @@ Tasks:
 
 
 #### `storage`
-[msdocs:Update-StorageProviderCache]: https://docs.microsoft.com/en-us/powershell/module/storage/Update-StorageProviderCache "Update-StorageProviderCache"
-[msdocs:Get-StorageReliabilityCounter]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-StorageReliabilityCounter "Get-StorageReliabilityCounter"
-[msdocs:Reset-StorageReliabilityCounter]: https://docs.microsoft.com/en-us/powershell/module/storage/Reset-StorageReliabilityCounter "Reset-StorageReliabilityCounter"
-[msdocs:Get-StorageSetting]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-StorageSetting "Get-StorageSetting"
-[msdocs:Set-StorageSetting]: https://docs.microsoft.com/en-us/powershell/module/storage/Set-StorageSetting "Set-StorageSetting"
-[msdocs:Debug-StorageSubSystem]: https://docs.microsoft.com/en-us/powershell/module/storage/Debug-StorageSubSystem "Debug-StorageSubSystem"
-[msdocs:Get-StorageSubsystem]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-StorageSubsystem "Get-StorageSubsystem"
-[msdocs:Register-StorageSubsystem]: https://docs.microsoft.com/en-us/powershell/module/storage/Register-StorageSubsystem "Register-StorageSubsystem"
-[msdocs:Set-StorageSubsystem]: https://docs.microsoft.com/en-us/powershell/module/storage/Set-StorageSubsystem "Set-StorageSubsystem"
-[msdocs:Unregister-StorageSubsystem]: https://docs.microsoft.com/en-us/powershell/module/storage/Unregister-StorageSubsystem "Unregister-StorageSubsystem"
-[msdocs:New-StorageSubsystemVirtualDisk]: https://docs.microsoft.com/en-us/powershell/module/storage/New-StorageSubsystemVirtualDisk "New-StorageSubsystemVirtualDisk"
-[msdocs:Get-StorageTier]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-StorageTier "Get-StorageTier"
-[msdocs:New-StorageTier]: https://docs.microsoft.com/en-us/powershell/module/storage/New-StorageTier "New-StorageTier"
-[msdocs:Remove-StorageTier]: https://docs.microsoft.com/en-us/powershell/module/storage/Remove-StorageTier "Remove-StorageTier"
-[msdocs:Resize-StorageTier]: https://docs.microsoft.com/en-us/powershell/module/storage/Resize-StorageTier "Resize-StorageTier"
-[msdocs:Set-StorageTier]: https://docs.microsoft.com/en-us/powershell/module/storage/Set-StorageTier "Set-StorageTier"
-[msdocs:Get-StorageTierSupportedSize]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-StorageTierSupportedSize "Get-StorageTierSupportedSize"
-[msdocs:Get-SupportedClusterSizes]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-SupportedClusterSizes "Get-SupportedClusterSizes"
-[msdocs:Get-SupportedFileSystems]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-SupportedFileSystems "Get-SupportedFileSystems"
-[msdocs:Get-TargetPort]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-TargetPort "Get-TargetPort"
-[msdocs:Get-TargetPortal]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-TargetPortal "Get-TargetPortal"
-[msdocs:Remove-TargetPortFromMaskingSet]: https://docs.microsoft.com/en-us/powershell/module/storage/Remove-TargetPortFromMaskingSet "Remove-TargetPortFromMaskingSet"
-[msdocs:Add-TargetPortToMaskingSet]: https://docs.microsoft.com/en-us/powershell/module/storage/Add-TargetPortToMaskingSet "Add-TargetPortToMaskingSet"
-[msdocs:Connect-VirtualDisk]: https://docs.microsoft.com/en-us/powershell/module/storage/Connect-VirtualDisk "Connect-VirtualDisk"
-[msdocs:Disconnect-VirtualDisk]: https://docs.microsoft.com/en-us/powershell/module/storage/Disconnect-VirtualDisk "Disconnect-VirtualDisk"
-[msdocs:Get-VirtualDisk]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-VirtualDisk "Get-VirtualDisk"
-[msdocs:Hide-VirtualDisk]: https://docs.microsoft.com/en-us/powershell/module/storage/Hide-VirtualDisk "Hide-VirtualDisk"
-[msdocs:New-VirtualDisk]: https://docs.microsoft.com/en-us/powershell/module/storage/New-VirtualDisk "New-VirtualDisk"
-[msdocs:Remove-VirtualDisk]: https://docs.microsoft.com/en-us/powershell/module/storage/Remove-VirtualDisk "Remove-VirtualDisk"
-[msdocs:Repair-VirtualDisk]: https://docs.microsoft.com/en-us/powershell/module/storage/Repair-VirtualDisk "Repair-VirtualDisk"
-[msdocs:Resize-VirtualDisk]: https://docs.microsoft.com/en-us/powershell/module/storage/Resize-VirtualDisk "Resize-VirtualDisk"
-[msdocs:Set-VirtualDisk]: https://docs.microsoft.com/en-us/powershell/module/storage/Set-VirtualDisk "Set-VirtualDisk"
-[msdocs:Show-VirtualDisk]: https://docs.microsoft.com/en-us/powershell/module/storage/Show-VirtualDisk "Show-VirtualDisk"
-[msdocs:New-VirtualDiskClone]: https://docs.microsoft.com/en-us/powershell/module/storage/New-VirtualDiskClone "New-VirtualDiskClone"
-[msdocs:Remove-VirtualDiskFromMaskingSet]: https://docs.microsoft.com/en-us/powershell/module/storage/Remove-VirtualDiskFromMaskingSet "Remove-VirtualDiskFromMaskingSet"
-[msdocs:New-VirtualDiskSnapshot]: https://docs.microsoft.com/en-us/powershell/module/storage/New-VirtualDiskSnapshot "New-VirtualDiskSnapshot"
-[msdocs:Get-VirtualDiskSupportedSize]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-VirtualDiskSupportedSize "Get-VirtualDiskSupportedSize"
-[msdocs:Add-VirtualDiskToMaskingSet]: https://docs.microsoft.com/en-us/powershell/module/storage/Add-VirtualDiskToMaskingSet "Add-VirtualDiskToMaskingSet"
-[msdocs:Debug-Volume]: https://docs.microsoft.com/en-us/powershell/module/storage/Debug-Volume "Debug-Volume"
-[msdocs:Format-Volume]: https://docs.microsoft.com/en-us/powershell/module/storage/Format-Volume "Format-Volume"
-[msdocs:Get-Volume]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-Volume "Get-Volume"
-[msdocs:New-Volume]: https://docs.microsoft.com/en-us/powershell/module/storage/New-Volume "New-Volume"
-[msdocs:Optimize-Volume]: https://docs.microsoft.com/en-us/powershell/module/storage/Optimize-Volume "Optimize-Volume"
-[msdocs:Repair-Volume]: https://docs.microsoft.com/en-us/powershell/module/storage/Repair-Volume "Repair-Volume"
-[msdocs:Set-Volume]: https://docs.microsoft.com/en-us/powershell/module/storage/Set-Volume "Set-Volume"
-[msdocs:Write-VolumeCache]: https://docs.microsoft.com/en-us/powershell/module/storage/Write-VolumeCache "Write-VolumeCache"
-[msdocs:Get-VolumeCorruptionCount]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-VolumeCorruptionCount "Get-VolumeCorruptionCount"
-[msdocs:Get-VolumeScrubPolicy]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-VolumeScrubPolicy "Get-VolumeScrubPolicy"
-[msdocs:Set-VolumeScrubPolicy]: https://docs.microsoft.com/en-us/powershell/module/storage/Set-VolumeScrubPolicy "Set-VolumeScrubPolicy"
-
-###### `Add-InitiatorIdToMaskingSet`[^][msdocs:Add-InitiatorIdToMaskingSet]
-###### `Add-PartitionAccessPath`[^][msdocs:Add-PartitionAccessPath]
-###### `Add-PhysicalDisk`[^][msdocs:Add-PhysicalDisk]
-###### `Add-TargetPortToMaskingSet`[^][msdocs:Add-TargetPortToMaskingSet]
-###### `Add-VirtualDiskToMaskingSet`[^][msdocs:Add-VirtualDiskToMaskingSet]
-###### `Block-FileShareAccess`[^][msdocs:Block-FileShareAccess]
-###### `Clear-Disk`[^][msdocs:Clear-Disk]
-###### `Clear-FileStorageTier`[^][msdocs:Clear-FileStorageTier]
-###### `Connect-VirtualDisk`[^][msdocs:Connect-VirtualDisk]
-###### `Debug-FileShare`[^][msdocs:Debug-FileShare]
-###### `Debug-StorageSubSystem`[^][msdocs:Debug-StorageSubSystem]
-###### `Debug-Volume`[^][msdocs:Debug-Volume]
-###### `Disable-PhysicalDiskIdentification`[^][msdocs:Disable-PhysicalDiskIdentification]
-###### `Disable-StorageEnclosureIdentification`[^][msdocs:Disable-StorageEnclosureIdentification]
-###### `Disable-StorageHighAvailability`[^][msdocs:Disable-StorageHighAvailability]
-###### `Disable-StorageMaintenanceMode`[^][msdocs:Disable-StorageMaintenanceMode]
-###### `Disconnect-VirtualDisk`[^][msdocs:Disconnect-VirtualDisk]
-###### `Dismount-DiskImage`[^][msdocs:Dismount-DiskImage]
-###### `Enable-PhysicalDiskIdentification`[^][msdocs:Enable-PhysicalDiskIdentification]
-###### `Enable-StorageEnclosureIdentification`[^][msdocs:Enable-StorageEnclosureIdentification]
-###### `Enable-StorageHighAvailability`[^][msdocs:Enable-StorageHighAvailability]
-###### `Enable-StorageMaintenanceMode`[^][msdocs:Enable-StorageMaintenanceMode]
-###### `Format-Volume`[^][msdocs:Format-Volume]
-Full format of specified drive <sup>[sumtips.com][https://sumtips.com/tips-n-tricks/manage-disk-partitions-with-windows-powershell/]</sup>
-```powershell
-Format-Volume -DriveLetter S -FileSystem FAT32 -NewFileSystemLabel SumTips -Full
-```
-###### `Get-DedupProperties`[^][msdocs:Get-DedupProperties]
-###### `Get-Disk`[^][msdocs:Get-Disk]
-Display a list of existing partitions, their drive letters, and the disk they are associated with <sup>[sumtips.com][https://sumtips.com/tips-n-tricks/manage-disk-partitions-with-windows-powershell/]</sup>
-```powershell
-Get-Disk | Get-Partition
-```
-###### `Get-DiskImage`[^][msdocs:Get-DiskImage]
-###### `Get-DiskStorageNodeView`[^][msdocs:Get-DiskStorageNodeView]
-###### `Get-FileIntegrity`[^][msdocs:Get-FileIntegrity]
-###### `Get-FileShare`[^][msdocs:Get-FileShare]
-###### `Get-FileShareAccessControlEntry`[^][msdocs:Get-FileShareAccessControlEntry]
-###### `Get-FileStorageTier`[^][msdocs:Get-FileStorageTier]
-###### `Get-InitiatorId`[^][msdocs:Get-InitiatorId]
-###### `Get-InitiatorPort`[^][msdocs:Get-InitiatorPort]
-###### `Get-MaskingSet`[^][msdocs:Get-MaskingSet]
-###### `Get-OffloadDataTransferSetting`[^][msdocs:Get-OffloadDataTransferSetting]
-###### `Get-Partition`[^][msdocs:Get-Partition]
-Display a list of existing partitions, their drive letters, and the disk they are associated with <sup>[sumtips.com][https://sumtips.com/tips-n-tricks/manage-disk-partitions-with-windows-powershell/]</sup>
-```powershell
-Get-Disk | Get-Partition
-```
-###### `Get-PartitionSupportedSize`[^][msdocs:Get-PartitionSupportedSize]
-###### `Get-PhysicalDisk`[^][msdocs:Get-PhysicalDisk]
-###### `Get-PhysicalDiskStorageNodeView`[^][msdocs:Get-PhysicalDiskStorageNodeView]
-###### `Get-PhysicalExtent`[^][msdocs:Get-PhysicalExtent]
-###### `Get-PhysicalExtentAssociation`[^][msdocs:Get-PhysicalExtentAssociation]
-###### `Get-ResiliencySetting`[^][msdocs:Get-ResiliencySetting]
-###### `Get-StorageAdvancedProperty`[^][msdocs:Get-StorageAdvancedProperty]
-###### `Get-StorageDiagnosticInfo`[^][msdocs:Get-StorageDiagnosticInfo]
-###### `Get-StorageEnclosure`[^][msdocs:Get-StorageEnclosure]
-###### `Get-StorageEnclosureStorageNodeView`[^][msdocs:Get-StorageEnclosureStorageNodeView]
-###### `Get-StorageEnclosureVendorData`[^][msdocs:Get-StorageEnclosureVendorData]
-###### `Get-StorageFaultDomain`[^][msdocs:Get-StorageFaultDomain]
-###### `Get-StorageFileServer`[^][msdocs:Get-StorageFileServer]
-###### `Get-StorageFirmwareInformation`[^][msdocs:Get-StorageFirmwareInformation]
-###### `Get-StorageHealthAction`[^][msdocs:Get-StorageHealthAction]
-###### `Get-StorageHealthReport`[^][msdocs:Get-StorageHealthReport]
-###### `Get-StorageHealthSetting`[^][msdocs:Get-StorageHealthSetting]
-###### `Get-StorageJob`[^][msdocs:Get-StorageJob]
-###### `Get-StorageNode`[^][msdocs:Get-StorageNode]
-###### `Get-StoragePool`[^][msdocs:Get-StoragePool]
-###### `Get-StorageProvider`[^][msdocs:Get-StorageProvider]
-###### `Get-StorageReliabilityCounter`[^][msdocs:Get-StorageReliabilityCounter]
-###### `Get-StorageSetting`[^][msdocs:Get-StorageSetting]
-###### `Get-StorageSubsystem`[^][msdocs:Get-StorageSubsystem]
-###### `Get-StorageTier`[^][msdocs:Get-StorageTier]
-###### `Get-StorageTierSupportedSize`[^][msdocs:Get-StorageTierSupportedSize]
-###### `Get-SupportedClusterSizes`[^][msdocs:Get-SupportedClusterSizes]
-###### `Get-SupportedFileSystems`[^][msdocs:Get-SupportedFileSystems]
-###### `Get-TargetPort`[^][msdocs:Get-TargetPort]
-###### `Get-TargetPortal`[^][msdocs:Get-TargetPortal]
-###### `Get-VirtualDisk`[^][msdocs:Get-VirtualDisk]
-###### `Get-VirtualDiskSupportedSize`[^][msdocs:Get-VirtualDiskSupportedSize]
-###### `Get-Volume`[^][msdocs:Get-Volume]
-###### `Get-VolumeCorruptionCount`[^][msdocs:Get-VolumeCorruptionCount]
-###### `Get-VolumeScrubPolicy`[^][msdocs:Get-VolumeScrubPolicy]
-###### `Grant-FileShareAccess`[^][msdocs:Grant-FileShareAccess]
-###### `Hide-VirtualDisk`[^][msdocs:Hide-VirtualDisk]
-###### `Initialize-Disk`[^][msdocs:Initialize-Disk]
-###### `Mount-DiskImage`[^][msdocs:Mount-DiskImage]
-Mount a VHD or VHDX file <sup>[Zacker][Zacker]: 92</sup>
-```powershell
-Mount-DiskImage -ImagePath $file
-```
-###### `New-FileShare`[^][msdocs:New-FileShare]
-###### `New-MaskingSet`[^][msdocs:New-MaskingSet]
-###### `New-StorageFileServer`[^][msdocs:New-StorageFileServer]
-###### `New-StoragePool`[^][msdocs:New-StoragePool]
-###### `New-StorageSubsystemVirtualDisk`[^][msdocs:New-StorageSubsystemVirtualDisk]
-###### `New-StorageTier`[^][msdocs:New-StorageTier]
-###### `New-VirtualDisk`[^][msdocs:New-VirtualDisk]
-###### `New-VirtualDiskClone`[^][msdocs:New-VirtualDiskClone]
-###### `New-VirtualDiskSnapshot`[^][msdocs:New-VirtualDiskSnapshot]
 ###### `New-Volume`[^][msdocs:New-Volume]
 `FileSystem`
 `ProvisioningType`
@@ -1764,41 +1701,6 @@ Create a VHD with a Mirror layout <sup>[Practice Lab][pl:70-740]</sup>
 ```powershell
 New-Volume -StoragePoolFriendlyName “PLABDM01-SP1” -FriendlyName “Mirror1” -Size 6GB -ResiliencySettingName “Mirror” -FileSystem NTFS -AccessPath “M:” -ProvisioningType Thin
 ```
-###### `Optimize-StoragePool`[^][msdocs:Optimize-StoragePool]
-###### `Optimize-Volume`[^][msdocs:Optimize-Volume]
-###### `Register-StorageSubsystem`[^][msdocs:Register-StorageSubsystem]
-###### `Remove-FileShare`[^][msdocs:Remove-FileShare]
-###### `Remove-InitiatorId`[^][msdocs:Remove-InitiatorId]
-###### `Remove-InitiatorIdFromMaskingSet`[^][msdocs:Remove-InitiatorIdFromMaskingSet]
-###### `Remove-MaskingSet`[^][msdocs:Remove-MaskingSet]
-###### `Remove-Partition`[^][msdocs:Remove-Partition]
-Remove a partition <sup>[sumtips.com][https://sumtips.com/tips-n-tricks/manage-disk-partitions-with-windows-powershell/]</sup>
-```powershell
-Remove-Partition -DiskNumber 1 -PartitionNumber 1
-```
-Remove a partition without confirmation
-```powershell
-Remove-Partition -DiskNumber 1 -PartitionNumber 1 -Confirm:$false
-```
-###### `Remove-PartitionAccessPath`[^][msdocs:Remove-PartitionAccessPath]
-###### `Remove-PhysicalDisk`[^][msdocs:Remove-PhysicalDisk]
-###### `Remove-StorageFileServer`[^][msdocs:Remove-StorageFileServer]
-###### `Remove-StorageHealthSetting`[^][msdocs:Remove-StorageHealthSetting]
-###### `Remove-StoragePool`[^][msdocs:Remove-StoragePool]
-###### `Remove-StorageTier`[^][msdocs:Remove-StorageTier]
-###### `Remove-TargetPortFromMaskingSet`[^][msdocs:Remove-TargetPortFromMaskingSet]
-###### `Remove-VirtualDisk`[^][msdocs:Remove-VirtualDisk]
-###### `Remove-VirtualDiskFromMaskingSet`[^][msdocs:Remove-VirtualDiskFromMaskingSet]
-###### `Rename-MaskingSet`[^][msdocs:Rename-MaskingSet]
-###### `Repair-FileIntegrity`[^][msdocs:Repair-FileIntegrity]
-###### `Repair-VirtualDisk`[^][msdocs:Repair-VirtualDisk]
-###### `Repair-Volume`[^][msdocs:Repair-Volume]
-###### `Reset-PhysicalDisk`[^][msdocs:Reset-PhysicalDisk]
-###### `Reset-StorageReliabilityCounter`[^][msdocs:Reset-StorageReliabilityCounter]
-###### `Resize-Partition`[^][msdocs:Resize-Partition]
-###### `Resize-StorageTier`[^][msdocs:Resize-StorageTier]
-###### `Resize-VirtualDisk`[^][msdocs:Resize-VirtualDisk]
-###### `Revoke-FileShareAccess`[^][msdocs:Revoke-FileShareAccess]
 ###### `Set-Disk`[^][msdocs:Set-Disk]
 `IsOffline`
 `IsReadOnly`
@@ -1807,35 +1709,6 @@ Bring a disk online <sup>[Practice Lab][pl:70-740]</sup>
 ```powershell
 Set-Disk -Number 3 -IsOffline $false
 ```
-###### `Set-FileIntegrity`[^][msdocs:Set-FileIntegrity]
-###### `Set-FileShare`[^][msdocs:Set-FileShare]
-###### `Set-FileStorageTier`[^][msdocs:Set-FileStorageTier]
-###### `Set-InitiatorPort`[^][msdocs:Set-InitiatorPort]
-###### `Set-Partition`[^][msdocs:Set-Partition]
-###### `Set-PhysicalDisk`[^][msdocs:Set-PhysicalDisk]
-###### `Set-ResiliencySetting`[^][msdocs:Set-ResiliencySetting]
-###### `Set-StorageFileServer`[^][msdocs:Set-StorageFileServer]
-###### `Set-StorageHealthSetting`[^][msdocs:Set-StorageHealthSetting]
-###### `Set-StoragePool`[^][msdocs:Set-StoragePool]
-###### `Set-StorageProvider`[^][msdocs:Set-StorageProvider]
-###### `Set-StorageSetting`[^][msdocs:Set-StorageSetting]
-###### `Set-StorageSubsystem`[^][msdocs:Set-StorageSubsystem]
-###### `Set-StorageTier`[^][msdocs:Set-StorageTier]
-###### `Set-VirtualDisk`[^][msdocs:Set-VirtualDisk]
-###### `Set-Volume`[^][msdocs:Set-Volume]
-###### `Set-VolumeScrubPolicy`[^][msdocs:Set-VolumeScrubPolicy]
-###### `Show-VirtualDisk`[^][msdocs:Show-VirtualDisk]
-###### `Start-StorageDiagnosticLog`[^][msdocs:Start-StorageDiagnosticLog]
-###### `Stop-StorageDiagnosticLog`[^][msdocs:Stop-StorageDiagnosticLog]
-###### `Stop-StorageJob`[^][msdocs:Stop-StorageJob]
-###### `Unblock-FileShareAccess`[^][msdocs:Unblock-FileShareAccess]
-###### `Unregister-StorageSubsystem`[^][msdocs:Unregister-StorageSubsystem]
-###### `Update-Disk`[^][msdocs:Update-Disk]
-###### `Update-HostStorageCache`[^][msdocs:Update-HostStorageCache]
-###### `Update-StorageFirmware`[^][msdocs:Update-StorageFirmware]
-###### `Update-StoragePool`[^][msdocs:Update-StoragePool]
-###### `Update-StorageProviderCache`[^][msdocs:Update-StorageProviderCache]
-###### `Write-VolumeCache`[^][msdocs:Write-VolumeCache]
 ###### `New-Partition`[^][msdocs:New-Partition]
 Create a new partition mounted to F: using the ReFS filesystem <sup>[Practice Lab][pl:70-740]</sup>
 ```powershell
