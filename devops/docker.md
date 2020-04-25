@@ -1,4 +1,9 @@
+[Zacker]: # 'Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017'
+
 # Docker
+
+Microsoft maintained a [Powershell module](https://github.com/microsoft/Docker-PowerShell "PowerShell for Docker") which has been deprecated for years.
+
 ## Syntax
 ###### Command groups
 [docker:attach]: https://docs.docker.com/engine/reference/commandline/attach/ "docker attach"
@@ -168,7 +173,17 @@
 [`volume`][docker volume][^][docker:volume]
 [`wait`][docker wait][^][docker:wait]
 
-#### `docker container`
+##### `docker attach`
+Connect to a session on a running container <sup>[Zacker][Zacker]: 279</sup>
+```sh
+docker attach $CONTID
+```
+##### `docker commit`
+Save changes made to a modified container to a new image <sup>[Zacker][Zacker]: 279</sup>
+```sh
+docker commit $CONTID $USER/$CONT
+```
+##### `docker container`
 [docker container commit]:                        #docker-container              '```&#10;$ docker container commit $CONTAINERID&#10;```&#10;Save container as a new, custom image'
 [docker container diff]:                          #docker-container              '```&#10;$ docker container diff $CONTAINERID&#10;```&#10;Display all files added to or removed from base image'
 [docker container ls]:                            #docker-container              '```&#10;$ docker container ls&#10;```&#10;'
@@ -176,8 +191,7 @@
 [`commit`][docker container commit] 
 [`diff`][docker container diff] 
 [`ls`][docker container ls] 
-
-#### `docker image`
+##### `docker image`
 [docker image build]:                         #docker-image                  '```&#10;$ docker image build&#10;```&#10;Create Docker image named '
 [docker image tag]:                           #docker-image                  '```&#10;$ docker image tag $IMAGEID $TAG&#10;```&#10;Tag a container image'
 
@@ -188,14 +202,91 @@ Create docker image named "hello" with tag "v0.1" from contents of current direc
 ```
 docker image build -t hello:v0.1 . | 
 ```
+##### `docker network`
+[docker network connect]: #docker-network-connect '```&#10;$ docker network connect&#10;```&#10;Connect a container to a network'
+[docker network create]: #docker-network-create '```&#10;$ docker network create&#10;```&#10;Create a network'
+[docker network disconnect]: #docker-network-disconnect '```&#10;$ docker network disconnect&#10;```&#10;Disconnect a container from a network'
+[docker network inspect]: #docker-network-inspect '```&#10;$ docker network inspect&#10;```&#10;Display detailed information on one or more networks'
+[docker network ls]: #docker-network-ls '```&#10;$ docker network ls&#10;```&#10;List networks'
+[docker network prune]: #docker-network-prune '```&#10;$ docker network prune&#10;```&#10;Remove all unused networks'
+[docker network rm]: #docker-network-rm '```&#10;$ docker network rm&#10;```&#10;Remove one or more networks'
 
+[`connect`][docker network connect] 
+[`create`][docker network create] 
+[`disconnect`][docker network disconnect] 
+[`inspect`][docker network inspect] 
+[`ls`][docker network ls] 
+[`prune`][docker network prune] 
+[`rm`][docker network rm] 
+
+Create a new network using the **transparent driver** <sup>[Zacker][Zacker]: 285</sup>
+```sh
+docker network create -d transparent $NETWORK
+```
+Create a transpare network with static IP addresses
+```sh
+docker network create -d transparent --subnet=10.0.0.0/24 --gateway=10.0.0.1 $NETWORK
+```
+##### `docker ps`
+Display a list of all running containers <sup>[Zacker][Zacker]: 278</sup>
+```sh
+docker ps -a
+```
+##### `docker rm`
+Remove a container completely (must be stopped, unless `-f` is used) <sup>[Zacker][Zacker]: 279</sup>
+```sh
+docker rm $CONTID
+```
+##### `docker run`
+[docker run -&#105;]: #docker-run '```&#10;$ docker run -i&#10;$ docker run --interactive&#10;```&#10;Keep STDIN open even if not attached&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 274'
+[docker run -&#116;]: #docker-run '```&#10;$ docker run -t&#10;$ docker run --tty&#10;```&#10;Allocate a pseudo-TTY&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 274'
+[docker run -&#100;]: #docker-run '```&#10;$ docker run -d&#10;$ docker run --detach&#10;```&#10;Run container in background and print container ID'
+[docker run -&#112;]: #docker-run '```&#10;$ docker run -p $HOSTPORT:$CONTPORT&#10;$ docker run --publish $HOSTPORT:$CONTPORT&#10;```&#10;Publish a container port to the host port'
+
+<code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`d`][docker run -&#100;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`i`][docker run -&#105;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`p`][docker run -&#112;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`t`][docker run -&#116;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 
+
+Create a Hyper-V container <sup>[Zacker][Zacker]: 275</sup>
+```sh
+docker run -it --isolation=hyperv microsoft/windowsservercore powershell
+```
+Bind port 80 of the container to port 8080 of the host <sup>[Zacker][Zacker]: 284</sup>
+```sh
+docker run -it -p 8080:80 microsoft/windowsservercore powershell
+```
+Create a container with a static IP address on the network you created
+```sh
+docker run -it --network=$NETWORK --ip=10.0.0.16 --dns=10.0.0.10 microsoft/windowsservercore powershell
+```
+##### `docker start`
+Start a stopped container <sup>[Zacker][Zacker]: 278</sup>
+```sh
+docker start $CONTID
+```
+##### `docker stop`
+Stop a container <sup>[Zacker][Zacker]: 278</sup>
+```sh
+docker stop $CONTID
+```
+##### `docker tag`
+Tag an image on local container host <sup>[Zacker][Zacker]: 272</sup>
+```sh
+docker tag $USERNAME/$IMAGENAME:$TAG
+```
 # Dockerfile
 A Docker image consists of read-only **layers**, each of which represents an **instruction** that incrementally the changes the image being built up.
-
 ```dockerfile
 FROM alpine
 RUN apk update && apk add nodejs
 COPY . /app
 WORKDIR /app
 CMD ["node","index.js"]
+```
+[Zacker][Zacker]: 289
+```dockerfile
+FROM microsoft/windowsservercore
+RUN powershell -command install-windowsfeature dhcp -includemanagementtools
+RUN powershell -configurationname microsoft.powershell -command add-dhcpserverv4scope -state active -activatepolicies $true -name scopetest -startrange 10.0.0.100 -endrange 10.0.0.200 -subnetmask 255.255.255.0
+RUN md boot
+COPY ./bootfile.wim c:/boot/
+CMD powershell
 ```
