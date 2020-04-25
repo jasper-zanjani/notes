@@ -331,7 +331,7 @@ Remoting relies on [WinRM][WinRM], which is Microsoft's implementation of WSMAN.
 <code>Share&nbsp;[n][New-SmbShare]&nbsp;[r][Remove-SmbShare]</code>
 <code>ShareAccess&nbsp;[bl][Block-SmbShareAccess]&nbsp;[g][Get-SmbShareAccess]&nbsp;[gr][Grant-SmbShareAccess]&nbsp;[rk][Revoke-SmbShareAccess]&nbsp;[ul][Unblock-SmbShareAccess]</code>
 
-#### Network-related cmdlets
+#### Network
 [Add-DhcpServerInDC]: #add-dhcpserverindc '```&#10;PS C:\> Add-DhcpServerInDC&#10;```&#10;'
 [Add-DhcpServerv4Scope]: #add-dhcpserverv4scope '```&#10;PS C:\> Add-DhcpServerv4Scope&#10;```&#10;Add an IPv4 scope on the DHCP server service.'
 [Enable-NetAdapterRdma]: #enable-netadapterrdma '```&#10;PS C:\> Enable-NetAdapterRdma&#10;```&#10;Enable RDMA on adapters&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 254'
@@ -372,9 +372,82 @@ Remoting relies on [WinRM][WinRM], which is Microsoft's implementation of WSMAN.
 <code>Vmq&nbsp;[e][Enable-NetAdapterVmq]&nbsp;[g][Get-NetAdapterVmq]&nbsp;[s][Set-NetAdapterVmq]</code>
 <code>VmqQueue&nbsp;[g][Get-NetAdapterVmqQueue]</code>
 **`NetIp`**
-<code>Address&nbsp;[n][New-NetIpAddress]</code>
+<code>Address&nbsp;[g][Get-NetIPAddress][^][msdocs:Get-NetIPAddress]&nbsp;[n][New-NetIPAddress][^][msdocs:New-NetIPAddress]&nbsp;[r][Remove-NetIPAddress][^][msdocs:Remove-NetIPAddress]&nbsp;[s][Set-NetIPAddress][^][msdocs:Set-NetIPAddress]</code>
 <code>Configuration&nbsp;[g][Get-NetIpConfiguration]</code>
 
+##### `nettcpip` module
+[msdocs:Get-NetCompartment]: https://docs.microsoft.com/en-us/powershell/module/nettcpip/Get-NetCompartment "Get-NetCompartment"
+[msdocs:Test-NetConnection]: https://docs.microsoft.com/en-us/powershell/module/nettcpip/Test-NetConnection "Test-NetConnection"
+[msdocs:Get-NetIPAddress]: https://docs.microsoft.com/en-us/powershell/module/nettcpip/Get-NetIPAddress "Get-NetIPAddress"
+[msdocs:New-NetIPAddress]: https://docs.microsoft.com/en-us/powershell/module/nettcpip/New-NetIPAddress "New-NetIPAddress"
+[msdocs:Remove-NetIPAddress]: https://docs.microsoft.com/en-us/powershell/module/nettcpip/Remove-NetIPAddress "Remove-NetIPAddress"
+[msdocs:Set-NetIPAddress]: https://docs.microsoft.com/en-us/powershell/module/nettcpip/Set-NetIPAddress "Set-NetIPAddress"
+[msdocs:Get-NetIPConfiguration]: https://docs.microsoft.com/en-us/powershell/module/nettcpip/Get-NetIPConfiguration "Get-NetIPConfiguration"
+[msdocs:Get-NetIPInterface]: https://docs.microsoft.com/en-us/powershell/module/nettcpip/Get-NetIPInterface "Get-NetIPInterface"
+[msdocs:Set-NetIPInterface]: https://docs.microsoft.com/en-us/powershell/module/nettcpip/Set-NetIPInterface "Set-NetIPInterface"
+[msdocs:Get-NetIPv4Protocol]: https://docs.microsoft.com/en-us/powershell/module/nettcpip/Get-NetIPv4Protocol "Get-NetIPv4Protocol"
+[msdocs:Set-NetIPv4Protocol]: https://docs.microsoft.com/en-us/powershell/module/nettcpip/Set-NetIPv4Protocol "Set-NetIPv4Protocol"
+[msdocs:Get-NetIPv6Protocol]: https://docs.microsoft.com/en-us/powershell/module/nettcpip/Get-NetIPv6Protocol "Get-NetIPv6Protocol"
+[msdocs:Set-NetIPv6Protocol]: https://docs.microsoft.com/en-us/powershell/module/nettcpip/Set-NetIPv6Protocol "Set-NetIPv6Protocol"
+[msdocs:Get-NetNeighbor]: https://docs.microsoft.com/en-us/powershell/module/nettcpip/Get-NetNeighbor "Get-NetNeighbor"
+[msdocs:New-NetNeighbor]: https://docs.microsoft.com/en-us/powershell/module/nettcpip/New-NetNeighbor "New-NetNeighbor"
+[msdocs:Remove-NetNeighbor]: https://docs.microsoft.com/en-us/powershell/module/nettcpip/Remove-NetNeighbor "Remove-NetNeighbor"
+[msdocs:Set-NetNeighbor]: https://docs.microsoft.com/en-us/powershell/module/nettcpip/Set-NetNeighbor "Set-NetNeighbor"
+[msdocs:Get-NetOffloadGlobalSetting]: https://docs.microsoft.com/en-us/powershell/module/nettcpip/Get-NetOffloadGlobalSetting "Get-NetOffloadGlobalSetting"
+[msdocs:Set-NetOffloadGlobalSetting]: https://docs.microsoft.com/en-us/powershell/module/nettcpip/Set-NetOffloadGlobalSetting "Set-NetOffloadGlobalSetting"
+[msdocs:Get-NetPrefixPolicy]: https://docs.microsoft.com/en-us/powershell/module/nettcpip/Get-NetPrefixPolicy "Get-NetPrefixPolicy"
+[msdocs:Find-NetRoute]: https://docs.microsoft.com/en-us/powershell/module/nettcpip/Find-NetRoute "Find-NetRoute"
+[msdocs:Get-NetRoute]: https://docs.microsoft.com/en-us/powershell/module/nettcpip/Get-NetRoute "Get-NetRoute"
+[msdocs:New-NetRoute]: https://docs.microsoft.com/en-us/powershell/module/nettcpip/New-NetRoute "New-NetRoute"
+[msdocs:Remove-NetRoute]: https://docs.microsoft.com/en-us/powershell/module/nettcpip/Remove-NetRoute "Remove-NetRoute"
+[msdocs:Set-NetRoute]: https://docs.microsoft.com/en-us/powershell/module/nettcpip/Set-NetRoute "Set-NetRoute"
+[msdocs:Get-NetTCPConnection]: https://docs.microsoft.com/en-us/powershell/module/nettcpip/Get-NetTCPConnection "Get-NetTCPConnection"
+[msdocs:Get-NetTCPSetting]: https://docs.microsoft.com/en-us/powershell/module/nettcpip/Get-NetTCPSetting "Get-NetTCPSetting"
+[msdocs:Set-NetTCPSetting]: https://docs.microsoft.com/en-us/powershell/module/nettcpip/Set-NetTCPSetting "Set-NetTCPSetting"
+[msdocs:Get-NetTransportFilter]: https://docs.microsoft.com/en-us/powershell/module/nettcpip/Get-NetTransportFilter "Get-NetTransportFilter"
+[msdocs:New-NetTransportFilter]: https://docs.microsoft.com/en-us/powershell/module/nettcpip/New-NetTransportFilter "New-NetTransportFilter"
+[msdocs:Remove-NetTransportFilter]: https://docs.microsoft.com/en-us/powershell/module/nettcpip/Remove-NetTransportFilter "Remove-NetTransportFilter"
+[msdocs:Get-NetUDPEndpoint]: https://docs.microsoft.com/en-us/powershell/module/nettcpip/Get-NetUDPEndpoint "Get-NetUDPEndpoint"
+[msdocs:Get-NetUDPSetting]: https://docs.microsoft.com/en-us/powershell/module/nettcpip/Get-NetUDPSetting "Get-NetUDPSetting"
+[msdocs:Set-NetUDPSetting]: https://docs.microsoft.com/en-us/powershell/module/nettcpip/Set-NetUDPSetting "Set-NetUDPSetting"
+
+[Get-NetCompartment]: #get-netcompartment '```&#10;PS C:\> Get-NetCompartment&#10;```&#10;Gets all network compartments in the protocol stack.'
+[Test-NetConnection]: #test-netconnection '```&#10;PS C:\> Test-NetConnection&#10;```&#10;Displays diagnostic information for a connection.'
+[Get-NetIPAddress]: #get-netipaddress '```&#10;PS C:\> Get-NetIPAddress&#10;```&#10;Gets the IP address configuration.'
+[New-NetIPAddress]: #new-netipaddress '```&#10;PS C:\> New-NetIPAddress&#10;```&#10;Creates and configures an IP address.'
+[Remove-NetIPAddress]: #remove-netipaddress '```&#10;PS C:\> Remove-NetIPAddress&#10;```&#10;Removes an IP address and its configuration.'
+[Set-NetIPAddress]: #set-netipaddress '```&#10;PS C:\> Set-NetIPAddress&#10;```&#10;Modifies the configuration of an IP address.'
+[Get-NetIPConfiguration]: #get-netipconfiguration '```&#10;PS C:\> Get-NetIPConfiguration&#10;```&#10;Gets IP network configuration.'
+[Get-NetIPInterface]: #get-netipinterface '```&#10;PS C:\> Get-NetIPInterface&#10;```&#10;Gets an IP interface.'
+[Set-NetIPInterface]: #set-netipinterface '```&#10;PS C:\> Set-NetIPInterface&#10;```&#10;Modifies an IP interface.'
+[Get-NetIPv4Protocol]: #get-netipv4protocol '```&#10;PS C:\> Get-NetIPv4Protocol&#10;```&#10;Gets IPv4 protocol configurations.'
+[Set-NetIPv4Protocol]: #set-netipv4protocol '```&#10;PS C:\> Set-NetIPv4Protocol&#10;```&#10;Modifies information about the IPv4 Protocol configuration.'
+[Get-NetIPv6Protocol]: #get-netipv6protocol '```&#10;PS C:\> Get-NetIPv6Protocol&#10;```&#10;Gets IPv6 protocol configurations.'
+[Set-NetIPv6Protocol]: #set-netipv6protocol '```&#10;PS C:\> Set-NetIPv6Protocol&#10;```&#10;Modifies the IPv6 protocol configuration.'
+[Get-NetNeighbor]: #get-netneighbor '```&#10;PS C:\> Get-NetNeighbor&#10;```&#10;Gets neighbor cache entries.'
+[New-NetNeighbor]: #new-netneighbor '```&#10;PS C:\> New-NetNeighbor&#10;```&#10;Creates a neighbor cache entry.'
+[Remove-NetNeighbor]: #remove-netneighbor '```&#10;PS C:\> Remove-NetNeighbor&#10;```&#10;Removes neighbor cache entries.'
+[Set-NetNeighbor]: #set-netneighbor '```&#10;PS C:\> Set-NetNeighbor&#10;```&#10;Modifies a neighbor cache entry.'
+[Get-NetOffloadGlobalSetting]: #get-netoffloadglobalsetting '```&#10;PS C:\> Get-NetOffloadGlobalSetting&#10;```&#10;Gets the global TCP/IP offload settings.'
+[Set-NetOffloadGlobalSetting]: #set-netoffloadglobalsetting '```&#10;PS C:\> Set-NetOffloadGlobalSetting&#10;```&#10;Modifies the global TCP/IP offload settings.'
+[Get-NetPrefixPolicy]: #get-netprefixpolicy '```&#10;PS C:\> Get-NetPrefixPolicy&#10;```&#10;Gets the prefix policy.'
+[Find-NetRoute]: #find-netroute '```&#10;PS C:\> Find-NetRoute&#10;```&#10;Finds the best local IP address and the best route to reach a remote address.'
+[Get-NetRoute]: #get-netroute '```&#10;PS C:\> Get-NetRoute&#10;```&#10;Gets the IP route information from the IP routing table.'
+[New-NetRoute]: #new-netroute '```&#10;PS C:\> New-NetRoute&#10;```&#10;Creates a route in the IP routing table.'
+[Remove-NetRoute]: #remove-netroute '```&#10;PS C:\> Remove-NetRoute&#10;```&#10;Removes IP routes from the IP routing table.'
+[Set-NetRoute]: #set-netroute '```&#10;PS C:\> Set-NetRoute&#10;```&#10;Modifies an entry or entries in the IP routing table.'
+[Get-NetTCPConnection]: #get-nettcpconnection '```&#10;PS C:\> Get-NetTCPConnection&#10;```&#10;Gets TCP connections.'
+[Get-NetTCPSetting]: #get-nettcpsetting '```&#10;PS C:\> Get-NetTCPSetting&#10;```&#10;Gets information about TCP settings and configuration.'
+[Set-NetTCPSetting]: #set-nettcpsetting '```&#10;PS C:\> Set-NetTCPSetting&#10;```&#10;Modifies a TCP setting.'
+[Get-NetTransportFilter]: #get-nettransportfilter '```&#10;PS C:\> Get-NetTransportFilter&#10;```&#10;Gets transport filters.'
+[New-NetTransportFilter]: #new-nettransportfilter '```&#10;PS C:\> New-NetTransportFilter&#10;```&#10;Creates a transport filter.'
+[Remove-NetTransportFilter]: #remove-nettransportfilter '```&#10;PS C:\> Remove-NetTransportFilter&#10;```&#10;Removes transport filters.'
+[Get-NetUDPEndpoint]: #get-netudpendpoint '```&#10;PS C:\> Get-NetUDPEndpoint&#10;```&#10;Gets current UDP endpoint statistics.'
+[Get-NetUDPSetting]: #get-netudpsetting '```&#10;PS C:\> Get-NetUDPSetting&#10;```&#10;Gets UDP settings.'
+[Set-NetUDPSetting]: #set-netudpsetting '```&#10;PS C:\> Set-NetUDPSetting&#10;```&#10;Modifies UDP settings.'
+
+**`NetIpAddress`**
+<code>&nbsp;[g][Get-NetIPAddress][^][msdocs:Get-NetIPAddress]&nbsp;[n][New-NetIPAddress][^][msdocs:New-NetIPAddress]&nbsp;[r][Remove-NetIPAddress][^][msdocs:Remove-NetIPAddress]&nbsp;[s][Set-NetIPAddress][^][msdocs:Set-NetIPAddress]</code>
 
 #### Process control cmdlets
 [Get-Process]: #get-process '```&#10;PS C:\> Get-Process&#10;PS C:\> gps&#10;```&#10;Display running processes'
@@ -2284,6 +2357,13 @@ $header = @{ message="Started by Mike Pfeiffer"}
 
 Invoke-WebRequest -Method Post -Uri $uri -Body $body -Headers $header
 ```
+#### `packagemanagement`
+##### `Package`
+###### `Install-Package`
+Download and install **Docker Engine - Enterprise** <sup>[Zacker][Zacker]: 266</sup>
+```powershell
+Install-Package docker -ProviderName dockermsftprovider
+```
 #### Process control
 ##### `Process`
 ###### `Start-Process`
@@ -2393,7 +2473,7 @@ Create a new partition mounted to F: using the ReFS filesystem <sup>[Practice La
 ```powershell
 New-Partition -DiskNumber 3 -UseMaximumSize -DriveLetter F | Format-Volume -NewFileSystemLabel “PLABS-Test” -FileSystem ReFS
 ```
-##### `deduplication`
+#### `deduplication`
 ###### `Enable-DedupVolume`
 [Enable-DedupVolume -UsageType]: #enable-dedupvolume '```&#10;PS C:\> Enable-DedupVolume -UsageType&#10;```&#10;Specifies the expected type of workload for the volume&#10;Acceptables values include:&#10;  - `Default`: Equivalent to "General Purpose File Server" in the GUI. This configures deduplication to be suitable to typical file server functions, like shared folders, Work Folders, and Folder Redirection.&#10;  - `HyperV`: Equivalent to "Virtual Desktop Infrastructure (VDI) Server" in the GUI. This configures Deduplication to occur in the background, with in-use and partial files optimized.&#10;  - `Backup`: Equivalent to "Virtualized Backup Server" in the GUI. Intended for use with backup applications, like Microsoft DPM. Deduplication is a priority process, and in-use files are optimized.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 156'
 
