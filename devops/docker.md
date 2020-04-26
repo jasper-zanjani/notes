@@ -1,10 +1,21 @@
 [Zacker]: # 'Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017'
 [pluralsight:70-740-containers]: https://app.pluralsight.com/library/courses/windows-server-2016-containers-implementing/table-of-contents "Implementing Containers on Windows Server 2016"
+[udemy]: https://www.udemy.com/course/docker-mastery-for-nodejs/ "Docker for Node.js Projects From a Docker Captain"
+
 
 # Docker
 Docker **repositories** are associated with a single image, various versions of which can be specified with a **tag**.
 
-# Docker syntax
+#### Docker on Windows
+Docker has traditionally distributed its own Linux kernel to use with **Docker Desktop**.
+After announcing in June of 2019 that Docker would begin working with **Windows Subsystem for Linux**, in March of 2020 Docker released a Technical Preview of Docker that included support for running on WSL 2.
+
+The Technical Preview requires <sup>[code.visualstudio.com](https://code.visualstudio.com/blogs/2020/03/02/docker-in-wsl2 "Using Docker in WSL 2")</sup>
+- Windows 10 Insider Preview build 18975 or later
+- WSL 2 running Ubuntu
+- the **Remote - WSL** extension for VS Code
+
+# `docker` syntax
 ###### Command groups
 [docker:attach]: https://docs.docker.com/engine/reference/commandline/attach/ "docker attach"
 [docker:build]: https://docs.docker.com/engine/reference/commandline/build/ "docker build"
@@ -269,10 +280,12 @@ Can be used to remove extraneous tags
 [docker run -&#109;]: #docker-run '```&#10;$ docker run -m&#10;$ docker run --memory&#10;```&#10;Limit memory'
 [docker run --cpu-percent]: #docker-run '```&#10;$ docker run --cpu-percent&#10;```&#10;CPU percent (Windows only)'
 [docker run --network]: #docker-run '```&#10;$ docker run --network&#10;```&#10;Connect a container to a network'
+[docker run --volumes-from]: #docker-run '```&#10;$ docker run --volumes-from&#10;```&#10;Mount volumes from the specified container(s)'
 
 <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`d`][docker run -&#100;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`i`][docker run -&#105;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`m`][docker run -&#109;] <code>&nbsp;</code> <code>&nbsp;</code> [`p`][docker run -&#112;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`t`][docker run -&#116;] <code>&nbsp;</code> [`v`][docker run -&#118;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code>\
 [`cpu-percent`][docker run --cpu-percent]
 [`network`][docker run --network]
+[`volumes-from`][docker run --volumes-from]
 
 Create a Hyper-V container <sup>[Zacker][Zacker]: 275</sup>
 ```sh
@@ -341,4 +354,36 @@ MAINTAINER @mike_pfeiffer
 RUN powershell.exe -Command Install-WindowsFeature Web-Server
 COPY ./websrc c:/inetpub/wwwroot
 CMD [ "powershell" ]
+```
+# `docker-compose`
+- separate binary coded in Python, available through `pip`
+- can be used from the CLI as well as from YAML files ("compose file")
+- can be used as a replacement for the normal `docker` CLI
+- intended for use in developer workflows to avoid shell scripts that would typically be used to facilitate long command-line `docker` invocations
+- not intended for production, for which Docker Swarm is preferable
+- v2 is focused on development or testing with a single node
+- v3 is focused on multi-node orchestration features
+
+Simple Docker compose file <sup>[udemy.com][udemy]
+```yaml
+version: '2.0'
+
+services:
+  web:
+    image: sample-01
+    build: .
+    ports:
+      - '3000:3000'
+```
+`up`
+`down`
+`-d`
+`-v`
+
+```sh
+docker-compose up -d
+```
+Bring everything down
+```sh
+docker-compose down -v
 ```
