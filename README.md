@@ -58,6 +58,8 @@ bot.write_to_chat "Hello world"
 ## .NET
 [.NET Framework]: #.net '.NET Framework&#10;set of APIs associated with the C# programming language that facilitate the management of Microsoft-based products and development of Windows applications&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2013.: 504'
 [.NET]: #.net '.NET&#10;open-source development platform that includes languages and libraries'
+[NuGet]: #.net 'NuGet&#10;.NET package manager'
+
 
 The .NET ecosystem has 3 **runtimes**, all of which implement the **.NET Standard Library** and rest on common **build tools**, languages, and **runtime components**
 - [**.NET Framework**][.NET Framework] released in 2002, making it the oldest runtime, and runs only on Windows. Two major components:
@@ -69,6 +71,7 @@ The .NET ecosystem has 3 **runtimes**, all of which implement the **.NET Standar
 - **Mono for Xamarin** is used for mobile platforms like IOS, Android, and OS X
 
 **.NET Standard** is a specification of which APIs are available across all these runtimes. It evolved from **Portable Class Libraries (PCL)** and will eventually replace them.
+.NET's package manager is [NuGet][NuGet].
 
 ## VMware
 Hypervisor, similar to Hyper-V, but provided at a cost, with a robust command-line interface via PowerShell. [^][3]

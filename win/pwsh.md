@@ -15,9 +15,12 @@
 [SOPR]: https://leanpub.com/secretsofpowershellremoting 'Don Jones et al. _Secrets of Powershell Remoting_. '
 [mu:70-740]: # 'MeasureUp Practice Test. _Installation, Storage and Compute with Windows Server 2016 (70-740)_.'
 
-# PowerShell
-## Contents
+# PowerShell contents
 ### Concepts
+[NuGet]: # 'NuGet&#10;.NET package manager'
+
+- [NuGet][NuGet]
+
 ##### Remoting
 [WinRM]: # 'Windows Remote Management (WinRM)&#10;Microsoft implementation of the WSMAN protocol, which handles communications and authentication for connections for many applications.&#10;Unlike MMCs, which are based on DCOM (legacy technology), WinRM is considered firewall-friendly and is the preferred option'
 [remoting]: # 'remoting&#10;term applied to the use of WinRM in Powershell over port 5985 (or 5986 for HTTPS)'
@@ -54,7 +57,9 @@ Remoting relies on [WinRM][WinRM], which is Microsoft's implementation of WSMAN.
 - [Restart Wi-Fi adapter](#restart-wi-fi-adapter)
 - [Safely combine related Registry modifications](#registry)
 - [Set DNS server to DHCP][Set-DnsClientServerAddress]
+- [Set IP address to DHCP][Set-NetIpInterface]
 - [Add a local user to administrators](#add-a-new-local-admin)
+- [Install NuGet][Install-PackageProvider]
 
 ##### 70-740 tasks
 - [Create a virtual switch with SET enabled](#create-a-virtual-switch-with-set-enabled)
@@ -65,7 +70,7 @@ Remoting relies on [WinRM][WinRM], which is Microsoft's implementation of WSMAN.
 - [Create a S2D cluster](#configure-s2d-cluster)
 
 ### Cmdlets
-#### Cmdlet verbs
+
 [<code>&nbsp;a</code>](#cmdlet-verbs  "```&#10;PS C:\> Add-&#10;```") 
 [`ap`](#cmdlet-verbs "`Approve-`&#10;Confirms or agrees to the status of a resource or process.") 
 [`as` ](#cmdlet-verbs  "```&#10;PS C:\> Assert-&#10;```&#10;Affirms the state of a resource.") 
@@ -162,6 +167,10 @@ Remoting relies on [WinRM][WinRM], which is Microsoft's implementation of WSMAN.
 [`wc` ](#cmdlet-verbs  "```&#10;PS C:\> Watch-&#10;```") 
 [`wr` ](#cmdlet-verbs  "```&#10;PS C:\> Write-&#10;```&#10;Adds information to a target. This verb is paired with Read.") 
 
+#### Modules
+[`deduplication`](#deduplication-module)
+[`nettcpip`](#nettcpip-module)
+[`packagemanagement`](#packagemanagement-module)
 
 #### Disk-related cmdlets
 [Add-PhysicalDisk]: #add-physicaldisk '```&#10;Add-PhysicalDisk&#10;```&#10;Adds a physical disk to the specified storage pool or manually assigns a physical disk to a specific virtual disk.'
@@ -446,8 +455,9 @@ Remoting relies on [WinRM][WinRM], which is Microsoft's implementation of WSMAN.
 [Get-NetUDPSetting]: #get-netudpsetting '```&#10;PS C:\> Get-NetUDPSetting&#10;```&#10;Gets UDP settings.'
 [Set-NetUDPSetting]: #set-netudpsetting '```&#10;PS C:\> Set-NetUDPSetting&#10;```&#10;Modifies UDP settings.'
 
-**`NetIpAddress`**
-<code>&nbsp;[g][Get-NetIPAddress][^][msdocs:Get-NetIPAddress]&nbsp;[n][New-NetIPAddress][^][msdocs:New-NetIPAddress]&nbsp;[r][Remove-NetIPAddress][^][msdocs:Remove-NetIPAddress]&nbsp;[s][Set-NetIPAddress][^][msdocs:Set-NetIPAddress]</code>
+**`Net`**
+<code>IPAddress&nbsp;[g][Get-NetIPAddress][^][msdocs:Get-NetIPAddress]&nbsp;[n][New-NetIPAddress][^][msdocs:New-NetIPAddress]&nbsp;[r][Remove-NetIPAddress][^][msdocs:Remove-NetIPAddress]&nbsp;[s][Set-NetIPAddress][^][msdocs:Set-NetIPAddress]</code>
+<code>IPInterface&nbsp;[g][Get-NetIPInterface][^][msdocs:Get-NetIPInterface]&nbsp;[s][Set-NetIPInterface][^][msdocs:Set-NetIPInterface]</code>
 
 #### Process control cmdlets
 [Get-Process]: #get-process '```&#10;PS C:\> Get-Process&#10;PS C:\> gps&#10;```&#10;Display running processes'
@@ -2315,6 +2325,12 @@ Configure a network adapter
 ```powershell
 New-NetIpAddress -InterfaceIndex 6 -IpAddress 192.168.0.200 -PrefixLength 24 -DefaultGateway 192.168.0.1
 ```
+##### `NetIpInterface`
+###### `Set-NetIpInterface`
+Enable DHCP <sup>[4sysops.com](https://4sysops.com/archives/set-an-ip-address-and-configure-dhcp-with-powershell/ "Set an IP address and configure DHCP with Powershell")</sup>
+```powershell
+Set-NetIPInterface -InterfaceAlias 'Ethernet 2' -Dhcp Enabled
+```
 ##### `WebRequest`
 ###### `Invoke-WebRequest`
 Download a file over HTTP/HTTPS
@@ -2360,9 +2376,18 @@ Invoke-WebRequest -Method Post -Uri $uri -Body $body -Headers $header
 #### `packagemanagement`
 ##### `Package`
 ###### `Install-Package`
-Download and install **Docker Engine - Enterprise** <sup>[Zacker][Zacker]: 266</sup>
+Download and install **Docker Engine - Enterprise** (not supported on Windows 10 clients) <sup>[Zacker][Zacker]: 266</sup>
 ```powershell
 Install-Package docker -ProviderName dockermsftprovider
+```
+###### `Install-PackageProvider`
+Install [NuGet][NuGet]
+```powershell
+Install-PackageProvider -Name NuGet
+```
+Since April 3, 2020 the minimum TLS version was raised on the provider lookup site. <sup>[stackoverflow.com](https://stackoverflow.com/questions/16657778/install-nuget-via-powershell-script/26421187 "Install NuGet via Powershell script")
+```powershell
+[System.Net.ServicePointManager]::SecurityProtocol=[System.Net.SecurityProtocolType]'Tls11,Tls12'
 ```
 #### Process control
 ##### `Process`
@@ -3504,7 +3529,7 @@ Set-DnsClientServerAddress -InterfaceIndex 6 -ServerAddresses ("192.168.0.1","19
 ```
 Rename the computer and join it to a domain
 ```powershell
-Add-Computer -DomainNAme adatum.com -NewName Server8 -Credential adatum\administrator
+Add-Computer -DomainName adatum.com -NewName Server8 -Credential adatum\administrator
 ```
 #### Update Server Core image
 ```powershell
@@ -3518,22 +3543,10 @@ Dismount-WindowsImage -Path .\MountDir -Save
 [Discrete Device Assignment (DDA)][DDA] begins with finding the Instance ID of the device needed to be passed through. <sup>[Zacker][Zacker]: 212</sup>
 ```powershell
 Get-PnpDevice -PresentOnly
-```
-Remove host-installed drivers
-```powershell
-Disable-PnpDevice -InstanceId
-```
-Provide `InstanceId` and `KeyName` values in order to get value for `LocationPath` parameter in next command
-```powershell
-Get-PnpDeviceProperty
-```
-Remove the device from host control
-```powershell
-Dismount-VmHostAssignableDevice -LocationPath
-```
-Attach the device to a guest
-```powershell
-Add-VMAssignableDevice -VM -LocationPath
+Disable-PnpDevice -InstanceId                 # Remove host-installed drivers
+Get-PnpDeviceProperty                         # Provide `InstanceId` and `KeyName` values in order to get value for `LocationPath` parameter in next command
+Dismount-VmHostAssignableDevice -LocationPath # Remove the device from host control
+Add-VMAssignableDevice -VM -LocationPath      # Attach the device to a guest
 ```
 #### Configure live migration
 Live migration is possible between Hyper-V hosts that are not clustered, but they must be within the same (or trusted) domains. <sup>[Zacker][Zacker]</sup>
@@ -3547,4 +3560,10 @@ Set-VMHost -VirtualMachineMigrationPerformanceOption smbtransport
 ```powershell
 New-Cluster -Name cluster1 -node server1,server2,server3,server4 -NoStorage
 Enable-ClusterStorageSpacesDirect
+```
+#### Install Docker Enterprise
+[Zacker][Zacker]: 266
+```powershell
+Install-Module -Name dockermsftprovider -repository psgallery -force
+Install-Package -Name docker -ProviderName dockermsftprovider
 ```

@@ -1,14 +1,8 @@
 [Zacker]: # 'Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017'
+[pluralsight:70-740-containers]: https://app.pluralsight.com/library/courses/windows-server-2016-containers-implementing/table-of-contents "Implementing Containers on Windows Server 2016"
 
 # Docker
-
-Microsoft maintained a [Powershell module](https://github.com/microsoft/Docker-PowerShell "PowerShell for Docker") which has been deprecated for years.
-
-##### Storage
-Docker has several options for containers to store files in a persistent manner:
-- **Volumes** are stored in a part of the host filesystem which is managed by Docker (/var/lib/docker/volumes/ on Docker).
-- **Bind mounts** may be stored anywhere on the host system
-- **`tmpfs` mounts** are stored in the host system's memory only, and are available only on Linux.
+Docker **repositories** are associated with a single image, various versions of which can be specified with a **tag**.
 
 # Docker syntax
 ###### Command groups
@@ -128,6 +122,13 @@ Docker has several options for containers to store files in a persistent manner:
 [docker volume]: #docker-volume '```&#10;$ docker volume&#10;```&#10;Manage volumes'
 [docker wait]: #docker-wait '```&#10;$ docker wait&#10;```&#10;Block until one or more containers stop, then print their exit codes'
 
+[`attach`][docker attach][^][docker:attach]
+[`build`][docker build][^][docker:build]
+[`builder`][docker builder][^][docker:builder]
+[`checkpoint`][docker checkpoint][^][docker:checkpoint]
+[`commit`][docker commit][^][docker:commit]
+[`config`][docker config][^][docker:config]
+[`container`][docker container][^][docker:container]
 [`context`][docker context][^][docker:context]
 [`cp`][docker cp][^][docker:cp]
 [`create`][docker create][^][docker:create]
@@ -183,6 +184,15 @@ Connect to a session on a running container <sup>[Zacker][Zacker]: 279</sup>
 ```sh
 docker attach $CONTID
 ```
+##### `docker build`
+[docker build -&#116;]: #docker build '```&#10;$ docker build -t&#10;$ docker build --tag&#10;```&#10;Name and optionally a tag in the "name:tag" format'
+
+<code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`t`][docker build -&#116;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 
+
+Build a Docker image from a Dockerfile in the present working directory <sup>[PluralSight][pluralsight:70-740-containers]</sup>
+```sh
+docker build -t web .
+```
 ##### `docker commit`
 Save changes made to a modified container to a new image <sup>[Zacker][Zacker]: 279</sup>
 ```sh
@@ -224,9 +234,15 @@ docker image build -t hello:v0.1 . |
 [`prune`][docker network prune] 
 [`rm`][docker network rm] 
 
+Container networks can use various drivers, which are associated with specific key-value pairs in `daemon.json`:
+- **NAT**: containers reside in their own network and the host acts as gateway and set with `{ "fixed-cidr" : "10.0.0.0/24" }`.
+- **Transparent**: containers are assigned IP addresses on the same physical network to which the host belongs (similar to **External** virtual switches in Hyper-V), set with `{ "bridge": "none" }`.
+
+
+
 Create a new network using the **transparent driver** <sup>[Zacker][Zacker]: 285</sup>
 ```sh
-docker network create -d transparent $NETWORK
+docker network create -d transparent $NETWORKNAME
 ```
 Create a transpare network with static IP addresses
 ```sh
@@ -242,13 +258,21 @@ Remove a container completely (must be stopped, unless `-f` is used) <sup>[Zacke
 ```sh
 docker rm $CONTID
 ```
+##### `docker rmi`
+Can be used to remove extraneous tags
 ##### `docker run`
 [docker run -&#105;]: #docker-run '```&#10;$ docker run -i&#10;$ docker run --interactive&#10;```&#10;Keep STDIN open even if not attached&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 274'
 [docker run -&#116;]: #docker-run '```&#10;$ docker run -t&#10;$ docker run --tty&#10;```&#10;Allocate a pseudo-TTY&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 274'
 [docker run -&#100;]: #docker-run '```&#10;$ docker run -d&#10;$ docker run --detach&#10;```&#10;Run container in background and print container ID'
 [docker run -&#112;]: #docker-run '```&#10;$ docker run -p $HOSTPORT:$CONTPORT&#10;$ docker run --publish $HOSTPORT:$CONTPORT&#10;```&#10;Publish a container port to the host port'
+[docker run -&#118;]: #docker-run '```&#10;$ docker run -v $HOSTPATH:$CONTAINERPATH&#10;$ docker run --volume $HOSTPATH:$CONTAINERPATH&#10;```&#10;Bind-mount a volume.'
+[docker run -&#109;]: #docker-run '```&#10;$ docker run -m&#10;$ docker run --memory&#10;```&#10;Limit memory'
+[docker run --cpu-percent]: #docker-run '```&#10;$ docker run --cpu-percent&#10;```&#10;CPU percent (Windows only)'
+[docker run --network]: #docker-run '```&#10;$ docker run --network&#10;```&#10;Connect a container to a network'
 
-<code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`d`][docker run -&#100;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`i`][docker run -&#105;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`p`][docker run -&#112;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`t`][docker run -&#116;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 
+<code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`d`][docker run -&#100;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`i`][docker run -&#105;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`m`][docker run -&#109;] <code>&nbsp;</code> <code>&nbsp;</code> [`p`][docker run -&#112;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`t`][docker run -&#116;] <code>&nbsp;</code> [`v`][docker run -&#118;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code>\
+[`cpu-percent`][docker run --cpu-percent]
+[`network`][docker run --network]
 
 Create a Hyper-V container <sup>[Zacker][Zacker]: 275</sup>
 ```sh
@@ -273,12 +297,27 @@ Stop a container <sup>[Zacker][Zacker]: 278</sup>
 docker stop $CONTID
 ```
 ##### `docker tag`
+`docker tag` can be used to rename images and to prepare them to be [pushed][docker push] to a repository.
+
 Tag an image on local container host <sup>[Zacker][Zacker]: 272</sup>
 ```sh
 docker tag $USERNAME/$IMAGENAME:$TAG
 ```
+##### `docker volume`
+Docker has several options for containers to store files in a persistent manner:
+- **Volumes** are stored in a part of the host filesystem which is managed by Docker (/var/lib/docker/volumes/ on Docker).
+- **Bind mounts** may be stored anywhere on the host system and are specified by [`docker run --volume`][docker run -&#118;].
+- **`tmpfs` mounts** are stored in the host system's memory only, and are available only on Linux.
+
+Display data volumes <sup>[PluralSight][pluralsight:70-740-containers]</sup>
+```sh
+docker volume ls
+```
 # Dockerfile syntax
-A Docker image consists of read-only **layers**, each of which represents an **instruction** that incrementally the changes the image being built up.
+A Docker image consists of read-only **layers**, each of which represents an **instruction** that incrementally the changes the image being built up. 
+Using [`docker build`][docker build], Dockerfiles can be used to construct new images.
+The build process can be optimized by placing multiple commands in the same `RUN` instruction.
+Dockerfiles are named simply "Dockerfile" with no extension or variation.
 ```dockerfile
 FROM alpine
 RUN apk update && apk add nodejs
@@ -294,4 +333,12 @@ RUN powershell -configurationname microsoft.powershell -command add-dhcpserverv4
 RUN md boot
 COPY ./bootfile.wim c:/boot/
 CMD powershell
+```
+[PluralSight][pluralsight:70-740-containers]
+```dockerfile
+FROM microsoft/windowsservercore
+MAINTAINER @mike_pfeiffer
+RUN powershell.exe -Command Install-WindowsFeature Web-Server
+COPY ./websrc c:/inetpub/wwwroot
+CMD [ "powershell" ]
 ```
