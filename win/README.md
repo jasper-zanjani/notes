@@ -32,6 +32,7 @@
 [cscript]:        #cscript                        '```&#10;C:\>cscript&#10;```&#10;Starts a script so that it runs in a command-line environment'
 [diskpart]:       #diskpart                       '```&#10;C:\>diskpart&#10;```&#10;Text-mode command interpreter used to convert disk types, create partitions and volumes, and configure RAID&#10;Stanek, William R. _Microsoft Windows Command-Line_.: 141'
 [dism.exe]: #dism.exe '```&#10;C:\>dism.exe&#10;```&#10;"Deployment Image Servicing and Management", enables modification of VHD and Windows Imaging files while they are offline&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 70'
+[eventvwr.exe]: #eventvwrexe '```&#10;eventvwr.exe&#10;```&#10;Event Viewer'
 [hostname]:       #hostname                       '```&#10;C:\>hostname&#10;C:\>HOSTNAME.exe&#10;```&#10;Display computer name'
 [ipconfig]:       #ipconfig                       '```&#10;C:\>ipconfig&#10;```&#10;Display TCP/IP configuration'
 [logoff]:         #logoff                         '```&#10;C:\>logoff&#10;```&#10;Log out'
@@ -69,10 +70,12 @@
 <!-- Linux commands -->
 [grep]: https://github.com/jasper-zanjani/notes/blob/master/lx/commands/README.md#grep '```&#10;$ grep&#10;```&#10;Search `$FILES` for lines containing a match to regex `$PATTERN`&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 126'
 [lx echo]: https://github.com/jasper-zanjani/notes/blob/master/lx/commands/README.md#echo '```&#10;$ echo&#10;```&#10;Write `$STRING` to STDOUT&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 88'
+[which]: #which '```&#10;$ which $CMD&#10;```&#10;Determine the location of `$CMD` and display its full path&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 200'
 
 <!-- Powershell commands -->
 [Add-Computer]: pwsh.md#add-computer '```&#10;PS C:\> Add-Computer&#10;```&#10;Join a computer to a domain&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 20'
 [Get-ChildItem]: pwsh.md#get-childitem '```&#10;PS C:\> Get-ChildItem&#10;PS C:\> dir&#10;PS C:\> gci&#10;PS C:\> ls&#10;```&#10;Get items in one or more locations'
+[Get-Command]: #get-command '```&#10;PS C:\> Get-Command&#10;PS C:\> gcm&#10;```&#10;Display all installed commands, including aliases, applications, filters, functions, and scripts'
 [Get-ComputerInfo]: pwsh.md#get-computerinfo '```&#10;PS C:\> Get-ComputerInfo&#10;PS C:\> gin&#10;```&#10;Retrieve a consolidated object of system and operating system properties&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 274'
 [Invoke-GPUpdate]: pwsh.md#invoke-gpupdate '```&#10;PS C:\> Invoke-GPUpdate&#10;```&#10;Schedule a remote Group Policy refresh on the specified host'
 [Write-Host]: pwsh.md#write-host '```&#10;PS C:\> Write-Host&#10;```&#10;Write customized output to a host (equivalent to `echo`).'
@@ -111,6 +114,7 @@
 `dir` <sup>[pwsh][Get-ChildItem]</sup>
 [`diskpart`][diskpart] 
 [`echo`](#echo) <sup>[lx][lx echo] [pwsh][Write-Host]</sup>
+[`eventvwr`][eventvwr.exe]
 `findstr` <sup>[lx][grep]</sup>
 `gpupdate`<sup>[pwsh][Invoke-GPUpdate]</sup>
 [`hostname`][hostname] <sup>[pwsh][Get-ComputerInfo]</sup>
@@ -131,6 +135,8 @@
 [`tracert`](#tracert) 
 [`traceroute`](#tracert)
 [`VMConnect.exe`][VMConnect.exe]
+[`wbadmin.exe`][wbadmin.exe]
+`where` <sup>[pwsh][Get-Command] [lx][which]
 [`winrm`](#winrmexe) 
 [`winver`][winver]
 [`wmic`][wmic]
@@ -777,6 +783,20 @@ Option  | Effect
 :---    | :---
 `-6`    | IPv6, aliased to `traceroute6`
 
+###### `wbadmin`
+`-hyperv`
+
+[Zacker][Zacker]: 325-326
+```cmd
+wbadmin get versions
+wbadmin get items -version: 11/14/2016:05:09
+wbadmin start recovery -itemtype:app items:cluster -version:01/01/2008-00:00
+```
+[Zacker][Zacker]: 422
+```cmd
+wbadmin start systemstaterecovery -version:11/27/2016-11:07
+wbadmin get versions
+```
 ###### `Winrm.exe`
 `enumerate`
 `get`

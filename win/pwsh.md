@@ -173,10 +173,153 @@ Remoting relies on [WinRM][WinRM], which is Microsoft's implementation of WSMAN.
 [`packagemanagement`](#packagemanagement-module)
 
 #### Disk-related cmdlets
+[msdocs:Get-DedupProperties]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-DedupProperties "Get-DedupProperties"
+[msdocs:Clear-Disk]: https://docs.microsoft.com/en-us/powershell/module/storage/Clear-Disk "Clear-Disk"
+[msdocs:Get-Disk]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-Disk "Get-Disk"
+[msdocs:Initialize-Disk]: https://docs.microsoft.com/en-us/powershell/module/storage/Initialize-Disk "Initialize-Disk"
+[msdocs:Set-Disk]: https://docs.microsoft.com/en-us/powershell/module/storage/Set-Disk "Set-Disk"
+[msdocs:Update-Disk]: https://docs.microsoft.com/en-us/powershell/module/storage/Update-Disk "Update-Disk"
+[msdocs:Dismount-DiskImage]: https://docs.microsoft.com/en-us/powershell/module/storage/Dismount-DiskImage "Dismount-DiskImage"
+[msdocs:Get-DiskImage]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-DiskImage "Get-DiskImage"
+[msdocs:Mount-DiskImage]: https://docs.microsoft.com/en-us/powershell/module/storage/Mount-DiskImage "Mount-DiskImage"
+[msdocs:Get-DiskStorageNodeView]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-DiskStorageNodeView "Get-DiskStorageNodeView"
+[msdocs:Get-FileIntegrity]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-FileIntegrity "Get-FileIntegrity"
+[msdocs:Repair-FileIntegrity]: https://docs.microsoft.com/en-us/powershell/module/storage/Repair-FileIntegrity "Repair-FileIntegrity"
+[msdocs:Set-FileIntegrity]: https://docs.microsoft.com/en-us/powershell/module/storage/Set-FileIntegrity "Set-FileIntegrity"
+[msdocs:Debug-FileShare]: https://docs.microsoft.com/en-us/powershell/module/storage/Debug-FileShare "Debug-FileShare"
+[msdocs:Get-FileShare]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-FileShare "Get-FileShare"
+[msdocs:New-FileShare]: https://docs.microsoft.com/en-us/powershell/module/storage/New-FileShare "New-FileShare"
+[msdocs:Remove-FileShare]: https://docs.microsoft.com/en-us/powershell/module/storage/Remove-FileShare "Remove-FileShare"
+[msdocs:Set-FileShare]: https://docs.microsoft.com/en-us/powershell/module/storage/Set-FileShare "Set-FileShare"
+[msdocs:Block-FileShareAccess]: https://docs.microsoft.com/en-us/powershell/module/storage/Block-FileShareAccess "Block-FileShareAccess"
+[msdocs:Grant-FileShareAccess]: https://docs.microsoft.com/en-us/powershell/module/storage/Grant-FileShareAccess "Grant-FileShareAccess"
+[msdocs:Revoke-FileShareAccess]: https://docs.microsoft.com/en-us/powershell/module/storage/Revoke-FileShareAccess "Revoke-FileShareAccess"
+[msdocs:Unblock-FileShareAccess]: https://docs.microsoft.com/en-us/powershell/module/storage/Unblock-FileShareAccess "Unblock-FileShareAccess"
+[msdocs:Get-FileShareAccessControlEntry]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-FileShareAccessControlEntry "Get-FileShareAccessControlEntry"
+[msdocs:Set-FileStorageTier]: https://docs.microsoft.com/en-us/powershell/module/storage/Set-FileStorageTier "Set-FileStorageTier"
+[msdocs:Clear-FileStorageTier]: https://docs.microsoft.com/en-us/powershell/module/storage/Clear-FileStorageTier "Clear-FileStorageTier"
+[msdocs:Get-FileStorageTier]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-FileStorageTier "Get-FileStorageTier"
+[msdocs:Update-HostStorageCache]: https://docs.microsoft.com/en-us/powershell/module/storage/Update-HostStorageCache "Update-HostStorageCache"
+[msdocs:Get-InitiatorId]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-InitiatorId "Get-InitiatorId"
+[msdocs:Remove-InitiatorId]: https://docs.microsoft.com/en-us/powershell/module/storage/Remove-InitiatorId "Remove-InitiatorId"
+[msdocs:Remove-InitiatorIdFromMaskingSet]: https://docs.microsoft.com/en-us/powershell/module/storage/Remove-InitiatorIdFromMaskingSet "Remove-InitiatorIdFromMaskingSet"
+[msdocs:Add-InitiatorIdToMaskingSet]: https://docs.microsoft.com/en-us/powershell/module/storage/Add-InitiatorIdToMaskingSet "Add-InitiatorIdToMaskingSet"
+[msdocs:Get-InitiatorPort]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-InitiatorPort "Get-InitiatorPort"
+[msdocs:Set-InitiatorPort]: https://docs.microsoft.com/en-us/powershell/module/storage/Set-InitiatorPort "Set-InitiatorPort"
+[msdocs:Get-MaskingSet]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-MaskingSet "Get-MaskingSet"
+[msdocs:New-MaskingSet]: https://docs.microsoft.com/en-us/powershell/module/storage/New-MaskingSet "New-MaskingSet"
+[msdocs:Remove-MaskingSet]: https://docs.microsoft.com/en-us/powershell/module/storage/Remove-MaskingSet "Remove-MaskingSet"
+[msdocs:Rename-MaskingSet]: https://docs.microsoft.com/en-us/powershell/module/storage/Rename-MaskingSet "Rename-MaskingSet"
+[msdocs:Get-OffloadDataTransferSetting]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-OffloadDataTransferSetting "Get-OffloadDataTransferSetting"
+[msdocs:Get-Partition]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-Partition "Get-Partition"
+[msdocs:New-Partition]: https://docs.microsoft.com/en-us/powershell/module/storage/New-Partition "New-Partition"
+[msdocs:Remove-Partition]: https://docs.microsoft.com/en-us/powershell/module/storage/Remove-Partition "Remove-Partition"
+[msdocs:Resize-Partition]: https://docs.microsoft.com/en-us/powershell/module/storage/Resize-Partition "Resize-Partition"
+[msdocs:Set-Partition]: https://docs.microsoft.com/en-us/powershell/module/storage/Set-Partition "Set-Partition"
+[msdocs:Add-PartitionAccessPath]: https://docs.microsoft.com/en-us/powershell/module/storage/Add-PartitionAccessPath "Add-PartitionAccessPath"
+[msdocs:Remove-PartitionAccessPath]: https://docs.microsoft.com/en-us/powershell/module/storage/Remove-PartitionAccessPath "Remove-PartitionAccessPath"
+[msdocs:Get-PartitionSupportedSize]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-PartitionSupportedSize "Get-PartitionSupportedSize"
+[msdocs:Add-PhysicalDisk]: https://docs.microsoft.com/en-us/powershell/module/storage/Add-PhysicalDisk "Add-PhysicalDisk"
+[msdocs:Get-PhysicalDisk]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-PhysicalDisk "Get-PhysicalDisk"
+[msdocs:Remove-PhysicalDisk]: https://docs.microsoft.com/en-us/powershell/module/storage/Remove-PhysicalDisk "Remove-PhysicalDisk"
+[msdocs:Reset-PhysicalDisk]: https://docs.microsoft.com/en-us/powershell/module/storage/Reset-PhysicalDisk "Reset-PhysicalDisk"
+[msdocs:Set-PhysicalDisk]: https://docs.microsoft.com/en-us/powershell/module/storage/Set-PhysicalDisk "Set-PhysicalDisk"
+[msdocs:Disable-PhysicalDiskIdentification]: https://docs.microsoft.com/en-us/powershell/module/storage/Disable-PhysicalDiskIdentification "Disable-PhysicalDiskIdentification"
+[msdocs:Enable-PhysicalDiskIdentification]: https://docs.microsoft.com/en-us/powershell/module/storage/Enable-PhysicalDiskIdentification "Enable-PhysicalDiskIdentification"
+[msdocs:Get-PhysicalDiskStorageNodeView]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-PhysicalDiskStorageNodeView "Get-PhysicalDiskStorageNodeView"
+[msdocs:Get-PhysicalExtent]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-PhysicalExtent "Get-PhysicalExtent"
+[msdocs:Get-PhysicalExtentAssociation]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-PhysicalExtentAssociation "Get-PhysicalExtentAssociation"
+[msdocs:Get-ResiliencySetting]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-ResiliencySetting "Get-ResiliencySetting"
+[msdocs:Set-ResiliencySetting]: https://docs.microsoft.com/en-us/powershell/module/storage/Set-ResiliencySetting "Set-ResiliencySetting"
+[msdocs:Get-StorageAdvancedProperty]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-StorageAdvancedProperty "Get-StorageAdvancedProperty"
+[msdocs:Get-StorageDiagnosticInfo]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-StorageDiagnosticInfo "Get-StorageDiagnosticInfo"
+[msdocs:Start-StorageDiagnosticLog]: https://docs.microsoft.com/en-us/powershell/module/storage/Start-StorageDiagnosticLog "Start-StorageDiagnosticLog"
+[msdocs:Stop-StorageDiagnosticLog]: https://docs.microsoft.com/en-us/powershell/module/storage/Stop-StorageDiagnosticLog "Stop-StorageDiagnosticLog"
+[msdocs:Get-StorageEnclosure]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-StorageEnclosure "Get-StorageEnclosure"
+[msdocs:Disable-StorageEnclosureIdentification]: https://docs.microsoft.com/en-us/powershell/module/storage/Disable-StorageEnclosureIdentification "Disable-StorageEnclosureIdentification"
+[msdocs:Enable-StorageEnclosureIdentification]: https://docs.microsoft.com/en-us/powershell/module/storage/Enable-StorageEnclosureIdentification "Enable-StorageEnclosureIdentification"
+[msdocs:Get-StorageEnclosureStorageNodeView]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-StorageEnclosureStorageNodeView "Get-StorageEnclosureStorageNodeView"
+[msdocs:Get-StorageEnclosureVendorData]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-StorageEnclosureVendorData "Get-StorageEnclosureVendorData"
+[msdocs:Get-StorageFaultDomain]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-StorageFaultDomain "Get-StorageFaultDomain"
+[msdocs:Get-StorageFileServer]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-StorageFileServer "Get-StorageFileServer"
+[msdocs:New-StorageFileServer]: https://docs.microsoft.com/en-us/powershell/module/storage/New-StorageFileServer "New-StorageFileServer"
+[msdocs:Remove-StorageFileServer]: https://docs.microsoft.com/en-us/powershell/module/storage/Remove-StorageFileServer "Remove-StorageFileServer"
+[msdocs:Set-StorageFileServer]: https://docs.microsoft.com/en-us/powershell/module/storage/Set-StorageFileServer "Set-StorageFileServer"
+[msdocs:Update-StorageFirmware]: https://docs.microsoft.com/en-us/powershell/module/storage/Update-StorageFirmware "Update-StorageFirmware"
+[msdocs:Get-StorageFirmwareInformation]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-StorageFirmwareInformation "Get-StorageFirmwareInformation"
+[msdocs:Get-StorageHealthAction]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-StorageHealthAction "Get-StorageHealthAction"
+[msdocs:Get-StorageHealthReport]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-StorageHealthReport "Get-StorageHealthReport"
+[msdocs:Get-StorageHealthSetting]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-StorageHealthSetting "Get-StorageHealthSetting"
+[msdocs:Remove-StorageHealthSetting]: https://docs.microsoft.com/en-us/powershell/module/storage/Remove-StorageHealthSetting "Remove-StorageHealthSetting"
+[msdocs:Set-StorageHealthSetting]: https://docs.microsoft.com/en-us/powershell/module/storage/Set-StorageHealthSetting "Set-StorageHealthSetting"
+[msdocs:Disable-StorageHighAvailability]: https://docs.microsoft.com/en-us/powershell/module/storage/Disable-StorageHighAvailability "Disable-StorageHighAvailability"
+[msdocs:Enable-StorageHighAvailability]: https://docs.microsoft.com/en-us/powershell/module/storage/Enable-StorageHighAvailability "Enable-StorageHighAvailability"
+[msdocs:Get-StorageJob]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-StorageJob "Get-StorageJob"
+[msdocs:Stop-StorageJob]: https://docs.microsoft.com/en-us/powershell/module/storage/Stop-StorageJob "Stop-StorageJob"
+[msdocs:Disable-StorageMaintenanceMode]: https://docs.microsoft.com/en-us/powershell/module/storage/Disable-StorageMaintenanceMode "Disable-StorageMaintenanceMode"
+[msdocs:Enable-StorageMaintenanceMode]: https://docs.microsoft.com/en-us/powershell/module/storage/Enable-StorageMaintenanceMode "Enable-StorageMaintenanceMode"
+[msdocs:Get-StorageNode]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-StorageNode "Get-StorageNode"
+[msdocs:Get-StoragePool]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-StoragePool "Get-StoragePool"
+[msdocs:New-StoragePool]: https://docs.microsoft.com/en-us/powershell/module/storage/New-StoragePool "New-StoragePool"
+[msdocs:Optimize-StoragePool]: https://docs.microsoft.com/en-us/powershell/module/storage/Optimize-StoragePool "Optimize-StoragePool"
+[msdocs:Remove-StoragePool]: https://docs.microsoft.com/en-us/powershell/module/storage/Remove-StoragePool "Remove-StoragePool"
+[msdocs:Set-StoragePool]: https://docs.microsoft.com/en-us/powershell/module/storage/Set-StoragePool "Set-StoragePool"
+[msdocs:Update-StoragePool]: https://docs.microsoft.com/en-us/powershell/module/storage/Update-StoragePool "Update-StoragePool"
+[msdocs:Get-StorageProvider]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-StorageProvider "Get-StorageProvider"
+[msdocs:Set-StorageProvider]: https://docs.microsoft.com/en-us/powershell/module/storage/Set-StorageProvider "Set-StorageProvider"
+[msdocs:Update-StorageProviderCache]: https://docs.microsoft.com/en-us/powershell/module/storage/Update-StorageProviderCache "Update-StorageProviderCache"
+[msdocs:Get-StorageReliabilityCounter]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-StorageReliabilityCounter "Get-StorageReliabilityCounter"
+[msdocs:Reset-StorageReliabilityCounter]: https://docs.microsoft.com/en-us/powershell/module/storage/Reset-StorageReliabilityCounter "Reset-StorageReliabilityCounter"
+[msdocs:Get-StorageSetting]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-StorageSetting "Get-StorageSetting"
+[msdocs:Set-StorageSetting]: https://docs.microsoft.com/en-us/powershell/module/storage/Set-StorageSetting "Set-StorageSetting"
+[msdocs:Debug-StorageSubSystem]: https://docs.microsoft.com/en-us/powershell/module/storage/Debug-StorageSubSystem "Debug-StorageSubSystem"
+[msdocs:Get-StorageSubsystem]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-StorageSubsystem "Get-StorageSubsystem"
+[msdocs:Register-StorageSubsystem]: https://docs.microsoft.com/en-us/powershell/module/storage/Register-StorageSubsystem "Register-StorageSubsystem"
+[msdocs:Set-StorageSubsystem]: https://docs.microsoft.com/en-us/powershell/module/storage/Set-StorageSubsystem "Set-StorageSubsystem"
+[msdocs:Unregister-StorageSubsystem]: https://docs.microsoft.com/en-us/powershell/module/storage/Unregister-StorageSubsystem "Unregister-StorageSubsystem"
+[msdocs:New-StorageSubsystemVirtualDisk]: https://docs.microsoft.com/en-us/powershell/module/storage/New-StorageSubsystemVirtualDisk "New-StorageSubsystemVirtualDisk"
+[msdocs:Get-StorageTier]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-StorageTier "Get-StorageTier"
+[msdocs:New-StorageTier]: https://docs.microsoft.com/en-us/powershell/module/storage/New-StorageTier "New-StorageTier"
+[msdocs:Remove-StorageTier]: https://docs.microsoft.com/en-us/powershell/module/storage/Remove-StorageTier "Remove-StorageTier"
+[msdocs:Resize-StorageTier]: https://docs.microsoft.com/en-us/powershell/module/storage/Resize-StorageTier "Resize-StorageTier"
+[msdocs:Set-StorageTier]: https://docs.microsoft.com/en-us/powershell/module/storage/Set-StorageTier "Set-StorageTier"
+[msdocs:Get-StorageTierSupportedSize]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-StorageTierSupportedSize "Get-StorageTierSupportedSize"
+[msdocs:Get-SupportedClusterSizes]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-SupportedClusterSizes "Get-SupportedClusterSizes"
+[msdocs:Get-SupportedFileSystems]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-SupportedFileSystems "Get-SupportedFileSystems"
+[msdocs:Get-TargetPort]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-TargetPort "Get-TargetPort"
+[msdocs:Get-TargetPortal]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-TargetPortal "Get-TargetPortal"
+[msdocs:Remove-TargetPortFromMaskingSet]: https://docs.microsoft.com/en-us/powershell/module/storage/Remove-TargetPortFromMaskingSet "Remove-TargetPortFromMaskingSet"
+[msdocs:Add-TargetPortToMaskingSet]: https://docs.microsoft.com/en-us/powershell/module/storage/Add-TargetPortToMaskingSet "Add-TargetPortToMaskingSet"
+[msdocs:Connect-VirtualDisk]: https://docs.microsoft.com/en-us/powershell/module/storage/Connect-VirtualDisk "Connect-VirtualDisk"
+[msdocs:Disconnect-VirtualDisk]: https://docs.microsoft.com/en-us/powershell/module/storage/Disconnect-VirtualDisk "Disconnect-VirtualDisk"
+[msdocs:Get-VirtualDisk]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-VirtualDisk "Get-VirtualDisk"
+[msdocs:Hide-VirtualDisk]: https://docs.microsoft.com/en-us/powershell/module/storage/Hide-VirtualDisk "Hide-VirtualDisk"
+[msdocs:New-VirtualDisk]: https://docs.microsoft.com/en-us/powershell/module/storage/New-VirtualDisk "New-VirtualDisk"
+[msdocs:Remove-VirtualDisk]: https://docs.microsoft.com/en-us/powershell/module/storage/Remove-VirtualDisk "Remove-VirtualDisk"
+[msdocs:Repair-VirtualDisk]: https://docs.microsoft.com/en-us/powershell/module/storage/Repair-VirtualDisk "Repair-VirtualDisk"
+[msdocs:Resize-VirtualDisk]: https://docs.microsoft.com/en-us/powershell/module/storage/Resize-VirtualDisk "Resize-VirtualDisk"
+[msdocs:Set-VirtualDisk]: https://docs.microsoft.com/en-us/powershell/module/storage/Set-VirtualDisk "Set-VirtualDisk"
+[msdocs:Show-VirtualDisk]: https://docs.microsoft.com/en-us/powershell/module/storage/Show-VirtualDisk "Show-VirtualDisk"
+[msdocs:New-VirtualDiskClone]: https://docs.microsoft.com/en-us/powershell/module/storage/New-VirtualDiskClone "New-VirtualDiskClone"
+[msdocs:Remove-VirtualDiskFromMaskingSet]: https://docs.microsoft.com/en-us/powershell/module/storage/Remove-VirtualDiskFromMaskingSet "Remove-VirtualDiskFromMaskingSet"
+[msdocs:New-VirtualDiskSnapshot]: https://docs.microsoft.com/en-us/powershell/module/storage/New-VirtualDiskSnapshot "New-VirtualDiskSnapshot"
+[msdocs:Get-VirtualDiskSupportedSize]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-VirtualDiskSupportedSize "Get-VirtualDiskSupportedSize"
+[msdocs:Add-VirtualDiskToMaskingSet]: https://docs.microsoft.com/en-us/powershell/module/storage/Add-VirtualDiskToMaskingSet "Add-VirtualDiskToMaskingSet"
+[msdocs:Debug-Volume]: https://docs.microsoft.com/en-us/powershell/module/storage/Debug-Volume "Debug-Volume"
+[msdocs:Format-Volume]: https://docs.microsoft.com/en-us/powershell/module/storage/Format-Volume "Format-Volume"
+[msdocs:Get-Volume]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-Volume "Get-Volume"
+[msdocs:New-Volume]: https://docs.microsoft.com/en-us/powershell/module/storage/New-Volume "New-Volume"
+[msdocs:Optimize-Volume]: https://docs.microsoft.com/en-us/powershell/module/storage/Optimize-Volume "Optimize-Volume"
+[msdocs:Repair-Volume]: https://docs.microsoft.com/en-us/powershell/module/storage/Repair-Volume "Repair-Volume"
+[msdocs:Set-Volume]: https://docs.microsoft.com/en-us/powershell/module/storage/Set-Volume "Set-Volume"
+[msdocs:Write-VolumeCache]: https://docs.microsoft.com/en-us/powershell/module/storage/Write-VolumeCache "Write-VolumeCache"
+[msdocs:Get-VolumeCorruptionCount]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-VolumeCorruptionCount "Get-VolumeCorruptionCount"
+[msdocs:Get-VolumeScrubPolicy]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-VolumeScrubPolicy "Get-VolumeScrubPolicy"
+[msdocs:Set-VolumeScrubPolicy]: https://docs.microsoft.com/en-us/powershell/module/storage/Set-VolumeScrubPolicy "Set-VolumeScrubPolicy"
+
 [Add-PhysicalDisk]: #add-physicaldisk '```&#10;Add-PhysicalDisk&#10;```&#10;Adds a physical disk to the specified storage pool or manually assigns a physical disk to a specific virtual disk.'
 [Clear-Disk]: #clear-disk '```&#10;Clear-Disk&#10;```&#10;Cleans a disk by removing all partition information and un-initializing it, erasing all data on the disk.'
 [Debug-Volume]: #debug-volume '```&#10;Debug-Volume&#10;```&#10;Finds problems with a volume and recommends solutions.'
-[Enable-DedupVolume]: #enable-dedupvolume '```&#10;PS C:\> Enable-DedupVolume&#10;```&#10;Enable deduplication for a volume&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 157'
 [Format-Volume]: #format-volume '```&#10;Format-Volume&#10;```&#10;Formats one or more existing volumes or a new volume on an existing partition.'
 [Get-Disk]: #get-disk '```&#10;Get-Disk&#10;```&#10;Gets one or more disks visible to the operating system.'
 [Get-Partition]: #get-partition '```&#10;Get-Partition&#10;```&#10;Returns a list of all partition objects visible on all disks, or optionally a filtered list using specified parameters.'
@@ -212,8 +355,6 @@ Remoting relies on [WinRM][WinRM], which is Microsoft's implementation of WSMAN.
 <code>SupportedClusterSizes&nbsp;[g][Get-SupportedClusterSizes]</code>
 <code>SupportedFileSystems&nbsp;[g][Get-SupportedFileSystems]</code>
 
-**`Dedup`**
-<code>DedupVolume&nbsp;[en][Enable-DedupVolume]</code>
 **`Disk`**
 <code>&nbsp;[ch][Clear-Disk]&nbsp;[g][Get-Disk]&nbsp;[in][Initialize-Disk]&nbsp;[s][Set-Disk]&nbsp;[ud][Update-Disk]</code>
 **`FileShare`**
@@ -626,6 +767,80 @@ Remoting relies on [WinRM][WinRM], which is Microsoft's implementation of WSMAN.
 <code>DcbxSetting&nbsp;[g][Get-NetQosDcbxSetting][^][msdocs:Get-NetQosDcbxSetting]&nbsp;[s][Set-NetQosDcbxSetting][^][msdocs:Set-NetQosDcbxSetting]&nbsp;[sw][Switch-NetQosDcbxSetting][^][msdocs:Switch-NetQosDcbxSetting]</code>
 <code>FlowControl&nbsp;[e][Enable-NetQosFlowControl][^][msdocs:Enable-NetQosFlowControl]&nbsp;[d][Disable-NetQosFlowControl][^][msdocs:Disable-NetQosFlowControl]&nbsp;[g][Get-NetQosFlowControl][^][msdocs:Get-NetQosFlowControl]&nbsp;[s][Set-NetQosFlowControl][^][msdocs:Set-NetQosFlowControl]&nbsp;[sw][Switch-NetQosFlowControl][^][msdocs:Switch-NetQosFlowControl]</code>
 <code>TrafficClass&nbsp;[g][Get-NetQosTrafficClass][^][msdocs:Get-NetQosTrafficClass]&nbsp;[n][New-NetQosTrafficClass][^][msdocs:New-NetQosTrafficClass]&nbsp;[r][Remove-NetQosTrafficClass][^][msdocs:Remove-NetQosTrafficClass]&nbsp;[s][Set-NetQosTrafficClass][^][msdocs:Set-NetQosTrafficClass]&nbsp;[sw][Switch-NetQosTrafficClass][^][msdocs:Switch-NetQosTrafficClass]</code>
+
+##### `deduplication` module
+[msdocs:Disable-DedupVolume]: https://docs.microsoft.com/en-us/powershell/module/deduplication/Disable-DedupVolume "Disable-DedupVolume"
+[msdocs:Enable-DedupVolume]: https://docs.microsoft.com/en-us/powershell/module/deduplication/Enable-DedupVolume "Enable-DedupVolume"
+[msdocs:Expand-DedupFile]: https://docs.microsoft.com/en-us/powershell/module/deduplication/Expand-DedupFile "Expand-DedupFile"
+[msdocs:Get-DedupJob]: https://docs.microsoft.com/en-us/powershell/module/deduplication/Get-DedupJob "Get-DedupJob"
+[msdocs:Get-DedupMetadata]: https://docs.microsoft.com/en-us/powershell/module/deduplication/Get-DedupMetadata "Get-DedupMetadata"
+[msdocs:Get-DedupSchedule]: https://docs.microsoft.com/en-us/powershell/module/deduplication/Get-DedupSchedule "Get-DedupSchedule"
+[msdocs:Get-DedupStatus]: https://docs.microsoft.com/en-us/powershell/module/deduplication/Get-DedupStatus "Get-DedupStatus"
+[msdocs:Get-DedupVolume]: https://docs.microsoft.com/en-us/powershell/module/deduplication/Get-DedupVolume "Get-DedupVolume"
+[msdocs:Measure-DedupFileMetadata]: https://docs.microsoft.com/en-us/powershell/module/deduplication/Measure-DedupFileMetadata "Measure-DedupFileMetadata"
+[msdocs:New-DedupSchedule]: https://docs.microsoft.com/en-us/powershell/module/deduplication/New-DedupSchedule "New-DedupSchedule"
+[msdocs:Remove-DedupSchedule]: https://docs.microsoft.com/en-us/powershell/module/deduplication/Remove-DedupSchedule "Remove-DedupSchedule"
+[msdocs:Set-DedupSchedule]: https://docs.microsoft.com/en-us/powershell/module/deduplication/Set-DedupSchedule "Set-DedupSchedule"
+[msdocs:Set-DedupVolume]: https://docs.microsoft.com/en-us/powershell/module/deduplication/Set-DedupVolume "Set-DedupVolume"
+[msdocs:Start-DedupJob]: https://docs.microsoft.com/en-us/powershell/module/deduplication/Start-DedupJob "Start-DedupJob"
+[msdocs:Stop-DedupJob]: https://docs.microsoft.com/en-us/powershell/module/deduplication/Stop-DedupJob "Stop-DedupJob"
+[msdocs:Update-DedupStatus]: https://docs.microsoft.com/en-us/powershell/module/deduplication/Update-DedupStatus "Update-DedupStatus"
+
+[Expand-DedupFile]: #expand-dedupfile '```&#10;Expand-DedupFile&#10;```&#10;Expands an optimized file into its original location.'
+[Measure-DedupFileMetadata]: #measure-dedupfilemetadata '```&#10;Measure-DedupFileMetadata&#10;```&#10;Measures potential disk space on a volume.'
+[Get-DedupJob]: #get-dedupjob '```&#10;Get-DedupJob&#10;```&#10;Returns status and information for currently running or queued deduplication jobs.'
+[Start-DedupJob]: #start-dedupjob '```&#10;Start-DedupJob&#10;```&#10;Starts a data deduplication job.'
+[Stop-DedupJob]: #stop-dedupjob '```&#10;Stop-DedupJob&#10;```&#10;Cancels one or more specified data deduplication jobs.'
+[Get-DedupMetadata]: #get-dedupmetadata '```&#10;Get-DedupMetadata&#10;```&#10;Returns metadata for volumes that have data deduplication metadata.'
+[Get-DedupSchedule]: #get-dedupschedule '```&#10;Get-DedupSchedule&#10;```&#10;Returns the deduplication job schedule defined on the computer.'
+[New-DedupSchedule]: #new-dedupschedule '```&#10;New-DedupSchedule&#10;```&#10;Creates a data deduplication schedule.'
+[Remove-DedupSchedule]: #remove-dedupschedule '```&#10;Remove-DedupSchedule&#10;```&#10;Deletes a deduplication schedule.'
+[Set-DedupSchedule]: #set-dedupschedule '```&#10;Set-DedupSchedule&#10;```&#10;Changes configuration settings for data deduplication schedules.'
+[Get-DedupStatus]: #get-dedupstatus '```&#10;Get-DedupStatus&#10;```&#10;Returns deduplication status for volumes that have data deduplication metadata.'
+[Update-DedupStatus]: #update-dedupstatus '```&#10;Update-DedupStatus&#10;```&#10;Scans volumes for fresh data deduplication savings.'
+[Disable-DedupVolume]: #disable-dedupvolume '```&#10;Disable-DedupVolume&#10;```&#10;Disables data deduplication activity on one or more volumes.'
+[Enable-DedupVolume]: #enable-dedupvolume '```&#10;Enable-DedupVolume&#10;```&#10;Enables data deduplication on one or more volumes.'
+[Get-DedupVolume]: #get-dedupvolume '```&#10;Get-DedupVolume&#10;```&#10;Returns deduplication volumes that have data deduplication metadata.'
+[Set-DedupVolume]: #set-dedupvolume '```&#10;Set-DedupVolume&#10;```&#10;Changes data deduplication settings on one or more volumes.'
+
+**`Dedup`**
+<code>File&nbsp;[en][Expand-DedupFile][^][msdocs:Expand-DedupFile]</code>
+<code>FileMetadata&nbsp;[ms][Measure-DedupFileMetadata][^][msdocs:Measure-DedupFileMetadata]</code>
+<code>Job&nbsp;[g][Get-DedupJob][^][msdocs:Get-DedupJob]&nbsp;[sa][Start-DedupJob][^][msdocs:Start-DedupJob]&nbsp;[sp][Stop-DedupJob][^][msdocs:Stop-DedupJob]</code>
+<code>Metadata&nbsp;[g][Get-DedupMetadata][^][msdocs:Get-DedupMetadata]</code>
+<code>Schedule&nbsp;[g][Get-DedupSchedule][^][msdocs:Get-DedupSchedule]&nbsp;[n][New-DedupSchedule][^][msdocs:New-DedupSchedule]&nbsp;[r][Remove-DedupSchedule][^][msdocs:Remove-DedupSchedule]&nbsp;[s][Set-DedupSchedule][^][msdocs:Set-DedupSchedule]</code>
+<code>Status&nbsp;[g][Get-DedupStatus][^][msdocs:Get-DedupStatus]&nbsp;[ud][Update-DedupStatus][^][msdocs:Update-DedupStatus]</code>
+<code>Volume&nbsp;[d][Disable-DedupVolume][^][msdocs:Disable-DedupVolume]&nbsp;[e][Enable-DedupVolume][^][msdocs:Enable-DedupVolume]&nbsp;[g][Get-DedupVolume][^][msdocs:Get-DedupVolume]&nbsp;[s][Set-DedupVolume][^][msdocs:Set-DedupVolume]</code>
+
+##### `defender` module
+[msdocs:Add-MpPreference]: https://docs.microsoft.com/en-us/powershell/module/defender/Add-MpPreference "Add-MpPreference"
+[msdocs:Get-MpComputerStatus]: https://docs.microsoft.com/en-us/powershell/module/defender/Get-MpComputerStatus "Get-MpComputerStatus"
+[msdocs:Get-MpPreference]: https://docs.microsoft.com/en-us/powershell/module/defender/Get-MpPreference "Get-MpPreference"
+[msdocs:Get-MpThreat]: https://docs.microsoft.com/en-us/powershell/module/defender/Get-MpThreat "Get-MpThreat"
+[msdocs:Get-MpThreatCatalog]: https://docs.microsoft.com/en-us/powershell/module/defender/Get-MpThreatCatalog "Get-MpThreatCatalog"
+[msdocs:Get-MpThreatDetection]: https://docs.microsoft.com/en-us/powershell/module/defender/Get-MpThreatDetection "Get-MpThreatDetection"
+[msdocs:Remove-MpPreference]: https://docs.microsoft.com/en-us/powershell/module/defender/Remove-MpPreference "Remove-MpPreference"
+[msdocs:Remove-MpThreat]: https://docs.microsoft.com/en-us/powershell/module/defender/Remove-MpThreat "Remove-MpThreat"
+[msdocs:Set-MpPreference]: https://docs.microsoft.com/en-us/powershell/module/defender/Set-MpPreference "Set-MpPreference"
+[msdocs:Start-MpScan]: https://docs.microsoft.com/en-us/powershell/module/defender/Start-MpScan "Start-MpScan"
+[msdocs:Start-MpWDOScan]: https://docs.microsoft.com/en-us/powershell/module/defender/Start-MpWDOScan "Start-MpWDOScan"
+[msdocs:Update-MpSignature]: https://docs.microsoft.com/en-us/powershell/module/defender/Update-MpSignature "Update-MpSignature"
+
+[Add-MpPreference]: #add-mppreference '```&#10;Add-MpPreference&#10;```&#10;Modifies settings for Windows Defender.'
+[Get-MpComputerStatus]: #get-mpcomputerstatus '```&#10;Get-MpComputerStatus&#10;```&#10;Gets the status of antimalware software on the computer.'
+[Get-MpPreference]: #get-mppreference '```&#10;Get-MpPreference&#10;```&#10;Gets preferences for the Windows Defender scans and updates.'
+[Get-MpThreat]: #get-mpthreat '```&#10;Get-MpThreat&#10;```&#10;Gets the history of threats detected on the computer.'
+[Get-MpThreatCatalog]: #get-mpthreatcatalog '```&#10;Get-MpThreatCatalog&#10;```&#10;Gets known threats from the definitions catalog.'
+[Get-MpThreatDetection]: #get-mpthreatdetection '```&#10;Get-MpThreatDetection&#10;```&#10;Gets active and past malware threats that Windows Defender detected.'
+[Remove-MpPreference]: #remove-mppreference '```&#10;Remove-MpPreference&#10;```&#10;Removes exclusions or default actions.'
+[Remove-MpThreat]: #remove-mpthreat '```&#10;Remove-MpThreat&#10;```&#10;Removes active threats from a computer.'
+[Set-MpPreference]: #set-mppreference '```&#10;Set-MpPreference&#10;```&#10;Configures preferences for Windows Defender scans and updates.'
+[Start-MpScan]: #start-mpscan '```&#10;Start-MpScan&#10;```&#10;Starts a scan on a computer.'
+[Start-MpWDOScan]: #start-mpwdoscan '```&#10;Start-MpWDOScan&#10;```&#10;Starts a Windows Defender offline scan.'
+[Update-MpSignature]: #update-mpsignature '```&#10;Update-MpSignature&#10;```&#10;Updates the antimalware definitions on a computer.'
+
+<code>MpScan&nbsp;[sa][Start-MpScan][^][msdocs:Start-MpScan]</code>
+<code>MpThreat&nbsp;[g][Get-MpThreat][^][msdocs:Get-MpThreat]&nbsp;[r][Remove-MpThreat][^][msdocs:Remove-MpThreat]</code>
 
 ##### `dism` module
 [msdocs:Set-AppxProvisionedDataFile]: https://docs.microsoft.com/en-us/powershell/module/dism/Set-AppxProvisionedDataFile "Set-AppxProvisionedDataFile"
@@ -1311,6 +1526,21 @@ Remoting relies on [WinRM][WinRM], which is Microsoft's implementation of WSMAN.
 <code>LocalConfigurationManager&nbsp;[g][Get-DscLocalConfigurationManager]&nbsp;[s][Set-DscLocalConfigurationManager]</code>
 <code>Resource&nbsp;[g][Get-DscResource]&nbsp;[i][Invoke-DscResource]</code>
 
+##### `servermanager` module
+[Disable-ServerManagerStandardUserRemoting]: #disable-servermanagerstandarduserremoting '```&#10;Disable-ServerManagerStandardUserRemoting&#10;```&#10;Disables access for specified standard users to event, service, performance counter, and role and feature inventory data that is collected by Server Manager for a server.'
+[Enable-ServerManagerStandardUserRemoting]: #enable-servermanagerstandarduserremoting '```&#10;Enable-ServerManagerStandardUserRemoting&#10;```&#10;Provides one or more standard, non-Administrator users access to event, service, performance counter, and role and feature inventory data for a server that you are managing by using Server Manager.'
+[Get-WindowsFeature]: #get-windowsfeature '```&#10;Get-WindowsFeature&#10;```&#10;Gets information about Windows Server roles, role services, and features that are available for installation and installed on a specified server.'
+[Install-WindowsFeature]: #install-windowsfeature '```&#10;Install-WindowsFeature&#10;```&#10;Installs one or more roles, role services, or features on either the local or a specified remote server that is running Windows Server 2012 R2.'
+[Uninstall-WindowsFeature]: #uninstall-windowsfeature '```&#10;Uninstall-WindowsFeature&#10;```&#10;Uninstalls specified Windows Server roles, role services, and features from a computer that is running Windows Server 2012 R2.'
+
+[msdocs:Disable-ServerManagerStandardUserRemoting]: https://docs.microsoft.com/en-us/powershell/module/servermanager/Disable-ServerManagerStandardUserRemoting "Disable-ServerManagerStandardUserRemoting"
+[msdocs:Enable-ServerManagerStandardUserRemoting]: https://docs.microsoft.com/en-us/powershell/module/servermanager/Enable-ServerManagerStandardUserRemoting "Enable-ServerManagerStandardUserRemoting"
+[msdocs:Get-WindowsFeature]: https://docs.microsoft.com/en-us/powershell/module/servermanager/Get-WindowsFeature "Get-WindowsFeature"
+[msdocs:Install-WindowsFeature]: https://docs.microsoft.com/en-us/powershell/module/servermanager/Install-WindowsFeature "Install-WindowsFeature"
+[msdocs:Uninstall-WindowsFeature]: https://docs.microsoft.com/en-us/powershell/module/servermanager/Uninstall-WindowsFeature "Uninstall-WindowsFeature"
+
+<code>WindowsFeature&nbsp;[g][Get-WindowsFeature][^][msdocs:Get-WindowsFeature]&nbsp;[is][Install-WindowsFeature][^][msdocs:Install-WindowsFeature]&nbsp;[us][Uninstall-WindowsFeature][^][msdocs:Uninstall-WindowsFeature]</code>
+
 ##### `servermigration` module
 [msdocs:Receive-SmigServerData]: https://docs.microsoft.com/en-us/powershell/module/ServerMigration/Receive-SmigServerData "Receive-SmigServerData"
 [msdocs:Send-SmigServerData]: https://docs.microsoft.com/en-us/powershell/module/ServerMigration/Send-SmigServerData "Send-SmigServerData"
@@ -1580,6 +1810,107 @@ Remoting relies on [WinRM][WinRM], which is Microsoft's implementation of WSMAN.
 <code>SRPartnership&nbsp;[g][Get-SRPartnership]&nbsp;[n][New-SRPartnership]&nbsp;[r][Remove-SRPartnership]&nbsp;[s][Set-SRPartnership]</code>
 <code>SRTopology&nbsp;[t][Test-SRTopology]</code>
 
+##### `windowsserverbackup` module
+[Add-WBBackupTarget]: #add-wbbackuptarget '```&#10;Add-WBBackupTarget&#10;```&#10;Adds a backup target to a backup policy.'
+[Add-WBBareMetalRecovery]: #add-wbbaremetalrecovery '```&#10;Add-WBBareMetalRecovery&#10;```&#10;Adds items to a backup policy so that backups that use the policy can perform bare metal recoveries.'
+[Add-WBFileSpec]: #add-wbfilespec '```&#10;Add-WBFileSpec&#10;```&#10;Adds a backup file specification to a backup policy.'
+[Add-WBSystemState]: #add-wbsystemstate '```&#10;Add-WBSystemState&#10;```&#10;Adds the system state components to the backup policy.'
+[Add-WBVirtualMachine]: #add-wbvirtualmachine '```&#10;Add-WBVirtualMachine&#10;```&#10;Adds a list of virtual machines to the backup policy.'
+[Add-WBVolume]: #add-wbvolume '```&#10;Add-WBVolume&#10;```&#10;Adds the list of source volumes to the backup policy.'
+[Get-WBBackupSet]: #get-wbbackupset '```&#10;Get-WBBackupSet&#10;```&#10;Gets backups for a server from a location that you specify.'
+[Get-WBBackupTarget]: #get-wbbackuptarget '```&#10;Get-WBBackupTarget&#10;```&#10;Gets backup storage locations that you specified as part of a backup policy.'
+[Get-WBBackupVolumeBrowsePath]: #get-wbbackupvolumebrowsepath '```&#10;Get-WBBackupVolumeBrowsePath&#10;```&#10;Mounts a volume inside a backup so that you can browse the files on the volume.'
+[Get-WBBareMetalRecovery]: #get-wbbaremetalrecovery '```&#10;Get-WBBareMetalRecovery&#10;```&#10;Indicates whether or not a backup policy can perform bare metal recoveries from backups.'
+[Get-WBDisk]: #get-wbdisk '```&#10;Get-WBDisk&#10;```&#10;Gets a list of internal and external disks that are online for the local computer.'
+[Get-WBFileSpec]: #get-wbfilespec '```&#10;Get-WBFileSpec&#10;```&#10;Gets the list of backup file specifications associated with a backup policy.'
+[Get-WBJob]: #get-wbjob '```&#10;Get-WBJob&#10;```&#10;Gets the current backup operation.'
+[Get-WBPerformanceConfiguration]: #get-wbperformanceconfiguration '```&#10;Get-WBPerformanceConfiguration&#10;```&#10;Retrieves the current volume backup performance settings.'
+[Get-WBPolicy]: #get-wbpolicy '```&#10;Get-WBPolicy&#10;```&#10;Retrieves the current backup policy for the computer.'
+[Get-WBSchedule]: #get-wbschedule '```&#10;Get-WBSchedule&#10;```&#10;Retrieves the current schedule for backups.'
+[Get-WBSummary]: #get-wbsummary '```&#10;Get-WBSummary&#10;```&#10;Retrieves the history of backup operations on the computer.'
+[Get-WBSystemState]: #get-wbsystemstate '```&#10;Get-WBSystemState&#10;```&#10;Gets a Boolean value that indicates whether system state recovery was added to the backup policy.'
+[Get-WBVirtualMachine]: #get-wbvirtualmachine '```&#10;Get-WBVirtualMachine&#10;```&#10;Gets all virtual machines and components from the backup policy.'
+[Get-WBVolume]: #get-wbvolume '```&#10;Get-WBVolume&#10;```&#10;Retrieves a list of volumes.'
+[Get-WBVssBackupOption]: #get-wbvssbackupoption '```&#10;Get-WBVssBackupOption&#10;```&#10;Retrieves a VSS setting from the backup policy.'
+[New-WBBackupTarget]: #new-wbbackuptarget '```&#10;New-WBBackupTarget&#10;```&#10;Creates a backup target object.'
+[New-WBFileSpec]: #new-wbfilespec '```&#10;New-WBFileSpec&#10;```&#10;Creates a backup file specification.'
+[New-WBPolicy]: #new-wbpolicy '```&#10;New-WBPolicy&#10;```&#10;Creates a backup policy object.'
+[Remove-WBBackupSet]: #remove-wbbackupset '```&#10;Remove-WBBackupSet&#10;```&#10;Deletes backups from a target catalog, a system catalog, or both.'
+[Remove-WBBackupTarget]: #remove-wbbackuptarget '```&#10;Remove-WBBackupTarget&#10;```&#10;Removes backup storage locations from a backup policy.'
+[Remove-WBBareMetalRecovery]: #remove-wbbaremetalrecovery '```&#10;Remove-WBBareMetalRecovery&#10;```&#10;Removes a request to include items that implement bare metal recovery from the current backup policy.'
+[Remove-WBCatalog]: #remove-wbcatalog '```&#10;Remove-WBCatalog&#10;```&#10;Removes the backup catalog from the local computer.'
+[Remove-WBFileSpec]: #remove-wbfilespec '```&#10;Remove-WBFileSpec&#10;```&#10;Removes a backup file specification from a backup policy.'
+[Remove-WBPolicy]: #remove-wbpolicy '```&#10;Remove-WBPolicy&#10;```&#10;Removes the backup policy.'
+[Remove-WBSystemState]: #remove-wbsystemstate '```&#10;Remove-WBSystemState&#10;```&#10;Removes the system state components from the backup policy.'
+[Remove-WBVirtualMachine]: #remove-wbvirtualmachine '```&#10;Remove-WBVirtualMachine&#10;```&#10;Removes the list of virtual machines from the backup policy.'
+[Remove-WBVolume]: #remove-wbvolume '```&#10;Remove-WBVolume&#10;```&#10;Removes the volume from the backup policy.'
+[Restore-WBCatalog]: #restore-wbcatalog '```&#10;Restore-WBCatalog&#10;```&#10;Recovers a backup catalog for the local computer from a storage location.'
+[Resume-WBBackup]: #resume-wbbackup '```&#10;Resume-WBBackup&#10;```&#10;Resumes a backup operation to a removable device after you add media to the device.'
+[Resume-WBVolumeRecovery]: #resume-wbvolumerecovery '```&#10;Resume-WBVolumeRecovery&#10;```&#10;Resumes a volume recovery operation from a removable device and specific media.'
+[Set-WBPerformanceConfiguration]: #set-wbperformanceconfiguration '```&#10;Set-WBPerformanceConfiguration&#10;```&#10;Sets the current volume backup performance settings.'
+[Set-WBPolicy]: #set-wbpolicy '```&#10;Set-WBPolicy&#10;```&#10;Sets the backup policy for scheduled backups.'
+[Set-WBSchedule]: #set-wbschedule '```&#10;Set-WBSchedule&#10;```&#10;Sets the current schedule for backups.'
+[Set-WBVssBackupOption]: #set-wbvssbackupoption '```&#10;Set-WBVssBackupOption&#10;```&#10;Sets a value that determines the VSS setting in the backup policy.'
+[Start-WBApplicationRecovery]: #start-wbapplicationrecovery '```&#10;Start-WBApplicationRecovery&#10;```&#10;Starts an application recovery operation.'
+[Start-WBBackup]: #start-wbbackup '```&#10;Start-WBBackup&#10;```&#10;Starts a one-time backup operation.'
+[Start-WBFileRecovery]: #start-wbfilerecovery '```&#10;Start-WBFileRecovery&#10;```&#10;Starts a file recovery operation.'
+[Start-WBHyperVRecovery]: #start-wbhypervrecovery '```&#10;Start-WBHyperVRecovery&#10;```&#10;Starts recovery of a hv_win8_2 virtual machine.'
+[Start-WBSystemStateRecovery]: #start-wbsystemstaterecovery '```&#10;Start-WBSystemStateRecovery&#10;```&#10;Starts a system state recovery operation.'
+[Start-WBVolumeRecovery]: #start-wbvolumerecovery '```&#10;Start-WBVolumeRecovery&#10;```&#10;Starts a volume recovery operation.'
+[Stop-WBJob]: #stop-wbjob '```&#10;Stop-WBJob&#10;```&#10;Stops the current backup or recovery job.'
+
+[msdocs:Add-WBBackupTarget]: https://docs.microsoft.com/en-us/powershell/module/windowsserverbackup/Add-WBBackupTarget "Add-WBBackupTarget"
+[msdocs:Add-WBBareMetalRecovery]: https://docs.microsoft.com/en-us/powershell/module/windowsserverbackup/Add-WBBareMetalRecovery "Add-WBBareMetalRecovery"
+[msdocs:Add-WBFileSpec]: https://docs.microsoft.com/en-us/powershell/module/windowsserverbackup/Add-WBFileSpec "Add-WBFileSpec"
+[msdocs:Add-WBSystemState]: https://docs.microsoft.com/en-us/powershell/module/windowsserverbackup/Add-WBSystemState "Add-WBSystemState"
+[msdocs:Add-WBVirtualMachine]: https://docs.microsoft.com/en-us/powershell/module/windowsserverbackup/Add-WBVirtualMachine "Add-WBVirtualMachine"
+[msdocs:Add-WBVolume]: https://docs.microsoft.com/en-us/powershell/module/windowsserverbackup/Add-WBVolume "Add-WBVolume"
+[msdocs:Get-WBBackupSet]: https://docs.microsoft.com/en-us/powershell/module/windowsserverbackup/Get-WBBackupSet "Get-WBBackupSet"
+[msdocs:Get-WBBackupTarget]: https://docs.microsoft.com/en-us/powershell/module/windowsserverbackup/Get-WBBackupTarget "Get-WBBackupTarget"
+[msdocs:Get-WBBackupVolumeBrowsePath]: https://docs.microsoft.com/en-us/powershell/module/windowsserverbackup/Get-WBBackupVolumeBrowsePath "Get-WBBackupVolumeBrowsePath"
+[msdocs:Get-WBBareMetalRecovery]: https://docs.microsoft.com/en-us/powershell/module/windowsserverbackup/Get-WBBareMetalRecovery "Get-WBBareMetalRecovery"
+[msdocs:Get-WBDisk]: https://docs.microsoft.com/en-us/powershell/module/windowsserverbackup/Get-WBDisk "Get-WBDisk"
+[msdocs:Get-WBFileSpec]: https://docs.microsoft.com/en-us/powershell/module/windowsserverbackup/Get-WBFileSpec "Get-WBFileSpec"
+[msdocs:Get-WBJob]: https://docs.microsoft.com/en-us/powershell/module/windowsserverbackup/Get-WBJob "Get-WBJob"
+[msdocs:Get-WBPerformanceConfiguration]: https://docs.microsoft.com/en-us/powershell/module/windowsserverbackup/Get-WBPerformanceConfiguration "Get-WBPerformanceConfiguration"
+[msdocs:Get-WBPolicy]: https://docs.microsoft.com/en-us/powershell/module/windowsserverbackup/Get-WBPolicy "Get-WBPolicy"
+[msdocs:Get-WBSchedule]: https://docs.microsoft.com/en-us/powershell/module/windowsserverbackup/Get-WBSchedule "Get-WBSchedule"
+[msdocs:Get-WBSummary]: https://docs.microsoft.com/en-us/powershell/module/windowsserverbackup/Get-WBSummary "Get-WBSummary"
+[msdocs:Get-WBSystemState]: https://docs.microsoft.com/en-us/powershell/module/windowsserverbackup/Get-WBSystemState "Get-WBSystemState"
+[msdocs:Get-WBVirtualMachine]: https://docs.microsoft.com/en-us/powershell/module/windowsserverbackup/Get-WBVirtualMachine "Get-WBVirtualMachine"
+[msdocs:Get-WBVolume]: https://docs.microsoft.com/en-us/powershell/module/windowsserverbackup/Get-WBVolume "Get-WBVolume"
+[msdocs:Get-WBVssBackupOption]: https://docs.microsoft.com/en-us/powershell/module/windowsserverbackup/Get-WBVssBackupOption "Get-WBVssBackupOption"
+[msdocs:New-WBBackupTarget]: https://docs.microsoft.com/en-us/powershell/module/windowsserverbackup/New-WBBackupTarget "New-WBBackupTarget"
+[msdocs:New-WBFileSpec]: https://docs.microsoft.com/en-us/powershell/module/windowsserverbackup/New-WBFileSpec "New-WBFileSpec"
+[msdocs:New-WBPolicy]: https://docs.microsoft.com/en-us/powershell/module/windowsserverbackup/New-WBPolicy "New-WBPolicy"
+[msdocs:Remove-WBBackupSet]: https://docs.microsoft.com/en-us/powershell/module/windowsserverbackup/Remove-WBBackupSet "Remove-WBBackupSet"
+[msdocs:Remove-WBBackupTarget]: https://docs.microsoft.com/en-us/powershell/module/windowsserverbackup/Remove-WBBackupTarget "Remove-WBBackupTarget"
+[msdocs:Remove-WBBareMetalRecovery]: https://docs.microsoft.com/en-us/powershell/module/windowsserverbackup/Remove-WBBareMetalRecovery "Remove-WBBareMetalRecovery"
+[msdocs:Remove-WBCatalog]: https://docs.microsoft.com/en-us/powershell/module/windowsserverbackup/Remove-WBCatalog "Remove-WBCatalog"
+[msdocs:Remove-WBFileSpec]: https://docs.microsoft.com/en-us/powershell/module/windowsserverbackup/Remove-WBFileSpec "Remove-WBFileSpec"
+[msdocs:Remove-WBPolicy]: https://docs.microsoft.com/en-us/powershell/module/windowsserverbackup/Remove-WBPolicy "Remove-WBPolicy"
+[msdocs:Remove-WBSystemState]: https://docs.microsoft.com/en-us/powershell/module/windowsserverbackup/Remove-WBSystemState "Remove-WBSystemState"
+[msdocs:Remove-WBVirtualMachine]: https://docs.microsoft.com/en-us/powershell/module/windowsserverbackup/Remove-WBVirtualMachine "Remove-WBVirtualMachine"
+[msdocs:Remove-WBVolume]: https://docs.microsoft.com/en-us/powershell/module/windowsserverbackup/Remove-WBVolume "Remove-WBVolume"
+[msdocs:Restore-WBCatalog]: https://docs.microsoft.com/en-us/powershell/module/windowsserverbackup/Restore-WBCatalog "Restore-WBCatalog"
+[msdocs:Resume-WBBackup]: https://docs.microsoft.com/en-us/powershell/module/windowsserverbackup/Resume-WBBackup "Resume-WBBackup"
+[msdocs:Resume-WBVolumeRecovery]: https://docs.microsoft.com/en-us/powershell/module/windowsserverbackup/Resume-WBVolumeRecovery "Resume-WBVolumeRecovery"
+[msdocs:Set-WBPerformanceConfiguration]: https://docs.microsoft.com/en-us/powershell/module/windowsserverbackup/Set-WBPerformanceConfiguration "Set-WBPerformanceConfiguration"
+[msdocs:Set-WBPolicy]: https://docs.microsoft.com/en-us/powershell/module/windowsserverbackup/Set-WBPolicy "Set-WBPolicy"
+[msdocs:Set-WBSchedule]: https://docs.microsoft.com/en-us/powershell/module/windowsserverbackup/Set-WBSchedule "Set-WBSchedule"
+[msdocs:Set-WBVssBackupOption]: https://docs.microsoft.com/en-us/powershell/module/windowsserverbackup/Set-WBVssBackupOption "Set-WBVssBackupOption"
+[msdocs:Start-WBApplicationRecovery]: https://docs.microsoft.com/en-us/powershell/module/windowsserverbackup/Start-WBApplicationRecovery "Start-WBApplicationRecovery"
+[msdocs:Start-WBBackup]: https://docs.microsoft.com/en-us/powershell/module/windowsserverbackup/Start-WBBackup "Start-WBBackup"
+[msdocs:Start-WBFileRecovery]: https://docs.microsoft.com/en-us/powershell/module/windowsserverbackup/Start-WBFileRecovery "Start-WBFileRecovery"
+[msdocs:Start-WBHyperVRecovery]: https://docs.microsoft.com/en-us/powershell/module/windowsserverbackup/Start-WBHyperVRecovery "Start-WBHyperVRecovery"
+[msdocs:Start-WBSystemStateRecovery]: https://docs.microsoft.com/en-us/powershell/module/windowsserverbackup/Start-WBSystemStateRecovery "Start-WBSystemStateRecovery"
+[msdocs:Start-WBVolumeRecovery]: https://docs.microsoft.com/en-us/powershell/module/windowsserverbackup/Start-WBVolumeRecovery "Start-WBVolumeRecovery"
+[msdocs:Stop-WBJob]: https://docs.microsoft.com/en-us/powershell/module/windowsserverbackup/Stop-WBJob "Stop-WBJob"
+
+**`WB`**
+<code>VirtualMachine&nbsp;[a][Add-WBVirtualMachine][^][msdocs:Add-WBVirtualMachine]&nbsp;[g][Get-WBVirtualMachine][^][msdocs:Get-WBVirtualMachine]&nbsp;[r][Remove-WBVirtualMachine][^][msdocs:Remove-WBVirtualMachine]</code>
+<code>Volume&nbsp;[a][Add-WBVolume][^][msdocs:Add-WBVolume]&nbsp;[g][Get-WBVolume][^][msdocs:Get-WBVolume]&nbsp;[r][Remove-WBVolume][^][msdocs:Remove-WBVolume]</code>
+
 #### System administration cmdlets
 [Disable-LocalUser]: #disable-localuser '```&#10;PS C:\> Disable-LocalUser&#10;PS C:\> dlu&#10;```&#10;Disable a local user account'
 [Enable-LocalUser]: #enable-localuser '```&#10;PS C:\> Enable-LocalUser&#10;PS C:\> elu&#10;```&#10;Enable a local user account'
@@ -1593,22 +1924,26 @@ Remoting relies on [WinRM][WinRM], which is Microsoft's implementation of WSMAN.
 [Get-LocalGroupMember]: #get-localgroupmember '```&#10;PS C:\> Get-LocalGroupMember&#10;```&#10;Display members of a local group'
 [Remove-LocalGroupMember]: #remove-localgroupmember '```&#10;PS C:\> Remove-LocalGroupMember&#10;```&#10;Remove members from a local group'
 
+[Clear-EventLog]: #clear-eventlog '```&#10;Clear-EventLog&#10;```&#10;Clears all entries from specified event logs on the local or remote computers.'
+[Get-EventLog]: #get-eventlog '```&#10;Get-EventLog&#10;```&#10;Gets the events in an event log, or a list of the event logs, on the local computer or remote computers.'
+[New-EventLog]: #new-eventlog '```&#10;New-EventLog&#10;```&#10;Creates a new event log and a new event source on a local or remote computer.'
+[Limit-EventLog]: #limit-eventlog '```&#10;Limit-EventLog&#10;```&#10;Sets the event log properties that limit the size of the event log and the age of its entries.'
+[Remove-EventLog]: #remove-eventlog '```&#10;Remove-EventLog&#10;```&#10;Deletes an event log or unregisters an event source.'
+[Show-EventLog]: #show-eventlog '```&#10;Show-EventLog&#10;```&#10;Displays the event logs of the local or a remote computer in Event Viewer.'
+[Write-EventLog]: #write-eventlog '```&#10;Write-EventLog&#10;```&#10;Writes an event to an event log.'
+
 <code>LocalGroupMember&nbsp;[g][Get-LocalGroupMember]&nbsp;[a][Add-LocalGroupMember]&nbsp;[r][Remove-LocalGroupMember]</code>
 <code>LocalUser&nbsp;[g][Get-LocalUser]&nbsp;[n][New-LocalUser]&nbsp;[r][Remove-LocalUser]&nbsp;[s][Set-LocalUser]&nbsp;[e][Enable-LocalUser]&nbsp;[d][Disable-LocalUser]&nbsp;[rn][Rename-LocalUser]</code>
+<code>EventLog&nbsp;[ch][Clear-EventLog][^][msdocs:Clear-EventLog]&nbsp;[g][Get-EventLog][^][msdocs:Get-EventLog]&nbsp;[n][New-EventLog][^][msdocs:New-EventLog]&nbsp;[l][Limit-EventLog][^][msdocs:Limit-EventLog]&nbsp;[r][Remove-EventLog][^][msdocs:Remove-EventLog]&nbsp;[sh][Show-EventLog][^][msdocs:Show-EventLog]&nbsp;[wr][Write-EventLog][^][msdocs:Write-EventLog]</code>
 
 #### Windows objects cmdlets
-[Add-WindowsFeature]: #add-windowsfeature '```&#10;PS C:\> Add-WindowsFeature&#10;PS C:\> Install-WindowsFeature&#10;```&#10;Install one or more roles, role services, or features on either the local or a specified remote server that is running Windows Server 2012 R2'
 [Edit-NanoServerImage]: #edit-nanoserverimage '```&#10;PS C:\> Edit-NanoServerImage&#10;```&#10;Add a role or feature to an existing Nano Server VHD file&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 49'
-[Get-WindowsFeature]: #get-windowsfeature '```&#10;PS C:\> Get-WindowsFeature&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 15'
 [Get-WMIObject]: #get-wmiobject '```&#10;PS C:\> Get-WMIObject&#10;PS C:\> gwmi&#10;```&#10;Gets instances of Windows Management Instrumentation (WMI) classes or information about the available classes.&#10;Superseded by `Get-CimInstance` since Powershell 3.0'
-[Install-WindowsFeature]: #install-windowsfeature '```&#10;PS C:\> Install-WindowsFeature&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 15, 171, 225, 377'
 [New-NanoServerImage]: #new-nanoserverimage '```&#10;PS C:\> New-NanoServerImage&#10;New-NanoServerImage -DeploymentType guest|host -Edition standard|datacenter -MediaPath root -TargetPath $PATH -ComputerName $NAME&#10;```&#10;Used to create a Nano Server VHD file for Nano Server installation&#10;Required parameters:&#10;  `DeploymentType` specified whether the image file should be used on a Hyper-V VM ("Guest") or a physical server ("Host")&#10;  `Edition` specifies whether to install the Standard or Datacenter edition of Nano Server&#10;  `MediaPath` specifies the path to the root of the WS2016 installation disk or mounted image&#10;  `BasePath` specifies a path on the local system where the cmdlet creates a copy of the installation files from the location specified in `MediaPath`&#10;  `TargetPath` specifies the full path and filename of the new image to be created with the filename extension (".vhd" or ".vhdx") specifying Generation 1 or Generation 2 image.&#10;  `ComputerName` specifies the computer name that should be assigned to the new image&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 44'
 
 <code>Guid&nbsp;n</code> 
 <code>NanoServerImage&nbsp;[n][New-NanoServerImage] [e][Edit-NanoServerImage]</code> 
 <code>WMIObject&nbsp;[g][Get-WMIObject]</code> 
-**Windows**
-<code>Feature&nbsp;[a][Install-WindowsFeature]&nbsp;[g][Get-WindowsFeature]&nbsp;[is][Install-WindowsFeature]</code> 
 
 #### Bash equivalents
 [`$!`][&#36;&#36;]/[`!$`][&#36;&#36;] 
@@ -2263,10 +2598,7 @@ Configure firewall to allow remote administration using MMC snap-ins
 Enable-NetFirewallRule -DisplayGroup "Remote Administration"
 ```
 ```powershell
-Enable-NetFirewallRule -name COMPlusNetworkAccess-DCOM-In
-Enable-NetFirewallRule -name RemoteEventLogSvc-In-TCP
-Enable-NetFirewallRule -name RemoteEventLogSvc-NP-In-TCP
-Enable-NetFirewallRule -name RemoteEventLogSvc-RPCSS-In-TCP
+Enable-NetFirewallRule -name COMPlusNetworkAccess-DCOM-In, RemoteEventLogSvc-In-TCP, RemoteEventLogSvc-NP-In-TCP, RemoteEventLogSvc-RPCSS-In-TCP
 ```
 ###### `Get-NetFirewallRule`
 Display all firewall rules
@@ -2468,14 +2800,11 @@ New-PSSession -ComputerName core02
 Tasks:
 - [Enable CredSSP](#enable-credssp)
 
-
-
 #### `storage`
 ###### `New-Volume`[^][msdocs:New-Volume]
 `FileSystem`
 `ProvisioningType`
 `ResiliencySettingName`
-
 
 Create a virtual disk that uses parity resiliency and two tiers, with the default friendly names of Performance for SSDs and Capacity for HDDs <sup>[Zacker][Zacker]: 355</sup>
 ```powershell
@@ -2759,6 +3088,15 @@ Set bandwidth limits on a virtual network adapter <sup>[Zacker][Zacker]: 256</su
 Set-VMNetworkAdapter -VMName server1 -Name nic1 -MinimumBandwidthWeight
 ```
 #### System administration
+##### `EventLog`
+###### `New-EventLog`
+```powershell
+New-EventLog -LogName application -Source MyCustomApp
+```
+###### `Write-EventLog`
+```powershell
+Write-EventLog -LogName application -Source MyCustomApp -EventId 911 -Message 'Automated process failed, please contact the administrator.'
+```
 ##### `LocalGroupMember`
 ###### `Add-LocalGroupMember`
 ###### `Get-LocalGroupMember`
@@ -2887,7 +3225,7 @@ Display all objects of type `Win32_LogicalDisk` <sup>[YouTube](https://youtu.be/
 Get-WmiObject -Query "SELECT * FROM Win32_LogicalDisk"
 gwmi -q "select * from win32_logicaldisk"
 ```
-##### `WindowsFeature`
+##### `servermanager`
 ###### `Get-WindowsFeature`
 Display installable Windows roles, role services, and features
 Display a branching view of available Windows roles, role services, and features
@@ -2930,6 +3268,13 @@ Install-WindowsFeature DHCP -IncludeManagementTools
 Install Windows Server Migration Tools <sup>[Zacker][Zacker]: 33</sup>
 ```powershell
 Install-WindowsFeature Migration
+```
+Install WSUS <sup>[Zacker][Zacker]: 393</sup>
+```powershell
+Install-WindowsFeature -Name updateservices -IncludeManagementTools
+
+# Using a separate SQL server
+Install-WindowsFeature -Name updateservices,updateservices-db -IncludeManagementTools
 ```
 #### Windows Server
 ##### `psdesiredstateconfiguration`

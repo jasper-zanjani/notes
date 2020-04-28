@@ -196,7 +196,7 @@ Connect to a session on a running container <sup>[Zacker][Zacker]: 279</sup>
 docker attach $CONTID
 ```
 ##### `docker build`
-[docker build -&#116;]: #docker build '```&#10;$ docker build -t&#10;$ docker build --tag&#10;```&#10;Name and optionally a tag in the "name:tag" format'
+[docker build -&#116;]: #docker-build '```&#10;$ docker build -t&#10;$ docker build --tag&#10;```&#10;Name and optionally a tag in the "name:tag" format'
 
 <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`t`][docker build -&#116;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 
 
@@ -249,13 +249,11 @@ Container networks can use various drivers, which are associated with specific k
 - **NAT**: containers reside in their own network and the host acts as gateway and set with `{ "fixed-cidr" : "10.0.0.0/24" }`.
 - **Transparent**: containers are assigned IP addresses on the same physical network to which the host belongs (similar to **External** virtual switches in Hyper-V), set with `{ "bridge": "none" }`.
 
-
-
 Create a new network using the **transparent driver** <sup>[Zacker][Zacker]: 285</sup>
 ```sh
 docker network create -d transparent $NETWORKNAME
 ```
-Create a transpare network with static IP addresses
+Create a transparent network with static IP addresses
 ```sh
 docker network create -d transparent --subnet=10.0.0.0/24 --gateway=10.0.0.1 $NETWORK
 ```
@@ -356,6 +354,11 @@ COPY ./websrc c:/inetpub/wwwroot
 CMD [ "powershell" ]
 ```
 # `docker-compose`
+`up`
+`down`
+`-d`
+`-v`
+
 - separate binary coded in Python, available through `pip`
 - can be used from the CLI as well as from YAML files ("compose file")
 - can be used as a replacement for the normal `docker` CLI
@@ -375,10 +378,6 @@ services:
     ports:
       - '3000:3000'
 ```
-`up`
-`down`
-`-d`
-`-v`
 
 ```sh
 docker-compose up -d
