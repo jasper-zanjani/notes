@@ -168,10 +168,22 @@ Remoting relies on [WinRM][WinRM], which is Microsoft's implementation of WSMAN.
 [`wr` ](#cmdlet-verbs  "```&#10;PS C:\> Write-&#10;```&#10;Adds information to a target. This verb is paired with Read.") 
 
 #### Modules
+[`dcbqos`](#dcbqos-module)
 [`deduplication`](#deduplication-module)
+[`defender`](#defender-module)
+[`dism`](#dism-module)
+[`failovercluster`](#failovercluster-module)
+[`hyper-v`](#hyper-v-module)
 [`netconnection`](#netconnection-module)
+[`netqos`](#netqos-module)
 [`nettcpip`](#nettcpip-module)
 [`packagemanagement`](#packagemanagement-module)
+[`psdesiredconfiguration`](#psdesiredstateconfiguration-module)
+[`servermanager`](#servermanager-module)
+[`servermigration`](#servermigration-module)
+[`storage`](#storage-module)
+[`storagereplica`](#storagereplica-module)
+[`windowsserverbackup`](#windowsserverbackup-module)
 
 #### Disk-related cmdlets
 [msdocs:Get-DedupProperties]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-DedupProperties "Get-DedupProperties"
@@ -356,7 +368,7 @@ Remoting relies on [WinRM][WinRM], which is Microsoft's implementation of WSMAN.
 <code>SupportedClusterSizes&nbsp;[g][Get-SupportedClusterSizes]</code>
 <code>SupportedFileSystems&nbsp;[g][Get-SupportedFileSystems]</code>
 
-**`Disk`**
+**Disk**
 <code>&nbsp;[ch][Clear-Disk]&nbsp;[g][Get-Disk]&nbsp;[in][Initialize-Disk]&nbsp;[s][Set-Disk]&nbsp;[ud][Update-Disk]</code>
 **`FileShare`**
 <code>&nbsp;[db][Debug-FileShare]&nbsp;[g][Get-FileShare]&nbsp;[n][New-FileShare]&nbsp;[r][Remove-FileShare]&nbsp;[s][Set-FileShare]</code>
@@ -466,7 +478,7 @@ Remoting relies on [WinRM][WinRM], which is Microsoft's implementation of WSMAN.
 [Revoke-SmbShareAccess]: #revoke-smbshareaccess '```&#10;Revoke-SmbShareAccess&#10;```&#10;Removes all of the allow ACEs for a trustee from the security descriptor of the SMB share.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 109'
 [Unblock-SmbShareAccess]: #unblock-smbshareaccess '```&#10;Unblock-SmbShareAccess&#10;```&#10;Removes all of the deny ACEs for the trustee from the security descriptor of the SMB share.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 109'
 
-[**`Smb`**](#smb)
+[**Smb**](#smb)
 <code>BandwidthLimit&nbsp;[g][Get-SmbBandwidthLimit]&nbsp;[r][Remove-SmbBandwidthLimit]&nbsp;[s][Set-SmbBandwidthLimit]</code>
 <code>ClientConfiguration&nbsp;[g][Get-SmbClientConfiguration]&nbsp;[s][Set-SmbClientConfiguration]</code>
 <code>ClientNetworkInterface&nbsp;[g][Get-SmbClientNetworkInterface]</code>
@@ -512,19 +524,19 @@ Remoting relies on [WinRM][WinRM], which is Microsoft's implementation of WSMAN.
 <code>NetConnectionProfile&nbsp;[g][Get-NetConnectionProfile]&nbsp;[s][Set-NetConnectionProfile]</code>
 <code>NetFirewallRule&nbsp;[e][Enable-NetFirewallRule]&nbsp;[g][Get-NetFirewallRule]&nbsp;[n][New-NetFirewallRule]&nbsp;[s][Set-NetFirewallRule]</code>
 <code>WebRequest&nbsp;[i][Invoke-WebRequest]</code>
-**`DNS`**
+**DNS**
 <code>ClientServerAddress&nbsp;[s][Set-DnsClientServerAddress]</code> 
 <code>Name&nbsp;[rv][Resolve-DNSName]</code> 
-**`DhcpServer`**
+**DhcpServer**
 <code>InDC [a][Add-DhcpServerInDC]</code> 
 <code>V4Scope [a][Add-DhcpServerv4Scope]</code> 
 <code>v4OptionValue [s][Set-DhcpServerv4OptionValue]</code> 
-**`NetAdapter`**
+**NetAdapter**
 <code>[g][Get-NetAdapter]</code>
 <code>Rdma&nbsp;[g][Get-NetAdapterRdma]&nbsp;[e][Enable-NetAdapterRdma]</code>
 <code>Vmq&nbsp;[e][Enable-NetAdapterVmq]&nbsp;[g][Get-NetAdapterVmq]&nbsp;[s][Set-NetAdapterVmq]</code>
 <code>VmqQueue&nbsp;[g][Get-NetAdapterVmqQueue]</code>
-**`NetIp`**
+**NetIp**
 <code>Address&nbsp;[g][Get-NetIPAddress][^][msdocs:Get-NetIPAddress]&nbsp;[n][New-NetIPAddress][^][msdocs:New-NetIPAddress]&nbsp;[r][Remove-NetIPAddress][^][msdocs:Remove-NetIPAddress]&nbsp;[s][Set-NetIPAddress][^][msdocs:Set-NetIPAddress]</code>
 <code>Configuration&nbsp;[g][Get-NetIpConfiguration]</code>
 
@@ -608,7 +620,7 @@ Remoting relies on [WinRM][WinRM], which is Microsoft's implementation of WSMAN.
 [Get-NetUDPSetting]: #get-netudpsetting '```&#10;PS C:\> Get-NetUDPSetting&#10;```&#10;Gets UDP settings.'
 [Set-NetUDPSetting]: #set-netudpsetting '```&#10;PS C:\> Set-NetUDPSetting&#10;```&#10;Modifies UDP settings.'
 
-**`Net`**
+**Net**
 <code>IPAddress&nbsp;[g][Get-NetIPAddress][^][msdocs:Get-NetIPAddress]&nbsp;[n][New-NetIPAddress][^][msdocs:New-NetIPAddress]&nbsp;[r][Remove-NetIPAddress][^][msdocs:Remove-NetIPAddress]&nbsp;[s][Set-NetIPAddress][^][msdocs:Set-NetIPAddress]</code>
 <code>IPInterface&nbsp;[g][Get-NetIPInterface][^][msdocs:Get-NetIPInterface]&nbsp;[s][Set-NetIPInterface][^][msdocs:Set-NetIPInterface]</code>
 
@@ -775,7 +787,7 @@ Remoting relies on [WinRM][WinRM], which is Microsoft's implementation of WSMAN.
 [Set-NetQosTrafficClass]: #set-netqostrafficclass '```&#10;Set-NetQosTrafficClass&#10;```&#10;Sets the traffic class settings.'
 [Switch-NetQosTrafficClass]: #switch-netqostrafficclass '```&#10;Switch-NetQosTrafficClass&#10;```&#10;'
 
-**`NetQoS`**
+**NetQoS**
 <code>DcbxSetting&nbsp;[g][Get-NetQosDcbxSetting][^][msdocs:Get-NetQosDcbxSetting]&nbsp;[s][Set-NetQosDcbxSetting][^][msdocs:Set-NetQosDcbxSetting]&nbsp;[sw][Switch-NetQosDcbxSetting][^][msdocs:Switch-NetQosDcbxSetting]</code>
 <code>FlowControl&nbsp;[e][Enable-NetQosFlowControl][^][msdocs:Enable-NetQosFlowControl]&nbsp;[d][Disable-NetQosFlowControl][^][msdocs:Disable-NetQosFlowControl]&nbsp;[g][Get-NetQosFlowControl][^][msdocs:Get-NetQosFlowControl]&nbsp;[s][Set-NetQosFlowControl][^][msdocs:Set-NetQosFlowControl]&nbsp;[sw][Switch-NetQosFlowControl][^][msdocs:Switch-NetQosFlowControl]</code>
 <code>TrafficClass&nbsp;[g][Get-NetQosTrafficClass][^][msdocs:Get-NetQosTrafficClass]&nbsp;[n][New-NetQosTrafficClass][^][msdocs:New-NetQosTrafficClass]&nbsp;[r][Remove-NetQosTrafficClass][^][msdocs:Remove-NetQosTrafficClass]&nbsp;[s][Set-NetQosTrafficClass][^][msdocs:Set-NetQosTrafficClass]&nbsp;[sw][Switch-NetQosTrafficClass][^][msdocs:Switch-NetQosTrafficClass]</code>
@@ -815,7 +827,7 @@ Remoting relies on [WinRM][WinRM], which is Microsoft's implementation of WSMAN.
 [Get-DedupVolume]: #get-dedupvolume '```&#10;Get-DedupVolume&#10;```&#10;Returns deduplication volumes that have data deduplication metadata.'
 [Set-DedupVolume]: #set-dedupvolume '```&#10;Set-DedupVolume&#10;```&#10;Changes data deduplication settings on one or more volumes.'
 
-**`Dedup`**
+**Dedup**
 <code>File&nbsp;[en][Expand-DedupFile][^][msdocs:Expand-DedupFile]</code>
 <code>FileMetadata&nbsp;[ms][Measure-DedupFileMetadata][^][msdocs:Measure-DedupFileMetadata]</code>
 <code>Job&nbsp;[g][Get-DedupJob][^][msdocs:Get-DedupJob]&nbsp;[sa][Start-DedupJob][^][msdocs:Start-DedupJob]&nbsp;[sp][Stop-DedupJob][^][msdocs:Stop-DedupJob]</code>
