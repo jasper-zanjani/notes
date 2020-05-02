@@ -12,6 +12,8 @@
 
 [/etc/ansible/hosts]: #etcansiblehosts '/etc/ansible/hosts&#10;Ansible hosts file, defining the clients which are to be controlled by the server'
 
+[pluralsight:Getting Started with Ansible]: https://app.pluralsight.com/library/courses/getting-started-ansible-windows/table-of-contents "Getting Started with Ansible"
+
 [Ad Hoc]:                     # 'Ad Hoc&#10;Type of command run in realtime by an administrator working at the terminal'
 [Ansible Galaxy]:             # 'Ansible Galaxy&#10;Online portal where a gallery of roles made by the Ansible community can be found&#10;"Ansible, Part IV: Putting it all together". _Linux Journal_: 2018/03/02.'
 [Ansible Tower]:              # 'Ansible Tower&#10;Web-based RESTful API endpoint that provides the officially supported GUI frontend to Ansible configuration management. It is a commercial product that is available in two versions: **Standard** ($13,000/yr) and **Premium** ($17,500/yr)&#10;"Ansible Tower vs. Ansible AWX". 4sysops.com: 2019/08/13.&#10;---&#10;Presents a dashboard that depicts success and failure of Ansible playbook runs. Tower implements RBAC, supporting large teams.&#10;"Red Hat Ansible Tower Demo". YouTube: 2018/09/09.'
@@ -20,7 +22,7 @@
 [EPEL]:                       # 'Extra Packages For Enterprise Linux (EPEL)&#10;Red Hat repository that must be added before installing Ansible in Red Hat/CentOS using yum'
 [Fact]: # 'Fact&#10;System property gathered by Ansible when it executes a playbook on a node&#10;"Understand Core Components of Ansible - Part 1" _TecMint_'
 [Handler]:                    # 'Handler&#10;Tasks executed when notified by a task&#10;"Ansible, Part III: Playbooks". _Linux Journal_: 2018/02/19.'
-[Inventory]:                  # 'Inventory&#10;Text file containing a list of servers or nodes that you are managing and configuring&#10;"Understand Core Components of Ansible - Part 1" _TecMint_'
+[Inventory]:                  #inventory 'Inventory&#10;Text file containing a list of servers or nodes that you are managing and configuring&#10;"Understand Core Components of Ansible - Part 1" _TecMint_'
 [Module]:                     # 'Module&#10;Standalone script that enables a particular task regardless of OS, service or application&#10;---&#10;Discrete unit of code used in playbooks for executing commands&#10;"Understand Core Components of Ansible - Part 1" _TecMint_'
 [Module Library]:             # 'Module Library&#10;Where predefined modules can be found'
 [Play]: # 'Play&#10;Script or instruction that defines the task to be carried out in a server&#10;"Understand Core Components of Ansible - Part 1" _TecMint_'
@@ -128,9 +130,33 @@ Privilege escalation needs a sudo configuration, and a suitable sudoers file for
 ```
 user ALL=(ALL) NOPASSWD: ALL
 ```
-###### /etc/ansible/hosts
-Individual hosts can be listed in **groups** (bracketed sections). Plain-text passwords would also be stored here. [[4](#sources)]\
-Typical appearance:
+##### Inventory
+There are several **inventory files**, where administrators can group hosts by any arbitrary criteria, such as [`/etc/ansible/hosts`][/etc/ansible/hosts]. <sup>[PluralSight][pluralsight:Ansible Windows]</sup>
+```ini
+[webservers]
+globo-web01
+globo-web02
+
+[databases]
+globo-db01
+globo-db02
+
+[windows_servers:children]
+webservers
+databases
+```
+Variables can be declared once and assigned to a group of hosts. This method would be used to store plaintext passwords.
+```ini
+[web:vars]
+ansible_username=<user>
+ansible_password=<password>
+```
+Overriding variables can be specified inline, such as nonstandard ports
+```ini
+[web]
+globo-web01
+globo-web02 ansible_port=5987
+```
 ```ini
 [webservers]
 blogserver ansible_host=192.168.1.5
@@ -140,7 +166,20 @@ wikiserver ansible_host=192.168.1.10
 mysql_1 ansible_host=192.168.1.22
 pgsql_1 ansible_host=192.168.1.23
 ```
-
+Inventories can also be defined in YAML
+```yaml
+all:
+  children:
+    web:
+      hosts:
+        globo-web01
+        globo-web02
+      vars:
+        ansible_user=
+        ansible_password=
+        ansible_connection=
+        ansible_winrm_transport=
+```
 ## Syntax
 Ansible can be used in one of two ways:
 1. Running **ad hoc** commands, that is commands executed in realtime by an administrator working at the terminal, using the [ `ansible` ](#ansible) command.
@@ -264,8 +303,7 @@ Here, `enable apache` will be called if `this installs a package` makes a change
 ```
 
 #### Variable substitution
-Variable substitution is done by specifying the name of the placeholder variable and its value under `vars` as a sibling to `tasks` and `handlers` 
-<sup>[linuxjournal.com][https://www.linuxjournal.com/content/ansible-part-iii-playbooks]</sup>
+Variable substitution is done by specifying the name of the placeholder variable and its value under `vars` as a sibling to `tasks` and `handlers` <sup>[linuxjournal.com][https://www.linuxjournal.com/content/ansible-part-iii-playbooks]</sup>
 ```yaml
 ---
 - hosts: webservers
@@ -282,8 +320,7 @@ Variable substitution is done by specifying the name of the placeholder variable
       service: "name={{ package_name }} enabled=yes state=started" 
 ```
 #### Conditional logic
-Conditional logic is implemented with each task by defining a condition as the value for a property `when` 
-<sup>[linuxjournal.com][https://www.linuxjournal.com/content/ansible-part-iii-playbooks]</sup>
+Conditional logic is implemented with each task by defining a condition as the value for a property `when` <sup>[linuxjournal.com][https://www.linuxjournal.com/content/ansible-part-iii-playbooks]</sup>
 ```yaml
 ---
 - hosts: webservers
@@ -468,6 +505,8 @@ Create a folder using a playbook
     state: directory
     mode: '0755'
 ```
+#### `gather_facts` module
+Return JSON data about key facts of host nodes. <sup>[PluralSight][pluralsight:Getting Started with Ansible]</sup>
 #### `git` module
 Manage git checkouts of repos 
 <sup>[opensource.com][https://opensource.com/article/19/9/must-know-ansible-modules]</sup>

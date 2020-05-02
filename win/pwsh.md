@@ -169,6 +169,7 @@ Remoting relies on [WinRM][WinRM], which is Microsoft's implementation of WSMAN.
 
 #### Modules
 [`deduplication`](#deduplication-module)
+[`netconnection`](#netconnection-module)
 [`nettcpip`](#nettcpip-module)
 [`packagemanagement`](#packagemanagement-module)
 
@@ -506,6 +507,8 @@ Remoting relies on [WinRM][WinRM], which is Microsoft's implementation of WSMAN.
 [Set-NetConnectionProfile]: #set-netconnectionprofile '```&#10;Set-NetConnectionProfile&#10;```&#10;Changes the network category of a connection profile. '
 [Set-NetFirewallRule]: #set-netfirewallrule '```&#10;PS C:\> Set-NetFirewallRule&#10;```&#10;'
 
+
+
 <code>NetConnectionProfile&nbsp;[g][Get-NetConnectionProfile]&nbsp;[s][Set-NetConnectionProfile]</code>
 <code>NetFirewallRule&nbsp;[e][Enable-NetFirewallRule]&nbsp;[g][Get-NetFirewallRule]&nbsp;[n][New-NetFirewallRule]&nbsp;[s][Set-NetFirewallRule]</code>
 <code>WebRequest&nbsp;[i][Invoke-WebRequest]</code>
@@ -524,6 +527,15 @@ Remoting relies on [WinRM][WinRM], which is Microsoft's implementation of WSMAN.
 **`NetIp`**
 <code>Address&nbsp;[g][Get-NetIPAddress][^][msdocs:Get-NetIPAddress]&nbsp;[n][New-NetIPAddress][^][msdocs:New-NetIPAddress]&nbsp;[r][Remove-NetIPAddress][^][msdocs:Remove-NetIPAddress]&nbsp;[s][Set-NetIPAddress][^][msdocs:Set-NetIPAddress]</code>
 <code>Configuration&nbsp;[g][Get-NetIpConfiguration]</code>
+
+##### `netconnection` module
+[Get-NetConnectionProfile]: #get-netconnectionprofile '```&#10;Get-NetConnectionProfile&#10;```&#10;Gets a connection profile.'
+[Set-NetConnectionProfile]: #set-netconnectionprofile '```&#10;Set-NetConnectionProfile&#10;```&#10;Changes the network category of a connection profile.'
+
+[msdocs:Get-NetConnectionProfile]: https://docs.microsoft.com/en-us/powershell/module/netconnection/Get-NetConnectionProfile "Get-NetConnectionProfile"
+[msdocs:Set-NetConnectionProfile]: https://docs.microsoft.com/en-us/powershell/module/netconnection/Set-NetConnectionProfile "Set-NetConnectionProfile"
+
+<code>NetConnectionProfile&nbsp;[g][Get-NetConnectionProfile][^][msdocs:Get-NetConnectionProfile]&nbsp;[s][Set-NetConnectionProfile][^][msdocs:Set-NetConnectionProfile]</code>
 
 ##### `nettcpip` module
 [msdocs:Get-NetCompartment]: https://docs.microsoft.com/en-us/powershell/module/nettcpip/Get-NetCompartment "Get-NetCompartment"
@@ -1908,6 +1920,7 @@ Remoting relies on [WinRM][WinRM], which is Microsoft's implementation of WSMAN.
 [msdocs:Stop-WBJob]: https://docs.microsoft.com/en-us/powershell/module/windowsserverbackup/Stop-WBJob "Stop-WBJob"
 
 **`WB`**
+<code>Policy&nbsp;[g][Get-WBPolicy][^][msdocs:Get-WBPolicy]&nbsp;[n][New-WBPolicy][^][msdocs:New-WBPolicy]&nbsp;[r][Remove-WBPolicy][^][msdocs:Remove-WBPolicy]&nbsp;[s][Set-WBPolicy][^][msdocs:Set-WBPolicy]</code>
 <code>VirtualMachine&nbsp;[a][Add-WBVirtualMachine][^][msdocs:Add-WBVirtualMachine]&nbsp;[g][Get-WBVirtualMachine][^][msdocs:Get-WBVirtualMachine]&nbsp;[r][Remove-WBVirtualMachine][^][msdocs:Remove-WBVirtualMachine]</code>
 <code>Volume&nbsp;[a][Add-WBVolume][^][msdocs:Add-WBVolume]&nbsp;[g][Get-WBVolume][^][msdocs:Get-WBVolume]&nbsp;[r][Remove-WBVolume][^][msdocs:Remove-WBVolume]</code>
 
@@ -1977,10 +1990,10 @@ Remoting relies on [WinRM][WinRM], which is Microsoft's implementation of WSMAN.
 [`wc`][Measure-Object] [`which`][Get-Command]
 
 # PowerShell Syntax
-### Keywords
+## Keywords
 The `Throw` keyword generates a terminating error
 
-### Variables
+## Variables
 ###### Automatic variables
 [Automatic variable]: #automatic-variables 'Automatic variable&#10;Variables that store state information for PowerShell and are created and maintained by Powershell.'
 
@@ -2062,7 +2075,7 @@ Syntax          | Effect
 `-match`        | regex pattern
 `-is`           | type comparison
 
-### Filters
+## Filters
 Filtering results can be done with 5 commands:
 - `Where-Object` (aliased to `where` and `?`): the most commonly used such command
 - `Select-Object` (aliased to `sc`ed to specify specific columns of information to be displayed
@@ -2071,7 +2084,42 @@ Filtering results can be done with 5 commands:
   1. __Script block__, within which the variable `$_` represents the current object
   2. __Operation statement__, more naturalistic, where you specify a property value or call a method.
 
-### Scripting
+## Scripting
+Use comment-based help in the form of a specially formatted docstring with special markers that help the shell parse it when running `Get-Help`
+```powershell
+<#
+.SYNOPSIS
+This script coordinates the process of creating new employees
+
+.DESCRIPTION
+This script creates new users in Active Directory...
+
+.PARAMETER UserName
+The official logon name for the user...
+
+.PARAMETER HomeServer
+The server name where the user's home folder will live...
+#>
+```
+Provide copious examples after `.EXAMPLE` with an explanation following
+```powershell
+<#
+.EXAMPLE
+New-CorpEmployee -UserName John-Doe -HomeServer HOMESERVER1
+This example creates a single new employee...
+#>
+```
+Instead of using backticks to manually break long lines, use a parameter object and the `@` splat operator.
+```powershell
+$params = @{'ComputerName' = $computer
+            'Class'         = 'Wind32_LogicalDisk'
+            'DriveType'     = $drivetype
+            'ErrorAction'   =  'Stop'}
+$disks = Get-WmiObject @params
+```
+Attach common parameters to a custom function by placing the `[CmdletBinding()]` within the body of a function. This allows use of options like `-Verbose` or `-Debug` with custom functions.
+Now, using `Write-Verbose` and `Write-Debug` serve the dual purpose of outputting additional information at the time of execution, when needed, as well as documentation.
+
 Functions are declared with the following syntax
 ```powershell
 function Start-PSAdmin {
@@ -2153,7 +2201,7 @@ Switch off
 __Mandatory parameters__ are declared by preceding the parameter name with `[Parameter(Mandatory=$true)]`. 
 ```powershell
 ```
-### Control flow
+## Control flow
 ```powershell
 if ($condition) {
   ...
@@ -2165,7 +2213,7 @@ switch ($reference) {
   $value2 { ... }
 }
 ```
-### Loops
+## Loops
 Pipeline is the defining feature of PowerShell, which allows it to break apart composite objects and act on each element with the `ForEach-Object` cmdlet.
 ```powershell
 1..5 | ForEach-Object {$_ + 2} # => @(3,4,5,6,7)
@@ -2176,7 +2224,7 @@ $Values = while ($true) {(++$Tick); if ($Tick -gt 2) { break } } # => @(1,2,3)
 $Values = do { 'eat me!' } while ($false) # => @('eat me!')
 ```
 
-### Cmdlets
+## Cmdlets
 #### Active Directory
 ##### `ADUser`
 ###### `New-ADUser`
@@ -2479,6 +2527,11 @@ Download help files
 ###### `Out-Host`
 ###### `Read-Host`
 ###### `Write-Host`
+`BackgroundColor`
+`ForegroundColor`
+
+Exclusively used for drawing text on the screen.
+
 ##### `Location`
 ###### `Set-Location`
 ##### `Member`
@@ -2539,7 +2592,18 @@ Generate a random password 20 characters long <sup>[adamtheautomator.com][https:
 Add-Type -AssemblyName 'System.Web'
 [System.Web.Security.Membership]::GeneratePassword(20, 3)
 ```
-#### Networking
+### Networking
+#### `netconnection`
+##### `NetConnectionProfile`
+###### `Get-NetConnectionProfile`
+```powershell
+$NetworkProfile = Get-NetConnectionProfile -InterfaceAlias "Ethernet"
+$NetworkProfile.NetworkCategory = "Public"
+```
+###### `Set-NetConnectionProfile`
+```powershell
+Set-NetConnectionOject -InputObject $NetworkProfile
+```
 ##### `Dhcp`
 ###### `Add-DhcpServerv4Scope`
 <sup>[Jones][Jones]</sup>
