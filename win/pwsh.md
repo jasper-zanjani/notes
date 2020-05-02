@@ -2793,9 +2793,14 @@ Install [NuGet][NuGet]
 ```powershell
 Install-PackageProvider -Name NuGet
 ```
-Since April 3, 2020 the minimum TLS version was raised on the provider lookup site. <sup>[stackoverflow.com](https://stackoverflow.com/questions/16657778/install-nuget-via-powershell-script/26421187 "Install NuGet via Powershell script")
+Since April 3, 2020 the minimum TLS version was raised on the provider lookup site. <sup>[stackoverflow.com](https://stackoverflow.com/questions/16657778/install-nuget-via-powershell-script/26421187 "Install NuGet via Powershell script")</sup>
 ```powershell
 [System.Net.ServicePointManager]::SecurityProtocol=[System.Net.SecurityProtocolType]'Tls11,Tls12'
+```
+##### `PackageSource`
+###### `Register-PackageSource`
+```powershell
+Register-PackageSource -Name NuGet -Location https://www.nuget.org/api/v2 -ProviderName NuGet -Trusted
 ```
 #### Process control
 ##### `Process`
@@ -2811,13 +2816,6 @@ saps cmd -v runas
 `SkipNetworkProfileCheck`
 
 ##### `PSSession`
-[msdocs:Connect-PSSession]: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/Connect-pssession "Connect-PSSession"
-[msdocs:Disconnect-PSSession]: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/Disconnect-pssession "Disconnect-PSSession"
-[msdocs:Enter-PSSession]: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/enter-pssession "Enter-PSSession"
-[msdocs:Exit-PSSession]: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/Exit-pssession "Exit-PSSession"
-[msdocs:Get-PSSession]: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/Get-pssession "Get-PSSession"
-[msdocs:New-PSSession]: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/New-pssession "New-PSSession"
-
 ###### `Connect-PSSession`[^][msdocs:Connect-PSSession]
 ###### `Disconnect-PSSession`[^][msdocs:Disconnect-PSSession]
 Terminate a remote PowerShell session begun with [`New-PSSession`][New-PSSession] <sup>[Zacker][Zacker]: 22</sup>
