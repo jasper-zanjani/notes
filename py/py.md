@@ -130,7 +130,8 @@ app.MainLoop()
 NAMES = ['arnold schwarzenegger', 'alec baldwin', 'bob belderbos', 'julian sequeira', 'sandra bullock', 'keanu reeves', 'julbob pybites', 'bob belderbos', 'julian sequeira', 'al pacino', 'brad pitt', 'matt damon', 'brad pitt'] 
 
 def dedup_and_title_case_names(names):
-  """Should return a list of names, each name appears only once
+  """
+  Should return a list of names, each name appears only once
   """
   return list({name.title() for name in names})
 
@@ -150,17 +151,26 @@ def shortest_first_name(names):
 ```
 [Pybites 5](https://codechalleng.es/bites/5/)
 
-## Virtual environments
+#### Virtual environments
 Since Python3, the `venv` module, part of the Standard Library, can be used to set up virtual environments
-`python3 -m venv env` : set up virtual environment {env} in the current working directory
-`source env/bin/activate` : activate the virtual environment {env}
-`deactivate` : deactivate the virtual environment
+Set up virtual environment `$ENV` in the current working directory
+```sh
+python3 -m venv $ENV
+```
+Activate the virtual environment `$ENV`
+```sh
+source $ENV/bin/activate
+```
+Deactivate the virtual environment
+```sh
+deactivate
+```
 
 ## `key` parameter in functions like `sorted`
 The value of `key` is a function that takes a single argument and returns a key to use for sorting purposes.
 
 ## Checking if a file exists
-`except FileNotFoundError` catch the FileNotFoundError (IOError in Python 2)
+`except FileNotFoundError` catch the FileNotFoundError (`IOError` in Python 2)
 `os.path.isfile(file)` will return True if exists
 `pathlib.Path(file).is_file()` will return True if exists
 [Linuxize.com](https://linuxize.com/post/python-check-if-file-exists/)

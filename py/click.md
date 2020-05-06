@@ -1,4 +1,4 @@
-# click
+## `click`
 General-purpose decorator, docstring will come up when `--help` invocation argument is passed
 ```py
 @click.command()

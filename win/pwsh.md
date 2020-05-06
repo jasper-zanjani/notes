@@ -60,6 +60,7 @@ Remoting relies on [WinRM][WinRM], which is Microsoft's implementation of WSMAN.
 - [Set IP address to DHCP][Set-NetIpInterface]
 - [Add a local user to administrators](#add-a-new-local-admin)
 - [Install NuGet][Install-PackageProvider]
+- [XML](#handle-xml-files)
 
 ##### 70-740 tasks
 - [Create a virtual switch with SET enabled](#create-a-virtual-switch-with-set-enabled)
@@ -659,7 +660,6 @@ Remoting relies on [WinRM][WinRM], which is Microsoft's implementation of WSMAN.
 [Get-ChildItem]: #get-childitem '```&#10;PS C:\> Get-ChildItem&#10;PS C:\> dir gci ls&#10;```&#10;Get items in one or more locations'
 [Get-Clipboard]: #get-clipboard '```&#10;PS C:\> Get-Clipboard&#10;PS C:\> gcb&#10;```&#10;Display items in clipboard'
 [Get-Command]: #get-command '```&#10;PS C:\> Get-Command&#10;PS C:\> gcm&#10;```&#10;Display all installed commands, including aliases, applications, filters, functions, and scripts'
-[Get-Help]: #get-help '```&#10;PS C:\> Get-Help&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 21'
 [Get-Help]: #get-help '```&#10;PS C:\> Get-Help&#10;```&#10;Display help file for cmdlets'
 [Get-Location]: #get-location '```&#10;PS C:\> Get-Location&#10;```&#10;'
 [Get-Member]: #get-member '```&#10;PS C:\> Get-Member&#10;PS C:\> gm&#10;```&#10;Display properties and methods of a Powershell object'
@@ -714,6 +714,9 @@ Remoting relies on [WinRM][WinRM], which is Microsoft's implementation of WSMAN.
 **PS**
 <code>ReadlineOption&nbsp;[g][Get-PSReadlineOption] [s][Set-PSReadlineOption]</code> 
 
+**Output**
+<code>Format-&nbsp;[List][Format-List]&nbsp;[Table][Format-Table]</code>
+<code>Out-&nbsp;[ConsoleView][Out-ConsoleView]&nbsp;[GridView][Out-GridView]&nbsp;[HTMLView][Out-HTMLView]</code>
 
 #### Windows Server
 ##### Active Directory cmdlets
@@ -1977,6 +1980,7 @@ Remoting relies on [WinRM][WinRM], which is Microsoft's implementation of WSMAN.
 [`>>`][Add-Content] 
 [`alias`][New-Alias] 
 [`awk`][Select-Object] 
+[`basename`][Get-Item]
 `bzip2` 
 [`cat`][Get-Content] 
 [`cd`][Set-Location] 
@@ -2597,6 +2601,14 @@ Set-PSReadlineOption -EditMode Windows
 ```
 ##### `PSSnapin`
 ###### `Add-PSSnapin`
+##### `Table`
+###### `Format-Table`
+`HideTableHeaders`
+
+Display list of information without the headers (i.e. for copy-pasting)
+```powershell
+Get-Command -Module pswritehtml | Select-Object Name | Format-Table -HideTableHeaders | clip.exe
+```
 ##### `Type`
 ###### `Add-Type`
 Generate a random password 20 characters long <sup>[adamtheautomator.com][https://adamtheautomator.com/powershell-random-password/]</sup>
@@ -2956,6 +2968,11 @@ Copy-Item -ToSession (Get-PSSession) -Path C:\temp\file.txt -Destination C:\user
 Copy-Item -FromSession (Get-PSSession) -Path C:\users\file.txt -Destination C:\temp
 ```
 ###### `Get-Item`
+Equivalents to bash `basename` and `dirname` <sup>[stackoverflow](https://stackoverflow.com/questions/12503871/removing-path-and-extension-from-filename-in-powershell "Removing path and extension from filename in powershell")</sup>
+```powershell
+(Get-Item $path).Basename
+(Get-Item $path).DirectoryName
+```
 ###### `New-Item`
 [New-Item &#84;]: #New-Item '```&#10;PS C:\> New-Item Type&#10;PS C:\> New-Item -ItemType&#10;```&#10;&#10;Specify the provider-specified type of the new item; values depend on the context.'
 
@@ -3350,7 +3367,7 @@ Install-WindowsFeature -Name updateservices -IncludeManagementTools
 # Using a separate SQL server
 Install-WindowsFeature -Name updateservices,updateservices-db -IncludeManagementTools
 ```
-#### Windows Server
+### Windows Server
 ##### `psdesiredstateconfiguration`
 ###### `Start-DscConfiguration`[^][msdocs:Start-DscConfiguration]
 `-Path`
@@ -3985,4 +4002,33 @@ Enable-ClusterStorageSpacesDirect
 ```powershell
 Install-Module -Name dockermsftprovider -repository psgallery -force
 Install-Package -Name docker -ProviderName dockermsftprovider
+```
+#### Handle XML files
+Find a sample XML file [here](https://docs.microsoft.com/en-us/previous-versions/windows/desktop/ms762271(v=vs.85) "books.xml")
+
+Assign the output of [`gc`][Get-Content] to a variable
+```powershell
+[xml]$xdoc = gc $xmlfile
+```
+The XML tree can be viewed in VS Code using the **XML Tools** extension.
+The object itself can be treated as a first-class Powershell object using dot notation. <sup>[red-gate.com](https://www.red-gate.com/simple-talk/sysadmin/powershell/powershell-data-basics-xml/ "Powershell Data Basics: XML")</sup>
+```powershell
+$xdoc.catalog.book | Format-Table -Autosize
+```
+Arrays of elements can be accessed by their index
+```powershell
+$xdoc.catalog.book[0]
+```
+Nodes in the XML object can also be navigated using **XPath** notation with the `SelectNodes` and `SelectSingleNode` methods.
+```powershell
+$xdoc.SelectNodes('//author')
+This produces the same output as the command above (in XPath nodes are 1-indexed).
+```powershell
+$xdoc.SelectSingleNode('//book[1]')
+```
+[`Select-Xml`][Select-Xml] wraps the returned XML node with additional metadata, including the pattern searched.
+However, it can accept piped input.
+```powershell
+(Select-Xml -Xml $xdoc -Xpath '//book[1]').Node
+($xml | Select-Xml -Xpath '//book[1]').Node
 ```
