@@ -29,18 +29,6 @@
 [https://www.networkworld.com/article/3433865/how-to-rename-a-group-of-files-on-linux.html#tk.rss_linux]: https://www.networkworld.com/article/3433865/how-to-rename-a-group-of-files-on-linux.html#tk.rss_linux "networkworld.com: \"How to rename a group of files on Linux\""
 [ULSAH]: # 'Nemeth, Evi. _Unix and Linux System Administration Handbook, 5th ed._'
 
-<!-- Concepts -->
-[AppArmor]: # 'AppArmor&#10;MAC system developed by Canonical, supported by Debian and Ubuntu&#10;Nemeth, Evi. _Unix and Linux System Administration Handbook, 5th ed._: 87'
-[Autotools]: # "GNU autotools is a collection of three packages: `autoconf`, `automake`, and `libtool`"
-[ProcFs]: # 'ProcFs&#10;Special filesystem in Unix-like operating systems that presents information about processes and other system information in a hierarchical file-like structure, typically mapped to /proc at boot time.&#10;"procfs". _Wikipedia_.'
-[SELinux]: #selinux 'SELinux&#10;MAC system developed by the NSA, well-supported on CentOS and Fedora and enabled by default on RHEL&#10;Nemeth, Evi. _Unix and Linux System Administration Handbook, 5th ed._: 85'
-[syscall]: # 'system call (syscall)&#10;Service provided by the kernel that can be called from user mode which typically handles device access requests or other privileged operations.&#10;For most cases, making a syscall breaks down into 3 steps:&#10;  1. Marshall parameters - user mode puts the syscall parameters and number at locations defined by the ABI.&#10;  2. Special instruction - user mode uses a special processor instruction to transition to kernel mode for the syscall.&#10;  3. Handle the return - after the syscall is serviced, the kernel uses a special processor instruction to return to user mode and user mode checks the return value.&#10;"WSL System calls". _Windows Subsystem for Linux_. Microsoft.'
-[SysFs]: # 'SysFs&#10;Pseudo file system provided by the Linux kernel that exports information about various kernel subsystems, hardware devices, and associated device drivers from the device model of the kernel to user space through virtual files.&#10;"sysfs". _Wikipedia_.'
-[SystemD]: systemd.md "De facto standard init system for all major Linux distributions today"
-[target]: #targets 'target&#10;systemd term for the operational modes that sysvinit calls "run levels"&#10;Nemeth, Evi. _Unix and Linux System Administration Handbook, 5th ed._: 43'
-[TmpFs]: # 'TmpFs&#10;Temporary file storage paradigm implemented in many Unix-like operating systems. It is intended to appear as a mounted file system, but data is stored in volatile memory instead of a persistent storage device.&#10;"tmpfs". Wikipedia.'
-[configure script]: # 'configure script&#10;Script that converts a Makefile.in template into a Makefile, responsible for preparing the software build, ensuring dependencies are available, such as a C compiler for C programs.&#10;Not typically built by hand but packaged by another program in the `autotools` suite, like `autoconf`, `automake`, etc. '
-
 - [Commands](#linux-commands)
 - [Configs](#linux-configs)
 
@@ -54,16 +42,31 @@
 - [X forwarding](#x-forwarding)
 
 ###### Concepts
-[AppArmor][AppArmor]
-[Autotools][Autotools]
-[ProcFs][ProcFs] 
-[SELinux][SELinux]
-[syscall][syscall] 
-[SysFs][SysFs] 
-[target][target]
-[SystemD][SystemD]
-[TmpFs][TmpFs] 
-[configure script][configure script]
+<!-- Concepts -->
+[AppArmor]: # 'AppArmor&#10;MAC system developed by Canonical, supported by Debian and Ubuntu&#10;Nemeth, Evi. _Unix and Linux System Administration Handbook, 5th ed._: 87'
+[Autotools]: # "GNU autotools is a collection of three packages: `autoconf`, `automake`, and `libtool`"
+[ProcFs]: # 'ProcFs&#10;Special filesystem in Unix-like operating systems that presents information about processes and other system information in a hierarchical file-like structure, typically mapped to /proc at boot time.&#10;"procfs". _Wikipedia_.'
+[SELinux]: #selinux 'SELinux&#10;MAC system developed by the NSA, well-supported on CentOS and Fedora and enabled by default on RHEL&#10;Nemeth, Evi. _Unix and Linux System Administration Handbook, 5th ed._: 85'
+[syscall]: # 'system call (syscall)&#10;Service provided by the kernel that can be called from user mode which typically handles device access requests or other privileged operations.&#10;For most cases, making a syscall breaks down into 3 steps:&#10;  1. Marshall parameters - user mode puts the syscall parameters and number at locations defined by the ABI.&#10;  2. Special instruction - user mode uses a special processor instruction to transition to kernel mode for the syscall.&#10;  3. Handle the return - after the syscall is serviced, the kernel uses a special processor instruction to return to user mode and user mode checks the return value.&#10;"WSL System calls". _Windows Subsystem for Linux_. Microsoft.'
+[SysFs]: # 'SysFs&#10;Pseudo file system provided by the Linux kernel that exports information about various kernel subsystems, hardware devices, and associated device drivers from the device model of the kernel to user space through virtual files.&#10;"sysfs". _Wikipedia_.'
+[SystemD]: #init-systems "De facto standard init system for all major Linux distributions today"
+[target]: #init-systems 'target&#10;systemd term for the operational modes that sysvinit calls "run levels"&#10;Nemeth, Evi. _Unix and Linux System Administration Handbook, 5th ed._: 43'
+[TmpFs]: # 'TmpFs&#10;Temporary file storage paradigm implemented in many Unix-like operating systems. It is intended to appear as a mounted file system, but data is stored in volatile memory instead of a persistent storage device.&#10;"tmpfs". Wikipedia.'
+[configure script]: # 'configure script&#10;Script that converts a Makefile.in template into a Makefile, responsible for preparing the software build, ensuring dependencies are available, such as a C compiler for C programs.&#10;Not typically built by hand but packaged by another program in the `autotools` suite, like `autoconf`, `automake`, etc. '
+[unit]: #init-systems 'unit&#10;Any resource managed by SystemD, including targets and services.'
+
+
+- [AppArmor][AppArmor]
+- [Autotools][Autotools]
+- [Configure script][configure script]
+- [ProcFs][ProcFs] 
+- [SELinux][SELinux]
+- [syscall][syscall] 
+- [SysFs][SysFs] 
+- [SystemD][SystemD]
+- [Target][target]
+- [TmpFs][TmpFs] 
+- [Unit][unit]
 
 ###### Commands
 <!-- Audio commands -->
@@ -101,6 +104,7 @@
 [vmstat]: #vmstat '```&#10;$ vmstat&#10;```&#10;provides more detail than `free`&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 293'
 
 <!-- Applications -->
+[git]: #git '```&#10;$ git&#10;```&#10;The stupid content tracker'
 [gconf-editor]: #gconf-editor '```&#10;$ gconf-editor&#10;```&#10;GUI-based configuration editor for GNOME'
 [kquitapp]: #kquitapp '```&#10;$ kquitapp&#10;```&#10;Allows you to quit a dbus enabled application'
 [krunner]: #krunner '```&#10;$ krunner&#10;```&#10;Single-line application launcher, similar to dmenu or the Run command on Windows'
@@ -112,7 +116,7 @@
 [switchdesk]: #switchdesk '```&#10;switchdesk&#10;```&#10;Simply switch between various desktop environments&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 315'
 
 **[Applications](#applications)** 
-`git`
+[`git`][git]
 [`imagemagick`](#imagemagick) 
 [`mongod`](#mongod) 
 **GNOME** 
@@ -1132,6 +1136,7 @@ _Upstart_
 [CentOS]: https://centos.org 'CentOS&#10;Virtually identical to RHEL, but free of charge.&#10;The CentOS Project is owned by Red Hat and employs its lead developers.&#10;Nemeth, Evi. _Unix and Linux System Administration Handbook, 5th ed._: 11'
 [Fedora CoreOS]: #fedora-coreos "Fedora edition built for running containerized workloads securely and at scale. CoreOS systems are meant to be immutable, meaning they are only configured through the provisioning process and not modified in-place."
 [WSL]: #windows-subsystem-for-linux "Linux virtual machine shipped with Windows with the ability to install several different distros."
+[Yocto]: # 'Yocto&#10;Open-source project that facilitates the construction of custom Linux images for use in embedded and edge devices'
 
 - [Alpine ][Alpine Linux] 
 - [Arch ](#arch-linux) 
@@ -1143,6 +1148,7 @@ _Upstart_
 - [Kali ](#kali-linux) 
 - [KDE](#kde)
 - [WSL][WSL]
+- [Yocto][Yocto]
 
 Fully-featured **desktop environments** are distinct from **window managers**, which are more focused in scope
 
@@ -3131,34 +3137,57 @@ Option  | Effect
 
 
 ## Init systems
-**SystemVinit** is a daemon process which was used by most distros until recently. Processes started serially and synchronously, wasting system resources; for years, a common hack was to run services in the background, simulating a sort of parallel processing
+**SystemVinit** is a daemon process which was used by most distros until recently. 
+Processes started serially and synchronously, wasting system resources; 
+for years, a common hack was to run services in the background, simulating a sort of parallel processing.
 **Upstart** was developed by Canonical for Ubuntu, but abandoned in 2014. 
 
-[**SystemD**][SystemD]
-[`hostnamectl`][hostnamectl]
-[`journalctl`][journalctl]
-[`localectl`][localectl]
-[`loginctl`][loginctl]
-[`systemctl`][systemctl]
-[`systemd-delta`][systemd-delta]
-[`timedatectl`][timedatectl]
+**SystemD** was designed by a pair of Red Hat developers in 2010 to be a general purpose system manager.
+It was intended to address multiple shortcomings with `sysvinit`.
+It offers parallel execution, explicit dependencies between services, an escape from slow shell scripts, and per-daemon resource control and watchdogs.
+
+SystemD introduces the concepts of [**Units**] which are subdivided into various unit types, each of which is associated with a filename extension.
+<sup>[YouTube](https://youtu.be/NNgZXNQtil8 "We Need to Talk About Systemd: Boot Time Optimization for the New init daemon - Chris Simmonds, 2net") [Linode](https://www.linode.com/docs/quick-answers/linux-essentials/what-is-systemd/ "What is systemd?")</sup>
+
+[Targets][target] (SystemD)   | Runlevels (System V Init)
+---                 | ---
+`poweroff.target`   | `0`
+`rescue.target`     | `1`
+`multi-user.target` | `3`
+`graphical.target`  | `5`
+`reboot.target`     | `6`
+`emergency.target`  | `emergency`
+
+SystemD searches for units from most specific to most general.
+- `/usr/lib/systemd/system` default location where unit files are installed by packages
+- `/run/systemd/system`: Runtime configuration
+- `/etc/systemd/system` takes precedence over unit files located anywhere else
+
+[**SystemD**][SystemD] components include:
+- [`hostnamectl`][hostnamectl]
+- [`journalctl`][journalctl]
+- [`localectl`][localectl]
+- [`loginctl`][loginctl]
+- [`systemctl`][systemctl]
+- [`systemd-delta`][systemd-delta]
+- [`timedatectl`][timedatectl]
 
 **Sysvinit**
 `chkconfig`
 `init`
 `runlevel`
 `service`
-`telinit
+`telinit`
 
 **Upstart**
 `initctl`
 
-### `hostnamectl`
+##### `hostnamectl`
 Permanently change hostname to `$HOSTNAME`
 ```sh
 hostnamectl set-hostname $HOSTNAME
 ```
-### `journalctl`
+##### `journalctl`
 Show current disk usage of all journal files
 ```sh
 journalctl --disk-usage
@@ -3171,14 +3200,14 @@ Display output in reverse (newest entries first)
 ```sh
 journalctl -r
 ```
-### `localectl`
+##### `localectl`
 Change locale to French
 ```sh
 localectl set-locale LANG=fr_FR.utf8
 ```
-### `loginctl`
+##### `loginctl`
 Control the systemd login manager
-### `systemctl`
+##### `systemctl`
 [systemctl daemon-reload]:                 #systemctl                     '```&#10;$ systemctl daemon-reload&#10;```&#10;Reload unit files and systemd configuration&#10;Nemeth, Evi. _Unix and Linux System Administration Handbook, 5th ed._: 47'
 [systemctl disable]:                       #systemctl                     '```&#10;$ systemctl disable $UNIT&#10;```&#10;Prevent `$UNIT` from activating at boot&#10;Nemeth, Evi. _Unix and Linux System Administration Handbook, 5th ed._: 47'
 [systemctl enable]:                        #systemctl                     '```&#10;$ systemctl enable $UNIT&#10;```&#10;Enable `$UNIT` to activate it at boot&#10;Nemeth, Evi. _Unix and Linux System Administration Handbook, 5th ed._: 47'
@@ -3266,27 +3295,16 @@ Change target to runlevel emergency
 ```sh
 systemctl isolate emergency.target
 ```
+##### `systemd-analyze`
 
-###### Targets
-[Targets][target] are `systemd`'s term for what `sysvinit` calls "runlevels".
-
-Targets             | Runlevel
----                 | ---
-`poweroff.target`   | `0`
-`rescue.target`     | `1`
-`multi-user.target` | `3`
-`graphical.target`  | `5`
-`reboot.target`     | `6`
-`emergency.target`  | `emergency`
-
-### `systemd-delta`
+##### `systemd-delta`
 Show files that are overridden with systemd\
 Display differences among files when they are overridden
 ```sh
 systemd-delta --diff
 ```
-### `timedatectl`
-### `chkconfig`
+##### `timedatectl`
+##### `chkconfig`
 Turn services on or off for runlevels
 Without arguments, `chkconfig` defaults to runlevels 3 or 5:
 ```sh
@@ -3309,7 +3327,7 @@ Turn {daemon} service on
 ```sh
 chkconfig daemon on
 ```
-### `init`
+##### `init`
 Access different runlevels
 ```sh
 init 
@@ -3319,12 +3337,12 @@ Switch to runlevel {n}
 init n
 init 6 # reboot
 ```
-### `runlevel`
+##### `runlevel`
 Show runlevel for system
 ```sh
 runlevel 
 ```
-### `service`
+##### `service`
 Restart network service 
 ```sh
 service network restart
@@ -3338,7 +3356,7 @@ Stop {daemon}
 service daemon stop
 service mongodb stop
 ```
-### `telinit`
+##### `telinit`
 Refresh system after changes to `/etc/inittab`
 ```sh
 telinit 
@@ -3347,7 +3365,7 @@ Cause operation to not send any notice to logged-on users
 ```sh
 telinit--no-wall
 ```
-### `initctl`
+##### `initctl`
 Reload configuration files (on Upstart-controlled system)
 ```sh
 initctl reload

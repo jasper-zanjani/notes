@@ -1,10 +1,28 @@
 # Observations on the learning process
 
+#### Paying forward
+What's the best way to organize information for newcomers?
+That is to say, what is the best way to organize notes on the **sources** of information that I stumble across, rather than merely the information itself?
+The information itself is practical, but the context of what type of material assisted me in learning it should also be preserved, somehow.
+
+For example, for someone new to [vim](https://github.com/jasper-zanjani/notes/tree/master/text/vim.md), Chris Toomey's [talk](https://youtu.be/wlR5gYd6um0 "Mastering the Vim Language") on YouTube might be a very good tool for learners who prefer to see lectures by impassioned and articulate people.
+Someone who is more mechanically inclined might benefit more from [`pacvim`](https://github.com/jmoon018/PacVim "GitHub - jmoon018/PacVim"), or other hands-on activities.
+Maybe a combination of both?
+
+Some segments of PluralSight videos on esoteric technical topics appear to cover basic material concisely and effectively, in a way that made me wish I had access to those segments when I was learning it before.
+Gathering this type of information could be useful, not to me, but to others.
+
+How do I organize my thoughts and observations on the value of **sources** without doubling my effort?
+
+
+#### Command-line syntax
 After several weeks of refining my note-taking technique with regard to syntax, I believe I have settled on an improved workflow.
 
 For all command-line syntax:
-1. Note the command itself within `Terms` spreadsheet
+1. Note the command itself within "Commands" spreadsheet (separate from "Terms", which is for vocabulary)
 2. If any options are encountered, document them in `Options`
+3. If commands form command groups (like `apt`, `docker`, `git`, `netsh`, etc), those command groups need to be broken out separately ("Group-style commands")
+4. If a command launches its own REPL (`bluetoothctl`, `diskpart`, `fdisk`...) those are broken out as well
 
 #### Finding magic numbers
 Before understanding the "lay of the land", or rather the best epistemology for a unit of information, you are first confronted with a list of information without context. This happened while studying for the Network+. On the topic of authentication, I learned a list of material, basically concepts associated with AAA. 
@@ -19,22 +37,52 @@ Before understanding the "lay of the land", or rather the best epistemology for 
   - **ticket** security tokens issued to clients ...
 - **Local authentication subsystem (LASS)** authenticates users ...
 ```
-But after further research, I found that once you understand the role of authentication, then really there are only three main systems that implement it (according to the material): **Kerberos**, **TACACS**, and **RADIUS**.\
+But after further research, I found that once you understand the role of authentication, then really there are only three main systems that implement it (according to the material): **Kerberos**, **TACACS**, and **RADIUS**.
+
 Reducing a confusing mass of knowledge into a magic number (2, 3, 4, etc) helps in identifying interrelationships between concepts and entities
 
 ## Anki
-Made good progress incorporating task-based learning by simplifying procedures into command sequences with no parameters or (at most) one or two. Used a spreadsheet to concatenate hand-entered text values in a cloze Anki flashcard.
+Made good progress incorporating task-based learning by simplifying procedures into command sequences with no parameters or (at most) one or two.
+Used a spreadsheet to concatenate hand-entered text values in a cloze Anki flashcard.
+
+#### Cloze for common patterns
+Cloze notes form a low-level way of practicing the skill.
+The best strategy to pursue is to identify common patterns, and make the most common elements of those patterns into cloze cards.
+
+DSC
+```
+{{c1::Configuration}} DnsClient
+{
+  {{c2::Import-DscResource}} -ModuleName "xNetworking"
+  {{c3::Node}} ("ServerA","ServerB")
+  {
+    xDnsServerAddress DnsServer
+    {
+      Address=10.0.0.1
+      AddressFamily="Ipv4"
+      InterfaceAlias="Ethernet"
+}}}
+```
+C#
+```
+{{c1::namespace}} HelloWorld
+{
+  {{c2::class}} {{c3::Program}}
+  {
+    {{c6::static}} {{c7::void}} Main(string[] args)
+    {
+      {{c4::Console}}.{{c5::WriteLine}}("Hello world!");
+}}}
+```
 
 #### Two tasks with related forms
-```bash
-* Get connection string of account
-  constring=$(az storage account show-connection-string)
+- Get connection string of account
+  `constring=$(az storage account show-connection-string)`
+- Create file share with connection string
+  `az storage share create --connection-string $constring`
 
-* Create file share with connection string
-  az storage share create
-    --connection-string $constring
-```
 Here, both instances of `storage` are tested at once.
+(This is no longer the way I like to make cards)
 
 #### Single task with different implementations
 ```powershell
@@ -87,6 +135,3 @@ Playing around with reference-style links and tooltips has me thinking that ther
 What I have settled on is a multilayered note-taking strategy. Every **lexeme** is defined first in a **slug** or one-line description that establishes its **epistemological** context as well as its **semantic** significance. A **stub** further elaborates the lexeme, especially insofar as it encapsulates further lexemes or can be analyzed into components.
 
 These slugs and stubs can be presented in various ways. Most recently I have gotten into the habit of putting slugs into tooltips that appear when I hover over lexemes in my markdown notes. This is an especially elegant solution in tables, where I can provide a highly condensed and legible index of commands, each of which can be understood at a high level by hovering the mouse while still providing full details when clicked on. This is also an elegant solution in tables of contents, where I can use a tooltip to contain a synopsis of a chapter which still links to the full notes. It provides a way of rendering information of intermediary fidelity, between the mere title and fully developed notes.
-
-## Sources
-  [AZ-103 Tasks](sources/az-103-tasks.md)

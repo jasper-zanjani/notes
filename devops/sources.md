@@ -16,12 +16,12 @@
 15. "Windows Server Containers". [K8S 70](../sources/README.md#k8s-70). 
 16. "Intro: Operator Framework BoF - Diane Mueller & Sebastian Pahl, Red Hat". [YouTube](https://youtu.be/8k_ayO1VRXE): 2018/12/16.
 17. "Standardized Glossary". [Kubernetes](https://kubernetes.io/docs/reference/glossary/?all=true)
-18. "Kubernetes Design Principles: Understand the Why". [YouTube](https://www.youtube.com/watch?v=ZuIQurh_kDk)
+
 19. 'Kubernetes Deconstructed: Understanding Kubernetes by Breaking It Down". [YouTube](https://www.youtube.com/watch?v=90kZRyPcRZw)
 20. "Concepts: Operator Pattern". [Kubernetes](https://kubernetes.io/docs/concepts/extend-kubernetes/operator/)
 21. "Google Cloud Services Platform, with Aparna Sinha". [K8S](../sources/README.md#k8s-13)
 22. "containerd, with Derek McGowan". [K8S](../sources/README.md#k8s-71)
-23. "Understanding the Cloud Native Ecosystem". [PodCTL](../sources/README.md#podctl-5)
+23. 
 24. "First Alpine Linux Container". [Play with Docker classroom](https://training.play-with-docker.com/ops-s1-hello/)
 25. "Doing More with Docker Images". [Play with Docker classroom](https://training.play-with-docker.com/ops-s1-images/)
 26. "Best practices for writing Dockerfiles". [Docker](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/)
