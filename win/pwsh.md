@@ -3860,3 +3860,10 @@ Set-ClusterFaultDomain -Name node2 -Parent ny
 Set-ClusterFaultDomain -Name node3 -Parent sf
 Set-ClusterFaultDomain -Name node4 -Parent sf
 ```
+##### Filter AD account information
+```powershell
+Get-aduser -filter {(SamAccountName -like "*CA0*")} -properties Displayname, SaMaccountName, Enabled, EmailAddress, proxyaddresses | 
+Where {($_.EmailAddress -notlike "*@*")} | 
+Where {($_.Enabled -eq $True)} | 
+Select Displayname, SaMaccountName, Enabled, EmailAddress, @{L=’ProxyAddress_1'; E={$_.proxyaddresses[0]}}, @{L=’ProxyAddress_2'; E={$_.ProxyAddresses[1]}} | 
+Export-csv .\usersnoemail2.csv -notypeinformation

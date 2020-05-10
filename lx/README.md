@@ -1344,30 +1344,72 @@ This attack can be detected using the **[osquery](https://osquery.io/)** tool. T
 [`smbpasswd`][smbpasswd] 
 [`smbstatus`][smbstatus] 
 
-### `git`
-Remove untracked files
+#### git
+[git-add]: #git-add '```&#10;$ git add &#10;```&#10;Add file contents to the index'
+[git-branch]: #git-branch '```&#10;$ git branch &#10;```&#10;List, create, or delete branches'
+[git-checkout]: #git-checkout '```&#10;$ git checkout &#10;```&#10;Switch branches or restore working tree files'
+[git-cherry-pick]: #git-cherry-pick '```&#10;$ git cherry-pick &#10;```&#10;Apply the changes introduced by some existing commits'
+[git-clean]: #git-clean '```&#10;$ git clean &#10;```&#10;Remove untracked files from the working tree'
+[git-config]: #git-config '```&#10;$ git config &#10;```&#10;Get and set repository or global options'
+[git-log]: #git-log '```&#10;$ git log &#10;```&#10;Show commit logs'
+[git-ls-files]: #git-ls-files '```&#10;$ git ls-files &#10;```&#10;Show information about files in the index and the working tree'
+[git-mv]: #git-mv '```&#10;$ git mv &#10;```&#10;Move or rename a file, a directory, or a symlink'
+[git-push]: #git-push '```&#10;$ git push &#10;```&#10;Update remote refs along with associated objects'
+[git-rebase]: #git-rebase '```&#10;$ git rebase &#10;```&#10;Reapply commits on top of another base tip'
+[git-remote]: #git-remote '```&#10;$ git remote &#10;```&#10;Manage set of tracked repositories'
+[git-reset]: #git-reset '```&#10;$ git reset &#10;```&#10;Reset current HEAD to the specified state'
+[git-revert]: #git-revert '```&#10;$ git revert &#10;```&#10;Revert some existing commits'
+[git-rm]: #git-rm '```&#10;$ git rm &#10;```&#10;Remove files from the working tree and from the index'
+[git-stash]: #git-stash '```&#10;$ git stash &#10;```&#10;Stash changes away in a dirty working directory'
+
+[doc:git-add]: https://git-scm.com/docs/git-add "git add documentation"
+[doc:git-branch]: https://git-scm.com/docs/git-branch "git branch documentation"
+[doc:git-checkout]: https://git-scm.com/docs/git-checkout "git checkout documentation"
+[doc:git-cherry-pick]: https://git-scm.com/docs/git-cherry-pick "git cherry-pick documentation"
+[doc:git-clean]: https://git-scm.com/docs/git-clean "git clean documentation"
+[doc:git-config]: https://git-scm.com/docs/git-config "git config documentation"
+[doc:git-log]: https://git-scm.com/docs/git-log "git log documentation"
+[doc:git-ls-files]: https://git-scm.com/docs/git-ls-files "git ls-files documentation"
+[doc:git-mv]: https://git-scm.com/docs/git-mv "git mv documentation"
+[doc:git-push]: https://git-scm.com/docs/git-push "git push documentation"
+[doc:git-rebase]: https://git-scm.com/docs/git-rebase "git rebase documentation"
+[doc:git-remote]: https://git-scm.com/docs/git-remote "git remote documentation"
+[doc:git-reset]: https://git-scm.com/docs/git-reset "git reset documentation"
+[doc:git-revert]: https://git-scm.com/docs/git-revert "git revert documentation"
+[doc:git-rm]: https://git-scm.com/docs/git-rm "git rm documentation"
+[doc:git-stash]: https://git-scm.com/docs/git-stash "git stash documentation"
+
+[`add`][git-add]<sup>[?][doc:git-add]</sup>
+[`branch`][git-branch]<sup>[?][doc:git-branch]</sup>
+[`checkout`][git-checkout]<sup>[?][doc:git-checkout]</sup>
+[`cherry-pick`][git-cherry-pick]<sup>[?][doc:git-cherry-pick]</sup>
+[`clean`][git-clean]<sup>[?][doc:git-clean]</sup>
+[`config`][git-config]<sup>[?][doc:git-config]</sup>
+[`log`][git-log]<sup>[?][doc:git-log]</sup>
+[`ls-files`][git-ls-files]<sup>[?][doc:git-ls-files]</sup>
+[`mv`][git-mv]<sup>[?][doc:git-mv]</sup>
+[`push`][git-push]<sup>[?][doc:git-push]</sup>
+[`rebase`][git-rebase]<sup>[?][doc:git-rebase]</sup>
+[`remote`][git-remote]<sup>[?][doc:git-remote]</sup>
+[`reset`][git-reset]<sup>[?][doc:git-reset]</sup>
+[`revert`][git-revert]<sup>[?][doc:git-revert]</sup>
+[`rm`][git-rm]<sup>[?][doc:git-rm]</sup>
+[`stash`][git-stash]<sup>[?][doc:git-stash]</sup>
+
+##### git clean
+[git clean -&#102;]: #git-clean '```&#10;$ git clean -f&#10;```&#10;Remove untracked files without confirmation'
+[git clean -&#100;]: #git-clean '```&#10;$ git clean -d $PATH&#10;```&#10;Remove untracked files from the specified directory'
+[git clean -&#105;]: #git-clean '```&#10;$ git clean -i&#10;```&#10;Remove untracked files interactively'
+[git clean -&#110;]: #git-clean '```&#10;$ git clean -n&#10;```&#10;Perform a dry run'
+[git clean -&#120;]: #git-clean '```&#10;$ git clean -x&#10;```&#10;Remove ignored files'
+[git clean -&#88;]: #git-clean '```&#10;$ git clean -X&#10;```&#10;Remove only ignored files'
+
+<code>&nbsp;</code>   <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`d`][git clean -&#100;] <code>&nbsp;</code> [`f`][git clean -&#102;] <code>&nbsp;</code> <code>&nbsp;</code> [`i`][git clean -&#105;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`n`][git clean -&#110;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`x`][git clean -&#120;] <code>&nbsp;</code> <code>&nbsp;</code>  <br><code>&nbsp;</code>&nbsp;<code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`X`][git clean -&#88;] <code>&nbsp;</code> <code>&nbsp;</code> 
+
+##### git add
+Add file, located in `$HOME` to the git repo at `$PATH`
 ```sh
-# Perform a "dry run" with `-n` to show what files and directories will be deleted
-git clean -d -n
-
-# Interactively delete files with `-i`
-git clean -d -i
-
-# Force delete with `-f`
-git clean -d -f
-
-# Limit clean operation to directory $DIR
-git clean -d $DIR
-
-# Remove ignored files and directories with `-x`
-git clean -d -x
-
-# Remove **only** ignored files and directories with `-X`
-git clean -d -X
-```
-Add file, located in $HOME to the git repo at gitpath
-```sh
-git --git-dir=$gitpath.git --work-tree=$HOME add file
+git --git-dir=$PATH.git --work-tree=$HOME add file
 ```
 Update index to include all files in the working tree, including removals
 ```sh
@@ -1378,17 +1420,21 @@ Stage all modifications in work-tree, including deletions
 ```sh
 git add -u
 ```
-See a list of branches
-A "*" indicates that branch is checked out; 
+##### git branch
+See a list of branches. 
+A "*" indicates that branch is checked out.
 ```sh
 git branch
-
-# Display the last commit for each branch
+```
+Display the last commit for each branch
+```sh
 git branch -v
-
-# Display branches that have not been merged
+```
+Display branches that have not been merged
+```sh
 git branch --no-merged
 ```
+##### git checkout
 Discard unstaged uncommitted changes to file
 ```sh
 git checkout -- file
@@ -1397,26 +1443,12 @@ Switch to branch
 ```sh
 git checkout branch
 ```
+##### git cherry-pick
 Apply a single, specific commit from another branch
 ```sh
 git cherry-pick commit
 ```
-Remove untracked files from local repo
-```sh
-git clean
-```
-Delete untracked files in the current directory
-```sh
-git clean -f
-```
-Remove untracked directories
-```sh
-git clean -f -d
-```
-Clean working directory interactively
-```sh
-git clean -f -i
-```
+##### git config
 Set up alias "br" for `branch`
 ```sh
 git config --global alias.br branch
@@ -1425,18 +1457,16 @@ Store authentication details in a cache
 ```sh
 git config --global credential.helper cache
 ```
+##### git log
 Show commits between January 1 and January 5, 2016
 ```sh
 git log --after="2016-01-01" --before="2016-01-05"
 ```
 See commits that are on {branch} but not on {master}
 ```sh
-git logs master..branch
+git log master..branch
 ```
-Show tracked files that have been deleted
-```sh
-git ls-files --deleted
-```
+##### git ls-files
 Show tracked files
 ```sh
 git ls-files
@@ -1445,34 +1475,43 @@ Show tracked files, each line is terminated by a null byte
 ```sh
 git ls-files -z
 ```
+Show tracked files that have been deleted
+```sh
+git ls-files --deleted
+```
+##### git mv
 Move or rename a tracked file
 ```sh
 git mv file
 ```
+##### git push
 Transfer data from local branch {master} to remote {origin}
 ```sh
 git push -u origin master
 ```
+##### git rebase
 Combine branches by replaying the changes made on one branch to another
 ```sh
 git rebase
 ```
+##### git remote
 Manage repositories whose branches you track
 ```sh
 git remote
 ```
-Add remote repo named {name} at {url}
+Add remote repo
 ```sh
-git remote add name url
+git remote add $REPO $URL
 ```
-Display URL of remote {repo}
+Display URL of remote repo
 ```sh
-git remote get-url repo
+git remote get-url $REPO
 ```
-Set {url} for existing {repo}
+Set url for existing repo
 ```sh
-git remote set-url url repo
+git remote set-url $URL $REPO
 ```
+##### git reset
 Undo unstaged changes since last commit
 ```sh
 git reset --hard
@@ -1481,15 +1520,17 @@ Reset master to state before last commit
 ```sh
 git reset --hard HEAD~
 ```
+##### git revert
 Remove (committed) changes in {commit}
 ```sh
 git revert commit
 ```
+##### git rm
 Remove tracked file from repo
 ```sh
 git rm file
 ```
-#### Stash
+##### git stash
 Stash changes to work-tree
 ```bash
 git stash
@@ -1506,7 +1547,7 @@ Apply changes in stash `$STASH`
 ```bash
 git stash apply stash@$STASH
 ```
-#### Rebasing
+##### Rebasing
 Rebase changes committed to `branch` onto <master>
 ```sh
 git checkout $BRANCH
@@ -1533,7 +1574,7 @@ In order to disable this, adjust the setting
 ```bash
 git config core.autocrlf false
 ```
-#### Squashing
+##### Squashing
 Sometimes many commits are made to resolve a single issue. These should be "squashed". To squash the last 4 commits:
 ```bash
 git rebase -i HEAD~4
@@ -1568,7 +1609,7 @@ The files are presented unstaged, and can be added to new commits as needed. Fin
 ```sh
 git rebase --continue
 ```
-### `gsettings`
+#### gsettings
 Change function of Caps Lock key [<sup>ref</sup>][https://superuser.com/questions/1196241/how-to-remap-caps-lock-on-wayland]
 ```sh
 gsettings set org.gnome.desktop.input-sources xkb-options "['caps:ctrl_modifier']"
@@ -1577,20 +1618,19 @@ Change mouse cursor size to `$SIZE`, which can be one of the values 24 (default)
 ```sh
 gsettings set org.gnome.desktop.interface $SIZE
 ```
-### `imagemagick`
-
-[imagemagick identify]:           #identify                   '```&#10;$ imagemagick identify&#10;```&#10;Describe the format and characteristics of one or more image files'
-[imagemagick mogrify]:            #mogrify                    '```&#10;$ imagemagick mogrify&#10;```&#10;Resize, blur, crop, despeckle, dither, draw on, flip, join, resample, etc'
+#### imagemagick
+[imagemagick identify]: #imagemagick-identify                   '```&#10;$ imagemagick identify&#10;```&#10;Describe the format and characteristics of one or more image files'
+[imagemagick mogrify]: #imagemagick-mogrify                    '```&#10;$ imagemagick mogrify&#10;```&#10;Resize, blur, crop, despeckle, dither, draw on, flip, join, resample, etc'
 
 [`identify`][imagemagick identify] 
 [`mogrify`][imagemagick mogrify] 
 
-#### `identify`
+##### imagemagick identify
 Option                            | Effect
 :---                              | :---
 `-format {string}`                | display formatted image characteristics; {string} is formatted string using `%[key]` escape sequences<br/> **%w** current width in pixels <br/> **%h** current height in pixels
 
-#### `mogrify`
+##### imagemagick mogrify
 Option               | Effect
 :---                 | :---
 `-write $FILENAME`   | save to `filename`
@@ -1619,9 +1659,9 @@ View image metadata (`identify` is from the ImageMagick software suite) <sup>[os
 identify image.png # => dimensions, color depth, color profile
 identify -verbose image.png
 ```
-### `krunner`
+#### krunner
 Single-line application launcher similar to the Run command on Windows.
-### `kquitapp`
+#### kquitapp
 Allows you to quit a dbus enabled application. Two options:
 
 Specify service to be stopped
@@ -1632,8 +1672,7 @@ Specify path to dbus interface
 ```sh
 kquitapp --path
 ```
-### `kstart`
-
+#### kstart
 Restarting KDE Plasma 4 <sup>[ref](https://www.lifewire.com/kubuntu-p2-2202573)</sup>
 ```sh
 killall plasma-desktop
@@ -1648,7 +1687,7 @@ kstart plasmashell
 kquitapp5 plasmashell
 kstart plasmashell
 ```
-### `lowriter`
+#### lowriter
 `lowriter` is a command-line utility installed with LibreOffice Writer. <sup>[vitux.com](https://vitux.com/how-to-convert-documents-to-pdf-format-on-the-ubuntu-command-line/ "vitux.com: \"How to convert documents to PDF format on the Ubuntu Command Line\"")</sup>
 
 Convert a single file to PDF
@@ -1659,12 +1698,12 @@ Convert a batch of files using globbing
 ```sh
 lowriter --convert-to pdf *.docx
 ```
-### `mongod`
+#### mongod
 Run MongoDB service in the background on port 80
 ```sh
 mongod --dbpath $HOME/db --port 80 --fork --logpath /var/tmp/mongodb
 ```
-### `tig`
+#### tig
 Provides a curses-based browser that allows you to navigate the commits in the current branch. It is essentially a wrapper around `git log`, and therefore accepts the same arguments that can be passed to it.[[34](sources.md)]
 
 Config file   | Description
@@ -6233,7 +6272,7 @@ xset fp+ /usr/local/fonts
 [/etc/selinux/config]: #etcselinuxconfig '/etc/selinux/config&#10;SELinux configuration file&#10;Nemeth, Evi. _Unix and Linux System Administration Handbook, 5th ed._: 87'
 
 
-###### `/etc`
+## `/etc`
 [`aliases`][/etc/aliases] 
 [`anacrontab`][/etc/anacrontab]
 [`cmd.allow`](commands/README.md#xinetd) 
@@ -6313,7 +6352,7 @@ xset fp+ /usr/local/fonts
 **`udev`** 
 [`hwdb.bin`][/etc/udev/hwdb.bin] 
 
-###### ~
+## /home
 `.bashrc` 
 [`.forward`][~/.forward] 
 [`.mailrc`](#mailrc) 
@@ -6382,28 +6421,29 @@ Run `linuxcommand` at 04:05 every Sunday
 ```sh
 5 4 * * sun /path/to/linuxcommand
 ```
-#### ~
-###### ~/.mailrc
+#### /home/$USER
+###### /home/$USER/.mailrc
 ```sh
 set sendmail="/usr/bin/msmtp"
 set message-sendmail-extra-arguments="-a gmail"
 ```
-#### /etc
-###### /etc/lsb-release
+## /etc
+/etc/lsb-release
 ```ini
 DISTRIB_ID=Ubuntu
 DISTRIB_RELEASE=14.04
 DISTRIB_CODENAME=trusty
 DISTRIB_DESCRIPTION="Ubuntu 14.04.6 LTS"
 ```
-###### /etc/yum.conf
+
+/etc/yum.conf
 Exclude packages from updates permanently
 [38](#sources)
 ```ini
 [main]
 exclude=kernel* php*
 ```
-###### /etc/shadow
+##### /etc/shadow
 Colon-delimited file containing password hashes for every user listed in [/etc/passwd][/etc/passwd]
 ```
 $USERNAME:$PASSWORD:$LASTCHANGED:$MIN:$MAX:$WARN:$INACTIVE:$EXPIRE
@@ -6416,21 +6456,22 @@ $USERNAME:$PASSWORD:$LASTCHANGED:$MIN:$MAX:$WARN:$INACTIVE:$EXPIRE
 - `$WARN` number of days the password is to expire that user is warned that password must be changed
 - `$INACTIVE` number of days after password expires that account is disabled
 - `$EXPIRE` days since 01/01/1970 that account is disabled
-###### /etc/group
+##### /etc/group
 Colon-delimited file describing group membership
 ```
 $GROUP:$PASSWORD:$GID:$USER1:$USER2:$USER3...
 ```
-###### /etc/resolv.conf
+/etc/resolv.conf
 Use DNS queries prior to consulting /etc/hosts
 ```sh
 nameserver dns
 nameserver files
 ```
 ##### /etc/ansible
-###### /etc/ansible/ansible.conf
+/etc/ansible/ansible.conf
 ##### /etc/apt
-###### /etc/apt/sources.list
+/etc/apt/sources.list
+
 Entries are made of three parts, delimited by whitespace: <sup>[kali.training](https://kali.training/topic/introduction-to-apt/ "Introduction to APT")</sup>
 1. Source type: `deb` for binary packages or `deb-src` for source packages
 2. Base URL of the source: beginning with `http://`, `ftp://`, `file://`, or even `cdrom:`
