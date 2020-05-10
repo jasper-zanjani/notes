@@ -762,6 +762,7 @@ Remoting relies on [WinRM][WinRM], which is Microsoft's implementation of WSMAN.
 <code>Domain&nbsp;[`is`][Install-ADDSDomain]</code>
 <code>DomainController&nbsp;[is][Install-ADDSDomainController]&nbsp;[us][Uninstall-ADDSDomainController]</code>
 <code>Forest&nbsp;[g][Get-ADDSForest]&nbsp;[is][Install-ADDSForest]&nbsp;</code>
+
 ##### `dcbqos` module
 [msdocs:Enable-NetQosFlowControl]: https://docs.microsoft.com/en-us/powershell/module/dcbqos/Enable-NetQosFlowControl "Enable-NetQosFlowControl"
 [msdocs:Disable-NetQosFlowControl]: https://docs.microsoft.com/en-us/powershell/module/dcbqos/Disable-NetQosFlowControl "Disable-NetQosFlowControl"
@@ -791,10 +792,22 @@ Remoting relies on [WinRM][WinRM], which is Microsoft's implementation of WSMAN.
 [Set-NetQosTrafficClass]: #set-netqostrafficclass '```&#10;Set-NetQosTrafficClass&#10;```&#10;Sets the traffic class settings.'
 [Switch-NetQosTrafficClass]: #switch-netqostrafficclass '```&#10;Switch-NetQosTrafficClass&#10;```&#10;'
 
-**NetQoS**
-<code>DcbxSetting&nbsp;[g][Get-NetQosDcbxSetting][?][msdocs:Get-NetQosDcbxSetting]&nbsp;[s][Set-NetQosDcbxSetting][?][msdocs:Set-NetQosDcbxSetting]&nbsp;[sw][Switch-NetQosDcbxSetting][?][msdocs:Switch-NetQosDcbxSetting]</code>
-<code>FlowControl&nbsp;[e][Enable-NetQosFlowControl][?][msdocs:Enable-NetQosFlowControl]&nbsp;[d][Disable-NetQosFlowControl][?][msdocs:Disable-NetQosFlowControl]&nbsp;[g][Get-NetQosFlowControl][?][msdocs:Get-NetQosFlowControl]&nbsp;[s][Set-NetQosFlowControl][?][msdocs:Set-NetQosFlowControl]&nbsp;[sw][Switch-NetQosFlowControl][?][msdocs:Switch-NetQosFlowControl]</code>
-<code>TrafficClass&nbsp;[g][Get-NetQosTrafficClass][?][msdocs:Get-NetQosTrafficClass]&nbsp;[n][New-NetQosTrafficClass][?][msdocs:New-NetQosTrafficClass]&nbsp;[r][Remove-NetQosTrafficClass][?][msdocs:Remove-NetQosTrafficClass]&nbsp;[s][Set-NetQosTrafficClass][?][msdocs:Set-NetQosTrafficClass]&nbsp;[sw][Switch-NetQosTrafficClass][?][msdocs:Switch-NetQosTrafficClass]</code>
+- NetQoSDcbxSetting 
+[`Get`][Get-NetQosDcbxSetting]<sup>[?][msdocs:Get-NetQosDcbxSetting]</sup>
+[`Set`][Set-NetQosDcbxSetting]<sup>[?][msdocs:Set-NetQosDcbxSetting]</sup>
+[`Switch`][Switch-NetQosDcbxSetting]<sup>[?][msdocs:Switch-NetQosDcbxSetting]</sup>
+- NetQoSFlowControl
+[`Enable`][Enable-NetQosFlowControl]<sup>[?][msdocs:Enable-NetQosFlowControl]</sup>
+[`Disable`][Disable-NetQosFlowControl]<sup>[?][msdocs:Disable-NetQosFlowControl]</sup>
+[`Get`][Get-NetQosFlowControl]<sup>[?][msdocs:Get-NetQosFlowControl]</sup>
+[`Set`][Set-NetQosFlowControl]<sup>[?][msdocs:Set-NetQosFlowControl]</sup>
+[`Switch`][Switch-NetQosFlowControl]<sup>[?][msdocs:Switch-NetQosFlowControl]</sup>
+- NetQoSTrafficClass
+[`Get`][Get-NetQosTrafficClass]<sup>[?][msdocs:Get-NetQosTrafficClass]</sup>
+[`New`][New-NetQosTrafficClass]<sup>[?][msdocs:New-NetQosTrafficClass]</sup>
+[`Remove`][Remove-NetQosTrafficClass]<sup>[?][msdocs:Remove-NetQosTrafficClass]</sup>
+[`Set`][Set-NetQosTrafficClass]<sup>[?][msdocs:Set-NetQosTrafficClass]</sup>
+[`Switch`][Switch-NetQosTrafficClass]<sup>[?][msdocs:Switch-NetQosTrafficClass]</sup>
 
 ##### `deduplication` module
 [msdocs:Disable-DedupVolume]: https://docs.microsoft.com/en-us/powershell/module/deduplication/Disable-DedupVolume "Disable-DedupVolume"
