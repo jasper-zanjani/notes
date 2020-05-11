@@ -51,6 +51,7 @@
 [winver]: #winver                                             '```&#10;C:\>winver&#10;```&#10;Display the "About Windows" dialog box, including Windows version and build number'
 [wmic]: #wmic                           '```&#10;C:\>wmic&#10;```&#10;WMI command-line (WMIC) utility provides a command-line interface for WMI.'
 [wt.exe]: #wt.exe '```&#10;C:\>wt&#10;```&#10;Windows Terminal'
+[xcopy]: #xcopy '```&#10;C:\>xcopy&#10;```&#10;Copy files and directories recursively'
 
 <!-- Control Panel binaries -->
 [access.cpl]:     #accesscpl           '```&#10;C:\> access.cpl&#10;```&#10;Accessibility Options'
@@ -91,7 +92,11 @@
 - [Powershell](pwsh.md)
 - [Network Location Profile][Network Location Profile]
 
-###### Tasks
+[FancyZones Tutorial](https://www.youtube.com/watch?v=rTtGzZYAXgY) <sup>[Web](https://insider.windows.com/en-us/articles/announcing-the-first-preview-and-code-release-of-powertoys/) [GitHub](https://github.com/microsoft/PowerToys/tree/master/src/modules/fancyzones)</sup>
+
+UWP apps **adaptively** adjust UI elements to fit all Windows 10 devices. The **Fluent Design System** provides guidelines to provide a consistent and beautiful appearance to UWP apps. [^](https://docs.microsoft.com/en-us/windows/uwp/design/basics/design-and-ui-intro "Microsoft Docs: \"Introduction to UWP app design\"") Interesting new applications are not being developed on UWP, which does not bode well for the future of Windows as a consumer desktop computer platform. [^](https://mspoweruser.com/uwp-is-dead-because-windows-apps-are-dead/ "mspoweruser.com: \"UWP is dead because Windows apps are dead\"")
+
+Tasks
 - [Display computer name][Get-ComputerInfo]
 - [Remove Registry keys][Remove-Item]
 - [Clear out `%temp%` folder][Remove-Item]
@@ -143,6 +148,7 @@
 [`winver`][winver]
 [`wmic`][wmic]
 [`wt`][wt.exe]
+[`xcopy`][xcopy]
 
 ###### Active Directory
 [`adprep`][adprep] 
@@ -181,15 +187,15 @@
 [`APPDATA`][APPDATA] 
 [`LOCALAPPDATA`][LOCALAPPDATA] 
 
-###### `adfind`
+#### adfind
 Query the schema version associated with Active Directory <sup>[Desmond][Desmond2009]: 53</sup>
 ```cmd
 adfind -schema -s base objectVersion
 ```
 
-###### `adprep`
+#### adprep
 Prepare Active Directory for Windows Server upgrades. Must be run on the Infrastructure Master role owner with the flag `/domainprep`. <sup>[Desmond][Desmond2009]: 29</sup>
-###### `arp`
+#### arp
 <!-- `arp` options -->
 [arp /&#97;]:                     #arp                           '```&#10;C:\>arp /a&#10;```&#10;Display both the IP and MAC addresses and whether they are dynamic or static entries '
 [arp /&#115;]:                    #arp                           '```&#10;C:\>arp /s&#10;```&#10;Manually add a static entry to the cache'
@@ -197,7 +203,7 @@ Prepare Active Directory for Windows Server upgrades. Must be run on the Infrast
 
 <code>&nbsp;</code> [`a`][arp /&#97;] <code>&nbsp;</code> <code>&nbsp;</code> [`d`][arp /&#100;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`s`][arp /&#115;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 
 
-###### `bcdedit`
+#### bcdedit
 Change Windows bootloader to Linux, while dual booting
 ```cmd
 ::Manjaro
@@ -211,7 +217,7 @@ Enable or disable **Test Signing Mode** [<sup>ref</sup>](https://www.howtogeek.c
 bcdedit /set testsign on
 bcdedit /set testsign off
 ```
-###### `bootrec`
+#### bootrec
 Windows Recovery Environment command that repairs a system partition
 
 Use when boot sector not found
@@ -222,7 +228,7 @@ Use when BCD file has been corrupted
 ```cmd
 bootrec /rebuildbcd
 ```
-###### `cmdkey`
+#### cmdkey
 [cmdkey /add]: #cmdkey '```&#10;C:\>cmdkey /add&#10;```&#10;Add a user name and password to the list'
 [cmdkey /generic]: #cmdkey '```&#10;C:\>cmdkey /generic&#10;```&#10;Add generic credentials to the list'
 [cmdkey /smartcard]: #cmdkey '```&#10;C:\>cmdkey /smartcard&#10;```&#10;Retrieves the credential from a smart card'
@@ -244,7 +250,7 @@ Add a user name and password for user `Mikedan` to access computer `Server01` wi
 cmdkey /add:server01 /user:mikedan /pass:Kleo
 ```
 
-###### `diskpart`
+#### diskpart
 <!-- `diskpart` commands -->
 [diskpart active]:                #diskpart                      '```&#10;C:\> diskpart&#10;DISKPART> ACTIVE&#10;```&#10;On MBR disks, marks the partition with current focus as the active system partition, meaning it is the partition containing the operating system startup files&#10;Stanek, William R. _Microsoft Windows Command-Line_.: 141'
 [diskpart add]:                   #diskpart                      '```&#10;C:\> diskpart&#10;DISKPART> ADD DISK=n&#10;```&#10;Create a mirrored volume on the selected dynamic disk&#10;Stanek, William R. _Microsoft Windows Command-Line_.: 141'
@@ -296,7 +302,7 @@ cmdkey /add:server01 /user:mikedan /pass:Kleo
 [`RETAIN`][diskpart RETAIN] 
 [`SELECT`][diskpart SELECT] 
 
-###### `dism.exe`
+#### dism.exe
 [dism.exe /Add-Driver]: #dism.exe '```&#10;C:\>dism.exe /Add-Driver&#10;```&#10;&#10;Equivalent to `Add-WindowsDriver`&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 77'
 [dism.exe /Add-Package]: #dism.exe '```&#10;C:\>dism.exe /Add-Package&#10;```&#10;&#10;Equivalent to `Add-WindowsPackage`&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 77'
 [dism.exe /Add-ProvisionedAppxPackage]: #dism.exe '```&#10;C:\>dism.exe /Add-ProvisionedAppxPackage&#10;```&#10;&#10;Equivalent to `Add-AppxProvisionedPackage`&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 77'
@@ -374,7 +380,7 @@ Determine exact name of Windows features that can be enabled and disabled <sup>[
 ```cmd
 dism /image:c:\mount /get-features
 ```
-###### `djoin.exe`
+#### djoin.exe
 `domain`
 `loadfile`
 `localos`
@@ -393,10 +399,10 @@ Load the `odjblob` file created offline on the Nano Server.
 djoin /requestodj /loadfile c:\odjblob /windowspath c:\windows /localos
 ```
 
-###### `dsamain`
+#### dsamain
 
 
-###### `dsquery`
+#### dsquery
 Find the Active Directory Schema version from the command-line 
 <sup>
 [nolabnoparty.com](https://nolabnoparty.com/en/finding-active-directory-schema-version/ "Finding the Active Directory schema version") 
@@ -406,22 +412,22 @@ Find the Active Directory Schema version from the command-line
 dsquery * cn=schema,cn=configuration,dc=domain,dc=com -scope base -attr objectVersion"
 ```
 
-###### `ipconfig`
+#### ipconfig
 `all`
 `flushdns`
 `renew`
 
-###### `logoff`
+#### logoff
 Equivalent to `shutdown -L`
 
-###### `msiexec`
+#### msiexec
 <!-- `msiexec` commands -->
 [msiexec /&#105;]:              #msiexec                       '```&#10;C:\>msiexec /i&#10;```&#10;Install or configure a product'
 [msiexec /&#113;]:              #msiexec                       '```&#10;C:\>msiexec /q&#10;C:\>msiexec /qn&#10;```&#10;Set user interface level to "no UI"'
 
 <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`i`][msiexec /&#105;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`q`][msiexec /&#113;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [<sup>ref</sup>][https://docs.microsoft.com/en-us/windows/win32/msi/command-line-options]
 
-###### `nbtstat`
+#### nbtstat
 <!-- `nbtstat` commands -->
 [nbtstat /&#97;]:               #nbtstat                       '```&#10;C:\>nbtstat /a&#10;```&#10;Display NetBIOS name table of `$HOST` (NetBIOS name)'
 [nbtstat /&#65;]:               #nbtstat                       '```&#10;C:\>nbtstat /A&#10;```&#10;Display NetBIOS name table of `$HOST` (IP address)'
@@ -433,13 +439,13 @@ Equivalent to `shutdown -L`
 
 <code>&nbsp;</code>   [`a`][nbtstat /&#97;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`n`][nbtstat /&#110;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`r`][nbtstat /&#114;] [`s`][nbtstat /&#115;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code>  <br><code>&nbsp;</code>&nbsp;[`A`][nbtstat /&#65;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`R`][nbtstat /&#82;] [`S`][nbtstat /&#83;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 
 
-###### `net`
+#### net
 Map a network location to a drive letter <sup>[Practice Lab][pl:70-740]</sup>
 ```cmd
 net use x: \\192.168.0.35\c$
 ```
 
-###### `netdom`
+#### netdom
 Alternative to [`Add-Computer`][Add-Computer] PowerShell cmdlet [<sup>Zacker: 21</sup>][Zacker]
 
 Rename a computer
@@ -450,7 +456,7 @@ Join a computer to a domain
 ```
 netdom join %computername% /domain: domainname /userd: username /password:*
 ```
-###### `netsh`
+#### netsh
 [netsh aaaa]:                     #netsh                         '```&#10;C:\>netsh aaaa&#10;C:\>netsh&#10;netsh>aaaa&#10;```&#10;Authentication, authorization, accounting, and auditing; context used to view and work with the AAAA database used by the Internet Authentication Service and the Routing and Remote Access Service&#10;Stanek, William R. _Microsoft Windows Command-Line_.: 297'
 [netsh bridge]:                   #netsh                         '```&#10;C:\>netsh bridge&#10;C:\>netsh&#10;netsh>bridge&#10;```&#10;L3 compatibilty mode for network bridges&#10;Stanek, William R. _Microsoft Windows Command-Line_.: 298'
 [netsh dhcp]:                     #netsh                         '```&#10;C:\>netsh dhcp&#10;C:\>netsh&#10;netsh>dhcp&#10;```&#10;DHCP servers&#10;Stanek, William R. _Microsoft Windows Command-Line_.: 297'
@@ -505,16 +511,16 @@ Check/reset [WinHTTP][WinHTTP] proxy <sup>[Practice Lab][pl:70-740]</sup>
 netsh winhttp show proxy
 netsh winhttp reset proxy
 ```
-###### `ntdsutil`
+#### ntdsutil
 Used to transfer [FSMO](# "\"Flexible Single Master Operator\", server that is master for a particular role or function") roles between domain controllers. [<sup>Desmond: 30</sup>][Desmond2009]
 
-###### `regsvr32`
+#### regsvr32
 Register a DLL dependency in order to enable the Active Directory Schema MMC snap-in on a DC <sup>[Desmond][Desmond2009]: 54</sup>
 ```cmd
 regsvr32 schmmgmt.dll
 ```
 
-###### `route`
+#### route
 <!-- `route` options -->
 [route /&#112;]:                #route                         '```&#10;C:\>route /p&#10;```&#10;Make a route persistent&#10;Lammle, Todd. _CompTIA Network+ Study Guide: Exam N10-005_. 2012.: 539'
 <!-- `route` commands -->
@@ -529,7 +535,7 @@ Basic usage
 ```sh
 route add 192.168.2.1 mask (255.255.255.0) 192.168.2.4
 ```
-###### `runas`
+#### runas
 [runas /profile]: #runas '```&#10;C:\>runas /profile&#10;```&#10;Load user profile (default).'
 [runas /no profile]: #runas '```&#10;C:\>runas /no profile&#10;```&#10;Specify that user profile is not to be loaded.'
 [runas /env]: #runas '```&#10;C:\>runas /env&#10;```&#10;Specify that the current network environment be used instead of the local environment of the user.'
@@ -735,13 +741,13 @@ route add 192.168.2.1 mask (255.255.255.0) 192.168.2.4
 [`workplace`][ms-settings:workplace]
 [`yourinfo`][ms-settings:yourinfo]
 
-###### `sfc`
+#### sfc
 <!-- `sfc` commands -->
 [sfc /scannow]: #sfc '```&#10;C:\>sfc /scannow&#10;```&#10;Scan all protected system files, and replace corrupted files with a cached copy that is located in a compressed folder at %WinDir%\System32\dllcache'
 
 [`scannow`][sfc /scannow]
 
-###### `shutdown`
+#### shutdown
 Immediate restart <sup>[Practice Lab][pl:Sec+]</sup>
 ```cmd
 shutdown /r /t 0
@@ -750,7 +756,7 @@ Log off <sup>[windows-commandline.com](https://www.windows-commandline.com/windo
 ```cmd
 shutdown /L
 ```
-###### `slmgr.vbs`
+#### slmgr.vbs
 [slmgr /dli]: #slmgr.vbs '```&#10;C:\> slmgr /dli&#10;```&#10;Display very basic license and activation information about the current system in a dialog box'
 [slmgr /dlv]: #slmgr.vbs '```&#10;C:\> slmgr /dlv&#10;```&#10;Display more detailed license information, including activation ID, installation ID, and other details'
 [slmgr /xpr]: #slmgr.vbs '```&#10;C:\> slmgr /xpr&#10;```&#10;Display activation status or expiration date of current license'
@@ -767,7 +773,7 @@ shutdown /L
 [`upk`][slmgr /upk]
 [`xpr`][slmgr /xpr]
 
-###### `sysdm.cpl`
+#### sysdm.cpl
 [sysdm.cpl ,3]: #sysdm.cpl '```&#10;C:\>sysdm.cpl ,3&#10;```&#10;Open System Properties directly to Advanced tab'
 [sysdm.cpl ,2]: #sysdm.cpl '```&#10;C:\>sysdm.cpl ,2&#10;```&#10;Open System Properties directly to Hardware tab'
 [sysdm.cpl ,4]: #sysdm.cpl '```&#10;C:\>sysdm.cpl ,4&#10;```&#10;Open System Properties directly to System Protection tab'
@@ -778,14 +784,14 @@ shutdown /L
 [`4`][sysdm.cpl ,4]
 [`5`][sysdm.cpl ,5]
 
-###### `tracert`
+#### tracert
 On Windows, this command is aliased to `traceroute` which is the Linux command. <sup>[Lammle][Lammle]: 112</sup>
 
 Option  | Effect
 :---    | :---
 `-6`    | IPv6, aliased to `traceroute6`
 
-###### `wbadmin`
+#### wbadmin
 `-hyperv`
 
 [Zacker][Zacker]: 325-326
@@ -799,7 +805,7 @@ wbadmin start recovery -itemtype:app items:cluster -version:01/01/2008-00:00
 wbadmin start systemstaterecovery -version:11/27/2016-11:07
 wbadmin get versions
 ```
-###### `Winrm.exe`
+#### Winrm.exe
 `enumerate`
 `get`
 
@@ -815,9 +821,9 @@ Add an address to Trusted Hosts list <sup>[Zacker][Zacker]: 56</sup>
 ```cmd
 winrm set winrm/config/client @{TrustedHosts="192.168.10.41"}
 ```
-###### `winver`
+#### winver
 
-###### `wmic`
+#### wmic
 `bios`
 `logicaldisk`
 `memorychip`
@@ -843,8 +849,7 @@ List all objects of type `Win32_LogicalDisk` using that class's alias `logicaldi
 ```cmd
 wmic logicaldisk list brief
 ```
-
-###### `wt.exe`
+#### wt.exe
 [https://www.bleepingcomputer.com/news/microsoft/windows-terminal-09-released-with-command-line-arguments-and-more/]: https://www.bleepingcomputer.com/news/microsoft/windows-terminal-09-released-with-command-line-arguments-and-more/ "Windows Terminal 0.9 Released with Command Line Arguments and More" 
 
 [wt -&#112;]: #wtexe '```&#10;C:\>wt -&#112;&#10;C:\>wt -p "Ubuntu-18.04"&#10;```&#10;Specify the Windows Terminal profile that should be opened'
@@ -864,11 +869,8 @@ Open the default profile and an Ubuntu WSL profile, but with the first tab focus
 ```cmd
 wt ; new-tab -p "Ubuntu-18.04"; focus-tab -t0
 ```
-
-
-### Concepts
-#### FancyZones
-[Tutorial](https://www.youtube.com/watch?v=rTtGzZYAXgY) [Web](https://insider.windows.com/en-us/articles/announcing-the-first-preview-and-code-release-of-powertoys/) [GitHub](https://github.com/microsoft/PowerToys/tree/master/src/modules/fancyzones)
-
-#### UWP
-UWP apps **adaptively** adjust UI elements to fit all Windows 10 devices. The **Fluent Design System** provides guidelines to provide a consistent and beautiful appearance to UWP apps. [^](https://docs.microsoft.com/en-us/windows/uwp/design/basics/design-and-ui-intro "Microsoft Docs: \"Introduction to UWP app design\"") Interesting new applications are not being developed on UWP, which does not bode well for the future of Windows as a consumer desktop computer platform. [^](https://mspoweruser.com/uwp-is-dead-because-windows-apps-are-dead/ "mspoweruser.com: \"UWP is dead because Windows apps are dead\"")
+#### xcopy
+Copy from one directory to another <sup>[Practice Lab][pl:70-740]</sup>
+```cmd
+xcopy /s c:\inetpub\wwwroot c:\nlbport
+```
