@@ -17,25 +17,31 @@
 [pl:70-740]: # 'MeasureUp Practice Lab: Installation, Storage and Compute with Windows Server 2016 (70-740)'
 
 # Contents
-[`dcbqos`](#dcbqos-module)
-[`deduplication`](#deduplication-module)
-[`defender`](#defender-module)
-[`dism`](#dism-module)
+[`addsadministartion`](#addsadministration)
+[`dcbqos`](#dcbqos)
+[`deduplication`](#deduplication)
+[`defender`](#defender)
+[`dhcpserver`](#dhcpserver)
+[`dism`](#dism)
 [`dnsclient`](#dnsclient)
-[`failoverclusters`](#failoverclusters-module)
-[`hyper-v`](#hyper-v-module)
-[`netconnection`](#netconnection-module)
-[`netqos`](#netqos-module)
-[`nettcpip`](#nettcpip-module)
-[`networkbalancingclusters`](#networkloadbalancingclusters-module)
-[`packagemanagement`](#packagemanagement-module)
-[`psdesiredconfiguration`](#psdesiredstateconfiguration-module)
-[`servermanager`](#servermanager-module)
-[`servermigration`](#servermigration-module)
+[`failoverclusters`](#failoverclusters)
+[`iscsi`](#iscsi)
+[`iscsitarget`](#iscsitarget)
+[`hyper-v`](#hyper-v)
+[`netadapter`](#netadapter)
+[`netconnection`](#netconnection)
+[`netqos`](#netqos)
+[`netsecurity`](#netsecurity)
+[`nettcpip`](#nettcpip)
+[`networkbalancingclusters`](#networkloadbalancingclusters)
+[`packagemanagement`](#packagemanagement)
+[`psdesiredconfiguration`](#psdesiredstateconfiguration)
+[`servermanager`](#servermanager)
+[`servermigration`](#servermigration)
 [`storage`](#storage)
-[`storagereplica`](#storagereplica-module)
+[`storagereplica`](#storagereplica)
 [`virtualmachinemanager`](#virtualmachinemanager)
-[`windowsserverbackup`](#windowsserverbackup-module)
+[`windowsserverbackup`](#windowsserverbackup)
 
 [endpoint]: # 'endpoint&#10;a particular configuration item in WinRM, representing a specific application for which WinRM can receive traffic'
 [explicit remoting]: # 'explicit remoting&#10;opening a temporary or persistent Powershell session to a remote system&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 176'
@@ -655,55 +661,80 @@ Tasks
 <code>ShareAccess&nbsp;[bl][Block-SmbShareAccess]&nbsp;[g][Get-SmbShareAccess]&nbsp;[gr][Grant-SmbShareAccess]&nbsp;[rk][Revoke-SmbShareAccess]&nbsp;[ul][Unblock-SmbShareAccess]</code>
 
 ### Network
-[Add-DhcpServerInDC]: #add-dhcpserverindc '```&#10;PS C:\> Add-DhcpServerInDC&#10;```&#10;'
-[Add-DhcpServerv4Scope]: #add-dhcpserverv4scope '```&#10;PS C:\> Add-DhcpServerv4Scope&#10;```&#10;Add an IPv4 scope on the DHCP server service.'
-[Enable-NetAdapterRdma]: #enable-netadapterrdma '```&#10;PS C:\> Enable-NetAdapterRdma&#10;```&#10;Enable RDMA on adapters&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 254'
-[Enable-NetAdapterVmq]: #enable-netadaptervmq '```&#10;PS C:\> Enable-NetAdapterVmq&#10;```&#10;Enable VMQ on a specific adapter&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 252'
-[Enable-NetFirewallRule]: #enable-netfirewallrule '```&#10;PS C:\> Enable-NetFirewallRule&#10;```&#10;Enable a previously disabled Windows Firewall rule'
-[Get-NetAdapter]: #get-netadapter '```&#10;PS C:\> Get-NetAdapter&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 19'
-[Get-NetAdapter]: #get-netadapter '```&#10;PS C:\> Get-NetAdapter&#10;```&#10;Display available network interfaces'
-[Get-NetAdapterRdma]: #get-netadapterrdma '```&#10;PS C:\> Get-NetAdapterRdma&#10;```&#10;Display the current RDMA status of network adapters&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 254'
-[Get-NetAdapterVmq]: #get-netadaptervmq '```&#10;PS C:\> Get-NetAdapterVmq&#10;```&#10;Discover whether physical network adapters support VMQ&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 252'
-[Get-NetAdapterVmqQueue]: #get-netadaptervmqqueue '```&#10;PS C:\> Get-NetAdapterVmqQueue&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 252'
-[Get-NetAdapterVmqQueue]: #get-netadaptervmqqueue '```&#10;PS C:\> Get-NetAdapterVmqQueue&#10;```&#10;See which VMQ queries are assigned to which processors&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 252'
-[Get-NetFirewallRule]: #get-netfirewallrule '```&#10;PS C:\> Get-NetFirewallRule&#10;```&#10;'
-[Get-NetIpConfiguration]: #get-netipconfiguration '```&#10;PS C:\> Get-NetIpConfiguration&#10;PS C:\> gip&#10;```&#10;Produce output similar to `ipconfig`'
-[Invoke-WebRequest]: #invoke-webrequest '```&#10;PS C:\> Invoke-WebRequest&#10;PS C:\> iwr&#10;```&#10;'
-[New-NetFirewallRule]: #new-netfirewallrule '```&#10;PS C:\> New-NetFirewallRule&#10;```&#10;'
-[New-NetIpAddress]: #new-netipaddress '```&#10;PS C:\> New-NetIpAddress&#10;```&#10;Manually configure network interface, if a DHCP server is unavailable&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 19'
-[Resolve-DNSName]: #resolve-dnsname '```&#10;PS C:\> Resolve-DNSName&#10;```&#10;...&#10;MeasureUp Practice Lab: Security+'
-[Set-DhcpServerv4OptionValue]: #set-dhcpserverv4optionvalue '```&#10;PS C:\> Set-DhcpServerv4OptionValue&#10;```&#10;'
-[Set-DnsClientServerAddress]: #set-dnsclientserveraddress '```&#10;PS C:\> Set-DnsClientServerAddress&#10;```&#10;Set DNS server addresses associated with the TCP/IP properties on an interface&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 20'
-[Set-NetAdapterVmq]: #set-netadaptervmq '```&#10;PS C:\> Set-NetAdapterVmq&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 253'
-[Set-NetAdapterVmq]: #set-netadaptervmq '```&#10;PS C:\> Set-NetAdapterVmq&#10;```&#10;Modify default VMQ settings&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 253'
-[Set-NetConnectionProfile]: #set-netconnectionprofile '```&#10;Set-NetConnectionProfile&#10;```&#10;Changes the network category of a connection profile. '
-[Set-NetFirewallRule]: #set-netfirewallrule '```&#10;PS C:\> Set-NetFirewallRule&#10;```&#10;'
+#### dhcpserver
+[Add-DhcpServerInDC]: #add-dhcpserverindc '```&#10;[PS] Add-DhcpServerInDC&#10;```&#10;Adds the computer that runs the DHCP server service to the list of authorized DHCP server services in Active Directory.'
+[Add-DhcpServerv4Scope]: #add-dhcpserverv4scope '```&#10;[PS] Add-DhcpServerv4Scope&#10;```&#10;Adds an IPv4 scope on the DHCP server service.'
+[Set-DhcpServerv4OptionValue]: #set-dhcpserverv4optionvalue '```&#10;[PS] Set-DhcpServerv4OptionValue&#10;```&#10;Sets an IPv4 option value at the server, scope, or reservation level.'
 
+[msdocs:Add-DhcpServerInDC]: https://docs.microsoft.com/en-us/powershell/module/DhcpServer/Add-DhcpServerInDC "Add-DhcpServerInDC documentation"
+[msdocs:Add-DhcpServerv4Scope]: https://docs.microsoft.com/en-us/powershell/module/DhcpServer/Add-DhcpServerv4Scope "Add-DhcpServerv4Scope documentation"
+[msdocs:Set-DhcpServerv4OptionValue]: https://docs.microsoft.com/en-us/powershell/module/DhcpServer/Set-DhcpServerv4OptionValue "Set-DhcpServerv4OptionValue documentation"
 
-
-<code>NetConnectionProfile&nbsp;[g][Get-NetConnectionProfile]&nbsp;[s][Set-NetConnectionProfile]</code>
-<code>NetFirewallRule&nbsp;[e][Enable-NetFirewallRule]&nbsp;[g][Get-NetFirewallRule]&nbsp;[n][New-NetFirewallRule]&nbsp;[s][Set-NetFirewallRule]</code>
-<code>WebRequest&nbsp;[i][Invoke-WebRequest]</code>
-**DNS**
-<code>Name&nbsp;[rv][Resolve-DNSName]</code> 
-**DhcpServer**
-<code>InDC [a][Add-DhcpServerInDC]</code> 
-<code>V4Scope [a][Add-DhcpServerv4Scope]</code> 
-<code>v4OptionValue [s][Set-DhcpServerv4OptionValue]</code> 
-**NetAdapter**
-<code>[g][Get-NetAdapter]</code>
-<code>Rdma&nbsp;[g][Get-NetAdapterRdma]&nbsp;[e][Enable-NetAdapterRdma]</code>
-<code>Vmq&nbsp;[e][Enable-NetAdapterVmq]&nbsp;[g][Get-NetAdapterVmq]&nbsp;[s][Set-NetAdapterVmq]</code>
-<code>VmqQueue&nbsp;[g][Get-NetAdapterVmqQueue]</code>
-**NetIp**
-<code>Address&nbsp;[g][Get-NetIPAddress][?][msdocs:Get-NetIPAddress]&nbsp;[n][New-NetIPAddress][?][msdocs:New-NetIPAddress]&nbsp;[r][Remove-NetIPAddress][?][msdocs:Remove-NetIPAddress]&nbsp;[s][Set-NetIPAddress][?][msdocs:Set-NetIPAddress]</code>
-<code>Configuration&nbsp;[g][Get-NetIpConfiguration]</code>
+- DHCPServerInDC 
+[`Add`][Add-DhcpServerInDC]<sup>[?][msdocs:Add-DhcpServerInDC]</sup>
+- DHCPServerv4Scope 
+[`Add`][Add-DhcpServerv4Scope]<sup>[?][msdocs:Add-DhcpServerv4Scope]</sup>
+- DHCPServerv4OptionValue 
+[`Set`][Set-DhcpServerv4OptionValue]<sup>[?][msdocs:Set-DhcpServerv4OptionValue]</sup>
 
 #### dnsclient
-[Set-DnsClientServerAddress]: #set-dnsclientserveraddress '```&#10;Set-DnsClientServerAddress&#10;```&#10;Sets DNS server addresses associated with the TCP/IP properties on an interface.'
-[msdocs:Set-DnsClientServerAddress]: https://docs.microsoft.com/en-us/powershell/module/dnsclient/Set-DnsClientServerAddress "Set-DnsClientServerAddress"
+[Get-DnsClientServerAddress]: #get-dnsclientserveraddress '```&#10;[PS] Get-DnsClientServerAddress&#10;```&#10;Gets DNS server IP addresses from the TCP/IP properties on an interface.'
+[Set-DnsClientServerAddress]: #set-dnsclientserveraddress '```&#10;[PS] Set-DnsClientServerAddress&#10;```&#10;Set DNS server addresses associated with the TCP/IP properties on an interface&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 20'
+[Resolve-DnsName]: #resolve-dnsname '```&#10;[PS] Resolve-DnsName&#10;```&#10;Performs a DNS name query resolution for the specified name.'
 
+[msdocs:Get-DnsClientServerAddress]: https://docs.microsoft.com/en-us/powershell/module/dnsclient/Get-DnsClientServerAddress "Get-DnsClientServerAddress"
+[msdocs:Set-DnsClientServerAddress]: https://docs.microsoft.com/en-us/powershell/module/dnsclient/Set-DnsClientServerAddress "Set-DnsClientServerAddress"
+[msdocs:Resolve-DnsName]: https://docs.microsoft.com/en-us/powershell/module/dnsclient/Resolve-DnsName "Resolve-DnsName"
+
+- DnsClientServerAddress
+[`Get`][Get-DnsClientServerAddress]<sup>[?][msdocs:Get-DnsClientServerAddress]</sup>
 [`Set`][Set-DnsClientServerAddress]<sup>[?][msdocs:Set-DnsClientServerAddress]</sup>
+- DnsName
+[`Resolve`][Resolve-DnsName]<sup>[?][msdocs:Resolve-DnsName]</sup>
+
+#### netadapter
+[Disable-NetAdapter]: #disable-netadapter '```&#10;[PS] Disable-NetAdapter&#10;```&#10;Disables a network adapter.'
+[Enable-NetAdapter]: #enable-netadapter '```&#10;[PS] Enable-NetAdapter&#10;```&#10;Enables a network adapter.'
+[Get-NetAdapter]: #get-netadapter '```&#10;[PS] Get-NetAdapter&#10;```&#10;Gets the basic network adapter properties.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 19'
+[Enable-NetAdapterRdma]: #enable-netadapterrdma '```&#10;[PS] Enable-NetAdapterRdma&#10;```&#10;Enables RDMA on a network adapter.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 254'
+[Get-NetAdapterRdma]: #get-netadapterrdma '```&#10;[PS] Get-NetAdapterRdma&#10;```&#10;Gets the RDMA properties for a network adapter.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 254'
+[Enable-NetAdapterVmq]: #enable-netadaptervmq '```&#10;[PS] Enable-NetAdapterVmq&#10;```&#10;Enables VMQ on a network adapter.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 252'
+[Get-NetAdapterVmq]: #get-netadaptervmq '```&#10;[PS] Get-NetAdapterVmq&#10;```&#10;Gets the VMQ properties of a network adapter.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 252'
+[Set-NetAdapterVmq]: #set-netadaptervmq '```&#10;[PS] Set-NetAdapterVmq&#10;```&#10;Sets the VMQ properties of a network adapter.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 253'
+[Get-NetAdapterVmqQueue]: #get-netadaptervmqqueue '```&#10;[PS] Get-NetAdapterVmqQueue&#10;```&#10;Gets the VMQs allocated on a network adapter.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 252'
+
+[msdocs:Disable-NetAdapter]: https://docs.microsoft.com/en-us/powershell/module/netadapter/Disable-NetAdapter "Disable-NetAdapter documentation"
+[msdocs:Enable-NetAdapter]: https://docs.microsoft.com/en-us/powershell/module/netadapter/Enable-NetAdapter "Enable-NetAdapter documentation"
+[msdocs:Enable-NetAdapterRdma]: https://docs.microsoft.com/en-us/powershell/module/netadapter/Enable-NetAdapterRdma "Enable-NetAdapterRdma documentation"
+[msdocs:Get-NetAdapterRdma]: https://docs.microsoft.com/en-us/powershell/module/netadapter/Get-NetAdapterRdma "Get-NetAdapterRdma documentation"
+[msdocs:Get-NetAdapter]: https://docs.microsoft.com/en-us/powershell/module/netadapter/Get-NetAdapter "Get-NetAdapter documentation"
+[msdocs:Enable-NetAdapterVmq]: https://docs.microsoft.com/en-us/powershell/module/netadapter/Enable-NetAdapterVmq "Enable-NetAdapterVmq documentation"
+[msdocs:Get-NetAdapterVmq]: https://docs.microsoft.com/en-us/powershell/module/netadapter/Get-NetAdapterVmq "Get-NetAdapterVmq documentation"
+[msdocs:Set-NetAdapterVmq]: https://docs.microsoft.com/en-us/powershell/module/netadapter/Set-NetAdapterVmq "Set-NetAdapterVmq documentation"
+[msdocs:Get-NetAdapterVmqQueue]: https://docs.microsoft.com/en-us/powershell/module/netadapter/Get-NetAdapterVmqQueue "Get-NetAdapterVmqQueue documentation"
+
+- NetAdapter 
+[`Disable`][Disable-NetAdapter]<sup>[?][msdocs:Disable-NetAdapter]</sup> 
+[`Enable`][Enable-NetAdapter]<sup>[?][msdocs:Enable-NetAdapter]</sup>
+[`Get`][Get-NetAdapter]<sup>[?][msdocs:Get-NetAdapter]</sup>
+- NetAdapterRdma 
+[`Enable`][Enable-NetAdapterRdma]<sup>[?][msdocs:Enable-NetAdapterRdma]</sup> 
+[`Get`][Get-NetAdapterRdma]<sup>[?][msdocs:Get-NetAdapterRdma]</sup>
+- NetAdapterVmq
+[`Enable`][Enable-NetAdapterVmq]<sup>[?][msdocs:Enable-NetAdapterVmq]</sup>
+[`Get`][Get-NetAdapterVmq]<sup>[?][msdocs:Get-NetAdapterVmq]</sup>
+[`Set`][Set-NetAdapterVmq]<sup>[?][msdocs:Set-NetAdapterVmq]</sup>
+- NetAdapterVmqQueue
+[`Get`][Get-NetAdapterVmqQueue]<sup>[?][msdocs:Get-NetAdapterVmqQueue]</sup>
+
+#### netconnection
+[msdocs:Get-NetConnectionProfile]: https://docs.microsoft.com/en-us/powershell/module/netconnection/Get-NetConnectionProfile "Get-NetConnectionProfile documentation"
+[msdocs:Set-NetConnectionProfile]: https://docs.microsoft.com/en-us/powershell/module/netconnection/Set-NetConnectionProfile "Set-NetConnectionProfile documentation"
+
+[Get-NetConnectionProfile]: #get-netconnectionprofile '```&#10;[PS] Get-NetConnectionProfile&#10;```&#10;Gets a connection profile.'
+[Set-NetConnectionProfile]: #set-netconnectionprofile '```&#10;[PS] Set-NetConnectionProfile&#10;```&#10;Changes the network category of a connection profile.'
+
+- NetConnectionProfile [`Get`][Get-NetConnectionProfile]<sup>[?][msdocs:Get-NetConnectionProfile]</sup> [`Set`][Set-NetConnectionProfile]<sup>[?][msdocs:Set-NetConnectionProfile]</sup>
 
 #### netconnection
 [Get-NetConnectionProfile]: #get-netconnectionprofile '```&#10;Get-NetConnectionProfile&#10;```&#10;Gets a connection profile.'
@@ -712,78 +743,54 @@ Tasks
 [msdocs:Get-NetConnectionProfile]: https://docs.microsoft.com/en-us/powershell/module/netconnection/Get-NetConnectionProfile "Get-NetConnectionProfile"
 [msdocs:Set-NetConnectionProfile]: https://docs.microsoft.com/en-us/powershell/module/netconnection/Set-NetConnectionProfile "Set-NetConnectionProfile"
 
-<code>NetConnectionProfile&nbsp;[g][Get-NetConnectionProfile][?][msdocs:Get-NetConnectionProfile]&nbsp;[s][Set-NetConnectionProfile][?][msdocs:Set-NetConnectionProfile]</code>
+- NetConnectionProfile [`Get`][Get-NetConnectionProfile]<sup>[?][msdocs:Get-NetConnectionProfile]</sup> [`Set`][Set-NetConnectionProfile]<sup>[?][msdocs:Set-NetConnectionProfile]</sup>
+
+#### netsecurity
+[Copy-NetFirewallRule]: #copy-netfirewallrule '```&#10;[PS] Copy-NetFirewallRule&#10;```&#10;Copies an entire firewall rule, and associated filters, to the same or to a different policy store.'
+[Disable-NetFirewallRule]: #disable-netfirewallrule '```&#10;[PS] Disable-NetFirewallRule&#10;```&#10;Disables a firewall rule.'
+[Enable-NetFirewallRule]: #enable-netfirewallrule '```&#10;[PS] Enable-NetFirewallRule&#10;```&#10;Enables a previously disabled firewall rule.'
+[Get-NetFirewallRule]: #get-netfirewallrule '```&#10;[PS] Get-NetFirewallRule&#10;```&#10;Retrieves firewall rules from the target computer.'
+[New-NetFirewallRule]: #new-netfirewallrule '```&#10;[PS] New-NetFirewallRule&#10;```&#10;Creates a new inbound or outbound firewall rule and adds the rule to the target computer.'
+[Remove-NetFirewallRule]: #remove-netfirewallrule '```&#10;[PS] Remove-NetFirewallRule&#10;```&#10;Deletes one or more firewall rules that match the specified criteria.'
+[Rename-NetFirewallRule]: #rename-netfirewallrule '```&#10;[PS] Rename-NetFirewallRule&#10;```&#10;Renames a single IPsec rule.'
+[Set-NetFirewallRule]: #set-netfirewallrule '```&#10;[PS] Set-NetFirewallRule&#10;```&#10;Modifies existing firewall rules.'
+[Show-NetFirewallRule]: #show-netfirewallrule '```&#10;[PS] Show-NetFirewallRule&#10;```&#10;Displays all of the existing IPsec rules and associated objects in a fully expanded view.'
+
+[msdocs:Copy-NetFirewallRule]: https://docs.microsoft.com/en-us/powershell/module/NetSecurity/Copy-NetFirewallRule "Copy-NetFirewallRule documentation"
+[msdocs:Disable-NetFirewallRule]: https://docs.microsoft.com/en-us/powershell/module/NetSecurity/Disable-NetFirewallRule "Disable-NetFirewallRule documentation"
+[msdocs:Enable-NetFirewallRule]: https://docs.microsoft.com/en-us/powershell/module/NetSecurity/Enable-NetFirewallRule "Enable-NetFirewallRule documentation"
+[msdocs:Get-NetFirewallRule]: https://docs.microsoft.com/en-us/powershell/module/NetSecurity/Get-NetFirewallRule "Get-NetFirewallRule documentation"
+[msdocs:New-NetFirewallRule]: https://docs.microsoft.com/en-us/powershell/module/NetSecurity/New-NetFirewallRule "New-NetFirewallRule documentation"
+[msdocs:Remove-NetFirewallRule]: https://docs.microsoft.com/en-us/powershell/module/NetSecurity/Remove-NetFirewallRule "Remove-NetFirewallRule documentation"
+[msdocs:Rename-NetFirewallRule]: https://docs.microsoft.com/en-us/powershell/module/NetSecurity/Rename-NetFirewallRule "Rename-NetFirewallRule documentation"
+[msdocs:Set-NetFirewallRule]: https://docs.microsoft.com/en-us/powershell/module/NetSecurity/Set-NetFirewallRule "Set-NetFirewallRule documentation"
+[msdocs:Show-NetFirewallRule]: https://docs.microsoft.com/en-us/powershell/module/NetSecurity/Show-NetFirewallRule "Show-NetFirewallRule documentation"
+
+- NetFirewallRule 
+[`Copy`][Copy-NetFirewallRule]<sup>[?][msdocs:Copy-NetFirewallRule]</sup>
+[`Disable`][Disable-NetFirewallRule]<sup>[?][msdocs:Disable-NetFirewallRule]</sup>
+[`Enable`][Enable-NetFirewallRule]<sup>[?][msdocs:Enable-NetFirewallRule]</sup>
+[`Get`][Get-NetFirewallRule]<sup>[?][msdocs:Get-NetFirewallRule]</sup>
+[`New`][New-NetFirewallRule]<sup>[?][msdocs:New-NetFirewallRule]</sup>
+[`Remove`][Remove-NetFirewallRule]<sup>[?][msdocs:Remove-NetFirewallRule]</sup>
+[`Rename`][Rename-NetFirewallRule]<sup>[?][msdocs:Rename-NetFirewallRule]</sup>
+[`Set`][Set-NetFirewallRule]<sup>[?][msdocs:Set-NetFirewallRule]</sup>
+[`Show`][Show-NetFirewallRule]<sup>[?][msdocs:Show-NetFirewallRule]</sup>
 
 #### nettcpip
-[msdocs:Get-NetCompartment]: https://docs.microsoft.com/en-us/powershell/module/nettcpip/Get-NetCompartment "Get-NetCompartment"
-[msdocs:Test-NetConnection]: https://docs.microsoft.com/en-us/powershell/module/nettcpip/Test-NetConnection "Test-NetConnection"
 [msdocs:Get-NetIPAddress]: https://docs.microsoft.com/en-us/powershell/module/nettcpip/Get-NetIPAddress "Get-NetIPAddress"
 [msdocs:New-NetIPAddress]: https://docs.microsoft.com/en-us/powershell/module/nettcpip/New-NetIPAddress "New-NetIPAddress"
 [msdocs:Remove-NetIPAddress]: https://docs.microsoft.com/en-us/powershell/module/nettcpip/Remove-NetIPAddress "Remove-NetIPAddress"
 [msdocs:Set-NetIPAddress]: https://docs.microsoft.com/en-us/powershell/module/nettcpip/Set-NetIPAddress "Set-NetIPAddress"
-[msdocs:Get-NetIPConfiguration]: https://docs.microsoft.com/en-us/powershell/module/nettcpip/Get-NetIPConfiguration "Get-NetIPConfiguration"
 [msdocs:Get-NetIPInterface]: https://docs.microsoft.com/en-us/powershell/module/nettcpip/Get-NetIPInterface "Get-NetIPInterface"
 [msdocs:Set-NetIPInterface]: https://docs.microsoft.com/en-us/powershell/module/nettcpip/Set-NetIPInterface "Set-NetIPInterface"
-[msdocs:Get-NetIPv4Protocol]: https://docs.microsoft.com/en-us/powershell/module/nettcpip/Get-NetIPv4Protocol "Get-NetIPv4Protocol"
-[msdocs:Set-NetIPv4Protocol]: https://docs.microsoft.com/en-us/powershell/module/nettcpip/Set-NetIPv4Protocol "Set-NetIPv4Protocol"
-[msdocs:Get-NetIPv6Protocol]: https://docs.microsoft.com/en-us/powershell/module/nettcpip/Get-NetIPv6Protocol "Get-NetIPv6Protocol"
-[msdocs:Set-NetIPv6Protocol]: https://docs.microsoft.com/en-us/powershell/module/nettcpip/Set-NetIPv6Protocol "Set-NetIPv6Protocol"
-[msdocs:Get-NetNeighbor]: https://docs.microsoft.com/en-us/powershell/module/nettcpip/Get-NetNeighbor "Get-NetNeighbor"
-[msdocs:New-NetNeighbor]: https://docs.microsoft.com/en-us/powershell/module/nettcpip/New-NetNeighbor "New-NetNeighbor"
-[msdocs:Remove-NetNeighbor]: https://docs.microsoft.com/en-us/powershell/module/nettcpip/Remove-NetNeighbor "Remove-NetNeighbor"
-[msdocs:Set-NetNeighbor]: https://docs.microsoft.com/en-us/powershell/module/nettcpip/Set-NetNeighbor "Set-NetNeighbor"
-[msdocs:Get-NetOffloadGlobalSetting]: https://docs.microsoft.com/en-us/powershell/module/nettcpip/Get-NetOffloadGlobalSetting "Get-NetOffloadGlobalSetting"
-[msdocs:Set-NetOffloadGlobalSetting]: https://docs.microsoft.com/en-us/powershell/module/nettcpip/Set-NetOffloadGlobalSetting "Set-NetOffloadGlobalSetting"
-[msdocs:Get-NetPrefixPolicy]: https://docs.microsoft.com/en-us/powershell/module/nettcpip/Get-NetPrefixPolicy "Get-NetPrefixPolicy"
-[msdocs:Find-NetRoute]: https://docs.microsoft.com/en-us/powershell/module/nettcpip/Find-NetRoute "Find-NetRoute"
-[msdocs:Get-NetRoute]: https://docs.microsoft.com/en-us/powershell/module/nettcpip/Get-NetRoute "Get-NetRoute"
-[msdocs:New-NetRoute]: https://docs.microsoft.com/en-us/powershell/module/nettcpip/New-NetRoute "New-NetRoute"
-[msdocs:Remove-NetRoute]: https://docs.microsoft.com/en-us/powershell/module/nettcpip/Remove-NetRoute "Remove-NetRoute"
-[msdocs:Set-NetRoute]: https://docs.microsoft.com/en-us/powershell/module/nettcpip/Set-NetRoute "Set-NetRoute"
-[msdocs:Get-NetTCPConnection]: https://docs.microsoft.com/en-us/powershell/module/nettcpip/Get-NetTCPConnection "Get-NetTCPConnection"
-[msdocs:Get-NetTCPSetting]: https://docs.microsoft.com/en-us/powershell/module/nettcpip/Get-NetTCPSetting "Get-NetTCPSetting"
-[msdocs:Set-NetTCPSetting]: https://docs.microsoft.com/en-us/powershell/module/nettcpip/Set-NetTCPSetting "Set-NetTCPSetting"
-[msdocs:Get-NetTransportFilter]: https://docs.microsoft.com/en-us/powershell/module/nettcpip/Get-NetTransportFilter "Get-NetTransportFilter"
-[msdocs:New-NetTransportFilter]: https://docs.microsoft.com/en-us/powershell/module/nettcpip/New-NetTransportFilter "New-NetTransportFilter"
-[msdocs:Remove-NetTransportFilter]: https://docs.microsoft.com/en-us/powershell/module/nettcpip/Remove-NetTransportFilter "Remove-NetTransportFilter"
-[msdocs:Get-NetUDPEndpoint]: https://docs.microsoft.com/en-us/powershell/module/nettcpip/Get-NetUDPEndpoint "Get-NetUDPEndpoint"
-[msdocs:Get-NetUDPSetting]: https://docs.microsoft.com/en-us/powershell/module/nettcpip/Get-NetUDPSetting "Get-NetUDPSetting"
-[msdocs:Set-NetUDPSetting]: https://docs.microsoft.com/en-us/powershell/module/nettcpip/Set-NetUDPSetting "Set-NetUDPSetting"
 
-[Get-NetCompartment]: #get-netcompartment '```&#10;PS C:\> Get-NetCompartment&#10;```&#10;Gets all network compartments in the protocol stack.'
-[Test-NetConnection]: #test-netconnection '```&#10;PS C:\> Test-NetConnection&#10;```&#10;Displays diagnostic information for a connection.'
 [Get-NetIPAddress]: #get-netipaddress '```&#10;PS C:\> Get-NetIPAddress&#10;```&#10;Gets the IP address configuration.'
 [New-NetIPAddress]: #new-netipaddress '```&#10;PS C:\> New-NetIPAddress&#10;```&#10;Creates and configures an IP address.'
 [Remove-NetIPAddress]: #remove-netipaddress '```&#10;PS C:\> Remove-NetIPAddress&#10;```&#10;Removes an IP address and its configuration.'
 [Set-NetIPAddress]: #set-netipaddress '```&#10;PS C:\> Set-NetIPAddress&#10;```&#10;Modifies the configuration of an IP address.'
-[Get-NetIPConfiguration]: #get-netipconfiguration '```&#10;PS C:\> Get-NetIPConfiguration&#10;```&#10;Gets IP network configuration.'
 [Get-NetIPInterface]: #get-netipinterface '```&#10;PS C:\> Get-NetIPInterface&#10;```&#10;Gets an IP interface.'
 [Set-NetIPInterface]: #set-netipinterface '```&#10;PS C:\> Set-NetIPInterface&#10;```&#10;Modifies an IP interface.'
-[Get-NetIPv4Protocol]: #get-netipv4protocol '```&#10;PS C:\> Get-NetIPv4Protocol&#10;```&#10;Gets IPv4 protocol configurations.'
-[Set-NetIPv4Protocol]: #set-netipv4protocol '```&#10;PS C:\> Set-NetIPv4Protocol&#10;```&#10;Modifies information about the IPv4 Protocol configuration.'
-[Get-NetIPv6Protocol]: #get-netipv6protocol '```&#10;PS C:\> Get-NetIPv6Protocol&#10;```&#10;Gets IPv6 protocol configurations.'
-[Set-NetIPv6Protocol]: #set-netipv6protocol '```&#10;PS C:\> Set-NetIPv6Protocol&#10;```&#10;Modifies the IPv6 protocol configuration.'
-[Get-NetNeighbor]: #get-netneighbor '```&#10;PS C:\> Get-NetNeighbor&#10;```&#10;Gets neighbor cache entries.'
-[New-NetNeighbor]: #new-netneighbor '```&#10;PS C:\> New-NetNeighbor&#10;```&#10;Creates a neighbor cache entry.'
-[Remove-NetNeighbor]: #remove-netneighbor '```&#10;PS C:\> Remove-NetNeighbor&#10;```&#10;Removes neighbor cache entries.'
-[Set-NetNeighbor]: #set-netneighbor '```&#10;PS C:\> Set-NetNeighbor&#10;```&#10;Modifies a neighbor cache entry.'
-[Get-NetOffloadGlobalSetting]: #get-netoffloadglobalsetting '```&#10;PS C:\> Get-NetOffloadGlobalSetting&#10;```&#10;Gets the global TCP/IP offload settings.'
-[Set-NetOffloadGlobalSetting]: #set-netoffloadglobalsetting '```&#10;PS C:\> Set-NetOffloadGlobalSetting&#10;```&#10;Modifies the global TCP/IP offload settings.'
-[Get-NetPrefixPolicy]: #get-netprefixpolicy '```&#10;PS C:\> Get-NetPrefixPolicy&#10;```&#10;Gets the prefix policy.'
-[Find-NetRoute]: #find-netroute '```&#10;PS C:\> Find-NetRoute&#10;```&#10;Finds the best local IP address and the best route to reach a remote address.'
-[Get-NetRoute]: #get-netroute '```&#10;PS C:\> Get-NetRoute&#10;```&#10;Gets the IP route information from the IP routing table.'
-[New-NetRoute]: #new-netroute '```&#10;PS C:\> New-NetRoute&#10;```&#10;Creates a route in the IP routing table.'
-[Remove-NetRoute]: #remove-netroute '```&#10;PS C:\> Remove-NetRoute&#10;```&#10;Removes IP routes from the IP routing table.'
-[Set-NetRoute]: #set-netroute '```&#10;PS C:\> Set-NetRoute&#10;```&#10;Modifies an entry or entries in the IP routing table.'
-[Get-NetTCPConnection]: #get-nettcpconnection '```&#10;PS C:\> Get-NetTCPConnection&#10;```&#10;Gets TCP connections.'
-[Get-NetTCPSetting]: #get-nettcpsetting '```&#10;PS C:\> Get-NetTCPSetting&#10;```&#10;Gets information about TCP settings and configuration.'
-[Set-NetTCPSetting]: #set-nettcpsetting '```&#10;PS C:\> Set-NetTCPSetting&#10;```&#10;Modifies a TCP setting.'
-[Get-NetTransportFilter]: #get-nettransportfilter '```&#10;PS C:\> Get-NetTransportFilter&#10;```&#10;Gets transport filters.'
-[New-NetTransportFilter]: #new-nettransportfilter '```&#10;PS C:\> New-NetTransportFilter&#10;```&#10;Creates a transport filter.'
-[Remove-NetTransportFilter]: #remove-nettransportfilter '```&#10;PS C:\> Remove-NetTransportFilter&#10;```&#10;Removes transport filters.'
-[Get-NetUDPEndpoint]: #get-netudpendpoint '```&#10;PS C:\> Get-NetUDPEndpoint&#10;```&#10;Gets current UDP endpoint statistics.'
-[Get-NetUDPSetting]: #get-netudpsetting '```&#10;PS C:\> Get-NetUDPSetting&#10;```&#10;Gets UDP settings.'
-[Set-NetUDPSetting]: #set-netudpsetting '```&#10;PS C:\> Set-NetUDPSetting&#10;```&#10;Modifies UDP settings.'
 
 - NetIPAddress
 [`Get`][Get-NetIPAddress]<sup>[?][msdocs:Get-NetIPAddress]</sup>
@@ -883,12 +890,11 @@ Tasks
 **PS**
 <code>ReadlineOption&nbsp;[g][Get-PSReadlineOption] [s][Set-PSReadlineOption]</code> 
 
-**Output**
-<code>Format-&nbsp;[List][Format-List]&nbsp;[Table][Format-Table]</code>
-<code>Out-&nbsp;[ConsoleView][Out-ConsoleView]&nbsp;[GridView][Out-GridView]&nbsp;[HTMLView][Out-HTMLView]</code>
+- Format- [`List`][Format-List]&nbsp;[`Table`][Format-Table]</code>
+- Out- [`ConsoleView`][Out-ConsoleView] [`GridView`][Out-GridView] [`HTMLView`][Out-HTMLView]
 
 ### Windows Server
-#### Active Directory
+#### addsadministration
 <!-- Active Directory cmdlets -->
 [Search-ADAccount]:                                  #search-adaccount                             "`Search-ADAccount`"
 [Add-ADPrincipalGroupMembership]:                    #add-adprincipalgroupmembership               "`Add-ADPrincipalGroupMembership` &#10; Add a member to one or more Active Directory groups"
@@ -930,7 +936,6 @@ Tasks
 <code>Domain&nbsp;[`is`][Install-ADDSDomain]</code>
 <code>DomainController&nbsp;[is][Install-ADDSDomainController]&nbsp;[us][Uninstall-ADDSDomainController]</code>
 <code>Forest&nbsp;[g][Get-ADDSForest]&nbsp;[is][Install-ADDSForest]&nbsp;</code>
-
 #### dcbqos
 [msdocs:Enable-NetQosFlowControl]: https://docs.microsoft.com/en-us/powershell/module/dcbqos/Enable-NetQosFlowControl "Enable-NetQosFlowControl"
 [msdocs:Disable-NetQosFlowControl]: https://docs.microsoft.com/en-us/powershell/module/dcbqos/Disable-NetQosFlowControl "Disable-NetQosFlowControl"
@@ -976,7 +981,6 @@ Tasks
 `Remove`<sup>[?][msdocs:Remove-NetQosTrafficClass]</sup>
 `Set`<sup>[?][msdocs:Set-NetQosTrafficClass]</sup>
 `Switch`<sup>[?][msdocs:Switch-NetQosTrafficClass]</sup>
-
 #### deduplication
 [msdocs:Disable-DedupVolume]: https://docs.microsoft.com/en-us/powershell/module/deduplication/Disable-DedupVolume "Disable-DedupVolume"
 [msdocs:Enable-DedupVolume]: https://docs.microsoft.com/en-us/powershell/module/deduplication/Enable-DedupVolume "Enable-DedupVolume"
@@ -1012,15 +1016,7 @@ Tasks
 [Get-DedupVolume]: #get-dedupvolume '```&#10;Get-DedupVolume&#10;```&#10;Returns deduplication volumes that have data deduplication metadata.'
 [Set-DedupVolume]: #set-dedupvolume '```&#10;Set-DedupVolume&#10;```&#10;Changes data deduplication settings on one or more volumes.'
 
-
-- DedupFile&nbsp;[en][Expand-DedupFile][?][msdocs:Expand-DedupFile]
-- DedupFileMetadata&nbsp;[ms][Measure-DedupFileMetadata][?][msdocs:Measure-DedupFileMetadata]
-- DedupJob&nbsp;[g][Get-DedupJob][?][msdocs:Get-DedupJob]&nbsp;[sa][Start-DedupJob][?][msdocs:Start-DedupJob]&nbsp;[sp][Stop-DedupJob][?][msdocs:Stop-DedupJob]
-- DedupMetadata&nbsp;[g][Get-DedupMetadata][?][msdocs:Get-DedupMetadata]
-- DedupSchedule&nbsp;[g][Get-DedupSchedule][?][msdocs:Get-DedupSchedule]&nbsp;[n][New-DedupSchedule][?][msdocs:New-DedupSchedule]&nbsp;[r][Remove-DedupSchedule][?][msdocs:Remove-DedupSchedule]&nbsp;[s][Set-DedupSchedule][?][msdocs:Set-DedupSchedule]
-- DedupStatus&nbsp;[g][Get-DedupStatus][?][msdocs:Get-DedupStatus]&nbsp;[ud][Update-DedupStatus][?][msdocs:Update-DedupStatus]
-- DedupVolume&nbsp;[d][Disable-DedupVolume][?][msdocs:Disable-DedupVolume]&nbsp;[e][Enable-DedupVolume][?][msdocs:Enable-DedupVolume]&nbsp;[g][Get-DedupVolume][?][msdocs:Get-DedupVolume]&nbsp;[s][Set-DedupVolume][?][msdocs:Set-DedupVolume]
-
+- DedupVolume [Disable][Disable-DedupVolume]<sup>[?][msdocs:Disable-DedupVolume]</sup> [Enable][Enable-DedupVolume]<sup>[?][msdocs:Enable-DedupVolume]</sup>
 #### defender
 [msdocs:Add-MpPreference]: https://docs.microsoft.com/en-us/powershell/module/defender/Add-MpPreference "Add-MpPreference"
 [msdocs:Get-MpComputerStatus]: https://docs.microsoft.com/en-us/powershell/module/defender/Get-MpComputerStatus "Get-MpComputerStatus"
@@ -1048,9 +1044,8 @@ Tasks
 [Start-MpWDOScan]: #start-mpwdoscan '```&#10;Start-MpWDOScan&#10;```&#10;Starts a Windows Defender offline scan.'
 [Update-MpSignature]: #update-mpsignature '```&#10;Update-MpSignature&#10;```&#10;Updates the antimalware definitions on a computer.'
 
-<code>MpScan&nbsp;[sa][Start-MpScan][?][msdocs:Start-MpScan]</code>
-<code>MpThreat&nbsp;[g][Get-MpThreat][?][msdocs:Get-MpThreat]&nbsp;[r][Remove-MpThreat][?][msdocs:Remove-MpThreat]</code>
-
+- MpScan [`Start`][Start-MpScan]<sup>[?][msdocs:Start-MpScan]</sup>
+- MpThreat [`Get`][Get-MpThreat]<sup>[?][msdocs:Get-MpThreat]</sup> [`Remove`][Remove-MpThreat]<sup>[?][msdocs:Remove-MpThreat]</sup>
 #### dism
 [msdocs:Set-AppxProvisionedDataFile]: https://docs.microsoft.com/en-us/powershell/module/dism/Set-AppxProvisionedDataFile "Set-AppxProvisionedDataFile"
 [msdocs:Add-AppxProvisionedPackage]: https://docs.microsoft.com/en-us/powershell/module/dism/Add-AppxProvisionedPackage "Add-AppxProvisionedPackage"
@@ -1154,7 +1149,6 @@ Tasks
 <code>ProductKey&nbsp;[s][Set-WindowsProductKey]</code>
 <code>ReservedStorageState&nbsp;[g][Get-WindowsReservedStorageState]&nbsp;[s][Set-WindowsReservedStorageState]</code>
 <code>Unattend&nbsp;[u][Use-WindowsUnattend]</code>
-
 #### failoverclusters
 [msdocs:Add-ClusterCheckpoint]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Add-ClusterCheckpoint "Add-ClusterCheckpoint"
 [msdocs:Add-ClusterGenericScriptRole]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Add-ClusterGenericScriptRole "Add-ClusterGenericScriptRole"
@@ -1383,7 +1377,62 @@ Tasks
 <code>StorageSpacesDirect&nbsp;[e][Enable-ClusterStorageSpacesDirect]</code>
 <code>VirtualMachineRole&nbsp;[m][Move-ClusterVirtualMachineRole][?][msdocs:Move-ClusterVirtualMachineRole]&nbsp;[a][Add-ClusterVirtualMachineRole][?][msdocs:Add-ClusterVirtualMachineRole]</code>
 <code>VMMonitoredItem&nbsp;[g][Get-ClusterVMMonitoredItem][?][msdocs:Get-ClusterVMMonitoredItem]&nbsp;[a][Add-ClusterVMMonitoredItem][?][msdocs:Add-ClusterVMMonitoredItem]&nbsp;[r][Remove-ClusterVMMonitoredItem][?][msdocs:Remove-ClusterVMMonitoredItem]</code>
+#### grouppolicy
+[Backup-GPO]: #backup-gpo '```&#10;[PS] Backup-GPO&#10;```&#10;Backs up one GPO or all the GPOs in a domain.'
+[Copy-GPO]: #copy-gpo '```&#10;[PS] Copy-GPO&#10;```&#10;Copies a GPO.'
+[Get-GPInheritance]: #get-gpinheritance '```&#10;[PS] Get-GPInheritance&#10;```&#10;Gets Group Policy inheritance information for a specified domain or OU.'
+[Get-GPO]: #get-gpo '```&#10;[PS] Get-GPO&#10;```&#10;Gets one GPO or all the GPOs in a domain.'
+[Get-GPOReport]: #get-gporeport '```&#10;[PS] Get-GPOReport&#10;```&#10;Generates a report either in XML or HTML format for a specified GPO or for all GPOs in a domain.'
+[Get-GPPermission]: #get-gppermission '```&#10;[PS] Get-GPPermission&#10;```&#10;Gets the permission level for one or more security principals on a specified GPO.'
+[Get-GPPrefRegistryValue]: #get-gpprefregistryvalue '```&#10;[PS] Get-GPPrefRegistryValue&#10;```&#10;Gets one or more Registry preference items under either Computer Configuration or User Configuration in a GPO.'
+[Get-GPRegistryValue]: #get-gpregistryvalue '```&#10;[PS] Get-GPRegistryValue&#10;```&#10;Gets one or more registry-based policy settings under either Computer Configuration or User Configuration in a GPO.'
+[Get-GPResultantSetOfPolicy]: #get-gpresultantsetofpolicy '```&#10;[PS] Get-GPResultantSetOfPolicy&#10;```&#10;Gets and writes the RSoP information for a user, a computer, or both to a file.'
+[Get-GPStarterGPO]: #get-gpstartergpo '```&#10;[PS] Get-GPStarterGPO&#10;```&#10;Gets one Starter GPO or all Starter GPOs in a domain.'
+[Import-GPO]: #import-gpo '```&#10;[PS] Import-GPO&#10;```&#10;Imports the Group Policy settings from a backed-up GPO into a specified GPO.'
+[Invoke-GPUpdate]: #invoke-gpupdate '```&#10;[PS] Invoke-GPUpdate&#10;```&#10;Schedules a remote Group Policy refresh on the specified computer.'
+[New-GPLink]: #new-gplink '```&#10;[PS] New-GPLink&#10;```&#10;Links a GPO to a site, domain, or OU.'
+[New-GPO]: #new-gpo '```&#10;[PS] New-GPO&#10;```&#10;Creates a GPO.'
+[New-GPStarterGPO]: #new-gpstartergpo '```&#10;[PS] New-GPStarterGPO&#10;```&#10;Creates a Starter GPO.'
+[Remove-GPLink]: #remove-gplink '```&#10;[PS] Remove-GPLink&#10;```&#10;Removes a GPO link from a site, domain or OU.'
+[Remove-GPO]: #remove-gpo '```&#10;[PS] Remove-GPO&#10;```&#10;Removes a GPO.'
+[Remove-GPPrefRegistryValue]: #remove-gpprefregistryvalue '```&#10;[PS] Remove-GPPrefRegistryValue&#10;```&#10;Removes one or more Registry preference items from either Computer Configuration or User Configuration in a GPO.'
+[Remove-GPRegistryValue]: #remove-gpregistryvalue '```&#10;[PS] Remove-GPRegistryValue&#10;```&#10;Removes one or more registry-based policy settings from either Computer Configuration or User Configuration in a GPO.'
+[Rename-GPO]: #rename-gpo '```&#10;[PS] Rename-GPO&#10;```&#10;Assigns a new display name to a GPO.'
+[Restore-GPO]: #restore-gpo '```&#10;[PS] Restore-GPO&#10;```&#10;Restores one GPO or all GPOs in a domain from one or more GPO backup files.'
+[Set-GPInheritance]: #set-gpinheritance '```&#10;[PS] Set-GPInheritance&#10;```&#10;Blocks or unblocks inheritance for a specified domain or organizational unit.'
+[Set-GPLink]: #set-gplink '```&#10;[PS] Set-GPLink&#10;```&#10;Sets the properties of the specified GPO link.'
+[Set-GPPermission]: #set-gppermission '```&#10;[PS] Set-GPPermission&#10;```&#10;Grants a level of permissions to a security principal for one GPO or all the GPOs in a domain.'
+[Set-GPPrefRegistryValue]: #set-gpprefregistryvalue '```&#10;[PS] Set-GPPrefRegistryValue&#10;```&#10;Configures a Registry preference item under either Computer Configuration or User Configuration in a GPO.'
+[Set-GPRegistryValue]: #set-gpregistryvalue '```&#10;[PS] Set-GPRegistryValue&#10;```&#10;Configures one or more registry-based policy settings under either Computer Configuration or User Configuration in a GPO.'
 
+[msdocs:Backup-GPO]: https://docs.microsoft.com/en-us/powershell/module/GroupPolicy/Backup-GPO "Backup-GPO documentation"
+[msdocs:Copy-GPO]: https://docs.microsoft.com/en-us/powershell/module/GroupPolicy/Copy-GPO "Copy-GPO documentation"
+[msdocs:Get-GPInheritance]: https://docs.microsoft.com/en-us/powershell/module/GroupPolicy/Get-GPInheritance "Get-GPInheritance documentation"
+[msdocs:Get-GPO]: https://docs.microsoft.com/en-us/powershell/module/GroupPolicy/Get-GPO "Get-GPO documentation"
+[msdocs:Get-GPOReport]: https://docs.microsoft.com/en-us/powershell/module/GroupPolicy/Get-GPOReport "Get-GPOReport documentation"
+[msdocs:Get-GPPermission]: https://docs.microsoft.com/en-us/powershell/module/GroupPolicy/Get-GPPermission "Get-GPPermission documentation"
+[msdocs:Get-GPPrefRegistryValue]: https://docs.microsoft.com/en-us/powershell/module/GroupPolicy/Get-GPPrefRegistryValue "Get-GPPrefRegistryValue documentation"
+[msdocs:Get-GPRegistryValue]: https://docs.microsoft.com/en-us/powershell/module/GroupPolicy/Get-GPRegistryValue "Get-GPRegistryValue documentation"
+[msdocs:Get-GPResultantSetOfPolicy]: https://docs.microsoft.com/en-us/powershell/module/GroupPolicy/Get-GPResultantSetOfPolicy "Get-GPResultantSetOfPolicy documentation"
+[msdocs:Get-GPStarterGPO]: https://docs.microsoft.com/en-us/powershell/module/GroupPolicy/Get-GPStarterGPO "Get-GPStarterGPO documentation"
+[msdocs:Import-GPO]: https://docs.microsoft.com/en-us/powershell/module/GroupPolicy/Import-GPO "Import-GPO documentation"
+[msdocs:Invoke-GPUpdate]: https://docs.microsoft.com/en-us/powershell/module/GroupPolicy/Invoke-GPUpdate "Invoke-GPUpdate documentation"
+[msdocs:New-GPLink]: https://docs.microsoft.com/en-us/powershell/module/GroupPolicy/New-GPLink "New-GPLink documentation"
+[msdocs:New-GPO]: https://docs.microsoft.com/en-us/powershell/module/GroupPolicy/New-GPO "New-GPO documentation"
+[msdocs:New-GPStarterGPO]: https://docs.microsoft.com/en-us/powershell/module/GroupPolicy/New-GPStarterGPO "New-GPStarterGPO documentation"
+[msdocs:Remove-GPLink]: https://docs.microsoft.com/en-us/powershell/module/GroupPolicy/Remove-GPLink "Remove-GPLink documentation"
+[msdocs:Remove-GPO]: https://docs.microsoft.com/en-us/powershell/module/GroupPolicy/Remove-GPO "Remove-GPO documentation"
+[msdocs:Remove-GPPrefRegistryValue]: https://docs.microsoft.com/en-us/powershell/module/GroupPolicy/Remove-GPPrefRegistryValue "Remove-GPPrefRegistryValue documentation"
+[msdocs:Remove-GPRegistryValue]: https://docs.microsoft.com/en-us/powershell/module/GroupPolicy/Remove-GPRegistryValue "Remove-GPRegistryValue documentation"
+[msdocs:Rename-GPO]: https://docs.microsoft.com/en-us/powershell/module/GroupPolicy/Rename-GPO "Rename-GPO documentation"
+[msdocs:Restore-GPO]: https://docs.microsoft.com/en-us/powershell/module/GroupPolicy/Restore-GPO "Restore-GPO documentation"
+[msdocs:Set-GPInheritance]: https://docs.microsoft.com/en-us/powershell/module/GroupPolicy/Set-GPInheritance "Set-GPInheritance documentation"
+[msdocs:Set-GPLink]: https://docs.microsoft.com/en-us/powershell/module/GroupPolicy/Set-GPLink "Set-GPLink documentation"
+[msdocs:Set-GPPermission]: https://docs.microsoft.com/en-us/powershell/module/GroupPolicy/Set-GPPermission "Set-GPPermission documentation"
+[msdocs:Set-GPPrefRegistryValue]: https://docs.microsoft.com/en-us/powershell/module/GroupPolicy/Set-GPPrefRegistryValue "Set-GPPrefRegistryValue documentation"
+[msdocs:Set-GPRegistryValue]: https://docs.microsoft.com/en-us/powershell/module/GroupPolicy/Set-GPRegistryValue "Set-GPRegistryValue documentation"
+
+- GPUpdate [`Invoke`][Invoke-GPUpdate]<sup>[?][msdocs:Invoke-GPUpdate]</sup>
 #### hyper-v
 [msdocs:Add-VMDvdDrive]: https://docs.microsoft.com/en-us/powershell/module/hyper-v/Add-VMDvdDrive "Add-VMDvdDrive"
 [msdocs:Add-VMFibreChannelHba]: https://docs.microsoft.com/en-us/powershell/module/hyper-v/Add-VMFibreChannelHba "Add-VMFibreChannelHba"
@@ -1584,59 +1633,215 @@ Tasks
 [msdocs:Test-VMReplicationConnection]: https://docs.microsoft.com/en-us/powershell/module/hyper-v/Test-VMReplicationConnection "Test-VMReplicationConnection"
 [msdocs:Update-VMVersion]: https://docs.microsoft.com/en-us/powershell/module/hyper-v/Update-VMVersion "Update-VMVersion"
 
-[Add-VMNetworkAdapter]: #add-vmnetworkadapter '```&#10;PS C:\> Add-VMNetworkAdapter&#10;```&#10;Adds a virtual network adapter to a virtual machine.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 237'
-[Checkpoint-VM]: #checkpoint-vm '`Checkpoint-VM`&#10;Creates a checkpoint of a virtual machine.'
-[Compare-VM]: #compare-vm '```&#10;PS C:\> Compare-VM&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 212'
-[Connect-VMNetworkAdapter]: #connect-vmnetworkadapter '```&#10;PS C:\> Connect-VMNetworkAdapter&#10;```&#10;Connects a virtual network adapter to a virtual switch.'
-[Debug-VM]:                                          #debug-vm                                     '`Debug-VM`&#10;Debugs a virtual machine.'
-[Disconnect-VMNetworkAdapter]: #disconnect-vmnetworkadapter '```&#10;PS C:\> Disconnect-VMNetworkAdapter&#10;```&#10;Disconnects a virtual network adapter from a virtual switch or Ethernet resource pool.'
-[Export-VM]: #export-vm '```&#10;PS C:\> Export-VM&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 210'
-[Get-VM]: #get-vm '```&#10;PS C:\> Get-VM&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 177'
-[Get-VMHostSupportedVersion]: #get-vmhostsupportedversion '```&#10;PS C:\> Get-VMHostSupportedVersion&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 209'
-[Get-VMNetworkAdapter]: #get-vmnetworkadapter '```&#10;PS C:\> Get-VMNetworkAdapter&#10;```&#10;Gets the virtual network adapters of a virtual machine, snapshot, management operating system, or of a virtual machine and management operating system.'
-[Get-VMProcessor]: #get-vmprocessor '```&#10;PS C:\> Get-VMProcessor&#10;```&#10;Gets the processor of a virtual machine or snapshot.'
-[Import-VM]: #import-vm '```&#10;PS C:\> Import-VM&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 211'
-[Measure-VM]: #measure-vm '```&#10;PS C:\> Measure-VM&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 194, 234-235'
-[Mount-VHD]: #mount-vhd '```&#10;Mount-VHD&#10;```&#10;Mounts one or more virtual hard disks.'
-[Move-VM]:                                           #move-vm                                      '`Move-VM`&#10;Moves a virtual machine to a new Hyper-V host.'
-[New-VHD]: #new-vhd '```&#10;New-VHD&#10;```&#10;Creates one or more new virtual hard disks.'
-[New-VM]: #new-vm '```&#10;PS C:\> New-VM&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 47, 184, 197'
-[Optimize-VM]: #optimize-vm '```&#10;PS C:\> Optimize-VM&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 228'
-[Remove-VM]: #remove-vm '`Remove-VM`&#10;Deletes a virtual machine.'
-[Remove-VMNetworkAdapter]: #remove-vmnetworkadapter '```&#10;PS C:\> Remove-VMNetworkAdapter&#10;```&#10;Removes one or more virtual network adapters from a virtual machine.'
-[Rename-VM]: #rename-vm                                    '`Rename-VM`&#10;Renames a virtual machine.'
-[Rename-VMNetworkAdapter]: #rename-vmnetworkadapter '```&#10;PS C:\> Rename-VMNetworkAdapter&#10;```&#10;Renames a virtual network adapter on a virtual machine or on the management operating system.'
-[Repair-VM]: #repair-vm                                    '`Repair-VM`&#10;Repairs one or more virtual machines.'
-[Reset-VMResourceMetering]: #reset-vmresourcemetering '```&#10;PS C:\> Reset-VMResourceMetering&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 195'
-[Restart-VM]: #restart-vm '`Restart-VM`&#10;Restarts a virtual machine.'
-[Resume-VM]: #resume-vm '`Resume-VM`&#10;Resumes a suspended (paused) virtual machine.'
-[Save-VM]: #save-vm '`Save-VM`&#10;Saves a virtual machine.'
-[Set-VM]: #set-vm '```&#10;PS C:\> Set-VM&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 231'
-[Set-VMFirmware]: #set-vmfirmware '```&#10;PS C:\> Set-VMFirmware&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 208'
-[Set-VMMemory]: #set-vmmemory '```&#10;PS C:\> Set-VMMemory&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 185'
-[Set-VMNetworkAdapter]: #set-vmnetworkadapter '```&#10;PS C:\> Set-VMNetworkAdapter&#10;```&#10;Configures features of the virtual network adapter in a virtual machine or the management operating system.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 255'
-[Set-VMProcessor]: #set-vmprocessor '```&#10;PS C:\> Set-VMProcessor&#10;```&#10;Configures one or more processors of a virtual machine.'
-[Set-VmReplicationServer]: #set-vmreplicationserver '```&#10;PS C:\> Set-VmReplicationServer&#10;```&#10;Configure a host as a Replica server&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 300'
-[Start-VM]:                                          #start-vm                                     '`Start-VM`&#10;Starts a virtual machine.'
-[Stop-VM]:                                           #stop-vm                                      '`Stop-VM`&#10;Shuts down, turns off, or saves a virtual machine.'
-[Suspend-VM]:                                        #suspend-vm                                   '`Suspend-VM`&#10;Suspends, or pauses, a virtual machine.'
-[Test-VMNetworkAdapter]: #test-vmnetworkadapter '```&#10;PS C:\> Test-VMNetworkAdapter&#10;```&#10;Tests connectivity between virtual machines.'
-[Update-VMVersion]: #update-vmversion '```&#10;PS C:\> Update-VMVersion&#10;```&#10;Updates the version of virtual machines.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 209'
-[Set-VMHost]: #set-vmhost '```&#10;Set-VMHost&#10;```&#10;Configure a Hyper-V host'
-
-[Add-VMSwitch]: #add-vmswitch '```&#10;PS C:\> Add-VMSwitch&#10;```&#10;Adds a virtual switch to an Ethernet resource pool.'
-[Get-VMSwitch]: #get-vmswitch '```&#10;PS C:\> Get-VMSwitch&#10;```&#10;Gets virtual switches from one or more virtual Hyper-V hosts.'
-[New-VMSwitch]: #new-vmswitch '```&#10;PS C:\> New-VMSwitch&#10;```&#10;Creates a new virtual switch on one or more virtual machine hosts.'
-[Remove-VMSwitch]: #remove-vmswitch '```&#10;PS C:\> Remove-VMSwitch&#10;```&#10;Deletes a virtual switch.'
-[Rename-VMSwitch]: #rename-vmswitch '```&#10;PS C:\> Rename-VMSwitch&#10;```&#10;Renames a virtual switch.'
-[Set-VMSwitch]: #set-vmswitch '```&#10;PS C:\> Set-VMSwitch&#10;```&#10;Configures a virtual switch.'
-
 [Convert-VHD]: #convert-vhd '```&#10;[PS] Convert-VHD&#10;```&#10;Converts the format, version type, and block size of a virtual hard disk file.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 228'
 [Dismount-VHD]: #dismount-vhd '```&#10;[PS] Dismount-VHD&#10;```&#10;Dismounts a virtual hard disk.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 92'
+[Get-VHD]: #get-vhd '```&#10;[PS] Get-VHD&#10;```&#10;Gets the virtual hard disk object associated with a virtual hard disk.'
 [Merge-VHD]: #merge-vhd '```&#10;[PS] Merge-VHD&#10;```&#10;Merges virtual hard disks.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 228'
 [Mount-VHD]: #mount-vhd '```&#10;[PS] Mount-VHD&#10;```&#10;Mounts one or more virtual hard disks.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 92'
+[New-VHD]: #new-vhd '```&#10;[PS] New-VHD&#10;```&#10;Creates one or more new virtual hard disks.'
 [Optimize-VHD]: #optimize-vhd '```&#10;[PS] Optimize-VHD&#10;```&#10;Optimizes the allocation of space used by virtual hard disk files, except for fixed virtual hard disks.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 228'
 [Resize-VHD]: #resize-vhd '```&#10;[PS] Resize-VHD&#10;```&#10;Resizes a virtual hard disk.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 228'
+[Set-VHD]: #set-vhd '```&#10;[PS] Set-VHD&#10;```&#10;Sets properties associated with a virtual hard disk.'
+[Test-VHD]: #test-vhd '```&#10;[PS] Test-VHD&#10;```&#10;Tests a virtual hard disk for any problems that would make it unusable.'
+[New-VHD]: #new-vhd '```&#10;[PS] New-VHD&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 90, 219, 223'
+[Checkpoint-VM]: #checkpoint-vm '```&#10;[PS] Checkpoint-VM&#10;```&#10;Creates a checkpoint of a virtual machine.'
+[Compare-VM]: #compare-vm '```&#10;[PS] Compare-VM&#10;```&#10;Compares a virtual machine and a virtual machine host for compatibility, returning a compatibility report.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 212'
+[Debug-VM]: #debug-vm '```&#10;[PS] Debug-VM&#10;```&#10;Debugs a virtual machine.'
+[Export-VM]: #export-vm '```&#10;[PS] Export-VM&#10;```&#10;Exports a virtual machine to disk.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 210'
+[Get-VM]: #get-vm '```&#10;[PS] Get-VM&#10;```&#10;Gets the virtual machines from one or more Hyper-V hosts.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 177'
+[Import-VM]: #import-vm '```&#10;[PS] Import-VM&#10;```&#10;Imports a virtual machine from a file.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 211'
+[Measure-VM]: #measure-vm '```&#10;[PS] Measure-VM&#10;```&#10;Reports resource utilization data for one or more virtual machines.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 194, 234-235'
+[Move-VM]: #move-vm '```&#10;[PS] Move-VM&#10;```&#10;Moves a virtual machine to a new Hyper-V host.'
+[New-VM]: #new-vm '```&#10;[PS] New-VM&#10;```&#10;Creates a new virtual machine.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 47, 184, 197'
+[Optimize-VM]: #optimize-vm '```&#10;[PS] Optimize-VM&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 228'
+[Remove-VM]: #remove-vm '```&#10;[PS] Remove-VM&#10;```&#10;Deletes a virtual machine.'
+[Rename-VM]: #rename-vm '```&#10;[PS] Rename-VM&#10;```&#10;Renames a virtual machine.'
+[Repair-VM]: #repair-vm '```&#10;[PS] Repair-VM&#10;```&#10;Repairs one or more virtual machines.'
+[Restart-VM]: #restart-vm '```&#10;[PS] Restart-VM&#10;```&#10;Restarts a virtual machine.'
+[Resume-VM]: #resume-vm '```&#10;[PS] Resume-VM&#10;```&#10;Resumes a suspended (paused) virtual machine.'
+[Save-VM]: #save-vm '```&#10;[PS] Save-VM&#10;```&#10;Saves a virtual machine.'
+[Set-VM]: #set-vm '```&#10;[PS] Set-VM&#10;```&#10;Configures a virtual machine.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 231'
+[Start-VM]: #start-vm '```&#10;[PS] Start-VM&#10;```&#10;Starts a virtual machine.'
+[Stop-VM]: #stop-vm '```&#10;[PS] Stop-VM&#10;```&#10;Shuts down, turns off, or saves a virtual machine.'
+[Suspend-VM]: #suspend-vm '```&#10;[PS] Suspend-VM&#10;```&#10;Suspends, or pauses, a virtual machine.'
+[Get-VMBios]: #get-vmbios '```&#10;[PS] Get-VMBios&#10;```&#10;Gets the BIOS of a virtual machine or snapshot.'
+[Set-VMBios]: #set-vmbios '```&#10;[PS] Set-VMBios&#10;```&#10;Configures the BIOS of a Generation 1 virtual machine.'
+[Get-VMComPort]: #get-vmcomport '```&#10;[PS] Get-VMComPort&#10;```&#10;Gets the COM ports of a virtual machine or snapshot.'
+[Set-VMComPort]: #set-vmcomport '```&#10;[PS] Set-VMComPort&#10;```&#10;Configures the COM port of a virtual machine.'
+[Get-VMConnectAccess]: #get-vmconnectaccess '```&#10;[PS] Get-VMConnectAccess&#10;```&#10;Gets entries showing users and the virtual machines to which they can connect on one or more Hyper-V hosts.'
+[Grant-VMConnectAccess]: #grant-vmconnectaccess '```&#10;[PS] Grant-VMConnectAccess&#10;```&#10;Grants a user or users access to connect to a virtual machine or machines.'
+[Revoke-VMConnectAccess]: #revoke-vmconnectaccess '```&#10;[PS] Revoke-VMConnectAccess&#10;```&#10;Revokes access for one or more users to connect to a one or more virtual machines.'
+[Disable-VMConsoleSupport]: #disable-vmconsolesupport '```&#10;[PS] Disable-VMConsoleSupport&#10;```&#10;Disables keyboard, video, and mouse for virtual machines.'
+[Enable-VMConsoleSupport]: #enable-vmconsolesupport '```&#10;[PS] Enable-VMConsoleSupport&#10;```&#10;Enables keyboard, video, and mouse for virtual machines.'
+[Add-VMDvdDrive]: #add-vmdvddrive '```&#10;[PS] Add-VMDvdDrive&#10;```&#10;Adds a DVD drive to a virtual machine.'
+[Get-VMDvdDrive]: #get-vmdvddrive '```&#10;[PS] Get-VMDvdDrive&#10;```&#10;Gets the DVD drives attached to a virtual machine or snapshot.'
+[Remove-VMDvdDrive]: #remove-vmdvddrive '```&#10;[PS] Remove-VMDvdDrive&#10;```&#10;Deletes a DVD drive from a virtual machine.'
+[Set-VMDvdDrive]: #set-vmdvddrive '```&#10;[PS] Set-VMDvdDrive&#10;```&#10;Configures a virtual DVD drive.'
+[Disable-VMEventing]: #disable-vmeventing '```&#10;[PS] Disable-VMEventing&#10;```&#10;Disables virtual machine eventing.'
+[Enable-VMEventing]: #enable-vmeventing '```&#10;[PS] Enable-VMEventing&#10;```&#10;Enables virtual machine eventing.'
+[Complete-VMFailover]: #complete-vmfailover '```&#10;[PS] Complete-VMFailover&#10;```&#10;Completes the failover process of a VM on the Replica server.'
+[Start-VMFailover]: #start-vmfailover '```&#10;[PS] Start-VMFailover&#10;```&#10;Starts failover on a virtual machine.'
+[Stop-VMFailover]: #stop-vmfailover '```&#10;[PS] Stop-VMFailover&#10;```&#10;Stops failover of a virtual machine.'
+[Add-VMFibreChannelHba]: #add-vmfibrechannelhba '```&#10;[PS] Add-VMFibreChannelHba&#10;```&#10;Adds a virtual Fibre Channel host bus adapter to a virtual machine.'
+[Get-VMFibreChannelHba]: #get-vmfibrechannelhba '```&#10;[PS] Get-VMFibreChannelHba&#10;```&#10;Gets the Fibre Channel host bus adapters associated with one or more virtual machines.'
+[Remove-VMFibreChannelHba]: #remove-vmfibrechannelhba '```&#10;[PS] Remove-VMFibreChannelHba&#10;```&#10;Removes a Fibre Channel host bus adapter from a virtual machine.'
+[Set-VMFibreChannelHba]: #set-vmfibrechannelhba '```&#10;[PS] Set-VMFibreChannelHba&#10;```&#10;Configures a Fibre Channel host bus adapter on a virtual machine.'
+[Copy-VMFile]: #copy-vmfile '```&#10;[PS] Copy-VMFile&#10;```&#10;Copies a file to a virtual machine.'
+[Get-VMFirmware]: #get-vmfirmware '```&#10;[PS] Get-VMFirmware&#10;```&#10;Gets the firmware configuration of a virtual machine.'
+[Set-VMFirmware]: #set-vmfirmware '```&#10;[PS] Set-VMFirmware&#10;```&#10;Sets the firmware configuration of a virtual machine.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 208'
+[Get-VMFloppyDiskDrive]: #get-vmfloppydiskdrive '```&#10;[PS] Get-VMFloppyDiskDrive&#10;```&#10;Gets the floppy disk drives of a virtual machine or snapshot.'
+[Set-VMFloppyDiskDrive]: #set-vmfloppydiskdrive '```&#10;[PS] Set-VMFloppyDiskDrive&#10;```&#10;Configures a virtual floppy disk drive.'
+[Get-VMGroup]: #get-vmgroup '```&#10;[PS] Get-VMGroup&#10;```&#10;Gets virtual machine groups.'
+[New-VMGroup]: #new-vmgroup '```&#10;[PS] New-VMGroup&#10;```&#10;Creates a virtual machine group.'
+[Remove-VMGroup]: #remove-vmgroup '```&#10;[PS] Remove-VMGroup&#10;```&#10;Removes a virtual machine group.'
+[Rename-VMGroup]: #rename-vmgroup '```&#10;[PS] Rename-VMGroup&#10;```&#10;Renames virtual machine groups.'
+[Add-VMGroupMember]: #add-vmgroupmember '```&#10;[PS] Add-VMGroupMember&#10;```&#10;Adds group members to a virtual machine group.'
+[Remove-VMGroupMember]: #remove-vmgroupmember '```&#10;[PS] Remove-VMGroupMember&#10;```&#10;Removes members from a virtual machine group.'
+[Add-VMHardDiskDrive]: #add-vmharddiskdrive '```&#10;[PS] Add-VMHardDiskDrive&#10;```&#10;Adds a hard disk drive to a virtual machine.'
+[Get-VMHardDiskDrive]: #get-vmharddiskdrive '```&#10;[PS] Get-VMHardDiskDrive&#10;```&#10;Gets the virtual hard disk drives attached to one or more virtual machines.'
+[Remove-VMHardDiskDrive]: #remove-vmharddiskdrive '```&#10;[PS] Remove-VMHardDiskDrive&#10;```&#10;Deletes a hard disk drive from a virtual machine.'
+[Set-VMHardDiskDrive]: #set-vmharddiskdrive '```&#10;[PS] Set-VMHardDiskDrive&#10;```&#10;Configures a virtual hard disk.'
+[Get-VMHost]: #get-vmhost '```&#10;[PS] Get-VMHost&#10;```&#10;Gets a Hyper-V host.'
+[Set-VMHost]: #set-vmhost '```&#10;[PS] Set-VMHost&#10;```&#10;Configure a Hyper-V host'
+[Get-VMHostCluster]: #get-vmhostcluster '```&#10;[PS] Get-VMHostCluster&#10;```&#10;Gets virtual machine host clusters.'
+[Set-VMHostCluster]: #set-vmhostcluster '```&#10;[PS] Set-VMHostCluster&#10;```&#10;Configures a virtual machine host cluster.'
+[Get-VMHostNumaNode]: #get-vmhostnumanode '```&#10;[PS] Get-VMHostNumaNode&#10;```&#10;Gets the NUMA topology of a virtual machine host.'
+[Get-VMHostNumaNodeStatus]: #get-vmhostnumanodestatus '```&#10;[PS] Get-VMHostNumaNodeStatus&#10;```&#10;Gets the status of the virtual machines on the non-uniform memory access (NUMA) nodes of a virtual machine host or hosts.'
+[Get-VMHostSupportedVersion]: #get-vmhostsupportedversion '```&#10;[PS] Get-VMHostSupportedVersion&#10;```&#10;Returns a list of virtual machine configuration versions that are supported on a host.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 209'
+[Get-VMIdeController]: #get-vmidecontroller '```&#10;[PS] Get-VMIdeController&#10;```&#10;Gets the IDE controllers of a virtual machine or snapshot.'
+[Import-VMInitialReplication]: #import-vminitialreplication '```&#10;[PS] Import-VMInitialReplication&#10;```&#10;Imports initial replication files for a Replica virtual machine to complete the initial replication when using external media as the source.'
+[Start-VMInitialReplication]: #start-vminitialreplication '```&#10;[PS] Start-VMInitialReplication&#10;```&#10;Starts replication of a virtual machine.'
+[Stop-VMInitialReplication]: #stop-vminitialreplication '```&#10;[PS] Stop-VMInitialReplication&#10;```&#10;Stops an ongoing initial replication.'
+[Disable-VMIntegrationService]: #disable-vmintegrationservice '```&#10;[PS] Disable-VMIntegrationService&#10;```&#10;Disables an integration service on a virtual machine.'
+[Enable-VMIntegrationService]: #enable-vmintegrationservice '```&#10;[PS] Enable-VMIntegrationService&#10;```&#10;Enables an integration service on a virtual machine.'
+[Get-VMIntegrationService]: #get-vmintegrationservice '```&#10;[PS] Get-VMIntegrationService&#10;```&#10;Gets the integration services of a virtual machine or snapshot.'
+[Get-VMKeyProtector]: #get-vmkeyprotector '```&#10;[PS] Get-VMKeyProtector&#10;```&#10;Retrieves a key protector for a virtual machine.'
+[Set-VMKeyProtector]: #set-vmkeyprotector '```&#10;[PS] Set-VMKeyProtector&#10;```&#10;Configures a key protector for a virtual machine.'
+[Get-VMMemory]: #get-vmmemory '```&#10;[PS] Get-VMMemory&#10;```&#10;Gets the memory of a virtual machine or snapshot.'
+[Set-VMMemory]: #set-vmmemory '```&#10;[PS] Set-VMMemory&#10;```&#10;Configures the memory of a virtual machine.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 185'
+[Disable-VMMigration]: #disable-vmmigration '```&#10;[PS] Disable-VMMigration&#10;```&#10;Disables migration on one or more virtual machine hosts.'
+[Enable-VMMigration]: #enable-vmmigration '```&#10;[PS] Enable-VMMigration&#10;```&#10;Enables migration on one or more virtual machine hosts.'
+[Add-VMMigrationNetwork]: #add-vmmigrationnetwork '```&#10;[PS] Add-VMMigrationNetwork&#10;```&#10;Adds a network for virtual machine migration on one or more virtual machine hosts.'
+[Get-VMMigrationNetwork]: #get-vmmigrationnetwork '```&#10;[PS] Get-VMMigrationNetwork&#10;```&#10;Gets the networks added for migration to one or more virtual machine hosts.'
+[Remove-VMMigrationNetwork]: #remove-vmmigrationnetwork '```&#10;[PS] Remove-VMMigrationNetwork&#10;```&#10;Removes a network from use with migration.'
+[Set-VMMigrationNetwork]: #set-vmmigrationnetwork '```&#10;[PS] Set-VMMigrationNetwork&#10;```&#10;Sets the subnet, subnet mask, and/or priority of a migration network.'
+[Add-VMNetworkAdapter]: #add-vmnetworkadapter '```&#10;[PS] Add-VMNetworkAdapter&#10;```&#10;Adds a virtual network adapter to a virtual machine.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 237'
+[Connect-VMNetworkAdapter]: #connect-vmnetworkadapter '```&#10;[PS] Connect-VMNetworkAdapter&#10;```&#10;Connects a virtual network adapter to a virtual switch.'
+[Disconnect-VMNetworkAdapter]: #disconnect-vmnetworkadapter '```&#10;[PS] Disconnect-VMNetworkAdapter&#10;```&#10;Disconnects a virtual network adapter from a virtual switch or Ethernet resource pool.'
+[Get-VMNetworkAdapter]: #get-vmnetworkadapter '```&#10;[PS] Get-VMNetworkAdapter&#10;```&#10;Gets the virtual network adapters of a virtual machine, snapshot, management operating system, or of a virtual machine and management operating system.'
+[Remove-VMNetworkAdapter]: #remove-vmnetworkadapter '```&#10;[PS] Remove-VMNetworkAdapter&#10;```&#10;Removes one or more virtual network adapters from a virtual machine.'
+[Rename-VMNetworkAdapter]: #rename-vmnetworkadapter '```&#10;[PS] Rename-VMNetworkAdapter&#10;```&#10;Renames a virtual network adapter on a virtual machine or on the management operating system.'
+[Set-VMNetworkAdapter]: #set-vmnetworkadapter '```&#10;[PS] Set-VMNetworkAdapter&#10;```&#10;Configures features of the virtual network adapter in a virtual machine or the management operating system.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 255'
+[Test-VMNetworkAdapter]: #test-vmnetworkadapter '```&#10;[PS] Test-VMNetworkAdapter&#10;```&#10;Tests connectivity between virtual machines.'
+[Add-VMNetworkAdapterAcl]: #add-vmnetworkadapteracl '```&#10;[PS] Add-VMNetworkAdapterAcl&#10;```&#10;Creates an ACL to apply to the traffic through a virtual machine network adapter.'
+[Get-VMNetworkAdapterAcl]: #get-vmnetworkadapteracl '```&#10;[PS] Get-VMNetworkAdapterAcl&#10;```&#10;Gets the ACLs configured for a virtual machine network adapter.'
+[Remove-VMNetworkAdapterAcl]: #remove-vmnetworkadapteracl '```&#10;[PS] Remove-VMNetworkAdapterAcl&#10;```&#10;Removes an ACL applied to the traffic through a virtual network adapter.'
+[Add-VMNetworkAdapterExtendedAcl]: #add-vmnetworkadapterextendedacl '```&#10;[PS] Add-VMNetworkAdapterExtendedAcl&#10;```&#10;Creates an extended ACL for a virtual network adapter.'
+[Get-VMNetworkAdapterExtendedAcl]: #get-vmnetworkadapterextendedacl '```&#10;[PS] Get-VMNetworkAdapterExtendedAcl&#10;```&#10;Gets extended ACLs configured for a virtual network adapter.'
+[Remove-VMNetworkAdapterExtendedAcl]: #remove-vmnetworkadapterextendedacl '```&#10;[PS] Remove-VMNetworkAdapterExtendedAcl&#10;```&#10;Removes an extended ACL for a virtual network adapter.'
+[Get-VMNetworkAdapterFailoverConfiguration]: #get-vmnetworkadapterfailoverconfiguration '```&#10;[PS] Get-VMNetworkAdapterFailoverConfiguration&#10;```&#10;Gets the IP address of a virtual network adapter configured to be used when a virtual machine fails over.'
+[Set-VMNetworkAdapterFailoverConfiguration]: #set-vmnetworkadapterfailoverconfiguration '```&#10;[PS] Set-VMNetworkAdapterFailoverConfiguration&#10;```&#10;Configures the IP address of a virtual network adapter to be used when a virtual machine fails over.'
+[Get-VmNetworkAdapterIsolation]: #get-vmnetworkadapterisolation '```&#10;[PS] Get-VmNetworkAdapterIsolation&#10;```&#10;Gets isolation settings for a virtual network adapter.'
+[Set-VmNetworkAdapterIsolation]: #set-vmnetworkadapterisolation '```&#10;[PS] Set-VmNetworkAdapterIsolation&#10;```&#10;Modifies isolation settings for a virtual network adapter.'
+[Add-VmNetworkAdapterRoutingDomainMapping]: #add-vmnetworkadapterroutingdomainmapping '```&#10;[PS] Add-VmNetworkAdapterRoutingDomainMapping&#10;```&#10;Adds a routing domain and virtual subnets to a virtual network adapter.'
+[Get-VMNetworkAdapterRoutingDomainMapping]: #get-vmnetworkadapterroutingdomainmapping '```&#10;[PS] Get-VMNetworkAdapterRoutingDomainMapping&#10;```&#10;Gets members of a routing domain.'
+[Remove-VMNetworkAdapterRoutingDomainMapping]: #remove-vmnetworkadapterroutingdomainmapping '```&#10;[PS] Remove-VMNetworkAdapterRoutingDomainMapping&#10;```&#10;Removes a routing domain from a virtual network adapter.'
+[Set-VmNetworkAdapterRoutingDomainMapping]: #set-vmnetworkadapterroutingdomainmapping '```&#10;[PS] Set-VmNetworkAdapterRoutingDomainMapping&#10;```&#10;Sets virtual subnets on a routing domain.'
+[Get-VMNetworkAdapterTeamMapping]: #get-vmnetworkadapterteammapping '```&#10;[PS] Get-VMNetworkAdapterTeamMapping&#10;```&#10;'
+[Remove-VMNetworkAdapterTeamMapping]: #remove-vmnetworkadapterteammapping '```&#10;[PS] Remove-VMNetworkAdapterTeamMapping&#10;```&#10;'
+[Set-VMNetworkAdapterTeamMapping]: #set-vmnetworkadapterteammapping '```&#10;[PS] Set-VMNetworkAdapterTeamMapping&#10;```&#10;'
+[Get-VMNetworkAdapterVlan]: #get-vmnetworkadaptervlan '```&#10;[PS] Get-VMNetworkAdapterVlan&#10;```&#10;Gets the virtual LAN settings configured on a virtual network adapter.'
+[Set-VMNetworkAdapterVlan]: #set-vmnetworkadaptervlan '```&#10;[PS] Set-VMNetworkAdapterVlan&#10;```&#10;Configures the virtual LAN settings for the traffic through a virtual network adapter.'
+[Get-VMProcessor]: #get-vmprocessor '```&#10;[PS] Get-VMProcessor&#10;```&#10;Gets the processor of a virtual machine or snapshot.'
+[Set-VMProcessor]: #set-vmprocessor '```&#10;[PS] Set-VMProcessor&#10;```&#10;Configures one or more processors of a virtual machine.'
+[Add-VMRemoteFx3dVideoAdapter]: #add-vmremotefx3dvideoadapter '```&#10;[PS] Add-VMRemoteFx3dVideoAdapter&#10;```&#10;Adds a RemoteFX video adapter in a virtual machine.'
+[Get-VMRemoteFx3dVideoAdapter]: #get-vmremotefx3dvideoadapter '```&#10;[PS] Get-VMRemoteFx3dVideoAdapter&#10;```&#10;Gets the RemoteFX video adapter of a virtual machine or snapshot.'
+[Remove-VMRemoteFx3dVideoAdapter]: #remove-vmremotefx3dvideoadapter '```&#10;[PS] Remove-VMRemoteFx3dVideoAdapter&#10;```&#10;Removes a RemoteFX 3D video adapter from a virtual machine.'
+[Set-VMRemoteFx3dVideoAdapter]: #set-vmremotefx3dvideoadapter '```&#10;[PS] Set-VMRemoteFx3dVideoAdapter&#10;```&#10;Configures the RemoteFX 3D video adapter of a virtual machine.'
+[Disable-VMRemoteFXPhysicalVideoAdapter]: #disable-vmremotefxphysicalvideoadapter '```&#10;[PS] Disable-VMRemoteFXPhysicalVideoAdapter&#10;```&#10;Disables one or more RemoteFX physical video adapters from use with RemoteFX-enabled virtual machines.'
+[Enable-VMRemoteFXPhysicalVideoAdapter]: #enable-vmremotefxphysicalvideoadapter '```&#10;[PS] Enable-VMRemoteFXPhysicalVideoAdapter&#10;```&#10;Enables one or more RemoteFX physical video adapters for use with RemoteFX-enabled virtual machines.'
+[Get-VMRemoteFXPhysicalVideoAdapter]: #get-vmremotefxphysicalvideoadapter '```&#10;[PS] Get-VMRemoteFXPhysicalVideoAdapter&#10;```&#10;Gets the RemoteFX physical graphics adapters on one or more Hyper-V hosts.'
+[Enable-VMReplication]: #enable-vmreplication '```&#10;[PS] Enable-VMReplication&#10;```&#10;Enables replication of a virtual machine.'
+[Get-VMReplication]: #get-vmreplication '```&#10;[PS] Get-VMReplication&#10;```&#10;Gets the replication settings for a virtual machine.'
+[Measure-VMReplication]: #measure-vmreplication '```&#10;[PS] Measure-VMReplication&#10;```&#10;Gets replication statistics and information associated with a virtual machine.'
+[Remove-VMReplication]: #remove-vmreplication '```&#10;[PS] Remove-VMReplication&#10;```&#10;Removes the replication relationship of a virtual machine.'
+[Resume-VMReplication]: #resume-vmreplication '```&#10;[PS] Resume-VMReplication&#10;```&#10;Resumes a virtual machine replication that is in a state of Paused, Error, Resynchronization Required, or Suspended.'
+[Set-VMReplication]: #set-vmreplication '```&#10;[PS] Set-VMReplication&#10;```&#10;Modifies the replication settings of a virtual machine.'
+[Stop-VMReplication]: #stop-vmreplication '```&#10;[PS] Stop-VMReplication&#10;```&#10;Cancels an ongoing virtual machine resynchronization.'
+[Suspend-VMReplication]: #suspend-vmreplication '```&#10;[PS] Suspend-VMReplication&#10;```&#10;Suspends replication of a virtual machine.'
+[Get-VMReplicationAuthorizationEntry]: #get-vmreplicationauthorizationentry '```&#10;[PS] Get-VMReplicationAuthorizationEntry&#10;```&#10;Gets the authorization entries of a Replica server.'
+[New-VMReplicationAuthorizationEntry]: #new-vmreplicationauthorizationentry '```&#10;[PS] New-VMReplicationAuthorizationEntry&#10;```&#10;Creates a new authorization entry that allows one or more primary servers to replicate data to a specified Replica server.'
+[Remove-VMReplicationAuthorizationEntry]: #remove-vmreplicationauthorizationentry '```&#10;[PS] Remove-VMReplicationAuthorizationEntry&#10;```&#10;Removes an authorization entry from a Replica server.'
+[Set-VMReplicationAuthorizationEntry]: #set-vmreplicationauthorizationentry '```&#10;[PS] Set-VMReplicationAuthorizationEntry&#10;```&#10;Modifies an authorization entry on a Replica server.'
+[Test-VMReplicationConnection]: #test-vmreplicationconnection '```&#10;[PS] Test-VMReplicationConnection&#10;```&#10;Tests the connection between a primary server and a Replica server.'
+[Get-VMReplicationServer]: #get-vmreplicationserver '```&#10;[PS] Get-VMReplicationServer&#10;```&#10;Gets the replication and authentication settings of a Replica server.'
+[Set-VmReplicationServer]: #set-vmreplicationserver '```&#10;[PS] Set-VmReplicationServer&#10;```&#10;Configure a host as a Replica server&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 300'
+[Reset-VMReplicationStatistics]: #reset-vmreplicationstatistics '```&#10;[PS] Reset-VMReplicationStatistics&#10;```&#10;Resets the replication statistics of a virtual machine.'
+[Disable-VMResourceMetering]: #disable-vmresourcemetering '```&#10;[PS] Disable-VMResourceMetering&#10;```&#10;Disables collection of resource utilization data for a virtual machine or resource pool.'
+[Enable-VMResourceMetering]: #enable-vmresourcemetering '```&#10;[PS] Enable-VMResourceMetering&#10;```&#10;Collects resource utilization data for a virtual machine or resource pool.'
+[Reset-VMResourceMetering]: #reset-vmresourcemetering '```&#10;[PS] Reset-VMResourceMetering&#10;```&#10;Resets the resource utilization data collected by Hyper-V resource metering.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 195'
+[Get-VMResourcePool]: #get-vmresourcepool '```&#10;[PS] Get-VMResourcePool&#10;```&#10;Gets the resource pools on one or more virtual machine hosts.'
+[Measure-VMResourcePool]: #measure-vmresourcepool '```&#10;[PS] Measure-VMResourcePool&#10;```&#10;Reports resource utilization data for one or more resource pools.'
+[New-VMResourcePool]: #new-vmresourcepool '```&#10;[PS] New-VMResourcePool&#10;```&#10;Creates a resource pool.'
+[Remove-VMResourcePool]: #remove-vmresourcepool '```&#10;[PS] Remove-VMResourcePool&#10;```&#10;Deletes a resource pool from one or more virtual machine hosts.'
+[Rename-VMResourcePool]: #rename-vmresourcepool '```&#10;[PS] Rename-VMResourcePool&#10;```&#10;Renames a resource pool on one or more Hyper-V hosts.'
+[Set-VMResourcePool]: #set-vmresourcepool '```&#10;[PS] Set-VMResourcePool&#10;```&#10;Sets the parent resource pool for a selected resource pool.'
+[Connect-VMSan]: #connect-vmsan '```&#10;[PS] Connect-VMSan&#10;```&#10;Associates a host bus adapter with a virtual storage area network (SAN).'
+[Disconnect-VMSan]: #disconnect-vmsan '```&#10;[PS] Disconnect-VMSan&#10;```&#10;Removes a host bus adapter from a virtual storage area network (SAN).'
+[Get-VMSan]: #get-vmsan '```&#10;[PS] Get-VMSan&#10;```&#10;Gets the available virtual machine storage area networks on a Hyper-V host or hosts.'
+[New-VMSan]: #new-vmsan '```&#10;[PS] New-VMSan&#10;```&#10;Creates a new virtual storage area network (SAN) on a Hyper-V host.'
+[Remove-VMSan]: #remove-vmsan '```&#10;[PS] Remove-VMSan&#10;```&#10;Removes a virtual storage area network (SAN) from a Hyper-V host.'
+[Rename-VMSan]: #rename-vmsan '```&#10;[PS] Rename-VMSan&#10;```&#10;Renames a virtual storage area network (SAN).'
+[Set-VMSan]: #set-vmsan '```&#10;[PS] Set-VMSan&#10;```&#10;Configures a virtual storage area network (SAN) on one or more Hyper-V hosts.'
+[Remove-VMSavedState]: #remove-vmsavedstate '```&#10;[PS] Remove-VMSavedState&#10;```&#10;Deletes the saved state of a saved virtual machine.'
+[Add-VMScsiController]: #add-vmscsicontroller '```&#10;[PS] Add-VMScsiController&#10;```&#10;Adds a SCSI controller in a virtual machine.'
+[Get-VMScsiController]: #get-vmscsicontroller '```&#10;[PS] Get-VMScsiController&#10;```&#10;Gets the SCSI controllers of a virtual machine or snapshot.'
+[Remove-VMScsiController]: #remove-vmscsicontroller '```&#10;[PS] Remove-VMScsiController&#10;```&#10;Removes a SCSI controller from a virtual machine.'
+[Get-VMSecurity]: #get-vmsecurity '```&#10;[PS] Get-VMSecurity&#10;```&#10;Gets security information about a virtual machine.'
+[Set-VMSecurity]: #set-vmsecurity '```&#10;[PS] Set-VMSecurity&#10;```&#10;Configures security settings for a virtual machine.'
+[Set-VMSecurityPolicy]: #set-vmsecuritypolicy '```&#10;[PS] Set-VMSecurityPolicy&#10;```&#10;Configures the security policy for a virtual machine.'
+[Export-VMSnapshot]: #export-vmsnapshot '```&#10;[PS] Export-VMSnapshot&#10;```&#10;Exports a virtual machine checkpoint to disk.'
+[Get-VMSnapshot]: #get-vmsnapshot '```&#10;[PS] Get-VMSnapshot&#10;```&#10;Gets the checkpoints associated with a virtual machine or checkpoint.'
+[Remove-VMSnapshot]: #remove-vmsnapshot '```&#10;[PS] Remove-VMSnapshot&#10;```&#10;Deletes a virtual machine checkpoint.'
+[Rename-VMSnapshot]: #rename-vmsnapshot '```&#10;[PS] Rename-VMSnapshot&#10;```&#10;Renames a virtual machine checkpoint.'
+[Restore-VMSnapshot]: #restore-vmsnapshot '```&#10;[PS] Restore-VMSnapshot&#10;```&#10;Restores a virtual machine checkpoint.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 230'
+[Move-VMStorage]: #move-vmstorage '```&#10;[PS] Move-VMStorage&#10;```&#10;Moves the storage of a virtual machine.'
+[Add-VMStoragePath]: #add-vmstoragepath '```&#10;[PS] Add-VMStoragePath&#10;```&#10;Adds a path to a storage resource pool.'
+[Get-VMStoragePath]: #get-vmstoragepath '```&#10;[PS] Get-VMStoragePath&#10;```&#10;Gets the storage paths in a storage resource pool.'
+[Remove-VMStoragePath]: #remove-vmstoragepath '```&#10;[PS] Remove-VMStoragePath&#10;```&#10;Removes a path from a storage resource pool.'
+[Add-VMSwitch]: #add-vmswitch '```&#10;[PS] Add-VMSwitch&#10;```&#10;Adds a virtual switch to an Ethernet resource pool.'
+[Get-VMSwitch]: #get-vmswitch '```&#10;[PS] Get-VMSwitch&#10;```&#10;Gets virtual switches from one or more virtual Hyper-V hosts.'
+[New-VMSwitch]: #new-vmswitch '```&#10;[PS] New-VMSwitch&#10;```&#10;Creates a new virtual switch on one or more virtual machine hosts.'
+[Remove-VMSwitch]: #remove-vmswitch '```&#10;[PS] Remove-VMSwitch&#10;```&#10;Deletes a virtual switch.'
+[Rename-VMSwitch]: #rename-vmswitch '```&#10;[PS] Rename-VMSwitch&#10;```&#10;Renames a virtual switch.'
+[Set-VMSwitch]: #set-vmswitch '```&#10;[PS] Set-VMSwitch&#10;```&#10;Configures a virtual switch.'
+[Disable-VMSwitchExtension]: #disable-vmswitchextension '```&#10;[PS] Disable-VMSwitchExtension&#10;```&#10;Disables one or more extensions on one or more virtual switches.'
+[Enable-VMSwitchExtension]: #enable-vmswitchextension '```&#10;[PS] Enable-VMSwitchExtension&#10;```&#10;Enables one or more extensions on one or more switches.'
+[Get-VMSwitchExtension]: #get-vmswitchextension '```&#10;[PS] Get-VMSwitchExtension&#10;```&#10;Gets the extensions on one or more virtual switches.'
+[Get-VMSwitchExtensionPortData]: #get-vmswitchextensionportdata '```&#10;[PS] Get-VMSwitchExtensionPortData&#10;```&#10;Retrieves the status of a virtual switch extension feature applied to a virtual network adapter.'
+[Add-VMSwitchExtensionPortFeature]: #add-vmswitchextensionportfeature '```&#10;[PS] Add-VMSwitchExtensionPortFeature&#10;```&#10;Adds a feature to a virtual network adapter.'
+[Get-VMSwitchExtensionPortFeature]: #get-vmswitchextensionportfeature '```&#10;[PS] Get-VMSwitchExtensionPortFeature&#10;```&#10;Gets the features configured on a virtual network adapter.'
+[Remove-VMSwitchExtensionPortFeature]: #remove-vmswitchextensionportfeature '```&#10;[PS] Remove-VMSwitchExtensionPortFeature&#10;```&#10;Removes a feature from a virtual network adapter.'
+[Set-VMSwitchExtensionPortFeature]: #set-vmswitchextensionportfeature '```&#10;[PS] Set-VMSwitchExtensionPortFeature&#10;```&#10;Configures a feature on a virtual network adapter.'
+[Get-VMSwitchExtensionSwitchData]: #get-vmswitchextensionswitchdata '```&#10;[PS] Get-VMSwitchExtensionSwitchData&#10;```&#10;Gets the status of a virtual switch extension feature applied on a virtual switch.'
+[Add-VMSwitchExtensionSwitchFeature]: #add-vmswitchextensionswitchfeature '```&#10;[PS] Add-VMSwitchExtensionSwitchFeature&#10;```&#10;Adds a feature to a virtual switch.'
+[Get-VMSwitchExtensionSwitchFeature]: #get-vmswitchextensionswitchfeature '```&#10;[PS] Get-VMSwitchExtensionSwitchFeature&#10;```&#10;Gets the features configured on a virtual switch.'
+[Remove-VMSwitchExtensionSwitchFeature]: #remove-vmswitchextensionswitchfeature '```&#10;[PS] Remove-VMSwitchExtensionSwitchFeature&#10;```&#10;Removes a feature from a virtual switch.'
+[Set-VMSwitchExtensionSwitchFeature]: #set-vmswitchextensionswitchfeature '```&#10;[PS] Set-VMSwitchExtensionSwitchFeature&#10;```&#10;Configures a feature on a virtual switch.'
+[Get-VMSwitchTeam]: #get-vmswitchteam '```&#10;[PS] Get-VMSwitchTeam&#10;```&#10;Gets virtual switch teams from Hyper-V hosts.'
+[Set-VMSwitchTeam]: #set-vmswitchteam '```&#10;[PS] Set-VMSwitchTeam&#10;```&#10;Configures a virtual switch team.'
+[Add-VMSwitchTeamMember]: #add-vmswitchteammember '```&#10;[PS] Add-VMSwitchTeamMember&#10;```&#10;Adds members to a virtual switch team.'
+[Remove-VMSwitchTeamMember]: #remove-vmswitchteammember '```&#10;[PS] Remove-VMSwitchTeamMember&#10;```&#10;Removes a member from a virtual machine switch team.'
+[Get-VMSystemSwitchExtension]: #get-vmsystemswitchextension '```&#10;[PS] Get-VMSystemSwitchExtension&#10;```&#10;Gets the switch extensions installed on a virtual machine host.'
+[Get-VMSystemSwitchExtensionPortFeature]: #get-vmsystemswitchextensionportfeature '```&#10;[PS] Get-VMSystemSwitchExtensionPortFeature&#10;```&#10;Gets the port-level features supported by virtual switch extensions on one or more Hyper-V hosts.'
+[Get-VMSystemSwitchExtensionSwitchFeature]: #get-vmsystemswitchextensionswitchfeature '```&#10;[PS] Get-VMSystemSwitchExtensionSwitchFeature&#10;```&#10;Gets the switch-level features on one or more Hyper-V hosts.'
+[Disable-VMTPM]: #disable-vmtpm '```&#10;[PS] Disable-VMTPM&#10;```&#10;Disables TPM functionality on a virtual machine.'
+[Enable-VMTPM]: #enable-vmtpm '```&#10;[PS] Enable-VMTPM&#10;```&#10;Enables TPM functionality on a virtual machine.'
+[Start-VMTrace]: #start-vmtrace '```&#10;[PS] Start-VMTrace&#10;```&#10;Starts tracing to a file.'
+[Stop-VMTrace]: #stop-vmtrace '```&#10;[PS] Stop-VMTrace&#10;```&#10;Stops tracing to file.'
+[Update-VMVersion]: #update-vmversion '```&#10;[PS] Update-VMVersion&#10;```&#10;Updates the version of virtual machines.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 209'
+[Get-VMVideo]: #get-vmvideo '```&#10;[PS] Get-VMVideo&#10;```&#10;Gets video settings for virtual machines.'
+[Set-VMVideo]: #set-vmvideo '```&#10;[PS] Set-VMVideo&#10;```&#10;Configures video settings for virtual machines.'
 
 [msdocs:Convert-VHD]: https://docs.microsoft.com/en-us/powershell/module/hyper-v/Convert-VHD "Convert-VHD"
 [msdocs:Dismount-VHD]: https://docs.microsoft.com/en-us/powershell/module/hyper-v/Dismount-VHD "Dismount-VHD"
@@ -1656,23 +1861,26 @@ Tasks
 [`Optimize`][Optimize-VHD]<sup>[?][msdocs:Optimize-VHD]</sup>
 [`Resize`][Resize-VHD]<sup>[?][msdocs:Resize-VHD]</sup>
 - VM
-[`Compare`][Compare-VM]
-[`Debug`][Debug-VM]
-[`Export`][Export-VM]
-[`Get`][Get-VM]
-[`Import`][Import-VM]
-[`Measure`][Measure-VM]
-[`Move`][Move-VM]
-[`New`][New-VM]
-[`Remove`][Remove-VM]
-[`Rename`][Rename-VM]
-[`Restart`][Restart-VM]
-[`Resume`][Resume-VM]
-[`Save`][Save-VM]
-[`Set`][Set-VM]
-[`Start`][Start-VM]
-[`Stop`][Stop-VM]
-[`Suspend`][Suspend-VM]
+[`Checkpoint`][Checkpoint-VM]<sup>[?][msdocs:Checkpoint-VM]</sup>
+[`Compare`][Compare-VM]<sup>[?][msdocs:Compare-VM]</sup>
+[`Debug`][Debug-VM]<sup>[?][msdocs:Debug-VM]</sup>
+[`Export`][Export-VM]<sup>[?][msdocs:Export-VM]</sup>
+[`Get`][Get-VM]<sup>[?][msdocs:Get-VM]</sup>
+[`Import`][Import-VM]<sup>[?][msdocs:Import-VM]</sup>
+[`Measure`][Measure-VM]<sup>[?][msdocs:Measure-VM]</sup>
+[`Move`][Move-VM]<sup>[?][msdocs:Move-VM]</sup>
+[`New`][New-VM]<sup>[?][msdocs:New-VM]</sup>
+[`Optimize`][Optimize-VM]<sup>[?][msdocs:Optimize-VM]</sup>
+[`Remove`][Remove-VM]<sup>[?][msdocs:Remove-VM]</sup>
+[`Rename`][Rename-VM]<sup>[?][msdocs:Rename-VM]</sup>
+[`Repair`][Repair-VM]<sup>[?][msdocs:Repair-VM]</sup>
+[`Restart`][Restart-VM]<sup>[?][msdocs:Restart-VM]</sup>
+[`Resume`][Resume-VM]<sup>[?][msdocs:Resume-VM]</sup>
+[`Save`][Save-VM]<sup>[?][msdocs:Save-VM]</sup>
+[`Set`][Set-VM]<sup>[?][msdocs:Set-VM]</sup>
+[`Start`][Start-VM]<sup>[?][msdocs:Start-VM]</sup>
+[`Stop`][Stop-VM]<sup>[?][msdocs:Stop-VM]</sup>
+[`Suspend`][Suspend-VM]<sup>[?][msdocs:Suspend-VM]</sup>
 - VMFirmware
 [`Set`][Set-VMFirmware]
 - VMHost
@@ -1697,6 +1905,25 @@ Tasks
 - VMVersion
 [`Update`][Update-VMVersion]
 
+#### iscsi
+[msdocs:Connect-IscsiTarget]: https://docs.microsoft.com/en-us/powershell/module/iscsi/Connect-IscsiTarget "Connect-IscsiTarget documentation"
+
+[Connect-IscsiTarget]: #connect-iscsitarget '```&#10;[PS] Connect-IscsiTarget&#10;```&#10;Establishes a connection between the local iSCSI initiator and an iSCSI target device.'
+
+- iSCSITarget
+[`Connect`][Connect-IscsiTarget]<sup>[?][msdocs:Connect-IscsiTarget]</sup>
+
+#### iscsitarget
+[msdocs:New-IscsiServerTarget]: https://docs.microsoft.com/en-us/powershell/module/IscsiTarget/New-IscsiServerTarget "New-IscsiServerTarget documentation"
+[msdocs:Add-IscsiVirtualDiskTargetMapping]: https://docs.microsoft.com/en-us/powershell/module/IscsiTarget/Add-IscsiVirtualDiskTargetMapping "Add-IscsiVirtualDiskTargetMapping documentation"
+
+[New-IscsiServerTarget]: #new-iscsiservertarget '```&#10;[PS] New-IscsiServerTarget&#10;```&#10;Creates a new iSCSI Target object with the specified name.'
+[Add-IscsiVirtualDiskTargetMapping]: #add-iscsivirtualdisktargetmapping '```&#10;[PS] Add-IscsiVirtualDiskTargetMapping&#10;```&#10;Assigns a virtual disk to an iSCSI target.'
+
+- iSCSIServerTarget 
+[`New`][New-IscsiServerTarget]<sup>[?][msdocs:New-IscsiServerTarget]</sup>
+- iSCSIVirtualDiskTargetMapping
+[`Add`][Add-IscsiVirtualDiskTargetMapping]<sup>[?][msdocs:Add-IscsiVirtualDiskTargetMapping]</sup>
 
 #### netqos
 [msdocs:Get-NetQosPolicy]: https://docs.microsoft.com/en-us/powershell/module/netqos/Get-NetQosPolicy "Get-NetQosPolicy"
@@ -1704,14 +1931,16 @@ Tasks
 [msdocs:Remove-NetQosPolicy]: https://docs.microsoft.com/en-us/powershell/module/netqos/Remove-NetQosPolicy "Remove-NetQosPolicy"
 [msdocs:Set-NetQosPolicy]: https://docs.microsoft.com/en-us/powershell/module/netqos/Set-NetQosPolicy "Set-NetQosPolicy"
 
-[Get-NetQosPolicy]: #get-netqospolicy '```&#10;PS C:\> Get-NetQosPolicy&#10;```&#10;Retrieves network Quality of Service (QoS) policies.'
-[New-NetQosPolicy]: #new-netqospolicy '```&#10;PS C:\> New-NetQosPolicy&#10;```&#10;Creates a new network QoS policy.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 144'
-[Remove-NetQosPolicy]: #remove-netqospolicy '```&#10;PS C:\> Remove-NetQosPolicy&#10;```&#10;Removes a network Quality of Service (QoS) policy.'
-[Set-NetQosPolicy]: #set-netqospolicy '```&#10;PS C:\> Set-NetQosPolicy&#10;```&#10;Updates the QoS policy settings.'
+[Get-NetQosPolicy]: #get-netqospolicy '```&#10;[PS] Get-NetQosPolicy&#10;```&#10;Retrieves network Quality of Service (QoS) policies.'
+[New-NetQosPolicy]: #new-netqospolicy '```&#10;[PS] New-NetQosPolicy&#10;```&#10;Creates a new network QoS policy.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 144'
+[Remove-NetQosPolicy]: #remove-netqospolicy '```&#10;[PS] Remove-NetQosPolicy&#10;```&#10;Removes a network Quality of Service (QoS) policy.'
+[Set-NetQosPolicy]: #set-netqospolicy '```&#10;[PS] Set-NetQosPolicy&#10;```&#10;Updates the QoS policy settings.'
 
-**`NetQos`**
-<code>&nbsp;[g][Get-NetQosPolicy][?][msdocs:Get-NetQosPolicy]&nbsp;[n][New-NetQosPolicy][?][msdocs:New-NetQosPolicy]&nbsp;[r][Remove-NetQosPolicy][?][msdocs:Remove-NetQosPolicy]&nbsp;[s][Set-NetQosPolicy][?][msdocs:Set-NetQosPolicy]</code>
-
+- NetQos
+[`Get`][Get-NetQosPolicy]<sup>[?][msdocs:Get-NetQosPolicy]</sup>
+[`New`][New-NetQosPolicy]<sup>[?][msdocs:New-NetQosPolicy]</sup>
+[`Remove`][Remove-NetQosPolicy]<sup>[?][msdocs:Remove-NetQosPolicy]</sup>
+[`Set`][Set-NetQosPolicy]<sup>[?][msdocs:Set-NetQosPolicy]</sup>
 #### networkloadbalancingclusters
 [Get-NlbCluster]: #get-nlbcluster '```&#10;[PS] Get-NlbCluster&#10;```&#10;Gets information about the NLB cluster object that is queried by the caller.'
 [Set-NlbClusterPortRule]: #set-nlbclusterportrule '```&#10;[PS] Set-NlbClusterPortRule&#10;```&#10;Edits the port rules for a NLB cluster.'
@@ -1721,10 +1950,11 @@ Tasks
 [msdocs:Get-NlbCluster]: https://docs.microsoft.com/en-us/powershell/module/networkloadbalancingclusters/Get-NlbCluster "Get-NlbCluster"
 [msdocs:Set-NlbClusterPortRule]: https://docs.microsoft.com/en-us/powershell/module/networkloadbalancingclusters/Set-NlbClusterPortRule "Set-NlbClusterPortRule"
 
-**NlbCluster**
-<code>&nbsp;[g][Get-NlbCluster][?][msdocs:Get-NlbCluster]</code>
-<code>PortRule&nbsp;[a][Add-NlbClusterPortRule]<sup>[?][msdocs:Add-NlbClusterPortRule]</sup>&nbsp;[s][Set-NlbClusterPortRule]<sup>[?][msdocs:Set-NlbClusterPortRule]</sup></code>
-
+- NLBCluster 
+[`Get`][Get-NlbCluster]<sup>[?][msdocs:Get-NlbCluster]</sup>
+- NLBClusterPortRule
+[`Add`][Add-NlbClusterPortRule]<sup>[?][msdocs:Add-NlbClusterPortRule]</sup>
+[`Set`][Set-NlbClusterPortRule]<sup>[?][msdocs:Set-NlbClusterPortRule]</sup>
 #### PackageManagement
 [msdocs:Find-Package]: https://docs.microsoft.com/en-us/powershell/module/PackageManagement/Find-Package "Find-Package"
 [msdocs:Get-Package]: https://docs.microsoft.com/en-us/powershell/module/PackageManagement/Get-Package "Get-Package"
@@ -1754,11 +1984,10 @@ Tasks
 [Uninstall-Package]: #uninstall-package '```&#10;PS C:\> Uninstall-Package&#10;```&#10;Uninstalls one or more software packages.'
 [Unregister-PackageSource]: #unregister-packagesource '```&#10;PS C:\> Unregister-PackageSource&#10;```&#10;Removes a registered package source.'
 
-**`Package`**
+- Package
 <code>&nbsp;[ep][Find-Package][?][msdocs:Find-Package]&nbsp;[g][Get-Package][?][msdocs:Get-Package]&nbsp;[is][Install-Package][?][msdocs:Install-Package]&nbsp;[sv][Save-Package][?][msdocs:Save-Package]&nbsp;[us][Uninstall-Package][?][msdocs:Uninstall-Package]</code>
 <code>Provider&nbsp;[ep][Find-PackageProvider][?][msdocs:Find-PackageProvider]&nbsp;[g][Get-PackageProvider][?][msdocs:Get-PackageProvider]&nbsp;[ip][Import-PackageProvider][?][msdocs:Import-PackageProvider]&nbsp;[is][Install-PackageProvider][?][msdocs:Install-PackageProvider]</code>
 <code>Source&nbsp;[g][Get-PackageSource][?][msdocs:Get-PackageSource]&nbsp;[rg][Register-PackageSource][?][msdocs:Register-PackageSource]&nbsp;[s][Set-PackageSource][?][msdocs:Set-PackageSource]&nbsp;[ur][Unregister-PackageSource][?][msdocs:Unregister-PackageSource]</code>
-
 #### psdesiredstateconfiguration
 [msdocs:New-DSCCheckSum]: https://docs.microsoft.com/en-us/powershell/module/psdesiredstateconfiguration/New-DSCCheckSum "New-DSCCheckSum"
 [msdocs:Get-DscConfiguration]: https://docs.microsoft.com/en-us/powershell/module/psdesiredstateconfiguration/Get-DscConfiguration "Get-DscConfiguration"
@@ -1802,7 +2031,6 @@ Tasks
 <code>Debug&nbsp;[d][Disable-DscDebug]&nbsp;[e][Enable-DscDebug]</code>
 <code>LocalConfigurationManager&nbsp;[g][Get-DscLocalConfigurationManager]&nbsp;[s][Set-DscLocalConfigurationManager]</code>
 <code>Resource&nbsp;[g][Get-DscResource]&nbsp;[i][Invoke-DscResource]</code>
-
 #### servermanager
 [Disable-ServerManagerStandardUserRemoting]: #disable-servermanagerstandarduserremoting '```&#10;Disable-ServerManagerStandardUserRemoting&#10;```&#10;Disables access for specified standard users to event, service, performance counter, and role and feature inventory data that is collected by Server Manager for a server.'
 [Enable-ServerManagerStandardUserRemoting]: #enable-servermanagerstandarduserremoting '```&#10;Enable-ServerManagerStandardUserRemoting&#10;```&#10;Provides one or more standard, non-Administrator users access to event, service, performance counter, and role and feature inventory data for a server that you are managing by using Server Manager.'
@@ -1817,7 +2045,6 @@ Tasks
 [msdocs:Uninstall-WindowsFeature]: https://docs.microsoft.com/en-us/powershell/module/servermanager/Uninstall-WindowsFeature "Uninstall-WindowsFeature"
 
 <code>WindowsFeature&nbsp;[g][Get-WindowsFeature][?][msdocs:Get-WindowsFeature]&nbsp;[is][Install-WindowsFeature][?][msdocs:Install-WindowsFeature]&nbsp;[us][Uninstall-WindowsFeature][?][msdocs:Uninstall-WindowsFeature]</code>
-
 #### servermigration
 [msdocs:Receive-SmigServerData]: https://docs.microsoft.com/en-us/powershell/module/ServerMigration/Receive-SmigServerData "Receive-SmigServerData"
 [msdocs:Send-SmigServerData]: https://docs.microsoft.com/en-us/powershell/module/ServerMigration/Send-SmigServerData "Send-SmigServerData"
@@ -1832,10 +2059,9 @@ Tasks
 [Import-SmigServerSetting]: #import-smigserversetting '```&#10;PS C:\> Import-SmigServerSetting&#10;```&#10;Import certain Windows features and operating system settings from a migration store and apply them to the local server&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 33'
 
 **`SmigServer`**
-<code>Data&nbsp;[rc][Receive-SmigServerData][?][msdocs:Receive-SmigServerData]&nbsp;[sd][Send-SmigServerData][?][msdocs:Send-SmigServerData]</code>
-<code>Feature&nbsp;[g][Get-SmigServerFeature][?][msdocs:Get-SmigServerFeature]</code>
-<code>Setting&nbsp;[ep][Export-SmigServerSetting][?][msdocs:Export-SmigServerSetting]&nbsp;[ip][Import-SmigServerSetting][?][msdocs:Import-SmigServerSetting]</code>
-
+- SmigServerData [`Receive`][Receive-SmigServerData]<sup>[?][msdocs:Receive-SmigServerData]</sup> [`Send`][Send-SmigServerData]<sup>[?][msdocs:Send-SmigServerData]</sup>
+- SmigServerFeature ['Get'][Get-SmigServerFeature]<sup>[?][msdocs:Get-SmigServerFeature]</sup>
+- SmigServerSetting ['Export'][Export-SmigServerSetting]<sup>[?][msdocs:Export-SmigServerSetting]</sup> [`Import`][Import-SmigServerSetting]<sup>[?][msdocs:Import-SmigServerSetting]</sup>
 #### storagereplica
 [msdocs:Get-SRAccess]: https://docs.microsoft.com/en-us/powershell/module/storagereplica/Get-SRAccess "Get-SRAccess"
 [msdocs:Grant-SRAccess]: https://docs.microsoft.com/en-us/powershell/module/storagereplica/Grant-SRAccess "Grant-SRAccess"
@@ -1891,13 +2117,11 @@ Tasks
 <code>SRNetworkConstraint&nbsp;[g][Get-SRNetworkConstraint]&nbsp;[r][Remove-SRNetworkConstraint]&nbsp;[s][Set-SRNetworkConstraint]</code>
 <code>SRPartnership&nbsp;[g][Get-SRPartnership]&nbsp;[n][New-SRPartnership]&nbsp;[r][Remove-SRPartnership]&nbsp;[s][Set-SRPartnership]</code>
 <code>SRTopology&nbsp;[t][Test-SRTopology]</code>
-
 #### VirtualMachineManager
 [Set-SCVirtualMachine]: #set-scvirtualmachine '```&#10;[PS] Set-SCVirtualMachine&#10;```&#10;Changes properties of a virtual machine managed by VMM.'
 [msdocs:Set-SCVirtualMachine]: https://docs.microsoft.com/en-us/powershell/module/VirtualMachineManager/Set-SCVirtualMachine "Set-SCVirtualMachine"
 
 - SCVirtualMachine [`Set`][Set-SCVirtualMachine]<sup>[?][msdocs:Set-SCVirtualMachine]</sup>
-
 #### windowsserverbackup
 [Add-WBBackupTarget]: #add-wbbackuptarget '```&#10;Add-WBBackupTarget&#10;```&#10;Adds a backup target to a backup policy.'
 [Add-WBBareMetalRecovery]: #add-wbbaremetalrecovery '```&#10;Add-WBBareMetalRecovery&#10;```&#10;Adds items to a backup policy so that backups that use the policy can perform bare metal recoveries.'
@@ -2574,6 +2798,11 @@ ndr -Name HKCR -PSProvider Registry -Root HKEY_CLASSES_ROOT
 Display options available in the module
 ```powershell
 Get-PSReadlineOption
+```
+##### Set-Partition
+Change a drive letter
+```powershell
+Set-Partition -DriveLetter C -NewDriveLetter Z
 ```
 ##### Set-PSReadlineOption
 Set history to only save unique commands
@@ -3521,9 +3750,22 @@ Increase the amount of running memory for a VM without dynamic memory enabled
 ```powershell
 Set-SCVirtualMachine -VM (Get-SCVirtualMachine -Name "DataServ") -MemoryMB 2048
 ```
+##### New-IscsiVirtualDisk
+`Fixed`
+`Path`
+`SizeBytes`
+
+```powershell
+New-IscsiVirtualDisk -Fixed -SizeBytes 500mb -Path 'C:\QuorumHD.vhdx'
+```
+##### New-IscsiServerTarget
+```powershell
+New-IscsiServerTarget -TargetName PLABDC01 -InitiatorId @("DNSName:plabdm01.practicelabs.com","plabsa01.practicelabs.com")
+```
 # Tasks
 #### Computer information
-Display computer name <sup>[devblogs.microsoft.com][https://devblogs.microsoft.com/scripting/powertip-use-powershell-to-get-computer-name/]</sup>
+Display computer name 
+[<sup>devblogs.microsoft.com</sup>][https://devblogs.microsoft.com/scripting/powertip-use-powershell-to-get-computer-name/]
 ```powershell
 Get-ComputerInfo -Property CsName
 gin.CsName

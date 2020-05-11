@@ -16,13 +16,14 @@
 [WinHTTP]: # 'Windows HTTP Services (WinHTTP)&#10;Provides a server-supported, high-level interface to the HTTP/2 and 1.1 Internet protocols. WinHTTP is designed to be used primarily in server-based scenarios by server applications that communicate with HTTP servers&#10;Windows Update uses WinHTTP to check for updates.'
 [Network Location Profile]: # 'Network Location Profile&#10;Determines which firewall rules are in effect, and can be "Public", "Private", or "Domain".'
 
-<!-- Active Directory -->
+<!-- Windows Server -->
 [adfind]: #adfind '```&#10;adfind&#10;```&#10;Command-line utility that can be used to query Active Directory attributes&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 53'
 [adprep]:         #adprep                         '```&#10;C:\>adprep&#10;```&#10;Prepare Active Directory for Windows Server upgrades&#10;Must be run on the Infrastructure Master role owner with the flag `/domainprep`.&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 29'
 [SmigDeploy.exe]: #smigdeploy.exe '```&#10;C:\>SmigDeploy.exe&#10;```&#10;Create a new folder in specified directory, registering Windows Server Migration Tools on the source server and opening a Powershell window in which they can be used&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 34'
 [Djoin.exe]: #djoin.exe '```&#10;C:\>Djoin.exe&#10;```&#10;Create a domain provisioning file, so a Nano Server image can be domain joined offline.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 46'
 [domain.msc]: #domain.msc '```&#10;C:\>domain.msc&#10;```&#10;Active Directory Domains and Trusts'
 [dssite.msc]: #dssite.msc '```&#10;C:\>dssite.msc&#10;```&#10;Active Directory Sites and Services'
+[cluadmin.msc]: #cluadmin.msc '```&#10;> cluadmin.msc&#10;> cluadmin&#10;```&#10;Failover Cluster Manager'
 
 <!-- `cmd` commands -->
 [arp]:            #arp                            '```&#10;C:\>arp&#10;```&#10;Display and modify the IP-to-MAC address translation tables used by ARP'
@@ -106,12 +107,8 @@ Tasks
 - [Log off][logoff]
 
 ## Command Prompt
-### Contents
-###### Concepts
-**U** 
 [UWP][UWP]
 
-###### Commands
 [`arp`][arp] 
 [`bcdedit`][bcdedit] 
 [`bootrec`][bootrec]
@@ -150,14 +147,19 @@ Tasks
 [`wt`][wt.exe]
 [`xcopy`][xcopy]
 
-###### Active Directory
+#### MMC snap-ins
 [`adprep`][adprep] 
 [`adfind`][adfind]
+[`cluadmin`][cluadmin.msc]
+`compmgmt.msc`
+`diskmgmt.msc`
 [`djoin`][Djoin.exe]
+`dsa.msc`
 [`domain`][domain.msc]
 [`dssite`][dssite.msc]
 [`dsquery`][dsquery]
 [`smigdeploy`][SmigDeploy.exe]
+`virtmgmt.msc`
 
 ###### Control Panel
 [`access`][access.cpl] 
