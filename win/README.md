@@ -29,11 +29,11 @@
 [arp]:            #arp                            '```&#10;C:\>arp&#10;```&#10;Display and modify the IP-to-MAC address translation tables used by ARP'
 [bcdedit]:        #bcdedit                        '```&#10;C:\>bcdedit&#10;```&#10;Boot configuration data editor'
 [bootrec]:        #bootrec                        '```&#10;C:\>bootrec&#10;```&#10;Windows Recovery Environment command that repairs a system partition'
-[cmdkey.exe]: #cmdkey.exe '```&#10;C:\>cmdkey.exe&#10;```&#10;Creates, lists, and deletes stored user names and passwords or credentials'
+[cmdkey.exe]: #cmdkeyexe '```&#10;C:\>cmdkey.exe&#10;```&#10;Creates, lists, and deletes stored user names and passwords or credentials'
 [Configure-SMRemoting.exe]: #configure-smremoting.exe '```&#10;C:\>Configure-SMRemoting.exe&#10;```&#10;Enable remote management using Server Manager'
 [cscript]:        #cscript                        '```&#10;C:\>cscript&#10;```&#10;Starts a script so that it runs in a command-line environment'
 [diskpart]:       #diskpart                       '```&#10;C:\>diskpart&#10;```&#10;Text-mode command interpreter used to convert disk types, create partitions and volumes, and configure RAID&#10;Stanek, William R. _Microsoft Windows Command-Line_.: 141'
-[dism.exe]: #dism.exe '```&#10;C:\>dism.exe&#10;```&#10;"Deployment Image Servicing and Management", enables modification of VHD and Windows Imaging files while they are offline&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 70'
+[dism.exe]: #dismexe '```&#10;C:\>dism.exe&#10;```&#10;"Deployment Image Servicing and Management", enables modification of VHD and Windows Imaging files while they are offline&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 70'
 [eventvwr.exe]: #eventvwrexe '```&#10;eventvwr.exe&#10;```&#10;Event Viewer'
 [hostname]:       #hostname                       '```&#10;C:\>hostname&#10;C:\>HOSTNAME.exe&#10;```&#10;Display computer name'
 [ipconfig]:       #ipconfig                       '```&#10;C:\>ipconfig&#10;```&#10;Display TCP/IP configuration'
@@ -46,12 +46,12 @@
 [regsvr32]: #regsvr32 ''
 [runas]: #runas '```&#10;C:\>runas&#10;```&#10;Run specific tools and programs with different permissions than those provided by the current login of the user.'
 [sfc]: #sfc                            '```&#10;C:\>sfc&#10;C:\>sfc /scannow&#10;```&#10;Scan and verify protected system files&#10;Stanek, William R. _Microsoft Windows Command-Line_.: 373'
-[slmgr]: #slmgr.vbs                          '```&#10;C:\>slmgr&#10;```&#10;Windows software licensing management tool'
+[slmgr]: #slmgrvbs                          '```&#10;C:\>slmgr&#10;```&#10;Windows software licensing management tool'
 [systeminfo]: #systeminfo                     '```&#10;C:\>systeminfo&#10;```&#10;Shows system information about the machine, including installed hotfixes and patches'
 [VMConnect.exe]: #vmconnectexe '```&#10;C:\>VMConnect.exe&#10;```&#10;"Virtual Machine Connection", Hyper-V tool used to connect to a running VM and access its desktop'
 [winver]: #winver                                             '```&#10;C:\>winver&#10;```&#10;Display the "About Windows" dialog box, including Windows version and build number'
 [wmic]: #wmic                           '```&#10;C:\>wmic&#10;```&#10;WMI command-line (WMIC) utility provides a command-line interface for WMI.'
-[wt.exe]: #wt.exe '```&#10;C:\>wt&#10;```&#10;Windows Terminal'
+[wt.exe]: #wtexe '```&#10;C:\>wt&#10;```&#10;Windows Terminal'
 [xcopy]: #xcopy '```&#10;C:\>xcopy&#10;```&#10;Copy files and directories recursively'
 
 <!-- Control Panel binaries -->
@@ -129,6 +129,7 @@ Tasks
 [`netsh`](#netsh) 
 [`ntdsutil`][ntdsutil]
 `paste.exe` <sup>[pwsh][Get-Clipboard]</sup>
+`perfmon`
 [`regsvr32`][regsvr32]
 [`route`](#route)
 [`runas`][runas] <sup>[lx](https://github.com/jasper-zanjani/lx/README.md '```sh&#10;$ sudo&#10;```')</sup>
@@ -140,7 +141,7 @@ Tasks
 [`traceroute`](#tracert)
 [`VMConnect.exe`][VMConnect.exe]
 [`wbadmin.exe`][wbadmin.exe]
-`where` <sup>[pwsh][Get-Command] [lx][which]
+`where` <sup>[pwsh][Get-Command] [lx][which]</sup>
 [`winrm`](#winrmexe) 
 [`winver`][winver]
 [`wmic`][wmic]

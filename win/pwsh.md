@@ -25,9 +25,9 @@
 [`dism`](#dism)
 [`dnsclient`](#dnsclient)
 [`failoverclusters`](#failoverclusters)
+[`hyper-v`](#hyper-v)
 [`iscsi`](#iscsi)
 [`iscsitarget`](#iscsitarget)
-[`hyper-v`](#hyper-v)
 [`netadapter`](#netadapter)
 [`netconnection`](#netconnection)
 [`netqos`](#netqos)
@@ -92,6 +92,7 @@ Tasks
 - [Implement Discrete Device Assignment](#implement-dda)<sup>70-740</sup>
 - [Create a S2D cluster](#configure-s2d-cluster)<sup>70-740</sup>
 - [Configure a pass-through disk](#pass-through-disk)<sup>70-740</sup>
+- [Create a VM, specifying installation media](#create-vm-with-installation-media)<sup>70-740</sup>
 
 [<code>&nbsp;a</code>](#cmdlet-verbs  "```&#10;PS C:\> Add-&#10;```") 
 [`ap`](#cmdlet-verbs "`Approve-`&#10;Confirms or agrees to the status of a resource or process.") 
@@ -1131,6 +1132,7 @@ Tasks
 [Update-WIMBootEntry]: #update-wimbootentry '```&#10;PS C:\> Update-WIMBootEntry&#10;```&#10;Updates the Windows image file boot (WIMBoot) configuration entry, associated with either the specified data source ID, the renamed image file path or the moved image file path.'
 [Use-WindowsUnattend]: #use-windowsunattend '```&#10;PS C:\> Use-WindowsUnattend&#10;```&#10;Applies an unattended answer file to a Windows image.'
 
+
 <code>WIMBootEntry&nbsp;[g][Get-WIMBootEntry]&nbsp;[u][Update-WIMBootEntry]</code>
 **`AppxProvisioned`**
 <code>DataFile&nbsp;[s][Set-AppxProvisionedDataFile]</code> 
@@ -1149,6 +1151,7 @@ Tasks
 <code>ProductKey&nbsp;[s][Set-WindowsProductKey]</code>
 <code>ReservedStorageState&nbsp;[g][Get-WindowsReservedStorageState]&nbsp;[s][Set-WindowsReservedStorageState]</code>
 <code>Unattend&nbsp;[u][Use-WindowsUnattend]</code>
+
 #### failoverclusters
 [msdocs:Add-ClusterCheckpoint]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Add-ClusterCheckpoint "Add-ClusterCheckpoint"
 [msdocs:Add-ClusterGenericScriptRole]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Add-ClusterGenericScriptRole "Add-ClusterGenericScriptRole"
@@ -1858,6 +1861,7 @@ Tasks
 [`Dismount`][Dismount-VHD]<sup>[?][msdocs:Dismount-VHD]</sup>
 [`Merge`][Merge-VHD]<sup>[?][msdocs:Merge-VHD]</sup>
 [`Mount`][Mount-VHD]<sup>[?][msdocs:Mount-VHD]</sup>
+[`New`][New-VHD]<sup>[?][msdocs:New-VHD]</sup>
 [`Optimize`][Optimize-VHD]<sup>[?][msdocs:Optimize-VHD]</sup>
 [`Resize`][Resize-VHD]<sup>[?][msdocs:Resize-VHD]</sup>
 - VM
@@ -1881,37 +1885,72 @@ Tasks
 [`Start`][Start-VM]<sup>[?][msdocs:Start-VM]</sup>
 [`Stop`][Stop-VM]<sup>[?][msdocs:Stop-VM]</sup>
 [`Suspend`][Suspend-VM]<sup>[?][msdocs:Suspend-VM]</sup>
+- VMDvdDrive
+[`Add`][Add-VMDvdDrive]<sup>[?][msdocs:Add-VMDvdDrive]</sup>
+[`Get`][Get-VMDvdDrive]<sup>[?][msdocs:Get-VMDvdDrive]</sup>
+[`Remove`][Remove-VMDvdDrive]<sup>[?][msdocs:Remove-VMDvdDrive]</sup>
+[`Set`][Set-VMDvdDrive]<sup>[?][msdocs:Set-VMDvdDrive]</sup>
 - VMFirmware
 [`Set`][Set-VMFirmware]
+- VMFibreChannelHba
+[`Add`][Add-VMFibreChannelHba]<sup>[?][msdocs:Add-VMFibreChannelHba]</sup>
+[`Get`][Get-VMFibreChannelHba]<sup>[?][msdocs:Get-VMFibreChannelHba]</sup>
+[`Remove`][Remove-VMFibreChannelHba]<sup>[?][msdocs:Remove-VMFibreChannelHba]</sup>
+[`Set`][Set-VMFibreChannelHba]<sup>[?][msdocs:Set-VMFibreChannelHba]</sup>
+- VMHardDiskDrive
+[`Add`][Add-VMHardDiskDrive]<sup>[?][msdocs:Add-VMHardDiskDrive]</sup>
+[`Get`][Get-VMHardDiskDrive]<sup>[?][msdocs:Get-VMHardDiskDrive]</sup>
+[`Remove`][Remove-VMHardDiskDrive]<sup>[?][msdocs:Remove-VMHardDiskDrive]</sup>
+[`Set`][Set-VMHardDiskDrive]<sup>[?][msdocs:Set-VMHardDiskDrive]</sup>
 - VMHost
-[`Set`][Set-VMHost]
+[`Get`][Get-VMHost]<sup>[?][msdocs:Get-VMHost]</sup>
+[`Set`][Set-VMHost]<sup>[?][msdocs:Set-VMHost]</sup>
 - VMMemory
-[`Set`][Set-VMMemory]
+[`Get`][Get-VMMemory]<sup>[?][msdocs:Get-VMMemory]</sup>
+[`Set`][Set-VMMemory]<sup>[?][msdocs:Set-VMMemory]</sup>
 - VMNetworkAdapter
-[`Add`][Add-VMNetworkAdapter]
-[`Remove`][Remove-VMNetworkAdapter]
-[`Set`][Set-VMNetworkAdapter]
+[`Add`][Add-VMNetworkAdapter]<sup>[?][msdocs:Add-VMNetworkAdapter]</sup>
+[`Connect`][Connect-VMNetworkAdapter]<sup>[?][msdocs:Connect-VMNetworkAdapter]</sup>
+[`Disconnect`][Disconnect-VMNetworkAdapter]<sup>[?][msdocs:Disconnect-VMNetworkAdapter]</sup>
+[`Get`][Get-VMNetworkAdapter]<sup>[?][msdocs:Get-VMNetworkAdapter]</sup>
+[`Remove`][Remove-VMNetworkAdapter]<sup>[?][msdocs:Remove-VMNetworkAdapter]</sup>
+[`Rename`][Rename-VMNetworkAdapter]<sup>[?][msdocs:Rename-VMNetworkAdapter]</sup>
+[`Set`][Set-VMNetworkAdapter]<sup>[?][msdocs:Set-VMNetworkAdapter]</sup>
+[`Test`][Test-VMNetworkAdapter]<sup>[?][msdocs:Test-VMNetworkAdapter]</sup>
 - VMProcessor
-[`Set`][Set-VMProcessor]
+[`Get`][Get-VMProcessor]<sup>[?][msdocs:Get-VMProcessor]</sup>
+[`Set`][Set-VMProcessor]<sup>[?][msdocs:Set-VMProcessor]</sup>
+- VMSaN
+[`Connect`][Connect-VMSan]<sup>[?][msdocs:Connect-VMSan]</sup>
+[`Disconnect`][Disconnect-VMSan]<sup>[?][msdocs:Disconnect-VMSan]</sup>
+[`Get`][Get-VMSan]<sup>[?][msdocs:Get-VMSan]</sup>
+[`New`][New-VMSan]<sup>[?][msdocs:New-VMSan]</sup>
+[`Remove`][Remove-VMSan]<sup>[?][msdocs:Remove-VMSan]</sup>
+[`Rename`][Rename-VMSan]<sup>[?][msdocs:Rename-VMSan]</sup>
+[`Set`][Set-VMSan]<sup>[?][msdocs:Set-VMSan]</sup>
 - VMSnapshot
 [`Restore`][Restore-VMSnapshot]<sup>[?][msdocs:Restore-VMSnapshot</sup>
 - VMSwitch
-[`Add`][Add-VMSwitch]
-[`Get`][Get-VMSwitch]
-[`New`][New-VMSwitch]
-[`Rename`][Remove-VMSwitch]
-[`Rename`][Rename-VMSwitch]
-[`Set`][Set-VMSwitch]
+[`Add`][Add-VMSwitch]<sup>[?][msdocs:Add-VMSwitch]</sup>
+[`Get`][Get-VMSwitch]<sup>[?][msdocs:Get-VMSwitch]</sup>
+[`New`][New-VMSwitch]<sup>[?][msdocs:New-VMSwitch]</sup>
+[`Remove`][Remove-VMSwitch]<sup>[?][msdocs:Remove-VMSwitch]</sup>
+[`Rename`][Rename-VMSwitch]<sup>[?][msdocs:Rename-VMSwitch]</sup>
+[`Set`][Set-VMSwitch]<sup>[?][msdocs:Set-VMSwitch]</sup>
 - VMVersion
-[`Update`][Update-VMVersion]
+[`Update`][Update-VMVersion]<sup>[?][msdocs:Update-VMVersion]</sup>
 
 #### iscsi
 [msdocs:Connect-IscsiTarget]: https://docs.microsoft.com/en-us/powershell/module/iscsi/Connect-IscsiTarget "Connect-IscsiTarget documentation"
+[msdocs:New-IscsiTargetPortal]: https://docs.microsoft.com/en-us/powershell/module/iscsi/New-IscsiTargetPortal "New-IscsiTargetPortal documentation"
 
 [Connect-IscsiTarget]: #connect-iscsitarget '```&#10;[PS] Connect-IscsiTarget&#10;```&#10;Establishes a connection between the local iSCSI initiator and an iSCSI target device.'
+[New-IscsiTargetPortal]: #new-iscsitargetportal '```&#10;[PS] New-IscsiTargetPortal&#10;```&#10;Configures an iSCSI target portal.'
 
 - iSCSITarget
 [`Connect`][Connect-IscsiTarget]<sup>[?][msdocs:Connect-IscsiTarget]</sup>
+- iSCSITargetPortal
+[`New`][New-IscsiTargetPortal]<sup>[?][msdocs:New-IscsiTargetPortal]</sup>
 
 #### iscsitarget
 [msdocs:New-IscsiServerTarget]: https://docs.microsoft.com/en-us/powershell/module/IscsiTarget/New-IscsiServerTarget "New-IscsiServerTarget documentation"
@@ -3207,9 +3246,10 @@ Create a Registry key in order to use a local user account that is not the built
 ```powershell
 New-ItemProperty -Path HKLM:\Software\Microsoft\Windows\currentversion\policies\system -Name LocalAccountTokenFilterPolicy -Value 1
 ```
-##### Measure-Object
-##### ForEach-Object
-##### New-Object
+##### Measure-VM
+**`VMName`**
+
+
 ##### Select-Object
 Create a custom property <sup>[Pfeiffer](https://portal.cloudskills.io/products/azure-powershell-the-ultimate-beginners-course/categories/2529580/posts/8443858 "Azure PowerShell course") </sup>
 ```powershell
@@ -3228,18 +3268,26 @@ Mount-VHD -Path $file
 [New-VHD -Differencing]: #New-VHD '```&#10;[PS] New-VHD -Differencing&#10;```&#10;Specify that a new differencing disk is to be created'
 
 [`Differencing`][New-VHD -Differencing]
+`Dynamic`
 `Fixed`
 `LogicalSectorSizeBytes`
+`ParentPath`
 `SizeBytes`
 
 Tasks:
 - [VHDX file](#vhdx-file)
 
-Create a 500 GB fixed VHDX image file with a logical sector size of 4 KB <sup>[Zacker][Zacker]: 219</sup>
+[Zacker][Zacker]: 219
 ```powershell
 New-VHD -Path c:\diskfile.vhdx -Fixed -SizeBytes 500gb -LogicalSectorSizeBytes 4096
 ```
-
+```powershell
+New-VHD -Path C:\Data\disk1.vhdx -SizeBytes 256GB -Dynamic 
+```
+Differencing disk <sup>[Practice Lab][pl:70-740]</sup>
+```powershell
+New-VHD -Path 'D:\Virtual Machines\PLAB2.vhdx' -Differencing -ParentPath 'C:\Users\Public\Documents\Hyper-V\Virtual hard disks\PLABWIN102.vhdx'
+```
 ##### Export-VM
 Export a VM <sup>[Zacker][Zacker]: 373</sup>
 ```powershell
@@ -3268,9 +3316,16 @@ Perform a live migraiton <sup>[Zacker][Zacker]: 307</sup>
 Move-VM -VM server1 -DestinationHost hyper2
 ```
 ##### New-VM
-[New-VM -Generation]: #new-vm '```&#10;PS C:\> New-VM -Generation&#10;```&#10;Specify generation of VM (1 or 2)&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 197'
+**`Name`**
+**`MemoryStartupBytes`**
+**`Generation`**
+`NewVHDPath`
+`NewVHDSizeBytes`
+`SwitchName`
+`VHDPath`
 
-[`Generation`][New-VM -Generation]
+Tasks:
+- [VM with installation media](#create-vm-with-installation-media)
 
 Create a Nano Server VM from an image file <sup>[Zacker][Zacker]: 47</sup>
 ```powershell
@@ -3286,6 +3341,9 @@ Disable dynamic memory <sup>[MeasureUp][mu:70-740]</sup>
 ```powershell
 Set-VM -StaticMemory
 ```
+##### Set-VMDvdDrive
+Tasks:
+- [Create VM with installation media](#create-vm-with-installation-media)
 ##### Set-VMHost
 [Set-VMHost -VirtualMachinePath]: #Set-VMHost '```&#10;PS C:\> Set-VMHost -VirtualMachinePath&#10;```&#10;Specify the default folder to store virtual machine configuration files on the Hyper-V host'
 [Set-VMHost -VirtualHardDiskPath]: #Set-VMHost '```&#10;PS C:\> Set-VMHost -VirtualHardDiskPath&#10;```&#10;Specify the default folder to store virtual hard disks on the Hyper-V host.'
@@ -3345,7 +3403,10 @@ New-NetNAT -Name LocalNAT -InternalIPInterfaceAddressPrefix "192.168.100.0/24"
 
 [`AllowManagementOS`][Set-VMSwitch -AllowManagementOS]
 ##### Add-VMHardDiskDrive
-`ControllerType`
+[Add-VMHardDiskDrive -ControllerType]: #add-vmharddiskdrive '```&#10;[PS] Add-VMHardDiskDrive -ControllerType&#10;```&#10;Specify type of controller to which the hard disk is to be added'
+
+**`VMName`**
+**[`ControllerType`][Add-VMHarddDiskDrive -ControllerType]**
 `DiskNumber`
 `VMName`
 
@@ -3599,6 +3660,9 @@ Get-WindowsImage -ImagePath G:\images\WS2016.WIM
 [Mount-WindowsImage -Remount]: #Mount-WindowsImage '```&#10;PS C:\> Mount-WindowsImage -Remount&#10;```&#10;&#10;Equivalent to `Dism.exe /Remount-Image`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
 
 [`Remount`][Mount-WindowsImage -Remount]
+##### Enable-VMResourceMetering
+**`VMName`**
+
 ##### Enable-WindowsOptionalFeature
 Enable a feature in the currently running operating system <sup>[docs.microsoft.com](https://docs.microsoft.com/en-us/powershell/module/dism/enable-windowsoptionalfeature?view=win10-ps&redirectedfrom=MSDN "Microsoft Docs: \"Enable-WindowsOptionalFeature\"")</sup>
 ```powershell
@@ -3761,6 +3825,19 @@ New-IscsiVirtualDisk -Fixed -SizeBytes 500mb -Path 'C:\QuorumHD.vhdx'
 ##### New-IscsiServerTarget
 ```powershell
 New-IscsiServerTarget -TargetName PLABDC01 -InitiatorId @("DNSName:plabdm01.practicelabs.com","plabsa01.practicelabs.com")
+```
+##### New-VMSAN
+**`Name`**
+
+```powershell
+New-VMSan "PLABS-Fc"
+```
+##### Add-VMFibreChannelHBA
+**`VMName`**
+**`SANName`**
+
+```powershell
+Add-VMFibreChannelHBA PLABDC02 "PLABS-Fc"
 ```
 # Tasks
 #### Computer information
@@ -4103,7 +4180,7 @@ Add-WindowsPackage -Path .\MountDir PackagePath C:\ServicingPackages_cabs
 Dismount-WindowsImage -Path .\MountDir -Save
 ```
 ##### Pass-through disk
-Zacker: 226
+[Zacker][Zacker]: 226
 ```powershell
 Set-Disk -Number 2 -IsOffline $true
 Add-VMHardDiskDrive -VMName server1 -ControllerType scsi -DiskNumber 2
@@ -4125,4 +4202,10 @@ Where {($_.EmailAddress -notlike "*@*")} |
 Where {($_.Enabled -eq $True)} | 
 Select Displayname, SaMaccountName, Enabled, EmailAddress, @{L=’ProxyAddress_1'; E={$_.proxyaddresses[0]}}, @{L=’ProxyAddress_2'; E={$_.ProxyAddresses[1]}} | 
 Export-csv .\usersnoemail2.csv -notypeinformation
+```
+##### Create VM with installation media
+[Practice Lab][pl:70-740]
+```powershell
+New-VM PLABWIN102 1536mb 1 -SwitchName 'Private network 1' -NewVHDPath 'C:\Users\Public\Documents\Hyper-V\Virtual hard disks\PLABWIN102.vhdx' -NewVHDSizeBytes 127gb
+Set-VMDvdDrive -VMName PLABWIN102 -Path C:\Users\Administrator.PRACTICELABS\Documents\Eval81.iso
 ```
