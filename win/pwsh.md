@@ -17,83 +17,10 @@
 [pl:70-740]: # 'MeasureUp Practice Lab: Installation, Storage and Compute with Windows Server 2016 (70-740)'
 
 # Contents
-[`addsadministartion`](#addsadministration)
-[`dcbqos`](#dcbqos)
-[`deduplication`](#deduplication)
-[`defender`](#defender)
-[`dhcpserver`](#dhcpserver)
-[`dism`](#dism)
-[`dnsclient`](#dnsclient)
-[`failoverclusters`](#failoverclusters)
-[`hyper-v`](#hyper-v)
-[`iscsi`](#iscsi)
-[`iscsitarget`](#iscsitarget)
-[`netadapter`](#netadapter)
-[`netconnection`](#netconnection)
-[`netqos`](#netqos)
-[`netsecurity`](#netsecurity)
-[`nettcpip`](#nettcpip)
-[`networkbalancingclusters`](#networkloadbalancingclusters)
-[`packagemanagement`](#packagemanagement)
-[`psdesiredconfiguration`](#psdesiredstateconfiguration)
-[`servermanager`](#servermanager)
-[`servermigration`](#servermigration)
-[`storage`](#storage)
-[`storagereplica`](#storagereplica)
-[`virtualmachinemanager`](#virtualmachinemanager)
-[`windowsserverbackup`](#windowsserverbackup)
+- [**Modules**](#modules)
+- [**Tasks**](#tasks)
 
-[endpoint]: # 'endpoint&#10;a particular configuration item in WinRM, representing a specific application for which WinRM can receive traffic'
-[explicit remoting]: # 'explicit remoting&#10;opening a temporary or persistent Powershell session to a remote system&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 176'
-[external virtual switch]: # 'external virtual switch&#10;bound to networking protocol stack in the host operating system and connected to a physical network interface adapter on the host, allowing VMs to access the network to which the physical adapter is connected&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 241'
-[implicit remoting]: # 'implicit remoting&#10;running a cmdlet specifying the `ComputerName` parameter, which directs its function to the remote system&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 177'
-[internal virtual switch]: # 'internal virtual switch&#10;Bound to a separate instance of the networking protocol stack in the host operating system, independent from the physical network interface adapter and its connected network, it allows VMs to access the virtual network, including the host operating system.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 241'
-[listener]: # 'listener&#10;configuration item in WinRM representing the ability of the service to accept incoming network traffic, associated with a TCP port number'
-[NuGet]: # 'NuGet&#10;.NET package manager'
-[private virtual switch]: # 'private virtual switch&#10;Exists only in the Hyper-V server and is accessible only to the VMs running on it, and is inaccessible to the host operating system itself.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 241'
-[remoting]: # 'remoting&#10;term applied to the use of WinRM in Powershell over port 5985 (or 5986 for HTTPS)'
-[WinRM]: # 'Windows Remote Management (WinRM)&#10;Microsoft implementation of the WSMAN protocol, which handles communications and authentication for connections for many applications.&#10;Unlike MMCs, which are based on DCOM (legacy technology), WinRM is considered firewall-friendly and is the preferred option'
-
-Concepts
-- [NuGet][NuGet]
-
-Powershell [remoting][remoting] can be done [explicitly][explicit remoting] or [implicitly][implicit remoting].
-Explicit remoting is also 1-to-1 remoting, where an interactive Powershell prompt is brought up on a remote computer.
-One-to-many or fan-out remoting is possible with implicit remoting, where a command is transmitted to many computers 
-Remoting relies on [WinRM][WinRM], which is Microsoft's implementation of WSMAN. 
-
-Tasks
-- [**Display computer name**][Get-ComputerInfo]
-- [**Remove Registry keys**][Remove-Item]
-- [**Clear out `%temp%` folder**][Remove-Item]
-- [**Reset AD user's password**][Set-ADAccountPassword]
-- [**Generate password**](#generate-password)
-- [Run `cmd` as admin][Start-Process]
-- [Add a member to a group](#add-a-member-to-a-group)
-- [Credentials](#credentials)
-- [Formatting output](#output-formatting)
-- [Hash tables](#hash-tables)
-- [Manipulating files](#file-manipulation)
-- [Text-to-speech](#text-to-speech)
-- [New domain controller](#new-domain-controller)
-- [Set new Registry keys](#registry)
-- [Create a new VHDX file, mount and initialize it, and create and format a partition within it](#vhdx-file)
-- [Restart Wi-Fi adapter](#restart-wi-fi-adapter)
-- [Safely combine related Registry modifications](#registry)
-- [Set DNS server to DHCP][Set-DnsClientServerAddress]
-- [Set IP address to DHCP][Set-NetIpInterface]
-- [Add a local user to administrators](#add-a-new-local-admin)
-- [Install NuGet][Install-PackageProvider]
-- [XML](#handle-xml-files)
-- [Create a virtual switch with SET enabled](#create-a-virtual-switch-with-set-enabled)<sup>70-740</sup>
-- [Implement nested virtualization](#implement-nested-virtualization)<sup>70-740</sup>
-- [Enable CredSSP](#enable-credssp)<sup>70-740</sup>
-- [Configure Server Core](#configure-server-core)<sup>70-740</sup>
-- [Implement Discrete Device Assignment](#implement-dda)<sup>70-740</sup>
-- [Create a S2D cluster](#configure-s2d-cluster)<sup>70-740</sup>
-- [Configure a pass-through disk](#pass-through-disk)<sup>70-740</sup>
-- [Create a VM, specifying installation media](#create-vm-with-installation-media)<sup>70-740</sup>
-
+<!--
 [<code>&nbsp;a</code>](#cmdlet-verbs  "```&#10;PS C:\> Add-&#10;```") 
 [`ap`](#cmdlet-verbs "`Approve-`&#10;Confirms or agrees to the status of a resource or process.") 
 [`as` ](#cmdlet-verbs  "```&#10;PS C:\> Assert-&#10;```&#10;Affirms the state of a resource.") 
@@ -216,15 +143,830 @@ Tasks
 [`pwd`][Get-Location]
 [`reset`][Clear-Host] 
 [`rm`][Remove-Item]
-[`sed`][Select-Object] 
+[`sed`][Where-Object] 
 [`shutdown`][Stop-Computer][` -r`][Restart-Computer]
 [`tail`][Get-Content] 
 [`touch`][New-Item]
 [`uniq`][Select-Object]
 [`wc`][Measure-Object] 
 [`which`][Get-Command]
+-->
 
-### Disk-related cmdlets
+### Modules
+[`dhcpserver`](#dhcpserver)
+[`diagnostics`](#microsoftpowershelldiagnostics)
+[`dnsclient`](#dnsclient)
+[`netadapter`](#netadapter)
+[`netconnection`](#netconnection)
+[`netsecurity`](#netsecurity)
+[`nettcpip`](#nettcpip)
+[`packagemanagement`](#packagemanagement)
+[`psdesiredconfiguration`](#psdesiredstateconfiguration)
+[`smbshare`](#smbshare)
+[`storage`](#storage)
+[`utility`](#microsoftpowershellutility)
+[`wsman.management`](#microsoftpowershellwsmanmanagement)
+
+**Windows Server modules**
+[`addsadministartion`](#addsadministration)
+[`dcbqos`](#dcbqos)
+[`deduplication`](#deduplication)
+[`defender`](#defender)
+[`failoverclusters`](#failoverclusters)
+[`hyper-v`](#hyper-v)
+[`iscsi`](#iscsi)
+[`iscsitarget`](#iscsitarget)
+[`dism`](#dism)
+[`nanoserverimagegenerator`](#nanoserverimagegenerator)
+[`netqos`](#netqos)
+[`networkbalancingclusters`](#networkloadbalancingclusters)
+[`servermanager`](#servermanager)
+[`servermigration`](#servermigration)
+[`storagereplica`](#storagereplica)
+[`virtualmachinemanager`](#virtualmachinemanager)
+[`windowsserverbackup`](#windowsserverbackup)
+
+#### addsadministration
+[msdocs:Disable-ADAccount]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Disable-ADAccount "Disable-ADAccount documentation"
+[msdocs:Enable-ADAccount]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Enable-ADAccount "Enable-ADAccount documentation"
+[msdocs:Search-ADAccount]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Search-ADAccount "Search-ADAccount documentation"
+[msdocs:Unlock-ADAccount]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Unlock-ADAccount "Unlock-ADAccount documentation"
+[msdocs:Set-ADAccountAuthenticationPolicySilo]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Set-ADAccountAuthenticationPolicySilo "Set-ADAccountAuthenticationPolicySilo documentation"
+[msdocs:Get-ADAccountAuthorizationGroup]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Get-ADAccountAuthorizationGroup "Get-ADAccountAuthorizationGroup documentation"
+[msdocs:Set-ADAccountControl]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Set-ADAccountControl "Set-ADAccountControl documentation"
+[msdocs:Clear-ADAccountExpiration]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Clear-ADAccountExpiration "Clear-ADAccountExpiration documentation"
+[msdocs:Set-ADAccountExpiration]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Set-ADAccountExpiration "Set-ADAccountExpiration documentation"
+[msdocs:Set-ADAccountPassword]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Set-ADAccountPassword "Set-ADAccountPassword documentation"
+[msdocs:Get-ADAccountResultantPasswordReplicationPolicy]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Get-ADAccountResultantPasswordReplicationPolicy "Get-ADAccountResultantPasswordReplicationPolicy documentation"
+[msdocs:Get-ADAuthenticationPolicy]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Get-ADAuthenticationPolicy "Get-ADAuthenticationPolicy documentation"
+[msdocs:New-ADAuthenticationPolicy]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/New-ADAuthenticationPolicy "New-ADAuthenticationPolicy documentation"
+[msdocs:Remove-ADAuthenticationPolicy]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Remove-ADAuthenticationPolicy "Remove-ADAuthenticationPolicy documentation"
+[msdocs:Set-ADAuthenticationPolicy]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Set-ADAuthenticationPolicy "Set-ADAuthenticationPolicy documentation"
+[msdocs:Show-ADAuthenticationPolicyExpression]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Show-ADAuthenticationPolicyExpression "Show-ADAuthenticationPolicyExpression documentation"
+[msdocs:Get-ADAuthenticationPolicySilo]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Get-ADAuthenticationPolicySilo "Get-ADAuthenticationPolicySilo documentation"
+[msdocs:New-ADAuthenticationPolicySilo]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/New-ADAuthenticationPolicySilo "New-ADAuthenticationPolicySilo documentation"
+[msdocs:Remove-ADAuthenticationPolicySilo]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Remove-ADAuthenticationPolicySilo "Remove-ADAuthenticationPolicySilo documentation"
+[msdocs:Set-ADAuthenticationPolicySilo]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Set-ADAuthenticationPolicySilo "Set-ADAuthenticationPolicySilo documentation"
+[msdocs:Grant-ADAuthenticationPolicySiloAccess]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Grant-ADAuthenticationPolicySiloAccess "Grant-ADAuthenticationPolicySiloAccess documentation"
+[msdocs:Revoke-ADAuthenticationPolicySiloAccess]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Revoke-ADAuthenticationPolicySiloAccess "Revoke-ADAuthenticationPolicySiloAccess documentation"
+[msdocs:Get-ADCentralAccessPolicy]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Get-ADCentralAccessPolicy "Get-ADCentralAccessPolicy documentation"
+[msdocs:New-ADCentralAccessPolicy]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/New-ADCentralAccessPolicy "New-ADCentralAccessPolicy documentation"
+[msdocs:Remove-ADCentralAccessPolicy]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Remove-ADCentralAccessPolicy "Remove-ADCentralAccessPolicy documentation"
+[msdocs:Set-ADCentralAccessPolicy]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Set-ADCentralAccessPolicy "Set-ADCentralAccessPolicy documentation"
+[msdocs:Add-ADCentralAccessPolicyMember]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Add-ADCentralAccessPolicyMember "Add-ADCentralAccessPolicyMember documentation"
+[msdocs:Remove-ADCentralAccessPolicyMember]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Remove-ADCentralAccessPolicyMember "Remove-ADCentralAccessPolicyMember documentation"
+[msdocs:Get-ADCentralAccessRule]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Get-ADCentralAccessRule "Get-ADCentralAccessRule documentation"
+[msdocs:New-ADCentralAccessRule]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/New-ADCentralAccessRule "New-ADCentralAccessRule documentation"
+[msdocs:Remove-ADCentralAccessRule]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Remove-ADCentralAccessRule "Remove-ADCentralAccessRule documentation"
+[msdocs:Set-ADCentralAccessRule]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Set-ADCentralAccessRule "Set-ADCentralAccessRule documentation"
+[msdocs:Clear-ADClaimTransformLink]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Clear-ADClaimTransformLink "Clear-ADClaimTransformLink documentation"
+[msdocs:Set-ADClaimTransformLink]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Set-ADClaimTransformLink "Set-ADClaimTransformLink documentation"
+[msdocs:Get-ADClaimTransformPolicy]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Get-ADClaimTransformPolicy "Get-ADClaimTransformPolicy documentation"
+[msdocs:New-ADClaimTransformPolicy]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/New-ADClaimTransformPolicy "New-ADClaimTransformPolicy documentation"
+[msdocs:Remove-ADClaimTransformPolicy]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Remove-ADClaimTransformPolicy "Remove-ADClaimTransformPolicy documentation"
+[msdocs:Set-ADClaimTransformPolicy]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Set-ADClaimTransformPolicy "Set-ADClaimTransformPolicy documentation"
+[msdocs:Get-ADClaimType]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Get-ADClaimType "Get-ADClaimType documentation"
+[msdocs:New-ADClaimType]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/New-ADClaimType "New-ADClaimType documentation"
+[msdocs:Remove-ADClaimType]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Remove-ADClaimType "Remove-ADClaimType documentation"
+[msdocs:Set-ADClaimType]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Set-ADClaimType "Set-ADClaimType documentation"
+[msdocs:Get-ADComputer]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Get-ADComputer "Get-ADComputer documentation"
+[msdocs:New-ADComputer]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/New-ADComputer "New-ADComputer documentation"
+[msdocs:Remove-ADComputer]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Remove-ADComputer "Remove-ADComputer documentation"
+[msdocs:Set-ADComputer]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Set-ADComputer "Set-ADComputer documentation"
+[msdocs:Add-ADComputerServiceAccount]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Add-ADComputerServiceAccount "Add-ADComputerServiceAccount documentation"
+[msdocs:Get-ADComputerServiceAccount]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Get-ADComputerServiceAccount "Get-ADComputerServiceAccount documentation"
+[msdocs:Remove-ADComputerServiceAccount]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Remove-ADComputerServiceAccount "Remove-ADComputerServiceAccount documentation"
+[msdocs:New-ADDCCloneConfigFile]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/New-ADDCCloneConfigFile "New-ADDCCloneConfigFile documentation"
+[msdocs:Get-ADDCCloningExcludedApplicationList]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Get-ADDCCloningExcludedApplicationList "Get-ADDCCloningExcludedApplicationList documentation"
+[msdocs:Get-ADDefaultDomainPasswordPolicy]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Get-ADDefaultDomainPasswordPolicy "Get-ADDefaultDomainPasswordPolicy documentation"
+[msdocs:Set-ADDefaultDomainPasswordPolicy]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Set-ADDefaultDomainPasswordPolicy "Set-ADDefaultDomainPasswordPolicy documentation"
+[msdocs:Move-ADDirectoryServer]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Move-ADDirectoryServer "Move-ADDirectoryServer documentation"
+[msdocs:Move-ADDirectoryServerOperationMasterRole]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Move-ADDirectoryServerOperationMasterRole "Move-ADDirectoryServerOperationMasterRole documentation"
+[msdocs:Get-ADDomain]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Get-ADDomain "Get-ADDomain documentation"
+[msdocs:Set-ADDomain]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Set-ADDomain "Set-ADDomain documentation"
+[msdocs:Get-ADDomainController]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Get-ADDomainController "Get-ADDomainController documentation"
+[msdocs:Add-ADDomainControllerPasswordReplicationPolicy]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Add-ADDomainControllerPasswordReplicationPolicy "Add-ADDomainControllerPasswordReplicationPolicy documentation"
+[msdocs:Get-ADDomainControllerPasswordReplicationPolicy]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Get-ADDomainControllerPasswordReplicationPolicy "Get-ADDomainControllerPasswordReplicationPolicy documentation"
+[msdocs:Remove-ADDomainControllerPasswordReplicationPolicy]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Remove-ADDomainControllerPasswordReplicationPolicy "Remove-ADDomainControllerPasswordReplicationPolicy documentation"
+[msdocs:Get-ADDomainControllerPasswordReplicationPolicyUsage]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Get-ADDomainControllerPasswordReplicationPolicyUsage "Get-ADDomainControllerPasswordReplicationPolicyUsage documentation"
+[msdocs:Set-ADDomainMode]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Set-ADDomainMode "Set-ADDomainMode documentation"
+[msdocs:Get-ADFineGrainedPasswordPolicy]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Get-ADFineGrainedPasswordPolicy "Get-ADFineGrainedPasswordPolicy documentation"
+[msdocs:New-ADFineGrainedPasswordPolicy]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/New-ADFineGrainedPasswordPolicy "New-ADFineGrainedPasswordPolicy documentation"
+[msdocs:Remove-ADFineGrainedPasswordPolicy]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Remove-ADFineGrainedPasswordPolicy "Remove-ADFineGrainedPasswordPolicy documentation"
+[msdocs:Set-ADFineGrainedPasswordPolicy]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Set-ADFineGrainedPasswordPolicy "Set-ADFineGrainedPasswordPolicy documentation"
+[msdocs:Add-ADFineGrainedPasswordPolicySubject]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Add-ADFineGrainedPasswordPolicySubject "Add-ADFineGrainedPasswordPolicySubject documentation"
+[msdocs:Get-ADFineGrainedPasswordPolicySubject]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Get-ADFineGrainedPasswordPolicySubject "Get-ADFineGrainedPasswordPolicySubject documentation"
+[msdocs:Remove-ADFineGrainedPasswordPolicySubject]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Remove-ADFineGrainedPasswordPolicySubject "Remove-ADFineGrainedPasswordPolicySubject documentation"
+[msdocs:Get-ADForest]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Get-ADForest "Get-ADForest documentation"
+[msdocs:Set-ADForest]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Set-ADForest "Set-ADForest documentation"
+[msdocs:Set-ADForestMode]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Set-ADForestMode "Set-ADForestMode documentation"
+[msdocs:Get-ADGroup]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Get-ADGroup "Get-ADGroup documentation"
+[msdocs:New-ADGroup]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/New-ADGroup "New-ADGroup documentation"
+[msdocs:Remove-ADGroup]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Remove-ADGroup "Remove-ADGroup documentation"
+[msdocs:Set-ADGroup]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Set-ADGroup "Set-ADGroup documentation"
+[msdocs:Add-ADGroupMember]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Add-ADGroupMember "Add-ADGroupMember documentation"
+[msdocs:Get-ADGroupMember]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Get-ADGroupMember "Get-ADGroupMember documentation"
+[msdocs:Remove-ADGroupMember]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Remove-ADGroupMember "Remove-ADGroupMember documentation"
+[msdocs:Move-ADObject]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Move-ADObject "Move-ADObject documentation"
+[msdocs:New-ADObject]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/New-ADObject "New-ADObject documentation"
+[msdocs:Remove-ADObject]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Remove-ADObject "Remove-ADObject documentation"
+[msdocs:Rename-ADObject]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Rename-ADObject "Rename-ADObject documentation"
+[msdocs:Restore-ADObject]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Restore-ADObject "Restore-ADObject documentation"
+[msdocs:Set-ADObject]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Set-ADObject "Set-ADObject documentation"
+[msdocs:Sync-ADObject]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Sync-ADObject "Sync-ADObject documentation"
+[msdocs:Get-ADObject]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Get-ADObject "Get-ADObject documentation"
+[msdocs:Disable-ADOptionalFeature]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Disable-ADOptionalFeature "Disable-ADOptionalFeature documentation"
+[msdocs:Enable-ADOptionalFeature]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Enable-ADOptionalFeature "Enable-ADOptionalFeature documentation"
+[msdocs:Get-ADOptionalFeature]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Get-ADOptionalFeature "Get-ADOptionalFeature documentation"
+[msdocs:Get-ADOrganizationalUnit]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Get-ADOrganizationalUnit "Get-ADOrganizationalUnit documentation"
+[msdocs:New-ADOrganizationalUnit]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/New-ADOrganizationalUnit "New-ADOrganizationalUnit documentation"
+[msdocs:Remove-ADOrganizationalUnit]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Remove-ADOrganizationalUnit "Remove-ADOrganizationalUnit documentation"
+[msdocs:Set-ADOrganizationalUnit]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Set-ADOrganizationalUnit "Set-ADOrganizationalUnit documentation"
+[msdocs:Add-ADPrincipalGroupMembership]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Add-ADPrincipalGroupMembership "Add-ADPrincipalGroupMembership documentation"
+[msdocs:Get-ADPrincipalGroupMembership]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Get-ADPrincipalGroupMembership "Get-ADPrincipalGroupMembership documentation"
+[msdocs:Remove-ADPrincipalGroupMembership]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Remove-ADPrincipalGroupMembership "Remove-ADPrincipalGroupMembership documentation"
+[msdocs:Get-ADReplicationAttributeMetadata]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Get-ADReplicationAttributeMetadata "Get-ADReplicationAttributeMetadata documentation"
+[msdocs:Get-ADReplicationConnection]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Get-ADReplicationConnection "Get-ADReplicationConnection documentation"
+[msdocs:Set-ADReplicationConnection]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Set-ADReplicationConnection "Set-ADReplicationConnection documentation"
+[msdocs:Get-ADReplicationFailure]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Get-ADReplicationFailure "Get-ADReplicationFailure documentation"
+[msdocs:Get-ADReplicationPartnerMetadata]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Get-ADReplicationPartnerMetadata "Get-ADReplicationPartnerMetadata documentation"
+[msdocs:Get-ADReplicationQueueOperation]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Get-ADReplicationQueueOperation "Get-ADReplicationQueueOperation documentation"
+[msdocs:Get-ADReplicationSite]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Get-ADReplicationSite "Get-ADReplicationSite documentation"
+[msdocs:New-ADReplicationSite]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/New-ADReplicationSite "New-ADReplicationSite documentation"
+[msdocs:Remove-ADReplicationSite]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Remove-ADReplicationSite "Remove-ADReplicationSite documentation"
+[msdocs:Set-ADReplicationSite]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Set-ADReplicationSite "Set-ADReplicationSite documentation"
+[msdocs:Get-ADReplicationSiteLink]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Get-ADReplicationSiteLink "Get-ADReplicationSiteLink documentation"
+[msdocs:New-ADReplicationSiteLink]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/New-ADReplicationSiteLink "New-ADReplicationSiteLink documentation"
+[msdocs:Remove-ADReplicationSiteLink]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Remove-ADReplicationSiteLink "Remove-ADReplicationSiteLink documentation"
+[msdocs:Set-ADReplicationSiteLink]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Set-ADReplicationSiteLink "Set-ADReplicationSiteLink documentation"
+[msdocs:Get-ADReplicationSiteLinkBridge]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Get-ADReplicationSiteLinkBridge "Get-ADReplicationSiteLinkBridge documentation"
+[msdocs:New-ADReplicationSiteLinkBridge]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/New-ADReplicationSiteLinkBridge "New-ADReplicationSiteLinkBridge documentation"
+[msdocs:Remove-ADReplicationSiteLinkBridge]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Remove-ADReplicationSiteLinkBridge "Remove-ADReplicationSiteLinkBridge documentation"
+[msdocs:Set-ADReplicationSiteLinkBridge]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Set-ADReplicationSiteLinkBridge "Set-ADReplicationSiteLinkBridge documentation"
+[msdocs:Get-ADReplicationSubnet]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Get-ADReplicationSubnet "Get-ADReplicationSubnet documentation"
+[msdocs:New-ADReplicationSubnet]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/New-ADReplicationSubnet "New-ADReplicationSubnet documentation"
+[msdocs:Remove-ADReplicationSubnet]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Remove-ADReplicationSubnet "Remove-ADReplicationSubnet documentation"
+[msdocs:Set-ADReplicationSubnet]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Set-ADReplicationSubnet "Set-ADReplicationSubnet documentation"
+[msdocs:Get-ADReplicationUpToDatenessVectorTable]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Get-ADReplicationUpToDatenessVectorTable "Get-ADReplicationUpToDatenessVectorTable documentation"
+[msdocs:Get-ADResourceProperty]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Get-ADResourceProperty "Get-ADResourceProperty documentation"
+[msdocs:New-ADResourceProperty]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/New-ADResourceProperty "New-ADResourceProperty documentation"
+[msdocs:Remove-ADResourceProperty]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Remove-ADResourceProperty "Remove-ADResourceProperty documentation"
+[msdocs:Set-ADResourceProperty]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Set-ADResourceProperty "Set-ADResourceProperty documentation"
+[msdocs:Get-ADResourcePropertyList]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Get-ADResourcePropertyList "Get-ADResourcePropertyList documentation"
+[msdocs:New-ADResourcePropertyList]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/New-ADResourcePropertyList "New-ADResourcePropertyList documentation"
+[msdocs:Remove-ADResourcePropertyList]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Remove-ADResourcePropertyList "Remove-ADResourcePropertyList documentation"
+[msdocs:Set-ADResourcePropertyList]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Set-ADResourcePropertyList "Set-ADResourcePropertyList documentation"
+[msdocs:Add-ADResourcePropertyListMember]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Add-ADResourcePropertyListMember "Add-ADResourcePropertyListMember documentation"
+[msdocs:Remove-ADResourcePropertyListMember]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Remove-ADResourcePropertyListMember "Remove-ADResourcePropertyListMember documentation"
+[msdocs:Get-ADResourcePropertyValueType]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Get-ADResourcePropertyValueType "Get-ADResourcePropertyValueType documentation"
+[msdocs:Get-ADRootDSE]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Get-ADRootDSE "Get-ADRootDSE documentation"
+[msdocs:Get-ADServiceAccount]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Get-ADServiceAccount "Get-ADServiceAccount documentation"
+[msdocs:Install-ADServiceAccount]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Install-ADServiceAccount "Install-ADServiceAccount documentation"
+[msdocs:New-ADServiceAccount]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/New-ADServiceAccount "New-ADServiceAccount documentation"
+[msdocs:Remove-ADServiceAccount]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Remove-ADServiceAccount "Remove-ADServiceAccount documentation"
+[msdocs:Set-ADServiceAccount]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Set-ADServiceAccount "Set-ADServiceAccount documentation"
+[msdocs:Test-ADServiceAccount]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Test-ADServiceAccount "Test-ADServiceAccount documentation"
+[msdocs:Uninstall-ADServiceAccount]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Uninstall-ADServiceAccount "Uninstall-ADServiceAccount documentation"
+[msdocs:Reset-ADServiceAccountPassword]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Reset-ADServiceAccountPassword "Reset-ADServiceAccountPassword documentation"
+[msdocs:Get-ADTrust]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Get-ADTrust "Get-ADTrust documentation"
+[msdocs:Get-ADUser]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Get-ADUser "Get-ADUser documentation"
+[msdocs:New-ADUser]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/New-ADUser "New-ADUser documentation"
+[msdocs:Remove-ADUser]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Remove-ADUser "Remove-ADUser documentation"
+[msdocs:Set-ADUser]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Set-ADUser "Set-ADUser documentation"
+[msdocs:Get-ADUserResultantPasswordPolicy]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Get-ADUserResultantPasswordPolicy "Get-ADUserResultantPasswordPolicy documentation"
+
+[Disable-ADAccount]: #disable-adaccount '```&#10;[PS] Disable-ADAccount&#10;```&#10;Disables an Active Directory account.'
+[Enable-ADAccount]: #enable-adaccount '```&#10;[PS] Enable-ADAccount&#10;```&#10;Enables an Active Directory account.'
+[Search-ADAccount]: #search-adaccount '```&#10;[PS] Search-ADAccount&#10;```&#10;Gets Active Directory user, computer, or service accounts.'
+[Unlock-ADAccount]: #unlock-adaccount '```&#10;[PS] Unlock-ADAccount&#10;```&#10;Unlocks an Active Directory account.'
+[Set-ADAccountAuthenticationPolicySilo]: #set-adaccountauthenticationpolicysilo '```&#10;[PS] Set-ADAccountAuthenticationPolicySilo&#10;```&#10;Modifies the authentication policy or authentication policy silo of an account.'
+[Get-ADAccountAuthorizationGroup]: #get-adaccountauthorizationgroup '```&#10;[PS] Get-ADAccountAuthorizationGroup&#10;```&#10;Gets the accounts token group information.'
+[Set-ADAccountControl]: #set-adaccountcontrol '```&#10;[PS] Set-ADAccountControl&#10;```&#10;Modifies user account control (UAC) values for an Active Directory account.'
+[Clear-ADAccountExpiration]: #clear-adaccountexpiration '```&#10;[PS] Clear-ADAccountExpiration&#10;```&#10;Clears the expiration date for an Active Directory account.'
+[Set-ADAccountExpiration]: #set-adaccountexpiration '```&#10;[PS] Set-ADAccountExpiration&#10;```&#10;Sets the expiration date for an Active Directory account.'
+[Set-ADAccountPassword]: #set-adaccountpassword '```&#10;[PS] Set-ADAccountPassword&#10;```&#10;Modifies the password of an Active Directory account.'
+[Get-ADAccountResultantPasswordReplicationPolicy]: #get-adaccountresultantpasswordreplicationpolicy '```&#10;[PS] Get-ADAccountResultantPasswordReplicationPolicy&#10;```&#10;Gets the resultant password replication policy for an Active Directory account.'
+[Get-ADAuthenticationPolicy]: #get-adauthenticationpolicy '```&#10;[PS] Get-ADAuthenticationPolicy&#10;```&#10;Gets one or more Active Directory Domain Services authentication policies.'
+[New-ADAuthenticationPolicy]: #new-adauthenticationpolicy '```&#10;[PS] New-ADAuthenticationPolicy&#10;```&#10;Creates an Active Directory Domain Services authentication policy object.'
+[Remove-ADAuthenticationPolicy]: #remove-adauthenticationpolicy '```&#10;[PS] Remove-ADAuthenticationPolicy&#10;```&#10;Removes an Active Directory Domain Services authentication policy object.'
+[Set-ADAuthenticationPolicy]: #set-adauthenticationpolicy '```&#10;[PS] Set-ADAuthenticationPolicy&#10;```&#10;Modifies an Active Directory Domain Services authentication policy object.'
+[Show-ADAuthenticationPolicyExpression]: #show-adauthenticationpolicyexpression '```&#10;[PS] Show-ADAuthenticationPolicyExpression&#10;```&#10;Displays the Edit Access Control Conditions window update or create security descriptor definition language (SDDL) security descriptors.'
+[Get-ADAuthenticationPolicySilo]: #get-adauthenticationpolicysilo '```&#10;[PS] Get-ADAuthenticationPolicySilo&#10;```&#10;Gets one or more Active Directory Domain Services authentication policy silos.'
+[New-ADAuthenticationPolicySilo]: #new-adauthenticationpolicysilo '```&#10;[PS] New-ADAuthenticationPolicySilo&#10;```&#10;Creates an Active Directory Domain Services authentication policy silo object.'
+[Remove-ADAuthenticationPolicySilo]: #remove-adauthenticationpolicysilo '```&#10;[PS] Remove-ADAuthenticationPolicySilo&#10;```&#10;Removes an Active Directory Domain Services authentication policy silo object.'
+[Set-ADAuthenticationPolicySilo]: #set-adauthenticationpolicysilo '```&#10;[PS] Set-ADAuthenticationPolicySilo&#10;```&#10;Modifies an Active Directory Domain Services authentication policy silo object.'
+[Grant-ADAuthenticationPolicySiloAccess]: #grant-adauthenticationpolicysiloaccess '```&#10;[PS] Grant-ADAuthenticationPolicySiloAccess&#10;```&#10;Grants permission to join an authentication policy silo.'
+[Revoke-ADAuthenticationPolicySiloAccess]: #revoke-adauthenticationpolicysiloaccess '```&#10;[PS] Revoke-ADAuthenticationPolicySiloAccess&#10;```&#10;Revokes membership in an authentication policy silo for the specified account.'
+[Get-ADCentralAccessPolicy]: #get-adcentralaccesspolicy '```&#10;[PS] Get-ADCentralAccessPolicy&#10;```&#10;Retrieves central access policies from Active Directory.'
+[New-ADCentralAccessPolicy]: #new-adcentralaccesspolicy '```&#10;[PS] New-ADCentralAccessPolicy&#10;```&#10;Creates a new central access policy in Active Directory containing a set of central access rules.'
+[Remove-ADCentralAccessPolicy]: #remove-adcentralaccesspolicy '```&#10;[PS] Remove-ADCentralAccessPolicy&#10;```&#10;Removes a central access policy from Active Directory.'
+[Set-ADCentralAccessPolicy]: #set-adcentralaccesspolicy '```&#10;[PS] Set-ADCentralAccessPolicy&#10;```&#10;Modifies a central access policy in Active Directory.'
+[Add-ADCentralAccessPolicyMember]: #add-adcentralaccesspolicymember '```&#10;[PS] Add-ADCentralAccessPolicyMember&#10;```&#10;Adds central access rules to a central access policy in Active Directory.'
+[Remove-ADCentralAccessPolicyMember]: #remove-adcentralaccesspolicymember '```&#10;[PS] Remove-ADCentralAccessPolicyMember&#10;```&#10;Removes central access rules from a central access policy in Active Directory.'
+[Get-ADCentralAccessRule]: #get-adcentralaccessrule '```&#10;[PS] Get-ADCentralAccessRule&#10;```&#10;Retrieves central access rules from Active Directory.'
+[New-ADCentralAccessRule]: #new-adcentralaccessrule '```&#10;[PS] New-ADCentralAccessRule&#10;```&#10;Creates a central access rule in Active Directory.'
+[Remove-ADCentralAccessRule]: #remove-adcentralaccessrule '```&#10;[PS] Remove-ADCentralAccessRule&#10;```&#10;Removes a central access rule from Active Directory.'
+[Set-ADCentralAccessRule]: #set-adcentralaccessrule '```&#10;[PS] Set-ADCentralAccessRule&#10;```&#10;Modifies a central access rule in Active Directory.'
+[Clear-ADClaimTransformLink]: #clear-adclaimtransformlink '```&#10;[PS] Clear-ADClaimTransformLink&#10;```&#10;Removes a claims transformation from being applied to one or more cross-forest trust relationships in Active Directory.'
+[Set-ADClaimTransformLink]: #set-adclaimtransformlink '```&#10;[PS] Set-ADClaimTransformLink&#10;```&#10;Applies a claims transformation to one or more cross-forest trust relationships in Active Directory.'
+[Get-ADClaimTransformPolicy]: #get-adclaimtransformpolicy '```&#10;[PS] Get-ADClaimTransformPolicy&#10;```&#10;Returns one or more Active Directory claim transform objects based on a specified filter.'
+[New-ADClaimTransformPolicy]: #new-adclaimtransformpolicy '```&#10;[PS] New-ADClaimTransformPolicy&#10;```&#10;Creates a new claim transformation policy object in Active Directory.'
+[Remove-ADClaimTransformPolicy]: #remove-adclaimtransformpolicy '```&#10;[PS] Remove-ADClaimTransformPolicy&#10;```&#10;Removes a claim transformation policy object from Active Directory.'
+[Set-ADClaimTransformPolicy]: #set-adclaimtransformpolicy '```&#10;[PS] Set-ADClaimTransformPolicy&#10;```&#10;Sets the properties of a claims transformation policy in Active Directory.'
+[Get-ADClaimType]: #get-adclaimtype '```&#10;[PS] Get-ADClaimType&#10;```&#10;Returns a claim type from Active Directory.'
+[New-ADClaimType]: #new-adclaimtype '```&#10;[PS] New-ADClaimType&#10;```&#10;Creates a new claim type in Active Directory.'
+[Remove-ADClaimType]: #remove-adclaimtype '```&#10;[PS] Remove-ADClaimType&#10;```&#10;Removes a claim type from Active Directory.'
+[Set-ADClaimType]: #set-adclaimtype '```&#10;[PS] Set-ADClaimType&#10;```&#10;Modify a claim type in Active Directory.'
+[Get-ADComputer]: #get-adcomputer '```&#10;[PS] Get-ADComputer&#10;```&#10;Gets one or more Active Directory computers.'
+[New-ADComputer]: #new-adcomputer '```&#10;[PS] New-ADComputer&#10;```&#10;Creates a new Active Directory computer object.'
+[Remove-ADComputer]: #remove-adcomputer '```&#10;[PS] Remove-ADComputer&#10;```&#10;Removes an Active Directory computer.'
+[Set-ADComputer]: #set-adcomputer '```&#10;[PS] Set-ADComputer&#10;```&#10;Modifies an Active Directory computer object.'
+[Add-ADComputerServiceAccount]: #add-adcomputerserviceaccount '```&#10;[PS] Add-ADComputerServiceAccount&#10;```&#10;Adds one or more service accounts to an Active Directory computer.'
+[Get-ADComputerServiceAccount]: #get-adcomputerserviceaccount '```&#10;[PS] Get-ADComputerServiceAccount&#10;```&#10;Gets the service accounts hosted by a computer.'
+[Remove-ADComputerServiceAccount]: #remove-adcomputerserviceaccount '```&#10;[PS] Remove-ADComputerServiceAccount&#10;```&#10;Removes one or more service accounts from a computer.'
+[New-ADDCCloneConfigFile]: #new-addccloneconfigfile '```&#10;[PS] New-ADDCCloneConfigFile&#10;```&#10;Performs prerequisite checks for cloning a domain controller and generates a clone configuration file if all checks succeed.'
+[Get-ADDCCloningExcludedApplicationList]: #get-addccloningexcludedapplicationlist '```&#10;[PS] Get-ADDCCloningExcludedApplicationList&#10;```&#10;Gets a list of installed programs and services present on this domain controller that are not in the default or user defined inclusion list.'
+[Get-ADDefaultDomainPasswordPolicy]: #get-addefaultdomainpasswordpolicy '```&#10;[PS] Get-ADDefaultDomainPasswordPolicy&#10;```&#10;Gets the default password policy for an Active Directory domain.'
+[Set-ADDefaultDomainPasswordPolicy]: #set-addefaultdomainpasswordpolicy '```&#10;[PS] Set-ADDefaultDomainPasswordPolicy&#10;```&#10;Modifies the default password policy for an Active Directory domain.'
+[Move-ADDirectoryServer]: #move-addirectoryserver '```&#10;[PS] Move-ADDirectoryServer&#10;```&#10;Moves a directory server in Active Directory to a new site.'
+[Move-ADDirectoryServerOperationMasterRole]: #move-addirectoryserveroperationmasterrole '```&#10;[PS] Move-ADDirectoryServerOperationMasterRole&#10;```&#10;Moves operation master roles to an Active Directory directory server.'
+[Get-ADDomain]: #get-addomain '```&#10;[PS] Get-ADDomain&#10;```&#10;Gets an Active Directory domain.'
+[Set-ADDomain]: #set-addomain '```&#10;[PS] Set-ADDomain&#10;```&#10;Modifies an Active Directory domain.'
+[Get-ADDomainController]: #get-addomaincontroller '```&#10;[PS] Get-ADDomainController&#10;```&#10;Gets one or more Active Directory domain controllers based on discoverable services criteria, search parameters or by providing a domain controller identifier, such as the NetBIOS name.'
+[Add-ADDomainControllerPasswordReplicationPolicy]: #add-addomaincontrollerpasswordreplicationpolicy '```&#10;[PS] Add-ADDomainControllerPasswordReplicationPolicy&#10;```&#10;Adds users, computers, and groups to the allowed or denied list of a read-only domain controller password replication policy.'
+[Get-ADDomainControllerPasswordReplicationPolicy]: #get-addomaincontrollerpasswordreplicationpolicy '```&#10;[PS] Get-ADDomainControllerPasswordReplicationPolicy&#10;```&#10;Gets the members of the allowed list or denied list of the password replication policy of a read-only domain controller.'
+[Remove-ADDomainControllerPasswordReplicationPolicy]: #remove-addomaincontrollerpasswordreplicationpolicy '```&#10;[PS] Remove-ADDomainControllerPasswordReplicationPolicy&#10;```&#10;Removes users, computers, and groups from the allowed or denied list of a read-only domain controller password replication policy.'
+[Get-ADDomainControllerPasswordReplicationPolicyUsage]: #get-addomaincontrollerpasswordreplicationpolicyusage '```&#10;[PS] Get-ADDomainControllerPasswordReplicationPolicyUsage&#10;```&#10;Gets the Active Directory accounts that are authenticated by a read-only domain controller or that are in the revealed list of the domain controller.'
+[Set-ADDomainMode]: #set-addomainmode '```&#10;[PS] Set-ADDomainMode&#10;```&#10;Sets the domain mode for an Active Directory domain.'
+[Get-ADFineGrainedPasswordPolicy]: #get-adfinegrainedpasswordpolicy '```&#10;[PS] Get-ADFineGrainedPasswordPolicy&#10;```&#10;Gets one or more Active Directory fine-grained password policies.'
+[New-ADFineGrainedPasswordPolicy]: #new-adfinegrainedpasswordpolicy '```&#10;[PS] New-ADFineGrainedPasswordPolicy&#10;```&#10;Creates a new Active Directory fine-grained password policy.'
+[Remove-ADFineGrainedPasswordPolicy]: #remove-adfinegrainedpasswordpolicy '```&#10;[PS] Remove-ADFineGrainedPasswordPolicy&#10;```&#10;Removes an Active Directory fine-grained password policy.'
+[Set-ADFineGrainedPasswordPolicy]: #set-adfinegrainedpasswordpolicy '```&#10;[PS] Set-ADFineGrainedPasswordPolicy&#10;```&#10;Modifies an Active Directory fine-grained password policy.'
+[Add-ADFineGrainedPasswordPolicySubject]: #add-adfinegrainedpasswordpolicysubject '```&#10;[PS] Add-ADFineGrainedPasswordPolicySubject&#10;```&#10;Applies a fine-grained password policy to one or more users and groups.'
+[Get-ADFineGrainedPasswordPolicySubject]: #get-adfinegrainedpasswordpolicysubject '```&#10;[PS] Get-ADFineGrainedPasswordPolicySubject&#10;```&#10;Gets the users and groups to which a fine-grained password policy is applied.'
+[Remove-ADFineGrainedPasswordPolicySubject]: #remove-adfinegrainedpasswordpolicysubject '```&#10;[PS] Remove-ADFineGrainedPasswordPolicySubject&#10;```&#10;Removes one or more users from a fine-grained password policy.'
+[Get-ADForest]: #get-adforest '```&#10;[PS] Get-ADForest&#10;```&#10;Gets an Active Directory forest.'
+[Set-ADForest]: #set-adforest '```&#10;[PS] Set-ADForest&#10;```&#10;Modifies an Active Directory forest.'
+[Set-ADForestMode]: #set-adforestmode '```&#10;[PS] Set-ADForestMode&#10;```&#10;Sets the forest mode for an Active Directory forest.'
+[Get-ADGroup]: #get-adgroup '```&#10;[PS] Get-ADGroup&#10;```&#10;Gets one or more Active Directory groups.'
+[New-ADGroup]: #new-adgroup '```&#10;[PS] New-ADGroup&#10;```&#10;Creates an Active Directory group.'
+[Remove-ADGroup]: #remove-adgroup '```&#10;[PS] Remove-ADGroup&#10;```&#10;Removes an Active Directory group.'
+[Set-ADGroup]: #set-adgroup '```&#10;[PS] Set-ADGroup&#10;```&#10;Modifies an Active Directory group.'
+[Add-ADGroupMember]: #add-adgroupmember '```&#10;[PS] Add-ADGroupMember&#10;```&#10;Adds one or more members to an Active Directory group.'
+[Get-ADGroupMember]: #get-adgroupmember '```&#10;[PS] Get-ADGroupMember&#10;```&#10;Gets the members of an Active Directory group.'
+[Remove-ADGroupMember]: #remove-adgroupmember '```&#10;[PS] Remove-ADGroupMember&#10;```&#10;Removes one or more members from an Active Directory group.'
+[Move-ADObject]: #move-adobject '```&#10;[PS] Move-ADObject&#10;```&#10;Moves an Active Directory object or a container of objects to a different container or domain.'
+[New-ADObject]: #new-adobject '```&#10;[PS] New-ADObject&#10;```&#10;Creates an Active Directory object.'
+[Remove-ADObject]: #remove-adobject '```&#10;[PS] Remove-ADObject&#10;```&#10;Removes an Active Directory object.'
+[Rename-ADObject]: #rename-adobject '```&#10;[PS] Rename-ADObject&#10;```&#10;Changes the name of an Active Directory object.'
+[Restore-ADObject]: #restore-adobject '```&#10;[PS] Restore-ADObject&#10;```&#10;Restores an Active Directory object.'
+[Set-ADObject]: #set-adobject '```&#10;[PS] Set-ADObject&#10;```&#10;Modifies an Active Directory object.'
+[Sync-ADObject]: #sync-adobject '```&#10;[PS] Sync-ADObject&#10;```&#10;Replicates a single object between any two domain controllers that have partitions in common.'
+[Get-ADObject]: #get-adobject '```&#10;[PS] Get-ADObject&#10;```&#10;Gets one or more Active Directory objects.'
+[Disable-ADOptionalFeature]: #disable-adoptionalfeature '```&#10;[PS] Disable-ADOptionalFeature&#10;```&#10;Disables an Active Directory optional feature.'
+[Enable-ADOptionalFeature]: #enable-adoptionalfeature '```&#10;[PS] Enable-ADOptionalFeature&#10;```&#10;Enables an Active Directory optional feature.'
+[Get-ADOptionalFeature]: #get-adoptionalfeature '```&#10;[PS] Get-ADOptionalFeature&#10;```&#10;Gets one or more Active Directory optional features.'
+[Get-ADOrganizationalUnit]: #get-adorganizationalunit '```&#10;[PS] Get-ADOrganizationalUnit&#10;```&#10;Gets one or more Active Directory organizational units.'
+[New-ADOrganizationalUnit]: #new-adorganizationalunit '```&#10;[PS] New-ADOrganizationalUnit&#10;```&#10;Creates an Active Directory organizational unit.'
+[Remove-ADOrganizationalUnit]: #remove-adorganizationalunit '```&#10;[PS] Remove-ADOrganizationalUnit&#10;```&#10;Removes an Active Directory organizational unit.'
+[Set-ADOrganizationalUnit]: #set-adorganizationalunit '```&#10;[PS] Set-ADOrganizationalUnit&#10;```&#10;Modifies an Active Directory organizational unit.'
+[Add-ADPrincipalGroupMembership]: #add-adprincipalgroupmembership '```&#10;[PS] Add-ADPrincipalGroupMembership&#10;```&#10;Adds a member to one or more Active Directory groups.'
+[Get-ADPrincipalGroupMembership]: #get-adprincipalgroupmembership '```&#10;[PS] Get-ADPrincipalGroupMembership&#10;```&#10;Gets the Active Directory groups that have a specified user, computer, group, or service account.'
+[Remove-ADPrincipalGroupMembership]: #remove-adprincipalgroupmembership '```&#10;[PS] Remove-ADPrincipalGroupMembership&#10;```&#10;Removes a member from one or more Active Directory groups.'
+[Get-ADReplicationAttributeMetadata]: #get-adreplicationattributemetadata '```&#10;[PS] Get-ADReplicationAttributeMetadata&#10;```&#10;Gets the replication metadata for one or more Active Directory replication partners.'
+[Get-ADReplicationConnection]: #get-adreplicationconnection '```&#10;[PS] Get-ADReplicationConnection&#10;```&#10;Returns a specific Active Directory replication connection or a set of AD replication connection objects based on a specified filter.'
+[Set-ADReplicationConnection]: #set-adreplicationconnection '```&#10;[PS] Set-ADReplicationConnection&#10;```&#10;Sets properties on Active Directory replication connections.'
+[Get-ADReplicationFailure]: #get-adreplicationfailure '```&#10;[PS] Get-ADReplicationFailure&#10;```&#10;Returns a collection of data describing an Active Directory replication failure.'
+[Get-ADReplicationPartnerMetadata]: #get-adreplicationpartnermetadata '```&#10;[PS] Get-ADReplicationPartnerMetadata&#10;```&#10;Returns the replication metadata for a set of one or more replication partners.'
+[Get-ADReplicationQueueOperation]: #get-adreplicationqueueoperation '```&#10;[PS] Get-ADReplicationQueueOperation&#10;```&#10;Returns the contents of the replication queue for a specified server.'
+[Get-ADReplicationSite]: #get-adreplicationsite '```&#10;[PS] Get-ADReplicationSite&#10;```&#10;Returns a specific Active Directory replication site or a set of replication site objects based on a specified filter.'
+[New-ADReplicationSite]: #new-adreplicationsite '```&#10;[PS] New-ADReplicationSite&#10;```&#10;Creates an Active Directory replication site in the directory.'
+[Remove-ADReplicationSite]: #remove-adreplicationsite '```&#10;[PS] Remove-ADReplicationSite&#10;```&#10;Deletes the specified replication site object from Active Directory.'
+[Set-ADReplicationSite]: #set-adreplicationsite '```&#10;[PS] Set-ADReplicationSite&#10;```&#10;Sets the replication properties for an Active Directory site.'
+[Get-ADReplicationSiteLink]: #get-adreplicationsitelink '```&#10;[PS] Get-ADReplicationSiteLink&#10;```&#10;Returns a specific Active Directory site link or a set of site links based on a specified filter.'
+[New-ADReplicationSiteLink]: #new-adreplicationsitelink '```&#10;[PS] New-ADReplicationSiteLink&#10;```&#10;Creates a new Active Directory site link for in managing replication.'
+[Remove-ADReplicationSiteLink]: #remove-adreplicationsitelink '```&#10;[PS] Remove-ADReplicationSiteLink&#10;```&#10;Deletes an Active Directory site link used to manage replication.'
+[Set-ADReplicationSiteLink]: #set-adreplicationsitelink '```&#10;[PS] Set-ADReplicationSiteLink&#10;```&#10;Sets the properties for an Active Directory site link.'
+[Get-ADReplicationSiteLinkBridge]: #get-adreplicationsitelinkbridge '```&#10;[PS] Get-ADReplicationSiteLinkBridge&#10;```&#10;Gets a specific Active Directory site link bridge or a set of site link bridge objects based on a specified filter.'
+[New-ADReplicationSiteLinkBridge]: #new-adreplicationsitelinkbridge '```&#10;[PS] New-ADReplicationSiteLinkBridge&#10;```&#10;Creates a site link bridge in Active Directory for replication.'
+[Remove-ADReplicationSiteLinkBridge]: #remove-adreplicationsitelinkbridge '```&#10;[PS] Remove-ADReplicationSiteLinkBridge&#10;```&#10;Deletes a replication site link bridge from Active Directory.'
+[Set-ADReplicationSiteLinkBridge]: #set-adreplicationsitelinkbridge '```&#10;[PS] Set-ADReplicationSiteLinkBridge&#10;```&#10;Sets the properties of a replication site link bridge in Active Directory.'
+[Get-ADReplicationSubnet]: #get-adreplicationsubnet '```&#10;[PS] Get-ADReplicationSubnet&#10;```&#10;Gets one or more Active Directory subnets.'
+[New-ADReplicationSubnet]: #new-adreplicationsubnet '```&#10;[PS] New-ADReplicationSubnet&#10;```&#10;Creates an Active Directory replication subnet object.'
+[Remove-ADReplicationSubnet]: #remove-adreplicationsubnet '```&#10;[PS] Remove-ADReplicationSubnet&#10;```&#10;Deletes the specified Active Directory replication subnet object from the directory.'
+[Set-ADReplicationSubnet]: #set-adreplicationsubnet '```&#10;[PS] Set-ADReplicationSubnet&#10;```&#10;Sets the properties of an Active Directory replication subnet object.'
+[Get-ADReplicationUpToDatenessVectorTable]: #get-adreplicationuptodatenessvectortable '```&#10;[PS] Get-ADReplicationUpToDatenessVectorTable&#10;```&#10;Displays the highest Update Sequence Number (USN) for the specified domain controller.'
+[Get-ADResourceProperty]: #get-adresourceproperty '```&#10;[PS] Get-ADResourceProperty&#10;```&#10;Gets one or more resource properties.'
+[New-ADResourceProperty]: #new-adresourceproperty '```&#10;[PS] New-ADResourceProperty&#10;```&#10;Creates a resource property in Active Directory.'
+[Remove-ADResourceProperty]: #remove-adresourceproperty '```&#10;[PS] Remove-ADResourceProperty&#10;```&#10;Removes a resource property from Active Directory.'
+[Set-ADResourceProperty]: #set-adresourceproperty '```&#10;[PS] Set-ADResourceProperty&#10;```&#10;Modifies a resource property in Active Directory.'
+[Get-ADResourcePropertyList]: #get-adresourcepropertylist '```&#10;[PS] Get-ADResourcePropertyList&#10;```&#10;Gets resource property lists from Active Directory.'
+[New-ADResourcePropertyList]: #new-adresourcepropertylist '```&#10;[PS] New-ADResourcePropertyList&#10;```&#10;Creates a resource property list in Active Directory.'
+[Remove-ADResourcePropertyList]: #remove-adresourcepropertylist '```&#10;[PS] Remove-ADResourcePropertyList&#10;```&#10;Removes one or more resource property lists from Active Directory.'
+[Set-ADResourcePropertyList]: #set-adresourcepropertylist '```&#10;[PS] Set-ADResourcePropertyList&#10;```&#10;Modifies a resource property list in Active Directory.'
+[Add-ADResourcePropertyListMember]: #add-adresourcepropertylistmember '```&#10;[PS] Add-ADResourcePropertyListMember&#10;```&#10;Adds one or more resource properties to a resource property list in Active Directory.'
+[Remove-ADResourcePropertyListMember]: #remove-adresourcepropertylistmember '```&#10;[PS] Remove-ADResourcePropertyListMember&#10;```&#10;Removes one or more resource properties from a resource property list in Active Directory.'
+[Get-ADResourcePropertyValueType]: #get-adresourcepropertyvaluetype '```&#10;[PS] Get-ADResourcePropertyValueType&#10;```&#10;Gets a resource property value type from Active Directory.'
+[Get-ADRootDSE]: #get-adrootdse '```&#10;[PS] Get-ADRootDSE&#10;```&#10;Gets the root of a directory server information tree.'
+[Get-ADServiceAccount]: #get-adserviceaccount '```&#10;[PS] Get-ADServiceAccount&#10;```&#10;Gets one or more Active Directory managed service accounts or group managed service accounts.'
+[Install-ADServiceAccount]: #install-adserviceaccount '```&#10;[PS] Install-ADServiceAccount&#10;```&#10;Installs an Active Directory managed service account on a computer or caches a group managed service account on a computer.'
+[New-ADServiceAccount]: #new-adserviceaccount '```&#10;[PS] New-ADServiceAccount&#10;```&#10;Creates a new Active Directory managed service account or group managed service account object.'
+[Remove-ADServiceAccount]: #remove-adserviceaccount '```&#10;[PS] Remove-ADServiceAccount&#10;```&#10;Removes an Active Directory managed service account or group managed service account object.'
+[Set-ADServiceAccount]: #set-adserviceaccount '```&#10;[PS] Set-ADServiceAccount&#10;```&#10;Modifies an Active Directory managed service account or group managed service account object.'
+[Test-ADServiceAccount]: #test-adserviceaccount '```&#10;[PS] Test-ADServiceAccount&#10;```&#10;Tests a managed service account from a computer.'
+[Uninstall-ADServiceAccount]: #uninstall-adserviceaccount '```&#10;[PS] Uninstall-ADServiceAccount&#10;```&#10;Uninstalls an Active Directory managed service account from a computer or removes a cached group managed service account from a computer.'
+[Reset-ADServiceAccountPassword]: #reset-adserviceaccountpassword '```&#10;[PS] Reset-ADServiceAccountPassword&#10;```&#10;Resets the password for a standalone managed service account.'
+[Get-ADTrust]: #get-adtrust '```&#10;[PS] Get-ADTrust&#10;```&#10;Gets all trusted domain objects in the directory.'
+[Get-ADUser]: #get-aduser '```&#10;[PS] Get-ADUser&#10;```&#10;Gets one or more Active Directory users.'
+[New-ADUser]: #new-aduser '```&#10;[PS] New-ADUser&#10;```&#10;Creates an Active Directory user.'
+[Remove-ADUser]: #remove-aduser '```&#10;[PS] Remove-ADUser&#10;```&#10;Removes an Active Directory user.'
+[Set-ADUser]: #set-aduser '```&#10;[PS] Set-ADUser&#10;```&#10;Modifies an Active Directory user.'
+[Get-ADUserResultantPasswordPolicy]: #get-aduserresultantpasswordpolicy '```&#10;[PS] Get-ADUserResultantPasswordPolicy&#10;```&#10;Gets the resultant password policy for a user.'
+
+- ADAccount
+[`Disable`][Disable-ADAccount]<sup>[?][msdocs:Disable-ADAccount]</sup>
+[`Enable`][Enable-ADAccount]<sup>[?][msdocs:Enable-ADAccount]</sup>
+[`Search`][Search-ADAccount]<sup>[?][msdocs:Search-ADAccount]</sup>
+[`Unlock`][Unlock-ADAccount]<sup>[?][msdocs:Unlock-ADAccount]</sup>
+- ADAccountPassword
+[`Set`][Set-ADAccountPassword]<sup>[?][msdocs:Set-ADAccountPassword]</sup>
+- ADForest
+[`Get`][Get-ADForest]<sup>[?][msdocs:Get-ADForest]</sup>
+[`Set`][Set-ADForest]<sup>[?][msdocs:Set-ADForest]</sup>
+- ADGroup
+[`Get`][Get-ADGroup]<sup>[?][msdocs:Get-ADGroup]</sup>
+[`New`][New-ADGroup]<sup>[?][msdocs:New-ADGroup]</sup>
+[`Remove`][Remove-ADGroup]<sup>[?][msdocs:Remove-ADGroup]</sup>
+[`Set`][Set-ADGroup]<sup>[?][msdocs:Set-ADGroup]</sup>
+- ADGroupMember
+[`Add`][Add-ADGroupMember]<sup>[?][msdocs:Add-ADGroupMember]</sup>
+[`Get`][Get-ADGroupMember]<sup>[?][msdocs:Get-ADGroupMember]</sup>
+[`Remove`][Remove-ADGroupMember]<sup>[?][msdocs:Remove-ADGroupMember]</sup>
+- ADObject
+[`Move`][Move-ADObject]<sup>[?][msdocs:Move-ADObject]</sup>
+[`New`][New-ADObject]<sup>[?][msdocs:New-ADObject]</sup>
+[`Remove`][Remove-ADObject]<sup>[?][msdocs:Remove-ADObject]</sup>
+[`Rename`][Rename-ADObject]<sup>[?][msdocs:Rename-ADObject]</sup>
+[`Restore`][Restore-ADObject]<sup>[?][msdocs:Restore-ADObject]</sup>
+[`Set`][Set-ADObject]<sup>[?][msdocs:Set-ADObject]</sup>
+[`Sync`][Sync-ADObject]<sup>[?][msdocs:Sync-ADObject]</sup>
+- ADOrganizationalUnit
+[`Get`][Get-ADOrganizationalUnit]<sup>[?][msdocs:Get-ADOrganizationalUnit]</sup>
+[`New`][New-ADOrganizationalUnit]<sup>[?][msdocs:New-ADOrganizationalUnit]</sup>
+[`Remove`][Remove-ADOrganizationalUnit]<sup>[?][msdocs:Remove-ADOrganizationalUnit]</sup>
+[`Set`][Set-ADOrganizationalUnit]<sup>[?][msdocs:Set-ADOrganizationalUnit]</sup>
+- ADPrincipalGroupMembership
+[`Add`][Add-ADPrincipalGroupMembership]<sup>[?][msdocs:Add-ADPrincipalGroupMembership]</sup>
+[`Get`][Get-ADPrincipalGroupMembership]<sup>[?][msdocs:Get-ADPrincipalGroupMembership]</sup>
+[`Remove`][Remove-ADPrincipalGroupMembership]<sup>[?][msdocs:Remove-ADPrincipalGroupMembership]</sup>
+- ADUser
+[`Get`][Get-ADUser]<sup>[?][msdocs:Get-ADUser]</sup>
+[`New`][New-ADUser]<sup>[?][msdocs:New-ADUser]</sup>
+[`Remove`][Remove-ADUser]<sup>[?][msdocs:Remove-ADUser]</sup>
+[`Set`][Set-ADUser]<sup>[?][msdocs:Set-ADUser]</sup>
+#### dcbqos
+[msdocs:Enable-NetQosFlowControl]: https://docs.microsoft.com/en-us/powershell/module/dcbqos/Enable-NetQosFlowControl "Enable-NetQosFlowControl"
+[msdocs:Disable-NetQosFlowControl]: https://docs.microsoft.com/en-us/powershell/module/dcbqos/Disable-NetQosFlowControl "Disable-NetQosFlowControl"
+[msdocs:Get-NetQosDcbxSetting]: https://docs.microsoft.com/en-us/powershell/module/dcbqos/Get-NetQosDcbxSetting "Get-NetQosDcbxSetting"
+[msdocs:Get-NetQosFlowControl]: https://docs.microsoft.com/en-us/powershell/module/dcbqos/Get-NetQosFlowControl "Get-NetQosFlowControl"
+[msdocs:Get-NetQosTrafficClass]: https://docs.microsoft.com/en-us/powershell/module/dcbqos/Get-NetQosTrafficClass "Get-NetQosTrafficClass"
+[msdocs:New-NetQosTrafficClass]: https://docs.microsoft.com/en-us/powershell/module/dcbqos/New-NetQosTrafficClass "New-NetQosTrafficClass"
+[msdocs:Remove-NetQosTrafficClass]: https://docs.microsoft.com/en-us/powershell/module/dcbqos/Remove-NetQosTrafficClass "Remove-NetQosTrafficClass"
+[msdocs:Set-NetQosDcbxSetting]: https://docs.microsoft.com/en-us/powershell/module/dcbqos/Set-NetQosDcbxSetting "Set-NetQosDcbxSetting"
+[msdocs:Set-NetQosFlowControl]: https://docs.microsoft.com/en-us/powershell/module/dcbqos/Set-NetQosFlowControl "Set-NetQosFlowControl"
+[msdocs:Set-NetQosTrafficClass]: https://docs.microsoft.com/en-us/powershell/module/dcbqos/Set-NetQosTrafficClass "Set-NetQosTrafficClass"
+[msdocs:Switch-NetQosDcbxSetting]: https://docs.microsoft.com/en-us/powershell/module/dcbqos/Switch-NetQosDcbxSetting "Switch-NetQosDcbxSetting"
+[msdocs:Switch-NetQosFlowControl]: https://docs.microsoft.com/en-us/powershell/module/dcbqos/Switch-NetQosFlowControl "Switch-NetQosFlowControl"
+[msdocs:Switch-NetQosTrafficClass]: https://docs.microsoft.com/en-us/powershell/module/dcbqos/Switch-NetQosTrafficClass "Switch-NetQosTrafficClass"
+
+[Get-NetQosDcbxSetting]: #get-netqosdcbxsetting '```&#10;Get-NetQosDcbxSetting&#10;```&#10;Gets data center bridging exchange settings.'
+[Set-NetQosDcbxSetting]: #set-netqosdcbxsetting '```&#10;Set-NetQosDcbxSetting&#10;```&#10;Sets the data center bridging exchange settings.'
+[Switch-NetQosDcbxSetting]: #switch-netqosdcbxsetting '```&#10;Switch-NetQosDcbxSetting&#10;```&#10;'
+[Enable-NetQosFlowControl]: #enable-netqosflowcontrol '```&#10;Enable-NetQosFlowControl&#10;```&#10;Enables link level flow control based on the IEEE 802.1p priority.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 145'
+[Disable-NetQosFlowControl]: #disable-netqosflowcontrol '```&#10;Disable-NetQosFlowControl&#10;```&#10;Disables link level flow control based on the IEEE 802.1p priority.'
+[Get-NetQosFlowControl]: #get-netqosflowcontrol '```&#10;Get-NetQosFlowControl&#10;```&#10;Gets the priority-based flow control settings.'
+[Set-NetQosFlowControl]: #set-netqosflowcontrol '```&#10;Set-NetQosFlowControl&#10;```&#10;Sets the flow control settings.'
+[Switch-NetQosFlowControl]: #switch-netqosflowcontrol '```&#10;Switch-NetQosFlowControl&#10;```&#10;'
+[Get-NetQosTrafficClass]: #get-netqostrafficclass '```&#10;Get-NetQosTrafficClass&#10;```&#10;Gets the traffic class settings.'
+[New-NetQosTrafficClass]: #new-netqostrafficclass '```&#10;New-NetQosTrafficClass&#10;```&#10;Creates a traffic class.'
+[Remove-NetQosTrafficClass]: #remove-netqostrafficclass '```&#10;Remove-NetQosTrafficClass&#10;```&#10;Removes a traffic class.'
+[Set-NetQosTrafficClass]: #set-netqostrafficclass '```&#10;Set-NetQosTrafficClass&#10;```&#10;Sets the traffic class settings.'
+[Switch-NetQosTrafficClass]: #switch-netqostrafficclass '```&#10;Switch-NetQosTrafficClass&#10;```&#10;'
+
+- NetQoSDcbxSetting 
+`Get`<sup>[?][msdocs:Get-NetQosDcbxSetting]</sup>
+[`Set`][Set-NetQosDcbxSetting]<sup>[?][msdocs:Set-NetQosDcbxSetting]</sup>
+`Switch`<sup>[?][msdocs:Switch-NetQosDcbxSetting]</sup>
+- NetQoSFlowControl
+`Enable`<sup>[?][msdocs:Enable-NetQosFlowControl]</sup>
+`Disable`<sup>[?][msdocs:Disable-NetQosFlowControl]</sup>
+`Get`<sup>[?][msdocs:Get-NetQosFlowControl]</sup>
+`Set`<sup>[?][msdocs:Set-NetQosFlowControl]</sup>
+`Switch`<sup>[?][msdocs:Switch-NetQosFlowControl]</sup>
+- NetQoSTrafficClass
+`Get`<sup>[?][msdocs:Get-NetQosTrafficClass]</sup>
+`New`<sup>[?][msdocs:New-NetQosTrafficClass]</sup>
+`Remove`<sup>[?][msdocs:Remove-NetQosTrafficClass]</sup>
+`Set`<sup>[?][msdocs:Set-NetQosTrafficClass]</sup>
+`Switch`<sup>[?][msdocs:Switch-NetQosTrafficClass]</sup>
+#### deduplication
+[msdocs:Disable-DedupVolume]: https://docs.microsoft.com/en-us/powershell/module/deduplication/Disable-DedupVolume "Disable-DedupVolume"
+[msdocs:Enable-DedupVolume]: https://docs.microsoft.com/en-us/powershell/module/deduplication/Enable-DedupVolume "Enable-DedupVolume"
+[msdocs:Expand-DedupFile]: https://docs.microsoft.com/en-us/powershell/module/deduplication/Expand-DedupFile "Expand-DedupFile"
+[msdocs:Get-DedupJob]: https://docs.microsoft.com/en-us/powershell/module/deduplication/Get-DedupJob "Get-DedupJob"
+[msdocs:Get-DedupMetadata]: https://docs.microsoft.com/en-us/powershell/module/deduplication/Get-DedupMetadata "Get-DedupMetadata"
+[msdocs:Get-DedupSchedule]: https://docs.microsoft.com/en-us/powershell/module/deduplication/Get-DedupSchedule "Get-DedupSchedule"
+[msdocs:Get-DedupStatus]: https://docs.microsoft.com/en-us/powershell/module/deduplication/Get-DedupStatus "Get-DedupStatus"
+[msdocs:Get-DedupVolume]: https://docs.microsoft.com/en-us/powershell/module/deduplication/Get-DedupVolume "Get-DedupVolume"
+[msdocs:Measure-DedupFileMetadata]: https://docs.microsoft.com/en-us/powershell/module/deduplication/Measure-DedupFileMetadata "Measure-DedupFileMetadata"
+[msdocs:New-DedupSchedule]: https://docs.microsoft.com/en-us/powershell/module/deduplication/New-DedupSchedule "New-DedupSchedule"
+[msdocs:Remove-DedupSchedule]: https://docs.microsoft.com/en-us/powershell/module/deduplication/Remove-DedupSchedule "Remove-DedupSchedule"
+[msdocs:Set-DedupSchedule]: https://docs.microsoft.com/en-us/powershell/module/deduplication/Set-DedupSchedule "Set-DedupSchedule"
+[msdocs:Set-DedupVolume]: https://docs.microsoft.com/en-us/powershell/module/deduplication/Set-DedupVolume "Set-DedupVolume"
+[msdocs:Start-DedupJob]: https://docs.microsoft.com/en-us/powershell/module/deduplication/Start-DedupJob "Start-DedupJob"
+[msdocs:Stop-DedupJob]: https://docs.microsoft.com/en-us/powershell/module/deduplication/Stop-DedupJob "Stop-DedupJob"
+[msdocs:Update-DedupStatus]: https://docs.microsoft.com/en-us/powershell/module/deduplication/Update-DedupStatus "Update-DedupStatus"
+
+[Expand-DedupFile]: #expand-dedupfile '```&#10;Expand-DedupFile&#10;```&#10;Expands an optimized file into its original location.'
+[Measure-DedupFileMetadata]: #measure-dedupfilemetadata '```&#10;Measure-DedupFileMetadata&#10;```&#10;Measures potential disk space on a volume.'
+[Get-DedupJob]: #get-dedupjob '```&#10;Get-DedupJob&#10;```&#10;Returns status and information for currently running or queued deduplication jobs.'
+[Start-DedupJob]: #start-dedupjob '```&#10;Start-DedupJob&#10;```&#10;Starts a data deduplication job.'
+[Stop-DedupJob]: #stop-dedupjob '```&#10;Stop-DedupJob&#10;```&#10;Cancels one or more specified data deduplication jobs.'
+[Get-DedupMetadata]: #get-dedupmetadata '```&#10;Get-DedupMetadata&#10;```&#10;Returns metadata for volumes that have data deduplication metadata.'
+[Get-DedupSchedule]: #get-dedupschedule '```&#10;Get-DedupSchedule&#10;```&#10;Returns the deduplication job schedule defined on the computer.'
+[New-DedupSchedule]: #new-dedupschedule '```&#10;New-DedupSchedule&#10;```&#10;Creates a data deduplication schedule.'
+[Remove-DedupSchedule]: #remove-dedupschedule '```&#10;Remove-DedupSchedule&#10;```&#10;Deletes a deduplication schedule.'
+[Set-DedupSchedule]: #set-dedupschedule '```&#10;Set-DedupSchedule&#10;```&#10;Changes configuration settings for data deduplication schedules.'
+[Get-DedupStatus]: #get-dedupstatus '```&#10;Get-DedupStatus&#10;```&#10;Returns deduplication status for volumes that have data deduplication metadata.'
+[Update-DedupStatus]: #update-dedupstatus '```&#10;Update-DedupStatus&#10;```&#10;Scans volumes for fresh data deduplication savings.'
+[Disable-DedupVolume]: #disable-dedupvolume '```&#10;Disable-DedupVolume&#10;```&#10;Disables data deduplication activity on one or more volumes.'
+[Enable-DedupVolume]: #enable-dedupvolume '```&#10;Enable-DedupVolume&#10;```&#10;Enables data deduplication on one or more volumes.'
+[Get-DedupVolume]: #get-dedupvolume '```&#10;Get-DedupVolume&#10;```&#10;Returns deduplication volumes that have data deduplication metadata.'
+[Set-DedupVolume]: #set-dedupvolume '```&#10;Set-DedupVolume&#10;```&#10;Changes data deduplication settings on one or more volumes.'
+
+- DedupVolume [Disable][Disable-DedupVolume]<sup>[?][msdocs:Disable-DedupVolume]</sup> [Enable][Enable-DedupVolume]<sup>[?][msdocs:Enable-DedupVolume]</sup>
+#### defender
+[msdocs:Add-MpPreference]: https://docs.microsoft.com/en-us/powershell/module/defender/Add-MpPreference "Add-MpPreference"
+[msdocs:Get-MpComputerStatus]: https://docs.microsoft.com/en-us/powershell/module/defender/Get-MpComputerStatus "Get-MpComputerStatus"
+[msdocs:Get-MpPreference]: https://docs.microsoft.com/en-us/powershell/module/defender/Get-MpPreference "Get-MpPreference"
+[msdocs:Get-MpThreat]: https://docs.microsoft.com/en-us/powershell/module/defender/Get-MpThreat "Get-MpThreat"
+[msdocs:Get-MpThreatCatalog]: https://docs.microsoft.com/en-us/powershell/module/defender/Get-MpThreatCatalog "Get-MpThreatCatalog"
+[msdocs:Get-MpThreatDetection]: https://docs.microsoft.com/en-us/powershell/module/defender/Get-MpThreatDetection "Get-MpThreatDetection"
+[msdocs:Remove-MpPreference]: https://docs.microsoft.com/en-us/powershell/module/defender/Remove-MpPreference "Remove-MpPreference"
+[msdocs:Remove-MpThreat]: https://docs.microsoft.com/en-us/powershell/module/defender/Remove-MpThreat "Remove-MpThreat"
+[msdocs:Set-MpPreference]: https://docs.microsoft.com/en-us/powershell/module/defender/Set-MpPreference "Set-MpPreference"
+[msdocs:Start-MpScan]: https://docs.microsoft.com/en-us/powershell/module/defender/Start-MpScan "Start-MpScan"
+[msdocs:Start-MpWDOScan]: https://docs.microsoft.com/en-us/powershell/module/defender/Start-MpWDOScan "Start-MpWDOScan"
+[msdocs:Update-MpSignature]: https://docs.microsoft.com/en-us/powershell/module/defender/Update-MpSignature "Update-MpSignature"
+
+[Add-MpPreference]: #add-mppreference '```&#10;Add-MpPreference&#10;```&#10;Modifies settings for Windows Defender.'
+[Get-MpComputerStatus]: #get-mpcomputerstatus '```&#10;Get-MpComputerStatus&#10;```&#10;Gets the status of antimalware software on the computer.'
+[Get-MpPreference]: #get-mppreference '```&#10;Get-MpPreference&#10;```&#10;Gets preferences for the Windows Defender scans and updates.'
+[Get-MpThreat]: #get-mpthreat '```&#10;Get-MpThreat&#10;```&#10;Gets the history of threats detected on the computer.'
+[Get-MpThreatCatalog]: #get-mpthreatcatalog '```&#10;Get-MpThreatCatalog&#10;```&#10;Gets known threats from the definitions catalog.'
+[Get-MpThreatDetection]: #get-mpthreatdetection '```&#10;Get-MpThreatDetection&#10;```&#10;Gets active and past malware threats that Windows Defender detected.'
+[Remove-MpPreference]: #remove-mppreference '```&#10;Remove-MpPreference&#10;```&#10;Removes exclusions or default actions.'
+[Remove-MpThreat]: #remove-mpthreat '```&#10;Remove-MpThreat&#10;```&#10;Removes active threats from a computer.'
+[Set-MpPreference]: #set-mppreference '```&#10;Set-MpPreference&#10;```&#10;Configures preferences for Windows Defender scans and updates.'
+[Start-MpScan]: #start-mpscan '```&#10;Start-MpScan&#10;```&#10;Starts a scan on a computer.'
+[Start-MpWDOScan]: #start-mpwdoscan '```&#10;Start-MpWDOScan&#10;```&#10;Starts a Windows Defender offline scan.'
+[Update-MpSignature]: #update-mpsignature '```&#10;Update-MpSignature&#10;```&#10;Updates the antimalware definitions on a computer.'
+
+- MpScan [`Start`][Start-MpScan]<sup>[?][msdocs:Start-MpScan]</sup>
+- MpThreat [`Get`][Get-MpThreat]<sup>[?][msdocs:Get-MpThreat]</sup> [`Remove`][Remove-MpThreat]<sup>[?][msdocs:Remove-MpThreat]</sup>
+#### dism
+[msdocs:Set-AppxProvisionedDataFile]: https://docs.microsoft.com/en-us/powershell/module/dism/Set-AppxProvisionedDataFile "Set-AppxProvisionedDataFile"
+[msdocs:Add-AppxProvisionedPackage]: https://docs.microsoft.com/en-us/powershell/module/dism/Add-AppxProvisionedPackage "Add-AppxProvisionedPackage"
+[msdocs:Get-AppxProvisionedPackage]: https://docs.microsoft.com/en-us/powershell/module/dism/Get-AppxProvisionedPackage "Get-AppxProvisionedPackage"
+[msdocs:Remove-AppxProvisionedPackage]: https://docs.microsoft.com/en-us/powershell/module/dism/Remove-AppxProvisionedPackage "Remove-AppxProvisionedPackage"
+[msdocs:Get-WIMBootEntry]: https://docs.microsoft.com/en-us/powershell/module/dism/Get-WIMBootEntry "Get-WIMBootEntry"
+[msdocs:Update-WIMBootEntry]: https://docs.microsoft.com/en-us/powershell/module/dism/Update-WIMBootEntry "Update-WIMBootEntry"
+[msdocs:Add-WindowsCapability]: https://docs.microsoft.com/en-us/powershell/module/dism/Add-WindowsCapability "Add-WindowsCapability"
+[msdocs:Get-WindowsCapability]: https://docs.microsoft.com/en-us/powershell/module/dism/Get-WindowsCapability "Get-WindowsCapability"
+[msdocs:Remove-WindowsCapability]: https://docs.microsoft.com/en-us/powershell/module/dism/Remove-WindowsCapability "Remove-WindowsCapability"
+[msdocs:Clear-WindowsCorruptMountPoint]: https://docs.microsoft.com/en-us/powershell/module/dism/Clear-WindowsCorruptMountPoint "Clear-WindowsCorruptMountPoint"
+[msdocs:Expand-WindowsCustomDataImage]: https://docs.microsoft.com/en-us/powershell/module/dism/Expand-WindowsCustomDataImage "Expand-WindowsCustomDataImage"
+[msdocs:New-WindowsCustomImage]: https://docs.microsoft.com/en-us/powershell/module/dism/New-WindowsCustomImage "New-WindowsCustomImage"
+[msdocs:Add-WindowsDriver]: https://docs.microsoft.com/en-us/powershell/module/dism/Add-WindowsDriver "Add-WindowsDriver"
+[msdocs:Export-WindowsDriver]: https://docs.microsoft.com/en-us/powershell/module/dism/Export-WindowsDriver "Export-WindowsDriver"
+[msdocs:Get-WindowsDriver]: https://docs.microsoft.com/en-us/powershell/module/dism/Get-WindowsDriver "Get-WindowsDriver"
+[msdocs:Remove-WindowsDriver]: https://docs.microsoft.com/en-us/powershell/module/dism/Remove-WindowsDriver "Remove-WindowsDriver"
+[msdocs:Get-WindowsEdition]: https://docs.microsoft.com/en-us/powershell/module/dism/Get-WindowsEdition "Get-WindowsEdition"
+[msdocs:Set-WindowsEdition]: https://docs.microsoft.com/en-us/powershell/module/dism/Set-WindowsEdition "Set-WindowsEdition"
+[msdocs:Add-WindowsImage]: https://docs.microsoft.com/en-us/powershell/module/dism/Add-WindowsImage "Add-WindowsImage"
+[msdocs:Dismount-WindowsImage]: https://docs.microsoft.com/en-us/powershell/module/dism/Dismount-WindowsImage "Dismount-WindowsImage"
+[msdocs:Expand-WindowsImage]: https://docs.microsoft.com/en-us/powershell/module/dism/Expand-WindowsImage "Expand-WindowsImage"
+[msdocs:Export-WindowsImage]: https://docs.microsoft.com/en-us/powershell/module/dism/Export-WindowsImage "Export-WindowsImage"
+[msdocs:Get-WindowsImage]: https://docs.microsoft.com/en-us/powershell/module/dism/Get-WindowsImage "Get-WindowsImage"
+[msdocs:Mount-WindowsImage]: https://docs.microsoft.com/en-us/powershell/module/dism/Mount-WindowsImage "Mount-WindowsImage"
+[msdocs:New-WindowsImage]: https://docs.microsoft.com/en-us/powershell/module/dism/New-WindowsImage "New-WindowsImage"
+[msdocs:Remove-WindowsImage]: https://docs.microsoft.com/en-us/powershell/module/dism/Remove-WindowsImage "Remove-WindowsImage"
+[msdocs:Save-WindowsImage]: https://docs.microsoft.com/en-us/powershell/module/dism/Save-WindowsImage "Save-WindowsImage"
+[msdocs:Optimize-WindowsImage]: https://docs.microsoft.com/en-us/powershell/module/dism/Optimize-WindowsImage "Optimize-WindowsImage"
+[msdocs:Repair-WindowsImage]: https://docs.microsoft.com/en-us/powershell/module/dism/Repair-WindowsImage "Repair-WindowsImage"
+[msdocs:Split-WindowsImage]: https://docs.microsoft.com/en-us/powershell/module/dism/Split-WindowsImage "Split-WindowsImage"
+[msdocs:Get-WindowsImageContent]: https://docs.microsoft.com/en-us/powershell/module/dism/Get-WindowsImageContent "Get-WindowsImageContent"
+[msdocs:Disable-WindowsOptionalFeature]: https://docs.microsoft.com/en-us/powershell/module/dism/Disable-WindowsOptionalFeature "Disable-WindowsOptionalFeature"
+[msdocs:Enable-WindowsOptionalFeature]: https://docs.microsoft.com/en-us/powershell/module/dism/Enable-WindowsOptionalFeature "Enable-WindowsOptionalFeature"
+[msdocs:Get-WindowsOptionalFeature]: https://docs.microsoft.com/en-us/powershell/module/dism/Get-WindowsOptionalFeature "Get-WindowsOptionalFeature"
+[msdocs:Add-WindowsPackage]: https://docs.microsoft.com/en-us/powershell/module/dism/Add-WindowsPackage "Add-WindowsPackage"
+[msdocs:Get-WindowsPackage]: https://docs.microsoft.com/en-us/powershell/module/dism/Get-WindowsPackage "Get-WindowsPackage"
+[msdocs:Remove-WindowsPackage]: https://docs.microsoft.com/en-us/powershell/module/dism/Remove-WindowsPackage "Remove-WindowsPackage"
+[msdocs:Set-WindowsProductKey]: https://docs.microsoft.com/en-us/powershell/module/dism/Set-WindowsProductKey "Set-WindowsProductKey"
+[msdocs:Get-WindowsReservedStorageState]: https://docs.microsoft.com/en-us/powershell/module/dism/Get-WindowsReservedStorageState "Get-WindowsReservedStorageState"
+[msdocs:Set-WindowsReservedStorageState]: https://docs.microsoft.com/en-us/powershell/module/dism/Set-WindowsReservedStorageState "Set-WindowsReservedStorageState"
+[msdocs:Use-WindowsUnattend]: https://docs.microsoft.com/en-us/powershell/module/dism/Use-WindowsUnattend "Use-WindowsUnattend"
+
+[Add-AppxProvisionedPackage]: #add-appxprovisionedpackage '```&#10;PS C:\> Add-AppxProvisionedPackage&#10;```&#10;Adds an app package (.appx) that will install for each new user to a Windows image.&#10;Equivalent to `Dism.exe /Image:foldername /Add-ProvisionedAppxPackage`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
+[Add-WindowsCapability]: #add-windowscapability '```&#10;PS C:\> Add-WindowsCapability&#10;```&#10;Installs a Windows capability package on the specified operating system image.'
+[Add-WindowsDriver]: #add-windowsdriver '```&#10;PS C:\> Add-WindowsDriver&#10;```&#10;Adds a driver to an offline Windows image.&#10;Equivalent to `Dism.exe /Image:foldername /Add-Drive`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
+[Add-WindowsImage]: #add-windowsimage '```&#10;PS C:\> Add-WindowsImage&#10;```&#10;Adds an additional image to an existing image (.wim) file.&#10;Equivalent to `dism.exe /Append-Image`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
+[Add-WindowsPackage]: #add-windowspackage '```&#10;PS C:\> Add-WindowsPackage&#10;```&#10;Adds a single .cab or .msu file to a Windows image.&#10;Equivalent to `Dism.exe /Image:foldername /Add-Package`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
+[Clear-WindowsCorruptMountPoint]: #clear-windowscorruptmountpoint '```&#10;PS C:\> Clear-WindowsCorruptMountPoint&#10;```&#10;Deletes all of the resources associated with a mounted image that has been corrupted.'
+[Disable-WindowsOptionalFeature]: #disable-windowsoptionalfeature '```&#10;PS C:\> Disable-WindowsOptionalFeature&#10;```&#10;Disables a feature in a Windows image.&#10;Equivalent to `Dism.exe /Image:foldername /Disable-Feature`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
+[Dismount-WindowsImage]: #dismount-windowsimage '```&#10;PS C:\> Dismount-WindowsImage&#10;```&#10;Dismounts a Windows image from the directory it is mapped to.&#10;Equivalent to `Dism.exe /Unmount-Image`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
+[Enable-WindowsOptionalFeature]: #enable-windowsoptionalfeature '```&#10;PS C:\> Enable-WindowsOptionalFeature&#10;```&#10;Enable or restore an optional feature in a Windows image&#10;Equivalent to `Dism.exe /Image:foldername /Enable-Feature`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
+[Expand-WindowsCustomDataImage]: #expand-windowscustomdataimage '```&#10;PS C:\> Expand-WindowsCustomDataImage&#10;```&#10;Expands a custom data image.'
+[Expand-WindowsImage]: #expand-windowsimage '```&#10;PS C:\> Expand-WindowsImage&#10;```&#10;Applies an image to a specified location.&#10;Equivalent to `Dism.exe /Apply-Image`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
+[Export-WindowsDriver]: #export-windowsdriver '```&#10;PS C:\> Export-WindowsDriver&#10;```&#10;Exports all third-party drivers from a Windows image to a destination folder.&#10;Equivalent to `Dism.exe /Image:foldername /Export-Driver`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
+[Export-WindowsImage]: #export-windowsimage '```&#10;PS C:\> Export-WindowsImage&#10;```&#10;Exports a copy of the specified image to another image file.&#10;Equivalent to `Dism.exe /Export-Image`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
+[Get-AppxProvisionedPackage]: #get-appxprovisionedpackage '```&#10;PS C:\> Get-AppxProvisionedPackage&#10;```&#10;Gets information about app packages (.appx) in an image that will be installed for each new user.&#10;Equivalent to `Dism.exe /Image:foldername /Get-ProvisionedAppxPackages`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 78'
+[Get-WIMBootEntry]: #get-wimbootentry '```&#10;PS C:\> Get-WIMBootEntry&#10;```&#10;Displays the Windows image file boot (WIMBoot) configuration entries for a specified disk volume.'
+[Get-WindowsCapability]: #get-windowscapability '```&#10;PS C:\> Get-WindowsCapability&#10;```&#10;Gets Windows capabilities for an image or a running operating system.'
+[Get-WindowsDriver]: #get-windowsdriver '```&#10;PS C:\> Get-WindowsDriver&#10;```&#10;Displays information about drivers in a Windows image.&#10;Equivalent to `Dism.exe /Image:foldername /Get-Drivers`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 78'
+[Get-WindowsEdition]: #get-windowsedition '```&#10;PS C:\> Get-WindowsEdition&#10;```&#10;Gets edition information about a Windows image.'
+[Get-WindowsImage]: #get-windowsimage '```&#10;PS C:\> Get-WindowsImage&#10;```&#10;Gets information about a Windows image in a WIM or VHD file.&#10;Equivalent to `Dism.exe /Get-ImageInfo`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
+[Get-WindowsImageContent]: #get-windowsimagecontent '```&#10;PS C:\> Get-WindowsImageContent&#10;```&#10;Displays a list of the files and folders in a specified image.&#10;Equivalent to `Dism.exe /List-Image`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
+[Get-WindowsOptionalFeature]: #get-windowsoptionalfeature '```&#10;PS C:\> Get-WindowsOptionalFeature&#10;```&#10;Gets information about optional features in a Windows image.&#10;Equivalent to `Dism.exe /Image:foldername /Get-Features`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 78'
+[Get-WindowsPackage]: #get-windowspackage '```&#10;PS C:\> Get-WindowsPackage&#10;```&#10;Gets information about packages in a Windows image.&#10;Equivalent to `Dism.exe /Image:foldername /Get-Packages`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 78'
+[Get-WindowsReservedStorageState]: #get-windowsreservedstoragestate '```&#10;PS C:\> Get-WindowsReservedStorageState&#10;```&#10;Gets the reserved storage state of the image.'
+[Mount-WindowsImage]: #mount-windowsimage '```&#10;PS C:\> Mount-WindowsImage&#10;```&#10;Mounts a Windows image in a WIM or VHD file to a directory on the local computer.&#10;Equivalent to `Dism.exe /Mount-image`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
+[New-WindowsCustomImage]: #new-windowscustomimage '```&#10;PS C:\> New-WindowsCustomImage&#10;```&#10;Captures an image of customized or serviced Windows components on a Windows Image File Boot (WIMBoot) configured device.'
+[New-WindowsImage]: #new-windowsimage '```&#10;PS C:\> New-WindowsImage&#10;```&#10;Captures an image of a drive to a new WIM file.&#10;Equivalent to `Dism.exe /Capture-Image`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
+[Optimize-WindowsImage]: #optimize-windowsimage '```&#10;PS C:\> Optimize-WindowsImage&#10;```&#10;Configures a Windows image with specified optimizations.'
+[Remove-AppxProvisionedPackage]: #remove-appxprovisionedpackage '```&#10;PS C:\> Remove-AppxProvisionedPackage&#10;```&#10;Removes an app package (.appx) from a Windows image.&#10;Equivalent to `Dism.exe /Image:foldername /Remove-ProvisionedAppxPackage`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 78'
+[Remove-WindowsCapability]: #remove-windowscapability '```&#10;PS C:\> Remove-WindowsCapability&#10;```&#10;Uninstalls a Windows capability package from an image.'
+[Remove-WindowsDriver]: #remove-windowsdriver '```&#10;PS C:\> Remove-WindowsDriver&#10;```&#10;Removes a driver from an offline Windows image.&#10;Equivalent to `Dism.exe /Image:foldername /Remove-Driver`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 78'
+[Remove-WindowsImage]: #remove-windowsimage '```&#10;PS C:\> Remove-WindowsImage&#10;```&#10;Deletes the specified volume image from a WIM file that has multiple volume images.&#10;Equivalent to `Dism.exe /Remove-Image`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
+[Remove-WindowsPackage]: #remove-windowspackage '```&#10;PS C:\> Remove-WindowsPackage&#10;```&#10;Removes a package from a Windows image.&#10;Equivalent to `Dism.exe /Image:foldername /Remove-Package`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 78'
+[Repair-WindowsImage]: #repair-windowsimage '```&#10;PS C:\> Repair-WindowsImage&#10;```&#10;Repairs a Windows image in a WIM or VHD file.'
+[Save-WindowsImage]: #save-windowsimage '```&#10;PS C:\> Save-WindowsImage&#10;```&#10;Applies changes made to a mounted image to its WIM or VHD file.&#10;Equivalent to `Dism.exe /Commit-Image`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
+[Set-AppxProvisionedDataFile]: #set-appxprovisioneddatafile '```&#10;PS C:\> Set-AppxProvisionedDataFile&#10;```&#10;Adds custom data into the specified app (.appx) package that has been provisioned in a Windows image.&#10;Equivalent to `Dism.exe /Image:foldername /Set-ProvisionedAppxDataFile`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 78'
+[Set-WindowsEdition]: #set-windowsedition '```&#10;PS C:\> Set-WindowsEdition&#10;```&#10;Changes a Windows image to a higher edition.'
+[Set-WindowsProductKey]: #set-windowsproductkey '```&#10;PS C:\> Set-WindowsProductKey&#10;```&#10;Sets the product key for the Windows image.'
+[Set-WindowsReservedStorageState]: #set-windowsreservedstoragestate '```&#10;PS C:\> Set-WindowsReservedStorageState&#10;```&#10;Sets the reserved storage state of the image.'
+[Split-WindowsImage]: #split-windowsimage '```&#10;PS C:\> Split-WindowsImage&#10;```&#10;Splits an existing .wim file into multiple read-only split .wim files.'
+[Update-WIMBootEntry]: #update-wimbootentry '```&#10;PS C:\> Update-WIMBootEntry&#10;```&#10;Updates the Windows image file boot (WIMBoot) configuration entry, associated with either the specified data source ID, the renamed image file path or the moved image file path.'
+[Use-WindowsUnattend]: #use-windowsunattend '```&#10;PS C:\> Use-WindowsUnattend&#10;```&#10;Applies an unattended answer file to a Windows image.'
+
+
+<code>WIMBootEntry&nbsp;[g][Get-WIMBootEntry]&nbsp;[u][Update-WIMBootEntry]</code>
+**`AppxProvisioned`**
+<code>DataFile&nbsp;[s][Set-AppxProvisionedDataFile]</code> 
+<code>Package&nbsp;[a][Add-AppxProvisionedPackage]&nbsp;[g][Get-AppxProvisionedPackage]&nbsp;[r][Remove-AppxProvisionedPackage]</code> 
+**`Windows`**
+<code>Capability&nbsp;[a][Add-WindowsCapability]&nbsp;[g][Get-WindowsCapability]&nbsp;[r][Remove-WindowsCapability]</code>
+<code>CorruptMountPoint&nbsp;[c][Clear-WindowsCorruptMountPoint]</code>
+<code>CustomDataImage&nbsp;[en][Expand-WindowsCustomDataImage]</code>
+<code>CustomImage&nbsp;[n][New-WindowsCustomImage]</code>
+<code>Driver&nbsp;[a][Add-WindowsDriver]&nbsp;[ep][Export-WindowsDriver]&nbsp;[g][Get-WindowsDriver]&nbsp;[r][Remove-WindowsDriver]</code> 
+<code>Edition&nbsp;[g][Get-WindowsEdition]&nbsp;[s][Set-WindowsEdition]</code>
+<code>Image&nbsp;[a][Add-WindowsImage]&nbsp;[dm][Dismount-WindowsImage]&nbsp;[en][Expand-WindowsImage]&nbsp;[ep][Export-windowsImage]&nbsp;[n][New-WindowsImage]&nbsp;[sv][Save-WindowsImage]&nbsp;[ep][Export-WindowsImage]&nbsp;[g][Get-WindowsImage]&nbsp;[mt][Mount-WindowsImage]&nbsp;[n][New-WindowsImage]&nbsp;[om][Optimize-WindowsImage]&nbsp;[rp][Repair-WindowsImage]&nbsp;[r][Remove-WindowsImage]&nbsp;[sl][Split-WindowsImage]</code>
+<code>ImageContent&nbsp;[g][Get-WindowsImageContent]</code>
+<code>OptionalFeature&nbsp;[d][Disable-WindowsOptionalFeature]&nbsp;[e][Enable-WindowsOptionalFeature]&nbsp;[g][Get-WindowsOptionalFeature]</code>
+<code>Package&nbsp;[a][Add-WindowsPackage]&nbsp;[g][Get-WindowsPackage]&nbsp;[r][Remove-WindowsPackage]</code>
+<code>ProductKey&nbsp;[s][Set-WindowsProductKey]</code>
+<code>ReservedStorageState&nbsp;[g][Get-WindowsReservedStorageState]&nbsp;[s][Set-WindowsReservedStorageState]</code>
+<code>Unattend&nbsp;[u][Use-WindowsUnattend]</code>
+#### failoverclusters
+[msdocs:Add-ClusterCheckpoint]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Add-ClusterCheckpoint "Add-ClusterCheckpoint"
+[msdocs:Add-ClusterGenericScriptRole]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Add-ClusterGenericScriptRole "Add-ClusterGenericScriptRole"
+[msdocs:Add-ClusterGenericServiceRole]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Add-ClusterGenericServiceRole "Add-ClusterGenericServiceRole"
+[msdocs:Add-ClusterGroupSetDependency]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Add-ClusterGroupSetDependency "Add-ClusterGroupSetDependency"
+[msdocs:Add-ClusterGroupToSet]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Add-ClusterGroupToSet "Add-ClusterGroupToSet"
+[msdocs:Add-ClusteriSCSITargetServerRole]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Add-ClusteriSCSITargetServerRole "Add-ClusteriSCSITargetServerRole"
+[msdocs:Add-ClusterResourceType]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Add-ClusterResourceType "Add-ClusterResourceType"
+[msdocs:Add-ClusterScaleOutFileServer]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Add-ClusterScaleOutFileServer "Add-ClusterScaleOutFileServer"
+[msdocs:Add-ClusterScaleOutFileServerRole]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Add-ClusterScaleOutFileServerRole "Add-ClusterScaleOutFileServerRole"
+[msdocs:Add-ClusterServerRole]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Add-ClusterServerRole "Add-ClusterServerRole"
+[msdocs:Clear-ClusterDiskReservation]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Clear-ClusterDiskReservation "Clear-ClusterDiskReservation"
+[msdocs:Clear-ClusterNode]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Clear-ClusterNode "Clear-ClusterNode"
+[msdocs:Disable-ClusterStorageSpacesDirect]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Disable-ClusterStorageSpacesDirect "Disable-ClusterStorageSpacesDirect"
+[msdocs:Add-ClusterDisk]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Add-ClusterDisk "Add-ClusterDisk"
+[msdocs:Add-ClusterFileServerRole]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Add-ClusterFileServerRole "Add-ClusterFileServerRole"
+[msdocs:Add-ClusterGenericApplicationRole]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Add-ClusterGenericApplicationRole "Add-ClusterGenericApplicationRole"
+[msdocs:Get-ClusterAvailableDisk]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Get-ClusterAvailableDisk "Get-ClusterAvailableDisk"
+[msdocs:Get-ClusterCheckpoint]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Get-ClusterCheckpoint "Get-ClusterCheckpoint"
+[msdocs:Get-ClusterDiagnosticInfo]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Get-ClusterDiagnosticInfo "Get-ClusterDiagnosticInfo"
+[msdocs:Get-ClusterFaultDomain]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Get-ClusterFaultDomain "Get-ClusterFaultDomain"
+[msdocs:Get-ClusterFaultDomainXML]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Get-ClusterFaultDomainXML "Get-ClusterFaultDomainXML"
+[msdocs:Get-ClusterGroup]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Get-ClusterGroup "Get-ClusterGroup"
+[msdocs:Get-ClusterGroupSet]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Get-ClusterGroupSet "Get-ClusterGroupSet"
+[msdocs:Get-ClusterGroupSetDependency]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Get-ClusterGroupSetDependency "Get-ClusterGroupSetDependency"
+[msdocs:Get-ClusterLog]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Get-ClusterLog "Get-ClusterLog"
+[msdocs:Get-ClusterNetwork]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Get-ClusterNetwork "Get-ClusterNetwork"
+[msdocs:Get-ClusterNetworkInterface]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Get-ClusterNetworkInterface "Get-ClusterNetworkInterface"
+[msdocs:Add-ClusterGroup]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Add-ClusterGroup "Add-ClusterGroup"
+[msdocs:Add-ClusterNode]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Add-ClusterNode "Add-ClusterNode"
+[msdocs:Get-ClusterOwnerNode]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Get-ClusterOwnerNode "Get-ClusterOwnerNode"
+[msdocs:Get-ClusterParameter]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Get-ClusterParameter "Get-ClusterParameter"
+[msdocs:Add-ClusterResource]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Add-ClusterResource "Add-ClusterResource"
+[msdocs:Add-ClusterResourceDependency]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Add-ClusterResourceDependency "Add-ClusterResourceDependency"
+[msdocs:Get-ClusterResource]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Get-ClusterResource "Get-ClusterResource"
+[msdocs:Get-ClusterResourceDependency]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Get-ClusterResourceDependency "Get-ClusterResourceDependency"
+[msdocs:Get-ClusterResourceDependencyReport]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Get-ClusterResourceDependencyReport "Get-ClusterResourceDependencyReport"
+[msdocs:Get-ClusterResourceType]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Get-ClusterResourceType "Get-ClusterResourceType"
+[msdocs:Get-ClusterSharedVolume]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Get-ClusterSharedVolume "Get-ClusterSharedVolume"
+[msdocs:Get-ClusterSharedVolumeState]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Get-ClusterSharedVolumeState "Get-ClusterSharedVolumeState"
+[msdocs:Get-ClusterStorageSpacesDirect]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Get-ClusterStorageSpacesDirect "Get-ClusterStorageSpacesDirect"
+[msdocs:Get-ClusterVMMonitoredItem]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Get-ClusterVMMonitoredItem "Get-ClusterVMMonitoredItem"
+[msdocs:Grant-ClusterAccess]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Grant-ClusterAccess "Grant-ClusterAccess"
+[msdocs:Move-ClusterGroup]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Move-ClusterGroup "Move-ClusterGroup"
+[msdocs:Move-ClusterResource]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Move-ClusterResource "Move-ClusterResource"
+[msdocs:Move-ClusterSharedVolume]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Move-ClusterSharedVolume "Move-ClusterSharedVolume"
+[msdocs:Move-ClusterVirtualMachineRole]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Move-ClusterVirtualMachineRole "Move-ClusterVirtualMachineRole"
+[msdocs:Add-ClusterSharedVolume]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Add-ClusterSharedVolume "Add-ClusterSharedVolume"
+[msdocs:Add-ClusterVirtualMachineRole]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Add-ClusterVirtualMachineRole "Add-ClusterVirtualMachineRole"
+[msdocs:New-ClusterFaultDomain]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/New-ClusterFaultDomain "New-ClusterFaultDomain"
+[msdocs:New-ClusterGroupSet]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/New-ClusterGroupSet "New-ClusterGroupSet"
+[msdocs:New-ClusterNameAccount]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/New-ClusterNameAccount "New-ClusterNameAccount"
+[msdocs:Add-ClusterVMMonitoredItem]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Add-ClusterVMMonitoredItem "Add-ClusterVMMonitoredItem"
+[msdocs:Block-ClusterAccess]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Block-ClusterAccess "Block-ClusterAccess"
+[msdocs:Enable-ClusterStorageSpacesDirect]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Enable-ClusterStorageSpacesDirect "Enable-ClusterStorageSpacesDirect"
+[msdocs:Get-Cluster]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Get-Cluster "Get-Cluster"
+[msdocs:Remove-ClusterCheckpoint]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Remove-ClusterCheckpoint "Remove-ClusterCheckpoint"
+[msdocs:Remove-ClusterFaultDomain]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Remove-ClusterFaultDomain "Remove-ClusterFaultDomain"
+[msdocs:Remove-ClusterGroup]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Remove-ClusterGroup "Remove-ClusterGroup"
+[msdocs:Remove-ClusterGroupFromSet]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Remove-ClusterGroupFromSet "Remove-ClusterGroupFromSet"
+[msdocs:Remove-ClusterGroupSet]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Remove-ClusterGroupSet "Remove-ClusterGroupSet"
+[msdocs:Remove-ClusterGroupSetDependency]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Remove-ClusterGroupSetDependency "Remove-ClusterGroupSetDependency"
+[msdocs:Get-ClusterAccess]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Get-ClusterAccess "Get-ClusterAccess"
+[msdocs:Get-ClusterNode]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Get-ClusterNode "Get-ClusterNode"
+[msdocs:Remove-ClusterResource]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Remove-ClusterResource "Remove-ClusterResource"
+[msdocs:Remove-ClusterResourceDependency]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Remove-ClusterResourceDependency "Remove-ClusterResourceDependency"
+[msdocs:Remove-ClusterResourceType]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Remove-ClusterResourceType "Remove-ClusterResourceType"
+[msdocs:Remove-ClusterSharedVolume]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Remove-ClusterSharedVolume "Remove-ClusterSharedVolume"
+[msdocs:Remove-ClusterVMMonitoredItem]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Remove-ClusterVMMonitoredItem "Remove-ClusterVMMonitoredItem"
+[msdocs:Repair-ClusterStorageSpacesDirect]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Repair-ClusterStorageSpacesDirect "Repair-ClusterStorageSpacesDirect"
+[msdocs:Reset-ClusterVMMonitoredState]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Reset-ClusterVMMonitoredState "Reset-ClusterVMMonitoredState"
+[msdocs:Resume-ClusterNode]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Resume-ClusterNode "Resume-ClusterNode"
+[msdocs:Resume-ClusterResource]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Resume-ClusterResource "Resume-ClusterResource"
+[msdocs:Set-ClusterFaultDomain]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Set-ClusterFaultDomain "Set-ClusterFaultDomain"
+[msdocs:Set-ClusterFaultDomainXML]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Set-ClusterFaultDomainXML "Set-ClusterFaultDomainXML"
+[msdocs:Set-ClusterGroupSet]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Set-ClusterGroupSet "Set-ClusterGroupSet"
+[msdocs:Set-ClusterLog]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Set-ClusterLog "Set-ClusterLog"
+[msdocs:Set-ClusterOwnerNode]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Set-ClusterOwnerNode "Set-ClusterOwnerNode"
+[msdocs:Set-ClusterParameter]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Set-ClusterParameter "Set-ClusterParameter"
+[msdocs:Set-ClusterQuorum]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Set-ClusterQuorum "Set-ClusterQuorum"
+[msdocs:Set-ClusterResourceDependency]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Set-ClusterResourceDependency "Set-ClusterResourceDependency"
+[msdocs:Set-ClusterStorageSpacesDirect]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Set-ClusterStorageSpacesDirect "Set-ClusterStorageSpacesDirect"
+[msdocs:Set-ClusterStorageSpacesDirectDisk]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Set-ClusterStorageSpacesDirectDisk "Set-ClusterStorageSpacesDirectDisk"
+[msdocs:Get-ClusterQuorum]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Get-ClusterQuorum "Get-ClusterQuorum"
+[msdocs:New-Cluster]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/New-Cluster "New-Cluster"
+[msdocs:Start-ClusterGroup]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Start-ClusterGroup "Start-ClusterGroup"
+[msdocs:Start-ClusterNode]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Start-ClusterNode "Start-ClusterNode"
+[msdocs:Start-ClusterResource]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Start-ClusterResource "Start-ClusterResource"
+[msdocs:Remove-Cluster]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Remove-Cluster "Remove-Cluster"
+[msdocs:Remove-ClusterAccess]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Remove-ClusterAccess "Remove-ClusterAccess"
+[msdocs:Stop-ClusterGroup]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Stop-ClusterGroup "Stop-ClusterGroup"
+[msdocs:Remove-ClusterNode]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Remove-ClusterNode "Remove-ClusterNode"
+[msdocs:Start-Cluster]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Start-Cluster "Start-Cluster"
+[msdocs:Stop-ClusterResource]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Stop-ClusterResource "Stop-ClusterResource"
+[msdocs:Stop-Cluster]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Stop-Cluster "Stop-Cluster"
+[msdocs:Stop-ClusterNode]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Stop-ClusterNode "Stop-ClusterNode"
+[msdocs:Suspend-ClusterResource]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Suspend-ClusterResource "Suspend-ClusterResource"
+[msdocs:Suspend-ClusterNode]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Suspend-ClusterNode "Suspend-ClusterNode"
+[msdocs:Test-Cluster]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Test-Cluster "Test-Cluster"
+[msdocs:Test-ClusterResourceFailure]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Test-ClusterResourceFailure "Test-ClusterResourceFailure"
+[msdocs:Update-ClusterFunctionalLevel]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Update-ClusterFunctionalLevel "Update-ClusterFunctionalLevel"
+[msdocs:Update-ClusterIPResource]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Update-ClusterIPResource "Update-ClusterIPResource"
+[msdocs:Update-ClusterNetworkNameResource]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Update-ClusterNetworkNameResource "Update-ClusterNetworkNameResource"
+[msdocs:Update-ClusterVirtualMachineConfiguration]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Update-ClusterVirtualMachineConfiguration "Update-ClusterVirtualMachineConfiguration"
+
+<!-- Failover clusters -->
+[Add-ClusterCheckpoint]: #add-clustercheckpoint '```&#10;PS C:\> Add-ClusterCheckpoint&#10;```&#10;Adds a cryptographic key checkpoint or registry checkpoint for a resource.'
+[Add-ClusterGenericScriptRole]: #add-clustergenericscriptrole '```&#10;PS C:\> Add-ClusterGenericScriptRole&#10;```&#10;Configures an application controlled by a script that runs in Windows Script Host, within a failover cluster.'
+[Add-ClusterGenericServiceRole]: #add-clustergenericservicerole '```&#10;PS C:\> Add-ClusterGenericServiceRole&#10;```&#10;Configures high availability for a service that was not originally designed to run in a failover cluster.'
+[Add-ClusterGroupSetDependency]: #add-clustergroupsetdependency '```&#10;PS C:\> Add-ClusterGroupSetDependency&#10;```&#10;Adds a dependency to a cluster set.'
+[Add-ClusterGroupToSet]: #add-clustergrouptoset '```&#10;PS C:\> Add-ClusterGroupToSet&#10;```&#10;Adds a group to a set.'
+[Add-ClusteriSCSITargetServerRole]: #add-clusteriscsitargetserverrole '```&#10;PS C:\> Add-ClusteriSCSITargetServerRole&#10;```&#10;Creates a highly available iSCSI Target server.'
+[Add-ClusterResourceType]: #add-clusterresourcetype '```&#10;PS C:\> Add-ClusterResourceType&#10;```&#10;Adds a resource type to a failover cluster, and specifies information such as the dynamic-link library (DLL) to use with that resource type.'
+[Add-ClusterScaleOutFileServer]: #add-clusterscaleoutfileserver '```&#10;PS C:\> Add-ClusterScaleOutFileServer&#10;```&#10;Install the Scale-out File Server role&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 339'
+[Add-ClusterScaleOutFileServerRole]: #add-clusterscaleoutfileserverrole '```&#10;PS C:\> Add-ClusterScaleOutFileServerRole&#10;```&#10;Creates a clustered file server for scale-out application data.'
+[Add-ClusterServerRole]: #add-clusterserverrole '```&#10;PS C:\> Add-ClusterServerRole&#10;```&#10;Add the cluster server role to a server'
+[Clear-ClusterDiskReservation]: #clear-clusterdiskreservation '```&#10;PS C:\> Clear-ClusterDiskReservation&#10;```&#10;Clears the persistent reservation on a disk in a failover cluster.'
+[Clear-ClusterNode]: #clear-clusternode '```&#10;PS C:\> Clear-ClusterNode&#10;```&#10;Clears the cluster configuration from a node that was evicted from a failover cluster.'
+[Disable-ClusterStorageSpacesDirect]: #disable-clusterstoragespacesdirect '```&#10;PS C:\> Disable-ClusterStorageSpacesDirect&#10;```&#10;Disables S2D.'
+[Add-ClusterDisk]: #add-clusterdisk '```&#10;PS C:\> Add-ClusterDisk&#10;```&#10;Allow an admin to add a new disk to a failover cluster'
+[Add-ClusterFileServerRole]: #add-clusterfileserverrole '```&#10;PS C:\> Add-ClusterFileServerRole&#10;```&#10;This command allows an admin to create a clustered file server'
+[Add-ClusterGenericApplicationRole]: #add-clustergenericapplicationrole '```&#10;PS C:\> Add-ClusterGenericApplicationRole&#10;```&#10;Configures an application in the generic application role, providing high availability for an application not designed for use in a failover cluster.'
+[Get-ClusterAvailableDisk]: #get-clusteravailabledisk '```&#10;PS C:\> Get-ClusterAvailableDisk&#10;```&#10;Gets information about the disks that can support Failover Clustering and are visible to all nodes, but are not yet part of the set of clustered disks.'
+[Get-ClusterCheckpoint]: #get-clustercheckpoint '```&#10;PS C:\> Get-ClusterCheckpoint&#10;```&#10;Retrieves a cryptographic key checkpoint or registry checkpoint for a resource.'
+[Get-ClusterDiagnosticInfo]: #get-clusterdiagnosticinfo '```&#10;PS C:\> Get-ClusterDiagnosticInfo&#10;```&#10;Gets diagnostics for a cluster a cluster that contains VMs and produces a zip file containing the data.'
+[Get-ClusterFaultDomain]: #get-clusterfaultdomain '```&#10;PS C:\> Get-ClusterFaultDomain&#10;```&#10;Gets the cluster fault domains in a cluster.'
+[Get-ClusterFaultDomainXML]: #get-clusterfaultdomainxml '```&#10;PS C:\> Get-ClusterFaultDomainXML&#10;```&#10;Gets the fault domain as an XML string.'
+[Get-ClusterGroup]: #get-clustergroup '```&#10;PS C:\> Get-ClusterGroup&#10;```&#10;Gets information about one or more clustered roles (resource groups) in a failover cluster.'
+[Get-ClusterGroupSet]: #get-clustergroupset '```&#10;PS C:\> Get-ClusterGroupSet&#10;```&#10;Gets the group sets in the cluster.'
+[Get-ClusterGroupSetDependency]: #get-clustergroupsetdependency '```&#10;PS C:\> Get-ClusterGroupSetDependency&#10;```&#10;Gets the cluster group sets based on dependency relationships.'
+[Get-ClusterLog]: #get-clusterlog '```&#10;PS C:\> Get-ClusterLog&#10;```&#10;Creates a log file for all nodes, or a specific a node, in a failover cluster.'
+[Get-ClusterNetwork]: #get-clusternetwork '```&#10;PS C:\> Get-ClusterNetwork&#10;```&#10;Gets information about one or more networks in a failover cluster.'
+[Get-ClusterNetworkInterface]: #get-clusternetworkinterface '```&#10;PS C:\> Get-ClusterNetworkInterface&#10;```&#10;Gets information about one or more network adapters in a failover cluster.'
+[Add-ClusterGroup]: #add-clustergroup '```&#10;PS C:\> Add-ClusterGroup&#10;```&#10;Allow an admin to add a resource group to the failover cluster'
+[Add-ClusterNode]: #add-clusternode '```&#10;PS C:\> Add-ClusterNode&#10;```&#10;Allow an admin to add a node to a failover cluster'
+[Get-ClusterOwnerNode]: #get-clusterownernode '```&#10;PS C:\> Get-ClusterOwnerNode&#10;```&#10;Gets information about which nodes can own a resource in a failover cluster or information about the order of preference among owner nodes for a clustered role.'
+[Get-ClusterParameter]: #get-clusterparameter '```&#10;PS C:\> Get-ClusterParameter&#10;```&#10;Gets detailed information about an object in a failover cluster, such as a cluster resource.'
+[Add-ClusterResource]: #add-clusterresource '```&#10;PS C:\> Add-ClusterResource&#10;```&#10;Allow an admin to add a resource to a failover cluster'
+[Add-ClusterResourceDependency]: #add-clusterresourcedependency '```&#10;PS C:\> Add-ClusterResourceDependency&#10;```&#10;Add a resource dependency to a failover cluster'
+[Get-ClusterResource]: #get-clusterresource '```&#10;PS C:\> Get-ClusterResource&#10;```&#10;Gets information about one or more resources in a failover cluster.'
+[Get-ClusterResourceDependency]: #get-clusterresourcedependency '```&#10;PS C:\> Get-ClusterResourceDependency&#10;```&#10;Gets information about the dependencies that have been configured between clustered resources in a failover cluster.'
+[Get-ClusterResourceDependencyReport]: #get-clusterresourcedependencyreport '```&#10;PS C:\> Get-ClusterResourceDependencyReport&#10;```&#10;Generates a report that lists the dependencies between resources in a failover cluster.'
+[Get-ClusterResourceType]: #get-clusterresourcetype '```&#10;PS C:\> Get-ClusterResourceType&#10;```&#10;Gets information about one or more resource types in a failover cluster.'
+[Get-ClusterSharedVolume]: #get-clustersharedvolume '```&#10;PS C:\> Get-ClusterSharedVolume&#10;```&#10;Gets information about Cluster Shared Volumes in a failover cluster.'
+[Get-ClusterSharedVolumeState]: #get-clustersharedvolumestate '```&#10;PS C:\> Get-ClusterSharedVolumeState&#10;```&#10;Gets the state of Cluster Shared Volumes in a cluster.'
+[Get-ClusterStorageSpacesDirect]: #get-clusterstoragespacesdirect '```&#10;PS C:\> Get-ClusterStorageSpacesDirect&#10;```&#10;Gets the S2D settings from a cluster.'
+[Get-ClusterVMMonitoredItem]: #get-clustervmmonitoreditem '```&#10;PS C:\> Get-ClusterVMMonitoredItem&#10;```&#10;Gets the list of services and events currently being monitored in the virtual machine.'
+[Grant-ClusterAccess]: #grant-clusteraccess '```&#10;PS C:\> Grant-ClusterAccess&#10;```&#10;Grants access to a failover cluster, either full access or read-only access.'
+[Move-ClusterGroup]: #move-clustergroup '```&#10;PS C:\> Move-ClusterGroup&#10;```&#10;Moves a clustered role (a resource group) from one node to another in a failover cluster.'
+[Move-ClusterResource]: #move-clusterresource '```&#10;PS C:\> Move-ClusterResource&#10;```&#10;Moves a clustered resource from one clustered role to another within a failover cluster.'
+[Move-ClusterSharedVolume]: #move-clustersharedvolume '```&#10;PS C:\> Move-ClusterSharedVolume&#10;```&#10;Moves a Cluster Shared Volume (CSV) to ownership by a different node in a failover cluster.'
+[Move-ClusterVirtualMachineRole]: #move-clustervirtualmachinerole '```&#10;PS C:\> Move-ClusterVirtualMachineRole&#10;```&#10;Moves the ownership of a clustered virtual machine to a different node.'
+[Add-ClusterSharedVolume]: #add-clustersharedvolume '```&#10;PS C:\> Add-ClusterSharedVolume&#10;```&#10;Makes a volume available in Cluster Shared Volumes in a failover cluster.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 153'
+[Add-ClusterVirtualMachineRole]: #add-clustervirtualmachinerole '```&#10;PS C:\> Add-ClusterVirtualMachineRole&#10;```&#10;Creates a clustered virtual machine, that is, a virtual machine that can be failed over if necessary to a different server in the failover cluster.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 304'
+[New-ClusterFaultDomain]: #new-clusterfaultdomain '```&#10;PS C:\> New-ClusterFaultDomain&#10;```&#10;Creates a fault domain in the cluster.'
+[New-ClusterGroupSet]: #new-clustergroupset '```&#10;PS C:\> New-ClusterGroupSet&#10;```&#10;Create a names set of groups in the cluster.'
+[New-ClusterNameAccount]: #new-clusternameaccount '```&#10;PS C:\> New-ClusterNameAccount&#10;```&#10;Creates a cluster name account in Active Directory Domain Services.'
+[Add-ClusterVMMonitoredItem]: #add-clustervmmonitoreditem '```&#10;PS C:\> Add-ClusterVMMonitoredItem&#10;```&#10;Configures monitoring for a service or an Event Tracing for Windows (ETW) event so that it is monitored on a virtual machine.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 362'
+[Block-ClusterAccess]: #block-clusteraccess '```&#10;PS C:\> Block-ClusterAccess&#10;```&#10;Block the specified users from accessing a cluster'
+[Enable-ClusterStorageSpacesDirect]: #enable-clusterstoragespacesdirect '```&#10;PS C:\> Enable-ClusterStorageSpacesDirect&#10;```&#10;Enables S2D.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 354'
+[Get-Cluster]: #get-cluster '```&#10;PS C:\> Get-Cluster&#10;```&#10;Display information about a failover cluster'
+[Remove-ClusterCheckpoint]: #remove-clustercheckpoint '```&#10;PS C:\> Remove-ClusterCheckpoint&#10;```&#10;Removes a cryptographic key checkpoint or registry checkpoint for a resource.'
+[Remove-ClusterFaultDomain]: #remove-clusterfaultdomain '```&#10;PS C:\> Remove-ClusterFaultDomain&#10;```&#10;Removes a fault domain.'
+[Remove-ClusterGroup]: #remove-clustergroup '```&#10;PS C:\> Remove-ClusterGroup&#10;```&#10;Removes a clustered role, also called a resource group, from a failover cluster.'
+[Remove-ClusterGroupFromSet]: #remove-clustergroupfromset '```&#10;PS C:\> Remove-ClusterGroupFromSet&#10;```&#10;Removes a group from a set.'
+[Remove-ClusterGroupSet]: #remove-clustergroupset '```&#10;PS C:\> Remove-ClusterGroupSet&#10;```&#10;Removes a group set from the cluster.'
+[Remove-ClusterGroupSetDependency]: #remove-clustergroupsetdependency '```&#10;PS C:\> Remove-ClusterGroupSetDependency&#10;```&#10;Removes a dependency from a group set.'
+[Get-ClusterAccess]: #get-clusteraccess '```&#10;PS C:\> Get-ClusterAccess&#10;```&#10;Display permissions for a failover cluster'
+[Get-ClusterNode]: #get-clusternode '```&#10;PS C:\> Get-ClusterNode&#10;```&#10;Display information about the servers in a failover cluster'
+[Remove-ClusterResource]: #remove-clusterresource '```&#10;PS C:\> Remove-ClusterResource&#10;```&#10;Removes a clustered resource from the failover cluster.'
+[Remove-ClusterResourceDependency]: #remove-clusterresourcedependency '```&#10;PS C:\> Remove-ClusterResourceDependency&#10;```&#10;Removes a dependency between two resources in a clustered role within a failover cluster.'
+[Remove-ClusterResourceType]: #remove-clusterresourcetype '```&#10;PS C:\> Remove-ClusterResourceType&#10;```&#10;Removes a resource type from a failover cluster.'
+[Remove-ClusterSharedVolume]: #remove-clustersharedvolume '```&#10;PS C:\> Remove-ClusterSharedVolume&#10;```&#10;Removes a volume from the Cluster Shared Volumes in a failover cluster, and places it in Available Storage in the cluster.'
+[Remove-ClusterVMMonitoredItem]: #remove-clustervmmonitoreditem '```&#10;PS C:\> Remove-ClusterVMMonitoredItem&#10;```&#10;Removes monitoring of a service or event that is currently being monitored on a virtual machine.'
+[Repair-ClusterStorageSpacesDirect]: #repair-clusterstoragespacesdirect '```&#10;PS C:\> Repair-ClusterStorageSpacesDirect&#10;```&#10;Repairs S2D disks.'
+[Reset-ClusterVMMonitoredState]: #reset-clustervmmonitoredstate '```&#10;PS C:\> Reset-ClusterVMMonitoredState&#10;```&#10;Resets the Application Critical state of a virtual machine, so that the virtual machine is no longer marked as being in a critical state in the cluster.'
+[Resume-ClusterNode]: #resume-clusternode '```&#10;PS C:\> Resume-ClusterNode&#10;```&#10;Resumes a node from the paused state or brings back drained workloads to the node or both.'
+[Resume-ClusterResource]: #resume-clusterresource '```&#10;PS C:\> Resume-ClusterResource&#10;```&#10;Turns off maintenance for a disk resource or Cluster Shared Volume within a failover cluster.'
+[Set-ClusterFaultDomain]: #set-clusterfaultdomain '```&#10;PS C:\> Set-ClusterFaultDomain&#10;```&#10;Update an existing cluster fault domain.'
+[Set-ClusterFaultDomainXML]: #set-clusterfaultdomainxml '```&#10;PS C:\> Set-ClusterFaultDomainXML&#10;```&#10;Sets the cluster fault domain using XML.'
+[Set-ClusterGroupSet]: #set-clustergroupset '```&#10;PS C:\> Set-ClusterGroupSet&#10;```&#10;Updates a cluster group set.'
+[Set-ClusterLog]: #set-clusterlog '```&#10;PS C:\> Set-ClusterLog&#10;```&#10;Sets the size and level of detail for the cluster log.'
+[Set-ClusterOwnerNode]: #set-clusterownernode '```&#10;PS C:\> Set-ClusterOwnerNode&#10;```&#10;Specifies which nodes can own a resource in a failover cluster or specifies the order of preference among owner nodes for a clustered role, or resource group.'
+[Set-ClusterParameter]: #set-clusterparameter '```&#10;PS C:\> Set-ClusterParameter&#10;```&#10;Controls specific properties of an object in a failover cluster, such as a resource, a group, or a network.'
+[Set-ClusterQuorum]: #set-clusterquorum '```&#10;PS C:\> Set-ClusterQuorum&#10;```&#10;Configures quorum options for a failover cluster.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 318'
+[Set-ClusterResourceDependency]: #set-clusterresourcedependency '```&#10;PS C:\> Set-ClusterResourceDependency&#10;```&#10;Specifies the resources that a particular resource depends on within a failover cluster.'
+[Set-ClusterStorageSpacesDirect]: #set-clusterstoragespacesdirect '```&#10;PS C:\> Set-ClusterStorageSpacesDirect&#10;```&#10;Sets S2D cache parameters.'
+[Set-ClusterStorageSpacesDirectDisk]: #set-clusterstoragespacesdirectdisk '```&#10;PS C:\> Set-ClusterStorageSpacesDirectDisk&#10;```&#10;Configures the system to enable S2D to claim or not claim specific physical disks.'
+[Get-ClusterQuorum]: #get-clusterquorum '```&#10;PS C:\> Get-ClusterQuorum&#10;```&#10;Display cluster quorum in a cluster'
+[New-Cluster]: #new-cluster '```&#10;PS C:\> New-Cluster&#10;```&#10;Create a new failover cluster&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 337'
+[Start-ClusterGroup]: #start-clustergroup '```&#10;PS C:\> Start-ClusterGroup&#10;```&#10;Starts one or more clustered roles, also known as resource groups, on a failover cluster.'
+[Start-ClusterNode]: #start-clusternode '```&#10;PS C:\> Start-ClusterNode&#10;```&#10;Starts the Cluster service on a node in a failover cluster.'
+[Start-ClusterResource]: #start-clusterresource '```&#10;PS C:\> Start-ClusterResource&#10;```&#10;Brings a resource online in a failover cluster.'
+[Remove-Cluster]: #remove-cluster '```&#10;PS C:\> Remove-Cluster&#10;```&#10;Remove a failover cluster'
+[Remove-ClusterAccess]: #remove-clusteraccess '```&#10;PS C:\> Remove-ClusterAccess&#10;```&#10;Remove user access from the cluster'
+[Stop-ClusterGroup]: #stop-clustergroup '```&#10;PS C:\> Stop-ClusterGroup&#10;```&#10;Stops one or more clustered roles on a failover cluster.'
+[Remove-ClusterNode]: #remove-clusternode '```&#10;PS C:\> Remove-ClusterNode&#10;```&#10;Remove a node from a failover cluster'
+[Start-Cluster]: #start-cluster '```&#10;PS C:\> Start-Cluster&#10;```&#10;Start the Cluster service on all nodes'
+[Stop-ClusterResource]: #stop-clusterresource '```&#10;PS C:\> Stop-ClusterResource&#10;```&#10;Takes a resource offline in a failover cluster.'
+[Stop-Cluster]: #stop-cluster '```&#10;PS C:\> Stop-Cluster&#10;```&#10;Stop the Cluster service on all nodes'
+[Stop-ClusterNode]: #stop-clusternode '```&#10;PS C:\> Stop-ClusterNode&#10;```&#10;Stop the Cluster service on a node'
+[Suspend-ClusterResource]: #suspend-clusterresource '```&#10;PS C:\> Suspend-ClusterResource&#10;```&#10;Turns on maintenance for a disk resource or CSV so that you can run a disk maintenance tool without triggering failover.'
+[Suspend-ClusterNode]: #suspend-clusternode '```&#10;PS C:\> Suspend-ClusterNode&#10;```&#10;Pause the activity of a failover cluster node&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 374'
+[Test-Cluster]: #test-cluster '```&#10;PS C:\> Test-Cluster&#10;```&#10;Complete validation tests for a cluster'
+[Test-ClusterResourceFailure]: #test-clusterresourcefailure '```&#10;PS C:\> Test-ClusterResourceFailure&#10;```&#10;Simulates a failure of a cluster resource.'
+[Update-ClusterFunctionalLevel]: #update-clusterfunctionallevel '```&#10;PS C:\> Update-ClusterFunctionalLevel&#10;```&#10;Updates the functional level of a mixed-version cluster.'
+[Update-ClusterIPResource]: #update-clusteripresource '```&#10;PS C:\> Update-ClusterIPResource&#10;```&#10;Renews or releases the DHCP lease for an IP address resource in a failover cluster.'
+[Update-ClusterNetworkNameResource]: #update-clusternetworknameresource '```&#10;PS C:\> Update-ClusterNetworkNameResource&#10;```&#10;Registers existing Network Name resources with a DNS server in a way that does not interrupt cluster availability.'
+[Update-ClusterVirtualMachineConfiguration]: #update-clustervirtualmachineconfiguration '```&#10;PS C:\> Update-ClusterVirtualMachineConfiguration&#10;```&#10;Refreshes the configuration of a clustered virtual machine within a failover cluster.'
+
+[**`Cluster`**](#failover-clusters)
+<code>&nbsp;[g][Get-Cluster][?][msdocs:Get-Cluster]&nbsp;[n][New-Cluster][?][msdocs:New-Cluster]&nbsp;[r][Remove-Cluster][?][msdocs:Remove-Cluster]&nbsp;[sa][Start-Cluster][?][msdocs:Start-Cluster]&nbsp;[sp][Stop-Cluster][?][msdocs:Stop-Cluster]&nbsp;[t][Test-Cluster][?][msdocs:Test-Cluster]</code>
+<code>Access&nbsp;&nbsp;[gr][Grant-ClusterAccess][?][msdocs:Grant-ClusterAccess]&nbsp;[bl][Block-ClusterAccess][?][msdocs:Block-ClusterAccess]&nbsp;[g][Get-ClusterAccess][?][msdocs:Get-ClusterAccess]&nbsp;[r][Remove-ClusterAccess][?][msdocs:Remove-ClusterAccess]</code>
+<code>Disk&nbsp;[a][Add-ClusterDisk]</code>
+<code>FaultDomain&nbsp;[n][New-ClusterFaultDomain][^][msdocs:New-ClusterFaultDomain]&nbsp;[s][Set-ClusterFaultDomain][^][msdocs:Set-ClusterFaultDomain]</code>
+<code>FileServerRole&nbsp;[a][Add-ClusterFileServerRole]</code>
+<code>GenericApplicationRole&nbsp;[a][Add-ClusterGenericApplicationRole]</code>
+<code>Group&nbsp;[a][Add-ClusterGroup]</code>
+<code>Node&nbsp;[a][Add-ClusterNode]&nbsp;[g][Get-ClusterNode]&nbsp;[r][Remove-ClusterNode]&nbsp;[sp][Stop-ClusterNode]&nbsp;[ss][Suspend-ClusterNode]</code>
+<code>Quorum&nbsp;[g][Get-ClusterQuorum]&nbsp;[s][Set-ClusterQuorum]</code>
+<code>Resource&nbsp;[a][Add-ClusterResource]</code>
+<code>ResourceDependency&nbsp;[a][Add-ClusterResourceDependency]</code>
+<code>ScaleOutFileServer&nbsp;[a][Add-ClusterScaleOutFileServer]</code>
+<code>ServerRole&nbsp;[a][Add-ClusterServerRole]</code>
+<code>SharedVolume&nbsp;a</code>
+<code>StorageSpacesDirect&nbsp;[e][Enable-ClusterStorageSpacesDirect]</code>
+<code>VirtualMachineRole&nbsp;[m][Move-ClusterVirtualMachineRole][?][msdocs:Move-ClusterVirtualMachineRole]&nbsp;[a][Add-ClusterVirtualMachineRole][?][msdocs:Add-ClusterVirtualMachineRole]</code>
+<code>VMMonitoredItem&nbsp;[g][Get-ClusterVMMonitoredItem][?][msdocs:Get-ClusterVMMonitoredItem]&nbsp;[a][Add-ClusterVMMonitoredItem][?][msdocs:Add-ClusterVMMonitoredItem]&nbsp;[r][Remove-ClusterVMMonitoredItem][?][msdocs:Remove-ClusterVMMonitoredItem]</code>
+
 #### storage
 [msdocs:Get-DedupProperties]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-DedupProperties "Get-DedupProperties documentation"
 [msdocs:Clear-Disk]: https://docs.microsoft.com/en-us/powershell/module/storage/Clear-Disk "Clear-Disk documentation"
@@ -547,121 +1289,6 @@ Tasks
 [`Optimize`][Optimize-Volume]<sup>[?][msdocs:Optimize-Volume]</sup>
 [`Repair`][Repair-Volume]<sup>[?][msdocs:Repair-Volume]</sup>
 [`Set`][Set-Volume]<sup>[?][msdocs:Set-Volume]</sup>
-
-### File cmdlets
-[Add-Content]: #add-content '```&#10;PS C:\> Add-Content&#10;PS C:\> ac&#10;```&#10;Append content, such as words or data, to a file'
-[Get-Content]: #get-content '```&#10;PS C:\> Get-Content&#10;PS C:\> gc&#10;```&#10;Get the content of a file'
-[Copy-Item]: #copy-item '```&#10;PS C:\> Copy-Item&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 180'
-[Set-Item]: #set-item '```&#10;PS C:\> Set-Item&#10;```&#10;&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 56'
-[Compress-Archive]: #compress-archive '```&#10;PS C:\> Compress-Archive&#10;```&#10;'
-[Copy-Item]: #copy-item '```&#10;PS C:\> Copy-Item&#10;```&#10;'
-[Expand-Archive]: #expand-archive '```&#10;PS C:\> Expand-Archive&#10;```&#10;Decompress archives'
-[Export-Csv]: #export-csv '```&#10;PS C:\> Export-Csv&#10;```&#10;Export PowerShell objects to CSV'
-[Get-Item]: #get-item '```&#10;PS C:\> Get-Item&#10;```&#10;'
-[Import-Csv]: #import-csv '```&#10;PS C:\> Import-Csv&#10;PS C:\> ipcsv&#10;```&#10;'
-[New-Item]: #new-item '```&#10;PS C:\> New-Item&#10;PS C:\> ni&#10;```&#10;Create a new item and set its value. The type of item created depends on the context.'
-[Out-Null]: #out-null '```&#10;PS C:\> Out-Null&#10;```&#10;Delete output instead of sending it down the pipeline'
-[Remove-Item]: #remove-item '```&#10;PS C:\> Remove-Item&#10;PS C:\> rm ri rmdir rd del&#10;```&#10;'
-[Set-FileStorageTier]: #set-filestoragetier '```&#10;Set-FileStorageTier&#10;```&#10;Assign a file to a storage tier&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 133'
-
-<code>Archive&nbsp;[cm][Compress-Archive]&nbsp;[en][Expand-Archive]</code> 
-<code>Content&nbsp;[a][Add-Content]&nbsp;[g][Get-Content]</code> 
-<code>Csv&nbsp;[ep][Export-Csv]&nbsp;[ip][Import-Csv]</code> 
-<code>FileStorageTier&nbsp;[s][Set-FileStorageTier]</code>
-<code>Item&nbsp;[cp][Copy-Item]&nbsp;[g][Get-Item]&nbsp;[n][New-Item]&nbsp;[r][Remove-Item] </code>
-<code>Null&nbsp;[o][Out-Null]</code> 
-
-### File share cmdlets
-[msdocs:Block-SmbShareAccess]: https://docs.microsoft.com/en-us/powershell/module/smbshare/Block-SmbShareAccess "Block-SmbShareAccess"
-[msdocs:Close-SmbOpenFile]: https://docs.microsoft.com/en-us/powershell/module/smbshare/Close-SmbOpenFile "Close-SmbOpenFile"
-[msdocs:Close-SmbSession]: https://docs.microsoft.com/en-us/powershell/module/smbshare/Close-SmbSession "Close-SmbSession"
-[msdocs:Get-SmbClientConfiguration]: https://docs.microsoft.com/en-us/powershell/module/smbshare/Get-SmbClientConfiguration "Get-SmbClientConfiguration"
-[msdocs:Get-SmbOpenFile]: https://docs.microsoft.com/en-us/powershell/module/smbshare/Get-SmbOpenFile "Get-SmbOpenFile"
-[msdocs:Get-SmbServerConfiguration]: https://docs.microsoft.com/en-us/powershell/module/smbshare/Get-SmbServerConfiguration "Get-SmbServerConfiguration"
-[msdocs:Get-SmbSession]: https://docs.microsoft.com/en-us/powershell/module/smbshare/Get-SmbSession "Get-SmbSession"
-[msdocs:Get-SmbShareAccess]: https://docs.microsoft.com/en-us/powershell/module/smbshare/Get-SmbShareAccess "Get-SmbShareAccess"
-[msdocs:Grant-SmbShareAccess]: https://docs.microsoft.com/en-us/powershell/module/smbshare/Grant-SmbShareAccess "Grant-SmbShareAccess"
-[msdocs:New-SmbShare]: https://docs.microsoft.com/en-us/powershell/module/smbshare/New-SmbShare "New-SmbShare"
-[msdocs:Remove-SmbShare]: https://docs.microsoft.com/en-us/powershell/module/smbshare/Remove-SmbShare "Remove-SmbShare"
-[msdocs:Revoke-SmbShareAccess]: https://docs.microsoft.com/en-us/powershell/module/smbshare/Revoke-SmbShareAccess "Revoke-SmbShareAccess"
-[msdocs:Set-SmbPathAcl]: https://docs.microsoft.com/en-us/powershell/module/smbshare/Set-SmbPathAcl "Set-SmbPathAcl"
-[msdocs:Set-SmbServerConfiguration]: https://docs.microsoft.com/en-us/powershell/module/smbshare/Set-SmbServerConfiguration "Set-SmbServerConfiguration"
-[msdocs:Unblock-SmbShareAccess]: https://docs.microsoft.com/en-us/powershell/module/smbshare/Unblock-SmbShareAccess "Unblock-SmbShareAccess"
-[msdocs:Disable-SmbDelegation]: https://docs.microsoft.com/en-us/powershell/module/smbshare/Disable-SmbDelegation "Disable-SmbDelegation"
-[msdocs:Enable-SmbDelegation]: https://docs.microsoft.com/en-us/powershell/module/smbshare/Enable-SmbDelegation "Enable-SmbDelegation"
-[msdocs:Get-SmbBandwidthLimit]: https://docs.microsoft.com/en-us/powershell/module/smbshare/Get-SmbBandwidthLimit "Get-SmbBandwidthLimit"
-[msdocs:Get-SmbClientNetworkInterface]: https://docs.microsoft.com/en-us/powershell/module/smbshare/Get-SmbClientNetworkInterface "Get-SmbClientNetworkInterface"
-[msdocs:Get-SmbConnection]: https://docs.microsoft.com/en-us/powershell/module/smbshare/Get-SmbConnection "Get-SmbConnection"
-[msdocs:Get-SmbDelegation]: https://docs.microsoft.com/en-us/powershell/module/smbshare/Get-SmbDelegation "Get-SmbDelegation"
-[msdocs:Get-SmbMapping]: https://docs.microsoft.com/en-us/powershell/module/smbshare/Get-SmbMapping "Get-SmbMapping"
-[msdocs:Get-SmbMultichannelConnection]: https://docs.microsoft.com/en-us/powershell/module/smbshare/Get-SmbMultichannelConnection "Get-SmbMultichannelConnection"
-[msdocs:Get-SmbMultichannelConstraint]: https://docs.microsoft.com/en-us/powershell/module/smbshare/Get-SmbMultichannelConstraint "Get-SmbMultichannelConstraint"
-[msdocs:Get-SmbServerNetworkInterface]: https://docs.microsoft.com/en-us/powershell/module/smbshare/Get-SmbServerNetworkInterface "Get-SmbServerNetworkInterface"
-[msdocs:Get-SmbShare]: https://docs.microsoft.com/en-us/powershell/module/smbshare/Get-SmbShare "Get-SmbShare"
-[msdocs:New-SmbMapping]: https://docs.microsoft.com/en-us/powershell/module/smbshare/New-SmbMapping "New-SmbMapping"
-[msdocs:New-SmbMultichannelConstraint]: https://docs.microsoft.com/en-us/powershell/module/smbshare/New-SmbMultichannelConstraint "New-SmbMultichannelConstraint"
-[msdocs:Remove-SmbBandwidthLimit]: https://docs.microsoft.com/en-us/powershell/module/smbshare/Remove-SmbBandwidthLimit "Remove-SmbBandwidthLimit"
-[msdocs:Remove-SmbMapping]: https://docs.microsoft.com/en-us/powershell/module/smbshare/Remove-SmbMapping "Remove-SmbMapping"
-[msdocs:Remove-SmbMultichannelConstraint]: https://docs.microsoft.com/en-us/powershell/module/smbshare/Remove-SmbMultichannelConstraint "Remove-SmbMultichannelConstraint"
-[msdocs:Set-SmbBandwidthLimit]: https://docs.microsoft.com/en-us/powershell/module/smbshare/Set-SmbBandwidthLimit "Set-SmbBandwidthLimit"
-[msdocs:Set-SmbClientConfiguration]: https://docs.microsoft.com/en-us/powershell/module/smbshare/Set-SmbClientConfiguration "Set-SmbClientConfiguration"
-[msdocs:Set-SmbShare]: https://docs.microsoft.com/en-us/powershell/module/smbshare/Set-SmbShare "Set-SmbShare"
-[msdocs:Update-SmbMultichannelConnection]: https://docs.microsoft.com/en-us/powershell/module/smbshare/Update-SmbMultichannelConnection "Update-SmbMultichannelConnection"
-
-
-[Get-SmbBandwidthLimit]: #get-smbbandwidthlimit '```&#10;Get-SmbBandwidthLimit&#10;```&#10;Gets the list of SMB bandwidth caps for each traffic category.'
-[Remove-SmbBandwidthLimit]: #remove-smbbandwidthlimit '```&#10;Remove-SmbBandwidthLimit&#10;```&#10;Removes SMB bandwidth caps.'
-[Set-SmbBandwidthLimit]: #set-smbbandwidthlimit '```&#10;Set-SmbBandwidthLimit&#10;```&#10;Adds an SMB bandwidth cap.'
-[Get-SmbClientConfiguration]: #get-smbclientconfiguration '```&#10;Get-SmbClientConfiguration&#10;```&#10;Retrieves the SMB client configuration.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 111'
-[Set-SmbClientConfiguration]: #set-smbclientconfiguration '```&#10;Set-SmbClientConfiguration&#10;```&#10;Sets the SMB client configuration.'
-[Get-SmbClientNetworkInterface]: #get-smbclientnetworkinterface '```&#10;Get-SmbClientNetworkInterface&#10;```&#10;Retrieves the network interfaces used by the SMB client.'
-[Get-SmbConnection]: #get-smbconnection '```&#10;Get-SmbConnection&#10;```&#10;Retrieves the connections established from the SMB client to the SMB servers.'
-[Disable-SmbDelegation]: #disable-smbdelegation '```&#10;Disable-SmbDelegation&#10;```&#10;Disables a constrained delegation authorization for an SMB client and server.'
-[Enable-SmbDelegation]: #enable-smbdelegation '```&#10;Enable-SmbDelegation&#10;```&#10;Enables a constrained delegation authorization for an SMB client and server.'
-[Get-SmbDelegation]: #get-smbdelegation '```&#10;Get-SmbDelegation&#10;```&#10;Gets the constrained delegation authorizations for an SMB client.'
-[Get-SmbMapping]: #get-smbmapping '```&#10;Get-SmbMapping&#10;```&#10;Retrieves the SMB client directory mappings created for a server.'
-[New-SmbMapping]: #new-smbmapping '```&#10;New-SmbMapping&#10;```&#10;Creates an SMB mapping.'
-[Remove-SmbMapping]: #remove-smbmapping '```&#10;Remove-SmbMapping&#10;```&#10;Removes the SMB mapping to an SMB share.'
-[Get-SmbMultichannelConnection]: #get-smbmultichannelconnection '```&#10;Get-SmbMultichannelConnection&#10;```&#10;Retrieves the SMB connections made between the SMB client network interfaces and the SMB server network interfaces.'
-[Update-SmbMultichannelConnection]: #update-smbmultichannelconnection '```&#10;Update-SmbMultichannelConnection&#10;```&#10;Forces the SMB client to update the multi-channel-related information.'
-[Get-SmbMultichannelConstraint]: #get-smbmultichannelconstraint '```&#10;Get-SmbMultichannelConstraint&#10;```&#10;Retrieves the constraints that define how the SMB client uses network interfaces to connect to the servers.'
-[New-SmbMultichannelConstraint]: #new-smbmultichannelconstraint '```&#10;New-SmbMultichannelConstraint&#10;```&#10;Creates an SMB multi-channel constraint for the specified server.'
-[Remove-SmbMultichannelConstraint]: #remove-smbmultichannelconstraint '```&#10;Remove-SmbMultichannelConstraint&#10;```&#10;Removes SMB multi-channel constraints.'
-[Close-SmbOpenFile]: #close-smbopenfile '```&#10;Close-SmbOpenFile&#10;```&#10;Close a file that is open by one of the clients of the SMB server&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 108'
-[Get-SmbOpenFile]: #get-smbopenfile '```&#10;Get-SmbOpenFile&#10;```&#10;Retrieve basic information about the files that are open on behalf of the clients of the Server Message Block (SMB) server&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 108'
-[Set-SmbPathAcl]: #set-smbpathacl '```&#10;Set-SmbPathAcl&#10;```&#10;Sets the ACL for the file system folder to match the ACL used by an SMB share.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 340'
-[Get-SmbServerConfiguration]: #get-smbserverconfiguration '```&#10;Get-SmbServerConfiguration&#10;```&#10;Retrieves the SMB server configuration.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 109'
-[Set-SmbServerConfiguration]: #set-smbserverconfiguration '```&#10;Set-SmbServerConfiguration&#10;```&#10;Sets the SMB Service configuration.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 109'
-[Get-SmbServerNetworkInterface]: #get-smbservernetworkinterface '```&#10;Get-SmbServerNetworkInterface&#10;```&#10;Retrieves the network interfaces used by the SMB server.'
-[Close-SmbSession]: #close-smbsession '```&#10;Close-SmbSession&#10;```&#10;Ends forcibly the SMB session.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 107'
-[Get-SmbSession]: #get-smbsession '```&#10;Get-SmbSession&#10;```&#10;Retrieves information about the SMB sessions that are currently established between the SMB server and the associated clients.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 107'
-[New-SmbShare]: #new-smbshare '```&#10;New-SmbShare&#10;```&#10;Creates an SMB share.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 106'
-[Remove-SmbShare]: #remove-smbshare '```&#10;Remove-SmbShare&#10;```&#10;Deletes the specified SMB shares.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 108'
-[Get-SmbShare]: #get-smbshare '```&#10;Get-SmbShare&#10;```&#10;Retrieves the SMB shares on the computer.'
-[Set-SmbShare]: #set-smbshare '```&#10;Set-SmbShare&#10;```&#10;Modifies the properties of the SMB share.'
-[Block-SmbShareAccess]: #block-smbshareaccess '```&#10;Block-SmbShareAccess&#10;```&#10;Adds a deny ACE for a trustee to the security descriptor of the SMB share.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 109'
-[Get-SmbShareAccess]: #get-smbshareaccess '```&#10;Get-SmbShareAccess&#10;```&#10;Retrieves the ACL of the SMB share.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 108'
-[Grant-SmbShareAccess]: #grant-smbshareaccess '```&#10;Grant-SmbShareAccess&#10;```&#10;Adds an allow ACE for a trustee to the security descriptor of the SMB share.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 109'
-[Revoke-SmbShareAccess]: #revoke-smbshareaccess '```&#10;Revoke-SmbShareAccess&#10;```&#10;Removes all of the allow ACEs for a trustee from the security descriptor of the SMB share.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 109'
-[Unblock-SmbShareAccess]: #unblock-smbshareaccess '```&#10;Unblock-SmbShareAccess&#10;```&#10;Removes all of the deny ACEs for the trustee from the security descriptor of the SMB share.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 109'
-
-[**Smb**](#smb)
-<code>BandwidthLimit&nbsp;[g][Get-SmbBandwidthLimit]&nbsp;[r][Remove-SmbBandwidthLimit]&nbsp;[s][Set-SmbBandwidthLimit]</code>
-<code>ClientConfiguration&nbsp;[g][Get-SmbClientConfiguration]&nbsp;[s][Set-SmbClientConfiguration]</code>
-<code>ClientNetworkInterface&nbsp;[g][Get-SmbClientNetworkInterface]</code>
-<code>Connection&nbsp;[g][Get-SmbConnection]</code>
-<code>Delegation&nbsp;[d][Disable-SmbDelegation]&nbsp;[e][Enable-SmbDelegation]&nbsp;[g][Get-SmbDelegation]</code>
-<code>Mapping&nbsp;[g][Get-SmbMapping]&nbsp;[n][New-SmbMapping]&nbsp;[r][Remove-SmbMapping]</code>
-<code>MultiChannel&nbsp;[g][Get-SmbMultichannelConnection]&nbsp;[ud][Update-SmbMultichannelConnection]&nbsp;[g][Get-SmbMultichannelConstraint]&nbsp;[n][New-SmbMultichannelConstraint]&nbsp;[r][Remove-SmbMultichannelConstraint]</code>
-<code>OpenFile&nbsp;[g][Get-SmbOpenFile]&nbsp;[cs][Close-SmbOpenFile]</code>
-<code>PathAcl&nbsp;[s][Set-SmbPathAcl]</code>
-<code>ServerConfiguration&nbsp;[g][Get-SmbServerConfiguration]&nbsp;[s][Set-SmbServerConfiguration]</code>
-<code>ServerNetworkInterface&nbsp;[g][Get-SmbServerNetworkInterface]</code>
-<code>Session&nbsp;[ch][Close-SmbSession]&nbsp;[g][Get-SmbSession]</code>
-<code>Share&nbsp;[n][New-SmbShare]&nbsp;[r][Remove-SmbShare]</code>
-<code>ShareAccess&nbsp;[bl][Block-SmbShareAccess]&nbsp;[g][Get-SmbShareAccess]&nbsp;[gr][Grant-SmbShareAccess]&nbsp;[rk][Revoke-SmbShareAccess]&nbsp;[ul][Unblock-SmbShareAccess]</code>
-
-### Network
 #### dhcpserver
 [Add-DhcpServerInDC]: #add-dhcpserverindc '```&#10;[PS] Add-DhcpServerInDC&#10;```&#10;Adds the computer that runs the DHCP server service to the list of authorized DHCP server services in Active Directory.'
 [Add-DhcpServerv4Scope]: #add-dhcpserverv4scope '```&#10;[PS] Add-DhcpServerv4Scope&#10;```&#10;Adds an IPv4 scope on the DHCP server service.'
@@ -692,694 +1319,6 @@ Tasks
 [`Set`][Set-DnsClientServerAddress]<sup>[?][msdocs:Set-DnsClientServerAddress]</sup>
 - DnsName
 [`Resolve`][Resolve-DnsName]<sup>[?][msdocs:Resolve-DnsName]</sup>
-
-#### netadapter
-[Disable-NetAdapter]: #disable-netadapter '```&#10;[PS] Disable-NetAdapter&#10;```&#10;Disables a network adapter.'
-[Enable-NetAdapter]: #enable-netadapter '```&#10;[PS] Enable-NetAdapter&#10;```&#10;Enables a network adapter.'
-[Get-NetAdapter]: #get-netadapter '```&#10;[PS] Get-NetAdapter&#10;```&#10;Gets the basic network adapter properties.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 19'
-[Enable-NetAdapterRdma]: #enable-netadapterrdma '```&#10;[PS] Enable-NetAdapterRdma&#10;```&#10;Enables RDMA on a network adapter.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 254'
-[Get-NetAdapterRdma]: #get-netadapterrdma '```&#10;[PS] Get-NetAdapterRdma&#10;```&#10;Gets the RDMA properties for a network adapter.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 254'
-[Enable-NetAdapterVmq]: #enable-netadaptervmq '```&#10;[PS] Enable-NetAdapterVmq&#10;```&#10;Enables VMQ on a network adapter.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 252'
-[Get-NetAdapterVmq]: #get-netadaptervmq '```&#10;[PS] Get-NetAdapterVmq&#10;```&#10;Gets the VMQ properties of a network adapter.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 252'
-[Set-NetAdapterVmq]: #set-netadaptervmq '```&#10;[PS] Set-NetAdapterVmq&#10;```&#10;Sets the VMQ properties of a network adapter.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 253'
-[Get-NetAdapterVmqQueue]: #get-netadaptervmqqueue '```&#10;[PS] Get-NetAdapterVmqQueue&#10;```&#10;Gets the VMQs allocated on a network adapter.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 252'
-
-[msdocs:Disable-NetAdapter]: https://docs.microsoft.com/en-us/powershell/module/netadapter/Disable-NetAdapter "Disable-NetAdapter documentation"
-[msdocs:Enable-NetAdapter]: https://docs.microsoft.com/en-us/powershell/module/netadapter/Enable-NetAdapter "Enable-NetAdapter documentation"
-[msdocs:Enable-NetAdapterRdma]: https://docs.microsoft.com/en-us/powershell/module/netadapter/Enable-NetAdapterRdma "Enable-NetAdapterRdma documentation"
-[msdocs:Get-NetAdapterRdma]: https://docs.microsoft.com/en-us/powershell/module/netadapter/Get-NetAdapterRdma "Get-NetAdapterRdma documentation"
-[msdocs:Get-NetAdapter]: https://docs.microsoft.com/en-us/powershell/module/netadapter/Get-NetAdapter "Get-NetAdapter documentation"
-[msdocs:Enable-NetAdapterVmq]: https://docs.microsoft.com/en-us/powershell/module/netadapter/Enable-NetAdapterVmq "Enable-NetAdapterVmq documentation"
-[msdocs:Get-NetAdapterVmq]: https://docs.microsoft.com/en-us/powershell/module/netadapter/Get-NetAdapterVmq "Get-NetAdapterVmq documentation"
-[msdocs:Set-NetAdapterVmq]: https://docs.microsoft.com/en-us/powershell/module/netadapter/Set-NetAdapterVmq "Set-NetAdapterVmq documentation"
-[msdocs:Get-NetAdapterVmqQueue]: https://docs.microsoft.com/en-us/powershell/module/netadapter/Get-NetAdapterVmqQueue "Get-NetAdapterVmqQueue documentation"
-
-- NetAdapter 
-[`Disable`][Disable-NetAdapter]<sup>[?][msdocs:Disable-NetAdapter]</sup> 
-[`Enable`][Enable-NetAdapter]<sup>[?][msdocs:Enable-NetAdapter]</sup>
-[`Get`][Get-NetAdapter]<sup>[?][msdocs:Get-NetAdapter]</sup>
-- NetAdapterRdma 
-[`Enable`][Enable-NetAdapterRdma]<sup>[?][msdocs:Enable-NetAdapterRdma]</sup> 
-[`Get`][Get-NetAdapterRdma]<sup>[?][msdocs:Get-NetAdapterRdma]</sup>
-- NetAdapterVmq
-[`Enable`][Enable-NetAdapterVmq]<sup>[?][msdocs:Enable-NetAdapterVmq]</sup>
-[`Get`][Get-NetAdapterVmq]<sup>[?][msdocs:Get-NetAdapterVmq]</sup>
-[`Set`][Set-NetAdapterVmq]<sup>[?][msdocs:Set-NetAdapterVmq]</sup>
-- NetAdapterVmqQueue
-[`Get`][Get-NetAdapterVmqQueue]<sup>[?][msdocs:Get-NetAdapterVmqQueue]</sup>
-
-#### netconnection
-[msdocs:Get-NetConnectionProfile]: https://docs.microsoft.com/en-us/powershell/module/netconnection/Get-NetConnectionProfile "Get-NetConnectionProfile documentation"
-[msdocs:Set-NetConnectionProfile]: https://docs.microsoft.com/en-us/powershell/module/netconnection/Set-NetConnectionProfile "Set-NetConnectionProfile documentation"
-
-[Get-NetConnectionProfile]: #get-netconnectionprofile '```&#10;[PS] Get-NetConnectionProfile&#10;```&#10;Gets a connection profile.'
-[Set-NetConnectionProfile]: #set-netconnectionprofile '```&#10;[PS] Set-NetConnectionProfile&#10;```&#10;Changes the network category of a connection profile.'
-
-- NetConnectionProfile [`Get`][Get-NetConnectionProfile]<sup>[?][msdocs:Get-NetConnectionProfile]</sup> [`Set`][Set-NetConnectionProfile]<sup>[?][msdocs:Set-NetConnectionProfile]</sup>
-
-#### netconnection
-[Get-NetConnectionProfile]: #get-netconnectionprofile '```&#10;Get-NetConnectionProfile&#10;```&#10;Gets a connection profile.'
-[Set-NetConnectionProfile]: #set-netconnectionprofile '```&#10;Set-NetConnectionProfile&#10;```&#10;Changes the network category of a connection profile.'
-
-[msdocs:Get-NetConnectionProfile]: https://docs.microsoft.com/en-us/powershell/module/netconnection/Get-NetConnectionProfile "Get-NetConnectionProfile"
-[msdocs:Set-NetConnectionProfile]: https://docs.microsoft.com/en-us/powershell/module/netconnection/Set-NetConnectionProfile "Set-NetConnectionProfile"
-
-- NetConnectionProfile [`Get`][Get-NetConnectionProfile]<sup>[?][msdocs:Get-NetConnectionProfile]</sup> [`Set`][Set-NetConnectionProfile]<sup>[?][msdocs:Set-NetConnectionProfile]</sup>
-
-#### netsecurity
-[Copy-NetFirewallRule]: #copy-netfirewallrule '```&#10;[PS] Copy-NetFirewallRule&#10;```&#10;Copies an entire firewall rule, and associated filters, to the same or to a different policy store.'
-[Disable-NetFirewallRule]: #disable-netfirewallrule '```&#10;[PS] Disable-NetFirewallRule&#10;```&#10;Disables a firewall rule.'
-[Enable-NetFirewallRule]: #enable-netfirewallrule '```&#10;[PS] Enable-NetFirewallRule&#10;```&#10;Enables a previously disabled firewall rule.'
-[Get-NetFirewallRule]: #get-netfirewallrule '```&#10;[PS] Get-NetFirewallRule&#10;```&#10;Retrieves firewall rules from the target computer.'
-[New-NetFirewallRule]: #new-netfirewallrule '```&#10;[PS] New-NetFirewallRule&#10;```&#10;Creates a new inbound or outbound firewall rule and adds the rule to the target computer.'
-[Remove-NetFirewallRule]: #remove-netfirewallrule '```&#10;[PS] Remove-NetFirewallRule&#10;```&#10;Deletes one or more firewall rules that match the specified criteria.'
-[Rename-NetFirewallRule]: #rename-netfirewallrule '```&#10;[PS] Rename-NetFirewallRule&#10;```&#10;Renames a single IPsec rule.'
-[Set-NetFirewallRule]: #set-netfirewallrule '```&#10;[PS] Set-NetFirewallRule&#10;```&#10;Modifies existing firewall rules.'
-[Show-NetFirewallRule]: #show-netfirewallrule '```&#10;[PS] Show-NetFirewallRule&#10;```&#10;Displays all of the existing IPsec rules and associated objects in a fully expanded view.'
-
-[msdocs:Copy-NetFirewallRule]: https://docs.microsoft.com/en-us/powershell/module/NetSecurity/Copy-NetFirewallRule "Copy-NetFirewallRule documentation"
-[msdocs:Disable-NetFirewallRule]: https://docs.microsoft.com/en-us/powershell/module/NetSecurity/Disable-NetFirewallRule "Disable-NetFirewallRule documentation"
-[msdocs:Enable-NetFirewallRule]: https://docs.microsoft.com/en-us/powershell/module/NetSecurity/Enable-NetFirewallRule "Enable-NetFirewallRule documentation"
-[msdocs:Get-NetFirewallRule]: https://docs.microsoft.com/en-us/powershell/module/NetSecurity/Get-NetFirewallRule "Get-NetFirewallRule documentation"
-[msdocs:New-NetFirewallRule]: https://docs.microsoft.com/en-us/powershell/module/NetSecurity/New-NetFirewallRule "New-NetFirewallRule documentation"
-[msdocs:Remove-NetFirewallRule]: https://docs.microsoft.com/en-us/powershell/module/NetSecurity/Remove-NetFirewallRule "Remove-NetFirewallRule documentation"
-[msdocs:Rename-NetFirewallRule]: https://docs.microsoft.com/en-us/powershell/module/NetSecurity/Rename-NetFirewallRule "Rename-NetFirewallRule documentation"
-[msdocs:Set-NetFirewallRule]: https://docs.microsoft.com/en-us/powershell/module/NetSecurity/Set-NetFirewallRule "Set-NetFirewallRule documentation"
-[msdocs:Show-NetFirewallRule]: https://docs.microsoft.com/en-us/powershell/module/NetSecurity/Show-NetFirewallRule "Show-NetFirewallRule documentation"
-
-- NetFirewallRule 
-[`Copy`][Copy-NetFirewallRule]<sup>[?][msdocs:Copy-NetFirewallRule]</sup>
-[`Disable`][Disable-NetFirewallRule]<sup>[?][msdocs:Disable-NetFirewallRule]</sup>
-[`Enable`][Enable-NetFirewallRule]<sup>[?][msdocs:Enable-NetFirewallRule]</sup>
-[`Get`][Get-NetFirewallRule]<sup>[?][msdocs:Get-NetFirewallRule]</sup>
-[`New`][New-NetFirewallRule]<sup>[?][msdocs:New-NetFirewallRule]</sup>
-[`Remove`][Remove-NetFirewallRule]<sup>[?][msdocs:Remove-NetFirewallRule]</sup>
-[`Rename`][Rename-NetFirewallRule]<sup>[?][msdocs:Rename-NetFirewallRule]</sup>
-[`Set`][Set-NetFirewallRule]<sup>[?][msdocs:Set-NetFirewallRule]</sup>
-[`Show`][Show-NetFirewallRule]<sup>[?][msdocs:Show-NetFirewallRule]</sup>
-
-#### nettcpip
-[msdocs:Get-NetIPAddress]: https://docs.microsoft.com/en-us/powershell/module/nettcpip/Get-NetIPAddress "Get-NetIPAddress"
-[msdocs:New-NetIPAddress]: https://docs.microsoft.com/en-us/powershell/module/nettcpip/New-NetIPAddress "New-NetIPAddress"
-[msdocs:Remove-NetIPAddress]: https://docs.microsoft.com/en-us/powershell/module/nettcpip/Remove-NetIPAddress "Remove-NetIPAddress"
-[msdocs:Set-NetIPAddress]: https://docs.microsoft.com/en-us/powershell/module/nettcpip/Set-NetIPAddress "Set-NetIPAddress"
-[msdocs:Get-NetIPInterface]: https://docs.microsoft.com/en-us/powershell/module/nettcpip/Get-NetIPInterface "Get-NetIPInterface"
-[msdocs:Set-NetIPInterface]: https://docs.microsoft.com/en-us/powershell/module/nettcpip/Set-NetIPInterface "Set-NetIPInterface"
-
-[Get-NetIPAddress]: #get-netipaddress '```&#10;PS C:\> Get-NetIPAddress&#10;```&#10;Gets the IP address configuration.'
-[New-NetIPAddress]: #new-netipaddress '```&#10;PS C:\> New-NetIPAddress&#10;```&#10;Creates and configures an IP address.'
-[Remove-NetIPAddress]: #remove-netipaddress '```&#10;PS C:\> Remove-NetIPAddress&#10;```&#10;Removes an IP address and its configuration.'
-[Set-NetIPAddress]: #set-netipaddress '```&#10;PS C:\> Set-NetIPAddress&#10;```&#10;Modifies the configuration of an IP address.'
-[Get-NetIPInterface]: #get-netipinterface '```&#10;PS C:\> Get-NetIPInterface&#10;```&#10;Gets an IP interface.'
-[Set-NetIPInterface]: #set-netipinterface '```&#10;PS C:\> Set-NetIPInterface&#10;```&#10;Modifies an IP interface.'
-
-- NetIPAddress
-[`Get`][Get-NetIPAddress]<sup>[?][msdocs:Get-NetIPAddress]</sup>
-[`New`][New-NetIPAddress]<sup>[?][msdocs:New-NetIPAddress]</sup>
-[`Remove`][Remove-NetIPAddress]<sup>[?][msdocs:Remove-NetIPAddress]</sup>
-[`Set`][Set-NetIPAddress]<sup>[?][msdocs:Set-NetIPAddress]</sup>
-- NetIPInterface
-[`Get`][Get-NetIPInterface]<sup>[?][msdocs:Get-NetIPInterface]</sup>
-[`Set`][Set-NetIPInterface]<sup>[?][msdocs:Set-NetIPInterface]</sup>
-
-### Process control cmdlets
-[Get-Process]: #get-process '```&#10;PS C:\> Get-Process&#10;PS C:\> gps&#10;```&#10;Display running processes'
-[Start-Process]: #start-process '```&#10;PS C:\> Start-Process&#10;PS C:\> saps&#10;```&#10;Start one or more processes on the local computer.'
-[Stop-Process]: #stop-process '```&#10;PS C:\> Stop-Process&#10;PS C:\> spps&#10;```&#10;Stop one or more running processes'
-[Get-Service]: #get-service '```&#10;PS C:\> Get-Service&#10;PS C:\> gsv&#10;```&#10;Display services'
-[Set-Service]: #set-service '```&#10;PS C:\> Set-Service&#10;```&#10;Starts, stops, and suspends a service, and changes its properties'
-[Start-Service]: #start-service '```&#10;PS C:\> Start-Service&#10;PS C:\> sasv&#10;```&#10;Start one or more stopped services'
-[Stop-Service]: #stop-service '```&#10;PS C:\> Stop-Service&#10;PS C:\> spsv&#10;```&#10;Stop one or more services'
-
-<code>Process&nbsp;[g][Get-Process]&nbsp;[sa][Start-Process]&nbsp;[sp][Stop-Process]</code>
-<code>Service&nbsp;[g][Get-Service]&nbsp;[s][Set-Service]&nbsp;[sa][Start-Service]&nbsp;[sp][Stop-Service]</code> 
-
-### Remote administration
-[Enable-WSManCredSSP]: #enable-wsmancredssp '```&#10;PS C:\> Enable-WSManCredSSP&#10;```&#10;Enable the use of CredSSP for authentication between hosts in different domains&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 176'
-[Disconnect-PSSession]: #disconnect-pssession '```&#10;PS C:\> Disconnect-PSSession&#10;PS C:\> dnsn&#10;```&#10;Terminate a remote PowerShell session begun with `New-PSSession`'
-[Enable-PSRemoting]: #enable-psremoting '```&#10;PS C:\> Enable-PSRemoting&#10;```&#10;Allow remote Powershell management'
-[Enter-PSSession]: #enter-pssession '```&#10;PS C:\> Enter-PSSession&#10;PS C:\> etsn&#10;```&#10;Interact with the specified PowerShell session'
-[Exit-PSSession]: #exit-pssession '```&#10;PS C:\> Exit-PSSession&#10;PS C:\> exsn&#10;```&#10;End an interactive session with a remote computer'
-[New-PSSession]: #new-pssession '```&#10;New-PSSession&#10;nsn&#10;```&#10;Start a new remote PowerShell session with a remote computer&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 21'
-[Get-PSSession]: #get-pssession '```&#10;PS C:\> Get-PSSession&#10;PS C:\> gsn&#10;```&#10;Get the Windows Powershell sessions on local and remote computers'
-
-<code>[Session](#pssession)&nbsp;[cc][Connect-PSSession]&nbsp;[dc][Disconnect-PSSession]&nbsp;[et][Enter-PSSession]&nbsp;[ex][Exit-PSSession]&nbsp;[g][Get-PSSession]&nbsp;[n][New-PSSession]</code> 
-<code>WSManCredSSP&nbsp;[e][Enable-WSManCredSSP]</code>
-
-### Shell environment cmdlets
-
-[Add-Computer]: #add-computer '```&#10;PS C:\> Add-Computer&#10;```&#10;Join a computer to a domain'
-[Add-PSSnapin]: #add-pssnapin '```&#10;PS C:\> Add-PSSnapin&#10;PS C:\> asnp&#10;```&#10;Load a given list of snap-ins (.NET assemblies containing a collection of cmdlets and/or providers for use within PowerShell) either by name or via the pipeline - last supported in PowerShell 5.1'
-[Add-Type]: #add-type '```&#10;PS C:\> Add-Type&#10;```&#10;add a.NET Framework type (a class) to a Windows PowerShell session'
-[Clear-Host]: #clear-host '```&#10;PS C:\> Clear-Host&#10;```&#10;'
-[Export-Alias]: #export-alias '```&#10;PS C:\> Export-Alias&#10;PS C:\> epal&#10;```&#10;Export information about currently defined aliases to a file.'
-[Get-Alias]: #get-alias '```&#10;PS C:\> Get-Alias&#10;PS C:\> gal&#10;```&#10;Display aliases'
-[Get-ChildItem]: #get-childitem '```&#10;PS C:\> Get-ChildItem&#10;PS C:\> dir gci ls&#10;```&#10;Get items in one or more locations'
-[Get-Clipboard]: #get-clipboard '```&#10;PS C:\> Get-Clipboard&#10;PS C:\> gcb&#10;```&#10;Display items in clipboard'
-[Get-Command]: #get-command '```&#10;PS C:\> Get-Command&#10;PS C:\> gcm&#10;```&#10;Display all installed commands, including aliases, applications, filters, functions, and scripts'
-[Get-Help]: #get-help '```&#10;PS C:\> Get-Help&#10;```&#10;Display help file for cmdlets'
-[Get-Location]: #get-location '```&#10;PS C:\> Get-Location&#10;```&#10;'
-[Get-Member]: #get-member '```&#10;PS C:\> Get-Member&#10;PS C:\> gm&#10;```&#10;Display properties and methods of a Powershell object'
-[Get-Module]: #get-module '```&#10;PS C:\> Get-Module&#10;PS C:\> gmo&#10;```&#10;Display currently loaded Powershell modules'
-[Get-PSReadlineOption]: #get-psreadlineoption '```&#10;PS C:\> Get-PSReadlineOption&#10;```&#10;'
-[Import-Module]: #import-module '```&#10;PS C:\> Import-Module&#10;PS C:\> ipmo&#10;```&#10;'
-[Install-Module]: #install-module '```&#10;PS C:\> Install-Module&#10;```&#10;'
-[New-Alias]: #new-alias '```&#10;PS C:\> New-Alias&#10;PS C:\> nal&#10;```&#10;Create a new alias'
-[Out-Host]: #out-host '```&#10;PS C:\> Out-Host&#10;PS C:\> oh&#10;```&#10;'
-[Rename-Computer]: #rename-computer '```&#10;PS C:\> Rename-Computer&#10;```&#10;'
-[Restart-Computer]: #restart-computer '```&#10;PS C:\> Restart-Computer&#10;```&#10;'
-[Set-Alias]: #set-alias '```&#10;PS C:\> Set-Alias&#10;```&#10;'
-[Set-Clipboard]: #set-clipboard '```&#10;PS C:\> Set-Clipboard&#10;PS C:\> scb&#10;```&#10;Set the current Windows clipboard entry'
-[Set-ExecutionPolicy]: #set-executionpolicy '```&#10;PS C:\> Set-ExecutionPolicy&#10;```&#10;Change user preference for the Windows PowerShell execution policy'
-[Set-Location]: #set-location '```&#10;PS C:\> Set-Location&#10;PS C:\> cd&#10;```&#10;Set present working directory'
-[Set-PSReadlineOption]: #set-psreadlineoption '```&#10;PS C:\> Set-PSReadlineOption&#10;```&#10;'
-[Stop-Computer]: #stop-computer '```&#10;PS C:\> Stop-Computer&#10;```&#10;'
-[Update-Help]: #update-help '```&#10;PS C:\> Update-Help&#10;```&#10;Download help files'
-[Write-Host]: #write-host '```&#10;PS C:\> Write-Host&#10;```&#10;Write customized output to a host (equivalent to `echo`).'
-[Write-Output]: #write-output '```&#10;PS C:\> Write-Output&#10;PS C:\> echo write&#10;```&#10;Send the specified objects to the next command in the pipeline. If the command is the last command in the pipeline, the objects are displayed in the console'
-[Get-ComputerInfo]: #get-computerinfo '```&#10;PS C:\> Get-ComputerInfo&#10;PS C:\> gin&#10;```&#10;Retrieve a consolidated object of system and operating system properties&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 274'
-[New-Object]: #new-object '```&#10;New-Object&#10;```&#10;Create an instance of a Microsoft .NET Framework or COM object'
-[Start-Transaction]: #start-transaction '```&#10;Start-Transaction&#10;```&#10;Start a new transaction'
-[Complete-Transaction]: #complete-transaction '```&#10;Complete-Transaction&#10;```&#10;Commit the transaction'
-[Start-Job]: #start-job '```&#10;Start-Job&#10;sajb&#10;```&#10;Start a background job'
-
-[Measure-Object]: #measure-object '```&#10;PS C:\> Measure-Object&#10;PS C:\> measure&#10;```&#10;Calculates the numeric properties of objects, and the characters, words, and lines in string objects, such as files of text.'
-[ForEach-Object]: #foreach-object '```&#10;PS C:\> ForEach-Object&#10;PS C:\> %&#10;```&#10;Perform an operation against each item in a collection of input objects.'
-[New-Object]: #new-object '```&#10;PS C:\> New-Object&#10;```&#10;Create an instance of a Microsoft .NET Framework or COM object'
-[Select-Object]: #select-object '```&#10;PS C:\> Select-Object&#10;PS C:\> select&#10;```&#10;Select object or object properties'
-[Where-Object]: #where-object '```&#10;PS C:\> Where-Object&#10;PS C:\> ?&#10;```&#10;Select objects from a collection based on their property values'
-
-<code>Alias&nbsp;[ep][Export-Alias]&nbsp;[g][Get-Alias]&nbsp;[n][New-Alias]&nbsp;[s][Set-Alias]</code> 
-<code>ChildItem&nbsp;[g][Get-ChildItem]</code> 
-<code>Clipboard&nbsp;[g][Get-Clipboard]&nbsp;[s][Set-Clipboard]</code> 
-<code>Computer&nbsp;[a][Add-Computer]&nbsp;[rn][Rename-Computer]&nbsp;[rt][Restart-Computer]&nbsp;[sp][Stop-Computer]</code> 
-<code>Credential [g][Get-Credential]</code> 
-<code>ExecutionPolicy&nbsp;[s][Set-ExecutionPolicy]</code> 
-<code>Help&nbsp;[g][Get-Help]&nbsp;[ud][Update-Help]</code> 
-<code>History&nbsp;[g][Get-History]</code> 
-<code>Host&nbsp;[oh][Out-Host]&nbsp;[rd][Read-Host]&nbsp;[wr][Write-Host]</code>
-<code>Job&nbsp;[sa][Start-Job]</code>
-<code>List&nbsp;[f][Format-List]</code> 
-<code>Location&nbsp;[g][Get-Location] [s][Set-Location]</code> 
-<code>Module&nbsp;[ip][Import-Module]&nbsp;[is][Install-Module]</code> 
-<code>Object&nbsp;[%][ForEach-Object]&nbsp;[?][Where-Object]&nbsp;[ms][Measure-Object]&nbsp;[n][New-Object]&nbsp;[sc][Select-Object]</code>
-<code>Output&nbsp;[wr][Write-Output]</code> 
-<code>PSRemoting&nbsp;[en]</code>
-<code>Table&nbsp;[f][Format-Table]</code> 
-<code>Transaction&nbsp;[sa][Start-Transaction]&nbsp;[cp][Complete-Transaction]</code>
-<code>Type&nbsp;[a][Add-Type]</code> 
-**PS**
-<code>ReadlineOption&nbsp;[g][Get-PSReadlineOption] [s][Set-PSReadlineOption]</code> 
-
-- Format- [`List`][Format-List]&nbsp;[`Table`][Format-Table]</code>
-- Out- [`ConsoleView`][Out-ConsoleView] [`GridView`][Out-GridView] [`HTMLView`][Out-HTMLView]
-
-### Windows Server
-#### addsadministration
-<!-- Active Directory cmdlets -->
-[Search-ADAccount]:                                  #search-adaccount                             "`Search-ADAccount`"
-[Add-ADPrincipalGroupMembership]:                    #add-adprincipalgroupmembership               "`Add-ADPrincipalGroupMembership` &#10; Add a member to one or more Active Directory groups"
-[New-ADOrganizationalUnit]:                          #new-adorganizationalunit                     "`New-ADOrganizationalUnit`"
-[New-ADUser]:                                        #new-aduser                                   "`New-ADUser` &#10; Create a new Active Directory user"
-[Install-ADDSDomainController]:                      #install-addsdomaincontroller                 '`Install-ADDSDomainController`&#10;Installs a new domain controller in an Active Directory domain'
-[Install-ADDSDomain]:                                #install-addsdomain                           "`Install-ADDSDomain`"
-[Install-ADDSForest]:                                #install-addsforest                           "`Install-ADDSForest`"
-[Get-ADDSForest]:                                    #get-addsforest                               "`Get-ADDSForest`"
-[Get-ADOrganizationalUnit]:                          #get-adorganizationalunit                     "`Get-ADOrganizationalUnit`"
-[Get-ADPrincipalGroupMembership]:                    #get-adprincipalgroupmembership               "`Get-ADPrincipalGroupMembership` &#10; Get the Active Directory groups that have a specified user, computer, group, or service account"
-[Get-ADUser]:                                        #get-aduser                                   "`Get-ADUser` &#10; Get one or more Active Directory Users"
-[Search-ADAccount]:                                  #search-adaccount                             "`Search-ADAccount`"
-[Set-ADAccountPassword]: #set-adaccountpassword '```&#10;PS C:\> Set-ADAccountPassword&#10;```&#10;'
-[Get-ADObject]: #get-adobject '```&#10;PS C:\> Get-ADObject&#10;```&#10;Get one or more Active Directory objects'
-[Set-ADObject]:                                      #set-adobject                                 "`Set-ADObject`"
-[Set-ADOrganizationalUnit]:                          #set-adorganizationalunit                     "`Set-ADOrganizationalUnit`"
-[Uninstall-ADDSDomainController]:                    #uninstall-addsdomaincontroller               "`Uninstall-ADDSDomainController`"
-[Unlock-ADAccount]:                                  #unlock-adaccount                             "`Unlock-ADAccount`"
-[Remove-ADOrganizationalUnit]:                       #remove-adorganizationalunit                  "`Remove-ADOrganizationalUnit`"
-[Install-ADDSDomainController]: #install-addsdomaincontroller '```&#10;PS C:\> Install-ADDSDomainController&#10;```&#10;Installs a new domain controller in an Active Directory domain'
-[Invoke-GPUpdate]: #invoke-gpupdate '```&#10;PS C:\> Invoke-GPUpdate&#10;```&#10;Schedule a remote Group Policy refresh on the specified host'
-[Add-DistributionGroupMember]: #add-distributiongroupmember '```&#10;PS C:\> Add-DistributionGroupMember&#10;```&#10;Add a single recipient to distribution groups and mail-enabled security groups'
-[Get-DistributionGroupMember]: #get-distributiongroupmember '```&#10;PS C:\> Get-DistributionGroupMember&#10;```&#10;View members of distribution groups and mail-enabled security groups'
-[Update-DistributionGroupMember]: #update-distributiongroupmember '```&#10;PS C:\> Update-DistributionGroupMember&#10;```&#10;Replace all members of distribution groups and mail-enabled security groups'
-[Add-ADGroupMember]: #add-adgroupmember '```&#10;Add-ADGroupMember&#10;```&#10;Add one or more members to an AD group&#10;Microsoft Docs. "Add-ADGroupMember".'
-
-<code>DistributionGroupMember&nbsp;[a][Add-DistributionGroupMember]&nbsp;[g][Get-DistributionGroupMember]&nbsp;[ud][Update-DistributionGroupMember] </code> 
-<code>GPUpdate&nbsp;[i][Invoke-GPUpdate]</code> 
-[**`AD`**](#active-directory)
-<code>Account&nbsp;[sr][Search-ADAccount]&nbsp;[uk][Unlock-ADAccount]&nbsp;</code> 
-<code>AccountPassword&nbsp;[s][Set-ADAccountPassword]&nbsp;</code> 
-<code>GroupMember&nbsp;[a][Add-ADGroupMember]</code>
-<code>Object&nbsp;[g][Get-ADObject]&nbsp;[s][Set-ADObject]&nbsp;</code> 
-<code>OrganizationalUnit&nbsp;[g][Get-ADOrganizationalUnit]&nbsp;[n][New-ADOrganizationalUnit]&nbsp;[r][Remove-ADOrganizationalUnit]&nbsp;[s][Set-ADOrganizationalUnit]&nbsp;</code> 
-<code>PrincipalGroupMembership&nbsp;[a][Add-ADPrincipalGroupMembership]&nbsp;[g][Get-ADPrincipalGroupMembership]&nbsp;</code>
-<code>User&nbsp;[g][Get-ADUser]&nbsp;[n][New-ADUser]&nbsp;[s][Set-ADUser]</code>
-**`ADDS`**
-<code>Domain&nbsp;[`is`][Install-ADDSDomain]</code>
-<code>DomainController&nbsp;[is][Install-ADDSDomainController]&nbsp;[us][Uninstall-ADDSDomainController]</code>
-<code>Forest&nbsp;[g][Get-ADDSForest]&nbsp;[is][Install-ADDSForest]&nbsp;</code>
-#### dcbqos
-[msdocs:Enable-NetQosFlowControl]: https://docs.microsoft.com/en-us/powershell/module/dcbqos/Enable-NetQosFlowControl "Enable-NetQosFlowControl"
-[msdocs:Disable-NetQosFlowControl]: https://docs.microsoft.com/en-us/powershell/module/dcbqos/Disable-NetQosFlowControl "Disable-NetQosFlowControl"
-[msdocs:Get-NetQosDcbxSetting]: https://docs.microsoft.com/en-us/powershell/module/dcbqos/Get-NetQosDcbxSetting "Get-NetQosDcbxSetting"
-[msdocs:Get-NetQosFlowControl]: https://docs.microsoft.com/en-us/powershell/module/dcbqos/Get-NetQosFlowControl "Get-NetQosFlowControl"
-[msdocs:Get-NetQosTrafficClass]: https://docs.microsoft.com/en-us/powershell/module/dcbqos/Get-NetQosTrafficClass "Get-NetQosTrafficClass"
-[msdocs:New-NetQosTrafficClass]: https://docs.microsoft.com/en-us/powershell/module/dcbqos/New-NetQosTrafficClass "New-NetQosTrafficClass"
-[msdocs:Remove-NetQosTrafficClass]: https://docs.microsoft.com/en-us/powershell/module/dcbqos/Remove-NetQosTrafficClass "Remove-NetQosTrafficClass"
-[msdocs:Set-NetQosDcbxSetting]: https://docs.microsoft.com/en-us/powershell/module/dcbqos/Set-NetQosDcbxSetting "Set-NetQosDcbxSetting"
-[msdocs:Set-NetQosFlowControl]: https://docs.microsoft.com/en-us/powershell/module/dcbqos/Set-NetQosFlowControl "Set-NetQosFlowControl"
-[msdocs:Set-NetQosTrafficClass]: https://docs.microsoft.com/en-us/powershell/module/dcbqos/Set-NetQosTrafficClass "Set-NetQosTrafficClass"
-[msdocs:Switch-NetQosDcbxSetting]: https://docs.microsoft.com/en-us/powershell/module/dcbqos/Switch-NetQosDcbxSetting "Switch-NetQosDcbxSetting"
-[msdocs:Switch-NetQosFlowControl]: https://docs.microsoft.com/en-us/powershell/module/dcbqos/Switch-NetQosFlowControl "Switch-NetQosFlowControl"
-[msdocs:Switch-NetQosTrafficClass]: https://docs.microsoft.com/en-us/powershell/module/dcbqos/Switch-NetQosTrafficClass "Switch-NetQosTrafficClass"
-
-[Get-NetQosDcbxSetting]: #get-netqosdcbxsetting '```&#10;Get-NetQosDcbxSetting&#10;```&#10;Gets data center bridging exchange settings.'
-[Set-NetQosDcbxSetting]: #set-netqosdcbxsetting '```&#10;Set-NetQosDcbxSetting&#10;```&#10;Sets the data center bridging exchange settings.'
-[Switch-NetQosDcbxSetting]: #switch-netqosdcbxsetting '```&#10;Switch-NetQosDcbxSetting&#10;```&#10;'
-[Enable-NetQosFlowControl]: #enable-netqosflowcontrol '```&#10;Enable-NetQosFlowControl&#10;```&#10;Enables link level flow control based on the IEEE 802.1p priority.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 145'
-[Disable-NetQosFlowControl]: #disable-netqosflowcontrol '```&#10;Disable-NetQosFlowControl&#10;```&#10;Disables link level flow control based on the IEEE 802.1p priority.'
-[Get-NetQosFlowControl]: #get-netqosflowcontrol '```&#10;Get-NetQosFlowControl&#10;```&#10;Gets the priority-based flow control settings.'
-[Set-NetQosFlowControl]: #set-netqosflowcontrol '```&#10;Set-NetQosFlowControl&#10;```&#10;Sets the flow control settings.'
-[Switch-NetQosFlowControl]: #switch-netqosflowcontrol '```&#10;Switch-NetQosFlowControl&#10;```&#10;'
-[Get-NetQosTrafficClass]: #get-netqostrafficclass '```&#10;Get-NetQosTrafficClass&#10;```&#10;Gets the traffic class settings.'
-[New-NetQosTrafficClass]: #new-netqostrafficclass '```&#10;New-NetQosTrafficClass&#10;```&#10;Creates a traffic class.'
-[Remove-NetQosTrafficClass]: #remove-netqostrafficclass '```&#10;Remove-NetQosTrafficClass&#10;```&#10;Removes a traffic class.'
-[Set-NetQosTrafficClass]: #set-netqostrafficclass '```&#10;Set-NetQosTrafficClass&#10;```&#10;Sets the traffic class settings.'
-[Switch-NetQosTrafficClass]: #switch-netqostrafficclass '```&#10;Switch-NetQosTrafficClass&#10;```&#10;'
-
-- NetQoSDcbxSetting 
-`Get`<sup>[?][msdocs:Get-NetQosDcbxSetting]</sup>
-[`Set`][Set-NetQosDcbxSetting]<sup>[?][msdocs:Set-NetQosDcbxSetting]</sup>
-`Switch`<sup>[?][msdocs:Switch-NetQosDcbxSetting]</sup>
-- NetQoSFlowControl
-`Enable`<sup>[?][msdocs:Enable-NetQosFlowControl]</sup>
-`Disable`<sup>[?][msdocs:Disable-NetQosFlowControl]</sup>
-`Get`<sup>[?][msdocs:Get-NetQosFlowControl]</sup>
-`Set`<sup>[?][msdocs:Set-NetQosFlowControl]</sup>
-`Switch`<sup>[?][msdocs:Switch-NetQosFlowControl]</sup>
-- NetQoSTrafficClass
-`Get`<sup>[?][msdocs:Get-NetQosTrafficClass]</sup>
-`New`<sup>[?][msdocs:New-NetQosTrafficClass]</sup>
-`Remove`<sup>[?][msdocs:Remove-NetQosTrafficClass]</sup>
-`Set`<sup>[?][msdocs:Set-NetQosTrafficClass]</sup>
-`Switch`<sup>[?][msdocs:Switch-NetQosTrafficClass]</sup>
-#### deduplication
-[msdocs:Disable-DedupVolume]: https://docs.microsoft.com/en-us/powershell/module/deduplication/Disable-DedupVolume "Disable-DedupVolume"
-[msdocs:Enable-DedupVolume]: https://docs.microsoft.com/en-us/powershell/module/deduplication/Enable-DedupVolume "Enable-DedupVolume"
-[msdocs:Expand-DedupFile]: https://docs.microsoft.com/en-us/powershell/module/deduplication/Expand-DedupFile "Expand-DedupFile"
-[msdocs:Get-DedupJob]: https://docs.microsoft.com/en-us/powershell/module/deduplication/Get-DedupJob "Get-DedupJob"
-[msdocs:Get-DedupMetadata]: https://docs.microsoft.com/en-us/powershell/module/deduplication/Get-DedupMetadata "Get-DedupMetadata"
-[msdocs:Get-DedupSchedule]: https://docs.microsoft.com/en-us/powershell/module/deduplication/Get-DedupSchedule "Get-DedupSchedule"
-[msdocs:Get-DedupStatus]: https://docs.microsoft.com/en-us/powershell/module/deduplication/Get-DedupStatus "Get-DedupStatus"
-[msdocs:Get-DedupVolume]: https://docs.microsoft.com/en-us/powershell/module/deduplication/Get-DedupVolume "Get-DedupVolume"
-[msdocs:Measure-DedupFileMetadata]: https://docs.microsoft.com/en-us/powershell/module/deduplication/Measure-DedupFileMetadata "Measure-DedupFileMetadata"
-[msdocs:New-DedupSchedule]: https://docs.microsoft.com/en-us/powershell/module/deduplication/New-DedupSchedule "New-DedupSchedule"
-[msdocs:Remove-DedupSchedule]: https://docs.microsoft.com/en-us/powershell/module/deduplication/Remove-DedupSchedule "Remove-DedupSchedule"
-[msdocs:Set-DedupSchedule]: https://docs.microsoft.com/en-us/powershell/module/deduplication/Set-DedupSchedule "Set-DedupSchedule"
-[msdocs:Set-DedupVolume]: https://docs.microsoft.com/en-us/powershell/module/deduplication/Set-DedupVolume "Set-DedupVolume"
-[msdocs:Start-DedupJob]: https://docs.microsoft.com/en-us/powershell/module/deduplication/Start-DedupJob "Start-DedupJob"
-[msdocs:Stop-DedupJob]: https://docs.microsoft.com/en-us/powershell/module/deduplication/Stop-DedupJob "Stop-DedupJob"
-[msdocs:Update-DedupStatus]: https://docs.microsoft.com/en-us/powershell/module/deduplication/Update-DedupStatus "Update-DedupStatus"
-
-[Expand-DedupFile]: #expand-dedupfile '```&#10;Expand-DedupFile&#10;```&#10;Expands an optimized file into its original location.'
-[Measure-DedupFileMetadata]: #measure-dedupfilemetadata '```&#10;Measure-DedupFileMetadata&#10;```&#10;Measures potential disk space on a volume.'
-[Get-DedupJob]: #get-dedupjob '```&#10;Get-DedupJob&#10;```&#10;Returns status and information for currently running or queued deduplication jobs.'
-[Start-DedupJob]: #start-dedupjob '```&#10;Start-DedupJob&#10;```&#10;Starts a data deduplication job.'
-[Stop-DedupJob]: #stop-dedupjob '```&#10;Stop-DedupJob&#10;```&#10;Cancels one or more specified data deduplication jobs.'
-[Get-DedupMetadata]: #get-dedupmetadata '```&#10;Get-DedupMetadata&#10;```&#10;Returns metadata for volumes that have data deduplication metadata.'
-[Get-DedupSchedule]: #get-dedupschedule '```&#10;Get-DedupSchedule&#10;```&#10;Returns the deduplication job schedule defined on the computer.'
-[New-DedupSchedule]: #new-dedupschedule '```&#10;New-DedupSchedule&#10;```&#10;Creates a data deduplication schedule.'
-[Remove-DedupSchedule]: #remove-dedupschedule '```&#10;Remove-DedupSchedule&#10;```&#10;Deletes a deduplication schedule.'
-[Set-DedupSchedule]: #set-dedupschedule '```&#10;Set-DedupSchedule&#10;```&#10;Changes configuration settings for data deduplication schedules.'
-[Get-DedupStatus]: #get-dedupstatus '```&#10;Get-DedupStatus&#10;```&#10;Returns deduplication status for volumes that have data deduplication metadata.'
-[Update-DedupStatus]: #update-dedupstatus '```&#10;Update-DedupStatus&#10;```&#10;Scans volumes for fresh data deduplication savings.'
-[Disable-DedupVolume]: #disable-dedupvolume '```&#10;Disable-DedupVolume&#10;```&#10;Disables data deduplication activity on one or more volumes.'
-[Enable-DedupVolume]: #enable-dedupvolume '```&#10;Enable-DedupVolume&#10;```&#10;Enables data deduplication on one or more volumes.'
-[Get-DedupVolume]: #get-dedupvolume '```&#10;Get-DedupVolume&#10;```&#10;Returns deduplication volumes that have data deduplication metadata.'
-[Set-DedupVolume]: #set-dedupvolume '```&#10;Set-DedupVolume&#10;```&#10;Changes data deduplication settings on one or more volumes.'
-
-- DedupVolume [Disable][Disable-DedupVolume]<sup>[?][msdocs:Disable-DedupVolume]</sup> [Enable][Enable-DedupVolume]<sup>[?][msdocs:Enable-DedupVolume]</sup>
-#### defender
-[msdocs:Add-MpPreference]: https://docs.microsoft.com/en-us/powershell/module/defender/Add-MpPreference "Add-MpPreference"
-[msdocs:Get-MpComputerStatus]: https://docs.microsoft.com/en-us/powershell/module/defender/Get-MpComputerStatus "Get-MpComputerStatus"
-[msdocs:Get-MpPreference]: https://docs.microsoft.com/en-us/powershell/module/defender/Get-MpPreference "Get-MpPreference"
-[msdocs:Get-MpThreat]: https://docs.microsoft.com/en-us/powershell/module/defender/Get-MpThreat "Get-MpThreat"
-[msdocs:Get-MpThreatCatalog]: https://docs.microsoft.com/en-us/powershell/module/defender/Get-MpThreatCatalog "Get-MpThreatCatalog"
-[msdocs:Get-MpThreatDetection]: https://docs.microsoft.com/en-us/powershell/module/defender/Get-MpThreatDetection "Get-MpThreatDetection"
-[msdocs:Remove-MpPreference]: https://docs.microsoft.com/en-us/powershell/module/defender/Remove-MpPreference "Remove-MpPreference"
-[msdocs:Remove-MpThreat]: https://docs.microsoft.com/en-us/powershell/module/defender/Remove-MpThreat "Remove-MpThreat"
-[msdocs:Set-MpPreference]: https://docs.microsoft.com/en-us/powershell/module/defender/Set-MpPreference "Set-MpPreference"
-[msdocs:Start-MpScan]: https://docs.microsoft.com/en-us/powershell/module/defender/Start-MpScan "Start-MpScan"
-[msdocs:Start-MpWDOScan]: https://docs.microsoft.com/en-us/powershell/module/defender/Start-MpWDOScan "Start-MpWDOScan"
-[msdocs:Update-MpSignature]: https://docs.microsoft.com/en-us/powershell/module/defender/Update-MpSignature "Update-MpSignature"
-
-[Add-MpPreference]: #add-mppreference '```&#10;Add-MpPreference&#10;```&#10;Modifies settings for Windows Defender.'
-[Get-MpComputerStatus]: #get-mpcomputerstatus '```&#10;Get-MpComputerStatus&#10;```&#10;Gets the status of antimalware software on the computer.'
-[Get-MpPreference]: #get-mppreference '```&#10;Get-MpPreference&#10;```&#10;Gets preferences for the Windows Defender scans and updates.'
-[Get-MpThreat]: #get-mpthreat '```&#10;Get-MpThreat&#10;```&#10;Gets the history of threats detected on the computer.'
-[Get-MpThreatCatalog]: #get-mpthreatcatalog '```&#10;Get-MpThreatCatalog&#10;```&#10;Gets known threats from the definitions catalog.'
-[Get-MpThreatDetection]: #get-mpthreatdetection '```&#10;Get-MpThreatDetection&#10;```&#10;Gets active and past malware threats that Windows Defender detected.'
-[Remove-MpPreference]: #remove-mppreference '```&#10;Remove-MpPreference&#10;```&#10;Removes exclusions or default actions.'
-[Remove-MpThreat]: #remove-mpthreat '```&#10;Remove-MpThreat&#10;```&#10;Removes active threats from a computer.'
-[Set-MpPreference]: #set-mppreference '```&#10;Set-MpPreference&#10;```&#10;Configures preferences for Windows Defender scans and updates.'
-[Start-MpScan]: #start-mpscan '```&#10;Start-MpScan&#10;```&#10;Starts a scan on a computer.'
-[Start-MpWDOScan]: #start-mpwdoscan '```&#10;Start-MpWDOScan&#10;```&#10;Starts a Windows Defender offline scan.'
-[Update-MpSignature]: #update-mpsignature '```&#10;Update-MpSignature&#10;```&#10;Updates the antimalware definitions on a computer.'
-
-- MpScan [`Start`][Start-MpScan]<sup>[?][msdocs:Start-MpScan]</sup>
-- MpThreat [`Get`][Get-MpThreat]<sup>[?][msdocs:Get-MpThreat]</sup> [`Remove`][Remove-MpThreat]<sup>[?][msdocs:Remove-MpThreat]</sup>
-#### dism
-[msdocs:Set-AppxProvisionedDataFile]: https://docs.microsoft.com/en-us/powershell/module/dism/Set-AppxProvisionedDataFile "Set-AppxProvisionedDataFile"
-[msdocs:Add-AppxProvisionedPackage]: https://docs.microsoft.com/en-us/powershell/module/dism/Add-AppxProvisionedPackage "Add-AppxProvisionedPackage"
-[msdocs:Get-AppxProvisionedPackage]: https://docs.microsoft.com/en-us/powershell/module/dism/Get-AppxProvisionedPackage "Get-AppxProvisionedPackage"
-[msdocs:Remove-AppxProvisionedPackage]: https://docs.microsoft.com/en-us/powershell/module/dism/Remove-AppxProvisionedPackage "Remove-AppxProvisionedPackage"
-[msdocs:Get-WIMBootEntry]: https://docs.microsoft.com/en-us/powershell/module/dism/Get-WIMBootEntry "Get-WIMBootEntry"
-[msdocs:Update-WIMBootEntry]: https://docs.microsoft.com/en-us/powershell/module/dism/Update-WIMBootEntry "Update-WIMBootEntry"
-[msdocs:Add-WindowsCapability]: https://docs.microsoft.com/en-us/powershell/module/dism/Add-WindowsCapability "Add-WindowsCapability"
-[msdocs:Get-WindowsCapability]: https://docs.microsoft.com/en-us/powershell/module/dism/Get-WindowsCapability "Get-WindowsCapability"
-[msdocs:Remove-WindowsCapability]: https://docs.microsoft.com/en-us/powershell/module/dism/Remove-WindowsCapability "Remove-WindowsCapability"
-[msdocs:Clear-WindowsCorruptMountPoint]: https://docs.microsoft.com/en-us/powershell/module/dism/Clear-WindowsCorruptMountPoint "Clear-WindowsCorruptMountPoint"
-[msdocs:Expand-WindowsCustomDataImage]: https://docs.microsoft.com/en-us/powershell/module/dism/Expand-WindowsCustomDataImage "Expand-WindowsCustomDataImage"
-[msdocs:New-WindowsCustomImage]: https://docs.microsoft.com/en-us/powershell/module/dism/New-WindowsCustomImage "New-WindowsCustomImage"
-[msdocs:Add-WindowsDriver]: https://docs.microsoft.com/en-us/powershell/module/dism/Add-WindowsDriver "Add-WindowsDriver"
-[msdocs:Export-WindowsDriver]: https://docs.microsoft.com/en-us/powershell/module/dism/Export-WindowsDriver "Export-WindowsDriver"
-[msdocs:Get-WindowsDriver]: https://docs.microsoft.com/en-us/powershell/module/dism/Get-WindowsDriver "Get-WindowsDriver"
-[msdocs:Remove-WindowsDriver]: https://docs.microsoft.com/en-us/powershell/module/dism/Remove-WindowsDriver "Remove-WindowsDriver"
-[msdocs:Get-WindowsEdition]: https://docs.microsoft.com/en-us/powershell/module/dism/Get-WindowsEdition "Get-WindowsEdition"
-[msdocs:Set-WindowsEdition]: https://docs.microsoft.com/en-us/powershell/module/dism/Set-WindowsEdition "Set-WindowsEdition"
-[msdocs:Add-WindowsImage]: https://docs.microsoft.com/en-us/powershell/module/dism/Add-WindowsImage "Add-WindowsImage"
-[msdocs:Dismount-WindowsImage]: https://docs.microsoft.com/en-us/powershell/module/dism/Dismount-WindowsImage "Dismount-WindowsImage"
-[msdocs:Expand-WindowsImage]: https://docs.microsoft.com/en-us/powershell/module/dism/Expand-WindowsImage "Expand-WindowsImage"
-[msdocs:Export-WindowsImage]: https://docs.microsoft.com/en-us/powershell/module/dism/Export-WindowsImage "Export-WindowsImage"
-[msdocs:Get-WindowsImage]: https://docs.microsoft.com/en-us/powershell/module/dism/Get-WindowsImage "Get-WindowsImage"
-[msdocs:Mount-WindowsImage]: https://docs.microsoft.com/en-us/powershell/module/dism/Mount-WindowsImage "Mount-WindowsImage"
-[msdocs:New-WindowsImage]: https://docs.microsoft.com/en-us/powershell/module/dism/New-WindowsImage "New-WindowsImage"
-[msdocs:Remove-WindowsImage]: https://docs.microsoft.com/en-us/powershell/module/dism/Remove-WindowsImage "Remove-WindowsImage"
-[msdocs:Save-WindowsImage]: https://docs.microsoft.com/en-us/powershell/module/dism/Save-WindowsImage "Save-WindowsImage"
-[msdocs:Optimize-WindowsImage]: https://docs.microsoft.com/en-us/powershell/module/dism/Optimize-WindowsImage "Optimize-WindowsImage"
-[msdocs:Repair-WindowsImage]: https://docs.microsoft.com/en-us/powershell/module/dism/Repair-WindowsImage "Repair-WindowsImage"
-[msdocs:Split-WindowsImage]: https://docs.microsoft.com/en-us/powershell/module/dism/Split-WindowsImage "Split-WindowsImage"
-[msdocs:Get-WindowsImageContent]: https://docs.microsoft.com/en-us/powershell/module/dism/Get-WindowsImageContent "Get-WindowsImageContent"
-[msdocs:Disable-WindowsOptionalFeature]: https://docs.microsoft.com/en-us/powershell/module/dism/Disable-WindowsOptionalFeature "Disable-WindowsOptionalFeature"
-[msdocs:Enable-WindowsOptionalFeature]: https://docs.microsoft.com/en-us/powershell/module/dism/Enable-WindowsOptionalFeature "Enable-WindowsOptionalFeature"
-[msdocs:Get-WindowsOptionalFeature]: https://docs.microsoft.com/en-us/powershell/module/dism/Get-WindowsOptionalFeature "Get-WindowsOptionalFeature"
-[msdocs:Add-WindowsPackage]: https://docs.microsoft.com/en-us/powershell/module/dism/Add-WindowsPackage "Add-WindowsPackage"
-[msdocs:Get-WindowsPackage]: https://docs.microsoft.com/en-us/powershell/module/dism/Get-WindowsPackage "Get-WindowsPackage"
-[msdocs:Remove-WindowsPackage]: https://docs.microsoft.com/en-us/powershell/module/dism/Remove-WindowsPackage "Remove-WindowsPackage"
-[msdocs:Set-WindowsProductKey]: https://docs.microsoft.com/en-us/powershell/module/dism/Set-WindowsProductKey "Set-WindowsProductKey"
-[msdocs:Get-WindowsReservedStorageState]: https://docs.microsoft.com/en-us/powershell/module/dism/Get-WindowsReservedStorageState "Get-WindowsReservedStorageState"
-[msdocs:Set-WindowsReservedStorageState]: https://docs.microsoft.com/en-us/powershell/module/dism/Set-WindowsReservedStorageState "Set-WindowsReservedStorageState"
-[msdocs:Use-WindowsUnattend]: https://docs.microsoft.com/en-us/powershell/module/dism/Use-WindowsUnattend "Use-WindowsUnattend"
-
-[Add-AppxProvisionedPackage]: #add-appxprovisionedpackage '```&#10;PS C:\> Add-AppxProvisionedPackage&#10;```&#10;Adds an app package (.appx) that will install for each new user to a Windows image.&#10;Equivalent to `Dism.exe /Image:foldername /Add-ProvisionedAppxPackage`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
-[Add-WindowsCapability]: #add-windowscapability '```&#10;PS C:\> Add-WindowsCapability&#10;```&#10;Installs a Windows capability package on the specified operating system image.'
-[Add-WindowsDriver]: #add-windowsdriver '```&#10;PS C:\> Add-WindowsDriver&#10;```&#10;Adds a driver to an offline Windows image.&#10;Equivalent to `Dism.exe /Image:foldername /Add-Drive`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
-[Add-WindowsImage]: #add-windowsimage '```&#10;PS C:\> Add-WindowsImage&#10;```&#10;Adds an additional image to an existing image (.wim) file.&#10;Equivalent to `dism.exe /Append-Image`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
-[Add-WindowsPackage]: #add-windowspackage '```&#10;PS C:\> Add-WindowsPackage&#10;```&#10;Adds a single .cab or .msu file to a Windows image.&#10;Equivalent to `Dism.exe /Image:foldername /Add-Package`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
-[Clear-WindowsCorruptMountPoint]: #clear-windowscorruptmountpoint '```&#10;PS C:\> Clear-WindowsCorruptMountPoint&#10;```&#10;Deletes all of the resources associated with a mounted image that has been corrupted.'
-[Disable-WindowsOptionalFeature]: #disable-windowsoptionalfeature '```&#10;PS C:\> Disable-WindowsOptionalFeature&#10;```&#10;Disables a feature in a Windows image.&#10;Equivalent to `Dism.exe /Image:foldername /Disable-Feature`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
-[Dismount-WindowsImage]: #dismount-windowsimage '```&#10;PS C:\> Dismount-WindowsImage&#10;```&#10;Dismounts a Windows image from the directory it is mapped to.&#10;Equivalent to `Dism.exe /Unmount-Image`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
-[Enable-WindowsOptionalFeature]: #enable-windowsoptionalfeature '```&#10;PS C:\> Enable-WindowsOptionalFeature&#10;```&#10;Enable or restore an optional feature in a Windows image&#10;Equivalent to `Dism.exe /Image:foldername /Enable-Feature`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
-[Expand-WindowsCustomDataImage]: #expand-windowscustomdataimage '```&#10;PS C:\> Expand-WindowsCustomDataImage&#10;```&#10;Expands a custom data image.'
-[Expand-WindowsImage]: #expand-windowsimage '```&#10;PS C:\> Expand-WindowsImage&#10;```&#10;Applies an image to a specified location.&#10;Equivalent to `Dism.exe /Apply-Image`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
-[Export-WindowsDriver]: #export-windowsdriver '```&#10;PS C:\> Export-WindowsDriver&#10;```&#10;Exports all third-party drivers from a Windows image to a destination folder.&#10;Equivalent to `Dism.exe /Image:foldername /Export-Driver`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
-[Export-WindowsImage]: #export-windowsimage '```&#10;PS C:\> Export-WindowsImage&#10;```&#10;Exports a copy of the specified image to another image file.&#10;Equivalent to `Dism.exe /Export-Image`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
-[Get-AppxProvisionedPackage]: #get-appxprovisionedpackage '```&#10;PS C:\> Get-AppxProvisionedPackage&#10;```&#10;Gets information about app packages (.appx) in an image that will be installed for each new user.&#10;Equivalent to `Dism.exe /Image:foldername /Get-ProvisionedAppxPackages`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 78'
-[Get-WIMBootEntry]: #get-wimbootentry '```&#10;PS C:\> Get-WIMBootEntry&#10;```&#10;Displays the Windows image file boot (WIMBoot) configuration entries for a specified disk volume.'
-[Get-WindowsCapability]: #get-windowscapability '```&#10;PS C:\> Get-WindowsCapability&#10;```&#10;Gets Windows capabilities for an image or a running operating system.'
-[Get-WindowsDriver]: #get-windowsdriver '```&#10;PS C:\> Get-WindowsDriver&#10;```&#10;Displays information about drivers in a Windows image.&#10;Equivalent to `Dism.exe /Image:foldername /Get-Drivers`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 78'
-[Get-WindowsEdition]: #get-windowsedition '```&#10;PS C:\> Get-WindowsEdition&#10;```&#10;Gets edition information about a Windows image.'
-[Get-WindowsImage]: #get-windowsimage '```&#10;PS C:\> Get-WindowsImage&#10;```&#10;Gets information about a Windows image in a WIM or VHD file.&#10;Equivalent to `Dism.exe /Get-ImageInfo`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
-[Get-WindowsImageContent]: #get-windowsimagecontent '```&#10;PS C:\> Get-WindowsImageContent&#10;```&#10;Displays a list of the files and folders in a specified image.&#10;Equivalent to `Dism.exe /List-Image`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
-[Get-WindowsOptionalFeature]: #get-windowsoptionalfeature '```&#10;PS C:\> Get-WindowsOptionalFeature&#10;```&#10;Gets information about optional features in a Windows image.&#10;Equivalent to `Dism.exe /Image:foldername /Get-Features`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 78'
-[Get-WindowsPackage]: #get-windowspackage '```&#10;PS C:\> Get-WindowsPackage&#10;```&#10;Gets information about packages in a Windows image.&#10;Equivalent to `Dism.exe /Image:foldername /Get-Packages`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 78'
-[Get-WindowsReservedStorageState]: #get-windowsreservedstoragestate '```&#10;PS C:\> Get-WindowsReservedStorageState&#10;```&#10;Gets the reserved storage state of the image.'
-[Mount-WindowsImage]: #mount-windowsimage '```&#10;PS C:\> Mount-WindowsImage&#10;```&#10;Mounts a Windows image in a WIM or VHD file to a directory on the local computer.&#10;Equivalent to `Dism.exe /Mount-image`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
-[New-WindowsCustomImage]: #new-windowscustomimage '```&#10;PS C:\> New-WindowsCustomImage&#10;```&#10;Captures an image of customized or serviced Windows components on a Windows Image File Boot (WIMBoot) configured device.'
-[New-WindowsImage]: #new-windowsimage '```&#10;PS C:\> New-WindowsImage&#10;```&#10;Captures an image of a drive to a new WIM file.&#10;Equivalent to `Dism.exe /Capture-Image`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
-[Optimize-WindowsImage]: #optimize-windowsimage '```&#10;PS C:\> Optimize-WindowsImage&#10;```&#10;Configures a Windows image with specified optimizations.'
-[Remove-AppxProvisionedPackage]: #remove-appxprovisionedpackage '```&#10;PS C:\> Remove-AppxProvisionedPackage&#10;```&#10;Removes an app package (.appx) from a Windows image.&#10;Equivalent to `Dism.exe /Image:foldername /Remove-ProvisionedAppxPackage`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 78'
-[Remove-WindowsCapability]: #remove-windowscapability '```&#10;PS C:\> Remove-WindowsCapability&#10;```&#10;Uninstalls a Windows capability package from an image.'
-[Remove-WindowsDriver]: #remove-windowsdriver '```&#10;PS C:\> Remove-WindowsDriver&#10;```&#10;Removes a driver from an offline Windows image.&#10;Equivalent to `Dism.exe /Image:foldername /Remove-Driver`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 78'
-[Remove-WindowsImage]: #remove-windowsimage '```&#10;PS C:\> Remove-WindowsImage&#10;```&#10;Deletes the specified volume image from a WIM file that has multiple volume images.&#10;Equivalent to `Dism.exe /Remove-Image`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
-[Remove-WindowsPackage]: #remove-windowspackage '```&#10;PS C:\> Remove-WindowsPackage&#10;```&#10;Removes a package from a Windows image.&#10;Equivalent to `Dism.exe /Image:foldername /Remove-Package`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 78'
-[Repair-WindowsImage]: #repair-windowsimage '```&#10;PS C:\> Repair-WindowsImage&#10;```&#10;Repairs a Windows image in a WIM or VHD file.'
-[Save-WindowsImage]: #save-windowsimage '```&#10;PS C:\> Save-WindowsImage&#10;```&#10;Applies changes made to a mounted image to its WIM or VHD file.&#10;Equivalent to `Dism.exe /Commit-Image`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
-[Set-AppxProvisionedDataFile]: #set-appxprovisioneddatafile '```&#10;PS C:\> Set-AppxProvisionedDataFile&#10;```&#10;Adds custom data into the specified app (.appx) package that has been provisioned in a Windows image.&#10;Equivalent to `Dism.exe /Image:foldername /Set-ProvisionedAppxDataFile`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 78'
-[Set-WindowsEdition]: #set-windowsedition '```&#10;PS C:\> Set-WindowsEdition&#10;```&#10;Changes a Windows image to a higher edition.'
-[Set-WindowsProductKey]: #set-windowsproductkey '```&#10;PS C:\> Set-WindowsProductKey&#10;```&#10;Sets the product key for the Windows image.'
-[Set-WindowsReservedStorageState]: #set-windowsreservedstoragestate '```&#10;PS C:\> Set-WindowsReservedStorageState&#10;```&#10;Sets the reserved storage state of the image.'
-[Split-WindowsImage]: #split-windowsimage '```&#10;PS C:\> Split-WindowsImage&#10;```&#10;Splits an existing .wim file into multiple read-only split .wim files.'
-[Update-WIMBootEntry]: #update-wimbootentry '```&#10;PS C:\> Update-WIMBootEntry&#10;```&#10;Updates the Windows image file boot (WIMBoot) configuration entry, associated with either the specified data source ID, the renamed image file path or the moved image file path.'
-[Use-WindowsUnattend]: #use-windowsunattend '```&#10;PS C:\> Use-WindowsUnattend&#10;```&#10;Applies an unattended answer file to a Windows image.'
-
-
-<code>WIMBootEntry&nbsp;[g][Get-WIMBootEntry]&nbsp;[u][Update-WIMBootEntry]</code>
-**`AppxProvisioned`**
-<code>DataFile&nbsp;[s][Set-AppxProvisionedDataFile]</code> 
-<code>Package&nbsp;[a][Add-AppxProvisionedPackage]&nbsp;[g][Get-AppxProvisionedPackage]&nbsp;[r][Remove-AppxProvisionedPackage]</code> 
-**`Windows`**
-<code>Capability&nbsp;[a][Add-WindowsCapability]&nbsp;[g][Get-WindowsCapability]&nbsp;[r][Remove-WindowsCapability]</code>
-<code>CorruptMountPoint&nbsp;[c][Clear-WindowsCorruptMountPoint]</code>
-<code>CustomDataImage&nbsp;[en][Expand-WindowsCustomDataImage]</code>
-<code>CustomImage&nbsp;[n][New-WindowsCustomImage]</code>
-<code>Driver&nbsp;[a][Add-WindowsDriver]&nbsp;[ep][Export-WindowsDriver]&nbsp;[g][Get-WindowsDriver]&nbsp;[r][Remove-WindowsDriver]</code> 
-<code>Edition&nbsp;[g][Get-WindowsEdition]&nbsp;[s][Set-WindowsEdition]</code>
-<code>Image&nbsp;[a][Add-WindowsImage]&nbsp;[dm][Dismount-WindowsImage]&nbsp;[en][Expand-WindowsImage]&nbsp;[ep][Export-windowsImage]&nbsp;[n][New-WindowsImage]&nbsp;[sv][Save-WindowsImage]&nbsp;[ep][Export-WindowsImage]&nbsp;[g][Get-WindowsImage]&nbsp;[mt][Mount-WindowsImage]&nbsp;[n][New-WindowsImage]&nbsp;[om][Optimize-WindowsImage]&nbsp;[rp][Repair-WindowsImage]&nbsp;[r][Remove-WindowsImage]&nbsp;[sl][Split-WindowsImage]</code>
-<code>ImageContent&nbsp;[g][Get-WindowsImageContent]</code>
-<code>OptionalFeature&nbsp;[d][Disable-WindowsOptionalFeature]&nbsp;[e][Enable-WindowsOptionalFeature]&nbsp;[g][Get-WindowsOptionalFeature]</code>
-<code>Package&nbsp;[a][Add-WindowsPackage]&nbsp;[g][Get-WindowsPackage]&nbsp;[r][Remove-WindowsPackage]</code>
-<code>ProductKey&nbsp;[s][Set-WindowsProductKey]</code>
-<code>ReservedStorageState&nbsp;[g][Get-WindowsReservedStorageState]&nbsp;[s][Set-WindowsReservedStorageState]</code>
-<code>Unattend&nbsp;[u][Use-WindowsUnattend]</code>
-
-#### failoverclusters
-[msdocs:Add-ClusterCheckpoint]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Add-ClusterCheckpoint "Add-ClusterCheckpoint"
-[msdocs:Add-ClusterGenericScriptRole]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Add-ClusterGenericScriptRole "Add-ClusterGenericScriptRole"
-[msdocs:Add-ClusterGenericServiceRole]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Add-ClusterGenericServiceRole "Add-ClusterGenericServiceRole"
-[msdocs:Add-ClusterGroupSetDependency]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Add-ClusterGroupSetDependency "Add-ClusterGroupSetDependency"
-[msdocs:Add-ClusterGroupToSet]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Add-ClusterGroupToSet "Add-ClusterGroupToSet"
-[msdocs:Add-ClusteriSCSITargetServerRole]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Add-ClusteriSCSITargetServerRole "Add-ClusteriSCSITargetServerRole"
-[msdocs:Add-ClusterResourceType]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Add-ClusterResourceType "Add-ClusterResourceType"
-[msdocs:Add-ClusterScaleOutFileServer]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Add-ClusterScaleOutFileServer "Add-ClusterScaleOutFileServer"
-[msdocs:Add-ClusterScaleOutFileServerRole]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Add-ClusterScaleOutFileServerRole "Add-ClusterScaleOutFileServerRole"
-[msdocs:Add-ClusterServerRole]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Add-ClusterServerRole "Add-ClusterServerRole"
-[msdocs:Clear-ClusterDiskReservation]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Clear-ClusterDiskReservation "Clear-ClusterDiskReservation"
-[msdocs:Clear-ClusterNode]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Clear-ClusterNode "Clear-ClusterNode"
-[msdocs:Disable-ClusterStorageSpacesDirect]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Disable-ClusterStorageSpacesDirect "Disable-ClusterStorageSpacesDirect"
-[msdocs:Add-ClusterDisk]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Add-ClusterDisk "Add-ClusterDisk"
-[msdocs:Add-ClusterFileServerRole]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Add-ClusterFileServerRole "Add-ClusterFileServerRole"
-[msdocs:Add-ClusterGenericApplicationRole]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Add-ClusterGenericApplicationRole "Add-ClusterGenericApplicationRole"
-[msdocs:Get-ClusterAvailableDisk]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Get-ClusterAvailableDisk "Get-ClusterAvailableDisk"
-[msdocs:Get-ClusterCheckpoint]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Get-ClusterCheckpoint "Get-ClusterCheckpoint"
-[msdocs:Get-ClusterDiagnosticInfo]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Get-ClusterDiagnosticInfo "Get-ClusterDiagnosticInfo"
-[msdocs:Get-ClusterFaultDomain]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Get-ClusterFaultDomain "Get-ClusterFaultDomain"
-[msdocs:Get-ClusterFaultDomainXML]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Get-ClusterFaultDomainXML "Get-ClusterFaultDomainXML"
-[msdocs:Get-ClusterGroup]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Get-ClusterGroup "Get-ClusterGroup"
-[msdocs:Get-ClusterGroupSet]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Get-ClusterGroupSet "Get-ClusterGroupSet"
-[msdocs:Get-ClusterGroupSetDependency]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Get-ClusterGroupSetDependency "Get-ClusterGroupSetDependency"
-[msdocs:Get-ClusterLog]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Get-ClusterLog "Get-ClusterLog"
-[msdocs:Get-ClusterNetwork]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Get-ClusterNetwork "Get-ClusterNetwork"
-[msdocs:Get-ClusterNetworkInterface]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Get-ClusterNetworkInterface "Get-ClusterNetworkInterface"
-[msdocs:Add-ClusterGroup]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Add-ClusterGroup "Add-ClusterGroup"
-[msdocs:Add-ClusterNode]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Add-ClusterNode "Add-ClusterNode"
-[msdocs:Get-ClusterOwnerNode]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Get-ClusterOwnerNode "Get-ClusterOwnerNode"
-[msdocs:Get-ClusterParameter]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Get-ClusterParameter "Get-ClusterParameter"
-[msdocs:Add-ClusterResource]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Add-ClusterResource "Add-ClusterResource"
-[msdocs:Add-ClusterResourceDependency]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Add-ClusterResourceDependency "Add-ClusterResourceDependency"
-[msdocs:Get-ClusterResource]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Get-ClusterResource "Get-ClusterResource"
-[msdocs:Get-ClusterResourceDependency]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Get-ClusterResourceDependency "Get-ClusterResourceDependency"
-[msdocs:Get-ClusterResourceDependencyReport]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Get-ClusterResourceDependencyReport "Get-ClusterResourceDependencyReport"
-[msdocs:Get-ClusterResourceType]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Get-ClusterResourceType "Get-ClusterResourceType"
-[msdocs:Get-ClusterSharedVolume]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Get-ClusterSharedVolume "Get-ClusterSharedVolume"
-[msdocs:Get-ClusterSharedVolumeState]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Get-ClusterSharedVolumeState "Get-ClusterSharedVolumeState"
-[msdocs:Get-ClusterStorageSpacesDirect]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Get-ClusterStorageSpacesDirect "Get-ClusterStorageSpacesDirect"
-[msdocs:Get-ClusterVMMonitoredItem]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Get-ClusterVMMonitoredItem "Get-ClusterVMMonitoredItem"
-[msdocs:Grant-ClusterAccess]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Grant-ClusterAccess "Grant-ClusterAccess"
-[msdocs:Move-ClusterGroup]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Move-ClusterGroup "Move-ClusterGroup"
-[msdocs:Move-ClusterResource]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Move-ClusterResource "Move-ClusterResource"
-[msdocs:Move-ClusterSharedVolume]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Move-ClusterSharedVolume "Move-ClusterSharedVolume"
-[msdocs:Move-ClusterVirtualMachineRole]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Move-ClusterVirtualMachineRole "Move-ClusterVirtualMachineRole"
-[msdocs:Add-ClusterSharedVolume]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Add-ClusterSharedVolume "Add-ClusterSharedVolume"
-[msdocs:Add-ClusterVirtualMachineRole]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Add-ClusterVirtualMachineRole "Add-ClusterVirtualMachineRole"
-[msdocs:New-ClusterFaultDomain]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/New-ClusterFaultDomain "New-ClusterFaultDomain"
-[msdocs:New-ClusterGroupSet]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/New-ClusterGroupSet "New-ClusterGroupSet"
-[msdocs:New-ClusterNameAccount]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/New-ClusterNameAccount "New-ClusterNameAccount"
-[msdocs:Add-ClusterVMMonitoredItem]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Add-ClusterVMMonitoredItem "Add-ClusterVMMonitoredItem"
-[msdocs:Block-ClusterAccess]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Block-ClusterAccess "Block-ClusterAccess"
-[msdocs:Enable-ClusterStorageSpacesDirect]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Enable-ClusterStorageSpacesDirect "Enable-ClusterStorageSpacesDirect"
-[msdocs:Get-Cluster]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Get-Cluster "Get-Cluster"
-[msdocs:Remove-ClusterCheckpoint]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Remove-ClusterCheckpoint "Remove-ClusterCheckpoint"
-[msdocs:Remove-ClusterFaultDomain]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Remove-ClusterFaultDomain "Remove-ClusterFaultDomain"
-[msdocs:Remove-ClusterGroup]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Remove-ClusterGroup "Remove-ClusterGroup"
-[msdocs:Remove-ClusterGroupFromSet]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Remove-ClusterGroupFromSet "Remove-ClusterGroupFromSet"
-[msdocs:Remove-ClusterGroupSet]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Remove-ClusterGroupSet "Remove-ClusterGroupSet"
-[msdocs:Remove-ClusterGroupSetDependency]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Remove-ClusterGroupSetDependency "Remove-ClusterGroupSetDependency"
-[msdocs:Get-ClusterAccess]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Get-ClusterAccess "Get-ClusterAccess"
-[msdocs:Get-ClusterNode]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Get-ClusterNode "Get-ClusterNode"
-[msdocs:Remove-ClusterResource]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Remove-ClusterResource "Remove-ClusterResource"
-[msdocs:Remove-ClusterResourceDependency]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Remove-ClusterResourceDependency "Remove-ClusterResourceDependency"
-[msdocs:Remove-ClusterResourceType]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Remove-ClusterResourceType "Remove-ClusterResourceType"
-[msdocs:Remove-ClusterSharedVolume]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Remove-ClusterSharedVolume "Remove-ClusterSharedVolume"
-[msdocs:Remove-ClusterVMMonitoredItem]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Remove-ClusterVMMonitoredItem "Remove-ClusterVMMonitoredItem"
-[msdocs:Repair-ClusterStorageSpacesDirect]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Repair-ClusterStorageSpacesDirect "Repair-ClusterStorageSpacesDirect"
-[msdocs:Reset-ClusterVMMonitoredState]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Reset-ClusterVMMonitoredState "Reset-ClusterVMMonitoredState"
-[msdocs:Resume-ClusterNode]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Resume-ClusterNode "Resume-ClusterNode"
-[msdocs:Resume-ClusterResource]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Resume-ClusterResource "Resume-ClusterResource"
-[msdocs:Set-ClusterFaultDomain]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Set-ClusterFaultDomain "Set-ClusterFaultDomain"
-[msdocs:Set-ClusterFaultDomainXML]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Set-ClusterFaultDomainXML "Set-ClusterFaultDomainXML"
-[msdocs:Set-ClusterGroupSet]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Set-ClusterGroupSet "Set-ClusterGroupSet"
-[msdocs:Set-ClusterLog]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Set-ClusterLog "Set-ClusterLog"
-[msdocs:Set-ClusterOwnerNode]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Set-ClusterOwnerNode "Set-ClusterOwnerNode"
-[msdocs:Set-ClusterParameter]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Set-ClusterParameter "Set-ClusterParameter"
-[msdocs:Set-ClusterQuorum]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Set-ClusterQuorum "Set-ClusterQuorum"
-[msdocs:Set-ClusterResourceDependency]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Set-ClusterResourceDependency "Set-ClusterResourceDependency"
-[msdocs:Set-ClusterStorageSpacesDirect]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Set-ClusterStorageSpacesDirect "Set-ClusterStorageSpacesDirect"
-[msdocs:Set-ClusterStorageSpacesDirectDisk]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Set-ClusterStorageSpacesDirectDisk "Set-ClusterStorageSpacesDirectDisk"
-[msdocs:Get-ClusterQuorum]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Get-ClusterQuorum "Get-ClusterQuorum"
-[msdocs:New-Cluster]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/New-Cluster "New-Cluster"
-[msdocs:Start-ClusterGroup]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Start-ClusterGroup "Start-ClusterGroup"
-[msdocs:Start-ClusterNode]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Start-ClusterNode "Start-ClusterNode"
-[msdocs:Start-ClusterResource]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Start-ClusterResource "Start-ClusterResource"
-[msdocs:Remove-Cluster]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Remove-Cluster "Remove-Cluster"
-[msdocs:Remove-ClusterAccess]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Remove-ClusterAccess "Remove-ClusterAccess"
-[msdocs:Stop-ClusterGroup]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Stop-ClusterGroup "Stop-ClusterGroup"
-[msdocs:Remove-ClusterNode]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Remove-ClusterNode "Remove-ClusterNode"
-[msdocs:Start-Cluster]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Start-Cluster "Start-Cluster"
-[msdocs:Stop-ClusterResource]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Stop-ClusterResource "Stop-ClusterResource"
-[msdocs:Stop-Cluster]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Stop-Cluster "Stop-Cluster"
-[msdocs:Stop-ClusterNode]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Stop-ClusterNode "Stop-ClusterNode"
-[msdocs:Suspend-ClusterResource]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Suspend-ClusterResource "Suspend-ClusterResource"
-[msdocs:Suspend-ClusterNode]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Suspend-ClusterNode "Suspend-ClusterNode"
-[msdocs:Test-Cluster]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Test-Cluster "Test-Cluster"
-[msdocs:Test-ClusterResourceFailure]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Test-ClusterResourceFailure "Test-ClusterResourceFailure"
-[msdocs:Update-ClusterFunctionalLevel]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Update-ClusterFunctionalLevel "Update-ClusterFunctionalLevel"
-[msdocs:Update-ClusterIPResource]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Update-ClusterIPResource "Update-ClusterIPResource"
-[msdocs:Update-ClusterNetworkNameResource]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Update-ClusterNetworkNameResource "Update-ClusterNetworkNameResource"
-[msdocs:Update-ClusterVirtualMachineConfiguration]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Update-ClusterVirtualMachineConfiguration "Update-ClusterVirtualMachineConfiguration"
-
-<!-- Failover clusters -->
-[Add-ClusterCheckpoint]: #add-clustercheckpoint '```&#10;PS C:\> Add-ClusterCheckpoint&#10;```&#10;Adds a cryptographic key checkpoint or registry checkpoint for a resource.'
-[Add-ClusterGenericScriptRole]: #add-clustergenericscriptrole '```&#10;PS C:\> Add-ClusterGenericScriptRole&#10;```&#10;Configures an application controlled by a script that runs in Windows Script Host, within a failover cluster.'
-[Add-ClusterGenericServiceRole]: #add-clustergenericservicerole '```&#10;PS C:\> Add-ClusterGenericServiceRole&#10;```&#10;Configures high availability for a service that was not originally designed to run in a failover cluster.'
-[Add-ClusterGroupSetDependency]: #add-clustergroupsetdependency '```&#10;PS C:\> Add-ClusterGroupSetDependency&#10;```&#10;Adds a dependency to a cluster set.'
-[Add-ClusterGroupToSet]: #add-clustergrouptoset '```&#10;PS C:\> Add-ClusterGroupToSet&#10;```&#10;Adds a group to a set.'
-[Add-ClusteriSCSITargetServerRole]: #add-clusteriscsitargetserverrole '```&#10;PS C:\> Add-ClusteriSCSITargetServerRole&#10;```&#10;Creates a highly available iSCSI Target server.'
-[Add-ClusterResourceType]: #add-clusterresourcetype '```&#10;PS C:\> Add-ClusterResourceType&#10;```&#10;Adds a resource type to a failover cluster, and specifies information such as the dynamic-link library (DLL) to use with that resource type.'
-[Add-ClusterScaleOutFileServer]: #add-clusterscaleoutfileserver '```&#10;PS C:\> Add-ClusterScaleOutFileServer&#10;```&#10;Install the Scale-out File Server role&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 339'
-[Add-ClusterScaleOutFileServerRole]: #add-clusterscaleoutfileserverrole '```&#10;PS C:\> Add-ClusterScaleOutFileServerRole&#10;```&#10;Creates a clustered file server for scale-out application data.'
-[Add-ClusterServerRole]: #add-clusterserverrole '```&#10;PS C:\> Add-ClusterServerRole&#10;```&#10;Add the cluster server role to a server'
-[Clear-ClusterDiskReservation]: #clear-clusterdiskreservation '```&#10;PS C:\> Clear-ClusterDiskReservation&#10;```&#10;Clears the persistent reservation on a disk in a failover cluster.'
-[Clear-ClusterNode]: #clear-clusternode '```&#10;PS C:\> Clear-ClusterNode&#10;```&#10;Clears the cluster configuration from a node that was evicted from a failover cluster.'
-[Disable-ClusterStorageSpacesDirect]: #disable-clusterstoragespacesdirect '```&#10;PS C:\> Disable-ClusterStorageSpacesDirect&#10;```&#10;Disables S2D.'
-[Add-ClusterDisk]: #add-clusterdisk '```&#10;PS C:\> Add-ClusterDisk&#10;```&#10;Allow an admin to add a new disk to a failover cluster'
-[Add-ClusterFileServerRole]: #add-clusterfileserverrole '```&#10;PS C:\> Add-ClusterFileServerRole&#10;```&#10;This command allows an admin to create a clustered file server'
-[Add-ClusterGenericApplicationRole]: #add-clustergenericapplicationrole '```&#10;PS C:\> Add-ClusterGenericApplicationRole&#10;```&#10;Configures an application in the generic application role, providing high availability for an application not designed for use in a failover cluster.'
-[Get-ClusterAvailableDisk]: #get-clusteravailabledisk '```&#10;PS C:\> Get-ClusterAvailableDisk&#10;```&#10;Gets information about the disks that can support Failover Clustering and are visible to all nodes, but are not yet part of the set of clustered disks.'
-[Get-ClusterCheckpoint]: #get-clustercheckpoint '```&#10;PS C:\> Get-ClusterCheckpoint&#10;```&#10;Retrieves a cryptographic key checkpoint or registry checkpoint for a resource.'
-[Get-ClusterDiagnosticInfo]: #get-clusterdiagnosticinfo '```&#10;PS C:\> Get-ClusterDiagnosticInfo&#10;```&#10;Gets diagnostics for a cluster a cluster that contains VMs and produces a zip file containing the data.'
-[Get-ClusterFaultDomain]: #get-clusterfaultdomain '```&#10;PS C:\> Get-ClusterFaultDomain&#10;```&#10;Gets the cluster fault domains in a cluster.'
-[Get-ClusterFaultDomainXML]: #get-clusterfaultdomainxml '```&#10;PS C:\> Get-ClusterFaultDomainXML&#10;```&#10;Gets the fault domain as an XML string.'
-[Get-ClusterGroup]: #get-clustergroup '```&#10;PS C:\> Get-ClusterGroup&#10;```&#10;Gets information about one or more clustered roles (resource groups) in a failover cluster.'
-[Get-ClusterGroupSet]: #get-clustergroupset '```&#10;PS C:\> Get-ClusterGroupSet&#10;```&#10;Gets the group sets in the cluster.'
-[Get-ClusterGroupSetDependency]: #get-clustergroupsetdependency '```&#10;PS C:\> Get-ClusterGroupSetDependency&#10;```&#10;Gets the cluster group sets based on dependency relationships.'
-[Get-ClusterLog]: #get-clusterlog '```&#10;PS C:\> Get-ClusterLog&#10;```&#10;Creates a log file for all nodes, or a specific a node, in a failover cluster.'
-[Get-ClusterNetwork]: #get-clusternetwork '```&#10;PS C:\> Get-ClusterNetwork&#10;```&#10;Gets information about one or more networks in a failover cluster.'
-[Get-ClusterNetworkInterface]: #get-clusternetworkinterface '```&#10;PS C:\> Get-ClusterNetworkInterface&#10;```&#10;Gets information about one or more network adapters in a failover cluster.'
-[Add-ClusterGroup]: #add-clustergroup '```&#10;PS C:\> Add-ClusterGroup&#10;```&#10;Allow an admin to add a resource group to the failover cluster'
-[Add-ClusterNode]: #add-clusternode '```&#10;PS C:\> Add-ClusterNode&#10;```&#10;Allow an admin to add a node to a failover cluster'
-[Get-ClusterOwnerNode]: #get-clusterownernode '```&#10;PS C:\> Get-ClusterOwnerNode&#10;```&#10;Gets information about which nodes can own a resource in a failover cluster or information about the order of preference among owner nodes for a clustered role.'
-[Get-ClusterParameter]: #get-clusterparameter '```&#10;PS C:\> Get-ClusterParameter&#10;```&#10;Gets detailed information about an object in a failover cluster, such as a cluster resource.'
-[Add-ClusterResource]: #add-clusterresource '```&#10;PS C:\> Add-ClusterResource&#10;```&#10;Allow an admin to add a resource to a failover cluster'
-[Add-ClusterResourceDependency]: #add-clusterresourcedependency '```&#10;PS C:\> Add-ClusterResourceDependency&#10;```&#10;Add a resource dependency to a failover cluster'
-[Get-ClusterResource]: #get-clusterresource '```&#10;PS C:\> Get-ClusterResource&#10;```&#10;Gets information about one or more resources in a failover cluster.'
-[Get-ClusterResourceDependency]: #get-clusterresourcedependency '```&#10;PS C:\> Get-ClusterResourceDependency&#10;```&#10;Gets information about the dependencies that have been configured between clustered resources in a failover cluster.'
-[Get-ClusterResourceDependencyReport]: #get-clusterresourcedependencyreport '```&#10;PS C:\> Get-ClusterResourceDependencyReport&#10;```&#10;Generates a report that lists the dependencies between resources in a failover cluster.'
-[Get-ClusterResourceType]: #get-clusterresourcetype '```&#10;PS C:\> Get-ClusterResourceType&#10;```&#10;Gets information about one or more resource types in a failover cluster.'
-[Get-ClusterSharedVolume]: #get-clustersharedvolume '```&#10;PS C:\> Get-ClusterSharedVolume&#10;```&#10;Gets information about Cluster Shared Volumes in a failover cluster.'
-[Get-ClusterSharedVolumeState]: #get-clustersharedvolumestate '```&#10;PS C:\> Get-ClusterSharedVolumeState&#10;```&#10;Gets the state of Cluster Shared Volumes in a cluster.'
-[Get-ClusterStorageSpacesDirect]: #get-clusterstoragespacesdirect '```&#10;PS C:\> Get-ClusterStorageSpacesDirect&#10;```&#10;Gets the S2D settings from a cluster.'
-[Get-ClusterVMMonitoredItem]: #get-clustervmmonitoreditem '```&#10;PS C:\> Get-ClusterVMMonitoredItem&#10;```&#10;Gets the list of services and events currently being monitored in the virtual machine.'
-[Grant-ClusterAccess]: #grant-clusteraccess '```&#10;PS C:\> Grant-ClusterAccess&#10;```&#10;Grants access to a failover cluster, either full access or read-only access.'
-[Move-ClusterGroup]: #move-clustergroup '```&#10;PS C:\> Move-ClusterGroup&#10;```&#10;Moves a clustered role (a resource group) from one node to another in a failover cluster.'
-[Move-ClusterResource]: #move-clusterresource '```&#10;PS C:\> Move-ClusterResource&#10;```&#10;Moves a clustered resource from one clustered role to another within a failover cluster.'
-[Move-ClusterSharedVolume]: #move-clustersharedvolume '```&#10;PS C:\> Move-ClusterSharedVolume&#10;```&#10;Moves a Cluster Shared Volume (CSV) to ownership by a different node in a failover cluster.'
-[Move-ClusterVirtualMachineRole]: #move-clustervirtualmachinerole '```&#10;PS C:\> Move-ClusterVirtualMachineRole&#10;```&#10;Moves the ownership of a clustered virtual machine to a different node.'
-[Add-ClusterSharedVolume]: #add-clustersharedvolume '```&#10;PS C:\> Add-ClusterSharedVolume&#10;```&#10;Makes a volume available in Cluster Shared Volumes in a failover cluster.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 153'
-[Add-ClusterVirtualMachineRole]: #add-clustervirtualmachinerole '```&#10;PS C:\> Add-ClusterVirtualMachineRole&#10;```&#10;Creates a clustered virtual machine, that is, a virtual machine that can be failed over if necessary to a different server in the failover cluster.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 304'
-[New-ClusterFaultDomain]: #new-clusterfaultdomain '```&#10;PS C:\> New-ClusterFaultDomain&#10;```&#10;Creates a fault domain in the cluster.'
-[New-ClusterGroupSet]: #new-clustergroupset '```&#10;PS C:\> New-ClusterGroupSet&#10;```&#10;Create a names set of groups in the cluster.'
-[New-ClusterNameAccount]: #new-clusternameaccount '```&#10;PS C:\> New-ClusterNameAccount&#10;```&#10;Creates a cluster name account in Active Directory Domain Services.'
-[Add-ClusterVMMonitoredItem]: #add-clustervmmonitoreditem '```&#10;PS C:\> Add-ClusterVMMonitoredItem&#10;```&#10;Configures monitoring for a service or an Event Tracing for Windows (ETW) event so that it is monitored on a virtual machine.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 362'
-[Block-ClusterAccess]: #block-clusteraccess '```&#10;PS C:\> Block-ClusterAccess&#10;```&#10;Block the specified users from accessing a cluster'
-[Enable-ClusterStorageSpacesDirect]: #enable-clusterstoragespacesdirect '```&#10;PS C:\> Enable-ClusterStorageSpacesDirect&#10;```&#10;Enables S2D.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 354'
-[Get-Cluster]: #get-cluster '```&#10;PS C:\> Get-Cluster&#10;```&#10;Display information about a failover cluster'
-[Remove-ClusterCheckpoint]: #remove-clustercheckpoint '```&#10;PS C:\> Remove-ClusterCheckpoint&#10;```&#10;Removes a cryptographic key checkpoint or registry checkpoint for a resource.'
-[Remove-ClusterFaultDomain]: #remove-clusterfaultdomain '```&#10;PS C:\> Remove-ClusterFaultDomain&#10;```&#10;Removes a fault domain.'
-[Remove-ClusterGroup]: #remove-clustergroup '```&#10;PS C:\> Remove-ClusterGroup&#10;```&#10;Removes a clustered role, also called a resource group, from a failover cluster.'
-[Remove-ClusterGroupFromSet]: #remove-clustergroupfromset '```&#10;PS C:\> Remove-ClusterGroupFromSet&#10;```&#10;Removes a group from a set.'
-[Remove-ClusterGroupSet]: #remove-clustergroupset '```&#10;PS C:\> Remove-ClusterGroupSet&#10;```&#10;Removes a group set from the cluster.'
-[Remove-ClusterGroupSetDependency]: #remove-clustergroupsetdependency '```&#10;PS C:\> Remove-ClusterGroupSetDependency&#10;```&#10;Removes a dependency from a group set.'
-[Get-ClusterAccess]: #get-clusteraccess '```&#10;PS C:\> Get-ClusterAccess&#10;```&#10;Display permissions for a failover cluster'
-[Get-ClusterNode]: #get-clusternode '```&#10;PS C:\> Get-ClusterNode&#10;```&#10;Display information about the servers in a failover cluster'
-[Remove-ClusterResource]: #remove-clusterresource '```&#10;PS C:\> Remove-ClusterResource&#10;```&#10;Removes a clustered resource from the failover cluster.'
-[Remove-ClusterResourceDependency]: #remove-clusterresourcedependency '```&#10;PS C:\> Remove-ClusterResourceDependency&#10;```&#10;Removes a dependency between two resources in a clustered role within a failover cluster.'
-[Remove-ClusterResourceType]: #remove-clusterresourcetype '```&#10;PS C:\> Remove-ClusterResourceType&#10;```&#10;Removes a resource type from a failover cluster.'
-[Remove-ClusterSharedVolume]: #remove-clustersharedvolume '```&#10;PS C:\> Remove-ClusterSharedVolume&#10;```&#10;Removes a volume from the Cluster Shared Volumes in a failover cluster, and places it in Available Storage in the cluster.'
-[Remove-ClusterVMMonitoredItem]: #remove-clustervmmonitoreditem '```&#10;PS C:\> Remove-ClusterVMMonitoredItem&#10;```&#10;Removes monitoring of a service or event that is currently being monitored on a virtual machine.'
-[Repair-ClusterStorageSpacesDirect]: #repair-clusterstoragespacesdirect '```&#10;PS C:\> Repair-ClusterStorageSpacesDirect&#10;```&#10;Repairs S2D disks.'
-[Reset-ClusterVMMonitoredState]: #reset-clustervmmonitoredstate '```&#10;PS C:\> Reset-ClusterVMMonitoredState&#10;```&#10;Resets the Application Critical state of a virtual machine, so that the virtual machine is no longer marked as being in a critical state in the cluster.'
-[Resume-ClusterNode]: #resume-clusternode '```&#10;PS C:\> Resume-ClusterNode&#10;```&#10;Resumes a node from the paused state or brings back drained workloads to the node or both.'
-[Resume-ClusterResource]: #resume-clusterresource '```&#10;PS C:\> Resume-ClusterResource&#10;```&#10;Turns off maintenance for a disk resource or Cluster Shared Volume within a failover cluster.'
-[Set-ClusterFaultDomain]: #set-clusterfaultdomain '```&#10;PS C:\> Set-ClusterFaultDomain&#10;```&#10;Update an existing cluster fault domain.'
-[Set-ClusterFaultDomainXML]: #set-clusterfaultdomainxml '```&#10;PS C:\> Set-ClusterFaultDomainXML&#10;```&#10;Sets the cluster fault domain using XML.'
-[Set-ClusterGroupSet]: #set-clustergroupset '```&#10;PS C:\> Set-ClusterGroupSet&#10;```&#10;Updates a cluster group set.'
-[Set-ClusterLog]: #set-clusterlog '```&#10;PS C:\> Set-ClusterLog&#10;```&#10;Sets the size and level of detail for the cluster log.'
-[Set-ClusterOwnerNode]: #set-clusterownernode '```&#10;PS C:\> Set-ClusterOwnerNode&#10;```&#10;Specifies which nodes can own a resource in a failover cluster or specifies the order of preference among owner nodes for a clustered role, or resource group.'
-[Set-ClusterParameter]: #set-clusterparameter '```&#10;PS C:\> Set-ClusterParameter&#10;```&#10;Controls specific properties of an object in a failover cluster, such as a resource, a group, or a network.'
-[Set-ClusterQuorum]: #set-clusterquorum '```&#10;PS C:\> Set-ClusterQuorum&#10;```&#10;Configures quorum options for a failover cluster.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 318'
-[Set-ClusterResourceDependency]: #set-clusterresourcedependency '```&#10;PS C:\> Set-ClusterResourceDependency&#10;```&#10;Specifies the resources that a particular resource depends on within a failover cluster.'
-[Set-ClusterStorageSpacesDirect]: #set-clusterstoragespacesdirect '```&#10;PS C:\> Set-ClusterStorageSpacesDirect&#10;```&#10;Sets S2D cache parameters.'
-[Set-ClusterStorageSpacesDirectDisk]: #set-clusterstoragespacesdirectdisk '```&#10;PS C:\> Set-ClusterStorageSpacesDirectDisk&#10;```&#10;Configures the system to enable S2D to claim or not claim specific physical disks.'
-[Get-ClusterQuorum]: #get-clusterquorum '```&#10;PS C:\> Get-ClusterQuorum&#10;```&#10;Display cluster quorum in a cluster'
-[New-Cluster]: #new-cluster '```&#10;PS C:\> New-Cluster&#10;```&#10;Create a new failover cluster&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 337'
-[Start-ClusterGroup]: #start-clustergroup '```&#10;PS C:\> Start-ClusterGroup&#10;```&#10;Starts one or more clustered roles, also known as resource groups, on a failover cluster.'
-[Start-ClusterNode]: #start-clusternode '```&#10;PS C:\> Start-ClusterNode&#10;```&#10;Starts the Cluster service on a node in a failover cluster.'
-[Start-ClusterResource]: #start-clusterresource '```&#10;PS C:\> Start-ClusterResource&#10;```&#10;Brings a resource online in a failover cluster.'
-[Remove-Cluster]: #remove-cluster '```&#10;PS C:\> Remove-Cluster&#10;```&#10;Remove a failover cluster'
-[Remove-ClusterAccess]: #remove-clusteraccess '```&#10;PS C:\> Remove-ClusterAccess&#10;```&#10;Remove user access from the cluster'
-[Stop-ClusterGroup]: #stop-clustergroup '```&#10;PS C:\> Stop-ClusterGroup&#10;```&#10;Stops one or more clustered roles on a failover cluster.'
-[Remove-ClusterNode]: #remove-clusternode '```&#10;PS C:\> Remove-ClusterNode&#10;```&#10;Remove a node from a failover cluster'
-[Start-Cluster]: #start-cluster '```&#10;PS C:\> Start-Cluster&#10;```&#10;Start the Cluster service on all nodes'
-[Stop-ClusterResource]: #stop-clusterresource '```&#10;PS C:\> Stop-ClusterResource&#10;```&#10;Takes a resource offline in a failover cluster.'
-[Stop-Cluster]: #stop-cluster '```&#10;PS C:\> Stop-Cluster&#10;```&#10;Stop the Cluster service on all nodes'
-[Stop-ClusterNode]: #stop-clusternode '```&#10;PS C:\> Stop-ClusterNode&#10;```&#10;Stop the Cluster service on a node'
-[Suspend-ClusterResource]: #suspend-clusterresource '```&#10;PS C:\> Suspend-ClusterResource&#10;```&#10;Turns on maintenance for a disk resource or CSV so that you can run a disk maintenance tool without triggering failover.'
-[Suspend-ClusterNode]: #suspend-clusternode '```&#10;PS C:\> Suspend-ClusterNode&#10;```&#10;Pause the activity of a failover cluster node&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 374'
-[Test-Cluster]: #test-cluster '```&#10;PS C:\> Test-Cluster&#10;```&#10;Complete validation tests for a cluster'
-[Test-ClusterResourceFailure]: #test-clusterresourcefailure '```&#10;PS C:\> Test-ClusterResourceFailure&#10;```&#10;Simulates a failure of a cluster resource.'
-[Update-ClusterFunctionalLevel]: #update-clusterfunctionallevel '```&#10;PS C:\> Update-ClusterFunctionalLevel&#10;```&#10;Updates the functional level of a mixed-version cluster.'
-[Update-ClusterIPResource]: #update-clusteripresource '```&#10;PS C:\> Update-ClusterIPResource&#10;```&#10;Renews or releases the DHCP lease for an IP address resource in a failover cluster.'
-[Update-ClusterNetworkNameResource]: #update-clusternetworknameresource '```&#10;PS C:\> Update-ClusterNetworkNameResource&#10;```&#10;Registers existing Network Name resources with a DNS server in a way that does not interrupt cluster availability.'
-[Update-ClusterVirtualMachineConfiguration]: #update-clustervirtualmachineconfiguration '```&#10;PS C:\> Update-ClusterVirtualMachineConfiguration&#10;```&#10;Refreshes the configuration of a clustered virtual machine within a failover cluster.'
-
-[**`Cluster`**](#failover-clusters)
-<code>&nbsp;[g][Get-Cluster][?][msdocs:Get-Cluster]&nbsp;[n][New-Cluster][?][msdocs:New-Cluster]&nbsp;[r][Remove-Cluster][?][msdocs:Remove-Cluster]&nbsp;[sa][Start-Cluster][?][msdocs:Start-Cluster]&nbsp;[sp][Stop-Cluster][?][msdocs:Stop-Cluster]&nbsp;[t][Test-Cluster][?][msdocs:Test-Cluster]</code>
-<code>Access&nbsp;&nbsp;[gr][Grant-ClusterAccess][?][msdocs:Grant-ClusterAccess]&nbsp;[bl][Block-ClusterAccess][?][msdocs:Block-ClusterAccess]&nbsp;[g][Get-ClusterAccess][?][msdocs:Get-ClusterAccess]&nbsp;[r][Remove-ClusterAccess][?][msdocs:Remove-ClusterAccess]</code>
-<code>Disk&nbsp;[a][Add-ClusterDisk]</code>
-<code>FaultDomain&nbsp;[n][New-ClusterFaultDomain][^][msdocs:New-ClusterFaultDomain]&nbsp;[s][Set-ClusterFaultDomain][^][msdocs:Set-ClusterFaultDomain]</code>
-<code>FileServerRole&nbsp;[a][Add-ClusterFileServerRole]</code>
-<code>GenericApplicationRole&nbsp;[a][Add-ClusterGenericApplicationRole]</code>
-<code>Group&nbsp;[a][Add-ClusterGroup]</code>
-<code>Node&nbsp;[a][Add-ClusterNode]&nbsp;[g][Get-ClusterNode]&nbsp;[r][Remove-ClusterNode]&nbsp;[sp][Stop-ClusterNode]&nbsp;[ss][Suspend-ClusterNode]</code>
-<code>Quorum&nbsp;[g][Get-ClusterQuorum]&nbsp;[s][Set-ClusterQuorum]</code>
-<code>Resource&nbsp;[a][Add-ClusterResource]</code>
-<code>ResourceDependency&nbsp;[a][Add-ClusterResourceDependency]</code>
-<code>ScaleOutFileServer&nbsp;[a][Add-ClusterScaleOutFileServer]</code>
-<code>ServerRole&nbsp;[a][Add-ClusterServerRole]</code>
-<code>SharedVolume&nbsp;a</code>
-<code>StorageSpacesDirect&nbsp;[e][Enable-ClusterStorageSpacesDirect]</code>
-<code>VirtualMachineRole&nbsp;[m][Move-ClusterVirtualMachineRole][?][msdocs:Move-ClusterVirtualMachineRole]&nbsp;[a][Add-ClusterVirtualMachineRole][?][msdocs:Add-ClusterVirtualMachineRole]</code>
-<code>VMMonitoredItem&nbsp;[g][Get-ClusterVMMonitoredItem][?][msdocs:Get-ClusterVMMonitoredItem]&nbsp;[a][Add-ClusterVMMonitoredItem][?][msdocs:Add-ClusterVMMonitoredItem]&nbsp;[r][Remove-ClusterVMMonitoredItem][?][msdocs:Remove-ClusterVMMonitoredItem]</code>
 #### grouppolicy
 [Backup-GPO]: #backup-gpo '```&#10;[PS] Backup-GPO&#10;```&#10;Backs up one GPO or all the GPOs in a domain.'
 [Copy-GPO]: #copy-gpo '```&#10;[PS] Copy-GPO&#10;```&#10;Copies a GPO.'
@@ -1964,6 +1903,669 @@ Tasks
 - iSCSIVirtualDiskTargetMapping
 [`Add`][Add-IscsiVirtualDiskTargetMapping]<sup>[?][msdocs:Add-IscsiVirtualDiskTargetMapping]</sup>
 
+#### Microsoft.Powershell.Diagnostics
+[Get-WinEvent]: #get-winevent '```&#10;[PS] Get-WinEvent&#10;```&#10;Gets events from event logs and event tracing log files on local and remote computers.'
+[New-WinEvent]: #new-winevent '```&#10;[PS] New-WinEvent&#10;```&#10;Creates an ETW event for the specified event provider.'
+[Get-Counter]: #get-counter '```&#10;[PS] Get-Counter&#10;```&#10;Gets performance counter data from local and remote computers.'
+
+[msdocs:Get-WinEvent]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Diagnostics/Get-WinEvent "Get-WinEvent"
+[msdocs:New-WinEvent]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Diagnostics/New-WinEvent "New-WinEvent"
+[msdocs:Get-Counter]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Diagnostics/Get-Counter "Get-Counter"
+
+- Counter [`Get`][Get-Counter]<sup>[?][msdocs:Get-Counter]</sup>
+#### Microsoft.Powershell.LocalAccounts
+[msdocs:Add-LocalGroupMember]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.LocalAccounts/Add-LocalGroupMember "Add-LocalGroupMember"
+[msdocs:Get-LocalGroupMember]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.LocalAccounts/Get-LocalGroupMember "Get-LocalGroupMember"
+[msdocs:Remove-LocalGroupMember]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.LocalAccounts/Remove-LocalGroupMember "Remove-LocalGroupMember"
+[msdocs:Disable-LocalUser]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.LocalAccounts/Disable-LocalUser "Disable-LocalUser"
+[msdocs:Enable-LocalUser]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.LocalAccounts/Enable-LocalUser "Enable-LocalUser"
+[msdocs:Get-LocalUser]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.LocalAccounts/Get-LocalUser "Get-LocalUser"
+[msdocs:New-LocalUser]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.LocalAccounts/New-LocalUser "New-LocalUser"
+[msdocs:Remove-LocalUser]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.LocalAccounts/Remove-LocalUser "Remove-LocalUser"
+[msdocs:Rename-LocalUser]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.LocalAccounts/Rename-LocalUser "Rename-LocalUser"
+[msdocs:Set-LocalUser]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.LocalAccounts/Set-LocalUser "Set-LocalUser"
+
+[Add-LocalGroupMember]: #add-localgroupmember '```&#10;[PS] Add-LocalGroupMember&#10;```&#10;Add members to a local group'
+[Get-LocalGroupMember]: #get-localgroupmember '```&#10;[PS] Get-LocalGroupMember&#10;```&#10;Display members of a local group'
+[Remove-LocalGroupMember]: #remove-localgroupmember '```&#10;[PS] Remove-LocalGroupMember&#10;```&#10;Remove members from a local group'
+[Disable-LocalUser]: #disable-localuser '```&#10;[PS] Disable-LocalUser&#10;[PS] dlu&#10;```&#10;Disable a local user account'
+[Enable-LocalUser]: #enable-localuser '```&#10;[PS] Enable-LocalUser&#10;[PS] elu&#10;```&#10;Enable a local user account'
+[Get-LocalUser]: #get-localuser '```&#10;[PS] Get-LocalUser&#10;[PS] glu&#10;```&#10;Display local user account'
+[New-LocalUser]: #new-localuser '```&#10;[PS] New-LocalUser&#10;[PS] nlu&#10;```&#10;Create a local user account'
+[Remove-LocalUser]: #remove-localuser '```&#10;[PS] Remove-LocalUser&#10;[PS] rlu&#10;```&#10;Delete a local user account'
+[Rename-LocalUser]: #rename-localuser '```&#10;[PS] Rename-LocalUser&#10;[PS] rnlu&#10;```&#10;Delete local user account'
+[Set-LocalUser]: #set-localuser '```&#10;[PS] Set-LocalUser&#10;[PS] slu&#10;```&#10;Modify a local user account'
+
+- LocalGroupMember
+[`Add`][Add-LocalGroupMember]<sup>[?][msdocs:Add-LocalGroupMember]</sup>
+[`Get`][Get-LocalGroupMember]<sup>[?][msdocs:Get-LocalGroupMember]</sup>
+[`Remove`][Remove-LocalGroupMember]<sup>[?][msdocs:Remove-LocalGroupMember]</sup>
+- LocalUser
+[`Disable`][Disable-LocalUser]<sup>[?][msdocs:Disable-LocalUser]</sup>
+[`Enable`][Enable-LocalUser]<sup>[?][msdocs:Enable-LocalUser]</sup>
+[`Get`][Get-LocalUser]<sup>[?][msdocs:Get-LocalUser]</sup>
+[`New`][New-LocalUser]<sup>[?][msdocs:New-LocalUser]</sup>
+[`Remove`][Remove-LocalUser]<sup>[?][msdocs:Remove-LocalUser]</sup>
+[`Rename`][Rename-LocalUser]<sup>[?][msdocs:Rename-LocalUser]</sup>
+[`Set`][Set-LocalUser]<sup>[?][msdocs:Set-LocalUser]</sup>
+#### Microsoft.Powershell.Management
+[msdocs:Get-ChildItem]: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/Get-ChildItem "Get-ChildItem"
+[msdocs:Get-Clipboard]: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/Get-Clipboard "Get-Clipboard documentation"
+[msdocs:Set-Clipboard]: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/Set-Clipboard "Set-Clipboard documentation"
+[msdocs:Rename-Computer]: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/Rename-Computer "Rename-Computer documentation"
+[msdocs:Restart-Computer]: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/Restart-Computer "Restart-Computer documentation"
+[msdocs:Stop-Computer]: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/Stop-Computer "Stop-Computer documentation"
+[msdocs:Get-ComputerInfo]: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/Get-ComputerInfo "Get-ComputerInfo documentation"
+[msdocs:Test-Connection]: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/Test-Connection "Test-Connection documentation"
+[msdocs:Add-Content]: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/Add-Content "Add-Content documentation"
+[msdocs:Clear-Content]: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/Clear-Content "Clear-Content documentation"
+[msdocs:Get-Content]: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/Get-Content "Get-Content documentation"
+[msdocs:Set-Content]: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/Set-Content "Set-Content documentation"
+[msdocs:Clear-EventLog]: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/Clear-EventLog "Clear-EventLog documentation"
+[msdocs:Get-EventLog]: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/Get-EventLog "Get-EventLog documentation"
+[msdocs:Limit-EventLog]: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/Limit-EventLog "Limit-EventLog documentation"
+[msdocs:New-EventLog]: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/New-EventLog "New-EventLog documentation"
+[msdocs:Remove-EventLog]: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/Remove-EventLog "Remove-EventLog documentation"
+[msdocs:Show-EventLog]: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/Show-EventLog "Show-EventLog documentation"
+[msdocs:Write-EventLog]: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/Write-EventLog "Write-EventLog documentation"
+[msdocs:Get-HotFix]: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/Get-HotFix "Get-HotFix documentation"
+[msdocs:Clear-Item]: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/Clear-Item "Clear-Item documentation"
+[msdocs:Copy-Item]: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/Copy-Item "Copy-Item documentation"
+[msdocs:Get-Item]: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/Get-Item "Get-Item documentation"
+[msdocs:Invoke-Item]: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/Invoke-Item "Invoke-Item documentation"
+[msdocs:Move-Item]: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/Move-Item "Move-Item documentation"
+[msdocs:New-Item]: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/New-Item "New-Item documentation"
+[msdocs:Remove-Item]: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/Remove-Item "Remove-Item documentation"
+[msdocs:Rename-Item]: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/Rename-Item "Rename-Item documentation"
+[msdocs:Set-Item]: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/Set-Item "Set-Item documentation"
+[msdocs:Clear-ItemProperty]: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/Clear-ItemProperty "Clear-ItemProperty documentation"
+[msdocs:Copy-ItemProperty]: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/Copy-ItemProperty "Copy-ItemProperty documentation"
+[msdocs:Get-ItemProperty]: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/Get-ItemProperty "Get-ItemProperty documentation"
+[msdocs:Move-ItemProperty]: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/Move-ItemProperty "Move-ItemProperty documentation"
+[msdocs:New-ItemProperty]: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/New-ItemProperty "New-ItemProperty documentation"
+[msdocs:Remove-ItemProperty]: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/Remove-ItemProperty "Remove-ItemProperty documentation"
+[msdocs:Rename-ItemProperty]: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/Rename-ItemProperty "Rename-ItemProperty documentation"
+[msdocs:Set-ItemProperty]: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/Set-ItemProperty "Set-ItemProperty documentation"
+[msdocs:Get-ItemPropertyValue]: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/Get-ItemPropertyValue "Get-ItemPropertyValue documentation"
+[msdocs:Get-Location]: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/Get-Location "Get-Location documentation"
+[msdocs:Pop-Location]: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/Pop-Location "Pop-Location documentation"
+[msdocs:Push-Location]: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/Push-Location "Push-Location documentation"
+[msdocs:Set-Location]: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/Set-Location "Set-Location documentation"
+[msdocs:Convert-Path]: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/Convert-Path "Convert-Path documentation"
+[msdocs:Join-Path]: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/Join-Path "Join-Path documentation"
+[msdocs:Resolve-Path]: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/Resolve-Path "Resolve-Path documentation"
+[msdocs:Split-Path]: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/Split-Path "Split-Path documentation"
+[msdocs:Test-Path]: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/Test-Path "Test-Path documentation"
+[msdocs:Get-Process]: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/Get-Process "Get-Process documentation"
+[msdocs:Debug-Process]: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/Debug-Process "Debug-Process documentation"
+[msdocs:Start-Process]: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/Start-Process "Start-Process documentation"
+[msdocs:Stop-Process]: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/Stop-Process "Stop-Process documentation"
+[msdocs:Wait-Process]: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/Wait-Process "Wait-Process documentation"
+[msdocs:Get-PSDrive]: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/Get-PSDrive "Get-PSDrive documentation"
+[msdocs:New-PSDrive]: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/New-PSDrive "New-PSDrive documentation"
+[msdocs:Remove-PSDrive]: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/Remove-PSDrive "Remove-PSDrive documentation"
+[msdocs:Get-PSProvider]: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/Get-PSProvider "Get-PSProvider documentation"
+[msdocs:Clear-RecycleBin]: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/Clear-RecycleBin "Clear-RecycleBin documentation"
+[msdocs:Get-Service]: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/Get-Service "Get-Service documentation"
+[msdocs:New-Service]: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/New-Service "New-Service documentation"
+[msdocs:Remove-Service]: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/Remove-Service "Remove-Service documentation"
+[msdocs:Restart-Service]: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/Restart-Service "Restart-Service documentation"
+[msdocs:Resume-Service]: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/Resume-Service "Resume-Service documentation"
+[msdocs:Set-Service]: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/Set-Service "Set-Service documentation"
+[msdocs:Start-Service]: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/Start-Service "Start-Service documentation"
+[msdocs:Stop-Service]: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/Stop-Service "Stop-Service documentation"
+[msdocs:Suspend-Service]: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/Suspend-Service "Suspend-Service documentation"
+[msdocs:Get-TimeZone]: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/Get-TimeZone "Get-TimeZone documentation"
+[msdocs:Set-TimeZone]: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/Set-TimeZone "Set-TimeZone documentation"
+[msdocs:Complete-Transaction]: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/Complete-Transaction "Complete-Transaction documentation"
+[msdocs:Start-Transaction]: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/Start-Transaction "Start-Transaction documentation"
+[msdocs:Get-WMIObject]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Management/Get-WMIObject "Get-WMIObject documentation"
+
+[Get-ChildItem]: #get-childitem '```&#10;[PS] Get-ChildItem&#10;[PS] dir gci ls&#10;```&#10;Gets the items and child items in one or more specified locations.'
+[Get-Clipboard]: #get-clipboard '```&#10;[PS] Get-Clipboard&#10;[PS] gcb&#10;```&#10;Gets the contents of the clipboard. [!NOTE] > On Linux, this cmdlet requires the xclip utility to be in the path.'
+[Set-Clipboard]: #set-clipboard '```&#10;[PS] Set-Clipboard&#10;[PS] scb&#10;```&#10;Sets the contents of the clipboard.'
+[Rename-Computer]: #rename-computer '```&#10;[PS] Rename-Computer&#10;```&#10;Renames a computer.'
+[Restart-Computer]: #restart-computer '```&#10;[PS] Restart-Computer&#10;```&#10;Restarts the operating system on local and remote computers.'
+[Stop-Computer]: #stop-computer '```&#10;[PS] Stop-Computer&#10;```&#10;Stops (shuts down) local and remote computers.'
+[Get-ComputerInfo]: #get-computerinfo '```&#10;[PS] Get-ComputerInfo&#10;[PS] gin&#10;```&#10;Gets a consolidated object of system and operating system properties.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 274'
+[Test-Connection]: #test-connection '```&#10;[PS] Test-Connection&#10;```&#10;Sends ICMP echo request packets, or pings, to one or more computers.'
+[Add-Content]: #add-content '```&#10;[PS] Add-Content&#10;[PS] ac&#10;```&#10;Add content, such as words or data, to a file'
+[Clear-Content]: #clear-content '```&#10;[PS] Clear-Content&#10;```&#10;Deletes the contents of an item, but does not delete the item.'
+[Get-Content]: #get-content '```&#10;[PS] Get-Content&#10;[PS] gc&#10;```&#10;Gets the content of the item at the specified location.'
+[Set-Content]: #set-content '```&#10;[PS] Set-Content&#10;```&#10;Writes new content or replaces existing content in a file.'
+[Clear-EventLog]: #clear-eventlog '```&#10;[PS] Clear-EventLog&#10;```&#10;Clears all entries from specified event logs on the local or remote computers.'
+[Get-EventLog]: #get-eventlog '```&#10;[PS] Get-EventLog&#10;```&#10;Gets the events in an event log, or a list of the event logs, on the local computer or remote computers.'
+[Limit-EventLog]: #limit-eventlog '```&#10;[PS] Limit-EventLog&#10;```&#10;Sets the event log properties that limit the size of the event log and the age of its entries.'
+[New-EventLog]: #new-eventlog '```&#10;[PS] New-EventLog&#10;```&#10;Creates a new event log and a new event source on a local or remote computer.'
+[Remove-EventLog]: #remove-eventlog '```&#10;[PS] Remove-EventLog&#10;```&#10;Deletes an event log or unregisters an event source.'
+[Show-EventLog]: #show-eventlog '```&#10;[PS] Show-EventLog&#10;```&#10;Displays the event logs of the local or a remote computer in Event Viewer.'
+[Write-EventLog]: #write-eventlog '```&#10;[PS] Write-EventLog&#10;```&#10;Writes an event to an event log.'
+[Get-HotFix]: #get-hotfix '```&#10;[PS] Get-HotFix&#10;```&#10;Gets the hotfixes that are installed on local or remote computers.'
+[Clear-Item]: #clear-item '```&#10;[PS] Clear-Item&#10;```&#10;Clears the contents of an item, but does not delete the item.'
+[Copy-Item]: #copy-item '```&#10;[PS] Copy-Item&#10;[PS] cpi&#10;```&#10;Copies an item from one location to another.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 180'
+[Get-Item]: #get-item '```&#10;[PS] Get-Item&#10;[PS] gi&#10;```&#10;Gets the item at the specified location.'
+[Invoke-Item]: #invoke-item '```&#10;[PS] Invoke-Item&#10;```&#10;Performs the default action on the specified item.'
+[Move-Item]: #move-item '```&#10;[PS] Move-Item&#10;```&#10;Moves an item from one location to another.'
+[New-Item]: #new-item '```&#10;[PS] New-Item&#10;[PS] ni&#10;```&#10;Create a new item and set its value. The type of item created depends on the context.'
+[Remove-Item]: #remove-item '```&#10;[PS] Remove-Item&#10;[PS] ri&#10;```&#10;Deletes the specified items.'
+[Rename-Item]: #rename-item '```&#10;[PS] Rename-Item&#10;```&#10;Renames an item in a PowerShell provider namespace.'
+[Set-Item]: #set-item '```&#10;[PS] Set-Item&#10;[PS] si&#10;```&#10;Changes the value of an item to the value specified in the command.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 56'
+[Clear-ItemProperty]: #clear-itemproperty '```&#10;[PS] Clear-ItemProperty&#10;```&#10;Clears the value of a property but does not delete the property.'
+[Copy-ItemProperty]: #copy-itemproperty '```&#10;[PS] Copy-ItemProperty&#10;```&#10;Copies a property and value from a specified location to another location.'
+[Get-ItemProperty]: #get-itemproperty '```&#10;[PS] Get-ItemProperty&#10;```&#10;Gets the properties of a specified item.'
+[Move-ItemProperty]: #move-itemproperty '```&#10;[PS] Move-ItemProperty&#10;```&#10;Moves a property from one location to another.'
+[New-ItemProperty]: #new-itemproperty '```&#10;[PS] New-ItemProperty&#10;```&#10;Creates a new property for an item and sets its value.'
+[Remove-ItemProperty]: #remove-itemproperty '```&#10;[PS] Remove-ItemProperty&#10;```&#10;Deletes the property and its value from an item.'
+[Rename-ItemProperty]: #rename-itemproperty '```&#10;[PS] Rename-ItemProperty&#10;```&#10;Renames a property of an item.'
+[Set-ItemProperty]: #set-itemproperty '```&#10;[PS] Set-ItemProperty&#10;```&#10;Creates or changes the value of a property of an item.'
+[Get-ItemPropertyValue]: #get-itempropertyvalue '```&#10;[PS] Get-ItemPropertyValue&#10;```&#10;Gets the value for one or more properties of a specified item.'
+[Get-Location]: #get-location '```&#10;[PS] Get-Location&#10;```&#10;Gets information about the current working location or a location stack.'
+[Pop-Location]: #pop-location '```&#10;[PS] Pop-Location&#10;```&#10;Changes the current location to the location most recently pushed onto the stack.'
+[Push-Location]: #push-location '```&#10;[PS] Push-Location&#10;```&#10;Adds the current location to the top of a location stack.'
+[Set-Location]: #set-location '```&#10;[PS] Set-Location&#10;[PS] sl&#10;```&#10;Sets the current working location to a specified location.'
+[Convert-Path]: #convert-path '```&#10;[PS] Convert-Path&#10;```&#10;Converts a path from a PowerShell path to a PowerShell provider path.'
+[Join-Path]: #join-path '```&#10;[PS] Join-Path&#10;```&#10;Combines a path and a child path into a single path.'
+[Resolve-Path]: #resolve-path '```&#10;[PS] Resolve-Path&#10;```&#10;Resolves the wildcard characters in a path, and displays the path contents.'
+[Split-Path]: #split-path '```&#10;[PS] Split-Path&#10;```&#10;Returns the specified part of a path.'
+[Test-Path]: #test-path '```&#10;[PS] Test-Path&#10;```&#10;Determines whether all elements of a path exist.'
+[Get-Process]: #get-process '```&#10;[PS] Get-Process&#10;[PS] gps&#10;```&#10;Display running processes'
+[Debug-Process]: #debug-process '```&#10;[PS] Debug-Process&#10;```&#10;Debugs one or more processes running on the local computer.'
+[Start-Process]: #start-process '```&#10;[PS] Start-Process&#10;[PS] saps&#10;```&#10;Start one or more processes on the local computer.'
+[Stop-Process]: #stop-process '```&#10;[PS] Stop-Process&#10;[PS] spps&#10;```&#10;Stop one or more running processes'
+[Wait-Process]: #wait-process '```&#10;[PS] Wait-Process&#10;```&#10;Waits for the processes to be stopped before accepting more input.'
+[Get-PSDrive]: #get-psdrive '```&#10;[PS] Get-PSDrive&#10;[PS] gdr&#10;```&#10;Gets drives in the current session.'
+[New-PSDrive]: #new-psdrive '```&#10;[PS] New-PSDrive&#10;[PS] ndr&#10;```&#10;Creates temporary and persistent mapped network drives.'
+[Remove-PSDrive]: #remove-psdrive '```&#10;[PS] Remove-PSDrive&#10;[PS] rdr&#10;```&#10;Deletes temporary PowerShell drives and disconnects mapped network drives.'
+[Get-PSProvider]: #get-psprovider '```&#10;[PS] Get-PSProvider&#10;```&#10;Gets information about the specified PowerShell provider.'
+[Clear-RecycleBin]: #clear-recyclebin '```&#10;[PS] Clear-RecycleBin&#10;```&#10;Clears the contents of a recycle bin.'
+[Get-Service]: #get-service '```&#10;[PS] Get-Service&#10;[PS] gsv&#10;```&#10;Display services'
+[New-Service]: #new-service '```&#10;[PS] New-Service&#10;```&#10;Creates a new Windows service.'
+[Remove-Service]: #remove-service '```&#10;[PS] Remove-Service&#10;```&#10;Removes a Windows service.'
+[Restart-Service]: #restart-service '```&#10;[PS] Restart-Service&#10;```&#10;Stops and then starts one or more services.'
+[Resume-Service]: #resume-service '```&#10;[PS] Resume-Service&#10;```&#10;Resumes one or more suspended (paused) services.'
+[Set-Service]: #set-service '```&#10;[PS] Set-Service&#10;```&#10;Starts, stops, and suspends a service, and changes its properties'
+[Start-Service]: #start-service '```&#10;[PS] Start-Service&#10;[PS] sasv&#10;```&#10;Start one or more stopped services'
+[Stop-Service]: #stop-service '```&#10;[PS] Stop-Service&#10;[PS] spsv&#10;```&#10;Stop one or more services'
+[Suspend-Service]: #suspend-service '```&#10;[PS] Suspend-Service&#10;```&#10;Suspends (pauses) one or more running services.'
+[Get-TimeZone]: #get-timezone '```&#10;[PS] Get-TimeZone&#10;```&#10;Gets the current time zone or a list of available time zones.'
+[Set-TimeZone]: #set-timezone '```&#10;[PS] Set-TimeZone&#10;```&#10;Sets the system time zone to a specified time zone.'
+[Complete-Transaction]: #complete-transaction '```&#10;[PS] Complete-Transaction&#10;```&#10;Commit the transaction'
+[Start-Transaction]: #start-transaction '```&#10;[PS] Start-Transaction&#10;```&#10;Start a new transaction'
+[Get-WMIObject]: #get-wmiobject '```&#10;[PS] Get-WMIObject&#10;[PS] gwmi&#10;```&#10;Gets instances of Windows Management Instrumentation (WMI) classes or information about the available classes.&#10;Superseded by `Get-CimInstance` since Powershell 3.0'
+
+- ChildItem
+[`Get`][Get-ChildItem]<sup>[?][msdocs:Get-ChildItem]</sup>
+- Clipboard
+[`Get`][Get-Clipboard]<sup>[?][msdocs:Get-Clipboard]</sup>
+[`Set`][Set-Clipboard]<sup>[?][msdocs:Set-Clipboard]</sup>
+- Computer
+[`Rename`][Rename-Computer]<sup>[?][msdocs:Rename-Computer]</sup>
+[`Restart`][Restart-Computer]<sup>[?][msdocs:Restart-Computer]</sup>
+[`Stop`][Stop-Computer]<sup>[?][msdocs:Stop-Computer]</sup>
+- ComputerInfo
+[`Get`][Get-ComputerInfo]<sup>[?][msdocs:Get-ComputerInfo]</sup>
+- Connection
+[`Test`][Test-Connection]<sup>[?][msdocs:Test-Connection]</sup>
+- Content
+[`Add`][Add-Content]<sup>[?][msdocs:Add-Content]</sup>
+[`Clear`][Clear-Content]<sup>[?][msdocs:Clear-Content]</sup>
+[`Get`][Get-Content]<sup>[?][msdocs:Get-Content]</sup>
+[`Set`][Set-Content]<sup>[?][msdocs:Set-Content]</sup>
+- EventLog
+[`Clear`][Clear-EventLog]<sup>[?][msdocs:Clear-EventLog]</sup>
+[`Get`][Get-EventLog]<sup>[?][msdocs:Get-EventLog]</sup>
+[`Limit`][Limit-EventLog]<sup>[?][msdocs:Limit-EventLog]</sup>
+[`New`][New-EventLog]<sup>[?][msdocs:New-EventLog]</sup>
+[`Remove`][Remove-EventLog]<sup>[?][msdocs:Remove-EventLog]</sup>
+[`Show`][Show-EventLog]<sup>[?][msdocs:Show-EventLog]</sup>
+[`Write`][Write-EventLog]<sup>[?][msdocs:Write-EventLog]</sup>
+- Item
+[`Clear`][Clear-Item]<sup>[?][msdocs:Clear-Item]</sup>
+[`Copy`][Copy-Item]<sup>[?][msdocs:Copy-Item]</sup>
+[`Get`][Get-Item]<sup>[?][msdocs:Get-Item]</sup>
+[`Invoke`][Invoke-Item]<sup>[?][msdocs:Invoke-Item]</sup>
+[`Move`][Move-Item]<sup>[?][msdocs:Move-Item]</sup>
+[`New`][New-Item]<sup>[?][msdocs:New-Item]</sup>
+[`Remove`][Remove-Item]<sup>[?][msdocs:Remove-Item]</sup>
+[`Rename`][Rename-Item]<sup>[?][msdocs:Rename-Item]</sup>
+[`Set`][Set-Item]<sup>[?][msdocs:Set-Item]</sup>
+- ItemProperty
+[`Clear`][Clear-ItemProperty]<sup>[?][msdocs:Clear-ItemProperty]</sup>
+[`Copy`][Copy-ItemProperty]<sup>[?][msdocs:Copy-ItemProperty]</sup>
+[`Get`][Get-ItemProperty]<sup>[?][msdocs:Get-ItemProperty]</sup>
+[`Move`][Move-ItemProperty]<sup>[?][msdocs:Move-ItemProperty]</sup>
+[`New`][New-ItemProperty]<sup>[?][msdocs:New-ItemProperty]</sup>
+[`Remove`][Remove-ItemProperty]<sup>[?][msdocs:Remove-ItemProperty]</sup>
+[`Rename`][Rename-ItemProperty]<sup>[?][msdocs:Rename-ItemProperty]</sup>
+[`Set`][Set-ItemProperty]<sup>[?][msdocs:Set-ItemProperty]</sup>
+- Location
+[`Get`][Get-Location]<sup>[?][msdocs:Get-Location]</sup>
+[`Pop`][Pop-Location]<sup>[?][msdocs:Pop-Location]</sup>
+[`Push`][Push-Location]<sup>[?][msdocs:Push-Location]</sup>
+[`Set`][Set-Location]<sup>[?][msdocs:Set-Location]</sup>
+- Path
+[`Convert`][Convert-Path]<sup>[?][msdocs:Convert-Path]</sup>
+[`Join`][Join-Path]<sup>[?][msdocs:Join-Path]</sup>
+[`Resolve`][Resolve-Path]<sup>[?][msdocs:Resolve-Path]</sup>
+[`Split`][Split-Path]<sup>[?][msdocs:Split-Path]</sup>
+[`Test`][Test-Path]<sup>[?][msdocs:Test-Path]</sup>
+- Process
+[`Get`][Get-Process]<sup>[?][msdocs:Get-Process]</sup>
+[`Debug`][Debug-Process]<sup>[?][msdocs:Debug-Process]</sup>
+[`Start`][Start-Process]<sup>[?][msdocs:Start-Process]</sup>
+[`Stop`][Stop-Process]<sup>[?][msdocs:Stop-Process]</sup>
+[`Wait`][Wait-Process]<sup>[?][msdocs:Wait-Process]</sup>
+- PSDrive
+[`Get`][Get-PSDrive]<sup>[?][msdocs:Get-PSDrive]</sup>
+[`New`][New-PSDrive]<sup>[?][msdocs:New-PSDrive]</sup>
+[`Remove`][Remove-PSDrive]<sup>[?][msdocs:Remove-PSDrive]</sup>
+- RecycleBin
+[`Clear`][Clear-RecycleBin]<sup>[?][msdocs:Clear-RecycleBin]</sup>
+- Service
+[`Get`][Get-Service]<sup>[?][msdocs:Get-Service]</sup>
+[`New`][New-Service]<sup>[?][msdocs:New-Service]</sup>
+[`Remove`][Remove-Service]<sup>[?][msdocs:Remove-Service]</sup>
+[`Restart`][Restart-Service]<sup>[?][msdocs:Restart-Service]</sup>
+[`Resume`][Resume-Service]<sup>[?][msdocs:Resume-Service]</sup>
+[`Set`][Set-Service]<sup>[?][msdocs:Set-Service]</sup>
+[`Start`][Start-Service]<sup>[?][msdocs:Start-Service]</sup>
+[`Stop`][Stop-Service]<sup>[?][msdocs:Stop-Service]</sup>
+[`Suspend`][Suspend-Service]<sup>[?][msdocs:Suspend-Service]</sup>
+- Transaction
+[`Complete`][Complete-Transaction]<sup>[?][msdocs:Complete-Transaction]</sup>
+[`Start`][Start-Transaction]<sup>[?][msdocs:Start-Transaction]</sup>
+- WMIObject
+[`Get`][Get-WMIObject]<sup>[?][msdocs:Get-WMIObject]</sup>
+#### Microsoft.Powershell.Utility
+[msdocs:Export-Alias]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/Export-Alias "Export-Alias documentation"
+[msdocs:Get-Alias]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/Get-Alias "Get-Alias documentation"
+[msdocs:Import-Alias]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/Import-Alias "Import-Alias documentation"
+[msdocs:New-Alias]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/New-Alias "New-Alias documentation"
+[msdocs:Remove-Alias]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/Remove-Alias "Remove-Alias documentation"
+[msdocs:Set-Alias]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/Set-Alias "Set-Alias documentation"
+[msdocs:Export-Clixml]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/Export-Clixml "Export-Clixml documentation"
+[msdocs:Import-Clixml]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/Import-Clixml "Import-Clixml documentation"
+[msdocs:Measure-Command]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/Measure-Command "Measure-Command documentation"
+[msdocs:Show-Command]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/Show-Command "Show-Command documentation"
+[msdocs:Trace-Command]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/Trace-Command "Trace-Command documentation"
+[msdocs:ConvertFrom-Csv]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/ConvertFrom-Csv "ConvertFrom-Csv documentation"
+[msdocs:ConvertTo-Csv]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/ConvertTo-Csv "ConvertTo-Csv documentation"
+[msdocs:Export-Csv]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/Export-Csv "Export-Csv documentation"
+[msdocs:Import-Csv]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/Import-Csv "Import-Csv documentation"
+[msdocs:Get-Culture]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/Get-Culture "Get-Culture documentation"
+[msdocs:Format-Custom]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/Format-Custom "Format-Custom documentation"
+[msdocs:Get-Date]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/Get-Date "Get-Date documentation"
+[msdocs:Set-Date]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/Set-Date "Set-Date documentation"
+[msdocs:Write-Debug]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/Write-Debug "Write-Debug documentation"
+[msdocs:Wait-Debugger]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/Wait-Debugger "Wait-Debugger documentation"
+[msdocs:Register-EngineEvent]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/Register-EngineEvent "Register-EngineEvent documentation"
+[msdocs:Get-Error]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/Get-Error "Get-Error documentation"
+[msdocs:Write-Error]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/Write-Error "Write-Error documentation"
+[msdocs:Get-Event]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/Get-Event "Get-Event documentation"
+[msdocs:New-Event]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/New-Event "New-Event documentation"
+[msdocs:Remove-Event]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/Remove-Event "Remove-Event documentation"
+[msdocs:Unregister-Event]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/Unregister-Event "Unregister-Event documentation"
+[msdocs:Wait-Event]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/Wait-Event "Wait-Event documentation"
+[msdocs:Get-EventSubscriber]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/Get-EventSubscriber "Get-EventSubscriber documentation"
+[msdocs:Invoke-Expression]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/Invoke-Expression "Invoke-Expression documentation"
+[msdocs:Out-File]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/Out-File "Out-File documentation"
+[msdocs:Unblock-File]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/Unblock-File "Unblock-File documentation"
+[msdocs:Get-FileHash]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/Get-FileHash "Get-FileHash documentation"
+[msdocs:Export-FormatData]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/Export-FormatData "Export-FormatData documentation"
+[msdocs:Get-FormatData]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/Get-FormatData "Get-FormatData documentation"
+[msdocs:Update-FormatData]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/Update-FormatData "Update-FormatData documentation"
+[msdocs:Out-GridView]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/Out-GridView "Out-GridView documentation"
+[msdocs:New-Guid]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/New-Guid "New-Guid documentation"
+[msdocs:Format-Hex]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/Format-Hex "Format-Hex documentation"
+[msdocs:Get-Host]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/Get-Host "Get-Host documentation"
+[msdocs:Read-Host]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/Read-Host "Read-Host documentation"
+[msdocs:Write-Host]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/Write-Host "Write-Host documentation"
+[msdocs:ConvertTo-Html]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/ConvertTo-Html "ConvertTo-Html documentation"
+[msdocs:Write-Information]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/Write-Information "Write-Information documentation"
+[msdocs:ConvertFrom-Json]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/ConvertFrom-Json "ConvertFrom-Json documentation"
+[msdocs:ConvertTo-Json]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/ConvertTo-Json "ConvertTo-Json documentation"
+[msdocs:Test-Json]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/Test-Json "Test-Json documentation"
+[msdocs:Format-List]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/Format-List "Format-List documentation"
+[msdocs:Update-List]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/Update-List "Update-List documentation"
+[msdocs:Import-LocalizedData]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/Import-LocalizedData "Import-LocalizedData documentation"
+[msdocs:Send-MailMessage]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/Send-MailMessage "Send-MailMessage documentation"
+[msdocs:ConvertFrom-Markdown]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/ConvertFrom-Markdown "ConvertFrom-Markdown documentation"
+[msdocs:Show-Markdown]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/Show-Markdown "Show-Markdown documentation"
+[msdocs:Get-MarkdownOption]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/Get-MarkdownOption "Get-MarkdownOption documentation"
+[msdocs:Set-MarkdownOption]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/Set-MarkdownOption "Set-MarkdownOption documentation"
+[msdocs:Get-Member]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/Get-Member "Get-Member documentation"
+[msdocs:Add-Member]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/Add-Member "Add-Member documentation"
+[msdocs:Measure-Object]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/Measure-Object "Measure-Object documentation"
+[msdocs:New-Object]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/New-Object "New-Object documentation"
+[msdocs:Compare-Object]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/Compare-Object "Compare-Object documentation"
+[msdocs:Group-Object]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/Group-Object "Group-Object documentation"
+[msdocs:Sort-Object]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/Sort-Object "Sort-Object documentation"
+[msdocs:Tee-Object]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/Tee-Object "Tee-Object documentation"
+[msdocs:Select-Object]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/Select-Object "Select-Object documentation"
+[msdocs:Register-ObjectEvent]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/Register-ObjectEvent "Register-ObjectEvent"
+[msdocs:Write-Output]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/Write-Output "Write-Output"
+[msdocs:Import-PowerShellDataFile]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/Import-PowerShellDataFile "Import-PowerShellDataFile"
+[msdocs:Out-Printer]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/Out-Printer "Out-Printer"
+[msdocs:Write-Progress]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/Write-Progress "Write-Progress"
+[msdocs:Disable-PSBreakpoint]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/Disable-PSBreakpoint "Disable-PSBreakpoint"
+[msdocs:Enable-PSBreakpoint]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/Enable-PSBreakpoint "Enable-PSBreakpoint"
+[msdocs:Get-PSBreakpoint]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/Get-PSBreakpoint "Get-PSBreakpoint"
+[msdocs:Remove-PSBreakpoint]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/Remove-PSBreakpoint "Remove-PSBreakpoint"
+[msdocs:Set-PSBreakpoint]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/Set-PSBreakpoint "Set-PSBreakpoint"
+[msdocs:Get-PSCallStack]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/Get-PSCallStack "Get-PSCallStack"
+[msdocs:Export-PSSession]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/Export-PSSession "Export-PSSession"
+[msdocs:Import-PSSession]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/Import-PSSession "Import-PSSession"
+[msdocs:Get-Random]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/Get-Random "Get-Random"
+[msdocs:Invoke-RestMethod]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/Invoke-RestMethod "Invoke-RestMethod"
+[msdocs:Debug-Runspace]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/Debug-Runspace "Debug-Runspace"
+[msdocs:Get-Runspace]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/Get-Runspace "Get-Runspace"
+[msdocs:Disable-RunspaceDebug]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/Disable-RunspaceDebug "Disable-RunspaceDebug"
+[msdocs:Enable-RunspaceDebug]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/Enable-RunspaceDebug "Enable-RunspaceDebug"
+[msdocs:Get-RunspaceDebug]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/Get-RunspaceDebug "Get-RunspaceDebug"
+[msdocs:ConvertFrom-SddlString]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/ConvertFrom-SddlString "ConvertFrom-SddlString"
+[msdocs:Start-Sleep]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/Start-Sleep "Start-Sleep"
+[msdocs:Join-String]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/Join-String "Join-String"
+[msdocs:Out-String]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/Out-String "Out-String"
+[msdocs:Select-String]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/Select-String "Select-String"
+[msdocs:ConvertFrom-StringData]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/ConvertFrom-StringData "ConvertFrom-StringData"
+[msdocs:Format-Table]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/Format-Table "Format-Table"
+[msdocs:New-TemporaryFile]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/New-TemporaryFile "New-TemporaryFile"
+[msdocs:New-TimeSpan]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/New-TimeSpan "New-TimeSpan"
+[msdocs:Get-TraceSource]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/Get-TraceSource "Get-TraceSource"
+[msdocs:Set-TraceSource]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/Set-TraceSource "Set-TraceSource"
+[msdocs:Add-Type]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/Add-Type "Add-Type"
+[msdocs:Get-TypeData]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/Get-TypeData "Get-TypeData"
+[msdocs:Remove-TypeData]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/Remove-TypeData "Remove-TypeData"
+[msdocs:Update-TypeData]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/Update-TypeData "Update-TypeData"
+[msdocs:Get-UICulture]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/Get-UICulture "Get-UICulture"
+[msdocs:Get-Unique]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/Get-Unique "Get-Unique"
+[msdocs:Get-Uptime]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/Get-Uptime "Get-Uptime"
+[msdocs:Clear-Variable]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/Clear-Variable "Clear-Variable"
+[msdocs:Get-Variable]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/Get-Variable "Get-Variable"
+[msdocs:New-Variable]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/New-Variable "New-Variable"
+[msdocs:Remove-Variable]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/Remove-Variable "Remove-Variable"
+[msdocs:Set-Variable]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/Set-Variable "Set-Variable"
+[msdocs:Get-Verb]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/Get-Verb "Get-Verb"
+[msdocs:Write-Verbose]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/Write-Verbose "Write-Verbose"
+[msdocs:Write-Warning]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/Write-Warning "Write-Warning"
+[msdocs:Invoke-WebRequest]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/Invoke-WebRequest "Invoke-WebRequest"
+[msdocs:Format-Wide]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/Format-Wide "Format-Wide"
+[msdocs:ConvertTo-Xml]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/ConvertTo-Xml "ConvertTo-Xml"
+[msdocs:Select-Xml]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Powershell.Utility/Select-Xml "Select-Xml"
+
+[Export-Alias]: #export-alias '```&#10;[PS] Export-Alias&#10;[PS] epal&#10;```&#10;Exports information about currently defined aliases to a file.'
+[Get-Alias]: #get-alias '```&#10;[PS] Get-Alias&#10;[PS] gal&#10;```&#10;Gets the aliases for the current session.'
+[Import-Alias]: #import-alias '```&#10;[PS] Import-Alias&#10;```&#10;Imports an alias list from a file.'
+[New-Alias]: #new-alias '```&#10;[PS] New-Alias&#10;[PS] nal&#10;```&#10;Creates a new alias.'
+[Remove-Alias]: #remove-alias '```&#10;[PS] Remove-Alias&#10;```&#10;Remove an alias from the current session.'
+[Set-Alias]: #set-alias '```&#10;[PS] Set-Alias&#10;```&#10;Creates or changes an alias for a cmdlet or other command in the current PowerShell session.'
+[Export-Clixml]: #export-clixml '```&#10;[PS] Export-Clixml&#10;```&#10;Creates an XML-based representation of an object or objects and stores it in a file.'
+[Import-Clixml]: #import-clixml '```&#10;[PS] Import-Clixml&#10;```&#10;Imports a CLIXML file and creates corresponding objects in PowerShell.'
+[Measure-Command]: #measure-command '```&#10;[PS] Measure-Command&#10;```&#10;Measures the time it takes to run script blocks and cmdlets.'
+[Show-Command]: #show-command '```&#10;[PS] Show-Command&#10;```&#10;Displays PowerShell command information in a graphical window.'
+[Trace-Command]: #trace-command '```&#10;[PS] Trace-Command&#10;```&#10;Configures and starts a trace of the specified expression or command.'
+[ConvertFrom-Csv]: #convertfrom-csv '```&#10;[PS] ConvertFrom-Csv&#10;```&#10;Converts object properties in comma-separated value (CSV) format into CSV versions of the original objects.'
+[ConvertTo-Csv]: #convertto-csv '```&#10;[PS] ConvertTo-Csv&#10;```&#10;Converts objects into a series of character-separated value (CSV) strings.'
+[Export-Csv]: #export-csv '```&#10;[PS] Export-Csv&#10;```&#10;Converts objects into a series of comma-separated value (CSV) strings and saves the strings to a file.'
+[Import-Csv]: #import-csv '```&#10;[PS] Import-Csv&#10;[PS] ipcsv&#10;```&#10;Creates table-like custom objects from the items in a comma-separated value (CSV) file.'
+[Get-Culture]: #get-culture '```&#10;[PS] Get-Culture&#10;```&#10;Gets the current culture set in the operating system.'
+[Format-Custom]: #format-custom '```&#10;[PS] Format-Custom&#10;```&#10;Uses a customized view to format the output.'
+[Get-Date]: #get-date '```&#10;[PS] Get-Date&#10;```&#10;Gets the current date and time.'
+[Set-Date]: #set-date '```&#10;[PS] Set-Date&#10;```&#10;Changes the system time on the computer to a time that you specify.'
+[Write-Debug]: #write-debug '```&#10;[PS] Write-Debug&#10;```&#10;Writes a debug message to the console.'
+[Wait-Debugger]: #wait-debugger '```&#10;[PS] Wait-Debugger&#10;```&#10;Stops a script in the debugger before running the next statement in the script.'
+[Register-EngineEvent]: #register-engineevent '```&#10;[PS] Register-EngineEvent&#10;```&#10;Subscribes to events that are generated by the PowerShell engine and by the New-Event cmdlet.'
+[Get-Error]: #get-error '```&#10;[PS] Get-Error&#10;```&#10;Gets and displays the most recent error messages from the current session.'
+[Write-Error]: #write-error '```&#10;[PS] Write-Error&#10;```&#10;Writes an object to the error stream.'
+[Get-Event]: #get-event '```&#10;[PS] Get-Event&#10;```&#10;Gets the events in the event queue.'
+[New-Event]: #new-event '```&#10;[PS] New-Event&#10;```&#10;Creates a new event.'
+[Remove-Event]: #remove-event '```&#10;[PS] Remove-Event&#10;```&#10;Deletes events from the event queue.'
+[Unregister-Event]: #unregister-event '```&#10;[PS] Unregister-Event&#10;```&#10;Cancels an event subscription.'
+[Wait-Event]: #wait-event '```&#10;[PS] Wait-Event&#10;```&#10;Waits until a particular event is raised before continuing to run.'
+[Get-EventSubscriber]: #get-eventsubscriber '```&#10;[PS] Get-EventSubscriber&#10;```&#10;Gets the event subscribers in the current session.'
+[Invoke-Expression]: #invoke-expression '```&#10;[PS] Invoke-Expression&#10;```&#10;Runs commands or expressions on the local computer.'
+[Out-File]: #out-file '```&#10;[PS] Out-File&#10;```&#10;Sends output to a file.'
+[Unblock-File]: #unblock-file '```&#10;[PS] Unblock-File&#10;```&#10;Unblocks files that were downloaded from the Internet.'
+[Get-FileHash]: #get-filehash '```&#10;[PS] Get-FileHash&#10;```&#10;Computes the hash value for a file by using a specified hash algorithm.'
+[Export-FormatData]: #export-formatdata '```&#10;[PS] Export-FormatData&#10;```&#10;Saves formatting data from the current session in a formatting file.'
+[Get-FormatData]: #get-formatdata '```&#10;[PS] Get-FormatData&#10;```&#10;Gets the formatting data in the current session.'
+[Update-FormatData]: #update-formatdata '```&#10;[PS] Update-FormatData&#10;```&#10;Updates the formatting data in the current session.'
+[Out-GridView]: #out-gridview '```&#10;[PS] Out-GridView&#10;```&#10;Sends output to an interactive table in a separate window.'
+[New-Guid]: #new-guid '```&#10;[PS] New-Guid&#10;```&#10;Creates a GUID.'
+[Format-Hex]: #format-hex '```&#10;[PS] Format-Hex&#10;```&#10;Displays a file or other input as hexadecimal.'
+[Get-Host]: #get-host '```&#10;[PS] Get-Host&#10;```&#10;Gets an object that represents the current host program.'
+[Read-Host]: #read-host '```&#10;[PS] Read-Host&#10;```&#10;Reads a line of input from the console.'
+[Write-Host]: #write-host '```&#10;[PS] Write-Host&#10;```&#10;Writes customized output to a host.'
+[ConvertTo-Html]: #convertto-html '```&#10;[PS] ConvertTo-Html&#10;```&#10;Converts Microsoft .NET Framework objects into HTML that can be displayed in a Web browser.'
+[Write-Information]: #write-information '```&#10;[PS] Write-Information&#10;```&#10;Specifies how PowerShell handles information stream data for a command.'
+[ConvertFrom-Json]: #convertfrom-json '```&#10;[PS] ConvertFrom-Json&#10;```&#10;Converts a JSON-formatted string to a custom object or a hash table.'
+[ConvertTo-Json]: #convertto-json '```&#10;[PS] ConvertTo-Json&#10;```&#10;Converts an object to a JSON-formatted string.'
+[Test-Json]: #test-json '```&#10;[PS] Test-Json&#10;```&#10;Tests whether a string is a valid JSON document'
+[Format-List]: #format-list '```&#10;[PS] Format-List&#10;[PS] fl&#10;```&#10;Formats the output as a list of properties in which each property appears on a new line.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 161'
+[Update-List]: #update-list '```&#10;[PS] Update-List&#10;```&#10;Adds items to and removes items from a property value that contains a collection of objects.'
+[Import-LocalizedData]: #import-localizeddata '```&#10;[PS] Import-LocalizedData&#10;```&#10;Imports language-specific data into scripts and functions based on the UI culture that is selected for the operating system.'
+[Send-MailMessage]: #send-mailmessage '```&#10;[PS] Send-MailMessage&#10;```&#10;Sends an email message.'
+[ConvertFrom-Markdown]: #convertfrom-markdown '```&#10;[PS] ConvertFrom-Markdown&#10;```&#10;Convert the contents of a string or a file to a MarkdownInfo object.'
+[Show-Markdown]: #show-markdown '```&#10;[PS] Show-Markdown&#10;```&#10;Shows a Markdown file or string in the console in a friendly way using VT100 escape sequences or in a browser using HTML.'
+[Get-MarkdownOption]: #get-markdownoption '```&#10;[PS] Get-MarkdownOption&#10;```&#10;Returns the current colors and styles used for rendering Markdown content in the console.'
+[Set-MarkdownOption]: #set-markdownoption '```&#10;[PS] Set-MarkdownOption&#10;```&#10;Sets the colors and styles used for rendering Markdown content in the console.'
+[Get-Member]: #get-member '```&#10;[PS] Get-Member&#10;[PS] gm&#10;```&#10;Gets the properties and methods of objects.'
+[Add-Member]: #add-member '```&#10;[PS] Add-Member&#10;```&#10;Adds custom properties and methods to an instance of a PowerShell object.'
+[Measure-Object]: #measure-object '```&#10;[PS] Measure-Object&#10;[PS] measure&#10;```&#10;Calculates the numeric properties of objects, and the characters, words, and lines in string objects, such as files of text.'
+[New-Object]: #new-object '```&#10;[PS] New-Object&#10;```&#10;Creates an instance of a Microsoft .NET Framework or COM object.'
+[Compare-Object]: #compare-object '```&#10;[PS] Compare-Object&#10;```&#10;Compares two sets of objects.'
+[Group-Object]: #group-object '```&#10;[PS] Group-Object&#10;```&#10;Groups objects that contain the same value for specified properties.'
+[Sort-Object]: #sort-object '```&#10;[PS] Sort-Object&#10;```&#10;Sorts objects by property values.'
+[Tee-Object]: #tee-object '```&#10;[PS] Tee-Object&#10;```&#10;Saves command output in a file or variable and also sends it down the pipeline.'
+[Select-Object]: #select-object '```&#10;[PS] Select-Object&#10;[PS] select&#10;```&#10;Selects objects or object properties.'
+[Register-ObjectEvent]: #register-objectevent '```&#10;[PS] Register-ObjectEvent&#10;```&#10;Subscribes to the events that are generated by a Microsoft .NET Framework object.'
+[Write-Output]: #write-output '```&#10;[PS] Write-Output&#10;[PS] echo write&#10;```&#10;Sends the specified objects to the next command in the pipeline. If the command is the last command in the pipeline, the objects are displayed in the console.'
+[Import-PowerShellDataFile]: #import-powershelldatafile '```&#10;[PS] Import-PowerShellDataFile&#10;```&#10;Imports values from a .PSD1 file without invoking its contents.'
+[Out-Printer]: #out-printer '```&#10;[PS] Out-Printer&#10;```&#10;Sends output to a printer.'
+[Write-Progress]: #write-progress '```&#10;[PS] Write-Progress&#10;```&#10;Displays a progress bar within a PowerShell command window.'
+[Disable-PSBreakpoint]: #disable-psbreakpoint '```&#10;[PS] Disable-PSBreakpoint&#10;```&#10;Disables the breakpoints in the current console.'
+[Enable-PSBreakpoint]: #enable-psbreakpoint '```&#10;[PS] Enable-PSBreakpoint&#10;```&#10;Enables the breakpoints in the current console.'
+[Get-PSBreakpoint]: #get-psbreakpoint '```&#10;[PS] Get-PSBreakpoint&#10;```&#10;Gets the breakpoints that are set in the current session.'
+[Remove-PSBreakpoint]: #remove-psbreakpoint '```&#10;[PS] Remove-PSBreakpoint&#10;```&#10;Deletes breakpoints from the current console.'
+[Set-PSBreakpoint]: #set-psbreakpoint '```&#10;[PS] Set-PSBreakpoint&#10;```&#10;Sets a breakpoint on a line, command, or variable.'
+[Get-PSCallStack]: #get-pscallstack '```&#10;[PS] Get-PSCallStack&#10;```&#10;Displays the current call stack.'
+[Export-PSSession]: #export-pssession '```&#10;[PS] Export-PSSession&#10;```&#10;Exports commands from another session and saves them in a PowerShell module.'
+[Import-PSSession]: #import-pssession '```&#10;[PS] Import-PSSession&#10;```&#10;Imports commands from another session into the current session.'
+[Get-Random]: #get-random '```&#10;[PS] Get-Random&#10;```&#10;Gets a random number, or selects objects randomly from a collection.'
+[Invoke-RestMethod]: #invoke-restmethod '```&#10;[PS] Invoke-RestMethod&#10;```&#10;Sends an HTTP or HTTPS request to a RESTful web service.'
+[Debug-Runspace]: #debug-runspace '```&#10;[PS] Debug-Runspace&#10;```&#10;Starts an interactive debugging session with a runspace.'
+[Get-Runspace]: #get-runspace '```&#10;[PS] Get-Runspace&#10;```&#10;Gets active runspaces within a PowerShellhost process.'
+[Disable-RunspaceDebug]: #disable-runspacedebug '```&#10;[PS] Disable-RunspaceDebug&#10;```&#10;Disables debugging on one or more runspaces, and releases any pending debugger stop.'
+[Enable-RunspaceDebug]: #enable-runspacedebug '```&#10;[PS] Enable-RunspaceDebug&#10;```&#10;Enables debugging on runspaces where any breakpoint is preserved until a debugger is attached.'
+[Get-RunspaceDebug]: #get-runspacedebug '```&#10;[PS] Get-RunspaceDebug&#10;```&#10;Shows runspace debugging options.'
+[ConvertFrom-SddlString]: #convertfrom-sddlstring '```&#10;[PS] ConvertFrom-SddlString&#10;```&#10;Converts a SDDL string to a custom object.'
+[Start-Sleep]: #start-sleep '```&#10;[PS] Start-Sleep&#10;```&#10;Suspends the activity in a script or session for the specified period of time.'
+[Join-String]: #join-string '```&#10;[PS] Join-String&#10;```&#10;Combines objects from the pipeline into a single string.'
+[Out-String]: #out-string '```&#10;[PS] Out-String&#10;```&#10;Sends objects to the host as a series of strings.'
+[Select-String]: #select-string '```&#10;[PS] Select-String&#10;```&#10;Finds text in strings and files.'
+[ConvertFrom-StringData]: #convertfrom-stringdata '```&#10;[PS] ConvertFrom-StringData&#10;```&#10;Converts a string containing one or more key and value pairs to a hash table.'
+[Format-Table]: #format-table '```&#10;[PS] Format-Table&#10;[PS] ft&#10;```&#10;Formats the output as a table.'
+[New-TemporaryFile]: #new-temporaryfile '```&#10;[PS] New-TemporaryFile&#10;```&#10;Creates a temporary file.'
+[New-TimeSpan]: #new-timespan '```&#10;[PS] New-TimeSpan&#10;```&#10;Creates a TimeSpan object.'
+[Get-TraceSource]: #get-tracesource '```&#10;[PS] Get-TraceSource&#10;```&#10;Gets PowerShell components that are instrumented for tracing.'
+[Set-TraceSource]: #set-tracesource '```&#10;[PS] Set-TraceSource&#10;```&#10;Configures, starts, and stops a trace of PowerShell components.'
+[Add-Type]: #add-type '```&#10;[PS] Add-Type&#10;```&#10;Adds a Microsoft .NET Core class to a PowerShell session.'
+[Get-TypeData]: #get-typedata '```&#10;[PS] Get-TypeData&#10;```&#10;Gets the extended type data in the current session.'
+[Remove-TypeData]: #remove-typedata '```&#10;[PS] Remove-TypeData&#10;```&#10;Deletes extended types from the current session.'
+[Update-TypeData]: #update-typedata '```&#10;[PS] Update-TypeData&#10;```&#10;Updates the extended type data in the session.'
+[Get-UICulture]: #get-uiculture '```&#10;[PS] Get-UICulture&#10;```&#10;Gets the current UI culture settings in the operating system.'
+[Get-Unique]: #get-unique '```&#10;[PS] Get-Unique&#10;```&#10;Returns unique items from a sorted list.'
+[Get-Uptime]: #get-uptime '```&#10;[PS] Get-Uptime&#10;```&#10;Get the TimeSpan since last boot.'
+[Clear-Variable]: #clear-variable '```&#10;[PS] Clear-Variable&#10;```&#10;Deletes the value of a variable.'
+[Get-Variable]: #get-variable '```&#10;[PS] Get-Variable&#10;```&#10;Gets the variables in the current console.'
+[New-Variable]: #new-variable '```&#10;[PS] New-Variable&#10;```&#10;Creates a new variable.'
+[Remove-Variable]: #remove-variable '```&#10;[PS] Remove-Variable&#10;```&#10;Deletes a variable and its value.'
+[Set-Variable]: #set-variable '```&#10;[PS] Set-Variable&#10;```&#10;Sets the value of a variable. Creates the variable if one with the requested name does not exist.'
+[Get-Verb]: #get-verb '```&#10;[PS] Get-Verb&#10;```&#10;Gets approved PowerShell verbs.'
+[Write-Verbose]: #write-verbose '```&#10;[PS] Write-Verbose&#10;```&#10;Writes text to the verbose message stream.'
+[Write-Warning]: #write-warning '```&#10;[PS] Write-Warning&#10;```&#10;Writes a warning message.'
+[Invoke-WebRequest]: #invoke-webrequest '```&#10;[PS] Invoke-WebRequest&#10;```&#10;Gets content from a web page on the internet.'
+[Format-Wide]: #format-wide '```&#10;[PS] Format-Wide&#10;```&#10;Formats objects as a wide table that displays only one property of each object.'
+[ConvertTo-Xml]: #convertto-xml '```&#10;[PS] ConvertTo-Xml&#10;```&#10;Creates an XML-based representation of an object.'
+[Select-Xml]: #select-xml '```&#10;[PS] Select-Xml&#10;```&#10;Finds text in an XML string or document.'
+
+- Alias
+[`Export`][Export-Alias]<sup>[?][msdocs:Export-Alias]</sup>
+[`Get`][Get-Alias]<sup>[?][msdocs:Get-Alias]</sup>
+[`Import`][Import-Alias]<sup>[?][msdocs:Import-Alias]</sup>
+[`New`][New-Alias]<sup>[?][msdocs:New-Alias]</sup>
+[`Remove`][Remove-Alias]<sup>[?][msdocs:Remove-Alias]</sup>
+[`Set`][Set-Alias]<sup>[?][msdocs:Set-Alias]</sup>
+- CliXml
+[`Export`][Export-Clixml]<sup>[?][msdocs:Export-Clixml]</sup>
+[`Import`][Import-Clixml]<sup>[?][msdocs:Import-Clixml]</sup>
+- Date
+[`Get`][Get-Date]<sup>[?][msdocs:Get-Date]</sup>
+[`Set`][Set-Date]<sup>[?][msdocs:Set-Date]</sup>
+- Event 
+[`Get`][Get-Event]<sup>[?][msdocs:Get-Event]</sup>
+[`New`][New-Event]<sup>[?][msdocs:New-Event]</sup>
+[`Remove`][Remove-Event]<sup>[?][msdocs:Remove-Event]</sup>
+[`Unregister`][Unregister-Event]<sup>[?][msdocs:Unregister-Event]</sup>
+[`Wait`][Wait-Event]<sup>[?][msdocs:Wait-Event]</sup>
+- Format-
+[`Custom`][Format-Custom]<sup>[?][msdocs:Format-Custom]</sup>
+[`Hex`][Format-Hex]<sup>[?][msdocs:Format-Hex]</sup>
+[`List`][Format-List]<sup>[?][msdocs:Format-List]</sup>
+[`Table`][Format-Table]<sup>[?][msdocs:Format-Table]</sup>
+[`Wide`][Format-Wide]<sup>[?][msdocs:Format-Wide]</sup>
+- GUID
+[`New`][New-Guid]<sup>[?][msdocs:New-Guid]</sup>
+- JSON
+[`ConvertFrom`][ConvertFrom-Json]<sup>[?][msdocs:ConvertFrom-Json]</sup>
+[`ConvertTo`][ConvertTo-Json]<sup>[?][msdocs:ConvertTo-Json]</sup>
+- Markdown
+[`ConvertFrom`][ConvertFrom-Markdown]<sup>[?][msdocs:ConvertFrom-Markdown]</sup>
+[`Show`][Show-Markdown]<sup>[?][msdocs:Show-Markdown]</sup>
+- Random
+[`Get`][Get-Random]<sup>[?][msdocs:Get-Random]</sup>
+- WebRequest
+[`Invoke`][Invoke-WebRequest]<sup>[?][msdocs:Invoke-WebRequest]</sup>
+- XML
+[`ConvertTo`][ConvertTo-Xml]<sup>[?][msdocs:ConvertTo-Xml]</sup>
+[`Select`][Select-Xml]<sup>[?][msdocs:Select-Xml]</sup>
+#### Microsoft.Powershell.WSMan.Management
+[msdocs:Enable-WSManCredSSP]: https://docs.microsoft.com/en-us/powershell/module/Microsoft.WSMan.Management/Enable-WSManCredSSP "Enable-WSManCredSSP documentation"
+[Enable-WSManCredSSP]: #enable-wsmancredssp '```&#10;[PS] Enable-WSManCredSSP&#10;```&#10;Enable the use of CredSSP for authentication between hosts in different domains&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 176'
+
+- WSManCredSSP
+[`Enable`][Enable-WSManCredSSP]<sup>[?][msdocs:Enable-WSManCredSSP]</sup>
+#### netadapter
+[Disable-NetAdapter]: #disable-netadapter '```&#10;[PS] Disable-NetAdapter&#10;```&#10;Disables a network adapter.'
+[Enable-NetAdapter]: #enable-netadapter '```&#10;[PS] Enable-NetAdapter&#10;```&#10;Enables a network adapter.'
+[Get-NetAdapter]: #get-netadapter '```&#10;[PS] Get-NetAdapter&#10;```&#10;Gets the basic network adapter properties.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 19'
+[Enable-NetAdapterRdma]: #enable-netadapterrdma '```&#10;[PS] Enable-NetAdapterRdma&#10;```&#10;Enables RDMA on a network adapter.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 254'
+[Get-NetAdapterRdma]: #get-netadapterrdma '```&#10;[PS] Get-NetAdapterRdma&#10;```&#10;Gets the RDMA properties for a network adapter.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 254'
+[Enable-NetAdapterVmq]: #enable-netadaptervmq '```&#10;[PS] Enable-NetAdapterVmq&#10;```&#10;Enables VMQ on a network adapter.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 252'
+[Get-NetAdapterVmq]: #get-netadaptervmq '```&#10;[PS] Get-NetAdapterVmq&#10;```&#10;Gets the VMQ properties of a network adapter.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 252'
+[Set-NetAdapterVmq]: #set-netadaptervmq '```&#10;[PS] Set-NetAdapterVmq&#10;```&#10;Sets the VMQ properties of a network adapter.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 253'
+[Get-NetAdapterVmqQueue]: #get-netadaptervmqqueue '```&#10;[PS] Get-NetAdapterVmqQueue&#10;```&#10;Gets the VMQs allocated on a network adapter.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 252'
+
+[msdocs:Disable-NetAdapter]: https://docs.microsoft.com/en-us/powershell/module/netadapter/Disable-NetAdapter "Disable-NetAdapter documentation"
+[msdocs:Enable-NetAdapter]: https://docs.microsoft.com/en-us/powershell/module/netadapter/Enable-NetAdapter "Enable-NetAdapter documentation"
+[msdocs:Enable-NetAdapterRdma]: https://docs.microsoft.com/en-us/powershell/module/netadapter/Enable-NetAdapterRdma "Enable-NetAdapterRdma documentation"
+[msdocs:Get-NetAdapterRdma]: https://docs.microsoft.com/en-us/powershell/module/netadapter/Get-NetAdapterRdma "Get-NetAdapterRdma documentation"
+[msdocs:Get-NetAdapter]: https://docs.microsoft.com/en-us/powershell/module/netadapter/Get-NetAdapter "Get-NetAdapter documentation"
+[msdocs:Enable-NetAdapterVmq]: https://docs.microsoft.com/en-us/powershell/module/netadapter/Enable-NetAdapterVmq "Enable-NetAdapterVmq documentation"
+[msdocs:Get-NetAdapterVmq]: https://docs.microsoft.com/en-us/powershell/module/netadapter/Get-NetAdapterVmq "Get-NetAdapterVmq documentation"
+[msdocs:Set-NetAdapterVmq]: https://docs.microsoft.com/en-us/powershell/module/netadapter/Set-NetAdapterVmq "Set-NetAdapterVmq documentation"
+[msdocs:Get-NetAdapterVmqQueue]: https://docs.microsoft.com/en-us/powershell/module/netadapter/Get-NetAdapterVmqQueue "Get-NetAdapterVmqQueue documentation"
+
+- NetAdapter 
+[`Disable`][Disable-NetAdapter]<sup>[?][msdocs:Disable-NetAdapter]</sup> 
+[`Enable`][Enable-NetAdapter]<sup>[?][msdocs:Enable-NetAdapter]</sup>
+[`Get`][Get-NetAdapter]<sup>[?][msdocs:Get-NetAdapter]</sup>
+- NetAdapterRdma 
+[`Enable`][Enable-NetAdapterRdma]<sup>[?][msdocs:Enable-NetAdapterRdma]</sup> 
+[`Get`][Get-NetAdapterRdma]<sup>[?][msdocs:Get-NetAdapterRdma]</sup>
+- NetAdapterVmq
+[`Enable`][Enable-NetAdapterVmq]<sup>[?][msdocs:Enable-NetAdapterVmq]</sup>
+[`Get`][Get-NetAdapterVmq]<sup>[?][msdocs:Get-NetAdapterVmq]</sup>
+[`Set`][Set-NetAdapterVmq]<sup>[?][msdocs:Set-NetAdapterVmq]</sup>
+- NetAdapterVmqQueue
+[`Get`][Get-NetAdapterVmqQueue]<sup>[?][msdocs:Get-NetAdapterVmqQueue]</sup>
+
+#### netconnection
+[msdocs:Get-NetConnectionProfile]: https://docs.microsoft.com/en-us/powershell/module/netconnection/Get-NetConnectionProfile "Get-NetConnectionProfile documentation"
+[msdocs:Set-NetConnectionProfile]: https://docs.microsoft.com/en-us/powershell/module/netconnection/Set-NetConnectionProfile "Set-NetConnectionProfile documentation"
+
+[Get-NetConnectionProfile]: #get-netconnectionprofile '```&#10;[PS] Get-NetConnectionProfile&#10;```&#10;Gets a connection profile.'
+[Set-NetConnectionProfile]: #set-netconnectionprofile '```&#10;[PS] Set-NetConnectionProfile&#10;```&#10;Changes the network category of a connection profile.'
+
+- NetConnectionProfile [`Get`][Get-NetConnectionProfile]<sup>[?][msdocs:Get-NetConnectionProfile]</sup> [`Set`][Set-NetConnectionProfile]<sup>[?][msdocs:Set-NetConnectionProfile]</sup>
+
+#### netsecurity
+[Copy-NetFirewallRule]: #copy-netfirewallrule '```&#10;[PS] Copy-NetFirewallRule&#10;```&#10;Copies an entire firewall rule, and associated filters, to the same or to a different policy store.'
+[Disable-NetFirewallRule]: #disable-netfirewallrule '```&#10;[PS] Disable-NetFirewallRule&#10;```&#10;Disables a firewall rule.'
+[Enable-NetFirewallRule]: #enable-netfirewallrule '```&#10;[PS] Enable-NetFirewallRule&#10;```&#10;Enables a previously disabled firewall rule.'
+[Get-NetFirewallRule]: #get-netfirewallrule '```&#10;[PS] Get-NetFirewallRule&#10;```&#10;Retrieves firewall rules from the target computer.'
+[New-NetFirewallRule]: #new-netfirewallrule '```&#10;[PS] New-NetFirewallRule&#10;```&#10;Creates a new inbound or outbound firewall rule and adds the rule to the target computer.'
+[Remove-NetFirewallRule]: #remove-netfirewallrule '```&#10;[PS] Remove-NetFirewallRule&#10;```&#10;Deletes one or more firewall rules that match the specified criteria.'
+[Rename-NetFirewallRule]: #rename-netfirewallrule '```&#10;[PS] Rename-NetFirewallRule&#10;```&#10;Renames a single IPsec rule.'
+[Set-NetFirewallRule]: #set-netfirewallrule '```&#10;[PS] Set-NetFirewallRule&#10;```&#10;Modifies existing firewall rules.'
+[Show-NetFirewallRule]: #show-netfirewallrule '```&#10;[PS] Show-NetFirewallRule&#10;```&#10;Displays all of the existing IPsec rules and associated objects in a fully expanded view.'
+
+[msdocs:Copy-NetFirewallRule]: https://docs.microsoft.com/en-us/powershell/module/NetSecurity/Copy-NetFirewallRule "Copy-NetFirewallRule documentation"
+[msdocs:Disable-NetFirewallRule]: https://docs.microsoft.com/en-us/powershell/module/NetSecurity/Disable-NetFirewallRule "Disable-NetFirewallRule documentation"
+[msdocs:Enable-NetFirewallRule]: https://docs.microsoft.com/en-us/powershell/module/NetSecurity/Enable-NetFirewallRule "Enable-NetFirewallRule documentation"
+[msdocs:Get-NetFirewallRule]: https://docs.microsoft.com/en-us/powershell/module/NetSecurity/Get-NetFirewallRule "Get-NetFirewallRule documentation"
+[msdocs:New-NetFirewallRule]: https://docs.microsoft.com/en-us/powershell/module/NetSecurity/New-NetFirewallRule "New-NetFirewallRule documentation"
+[msdocs:Remove-NetFirewallRule]: https://docs.microsoft.com/en-us/powershell/module/NetSecurity/Remove-NetFirewallRule "Remove-NetFirewallRule documentation"
+[msdocs:Rename-NetFirewallRule]: https://docs.microsoft.com/en-us/powershell/module/NetSecurity/Rename-NetFirewallRule "Rename-NetFirewallRule documentation"
+[msdocs:Set-NetFirewallRule]: https://docs.microsoft.com/en-us/powershell/module/NetSecurity/Set-NetFirewallRule "Set-NetFirewallRule documentation"
+[msdocs:Show-NetFirewallRule]: https://docs.microsoft.com/en-us/powershell/module/NetSecurity/Show-NetFirewallRule "Show-NetFirewallRule documentation"
+
+- NetFirewallRule 
+[`Copy`][Copy-NetFirewallRule]<sup>[?][msdocs:Copy-NetFirewallRule]</sup>
+[`Disable`][Disable-NetFirewallRule]<sup>[?][msdocs:Disable-NetFirewallRule]</sup>
+[`Enable`][Enable-NetFirewallRule]<sup>[?][msdocs:Enable-NetFirewallRule]</sup>
+[`Get`][Get-NetFirewallRule]<sup>[?][msdocs:Get-NetFirewallRule]</sup>
+[`New`][New-NetFirewallRule]<sup>[?][msdocs:New-NetFirewallRule]</sup>
+[`Remove`][Remove-NetFirewallRule]<sup>[?][msdocs:Remove-NetFirewallRule]</sup>
+[`Rename`][Rename-NetFirewallRule]<sup>[?][msdocs:Rename-NetFirewallRule]</sup>
+[`Set`][Set-NetFirewallRule]<sup>[?][msdocs:Set-NetFirewallRule]</sup>
+[`Show`][Show-NetFirewallRule]<sup>[?][msdocs:Show-NetFirewallRule]</sup>
+
+#### nettcpip
+[msdocs:Get-NetIPAddress]: https://docs.microsoft.com/en-us/powershell/module/nettcpip/Get-NetIPAddress "Get-NetIPAddress"
+[msdocs:New-NetIPAddress]: https://docs.microsoft.com/en-us/powershell/module/nettcpip/New-NetIPAddress "New-NetIPAddress"
+[msdocs:Remove-NetIPAddress]: https://docs.microsoft.com/en-us/powershell/module/nettcpip/Remove-NetIPAddress "Remove-NetIPAddress"
+[msdocs:Set-NetIPAddress]: https://docs.microsoft.com/en-us/powershell/module/nettcpip/Set-NetIPAddress "Set-NetIPAddress"
+[msdocs:Get-NetIPInterface]: https://docs.microsoft.com/en-us/powershell/module/nettcpip/Get-NetIPInterface "Get-NetIPInterface"
+[msdocs:Set-NetIPInterface]: https://docs.microsoft.com/en-us/powershell/module/nettcpip/Set-NetIPInterface "Set-NetIPInterface"
+
+[Get-NetIPAddress]: #get-netipaddress '```&#10;PS C:\> Get-NetIPAddress&#10;```&#10;Gets the IP address configuration.'
+[New-NetIPAddress]: #new-netipaddress '```&#10;PS C:\> New-NetIPAddress&#10;```&#10;Creates and configures an IP address.'
+[Remove-NetIPAddress]: #remove-netipaddress '```&#10;PS C:\> Remove-NetIPAddress&#10;```&#10;Removes an IP address and its configuration.'
+[Set-NetIPAddress]: #set-netipaddress '```&#10;PS C:\> Set-NetIPAddress&#10;```&#10;Modifies the configuration of an IP address.'
+[Get-NetIPInterface]: #get-netipinterface '```&#10;PS C:\> Get-NetIPInterface&#10;```&#10;Gets an IP interface.'
+[Set-NetIPInterface]: #set-netipinterface '```&#10;PS C:\> Set-NetIPInterface&#10;```&#10;Modifies an IP interface.'
+
+- NetIPAddress
+[`Get`][Get-NetIPAddress]<sup>[?][msdocs:Get-NetIPAddress]</sup>
+[`New`][New-NetIPAddress]<sup>[?][msdocs:New-NetIPAddress]</sup>
+[`Remove`][Remove-NetIPAddress]<sup>[?][msdocs:Remove-NetIPAddress]</sup>
+[`Set`][Set-NetIPAddress]<sup>[?][msdocs:Set-NetIPAddress]</sup>
+- NetIPInterface
+[`Get`][Get-NetIPInterface]<sup>[?][msdocs:Get-NetIPInterface]</sup>
+[`Set`][Set-NetIPInterface]<sup>[?][msdocs:Set-NetIPInterface]</sup>
+
+#### nanoserverimagegenerator
+[msdocs:Edit-NanoServerImage]: https://docs.microsoft.com/en-us/powershell/module/NanoServerImageGenerator/Edit-NanoServerImage "Edit-NanoServerImage documentation"
+[msdocs:New-NanoServerImage]: https://docs.microsoft.com/en-us/powershell/module/NanoServerImageGenerator/New-NanoServerImage "New-NanoServerImage documentation"
+
+[Edit-NanoServerImage]: #edit-nanoserverimage '```&#10;[PS] Edit-NanoServerImage&#10;```&#10;Add a role or feature to an existing Nano Server VHD file&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 49'
+[New-NanoServerImage]: #new-nanoserverimage '```&#10;[PS] New-NanoServerImage&#10;New-NanoServerImage -DeploymentType guest|host -Edition standard|datacenter -MediaPath root -TargetPath $PATH -ComputerName $NAME&#10;```&#10;Used to create a Nano Server VHD file for Nano Server installation&#10;Required parameters:&#10;  `DeploymentType` specified whether the image file should be used on a Hyper-V VM ("Guest") or a physical server ("Host")&#10;  `Edition` specifies whether to install the Standard or Datacenter edition of Nano Server&#10;  `MediaPath` specifies the path to the root of the WS2016 installation disk or mounted image&#10;  `BasePath` specifies a path on the local system where the cmdlet creates a copy of the installation files from the location specified in `MediaPath`&#10;  `TargetPath` specifies the full path and filename of the new image to be created with the filename extension (".vhd" or ".vhdx") specifying Generation 1 or Generation 2 image.&#10;  `ComputerName` specifies the computer name that should be assigned to the new image&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 44'
+
+- NanoServerImage
+[`Edit`][Edit-NanoServerImage]<sup>[?][msdocs:Edit-NanoServerImage]</sup>
+[`New`][New-NanoServerImage]<sup>[?][msdocs:New-NanoServerImage]</sup>
+
 #### netqos
 [msdocs:Get-NetQosPolicy]: https://docs.microsoft.com/en-us/powershell/module/netqos/Get-NetQosPolicy "Get-NetQosPolicy"
 [msdocs:New-NetQosPolicy]: https://docs.microsoft.com/en-us/powershell/module/netqos/New-NetQosPolicy "New-NetQosPolicy"
@@ -2101,6 +2703,77 @@ Tasks
 - SmigServerData [`Receive`][Receive-SmigServerData]<sup>[?][msdocs:Receive-SmigServerData]</sup> [`Send`][Send-SmigServerData]<sup>[?][msdocs:Send-SmigServerData]</sup>
 - SmigServerFeature ['Get'][Get-SmigServerFeature]<sup>[?][msdocs:Get-SmigServerFeature]</sup>
 - SmigServerSetting ['Export'][Export-SmigServerSetting]<sup>[?][msdocs:Export-SmigServerSetting]</sup> [`Import`][Import-SmigServerSetting]<sup>[?][msdocs:Import-SmigServerSetting]</sup>
+#### smbshare
+[msdocs:Block-SmbShareAccess]: https://docs.microsoft.com/en-us/powershell/module/smbshare/Block-SmbShareAccess "Block-SmbShareAccess"
+[msdocs:Close-SmbOpenFile]: https://docs.microsoft.com/en-us/powershell/module/smbshare/Close-SmbOpenFile "Close-SmbOpenFile"
+[msdocs:Close-SmbSession]: https://docs.microsoft.com/en-us/powershell/module/smbshare/Close-SmbSession "Close-SmbSession"
+[msdocs:Get-SmbClientConfiguration]: https://docs.microsoft.com/en-us/powershell/module/smbshare/Get-SmbClientConfiguration "Get-SmbClientConfiguration"
+[msdocs:Get-SmbOpenFile]: https://docs.microsoft.com/en-us/powershell/module/smbshare/Get-SmbOpenFile "Get-SmbOpenFile"
+[msdocs:Get-SmbServerConfiguration]: https://docs.microsoft.com/en-us/powershell/module/smbshare/Get-SmbServerConfiguration "Get-SmbServerConfiguration"
+[msdocs:Get-SmbSession]: https://docs.microsoft.com/en-us/powershell/module/smbshare/Get-SmbSession "Get-SmbSession"
+[msdocs:Get-SmbShareAccess]: https://docs.microsoft.com/en-us/powershell/module/smbshare/Get-SmbShareAccess "Get-SmbShareAccess"
+[msdocs:Grant-SmbShareAccess]: https://docs.microsoft.com/en-us/powershell/module/smbshare/Grant-SmbShareAccess "Grant-SmbShareAccess"
+[msdocs:New-SmbShare]: https://docs.microsoft.com/en-us/powershell/module/smbshare/New-SmbShare "New-SmbShare"
+[msdocs:Remove-SmbShare]: https://docs.microsoft.com/en-us/powershell/module/smbshare/Remove-SmbShare "Remove-SmbShare"
+[msdocs:Revoke-SmbShareAccess]: https://docs.microsoft.com/en-us/powershell/module/smbshare/Revoke-SmbShareAccess "Revoke-SmbShareAccess"
+[msdocs:Set-SmbPathAcl]: https://docs.microsoft.com/en-us/powershell/module/smbshare/Set-SmbPathAcl "Set-SmbPathAcl"
+[msdocs:Set-SmbServerConfiguration]: https://docs.microsoft.com/en-us/powershell/module/smbshare/Set-SmbServerConfiguration "Set-SmbServerConfiguration"
+[msdocs:Unblock-SmbShareAccess]: https://docs.microsoft.com/en-us/powershell/module/smbshare/Unblock-SmbShareAccess "Unblock-SmbShareAccess"
+[msdocs:Disable-SmbDelegation]: https://docs.microsoft.com/en-us/powershell/module/smbshare/Disable-SmbDelegation "Disable-SmbDelegation"
+[msdocs:Enable-SmbDelegation]: https://docs.microsoft.com/en-us/powershell/module/smbshare/Enable-SmbDelegation "Enable-SmbDelegation"
+[msdocs:Get-SmbBandwidthLimit]: https://docs.microsoft.com/en-us/powershell/module/smbshare/Get-SmbBandwidthLimit "Get-SmbBandwidthLimit"
+[msdocs:Get-SmbClientNetworkInterface]: https://docs.microsoft.com/en-us/powershell/module/smbshare/Get-SmbClientNetworkInterface "Get-SmbClientNetworkInterface"
+[msdocs:Get-SmbConnection]: https://docs.microsoft.com/en-us/powershell/module/smbshare/Get-SmbConnection "Get-SmbConnection"
+[msdocs:Get-SmbDelegation]: https://docs.microsoft.com/en-us/powershell/module/smbshare/Get-SmbDelegation "Get-SmbDelegation"
+[msdocs:Get-SmbMapping]: https://docs.microsoft.com/en-us/powershell/module/smbshare/Get-SmbMapping "Get-SmbMapping"
+[msdocs:Get-SmbMultichannelConnection]: https://docs.microsoft.com/en-us/powershell/module/smbshare/Get-SmbMultichannelConnection "Get-SmbMultichannelConnection"
+[msdocs:Get-SmbMultichannelConstraint]: https://docs.microsoft.com/en-us/powershell/module/smbshare/Get-SmbMultichannelConstraint "Get-SmbMultichannelConstraint"
+[msdocs:Get-SmbServerNetworkInterface]: https://docs.microsoft.com/en-us/powershell/module/smbshare/Get-SmbServerNetworkInterface "Get-SmbServerNetworkInterface"
+[msdocs:Get-SmbShare]: https://docs.microsoft.com/en-us/powershell/module/smbshare/Get-SmbShare "Get-SmbShare"
+[msdocs:New-SmbMapping]: https://docs.microsoft.com/en-us/powershell/module/smbshare/New-SmbMapping "New-SmbMapping"
+[msdocs:New-SmbMultichannelConstraint]: https://docs.microsoft.com/en-us/powershell/module/smbshare/New-SmbMultichannelConstraint "New-SmbMultichannelConstraint"
+[msdocs:Remove-SmbBandwidthLimit]: https://docs.microsoft.com/en-us/powershell/module/smbshare/Remove-SmbBandwidthLimit "Remove-SmbBandwidthLimit"
+[msdocs:Remove-SmbMapping]: https://docs.microsoft.com/en-us/powershell/module/smbshare/Remove-SmbMapping "Remove-SmbMapping"
+[msdocs:Remove-SmbMultichannelConstraint]: https://docs.microsoft.com/en-us/powershell/module/smbshare/Remove-SmbMultichannelConstraint "Remove-SmbMultichannelConstraint"
+[msdocs:Set-SmbBandwidthLimit]: https://docs.microsoft.com/en-us/powershell/module/smbshare/Set-SmbBandwidthLimit "Set-SmbBandwidthLimit"
+[msdocs:Set-SmbClientConfiguration]: https://docs.microsoft.com/en-us/powershell/module/smbshare/Set-SmbClientConfiguration "Set-SmbClientConfiguration"
+[msdocs:Set-SmbShare]: https://docs.microsoft.com/en-us/powershell/module/smbshare/Set-SmbShare "Set-SmbShare"
+[msdocs:Update-SmbMultichannelConnection]: https://docs.microsoft.com/en-us/powershell/module/smbshare/Update-SmbMultichannelConnection "Update-SmbMultichannelConnection"
+[Get-SmbBandwidthLimit]: #get-smbbandwidthlimit '```&#10;Get-SmbBandwidthLimit&#10;```&#10;Gets the list of SMB bandwidth caps for each traffic category.'
+[Remove-SmbBandwidthLimit]: #remove-smbbandwidthlimit '```&#10;Remove-SmbBandwidthLimit&#10;```&#10;Removes SMB bandwidth caps.'
+[Set-SmbBandwidthLimit]: #set-smbbandwidthlimit '```&#10;Set-SmbBandwidthLimit&#10;```&#10;Adds an SMB bandwidth cap.'
+[Get-SmbClientConfiguration]: #get-smbclientconfiguration '```&#10;Get-SmbClientConfiguration&#10;```&#10;Retrieves the SMB client configuration.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 111'
+[Set-SmbClientConfiguration]: #set-smbclientconfiguration '```&#10;Set-SmbClientConfiguration&#10;```&#10;Sets the SMB client configuration.'
+[Get-SmbClientNetworkInterface]: #get-smbclientnetworkinterface '```&#10;Get-SmbClientNetworkInterface&#10;```&#10;Retrieves the network interfaces used by the SMB client.'
+[Get-SmbConnection]: #get-smbconnection '```&#10;Get-SmbConnection&#10;```&#10;Retrieves the connections established from the SMB client to the SMB servers.'
+[Disable-SmbDelegation]: #disable-smbdelegation '```&#10;Disable-SmbDelegation&#10;```&#10;Disables a constrained delegation authorization for an SMB client and server.'
+[Enable-SmbDelegation]: #enable-smbdelegation '```&#10;Enable-SmbDelegation&#10;```&#10;Enables a constrained delegation authorization for an SMB client and server.'
+[Get-SmbDelegation]: #get-smbdelegation '```&#10;Get-SmbDelegation&#10;```&#10;Gets the constrained delegation authorizations for an SMB client.'
+[Get-SmbMapping]: #get-smbmapping '```&#10;Get-SmbMapping&#10;```&#10;Retrieves the SMB client directory mappings created for a server.'
+[New-SmbMapping]: #new-smbmapping '```&#10;New-SmbMapping&#10;```&#10;Creates an SMB mapping.'
+[Remove-SmbMapping]: #remove-smbmapping '```&#10;Remove-SmbMapping&#10;```&#10;Removes the SMB mapping to an SMB share.'
+[Get-SmbMultichannelConnection]: #get-smbmultichannelconnection '```&#10;Get-SmbMultichannelConnection&#10;```&#10;Retrieves the SMB connections made between the SMB client network interfaces and the SMB server network interfaces.'
+[Update-SmbMultichannelConnection]: #update-smbmultichannelconnection '```&#10;Update-SmbMultichannelConnection&#10;```&#10;Forces the SMB client to update the multi-channel-related information.'
+[Get-SmbMultichannelConstraint]: #get-smbmultichannelconstraint '```&#10;Get-SmbMultichannelConstraint&#10;```&#10;Retrieves the constraints that define how the SMB client uses network interfaces to connect to the servers.'
+[New-SmbMultichannelConstraint]: #new-smbmultichannelconstraint '```&#10;New-SmbMultichannelConstraint&#10;```&#10;Creates an SMB multi-channel constraint for the specified server.'
+[Remove-SmbMultichannelConstraint]: #remove-smbmultichannelconstraint '```&#10;Remove-SmbMultichannelConstraint&#10;```&#10;Removes SMB multi-channel constraints.'
+[Close-SmbOpenFile]: #close-smbopenfile '```&#10;Close-SmbOpenFile&#10;```&#10;Close a file that is open by one of the clients of the SMB server&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 108'
+[Get-SmbOpenFile]: #get-smbopenfile '```&#10;Get-SmbOpenFile&#10;```&#10;Retrieve basic information about the files that are open on behalf of the clients of the Server Message Block (SMB) server&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 108'
+[Set-SmbPathAcl]: #set-smbpathacl '```&#10;Set-SmbPathAcl&#10;```&#10;Sets the ACL for the file system folder to match the ACL used by an SMB share.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 340'
+[Get-SmbServerConfiguration]: #get-smbserverconfiguration '```&#10;Get-SmbServerConfiguration&#10;```&#10;Retrieves the SMB server configuration.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 109'
+[Set-SmbServerConfiguration]: #set-smbserverconfiguration '```&#10;Set-SmbServerConfiguration&#10;```&#10;Sets the SMB Service configuration.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 109'
+[Get-SmbServerNetworkInterface]: #get-smbservernetworkinterface '```&#10;Get-SmbServerNetworkInterface&#10;```&#10;Retrieves the network interfaces used by the SMB server.'
+[Close-SmbSession]: #close-smbsession '```&#10;Close-SmbSession&#10;```&#10;Ends forcibly the SMB session.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 107'
+[Get-SmbSession]: #get-smbsession '```&#10;Get-SmbSession&#10;```&#10;Retrieves information about the SMB sessions that are currently established between the SMB server and the associated clients.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 107'
+[New-SmbShare]: #new-smbshare '```&#10;New-SmbShare&#10;```&#10;Creates an SMB share.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 106'
+[Remove-SmbShare]: #remove-smbshare '```&#10;Remove-SmbShare&#10;```&#10;Deletes the specified SMB shares.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 108'
+[Get-SmbShare]: #get-smbshare '```&#10;Get-SmbShare&#10;```&#10;Retrieves the SMB shares on the computer.'
+[Set-SmbShare]: #set-smbshare '```&#10;Set-SmbShare&#10;```&#10;Modifies the properties of the SMB share.'
+[Block-SmbShareAccess]: #block-smbshareaccess '```&#10;Block-SmbShareAccess&#10;```&#10;Adds a deny ACE for a trustee to the security descriptor of the SMB share.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 109'
+[Get-SmbShareAccess]: #get-smbshareaccess '```&#10;Get-SmbShareAccess&#10;```&#10;Retrieves the ACL of the SMB share.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 108'
+[Grant-SmbShareAccess]: #grant-smbshareaccess '```&#10;Grant-SmbShareAccess&#10;```&#10;Adds an allow ACE for a trustee to the security descriptor of the SMB share.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 109'
+[Revoke-SmbShareAccess]: #revoke-smbshareaccess '```&#10;Revoke-SmbShareAccess&#10;```&#10;Removes all of the allow ACEs for a trustee from the security descriptor of the SMB share.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 109'
+[Unblock-SmbShareAccess]: #unblock-smbshareaccess '```&#10;Unblock-SmbShareAccess&#10;```&#10;Removes all of the deny ACEs for the trustee from the security descriptor of the SMB share.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 109'
 #### storagereplica
 [msdocs:Get-SRAccess]: https://docs.microsoft.com/en-us/powershell/module/storagereplica/Get-SRAccess "Get-SRAccess"
 [msdocs:Grant-SRAccess]: https://docs.microsoft.com/en-us/powershell/module/storagereplica/Grant-SRAccess "Grant-SRAccess"
@@ -2156,6 +2829,7 @@ Tasks
 <code>SRNetworkConstraint&nbsp;[g][Get-SRNetworkConstraint]&nbsp;[r][Remove-SRNetworkConstraint]&nbsp;[s][Set-SRNetworkConstraint]</code>
 <code>SRPartnership&nbsp;[g][Get-SRPartnership]&nbsp;[n][New-SRPartnership]&nbsp;[r][Remove-SRPartnership]&nbsp;[s][Set-SRPartnership]</code>
 <code>SRTopology&nbsp;[t][Test-SRTopology]</code>
+
 #### VirtualMachineManager
 [Set-SCVirtualMachine]: #set-scvirtualmachine '```&#10;[PS] Set-SCVirtualMachine&#10;```&#10;Changes properties of a virtual machine managed by VMM.'
 [msdocs:Set-SCVirtualMachine]: https://docs.microsoft.com/en-us/powershell/module/VirtualMachineManager/Set-SCVirtualMachine "Set-SCVirtualMachine"
@@ -2262,41 +2936,6 @@ Tasks
 <code>Policy&nbsp;[g][Get-WBPolicy][?][msdocs:Get-WBPolicy]&nbsp;[n][New-WBPolicy][?][msdocs:New-WBPolicy]&nbsp;[r][Remove-WBPolicy][?][msdocs:Remove-WBPolicy]&nbsp;[s][Set-WBPolicy][?][msdocs:Set-WBPolicy]</code>
 <code>VirtualMachine&nbsp;[a][Add-WBVirtualMachine][?][msdocs:Add-WBVirtualMachine]&nbsp;[g][Get-WBVirtualMachine][?][msdocs:Get-WBVirtualMachine]&nbsp;[r][Remove-WBVirtualMachine][?][msdocs:Remove-WBVirtualMachine]</code>
 <code>Volume&nbsp;[a][Add-WBVolume][?][msdocs:Add-WBVolume]&nbsp;[g][Get-WBVolume][?][msdocs:Get-WBVolume]&nbsp;[r][Remove-WBVolume][?][msdocs:Remove-WBVolume]</code>
-
-### System administration cmdlets
-[Disable-LocalUser]: #disable-localuser '```&#10;PS C:\> Disable-LocalUser&#10;PS C:\> dlu&#10;```&#10;Disable a local user account'
-[Enable-LocalUser]: #enable-localuser '```&#10;PS C:\> Enable-LocalUser&#10;PS C:\> elu&#10;```&#10;Enable a local user account'
-[Get-LocalUser]: #get-localuser '```&#10;PS C:\> Get-LocalUser&#10;PS C:\> glu&#10;```&#10;Display local user account'
-[New-LocalUser]: #new-localuser '```&#10;PS C:\> New-LocalUser&#10;PS C:\> nlu&#10;```&#10;Create a local user account'
-[Remove-LocalUser]: #remove-localuser '```&#10;PS C:\> Remove-LocalUser&#10;PS C:\> rlu&#10;```&#10;Delete a local user account'
-[Rename-LocalUser]: #rename-localuser '```&#10;PS C:\> Rename-LocalUser&#10;PS C:\> rnlu&#10;```&#10;Delete local user account'
-[Set-LocalUser]: #set-localuser '```&#10;PS C:\> Set-LocalUser&#10;PS C:\> slu&#10;```&#10;Modify a local user account'
-
-[Add-LocalGroupMember]: #add-localgroupmember '```&#10;PS C:\> Add-LocalGroupMember&#10;```&#10;Add members to a local group'
-[Get-LocalGroupMember]: #get-localgroupmember '```&#10;PS C:\> Get-LocalGroupMember&#10;```&#10;Display members of a local group'
-[Remove-LocalGroupMember]: #remove-localgroupmember '```&#10;PS C:\> Remove-LocalGroupMember&#10;```&#10;Remove members from a local group'
-
-[Clear-EventLog]: #clear-eventlog '```&#10;Clear-EventLog&#10;```&#10;Clears all entries from specified event logs on the local or remote computers.'
-[Get-EventLog]: #get-eventlog '```&#10;Get-EventLog&#10;```&#10;Gets the events in an event log, or a list of the event logs, on the local computer or remote computers.'
-[New-EventLog]: #new-eventlog '```&#10;New-EventLog&#10;```&#10;Creates a new event log and a new event source on a local or remote computer.'
-[Limit-EventLog]: #limit-eventlog '```&#10;Limit-EventLog&#10;```&#10;Sets the event log properties that limit the size of the event log and the age of its entries.'
-[Remove-EventLog]: #remove-eventlog '```&#10;Remove-EventLog&#10;```&#10;Deletes an event log or unregisters an event source.'
-[Show-EventLog]: #show-eventlog '```&#10;Show-EventLog&#10;```&#10;Displays the event logs of the local or a remote computer in Event Viewer.'
-[Write-EventLog]: #write-eventlog '```&#10;Write-EventLog&#10;```&#10;Writes an event to an event log.'
-
-<code>LocalGroupMember&nbsp;[g][Get-LocalGroupMember]&nbsp;[a][Add-LocalGroupMember]&nbsp;[r][Remove-LocalGroupMember]</code>
-<code>LocalUser&nbsp;[g][Get-LocalUser]&nbsp;[n][New-LocalUser]&nbsp;[r][Remove-LocalUser]&nbsp;[s][Set-LocalUser]&nbsp;[e][Enable-LocalUser]&nbsp;[d][Disable-LocalUser]&nbsp;[rn][Rename-LocalUser]</code>
-<code>EventLog&nbsp;[ch][Clear-EventLog][?][msdocs:Clear-EventLog]&nbsp;[g][Get-EventLog][?][msdocs:Get-EventLog]&nbsp;[n][New-EventLog][?][msdocs:New-EventLog]&nbsp;[l][Limit-EventLog][?][msdocs:Limit-EventLog]&nbsp;[r][Remove-EventLog][?][msdocs:Remove-EventLog]&nbsp;[sh][Show-EventLog][?][msdocs:Show-EventLog]&nbsp;[wr][Write-EventLog][?][msdocs:Write-EventLog]</code>
-
-### Windows objects cmdlets
-[Edit-NanoServerImage]: #edit-nanoserverimage '```&#10;PS C:\> Edit-NanoServerImage&#10;```&#10;Add a role or feature to an existing Nano Server VHD file&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 49'
-[Get-WMIObject]: #get-wmiobject '```&#10;PS C:\> Get-WMIObject&#10;PS C:\> gwmi&#10;```&#10;Gets instances of Windows Management Instrumentation (WMI) classes or information about the available classes.&#10;Superseded by `Get-CimInstance` since Powershell 3.0'
-[New-NanoServerImage]: #new-nanoserverimage '```&#10;PS C:\> New-NanoServerImage&#10;New-NanoServerImage -DeploymentType guest|host -Edition standard|datacenter -MediaPath root -TargetPath $PATH -ComputerName $NAME&#10;```&#10;Used to create a Nano Server VHD file for Nano Server installation&#10;Required parameters:&#10;  `DeploymentType` specified whether the image file should be used on a Hyper-V VM ("Guest") or a physical server ("Host")&#10;  `Edition` specifies whether to install the Standard or Datacenter edition of Nano Server&#10;  `MediaPath` specifies the path to the root of the WS2016 installation disk or mounted image&#10;  `BasePath` specifies a path on the local system where the cmdlet creates a copy of the installation files from the location specified in `MediaPath`&#10;  `TargetPath` specifies the full path and filename of the new image to be created with the filename extension (".vhd" or ".vhdx") specifying Generation 1 or Generation 2 image.&#10;  `ComputerName` specifies the computer name that should be assigned to the new image&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 44'
-
-<code>Guid&nbsp;n</code> 
-<code>NanoServerImage&nbsp;[n][New-NanoServerImage] [e][Edit-NanoServerImage]</code> 
-<code>WMIObject&nbsp;[g][Get-WMIObject]</code> 
-
 # Syntax
 #### Control flow
 ```powershell
@@ -3738,7 +4377,7 @@ Add-ClusterScaleOutFileServer
 ##### Add-ClusterSharedVolume
 Zacker: 336
 ```powershell
-Add-ClusterSharedVolume -Name "Cluster disk 5
+Add-ClusterSharedVolume -Name "Cluster disk 5"
 ```
 ##### Enable-ClusterStorageSpacesDirect
 Add storage to a failover cluster [created][New-Cluster] with the `-NoStorage` option <sup>[Zacker][Zacker]: 354</sup>
@@ -3839,7 +4478,58 @@ New-VMSan "PLABS-Fc"
 ```powershell
 Add-VMFibreChannelHBA PLABDC02 "PLABS-Fc"
 ```
+# Concepts
+[endpoint]: # 'endpoint&#10;a particular configuration item in WinRM, representing a specific application for which WinRM can receive traffic'
+[explicit remoting]: # 'explicit remoting&#10;opening a temporary or persistent Powershell session to a remote system&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 176'
+[external virtual switch]: # 'external virtual switch&#10;bound to networking protocol stack in the host operating system and connected to a physical network interface adapter on the host, allowing VMs to access the network to which the physical adapter is connected&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 241'
+[implicit remoting]: # 'implicit remoting&#10;running a cmdlet specifying the `ComputerName` parameter, which directs its function to the remote system&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 177'
+[internal virtual switch]: # 'internal virtual switch&#10;Bound to a separate instance of the networking protocol stack in the host operating system, independent from the physical network interface adapter and its connected network, it allows VMs to access the virtual network, including the host operating system.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 241'
+[listener]: # 'listener&#10;configuration item in WinRM representing the ability of the service to accept incoming network traffic, associated with a TCP port number'
+[NuGet]: # 'NuGet&#10;.NET package manager'
+[private virtual switch]: # 'private virtual switch&#10;Exists only in the Hyper-V server and is accessible only to the VMs running on it, and is inaccessible to the host operating system itself.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 241'
+[remoting]: # 'remoting&#10;term applied to the use of WinRM in Powershell over port 5985 (or 5986 for HTTPS)'
+[WinRM]: # 'Windows Remote Management (WinRM)&#10;Microsoft implementation of the WSMAN protocol, which handles communications and authentication for connections for many applications.&#10;Unlike MMCs, which are based on DCOM (legacy technology), WinRM is considered firewall-friendly and is the preferred option'
+
+Concepts
+- [NuGet][NuGet]
+
+Powershell [remoting][remoting] can be done [explicitly][explicit remoting] or [implicitly][implicit remoting].
+Explicit remoting is also 1-to-1 remoting, where an interactive Powershell prompt is brought up on a remote computer.
+One-to-many or fan-out remoting is possible with implicit remoting, where a command is transmitted to many computers .
+Remoting relies on [WinRM][WinRM], which is Microsoft's implementation of WSMAN. 
+
 # Tasks
+- [**Display computer name**][Get-ComputerInfo]
+- [**Remove Registry keys**][Remove-Item]
+- [**Clear out `%temp%` folder**][Remove-Item]
+- [**Reset AD user's password**][Set-ADAccountPassword]
+- [**Generate password**](#generate-password)
+- [Run `cmd` as admin][Start-Process]
+- [Add a member to a group](#add-a-member-to-a-group)
+- [Credentials](#credentials)
+- [Formatting output](#output-formatting)
+- [Hash tables](#hash-tables)
+- [Manipulating files](#file-manipulation)
+- [Text-to-speech](#text-to-speech)
+- [New domain controller](#new-domain-controller)
+- [Set new Registry keys](#registry)
+- [Create a new VHDX file, mount and initialize it, and create and format a partition within it](#vhdx-file)
+- [Restart Wi-Fi adapter](#restart-wi-fi-adapter)
+- [Safely combine related Registry modifications](#registry)
+- [Set DNS server to DHCP][Set-DnsClientServerAddress]
+- [Set IP address to DHCP][Set-NetIpInterface]
+- [Add a local user to administrators](#add-a-new-local-admin)
+- [Install NuGet][Install-PackageProvider]
+- [XML](#handle-xml-files)
+- [Create a virtual switch with SET enabled](#create-a-virtual-switch-with-set-enabled)<sup>70-740</sup>
+- [Implement nested virtualization](#implement-nested-virtualization)<sup>70-740</sup>
+- [Enable CredSSP](#enable-credssp)<sup>70-740</sup>
+- [Configure Server Core](#configure-server-core)<sup>70-740</sup>
+- [Implement Discrete Device Assignment](#implement-dda)<sup>70-740</sup>
+- [Create a S2D cluster](#configure-s2d-cluster)<sup>70-740</sup>
+- [Configure a pass-through disk](#pass-through-disk)<sup>70-740</sup>
+- [Create a VM, specifying installation media](#create-vm-with-installation-media)<sup>70-740</sup>
+
 #### Computer information
 Display computer name 
 [<sup>devblogs.microsoft.com</sup>][https://devblogs.microsoft.com/scripting/powertip-use-powershell-to-get-computer-name/]
@@ -3972,19 +4662,6 @@ $Hashtable.Count
 Removing keys:
 ```powershell
 $Hashtable.Remove('One')
-```
-#### Registry
-Fix Windows Search bar <sup>[docs.microsoft.com][https://docs.microsoft.com/en-us/powershell/scripting/samples/working-with-registry-keys?view=powershell-7]</sup>
-```powershell
-New-Item -Path HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Search\BingSearchEnabled
-Set-Item $$ 0
-Set-ItemProperty -Path HKCU:\Software\Microsoft\Windows\CurrentVersion\Search -Name CortanaConsent -Value 0
-```
-Safely combine related registry modifications using [`Start-Transaction`][Start-Transaction] and [`Complete-Transaction`][Complete-Transaction] <sup>[Holmes][Holmes]: 604</sup>
-```powershell
-Start-Transaction
-New-Item TempKey -UseTransaction
-Complete-Transaction
 ```
 #### New domain controller
 <sup>[Jones][Jones]</sup>
@@ -4208,4 +4885,32 @@ Export-csv .\usersnoemail2.csv -notypeinformation
 ```powershell
 New-VM PLABWIN102 1536mb 1 -SwitchName 'Private network 1' -NewVHDPath 'C:\Users\Public\Documents\Hyper-V\Virtual hard disks\PLABWIN102.vhdx' -NewVHDSizeBytes 127gb
 Set-VMDvdDrive -VMName PLABWIN102 -Path C:\Users\Administrator.PRACTICELABS\Documents\Eval81.iso
+```
+#### Registry
+
+Description | Affected key
+---         | ---
+Fix Windows Search bar <sup>[docs.microsoft.com][https://docs.microsoft.com/en-us/powershell/scripting/samples/working-with-registry-keys?view=powershell-7]</sup> | HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Search
+Remove 3D Objects <sup>[howtogeek.com](https://www.howtogeek.com/331361/how-to-remove-the-3d-objects-folder-from-this-pc-on-windows-10/ "How to Remove “3D Objects” From This PC on Windows 10")</sup> | HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace
+Display seconds in system clock <sup>[howtogeek.com](https://www.howtogeek.com/325096/how-to-make-windows-10s-taskbar-clock-display-seconds/ "How to Make Windows 10’s Taskbar Clock Display Seconds")</sup> | HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced
+Disable Aero Shake <sup>[howtogeek.com](https://www.howtogeek.com/howto/windows-7/disable-aero-shake-in-windows-7/ "How to Stop Aero Shake from Minimizing Your Windows") | HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced
+
+Remove **3D Objects** from **This PC** <sup>[howtogeek.com](https://www.howtogeek.com/331361/how-to-remove-the-3d-objects-folder-from-this-pc-on-windows-10/ "How to Remove “3D Objects” From This PC on Windows 10")</sup>
+```powershell
+Remove-Item 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{0DB7E03F-FC29-4DC6-9020-FF41B59E513A}'
+```
+Add seconds to clock <sup>[howtogeek.com](https://www.howtogeek.com/325096/how-to-make-windows-10s-taskbar-clock-display-seconds/ "How to Make Windows 10’s Taskbar Clock Display Seconds")</sup>
+```powershell
+New-Item -Path HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced -Name ShowSecondsInSystemClock -Value 1
+Restart-Computer
+```
+```powershell
+New-Item -Path HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Search -Name BingSearchEnabled -Value 0
+New-Item -Path HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Search -Name CortanaConsent -Value 0
+```
+Safely combine related registry modifications using [`Start-Transaction`][Start-Transaction] and [`Complete-Transaction`][Complete-Transaction] <sup>[Holmes][Holmes]: 604</sup>
+```powershell
+Start-Transaction
+New-Item TempKey -UseTransaction
+Complete-Transaction
 ```

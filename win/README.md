@@ -151,15 +151,15 @@ Tasks
 #### MMC snap-ins
 [`adprep`][adprep] 
 [`adfind`][adfind]
-[`cluadmin`][cluadmin.msc]
+[`cluadmin.msc`][cluadminmsc]
 `compmgmt.msc`
 `diskmgmt.msc`
 [`djoin`][Djoin.exe]
 `dsa.msc`
-[`domain`][domain.msc]
-[`dssite`][dssite.msc]
+[`domain.msc`][domainmsc]
+[`dssite.msc`][dssitemsc]
 [`dsquery`][dsquery]
-[`smigdeploy`][SmigDeploy.exe]
+[`smigdeploy.exe`][SmigDeployexe]
 `virtmgmt.msc`
 
 ###### Control Panel
@@ -827,22 +827,15 @@ winrm set winrm/config/client @{TrustedHosts="192.168.10.41"}
 #### winver
 
 #### wmic
-`bios`
+[`bios`](#wmic-bios)
 `logicaldisk`
 `memorychip`
+[`os`](#wmic-os)
 `path`
 
 Recover Windows product key <sup>[fossbytes.com][https://fossbytes.com/how-to-find-windows-product-key-lost-cmd-powershell-registry/]</sup>
 ```cmd
 wmic path softwarelicensingservice get OA3xOriginalProductKey
-```
-Recover serial number of a Lenovo laptop <sup>[pcsupport.lenovo.com][https://pcsupport.lenovo.com/us/en/solutions/find-product-name]</sup>
-```cmd
-wmic bios get serialnumber
-```
-Display BIOS version
-```cmd
-wmic bios get biosversion
 ```
 Display information about installed RAM
 ```cmd
@@ -851,6 +844,24 @@ wmic memorychip list full
 List all objects of type `Win32_LogicalDisk` using that class's alias `logicaldisk`. <sup>[Desmond][Desmond2009]: 642 [pwsh](pwsh.md '```&#10;PS C:\> Get-WmiObject -query "SELECT * FROM Win32_LogicalDisk"&#10;PS C:\> gwmi -q "select * from win32_logicaldisk"&#10;```') </sup>
 ```cmd
 wmic logicaldisk list brief
+```
+##### wmic bios
+Recover serial number of a Lenovo laptop <sup>[pcsupport.lenovo.com][https://pcsupport.lenovo.com/us/en/solutions/find-product-name]</sup>
+```cmd
+wmic bios get serialnumber
+```
+Display BIOS version
+```cmd
+wmic bios get biosversion
+```
+##### wmic os
+Display operating system architecture
+```cmd
+wmic os get osarchitecture
+```
+Display operating system type (48 is Windows 10)
+```cmd
+wmic os get operatingsystemsku
 ```
 #### wt.exe
 [https://www.bleepingcomputer.com/news/microsoft/windows-terminal-09-released-with-command-line-arguments-and-more/]: https://www.bleepingcomputer.com/news/microsoft/windows-terminal-09-released-with-command-line-arguments-and-more/ "Windows Terminal 0.9 Released with Command Line Arguments and More" 
