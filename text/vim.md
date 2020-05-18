@@ -10,7 +10,10 @@ Vim offers a **composable** language for expressing these editing changes whose 
 
 The framework of understanding vim's syntax as a language appears to date back to an influential 2011 [stackoverflow](https://stackoverflow.com/questions/1218390/what-is-your-most-productive-shortcut-with-vim/1220118#1220118 "What is your most productive shortcut with Vim?") post.
 
-#### Plugins
+## Settings
+
+
+## Plugins
 Vim 8 supports native loading of plugins (put in `.vim/pack/xx/start/` where `xx` is an arbitrary directory name
 
 Set file format to Unix/DOS [<sup>ref</sup>][https://kb.iu.edu/d/acux]
@@ -18,7 +21,7 @@ Set file format to Unix/DOS [<sup>ref</sup>][https://kb.iu.edu/d/acux]
 :set fileformat=unix
 :set fileformat=dos
 ```
-#### Key bindings
+## Key bindings
 Map `<Alt-j>` and `<Alt-k>` to move lines of text up or down 
 <sup>[vim.fandom.com][https://vim.fandom.com/wiki/Moving_lines_up_or_down]</sup>
 

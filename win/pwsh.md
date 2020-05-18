@@ -19,7 +19,7 @@
 # Contents
 - [**Modules**](#modules)
 - [**Tasks**](#tasks)
-
+- [.NET Assemblies](dotnet.md)
 <!--
 [<code>&nbsp;a</code>](#cmdlet-verbs  "```&#10;PS C:\> Add-&#10;```") 
 [`ap`](#cmdlet-verbs "`Approve-`&#10;Confirms or agrees to the status of a resource or process.") 
@@ -118,6 +118,8 @@
 [`wr` ](#cmdlet-verbs  "```&#10;PS C:\> Write-&#10;```&#10;Adds information to a target. This verb is paired with Read.") 
 
 ### Bash equivalents
+Powershell users refer to the command-line environment as the **"console"**, as opposed to **"terminal"** or **"shell"** which are preferred among Linux users.
+
 [`$!`][&#36;&#36;]/[`!$`][&#36;&#36;] 
 [`$?`][&#36;?] 
 [`&`][Start-Job] 
@@ -604,7 +606,9 @@
 [Get-DedupVolume]: #get-dedupvolume '```&#10;Get-DedupVolume&#10;```&#10;Returns deduplication volumes that have data deduplication metadata.'
 [Set-DedupVolume]: #set-dedupvolume '```&#10;Set-DedupVolume&#10;```&#10;Changes data deduplication settings on one or more volumes.'
 
-- DedupVolume [Disable][Disable-DedupVolume]<sup>[?][msdocs:Disable-DedupVolume]</sup> [Enable][Enable-DedupVolume]<sup>[?][msdocs:Enable-DedupVolume]</sup>
+- DedupVolume 
+[`Disable`][Disable-DedupVolume]<sup>[?][msdocs:Disable-DedupVolume]</sup>
+[`Enable`][Enable-DedupVolume]<sup>[?][msdocs:Enable-DedupVolume]</sup>
 #### defender
 [msdocs:Add-MpPreference]: https://docs.microsoft.com/en-us/powershell/module/defender/Add-MpPreference "Add-MpPreference"
 [msdocs:Get-MpComputerStatus]: https://docs.microsoft.com/en-us/powershell/module/defender/Get-MpComputerStatus "Get-MpComputerStatus"
@@ -4856,13 +4860,13 @@ Mount-WindowsImage -ImagePath .\CoreServer.vhdx -Path .\MountDir -Index 1
 Add-WindowsPackage -Path .\MountDir PackagePath C:\ServicingPackages_cabs
 Dismount-WindowsImage -Path .\MountDir -Save
 ```
-##### Pass-through disk
+#### Pass-through disk
 [Zacker][Zacker]: 226
 ```powershell
 Set-Disk -Number 2 -IsOffline $true
 Add-VMHardDiskDrive -VMName server1 -ControllerType scsi -DiskNumber 2
 ```
-##### Site-aware failover cluster
+#### Site-aware failover cluster
 Configure failover clusters for two offices <sup>[Zacker][Zacker]: 366</sup>
 ```powershell
 New-ClusterFaultDomain -Name ny -Type site -Description "Primary" -Location "New York, NY"
@@ -4872,7 +4876,7 @@ Set-ClusterFaultDomain -Name node2 -Parent ny
 Set-ClusterFaultDomain -Name node3 -Parent sf
 Set-ClusterFaultDomain -Name node4 -Parent sf
 ```
-##### Filter AD account information
+#### Filter AD account information
 ```powershell
 Get-aduser -filter {(SamAccountName -like "*CA0*")} -properties Displayname, SaMaccountName, Enabled, EmailAddress, proxyaddresses | 
 Where {($_.EmailAddress -notlike "*@*")} | 
@@ -4880,7 +4884,7 @@ Where {($_.Enabled -eq $True)} |
 Select Displayname, SaMaccountName, Enabled, EmailAddress, @{L=’ProxyAddress_1'; E={$_.proxyaddresses[0]}}, @{L=’ProxyAddress_2'; E={$_.ProxyAddresses[1]}} | 
 Export-csv .\usersnoemail2.csv -notypeinformation
 ```
-##### Create VM with installation media
+#### Create VM with installation media
 [Practice Lab][pl:70-740]
 ```powershell
 New-VM PLABWIN102 1536mb 1 -SwitchName 'Private network 1' -NewVHDPath 'C:\Users\Public\Documents\Hyper-V\Virtual hard disks\PLABWIN102.vhdx' -NewVHDSizeBytes 127gb
@@ -4890,7 +4894,7 @@ Set-VMDvdDrive -VMName PLABWIN102 -Path C:\Users\Administrator.PRACTICELABS\Docu
 
 Description | Affected key
 ---         | ---
-Fix Windows Search bar <sup>[docs.microsoft.com][https://docs.microsoft.com/en-us/powershell/scripting/samples/working-with-registry-keys?view=powershell-7]</sup> | HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Search
+Fix Windows Search bar <sup>[docs.microsoft.com](https://docs.microsoft.com/en-us/powershell/scripting/samples/working-with-registry-keys?view=powershell-7)</sup> | HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Search
 Remove 3D Objects <sup>[howtogeek.com](https://www.howtogeek.com/331361/how-to-remove-the-3d-objects-folder-from-this-pc-on-windows-10/ "How to Remove “3D Objects” From This PC on Windows 10")</sup> | HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace
 Display seconds in system clock <sup>[howtogeek.com](https://www.howtogeek.com/325096/how-to-make-windows-10s-taskbar-clock-display-seconds/ "How to Make Windows 10’s Taskbar Clock Display Seconds")</sup> | HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced
 Disable Aero Shake <sup>[howtogeek.com](https://www.howtogeek.com/howto/windows-7/disable-aero-shake-in-windows-7/ "How to Stop Aero Shake from Minimizing Your Windows") | HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced
@@ -4913,4 +4917,46 @@ Safely combine related registry modifications using [`Start-Transaction`][Start-
 Start-Transaction
 New-Item TempKey -UseTransaction
 Complete-Transaction
+```
+#### WinForms
+[Pastebin](https://pastebin.com/v3KMc2ni)
+```powershell
+# Load required assemblies
+[void] [System.Reflection.Assembly]::LoadWithPartialName("System.Windows.Forms")
+
+# Drawing form and controls
+$Form_HelloWorld = New-Object System.Windows.Forms.Form
+    $Form_HelloWorld.Text = "Hello World"
+    $Form_HelloWorld.Size = New-Object System.Drawing.Size(272,160)
+    $Form_HelloWorld.FormBorderStyle = "FixedDialog"
+    $Form_HelloWorld.TopMost = $true
+    $Form_HelloWorld.MaximizeBox = $false
+    $Form_HelloWorld.MinimizeBox = $false
+    $Form_HelloWorld.ControlBox = $true
+    $Form_HelloWorld.StartPosition = "CenterScreen"
+    $Form_HelloWorld.Font = "Segoe UI"
+
+# adding a label to my form
+$label_HelloWorld = New-Object System.Windows.Forms.Label
+    $label_HelloWorld.Location = New-Object System.Drawing.Size(8,8)
+    $label_HelloWorld.Size = New-Object System.Drawing.Size(240,32)
+    $label_HelloWorld.TextAlign = "MiddleCenter"
+    $label_HelloWorld.Text = "Hello World"
+    $Form_HelloWorld.Controls.Add($label_HelloWorld)
+
+# add a button
+$button_ClickMe = New-Object System.Windows.Forms.Button
+    $button_ClickMe.Location = New-Object System.Drawing.Size(8,80)
+    $button_ClickMe.Size = New-Object System.Drawing.Size(240,32)
+    $button_ClickMe.TextAlign = "MiddleCenter"
+    $button_ClickMe.Text = "Click Me!"
+    $button_ClickMe.Add_Click({
+        $button_ClickMe.Text = "You did click me!"
+        Start-Process calc.exe
+    })
+    $Form_HelloWorld.Controls.Add($button_ClickMe)
+
+# show form
+$Form_HelloWorld.Add_Shown({$Form_HelloWorld.Activate()})
+[void] $Form_HelloWorld.ShowDialog()
 ```

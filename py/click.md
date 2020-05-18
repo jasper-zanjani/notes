@@ -1,20 +1,62 @@
-## `click`
-General-purpose decorator, docstring will come up when `--help` invocation argument is passed
+# click
+Hello World program. <sup>[Click documentation](https://click.palletsprojects.com/en/7.x/quickstart/#screencast-and-examples "Quickstart - Click Documentation")
 ```py
+import click
+
 @click.command()
+def hello():
+  click.echo('Hello World!')
+
+if __name__ = '__main__':
+  hello()
 ```
-Add command-line options ; option string itself defines the variable identifier within the code ; option string has to begin with (at least one) `-` ; `-` in the middle of the string become underscore `_` in the variable identifier
+
+Nesting commands
 ```py
-@click.option('--string',default='world',help='This is the person greeted')
+@click.group()
+def cli():
+  pass
+
+@click.command()
+def initdb():
+  click.echo('Initialized the database')
+
+@click.command()
+def dropdb():
+  click.echo('Dropped the database')
+
+cli.add_command(initdb)
+cli.add_command(dropdb)
+
+if __name__ == '__main__':
+  cli()
 ```
-Arguments are mandatory by default; arguments do not take usage text: they must be documented within the docstring
+Modified Hello World
 ```py
-@click.argument('out', required=False,type=click.File('w'))
+import click
+
+@click.command()
+@click.option('--count', default=1, help='number of greetings')
+@click.argument('name')
+def hello(count, name):
+  for x in range(count):
+    click.echo('Hello %s!' % name)
+
+if __name__ == '__main__':
+  hello()
 ```
-Supposedly superior to `print`; will output to `out` argument
+Developing the pdfcropper tool; passing `--examref` changes the numbers.
 ```py
-click.echo(f'Hello {name[0:-1]}{name[-1]*(n+1)}!', file=out)
-```
-```py
-out.write('\n{name} lives!\n') # `out` is of type LazyFile (NFI)
+import click
+
+@click.command()
+@click.option('--examref',is_flag=True)
+def hello(examref):
+  top, right, bottom, left = 0,0,0,0
+  if examref:
+    top, right, bottom, left = 1, 2, 3, 4
+  click.echo(f'Your numbers are: top ({top}), right {right}, bottom {bottom}, left {left}')
+
+if __name__ == '__main__':
+  hello()
 ```
