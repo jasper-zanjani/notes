@@ -24,6 +24,7 @@
 [domain.msc]: #domain.msc '```&#10;C:\>domain.msc&#10;```&#10;Active Directory Domains and Trusts'
 [dssite.msc]: #dssite.msc '```&#10;C:\>dssite.msc&#10;```&#10;Active Directory Sites and Services'
 [cluadmin.msc]: #cluadmin.msc '```&#10;> cluadmin.msc&#10;> cluadmin&#10;```&#10;Failover Cluster Manager'
+[iSCSICLI.exe]: #iscsicliexe '```&#10;C:\>iSCSICLI.exe&#10;```&#10;Outdated command-line tool used in Windows Server editions prior to 2012, superceded by the iSCSI Powershell module. '
 
 <!-- `cmd` commands -->
 [arp]:            #arp                            '```&#10;C:\>arp&#10;```&#10;Display and modify the IP-to-MAC address translation tables used by ARP'
@@ -123,6 +124,7 @@ Tasks
 `gpupdate`<sup>[pwsh][Invoke-GPUpdate]</sup>
 [`hostname`][hostname] <sup>[pwsh][Get-ComputerInfo]</sup>
 [`ipconfig`][ipconfig]
+[`iSCSICLI`][iSCSICLI.exe]
 [`logoff`][logoff]
 [`ms-settings:`][ms-settings:]
 [`nbtstat`][nbtstat] 
