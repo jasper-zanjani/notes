@@ -158,6 +158,7 @@ Powershell users refer to the command-line environment as the **"console"**, as 
 [`dhcpserver`](#dhcpserver)
 [`diagnostics`](#microsoftpowershelldiagnostics)
 [`dnsclient`](#dnsclient)
+[`dnsserver`](#dnsserver)
 [`netadapter`](#netadapter)
 [`netconnection`](#netconnection)
 [`netsecurity`](#netsecurity)
@@ -174,6 +175,7 @@ Powershell users refer to the command-line environment as the **"console"**, as 
 [`dcbqos`](#dcbqos)
 [`deduplication`](#deduplication)
 [`defender`](#defender)
+[`dism`](#dism)
 [`failoverclusters`](#failoverclusters)
 [`hyper-v`](#hyper-v)
 [`iscsi`](#iscsi)
@@ -185,6 +187,7 @@ Powershell users refer to the command-line environment as the **"console"**, as 
 [`servermanager`](#servermanager)
 [`servermigration`](#servermigration)
 [`storagereplica`](#storagereplica)
+[`updateservices`](#updateservices)
 [`virtualmachinemanager`](#virtualmachinemanager)
 [`windowsserverbackup`](#windowsserverbackup)
 
@@ -722,25 +725,348 @@ Powershell users refer to the command-line environment as the **"console"**, as 
 [Split-WindowsImage]: #split-windowsimage '```&#10;[PS] Split-WindowsImage&#10;```&#10;Splits an existing .wim file into multiple read-only split .wim files.'
 [Update-WIMBootEntry]: #update-wimbootentry '```&#10;[PS] Update-WIMBootEntry&#10;```&#10;Updates the Windows image file boot (WIMBoot) configuration entry, associated with either the specified data source ID, the renamed image file path or the moved image file path.'
 [Use-WindowsUnattend]: #use-windowsunattend '```&#10;[PS] Use-WindowsUnattend&#10;```&#10;Applies an unattended answer file to a Windows image.'
+[Apply-WindowsUnattend]: #apply-windowsunattend '```&#10;[PS] Apply-WindowsUnattend&#10;```&#10;&#10;Equivalent to `Dism.exe /Image:foldername /Apply-Unattend`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
 
-<code>WIMBootEntry&nbsp;[g][Get-WIMBootEntry]&nbsp;[u][Update-WIMBootEntry]</code>
-**`AppxProvisioned`**
-<code>DataFile&nbsp;[s][Set-AppxProvisionedDataFile]</code> 
-<code>Package&nbsp;[a][Add-AppxProvisionedPackage]&nbsp;[g][Get-AppxProvisionedPackage]&nbsp;[r][Remove-AppxProvisionedPackage]</code> 
-**`Windows`**
-<code>Capability&nbsp;[a][Add-WindowsCapability]&nbsp;[g][Get-WindowsCapability]&nbsp;[r][Remove-WindowsCapability]</code>
-<code>CorruptMountPoint&nbsp;[c][Clear-WindowsCorruptMountPoint]</code>
-<code>CustomDataImage&nbsp;[en][Expand-WindowsCustomDataImage]</code>
-<code>CustomImage&nbsp;[n][New-WindowsCustomImage]</code>
-<code>Driver&nbsp;[a][Add-WindowsDriver]&nbsp;[ep][Export-WindowsDriver]&nbsp;[g][Get-WindowsDriver]&nbsp;[r][Remove-WindowsDriver]</code> 
-<code>Edition&nbsp;[g][Get-WindowsEdition]&nbsp;[s][Set-WindowsEdition]</code>
-<code>Image&nbsp;[a][Add-WindowsImage]&nbsp;[dm][Dismount-WindowsImage]&nbsp;[en][Expand-WindowsImage]&nbsp;[ep][Export-windowsImage]&nbsp;[n][New-WindowsImage]&nbsp;[sv][Save-WindowsImage]&nbsp;[ep][Export-WindowsImage]&nbsp;[g][Get-WindowsImage]&nbsp;[mt][Mount-WindowsImage]&nbsp;[n][New-WindowsImage]&nbsp;[om][Optimize-WindowsImage]&nbsp;[rp][Repair-WindowsImage]&nbsp;[r][Remove-WindowsImage]&nbsp;[sl][Split-WindowsImage]</code>
-<code>ImageContent&nbsp;[g][Get-WindowsImageContent]</code>
-<code>OptionalFeature&nbsp;[d][Disable-WindowsOptionalFeature]&nbsp;[e][Enable-WindowsOptionalFeature]&nbsp;[g][Get-WindowsOptionalFeature]</code>
-<code>Package&nbsp;[a][Add-WindowsPackage]&nbsp;[g][Get-WindowsPackage]&nbsp;[r][Remove-WindowsPackage]</code>
-<code>ProductKey&nbsp;[s][Set-WindowsProductKey]</code>
-<code>ReservedStorageState&nbsp;[g][Get-WindowsReservedStorageState]&nbsp;[s][Set-WindowsReservedStorageState]</code>
-<code>Unattend&nbsp;[u][Use-WindowsUnattend]</code>
+- AppxProvisionedDataFile
+[`Set`][Set-AppxProvisionedDataFile]<sup>[?][msdocs:Set-AppxProvisionedDataFile]</sup>
+- AppxProvisionedPackage
+[`Add`][Add-AppxProvisionedPackage]<sup>[?][msdocs:Add-AppxProvisionedPackage]</sup>
+[`Get`][Get-AppxProvisionedPackage]<sup>[?][msdocs:Get-AppxProvisionedPackage]</sup>
+[`Remove`][Remove-AppxProvisionedPackage]<sup>[?][msdocs:Remove-AppxProvisionedPackage]</sup>
+- WIMBootEntry
+[`Get`][Get-WIMBootEntry]<sup>[?][msdocs:Get-WIMBootEntry]</sup>
+[`Update`][Update-WIMBootEntry]<sup>[?][msdocs:Update-WIMBootEntry]</sup>
+- WindowsCapability
+[`Add`][Add-WindowsCapability]<sup>[?][msdocs:Add-WindowsCapability]</sup>
+[`Get`][Get-WindowsCapability]<sup>[?][msdocs:Get-WindowsCapability]</sup>
+[`Remove`][Remove-WindowsCapability]<sup>[?][msdocs:Remove-WindowsCapability]</sup>
+- WindowsCorruptMountPoint
+[`Clear`][Clear-WindowsCorruptMountPoint]<sup>[?][msdocs:Clear-WindowsCorruptMountPoint]</sup>
+- WindowsCustomDataImage
+[`Expand`][Expand-WindowsCustomDataImage]<sup>[?][msdocs:Expand-WindowsCustomDataImage]</sup>
+- WindowsCustomImage
+[`New`][New-WindowsCustomImage]<sup>[?][msdocs:New-WindowsCustomImage]</sup>
+- WindowsDriver
+[`Add`][Add-WindowsDriver]<sup>[?][msdocs:Add-WindowsDriver]</sup>
+[`Export`][Export-WindowsDriver]<sup>[?][msdocs:Export-WindowsDriver]</sup>
+[`Get`][Get-WindowsDriver]<sup>[?][msdocs:Get-WindowsDriver]</sup>
+[`Remove`][Remove-WindowsDriver]<sup>[?][msdocs:Remove-WindowsDriver]</sup>
+- WindowsEdition
+[`Get`][Get-WindowsEdition]<sup>[?][msdocs:Get-WindowsEdition]</sup>
+[`Set`][Set-WindowsEdition]<sup>[?][msdocs:Set-WindowsEdition]</sup>
+- WindowsImage
+[`Add`][Add-WindowsImage]<sup>[?][msdocs:Add-WindowsImage]</sup>
+[`Dismount`][Dismount-WindowsImage]<sup>[?][msdocs:Dismount-WindowsImage]</sup>
+[`Expand`][Expand-WindowsImage]<sup>[?][msdocs:Expand-WindowsImage]</sup>
+[`Export`][Export-WindowsImage]<sup>[?][msdocs:Export-WindowsImage]</sup>
+[`Get`][Get-WindowsImage]<sup>[?][msdocs:Get-WindowsImage]</sup>
+[`Mount`][Mount-WindowsImage]<sup>[?][msdocs:Mount-WindowsImage]</sup>
+[`New`][New-WindowsImage]<sup>[?][msdocs:New-WindowsImage]</sup>
+[`Optimize`][Optimize-WindowsImage]<sup>[?][msdocs:Optimize-WindowsImage]</sup>
+[`Remove`][Remove-WindowsImage]<sup>[?][msdocs:Remove-WindowsImage]</sup>
+[`Repair`][Repair-WindowsImage]<sup>[?][msdocs:Repair-WindowsImage]</sup>
+[`Save`][Save-WindowsImage]<sup>[?][msdocs:Save-WindowsImage]</sup>
+[`Split`][Split-WindowsImage]<sup>[?][msdocs:Split-WindowsImage]</sup>
+- WindowsImageContent
+[`Get`][Get-WindowsImageContent]<sup>[?][msdocs:Get-WindowsImageContent]</sup>
+- WindowsOptionalFeature
+[`Disable`][Disable-WindowsOptionalFeature]<sup>[?][msdocs:Disable-WindowsOptionalFeature]</sup>
+[`Enable`][Enable-WindowsOptionalFeature]<sup>[?][msdocs:Enable-WindowsOptionalFeature]</sup>
+[`Get`][Get-WindowsOptionalFeature]<sup>[?][msdocs:Get-WindowsOptionalFeature]</sup>
+- WindowsPackage
+[`Add`][Add-WindowsPackage]<sup>[?][msdocs:Add-WindowsPackage]</sup>
+[`Get`][Get-WindowsPackage]<sup>[?][msdocs:Get-WindowsPackage]</sup>
+[`Remove`][Remove-WindowsPackage]<sup>[?][msdocs:Remove-WindowsPackage]</sup>
+- WindowsProductKey
+[`Set`][Set-WindowsProductKey]<sup>[?][msdocs:Set-WindowsProductKey]</sup>
+- WindowsReservedStorageState
+[`Get`][Get-WindowsReservedStorageState]<sup>[?][msdocs:Get-WindowsReservedStorageState]</sup>
+[`Set`][Set-WindowsReservedStorageState]<sup>[?][msdocs:Set-WindowsReservedStorageState]</sup>
+- WindowsUnattend
+[`Apply`][Apply-WindowsUnattend]<sup>[?][msdocs:Apply-WindowsUnattend]</sup>
+[`Use`][Use-WindowsUnattend]<sup>[?][msdocs:Use-WindowsUnattend]</sup>
+#### dnsserver
+[msdocs:Add-DnsServerClientSubnet]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Add-DnsServerClientSubnet "Add-DnsServerClientSubnet"
+[msdocs:Add-DnsServerConditionalForwarderZone]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Add-DnsServerConditionalForwarderZone "Add-DnsServerConditionalForwarderZone"
+[msdocs:Add-DnsServerDirectoryPartition]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Add-DnsServerDirectoryPartition "Add-DnsServerDirectoryPartition"
+[msdocs:Add-DnsServerForwarder]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Add-DnsServerForwarder "Add-DnsServerForwarder"
+[msdocs:Add-DnsServerPrimaryZone]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Add-DnsServerPrimaryZone "Add-DnsServerPrimaryZone"
+[msdocs:Add-DnsServerQueryResolutionPolicy]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Add-DnsServerQueryResolutionPolicy "Add-DnsServerQueryResolutionPolicy"
+[msdocs:Add-DnsServerRecursionScope]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Add-DnsServerRecursionScope "Add-DnsServerRecursionScope"
+[msdocs:Add-DnsServerResourceRecord]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Add-DnsServerResourceRecord "Add-DnsServerResourceRecord"
+[msdocs:Add-DnsServerResourceRecordA]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Add-DnsServerResourceRecordA "Add-DnsServerResourceRecordA"
+[msdocs:Add-DnsServerResourceRecordAAAA]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Add-DnsServerResourceRecordAAAA "Add-DnsServerResourceRecordAAAA"
+[msdocs:Add-DnsServerResourceRecordCName]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Add-DnsServerResourceRecordCName "Add-DnsServerResourceRecordCName"
+[msdocs:Add-DnsServerResourceRecordDS]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Add-DnsServerResourceRecordDS "Add-DnsServerResourceRecordDS"
+[msdocs:Add-DnsServerResourceRecordDnsKey]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Add-DnsServerResourceRecordDnsKey "Add-DnsServerResourceRecordDnsKey"
+[msdocs:Add-DnsServerResourceRecordMX]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Add-DnsServerResourceRecordMX "Add-DnsServerResourceRecordMX"
+[msdocs:Add-DnsServerResourceRecordPtr]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Add-DnsServerResourceRecordPtr "Add-DnsServerResourceRecordPtr"
+[msdocs:Add-DnsServerResponseRateLimitingExceptionlist]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Add-DnsServerResponseRateLimitingExceptionlist "Add-DnsServerResponseRateLimitingExceptionlist"
+[msdocs:Add-DnsServerRootHint]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Add-DnsServerRootHint "Add-DnsServerRootHint"
+[msdocs:Add-DnsServerSecondaryZone]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Add-DnsServerSecondaryZone "Add-DnsServerSecondaryZone"
+[msdocs:Add-DnsServerSigningKey]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Add-DnsServerSigningKey "Add-DnsServerSigningKey"
+[msdocs:Add-DnsServerStubZone]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Add-DnsServerStubZone "Add-DnsServerStubZone"
+[msdocs:Add-DnsServerTrustAnchor]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Add-DnsServerTrustAnchor "Add-DnsServerTrustAnchor"
+[msdocs:Add-DnsServerVirtualizationInstance]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Add-DnsServerVirtualizationInstance "Add-DnsServerVirtualizationInstance"
+[msdocs:Add-DnsServerZoneDelegation]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Add-DnsServerZoneDelegation "Add-DnsServerZoneDelegation"
+[msdocs:Add-DnsServerZoneScope]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Add-DnsServerZoneScope "Add-DnsServerZoneScope"
+[msdocs:Add-DnsServerZoneTransferPolicy]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Add-DnsServerZoneTransferPolicy "Add-DnsServerZoneTransferPolicy"
+[msdocs:Clear-DnsServerCache]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Clear-DnsServerCache "Clear-DnsServerCache"
+[msdocs:Clear-DnsServerStatistics]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Clear-DnsServerStatistics "Clear-DnsServerStatistics"
+[msdocs:ConvertTo-DnsServerPrimaryZone]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/ConvertTo-DnsServerPrimaryZone "ConvertTo-DnsServerPrimaryZone"
+[msdocs:ConvertTo-DnsServerSecondaryZone]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/ConvertTo-DnsServerSecondaryZone "ConvertTo-DnsServerSecondaryZone"
+[msdocs:Disable-DnsServerPolicy]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Disable-DnsServerPolicy "Disable-DnsServerPolicy"
+[msdocs:Disable-DnsServerSigningKeyRollover]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Disable-DnsServerSigningKeyRollover "Disable-DnsServerSigningKeyRollover"
+[msdocs:Enable-DnsServerPolicy]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Enable-DnsServerPolicy "Enable-DnsServerPolicy"
+[msdocs:Enable-DnsServerSigningKeyRollover]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Enable-DnsServerSigningKeyRollover "Enable-DnsServerSigningKeyRollover"
+[msdocs:Export-DnsServerDnsSecPublicKey]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Export-DnsServerDnsSecPublicKey "Export-DnsServerDnsSecPublicKey"
+[msdocs:Export-DnsServerZone]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Export-DnsServerZone "Export-DnsServerZone"
+[msdocs:Get-DnsServer]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Get-DnsServer "Get-DnsServer"
+[msdocs:Get-DnsServerCache]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Get-DnsServerCache "Get-DnsServerCache"
+[msdocs:Get-DnsServerClientSubnet]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Get-DnsServerClientSubnet "Get-DnsServerClientSubnet"
+[msdocs:Get-DnsServerDiagnostics]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Get-DnsServerDiagnostics "Get-DnsServerDiagnostics"
+[msdocs:Get-DnsServerDirectoryPartition]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Get-DnsServerDirectoryPartition "Get-DnsServerDirectoryPartition"
+[msdocs:Get-DnsServerDnsSecZoneSetting]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Get-DnsServerDnsSecZoneSetting "Get-DnsServerDnsSecZoneSetting"
+[msdocs:Get-DnsServerDsSetting]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Get-DnsServerDsSetting "Get-DnsServerDsSetting"
+[msdocs:Get-DnsServerEDns]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Get-DnsServerEDns "Get-DnsServerEDns"
+[msdocs:Get-DnsServerForwarder]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Get-DnsServerForwarder "Get-DnsServerForwarder"
+[msdocs:Get-DnsServerGlobalNameZone]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Get-DnsServerGlobalNameZone "Get-DnsServerGlobalNameZone"
+[msdocs:Get-DnsServerGlobalQueryBlockList]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Get-DnsServerGlobalQueryBlockList "Get-DnsServerGlobalQueryBlockList"
+[msdocs:Get-DnsServerQueryResolutionPolicy]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Get-DnsServerQueryResolutionPolicy "Get-DnsServerQueryResolutionPolicy"
+[msdocs:Get-DnsServerRecursion]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Get-DnsServerRecursion "Get-DnsServerRecursion"
+[msdocs:Get-DnsServerRecursionScope]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Get-DnsServerRecursionScope "Get-DnsServerRecursionScope"
+[msdocs:Get-DnsServerResourceRecord]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Get-DnsServerResourceRecord "Get-DnsServerResourceRecord"
+[msdocs:Get-DnsServerResponseRateLimiting]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Get-DnsServerResponseRateLimiting "Get-DnsServerResponseRateLimiting"
+[msdocs:Get-DnsServerResponseRateLimitingExceptionlist]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Get-DnsServerResponseRateLimitingExceptionlist "Get-DnsServerResponseRateLimitingExceptionlist"
+[msdocs:Get-DnsServerRootHint]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Get-DnsServerRootHint "Get-DnsServerRootHint"
+[msdocs:Get-DnsServerScavenging]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Get-DnsServerScavenging "Get-DnsServerScavenging"
+[msdocs:Get-DnsServerSetting]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Get-DnsServerSetting "Get-DnsServerSetting"
+[msdocs:Get-DnsServerSigningKey]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Get-DnsServerSigningKey "Get-DnsServerSigningKey"
+[msdocs:Get-DnsServerStatistics]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Get-DnsServerStatistics "Get-DnsServerStatistics"
+[msdocs:Get-DnsServerTrustAnchor]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Get-DnsServerTrustAnchor "Get-DnsServerTrustAnchor"
+[msdocs:Get-DnsServerTrustPoint]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Get-DnsServerTrustPoint "Get-DnsServerTrustPoint"
+[msdocs:Get-DnsServerVirtualizationInstance]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Get-DnsServerVirtualizationInstance "Get-DnsServerVirtualizationInstance"
+[msdocs:Get-DnsServerZone]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Get-DnsServerZone "Get-DnsServerZone"
+[msdocs:Get-DnsServerZoneAging]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Get-DnsServerZoneAging "Get-DnsServerZoneAging"
+[msdocs:Get-DnsServerZoneDelegation]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Get-DnsServerZoneDelegation "Get-DnsServerZoneDelegation"
+[msdocs:Get-DnsServerZoneScope]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Get-DnsServerZoneScope "Get-DnsServerZoneScope"
+[msdocs:Get-DnsServerZoneTransferPolicy]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Get-DnsServerZoneTransferPolicy "Get-DnsServerZoneTransferPolicy"
+[msdocs:Import-DnsServerResourceRecordDS]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Import-DnsServerResourceRecordDS "Import-DnsServerResourceRecordDS"
+[msdocs:Import-DnsServerRootHint]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Import-DnsServerRootHint "Import-DnsServerRootHint"
+[msdocs:Import-DnsServerTrustAnchor]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Import-DnsServerTrustAnchor "Import-DnsServerTrustAnchor"
+[msdocs:Invoke-DnsServerSigningKeyRollover]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Invoke-DnsServerSigningKeyRollover "Invoke-DnsServerSigningKeyRollover"
+[msdocs:Invoke-DnsServerZoneSign]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Invoke-DnsServerZoneSign "Invoke-DnsServerZoneSign"
+[msdocs:Invoke-DnsServerZoneUnsign]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Invoke-DnsServerZoneUnsign "Invoke-DnsServerZoneUnsign"
+[msdocs:Register-DnsServerDirectoryPartition]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Register-DnsServerDirectoryPartition "Register-DnsServerDirectoryPartition"
+[msdocs:Remove-DnsServerClientSubnet]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Remove-DnsServerClientSubnet "Remove-DnsServerClientSubnet"
+[msdocs:Remove-DnsServerDirectoryPartition]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Remove-DnsServerDirectoryPartition "Remove-DnsServerDirectoryPartition"
+[msdocs:Remove-DnsServerForwarder]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Remove-DnsServerForwarder "Remove-DnsServerForwarder"
+[msdocs:Remove-DnsServerQueryResolutionPolicy]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Remove-DnsServerQueryResolutionPolicy "Remove-DnsServerQueryResolutionPolicy"
+[msdocs:Remove-DnsServerRecursionScope]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Remove-DnsServerRecursionScope "Remove-DnsServerRecursionScope"
+[msdocs:Remove-DnsServerResourceRecord]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Remove-DnsServerResourceRecord "Remove-DnsServerResourceRecord"
+[msdocs:Remove-DnsServerResponseRateLimitingExceptionlist]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Remove-DnsServerResponseRateLimitingExceptionlist "Remove-DnsServerResponseRateLimitingExceptionlist"
+[msdocs:Remove-DnsServerRootHint]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Remove-DnsServerRootHint "Remove-DnsServerRootHint"
+[msdocs:Remove-DnsServerSigningKey]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Remove-DnsServerSigningKey "Remove-DnsServerSigningKey"
+[msdocs:Remove-DnsServerTrustAnchor]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Remove-DnsServerTrustAnchor "Remove-DnsServerTrustAnchor"
+[msdocs:Remove-DnsServerVirtualizationInstance]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Remove-DnsServerVirtualizationInstance "Remove-DnsServerVirtualizationInstance"
+[msdocs:Remove-DnsServerZone]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Remove-DnsServerZone "Remove-DnsServerZone"
+[msdocs:Remove-DnsServerZoneDelegation]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Remove-DnsServerZoneDelegation "Remove-DnsServerZoneDelegation"
+[msdocs:Remove-DnsServerZoneScope]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Remove-DnsServerZoneScope "Remove-DnsServerZoneScope"
+[msdocs:Remove-DnsServerZoneTransferPolicy]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Remove-DnsServerZoneTransferPolicy "Remove-DnsServerZoneTransferPolicy"
+[msdocs:Reset-DnsServerZoneKeyMasterRole]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Reset-DnsServerZoneKeyMasterRole "Reset-DnsServerZoneKeyMasterRole"
+[msdocs:Restore-DnsServerPrimaryZone]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Restore-DnsServerPrimaryZone "Restore-DnsServerPrimaryZone"
+[msdocs:Restore-DnsServerSecondaryZone]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Restore-DnsServerSecondaryZone "Restore-DnsServerSecondaryZone"
+[msdocs:Resume-DnsServerZone]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Resume-DnsServerZone "Resume-DnsServerZone"
+[msdocs:Set-DnsServer]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Set-DnsServer "Set-DnsServer"
+[msdocs:Set-DnsServerCache]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Set-DnsServerCache "Set-DnsServerCache"
+[msdocs:Set-DnsServerClientSubnet]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Set-DnsServerClientSubnet "Set-DnsServerClientSubnet"
+[msdocs:Set-DnsServerConditionalForwarderZone]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Set-DnsServerConditionalForwarderZone "Set-DnsServerConditionalForwarderZone"
+[msdocs:Set-DnsServerDiagnostics]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Set-DnsServerDiagnostics "Set-DnsServerDiagnostics"
+[msdocs:Set-DnsServerDnsSecZoneSetting]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Set-DnsServerDnsSecZoneSetting "Set-DnsServerDnsSecZoneSetting"
+[msdocs:Set-DnsServerDsSetting]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Set-DnsServerDsSetting "Set-DnsServerDsSetting"
+[msdocs:Set-DnsServerEDns]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Set-DnsServerEDns "Set-DnsServerEDns"
+[msdocs:Set-DnsServerForwarder]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Set-DnsServerForwarder "Set-DnsServerForwarder"
+[msdocs:Set-DnsServerGlobalNameZone]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Set-DnsServerGlobalNameZone "Set-DnsServerGlobalNameZone"
+[msdocs:Set-DnsServerGlobalQueryBlockList]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Set-DnsServerGlobalQueryBlockList "Set-DnsServerGlobalQueryBlockList"
+[msdocs:Set-DnsServerPrimaryZone]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Set-DnsServerPrimaryZone "Set-DnsServerPrimaryZone"
+[msdocs:Set-DnsServerQueryResolutionPolicy]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Set-DnsServerQueryResolutionPolicy "Set-DnsServerQueryResolutionPolicy"
+[msdocs:Set-DnsServerRecursion]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Set-DnsServerRecursion "Set-DnsServerRecursion"
+[msdocs:Set-DnsServerRecursionScope]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Set-DnsServerRecursionScope "Set-DnsServerRecursionScope"
+[msdocs:Set-DnsServerResourceRecord]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Set-DnsServerResourceRecord "Set-DnsServerResourceRecord"
+[msdocs:Set-DnsServerResourceRecordAging]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Set-DnsServerResourceRecordAging "Set-DnsServerResourceRecordAging"
+[msdocs:Set-DnsServerResponseRateLimiting]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Set-DnsServerResponseRateLimiting "Set-DnsServerResponseRateLimiting"
+[msdocs:Set-DnsServerResponseRateLimitingExceptionlist]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Set-DnsServerResponseRateLimitingExceptionlist "Set-DnsServerResponseRateLimitingExceptionlist"
+[msdocs:Set-DnsServerRootHint]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Set-DnsServerRootHint "Set-DnsServerRootHint"
+[msdocs:Set-DnsServerScavenging]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Set-DnsServerScavenging "Set-DnsServerScavenging"
+[msdocs:Set-DnsServerSecondaryZone]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Set-DnsServerSecondaryZone "Set-DnsServerSecondaryZone"
+[msdocs:Set-DnsServerSetting]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Set-DnsServerSetting "Set-DnsServerSetting"
+[msdocs:Set-DnsServerSigningKey]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Set-DnsServerSigningKey "Set-DnsServerSigningKey"
+[msdocs:Set-DnsServerStubZone]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Set-DnsServerStubZone "Set-DnsServerStubZone"
+[msdocs:Set-DnsServerVirtualizationInstance]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Set-DnsServerVirtualizationInstance "Set-DnsServerVirtualizationInstance"
+[msdocs:Set-DnsServerZoneAging]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Set-DnsServerZoneAging "Set-DnsServerZoneAging"
+[msdocs:Set-DnsServerZoneDelegation]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Set-DnsServerZoneDelegation "Set-DnsServerZoneDelegation"
+[msdocs:Set-DnsServerZoneTransferPolicy]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Set-DnsServerZoneTransferPolicy "Set-DnsServerZoneTransferPolicy"
+[msdocs:Show-DnsServerCache]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Show-DnsServerCache "Show-DnsServerCache"
+[msdocs:Show-DnsServerKeyStorageProvider]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Show-DnsServerKeyStorageProvider "Show-DnsServerKeyStorageProvider"
+[msdocs:Start-DnsServerScavenging]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Start-DnsServerScavenging "Start-DnsServerScavenging"
+[msdocs:Start-DnsServerZoneTransfer]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Start-DnsServerZoneTransfer "Start-DnsServerZoneTransfer"
+[msdocs:Step-DnsServerSigningKeyRollover]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Step-DnsServerSigningKeyRollover "Step-DnsServerSigningKeyRollover"
+[msdocs:Suspend-DnsServerZone]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Suspend-DnsServerZone "Suspend-DnsServerZone"
+[msdocs:Sync-DnsServerZone]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Sync-DnsServerZone "Sync-DnsServerZone"
+[msdocs:Test-DnsServer]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Test-DnsServer "Test-DnsServer"
+[msdocs:Test-DnsServerDnsSecZoneSetting]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Test-DnsServerDnsSecZoneSetting "Test-DnsServerDnsSecZoneSetting"
+[msdocs:Unregister-DnsServerDirectoryPartition]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Unregister-DnsServerDirectoryPartition "Unregister-DnsServerDirectoryPartition"
+[msdocs:Update-DnsServerTrustPoint]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Update-DnsServerTrustPoint "Update-DnsServerTrustPoint"
+
+[Add-DnsServerClientSubnet]: #add-dnsserverclientsubnet '```&#10;PS> Add-DnsServerClientSubnet&#10;```&#10;Adds a client subnet to a DNS server.'
+[Add-DnsServerConditionalForwarderZone]: #add-dnsserverconditionalforwarderzone '```&#10;PS> Add-DnsServerConditionalForwarderZone&#10;```&#10;Adds a conditional forwarder to a DNS server.'
+[Add-DnsServerDirectoryPartition]: #add-dnsserverdirectorypartition '```&#10;PS> Add-DnsServerDirectoryPartition&#10;```&#10;Creates a DNS application directory partition.'
+[Add-DnsServerForwarder]: #add-dnsserverforwarder '```&#10;PS> Add-DnsServerForwarder&#10;```&#10;Adds server level forwarders to a DNS server.'
+[Add-DnsServerPrimaryZone]: #add-dnsserverprimaryzone '```&#10;PS> Add-DnsServerPrimaryZone&#10;```&#10;Adds a primary zone to a DNS server.'
+[Add-DnsServerQueryResolutionPolicy]: #add-dnsserverqueryresolutionpolicy '```&#10;PS> Add-DnsServerQueryResolutionPolicy&#10;```&#10;Adds a policy for query resolution to a DNS server.'
+[Add-DnsServerRecursionScope]: #add-dnsserverrecursionscope '```&#10;PS> Add-DnsServerRecursionScope&#10;```&#10;Adds a recursion scope on a DNS server.'
+[Add-DnsServerResourceRecord]: #add-dnsserverresourcerecord '```&#10;PS> Add-DnsServerResourceRecord&#10;```&#10;Adds a resource record of a specified type to a specified DNS zone.'
+[Add-DnsServerResourceRecordA]: #add-dnsserverresourcerecorda '```&#10;PS> Add-DnsServerResourceRecordA&#10;```&#10;Adds a type A resource record to a DNS zone.'
+[Add-DnsServerResourceRecordAAAA]: #add-dnsserverresourcerecordaaaa '```&#10;PS> Add-DnsServerResourceRecordAAAA&#10;```&#10;Adds a type AAAA resource record to a DNS server.'
+[Add-DnsServerResourceRecordCName]: #add-dnsserverresourcerecordcname '```&#10;PS> Add-DnsServerResourceRecordCName&#10;```&#10;Adds a type CNAME resource record to a DNS zone.'
+[Add-DnsServerResourceRecordDS]: #add-dnsserverresourcerecordds '```&#10;PS> Add-DnsServerResourceRecordDS&#10;```&#10;Adds a type DS resource record to a DNS zone.'
+[Add-DnsServerResourceRecordDnsKey]: #add-dnsserverresourcerecorddnskey '```&#10;PS> Add-DnsServerResourceRecordDnsKey&#10;```&#10;Adds a type DNSKEY resource record to a DNS zone.'
+[Add-DnsServerResourceRecordMX]: #add-dnsserverresourcerecordmx '```&#10;PS> Add-DnsServerResourceRecordMX&#10;```&#10;Adds an MX resource record to a DNS server.'
+[Add-DnsServerResourceRecordPtr]: #add-dnsserverresourcerecordptr '```&#10;PS> Add-DnsServerResourceRecordPtr&#10;```&#10;Adds a type PTR resource record to a DNS server.'
+[Add-DnsServerResponseRateLimitingExceptionlist]: #add-dnsserverresponseratelimitingexceptionlist '```&#10;PS> Add-DnsServerResponseRateLimitingExceptionlist&#10;```&#10;Adds an RRL exception list on the DNS server.'
+[Add-DnsServerRootHint]: #add-dnsserverroothint '```&#10;PS> Add-DnsServerRootHint&#10;```&#10;Adds root hints on a DNS server.'
+[Add-DnsServerSecondaryZone]: #add-dnsserversecondaryzone '```&#10;PS> Add-DnsServerSecondaryZone&#10;```&#10;Adds a DNS server secondary zone.'
+[Add-DnsServerSigningKey]: #add-dnsserversigningkey '```&#10;PS> Add-DnsServerSigningKey&#10;```&#10;Adds a KSK or ZSK to a signed zone.'
+[Add-DnsServerStubZone]: #add-dnsserverstubzone '```&#10;PS> Add-DnsServerStubZone&#10;```&#10;Adds a DNS stub zone.'
+[Add-DnsServerTrustAnchor]: #add-dnsservertrustanchor '```&#10;PS> Add-DnsServerTrustAnchor&#10;```&#10;Adds a trust anchor to a DNS server.'
+[Add-DnsServerVirtualizationInstance]: #add-dnsservervirtualizationinstance '```&#10;PS> Add-DnsServerVirtualizationInstance&#10;```&#10;Adds a virtualization instance.'
+[Add-DnsServerZoneDelegation]: #add-dnsserverzonedelegation '```&#10;PS> Add-DnsServerZoneDelegation&#10;```&#10;Adds a new delegated DNS zone to an existing zone.'
+[Add-DnsServerZoneScope]: #add-dnsserverzonescope '```&#10;PS> Add-DnsServerZoneScope&#10;```&#10;Adds a zone scope to an existing zone.'
+[Add-DnsServerZoneTransferPolicy]: #add-dnsserverzonetransferpolicy '```&#10;PS> Add-DnsServerZoneTransferPolicy&#10;```&#10;Adds a zone transfer policy to a DNS server.'
+[Clear-DnsServerCache]: #clear-dnsservercache '```&#10;PS> Clear-DnsServerCache&#10;```&#10;Clears resource records from a cache on the DNS server.'
+[Clear-DnsServerStatistics]: #clear-dnsserverstatistics '```&#10;PS> Clear-DnsServerStatistics&#10;```&#10;Clears all DNS server statistics or statistics for zones.'
+[ConvertTo-DnsServerPrimaryZone]: #convertto-dnsserverprimaryzone '```&#10;PS> ConvertTo-DnsServerPrimaryZone&#10;```&#10;Converts a zone to a DNS primary zone.'
+[ConvertTo-DnsServerSecondaryZone]: #convertto-dnsserversecondaryzone '```&#10;PS> ConvertTo-DnsServerSecondaryZone&#10;```&#10;Converts a primary zone or stub zone to a secondary zone.'
+[Disable-DnsServerPolicy]: #disable-dnsserverpolicy '```&#10;PS> Disable-DnsServerPolicy&#10;```&#10;Disables DNS server policies.'
+[Disable-DnsServerSigningKeyRollover]: #disable-dnsserversigningkeyrollover '```&#10;PS> Disable-DnsServerSigningKeyRollover&#10;```&#10;Disables key rollover on an input key.'
+[Enable-DnsServerPolicy]: #enable-dnsserverpolicy '```&#10;PS> Enable-DnsServerPolicy&#10;```&#10;Enables DNS server policies.'
+[Enable-DnsServerSigningKeyRollover]: #enable-dnsserversigningkeyrollover '```&#10;PS> Enable-DnsServerSigningKeyRollover&#10;```&#10;Enables rollover on the input key.'
+[Export-DnsServerDnsSecPublicKey]: #export-dnsserverdnssecpublickey '```&#10;PS> Export-DnsServerDnsSecPublicKey&#10;```&#10;Exports DS and DNSKEY information for a DNSSEC-signed zone.'
+[Export-DnsServerZone]: #export-dnsserverzone '```&#10;PS> Export-DnsServerZone&#10;```&#10;Exports contents of a zone to a file.'
+[Get-DnsServer]: #get-dnsserver '```&#10;PS> Get-DnsServer&#10;```&#10;Retrieves a DNS server configuration.'
+[Get-DnsServerCache]: #get-dnsservercache '```&#10;PS> Get-DnsServerCache&#10;```&#10;Retrieves DNS server cache settings.'
+[Get-DnsServerClientSubnet]: #get-dnsserverclientsubnet '```&#10;PS> Get-DnsServerClientSubnet&#10;```&#10;Gets client subnets for a DNS server.'
+[Get-DnsServerDiagnostics]: #get-dnsserverdiagnostics '```&#10;PS> Get-DnsServerDiagnostics&#10;```&#10;Retrieves DNS event logging details.'
+[Get-DnsServerDirectoryPartition]: #get-dnsserverdirectorypartition '```&#10;PS> Get-DnsServerDirectoryPartition&#10;```&#10;Gets a DNS application directory partition.'
+[Get-DnsServerDnsSecZoneSetting]: #get-dnsserverdnsseczonesetting '```&#10;PS> Get-DnsServerDnsSecZoneSetting&#10;```&#10;Gets DNSSEC settings for a zone.'
+[Get-DnsServerDsSetting]: #get-dnsserverdssetting '```&#10;PS> Get-DnsServerDsSetting&#10;```&#10;Retrieves DNS Server Active Directory settings'
+[Get-DnsServerEDns]: #get-dnsserveredns '```&#10;PS> Get-DnsServerEDns&#10;```&#10;Gets EDNS configuration settings on a DNS server.'
+[Get-DnsServerForwarder]: #get-dnsserverforwarder '```&#10;PS> Get-DnsServerForwarder&#10;```&#10;Gets forwarder configuration settings on a DNS server.'
+[Get-DnsServerGlobalNameZone]: #get-dnsserverglobalnamezone '```&#10;PS> Get-DnsServerGlobalNameZone&#10;```&#10;Retrieves DNS server GlobalName zone configuration details.'
+[Get-DnsServerGlobalQueryBlockList]: #get-dnsserverglobalqueryblocklist '```&#10;PS> Get-DnsServerGlobalQueryBlockList&#10;```&#10;Gets a global query block list.'
+[Get-DnsServerQueryResolutionPolicy]: #get-dnsserverqueryresolutionpolicy '```&#10;PS> Get-DnsServerQueryResolutionPolicy&#10;```&#10;Gets policies for query resolution from a DNS server.'
+[Get-DnsServerRecursion]: #get-dnsserverrecursion '```&#10;PS> Get-DnsServerRecursion&#10;```&#10;Retrieves DNS server recursion settings.'
+[Get-DnsServerRecursionScope]: #get-dnsserverrecursionscope '```&#10;PS> Get-DnsServerRecursionScope&#10;```&#10;Gets the DNS server recursion scopes.'
+[Get-DnsServerResourceRecord]: #get-dnsserverresourcerecord '```&#10;PS> Get-DnsServerResourceRecord&#10;```&#10;Gets resource records from a specified DNS zone.'
+[Get-DnsServerResponseRateLimiting]: #get-dnsserverresponseratelimiting '```&#10;PS> Get-DnsServerResponseRateLimiting&#10;```&#10;Displays the RRL settings on a DNS server.'
+[Get-DnsServerResponseRateLimitingExceptionlist]: #get-dnsserverresponseratelimitingexceptionlist '```&#10;PS> Get-DnsServerResponseRateLimitingExceptionlist&#10;```&#10;Enumerates the RRL exception lists on a DNS Server.'
+[Get-DnsServerRootHint]: #get-dnsserverroothint '```&#10;PS> Get-DnsServerRootHint&#10;```&#10;Gets root hints on a DNS server.'
+[Get-DnsServerScavenging]: #get-dnsserverscavenging '```&#10;PS> Get-DnsServerScavenging&#10;```&#10;Gets DNS aging and scavenging settings.'
+[Get-DnsServerSetting]: #get-dnsserversetting '```&#10;PS> Get-DnsServerSetting&#10;```&#10;Retrieves DNS server settings.'
+[Get-DnsServerSigningKey]: #get-dnsserversigningkey '```&#10;PS> Get-DnsServerSigningKey&#10;```&#10;Gets zone signing keys.'
+[Get-DnsServerStatistics]: #get-dnsserverstatistics '```&#10;PS> Get-DnsServerStatistics&#10;```&#10;Retrieves DNS server statistics or statistics for zones.'
+[Get-DnsServerTrustAnchor]: #get-dnsservertrustanchor '```&#10;PS> Get-DnsServerTrustAnchor&#10;```&#10;Gets trust anchors on a DNS server.'
+[Get-DnsServerTrustPoint]: #get-dnsservertrustpoint '```&#10;PS> Get-DnsServerTrustPoint&#10;```&#10;Gets trust points on a DNS server.'
+[Get-DnsServerVirtualizationInstance]: #get-dnsservervirtualizationinstance '```&#10;PS> Get-DnsServerVirtualizationInstance&#10;```&#10;Gets the virtualization instances on the DNS server.'
+[Get-DnsServerZone]: #get-dnsserverzone '```&#10;PS> Get-DnsServerZone&#10;```&#10;Gets details of DNS zones on a DNS server.'
+[Get-DnsServerZoneAging]: #get-dnsserverzoneaging '```&#10;PS> Get-DnsServerZoneAging&#10;```&#10;Gets DNS aging settings for a zone.'
+[Get-DnsServerZoneDelegation]: #get-dnsserverzonedelegation '```&#10;PS> Get-DnsServerZoneDelegation&#10;```&#10;Gets the zone delegations of a DNS server zone.'
+[Get-DnsServerZoneScope]: #get-dnsserverzonescope '```&#10;PS> Get-DnsServerZoneScope&#10;```&#10;Gets the scopes of a zone on a DNS server.'
+[Get-DnsServerZoneTransferPolicy]: #get-dnsserverzonetransferpolicy '```&#10;PS> Get-DnsServerZoneTransferPolicy&#10;```&#10;Gets the zone transfer policies on a DNS server.'
+[Import-DnsServerResourceRecordDS]: #import-dnsserverresourcerecordds '```&#10;PS> Import-DnsServerResourceRecordDS&#10;```&#10;Imports DS resource record information from a file.'
+[Import-DnsServerRootHint]: #import-dnsserverroothint '```&#10;PS> Import-DnsServerRootHint&#10;```&#10;Copies root hints from a DNS server.'
+[Import-DnsServerTrustAnchor]: #import-dnsservertrustanchor '```&#10;PS> Import-DnsServerTrustAnchor&#10;```&#10;Imports a trust anchor for a DNS server.'
+[Invoke-DnsServerSigningKeyRollover]: #invoke-dnsserversigningkeyrollover '```&#10;PS> Invoke-DnsServerSigningKeyRollover&#10;```&#10;Initiates rollover of signing keys for the zone.'
+[Invoke-DnsServerZoneSign]: #invoke-dnsserverzonesign '```&#10;PS> Invoke-DnsServerZoneSign&#10;```&#10;Signs a DNS server zone.'
+[Invoke-DnsServerZoneUnsign]: #invoke-dnsserverzoneunsign '```&#10;PS> Invoke-DnsServerZoneUnsign&#10;```&#10;Unsigns a DNS server zone.'
+[Register-DnsServerDirectoryPartition]: #register-dnsserverdirectorypartition '```&#10;PS> Register-DnsServerDirectoryPartition&#10;```&#10;Registers a DNS server in a DNS application directory partition.'
+[Remove-DnsServerClientSubnet]: #remove-dnsserverclientsubnet '```&#10;PS> Remove-DnsServerClientSubnet&#10;```&#10;Removes a client subnet from a DNS server.'
+[Remove-DnsServerDirectoryPartition]: #remove-dnsserverdirectorypartition '```&#10;PS> Remove-DnsServerDirectoryPartition&#10;```&#10;Removes a DNS application directory partition.'
+[Remove-DnsServerForwarder]: #remove-dnsserverforwarder '```&#10;PS> Remove-DnsServerForwarder&#10;```&#10;Removes server level forwarders from a DNS server.'
+[Remove-DnsServerQueryResolutionPolicy]: #remove-dnsserverqueryresolutionpolicy '```&#10;PS> Remove-DnsServerQueryResolutionPolicy&#10;```&#10;Removes a policy for query resolution from a DNS server.'
+[Remove-DnsServerRecursionScope]: #remove-dnsserverrecursionscope '```&#10;PS> Remove-DnsServerRecursionScope&#10;```&#10;Removes a recursion scope from a DNS server.'
+[Remove-DnsServerResourceRecord]: #remove-dnsserverresourcerecord '```&#10;PS> Remove-DnsServerResourceRecord&#10;```&#10;Removes specified DNS server resource records from a zone.'
+[Remove-DnsServerResponseRateLimitingExceptionlist]: #remove-dnsserverresponseratelimitingexceptionlist '```&#10;PS> Remove-DnsServerResponseRateLimitingExceptionlist&#10;```&#10;Removes an RRL exception list from a DNS server.'
+[Remove-DnsServerRootHint]: #remove-dnsserverroothint '```&#10;PS> Remove-DnsServerRootHint&#10;```&#10;Removes root hints from a DNS server.'
+[Remove-DnsServerSigningKey]: #remove-dnsserversigningkey '```&#10;PS> Remove-DnsServerSigningKey&#10;```&#10;Removes signing keys.'
+[Remove-DnsServerTrustAnchor]: #remove-dnsservertrustanchor '```&#10;PS> Remove-DnsServerTrustAnchor&#10;```&#10;Removes a trust anchor from a DNS server.'
+[Remove-DnsServerVirtualizationInstance]: #remove-dnsservervirtualizationinstance '```&#10;PS> Remove-DnsServerVirtualizationInstance&#10;```&#10;Removes a virtualization instance.'
+[Remove-DnsServerZone]: #remove-dnsserverzone '```&#10;PS> Remove-DnsServerZone&#10;```&#10;Removes a zone from a DNS server.'
+[Remove-DnsServerZoneDelegation]: #remove-dnsserverzonedelegation '```&#10;PS> Remove-DnsServerZoneDelegation&#10;```&#10;Removes a name server or delegation from a DNS zone.'
+[Remove-DnsServerZoneScope]: #remove-dnsserverzonescope '```&#10;PS> Remove-DnsServerZoneScope&#10;```&#10;Removes a zone scope from an existing zone.'
+[Remove-DnsServerZoneTransferPolicy]: #remove-dnsserverzonetransferpolicy '```&#10;PS> Remove-DnsServerZoneTransferPolicy&#10;```&#10;Removes a zone transfer policy from a DNS server.'
+[Reset-DnsServerZoneKeyMasterRole]: #reset-dnsserverzonekeymasterrole '```&#10;PS> Reset-DnsServerZoneKeyMasterRole&#10;```&#10;Transfers the role of Key Master for a DNS zone.'
+[Restore-DnsServerPrimaryZone]: #restore-dnsserverprimaryzone '```&#10;PS> Restore-DnsServerPrimaryZone&#10;```&#10;Restores primary DNS zone contents from Active Directory or from a file.'
+[Restore-DnsServerSecondaryZone]: #restore-dnsserversecondaryzone '```&#10;PS> Restore-DnsServerSecondaryZone&#10;```&#10;Restores secondary zone information from its source.'
+[Resume-DnsServerZone]: #resume-dnsserverzone '```&#10;PS> Resume-DnsServerZone&#10;```&#10;Resumes name resolution on a suspended zone.'
+[Set-DnsServer]: #set-dnsserver '```&#10;PS> Set-DnsServer&#10;```&#10;Overwrites a DNS server configuration.'
+[Set-DnsServerCache]: #set-dnsservercache '```&#10;PS> Set-DnsServerCache&#10;```&#10;Modifies cache settings for a DNS server.'
+[Set-DnsServerClientSubnet]: #set-dnsserverclientsubnet '```&#10;PS> Set-DnsServerClientSubnet&#10;```&#10;Updates the IP addresses in a client subnet.'
+[Set-DnsServerConditionalForwarderZone]: #set-dnsserverconditionalforwarderzone '```&#10;PS> Set-DnsServerConditionalForwarderZone&#10;```&#10;Changes settings for a DNS conditional forwarder.'
+[Set-DnsServerDiagnostics]: #set-dnsserverdiagnostics '```&#10;PS> Set-DnsServerDiagnostics&#10;```&#10;Sets debugging and logging parameters.'
+[Set-DnsServerDnsSecZoneSetting]: #set-dnsserverdnsseczonesetting '```&#10;PS> Set-DnsServerDnsSecZoneSetting&#10;```&#10;Changes settings for DNSSEC for a zone.'
+[Set-DnsServerDsSetting]: #set-dnsserverdssetting '```&#10;PS> Set-DnsServerDsSetting&#10;```&#10;Modifies DNS Active Directory settings.'
+[Set-DnsServerEDns]: #set-dnsserveredns '```&#10;PS> Set-DnsServerEDns&#10;```&#10;Changes EDNS settings on a DNS server.'
+[Set-DnsServerForwarder]: #set-dnsserverforwarder '```&#10;PS> Set-DnsServerForwarder&#10;```&#10;Changes forwarder settings on a DNS server.'
+[Set-DnsServerGlobalNameZone]: #set-dnsserverglobalnamezone '```&#10;PS> Set-DnsServerGlobalNameZone&#10;```&#10;Changes configuration settings for a GlobalNames zone.'
+[Set-DnsServerGlobalQueryBlockList]: #set-dnsserverglobalqueryblocklist '```&#10;PS> Set-DnsServerGlobalQueryBlockList&#10;```&#10;Changes settings of a global query block list.'
+[Set-DnsServerPrimaryZone]: #set-dnsserverprimaryzone '```&#10;PS> Set-DnsServerPrimaryZone&#10;```&#10;Changes settings for a DNS primary zone.'
+[Set-DnsServerQueryResolutionPolicy]: #set-dnsserverqueryresolutionpolicy '```&#10;PS> Set-DnsServerQueryResolutionPolicy&#10;```&#10;Updates settings of a query resolution policy on a DNS server.'
+[Set-DnsServerRecursion]: #set-dnsserverrecursion '```&#10;PS> Set-DnsServerRecursion&#10;```&#10;Modifies recursion settings for a DNS server.'
+[Set-DnsServerRecursionScope]: #set-dnsserverrecursionscope '```&#10;PS> Set-DnsServerRecursionScope&#10;```&#10;Modifies a recursion scope on a DNS server.'
+[Set-DnsServerResourceRecord]: #set-dnsserverresourcerecord '```&#10;PS> Set-DnsServerResourceRecord&#10;```&#10;Changes a resource record in a DNS zone.'
+[Set-DnsServerResourceRecordAging]: #set-dnsserverresourcerecordaging '```&#10;PS> Set-DnsServerResourceRecordAging&#10;```&#10;Begins aging of resource records in a specified DNS zone.'
+[Set-DnsServerResponseRateLimiting]: #set-dnsserverresponseratelimiting '```&#10;PS> Set-DnsServerResponseRateLimiting&#10;```&#10;Enables RRL on a DNS server.'
+[Set-DnsServerResponseRateLimitingExceptionlist]: #set-dnsserverresponseratelimitingexceptionlist '```&#10;PS> Set-DnsServerResponseRateLimitingExceptionlist&#10;```&#10;Updates the settings of an RRL exception list.'
+[Set-DnsServerRootHint]: #set-dnsserverroothint '```&#10;PS> Set-DnsServerRootHint&#10;```&#10;Replaces a list of root hints.'
+[Set-DnsServerScavenging]: #set-dnsserverscavenging '```&#10;PS> Set-DnsServerScavenging&#10;```&#10;Changes DNS server scavenging settings.'
+[Set-DnsServerSecondaryZone]: #set-dnsserversecondaryzone '```&#10;PS> Set-DnsServerSecondaryZone&#10;```&#10;Changes settings for a DNS secondary zone.'
+[Set-DnsServerSetting]: #set-dnsserversetting '```&#10;PS> Set-DnsServerSetting&#10;```&#10;Modifies DNS server settings.'
+[Set-DnsServerSigningKey]: #set-dnsserversigningkey '```&#10;PS> Set-DnsServerSigningKey&#10;```&#10;Changes settings of a signing key.'
+[Set-DnsServerStubZone]: #set-dnsserverstubzone '```&#10;PS> Set-DnsServerStubZone&#10;```&#10;Changes settings for a DNS server stub zone.'
+[Set-DnsServerVirtualizationInstance]: #set-dnsservervirtualizationinstance '```&#10;PS> Set-DnsServerVirtualizationInstance&#10;```&#10;Updates the virtualization instance on the DNS server.'
+[Set-DnsServerZoneAging]: #set-dnsserverzoneaging '```&#10;PS> Set-DnsServerZoneAging&#10;```&#10;Configures DNS aging settings for a zone.'
+[Set-DnsServerZoneDelegation]: #set-dnsserverzonedelegation '```&#10;PS> Set-DnsServerZoneDelegation&#10;```&#10;Changes delegation settings for a child zone.'
+[Set-DnsServerZoneTransferPolicy]: #set-dnsserverzonetransferpolicy '```&#10;PS> Set-DnsServerZoneTransferPolicy&#10;```&#10;Updates a zone transfer policy on a DNS server.'
+[Show-DnsServerCache]: #show-dnsservercache '```&#10;PS> Show-DnsServerCache&#10;```&#10;Shows the records in a DNS Server Cache.'
+[Show-DnsServerKeyStorageProvider]: #show-dnsserverkeystorageprovider '```&#10;PS> Show-DnsServerKeyStorageProvider&#10;```&#10;Returns a list of key storage providers.'
+[Start-DnsServerScavenging]: #start-dnsserverscavenging '```&#10;PS> Start-DnsServerScavenging&#10;```&#10;Notifies a DNS server to attempt a search for stale resource records.'
+[Start-DnsServerZoneTransfer]: #start-dnsserverzonetransfer '```&#10;PS> Start-DnsServerZoneTransfer&#10;```&#10;Starts a zone transfer for a secondary DNS zone from master servers.'
+[Step-DnsServerSigningKeyRollover]: #step-dnsserversigningkeyrollover '```&#10;PS> Step-DnsServerSigningKeyRollover&#10;```&#10;Rolls over a KSK that is waiting for a parent DS update.'
+[Suspend-DnsServerZone]: #suspend-dnsserverzone '```&#10;PS> Suspend-DnsServerZone&#10;```&#10;Suspends a zone on a DNS server.'
+[Sync-DnsServerZone]: #sync-dnsserverzone '```&#10;PS> Sync-DnsServerZone&#10;```&#10;Checks the DNS server memory for changes, and writes them to persistent storage.'
+[Test-DnsServer]: #test-dnsserver '```&#10;PS> Test-DnsServer&#10;```&#10;Tests that a specified computer is a functioning DNS server.'
+[Test-DnsServerDnsSecZoneSetting]: #test-dnsserverdnsseczonesetting '```&#10;PS> Test-DnsServerDnsSecZoneSetting&#10;```&#10;Validates DNSSEC settings for a zone.'
+[Unregister-DnsServerDirectoryPartition]: #unregister-dnsserverdirectorypartition '```&#10;PS> Unregister-DnsServerDirectoryPartition&#10;```&#10;Deregisters a DNS server from a DNS application directory partition.'
+[Update-DnsServerTrustPoint]: #update-dnsservertrustpoint '```&#10;PS> Update-DnsServerTrustPoint&#10;```&#10;Updates all trust points in a DNS trust anchor zone.'
+
+- DnsServerPrimaryZone
+[**`Add`**][Add-DnsServerPrimaryZone]<sup>[?][msdocs:Add-DnsServerPrimaryZone]</sup>
+[`ConvertTo`][ConvertTo-DnsServerPrimaryZone]<sup>[?][msdocs:ConvertTo-DnsServerPrimaryZone]</sup>
+[`Restore`][Restore-DnsServerPrimaryZone]<sup>[?][msdocs:Restore-DnsServerPrimaryZone]</sup>
+[`Set`][Set-DnsServerPrimaryZone]<sup>[?][msdocs:Set-DnsServerPrimaryZone]</sup>
+- DnsServerSecondaryZone
+[`Add`][Add-DnsServerSecondaryZone]<sup>[?][msdocs:Add-DnsServerSecondaryZone]</sup>
+[`ConvertTo`][ConvertTo-DnsServerSecondaryZone]<sup>[?][msdocs:ConvertTo-DnsServerSecondaryZone]</sup>
+[`Restore`][Restore-DnsServerSecondaryZone]<sup>[?][msdocs:Restore-DnsServerSecondaryZone]</sup>
+[`Set`][Set-DnsServerSecondaryZone]<sup>[?][msdocs:Set-DnsServerSecondaryZone]</sup>
+- DnsServerZone
+[`Export`][Export-DnsServerZone]<sup>[?][msdocs:Export-DnsServerZone]</sup>
+[`Get`][Get-DnsServerZone]<sup>[?][msdocs:Get-DnsServerZone]</sup>
+[`Remove`][Remove-DnsServerZone]<sup>[?][msdocs:Remove-DnsServerZone]</sup>
+[`Resume`][Resume-DnsServerZone]<sup>[?][msdocs:Resume-DnsServerZone]</sup>
+[`Suspend`][Suspend-DnsServerZone]<sup>[?][msdocs:Suspend-DnsServerZone]</sup>
+[`Sync`][Sync-DnsServerZone]<sup>[?][msdocs:Sync-DnsServerZone]</sup>
 
 #### failoverclusters
 [msdocs:Get-Cluster]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Get-Cluster "Get-Cluster"
@@ -967,7 +1293,6 @@ Powershell users refer to the command-line environment as the **"console"**, as 
 - ClusterQuorum
 [`Get`][Get-ClusterQuorum]<sup>[?][msdocs:Get-ClusterQuorum]</sup>
 [`Set`][Set-ClusterQuorum]<sup>[?][msdocs:Set-ClusterQuorum]</sup>
-
 #### storage
 [msdocs:Get-DedupProperties]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-DedupProperties "Get-DedupProperties documentation"
 [msdocs:Clear-Disk]: https://docs.microsoft.com/en-us/powershell/module/storage/Clear-Disk "Clear-Disk documentation"
@@ -1479,6 +1804,7 @@ Powershell users refer to the command-line environment as the **"console"**, as 
 [msdocs:Measure-VMResourcePool]: https://docs.microsoft.com/en-us/powershell/module/hyper-v/Measure-VMResourcePool "Measure-VMResourcePool"
 [msdocs:Move-VM]: https://docs.microsoft.com/en-us/powershell/module/hyper-v/Move-VM "Move-VM"
 [msdocs:Move-VMStorage]: https://docs.microsoft.com/en-us/powershell/module/hyper-v/Move-VMStorage "Move-VMStorage"
+[msdocs:New-VHD]: https://docs.microsoft.com/en-us/powershell/module/hyper-v/New-VHD "New-VHD documentation"
 [msdocs:New-VM]: https://docs.microsoft.com/en-us/powershell/module/hyper-v/New-VM "New-VM"
 [msdocs:New-VMGroup]: https://docs.microsoft.com/en-us/powershell/module/hyper-v/New-VMGroup "New-VMGroup"
 [msdocs:New-VMReplicationAuthorizationEntry]: https://docs.microsoft.com/en-us/powershell/module/hyper-v/New-VMReplicationAuthorizationEntry "New-VMReplicationAuthorizationEntry"
@@ -2934,6 +3260,65 @@ Powershell users refer to the command-line environment as the **"console"**, as 
 [`Set`][Set-SRPartnership][^][msdocs:Set-SRPartnership]
 - SRTopology
 [`Test`][Test-SRTopology][^][msdocs:Test-SRTopology]
+#### updateservices
+[msdocs:Add-WsusComputer]: https://docs.microsoft.com/en-us/powershell/module/updateservices/Add-WsusComputer "Add-WsusComputer documentation"
+[msdocs:Add-WsusDynamicCategory]: https://docs.microsoft.com/en-us/powershell/module/updateservices/Add-WsusDynamicCategory "Add-WsusDynamicCategory documentation"
+[msdocs:Approve-WsusUpdate]: https://docs.microsoft.com/en-us/powershell/module/updateservices/Approve-WsusUpdate "Approve-WsusUpdate documentation"
+[msdocs:Deny-WsusUpdate]: https://docs.microsoft.com/en-us/powershell/module/updateservices/Deny-WsusUpdate "Deny-WsusUpdate documentation"
+[msdocs:Get-WsusClassification]: https://docs.microsoft.com/en-us/powershell/module/updateservices/Get-WsusClassification "Get-WsusClassification documentation"
+[msdocs:Get-WsusComputer]: https://docs.microsoft.com/en-us/powershell/module/updateservices/Get-WsusComputer "Get-WsusComputer documentation"
+[msdocs:Get-WsusDynamicCategory]: https://docs.microsoft.com/en-us/powershell/module/updateservices/Get-WsusDynamicCategory "Get-WsusDynamicCategory documentation"
+[msdocs:Get-WsusProduct]: https://docs.microsoft.com/en-us/powershell/module/updateservices/Get-WsusProduct "Get-WsusProduct documentation"
+[msdocs:Get-WsusServer]: https://docs.microsoft.com/en-us/powershell/module/updateservices/Get-WsusServer "Get-WsusServer documentation"
+[msdocs:Get-WsusUpdate]: https://docs.microsoft.com/en-us/powershell/module/updateservices/Get-WsusUpdate "Get-WsusUpdate documentation"
+[msdocs:Invoke-WsusServerCleanup]: https://docs.microsoft.com/en-us/powershell/module/updateservices/Invoke-WsusServerCleanup "Invoke-WsusServerCleanup documentation"
+[msdocs:Remove-WsusDynamicCategory]: https://docs.microsoft.com/en-us/powershell/module/updateservices/Remove-WsusDynamicCategory "Remove-WsusDynamicCategory documentation"
+[msdocs:Set-WsusClassification]: https://docs.microsoft.com/en-us/powershell/module/updateservices/Set-WsusClassification "Set-WsusClassification documentation"
+[msdocs:Set-WsusDynamicCategory]: https://docs.microsoft.com/en-us/powershell/module/updateservices/Set-WsusDynamicCategory "Set-WsusDynamicCategory documentation"
+[msdocs:Set-WsusProduct]: https://docs.microsoft.com/en-us/powershell/module/updateservices/Set-WsusProduct "Set-WsusProduct documentation"
+[msdocs:Set-WsusServerSynchronization]: https://docs.microsoft.com/en-us/powershell/module/updateservices/Set-WsusServerSynchronization "Set-WsusServerSynchronization documentation"
+
+[Add-WsusComputer]: #add-wsuscomputer '```&#10;[PS] Add-WsusComputer&#10;```&#10;Adds a client computer to a target group.'
+[Add-WsusDynamicCategory]: #add-wsusdynamiccategory '```&#10;[PS] Add-WsusDynamicCategory&#10;```&#10;Adds a dynamic category to a WSUS server.'
+[Approve-WsusUpdate]: #approve-wsusupdate '```&#10;[PS] Approve-WsusUpdate&#10;```&#10;Approves an update to be applied to clients.'
+[Deny-WsusUpdate]: #deny-wsusupdate '```&#10;[PS] Deny-WsusUpdate&#10;```&#10;Declines the update for deployment.'
+[Get-WsusClassification]: #get-wsusclassification '```&#10;[PS] Get-WsusClassification&#10;```&#10;Gets the list of all WSUS classifications currently available in the system.'
+[Get-WsusComputer]: #get-wsuscomputer '```&#10;[PS] Get-WsusComputer&#10;```&#10;Gets the WSUS computer object that represents the client computer'
+[Get-WsusDynamicCategory]: #get-wsusdynamiccategory '```&#10;[PS] Get-WsusDynamicCategory&#10;```&#10;Gets dynamic categories on a WSUS server'
+[Get-WsusProduct]: #get-wsusproduct '```&#10;[PS] Get-WsusProduct&#10;```&#10;Gets the list of all products currently available on WSUS'
+[Get-WsusServer]: #get-wsusserver '```&#10;[PS] Get-WsusServer&#10;```&#10;Gets the WSUS update server object'
+[Get-WsusUpdate]: #get-wsusupdate '```&#10;[PS] Get-WsusUpdate&#10;```&#10;Gets the WSUS update object with details about the update'
+[Invoke-WsusServerCleanup]: #invoke-wsusservercleanup '```&#10;[PS] Invoke-WsusServerCleanup&#10;```&#10;Performs the process of cleanup on a WSUS server'
+[Remove-WsusDynamicCategory]: #remove-wsusdynamiccategory '```&#10;[PS] Remove-WsusDynamicCategory&#10;```&#10;Removes a dynamic category from a WSUS server'
+[Set-WsusClassification]: #set-wsusclassification '```&#10;[PS] Set-WsusClassification&#10;```&#10;Sets whether the classifications of updates that WSUS synchronizes are enabled'
+[Set-WsusDynamicCategory]: #set-wsusdynamiccategory '```&#10;[PS] Set-WsusDynamicCategory&#10;```&#10;Sets the synchronization status of a dynamic category'
+[Set-WsusProduct]: #set-wsusproduct '```&#10;[PS] Set-WsusProduct&#10;```&#10;Sets whether the product representing the category of updates to synchronize is enabled'
+[Set-WsusServerSynchronization]: #set-wsusserversynchronization '```&#10;[PS] Set-WsusServerSynchronization&#10;```&#10;Sets whether the WSUS server synchronizes from Microsoft Update or an upstream server'
+
+- WsusClassification
+[`Get`][Get-WsusClassification]<sup>[?][msdocs:Get-WsusClassification]</sup>
+[`Set`][Set-WsusClassification]<sup>[?][msdocs:Set-WsusClassification]</sup>
+- WsusComputer
+[`Add`][Add-WsusComputer]<sup>[?][msdocs:Add-WsusComputer]</sup>
+[`Get`][Get-WsusComputer]<sup>[?][msdocs:Get-WsusComputer]</sup>
+- WsusDynamicCategory
+[`Add`][Add-WsusDynamicCategory]<sup>[?][msdocs:Add-WsusDynamicCategory]</sup>
+[`Get`][Get-WsusDynamicCategory]<sup>[?][msdocs:Get-WsusDynamicCategory]</sup>
+[`Remove`][Remove-WsusDynamicCategory]<sup>[?][msdocs:Remove-WsusDynamicCategory]</sup>
+[`Set`][Set-WsusDynamicCategory]<sup>[?][msdocs:Set-WsusDynamicCategory]</sup>
+- WsusProduct
+[`Get`][Get-WsusProduct]<sup>[?][msdocs:Get-WsusProduct]</sup>
+[`Set`][Set-WsusProduct]<sup>[?][msdocs:Set-WsusProduct]</sup>
+- WsusServer
+[`Get`][Get-WsusServer]<sup>[?][msdocs:Get-WsusServer]</sup>
+- WsusServerCleanup
+[`Invoke`][Invoke-WsusServerCleanup]<sup>[?][msdocs:Invoke-WsusServerCleanup]</sup>
+- WsusServerSynchronization
+[`Set`][Set-WsusServerSynchronization]<sup>[?][msdocs:Set-WsusServerSynchronization]</sup>
+- WsusUpdate
+[`Approve`][Approve-WsusUpdate]<sup>[?][msdocs:Approve-WsusUpdate]</sup>
+[`Deny`][Deny-WsusUpdate]<sup>[?][msdocs:Deny-WsusUpdate]</sup>
+[`Get`][Get-WsusUpdate]<sup>[?][msdocs:Get-WsusUpdate]</sup>
 #### VirtualMachineManager
 [Set-SCVirtualMachine]: #set-scvirtualmachine '```&#10;[PS] Set-SCVirtualMachine&#10;```&#10;Changes properties of a virtual machine managed by VMM.'
 [msdocs:Set-SCVirtualMachine]: https://docs.microsoft.com/en-us/powershell/module/VirtualMachineManager/Set-SCVirtualMachine "Set-SCVirtualMachine"
@@ -3065,7 +3450,7 @@ switch ($reference) {
 #### Keywords
 The `Throw` keyword generates a terminating error
 #### Variables
-##### Automatic variables
+##### Automatic variables<sup>[?][msdocs:Automatic variables]</sup>
 [Automatic variable]: #automatic-variables 'Automatic variable&#10;Variables that store state information for PowerShell and are created and maintained by Powershell.'
 
 [Automatic][Automatic variable] variables are equivalent to environment variables in Linux and also prefixed with `$`.
@@ -3112,7 +3497,7 @@ The `Throw` keyword generates a terminating error
 [`CurrentUserAllHosts`][ $profile.CurrentUserAllHosts] 
 [`CurrentUserCurrentHost`][ $profile.CurrentUserCurrentHost] 
 
-##### Environment variables
+##### Environment variables<sup>[?][msdocs:Environment variables]</sup>
 Windows environment variables are actually accessed with the syntax `$Env:var`.
 
 [USERPROFILE]: #variables '```&#10;[PS] Write-Host $Env:USERPROFILE&#10;```&#10;Location of profile directory of current user (i.e. "C:\Users\jsmith")'
@@ -3280,7 +3665,7 @@ $Values = while ($true) {(++$Tick); if ($Tick -gt 2) { break } } # => @(1,2,3)
 $Values = do { 'eat me!' } while ($false) # => @('eat me!')
 ```
 # Cmdlets
-##### New-ADUser
+##### New-ADUser<sup>[?][msdocs:New-ADUser]</sup>
 [Jones][Jones]
 ```powershell
 New-ADUser -SamAccountNAme SysAdmin -AccountPassword (Read-Host 'Set user password' -AsSecureString) -Name "SysAdmin" -Enabled $true -PAsswordNeverExpires $true -ChangePasswordAtLogon $false
@@ -3293,7 +3678,7 @@ Users are disabled by default, so you must enable them by setting the `-Enabled`
 ```powershell
 New-ADUser -Name "Marty McFly" -Enabled $true -GivenName "Martin" -Surname "McFly" -AccountPassword ( ConvertTo-SecureString "P@ssw0rd!" -AsPlainText -Force) 
 ```
-##### Get-ADUser
+##### Get-ADUser<sup>[?][msdocs:Get-ADUser]</sup>
 Retrieve `LogonWorkstations` property, which is not included in the default object returned by the command
 ```powershell
 Get-ADUSer $user -Properties LogonWorkstations
@@ -3302,12 +3687,12 @@ Filter all accounts with `LogonWorkstations` set to something
 ```powershell
 Get-ADUser -Filter * -Properties LogonWorkstations |? LogonWorkstations -ne $null
 ```
-##### Set-ADUser
+##### Set-ADUser<sup>[?][msdocs:Set-ADUser]</sup>
 Clear value of `LogonWorkstations` property
 ```powershell
 Set-ADUser $user -LogonWorkstations $null
 ```
-##### Search-ADAccount
+##### Search-ADAccount<sup>[?][msdocs:Search-ADAccount]</sup>
 [Search-ADAccount -AccountDisabled]: #Search-ADAccount '```&#10;[PS] Search-ADAccount -AccountDisabledAccountDisabled&#10;```&#10;Filter disabled accounts'
 [Search-ADAccount -AccountExpired]: #Search-ADAccount '```&#10;[PS] Search-ADAccount -AccountExpiredAccountExpired&#10;```&#10;Filter expired accounts'
 [Search-ADAccount -ComputersOnly]: #Search-ADAccount '```&#10;[PS] Search-ADAccount -ComputersOnlyComputersOnly&#10;```&#10;Filter computer accounts'
@@ -3332,12 +3717,12 @@ Display accounts expiring on a particular date
 ```powershell
 Search-ADAccount -AccountExpiring -DateTime "3/18/2019"
 ```
-##### Unlock-ADAccount
+##### Unlock-ADAccount<sup>[?][msdocs:Unlock-ADAccount]</sup>
 Unlock account
 ```powershell
 Unlock-ADAccount -identity wbryan
 ```
-##### Set-ADAccountPassword
+##### Set-ADAccountPassword<sup>[?][msdocs:Set-ADAccountPassword]</sup>
 [Set-ADAccountPassword -Identity]: #Set-ADAccountPassword '```&#10;[PS] Set-ADAccountPassword -IdentityIdentity&#10;```&#10;Specify an Active Directory user object.'
 [Set-ADAccountPassword -Reset]: #Set-ADAccountPassword '```&#10;[PS] Set-ADAccountPassword -ResetReset&#10;```&#10;Specify to reset the password on an account (requires `NewPassword`)'
 [Set-ADAccountPassword -NewPassword]: #Set-ADAccountPassword '```&#10;[PS] Set-ADAccountPassword -NewPasswordNewPassword&#10;```&#10;Specify a new password value'
@@ -3351,47 +3736,47 @@ Reset password
 ```powershell
 Set-ADAccountPassword -Identity MBentley -Reset -NewPassword (ConvertTo-SecureString -AsPlainText "What is 255.255.255.240" -Force)
 ```
-##### Add-ADGroupMember
+##### Add-ADGroupMember<sup>[?][msdocs:Add-ADGroupMember]</sup>
 [Add a member to a group](#add-a-member-to-a-group)
-##### Get-ADObject
+##### Get-ADObject<sup>[?][msdocs:Get-ADObject]</sup>
 Display version of Active Directory schema <sup>[nolabnoparty.com](https://nolabnoparty.com/en/finding-active-directory-schema-version/ "Finding the Active Directory schema version")</sup>
 ```powershell
 Get-ADObject "cn=schema,cn=configuration,dc=domain,dc=com" -properties objectversion
 ```
-##### Set-ADObject
+##### Set-ADObject<sup>[?][msdocs:Set-ADObject]</sup>
 Protect users in a specified OU from accidental deletion
 ```powershell
 Get-ADUser -Filter * -SearchBase "OU=RoadCrew,OU=office365,DC=officeprodemoco,DC=com" ` | 
 Set-ADObject -ProtectedFromAccidentalDeletion $true
 ```
-##### Get-ADOrganizationalUnit
+##### Get-ADOrganizationalUnit<sup>[?][msdocs:Get-ADOrganizationalUnit]</sup>
 Display OUs, confirming deletion has taken place
 ```powershell
 Get-ADOrganizationalUnit  -filter * | ft
 ```
-##### New-ADOrganizationalUnit
+##### New-ADOrganizationalUnit<sup>[?][msdocs:New-ADOrganizationalUnit]</sup>
 Create a new Organizational Unit
 ```powershell
 New-ADOrganizationalUnit -Name GNV -Credential officeprodemoco\joey
 ```
-##### Remove-ADOrganizationalUnit
+##### Remove-ADOrganizationalUnit<sup>[?][msdocs:Remove-ADOrganizationalUnit]</sup>
 Remove an OU
 ```powershell
 Remove-ADOrganizationalUnit -Identity "OU=GNV, DC=officeprodemoco, DC=onmicrosoft, DC=com" -confirm:$False
 ```
-##### Set-ADOrganizationalUnit
+##### Set-ADOrganizationalUnit<sup>[?][msdocs:Set-ADOrganizationalUnit]</sup>
 Remove accidental deletion protection
 ```powershell
 Set-ADOrganizationalUnit -Name GNV -ProtectedFromAccidentalDeletion $False -Identity "OU=GNV, DC=officeprodemoco, DC=onmicrosoft, DC=com" 
 ```
-##### Install-ADDSForest
+##### Install-ADDSForest<sup>[?][msdocs:Install-ADDSForest]</sup>
 Add a new forest
 ```powershell
 # This will prompt for safe mode administrator password
 Install-ADDSForest -DomainName example.com -InstallDNS
 ```
 If the system fails to automatically create a NetBIOS name, it can be manually specified with the named parameter `-DomainNetbiosName`
-##### Install-ADDSDomain
+##### Install-ADDSDomain<sup>[?][msdocs:Install-ADDSDomain]</sup>
 Add a new domain
 `Install-ADDSDomain` only requires the following two parameters:
   - `-NewDomainName` if the value set for `-DomainType` is set to `ChildDomain` (which it is by default), a single label domain name can be used.
@@ -3402,29 +3787,29 @@ Install-ADDSDomain -NewDomainName hq -ParentDomainName pythagoras.net
 ```powershell
 Install-ADDSDomain -Credential (Get-Credential CORP\EnterpriseAdmin1) -NewDomainName child -ParentDomainName corp.contoso.com -InstallDNS -CreateDNSDelegation -DomainMode Win2003 -ReplicationSourceDC DC1.corp.contoso.com -SiteName Houston -DatabasePath "D:\NTDS" -SYSVOLPath "D:\SYSVOL" -LogPath "E:\Logs" -NoRebootOnCompletion
 ```
-##### Uninstall-ADDSDomainController
+##### Uninstall-ADDSDomainController<sup>[?][msdocs:Uninstall-ADDSDomainController]</sup>
 Demote a domain controller (consummate with uninstalling the AD Domain Controller role)
 ```powershell
 # When removing the last domain controller of a domain, additional options need to be specified that result in the obliteration of the domain, its forest, and associated data.
 Uninstall-ADDSDomainController -LocalAdministratorPassword (ConvertTo-SecureString $pw -AsPlainText -Force) -LastDomainControllerInDomain -RemoveApplicationPartitions
 ```
-##### New-ADComputer
-##### Add-ADPrincipalGroupMembership
+##### New-ADComputer<sup>[?][msdocs:New-ADComputer]</sup>
+##### Add-ADPrincipalGroupMembership<sup>[?][msdocs:Add-ADPrincipalGroupMembership]</sup>
 ```powershell
 Add-ADPrincipalGroupMembership -Identity "CN=SysAdmin,CN=Users,DC=corp,DC=packtlab,DC=com" -MemberOf "CN=Enterprise Admins,CN=Users,DC=corp,DC=packtlab,DC=com","CN=Domain Admins,CN=Users,DC=corp,DC=packtlab,DC=com"
 ```
-##### Get-ADForest
+##### Get-ADForest<sup>[?][msdocs:Get-ADForest]</sup>
 Display installed forests
 ```powershell
 Get-ADForest | select -ExpandProperty domains
 ```
-##### Get-ADPrincipalGroupMembership
+##### Get-ADPrincipalGroupMembership<sup>[?][msdocs:Get-ADPrincipalGroupMembership]</sup>
 <sup>[Jones][Jones]</sup>
 
 ```powershell
 Get-ADPrincipalGroupMembership sysadmin
 ```
-##### Get-ADUser
+##### Get-ADUser<sup>[?][msdocs:Get-ADUser]</sup>
 Display information for Active Directory user `mike`
 ```powershell
 Get-ADUser -Identity mike
@@ -3438,19 +3823,31 @@ Display information on user, confirming successful creation
 ```powershell
 Get-ADUser "Marty McFly" | Select-Object Name
 ```
-##### Add-DistributionGroupMember
+##### Add-DistributionGroupMember<sup>[?][msdocs:Add-DistributionGroupMember]</sup>
 [Add-DistributionGroupMember -Identity]: #Add-DistributionGroupMember '```&#10;[PS] Add-DistributionGroupMember -IdentityIdentity&#10;```&#10;Specifies the group that you want to modify. You can use any value that uniquely identifies the group (including Name, Alias, Distinguished name, Canonical name, Email address, or GUID).'
 [Add-DistributionGroupMember -Member]: #Add-DistributionGroupMember '```&#10;[PS] Add-DistributionGroupMember -MemberMember&#10;```&#10;Specifies the recipient that you want to add to the group. A member can be any mail-enabled recipient in your organization. You can use any value that uniquely identifies the recipient (including Name, Alias, Distinguished name, Canonical name, Email address, or GUID).'
-
 [`Identity`][Add-DistributionGroupMember -Identity]
 [`Member`][Add-DistributionGroupMember -Member]
+##### Add-DnsServerPrimaryZone<sup>[?][msdocs:Add-DnsServerPrimaryZone]
+**`Name`**
+**`ReplicationScope`**
+```powershell
+Add-DnsServerPrimaryZone -Name testzone.mylab.local -ReplicationScope Forest
+```
+##### Add-DnsServerSecondaryZone[?][msdocs:Add-DnsServerSecondaryZone]
+**`Name`**
+**`ZoneFile`**
+**`MasterServers`**
 
-##### Export-Alias
+```powershell
+Add-DnsServerSecondaryZone -Name "western.contoso.com" -ZoneFile "western.contoso.com.dns" -MasterServers 172.23.90.124
+```
+##### Export-Alias<sup>[?][msdocs:Export-Alias]</sup>
 Export session aliases to a ".ps1" file
 ```powershell
 Export-Alias -Path alias.ps1 -As Script
 ```
-##### Get-Alias
+##### Get-Alias<sup>[?][msdocs:Get-Alias]</sup>
 Display aliases
 ```powershell
 Get-Alias
@@ -3459,17 +3856,17 @@ Display items that point to `Get-ChildItem`
 ```powershell
 Get-Alias -Definition Get-ChildItem
 ```
-##### New-Alias
+##### New-Alias<sup>[?][msdocs:New-Alias]</sup>
 Establish a new alias
 ```powershell
 New-Alias ip Get-NetIPAddress
 ```
-##### Set-Alias
+##### Set-Alias<sup>[?][msdocs:Set-Alias]</sup>
 Edit an existing alias
 ```powershell
 Set-Alias ip Get-NetAdapter
 ```
-##### Get-Clipboard
+##### Get-Clipboard<sup>[?][msdocs:Get-Clipboard]</sup>
 Interpret items in clipboard as files
 ```powershell
 Get-Clipboard -Format FileDropList
@@ -3478,7 +3875,7 @@ Retrieve various properties of an image in clipboard
 ```powershell
 Get-Clipboard -Format Image
 ```
-##### Set-Clipboard
+##### Set-Clipboard<sup>[?][msdocs:Set-Clipboard]</sup>
 Copy text to clipboard
 ```powershell
 Write-Output 'Hello' | Set-Clipboard
@@ -3487,7 +3884,7 @@ With `Append` switch parameter, items can be added without clearing the clipboar
 ```powershell
 Write-Output 'Hello' | Set-Clipboard -Append
 ```
-##### Add-Computer
+##### Add-Computer<sup>[?][msdocs:Add-Computer]</sup>
 [Add-Computer -NewName]: #add-computer '```&#10;[PS] Add-Computer -NewNameNewName&#10;```&#10;Specify a computer name that you want to assign to the computer&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 20'
 [Add-Computer -DomainName]: #Add-Computer '```&#10;[PS] Add-Computer -DomainNameDomainName&#10;```&#10;Specify the name of the domain that you want the computer to join&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 20'
 [Add-Computer -Credential]: #Add-Computer '```&#10;[PS] Add-Computer -CredentialCredential&#10;```&#10;Specify the domain and account names for a domain user with domain join privileges&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 20'
@@ -3514,17 +3911,17 @@ Import-Csv -path $List | ForEach-Object {New-ADComputer -Name $_.Name -Path $OU}
 ```
 Verify a computer has connected to a domain
 Check "Organization" in Windows about page, or navigate to Control PAnel > System and Security > System and examine the **Computer name, domain, and workgroup settings**, where the domain can be seen.
-##### Rename-Computer
+##### Rename-Computer<sup>[?][msdocs:Rename-Computer]</sup>
 Rename computer
-##### Restart-Computer
+##### Restart-Computer<sup>[?][msdocs:Restart-Computer]</sup>
 Restart computer
-##### Get-ChildItem
-##### Get-Command
+##### Get-ChildItem<sup>[?][msdocs:Get-ChildItem]</sup>
+##### Get-Command<sup>[?][msdocs:Get-Command]</sup>
 Display source code of a function <sup>[docs.microsoft.com](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_functions "About Functions"</sup>
 ```powershell
 (Get-Command mkdir).Definition
 ```
-##### Invoke-Command
+##### Invoke-Command<sup>[?][msdocs:Invoke-Command]</sup>
 [Invoke-Command -ThrottleLimit]: #Invoke-Command '```&#10;[PS] Invoke-Command -ThrottleLimit&#10;```&#10;Specify the maximum number of concurrent connections that can be established to run the command (32 by default)'
 [Invoke-Command -ScriptBlock]: #Invoke-Command '```&#10;[PS] Invoke-Command -ScriptBlock&#10;```&#10;Specify commands to run'
 
@@ -3535,13 +3932,13 @@ Execute the commands in the block on the machines specified
 ```powershell
 Invoke-Command -ComputerName core01,core02 -Scriptblock {ipconfig /all}
 ```
-##### Get-ComputerInfo
+##### Get-ComputerInfo<sup>[?][msdocs:Get-ComputerInfo]</sup>
 Display computer name <sup>[cmd](README.md#hostname)</sup>
 ```powershell
 Get-ComputerInfo -Property CsName
 gin.CsName
 ```
-##### Get-Help
+##### Get-Help<sup>[?][msdocs:Get-Help]</sup>
 [Get-Help -Detailed]:           #Get-Help                      '```&#10;[PS] Get-Help -Detailed&#10;```&#10;Display detailed help for a command'
 [Get-Help -Examples]:           #Get-Help                      '```&#10;[PS] Get-Help -Examples&#10;```&#10;Display usage examples'
 [Get-Help -Online]:             #Get-Help                      '```&#10;[PS] Get-Help -Online&#10;```&#10;Navigate to online help page for a command.'
@@ -3553,25 +3950,25 @@ gin.CsName
 [`Full`][Get-Help -Full]
 [`Online`][Get-Help -Online]
 [`ShowWindow`][Get-Help -ShowWindow]
-##### Update-Help
+##### Update-Help<sup>[?][msdocs:Update-Help]</sup>
 Download help files
-##### Write-Host
+##### Write-Host<sup>[?][msdocs:Write-Host]</sup>
 `BackgroundColor`
 `ForegroundColor`
 
 Exclusively used for drawing text on the screen.
 
-##### Import-Module
+##### Import-Module<sup>[?][msdocs:Import-Module]</sup>
 Import `SmbShare` module
 ```powershell
 Import-Module SmbShare
 ```
-##### Install-Module
+##### Install-Module<sup>[?][msdocs:Install-Module]</sup>
 Install the `Az` module
 ```powershell
 Install-Module -Name Az -AllowClobber
 ```
-##### Write-Output
+##### Write-Output<sup>[?][msdocs:Write-Output]</sup>
 Copy text to clipboard
 ```powershell
 Write-Output 'Hello' | Set-Clipboard
@@ -3580,22 +3977,22 @@ Create a text file <sup>[Jones][Jones]</sup>
 ```powershell
 Write-Output "This is a test network file." -Path | Out-File C:\networkfiles\test.txt
 ```
-##### New-PSDrive
+##### New-PSDrive<sup>[?][msdocs:New-PSDrive]</sup>
 Start a new PSDrive using the `HKEY_CLASSES_ROOT` Windows Registry hive <sup>[powershelleverydayfaq.blogspot.com](http://powershelleverydayfaq.blogspot.com/2012/06/how-to-query-hkeyclassesroot.html "How to query HKEY_CLASSES_ROOT")</sup>
 ```powershell
 ndr -Name HKCR -PSProvider Registry -Root HKEY_CLASSES_ROOT
 ```
-##### Get-PSReadlineOption
+##### Get-PSReadlineOption<sup>[?][msdocs:Get-PSReadlineOption]</sup>
 Display options available in the module
 ```powershell
 Get-PSReadlineOption
 ```
-##### Set-Partition
+##### Set-Partition<sup>[?][msdocs:Set-Partition]</sup>
 Change a drive letter
 ```powershell
 Set-Partition -DriveLetter C -NewDriveLetter Z
 ```
-##### Set-PSReadlineOption
+##### Set-PSReadlineOption<sup>[?][msdocs:Set-PSReadlineOption]</sup>
 Set history to only save unique commands
 ```powershell
 Set-PSReadlineOption -HistoryNoDuplicates:$true
@@ -3608,48 +4005,48 @@ Change `<Tab>` behavior back to default for PowerShell
 ```powershell
 Set-PSReadlineOption -EditMode Windows
 ```
-##### Add-PSSnapin
-##### Format-Table
+##### Add-PSSnapin<sup>[?][msdocs:Add-PSSnapin]</sup>
+##### Format-Table<sup>[?][msdocs:Format-Table]</sup>
 `HideTableHeaders`
 
 Display list of information without the headers (i.e. for copy-pasting)
 ```powershell
 Get-Command -Module pswritehtml | Select-Object Name | Format-Table -HideTableHeaders | clip.exe
 ```
-##### Add-Type
+##### Add-Type<sup>[?][msdocs:Add-Type]</sup>
 Generate a random password 20 characters long <sup>[adamtheautomator.com][https://adamtheautomator.com/powershell-random-password/]</sup>
 ```powershell
 Add-Type -AssemblyName 'System.Web'
 [System.Web.Security.Membership]::GeneratePassword(20, 3)
 ```
-##### Get-NetConnectionProfile
+##### Get-NetConnectionProfile<sup>[?][msdocs:Get-NetConnectionProfile]</sup>
 ```powershell
 $NetworkProfile = Get-NetConnectionProfile -InterfaceAlias "Ethernet"
 $NetworkProfile.NetworkCategory = "Public"
 ```
-##### Set-NetConnectionProfile
+##### Set-NetConnectionProfile<sup>[?][msdocs:Set-NetConnectionProfile]</sup>
 ```powershell
 Set-NetConnectionOject -InputObject $NetworkProfile
 ```
-##### Add-DhcpServerv4Scope
+##### Add-DhcpServerv4Scope<sup>[?][msdocs:Add-DhcpServerv4Scope]</sup>
 <sup>[Jones][Jones]</sup>
 
 ```powershell
 Add-DhcpServerv4Scope -Name "PacktLabNet" -StartRange 10.0.0.50 -EndRange 10.0.0.100 -SubnetMask 255.255.255.0
 ```
-##### Add-DhcpServerInDC
+##### Add-DhcpServerInDC<sup>[?][msdocs:Add-DhcpServerInDC]</sup>
 <sup>[Jones][Jones]</sup>
 
 ```powershell
 Add-DhcpServerInDC -DnsName dc.corp.packtlab.com
 ```
-##### Set-DhcpServerv4OptionValue
+##### Set-DhcpServerv4OptionValue<sup>[?][msdocs:Set-DhcpServerv4OptionValue]</sup>
 <sup>[Jones][Jones]</sup>
 
 ```powershell
 Set-DhcpServerv4OptionValue -DnsDomain corp.packtlab.com -DnsServer 10.0.0.1
 ```
-##### Set-DnsClientServerAddress
+##### Set-DnsClientServerAddress<sup>[?][msdocs:Set-DnsClientServerAddress]</sup>
 **`InterfaceAlias`**
 `InterfaceIndex`
 `ResetServerAddresses`
@@ -3667,13 +4064,15 @@ Set an interface to get its DNS server from DHCP <sup>[docs.microsoft.com](https
 ```powershell
 Set-DnsClientServerAddress -InterfaceIndex 12 -ResetServerAddresses
 ```
-##### Resolve-DnsName
+##### Resolve-DnsName<sup>[?][msdocs:Resolve-DnsName]</sup>
 ```powershell
 Resolve-DNSName -Name secure.practicelabs.com.trustanchors -Type dnskey -Server plabdm01
 ```
-##### Get-NetAdapter
+##### Get-NetAdapter<sup>[?][msdocs:Get-NetAdapter]</sup>
 Display available network interfaces <sup>[Zacker][Zacker]: 19</sup>
-##### Enable-NetFirewallRule
+##### Enable-NetFirewallRule<sup>[?][msdocs:Enable-NetFirewallRule]</sup>
+**`Name`**
+
 Configure the firewall to allow Hyper-V replication <sup>[Zacker][Zacker]: 301</sup>
 ```powershell
 Enable-NetFirewallRule -DisplayName "hyper-v replica http listener (tcp-in)"
@@ -3686,7 +4085,7 @@ Enable-NetFirewallRule -DisplayGroup "Remote Administration"
 ```powershell
 Enable-NetFirewallRule -name COMPlusNetworkAccess-DCOM-In, RemoteEventLogSvc-In-TCP, RemoteEventLogSvc-NP-In-TCP, RemoteEventLogSvc-RPCSS-In-TCP
 ```
-##### Get-NetFirewallRule
+##### Get-NetFirewallRule<sup>[?][msdocs:Get-NetFirewallRule]</sup>
 Display all firewall rules
 ```powershell
 Get-NetFirewallRule
@@ -3699,12 +4098,12 @@ Display programs associated with firewall rules
 ```powershell
 Get-NetFirewallRule | %{$_.Name; $_ | Get-NetFirewallApplicationFilter}
 ```
-##### New-NetFirewallRule
+##### New-NetFirewallRule<sup>[?][msdocs:New-NetFirewallRule]</sup>
 Set a new firewall rule for incoming WinRM connections
 ```powershell
 New-NetFirewallRule -DisplayName "WinRMHTTP" -Direction Inbound -LocalPort 5985 -Protocol TCP -Action Allow
 ```
-##### Set-NetFirewallRule
+##### Set-NetFirewallRule<sup>[?][msdocs:Set-NetFirewallRule]</sup>
 Set firewall rule for COM+ Network Access (DCOM-In)
 ```powershell
 Set-NetFirewallRule -name COMPlusNetworkAccess-DCOM-In -Enabled True
@@ -3722,7 +4121,7 @@ Set firewall rule for Remote Event Log Management (RPC-EPMAP)
 Set-NetFirewallRule -name RemoteEventLogSvc-RPCSS-TCP -Enabled True
 ```
 
-##### New-NetIpAddress
+##### New-NetIpAddress<sup>[?][msdocs:New-NetIpAddress]</sup>
 [New-NetIpAddress -DefaultGateway]: #New-NetIpAddress '```&#10;[PS] New-NetIpAddress -DefaultGateway&#10;```&#10;Specify IP address of local router that computer should use to access other networks'
 [New-NetIpAddress -InterfaceIndex]: #New-NetIpAddress '```&#10;[PS] New-NetIpAddress -InterfaceIndex&#10;```&#10;Specify adapter to be configured using interface numbers as displayed by `Get-NetAdapter`'
 [New-NetIpAddress -IpAddress]: #New-NetIpAddress '```&#10;[PS] New-NetIpAddress -IpAddress&#10;```&#10;Specify IP address to be assigned to adapter'
@@ -3742,12 +4141,12 @@ Configure a network adapter
 ```powershell
 New-NetIpAddress -InterfaceIndex 6 -IpAddress 192.168.0.200 -PrefixLength 24 -DefaultGateway 192.168.0.1
 ```
-##### Set-NetIpInterface
+##### Set-NetIpInterface<sup>[?][msdocs:Set-NetIpInterface]</sup>
 Enable DHCP <sup>[4sysops.com](https://4sysops.com/archives/set-an-ip-address-and-configure-dhcp-with-powershell/ "Set an IP address and configure DHCP with Powershell")</sup>
 ```powershell
 Set-NetIPInterface -InterfaceAlias 'Ethernet 2' -Dhcp Enabled
 ```
-##### Invoke-WebRequest
+##### Invoke-WebRequest<sup>[?][msdocs:Invoke-WebRequest]</sup>
 Download a file over HTTP/HTTPS
 ```powershell
 Invoke-WebRequest -Uri http://example.com/path/to/file -OutFile \\path\to\local\file
@@ -3788,12 +4187,12 @@ $header = @{ message="Started by Mike Pfeiffer"}
 
 Invoke-WebRequest -Method Post -Uri $uri -Body $body -Headers $header
 ```
-##### Install-Package
+##### Install-Package<sup>[?][msdocs:Install-Package]</sup>
 Download and install **Docker Engine - Enterprise** (not supported on Windows 10 clients) <sup>[Zacker][Zacker]: 266</sup>
 ```powershell
 Install-Package docker -ProviderName dockermsftprovider
 ```
-##### Install-PackageProvider
+##### Install-PackageProvider<sup>[?][msdocs:Install-PackageProvider]</sup>
 Install [NuGet][NuGet]
 ```powershell
 Install-PackageProvider -Name NuGet
@@ -3802,32 +4201,32 @@ Since April 3, 2020 the minimum TLS version was raised on the provider lookup si
 ```powershell
 [System.Net.ServicePointManager]::SecurityProtocol=[System.Net.SecurityProtocolType]'Tls11,Tls12'
 ```
-##### Optimize-VHD
+##### Optimize-VHD<sup>[?][msdocs:Optimize-VHD]</sup>
 Compact a VHD <sup>[Zacker][Zacker]: 228</sup>
 ```powershell
 Optimize-VHD -Path $FILE -Mode full
 ```
-##### Register-PackageSource
+##### Register-PackageSource<sup>[?][msdocs:Register-PackageSource]</sup>
 ```powershell
 Register-PackageSource -Name NuGet -Location https://www.nuget.org/api/v2 -ProviderName NuGet -Trusted
 ```
-##### Start-Process
+##### Start-Process<sup>[?][msdocs:Start-Process]</sup>
 Run a program as admin
 ```powershell
 Start-Process cmd -Verb runas
 saps cmd -v runas
 ```
-##### Enable-PSRemoting
+##### Enable-PSRemoting<sup>[?][msdocs:Enable-PSRemoting]</sup>
 `SkipNetworkProfileCheck`
 
-##### Disconnect-PSSession
+##### Disconnect-PSSession<sup>[?][msdocs:Disconnect-PSSession]</sup>
 Terminate a remote PowerShell session begun with [`New-PSSession`][New-PSSession] <sup>[Zacker][Zacker]: 22</sup>
-##### Dismount-VHD
+##### Dismount-VHD<sup>[?][msdocs:Dismount-VHD]</sup>
 Zacker: 225
 ```powershell
 Dismount-VHD -Path $FILE
 ```
-##### Enter-PSSession
+##### Enter-PSSession<sup>[?][msdocs:Enter-PSSession]</sup>
 `UseSSL`
 
 Interact with the specified PowerShell session
@@ -3838,18 +4237,18 @@ Start and enter a new PS session to specified computer with provided credentials
 ```powershell
 Enter-PSSession -ComputerName o365-dc01 -Credential officeprodemoco\joey
 ```
-##### Exit-PSSession
+##### Exit-PSSession<sup>[?][msdocs:Exit-PSSession]</sup>
 Exit a remote PowerShell session <sup>[Zacker][Zacker]: 22</sup>
 End the PowerShell session with the specified computer
 ```powershell
 Exit-PSSession -ComputerName demodc
 ```
-##### Get-PSSession
+##### Get-PSSession<sup>[?][msdocs:Get-PSSession]</sup>
 Display PowerShell sessions
 ```powershell
 Get-PSSession
 ```
-##### New-PSSession
+##### New-PSSession<sup>[?][msdocs:New-PSSession]</sup>
 `-ComputerName`
 
 Manage a Windows Server remotely <sup>[Zacker][Zacker]: 21</sup>
@@ -3860,14 +4259,10 @@ Start a new PowerShell session, connecting to the specified computer
 ```powershell
 New-PSSession -ComputerName core02
 ```
-##### Enable-WSManCredSSP
+##### Enable-WSManCredSSP<sup>[?][msdocs:Enable-WSManCredSSP]</sup>
 `Delegate`
 `Role`
-
-Tasks:
-- [Enable CredSSP](#enable-credssp)
-
-##### New-Volume
+##### New-Volume<sup>[?][msdocs:New-Volume]</sup>
 `FileSystem`
 `ProvisioningType`
 `ResiliencySettingName`
@@ -3880,25 +4275,25 @@ Create a VHD with a Mirror layout <sup>[Practice Lab][pl:70-740]</sup>
 ```powershell
 New-Volume -StoragePoolFriendlyName “PLABDM01-SP1” -FriendlyName “Mirror1” -Size 6GB -ResiliencySettingName “Mirror” -FileSystem NTFS -AccessPath “M:” -ProvisioningType Thin
 ```
-##### New-Website
+##### New-Website<sup>[?][msdocs:New-Website]</sup>
 [Practice Lab][pl:70-740]
 ```powershell
 New-Website -Name nlbport -PhysicalPath "c:\nlbport" -Port 6789
 ```
-##### Set-Disk
+##### Set-Disk<sup>[?][msdocs:Set-Disk]</sup>
 `IsOffline`
 `IsReadOnly`
 
-While configuring a [pass-through disk](#pass-through-disk)
+Bring a disk online
 ```powershell
 Set-Disk -Number 3 -IsOffline $false
 ```
-##### New-Partition
+##### New-Partition<sup>[?][msdocs:New-Partition]</sup>
 Create a new partition mounted to F: using the ReFS filesystem <sup>[Practice Lab][pl:70-740]</sup>
 ```powershell
 New-Partition -DiskNumber 3 -UseMaximumSize -DriveLetter F | Format-Volume -NewFileSystemLabel “PLABS-Test” -FileSystem ReFS
 ```
-##### Enable-DedupVolume
+##### Enable-DedupVolume<sup>[?][msdocs:Enable-DedupVolume]</sup>
 [Enable-DedupVolume -UsageType]: #enable-dedupvolume '```&#10;[PS] Enable-DedupVolume -UsageType&#10;```&#10;Specifies the expected type of workload for the volume&#10;Acceptables values include:&#10;  - `Default`: Equivalent to "General Purpose File Server" in the GUI. This configures deduplication to be suitable to typical file server functions, like shared folders, Work Folders, and Folder Redirection.&#10;  - `HyperV`: Equivalent to "Virtual Desktop Infrastructure (VDI) Server" in the GUI. This configures Deduplication to occur in the background, with in-use and partial files optimized.&#10;  - `Backup`: Equivalent to "Virtualized Backup Server" in the GUI. Intended for use with backup applications, like Microsoft DPM. Deduplication is a priority process, and in-use files are optimized.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 156'
 
 [`UsageType`][Enable-DedupVolume -UsageType]
@@ -3908,53 +4303,56 @@ Enable deduplication <sup>[Zacker][Zacker]: 157</sup>
 Enable-DedupVolume -Volume "e:" -UsageType default
 Enable-DedupVolume -Volume "\\?\\volume{26a21bda-a627-11d7-9931-806e6f6e6963}" -UsageType backup
 ```
-##### Set-SRPartnership
+##### Set-SRPartnership<sup>[?][msdocs:Set-SRPartnership]</sup>
 Reverse the direction of storage replica, in a case where the source goes down <sup>[MeasureUp][mu:70-740]</sup>
 ```powershell
 Set-SRPartnership -NewSourceComputerName $replica -SourceRGName $replicarg -DestinationComputerName $src -DestinationRGName $srcrg
 ```
-##### Expand-Archive
+##### Expand-Archive<sup>[?][msdocs:Expand-Archive]</sup>
 Decompress archives
 ```powershell
 Expand-Archive
 ```
-##### Export-CliXml
-##### Import-CliXml
-##### Add-Content
+##### Export-CliXml<sup>[?][msdocs:Export-CliXml]</sup>
+##### Import-CliXml<sup>[?][msdocs:Import-CliXml]</sup>
+##### Add-Content<sup>[?][msdocs:Add-Content]</sup>
 Append a line to the `hosts` file
 ```powershell
 Add-Content -Path C:\Windows\System32\drivers\etc\hosts -Value "76.184.117.203 mohsen"
 ac $Env:windir\System32\drivers\etc\hosts "76.184.117.203 mohsen"
 ```
-##### Get-Content
+##### Get-Content<sup>[?][msdocs:Get-Content]</sup>
 Make a PowerShell object from a JSON file
 ```powershell
 Get-Content -Path file.json | ConvertFrom-Json
 ```
-##### Export-Csv
-##### Import-Csv
+##### Export-Csv<sup>[?][msdocs:Export-Csv]</sup>
+##### Import-Csv<sup>[?][msdocs:Import-Csv]</sup>
 Add a CSV full of users
 ```powershell
 Import-Csv users.csv | foreach { New-ADUser -SamAccountName $_.SAM -GivenName $_.Last -DisplayName $_.DisplayName -Name $_.Name -Description $_.Description -Enabled $True -AccountPassword (ConvertToSecureString $_.Password -AsPlainText -Force) }
 ```
-##### Convert-VHD
+##### Convert-VHD<sup>[?][msdocs:Convert-VHD]</sup>
 Convert a fixed VHD to a dynamic VHDX <sup>[Zacker][Zacker]: 228</sup>
 ```powershell
 Convert-VHD -Path $OLDFILE -DestinationPath $NEWFILE -VHDType dynamic
 ```
-##### Copy-Item
+##### Copy-Item<sup>[?][msdocs:Copy-Item]</sup>
 Copy files to and from an open Powershell session <sup>[Zacker][Zacker]: 180</sup>
 ```powershell
 Copy-Item -ToSession (Get-PSSession) -Path C:\temp\file.txt -Destination C:\users
 Copy-Item -FromSession (Get-PSSession) -Path C:\users\file.txt -Destination C:\temp
 ```
-##### Get-Item
+##### Get-Item<sup>[?][msdocs:Get-Item]</sup>
 Equivalents to bash `basename` and `dirname` <sup>[stackoverflow](https://stackoverflow.com/questions/12503871/removing-path-and-extension-from-filename-in-powershell "Removing path and extension from filename in powershell")</sup>
 ```powershell
 (Get-Item $path).Basename
 (Get-Item $path).DirectoryName
 ```
-##### New-Item
+```powershell
+(Get-Item C:\install.wim).IsReadOnly = $false
+```
+##### New-Item<sup>[?][msdocs:New-Item]</sup>
 [New-Item &#84;]: #New-Item '```&#10;[PS] New-Item Type&#10;[PS] New-Item -ItemType&#10;```&#10;&#10;Specify the provider-specified type of the new item; values depend on the context.'
 
 `Name`
@@ -3966,7 +4364,7 @@ Create a folder
 New-Item -ItemType "directory" Folder
 ni -Type "directory" Folder
 ```
-##### Remove-Item
+##### Remove-Item<sup>[?][msdocs:Remove-Item]</sup>
 Clear Windows Temp folder, suppressing errors
 ```powershell
 ri -r $Env:temp -ea 0
@@ -3980,7 +4378,7 @@ Clear Teams cache <sup>[commsverse.blog](https://commsverse.blog/2018/09/28/clea
 ```powershell
 Remove-Item $env:APPDATA"\Microsoft\teams\application cache\cache", $env:APPDATA"\Microsoft\teams\blob_storage", $env:APPDATA"\Microsoft\teams\databases", $env:APPDATA"\Microsoft\teams\cache", $env:APPDATA"\Microsoft\teams\gpucache", $env:APPDATA"\Microsoft\teams\Local Storage", $env:APPDATA"\Microsoft\teams\Indexeddb", $env:APPDATA"\Microsoft\teams\tmp" -Recurse -ErrorAction "silentlycontinue"
 ```
-##### Set-Item
+##### Set-Item<sup>[?][msdocs:Set-Item]</sup>
 Add an IP address to the Trusted Hosts list, bypassing the use of Kerberos to authenticate the session <sup>[Zacker][Zacker]: 56</sup>
 ```powershell
 Set-Item wsman:\localhost\client\trustedhosts "192.168.10.41"
@@ -3993,30 +4391,27 @@ Enable CredSSP on the intermediate server when attempting to make the "second ho
 ```powershell
 Set-Item WSMAN:\localhost\service\auth\credssp -value $true
 ```
-##### New-ItemProperty
+##### New-ItemProperty<sup>[?][msdocs:New-ItemProperty]</sup>
 Create a Registry key in order to use a local user account that is not the builtin Administrator account in order to manage a single domain cluster <sup>[Zacker][Zacker]: 315</sup>
 ```powershell
 New-ItemProperty -Path HKLM:\Software\Microsoft\Windows\currentversion\policies\system -Name LocalAccountTokenFilterPolicy -Value 1
 ```
-##### Measure-VM
+##### Measure-VM<sup>[?][msdocs:Measure-VM]</sup>
 **`VMName`**
 
 
-##### Select-Object
+##### Select-Object<sup>[?][msdocs:Select-Object]</sup>
 Create a custom property <sup>[Pfeiffer](https://portal.cloudskills.io/products/azure-powershell-the-ultimate-beginners-course/categories/2529580/posts/8443858 "Azure PowerShell course") </sup>
 ```powershell
 Get-AzVM | Select-Object Name,@{Name="DataDiskCount"; Expression={$_.StorageProfile.DataDisks.count}}
 ```
-##### Where-Object
-##### Mount-VHD
-Tasks:
-- [VHDX file](#vhdx-file)
-
+##### Where-Object<sup>[?][msdocs:Where-Object]</sup>
+##### Mount-VHD<sup>[?][msdocs:Mount-VHD]</sup>
 Mount a VHD or VHDX file <sup>[Zacker][Zacker]: 92, 225</sup>
 ```powershell
 Mount-VHD -Path $file
 ```
-##### New-VHD
+##### New-VHD<sup>[?][msdocs:New-VHD]</sup>
 [New-VHD -Differencing]: #New-VHD '```&#10;[PS] New-VHD -Differencing&#10;```&#10;Specify that a new differencing disk is to be created'
 
 [`Differencing`][New-VHD -Differencing]
@@ -4025,9 +4420,6 @@ Mount-VHD -Path $file
 `LogicalSectorSizeBytes`
 `ParentPath`
 `SizeBytes`
-
-Tasks:
-- [VHDX file](#vhdx-file)
 
 [Zacker][Zacker]: 219
 ```powershell
@@ -4040,12 +4432,12 @@ Differencing disk <sup>[Practice Lab][pl:70-740]</sup>
 ```powershell
 New-VHD -Path 'D:\Virtual Machines\PLAB2.vhdx' -Differencing -ParentPath 'C:\Users\Public\Documents\Hyper-V\Virtual hard disks\PLABWIN102.vhdx'
 ```
-##### Export-VM
+##### Export-VM<sup>[?][msdocs:Export-VM]</sup>
 Export a VM <sup>[Zacker][Zacker]: 373</sup>
 ```powershell
 Export-Vm -Name clustervm1 -Path D:\vm
 ```
-##### Import-VM
+##### Import-VM<sup>[?][msdocs:Import-VM]</sup>
 [Import-VM -Copy]: #import-vm '```&#10;[PS] Import-VM -Copy&#10;```&#10;Specifies that the import VM should be copied to host default locations of the host, as opposed to registering the virtual machine in-place.&#10;Equivalent to the "Restore" GUI option.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 211'
 [Import-VM -GenerateNewId]: #import-vm '```&#10;[PS] Import-VM -GenerateNewId&#10;```&#10;Specifies that the imported virtual machine should be copied and given a new unique identifier.&#10;Equivalent to the "Copy" GUI option&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 212'
 
@@ -4056,18 +4448,18 @@ Import a VM into the Hyper-V host <sup>[Zacker][Zacker]: 373</sup>
 ```powershell
 Import-VM -Path "D:\vm\virtual machines\5ae40946-3a98-428e-8c83-081a3c68d18c.xml" -Copy -GenerateNewId
 ```
-##### Initialize-Disk
+##### Initialize-Disk<sup>[?][msdocs:Initialize-Disk]</sup>
 **Initializing** a disk means selecting a MBR or GPT partition style.
 ```powershell
 Initialize-Disk -Number 1 -PartitionStyle MBR
 
 ```
-##### Move-VM
+##### Move-VM<sup>[?][msdocs:Move-VM]</sup>
 Perform a live migraiton <sup>[Zacker][Zacker]: 307</sup>
 ```powershell
 Move-VM -VM server1 -DestinationHost hyper2
 ```
-##### New-VM
+##### New-VM<sup>[?][msdocs:New-VM]</sup>
 **`Name`**
 **`MemoryStartupBytes`**
 **`Generation`**
@@ -4076,14 +4468,11 @@ Move-VM -VM server1 -DestinationHost hyper2
 `SwitchName`
 `VHDPath`
 
-Tasks:
-- [VM with installation media](#create-vm-with-installation-media)
-
 Create a Nano Server VM from an image file <sup>[Zacker][Zacker]: 47</sup>
 ```powershell
 New-VM -Name "nano2" -Generation 2 -MemoryStartupBytes 1GB -VHDPath "F:\hyper-v\virtual hard disks\nano2.vhdx"
 ```
-##### Set-VM
+##### Set-VM<sup>[?][msdocs:Set-VM]</sup>
 [Set-VM -CheckpointType]: #Set-VM '```&#10;[PS] Set-VM -CheckpointType&#10;```&#10;Configure the type of checkpoints created by Hyper-V'
 
 [`CheckpointType`][Set-VM -CheckpointType]
@@ -4093,10 +4482,31 @@ Disable dynamic memory <sup>[MeasureUp][mu:70-740]</sup>
 ```powershell
 Set-VM -StaticMemory
 ```
-##### Set-VMDvdDrive
-Tasks:
-- [Create VM with installation media](#create-vm-with-installation-media)
-##### Set-VMHost
+##### Set-VMDvdDrive<sup>[?][msdocs:Set-VMDvdDrive]</sup>
+**`VMName`**
+**`ControllerNumber`**
+**`ControllerLocation`**
+**`Path`**
+
+[Practice Lab](70-740.md#hyper-v-storage-lab)
+```powershell
+Set-VMDvdDrive -VMName TestVM -ControllerNumber 1 -ControllerLocation 0 -Path $null
+```
+```powershell
+Set-VMDvdDrive -VMName PLABWIN102 -Path C:\Users\Administrator.PRACTICELABS\Documents\Eval81.iso
+```
+##### Set-VMHardDiskDrive<sup>[?][msdocs:Set-VMHardDiskDrive]</sup>
+**`VMName`**
+**`ControllerType`**
+**`ControllerNumber`**
+**`ControllerLocation`**
+**`Path`**
+
+```powershell
+Set-VMHardDiskDrive -VMName PLABNANOSRV01 -Path C:\nanoserver\PLABNANOSRV01.vhdx
+```
+
+##### Set-VMHost<sup>[?][msdocs:Set-VMHost]</sup>
 [Set-VMHost -VirtualMachinePath]: #Set-VMHost '```&#10;[PS] Set-VMHost -VirtualMachinePath&#10;```&#10;Specify the default folder to store virtual machine configuration files on the Hyper-V host'
 [Set-VMHost -VirtualHardDiskPath]: #Set-VMHost '```&#10;[PS] Set-VMHost -VirtualHardDiskPath&#10;```&#10;Specify the default folder to store virtual hard disks on the Hyper-V host.'
 
@@ -4106,7 +4516,7 @@ Tasks:
 ```powershell
 Set-VMHost -VirtualHardDiskPath 'D:\vms\Virtual Hard Disks' -VirtualMachinePath 'D:\vms\Virtual Machines'
 ```
-##### Set-VMFirmware
+##### Set-VMFirmware<sup>[?][msdocs:Set-VMFirmware]</sup>
 [Set-VMFirmware -SecureBootTemplate]: #set-vmfirmware '```&#10;[PS] Set-VMFirmware -SecureBootTemplate&#10;```&#10;Specifies the name of the secure boot template. If secure boot is enabled, you must have a valid secure boot template for the guest operating system to start.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 208'
 
 [`SecureBootTemplate`][Set-VMFirmware -SecureBootTemplate]
@@ -4115,30 +4525,38 @@ Select Secure Boot template in order to load supported Linux distributions <sup>
 ```powershell
 Set-VMFirmware vmname -SecureBootTemplate MicrosoftUEFICertificateAuthority
 ```
-##### Set-VMMemory
-Tasks:
-- [Implement nested virtualization](#implement-nested-virtualization)
-##### Set-VMProcessor
-- [Implement nested virtualization](#implement-nested-virtualization)
-##### Set-VMReplicationServer
+##### Set-VMMemory<sup>[?][msdocs:Set-VMMemory]</sup>
+`DynamicMemory`
+
+##### Set-VMProcessor<sup>[?][msdocs:Set-VMProcessor]</sup>
+`ExposeVirtualizationExtensions`
+
+##### Set-VMReplication<sup>[?][msdocs:Set-VMReplication]</sup>
+**`VMName`**
+**`ReplicaServerName`**
+**`ReplicaServerPort`**
+**`AuthenticationType`**
+
+##### Set-VMReplicationServer<sup>[?][msdocs:Set-VMReplicationServer]</sup>
+**`ReplicationEnabled`**
+**`AllowedAuthenticationType`**
+**`ReplicationAllowedFromAnyServer`**
+
 Configure a server's replica configuration <sup>[Zacker][Zacker]: 300</sup>
 ```powershell
 Set-VmReplicationServer -ReplicationEnabled $true -AllowedAuthenticationType kerberos -ReplicationAllowedFromAnyServer $true -DefaultStorageLocation D:\replicas
 ```
+##### New-VMSwitch<sup>[?][msdocs:New-VMSwitch]</sup>
 [external virtual switch]: # 'external virtual switch&#10;bound to networking protocol stack in the host operating system and connected to a physical network interface adapter on the host, allowing VMs to access the network to which the physical adapter is connected&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 241'
 [internal virtual switch]: # 'internal virtual switch&#10;Bound to a separate instance of the networking protocol stack in the host operating system, independent from the physical network interface adapter and its connected network, it allows VMs to access the virtual network, including the host operating system.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 241'
 [private virtual switch]: # 'private virtual switch&#10;Exists only in the Hyper-V server and is accessible only to the VMs running on it, and is inaccessible to the host operating system itself.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 241'
 
 Virtual switches can be [external][external virtual switch], [internal][internal virtual switch], or [private][private virtual switch] (in order of decreasing access). <sup>[Zacker][Zacker]: 241</sup>
-##### New-VMSwitch
 [New-VMSwitch -AllowManagementOS]: #New-VMSwitch '```&#10;[PS] New-VMSwitch -AllowManagementOS&#10;```&#10;Specify whether host can access the physical network adapter to which the virtual switch is bound'
 [New-VMSwitch -EnableEmbeddedTeaming]: #New-VMSwitch '```&#10;[PS] New-VMSwitch -EnableEmbeddedTeaming&#10;```&#10;Enable teaming for the specified virtual switch'
 
 [`AllowManagementOS`][New-VMSwitch -AllowManagementOS]
 [`EnableEmbeddedTeaming`][New-VMSwitch -EnableEmbeddedTeaming]
-
-Tasks:
-- [Create a virtual switch with SET enabled](#create-a-virtual-switch-with-set-enabled)
 
 Create a new virtual switch <sup>[Zacker][Zacker]: 242</sup>
 ```powershell
@@ -4150,11 +4568,11 @@ Turn on NAT on a nested Hyper-V VM
 New-VMSwitch -name VMNAT -SwitchType Internal
 New-NetNAT -Name LocalNAT -InternalIPInterfaceAddressPrefix "192.168.100.0/24"
 ```
-##### Set-VMSwitch
+##### Set-VMSwitch<sup>[?][msdocs:Set-VMSwitch]</sup>
 [Set-VMSwitch -AllowManagementOS]: #Set-VMSwitch '```&#10;[PS] Set-VMSwitch -AllowManagementOS&#10;```&#10;Specify whether host can access the physical network adapter to which the virtual switch is bound'
 
 [`AllowManagementOS`][Set-VMSwitch -AllowManagementOS]
-##### Add-VMHardDiskDrive
+##### Add-VMHardDiskDrive<sup>[?][msdocs:Add-VMHardDiskDrive]</sup>
 [Add-VMHardDiskDrive -ControllerType]: #add-vmharddiskdrive '```&#10;[PS] Add-VMHardDiskDrive -ControllerType&#10;```&#10;Specify type of controller to which the hard disk is to be added'
 
 **`VMName`**
@@ -4166,7 +4584,7 @@ While configuring a [pass-through disk](#pass-through-disk)
 ```powershell
 Add-VMHardDiskDrive -VMName server1 -ControllerType scsi -DiskNumber 2
 ```
-##### Add-VMNetworkAdapter
+##### Add-VMNetworkAdapter<sup>[?][msdocs:Add-VMNetworkAdapter]</sup>
 [Add-VMNetworkAdapter -IsLegacy]: #add-vmnetworkadapter '```&#10;[PS] Add-VMNetworkAdapter -IsLegacy&#10;```&#10;Specify a legacy adapter'
 
 [`IsLegacy`][Add-VMNetworkAdapter -IsLegacy]
@@ -4175,14 +4593,14 @@ Create a network adapter <sup>[Zacker][Zacker]: 237</sup>
 ```powershell
 Add-VMNetworkAdapter -VMName server1 -SwitchName private1
 ```
-##### Remove-VMNetworkAdapter
+##### Remove-VMNetworkAdapter<sup>[?][msdocs:Remove-VMNetworkAdapter]</sup>
 [msdocs:Remove-VMNetworkAdapter]: https://docs.microsoft.com/en-us/powershell/module/hyper-v/remove-vmnetworkadapter "Remove-VMNetworkAdapter"
 
 Remove a network adapter <sup>[Zacker][Zacker]: 237</sup>
 ```powershell
 Remove-VMNetworkAdapter -VMName server1 -VMNetworkAdapter nic1
 ```
-##### Set-VMNetworkAdapter
+##### Set-VMNetworkAdapter<sup>[?][msdocs:Set-VMNetworkAdapter]</sup>
 [msdocs:Set-VMNetworkAdapter]: https://docs.microsoft.com/en-us/powershell/module/hyper-v/set-vmnetworkadapter "Set-VMNetworkAdapter"
 
 [Set-VMNetworkAdapter -MinimumBandwidthWeight]: #Set-VMNetworkAdapter '```&#10;[PS] Set-VMNetworkAdapter -MinimumBandwidthWeight&#10;```&#10;Specify how much bandwidth to allocate to the specified virtual network adapter relative to others on the same switch (value ranges 1-100)&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 256'
@@ -4194,22 +4612,19 @@ Remove-VMNetworkAdapter -VMName server1 -VMNetworkAdapter nic1
 [`MinimumBandwidthAbsolute`][Set-VMNetworkAdapter -MinimumBandwidthAbsolute]
 [`MinimumBandwidthWeight`][Set-VMNetworkAdapter -MinimumBandwidthWeight]
 
-Tasks:
-- [Implement nested virtualization](#implement-nested-virtualization)
-
 Set bandwidth limits on a virtual network adapter <sup>[Zacker][Zacker]: 256</sup>
 ```powershell
 Set-VMNetworkAdapter -VMName server1 -Name nic1 -MinimumBandwidthWeight
 ```
-##### New-EventLog
+##### New-EventLog<sup>[?][msdocs:New-EventLog]</sup>
 ```powershell
 New-EventLog -LogName application -Source MyCustomApp
 ```
-##### Write-EventLog
+##### Write-EventLog<sup>[?][msdocs:Write-EventLog]</sup>
 ```powershell
 Write-EventLog -LogName application -Source MyCustomApp -EventId 911 -Message 'Automated process failed, please contact the administrator.'
 ```
-##### New-Guid
+##### New-Guid<sup>[?][msdocs:New-Guid]</sup>
 Generate a GUID
 ```powershell
 New-Guid
@@ -4223,7 +4638,7 @@ Options for configuring a network adapter
 `InterfaceNameOrIndex`
 `Ipv4Address`
 
-##### Edit-NanoServerImage
+##### Edit-NanoServerImage<sup>[?][msdocs:Edit-NanoServerImage]</sup>
 [Edit-NanoServerImage -BasePath]:        #Edit-NanoServerImage          '```&#10;[PS] Edit-NanoServerImage -BasePath&#10;```&#10;Path on the local system where you have previously created a copy of the Nano Server installation files using `New-NanoServerImage -BasePath`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 49'
 [Edit-NanoServerImage -TargetPath]:        #Edit-NanoServerImage          '```&#10;[PS] Edit-NanoServerImage -TargetPath&#10;```&#10;Full path and filename of an existing Nano Server image to be modified&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 49'
 [Edit-NanoServerImage -Packages]:        #Edit-NanoServerImage          '```&#10;[PS] Edit-NanoServerImage -Packages&#10;```&#10;Nano Center packages to be installed to the image file specified in `-TargetPath`.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 49'
@@ -4232,7 +4647,6 @@ Options for configuring a network adapter
 [Edit-NanoServerImage -Ipv4SubnetMask]: #Edit-NanoServerImage '```&#10;[PS] Edit-NanoServerImage -Ipv4SubnetMask&#10;```&#10;Specify subnet mask value associated with the IP address specified in `Ipv4Address`&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 51'
 [Edit-NanoServerImage -Ipv4Gateway]: #Edit-NanoServerImage '```&#10;[PS] Edit-NanoServerImage -Ipv4Gateway&#10;```&#10;Specify IP address of a router on the local network where the IP address specified in `Ipv4Address` is located, providing access to other networks&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 51'
 [Edit-NanoServerImage -Ipv4Dns]: #Edit-NanoServerImage '```&#10;[PS] Edit-NanoServerImage -Ipv4Dns&#10;```&#10;Specify IP address of DNS server&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 51'
-
 [`InterfaceNameOrIndex`][Edit-NanoServerImage -InterfaceNameOrIndex]
 [`Ipv4Address`][Edit-NanoServerImage -Ipv4Address]
 [`Ipv4SubnetMask`][Edit-NanoServerImage -Ipv4SubnetMask]
@@ -4246,7 +4660,7 @@ Add the Web Server (IIS) role to an image file. <sup>[Zacker][Zacker]: 49</sup>
 ```powershell
 Edit-NanoServerImage -BasePath C:\nanoserver\base -TargetPAth C:\nanoserver\nano1.vhdx -Packages microsoft-nanoserver-iis-package
 ```
-##### New-NanoServerImage
+##### New-NanoServerImage<sup>[?][msdocs:New-NanoServerImage]</sup>
 [New-NanoServerImage -BasePath]: #New-NanoServerImage '```&#10;[PS] New-NanoServerImage -BasePath&#10;```&#10;Path on the local system where the cmdlet cdreates a copy of the installation files from the location specified in `-MediaPath`.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 44'
 [New-NanoServerImage -ComputerName]: #New-NanoServerImage '```&#10;[PS] New-NanoServerImage -ComputerName&#10;```&#10;Computer name that should be assigned to the new image.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 44'
 [New-NanoServerImage -Containers]: #New-NanoServerImage '```&#10;[PS] New-NanoServerImage -Containers&#10;```&#10;Add the Containers package, including host support for Windows Containers&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 265'
@@ -4281,27 +4695,30 @@ Container host <sup>[Zacker][Zacker]: 264</sup>
 ```powershell
 New-NanoServerImage -DeploymentType guest -Edition Datacenter -MediaPath D:\ -TargetPath C:\Nano\nano1.vhdx -Computername nano1 -DomainName contoso -Containers
 ```
-##### Get-Service
+##### Get-Service<sup>[?][msdocs:Get-Service]</sup>
 Display status of &lt;WinRM&gt; service
 ```powershell
 Get-Service WinRM
 gsv winrm
 ```
-##### Set-Service
+##### Set-Service<sup>[?][msdocs:Set-Service]</sup>
 ```powershell
 Set-Service WtcOtg -StartupType Disabled
 ```
-##### Start-Service
+##### Start-Service<sup>[?][msdocs:Start-Service]</sup>
 Start the `WinRM` service
 ```powershell
 sasv winrm
 ```
-##### Stop-Service
+##### Start-VMInitialReplication<sup>[?][msdocs:Start-VMInitialReplication]</sup>
+**`VMName`**
+
+##### Stop-Service<sup>[?][msdocs:Stop-Service]</sup>
 Stop the WebTitan service
 ```powershell
 Stop-Service WtcOtg
 ```
-##### Get-WmiObject
+##### Get-WmiObject<sup>[?][msdocs:Get-WmiObject]</sup>
 View system uptime
 ```powershell
 Get-WmiObject -Win32_OperatingSystem -ComputerName localhost |
@@ -4320,13 +4737,13 @@ Display all objects of type `Win32_LogicalDisk` <sup>[YouTube](https://youtu.be/
 Get-WmiObject -Query "SELECT * FROM Win32_LogicalDisk"
 gwmi -q "select * from win32_logicaldisk"
 ```
-##### Get-WindowsFeature
+##### Get-WindowsFeature<sup>[?][msdocs:Get-WindowsFeature]</sup>
 Display installable Windows roles, role services, and features
 Display a branching view of available Windows roles, role services, and features
 ```powershell
 Get-WindowsFeature
 ```
-##### Install-WindowsFeature
+##### Install-WindowsFeature<sup>[?][msdocs:Install-WindowsFeature]</sup>
 [Install-WindowsFeature -Name]: #Install-WindowsFeature '```&#10;[PS] Install-WindowsFeature -Name&#10;```&#10;&#10;Values can include:&#10;  - "`AD-Domain-Services"&#10;  - "Hyper-V"&#10;  - "RSAT-ADDS"&#10;  - "Web-WebServer"'
 
 [**`Name`**][Install-WindowsFeature -Name] 
@@ -4375,27 +4792,32 @@ Install a Windows role or feature to an offline virtual disk <sup>Zacker: 225</s
 ```powershell
 Install-WindowsFeature -VHD $FILE -Name web-server -IncludeManagementTools
 ```
-##### Start-DscConfiguration
+##### Start-DscConfiguration<sup>[?][msdocs:Start-DscConfiguration]</sup>
 `-Path`
 
 Used to erect a **push architecture** in [DSC](dsc.md). <sup>[Zacker][Zacker]: 27</sup>
-##### Set-NetQosDcbxSetting
+##### Set-NetQosDcbxSetting<sup>[?][msdocs:Set-NetQosDcbxSetting]</sup>
 Set the DCBX Willing bit to false, enabling the CNA to receive only local configuration settings, namely those created with subsequent `DcbQos` cmdlets <sup>[Zacker][Zacker]: 143</sup>
 ```powershell
 Set-NetQosDcbxSetting -Willing 0
 ```
-##### New-SRPartnership
+##### New-SRPartnership<sup>[?][msdocs:New-SRPartnership]</sup>
 Establish the actual replication partnership between the source and the destination servers <sup>[Zacker][Zacker]: 154</sup>
 ```powershell
 New-SRPartnership -SourceComputerName servera -SourceRgName group1 -SourceVolumeName f: -SourceLogVolumeName e: -DestinationComputerName serverb -DestinationRgName group2 -DestinationVolumeName f: -DestinationLogVolumeName e:
 ```
-##### Test-SRTopology
+##### Test-SRTopology<sup>[?][msdocs:Test-SRTopology]</sup>
 ```powershell
 Test-SRTopology -SourceComputerName servera -SourceVolumeName f: -SourceLogVolumeName e: -DestinationComputerName serverb -DestinationVolumeName f: -DestinationLogVolumeName e: -DurationInMinutes 30 -ResultPath c:\temp
 ```
-##### Add-WindowsDriver
+##### Test-VMReplicationConnection<sup>[?][msdocs:Test-VMReplicationConnection]</sup>
+```powershell
+Test-VMReplicationConnection PLABDC02 plabsa01.practicelabs.com 80 Kerberos
+```
+
+##### Add-WindowsDriver<sup>[?][msdocs:Add-WindowsDriver]</sup>
 DISM only supports .inf driver files
-##### Get-WindowsImage
+##### Get-WindowsImage<sup>[?][msdocs:Get-WindowsImage]</sup>
 [Get-WindowsImage -Mounted]: #Get-WindowsImage '```&#10;[PS] Get-WindowsImage -Mounted&#10;```&#10;&#10;Equivalent to `Dism.exe /Get-MountedImageInfo`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
 [Get-WindowsImage -ImagePath]: #get-windowsimage '```&#10;[PS] Get-WindowsImage -ImagePath&#10;```&#10;Specifies the location of a WIM or VHD file'
 [Get-WindowsImage -Index]: #get-windowsimage '```&#10;[PS] Get-WindowsImage -Index&#10;```&#10;Specifies the index number of a Windows image in a WIM or VHD file. For a VHD file, the Index must be 1.'
@@ -4408,31 +4830,46 @@ Find Windows Server 2016 images included in G:\images\WS2016.WIM
 ```powershell
 Get-WindowsImage -ImagePath G:\images\WS2016.WIM
 ```
-##### Mount-WindowsImage
+##### Mount-WindowsImage<sup>[?][msdocs:Mount-WindowsImage]</sup>
 [Mount-WindowsImage -Remount]: #Mount-WindowsImage '```&#10;[PS] Mount-WindowsImage -Remount&#10;```&#10;&#10;Equivalent to `Dism.exe /Remount-Image`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
 
 [`Remount`][Mount-WindowsImage -Remount]
-##### Enable-VMResourceMetering
+##### Enable-VMReplication<sup>[?][msdocs:Enable-VMReplication]</sup>
 **`VMName`**
+**`ReplicaServerName`**
+**`ReplicaServerPort`**
+**`AuthenticationType`**
 
-##### Enable-WindowsOptionalFeature
+```powershell
+Enable-VMReplication PLABDC02 plabsa01.practicelabs.com 80 Kerberos
+```
+##### Enable-VMResourceMetering<sup>[?][msdocs:Enable-VMResourceMetering]</sup>
+**`VMName`**
+##### Enable-WindowsOptionalFeature<sup>[?][msdocs:Enable-WindowsOptionalFeature]</sup>
+`FeatureName`
+`Online`
+
 Enable a feature in the currently running operating system <sup>[docs.microsoft.com](https://docs.microsoft.com/en-us/powershell/module/dism/enable-windowsoptionalfeature?view=win10-ps&redirectedfrom=MSDN "Microsoft Docs: \"Enable-WindowsOptionalFeature\"")</sup>
 ```powershell
 Enable-WindowsOptionalFeature -Online -FeatureName "Hearts" -All
 ```
-Enable WSL <sup>[Reddit](https://www.reddit.com/r/bashonubuntuonwindows/comments/7smf9m/help_wsl_wont_activate_on_my_freshly_installed/ "Reddit: \"[help] WSL won't activate on my freshly installed Windows 10 version 1709\"")</sup>
+Install WSL <sup>[Reddit](https://www.reddit.com/r/bashonubuntuonwindows/comments/7smf9m/help_wsl_wont_activate_on_my_freshly_installed/ "Reddit: \"[help] WSL won't activate on my freshly installed Windows 10 version 1709\"")</sup>
 ```powershell
-Enable-WindowsOptionalFeature -online -FeatureName Microsoft-Windows-Subsystem-Linux
+Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
 ```
-##### Get-WindowsOptionalFeature
+Install Hyper-V
+```powershell
+Enable-WindowsOptionalFeature -Online -FeatureName microsoft-hyper-v-all
+```
+##### Get-WindowsOptionalFeature<sup>[?][msdocs:Get-WindowsOptionalFeature]</sup>
 [Get-WindowsOptionalFeature -FeatureName]: #Get-WindowsOptionalFeature '```&#10;[PS] Get-WindowsOptionalFeature -FeatureName&#10;```&#10;&#10;Equivalent to `Dism.exe /Image:foldername /Get-Featureinfo`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 78'
 [`FeatureName`][Get-WindowsOptionalFeature -FeatureName]
-##### Get-WindowsPackage
+##### Get-WindowsPackage<sup>[?][msdocs:Get-WindowsPackage]</sup>
 [Get-WindowsPackage -PackagePath]: #Get-WindowsPackage '```&#10;[PS] Get-WindowsPackage -PackagePath&#10;```&#10;&#10;Equivalent to `Dism.exe /Image:foldername /Get-Packageinfo`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
 [Get-WindowsPackage -PackageName]: #Get-WindowsPackage '```&#10;[PS] Get-WindowsPackage -PackageName&#10;```&#10;&#10;Equivalent to `Dism.exe /Image:foldername /Get-Packageinfo`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
 [`PackageName`][Get-WindowsPackage -PackageName] 
 [`PackagePath`][Get-WindowsPackage -PackagePath]
-##### New-Cluster
+##### New-Cluster<sup>[?][msdocs:New-Cluster]</sup>
 [New-Cluster -NoStorage]: #new-cluster '```&#10;[PS] New-Cluster -NoStorage&#10;```&#10;Specifies that shared storage is ignored during the cluster creation. The cluster created at the end of the operation will not have shared storage. Shared storage can later be added by piping the ClusterDiskInfo object from the Get-ClusterAvailableDisk cmdlet into the Add-ClusterDisk cmdlet.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 354'
 [New-Cluster -AdministrativeAccessPoint]: #new-cluster '```&#10;[PS] New-Cluster -AdministrativeAccessPoint&#10;[PS] New-Cluster -aap&#10;```&#10;Specifies the type of administrative access point that the cmdlet creates for the cluster (ActiveDirectoryAndDns, Dns, or None)&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 337'
 
@@ -4441,9 +4878,6 @@ Enable-WindowsOptionalFeature -online -FeatureName Microsoft-Windows-Subsystem-L
 `IgnoreNetwork`
 [`NoStorage`][New-Cluster -NoStorage]
 `StaticAddress`
-
-Tasks:
-- [Create a S2D cluster](#configure-s2d-cluster)
 
 Create a cluster which will be assigned a dynamic address <sup>[Zacker][Zacker]: 313</sup>
 ```powershell
@@ -4461,12 +4895,12 @@ Create an Active Directory-detached cluster <sup>[Zacker][Zacker]: 337</sup>
 ```powershell
 New-Cluster -Name cluster1 -Node server1,server2 -StaticAddress 10.0.0.1 -NoStorage -AdministrativeAccessPoint dns
 ```
-##### Suspend-ClusterNode
+##### Suspend-ClusterNode<sup>[?][msdocs:Suspend-ClusterNode]</sup>
 Pause a node and move ("drain") its workloads with `-Drain`. <sup>[docs.microsoft.com](https://docs.microsoft.com/en-us/powershell/module/failoverclusters/suspend-clusternode "Suspend-ClusterNode")
 ```powershell
 Suspend-ClusterNode -Name "node1" -Target "node2" -Drain
 ```
-##### Set-ClusterQuorum
+##### Set-ClusterQuorum<sup>[?][msdocs:Set-ClusterQuorum]</sup>
 `CloudWitness`
 `DiskWitness`
 `NodeMajority`
@@ -4487,22 +4921,22 @@ Configure a cloud witness <sup>[Zacker][Zacker]: 348</sup>
 ```powershell
 Set-ClusterQuorum -CloudWitness -AccountName clusterstorage1 -AccessKey $accesskey
 ```
-##### Add-ClusterScaleOutFileServerRole
+##### Add-ClusterScaleOutFileServerRole<sup>[?][msdocs:Add-ClusterScaleOutFileServerRole]</sup>
 Install the Scale-out File Server role (incorrectly appears as `Add-ClusterScaleOutFileServer` in the text) <sup>[Zacker][Zacker]: 339</sup>
 ```powershell
 Add-ClusterScaleOutFileServerRole
 ```
-##### Add-ClusterSharedVolume
+##### Add-ClusterSharedVolume<sup>[?][msdocs:Add-ClusterSharedVolume]</sup>
 Zacker: 336
 ```powershell
 Add-ClusterSharedVolume -Name "Cluster disk 5"
 ```
-##### Enable-ClusterStorageSpacesDirect
+##### Enable-ClusterStorageSpacesDirect<sup>[?][msdocs:Enable-ClusterStorageSpacesDirect]</sup>
 Add storage to a failover cluster [created][New-Cluster] with the `-NoStorage` option <sup>[Zacker][Zacker]: 354</sup>
 ```powershell
 Enable-ClusterStorageSpacesDirect
 ```
-##### Close-SmbOpenFile
+##### Close-SmbOpenFile<sup>[?][msdocs:Close-SmbOpenFile]</sup>
 Close an open file <sup>[docs.microsoft.com][https://docs.microsoft.com/en-us/powershell/module/smbshare/close-smbopenfile?view=win10-ps]</sup>
 ```powershell
 Close-SmbOpenFile -FileId 4415226383589
@@ -4511,7 +4945,7 @@ Close open files for a session <sup>[docs.microsoft.com][https://docs.microsoft.
 ```powershell
 Close-SmbOpenFile -SessionId 4415226380393
 ```
-##### Get-SmbOpenFile
+##### Get-SmbOpenFile<sup>[?][msdocs:Get-SmbOpenFile]</sup>
 Get information about an opened file <sup>[MS Docs][https://docs.microsoft.com/en-us/powershell/module/smbshare/get-smbopenfile?view=win10-ps]</sup>
 ```powershell
 Get-SmbOpenFile -FileId 4415226383569 | Select-Object -Property *
@@ -4520,12 +4954,12 @@ Get information about a file opened for an SMB client <sup>[MS Docs][https://doc
 ```powershell
 Get-SmbOpenFile -SessionId 4415226380393
 ```
-##### Close-SmbSession
+##### Close-SmbSession<sup>[?][msdocs:Close-SmbSession]</sup>
 ```powershell
 Close-SmbSession -SessionId 154618822713
 ```
-##### Get-SmbSession
-##### New-SmbShare
+##### Get-SmbSession<sup>[?][msdocs:Get-SmbSession]</sup>
+##### New-SmbShare<sup>[?][msdocs:New-SmbShare]</sup>
 ```powershell
 New-SmbShare -Name files -Path C:\networkfiles -ChangeAccess CORP\SysAdmin
 ```
@@ -4533,32 +4967,28 @@ Create a new share with the `Allow Full Control` permission granted to the `Ever
 ```powershell
 New-SmbShare -Name Data -Path C:\Docs -FullAccess Everyone
 ```
-##### Resize-VHD
+##### Resize-VHD<sup>[?][msdocs:Resize-VHD]</sup>
 [Resize-VHD -ToMinimumSize]: #Resize-VHD '```&#10;[PS] Resize-VHD -ToMinimumSize&#10;```&#10;Specify that the virtual hard disk is to be resized to its minimum possible size&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 228'
 
 [`ToMinimumSize`][Resize-VHD -ToMinimumSize]
-##### Merge-VHD
+##### Merge-VHD<sup>[?][msdocs:Merge-VHD]</sup>
 Merge a differencing disk into its parent disk <sup>[Zacker][Zacker]: 228</sup>
 ```powershell
 Merge-VHD -Path $OLDFILE -DestinationPath $NEWFILE
 ```
-##### Restore-VMSnapshot
+##### Restore-VMSnapshot<sup>[?][msdocs:Restore-VMSnapshot]</sup>
 Apply a checkpoint <sup>[Zacker][Zacker]: 230</sup>
 ```powershell
 Restore-VMCheckpoint -Name checkpoint1 -VMName server1
 ```
-##### Add-NlbClusterPortRule
+##### Add-NlbClusterPortRule<sup>[?][msdocs:Add-NlbClusterPortRule]</sup>
 Create a cluster port rule that ensures that all SSL traffic for a network client computer is routed to the same cluster host after making an initial connection. <sup>[MeasureUp][mu:70-740]</sup>
 ```powershell
 Get-NlbCluster | Add-NlbClusterPortRule -StartPort 443 -EndPort 443 -Affinity Single
 ```
-##### New-ClusterFaultDomain
-Tasks:
-- [Configure a site-aware failover cluster](#site-aware-failover-cluster)
-##### Set-ClusterFaultDomain
-Tasks:
-- [Configure a site-aware failover cluster](#site-aware-failover-cluster)
-##### Set-SCVirtualMachine
+##### New-ClusterFaultDomain<sup>[?][msdocs:New-ClusterFaultDomain]</sup>
+##### Set-ClusterFaultDomain<sup>[?][msdocs:Set-ClusterFaultDomain]</sup>
+##### Set-SCVirtualMachine<sup>[?][msdocs:Set-SCVirtualMachine]</sup>
 `DynamicMemoryEnabled`
 `MemoryMB`
 
@@ -4570,7 +5000,7 @@ Increase the amount of running memory for a VM without dynamic memory enabled
 ```powershell
 Set-SCVirtualMachine -VM (Get-SCVirtualMachine -Name "DataServ") -MemoryMB 2048
 ```
-##### New-IscsiVirtualDisk
+##### New-IscsiVirtualDisk<sup>[?][msdocs:New-IscsiVirtualDisk]</sup>
 `Fixed`
 `Path`
 `SizeBytes`
@@ -4578,30 +5008,30 @@ Set-SCVirtualMachine -VM (Get-SCVirtualMachine -Name "DataServ") -MemoryMB 2048
 ```powershell
 New-IscsiVirtualDisk -Fixed -SizeBytes 500mb -Path 'C:\QuorumHD.vhdx'
 ```
-##### New-IscsiServerTarget
+##### New-IscsiServerTarget<sup>[?][msdocs:New-IscsiServerTarget]</sup>
 ```powershell
 New-IscsiServerTarget -TargetName PLABDC01 -InitiatorId @("DNSName:plabdm01.practicelabs.com","plabsa01.practicelabs.com")
 ```
-##### New-VMSAN
+##### New-VMSAN<sup>[?][msdocs:New-VMSAN]</sup>
 **`Name`**
 
 ```powershell
 New-VMSan "PLABS-Fc"
 ```
-##### Add-VMFibreChannelHBA
+##### Add-VMFibreChannelHBA<sup>[?][msdocs:Add-VMFibreChannelHBA]</sup>
 **`VMName`**
 **`SANName`**
 
 ```powershell
 Add-VMFibreChannelHBA PLABDC02 "PLABS-Fc"
 ```
-##### Get-NetFirewallServiceFilter
+##### Get-NetFirewallServiceFilter<sup>[?][msdocs:Get-NetFirewallServiceFilter]</sup>
 `Service`
 Enable firewall rules associated with the `msiscsi` service <sup>[Practice Lab][pl:70-740]</sup>
 ```powershell
 Get-NetFirewallServiceFilter -Service msiscsi | Get-NetFirewallRule | Enable-NetFirewallRule
 ```
-##### Get-ClusterNode
+##### Get-ClusterNode<sup>[?][msdocs:Get-ClusterNode]</sup>
 Configure a cluster node not to have a quorum vote <sup>[Zacker][Zacker]: 320</sup>
 ```powershell
 (Get-ClusterNode clusternode1).nodeweight = 0
