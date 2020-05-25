@@ -3,7 +3,7 @@
 [.NET Framework]: #.net '.NET Framework&#10;set of APIs associated with the C# programming language that facilitate the management of Microsoft-based products and development of Windows applications&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2013.: 504'
 [.NET]: #net '.NET&#10;open-source development platform that includes languages and libraries'
 [NuGet]: #net 'NuGet&#10;.NET package manager'
-
+[.NETCoreKoans]: https://github.com/NotMyself/DotNetCoreKoans ".NET Core Koans"
 
 The .NET ecosystem has 3 **runtimes**, all of which implement the **.NET Standard Library** and rest on common **build tools**, languages, and **runtime components**
 - [**.NET Framework**][.NET Framework] released in 2002, making it the oldest runtime, and runs only on Windows. Two major components:
@@ -23,3 +23,12 @@ An [assembly][Assembly] can be compiled to EXE or DLL.
 - [System.Reflection.Assembly](pwsh.md#winforms)
 - [System.Windows.Forms](pwsh.md#winforms)
 - [System.Web.Security.Membership](pwsh.md#generate-password)
+
+# Syntax
+### dotnet watch
+#### dotnet watch run
+Run .NET Core Koans <sup>[github.com][.NETCoreKoans]</sup>
+```sh
+dotnet watch --quiet run
+```
+

@@ -79,6 +79,8 @@
 [wt.exe]: #wt '```&#10;C:\>wt&#10;```&#10;Windows Terminal'
 [xcopy]: #xcopy '```&#10;C:\>xcopy&#10;```&#10;Copy files and directories recursively'
 
+[msdocs:wsusutil.exe]: https://docs.microsoft.com/de-de/security-updates/windowsupdateservices/18127395 'Managing WSUS from the Command Line'
+
 # Microsoft Windows
 
 - [Desired State Configuration](dsc.md)
@@ -135,12 +137,13 @@ Tasks
 [`VMConnect.exe`][VMConnect.exe]
 [`wbadmin.exe`](#wbadmin)
 `wdsmgmt.msc`
+`wdsutil.exe`
 `where` <sup>[pwsh][Get-Command] [lx][which]</sup>
 [`winrm`](#winrmexe) 
 [`winver`][winver]
 [`wmic`][wmic]
 [`wsl.exe`](#wsl)
-[`wsusutil.exe`](#wsusutil)
+[`wsusutil.exe`](#wsusutilexe)
 [`wt`][wt.exe]
 [`xcopy`][xcopy]
 
@@ -778,14 +781,8 @@ shutdown /L
 [**`3`**][sysdm.cpl ,3]
 [`4`][sysdm.cpl ,4]
 [`5`][sysdm.cpl ,5]
-
 #### tracert
 On Windows, this command is aliased to `traceroute` which is the Linux command. <sup>[Lammle][Lammle]: 112</sup>
-
-Option  | Effect
-:---    | :---
-`-6`    | IPv6, aliased to `traceroute6`
-
 #### wbadmin
 `-hyperv`
 
@@ -799,6 +796,13 @@ wbadmin start recovery -itemtype:app items:cluster -version:01/01/2008-00:00
 ```cmd
 wbadmin start systemstaterecovery -version:11/27/2016-11:07
 wbadmin get versions
+```
+#### wdsutil.exe
+`initialize-server`
+`remInst`
+
+```cmd
+wdsutil /initialize-server /remInst:"D:\RemoteInstall"
 ```
 #### Winrm.exe
 `enumerate`
@@ -860,18 +864,17 @@ wmic os get operatingsystemsku
 [wsl.exe -&#115;]: #wsl '```&#10;> wsl.exe -s $distro&#10;> wsl.exe --set-default $distro&#10;```&#10;Set the distribution as the default'
 [wsl.exe --set-default-version]: #wsl.exe '```&#10;> wsl.exe --set-default-version 2&#10;```&#10;Set the version of any new distribution installed to WSL 2'
 
-
 <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`l`][wsl.exe -&#108;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`s`][wsl.exe -&#115;] [`t`][wsl.exe -&#116;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 
-[`set-default-version`][wsl.exe --set-default-version]
 
-#### wsusutil
+[`set-default-version`][wsl.exe --set-default-version]
+#### wsusutil.exe<sup>[?][msdocs:wsusutil.exe]</sup>
 Specify a location for downloaded updates<sup>[Zacker][Zacker]: 393</sup>
 ```cmd
-wsusutil.exe postinstall content_dir=d:\wsus
+C:\Program Files\Update Services\Tools\wsusutil.exe postinstall content_dir=d:\wsus
 ```
 Specify SQL server, when not using the default WID database
 ```cmd
-wsusutil.exe postinstall sql_instance_name="db1\sqlinstance1"- content_dir=d:\wsus
+C:\Program Files\Update Services\Tools\wsusutil.exe postinstall sql_instance_name="db1\sqlinstance1"- content_dir=d:\wsus
 ```
 #### wt
 [wt -&#112;]: #wt '```&#10;C:\>wt -&#112;&#10;C:\>wt -p "Ubuntu-18.04"&#10;```&#10;Specify the Windows Terminal profile that should be opened'

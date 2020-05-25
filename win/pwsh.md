@@ -189,6 +189,7 @@ Powershell users refer to the command-line environment as the **"console"**, as 
 [`storagereplica`](#storagereplica)
 [`updateservices`](#updateservices)
 [`virtualmachinemanager`](#virtualmachinemanager)
+[`wds`](#wds)
 [`windowsserverbackup`](#windowsserverbackup)
 
 #### addsadministration
@@ -1067,7 +1068,6 @@ Powershell users refer to the command-line environment as the **"console"**, as 
 [`Resume`][Resume-DnsServerZone]<sup>[?][msdocs:Resume-DnsServerZone]</sup>
 [`Suspend`][Suspend-DnsServerZone]<sup>[?][msdocs:Suspend-DnsServerZone]</sup>
 [`Sync`][Sync-DnsServerZone]<sup>[?][msdocs:Sync-DnsServerZone]</sup>
-
 #### failoverclusters
 [msdocs:Get-Cluster]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Get-Cluster "Get-Cluster"
 [msdocs:New-Cluster]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/New-Cluster "New-Cluster"
@@ -1618,16 +1618,27 @@ Powershell users refer to the command-line environment as the **"console"**, as 
 #### dhcpserver
 [Add-DhcpServerInDC]: #add-dhcpserverindc '```&#10;[PS] Add-DhcpServerInDC&#10;```&#10;Adds the computer that runs the DHCP server service to the list of authorized DHCP server services in Active Directory.'
 [Add-DhcpServerv4Scope]: #add-dhcpserverv4scope '```&#10;[PS] Add-DhcpServerv4Scope&#10;```&#10;Adds an IPv4 scope on the DHCP server service.'
+[Get-DhcpServerv4Scope]: #get-dhcpserverv4scope '```&#10;[PS] Get-DhcpServerv4Scope&#10;```&#10;Returns the IPv4 scope configuration of the specified scopes.'
+[Remove-DhcpServerv4Scope]: #remove-dhcpserverv4scope '```&#10;[PS] Remove-DhcpServerv4Scope&#10;```&#10;Deletes the specified IPv4 scopes from the DHCP server service.'
 [Set-DhcpServerv4OptionValue]: #set-dhcpserverv4optionvalue '```&#10;[PS] Set-DhcpServerv4OptionValue&#10;```&#10;Sets an IPv4 option value at the server, scope, or reservation level.'
+[Set-DhcpServerv4Scope]: #set-dhcpserverv4scope '```&#10;[PS] Set-DhcpServerv4Scope&#10;```&#10;Sets the properties of an existing IPv4 scope on the DHCP server service.'
 
 [msdocs:Add-DhcpServerInDC]: https://docs.microsoft.com/en-us/powershell/module/DhcpServer/Add-DhcpServerInDC "Add-DhcpServerInDC documentation"
 [msdocs:Add-DhcpServerv4Scope]: https://docs.microsoft.com/en-us/powershell/module/DhcpServer/Add-DhcpServerv4Scope "Add-DhcpServerv4Scope documentation"
 [msdocs:Set-DhcpServerv4OptionValue]: https://docs.microsoft.com/en-us/powershell/module/DhcpServer/Set-DhcpServerv4OptionValue "Set-DhcpServerv4OptionValue documentation"
+[msdocs:Add-DhcpServerv4Scope]: https://docs.microsoft.com/en-us/powershell/module/DhcpServer/Add-DhcpServerv4Scope "Add-DhcpServerv4Scope documentation"
+[msdocs:Get-DhcpServerv4Scope]: https://docs.microsoft.com/en-us/powershell/module/DhcpServer/Get-DhcpServerv4Scope "Get-DhcpServerv4Scope documentation"
+[msdocs:Remove-DhcpServerv4Scope]: https://docs.microsoft.com/en-us/powershell/module/DhcpServer/Remove-DhcpServerv4Scope "Remove-DhcpServerv4Scope documentation"
+[msdocs:Set-DhcpServerv4Scope]: https://docs.microsoft.com/en-us/powershell/module/DhcpServer/Set-DhcpServerv4Scope "Set-DhcpServerv4Scope documentation"
+
 
 - DHCPServerInDC 
 [`Add`][Add-DhcpServerInDC]<sup>[?][msdocs:Add-DhcpServerInDC]</sup>
 - DHCPServerv4Scope 
 [`Add`][Add-DhcpServerv4Scope]<sup>[?][msdocs:Add-DhcpServerv4Scope]</sup>
+[`Get`][Get-DhcpServerv4Scope]<sup>[?][msdocs:Get-DhcpServerv4Scope]</sup>
+[`Remove`][Remove-DhcpServerv4Scope]<sup>[?][msdocs:Remove-DhcpServerv4Scope]</sup>
+[`Set`][Set-DhcpServerv4Scope]<sup>[?][msdocs:Set-DhcpServerv4Scope]</sup>
 - DHCPServerv4OptionValue 
 [`Set`][Set-DhcpServerv4OptionValue]<sup>[?][msdocs:Set-DhcpServerv4OptionValue]</sup>
 #### dnsclient
@@ -2156,7 +2167,8 @@ Powershell users refer to the command-line environment as the **"console"**, as 
 [`Remove`][Remove-VMDvdDrive]<sup>[?][msdocs:Remove-VMDvdDrive]</sup>
 [`Set`][Set-VMDvdDrive]<sup>[?][msdocs:Set-VMDvdDrive]</sup>
 - VMFirmware
-[`Set`][Set-VMFirmware]
+[`Get`][Get-VMFirmware]<sup>[?][msdocs:Get-VMFirmware]</sup>
+[`Set`][Set-VMFirmware]<sup>[?][msdocs:Set-VMFirmware]</sup>
 - VMFibreChannelHba
 [`Add`][Add-VMFibreChannelHba]<sup>[?][msdocs:Add-VMFibreChannelHba]</sup>
 [`Get`][Get-VMFibreChannelHba]<sup>[?][msdocs:Get-VMFibreChannelHba]</sup>
@@ -3324,6 +3336,98 @@ Powershell users refer to the command-line environment as the **"console"**, as 
 [msdocs:Set-SCVirtualMachine]: https://docs.microsoft.com/en-us/powershell/module/VirtualMachineManager/Set-SCVirtualMachine "Set-SCVirtualMachine"
 
 - SCVirtualMachine [`Set`][Set-SCVirtualMachine]<sup>[?][msdocs:Set-SCVirtualMachine]</sup>
+#### wds
+[msdocs:Add-WdsDriverPackage]: https://docs.microsoft.com/en-us/powershell/module/wds/Add-WdsDriverPackage "Add-WdsDriverPackage documentation"
+[msdocs:Approve-WdsClient]: https://docs.microsoft.com/en-us/powershell/module/wds/Approve-WdsClient "Approve-WdsClient documentation"
+[msdocs:Copy-WdsInstallImage]: https://docs.microsoft.com/en-us/powershell/module/wds/Copy-WdsInstallImage "Copy-WdsInstallImage documentation"
+[msdocs:Deny-WdsClient]: https://docs.microsoft.com/en-us/powershell/module/wds/Deny-WdsClient "Deny-WdsClient documentation"
+[msdocs:Disable-WdsBootImage]: https://docs.microsoft.com/en-us/powershell/module/wds/Disable-WdsBootImage "Disable-WdsBootImage documentation"
+[msdocs:Disable-WdsDriverPackage]: https://docs.microsoft.com/en-us/powershell/module/wds/Disable-WdsDriverPackage "Disable-WdsDriverPackage documentation"
+[msdocs:Disable-WdsInstallImage]: https://docs.microsoft.com/en-us/powershell/module/wds/Disable-WdsInstallImage "Disable-WdsInstallImage documentation"
+[msdocs:Disconnect-WdsMulticastClient]: https://docs.microsoft.com/en-us/powershell/module/wds/Disconnect-WdsMulticastClient "Disconnect-WdsMulticastClient documentation"
+[msdocs:Enable-WdsBootImage]: https://docs.microsoft.com/en-us/powershell/module/wds/Enable-WdsBootImage "Enable-WdsBootImage documentation"
+[msdocs:Enable-WdsDriverPackage]: https://docs.microsoft.com/en-us/powershell/module/wds/Enable-WdsDriverPackage "Enable-WdsDriverPackage documentation"
+[msdocs:Enable-WdsInstallImage]: https://docs.microsoft.com/en-us/powershell/module/wds/Enable-WdsInstallImage "Enable-WdsInstallImage documentation"
+[msdocs:Export-WdsBootImage]: https://docs.microsoft.com/en-us/powershell/module/wds/Export-WdsBootImage "Export-WdsBootImage documentation"
+[msdocs:Export-WdsInstallImage]: https://docs.microsoft.com/en-us/powershell/module/wds/Export-WdsInstallImage "Export-WdsInstallImage documentation"
+[msdocs:Get-WdsBootImage]: https://docs.microsoft.com/en-us/powershell/module/wds/Get-WdsBootImage "Get-WdsBootImage documentation"
+[msdocs:Get-WdsClient]: https://docs.microsoft.com/en-us/powershell/module/wds/Get-WdsClient "Get-WdsClient documentation"
+[msdocs:Get-WdsDriverPackage]: https://docs.microsoft.com/en-us/powershell/module/wds/Get-WdsDriverPackage "Get-WdsDriverPackage documentation"
+[msdocs:Get-WdsInstallImage]: https://docs.microsoft.com/en-us/powershell/module/wds/Get-WdsInstallImage "Get-WdsInstallImage documentation"
+[msdocs:Get-WdsInstallImageGroup]: https://docs.microsoft.com/en-us/powershell/module/wds/Get-WdsInstallImageGroup "Get-WdsInstallImageGroup documentation"
+[msdocs:Get-WdsMulticastClient]: https://docs.microsoft.com/en-us/powershell/module/wds/Get-WdsMulticastClient "Get-WdsMulticastClient documentation"
+[msdocs:Import-WdsBootImage]: https://docs.microsoft.com/en-us/powershell/module/wds/Import-WdsBootImage "Import-WdsBootImage documentation"
+[msdocs:Import-WdsDriverPackage]: https://docs.microsoft.com/en-us/powershell/module/wds/Import-WdsDriverPackage "Import-WdsDriverPackage documentation"
+[msdocs:Import-WdsInstallImage]: https://docs.microsoft.com/en-us/powershell/module/wds/Import-WdsInstallImage "Import-WdsInstallImage documentation"
+[msdocs:New-WdsClient]: https://docs.microsoft.com/en-us/powershell/module/wds/New-WdsClient "New-WdsClient documentation"
+[msdocs:New-WdsInstallImageGroup]: https://docs.microsoft.com/en-us/powershell/module/wds/New-WdsInstallImageGroup "New-WdsInstallImageGroup documentation"
+[msdocs:Remove-WdsBootImage]: https://docs.microsoft.com/en-us/powershell/module/wds/Remove-WdsBootImage "Remove-WdsBootImage documentation"
+[msdocs:Remove-WdsClient]: https://docs.microsoft.com/en-us/powershell/module/wds/Remove-WdsClient "Remove-WdsClient documentation"
+[msdocs:Remove-WdsDriverPackage]: https://docs.microsoft.com/en-us/powershell/module/wds/Remove-WdsDriverPackage "Remove-WdsDriverPackage documentation"
+[msdocs:Remove-WdsInstallImage]: https://docs.microsoft.com/en-us/powershell/module/wds/Remove-WdsInstallImage "Remove-WdsInstallImage documentation"
+[msdocs:Remove-WdsInstallImageGroup]: https://docs.microsoft.com/en-us/powershell/module/wds/Remove-WdsInstallImageGroup "Remove-WdsInstallImageGroup documentation"
+[msdocs:Set-WdsBootImage]: https://docs.microsoft.com/en-us/powershell/module/wds/Set-WdsBootImage "Set-WdsBootImage documentation"
+[msdocs:Set-WdsClient]: https://docs.microsoft.com/en-us/powershell/module/wds/Set-WdsClient "Set-WdsClient documentation"
+[msdocs:Set-WdsInstallImage]: https://docs.microsoft.com/en-us/powershell/module/wds/Set-WdsInstallImage "Set-WdsInstallImage documentation"
+[msdocs:Set-WdsInstallImageGroup]: https://docs.microsoft.com/en-us/powershell/module/wds/Set-WdsInstallImageGroup "Set-WdsInstallImageGroup documentation"
+
+[Add-WdsDriverPackage]: #add-wdsdriverpackage '```&#10;PS> Add-WdsDriverPackage&#10;```&#10;Adds an existing driver package to a driver group or injects it into a boot image.'
+[Approve-WdsClient]: #approve-wdsclient '```&#10;PS> Approve-WdsClient&#10;```&#10;Approves clients.'
+[Copy-WdsInstallImage]: #copy-wdsinstallimage '```&#10;PS> Copy-WdsInstallImage&#10;```&#10;Copies install images within an image group.'
+[Deny-WdsClient]: #deny-wdsclient '```&#10;PS> Deny-WdsClient&#10;```&#10;Denies approval for clients.'
+[Disable-WdsBootImage]: #disable-wdsbootimage '```&#10;PS> Disable-WdsBootImage&#10;```&#10;Disables a boot image.'
+[Disable-WdsDriverPackage]: #disable-wdsdriverpackage '```&#10;PS> Disable-WdsDriverPackage&#10;```&#10;Disables a driver package in the Windows Deployment Services driver store.'
+[Disable-WdsInstallImage]: #disable-wdsinstallimage '```&#10;PS> Disable-WdsInstallImage&#10;```&#10;Disables an install image.'
+[Disconnect-WdsMulticastClient]: #disconnect-wdsmulticastclient '```&#10;PS> Disconnect-WdsMulticastClient&#10;```&#10;Disconnects a multicast client from a transmission or namespace.'
+[Enable-WdsBootImage]: #enable-wdsbootimage '```&#10;PS> Enable-WdsBootImage&#10;```&#10;Enables a boot image.'
+[Enable-WdsDriverPackage]: #enable-wdsdriverpackage '```&#10;PS> Enable-WdsDriverPackage&#10;```&#10;Enables a driver package in the Windows Deployment Services driver store.'
+[Enable-WdsInstallImage]: #enable-wdsinstallimage '```&#10;PS> Enable-WdsInstallImage&#10;```&#10;Enables an install image.'
+[Export-WdsBootImage]: #export-wdsbootimage '```&#10;PS> Export-WdsBootImage&#10;```&#10;Exports an existing boot image from an image store.'
+[Export-WdsInstallImage]: #export-wdsinstallimage '```&#10;PS> Export-WdsInstallImage&#10;```&#10;Exports an existing install image from an image store.'
+[Get-WdsBootImage]: #get-wdsbootimage '```&#10;PS> Get-WdsBootImage&#10;```&#10;Gets properties of boot images from the image store.'
+[Get-WdsClient]: #get-wdsclient '```&#10;PS> Get-WdsClient&#10;```&#10;Gets client devices from the pending device database, or pre-staged devices from Active Directory or the stand-alone server device database.'
+[Get-WdsDriverPackage]: #get-wdsdriverpackage '```&#10;PS> Get-WdsDriverPackage&#10;```&#10;Gets properties of driver packages from the Windows Deployment Services driver store.'
+[Get-WdsInstallImage]: #get-wdsinstallimage '```&#10;PS> Get-WdsInstallImage&#10;```&#10;Gets properties of install images from an image store.'
+[Get-WdsInstallImageGroup]: #get-wdsinstallimagegroup '```&#10;PS> Get-WdsInstallImageGroup&#10;```&#10;Gets properties of install image groups.'
+[Get-WdsMulticastClient]: #get-wdsmulticastclient '```&#10;PS> Get-WdsMulticastClient&#10;```&#10;Gets a list of clients connected to a multicast transmission or namespace.'
+[Import-WdsBootImage]: #import-wdsbootimage '```&#10;PS> Import-WdsBootImage&#10;```&#10;Imports a boot image to the image store.'
+[Import-WdsDriverPackage]: #import-wdsdriverpackage '```&#10;PS> Import-WdsDriverPackage&#10;```&#10;Imports a driver package into the Windows Deployment Services driver store.'
+[Import-WdsInstallImage]: #import-wdsinstallimage '```&#10;PS> Import-WdsInstallImage&#10;```&#10;Imports an install image to an image store.'
+[New-WdsClient]: #new-wdsclient '```&#10;PS> New-WdsClient&#10;```&#10;Creates a pre-staged client.'
+[New-WdsInstallImageGroup]: #new-wdsinstallimagegroup '```&#10;PS> New-WdsInstallImageGroup&#10;```&#10;Creates an install image group.'
+[Remove-WdsBootImage]: #remove-wdsbootimage '```&#10;PS> Remove-WdsBootImage&#10;```&#10;Removes a boot image from the image store.'
+[Remove-WdsClient]: #remove-wdsclient '```&#10;PS> Remove-WdsClient&#10;```&#10;Removes a pre-staged client from AD DS or the stand-alone server device database, or clears the Pending Devices database.'
+[Remove-WdsDriverPackage]: #remove-wdsdriverpackage '```&#10;PS> Remove-WdsDriverPackage&#10;```&#10;Removes a driver package from a driver group or removes it from all driver groups and deletes it.'
+[Remove-WdsInstallImage]: #remove-wdsinstallimage '```&#10;PS> Remove-WdsInstallImage&#10;```&#10;Removes an install image from an image store.'
+[Remove-WdsInstallImageGroup]: #remove-wdsinstallimagegroup '```&#10;PS> Remove-WdsInstallImageGroup&#10;```&#10;Removes an install image group.'
+[Set-WdsBootImage]: #set-wdsbootimage '```&#10;PS> Set-WdsBootImage&#10;```&#10;Modifies settings of a boot image.'
+[Set-WdsClient]: #set-wdsclient '```&#10;PS> Set-WdsClient&#10;```&#10;Modifies a pre-staged client device.'
+[Set-WdsInstallImage]: #set-wdsinstallimage '```&#10;PS> Set-WdsInstallImage&#10;```&#10;Modifies the properties of an install image.'
+[Set-WdsInstallImageGroup]: #set-wdsinstallimagegroup '```&#10;PS> Set-WdsInstallImageGroup&#10;```&#10;Modifies the name and access permissions of an install image group.'
+
+- WDSBootImage
+[`Disable`][Disable-WdsBootImage]<sup>[?][msdocs:Disable-WdsBootImage]</sup>
+[`Enable`][Enable-WdsBootImage]<sup>[?][msdocs:Enable-WdsBootImage]</sup>
+[`Export`][Export-WdsBootImage]<sup>[?][msdocs:Export-WdsBootImage]</sup>
+[`Get`][Get-WdsBootImage]<sup>[?][msdocs:Get-WdsBootImage]</sup>
+[**`Import`**][Import-WdsBootImage]<sup>[?][msdocs:Import-WdsBootImage]</sup>
+[`Remove`][Remove-WdsBootImage]<sup>[?][msdocs:Remove-WdsBootImage]</sup>
+[`Set`][Set-WdsBootImage]<sup>[?][msdocs:Set-WdsBootImage]</sup>
+- WDSInstallImage
+[`Copy`][Copy-WdsInstallImage]<sup>[?][msdocs:Copy-WdsInstallImage]</sup>
+[`Disable`][Disable-WdsInstallImage]<sup>[?][msdocs:Disable-WdsInstallImage]</sup>
+[`Enable`][Enable-WdsInstallImage]<sup>[?][msdocs:Enable-WdsInstallImage]</sup>
+[`Export`][Export-WdsInstallImage]<sup>[?][msdocs:Export-WdsInstallImage]</sup>
+[`Get`][Get-WdsInstallImage]<sup>[?][msdocs:Get-WdsInstallImage]</sup>
+[`Import`][Import-WdsInstallImage]<sup>[?][msdocs:Import-WdsInstallImage]</sup>
+[`Remove`][Remove-WdsInstallImage]<sup>[?][msdocs:Remove-WdsInstallImage]</sup>
+[`Set`][Set-WdsInstallImage]<sup>[?][msdocs:Set-WdsInstallImage]</sup>
+- WDSInstallImageGroup
+[`Get`][Get-WdsInstallImageGroup]<sup>[?][msdocs:Get-WdsInstallImageGroup]</sup>
+[**`New`**][New-WdsInstallImageGroup]<sup>[?][msdocs:New-WdsInstallImageGroup]</sup>
+[`Remove`][Remove-WdsInstallImageGroup]<sup>[?][msdocs:Remove-WdsInstallImageGroup]</sup>
+[`Set`][Set-WdsInstallImageGroup]<sup>[?][msdocs:Set-WdsInstallImageGroup]</sup>
+
 #### windowsserverbackup
 [Add-WBBackupTarget]: #add-wbbackuptarget '```&#10;Add-WBBackupTarget&#10;```&#10;Adds a backup target to a backup policy.'
 [Add-WBBareMetalRecovery]: #add-wbbaremetalrecovery '```&#10;Add-WBBareMetalRecovery&#10;```&#10;Adds items to a backup policy so that backups that use the policy can perform bare metal recoveries.'
@@ -4040,6 +4144,16 @@ Add-DhcpServerv4Scope -Name "PacktLabNet" -StartRange 10.0.0.50 -EndRange 10.0.0
 ```powershell
 Add-DhcpServerInDC -DnsName dc.corp.packtlab.com
 ```
+##### Set-DhcpServerv4Scope[?][msdocs:set-dhcpserverv4Scope]
+[Set-DhcpServerv4Scope -Type]: #set-dhcpserverv4scope '```&#10;> Set-DhcpServerv4Scope -Type&#10;```&#10;&#10;Acceptable values include:&#10;- Dhcp&#10;- Bootp&#10;- Both'
+[Set-DhcpServerv4Scope -State]: #set-dhcpserverv4scope '```&#10;> Set-DhcpServerv4Scope -State&#10;```&#10;&#10;Acceptable values include:&#10;- Active&#10;- Inactive'
+
+[`State`][Set-DhcpServerv4Scope -State]
+[`Type`][Set-DhcpServerv4Scope -Type]
+
+```powershell
+Set-DHCPServerv4Scope -ScopeId '192.168.0.0' -Type Both -State Active
+```
 ##### Set-DhcpServerv4OptionValue<sup>[?][msdocs:Set-DhcpServerv4OptionValue]</sup>
 <sup>[Jones][Jones]</sup>
 
@@ -4505,7 +4619,23 @@ Set-VMDvdDrive -VMName PLABWIN102 -Path C:\Users\Administrator.PRACTICELABS\Docu
 ```powershell
 Set-VMHardDiskDrive -VMName PLABNANOSRV01 -Path C:\nanoserver\PLABNANOSRV01.vhdx
 ```
+##### `Set-VMFirmware`[^][msdocs:Set-VMFirmware]
+[Set-VMFirmware -SecureBootTemplate]: #set-vmfirmware '```&#10;[PS] Set-VMFirmware -SecureBootTemplate&#10;```&#10;Specifies the name of the secure boot template. If secure boot is enabled, you must have a valid secure boot template for the guest operating system to start.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 208'
 
+**`VMName|VM`**
+`BootOrder`
+[`SecureBootTemplate`][Set-VMFirmware -SecureBootTemplate]
+
+Configure PXE boot
+```powershell
+$nic = Get-VMNetworkAdapter -VMName PLABSA02 -VMNetworkAdapterName 'Network Adapter'
+$dvd = Get-VMDvdDrive -VMName PLABSA02
+Set-VMFirmware PLABSA02 -BootOrder $nic,$dvd
+```
+Select Secure Boot template in order to load supported Linux distributions <sup>[IMWS][IMWS]; [Zacker][Zacker]: 208</sup>
+```powershell
+Set-VMFirmware $vm -SecureBootTemplate MicrosoftUEFICertificateAuthority
+```
 ##### Set-VMHost<sup>[?][msdocs:Set-VMHost]</sup>
 [Set-VMHost -VirtualMachinePath]: #Set-VMHost '```&#10;[PS] Set-VMHost -VirtualMachinePath&#10;```&#10;Specify the default folder to store virtual machine configuration files on the Hyper-V host'
 [Set-VMHost -VirtualHardDiskPath]: #Set-VMHost '```&#10;[PS] Set-VMHost -VirtualHardDiskPath&#10;```&#10;Specify the default folder to store virtual hard disks on the Hyper-V host.'
@@ -4515,15 +4645,6 @@ Set-VMHardDiskDrive -VMName PLABNANOSRV01 -Path C:\nanoserver\PLABNANOSRV01.vhdx
 
 ```powershell
 Set-VMHost -VirtualHardDiskPath 'D:\vms\Virtual Hard Disks' -VirtualMachinePath 'D:\vms\Virtual Machines'
-```
-##### Set-VMFirmware<sup>[?][msdocs:Set-VMFirmware]</sup>
-[Set-VMFirmware -SecureBootTemplate]: #set-vmfirmware '```&#10;[PS] Set-VMFirmware -SecureBootTemplate&#10;```&#10;Specifies the name of the secure boot template. If secure boot is enabled, you must have a valid secure boot template for the guest operating system to start.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 208'
-
-[`SecureBootTemplate`][Set-VMFirmware -SecureBootTemplate]
-
-Select Secure Boot template in order to load supported Linux distributions <sup>[IMWS][IMWS]; [Zacker][Zacker]: 208</sup>
-```powershell
-Set-VMFirmware vmname -SecureBootTemplate MicrosoftUEFICertificateAuthority
 ```
 ##### Set-VMMemory<sup>[?][msdocs:Set-VMMemory]</sup>
 `DynamicMemory`
@@ -4570,8 +4691,10 @@ New-NetNAT -Name LocalNAT -InternalIPInterfaceAddressPrefix "192.168.100.0/24"
 ```
 ##### Set-VMSwitch<sup>[?][msdocs:Set-VMSwitch]</sup>
 [Set-VMSwitch -AllowManagementOS]: #Set-VMSwitch '```&#10;[PS] Set-VMSwitch -AllowManagementOS&#10;```&#10;Specify whether host can access the physical network adapter to which the virtual switch is bound'
-
 [`AllowManagementOS`][Set-VMSwitch -AllowManagementOS]
+##### Set-WsusServerSynchronization[^][msdocs:Set-WsusServerSynchronization]
+`SyncFromMU`
+
 ##### Add-VMHardDiskDrive<sup>[?][msdocs:Add-VMHardDiskDrive]</sup>
 [Add-VMHardDiskDrive -ControllerType]: #add-vmharddiskdrive '```&#10;[PS] Add-VMHardDiskDrive -ControllerType&#10;```&#10;Specify type of controller to which the hard disk is to be added'
 
