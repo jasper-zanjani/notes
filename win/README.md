@@ -80,6 +80,7 @@
 [xcopy]: #xcopy '```&#10;C:\>xcopy&#10;```&#10;Copy files and directories recursively'
 
 [msdocs:wsusutil.exe]: https://docs.microsoft.com/de-de/security-updates/windowsupdateservices/18127395 'Managing WSUS from the Command Line'
+[msdocs:wsl.exe]: https://docs.microsoft.com/en-us/windows/wsl/reference 'Command Reference for Windows Subsystem for Linux'
 
 # Microsoft Windows
 
@@ -106,11 +107,13 @@ Tasks
 [`arp`][arp] 
 [`bcdedit`][bcdedit] 
 [`bootrec`][bootrec]
+
 `clip.exe` <sup>[pwsh][Set-Clipboard]</sup>
 [`cmdkey`][cmdkey.exe]
 [`cscript`][cscript] 
 `dir` <sup>[pwsh][Get-ChildItem]</sup>
 [`diskpart`][diskpart] 
+[`djoin`][Djoin.exe]
 [`echo`](#echo) <sup>[lx][lx echo] [pwsh][Write-Host]</sup>
 [`eventvwr`][eventvwr.exe]
 `findstr` <sup>[lx][grep]</sup>
@@ -136,50 +139,51 @@ Tasks
 [`traceroute`](#tracert)
 [`VMConnect.exe`][VMConnect.exe]
 [`wbadmin.exe`](#wbadmin)
-`wdsmgmt.msc`
 `wdsutil.exe`
 `where` <sup>[pwsh][Get-Command] [lx][which]</sup>
 [`winrm`](#winrmexe) 
 [`winver`][winver]
 [`wmic`][wmic]
-[`wsl.exe`](#wsl)
-[`wsusutil.exe`](#wsusutilexe)
+[`wsl`](#wslexe)
+[`wsusutil`](#wsusutilexe)
 [`wt`][wt.exe]
 [`xcopy`][xcopy]
 
-#### MMC snap-ins
+##### MMC snap-ins
 [`adprep`][adprep] 
 [`adfind`][adfind]
+`certsrv.msc`
 [`cluadmin.msc`][cluadmin.msc]
 `compmgmt.msc`
 `dhcpmgmt.msc`
 `diskmgmt.msc`
-[`djoin`][Djoin.exe]
 `dnsmgmt.msc`
 `dsa.msc`
 [`domain.msc`][domain.msc]
 [`dssite.msc`][dssite.msc]
 [`dsquery`](#dsquery)
+`gpmc.msc`
 [`smigdeploy.exe`][SmigDeploy.exe]
 `virtmgmt.msc`
+`wdsmgmt.msc`
 `wf.msc`
 
-###### Control Panel
-[`access.cpl`][access.cpl]
-[`appwiz.cpl`][appwiz.cpl]
-[`desk.cpl`][desk.cpl]
-[`findfast.cpl`][findfast.cpl]
-`firewall.cpl`
-[`inet.cpl`][inetcpl.cpl]
-[`intl.cpl`][intl.cpl]
-[`joy.cpl`][joy.cpl]
-[`main.cpl`][main.cpl]
-[`mlcfg32.cpl`][mlcfg32.cpl]
-[`mmsys.cpl`][mmsys.cpl]
-[`ncpa.cpl`][ncpa.cpl]
-[`sysdm.cpl`][sysdm.cpl]
-[`timedate.cpl`][timedate.cpl]
-[`wgpocpl.cpl`][wgpocpl.cpl]
+##### Control Panel
+[`access`][access.cpl]
+[`appwiz`][appwiz.cpl]
+[`desk`][desk.cpl]
+[`findfast`][findfast.cpl]
+`firewall`
+[`inet`][inetcpl.cpl]
+[`intl`][intl.cpl]
+[`joy.cpljoy.cpl]
+[`main`][main.cpl]
+[`mlcfg32`][mlcfg32.cpl]
+[`mmsys`][mmsys.cpl]
+[`ncpa`][ncpa.cpl]
+[`sysdm`][sysdm.cpl]
+[`timedate`][timedate.cpl]
+[`wgpocpl`][wgpocpl.cpl]
 
 ### Commands
 ###### Variables
@@ -858,15 +862,17 @@ Display operating system type (48 is Windows 10)
 ```cmd
 wmic os get operatingsystemsku
 ```
-#### wsl
+#### wsl.exe[?][msdocs:wsl.exe]
 [wsl.exe -&#108;]: #wsl '```&#10;> wsl.exe -l&#10;> wsl.exe --list&#10;```&#10;List distributions'
 [wsl.exe -&#116;]: #wsl '```&#10;> wsl.exe -t $distro&#10;> wsl.exe --terminate $distro&#10;```&#10;Terminate the specified distribution'
 [wsl.exe -&#115;]: #wsl '```&#10;> wsl.exe -s $distro&#10;> wsl.exe --set-default $distro&#10;```&#10;Set the distribution as the default'
 [wsl.exe --set-default-version]: #wsl.exe '```&#10;> wsl.exe --set-default-version 2&#10;```&#10;Set the version of any new distribution installed to WSL 2'
 
-<code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`l`][wsl.exe -&#108;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`s`][wsl.exe -&#115;] [`t`][wsl.exe -&#116;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 
-
+<code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`l`][wsl.exe -&#108;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`s`][wsl.exe -&#115;] [`t`][wsl.exe -&#116;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code>\
+`export`
+`import`
 [`set-default-version`][wsl.exe --set-default-version]
+
 #### wsusutil.exe<sup>[?][msdocs:wsusutil.exe]</sup>
 Specify a location for downloaded updates<sup>[Zacker][Zacker]: 393</sup>
 ```cmd
@@ -879,8 +885,13 @@ C:\Program Files\Update Services\Tools\wsusutil.exe postinstall sql_instance_nam
 #### wt
 [wt -&#112;]: #wt '```&#10;C:\>wt -&#112;&#10;C:\>wt -p "Ubuntu-18.04"&#10;```&#10;Specify the Windows Terminal profile that should be opened'
 [wt -&#100;]: #wt '```&#10;C:\>wt -&#100;&#10;C:\>wt -d E:\ &#10;```&#10;Specify the directory used as the starting directory for the console'
+[wt --split-pane]: #wt '```&#10;C:\>wt --split-pane&#10;```&#10;Open a new tab, but in a split pane'
+[wt --focus-tab]: #wt '```&#10;C:\>wt --focus-tab&#10;```&#10;Specify what tab should gain focus when opened'
 
-<code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`d`][wt -&#100;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`p`][wt -&#112;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <br> [`split-pane`][wt] [`focus-tab`][wt]
+
+<code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`d`][wt -&#100;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`p`][wt -&#112;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <br> 
+[`split-pane`][wt --split-pane]
+[`focus-tab`][wt --focus-tab]
 
 Open the default Windows Terminal profile and also an Ubuntu WSL tab <sup>[bleepingcomputer.com][https://www.bleepingcomputer.com/news/microsoft/windows-terminal-09-released-with-command-line-arguments-and-more/]</sup>
 ```cmd

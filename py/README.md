@@ -1,12 +1,36 @@
 # Python
-## Table of contents
+- [Python](#python)
+  - [Modules](#modules)
+    - [argparse](#argparse)
+    - [array](#array)
+    - [bisect](#bisect)
+    - [collections](#collections)
+    - [contextlib](#contextlib)
+    - [ctypes](#ctypes)
+    - [curses](#curses)
+    - [datetime](#datetime)
+    - [functools](#functools)
+    - [getpass](#getpass)
+    - [glob](#glob)
+    - [heapq](#heapq)
+    - [json](#json)
+    - [optparse](#optparse)
+    - [os](#os)
+    - [pathlib](#pathlib)
+    - [platform](#platform)
+    - [pythonnet<sup>?[^](http://pythonnet.github.io/)</sup>](#pythonnetsupsup)
+    - [random](#random)
+    - [subprocess](#subprocess)
+    - [sqlite3](#sqlite3)
+    - [sys](#sys)
+    - [termcolor](#termcolor)
+    - [venv](#venv)
+    - [virtualenv](#virtualenv)
+    - [weakref](#weakref)
+    - [winrm](#winrm)
 
-\#    | Standard library
-:---  | :---
-A-G   | [argparse](#argparse) [array](#array) [bisect](#bisect) [collections](#collections) [contextlib](#contextlib) [ctypes](#ctypes) [curses](#curses) [datetime](#datetime) [functools](#functools) [getpass](#getpass) [glob](#glob)
-H-Z   |  [heapq](#heapq) [json](#json) [optparse](#optparse) [os](#os) [pathlib](#pathlib) [platform](#platform) [pywinrm](#winrm) [random](#random) [subprocess](#subprocess) [sqlite3](#sqlite3) [sys](#sys) [termcolor](#termcolor) [weakref](#weakref) [winrm](#winrm)
-
-#### argparse
+## Modules
+### argparse
 Define information that will appear when the user wants help. The string {helptext} contains the usage that will appear with `-h` or `--help`.
 ```py
 ArgumentParser(description=helptext)
@@ -31,33 +55,33 @@ Usage appears as `[-v | -q]` indicating one of the options may be used. Many inv
 qv=ArgumentParser.add_mutually_exclusive_group()
 qv.add_argument("-v","--verbose", action="store_true")
 qv.add_argument("-q","--quiet","-s","--silent", action="store_true",help='quiet/silent mode')
-````
-#### array 
+```
+### array 
 `frombytes`
 `tofile`
 (FP:48-50, PiaN:375)
-#### bisect
-#### collections
+### bisect
+### collections
 `collections.namedtuple(name, *field_names` (FP:30-32) subclasses of `tuple` with field names and a class name
   - `Card = namedtuple('Card',['rank','suit'])`
   - `City = namedtuple('City', 'name country population coordinates')`
 `collections.deque` (FP:54-56, PiaN: 173) supports most `list` methods\
 `collections.abc` module provides `Mapping` and `MutableMapping` ABCs to formalize the interfaces of dict and similar types (FP:64)\
 `collections.defaultdict` (PiaN: 174)
-#### contextlib
+### contextlib
 Build a context manager out of **generator functions** - function it decorates must run exactly twice (typically `try ... yield finally ...` structure) - `yield` can pass a value back (can be assigned to variable after `as` keyword)\
 ```py
 @contextmanager
 ```
 `capsys fixture` - from pytest allows access to stdout/stderr output generated during text execution
 `contextlib.redirect_stdout` - context manager temporarily redirects `sys.stdout` to another file or file-like object
-#### ctypes
-#### curses
+### ctypes
+### curses
 make sure `pdcurses.dll` is in both Python's root directory (C:\Users\jaspe\AppData\Local\Programs\Python\Python37, for instance) as well as the directory where the script is located. This file must be compiled from source code using the make program
 curses.textpad
 curses.ascii
 curses.panel
-#### datetime
+### datetime
 ```py
 datetime.date(2016,7,24)
 datetime.date.today()
@@ -71,7 +95,7 @@ datetime.strptime(datestring,formatstring)
 # Various metacharacters are defined for `strptime`
 datetime.datetime.strptime('06/30/1992','%m/%d/%Y')
 ``` 
-#### functools
+### functools
 For higher-order functions (functions that act on or return other functions)\
 Apply `function` of two arguments cumulatively to the items of `iterable` in order to reduce it to a single value
 ```py
@@ -82,13 +106,13 @@ Calculate ((((1+2) +3) +4) +5)
 functools.reduce(lambda x, y: x+y, [1,2,3,4,5])
 ```
 `functools.reduce(lambda a,b: a*b, range(1,6))` => 120 : factorial
-#### getpass
-#### glob
+### getpass
+### glob
 Produce a list of strings
 ```py
 glob.glob('*.py')
 ```
-#### heapq
+### heapq
 Support **heaps**, data objects where each node is either greater than or equal to its parent (**max-heap**) or less than or equal to its parent (**min-heap**)
 Create a heap from {iterable}
 ```py
@@ -102,7 +126,7 @@ Replace the smallest element of {heap} with {element}
 ```py
 heapq.heapreplace(heap,element)
 ```
-#### json
+### json
 Parse a JSON document
 ```py
 # Parse an open file descriptor
@@ -119,7 +143,7 @@ with open("path","w") as jsonfile:
 # Specify indentation
 jsonfile.write(json.dumps(data, indent=4))
 ```
-#### optparse
+### optparse
 Instantiate the parser object
 ```py
 parser = optparse.OptionParser(usage=__doc__.strip())
@@ -127,7 +151,7 @@ parser = optparse.OptionParser(usage=__doc__.strip())
 # add an option
 parser.add_option('--timeout')
 ```
-#### os
+### os
 Execute shell command given by string.  The value returned is actually the exit code, **not** the output of the command to STDOUT.
 ```py
 os.system('ls -la')
@@ -145,7 +169,7 @@ Test for existence of a file
 ```py
 os.path.isfile(file)
 ``` 
-#### pathlib
+### pathlib
 Create a new pathlib object; represents a file or directory
 ```py
 pathlib.Path(path)
@@ -175,8 +199,28 @@ Display file size
 ```py
 pathlib.Path.stat().st_size
 ``` 
-#### platform
-#### random
+### platform
+### pythonnet<sup>[?](https://github.com/pythonnet/pythonnet "Github")[^](http://pythonnet.github.io/)</sup>
+Developers recommend Mono version 5.20.1 <sup>Issues [939](https://github.com/pythonnet/pythonnet/issues/939)</sup>
+On Ubuntu, the `eoan` `universe` repository has to be added 
+```
+deb https://archive.ubuntu.com/ubuntu/ eoan universe
+deb https://archive.ubuntu.com/ubuntu/ eoan-updates universe
+```
+But I can't figure out how to add the older version, because the recommended syntax produces the error "Unable to correct problems, you have held broken packages"
+```sh
+sudo apt install mono-devel=5.18.0.240+dfsg-3
+```
+Maybe try the [tarballs](https://download.mono-project.com/sources/mono/) on Mono's website...
+Or maybe there's [another repo](https://github.com/jonemo/pythonnet-docker/blob/master/python3.6.5-mono5.4.1.6-pythonnet2.4.0.dev0.Dockerfile) I don't know about..
+```sh
+apt install clang libglib2.0-dev python3-dev
+```
+```sh
+pip install pycparser pythonnet
+pip install -U setuptools
+```
+### random
 Random choice with replacement
 ```py
 random.choice(iterable)
@@ -185,7 +229,7 @@ Shuffle elements of an iterable in-place [FP:42]
 ```py
 random.shuffle(iterable)
 ```
-#### subprocess
+### subprocess
 **subprocess** modules allows you to spawn new processes, interact with file descriptors, and obtain exit codes. The recommended approach is to use the `run()` function as default, which runs a CLI command with options as a list of strings and returns a `CompletedProcess` instance.\
 Execute shell command
 Unlike `os.system`, `subprocess.run()` takes a list of arguments. 
@@ -208,7 +252,7 @@ This will raise a `CalledProcessError` exception because of the non-zero exit co
 ```py
 subprocess.run('exit 1', shell=True, check=True)
 ```
-#### sqlite3
+### sqlite3
 Create a `Connect` connection object and **employee.db** (binary) if it doesn't exist
 ```py
 conn = sqlite.connect('employee.db')
@@ -217,7 +261,7 @@ Create a `Connect.Cursor` object
 ```py
 c = conn.cursor()
 ```
-Perform SQL commands with `Connect.Cursor.execute()`. Create {tablename} with fields {field} of type {type} (null, integer, real, text, blob); never use Python's native string operations (f-strings, etc) to form commands, because this method is vulnerable to SQL injection
+Perform SQL commands with `Connect.Cursor.execute()`. Create `tablename` with fields `field` of type `type` (`null`, `integer`, `real`, `text`, `blob`); never use Python's native string operations (f-strings, etc) to form commands, because this method is vulnerable to SQL injection. <sup>[YouTube](https://youtu.be/pd-0G0MigUA)</sup>
 ```py
 c.execute('''CREATE TABLE {tablename} ({field} {type}, {field} {type} ...))
 ``` 
@@ -229,19 +273,29 @@ Close connection
 ```py
 conn.close()
 ```
-#### sys
+### sys
 Return site-specific directory where Python files are installed 
 ```py
 sys.prefix          # /usr/local/ by default
 ```
-#### termcolor
+### termcolor
 Print {text} in a color code
 ```py
 from termcolor import cprint
 
 cprint(text,color)
 ```
-#### weakref
+### venv
+Create a virtual environment named `project`
+```sh
+python -m venv project
+```
+### virtualenv
+Create a virtual environment named `project` using a different installed Python interpreter
+```sh
+virtualenv -p /usr/bin/python2 project
+```
+### weakref
 Support **weak references**, that is, references to objects which return exceptions when that object has been garbage collected
 Create a weak reference to {object} 
 ```py
@@ -253,12 +307,9 @@ r.method()          # will not work
 # A weak reference created using `proxy` does not need to be dereferenced:
 weakref.proxy(obj)
 ```
-#### winrm
-**Winrm** allows you to connect Linux and Windows hosts over WinRM.[[2](#sources)]
+### winrm
+**Winrm** allows you to connect Linux and Windows hosts over WinRM. <sup>[adamtheautomator.com](https://adamtheautomator.com/winrm-linux-remoting/ "Step-by-step guide on how to set up WinRM on a Linux client") </sup>
 Begin a WinRM session. If no errors are thrown, the session has been successfully established
 ```py
 session = winrm.Session(ipaddress,auth=(username,password))
 ```
-## Sources
-1. "SQLite tutorial". [YouTube](https://youtu.be/pd-0G0MigUA)
-2. "Step-by-step guide on how to set up WinRM on a Linux client". [Pocket](https://app.getpocket.com/read/2676040255) &lt; [Original](https://adamtheautomator.com/winrm-linux-remoting/)

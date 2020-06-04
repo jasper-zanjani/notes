@@ -2251,23 +2251,34 @@ Other related programs are usually invoked automatically by tools in the `autoco
 
 <code>&nbsp;</code>   <code>&nbsp;</code> [`b`][make -&#98;] <code>&nbsp;</code> [`d`][make -&#100;] [`e`][make -&#101;] [`f`][make -&#102;] <code>&nbsp;</code> [`h`][make -&#104;] [`i`][make -&#105;] [`j`][make -&#106;] [`k`][make -&#107;] [`l`][make -&#108;] [`m`][make -&#109;] [`n`][make -&#110;] [`o`][make -&#111;] [`p`][make -&#112;] [`q`][make -&#113;] [`r`][make -&#114;] [`s`][make -&#115;] [`t`][make -&#116;] <code>&nbsp;</code> [`v`][make -&#118;] [`w`][make -&#119;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code>  <br><code>&nbsp;</code>&nbsp;<code>&nbsp;</code> [`B`][make -&#66;] [`C`][make -&#67;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`I`][make -&#73;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`S`][make -&#83;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`W`][make -&#87;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 
 
-A common formula when installing software from source is the following sequence of commands <sup>[thoughtbot.com](https://thoughtbot.com/blog/the-magic-behind-configure-make-make-install "thoughtbot.com: \"The magic behind configure, make, make install\"")</sup>
+A common formula when installing software from source is the following sequence of commands 
+<sup>[thoughtbot.com](https://thoughtbot.com/blog/the-magic-behind-configure-make-make-install "thoughtbot.com: \"The magic behind configure, make, make install\"")</sup>
+
 ```sh
 ./configure
 make
 make install
 ```
+
 Recompile `sendmail`
 ```sh
-make -C/etc/mail
+make -C /etc/mail
 ```
 Given there are 3 example files (main.cpp, message.cpp, and message.h) in a directory, it produces an executable file named `a.out`
 ```sh
 g++ main.cpp message.cpp
 ```
-But for large projects, with potentially thousands of files, this is impractical
+Install an alternate version of a program like Python
+```sh
+cd /opt
+wget https://www.python.org/ftp/python/3.8.0/Python-3.8.0.tgz
+tar xzf Python-3.8.0.tgz
+cd Python-3.8.0
+./configure --enable-optimizations
+make altinstall
+```
 
-###### makefiles
+##### makefiles
 **Makefiles** are sensitive to whitespace, so indentation is significant. The format follows the pattern:
 ```makefile
 {target}: {dependencies}
@@ -2301,8 +2312,10 @@ Targets
 - `tinyconfig` smallest possible kernel configuration
 - `allnoconfig` answer no to every question when creating a config file
 
-###### configure script
-Responsible for preparing the software build, ensuring dependencies are available, such as a C compiler for C programs. `make` is invoked after the `configure` script has done its job. The **configure** script converts a **Makefile.in** template into a **Makefile**. They are not built by hand but packaged by yet another program in the **autotools** suite, such as **autoconf**, **automake**, and others.
+A **configure script** is responsible for preparing the software build, ensuring dependencies are available, such as a C compiler for C programs. 
+`make` is invoked after the `configure` script has done its job. 
+The **configure** script converts a `Makefile.in` template into a **Makefile**. 
+They are not built by hand but packaged by yet another program in the **autotools** suite, such as **autoconf**, **automake**, and others.
 
 A configure.ac file written in **m4sh** (a combination of m4 macros and shell script) is prepared. The first m4 macro called i **AC_INIT**, which initializes autoconf:
 ```m4
@@ -2312,7 +2325,7 @@ The **AM_INIT_AUTOMAKE** macro is also called because we're using **automake**:
 ```m4
 AM_INIT_AUTOMAKE
 ```
-### `xgettext`
+#### `xgettext`
 [xgettext -&#97;]:              #xgettext                      '```&#10;$ xgettext -&#97;&#10;$ xgettext --extract-all&#10;```&#10;Extract all strings, not just those in calls to `gettext` or `dgettext` (applies to C, C++, Objective-C, Shell, Python, Lisp, EmacsLisp, librep, Scheme, Java, C#, awk, Tcl, Perl, PHP, GCC-source, and Glade)&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 234'
 [xgettext -&#99;]:              #xgettext                      '```&#10;$ xgettext -&#99; $TAG&#10;$ xgettext --add-comments $TAG&#10;```&#10;Copy source file comments marked with $TAG into the .po file as #-delimited comments&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 235'
 [xgettext -&#100;]:             #xgettext                      '```&#10;$ xgettext -&#100; $DOMAIN&#10;$ xgettext --default-domain $DOMAIN&#10;```&#10;Use $DOMAIN.po as the output file instead of messages.po&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 235'
@@ -2417,7 +2430,8 @@ ausearch --start today --loginuid500
 
 <code>&nbsp;</code>   <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`d`][date -&#100;] <code>&nbsp;</code> [`f`][date -&#102;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`r`][date -&#114;] [`s`][date -&#115;] <code>&nbsp;</code> [`u`][date -&#117;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code>  <br><code>&nbsp;</code>&nbsp;<code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`I`][date -&#73;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`R`][date -&#82;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 
 
-###### Metacharacters
+Metacharacters
+
 <code>&nbsp;</code>   [`a`][date +%&#97;] [`b`][date +%&#98;] [`c`][date +%&#99;] [`d`][date +%&#100;] [`e`][date +%&#101;] <code>&nbsp;</code> [`g`][date +%&#103;] [`h`][date +%&#104;] <code>&nbsp;</code> [`j`][date +%&#106;] [`k`][date +%&#107;] [`l`][date +%&#108;] [`m`][date +%&#109;] [`n`][date +%&#110;] <code>&nbsp;</code> [`p`][date +%&#112;] <code>&nbsp;</code> [`r`][date +%&#114;] [`s`][date +%&#115;] [`t`][date +%&#116;] [`u`][date +%&#117;] <code>&nbsp;</code> [`w`][date +%&#119;] [`x`][date +%&#120;] [`y`][date +%&#121;] <code>&nbsp;</code>  <br><code>&nbsp;</code>&nbsp;[`A`][date +%&#65;] [`B`][date +%&#66;] <code>&nbsp;</code> [`D`][date +%&#68;] <code>&nbsp;</code> [`F`][date +%&#70;] [`G`][date +%&#71;] [`H`][date +%&#72;] [`I`][date +%&#73;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`M`][date +%&#77;] [`N`][date +%&#78;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`R`][date +%&#82;] [`S`][date +%&#83;] [`T`][date +%&#84;] [`U`][date +%&#85;] [`V`][date +%&#86;] [`W`][date +%&#87;] [`X`][date +%&#88;] [`Y`][date +%&#89;] [`Z`][date +%&#90;] 
 
 
@@ -2505,7 +2519,7 @@ Display version of Ubuntu
 ```sh
 lsb_release -sc
 ```
-### `ldd`
+#### `ldd`
 Display dependencies of `$PROGRAM`
 ```sh
 ldd $PROGRAM
@@ -4399,8 +4413,15 @@ apt install regolith-desktop
 ### `apt-key`
 Add a public GPG key to keyring
 ```sh
-curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add - # Google Cloud SDK
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -	# Docker
+# Google Cloud SDK
+curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+
+# Docker
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+```
+Install key from Mono
+```sh
+apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
 ```
 ### `dnf`
 View all `dnf` commands

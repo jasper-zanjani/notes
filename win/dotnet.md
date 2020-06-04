@@ -25,10 +25,28 @@ An [assembly][Assembly] can be compiled to EXE or DLL.
 - [System.Web.Security.Membership](pwsh.md#generate-password)
 
 # Syntax
+### dotnet new
+Start a new "hello world" console application in the current directory
+```sh
+dotnet new console
+```
+Start a new "hello world" web application in the current directory
+```sh
+dotnet new web
+```
+### dotnet run
 ### dotnet watch
 #### dotnet watch run
 Run .NET Core Koans <sup>[github.com][.NETCoreKoans]</sup>
 ```sh
 dotnet watch --quiet run
 ```
-
+# Tasks
+### Hello world
+Start a new "hello world" console application
+```sh
+mkdir helloworld
+cd helloworld
+dotnet new console
+dotnet run
+```

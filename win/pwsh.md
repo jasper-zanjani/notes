@@ -164,14 +164,18 @@ Powershell users refer to the command-line environment as the **"console"**, as 
 [`netsecurity`](#netsecurity)
 [`nettcpip`](#nettcpip)
 [`packagemanagement`](#packagemanagement)
+[`pkiclient`](#pkiclient)
 [`psdesiredconfiguration`](#psdesiredstateconfiguration)
+[`scheduledtasks`](#scheduledtasks)
 [`smbshare`](#smbshare)
 [`storage`](#storage)
 [`utility`](#microsoftpowershellutility)
 [`wsman.management`](#microsoftpowershellwsmanmanagement)
 
 **Windows Server modules**
-[`addsadministartion`](#addsadministration)
+[`adcsadministration`](#adcsadministration)
+[`adcsdeployment`](#adcsdeployment)
+[`addsadministration`](#addsadministration)
 [`dcbqos`](#dcbqos)
 [`deduplication`](#deduplication)
 [`defender`](#defender)
@@ -192,6 +196,97 @@ Powershell users refer to the command-line environment as the **"console"**, as 
 [`wds`](#wds)
 [`windowsserverbackup`](#windowsserverbackup)
 
+#### adcsadministration
+[msdocs:Add-CAAuthorityInformationAccess]: https://docs.microsoft.com/en-us/powershell/module/adcsadministration/Add-CAAuthorityInformationAccess "Add-CAAuthorityInformationAccess documentation"
+[msdocs:Add-CACrlDistributionPoint]: https://docs.microsoft.com/en-us/powershell/module/adcsadministration/Add-CACrlDistributionPoint "Add-CACrlDistributionPoint documentation"
+[msdocs:Add-CATemplate]: https://docs.microsoft.com/en-us/powershell/module/adcsadministration/Add-CATemplate "Add-CATemplate documentation"
+[msdocs:Backup-CARoleService]: https://docs.microsoft.com/en-us/powershell/module/adcsadministration/Backup-CARoleService "Backup-CARoleService documentation"
+[msdocs:Confirm-CAEndorsementKeyInfo]: https://docs.microsoft.com/en-us/powershell/module/adcsadministration/Confirm-CAEndorsementKeyInfo "Confirm-CAEndorsementKeyInfo documentation"
+[msdocs:Get-CAAuthorityInformationAccess]: https://docs.microsoft.com/en-us/powershell/module/adcsadministration/Get-CAAuthorityInformationAccess "Get-CAAuthorityInformationAccess documentation"
+[msdocs:Get-CACrlDistributionPoint]: https://docs.microsoft.com/en-us/powershell/module/adcsadministration/Get-CACrlDistributionPoint "Get-CACrlDistributionPoint documentation"
+[msdocs:Get-CATemplate]: https://docs.microsoft.com/en-us/powershell/module/adcsadministration/Get-CATemplate "Get-CATemplate documentation"
+[msdocs:Remove-CAAuthorityInformationAccess]: https://docs.microsoft.com/en-us/powershell/module/adcsadministration/Remove-CAAuthorityInformationAccess "Remove-CAAuthorityInformationAccess documentation"
+[msdocs:Remove-CACrlDistributionPoint]: https://docs.microsoft.com/en-us/powershell/module/adcsadministration/Remove-CACrlDistributionPoint "Remove-CACrlDistributionPoint documentation"
+[msdocs:Remove-CATemplate]: https://docs.microsoft.com/en-us/powershell/module/adcsadministration/Remove-CATemplate "Remove-CATemplate documentation"
+[msdocs:Restore-CARoleService]: https://docs.microsoft.com/en-us/powershell/module/adcsadministration/Restore-CARoleService "Restore-CARoleService documentation"
+
+[Add-CAAuthorityInformationAccess]: #add-caauthorityinformationaccess '```&#10;PS> Add-CAAuthorityInformationAccess&#10;```&#10;Configures the AIA or OCSP for a certification authority.'
+[Add-CACrlDistributionPoint]: #add-cacrldistributionpoint '```&#10;PS> Add-CACrlDistributionPoint&#10;```&#10;Adds a CRL distribution point URI where AD CS publishes certification revocations.'
+[Add-CATemplate]: #add-catemplate '```&#10;PS> Add-CATemplate&#10;```&#10;Adds a certificate template to the CA.'
+[Backup-CARoleService]: #backup-caroleservice '```&#10;PS> Backup-CARoleService&#10;```&#10;Backs up the CA database and private key information.'
+[Confirm-CAEndorsementKeyInfo]: #confirm-caendorsementkeyinfo '```&#10;PS> Confirm-CAEndorsementKeyInfo&#10;```&#10;Checks whether the local CA trusts secure hardware for key attestation.'
+[Get-CAAuthorityInformationAccess]: #get-caauthorityinformationaccess '```&#10;PS> Get-CAAuthorityInformationAccess&#10;```&#10;Gets the AIA and OCSP URI information set on the AIA extension of the CA properties.'
+[Get-CACrlDistributionPoint]: #get-cacrldistributionpoint '```&#10;PS> Get-CACrlDistributionPoint&#10;```&#10;Gets all the locations set on the CDP extension of the CA properties.'
+[Get-CATemplate]: #get-catemplate '```&#10;PS> Get-CATemplate&#10;```&#10;Gets the list of templates set on the CA for issuance of certificates.'
+[Remove-CAAuthorityInformationAccess]: #remove-caauthorityinformationaccess '```&#10;PS> Remove-CAAuthorityInformationAccess&#10;```&#10;Removes AIA or OCSP URI from the AIA extension set on the certification authority.'
+[Remove-CACrlDistributionPoint]: #remove-cacrldistributionpoint '```&#10;PS> Remove-CACrlDistributionPoint&#10;```&#10;Removes the URI for the CRL distribution point (CDP) from the CA.'
+[Remove-CATemplate]: #remove-catemplate '```&#10;PS> Remove-CATemplate&#10;```&#10;Removes the templates from the CA which were set for issuance of certificates.'
+[Restore-CARoleService]: #restore-caroleservice '```&#10;PS> Restore-CARoleService&#10;```&#10;Restores the CA database and private key information.'
+
+[certificate template]: # 'certificate template&#10;A certificate template is a preconfigured list of certificate settings that allows users and computers to enroll for certificates without having to create complex certificate requests. Certificate templates allow for the customization of a certificate that can be issued by the CA. The template defines items such as the cryptographic types, validity and renewal periods, and certificate purposes.'
+
+- CAAuthorityInformationAccess
+[`Add`][Add-CAAuthorityInformationAccess]<sup>[?][msdocs:Add-CAAuthorityInformationAccess]</sup>
+[`Get`][Get-CAAuthorityInformationAccess]<sup>[?][msdocs:Get-CAAuthorityInformationAccess]</sup>
+[`Remove`][Remove-CAAuthorityInformationAccess]<sup>[?][msdocs:Remove-CAAuthorityInformationAccess]</sup>
+- CACrlDistributionPoint
+[`Add`][Add-CACrlDistributionPoint]<sup>[?][msdocs:Add-CACrlDistributionPoint]</sup>
+[`Get`][Get-CACrlDistributionPoint]<sup>[?][msdocs:Get-CACrlDistributionPoint]</sup>
+[`Remove`][Remove-CACrlDistributionPoint]<sup>[?][msdocs:Remove-CACrlDistributionPoint]</sup>
+- CAEndorsementKeyInfo
+[`Confirm`][Confirm-CAEndorsementKeyInfo]<sup>[?][msdocs:Confirm-CAEndorsementKeyInfo]</sup>
+- CARoleService
+[`Backup`][Backup-CARoleService]<sup>[?][msdocs:Backup-CARoleService]</sup>
+[`Restore`][Restore-CARoleService]<sup>[?][msdocs:Restore-CARoleService]</sup>
+- [CATemplate][certificate template]
+[`Add`][Add-CATemplate]<sup>[?][msdocs:Add-CATemplate]</sup>
+[`Get`][Get-CATemplate]<sup>[?][msdocs:Get-CATemplate]</sup>
+[`Remove`][Remove-CATemplate]<sup>[?][msdocs:Remove-CATemplate]</sup>
+#### adcsdeployment
+[msdocs:Install-AdcsCertificationAuthority]: https://docs.microsoft.com/en-us/powershell/module/adcsdeployment/Install-AdcsCertificationAuthority "Install-AdcsCertificationAuthority documentation"
+[msdocs:Install-AdcsEnrollmentPolicyWebService]: https://docs.microsoft.com/en-us/powershell/module/adcsdeployment/Install-AdcsEnrollmentPolicyWebService "Install-AdcsEnrollmentPolicyWebService documentation"
+[msdocs:Install-AdcsEnrollmentWebService]: https://docs.microsoft.com/en-us/powershell/module/adcsdeployment/Install-AdcsEnrollmentWebService "Install-AdcsEnrollmentWebService documentation"
+[msdocs:Install-AdcsNetworkDeviceEnrollmentService]: https://docs.microsoft.com/en-us/powershell/module/adcsdeployment/Install-AdcsNetworkDeviceEnrollmentService "Install-AdcsNetworkDeviceEnrollmentService documentation"
+[msdocs:Install-AdcsOnlineResponder]: https://docs.microsoft.com/en-us/powershell/module/adcsdeployment/Install-AdcsOnlineResponder "Install-AdcsOnlineResponder documentation"
+[msdocs:Install-AdcsWebEnrollment]: https://docs.microsoft.com/en-us/powershell/module/adcsdeployment/Install-AdcsWebEnrollment "Install-AdcsWebEnrollment documentation"
+[msdocs:Uninstall-AdcsCertificationAuthority]: https://docs.microsoft.com/en-us/powershell/module/adcsdeployment/Uninstall-AdcsCertificationAuthority "Uninstall-AdcsCertificationAuthority documentation"
+[msdocs:Uninstall-AdcsEnrollmentPolicyWebService]: https://docs.microsoft.com/en-us/powershell/module/adcsdeployment/Uninstall-AdcsEnrollmentPolicyWebService "Uninstall-AdcsEnrollmentPolicyWebService documentation"
+[msdocs:Uninstall-AdcsEnrollmentWebService]: https://docs.microsoft.com/en-us/powershell/module/adcsdeployment/Uninstall-AdcsEnrollmentWebService "Uninstall-AdcsEnrollmentWebService documentation"
+[msdocs:Uninstall-AdcsNetworkDeviceEnrollmentService]: https://docs.microsoft.com/en-us/powershell/module/adcsdeployment/Uninstall-AdcsNetworkDeviceEnrollmentService "Uninstall-AdcsNetworkDeviceEnrollmentService documentation"
+[msdocs:Uninstall-AdcsOnlineResponder]: https://docs.microsoft.com/en-us/powershell/module/adcsdeployment/Uninstall-AdcsOnlineResponder "Uninstall-AdcsOnlineResponder documentation"
+[msdocs:Uninstall-AdcsWebEnrollment]: https://docs.microsoft.com/en-us/powershell/module/adcsdeployment/Uninstall-AdcsWebEnrollment "Uninstall-AdcsWebEnrollment documentation"
+
+[Install-AdcsCertificationAuthority]: #install-adcscertificationauthority '```&#10;PS> Install-AdcsCertificationAuthority&#10;```&#10;Performs installation and configuration of the AD CS Certification Authority role service.'
+[Install-AdcsEnrollmentPolicyWebService]: #install-adcsenrollmentpolicywebservice '```&#10;PS> Install-AdcsEnrollmentPolicyWebService&#10;```&#10;Performs the configuration of Certificate Enrollment Policy Web service.'
+[Install-AdcsEnrollmentWebService]: #install-adcsenrollmentwebservice '```&#10;PS> Install-AdcsEnrollmentWebService&#10;```&#10;Performs the initial configuration of the Certificate Enrollment Web service.'
+[Install-AdcsNetworkDeviceEnrollmentService]: #install-adcsnetworkdeviceenrollmentservice '```&#10;PS> Install-AdcsNetworkDeviceEnrollmentService&#10;```&#10;Installs the NDES role service.'
+[Install-AdcsOnlineResponder]: #install-adcsonlineresponder '```&#10;PS> Install-AdcsOnlineResponder&#10;```&#10;Installs the Online Responder service.'
+[Install-AdcsWebEnrollment]: #install-adcswebenrollment '```&#10;PS> Install-AdcsWebEnrollment&#10;```&#10;Installs the Certification Authority Web Enrollment.'
+[Uninstall-AdcsCertificationAuthority]: #uninstall-adcscertificationauthority '```&#10;PS> Uninstall-AdcsCertificationAuthority&#10;```&#10;Uninstalls the CA role service and removes the configuration information.'
+[Uninstall-AdcsEnrollmentPolicyWebService]: #uninstall-adcsenrollmentpolicywebservice '```&#10;PS> Uninstall-AdcsEnrollmentPolicyWebService&#10;```&#10;Uninstalls the Certificate Enrollment Policy Web service.'
+[Uninstall-AdcsEnrollmentWebService]: #uninstall-adcsenrollmentwebservice '```&#10;PS> Uninstall-AdcsEnrollmentWebService&#10;```&#10;Uninstalls the Certificate Enrollment Web service or individual instances of it.'
+[Uninstall-AdcsNetworkDeviceEnrollmentService]: #uninstall-adcsnetworkdeviceenrollmentservice '```&#10;PS> Uninstall-AdcsNetworkDeviceEnrollmentService&#10;```&#10;Uninstalls the NDES role service.'
+[Uninstall-AdcsOnlineResponder]: #uninstall-adcsonlineresponder '```&#10;PS> Uninstall-AdcsOnlineResponder&#10;```&#10;Uninstalls the Online Responder service.'
+[Uninstall-AdcsWebEnrollment]: #uninstall-adcswebenrollment '```&#10;PS> Uninstall-AdcsWebEnrollment&#10;```&#10;Uninstalls the CA Web Enrollment role service.'
+
+- AdcsCertificationAuthority
+[**`Install`**][Install-AdcsCertificationAuthority]<sup>[?][msdocs:Install-AdcsCertificationAuthority]</sup>
+[`Uninstall`][Uninstall-AdcsCertificationAuthority]<sup>[?][msdocs:Uninstall-AdcsCertificationAuthority]</sup>
+- AdcsEnrollmentPolicyWebService
+[`Install`][Install-AdcsEnrollmentPolicyWebService]<sup>[?][msdocs:Install-AdcsEnrollmentPolicyWebService]</sup>
+[`Uninstall`][Uninstall-AdcsEnrollmentPolicyWebService]<sup>[?][msdocs:Uninstall-AdcsEnrollmentPolicyWebService]</sup>
+- AdcsEnrollmentWebService
+[`Install`][Install-AdcsEnrollmentWebService]<sup>[?][msdocs:Install-AdcsEnrollmentWebService]</sup>
+[`Uninstall`][Uninstall-AdcsEnrollmentWebService]<sup>[?][msdocs:Uninstall-AdcsEnrollmentWebService]</sup>
+- AdcsNetworkDeviceEnrollmentService
+[`Install`][Install-AdcsNetworkDeviceEnrollmentService]<sup>[?][msdocs:Install-AdcsNetworkDeviceEnrollmentService]</sup>
+[`Uninstall`][Uninstall-AdcsNetworkDeviceEnrollmentService]<sup>[?][msdocs:Uninstall-AdcsNetworkDeviceEnrollmentService]</sup>
+- AdcsOnlineResponder
+[`Install`][Install-AdcsOnlineResponder]<sup>[?][msdocs:Install-AdcsOnlineResponder]</sup>
+[`Uninstall`][Uninstall-AdcsOnlineResponder]<sup>[?][msdocs:Uninstall-AdcsOnlineResponder]</sup>
+- AdcsWebEnrollment
+[`Install`][Install-AdcsWebEnrollment]<sup>[?][msdocs:Install-AdcsWebEnrollment]</sup>
+[`Uninstall`][Uninstall-AdcsWebEnrollment]<sup>[?][msdocs:Uninstall-AdcsWebEnrollment]</sup>
 #### addsadministration
 [msdocs:Disable-ADAccount]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Disable-ADAccount "Disable-ADAccount documentation"
 [msdocs:Enable-ADAccount]: https://docs.microsoft.com/en-us/powershell/module/addsadministration/Enable-ADAccount "Enable-ADAccount documentation"
@@ -690,6 +785,7 @@ Powershell users refer to the command-line environment as the **"console"**, as 
 [Add-WindowsDriver]: #add-windowsdriver '```&#10;[PS] Add-WindowsDriver&#10;```&#10;Adds a driver to an offline Windows image.&#10;Equivalent to `Dism.exe /Image:foldername /Add-Drive`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
 [Add-WindowsImage]: #add-windowsimage '```&#10;[PS] Add-WindowsImage&#10;```&#10;Adds an additional image to an existing image (.wim) file.&#10;Equivalent to `dism.exe /Append-Image`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
 [Add-WindowsPackage]: #add-windowspackage '```&#10;[PS] Add-WindowsPackage&#10;```&#10;Adds a single .cab or .msu file to a Windows image.&#10;Equivalent to `Dism.exe /Image:foldername /Add-Package`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
+[Apply-WindowsUnattend]: #apply-windowsunattend '```&#10;[PS] Apply-WindowsUnattend&#10;```&#10;&#10;Equivalent to `Dism.exe /Image:foldername /Apply-Unattend`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
 [Clear-WindowsCorruptMountPoint]: #clear-windowscorruptmountpoint '```&#10;[PS] Clear-WindowsCorruptMountPoint&#10;```&#10;Deletes all of the resources associated with a mounted image that has been corrupted.'
 [Disable-WindowsOptionalFeature]: #disable-windowsoptionalfeature '```&#10;[PS] Disable-WindowsOptionalFeature&#10;```&#10;Disables a feature in a Windows image.&#10;Equivalent to `Dism.exe /Image:foldername /Disable-Feature`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
 [Dismount-WindowsImage]: #dismount-windowsimage '```&#10;[PS] Dismount-WindowsImage&#10;```&#10;Dismounts a Windows image from the directory it is mapped to.&#10;Equivalent to `Dism.exe /Unmount-Image`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
@@ -726,7 +822,6 @@ Powershell users refer to the command-line environment as the **"console"**, as 
 [Split-WindowsImage]: #split-windowsimage '```&#10;[PS] Split-WindowsImage&#10;```&#10;Splits an existing .wim file into multiple read-only split .wim files.'
 [Update-WIMBootEntry]: #update-wimbootentry '```&#10;[PS] Update-WIMBootEntry&#10;```&#10;Updates the Windows image file boot (WIMBoot) configuration entry, associated with either the specified data source ID, the renamed image file path or the moved image file path.'
 [Use-WindowsUnattend]: #use-windowsunattend '```&#10;[PS] Use-WindowsUnattend&#10;```&#10;Applies an unattended answer file to a Windows image.'
-[Apply-WindowsUnattend]: #apply-windowsunattend '```&#10;[PS] Apply-WindowsUnattend&#10;```&#10;&#10;Equivalent to `Dism.exe /Image:foldername /Apply-Unattend`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
 
 - AppxProvisionedDataFile
 [`Set`][Set-AppxProvisionedDataFile]<sup>[?][msdocs:Set-AppxProvisionedDataFile]</sup>
@@ -2834,6 +2929,10 @@ Powershell users refer to the command-line environment as the **"console"**, as 
 [`Wide`][Format-Wide]<sup>[?][msdocs:Format-Wide]</sup>
 - GUID
 [`New`][New-Guid]<sup>[?][msdocs:New-Guid]</sup>
+- Host
+[`Get`][Get-Host]<sup>[?][msdocs:Get-Host]</sup>
+[`Read`][Read-Host]<sup>[?][msdocs:Read-Host]</sup>
+[`Write`][Write-Host]<sup>[?][msdocs:Write-Host]</sup>
 - JSON
 [`ConvertFrom`][ConvertFrom-Json]<sup>[?][msdocs:ConvertFrom-Json]</sup>
 [`ConvertTo`][ConvertTo-Json]<sup>[?][msdocs:ConvertTo-Json]</sup>
@@ -3042,6 +3141,68 @@ Powershell users refer to the command-line environment as the **"console"**, as 
 [`Register`][Register-PackageSource]<sup>[?][msdocs:Register-PackageSource]</sup>
 [`Set`][Set-PackageSource]<sup>[?][msdocs:Set-PackageSource]</sup>
 [`Unregister`][Unregister-PackageSource]<sup>[?][msdocs:Unregister-PackageSource]</sup>
+#### pkiclient
+[msdocs:Export-Certificate]: https://docs.microsoft.com/en-us/powershell/module/pkiclient/Export-Certificate "Export-Certificate documentation"
+[msdocs:Get-Certificate]: https://docs.microsoft.com/en-us/powershell/module/pkiclient/Get-Certificate "Get-Certificate documentation"
+[msdocs:Import-Certificate]: https://docs.microsoft.com/en-us/powershell/module/pkiclient/Import-Certificate "Import-Certificate documentation"
+[msdocs:Switch-Certificate]: https://docs.microsoft.com/en-us/powershell/module/pkiclient/Switch-Certificate "Switch-Certificate documentation"
+[msdocs:Test-Certificate]: https://docs.microsoft.com/en-us/powershell/module/pkiclient/Test-Certificate "Test-Certificate documentation"
+[msdocs:Get-CertificateAutoEnrollmentPolicy]: https://docs.microsoft.com/en-us/powershell/module/pkiclient/Get-CertificateAutoEnrollmentPolicy "Get-CertificateAutoEnrollmentPolicy documentation"
+[msdocs:Set-CertificateAutoEnrollmentPolicy]: https://docs.microsoft.com/en-us/powershell/module/pkiclient/Set-CertificateAutoEnrollmentPolicy "Set-CertificateAutoEnrollmentPolicy documentation"
+[msdocs:Add-CertificateEnrollmentPolicyServer]: https://docs.microsoft.com/en-us/powershell/module/pkiclient/Add-CertificateEnrollmentPolicyServer "Add-CertificateEnrollmentPolicyServer documentation"
+[msdocs:Get-CertificateEnrollmentPolicyServer]: https://docs.microsoft.com/en-us/powershell/module/pkiclient/Get-CertificateEnrollmentPolicyServer "Get-CertificateEnrollmentPolicyServer documentation"
+[msdocs:Remove-CertificateEnrollmentPolicyServer]: https://docs.microsoft.com/en-us/powershell/module/pkiclient/Remove-CertificateEnrollmentPolicyServer "Remove-CertificateEnrollmentPolicyServer documentation"
+[msdocs:Get-CertificateNotificationTask]: https://docs.microsoft.com/en-us/powershell/module/pkiclient/Get-CertificateNotificationTask "Get-CertificateNotificationTask documentation"
+[msdocs:New-CertificateNotificationTask]: https://docs.microsoft.com/en-us/powershell/module/pkiclient/New-CertificateNotificationTask "New-CertificateNotificationTask documentation"
+[msdocs:Remove-CertificateNotificationTask]: https://docs.microsoft.com/en-us/powershell/module/pkiclient/Remove-CertificateNotificationTask "Remove-CertificateNotificationTask documentation"
+[msdocs:Export-PfxCertificate]: https://docs.microsoft.com/en-us/powershell/module/pkiclient/Export-PfxCertificate "Export-PfxCertificate documentation"
+[msdocs:Import-PfxCertificate]: https://docs.microsoft.com/en-us/powershell/module/pkiclient/Import-PfxCertificate "Import-PfxCertificate documentation"
+[msdocs:Get-PfxData]: https://docs.microsoft.com/en-us/powershell/module/pkiclient/Get-PfxData "Get-PfxData documentation"
+[msdocs:New-SelfSignedCertificate]: https://docs.microsoft.com/en-us/powershell/module/pkiclient/New-SelfSignedCertificate "New-SelfSignedCertificate documentation"
+
+[Export-Certificate]: #export-certificate '```&#10;PS> Export-Certificate&#10;```&#10;Exports a certificate from a certificate store into a file.'
+[Get-Certificate]: #get-certificate '```&#10;PS> Get-Certificate&#10;```&#10;Submits a certificate request to an enrollment server and installs the response or retrieves a certificate for a previously submitted request.'
+[Import-Certificate]: #import-certificate '```&#10;PS> Import-Certificate&#10;```&#10;Imports one or more certificates into a certificate store.'
+[Switch-Certificate]: #switch-certificate '```&#10;PS> Switch-Certificate&#10;```&#10;Marks one certificate as having been replaced by another certificate.'
+[Test-Certificate]: #test-certificate '```&#10;PS> Test-Certificate&#10;```&#10;Verifies a certificate according to the input parameters.'
+[Get-CertificateAutoEnrollmentPolicy]: #get-certificateautoenrollmentpolicy '```&#10;PS> Get-CertificateAutoEnrollmentPolicy&#10;```&#10;Retrieves certificate auto-enrollment policy settings.'
+[Set-CertificateAutoEnrollmentPolicy]: #set-certificateautoenrollmentpolicy '```&#10;PS> Set-CertificateAutoEnrollmentPolicy&#10;```&#10;Sets local certificate auto-enrollment policy.'
+[Add-CertificateEnrollmentPolicyServer]: #add-certificateenrollmentpolicyserver '```&#10;PS> Add-CertificateEnrollmentPolicyServer&#10;```&#10;Adds an enrollment policy server to the current user or local system configuration.'
+[Get-CertificateEnrollmentPolicyServer]: #get-certificateenrollmentpolicyserver '```&#10;PS> Get-CertificateEnrollmentPolicyServer&#10;```&#10;Returns all of the certificate enrollment policy server URL configurations.'
+[Remove-CertificateEnrollmentPolicyServer]: #remove-certificateenrollmentpolicyserver '```&#10;PS> Remove-CertificateEnrollmentPolicyServer&#10;```&#10;Removes an enrollment policy server and the URL of the enrollment policy server from the current user or local computer configuration.'
+[Get-CertificateNotificationTask]: #get-certificatenotificationtask '```&#10;PS> Get-CertificateNotificationTask&#10;```&#10;Returns all registered certificate notification tasks.'
+[New-CertificateNotificationTask]: #new-certificatenotificationtask '```&#10;PS> New-CertificateNotificationTask&#10;```&#10;Creates a new task in the Task Scheduler that will be triggered when a certificate is replaced, expired, or about to expired.'
+[Remove-CertificateNotificationTask]: #remove-certificatenotificationtask '```&#10;PS> Remove-CertificateNotificationTask&#10;```&#10;Removes a certificate notification task from Task Scheduler.'
+[Export-PfxCertificate]: #export-pfxcertificate '```&#10;PS> Export-PfxCertificate&#10;```&#10;Exports a certificate or a PFXData object to a Personal Information Exchange (PFX) file.'
+[Import-PfxCertificate]: #import-pfxcertificate '```&#10;PS> Import-PfxCertificate&#10;```&#10;Imports certificates and private keys from a Personal Information Exchange (PFX) file to the destination store.'
+[Get-PfxData]: #get-pfxdata '```&#10;PS> Get-PfxData&#10;```&#10;Extracts the content of a Personal Information Exchange (PFX) file into a structure without importing it to certificate store.'
+[New-SelfSignedCertificate]: #new-selfsignedcertificate '```&#10;PS> New-SelfSignedCertificate&#10;```&#10;Creates a new self-signed certificate for testing purposes.'
+
+- Certificate
+[`Export`][Export-Certificate]<sup>[?][msdocs:Export-Certificate]</sup>
+[`Get`][Get-Certificate]<sup>[?][msdocs:Get-Certificate]</sup>
+[`Import`][Import-Certificate]<sup>[?][msdocs:Import-Certificate]</sup>
+[`Switch`][Switch-Certificate]<sup>[?][msdocs:Switch-Certificate]</sup>
+[`Test`][Test-Certificate]<sup>[?][msdocs:Test-Certificate]</sup>
+- CertificateAutoEnrollmentPolicy
+[`Get`][Get-CertificateAutoEnrollmentPolicy]<sup>[?][msdocs:Get-CertificateAutoEnrollmentPolicy]</sup>
+[`Set`][Set-CertificateAutoEnrollmentPolicy]<sup>[?][msdocs:Set-CertificateAutoEnrollmentPolicy]</sup>
+- CertificateEnrollmentPolicyServer
+[`Add`][Add-CertificateEnrollmentPolicyServer]<sup>[?][msdocs:Add-CertificateEnrollmentPolicyServer]</sup>
+[`Get`][Get-CertificateEnrollmentPolicyServer]<sup>[?][msdocs:Get-CertificateEnrollmentPolicyServer]</sup>
+[`Remove`][Remove-CertificateEnrollmentPolicyServer]<sup>[?][msdocs:Remove-CertificateEnrollmentPolicyServer]</sup>
+- CertificateNotificationTask
+[`Get`][Get-CertificateNotificationTask]<sup>[?][msdocs:Get-CertificateNotificationTask]</sup>
+[`New`][New-CertificateNotificationTask]<sup>[?][msdocs:New-CertificateNotificationTask]</sup>
+[`Remove`][Remove-CertificateNotificationTask]<sup>[?][msdocs:Remove-CertificateNotificationTask]</sup>
+- PfxCertificate
+[`Export`][Export-PfxCertificate]<sup>[?][msdocs:Export-PfxCertificate]</sup>
+[`Import`][Import-PfxCertificate]<sup>[?][msdocs:Import-PfxCertificate]</sup>
+- PfxData
+[`Get`][Get-PfxData]<sup>[?][msdocs:Get-PfxData]</sup>
+- SelfSignedCertificate
+[`New`][New-SelfSignedCertificate]<sup>[?][msdocs:New-SelfSignedCertificate]</sup>
+
 #### psdesiredstateconfiguration
 [msdocs:New-DSCCheckSum]: https://docs.microsoft.com/en-us/powershell/module/psdesiredstateconfiguration/New-DSCCheckSum "New-DSCCheckSum"
 [msdocs:Get-DscConfiguration]: https://docs.microsoft.com/en-us/powershell/module/psdesiredstateconfiguration/Get-DscConfiguration "Get-DscConfiguration"
@@ -3086,6 +3247,58 @@ Powershell users refer to the command-line environment as the **"console"**, as 
 [`Test`][Test-DscConfiguration]<sup>[?][msdocs:Test-DscConfiguration]</sup>
 [`Update`][Update-DscConfiguration]<sup>[?][msdocs:Update-DscConfiguration]</sup>
 [`Remove`][Remove-DscConfigurationDocument]<sup>[?][msdocs:Remove-DscConfigurationDocument]</sup>
+#### scheduledtasks
+[msdocs:Disable-ScheduledTask]: https://docs.microsoft.com/en-us/powershell/module/scheduledtasks/Disable-ScheduledTask "Disable-ScheduledTask documentation"
+[msdocs:Enable-ScheduledTask]: https://docs.microsoft.com/en-us/powershell/module/scheduledtasks/Enable-ScheduledTask "Enable-ScheduledTask documentation"
+[msdocs:Export-ScheduledTask]: https://docs.microsoft.com/en-us/powershell/module/scheduledtasks/Export-ScheduledTask "Export-ScheduledTask documentation"
+[msdocs:Get-ClusteredScheduledTask]: https://docs.microsoft.com/en-us/powershell/module/scheduledtasks/Get-ClusteredScheduledTask "Get-ClusteredScheduledTask documentation"
+[msdocs:Get-ScheduledTask]: https://docs.microsoft.com/en-us/powershell/module/scheduledtasks/Get-ScheduledTask "Get-ScheduledTask documentation"
+[msdocs:Get-ScheduledTaskInfo]: https://docs.microsoft.com/en-us/powershell/module/scheduledtasks/Get-ScheduledTaskInfo "Get-ScheduledTaskInfo documentation"
+[msdocs:New-ScheduledTask]: https://docs.microsoft.com/en-us/powershell/module/scheduledtasks/New-ScheduledTask "New-ScheduledTask documentation"
+[msdocs:New-ScheduledTaskAction]: https://docs.microsoft.com/en-us/powershell/module/scheduledtasks/New-ScheduledTaskAction "New-ScheduledTaskAction documentation"
+[msdocs:New-ScheduledTaskPrincipal]: https://docs.microsoft.com/en-us/powershell/module/scheduledtasks/New-ScheduledTaskPrincipal "New-ScheduledTaskPrincipal documentation"
+[msdocs:New-ScheduledTaskSettingsSet]: https://docs.microsoft.com/en-us/powershell/module/scheduledtasks/New-ScheduledTaskSettingsSet "New-ScheduledTaskSettingsSet documentation"
+[msdocs:New-ScheduledTaskTrigger]: https://docs.microsoft.com/en-us/powershell/module/scheduledtasks/New-ScheduledTaskTrigger "New-ScheduledTaskTrigger documentation"
+[msdocs:Register-ClusteredScheduledTask]: https://docs.microsoft.com/en-us/powershell/module/scheduledtasks/Register-ClusteredScheduledTask "Register-ClusteredScheduledTask documentation"
+[msdocs:Register-ScheduledTask]: https://docs.microsoft.com/en-us/powershell/module/scheduledtasks/Register-ScheduledTask "Register-ScheduledTask documentation"
+[msdocs:Set-ClusteredScheduledTask]: https://docs.microsoft.com/en-us/powershell/module/scheduledtasks/Set-ClusteredScheduledTask "Set-ClusteredScheduledTask documentation"
+[msdocs:Set-ScheduledTask]: https://docs.microsoft.com/en-us/powershell/module/scheduledtasks/Set-ScheduledTask "Set-ScheduledTask documentation"
+[msdocs:Start-ScheduledTask]: https://docs.microsoft.com/en-us/powershell/module/scheduledtasks/Start-ScheduledTask "Start-ScheduledTask documentation"
+[msdocs:Stop-ScheduledTask]: https://docs.microsoft.com/en-us/powershell/module/scheduledtasks/Stop-ScheduledTask "Stop-ScheduledTask documentation"
+[msdocs:Unregister-ClusteredScheduledTask]: https://docs.microsoft.com/en-us/powershell/module/scheduledtasks/Unregister-ClusteredScheduledTask "Unregister-ClusteredScheduledTask documentation"
+[msdocs:Unregister-ScheduledTask]: https://docs.microsoft.com/en-us/powershell/module/scheduledtasks/Unregister-ScheduledTask "Unregister-ScheduledTask documentation"
+
+[Disable-ScheduledTask]: #disable-scheduledtask '```&#10;PS> Disable-ScheduledTask&#10;```&#10;Disables a scheduled task.'
+[Enable-ScheduledTask]: #enable-scheduledtask '```&#10;PS> Enable-ScheduledTask&#10;```&#10;Enables a scheduled task.'
+[Export-ScheduledTask]: #export-scheduledtask '```&#10;PS> Export-ScheduledTask&#10;```&#10;Exports a scheduled task as an XML string.'
+[Get-ClusteredScheduledTask]: #get-clusteredscheduledtask '```&#10;PS> Get-ClusteredScheduledTask&#10;```&#10;Gets clustered scheduled tasks for a failover cluster.'
+[Get-ScheduledTask]: #get-scheduledtask '```&#10;PS> Get-ScheduledTask&#10;```&#10;Gets the task definition object of a scheduled task that is registered on the local computer.'
+[Get-ScheduledTaskInfo]: #get-scheduledtaskinfo '```&#10;PS> Get-ScheduledTaskInfo&#10;```&#10;Gets run-time information for a scheduled task.'
+[New-ScheduledTask]: #new-scheduledtask '```&#10;PS> New-ScheduledTask&#10;```&#10;Creates a scheduled task instance.'
+[New-ScheduledTaskAction]: #new-scheduledtaskaction '```&#10;PS> New-ScheduledTaskAction&#10;```&#10;Creates a scheduled task action.'
+[New-ScheduledTaskPrincipal]: #new-scheduledtaskprincipal '```&#10;PS> New-ScheduledTaskPrincipal&#10;```&#10;Creates an object that contains a scheduled task principal.'
+[New-ScheduledTaskSettingsSet]: #new-scheduledtasksettingsset '```&#10;PS> New-ScheduledTaskSettingsSet&#10;```&#10;Creates a new scheduled task settings object.'
+[New-ScheduledTaskTrigger]: #new-scheduledtasktrigger '```&#10;PS> New-ScheduledTaskTrigger&#10;```&#10;Creates a scheduled task trigger object.'
+[Register-ClusteredScheduledTask]: #register-clusteredscheduledtask '```&#10;PS> Register-ClusteredScheduledTask&#10;```&#10;Registers a scheduled task on a failover cluster.'
+[Register-ScheduledTask]: #register-scheduledtask '```&#10;PS> Register-ScheduledTask&#10;```&#10;Registers a scheduled task definition on a local computer.'
+[Set-ClusteredScheduledTask]: #set-clusteredscheduledtask '```&#10;PS> Set-ClusteredScheduledTask&#10;```&#10;Changes settings for a clustered scheduled task.'
+[Set-ScheduledTask]: #set-scheduledtask '```&#10;PS> Set-ScheduledTask&#10;```&#10;Modifies a scheduled task.'
+[Start-ScheduledTask]: #start-scheduledtask '```&#10;PS> Start-ScheduledTask&#10;```&#10;Starts one or more instances of a scheduled task.'
+[Stop-ScheduledTask]: #stop-scheduledtask '```&#10;PS> Stop-ScheduledTask&#10;```&#10;Stops all running instances of a task.'
+[Unregister-ClusteredScheduledTask]: #unregister-clusteredscheduledtask '```&#10;PS> Unregister-ClusteredScheduledTask&#10;```&#10;Removes a scheduled task from a failover cluster.'
+[Unregister-ScheduledTask]: #unregister-scheduledtask '```&#10;PS> Unregister-ScheduledTask&#10;```&#10;Unregisters a scheduled task.'
+
+- ScheduledTask
+[`Disable`][Disable-ScheduledTask]<sup>[?][msdocs:Disable-ScheduledTask]</sup>
+[`Enable`][Enable-ScheduledTask]<sup>[?][msdocs:Enable-ScheduledTask]</sup>
+[`Export`][Export-ScheduledTask]<sup>[?][msdocs:Export-ScheduledTask]</sup>
+[`Get`][Get-ScheduledTask]<sup>[?][msdocs:Get-ScheduledTask]</sup>
+[`New`][New-ScheduledTask]<sup>[?][msdocs:New-ScheduledTask]</sup>
+[`Register`][Register-ScheduledTask]<sup>[?][msdocs:Register-ScheduledTask]</sup>
+[`Set`][Set-ScheduledTask]<sup>[?][msdocs:Set-ScheduledTask]</sup>
+[`Start`][Start-ScheduledTask]<sup>[?][msdocs:Start-ScheduledTask]</sup>
+[`Stop`][Stop-ScheduledTask]<sup>[?][msdocs:Stop-ScheduledTask]</sup>
+[`Unregister`][Unregister-ScheduledTask]<sup>[?][msdocs:Unregister-ScheduledTask]</sup>
 #### servermanager
 [Disable-ServerManagerStandardUserRemoting]: #disable-servermanagerstandarduserremoting '```&#10;Disable-ServerManagerStandardUserRemoting&#10;```&#10;Disables access for specified standard users to event, service, performance counter, and role and feature inventory data that is collected by Server Manager for a server.'
 [Enable-ServerManagerStandardUserRemoting]: #enable-servermanagerstandarduserremoting '```&#10;Enable-ServerManagerStandardUserRemoting&#10;```&#10;Provides one or more standard, non-Administrator users access to event, service, performance counter, and role and feature inventory data for a server that you are managing by using Server Manager.'
@@ -3427,7 +3640,6 @@ Powershell users refer to the command-line environment as the **"console"**, as 
 [**`New`**][New-WdsInstallImageGroup]<sup>[?][msdocs:New-WdsInstallImageGroup]</sup>
 [`Remove`][Remove-WdsInstallImageGroup]<sup>[?][msdocs:Remove-WdsInstallImageGroup]</sup>
 [`Set`][Set-WdsInstallImageGroup]<sup>[?][msdocs:Set-WdsInstallImageGroup]</sup>
-
 #### windowsserverbackup
 [Add-WBBackupTarget]: #add-wbbackuptarget '```&#10;Add-WBBackupTarget&#10;```&#10;Adds a backup target to a backup policy.'
 [Add-WBBareMetalRecovery]: #add-wbbaremetalrecovery '```&#10;Add-WBBareMetalRecovery&#10;```&#10;Adds items to a backup policy so that backups that use the policy can perform bare metal recoveries.'
@@ -4740,10 +4952,18 @@ Set bandwidth limits on a virtual network adapter <sup>[Zacker][Zacker]: 256</su
 Set-VMNetworkAdapter -VMName server1 -Name nic1 -MinimumBandwidthWeight
 ```
 ##### New-EventLog<sup>[?][msdocs:New-EventLog]</sup>
+`LogName`
+`Source`
+
 ```powershell
 New-EventLog -LogName application -Source MyCustomApp
 ```
 ##### Write-EventLog<sup>[?][msdocs:Write-EventLog]</sup>
+`EventId`
+`LogName`
+`Message`
+`Source`
+
 ```powershell
 Write-EventLog -LogName application -Source MyCustomApp -EventId 911 -Message 'Automated process failed, please contact the administrator.'
 ```
@@ -5345,7 +5565,7 @@ Removing keys:
 $Hashtable.Remove('One')
 ```
 #### New domain controller
-<sup>[Jones][Jones]</sup>
+[Jones][Jones]
 ```powershell
 Install-WindowsFeature AD-Domain-Services,DHCP -IncludeManagementTools
 Install-ADDSForest -DomainName corp.packtlab.com
