@@ -625,6 +625,36 @@ Powershell users refer to the command-line environment as the **"console"**, as 
 [`New`][New-ADUser]<sup>[?][msdocs:New-ADUser]</sup>
 [`Remove`][Remove-ADUser]<sup>[?][msdocs:Remove-ADUser]</sup>
 [`Set`][Set-ADUser]<sup>[?][msdocs:Set-ADUser]</sup>
+#### addsdeployment
+[msdocs:Install-ADDSDomain]: https://docs.microsoft.com/en-us/powershell/module/addsdeployment/Install-ADDSDomain "Install-ADDSDomain"
+[msdocs:Install-ADDSDomainController]: https://docs.microsoft.com/en-us/powershell/module/addsdeployment/Install-ADDSDomainController "Install-ADDSDomainController"
+[msdocs:Uninstall-ADDSDomainController]: https://docs.microsoft.com/en-us/powershell/module/addsdeployment/Uninstall-ADDSDomainController "Uninstall-ADDSDomainController"
+[msdocs:Test-ADDSDomainControllerInstallation]: https://docs.microsoft.com/en-us/powershell/module/addsdeployment/Test-ADDSDomainControllerInstallation "Test-ADDSDomainControllerInstallation"
+[msdocs:Test-ADDSDomainControllerUninstallation]: https://docs.microsoft.com/en-us/powershell/module/addsdeployment/Test-ADDSDomainControllerUninstallation "Test-ADDSDomainControllerUninstallation"
+[msdocs:Test-ADDSDomainInstallation]: https://docs.microsoft.com/en-us/powershell/module/addsdeployment/Test-ADDSDomainInstallation "Test-ADDSDomainInstallation"
+[msdocs:Install-ADDSForest]: https://docs.microsoft.com/en-us/powershell/module/addsdeployment/Install-ADDSForest "Install-ADDSForest"
+[msdocs:Test-ADDSForestInstallation]: https://docs.microsoft.com/en-us/powershell/module/addsdeployment/Test-ADDSForestInstallation "Test-ADDSForestInstallation"
+[msdocs:Add-ADDSReadOnlyDomainControllerAccount]: https://docs.microsoft.com/en-us/powershell/module/addsdeployment/Add-ADDSReadOnlyDomainControllerAccount "Add-ADDSReadOnlyDomainControllerAccount"
+[msdocs:Test-ADDSReadOnlyDomainControllerAccountCreation]: https://docs.microsoft.com/en-us/powershell/module/addsdeployment/Test-ADDSReadOnlyDomainControllerAccountCreation "Test-ADDSReadOnlyDomainControllerAccountCreation"
+
+[Install-ADDSDomain]: #install-addsdomain '```&#10;PS> Install-ADDSDomain&#10;```&#10;Installs an Active Directory domain configuration.'
+[Install-ADDSDomainController]: #install-addsdomaincontroller '```&#10;PS> Install-ADDSDomainController&#10;```&#10;Installs a domain controller in Active Directory.'
+[Uninstall-ADDSDomainController]: #uninstall-addsdomaincontroller '```&#10;PS> Uninstall-ADDSDomainController&#10;```&#10;Uninstalls a domain controller in Active Directory.'
+[Test-ADDSDomainControllerInstallation]: #test-addsdomaincontrollerinstallation '```&#10;PS> Test-ADDSDomainControllerInstallation&#10;```&#10;Runs the prerequisites (only) for installing a domain controller in Active Directory.'
+[Test-ADDSDomainControllerUninstallation]: #test-addsdomaincontrolleruninstallation '```&#10;PS> Test-ADDSDomainControllerUninstallation&#10;```&#10;Runs the prerequisites for uninstalling a domain controller in Active Directory.'
+[Test-ADDSDomainInstallation]: #test-addsdomaininstallation '```&#10;PS> Test-ADDSDomainInstallation&#10;```&#10;Runs the prerequisites for installing a new Active Directory domain configuration.'
+[Install-ADDSForest]: #install-addsforest '```&#10;PS> Install-ADDSForest&#10;```&#10;Installs an Active Directory forest configuration.'
+[Test-ADDSForestInstallation]: #test-addsforestinstallation '```&#10;PS> Test-ADDSForestInstallation&#10;```&#10;Runs the prerequisites for installing a new forest in Active Directory.'
+[Add-ADDSReadOnlyDomainControllerAccount]: #add-addsreadonlydomaincontrolleraccount '```&#10;PS> Add-ADDSReadOnlyDomainControllerAccount&#10;```&#10;Creates a RODC account that can be used to install an RODC in Active Directory.'
+[Test-ADDSReadOnlyDomainControllerAccountCreation]: #test-addsreadonlydomaincontrolleraccountcreation '```&#10;PS> Test-ADDSReadOnlyDomainControllerAccountCreation&#10;```&#10;Runs the prerequisites for adding a RODC account.'
+
+- ADDSDomain
+[`Install`][Install-ADDSDomain]<sup>[?][msdocs:Install-ADDSDomain]</sup>
+- ADDSDomainController
+[`Install`][Install-ADDSDomainController]<sup>[?][msdocs:Install-ADDSDomainController]</sup>
+[`Uninstall`][Uninstall-ADDSDomainController]<sup>[?][msdocs:Uninstall-ADDSDomainController]</sup>
+- ADDSForest
+[**`Install`**][Install-ADDSForest]<sup>[?][msdocs:Install-ADDSForest]</sup>
 #### dcbqos
 [msdocs:Enable-NetQosFlowControl]: https://docs.microsoft.com/en-us/powershell/module/dcbqos/Enable-NetQosFlowControl "Enable-NetQosFlowControl"
 [msdocs:Disable-NetQosFlowControl]: https://docs.microsoft.com/en-us/powershell/module/dcbqos/Disable-NetQosFlowControl "Disable-NetQosFlowControl"
@@ -737,6 +767,32 @@ Powershell users refer to the command-line environment as the **"console"**, as 
 
 - MpScan [`Start`][Start-MpScan]<sup>[?][msdocs:Start-MpScan]</sup>
 - MpThreat [`Get`][Get-MpThreat]<sup>[?][msdocs:Get-MpThreat]</sup> [`Remove`][Remove-MpThreat]<sup>[?][msdocs:Remove-MpThreat]</sup>
+#### dhcpserver
+[Add-DhcpServerInDC]: #add-dhcpserverindc '```&#10;[PS] Add-DhcpServerInDC&#10;```&#10;Adds the computer that runs the DHCP server service to the list of authorized DHCP server services in Active Directory.'
+[Add-DhcpServerv4Scope]: #add-dhcpserverv4scope '```&#10;[PS] Add-DhcpServerv4Scope&#10;```&#10;Adds an IPv4 scope on the DHCP server service.'
+[Get-DhcpServerv4Scope]: #get-dhcpserverv4scope '```&#10;[PS] Get-DhcpServerv4Scope&#10;```&#10;Returns the IPv4 scope configuration of the specified scopes.'
+[Remove-DhcpServerv4Scope]: #remove-dhcpserverv4scope '```&#10;[PS] Remove-DhcpServerv4Scope&#10;```&#10;Deletes the specified IPv4 scopes from the DHCP server service.'
+[Set-DhcpServerv4OptionValue]: #set-dhcpserverv4optionvalue '```&#10;[PS] Set-DhcpServerv4OptionValue&#10;```&#10;Sets an IPv4 option value at the server, scope, or reservation level.'
+[Set-DhcpServerv4Scope]: #set-dhcpserverv4scope '```&#10;[PS] Set-DhcpServerv4Scope&#10;```&#10;Sets the properties of an existing IPv4 scope on the DHCP server service.'
+
+[msdocs:Add-DhcpServerInDC]: https://docs.microsoft.com/en-us/powershell/module/DhcpServer/Add-DhcpServerInDC "Add-DhcpServerInDC documentation"
+[msdocs:Add-DhcpServerv4Scope]: https://docs.microsoft.com/en-us/powershell/module/DhcpServer/Add-DhcpServerv4Scope "Add-DhcpServerv4Scope documentation"
+[msdocs:Set-DhcpServerv4OptionValue]: https://docs.microsoft.com/en-us/powershell/module/DhcpServer/Set-DhcpServerv4OptionValue "Set-DhcpServerv4OptionValue documentation"
+[msdocs:Add-DhcpServerv4Scope]: https://docs.microsoft.com/en-us/powershell/module/DhcpServer/Add-DhcpServerv4Scope "Add-DhcpServerv4Scope documentation"
+[msdocs:Get-DhcpServerv4Scope]: https://docs.microsoft.com/en-us/powershell/module/DhcpServer/Get-DhcpServerv4Scope "Get-DhcpServerv4Scope documentation"
+[msdocs:Remove-DhcpServerv4Scope]: https://docs.microsoft.com/en-us/powershell/module/DhcpServer/Remove-DhcpServerv4Scope "Remove-DhcpServerv4Scope documentation"
+[msdocs:Set-DhcpServerv4Scope]: https://docs.microsoft.com/en-us/powershell/module/DhcpServer/Set-DhcpServerv4Scope "Set-DhcpServerv4Scope documentation"
+
+
+- DHCPServerInDC 
+[`Add`][Add-DhcpServerInDC]<sup>[?][msdocs:Add-DhcpServerInDC]</sup>
+- DHCPServerv4Scope 
+[`Add`][Add-DhcpServerv4Scope]<sup>[?][msdocs:Add-DhcpServerv4Scope]</sup>
+[`Get`][Get-DhcpServerv4Scope]<sup>[?][msdocs:Get-DhcpServerv4Scope]</sup>
+[`Remove`][Remove-DhcpServerv4Scope]<sup>[?][msdocs:Remove-DhcpServerv4Scope]</sup>
+[`Set`][Set-DhcpServerv4Scope]<sup>[?][msdocs:Set-DhcpServerv4Scope]</sup>
+- DHCPServerv4OptionValue 
+[`Set`][Set-DhcpServerv4OptionValue]<sup>[?][msdocs:Set-DhcpServerv4OptionValue]</sup>
 #### dism
 [msdocs:Set-AppxProvisionedDataFile]: https://docs.microsoft.com/en-us/powershell/module/dism/Set-AppxProvisionedDataFile "Set-AppxProvisionedDataFile"
 [msdocs:Add-AppxProvisionedPackage]: https://docs.microsoft.com/en-us/powershell/module/dism/Add-AppxProvisionedPackage "Add-AppxProvisionedPackage"
@@ -881,11 +937,25 @@ Powershell users refer to the command-line environment as the **"console"**, as 
 - WindowsUnattend
 [`Apply`][Apply-WindowsUnattend]<sup>[?][msdocs:Apply-WindowsUnattend]</sup>
 [`Use`][Use-WindowsUnattend]<sup>[?][msdocs:Use-WindowsUnattend]</sup>
+#### dnsclient
+[Get-DnsClientServerAddress]: #get-dnsclientserveraddress '```&#10;[PS] Get-DnsClientServerAddress&#10;```&#10;Gets DNS server IP addresses from the TCP/IP properties on an interface.'
+[Set-DnsClientServerAddress]: #set-dnsclientserveraddress '```&#10;[PS] Set-DnsClientServerAddress&#10;```&#10;Set DNS server addresses associated with the TCP/IP properties on an interface&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 20'
+[Resolve-DnsName]: #resolve-dnsname '```&#10;[PS] Resolve-DnsName&#10;```&#10;Performs a DNS name query resolution for the specified name.'
+
+[msdocs:Get-DnsClientServerAddress]: https://docs.microsoft.com/en-us/powershell/module/dnsclient/Get-DnsClientServerAddress "Get-DnsClientServerAddress"
+[msdocs:Set-DnsClientServerAddress]: https://docs.microsoft.com/en-us/powershell/module/dnsclient/Set-DnsClientServerAddress "Set-DnsClientServerAddress"
+[msdocs:Resolve-DnsName]: https://docs.microsoft.com/en-us/powershell/module/dnsclient/Resolve-DnsName "Resolve-DnsName"
+
+- DnsClientServerAddress
+[`Get`][Get-DnsClientServerAddress]<sup>[?][msdocs:Get-DnsClientServerAddress]</sup>
+[**`Set`**][Set-DnsClientServerAddress]<sup>[?][msdocs:Set-DnsClientServerAddress]</sup>
+- DnsName
+[`Resolve`][Resolve-DnsName]<sup>[?][msdocs:Resolve-DnsName]</sup>
 #### dnsserver
 [msdocs:Add-DnsServerClientSubnet]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Add-DnsServerClientSubnet "Add-DnsServerClientSubnet"
 [msdocs:Add-DnsServerConditionalForwarderZone]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Add-DnsServerConditionalForwarderZone "Add-DnsServerConditionalForwarderZone"
-[msdocs:Add-DnsServerDirectoryPartition]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Add-DnsServerDirectoryPartition "Add-DnsServerDirectoryPartition"
 [msdocs:Add-DnsServerForwarder]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Add-DnsServerForwarder "Add-DnsServerForwarder"
+[msdocs:Add-DnsServerDirectoryPartition]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Add-DnsServerDirectoryPartition "Add-DnsServerDirectoryPartition"
 [msdocs:Add-DnsServerPrimaryZone]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Add-DnsServerPrimaryZone "Add-DnsServerPrimaryZone"
 [msdocs:Add-DnsServerQueryResolutionPolicy]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Add-DnsServerQueryResolutionPolicy "Add-DnsServerQueryResolutionPolicy"
 [msdocs:Add-DnsServerRecursionScope]: https://docs.microsoft.com/en-us/powershell/module/dnsserver/Add-DnsServerRecursionScope "Add-DnsServerRecursionScope"
@@ -1016,8 +1086,8 @@ Powershell users refer to the command-line environment as the **"console"**, as 
 
 [Add-DnsServerClientSubnet]: #add-dnsserverclientsubnet '```&#10;PS> Add-DnsServerClientSubnet&#10;```&#10;Adds a client subnet to a DNS server.'
 [Add-DnsServerConditionalForwarderZone]: #add-dnsserverconditionalforwarderzone '```&#10;PS> Add-DnsServerConditionalForwarderZone&#10;```&#10;Adds a conditional forwarder to a DNS server.'
-[Add-DnsServerDirectoryPartition]: #add-dnsserverdirectorypartition '```&#10;PS> Add-DnsServerDirectoryPartition&#10;```&#10;Creates a DNS application directory partition.'
 [Add-DnsServerForwarder]: #add-dnsserverforwarder '```&#10;PS> Add-DnsServerForwarder&#10;```&#10;Adds server level forwarders to a DNS server.'
+[Add-DnsServerDirectoryPartition]: #add-dnsserverdirectorypartition '```&#10;PS> Add-DnsServerDirectoryPartition&#10;```&#10;Creates a DNS application directory partition.'
 [Add-DnsServerPrimaryZone]: #add-dnsserverprimaryzone '```&#10;PS> Add-DnsServerPrimaryZone&#10;```&#10;Adds a primary zone to a DNS server.'
 [Add-DnsServerQueryResolutionPolicy]: #add-dnsserverqueryresolutionpolicy '```&#10;PS> Add-DnsServerQueryResolutionPolicy&#10;```&#10;Adds a policy for query resolution to a DNS server.'
 [Add-DnsServerRecursionScope]: #add-dnsserverrecursionscope '```&#10;PS> Add-DnsServerRecursionScope&#10;```&#10;Adds a recursion scope on a DNS server.'
@@ -1146,6 +1216,17 @@ Powershell users refer to the command-line environment as the **"console"**, as 
 [Unregister-DnsServerDirectoryPartition]: #unregister-dnsserverdirectorypartition '```&#10;PS> Unregister-DnsServerDirectoryPartition&#10;```&#10;Deregisters a DNS server from a DNS application directory partition.'
 [Update-DnsServerTrustPoint]: #update-dnsservertrustpoint '```&#10;PS> Update-DnsServerTrustPoint&#10;```&#10;Updates all trust points in a DNS trust anchor zone.'
 
+[forwarder]: #dnsserver 'forwarder&#10;DNS server that forwards queries of external domains to a remote DNS server for resolution'
+[conditional forwarder]: #dnsserver 'conditional forwarder&#10;DNS server that only forwards queries for specific domain names'
+
+- DnsServer[ConditionalForwarderZone][conditional forwarder]
+[**`Add`**][Add-DnsServerConditionalForwarderZone]<sup>[?][msdocs:Add-DnsServerConditionalForwarderZone]</sup>
+[`Set`][Set-DnsServerConditionalForwarderZone]<sup>[?][msdocs:Set-DnsServerConditionalForwarderZone]</sup>
+- DnsServer[Forwarder][forwarder]
+[**`Add`**][Add-DnsServerForwarder]<sup>[?][msdocs:Add-DnsServerForwarder]</sup>
+[`Get`][Get-DnsServerForwarder]<sup>[?][msdocs:Get-DnsServerForwarder]</sup>
+[`Remove`][Remove-DnsServerForwarder]<sup>[?][msdocs:Remove-DnsServerForwarder]</sup>
+[`Set`][Set-DnsServerForwarder]<sup>[?][msdocs:Set-DnsServerForwarder]</sup>
 - DnsServerPrimaryZone
 [**`Add`**][Add-DnsServerPrimaryZone]<sup>[?][msdocs:Add-DnsServerPrimaryZone]</sup>
 [`ConvertTo`][ConvertTo-DnsServerPrimaryZone]<sup>[?][msdocs:ConvertTo-DnsServerPrimaryZone]</sup>
@@ -1163,6 +1244,11 @@ Powershell users refer to the command-line environment as the **"console"**, as 
 [`Resume`][Resume-DnsServerZone]<sup>[?][msdocs:Resume-DnsServerZone]</sup>
 [`Suspend`][Suspend-DnsServerZone]<sup>[?][msdocs:Suspend-DnsServerZone]</sup>
 [`Sync`][Sync-DnsServerZone]<sup>[?][msdocs:Sync-DnsServerZone]</sup>
+- Dns ServerZoneDelegation
+[**`Add`**][Add-DnsServerZoneDelegation]<sup>[?][msdocs:Add-DnsServerZoneDelegation]</sup>
+[`Get`][Get-DnsServerZoneDelegation]<sup>[?][msdocs:Get-DnsServerZoneDelegation]</sup>
+[`Remove`][Remove-DnsServerZoneDelegation]<sup>[?][msdocs:Remove-DnsServerZoneDelegation]</sup>
+[`Set`][Set-DnsServerZoneDelegation]<sup>[?][msdocs:Set-DnsServerZoneDelegation]</sup>
 #### failoverclusters
 [msdocs:Get-Cluster]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Get-Cluster "Get-Cluster"
 [msdocs:New-Cluster]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/New-Cluster "New-Cluster"
@@ -1388,368 +1474,6 @@ Powershell users refer to the command-line environment as the **"console"**, as 
 - ClusterQuorum
 [`Get`][Get-ClusterQuorum]<sup>[?][msdocs:Get-ClusterQuorum]</sup>
 [`Set`][Set-ClusterQuorum]<sup>[?][msdocs:Set-ClusterQuorum]</sup>
-#### storage
-[msdocs:Get-DedupProperties]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-DedupProperties "Get-DedupProperties documentation"
-[msdocs:Clear-Disk]: https://docs.microsoft.com/en-us/powershell/module/storage/Clear-Disk "Clear-Disk documentation"
-[msdocs:Get-Disk]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-Disk "Get-Disk documentation"
-[msdocs:Initialize-Disk]: https://docs.microsoft.com/en-us/powershell/module/storage/Initialize-Disk "Initialize-Disk documentation"
-[msdocs:Set-Disk]: https://docs.microsoft.com/en-us/powershell/module/storage/Set-Disk "Set-Disk documentation"
-[msdocs:Update-Disk]: https://docs.microsoft.com/en-us/powershell/module/storage/Update-Disk "Update-Disk documentation"
-[msdocs:Dismount-DiskImage]: https://docs.microsoft.com/en-us/powershell/module/storage/Dismount-DiskImage "Dismount-DiskImage documentation"
-[msdocs:Get-DiskImage]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-DiskImage "Get-DiskImage documentation"
-[msdocs:Mount-DiskImage]: https://docs.microsoft.com/en-us/powershell/module/storage/Mount-DiskImage "Mount-DiskImage documentation"
-[msdocs:Get-DiskStorageNodeView]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-DiskStorageNodeView "Get-DiskStorageNodeView documentation"
-[msdocs:Get-FileIntegrity]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-FileIntegrity "Get-FileIntegrity documentation"
-[msdocs:Repair-FileIntegrity]: https://docs.microsoft.com/en-us/powershell/module/storage/Repair-FileIntegrity "Repair-FileIntegrity documentation"
-[msdocs:Set-FileIntegrity]: https://docs.microsoft.com/en-us/powershell/module/storage/Set-FileIntegrity "Set-FileIntegrity documentation"
-[msdocs:Debug-FileShare]: https://docs.microsoft.com/en-us/powershell/module/storage/Debug-FileShare "Debug-FileShare documentation"
-[msdocs:Get-FileShare]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-FileShare "Get-FileShare documentation"
-[msdocs:New-FileShare]: https://docs.microsoft.com/en-us/powershell/module/storage/New-FileShare "New-FileShare documentation"
-[msdocs:Remove-FileShare]: https://docs.microsoft.com/en-us/powershell/module/storage/Remove-FileShare "Remove-FileShare documentation"
-[msdocs:Set-FileShare]: https://docs.microsoft.com/en-us/powershell/module/storage/Set-FileShare "Set-FileShare documentation"
-[msdocs:Block-FileShareAccess]: https://docs.microsoft.com/en-us/powershell/module/storage/Block-FileShareAccess "Block-FileShareAccess documentation"
-[msdocs:Grant-FileShareAccess]: https://docs.microsoft.com/en-us/powershell/module/storage/Grant-FileShareAccess "Grant-FileShareAccess documentation"
-[msdocs:Revoke-FileShareAccess]: https://docs.microsoft.com/en-us/powershell/module/storage/Revoke-FileShareAccess "Revoke-FileShareAccess documentation"
-[msdocs:Unblock-FileShareAccess]: https://docs.microsoft.com/en-us/powershell/module/storage/Unblock-FileShareAccess "Unblock-FileShareAccess documentation"
-[msdocs:Get-FileShareAccessControlEntry]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-FileShareAccessControlEntry "Get-FileShareAccessControlEntry documentation"
-[msdocs:Set-FileStorageTier]: https://docs.microsoft.com/en-us/powershell/module/storage/Set-FileStorageTier "Set-FileStorageTier documentation"
-[msdocs:Clear-FileStorageTier]: https://docs.microsoft.com/en-us/powershell/module/storage/Clear-FileStorageTier "Clear-FileStorageTier documentation"
-[msdocs:Get-FileStorageTier]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-FileStorageTier "Get-FileStorageTier documentation"
-[msdocs:Update-HostStorageCache]: https://docs.microsoft.com/en-us/powershell/module/storage/Update-HostStorageCache "Update-HostStorageCache documentation"
-[msdocs:Get-InitiatorId]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-InitiatorId "Get-InitiatorId documentation"
-[msdocs:Remove-InitiatorId]: https://docs.microsoft.com/en-us/powershell/module/storage/Remove-InitiatorId "Remove-InitiatorId documentation"
-[msdocs:Remove-InitiatorIdFromMaskingSet]: https://docs.microsoft.com/en-us/powershell/module/storage/Remove-InitiatorIdFromMaskingSet "Remove-InitiatorIdFromMaskingSet documentation"
-[msdocs:Add-InitiatorIdToMaskingSet]: https://docs.microsoft.com/en-us/powershell/module/storage/Add-InitiatorIdToMaskingSet "Add-InitiatorIdToMaskingSet documentation"
-[msdocs:Get-InitiatorPort]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-InitiatorPort "Get-InitiatorPort documentation"
-[msdocs:Set-InitiatorPort]: https://docs.microsoft.com/en-us/powershell/module/storage/Set-InitiatorPort "Set-InitiatorPort documentation"
-[msdocs:Get-MaskingSet]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-MaskingSet "Get-MaskingSet documentation"
-[msdocs:New-MaskingSet]: https://docs.microsoft.com/en-us/powershell/module/storage/New-MaskingSet "New-MaskingSet documentation"
-[msdocs:Remove-MaskingSet]: https://docs.microsoft.com/en-us/powershell/module/storage/Remove-MaskingSet "Remove-MaskingSet documentation"
-[msdocs:Rename-MaskingSet]: https://docs.microsoft.com/en-us/powershell/module/storage/Rename-MaskingSet "Rename-MaskingSet documentation"
-[msdocs:Get-OffloadDataTransferSetting]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-OffloadDataTransferSetting "Get-OffloadDataTransferSetting documentation"
-[msdocs:Get-Partition]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-Partition "Get-Partition documentation"
-[msdocs:New-Partition]: https://docs.microsoft.com/en-us/powershell/module/storage/New-Partition "New-Partition documentation"
-[msdocs:Remove-Partition]: https://docs.microsoft.com/en-us/powershell/module/storage/Remove-Partition "Remove-Partition documentation"
-[msdocs:Resize-Partition]: https://docs.microsoft.com/en-us/powershell/module/storage/Resize-Partition "Resize-Partition documentation"
-[msdocs:Set-Partition]: https://docs.microsoft.com/en-us/powershell/module/storage/Set-Partition "Set-Partition documentation"
-[msdocs:Add-PartitionAccessPath]: https://docs.microsoft.com/en-us/powershell/module/storage/Add-PartitionAccessPath "Add-PartitionAccessPath documentation"
-[msdocs:Remove-PartitionAccessPath]: https://docs.microsoft.com/en-us/powershell/module/storage/Remove-PartitionAccessPath "Remove-PartitionAccessPath documentation"
-[msdocs:Get-PartitionSupportedSize]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-PartitionSupportedSize "Get-PartitionSupportedSize documentation"
-[msdocs:Add-PhysicalDisk]: https://docs.microsoft.com/en-us/powershell/module/storage/Add-PhysicalDisk "Add-PhysicalDisk documentation"
-[msdocs:Get-PhysicalDisk]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-PhysicalDisk "Get-PhysicalDisk documentation"
-[msdocs:Remove-PhysicalDisk]: https://docs.microsoft.com/en-us/powershell/module/storage/Remove-PhysicalDisk "Remove-PhysicalDisk documentation"
-[msdocs:Reset-PhysicalDisk]: https://docs.microsoft.com/en-us/powershell/module/storage/Reset-PhysicalDisk "Reset-PhysicalDisk documentation"
-[msdocs:Set-PhysicalDisk]: https://docs.microsoft.com/en-us/powershell/module/storage/Set-PhysicalDisk "Set-PhysicalDisk documentation"
-[msdocs:Disable-PhysicalDiskIdentification]: https://docs.microsoft.com/en-us/powershell/module/storage/Disable-PhysicalDiskIdentification "Disable-PhysicalDiskIdentification documentation"
-[msdocs:Enable-PhysicalDiskIdentification]: https://docs.microsoft.com/en-us/powershell/module/storage/Enable-PhysicalDiskIdentification "Enable-PhysicalDiskIdentification documentation"
-[msdocs:Get-PhysicalDiskStorageNodeView]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-PhysicalDiskStorageNodeView "Get-PhysicalDiskStorageNodeView documentation"
-[msdocs:Get-PhysicalExtent]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-PhysicalExtent "Get-PhysicalExtent documentation"
-[msdocs:Get-PhysicalExtentAssociation]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-PhysicalExtentAssociation "Get-PhysicalExtentAssociation documentation"
-[msdocs:Get-ResiliencySetting]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-ResiliencySetting "Get-ResiliencySetting documentation"
-[msdocs:Set-ResiliencySetting]: https://docs.microsoft.com/en-us/powershell/module/storage/Set-ResiliencySetting "Set-ResiliencySetting documentation"
-[msdocs:Get-StorageAdvancedProperty]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-StorageAdvancedProperty "Get-StorageAdvancedProperty documentation"
-[msdocs:Get-StorageDiagnosticInfo]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-StorageDiagnosticInfo "Get-StorageDiagnosticInfo documentation"
-[msdocs:Start-StorageDiagnosticLog]: https://docs.microsoft.com/en-us/powershell/module/storage/Start-StorageDiagnosticLog "Start-StorageDiagnosticLog documentation"
-[msdocs:Stop-StorageDiagnosticLog]: https://docs.microsoft.com/en-us/powershell/module/storage/Stop-StorageDiagnosticLog "Stop-StorageDiagnosticLog documentation"
-[msdocs:Get-StorageEnclosure]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-StorageEnclosure "Get-StorageEnclosure documentation"
-[msdocs:Disable-StorageEnclosureIdentification]: https://docs.microsoft.com/en-us/powershell/module/storage/Disable-StorageEnclosureIdentification "Disable-StorageEnclosureIdentification documentation"
-[msdocs:Enable-StorageEnclosureIdentification]: https://docs.microsoft.com/en-us/powershell/module/storage/Enable-StorageEnclosureIdentification "Enable-StorageEnclosureIdentification documentation"
-[msdocs:Get-StorageEnclosureStorageNodeView]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-StorageEnclosureStorageNodeView "Get-StorageEnclosureStorageNodeView documentation"
-[msdocs:Get-StorageEnclosureVendorData]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-StorageEnclosureVendorData "Get-StorageEnclosureVendorData documentation"
-[msdocs:Get-StorageFaultDomain]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-StorageFaultDomain "Get-StorageFaultDomain documentation"
-[msdocs:Get-StorageFileServer]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-StorageFileServer "Get-StorageFileServer documentation"
-[msdocs:New-StorageFileServer]: https://docs.microsoft.com/en-us/powershell/module/storage/New-StorageFileServer "New-StorageFileServer documentation"
-[msdocs:Remove-StorageFileServer]: https://docs.microsoft.com/en-us/powershell/module/storage/Remove-StorageFileServer "Remove-StorageFileServer documentation"
-[msdocs:Set-StorageFileServer]: https://docs.microsoft.com/en-us/powershell/module/storage/Set-StorageFileServer "Set-StorageFileServer documentation"
-[msdocs:Update-StorageFirmware]: https://docs.microsoft.com/en-us/powershell/module/storage/Update-StorageFirmware "Update-StorageFirmware documentation"
-[msdocs:Get-StorageFirmwareInformation]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-StorageFirmwareInformation "Get-StorageFirmwareInformation documentation"
-[msdocs:Get-StorageHealthAction]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-StorageHealthAction "Get-StorageHealthAction documentation"
-[msdocs:Get-StorageHealthReport]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-StorageHealthReport "Get-StorageHealthReport documentation"
-[msdocs:Get-StorageHealthSetting]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-StorageHealthSetting "Get-StorageHealthSetting documentation"
-[msdocs:Remove-StorageHealthSetting]: https://docs.microsoft.com/en-us/powershell/module/storage/Remove-StorageHealthSetting "Remove-StorageHealthSetting documentation"
-[msdocs:Set-StorageHealthSetting]: https://docs.microsoft.com/en-us/powershell/module/storage/Set-StorageHealthSetting "Set-StorageHealthSetting documentation"
-[msdocs:Disable-StorageHighAvailability]: https://docs.microsoft.com/en-us/powershell/module/storage/Disable-StorageHighAvailability "Disable-StorageHighAvailability documentation"
-[msdocs:Enable-StorageHighAvailability]: https://docs.microsoft.com/en-us/powershell/module/storage/Enable-StorageHighAvailability "Enable-StorageHighAvailability documentation"
-[msdocs:Get-StorageJob]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-StorageJob "Get-StorageJob documentation"
-[msdocs:Stop-StorageJob]: https://docs.microsoft.com/en-us/powershell/module/storage/Stop-StorageJob "Stop-StorageJob documentation"
-[msdocs:Disable-StorageMaintenanceMode]: https://docs.microsoft.com/en-us/powershell/module/storage/Disable-StorageMaintenanceMode "Disable-StorageMaintenanceMode documentation"
-[msdocs:Enable-StorageMaintenanceMode]: https://docs.microsoft.com/en-us/powershell/module/storage/Enable-StorageMaintenanceMode "Enable-StorageMaintenanceMode documentation"
-[msdocs:Get-StorageNode]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-StorageNode "Get-StorageNode documentation"
-[msdocs:Get-StoragePool]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-StoragePool "Get-StoragePool documentation"
-[msdocs:New-StoragePool]: https://docs.microsoft.com/en-us/powershell/module/storage/New-StoragePool "New-StoragePool documentation"
-[msdocs:Optimize-StoragePool]: https://docs.microsoft.com/en-us/powershell/module/storage/Optimize-StoragePool "Optimize-StoragePool documentation"
-[msdocs:Remove-StoragePool]: https://docs.microsoft.com/en-us/powershell/module/storage/Remove-StoragePool "Remove-StoragePool documentation"
-[msdocs:Set-StoragePool]: https://docs.microsoft.com/en-us/powershell/module/storage/Set-StoragePool "Set-StoragePool documentation"
-[msdocs:Update-StoragePool]: https://docs.microsoft.com/en-us/powershell/module/storage/Update-StoragePool "Update-StoragePool documentation"
-[msdocs:Get-StorageProvider]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-StorageProvider "Get-StorageProvider documentation"
-[msdocs:Set-StorageProvider]: https://docs.microsoft.com/en-us/powershell/module/storage/Set-StorageProvider "Set-StorageProvider documentation"
-[msdocs:Update-StorageProviderCache]: https://docs.microsoft.com/en-us/powershell/module/storage/Update-StorageProviderCache "Update-StorageProviderCache documentation"
-[msdocs:Get-StorageReliabilityCounter]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-StorageReliabilityCounter "Get-StorageReliabilityCounter documentation"
-[msdocs:Reset-StorageReliabilityCounter]: https://docs.microsoft.com/en-us/powershell/module/storage/Reset-StorageReliabilityCounter "Reset-StorageReliabilityCounter documentation"
-[msdocs:Get-StorageSetting]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-StorageSetting "Get-StorageSetting documentation"
-[msdocs:Set-StorageSetting]: https://docs.microsoft.com/en-us/powershell/module/storage/Set-StorageSetting "Set-StorageSetting documentation"
-[msdocs:Debug-StorageSubSystem]: https://docs.microsoft.com/en-us/powershell/module/storage/Debug-StorageSubSystem "Debug-StorageSubSystem documentation"
-[msdocs:Get-StorageSubsystem]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-StorageSubsystem "Get-StorageSubsystem documentation"
-[msdocs:Register-StorageSubsystem]: https://docs.microsoft.com/en-us/powershell/module/storage/Register-StorageSubsystem "Register-StorageSubsystem documentation"
-[msdocs:Set-StorageSubsystem]: https://docs.microsoft.com/en-us/powershell/module/storage/Set-StorageSubsystem "Set-StorageSubsystem documentation"
-[msdocs:Unregister-StorageSubsystem]: https://docs.microsoft.com/en-us/powershell/module/storage/Unregister-StorageSubsystem "Unregister-StorageSubsystem documentation"
-[msdocs:New-StorageSubsystemVirtualDisk]: https://docs.microsoft.com/en-us/powershell/module/storage/New-StorageSubsystemVirtualDisk "New-StorageSubsystemVirtualDisk documentation"
-[msdocs:Get-StorageTier]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-StorageTier "Get-StorageTier documentation"
-[msdocs:New-StorageTier]: https://docs.microsoft.com/en-us/powershell/module/storage/New-StorageTier "New-StorageTier documentation"
-[msdocs:Remove-StorageTier]: https://docs.microsoft.com/en-us/powershell/module/storage/Remove-StorageTier "Remove-StorageTier documentation"
-[msdocs:Resize-StorageTier]: https://docs.microsoft.com/en-us/powershell/module/storage/Resize-StorageTier "Resize-StorageTier documentation"
-[msdocs:Set-StorageTier]: https://docs.microsoft.com/en-us/powershell/module/storage/Set-StorageTier "Set-StorageTier documentation"
-[msdocs:Get-StorageTierSupportedSize]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-StorageTierSupportedSize "Get-StorageTierSupportedSize documentation"
-[msdocs:Get-SupportedClusterSizes]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-SupportedClusterSizes "Get-SupportedClusterSizes documentation"
-[msdocs:Get-SupportedFileSystems]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-SupportedFileSystems "Get-SupportedFileSystems documentation"
-[msdocs:Get-TargetPort]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-TargetPort "Get-TargetPort documentation"
-[msdocs:Get-TargetPortal]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-TargetPortal "Get-TargetPortal documentation"
-[msdocs:Remove-TargetPortFromMaskingSet]: https://docs.microsoft.com/en-us/powershell/module/storage/Remove-TargetPortFromMaskingSet "Remove-TargetPortFromMaskingSet documentation"
-[msdocs:Add-TargetPortToMaskingSet]: https://docs.microsoft.com/en-us/powershell/module/storage/Add-TargetPortToMaskingSet "Add-TargetPortToMaskingSet documentation"
-[msdocs:Connect-VirtualDisk]: https://docs.microsoft.com/en-us/powershell/module/storage/Connect-VirtualDisk "Connect-VirtualDisk documentation"
-[msdocs:Disconnect-VirtualDisk]: https://docs.microsoft.com/en-us/powershell/module/storage/Disconnect-VirtualDisk "Disconnect-VirtualDisk documentation"
-[msdocs:Get-VirtualDisk]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-VirtualDisk "Get-VirtualDisk documentation"
-[msdocs:Hide-VirtualDisk]: https://docs.microsoft.com/en-us/powershell/module/storage/Hide-VirtualDisk "Hide-VirtualDisk documentation"
-[msdocs:New-VirtualDisk]: https://docs.microsoft.com/en-us/powershell/module/storage/New-VirtualDisk "New-VirtualDisk documentation"
-[msdocs:Remove-VirtualDisk]: https://docs.microsoft.com/en-us/powershell/module/storage/Remove-VirtualDisk "Remove-VirtualDisk documentation"
-[msdocs:Repair-VirtualDisk]: https://docs.microsoft.com/en-us/powershell/module/storage/Repair-VirtualDisk "Repair-VirtualDisk documentation"
-[msdocs:Resize-VirtualDisk]: https://docs.microsoft.com/en-us/powershell/module/storage/Resize-VirtualDisk "Resize-VirtualDisk documentation"
-[msdocs:Set-VirtualDisk]: https://docs.microsoft.com/en-us/powershell/module/storage/Set-VirtualDisk "Set-VirtualDisk documentation"
-[msdocs:Show-VirtualDisk]: https://docs.microsoft.com/en-us/powershell/module/storage/Show-VirtualDisk "Show-VirtualDisk documentation"
-[msdocs:New-VirtualDiskClone]: https://docs.microsoft.com/en-us/powershell/module/storage/New-VirtualDiskClone "New-VirtualDiskClone documentation"
-[msdocs:Remove-VirtualDiskFromMaskingSet]: https://docs.microsoft.com/en-us/powershell/module/storage/Remove-VirtualDiskFromMaskingSet "Remove-VirtualDiskFromMaskingSet documentation"
-[msdocs:New-VirtualDiskSnapshot]: https://docs.microsoft.com/en-us/powershell/module/storage/New-VirtualDiskSnapshot "New-VirtualDiskSnapshot documentation"
-[msdocs:Get-VirtualDiskSupportedSize]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-VirtualDiskSupportedSize "Get-VirtualDiskSupportedSize documentation"
-[msdocs:Add-VirtualDiskToMaskingSet]: https://docs.microsoft.com/en-us/powershell/module/storage/Add-VirtualDiskToMaskingSet "Add-VirtualDiskToMaskingSet documentation"
-[msdocs:Debug-Volume]: https://docs.microsoft.com/en-us/powershell/module/storage/Debug-Volume "Debug-Volume documentation"
-[msdocs:Format-Volume]: https://docs.microsoft.com/en-us/powershell/module/storage/Format-Volume "Format-Volume documentation"
-[msdocs:Get-Volume]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-Volume "Get-Volume documentation"
-[msdocs:New-Volume]: https://docs.microsoft.com/en-us/powershell/module/storage/New-Volume "New-Volume documentation"
-[msdocs:Optimize-Volume]: https://docs.microsoft.com/en-us/powershell/module/storage/Optimize-Volume "Optimize-Volume documentation"
-[msdocs:Repair-Volume]: https://docs.microsoft.com/en-us/powershell/module/storage/Repair-Volume "Repair-Volume documentation"
-[msdocs:Set-Volume]: https://docs.microsoft.com/en-us/powershell/module/storage/Set-Volume "Set-Volume documentation"
-[msdocs:Write-VolumeCache]: https://docs.microsoft.com/en-us/powershell/module/storage/Write-VolumeCache "Write-VolumeCache documentation"
-[msdocs:Get-VolumeCorruptionCount]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-VolumeCorruptionCount "Get-VolumeCorruptionCount documentation"
-[msdocs:Get-VolumeScrubPolicy]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-VolumeScrubPolicy "Get-VolumeScrubPolicy documentation"
-[msdocs:Set-VolumeScrubPolicy]: https://docs.microsoft.com/en-us/powershell/module/storage/Set-VolumeScrubPolicy "Set-VolumeScrubPolicy documentation"
-
-
-[Get-DedupProperties]: #get-dedupproperties '```&#10;Get-DedupProperties&#10;```&#10;Gets Data Deduplication information.'
-[Clear-Disk]: #clear-disk '```&#10;Clear-Disk&#10;```&#10;Cleans a disk by removing all partition information and un-initializing it, erasing all data on the disk.'
-[Get-Disk]: #get-disk '```&#10;Get-Disk&#10;```&#10;Gets one or more disks visible to the operating system.'
-[Initialize-Disk]: #initialize-disk '```&#10;Initialize-Disk&#10;```&#10;Initializes a RAW disk for first time use, enabling the disk to be formatted and used to store data.'
-[Set-Disk]: #set-disk '```&#10;Set-Disk&#10;```&#10;Takes a Disk object or unique disk identifiers and a set of attributes, and updates the physical disk on the system.'
-[Update-Disk]: #update-disk '```&#10;Update-Disk&#10;```&#10;Updates cached information about the specified Disk object only'
-[Dismount-DiskImage]: #dismount-diskimage '```&#10;Dismount-DiskImage&#10;```&#10;Dismounts a disk image (virtual hard disk or ISO) so that it can no longer be accessed as a disk.'
-[Get-DiskImage]: #get-diskimage '```&#10;Get-DiskImage&#10;```&#10;Gets one or more disk image objects (virtual hard disk or ISO).'
-[Mount-DiskImage]: #mount-diskimage '```&#10;Mount-DiskImage&#10;```&#10;Mounts a previously created disk image (virtual hard disk or ISO), making it appear as a normal disk.'
-[Get-DiskStorageNodeView]: #get-diskstoragenodeview '```&#10;Get-DiskStorageNodeView&#10;```&#10;Gets the view of a disk from a storage node.'
-[Get-FileIntegrity]: #get-fileintegrity '```&#10;Get-FileIntegrity&#10;```&#10;Gets integrity information for a file on an ReFS volume.'
-[Repair-FileIntegrity]: #repair-fileintegrity '```&#10;Repair-FileIntegrity&#10;```&#10;Repairs a corrupted file on an NTFS or ReFS volume.'
-[Set-FileIntegrity]: #set-fileintegrity '```&#10;Set-FileIntegrity&#10;```&#10;Sets integrity for a file on an ReFS volume.'
-[Debug-FileShare]: #debug-fileshare '```&#10;Debug-FileShare&#10;```&#10;Finds problems with a file share and recommends solutions.'
-[Get-FileShare]: #get-fileshare '```&#10;Get-FileShare&#10;```&#10;Retrieves file share objects and their properties.'
-[New-FileShare]: #new-fileshare '```&#10;New-FileShare&#10;```&#10;Creates an access point for a remote file share.'
-[Remove-FileShare]: #remove-fileshare '```&#10;Remove-FileShare&#10;```&#10;Removes a file share.'
-[Set-FileShare]: #set-fileshare '```&#10;Set-FileShare&#10;```&#10;Modifies a file share.'
-[Block-FileShareAccess]: #block-fileshareaccess '```&#10;Block-FileShareAccess&#10;```&#10;Blocks access to a file share.'
-[Grant-FileShareAccess]: #grant-fileshareaccess '```&#10;Grant-FileShareAccess&#10;```&#10;Grants access to a file share.'
-[Revoke-FileShareAccess]: #revoke-fileshareaccess '```&#10;Revoke-FileShareAccess&#10;```&#10;Revokes access to a file share.'
-[Unblock-FileShareAccess]: #unblock-fileshareaccess '```&#10;Unblock-FileShareAccess&#10;```&#10;Unblocks access to a file share.'
-[Get-FileShareAccessControlEntry]: #get-fileshareaccesscontrolentry '```&#10;Get-FileShareAccessControlEntry&#10;```&#10;Retrieves an access control entry for the share corresponding to a single account.'
-[Set-FileStorageTier]: #set-filestoragetier '```&#10;Set-FileStorageTier&#10;```&#10;Assign a file to a storage tier&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 133'
-[Clear-FileStorageTier]: #clear-filestoragetier '```&#10;Clear-FileStorageTier&#10;```&#10;Unpins a file from the specified storage tier.'
-[Get-FileStorageTier]: #get-filestoragetier '```&#10;Get-FileStorageTier&#10;```&#10;Gets the files assigned to a Storage tier on a volume, and their status.'
-[Update-HostStorageCache]: #update-hoststoragecache '```&#10;Update-HostStorageCache&#10;```&#10;Initiates an update on the host storage cache to reflect the current status of storage.'
-[Get-InitiatorId]: #get-initiatorid '```&#10;Get-InitiatorId&#10;```&#10;Gets the InitiatorID objects for the specified iSCSI initiators.'
-[Remove-InitiatorId]: #remove-initiatorid '```&#10;Remove-InitiatorId&#10;```&#10;Removes an initiator identifier (ID).'
-[Remove-InitiatorIdFromMaskingSet]: #remove-initiatoridfrommaskingset '```&#10;Remove-InitiatorIdFromMaskingSet&#10;```&#10;Removes an initiator identifier (ID) from a masking set.'
-[Add-InitiatorIdToMaskingSet]: #add-initiatoridtomaskingset '```&#10;Add-InitiatorIdToMaskingSet&#10;```&#10;Adds an initiator ID to an existing masking set, granting the host associated with the initiator ID access to the virtual disk and target port resources defined in the masking set.'
-[Get-InitiatorPort]: #get-initiatorport '```&#10;Get-InitiatorPort&#10;```&#10;Gets one or more host bus adapter (HBA) initiator ports.'
-[Set-InitiatorPort]: #set-initiatorport '```&#10;Set-InitiatorPort&#10;```&#10;Sets properties on the InitiatorPort object.'
-[Get-MaskingSet]: #get-maskingset '```&#10;Get-MaskingSet&#10;```&#10;Gets masking sets.'
-[New-MaskingSet]: #new-maskingset '```&#10;New-MaskingSet&#10;```&#10;Creates a new masking set.'
-[Remove-MaskingSet]: #remove-maskingset '```&#10;Remove-MaskingSet&#10;```&#10;Removes a masking set.'
-[Rename-MaskingSet]: #rename-maskingset '```&#10;Rename-MaskingSet&#10;```&#10;Renames an existing masking set.'
-[Get-OffloadDataTransferSetting]: #get-offloaddatatransfersetting '```&#10;Get-OffloadDataTransferSetting&#10;```&#10;Returns offloaded data transfer (ODX) settings for the specified subsystem.'
-[Get-Partition]: #get-partition '```&#10;Get-Partition&#10;```&#10;Returns a list of all partition objects visible on all disks, or optionally a filtered list using specified parameters.'
-[New-Partition]: #new-partition '```&#10;New-Partition&#10;```&#10;Creates a new partition on an existing Disk object.'
-[Remove-Partition]: #remove-partition '```&#10;Remove-Partition&#10;```&#10;Deletes the specified Partition object on an existing disk and any underlying Volume objects.'
-[Resize-Partition]: #resize-partition '```&#10;Resize-Partition&#10;```&#10;Resizes a partition and the underlying file system.'
-[Set-Partition]: #set-partition '```&#10;Set-Partition&#10;```&#10;Sets attributes of a partition, such as active, read-only, and offline states.'
-[Add-PartitionAccessPath]: #add-partitionaccesspath '```&#10;Add-PartitionAccessPath&#10;```&#10;Adds an access path such as a drive letter or folder to a partition.'
-[Remove-PartitionAccessPath]: #remove-partitionaccesspath '```&#10;Remove-PartitionAccessPath&#10;```&#10;Removes an access path such as a drive letter or folder from a partition.'
-[Get-PartitionSupportedSize]: #get-partitionsupportedsize '```&#10;Get-PartitionSupportedSize&#10;```&#10;Returns information on supported partition sizes for the specified Disk object.'
-[Add-PhysicalDisk]: #add-physicaldisk '```&#10;Add-PhysicalDisk&#10;```&#10;Adds a physical disk to the specified storage pool or manually assigns a physical disk to a specific virtual disk.'
-[Get-PhysicalDisk]: #get-physicaldisk '```&#10;Get-PhysicalDisk&#10;```&#10;Gets a list of all PhysicalDisk objects visible across any available Storage Management Providers, or optionally a filtered list.'
-[Remove-PhysicalDisk]: #remove-physicaldisk '```&#10;Remove-PhysicalDisk&#10;```&#10;Removes a physical disk from a specified storage pool.'
-[Reset-PhysicalDisk]: #reset-physicaldisk '```&#10;Reset-PhysicalDisk&#10;```&#10;Resets the status of a physical disk.'
-[Set-PhysicalDisk]: #set-physicaldisk '```&#10;Set-PhysicalDisk&#10;```&#10;Sets attributes on a specific physical disk.'
-[Disable-PhysicalDiskIdentification]: #disable-physicaldiskidentification '```&#10;Disable-PhysicalDiskIdentification&#10;```&#10;Turns off the identification LED on the specified physical disk.'
-[Enable-PhysicalDiskIdentification]: #enable-physicaldiskidentification '```&#10;Enable-PhysicalDiskIdentification&#10;```&#10;Enables the identification LED on the specified physical disk.'
-[Get-PhysicalDiskStorageNodeView]: #get-physicaldiskstoragenodeview '```&#10;Get-PhysicalDiskStorageNodeView&#10;```&#10;Gets the node view of a physical disk.'
-[Get-PhysicalExtent]: #get-physicalextent '```&#10;Get-PhysicalExtent&#10;```&#10;Gets physical allocations for a physical disk, storage tier, or virtual disk.'
-[Get-PhysicalExtentAssociation]: #get-physicalextentassociation '```&#10;Get-PhysicalExtentAssociation&#10;```&#10;Gets the physical disk, storage tier, or virtual disk that is associated with a physical extent.'
-[Get-ResiliencySetting]: #get-resiliencysetting '```&#10;Get-ResiliencySetting&#10;```&#10;Gets the resiliency settings (also known as storage layouts) available for creating virtual disks on the specified storage subsystem.'
-[Set-ResiliencySetting]: #set-resiliencysetting '```&#10;Set-ResiliencySetting&#10;```&#10;Modifies the properties of the specified resiliency setting name.'
-[Get-StorageAdvancedProperty]: #get-storageadvancedproperty '```&#10;Get-StorageAdvancedProperty&#10;```&#10;Gets the advanced properties on a storage device.'
-[Get-StorageDiagnosticInfo]: #get-storagediagnosticinfo '```&#10;Get-StorageDiagnosticInfo&#10;```&#10;Gets Storage diagnostic information.'
-[Start-StorageDiagnosticLog]: #start-storagediagnosticlog '```&#10;Start-StorageDiagnosticLog&#10;```&#10;Starts Storage diagnostic logging.'
-[Stop-StorageDiagnosticLog]: #stop-storagediagnosticlog '```&#10;Stop-StorageDiagnosticLog&#10;```&#10;Stops a Storage diagnostic log.'
-[Get-StorageEnclosure]: #get-storageenclosure '```&#10;Get-StorageEnclosure&#10;```&#10;Gets storage enclosures.'
-[Disable-StorageEnclosureIdentification]: #disable-storageenclosureidentification '```&#10;Disable-StorageEnclosureIdentification&#10;```&#10;Turns off the identification LED on a storage enclosure or the slots for individual disks.'
-[Enable-StorageEnclosureIdentification]: #enable-storageenclosureidentification '```&#10;Enable-StorageEnclosureIdentification&#10;```&#10;Enables the identification LED on a storage enclosure or the slots for individual disks.'
-[Get-StorageEnclosureStorageNodeView]: #get-storageenclosurestoragenodeview '```&#10;Get-StorageEnclosureStorageNodeView&#10;```&#10;Gets the node view of a Storage enclosure.'
-[Get-StorageEnclosureVendorData]: #get-storageenclosurevendordata '```&#10;Get-StorageEnclosureVendorData&#10;```&#10;Gets vendor-specific data for an enclosure.'
-[Get-StorageFaultDomain]: #get-storagefaultdomain '```&#10;Get-StorageFaultDomain&#10;```&#10;Gets a Storage fault domain object.'
-[Get-StorageFileServer]: #get-storagefileserver '```&#10;Get-StorageFileServer&#10;```&#10;Gets a storage file server.'
-[New-StorageFileServer]: #new-storagefileserver '```&#10;New-StorageFileServer&#10;```&#10;Creates a storage file server.'
-[Remove-StorageFileServer]: #remove-storagefileserver '```&#10;Remove-StorageFileServer&#10;```&#10;Removes a file server.'
-[Set-StorageFileServer]: #set-storagefileserver '```&#10;Set-StorageFileServer&#10;```&#10;Modifies a storage file server.'
-[Update-StorageFirmware]: #update-storagefirmware '```&#10;Update-StorageFirmware&#10;```&#10;Updates the firmware on a storage device.'
-[Get-StorageFirmwareInformation]: #get-storagefirmwareinformation '```&#10;Get-StorageFirmwareInformation&#10;```&#10;Gets information about firmware on a storage object.'
-[Get-StorageHealthAction]: #get-storagehealthaction '```&#10;Get-StorageHealthAction&#10;```&#10;Gets health-related system activities.'
-[Get-StorageHealthReport]: #get-storagehealthreport '```&#10;Get-StorageHealthReport&#10;```&#10;Gets a storage health report.'
-[Get-StorageHealthSetting]: #get-storagehealthsetting '```&#10;Get-StorageHealthSetting&#10;```&#10;Gets storage health service settings.'
-[Remove-StorageHealthSetting]: #remove-storagehealthsetting '```&#10;Remove-StorageHealthSetting&#10;```&#10;Removes a storage health service setting.'
-[Set-StorageHealthSetting]: #set-storagehealthsetting '```&#10;Set-StorageHealthSetting&#10;```&#10;Modifies a storage health service setting.'
-[Disable-StorageHighAvailability]: #disable-storagehighavailability '```&#10;Disable-StorageHighAvailability&#10;```&#10;Disables a Storage resource.'
-[Enable-StorageHighAvailability]: #enable-storagehighavailability '```&#10;Enable-StorageHighAvailability&#10;```&#10;Enables a disk to be added to the failover cluster.'
-[Get-StorageJob]: #get-storagejob '```&#10;Get-StorageJob&#10;```&#10;Returns information about long-running Storage module jobs, such as a repair task.'
-[Stop-StorageJob]: #stop-storagejob '```&#10;Stop-StorageJob&#10;```&#10;Stops storage job.'
-[Disable-StorageMaintenanceMode]: #disable-storagemaintenancemode '```&#10;Disable-StorageMaintenanceMode&#10;```&#10;Disables storage maintenance mode on a fault domain.'
-[Enable-StorageMaintenanceMode]: #enable-storagemaintenancemode '```&#10;Enable-StorageMaintenanceMode&#10;```&#10;Enables storage maintenance mode on a device.'
-[Get-StorageNode]: #get-storagenode '```&#10;Get-StorageNode&#10;```&#10;Gets storage nodes.'
-[Get-StoragePool]: #get-storagepool '```&#10;Get-StoragePool&#10;```&#10;Gets a specific storage pool, or a set of StoragePool objects either from all storage subsystems across all storage providers, or optionally a filtered subset based on specific parameters.'
-[New-StoragePool]: #new-storagepool '```&#10;New-StoragePool&#10;```&#10;Creates a new storage pool using a group of physical disks.'
-[Optimize-StoragePool]: #optimize-storagepool '```&#10;Optimize-StoragePool&#10;```&#10;Optimizes a Storage pool.'
-[Remove-StoragePool]: #remove-storagepool '```&#10;Remove-StoragePool&#10;```&#10;Deletes a storage pool and associated VirtualDisk objects.'
-[Set-StoragePool]: #set-storagepool '```&#10;Set-StoragePool&#10;```&#10;Modifies the properties of the specified storage pool.'
-[Update-StoragePool]: #update-storagepool '```&#10;Update-StoragePool&#10;```&#10;Updates the metadata of a Windows Server 2012 R2 storage pool.'
-[Get-StorageProvider]: #get-storageprovider '```&#10;Get-StorageProvider&#10;```&#10;Returns a list of the storage providers available on the local computer.'
-[Set-StorageProvider]: #set-storageprovider '```&#10;Set-StorageProvider&#10;```&#10;Modifies whether to enable the SMP provider cache.'
-[Update-StorageProviderCache]: #update-storageprovidercache '```&#10;Update-StorageProviderCache&#10;```&#10;Updates the cache of the service for a particular provider and associated child objects.'
-[Get-StorageReliabilityCounter]: #get-storagereliabilitycounter '```&#10;Get-StorageReliabilityCounter&#10;```&#10;Gets storage reliability counters.'
-[Reset-StorageReliabilityCounter]: #reset-storagereliabilitycounter '```&#10;Reset-StorageReliabilityCounter&#10;```&#10;Resets storage reliability counters for a disk.'
-[Get-StorageSetting]: #get-storagesetting '```&#10;Get-StorageSetting&#10;```&#10;Gets a StorageSetting object.'
-[Set-StorageSetting]: #set-storagesetting '```&#10;Set-StorageSetting&#10;```&#10;Adjusts or configures current storage settings of the StorageSetting object.'
-[Debug-StorageSubSystem]: #debug-storagesubsystem '```&#10;Debug-StorageSubSystem&#10;```&#10;Finds problems with a storage subsystem and recommends solutions.'
-[Get-StorageSubsystem]: #get-storagesubsystem '```&#10;Get-StorageSubsystem&#10;```&#10;Gets one or more StorageSubsystem objects.'
-[Register-StorageSubsystem]: #register-storagesubsystem '```&#10;Register-StorageSubsystem&#10;```&#10;Connects to storage subsystems on a remote computer.'
-[Set-StorageSubsystem]: #set-storagesubsystem '```&#10;Set-StorageSubsystem&#10;```&#10;Modifies the properties of a StorageSubsystem object.'
-[Unregister-StorageSubsystem]: #unregister-storagesubsystem '```&#10;Unregister-StorageSubsystem&#10;```&#10;Disconnects from storage subsystems on a remote computer.'
-[New-StorageSubsystemVirtualDisk]: #new-storagesubsystemvirtualdisk '```&#10;New-StorageSubsystemVirtualDisk&#10;```&#10;Allows the creation of a VirtualDisk object on a storage subsystem that does not support creation of storage pools.'
-[Get-StorageTier]: #get-storagetier '```&#10;Get-StorageTier&#10;```&#10;Gets storage tiers on Windows Storage subsystems.'
-[New-StorageTier]: #new-storagetier '```&#10;New-StorageTier&#10;```&#10;Creates a storage tier.'
-[Remove-StorageTier]: #remove-storagetier '```&#10;Remove-StorageTier&#10;```&#10;Removes storage tiers from a storage pool.'
-[Resize-StorageTier]: #resize-storagetier '```&#10;Resize-StorageTier&#10;```&#10;Increases the size of storage tiers.'
-[Set-StorageTier]: #set-storagetier '```&#10;Set-StorageTier&#10;```&#10;Modifies a storage tier.'
-[Get-StorageTierSupportedSize]: #get-storagetiersupportedsize '```&#10;Get-StorageTierSupportedSize&#10;```&#10;Gets the minimum and maximum possible sizes of a storage tier.'
-[Get-SupportedClusterSizes]: #get-supportedclustersizes '```&#10;Get-SupportedClusterSizes&#10;```&#10;Gets the supported cluster sizes.'
-[Get-SupportedFileSystems]: #get-supportedfilesystems '```&#10;Get-SupportedFileSystems&#10;```&#10;Gets the file system choices for a specified volume.'
-[Get-TargetPort]: #get-targetport '```&#10;Get-TargetPort&#10;```&#10;Returns a TargetPort object associated with a specific port address and connection type.'
-[Get-TargetPortal]: #get-targetportal '```&#10;Get-TargetPortal&#10;```&#10;Returns a TargetPortal object.'
-[Remove-TargetPortFromMaskingSet]: #remove-targetportfrommaskingset '```&#10;Remove-TargetPortFromMaskingSet&#10;```&#10;Removes a specified target port from a masking set.'
-[Add-TargetPortToMaskingSet]: #add-targetporttomaskingset '```&#10;Add-TargetPortToMaskingSet&#10;```&#10;Adds one or more target ports to a specified masking set, allowing a connection between the target ports, and any virtual disks and initiator IDs that the masking set contains.'
-[Connect-VirtualDisk]: #connect-virtualdisk '```&#10;Connect-VirtualDisk&#10;```&#10;Connects a disconnected virtual disk to the specified computer when using the Windows Storage subsystem.'
-[Disconnect-VirtualDisk]: #disconnect-virtualdisk '```&#10;Disconnect-VirtualDisk&#10;```&#10;Disconnects a virtual disk from the specified computer, revoking access to the virtual disk.'
-[Get-VirtualDisk]: #get-virtualdisk '```&#10;Get-VirtualDisk&#10;```&#10;Returns a list of VirtualDisk objects, across all storage pools, across all providers, or optionally a filtered subset based on provided criteria.'
-[Hide-VirtualDisk]: #hide-virtualdisk '```&#10;Hide-VirtualDisk&#10;```&#10;Hides the virtual disk from the host when the Storage Management Provider in use does not support masking sets.'
-[New-VirtualDisk]: #new-virtualdisk '```&#10;New-VirtualDisk&#10;```&#10;Creates a new virtual disk in the specified storage pool.'
-[Remove-VirtualDisk]: #remove-virtualdisk '```&#10;Remove-VirtualDisk&#10;```&#10;Deletes an existing virtual disk and reclaims the used space for use by other virtual disks in the same storage pool.'
-[Repair-VirtualDisk]: #repair-virtualdisk '```&#10;Repair-VirtualDisk&#10;```&#10;Performs repairs on a virtual disk that is unhealthy.'
-[Resize-VirtualDisk]: #resize-virtualdisk '```&#10;Resize-VirtualDisk&#10;```&#10;Resizes an existing virtual disk to be larger or smaller.'
-[Set-VirtualDisk]: #set-virtualdisk '```&#10;Set-VirtualDisk&#10;```&#10;Modifies the attributes of an existing virtual disk.'
-[Show-VirtualDisk]: #show-virtualdisk '```&#10;Show-VirtualDisk&#10;```&#10;Makes a virtual disk available to a host.'
-[New-VirtualDiskClone]: #new-virtualdiskclone '```&#10;New-VirtualDiskClone&#10;```&#10;Creates a new clone of a specified virtual disk.'
-[Remove-VirtualDiskFromMaskingSet]: #remove-virtualdiskfrommaskingset '```&#10;Remove-VirtualDiskFromMaskingSet&#10;```&#10;Removes a virtual disk from a specified masking set to block access to the virtual disk by an InitiatorIds object defined in the masking set.'
-[New-VirtualDiskSnapshot]: #new-virtualdisksnapshot '```&#10;New-VirtualDiskSnapshot&#10;```&#10;Creates a new snapshot of the specified virtual disk.'
-[Get-VirtualDiskSupportedSize]: #get-virtualdisksupportedsize '```&#10;Get-VirtualDiskSupportedSize&#10;```&#10;Returns all sizes supported by a storage pool for virtual disk creation based on the specified resiliency setting name.'
-[Add-VirtualDiskToMaskingSet]: #add-virtualdisktomaskingset '```&#10;Add-VirtualDiskToMaskingSet&#10;```&#10;Adds a virtual disk to a specified masking set and grants access to the virtual disk to all initiator IDs defined in the masking set.'
-[Debug-Volume]: #debug-volume '```&#10;Debug-Volume&#10;```&#10;Finds problems with a volume and recommends solutions.'
-[Format-Volume]: #format-volume '```&#10;Format-Volume&#10;```&#10;Formats one or more existing volumes or a new volume on an existing partition.'
-[Get-Volume]: #get-volume '```&#10;Get-Volume&#10;```&#10;Gets the specified Volume object, or all Volume objects if no filter is provided.'
-[New-Volume]: #new-volume '```&#10;New-Volume&#10;```&#10;Creates a volume with the specified file system.'
-[Optimize-Volume]: #optimize-volume '```&#10;Optimize-Volume&#10;```&#10;Optimizes a volume.'
-[Repair-Volume]: #repair-volume '```&#10;Repair-Volume&#10;```&#10;Performs repairs on a volume.'
-[Set-Volume]: #set-volume '```&#10;Set-Volume&#10;```&#10;Sets or changes the file system label of an existing volume.'
-[Write-VolumeCache]: #write-volumecache '```&#10;Write-VolumeCache&#10;```&#10;Writes the file system cache to disk.'
-[Get-VolumeCorruptionCount]: #get-volumecorruptioncount '```&#10;Get-VolumeCorruptionCount&#10;```&#10;Gets a count of the file system errors on the NTFS volume.'
-[Get-VolumeScrubPolicy]: #get-volumescrubpolicy '```&#10;Get-VolumeScrubPolicy&#10;```&#10;Gets the status of the volume scrub policy.'
-[Set-VolumeScrubPolicy]: #set-volumescrubpolicy '```&#10;Set-VolumeScrubPolicy&#10;```&#10;Sets the status of the volume scrub policy.'
-
-- Disk
-[`Clear`][Clear-Disk]<sup>[?][msdocs:Clear-Disk]</sup>
-[`Get`][Get-Disk]<sup>[?][msdocs:Get-Disk]</sup>
-[`Initialize`][Initialize-Disk]<sup>[?][msdocs:Initialize-Disk]</sup>
-[`Set`][Set-Disk]<sup>[?][msdocs:Set-Disk]</sup>
-[`Update`][Update-Disk]<sup>[?][msdocs:Update-Disk]</sup>
-- FileShare
-[`Debug`][Debug-FileShare]<sup>[?][msdocs:Debug-FileShare]</sup>
-[`Get`][Get-FileShare]<sup>[?][msdocs:Get-FileShare]</sup>
-[`New`][New-FileShare]<sup>[?][msdocs:New-FileShare]</sup>
-[`Remove`][Remove-FileShare]<sup>[?][msdocs:Remove-FileShare]</sup>
-[`Set`][Set-FileShare]<sup>[?][msdocs:Set-FileShare]</sup>
-- Partition
-[`Get`][Get-Partition]<sup>[?][msdocs:Get-Partition]</sup>
-[`New`][New-Partition]<sup>[?][msdocs:New-Partition]</sup>
-[`Remove`][Remove-Partition]<sup>[?][msdocs:Remove-Partition]</sup>
-[`Resize`][Resize-Partition]<sup>[?][msdocs:Resize-Partition]</sup>
-[`Set`][Set-Partition]<sup>[?][msdocs:Set-Partition]</sup>
-- PhysicalDisk
-[`Add`][Add-PhysicalDisk]<sup>[?][msdocs:Add-PhysicalDisk]</sup>
-[`Get`][Get-PhysicalDisk]<sup>[?][msdocs:Get-PhysicalDisk]</sup>
-[`Remove`][Remove-PhysicalDisk]<sup>[?][msdocs:Remove-PhysicalDisk]</sup>
-[`Reset`][Reset-PhysicalDisk]<sup>[?][msdocs:Reset-PhysicalDisk]</sup>
-[`Set`][Set-PhysicalDisk]<sup>[?][msdocs:Set-PhysicalDisk]</sup>
-- Volume
-[`Debug`][Debug-Volume]<sup>[?][msdocs:Debug-Volume]</sup>
-[`Format`][Format-Volume]<sup>[?][msdocs:Format-Volume]</sup>
-[`Get`][Get-Volume]<sup>[?][msdocs:Get-Volume]</sup>
-[`New`][New-Volume]<sup>[?][msdocs:New-Volume]</sup>
-[`Optimize`][Optimize-Volume]<sup>[?][msdocs:Optimize-Volume]</sup>
-[`Repair`][Repair-Volume]<sup>[?][msdocs:Repair-Volume]</sup>
-[`Set`][Set-Volume]<sup>[?][msdocs:Set-Volume]</sup>
-#### dhcpserver
-[Add-DhcpServerInDC]: #add-dhcpserverindc '```&#10;[PS] Add-DhcpServerInDC&#10;```&#10;Adds the computer that runs the DHCP server service to the list of authorized DHCP server services in Active Directory.'
-[Add-DhcpServerv4Scope]: #add-dhcpserverv4scope '```&#10;[PS] Add-DhcpServerv4Scope&#10;```&#10;Adds an IPv4 scope on the DHCP server service.'
-[Get-DhcpServerv4Scope]: #get-dhcpserverv4scope '```&#10;[PS] Get-DhcpServerv4Scope&#10;```&#10;Returns the IPv4 scope configuration of the specified scopes.'
-[Remove-DhcpServerv4Scope]: #remove-dhcpserverv4scope '```&#10;[PS] Remove-DhcpServerv4Scope&#10;```&#10;Deletes the specified IPv4 scopes from the DHCP server service.'
-[Set-DhcpServerv4OptionValue]: #set-dhcpserverv4optionvalue '```&#10;[PS] Set-DhcpServerv4OptionValue&#10;```&#10;Sets an IPv4 option value at the server, scope, or reservation level.'
-[Set-DhcpServerv4Scope]: #set-dhcpserverv4scope '```&#10;[PS] Set-DhcpServerv4Scope&#10;```&#10;Sets the properties of an existing IPv4 scope on the DHCP server service.'
-
-[msdocs:Add-DhcpServerInDC]: https://docs.microsoft.com/en-us/powershell/module/DhcpServer/Add-DhcpServerInDC "Add-DhcpServerInDC documentation"
-[msdocs:Add-DhcpServerv4Scope]: https://docs.microsoft.com/en-us/powershell/module/DhcpServer/Add-DhcpServerv4Scope "Add-DhcpServerv4Scope documentation"
-[msdocs:Set-DhcpServerv4OptionValue]: https://docs.microsoft.com/en-us/powershell/module/DhcpServer/Set-DhcpServerv4OptionValue "Set-DhcpServerv4OptionValue documentation"
-[msdocs:Add-DhcpServerv4Scope]: https://docs.microsoft.com/en-us/powershell/module/DhcpServer/Add-DhcpServerv4Scope "Add-DhcpServerv4Scope documentation"
-[msdocs:Get-DhcpServerv4Scope]: https://docs.microsoft.com/en-us/powershell/module/DhcpServer/Get-DhcpServerv4Scope "Get-DhcpServerv4Scope documentation"
-[msdocs:Remove-DhcpServerv4Scope]: https://docs.microsoft.com/en-us/powershell/module/DhcpServer/Remove-DhcpServerv4Scope "Remove-DhcpServerv4Scope documentation"
-[msdocs:Set-DhcpServerv4Scope]: https://docs.microsoft.com/en-us/powershell/module/DhcpServer/Set-DhcpServerv4Scope "Set-DhcpServerv4Scope documentation"
-
-
-- DHCPServerInDC 
-[`Add`][Add-DhcpServerInDC]<sup>[?][msdocs:Add-DhcpServerInDC]</sup>
-- DHCPServerv4Scope 
-[`Add`][Add-DhcpServerv4Scope]<sup>[?][msdocs:Add-DhcpServerv4Scope]</sup>
-[`Get`][Get-DhcpServerv4Scope]<sup>[?][msdocs:Get-DhcpServerv4Scope]</sup>
-[`Remove`][Remove-DhcpServerv4Scope]<sup>[?][msdocs:Remove-DhcpServerv4Scope]</sup>
-[`Set`][Set-DhcpServerv4Scope]<sup>[?][msdocs:Set-DhcpServerv4Scope]</sup>
-- DHCPServerv4OptionValue 
-[`Set`][Set-DhcpServerv4OptionValue]<sup>[?][msdocs:Set-DhcpServerv4OptionValue]</sup>
-#### dnsclient
-[Get-DnsClientServerAddress]: #get-dnsclientserveraddress '```&#10;[PS] Get-DnsClientServerAddress&#10;```&#10;Gets DNS server IP addresses from the TCP/IP properties on an interface.'
-[Set-DnsClientServerAddress]: #set-dnsclientserveraddress '```&#10;[PS] Set-DnsClientServerAddress&#10;```&#10;Set DNS server addresses associated with the TCP/IP properties on an interface&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 20'
-[Resolve-DnsName]: #resolve-dnsname '```&#10;[PS] Resolve-DnsName&#10;```&#10;Performs a DNS name query resolution for the specified name.'
-
-[msdocs:Get-DnsClientServerAddress]: https://docs.microsoft.com/en-us/powershell/module/dnsclient/Get-DnsClientServerAddress "Get-DnsClientServerAddress"
-[msdocs:Set-DnsClientServerAddress]: https://docs.microsoft.com/en-us/powershell/module/dnsclient/Set-DnsClientServerAddress "Set-DnsClientServerAddress"
-[msdocs:Resolve-DnsName]: https://docs.microsoft.com/en-us/powershell/module/dnsclient/Resolve-DnsName "Resolve-DnsName"
-
-- DnsClientServerAddress
-[`Get`][Get-DnsClientServerAddress]<sup>[?][msdocs:Get-DnsClientServerAddress]</sup>
-[`Set`][Set-DnsClientServerAddress]<sup>[?][msdocs:Set-DnsClientServerAddress]</sup>
-- DnsName
-[`Resolve`][Resolve-DnsName]<sup>[?][msdocs:Resolve-DnsName]</sup>
 #### grouppolicy
 [Backup-GPO]: #backup-gpo '```&#10;[PS] Backup-GPO&#10;```&#10;Backs up one GPO or all the GPOs in a domain.'
 [Copy-GPO]: #copy-gpo '```&#10;[PS] Copy-GPO&#10;```&#10;Copies a GPO.'
@@ -3023,7 +2747,7 @@ Powershell users refer to the command-line environment as the **"console"**, as 
 - NetFirewallRule 
 [`Copy`][Copy-NetFirewallRule]<sup>[?][msdocs:Copy-NetFirewallRule]</sup>
 [`Disable`][Disable-NetFirewallRule]<sup>[?][msdocs:Disable-NetFirewallRule]</sup>
-[`Enable`][Enable-NetFirewallRule]<sup>[?][msdocs:Enable-NetFirewallRule]</sup>
+[**`Enable`**][Enable-NetFirewallRule]<sup>[?][msdocs:Enable-NetFirewallRule]</sup>
 [`Get`][Get-NetFirewallRule]<sup>[?][msdocs:Get-NetFirewallRule]</sup>
 [`New`][New-NetFirewallRule]<sup>[?][msdocs:New-NetFirewallRule]</sup>
 [`Remove`][Remove-NetFirewallRule]<sup>[?][msdocs:Remove-NetFirewallRule]</sup>
@@ -3202,7 +2926,6 @@ Powershell users refer to the command-line environment as the **"console"**, as 
 [`Get`][Get-PfxData]<sup>[?][msdocs:Get-PfxData]</sup>
 - SelfSignedCertificate
 [`New`][New-SelfSignedCertificate]<sup>[?][msdocs:New-SelfSignedCertificate]</sup>
-
 #### psdesiredstateconfiguration
 [msdocs:New-DSCCheckSum]: https://docs.microsoft.com/en-us/powershell/module/psdesiredstateconfiguration/New-DSCCheckSum "New-DSCCheckSum"
 [msdocs:Get-DscConfiguration]: https://docs.microsoft.com/en-us/powershell/module/psdesiredstateconfiguration/Get-DscConfiguration "Get-DscConfiguration"
@@ -3408,6 +3131,328 @@ Powershell users refer to the command-line environment as the **"console"**, as 
 [Grant-SmbShareAccess]: #grant-smbshareaccess '```&#10;Grant-SmbShareAccess&#10;```&#10;Adds an allow ACE for a trustee to the security descriptor of the SMB share.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 109'
 [Revoke-SmbShareAccess]: #revoke-smbshareaccess '```&#10;Revoke-SmbShareAccess&#10;```&#10;Removes all of the allow ACEs for a trustee from the security descriptor of the SMB share.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 109'
 [Unblock-SmbShareAccess]: #unblock-smbshareaccess '```&#10;Unblock-SmbShareAccess&#10;```&#10;Removes all of the deny ACEs for the trustee from the security descriptor of the SMB share.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 109'
+#### storage
+[msdocs:Get-DedupProperties]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-DedupProperties "Get-DedupProperties documentation"
+[msdocs:Clear-Disk]: https://docs.microsoft.com/en-us/powershell/module/storage/Clear-Disk "Clear-Disk documentation"
+[msdocs:Get-Disk]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-Disk "Get-Disk documentation"
+[msdocs:Initialize-Disk]: https://docs.microsoft.com/en-us/powershell/module/storage/Initialize-Disk "Initialize-Disk documentation"
+[msdocs:Set-Disk]: https://docs.microsoft.com/en-us/powershell/module/storage/Set-Disk "Set-Disk documentation"
+[msdocs:Update-Disk]: https://docs.microsoft.com/en-us/powershell/module/storage/Update-Disk "Update-Disk documentation"
+[msdocs:Dismount-DiskImage]: https://docs.microsoft.com/en-us/powershell/module/storage/Dismount-DiskImage "Dismount-DiskImage documentation"
+[msdocs:Get-DiskImage]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-DiskImage "Get-DiskImage documentation"
+[msdocs:Mount-DiskImage]: https://docs.microsoft.com/en-us/powershell/module/storage/Mount-DiskImage "Mount-DiskImage documentation"
+[msdocs:Get-DiskStorageNodeView]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-DiskStorageNodeView "Get-DiskStorageNodeView documentation"
+[msdocs:Get-FileIntegrity]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-FileIntegrity "Get-FileIntegrity documentation"
+[msdocs:Repair-FileIntegrity]: https://docs.microsoft.com/en-us/powershell/module/storage/Repair-FileIntegrity "Repair-FileIntegrity documentation"
+[msdocs:Set-FileIntegrity]: https://docs.microsoft.com/en-us/powershell/module/storage/Set-FileIntegrity "Set-FileIntegrity documentation"
+[msdocs:Debug-FileShare]: https://docs.microsoft.com/en-us/powershell/module/storage/Debug-FileShare "Debug-FileShare documentation"
+[msdocs:Get-FileShare]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-FileShare "Get-FileShare documentation"
+[msdocs:New-FileShare]: https://docs.microsoft.com/en-us/powershell/module/storage/New-FileShare "New-FileShare documentation"
+[msdocs:Remove-FileShare]: https://docs.microsoft.com/en-us/powershell/module/storage/Remove-FileShare "Remove-FileShare documentation"
+[msdocs:Set-FileShare]: https://docs.microsoft.com/en-us/powershell/module/storage/Set-FileShare "Set-FileShare documentation"
+[msdocs:Block-FileShareAccess]: https://docs.microsoft.com/en-us/powershell/module/storage/Block-FileShareAccess "Block-FileShareAccess documentation"
+[msdocs:Grant-FileShareAccess]: https://docs.microsoft.com/en-us/powershell/module/storage/Grant-FileShareAccess "Grant-FileShareAccess documentation"
+[msdocs:Revoke-FileShareAccess]: https://docs.microsoft.com/en-us/powershell/module/storage/Revoke-FileShareAccess "Revoke-FileShareAccess documentation"
+[msdocs:Unblock-FileShareAccess]: https://docs.microsoft.com/en-us/powershell/module/storage/Unblock-FileShareAccess "Unblock-FileShareAccess documentation"
+[msdocs:Get-FileShareAccessControlEntry]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-FileShareAccessControlEntry "Get-FileShareAccessControlEntry documentation"
+[msdocs:Set-FileStorageTier]: https://docs.microsoft.com/en-us/powershell/module/storage/Set-FileStorageTier "Set-FileStorageTier documentation"
+[msdocs:Clear-FileStorageTier]: https://docs.microsoft.com/en-us/powershell/module/storage/Clear-FileStorageTier "Clear-FileStorageTier documentation"
+[msdocs:Get-FileStorageTier]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-FileStorageTier "Get-FileStorageTier documentation"
+[msdocs:Update-HostStorageCache]: https://docs.microsoft.com/en-us/powershell/module/storage/Update-HostStorageCache "Update-HostStorageCache documentation"
+[msdocs:Get-InitiatorId]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-InitiatorId "Get-InitiatorId documentation"
+[msdocs:Remove-InitiatorId]: https://docs.microsoft.com/en-us/powershell/module/storage/Remove-InitiatorId "Remove-InitiatorId documentation"
+[msdocs:Remove-InitiatorIdFromMaskingSet]: https://docs.microsoft.com/en-us/powershell/module/storage/Remove-InitiatorIdFromMaskingSet "Remove-InitiatorIdFromMaskingSet documentation"
+[msdocs:Add-InitiatorIdToMaskingSet]: https://docs.microsoft.com/en-us/powershell/module/storage/Add-InitiatorIdToMaskingSet "Add-InitiatorIdToMaskingSet documentation"
+[msdocs:Get-InitiatorPort]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-InitiatorPort "Get-InitiatorPort documentation"
+[msdocs:Set-InitiatorPort]: https://docs.microsoft.com/en-us/powershell/module/storage/Set-InitiatorPort "Set-InitiatorPort documentation"
+[msdocs:Get-MaskingSet]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-MaskingSet "Get-MaskingSet documentation"
+[msdocs:New-MaskingSet]: https://docs.microsoft.com/en-us/powershell/module/storage/New-MaskingSet "New-MaskingSet documentation"
+[msdocs:Remove-MaskingSet]: https://docs.microsoft.com/en-us/powershell/module/storage/Remove-MaskingSet "Remove-MaskingSet documentation"
+[msdocs:Rename-MaskingSet]: https://docs.microsoft.com/en-us/powershell/module/storage/Rename-MaskingSet "Rename-MaskingSet documentation"
+[msdocs:Get-OffloadDataTransferSetting]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-OffloadDataTransferSetting "Get-OffloadDataTransferSetting documentation"
+[msdocs:Get-Partition]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-Partition "Get-Partition documentation"
+[msdocs:New-Partition]: https://docs.microsoft.com/en-us/powershell/module/storage/New-Partition "New-Partition documentation"
+[msdocs:Remove-Partition]: https://docs.microsoft.com/en-us/powershell/module/storage/Remove-Partition "Remove-Partition documentation"
+[msdocs:Resize-Partition]: https://docs.microsoft.com/en-us/powershell/module/storage/Resize-Partition "Resize-Partition documentation"
+[msdocs:Set-Partition]: https://docs.microsoft.com/en-us/powershell/module/storage/Set-Partition "Set-Partition documentation"
+[msdocs:Add-PartitionAccessPath]: https://docs.microsoft.com/en-us/powershell/module/storage/Add-PartitionAccessPath "Add-PartitionAccessPath documentation"
+[msdocs:Remove-PartitionAccessPath]: https://docs.microsoft.com/en-us/powershell/module/storage/Remove-PartitionAccessPath "Remove-PartitionAccessPath documentation"
+[msdocs:Get-PartitionSupportedSize]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-PartitionSupportedSize "Get-PartitionSupportedSize documentation"
+[msdocs:Add-PhysicalDisk]: https://docs.microsoft.com/en-us/powershell/module/storage/Add-PhysicalDisk "Add-PhysicalDisk documentation"
+[msdocs:Get-PhysicalDisk]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-PhysicalDisk "Get-PhysicalDisk documentation"
+[msdocs:Remove-PhysicalDisk]: https://docs.microsoft.com/en-us/powershell/module/storage/Remove-PhysicalDisk "Remove-PhysicalDisk documentation"
+[msdocs:Reset-PhysicalDisk]: https://docs.microsoft.com/en-us/powershell/module/storage/Reset-PhysicalDisk "Reset-PhysicalDisk documentation"
+[msdocs:Set-PhysicalDisk]: https://docs.microsoft.com/en-us/powershell/module/storage/Set-PhysicalDisk "Set-PhysicalDisk documentation"
+[msdocs:Disable-PhysicalDiskIdentification]: https://docs.microsoft.com/en-us/powershell/module/storage/Disable-PhysicalDiskIdentification "Disable-PhysicalDiskIdentification documentation"
+[msdocs:Enable-PhysicalDiskIdentification]: https://docs.microsoft.com/en-us/powershell/module/storage/Enable-PhysicalDiskIdentification "Enable-PhysicalDiskIdentification documentation"
+[msdocs:Get-PhysicalDiskStorageNodeView]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-PhysicalDiskStorageNodeView "Get-PhysicalDiskStorageNodeView documentation"
+[msdocs:Get-PhysicalExtent]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-PhysicalExtent "Get-PhysicalExtent documentation"
+[msdocs:Get-PhysicalExtentAssociation]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-PhysicalExtentAssociation "Get-PhysicalExtentAssociation documentation"
+[msdocs:Get-ResiliencySetting]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-ResiliencySetting "Get-ResiliencySetting documentation"
+[msdocs:Set-ResiliencySetting]: https://docs.microsoft.com/en-us/powershell/module/storage/Set-ResiliencySetting "Set-ResiliencySetting documentation"
+[msdocs:Get-StorageAdvancedProperty]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-StorageAdvancedProperty "Get-StorageAdvancedProperty documentation"
+[msdocs:Get-StorageDiagnosticInfo]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-StorageDiagnosticInfo "Get-StorageDiagnosticInfo documentation"
+[msdocs:Start-StorageDiagnosticLog]: https://docs.microsoft.com/en-us/powershell/module/storage/Start-StorageDiagnosticLog "Start-StorageDiagnosticLog documentation"
+[msdocs:Stop-StorageDiagnosticLog]: https://docs.microsoft.com/en-us/powershell/module/storage/Stop-StorageDiagnosticLog "Stop-StorageDiagnosticLog documentation"
+[msdocs:Get-StorageEnclosure]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-StorageEnclosure "Get-StorageEnclosure documentation"
+[msdocs:Disable-StorageEnclosureIdentification]: https://docs.microsoft.com/en-us/powershell/module/storage/Disable-StorageEnclosureIdentification "Disable-StorageEnclosureIdentification documentation"
+[msdocs:Enable-StorageEnclosureIdentification]: https://docs.microsoft.com/en-us/powershell/module/storage/Enable-StorageEnclosureIdentification "Enable-StorageEnclosureIdentification documentation"
+[msdocs:Get-StorageEnclosureStorageNodeView]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-StorageEnclosureStorageNodeView "Get-StorageEnclosureStorageNodeView documentation"
+[msdocs:Get-StorageEnclosureVendorData]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-StorageEnclosureVendorData "Get-StorageEnclosureVendorData documentation"
+[msdocs:Get-StorageFaultDomain]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-StorageFaultDomain "Get-StorageFaultDomain documentation"
+[msdocs:Get-StorageFileServer]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-StorageFileServer "Get-StorageFileServer documentation"
+[msdocs:New-StorageFileServer]: https://docs.microsoft.com/en-us/powershell/module/storage/New-StorageFileServer "New-StorageFileServer documentation"
+[msdocs:Remove-StorageFileServer]: https://docs.microsoft.com/en-us/powershell/module/storage/Remove-StorageFileServer "Remove-StorageFileServer documentation"
+[msdocs:Set-StorageFileServer]: https://docs.microsoft.com/en-us/powershell/module/storage/Set-StorageFileServer "Set-StorageFileServer documentation"
+[msdocs:Update-StorageFirmware]: https://docs.microsoft.com/en-us/powershell/module/storage/Update-StorageFirmware "Update-StorageFirmware documentation"
+[msdocs:Get-StorageFirmwareInformation]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-StorageFirmwareInformation "Get-StorageFirmwareInformation documentation"
+[msdocs:Get-StorageHealthAction]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-StorageHealthAction "Get-StorageHealthAction documentation"
+[msdocs:Get-StorageHealthReport]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-StorageHealthReport "Get-StorageHealthReport documentation"
+[msdocs:Get-StorageHealthSetting]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-StorageHealthSetting "Get-StorageHealthSetting documentation"
+[msdocs:Remove-StorageHealthSetting]: https://docs.microsoft.com/en-us/powershell/module/storage/Remove-StorageHealthSetting "Remove-StorageHealthSetting documentation"
+[msdocs:Set-StorageHealthSetting]: https://docs.microsoft.com/en-us/powershell/module/storage/Set-StorageHealthSetting "Set-StorageHealthSetting documentation"
+[msdocs:Disable-StorageHighAvailability]: https://docs.microsoft.com/en-us/powershell/module/storage/Disable-StorageHighAvailability "Disable-StorageHighAvailability documentation"
+[msdocs:Enable-StorageHighAvailability]: https://docs.microsoft.com/en-us/powershell/module/storage/Enable-StorageHighAvailability "Enable-StorageHighAvailability documentation"
+[msdocs:Get-StorageJob]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-StorageJob "Get-StorageJob documentation"
+[msdocs:Stop-StorageJob]: https://docs.microsoft.com/en-us/powershell/module/storage/Stop-StorageJob "Stop-StorageJob documentation"
+[msdocs:Disable-StorageMaintenanceMode]: https://docs.microsoft.com/en-us/powershell/module/storage/Disable-StorageMaintenanceMode "Disable-StorageMaintenanceMode documentation"
+[msdocs:Enable-StorageMaintenanceMode]: https://docs.microsoft.com/en-us/powershell/module/storage/Enable-StorageMaintenanceMode "Enable-StorageMaintenanceMode documentation"
+[msdocs:Get-StorageNode]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-StorageNode "Get-StorageNode documentation"
+[msdocs:Get-StoragePool]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-StoragePool "Get-StoragePool documentation"
+[msdocs:New-StoragePool]: https://docs.microsoft.com/en-us/powershell/module/storage/New-StoragePool "New-StoragePool documentation"
+[msdocs:Optimize-StoragePool]: https://docs.microsoft.com/en-us/powershell/module/storage/Optimize-StoragePool "Optimize-StoragePool documentation"
+[msdocs:Remove-StoragePool]: https://docs.microsoft.com/en-us/powershell/module/storage/Remove-StoragePool "Remove-StoragePool documentation"
+[msdocs:Set-StoragePool]: https://docs.microsoft.com/en-us/powershell/module/storage/Set-StoragePool "Set-StoragePool documentation"
+[msdocs:Update-StoragePool]: https://docs.microsoft.com/en-us/powershell/module/storage/Update-StoragePool "Update-StoragePool documentation"
+[msdocs:Get-StorageProvider]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-StorageProvider "Get-StorageProvider documentation"
+[msdocs:Set-StorageProvider]: https://docs.microsoft.com/en-us/powershell/module/storage/Set-StorageProvider "Set-StorageProvider documentation"
+[msdocs:Update-StorageProviderCache]: https://docs.microsoft.com/en-us/powershell/module/storage/Update-StorageProviderCache "Update-StorageProviderCache documentation"
+[msdocs:Get-StorageReliabilityCounter]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-StorageReliabilityCounter "Get-StorageReliabilityCounter documentation"
+[msdocs:Reset-StorageReliabilityCounter]: https://docs.microsoft.com/en-us/powershell/module/storage/Reset-StorageReliabilityCounter "Reset-StorageReliabilityCounter documentation"
+[msdocs:Get-StorageSetting]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-StorageSetting "Get-StorageSetting documentation"
+[msdocs:Set-StorageSetting]: https://docs.microsoft.com/en-us/powershell/module/storage/Set-StorageSetting "Set-StorageSetting documentation"
+[msdocs:Debug-StorageSubSystem]: https://docs.microsoft.com/en-us/powershell/module/storage/Debug-StorageSubSystem "Debug-StorageSubSystem documentation"
+[msdocs:Get-StorageSubsystem]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-StorageSubsystem "Get-StorageSubsystem documentation"
+[msdocs:Register-StorageSubsystem]: https://docs.microsoft.com/en-us/powershell/module/storage/Register-StorageSubsystem "Register-StorageSubsystem documentation"
+[msdocs:Set-StorageSubsystem]: https://docs.microsoft.com/en-us/powershell/module/storage/Set-StorageSubsystem "Set-StorageSubsystem documentation"
+[msdocs:Unregister-StorageSubsystem]: https://docs.microsoft.com/en-us/powershell/module/storage/Unregister-StorageSubsystem "Unregister-StorageSubsystem documentation"
+[msdocs:New-StorageSubsystemVirtualDisk]: https://docs.microsoft.com/en-us/powershell/module/storage/New-StorageSubsystemVirtualDisk "New-StorageSubsystemVirtualDisk documentation"
+[msdocs:Get-StorageTier]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-StorageTier "Get-StorageTier documentation"
+[msdocs:New-StorageTier]: https://docs.microsoft.com/en-us/powershell/module/storage/New-StorageTier "New-StorageTier documentation"
+[msdocs:Remove-StorageTier]: https://docs.microsoft.com/en-us/powershell/module/storage/Remove-StorageTier "Remove-StorageTier documentation"
+[msdocs:Resize-StorageTier]: https://docs.microsoft.com/en-us/powershell/module/storage/Resize-StorageTier "Resize-StorageTier documentation"
+[msdocs:Set-StorageTier]: https://docs.microsoft.com/en-us/powershell/module/storage/Set-StorageTier "Set-StorageTier documentation"
+[msdocs:Get-StorageTierSupportedSize]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-StorageTierSupportedSize "Get-StorageTierSupportedSize documentation"
+[msdocs:Get-SupportedClusterSizes]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-SupportedClusterSizes "Get-SupportedClusterSizes documentation"
+[msdocs:Get-SupportedFileSystems]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-SupportedFileSystems "Get-SupportedFileSystems documentation"
+[msdocs:Get-TargetPort]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-TargetPort "Get-TargetPort documentation"
+[msdocs:Get-TargetPortal]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-TargetPortal "Get-TargetPortal documentation"
+[msdocs:Remove-TargetPortFromMaskingSet]: https://docs.microsoft.com/en-us/powershell/module/storage/Remove-TargetPortFromMaskingSet "Remove-TargetPortFromMaskingSet documentation"
+[msdocs:Add-TargetPortToMaskingSet]: https://docs.microsoft.com/en-us/powershell/module/storage/Add-TargetPortToMaskingSet "Add-TargetPortToMaskingSet documentation"
+[msdocs:Connect-VirtualDisk]: https://docs.microsoft.com/en-us/powershell/module/storage/Connect-VirtualDisk "Connect-VirtualDisk documentation"
+[msdocs:Disconnect-VirtualDisk]: https://docs.microsoft.com/en-us/powershell/module/storage/Disconnect-VirtualDisk "Disconnect-VirtualDisk documentation"
+[msdocs:Get-VirtualDisk]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-VirtualDisk "Get-VirtualDisk documentation"
+[msdocs:Hide-VirtualDisk]: https://docs.microsoft.com/en-us/powershell/module/storage/Hide-VirtualDisk "Hide-VirtualDisk documentation"
+[msdocs:New-VirtualDisk]: https://docs.microsoft.com/en-us/powershell/module/storage/New-VirtualDisk "New-VirtualDisk documentation"
+[msdocs:Remove-VirtualDisk]: https://docs.microsoft.com/en-us/powershell/module/storage/Remove-VirtualDisk "Remove-VirtualDisk documentation"
+[msdocs:Repair-VirtualDisk]: https://docs.microsoft.com/en-us/powershell/module/storage/Repair-VirtualDisk "Repair-VirtualDisk documentation"
+[msdocs:Resize-VirtualDisk]: https://docs.microsoft.com/en-us/powershell/module/storage/Resize-VirtualDisk "Resize-VirtualDisk documentation"
+[msdocs:Set-VirtualDisk]: https://docs.microsoft.com/en-us/powershell/module/storage/Set-VirtualDisk "Set-VirtualDisk documentation"
+[msdocs:Show-VirtualDisk]: https://docs.microsoft.com/en-us/powershell/module/storage/Show-VirtualDisk "Show-VirtualDisk documentation"
+[msdocs:New-VirtualDiskClone]: https://docs.microsoft.com/en-us/powershell/module/storage/New-VirtualDiskClone "New-VirtualDiskClone documentation"
+[msdocs:Remove-VirtualDiskFromMaskingSet]: https://docs.microsoft.com/en-us/powershell/module/storage/Remove-VirtualDiskFromMaskingSet "Remove-VirtualDiskFromMaskingSet documentation"
+[msdocs:New-VirtualDiskSnapshot]: https://docs.microsoft.com/en-us/powershell/module/storage/New-VirtualDiskSnapshot "New-VirtualDiskSnapshot documentation"
+[msdocs:Get-VirtualDiskSupportedSize]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-VirtualDiskSupportedSize "Get-VirtualDiskSupportedSize documentation"
+[msdocs:Add-VirtualDiskToMaskingSet]: https://docs.microsoft.com/en-us/powershell/module/storage/Add-VirtualDiskToMaskingSet "Add-VirtualDiskToMaskingSet documentation"
+[msdocs:Debug-Volume]: https://docs.microsoft.com/en-us/powershell/module/storage/Debug-Volume "Debug-Volume documentation"
+[msdocs:Format-Volume]: https://docs.microsoft.com/en-us/powershell/module/storage/Format-Volume "Format-Volume documentation"
+[msdocs:Get-Volume]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-Volume "Get-Volume documentation"
+[msdocs:New-Volume]: https://docs.microsoft.com/en-us/powershell/module/storage/New-Volume "New-Volume documentation"
+[msdocs:Optimize-Volume]: https://docs.microsoft.com/en-us/powershell/module/storage/Optimize-Volume "Optimize-Volume documentation"
+[msdocs:Repair-Volume]: https://docs.microsoft.com/en-us/powershell/module/storage/Repair-Volume "Repair-Volume documentation"
+[msdocs:Set-Volume]: https://docs.microsoft.com/en-us/powershell/module/storage/Set-Volume "Set-Volume documentation"
+[msdocs:Write-VolumeCache]: https://docs.microsoft.com/en-us/powershell/module/storage/Write-VolumeCache "Write-VolumeCache documentation"
+[msdocs:Get-VolumeCorruptionCount]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-VolumeCorruptionCount "Get-VolumeCorruptionCount documentation"
+[msdocs:Get-VolumeScrubPolicy]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-VolumeScrubPolicy "Get-VolumeScrubPolicy documentation"
+[msdocs:Set-VolumeScrubPolicy]: https://docs.microsoft.com/en-us/powershell/module/storage/Set-VolumeScrubPolicy "Set-VolumeScrubPolicy documentation"
+
+
+[Get-DedupProperties]: #get-dedupproperties '```&#10;Get-DedupProperties&#10;```&#10;Gets Data Deduplication information.'
+[Clear-Disk]: #clear-disk '```&#10;Clear-Disk&#10;```&#10;Cleans a disk by removing all partition information and un-initializing it, erasing all data on the disk.'
+[Get-Disk]: #get-disk '```&#10;Get-Disk&#10;```&#10;Gets one or more disks visible to the operating system.'
+[Initialize-Disk]: #initialize-disk '```&#10;Initialize-Disk&#10;```&#10;Initializes a RAW disk for first time use, enabling the disk to be formatted and used to store data.'
+[Set-Disk]: #set-disk '```&#10;Set-Disk&#10;```&#10;Takes a Disk object or unique disk identifiers and a set of attributes, and updates the physical disk on the system.'
+[Update-Disk]: #update-disk '```&#10;Update-Disk&#10;```&#10;Updates cached information about the specified Disk object only'
+[Dismount-DiskImage]: #dismount-diskimage '```&#10;Dismount-DiskImage&#10;```&#10;Dismounts a disk image (virtual hard disk or ISO) so that it can no longer be accessed as a disk.'
+[Get-DiskImage]: #get-diskimage '```&#10;Get-DiskImage&#10;```&#10;Gets one or more disk image objects (virtual hard disk or ISO).'
+[Mount-DiskImage]: #mount-diskimage '```&#10;Mount-DiskImage&#10;```&#10;Mounts a previously created disk image (virtual hard disk or ISO), making it appear as a normal disk.'
+[Get-DiskStorageNodeView]: #get-diskstoragenodeview '```&#10;Get-DiskStorageNodeView&#10;```&#10;Gets the view of a disk from a storage node.'
+[Get-FileIntegrity]: #get-fileintegrity '```&#10;Get-FileIntegrity&#10;```&#10;Gets integrity information for a file on an ReFS volume.'
+[Repair-FileIntegrity]: #repair-fileintegrity '```&#10;Repair-FileIntegrity&#10;```&#10;Repairs a corrupted file on an NTFS or ReFS volume.'
+[Set-FileIntegrity]: #set-fileintegrity '```&#10;Set-FileIntegrity&#10;```&#10;Sets integrity for a file on an ReFS volume.'
+[Debug-FileShare]: #debug-fileshare '```&#10;Debug-FileShare&#10;```&#10;Finds problems with a file share and recommends solutions.'
+[Get-FileShare]: #get-fileshare '```&#10;Get-FileShare&#10;```&#10;Retrieves file share objects and their properties.'
+[New-FileShare]: #new-fileshare '```&#10;New-FileShare&#10;```&#10;Creates an access point for a remote file share.'
+[Remove-FileShare]: #remove-fileshare '```&#10;Remove-FileShare&#10;```&#10;Removes a file share.'
+[Set-FileShare]: #set-fileshare '```&#10;Set-FileShare&#10;```&#10;Modifies a file share.'
+[Block-FileShareAccess]: #block-fileshareaccess '```&#10;Block-FileShareAccess&#10;```&#10;Blocks access to a file share.'
+[Grant-FileShareAccess]: #grant-fileshareaccess '```&#10;Grant-FileShareAccess&#10;```&#10;Grants access to a file share.'
+[Revoke-FileShareAccess]: #revoke-fileshareaccess '```&#10;Revoke-FileShareAccess&#10;```&#10;Revokes access to a file share.'
+[Unblock-FileShareAccess]: #unblock-fileshareaccess '```&#10;Unblock-FileShareAccess&#10;```&#10;Unblocks access to a file share.'
+[Get-FileShareAccessControlEntry]: #get-fileshareaccesscontrolentry '```&#10;Get-FileShareAccessControlEntry&#10;```&#10;Retrieves an access control entry for the share corresponding to a single account.'
+[Set-FileStorageTier]: #set-filestoragetier '```&#10;Set-FileStorageTier&#10;```&#10;Assign a file to a storage tier&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 133'
+[Clear-FileStorageTier]: #clear-filestoragetier '```&#10;Clear-FileStorageTier&#10;```&#10;Unpins a file from the specified storage tier.'
+[Get-FileStorageTier]: #get-filestoragetier '```&#10;Get-FileStorageTier&#10;```&#10;Gets the files assigned to a Storage tier on a volume, and their status.'
+[Update-HostStorageCache]: #update-hoststoragecache '```&#10;Update-HostStorageCache&#10;```&#10;Initiates an update on the host storage cache to reflect the current status of storage.'
+[Get-InitiatorId]: #get-initiatorid '```&#10;Get-InitiatorId&#10;```&#10;Gets the InitiatorID objects for the specified iSCSI initiators.'
+[Remove-InitiatorId]: #remove-initiatorid '```&#10;Remove-InitiatorId&#10;```&#10;Removes an initiator identifier (ID).'
+[Remove-InitiatorIdFromMaskingSet]: #remove-initiatoridfrommaskingset '```&#10;Remove-InitiatorIdFromMaskingSet&#10;```&#10;Removes an initiator identifier (ID) from a masking set.'
+[Add-InitiatorIdToMaskingSet]: #add-initiatoridtomaskingset '```&#10;Add-InitiatorIdToMaskingSet&#10;```&#10;Adds an initiator ID to an existing masking set, granting the host associated with the initiator ID access to the virtual disk and target port resources defined in the masking set.'
+[Get-InitiatorPort]: #get-initiatorport '```&#10;Get-InitiatorPort&#10;```&#10;Gets one or more host bus adapter (HBA) initiator ports.'
+[Set-InitiatorPort]: #set-initiatorport '```&#10;Set-InitiatorPort&#10;```&#10;Sets properties on the InitiatorPort object.'
+[Get-MaskingSet]: #get-maskingset '```&#10;Get-MaskingSet&#10;```&#10;Gets masking sets.'
+[New-MaskingSet]: #new-maskingset '```&#10;New-MaskingSet&#10;```&#10;Creates a new masking set.'
+[Remove-MaskingSet]: #remove-maskingset '```&#10;Remove-MaskingSet&#10;```&#10;Removes a masking set.'
+[Rename-MaskingSet]: #rename-maskingset '```&#10;Rename-MaskingSet&#10;```&#10;Renames an existing masking set.'
+[Get-OffloadDataTransferSetting]: #get-offloaddatatransfersetting '```&#10;Get-OffloadDataTransferSetting&#10;```&#10;Returns offloaded data transfer (ODX) settings for the specified subsystem.'
+[Get-Partition]: #get-partition '```&#10;Get-Partition&#10;```&#10;Returns a list of all partition objects visible on all disks, or optionally a filtered list using specified parameters.'
+[New-Partition]: #new-partition '```&#10;New-Partition&#10;```&#10;Creates a new partition on an existing Disk object.'
+[Remove-Partition]: #remove-partition '```&#10;Remove-Partition&#10;```&#10;Deletes the specified Partition object on an existing disk and any underlying Volume objects.'
+[Resize-Partition]: #resize-partition '```&#10;Resize-Partition&#10;```&#10;Resizes a partition and the underlying file system.'
+[Set-Partition]: #set-partition '```&#10;Set-Partition&#10;```&#10;Sets attributes of a partition, such as active, read-only, and offline states.'
+[Add-PartitionAccessPath]: #add-partitionaccesspath '```&#10;Add-PartitionAccessPath&#10;```&#10;Adds an access path such as a drive letter or folder to a partition.'
+[Remove-PartitionAccessPath]: #remove-partitionaccesspath '```&#10;Remove-PartitionAccessPath&#10;```&#10;Removes an access path such as a drive letter or folder from a partition.'
+[Get-PartitionSupportedSize]: #get-partitionsupportedsize '```&#10;Get-PartitionSupportedSize&#10;```&#10;Returns information on supported partition sizes for the specified Disk object.'
+[Add-PhysicalDisk]: #add-physicaldisk '```&#10;Add-PhysicalDisk&#10;```&#10;Adds a physical disk to the specified storage pool or manually assigns a physical disk to a specific virtual disk.'
+[Get-PhysicalDisk]: #get-physicaldisk '```&#10;Get-PhysicalDisk&#10;```&#10;Gets a list of all PhysicalDisk objects visible across any available Storage Management Providers, or optionally a filtered list.'
+[Remove-PhysicalDisk]: #remove-physicaldisk '```&#10;Remove-PhysicalDisk&#10;```&#10;Removes a physical disk from a specified storage pool.'
+[Reset-PhysicalDisk]: #reset-physicaldisk '```&#10;Reset-PhysicalDisk&#10;```&#10;Resets the status of a physical disk.'
+[Set-PhysicalDisk]: #set-physicaldisk '```&#10;Set-PhysicalDisk&#10;```&#10;Sets attributes on a specific physical disk.'
+[Disable-PhysicalDiskIdentification]: #disable-physicaldiskidentification '```&#10;Disable-PhysicalDiskIdentification&#10;```&#10;Turns off the identification LED on the specified physical disk.'
+[Enable-PhysicalDiskIdentification]: #enable-physicaldiskidentification '```&#10;Enable-PhysicalDiskIdentification&#10;```&#10;Enables the identification LED on the specified physical disk.'
+[Get-PhysicalDiskStorageNodeView]: #get-physicaldiskstoragenodeview '```&#10;Get-PhysicalDiskStorageNodeView&#10;```&#10;Gets the node view of a physical disk.'
+[Get-PhysicalExtent]: #get-physicalextent '```&#10;Get-PhysicalExtent&#10;```&#10;Gets physical allocations for a physical disk, storage tier, or virtual disk.'
+[Get-PhysicalExtentAssociation]: #get-physicalextentassociation '```&#10;Get-PhysicalExtentAssociation&#10;```&#10;Gets the physical disk, storage tier, or virtual disk that is associated with a physical extent.'
+[Get-ResiliencySetting]: #get-resiliencysetting '```&#10;Get-ResiliencySetting&#10;```&#10;Gets the resiliency settings (also known as storage layouts) available for creating virtual disks on the specified storage subsystem.'
+[Set-ResiliencySetting]: #set-resiliencysetting '```&#10;Set-ResiliencySetting&#10;```&#10;Modifies the properties of the specified resiliency setting name.'
+[Get-StorageAdvancedProperty]: #get-storageadvancedproperty '```&#10;Get-StorageAdvancedProperty&#10;```&#10;Gets the advanced properties on a storage device.'
+[Get-StorageDiagnosticInfo]: #get-storagediagnosticinfo '```&#10;Get-StorageDiagnosticInfo&#10;```&#10;Gets Storage diagnostic information.'
+[Start-StorageDiagnosticLog]: #start-storagediagnosticlog '```&#10;Start-StorageDiagnosticLog&#10;```&#10;Starts Storage diagnostic logging.'
+[Stop-StorageDiagnosticLog]: #stop-storagediagnosticlog '```&#10;Stop-StorageDiagnosticLog&#10;```&#10;Stops a Storage diagnostic log.'
+[Get-StorageEnclosure]: #get-storageenclosure '```&#10;Get-StorageEnclosure&#10;```&#10;Gets storage enclosures.'
+[Disable-StorageEnclosureIdentification]: #disable-storageenclosureidentification '```&#10;Disable-StorageEnclosureIdentification&#10;```&#10;Turns off the identification LED on a storage enclosure or the slots for individual disks.'
+[Enable-StorageEnclosureIdentification]: #enable-storageenclosureidentification '```&#10;Enable-StorageEnclosureIdentification&#10;```&#10;Enables the identification LED on a storage enclosure or the slots for individual disks.'
+[Get-StorageEnclosureStorageNodeView]: #get-storageenclosurestoragenodeview '```&#10;Get-StorageEnclosureStorageNodeView&#10;```&#10;Gets the node view of a Storage enclosure.'
+[Get-StorageEnclosureVendorData]: #get-storageenclosurevendordata '```&#10;Get-StorageEnclosureVendorData&#10;```&#10;Gets vendor-specific data for an enclosure.'
+[Get-StorageFaultDomain]: #get-storagefaultdomain '```&#10;Get-StorageFaultDomain&#10;```&#10;Gets a Storage fault domain object.'
+[Get-StorageFileServer]: #get-storagefileserver '```&#10;Get-StorageFileServer&#10;```&#10;Gets a storage file server.'
+[New-StorageFileServer]: #new-storagefileserver '```&#10;New-StorageFileServer&#10;```&#10;Creates a storage file server.'
+[Remove-StorageFileServer]: #remove-storagefileserver '```&#10;Remove-StorageFileServer&#10;```&#10;Removes a file server.'
+[Set-StorageFileServer]: #set-storagefileserver '```&#10;Set-StorageFileServer&#10;```&#10;Modifies a storage file server.'
+[Update-StorageFirmware]: #update-storagefirmware '```&#10;Update-StorageFirmware&#10;```&#10;Updates the firmware on a storage device.'
+[Get-StorageFirmwareInformation]: #get-storagefirmwareinformation '```&#10;Get-StorageFirmwareInformation&#10;```&#10;Gets information about firmware on a storage object.'
+[Get-StorageHealthAction]: #get-storagehealthaction '```&#10;Get-StorageHealthAction&#10;```&#10;Gets health-related system activities.'
+[Get-StorageHealthReport]: #get-storagehealthreport '```&#10;Get-StorageHealthReport&#10;```&#10;Gets a storage health report.'
+[Get-StorageHealthSetting]: #get-storagehealthsetting '```&#10;Get-StorageHealthSetting&#10;```&#10;Gets storage health service settings.'
+[Remove-StorageHealthSetting]: #remove-storagehealthsetting '```&#10;Remove-StorageHealthSetting&#10;```&#10;Removes a storage health service setting.'
+[Set-StorageHealthSetting]: #set-storagehealthsetting '```&#10;Set-StorageHealthSetting&#10;```&#10;Modifies a storage health service setting.'
+[Disable-StorageHighAvailability]: #disable-storagehighavailability '```&#10;Disable-StorageHighAvailability&#10;```&#10;Disables a Storage resource.'
+[Enable-StorageHighAvailability]: #enable-storagehighavailability '```&#10;Enable-StorageHighAvailability&#10;```&#10;Enables a disk to be added to the failover cluster.'
+[Get-StorageJob]: #get-storagejob '```&#10;Get-StorageJob&#10;```&#10;Returns information about long-running Storage module jobs, such as a repair task.'
+[Stop-StorageJob]: #stop-storagejob '```&#10;Stop-StorageJob&#10;```&#10;Stops storage job.'
+[Disable-StorageMaintenanceMode]: #disable-storagemaintenancemode '```&#10;Disable-StorageMaintenanceMode&#10;```&#10;Disables storage maintenance mode on a fault domain.'
+[Enable-StorageMaintenanceMode]: #enable-storagemaintenancemode '```&#10;Enable-StorageMaintenanceMode&#10;```&#10;Enables storage maintenance mode on a device.'
+[Get-StorageNode]: #get-storagenode '```&#10;Get-StorageNode&#10;```&#10;Gets storage nodes.'
+[Get-StoragePool]: #get-storagepool '```&#10;Get-StoragePool&#10;```&#10;Gets a specific storage pool, or a set of StoragePool objects either from all storage subsystems across all storage providers, or optionally a filtered subset based on specific parameters.'
+[New-StoragePool]: #new-storagepool '```&#10;New-StoragePool&#10;```&#10;Creates a new storage pool using a group of physical disks.'
+[Optimize-StoragePool]: #optimize-storagepool '```&#10;Optimize-StoragePool&#10;```&#10;Optimizes a Storage pool.'
+[Remove-StoragePool]: #remove-storagepool '```&#10;Remove-StoragePool&#10;```&#10;Deletes a storage pool and associated VirtualDisk objects.'
+[Set-StoragePool]: #set-storagepool '```&#10;Set-StoragePool&#10;```&#10;Modifies the properties of the specified storage pool.'
+[Update-StoragePool]: #update-storagepool '```&#10;Update-StoragePool&#10;```&#10;Updates the metadata of a Windows Server 2012 R2 storage pool.'
+[Get-StorageProvider]: #get-storageprovider '```&#10;Get-StorageProvider&#10;```&#10;Returns a list of the storage providers available on the local computer.'
+[Set-StorageProvider]: #set-storageprovider '```&#10;Set-StorageProvider&#10;```&#10;Modifies whether to enable the SMP provider cache.'
+[Update-StorageProviderCache]: #update-storageprovidercache '```&#10;Update-StorageProviderCache&#10;```&#10;Updates the cache of the service for a particular provider and associated child objects.'
+[Get-StorageReliabilityCounter]: #get-storagereliabilitycounter '```&#10;Get-StorageReliabilityCounter&#10;```&#10;Gets storage reliability counters.'
+[Reset-StorageReliabilityCounter]: #reset-storagereliabilitycounter '```&#10;Reset-StorageReliabilityCounter&#10;```&#10;Resets storage reliability counters for a disk.'
+[Get-StorageSetting]: #get-storagesetting '```&#10;Get-StorageSetting&#10;```&#10;Gets a StorageSetting object.'
+[Set-StorageSetting]: #set-storagesetting '```&#10;Set-StorageSetting&#10;```&#10;Adjusts or configures current storage settings of the StorageSetting object.'
+[Debug-StorageSubSystem]: #debug-storagesubsystem '```&#10;Debug-StorageSubSystem&#10;```&#10;Finds problems with a storage subsystem and recommends solutions.'
+[Get-StorageSubsystem]: #get-storagesubsystem '```&#10;Get-StorageSubsystem&#10;```&#10;Gets one or more StorageSubsystem objects.'
+[Register-StorageSubsystem]: #register-storagesubsystem '```&#10;Register-StorageSubsystem&#10;```&#10;Connects to storage subsystems on a remote computer.'
+[Set-StorageSubsystem]: #set-storagesubsystem '```&#10;Set-StorageSubsystem&#10;```&#10;Modifies the properties of a StorageSubsystem object.'
+[Unregister-StorageSubsystem]: #unregister-storagesubsystem '```&#10;Unregister-StorageSubsystem&#10;```&#10;Disconnects from storage subsystems on a remote computer.'
+[New-StorageSubsystemVirtualDisk]: #new-storagesubsystemvirtualdisk '```&#10;New-StorageSubsystemVirtualDisk&#10;```&#10;Allows the creation of a VirtualDisk object on a storage subsystem that does not support creation of storage pools.'
+[Get-StorageTier]: #get-storagetier '```&#10;Get-StorageTier&#10;```&#10;Gets storage tiers on Windows Storage subsystems.'
+[New-StorageTier]: #new-storagetier '```&#10;New-StorageTier&#10;```&#10;Creates a storage tier.'
+[Remove-StorageTier]: #remove-storagetier '```&#10;Remove-StorageTier&#10;```&#10;Removes storage tiers from a storage pool.'
+[Resize-StorageTier]: #resize-storagetier '```&#10;Resize-StorageTier&#10;```&#10;Increases the size of storage tiers.'
+[Set-StorageTier]: #set-storagetier '```&#10;Set-StorageTier&#10;```&#10;Modifies a storage tier.'
+[Get-StorageTierSupportedSize]: #get-storagetiersupportedsize '```&#10;Get-StorageTierSupportedSize&#10;```&#10;Gets the minimum and maximum possible sizes of a storage tier.'
+[Get-SupportedClusterSizes]: #get-supportedclustersizes '```&#10;Get-SupportedClusterSizes&#10;```&#10;Gets the supported cluster sizes.'
+[Get-SupportedFileSystems]: #get-supportedfilesystems '```&#10;Get-SupportedFileSystems&#10;```&#10;Gets the file system choices for a specified volume.'
+[Get-TargetPort]: #get-targetport '```&#10;Get-TargetPort&#10;```&#10;Returns a TargetPort object associated with a specific port address and connection type.'
+[Get-TargetPortal]: #get-targetportal '```&#10;Get-TargetPortal&#10;```&#10;Returns a TargetPortal object.'
+[Remove-TargetPortFromMaskingSet]: #remove-targetportfrommaskingset '```&#10;Remove-TargetPortFromMaskingSet&#10;```&#10;Removes a specified target port from a masking set.'
+[Add-TargetPortToMaskingSet]: #add-targetporttomaskingset '```&#10;Add-TargetPortToMaskingSet&#10;```&#10;Adds one or more target ports to a specified masking set, allowing a connection between the target ports, and any virtual disks and initiator IDs that the masking set contains.'
+[Connect-VirtualDisk]: #connect-virtualdisk '```&#10;Connect-VirtualDisk&#10;```&#10;Connects a disconnected virtual disk to the specified computer when using the Windows Storage subsystem.'
+[Disconnect-VirtualDisk]: #disconnect-virtualdisk '```&#10;Disconnect-VirtualDisk&#10;```&#10;Disconnects a virtual disk from the specified computer, revoking access to the virtual disk.'
+[Get-VirtualDisk]: #get-virtualdisk '```&#10;Get-VirtualDisk&#10;```&#10;Returns a list of VirtualDisk objects, across all storage pools, across all providers, or optionally a filtered subset based on provided criteria.'
+[Hide-VirtualDisk]: #hide-virtualdisk '```&#10;Hide-VirtualDisk&#10;```&#10;Hides the virtual disk from the host when the Storage Management Provider in use does not support masking sets.'
+[New-VirtualDisk]: #new-virtualdisk '```&#10;New-VirtualDisk&#10;```&#10;Creates a new virtual disk in the specified storage pool.'
+[Remove-VirtualDisk]: #remove-virtualdisk '```&#10;Remove-VirtualDisk&#10;```&#10;Deletes an existing virtual disk and reclaims the used space for use by other virtual disks in the same storage pool.'
+[Repair-VirtualDisk]: #repair-virtualdisk '```&#10;Repair-VirtualDisk&#10;```&#10;Performs repairs on a virtual disk that is unhealthy.'
+[Resize-VirtualDisk]: #resize-virtualdisk '```&#10;Resize-VirtualDisk&#10;```&#10;Resizes an existing virtual disk to be larger or smaller.'
+[Set-VirtualDisk]: #set-virtualdisk '```&#10;Set-VirtualDisk&#10;```&#10;Modifies the attributes of an existing virtual disk.'
+[Show-VirtualDisk]: #show-virtualdisk '```&#10;Show-VirtualDisk&#10;```&#10;Makes a virtual disk available to a host.'
+[New-VirtualDiskClone]: #new-virtualdiskclone '```&#10;New-VirtualDiskClone&#10;```&#10;Creates a new clone of a specified virtual disk.'
+[Remove-VirtualDiskFromMaskingSet]: #remove-virtualdiskfrommaskingset '```&#10;Remove-VirtualDiskFromMaskingSet&#10;```&#10;Removes a virtual disk from a specified masking set to block access to the virtual disk by an InitiatorIds object defined in the masking set.'
+[New-VirtualDiskSnapshot]: #new-virtualdisksnapshot '```&#10;New-VirtualDiskSnapshot&#10;```&#10;Creates a new snapshot of the specified virtual disk.'
+[Get-VirtualDiskSupportedSize]: #get-virtualdisksupportedsize '```&#10;Get-VirtualDiskSupportedSize&#10;```&#10;Returns all sizes supported by a storage pool for virtual disk creation based on the specified resiliency setting name.'
+[Add-VirtualDiskToMaskingSet]: #add-virtualdisktomaskingset '```&#10;Add-VirtualDiskToMaskingSet&#10;```&#10;Adds a virtual disk to a specified masking set and grants access to the virtual disk to all initiator IDs defined in the masking set.'
+[Debug-Volume]: #debug-volume '```&#10;Debug-Volume&#10;```&#10;Finds problems with a volume and recommends solutions.'
+[Format-Volume]: #format-volume '```&#10;Format-Volume&#10;```&#10;Formats one or more existing volumes or a new volume on an existing partition.'
+[Get-Volume]: #get-volume '```&#10;Get-Volume&#10;```&#10;Gets the specified Volume object, or all Volume objects if no filter is provided.'
+[New-Volume]: #new-volume '```&#10;New-Volume&#10;```&#10;Creates a volume with the specified file system.'
+[Optimize-Volume]: #optimize-volume '```&#10;Optimize-Volume&#10;```&#10;Optimizes a volume.'
+[Repair-Volume]: #repair-volume '```&#10;Repair-Volume&#10;```&#10;Performs repairs on a volume.'
+[Set-Volume]: #set-volume '```&#10;Set-Volume&#10;```&#10;Sets or changes the file system label of an existing volume.'
+[Write-VolumeCache]: #write-volumecache '```&#10;Write-VolumeCache&#10;```&#10;Writes the file system cache to disk.'
+[Get-VolumeCorruptionCount]: #get-volumecorruptioncount '```&#10;Get-VolumeCorruptionCount&#10;```&#10;Gets a count of the file system errors on the NTFS volume.'
+[Get-VolumeScrubPolicy]: #get-volumescrubpolicy '```&#10;Get-VolumeScrubPolicy&#10;```&#10;Gets the status of the volume scrub policy.'
+[Set-VolumeScrubPolicy]: #set-volumescrubpolicy '```&#10;Set-VolumeScrubPolicy&#10;```&#10;Sets the status of the volume scrub policy.'
+
+- Disk
+[`Clear`][Clear-Disk]<sup>[?][msdocs:Clear-Disk]</sup>
+[`Get`][Get-Disk]<sup>[?][msdocs:Get-Disk]</sup>
+[`Initialize`][Initialize-Disk]<sup>[?][msdocs:Initialize-Disk]</sup>
+[`Set`][Set-Disk]<sup>[?][msdocs:Set-Disk]</sup>
+[`Update`][Update-Disk]<sup>[?][msdocs:Update-Disk]</sup>
+- FileShare
+[`Debug`][Debug-FileShare]<sup>[?][msdocs:Debug-FileShare]</sup>
+[`Get`][Get-FileShare]<sup>[?][msdocs:Get-FileShare]</sup>
+[`New`][New-FileShare]<sup>[?][msdocs:New-FileShare]</sup>
+[`Remove`][Remove-FileShare]<sup>[?][msdocs:Remove-FileShare]</sup>
+[`Set`][Set-FileShare]<sup>[?][msdocs:Set-FileShare]</sup>
+- Partition
+[`Get`][Get-Partition]<sup>[?][msdocs:Get-Partition]</sup>
+[`New`][New-Partition]<sup>[?][msdocs:New-Partition]</sup>
+[`Remove`][Remove-Partition]<sup>[?][msdocs:Remove-Partition]</sup>
+[`Resize`][Resize-Partition]<sup>[?][msdocs:Resize-Partition]</sup>
+[`Set`][Set-Partition]<sup>[?][msdocs:Set-Partition]</sup>
+- PhysicalDisk
+[`Add`][Add-PhysicalDisk]<sup>[?][msdocs:Add-PhysicalDisk]</sup>
+[`Get`][Get-PhysicalDisk]<sup>[?][msdocs:Get-PhysicalDisk]</sup>
+[`Remove`][Remove-PhysicalDisk]<sup>[?][msdocs:Remove-PhysicalDisk]</sup>
+[`Reset`][Reset-PhysicalDisk]<sup>[?][msdocs:Reset-PhysicalDisk]</sup>
+[`Set`][Set-PhysicalDisk]<sup>[?][msdocs:Set-PhysicalDisk]</sup>
+- Volume
+[`Debug`][Debug-Volume]<sup>[?][msdocs:Debug-Volume]</sup>
+[`Format`][Format-Volume]<sup>[?][msdocs:Format-Volume]</sup>
+[`Get`][Get-Volume]<sup>[?][msdocs:Get-Volume]</sup>
+[`New`][New-Volume]<sup>[?][msdocs:New-Volume]</sup>
+[`Optimize`][Optimize-Volume]<sup>[?][msdocs:Optimize-Volume]</sup>
+[`Repair`][Repair-Volume]<sup>[?][msdocs:Repair-Volume]</sup>
+[`Set`][Set-Volume]<sup>[?][msdocs:Set-Volume]</sup>
 #### storagereplica
 [msdocs:Get-SRAccess]: https://docs.microsoft.com/en-us/powershell/module/storagereplica/Get-SRAccess "Get-SRAccess"
 [msdocs:Grant-SRAccess]: https://docs.microsoft.com/en-us/powershell/module/storagereplica/Grant-SRAccess "Grant-SRAccess"

@@ -25,7 +25,46 @@ An [assembly][Assembly] can be compiled to EXE or DLL.
 - [System.Web.Security.Membership](pwsh.md#generate-password)
 
 # Syntax
+[dotnet new]: #syntax '```&#10;dotnet new &#10;```&#10;Create a new project'
+[dotnet add]: #syntax '```&#10;dotnet add &#10;```&#10;Add a reference to a project'
+[dotnet build]: #syntax '```&#10;dotnet build &#10;```&#10;Build a project'
+[dotnet clean]: #syntax '```&#10;dotnet clean &#10;```&#10;Clean build outputs'
+[dotnet list]: #syntax '```&#10;dotnet list &#10;```&#10;List references of the project'
+[dotnet nuget]: #syntax '```&#10;dotnet nuget &#10;```&#10;Start additional NuGet commands'
+[dotnet pack]: #syntax '```&#10;dotnet pack &#10;```&#10;Create a NuGet package for the project'
+[dotnet publish]: #syntax '```&#10;dotnet publish &#10;```&#10;Publish a project for deployment, including the runtime'
+[dotnet remove]: #syntax '```&#10;dotnet remove &#10;```&#10;Remove a reference from the project'
+[dotnet restore]: #syntax '```&#10;dotnet restore &#10;```&#10;Restore dependencies specified in the project'
+[dotnet run]: #syntax '```&#10;dotnet run &#10;```&#10;Compile and execute a project'
+[dotnet sln]: #syntax '```&#10;dotnet sln &#10;```&#10;Modify a Visual Studio solution file'
+[dotnet test]: #syntax '```&#10;dotnet test &#10;```&#10;Run unit tests using the tyest runner specified in the project'
+
+[`add`][dotnet add]
+[`build`][dotnet build]
+[`clean`][dotnet clean]
+[`list`][dotnet list]
+[**`new`**][dotnet new]
+[`nuget`][dotnet nuget]
+[`pack`][dotnet pack]
+[`publish`][dotnet publish]
+[`remove`][dotnet remove]
+[`restore`][dotnet restore]
+[**`run`**][dotnet run]
+[`sln`][dotnet sln]
+[`test`][dotnet test]
+**`watch`**
+
 ### dotnet new
+[dotnet new console]: #dotnet-new '```&#10;dotnet new console &#10;```&#10;Create a .NET Core console app'
+[dotnet new web]: #dotnet-new '```&#10;dotnet new web &#10;```&#10;Create an ASP.NET Core empty project'
+[dotnet new angular]: #dotnet-new '```&#10;dotnet new angular &#10;```&#10;Create an ASP.NET Core with Angular'
+[dotnet new react]: #dotnet-new '```&#10;dotnet new react &#10;```&#10;Create an ASP.NET Core with React'
+
+[`console`][dotnet new console]
+[`web`][dotnet new web]
+[`angular`][dotnet new angular]
+[`react`][dotnet new react]
+
 Start a new "hello world" console application in the current directory
 ```sh
 dotnet new console
