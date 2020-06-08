@@ -1,8 +1,7 @@
-[1]: https://cloud.google.com/source-repositories/docs/creating-an-empty-repository "GCP Developer Tools: \"Creating an empty repository\""
-[2]: https://www.youtube.com/watch?v=j274vq9a2Rs "YouTube: \"Google Cloud Command Line for Beginners, or 'How to gcloud' | 9.13.18 | Linux Academy\""
-[3]: https://cloud.google.com/functions/docs/quickstart "GCP Developer Tools: \"Quickstart: Using the gcloud Command-Line Tool\""
-
 [Sullivan]: # "Sullivan, Dan. _Official Google Cloud Certified Associate Cloud Engineer Study Guide_"
+[https://cloud.google.com/source-repositories/docs/creating-an-empty-repository]: https://cloud.google.com/source-repositories/docs/creating-an-empty-repository "GCP Developer Tools: \"Creating an empty repository\""
+[https://www.youtube.com/watch?v=j274vq9a2Rs]: https://www.youtube.com/watch?v=j274vq9a2Rs "YouTube: \"Google Cloud Command Line for Beginners, or 'How to gcloud' | 9.13.18 | Linux Academy\""
+[https://cloud.google.com/functions/docs/quickstart]: https://cloud.google.com/functions/docs/quickstart "GCP Developer Tools: \"Quickstart: Using the gcloud Command-Line Tool\""
 
 [App Engine]:                             #storage            'App Engine&#10;Allows users to deploy applications in a popular programming language without configuring VMs or Kubernetes clusters&#10;Sullivan, Dan. _Official Google Cloud Certified Associate Cloud Engineer Study Guide_: 20'
 [appengine.appAdmin]: #identity '`appengine.appAdmin`&#10;IAM role, grants identities the ability to read, write, and modify all application settings&#10;Sullivan, Dan. _Official Google Cloud Certified Associate Cloud Engineer Study Guide_: 48'
@@ -27,14 +26,33 @@
 [Role]: #identity 'Role&#10;Collection of permission&#10;Sullivan, Dan. _Official Google Cloud Certified Associate Cloud Engineer Study Guide_: 47'
 
 [gcloud]:                                 #gcloud             '`gcloud`&#10;Command used for many cloud management tasks, organized into a hierarchy of groups'
-
-
 [gsutil]:                                 #gsutil             '`gsutil`&#10;Command used to manipulate GCS'
 
-
-
 # Google Cloud Platform 
-**C** [`cbt`][cbt] **G** [`gcloud`][gcloud] [`gsutil`][gsutil]
+Hierarchy of resources:
+[Organization][Organization] > [Folder][Folder] > [Project][Project]
+
+Storage services:
+- [GAE][App Engine]
+- [GCE][Compute Engine]
+- [GKE][Kubernetes Engine]
+- [Cloud Functions][Cloud Functions]
+
+Specialized services:
+- [Bigquery][Bigquery]
+- [Cloud Dataflow][Dataflow]
+- [Cloud Dataproc][Dataproc]
+- [Cloud Dataprep][Dataprep]
+
+AI services:
+- [Cloud AutoML][Cloud Automl]
+- [Cloud Machine Learning Engine][Cloud Machine Learning Engine]
+- [Cloud NLP][Cloud Natural Language Processing]
+- [Cloud Vision][Cloud Vision]
+
+[`cbt`][cbt]
+[`gcloud`][gcloud]
+[`gsutil`][gsutil]
 
 ### `cbt`
 ### `gcloud`
@@ -45,7 +63,12 @@
 [gcloud functions]:                       #functions          '`gcloud functions`&#10;Cloud Functions'
 [gcloud services]:                        #gcloud             '`gcloud services`&#10;Manage project\'s access to APIs'
 
-**A** [`app`][gcloud app] **C** [`compute`][gcloud compute] [`container`][gcloud container] **F** [`functions`][gcloud functions] **S** [`services`][gcloud services] `source`
+[`app`][gcloud app]
+[`compute`][gcloud compute]
+[`container`][gcloud container]
+[`functions`][gcloud functions]
+[`services`][gcloud services]
+`source`
 
 Compute Engine (GCE) VMs
 ```sh
@@ -58,21 +81,13 @@ gcloud source repos create
 ```
 
 ### `gsutil`
-**M** `mb` `mv` **R** [`rewrite`](#change-storage-class) `rsync`
+`mb` 
+`mv` 
+[`rewrite`](#change-storage-class)
+`rsync`
 
-## Compute
-## Storage
 
-Storage services: [GAE][App Engine], [GCE][Compute Engine], [GKE][Kubernetes Engine], [Cloud Functions][Cloud Functions]
-
-Storage classes: 
-
-## Etc
-#### Services
-Specialized services: [Bigquery][Bigquery], [Cloud Dataflow][Dataflow], [Cloud Dataproc][Dataproc], [Cloud Dataprep][Dataprep]\
-AI services: [Cloud AutoML][Cloud Automl], [Cloud Machine Learning Engine][Cloud Machine Learning Engine], [Cloud NLP][Cloud Natural Language Processing], [Cloud Vision][Cloud Vision]
 #### Resources
-[Organization][Organization] > [Folder][Folder] > [Project][Project]
 
 ## Identity
 [Role][Role] types
@@ -80,17 +95,18 @@ AI services: [Cloud AutoML][Cloud Automl], [Cloud Machine Learning Engine][Cloud
 - Predefined roles
 - Custom roles
 
-\#    | IAM roles
----   | ---
-A     | [`appengine.appAdmin`][appengine.appAdmin] [`appengine.appViewer`][appengine.appAdmin] [`appengine.ServiceAdmin`][appengine.ServiceAdmin]
-B     | Billing Account Creator
-O     | [Organization Administrator][Organization Administrator]
-P     | Project Creator
+IAM roles
+- [`appengine.appAdmin`][appengine.appAdmin]
+- [`appengine.appViewer`][appengine.appAdmin]
+- [`appengine.ServiceAdmin`][appengine.ServiceAdmin]
+- Billing Account Creator
+- [Organization Administrator][Organization Administrator]
+- Project Creator
 
-
-## Tasks
+# Tasks
 #### To-do application using MongoDB
 Create two VMs, {backend} and {frontend}, running on Ubuntu. Make sure ports 80 and 22 are open.
+
 #### Create a new Google Cloud Source Repository
 These steps require:
   1. Cloud SDK and Git to be installed
@@ -105,21 +121,20 @@ gcloud source repos clone hello-world
 ```
 Create scripts, then add, commit and push them as usual.
 ```sh
-git add .
-git commit -m "Initial"
+git commit -am "Initial"
 git push origin master
 ```
 #### Create a VM
-[^][2]
+[YouTube][https://www.youtube.com/watch?v=j274vq9a2Rs]
 ```sh
 gcloud compute instances create instance-1 --zone-uscentral1-a
 ```
 #### Functions
-Deploy [^][3]
+Deploy <sup>[Google][https://cloud.google.com/functions/docs/quickstart]</sup>
 ```sh
 gcloud functions deploy hello_get --runtime python37 --trigger-http
 ```
-Test [^][3]
+Test <sup>[Google][https://cloud.google.com/source-repositories/docs/creating-an-empty-repository]</sup>
 ```sh
 gcloud functions describe hello_get
 ```

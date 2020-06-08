@@ -524,9 +524,7 @@ regsvr32 schmmgmt.dll
 ```
 
 #### route
-<!-- `route` options -->
 [route /&#112;]:                #route                         '```&#10;C:\>route /p&#10;```&#10;Make a route persistent&#10;Lammle, Todd. _CompTIA Network+ Study Guide: Exam N10-005_. 2012.: 539'
-<!-- `route` commands -->
 [route print]:                    #route                         '```&#10;C:\>route print&#10;```&#10;Display routing table&#10;Lammle, Todd. _CompTIA Network+ Study Guide: Exam N10-005_. 2012.: 539'
 [route add]:                      #route                         '```&#10;C:\>route add&#10;```&#10;Add a route to the routing table&#10;Lammle, Todd. _CompTIA Network+ Study Guide: Exam N10-005_. 2012.: 539'
 [route change]:                   #route                         '```&#10;C:\>route change&#10;```&#10;Modify an existing route&#10;Lammle, Todd. _CompTIA Network+ Study Guide: Exam N10-005_. 2012.: 539'
@@ -651,11 +649,14 @@ route add 192.168.2.1 mask (255.255.255.0) 192.168.2.4
 [ms-settings:workplace]: #settings '```&#10;C:\>start ms-settings:workplace&#10;```&#10;Open Access work or school page in Settings on Windows 10&#10;"Launch the Windows Settings app." Microsoft Docs.'
 [ms-settings:yourinfo]: #settings '```&#10;C:\>start ms-settings:yourinfo&#10;```&#10;Open Your info page in Settings on Windows 10&#10;"Launch the Windows Settings app." Microsoft Docs.'
 
+[**`appsfeatures`**][ms-settings:appsfeatures]
+[**`personalization`**][ms-settings:personalization]
+[**`printers`**][ms-settings:printers]
+[**`windowsupdate`**][ms-settings:windowsupdate]
 
 [`about`][ms-settings:about]
 [`activation`][ms-settings:activation]
 [`apps-volume`][ms-settings:apps-volume]
-[**`appsfeatures`**][ms-settings:appsfeatures]
 [`appsforwebsites`][ms-settings:appsforwebsites]
 [`assignedaccess`][ms-settings:assignedaccess]
 [`autoplay`][ms-settings:autoplay]
@@ -695,14 +696,12 @@ route add 192.168.2.1 mask (255.255.255.0) 192.168.2.4
 [`optionalfeatures`][ms-settings:optionalfeatures]
 [`otherusers`][ms-settings:otherusers]
 [`pen`][ms-settings:pen]
-[**`personalization`**][ms-settings:personalization]
 [`personalization-background`][ms-settings:personalization-background]
 [`personalization-colors`][ms-settings:personalization-colors]
 [`personalization-start`][ms-settings:personalization-start]
 [`personalization-start-places`][ms-settings:personalization-start-places]
 [`phone`][ms-settings:phone]
 [`powersleep`][ms-settings:powersleep]
-[**`printers`**][ms-settings:printers]
 [`privacy`][ms-settings:privacy]
 [`project`][ms-settings:project]
 [`proximity`][ms-settings:proximity]
@@ -740,7 +739,6 @@ route add 192.168.2.1 mask (255.255.255.0) 192.168.2.4
 [`wheel`][ms-settings:wheel]
 [`windowsdefender`][ms-settings:windowsdefender]
 [`windowsinsider`][ms-settings:windowsinsider]
-[**`windowsupdate`**][ms-settings:windowsupdate]
 [`workplace`][ms-settings:workplace]
 [`yourinfo`][ms-settings:yourinfo]
 
@@ -862,7 +860,7 @@ Display operating system type (48 is Windows 10)
 ```cmd
 wmic os get operatingsystemsku
 ```
-#### wsl.exe[?][msdocs:wsl.exe]
+#### wsl.exe<sup>[?][msdocs:wsl.exe]</sup>
 [wsl.exe -&#108;]: #wsl '```&#10;> wsl.exe -l&#10;> wsl.exe --list&#10;```&#10;List distributions'
 [wsl.exe -&#116;]: #wsl '```&#10;> wsl.exe -t $distro&#10;> wsl.exe --terminate $distro&#10;```&#10;Terminate the specified distribution'
 [wsl.exe -&#115;]: #wsl '```&#10;> wsl.exe -s $distro&#10;> wsl.exe --set-default $distro&#10;```&#10;Set the distribution as the default'

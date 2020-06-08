@@ -39,20 +39,21 @@ An [assembly][Assembly] can be compiled to EXE or DLL.
 [dotnet sln]: #syntax '```&#10;dotnet sln &#10;```&#10;Modify a Visual Studio solution file'
 [dotnet test]: #syntax '```&#10;dotnet test &#10;```&#10;Run unit tests using the tyest runner specified in the project'
 
+[**`new`**][dotnet new]
+[**`run`**][dotnet run]
+**`watch`**
+
 [`add`][dotnet add]
 [`build`][dotnet build]
 [`clean`][dotnet clean]
 [`list`][dotnet list]
-[**`new`**][dotnet new]
 [`nuget`][dotnet nuget]
 [`pack`][dotnet pack]
 [`publish`][dotnet publish]
 [`remove`][dotnet remove]
 [`restore`][dotnet restore]
-[**`run`**][dotnet run]
 [`sln`][dotnet sln]
 [`test`][dotnet test]
-**`watch`**
 
 ### dotnet new
 [dotnet new console]: #dotnet-new '```&#10;dotnet new console &#10;```&#10;Create a .NET Core console app'

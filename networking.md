@@ -54,6 +54,20 @@ Description | Image
 **RAID 50** Multiple RAID 5 arrays contained in a RAID 0, and because there are at least of such arrays involved the minimum number of drives is **6**. | 
 
 ### DNS
+[zone]: #dns 'zone&#10;distinct part of the domain namespace which is delegated to a legal entity who is responsible for maintaining the zone'
+[forwarder]: #dns 'forwarder&#10;DNS server that forwards queries of external domains to a remote DNS server for resolution'
+[conditional forwarder]: #dns 'conditional forwarder&#10;DNS server that only forwards queries for specific domain names'
+[delegation]: #dns 'delegation&#10;record in a parent zone that lists a name server that is authoritative for the zone in the next level of the hierarchy'
+[authoritative server]: # 'authoritative server&#10;definitive for particular domains, providing information about only those domains&#10;Barrett, Diane et al. _CompTIA Security+ Study Guide: Exam SY0-401_. 2015: 54'
+
+
+[msdocs:DNS]: https://docs.microsoft.com/en-us/windows-server/identity/ad-ds/plan/reviewing-dns-concepts "Reviewing DNS Concepts"
+
+**Domain Name System (DNS)** is a distributed database that represents a namespace which contains all the information needed for a client to look up a name.
+A DNS server answers queries if it is [**authoritative**][authoritative server] for the names in a [**zone**][zone].
+If it does not have a cached response or is not authoritative for a zone, then the request is forwarded to another server.
+This means the DNS server must have a path to every zone in the namespace. These paths are created by [**delegation**][delegation].
+Delegation uses both [`NS`][NS record] and [`A`][A record] or [`AAAA`][AAAA record] records.
 
 ###### Resource records
 [A record]: #dns 'A record&#10;IPv4 address record&#10;Dulaney, Emmett. _CompTIA Network+ N10-007 Exam Cram, 6th Edition_.: 71'
