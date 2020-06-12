@@ -24,6 +24,7 @@
     - [sqlite3](#sqlite3)
     - [sys](#sys)
     - [termcolor](#termcolor)
+    - [unittest](#unittest)
     - [venv](#venv)
     - [virtualenv](#virtualenv)
     - [weakref](#weakref)
@@ -285,6 +286,55 @@ from termcolor import cprint
 
 cprint(text,color)
 ```
+### unittest
+By convention, tests are put in their own directory as sibling to the main module ( in order to be able to import it ).
+Integration and unit tests should be organized separately.
+```
+├── project
+│   └── __init__.py
+└── tests
+    ├── integration
+    └── unit
+```
+Run all integration tests within specified directory.
+
+```sh
+python -m unittest discover -s tests/integration
+```
+
+A **test case**, which checks for a specific response to a particular set of inputs, is created by subclassing `unittest.TestCase`. <sup>[Python docs](https://docs.python.org/3.8/library/unittest.html)
+The test case contains individual tests which are defined in methods with names starting with "test".
+Within each test, a call to one of various **assertion**  methods is made which checks for an expected result.
+- `assertEquals()`
+- `assertTrue()`
+- `assertIs()`
+- `assertIsNone()`
+- `assertIn()`
+- `assertIsInstance()`
+- `assertRaises()`
+
+Finally, the **command line entry point** is made with a call to `unittest.main()`, which executes the tests.
+
+
+Simple example<sup>[Real Python](https://realpython.com/python-testing/#how-to-use-unittest-and-flask "Getting Started With Testing in Python")</sup>
+```py
+import unittest
+
+from my_sum import sum
+
+class TestSum(unittest.TestCase):
+  def test_list_int(self):
+    """
+    Test that it can sum a list of integers
+    """
+    data = [1, 2, 3]
+    result = sum(data)
+    self.assertEqual(result, 6)
+
+if __name__ == '__main__':
+  unittest.main()
+```
+Notably, the test case subclasses you create must not have an `__init__()` constructor method defined, because this will produce an error while running the test.
 ### venv
 Create a virtual environment named `project`
 ```sh

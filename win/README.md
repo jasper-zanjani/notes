@@ -90,8 +90,6 @@
 
 [FancyZones Tutorial](https://www.youtube.com/watch?v=rTtGzZYAXgY) <sup>[Web](https://insider.windows.com/en-us/articles/announcing-the-first-preview-and-code-release-of-powertoys/) [GitHub](https://github.com/microsoft/PowerToys/tree/master/src/modules/fancyzones)</sup>
 
-UWP apps **adaptively** adjust UI elements to fit all Windows 10 devices. The **Fluent Design System** provides guidelines to provide a consistent and beautiful appearance to UWP apps. [^](https://docs.microsoft.com/en-us/windows/uwp/design/basics/design-and-ui-intro "Microsoft Docs: \"Introduction to UWP app design\"") Interesting new applications are not being developed on UWP, which does not bode well for the future of Windows as a consumer desktop computer platform. [^](https://mspoweruser.com/uwp-is-dead-because-windows-apps-are-dead/ "mspoweruser.com: \"UWP is dead because Windows apps are dead\"")
-
 Tasks
 - [Display computer name][Get-ComputerInfo]
 - [Remove Registry keys][Remove-Item]
