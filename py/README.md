@@ -1,3 +1,6 @@
+[PiaN]: # "Python in a Nutshell"
+[FP]: # "Fluent Python"
+
 # Python
 - [Python](#python)
   - [Modules](#modules)
@@ -5,7 +8,13 @@
     - [array](#array)
     - [bisect](#bisect)
     - [collections](#collections)
+        - [namedtuple](#namedtuple)
+        - [deque](#deque)
+        - [abc](#abc)
+        - [defaultdict](#defaultdict)
     - [contextlib](#contextlib)
+    - [csv](#csv)
+        - [csv.reader](#csvreader)
     - [ctypes](#ctypes)
     - [curses](#curses)
     - [datetime](#datetime)
@@ -14,6 +23,10 @@
     - [glob](#glob)
     - [heapq](#heapq)
     - [json](#json)
+        - [json.load](#jsonload)
+        - [json.loads](#jsonloads)
+        - [json.dump](#jsondump)
+        - [json.write](#jsonwrite)
     - [optparse](#optparse)
     - [os](#os)
     - [pathlib](#pathlib)
@@ -24,6 +37,8 @@
     - [sqlite3](#sqlite3)
     - [sys](#sys)
     - [termcolor](#termcolor)
+    - [typing](#typing)
+        - [typing.NamedTuple](#typingnamedtuple)
     - [unittest](#unittest)
     - [venv](#venv)
     - [virtualenv](#virtualenv)
@@ -63,12 +78,18 @@ qv.add_argument("-q","--quiet","-s","--silent", action="store_true",help='quiet/
 (FP:48-50, PiaN:375)
 ### bisect
 ### collections
-`collections.namedtuple(name, *field_names` (FP:30-32) subclasses of `tuple` with field names and a class name
-  - `Card = namedtuple('Card',['rank','suit'])`
-  - `City = namedtuple('City', 'name country population coordinates')`
-`collections.deque` (FP:54-56, PiaN: 173) supports most `list` methods\
-`collections.abc` module provides `Mapping` and `MutableMapping` ABCs to formalize the interfaces of dict and similar types (FP:64)\
-`collections.defaultdict` (PiaN: 174)
+##### namedtuple
+```py
+Card = namedtuple('Card',['rank','suit'])`
+City = namedtuple('City', 'Name Country Population Coordinates'.split(' ')]
+```
+##### deque 
+Supports most `list` methods
+FP:54-56, PiaN: 173
+##### abc
+provides `Mapping` and `MutableMapping` ABCs to formalize the interfaces of dict and similar types <sup>[FP][FP]:64</sup>
+##### defaultdict
+s  <sup>[PiaN][PiaN]: 174</sup>
 ### contextlib
 Build a context manager out of **generator functions** - function it decorates must run exactly twice (typically `try ... yield finally ...` structure) - `yield` can pass a value back (can be assigned to variable after `as` keyword)\
 ```py
@@ -76,6 +97,12 @@ Build a context manager out of **generator functions** - function it decorates m
 ```
 `capsys fixture` - from pytest allows access to stdout/stderr output generated during text execution
 `contextlib.redirect_stdout` - context manager temporarily redirects `sys.stdout` to another file or file-like object
+### csv
+##### csv.reader
+```py
+with open('file.csv', newline=''):
+  data = [row for row in csv.reader(f)]
+```
 ### ctypes
 ### curses
 make sure `pdcurses.dll` is in both Python's root directory (C:\Users\jaspe\AppData\Local\Programs\Python\Python37, for instance) as well as the directory where the script is located. This file must be compiled from source code using the make program
@@ -128,21 +155,28 @@ Replace the smallest element of {heap} with {element}
 heapq.heapreplace(heap,element)
 ```
 ### json
-Parse a JSON document
+##### json.load
+Parse an open file descriptor
 ```py
-# Parse an open file descriptor
-data=json.load(fd)
-
-# Deserialize {data} containing a JSON document
-data = json.loads(data)
+with open('file.json') as f:
+  data=json.load(f)
+```
+##### json.loads
+Deserialize a JSON document `rawdata` that has been loaded
+```py
+data = json.loads(rawdata)
 ``` 
+##### json.dump
 Write to an open file descriptor
 ```py
-with open("path","w") as jsonfile:
-  json.dump(data,jsonfile)
-
-# Specify indentation
-jsonfile.write(json.dumps(data, indent=4))
+with open("file.json","w") as f:
+  json.dump(data,f)
+```
+##### json.write
+Specify indentation
+```py
+with open('file.json','w') as f:
+  f.write(json.dumps(data, indent=4))
 ```
 ### optparse
 Instantiate the parser object
@@ -285,6 +319,15 @@ Print {text} in a color code
 from termcolor import cprint
 
 cprint(text,color)
+```
+### typing
+##### typing.NamedTuple
+As tuples, their attributes are **immutable**
+```py
+class Starship(NamedTuple):
+  name: str
+  registry: str
+  crew: int
 ```
 ### unittest
 By convention, tests are put in their own directory as sibling to the main module ( in order to be able to import it ).
