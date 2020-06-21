@@ -12,75 +12,60 @@
 [Lammle]: https://github.com/jasper-zanjani/notes/master/certs/n10-007.md "Lammle, Todd. _CompTIA Network+ Study Guide: Exam N10-005_. 2012."
 [Zacker]: https://github.com/jasper-zanjani/notes/master/certs/70-740.md "Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017."
 
-[access.cpl]:     #access           '```&#10;C:\> access.cpl&#10;```&#10;Accessibility Options'
-[Add-Computer]: pwsh.md#add-computer '```&#10;PS C:\> Add-Computer&#10;```&#10;Join a computer to a domain&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 20'
+[UWP]: #uwp 'Universal Windows Platform (UWP)&#10;Universal Windows Platform provides a common app platform on every device that runs Windows 10, and UWP apps are primarily associated with the Microsoft Store.&#10;"Universal Windows Platform apps". _Wikipedia_.'
+
 [adfind]: #adfind '```&#10;adfind&#10;```&#10;Command-line utility that can be used to query Active Directory attributes&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 53'
 [adprep]: #adprep                         '```&#10;C:\>adprep&#10;```&#10;Prepare Active Directory for Windows Server upgrades&#10;Must be run on the Infrastructure Master role owner with the flag `/domainprep`.&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 29'
-[appwiz.cpl]:     #appwiz           '```&#10;C:\> appwiz.cpl&#10;```&#10;Add/Remove Programs'
 [arp]:            #arp                            '```&#10;C:\>arp&#10;```&#10;Display and modify the IP-to-MAC address translation tables used by ARP'
 [bcdedit]:        #bcdedit                        '```&#10;C:\>bcdedit&#10;```&#10;Boot configuration data editor'
 [bootrec]:        #bootrec                        '```&#10;C:\>bootrec&#10;```&#10;Windows Recovery Environment command that repairs a system partition'
-[cluadmin.msc]: #cluadmin '```&#10;> cluadmin.msc&#10;> cluadmin&#10;```&#10;Failover Cluster Manager'
 [cmdkey.exe]: #cmdkey '```&#10;C:\>cmdkey.exe&#10;```&#10;Creates, lists, and deletes stored user names and passwords or credentials'
-[Configure-SMRemoting.exe]: #configure-smremoting '```&#10;C:\>Configure-SMRemoting.exe&#10;```&#10;Enable remote management using Server Manager'
 [cscript]:        #cscript                        '```&#10;C:\>cscript&#10;```&#10;Starts a script so that it runs in a command-line environment'
-[desk.cpl]:       #desk             '```&#10;C:\> desk.cpl&#10;```&#10;Display Properties'
 [diskpart]:       #diskpart                       '```&#10;C:\>diskpart&#10;```&#10;Text-mode command interpreter used to convert disk types, create partitions and volumes, and configure RAID&#10;Stanek, William R. _Microsoft Windows Command-Line_.: 141'
 [dism.exe]: #dismexe '```&#10;C:\>dism.exe&#10;```&#10;"Deployment Image Servicing and Management", enables modification of VHD and Windows Imaging files while they are offline&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 70'
 [Djoin.exe]: #djoin.exe '```&#10;C:\>Djoin.exe&#10;```&#10;Create a domain provisioning file, so a Nano Server image can be domain joined offline.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 46'
-[domain.msc]: #domain '```&#10;C:\>domain.msc&#10;```&#10;Active Directory Domains and Trusts'
-[dssite.msc]: #dssite '```&#10;C:\>dssite.msc&#10;```&#10;Active Directory Sites and Services'
 [eventvwr.exe]: #eventvwrexe '```&#10;eventvwr.exe&#10;```&#10;Event Viewer'
-[findfast.cpl]:   #findfast         '```&#10;C:\> findfast.cpl&#10;```&#10;FindFast'
-[Get-ChildItem]: pwsh.md#get-childitem '```&#10;PS C:\> Get-ChildItem&#10;PS C:\> dir&#10;PS C:\> gci&#10;PS C:\> ls&#10;```&#10;Get items in one or more locations'
-[Get-Clipboard]: #get-clipboard '```&#10;Get-Clipboard&#10;gcb&#10;```&#10;Display items in clipboard'
-[Get-Command]: #get-command '```&#10;PS C:\> Get-Command&#10;PS C:\> gcm&#10;```&#10;Display all installed commands, including aliases, applications, filters, functions, and scripts'
-[Get-ComputerInfo]: pwsh.md#get-computerinfo '```&#10;PS C:\> Get-ComputerInfo&#10;PS C:\> gin&#10;```&#10;Retrieve a consolidated object of system and operating system properties&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 274'
 [grep]: https://github.com/jasper-zanjani/notes/blob/master/lx/commands/README.md#grep '```&#10;$ grep&#10;```&#10;Search `$FILES` for lines containing a match to regex `$PATTERN`&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 126'
 [hostname]:       #hostname                       '```&#10;C:\>hostname&#10;C:\>HOSTNAME.exe&#10;```&#10;Display computer name'
-[inetcpl.cpl]:    #inetcpl          '```&#10;C:\> inetcpl.cpl&#10;```&#10;Internet Properties'
-[intl.cpl]:       #intl             '```&#10;C:\> intl.cpl&#10;```&#10;Regional Settings'
-[Invoke-GPUpdate]: pwsh.md#invoke-gpupdate '```&#10;PS C:\> Invoke-GPUpdate&#10;```&#10;Schedule a remote Group Policy refresh on the specified host'
 [ipconfig]:       #ipconfig                       '```&#10;C:\>ipconfig&#10;```&#10;Display TCP/IP configuration'
 [iSCSICLI.exe]: #iscsicli '```&#10;C:\>iSCSICLI.exe&#10;```&#10;Outdated command-line tool used in Windows Server editions prior to 2012, superceded by the iSCSI Powershell module. '
-[joy.cpl]:        #joy              '```&#10;C:\> joy.cpl&#10;```&#10;Joystick Properties'
 [logoff]:         #logoff                         '```&#10;C:\>logoff&#10;```&#10;Log out'
 [lx echo]: https://github.com/jasper-zanjani/notes/blob/master/lx/commands/README.md#echo '```&#10;$ echo&#10;```&#10;Write `$STRING` to STDOUT&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 88'
-[main.cpl]:       #main             '```&#10;C:\> main.cpl&#10;```&#10;Mouse Properties'
-[mlcfg32.cpl]:    #mlcfg32          '```&#10;C:\> mlcfg32.cpl&#10;```&#10;Microsoft Exchange (or Windows Messaging)'
 [mmsys.cpl]:      #mmsys            '```&#10;C:\> mmsys.cpl&#10;```&#10;Sound Properties'
 [ms-settings:]: #settings '```&#10;ms-settings:&#10;```&#10;Special protocol which can be used to open Settings pages and other Modern apps which have well known URIs'
 [msiexec]:        #msiexec                        '```&#10;C:\>msiexec&#10;```&#10;Provides the means to install, modify, and perform operations on Windows Installer from the command line'
 [nbtstat]:        #nbtstat                        '```&#10;C:\>nbtstat&#10;```&#10;Display status of NetBIOS'
-[ncpa.cpl]:       #ncpa             '```&#10;C:\> ncpa.cpl&#10;```&#10;Network Settings'
 [netsh]:          #netsh                          '```&#10;C:\>netsh&#10;```&#10;"Network services shell", command-line utility that allows you to manage the configuration of various network services on local and remote computers.&#10;Stanek, William R. _Microsoft Windows Command-Line_.: 297'
 [Network Location Profile]: # 'Network Location Profile&#10;Determines which firewall rules are in effect, and can be "Public", "Private", or "Domain".'
 [ntdsutil]:       #ntdsutil                       '```&#10;C:\>ntdsutil&#10;```&#10;Used to transfer FSMO roles between domain controllers'
-[regsvr32]: #regsvr32 ''
-[Remove-Item]: #remove-item '```&#10;PS C:\> Remove-Item&#10;PS C:\> ri&#10;```&#10;'
 [runas]: #runas '```&#10;C:\>runas&#10;```&#10;Run specific tools and programs with different permissions than those provided by the current login of the user.'
-[Set-ADAccountPassword]: #set-adaccountpassword '```&#10;PS C:\> Set-ADAccountPassword&#10;```&#10;'
-[Set-Clipboard]: #set-clipboard '```&#10;Set-Clipboard&#10;scb&#10;```&#10;Set the current Windows clipboard entry'
 [sfc]: #sfc                            '```&#10;C:\>sfc&#10;C:\>sfc /scannow&#10;```&#10;Scan and verify protected system files&#10;Stanek, William R. _Microsoft Windows Command-Line_.: 373'
 [shutdown]: #shutdown '```&#10;C:\>shutdown&#10;```&#10;Shutdown system.'
 [slmgr]: #slmgr                          '```&#10;C:\>slmgr&#10;```&#10;Windows software licensing management tool'
 [SmigDeploy.exe]: #smigdeploy '```&#10;C:\>SmigDeploy.exe&#10;```&#10;Create a new folder in specified directory, registering Windows Server Migration Tools on the source server and opening a Powershell window in which they can be used&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 34'
-[sysdm.cpl]:      #sysdm            '```&#10;C:\> sysdm.cpl&#10;```&#10;System Properties'
 [systeminfo]: #systeminfo                     '```&#10;C:\>systeminfo&#10;```&#10;Shows system information about the machine, including installed hotfixes and patches'
-[timedate.cpl]:   #timedate         '```&#10;C:\> timedate.cpl&#10;```&#10;Date/Time Properties'
-[UWP]: #uwp 'Universal Windows Platform (UWP)&#10;Universal Windows Platform provides a common app platform on every device that runs Windows 10, and UWP apps are primarily associated with the Microsoft Store.&#10;"Universal Windows Platform apps". _Wikipedia_.'
 [VMConnect.exe]: #vmconnect '```&#10;C:\>VMConnect.exe&#10;```&#10;"Virtual Machine Connection", Hyper-V tool used to connect to a running VM and access its desktop'
-[wgpocpl.cpl]:    #wgpocpl          '```&#10;C:\> wgpocpl.cpl&#10;```&#10;Microsoft Mail Post Office'
 [which]: #which '```&#10;$ which $CMD&#10;```&#10;Determine the location of `$CMD` and display its full path&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 200'
 [WinHTTP]: # 'Windows HTTP Services (WinHTTP)&#10;Provides a server-supported, high-level interface to the HTTP/2 and 1.1 Internet protocols. WinHTTP is designed to be used primarily in server-based scenarios by server applications that communicate with HTTP servers&#10;Windows Update uses WinHTTP to check for updates.'
 [winver]: #winver                                             '```&#10;C:\>winver&#10;```&#10;Display the "About Windows" dialog box, including Windows version and build number'
 [wmic]: #wmic                           '```&#10;C:\>wmic&#10;```&#10;WMI command-line (WMIC) utility provides a command-line interface for WMI.'
-[Write-Host]: pwsh.md#write-host '```&#10;PS C:\> Write-Host&#10;```&#10;Write customized output to a host (equivalent to `echo`).'
 [wt.exe]: #wt '```&#10;C:\>wt&#10;```&#10;Windows Terminal'
 [xcopy]: #xcopy '```&#10;C:\>xcopy&#10;```&#10;Copy files and directories recursively'
 
 [msdocs:wsusutil.exe]: https://docs.microsoft.com/de-de/security-updates/windowsupdateservices/18127395 'Managing WSUS from the Command Line'
 [msdocs:wsl.exe]: https://docs.microsoft.com/en-us/windows/wsl/reference 'Command Reference for Windows Subsystem for Linux'
+
+[Add-Computer]: pwsh.md#add-computer '```&#10;PS C:\> Add-Computer&#10;```&#10;Join a computer to a domain&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 20'
+[Configure-SMRemoting.exe]: #configure-smremoting '```&#10;C:\>Configure-SMRemoting.exe&#10;```&#10;Enable remote management using Server Manager'
+[Get-ChildItem]: pwsh.md#get-childitem '```&#10;PS C:\> Get-ChildItem&#10;PS C:\> dir&#10;PS C:\> gci&#10;PS C:\> ls&#10;```&#10;Get items in one or more locations'
+[Get-Clipboard]: #get-clipboard '```&#10;Get-Clipboard&#10;gcb&#10;```&#10;Display items in clipboard'
+[Get-Command]: #get-command '```&#10;PS C:\> Get-Command&#10;PS C:\> gcm&#10;```&#10;Display all installed commands, including aliases, applications, filters, functions, and scripts'
+[Get-ComputerInfo]: pwsh.md#get-computerinfo '```&#10;PS C:\> Get-ComputerInfo&#10;PS C:\> gin&#10;```&#10;Retrieve a consolidated object of system and operating system properties&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 274'
+[Invoke-GPUpdate]: pwsh.md#invoke-gpupdate '```&#10;PS C:\> Invoke-GPUpdate&#10;```&#10;Schedule a remote Group Policy refresh on the specified host'
+[Remove-Item]: #remove-item '```&#10;PS C:\> Remove-Item&#10;PS C:\> ri&#10;```&#10;'
+[Set-Clipboard]: #set-clipboard '```&#10;Set-Clipboard&#10;scb&#10;```&#10;Set the current Windows clipboard entry'
+[Set-ADAccountPassword]: #set-adaccountpassword '```&#10;PS C:\> Set-ADAccountPassword&#10;```&#10;'
+[Write-Host]: pwsh.md#write-host '```&#10;PS C:\> Write-Host&#10;```&#10;Write customized output to a host (equivalent to `echo`).'
 
 # Microsoft Windows
 
@@ -99,16 +84,18 @@ Tasks
 - [Add a member to a group](pwsh.md#add-a-member-to-a-group)
 - [Log off][logoff]
 
-## Command Prompt
 [UWP][UWP]
+
+## Executables and commands
+[dcgpofix]: #dcgpofix '```&#10;>dcgpofix&#10;```&#10;Reset default GPOs&#10;Warren, Andrew. _Exam Ref 70-742: Identity with Windows Server 2016_. 2017.: 174'
 
 [`arp`][arp] 
 [`bcdedit`][bcdedit] 
 [`bootrec`][bootrec]
-
 `clip.exe` <sup>[pwsh][Set-Clipboard]</sup>
 [`cmdkey`][cmdkey.exe]
 [`cscript`][cscript] 
+[`dcgpofix`][dcgpofix]
 `dir` <sup>[pwsh][Get-ChildItem]</sup>
 [`diskpart`][diskpart] 
 [`djoin`][Djoin.exe]
@@ -148,6 +135,20 @@ Tasks
 [`xcopy`][xcopy]
 
 ##### MMC snap-ins
+[azman.msc]: #azmanmsc '```&#10;>azman.msc&#10;```&#10;Authorization Manager, tool for granting specific privileges to users; deprecated in Windows Server 2012 R2&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 174'
+[cluadmin.msc]: #cluadminmsc '```&#10;>cluadmin.msc&#10;```&#10;Failover Cluster Manager'
+[compmgmt.msc]: #compmgmtmsc '```&#10;>compmgmt.msc&#10;```&#10;"Computer Management", most commonly used MMC component, containing the Device Manager, Disk Defragmenter, Disk Management, Event Viewer, Scheduled Tasks, IIS, and other snap-ins'
+[diskmgmt.msc]: #diskmgmtmsc '```&#10;>diskmgmt.msc&#10;```&#10;"Disk Management", MMC snap-in corresponding to rule group Remote Volume Management'
+[domain.msc]: #domainmsc '```&#10;>domain.msc&#10;```&#10;"Active Directory Domains and Trusts", MMC snap-in used to manage domains, trusts, and relevant information'
+[dsa.msc]: #dsamsc '```&#10;>dsa.msc&#10;```&#10;"Active Directory Users and Computers", MMC snap-in used to manage users, hosts, and relevant information'
+[dssite.msc]: #dssitemsc '```&#10;>dssite.msc&#10;```&#10;"Active Directory Sites and Services", MMC snap-in used to manage the replication and services between sites'
+[gpedit.msc]: #gpeditmsc '```&#10;>gpedit.msc&#10;```&#10;"Local Group Policy Editor", Used to assign user permissions'
+[gpmc.msc]: #gpmcmsc '```&#10;>gpmc.msc&#10;```&#10;"Group Policy Management Console", manage GPOs'
+[lusrmgr.msc]: #lusrmgrmsc '```&#10;>lusrmgr.msc&#10;```&#10;"Local Users and Groups", Used to add users to the Hyper-V Administrators container'
+[services.msc]: #servicesmsc '```&#10;>services.msc&#10;```&#10;"Service Manager", MMC snap-in that allows you to stop or start Windows services'
+[wf.msc]: #wfmsc '```&#10;>wf.msc&#10;```&#10;"Windows Defender Firewall with Advanced Security", MMC snap-in corresponding to rule group Windows Firewall Remote Management'
+
+
 [`adprep`][adprep] 
 [`adfind`][adfind]
 `certsrv.msc`
@@ -167,15 +168,31 @@ Tasks
 `wf.msc`
 
 ##### Control Panel
+[access.cpl]: #accesscpl '```&#10;>access.cpl&#10;```&#10;Accessibility Options'
+[appwiz.cpl]: #appwizcpl '```&#10;>appwiz.cpl&#10;```&#10;Add/Remove Programs'
+[desk.cpl]: #deskcpl '```&#10;>desk.cpl&#10;```&#10;Display Properties'
+[findfast.cpl]: #findfastcpl '```&#10;>findfast.cpl&#10;```&#10;FindFast'
+[inetcpl.cpl]: #inetcplcpl '```&#10;>inetcpl.cpl&#10;```&#10;Internet Properties'
+[intl.cpl]: #intlcpl '```&#10;>intl.cpl&#10;```&#10;Regional Settings'
+[joy.cpl]: #joycpl '```&#10;>joy.cpl&#10;```&#10;Joystick Properties'
+[main.cpl]: #maincpl '```&#10;>main.cpl&#10;```&#10;Mouse Properties'
+[mlcfg32.cpl]: #mlcfg32cpl '```&#10;>mlcfg32.cpl&#10;```&#10;Microsoft Exchange (or Windows Messaging)'
+[mmsys.cpl]: #mmsyscpl '```&#10;>mmsys.cpl&#10;```&#10;Sound Properties'
+[ncpa.cpl]: #ncpacpl '```&#10;>ncpa.cpl&#10;```&#10;Network Settings'
+[sysdm.cpl]: #sysdmcpl '```&#10;>sysdm.cpl&#10;```&#10;System Properties'
+[timedate.cpl]: #timedatecpl '```&#10;>timedate.cpl&#10;```&#10;Date/Time Properties'
+[wgpocpl.cpl]: #wgpocplcpl '```&#10;>wgpocpl.cpl&#10;```&#10;Microsoft Mail Post Office'
+
 [`access`][access.cpl]
 [`appwiz`][appwiz.cpl]
 [`desk`][desk.cpl]
 [`findfast`][findfast.cpl]
 `firewall`
-[`inet`][inetcpl.cpl]
+[`inetcpl`][inetcpl.cpl]
 [`intl`][intl.cpl]
-[`joy.cpljoy.cpl]
+[`joy`][joy.cpl]
 [`main`][main.cpl]
+[`main keyboard`][main.cpl keyboard]
 [`mlcfg32`][mlcfg32.cpl]
 [`mmsys`][mmsys.cpl]
 [`ncpa`][ncpa.cpl]
@@ -257,6 +274,14 @@ Add a user name and password for user `Mikedan` to access computer `Server01` wi
 ```cmd
 cmdkey /add:server01 /user:mikedan /pass:Kleo
 ```
+#### dcgpofix
+[dcgpofix /target:Domain]: #dcgpofix '```&#10;C:\>dcgpofix /target:Domain&#10;```&#10;Reset only the Default Domain Policy&#10;Warren, Andrew. _Exam Ref 70-742: Identity with Windows Server 2016_. 2017.: 174'
+[dcgpofix /target:DC]: #dcgpofix '```&#10;C:\>dcgpofix /target:DC&#10;```&#10;Reset only the Default Domain Controllers Policy&#10;Warren, Andrew. _Exam Ref 70-742: Identity with Windows Server 2016_. 2017.: 174'
+
+[`target:DC`][dcgpofix /target:DC]
+[`target:Domain`][dcgpofix /target:Domain]
+
+
 
 #### diskpart
 <!-- `diskpart` commands -->
@@ -421,6 +446,11 @@ dsquery * cn=schema,cn=configuration,dc=domain,dc=com -scope base -attr objectVe
 `renew`
 #### logoff
 Equivalent to [`shutdown -L`][shutdown]
+#### main.cpl
+[main.cpl keyboard]: #maincpl '```&#10;>main.cpl keyboard&#10;```&#10;Keyboard Properties'
+
+[`keyboard`][main.cpl keyboard]
+
 #### msiexec
 <!-- `msiexec` commands -->
 [msiexec /&#105;]:              #msiexec                       '```&#10;C:\>msiexec /i&#10;```&#10;Install or configure a product'
