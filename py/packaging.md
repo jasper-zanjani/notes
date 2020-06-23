@@ -27,23 +27,35 @@ setup(
 ```
 If the package has dependencies, they can be added by appending a `install_requires` keyword argument passing an array of the module names
 ```python
-..., install_requires=[ 'markdown', ], ...
+setup(
+  # ...,
+  install_requires=[ 'markdown', ],
+  # ...
+)
 ```
-
-
 ### .gitignore
 ```
 *.pyc
 /dist/
 /*.egg-info
 ```
-
 ## Publishing on PyPI
-`python setup.py register` : reserve the name, upload package metadata, and create the pypi.python.org webpage
-`python setup.py sdist` : create a source distribution, producing a tarball inside the top-level directory
-`python setup.py sdist upload` upload the source distribution
-`python setup.py register sdist upload` do all the above in a single step
-
+Reserve the name, upload package metadata, and create the pypi.python.org webpage
+```py
+python setup.py register
+```
+Create a source distribution, producing a tarball inside the top-level directory
+```py
+python setup.py sdist
+```
+Upload the source distribution
+```py
+python setup.py sdist upload
+```
+Do all the above in a single step
+```py
+python setup.py register sdist upload
+```
 ## Sources
 - "How to package your Python code". [Read the Docs](https://python-packaging.readthedocs.io/en/latest/)
 - "Building and distributing packages with [`setuptools`]()". [Web](https://setuptools.readthedocs.io/en/latest/setuptools.html)

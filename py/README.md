@@ -53,6 +53,7 @@
   - [winrm](#winrm)
 - [Python packages](#python-packages)
     - [click](#click)
+        - [click.group](#clickgroup)
     - [Scrapy](#scrapy)
       - [Scrapy shell](#scrapy-shell)
       - [Pagination](#pagination)
@@ -482,7 +483,7 @@ Return site-specific directory where Python files are installed
 sys.prefix          # /usr/local/ by default
 ```
 ## termcolor
-Print {text} in a color code
+Print `text` in a color code
 ```py
 from termcolor import cprint
 
@@ -589,27 +590,6 @@ def hello():
 if __name__ = '__main__':
   hello()
 ```
-
-Nesting commands
-```py
-@click.group()
-def cli():
-  pass
-
-@click.command()
-def initdb():
-  click.echo('Initialized the database')
-
-@click.command()
-def dropdb():
-  click.echo('Dropped the database')
-
-cli.add_command(initdb)
-cli.add_command(dropdb)
-
-if __name__ == '__main__':
-  cli()
-```
 Modified Hello World
 ```py
 import click
@@ -638,6 +618,27 @@ def hello(examref):
 
 if __name__ == '__main__':
   hello()
+```
+##### click.group
+Nesting commands
+```py
+@click.group()
+def cli():
+  pass
+
+@click.command()
+def initdb():
+  click.echo('Initialized the database')
+
+@click.command()
+def dropdb():
+  click.echo('Dropped the database')
+
+cli.add_command(initdb)
+cli.add_command(dropdb)
+
+if __name__ == '__main__':
+  cli()
 ```
 ### Scrapy
 Best used to obtain one "stream" of data at a time, without trying to obtain data from different pages
