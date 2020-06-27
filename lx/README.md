@@ -1449,13 +1449,25 @@ Apply a single, specific commit from another branch
 git cherry-pick commit
 ```
 ##### git config
+Provides a frontend to the INI formatted config files typically found within `.git/config` (or `~/.gitconfig` when using `--global`)
+
 Set up alias "br" for `branch`
 ```sh
 git config --global alias.br branch
 ```
+Equivalent to:
+```ini
+[alias]
+br = branch
+```
 Store authentication details in a cache
 ```sh
 git config --global credential.helper cache
+```
+Equivalent to 
+```ini
+[credential]
+helper = cache
 ```
 ##### git log
 Show commits between January 1 and January 5, 2016

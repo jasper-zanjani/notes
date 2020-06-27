@@ -1,5 +1,6 @@
 [PiaN]: # "Python in a Nutshell"
 [FP]: # "Fluent Python"
+[Ortega]: # "Jose Manuel Ortega et al. _Learning Python Networking Second Edition_."
 
 # Python
 - [Python](#python)
@@ -378,6 +379,13 @@ if __name__ == '__main__':
   unittest.main()
 ```
 Notably, the test case subclasses you create must not have an `__init__()` constructor method defined, because this will produce an error while running the test.
+### urllib
+#### urllib.request
+Download an RFC file from rfc-editor.org <sup>[Ortega][Ortega]</sup>
+```py
+rfc_raw = urllib.request.urlopen(url).read()
+rfc = rfc_raw.decode()
+```
 ### venv
 Create a virtual environment named `project`
 ```sh
