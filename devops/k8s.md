@@ -75,60 +75,62 @@ Worker nodes are called **nodes**, and each node runs 2 processes [[35](sources.
 - **Kube-proxy**
 
 # Syntax
-#### `kubeadm`
-#### `kubectl`
-[kubectl apply]: #kubectl-apply '```&#10;$ kubectl apply&#10;```&#10;Apply a configuration to a resource'
-[kubectl apply]: #kubectl-apply '```&#10;$ kubectl apply&#10;```&#10;Apply a configuration to a resource'
-[kubectl create]: #kubectl-create '```&#10;$ kubectl create&#10;```&#10;Create a resource'
-[kubectl cluster-info]: #kubectl-cluster-info '```&#10;$ kubectl cluster-info&#10;```&#10;Display addresses of the master and services'
-[kubectl delete]: #kubectl-delete '```&#10;$ kubectl delete&#10;```&#10;Delete resources'
-[kubectl describe]: #kubectl-describe '```&#10;$ kubectl describe&#10;```&#10;Show details of a specific resource or group of resources'
-[kubectl edit]: #kubectl-edit '```&#10;$ kubectl edit&#10;```&#10;Edit a resource'
-[kubectl expose]: #kubectl-expose '```&#10;$ kubectl expose&#10;```&#10;Expose a resources as a new Kubernetes service'
-[kubectl get]: #kubectl-get '```&#10;$ kubectl get&#10;```&#10;Display one or more resources'
-[kubectl port-forward]: #kubectl-port-forward '```&#10;$ kubectl port-forward&#10;```&#10;Forward one or more local ports to a pod'
-[kubectl rollout]: #kubectl-rollout '```&#10;$ kubectl rollout&#10;```&#10;Manage the rollout of a resource.'
-[kubectl run]: #kubectl-run '```&#10;$ kubectl run&#10;```&#10;Create and run a particular image in a pod.'
-[kubectl scale]: #kubectl-scale '```&#10;$ kubectl scale&#10;```&#10;Set a new size for a Deployment, ReplicaSet, Replication Controller, or StatefulSet'
-[kubectl set]: #kubectl-set '```&#10;$ kubectl set&#10;```&#10;Configure application resources'
-[kubectl version]: #kubectl-version '```&#10;$ kubectl version&#10;```&#10;Print the client and server version information for the current context'
+### kubeadm
+### kubectl
+[kubectl-apply]: #kubectl-apply '```&#10;$ kubectl apply&#10;```&#10;Apply a configuration to a resource'
+[kubectl-apply]: #kubectl-apply '```&#10;$ kubectl apply&#10;```&#10;Apply a configuration to a resource'
+[kubectl-create]: #kubectl-create '```&#10;$ kubectl create&#10;```&#10;Create a resource'
+[kubectl-cluster-info]: #kubectl-cluster-info '```&#10;$ kubectl cluster-info&#10;```&#10;Display addresses of the master and services'
+[kubectl-delete]: #kubectl-delete '```&#10;$ kubectl delete&#10;```&#10;Delete resources'
+[kubectl-describe]: #kubectl-describe '```&#10;$ kubectl describe&#10;```&#10;Show details of a specific resource or group of resources'
+[kubectl-edit]: #kubectl-edit '```&#10;$ kubectl edit&#10;```&#10;Edit a resource'
+[kubectl-expose]: #kubectl-expose '```&#10;$ kubectl expose&#10;```&#10;Expose a resources as a new Kubernetes service'
+[kubectl-get]: #kubectl-get '```&#10;$ kubectl get&#10;```&#10;Display one or more resources'
+[kubectl-port-forward]: #kubectl-port-forward '```&#10;$ kubectl port-forward&#10;```&#10;Forward one or more local ports to a pod'
+[kubectl-rollout]: #kubectl-rollout '```&#10;$ kubectl rollout&#10;```&#10;Manage the rollout of a resource.'
+[kubectl-run]: #kubectl-run '```&#10;$ kubectl run&#10;```&#10;Create and run a particular image in a pod.'
+[kubectl-scale]: #kubectl-scale '```&#10;$ kubectl scale&#10;```&#10;Set a new size for a Deployment, ReplicaSet, Replication Controller, or StatefulSet'
+[kubectl-set]: #kubectl-set '```&#10;$ kubectl set&#10;```&#10;Configure application resources'
+[kubectl-version]: #kubectl-version '```&#10;$ kubectl version&#10;```&#10;Print the client and server version information for the current context'
 
-[k8s:kubectl-apply]: kubectl https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#apply "kubectl apply"
-[k8s:kubectl-create]: kubectl https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#create "kubectl create"
-[k8s:kubectl-cluster-info]: kubectl https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#cluster-info "kubectl cluster-info"
-[k8s:kubectl-delete]: kubectl https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#delete "kubectl delete"
-[k8s:kubectl-describe]: kubectl https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#describe "kubectl describe"
-[k8s:kubectl-edit]: kubectl https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#edit "kubectl edit"
-[k8s:kubectl-expose]: kubectl https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#expose "kubectl expose"
-[k8s:kubectl-get]: kubectl https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#get "kubectl get"
-[k8s:kubectl-port-forward]: kubectl https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#port-forward "kubectl port-forward"
-[k8s:kubectl-rollout]: kubectl https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#rollout "kubectl rollout"
-[k8s:kubectl-run]: kubectl https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#run "kubectl run"
-[k8s:kubectl-scale]: kubectl https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#scale "kubectl scale"
-[k8s:kubectl-set]: kubectl https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#set "kubectl set"
-[k8s:kubectl-version]: kubectl https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#version "kubectl version"
+[k8s:kubectl-apply]: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#apply "kubectl apply"
+[k8s:kubectl-create]: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#create "kubectl create"
+[k8s:kubectl-cluster-info]: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#cluster-info "kubectl cluster-info"
+[k8s:kubectl-delete]: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#delete "kubectl delete"
+[k8s:kubectl-describe]: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#describe "kubectl describe"
+[k8s:kubectl-edit]: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#edit "kubectl edit"
+[k8s:kubectl-expose]: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#expose "kubectl expose"
+[k8s:kubectl-get]: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#get "kubectl get"
+[k8s:kubectl-port-forward]: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#port-forward "kubectl port-forward"
+[k8s:kubectl-rollout]: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#rollout "kubectl rollout"
+[k8s:kubectl-run]: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#run "kubectl run"
+[k8s:kubectl-scale]: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#scale "kubectl scale"
+[k8s:kubectl-set]: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#set "kubectl set"
+[k8s:kubectl-version]: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#version "kubectl version"
 
-[`apply`][kubectl apply][^][k8s:kubectl-apply]
-[`create`][kubectl create][^][k8s:kubectl-create]
-[`cluster-info`][kbectl cluster-info] [^][k8s:kubectl-cluster-info]
-[`delete`][kubectl delete][^][k8s:kubectl-delete]
-[`describe`][kubectl describe][^][k8s:kubectl-describe]
-[`edit`][kubectl edit][^][k8s:kubectl-edit]
-[`expose`][kubectl expose][^][k8s:kubectl-expose]
-[`get`][kubectl get][^][k8s:kubectl-get]
-[`port-forward`][kbectl port-forward] [^][k8s:kubectl-port-forward]
-[`rollout`][kubectl rollout][^][k8s:kubectl-rollout]
-[`run`][kubectl run][^][k8s:kubectl-run]
-[`scale`][kubectl scale][^][k8s:kubectl-scale]
-[`set`][kubectl set][^][k8s:kubectl-set]
-[`version`][kubectl version][^][k8s:kubectl-version]
+[`apply`][kubectl-apply]<sup>[?][k8s:kubectl-apply]</sup>
+[`create`][kubectl-create]<sup>[?][k8s:kubectl-create]</sup>
+[`cluster-info`][kubectl-cluster-info]<sup>[?][k8s:kubectl-cluster-info]</sup>
+[`delete`][kubectl-delete]<sup>[?][k8s:kubectl-delete]</sup>
+[`describe`][kubectl-describe]<sup>[?][k8s:kubectl-describe]</sup>
+[`edit`][kubectl-edit]<sup>[?][k8s:kubectl-edit]</sup>
+[`expose`][kubectl-expose]<sup>[?][k8s:kubectl-expose]</sup>
+[`get`][kubectl-get]<sup>[?][k8s:kubectl-get]</sup>
+[`port-forward`][kubectl-port-forward] <sup>[?][k8s:kubectl-port-forward]</sup>
+[`rollout`][kubectl-rollout]<sup>[?][k8s:kubectl-rollout]</sup>
+[`run`][kubectl-run]<sup>[?][k8s:kubectl-run]</sup>
+[`scale`][kubectl-scale]<sup>[?][k8s:kubectl-scale]</sup>
+[`set`][kubectl-set]<sup>[?][k8s:kubectl-set]</sup>
+[`version`][kubectl-version]<sup>[?][k8s:kubectl-version]</sup>
 
-##### `kubectl create`
+`krew`
+
+#### kubectl create
 Create a new deployment named `$DEPLOYMENT` from `$IMAGE`
 ```sh
 kubectl create deployment $DEPLOYMENT --image=$IMAGE
 ```
-##### `kubectl delete`
+#### kubectl delete
 Delete $POD
 ```sh
 kubectl delete $POD
@@ -137,24 +139,24 @@ Delete pod `kuard` [[40](sources.md)]
 ```sh
 delete pod kuard
 ```
-##### `kubectl describe`
+#### kubectl describe
 [[41](sources.md)]
 ```sh
 kubectl describe deployment http
 kubectl describe svc http
 ```
-##### `kubectl edit`
+#### kubectl edit
 Open an editor to modify deployment `kuard` [[40](sources.md)]
 ```sh
 kubectl edit deployment kuard
 ```
-##### `kubectl expose`
+#### kubectl expose
 Create a load-balancing service from an existing deployment. `target-port` refers to the ports on deployed pods, while `port` refers to the external facing port of the cluster.  [[40, 41](sources.md)]
 ```sh
 kubectl expose deployment kuard --type=LoadBalancer --port=80 --target-port=8080
 kubectl expose deployment http --external-ip="172.17.0.15" --port=8000 --target-port=80
 ```
-##### `kubectl get`
+#### kubectl get
 View nodes in cluster [[40](sources.md)]
 ```sh
 kubectl get nodes
@@ -169,7 +171,12 @@ Display details of service `kuard`
 ```sh
 kubectl get service kuard -o wide
 ```
-##### `kubectl run`
+#### kubectl krew
+Install a plugin
+```sh
+kubectl krew install starboard
+```
+#### kubectl run
 ```sh
 kubectl run --image=$IMGURL:$VERSION
 kubectl run --generator=run-pod/v1 --image=gcr.io/kuar-demo/kuard-amd64:1 kuard

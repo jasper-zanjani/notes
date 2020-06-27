@@ -10,7 +10,8 @@
 [IMWS]:   https://github.com/jasper-zanjani/notes/master/sources/imws.md "McCabe, John. _Introduction to Microsoft Windows Server 2016_."
 [Jones]:  https://subscription.packtpub.com/video/virtualization_and_cloud/9781789616385 "Jones, Joshua B. _Hands-On Powershell for Active Directory_. PacktPub: 2018."
 [WSAC]:   https://github.com/jasper-zanjani/notes/master/sources/wsac.md "Krause, Jordan. _Windows Server 2016 Administration Cookbook_."
-[Zacker]: https://github.com/jasper-zanjani/notes/master/certs/70-740.md "Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017."
+[Zacker]: https://github.com/jasper-zanjani/notes/master/win/70-740.md "Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017."
+[Warren]: https://github.com/jasper-zanjani/notes/master/win/70-742.md 'Warren, Andrew. _Exam Ref 70-742: Identity with Windows Server 2016_. 2017.'
 [Holmes]: # 'Holmes, Lee. _Windows PowerShell Cookbook_. O\'Reilly Media, 2013.'
 [SOPR]: https://leanpub.com/secretsofpowershellremoting 'Don Jones et al. _Secrets of Powershell Remoting_. '
 [mu:70-740]: # 'MeasureUp Practice Test. _Installation, Storage and Compute with Windows Server 2016 (70-740)_.'
@@ -181,6 +182,7 @@ Powershell users refer to the command-line environment as the **"console"**, as 
 [`defender`](#defender)
 [`dism`](#dism)
 [`failoverclusters`](#failoverclusters)
+[`grouppolicy`](#grouppolicy)
 [`hyper-v`](#hyper-v)
 [`iscsi`](#iscsi)
 [`iscsitarget`](#iscsitarget)
@@ -1529,7 +1531,24 @@ Powershell users refer to the command-line environment as the **"console"**, as 
 [msdocs:Set-GPPrefRegistryValue]: https://docs.microsoft.com/en-us/powershell/module/GroupPolicy/Set-GPPrefRegistryValue "Set-GPPrefRegistryValue documentation"
 [msdocs:Set-GPRegistryValue]: https://docs.microsoft.com/en-us/powershell/module/GroupPolicy/Set-GPRegistryValue "Set-GPRegistryValue documentation"
 
-- GPUpdate [`Invoke`][Invoke-GPUpdate]<sup>[?][msdocs:Invoke-GPUpdate]</sup>
+- GPLink
+[**`New`**][New-GPLink]<sup>[?][msdocs:New-GPLink]</sup>
+[`Remove`][Remove-GPLink]<sup>[?][msdocs:Remove-GPLink]</sup>
+[`Set`][Set-GPLink]<sup>[?][msdocs:Set-GPLink]</sup>
+- GPO
+[**`Backup`**][Backup-GPO]<sup>[?][msdocs:Backup-GPO]</sup>
+[**`Copy`**][Copy-GPO]<sup>[?][msdocs:Copy-GPO]</sup>
+[`Get`][Get-GPO]<sup>[?][msdocs:Get-GPO]</sup>
+[**`Import`**][Import-GPO]<sup>[?][msdocs:Import-GPO]</sup>
+[**`New`**][New-GPO]<sup>[?][msdocs:New-GPO]</sup>
+[`Remove`][Remove-GPO]<sup>[?][msdocs:Remove-GPO]</sup>
+[`Rename`][Rename-GPO]<sup>[?][msdocs:Rename-GPO]</sup>
+[**`Restore`**][Restore-GPO]<sup>[?][msdocs:Restore-GPO]</sup>
+- GPPermission
+[`Get`][Get-GPPermission]<sup>[?][msdocs:Get-GPPermission]</sup>
+[`Set`][Set-GPPermission]<sup>[?][msdocs:Set-GPPermission]</sup>
+- GPUpdate 
+[`Invoke`][Invoke-GPUpdate]<sup>[?][msdocs:Invoke-GPUpdate]</sup>
 #### hyper-v
 [msdocs:Add-VMDvdDrive]: https://docs.microsoft.com/en-us/powershell/module/hyper-v/Add-VMDvdDrive "Add-VMDvdDrive"
 [msdocs:Add-VMFibreChannelHba]: https://docs.microsoft.com/en-us/powershell/module/hyper-v/Add-VMFibreChannelHba "Add-VMFibreChannelHba"
@@ -4185,8 +4204,9 @@ Display information on user, confirming successful creation
 Get-ADUser "Marty McFly" | Select-Object Name
 ```
 ##### Add-DistributionGroupMember<sup>[?][msdocs:Add-DistributionGroupMember]</sup>
-[Add-DistributionGroupMember -Identity]: #Add-DistributionGroupMember '```&#10;[PS] Add-DistributionGroupMember -IdentityIdentity&#10;```&#10;Specifies the group that you want to modify. You can use any value that uniquely identifies the group (including Name, Alias, Distinguished name, Canonical name, Email address, or GUID).'
-[Add-DistributionGroupMember -Member]: #Add-DistributionGroupMember '```&#10;[PS] Add-DistributionGroupMember -MemberMember&#10;```&#10;Specifies the recipient that you want to add to the group. A member can be any mail-enabled recipient in your organization. You can use any value that uniquely identifies the recipient (including Name, Alias, Distinguished name, Canonical name, Email address, or GUID).'
+[Add-DistributionGroupMember -Identity]: #Add-DistributionGroupMember '```&#10;PS> Add-DistributionGroupMember -IdentityIdentity&#10;```&#10;Specifies the group that you want to modify. You can use any value that uniquely identifies the group (including Name, Alias, Distinguished name, Canonical name, Email address, or GUID).'
+[Add-DistributionGroupMember -Member]: #Add-DistributionGroupMember '```&#10;PS> Add-DistributionGroupMember -MemberMember&#10;```&#10;Specifies the recipient that you want to add to the group. A member can be any mail-enabled recipient in your organization. You can use any value that uniquely identifies the recipient (including Name, Alias, Distinguished name, Canonical name, Email address, or GUID).'
+
 [`Identity`][Add-DistributionGroupMember -Identity]
 [`Member`][Add-DistributionGroupMember -Member]
 ##### Add-DnsServerPrimaryZone<sup>[?][msdocs:Add-DnsServerPrimaryZone]
@@ -4318,7 +4338,11 @@ Download help files
 `ForegroundColor`
 
 Exclusively used for drawing text on the screen.
-
+##### Import-GPO<sup>[?][msdocs:Import-GPO]</sup>
+Import a GPO from backup
+```powershell
+Import-GPO -BackupGpoName "IT Managers" -TargetName "Sales Managers" -Path \\LON-DC1\Backup
+```
 ##### Import-Module<sup>[?][msdocs:Import-Module]</sup>
 Import `SmbShare` module
 ```powershell
@@ -4491,7 +4515,6 @@ Set firewall rule for Remote Event Log Management (RPC-EPMAP)
 ```powershell
 Set-NetFirewallRule -name RemoteEventLogSvc-RPCSS-TCP -Enabled True
 ```
-
 ##### New-NetIpAddress<sup>[?][msdocs:New-NetIpAddress]</sup>
 [New-NetIpAddress -DefaultGateway]: #New-NetIpAddress '```&#10;[PS] New-NetIpAddress -DefaultGateway&#10;```&#10;Specify IP address of local router that computer should use to access other networks'
 [New-NetIpAddress -InterfaceIndex]: #New-NetIpAddress '```&#10;[PS] New-NetIpAddress -InterfaceIndex&#10;```&#10;Specify adapter to be configured using interface numbers as displayed by `Get-NetAdapter`'
@@ -4589,7 +4612,6 @@ saps cmd -v runas
 ```
 ##### Enable-PSRemoting<sup>[?][msdocs:Enable-PSRemoting]</sup>
 `SkipNetworkProfileCheck`
-
 ##### Disconnect-PSSession<sup>[?][msdocs:Disconnect-PSSession]</sup>
 Terminate a remote PowerShell session begun with [`New-PSSession`][New-PSSession] <sup>[Zacker][Zacker]: 22</sup>
 ##### Dismount-VHD<sup>[?][msdocs:Dismount-VHD]</sup>
@@ -4708,6 +4730,11 @@ Convert a fixed VHD to a dynamic VHDX <sup>[Zacker][Zacker]: 228</sup>
 ```powershell
 Convert-VHD -Path $OLDFILE -DestinationPath $NEWFILE -VHDType dynamic
 ```
+##### Copy-GPO<sup>[?][msdocs:Copy-GPO]</sup>
+Copy a GPO <sup>[Warren: 170][Warren]</sup>
+```powershell
+Copy-GPO -SourceName "IT Managers" -TargetName "Sales Managers"
+```
 ##### Copy-Item<sup>[?][msdocs:Copy-Item]</sup>
 Copy files to and from an open Powershell session <sup>[Zacker][Zacker]: 180</sup>
 ```powershell
@@ -4769,8 +4796,6 @@ New-ItemProperty -Path HKLM:\Software\Microsoft\Windows\currentversion\policies\
 ```
 ##### Measure-VM<sup>[?][msdocs:Measure-VM]</sup>
 **`VMName`**
-
-
 ##### Select-Object<sup>[?][msdocs:Select-Object]</sup>
 Create a custom property <sup>[Pfeiffer](https://portal.cloudskills.io/products/azure-powershell-the-ultimate-beginners-course/categories/2529580/posts/8443858 "Azure PowerShell course") </sup>
 ```powershell
@@ -4905,16 +4930,13 @@ Set-VMHost -VirtualHardDiskPath 'D:\vms\Virtual Hard Disks' -VirtualMachinePath 
 ```
 ##### Set-VMMemory<sup>[?][msdocs:Set-VMMemory]</sup>
 `DynamicMemory`
-
 ##### Set-VMProcessor<sup>[?][msdocs:Set-VMProcessor]</sup>
 `ExposeVirtualizationExtensions`
-
 ##### Set-VMReplication<sup>[?][msdocs:Set-VMReplication]</sup>
 **`VMName`**
 **`ReplicaServerName`**
 **`ReplicaServerPort`**
 **`AuthenticationType`**
-
 ##### Set-VMReplicationServer<sup>[?][msdocs:Set-VMReplicationServer]</sup>
 **`ReplicationEnabled`**
 **`AllowedAuthenticationType`**
@@ -5011,6 +5033,16 @@ New-EventLog -LogName application -Source MyCustomApp
 
 ```powershell
 Write-EventLog -LogName application -Source MyCustomApp -EventId 911 -Message 'Automated process failed, please contact the administrator.'
+```
+##### New-GPLink<sup>[?][msdocs:New-GPLink]</sup>
+Link a GPO to an OU <sup>[Warren: 164][Warren]</sup>
+```powershell
+New-GPLink -Name "IT MAnagers" -Target "ou=IT, dc=Adatum,dc=com"
+```
+##### New-GPO<sup>[?][msdocs:New-GPO]</sup>
+Create a GPO and link it <sup>[Warren: 164][Warren]</sup>
+```powershell
+New-GPO -Name "IT Managers" | New-GPLink -Target "ou=IT,dc=Adatum,dc=com" -LinkEnabled Yes
 ```
 ##### New-Guid<sup>[?][msdocs:New-Guid]</sup>
 Generate a GUID
@@ -5324,6 +5356,15 @@ Add storage to a failover cluster [created][New-Cluster] with the `-NoStorage` o
 ```powershell
 Enable-ClusterStorageSpacesDirect
 ```
+##### Backup-GPO<sup>[?][msdocs:Backup-GPO]</sup>
+Backup all GPOs <sup>[Warren: 167][Warren]</sup>
+```powershell
+Backup-GPO -All -Path \\LON-DC1\Backup
+```
+Backup a specific GPO
+```powershell
+Backup-GPO -Name "Sales Manager" -Path C:\Users\Administrator -Comend "Weekly Backup"
+```
 ##### Close-SmbOpenFile<sup>[?][msdocs:Close-SmbOpenFile]</sup>
 Close an open file <sup>[docs.microsoft.com][https://docs.microsoft.com/en-us/powershell/module/smbshare/close-smbopenfile?view=win10-ps]</sup>
 ```powershell
@@ -5363,6 +5404,11 @@ New-SmbShare -Name Data -Path C:\Docs -FullAccess Everyone
 Merge a differencing disk into its parent disk <sup>[Zacker][Zacker]: 228</sup>
 ```powershell
 Merge-VHD -Path $OLDFILE -DestinationPath $NEWFILE
+```
+##### Restore-GPO<sup>[?][msdocs:Restore-GPO]</sup>
+Restore a GPO <sup>[Warren: 168][Warren]</sup>
+```powershell
+Restore-GPO -Name "Sales Managers" -Path \\LON-DC1\Backup
 ```
 ##### Restore-VMSnapshot<sup>[?][msdocs:Restore-VMSnapshot]</sup>
 Apply a checkpoint <sup>[Zacker][Zacker]: 230</sup>
@@ -5901,4 +5947,24 @@ $button_ClickMe = New-Object System.Windows.Forms.Button
 # show form
 $Form_HelloWorld.Add_Shown({$Form_HelloWorld.Activate()})
 [void] $Form_HelloWorld.ShowDialog()
+```
+#### Modules
+Create a new module by placing a .psm1 file in a directory of the same name
+```
+.\Starship\Starship.psm1
+```
+Functions defined within the module can be loaded with [`Import-Module`][Import-Module] (execution policy must allow this).
+```powershell
+ipmo .\Starship
+```
+To import classes, a different syntax must be used <sup>[source](https://info.sapien.com/index.php/scripting/scripting-classes/import-powershell-classes-from-modules)</sup>
+```powershell
+Using module .\Starship
+```
+#### Sample enumeration
+[PowerShellMagazine](https://www.powershellmagazine.com/2013/01/18/pstip-get-a-random-item-from-an-enumeration/)
+```powershell
+Add-Type -AssemblyName System.Drawing
+$count = [Enum]::GetValues([System.Drawing.KnownColor]).Count
+[System.Drawing.KnownColor](Get-Random -Minimum 1 -Maximum $count)
 ```

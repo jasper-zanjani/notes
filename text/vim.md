@@ -11,8 +11,6 @@ Vim offers a **composable** language for expressing these editing changes whose 
 The framework of understanding vim's syntax as a language appears to date back to an influential 2011 [stackoverflow](https://stackoverflow.com/questions/1218390/what-is-your-most-productive-shortcut-with-vim/1220118#1220118 "What is your most productive shortcut with Vim?") post.
 
 ## Settings
-
-
 ## Plugins
 Vim 8 supports native loading of plugins (put in `.vim/pack/xx/start/` where `xx` is an arbitrary directory name
 
@@ -34,16 +32,18 @@ vnoremap <A-j> :m '>+1<CR>gv=gv
 vnoremap <A-k> :m '<-2<CR>gv=gv
 ```
 #### Elements
+- [`Identifier`](# "Markdown: Bullets in ordered and unordered lists")
+- [`LineNr`](# "Line numbers")
+- [`Normal`](#"Normal,unhighlightedtext")
+- [`String`](# "Code (text enclosed in backticks) in markdown")
+- [`Title`](# "Markdown: Headings (lines that begin with hashes)")
 - `Comment` 
 - `Constant` 
 - `Cursor`
 - `Folded`
 - `Function`
-- [`Identifier`](# "Markdown: Bullets in ordered and unordered lists")
 - `Keyword`
-- [`LineNr`](# "Line numbers")
 - `NonText`
-- [`Normal`](#"Normal,unhighlightedtext")
 - `Number`
 - `PreProc`
 - `Special`
@@ -51,8 +51,6 @@ vnoremap <A-k> :m '<-2<CR>gv=gv
 - `Statement`
 - `StatusLine`
 - `StatusLineNC`
-- [`String`](# "Code (text enclosed in backticks) in markdown")
-- [`Title`](# "Markdown: Headings (lines that begin with hashes)")
 - `Todo`
 - `Type`
 - `VertSplit`
@@ -80,4 +78,3 @@ Hexadecimal color codes
 ```vim
 :hi ELEMENT guifg=#abc123 guibg=#abc123
 ```
-
