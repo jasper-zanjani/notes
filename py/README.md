@@ -1,3 +1,5 @@
+[Ortega]: # "Jose Manuel Ortega et al. _Learning Python Networking, Second Edition._"
+
 - [Python Concepts](#python-concepts)
     - [Decorators](#decorators)
     - [Doctest](#doctest)
@@ -40,6 +42,7 @@
   - [platform](#platform)
   - [pythonnet<sup>?[^](http://pythonnet.github.io/)</sup>](#pythonnetsupsup)
   - [random](#random)
+  - [socket](#socket)
   - [subprocess](#subprocess)
   - [sqlite3](#sqlite3)
   - [sys](#sys)
@@ -432,6 +435,30 @@ random.choice(iterable)
 Shuffle elements of an iterable in-place [FP:42]
 ```py
 random.shuffle(iterable)
+```
+## socket
+Constructor used to create a socket <sup>[Ortega][Ortega]: 25</sup>
+- `socket_family` can be either 
+  - **`AF_INET`**
+  - `AF_UNIX` for UNIX sockets
+- `socket_type` can be either 
+  - **`SOCK_STREAM`**
+  - `SOCK_DGRAM`
+- `protocol` is usually left out and defaults to 0
+```py
+client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+```
+Connect to a remote socket in one direction
+```py
+client_socket.connect(('www.packtpub.com',80))
+```
+Define port on which to listen for connections.
+```py
+serversocket.bind(('localhost',80))
+```
+Listen to a maximum of 10 connections
+```py
+serversocket.listen(10)
 ```
 ## subprocess
 **subprocess** modules allows you to spawn new processes, interact with file descriptors, and obtain exit codes. The recommended approach is to use the `run()` function as default, which runs a CLI command with options as a list of strings and returns a `CompletedProcess` instance.\

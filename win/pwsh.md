@@ -5948,3 +5948,23 @@ $button_ClickMe = New-Object System.Windows.Forms.Button
 $Form_HelloWorld.Add_Shown({$Form_HelloWorld.Activate()})
 [void] $Form_HelloWorld.ShowDialog()
 ```
+#### Modules
+Create a new module by placing a .psm1 file in a directory of the same name
+```
+.\Starship\Starship.psm1
+```
+Functions defined within the module can be loaded with [`Import-Module`][Import-Module] (execution policy must allow this).
+```powershell
+ipmo .\Starship
+```
+To import classes, a different syntax must be used <sup>[source](https://info.sapien.com/index.php/scripting/scripting-classes/import-powershell-classes-from-modules)</sup>
+```powershell
+Using module .\Starship
+```
+#### Sample enumeration
+[PowerShellMagazine](https://www.powershellmagazine.com/2013/01/18/pstip-get-a-random-item-from-an-enumeration/)
+```powershell
+Add-Type -AssemblyName System.Drawing
+$count = [Enum]::GetValues([System.Drawing.KnownColor]).Count
+[System.Drawing.KnownColor](Get-Random -Minimum 1 -Maximum $count)
+```
