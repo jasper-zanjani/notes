@@ -2035,6 +2035,15 @@ Powershell users refer to the command-line environment as the **"console"**, as 
 - VMProcessor
 [`Get`][Get-VMProcessor]<sup>[?][msdocs:Get-VMProcessor]</sup>
 [`Set`][Set-VMProcessor]<sup>[?][msdocs:Set-VMProcessor]</sup>
+- VMReplication
+[`Enable`][Enable-VMReplication]<sup>[?][msdocs:Enable-VMReplication]</sup>
+[`Get`][Get-VMReplication]<sup>[?][msdocs:Get-VMReplication]</sup>
+[`Measure`][Measure-VMReplication]<sup>[?][msdocs:Measure-VMReplication]</sup>
+[`Remove`][Remove-VMReplication]<sup>[?][msdocs:Remove-VMReplication]</sup>
+[`Resume`][Resume-VMReplication]<sup>[?][msdocs:Resume-VMReplication]</sup>
+[`Set`][Set-VMReplication]<sup>[?][msdocs:Set-VMReplication]</sup>
+[`Stop`][Stop-VMReplication]<sup>[?][msdocs:Stop-VMReplication]</sup>
+[`Suspend`][Suspend-VMReplication]<sup>[?][msdocs:Suspend-VMReplication]</sup>
 - VMSaN
 [`Connect`][Connect-VMSan]<sup>[?][msdocs:Connect-VMSan]</sup>
 [`Disconnect`][Disconnect-VMSan]<sup>[?][msdocs:Disconnect-VMSan]</sup>
