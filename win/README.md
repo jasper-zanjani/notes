@@ -34,6 +34,7 @@
 [mmsys.cpl]:      #mmsys            '```&#10;C:\> mmsys.cpl&#10;```&#10;Sound Properties'
 [ms-settings:]: #settings '```&#10;ms-settings:&#10;```&#10;Special protocol which can be used to open Settings pages and other Modern apps which have well known URIs'
 [msiexec]:        #msiexec                        '```&#10;C:\>msiexec&#10;```&#10;Provides the means to install, modify, and perform operations on Windows Installer from the command line'
+[mstsc.exe]: #mstscexe '```&#10;mstsc.exe&#10;```&#10;Connect to remote hosts using RDP'
 [nbtstat]:        #nbtstat                        '```&#10;C:\>nbtstat&#10;```&#10;Display status of NetBIOS'
 [netsh]:          #netsh                          '```&#10;C:\>netsh&#10;```&#10;"Network services shell", command-line utility that allows you to manage the configuration of various network services on local and remote computers.&#10;Stanek, William R. _Microsoft Windows Command-Line_.: 297'
 [Network Location Profile]: # 'Network Location Profile&#10;Determines which firewall rules are in effect, and can be "Public", "Private", or "Domain".'
@@ -108,6 +109,7 @@ Tasks
 [`iSCSICLI`][iSCSICLI.exe]
 [`logoff`][logoff]
 [`ms-settings:`][ms-settings:]
+[`mstsc.exe`][mstsc.exe]
 [`nbtstat`][nbtstat] 
 [`netsh`](#netsh) 
 [`ntdsutil`][ntdsutil]
@@ -457,6 +459,8 @@ Equivalent to [`shutdown -L`][shutdown]
 [msiexec /&#113;]:              #msiexec                       '```&#10;C:\>msiexec /q&#10;C:\>msiexec /qn&#10;```&#10;Set user interface level to "no UI"'
 
 <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`i`][msiexec /&#105;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`q`][msiexec /&#113;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [<sup>ref</sup>][https://docs.microsoft.com/en-us/windows/win32/msi/command-line-options]
+
+#### mstsc.exe
 
 #### nbtstat
 <!-- `nbtstat` commands -->

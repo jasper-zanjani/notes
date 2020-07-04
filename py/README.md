@@ -45,7 +45,7 @@
     - [os](#os)
     - [pathlib](#pathlib)
     - [platform](#platform)
-    - [pythonnet<sup>?[^](http://pythonnet.github.io/)</sup>](#pythonnetsupsup)
+    - [pythonnet](#pythonnet)
     - [random](#random)
     - [socket](#socket)
     - [subprocess](#subprocess)
@@ -67,7 +67,8 @@
     - [click](#click)
       - [click.group](#clickgroup)
     - [discord](#discord)
-        - [discord.Client](#discordclient)
+      - [discord.Client](#discordclient)
+      - [discord.ext.commands.Bot](#discordextcommandsbot)
     - [dotenv](#dotenv)
         - [dotenv.load_dotenv](#dotenvload_dotenv)
     - [npyscreen](#npyscreen)
@@ -209,6 +210,7 @@ The `__new__` method is the **constructor** while `__init__` is the **initialize
 The **method resolution order (MRO)** refers to the order of base classes that are searched when using `super()`. <sup>[src](https://rhettinger.wordpress.com/2011/05/26/super-considered-super/)</sup>
 
 It is accessed with the `__mro__` [magic method][dunder method], which returns a tuple of base classes in order of precedence, ending in `object` which is the root class of all classes.
+
 # Python modules
 ### argparse
 Define information that will appear when the user wants help.
@@ -365,8 +367,6 @@ def main(stdscr):
     time.sleep(0.1)
 curses.wrapper(main)
 ```
-
-
 ### datetime
 ```py
 datetime.date(2016,7,24)
@@ -381,7 +381,6 @@ datetime.strptime(datestring,formatstring)
 # Various metacharacters are defined for `strptime`
 datetime.datetime.strptime('06/30/1992','%m/%d/%Y')
 ``` 
-
 ### functools
 For higher-order functions (functions that act on or return other functions)\
 Apply `function` of two arguments cumulatively to the items of `iterable` in order to reduce it to a single value
@@ -494,7 +493,8 @@ Display file size
 pathlib.Path.stat().st_size
 ``` 
 ### platform
-### pythonnet<sup>[?](https://github.com/pythonnet/pythonnet "Github")[^](http://pythonnet.github.io/)</sup>
+### pythonnet
+- Docs: [?](https://github.com/pythonnet/pythonnet "Github") [!](http://pythonnet.github.io/)
 Developers recommend Mono version 5.20.1 <sup>Issues [939](https://github.com/pythonnet/pythonnet/issues/939)</sup>
 On Ubuntu, the `eoan` `universe` repository has to be added 
 ```
@@ -765,10 +765,36 @@ if __name__ == '__main__':
 ```sh
 pip install discord.py
 ```
-##### discord.Client
+#### discord.Client
 ```py
 client = discord.Client()
+```
+`Client` objects expose a decorator that is used for event handlers, functions named after various events:
+- `on_ready`
+- `on_member_join`
+- `on_error`
+- `on_message`
+```py
+@client.event
+async def on_ready():
+  print(f'{client.user} has connected to Discord!')
+```
+Another decorator is exposed for in-chat commands ([`commands.Bot`](#discordextcommandsbot) has to be instantiated first.)
+```py
+@bot.command(name='roll_dice', help='Simulates rolling dice.')
+async def roll(ctx, number_of_dice: int, number_of_sides: int):
+  dice = [
+    str(random.choice(range(1, number_of_sides + 1)))
+    for _ in range(number_of_dice)
+  ]
+  await ctx.send(', '.join(dice))
+```
+```py
 client.run(token)
+```
+#### discord.ext.commands.Bot
+```py
+bot = comands.Bot(command_prefix='!')
 ```
 ### dotenv
 ```sh
@@ -778,6 +804,7 @@ pip install -U python-dotenv
 Load a .env file placed in the current working directory.
 ```py
 load_dotenv()
+value =  os.getenv('key')
 ```
 ### npyscreen
 Widget library and application framework built on top of [`ncurses`](#ncurses). <sup>[Documentation](https://npyscreen.readthedocs.io/)]
