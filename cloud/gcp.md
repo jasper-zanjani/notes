@@ -24,18 +24,32 @@
 [Primitive Role]: #identity 'Primitive Role&#10;Grant wide ranges of permissions that may not always be needed by a user&#10;Sullivan, Dan. _Official Google Cloud Certified Associate Cloud Engineer Study Guide_: 48'
 [Project]: #resources 'Project&#10;Contain resources, manage permissions and billing options, and use GCP services&#10;Sullivan, Dan. _Official Google Cloud Certified Associate Cloud Engineer Study Guide_: 43'
 [Role]: #identity 'Role&#10;Collection of permission&#10;Sullivan, Dan. _Official Google Cloud Certified Associate Cloud Engineer Study Guide_: 47'
-
-[gcloud]:                                 #gcloud             '`gcloud`&#10;Command used for many cloud management tasks, organized into a hierarchy of groups'
-[gsutil]:                                 #gsutil             '`gsutil`&#10;Command used to manipulate GCS'
+[Kubeflow]: #kubeflow 'Kubeflow&#10;Cloud Native platform for machine learning based on Google’s internal machine learning pipelines'
+[Spanner]: # 'Spanner&#10;GCP managed scaleable database service'
+[gcloud]: #gcloud '`gcloud`&#10;Command used for many cloud management tasks, organized into a hierarchy of groups'
+[gsutil]: #gsutil '`gsutil`&#10;Command used to manipulate GCS'
 
 # Google Cloud Platform 
-Hierarchy of resources:
-[Organization][Organization] > [Folder][Folder] > [Project][Project]
+## Identity
+[Role][Role] types
+- [Primitive roles][Primitive Role]
+- Predefined roles
+- Custom roles
 
+IAM roles
+- [`appengine.appAdmin`][appengine.appAdmin]
+- [`appengine.appViewer`][appengine.appAdmin]
+- [`appengine.ServiceAdmin`][appengine.ServiceAdmin]
+- Billing Account Creator
+- [Organization Administrator][Organization Administrator]
+- Project Creator
+### Group membership
+- [Group membership and hierarchy](https://www.youtube.com/watch?v=b33-gN0lidA&t=77s 'YouTube - Group membership and hierarchy')
+## Services
 Storage services:
-- [GAE][App Engine]
-- [GCE][Compute Engine]
-- [GKE][Kubernetes Engine]
+- [App Engine (GAE)][App Engine]
+- [Compute Engine (GCE)][Compute Engine]
+- [Kubernetes Engine (GKE)][Kubernetes Engine]
 - [Cloud Functions][Cloud Functions]
 
 Specialized services:
@@ -49,10 +63,28 @@ AI services:
 - [Cloud Machine Learning Engine][Cloud Machine Learning Engine]
 - [Cloud NLP][Cloud Natural Language Processing]
 - [Cloud Vision][Cloud Vision]
+- [Kubeflow][Kubeflow]
 
+### Compute
+#### Cloud Functions
+- [Quickstart](https://www.youtube.com/watch?v=vM-2O-uKBNQ 'YouTube - Getting Started: Cloud Functions quickstart')
+### Machine learning
+#### Cloud Vision
+- [Getting started: Image recognition and classification](https://www.youtube.com/watch?v=BN8aO0LULyw 'YouTube - Getting started: Image recognition and classification')
+#### Kubeflow
+- [Kubeflow 101 (playlist)](https://www.youtube.com/playlist?list=PLIivdWyY5sqLS4lN75RPDEyBgTro_YX7x 'YouTube - KubeFlow 101')
+- [Talk - Kubeflow at Spotify](https://www.youtube.com/watch?v=m9XhsnNSMAI 'YouTube - Building and managing a centralized Kubeflow platform at Spotify')
+- [Talk - Kubeflow on Kubernetes](https://www.youtube.com/watch?v=I6iMznIYwM8 'YouTube - Kubeflow ML on Kubernetes')
+
+## SDK
 [`cbt`][cbt]
 [`gcloud`][gcloud]
 [`gsutil`][gsutil]
+
+Resources:
+- [CLI for GCP](https://www.youtube.com/watch?v=D0x6B-4oUNM 'YouTube - Getting started: CLI for GCP')
+- [Build and package container artifacts](https://www.youtube.com/watch?v=ysjCt3tNyV0 'YouTube - Getting started: Build and package container artifacts')
+- [Private container registry](https://www.youtube.com/watch?v=s46l_PmXBAQ 'YouTube - Getting started: Private container registry/storage')
 
 ### `cbt`
 ### `gcloud`
@@ -79,29 +111,12 @@ Google Cloud Source Control repositories
 gcloud source repos clone
 gcloud source repos create
 ```
-
 ### `gsutil`
 `mb` 
 `mv` 
 [`rewrite`](#change-storage-class)
 `rsync`
 
-
-#### Resources
-
-## Identity
-[Role][Role] types
-- [Primitive roles][Primitive Role]
-- Predefined roles
-- Custom roles
-
-IAM roles
-- [`appengine.appAdmin`][appengine.appAdmin]
-- [`appengine.appViewer`][appengine.appAdmin]
-- [`appengine.ServiceAdmin`][appengine.ServiceAdmin]
-- Billing Account Creator
-- [Organization Administrator][Organization Administrator]
-- Project Creator
 
 # Tasks
 #### To-do application using MongoDB
@@ -143,3 +158,4 @@ gcloud functions describe hello_get
 ```sh
 gsutil rewrite -s $STORAGE_CLASS gs://$PATH_TO_OBJECT
 ```
+

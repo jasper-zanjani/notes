@@ -9,43 +9,6 @@ Certification                                         | Current information
 Linux Foundation Certified Kubernetes Administrator   | Exam is based on Kubernetes 1.15 [Web](https://training.linuxfoundation.org/certification/certified-kubernetes-administrator-cka/)<br/>24 practical questions on the command-line [Web](https://blog.autsoft.hu/certified-kubernetes-administrator/?__s=8npm688qeyruhjuxaofx)
 MTA Windows Server Administration Fundamentals        | [98-365](https://www.microsoft.com/en-us/learning/exam-98-365.aspx)
 
-### AWS certs
-[Certification](https://aws.amazon.com/certification/) | Links
-:---                                  | :---
-AWS Certified Cloud Practitioner      | [Certification](https://aws.amazon.com/certification/certified-cloud-practitioner/)
-AWS Certified Solutions Architect     | [Certification](https://aws.amazon.com/certification/certified-solutions-architect-associate/)
-AWS Certified Developer - Associate   | [Certification](https://aws.amazon.com/certification/certified-developer-associate/)
-AWS Certified SysOps Administrator - Associate | [Certification](https://aws.amazon.com/certification/certified-sysops-admin-associate/)
-AWS Certified Solutions Architect - Professional | [Certification](https://aws.amazon.com/certification/certified-solutions-architect-professional/)
-AWS Certified DevOps Engineer - Professional | [Certification](https://aws.amazon.com/certification/certified-devops-engineer-professional/)
-AWS Certified Security - Specialty    | [Certification](https://aws.amazon.com/certification/certified-security-specialty/)
-AWS Certified Big Data - Specialty    | [Certification](https://aws.amazon.com/certification/certified-big-data-specialty/)
-AWS Certified Advanced Networking - Specialty | [Certification](https://aws.amazon.com/certification/certified-advanced-networking-specialty/)
-AWS Certified Machine Learning - Specialty | [Certification](https://aws.amazon.com/certification/certified-machine-learning-specialty/)
-AWS Certified Alexa Skill Builder - Specialty | [Certification](https://aws.amazon.com/certification/certified-alexa-skill-builder-specialty/)
-
-### Azure certs
-[Certification](https://www.microsoft.com/en-us/learning/browse-all-certifications.aspx) | Links
-:---                                  | :---
-Azure Administrator Associate         | [Certification](https://www.microsoft.com/en-us/learning/azure-administrator.aspx) Exam: [AZ-103](https://www.microsoft.com/en-us/learning/exam-az-103.aspx)
-Azure Security Engineer Associate     | [Certification](https://www.microsoft.com/en-us/learning/azure-security-engineer.aspx) Exam: [AZ-500](https://www.microsoft.com/en-us/learning/azure-security-engineer.aspx#cert-expansion-tab-exam-az-500)
-Azure AI Engineer Associate           | [Certification](https://www.microsoft.com/en-us/learning/azure-ai-engineer.aspx) Exam: [AI-100](https://www.microsoft.com/en-us/learning/azure-ai-engineer.aspx#cert-expansion-tab-exam-ai-100)
-Azure Data Engineer Associate         | [Certification](https://www.microsoft.com/en-us/learning/azure-data-engineer.aspx) Exams: [DP-200](https://www.microsoft.com/en-us/learning/azure-data-engineer.aspx#cert-expansion-tab-exam-DP-200) [DP-201](https://www.microsoft.com/en-us/learning/azure-data-engineer.aspx#cert-expansion-tab-exam-DP-201)
-Azure Data Scientist Associate        | [Certification](https://www.microsoft.com/en-us/learning/azure-data-scientist.aspx) Exam: [DP-100](https://www.microsoft.com/en-us/learning/azure-data-scientist.aspx#cert-expansion-tab-exam-DP-100)
-Azure Developer Associate             | [Certification](https://www.microsoft.com/en-us/learning/azure-developer.aspx) Exam: [AZ-203](https://www.microsoft.com/en-us/learning/azure-developer.aspx#cert-expansion-tab-exam-az-203)
-Azure DevOps Engineer Expert          | [Certification](https://www.microsoft.com/en-us/learning/azure-devops.aspx) Exam: [AZ-400](https://www.microsoft.com/en-us/learning/azure-devops.aspx#cert-expansion-tab-exam-az-400)
-Azure Solutions Architect Expert      | [Certification](https://www.microsoft.com/en-us/learning/azure-solutions-architect.aspx) Exams: [AZ-300](https://www.microsoft.com/en-us/learning/azure-solutions-architect.aspx#cert-expansion-tab-exam-az-300), [AZ-301](https://www.microsoft.com/en-us/learning/azure-solutions-architect.aspx#cert-expansion-tab-exam-az-301)
-
-### GCP certs
-[Certification](https://cloud.google.com/certification/)| Links
-:---                                  | :---
-Associate Cloud Engineer              | [Certification](https://cloud.google.com/certification/cloud-engineer) [Exam](https://cloud.google.com/certification/guides/cloud-engineer/)
-Professional Cloud Architect          | [Certification](https://cloud.google.com/certification/cloud-architect/)
-Professional Data Engineer            | [Certification](https://cloud.google.com/certification/data-engineer/)
-Professional Cloud Developer          | [Certification](https://cloud.google.com/certification/cloud-developer/)
-Professional Cloud Network Engineer   | [Certification](https://cloud.google.com/certification/cloud-network-engineer)
-Professional Cloud Security Engineer  | [Certification](https://cloud.google.com/certification/cloud-security-engineer/)
-Professional Collaboration Engineer   | [Certification](https://cloud.google.com/certification/collaboration-engineer)
 
 #### MCSA
 Exam                                                                  | Retired | Description

@@ -21,139 +21,6 @@
 - [**Modules**](#modules)
 - [**Tasks**](#tasks)
 - [.NET Assemblies](dotnet.md)
-<!--
-[<code>&nbsp;a</code>](#cmdlet-verbs  "```&#10;[PS] Add-&#10;```") 
-[`ap`](#cmdlet-verbs "`Approve-`&#10;Confirms or agrees to the status of a resource or process.") 
-[`as` ](#cmdlet-verbs  "```&#10;[PS] Assert-&#10;```&#10;Affirms the state of a resource.") 
-[`ba` ](#cmdlet-verbs  "```&#10;[PS] Backup-&#10;```&#10;Stores data by replicating it.") 
-[`bd` ](#cmdlet-verbs  "```&#10;[PS] Build-&#10;```&#10;Creates an artifact (usually a binary or document) out of some set of input files (usually source code or declarative documents)") 
-[`bl` ](#cmdlet-verbs  "```&#10;[PS] Block-&#10;```&#10;Restricts access to a resource. This verb is paired with Unblock.") 
-[`cc` ](#cmdlet-verbs  "```&#10;[PS] Connect-&#10;```&#10;Creates a link between a source and a destination. This verb is paired with Disconnect.") 
-[`cf` ](#cmdlet-verbs  "```&#10;[PS] Convertfrom-&#10;```&#10;Converts one primary type of input (the cmdlet noun indicates the input) to one or more supported output types.") 
-[`ch` ](#cmdlet-verbs  "```&#10;[PS] Checkpoint-&#10;```&#10;Creates a snapshot of the current state of the data or of its configuration.") 
-[`cm` ](#cmdlet-verbs  "```&#10;[PS] Compress-&#10;```&#10;Compacts the data of a resource. Pairs with Expand.") 
-[`cn` ](#cmdlet-verbs  "```&#10;[PS] Confirm-&#10;```&#10;Acknowledges, verifies, or validates the state of a resource or process.") 
-[`cp` ](#cmdlet-verbs  "```&#10;[PS] Complete-&#10;```&#10;Concludes an operation.&#10;---&#10;`Copy-`&#10;Copies a resource to another name or to another container. For example, the Copy-Item cmdlet that is used to access stored data copies an item from one location in the data store to another location.") 
-[`cr` ](#cmdlet-verbs  "```&#10;[PS] Compare-&#10;```&#10;Evaluates the data from one resource against the data from another resource.") 
-[`cs` ](#cmdlet-verbs  "```&#10;[PS] Close-&#10;```") 
-[`ct` ](#cmdlet-verbs  "```&#10;[PS] Convertto-&#10;```&#10;Converts from one or more types of input to a primary output type (the cmdlet noun indicates the output type).") 
-[`cv` ](#cmdlet-verbs  "```&#10;[PS] Convert-&#10;```&#10;Changes the data from one representation to another when the cmdlet supports bidirectional conversion or when the cmdlet supports conversion between multiple data types.") 
-[<code>&nbsp;d</code>](#cmdlet-verbs  "```&#10;[PS] Disable-&#10;```&#10;Configures a resource to an unavailable or inactive state. For example, the Disable-PSBreakpoint cmdlet makes a breakpoint inactive. This verb is paired with Enable.") 
-[`db` ](#cmdlet-verbs  "```&#10;[PS] Debug-&#10;```&#10;Examines a resource to diagnose operational problems.") 
-[`dc` ](#cmdlet-verbs  "```&#10;[PS] Disconnect-&#10;```&#10;Breaks the link between a source and a destination. This verb is paired with Connect.") 
-[`dm` ](#cmdlet-verbs  "```&#10;[PS] Dismount-&#10;```&#10;Detaches a named entity from a location. This verb is paired with Mount.") 
-[`dn` ](#cmdlet-verbs  "```&#10;[PS] Deny-&#10;```&#10;Refuses, objects, blocks, or opposes the state of a resource or process.") 
-[`dp` ](#cmdlet-verbs  "```&#10;[PS] Deploy-&#10;```&#10;Sends an application, website, or solution to a remote target[s] in such a way that a consumer of that solution can access it after deployment is complete") 
-[<code>&nbsp;e</code>](#cmdlet-verbs  "```&#10;[PS] Enable-&#10;```&#10;Configures a resource to an available or active state. For example, the Enable-PSBreakpoint cmdlet makes a breakpoint active. This verb is paired with Disable.") 
-[`ed` ](#cmdlet-verbs  "```&#10;[PS] Edit-&#10;```&#10;Modifies existing data by adding or removing content.") 
-[`en` ](#cmdlet-verbs  "```&#10;[PS] Expand-&#10;```&#10;Restores the data of a resource that has been compressed to its original state. This verb is paired with Compress.") 
-[`ep` ](#cmdlet-verbs  "```&#10;[PS] Export-&#10;```&#10;Encapsulates the primary input into a persistent data store, such as a file, or into an interchange format. This verb is paired with Import.") 
-[`et` ](#cmdlet-verbs  "```&#10;[PS] Enter-&#10;```") 
-[`ex` ](#cmdlet-verbs  "```&#10;[PS] Exit-&#10;```") 
-[<code>&nbsp;f</code>](#cmdlet-verbs  "```&#10;[PS] Format-&#10;```") 
-[<code>&nbsp;g</code>](#cmdlet-verbs  "```&#10;[PS] Get-&#10;``") 
-[`gp` ](#cmdlet-verbs  "```&#10;[PS] Group-&#10;```&#10;Arranges or associates one or more resources.") 
-[`gr` ](#cmdlet-verbs  "```&#10;[PS] Grant-&#10;```&#10;Allows access to a resource. This verb is paired with Revoke.") 
-[<code>&nbsp;h</code>](#cmdlet-verbs  "```&#10;[PS] Hide-&#10;```") 
-[<code>&nbsp;i</code>](#cmdlet-verbs  "```&#10;[PS] Invoke-&#10;```&#10;Performs an action, such as running a command or a method.") 
-[`in` ](#cmdlet-verbs  "```&#10;[PS] Initialize-&#10;```&#10;Prepares a resource for use, and sets it to a default state.") 
-[`ip` ](#cmdlet-verbs  "```&#10;[PS] Import-&#10;```&#10;Creates a resource from data that is stored in a persistent data store (such as a file) or in an interchange format. For example, the Import-CSV cmdlet imports data from a comma-separated value (CSV) file to objects that can be used by other cmdlets. This verb is paired with Export.") 
-[`is` ](#cmdlet-verbs  "```&#10;[PS] Install-&#10;```&#10;Places a resource in a location, and optionally initializes it. This verb is paired with Uninstall.") 
-[<code>&nbsp;j</code>](#cmdlet-verbs  "```&#10;[PS] Join-&#10;```") 
-[<code>&nbsp;l</code>](#cmdlet-verbs  "```&#10;[PS] Limit-&#10;```&#10;Applies constraints to a resource.") 
-[`lk` ](#cmdlet-verbs  "```&#10;[PS] Lock-&#10;```") 
-[<code>&nbsp;m</code>](#cmdlet-verbs  "```&#10;[PS] Move`&#10;``") 
-[`mg` ](#cmdlet-verbs  "```&#10;[PS] Merge-&#10;```&#10;Creates a single resource from multiple resources.") 
-[`ms` ](#cmdlet-verbs  "```&#10;[PS] Measure-&#10;```&#10;Identifies resources that are consumed by a specified operation, or retrieves statistics about a resource.") 
-[`mt` ](#cmdlet-verbs  "```&#10;[PS] Mount-&#10;```&#10;Attaches a named entity to a location. This verb is paired with Dismount.") 
-[<code>&nbsp;n</code>](#cmdlet-verbs  "```&#10;[PS] New-&#10;```&#10;Creates a resource. (The `Set-` verb can also be used when creating a resource that includes data, such as the `Set-Variable` cmdlet.)") 
-[<code>&nbsp;o</code>](#cmdlet-verbs  "```&#10;[PS] Out-&#10;```&#10;Sends data out of the environment. For example, the Out-Printer cmdlet sends data to a printer.") 
-[`op` ](#cmdlet-verbs  "```&#10;[PS] Open-&#10;```") 
-[`om` ](#cmdlet-verbs  "```&#10;[PS] Optimize-&#10;```") 
-[`pb` ](#cmdlet-verbs  "```&#10;[PS] Publish-&#10;```&#10;Makes a resource available to others. This verb is paired with Unpublish.") 
-[`pi` ](#cmdlet-verbs  "```&#10;[PS] Ping-&#10;```&#10;Use the Test verb.") 
-[`pt` ](#cmdlet-verbs  "```&#10;[PS] Protect-&#10;```&#10;Safeguards a resource from attack or loss. This verb is paired with Unprotect.") 
-[`pu` ](#cmdlet-verbs  "```&#10;[PS] Push-&#10;```") 
-[<code>&nbsp;r</code>](#cmdlet-verbs  "```&#10;[PS] Remove-&#10;```") 
-[`rc` ](#cmdlet-verbs  "```&#10;[PS] Receive-&#10;```&#10;Accepts information sent from a source. This verb is paired with Send.") 
-[`rd` ](#cmdlet-verbs  "```&#10;[PS] Read-&#10;```&#10;Acquires information from a source. This verb is paired with Write.") 
-[`re` ](#cmdlet-verbs  "```&#10;[PS] Redo-&#10;```") 
-[`rg` ](#cmdlet-verbs  "```&#10;[PS] Register-&#10;```&#10;Creates an entry for a resource in a repository such as a database. This verb is paired with Unregister.") 
-[`rk` ](#cmdlet-verbs  "```&#10;[PS] Revoke-&#10;```&#10;Specifies an action that does not allow access to a resource. This verb is paired with Grant.") 
-[`rn` ](#cmdlet-verbs  "```&#10;[PS] Rename-&#10;```") 
-[`rp` ](#cmdlet-verbs  "```&#10;[PS] Repair-&#10;```&#10;Restores a resource to a usable condition") 
-[`rq` ](#cmdlet-verbs  "```&#10;[PS] Request-&#10;```&#10;Asks for a resource or asks for permissions.") 
-[`rr` ](#cmdlet-verbs  "```&#10;[PS] Restore-&#10;```&#10;Sets a resource to a predefined state, such as a state set by Checkpoint. For example, the Restore-Computer cmdlet starts a system restore on the local computer.") 
-[`rs` ](#cmdlet-verbs  "```&#10;[PS] Reset`&#10;``") 
-[`rt` ](#cmdlet-verbs  "```&#10;[PS] Restart-&#10;```&#10;Stops an operation and then starts it again. For example, the Restart-Service cmdlet stops and then starts a service.") 
-[`ru` ](#cmdlet-verbs  "```&#10;[PS] Resume-&#10;```&#10;Starts an operation that has been suspended. For example, the Resume-Service cmdlet starts a service that has been suspended. This verb is paired with Suspend.") 
-[`rv` ](#cmdlet-verbs  "```&#10;[PS] Resolve-&#10;```&#10;Maps a shorthand representation of a resource to a more complete representation.")
-[<code>&nbsp;s</code>](#cmdlet-verbs  "```&#10;[PS] Set-&#10;```") 
-[`sa` ](#cmdlet-verbs  "```&#10;[PS] Start-&#10;```&#10;Initiates an operation. For example, the Start-Service cmdlet starts a service. This verb is paired with Stop.") 
-[`sb` ](#cmdlet-verbs  "```&#10;[PS] Submit-&#10;```&#10;Presents a resource for approval.") 
-[`sc` ](#cmdlet-verbs  "```&#10;[PS] Select-&#10;```") 
-[`sd` ](#cmdlet-verbs  "```&#10;[PS] Send-&#10;```&#10;Delivers information to a destination. This verb is paired with Receive.") 
-[`sh` ](#cmdlet-verbs  "```&#10;[PS] Show-&#10;```") 
-[`sk` ](#cmdlet-verbs  "```&#10;[PS] Skip-&#10;```") 
-[`sl` ](#cmdlet-verbs  "```&#10;[PS] Split-&#10;```") 
-[`sp` ](#cmdlet-verbs  "```&#10;[PS] Stop-&#10;```&#10;Discontinues an activity. This verb is paired with Start.") 
-[`sr` ](#cmdlet-verbs  "```&#10;[PS] Search-&#10;```") 
-[`ss` ](#cmdlet-verbs  "```&#10;[PS] Suspend-&#10;```&#10;Pauses an activity. For example, the Suspend-Service cmdlet pauses a service. This verb is paired with Resume.") 
-[`st` ](#cmdlet-verbs  "```&#10;[PS] Step-&#10;```") 
-[`sv` ](#cmdlet-verbs  "```&#10;[PS] Save-&#10;```&#10;Preserves data to avoid loss.") 
-[`sw` ](#cmdlet-verbs  "```&#10;[PS] Switch-&#10;```") 
-[`sy` ](#cmdlet-verbs  "```&#10;[PS] Sync-&#10;```&#10;Assures that two or more resources are in the same state.") 
-[<code>&nbsp;t</code>](#cmdlet-verbs  "```&#10;[PS] Test-&#10;```&#10;Verifies the operation or consistency of a resource.") 
-[`tr` ](#cmdlet-verbs  "```&#10;[PS] Trace-&#10;```&#10;Tracks the activities of a resource.") 
-[<code>&nbsp;u</code>](#cmdlet-verbs  "```&#10;[PS] Use-&#10;```&#10;Uses or includes a resource to do something.") 
-[`ub` ](#cmdlet-verbs  "```&#10;[PS] Unpublish-&#10;```&#10;Makes a resource unavailable to others. This verb is paired with Publish.") 
-[`ud` ](#cmdlet-verbs  "```&#10;[PS] Update-&#10;```&#10;Brings a resource up-to-date to maintain its state, accuracy, conformance, or compliance. For example, the Update-FormatData cmdlet updates and adds formatting files to the current PowerShell console.") 
-[`uk` ](#cmdlet-verbs  "```&#10;[PS] Unlock-&#10;```") 
-[`ul` ](#cmdlet-verbs  "```&#10;[PS] Unblock-&#10;```&#10;Removes restrictions to a resource. This verb is paired with Block.") 
-[`un`](#cmdlet-verbs "`Undo-`") 
-[`up` ](#cmdlet-verbs  "```&#10;[PS] Unprotect-&#10;```&#10;Removes safeguards from a resource that were added to prevent it from attack or loss. This verb is paired with Protect.") 
-[`ur` ](#cmdlet-verbs  "```&#10;[PS] Unregister-&#10;```&#10;Removes the entry for a resource from a repository. This verb is paired with Register.") 
-[`us` ](#cmdlet-verbs  "```&#10;[PS] Uninstall-&#10;```&#10;Removes a resource from an indicated location. This verb is paired with Install.")
-[<code>&nbsp;w</code>](#cmdlet-verbs  "```&#10;[PS] Wait-&#10;```&#10;Pauses an operation until a specified event occurs. For example, the Wait-Job cmdlet pauses operations until one or more of the background jobs are complete.") 
-[`wc` ](#cmdlet-verbs  "```&#10;[PS] Watch-&#10;```") 
-[`wr` ](#cmdlet-verbs  "```&#10;[PS] Write-&#10;```&#10;Adds information to a target. This verb is paired with Read.") 
-
-### Bash equivalents
-Powershell users refer to the command-line environment as the **"console"**, as opposed to **"terminal"** or **"shell"** which are preferred among Linux users.
-
-[`$!`][&#36;&#36;]/[`!$`][&#36;&#36;] 
-[`$?`][&#36;?] 
-[`&`][Start-Job] 
-[`>>`][Add-Content] 
-[`alias`][New-Alias] 
-[`awk`][Select-Object] 
-[`basename`][Get-Item]
-`bzip2` 
-[`cat`][Get-Content] 
-[`cd`][Set-Location] 
-[`cp`][Copy-Item] 
-[`dirname`][Get-Item]
-[`echo`][Write-Host] 
-[`find`][Get-ChildItem] 
-[`grep`][Where-Object] 
-[`less`](#out-host "`Out-Host -Paging`") 
-[`ls`][Get-ChildItem] 
-[`man`][Get-Help] 
-[`mkdir`](#new-item "`New-Item -ItemType Directory`") 
-[`more`](#out-host "`Out-Host -Paging`")
-[`print`][Write-Host] 
-[`printf`][Write-Host] 
-[`pwd`][Get-Location]
-[`reset`][Clear-Host] 
-[`rm`][Remove-Item]
-[`sed`][Where-Object] 
-[`shutdown`][Stop-Computer][` -r`][Restart-Computer]
-[`tail`][Get-Content] 
-[`touch`][New-Item]
-[`uniq`][Select-Object]
-[`wc`][Measure-Object] 
-[`which`][Get-Command]
--->
 
 ### Modules
 [`dhcpserver`](#dhcpserver)
@@ -1252,108 +1119,108 @@ Powershell users refer to the command-line environment as the **"console"**, as 
 [`Remove`][Remove-DnsServerZoneDelegation]<sup>[?][msdocs:Remove-DnsServerZoneDelegation]</sup>
 [`Set`][Set-DnsServerZoneDelegation]<sup>[?][msdocs:Set-DnsServerZoneDelegation]</sup>
 #### failoverclusters
-[msdocs:Get-Cluster]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Get-Cluster "Get-Cluster"
-[msdocs:New-Cluster]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/New-Cluster "New-Cluster"
-[msdocs:Remove-Cluster]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Remove-Cluster "Remove-Cluster"
-[msdocs:Start-Cluster]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Start-Cluster "Start-Cluster"
-[msdocs:Stop-Cluster]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Stop-Cluster "Stop-Cluster"
-[msdocs:Test-Cluster]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Test-Cluster "Test-Cluster"
-[msdocs:Block-ClusterAccess]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Block-ClusterAccess "Block-ClusterAccess"
-[msdocs:Get-ClusterAccess]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Get-ClusterAccess "Get-ClusterAccess"
-[msdocs:Grant-ClusterAccess]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Grant-ClusterAccess "Grant-ClusterAccess"
-[msdocs:Remove-ClusterAccess]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Remove-ClusterAccess "Remove-ClusterAccess"
-[msdocs:Get-ClusterAvailableDisk]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Get-ClusterAvailableDisk "Get-ClusterAvailableDisk"
 [msdocs:Add-ClusterCheckpoint]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Add-ClusterCheckpoint "Add-ClusterCheckpoint"
-[msdocs:Get-ClusterCheckpoint]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Get-ClusterCheckpoint "Get-ClusterCheckpoint"
-[msdocs:Remove-ClusterCheckpoint]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Remove-ClusterCheckpoint "Remove-ClusterCheckpoint"
-[msdocs:Get-ClusterDiagnosticInfo]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Get-ClusterDiagnosticInfo "Get-ClusterDiagnosticInfo"
 [msdocs:Add-ClusterDisk]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Add-ClusterDisk "Add-ClusterDisk"
-[msdocs:Clear-ClusterDiskReservation]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Clear-ClusterDiskReservation "Clear-ClusterDiskReservation"
-[msdocs:Get-ClusterFaultDomain]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Get-ClusterFaultDomain "Get-ClusterFaultDomain"
-[msdocs:New-ClusterFaultDomain]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/New-ClusterFaultDomain "New-ClusterFaultDomain"
-[msdocs:Remove-ClusterFaultDomain]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Remove-ClusterFaultDomain "Remove-ClusterFaultDomain"
-[msdocs:Set-ClusterFaultDomain]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Set-ClusterFaultDomain "Set-ClusterFaultDomain"
-[msdocs:Get-ClusterFaultDomainXML]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Get-ClusterFaultDomainXML "Get-ClusterFaultDomainXML"
-[msdocs:Set-ClusterFaultDomainXML]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Set-ClusterFaultDomainXML "Set-ClusterFaultDomainXML"
 [msdocs:Add-ClusterFileServerRole]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Add-ClusterFileServerRole "Add-ClusterFileServerRole"
-[msdocs:Update-ClusterFunctionalLevel]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Update-ClusterFunctionalLevel "Update-ClusterFunctionalLevel"
 [msdocs:Add-ClusterGenericApplicationRole]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Add-ClusterGenericApplicationRole "Add-ClusterGenericApplicationRole"
 [msdocs:Add-ClusterGenericScriptRole]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Add-ClusterGenericScriptRole "Add-ClusterGenericScriptRole"
 [msdocs:Add-ClusterGenericServiceRole]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Add-ClusterGenericServiceRole "Add-ClusterGenericServiceRole"
 [msdocs:Add-ClusterGroup]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Add-ClusterGroup "Add-ClusterGroup"
-[msdocs:Get-ClusterGroup]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Get-ClusterGroup "Get-ClusterGroup"
-[msdocs:Move-ClusterGroup]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Move-ClusterGroup "Move-ClusterGroup"
-[msdocs:Remove-ClusterGroup]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Remove-ClusterGroup "Remove-ClusterGroup"
-[msdocs:Start-ClusterGroup]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Start-ClusterGroup "Start-ClusterGroup"
-[msdocs:Stop-ClusterGroup]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Stop-ClusterGroup "Stop-ClusterGroup"
-[msdocs:Remove-ClusterGroupFromSet]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Remove-ClusterGroupFromSet "Remove-ClusterGroupFromSet"
-[msdocs:Get-ClusterGroupSet]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Get-ClusterGroupSet "Get-ClusterGroupSet"
-[msdocs:New-ClusterGroupSet]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/New-ClusterGroupSet "New-ClusterGroupSet"
-[msdocs:Remove-ClusterGroupSet]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Remove-ClusterGroupSet "Remove-ClusterGroupSet"
-[msdocs:Set-ClusterGroupSet]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Set-ClusterGroupSet "Set-ClusterGroupSet"
 [msdocs:Add-ClusterGroupSetDependency]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Add-ClusterGroupSetDependency "Add-ClusterGroupSetDependency"
-[msdocs:Get-ClusterGroupSetDependency]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Get-ClusterGroupSetDependency "Get-ClusterGroupSetDependency"
-[msdocs:Remove-ClusterGroupSetDependency]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Remove-ClusterGroupSetDependency "Remove-ClusterGroupSetDependency"
 [msdocs:Add-ClusterGroupToSet]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Add-ClusterGroupToSet "Add-ClusterGroupToSet"
-[msdocs:Update-ClusterIPResource]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Update-ClusterIPResource "Update-ClusterIPResource"
 [msdocs:Add-ClusteriSCSITargetServerRole]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Add-ClusteriSCSITargetServerRole "Add-ClusteriSCSITargetServerRole"
-[msdocs:Get-ClusterLog]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Get-ClusterLog "Get-ClusterLog"
-[msdocs:Set-ClusterLog]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Set-ClusterLog "Set-ClusterLog"
-[msdocs:New-ClusterNameAccount]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/New-ClusterNameAccount "New-ClusterNameAccount"
-[msdocs:Get-ClusterNetwork]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Get-ClusterNetwork "Get-ClusterNetwork"
-[msdocs:Get-ClusterNetworkInterface]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Get-ClusterNetworkInterface "Get-ClusterNetworkInterface"
-[msdocs:Update-ClusterNetworkNameResource]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Update-ClusterNetworkNameResource "Update-ClusterNetworkNameResource"
 [msdocs:Add-ClusterNode]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Add-ClusterNode "Add-ClusterNode"
-[msdocs:Clear-ClusterNode]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Clear-ClusterNode "Clear-ClusterNode"
-[msdocs:Get-ClusterNode]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Get-ClusterNode "Get-ClusterNode"
-[msdocs:Remove-ClusterNode]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Remove-ClusterNode "Remove-ClusterNode"
-[msdocs:Resume-ClusterNode]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Resume-ClusterNode "Resume-ClusterNode"
-[msdocs:Start-ClusterNode]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Start-ClusterNode "Start-ClusterNode"
-[msdocs:Stop-ClusterNode]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Stop-ClusterNode "Stop-ClusterNode"
-[msdocs:Suspend-ClusterNode]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Suspend-ClusterNode "Suspend-ClusterNode"
-[msdocs:Get-ClusterOwnerNode]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Get-ClusterOwnerNode "Get-ClusterOwnerNode"
-[msdocs:Set-ClusterOwnerNode]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Set-ClusterOwnerNode "Set-ClusterOwnerNode"
-[msdocs:Get-ClusterParameter]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Get-ClusterParameter "Get-ClusterParameter"
-[msdocs:Set-ClusterParameter]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Set-ClusterParameter "Set-ClusterParameter"
-[msdocs:Get-ClusterQuorum]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Get-ClusterQuorum "Get-ClusterQuorum"
-[msdocs:Set-ClusterQuorum]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Set-ClusterQuorum "Set-ClusterQuorum"
 [msdocs:Add-ClusterResource]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Add-ClusterResource "Add-ClusterResource"
-[msdocs:Get-ClusterResource]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Get-ClusterResource "Get-ClusterResource"
-[msdocs:Move-ClusterResource]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Move-ClusterResource "Move-ClusterResource"
-[msdocs:Remove-ClusterResource]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Remove-ClusterResource "Remove-ClusterResource"
-[msdocs:Resume-ClusterResource]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Resume-ClusterResource "Resume-ClusterResource"
-[msdocs:Start-ClusterResource]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Start-ClusterResource "Start-ClusterResource"
-[msdocs:Stop-ClusterResource]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Stop-ClusterResource "Stop-ClusterResource"
-[msdocs:Suspend-ClusterResource]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Suspend-ClusterResource "Suspend-ClusterResource"
 [msdocs:Add-ClusterResourceDependency]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Add-ClusterResourceDependency "Add-ClusterResourceDependency"
-[msdocs:Get-ClusterResourceDependency]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Get-ClusterResourceDependency "Get-ClusterResourceDependency"
-[msdocs:Remove-ClusterResourceDependency]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Remove-ClusterResourceDependency "Remove-ClusterResourceDependency"
-[msdocs:Set-ClusterResourceDependency]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Set-ClusterResourceDependency "Set-ClusterResourceDependency"
-[msdocs:Get-ClusterResourceDependencyReport]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Get-ClusterResourceDependencyReport "Get-ClusterResourceDependencyReport"
-[msdocs:Test-ClusterResourceFailure]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Test-ClusterResourceFailure "Test-ClusterResourceFailure"
 [msdocs:Add-ClusterResourceType]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Add-ClusterResourceType "Add-ClusterResourceType"
-[msdocs:Get-ClusterResourceType]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Get-ClusterResourceType "Get-ClusterResourceType"
-[msdocs:Remove-ClusterResourceType]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Remove-ClusterResourceType "Remove-ClusterResourceType"
 [msdocs:Add-ClusterScaleOutFileServerRole]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Add-ClusterScaleOutFileServerRole "Add-ClusterScaleOutFileServerRole"
 [msdocs:Add-ClusterServerRole]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Add-ClusterServerRole "Add-ClusterServerRole"
 [msdocs:Add-ClusterSharedVolume]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Add-ClusterSharedVolume "Add-ClusterSharedVolume"
-[msdocs:Get-ClusterSharedVolume]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Get-ClusterSharedVolume "Get-ClusterSharedVolume"
-[msdocs:Move-ClusterSharedVolume]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Move-ClusterSharedVolume "Move-ClusterSharedVolume"
-[msdocs:Remove-ClusterSharedVolume]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Remove-ClusterSharedVolume "Remove-ClusterSharedVolume"
-[msdocs:Get-ClusterSharedVolumeState]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Get-ClusterSharedVolumeState "Get-ClusterSharedVolumeState"
+[msdocs:Add-ClusterVirtualMachineRole]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Add-ClusterVirtualMachineRole "Add-ClusterVirtualMachineRole"
+[msdocs:Add-ClusterVMMonitoredItem]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Add-ClusterVMMonitoredItem "Add-ClusterVMMonitoredItem"
+[msdocs:Block-ClusterAccess]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Block-ClusterAccess "Block-ClusterAccess"
+[msdocs:Clear-ClusterDiskReservation]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Clear-ClusterDiskReservation "Clear-ClusterDiskReservation"
+[msdocs:Clear-ClusterNode]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Clear-ClusterNode "Clear-ClusterNode"
 [msdocs:Disable-ClusterStorageSpacesDirect]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Disable-ClusterStorageSpacesDirect "Disable-ClusterStorageSpacesDirect"
 [msdocs:Enable-ClusterStorageSpacesDirect]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Enable-ClusterStorageSpacesDirect "Enable-ClusterStorageSpacesDirect"
+[msdocs:Get-Cluster]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Get-Cluster "Get-Cluster"
+[msdocs:Get-ClusterAccess]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Get-ClusterAccess "Get-ClusterAccess"
+[msdocs:Get-ClusterAvailableDisk]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Get-ClusterAvailableDisk "Get-ClusterAvailableDisk"
+[msdocs:Get-ClusterCheckpoint]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Get-ClusterCheckpoint "Get-ClusterCheckpoint"
+[msdocs:Get-ClusterDiagnosticInfo]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Get-ClusterDiagnosticInfo "Get-ClusterDiagnosticInfo"
+[msdocs:Get-ClusterFaultDomain]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Get-ClusterFaultDomain "Get-ClusterFaultDomain"
+[msdocs:Get-ClusterFaultDomainXML]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Get-ClusterFaultDomainXML "Get-ClusterFaultDomainXML"
+[msdocs:Get-ClusterGroup]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Get-ClusterGroup "Get-ClusterGroup"
+[msdocs:Get-ClusterGroupSet]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Get-ClusterGroupSet "Get-ClusterGroupSet"
+[msdocs:Get-ClusterGroupSetDependency]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Get-ClusterGroupSetDependency "Get-ClusterGroupSetDependency"
+[msdocs:Get-ClusterLog]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Get-ClusterLog "Get-ClusterLog"
+[msdocs:Get-ClusterNetwork]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Get-ClusterNetwork "Get-ClusterNetwork"
+[msdocs:Get-ClusterNetworkInterface]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Get-ClusterNetworkInterface "Get-ClusterNetworkInterface"
+[msdocs:Get-ClusterNode]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Get-ClusterNode "Get-ClusterNode"
+[msdocs:Get-ClusterOwnerNode]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Get-ClusterOwnerNode "Get-ClusterOwnerNode"
+[msdocs:Get-ClusterParameter]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Get-ClusterParameter "Get-ClusterParameter"
+[msdocs:Get-ClusterQuorum]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Get-ClusterQuorum "Get-ClusterQuorum"
+[msdocs:Get-ClusterResource]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Get-ClusterResource "Get-ClusterResource"
+[msdocs:Get-ClusterResourceDependency]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Get-ClusterResourceDependency "Get-ClusterResourceDependency"
+[msdocs:Get-ClusterResourceDependencyReport]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Get-ClusterResourceDependencyReport "Get-ClusterResourceDependencyReport"
+[msdocs:Get-ClusterResourceType]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Get-ClusterResourceType "Get-ClusterResourceType"
+[msdocs:Get-ClusterSharedVolume]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Get-ClusterSharedVolume "Get-ClusterSharedVolume"
+[msdocs:Get-ClusterSharedVolumeState]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Get-ClusterSharedVolumeState "Get-ClusterSharedVolumeState"
 [msdocs:Get-ClusterStorageSpacesDirect]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Get-ClusterStorageSpacesDirect "Get-ClusterStorageSpacesDirect"
+[msdocs:Get-ClusterVMMonitoredItem]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Get-ClusterVMMonitoredItem "Get-ClusterVMMonitoredItem"
+[msdocs:Grant-ClusterAccess]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Grant-ClusterAccess "Grant-ClusterAccess"
+[msdocs:Move-ClusterGroup]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Move-ClusterGroup "Move-ClusterGroup"
+[msdocs:Move-ClusterResource]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Move-ClusterResource "Move-ClusterResource"
+[msdocs:Move-ClusterSharedVolume]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Move-ClusterSharedVolume "Move-ClusterSharedVolume"
+[msdocs:Move-ClusterVirtualMachineRole]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Move-ClusterVirtualMachineRole "Move-ClusterVirtualMachineRole"
+[msdocs:New-Cluster]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/New-Cluster "New-Cluster"
+[msdocs:New-ClusterFaultDomain]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/New-ClusterFaultDomain "New-ClusterFaultDomain"
+[msdocs:New-ClusterGroupSet]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/New-ClusterGroupSet "New-ClusterGroupSet"
+[msdocs:New-ClusterNameAccount]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/New-ClusterNameAccount "New-ClusterNameAccount"
+[msdocs:Remove-Cluster]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Remove-Cluster "Remove-Cluster"
+[msdocs:Remove-ClusterAccess]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Remove-ClusterAccess "Remove-ClusterAccess"
+[msdocs:Remove-ClusterCheckpoint]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Remove-ClusterCheckpoint "Remove-ClusterCheckpoint"
+[msdocs:Remove-ClusterFaultDomain]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Remove-ClusterFaultDomain "Remove-ClusterFaultDomain"
+[msdocs:Remove-ClusterGroup]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Remove-ClusterGroup "Remove-ClusterGroup"
+[msdocs:Remove-ClusterGroupFromSet]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Remove-ClusterGroupFromSet "Remove-ClusterGroupFromSet"
+[msdocs:Remove-ClusterGroupSet]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Remove-ClusterGroupSet "Remove-ClusterGroupSet"
+[msdocs:Remove-ClusterGroupSetDependency]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Remove-ClusterGroupSetDependency "Remove-ClusterGroupSetDependency"
+[msdocs:Remove-ClusterNode]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Remove-ClusterNode "Remove-ClusterNode"
+[msdocs:Remove-ClusterResource]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Remove-ClusterResource "Remove-ClusterResource"
+[msdocs:Remove-ClusterResourceDependency]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Remove-ClusterResourceDependency "Remove-ClusterResourceDependency"
+[msdocs:Remove-ClusterResourceType]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Remove-ClusterResourceType "Remove-ClusterResourceType"
+[msdocs:Remove-ClusterSharedVolume]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Remove-ClusterSharedVolume "Remove-ClusterSharedVolume"
+[msdocs:Remove-ClusterVMMonitoredItem]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Remove-ClusterVMMonitoredItem "Remove-ClusterVMMonitoredItem"
 [msdocs:Repair-ClusterStorageSpacesDirect]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Repair-ClusterStorageSpacesDirect "Repair-ClusterStorageSpacesDirect"
+[msdocs:Reset-ClusterVMMonitoredState]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Reset-ClusterVMMonitoredState "Reset-ClusterVMMonitoredState"
+[msdocs:Resume-ClusterNode]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Resume-ClusterNode "Resume-ClusterNode"
+[msdocs:Resume-ClusterResource]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Resume-ClusterResource "Resume-ClusterResource"
+[msdocs:Set-ClusterFaultDomain]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Set-ClusterFaultDomain "Set-ClusterFaultDomain"
+[msdocs:Set-ClusterFaultDomainXML]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Set-ClusterFaultDomainXML "Set-ClusterFaultDomainXML"
+[msdocs:Set-ClusterGroupSet]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Set-ClusterGroupSet "Set-ClusterGroupSet"
+[msdocs:Set-ClusterLog]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Set-ClusterLog "Set-ClusterLog"
+[msdocs:Set-ClusterOwnerNode]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Set-ClusterOwnerNode "Set-ClusterOwnerNode"
+[msdocs:Set-ClusterParameter]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Set-ClusterParameter "Set-ClusterParameter"
+[msdocs:Set-ClusterQuorum]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Set-ClusterQuorum "Set-ClusterQuorum"
+[msdocs:Set-ClusterResourceDependency]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Set-ClusterResourceDependency "Set-ClusterResourceDependency"
 [msdocs:Set-ClusterStorageSpacesDirect]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Set-ClusterStorageSpacesDirect "Set-ClusterStorageSpacesDirect"
 [msdocs:Set-ClusterStorageSpacesDirectDisk]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Set-ClusterStorageSpacesDirectDisk "Set-ClusterStorageSpacesDirectDisk"
+[msdocs:Start-Cluster]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Start-Cluster "Start-Cluster"
+[msdocs:Start-ClusterGroup]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Start-ClusterGroup "Start-ClusterGroup"
+[msdocs:Start-ClusterNode]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Start-ClusterNode "Start-ClusterNode"
+[msdocs:Start-ClusterResource]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Start-ClusterResource "Start-ClusterResource"
+[msdocs:Stop-Cluster]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Stop-Cluster "Stop-Cluster"
+[msdocs:Stop-ClusterGroup]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Stop-ClusterGroup "Stop-ClusterGroup"
+[msdocs:Stop-ClusterNode]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Stop-ClusterNode "Stop-ClusterNode"
+[msdocs:Stop-ClusterResource]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Stop-ClusterResource "Stop-ClusterResource"
+[msdocs:Suspend-ClusterNode]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Suspend-ClusterNode "Suspend-ClusterNode"
+[msdocs:Suspend-ClusterResource]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Suspend-ClusterResource "Suspend-ClusterResource"
+[msdocs:Test-Cluster]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Test-Cluster "Test-Cluster"
+[msdocs:Test-ClusterResourceFailure]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Test-ClusterResourceFailure "Test-ClusterResourceFailure"
+[msdocs:Update-ClusterFunctionalLevel]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Update-ClusterFunctionalLevel "Update-ClusterFunctionalLevel"
+[msdocs:Update-ClusterIPResource]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Update-ClusterIPResource "Update-ClusterIPResource"
+[msdocs:Update-ClusterNetworkNameResource]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Update-ClusterNetworkNameResource "Update-ClusterNetworkNameResource"
 [msdocs:Update-ClusterVirtualMachineConfiguration]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Update-ClusterVirtualMachineConfiguration "Update-ClusterVirtualMachineConfiguration"
-[msdocs:Add-ClusterVirtualMachineRole]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Add-ClusterVirtualMachineRole "Add-ClusterVirtualMachineRole"
-[msdocs:Move-ClusterVirtualMachineRole]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Move-ClusterVirtualMachineRole "Move-ClusterVirtualMachineRole"
-[msdocs:Add-ClusterVMMonitoredItem]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Add-ClusterVMMonitoredItem "Add-ClusterVMMonitoredItem"
-[msdocs:Get-ClusterVMMonitoredItem]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Get-ClusterVMMonitoredItem "Get-ClusterVMMonitoredItem"
-[msdocs:Remove-ClusterVMMonitoredItem]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Remove-ClusterVMMonitoredItem "Remove-ClusterVMMonitoredItem"
-[msdocs:Reset-ClusterVMMonitoredState]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Reset-ClusterVMMonitoredState "Reset-ClusterVMMonitoredState"
 [Get-Cluster]: #get-cluster '```&#10;[PS] Get-Cluster&#10;```&#10;Display information about a failover cluster'
 [New-Cluster]: #new-cluster '```&#10;[PS] New-Cluster&#10;```&#10;Create a new failover cluster&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 337'
 [Remove-Cluster]: #remove-cluster '```&#10;[PS] Remove-Cluster&#10;```&#10;Remove a failover cluster'
@@ -1476,6 +1343,8 @@ Powershell users refer to the command-line environment as the **"console"**, as 
 - ClusterQuorum
 [`Get`][Get-ClusterQuorum]<sup>[?][msdocs:Get-ClusterQuorum]</sup>
 [`Set`][Set-ClusterQuorum]<sup>[?][msdocs:Set-ClusterQuorum]</sup>
+- ClusterVMMonitoredItem
+[`Add`][Add-ClusterVMMonitoredItem]<sup>[?][msdocs:Add-ClusterVMMonitoredItem]</sup>
 #### grouppolicy
 [Backup-GPO]: #backup-gpo '```&#10;[PS] Backup-GPO&#10;```&#10;Backs up one GPO or all the GPOs in a domain.'
 [Copy-GPO]: #copy-gpo '```&#10;[PS] Copy-GPO&#10;```&#10;Copies a GPO.'
@@ -2023,6 +1892,10 @@ Powershell users refer to the command-line environment as the **"console"**, as 
 - VMMemory
 [`Get`][Get-VMMemory]<sup>[?][msdocs:Get-VMMemory]</sup>
 [`Set`][Set-VMMemory]<sup>[?][msdocs:Set-VMMemory]</sup>
+- VMMigration
+[`Enable`][Enable-VMMigration]<sup>[?][msdocs:Enable-VMMigration]</sup>
+- VMMigrationNetwork
+[`Set`][Set-VMMigrationNetwork]<sup>[?][msdocs:Set-VMMigrationNetwork]</sup>
 - VMNetworkAdapter
 [`Add`][Add-VMNetworkAdapter]<sup>[?][msdocs:Add-VMNetworkAdapter]</sup>
 [`Connect`][Connect-VMNetworkAdapter]<sup>[?][msdocs:Connect-VMNetworkAdapter]</sup>
@@ -2036,7 +1909,7 @@ Powershell users refer to the command-line environment as the **"console"**, as 
 [`Get`][Get-VMProcessor]<sup>[?][msdocs:Get-VMProcessor]</sup>
 [`Set`][Set-VMProcessor]<sup>[?][msdocs:Set-VMProcessor]</sup>
 - VMReplication
-[`Enable`][Enable-VMReplication]<sup>[?][msdocs:Enable-VMReplication]</sup>
+[**`Enable`**][Enable-VMReplication]<sup>[?][msdocs:Enable-VMReplication]</sup>
 [`Get`][Get-VMReplication]<sup>[?][msdocs:Get-VMReplication]</sup>
 [`Measure`][Measure-VMReplication]<sup>[?][msdocs:Measure-VMReplication]</sup>
 [`Remove`][Remove-VMReplication]<sup>[?][msdocs:Remove-VMReplication]</sup>
@@ -2044,6 +1917,9 @@ Powershell users refer to the command-line environment as the **"console"**, as 
 [`Set`][Set-VMReplication]<sup>[?][msdocs:Set-VMReplication]</sup>
 [`Stop`][Stop-VMReplication]<sup>[?][msdocs:Stop-VMReplication]</sup>
 [`Suspend`][Suspend-VMReplication]<sup>[?][msdocs:Suspend-VMReplication]</sup>
+- VMReplicationServer
+[`Get`][Get-VMReplicationServer]<sup>[?][msdocs:Get-VMReplicationServer]</sup>
+[**`Set`**][Set-VmReplicationServer]<sup>[?][msdocs:Set-VmReplicationServer]</sup>
 - VMSaN
 [`Connect`][Connect-VMSan]<sup>[?][msdocs:Connect-VMSan]</sup>
 [`Disconnect`][Disconnect-VMSan]<sup>[?][msdocs:Disconnect-VMSan]</sup>
@@ -2836,18 +2712,52 @@ Powershell users refer to the command-line environment as the **"console"**, as 
 [`Set`][Set-NetQosPolicy]<sup>[?][msdocs:Set-NetQosPolicy]</sup>
 #### networkloadbalancingclusters
 [Get-NlbCluster]: #get-nlbcluster '```&#10;[PS] Get-NlbCluster&#10;```&#10;Gets information about the NLB cluster object that is queried by the caller.'
+[New-NlbCluster]: #new-nlbcluster '```&#10;[PS] New-NlbCluster&#10;```&#10;Creates a NLB cluster on the specified interface that is defined by the node and network adapter name.'
+[Remove-NlbCluster]: #remove-nlbcluster '```&#10;[PS] Remove-NlbCluster&#10;```&#10;Removes a NLB cluster.'
+[Resume-NlbCluster]: #resume-nlbcluster '```&#10;[PS] Resume-NlbCluster&#10;```&#10;Resumes all nodes of a NLB cluster.'
+[Set-NlbCluster]: #set-nlbcluster '```&#10;[PS] Set-NlbCluster&#10;```&#10;Edits the configuration of a NLB cluster.'
+[Start-NlbCluster]: #start-nlbcluster '```&#10;[PS] Start-NlbCluster&#10;```&#10;Starts all nodes in a NLB cluster.'
+[Stop-NlbCluster]: #stop-nlbcluster '```&#10;[PS] Stop-NlbCluster&#10;```&#10;Stops all nodes of a NLB cluster.'
+[Suspend-NlbCluster]: #suspend-nlbcluster '```&#10;[PS] Suspend-NlbCluster&#10;```&#10;Suspends all nodes of a NLB cluster.'
 [Set-NlbClusterPortRule]: #set-nlbclusterportrule '```&#10;[PS] Set-NlbClusterPortRule&#10;```&#10;Edits the port rules for a NLB cluster.'
 [Add-NlbClusterPortRule]: #add-nlbclusterportrule '```&#10;[PS] Add-NlbClusterPortRule&#10;```&#10;Adds a new port rule to a Network Load Balancing (NLB) cluster.'
-
+[Add-NlbClusterVip]: #add-nlbclustervip '```&#10;[PS] Add-NlbClusterVip&#10;```&#10;Adds a virtual IP address to a Network Load Balancing (NLB) cluster.'
+[Get-NlbClusterVip]: #get-nlbclustervip '```&#10;[PS] Get-NlbClusterVip&#10;```&#10;Gets virtual IP addresses that are queried by the caller.'
+[Remove-NlbClusterVip]: #remove-nlbclustervip '```&#10;[PS] Remove-NlbClusterVip&#10;```&#10;Removes a virtual IP address from a NLB cluster.'
+[Set-NlbClusterVip]: #set-nlbclustervip '```&#10;[PS] Set-NlbClusterVip&#10;```&#10;Edits the virtual IP address of a NLB cluster.'
+[msdocs:Add-NlbClusterVip]: https://docs.microsoft.com/en-us/powershell/module/networkloadbalancingclusters/Add-NlbClusterVip "Add-NlbClusterVip documentation"
+[msdocs:Get-NlbClusterVip]: https://docs.microsoft.com/en-us/powershell/module/networkloadbalancingclusters/Get-NlbClusterVip "Get-NlbClusterVip documentation"
+[msdocs:Remove-NlbClusterVip]: https://docs.microsoft.com/en-us/powershell/module/networkloadbalancingclusters/Remove-NlbClusterVip "Remove-NlbClusterVip documentation"
+[msdocs:Set-NlbClusterVip]: https://docs.microsoft.com/en-us/powershell/module/networkloadbalancingclusters/Set-NlbClusterVip "Set-NlbClusterVip documentation"
 [msdocs:Add-NlbClusterPortRule]: https://docs.microsoft.com/en-us/powershell/module/networkloadbalancingclusters/Add-NlbClusterPortRule "Add-NlbClusterPortRule"
-[msdocs:Get-NlbCluster]: https://docs.microsoft.com/en-us/powershell/module/networkloadbalancingclusters/Get-NlbCluster "Get-NlbCluster"
 [msdocs:Set-NlbClusterPortRule]: https://docs.microsoft.com/en-us/powershell/module/networkloadbalancingclusters/Set-NlbClusterPortRule "Set-NlbClusterPortRule"
+[msdocs:Get-NlbCluster]: https://docs.microsoft.com/en-us/powershell/module/networkloadbalancingclusters/Get-NlbCluster "Get-NlbCluster documentation"
+[msdocs:New-NlbCluster]: https://docs.microsoft.com/en-us/powershell/module/networkloadbalancingclusters/New-NlbCluster "New-NlbCluster documentation"
+[msdocs:Remove-NlbCluster]: https://docs.microsoft.com/en-us/powershell/module/networkloadbalancingclusters/Remove-NlbCluster "Remove-NlbCluster documentation"
+[msdocs:Resume-NlbCluster]: https://docs.microsoft.com/en-us/powershell/module/networkloadbalancingclusters/Resume-NlbCluster "Resume-NlbCluster documentation"
+[msdocs:Set-NlbCluster]: https://docs.microsoft.com/en-us/powershell/module/networkloadbalancingclusters/Set-NlbCluster "Set-NlbCluster documentation"
+[msdocs:Start-NlbCluster]: https://docs.microsoft.com/en-us/powershell/module/networkloadbalancingclusters/Start-NlbCluster "Start-NlbCluster documentation"
+[msdocs:Stop-NlbCluster]: https://docs.microsoft.com/en-us/powershell/module/networkloadbalancingclusters/Stop-NlbCluster "Stop-NlbCluster documentation"
+[msdocs:Suspend-NlbCluster]: https://docs.microsoft.com/en-us/powershell/module/networkloadbalancingclusters/Suspend-NlbCluster "Suspend-NlbCluster documentation"
 
 - NLBCluster 
 [`Get`][Get-NlbCluster]<sup>[?][msdocs:Get-NlbCluster]</sup>
+[**`New`**][New-NlbCluster]<sup>[?][msdocs:New-NlbCluster]</sup>
+[`Remove`][Remove-NlbCluster]<sup>[?][msdocs:Remove-NlbCluster]</sup>
+[`Resume`][Resume-NlbCluster]<sup>[?][msdocs:Resume-NlbCluster]</sup>
+[`Set`][Set-NlbCluster]<sup>[?][msdocs:Set-NlbCluster]</sup>
+[`Start`][Start-NlbCluster]<sup>[?][msdocs:Start-NlbCluster]</sup>
+[`Stop`][Stop-NlbCluster]<sup>[?][msdocs:Stop-NlbCluster]</sup>
+[`Suspend`][Suspend-NlbCluster]<sup>[?][msdocs:Suspend-NlbCluster]</sup>
 - NLBClusterPortRule
 [`Add`][Add-NlbClusterPortRule]<sup>[?][msdocs:Add-NlbClusterPortRule]</sup>
 [`Set`][Set-NlbClusterPortRule]<sup>[?][msdocs:Set-NlbClusterPortRule]</sup>
+- NLBClusterVip
+[**`Add`**][Add-NlbClusterVip]<sup>[?][msdocs:Add-NlbClusterVip]</sup>
+[`Get`][Get-NlbClusterVip]<sup>[?][msdocs:Get-NlbClusterVip]</sup>
+[`Remove`][Remove-NlbClusterVip]<sup>[?][msdocs:Remove-NlbClusterVip]</sup>
+[`Set`][Set-NlbClusterVip]<sup>[?][msdocs:Set-NlbClusterVip]</sup>
+
 #### PackageManagement
 [msdocs:Find-Package]: https://docs.microsoft.com/en-us/powershell/module/PackageManagement/Find-Package "Find-Package"
 [msdocs:Get-Package]: https://docs.microsoft.com/en-us/powershell/module/PackageManagement/Get-Package "Get-Package"
@@ -4544,6 +4454,11 @@ Configure a network adapter
 ```powershell
 New-NetIpAddress -InterfaceIndex 6 -IpAddress 192.168.0.200 -PrefixLength 24 -DefaultGateway 192.168.0.1
 ```
+##### New-NLBCluster<sup>[?][msdocs:New-NlbCluster]</sup>
+Configure a multi-homed server as a node in multiple NLB clusters, with each network adapter added to a different cluster. <sup>[Practice Test][mu:70-740]</sup>
+```powershell
+New-NlbCluster
+```
 ##### Set-NetIpInterface<sup>[?][msdocs:Set-NetIpInterface]</sup>
 Enable DHCP <sup>[4sysops.com](https://4sysops.com/archives/set-an-ip-address-and-configure-dhcp-with-powershell/ "Set an IP address and configure DHCP with Powershell")</sup>
 ```powershell
@@ -4665,17 +4580,34 @@ New-PSSession -ComputerName core02
 `Delegate`
 `Role`
 ##### New-Volume<sup>[?][msdocs:New-Volume]</sup>
-`FileSystem`
-`ProvisioningType`
-`ResiliencySettingName`
 
-Create a virtual disk that uses parity resiliency and two tiers, with the default friendly names of Performance for SSDs and Capacity for HDDs <sup>[Zacker][Zacker]: 355</sup>
+[New-Volume  -ProvisioningType]: #new-volume '```&#10;PS> New-Volume  -ProvisioningType&#10;```&#10;Specify the type of provisioning&#10;Acceptable values include:&#10;- Fixed&#10;- Thin&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 355'
+[New-Volume  -ReseiliencySettingName]: #new-volume '```&#10;PS> New-Volume  -ReseiliencySettingName&#10;```&#10;Specify the resiliency setting (storage layout) to use for the volume.&#10;Accpetable values vary by storage subsystem.&#10;- Simple&#10;- Mirror&#10;- Parity&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 355'
+[New-Volume  -StoragePool]: #new-volume '```&#10;PS> New-Volume  -StoragePool&#10;```&#10;Specify the storage pool object in which you want to create a volume&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 355'
+[New-Volume  -StoragePoolFriendlyName]: #new-volume '```&#10;PS> New-Volume  -StoragePoolFriendlyName&#10;```&#10;Specify the friendly name of the storage pool in which to create a volume&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 355'
+[New-Volume  -StoragePoolName]: #new-volume '```&#10;PS> New-Volume  -StoragePoolName&#10;```&#10;Specify the name of the storage pool in which to create a volume&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 355'
+[New-Volume  -StoragePoolUniqueId]: #new-volume '```&#10;PS> New-Volume  -StoragePoolUniqueId&#10;```&#10;Specify the name of the storage pool in which to create a volume&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 355'
+[New-Volume  -StorageTierFriendlyNames]: #new-volume '```&#10;PS> New-Volume  -StorageTierFriendlyNames&#10;```&#10;Specify the names of storage tiers to use when creating the volume&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 355'
+[New-Volume  -StorageTierSizes]: #new-volume '```&#10;PS> New-Volume  -StorageTierSizes&#10;```&#10;Specify how big to make each storage tier on this volume&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 355'
+[New-Volume  -StorageTierSizes]: #new-volume '```&#10;PS> New-Volume  -StorageTierSizes&#10;```&#10;Specify the storage tier objects to use when creating the volume&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 355'
+
+`FileSystem`
+[**`ProvisioningType`**][New-Volume -ProvisioningType]
+[**`ReseiliencySettingName`**][New-Volume -ReseiliencySettingName]
+[**`StoragePool`**][New-Volume -StoragePool]
+[**`StoragePoolFriendlyName`**][New-Volume -StoragePoolFriendlyName]
+[`StoragePoolName`][New-Volume -StoragePoolName]
+[`StoragePoolUniqueId`][New-Volume -StoragePoolUniqueId]
+[**`StorageTierFriendlyNames`**][New-Volume -StorageTierFriendlyNames]
+[**`StorageTierSizes`**][New-Volume -StorageTierSizes]
+
+Create a **Storage Spaces Direct** virtual disk that uses parity resiliency and two tiers, with the default friendly names of Performance for SSDs and Capacity for HDDs <sup>[Zacker][Zacker]: 355</sup>
 ```powershell
-New-Volume -StoragePool "s2d*" -FriendlyName vdisk1 -Filesystem csvfs_refs -ResiliencySettingName parity -StorageTiersFriendlyNames performance,capacity -StorageTierSizes 10gb,100gb
+New-Volume -StoragePool "s2d*" -FriendlyName vdisk1 -Filesystem csvfs_refs -ResiliencySettingName parity -StorageTierFriendlyNames performance,capacity -StorageTierSizes 10gb,100gb
 ```
 Create a VHD with a Mirror layout <sup>[Practice Lab][pl:70-740]</sup>
 ```powershell
-New-Volume -StoragePoolFriendlyName “PLABDM01-SP1” -FriendlyName “Mirror1” -Size 6GB -ResiliencySettingName “Mirror” -FileSystem NTFS -AccessPath “M:” -ProvisioningType Thin
+New-Volume -StoragePoolFriendlyName “PLABDM01-SP1” -FriendlyName Mirror1 -Size 6GB -ResiliencySettingName Mirror -FileSystem NTFS -AccessPath “M:” -ProvisioningType Thin
 ```
 ##### New-Website<sup>[?][msdocs:New-Website]</sup>
 [Practice Lab][pl:70-740]
@@ -5263,6 +5195,9 @@ Get-WindowsImage -ImagePath G:\images\WS2016.WIM
 [Mount-WindowsImage -Remount]: #Mount-WindowsImage '```&#10;[PS] Mount-WindowsImage -Remount&#10;```&#10;&#10;Equivalent to `Dism.exe /Remount-Image`&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 77'
 
 [`Remount`][Mount-WindowsImage -Remount]
+
+##### Enable-VMMigration<sup>[?][msdocs:Enable-VMMigration]</sup>
+
 ##### Enable-VMReplication<sup>[?][msdocs:Enable-VMReplication]</sup>
 **`VMName`**
 **`ReplicaServerName`**
@@ -5360,6 +5295,13 @@ Zacker: 336
 ```powershell
 Add-ClusterSharedVolume -Name "Cluster disk 5"
 ```
+##### Add-ClusterVMMonitoredItem<sup>[?][msdocs:Add-ClusterVMMonitoredItem]</sup>
+
+Zacker: 362
+```powershell
+Add-ClusterVMMonitoredItem -VirtualMachine clustervm3 -Service spooler
+```
+
 ##### Enable-ClusterStorageSpacesDirect<sup>[?][msdocs:Enable-ClusterStorageSpacesDirect]</sup>
 Add storage to a failover cluster [created][New-Cluster] with the `-NoStorage` option <sup>[Zacker][Zacker]: 354</sup>
 ```powershell
@@ -5429,8 +5371,28 @@ Create a cluster port rule that ensures that all SSL traffic for a network clien
 ```powershell
 Get-NlbCluster | Add-NlbClusterPortRule -StartPort 443 -EndPort 443 -Affinity Single
 ```
+##### Add-NlbClusterVip<sup>[?][msdocs:Add-NlbClusterVip]</sup>
+Used to add a new virtual IP address without changing the cluster primary IP address.
 ##### New-ClusterFaultDomain<sup>[?][msdocs:New-ClusterFaultDomain]</sup>
+[New-ClusterFaultDomain -FaultDomainType]: #new-clusterfaultdomain '```&#10;PS> New-ClusterFaultDomain  -FaultDomainType&#10;```&#10;Specify the type of fault domain created.&#10;Acceptable values include:&#10;- Site&#10;- Rack&#10;- Chassis&#10;- Node&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 366'
+
+[**`FaultDomainType`**][New-ClusterFaultDomain -FaultDomainType]
+
+Zacker: 366
+```powershell
+New-ClusterFaultDomain -Name ny -Type site -Description "primary" -Location "New York, NY"
+New-ClusterFaultDomain -Name sf -Type site -Description "secondary" -Location "San Francisco, CA"
+```
+
 ##### Set-ClusterFaultDomain<sup>[?][msdocs:Set-ClusterFaultDomain]</sup>
+
+Zacker: 366
+```powershell
+Set-ClusterFaultDomain -Name node1 -Parent ny
+Set-ClusterFaultDomain -Name node2 -Parent ny
+Set-ClusterFaultDomain -Name node3 -Parent sf
+Set-ClusterFaultDomain -Name node4 -Parent sf
+```
 ##### Set-SCVirtualMachine<sup>[?][msdocs:Set-SCVirtualMachine]</sup>
 `DynamicMemoryEnabled`
 `MemoryMB`
@@ -5976,4 +5938,11 @@ Using module .\Starship
 Add-Type -AssemblyName System.Drawing
 $count = [Enum]::GetValues([System.Drawing.KnownColor]).Count
 [System.Drawing.KnownColor](Get-Random -Minimum 1 -Maximum $count)
+```
+#### Migrate a VM
+```powershell
+Enable-VMMigration
+Set-VMMigrationNetwork 192.168.10.1
+Set-VMHost -VirtualMachineMigrationAuthenticationType Kerberos
+Set-VMHost -VirtualMachineMigrationPerformanceOption SMBTransport
 ```
