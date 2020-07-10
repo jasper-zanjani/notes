@@ -1,32 +1,129 @@
+- [Cloud services](#cloud-services)
+  - [Certifications](#certifications)
+    - [AWS certifications<sup>?</sup>](#aws-certificationssupsup)
+    - [Azure certifications<sup>?</sup>](#azure-certificationssupsup)
+    - [GCP certifications<sup>?</sup>](#gcp-certificationssupsup)
+  - [Command-line](#command-line)
+    - [Azure command-line](#azure-command-line)
+    - [AWS command-line](#aws-command-line)
+    - [GCP command-line](#gcp-command-line)
+      - [`cbt`](#cbt)
+      - [`gcloud`](#gcloud)
+      - [`gsutil`](#gsutil)
+  - [Resources](#resources)
+    - [Azure resources](#azure-resources)
+    - [AWS resources](#aws-resources)
+    - [GCP resources](#gcp-resources)
+  - [RDBMS](#rdbms)
+    - [Azure RDBMS](#azure-rdbms)
+    - [AWS RDBMS](#aws-rdbms)
+    - [GCP RDBMS](#gcp-rdbms)
+  - [NoSQL](#nosql)
+    - [Azure NoSQL](#azure-nosql)
+    - [AWS NoSQL](#aws-nosql)
+      - [DynamoDB](#dynamodb)
+    - [GCP NoSQL](#gcp-nosql)
+      - [Spanner](#spanner)
+      - [Firebase](#firebase)
+      - [Firestore](#firestore)
+      - [BigTable](#bigtable)
+  - [Data transport](#data-transport)
+    - [Azure data transport](#azure-data-transport)
+    - [AWS data transport](#aws-data-transport)
+    - [GCP data transport](#gcp-data-transport)
+  - [IaaS](#iaas)
+    - [Azure IaaS](#azure-iaas)
+    - [AWS IaaS](#aws-iaas)
+    - [GCP IaaS](#gcp-iaas)
+  - [PaaS](#paas)
+    - [Azure PaaS](#azure-paas)
+    - [AWS PaaS](#aws-paas)
+    - [GCP PaaS](#gcp-paas)
+      - [App Engine](#app-engine)
+      - [Compute Engine](#compute-engine)
+  - [Serverless](#serverless)
+    - [Azure serverless](#azure-serverless)
+    - [AWS serverless](#aws-serverless)
+    - [GCP serverless](#gcp-serverless)
+      - [Google Cloud Functions](#google-cloud-functions)
+  - [Containers](#containers)
+    - [Azure Containers](#azure-containers)
+    - [AWS Containers](#aws-containers)
+    - [GCP Containers](#gcp-containers)
+  - [Monitoring](#monitoring)
+    - [Azure Monitoring](#azure-monitoring)
+      - [Azure Monitor](#azure-monitor)
+    - [AWS Monitoring](#aws-monitoring)
+    - [GCP Monitoring](#gcp-monitoring)
+  - [Deployment](#deployment)
+    - [Azure Deployment](#azure-deployment)
+    - [AWS Deployment](#aws-deployment)
+    - [GCP Deployment](#gcp-deployment)
+  - [Messaging](#messaging)
+    - [Azure Messaging](#azure-messaging)
+    - [AWS Messaging](#aws-messaging)
+    - [GCP Messaging](#gcp-messaging)
+  - [Storage](#storage)
+    - [Azure storage](#azure-storage)
+    - [AWS storage](#aws-storage)
+    - [GCP storage](#gcp-storage)
+  - [Virtual networks](#virtual-networks)
+    - [Azure virtual networks](#azure-virtual-networks)
+    - [AWS virtual networks](#aws-virtual-networks)
+    - [GCP virtual networks](#gcp-virtual-networks)
+  - [Load Balancing](#load-balancing)
+    - [Azure load balancing](#azure-load-balancing)
+    - [AWS load balancing](#aws-load-balancing)
+    - [GCP load balancing](#gcp-load-balancing)
+  - [Private connection](#private-connection)
+    - [Azure private connection](#azure-private-connection)
+    - [AWS private connection](#aws-private-connection)
+    - [GCP private connection](#gcp-private-connection)
+  - [DNS](#dns)
+    - [Azure DNS](#azure-dns)
+    - [AWS DNS](#aws-dns)
+    - [GCP DNS](#gcp-dns)
+  - [CDN](#cdn)
+    - [Azure CDN](#azure-cdn)
+    - [AWS CDN](#aws-cdn)
+    - [GCP CDN](#gcp-cdn)
+  - [Batch data processing](#batch-data-processing)
+    - [Azure batch data processing](#azure-batch-data-processing)
+    - [AWS batch data processing](#aws-batch-data-processing)
+    - [GCP batch data processing](#gcp-batch-data-processing)
+  - [Stream data processing](#stream-data-processing)
+    - [Azure stream data processing](#azure-stream-data-processing)
+    - [AWS stream data processing](#aws-stream-data-processing)
+    - [GCP stream data processing](#gcp-stream-data-processing)
+  - [Stream data ingest](#stream-data-ingest)
+    - [Azure stream data ingest](#azure-stream-data-ingest)
+    - [AWS stream data ingest](#aws-stream-data-ingest)
+    - [GCP stream data ingest](#gcp-stream-data-ingest)
+  - [Big Data](#big-data)
+    - [Azure Big Data](#azure-big-data)
+    - [AWS Big Data](#aws-big-data)
+    - [GCP Big Data](#gcp-big-data)
+  - [Machine learning](#machine-learning)
+    - [Azure machine learning](#azure-machine-learning)
+    - [AWS machine learning](#aws-machine-learning)
+    - [GCP machine learning](#gcp-machine-learning)
+      - [Cloud Vision](#cloud-vision)
+      - [Kubeflow](#kubeflow)
+  - [Identity](#identity)
+    - [Azure identity](#azure-identity)
+    - [AWS identity](#aws-identity)
+    - [GCP identity](#gcp-identity)
+  - [Tasks](#tasks)
+    - [Azure Tasks](#azure-tasks)
+    - [AWS Tasks](#aws-tasks)
+    - [GCP Tasks](#gcp-tasks)
+      - [To-do application using MongoDB](#to-do-application-using-mongodb)
+      - [Create a new Google Cloud Source Repository](#create-a-new-google-cloud-source-repository)
+      - [Create a VM](#create-a-vm)
+      - [Functions](#functions)
+      - [Change storage class](#change-storage-class)
+
 # Cloud services
-
-Topic | Providers
---- | ---
-[Certifications](#certifications) | [`Azure`](#azure-certifications) [<code>&nbsp;AWS&nbsp;</code>](#aws-certifications) [<code>&nbsp;GCP&nbsp;</code>](#gcp-certifications)
-[IaaS](#iaas) | [`Azure`](#azure-iaas) [<code>&nbsp;AWS&nbsp;</code>](#aws-iaas) [<code>&nbsp;GCP&nbsp;</code>](#gcp-iaas)
-[PaaS](#paas) | [`Azure`](#azure-paas) [<code>&nbsp;AWS&nbsp;</code>](#aws-paas) [<code>&nbsp;GCP&nbsp;</code>](#gcp-paas)
-[Serverless](#serverless) | [`Azure`](#azure-serverless) [<code>&nbsp;AWS&nbsp;</code>](#aws-serverless) [<code>&nbsp;GCP&nbsp;</code>](#gcp-serverless)
-[Containers](#containers) | [`Azure`](#azure-container) [<code>&nbsp;AWS&nbsp;</code>](#aws-containers) [<code>&nbsp;GCP&nbsp;</code>](#gcp-containers)
-[Managed relational database](#rdbms) | [`Azure`](#azure-rdbms) [<code>&nbsp;AWS&nbsp;</code>](#aws-rdbms) [<code>&nbsp;GCP&nbsp;</code>](#gcp-rdbms)
-[NoSQL](#nosql) | [`Azure`](#azure-nosql) [<code>&nbsp;AWS&nbsp;</code>](#aws-nosql) [<code>&nbsp;GCP&nbsp;</code>](#gcp-nosql)
-[Storage](#storage) | [`Azure`](#azure-storage) [<code>&nbsp;AWS&nbsp;</code>](#aws-storage) [<code>&nbsp;GCP&nbsp;</code>](#gcp-storage)
-[Physical data transport](#data-transport) | [`Azure`](#azure-data-transport) [<code>&nbsp;AWS&nbsp;</code>](#aws-data-transport) [<code>&nbsp;GCP&nbsp;</code>](#gcp-data-transport)
-[Virtual networks](#virtual-networks) | [`Azure`](#azure-virtual-networks) [<code>&nbsp;AWS&nbsp;</code>](#aws-virtual-networks) [<code>&nbsp;GCP&nbsp;</code>](#gcp-virtual-networks)
-[Load balancing](#load-balancing) | [`Azure`](#azure-load-balancing) [<code>&nbsp;AWS&nbsp;</code>](#aws-load-balancing) [<code>&nbsp;GCP&nbsp;</code>](#gcp-load-balancing)
-[Private connection to cloud](#private-connection) | [`Azure`](#azure-private-connection) [<code>&nbsp;AWS&nbsp;</code>](#aws-private-connection) [<code>&nbsp;GCP&nbsp;</code>](#gcp-private-connection)
-[DNS](#dns) | [`Azure`](#azure-dns) [<code>&nbsp;AWS&nbsp;</code>](#aws-dns) [<code>&nbsp;GCP&nbsp;</code>](#gcp-dns)
-[CDN](#cdn) | [`Azure`](#azure-cdn) [<code>&nbsp;AWS&nbsp;</code>](#aws-cdn) [<code>&nbsp;GCP&nbsp;</code>](#gcp-cdn)
-[Batch data processing](#batch-data-processing) | [`Azure`](#azure-batch-data-processing) [<code>&nbsp;AWS&nbsp;</code>](#aws-batch-data-processing) [<code>&nbsp;GCP&nbsp;</code>](#gcp-batch-data-processing)
-[Stream data processing](#stream-data-processing) | [`Azure`](#azure-stream-data-processing) [<code>&nbsp;AWS&nbsp;</code>](#aws-stream-data-processing) [<code>&nbsp;GCP&nbsp;</code>](#gcp-stream-data-processing)
-[Stream data ingest](#stream-data-ingest) | [`Azure`](#azure-stream-data-ingest) [<code>&nbsp;AWS&nbsp;</code>](#aws-stream-data-ingest) [<code>&nbsp;GCP&nbsp;</code>](#gcp-stream-data-ingest)
-[Big Data analytics](#big-data) | [`Azure`](#azure-big-data) [<code>&nbsp;AWS&nbsp;</code>](#aws-big-data) [<code>&nbsp;GCP&nbsp;</code>](#gcp-big-data)
-[Resources](#resources) | [`Azure`](#azure-resources) [<code>&nbsp;AWS&nbsp;</code>](#aws-resources) [<code>&nbsp;GCP&nbsp;</code>](#gcp-resources)
-[Command-line](#command-line) | [`Azure`](#azure-command-line) [<code>&nbsp;AWS&nbsp;</code>](#aws-command-line) [<code>&nbsp;GCP&nbsp;</code>](#gcp-command-line)
-[Monitoring](#monitoring) | [`Azure`](#azure-monitoring) [<code>&nbsp;AWS&nbsp;</code>](#aws-monitoring) [<code>&nbsp;GCP&nbsp;</code>](#gcp-monitoring)
-[Deployment](#deployment) | [`Azure`](#azure-deployment) [<code>&nbsp;AWS&nbsp;</code>](#aws-deployment) [<code>&nbsp;GCP&nbsp;</code>](#gcp-deployment)
-[Messaging](#messaging) | [`Azure`](#azure-messaging) [<code>&nbsp;AWS&nbsp;</code>](#aws-messaging) [<code>&nbsp;GCP&nbsp;</code>](#gcp-messaging)
-[Monitoring](#monitoring) | [`Azure`](#azure-monitoring) [<code>&nbsp;AWS&nbsp;</code>](#aws-monitoring) [<code>&nbsp;GCP&nbsp;</code>](#gcp-monitoring)
-
 ## Certifications
 ### AWS certifications<sup>[?](https://aws.amazon.com/certification/)</sup>
 - AWS Certified Cloud Practitioner <sup>[Certification](https://aws.amazon.com/certification/certified-cloud-practitioner/)</sup>
@@ -69,9 +166,47 @@ Topic | Providers
 ### GCP command-line
 [gcloud]: gcp.md#gcloud             '`gcloud`&#10;Command used for many cloud management tasks, organized into a hierarchy of groups'
 [gsutil]: gcp.md#gsutil             '`gsutil`&#10;Command used to manipulate GCS'
+[cbt]: gcp.md#cbt '```&#10;$ cbt&#10;```&#10;Command-line interface for performing several different operations on Cloud Bigtable'
 
+- [`cbt`][cbt]
 - [`gcloud`][gcloud]
 - [`gsutil`][gsutil]
+
+Resources:
+- [CLI for GCP](https://www.youtube.com/watch?v=D0x6B-4oUNM 'YouTube - Getting started: CLI for GCP')
+- [Build and package container artifacts](https://www.youtube.com/watch?v=ysjCt3tNyV0 'YouTube - Getting started: Build and package container artifacts')
+- [Private container registry](https://www.youtube.com/watch?v=s46l_PmXBAQ 'YouTube - Getting started: Private container registry/storage')
+
+#### `cbt`
+#### `gcloud`
+[gcloud app]:                             #gcloud             '`gcloud app`&#10;App Engine'
+[gcloud compute]:                         #gcloud             '`gcloud compute`&#10;Compute Engine'
+[gcloud container]:                       #gcloud             '`gcloud container`&#10;Kubernetes Engine'
+[gcloud compute]:                         #gcloud             '`gcloud compute`&#10;Compute Engine'
+[gcloud functions]:                       #functions          '`gcloud functions`&#10;Cloud Functions'
+[gcloud services]:                        #gcloud             '`gcloud services`&#10;Manage project\'s access to APIs'
+
+[`app`][gcloud app]
+[`compute`][gcloud compute]
+[`container`][gcloud container]
+[`functions`][gcloud functions]
+[`services`][gcloud services]
+`source`
+
+Compute Engine (GCE) VMs
+```sh
+gcloud compute instances create
+```
+Google Cloud Source Control repositories
+```sh
+gcloud source repos clone
+gcloud source repos create
+```
+#### `gsutil`
+`mb` 
+`mv` 
+[`rewrite`](#change-storage-class)
+`rsync`
 ## Resources
 ### Azure resources
 ### AWS resources
@@ -97,6 +232,12 @@ Resources are the lowest levels of the hierarchy and can **only** be parented by
 - SQL
 - Spanner
 ## NoSQL
+NoSQL databases differ from **relational databases** in that they do not obey the principle of data **normalization**.
+That is, the same data can be stored in more than one place.
+This is an advantage for databases that are optimized for reads as opposed to writes, because fewer queries are needed to retrieve information.
+However, when changing information that is duplicated in several places, write operations will be more laborious and prone to error.
+NoSQL databases are also **horizontally scalable** because the information can be sharded horizontally more easily than relational database, which are only **vertically scalable** (meaning scaling them requires larger and larger computers) and can only be sharded vertically. <sup>[YouTube](https://youtu.be/v_hR4K4auoQ?t=620 "YouTube - What is a NoSQL Database? How is Cloud Firestore structured? | Get to Know Cloud Firestore #1")</sup>
+
 ### Azure NoSQL
 [CosmosDB]: # 'CosmosDB&#10;Azure NoSQL database service optimized for mobile and web applications that offers graph, document, and key-value APIs'
 - [CosmosDB][CosmosDB]
@@ -116,30 +257,51 @@ DynamoDB Streams (changelog for the DynamoDB table) interfaces with AWS Lambda t
 These are implemented in a different **processing space** than the DynamoDB table itself, so that it does not affect the table.
 
 AWS Lambda has an **invocation role** which defines what Lambda can **see** (triggered upon a change to the table as reported in DynamoDB Streams) and an **execution role** which defines what it can **do**.
-
 ### GCP NoSQL
 [Spanner]: #spanner 'Spanner&#10;GCP managed scaleable database service'
-[Firestore]: #firestore 'Firestore&#10;GCP NoSQL database service offering high performance and automatic scaling intended for serverless mobile and web application development with Cloud App Engine'
+[Firestore]: #firestore 'Firestore&#10;GCP NoSQL document database service offering high performance and automatic horizontal scaling intended for serverless mobile and web application development with Cloud App Engine'
 [BigTable]: #bigtable 'BigTable&#10;GCP realtime database used for Big Data'
 
 - [Spanner][Spanner]
-- [Firestore][Firestore]
+- [Cloud Firestore][Firestore]
 - [BigTable][BigTable]
 
 #### Spanner
+#### Firebase
+Resources
+- [Introducing Firebase Realtime database](https://youtu.be/U5aeM5dvUpA "YouTube - Introducing Firebase Realtime Database")
+- [Firebase web application tutorial](https://youtu.be/9kRgVxULbag "YouTube - Firebase - Ultimate Beginner's guide")
+
+Firebase is a completely unstructured NoSQL database that is known for its client libraries.
+Firestore has almost completely supplanted Firebase for most applications. <sup>[YouTube](https://youtu.be/TmXct7seeBY)</sup>
+
+
+
 #### Firestore
-Firestore was released from beta in early 2019 and combines and improves upon functionality of previous products named **Cloud Datastore** and **Firebase Realtime Database** [[8,9](#sources)]. 
+Cloud Firestore was released from beta in early 2019 and combines and improves upon functionality of previous products named **Cloud Datastore** and **Firebase Realtime Database**. <sup>[YouTube](https://youtu.be/U5aeM5dvUpA "Introducing Firebase Realtime Database") [The Firebase Blog](https://firebase.googleblog.com/2017/10/cloud-firestore-for-rtdb-developers.html "Cloud Firestore vs the Realtime Database: Which one do I use?") </sup>
+
+Cloud Firestore is organized into **documents**, which consist of key-value pairs and are similar to JSON objects, and **collections**. JSON-like objects are called **maps** and keys are called **fields** in Firestore. Collections can contain only documents, but documents sub-collections. Root can only contain collections. So navigating deeper and deeper into the information store will involve alternating between collections and documents. <sup>[YouTube](https://youtu.be/v_hR4K4auoQ?t=620 "YouTube - What is a NoSQL Database? How is Cloud Firestore structured? | Get to Know Cloud Firestore #1")</sup>
 
 Firestore features a compatibility mode that emulates the behavior of Datastore in accessing Firestore's storage layer while removing some of Datastore's limitations.
 
-Queries in Firestore are intended to be used to find documents stored in one specific collection or sub-collection. <sup>[Firebase blog](https://firebase.googleblog.com/2017/10/cloud-firestore-for-rtdb-developers.html "Cloud Firestore vs the Realtime Database: Which one do I use?") [YouTube](https://youtu.be/U5aeM5dvUpA "Introducing Firebase Realtime Database")</sup>
+Queries in Firestore can only be used to find documents stored in one specific collection or sub-collection.
+However a **collection group query**, meaning one that spans multiple collections, began to be supported in 2019.
+Complex relational queries are not possible (in a single query), and query results are usually returned based on equality or greater-than/less-than comparisons.
+The field has to be specified as having a scope of "Collection group" within GCP, and there is a limit of (about) 200 for these queries. 
+<sup>[Firebase blog](https://firebase.googleblog.com/2017/10/cloud-firestore-for-rtdb-developers.html "Cloud Firestore vs the Realtime Database: Which one do I use?") [YouTube](https://youtu.be/U5aeM5dvUpA "YouTube - Introducing Firebase Realtime Database") [YouTube](https://youtu.be/Ofux_4c94FI "YouTube - How do queries work in Cloud Firestore? | Get to Know Cloud Firestore #2")</sup>
 
-- A **collection group query**, one that spans multiple sub-collections, was not possible until recently, but the field has to be specified as having a scope of "Collection group" within GCP, and there is a limit of (about) 200 for these queries. 
-- An index is created for every field in every document added to a collection, which results in very fast query times that are proportional to the number of **results**, not records searched. But this means that there is no native way to perform wildcard searches or OR queries. For common instances of such queries, Google recommends adding a field that contains that result for each record 
-- Firestore's structure ensures that equality searches are highly performant.
-- "Inequality searches" present a challenge for Firestore. For some queries that combine conditions on more than one field (i.e. restaurants within a certain range of a location), Firebase will create a "composite index" (only within the index, the document itself is not affected) automatically to facilitate searches on those fields.
+An index is created for every field in every document added to a collection, which results in very fast query times that are proportional to the number of **results**, not records searched. 
+This structure ensures that equality searches are highly performant, as are comparison searches using greater-than or less-than.
+But this implementation creates bizarre limitations to Firestore's querying capabilities:
+There is no native way to perform wildcard searches or `OR` queries. 
+For common instances of such queries, Google recommends adding a field that contains the value for each record 
 
-Firestore primarily charges based on the number of reads, writes, and deletes performed on the database, each of which have a different unit charge. <sup>[YouTube](https://youtu.be/6NegFl9p_sE "Cloud Firestore Pricing | Get to Know Cloud Firestore #3")</sup>
+Inequality searches present a challenge for Firestore.
+For some queries that combine conditions on more than one field (i.e. restaurants within a certain range of a location), Firebase will create a "composite index" (only within the index, the document itself is not affected) automatically to facilitate searches on those fields.
+
+Unlike **Firebase**, which charges based on the volume of data stored, **Firestore** charges based on number of operations performed and records returned.
+<sup>[YouTube](https://youtu.be/6NegFl9p_sE "YouTube - Cloud Firestore Pricing | Get to Know Cloud Firestore #3")</sup>
+
 
 #### BigTable
 GCP Realtime database used for Big Data <sup>[db-engines.com](https://db-engines.com/en/system/Google+Cloud+Bigtable%3BGoogle+Cloud+Firestore "System Properties Comparison Google Cloud Bigtable vs. Google Cloud Firestore")</sup>
@@ -185,6 +347,8 @@ BigTable doesn't support secondary indexes. <sup> [YouTube](https://www.youtube.
 ### GCP serverless
 [Google Cloud Functions]: # 'Cloud Functions&#10;lightweight computing option well-suited to event-driven processing&#10;Sullivan, Dan. _Official Google Cloud Certified Associate Cloud Engineer Study Guide_: 20'
 - [Google Cloud Functions][Google Cloud Functions]
+#### Google Cloud Functions
+- [Quickstart](https://www.youtube.com/watch?v=vM-2O-uKBNQ 'YouTube - Getting Started: Cloud Functions quickstart')
 ## Containers
 ### Azure Containers
 - Container Service
@@ -197,14 +361,17 @@ BigTable doesn't support secondary indexes. <sup> [YouTube](https://www.youtube.
 - [Google Kubernetes Engine][GKE]
 ## Monitoring
 ### Azure Monitoring
-- Azure Monitor
 - App Insights
+#### Azure Monitor
+- [Dashboards with Azure Monitor Data](https://www.youtube.com/watch?v=XS2b_rxkwMY "YouTube - Create Dashboards with Azure Monitor Data")
 ### AWS Monitoring
 [CloudFormation]: # 'CloudFormation&#10;gives developers and systems administrators an easy way to create and manage a collection of related AWS resources, provisioning and updating them in an orderly and predictable fashion'
 - [CloudFormation][CloudFormation]
 ### GCP Monitoring
 [Stackdriver]: # 'Stackdriver&#10;service that collects metrics, logs, and event data from applications and infrastructure and integrates the data so DevOps engineers can monitor, assess, and diagnose operational problems&#10;Sullivan, Dan. _Official Google Cloud Certified Associate Cloud Engineer Study Guide_: 29'
+[Trace]: # 'Trace&#10;distributed tracing service that captures latency data about an application to help identify performance problem areas&#10;Sullivan, Dan. _Official Google Cloud Certified Associate Cloud Engineer Study Guide_: 29'
 - [Stackdriver][Stackdriver]
+- [Trace][Trace]
 ## Deployment
 ### Azure Deployment
 - Resource Manager
@@ -266,7 +433,8 @@ BigTable doesn't support secondary indexes. <sup> [YouTube](https://www.youtube.
 ### Azure DNS
 - DNS
 ### AWS DNS
-- Route 53
+[Route 53]: # 'Route 53&#10;highly available and scalable cloud Domain Name System web service'
+- [Route 53][Route 53]
 ### GCP DNS
 - DNS
 ## CDN
@@ -284,8 +452,10 @@ BigTable doesn't support secondary indexes. <sup> [YouTube](https://www.youtube.
 - Elastic MapReduce (EMR)
 - Batch
 ### GCP batch data processing
-- Dataproc
-- Dataflow
+[Dataflow]: # 'Cloud Dataflow&#10;Framework for defining batch and stream processing pipelines&#10;Sullivan, Dan. _Official Google Cloud Certified Associate Cloud Engineer Study Guide_: 30'
+[Dataproc]: # 'Cloud Dataproc&#10;Managed Hadoop and Spark service&#10;Sullivan, Dan. _Official Google Cloud Certified Associate Cloud Engineer Study Guide_: 30'
+- [Dataflow][Dataflow]
+- [Dataproc][Dataproc]
 ## Stream data processing
 ### Azure stream data processing
 - Stream Analytics
@@ -306,16 +476,93 @@ BigTable doesn't support secondary indexes. <sup> [YouTube](https://www.youtube.
 - Data Lake Analytics
 - Data Lake Store
 ### AWS Big Data
-- Redshift
+[Redshift]: # 'Redshift&#10;fast, fully managed petabyte-scale data warehouse that makes it simple and cost-effective to analyze all your data using your existing business intelligence tools'
+- [Redshift][Redshift]
 - Athena
 ### GCP Big Data
-- BigQuery
-## Sources
-2. "Zero to App: Live Coding an App with Firebase (Firebase Dev Summit 2017)". [YouTube](https://www.youtube.com/watch?v=VTkM5BbnslU)
-3. "How do queries work in Cloud Firestore/ | Get to Know Cloud Firestore #2". [YouTube](https://youtu.be/Ofux_4c94FI): 2018/05/30.
-11. "Azure Friday | Azure Cosmos DB with Scott Hanselman". [YouTube](https://youtu.be/4fRKzcU__jY): 2017/06/27.
-12. "Archival cloud storage: Nearline & Coldline". [Google Cloud](https://cloud.google.com/storage/archival/)
-13. "Linux Academy: Microsoft Azure Concepts". [Udemy](https://www.udemy.com/linux-academy-microsoft-azure-concepts/)
-14. "DNS zones explained". [Pocket](https://app.getpocket.com/read/2495535941) -> [ns1.com](https://ns1.com/resources/dns-zones-explained)
-1.  "SysAdmin & Hybrid Cloud Special". [AWS TechChat](../sources/README.md#aws-53) 
-3.  "Azure Bastion". [Microsoft](https://azure.microsoft.com/en-us/services/azure-bastion/).
+[Bigquery]: # 'Bigquery&#10;Petabyte-scale analytics database service for data warehousing&#10;Sullivan, Dan. _Official Google Cloud Certified Associate Cloud Engineer Study Guide_: 30'
+[Dataprep]: # 'Cloud Dataprep&#10;Service that allows analysts to explore and prepare data for analysis&#10;Sullivan, Dan. _Official Google Cloud Certified Associate Cloud Engineer Study Guide_: 30'
+- [Bigquery][Bigquery]
+- [Dataprep][Dataprep]
+## Machine learning
+### Azure machine learning
+### AWS machine learning
+[Rekognition]: # 'Rekognition&#10;AWS deep learning-based image recognition service'
+- [Rekognition][Rekognition]
+### GCP machine learning
+[Cloud Automl]: # 'Cloud Automl&#10;Allows developers without machine learning experience to develop machine learning models&#10;Sullivan, Dan. _Official Google Cloud Certified Associate Cloud Engineer Study Guide_: 31'
+[Cloud Machine Learning Engine]: # 'Cloud Machine Learning Engine&#10;Platform for building and deploying scalable machine learning systems to production&#10;Sullivan, Dan. _Official Google Cloud Certified Associate Cloud Engineer Study Guide_: 31'
+[Cloud Natural Language Processing]: # 'Cloud Natural Language Processing&#10;Tool for analyzing human languages and extracting information from text&#10;Sullivan, Dan. _Official Google Cloud Certified Associate Cloud Engineer Study Guide_: 31'
+[Cloud Vision]: #cloud-vision 'Cloud Vision&#10;Image analysis platform for annotating images with metadata, extracting text, or filtering content&#10;Sullivan, Dan. _Official Google Cloud Certified Associate Cloud Engineer Study Guide_: 31'
+[Kubeflow]: #kubeflow 'Kubeflow&#10;Cloud Native platform for machine learning based on Google’s internal machine learning pipelines'
+- [Cloud AutoML][Cloud Automl]
+- [Cloud Machine Learning Engine][Cloud Machine Learning Engine]
+- [Cloud NLP][Cloud Natural Language Processing]
+- [Cloud Vision][Cloud Vision]
+- [Kubeflow][Kubeflow]
+#### Cloud Vision
+- [Getting started: Image recognition and classification](https://www.youtube.com/watch?v=BN8aO0LULyw 'YouTube - Getting started: Image recognition and classification')
+#### Kubeflow
+- [Kubeflow 101 (playlist)](https://www.youtube.com/playlist?list=PLIivdWyY5sqLS4lN75RPDEyBgTro_YX7x 'YouTube - KubeFlow 101')
+- [Talk - Kubeflow at Spotify](https://www.youtube.com/watch?v=m9XhsnNSMAI 'YouTube - Building and managing a centralized Kubeflow platform at Spotify')
+- [Talk - Kubeflow on Kubernetes](https://www.youtube.com/watch?v=I6iMznIYwM8 'YouTube - Kubeflow ML on Kubernetes')
+## Identity
+### Azure identity
+### AWS identity
+### GCP identity
+[Role][Role] types
+- [Primitive roles][Primitive Role]
+- Predefined roles
+- Custom roles
+
+IAM roles
+- [`appengine.appAdmin`][appengine.appAdmin]
+- [`appengine.appViewer`][appengine.appAdmin]
+- [`appengine.ServiceAdmin`][appengine.ServiceAdmin]
+- Billing Account Creator
+- [Organization Administrator][Organization Administrator]
+- Project Creator
+
+- [Group membership and hierarchy](https://www.youtube.com/watch?v=b33-gN0lidA&t=77s 'YouTube - Group membership and hierarchy')
+## Tasks
+### Azure Tasks
+### AWS Tasks
+### GCP Tasks
+#### To-do application using MongoDB
+Create two VMs, {backend} and {frontend}, running on Ubuntu. Make sure ports 80 and 22 are open.
+#### Create a new Google Cloud Source Repository
+These steps require:
+  1. Cloud SDK and Git to be installed
+  2. A GCP project with billing and the Cloud Source Repositories API enabled
+Create a new repository [^](#sources)
+```sh
+gcloud source repos create hello-world
+```
+Clone it locally
+```sh
+gcloud source repos clone hello-world
+```
+Create scripts, then add, commit and push them as usual.
+```sh
+git commit -am "Initial"
+git push origin master
+```
+#### Create a VM
+[YouTube][https://www.youtube.com/watch?v=j274vq9a2Rs]
+```sh
+gcloud compute instances create instance-1 --zone-uscentral1-a
+```
+#### Functions
+Deploy <sup>[Google][https://cloud.google.com/functions/docs/quickstart]</sup>
+```sh
+gcloud functions deploy hello_get --runtime python37 --trigger-http
+```
+Test <sup>[Google][https://cloud.google.com/source-repositories/docs/creating-an-empty-repository]</sup>
+```sh
+gcloud functions describe hello_get
+```
+#### Change storage class
+`$STORAGE_CLASS` can be `multi_regional`, `regional`, `nearline`, or `coldline`
+```sh
+gsutil rewrite -s $STORAGE_CLASS gs://$PATH_TO_OBJECT
+```

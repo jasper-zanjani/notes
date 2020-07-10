@@ -20,6 +20,7 @@
 # Contents
 - [**Modules**](#modules)
 - [**Tasks**](#tasks)
+- [Object APIs](#objects)
 - [.NET Assemblies](dotnet.md)
 
 ### Modules
@@ -1221,108 +1222,108 @@
 [msdocs:Update-ClusterIPResource]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Update-ClusterIPResource "Update-ClusterIPResource"
 [msdocs:Update-ClusterNetworkNameResource]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Update-ClusterNetworkNameResource "Update-ClusterNetworkNameResource"
 [msdocs:Update-ClusterVirtualMachineConfiguration]: https://docs.microsoft.com/en-us/powershell/module/failoverclusters/Update-ClusterVirtualMachineConfiguration "Update-ClusterVirtualMachineConfiguration"
-[Get-Cluster]: #get-cluster '```&#10;[PS] Get-Cluster&#10;```&#10;Display information about a failover cluster'
-[New-Cluster]: #new-cluster '```&#10;[PS] New-Cluster&#10;```&#10;Create a new failover cluster&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 337'
-[Remove-Cluster]: #remove-cluster '```&#10;[PS] Remove-Cluster&#10;```&#10;Remove a failover cluster'
-[Start-Cluster]: #start-cluster '```&#10;[PS] Start-Cluster&#10;```&#10;Start the Cluster service on all nodes'
-[Stop-Cluster]: #stop-cluster '```&#10;[PS] Stop-Cluster&#10;```&#10;Stop the Cluster service on all nodes'
-[Test-Cluster]: #test-cluster '```&#10;[PS] Test-Cluster&#10;```&#10;Complete validation tests for a cluster'
-[Block-ClusterAccess]: #block-clusteraccess '```&#10;[PS] Block-ClusterAccess&#10;```&#10;Block the specified users from accessing a cluster'
-[Get-ClusterAccess]: #get-clusteraccess '```&#10;[PS] Get-ClusterAccess&#10;```&#10;Display permissions for a failover cluster'
-[Grant-ClusterAccess]: #grant-clusteraccess '```&#10;[PS] Grant-ClusterAccess&#10;```&#10;Grants access to a failover cluster, either full access or read-only access.'
-[Remove-ClusterAccess]: #remove-clusteraccess '```&#10;[PS] Remove-ClusterAccess&#10;```&#10;Remove user access from the cluster'
-[Get-ClusterAvailableDisk]: #get-clusteravailabledisk '```&#10;[PS] Get-ClusterAvailableDisk&#10;```&#10;Gets information about the disks that can support Failover Clustering and are visible to all nodes, but are not yet part of the set of clustered disks.'
 [Add-ClusterCheckpoint]: #add-clustercheckpoint '```&#10;[PS] Add-ClusterCheckpoint&#10;```&#10;Adds a cryptographic key checkpoint or registry checkpoint for a resource.'
-[Get-ClusterCheckpoint]: #get-clustercheckpoint '```&#10;[PS] Get-ClusterCheckpoint&#10;```&#10;Retrieves a cryptographic key checkpoint or registry checkpoint for a resource.'
-[Remove-ClusterCheckpoint]: #remove-clustercheckpoint '```&#10;[PS] Remove-ClusterCheckpoint&#10;```&#10;Removes a cryptographic key checkpoint or registry checkpoint for a resource.'
-[Get-ClusterDiagnosticInfo]: #get-clusterdiagnosticinfo '```&#10;[PS] Get-ClusterDiagnosticInfo&#10;```&#10;Gets diagnostics for a cluster a cluster that contains VMs and produces a zip file containing the data.'
 [Add-ClusterDisk]: #add-clusterdisk '```&#10;[PS] Add-ClusterDisk&#10;```&#10;Allow an admin to add a new disk to a failover cluster'
-[Clear-ClusterDiskReservation]: #clear-clusterdiskreservation '```&#10;[PS] Clear-ClusterDiskReservation&#10;```&#10;Clears the persistent reservation on a disk in a failover cluster.'
-[Get-ClusterFaultDomain]: #get-clusterfaultdomain '```&#10;[PS] Get-ClusterFaultDomain&#10;```&#10;Gets the cluster fault domains in a cluster.'
-[New-ClusterFaultDomain]: #new-clusterfaultdomain '```&#10;[PS] New-ClusterFaultDomain&#10;```&#10;Creates a fault domain in the cluster.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 366'
-[Remove-ClusterFaultDomain]: #remove-clusterfaultdomain '```&#10;[PS] Remove-ClusterFaultDomain&#10;```&#10;Removes a fault domain.'
-[Set-ClusterFaultDomain]: #set-clusterfaultdomain '```&#10;[PS] Set-ClusterFaultDomain&#10;```&#10;Update an existing cluster fault domain.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 366'
-[Get-ClusterFaultDomainXML]: #get-clusterfaultdomainxml '```&#10;[PS] Get-ClusterFaultDomainXML&#10;```&#10;Gets the fault domain as an XML string.'
-[Set-ClusterFaultDomainXML]: #set-clusterfaultdomainxml '```&#10;[PS] Set-ClusterFaultDomainXML&#10;```&#10;Sets the cluster fault domain using XML.'
 [Add-ClusterFileServerRole]: #add-clusterfileserverrole '```&#10;[PS] Add-ClusterFileServerRole&#10;```&#10;This command allows an admin to create a clustered file server'
-[Update-ClusterFunctionalLevel]: #update-clusterfunctionallevel '```&#10;[PS] Update-ClusterFunctionalLevel&#10;```&#10;Updates the functional level of a mixed-version cluster.'
 [Add-ClusterGenericApplicationRole]: #add-clustergenericapplicationrole '```&#10;[PS] Add-ClusterGenericApplicationRole&#10;```&#10;Configures an application in the generic application role, providing high availability for an application not designed for use in a failover cluster.'
 [Add-ClusterGenericScriptRole]: #add-clustergenericscriptrole '```&#10;[PS] Add-ClusterGenericScriptRole&#10;```&#10;Configures an application controlled by a script that runs in Windows Script Host, within a failover cluster.'
 [Add-ClusterGenericServiceRole]: #add-clustergenericservicerole '```&#10;[PS] Add-ClusterGenericServiceRole&#10;```&#10;Configures high availability for a service that was not originally designed to run in a failover cluster.'
 [Add-ClusterGroup]: #add-clustergroup '```&#10;[PS] Add-ClusterGroup&#10;```&#10;Allow an admin to add a resource group to the failover cluster'
-[Get-ClusterGroup]: #get-clustergroup '```&#10;[PS] Get-ClusterGroup&#10;```&#10;Gets information about one or more clustered roles (resource groups) in a failover cluster.'
-[Move-ClusterGroup]: #move-clustergroup '```&#10;[PS] Move-ClusterGroup&#10;```&#10;Moves a clustered role (a resource group) from one node to another in a failover cluster.'
-[Remove-ClusterGroup]: #remove-clustergroup '```&#10;[PS] Remove-ClusterGroup&#10;```&#10;Removes a clustered role, also called a resource group, from a failover cluster.'
-[Start-ClusterGroup]: #start-clustergroup '```&#10;[PS] Start-ClusterGroup&#10;```&#10;Starts one or more clustered roles, also known as resource groups, on a failover cluster.'
-[Stop-ClusterGroup]: #stop-clustergroup '```&#10;[PS] Stop-ClusterGroup&#10;```&#10;Stops one or more clustered roles on a failover cluster.'
-[Remove-ClusterGroupFromSet]: #remove-clustergroupfromset '```&#10;[PS] Remove-ClusterGroupFromSet&#10;```&#10;Removes a group from a set.'
-[Get-ClusterGroupSet]: #get-clustergroupset '```&#10;[PS] Get-ClusterGroupSet&#10;```&#10;Gets the group sets in the cluster.'
-[New-ClusterGroupSet]: #new-clustergroupset '```&#10;[PS] New-ClusterGroupSet&#10;```&#10;Create a names set of groups in the cluster.'
-[Remove-ClusterGroupSet]: #remove-clustergroupset '```&#10;[PS] Remove-ClusterGroupSet&#10;```&#10;Removes a group set from the cluster.'
-[Set-ClusterGroupSet]: #set-clustergroupset '```&#10;[PS] Set-ClusterGroupSet&#10;```&#10;Updates a cluster group set.'
 [Add-ClusterGroupSetDependency]: #add-clustergroupsetdependency '```&#10;[PS] Add-ClusterGroupSetDependency&#10;```&#10;Adds a dependency to a cluster set.'
-[Get-ClusterGroupSetDependency]: #get-clustergroupsetdependency '```&#10;[PS] Get-ClusterGroupSetDependency&#10;```&#10;Gets the cluster group sets based on dependency relationships.'
-[Remove-ClusterGroupSetDependency]: #remove-clustergroupsetdependency '```&#10;[PS] Remove-ClusterGroupSetDependency&#10;```&#10;Removes a dependency from a group set.'
 [Add-ClusterGroupToSet]: #add-clustergrouptoset '```&#10;[PS] Add-ClusterGroupToSet&#10;```&#10;Adds a group to a set.'
-[Update-ClusterIPResource]: #update-clusteripresource '```&#10;[PS] Update-ClusterIPResource&#10;```&#10;Renews or releases the DHCP lease for an IP address resource in a failover cluster.'
 [Add-ClusteriSCSITargetServerRole]: #add-clusteriscsitargetserverrole '```&#10;[PS] Add-ClusteriSCSITargetServerRole&#10;```&#10;Creates a highly available iSCSI Target server.'
-[Get-ClusterLog]: #get-clusterlog '```&#10;[PS] Get-ClusterLog&#10;```&#10;Creates a log file for all nodes, or a specific a node, in a failover cluster.'
-[Set-ClusterLog]: #set-clusterlog '```&#10;[PS] Set-ClusterLog&#10;```&#10;Sets the size and level of detail for the cluster log.'
-[New-ClusterNameAccount]: #new-clusternameaccount '```&#10;[PS] New-ClusterNameAccount&#10;```&#10;Creates a cluster name account in Active Directory Domain Services.'
-[Get-ClusterNetwork]: #get-clusternetwork '```&#10;[PS] Get-ClusterNetwork&#10;```&#10;Gets information about one or more networks in a failover cluster.'
-[Get-ClusterNetworkInterface]: #get-clusternetworkinterface '```&#10;[PS] Get-ClusterNetworkInterface&#10;```&#10;Gets information about one or more network adapters in a failover cluster.'
-[Update-ClusterNetworkNameResource]: #update-clusternetworknameresource '```&#10;[PS] Update-ClusterNetworkNameResource&#10;```&#10;Registers existing Network Name resources with a DNS server in a way that does not interrupt cluster availability.'
 [Add-ClusterNode]: #add-clusternode '```&#10;[PS] Add-ClusterNode&#10;```&#10;Allow an admin to add a node to a failover cluster'
-[Clear-ClusterNode]: #clear-clusternode '```&#10;[PS] Clear-ClusterNode&#10;```&#10;Clears the cluster configuration from a node that was evicted from a failover cluster.'
-[Get-ClusterNode]: #get-clusternode '```&#10;[PS] Get-ClusterNode&#10;```&#10;Display information about the servers in a failover cluster'
-[Remove-ClusterNode]: #remove-clusternode '```&#10;[PS] Remove-ClusterNode&#10;```&#10;Remove a node from a failover cluster'
-[Resume-ClusterNode]: #resume-clusternode '```&#10;[PS] Resume-ClusterNode&#10;```&#10;Resumes a node from the paused state or brings back drained workloads to the node or both.'
-[Start-ClusterNode]: #start-clusternode '```&#10;[PS] Start-ClusterNode&#10;```&#10;Starts the Cluster service on a node in a failover cluster.'
-[Stop-ClusterNode]: #stop-clusternode '```&#10;[PS] Stop-ClusterNode&#10;```&#10;Stop the Cluster service on a node'
-[Suspend-ClusterNode]: #suspend-clusternode '```&#10;[PS] Suspend-ClusterNode&#10;```&#10;Pause the activity of a failover cluster node&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 374'
-[Get-ClusterOwnerNode]: #get-clusterownernode '```&#10;[PS] Get-ClusterOwnerNode&#10;```&#10;Gets information about which nodes can own a resource in a failover cluster or information about the order of preference among owner nodes for a clustered role.'
-[Set-ClusterOwnerNode]: #set-clusterownernode '```&#10;[PS] Set-ClusterOwnerNode&#10;```&#10;Specifies which nodes can own a resource in a failover cluster or specifies the order of preference among owner nodes for a clustered role, or resource group.'
-[Get-ClusterParameter]: #get-clusterparameter '```&#10;[PS] Get-ClusterParameter&#10;```&#10;Gets detailed information about an object in a failover cluster, such as a cluster resource.'
-[Set-ClusterParameter]: #set-clusterparameter '```&#10;[PS] Set-ClusterParameter&#10;```&#10;Controls specific properties of an object in a failover cluster, such as a resource, a group, or a network.'
-[Get-ClusterQuorum]: #get-clusterquorum '```&#10;[PS] Get-ClusterQuorum&#10;```&#10;Display cluster quorum in a cluster'
-[Set-ClusterQuorum]: #set-clusterquorum '```&#10;[PS] Set-ClusterQuorum&#10;```&#10;Configures quorum options for a failover cluster.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 318'
 [Add-ClusterResource]: #add-clusterresource '```&#10;[PS] Add-ClusterResource&#10;```&#10;Allow an admin to add a resource to a failover cluster'
-[Get-ClusterResource]: #get-clusterresource '```&#10;[PS] Get-ClusterResource&#10;```&#10;Gets information about one or more resources in a failover cluster.'
-[Move-ClusterResource]: #move-clusterresource '```&#10;[PS] Move-ClusterResource&#10;```&#10;Moves a clustered resource from one clustered role to another within a failover cluster.'
-[Remove-ClusterResource]: #remove-clusterresource '```&#10;[PS] Remove-ClusterResource&#10;```&#10;Removes a clustered resource from the failover cluster.'
-[Resume-ClusterResource]: #resume-clusterresource '```&#10;[PS] Resume-ClusterResource&#10;```&#10;Turns off maintenance for a disk resource or Cluster Shared Volume within a failover cluster.'
-[Start-ClusterResource]: #start-clusterresource '```&#10;[PS] Start-ClusterResource&#10;```&#10;Brings a resource online in a failover cluster.'
-[Stop-ClusterResource]: #stop-clusterresource '```&#10;[PS] Stop-ClusterResource&#10;```&#10;Takes a resource offline in a failover cluster.'
-[Suspend-ClusterResource]: #suspend-clusterresource '```&#10;[PS] Suspend-ClusterResource&#10;```&#10;Turns on maintenance for a disk resource or CSV so that you can run a disk maintenance tool without triggering failover.'
 [Add-ClusterResourceDependency]: #add-clusterresourcedependency '```&#10;[PS] Add-ClusterResourceDependency&#10;```&#10;Add a resource dependency to a failover cluster'
-[Get-ClusterResourceDependency]: #get-clusterresourcedependency '```&#10;[PS] Get-ClusterResourceDependency&#10;```&#10;Gets information about the dependencies that have been configured between clustered resources in a failover cluster.'
-[Remove-ClusterResourceDependency]: #remove-clusterresourcedependency '```&#10;[PS] Remove-ClusterResourceDependency&#10;```&#10;Removes a dependency between two resources in a clustered role within a failover cluster.'
-[Set-ClusterResourceDependency]: #set-clusterresourcedependency '```&#10;[PS] Set-ClusterResourceDependency&#10;```&#10;Specifies the resources that a particular resource depends on within a failover cluster.'
-[Get-ClusterResourceDependencyReport]: #get-clusterresourcedependencyreport '```&#10;[PS] Get-ClusterResourceDependencyReport&#10;```&#10;Generates a report that lists the dependencies between resources in a failover cluster.'
-[Test-ClusterResourceFailure]: #test-clusterresourcefailure '```&#10;[PS] Test-ClusterResourceFailure&#10;```&#10;Simulates a failure of a cluster resource.'
 [Add-ClusterResourceType]: #add-clusterresourcetype '```&#10;[PS] Add-ClusterResourceType&#10;```&#10;Adds a resource type to a failover cluster, and specifies information such as the dynamic-link library (DLL) to use with that resource type.'
-[Get-ClusterResourceType]: #get-clusterresourcetype '```&#10;[PS] Get-ClusterResourceType&#10;```&#10;Gets information about one or more resource types in a failover cluster.'
-[Remove-ClusterResourceType]: #remove-clusterresourcetype '```&#10;[PS] Remove-ClusterResourceType&#10;```&#10;Removes a resource type from a failover cluster.'
 [Add-ClusterScaleOutFileServerRole]: #add-clusterscaleoutfileserverrole '```&#10;[PS] Add-ClusterScaleOutFileServerRole&#10;```&#10;Creates a clustered file server for scale-out application data.'
 [Add-ClusterServerRole]: #add-clusterserverrole '```&#10;[PS] Add-ClusterServerRole&#10;```&#10;Add the cluster server role to a server'
 [Add-ClusterSharedVolume]: #add-clustersharedvolume '```&#10;[PS] Add-ClusterSharedVolume&#10;```&#10;Makes a volume available in Cluster Shared Volumes in a failover cluster.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 153'
-[Get-ClusterSharedVolume]: #get-clustersharedvolume '```&#10;[PS] Get-ClusterSharedVolume&#10;```&#10;Gets information about Cluster Shared Volumes in a failover cluster.'
-[Move-ClusterSharedVolume]: #move-clustersharedvolume '```&#10;[PS] Move-ClusterSharedVolume&#10;```&#10;Moves a Cluster Shared Volume (CSV) to ownership by a different node in a failover cluster.'
-[Remove-ClusterSharedVolume]: #remove-clustersharedvolume '```&#10;[PS] Remove-ClusterSharedVolume&#10;```&#10;Removes a volume from the Cluster Shared Volumes in a failover cluster, and places it in Available Storage in the cluster.'
-[Get-ClusterSharedVolumeState]: #get-clustersharedvolumestate '```&#10;[PS] Get-ClusterSharedVolumeState&#10;```&#10;Gets the state of Cluster Shared Volumes in a cluster.'
+[Add-ClusterVirtualMachineRole]: #add-clustervirtualmachinerole '```&#10;[PS] Add-ClusterVirtualMachineRole&#10;```&#10;Creates a clustered virtual machine, that is, a virtual machine that can be failed over if necessary to a different server in the failover cluster.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 304'
+[Add-ClusterVMMonitoredItem]: #add-clustervmmonitoreditem '```&#10;[PS] Add-ClusterVMMonitoredItem&#10;```&#10;Configures monitoring for a service or an Event Tracing for Windows (ETW) event so that it is monitored on a virtual machine.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 362'
+[Block-ClusterAccess]: #block-clusteraccess '```&#10;[PS] Block-ClusterAccess&#10;```&#10;Block the specified users from accessing a cluster'
+[Clear-ClusterDiskReservation]: #clear-clusterdiskreservation '```&#10;[PS] Clear-ClusterDiskReservation&#10;```&#10;Clears the persistent reservation on a disk in a failover cluster.'
+[Clear-ClusterNode]: #clear-clusternode '```&#10;[PS] Clear-ClusterNode&#10;```&#10;Clears the cluster configuration from a node that was evicted from a failover cluster.'
 [Disable-ClusterStorageSpacesDirect]: #disable-clusterstoragespacesdirect '```&#10;[PS] Disable-ClusterStorageSpacesDirect&#10;```&#10;Disables S2D.'
 [Enable-ClusterStorageSpacesDirect]: #enable-clusterstoragespacesdirect '```&#10;[PS] Enable-ClusterStorageSpacesDirect&#10;```&#10;Enables S2D.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 354'
+[Get-Cluster]: #get-cluster '```&#10;[PS] Get-Cluster&#10;```&#10;Display information about a failover cluster'
+[Get-ClusterAccess]: #get-clusteraccess '```&#10;[PS] Get-ClusterAccess&#10;```&#10;Display permissions for a failover cluster'
+[Get-ClusterAvailableDisk]: #get-clusteravailabledisk '```&#10;[PS] Get-ClusterAvailableDisk&#10;```&#10;Gets information about the disks that can support Failover Clustering and are visible to all nodes, but are not yet part of the set of clustered disks.'
+[Get-ClusterCheckpoint]: #get-clustercheckpoint '```&#10;[PS] Get-ClusterCheckpoint&#10;```&#10;Retrieves a cryptographic key checkpoint or registry checkpoint for a resource.'
+[Get-ClusterDiagnosticInfo]: #get-clusterdiagnosticinfo '```&#10;[PS] Get-ClusterDiagnosticInfo&#10;```&#10;Gets diagnostics for a cluster a cluster that contains VMs and produces a zip file containing the data.'
+[Get-ClusterFaultDomain]: #get-clusterfaultdomain '```&#10;[PS] Get-ClusterFaultDomain&#10;```&#10;Gets the cluster fault domains in a cluster.'
+[Get-ClusterFaultDomainXML]: #get-clusterfaultdomainxml '```&#10;[PS] Get-ClusterFaultDomainXML&#10;```&#10;Gets the fault domain as an XML string.'
+[Get-ClusterGroup]: #get-clustergroup '```&#10;[PS] Get-ClusterGroup&#10;```&#10;Gets information about one or more clustered roles (resource groups) in a failover cluster.'
+[Get-ClusterGroupSet]: #get-clustergroupset '```&#10;[PS] Get-ClusterGroupSet&#10;```&#10;Gets the group sets in the cluster.'
+[Get-ClusterGroupSetDependency]: #get-clustergroupsetdependency '```&#10;[PS] Get-ClusterGroupSetDependency&#10;```&#10;Gets the cluster group sets based on dependency relationships.'
+[Get-ClusterLog]: #get-clusterlog '```&#10;[PS] Get-ClusterLog&#10;```&#10;Creates a log file for all nodes, or a specific a node, in a failover cluster.'
+[Get-ClusterNetwork]: #get-clusternetwork '```&#10;[PS] Get-ClusterNetwork&#10;```&#10;Gets information about one or more networks in a failover cluster.'
+[Get-ClusterNetworkInterface]: #get-clusternetworkinterface '```&#10;[PS] Get-ClusterNetworkInterface&#10;```&#10;Gets information about one or more network adapters in a failover cluster.'
+[Get-ClusterNode]: #get-clusternode '```&#10;[PS] Get-ClusterNode&#10;```&#10;Display information about the servers in a failover cluster'
+[Get-ClusterOwnerNode]: #get-clusterownernode '```&#10;[PS] Get-ClusterOwnerNode&#10;```&#10;Gets information about which nodes can own a resource in a failover cluster or information about the order of preference among owner nodes for a clustered role.'
+[Get-ClusterParameter]: #get-clusterparameter '```&#10;[PS] Get-ClusterParameter&#10;```&#10;Gets detailed information about an object in a failover cluster, such as a cluster resource.'
+[Get-ClusterQuorum]: #get-clusterquorum '```&#10;[PS] Get-ClusterQuorum&#10;```&#10;Display cluster quorum in a cluster'
+[Get-ClusterResource]: #get-clusterresource '```&#10;[PS] Get-ClusterResource&#10;```&#10;Gets information about one or more resources in a failover cluster.'
+[Get-ClusterResourceDependency]: #get-clusterresourcedependency '```&#10;[PS] Get-ClusterResourceDependency&#10;```&#10;Gets information about the dependencies that have been configured between clustered resources in a failover cluster.'
+[Get-ClusterResourceDependencyReport]: #get-clusterresourcedependencyreport '```&#10;[PS] Get-ClusterResourceDependencyReport&#10;```&#10;Generates a report that lists the dependencies between resources in a failover cluster.'
+[Get-ClusterResourceType]: #get-clusterresourcetype '```&#10;[PS] Get-ClusterResourceType&#10;```&#10;Gets information about one or more resource types in a failover cluster.'
+[Get-ClusterSharedVolume]: #get-clustersharedvolume '```&#10;[PS] Get-ClusterSharedVolume&#10;```&#10;Gets information about Cluster Shared Volumes in a failover cluster.'
+[Get-ClusterSharedVolumeState]: #get-clustersharedvolumestate '```&#10;[PS] Get-ClusterSharedVolumeState&#10;```&#10;Gets the state of Cluster Shared Volumes in a cluster.'
 [Get-ClusterStorageSpacesDirect]: #get-clusterstoragespacesdirect '```&#10;[PS] Get-ClusterStorageSpacesDirect&#10;```&#10;Gets the S2D settings from a cluster.'
+[Get-ClusterVMMonitoredItem]: #get-clustervmmonitoreditem '```&#10;[PS] Get-ClusterVMMonitoredItem&#10;```&#10;Gets the list of services and events currently being monitored in the virtual machine.'
+[Grant-ClusterAccess]: #grant-clusteraccess '```&#10;[PS] Grant-ClusterAccess&#10;```&#10;Grants access to a failover cluster, either full access or read-only access.'
+[Move-ClusterGroup]: #move-clustergroup '```&#10;[PS] Move-ClusterGroup&#10;```&#10;Moves a clustered role (a resource group) from one node to another in a failover cluster.'
+[Move-ClusterResource]: #move-clusterresource '```&#10;[PS] Move-ClusterResource&#10;```&#10;Moves a clustered resource from one clustered role to another within a failover cluster.'
+[Move-ClusterSharedVolume]: #move-clustersharedvolume '```&#10;[PS] Move-ClusterSharedVolume&#10;```&#10;Moves a Cluster Shared Volume (CSV) to ownership by a different node in a failover cluster.'
+[Move-ClusterVirtualMachineRole]: #move-clustervirtualmachinerole '```&#10;[PS] Move-ClusterVirtualMachineRole&#10;```&#10;Moves the ownership of a clustered virtual machine to a different node.'
+[New-Cluster]: #new-cluster '```&#10;[PS] New-Cluster&#10;```&#10;Create a new failover cluster&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 337'
+[New-ClusterFaultDomain]: #new-clusterfaultdomain '```&#10;[PS] New-ClusterFaultDomain&#10;```&#10;Creates a fault domain in the cluster.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 366'
+[New-ClusterGroupSet]: #new-clustergroupset '```&#10;[PS] New-ClusterGroupSet&#10;```&#10;Create a names set of groups in the cluster.'
+[New-ClusterNameAccount]: #new-clusternameaccount '```&#10;[PS] New-ClusterNameAccount&#10;```&#10;Creates a cluster name account in Active Directory Domain Services.'
+[Remove-Cluster]: #remove-cluster '```&#10;[PS] Remove-Cluster&#10;```&#10;Remove a failover cluster'
+[Remove-ClusterAccess]: #remove-clusteraccess '```&#10;[PS] Remove-ClusterAccess&#10;```&#10;Remove user access from the cluster'
+[Remove-ClusterCheckpoint]: #remove-clustercheckpoint '```&#10;[PS] Remove-ClusterCheckpoint&#10;```&#10;Removes a cryptographic key checkpoint or registry checkpoint for a resource.'
+[Remove-ClusterFaultDomain]: #remove-clusterfaultdomain '```&#10;[PS] Remove-ClusterFaultDomain&#10;```&#10;Removes a fault domain.'
+[Remove-ClusterGroup]: #remove-clustergroup '```&#10;[PS] Remove-ClusterGroup&#10;```&#10;Removes a clustered role, also called a resource group, from a failover cluster.'
+[Remove-ClusterGroupFromSet]: #remove-clustergroupfromset '```&#10;[PS] Remove-ClusterGroupFromSet&#10;```&#10;Removes a group from a set.'
+[Remove-ClusterGroupSet]: #remove-clustergroupset '```&#10;[PS] Remove-ClusterGroupSet&#10;```&#10;Removes a group set from the cluster.'
+[Remove-ClusterGroupSetDependency]: #remove-clustergroupsetdependency '```&#10;[PS] Remove-ClusterGroupSetDependency&#10;```&#10;Removes a dependency from a group set.'
+[Remove-ClusterNode]: #remove-clusternode '```&#10;[PS] Remove-ClusterNode&#10;```&#10;Remove a node from a failover cluster'
+[Remove-ClusterResource]: #remove-clusterresource '```&#10;[PS] Remove-ClusterResource&#10;```&#10;Removes a clustered resource from the failover cluster.'
+[Remove-ClusterResourceDependency]: #remove-clusterresourcedependency '```&#10;[PS] Remove-ClusterResourceDependency&#10;```&#10;Removes a dependency between two resources in a clustered role within a failover cluster.'
+[Remove-ClusterResourceType]: #remove-clusterresourcetype '```&#10;[PS] Remove-ClusterResourceType&#10;```&#10;Removes a resource type from a failover cluster.'
+[Remove-ClusterSharedVolume]: #remove-clustersharedvolume '```&#10;[PS] Remove-ClusterSharedVolume&#10;```&#10;Removes a volume from the Cluster Shared Volumes in a failover cluster, and places it in Available Storage in the cluster.'
+[Remove-ClusterVMMonitoredItem]: #remove-clustervmmonitoreditem '```&#10;[PS] Remove-ClusterVMMonitoredItem&#10;```&#10;Removes monitoring of a service or event that is currently being monitored on a virtual machine.'
 [Repair-ClusterStorageSpacesDirect]: #repair-clusterstoragespacesdirect '```&#10;[PS] Repair-ClusterStorageSpacesDirect&#10;```&#10;Repairs S2D disks.'
+[Reset-ClusterVMMonitoredState]: #reset-clustervmmonitoredstate '```&#10;[PS] Reset-ClusterVMMonitoredState&#10;```&#10;Resets the Application Critical state of a virtual machine, so that the virtual machine is no longer marked as being in a critical state in the cluster.'
+[Resume-ClusterNode]: #resume-clusternode '```&#10;[PS] Resume-ClusterNode&#10;```&#10;Resumes a node from the paused state or brings back drained workloads to the node or both.'
+[Resume-ClusterResource]: #resume-clusterresource '```&#10;[PS] Resume-ClusterResource&#10;```&#10;Turns off maintenance for a disk resource or Cluster Shared Volume within a failover cluster.'
+[Set-ClusterFaultDomain]: #set-clusterfaultdomain '```&#10;[PS] Set-ClusterFaultDomain&#10;```&#10;Update an existing cluster fault domain.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 366'
+[Set-ClusterFaultDomainXML]: #set-clusterfaultdomainxml '```&#10;[PS] Set-ClusterFaultDomainXML&#10;```&#10;Sets the cluster fault domain using XML.'
+[Set-ClusterGroupSet]: #set-clustergroupset '```&#10;[PS] Set-ClusterGroupSet&#10;```&#10;Updates a cluster group set.'
+[Set-ClusterLog]: #set-clusterlog '```&#10;[PS] Set-ClusterLog&#10;```&#10;Sets the size and level of detail for the cluster log.'
+[Set-ClusterOwnerNode]: #set-clusterownernode '```&#10;[PS] Set-ClusterOwnerNode&#10;```&#10;Specifies which nodes can own a resource in a failover cluster or specifies the order of preference among owner nodes for a clustered role, or resource group.'
+[Set-ClusterParameter]: #set-clusterparameter '```&#10;[PS] Set-ClusterParameter&#10;```&#10;Controls specific properties of an object in a failover cluster, such as a resource, a group, or a network.'
+[Set-ClusterQuorum]: #set-clusterquorum '```&#10;[PS] Set-ClusterQuorum&#10;```&#10;Configures quorum options for a failover cluster.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 318'
+[Set-ClusterResourceDependency]: #set-clusterresourcedependency '```&#10;[PS] Set-ClusterResourceDependency&#10;```&#10;Specifies the resources that a particular resource depends on within a failover cluster.'
 [Set-ClusterStorageSpacesDirect]: #set-clusterstoragespacesdirect '```&#10;[PS] Set-ClusterStorageSpacesDirect&#10;```&#10;Sets S2D cache parameters.'
 [Set-ClusterStorageSpacesDirectDisk]: #set-clusterstoragespacesdirectdisk '```&#10;[PS] Set-ClusterStorageSpacesDirectDisk&#10;```&#10;Configures the system to enable S2D to claim or not claim specific physical disks.'
+[Start-Cluster]: #start-cluster '```&#10;[PS] Start-Cluster&#10;```&#10;Start the Cluster service on all nodes'
+[Start-ClusterGroup]: #start-clustergroup '```&#10;[PS] Start-ClusterGroup&#10;```&#10;Starts one or more clustered roles, also known as resource groups, on a failover cluster.'
+[Start-ClusterNode]: #start-clusternode '```&#10;[PS] Start-ClusterNode&#10;```&#10;Starts the Cluster service on a node in a failover cluster.'
+[Start-ClusterResource]: #start-clusterresource '```&#10;[PS] Start-ClusterResource&#10;```&#10;Brings a resource online in a failover cluster.'
+[Stop-Cluster]: #stop-cluster '```&#10;[PS] Stop-Cluster&#10;```&#10;Stop the Cluster service on all nodes'
+[Stop-ClusterGroup]: #stop-clustergroup '```&#10;[PS] Stop-ClusterGroup&#10;```&#10;Stops one or more clustered roles on a failover cluster.'
+[Stop-ClusterNode]: #stop-clusternode '```&#10;[PS] Stop-ClusterNode&#10;```&#10;Stop the Cluster service on a node'
+[Stop-ClusterResource]: #stop-clusterresource '```&#10;[PS] Stop-ClusterResource&#10;```&#10;Takes a resource offline in a failover cluster.'
+[Suspend-ClusterNode]: #suspend-clusternode '```&#10;[PS] Suspend-ClusterNode&#10;```&#10;Pause the activity of a failover cluster node&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 374'
+[Suspend-ClusterResource]: #suspend-clusterresource '```&#10;[PS] Suspend-ClusterResource&#10;```&#10;Turns on maintenance for a disk resource or CSV so that you can run a disk maintenance tool without triggering failover.'
+[Test-Cluster]: #test-cluster '```&#10;[PS] Test-Cluster&#10;```&#10;Complete validation tests for a cluster'
+[Test-ClusterResourceFailure]: #test-clusterresourcefailure '```&#10;[PS] Test-ClusterResourceFailure&#10;```&#10;Simulates a failure of a cluster resource.'
+[Update-ClusterFunctionalLevel]: #update-clusterfunctionallevel '```&#10;[PS] Update-ClusterFunctionalLevel&#10;```&#10;Updates the functional level of a mixed-version cluster.'
+[Update-ClusterIPResource]: #update-clusteripresource '```&#10;[PS] Update-ClusterIPResource&#10;```&#10;Renews or releases the DHCP lease for an IP address resource in a failover cluster.'
+[Update-ClusterNetworkNameResource]: #update-clusternetworknameresource '```&#10;[PS] Update-ClusterNetworkNameResource&#10;```&#10;Registers existing Network Name resources with a DNS server in a way that does not interrupt cluster availability.'
 [Update-ClusterVirtualMachineConfiguration]: #update-clustervirtualmachineconfiguration '```&#10;[PS] Update-ClusterVirtualMachineConfiguration&#10;```&#10;Refreshes the configuration of a clustered virtual machine within a failover cluster.'
-[Add-ClusterVirtualMachineRole]: #add-clustervirtualmachinerole '```&#10;[PS] Add-ClusterVirtualMachineRole&#10;```&#10;Creates a clustered virtual machine, that is, a virtual machine that can be failed over if necessary to a different server in the failover cluster.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 304'
-[Move-ClusterVirtualMachineRole]: #move-clustervirtualmachinerole '```&#10;[PS] Move-ClusterVirtualMachineRole&#10;```&#10;Moves the ownership of a clustered virtual machine to a different node.'
-[Add-ClusterVMMonitoredItem]: #add-clustervmmonitoreditem '```&#10;[PS] Add-ClusterVMMonitoredItem&#10;```&#10;Configures monitoring for a service or an Event Tracing for Windows (ETW) event so that it is monitored on a virtual machine.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 362'
-[Get-ClusterVMMonitoredItem]: #get-clustervmmonitoreditem '```&#10;[PS] Get-ClusterVMMonitoredItem&#10;```&#10;Gets the list of services and events currently being monitored in the virtual machine.'
-[Remove-ClusterVMMonitoredItem]: #remove-clustervmmonitoreditem '```&#10;[PS] Remove-ClusterVMMonitoredItem&#10;```&#10;Removes monitoring of a service or event that is currently being monitored on a virtual machine.'
-[Reset-ClusterVMMonitoredState]: #reset-clustervmmonitoredstate '```&#10;[PS] Reset-ClusterVMMonitoredState&#10;```&#10;Resets the Application Critical state of a virtual machine, so that the virtual machine is no longer marked as being in a critical state in the cluster.'
 
 - Cluster
 [`Get`][Get-Cluster]<sup>[?][msdocs:Get-Cluster]</sup>
@@ -1343,6 +1344,13 @@
 - ClusterQuorum
 [`Get`][Get-ClusterQuorum]<sup>[?][msdocs:Get-ClusterQuorum]</sup>
 [`Set`][Set-ClusterQuorum]<sup>[?][msdocs:Set-ClusterQuorum]</sup>
+- ClusterScaleOutFileServerRole
+[**`Add`**][Add-ClusterScaleOutFileServerRole]<sup>[?][msdocs:Add-ClusterScaleOutFileServerRole]</sup>
+- ClusterSharedVolume
+[**`Add`**][Add-ClusterSharedVolume]<sup>[?][msdocs:Add-ClusterSharedVolume]</sup>
+[`Get`][Get-ClusterSharedVolume]<sup>[?][msdocs:Get-ClusterSharedVolume]</sup>
+[`Move`][Move-ClusterSharedVolume]<sup>[?][msdocs:Move-ClusterSharedVolume]</sup>
+[`Remove`][Remove-ClusterSharedVolume]<sup>[?][msdocs:Remove-ClusterSharedVolume]</sup>
 - ClusterVMMonitoredItem
 [`Add`][Add-ClusterVMMonitoredItem]<sup>[?][msdocs:Add-ClusterVMMonitoredItem]</sup>
 #### grouppolicy
@@ -3069,6 +3077,12 @@
 [Grant-SmbShareAccess]: #grant-smbshareaccess '```&#10;Grant-SmbShareAccess&#10;```&#10;Adds an allow ACE for a trustee to the security descriptor of the SMB share.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 109'
 [Revoke-SmbShareAccess]: #revoke-smbshareaccess '```&#10;Revoke-SmbShareAccess&#10;```&#10;Removes all of the allow ACEs for a trustee from the security descriptor of the SMB share.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 109'
 [Unblock-SmbShareAccess]: #unblock-smbshareaccess '```&#10;Unblock-SmbShareAccess&#10;```&#10;Removes all of the deny ACEs for the trustee from the security descriptor of the SMB share.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 109'
+
+- SmbShare
+[`Get`][Get-SmbShare]<sup>[?][msdocs:Get-SmbShare]</sup>
+[**`New`**][New-SmbShare]<sup>[?][msdocs:New-SmbShare]</sup>
+[`Remove`][Remove-SmbShare]<sup>[?][msdocs:Remove-SmbShare]</sup>
+[`Set`][Set-SmbShare]<sup>[?][msdocs:Set-SmbShare]</sup>
 #### storage
 [msdocs:Get-DedupProperties]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-DedupProperties "Get-DedupProperties documentation"
 [msdocs:Clear-Disk]: https://docs.microsoft.com/en-us/powershell/module/storage/Clear-Disk "Clear-Disk documentation"
@@ -5340,12 +5354,19 @@ Close-SmbSession -SessionId 154618822713
 ```
 ##### Get-SmbSession<sup>[?][msdocs:Get-SmbSession]</sup>
 ##### New-SmbShare<sup>[?][msdocs:New-SmbShare]</sup>
+`ContinuouslyAvailable`
+`FullAccess`
+
 ```powershell
 New-SmbShare -Name files -Path C:\networkfiles -ChangeAccess CORP\SysAdmin
 ```
 Create a new share with the `Allow Full Control` permission granted to the `Everyone` special identity <sup>[Zacker][Zacker]: 106</sup>
 ```powershell
 New-SmbShare -Name Data -Path C:\Docs -FullAccess Everyone
+```
+Create an SoFS share <sup>[Zacker][Zacker]: 340</sup>
+```powershell
+New-SmbShare -Name share1 -Path C:\clusterstorage\volume1 -FullAccess adatum\cluster1, adatum\node1, adatum\node2 -ContinuouslyAvailable
 ```
 ##### Resize-VHD<sup>[?][msdocs:Resize-VHD]</sup>
 [Resize-VHD -ToMinimumSize]: #Resize-VHD '```&#10;[PS] Resize-VHD -ToMinimumSize&#10;```&#10;Specify that the virtual hard disk is to be resized to its minimum possible size&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 228'
@@ -5945,4 +5966,17 @@ Enable-VMMigration
 Set-VMMigrationNetwork 192.168.10.1
 Set-VMHost -VirtualMachineMigrationAuthenticationType Kerberos
 Set-VMHost -VirtualMachineMigrationPerformanceOption SMBTransport
+```
+# Objects
+### Cluster
+#### Cluster.blockcachesize
+Zacker: 336
+```powershell
+(Get-Cluster).blockcachesize = 512
+```
+### ClusterNetwork
+#### ClusterNetwork.metric
+[Zacker][Zacker]: 338
+```powershell
+(Get-ClusterNetwork -Name "Cluster Network 3").metric = 30000
 ```
