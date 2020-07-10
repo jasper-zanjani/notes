@@ -54,10 +54,10 @@
 [`hyper-v`](#hyper-v)
 [`iscsi`](#iscsi)
 [`iscsitarget`](#iscsitarget)
-[`dism`](#dism)
 [`nanoserverimagegenerator`](#nanoserverimagegenerator)
 [`netqos`](#netqos)
 [`networkbalancingclusters`](#networkloadbalancingclusters)
+[`nfs`](#nfs)
 [`servermanager`](#servermanager)
 [`servermigration`](#servermigration)
 [`storagereplica`](#storagereplica)
@@ -588,26 +588,30 @@
 [msdocs:Stop-DedupJob]: https://docs.microsoft.com/en-us/powershell/module/deduplication/Stop-DedupJob "Stop-DedupJob"
 [msdocs:Update-DedupStatus]: https://docs.microsoft.com/en-us/powershell/module/deduplication/Update-DedupStatus "Update-DedupStatus"
 
+[Disable-DedupVolume]: #disable-dedupvolume '```&#10;Disable-DedupVolume&#10;```&#10;Disables data deduplication activity on one or more volumes.'
+[Enable-DedupVolume]: #enable-dedupvolume '```&#10;Enable-DedupVolume&#10;```&#10;Enables data deduplication on one or more volumes.'
 [Expand-DedupFile]: #expand-dedupfile '```&#10;Expand-DedupFile&#10;```&#10;Expands an optimized file into its original location.'
-[Measure-DedupFileMetadata]: #measure-dedupfilemetadata '```&#10;Measure-DedupFileMetadata&#10;```&#10;Measures potential disk space on a volume.'
 [Get-DedupJob]: #get-dedupjob '```&#10;Get-DedupJob&#10;```&#10;Returns status and information for currently running or queued deduplication jobs.'
-[Start-DedupJob]: #start-dedupjob '```&#10;Start-DedupJob&#10;```&#10;Starts a data deduplication job.'
-[Stop-DedupJob]: #stop-dedupjob '```&#10;Stop-DedupJob&#10;```&#10;Cancels one or more specified data deduplication jobs.'
 [Get-DedupMetadata]: #get-dedupmetadata '```&#10;Get-DedupMetadata&#10;```&#10;Returns metadata for volumes that have data deduplication metadata.'
 [Get-DedupSchedule]: #get-dedupschedule '```&#10;Get-DedupSchedule&#10;```&#10;Returns the deduplication job schedule defined on the computer.'
+[Get-DedupStatus]: #get-dedupstatus '```&#10;Get-DedupStatus&#10;```&#10;Returns deduplication status for volumes that have data deduplication metadata.'
+[Get-DedupVolume]: #get-dedupvolume '```&#10;Get-DedupVolume&#10;```&#10;Returns deduplication volumes that have data deduplication metadata.'
+[Measure-DedupFileMetadata]: #measure-dedupfilemetadata '```&#10;Measure-DedupFileMetadata&#10;```&#10;Measures potential disk space on a volume.'
 [New-DedupSchedule]: #new-dedupschedule '```&#10;New-DedupSchedule&#10;```&#10;Creates a data deduplication schedule.'
 [Remove-DedupSchedule]: #remove-dedupschedule '```&#10;Remove-DedupSchedule&#10;```&#10;Deletes a deduplication schedule.'
 [Set-DedupSchedule]: #set-dedupschedule '```&#10;Set-DedupSchedule&#10;```&#10;Changes configuration settings for data deduplication schedules.'
-[Get-DedupStatus]: #get-dedupstatus '```&#10;Get-DedupStatus&#10;```&#10;Returns deduplication status for volumes that have data deduplication metadata.'
-[Update-DedupStatus]: #update-dedupstatus '```&#10;Update-DedupStatus&#10;```&#10;Scans volumes for fresh data deduplication savings.'
-[Disable-DedupVolume]: #disable-dedupvolume '```&#10;Disable-DedupVolume&#10;```&#10;Disables data deduplication activity on one or more volumes.'
-[Enable-DedupVolume]: #enable-dedupvolume '```&#10;Enable-DedupVolume&#10;```&#10;Enables data deduplication on one or more volumes.'
-[Get-DedupVolume]: #get-dedupvolume '```&#10;Get-DedupVolume&#10;```&#10;Returns deduplication volumes that have data deduplication metadata.'
 [Set-DedupVolume]: #set-dedupvolume '```&#10;Set-DedupVolume&#10;```&#10;Changes data deduplication settings on one or more volumes.'
+[Start-DedupJob]: #start-dedupjob '```&#10;Start-DedupJob&#10;```&#10;Starts a data deduplication job.'
+[Stop-DedupJob]: #stop-dedupjob '```&#10;Stop-DedupJob&#10;```&#10;Cancels one or more specified data deduplication jobs.'
+[Update-DedupStatus]: #update-dedupstatus '```&#10;Update-DedupStatus&#10;```&#10;Scans volumes for fresh data deduplication savings.'
 
 - DedupVolume 
+[`Get`][Get-DedupStatus]<sup>[?][msdocs:Get-DedupStatus]</sup>
+[`Update`][Update-DedupStatus]<sup>[?][msdocs:Update-DedupStatus]</sup>
 [`Disable`][Disable-DedupVolume]<sup>[?][msdocs:Disable-DedupVolume]</sup>
-[`Enable`][Enable-DedupVolume]<sup>[?][msdocs:Enable-DedupVolume]</sup>
+[**`Enable`**][Enable-DedupVolume]<sup>[?][msdocs:Enable-DedupVolume]</sup>
+[`Get`][Get-DedupVolume]<sup>[?][msdocs:Get-DedupVolume]</sup>
+[**`Set`**][Set-DedupVolume]<sup>[?][msdocs:Set-DedupVolume]</sup>
 #### defender
 [msdocs:Add-MpPreference]: https://docs.microsoft.com/en-us/powershell/module/defender/Add-MpPreference "Add-MpPreference"
 [msdocs:Get-MpComputerStatus]: https://docs.microsoft.com/en-us/powershell/module/defender/Get-MpComputerStatus "Get-MpComputerStatus"
@@ -1351,6 +1355,8 @@
 [`Get`][Get-ClusterSharedVolume]<sup>[?][msdocs:Get-ClusterSharedVolume]</sup>
 [`Move`][Move-ClusterSharedVolume]<sup>[?][msdocs:Move-ClusterSharedVolume]</sup>
 [`Remove`][Remove-ClusterSharedVolume]<sup>[?][msdocs:Remove-ClusterSharedVolume]</sup>
+- ClusterVirtualMachineRole
+[**`Add`**][Add-ClusterVirtualMachineRole]<sup>[?][msdocs:add-clustervirtualmachinerole]</sup>
 - ClusterVMMonitoredItem
 [`Add`][Add-ClusterVMMonitoredItem]<sup>[?][msdocs:Add-ClusterVMMonitoredItem]</sup>
 #### grouppolicy
@@ -1903,7 +1909,7 @@
 - VMMigration
 [`Enable`][Enable-VMMigration]<sup>[?][msdocs:Enable-VMMigration]</sup>
 - VMMigrationNetwork
-[`Set`][Set-VMMigrationNetwork]<sup>[?][msdocs:Set-VMMigrationNetwork]</sup>
+[**`Set`**][Set-VMMigrationNetwork]<sup>[?][msdocs:Set-VMMigrationNetwork]</sup>
 - VMNetworkAdapter
 [`Add`][Add-VMNetworkAdapter]<sup>[?][msdocs:Add-VMNetworkAdapter]</sup>
 [`Connect`][Connect-VMNetworkAdapter]<sup>[?][msdocs:Connect-VMNetworkAdapter]</sup>
@@ -2765,6 +2771,96 @@
 [`Get`][Get-NlbClusterVip]<sup>[?][msdocs:Get-NlbClusterVip]</sup>
 [`Remove`][Remove-NlbClusterVip]<sup>[?][msdocs:Remove-NlbClusterVip]</sup>
 [`Set`][Set-NlbClusterVip]<sup>[?][msdocs:Set-NlbClusterVip]</sup>
+#### nfs
+[msdocs:Get-NfsClientConfiguration]: https://docs.microsoft.com/en-us/powershell/module/nfs/Get-NfsClientConfiguration "Get-NfsClientConfiguration documentation"
+[msdocs:Set-NfsClientConfiguration]: https://docs.microsoft.com/en-us/powershell/module/nfs/Set-NfsClientConfiguration "Set-NfsClientConfiguration documentation"
+[msdocs:Get-NfsClientgroup]: https://docs.microsoft.com/en-us/powershell/module/nfs/Get-NfsClientgroup "Get-NfsClientgroup documentation"
+[msdocs:New-NfsClientgroup]: https://docs.microsoft.com/en-us/powershell/module/nfs/New-NfsClientgroup "New-NfsClientgroup documentation"
+[msdocs:Remove-NfsClientgroup]: https://docs.microsoft.com/en-us/powershell/module/nfs/Remove-NfsClientgroup "Remove-NfsClientgroup documentation"
+[msdocs:Rename-NfsClientgroup]: https://docs.microsoft.com/en-us/powershell/module/nfs/Rename-NfsClientgroup "Rename-NfsClientgroup documentation"
+[msdocs:Set-NfsClientgroup]: https://docs.microsoft.com/en-us/powershell/module/nfs/Set-NfsClientgroup "Set-NfsClientgroup documentation"
+[msdocs:Get-NfsClientLock]: https://docs.microsoft.com/en-us/powershell/module/nfs/Get-NfsClientLock "Get-NfsClientLock documentation"
+[msdocs:Revoke-NfsClientLock]: https://docs.microsoft.com/en-us/powershell/module/nfs/Revoke-NfsClientLock "Revoke-NfsClientLock documentation"
+[msdocs:Get-NfsMappedIdentity]: https://docs.microsoft.com/en-us/powershell/module/nfs/Get-NfsMappedIdentity "Get-NfsMappedIdentity documentation"
+[msdocs:New-NfsMappedIdentity]: https://docs.microsoft.com/en-us/powershell/module/nfs/New-NfsMappedIdentity "New-NfsMappedIdentity documentation"
+[msdocs:Remove-NfsMappedIdentity]: https://docs.microsoft.com/en-us/powershell/module/nfs/Remove-NfsMappedIdentity "Remove-NfsMappedIdentity documentation"
+[msdocs:Resolve-NfsMappedIdentity]: https://docs.microsoft.com/en-us/powershell/module/nfs/Resolve-NfsMappedIdentity "Resolve-NfsMappedIdentity documentation"
+[msdocs:Set-NfsMappedIdentity]: https://docs.microsoft.com/en-us/powershell/module/nfs/Set-NfsMappedIdentity "Set-NfsMappedIdentity documentation"
+[msdocs:Test-NfsMappedIdentity]: https://docs.microsoft.com/en-us/powershell/module/nfs/Test-NfsMappedIdentity "Test-NfsMappedIdentity documentation"
+[msdocs:Get-NfsMappingStore]: https://docs.microsoft.com/en-us/powershell/module/nfs/Get-NfsMappingStore "Get-NfsMappingStore documentation"
+[msdocs:Install-NfsMappingStore]: https://docs.microsoft.com/en-us/powershell/module/nfs/Install-NfsMappingStore "Install-NfsMappingStore documentation"
+[msdocs:Set-NfsMappingStore]: https://docs.microsoft.com/en-us/powershell/module/nfs/Set-NfsMappingStore "Set-NfsMappingStore documentation"
+[msdocs:Test-NfsMappingStore]: https://docs.microsoft.com/en-us/powershell/module/nfs/Test-NfsMappingStore "Test-NfsMappingStore documentation"
+[msdocs:Get-NfsMountedClient]: https://docs.microsoft.com/en-us/powershell/module/nfs/Get-NfsMountedClient "Get-NfsMountedClient documentation"
+[msdocs:Revoke-NfsMountedClient]: https://docs.microsoft.com/en-us/powershell/module/nfs/Revoke-NfsMountedClient "Revoke-NfsMountedClient documentation"
+[msdocs:Get-NfsNetgroup]: https://docs.microsoft.com/en-us/powershell/module/nfs/Get-NfsNetgroup "Get-NfsNetgroup documentation"
+[msdocs:New-NfsNetgroup]: https://docs.microsoft.com/en-us/powershell/module/nfs/New-NfsNetgroup "New-NfsNetgroup documentation"
+[msdocs:Remove-NfsNetgroup]: https://docs.microsoft.com/en-us/powershell/module/nfs/Remove-NfsNetgroup "Remove-NfsNetgroup documentation"
+[msdocs:Set-NfsNetgroup]: https://docs.microsoft.com/en-us/powershell/module/nfs/Set-NfsNetgroup "Set-NfsNetgroup documentation"
+[msdocs:Get-NfsNetgroupStore]: https://docs.microsoft.com/en-us/powershell/module/nfs/Get-NfsNetgroupStore "Get-NfsNetgroupStore documentation"
+[msdocs:Set-NfsNetgroupStore]: https://docs.microsoft.com/en-us/powershell/module/nfs/Set-NfsNetgroupStore "Set-NfsNetgroupStore documentation"
+[msdocs:Get-NfsOpenFile]: https://docs.microsoft.com/en-us/powershell/module/nfs/Get-NfsOpenFile "Get-NfsOpenFile documentation"
+[msdocs:Revoke-NfsOpenFile]: https://docs.microsoft.com/en-us/powershell/module/nfs/Revoke-NfsOpenFile "Revoke-NfsOpenFile documentation"
+[msdocs:Get-NfsServerConfiguration]: https://docs.microsoft.com/en-us/powershell/module/nfs/Get-NfsServerConfiguration "Get-NfsServerConfiguration documentation"
+[msdocs:Set-NfsServerConfiguration]: https://docs.microsoft.com/en-us/powershell/module/nfs/Set-NfsServerConfiguration "Set-NfsServerConfiguration documentation"
+[msdocs:Disconnect-NfsSession]: https://docs.microsoft.com/en-us/powershell/module/nfs/Disconnect-NfsSession "Disconnect-NfsSession documentation"
+[msdocs:Get-NfsSession]: https://docs.microsoft.com/en-us/powershell/module/nfs/Get-NfsSession "Get-NfsSession documentation"
+[msdocs:Get-NfsShare]: https://docs.microsoft.com/en-us/powershell/module/nfs/Get-NfsShare "Get-NfsShare documentation"
+[msdocs:New-NfsShare]: https://docs.microsoft.com/en-us/powershell/module/nfs/New-NfsShare "New-NfsShare documentation"
+[msdocs:Remove-NfsShare]: https://docs.microsoft.com/en-us/powershell/module/nfs/Remove-NfsShare "Remove-NfsShare documentation"
+[msdocs:Set-NfsShare]: https://docs.microsoft.com/en-us/powershell/module/nfs/Set-NfsShare "Set-NfsShare documentation"
+[msdocs:Get-NfsSharePermission]: https://docs.microsoft.com/en-us/powershell/module/nfs/Get-NfsSharePermission "Get-NfsSharePermission documentation"
+[msdocs:Grant-NfsSharePermission]: https://docs.microsoft.com/en-us/powershell/module/nfs/Grant-NfsSharePermission "Grant-NfsSharePermission documentation"
+[msdocs:Revoke-NfsSharePermission]: https://docs.microsoft.com/en-us/powershell/module/nfs/Revoke-NfsSharePermission "Revoke-NfsSharePermission documentation"
+[msdocs:Get-NfsStatistics]: https://docs.microsoft.com/en-us/powershell/module/nfs/Get-NfsStatistics "Get-NfsStatistics documentation"
+[msdocs:Reset-NfsStatistics]: https://docs.microsoft.com/en-us/powershell/module/nfs/Reset-NfsStatistics "Reset-NfsStatistics documentation"
+[Disconnect-NfsSession]: #disconnect-nfssession '```&#10;PS> Disconnect-NfsSession&#10;```&#10;Disconnects NFS sessions that a client computer established on an NFS server.'
+[Get-NfsClientConfiguration]: #get-nfsclientconfiguration '```&#10;PS> Get-NfsClientConfiguration&#10;```&#10;Gets configuration settings for an NFS client.'
+[Get-NfsClientgroup]: #get-nfsclientgroup '```&#10;PS> Get-NfsClientgroup&#10;```&#10;Gets client groups configured on an NFS server.'
+[Get-NfsClientLock]: #get-nfsclientlock '```&#10;PS> Get-NfsClientLock&#10;```&#10;Gets file locks that a client computer holds on an NFS server.'
+[Get-NfsMappedIdentity]: #get-nfsmappedidentity '```&#10;PS> Get-NfsMappedIdentity&#10;```&#10;Gets an NFS mapped identity.'
+[Get-NfsMappingStore]: #get-nfsmappingstore '```&#10;PS> Get-NfsMappingStore&#10;```&#10;Gets configuration settings for an identity mapping store.'
+[Get-NfsMountedClient]: #get-nfsmountedclient '```&#10;PS> Get-NfsMountedClient&#10;```&#10;Gets clients that are connected to an NFS server.'
+[Get-NfsNetgroup]: #get-nfsnetgroup '```&#10;PS> Get-NfsNetgroup&#10;```&#10;Gets a netgroup.'
+[Get-NfsNetgroupStore]: #get-nfsnetgroupstore '```&#10;PS> Get-NfsNetgroupStore&#10;```&#10;Gets settings for a netgroup store.'
+[Get-NfsOpenFile]: #get-nfsopenfile '```&#10;PS> Get-NfsOpenFile&#10;```&#10;Gets information about files that are open on an NFS server for a client computer.'
+[Get-NfsServerConfiguration]: #get-nfsserverconfiguration '```&#10;PS> Get-NfsServerConfiguration&#10;```&#10;Gets configuration settings for an NFS server.'
+[Get-NfsSession]: #get-nfssession '```&#10;PS> Get-NfsSession&#10;```&#10;Gets information about which client computers are currently connected to one or more shares on an NFS server.'
+[Get-NfsShare]: #get-nfsshare '```&#10;PS> Get-NfsShare&#10;```&#10;Gets NFS shares on an NFS server.'
+[Get-NfsSharePermission]: #get-nfssharepermission '```&#10;PS> Get-NfsSharePermission&#10;```&#10;Gets information about permissions that an NFS server grants to exported NFS shares.'
+[Get-NfsStatistics]: #get-nfsstatistics '```&#10;PS> Get-NfsStatistics&#10;```&#10;Gets RPC call statistics that an NFS server maintains.'
+[Grant-NfsSharePermission]: #grant-nfssharepermission '```&#10;PS> Grant-NfsSharePermission&#10;```&#10;Grants permission to access shares that an NFS server exports.'
+[Install-NfsMappingStore]: #install-nfsmappingstore '```&#10;PS> Install-NfsMappingStore&#10;```&#10;Installs and initializes an AD LDS instance as an identity mapping store.'
+[New-NfsClientgroup]: #new-nfsclientgroup '```&#10;PS> New-NfsClientgroup&#10;```&#10;Creates a client group on an NFS server.'
+[New-NfsMappedIdentity]: #new-nfsmappedidentity '```&#10;PS> New-NfsMappedIdentity&#10;```&#10;Creates a new NFS mapped identity.'
+[New-NfsNetgroup]: #new-nfsnetgroup '```&#10;PS> New-NfsNetgroup&#10;```&#10;Creates a netgroup.'
+[New-NfsShare]: #new-nfsshare '```&#10;PS> New-NfsShare&#10;```&#10;Creates an NFS file share.'
+[Remove-NfsClientgroup]: #remove-nfsclientgroup '```&#10;PS> Remove-NfsClientgroup&#10;```&#10;Removes a client group from an NFS server.'
+[Remove-NfsMappedIdentity]: #remove-nfsmappedidentity '```&#10;PS> Remove-NfsMappedIdentity&#10;```&#10;Removes a mapping between a UNIX account and a Windows account.'
+[Remove-NfsNetgroup]: #remove-nfsnetgroup '```&#10;PS> Remove-NfsNetgroup&#10;```&#10;Removes a netgroup.'
+[Remove-NfsShare]: #remove-nfsshare '```&#10;PS> Remove-NfsShare&#10;```&#10;Stops sharing NFS shares.'
+[Rename-NfsClientgroup]: #rename-nfsclientgroup '```&#10;PS> Rename-NfsClientgroup&#10;```&#10;Renames a client group on an NFS server.'
+[Reset-NfsStatistics]: #reset-nfsstatistics '```&#10;PS> Reset-NfsStatistics&#10;```&#10;Resets RPC call statistics that an NFS server maintains.'
+[Resolve-NfsMappedIdentity]: #resolve-nfsmappedidentity '```&#10;PS> Resolve-NfsMappedIdentity&#10;```&#10;Resolves the mapping of a Windows user account or group account to a UNIX identifier.'
+[Revoke-NfsClientLock]: #revoke-nfsclientlock '```&#10;PS> Revoke-NfsClientLock&#10;```&#10;Releases file locks that a client computer holds on an NFS server.'
+[Revoke-NfsMountedClient]: #revoke-nfsmountedclient '```&#10;PS> Revoke-NfsMountedClient&#10;```&#10;Revokes a mounted client from an NFS server.'
+[Revoke-NfsOpenFile]: #revoke-nfsopenfile '```&#10;PS> Revoke-NfsOpenFile&#10;```&#10;Revokes open files on an NFS server for a client computer.'
+[Revoke-NfsSharePermission]: #revoke-nfssharepermission '```&#10;PS> Revoke-NfsSharePermission&#10;```&#10;Revokes permission to access shares that an NFS server exports.'
+[Set-NfsClientConfiguration]: #set-nfsclientconfiguration '```&#10;PS> Set-NfsClientConfiguration&#10;```&#10;Changes configuration settings for an NFS client.'
+[Set-NfsClientgroup]: #set-nfsclientgroup '```&#10;PS> Set-NfsClientgroup&#10;```&#10;Adds and removes client computers from a client group.'
+[Set-NfsMappedIdentity]: #set-nfsmappedidentity '```&#10;PS> Set-NfsMappedIdentity&#10;```&#10;Modifies a mapped identity.'
+[Set-NfsMappingStore]: #set-nfsmappingstore '```&#10;PS> Set-NfsMappingStore&#10;```&#10;Modifies configuration settings for an identity mapping store.'
+[Set-NfsNetgroup]: #set-nfsnetgroup '```&#10;PS> Set-NfsNetgroup&#10;```&#10;Modifies a netgroup.'
+[Set-NfsNetgroupStore]: #set-nfsnetgroupstore '```&#10;PS> Set-NfsNetgroupStore&#10;```&#10;Modifies netgroup configuration settings.'
+[Set-NfsServerConfiguration]: #set-nfsserverconfiguration '```&#10;PS> Set-NfsServerConfiguration&#10;```&#10;Changes configuration settings for an NFS server.'
+[Set-NfsShare]: #set-nfsshare '```&#10;PS> Set-NfsShare&#10;```&#10;Changes configuration settings of an NFS share.'
+[Test-NfsMappedIdentity]: #test-nfsmappedidentity '```&#10;PS> Test-NfsMappedIdentity&#10;```&#10;Verifies that a mapped identity is correctly configured.'
+[Test-NfsMappingStore]: #test-nfsmappingstore '```&#10;PS> Test-NfsMappingStore&#10;```&#10;Verifies that an identity mapping store is configured correctly.'
+
+- NfsSharePermission
+[`Get`][Get-NfsSharePermission]<sup>[?][msdocs:Get-NfsSharePermission]</sup>
+[**`Grant`**][Grant-NfsSharePermission]<sup>[?][msdocs:Grant-NfsSharePermission]</sup>
+[`Revoke`][Revoke-NfsSharePermission]<sup>[?][msdocs:Revoke-NfsSharePermission]</sup>
 
 #### PackageManagement
 [msdocs:Find-Package]: https://docs.microsoft.com/en-us/powershell/module/PackageManagement/Find-Package "Find-Package"
@@ -3083,6 +3179,12 @@
 [**`New`**][New-SmbShare]<sup>[?][msdocs:New-SmbShare]</sup>
 [`Remove`][Remove-SmbShare]<sup>[?][msdocs:Remove-SmbShare]</sup>
 [`Set`][Set-SmbShare]<sup>[?][msdocs:Set-SmbShare]</sup>
+- SmbShareAccess
+[`Block`][Block-SmbShareAccess]<sup>[?][msdocs:Block-SmbShareAccess]</sup>
+[**`Get`**][Get-SmbShareAccess]<sup>[?][msdocs:Get-SmbShareAccess]</sup>
+[`Grant`][Grant-SmbShareAccess]<sup>[?][msdocs:Grant-SmbShareAccess]</sup>
+[`Revoke`][Revoke-SmbShareAccess]<sup>[?][msdocs:Revoke-SmbShareAccess]</sup>
+[`Unblock`][Unblock-SmbShareAccess]<sup>[?][msdocs:Unblock-SmbShareAccess]</sup
 #### storage
 [msdocs:Get-DedupProperties]: https://docs.microsoft.com/en-us/powershell/module/storage/Get-DedupProperties "Get-DedupProperties documentation"
 [msdocs:Clear-Disk]: https://docs.microsoft.com/en-us/powershell/module/storage/Clear-Disk "Clear-Disk documentation"
@@ -3397,6 +3499,19 @@
 [`Remove`][Remove-PhysicalDisk]<sup>[?][msdocs:Remove-PhysicalDisk]</sup>
 [`Reset`][Reset-PhysicalDisk]<sup>[?][msdocs:Reset-PhysicalDisk]</sup>
 [`Set`][Set-PhysicalDisk]<sup>[?][msdocs:Set-PhysicalDisk]</sup>
+- StoragePool
+[`Get`][Get-StoragePool]<sup>[?][msdocs:Get-StoragePool]</sup>
+[**`New`**][New-StoragePool]<sup>[?][msdocs:New-StoragePool]</sup>
+[`Optimize`][Optimize-StoragePool]<sup>[?][msdocs:Optimize-StoragePool]</sup>
+[`Remove`][Remove-StoragePool]<sup>[?][msdocs:Remove-StoragePool]</sup>
+[`Set`][Set-StoragePool]<sup>[?][msdocs:Set-StoragePool]</sup>
+[`Update`][Update-StoragePool]<sup>[?][msdocs:Update-StoragePool]</sup>
+- StorageTier
+[`Get`][Get-StorageTier]<sup>[?][msdocs:Get-StorageTier]</sup>
+[**`New`**][New-StorageTier]<sup>[?][msdocs:New-StorageTier]</sup>
+[`Remove`][Remove-StorageTier]<sup>[?][msdocs:Remove-StorageTier]</sup>
+[`Resize`][Resize-StorageTier]<sup>[?][msdocs:Resize-StorageTier]</sup>
+[`Set`][Set-StorageTier]<sup>[?][msdocs:Set-StorageTier]</sup>
 - Volume
 [`Debug`][Debug-Volume]<sup>[?][msdocs:Debug-Volume]</sup>
 [`Format`][Format-Volume]<sup>[?][msdocs:Format-Volume]</sup>
@@ -4833,6 +4948,10 @@ Disable dynamic memory <sup>[MeasureUp][mu:70-740]</sup>
 ```powershell
 Set-VM -StaticMemory
 ```
+##### Grant-NfsSharePermission<sup>[?][msdocs:Grant-NfsSharePermission]</sup>
+[Grant-NfsSharePermission Permission]: #grant-nfssharepermission '```&#10;>Grant-NfsSharePermission Permission&#10;```&#10;Specify the type of access to grant for an NFS share&#10;Acceptable values include:&#10;- no-access&#10;- readonly&#10;- readwrite'
+
+[`Permission`][Grant-NfsSharePermissionPermission]
 ##### Set-VMDvdDrive<sup>[?][msdocs:Set-VMDvdDrive]</sup>
 **`VMName`**
 **`ControllerNumber`**
@@ -4885,6 +5004,14 @@ Set-VMHost -VirtualHardDiskPath 'D:\vms\Virtual Hard Disks' -VirtualMachinePath 
 ```
 ##### Set-VMMemory<sup>[?][msdocs:Set-VMMemory]</sup>
 `DynamicMemory`
+##### Set-VMMigrationNetwork<sup>[?][msdocs:Set-VMMigrationNetwork]</sup>
+Tasks:
+- [Configure live migration](#configure-live-migration)
+
+[MeasureUp][mu:70-740]
+```powershell
+Set-VMMigrationNetwork $ip
+```
 ##### Set-VMProcessor<sup>[?][msdocs:Set-VMProcessor]</sup>
 `ExposeVirtualizationExtensions`
 ##### Set-VMReplication<sup>[?][msdocs:Set-VMReplication]</sup>
@@ -5299,6 +5426,9 @@ Configure a cloud witness <sup>[Zacker][Zacker]: 348</sup>
 ```powershell
 Set-ClusterQuorum -CloudWitness -AccountName clusterstorage1 -AccessKey $accesskey
 ```
+##### Set-DedupVolume<sup>[?][msdocs:Set-DedupVolume]</sup>
+`MinimumFileAgeDays`
+
 ##### Add-ClusterScaleOutFileServerRole<sup>[?][msdocs:Add-ClusterScaleOutFileServerRole]</sup>
 Install the Scale-out File Server role (incorrectly appears as `Add-ClusterScaleOutFileServer` in the text) <sup>[Zacker][Zacker]: 339</sup>
 ```powershell
@@ -5786,7 +5916,7 @@ Dismount-VmHostAssignableDevice -LocationPath # Remove the device from host cont
 Add-VMAssignableDevice -VM -LocationPath      # Attach the device to a guest
 ```
 #### Configure live migration
-Live migration is possible between Hyper-V hosts that are not clustered, but they must be within the same (or trusted) domains. <sup>[Zacker][Zacker]</sup>
+Live migration is possible between Hyper-V hosts that are not clustered, but they must be within the same (or trusted) domains. <sup>[Zacker][Zacker]: 306</sup>
 ```powershell
 Enable-VMMigration
 Set-VMMigrationNetwork 192.168.4.0
@@ -5967,15 +6097,48 @@ Set-VMMigrationNetwork 192.168.10.1
 Set-VMHost -VirtualMachineMigrationAuthenticationType Kerberos
 Set-VMHost -VirtualMachineMigrationPerformanceOption SMBTransport
 ```
+#### Storage Spaces Direct
+[MeasureUp][mu:70-740]
+```powershell
+New-Cluster -Name HC-CLU1 -Node node1, node2, node3, node4 -NoStorage
+Enable-ClusterStorageSpacesDirect -CacheMode Disabled -AutoConfig:0 -SkipEligibilityChecks
+New-StoragePool -StorageSubSystemFriendlyName *Cluster* -FriendlyName S2DPool -ProvisioningTypeDefault Fixed -PhysicalDisk (Get-PhysicalDisk | Where-Object -Property CanPool -eq $true)
+$pool = Get-StoragePool S2DPool
+New-StorageTier -StoragePoolUniqueID ($pool).UniqueID -FriendlyName Performance -MediaType HDD -ResiliencySettingName Mirror
+New-StorageTier -StoragePoolUniqueID ($pool).UniqueID -FriendlyName Capacity -MediaType HDD -ResiliencySettingName Parity
+```
+The next step would be the creation of a new volume
+```powershell
+New-Volume -StoragePool $pool -FriendlyName SharedVol1 -FileSystem CSVFS_REFS -StorageTiersFriendlyNames Performance, Capacity -StorageTierSizes 2GB, 10GB
+```
 # Objects
 ### Cluster
-#### Cluster.blockcachesize
+#### Cluster.AutoBalancerLevel
+Specify **aggressiveness** of autobalancing
+
+Values:
+- **`1`**: Balance when CPU or memory load exceeds 80%
+- **`2`**: Balance when CPU or memory load exceeds 70%
+- **`3`**: Balance when CPU or memory load exceeds 60%
+#### Cluster.AutoBalancerMode
+Specify **fairness** of autobalancing
+
+Values:
+- **`0`**: Disabled
+- **`1`**: Balance on node join only
+- **`2`**: Balance on node join and every 30 minutes
+#### Cluster.BlockCacheSize
 Zacker: 336
 ```powershell
 (Get-Cluster).blockcachesize = 512
 ```
+#### Cluster.DrainOnShutdown
+Disable drain on shutdown <sup>[Zacker][Zacker]: 375</sup>
+```powershell
+(Get-Cluster).drainonshutdown = 0
+```
 ### ClusterNetwork
-#### ClusterNetwork.metric
+#### ClusterNetwork.Metric
 [Zacker][Zacker]: 338
 ```powershell
 (Get-ClusterNetwork -Name "Cluster Network 3").metric = 30000
