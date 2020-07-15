@@ -819,12 +819,12 @@ shutdown /L
 #### tracert
 On Windows, this command is aliased to `traceroute` which is the Linux command. <sup>[Lammle][Lammle]: 112</sup>
 #### wbadmin
-[wbadmin-enable-backup]: #wbadmin-enable backup '```&#10;wbadmin enable backup &#10;```&#10;Configures and enables a regularly scheduled backup.'
-[wbadmin-start-backup]: #wbadmin-start backup '```&#10;wbadmin start backup &#10;```&#10;Runs a one-time backup. If used with no parameters, uses the settings from the daily backup schedule.'
-[wbadmin-get-versions]: #wbadmin-get versions '```&#10;wbadmin get versions &#10;```&#10;Lists details of backups recoverable from the local computer or, if another location is specified, from another computer.'
-[wbadmin-get-items]: #wbadmin-get items '```&#10;wbadmin get items &#10;```&#10;Lists the items included in a backup.'
-[wbadmin-start-recovery]: #wbadmin-start recovery '```&#10;wbadmin start recovery &#10;```&#10;Runs a recovery of the volumes, applications, files, or folders specified.'
-[wbadmin-start-systemstaterecovery]: #wbadmin-start systemstaterecovery '```&#10;wbadmin start systemstaterecovery &#10;```&#10;Runs a system state recovery.'
+[wbadmin-enable-backup]: #wbadmin '```&#10;wbadmin enable backup &#10;```&#10;Configures and enables a regularly scheduled backup.'
+[wbadmin-start-backup]: #wbadmin '```&#10;wbadmin start backup &#10;```&#10;Runs a one-time backup. If used with no parameters, uses the settings from the daily backup schedule.'
+[wbadmin-get-versions]: #wbadmin '```&#10;wbadmin get versions &#10;```&#10;Lists details of backups recoverable from the local computer or, if another location is specified, from another computer.'
+[wbadmin-get-items]: #wbadmin '```&#10;wbadmin get items &#10;```&#10;Lists the items included in a backup.'
+[wbadmin-start-recovery]: #wbadmin '```&#10;wbadmin start recovery &#10;```&#10;Runs a recovery of the volumes, applications, files, or folders specified.'
+[wbadmin-start-systemstaterecovery]: #wbadmin '```&#10;wbadmin start systemstaterecovery &#10;```&#10;Runs a system state recovery.'
 
 [`enable backup`][wbadmin-enable-backup]
 [`get items`][wbadmin-get-items]

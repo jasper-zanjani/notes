@@ -4933,11 +4933,12 @@ Mount-VHD -Path $file
 ```
 ##### New-VHD<sup>[?][msdocs:New-VHD]</sup>
 [New-VHD -Differencing]: #New-VHD '```&#10;[PS] New-VHD -Differencing&#10;```&#10;Specify that a new differencing disk is to be created'
+[New-VHD -LogicalSectorSizeBytes]: #new-vhd '```&#10;PS> New-VHD -LogicalSectorSizeBytes&#10;```&#10;Specifies the logical sector size, in bytes, of the virtual hard disk to be created. Valid values are 512 and 4096.'
 
 [`Differencing`][New-VHD -Differencing]
 `Dynamic`
 `Fixed`
-`LogicalSectorSizeBytes`
+[`LogicalSectorSizeBytes`][New-VHD -LogicalSectorSizeBytes]
 `ParentPath`
 `SizeBytes`
 
@@ -4946,7 +4947,7 @@ Mount-VHD -Path $file
 New-VHD -Path c:\diskfile.vhdx -Fixed -SizeBytes 500gb -LogicalSectorSizeBytes 4096
 ```
 ```powershell
-New-VHD -Path C:\Data\disk1.vhdx -SizeBytes 256GB -Dynamic 
+New-VHD -Path 'C:\Data\disk1.vhdx' -SizeBytes 256GB -Dynamic 
 ```
 Differencing disk <sup>[Practice Lab][pl:70-740]</sup>
 ```powershell
