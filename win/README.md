@@ -15,19 +15,19 @@
 [UWP]: #uwp 'Universal Windows Platform (UWP)&#10;Universal Windows Platform provides a common app platform on every device that runs Windows 10, and UWP apps are primarily associated with the Microsoft Store.&#10;"Universal Windows Platform apps". _Wikipedia_.'
 
 [adfind]: #adfind '```&#10;adfind&#10;```&#10;Command-line utility that can be used to query Active Directory attributes&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 53'
-[adprep]: #adprep                         '```&#10;C:\>adprep&#10;```&#10;Prepare Active Directory for Windows Server upgrades&#10;Must be run on the Infrastructure Master role owner with the flag `/domainprep`.&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 29'
-[arp]:            #arp                            '```&#10;C:\>arp&#10;```&#10;Display and modify the IP-to-MAC address translation tables used by ARP'
-[bcdedit]:        #bcdedit                        '```&#10;C:\>bcdedit&#10;```&#10;Boot configuration data editor'
-[bootrec]:        #bootrec                        '```&#10;C:\>bootrec&#10;```&#10;Windows Recovery Environment command that repairs a system partition'
+[adprep]: #adprep '```&#10;C:\>adprep&#10;```&#10;Prepare Active Directory for Windows Server upgrades&#10;Must be run on the Infrastructure Master role owner with the flag `/domainprep`.&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 29'
+[arp]:          #arp                            '```&#10;C:\>arp&#10;```&#10;Display and modify the IP-to-MAC address translation tables used by ARP'
+[bcdedit]:      #bcdedit                        '```&#10;C:\>bcdedit&#10;```&#10;Boot configuration data editor'
+[bootrec]:      #bootrec                        '```&#10;C:\>bootrec&#10;```&#10;Windows Recovery Environment command that repairs a system partition'
 [cmdkey.exe]: #cmdkey '```&#10;C:\>cmdkey.exe&#10;```&#10;Creates, lists, and deletes stored user names and passwords or credentials'
-[cscript]:        #cscript                        '```&#10;C:\>cscript&#10;```&#10;Starts a script so that it runs in a command-line environment'
-[diskpart]:       #diskpart                       '```&#10;C:\>diskpart&#10;```&#10;Text-mode command interpreter used to convert disk types, create partitions and volumes, and configure RAID&#10;Stanek, William R. _Microsoft Windows Command-Line_.: 141'
+[cscript]:      #cscript                        '```&#10;C:\>cscript&#10;```&#10;Starts a script so that it runs in a command-line environment'
+[diskpart]:     #diskpart                       '```&#10;C:\>diskpart&#10;```&#10;Text-mode command interpreter used to convert disk types, create partitions and volumes, and configure RAID&#10;Stanek, William R. _Microsoft Windows Command-Line_.: 141'
 [dism.exe]: #dismexe '```&#10;C:\>dism.exe&#10;```&#10;"Deployment Image Servicing and Management", enables modification of VHD and Windows Imaging files while they are offline&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 70'
 [Djoin.exe]: #djoin.exe '```&#10;C:\>Djoin.exe&#10;```&#10;Create a domain provisioning file, so a Nano Server image can be domain joined offline.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 46'
 [eventvwr.exe]: #eventvwrexe '```&#10;eventvwr.exe&#10;```&#10;Event Viewer'
 [grep]: https://github.com/jasper-zanjani/notes/blob/master/lx/commands/README.md#grep '```&#10;$ grep&#10;```&#10;Search `$FILES` for lines containing a match to regex `$PATTERN`&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 126'
-[hostname]:       #hostname                       '```&#10;C:\>hostname&#10;C:\>HOSTNAME.exe&#10;```&#10;Display computer name'
-[ipconfig]:       #ipconfig                       '```&#10;C:\>ipconfig&#10;```&#10;Display TCP/IP configuration'
+[hostname]:     #hostname                       '```&#10;C:\>hostname&#10;C:\>HOSTNAME.exe&#10;```&#10;Display computer name'
+[ipconfig]:     #ipconfig                       '```&#10;C:\>ipconfig&#10;```&#10;Display TCP/IP configuration'
 [iSCSICLI.exe]: #iscsicli '```&#10;C:\>iSCSICLI.exe&#10;```&#10;Outdated command-line tool used in Windows Server editions prior to 2012, superceded by the iSCSI Powershell module. '
 [logoff]:         #logoff                         '```&#10;C:\>logoff&#10;```&#10;Log out'
 [lx echo]: https://github.com/jasper-zanjani/notes/blob/master/lx/commands/README.md#echo '```&#10;$ echo&#10;```&#10;Write `$STRING` to STDOUT&#10;Robbins, Arnold. _Bash Pocket Reference_. O\'Reilly: 2016.: 88'
@@ -35,8 +35,8 @@
 [ms-settings:]: #settings '```&#10;ms-settings:&#10;```&#10;Special protocol which can be used to open Settings pages and other Modern apps which have well known URIs'
 [msiexec]:        #msiexec                        '```&#10;C:\>msiexec&#10;```&#10;Provides the means to install, modify, and perform operations on Windows Installer from the command line'
 [mstsc.exe]: #mstscexe '```&#10;mstsc.exe&#10;```&#10;Connect to remote hosts using RDP'
-[nbtstat]:        #nbtstat                        '```&#10;C:\>nbtstat&#10;```&#10;Display status of NetBIOS'
-[netsh]:          #netsh                          '```&#10;C:\>netsh&#10;```&#10;"Network services shell", command-line utility that allows you to manage the configuration of various network services on local and remote computers.&#10;Stanek, William R. _Microsoft Windows Command-Line_.: 297'
+[nbtstat]:      #nbtstat                        '```&#10;C:\>nbtstat&#10;```&#10;Display status of NetBIOS'
+[netsh]:        #netsh                          '```&#10;C:\>netsh&#10;```&#10;"Network services shell", command-line utility that allows you to manage the configuration of various network services on local and remote computers.&#10;Stanek, William R. _Microsoft Windows Command-Line_.: 297'
 [Network Location Profile]: # 'Network Location Profile&#10;Determines which firewall rules are in effect, and can be "Public", "Private", or "Domain".'
 [ntdsutil]:       #ntdsutil                       '```&#10;C:\>ntdsutil&#10;```&#10;Used to transfer FSMO roles between domain controllers'
 [runas]: #runas '```&#10;C:\>runas&#10;```&#10;Run specific tools and programs with different permissions than those provided by the current login of the user.'
@@ -165,6 +165,7 @@ Tasks
 [`dsquery`](#dsquery)
 `gpmc.msc`
 [`smigdeploy.exe`][SmigDeploy.exe]
+`taskschd.msc`
 `virtmgmt.msc`
 `wdsmgmt.msc`
 `wf.msc`
@@ -818,7 +819,28 @@ shutdown /L
 #### tracert
 On Windows, this command is aliased to `traceroute` which is the Linux command. <sup>[Lammle][Lammle]: 112</sup>
 #### wbadmin
+[wbadmin-enable-backup]: #wbadmin-enable backup '```&#10;wbadmin enable backup &#10;```&#10;Configures and enables a regularly scheduled backup.'
+[wbadmin-start-backup]: #wbadmin-start backup '```&#10;wbadmin start backup &#10;```&#10;Runs a one-time backup. If used with no parameters, uses the settings from the daily backup schedule.'
+[wbadmin-get-versions]: #wbadmin-get versions '```&#10;wbadmin get versions &#10;```&#10;Lists details of backups recoverable from the local computer or, if another location is specified, from another computer.'
+[wbadmin-get-items]: #wbadmin-get items '```&#10;wbadmin get items &#10;```&#10;Lists the items included in a backup.'
+[wbadmin-start-recovery]: #wbadmin-start recovery '```&#10;wbadmin start recovery &#10;```&#10;Runs a recovery of the volumes, applications, files, or folders specified.'
+[wbadmin-start-systemstaterecovery]: #wbadmin-start systemstaterecovery '```&#10;wbadmin start systemstaterecovery &#10;```&#10;Runs a system state recovery.'
+
+[`enable backup`][wbadmin-enable-backup]
+[`get items`][wbadmin-get-items]
+[`get versions`][wbadmin-get-versions]
+[`start backup`][wbadmin-start-backup]
+[`start recovery`][wbadmin-start-recovery]
+[`start systemstaterecovery`][wbadmin-start-systemstaterecovery]
+
+`-backupTarget`
 `-hyperv`
+`-vsscopy`|`-vssFull`
+
+Backup the entire drive, excluding some VMs
+```cmd
+wbadmin enable backup -backupTarget \\backups\hostdr\temp\ -include:c: -exclude: C:\VMs\VM1.vhdx, C:\VMs\VMAR.vhd -vsscopy -quiet
+```
 
 [Zacker][Zacker]: 325-326
 ```cmd
@@ -831,6 +853,7 @@ wbadmin start recovery -itemtype:app items:cluster -version:01/01/2008-00:00
 wbadmin start systemstaterecovery -version:11/27/2016-11:07
 wbadmin get versions
 ```
+
 #### wdsutil.exe
 `initialize-server`
 `remInst`

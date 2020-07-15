@@ -20,6 +20,7 @@
     - [GCP RDBMS](#gcp-rdbms)
   - [NoSQL](#nosql)
     - [Azure NoSQL](#azure-nosql)
+      - [Cosmos DB](#cosmos-db)
     - [AWS NoSQL](#aws-nosql)
       - [DynamoDB](#dynamodb)
     - [GCP NoSQL](#gcp-nosql)
@@ -34,22 +35,23 @@
   - [IaaS](#iaas)
     - [Azure IaaS](#azure-iaas)
     - [AWS IaaS](#aws-iaas)
-    - [GCP IaaS](#gcp-iaas)
+    - [Google Compute Engine](#google-compute-engine)
   - [PaaS](#paas)
     - [Azure PaaS](#azure-paas)
     - [AWS PaaS](#aws-paas)
     - [GCP PaaS](#gcp-paas)
       - [App Engine](#app-engine)
-      - [Compute Engine](#compute-engine)
   - [Serverless](#serverless)
     - [Azure serverless](#azure-serverless)
     - [AWS serverless](#aws-serverless)
     - [GCP serverless](#gcp-serverless)
+      - [GCP Cloud Functions](#gcp-cloud-functions)
       - [Google Cloud Functions](#google-cloud-functions)
   - [Containers](#containers)
     - [Azure Containers](#azure-containers)
     - [AWS Containers](#aws-containers)
     - [GCP Containers](#gcp-containers)
+      - [Google Cloud Run](#google-cloud-run)
   - [Monitoring](#monitoring)
     - [Azure Monitoring](#azure-monitoring)
       - [Azure Monitor](#azure-monitor)
@@ -179,24 +181,30 @@ Resources:
 
 #### `cbt`
 #### `gcloud`
-[gcloud app]:                             #gcloud             '`gcloud app`&#10;App Engine'
-[gcloud compute]:                         #gcloud             '`gcloud compute`&#10;Compute Engine'
-[gcloud container]:                       #gcloud             '`gcloud container`&#10;Kubernetes Engine'
-[gcloud compute]:                         #gcloud             '`gcloud compute`&#10;Compute Engine'
-[gcloud functions]:                       #functions          '`gcloud functions`&#10;Cloud Functions'
-[gcloud services]:                        #gcloud             '`gcloud services`&#10;Manage project\'s access to APIs'
+- [Google Command Line for beginners](https://youtu.be/j274vq9a2Rs)
 
-[`app`][gcloud app]
-[`compute`][gcloud compute]
-[`container`][gcloud container]
-[`functions`][gcloud functions]
-[`services`][gcloud services]
+[doc:gcloud-app]: https://cloud.google.com/sdk/gcloud/reference/app "gcloud app documentation"
+[doc:gcloud-compute]: https://cloud.google.com/sdk/gcloud/reference/compute "gcloud compute documentation"
+[doc:gcloud-container]: https://cloud.google.com/sdk/gcloud/reference/container "gcloud container documentation"
+[doc:gcloud-functions]: https://cloud.google.com/sdk/gcloud/reference/functions "gcloud functions documentation"
+[doc:gcloud-run]: https://cloud.google.com/sdk/gcloud/reference/run "gcloud run documentation"
+[doc:gcloud-services]: https://cloud.google.com/sdk/gcloud/reference/services "gcloud services documentation"
+
+[gcloud-app]: #app-engine '```&#10;gcloud app &#10;```&#10;App Engine'
+[gcloud-compute]: #gcloud-compute '```&#10;gcloud compute &#10;```&#10;Compute Engine'
+[gcloud-container]: #gcloud-container '```&#10;gcloud container &#10;```&#10;Kubernetes Engine'
+[gcloud-functions]: #gcloud-functions '```&#10;gcloud functions &#10;```&#10;Cloud Functions'
+[gcloud-run]: #google-cloud-run '```&#10;gcloud run &#10;```&#10;Manage Cloud Run applications'
+[gcloud-services]: #gcloud-services '```&#10;gcloud services &#10;```&#10;manage project's access to APIs'
+
+[`app`][gcloud-app]<sup>[?][doc:gcloud-app]</sup>
+[`compute`][gcloud-compute]<sup>[?][doc:gcloud-compute]</sup>
+[`container`][gcloud-container]<sup>[?][doc:gcloud-container]</sup>
+[`functions`][gcloud-functions]<sup>[?][doc:gcloud-functions]</sup>
+[`run`][gcloud-run]<sup>[?][doc:gcloud-run]</sup>
+[`services`][gcloud-services]<sup>[?][doc:gcloud-services]</sup>
 `source`
 
-Compute Engine (GCE) VMs
-```sh
-gcloud compute instances create
-```
 Google Cloud Source Control repositories
 ```sh
 gcloud source repos clone
@@ -239,9 +247,14 @@ However, when changing information that is duplicated in several places, write o
 NoSQL databases are also **horizontally scalable** because the information can be sharded horizontally more easily than relational database, which are only **vertically scalable** (meaning scaling them requires larger and larger computers) and can only be sharded vertically. <sup>[YouTube](https://youtu.be/v_hR4K4auoQ?t=620 "YouTube - What is a NoSQL Database? How is Cloud Firestore structured? | Get to Know Cloud Firestore #1")</sup>
 
 ### Azure NoSQL
-[CosmosDB]: # 'CosmosDB&#10;Azure NoSQL database service optimized for mobile and web applications that offers graph, document, and key-value APIs'
-- [CosmosDB][CosmosDB]
+[CosmosDB]: #cosmos-db 'CosmosDB&#10;Azure NoSQL database service optimized for mobile and web applications that offers graph, document, and key-value APIs'
+- [Cosmos DB][CosmosDB]
 - Table storage
+
+#### Cosmos DB
+Fully managed JSON document database service with turnkey global distribution and transparent multi-master replication.
+Pricing for Cosmos DB relies on **Request Units**, which incorporate both the number of returned records as well as a fractional amount that reflects the complexity of the query.
+
 ### AWS NoSQL
 - DynamoDB
 - SimpleDB
@@ -275,7 +288,7 @@ Resources
 Firebase is a completely unstructured NoSQL database that is known for its client libraries.
 Firestore has almost completely supplanted Firebase for most applications. <sup>[YouTube](https://youtu.be/TmXct7seeBY)</sup>
 
-
+**Firebase Auth** offers a free user interface for applications, **Firebase UI**.
 
 #### Firestore
 Cloud Firestore was released from beta in early 2019 and combines and improves upon functionality of previous products named **Cloud Datastore** and **Firebase Realtime Database**. <sup>[YouTube](https://youtu.be/U5aeM5dvUpA "Introducing Firebase Realtime Database") [The Firebase Blog](https://firebase.googleblog.com/2017/10/cloud-firestore-for-rtdb-developers.html "Cloud Firestore vs the Realtime Database: Which one do I use?") </sup>
@@ -325,9 +338,15 @@ BigTable doesn't support secondary indexes. <sup> [YouTube](https://www.youtube.
 ### AWS IaaS
 [EC2]: # 'Elastic Compute Cloud (EC2)&#10;makes virtual machines available in AWS and provides a managed environment for Docker containers'
 - [Elastic Compute Cloud (EC2)][EC2]
-### GCP IaaS
-[Google Compute Engine]: # 'Compute Engine&#10;allows users to create VMs, attach persistent storage to them, and make use of other GCP services like Cloud Storage&#10;Sullivan, Dan. _Official Google Cloud Certified Associate Cloud Engineer Study Guide_: 17'
+### Google Compute Engine
+[Google Compute Engine]: #google-compute-engine 'Compute Engine&#10;allows users to create VMs, attach persistent storage to them, and make use of other GCP services like Cloud Storage&#10;Sullivan, Dan. _Official Google Cloud Certified Associate Cloud Engineer Study Guide_: 17'
 - [Google Compute Engine (GCE)][Google Compute Engine]
+- [Getting started with GCE](https://youtu.be/1XH0gLlGDdk "YouTube - Getting Started with Google Cloud Compute Engine")
+
+Compute Engine (GCE) VMs
+```sh
+gcloud compute instances create
+```
 ## PaaS
 ### Azure PaaS
 ### AWS PaaS
@@ -335,9 +354,31 @@ BigTable doesn't support secondary indexes. <sup> [YouTube](https://www.youtube.
 ### GCP PaaS
 - App Engine
 #### App Engine
+[doc:gcloud-app-browse]: https://cloud.google.com/sdk/gcloud/reference/appbrowse "gcloud app browse documentation"
+[doc:gcloud-app-deploy]: https://cloud.google.com/sdk/gcloud/reference/appdeploy "gcloud app deploy documentation"
+[gcloud-app-browse]: #app-engine '```&#10;gcloud app browse &#10;```&#10;Open the current app in a web browser'
+[gcloud-app-deploy]: #app-engine '```&#10;gcloud app deploy &#10;```&#10;Deploy the local code and/or configuration of your app to App Engine'
+
+[`browse`][gcloud-app-browse]<sup>[?][doc:gcloud-app-browse]</sup>
+[`deploy`][gcloud app-deploy]<sup>[?][doc:gcloud app-deploy]</sup>
+
+Resources
+- [App Engine in a minute](https://youtu.be/Xuf3J6SKVV0 "YouTube - App Engine in a minute")
 - [Get to know GAE](https://youtu.be/2PRciDpqpko "YouTube - Get to know Google App Engine") 
-#### Compute Engine
-- [Getting started with GCE](https://youtu.be/1XH0gLlGDdk "YouTube - Getting Started with Google Cloud Compute Engine")
+- [Introduction App Engine's new Python 3 runtime](https://youtu.be/qeSpDwA2qcU)
+
+Deploy app in current working directory.
+```sh
+gcloud app deploy
+```
+View the deployed app
+```sh
+gcloud app browse
+```
+app.yaml allows configuration of the app in several ways
+```yaml
+runtime: python37
+```
 ## Serverless
 ### Azure serverless
 - Functions
@@ -347,6 +388,10 @@ BigTable doesn't support secondary indexes. <sup> [YouTube](https://www.youtube.
 ### GCP serverless
 [Google Cloud Functions]: # 'Cloud Functions&#10;lightweight computing option well-suited to event-driven processing&#10;Sullivan, Dan. _Official Google Cloud Certified Associate Cloud Engineer Study Guide_: 20'
 - [Google Cloud Functions][Google Cloud Functions]
+
+#### GCP Cloud Functions
+- [Cloud Functions in a minute](https://youtu.be/brhA9uaz7Xs "YouTube - Cloud Functions in a minute")
+
 #### Google Cloud Functions
 - [Quickstart](https://www.youtube.com/watch?v=vM-2O-uKBNQ 'YouTube - Getting Started: Cloud Functions quickstart')
 ## Containers
@@ -357,8 +402,38 @@ BigTable doesn't support secondary indexes. <sup> [YouTube](https://www.youtube.
 - Elastic Container Service (ECS)
 - Elastic Kubernetes Service (EKS)
 ### GCP Containers
+[Google Cloud Run]: #google-cloud-run 'Google Cloud Run&#10;Fully managed compute environment that facilitates container deployment'
 [GKE]: # 'Google Kubernetes Engine (GKE)&#10;allows users to easily run containerized applications on a cluster of servers&#10;Sullivan, Dan. _Official Google Cloud Certified Associate Cloud Engineer Study Guide_: 19'
 - [Google Kubernetes Engine][GKE]
+- [Cloud Run][Google Cloud Run]
+- Cloud Run on GKE
+
+#### Google Cloud Run
+[gcloud-run]: #gcloud-run '```&#10;gcloud run &#10;```&#10;Manage Cloud Run applications'
+[doc:gcloud-run]: https://cloud.google.com/sdk/gcloud/reference/run "gcloud run documentation"
+
+[gcloud run  --cluster]: #gcloud run '```&#10;$ gcloud run  --cluster =$CLUSTER&#10;```&#10;ID of the cluster or fully qualified identifier for the cluster'
+
+[`cluster`][gcloud run --cluster]
+`set-env-vars`
+
+Resources:
+- [Cloud Run in a minute](https://youtu.be/lzQNjZIGKaM "YouTube - Cloud Run in a minute")
+- [Differences between Cloud Run and Cloud Run on GKE](https://youtu.be/RVdhyprptTQ)
+- [Cloud Run: deploy a prebuilt container](https://youtu.be/Xd-BNy1IqcQ)
+- [Build and deploy with Cloud Run](https://youtu.be/nJ0L28ZfmUA)
+
+Cloud Run is built on a native open standard that will allow using the same container on other cloud providers.
+It bills down to the nearest 100 ms interval.
+Cloud Run provides an HTTPS endpoint to the container.
+```sh
+gcloud run deploy --image gcr.io/my-project/helloworld
+```
+Cloud Run can also run on your own K8S cluster running on [GKE][GKE], recommended for workloads that have a consistently high level of traffic, since you are billed for the provisioned cluster resources.
+However, resources like CPU, GPU, and other items can be customized.
+```sh
+gcloud run deploy --image gcr.io/my-project/helloworld --cluster my-gke-cluster
+```
 ## Monitoring
 ### Azure Monitoring
 - App Insights

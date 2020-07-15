@@ -1,4 +1,25 @@
 # Observations on the learning process
+#### Retrieval
+[Karpicke 2012]: http://learninglab.psych.purdue.edu/downloads/2012_Karpicke_CDPS.pdf "Karpicke, Jeffrey D. _Retrieval-Based Learning: Active Retrieval Promotes Meaningful Learning_. 2012."
+[Karpicke 2017]: http://learninglab.psych.purdue.edu/downloads/inpress_Karpicke_Retrieval_Based_Learning_Review.pdf "Karpicke, Jeffrey D. _Retrieval-Based Learning: A Decade of Progress_. 2017"
+
+**Retrieval-based learning** refers to the coupling of two ideas:
+1. **Retrieval processes**, those involved in using available cues to actively reconstruct knowledge, are most important in learning
+2. **Active retrieval** is most important for producing learning.
+
+Retrieval-based learning characterizes knowledge as something that is reconstructed at the time of recall. 
+Knowledge reconstruction is affected by the presence or absence of **retrieval cues**.
+This is contrasted with the traditional analogy of knowledge as static storage.
+
+Retrieval-based learning is an outgrowth of recent cognitive science research that shows that the act of measuring knowledge - by recall, answering questions, or solving novel problems - actually aids learning. 
+The **testing effect** refers to the observation that the act of taking a test, by itself and without any feedback or further study, results in improved learning. <sup>[Karpicke 2017][Karpicke 2017]</sup>
+
+**Retrieval effort** is a key concept in retrieval-based learning, which refers to the observation that activities that are difficult and require effort can be good for learning.
+In other words, the effort involved in retrieval is the key to learning.
+
+Learning activites that engage retrieval processes include group discussions, reciprocal teaching, and questioning techniques. <sup>[Karpicke 2012][Karpicke 2012]</sup>
+
+**Free recall** refers to a specific task provided to subjects whereby the experimenter presents a list of items to be remembered and the subject is free to recall them in any order.
 
 #### Paying forward
 What's the best way to organize information for newcomers?
@@ -13,7 +34,6 @@ Some segments of PluralSight videos on esoteric technical topics appear to cover
 Gathering this type of information could be useful, not to me, but to others.
 
 How do I organize my thoughts and observations on the value of **sources** without doubling my effort?
-
 
 #### Command-line syntax
 After several weeks of refining my note-taking technique with regard to syntax, I believe I have settled on an improved workflow.
