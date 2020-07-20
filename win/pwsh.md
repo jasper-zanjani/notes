@@ -5163,10 +5163,17 @@ Set-VMNetworkAdapter -VMName server1 -Name nic1 -MinimumBandwidthWeight
 New-EventLog -LogName application -Source MyCustomApp
 ```
 ##### Write-EventLog<sup>[?][msdocs:Write-EventLog]</sup>
-`EventId`
-`LogName`
-`Message`
-`Source`
+[Write-EventLog -LogName]: #write-eventlog '```&#10;PS> Write-EventLog -LogName&#10;```&#10;Specify the name of the log to which the event is written (required).'
+[Write-EventLog -Source]: #write-eventlog '```&#10;PS> Write-EventLog -Source&#10;```&#10;Specify the event source, typically the name of the application that is writing the event to the log.'
+[Write-EventLog -EventId]: #write-eventlog '```&#10;PS> Write-EventLog -EventId&#10;```&#10;Specify the event identifier (maximum value is 65535).'
+[Write-EventLog -EntryType]: #write-eventlog '```&#10;PS> Write-EventLog -EntryType&#10;```&#10;Specify the entry type of the event.&#10;Acceptable values include:&#10;- Error&#10;- Warning&#10;- Information (default)&#10;- SuccessAudit&#10;- FailureAudit'
+[Write-EventLog -Message]: #write-eventlog '```&#10;PS> Write-EventLog -Message&#10;```&#10;Specify event message (required).'
+
+[**`LogName`**][Write-EventLog -LogName]
+[**`Source`**][Write-EventLog -Source]
+[**`EventId`**][Write-EventLog -EventId]
+[**`EntryType`**][Write-EventLog -EntryType]
+[**`Message`**][Write-EventLog -Message]
 
 ```powershell
 Write-EventLog -LogName application -Source MyCustomApp -EventId 911 -Message 'Automated process failed, please contact the administrator.'
@@ -5494,8 +5501,10 @@ Configure a cloud witness <sup>[Zacker][Zacker]: 348</sup>
 Set-ClusterQuorum -CloudWitness -AccountName clusterstorage1 -AccessKey $accesskey
 ```
 ##### Set-DedupVolume<sup>[?][msdocs:Set-DedupVolume]</sup>
+[Set-DedupVolume -MinimumFileAgeDays]: #set-dedupvolume '```&#10;PS> Set-DedupVolume -MinimumFileAgeDays&#10;```&#10;Specifies a number of days. The deduplication engine optimizes files that users have not accessed in the number of days that you specify. If the last access time is not available, then the deduplication engine uses the last modified time.'
+
 `ExcludeFolder`
-`MinimumFileAgeDays`
+[**`MinimumFileAgeDays`**][Set-DedupVolume -MinimumFileAgeDays]
 `Volume`
 
 [MeasureUp][mu:70-740]
@@ -6232,9 +6241,9 @@ Register-ScheduledTask -TaskName 'SSH server' -Trigger $sshtrigger -Action $ssha
 Specify **aggressiveness** of autobalancing
 
 Values:
-- **`1`**: Balance when CPU or memory load exceeds 80%
-- **`2`**: Balance when CPU or memory load exceeds 70%
-- **`3`**: Balance when CPU or memory load exceeds 60%
+- **`1`**: Balance when host is more than 80% loaded
+- **`2`**: Balance when host is more than 70% loaded
+- **`3`**: Balance when host is loaded more than 5% above average across all hosts
 #### `Cluster.AutoBalancerMode`
 Specify **fairness** of autobalancing
 
