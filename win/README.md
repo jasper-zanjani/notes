@@ -99,6 +99,7 @@ Tasks
 [`dcgpofix`][dcgpofix]
 `dir`
 [`diskpart`][diskpart] 
+[`dism`][dism.exe]
 [`djoin`][Djoin.exe]
 [`echo`](#echo)
 [`eventvwr`][eventvwr.exe]
@@ -337,7 +338,7 @@ cmdkey /add:server01 /user:mikedan /pass:Kleo
 [`RETAIN`][diskpart RETAIN] 
 [`SELECT`][diskpart SELECT] 
 
-#### dism.exe
+#### dism.exe<sup>[?](https://docs.microsoft.com/en-us/windows-hardware/manufacture/desktop/dism-image-management-command-line-options-s14)
 [dism.exe /Add-Driver]: #dism.exe '```&#10;C:\>dism.exe /Add-Driver&#10;```&#10;&#10;Equivalent to `Add-WindowsDriver`&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 77'
 [dism.exe /Add-Package]: #dism.exe '```&#10;C:\>dism.exe /Add-Package&#10;```&#10;&#10;Equivalent to `Add-WindowsPackage`&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 77'
 [dism.exe /Add-ProvisionedAppxPackage]: #dism.exe '```&#10;C:\>dism.exe /Add-ProvisionedAppxPackage&#10;```&#10;&#10;Equivalent to `Add-AppxProvisionedPackage`&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 77'
@@ -403,8 +404,9 @@ cmdkey /add:server01 /user:mikedan /pass:Kleo
 Mount an image <sup>[Zacker][Zacker]: 71</sup>
 ```cmd
 dism /mount-image /imagefile:$FILENAME /index:$N /name:$IMAGENAME /mountdir:$PATH
-
-::Practice Labs
+```
+Practice Labs
+```cmd
 dism /mount-wim /wimfile:c:\images\install.wim /index:1 /mountdir:c:\mount
 ```
 Add a driver to an image file that you have already mounted <sup>[Zacker][Zacker]: 72</sup>
@@ -431,7 +433,14 @@ Repair an offline dicsk using a mounted image as a repair source
 ```cmd
 dism /Image:C:\offline /Cleanup-Image /RestoreHealth /Source:C:\test\mount\windows
 ```
-
+Zacker: 71-75
+```cmd
+dism /mount-image /imagefile:C:\images\install.wim /index:1 /mountdir:C:\mount
+dism /add-package /image:C:\mount /packagepath:C:\updates
+dism /add-driver /image:C:\mount /driver:C:\drivers\display.driver\nv_dispi.inf
+dism /commit-image /image:C:\mount
+dism /unmount-image /image:C:\mount
+```
 #### djoin
 `domain`
 `loadfile`
@@ -442,9 +451,9 @@ dism /Image:C:\offline /Cleanup-Image /RestoreHealth /Source:C:\test\mount\windo
 `savefile`
 `windowspath`
 
-Perform an offline domain join for a Nano Server <sup>[Practice Lab][pl:70-740]</sup>
+Perform an offline domain join for a Nano Server <sup>[ref][pl:70-740]</sup>
 ```cmd
-djoin  /provision /domain practicelabs /machine PLABNANOSRV01 /savefile .\odjblob
+djoin /provision /domain practicelabs /machine PLABNANOSRV01 /savefile .\odjblob
 ```
 Load the `odjblob` file created offline on the Nano Server.
 ```cmd
@@ -452,7 +461,7 @@ djoin /requestodj /loadfile c:\odjblob /windowspath c:\windows /localos
 ```
 #### dsamain
 #### dsquery
-Find the Active Directory Schema version from the command-line <sup>[nolabnoparty.com](https://nolabnoparty.com/en/finding-active-directory-schema-version/ "Finding the Active Directory schema version") [pwsh](https://github.com/jasper-zanjani/notes/tree/primary/70-740/pwsh.md#get-adobject "Get-ADObject")</sup>
+Find the Active Directory Schema version from the command-line <sup>[ref](https://nolabnoparty.com/en/finding-active-directory-schema-version/ "Finding the Active Directory schema version") [pwsh](https://github.com/jasper-zanjani/notes/tree/primary/70-740/pwsh.md#get-adobject "Get-ADObject")</sup>
 ```cmd
 dsquery * cn=schema,cn=configuration,dc=domain,dc=com -scope base -attr objectVersion"
 ```
@@ -475,7 +484,6 @@ Equivalent to [`shutdown -L`][shutdown]
 <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`i`][msiexec /&#105;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`q`][msiexec /&#113;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [<sup>ref</sup>][https://docs.microsoft.com/en-us/windows/win32/msi/command-line-options]
 
 #### mstsc.exe
-
 #### nbtstat
 <!-- `nbtstat` commands -->
 [nbtstat /&#97;]:               #nbtstat                       '```&#10;C:\>nbtstat /a&#10;```&#10;Display NetBIOS name table of `$HOST` (NetBIOS name)'

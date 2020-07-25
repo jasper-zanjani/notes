@@ -1,3 +1,5 @@
+[Sullivan]: # "Sullivan, Dan. _Official Google Cloud Certified Associate Cloud Engineer Study Guide_."
+
 - [Cloud services](#cloud-services)
   - [Certifications](#certifications)
     - [AWS certifications<sup>?</sup>](#aws-certificationssupsup)
@@ -343,7 +345,16 @@ BigTable doesn't support secondary indexes. <sup> [YouTube](https://www.youtube.
 - [Google Compute Engine (GCE)][Google Compute Engine]
 - [Getting started with GCE](https://youtu.be/1XH0gLlGDdk "YouTube - Getting Started with Google Cloud Compute Engine")
 
-Compute Engine (GCE) VMs
+**Google Compute Engine (GCE)**
+
+An **instance group** is a collection of VM instances that you can manage as a single entity. 
+<sup>[Whizlabs](https://www.whizlabs.com/learn/course/google-cloud-associate-cloud-engineer/video/2691) [Sullivan][Sullivan]: 134</sup>
+Two types:
+- **Managed** instance groups operate applications like web front-ends across a group of identical VMs created with a template.
+They provide high availability, healing, scaling, and automatic updates.
+- **Unmanaged** instance groups allow you to manually load balance a group of VMs.
+VMs can be added or removed at will.
+
 ```sh
 gcloud compute instances create
 ```
@@ -412,11 +423,10 @@ runtime: python37
 [gcloud-run]: #gcloud-run '```&#10;gcloud run &#10;```&#10;Manage Cloud Run applications'
 [doc:gcloud-run]: https://cloud.google.com/sdk/gcloud/reference/run "gcloud run documentation"
 
-[gcloud run  --cluster]: #gcloud run '```&#10;$ gcloud run  --cluster =$CLUSTER&#10;```&#10;ID of the cluster or fully qualified identifier for the cluster'
+[gcloud run  --cluster]: #gcloud-run '```&#10;$ gcloud run  --cluster =$CLUSTER&#10;```&#10;ID of the cluster or fully qualified identifier for the cluster'
 
 [`cluster`][gcloud run --cluster]
 `set-env-vars`
-
 Resources:
 - [Cloud Run in a minute](https://youtu.be/lzQNjZIGKaM "YouTube - Cloud Run in a minute")
 - [Differences between Cloud Run and Cloud Run on GKE](https://youtu.be/RVdhyprptTQ)

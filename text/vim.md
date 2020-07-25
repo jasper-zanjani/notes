@@ -14,15 +14,21 @@ The framework of understanding vim's syntax as a language appears to date back t
 [expandtab]: #settings '```&#10;:set expandtab&#10;:set et&#10;```&#10;Turn on soft tabs'
 [conceallevel]: #settings '```&#10;:set conceallevel=2&#10;:set cole=2&#10;```&#10;Determine how text with the `conceal` syntax attribute is shown'
 [termguicolors]: #settings '```&#10;:set termguicolors&#10;:set tgc&#10;```&#10;Enable 24-bit color support'
+[splitright]: #settings '```&#10;:set splitright&#10;:set sr&#10;```&#10;When on, splitting a window will put the new window right of the current one.'
+[splitbelow]: #settings '```&#10;:set splitbelow&#10;:set sb&#10;```&#10;When on, splitting a window will put the new window below the current one.'
 
 [vim:relativenumber]: https://vimhelp.org/options.txt.html#'relativenumber' "relativenumber documentation"
 [vim:expandtab]: https://vimhelp.org/options.txt.html#'expandtab' "expandtab documentation"
 [vim:conceallevel]: https://vimhelp.org/options.txt.html#'conceallevel' "conceallevel documentation"
 [vim:termguicolors]: https://vimhelp.org/options.txt.html#'termguicolors' "termguicolors documentation"
+[vim:splitright]: https://vimhelp.org/options.txt.html#'splitright' "splitright documentation"
+[vim:splitbelow]: https://vimhelp.org/options.txt.html#'splitbelow' "splitbelow documentation"
 
 [`conceallevel`][conceallevel]<sup>[?][vim:conceallevel]</sup>
 [`expandtab`][expandtab]<sup>[?][vim:expandtab]</sup>
 [`relativenumber`][relativenumber]<sup>[?][vim:relativenumber]</sup>
+[`splitright`][splitright]<sup>[?][vim:splitright]</sup>
+[`splitbelow`][splitbelow]<sup>[?][vim:splitbelow]</sup>
 [`termguicolors`][termguicolors]<sup>[?][vim:termguicolors]</sup>
 
 #### Key bindings
