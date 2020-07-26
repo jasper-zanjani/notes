@@ -73,23 +73,41 @@ There are several areas where Ansible can be used in personal projects for learn
 [`ansible-playbook`](#ansible-playbook)
 
 #### Modules
-[`apt`](#package-management) 
-[`archive`](#archive-module) 
-[`cli_config`](#cli_config) 
-[`command`](#command-module) 
-[`copy`](#copy-module) 
-[`debug`](#debug-module) 
-[`dnf`](#package-management) 
-[`file`](#file-module) 
-[`git`](#git-module) 
-[`lineinfile`](#lineinfile-module) 
-[`package`](#package-management) 
-[`ping`](#ping-module) 
-[`raw`](#raw-module) 
-[`service`](#service-module) 
-[`setup`](#setup-module) 
-[`shell`](#shell-module) 
-[`template`](#template-module)
+[ansible:apt]: https://docs.ansible.com/ansible/latest/modules/apt_module.html "apt documentation"
+[ansible:archive]: https://docs.ansible.com/ansible/latest/modules/archive_module.html "archive documentation"
+[ansible:cli_config]: https://docs.ansible.com/ansible/latest/modules/cli_config_module.html "cli_config documentation"
+[ansible:command]: https://docs.ansible.com/ansible/latest/modules/command_module.html "command documentation"
+[ansible:copy]: https://docs.ansible.com/ansible/latest/modules/copy_module.html "copy documentation"
+[ansible:debug]: https://docs.ansible.com/ansible/latest/modules/debug_module.html "debug documentation"
+[ansible:dnf]: https://docs.ansible.com/ansible/latest/modules/dnf_module.html "dnf documentation"
+[ansible:file]: https://docs.ansible.com/ansible/latest/modules/file_module.html "file documentation"
+[ansible:git]: https://docs.ansible.com/ansible/latest/modules/git_module.html "git documentation"
+[ansible:lineinfile]: https://docs.ansible.com/ansible/latest/modules/lineinfile_module.html "lineinfile documentation"
+[ansible:package]: https://docs.ansible.com/ansible/latest/modules/package_module.html "package documentation"
+[ansible:ping]: https://docs.ansible.com/ansible/latest/modules/ping_module.html "ping documentation"
+[ansible:raw]: https://docs.ansible.com/ansible/latest/modules/raw_module.html "raw documentation"
+[ansible:service]: https://docs.ansible.com/ansible/latest/modules/service_module.html "service documentation"
+[ansible:setup]: https://docs.ansible.com/ansible/latest/modules/setup_module.html "setup documentation"
+[ansible:shell]: https://docs.ansible.com/ansible/latest/modules/shell_module.html "shell documentation"
+[ansible:template]: https://docs.ansible.com/ansible/latest/modules/template_module.html "template documentation"
+
+[`apt`](#package-management) <sup>[?][ansible:apt]</sup>
+[`archive`](#archive-module) <sup>[?][ansible:archive]</sup>
+[`cli_config`](#cli_config) <sup>[?][ansible:cli_config]</sup>
+[`command`](#command-module) <sup>[?][ansible:command]</sup>
+[`copy`](#copy-module) <sup>[?][ansible:copy]</sup>
+[`debug`](#debug-module) <sup>[?][ansible:debug]</sup>
+[`dnf`](#package-management) <sup>[?][ansible:dnf]</sup>
+[`file`](#file-module) <sup>[?][ansible:file]</sup>
+[`git`](#git-module) <sup>[?][ansible:git]</sup>
+[`lineinfile`](#lineinfile-module) <sup>[?][ansible:lineinfile]</sup>
+[`package`](#package-management) <sup>[?][ansible:package]</sup>
+[`ping`](#ping-module) <sup>[?][ansible:ping]</sup>
+[`raw`](#raw-module) <sup>[?][ansible:raw]</sup>
+[`service`](#service-module) <sup>[?][ansible:service]</sup>
+[`setup`](#setup-module) <sup>[?][ansible:setup]</sup>
+[`shell`](#shell-module) <sup>[?][ansible:shell]</sup>
+[`template`](#template-module)<sup>[?][ansible:template]</sup>
 
 #### Roles
 A playbook may also contain [**roles**][Role], which organize the components of playbooks and allow them to be reused. By creating a system of subfolders within a folder named `roles` (either in the current working directory or in **/etc/ansible/roles/**, complicated playbooks can be broken up into multiple files. Folders with names like `tasks`, `handlers`, `vars`, etc must each contain `main.yml`. Then the role can be specified by folder name.
