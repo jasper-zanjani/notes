@@ -54,6 +54,8 @@ An [assembly][Assembly] can be compiled to EXE or DLL.
 [`restore`][dotnet restore]
 [`sln`][dotnet sln]
 [`test`][dotnet test]
+`tool`
+`try`
 
 ### dotnet new
 [dotnet new console]: #dotnet-new '```&#10;dotnet new console &#10;```&#10;Create a .NET Core console app'
@@ -75,6 +77,17 @@ Start a new "hello world" web application in the current directory
 dotnet new web
 ```
 ### dotnet run
+### dotnet tool
+Install dotnet [ `try` ](#dotnet-try) <sup>[ref](https://github.com/dotnet/try/blob/master/DotNetTryLocal.md)</sup>
+```sh
+dotnet tool update -g Microsoft.dotnet-try
+```
+### dotnet try
+Run a local server that supports .NET Interactive-style markdown:
+<pre>
+```cs --source-file ./Program.cs --project ./project.csproj
+```
+</pre>
 ### dotnet watch
 #### dotnet watch run
 Run .NET Core Koans <sup>[github.com][.NETCoreKoans]</sup>
@@ -83,7 +96,7 @@ dotnet watch --quiet run
 ```
 # Tasks
 ### Hello world
-Start a new "hello world" console application
+Start a new "hello world" console application <sup>[ref](https://channel9.msdn.com/Blogs/dotnet/Create-NET-App-on-Linux)</sup>
 ```sh
 mkdir helloworld
 cd helloworld

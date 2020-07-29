@@ -56,7 +56,28 @@ inoremap <A-k> <Esc>:m .-2<CR>==gi
 vnoremap <A-j> :m '>+1<CR>gv=gv
 vnoremap <A-k> :m '<-2<CR>gv=gv
 ```
-#### Elements
+
+#### Autocommands
+Autocommands expose an API that allows programming in response to editor events like `BufNewFile`, `BufReadPost`, `BufWritePost`, `BufWinLeave`, etc.
+
+Turning syntax highlighting **on** (assuming it is off by default) only for certain filetypes: <sup>[ref](https://youtu.be/aHm36-na4-4?t=690)</sup>
+```vimscript
+augroup PatchDiffHighlight
+  autocmd!
+  autocmd BufEnter *.patch,*.rej,*.diff syntax enable
+augroup END
+```
+```vimscript
+filetype on
+
+augroup PatchDiffHighlight
+  autocmd!
+  autocmd FileType diff syntax enable
+augroup END
+```
+#### Color
+**Elements**: 
+
 [`Directory`](#elements "Directories in NERDTree sidebar")
 [`Identifier`](# "Markdown: Bullets in ordered and unordered lists")
 [`LineNr`](# "Line numbers")
@@ -65,7 +86,6 @@ vnoremap <A-k> :m '<-2<CR>gv=gv
 [`String`](# "Code (text enclosed in backticks) in markdown")
 [`Title`](# "Markdown: Headings (lines that begin with hashes)")
 [`VertSplit`](#elements "Bar separating two windows")
-
 `Comment` 
 `Constant` 
 `Cursor`
@@ -83,7 +103,10 @@ vnoremap <A-k> :m '<-2<CR>gv=gv
 `Type`
 `Visual`
 
-#### Color
+Change the color of an Element
+```vim
+highlight ELEMENT ctermfg=COLOR ctermbg=COLOR guifg=#abc123 guibg=#abc123
+```
 Select alternative colorschemes
 ```vim
 :colo[rscheme] <tab>
@@ -96,14 +119,6 @@ Clear custom color commands
 ```vim
 :highlight clear
 :hi clear
-```
-Set `ELEMENT` to `COLOR`
-```vim
-:hi ELEMENT ctermfg=COLOR ctermbg=COLOR
-```
-Hexadecimal color codes
-```vim
-:hi ELEMENT guifg=#abc123 guibg=#abc123
 ```
 # vim plugins
 Vim 8 supports native loading of plugins (put in `.vim/pack/xx/start/` where `xx` is an arbitrary directory name
