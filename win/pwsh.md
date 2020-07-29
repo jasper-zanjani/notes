@@ -6235,6 +6235,16 @@ $sshaction = New-ScheduledTaskAction -Execute C:\WINDOWS\System32\bash.exe -Argu
 $sshtrigger = New-ScheduledTaskTrigger -AtLogon
 Register-ScheduledTask -TaskName 'SSH server' -Trigger $sshtrigger -Action $sshaction
 ```
+#### Network connection alert
+Play a tone when network connection has been (re)-established.
+```powershell
+while ($true) {
+  if ((Test-NetConnection 8.8.8.8 -WarningAction SilentlyContinue).PingSucceeded -eq $true) {
+    [Console]::Beep(1000,100)
+    break
+  }
+}
+```
 # Objects
 ### Cluster attributes
 #### `Cluster.AutoBalancerLevel`
