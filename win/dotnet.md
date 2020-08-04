@@ -57,6 +57,10 @@ An [assembly][Assembly] can be compiled to EXE or DLL.
 `tool`
 `try`
 
+### dotnet add
+```sh
+dotnet add package PowerShellStandard.Library
+```
 ### dotnet new
 [dotnet new console]: #dotnet-new '```&#10;dotnet new console &#10;```&#10;Create a .NET Core console app'
 [dotnet new web]: #dotnet-new '```&#10;dotnet new web &#10;```&#10;Create an ASP.NET Core empty project'
@@ -75,6 +79,10 @@ dotnet new console
 Start a new "hello world" web application in the current directory
 ```sh
 dotnet new web
+```
+Global.json specifies the .NET Core SDK version
+```sh
+dotnet new globaljson
 ```
 ### dotnet run
 ### dotnet tool
