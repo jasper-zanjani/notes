@@ -89,7 +89,6 @@ Run a local server that supports .NET Interactive-style markdown:
 ```
 </pre>
 ### dotnet watch
-#### dotnet watch run
 Run .NET Core Koans <sup>[github.com][.NETCoreKoans]</sup>
 ```sh
 dotnet watch --quiet run

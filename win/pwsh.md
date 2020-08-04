@@ -6246,6 +6246,11 @@ while ($true) {
 }
 ```
 # Objects
+### Hashtable attributes
+#### GetEnumerator()
+```powershell
+$PSVersionTable.GetEnumerator() | sort-object -Property Name
+```
 ### Cluster attributes
 #### `Cluster.AutoBalancerLevel`
 Specify **aggressiveness** of autobalancing

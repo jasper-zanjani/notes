@@ -101,6 +101,7 @@ Tasks
 [`diskpart`][diskpart] 
 [`dism`][dism.exe]
 [`djoin`][Djoin.exe]
+`dnscmd`
 [`echo`](#echo)
 [`eventvwr`][eventvwr.exe]
 `findstr`
@@ -459,6 +460,19 @@ Load the `odjblob` file created offline on the Nano Server.
 ```cmd
 djoin /requestodj /loadfile c:\odjblob /windowspath c:\windows /localos
 ```
+#### dnscmd
+Replicate an AD-integrated DNS zone to specific DCs <sup>[ref](# "PluralSight 70-741 course: 027. Primary Zones and Active Directory integrated zones")
+```cmd
+dnscmd . /CreateDirectoryPartition FQDN
+```
+Enable GlobalNames zone support
+```cmd
+dnscmd <servername> /config /enableglobalnamessupport 1
+```
+Configure DNS socket pool size (0 through 10,000)
+```cmd
+dnscmd /Config /SocketPoolSize <value>
+```
 #### dsamain
 #### dsquery
 Find the Active Directory Schema version from the command-line <sup>[ref](https://nolabnoparty.com/en/finding-active-directory-schema-version/ "Finding the Active Directory schema version") [pwsh](https://github.com/jasper-zanjani/notes/tree/primary/70-740/pwsh.md#get-adobject "Get-ADObject")</sup>
@@ -501,7 +515,11 @@ Map a network location to a drive letter <sup>[Practice Lab][pl:70-740]</sup>
 ```cmd
 net use x: \\192.168.0.35\c$
 ```
-
+Stop/start a service
+```cmd
+net stop dns
+net start dns
+```
 #### netdom
 Alternative to [`Add-Computer`][Add-Computer] PowerShell cmdlet [<sup>Zacker: 21</sup>][Zacker]
 
