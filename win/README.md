@@ -586,6 +586,10 @@ Check/reset [WinHTTP][WinHTTP] proxy <sup>[Practice Lab][pl:70-740]</sup>
 netsh winhttp show proxy
 netsh winhttp reset proxy
 ```
+Add a portproxyrule <sup>[ref](https://www.hanselman.com/blog/HowToSSHIntoWSL2OnWindows10FromAnExternalMachine.aspx)</sup>
+```cmd
+netsh interface portproxy add v4tov4 listenaddress=0.0.0.0 listenport=2222 connectaddress=172.23.129.80 connectport=2222
+```
 #### ntdsutil
 Used to transfer [FSMO](# "\"Flexible Single Master Operator\", server that is master for a particular role or function") roles between domain controllers. [<sup>Desmond: 30</sup>][Desmond2009]
 
