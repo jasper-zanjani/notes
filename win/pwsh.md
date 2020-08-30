@@ -6145,6 +6145,10 @@ Start-Transaction
 New-Item TempKey -UseTransaction
 Complete-Transaction
 ```
+Remove User UAC for local users. <sup>[ref](https://www.wintips.org/fix-mmc-exe-this-app-has-been-blocked-for-your-protection/)</sup>
+```powershell
+Set-ItemProperty -Path HKLM:\Software\Microsoft\Windows\CurrentVersion\Policies\System -Name EnableLUA -Value 0
+```
 #### WinForms
 [Pastebin](https://pastebin.com/v3KMc2ni)
 ```powershell
