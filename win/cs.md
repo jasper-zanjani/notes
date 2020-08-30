@@ -63,14 +63,28 @@ namespace SimpleClasses {
 }
 ```
 A more fully-featured way of setting class properties uses the `propfull` snippet
-```c#
+```csharp
 private int myVar;
 public int MyProperty {
   get { return myVar; }
   set { myVar = value; }
 }
 ```
+A class constructor is specified by setting a method with no data type that shares the class's name.
+```csharp
+class TestClass {
+  string firstName;
+  string lastName;
+  int age;
+  
+  public TestClass() { }
 
+  public TestClass(string fName, stringlName, int ageInt) {
+    this.firstName = fName;
+    this.lastName = lName;
+    age = ageInt;
+} }
+```
 
 
 ## GUI Frameworks

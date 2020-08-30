@@ -6239,41 +6239,13 @@ $sshaction = New-ScheduledTaskAction -Execute C:\WINDOWS\System32\bash.exe -Argu
 $sshtrigger = New-ScheduledTaskTrigger -AtLogon
 Register-ScheduledTask -TaskName 'SSH server' -Trigger $sshtrigger -Action $sshaction
 ```
-# Objects
-### Cluster attributes
-#### `Cluster.AutoBalancerLevel`
-Specify **aggressiveness** of autobalancing
-
-Values:
-- **`1`**: Balance when host is more than 80% loaded
-- **`2`**: Balance when host is more than 70% loaded
-- **`3`**: Balance when host is loaded more than 5% above average across all hosts
-#### `Cluster.AutoBalancerMode`
-Specify **fairness** of autobalancing
-
-Values:
-- **`0`**: Disabled
-- **`1`**: Balance on node join only
-- **`2`**: Balance on node join and every 30 minutes
-#### `Cluster.BlockCacheSize`
-Zacker: 336
+#### Network connection alert
+Play a tone when network connection has been (re)-established.
 ```powershell
-(Get-Cluster).blockcachesize = 512
-```
-#### `Cluster.CrossSiteDelay`
-Configure amount of time (ms) between heartbeats sent to nodes in different sites
-#### `Cluster.CrossSiteThreshold`
-Configure number of missed heartbeats that must occur before a node at a different site is consdiered to have failed.
-#### `Cluster.DrainOnShutdown`
-Disable drain on shutdown <sup>[Zacker][Zacker]: 375</sup>
-```powershell
-(Get-Cluster).drainonshutdown = 0
-```
-#### `Cluster.PreferredSite`
-Configure a site to be the preferred site for the cluster
-### ClusterNetwork
-#### ClusterNetwork.Metric
-[Zacker][Zacker]: 338
-```powershell
-(Get-ClusterNetwork -Name "Cluster Network 3").metric = 30000
+while ($true) {
+  if ((Test-NetConnection 8.8.8.8 -WarningAction SilentlyContinue).PingSucceeded -eq $true) {
+    [Console]::Beep(1000,100)
+    break
+  }
+}
 ```

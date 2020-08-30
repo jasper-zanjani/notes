@@ -9,6 +9,12 @@ Vim offers a **composable** language for expressing these editing changes whose 
 <sup>[YouTube][https://youtu.be/wlR5gYd6um0]</sup>
 
 The framework of understanding vim's syntax as a language appears to date back to an influential 2011 Stack Overflow [post](https://stackoverflow.com/questions/1218390/what-is-your-most-productive-shortcut-with-vim/1220118#1220118 "What is your most productive shortcut with Vim?").
+#### Commands
+Use `:normal` to define a series of normal-mode commands
+```vim
+; Select all
+:normal ggVG
+```
 #### Keybindings
 [vimwiki:keycodes]: https://vim.fandom.com/wiki/Mapping_fast_keycodes_in_terminal_Vim "Mapping fast keycodes in terminal Vim"
 [archwiki:Keyboard_input]: https://wiki.archlinux.org/index.php/Keyboard_input#Identifying_keycodes_in_Xorg "Keyboard input"
@@ -21,6 +27,12 @@ In these keybindings, the mapping itself is interpreted.
 There are two types of **keycodes** <sup>[ref][vimwiki:keycodes]</sup>
 - **Terminal keycodes** that appear similar to `^[[1;2A`. These may or may not be identifiable with the **keycodes** which the Linux kernel maps to raw keybaord **scancodes**. <sup>[ref][archwiki:Keyboard_input]</sup>
 - **Vim keycodes** which are identifiable as being in angle brackets: `<Space>`, `<Return>`, etc
+
+#### Leader
+The **leader** key is used to create more complicated keybindings using any arbitrary keypress, for example using `,` or `<Space>`.
+```vim
+let mapleader = ' '
+```
 
 #### Settings
 [relativenumber]: #settings '```&#10;:set relativenumber&#10;:set rnu&#10;```&#10;Turn on relative line numbers'
@@ -120,7 +132,7 @@ Clear custom color commands
 :highlight clear
 :hi clear
 ```
-# vim plugins
+#### vim plugins
 Vim 8 supports native loading of plugins (put in `.vim/pack/xx/start/` where `xx` is an arbitrary directory name
 
 Set file format to Unix/DOS [<sup>ref</sup>][https://kb.iu.edu/d/acux]
@@ -128,5 +140,7 @@ Set file format to Unix/DOS [<sup>ref</sup>][https://kb.iu.edu/d/acux]
 :set fileformat=unix
 :set fileformat=dos
 ```
-#### NERDTree
-
+#### Completion
+- [Context-aware completion](https://youtu.be/3TX3kV3TICU?t=1005)
+- [<kbd>Ctrl</kbd><kbd>x</kbd> <kbd>Ctrl</kbd><kbd>l</kbd>](https://youtu.be/3TX3kV3TICU?t=1260)
+- [Omni completion <kbd>Ctrl</kbd><kbd>x</kbd><kbd>Ctrl</kbd><kbd>o</kbd>](https://youtu.be/3TX3kV3TICU?t=1350)
