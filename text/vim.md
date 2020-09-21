@@ -132,7 +132,7 @@ Clear custom color commands
 :highlight clear
 :hi clear
 ```
-# vim plugins
+#### vim plugins
 Vim 8 supports native loading of plugins (put in `.vim/pack/xx/start/` where `xx` is an arbitrary directory name
 
 Set file format to Unix/DOS [<sup>ref</sup>][https://kb.iu.edu/d/acux]
@@ -140,5 +140,7 @@ Set file format to Unix/DOS [<sup>ref</sup>][https://kb.iu.edu/d/acux]
 :set fileformat=unix
 :set fileformat=dos
 ```
-#### NERDTree
-
+#### Completion
+- [Context-aware completion](https://youtu.be/3TX3kV3TICU?t=1005)
+- [<kbd>Ctrl</kbd><kbd>x</kbd> <kbd>Ctrl</kbd><kbd>l</kbd>](https://youtu.be/3TX3kV3TICU?t=1260)
+- [Omni completion <kbd>Ctrl</kbd><kbd>x</kbd><kbd>Ctrl</kbd><kbd>o</kbd>](https://youtu.be/3TX3kV3TICU?t=1350)
