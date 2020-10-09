@@ -1,7 +1,7 @@
 Microsoft originally planned to cease support for Basic Authentication to connect to **Exchange Online (EXO)** for Exchange ActiveSync (EAS), POP, IMAP, and Remote PowerShell on October 13, 2020. However, in an April update Microsoft announced this deprecation was postponed to the "second half of 2021" as a result of COVID. Basic authentication will still be disabled in newly created tenants starting October 2020. <sup>[src](https://techcommunity.microsoft.com/t5/exchange-team-blog/basic-authentication-and-exchange-online-april-2020-update/ba-p/1275508), [src](https://techcommunity.microsoft.com/t5/exchange-team-blog/improving-security-together/ba-p/805892)</sup>
 
 **Modern Authentication** is based on OAuth 2.0 tokens and is strongly recommended in lieu of Basic Authentication.
-<sup>[src](https://techcommunity.microsoft.com/t5/exchange-team-blog/improving-security-together/ba-p/805892)</src> 
+<sup>[src](https://techcommunity.microsoft.com/t5/exchange-team-blog/improving-security-together/ba-p/805892)</sup> 
 Modern Authentication is enabled by default for all new tenants created since August 1, 2017.
 <sup>[src](https://techcommunity.microsoft.com/t5/exchange-team-blog/basic-authentication-and-exchange-online-july-update/ba-p/1530163)</sup>
 
