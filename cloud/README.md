@@ -2,9 +2,9 @@
 
 - [Cloud services](#cloud-services)
   - [Certifications](#certifications)
-    - [AWS certifications<sup>?</sup>](#aws-certificationssupsup)
-    - [Azure certifications<sup>?</sup>](#azure-certificationssupsup)
-    - [GCP certifications<sup>?</sup>](#gcp-certificationssupsup)
+    - [AWS certifications<sup>?</sup>](#aws-certifications)
+    - [Azure certifications<sup>?</sup>](#azure-certifications)
+    - [GCP certifications<sup>?</sup>](#gcp-certifications)
   - [Command-line](#command-line)
     - [Azure command-line](#azure-command-line)
     - [AWS command-line](#aws-command-line)
