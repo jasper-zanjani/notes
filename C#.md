@@ -8,6 +8,8 @@ This principle holds that components should be dependent on abstractions, and no
 
 ## Testing
 
+Tests are usually organized in a separate [project](#project-files) that is linked to the project containing the **system under test** (SUT).
+
 Visual Studio has a built-in test-runner, but the `dotnet` CLI utility also allows the entire test suite to be executed from the command-line.
 
 ```sh
@@ -83,13 +85,84 @@ public class DeskBookerRequestProcessorTests
 }
 ```
 
+#### Parameterized tests
+
+In xUnit, the **`Theory`** attribute decorates a parameterized test and commonly appears in conjunction with **`InlineData`** attributes that contain the parameter values.
+
+```csharp
+using System;
+using Xunit;
+using System.Linq;
+
+namespace MathTests
+{
+    public class MathWorks
+    {
+        [Theory]
+        [InlineData(2,2)]
+        [InlineData(3,3,3)]
+        [InlineData(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)]
+        public void Addition(params int[] ops)
+        {
+            int loopsum = 0;
+            foreach (int i in ops)
+            {   
+                loopsum += i;
+            }
+            int linqsum = ops.Sum();
+            Assert.Equal(loopsum,linqsum);
+        }
+    }
+}
+```
+
+
 ### Moq
 
 The **Moq** NuGet package ("mawk-yu") facilitates mocking.
 
+In this example, `PersonProcessor` is a public class whose constructor takes an `ISqlDataAccess` data provider by means of dependency injection.
+The `LoadData` method is setup, and the mocked object is instantiated with the `Create` method call.
+The mock will inject the mock data provider, which returns a `List<PersonModel>`.
 
+```csharp
+using (var mock = AutoMock.GetLoose())
+{
+    mock.Mock<ISqliteDataAccess>()
+        .Setup(x => x.LoadData<PersonModel>("SELECT * FROM Person"))
+        .Returns(GetSamplePeople());
+    var sut = mock.Create<PersonProcessor>();
+    var expected = GetSamplePeople();
+    var actual = sut.LoadPeople();
+    Assert.True(actual != null);
+    Assert.Equal(actual.Count,expected.Count);
+}
+```
 
+#### Application design
 
+Test-driven development and the requirement to be able to mock data providers has a strong influence on application architecture.
+Instead of tightly coupling models with a particular data provider (such as an hardcoding, an in-memory database, or parsing a file), the recommended pattern is **dependency injection**.
+A data provider that implements an interface is passed as an argument to the controller or viewmodel upon entry.
+
+For example, a `DataProvider` class is used to provide a list of integers on application load implements 
+
+```csharp
+public interface IDataProvider
+{
+    IEnumerable<int> LoadAsync();
+}
+
+public class DataProvider : IDataProvider
+{
+    async public List<int> LoadAsync()
+    {
+        return await List<int> {1, 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31};
+    }
+}
+```
+
+A mocked data provider also implementing that interface can then be used in testing.
 
 ## Project files
 
