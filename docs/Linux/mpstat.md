@@ -1,0 +1,3 @@
+```sh
+mpstat -P all
+```

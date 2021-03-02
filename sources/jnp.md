@@ -1,1 +1,0 @@
-# JavaScript Notes for Professionals
