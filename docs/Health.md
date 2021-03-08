@@ -162,7 +162,7 @@ Vitamin E requires vitamin C or [coenzyme Q](#coq10) to regenerate after being u
 - [A 2011 study](https://www.sciencedirect.com/science/article/abs/pii/S0002934310007436) found that obese subjects given doses of 1,000-1,800 mg for up to 20 weeks experienced a loss of around 3% of body weight.
 - A 2015 [literature review](https://www.sciencedirect.com/science/article/abs/pii/S0002934310007436) found that ALA is only marginally effective in combating obesity in conjunction with good diet and exercise.
 
-<details><summary>ALA exists in two <a href="#glossary">enantiomeric</a> forms: R and S. A <a href="https://pubmed.ncbi.nlm.nih.gov/11795898/">2002 study</a> found that R-ALA has greater biopotency in several metabolic pathways.</summary><img src="../img/alpha-lipoic-acid-enantiomers.png" style="width: 300px;"/></details>
+<details><summary>ALA exists in two <a href="#glossary">enantiomeric</a> forms: R and S. A <a href="https://pubmed.ncbi.nlm.nih.gov/11795898/">2002 study</a> found that R-ALA has greater biopotency in several metabolic pathways.</summary><img src="/img/alpha-lipoic-acid-enantiomers.png" style="width: 300px;"/></details>
 
 | Product                                                                                                                                                                               |                  $ |      mg |         $/300 mg |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -----------------: | ------: | ---------------: |

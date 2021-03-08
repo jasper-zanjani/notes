@@ -6,6 +6,22 @@
 
 ## Variables
 
+### Parsing
+
+Data types can be used as static classes, exposing a `TryParse` method.
+
+=== "Int32"
+
+    ```csharp
+    parsedInt = Int32.TryParse(rawInt);
+    ```
+
+=== "DateTime"
+
+    ```csharp
+    parsedDate = DateTime.TryParse(rawDate);
+    ```
+
 ### String formatting
 
 Specify a formatted string by prepending a **`$`**
@@ -131,6 +147,120 @@ Notably, unlike loop structures in C#, LINQ methods can work on unordered collec
 
 The [**`ObservableCollection`**](https://docs.microsoft.com/en-us/dotnet/api/system.collections.objectmodel.observablecollection-1?view=net-5.0) class is used to define collections that provide notifications to data bindings when items are added or removed.
 As such, it is used in GUI programming...
+
+### DateTime
+
+**`DateTimeOffset`** is preferred over **`DateTime`** because it includes an offset value that indicates the timezone.
+
+
+
+
+#### Parsing
+
+**`DateTime`** is a class that exposes several static methods of parsing raw values.
+All of them have overloads that accept CultureInfo objects (implementing `IFormatProvider`) which can affect parsing of ambiguous dates.
+
+- **`Parse()`** will attempt to parse a string and raise a **FormatException** if unable to do so.
+- **`ParseExact()`** requires an exact string template and requires a `CultureInfo` object as well.
+
+=== "Parse()"
+
+    ```csharp
+    string rawDate = "07/04/1776";
+    try 
+    {
+        DateTime parsedDate = DateTime.Parse(rawDate);
+    }
+    catch (FormatException)
+    {
+        Console.WriteLine("Unparsable!")
+    }
+    Console.WriteLine(parsedDate.ToLongDateString()); // => "July 4, 1776"
+    ```
+
+=== "Specifying culture"
+
+    ```csharp
+    string rawDate = "07/04/1776";
+    try 
+    {
+        DateTime parsedDate = DateTime.Parse(rawDate, CultureInfo.GetCultureInfo("en-GB"));
+    }
+    catch (FormatException)
+    {
+        Console.WriteLine("Unparsable!")
+    }
+    Console.WriteLine(parsedDate.ToLongDateString()); // => "April 7, 1776"
+    ```
+
+=== "ParseExact()"
+
+    ```csharp
+    string rawDate = "07/04/1776";
+    try 
+    {
+        DateTime parsedDate = DateTime.ParseExact(rawDate, "M/d/yyyy", CultureInfo.InvariantCulture);
+    }
+    catch (FormatException)
+    {
+        Console.WriteLine("Unparsable!")
+    }
+    Console.WriteLine(parsedDate.ToLongDateString()); // => "July 4, 1776"
+    ```
+
+
+**`TryParse()`** returns no value, but takes an [**`out`**](#out) parameter. It does not throw an exception if the date is unparsable, but rather outputs the default date January 1, 1 AD.
+The overload that accepts a Culture object also requires a DateTimeStyles object.
+
+=== "TryParse()"
+
+    ```csharp
+    string rawDate = "07/04/1776";
+    DateTime parsedDate;
+    DateTime.TryParse(
+        rawDate, 
+
+
+        out parsedDate
+    );
+    Console.WriteLine(parsedDate.ToLongDateString()); // => "July 4, 1776"
+    ```
+
+=== "Specifying culture"
+
+    ```csharp
+    string rawDate = "07/04/1776";
+    DateTime parsedDate;
+    DateTime.TryParse(
+        rawDate, 
+        CultureInfo.GetCultureInfo("en-GB"), 
+        DateTimeStyles.None, 
+        out parsedDate
+    );
+    Console.WriteLine(parsedDate.ToLongDateString()); // => "April 7, 1776
+    ```
+
+`ParseExact()`
+`TryParseExact()`
+
+### Timezones
+
+**`TimeZoneInfo`** includes static methods that can access system timezones.
+`DateTime` does not include timezone information, so it must be specified at runtime.
+
+```csharp
+TimeZoneInfo sidneyTimeZone = TimeZoneInfo.FindSystemTimeZoneById("E. Australia Standard Time");
+var sydneyTime = TimeZoneInfo.ConvertTime(DateTime.Now, sydneyTimeZone);
+```
+
+Enumerating all system timezones.
+
+```csharp
+foreach (var timeZone in TimeZoneInfo.GetSystemTimeZones())
+{
+    Console.WriteLine(timeZone.GetUtcOffset());
+}
+```
 
 ## Methods
 
@@ -473,6 +603,7 @@ Return types used for async include:
 Async does not create new threads by default, so it is only suitable for UI and IO-bound methods, not CPU-bound methods.
 
 Here async is used to return an enumerable collection of `Customer` objects from the [file IO system](API#windowsstorage).
+
 ```csharp
 public class CustomerDataProvider
 {
@@ -619,7 +750,7 @@ private set
 {
     if ((value > 0) && (value < 13))
     {
-    _month = value;
+        _month = value;
     }
 }
 ```
@@ -728,6 +859,7 @@ Interface identifiers conventionally with the capital `I`.
         void AnimalSound();
     }
     ```
+
 === "Implementation"
 
     ```csharp
@@ -761,6 +893,7 @@ Attributes in C# are used to adjust the function of code in a variety of ways.
         Cow betsy = new Cow();
     }
     ```
+
 === "Error"
 
     ```csharp
@@ -799,7 +932,7 @@ A family of attributes exist to assist debugging.
 === "DebuggerDisplay"
 
     [**`DebuggerDisplayAttribute`**](https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.debuggerdisplayattribute) allows an object's state to be formatted to be more understandable in the debugger's watch window. ([src](https://youtu.be/QUhI2BbP8VA))
-    ![](img/DebuggerDisplayAttribute.gif)
+    ![](/img/DebuggerDisplayAttribute.gif)
 
     ```csharp
     using System.Diagnostics;

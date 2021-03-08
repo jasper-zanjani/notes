@@ -1,4 +1,4 @@
-# Coding
+# 👨‍💻 Coding
 
 ## Programming languages
 
@@ -121,19 +121,6 @@ Data types include:
 ### macros
 `assert!()` verifies conditions within parentheses
 
-## Glossary
-Term                                    | Description
-:---                                    | :---
-Loop unswitching                        | one of the core optimizations that a C compiler performs; transforms a loop containing a conditional into a conditional with a loop in both parts, which changes flow control
-Register rename engine                  | component of modern high-end cores which is one of the largest consumers of die area and power
-Scalar Replacement Of Aggregates (SROA) | one of the core optimizations that a C compiler performs; attempts to replace `struct`s and arrays with fixed lengths with individual variables, which allows the compiler to treat accesses as independent and elide operations entirely if it can prove the results are neve visible, which also deletes padding sometimes
-Scalar Vector Extensions (SVE)          | "", produced by ARM
-Segmented architecture                  | pointers might be segment IDs and an offset
-
-## Sources
-- [C is not a low-level programming language](https://queue.acm.org/detail.cfm?id=3212479)
-2. "Why is [Golang](#golang) so popular these days?" [DZone](https://dzone.com/articles/why-is-golang-so-popular-these-days-here-are-your?utm_medium=feed&utm_source=feedpress.me&utm_campaign=Feed:%20dzone): 2019/10/07.
-
 
 ## Simple structures
 
@@ -161,6 +148,37 @@ Segmented architecture                  | pointers might be segment IDs and an o
 
     if __name__ == "__main__":
         main()
+    ```
+
+
+### Dates and times
+
+Parse a date string
+
+=== "C# (`Parse()`)"
+
+    ```csharp
+    string rawDate = "07/04/1776";
+    try 
+    {
+        DateTime parsedDate = DateTime.Parse(rawDate);
+    }
+    catch (FormatException)
+    {
+        Console.WriteLine("Unparsable!")
+    }
+
+    Console.WriteLine(parsedDate.ToLongDateString()); // => "July 4, 1776"
+    ```
+
+=== "C# (`TryParse()`)"
+
+    ```csharp
+    string rawDate = "07/04/1776";
+    DateTime parsedDate;
+    DateTime.TryParse(rawDate, out parsedDate);
+
+    Console.WriteLine(parsedDate.ToLongDateString()); // => "July 4, 1776"
     ```
 
 
@@ -643,6 +661,9 @@ Such a loop will continuously prompt for valid input, in this case an integer.
 
 ### DnD character
 
+
+
+
 === "C#"
 
     === "Constructor"
@@ -831,7 +852,9 @@ Such a loop will continuously prompt for valid input, in this case an integer.
 ### RPG character generator
 
 === "C++"
+
     === "Player class"
+
         ```cpp
         #include <string>
 
@@ -906,7 +929,9 @@ Such a loop will continuously prompt for valid input, in this case an integer.
 
 
 === "Python" 
+
     === "Base class"
+
         ```py
         class Player():
             def __init__(self, name : str, race: Race, hp : int, mp : int):
@@ -978,198 +1003,258 @@ Such a loop will continuously prompt for valid input, in this case an integer.
 
 ### Starships
 
-=== "Starship"
-    === "C++"
-        ```cpp
-        #include <string>
+This demonstration project provides a scenario for implementing OOP and TDD principles in a variety of languages and implementations.
 
-        class Starship
+**Captain** and **Starship** are simple classes with intuitive properties and fields.
+The **StarshipClass** enum defines the available starship types.
+**Fleet** serves as a container for Starships.
+
+A Captain is paired with a Starship to form a **StarshipDeployment**.
+And the **CaptainSelector** class is passed to StarshipDeployment by dependency injection.
+
+#### Captain
+
+=== "PowerShell"
+
+    ```powershell
+    class Captain
+    {
+        [string]$FirstName
+        [string]$LastName
+        [DateTime]$BirthDate
+
+        Captain([string]$n1 [string]$n2)
         {
-        private:
-            std::string _name{};
-            std::string _reg{};
-            StarshipClass _starshipclass{};
-            int _crew{};
-
-        public:
-            Starship() = default;
-            Starship(std::string n, std::string r, StarshipClass cls) : _name {n}, _reg {r}, _starshipclass {cls} {};
-            ~Starship() = default;
-            int getCrew()             { return _crew; }
-            std::string getName()     { return _name; }
-            std::string getRegistry() { return _reg; }
-            std::string getClass();
-        };
-
-        std::string Starship::getClass() 
-        {
-            switch (_starshipclass)
-            {
-                case 2:
-                    return "Constitution";
-                    break;
-                
-                default:
-                    return "Other";
-                    break;
-            }
+            $this.FirstName = $n1
+            $this.LastName = $n2
         }
 
-        #endif // STARSHIP_H
-        ```
+        [string]Name() { return "$($this.FirstName) $($this.LastName)" }
+    }
+    ```
 
-    === "Python"
-        === "Accessors"
-            ```py
-            class Starship:
-                def __init__(
-                    self,
-                    name=None,
-                    starshipclass: StarshipClass = StarshipClass.NX,
-                    registry=None,
-                    crew=0,
-                ):
-                    self.name = name
-                    self.registry = registry
-                    self._crew = crew
-                    self.crew_on_leave = 0
-                    self._starshipclass = starshipclass
+=== "C#"
 
-                @property
-                def crew(self):
-                    return self._crew
+    ```csharp
+    using System; 
 
-                @crew.setter
-                def crew(self, crew: int):
-                    if crew < 0:
-                        raise Exception
-                    else:
-                        self._crew = crew
+    public class Captain
+    {
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public DateTime BirthDate { get; set; }
+        public string Name {
+            get { return $"{FirstName} {LastName}"; }
+        }
+    }
+    ```
 
-                @property
-                def starshipclass(self):
-                    return self._starshipclass
+=== "C++"
 
-                @starshipclass.setter
-                def starshipclass(self, starshipclass: StarshipClass):
-                    if starshipclass not in StarshipClass:
-                        raise Exception
-                    else:
-                        self._starshipclass = starshipclass
+    ```cpp
+    #include <string>
 
-                def __add__(self, other):
-                    output = Fleet()
-                    output.append(self)
-                    return output + other
-
-                def __repr__(self):
-                    return (
-                        f"Starship({self.name}, {self.starshipclass}, {self.registry}, {self.crew})"
-                    )
-
-                def __iter__(self):
-                    yield self.name
-                    yield self.registry
-                    yield self.crew
-
-                def drydock(self):
-                    self.crew_on_leave = self.crew - 10
-                    self.crew = 10
-
-                def disembark(self):
-                    self.crew += self.crew_on_leave
-                    self.crew_on_leave = 0
-
-                def report(self):
-                    output = f"{self.name}'s crew is {self.crew} souls with {self.crew_on_leave} on leave!"
-                    print(output)
-            ```
-
-=== "Fleet"
-
-    === "Python"
-
-        ```py
-        class Fleet:
-            def __init__(self, name=None):
-                self.name = name
-                self.ships = []
-
-            def append(self, *args):
-                for arg in args:
-                    if type(arg) == Starship:
-                        self.ships.append(arg)
-                    else:
-                        continue
-
-            def __add__(self, other):
-                from copy import deepcopy
-
-                output = deepcopy(self)
-                if type(other) is Starship:
-                    output.append(other)
-                    return output
-                elif type(other) is fleet:
-                    raise NotImplementedError
-                else:
-                    raise NotImplementedError
-
-            def __iadd__(self, other):
-                self.append(other)
-                return self
-
-            def __len__(self):
-                return len(self.ships)
-
-            def roster(self):
-                return [[ship.name, ship.registry, ship.crew] for ship in self.ships]
-
-            def __iter__(self):
-                for ship in self.ships:
-                    yield list(ship)
-
-            def __str__(self):
-                from tabulate import tabulate
-
-                return tabulate(
-                    [[ship.name, ship.registry, ship.crew] for ship in self.ships],
-                    headers=["Name", "Registry", "Crew"],
-                    tablefmt="plain",
-                )
-        ```
-
-=== "StarshipClass"
-
-    === "C++"
-
-        ```cpp
-        enum StarshipClass 
-        {
-            Galaxy = 1,
-            Constitution = 2,
-            NX = 3,
-            Intrepid = 4
-        };
-        ```
-
-    === "Python"
-
-        ```py
-        from enum import Enum
-
-        class StarshipClass(Enum):
-        NX = 'NX'
-        GALAXY = 'Galaxy'
-        CONSTITUTION = 'Constitution'
-        SOVEREIGN = 'Sovereign'
-        DEFIANT = 'Defiant'
-        INTREPID = 'Intrepid'
-        MIRANDA = 'Miranda'
-
+    class Captain
+    {
+        private: _firstName {};
+        private: _lastName {};
         
+        std::string Name() { return _firstName + _lastName; }
+    }
+    ```
+
+#### Starship
+
+=== "C++"
+
+    ```cpp
+    class Starship
+    {
+    private:
+        std::string _name{};
+        std::string _reg{};
+        StarshipClass _starshipclass{};
+        int _crew{};
+
+    public:
+        Starship() = default;
+        Starship(std::string n, std::string r, StarshipClass cls) : _name {n}, _reg {r}, _starshipclass {cls} {};
+        ~Starship() = default;
+        int getCrew()             { return _crew; }
+        std::string getName()     { return _name; }
+        std::string getRegistry() { return _reg; }
+        std::string getClass();
+    };
+
+    std::string Starship::getClass() 
+    {
+        switch (_starshipclass)
+        {
+            case 2:
+                return "Constitution";
+                break;
+            
+            default:
+                return "Other";
+                break;
+        }
+    }
+
+    #endif // STARSHIP_H
+    ```
+
+=== "Python"
+
+    ```py
+    class Starship:
+        def __init__(
+            self,
+            name=None,
+            starshipclass: StarshipClass = StarshipClass.NX,
+            registry=None,
+            crew=0,
+        ):
+            self.name = name
+            self.registry = registry
+            self._crew = crew
+            self.crew_on_leave = 0
+            self._starshipclass = starshipclass
+
+        @property
+        def crew(self):
+            return self._crew
+
+        @crew.setter
+        def crew(self, crew: int):
+            if crew < 0:
+                raise Exception
+            else:
+                self._crew = crew
+
+        @property
+        def starshipclass(self):
+            return self._starshipclass
+
+        @starshipclass.setter
+        def starshipclass(self, starshipclass: StarshipClass):
+            if starshipclass not in StarshipClass:
+                raise Exception
+            else:
+                self._starshipclass = starshipclass
+
+        def __add__(self, other):
+            output = Fleet()
+            output.append(self)
+            return output + other
+
         def __repr__(self):
-            return self.value
-        ```
+            return (
+                f"Starship({self.name}, {self.starshipclass}, {self.registry}, {self.crew})"
+            )
+
+        def __iter__(self):
+            yield self.name
+            yield self.registry
+            yield self.crew
+
+        def drydock(self):
+            self.crew_on_leave = self.crew - 10
+            self.crew = 10
+
+        def disembark(self):
+            self.crew += self.crew_on_leave
+            self.crew_on_leave = 0
+
+        def report(self):
+            output = f"{self.name}'s crew is {self.crew} souls with {self.crew_on_leave} on leave!"
+            print(output)
+    ```
+
+#### Fleet
+
+=== "Python"
+
+    ```py
+    class Fleet:
+        def __init__(self, name=None):
+            self.name = name
+            self.ships = []
+
+        def append(self, *args):
+            for arg in args:
+                if type(arg) == Starship:
+                    self.ships.append(arg)
+                else:
+                    continue
+
+        def __add__(self, other):
+            from copy import deepcopy
+
+            output = deepcopy(self)
+            if type(other) is Starship:
+                output.append(other)
+                return output
+            elif type(other) is fleet:
+                raise NotImplementedError
+            else:
+                raise NotImplementedError
+
+        def __iadd__(self, other):
+            self.append(other)
+            return self
+
+        def __len__(self):
+            return len(self.ships)
+
+        def roster(self):
+            return [[ship.name, ship.registry, ship.crew] for ship in self.ships]
+
+        def __iter__(self):
+            for ship in self.ships:
+                yield list(ship)
+
+        def __str__(self):
+            from tabulate import tabulate
+
+            return tabulate(
+                [[ship.name, ship.registry, ship.crew] for ship in self.ships],
+                headers=["Name", "Registry", "Crew"],
+                tablefmt="plain",
+            )
+    ```
+
+#### StarshipClass
+
+=== "C++"
+
+    ```cpp
+    enum StarshipClass 
+    {
+        Galaxy = 1,
+        Constitution = 2,
+        NX = 3,
+        Intrepid = 4
+    };
+    ```
+
+=== "Python"
+
+    ```py
+    from enum import Enum
+
+    class StarshipClass(Enum):
+    NX = 'NX'
+    GALAXY = 'Galaxy'
+    CONSTITUTION = 'Constitution'
+    SOVEREIGN = 'Sovereign'
+    DEFIANT = 'Defiant'
+    INTREPID = 'Intrepid'
+    MIRANDA = 'Miranda'
+
+    
+    def __repr__(self):
+        return self.value
+    ```
 
 ## Web frameworks
 
@@ -1319,7 +1404,10 @@ Mock objects include a variety of concepts that together comprise a taxonomy of 
 - **Stubs** can provide answers to calls in the form of property gets and method return values.
 - **Mocks** allow the tester to verify that a property or method was called.
 
-## Terminology
+## Glossary
+
+#### Enumeration
+
 In C# the term **enumeration** refers to the process of successively returning individual values. In Python, the term **iteration** is used to refer to the same thing, and **iterable** refers to an object that can be iterated, or parsed out into sub-elements.
 
 - In Python, any object that exposes the `__iter__()` and `__next__()` **dunder** methods are iterable.
@@ -1327,3 +1415,19 @@ In C# the term **enumeration** refers to the process of successively returning i
 
 Both languages feature a keyword that allows a subclass to access its direct parent.
 Whereas in Python the terms **superclass** and **subclass** are used, in C# the terms **base class** and **derived class** are preferred.
+
+#### Loop unswitching
+
+One of the core optimizations that a C compiler performs; transforms a loop containing a conditional into a conditional with a loop in both parts, which changes flow control
+
+#### Register rename engine
+
+Component of modern high-end cores which is one of the largest consumers of die area and power
+
+#### Scalar Replacement Of Aggregates (SROA)
+
+One of the core optimizations that a C compiler performs; attempts to replace `struct`s and arrays with fixed lengths with individual variables, which allows the compiler to treat accesses as independent and elide operations entirely if it can prove the results are never visible, which also deletes padding sometimes.
+
+#### Segmented architecture
+
+Pointers might be segment IDs and an offset

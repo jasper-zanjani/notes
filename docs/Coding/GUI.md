@@ -165,7 +165,7 @@ window = HelloWorld();
 
 ## tkinter
 
-![](../img/GUI-WBC-01-tk.gif)
+![](/img/GUI-WBC-01-tk.gif)
 
 <details>
 <summary>

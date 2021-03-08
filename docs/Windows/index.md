@@ -19,7 +19,7 @@ Windows Server 2016 installations are determined by the most suitable installati
     - An **upgrade** is an installation performed in-place with existing data intact and is opposed to a **clean installation**. 
     - A **migration** is a clean installation with old data transferred over.
 Migrations are facilitated by [Powershell][Windows Server Migration Tools] and [command prompt][SmigDeploy.exe] tools
-- **Installation options** include Desktop Experience, [ Server Core ](Server-Core.md, and [ Nano Server ](Nano-Server.md).
+- **Installation options** include Desktop Experience, [Server Core][Server Core], and [Nano Server][Nano Server].
 - The most important **installation edition** is **Windows Server 2016 Datacenter edition**, which is the only edition to have several important features that figure prominently in the exam.
     - [Storage Spaces Direct][S2D], 
     - [Storage Replica][Storage Replica]
@@ -30,8 +30,6 @@ Migrations are facilitated by [Powershell][Windows Server Migration Tools] and [
 Server installations are also influenced by choice of [ **activation model** ](#activation). 
 
 ### Licensing
-
-#### Servicing channels
 
 **Servicing channels** provide a way of separating users into deployment groups for feature and quality updates.
 
@@ -51,7 +49,6 @@ Because MMC is reliant on **Distributed Component Object Model (DCOM)** technolo
 
 [Nano Server]: #nano-server 'Nano Server&#10;Headless Windows Server installation option with no local user interface, no 32-bit application support, and only basic configuration controls. Administration requires remote WinRM connections and WMI tools&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 42'
 [Powershell Core]: #nano-server 'Powershell Core&#10;subset of Powershell Desktop, omitting many of its features&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 57'
-[New-NanoServerImage]: pwsh.md#new-nanoserverimage '```&#10;[PS] New-NanoServerImage&#10;New-NanoServerImage -DeploymentType guest|host -Edition standard|datacenter -MediaPath root -TargetPath $PATH -ComputerName $NAME&#10;```&#10;Used to create a Nano Server VHD file for Nano Server installation&#10;Required parameters:&#10;  `DeploymentType` specified whether the image file should be used on a Hyper-V VM ("Guest") or a physical server ("Host")&#10;  `Edition` specifies whether to install the Standard or Datacenter edition of Nano Server&#10;  `MediaPath` specifies the path to the root of the WS2016 installation disk or mounted image&#10;  `BasePath` specifies a path on the local system where the cmdlet creates a copy of the installation files from the location specified in `MediaPath`&#10;  `TargetPath` specifies the full path and filename of the new image to be created with the filename extension (".vhd" or ".vhdx") specifying Generation 1 or Generation 2 image.&#10;  `ComputerName` specifies the computer name that should be assigned to the new image&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 44'
 
 [Nano Server][Nano Server], a new installation option introduced in Windows Server 2016, provides a much smaller footprint and attack surface than even Server Core, but supports only some roles and features.
 Installation is done by building a VHD image via PowerShell on another computer.
@@ -284,7 +281,7 @@ Components of DSC scripts include:
 
 DSC configurations can be deployed in two different **refresh modes** 
 
-| ![](img/pullmodel.png)                                                                                                       | ![](img/pushmodel.png)                                                                                                                                                                                                                        |
+| ![](/img/pullmodel.png)                                                                                                       | ![](/img/pushmodel.png)                                                                                                                                                                                                                        |
 | ---------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Pull architecture**: target LCM periodically retrieves configuration from a **Pull Server**, which consolidates MOF files. | **Push architecture**: configuration is sent to target in response to explicit invocation of [`Start-DSCConfiguration`](https://docs.microsoft.com/en-us/powershell/module/psdesiredstateconfiguration/Start-DscConfiguration) on the server. |
 
@@ -376,10 +373,7 @@ A witness is created when a cluster has an even number of nodes, and only one ca
 SoFS ensures continuous availability in the case of a node failure.
 Using SoFS, multiple nodes can also access the same block of storage at the same time, and for this reason is is an **active/active** or **dual active** system, as opposed to one where only one node provides accessible shares, or an **active/passive** system. 
 
-[Add-ClusterScaleOutFileServerRole]: pwsh.md#add-clusterscaleoutfileserverrole '```&#10;[PS] Add-ClusterScaleOutFileServerRole&#10;```&#10;Creates a clustered file server for scale-out application data.'
 SoFS is specifically recommended for use on Hyper-V and SQL Server clusters and can be installed with [`Add-ClusterScaleOutFileServer`][Add-ClusterScaleOutFileServer].
-
-[New-SmbShare]: #new-smbshare '```&#10;New-SmbShare&#10;```&#10;Creates an SMB share.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 106'
 
 SoFS shares are created with the [`New-SmbShare`][New-SmbShare] PowerShell cmdlet.
 SoFS shares are located on **Cluster Shared Volumes (CSV)**, a shared disk containing an NTFS or ReFS volume that is made accessible for read and write operations by all nodes within a failover cluster.
@@ -451,7 +445,6 @@ For a VM that is shut off, storage migration is equivalent to simply copying fil
 
 
 ### Cluster management
-[Add-ClusterVMMonitoredItem]: pwsh.md#add-clustervmmonitoreditem '```&#10;[PS] Add-ClusterVMMonitoredItem&#10;```&#10;Configures monitoring for a service or an Event Tracing for Windows (ETW) event so that it is monitored on a virtual machine.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 362'
 
 **VM Monitoring** allows specific services to be restarted or failed-over when a problem occurs.
 To use VM Monitoring:
@@ -588,7 +581,7 @@ Generation 1 VMs can only boot from network (PXE) when using a legacy adapter.
 
 Physical hosts running Windows Server 2016 can support teams of up to 32 NICs, but Hyper-V VMs are limited to teams of two.
 The team must first be configured in the host operating system and appears as a single [interface][Microsoft Network Adapter Multiplexor Driver] in the Virtual Switch Manager.
-High-performance [embedded teaming][SET], reliant on [RDMA][RDMA], can only be configured with [Powershell](pwsh.md#create-a-virtual-switch-with-set-enabled).
+High-performance [embedded teaming][SET], reliant on [RDMA][RDMA], can only be configured with [Powershell](PowerShell#create-a-virtual-switch-with-set-enabled).
 - **Teaming Mode** 
   - **Switch Independent**: switch is unaware of presence of NIC team and does not load balance to members; Windows is performing the teaming
   - **Switch Dependent**: switch determines how to distribute inbound network traffic; only supported by specialty hardware
@@ -624,7 +617,7 @@ A new VHD can be created using
 - PowerShell
 
 Shared virtual disk files are preferably created as [VHD sets][VHD set].
-[Pass-through][pass-through disk] disks make exclusive use of a physical disk. <sup>[pwsh](pwsh.md#pass-through-disk)</sup>
+[Pass-through][pass-through disk] disks make exclusive use of a physical disk. <sup>[pwsh](PowerShell#pass-through-disk)</sup>
 
 [**Standard checkpoints**][checkpoint] (previously known as "snapshots" in Windows Server 2012 and before) with the extensions AVHD or AVHDX save the state, data, and hardware configuration of a VM.
 They are recommended for development and testing but are not a replacement for backup software nor recommended for production environmentsj, because restoring them in a production environment will interrupt running services.
@@ -636,7 +629,7 @@ They are recommended for development and testing but are not a replacement for b
 [Shielded VMs]: # 'Shielded Virtual Machine&#10;Windows Server 2016 Datacenter edition feature that provides VMs with protection from compromised administrators that have access to the Hyper-V host computer by encrypting the VM state and virtual disks&#10;A shielded VM is a generation 2 VM that has a virtual TPM, is encrypted using BitLocker, and can run only on healthy and approved hosts in a guarded fabric.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 6'
 [guarded host]: # 'Guarded host&#10;Windows Server 2016 Datacenter edition Hyper-V host that can run shielded VMs only if it can prove that it is running in a known, trusted state to the HGS.'
 
-> Shielded VMs are a feature exclusive to the [Datacenter Edition](datacenter-edition.md) of Windows Server 2016.
+> Shielded VMs are a feature exclusive to the Datacenter Edition of Windows Server 2016.
 
 As a result of increased virtualization, physical servers that were once secured physically were migrated to Hyper-V hosts that are less secure because they are accessible to **fabric administrators**.
 [**Shielded VMs**][Shielded VMs] were introduced to protect **tenant workloads** from inspection, theft, and tampering as a result of being run on potentially compromised hosts.
@@ -715,7 +708,7 @@ Hyper-V guests can take advantage of a suite of features to enhance performance 
 - Virtualization of [NUMA][NUMA] architecture
 - [Smart paging][Smart paging] for when VMs that use dynamic memory restart and temporarily need more memory than is available on the host, for example at boot
 - [Monitoring][resource metering] resource usage, to minimize cost overruns when guests run in the cloud
-- Disk and GPU passthrough, and other PCI-x devices, with [DDA][DDA] <sup>[pwsh](pwsh.md#implement-dda)</sup>
+- Disk and GPU passthrough, and other PCI-x devices, with [DDA][DDA] <sup>[pwsh](PowerShell#implement-dda)</sup>
 - [Increased performance][Enhanced session mode] of interactive sessions that use [VMConnect][VMConnect.exe]
 
 Microsoft supports some Linux distributions, like Ubuntu, with built-in [Linux][LIS] [Integration Services][Integration Services], which improve performance by providing custom drivers to interface with Hyper-V.
@@ -883,7 +876,7 @@ Data duplication is appropriate to specific workloads, like backup volumes and f
 It is not appropriate for database storage or operating system data or boot volumes.
 > Data deduplication **had required NTFS**, although ReFS is supported since 1709.
 
-[Enable-DedupVolume]: pwsh.md#enable-dedupvolume '```&#10;Enable-DedupVolume&#10;```&#10;Enables data deduplication on one or more volumes.'
+[Enable-DedupVolume]: PowerShell#enable-dedupvolume '```&#10;Enable-DedupVolume&#10;```&#10;Enables data deduplication on one or more volumes.'
 
 Data deduplication runs as a low-priority background process when the system is idle, by default; however its behavior can be [configured][Enable-DedupVolume] based on its intended usage.
 Deduplication works by scanning files, and breaking them into unique **chunks** of various sizes that are collected in a [chunk store][chunk store].
@@ -980,7 +973,7 @@ Storage Replica requires two virtual disks, one for logs and one for data, which
 
 ## WSUS
 
-**Windows Server Update Services (WSUS)** can be configured from the command-line with [`wsusutil.exe`](README.md#wsusutil)
+**Windows Server Update Services (WSUS)** can be configured from the command-line with wsusutil.exe.
 
 There are 5 basic WSUS architecture configurations
 
@@ -1265,7 +1258,7 @@ dnscmd /Config /SocketPoolSize <value>
 
 #### dsquery
 
-Find the Active Directory Schema version from the command-line <sup>[ref](https://nolabnoparty.com/en/finding-active-directory-schema-version/ "Finding the Active Directory schema version") [pwsh](https://github.com/jasper-zanjani/notes/tree/primary/70-740/pwsh.md#get-adobject "Get-ADObject")</sup>
+Find the Active Directory Schema version from the command-line <sup>[ref](https://nolabnoparty.com/en/finding-active-directory-schema-version/ "Finding the Active Directory schema version") [pwsh](https://github.com/jasper-zanjani/notes/tree/primary/70-740/PowerShell#get-adobject "Get-ADObject")</sup>
 
 ```cmd
 dsquery * cn=schema,cn=configuration,dc=domain,dc=com -scope base -attr objectVersion"
@@ -1288,7 +1281,7 @@ Rename a computer
 ```
 netdom renamecomputer %computername% /newname: newcomputername
 ```
-Join a computer to a domain <sup>cf. [`Add-Computer`](Microsoft.Powershell.Management), Zacker: 21</sup>
+Join a computer to a domain <sup>cf. `Add-Computer`, Zacker: 21</sup>
 ```
 netdom join %computername% /domain: domainname /userd: username /password:*
 ```
@@ -1675,7 +1668,7 @@ Display information about installed RAM
 ```cmd
 wmic memorychip list full
 ```
-List all objects of type `Win32_LogicalDisk` using that class's alias `logicaldisk`. <sup>[Desmond][Desmond2009]: 642 [pwsh](pwsh.md '```&#10;PS C:\> Get-WmiObject -query "SELECT * FROM Win32_LogicalDisk"&#10;PS C:\> gwmi -q "select * from win32_logicaldisk"&#10;```') </sup>
+List all objects of type `Win32_LogicalDisk` using that class's alias `logicaldisk`. <sup>[Desmond][Desmond2009]: 642 [pwsh](PowerShell '```&#10;PS C:\> Get-WmiObject -query "SELECT * FROM Win32_LogicalDisk"&#10;PS C:\> gwmi -q "select * from win32_logicaldisk"&#10;```') </sup>
 ```cmd
 wmic logicaldisk list brief
 ```
@@ -1787,7 +1780,6 @@ This offers a way to administer remote servers and move away from the traditiona
 [MAK Proxy]: #upgrade-and-migration 'MAK Proxy&#10;VMAT collects installation IDs from target computers, activates them all at once, then receives and deploys confirmation IDs from Microsoft back to targets&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 36'
 [MAK]: #upgrade-and-migration 'Multiple activation key (MAK)&#10;Product key that can be used to activate multiple Windows systems (suitable for small networks).&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 35'
 [S2D]: #storage-spaces-direct 'Storage Spaces Direct (S2D)&#10;Windows Server 2016 Datacenter edition feature that enables administrators to use relatively inexpensive drive arrays to create high-availability storage solutions, implementing JBOD&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 5'
-[SmigDeploy.exe]: README.md#smigdeploy.exe '```&#10;C:\>SmigDeploy.exe&#10;```&#10;Create a new folder in specified directory, registering Windows Server Migration Tools on the source server and opening a Powershell window in which they can be used&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 34'
 [Storage Replica]: #server-storage 'Storage Replica&#10;Windows Server 2016 Datacenter edition feature that provides storage-agnostic, synchronous or asynchronous volume replication between local or remote servers, using SMBv3&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 6'
 [VAMT]: #upgrade-and-migration 'Volume Activation Management Tool (VAMT)&#10;Collects installation IDs from target computers, sending them to Microsoft using a single connection and receiving confirmation IDs in return, which are deployed to targets.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 35'
 [Volume Activation Services]: #upgrade-and-migration 'Volume Activation Services&#10;Windows Server role that must be added before installing a KMS host&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 37'
@@ -1804,3 +1796,22 @@ This offers a way to administer remote servers and move away from the traditiona
 [network controller]: #upgrade-and-migration 'network controller&#10;Windows Server 2016 Datacenter edition feature that provides a central automation point for network infrastructure configuration, monitoring, and troubleshooting&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 6'
 [shielded virtual machines]: #upgrade-and-migration 'shielded virtual machines&#10;Windows Server 2016 Datacenter edition feature that provides VMs with protection from compromised administrators that have access to the Hyper-V host computer by encrypting the VM state and virtual disks&#10;A shielded VM is a generation 2 VM that has a virtual TPM, is encrypted using BitLocker, and can run only on healthy and approved hosts in a guarded fabric.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 6'
 
+
+[https://sumtips.com/tips-n-tricks/manage-disk-partitions-with-windows-powershell/]: https://sumtips.com/tips-n-tricks/manage-disk-partitions-with-windows-powershell/ "SumTips.com - Manage disk partitions with Windows PowerShell"
+[https://docs.microsoft.com/en-us/powershell/module/smbshare/get-smbopenfile?view=win10-ps]: https://docs.microsoft.com/en-us/powershell/module/smbshare/get-smbopenfile?view=win10-ps '"Get-SmbOpenFile". _Microsoft Docs_.'
+[https://docs.microsoft.com/en-us/powershell/module/smbshare/close-smbopenfile?view=win10-ps]: https://docs.microsoft.com/en-us/powershell/module/smbshare/close-smbopenfile?view=win10-ps '"Close-SmbOpenFile". _Microsoft Docs_.'
+[https://www.thewindowsclub.com/find-windows-product-key]:  https://www.thewindowsclub.com/find-windows-product-key "TheWindowsClub: \"How to find Windows Product Key using Command Prompt or PowerShell\""
+[https://docs.microsoft.com/en-us/powershell/scripting/samples/working-with-registry-entries?view=powershell-7]: https://docs.microsoft.com/en-us/powershell/scripting/samples/working-with-registry-entries?view=powershell-7 "Working with Registry Entries"
+[https://adamtheautomator.com/powershell-random-password/]: https://adamtheautomator.com/powershell-random-password/ "How to Generate a Random Password with PowerShell"
+[https://devblogs.microsoft.com/scripting/powertip-use-powershell-to-get-computer-name/]: https://devblogs.microsoft.com/scripting/powertip-use-powershell-to-get-computer-name/
+
+[ADAC]:   https://github.com/jasper-zanjani/notes/master/sources/adac.md "Berkouwer, Sander. _Active Directory Administration Cookbook_."
+[IMWS]:   https://github.com/jasper-zanjani/notes/master/sources/imws.md "McCabe, John. _Introduction to Microsoft Windows Server 2016_."
+[Jones]:  https://subscription.packtpub.com/video/virtualization_and_cloud/9781789616385 "Jones, Joshua B. _Hands-On Powershell for Active Directory_. PacktPub: 2018."
+[WSAC]:   https://github.com/jasper-zanjani/notes/master/sources/wsac.md "Krause, Jordan. _Windows Server 2016 Administration Cookbook_."
+[Zacker]: # "Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017."
+[Warren]: # 'Warren, Andrew. _Exam Ref 70-742: Identity with Windows Server 2016_. 2017.'
+[Holmes]: # 'Holmes, Lee. _Windows PowerShell Cookbook_. O\'Reilly Media, 2013.'
+[SOPR]: https://leanpub.com/secretsofpowershellremoting 'Don Jones et al. _Secrets of Powershell Remoting_. '
+[mu:70-740]: # 'MeasureUp Practice Test. _Installation, Storage and Compute with Windows Server 2016 (70-740)_.'
+[pl:70-740]: # 'MeasureUp Practice Lab: Installation, Storage and Compute with Windows Server 2016 (70-740)'

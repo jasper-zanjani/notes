@@ -2,12 +2,6 @@
 	"folders": [
 		{
 			"path": "."
-		},
-		{
-			"path": "../notes"
-		},
-		{
-			"path": "../azure.wiki"
 		}
 	],
 	"remoteAuthority": "wsl+Ubuntu-20.04",

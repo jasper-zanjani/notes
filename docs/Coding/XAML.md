@@ -23,11 +23,16 @@ Every XAML **element** maps to a C# **class**, and every XAML **attribute** maps
 
 There are [several syntaxes](https://docs.microsoft.com/en-us/windows/uwp/xaml-platform/xaml-syntax-guide "XAML syntax guide") available for use that correspond to various methods of declaring objects:
 
-=== "Object-element"
+- **Object-element syntax** has the type's name within angle brackets, similar to HTML.
+When the object contains other objects, it is called a **container**.
+If the object does not contain other objects, it can be declared with a self-closing tag:
+- **Attribute syntax** has the property value set by declaring an attribute.
+- In **property-element syntax**, signified by a period in the element name, where the portion of the element following the dot representing the identifier of the property.
+- **Content-property syntax** is similar to the property element syntax in that a property's value is set by a child. 
+However, in this case the XAML processor interpolates the correct property element, typically Content. 
+Some controls can accept more than one child element. In the background, this is actually using the **content-property syntax** to assign to the `Children` property.
 
-    To declare an object with **object-element syntax**, you write the type's name within angle brackets, similar to HTML:
-    When the object contains other objects, it is called a **container**.
-    If the object does not contain other objects, it can be declared with a self-closing tag:
+=== "Object-element"
 
     ```xml
     <Canvas>
@@ -37,15 +42,11 @@ There are [several syntaxes](https://docs.microsoft.com/en-us/windows/uwp/xaml-p
 
 === "Attribute"
 
-    Using **attribute syntax**, a property value can be set by declaring an attribute.
-
     ```xml
     <Rectangle Name="rectangle1" Width="100" Height="100" Fill="Blue" />
     ```
     
 === "Property-element"
-
-    In XAML, a dot in the element name identifies the element as a **property-element**, where the portion of the element following the dot representing the identifier of the property.
 
     ```xml
     <Rectangle Name="rectangle1" Width="100" Height="100"> 
@@ -57,15 +58,13 @@ There are [several syntaxes](https://docs.microsoft.com/en-us/windows/uwp/xaml-p
 
 === "Content-property"
 
-    **Content-property syntax** is similar to the property element syntax in that a property's value is set by a child. However, in this case the XAML processor interpolates the correct property element, typically Content. ([src](https://app.pluralsight.com/course-player?clipId=628790fc-d536-42cf-b50b-5b94824b4551))
-
     ```xml
     <Button>
         Add customer
     </Button>
     ```
 
-    Some controls can accept more than one child element. In the background, this is actually using the **content-property syntax** to assign to the `Children` property. ([src](https://app.pluralsight.com/course-player?clipId=33f191c4-b688-4183-94e6-577a2d0b3304))
+=== "Multiple children"
 
     ```xml
     <StackPanel>
@@ -467,7 +466,7 @@ Windows 10 [themes](https://docs.microsoft.com/en-us/windows/uwp/design/controls
 Application element:
 
 === "Light"
-    ![](../img/GUI-WBC-01-Light.gif)
+    ![](/img/GUI-WBC-01-Light.gif)
     ```xml
     <Application
         x:Class="Scratchpad.App"
@@ -487,7 +486,7 @@ Application element:
     </Application>
     ```
 === "Dark"
-    ![](../img/GUI-WBC-01.gif)
+    ![](/img/GUI-WBC-01.gif)
     ```xml
     <Application
         x:Class="Scratchpad.App"
@@ -507,14 +506,14 @@ Application element:
     </Application>
     ```
 === "Theme colors"
-    ![](../img/light-base.png)
-    ![](../img/light-alt.png)
-    ![](../img/light-chrome.png)
-    ![](../img/light-list.png)
-    ![](../img/dark-base.png)
-    ![](../img/dark-alt.png)
-    ![](../img/dark-chrome.png)
-    ![](../img/dark-list.png)
+    ![](/img/light-base.png)
+    ![](/img/light-alt.png)
+    ![](/img/light-chrome.png)
+    ![](/img/light-list.png)
+    ![](/img/dark-base.png)
+    ![](/img/dark-alt.png)
+    ![](/img/dark-chrome.png)
+    ![](/img/dark-list.png)
 
 
 ### Layout
@@ -731,7 +730,7 @@ the `GetValue` and `SetValue` methods, which are used to ...
 
 ### ComboBox
 
-![](../img/GUI-ComboBox.gif)
+![](/img/GUI-ComboBox.gif)
 
 Important attributes:
 
@@ -743,23 +742,17 @@ If not defined, no element will be selected.
 
 
 ```xml
-<Window>
-    <!-- ... -->
-
-    <StackPanel Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Top">
-        <ComboBox 
-            ItemsSource="{x:Bind Items}" 
-            SelectedItem="{x:Bind Items[0]}"
-            DisplayMemberPath="Display" />
-    </StackPanel>
-</Window>
+<ComboBox 
+    ItemsSource="{x:Bind Items}" 
+    SelectedItem="{x:Bind Items[0]}"
+    DisplayMemberPath="Display" />
 ```
 
 ### CommandBar
 
 [**`CommandBar`**](https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/app-bars) is a lightweight control that can organize a bar of buttons.
 
-![](../img/GUI-WBC-CommandBar.jpg)
+![](/img/GUI-WBC-CommandBar.jpg)
 
 <details><summary>MainPage.xaml</summary>
 ```xml
@@ -823,35 +816,31 @@ Grid **star-sizing** works similar to `flex-grow` and `flex-shrink` CSS style st
 === "Rows"
 
     <details>
-    <summary>![](../img/GUI-Rainbow-Rows.gif)</summary>
+    <summary>![](/img/GUI-Rainbow-Rows.gif)</summary>
 
     ```xml
-    <Window>
-        <!-- ... -->
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
 
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
-
-            <Rectangle Fill="LightGray"/>
-            <Rectangle Fill="LightSteelBlue" Grid.Row="1"/>
-            <Rectangle Fill="LightBlue" Grid.Row="2"/>
-            <Rectangle Fill="LightCyan" Grid.Row="3"/>
-            <Rectangle Fill="LightSeaGreen" Grid.Row="4"/>
-            <Rectangle Fill="LightGreen" Grid.Row="5"/>
-            <Rectangle Fill="LightGoldenrodYellow" Grid.Row="6" />
-            <Rectangle Fill="LightSalmon" Grid.Row="7"/>
-            <Rectangle Fill="LightCoral" Grid.Row="8"/>
-        </Grid>
-    </Window>
+        <Rectangle Fill="LightGray"/>
+        <Rectangle Fill="LightSteelBlue" Grid.Row="1"/>
+        <Rectangle Fill="LightBlue" Grid.Row="2"/>
+        <Rectangle Fill="LightCyan" Grid.Row="3"/>
+        <Rectangle Fill="LightSeaGreen" Grid.Row="4"/>
+        <Rectangle Fill="LightGreen" Grid.Row="5"/>
+        <Rectangle Fill="LightGoldenrodYellow" Grid.Row="6" />
+        <Rectangle Fill="LightSalmon" Grid.Row="7"/>
+        <Rectangle Fill="LightCoral" Grid.Row="8"/>
+    </Grid>
     ```
     </details>
 
@@ -859,54 +848,44 @@ Grid **star-sizing** works similar to `flex-grow` and `flex-shrink` CSS style st
 
     <details>
     <summary>
-    ![](../img/GUI-Rainbow-Columns.gif)
+    ![](/img/GUI-Rainbow-Columns.gif)
     </summary>
 
     ```xml
-    <Window>
-        <!-- ... -->
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
 
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-
-            <Rectangle Fill="LightGray"/>
-            <Rectangle Fill="LightSteelBlue" Grid.Column="1"/>
-            <Rectangle Fill="LightBlue" Grid.Column="2"/>
-            <Rectangle Fill="LightCyan" Grid.Column="3"/>
-            <Rectangle Fill="LightSeaGreen" Grid.Column="4"/>
-            <Rectangle Fill="LightGreen" Grid.Column="5"/>
-            <Rectangle Fill="LightGoldenrodYellow" Grid.Column="6" />
-            <Rectangle Fill="LightSalmon" Grid.Column="7"/>
-            <Rectangle Fill="LightCoral" Grid.Column="8"/>
-        </Grid>
-    </Window>
+        <Rectangle Fill="LightGray"/>
+        <Rectangle Fill="LightSteelBlue" Grid.Column="1"/>
+        <Rectangle Fill="LightBlue" Grid.Column="2"/>
+        <Rectangle Fill="LightCyan" Grid.Column="3"/>
+        <Rectangle Fill="LightSeaGreen" Grid.Column="4"/>
+        <Rectangle Fill="LightGreen" Grid.Column="5"/>
+        <Rectangle Fill="LightGoldenrodYellow" Grid.Column="6" />
+        <Rectangle Fill="LightSalmon" Grid.Column="7"/>
+        <Rectangle Fill="LightCoral" Grid.Column="8"/>
+    </Grid>
     ```
     </details>
 
 ### ListView
 
-![](../img/GUI-ListView.gif)
+![](/img/GUI-ListView.gif)
 
 ```xml
-<Window>
-    <!-- ... -->
-
-    <StackPanel Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Top">
-        <ListView
-            ItemsSource="{x:Bind Items}" 
-            SelectedItem="{x:Bind Items[0]}"
-            DisplayMemberPath="Display"/>
-    </StackPanel>
-</Window>
+<ListView
+    ItemsSource="{x:Bind Items}" 
+    SelectedItem="{x:Bind Items[0]}"
+    DisplayMemberPath="Display"/>
 ```
 
 Important attributes:
@@ -1000,29 +979,33 @@ Supports several attached properties that allow elements to be aligned with sibl
 
 ### ResourceDictionary
 
-[`ResourceDictionary`](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.ResourceDictionary?view=winrt-19041)
+[**Resource dictionaries**]()
 
-```xml
-<!-- ResourceDictionaries/ButtonDictionary.xaml -->
-<ResourceDictionary>
-  <Style TargetType="Button" x:Key="SubmitButton">
-    <Setter Property="Background" Value="Green"/>
-    <Setter Property="Padding" Value="5"/>
-  </Style>
-</ResourceDictionary>
-```
-```xml
-<!-- App.xaml -->
-<Application>
-  <Application.Resources>
-    <ResourceDictionary Source="ResourceDictionaries/ButtonDictionary.xaml"/>
-  </Application.Resources>
-```
-Buttons will now be able to be styled using a [ markup extension ](Markup-extensions)
+Here, [Buttons](#button) will now be able to be styled using a [ markup extension ](Markup-extensions)
 ```xml
 <Button Style="{StaticResource SubmitButton}" Content="Submit"/>
 ```
-<sup>[YouTube](https://www.youtube.com/watch?v=Y9hElE-vx34 "XAML WPF - Styles Part 3, Resource Dictionaries")</sup>
+
+=== "/ResourceDictionaries/ButtonDictionary.xaml"
+
+    ```xml
+    <ResourceDictionary>
+        <Style TargetType="Button" x:Key="SubmitButton">
+            <Setter Property="Background" Value="Green"/>
+            <Setter Property="Padding" Value="5"/>
+        </Style>
+    </ResourceDictionary>
+    ```
+
+=== "App.xaml"
+
+    ```xml
+    <Application>
+        <Application.Resources>
+            <ResourceDictionary Source="ResourceDictionaries/ButtonDictionary.xaml"/>
+        </Application.Resources>
+    </Application>
+    ```
 
 Managing a consistent style will typically necessitate using multiple resource dictionaries.
 But some elements can only contain a single ResourceDictionary element.
@@ -1031,15 +1014,22 @@ The solution is to place a **`ResourceDictionary.MergedDictionaries`** property 
 Multiple `ResourceDictionary` objects can be placed as children of it.
 
 ```xml
-<Page.Resources>
-  <ResourceDictionary>
-    <ResourceDictionary.MergedDictionaries>
-      <ResourceDictionary Source="Dictionary1.xaml" />
-      <ResourceDictionary Source="Dictionary2.xaml" />
-  </ResourceDictionary>
-</Page.Resources>
+<Page>
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Dictionary1.xaml" />
+                <ResourceDictionary Source="Dictionary2.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+</Page>
 ```
 
+Sources
+
+- 📄 [ResourceDictionary](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.ResourceDictionary)
+- ▶ [YouTube](https://www.youtube.com/watch?v=Y9hElE-vx34 "XAML WPF - Styles Part 3, Resource Dictionaries")
 
 ### SplitView
 
@@ -1103,7 +1093,7 @@ Notably, StackPanel does not support scroll bars. ([src](https://app.pluralsight
 
 <details>
 <summary>
-![](../img/GUI-VariableSizedWrapGrid.gif)
+![](/img/GUI-VariableSizedWrapGrid.gif)
 </summary>
 ```xml
 <Page

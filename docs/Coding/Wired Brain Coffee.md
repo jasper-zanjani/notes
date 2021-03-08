@@ -1,7 +1,7 @@
 # ☕ Wired Brain Coffee
 
 ## Basic layout
-![](../img/GUI-WBC-01.gif)
+![](/img/GUI-WBC-01.gif)
 
 <details>
 <summary>MainPage.xaml</summary>
@@ -68,7 +68,7 @@
 
 ## Custom control
 
-![](../img/GUI-WBC-01.jpg)
+![](/img/GUI-WBC-01.jpg)
 
 <details>
 <summary>Controls/HeaderControl.xaml</summary>
@@ -167,7 +167,7 @@
 </details>
 
 ## Sidebar
-![](../img/GUI-WBC-Sidebar.gif)
+![](/img/GUI-WBC-Sidebar.gif)
 
 Setting an `x:Name` attribute on an element allows it to be manipulated in C#. ([src](https://app.pluralsight.com/course-player?clipId=8e0d702e-1b6c-40ee-a3e6-5c999e2f9659))
 
@@ -322,7 +322,7 @@ private async void MainPage_LoadedAsync(object sender, RoutedEventArgs e)
 
 ## Data binding using events
 
-![](../img/GUI-WBC-Binding-Events.gif)
+![](/img/GUI-WBC-Binding-Events.gif)
 
 Synchronize the customer detail textboxes to the selected item in the ListView.
 A rough form of data binding is possible with [event handling](#event-handling). ([src](https://app.pluralsight.com/course-player?clipId=b5de77c9-45fd-49d4-9e15-fe121edf3fe4))
@@ -472,7 +472,7 @@ namespace WiredBrainCoffee.UWP.Models
 
 ## Add/remove customers
 
-![](../img/GUI-WBC-Binding-Events3.gif)
+![](/img/GUI-WBC-Binding-Events3.gif)
 
 Implement event handlers for the Add and Delete buttons. ([src](https://app.pluralsight.com/course-player?clipId=2465d7f7-d53d-4a57-b29d-a9547bb9afe8))
 
@@ -808,7 +808,7 @@ These can then be referenced from App.xaml and are available for assignment in a
 
 ## ThemeResource
 
-![](../img/GUI-WBC-ThemeResource.gif)
+![](/img/GUI-WBC-ThemeResource.gif)
 
 The **ThemeResource Markup Extension** makes UWP-specific theme resource dictionaries available.
 These same resources are available using StaticResource, but with ThemeResource they will be updated if the user changes his Windows theme from light to dark. ([src](https://app.pluralsight.com/course-player?clipId=97c44891-d8ee-4870-b15e-72adf3df9dda))
@@ -835,7 +835,7 @@ These same resources are available using StaticResource, but with ThemeResource 
 
 ## Theme selection
 
-![](../img/GUI-WBC-ThemeButton.gif)
+![](/img/GUI-WBC-ThemeButton.gif)
 
 A specific theme can be specified at any element by specifying a `RequestedTheme` attribute.
 However, this property cannot be changed at runtime.

@@ -1,5 +1,6 @@
 ## Processing cookbooks
-**Cookbooks** are collections of tasks with representative implementations (e.g. Azure commands and procedures for [AZ-103](az-103.md))
+**Cookbooks** are collections of tasks with representative implementations (e.g. Azure commands and procedures for the AZ-103.)
+
 1. **Number** tasks for easy reference, indexing, and linking in markdown
 2. **Catalog** tasks and desciptions in a spreadsheet
 3. **Copy** catalog with task and description to markdown. This will serve as both an index of tasks as well as the skeleton for the content. Use multiple cursors to introduce `####` heading syntax before the task identifier, followed by a carriage return before the one-line description of the task. This will ensure that the task is easily found by identifier. These should be collected in a single-cell table, producing a "cloud" of tasks."
@@ -63,5 +64,4 @@ Hypervisor, similar to Hyper-V, but provided at a cost, with a robust command-li
 [1]: https://www.youtube.com/watch?v=rVVhkX1uTRQ "Custom bot using Ruby"
 [2]: https://realpython.com/how-to-make-a-discord-bot-python/ "How to make a Discord bot in Python"
 [3]: https://www.brianbunke.com/blog/2019/09/03/powercli-101/ "VMware PowerCLI 101"
-[5]: sources/README.md/#new-stack-makers "Storage in a DevOps World"
 

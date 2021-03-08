@@ -43,7 +43,7 @@ PulseAudio is built around **sources** and **sinks** (i.e. devices) connected to
 
 ## 🥾 Boot
 
-Bootloaders like [**GRUB (GRand Unified Bootloader)**](Linux/GRUB) or **u-boot** turns on power supplies and scans buses and interfaces to locate the kernel image and the root filesystem. 
+Bootloaders like [**GRUB (GRand Unified Bootloader)**](GRUB) or **u-boot** turns on power supplies and scans buses and interfaces to locate the kernel image and the root filesystem. 
 **LILO (LInux LOader)** is also another bootloader that can be found on older Linux systems.
 
 Microcontrollers may be listening when the system is nominally off; they typically have their own BIOS and kernels and are inaccessible from the main system:
@@ -73,12 +73,12 @@ SystemD introduces the concepts of [**Units**] which are subdivided into various
 
 | [Targets][target] (SystemD) | Runlevels (System V Init) |
 | --------------------------- | ------------------------- |
-| `poweroff.target`           | `0`                       |
-| `rescue.target`             | `1`                       |
-| `multi-user.target`         | `3`                       |
-| `graphical.target`          | `5`                       |
-| `reboot.target`             | `6`                       |
-| `emergency.target`          | `emergency`               |
+| poweroff.target           | 0                       |
+| rescue.target             | 1                       |
+| multi-user.target         | 3                       |
+| graphical.target          | 5                       |
+| reboot.target             | 6                       |
+| emergency.target          | emergency               |
 
 SystemD searches for units from most specific to most general.
 
@@ -101,15 +101,15 @@ Associated programs:
 
 === "SysVinit"
 
-    - [chkconfig](Linux/chkconfig)
-    - [init](Linux/init)
-    - [runlevel](Linux/runlevel)
-    - [service](Linux/service)
-    - [telinit](Linux/telinit)
+    - [chkconfig](chkconfig)
+    - [init](init)
+    - [runlevel](runlevel)
+    - [service](service)
+    - [telinit](telinit)
 
 === "Upstart"
 
-    - [initctl](Linux/initctl)
+    - [initctl](initctl)
 
 
 ## 💾 Disk
@@ -227,8 +227,8 @@ The token obviates the need to specify a username, since the Twitch account's us
 
 There are many IRC clients available:
 
-- [irssi](Linux/irssi)
-- [weechat](Linux/weechat)
+- [irssi](irssi)
+- [weechat](weechat)
 
 
 Resources:
@@ -242,8 +242,8 @@ Resources:
 
 Overview of tiling window managers: ([src][hObzf9ppODJU])
 
-- [**i3**](Linux/i3) is perhaps the most popular tiling window manager, trending toward **manual** rather than **dynamic**. 
-It is typically used with [polybar](LInux/polybar).
+- [**i3**](i3) is perhaps the most popular tiling window manager, trending toward **manual** rather than **dynamic**. 
+It is typically used with [polybar](polybar).
 - **dwm** one of the oldest and lightest tiling window managers. 
 Because suckless wants the source code not to exceed 2,000 lines of code, a lot of functionality is incorporated by means of "patches", which modify the source code using diff files. 
 Workspaces are called **tags**. 
@@ -495,7 +495,7 @@ Basically display managers are the login screens, while the GUI manipulated duri
 
 #### MTA
 
-**Mail Transfer Agent (MTA)** - email server, such as sendmail, [postfix](Linux/postfix), smail, and qmail
+**Mail Transfer Agent (MTA)** - email server, such as sendmail, [postfix](postfix), smail, and qmail
 
 #### MUA
 

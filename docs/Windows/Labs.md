@@ -197,14 +197,14 @@ On both **PLABDM01** and **PLABSA01**:
 ```powershell
 Install-WindowsFeature failover-clustering -IncludeManagementTools
 ```
-Then validate the installation through the [**Failover Cluster Manager**](img/image-m17-c-102.jpg) ([`cluadmin.msc`](README.md)).
+Then validate the installation through the [**Failover Cluster Manager**](/img/image-m17-c-102.jpg) (cluadmin.msc).
 Open the **Validate Configuration** wizard and enter `plabdm01.practicelabs.com` and `plabsa01.practicelabs.com` into the list of selected servers.
 
 Open the **Create Cluster Wizard** and create cluster "PLHYPVCL01" using those same two nodes, choosing 192.168.**0**.25 and 192.168.**1**.25 for the administrative access points.
 
-Open the [**Configure Cluster Quorum Wizard**](img/image-m17-c-103.jpg) and configure a disk witness using the Quorum shared volume.
+Open the [**Configure Cluster Quorum Wizard**](/img/image-m17-c-103.jpg) and configure a disk witness using the Quorum shared volume.
 
-Open **Hyper-V Manager** ([`virtmgmt.msc`](README.md)) and move **PLABDC02** and **PLABWIN811** to `V:\PLABDC02` and `V:\PLABWIN811` respectively, specifying the VM's **storage**.
+Open **Hyper-V Manager** (virtmgmt.msc) and move **PLABDC02** and **PLABWIN811** to `V:\PLABDC02` and `V:\PLABWIN811` respectively, specifying the VM's **storage**.
 Confirm the move has taken place by inspecting each VM's hard drive in the settings.
 
 Add the **Virtual Machine** role to the **Failover Cluster Manager**, and select **PLABDC02** and **PLABWIN811**.
@@ -282,7 +282,7 @@ New-VMSan -Name "PLABS-Fc"
 Add-VMFibreChannelHBA -VMName PLABDC02 -SanName "PLABS-Fc"
 ```
 ### Hyper-V replica lab
-Emphasizes [**`VMReplication`**](pwsh.md#hyper-v) cmdlets.
+Emphasizes [**`VMReplication`**](PowerShell#hyper-v) cmdlets.
 
 ```powershell
 # PLABDM01
