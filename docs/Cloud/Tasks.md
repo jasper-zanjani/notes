@@ -245,6 +245,20 @@ Delete policy assignment
 
 ### Resources
 
+Create resource group
+
+=== "Azure PowerShell"
+
+    ```powershell
+    New-AzGroup -Location $location -Name $rgName
+    ```
+
+=== "Azure CLI"
+
+    ```sh
+    az group create -l $location -n $rgName 
+    ```
+
 Register resource provider in subscription
 ```sh
 az provider register --namespace 'Microsoft.PolicyInsights'

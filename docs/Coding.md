@@ -1,127 +1,5 @@
 # 👨‍💻 Coding
 
-## Programming languages
-
-### C
-
-> "A programming language is low level when its programs require attention to the irrelevant." -Alan Perlis
-
-Despite C's reputation as a low-level programming language, in fact it merely emulates the ancient PDP-11, which is the only machine for which its abstract machine can be described as "close to the metal". 
-In the age of parallel processes, C's serial nature...
-
-Sources:
-
-- [C is not a low-level programming language](https://queue.acm.org/detail.cfm?id=3212479)
-
-### Go
-
-Golang or "**Go**" is a fast, high-performance, open-source, statically-typed compiled programming language. It was designed at Google by Rob Pike, Robert Giesemer, and Ken Thompson and first appeared in late 2009. Go has a syntax similar to C, but offers additional features such as memory safety, garbage collection, and others. [[2](#sources)]\
-Hello world
-```go
-package main
-import "fmt"
-func main() {
-  fmt.Println("Hello, Go World!")
-}
-```
-Compile code [[3](#sources)]
-```sh
-go build script.go # compiles to a binary executable in the same directory named "script"
-go run script.go   # compiles and runs the program
-```
-
-Mathematical function [[3](#sources)]
-```go
-package main
-
-import ("fmt" "math")
-
-func main() {
-  fmt.Println(math.Max(9, 5))
-}
-```
-Get a GitHub package named `$REPO` by `$AUTHOR`
-```sh
-go get github.com/$AUTHOR/$REPO
-go get gopkg.in/kyokomi/emoji.v1 # Emoji support
-```
-Evaluate type of data
-```go
-package main
-import ("fmt" "reflect")
-func main() {
-  fmt.Println(reflect.TypeOf(1))        # => int
-  fmt.Println(reflect.TypeOf(9.5))      # => float64
-  fmt.Println(reflect.TypeOf("string")) # => string
-  fmt.Println(reflect.TypeOf(true))     # => bool
-}
-```
-
-Sources:
-
-- [Go language for beginners in 16 parts](https://dzone.com/articles/go-language-for-beginners-in-16-parts)
-
-
-### Ruby
-
-REPL shell
-```sh
-irb
-```
-Begin a function definition
-```rb
-def
-```
-End a function definition
-```rb
-end
-```
-Import {package}, or 'gem'
-```rb
-require package
-```
-Write given objects to `ios`; writes newline after any that do not already have one
-```rb
-puts(*obj)
-```
-Write given objects to `ios`, with no newline
-```rb
-print(*obj)
-```
-Sort in-place
-```rb
-array.sort()
-```
-
-### Rust 
-
-- `cargo` Rust's compilation manager, package manager, and general-purpose tool
-- `rustc` Rust compiler, usually invoked by `cargo`
-- `rustdoc` Rust documentation tool
-
-Start a new package directory `hello`
-```sh
-cargo new --bin hello
-```
-Load the locally-stored Rust book "The Rust Programming Language"
-```sh
-rustup doc --book
-```
-
-`->` precedes return data type
-
-`mut` mutable, when preceding variable identifiers, allows their values to be changed
-
-Data types include:
-- `u64` unsigned 64-bit integer
-- `i32` signed 32-bit integer
-- `u8` unsigned 8-bit integer (byte values)
-- `f32` single-precision floating point
-- `f64` double-precision floating point
-### macros
-`assert!()` verifies conditions within parentheses
-
-
 ## Simple structures
 
 ### Hello, world!
@@ -155,7 +33,7 @@ Data types include:
 
 Parse a date string
 
-=== "C# (`Parse()`)"
+=== "C#"
 
     ```csharp
     string rawDate = "07/04/1776";
@@ -168,14 +46,7 @@ Parse a date string
         Console.WriteLine("Unparsable!")
     }
 
-    Console.WriteLine(parsedDate.ToLongDateString()); // => "July 4, 1776"
-    ```
-
-=== "C# (`TryParse()`)"
-
-    ```csharp
-    string rawDate = "07/04/1776";
-    DateTime parsedDate;
+    // Alternatively:
     DateTime.TryParse(rawDate, out parsedDate);
 
     Console.WriteLine(parsedDate.ToLongDateString()); // => "July 4, 1776"
@@ -204,18 +75,15 @@ Write text to file
 
 Read text from file
 
-=== "C# (`ReadToEnd`)"
+=== "C#"
 
     ```csharp
     using (StreamReader reader = File.OpenText("raven"))
     {
         reader.ReadToEnd();
     }
-    ```
 
-=== "C# (`ReadLine`)"
-
-    ```csharp
+    // Alternatively:
     using (StreamReader reader = File.OpenText("raven"))
     {
         string s;
@@ -223,7 +91,6 @@ Read text from file
         {
             Console.WriteLine(s);
         }
-
     }
     ```
 
@@ -333,18 +200,14 @@ Real number
 ### Double array
 
 
-=== "Python - map()"
+=== "Python"
 
     ```py
     primes = [1, 2, 3, 5, 7, 11, 13, 17, 19, 23]
     double = lambda x: 2*x
     list(map(double, primes))
-    ```
 
-=== "Python - List comprehension"
-
-    ```py
-    primes = [1, 2, 3, 5, 7, 11, 13, 17, 19, 23]
+    # Alternatively: 
     [ 2 * el for el in primes ]
     ```
 
@@ -434,13 +297,8 @@ Such a loop will continuously prompt for valid input, in this case an integer.
                 // Number was too big
             }
         }
-        ```
 
-    === "TryParse"
-
-        The `TryParse()` method does not raise an exception, so additional logic has to be incorporated for data validation:
-
-        ```csharp
+        // Alternatively:
         while (true):
         {
             int option;
@@ -851,9 +709,9 @@ Such a loop will continuously prompt for valid input, in this case an integer.
 
 ### RPG character generator
 
-=== "C++"
+=== "Player class"
 
-    === "Player class"
+    === "C++"   
 
         ```cpp
         #include <string>
@@ -898,39 +756,8 @@ Such a loop will continuously prompt for valid input, in this case an integer.
         void setRace(Race r)        { _race = r;}
         };
         ```
-    === "Subclasses"
-        ```py
-        class Warrior : public Player {
-        public:
-        Warrior(std::string n, Race r) : Player(n, r, 200, 0) {}
-        std::string attack() {return "I will destroy you with my sword, foul demon!";}
-        };
 
-        class Priest : public Player {
-        public:
-        Priest(std::string n, Race r) : Player(n, r, 100, 200) {}
-        std::string attack() {return "Taste the wrath of the Two True Gods!";}
-        };
-
-        class Mage : public Player {
-        public:
-        Mage(std::string n, Race r) : Player(n, r, 150, 150) {}
-        std::string attack() {return "You are overmatched by my esoteric artifices!";}
-        };
-        ```
-    === "Race"
-        ```cpp
-        enum Race { 
-            HUMAN, 
-            ELF, 
-            DWARF
-        };
-        ```
-
-
-=== "Python" 
-
-    === "Base class"
+    === "Python"
 
         ```py
         class Player():
@@ -959,302 +786,397 @@ Such a loop will continuously prompt for valid input, in this case an integer.
             def attack(self):
                 return "Have at thee!"
         ```
-    === "Subclasses"
+
+=== "Subclasses"
+
+    === "C++"
+
+        ```cpp
+        class Warrior : public Player {
+        public:
+        Warrior(std::string n, Race r) : Player(n, r, 200, 0) {}
+        std::string attack() {return "I will destroy you with my sword, foul demon!";}
+        };
+
+        class Priest : public Player {
+        public:
+        Priest(std::string n, Race r) : Player(n, r, 100, 200) {}
+        std::string attack() {return "Taste the wrath of the Two True Gods!";}
+        };
+
+        class Mage : public Player {
+        public:
+        Mage(std::string n, Race r) : Player(n, r, 150, 150) {}
+        std::string attack() {return "You are overmatched by my esoteric artifices!";}
+        };
+        ```
+
+    === "Python"
+
         ```py
         class Warrior(Player):
-            """
-            Implementation of Player with 200 HP and 0 MP
-            """
             def __init__(self, name : str, race: Race):
                 super().__init__(name, race, 200, 0)
-            
             def attack(self):
                 return "I will destroy with my sword, foul demon!"
 
         class Priest(Player):
-            '''
-            Implementation of Player with 100 HP and 200 MP
-            '''
             def __init__(self, name: str, race: Race):
                 super().__init__(name, race, 100, 200)
             def attack(self):
                 return "Taste the wrath of the Two True Gods!"
 
         class Mage(Player):
-            '''
-            Implementation of Player with 150 HP and 150 MP
-            '''
             def __init__(self, name:str, race:Race):
                 super().__init__(name, race, 150, 150)
-
             def attack(self):
                 return "You are overmatched by my esoteric artifices!"
         ```
-    === "Race"
+
+=== "Race"
+
+    === "C++"
+
+        ```cpp
+        enum Race { 
+            HUMAN, 
+            ELF, 
+            DWARF
+        };
+        ```
+
+    === "Python"
+    
         ```py
         import enum
 
         class Race(enum.Enum):
             HUMAN = enum.auto(),
             ELF = enum.auto(),
-            DWARF = enum.auto(),
+            DWARF = enum.auto()
         ```
+
 
 
 ### Starships
 
 This demonstration project provides a scenario for implementing OOP and TDD principles in a variety of languages and implementations.
 
-**Captain** and **Starship** are simple classes with intuitive properties and fields.
+**Oficer** and **Starship** are simple classes with intuitive properties and fields.
 The **StarshipClass** enum defines the available starship types.
 **Fleet** serves as a container for Starships.
+
+
+
+=== "Officer"
+
+    === "C#"
+
+        ```csharp
+        public interface IOfficer
+        {
+            string FirstName { get; set; }
+            string LastName { get; set; }
+            DateTime BirthDate { get; set; }
+            char Grade { get; set; }
+            string Name { get; }
+        }
+
+        public class Officer : IOfficer
+        {
+            public string FirstName { get; set; }
+            public string LastName { get; set; }
+            public DateTime BirthDate { get; set; }
+            public string Name { get { return $"{FirstName} {LastName}"; } }
+            public char Grade { get; set; }
+        }
+        ```
+
+
+    === "PowerShell"
+
+        ```powershell
+        class Captain
+        {
+            [string]$FirstName
+            [string]$LastName
+            [DateTime]$BirthDate
+
+            Captain([string]$n1 [string]$n2)
+            {
+                $this.FirstName = $n1
+                $this.LastName = $n2
+            }
+
+            [string]Name() { return "$($this.FirstName) $($this.LastName)" }
+        }
+        ```
+
+    === "C++"
+
+        ```cpp
+        #include <string>
+
+        class Officer
+        {
+        private: 
+            std::string _firstName {};
+            std::string _lastName {};
+            
+            std::string Name() { return _firstName + _lastName; }
+        }
+        ```
+
+    === "Python"
+
+=== "Starship"
+
+    === "C#"
+
+        ```csharp
+        public interface IStarship
+        {
+            string Name { get; set; }
+            string Registry { get; set; }
+            int Crew { get; set; }
+            StarshipClass StarshipClass { get; set; }
+            IOfficer Captain { get; set; }
+        }
+
+        public class Starship : IStarship
+        {
+            public string Name { get; set; }
+            public string Registry { get; set; }
+            public int Crew { get; set; }
+            public StarshipClass StarshipClass { get; set; }
+            public IOfficer Captain { get; set; }
+
+        }
+        ```
+
+    === "PowerShell"
+
+    === "C++"
+
+        ```cpp
+        class Starship
+        {
+        private:
+            std::string _name{};
+            std::string _reg{};
+            StarshipClass _starshipclass{};
+            int _crew{};
+
+        public:
+            Starship() = default;
+            Starship(std::string n, std::string r, StarshipClass cls) : _name {n}, _reg {r}, _starshipclass {cls} {};
+            ~Starship() = default;
+            int getCrew()             { return _crew; }
+            std::string getName()     { return _name; }
+            std::string getRegistry() { return _reg; }
+            std::string getClass();
+        };
+
+        std::string Starship::getClass() 
+        {
+            switch (_starshipclass)
+            {
+                case 2:
+                    return "Constitution";
+                    break;
+                
+                default:
+                    return "Other";
+                    break;
+            }
+        }
+
+        #endif // STARSHIP_H
+        ```
+
+    === "Python"
+
+        ```py
+        class Starship:
+            def __init__(
+                self,
+                name=None,
+                starshipclass: StarshipClass = StarshipClass.NX,
+                registry=None,
+                crew=0,
+            ):
+                self.name = name
+                self.registry = registry
+                self._crew = crew
+                self.crew_on_leave = 0
+                self._starshipclass = starshipclass
+
+            @property
+            def crew(self):
+                return self._crew
+
+            @crew.setter
+            def crew(self, crew: int):
+                if crew < 0:
+                    raise Exception
+                else:
+                    self._crew = crew
+
+            @property
+            def starshipclass(self):
+                return self._starshipclass
+
+            @starshipclass.setter
+            def starshipclass(self, starshipclass: StarshipClass):
+                if starshipclass not in StarshipClass:
+                    raise Exception
+                else:
+                    self._starshipclass = starshipclass
+        ```
+
+
+=== "StarshipClass"
+
+    === "C#"
+
+        ```csharp
+        public enum StarshipClass
+        {
+            NX,
+            GALAXY,
+            CONSTITUTION,
+            SOVEREIGN,
+            DEFIANT,
+            INTREPID,
+            MIRANDA
+        }
+        ```
+
+    === "PowerShell"
+
+    === "C++"
+
+        ```cpp
+        enum StarshipClass 
+        {
+            NX = 0
+            GALAXY = 1,
+            CONSTITUTION = 2,
+            SOVEREIGN = 3,
+            DEFIANT = 4
+            INTREPID = 5
+            MIRANDA = 6
+        };
+        ```
+
+    === "Python"
+
+        ```py
+        from enum import Enum
+        class StarshipClass(Enum):
+            NX = 'NX'
+            GALAXY = 'Galaxy'
+            CONSTITUTION = 'Constitution'
+            SOVEREIGN = 'Sovereign'
+            DEFIANT = 'Defiant'
+            INTREPID = 'Intrepid'
+            MIRANDA = 'Miranda'
+        ```
+
+
 
 A Captain is paired with a Starship to form a **StarshipDeployment**.
 And the **CaptainSelector** class is passed to StarshipDeployment by dependency injection.
 
-#### Captain
+**CaptainSelector** evaluates whether the Officer provided has what it takes to ply the inky black.
+This boils down to a check on the Grade property, which is simple to test in testing frameworks where a mocked Officer object can be set up with unsatisfactory Grade values.
 
-=== "PowerShell"
-
-    ```powershell
-    class Captain
-    {
-        [string]$FirstName
-        [string]$LastName
-        [DateTime]$BirthDate
-
-        Captain([string]$n1 [string]$n2)
-        {
-            $this.FirstName = $n1
-            $this.LastName = $n2
-        }
-
-        [string]Name() { return "$($this.FirstName) $($this.LastName)" }
-    }
-    ```
 
 === "C#"
 
     ```csharp
-    using System; 
-
-    public class Captain
+    public class CaptainSelector
     {
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public DateTime BirthDate { get; set; }
-        public string Name {
-            get { return $"{FirstName} {LastName}"; }
-        }
-    }
-    ```
+        public IOfficer Officer { get; set; }
 
-=== "C++"
-
-    ```cpp
-    #include <string>
-
-    class Captain
-    {
-        private: _firstName {};
-        private: _lastName {};
-        
-        std::string Name() { return _firstName + _lastName; }
-    }
-    ```
-
-#### Starship
-
-=== "C++"
-
-    ```cpp
-    class Starship
-    {
-    private:
-        std::string _name{};
-        std::string _reg{};
-        StarshipClass _starshipclass{};
-        int _crew{};
-
-    public:
-        Starship() = default;
-        Starship(std::string n, std::string r, StarshipClass cls) : _name {n}, _reg {r}, _starshipclass {cls} {};
-        ~Starship() = default;
-        int getCrew()             { return _crew; }
-        std::string getName()     { return _name; }
-        std::string getRegistry() { return _reg; }
-        std::string getClass();
-    };
-
-    std::string Starship::getClass() 
-    {
-        switch (_starshipclass)
+        public CaptainSelector(IOfficer officer)
         {
-            case 2:
-                return "Constitution";
-                break;
-            
-            default:
-                return "Other";
-                break;
+            Officer = officer;
+        }
+        public bool Evaluate()
+        {
+            return Officer.Grade == 'A' ? true : false;
         }
     }
-
-    #endif // STARSHIP_H
     ```
 
-=== "Python"
 
-    ```py
-    class Starship:
-        def __init__(
-            self,
-            name=None,
-            starshipclass: StarshipClass = StarshipClass.NX,
-            registry=None,
-            crew=0,
-        ):
-            self.name = name
-            self.registry = registry
-            self._crew = crew
-            self.crew_on_leave = 0
-            self._starshipclass = starshipclass
 
-        @property
-        def crew(self):
-            return self._crew
+**StarshipValidator** makes a few key checks on the Starship object that is passed in upon instantiation.
+These checks provide opportunities to mock Starship and Officer objects.
 
-        @crew.setter
-        def crew(self, crew: int):
-            if crew < 0:
-                raise Exception
-            else:
-                self._crew = crew
+- `IsCaptained()` checks if the Starship has a Captain assigned
+- `ValidateRegistry()` makes sure the Starship's registry number begins with NCC or NX
+- `Evaluate()` runs all the other methods in the class and returns True only if all checks pass.
 
-        @property
-        def starshipclass(self):
-            return self._starshipclass
+=== "C#"
 
-        @starshipclass.setter
-        def starshipclass(self, starshipclass: StarshipClass):
-            if starshipclass not in StarshipClass:
-                raise Exception
-            else:
-                self._starshipclass = starshipclass
-
-        def __add__(self, other):
-            output = Fleet()
-            output.append(self)
-            return output + other
-
-        def __repr__(self):
-            return (
-                f"Starship({self.name}, {self.starshipclass}, {self.registry}, {self.crew})"
-            )
-
-        def __iter__(self):
-            yield self.name
-            yield self.registry
-            yield self.crew
-
-        def drydock(self):
-            self.crew_on_leave = self.crew - 10
-            self.crew = 10
-
-        def disembark(self):
-            self.crew += self.crew_on_leave
-            self.crew_on_leave = 0
-
-        def report(self):
-            output = f"{self.name}'s crew is {self.crew} souls with {self.crew_on_leave} on leave!"
-            print(output)
-    ```
-
-#### Fleet
-
-=== "Python"
-
-    ```py
-    class Fleet:
-        def __init__(self, name=None):
-            self.name = name
-            self.ships = []
-
-        def append(self, *args):
-            for arg in args:
-                if type(arg) == Starship:
-                    self.ships.append(arg)
-                else:
-                    continue
-
-        def __add__(self, other):
-            from copy import deepcopy
-
-            output = deepcopy(self)
-            if type(other) is Starship:
-                output.append(other)
-                return output
-            elif type(other) is fleet:
-                raise NotImplementedError
-            else:
-                raise NotImplementedError
-
-        def __iadd__(self, other):
-            self.append(other)
-            return self
-
-        def __len__(self):
-            return len(self.ships)
-
-        def roster(self):
-            return [[ship.name, ship.registry, ship.crew] for ship in self.ships]
-
-        def __iter__(self):
-            for ship in self.ships:
-                yield list(ship)
-
-        def __str__(self):
-            from tabulate import tabulate
-
-            return tabulate(
-                [[ship.name, ship.registry, ship.crew] for ship in self.ships],
-                headers=["Name", "Registry", "Crew"],
-                tablefmt="plain",
-            )
-    ```
-
-#### StarshipClass
-
-=== "C++"
-
-    ```cpp
-    enum StarshipClass 
+    ```csharp
+    public class StarshipValidator : IStarshipValidator
     {
-        Galaxy = 1,
-        Constitution = 2,
-        NX = 3,
-        Intrepid = 4
-    };
+        public IStarship Starship { get; set; }
+
+        public bool IsCaptained()
+        {
+            return Starship.Captain != null ? true : false;
+        }
+
+        public bool ValidateRegistry()
+        {
+            return Starship.Registry.StartsWith("NCC") || Starship.Registry.StartsWith("NX") ? true : false;
+        }
+
+        public bool Evaluate()
+        {
+            return ValidateRegistry() && IsCaptained();
+        }
+    }
     ```
 
-=== "Python"
 
-    ```py
-    from enum import Enum
+**StarshipDeployment** takes a [StarshipValidator](#starshipvalidator) object by dependency injection, which it uses to perform checks on a given Starship upon invocation of `Deploy`, which returns a StarshipMission object.
+This provides the opportunity to test a mocked validator for invocation of the `Evaluate()` method.
 
-    class StarshipClass(Enum):
-    NX = 'NX'
-    GALAXY = 'Galaxy'
-    CONSTITUTION = 'Constitution'
-    SOVEREIGN = 'Sovereign'
-    DEFIANT = 'Defiant'
-    INTREPID = 'Intrepid'
-    MIRANDA = 'Miranda'
+=== "C#"
 
-    
-    def __repr__(self):
-        return self.value
+    ```csharp
+    public class StarshipDeployment
+    {
+        public IStarshipValidator StarshipValidator { get; set; }
+
+        public StarshipDeployment(IStarshipValidator validator)
+        {
+            StarshipValidator = validator ?? throw new ArgumentNullException(nameof(validator));
+        }
+
+        public bool ValidateDestination(string destination)
+        {
+            return destination.Length > 1 ? true : false;
+        }
+
+        public StarshipMission Deploy(Starship starship, string destination)
+        {
+            bool destinationValidated = ValidateDestination(destination);
+            bool starshipValidated = StarshipValidator.Evaluate();
+
+            return destinationValidated && starshipValidated
+                ? new StarshipMission { Starship = starship as Starship, Destination = destination }
+                : throw new ArgumentException();
+        }
+    }
     ```
+
+
 
 ## Web frameworks
 
@@ -1277,134 +1199,194 @@ A strict unit test should run entirely in memory and not have any dependencies o
 Each **test case** should exercise a unit of code and check if it works correctly.
 A **test runner** runs many test cases and reports the results.
 A **test suite** refers to a collection of test cases executed by a test runner. 
+A **test fixture** is code that supports a test case by setting up data, implementing the Arrange step.
 ([src](https://app.pluralsight.com/course-player?clipId=fa55af11-913d-4171-a2b0-db9f75f249e1))
 
 Test case names are typically verbose and descriptive about what is being tested. 
 ([src](https://app.pluralsight.com/course-player?clipId=d0ba9a90-d356-4db2-b021-4a590d605894))
 
-=== "C#"
+A **spike** is an experiment without tests to ensure that an idea will work. Once the spike succeeds, the spike code is thrown away and the logic is recreated following TDD, starting with tests.
 
-    ```csharp
-    using System;
-    using Xunit;
-    using Starships;
 
-    public class StarshipTests
-    {
-        [Fact]
-        public void StarshipIsValid()
+
+
+
+
+=== "Starship"
+
+    === "C#"
+
+        ```csharp
+        public class StarshipShould
         {
-            name = "USS Enterprise";
-            registry = "NCC-1701";
-            crew = 203;
-            var enterprise = new Starship {Name=name, Registry=registry, Crew=crew};
-            Assert.Equal(enterprise.Name,name);
-            Assert.Equal(enterprise.Registry,registry);
-            Assert.Equal(enterprise.Crew,crew);
+
+            [Theory]
+            [InlineData("USS Enterprise","NCC-1701",203)]
+            [InlineData("USS Constitution","NCC-1700",204)]
+            [InlineData("USS Voyager","NCC-74656",141)]
+            [InlineData("USS Defiant","NX-74205",50)]
+            [InlineData("USS Enterprise","NCC-1701-D",1000)]
+            public void BeValid(string name, string registry, int crew)
+            {
+                var starship = new Starship{Name=name,Registry=registry,Crew=crew};
+                Assert.Equal(starship.Name,name);
+                Assert.Equal(starship.Registry,registry);
+                Assert.Equal(starship.Crew,crew);
+            }
         }
-    }
-    ```
+        ```
 
-=== "Python (unittest)"
+    === "Python"
 
-    ```py
-    import unittest
-    from starships import Starship,StarshipClass,Fleet
+        ```py
+        import pytest
+        from starships import Starship,StarshipClass,Fleet
 
+        @pytest.fixture
+        def enterprise():
+            return Starship("USS Enterprise","NCC-1701",StarshipClass.CONSTITUTION)
 
-    class FleetTest(unittest.TestCase):
-        def test_lookup_by_name(self):
-            fleet = Fleet()
-            fleet.add(Starship("USS Enterprise","NCC-1701",StarshipClass.CONSTITUTION))
-            registry=fleet.lookup("USS Enterprise")
-            self.assertEqual("NCC-1701",registry)
-    ```
-
-=== "Python (Pytest)"
-
-    ```py
-    import pytest
-    from starships import Starship,StarshipClass,Fleet
-
-    @pytest.fixture
-    def enterprise():
-        return Starship("USS Enterprise","NCC-1701",StarshipClass.CONSTITUTION)
-
-    def test_lookup_by_name(enterprise):
-        starfleet = Fleet()
-        starfleet.add(enterprise)
-        assert starfleet.lookup(enterprise.name) == enterprise
-    ```
+        def test_lookup_by_name(enterprise):
+            starfleet = Fleet()
+            starfleet.add(enterprise)
+            assert starfleet.lookup(enterprise.name) == enterprise
+        ```
 
 
-### Parameterized test cases
+=== "Fleet"
 
-=== "C#"
+    === "Python"
 
-    ```csharp
-    using System;
-    using Xunit;
-    using Starships;
+        === "unittest"
 
-    public class StarshipTests
-    {
-        [Theory]
-        [InlineData("USS Enterprise","NCC-1701",203)]
-        [InlineData("USS Constitution","NCC-1700",204)]
-        [InlineData("USS Voyager","NCC-74656",141)]
-        [InlineData("USS Defiant","NX-74205",50)]
-        [InlineData("USS Enterprise","NCC-1701-D",1000)]
+            ```py
+            import unittest
+            from starships import Starship, StarshipClass, Fleet
 
-        public void StarshipsAreValid(string name, string registry, int crew)
+
+            class FleetTest(unittest.TestCase):
+                def setUp(self):
+                    self.fleet = Fleet()
+
+                def tearDown(self) -> None:
+                    super().tearDown()
+
+                def test_lookup_by_name(self):
+                    self.fleet.add(
+                        Starship("USS Enterprise", "NCC-1701", StarshipClass.CONSTITUTION)
+                    )
+                    ent = self.fleet.lookup("USS Enterprise")
+                    self.assertEqual("NCC-1701", ent.registry)
+
+                def test_missing_name(self):
+                    with self.assertRaises(KeyError):
+                        self.fleet.lookup("bla")
+            ```
+
+=== "CaptainSelector"
+
+    === "C#"
+
+        ```csharp
+        public class CaptainSelectorShould
         {
-            var starship = new Starship{Name=name,Registry=registry,Crew=crew};
-            Assert.Equal(starship.Name,name);
-            Assert.Equal(starship.Registry,registry);
-            Assert.Equal(starship.Crew,crew);
+            [Theory]
+            [InlineData('B')]
+            [InlineData('C')]
+            [InlineData('D')]
+            [InlineData('F')]
+            public void OnlyAssignGoodCaptains(char grade)
+            {
+                var mockOfficer = new Mock<IOfficer>();
+                mockOfficer.Setup(x => x.Grade).Returns(grade);
+
+                CaptainSelector captainSelector = new CaptainSelector(mockOfficer.Object);
+                bool selectionResult = captainSelector.Evaluate();
+                Assert.False(selectionResult);
+            }
         }
-    }
-    ```
+        ```
 
-### Fixture
+=== "StarshipValidator"
 
-A **test fixture** is code that supports a test case by implementing the **Arrange** step.
+    === "C#"
 
-=== "Python"
+        ```csharp
+        public class StarshipValidatorShould
+        {
+            [Theory]
+            [InlineData("Jean-Luc Picard", 2305, 7, 13)]
+            [InlineData("James Kirk", 2233, 3, 22)]
+            public void ValidateCaptainedStarships(string n, params int[] dob)
+            {
+                var mockStarship = new Mock<IStarship>();
+                Captain captain = new Captain(n,new DateTime(dob[0], dob[1], dob[2]));
+                mockStarship.Setup(x => x.Captain).Returns(captain);
 
-    ```py
-    import unittest
-    from starships import Starship, StarshipClass, Fleet
+                StarshipValidator starshipValidator = new StarshipValidator(mockStarship.Object);
+                Assert.True(starshipValidator.IsCaptained());
+            }
 
+            [Theory]
+            [InlineData("USS Enterprise","NCC-1701",203)]
+            [InlineData("USS Constitution","NCC-1700",204)]
+            [InlineData("USS Voyager","NCC-74656",141)]
+            [InlineData("USS Defiant","NX-74205",50)]
+            [InlineData("USS Enterprise","NCC-1701-D",1000)]
+            public void ValidateStarshipsWithValidRegistryNumbers(string name, string registry, int crew)
+            {
+                var starship = new Starship{Name =name, Registry =registry,Crew= crew};
+                StarshipValidator starshipValidator = new StarshipValidator(starship);
+                Assert.True(starshipValidator.ValidateRegistry());
+            }
+        }
+        ```
 
-    class FleetTest(unittest.TestCase):
-        def setUp(self):
-            self.fleet = Fleet()
+=== "StarshipDeployment"
 
-        def tearDown(self) -> None:
-            super().tearDown()
+    === "C# Test (xUnit)"
 
-        def test_lookup_by_name(self):
-            self.fleet.add(
-                Starship("USS Enterprise", "NCC-1701", StarshipClass.CONSTITUTION)
-            )
-            ent = self.fleet.lookup("USS Enterprise")
-            self.assertEqual("NCC-1701", ent.registry)
+        ```csharp
+        public class StarshipDeploymentShould
+        {
+            [Fact]
+            public void ThrowOnNullValidator()
+            {
+                var sut = new StarshipDeployment(null);
+                Assert.Throws<ArgumentNullException>(sut);
+            }        
+            
+            [Theory]
+            [InlineData("Betelgeuse")]
+            public void EvaluateStarship(string destination)
+            {
+                var mockValidator = new Mock<IStarshipValidator>();
+                mockValidator.Setup(x => x.Evaluate()).Returns(true);
 
-        def test_missing_name(self):
-            with self.assertRaises(KeyError):
-                self.fleet.lookup("bla")
-    ```
+                var mockStarship = new Mock<IStarship>();
 
-### Mocking
-
-Mock objects include a variety of concepts that together comprise a taxonomy of Test Doubles (generically called **mocks**) used to facilitate unit testing by replacing a production object, usually a data dependency: ([src](https://app.pluralsight.com/course-player?clipId=ee56caf3-8cde-4298-8c06-e74241c72023))
-
-- **Fakes** provide a working implementation of the dependency, however one which is unsuitable for production (e.g. in-memory databases)
-- **Dummies** are passed around like real implementations but never accessed or used.  These are used to satisfy the parameters of a method.
-- **Stubs** can provide answers to calls in the form of property gets and method return values.
-- **Mocks** allow the tester to verify that a property or method was called.
+                var sut = new StarshipDeployment(mockValidator.Object as IStarshipValidator);
+                sut.Deploy(mockStarship.Object as Starship, destination);
+                mockValidator.Verify(x => x.Evaluate());
+            }
+        }
+        ```
 
 ## Glossary
+
+
+#### C
+
+> "A programming language is low level when its programs require attention to the irrelevant." -Alan Perlis
+
+Despite C's reputation as a low-level programming language, in fact it merely emulates the ancient PDP-11, which is the only machine for which its abstract machine can be described as "close to the metal". 
+In the age of parallel processes, C's serial nature...
+
+Sources:
+
+- [C is not a low-level programming language](https://queue.acm.org/detail.cfm?id=3212479)
+
+
 
 #### Enumeration
 
@@ -1416,17 +1398,135 @@ In C# the term **enumeration** refers to the process of successively returning i
 Both languages feature a keyword that allows a subclass to access its direct parent.
 Whereas in Python the terms **superclass** and **subclass** are used, in C# the terms **base class** and **derived class** are preferred.
 
+#### Go
+
+Golang or "**Go**" is a fast, high-performance, open-source, statically-typed compiled programming language. It was designed at Google by Rob Pike, Robert Giesemer, and Ken Thompson and first appeared in late 2009. Go has a syntax similar to C, but offers additional features such as memory safety, garbage collection, and others. [[2](#sources)]\
+Hello world
+```go
+package main
+import "fmt"
+func main() {
+  fmt.Println("Hello, Go World!")
+}
+```
+Compile code [[3](#sources)]
+```sh
+go build script.go # compiles to a binary executable in the same directory named "script"
+go run script.go   # compiles and runs the program
+```
+
+Mathematical function [[3](#sources)]
+```go
+package main
+
+import ("fmt" "math")
+
+func main() {
+  fmt.Println(math.Max(9, 5))
+}
+```
+Get a GitHub package named `$REPO` by `$AUTHOR`
+```sh
+go get github.com/$AUTHOR/$REPO
+go get gopkg.in/kyokomi/emoji.v1 # Emoji support
+```
+Evaluate type of data
+```go
+package main
+import ("fmt" "reflect")
+func main() {
+  fmt.Println(reflect.TypeOf(1))        # => int
+  fmt.Println(reflect.TypeOf(9.5))      # => float64
+  fmt.Println(reflect.TypeOf("string")) # => string
+  fmt.Println(reflect.TypeOf(true))     # => bool
+}
+```
+
+Sources:
+
+- [Go language for beginners in 16 parts](https://dzone.com/articles/go-language-for-beginners-in-16-parts)
+
+
+
+
 #### Loop unswitching
 
 One of the core optimizations that a C compiler performs; transforms a loop containing a conditional into a conditional with a loop in both parts, which changes flow control
+
+#### Mock
+
+**Mock objects** include a variety of concepts that together comprise a taxonomy of Test Doubles (generically called **mocks**) used to facilitate unit testing by replacing a production object, usually a data dependency: ([src](https://app.pluralsight.com/course-player?clipId=ee56caf3-8cde-4298-8c06-e74241c72023))
+
+- **Fakes** provide a working implementation of the dependency, however one which is unsuitable for production (e.g. in-memory databases)
+- **Dummies** are passed around like real implementations but never accessed or used.  These are used to satisfy the parameters of a method.
+- **Stubs** can provide answers to calls in the form of property gets and method return values.
+- **Mocks** allow the tester to verify that a property or method was called.
 
 #### Register rename engine
 
 Component of modern high-end cores which is one of the largest consumers of die area and power
 
-#### Scalar Replacement Of Aggregates (SROA)
+#### Ruby
 
-One of the core optimizations that a C compiler performs; attempts to replace `struct`s and arrays with fixed lengths with individual variables, which allows the compiler to treat accesses as independent and elide operations entirely if it can prove the results are never visible, which also deletes padding sometimes.
+REPL shell
+```sh
+irb
+```
+Begin a function definition
+```rb
+def
+```
+End a function definition
+```rb
+end
+```
+Import {package}, or 'gem'
+```rb
+require package
+```
+Write given objects to `ios`; writes newline after any that do not already have one
+```rb
+puts(*obj)
+```
+Write given objects to `ios`, with no newline
+```rb
+print(*obj)
+```
+Sort in-place
+```rb
+array.sort()
+```
+
+#### Rust 
+
+- `cargo` Rust's compilation manager, package manager, and general-purpose tool
+- `rustc` Rust compiler, usually invoked by `cargo`
+- `rustdoc` Rust documentation tool
+
+Start a new package directory `hello`
+```sh
+cargo new --bin hello
+```
+Load the locally-stored Rust book "The Rust Programming Language"
+```sh
+rustup doc --book
+```
+
+`->` precedes return data type
+
+`mut` mutable, when preceding variable identifiers, allows their values to be changed
+
+Data types include:
+- `u64` unsigned 64-bit integer
+- `i32` signed 32-bit integer
+- `u8` unsigned 8-bit integer (byte values)
+- `f32` single-precision floating point
+- `f64` double-precision floating point
+
+
+#### Scalar Replacement Of Aggregates
+
+**Scalar Replacement Of Aggregates (SROA)** is one of the core optimizations that a [C](#c) compiler performs; attempts to replace `struct`s and arrays with fixed lengths with individual variables, which allows the compiler to treat accesses as independent and elide operations entirely if it can prove the results are never visible, which also deletes padding sometimes.
 
 #### Segmented architecture
 

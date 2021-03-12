@@ -1067,58 +1067,6 @@ Add a user name and password for user `Mikedan` to access computer `Server01` wi
 cmdkey /add:server01 /user:mikedan /pass:Kleo
 ```
 
-#### diskpart
-<!-- `diskpart` commands -->
-[diskpart active]:    #diskpart '```&#10;C:\> diskpart&#10;DISKPART> ACTIVE&#10;```&#10;On MBR disks, marks the partition with current focus as the active system partition, meaning it is the partition containing the operating system startup files&#10;Stanek, William R. _Microsoft Windows Command-Line_.: 141'
-[diskpart add]:       #diskpart '```&#10;C:\> diskpart&#10;DISKPART> ADD DISK=n&#10;```&#10;Create a mirrored volume on the selected dynamic disk&#10;Stanek, William R. _Microsoft Windows Command-Line_.: 141'
-[diskpart assign]:    #diskpart '```&#10;C:\> diskpart&#10;DISKPART> ASSIGN LETTER=x&#10;DISKPART> ASSIGN MOUNT=path&#10;```&#10;Assign a drive letter or mount point to the selected partition, logical drive, or volume. Takes parameters "LETTER=x" or "MOUNT=path"&#10;Stanek, William R. _Microsoft Windows Command-Line_.: 141'
-[diskpart automount]: #diskpart '```&#10;C:\> diskpart&#10;DISKPART> AUTOMOUNT ENABLE&#10;DISKPART> AUTOMOUNT DISABLE&#10;DISKPART> AUTOMOUNT SCRUB&#10;```&#10;Control whether Windows automatically mounts new basic volumes that are added to the system and assigns them drive letters. Takes parameters "ENABLE", "DISABLE", or "SCRUB"&#10;Stanek, William R. _Microsoft Windows Command-Line_.: 141'
-[diskpart break]:     #diskpart '```&#10;C:\> diskpart&#10;DISKPART> BREAK DISK=n&#10;DISKPART> BREAK DISK=n NOKEEP&#10;```&#10;Break a mirror set. Takes parameter "DISK=n"&#10;Stanek, William R. _Microsoft Windows Command-Line_.: 141'
-[diskpart clean]:     #diskpart '```&#10;C:\> diskpart&#10;DISKPART> CLEAN&#10;DISKPART> CLEAN ALL&#10;```&#10;Remove all partition or volume formatting on the focused disk.&#10;Stanek, William R. _Microsoft Windows Command-Line_.: 141'
-[diskpart convert]:   #diskpart '```&#10;C:\> diskpart&#10;DISKPART> CONVERT BASIC&#10;DISKPART> CONVERT DYNAMIC&#10;DISKPART> CONVERT GPT&#10;DISKPART> CONVERT MBR&#10;```&#10;Convert focused disk to basic/dynamic&#10;Stanek, William R. _Microsoft Windows Command-Line_.: 141'
-[diskpart create]:    #diskpart '```&#10;C:\> diskpart&#10;DISKPART> CREATE PARTITION EFI&#10;DISKPART> CREATE PARTITION EXTENDED&#10;DISKPART> CREATE PARTITION LOGICAL&#10;DISKPART> CREATE PARTITION MSR&#10;DISKPART> CREATE PARTITION PRIMARY&#10;DISKPART> CREATE VOLUME SIMPLE&#10;DISKPART> CREATE VOLUME RAID&#10;DISKPART> CREATE VOLUME STRIPE&#10;```&#10;Create a partition or volume of a specific type&#10;Stanek, William R. _Microsoft Windows Command-Line_.: 141'
-[diskpart delete]:    #diskpart '```&#10;C:\> diskpart&#10;DISKPART> DELETE&#10;```&#10;Delete the focused disk, partition, or volume&#10;Stanek, William R. _Microsoft Windows Command-Line_.: 141'
-[diskpart detail]:    #diskpart '```&#10;C:\> diskpart&#10;DISKPART> DETAIL&#10;```&#10;Provide details about the focused disk, partition, or volume&#10;Stanek, William R. _Microsoft Windows Command-Line_.: 141'
-[diskpart exit]:      #diskpart '```&#10;C:\> diskpart&#10;DISKPART> EXIT&#10;```&#10;Exit the DiskPart interpreter&#10;Stanek, William R. _Microsoft Windows Command-Line_.: 141'
-[diskpart extend]:    #diskpart '```&#10;C:\> diskpart&#10;DISKPART> EXTEND SIZE=n DISK=n&#10;```&#10;Extend the simple volume on the selected disk or span the volume across multiple disks&#10;Stanek, William R. _Microsoft Windows Command-Line_.: 141'
-[diskpart gpt]:       #diskpart '```&#10;C:\> diskpart&#10;DISKPART> GPT ATTRIBUTES=n&#10;```&#10;Change GPT attributes on the focused partition (Windows Server 2003 only)&#10;Stanek, William R. _Microsoft Windows Command-Line_.: 141'
-[diskpart help]:      #diskpart '```&#10;C:\> diskpart&#10;DISKPART> HELP&#10;```&#10;Display a list of commands&#10;Stanek, William R. _Microsoft Windows Command-Line_.: 141'
-[diskpart import]:    #diskpart '```&#10;C:\> diskpart&#10;DISKPART> IMPORT&#10;```&#10;Import a foreign disk&#10;Stanek, William R. _Microsoft Windows Command-Line_.: 141'
-[diskpart inactive]:  #diskpart '```&#10;C:\> diskpart&#10;DISKPART> INACTIVE&#10;```&#10;On MBR disks, mark the focused partition as inactive.&#10;Stanek, William R. _Microsoft Windows Command-Line_.: 141'
-[diskpart list]:      #diskpart '```&#10;C:\> diskpart&#10;DISKPART> LIST DISK&#10;DISKPART> LIST PARTITION&#10;DISKPART> LIST VOLUME&#10;```&#10;Display a list of disks or volumes and information about them, or a list of partitions on the focused disk.&#10;Stanek, William R. _Microsoft Windows Command-Line_.: 141'
-[diskpart online]:    #diskpart '```&#10;C:\> diskpart&#10;DISKPART> ONLINE&#10;```&#10;Bring the selected disk or volume online. Resynchronize the mirrored or focused RAID-5 volume.&#10;Stanek, William R. _Microsoft Windows Command-Line_.: 141'
-[diskpart rem]:       #diskpart '```&#10;C:\> diskpart&#10;DISKPART> REM Lorem ipsum&#10;```&#10;Mark the start of a comment in a DiskPart script&#10;Stanek, William R. _Microsoft Windows Command-Line_.: 141'
-[diskpart remove]:    #diskpart '```&#10;C:\> diskpart&#10;DISKPART> REMOVE LETTER=x&#10;DISKPART> REMOVE MOUNT=path&#10;```&#10;Remove specified drive letter or mount point from the currently selected volume&#10;Stanek, William R. _Microsoft Windows Command-Line_.: 141'
-[diskpart repair]:    #diskpart '```&#10;C:\> diskpart&#10;DISKPART> REPAIR DISK=n&#10;```&#10;Repair the focused RAID-5 volume by replacing the failed volume with the designated dynamic disk (Windows Server 2003 only)&#10;Stanek, William R. _Microsoft Windows Command-Line_.: 141'
-[diskpart rescan]:    #diskpart '```&#10;C:\> diskpart&#10;DISKPART> RESCAN&#10;```&#10;Look for new disks that may have been added to the computer&#10;Stanek, William R. _Microsoft Windows Command-Line_.: 141'
-[diskpart retain]:    #diskpart '```&#10;C:\> diskpart&#10;DISKPART> RETAIN&#10;```&#10;Prepare the selected simple volume to be used as the boot or system volume&#10;Stanek, William R. _Microsoft Windows Command-Line_.: 141'
-[diskpart select]:    #diskpart '```&#10;C:\> diskpart&#10;DISKPART> SELECT&#10;```&#10;Focus specified disk, partition, or volume&#10;Stanek, William R. _Microsoft Windows Command-Line_.: 141'
-
-[`ACTIVE`][diskpart ACTIVE] 
-[`ADD`][diskpart ADD] 
-[`ASSIGN`][diskpart ASSIGN] 
-[`AUTOMOUNT`][diskpart AUTOMOUNT] 
-[`BREAK`][diskpart BREAK] 
-[`CLEAN`][diskpart CLEAN] 
-[`CONVERT`][diskpart CONVERT] 
-[`CREATE`][diskpart CREATE] 
-[`DELETE`][diskpart DELETE] 
-[`DETAIL`][diskpart DETAIL] 
-[`EXIT`][diskpart EXIT] 
-[`EXTEND`][diskpart EXTEND] 
-[`GPT`][diskpart GPT] 
-[`HELP`][diskpart HELP] 
-[`IMPORT`][diskpart IMPORT] 
-[`INACTIVE`][diskpart INACTIVE] 
-[`LIST`][diskpart LIST] 
-[`ONLINE`][diskpart ONLINE] 
-[`REM`][diskpart REM] 
-[`REMOVE`][diskpart REMOVE] 
-[`REPAIR`][diskpart REPAIR] 
-[`RESCAN`][diskpart RESCAN] 
-[`RETAIN`][diskpart RETAIN] 
-[`SELECT`][diskpart SELECT] 
-
 #### [dism](https://docs.microsoft.com/en-us/windows-hardware/manufacture/desktop/dism-image-management-command-line-options-s14)
 
 [dism.exe /Add-Driver]: #dism.exe '```&#10;C:\>dism.exe /Add-Driver&#10;```&#10;&#10;Equivalent to `Add-WindowsDriver`&#10;Sobell, Mark. _Practical Guide to Linux_. 2017.: 77'

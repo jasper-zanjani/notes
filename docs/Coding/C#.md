@@ -1044,12 +1044,17 @@ public class TestCases
 Assertions that an exception must be thrown are generic method calls typed to the specific exception.
 
 ```csharp
-[Fact]
-public void ShouldThrowExceptionIfRequestIsNull()
+public class StarshipDeploymentShould
 {
-    Assert.Throws<ArgumentNullException>(() => processor.BookDesk(null));
+    [Fact]
+    public void ThrowOnNullValidator()
+    {
+        var sut = new StarshipDeployment(null);
+        Assert.Throws<ArgumentNullException>(sut);
+    }
 }
 ```
+
 
 **Test fixtures** can be formed on properties of the main test class.
 They must be initialized with the test class's constructor.
@@ -1179,6 +1184,14 @@ namespace MathTests
 }
 ```
 
+The xUnit test-runner can be modified using a JSON file named xunit.runner.json. This file must be copied to the output directory by selecting "Copy if newer" in the file's properties.
+
+This example will display the method names only, rather than the fully-qualified dotted name with namespace and class.
+```json
+{
+    "methodDisplay": "method"
+}
+```
 
 ### Moq
 
@@ -1229,6 +1242,91 @@ The mock object exposes an `Object` property that can be used to test assertions
 ```csharp
 Assert.Equal(mock.Object.Property, value)
 ```
+
+A mock object's **`Verify`** is used to verify that a mocked method was called by the system under test.
+Verification is specific to the parameters of the mocked method call, and argument matching is available just as it is for setting up mocked methods.
+
+Here, the mocked validator, which is passed in to the SUT by dependency injection, must make a call to the validator's `Evaluate()` method.
+If the call is removed, the test will fail ("Expected invocation on the mock at least once, but was never performed...").
+
+An overload of the `Verify` method also allows a custom error message to be specified.
+Another overload can ensure that the mocked method was **not** called, by passing `Times.None` after the lambda.
+The Times struct exposes other members like `AtLeastOnce` and `Between` that can specify any imaginable number or range of invocations.
+
+=== "Test"
+
+    ```csharp
+    public class StarshipDeploymentShould
+    {
+        [Theory]
+        [InlineData("Betelgeuse")]
+        public void EvaluateStarship(string destination)
+        {
+            var mockValidator = new Mock<IStarshipValidator>();
+            mockValidator.Setup(x => x.Evaluate()).Returns(true);
+
+            var mockStarship = new Mock<IStarship>();
+
+            var sut = new StarshipDeployment(mockValidator.Object as IStarshipValidator);
+            sut.Deploy(mockStarship.Object as Starship, destination);
+            mockValidator.Verify(x => x.Evaluate());
+        }
+    }
+    ```
+
+=== "Custom error message"
+
+    ```csharp
+    public class StarshipDeploymentShould
+    {
+        [Theory]
+        [InlineData("Betelgeuse")]
+        public void EvaluateStarship(string destination)
+        {
+            var mockValidator = new Mock<IStarshipValidator>();
+            mockValidator.Setup(x => x.Evaluate()).Returns(true);
+
+            var mockStarship = new Mock<IStarship>();
+
+            var sut = new StarshipDeployment(mockValidator.Object as IStarshipValidator);
+            sut.Deploy(mockStarship.Object as Starship, destination);
+            mockValidator.Verify(x => x.Evaluate(), "Starships should be validated");
+        }
+    }
+    ```
+
+=== "SUT"
+
+    ```csharp
+    public class StarshipDeployment
+    {
+        public IStarshipValidator StarshipValidator { get; set; }
+
+        public StarshipDeployment(IStarshipValidator validator)
+        {
+            StarshipValidator = validator ?? throw new ArgumentNullException(nameof(validator));
+        }
+
+        public bool ValidateDestination(string destination)
+        {
+            return destination.Length > 1 ? true : false;
+        }
+
+        public StarshipMission Deploy(Starship starship, string destination)
+        {
+            bool destinationValidated = ValidateDestination(destination);
+            bool starshipValidated = StarshipValidator.Evaluate();
+
+            return destinationValidated && starshipValidated
+                ? new StarshipMission { Starship = starship as Starship, Destination = destination }
+                : throw new ArgumentException();
+        }
+    }
+    ```
+
+A mocked method can also be setup to throw an exception with the **`Throw<Exception>()`** method, a generic method that takes an Exception type.
+
+
 
 ### Application design
 
@@ -1468,6 +1566,12 @@ NuGet package dependencies are specified using `PackageReference` element, also 
         <PackageReference Include="xunit" Version="2.4.0"/>
     </ItemGroup>
     ```
+
+Adding a reference to another project is easily accomplished from the command-line.
+
+```sh
+dotnet add project /path/to/project.csproj
+```
 
 
 

@@ -1,66 +1,68 @@
 # ⚓ Containers
 
+## Docker
+
 Docker **repositories** are associated with a single image, various versions of which can be specified with a **tag**.
 
 **Docker Desktop** is Docker's runtime for Windows which Docker integrates with WSL 2 since June 2019. Docker traditionally distributed its own Linux kernel to use with **Docker Desktop**.
 
-[attach][docker attach][:link:][docker:attach] 
-[build][docker build][:link:][docker:build] 
-[builder][docker builder][:link:][docker:builder] 
-[checkpoint][docker checkpoint][:link:][docker:checkpoint] 
-[commit][docker commit][:link:][docker:commit] 
-[config][docker config][:link:][docker:config] 
-[container][docker container][:link:][docker:container] 
-[context][docker context][:link:][docker:context] 
-[cp][docker cp][:link:][docker:cp] 
-[create][docker create][:link:][docker:create] 
-[diff][docker diff][:link:][docker:diff] 
-[events][docker events][:link:][docker:events] 
-[exec][docker exec][:link:][docker:exec] 
-[export][docker export][:link:][docker:export] 
-[history][docker history][:link:][docker:history] 
-[image][docker image][:link:][docker:image] 
-[images][docker images][:link:][docker:images] 
-[import][docker import][:link:][docker:import] 
-[info][docker info][:link:][docker:info] 
-[inspect][docker inspect][:link:][docker:inspect] 
-[kill][docker kill][:link:][docker:kill] 
-[load][docker load][:link:][docker:load] 
-[login][docker login][:link:][docker:login] 
-[logout][docker logout][:link:][docker:logout] 
-[logs][docker logs][:link:][docker:logs] 
-[manifest][docker manifest][:link:][docker:manifest] 
-[network][docker network][:link:][docker:network] 
-[node][docker node][:link:][docker:node] 
-[pause][docker pause][:link:][docker:pause] 
-[plugin][docker plugin][:link:][docker:plugin] 
-[port][docker port][:link:][docker:port] 
-[ps][docker ps][:link:][docker:ps] 
-[pull][docker pull][:link:][docker:pull] 
-[push][docker push][:link:][docker:push] 
-[rename][docker rename][:link:][docker:rename] 
-[restart][docker restart][:link:][docker:restart] 
-[rm][docker rm][:link:][docker:rm] 
-[rmi][docker rmi][:link:][docker:rmi] 
-[run][docker run][:link:][docker:run] 
-[save][docker save][:link:][docker:save] 
-[search][docker search][:link:][docker:search] 
-[secret][docker secret][:link:][docker:secret] 
-[service][docker service][:link:][docker:service] 
-[stack][docker stack][:link:][docker:stack] 
-[start][docker start][:link:][docker:start] 
-[stats][docker stats][:link:][docker:stats] 
-[stop][docker stop][:link:][docker:stop] 
-[swarm][docker swarm][:link:][docker:swarm] 
-[system][docker system][:link:][docker:system] 
-[tag][docker tag][:link:][docker:tag] 
-[top][docker top][:link:][docker:top] 
-[trust][docker trust][:link:][docker:trust] 
-[unpause][docker unpause][:link:][docker:unpause] 
-[update][docker update][:link:][docker:update] 
-[version][docker version][:link:][docker:version] 
-[volume][docker volume][:link:][docker:volume] 
-[wait][docker wait][:link:][docker:wait] 
+[attach][docker attach] [📄][docker:attach] 
+[build][docker build] [📄][docker:build] 
+[builder][docker builder] [📄][docker:builder] 
+[checkpoint][docker checkpoint] [📄][docker:checkpoint] 
+[commit][docker commit] [📄][docker:commit] 
+[config][docker config] [📄][docker:config] 
+[container][docker container] [📄][docker:container] 
+[context][docker context] [📄][docker:context] 
+[cp][docker cp] [📄][docker:cp] 
+[create][docker create] [📄][docker:create] 
+[diff][docker diff] [📄][docker:diff] 
+[events][docker events] [📄][docker:events] 
+[exec][docker exec] [📄][docker:exec] 
+[export][docker export] [📄][docker:export] 
+[history][docker history] [📄][docker:history] 
+[image][docker image] [📄][docker:image] 
+[images][docker images] [📄][docker:images] 
+[import][docker import] [📄][docker:import] 
+[info][docker info] [📄][docker:info] 
+[inspect][docker inspect] [📄][docker:inspect] 
+[kill][docker kill] [📄][docker:kill] 
+[load][docker load] [📄][docker:load] 
+[login][docker login] [📄][docker:login] 
+[logout][docker logout] [📄][docker:logout] 
+[logs][docker logs] [📄][docker:logs] 
+[manifest][docker manifest] [📄][docker:manifest] 
+[network][docker network] [📄][docker:network] 
+[node][docker node] [📄][docker:node] 
+[pause][docker pause] [📄][docker:pause] 
+[plugin][docker plugin] [📄][docker:plugin] 
+[port][docker port] [📄][docker:port] 
+[ps][docker ps] [📄][docker:ps] 
+[pull][docker pull] [📄][docker:pull] 
+[push][docker push] [📄][docker:push] 
+[rename][docker rename] [📄][docker:rename] 
+[restart][docker restart] [📄][docker:restart] 
+[rm][docker rm] [📄][docker:rm] 
+[rmi][docker rmi] [📄][docker:rmi] 
+[run][docker run] [📄][docker:run] 
+[save][docker save] [📄][docker:save] 
+[search][docker search] [📄][docker:search] 
+[secret][docker secret] [📄][docker:secret] 
+[service][docker service] [📄][docker:service] 
+[stack][docker stack] [📄][docker:stack] 
+[start][docker start] [📄][docker:start] 
+[stats][docker stats] [📄][docker:stats] 
+[stop][docker stop] [📄][docker:stop] 
+[swarm][docker swarm] [📄][docker:swarm] 
+[system][docker system] [📄][docker:system] 
+[tag][docker tag] [📄][docker:tag] 
+[top][docker top] [📄][docker:top] 
+[trust][docker trust] [📄][docker:trust] 
+[unpause][docker unpause] [📄][docker:unpause] 
+[update][docker update] [📄][docker:update] 
+[version][docker version] [📄][docker:version] 
+[volume][docker volume] [📄][docker:volume] 
+[wait][docker wait] [📄][docker:wait] 
 
 ### attach
 Connect to a session on a running container [Zacker][Zacker]: 279
@@ -210,6 +212,7 @@ Start a stopped container [Zacker][Zacker]: 278
 docker start $CONTID
 ```
 ### stop
+
 Stop a container [Zacker][Zacker]: 278
 ```sh
 docker stop $CONTID
@@ -222,6 +225,7 @@ Tag an image on local container host [Zacker][Zacker]: 272
 docker tag $USERNAME/$IMAGENAME:$TAG
 ```
 ### volume
+
 Docker has several options for containers to store files in a persistent manner:
 - **Volumes** are stored in a part of the host filesystem which is managed by Docker (/var/lib/docker/volumes/ on Docker).
 - **Bind mounts** may be stored anywhere on the host system and are specified by [docker run --volume][docker run -&#118;].
@@ -231,11 +235,14 @@ Display data volumes [PluralSight][pluralsight:70-740-containers]
 ```sh
 docker volume ls
 ```
+
 ### Dockerfile
+
 A Docker image consists of read-only **layers**, each of which represents an **instruction** that incrementally the changes the image being built up. 
 Using [docker build][docker build], Dockerfiles can be used to construct new images.
 The build process can be optimized by placing multiple commands in the same `RUN` instruction.
 Dockerfiles are named simply "Dockerfile" with no extension or variation.
+
 ```dockerfile
 FROM alpine
 RUN apk update && apk add nodejs
@@ -260,6 +267,17 @@ RUN powershell.exe -Command Install-WindowsFeature Web-Server
 COPY ./websrc c:/inetpub/wwwroot
 CMD [ "powershell" ]
 ```
+
+## Kubernetes
+
+## 📘 Glossary
+
+### Deployment
+
+### Pod
+
+### ReplicaSet
+
 
 
 [docker:attach]: https://docs.docker.com/engine/reference/commandline/attach/ "docker attach"

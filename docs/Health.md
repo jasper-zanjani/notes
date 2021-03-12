@@ -182,11 +182,12 @@ _**Withania somnifera**_ or **Ashwagandha** is a traditional [Ayurvedic herb](#a
 - It has been shown to increase serum testosterone in infertile men. ([2009](https://pubmed.ncbi.nlm.nih.gov/19501822/))
 - In a double-blind, placebo-controlled [crossover study](#crossover-trial), healthy men administered Ashwagandha (500 mg/day) experienced improved cognitive performance outcomes. ([2014](https://www.ncbi.nlm.nih.gov/pubmed/24497737))
 
-| Product                                                                                                                                                  |                $ |     mg |         $/250 mg |
-| -------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------: | -----: | ---------------: |
-| [Swanson Ultimate Ashwagandha 250mg x 60 capsules](https://www.swansonvitamins.com/swanson-ultra-ultimate-ashwagandha-ksm-66-250-mg-60-veg-caps-SWU1003) | 7.99<br>**4.79** | 15,000 | 0.13<br>**0.08** |
-| [NOW Supplements Ashwagandha 450 mg x 180 capsules](https://www.amazon.com/NOW-Ashwagandha-Extract-Caps-SIZE/dp/B076H91FQG)                              |            28.99 | 81,000 |             0.09 |
-| [NOW supplements Ashwagandha 450 mg x 90 capsules](https://www.amazon.com/NOW-Foods-Ashwagandha-Extract-450mg/dp/B010MO5KCG)                             |            17.90 | 40,500 |             0.11 |
+| Product                                                                                                                                                  |                $ |        mg |         $/250 mg |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------: | --------: | ---------------: |
+| [Bulk Supplements Ashwagandha 1 kg](https://www.amazon.com/gp/product/B01MYBN67O)                                                                        |            34.96 | 1,000,000 |         &lt;0.01 |
+| [Swanson Ultimate Ashwagandha 250mg x 60 capsules](https://www.swansonvitamins.com/swanson-ultra-ultimate-ashwagandha-ksm-66-250-mg-60-veg-caps-SWU1003) | 7.99<br>**3.99** |    15,000 | 0.13<br>**0.07** |
+| [NOW Supplements Ashwagandha 450 mg x 180 capsules](https://www.amazon.com/NOW-Ashwagandha-Extract-Caps-SIZE/dp/B076H91FQG)                              |            28.99 |    81,000 |             0.09 |
+| [NOW supplements Ashwagandha 450 mg x 90 capsules](https://www.amazon.com/NOW-Foods-Ashwagandha-Extract-450mg/dp/B010MO5KCG)                             |            17.90 |    40,500 |             0.11 |
 
 
 ### Astragalus
