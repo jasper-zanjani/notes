@@ -335,6 +335,7 @@ form.field(method="POST", action="/")
 Variables values can be taken from the route or from **query parameters** following a question mark.
 
 === "Routes"
+
     ```python
     from fastapi import FastAPI
 
@@ -344,7 +345,9 @@ Variables values can be taken from the route or from **query parameters** follow
     def get_starship(name: str):
         return {"response": f"Hello, {name}"}
     ```
+
 === "Query parameters"
+
     ```python
     from fastapi import FastAPI
 
@@ -358,6 +361,7 @@ Variables values can be taken from the route or from **query parameters** follow
 FastAPI is notable for being able to use type hints to construct data models, which are much lighter than the object relational models used by other frameworks.
 
 === "FastAPI"
+
     ```python
     from pydantic import BaseModel
 
@@ -366,7 +370,9 @@ FastAPI is notable for being able to use type hints to construct data models, wh
         registry : str
         crew : int
     ```
+
 === "Django"
+
     ```python
     from django.db import models
 
@@ -377,6 +383,7 @@ FastAPI is notable for being able to use type hints to construct data models, wh
     ```
 
 Dogfood data can be incorporated by using the **keyword argument unpacking** or "double splat" operator (**`**`**)
+
 ```python
 data = {"name": "USS Enterprise", "registry" : "NCC-1701", "crew" : 203}
 enterprise = Starship(**data)

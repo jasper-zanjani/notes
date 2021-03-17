@@ -1195,7 +1195,7 @@ This example will display the method names only, rather than the fully-qualified
 
 ### Moq
 
-The **Moq** NuGet package ("mock-you") facilitates creating mock objects.
+**Moq** ("mock-you") is an open-source mocking library available as a NuGet package.
 **Mock objects** are generics that take the abstract base class or interface used by the mocked object (see [provider pattern](#provider-pattern)).
 Naturally, this means the concrete objects they are replacing must also be implementing those interfaces.
 
@@ -1546,7 +1546,7 @@ Run the **dotnet try** web server that supports .NET Interactive-style markdown:
     ```
 ```
 
-## Project files
+### Project files
 
 References to other projects can be made using the `ProjectReference` element, which are collected in `ItemGroup`.
 NuGet package dependencies are specified using `PackageReference` element, also in `ItemGroup`
@@ -1663,9 +1663,9 @@ This will allow a similarly-typed substitute to be used in unit testing.
 - In the XAML: Getting Started course, the process of loading data either from disk or memory is abstracted in a DataProvider class which is passed as argument to the main ViewModel.
 - In the Mocking with Moq and xUnit course, the FrequentFlyerNumberValidator is mocked by using the interface it implements: IFrequentFlyerNumberValidator
 
-| Component           | XAML: Getting Started | Mocking with Moq and xUnit     | Starships | Test Driven Development in C#         |
-| ------------------- | --------------------- | ------------------------------ | --------- | ------------------------------------- |
-| Model               | Customer              | CreditCardApplication          | Starship  | DeskBookingRequest, DeskBookingResult |
-| Contextual action   | ViewModel             | CreditCardApplicationEvaluator | ??        | DeskBookingRequestProcessor           |
-| Provider            | CustomerDataProvider  | FrequentFlyerNumberValidator   | ??        | DeskBookingRepository                 |
-| Provider base class | ICustomerDataProvider | IFrequentFlyerNumberValidator  | ??        | IDeskBookingRepository                |
+| Component           | XAML: Getting Started | Mocking with Moq and xUnit     | Starships          | Test Driven Development in C#         |
+| ------------------- | --------------------- | ------------------------------ | ------------------ | ------------------------------------- |
+| Model               | Customer              | CreditCardApplication          | Captain            | DeskBookingRequest, DeskBookingResult |
+| Contextual action   | ViewModel             | CreditCardApplicationEvaluator | StarshipDeployment | DeskBookingRequestProcessor           |
+| Provider            | CustomerDataProvider  | FrequentFlyerNumberValidator   | OfficerEvaluator   | DeskBookingRepository                 |
+| Provider base class | ICustomerDataProvider | IFrequentFlyerNumberValidator  | ??                 | IDeskBookingRepository                |

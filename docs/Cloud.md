@@ -27,7 +27,7 @@ In fact, references to the "classic" model predating the Azure Resource Manager 
 | IaaS               | [Azure VMs](#azure-vms) [🏠](https://azure.microsoft.com/en-us/services/virtual-machines/)                                                            | [EC2][EC2] [🏠](https://aws.amazon.com/ec2)                                                                                                                                                                                          | Compute Engine [🏠](https://cloud.google.com/compute)                                                                                                                                                                                                               |
 | PaaS               | [App Service][App Service]  [🏠](https://azure.microsoft.com/en-us/services/app-service/)                                                             | [Elastic Beanstalk][Elastic Beanstalk] [🏠](https://aws.amazon.com/elasticbeanstalk/) [📄](https://docs.aws.amazon.com/elastic-beanstalk/index.html)                                                                                  | [App Engine][App Engine] [🏠](https://cloud.google.com/appengine)                                                                                                                                                                                                   |
 | Containers         | [ACI][ACI] [🏠](https://azure.microsoft.com/en-us/services/container-instances/) [📄](https://docs.microsoft.com/en-us/azure/container-instances/)     | [ECS][ECS] [🏠](https://aws.amazon.com/ecs) [📄](https://aws.amazon.com/ecs/resources/)                                                                                                                                               |                                                                                                                                                                                                                                                                    |
-| Kubernetes         | [AKS][AKS] [🏠](https://azure.microsoft.com/en-us/services/kubernetes-service/) [📄](https://docs.microsoft.com/en-us/azure/aks/)                      | [EKS][EKS] [🏠](https://aws.amazon.com/eks) [📄](https://docs.aws.amazon.com/eks)                                                                                                                                                     | [GKE][GKE] [🏠](https://cloud.google.com/kubernetes-engine)                                                                                                                                                                                                         |
+| [Kubernetes](/Kubernetes)         | [AKS][AKS] [🏠](https://azure.microsoft.com/en-us/services/kubernetes-service/) [📄](https://docs.microsoft.com/en-us/azure/aks/)                      | [EKS][EKS] [🏠](https://aws.amazon.com/eks) [📄](https://docs.aws.amazon.com/eks)                                                                                                                                                     | [GKE][GKE] [🏠](https://cloud.google.com/kubernetes-engine)                                                                                                                                                                                                         |
 | Serverless         | [Functions][Azure Functions] [🏠](https://azure.microsoft.com/en-us/services/functions/) [📄](https://docs.microsoft.com/en-us/azure/azure-functions/) |                                                                                                                                                                                                                                     | [Cloud Functions][Cloud Functions] [🏠](https://cloud.google.com/functions)<br>[Cloud Run][Cloud Run] [🏠](https://cloud.google.com/run)                                                                                                                             |
 | 💾 **Storage**      | Storage accounts                                                                                                                                     | [S3][S3]                                                                                                                                                                                                                            | [Cloud Storage][Cloud Storage] [🏠](https://cloud.google.com/storage)                                                                                                                                                                                               |
 | Archive            |                                                                                                                                                      | [Glacier][Glacier]                                                                                                                                                                                                                  |                                                                                                                                                                                                                                                                    |
@@ -798,6 +798,23 @@ There are two types of distribution:
 - A **Web distribution** is used for static and dynamic content, including streaming video, accessible via HTTP or HTTPS. Its origin can be a web server or a **public** S3 bucket.
 - **Real-Time Messaging Protocol (RTMP) distribution** delivers streaming audio or video. The media player and media files must be stored in S3 buckets.
 
+#### CloudTrail
+
+AWS CloudTrail keeps event logs of actions that occur against AWS resources.
+These events are divided into API and non-API actions.
+
+- API actions include creating, modifying, or deleting resources.
+- Non-API actions include everything else, like logging into the management console.
+
+Events are also classified as management events and data events
+
+- **Management events** (also **control plane operations**) are operations that a principal attempts to execute against an AWS resource.
+- **Data events** are S3 object-level activity and Lambda function executions. These are treated separately from management events because they tend to be higher volume.
+
+Resources
+
+- ▶️ [How can I use CloudTrail to review what API calls and actions have occurred in my AWS account?](https://youtu.be/4ztTv5rIRv8)
+
 #### CloudWatch
 
 **Amazon CloudWatch** collects logs, metrics, and events from AWS resources and non-AWS on-premises servers and presents a dashboard for visual analysis.
@@ -1156,53 +1173,6 @@ Resources:
 - ▶ [Talk - Kubeflow at Spotify](https://www.youtube.com/watch?v=m9XhsnNSMAI 'YouTube - Building and managing a centralized Kubeflow platform at Spotify')
 - ▶ [Talk - Kubeflow on Kubernetes](https://www.youtube.com/watch?v=I6iMznIYwM8 'YouTube - Kubeflow ML on Kubernetes')
 
-#### ⚓ Kubernetes
-
-**Kubernetes** (Greek for "helmsman", "pilot", or "captain" and "k8s" for short) has emerged as the leading **container orchestrator** in the industry since 2018. 
-
-Kubernetes was first announced by Google in mid-2014. 
-It had been developed by Google after deciding to open-source the internally developed container management system **Borg**.
-Borg is a cluster manager that runs hundreds of thousands of jobs at Google, representing the infrastructure powering the entire Google enterprise.
-Kubernetes coalesced from a fusion between developers working on Borg and [Compute Engine][GCE]
-
-By that time, Amazon had established a market advantage and the developers decided to change their approach by introducing a disruptive technology to drive the relevance of the Compute platform they had built. 
-They created a ubiquitous abstraction that could run better than anyone else.
-
-At the time, Google had been trying to engage the Linux kernel team and trying to overcome their skepticism. 
-Internally, the project was framed as offering "Borg as a Service", although there were concerns that Google was in danger of revealing trade secrets.
-
-Google ultimately donated it to the **Cloud Native Computing Foundation**.
-
-A **pod** is the most basic unit that K8s deals with, representing one or more **tightly-coupled** containers that should be controlled as a single application (typically one main container with subsidiary helper containers). 
-Within a pod you can specify more than one container image.
-
-A pod's containers should:
-
-- operate closely together
-- share a lifecycle
-- always be scheduled on the same node
-
-- **Worker**: a container host, with a Kubelet process that communicates with K8s cluster services.
-- **Desired State Management** system, used by Kubernetes to describe a cluster's desired state declaratively.
-
-Kubernetes can be visualized as a system built from layers, with each higher layer abstracting the complexity of the lower levels.
-One server serves as the **master**, exposing an API for users and clients, assigning or **scheduling** work, and orchestrating communication between other components. 
-
-- A master node runs 3 processes: `kube-apiserver`, `kube-controller-manager`, and `kube-scheduler`
-- **Master (control plane) components** also run on the master node: `kube-apiserver`, `kube-controller-manager`, `kube-scheduler`, and Cluster Store
-
-Other machines in the cluster are called **nodes** or **workers** and accept and run workloads using available resources. 
-
-- Each node is equipped with a container runtime like Docker, which it uses to create and destroy containers according to instructions from the master server.
-- Each node runs 2 processes: `kubelet` and `kube-proxy`.
-
-![](/img/persistent-volume-claims.png)
-
-A volume represents a way to store, retrieve, and persist data across pods and through the application lifecycle. In the context of Azure, Kubernetes can use two types of data volume:
-- **Azure Disks** using Azure Premium (SSDs) or Azure Standard (HDDs).
-- **Azure Files** using a SMB 3.0 share backed by an Azure Storage account.
-
-A **PersistentVolumeClaim** requests either Disk or File storage of a particular StorageClass, access mode, and size. It is bound to a **PersistentVolume** once an available storage resource has been assigned to the pod requesting it.
 
 
 #### [Kusto](Kusto)

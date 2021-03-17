@@ -1,23 +1,23 @@
 # 🧠 XAML
 
-Windows has a long history of introducing UI frameworks to facilitate the creation of GUI applications:
+TODO:
 
-- **MFC** (1992) was based on Native C++
-- **WinForms** (2002) was based on .NET Framework
-- **WPF** (2006) was also based on .NET Framework
-- [**UWP XAML**](#uwp) (2012) was based on C++ and .NET
-- [**WinUI 2**](#winui) is a NuGet package containing controls and styles for UWP Apps, intended to decouple UWP applications from the latest version of Windows
-- [**WinUI 3**](#winui) (2020) is meant to provide a UX framework for both Win32 and UWP applications
+- Watch [WinRT course](https://app.pluralsight.com/library/courses/windows-runtime-internals/table-of-contents)
+- Download 
+    - [Windows Community Toolkit Sample App](https://aka.ms/windowstoolkitapp)
+    - [Win2D Example Gallery](https://www.microsoft.com/en-us/p/win2d-example-gallery/9nblgggxwt9f)
+- Extend Superheroes app with
+    - [ListDetailsView](#listdetailsview)
+    - 📄 [NavigationView](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.navigationview?view=winrt-19041)
+    - 📄 [DataGrid](https://docs.microsoft.com/en-us/windows/communitytoolkit/controls/datagrid)
+    - 📄 [SplitView](https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/split-view)
+- Markdown browser using 📄 [MarkdownTextBlock](https://docs.microsoft.com/en-us/windows/communitytoolkit/controls/markdowntextblock)
+- Complete [interactive image gallery tutorial](https://docs.microsoft.com/en-us/windows/uwp/design/basics/xaml-basics-ui)
+- [UWP FPS using DirectX](https://docs.microsoft.com/en-us/windows/uwp/gaming/tutorial--create-your-first-uwp-directx-game)
+- Dependency properties
+- Research [interoperability with DirectX](https://docs.microsoft.com/en-us/windows/uwp/gaming/directx-and-xaml-interop) (apparently possible if you wrap DirectX calls in a separate [Windows Runtime metadata file](https://docs.microsoft.com/en-us/uwp/winrt-cref/winmd-files))
 
-XAML is a declarative markup language used to create UIs for .NET Core apps.
-The logic of the app is separated in **code-behind** files that are joined to the markup through partial class definitions.
-In Visual Studio this is emphasized by the fact that the code-behind file is literally presented as a child node of the XAML document.
-
-
-The root element (of which there must be only one in order to be a valid XAML file) contains attributes 
-that define the XAML [ namespaces ](#namespaces) for the program that will be parsing the XAML file, or a [ **namescope** ](https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/wpf-xaml-namescopes).
-
-### XAML syntaxes
+## Syntax
 
 Every XAML **element** maps to a C# **class**, and every XAML **attribute** maps to a class **property** or an [ **event** ](#event-handling). 
 
@@ -80,13 +80,17 @@ A XAML file usually declares a **default XAML namespace** in its root element.
 This default namespace defines elements that can be declared without qualifying them by a prefix (e.g. `x:`).
 
 XAML namespaces apply only to the specific element on which they are declared and its children, which explains why they are typically placed on the root element.
-([src]](https://docs.microsoft.com/en-us/windows/uwp/xaml-platform/xaml-namespaces-and-namespace-mapping "XAML namespaces and namespace mappings"))
+([src](https://docs.microsoft.com/en-us/windows/uwp/xaml-platform/xaml-namespaces-and-namespace-mapping "XAML namespaces and namespace mappings"))
 
 Most XAML files have two `xmlns` declarations
 
 - **`xmlns`** maps a default XAML namespace
 - **`xmlns:x`** maps a separate XAML namespace for XAML-defined **language elements** to the `x:` prefix:
-
+- **`xmlns:mc`** indicates and supports a markup compatibility mode for reading XAML.
+```xml
+xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+mc:Ignorable="d"
+```
 ### Directives
 
 - [**`x:Name`**](https://docs.microsoft.com/en-us/windows/uwp/xaml-platform/x-name-attribute "x:Name attribute") uniquely identifies object elements for access to the object from code-behind 
@@ -95,32 +99,33 @@ Most XAML files have two `xmlns` declarations
 for a XAML page. The `x:Class` directive configures XAML markup compilation to join partial classes 
 between markup and code-behind. In this example it can be seen how it refers to the `MainPage` 
 class within the `Project` namespace. ([src](https://app.pluralsight.com/course-player?clipId=392e67d1-49ec-4c5c-987a-cd83ff56623b))
-- [**x:Bind**](#data-binding) is a form of [data-binding](#data-binding)
-- **`xmlns:mc`** indicates and supports a markup compatibility mode for reading XAML.
-```xml
-xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-mc:Ignorable="d"
-```
+- [**`x:Bind`**](#data-binding) is a form of [data-binding](#data-binding)
+
 
 
 **Language elements** are commonly used features necessary for Windows Runtime apps.
 For example, to join any code-behind to a XAML file through a partial class, you must name that class as the `x:Class` attribute in the root element of the XAML file.
 
-```csharp
-namespace Project
-{
-  public sealed partial class MainPage : Page
-  {
-    public MainPage()
+=== "XAML"
+
+    ```xml
+    <Page x:Class="Project.MainPage"/>
+    ```
+
+=== "Code-behind"
+
+    ```csharp
+    namespace Project
     {
-      this.InitializeComponent();
+        public sealed partial class MainPage : Page
+        {
+            public MainPage()
+            {
+                this.InitializeComponent();
+            }
+        }
     }
-  }
-}
-```
-```xml
-<Page x:Class="Project.MainPage"/>
-```
+    ```
 
 
 ### Attached property
@@ -203,11 +208,13 @@ Some XAML controls have attributes that map to events:
 Defining an event handler in XAML is equivalent to doing so in C#.
 
 === "XAML"
+
     ```xml
     <Button Content="Add customer" Click="Button_ClickHandler">
     ```
 
 === "C#"
+
     ```csharp
     var btn = new Button 
     { 
@@ -219,66 +226,76 @@ Defining an event handler in XAML is equivalent to doing so in C#.
 -----
 
 === "SelectionChanged"
-    ```xml
-    <ListView 
-        x:Name="customerListView" 
-        SelectionChanged="CustomerListView_SelectionChanged"/>
-    ```
 
-    ```csharp
-    private void CustomerListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
-    {
-        var customer = customerListView.SelectedItem as Customer;
-        txtFirstName.Text = customer?.FirstName ?? ""; 
-        txtLastName.Text = customer?.LastName ?? "";
-        chkIsDeveloper.IsChecked = customer?.IsDeveloper;
-    }
-    ```
+    === "Markup"
+
+        ```xml
+        <ListView 
+            x:Name="customerListView" 
+            SelectionChanged="CustomerListView_SelectionChanged"/>
+        ```
+
+    === "Code-behind"
+
+        ```csharp
+        private void CustomerListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var customer = customerListView.SelectedItem as Customer;
+            txtFirstName.Text = customer?.FirstName ?? ""; 
+            txtLastName.Text = customer?.LastName ?? "";
+            chkIsDeveloper.IsChecked = customer?.IsDeveloper;
+        }
+        ```
 
 === "TextChanged"
-    ```xml
-    <StackPanel>
-        <TextBox 
-            x:Name="txtFirstName" 
-            Header="Firstname" 
-            TextChanged="TextBox_TextChanged"
-            Margin="10" />
-        <TextBox 
-            x:Name="txtLastName" 
-            Header="Lastname" 
-            TextChanged="TextBox_TextChanged"
-            Margin="10" />
-        <CheckBox 
-            x:Name="chkIsDeveloper"
-            Content="IsDeveloper" 
-            Margin="10" 
-            Checked="CheckBox_IsCheckedChanged" 
-            Unchecked="CheckBox_IsCheckedChanged"/>
-    </StackPanel>
-    ```
 
-    ```csharp
-    private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-    {
-        UpdateCustomer();
-    }
+    === "Markup"
 
-    private void CheckBox_IsCheckedChanged(object sender, RoutedEventArgs e)
-    {
-        UpdateCustomer();
-    }
+        ```xml
+        <StackPanel>
+            <TextBox 
+                x:Name="txtFirstName" 
+                Header="Firstname" 
+                TextChanged="TextBox_TextChanged"
+                Margin="10" />
+            <TextBox 
+                x:Name="txtLastName" 
+                Header="Lastname" 
+                TextChanged="TextBox_TextChanged"
+                Margin="10" />
+            <CheckBox 
+                x:Name="chkIsDeveloper"
+                Content="IsDeveloper" 
+                Margin="10" 
+                Checked="CheckBox_IsCheckedChanged" 
+                Unchecked="CheckBox_IsCheckedChanged"/>
+        </StackPanel>
+        ```
 
-    private void UpdateCustomer()
-    {
-        var customer = customerListView.SelectedItem as Customer;
-        if (customer != null)
+    === "Code-behind"
+
+        ```csharp
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            customer.FirstName = txtFirstName.Text;
-            customer.LastName = txtLastName.Text;
-            customer.IsDeveloper = chkIsDeveloper.IsChecked.{{c4::GetValueOrDefault}}();
+            UpdateCustomer();
         }
-    }
-    ```
+
+        private void CheckBox_IsCheckedChanged(object sender, RoutedEventArgs e)
+        {
+            UpdateCustomer();
+        }
+
+        private void UpdateCustomer()
+        {
+            var customer = customerListView.SelectedItem as Customer;
+            if (customer != null)
+            {
+                customer.FirstName = txtFirstName.Text;
+                customer.LastName = txtLastName.Text;
+                customer.IsDeveloper = chkIsDeveloper.IsChecked.{{c4::GetValueOrDefault}}();
+            }
+        }
+        ```
 
 Handlers for Loaded and Unloaded are automatically attached to any [Page](#page) that uses the `NavigationHelper` class.
 
@@ -293,61 +310,53 @@ You can take a group of controls and create a [custom control](https://docs.micr
 More specifically, a custom control defined in XAML along with its accompanying code-behind file must use `UserControl` as its base class.
 In this sense, a custom control is really a special case of a namespace mapping, which can also be used to populate an application with mock data during development.
 
-<details>
-<summary>Controls.xaml</summary>
-```xml
-<UserControl
-    x:Class="Project.Controls.CustomControl"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:WiredBrainCoffee.UWP.Controls"
-    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d">
+=== "Markup"
 
-    <TextBlock Text="Hello, world!"/>
-</UserControl>
-```
-</details>
+    ```xml
+    <UserControl
+        x:Class="Project.Controls.CustomControl"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="using:WiredBrainCoffee.UWP.Controls"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d">
 
-<details><summary>Controls.cs</summary>
-```csharp
-namespace Project.Controls
-{
-    public sealed partial class CustomControl : UserControl
+        <TextBlock Text="Hello, world!"/>
+    </UserControl>
+    ```
+
+=== "Code-behind"
+
+    ```csharp
+    namespace Project.Controls
     {
-        public CustomControl()
+        public sealed partial class CustomControl : UserControl
         {
-            this.InitializeComponent();
+            public CustomControl()
+            {
+                this.InitializeComponent();
+            }
         }
     }
-}
-```
-</details>
-<details>
-<summary>MainPage.xaml</summary>
-```xml
-<Page
-    x:Class="Project.MainPage"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:WiredBrainCoffee.UWP"
-    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-    xmlns:controls="using:Project.Controls"
-    xmlns:model="using:WiredBrainCoffee.UWP.Models"
-    mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
-    <controls:CustomControl/>
-</Page>
-```
-</details>
+    ```
 
 ### Mock data
 
+The most basic method of adding mock data is by **hardcoding data in the XAML markup**.
+
+Somewhat more sophisticated is the option of **hardcoding data in the code-behind**.
+The `x:Bind` directive can be used to bind an `IEnumerable` data source to either the `Items` or `ItemsSource` attributes.
+An **`ObservableCollection<T>`** is preferred in WinUI programming because it raises events when properties are changed, but Lists and Arrays also work. 
+If the collection is made of objects, the `DisplayMemberPath` allows the specification of a particular property on those objects to be displayed.
+Notably, **classes** specifically need to be used, and not structs, for the members of these collections.
+
+With **namespace mapping**, classes within the C# namespace can be used in XAML markup. ([src](https://app.pluralsight.com/course-player?clipId=67d02b8e-5dd4-4be1-8c3d-d89476e4448a))
+
+Most robust of all is creating a Data Provider class which will fall back to mock data when the data source is not available. 
+This will allow any number of other data sources to be plugged in, such as databases or REST services. ([src](https://app.pluralsight.com/course-player?clipId=769d2e57-0e51-45f1-960b-781509f5719b))
+
 === "Hardcoding in XAML"
-    The most basic method of adding mock data is by hardcoding it into the XAML.
     ```xml
     <ListView>
         <ListViewItem>Aristotle</ListViewItem>
@@ -359,104 +368,73 @@ namespace Project.Controls
 
 === "Hardcoding in C#"
 
-    Somewhat more sophisticated is the option of putting that data in the code-behind.
-    The `x:Bind` directive can be used to bind an `IEnumerable` data source to either the `Items` or `ItemsSource` attributes.
-    An **`ObservableCollection<T>`** is preferred in WinUI programming because it raises events when properties are changed, but Lists and Arrays also work. 
+    === "Markup"
 
-    If the collection is made of objects, the `DisplayMemberPath` allows the specification of a particular property on those objects to be displayed.
-    Notably, **classes** specifically need to be used, and not structs, for the members of these collections.
+        ```xml
+        <Page>
 
-    <details>
-    <summary>Models/Starship.cs</summary>
 
-    ```csharp
-    namespace Starships.Models
-    {
-        class Starship
+            <ListView
+                ItemsSource="{x:Bind Starships}" 
+                SelectedItem="{x:Bind Starships[0]}"
+                DisplayMemberPath="Display"/>
+        </Page>
+        ```
+
+    === "Code-behind"    
+
+        ```csharp
+        namespace Starships.Models
         {
-            public string Name;
-            public string Registry;
-            public int Crew;
-            public string Display
+            class Starship
             {
-                get { return Name + Registry; }
-            }            
+                public string Name;
+                public string Registry;
+                public int Crew;
+                public string Display
+                {
+                    get { return Name + Registry; }
+                }            
+            }
         }
-    }
-    ```
-    </details>
-
-    <details>
-    <summary>MainPage.xaml</summary>
-
-    ```xml
-    <ListView
-        ItemsSource="{x:Bind Starships}" 
-        SelectedItem="{x:Bind Starships[0]}"
-        DisplayMemberPath="Display"/>
-    ```
-    </details>
-
-    <details>
-    <summary>MainPage.xaml.cs</summary>
-
-    ```csharp
-    public sealed partial class MainWindow : Window
-    {
-        //List<string> Starships = new List<string>();
-        Starship[] Starships = new Starship[3];
-
-
-        public MainWindow()
-        {
-            this.InitializeComponent();
-            Starships[0]=new Starship("USS Enterprise","NCC-1701",204);
-            Starships[1]=new Starship("USS Constitution","NCC-1700",203);
-            Starships[2]=new Starship("USS Defiant","NCC-1764",202);
-        }
-    }
-    ```
-    </details>
+        ```
 
 === "Namespace mapping"
 
-    By mapping a XAML namespace to a C# namespace, classes within the C# namespace can be used in XAML markup. ([src](https://app.pluralsight.com/course-player?clipId=67d02b8e-5dd4-4be1-8c3d-d89476e4448a))
+    === "Markup"
 
-    <details>
-    <summary>Models/Starship.cs</summary>
+        ```xml
+        <Page 
+            xmlns:model="using:Project.Models">
+            
+            <ListView DisplayMemberPath="Display">
+                <model:Starship Name="USS Enterprise" Registry="NCC-1701" Crew="140"/>
+            </ListView>
+        </Page>
+        ```
 
-    ```csharp
-    namespace Starships.Models
-    {
-        class Starship
+    === "Code-behind"
+
+        ```csharp
+        namespace Starships.Models
         {
-            public string Name;
-            public string Registry;
-            public int Crew;
-            public string Display
+            class Starship
             {
-                get { return Name + Registry; }
+                public string Name;
+                public string Registry;
+                public int Crew;
+                public string Display
+                {
+                    get { return Name + Registry; }
+                }
             }
         }
-    }
-    ```
-    </details>
+        ```
 
-    <details>
-    <summary>MainPage.xaml</summary>
 
-    ```xml
-    <Page xmlns:model="using:Project.Models">
-        <ListView DisplayMemberPath="Display">
-            <model:Starship Name="USS Enterprise" Registry="NCC-1701" Crew="140>
-        </ListView>
-    </Page>
-    ```
-    </details>
 
 === "Data provider"
-    Most robust of all is creating a Data Provider class which will fall back to mock data when the data source is not available. 
-    This will allow any number of other data sources to be plugged in, such as databases or REST services. ([src](https://app.pluralsight.com/course-player?clipId=769d2e57-0e51-45f1-960b-781509f5719b))
+
 
 ---
 
@@ -518,54 +496,16 @@ Application element:
 
 ### Layout
 
-The **layout panels** in XAML serve a similar function to the geometry manager methods in tkinter. There are various layout panels available. ([src](https://app.pluralsight.com/course-player?clipId=48204d39-8c88-4173-afcc-48ad4319df2e))
+The **layout panels** in XAML serve a similar function to the geometry manager methods in tkinter. 
+There are [various](https://docs.microsoft.com/en-us/windows/uwp/design/layout/layouts-with-xaml#layout-panels) layout panels available.
 
 - [Grid](#grid)
 - [RelativePanel](#relativepanel)
 - [StackPanel](#stackpanel)
 - [VariableSizeWrapGrid](#variablesizedwrapgrid)
 
-### MVVM
-
-In the **Model, View, ViewModel (MVVM)** pattern, which implicitly relies on OOP principles, the **Model** represents the data model for the objects being manipulated, 
-and the **ViewModel** is the model for the **View**, that is, the state of the application as represented in a class.
-
-In WinUI, the project that contains the Views (that is, the XAML files) must first add references to the projects where the Models and ViewModel are contained. 
-These will allow the code-behind file of the **MainWindow** to reference those classes.
-
-The class representing the ViewModel is instantiated and assigned to an attribute.
-That class's methods can then be called by using the `x:Bind` attribute syntax on, for instance, a `ListView` element.
 
 
-=== "MainWindow.cs"
-    ```csharp
-    using EmployeeManager.DataAccess;
-    using EmployeeManager.ViewModel;
-    using Microsoft.UI.Xaml;
-
-    namespace EmployeeManager.WinUI
-    {
-        public sealed partial class MainWindow : Window
-        {
-            public MainWindow()
-            {
-                ViewModel = new MainViewModel(new EmployeeDataProvider());
-                this.InitializeComponent();
-            }
-
-            public MainViewModel ViewModel { get; }
-        }
-    }
-    ```
-=== "MainWindow.xaml"
-    ```xml
-    <Window>
-        <ListView 
-            ItemsSource="{x:Bind ViewModel.Employees, Mode=OneWay}"
-            SelectedItem="{x:Bind ViewModel.SelectedEmployee, Mode=OneWay}"
-            DisplayMemberPath="FirstName"/>
-    </Window>
-    ```
 
 ### Data binding
 
@@ -574,10 +514,10 @@ There are two data binding types available in XAML ([src](https://app.pluralsigh
 - [**Binding markup extension**](https://docs.microsoft.com/en-us/dotnet/desktop/wpf/advanced/binding-markup-extension?view=netframeworkdesktop-4.8) resolves the binding path at runtime. It can accept data sources from the **binding properties**
 `ElementName`, `Source`, and `RelativeSource`.
 If none of these are defined, then the binding markup extension resolves to the DataContext property.
-- [**x:Bind**](https://docs.microsoft.com/en-us/windows/uwp/xaml-platform/x-bind-markup-extension) resolves the binding path at **compile-time**, generating C# code and offering better performance and compile-time errors. You can also step into the compiled code, providing a better debugging experience. x:Bind should generally be preferred, however it is available only in UWP.
+- [**`x:Bind`**](https://docs.microsoft.com/en-us/windows/uwp/xaml-platform/x-bind-markup-extension) resolves the binding path at **compile-time**, generating C# code and offering better performance and compile-time errors. You can also step into the compiled code, providing a better debugging experience. `x:Bind` should generally be preferred, however it is available only in UWP.
 
 
-x:Bind, in contrast, binds only to the parent Page or UserControl element. So any property of MainPage will be accessible, and any property of that object will also be accessible using dot notation.
+`x:Bind`, in contrast, binds only to the parent `Page` or `UserControl` element. So any property of MainPage will be accessible, and any property of that object will also be accessible using dot notation.
 
 Most bindings are easily translated between the two types:
 
@@ -615,24 +555,24 @@ Most bindings are easily translated between the two types:
     </ListView>
     ```
 
-Notably, the default binding mode of the binding markup extension is **`OneWay`** `x:Bind` is **`OneTime`**, although this can be changed by setting `x:DefaultBindMode` on the root element.
+Notably, the default binding mode of the binding markup extension is **`OneWay`**, whereas that of `x:Bind` is **`OneTime`**, although this can be changed by setting `x:DefaultBindMode` on the root element.
 
 === "Changing default bind mode"
 
-```xml
-<Page
-    x:DefaultBindMode="OneWay">
-    <Listview ItemsSource="{x:Bind ViewModelCustomers}"/>
-</Page>
-```
+    ```xml
+    <Page
+        x:DefaultBindMode="OneWay">
+        <Listview ItemsSource="{x:Bind ViewModelCustomers}"/>
+    </Page>
+    ```
 
 === "Set explicitly"
 
-```xml
-<Page>
-    <Listview ItemsSource="{x:Bind ViewModelCustomers,Mode=OneWay}"/>
-</Page>
-```
+    ```xml
+    <Page>
+        <Listview ItemsSource="{x:Bind ViewModelCustomers,Mode=OneWay}"/>
+    </Page>
+    ```
 
 ### Type conversion
 
@@ -644,17 +584,23 @@ For example, a type converter is what is used with the XAML declaration `Horizon
 which is mapped to a specific enumeration within the **Windows.UI.XAML** namespace.
 <sup>[ref](https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/typeconverters-and-xaml "TypeConverters and XAML")</sup>
 
-In UWP, the XAML processor integrates the conversion logic to 
-convert the Margin declaration to a `Thickness` object. But in [ WPF ](WPF), TypeConverters are used.
-```xml
-<Button Margin="10,20,10,30" Content="Click me"/>
-```
-```cs
-var btn = new Button
-{
-  Margin = new Thickness(10, 20, 10, 30);
-};
-```
+In UWP, the XAML processor integrates the conversion logic to convert the Margin declaration to a `Thickness` object. 
+But in [ WPF ](WPF), TypeConverters are used.
+
+=== "Markup"
+
+    ```xml
+    <Button Margin="10,20,10,30" Content="Click me"/>
+    ```
+
+=== "Code-behind"
+
+    ```cs
+    var btn = new Button
+    {
+        Margin = new Thickness(10, 20, 10, 30);
+    };
+    ```
 
 
 ### Markup Extensions
@@ -673,479 +619,79 @@ Here, the background of the grid is bound to a color from the Windows-native the
 and the TextBlock's Foreground property is bound to a color defined in a resource dictionary
 defined on the same page.
 
-```xml
-<Page>
-  <Page.Resources>
-    <SolidColorBrush x:Key="MyBrush" Color="Brown" />
-  </Page.Resources>
-
-  <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-    <TextBlock Text="Hello World" Foreground="{StaticResource MyBrush}" />
-  </Grid>
-</Page>
-```
-
-<sup>[Channel 9](https://channel9.msdn.com/Series/Windows-10-development-for-absolute-beginners/UWP-028-XAML-Styles "UWP course - XAML Styles")
-
 Multiple properties can be set at the same time by setting a `Style` property element.
 ```xml
-
 <Page>
-  <Page.Resources>
-    <Style TargetType="Button" x:Key="MyButtonStyle">
-      <Setter Property="Background" Value="Blue"/>
-      <Setter Property="FontFamily" Value="Arial Black"/>
-      <Setter Property="FontSize" Value="36"/>
-    </Style>
-  </Page.Resources>
+    <Page.Resources>
+        <Style TargetType="Button" x:Key="MyButtonStyle">
+            <Setter Property="Background" Value="Blue"/>
+            <Setter Property="FontFamily" Value="Arial Black"/>
+            <Setter Property="FontSize" Value="36"/>
+        </Style>
+    </Page.Resources>
 
-  <Button Content="Hello world" Style="{StaticResource MyButtonStyle}"/>
+    <Button Content="Hello world" Style="{StaticResource MyButtonStyle}"/>
 </Page>
 ```
+
+
+```xml
+<Page>
+    <Page.Resources>
+            <SolidColorBrush x:Key="MyBrush" Color="Brown" />
+    </Page.Resources>
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <TextBlock Text="Hello World" Foreground="{StaticResource MyBrush}" />
+    </Grid>
+</Page>
+```
+
+[src](https://channel9.msdn.com/Series/Windows-10-development-for-absolute-beginners/UWP-028-XAML-Styles "UWP course - XAML Styles")
+
+
+
 
 ### Dependency properties
 
 Only [dependency properties](https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/dependency-properties-overview) can be targets for data binding in [UWP](UWP) and [WPF](WPF).
 The **propdp** snippet in Visual Studio can be used to create one.
 
-The **DependencyObject** class, which is a base class of all UI elements in UWP and WPF, exposes
-the `GetValue` and `SetValue` methods, which are used to ...
+The **DependencyObject** class, which is a base class of all UI elements in UWP and WPF, exposes the `GetValue` and `SetValue` methods, which are used to ...
 
 
+### Multi-instance
 
+A **multi-instance** application is one that can run in several instances, which is necessary to allow users to open new windows.
 
-
-
-
-
-
-
-
-
-
----
-
-## Controls
-
-
-### ComboBox
-
-![](/img/GUI-ComboBox.gif)
-
-Important attributes:
-
-- `Items` or `ItemsSource` specify the collection (preferably `IObservableCollection` to support event handling on value changes) to be used to [populate](#mock-data) the control.
-- `SelectedItem` defines the element that appears selected by the control by default. 
-If not defined, no element will be selected.
-- `DisplayMemberPath` defines the name of the property to be used to display each individual choice.
-
-
+A collection of templates is available as a Visual Studio [extension](https://marketplace.visualstudio.com/items?itemName=AndrewWhitechapelMSFT.MultiInstanceApps).
+These templates modify the appxmanifest file by setting the **SupportsMultipleInstances** attribute to true:
 
 ```xml
-<ComboBox 
-    ItemsSource="{x:Bind Items}" 
-    SelectedItem="{x:Bind Items[0]}"
-    DisplayMemberPath="Display" />
-```
-
-### CommandBar
-
-[**`CommandBar`**](https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/app-bars) is a lightweight control that can organize a bar of buttons.
-
-![](/img/GUI-WBC-CommandBar.jpg)
-
-<details><summary>MainPage.xaml</summary>
-```xml
-<CommandBar>
-    <AppBarButton x:Name="AddCustomer" Click="AddCustomer_Click" Label="Add">
-        <SymbolIcon Symbol="AddFriend"/>
-    </AppBarButton>
-    <AppBarButton x:Name="DeleteCustomer" Click="DeleteCustomer_Click" Label="Delete">
-        <SymbolIcon Symbol="Delete"/>
-    </AppBarButton>
-    <AppBarButton x:Name="btn_MoveSideBar" Click="btn_MoveSideBar_Click" Label="Move sidebar">
-        <SymbolIcon x:Name="btn_MoveSideBar_Symbol" Symbol="AlignRight"/>
-    </AppBarButton>
-</CommandBar>
-```
-</details>
-
-
-### Dialog boxes
-
-In XAML, the **`MessageDialog`** object can be used to create a **modal** dialog box (i.e. one that does not allow interaction with the main window until the dialog box has been cleared).
-
-The `MessageDialog` object can take a string argument containing the text of the dialog box.
-It is actually displayed by calling the object's `ShowAsync()` method.
-Because this is an asynchronous call, it must be `await`ed, which requires the `System` namespace. ([src](https://app.pluralsight.com/course-player?clipId=45b6766d-40bf-4be9-b3c9-26800ca4974e))
-
-=== "C#"
-```csharp
-using Microsoft.UI.Xaml;
-using Microsoft.UI.Xaml.Controls;
-using Windows.UI.Popups;
-using System;
-
-namespace WiredBrainCoffee.UWP
-{
-    public sealed partial class MainPage : Page
-    {
-        public MainPage()
-        {
-            this.InitializeComponent();
-        }
-
-        private async void AddCustomer(object sender, RoutedEventArgs e)
-        {
-            var messageDialog = new MessageDialog("Customer added!");
-            await messageDialog.ShowAsync();
-        }
-    }
-}
-```
-
-### Grid
-
-The **`Grid`** layout panel is analogous to the **`grid`** geometry manager in tkinter.
-However, in XAML you are forced to explicitly declare **`RowDefinition`** and **`ColumnDefinition`** elements. 
-Whereas in tkinter, the widget being placed declares its own grid position.
-If the grid is sparse, the empty rows and columns appear to be ignored.
-
-Grid **star-sizing** works similar to `flex-grow` and `flex-shrink` CSS style statements used with Flexbox.
-
-=== "Rows"
-
-    <details>
-    <summary>![](/img/GUI-Rainbow-Rows.gif)</summary>
-
-    ```xml
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
-
-        <Rectangle Fill="LightGray"/>
-        <Rectangle Fill="LightSteelBlue" Grid.Row="1"/>
-        <Rectangle Fill="LightBlue" Grid.Row="2"/>
-        <Rectangle Fill="LightCyan" Grid.Row="3"/>
-        <Rectangle Fill="LightSeaGreen" Grid.Row="4"/>
-        <Rectangle Fill="LightGreen" Grid.Row="5"/>
-        <Rectangle Fill="LightGoldenrodYellow" Grid.Row="6" />
-        <Rectangle Fill="LightSalmon" Grid.Row="7"/>
-        <Rectangle Fill="LightCoral" Grid.Row="8"/>
-    </Grid>
-    ```
-    </details>
-
-=== "Columns"
-
-    <details>
-    <summary>
-    ![](/img/GUI-Rainbow-Columns.gif)
-    </summary>
-
-    ```xml
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-
-        <Rectangle Fill="LightGray"/>
-        <Rectangle Fill="LightSteelBlue" Grid.Column="1"/>
-        <Rectangle Fill="LightBlue" Grid.Column="2"/>
-        <Rectangle Fill="LightCyan" Grid.Column="3"/>
-        <Rectangle Fill="LightSeaGreen" Grid.Column="4"/>
-        <Rectangle Fill="LightGreen" Grid.Column="5"/>
-        <Rectangle Fill="LightGoldenrodYellow" Grid.Column="6" />
-        <Rectangle Fill="LightSalmon" Grid.Column="7"/>
-        <Rectangle Fill="LightCoral" Grid.Column="8"/>
-    </Grid>
-    ```
-    </details>
-
-### ListView
-
-![](/img/GUI-ListView.gif)
-
-```xml
-<ListView
-    ItemsSource="{x:Bind Items}" 
-    SelectedItem="{x:Bind Items[0]}"
-    DisplayMemberPath="Display"/>
-```
-
-Important attributes:
-
-- `Items` or `ItemsSource` specify the collection (preferably `IObservableCollection` to support event handling on value changes) to be used to [populate](#mock-data) the control.
-- `SelectedItem` defines the element that appears selected by the control by default. 
-If not defined, no element will be selected.
-- `DisplayMemberPath` defines the name of the property to be used to display each individual choice.
-
-
-
-
-=== "MainWindow.xaml"
-
-    ```xml
-    <Window
-        x:Class="Scratchpad1.MainWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:local="using:Scratchpad1"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d">
-
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <ComboBox 
-                ItemsSource="{x:Bind Items}" 
-                SelectedItem="{x:Bind Items[0]}"
-                DisplayMemberPath="Name" />
-        </StackPanel>
-    </Window>
-    ```
-=== "MainWindow.xaml.cs"
-
-    ```csharp
-    using System.Collections.Generic;
-    using Microsoft.UI.Xaml;
-
-    namespace Scratchpad1
-    {
-
-        public class Starship
-        {
-            public string Name { get; set; }
-            public string Registry { get; set; }
-            public int Crew { get; set; }
-
-            public Starship(string name, string registry, int crew)
-            {
-                Name = name;
-                Registry = registry;
-                Crew = crew;
-            }
-        }
-
-
-        public sealed partial class MainWindow : Window
-        {
-            //List<string> Items = new List<string>();
-            Starship[] Items = new Starship[3];
-
-
-            public MainWindow()
-            {
-                this.InitializeComponent();
-                Items[0]=new Starship("USS Enterprise","NCC-1701",204);
-                Items[1]=new Starship("USS Constitution","NCC-1700",203);
-                Items[2]=new Starship("USS Defiant","NCC-1764",202);
-            }
-        }
-    }
-    ```
-
-### Page
-
-The **Page** element in [UWP](#uwp) is equivalent to `Window` in WPF.
-
-Page elements can only accept a single Content sub-element, necessitating the use of a [layout panel](#layout) like [Grid](#grid), [StackPanel](#stackpanel), etc.
-
-
-
-### RelativePanel
-
-**`RelativePanel`** allows children to declare attributes (e.g. `RelativePanel.RightOf` ) to specify position relative to the `x:Name` of other children. This is useful in building responsive layouts.
-
-Supports several attached properties that allow elements to be aligned with siblings or with the panel itself.
-
-- **Panel alignment relations** like `AlignLeftWithPanel`, `AlignTopWithPanel`, `AlignRightWithPanel`, `AlignBottomWithPanel`,  align controls to the border of the RelativePanel containing them.
-- **Sibling alignment relationships** like `AlignLeftWith`, `AlignTopWith`, `AlignVerticalCenterWith` etc. specify the name of a sibling control to provide alignment.
-- **Sibling positional relations** like `LeftOf`, `Above`, `RightOf`, and `Below` also specify a sibling control.
-
-### ResourceDictionary
-
-[**Resource dictionaries**]()
-
-Here, [Buttons](#button) will now be able to be styled using a [ markup extension ](Markup-extensions)
-```xml
-<Button Style="{StaticResource SubmitButton}" Content="Submit"/>
-```
-
-=== "/ResourceDictionaries/ButtonDictionary.xaml"
-
-    ```xml
-    <ResourceDictionary>
-        <Style TargetType="Button" x:Key="SubmitButton">
-            <Setter Property="Background" Value="Green"/>
-            <Setter Property="Padding" Value="5"/>
-        </Style>
-    </ResourceDictionary>
-    ```
-
-=== "App.xaml"
-
-    ```xml
-    <Application>
-        <Application.Resources>
-            <ResourceDictionary Source="ResourceDictionaries/ButtonDictionary.xaml"/>
-        </Application.Resources>
+<Package
+  ...
+  xmlns:desktop4="http://schemas.microsoft.com/appx/manifest/desktop/windows10/4"
+  xmlns:iot2="http://schemas.microsoft.com/appx/manifest/iot/windows10/2"  
+  IgnorableNamespaces="uap mp desktop4 iot2">
+  ...
+  <Applications>
+    <Application Id="App"
+      ...
+      desktop4:SupportsMultipleInstances="true"
+	  iot2:SupportsMultipleInstances="true">
+      ...
     </Application>
-    ```
-
-Managing a consistent style will typically necessitate using multiple resource dictionaries.
-But some elements can only contain a single ResourceDictionary element.
-
-The solution is to place a **`ResourceDictionary.MergedDictionaries`** property element within the outermost `ResourceDictionary`.
-Multiple `ResourceDictionary` objects can be placed as children of it.
-
-```xml
-<Page>
-    <Page.Resources>
-        <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="Dictionary1.xaml" />
-                <ResourceDictionary Source="Dictionary2.xaml" />
-            </ResourceDictionary.MergedDictionaries>
-        </ResourceDictionary>
-    </Page.Resources>
-</Page>
+  </Applications>
+   ...
+</Package>
 ```
 
-Sources
+Resources:
 
-- 📄 [ResourceDictionary](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.ResourceDictionary)
-- ▶ [YouTube](https://www.youtube.com/watch?v=Y9hElE-vx34 "XAML WPF - Styles Part 3, Resource Dictionaries")
-
-### SplitView
-
-[**SplitView**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.splitview?view=winrt-19041) can be used to implement hamburger-style navigation.
-SplitView has two attributes into which controls can be placed, `Pane` and `Content`. Pane is not displayed by default.
-However, by setting the SplitView instance's `IsPaneOpen` attribute to True it can be displayed.
-
-The `DisplayMode` attribute controls how the Pane interacts with Content with opened:
-
-- **`Overlay`**: Pane covers up Content
-- **`Inline`**: Pane pushes Content to the right.
-- **`CompactInline`**: Where Pane will fit Pane elements closely, if `CompactPaneLength` is not specified
-- **`CompactOverley`**: Pane's dimensions can be specified using `CompactPaneLength` and `OpenPaneLength`
-
-### StackPanel
-
-The **`StackPanel`** layout panel in XAML is similar in function to the **`pack()`** geometry manager, although its default behavior appears to horizontally center elements and stack them vertically.
-
-Notably, StackPanel does not support scroll bars. ([src](https://app.pluralsight.com/course-player?clipId=9600c619-e37a-445b-890e-d9da71d048cf))
+- 📄 [Create a multi-instance UWP app](https://docs.microsoft.com/en-us/windows/uwp/launch-resume/multi-instance-uwp)
 
 
-
-### Textbox
-
-=== "XAML"
-    ```xml
-    <Window
-        x:Class="EmployeeManager.WinUI.MainWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:local="using:EmployeeManager.WinUI"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d">
-        
-        <TextBox Header="First name"/>
-    </Window>
-    ```
-=== "tkinter"
-    ```python
-    import tkinter as tk
-    from tkinter.ttk import Entry
-    from tkinter.ttk import LabelFrame
-
-    win = tk.Tk()
-    frame=LabelFrame(win, text="First name")
-    frame.pack()
-    Entry(frame).pack()
-    tk.mainloop()
-    ```
-
-
-
-
-
-
-
-### VariableSizedWrapGrid
-
-**`VariableSizedWrapGrid`** can be used to define a field of tiles similar to an HTML flex container (`display: flex;` with `flex-wrap: wrap;`). The `Orientation` property is similar to a flex container's `flex-direction`, in that the direction of alignment can be specified.
-
-<details>
-<summary>
-![](/img/GUI-VariableSizedWrapGrid.gif)
-</summary>
-```xml
-<Page
-    <!-- ... -->
-    <VariableSizedWrapGrid Orientation="Horizontal" ItemWidth="100" ItemHeight="100">
-        <Rectangle Fill="LightGray"/>
-        <Rectangle Fill="LightSteelBlue" />
-        <Rectangle Fill="LightBlue" />
-        <Rectangle Fill="LightCyan" />
-        <Rectangle Fill="LightSeaGreen" />
-        <Rectangle Fill="LightGreen" />
-        <Rectangle Fill="LightGoldenrodYellow"  />
-        <Rectangle Fill="LightSalmon" />
-        <Rectangle Fill="LightCoral" />
-        <Rectangle Fill="Gray"/>
-        <Rectangle Fill="SteelBlue" />
-        <Rectangle Fill="CadetBlue" />
-        <Rectangle Fill="Cyan" />
-        <Rectangle Fill="SeaGreen" />
-        <Rectangle Fill="Green" />
-        <Rectangle Fill="Goldenrod"  />
-        <Rectangle Fill="Salmon" />
-        <Rectangle Fill="Coral" />
-    </VariableSizedWrapGrid>
-</Page>
-```
-</details>
-
-Notably, the horizontal or vertical alignment of XAML controls is defined on each control, whereas in HTML alignment is specified at the level of the enclosing container.
-
-=== "XAML"
-    ```xml
-    <TextBlock Content="Hello, world!" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-    ```
-
-=== "HTML and CSS"
-    ```pug
-    .container
-        p Hello, world!
-    ```
-    ```css
-    .container {
-        text-align: right top;
-    }
-    ```
-
-## Links
-
-- [XAML overview in WPF](https://docs.microsoft.com/en-us/dotnet/desktop-wpf/fundamentals/xaml)
-- [XAML syntax guide](https://docs.microsoft.com/en-us/windows/uwp/xaml-platform/xaml-syntax-guide "XAML syntax guide")
-
-## Basic patterns
+## Patterns
 
 ### Action on focus
 
@@ -1153,13 +699,77 @@ UI elements expose the **`GotFocus`** event hook for when a user clicks or tabs 
 
 Example handler selecting all text in a TextBox: ([src](https://asp-net-example.blogspot.com/2016/12/uwp-select-textbox-all-text-when-get.html))
 
-```csharp
-void TextBox_GotFocus(object sender, RoutedEventArgs e)
-{
-    TextBox textBox = sender as TextBox;
-    textBox.SelectAll();
-}
-```
+=== "Markup"
+
+    ```xml
+    <Page>
+        <TextBox GotFocus="TextBox_GotFocus"/>
+    </Page>
+    ```
+
+=== "Code-behind"
+
+    ```csharp
+    void TextBox_GotFocus(object sender, RoutedEventArgs e)
+    {
+        TextBox textBox = sender as TextBox;
+        textBox.SelectAll();
+    }
+    ```
+
+### Master/Details
+
+The [**master/details pattern**](https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/master-details) has a master pane (usually a [ListView](#listview)) and a details pane for content.
+
+### MVVM
+
+In the **Model, View, ViewModel (MVVM)** pattern, which implicitly relies on OOP principles, the **Model** represents the data model for the objects being manipulated, 
+and the **ViewModel** is the model for the **View**, that is, the state of the application as represented in a class.
+
+In WinUI, the project that contains the Views (that is, the XAML files) must first add references to the projects where the Models and ViewModel are contained. 
+These will allow the code-behind file of the **MainWindow** to reference those classes.
+
+The class representing the ViewModel is instantiated and assigned to an attribute.
+That class's methods can then be called by using the `x:Bind` attribute syntax on, for instance, a `ListView` element.
+
+=== "Markup"
+    ```xml
+    <Window>
+        <ListView 
+            ItemsSource="{x:Bind ViewModel.Employees, Mode=OneWay}"
+            SelectedItem="{x:Bind ViewModel.SelectedEmployee, Mode=OneWay}"
+            DisplayMemberPath="FirstName"/>
+    </Window>
+    ```
+
+=== "Code-behind"
+
+    ```csharp
+    using EmployeeManager.DataAccess;
+    using EmployeeManager.ViewModel;
+    using Microsoft.UI.Xaml;
+
+    namespace EmployeeManager.WinUI
+    {
+        public sealed partial class MainWindow : Window
+        {
+            public MainWindow()
+            {
+                ViewModel = new MainViewModel(new EmployeeDataProvider());
+                this.InitializeComponent();
+            }
+
+            public MainViewModel ViewModel { get; }
+        }
+    }
+    ```
+
+### Navigation
+
+App layout typically begins with the choice of **navigation model**, which defines how users navigate between pages in the app.
+There are two common navigation models: **left nav** and **top nav**
+
+![](/img/xaml-nav.svg)
 
 ## Examples
 
@@ -1501,3 +1111,501 @@ public class ViewModel
         </AppBarButton>
     </CommandBar>
     ```
+
+## History
+
+Windows has a long history of introducing UI frameworks to facilitate the creation of GUI applications:
+
+- **MFC** (1992) was based on Native C++
+- **WinForms** (2002) was based on .NET Framework
+- **WPF** (2006) was also based on .NET Framework
+- [**UWP XAML**](#uwp) (2012) was based on C++ and .NET
+- [**WinUI 2**](#winui) is a NuGet package containing controls and styles for UWP Apps, intended to decouple UWP applications from the latest version of Windows
+- [**WinUI 3**](#winui) (2020) is meant to provide a UX framework for both Win32 and UWP applications
+
+XAML is a declarative markup language used to create UIs for .NET Core apps.
+The logic of the app is separated in **code-behind** files that are joined to the markup through partial class definitions.
+In Visual Studio this is emphasized by the fact that the code-behind file is literally presented as a child node of the XAML document.
+
+
+The root element (of which there must be only one in order to be a valid XAML file) contains attributes 
+that define the XAML [ namespaces ](#namespaces) for the program that will be parsing the XAML file, or a [ **namescope** ](https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/wpf-xaml-namescopes).
+
+
+## 📘 Glossary
+
+### C#/WinRT
+
+**C#/WinRT** is the language projection for C#. 
+C#/WinRT was created after .NET5 removed WinRT [projection](#language-projection) support for C# out of the .NET compiler for decoupling purposes.
+
+The C#/WinRT compiler is **cswinrt.exe**, which processes [Windows Metadata](#winmd) files to generate .NET5 C# source files, which can then be compiled into [interop assemblies](#interop-assembly).
+
+Resources:
+
+- 💾 [Microsoft.Windows.CsWinRT (NuGet)](https://www.nuget.org/packages/Microsoft.Windows.CsWinRT/)
+- 👨‍💻 [Microsoft/CsWinRT (GitHub)](https://github.com/microsoft/CsWinRT)
+
+### COM
+
+**Component Object Model** was developed in the late 1980s by Microsoft.
+
+### ComboBox
+
+![](/img/GUI-ComboBox.gif)
+
+Important attributes:
+
+- `Items` or `ItemsSource` specify the collection (preferably `IObservableCollection` to support event handling on value changes) to be used to [populate](#mock-data) the control.
+- `SelectedItem` defines the element that appears selected by the control by default. 
+If not defined, no element will be selected.
+- `DisplayMemberPath` defines the name of the property to be used to display each individual choice.
+
+```xml
+<ComboBox 
+    ItemsSource="{x:Bind Items}" 
+    SelectedItem="{x:Bind Items[0]}"
+    DisplayMemberPath="Display" />
+```
+
+### CommandBar
+
+[**`CommandBar`**](https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/app-bars) is a lightweight control that can organize a bar of buttons.
+
+![](/img/GUI-WBC-CommandBar.jpg)
+
+<details><summary>MainPage.xaml</summary>
+```xml
+<CommandBar>
+    <AppBarButton x:Name="AddCustomer" Click="AddCustomer_Click" Label="Add">
+        <SymbolIcon Symbol="AddFriend"/>
+    </AppBarButton>
+    <AppBarButton x:Name="DeleteCustomer" Click="DeleteCustomer_Click" Label="Delete">
+        <SymbolIcon Symbol="Delete"/>
+    </AppBarButton>
+    <AppBarButton x:Name="btn_MoveSideBar" Click="btn_MoveSideBar_Click" Label="Move sidebar">
+        <SymbolIcon x:Name="btn_MoveSideBar_Symbol" Symbol="AlignRight"/>
+    </AppBarButton>
+</CommandBar>
+```
+</details>
+
+### Core application
+
+**Core application** refers to the lifecycle of a UWP application, through which Windows offers app-specific services relating to power management, security, etc and abstracts the app itself.
+It offers a level of control over graphical applications comparable to that available for apps as services. ([src](https://app.pluralsight.com/course-player?clipId=b35aed5b-22a5-401d-82c8-75909092cab6))
+
+
+### Dialog boxes
+
+In XAML, the **`MessageDialog`** object can be used to create a **modal** dialog box (i.e. one that does not allow interaction with the main window until the dialog box has been cleared).
+
+The `MessageDialog` object can take a string argument containing the text of the dialog box.
+It is actually displayed by calling the object's `ShowAsync()` method.
+Because this is an asynchronous call, it must be `await`ed, which requires the `System` namespace. ([src](https://app.pluralsight.com/course-player?clipId=45b6766d-40bf-4be9-b3c9-26800ca4974e))
+
+=== "C#"
+```csharp
+using Microsoft.UI.Xaml;
+using Microsoft.UI.Xaml.Controls;
+using Windows.UI.Popups;
+using System;
+
+namespace WiredBrainCoffee.UWP
+{
+    public sealed partial class MainPage : Page
+    {
+        public MainPage()
+        {
+            this.InitializeComponent();
+        }
+
+        private async void AddCustomer(object sender, RoutedEventArgs e)
+        {
+            var messageDialog = new MessageDialog("Customer added!");
+            await messageDialog.ShowAsync();
+        }
+    }
+}
+```
+
+### Grid
+
+The **`Grid`** layout panel is analogous to the **`grid`** geometry manager in tkinter.
+However, in XAML you are forced to explicitly declare **`RowDefinition`** and **`ColumnDefinition`** elements. 
+Whereas in tkinter, the widget being placed declares its own grid position.
+If the grid is sparse, the empty rows and columns appear to be ignored.
+
+Grid **star-sizing** works similar to `flex-grow` and `flex-shrink` CSS style statements used with Flexbox.
+
+=== "Rows"
+
+    <details>
+    <summary>![](/img/GUI-Rainbow-Rows.gif)</summary>
+
+    ```xml
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Rectangle Fill="LightGray"/>
+        <Rectangle Fill="LightSteelBlue" Grid.Row="1"/>
+        <Rectangle Fill="LightBlue" Grid.Row="2"/>
+        <Rectangle Fill="LightCyan" Grid.Row="3"/>
+        <Rectangle Fill="LightSeaGreen" Grid.Row="4"/>
+        <Rectangle Fill="LightGreen" Grid.Row="5"/>
+        <Rectangle Fill="LightGoldenrodYellow" Grid.Row="6" />
+        <Rectangle Fill="LightSalmon" Grid.Row="7"/>
+        <Rectangle Fill="LightCoral" Grid.Row="8"/>
+    </Grid>
+    ```
+    </details>
+
+=== "Columns"
+
+    <details>
+    <summary>
+    ![](/img/GUI-Rainbow-Columns.gif)
+    </summary>
+
+    ```xml
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Rectangle Fill="LightGray"/>
+        <Rectangle Fill="LightSteelBlue" Grid.Column="1"/>
+        <Rectangle Fill="LightBlue" Grid.Column="2"/>
+        <Rectangle Fill="LightCyan" Grid.Column="3"/>
+        <Rectangle Fill="LightSeaGreen" Grid.Column="4"/>
+        <Rectangle Fill="LightGreen" Grid.Column="5"/>
+        <Rectangle Fill="LightGoldenrodYellow" Grid.Column="6" />
+        <Rectangle Fill="LightSalmon" Grid.Column="7"/>
+        <Rectangle Fill="LightCoral" Grid.Column="8"/>
+    </Grid>
+    ```
+    </details>
+
+### Interop assembly
+
+**Interop assemblies** allow .NET applications to call native code. They can be distributed along with applications that reference them to provide 
+
+### Language projection
+
+A **language projection** is an adapter that enables programming [WinRT](#winrt) APIs in a way that is idiomatic to a given language.
+
+- [C#/WinRT](#cwinrt)
+- [C++/WinRT](https://github.com/Microsoft/cppwinrt) generates headers for the C++ language projection
+
+Resources:
+
+- 📄 [C#/WinRT (MSDocs)](https://docs.microsoft.com/en-us/windows/uwp/csharp-winrt/)
+
+
+
+### ListDetailsView
+
+![](/img/xaml-listdetailsview.gif)
+
+**ListDetailsView** is a custom control available from the [Windows Community Toolkit](https://docs.microsoft.com/en-us/windows/communitytoolkit/) (Nuget package Microsoft.Toolkit.UWP) that implements the [Master/Details pattern](#master-details-pattern).
+
+### ListView
+
+![](/img/GUI-ListView.gif)
+
+```xml
+<ListView
+    ItemsSource="{x:Bind Items}" 
+    SelectedItem="{x:Bind Items[0]}"
+    DisplayMemberPath="Display"/>
+```
+
+Important attributes:
+
+- `Items` or `ItemsSource` specify the collection (preferably `IObservableCollection` to support event handling on value changes) to be used to [populate](#mock-data) the control.
+- `SelectedItem` defines the element that appears selected by the control by default. 
+If not defined, no element will be selected.
+- `DisplayMemberPath` defines the name of the property to be used to display each individual choice.
+
+
+
+
+=== "MainWindow.xaml"
+
+    ```xml
+    <Window
+        x:Class="Scratchpad1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="using:Scratchpad1"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d">
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <ComboBox 
+                ItemsSource="{x:Bind Items}" 
+                SelectedItem="{x:Bind Items[0]}"
+                DisplayMemberPath="Name" />
+        </StackPanel>
+    </Window>
+    ```
+
+=== "MainWindow.xaml.cs"
+
+    ```csharp
+    using System.Collections.Generic;
+    using Microsoft.UI.Xaml;
+
+    namespace Scratchpad1
+    {
+
+        public class Starship
+        {
+            public string Name { get; set; }
+            public string Registry { get; set; }
+            public int Crew { get; set; }
+
+            public Starship(string name, string registry, int crew)
+            {
+                Name = name;
+                Registry = registry;
+                Crew = crew;
+            }
+        }
+
+
+        public sealed partial class MainWindow : Window
+        {
+            //List<string> Items = new List<string>();
+            Starship[] Items = new Starship[3];
+
+
+            public MainWindow()
+            {
+                this.InitializeComponent();
+                Items[0]=new Starship("USS Enterprise","NCC-1701",204);
+                Items[1]=new Starship("USS Constitution","NCC-1700",203);
+                Items[2]=new Starship("USS Defiant","NCC-1764",202);
+            }
+        }
+    }
+    ```
+
+### Page
+
+The **Page** element in [UWP](#uwp) is equivalent to `Window` in WPF.
+
+Page elements can only accept a single Content sub-element, necessitating the use of a [layout panel](#layout) like [Grid](#grid), [StackPanel](#stackpanel), etc.
+
+
+
+### RelativePanel
+
+**`RelativePanel`** allows children to declare attributes (e.g. `RelativePanel.RightOf` ) to specify position relative to the `x:Name` of other children. This is useful in building responsive layouts.
+
+Supports several attached properties that allow elements to be aligned with siblings or with the panel itself.
+
+- **Panel alignment relations** like `AlignLeftWithPanel`, `AlignTopWithPanel`, `AlignRightWithPanel`, `AlignBottomWithPanel`,  align controls to the border of the RelativePanel containing them.
+- **Sibling alignment relationships** like `AlignLeftWith`, `AlignTopWith`, `AlignVerticalCenterWith` etc. specify the name of a sibling control to provide alignment.
+- **Sibling positional relations** like `LeftOf`, `Above`, `RightOf`, and `Below` also specify a sibling control.
+
+### ResourceDictionary
+
+[**Resource dictionaries**]()
+
+Here, [Buttons](#button) will now be able to be styled using a [ markup extension ](Markup-extensions)
+```xml
+<Button Style="{StaticResource SubmitButton}" Content="Submit"/>
+```
+
+=== "App.xaml"
+
+    ```xml
+    <Application>
+        <Application.Resources>
+            <ResourceDictionary Source="ResourceDictionaries/ButtonDictionary.xaml"/>
+        </Application.Resources>
+    </Application>
+    ```
+
+=== "/ResourceDictionaries/ButtonDictionary.xaml"
+
+    ```xml
+    <ResourceDictionary>
+        <Style TargetType="Button" x:Key="SubmitButton">
+            <Setter Property="Background" Value="Green"/>
+            <Setter Property="Padding" Value="5"/>
+        </Style>
+    </ResourceDictionary>
+    ```
+
+
+Managing a consistent style will typically necessitate using multiple resource dictionaries.
+But some elements can only contain a single ResourceDictionary element.
+
+The solution is to place a **`ResourceDictionary.MergedDictionaries`** property element within the outermost `ResourceDictionary`.
+Multiple `ResourceDictionary` objects can be placed as children of it.
+
+```xml
+<Page>
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Dictionary1.xaml" />
+                <ResourceDictionary Source="Dictionary2.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+</Page>
+```
+
+Sources
+
+- 📄 [ResourceDictionary](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.ResourceDictionary)
+- ▶ [YouTube](https://www.youtube.com/watch?v=Y9hElE-vx34 "XAML WPF - Styles Part 3, Resource Dictionaries")
+
+### SplitView
+
+[**SplitView**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.splitview?view=winrt-19041) can be used to implement hamburger-style navigation.
+SplitView has two attributes into which controls can be placed, `Pane` and `Content`. Pane is not displayed by default.
+However, by setting the SplitView instance's `IsPaneOpen` attribute to True it can be displayed.
+
+The `DisplayMode` attribute controls how the Pane interacts with Content with opened:
+
+- **`Overlay`**: Pane covers up Content
+- **`Inline`**: Pane pushes Content to the right.
+- **`CompactInline`**: Where Pane will fit Pane elements closely, if `CompactPaneLength` is not specified
+- **`CompactOverley`**: Pane's dimensions can be specified using `CompactPaneLength` and `OpenPaneLength`
+
+### StackPanel
+
+The **`StackPanel`** layout panel in XAML is similar in function to the **`pack()`** geometry manager, although its default behavior appears to horizontally center elements and stack them vertically.
+
+Notably, StackPanel does not support scroll bars. ([src](https://app.pluralsight.com/course-player?clipId=9600c619-e37a-445b-890e-d9da71d048cf))
+
+### TabView
+
+![](/img/xaml-tabview.png)
+
+### Target Framework Moniker
+
+**Target framework monikers** are used in NuGet packages and project files to refer to the flavor of .NET targeted by an application.
+[As of .NET5](https://github.com/dotnet/designs/blob/main/accepted/2020/net5/net5.md), Microsoft introduced new monikers that indicate the targeted OS after a hyphen, e.g. `net5.0-windows`, etc.
+These monikers will pull in the projection assemblies that are needed to access those APIs.
+
+### Textbox
+
+=== "XAML"
+    ```xml
+    <Window
+        x:Class="EmployeeManager.WinUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="using:EmployeeManager.WinUI"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d">
+        
+        <TextBox Header="First name"/>
+    </Window>
+    ```
+=== "tkinter"
+    ```python
+    import tkinter as tk
+    from tkinter.ttk import Entry
+    from tkinter.ttk import LabelFrame
+
+    win = tk.Tk()
+    frame=LabelFrame(win, text="First name")
+    frame.pack()
+    Entry(frame).pack()
+    tk.mainloop()
+    ```
+
+
+
+
+
+
+
+### VariableSizedWrapGrid
+
+**`VariableSizedWrapGrid`** can be used to define a field of tiles similar to an HTML flex container (`display: flex;` with `flex-wrap: wrap;`). The `Orientation` property is similar to a flex container's `flex-direction`, in that the direction of alignment can be specified.
+
+<details>
+<summary><img src="/img/GUI-VariableSizedWrapGrid.gif"/></summary>
+```xml
+<Page>
+    <VariableSizedWrapGrid Orientation="Horizontal" ItemWidth="100" ItemHeight="100">
+        <Rectangle Fill="LightGray"/>
+        <Rectangle Fill="LightSteelBlue" />
+        <Rectangle Fill="LightBlue" />
+        <Rectangle Fill="LightCyan" />
+        <Rectangle Fill="LightSeaGreen" />
+        <Rectangle Fill="LightGreen" />
+        <Rectangle Fill="LightGoldenrodYellow"  />
+        <Rectangle Fill="LightSalmon" />
+        <Rectangle Fill="LightCoral" />
+        <Rectangle Fill="Gray"/>
+        <Rectangle Fill="SteelBlue" />
+        <Rectangle Fill="CadetBlue" />
+        <Rectangle Fill="Cyan" />
+        <Rectangle Fill="SeaGreen" />
+        <Rectangle Fill="Green" />
+        <Rectangle Fill="Goldenrod"  />
+        <Rectangle Fill="Salmon" />
+        <Rectangle Fill="Coral" />
+    </VariableSizedWrapGrid>
+</Page>
+```
+</details>
+
+Notably, the horizontal or vertical alignment of XAML controls is defined on each control, whereas in HTML alignment is specified at the level of the enclosing container.
+
+=== "XAML"
+    ```xml
+    <TextBlock Content="Hello, world!" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+    ```
+
+=== "HTML and CSS"
+    ```pug
+    .container
+        p Hello, world!
+    ```
+    ```css
+    .container {
+        text-align: right top;
+    }
+    ```
+
+### WinMD
+
+**Windows metadata** files (*.winmd) are machine-readable files that define WinRT APIs
+
+They use the same physical file format as CLR assemblies.
+All public types in a .winmd file must be WinRT types
+
+Resources:
+
+- 📄 [Windows Metadata (WinMD) files](https://docs.microsoft.com/en-us/uwp/winrt-cref/winmd-files)
+
+### WinRT
+
+The **Windows Runtime** 

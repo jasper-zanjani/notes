@@ -1,7 +1,7 @@
 # 🐶 Dogfood data
 A problem I've encountered is that when it comes to anything to do with software, learning is doing. But there isn't really much play data easily available. Some tutorials go to the trouble of providing files for download, and I'm sure anyone reading this already has a favorite API or JSON repo where they go to get stuff. But the situation is not ideal, and I've never encountered a body of data in any learning materials I've encountered that compelled me to come back to it time and again. So I made it
 
-[raven](raven.txt)
+[raven](/Coding/Dogfood/raven.txt)
 
 
 These .csv files have proven useful to me as sample datasets to use while learning the Unix filters `grep`, `sed`, and `awk`. I hope whoever finds them finds them just as valuable.

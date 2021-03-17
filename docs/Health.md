@@ -1,22 +1,20 @@
 # 💊 Health 
 
-[Gorilla Mind Smooth]: https://gorillamind.com/products/gorilla-mind-smooth "Gorilla Mind Smooth"
-[nootropic]: #nootropics "nootropic: a substance claimed to improve cognitive function, particular executive functions, memory, creativity, or motivation"
-[anxiolytic]: #anxiolytic "used to reduce anxiety"
-[antioxidant]: #antioxidants "antioxidant: a substance that removes damaging oxidizing agents from the body"
-[ergogenic]: #ergogenic "a substance that is intended to enhance physical performance, stamina, or recovery"
-[MMSE]: #mini-mental-state-examination "Mini Mental State Examination"
-[crossover trial]: #crossover-trial "In a crossover trial subjects are randomly allocated to study arms where each arm consists of a sequence of two or more treatments given consecutively"
-[polyphenol]: #polyphenol "composed of multiple phenol units (C6H5OH)"
-
-
-
-
 TODO:
 
+- Develop a satisfactory dosage of 
+    - [D-Aspartic Acid](#d-aspartic-acid): 📄 [Healthline](https://www.healthline.com/nutrition/d-aspartic-acid-and-testosterone)
+    - [Ashwagandha](#ashwagandha): 📄 [Healthline](https://www.medicalnewstoday.com/articles/318407)
+    - [L-Carnitine](#l-carnitine): 📄 [Healthline](https://www.medicalnewstoday.com/articles/l-carnitine)
+    - [Taurine](#taurine): 📄 [Healthline](https://www.healthline.com/nutrition/what-is-taurine)
+- Adaptogens for evening
+- Adapt dosages to distribute most massive dietary supplements over the course of the day
+    - Creatine
+    - Potassium
+    - D-Aspartic Acid
+    - LCLT
 - Develop a cocktail to use when [sleep](#-sleep-deprivation) is disturbed.
 - Incorporate notes and research from [Reddit](https://www.reddit.com/r/nootropics/wiki/beginners)
-
 
 | Substance                           | Effects                                 | Lowest cost |
 | ----------------------------------- | --------------------------------------- | ----------- |
@@ -34,22 +32,36 @@ TODO:
 | [Resveratrol](#resveratrol)         | [❤&#xFE0F;][antioxidant]                | 0.12        |
 | [Rhodiola](#rhodiola)               | [🧠][nootropic]                          | 0.05        |
 | [Rosemary](#rosemary)               | [🧠][nootropic]                          | 0.09        |
+| [Taurine](#taurine)                 | [💪][ergogenic]                          |
 | [Ubiquinol](#ubiquinol)             | [💪][ergogenic] [❤&#xFE0F;][antioxidant] | **0.11**    |
 
 
 ### 💊 Capsule calculations
 
-A 000 capsule can contain up to 1,644 mg depending on powder density.
 
-| Substance                   | Dosage | Powder mass | Pill cnt | Notes                                                                                                       |
-| --------------------------- | -----: | ----------: | -------: | ----------------------------------------------------------------------------------------------------------- |
-| **Potassium**               |  2,000 |       4,000 |        3 | Probably worth the trouble, since dosages larger than 99 mg don't exist.                                    |
-| **Creatine**                |  5,000 |       5,000 |        4 | Worth the effort for the cost, since Optimum Nutrition's capsules are 3x as expensive as the powder         |
-| **DMAE**                    |  1,000 |       3,000 |        2 | Worth the effort for the cost, since the powder is a fraction of the cost of the NOW Supplements product.   |
-| **L-Theanine**              |    200 |         200 |       <1 |
-| **L-tyrosine**              |  1,000 |       1,000 |       <1 |
-| <strike>Magnesium </strike> |    200 |    2,000 mg |        2 | A capsule that delivers twice the deficient amount per capsule is available                                 |
-| <strike>Calcium</strike>    |  1,000 |       5,000 |        4 | Probably not worth it, since Swanson offers a product that fulfills my dietary deficiency with two tablets. |
+| Substance                             |                                 [TDD][TDD] |                                      Ratio |                               [TDPM][TDPM] |                                          🧠 |                                          💪 |
+| ------------------------------------- | -----------------------------------------: | -----------------------------------------: | -----------------------------------------: | -----------------------------------------: | -----------------------------------------: |
+| [Creatine](#creatine)                 |                                        5.0 |                                        1:1 |                                        5.0 |                                        2.5 |                                        2.5 |
+| [LCLT](#l-carnitine)                  |                                        5.0 |                                        1:1 |                                        5.0 | <span style="color: lightgrey;">0.0</span> |                                        5.0 |
+| [Potassium](#potassium)               |                                        2.0 |                                    **2:1** |                                        4.0 |                                        2.0 |                                        2.0 |
+| [DAA](#d-aspartic-acid)               |                                        3.0 |                                        1:1 |                                        3.0 |                                        1.0 |                                        2.0 |
+| [Taurine](#taurine)                   |                                        3.0 |                                        1:1 |                                        3.0 |                                        1.0 |                                        2.0 |
+| [DMAE](#dmae)                         |                                        1.0 |                                    **3:1** |                                        3.0 |                                        2.0 |                                        1.0 |
+| [L-Tyrosine](#l-tyrosine)             |                                        1.0 |                                        1:1 |                                        1.0 |                                        0.5 |                                        0.5 |
+| [Lion's Mane](#lions-mane)            |                                        1.0 |                                        1:1 |                                        1.0 |                                        1.0 | <span style="color: lightgrey;">0.0</span> |
+| [Ashwagandha](#ashwagandha)           |                                   &gt; 0.6 |                                        1:1 |                                        0.6 |                                        0.3 |                                        0.3 |
+| [Alpha GPC](#alpha-gpc)               |                                        0.6 |                                        1:1 |                                        0.6 |                                        0.6 | <span style="color: lightgrey;">0.0</span> |
+| [L-Theanine](#l-theanine)             |                                        0.2 |                                        1:1 |                                        0.2 |                                        0.2 | <span style="color: lightgrey;">0.0</span> |
+| [Huperzine A](#huperzine-a) (planned) | <span style="color: lightgrey;">0.2</span> | <span style="color: lightgrey;">1:1</span> | <span style="color: lightgrey;">0.2</span> | <span style="color: lightgrey;">0.2</span> | <span style="color: lightgrey;">0.0</span> |
+| Total                                 |                                       22.4 |                                            |                                       26.4 |                                       10.9 |                                       15.5 |
+
+
+| Supplementation package | [TDD][TDD] | OOO capsule capacity (g) | Total daily capsules |
+| ----------------------- | ---------- | ------------------------ | -------------------: |
+| 🧠                       | 10.9       | 1.644 g                  |                    7 |
+| 💪                       | 15.5       | 1.644 g                  |                   10 |
+
+
 
 Colored capsules are available for ~$0.03 each from an [Amazon reseller](https://www.amazon.com/Gelatin-Capsules-Kosher-Certified-Express/dp/B088D1HYHW) [Capsules Express](https://capsulesexpress.com/collections/size-000-colored-gelatin-capsules/size-000-colored-gel) (obviously not worth it).
 
@@ -64,19 +76,18 @@ Colored capsules are available for ~$0.03 each from an [Amazon reseller](https:/
 
 ### 🧠 Nootropics
 
-| Supplement                                 | Dosage  | Cost ($) | Cost (sale) |
-| ------------------------------------------ | ------- | -------- | ----------- |
-| [Alpha GPC](#alpha-gpc)                    | 600 mg  | 0.71     | 0.50        |
-| [Bacopa](#bacopa)                          | 400 mg  | 0.19     | 0.10        |
-| Bioperine                                  | 10 mg   | 0.15     | 0.15        |
-| [DMAE](#dmae)                              | 750 mg  | 0.23     | 0.23        |
-| [Huperzine A](#huperzine-a)                | 200 mcg | 0.33     | 0.20        |
-| [L-Theanine](#l-theanine)                  | 200 mg  | 0.30     | 0.22        |
-| [L-Tyrosine](#l-tyrosine)                  | 1000 mg | 0.16     | 0.07        |
-| [Lion's Mane](#lions-mane)                 | 1000 mg | 0.36     | 0.17        |
-| [Kanna](#kanna)                            | 500 mg  | 0.80     | 0.40        |
-| **Total**                                  |         | 3.23     | **2.04**    |
-| [Gorilla Mind Smooth][Gorilla Mind Smooth] |         | 2.93     |
+| Supplement                                 | Dosage (g) | Cost ($) | Cost (sale) |
+| ------------------------------------------ | ---------: | -------: | ----------: |
+| [Alpha GPC](#alpha-gpc)                    |        0.6 |     0.71 |        0.50 |
+| [Bacopa](#bacopa)                          |        0.4 |     0.19 |        0.10 |
+| [DMAE](#dmae)                              |        0.8 |     0.23 |        0.23 |
+| [Huperzine A](#huperzine-a)                |        0.2 |     0.33 |        0.20 |
+| [L-Theanine](#l-theanine)                  |        0.2 |     0.30 |        0.22 |
+| [L-Tyrosine](#l-tyrosine)                  |        1.0 |     0.16 |        0.07 |
+| [Lion's Mane](#lions-mane)                 |        1.0 |     0.36 |        0.17 |
+| [Kanna](#kanna)                            |        0.5 |     0.80 |        0.40 |
+| **Total**                                  |            |     3.23 |    **2.04** |
+| [Gorilla Mind Smooth][Gorilla Mind Smooth] |            |     2.93 |
 
 - [Alpha GPC](#alpha-gpc)
 - [Bacopa monnieri](#bacopa)
@@ -181,6 +192,7 @@ _**Withania somnifera**_ or **Ashwagandha** is a traditional [Ayurvedic herb](#a
 
 - It has been shown to increase serum testosterone in infertile men. ([2009](https://pubmed.ncbi.nlm.nih.gov/19501822/))
 - In a double-blind, placebo-controlled [crossover study](#crossover-trial), healthy men administered Ashwagandha (500 mg/day) experienced improved cognitive performance outcomes. ([2014](https://www.ncbi.nlm.nih.gov/pubmed/24497737))
+- A study that compared the difference in effect of 250 and 600 mg/day found that the higher dosage was associated with significantly greater stress and anxiety reduction and increased sleep quality. ([2019](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6979308/))
 
 | Product                                                                                                                                                  |                $ |        mg |         $/250 mg |
 | -------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------: | --------: | ---------------: |
@@ -204,22 +216,29 @@ _**Withania somnifera**_ or **Ashwagandha** is a traditional [Ayurvedic herb](#a
 Bacopa monnieri is an [Ayurvedic](#-glossary) herbal medicine. 
 Studies have substantiated its use in enhancing memory by [reducing](https://pubmed.ncbi.nlm.nih.gov/27473605/ "The Ayurvedic plant Bacopa monnieri inhibits inflammatory pathways in the brain") inflammation in the brain.
 
-The main nootropic constituents of Bacopa are believed to be dammarane types of triterpenoid saponins known as **bacosides**. Most clinical studies focus on memory, to the omission of other facets of cognition like fluid intelligence, typically lasting 12 weeks. The long-term effect of Bacopa is unknown, but animal models suggest protection from age-related neurodegeneration. ([2013](https://pubmed.ncbi.nlm.nih.gov/23772955/ "Neuropharmacological review of the nootropic herb Bacopa monnieri") 🖨)
+The main nootropic constituents of Bacopa are believed to be dammarane types of triterpenoid saponins known as **bacosides**. 
+Most clinical studies focus on memory, to the omission of other facets of cognition like fluid intelligence, typically lasting 12 weeks. 
+The long-term effect of Bacopa is unknown, but animal models suggest protection from age-related neurodegeneration. ([2013](https://pubmed.ncbi.nlm.nih.gov/23772955/ "Neuropharmacological review of the nootropic herb Bacopa monnieri") 🖨)
 
-- There are several putative mechanisms of action:
-    - Anti-oxidant/neuroprotection
-    - Acetylcholinesterase inhbition
-    - Choline acetyltransferase activation
-    - Beta-amyloid reduction
-    - Increased cerebral blood flow
-    - Monoamine potentiation and modulation
-- A mix of [Bacopa monnieri](#bacopa), [Lycopene](#lycopene), [Astaxanthin](#astaxanthin), and [vitamin B12](#vitamin-b12)) administered orally once a day to subjects aged 60 years old or more resulted in improved cognitive performance after 8 weeks. ([2020](https://pubmed.ncbi.nlm.nih.gov/33375429/))
+There are several putative mechanisms of action:
 
-| Product                                                                                                                                                                |     $ |     mg | $/400 mg |
-| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----: | -----: | -------: |
-| [Swanson Bacopa Monnieri 250 mg x 90 capsules (Swanson sale)](https://www.swansonvitamins.com/swanson-superior-herbs-bacopa-monnieri-extract-bacognize-250-mg-90-caps) |  5.57 | 22,500 | **0.10** |
-| [Swanson Bacopa Monnieri 250 mg x 90 capsules (Swanson)](https://www.swansonvitamins.com/swanson-superior-herbs-bacopa-monnieri-extract-bacognize-250-mg-90-caps)      |  9.29 | 22,500 |     0.17 |
-| [NOW Supplements Bacoba Extract 450 mg x 90 capsules](https://www.amazon.com/gp/product/B07RFZ8TX2)                                                                    | 18.78 | 40,500 |     0.19 |
+- Anti-oxidant/neuroprotection
+- Acetylcholinesterase inhbition
+- Choline acetyltransferase activation
+- Beta-amyloid reduction
+- Increased cerebral blood flow
+- Monoamine potentiation and modulation
+
+
+A mix of [Bacopa monnieri](#bacopa), [Lycopene](#lycopene), [Astaxanthin](#astaxanthin), and [vitamin B12](#vitamin-b12)) administered orally once a day to subjects aged 60 years old or more resulted in improved cognitive performance after 8 weeks. ([2020](https://pubmed.ncbi.nlm.nih.gov/33375429/))
+
+A neuropharmacological review found that the maximum efficacious dosage was 200 mg/kg. ([2013](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3746283/)) [📄](/Health/rej.2013.1431.pdf)
+
+| Product                                                                                                                                                                |                $ |        mg |         $/400 mg |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------: | --------: | ---------------: |
+| [Bulk Supplements Bacopba 1 kg](https://www.amazon.com/Bacopa-Extract-Powder-BulkSupplements-Support/dp/B07MQXXFG1)                                                    |           212.96 | 1,000,000 |             0.09 |
+| [Swanson Bacopa Monnieri 250 mg x 90 capsules (Swanson sale)](https://www.swansonvitamins.com/swanson-superior-herbs-bacopa-monnieri-extract-bacognize-250-mg-90-caps) | 9.29<br>**5.57** |    22,500 | 0.17<br>**0.10** |
+| [NOW Supplements Bacoba Extract 450 mg x 90 capsules](https://www.amazon.com/gp/product/B07RFZ8TX2)                                                                    |            18.78 |    40,500 |             0.19 |
 
 ### Bioperine
 
@@ -328,6 +347,7 @@ A late 2020 study found that mice given _Cucumis melo_ and _Citrullus lanatus_ s
 **D-Aspartic acid** (D-Asp) is an amino acid found in various tissues, including in the axon terminals and synaptic vesicles of neuronal tissue and endocrine glands.
 
 - A literature review concluded that exogenous D-Asp increases testosterone in animals. However, human studies which demonstrated conflicting results were noted for their short-term generation, small sample size, and other problems. ([2017](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5340133/ "The putative effects of D-Aspartic acid on blood testosterone levels: A systematic review") 🖨)
+- Most studies used dosages of 2,600-3,000 mg/day ([Healthline](https://www.healthline.com/nutrition/d-aspartic-acid-and-testosterone))
 
 | Product                                                                                                                                      |    $ |   mg |     $/3g |
 | -------------------------------------------------------------------------------------------------------------------------------------------- | ---: | ---: | -------: |
@@ -654,6 +674,10 @@ The studies on rosemary in particular were motivated by [traditional association
 
 A [2020 review](https://pubmed.ncbi.nlm.nih.gov/32445136/) found that there was some evidence that associated saffron with improvement in cognitive performance, especially in subjects with neurodegenerative disease.
 
+### Taurine
+
+Dosages of taurine in studies are commonly 500 - 2,000 mg /day, however higher doses appear to be well-tolerated.
+
 ### Tryptophan
 
 **Tryptophan** is a precursor of the neurotransmitters serotonin and melatonin.
@@ -852,3 +876,15 @@ fat surrounding the intra-abdominal organs which has been associated with variou
 ### visceral obesity                                       
 
 abnormally high deposition of **visceral adipose tissue (VAT)**
+
+
+[Gorilla Mind Smooth]: https://gorillamind.com/products/gorilla-mind-smooth "Gorilla Mind Smooth"
+[nootropic]: #nootropics "nootropic: a substance claimed to improve cognitive function, particular executive functions, memory, creativity, or motivation"
+[anxiolytic]: #anxiolytic "used to reduce anxiety"
+[antioxidant]: #antioxidants "antioxidant: a substance that removes damaging oxidizing agents from the body"
+[ergogenic]: #ergogenic "a substance that is intended to enhance physical performance, stamina, or recovery"
+[MMSE]: #mini-mental-state-examination "Mini Mental State Examination"
+[crossover trial]: #crossover-trial "In a crossover trial subjects are randomly allocated to study arms where each arm consists of a sequence of two or more treatments given consecutively"
+[polyphenol]: #polyphenol "composed of multiple phenol units (C6H5OH)"
+[TDPM]: #-capsule-calculations "Total daily powder mass (g)"
+[TDD]: #-capsule-calculations "Total daily dosage (g)"
