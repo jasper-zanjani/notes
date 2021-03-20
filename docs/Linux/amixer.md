@@ -1,3 +1,5 @@
+# amixer
+
 Command-line mixer for ALSA sound card driver [Schatz][Schatz]
 
 Display simplified list of controls 

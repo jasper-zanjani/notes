@@ -929,7 +929,7 @@ parser.add_argument("foo", choices='Hello, world!') # equivalent to ['H','e', ..
 
 Sources
 
-- [Python documentation](https://docs.python.org/3/library/argparse.html)
+- [:material-language-python: Python documentation](https://docs.python.org/3/library/argparse.html)
 
 ### asyncio
 
@@ -945,20 +945,20 @@ import time
 counter = 0
 
 async def func1():
-  global counter
+    global counter
 
-  while True:
-    counter += 1
-    counter -= 1
-    await asyncio.sleep(0)
+    while True:
+        counter += 1
+        counter -= 1
+        await asyncio.sleep(0)
 
 async def func2():
-  global counter
+    global counter
 
-  while True:
-    counter += 1
-    counter -= 1
-    await asyncio.sleep(0)
+    while True:
+        counter += 1
+        counter -= 1
+        await asyncio.sleep(0)
 
 asyncio.gather(func1(), func2())
 asyncio.get_event_loop().run_forever()
@@ -967,13 +967,13 @@ asyncio.get_event_loop().run_forever()
 
 ```py
 async def get_users():
-  users = await client.do_query('select * from users')
-  return users
+    users = await client.do_query('select * from users')
+    return users
 
 async def main():
-  task = asyncio.create_task(get_users())
-  # ...
-  await task
+    task = asyncio.create_task(get_users())
+    # ...
+    await task
 
 asyncio.run(main())
 ```
@@ -981,21 +981,21 @@ asyncio.run(main())
 Allows the joining of multiple threads.
 ```py
 async def get_users():
-  users = await client.do_query('select * from users')
-  return users
+    users = await client.do_query('select * from users')
+    return users
 
 async def main():
-  await asyncio.gather(
-    get_users(),
-    get_users(),
-  )
+    await asyncio.gather(
+        get_users(),
+        get_users(),
+    )
 
 asyncio.run(main())
 ```
 ```py
 async def get_users():
-  users = await client.do_query('select * from users')
-  return users
+    users = await client.do_query('select * from users')
+    return users
 
 asyncio.run(get_users())
 ```
@@ -1012,7 +1012,7 @@ Sources:
 
 - [Demistifying Python's Async and Await keywords](https://youtu.be/F19R_M4Nay4)
 
-### azure.cosmos
+### azure.cosmos [:material-language-python:](https://pypi.org/project/azure-cosmos/) [:material-github:](https://github.com/Azure/azure-sdk-for-python)
 
 ```py
 import azure.cosmos

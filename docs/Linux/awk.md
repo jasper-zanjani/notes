@@ -1,5 +1,5 @@
+# awk
 
-#### Options
 [awk -&#70;]: #awk '```&#10;$ awk -F $C&#10;```&#10;Set field separator to `$C`'
 [awk -&#102;]: #awk '```&#10;$ awk -f $PROGRAMFILE&#10;```&#10;Specify awk program-file `$PROGRAMFILE`'
 [awk -&#118;]: #awk '```&#10;$ awk -v $VAR=$VAL&#10;$ awk --assign $VAR=$VAL&#10;```&#10;Set variable `$VAR` to value `$VAL` before script is executed'

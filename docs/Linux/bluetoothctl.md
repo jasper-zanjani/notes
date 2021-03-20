@@ -1,3 +1,5 @@
+# bluetoothctl
+
 [bluetoothctl devices]:           #bluetoothctl             'List available devices'
 [bluetoothctl list]:              #bluetoothctl             'Display available controllers'
 [bluetoothctl pair]:              #bluetoothctl             'Pair with `$DEVICE`, which is the MAC address of the pairable device'

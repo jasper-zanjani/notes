@@ -1,3 +1,5 @@
+# watch
+
 Execute `$CMD` at periods of `$N` seconds, watching its output CLKF
 ```sh
 watch $CMD -n $N

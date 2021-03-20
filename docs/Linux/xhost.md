@@ -1,3 +1,5 @@
+# xhost
+
 Enable access control to X server
 ```sh
 xhost -

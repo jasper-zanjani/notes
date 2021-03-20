@@ -1,4 +1,4 @@
-# 🤓 C&#35;
+# C&#35;
 ## To-do
 
 - Sort out [Events](#events) section, in particular the example cited
@@ -22,7 +22,13 @@ Data types can be used as static classes, exposing a `TryParse` method.
     parsedDate = DateTime.TryParse(rawDate);
     ```
 
-### String formatting
+### String
+
+Specify a **verbatim** literal string by prepending **`@`**, which disables escape characters and forces interpretation of backslashes literally:
+```csharp
+string filePath = @"C:\televisions\sony\bravia.txt";
+```
+
 
 Specify a formatted string by prepending a **`$`**
 ```csharp
@@ -1354,22 +1360,116 @@ public class DataProvider : IDataProvider
 A mocked data provider also implementing that interface can then be used in testing.
 
 
-## Packages
+
+
+## .NET
+
+[Assembly]: #net 'Assembly&#10;a reusable, versionable, and self-describing building block of a common language runtime application'
+[.NET Framework]: #net '.NET Framework&#10;set of APIs associated with the C# programming language that facilitate the management of Microsoft-based products and development of Windows applications&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2013.: 504'
+[.NET]: #net '.NET&#10;open-source development platform that includes languages and libraries'
+[NuGet]: #net 'NuGet&#10;.NET package manager'
+[.NETCoreKoans]: https://github.com/NotMyself/DotNetCoreKoans ".NET Core Koans"
+
+The .NET ecosystem has 3 **runtimes**, all of which implement the **.NET Standard Library** and rest on common **build tools**, languages, and **runtime components**
+
+- [**.NET Framework**][.NET Framework] released in 2002, making it the oldest runtime, and runs only on Windows. Two major components:
+    - **Common Language Runtime (CLR)** runs **managed code** and performs garbage collection
+    - **.NET Framework Class Library** (also called the **Base Class Library**) is composed of many classes, interfaces, and value types
+- **.NET Core** is cross-platform, open-source, and optimized for performance. Its application host is `dotnet.exe`
+    - **Core Common Language Runtime (CoreCLR)** is more lightweight than that of .NET Framework, but implements **Just-In Time** compilation
+    - **.NET Core Class Library** is smaller than (and actually a subset of) that of .NET Framework
+- **Mono for Xamarin** is used for mobile platforms like IOS, Android, and OS X
+
+**.NET Standard** is a specification of which APIs are available across all these runtimes. It evolved from **Portable Class Libraries (PCL)** and will eventually replace them.
+.NET's package manager is [NuGet][NuGet].
+
+An [assembly][Assembly] can be compiled to EXE or DLL.
+
+### dotnet
+
+Install [dotnet-format](https://github.com/dotnet/format)
+```sh
+dotnet tool install -g dotnet-format
+```
+Install the [ASP.NET scaffolding engine](https://github.com/dotnet/Scaffolding)
+```sh
+dotnet tool install -g dotnet-aspnet-codegenerator
+```
+Create a new [xUnit](#xunit) project named tests
+```sh
+dotnet new xunit -n tests
+```
+Add a [project file](#project-files) to a solution
+```sh
+dotnet sln add ./Project/Project.csproj
+```
+Add a [project reference](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-add-reference) to a project
+```sh
+dotnet add reference ./path/to/Project.csproj
+```
+Install the Moq NuGet package
+```sh
+dotnet add package moq
+```
+Run the **dotnet try** web server that supports .NET Interactive-style markdown:
+
+```md
+    ```cs --source-file ./Program.cs --project ./project.csproj
+    ```
+```
+
+### Project files
+
+References to other projects can be made using the **`ProjectReference`** element, which are collected in `ItemGroup`.
+NuGet package dependencies are specified using **`PackageReference`** element, also in `ItemGroup`
+
+```xml
+<ItemGroup>
+    <ProjectReference Include="/path/to/OtherProject.csproj"/>
+    <PackageReference Include="xunit" Version="2.4.0"/>
+</ItemGroup>
+```
+
+Adding a reference to another project is easily accomplished from the command-line.
+
+```sh
+dotnet add project /path/to/OtherProject.csproj
+```
+
+- The **`LangVersion`** element can specify a version of C# for use by the compiler. [:material-dot-net:](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/configure-language-version)
+- Enabling or disabling nullable reference types at the project level can be done by declaring a **`Nullable`** element. [:material-dot-net:](https://docs.microsoft.com/en-us/dotnet/csharp/nullable-references#nullable-contexts)
+
+=== "LangVersion"
+
+    ```xml
+    <PropertyGroup>
+        <LangVersion>preview</LangVersion>
+    </PropertyGroup>
+    ```
+
+=== "Nullable"
+
+    ```xml
+    <PropertyGroup>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+    ```
+
+### Packages
 
 **NuGet** is the official package manager for .NET.
 
-NuGet packages required for any project were [stored](https://youtu.be/DA0ggvtfUJg?t=240) in a XML [ **packages.config** ](https://docs.microsoft.com/en-us/nuget/reference/packages-config)
-file. 
+NuGet packages required for any project were [stored](https://youtu.be/DA0ggvtfUJg?t=240) in a XML [ **packages.config** ](https://docs.microsoft.com/en-us/nuget/reference/packages-config) file. 
 
 But projects that use [**PackageReference**](https://docs.microsoft.com/en-us/nuget/consume-packages/package-references-in-project-files) may store that information in /obj/project.assets.json.
 
 
-### [System.CommandLine](https://www.nuget.org/packages/System.CommandLine)
+#### System.CommandLine [:material-dot-net:](https://www.nuget.org/packages/System.CommandLine) [:octicons-mark-github-16:](https://github.com/dotnet/command-line-api)
 
 Prior to System.CommandLine, it had been up to the developer to build a custom solution resolving command-line arguments as an array of strings.
 Although .NET includes several earlier attempts at solving this problem, none had emerged as a default solution.
 
-Similar to Python's argparse, the CommandLine library allows you to construct a **`RootCommand`** object that accepts definitions of argument and options.
+Similar to Python's [argparse :material-file-document-edit-outline:](/Coding/Python#argparse), the CommandLine library allows you to construct a **`RootCommand`** object that accepts definitions of argument and options.
 
 Here, an argument is required:
 
@@ -1490,91 +1590,6 @@ Here, the greeting can be specified with an optional parameter
 
 
 
-## .NET
-
-[Assembly]: #net 'Assembly&#10;a reusable, versionable, and self-describing building block of a common language runtime application'
-[.NET Framework]: #net '.NET Framework&#10;set of APIs associated with the C# programming language that facilitate the management of Microsoft-based products and development of Windows applications&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2013.: 504'
-[.NET]: #net '.NET&#10;open-source development platform that includes languages and libraries'
-[NuGet]: #net 'NuGet&#10;.NET package manager'
-[.NETCoreKoans]: https://github.com/NotMyself/DotNetCoreKoans ".NET Core Koans"
-
-The .NET ecosystem has 3 **runtimes**, all of which implement the **.NET Standard Library** and rest on common **build tools**, languages, and **runtime components**
-
-- [**.NET Framework**][.NET Framework] released in 2002, making it the oldest runtime, and runs only on Windows. Two major components:
-    - **Common Language Runtime (CLR)** runs **managed code** and performs garbage collection
-    - **.NET Framework Class Library** (also called the **Base Class Library**) is composed of many classes, interfaces, and value types
-- **.NET Core** is cross-platform, open-source, and optimized for performance. Its application host is `dotnet.exe`
-    - **Core Common Language Runtime (CoreCLR)** is more lightweight than that of .NET Framework, but implements **Just-In Time** compilation
-    - **.NET Core Class Library** is smaller than (and actually a subset of) that of .NET Framework
-- **Mono for Xamarin** is used for mobile platforms like IOS, Android, and OS X
-
-**.NET Standard** is a specification of which APIs are available across all these runtimes. It evolved from **Portable Class Libraries (PCL)** and will eventually replace them.
-.NET's package manager is [NuGet][NuGet].
-
-An [assembly][Assembly] can be compiled to EXE or DLL.
-
-### dotnet
-
-Install [dotnet-format](https://github.com/dotnet/format)
-```sh
-dotnet tool install -g dotnet-format
-```
-Install the [ASP.NET scaffolding engine](https://github.com/dotnet/Scaffolding)
-```sh
-dotnet tool install -g dotnet-aspnet-codegenerator
-```
-Create a new [xUnit](#xunit) project named tests
-```sh
-dotnet new xunit -n tests
-```
-Add a [project file](#project-files) to a solution
-```sh
-dotnet sln add ./Project/Project.csproj
-```
-Add a [project reference](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-add-reference) to a project
-```sh
-dotnet add reference ./path/to/Project.csproj
-```
-Install the Moq NuGet package
-```sh
-dotnet add package moq
-```
-Run the **dotnet try** web server that supports .NET Interactive-style markdown:
-
-```md
-    ```cs --source-file ./Program.cs --project ./project.csproj
-    ```
-```
-
-### Project files
-
-References to other projects can be made using the `ProjectReference` element, which are collected in `ItemGroup`.
-NuGet package dependencies are specified using `PackageReference` element, also in `ItemGroup`
-
-=== "ProjectReference"
-
-    ```xml
-    <ItemGroup>
-        <ProjectReference Include="/path/to/OtherProject.csproj"/>
-    </ItemGroup>
-    ```
-
-=== "PackageReference"
-
-    ```xml
-    <ItemGroup>
-        <PackageReference Include="xunit" Version="2.4.0"/>
-    </ItemGroup>
-    ```
-
-Adding a reference to another project is easily accomplished from the command-line.
-
-```sh
-dotnet add project /path/to/project.csproj
-```
-
-
-
 ## Documentation
 
 C# supports **documentation comments** that can be exported to an XML file, which can then be imported into a static site generator (especially DocFX).
@@ -1658,7 +1673,7 @@ namespace DynamoDBDemo
 The provider pattern is a favored design pattern in .NET.
 This pattern is a form of dependency injection where a class is passed as an argument to another class that uses it for some purpose.
 The key is that the provider **must derive from an abstract base class or an interface**.
-This will allow a similarly-typed substitute to be used in unit testing.
+This will allow a mock based on the same interface to be substituted in unit testing.
 
 - In the XAML: Getting Started course, the process of loading data either from disk or memory is abstracted in a DataProvider class which is passed as argument to the main ViewModel.
 - In the Mocking with Moq and xUnit course, the FrequentFlyerNumberValidator is mocked by using the interface it implements: IFrequentFlyerNumberValidator
@@ -1668,4 +1683,4 @@ This will allow a similarly-typed substitute to be used in unit testing.
 | Model               | Customer              | CreditCardApplication          | Captain            | DeskBookingRequest, DeskBookingResult |
 | Contextual action   | ViewModel             | CreditCardApplicationEvaluator | StarshipDeployment | DeskBookingRequestProcessor           |
 | Provider            | CustomerDataProvider  | FrequentFlyerNumberValidator   | OfficerEvaluator   | DeskBookingRepository                 |
-| Provider base class | ICustomerDataProvider | IFrequentFlyerNumberValidator  | ??                 | IDeskBookingRepository                |
+| Provider interface  | ICustomerDataProvider | IFrequentFlyerNumberValidator  | ??                 | IDeskBookingRepository                |

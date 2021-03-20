@@ -1,3 +1,5 @@
+# chmod
+
 Set sticky bit on `$FILE`
 ```sh
 chmod +t $FILE

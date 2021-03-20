@@ -1,55 +1,69 @@
 # ☁&#xfe0f; Cloud
 
+
+
+=== ":fontawesome-solid-desktop: Compute "
+
+    | &nbsp;                                          |                                                                                                                                                                           :material-microsoft-azure:                                                                                                                                                                            |                                                                                                                        :fontawesome-brands-aws:                                                                                                                        |                                                                                                                                                        :fontawesome-brands-google:                                                                                                                                                         |
+    | ----------------------------------------------- | :-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+    | IaaS                                            |                                                  <figure><img src="/img/10021-icon-service-Virtual-Machine.svg" width="120px"/><figcaption>[Azure VMs :material-file-document-edit-outline:](#azure-vms) [:material-information-outline:](https://azure.microsoft.com/en-us/services/virtual-machines/)</figcaption></figure>                                                   |                             <figure><img src="/img/Arch_Amazon-EC2_64.svg" width="120px"/><figcaption>[EC2 :material-file-document-edit-outline:][EC2] [:material-information-outline:](https://aws.amazon.com/ec2)</figcaption></figure>                              |                            <figure><img src="/img/compute-engine-512-color.svg" width="120px"/><figcaption>[Compute Engine][Google Compute Engine]<br/>[:material-file-document-edit-outline:][Google Compute Engine] [:material-information-outline:](https://cloud.google.com/compute)</figcaption></figure>                             |
+    | PaaS                                            |                                                    <figure><img src="/img/10035-icon-service-App-Services.svg" width="120px" /><figcaption>[App Service :material-file-document-edit-outline:][App Service]  [:material-information-outline:](https://azure.microsoft.com/en-us/services/app-service/)</figcaption></figure>                                                    | <figure><img src="/img/Arch_AWS-Elastic-Beanstalk_64.svg" width="120px"/><figcaption>[Elastic Beanstalk<br/>:material-file-document-edit-outline:][Elastic Beanstalk] [:material-information-outline:](https://aws.amazon.com/elasticbeanstalk/)</figcaption></figure> |                                                    <figure><img src="/img/AppEngine-512-color.svg" width="120px"/><figcaption>[App Engine :material-file-document-edit-outline:][App Engine] [:material-information-outline:](https://cloud.google.com/appengine)</figcaption></figure>                                                    |
+    | Serverless                                      |  <figure><img src="/img/10029-icon-service-Function-Apps.svg" width="120px"/><figcaption>[Functions :material-file-document-edit-outline:][Azure Functions] [:material-information-outline:](https://azure.microsoft.com/en-us/services/functions/) [:material-file-document-multiple-outline:](https://docs.microsoft.com/en-us/azure/azure-functions/)</figcaption></figure>  |                         <figure><img src="/img/Arch_AWS-Lambda_64.svg" width="120px"/><figcaption>[Lambda :material-file-document-edit-outline:][Lambda] [:material-information-outline:](https://aws.amazon.com/lambda)</figcaption></figure>                         | <figure><img src="/img/cloud-functions-512-color.svg" width="120px"/><figcaption>[Cloud Functions :material-file-document-edit-outline:][Cloud Functions] [:material-information-outline:](https://cloud.google.com/functions)</figcaption></figure> [Cloud Run][Cloud Run] [:material-information-outline:](https://cloud.google.com/run) |
+    | :octicons-container-24: Containers              | <figure><img src="/img/10104-icon-service-Container-Instances.svg" width="120px"/><figcaption>[ACI :material-file-document-edit-outline:][ACI] [:material-information-outline:](https://azure.microsoft.com/en-us/services/container-instances/) [:material-file-document-multiple-outline:](https://docs.microsoft.com/en-us/azure/container-instances/)</figcaption></figure> |                  <figure><img src="/img/Arch_Amazon-Elastic-Container-Service_64.svg" width="120px"/><figcaption>[ECS :material-file-document-edit-outline:][ECS] [:material-information-outline:](https://aws.amazon.com/ecs)</figcaption></figure>                   |                                                                                                                                                                                                                                                                                                                                            |
+    | [:material-kubernetes: Kubernetes](/Kubernetes) |         <figure><img src="/img/10023-icon-service-Kubernetes-Services.svg" width="120px"/><figcaption>[AKS :material-file-document-edit-outline:][AKS] [:material-information-outline:](https://azure.microsoft.com/en-us/services/kubernetes-service/) [:material-file-document-multiple-outline:](https://docs.microsoft.com/en-us/azure/aks/)</figcaption></figure>          |                  <figure><img src="/img/Arch_Amazon-Elastic-Kubernetes-Service_64.svg" width="120px"/><figcaption>[EKS :material-file-document-edit-outline:][EKS] [:material-information-outline:](https://aws.amazon.com/eks)</figcaption></figure>                  |                                                          <figure><img src="/img/gke-512-color.png" width="120px"/><figcaption>[GKE :material-file-document-edit-outline:][GKE] [:material-information-outline:](https://cloud.google.com/kubernetes-engine)</figcaption></figure>                                                          |
+    | Container registry                              |                                                                                                                                                                                                                                                                                                                                                                                 |                                                                                                                                                                                                                                                                        |                                                                  <figure><img src="/img/artifact-registry-color.svg" width="120px" title="Artifact Registry"/><figcaption>Artifact Registry [:material-information-outline:](https://cloud.google.com/artifact-registry)                                                                   |
+
+
+=== ":fontawesome-solid-save: Storage "
+
+    | &nbsp;         | :material-microsoft-azure: | :fontawesome-brands-aws: | :fontawesome-brands-google: |
+    | -------------- | :------------------------: | :----------------------: | :-------------------------: |
+    | Archive        |                            |    [Glacier][Glacier]    |                             |
+    | Backups        |                            |                          |                             |
+    | Physical media |                            |                          |                             |
+
+
+=== ":fontawesome-solid-network-wired: Network "
+
+    | &nbsp;           |                                                                                                                                                                      :material-microsoft-azure:                                                                                                                                                                      |                                                                                                                                                       :fontawesome-brands-aws:                                                                                                                                                       |                                                                                                           :fontawesome-brands-google:                                                                                                            |
+    | ---------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+    | Private networks |                                                                                                                        <figure><img src="/img/10061-icon-service-Virtual-Networks.svg" width="120px"/><figcaption>VNets</figcaption></figure>                                                                                                                        |                                                                                       <figure><img src="/img/Arch_Amazon-Virtual-Private-Cloud_64.svg" width="120px" title="AWS Virtual Private Cloud"/><figcaption>VPC</figcaption></figure>                                                                                        |                                                         <figure><img src="/img/virtual-private-cloud-512-color.svg" width="120px" title="GCP VPC"/><figcaption>VPC</figcaption></figure>                                                         |
+    | [DNS](#dns)      | <figure><img src="/img/10064-icon-service-DNS-Zones.svg" width="120px" title="Azure DNS"/><figcaption>[Azure DNS :material-file-document-edit-outline:](#azure-dns) [:material-information-outline:](https://azure.microsoft.com/en-us/services/dns/) [:material-file-document-multiple-outline:](https://docs.microsoft.com/en-us/azure/dns/)</figcaption></figure> | <figure><img src="/img/Arch_Amazon-Route-53_64.svg" width="120px"/><figcaption>[Route 53 :material-file-document-edit-outline:](#route-53) [:material-information-outline:](https://aws.amazon.com/route53/) [:material-file-document-multiple-outline:](https://docs.aws.amazon.com/route53/?id=docs_gateway)</figcaption></figure> | <figure><img src="/img/cloud-dns-512-color.svg" width="120px"/><figcaption>[Cloud DNS :material-information-outline:](https://cloud.google.com/dns) [:material-file-document-multiple-outline:](https://cloud.google.com/)</figcaption></figure> |
+
+
+=== ":fontawesome-solid-code: Development "
+
+    | &nbsp;          |                                                                                      :material-microsoft-azure:                                                                                      |                                                                                                                                                                                                                                                                           :fontawesome-brands-aws:                                                                                                                                                                                                                                                                            |                                                                                                                                                    :fontawesome-brands-google:                                                                                                                                                     |
+    | --------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+    | [NoSQL](#nosql) | <figure><img src="/img/10121-icon-service-Azure-Cosmos-DB.svg" width="120px" title="Azure Cosmos DB"/><figcaption>[Cosmos DB :material-file-document-edit-outline:][Cosmos DB]</figcaption></figure> |                                                        <figure><img src="/img/Arch_Amazon-DynamoDB_64.svg" width="120px"/><figcaption>[DynamoDB :material-file-document-edit-outline:](#dynamodb) [:material-information-outline:](https://aws.amazon.com/dynamodb/)</figcaption></figure><figure><img src="/img/Arch_Amazon-DocumentDB_64.svg" width="120px"/><figcaption>DocumentDB :material-file-document-edit-outline: [:material-information-outline:](https://aws.amazon.com/documentdb/)</figcaption></figure>                                                        | <figure><img src="/img/logo_lockup_firebase_vertical.svg" width="90px"/><figcaption>[Firestore :material-file-document-edit-outline:][Firestore]</figcaption></figure><figure><img src="/img/cloud-spanner-512-color.svg" width="120px"><figcaption>[Spanner :material-file-document-edit-outline:][Spanner]</figcaption></figure> |
+    | CI/CD           |                                      <figure><img src="/img/10261-icon-service-Azure-DevOps.svg" width="120px"/><figcaption>Azure Devops</figcaption></figure>                                       | <figure><img src="/img/Arch_AWS-CodeBuild_64.svg" width="120px" title="CodeBuild"/><figcaption>[CodeBuild][CodeBuild]</figcaption></figure><figure><img src="/img/Arch_AWS-CodeCommit_64.svg" width="120px" title="CodeCommit"/><figcaption>[CodeCommit][CodeCommit]</figcaption></figure><figure><img src="/img/Arch_AWS-CodeDeploy_64.svg" width="120px"/><figcaption>[CodeDeploy][CodeDeploy]</figcaption></figure><figure><img src="/img/Arch_AWS-CodePipeline_64.svg" width="120px" title="CodePipeline"/><figcaption>[CodePipeline][CodePipeline]</figcaption></figure> |                                                                <figure><img src="/img/cloud-build-512-color.svg" width="120px" title="Cloud Build"/><figcaption>Cloud Build [:material-information-outline:](https://cloud.google.com/build)</figcaption></figure>                                                                 |
+    | Messaging       |                                                                                                                                                                                                      |                                                                                                                                                <figure><img src="/img/Arch_Amazon-Simple-Notification-Service_64.svg" width="120px" title="Simple Notification Service (SNS)"/><figcaption>[SNS :material-file-document-edit-outline:][SNS] [:material-information-outline:](https://aws.amazon.com/sns)</figcaption></figure>                                                                                                                                                |                                                                              <figure><img src="/img/pub_sub-512-color.svg" width="120px" title="Pub/Sub"/><figcaption>[Pub/Sub :material-file-document-edit-outline:][Pub/Sub]</figcaption></figure>                                                                               |
+    | Computer Vision |                                   Computer Vision [:material-information-outline:](https://azure.microsoft.com/en-us/services/cognitive-services/computer-vision/)                                   |                                                                                                                                                                                          <figure><img src="/img/Arch_Amazon-Rekognition_64.svg" width="120px" title="Rekognition"><figcaption>[Rekognition :material-file-document-edit-outline:][Rekognition]</figcaption></figure>                                                                                                                                                                                          |                                 <figure><img src="/img/cloud-vision-api-512-color.svg" width="120px" title="Cloud Vision"/><figcaption>[Cloud Vision :material-file-document-edit-outline:][Cloud Vision] [:material-information-outline:](https://cloud.google.com/vision)</figcaption></figure>                                  |
+
+=== ":material-database: Big Data "
+
+    | &nbsp;           |                                                                                                                                                                                                                   :material-microsoft-azure:                                                                                                                                                                                                                   |                                                                                                                                                                                                 :fontawesome-brands-aws:                                                                                                                                                                                                 |                                                                                                                                                                                                         :fontawesome-brands-google:                                                                                                                                                                                                          |
+    | ---------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+    | **Big Data**     |                                                                                                                                                 <figure><img src="/img/10150-icon-service-Data-Lake-Store-Gen1.svg" width="120px" title="Data Lake Storage"/><figcaption>Data Lake Store</figcaption></figure>                                                                                                                                                 | <figure><img src="/img/Arch_Amazon-Redshift_64.svg" width="120px" title="Redshift"/><figcaption>[Redshift :material-file-document-edit-outline:][Redshift]</figcaption></figure><figure><img src="/img/Arch_Amazon-Athena_64.svg" width="120px" title="Athena"/><figcaption>[Athena :material-file-document-edit-outline:][Athena] [:material-information-outline:](https://aws.amazon.com/athena)</figcaption></figure> | <figure><img src="/img/bigquery-512-color.svg" width="120px" title="BigQuery"/><figcaption>[BigQuery][Bigquery]</figcaption></figure> <figure><img src="/img/cloud-bigtable-512-color.svg" width="120px"/><figcaption>[BigTable :material-file-document-edit-outline:][BigTable]</figcaption></figure> <figure><img src="/img/dataprep-512-color.svg" width="120px" title="Dataprep"/><figcaption>[Dataprep][Dataprep]</figcaption></figure> |
+    | Streaming data   | <figure><img src="/img/00039-icon-service-Event-Hubs.svg" width="120px" title="Azure Event Hubs"/><figcaption>Event Hubs</figcaption></figure><figure><img src="/img/10836-icon-service-Service-Bus.svg" width="120px" title="Azure Service Bus"/><figcaption>Service Bus</figcaption></figure><figure><img src="/img/00042-icon-service-Stream-Analytics-Jobs.svg" width="120px" title="Stream Analytics"/><figcaption>Stream Analytics</figcaption></figure> |                           <figure><img src="/img/Arch_Amazon-Kinesis_64.svg" width="120px" title="Kinesis"/><figcaption>Kinesis</figcaption></figure><figure><img src="/img/Arch_Amazon-Athena_64.svg" width="120px" title="Athena"/><figcaption>[Athena :material-file-document-edit-outline:][Athena] [:material-information-outline:](https://aws.amazon.com/athena)</figcaption></figure>                            |                                                                                                                                                          <figure><img src="/img/dataflow-512-color.svg" width="120px" title="DataFlow"/><figcaption>DataFlow</figcaption></figure>                                                                                                                                                           |
+    | Batch processing |                                   <figure><img src="/img/10142-icon-service-HD-Insight-Clusters.svg" width="120px" title="HDInsight"/><figcaption>[HDInsight :material-file-document-edit-outline:][HDInsight]</figcaption></figure> <figure><img src="/img/10031-icon-service-Batch-Accounts.svg" width="120px" title="Batch"/><figcaption>[Batch :material-file-document-edit-outline:][Azure Batch]</figcaption></figure>                                   |                                                                               <figure><img src="/img/Arch_Amazon-EMR_64.svg" width="120px" title="Elastic MapReduce"/><figcaption>[EMR][EMR]</figcaption></figure> <figure><img src="/img/Arch_AWS-Batch_64.svg" width="120px" title="AWS Batch"/><figcaption>Batch</figcaption></figure>                                                                                |                                                                                             <figure><img src="/img/dataflow-512-color.svg" width="120px" title="DataFlow"/><figcaption>DataFlow</figcaption></figure> <figure><img src="/img/dataproc-512-color.svg" width="120px" title="Dataproc"/><figcaption>Dataproc</figcaption></figure>                                                                                              |
+
+
 Links TODO:
 
+- Cloud Storage
+- CloudWatch
+- Azure Functions
 - Glacier
 - Google Cloud Storage (GCS)
 - gcloud
 - gsutil
-
-
-Beginning in 2000, Amazon began developing Merchant.com, a planned e-commerce service that was intended to be the base upon which other enterprises would develop online shopping sites.
-At the time, Amazon's development environment was a jumbled mess, and in the effort to consolidate and organize the enterprise into a set of well-documented APIs.
-
-Despite these changes, software development remained sluggish, and an investigation discovered that individual teams were procuring storage, compute, and database resources independently.
-AWS originated out of the effort to consolidate these resources across the enterprise and remove this bottleneck.
-
-Azure was announced in 2008 and publicly released in 2010 after earlier experiments in cloud computing like Whitehorse and RedDog. 
-In fact, references to the "classic" model predating the Azure Resource Manager (ARM) actually refer to RedDog: the "classic" portal was also known as "RedDog Front-End".
-
-
-
-| Service            | Azure                                                                                                                                                | AWS                                                                                                                                                                                                                                 | GCP                                                                                                                                                                                                                                                                |
-| ------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Administration** |                                                                                                                                                      |                                                                                                                                                                                                                                     |                                                                                                                                                                                                                                                                    |
-| CLI                | Azure CLI [📄](https://docs.microsoft.com/en-us/cli/azure/)<br>Azure PowerShell [📄](https://docs.microsoft.com/en-us/powershell/azure/)               | AWS CLI [🏠](https://aws.amazon.com/cli/) [📄](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/index.html) [💾](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html)<br>AWS Tools for PowerShell | [gcloud][gcloud] [📄](https://cloud.google.com/sdk/gcloud/reference) [💾](https://cloud.google.com/sdk/docs/quickstart)<br>[gsutil][gsutil] [📄](https://cloud.google.com/storage/docs/gsutil)<br>[cbt][cbt] [📄](https://cloud.google.com/bigtable/docs/cbt-overview) |
-| **Compute**        |                                                                                                                                                      |                                                                                                                                                                                                                                     |                                                                                                                                                                                                                                                                    |
-| IaaS               | [Azure VMs](#azure-vms) [🏠](https://azure.microsoft.com/en-us/services/virtual-machines/)                                                            | [EC2][EC2] [🏠](https://aws.amazon.com/ec2)                                                                                                                                                                                          | Compute Engine [🏠](https://cloud.google.com/compute)                                                                                                                                                                                                               |
-| PaaS               | [App Service][App Service]  [🏠](https://azure.microsoft.com/en-us/services/app-service/)                                                             | [Elastic Beanstalk][Elastic Beanstalk] [🏠](https://aws.amazon.com/elasticbeanstalk/) [📄](https://docs.aws.amazon.com/elastic-beanstalk/index.html)                                                                                  | [App Engine][App Engine] [🏠](https://cloud.google.com/appengine)                                                                                                                                                                                                   |
-| Containers         | [ACI][ACI] [🏠](https://azure.microsoft.com/en-us/services/container-instances/) [📄](https://docs.microsoft.com/en-us/azure/container-instances/)     | [ECS][ECS] [🏠](https://aws.amazon.com/ecs) [📄](https://aws.amazon.com/ecs/resources/)                                                                                                                                               |                                                                                                                                                                                                                                                                    |
-| [Kubernetes](/Kubernetes)         | [AKS][AKS] [🏠](https://azure.microsoft.com/en-us/services/kubernetes-service/) [📄](https://docs.microsoft.com/en-us/azure/aks/)                      | [EKS][EKS] [🏠](https://aws.amazon.com/eks) [📄](https://docs.aws.amazon.com/eks)                                                                                                                                                     | [GKE][GKE] [🏠](https://cloud.google.com/kubernetes-engine)                                                                                                                                                                                                         |
-| Serverless         | [Functions][Azure Functions] [🏠](https://azure.microsoft.com/en-us/services/functions/) [📄](https://docs.microsoft.com/en-us/azure/azure-functions/) |                                                                                                                                                                                                                                     | [Cloud Functions][Cloud Functions] [🏠](https://cloud.google.com/functions)<br>[Cloud Run][Cloud Run] [🏠](https://cloud.google.com/run)                                                                                                                             |
-| 💾 **Storage**      | Storage accounts                                                                                                                                     | [S3][S3]                                                                                                                                                                                                                            | [Cloud Storage][Cloud Storage] [🏠](https://cloud.google.com/storage)                                                                                                                                                                                               |
-| Archive            |                                                                                                                                                      | [Glacier][Glacier]                                                                                                                                                                                                                  |                                                                                                                                                                                                                                                                    |
-| Backups            |                                                                                                                                                      |                                                                                                                                                                                                                                     |                                                                                                                                                                                                                                                                    |
-| Physical media     |                                                                                                                                                      |                                                                                                                                                                                                                                     |                                                                                                                                                                                                                                                                    |
-| **Network**        |                                                                                                                                                      |                                                                                                                                                                                                                                     |                                                                                                                                                                                                                                                                    |
-| [DNS](#dns)        | [Azure DNS](#azure-dns) [🏠](https://azure.microsoft.com/en-us/services/dns/) [📄](https://docs.microsoft.com/en-us/azure/dns/)                        | [Route 53](#route-53)   [🏠](https://aws.amazon.com/route53/) [📄](https://docs.aws.amazon.com/route53/?id=docs_gateway)                                                                                                              | Cloud DNS [🏠](https://cloud.google.com/dns) [📄](https://cloud.google.com/)                                                                                                                                                                                         |
-| **Development**    |                                                                                                                                                      |                                                                                                                                                                                                                                     |                                                                                                                                                                                                                                                                    |
-| [NoSQL](#nosql)    | [CosmosDB](#cosmosdb)                                                                                                                                | [DynamoDB](#dynamodb)                                                                                                                                                                                                               | [Firestore][Firestore]<br>[BigTable][BigTable]<br>[Spanner][Spanner]                                                                                                                                                                                               |
-| Private git repo   | Azure Devops                                                                                                                                         | [CodeCommit][CodeCommit]                                                                                                                                                                                                            |                                                                                                                                                                                                                                                                    |
-| Build              | GitHub Actions                                                                                                                                       | [CodeBuild][CodeBuild]                                                                                                                                                                                                              |                                                                                                                                                                                                                                                                    |
-| CI/CD              | Azure Devops                                                                                                                                         | [CodeCommit][CodeCommit]<br>[CodeDeploy][CodeDeploy]<br>[CodePipeline][CodePipeline]                                                                                                                                                |                                                                                                                                                                                                                                                                    |
-| **Big Data**       | Data Lake Analytics<br>Data Lake Store                                                                                                               | [Redshift][Redshift]<br>[Athena][Athena] [🏠](https://aws.amazon.com/athena)                                                                                                                                                         | [BigQuery][Bigquery]<br>[Dataprep][Dataprep]                                                                                                                                                                                                                       |
-| Streaming data     | Event Hubs<br>Service Bus<br>Stream Analytics                                                                                                        | Kinesis<br>[Athena][Athena]                                                                                                                                                                                                         | DataFlow<br>Pub/Sub                                                                                                                                                                                                                                                |
-| Batch processing   | HDInsight<br>Batch                                                                                                                                   | Elastic MapReduce<br>Batch                                                                                                                                                                                                          | Dataflow<br>Dataproc                                                                                                                                                                                                                                               |
-
-
+- Simple Notification Service
 
 ## 🛠&#xfe0f; Administration
 
 
-
+### :octicons-terminal-16: CLI
 
 - GCP
     - [CLI for GCP](https://www.youtube.com/watch?v=D0x6B-4oUNM 'YouTube - Getting started: CLI for GCP')
@@ -64,8 +78,6 @@ Azure **quotas** apply to subscriptions and are implemented with [tags](#tags).
 
 Azure **budgets** can be viewed and administered in the **Cost Management + Billing** blade. 
 Users must have at least the [**Reader**](RBAC#roles) role at the subscription scope to view, and Contributor to create and manage, budgets. 
-
-
 
 ### 🔒 Locks
 
@@ -146,6 +158,10 @@ Resources
     - [Stackdriver][Stackdriver]
     - [Trace][Trace]
 
+|                                                                                                                                                   :material-microsoft-azure:                                                                                                                                                    |                                                            :fontawesome-brands-aws:                                                             |                                                                                   :fontawesome-brands-google:                                                                                   |
+| :-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| <figure><img src="/img/00001-icon-service-Monitor.svg" width="120px"><figcaption>Azure Monitor :material-file-document-edit-outline:</figcaption></figure><figure><img src="/img/10066-icon-service-Network-Watcher.svg" width="120px"/><figcaption>Network Watcher :material-file-document-edit-outline:</figcaption></figure> | <figure><img src="/img/Arch_Amazon-CloudWatch_64.svg" width="120px"/><figcaption>[CloudWatch :material-file-document-edit-outline:][CloudWatch] | <figure><img src="/img/Stackdriver-512-color.svg" width="120px"/><figcaption>[Stackdriver :material-file-document-edit-outline:][Stackdriver] :fontawesome-brands-google:</figcaption></figure> |
+
 
 ### Resources
 
@@ -164,15 +180,15 @@ In AWS the **Organizational Unit (OU)**, which can organize **user accounts** (s
 A pattern common to Azure is that of a service being implemented in two resource types, one of which determines important configuration settings shared by all instances of the service which are contained within it.
 This is the case for [storage accounts](#storage-accounts), [App Service][App Service], Azure Data Explorer clusters, etc.
 
-| [Azure](https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-setup-guide/organize-resources?tabs=AzureManagementGroupsAndHierarchy) | [AWS](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html) | GCP          | Description                                                                   |
-| ---------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ------------ | ----------------------------------------------------------------------------- |
-| Tenant                                                                                                                                                     | Organization                                                                                         | Organization | Corresponds to a company or organization                                      |
-| &nbsp;                                                                                                                                                     | Root                                                                                                 | &nbsp;       | Parent container for all accounts in an Organization                          |
-| Management group                                                                                                                                           | Organizational Unit                                                                                  | &nbsp;       | Logical container for user accounts and the resources created by that user    |
-| Subscription                                                                                                                                               | User account                                                                                         | ?            | ...                                                                           |
-| &nbsp;                                                                                                                                                     | &nbsp;                                                                                               | Folder       | Organize resources and their parents in a nested hierarchy                    |
-| Resource group                                                                                                                                             | &nbsp;                                                                                               | Project      | Logical container that is the direct parent to any resource, tied to a Region |
-| Tag                                                                                                                                                        | Tag                                                                                                  | Label        | Key-value pairs that are used to organize resources                           | s |
+| [:material-microsoft-azure:](https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-setup-guide/organize-resources?tabs=AzureManagementGroupsAndHierarchy) | [:fontawesome-brands-aws:](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html) | :fontawesome-brands-google: | Description                                                                   |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- | --------------------------- | ----------------------------------------------------------------------------- |
+| Tenant                                                                                                                                                                          | Organization                                                                                                              | Organization                | Corresponds to a company or organization                                      |
+| &nbsp;                                                                                                                                                                          | Root                                                                                                                      | &nbsp;                      | Parent container for all accounts in an Organization                          |
+| Management group                                                                                                                                                                | Organizational Unit                                                                                                       | &nbsp;                      | Logical container for user accounts and the resources created by that user    |
+| Subscription                                                                                                                                                                    | User account                                                                                                              | ?                           | ...                                                                           |
+| &nbsp;                                                                                                                                                                          | &nbsp;                                                                                                                    | Folder                      | Organize resources and their parents in a nested hierarchy                    |
+| Resource group                                                                                                                                                                  | &nbsp;                                                                                                                    | Project                     | Logical container that is the direct parent to any resource, tied to a Region |
+| Tag                                                                                                                                                                             | Tag                                                                                                                       | Label                       | Key-value pairs that are used to organize resources                           | s |
 
 
 
@@ -352,6 +368,10 @@ NSG **flow logging** ,which saves the 5-tuple of all packets, is available as a 
 
 ### DNS
 
+|                                                                                                                                                                      :material-microsoft-azure:                                                                                                                                                                      |                                                                                                                                                       :fontawesome-brands-aws:                                                                                                                                                       |                                                                                                           :fontawesome-brands-google:                                                                                                            |
+| :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| <figure><img src="/img/10064-icon-service-DNS-Zones.svg" width="120px" title="Azure DNS"/><figcaption>[Azure DNS :material-file-document-edit-outline:](#azure-dns) [:material-information-outline:](https://azure.microsoft.com/en-us/services/dns/) [:material-file-document-multiple-outline:](https://docs.microsoft.com/en-us/azure/dns/)</figcaption></figure> | <figure><img src="/img/Arch_Amazon-Route-53_64.svg" width="120px"/><figcaption>[Route 53 :material-file-document-edit-outline:](#route-53) [:material-information-outline:](https://aws.amazon.com/route53/) [:material-file-document-multiple-outline:](https://docs.aws.amazon.com/route53/?id=docs_gateway)</figcaption></figure> | <figure><img src="/img/cloud-dns-512-color.svg" width="120px"/><figcaption>[Cloud DNS :material-information-outline:](https://cloud.google.com/dns) [:material-file-document-multiple-outline:](https://cloud.google.com/)</figcaption></figure> |
+
 
 ### CDN
 
@@ -397,13 +417,25 @@ NoSQL databases are also **horizontally scalable** because the information can b
 
 ## Big Data
 
+## History
+
+Beginning in 2000, Amazon began developing Merchant.com, a planned e-commerce service that was intended to be the base upon which other enterprises would develop online shopping sites.
+At the time, Amazon's development environment was a jumbled mess, and in the effort to consolidate and organize the enterprise into a set of well-documented APIs.
+
+Despite these changes, software development remained sluggish, and an investigation discovered that individual teams were procuring storage, compute, and database resources independently.
+AWS originated out of the effort to consolidate these resources across the enterprise and remove this bottleneck.
+
+Azure was announced in 2008 and publicly released in 2010 after earlier experiments in cloud computing like Whitehorse and RedDog. 
+In fact, references to the "classic" model predating the Azure Resource Manager (ARM) actually refer to RedDog: the "classic" portal was also known as "RedDog Front-End".
+
+
 ## 📘 Glossary
 
-#### APN
+### APN
 
 Amazon Partner Network
 
-#### App Engine
+### App Engine
 
 App Engine allows developers to deploy applications developed in popular programming languages to a serverless environment.
 It is available in two environment types:
@@ -417,7 +449,7 @@ Resources
 - ▶ [Get to know GAE](https://youtu.be/2PRciDpqpko "YouTube - Get to know Google App Engine") 
 - ▶ [Introduction App Engine's new Python 3 runtime](https://youtu.be/qeSpDwA2qcU)
 
-#### App Service
+### App Service
 
 ![](/img/az-app-service.png)
 
@@ -436,7 +468,7 @@ Resources
 - 📄 [What is Azure Front Door?](https://docs.microsoft.com/en-us/azure/frontdoor/front-door-overview)
 - 📄 Create a Front Door - [PowerShell](https://docs.microsoft.com/en-us/azure/frontdoor/quickstart-create-front-door-powershell)
 
-#### Application Gateway
+### Application Gateway
 
 **Azure Application Gateway** is used to load balance a large-scale set using more than 100 instances in place of [**Azure Load Balancer**](Azure-Load-Balancer). <sup>AZ-103: p. 223</sup>
 
@@ -444,7 +476,7 @@ Application Gateway supports **session affinity** to save user state using brows
 
 Unlike Azure Load Balancer, which operates at OSI layer 4 and has limited security capabilities, Application Gateway operates at OSI layer 7 and provides Web Application Firewall (WAF) functioanlity to block attacks like SQL injection, cross-site scripting, and header injection. HTTPS is also only available with layer 7 load balancers like Application Gateway.
 
-#### Athena
+### Athena
 
 **Athena** is a serverless AWS service that allows SQL queries to be run against data stored in a [S3][S3] bucket.
 Athena works closely with [AWS Glue][AWS Glue] to extract schema information and crawl data sources.
@@ -454,11 +486,11 @@ Sources:
 
 - ▶ [How to use SQL to query S3 files with AWS Athena](https://youtu.be/M5ptG0YaqAs)
 
-#### AWS CLI
+### AWS CLI
 
 AWS CLI is version 1 is maintained for legacy compatibility purposes.
 
-#### AWS Developer Tools
+### AWS Developer Tools
 
 A collection of tools that provide CI services:
 
@@ -467,15 +499,15 @@ A collection of tools that provide CI services:
 - [CodeDeploy][CodeDeploy]
 - [CodePipeline][CodePipeline]
 
-#### AWS Glue
+### AWS Glue
 
 
 
-#### AzCopy
+### AzCopy
 
 **AzCopy** can be used to copy files to File storage.
 
-#### Azure Bastion
+### Azure Bastion
 
 **Azure Bastion** is a PaaS service deployed within a VNet that allows connectivity to a VM from the Portal. Once deployed in a VNet, RDP/SSH is available to all VMs in that VNet. This session is streamed to your local device over an HTMLS session using the browser.
 - It is not deployed per VM, but once per VNet to its **own dedicated subnet**, at least /27 or larger
@@ -492,13 +524,13 @@ Sources
 - 📄 [Azure Bastion](https://docs.microsoft.com/en-us/azure/bastion/bastion-overview)
 - 📄 [Introduction to flow logging for NSGs](https://docs.microsoft.com/en-us/azure/network-watcher/network-watcher-nsg-flow-logging-overview)
 
-#### Bicep
+### Bicep
 
 [**Project Bicep**](https://github.com/Azure/bicep) is a domain-specific language and command-line utility that can be used to generate [ARM][ARM] templates.
 
 ▶ [Project Bicep – Next generation ARM Templates](https://youtu.be/wkQIyenVfxc)
 
-#### Azure Container Instances
+### Azure Container Instances
 
 **Azure Container Instances (ACI)** allows a simpler way of running isolated containers in smaller-scale deployments than [Azure Kubernetes Service][AKS].
 
@@ -511,9 +543,9 @@ Resources
 - 📄 [What is Azure Container Instances?](https://docs.microsoft.com/en-us/azure/container-instances/container-instances-overview)
 - 📄 [Container groups in ACI](https://docs.microsoft.com/en-us/azure/container-instances/container-instances-container-groups)
 
-#### Azure Data Explorer
+### Azure Data Explorer
 
-#### Azure DevOps
+### Azure DevOps
 
 Azure DevOps used to be known as **Visual Studio Team Services** and **Team Foundation Server**.
 
@@ -526,7 +558,7 @@ Install DevOps CLI
 az extension add --name azure-devops
 ```
 
-#### Azure DNS
+### Azure DNS
 
 **Azure DNS** supports private zones, which provide name resolution for VMs on a VNet and between VNets without having to create a custom DNS solution.
 
@@ -543,14 +575,14 @@ Sources
 
 - 📄 [Azure DNS alias records overview](https://docs.microsoft.com/en-us/azure/dns/dns-alias)
 
-#### Azure File Service
+### Azure File Service
 
 **Azure File Service** allows you to create one or more file shares in the cloud (up to 5 TB per share), similar to a regular Windows File Server. 
 It supports the SMB protocol, so you can connect directly to a file share from outside of Azure, if traffic to port 445 is allowed through the LAN and ISP. It can also be mapped within Windows.
 
 A clever use of a file share is as persistent storage for the Azure Cloud Shell. [src](https://portal.cloudskills.io/products/azure-administrator-az-104-exam-prep-course/categories/2692678/posts/8980122 "Configure Azure Files and Azure Blob Storage 32:00")
 
-#### Azure File Sync
+### Azure File Sync
 
 **Azure File Sync** extends Azure File Service to allow on-premises file services to be extended to Azure while maintaining performance and compatibility, communicating over TCP 443 over SSL, and **not** IPSec. 
 
@@ -576,7 +608,7 @@ Any server can only be registered to a single Storage Sync Service, and servers 
 
 When a filename collision occurs between the file share and file server, the file on the server has its filename appended with the server's name.
 
-#### Azure Policy
+### Azure Policy
 
 **Azure Policy** is a service that can create, assign, and manage policies to enforce governance. Policy definitions, authored in JSON, implement policy by describing desired behavior for Azure resources when they are created or updated. <sup>AZ-103: p. 72</sup>
 
@@ -604,7 +636,7 @@ Sources
 - 📄 [Azure Policy Samples](https://github.com/Azure/azure-policy)
 - 📄 [Understand Azure Policy effects](https://docs.microsoft.com/en-us/azure/governance/policy/concepts/effects)
 
-#### Azure VMs
+### Azure VMs
 
 **Virtual Machines** represent Azure's IaaS offering.
 
@@ -629,7 +661,7 @@ VM images are captured from an existing VM that has been **generalized** (prepar
 
 VM images in AWS are called **Amazon Machine Images (AMI)**.
 
-#### Azure VPN
+### Azure VPN
 
 **Virtual network gateways** in Azure are of two types: **VPN gateways** and **ExpressRoute gateways**.
 Any virtual network can have only a single gateway of each type.
@@ -704,11 +736,11 @@ The most highly available arrangement would use multiple VPN devices with the VP
 
     ![](/img/dual-redundancy.png)
 
-#### Bigquery
+### Bigquery
 
 Petabyte-scale analytics database service for data warehousing
 
-#### BigTable
+### BigTable
 
 **Cloud BigTable** is a GCP realtime database used for Big Data.
 
@@ -727,11 +759,11 @@ Resources
 - [Bigtable vs. Firestore](https://db-engines.com/en/system/Google+Cloud+Bigtable%3BGoogle+Cloud+Firestore "System Properties Comparison Google Cloud Bigtable vs. Google Cloud Firestore")</sup>
 
 
-#### Cloud AutoML
+### Cloud AutoML
 
 **Cloud AutoML** is a GCP service that allows developers without machine learning experience to develop machine learning models.
 
-#### Cloud Functions
+### Cloud Functions
 
 Cloud Functions is GCP's serverless compute offering and is suited to running short-running logic, such as calling other APIs in response to an event.
 
@@ -740,15 +772,15 @@ Resources:
 - [Cloud Functions in a minute](https://youtu.be/brhA9uaz7Xs "YouTube - Cloud Functions in a minute")
 - [Quickstart](https://www.youtube.com/watch?v=vM-2O-uKBNQ 'YouTube - Getting Started: Cloud Functions quickstart')
 
-#### Cloud Machine Learning Engine
+### Cloud Machine Learning Engine
 
 Platform for building and deploying scalable machine learning systems to production.
 
-#### Cloud Natural Language Processing
+### Cloud Natural Language Processing
 
 GCP tool for analyzing human languages and extracting information from text.
 
-#### Cloud Run
+### Cloud Run
 
 **Google Cloud Run** is built on a native open standard that will allow using the same container on other cloud providers.
 It bills down to the nearest 100 ms interval.
@@ -765,15 +797,15 @@ Resources:
 - [Build and deploy with Cloud Run](https://youtu.be/nJ0L28ZfmUA)
 
 
-#### Cloud Vision
+### Cloud Vision
 
-Image analysis platform for annotating images with metadata, extracting text, or filtering content
+Image analysis platform for annotating images with metadata, extracting text, or filtering content.
 
 Sources:
 
-- ▶ [Getting started: Image recognition and classification](https://www.youtube.com/watch?v=BN8aO0LULyw 'YouTube - Getting started: Image recognition and classification')
+- [▶ Getting started: Image recognition and classification](https://www.youtube.com/watch?v=BN8aO0LULyw 'YouTube - Getting started: Image recognition and classification')
 
-#### CloudFormation
+### CloudFormation
 
 **CloudFormation** is AWS's declarative automation service, which can use JSON or YAML-format templates.
 These resources are placed into a named **stack**, a container that organizes the resources described by the template, and the stack name must be unique to the account.
@@ -781,7 +813,7 @@ This allows provisioned resources to be easily managed, since the stack contains
 
 CloudFormation Designer allows templates to be viewed as a diagram of resources.
 
-#### CloudFront
+### CloudFront
 
 Amazon **CloudFront** is a CDN that helps deliver static and dynamic content worldwide.
 
@@ -798,7 +830,7 @@ There are two types of distribution:
 - A **Web distribution** is used for static and dynamic content, including streaming video, accessible via HTTP or HTTPS. Its origin can be a web server or a **public** S3 bucket.
 - **Real-Time Messaging Protocol (RTMP) distribution** delivers streaming audio or video. The media player and media files must be stored in S3 buckets.
 
-#### CloudTrail
+### CloudTrail
 
 AWS CloudTrail keeps event logs of actions that occur against AWS resources.
 These events are divided into API and non-API actions.
@@ -815,7 +847,7 @@ Resources
 
 - ▶️ [How can I use CloudTrail to review what API calls and actions have occurred in my AWS account?](https://youtu.be/4ztTv5rIRv8)
 
-#### CloudWatch
+### CloudWatch
 
 **Amazon CloudWatch** collects logs, metrics, and events from AWS resources and non-AWS on-premises servers and presents a dashboard for visual analysis.
 All AWS resources automatically send their metrics to CloudWatch Metrics, which stores the data for up to 15 months.
@@ -828,29 +860,29 @@ Log events from the same source are organized into a log stream. Log streams are
 CloudWatch Events is a feature that monitors for changes in AWS resources as a result of API operations.
 
 
-#### Cloudyn
+### Cloudyn
 
 Although the **Cloudyn** service, which had been purchased by Microsoft, was being offered as a standalone service, it has now been deprecated because its functionality has been incorporated natively into other sections of the **Cost Management + Billing** blade.
 
-#### CodeCommit
+### CodeCommit
 
 **CodeCommit** is the AWS private git repo service.
 
-#### CodeDeploy
+### CodeDeploy
 
 **CodeDeploy** is an AWS service for automatically deploying applications to AWS compute resources or on-prem servers.
 CodeDeploy can pull source code from [S3][S3] and repos from GitHub or Bitbucket but notably **not** [CodeCommit][CodeCommit] (ref. [CodePipeline][CodePipeline]).
 
-#### CodePipeline
+### CodePipeline
 
 **CodePipeline** is an AWS service for orchestrating and automating every stage of software development.
 It defines a series of stages, two of which are required - **source** and **deployment** - but other stages like testing or approval can be incorporated.
 
-#### Cognito
+### Cognito
 
 Cognito is an AWS service that integrates with identity providers like Amazon, Google, Microsoft, and Facebook to add user access control to an application.
 
-#### Compute Engine
+### Compute Engine
 
 **Compute Engine** is GCP's IaaS offering.
 
@@ -865,11 +897,15 @@ VMs can be added or removed at will.
 
 - ▶ [Getting started with GCE](https://youtu.be/1XH0gLlGDdk "YouTube - Getting Started with Google Cloud Compute Engine")
 
-#### Container Instances
+### Computer Vision
+
+**Computer vision** is a subfield of artificial intelligence concerned with developing the capability of computers to recognize objects in images and to understand visual information.
+
+### Container Instances
 
 **Azure Container Instances (ACI)** is a PaaS service that facilitates deployment of individual containers.
 
-#### CosmosDB
+### CosmosDB
 
 **Cosmos DB** started as Project Florence in 2010 to address shortcomings with SQL Server in supporting highly available services like Xbox. 
 In 2015 the product was relaunched as Document DB, then renamed Cosmos DB in 2017.
@@ -953,7 +989,7 @@ Sources:
 
 - ▶ [**Learning Azure Cosmos DB**](https://app.pluralsight.com/courses/106da442-dfd4-4109-850d-efca92baae2b/table-of-contents)
 
-#### Data Box
+### Data Box
 
 **Azure Data Box** is a Microsoft-provided appliance that allows for the transfer of large volumes of data to Azure. 
 These services are only available for EA, CSP, and Microsoft Partner Network Sponsorship offer types.
@@ -974,19 +1010,31 @@ Workflow
 5. Upload: Microsoft will upload the data and securely erase it from the device
 
 
-#### Dataflow
+### Dataflow
 
-Cloud Dataflow is a GCP streaming data framework for defining batch and stream processing pipelines.
+**Cloud Dataflow** is a GCP streaming data framework for defining both batch and stream processing pipelines.
 
-#### Dataprep
+Resources
 
-GCP [big data](#big-data) service that allows analysts to explore and prepare data for analysis
+- ▶ [What is Dataflow?](https://www.youtube.com/watch?v=KalJ0VuEM7s)
 
-#### Dataproc
+### Dataprep
 
-Dataproc is a managed Hadoop and Spark service offered by GCP
+Dataprep is a GCP managed service that allows analysts to visually explore, clean, and prepare data for later analysis.
 
-#### DynamoDB
+Resources:
+
+- [▶ Dataprep: Qwik Start - Qwiklabs Preview](https://www.youtube.com/watch?v=K3K9X9VaThE)
+
+### Dataproc
+
+Dataproc is a GCP service that manages the creation of data science clusters and data analysis jobs.
+
+Resources:
+
+- [▶ Dataproc in a minute](https://www.youtube.com/watch?v=Jj6mp7Sam10)
+
+### DynamoDB
 
 **DynamoDB** is a NoSQL database known for fast (1-9 ms) query times. 
 
@@ -1009,24 +1057,24 @@ These are implemented in a different **processing space** than the DynamoDB tabl
 
 AWS Lambda has an **invocation role** which defines what Lambda can **see** (triggered upon a change to the table as reported in DynamoDB Streams) and an **execution role** which defines what it can **do**.
 
-#### ECS
+### ECS
 
-#### EKS
+### EKS
 
-#### Elastic Beanstalk
+### Elastic Beanstalk
 
 **AWS Elastic Beanstalk** is a PaaS offering.
 
-#### Elastic File System
+### Elastic File System
 
 **Elastic File System (EFS)** is a scalable file system for AWS Linux instances. Multiple instances can be attached to a single EFS volume to share files.
 EFS volumes are highly available, spanning multiple Availability Zones in a single VPC.
 
-#### Elastic MapReduce
+### Elastic MapReduce
 
-**Elastic MapReduce (EMR)** facilitates Big Data analysis, supporting Apache Hadoop, Apache Spark, HBase, Presto, and Flink.
+**Elastic MapReduce (EMR)** is AWS's managed big data analysis service, supporting Apache Hadoop, Apache Spark, HBase, Presto, and Flink.
 
-#### Enterprise Agreement
+### Enterprise Agreement
 
 Azure customers on an **Enterprise Agreement** can add up-front commitments to Azure then be billed annually. 
 If the committed spend is exceeded, the overage is billed at the same EA rate. 
@@ -1038,7 +1086,7 @@ EA customers can create spending quotas and set notification thresholds through 
 2. Account Portal
 3. Azure Portal, includes Azure Cost Management
 
-#### ExpressRoute
+### ExpressRoute
 
 There are four main architectures used with ExpressRoute
 
@@ -1046,13 +1094,13 @@ There are four main architectures used with ExpressRoute
 - **Co-location with cloud exchange** is used to order virtual cross-connections to the Azure cloud through the co-location provider's Ethernet exchange.
 - **Point-to-point Ethernet connection** is used to configure on-premises data center connectivity to Azure through individual point-to-point links
 
-#### Firebase
+### Firebase
 
 Firebase is a completely unstructured NoSQL database that is known for its client libraries.
 Firebase Auth offers a free user interface for applications, **Firebase UI**.
 
 
-#### Firestore
+### Firestore
 
 **Cloud Firestore** was released from beta in early 2019 and combines and improves upon functionality of previous products named **Cloud Datastore** and **Firebase Realtime Database**. 
 
@@ -1090,7 +1138,7 @@ Sources:
 - [Firebase blog](https://firebase.googleblog.com/2017/10/cloud-firestore-for-rtdb-developers.html "Cloud Firestore vs the Realtime Database: Which one do I use?") 
 
 
-#### Front Door
+### Front Door
 
 **Azure Front Door** works like [Azure Load Balancer](Azure-Load-Balancer) for web apps.
 
@@ -1098,7 +1146,7 @@ Resources
 
 - [Pricing](https://azure.microsoft.com/en-us/pricing/details/frontdoor/)
 
-#### gcloud
+### gcloud
 
 [doc:gcloud-app]: https://cloud.google.com/sdk/gcloud/reference/app "gcloud app documentation"
 [doc:gcloud-compute]: https://cloud.google.com/sdk/gcloud/reference/compute "gcloud compute documentation"
@@ -1133,7 +1181,7 @@ Sources:
 - [Google Command Line for beginners](https://youtu.be/j274vq9a2Rs)
 
 
-#### Glacier
+### Glacier
 
 **S3 Glacier** offers long-term archival at low cost.
 One or more files are stored in an archive, typically a .zip or .tar file containing multiple files.
@@ -1146,7 +1194,7 @@ Glacier vaults can be created and deleted using the Glacier service console.
 But uploading, downloading, or deleting archives must be done through the [AWS CLI](#aws-cli) or an application using the SDK.
 Some third-party applications can also interact with Glacier.
 
-#### Import/Export Service
+### Import/Export Service
 
 **Azure Import/Export service** allows the physical shipment of disks procured by the user to Azure for import. 
 This data can be placed into blob or file storage.
@@ -1159,11 +1207,11 @@ This service requires the use of a Windows computer with BitLocker and .NET Fram
 5. Copy files
 6. Create an **import job** in the Azure Portal
 
-#### Kinesis
+### Kinesis
 
 Kinesis is an AWS service for ingestion and processing of streaming data, such as access logs, video, audio, and telemetry.
 
-#### Kubeflow
+### Kubeflow
 
 **Kubeflow** is a cloud-native platform for machine learning based on Google’s internal machine learning pipelines.
 
@@ -1175,7 +1223,7 @@ Resources:
 
 
 
-#### [Kusto](Kusto)
+### [Kusto](Kusto)
 
 **Kusto** is a case-sensitive query language developed by Microsoft and used in several Azure services:
 
@@ -1185,30 +1233,30 @@ Resources:
 - [Application Insights](#application-insights)
 - Microsoft Defender ATP
 
-#### Lightsail
+### Lightsail
 
 **Amazon Lightsail** offers blueprints that will automatically provision all compute, storage, database, and network resources needed for a deployment.
 
-#### Macie
+### Macie
 
 Macie is an AWS service that automatically finds and classifies sensitive data stored in AWS using machine learning to recognize sensitive data such as PII or trade secrets.
 
-#### MARS
+### MARS
 
 The **Microsoft Azure Recovery Services (MARS)** agent is for [backing up](#backups) Windows machines only, but can be installed on VMs on other cloud providers like AWS.
 MARS can be configured to protect the entire system, volumes, or individual files and folders.
 
-#### Monitor
+### Monitor
 
 Resources:
 
 - ▶ [Dashboards with Azure Monitor Data](https://www.youtube.com/watch?v=XS2b_rxkwMY "YouTube - Create Dashboards with Azure Monitor Data")
 
-#### Neptune
+### Neptune
 
 **Neptune** is an AWS graph database.
 
-#### NPM
+### NPM
 
 
 **Network Performance Monitor** is a [Log Analytics](#log-analytics) network monitoring solution for hybrid networks, providing 3 services:
@@ -1218,7 +1266,7 @@ Resources:
 - [**ExpressRoute**](#expressroute) monitors end-to-end connectivity between on-prem network and Azure over ExpressRoute
 
 
-#### Network Watcher
+### Network Watcher
 
 **Network Watcher** appears like a normal resource in a resource group, but it is deployed as a single instance per Azure region.
 
@@ -1229,7 +1277,7 @@ Network Watcher monitoring and diagnostic tools:
 - [Packet Captures](Task-Network-Watcher#packet-capture) link a Network Watcher resource, a target VM, a storage account, and a filter that specifies the characteristics of network traffic (source and destination IP addresses and ports as well as protocol) to capture, as well as a time limit.
 - [Network Topology](Task-Network-Watcher#network-topology)
 
-#### OpsWorks
+### OpsWorks
 
 **OpsWorks** is AWS's **declarative** configuration management service that uses the Chef and Puppet configuration management platforms and comes in three varieties:
 
@@ -1237,18 +1285,26 @@ Network Watcher monitoring and diagnostic tools:
 - **OpsWorks for Chef Automate**
 - **OpsWorks Stacks**
 
-#### Recovery Services Vault
+### Pub/Sub
+
+**Cloud Pub/Sub** is GCP's messaging service, allowing services and applications to communicate.
+
+Resources:
+
+- [▶ Cloud Pub/Sub Overview - ep. 1](https://youtu.be/cvu53CnZmGI)
+
+### Recovery Services Vault
 
 A **Recovery Services Vault** is an Azure resource used to centrally manage the backup and recovery of Azure resources, and the centerpiece of any backup strategy.
 
 - A **Backup  protection policy** defines how a backup plan is implemented. These are most easily created through the Portal.
 - A vault can only back up data from other resources that exist in its region.
 
-#### Rekognition
+### Rekognition
 
 AWS deep learning-based image recognition service.
 
-#### Route 53
+### Route 53
 
 **Route 53** is AWS's managed DNS service.
 Like any other DNS system, it relies on **resource records** defined in a  **zone**.
@@ -1278,7 +1334,7 @@ The diagram isn't translated to individual resource records but rather represent
 In addition to the routing policies above, Traffic Flow also offers the **Geoproximity** routing policy that directs users to a geographic location based on how close they are.
 
 
-#### S3
+### S3
 
 **Simple Storage Service (S3)** is Amazon's data storage service.
 S3 stores **objects** in a container called a **bucket**.
@@ -1320,7 +1376,7 @@ Infrequently accessed objects
 
 ▶ [Cloud Storage in Minutes with AWS Storage Gateway](https://youtu.be/2I4CKdNESoQ)
 
-#### Sentinel
+### Sentinel
 
 **Azure Sentinel** is a cloud-native SIEM and SOAR soluation that can collect data from many sources and present it to security analysts, who can run [Kusto](Kusto) queries against the dataset.
 
@@ -1337,11 +1393,11 @@ Azure Sentinel can ingest data from on-premises devices using one of several typ
 - Microsoft Security
 - Machine learning behavior analytic rules can (currently) only be created from templates provided by Microsoft using proprietary ML algorithms
 
-#### Simple Queue Service
+### Simple Queue Service
 
 **Simple Queue Service (SQS)** is an AWS service that can broker messages between components of highly decoupled applications.
 
-#### Snowball
+### Snowball
 
 **AWS Snowball** is a physical appliance designed to move large amounts of data to the cloud.
 The largest Snowball device can store 72 TB of information.
@@ -1354,16 +1410,16 @@ Snowball Edge devices can also be clustered together.
 - **Compute Optimized** provides up to 39.5 TB of storage and 52 vCPUs.
 - **Compute Optimized with GPU** is similar to Compute Optimized but includes an NVIDIA GPU, making it useful for ML and HPC applications.
 
-#### Spanner
+### Spanner
 
 GCP managed scaleable database service.
 
 
-#### Stackdriver
+### Stackdriver
 
 GCP service that collects metrics, logs, and event data from applications and infrastructure and integrates the data so DevOps engineers can monitor, assess, and diagnose operational problems.
 
-#### Storage accounts
+### Storage accounts
 
 Azure storage accounts are managed through [Azure Resource Manager][ARM] and management operations are authenticated and authorized using [Azure Active Directory][Azure AD]. 
 
@@ -1418,7 +1474,7 @@ Storage account keys were implemented early in the history of Azure and grant fu
 
 Because storage account keys provide write access, a storage account with a [`ReadOnly` resource lock](Resources#locks) will not enumerate its storage account keys, and users with Read permission will not be able to retrieve the keys either.
 
-#### Systems Manager
+### Systems Manager
 
 **Systems Manager** is an AWS service for imperative configuration management.
 Systems Manager relies on several types of script:
@@ -1427,7 +1483,7 @@ Systems Manager relies on several types of script:
 - **Automation documents** allow administration of AWS resources, similar in effect to using the Management Console or the [AWS CLI](#aws-cli).
 
 
-#### Trusted Advisor
+### Trusted Advisor
 
 **Trusted Advisor** is an AWS service allows a visual check of resource configurations to ensure compliance with best practices, and is available only to Business and Enterprise [Support plans](#-support). It offers several categories ([src](#sources "Piper 41"))
 
@@ -1437,7 +1493,7 @@ Systems Manager relies on several types of script:
 - Fault tolerance
 - Service limits
 
-#### VM Agent
+### VM Agent
 
 **Microsoft Azure Virtual Machine Agent (VM Agent)** manages VM interaction with the Azure Fabric Controller and comes preinstalled with Windows images from the Marketplace. 
 It can also be [installed](https://docs.microsoft.com/en-us/azure/virtual-machines/extensions/agent-windows) on a custom image.
@@ -1446,15 +1502,15 @@ VM Agent supports the [VMSnapshot][VMSnapshot] extension, which is added when ba
 This extension takes a snapshot of the storage at the block level and sends it to the RSV configured. 
 For Windows VMs, this extension leverable the [Volume Shadow Copy][Volume Shadow Copy] service.
 
-#### VMSnapshot
+### VMSnapshot
 
-#### Volume Shadow Copy
+### Volume Shadow Copy
 
-#### waagent
+### waagent
 
 **Microsoft Azure Linux Agent (waagent)** manage VM interaction with the Azure Fabric Controller on Linux VMs.
 
-#### WAImportExport
+### WAImportExport
 
 **WAImportExport.exe** is a CLI tool associated with [Azure Import/Export service](#importexport-service).
 It requires a Windows computer with .NET Framework and BitLocker. 
@@ -1543,7 +1599,7 @@ Various flags in `WAImportExport.exe` allow an XML-format "blob list" file to be
     </BlobList>
     ```
 
-#### WebJobs
+### WebJobs
 
 WebJobs is a feature of [Azure App Service](#app-service) that enables you to run a program or script in the same instance as a web app, API app, or mobile app, at no additional cost and supported **only on Windows App Service plans**. 
 
@@ -1555,37 +1611,45 @@ There are two types:
 
 
 
+[ACI]: #container-instances "Azure Container Instances (ACI) is a PaaS service that facilitates deployment of individual containers."
+[AKS]: #aks "Azure Kubernetes Service (AKS) is Azure's managed Kubernetes offering."
 [App Engine]: #app-engine 'App Engine is a GCP PaaS offering'
 [App Service]: #app-service 'Azure App Service is an Azure PaaS offering for hosting websites.'
 [Athena]: #athena "AWS service that allows SQL queries to be run against data stored in a S3 bucket"
-[AKS]: #aks "Azure Kubernetes Service is Azure's managed Kubernetes offering."
 [Azure Automation]: https://azure.microsoft.com/en-us/services/automation/ "cloud-based configuration management"
 [Azure Container Instances]: #azure-container-instances "Simpler way of deploying containers in Azure than Azure Kubernetes Service, where containers are deployed into container groups that share the same lifecycle"
+[Azure Functions]: # "TODO"
 [Azure Key Vault]: https://azure.microsoft.com/en-us/services/key-vault/  "helps safeguard cryptographic keys and secrets used by cloud applications and services"
-[Bigquery]: #bigquery 'Petabyte-scale analytics database service for data warehousing'
 [BigTable]: #bigtable 'GCP realtime database used for Big Data'
-[cbt]: #cbt 'Command-line interface for performing several different operations on Cloud Bigtable'
+[Bigquery]: #bigquery 'Petabyte-scale analytics database service for data warehousing'
 [Cloud AutoML]: #cloud-automl 'GCP service that allows developers without machine learning experience to develop machine learning models'
 [Cloud Functions]: #cloud-functions 'GCP serverless compute offering'
 [Cloud Inference API]: # 'GCP service for computing correlations over time-series data'
 [Cloud Machine Learning Engine]: #cloud-machine-learning-engine 'Cloud Machine Learning Engine Platform for building and deploying scalable machine learning systems to production'
 [Cloud Natural Language Processing]: #cloud-natural-language-processing 'Tool for analyzing human languages and extracting information from text'
 [Cloud Run]: #cloud-run 'Google Cloud Run Fully managed compute environment that facilitates container deployment'
-[Cloud Vision]: #cloud-vision 'Image analysis platform for annotating images with metadata, extracting text, or filtering content'
+[Cloud Storage]: # "TODO"
+[Cloud Vision]: #cloud-vision 'GCP managed cloud vision service'
 [CloudFormation]: #cloudformation 'CloudFormation gives developers and systems administrators an easy way to create and manage a collection of related AWS resources, provisioning and updating them in an orderly and predictable fashion'
+[CloudWatch]: #cloudwatch "TODO"
 [CodeBuild]: #codebuild 'CodeBuild is an AWS managed build service'
 [CodeCommit]: #codecommit 'CodeCommit is the AWS private git repo service.'
 [CodeDeploy]: #codedeploy 'CodeDeploy is an AWS service for automatically deploying applications to AWS compute resources or on-prem servers.'
 [CodePipeline]: #codepipeline 'CodePipeline is an AWS service for orchestrating and automating every stage of software development.'
-[CosmosDB]: #cosmosdb 'Azure NoSQL database service optimized for mobile and web applications that offers graph, document, and key-value APIs'
-[Dataprep]: # 'Cloud Dataprep Service that allows analysts to explore and prepare data for analysis'
+[Cosmos DB]: #cosmosdb 'Azure NoSQL database service optimized for mobile and web applications that offers graph, document, and key-value APIs'
+[Dataflow]: #dataflow "Cloud Dataflow is a GCP streaming data framework for defining batch and stream processing pipelines."
+[Dataprep]: # 'Dataprep is a GCP managed service that allows analysts to visually explore, clean, and prepare data for later analysis.'
+[Dataproc]: #dataproc "Dataproc is a GCP service that manages the creation of data science clusters and data analysis jobs."
 [EC2]: #iaas 'Elastic Compute Cloud (EC2) makes virtual machines available in AWS and provides a managed environment for Docker containers'
 [ECS]: #ecs "Elastic Container Service"
 [EKS]: #eks "Elastic Container Service for Kubernetes"
+[EMR]: #elastic-mapreduce "Elastic MapReduce (EMR) is AWS's managed Big Data analysis service."
+[Elastic Beanstalk]: #elastic-beanstalk "AWS Elastic Beanstalk is a PaaS offering."
 [Firestore]: #firestore 'Firestore GCP NoSQL document database service offering high performance and automatic horizontal scaling intended for serverless mobile and web application development with Cloud App Engine'
 [GKE]: # 'Google Kubernetes Engine (GKE) allows users to easily run containerized applications on a cluster of servers'
 [Google Cloud Functions]: # 'Cloud Functions lightweight computing option well-suited to event-driven processing'
 [Google Compute Engine]: # 'Compute Engine allows users to create VMs, attach persistent storage to them, and make use of other GCP services like Cloud Storage'
+[HDInsight]: #hdinsight "TODO"
 [Kubeflow]: #kubeflow 'Kubeflow '
 [Lambda]: #serverless 'AWS serverless compute offering'
 [Lightsail]: #lightsail "Amazon Lightsail offers blueprints that will automatically provision all compute, storage, database, and network resources needed for a deployment after specifying a desired monthly cost."
@@ -1594,14 +1658,13 @@ There are two types:
 [Project Bicep]: #bicep 'Azure domain-specific language and CLI utility that can generate ARM templates'
 [Redshift]: # 'Redshift fast, fully managed petabyte-scale data warehouse that makes it simple and cost-effective to analyze all your data using your existing business intelligence tools'
 [Rekognition]: #rekognition 'Rekognition AWS deep learning-based image recognition service'
-[Spanner]: #spanner 'Spanner GCP managed scaleable database service'
 [SQS]: #simple-queue-service "Simple Queue Service (SQS) is an AWS service that can broker messages between components of highly decoupled applications."
+[Spanner]: #spanner 'Spanner GCP managed scaleable database service'
 [Stackdriver]: #monitoring 'GCP monitoring service that collects and integrates metrics, logs, and event data from applications and infrastructure'
 [Trace]: #monitoring 'Distributed tracing service that captures latency data about an application to help identify performance problem areas'
 [VMSnapshot]: #vmsnapshot '...'
 [Volume Shadow Copy]: #volume-shadow-copy '...'
-[Elastic Beanstalk]: #elastic-beanstalk "AWS Elastic Beanstalk is a PaaS offering."
-
-[ACI]: #container-instances "Azure Container Instances (ACI) is a PaaS service that facilitates deployment of individual containers."
-[Dataflow]: #dataflow "Cloud Dataflow is a GCP streaming data framework for defining batch and stream processing pipelines."
-[Dataproc]: #dataproc "Cloud Dataproc is a managed Hadoop and Spark service offered by GCP."
+[cbt]: #cbt 'Command-line interface for performing several different operations on Cloud Bigtable'
+[SNS]: #simple-notification-service "TODO"
+[Azure Batch]: #azure-batch "TODO"
+[Pub/Sub]: #pubsub "TODO"

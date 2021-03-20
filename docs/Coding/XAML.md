@@ -1134,22 +1134,6 @@ that define the XAML [ namespaces ](#namespaces) for the program that will be pa
 
 ## 📘 Glossary
 
-### C#/WinRT
-
-**C#/WinRT** is the language projection for C#. 
-C#/WinRT was created after .NET5 removed WinRT [projection](#language-projection) support for C# out of the .NET compiler for decoupling purposes.
-
-The C#/WinRT compiler is **cswinrt.exe**, which processes [Windows Metadata](#winmd) files to generate .NET5 C# source files, which can then be compiled into [interop assemblies](#interop-assembly).
-
-Resources:
-
-- 💾 [Microsoft.Windows.CsWinRT (NuGet)](https://www.nuget.org/packages/Microsoft.Windows.CsWinRT/)
-- 👨‍💻 [Microsoft/CsWinRT (GitHub)](https://github.com/microsoft/CsWinRT)
-
-### COM
-
-**Component Object Model** was developed in the late 1980s by Microsoft.
-
 ### ComboBox
 
 ![](/img/GUI-ComboBox.gif)
@@ -1189,11 +1173,6 @@ If not defined, no element will be selected.
 </CommandBar>
 ```
 </details>
-
-### Core application
-
-**Core application** refers to the lifecycle of a UWP application, through which Windows offers app-specific services relating to power management, security, etc and abstracts the app itself.
-It offers a level of control over graphical applications comparable to that available for apps as services. ([src](https://app.pluralsight.com/course-player?clipId=b35aed5b-22a5-401d-82c8-75909092cab6))
 
 
 ### Dialog boxes
@@ -1301,21 +1280,6 @@ Grid **star-sizing** works similar to `flex-grow` and `flex-shrink` CSS style st
     </Grid>
     ```
     </details>
-
-### Interop assembly
-
-**Interop assemblies** allow .NET applications to call native code. They can be distributed along with applications that reference them to provide 
-
-### Language projection
-
-A **language projection** is an adapter that enables programming [WinRT](#winrt) APIs in a way that is idiomatic to a given language.
-
-- [C#/WinRT](#cwinrt)
-- [C++/WinRT](https://github.com/Microsoft/cppwinrt) generates headers for the C++ language projection
-
-Resources:
-
-- 📄 [C#/WinRT (MSDocs)](https://docs.microsoft.com/en-us/windows/uwp/csharp-winrt/)
 
 
 
@@ -1504,15 +1468,10 @@ Notably, StackPanel does not support scroll bars. ([src](https://app.pluralsight
 
 ![](/img/xaml-tabview.png)
 
-### Target Framework Moniker
-
-**Target framework monikers** are used in NuGet packages and project files to refer to the flavor of .NET targeted by an application.
-[As of .NET5](https://github.com/dotnet/designs/blob/main/accepted/2020/net5/net5.md), Microsoft introduced new monikers that indicate the targeted OS after a hyphen, e.g. `net5.0-windows`, etc.
-These monikers will pull in the projection assemblies that are needed to access those APIs.
-
 ### Textbox
 
 === "XAML"
+
     ```xml
     <Window
         x:Class="EmployeeManager.WinUI.MainWindow"
@@ -1526,7 +1485,9 @@ These monikers will pull in the projection assemblies that are needed to access 
         <TextBox Header="First name"/>
     </Window>
     ```
+
 === "tkinter"
+
     ```python
     import tkinter as tk
     from tkinter.ttk import Entry
@@ -1538,11 +1499,6 @@ These monikers will pull in the projection assemblies that are needed to access 
     Entry(frame).pack()
     tk.mainloop()
     ```
-
-
-
-
-
 
 
 ### VariableSizedWrapGrid
@@ -1594,18 +1550,3 @@ Notably, the horizontal or vertical alignment of XAML controls is defined on eac
         text-align: right top;
     }
     ```
-
-### WinMD
-
-**Windows metadata** files (*.winmd) are machine-readable files that define WinRT APIs
-
-They use the same physical file format as CLR assemblies.
-All public types in a .winmd file must be WinRT types
-
-Resources:
-
-- 📄 [Windows Metadata (WinMD) files](https://docs.microsoft.com/en-us/uwp/winrt-cref/winmd-files)
-
-### WinRT
-
-The **Windows Runtime** 

@@ -39,7 +39,7 @@ TODO:
 ### 💊 Capsule calculations
 
 
-| Substance                             |                                 [TDD][TDD] |                                      Ratio |                               [TDPM][TDPM] |                                          🧠 |                                          💪 |
+| Substance                             |                                 [TDD][TDD] |                                      Ratio |                               [TDPM][TDPM] |                           :material-brain: |                :material-arm-flex-outline: |
 | ------------------------------------- | -----------------------------------------: | -----------------------------------------: | -----------------------------------------: | -----------------------------------------: | -----------------------------------------: |
 | [Creatine](#creatine)                 |                                        5.0 |                                        1:1 |                                        5.0 |                                        2.5 |                                        2.5 |
 | [LCLT](#l-carnitine)                  |                                        5.0 |                                        1:1 |                                        5.0 | <span style="color: lightgrey;">0.0</span> |                                        5.0 |
@@ -53,17 +53,15 @@ TODO:
 | [Alpha GPC](#alpha-gpc)               |                                        0.6 |                                        1:1 |                                        0.6 |                                        0.6 | <span style="color: lightgrey;">0.0</span> |
 | [L-Theanine](#l-theanine)             |                                        0.2 |                                        1:1 |                                        0.2 |                                        0.2 | <span style="color: lightgrey;">0.0</span> |
 | [Huperzine A](#huperzine-a) (planned) | <span style="color: lightgrey;">0.2</span> | <span style="color: lightgrey;">1:1</span> | <span style="color: lightgrey;">0.2</span> | <span style="color: lightgrey;">0.2</span> | <span style="color: lightgrey;">0.0</span> |
-| Total                                 |                                       22.4 |                                            |                                       26.4 |                                       10.9 |                                       15.5 |
+| **Total**                             |                                   **22.4** |                                            |                                   **26.4** |                                   **10.9** |                                   **15.5** |
 
 
-| Supplementation package | [TDD][TDD] | OOO capsule capacity (g) | Total daily capsules |
-| ----------------------- | ---------- | ------------------------ | -------------------: |
-| 🧠                       | 10.9       | 1.644 g                  |                    7 |
-| 💪                       | 15.5       | 1.644 g                  |                   10 |
+| Supplementation package     | [TDD][TDD] (g) | 000 capsule capacity (g) | Total daily capsules | Daily doses per 100-pill batch |
+| --------------------------- | -------------: | -----------------------: | -------------------: | -----------------------------: |
+| :material-brain:            |           10.9 |                    1.644 |                  6.8 |                           14.7 |
+| :material-arm-flex-outline: |           15.5 |                    1.644 |                  9.7 |                           10.3 |
 
-
-
-Colored capsules are available for ~$0.03 each from an [Amazon reseller](https://www.amazon.com/Gelatin-Capsules-Kosher-Certified-Express/dp/B088D1HYHW) [Capsules Express](https://capsulesexpress.com/collections/size-000-colored-gelatin-capsules/size-000-colored-gel) (obviously not worth it).
+Multiply each package's ingredient dose by the last column to get the amount of product to use per batch.
 
 ### 🥗 Dietary deficiencies
 

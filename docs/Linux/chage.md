@@ -1,3 +1,5 @@
+# chage
+
 [chage -&#100;]:                #chage                         '```&#10;$ chage -&#100;&#10;```&#10;Change the Last Change field of the /etc/shadow file for the user&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 95'
 [chage -&#69;]:                 #chage                         '```&#10;$ chage -&#69;&#10;```&#10;Set the Expiration Date field of the /etc/shadow file for the user&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 95'
 [chage -&#109;]:                #chage                         '```&#10;$ chage -&#109;&#10;```&#10;Change the Min field of the /etc/shadow file for the user&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 95'
