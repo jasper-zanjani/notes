@@ -1178,199 +1178,6 @@ This provides the opportunity to test a mocked validator for invocation of the `
 
 
 
-## Web frameworks
-
-### API mirror
-
-=== "FastAPI"
-
-## Test-driven development
-
-Conventionally, tests have a three-part structure:
-
-1. Arrange
-2. Act
-3. Assert
-
-A **unit test** tests a small piece of code independently of others, such as a module, function, or class.
-An **automated unit test** runs without intervention and reports the pass or fail status of the test suite.
-A strict unit test should run entirely in memory and not have any dependencies on the filesystem, network, or databases.
-
-Each **test case** should exercise a unit of code and check if it works correctly.
-A **test runner** runs many test cases and reports the results.
-A **test suite** refers to a collection of test cases executed by a test runner. 
-A **test fixture** is code that supports a test case by setting up data, implementing the Arrange step.
-([src](https://app.pluralsight.com/course-player?clipId=fa55af11-913d-4171-a2b0-db9f75f249e1))
-
-Test case names are typically verbose and descriptive about what is being tested. 
-([src](https://app.pluralsight.com/course-player?clipId=d0ba9a90-d356-4db2-b021-4a590d605894))
-
-A **spike** is an experiment without tests to ensure that an idea will work. Once the spike succeeds, the spike code is thrown away and the logic is recreated following TDD, starting with tests.
-
-
-
-
-
-
-=== "Starship"
-
-    === "C#"
-
-        ```csharp
-        public class StarshipShould
-        {
-
-            [Theory]
-            [InlineData("USS Enterprise","NCC-1701",203)]
-            [InlineData("USS Constitution","NCC-1700",204)]
-            [InlineData("USS Voyager","NCC-74656",141)]
-            [InlineData("USS Defiant","NX-74205",50)]
-            [InlineData("USS Enterprise","NCC-1701-D",1000)]
-            public void BeValid(string name, string registry, int crew)
-            {
-                var starship = new Starship{Name=name,Registry=registry,Crew=crew};
-                Assert.Equal(starship.Name,name);
-                Assert.Equal(starship.Registry,registry);
-                Assert.Equal(starship.Crew,crew);
-            }
-        }
-        ```
-
-    === "Python"
-
-        ```py
-        import pytest
-        from starships import Starship,StarshipClass,Fleet
-
-        @pytest.fixture
-        def enterprise():
-            return Starship("USS Enterprise","NCC-1701",StarshipClass.CONSTITUTION)
-
-        def test_lookup_by_name(enterprise):
-            starfleet = Fleet()
-            starfleet.add(enterprise)
-            assert starfleet.lookup(enterprise.name) == enterprise
-        ```
-
-
-=== "Fleet"
-
-    === "Python"
-
-        === "unittest"
-
-            ```py
-            import unittest
-            from starships import Starship, StarshipClass, Fleet
-
-
-            class FleetTest(unittest.TestCase):
-                def setUp(self):
-                    self.fleet = Fleet()
-
-                def tearDown(self) -> None:
-                    super().tearDown()
-
-                def test_lookup_by_name(self):
-                    self.fleet.add(
-                        Starship("USS Enterprise", "NCC-1701", StarshipClass.CONSTITUTION)
-                    )
-                    ent = self.fleet.lookup("USS Enterprise")
-                    self.assertEqual("NCC-1701", ent.registry)
-
-                def test_missing_name(self):
-                    with self.assertRaises(KeyError):
-                        self.fleet.lookup("bla")
-            ```
-
-=== "CaptainSelector"
-
-    === "C#"
-
-        ```csharp
-        public class CaptainSelectorShould
-        {
-            [Theory]
-            [InlineData('B')]
-            [InlineData('C')]
-            [InlineData('D')]
-            [InlineData('F')]
-            public void OnlyAssignGoodCaptains(char grade)
-            {
-                var mockOfficer = new Mock<IOfficer>();
-                mockOfficer.Setup(x => x.Grade).Returns(grade);
-
-                CaptainSelector captainSelector = new CaptainSelector(mockOfficer.Object);
-                bool selectionResult = captainSelector.Evaluate();
-                Assert.False(selectionResult);
-            }
-        }
-        ```
-
-=== "StarshipValidator"
-
-    === "C#"
-
-        ```csharp
-        public class StarshipValidatorShould
-        {
-            [Theory]
-            [InlineData("Jean-Luc Picard", 2305, 7, 13)]
-            [InlineData("James Kirk", 2233, 3, 22)]
-            public void ValidateCaptainedStarships(string n, params int[] dob)
-            {
-                var mockStarship = new Mock<IStarship>();
-                Captain captain = new Captain(n,new DateTime(dob[0], dob[1], dob[2]));
-                mockStarship.Setup(x => x.Captain).Returns(captain);
-
-                StarshipValidator starshipValidator = new StarshipValidator(mockStarship.Object);
-                Assert.True(starshipValidator.IsCaptained());
-            }
-
-            [Theory]
-            [InlineData("USS Enterprise","NCC-1701",203)]
-            [InlineData("USS Constitution","NCC-1700",204)]
-            [InlineData("USS Voyager","NCC-74656",141)]
-            [InlineData("USS Defiant","NX-74205",50)]
-            [InlineData("USS Enterprise","NCC-1701-D",1000)]
-            public void ValidateStarshipsWithValidRegistryNumbers(string name, string registry, int crew)
-            {
-                var starship = new Starship{Name =name, Registry =registry,Crew= crew};
-                StarshipValidator starshipValidator = new StarshipValidator(starship);
-                Assert.True(starshipValidator.ValidateRegistry());
-            }
-        }
-        ```
-
-=== "StarshipDeployment"
-
-    === "C# Test (xUnit)"
-
-        ```csharp
-        public class StarshipDeploymentShould
-        {
-            [Fact]
-            public void ThrowOnNullValidator()
-            {
-                var sut = new StarshipDeployment(null);
-                Assert.Throws<ArgumentNullException>(sut);
-            }        
-            
-            [Theory]
-            [InlineData("Betelgeuse")]
-            public void EvaluateStarship(string destination)
-            {
-                var mockValidator = new Mock<IStarshipValidator>();
-                mockValidator.Setup(x => x.Evaluate()).Returns(true);
-
-                var mockStarship = new Mock<IStarship>();
-
-                var sut = new StarshipDeployment(mockValidator.Object as IStarshipValidator);
-                sut.Deploy(mockStarship.Object as Starship, destination);
-                mockValidator.Verify(x => x.Evaluate());
-            }
-        }
-        ```
 
 ## Glossary
 
@@ -1435,10 +1242,10 @@ Evaluate type of data
 package main
 import ("fmt" "reflect")
 func main() {
-  fmt.Println(reflect.TypeOf(1))        # => int
-  fmt.Println(reflect.TypeOf(9.5))      # => float64
-  fmt.Println(reflect.TypeOf("string")) # => string
-  fmt.Println(reflect.TypeOf(true))     # => bool
+    fmt.Println(reflect.TypeOf(1))        // => int
+    fmt.Println(reflect.TypeOf(9.5))      // => float64
+    fmt.Println(reflect.TypeOf("string")) // => string
+    fmt.Println(reflect.TypeOf(true))     // => bool
 }
 ```
 
@@ -1453,14 +1260,6 @@ Sources:
 
 One of the core optimizations that a C compiler performs; transforms a loop containing a conditional into a conditional with a loop in both parts, which changes flow control
 
-#### Mock
-
-**Mock objects** include a variety of concepts that together comprise a taxonomy of Test Doubles (generically called **mocks**) used to facilitate unit testing by replacing a production object, usually a data dependency: ([src](https://app.pluralsight.com/course-player?clipId=ee56caf3-8cde-4298-8c06-e74241c72023))
-
-- **Fakes** provide a working implementation of the dependency, however one which is unsuitable for production (e.g. in-memory databases)
-- **Dummies** are passed around like real implementations but never accessed or used.  These are used to satisfy the parameters of a method.
-- **Stubs** can provide answers to calls in the form of property gets and method return values.
-- **Mocks** allow the tester to verify that a property or method was called.
 
 #### Register rename engine
 

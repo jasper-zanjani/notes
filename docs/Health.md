@@ -2,90 +2,89 @@
 
 TODO:
 
-- Develop a satisfactory dosage of 
-    - [D-Aspartic Acid](#d-aspartic-acid): 📄 [Healthline](https://www.healthline.com/nutrition/d-aspartic-acid-and-testosterone)
-    - [Ashwagandha](#ashwagandha): 📄 [Healthline](https://www.medicalnewstoday.com/articles/318407)
-    - [L-Carnitine](#l-carnitine): 📄 [Healthline](https://www.medicalnewstoday.com/articles/l-carnitine)
-    - [Taurine](#taurine): 📄 [Healthline](https://www.healthline.com/nutrition/what-is-taurine)
-- Adaptogens for evening
-- Adapt dosages to distribute most massive dietary supplements over the course of the day
-    - Creatine
-    - Potassium
-    - D-Aspartic Acid
-    - LCLT
-- Develop a cocktail to use when [sleep](#-sleep-deprivation) is disturbed.
+- [Print and read](https://www.ncbi.nlm.nih.gov/pubmed/25289259)
+- Develop a dosage of adaptogens to use when [sleep](#-sleep-deprivation) is disturbed.
 - Incorporate notes and research from [Reddit](https://www.reddit.com/r/nootropics/wiki/beginners)
 
-| Substance                           | Effects                                 | Lowest cost |
-| ----------------------------------- | --------------------------------------- | ----------- |
-| [Ashwagandha](#ashwagandha)         | [😓][anxiolytic] [💪][ergogenic] 🍆        | **0.06**    |
-| [Alpha GPC](#alpha-gpc)             | [🧠][nootropic]                          | 0.50        |
-| [Bacopa Monnieri](#bacopa)          | [🧠][nootropic][🧠][nootropic]            | **0.10**    |
-| [Curcumin](#curcumin)               | [🧠][nootropic] [❤&#xFE0F;][antioxidant] | 0.13        |
-| [D-aspartic acid](#d-aspartic-acid) | 🍆                                       | 0.15        |
-| [GABA](#gaba)                       | [😟][anxiolytic]                         |
-| [Kanna](#kanna)                     | [😓][anxiolytic]?                        | 0.40        |
-| [L-Carnitine](#l-carnitine)         | 🍆                                       | 0.08        |
-| [L-Tyrosine](#l-tyrosine)           | [🧠][nootropic] [😓][anxiolytic]          | 0.07        |
-| [Lion's Mane](#lions-mane)          | [🧠][nootropic] [🧠][nootropic]           | 0.17        |
-| [Quercetin](#quercetin)             | [❤&#xFE0F;][antioxidant]                |
-| [Resveratrol](#resveratrol)         | [❤&#xFE0F;][antioxidant]                | 0.12        |
-| [Rhodiola](#rhodiola)               | [🧠][nootropic]                          | 0.05        |
-| [Rosemary](#rosemary)               | [🧠][nootropic]                          | 0.09        |
-| [Taurine](#taurine)                 | [💪][ergogenic]                          |
-| [Ubiquinol](#ubiquinol)             | [💪][ergogenic] [❤&#xFE0F;][antioxidant] | **0.11**    |
+| Substance                                                                 | Effects                                                              | Lowest cost |
+| ------------------------------------------------------------------------- | -------------------------------------------------------------------- | ----------: |
+| [Ashwagandha :material-file-document-edit-outline:](#ashwagandha)         | [:slight_smile:][anxiolytic] [:athletic_shoe:][ergogenic] :eggplant: |   &lt; 0.01 |
+| [Alpha GPC :material-file-document-edit-outline:](#alpha-gpc)             | [:brain:][nootropic]                                                 |        0.50 |
+| [Bacopa Monnieri :material-file-document-edit-outline:](#bacopa)          | [:brain:][nootropic][:brain:][nootropic]                             |        0.10 |
+| [Curcumin :material-file-document-edit-outline:](#curcumin)               | [:brain:][nootropic] [:heart:][antioxidant]                          |        0.13 |
+| [D-aspartic acid :material-file-document-edit-outline:](#d-aspartic-acid) | :eggplant:                                                           |        0.15 |
+| [GABA :material-file-document-edit-outline:](#gaba)                       | [:slight_smile:][anxiolytic]                                         |
+| [Kanna :material-file-document-edit-outline:](#kanna)                     | [:slight_smile:][anxiolytic]:grey_question:                          |        0.40 |
+| [L-Carnitine :material-file-document-edit-outline:](#l-carnitine)         | :eggplant:                                                           |        0.08 |
+| [L-Tyrosine :material-file-document-edit-outline:](#l-tyrosine)           | [:brain:][nootropic] [:slight_smile:][anxiolytic]                    |        0.07 |
+| [Lion's Mane :material-file-document-edit-outline:](#lions-mane)          | [:brain:][nootropic] [:brain:][nootropic]                            |        0.17 |
+| [Quercetin :material-file-document-edit-outline:](#quercetin)             | [:heart:][antioxidant]                                               |
+| [Resveratrol :material-file-document-edit-outline:](#resveratrol)         | [:heart:][antioxidant]                                               |        0.12 |
+| [Rhodiola :material-file-document-edit-outline:](#rhodiola)               | [:brain:][nootropic]                                                 |        0.05 |
+| [Rosemary :material-file-document-edit-outline:](#rosemary)               | [:brain:][nootropic]                                                 |        0.09 |
+| [Taurine :material-file-document-edit-outline:](#taurine)                 | [:athletic_shoe:][ergogenic]                                         |
+| [Ubiquinol :material-file-document-edit-outline:](#ubiquinol)             | [:athletic_shoe:][ergogenic] [:heart:][antioxidant]                  |        0.11 |
+
+### 💸 Sale
+
+| Product                                                             | Discount                                                                             |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
+| [Maca :material-file-document-edit-outline:](#maca)                 | [50%](https://www.swansonvitamins.com/swanson-premium-maca-500-mg-100-caps)          |
+| [Saw palmetto :material-file-document-edit-outline:](#saw-palmetto) | [40%](https://www.swansonvitamins.com/swanson-premium-saw-palmetto-540-mg-250-caps)  |
+| [Zinc :material-file-document-edit-outline:](#zinc)                 | [30%](https://www.swansonvitamins.com/swanson-premium-zinc-gluconate-30-mg-250-tabs) |
+| [Curcumin :material-file-document-edit-outline:](#curcumin)         | 25%                                                                                  |
 
 
 ### 💊 Capsule calculations
 
 
-| Substance                             |                                 [TDD][TDD] |                                      Ratio |                               [TDPM][TDPM] |                           :material-brain: |                :material-arm-flex-outline: |
-| ------------------------------------- | -----------------------------------------: | -----------------------------------------: | -----------------------------------------: | -----------------------------------------: | -----------------------------------------: |
-| [Creatine](#creatine)                 |                                        5.0 |                                        1:1 |                                        5.0 |                                        2.5 |                                        2.5 |
-| [LCLT](#l-carnitine)                  |                                        5.0 |                                        1:1 |                                        5.0 | <span style="color: lightgrey;">0.0</span> |                                        5.0 |
-| [Potassium](#potassium)               |                                        2.0 |                                    **2:1** |                                        4.0 |                                        2.0 |                                        2.0 |
-| [DAA](#d-aspartic-acid)               |                                        3.0 |                                        1:1 |                                        3.0 |                                        1.0 |                                        2.0 |
-| [Taurine](#taurine)                   |                                        3.0 |                                        1:1 |                                        3.0 |                                        1.0 |                                        2.0 |
-| [DMAE](#dmae)                         |                                        1.0 |                                    **3:1** |                                        3.0 |                                        2.0 |                                        1.0 |
-| [L-Tyrosine](#l-tyrosine)             |                                        1.0 |                                        1:1 |                                        1.0 |                                        0.5 |                                        0.5 |
-| [Lion's Mane](#lions-mane)            |                                        1.0 |                                        1:1 |                                        1.0 |                                        1.0 | <span style="color: lightgrey;">0.0</span> |
-| [Ashwagandha](#ashwagandha)           |                                   &gt; 0.6 |                                        1:1 |                                        0.6 |                                        0.3 |                                        0.3 |
-| [Alpha GPC](#alpha-gpc)               |                                        0.6 |                                        1:1 |                                        0.6 |                                        0.6 | <span style="color: lightgrey;">0.0</span> |
-| [L-Theanine](#l-theanine)             |                                        0.2 |                                        1:1 |                                        0.2 |                                        0.2 | <span style="color: lightgrey;">0.0</span> |
-| [Huperzine A](#huperzine-a) (planned) | <span style="color: lightgrey;">0.2</span> | <span style="color: lightgrey;">1:1</span> | <span style="color: lightgrey;">0.2</span> | <span style="color: lightgrey;">0.2</span> | <span style="color: lightgrey;">0.0</span> |
-| **Total**                             |                                   **22.4** |                                            |                                   **26.4** |                                   **10.9** |                                   **15.5** |
+| Substance                                                                   |                                     [TDD][TDD] |                                            Ratio |                                 [TDPM][TDPM] |                                      :brain: |                            :athletic_shoe: |
+| --------------------------------------------------------------------------- | ---------------------------------------------: | -----------------------------------------------: | -------------------------------------------: | -------------------------------------------: | -----------------------------------------: |
+| [Creatine :material-file-document-edit-outline:](#creatine)                 |                                            5.0 |                                              1:1 |                                          5.0 |                                          2.5 |                                        2.5 |
+| [LCLT :material-file-document-edit-outline:](#l-carnitine)                  |                                            5.0 |                                              1:1 |                                          5.0 |                                          1.5 |                                        3.5 |
+| [Potassium :material-file-document-edit-outline:](#potassium)               |                                            2.0 |                                          **2:1** |                                          4.0 |                                          2.0 |                                        2.0 |
+| [DAA :material-file-document-edit-outline:](#d-aspartic-acid)               |                                            3.0 |                                              1:1 |                                          3.0 |                                          1.0 |                                        2.0 |
+| [Taurine :material-file-document-edit-outline:](#taurine)                   |                                            3.0 |                                              1:1 |                                          3.0 |                                          1.0 |                                        2.0 |
+| [DMAE :material-file-document-edit-outline:](#dmae)                         |                                            1.0 |                                          **3:1** |                                          3.0 |                                          2.0 |                                        1.0 |
+| [Lion's Mane :material-file-document-edit-outline:](#lions-mane)            |                                            1.0 |                                              1:1 |                                          1.0 |                                          1.0 | <span style="color: lightgrey;">0.0</span> |
+| [Ashwagandha :material-file-document-edit-outline:](#ashwagandha)           |                                            3.0 |                                              1:1 |                                          3.0 |                                          1.0 |                                        2.0 |
+| [Alpha GPC :material-file-document-edit-outline:](#alpha-gpc)               |                                            0.6 |                                              1:1 |                                          0.6 |                                          0.6 | <span style="color: lightgrey;">0.0</span> |
+| [L-Theanine :material-file-document-edit-outline:](#l-theanine)             |                                            0.4 |                                              1:1 |                                          0.4 |                                          0.4 | <span style="color: lightgrey;">0.0</span> |
+| [L-Tyrosine :material-file-document-edit-outline:](#l-tyrosine) (planned)   |     <span style="color: lightgrey;">1.0</span> |                                              1:1 |   <span style="color: lightgrey;">1.0</span> |   <span style="color: lightgrey;">0.5</span> | <span style="color: lightgrey;">0.5</span> |
+| [Huperzine A :material-file-document-edit-outline:](#huperzine-a) (planned) | <span style="color: lightgrey;">200 mcg</span> | <span style="color: lightgrey;">**100:1**</span> | <span style="color: lightgrey;">20 mg</span> | <span style="color: lightgrey;">20 mg</span> | <span style="color: lightgrey;">0.0</span> |
+| **Total**                                                                   |                                       **24.0** |                                                  |                                     **28.0** |                                     **13.0** |                                   **15.0** |
 
 
-| Supplementation package     | [TDD][TDD] (g) | 000 capsule capacity (g) | Total daily capsules | Daily doses per 100-pill batch |
-| --------------------------- | -------------: | -----------------------: | -------------------: | -----------------------------: |
-| :material-brain:            |           10.9 |                    1.644 |                  6.8 |                           14.7 |
-| :material-arm-flex-outline: |           15.5 |                    1.644 |                  9.7 |                           10.3 |
+| Supplementation package | [TDD][TDD] (g) | Daily doses per 100-pill batch |
+| ----------------------- | -------------: | -----------------------------: |
+| :brain:                 |           13.0 |                            7.7 |
+| :athletic_shoe:         |           15.0 |                            6.6 |
 
 Multiply each package's ingredient dose by the last column to get the amount of product to use per batch.
 
 ### 🥗 Dietary deficiencies
 
-| Substance               | Dosage (mg) | Cheapest cost per dose |
-| ----------------------- | ----------: | ---------------------- |
-| [Calcium](#calcium)     |       1,000 | 0.02                   |
-| [Magnesium](#magnesium) |         200 | 0.02                   |
-| [Potassium](#potassium) |       2,000 | 0.01                   |
+| Substance                                                     | Dosage (mg) | Cheapest cost per dose |
+| ------------------------------------------------------------- | ----------: | ---------------------- |
+| [Calcium :material-file-document-edit-outline:](#calcium)     |       1,000 | 0.02                   |
+| [Magnesium :material-file-document-edit-outline:](#magnesium) |         200 | 0.02                   |
+| [Potassium :material-file-document-edit-outline:](#potassium) |       2,000 | 0.01                   |
 
 
 ### 🧠 Nootropics
 
-| Supplement                                 | Dosage (g) | Cost ($) | Cost (sale) |
-| ------------------------------------------ | ---------: | -------: | ----------: |
-| [Alpha GPC](#alpha-gpc)                    |        0.6 |     0.71 |        0.50 |
-| [Bacopa](#bacopa)                          |        0.4 |     0.19 |        0.10 |
-| [DMAE](#dmae)                              |        0.8 |     0.23 |        0.23 |
-| [Huperzine A](#huperzine-a)                |        0.2 |     0.33 |        0.20 |
-| [L-Theanine](#l-theanine)                  |        0.2 |     0.30 |        0.22 |
-| [L-Tyrosine](#l-tyrosine)                  |        1.0 |     0.16 |        0.07 |
-| [Lion's Mane](#lions-mane)                 |        1.0 |     0.36 |        0.17 |
-| [Kanna](#kanna)                            |        0.5 |     0.80 |        0.40 |
-| **Total**                                  |            |     3.23 |    **2.04** |
-| [Gorilla Mind Smooth][Gorilla Mind Smooth] |            |     2.93 |
+| Supplement                                                        | Dosage (g) | Cost ($) | Cost (sale) |
+| ----------------------------------------------------------------- | ---------: | -------: | ----------: |
+| [Alpha GPC :material-file-document-edit-outline:](#alpha-gpc)     |        0.6 |     0.71 |        0.50 |
+| [Bacopa :material-file-document-edit-outline:](#bacopa)           |        0.4 |     0.19 |        0.10 |
+| [DMAE :material-file-document-edit-outline:](#dmae)               |        0.8 |     0.23 |        0.23 |
+| [Huperzine A :material-file-document-edit-outline:](#huperzine-a) |        0.2 |     0.33 |        0.20 |
+| [L-Theanine :material-file-document-edit-outline:](#l-theanine)   |        0.2 |     0.30 |        0.22 |
+| [L-Tyrosine :material-file-document-edit-outline:](#l-tyrosine)   |        1.0 |     0.16 |        0.07 |
+| [Lion's Mane :material-file-document-edit-outline:](#lions-mane)  |        1.0 |     0.36 |        0.17 |
+| [Kanna :material-file-document-edit-outline:](#kanna)             |        0.5 |     0.80 |        0.40 |
+| **Total**                                                         |            |     3.23 |    **2.04** |
+| [Gorilla Mind Smooth][Gorilla Mind Smooth]                        |            |     2.93 |
 
 - [Alpha GPC](#alpha-gpc)
 - [Bacopa monnieri](#bacopa)
@@ -100,7 +99,7 @@ Multiply each package's ingredient dose by the last column to get the amount of 
 - [Saffron](#saffron)
 - [Vitamin B12](#vitamin-b12)
 
-### 🩸 Antioxidants 
+### 👴 Antioxidants 
 
 In recent years, the mitochondrial free radical theory has emerged to explain the aging process. 
 In this theory, **oxidative stress** from free radicals, which many studies suggest cause a variety of health issues, cause mitochondrial dynsfunction and eventually aging. 
@@ -216,7 +215,7 @@ Studies have substantiated its use in enhancing memory by [reducing](https://pub
 
 The main nootropic constituents of Bacopa are believed to be dammarane types of triterpenoid saponins known as **bacosides**. 
 Most clinical studies focus on memory, to the omission of other facets of cognition like fluid intelligence, typically lasting 12 weeks. 
-The long-term effect of Bacopa is unknown, but animal models suggest protection from age-related neurodegeneration. ([2013](https://pubmed.ncbi.nlm.nih.gov/23772955/ "Neuropharmacological review of the nootropic herb Bacopa monnieri") 🖨)
+The long-term effect of Bacopa is unknown, but animal models suggest protection from age-related neurodegeneration. ([2013](https://pubmed.ncbi.nlm.nih.gov/23772955/ "Neuropharmacological review of the nootropic herb Bacopa monnieri") :material-file-pdf:)
 
 There are several putative mechanisms of action:
 
@@ -230,13 +229,13 @@ There are several putative mechanisms of action:
 
 A mix of [Bacopa monnieri](#bacopa), [Lycopene](#lycopene), [Astaxanthin](#astaxanthin), and [vitamin B12](#vitamin-b12)) administered orally once a day to subjects aged 60 years old or more resulted in improved cognitive performance after 8 weeks. ([2020](https://pubmed.ncbi.nlm.nih.gov/33375429/))
 
-A neuropharmacological review found that the maximum efficacious dosage was 200 mg/kg. ([2013](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3746283/)) [📄](/Health/rej.2013.1431.pdf)
+A neuropharmacological review found that the maximum efficacious dosage was 200 mg/kg. ([2013](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3746283/)) [:material-file-pdf:](/Health/rej.2013.1431.pdf)
 
-| Product                                                                                                                                                                |                $ |        mg |         $/400 mg |
-| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------: | --------: | ---------------: |
-| [Bulk Supplements Bacopba 1 kg](https://www.amazon.com/Bacopa-Extract-Powder-BulkSupplements-Support/dp/B07MQXXFG1)                                                    |           212.96 | 1,000,000 |             0.09 |
-| [Swanson Bacopa Monnieri 250 mg x 90 capsules (Swanson sale)](https://www.swansonvitamins.com/swanson-superior-herbs-bacopa-monnieri-extract-bacognize-250-mg-90-caps) | 9.29<br>**5.57** |    22,500 | 0.17<br>**0.10** |
-| [NOW Supplements Bacoba Extract 450 mg x 90 capsules](https://www.amazon.com/gp/product/B07RFZ8TX2)                                                                    |            18.78 |    40,500 |             0.19 |
+| Product                                                                                                                                                             |                $ |        mg |         $/400 mg |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------: | --------: | ---------------: |
+| [Bulk Supplements Bacopa 1 kg](https://www.amazon.com/Bacopa-Extract-Powder-BulkSupplements-Support/dp/B07MQXXFG1)                                                  |           212.96 | 1,000,000 |             0.09 |
+| [Swanson Bacopa Monnieri 250 mg x 90 capsules](https://www.swansonvitamins.com/swanson-superior-herbs-bacopa-monnieri-extract-bacognize-250-mg-90-caps)<br>**sale** | 9.29<br>**5.11** |    22,500 | 0.17<br>**0.09** |
+| [NOW Supplements Bacoba Extract 450 mg x 90 capsules](https://www.amazon.com/gp/product/B07RFZ8TX2)                                                                 |            18.78 |    40,500 |             0.19 |
 
 ### Bioperine
 
@@ -327,7 +326,7 @@ A late 2020 study found that mice given _Cucumis melo_ and _Citrullus lanatus_ s
 **Curcumin** ([diferuloylmethane](https://pubchem.ncbi.nlm.nih.gov/compound/curcumin)) is the principal biologically active [polyphenolic][polyphenol] constituent of turmeric (_Curcuma longa_). It is a powerful antioxidant binding to COX-2 and 5-LOX and has been found to increased brain-derived neurotrophic factor (BDNF).
 
 - Curcumin supplementation increases serum **brain-derived neurotrophic fator (BDNF)** ([2020](https://www.sciencedirect.com/science/article/abs/pii/S0271531719301009)).
-- A literature review found that ([2020](https://pubmed.ncbi.nlm.nih.gov/32972010/ "Can Brain Health Be Supported by Vitamin D-Based Supplements? A Critical Review") 🖨): 
+- A literature review found that ([2020](https://pubmed.ncbi.nlm.nih.gov/32972010/ "Can Brain Health Be Supported by Vitamin D-Based Supplements? A Critical Review") :material-file-pdf:): 
     - Curcumin can act as a neuroprotectant antioxidant by binding to COX-2 and 5-LOX.  
     - Curcumin inhibits the activation of microglial cells and protects dopaminergic neurons against microglia-mediated neurotoxicity. 
     - Curcumin inhibits the caspase-3 apoptosis mediator, suggesting that it is an anti-apoptotic agent that would be useful in treating neurodegenerative diseases.
@@ -335,16 +334,17 @@ A late 2020 study found that mice given _Cucumis melo_ and _Citrullus lanatus_ s
 - Curcumin has very poor bioavailability without co-administration of piperine. ([1998](https://pubmed.ncbi.nlm.nih.gov/9619120/))
 - A systematic review and meta-analysis found that curcumin administration was associated with a significant reduction only in systeolic blood pressure, but not in diastolic, in studies with supplementation exceeding 12 weeks. ([2019](https://pubmed.ncbi.nlm.nih.gov/31647981/))
 
-| Product                                                                                                                                                            |                  $ |     mg |         $/300 mg |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -----------------: | -----: | ---------------: |
-| [Swanson Curcumin Complex 350 mg x 120 capsules (sale)](https://www.swansonvitamins.com/swanson-superior-herbs-curcumin-complex-350-mg-120-veg-caps)<br>**(sale)** | 18.04<br>**15.19** | 42,000 | 0.13<br>**0.11** |
-| [Amazon Elements turmeric Complex 316 mg x 65 capsules](https://www.amazon.com/Amazon-Elements-Turmeric-Complex-Curcumin/dp/B08CFRLQ3K)                            |              14.99 | 20,540 |             0.22 |
+| Product                                                                                                                                                            |                  $ |        mg |         $/300 mg |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -----------------: | --------: | ---------------: |
+| [BulkSupplements Curcumin 1 kg](https://www.amazon.com/BulkSupplements-Curcumin-Natural-Turmeric-Extract/dp/B00GHY364A)                                            |             249.96 | 1,000,000 |             0.07 |
+| [Swanson Curcumin Complex 350 mg x 120 capsules (sale)](https://www.swansonvitamins.com/swanson-superior-herbs-curcumin-complex-350-mg-120-veg-caps)<br>**(sale)** | 18.99<br>**14.24** |    42,000 | 0.13<br>**0.10** |
+| [Amazon Elements turmeric Complex 316 mg x 65 capsules](https://www.amazon.com/Amazon-Elements-Turmeric-Complex-Curcumin/dp/B08CFRLQ3K)                            |              14.99 |    20,540 |             0.22 |
 
 ### D-Aspartic acid
 
-**D-Aspartic acid** (D-Asp) is an amino acid found in various tissues, including in the axon terminals and synaptic vesicles of neuronal tissue and endocrine glands.
+**D-Aspartic acid** or D-Aspartate is an amino acid found in various tissues, including in the axon terminals and synaptic vesicles of neuronal tissue and endocrine glands. It is known to induce testosterone synthesis in the testis.
 
-- A literature review concluded that exogenous D-Asp increases testosterone in animals. However, human studies which demonstrated conflicting results were noted for their short-term generation, small sample size, and other problems. ([2017](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5340133/ "The putative effects of D-Aspartic acid on blood testosterone levels: A systematic review") 🖨)
+- A literature review concluded that exogenous D-Asp increases testosterone in animals. However, human studies which demonstrated conflicting results were noted for their short-term generation, small sample size, and other problems. ([2017](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5340133/ "The putative effects of D-Aspartic acid on blood testosterone levels: A systematic review") :material-file-pdf:)
 - Most studies used dosages of 2,600-3,000 mg/day ([Healthline](https://www.healthline.com/nutrition/d-aspartic-acid-and-testosterone))
 
 | Product                                                                                                                                      |    $ |   mg |     $/3g |
@@ -393,10 +393,11 @@ It is endogenously produced in the liver and can also be found in various foods.
 - Huperzine A promoted neurogenesis in the hippocampus of mice in vitro and in vivo ([2013](https://pubmed.ncbi.nlm.nih.gov/23454433/))
 - Huperzine A directly increased neurotrophic activity of rat astrocytes in vitro ([2005](https://pubmed.ncbi.nlm.nih.gov/15916732/))
 
-| Product                                                                                                                                             |    $ |   mcg | $/200 mcg |
-| --------------------------------------------------------------------------------------------------------------------------------------------------- | ---: | ----: | --------: |
-| [Swanson Huperzine A 200 mcg x 30 capsules (Swanson)](https://www.swansonvitamins.com/swanson-premium-maximum-strength-huperzine-a-200-mcg-30-caps) | 5.93 | 6,000 |      0.20 |
-| [Swanson Huperzine A 200 mcg x 30 capsules (Swanson)](https://www.swansonvitamins.com/swanson-premium-maximum-strength-huperzine-a-200-mcg-30-caps) | 9.89 | 6,000 |      0.33 |
+| Product                                                                                                                                             |                $ |       mcg |        $/200 mcg |
+| --------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------: | --------: | ---------------: |
+| [BulkSupplements Huperzine A 10 g](https://www.amazon.com/Bulksupplements-Huperzine-1-Powder-grams/dp/B01M336S9L)                                   |            29.96 |   100,000 |             0.06 |
+| [BulkSupplements Huperzine A 100 g](https://www.amazon.com/Bulksupplements-Huperzine-1-Powder-grams/dp/B01MFDQ7ML)                                  |           325.96 | 1,000,000 |             0.07 |
+| [Swanson Huperzine A 200 mcg x 30 capsules (Swanson)](https://www.swansonvitamins.com/swanson-premium-maximum-strength-huperzine-a-200-mcg-30-caps) | 9.89<br>**5.93** |     6,000 | 0.33<br>**0.20** |
 
 
 
@@ -455,7 +456,7 @@ Leucine is a dietary amino acid marketed as directly stimulating muscle growth.
 
 - Untrained peri- and postmenopausal women performing resistance training experienced no ergogenic effects supplementing with leucine. ([2020](https://pubmed.ncbi.nlm.nih.gov/31577520/))
 - Young adult men experienced no ergogenic effects supplementing with leucine. ([2019](https://pubmed.ncbi.nlm.nih.gov/30102677/))
-- Elderly men experienced no ergogenic effects from ong-term leucine supplementation (7.5g/d) ([2009](https://academic.oup.com/ajcn/article/89/5/1468/4596871 "Long-term leucine supplementation does not increase muscle mass or strength in healthy elderly men ") 🖨)
+- Elderly men experienced no ergogenic effects from ong-term leucine supplementation (7.5g/d) ([2009](https://academic.oup.com/ajcn/article/89/5/1468/4596871 "Long-term leucine supplementation does not increase muscle mass or strength in healthy elderly men ") :material-file-pdf:)
 
 
 
@@ -516,6 +517,22 @@ A [2021 study](https://pubmed.ncbi.nlm.nih.gov/33246107/) found that compounds e
 
 Lutein is a carotenoid closely related to beta-carotene, which gives carrots and pumpkins their orange color.
 
+
+### Maca
+
+Maca root (*Lepidium meyenii*) is a Peruvian vegetable with a long history in South American cuisine, and as an herb it is traditionally used to enhance fertility and sex drive. 
+Some studies suggest an ergogenic benefit to endurance activities.
+Maca, in particular black maca, improved learning and memory in rodents with memory impairment.
+A review found that it can improve sperm volume, and motility and the volume of semen in infertile and healthy men.
+Another review found that maca can help alleviate hot flashes and anxiety in menopausal women.
+([src](https://www.healthline.com/nutrition/benefits-of-maca-root))
+
+
+
+| Product                                                                                                    |     $ |     m | $/500 mg |
+| ---------------------------------------------------------------------------------------------------------- | ----: | ----: | -------: |
+| [BulkSupplements Maca 1 kg](https://www.amazon.com/dp/B00F890Z5S)                                          | 29.96 | 1,000 |     0.02 |
+| [Swanson Maca 500 mg x 100 capsules](https://www.swansonvitamins.com/swanson-premium-maca-500-mg-100-caps) |  2.50 |    50 |     0.03 |
 
 ### Magnesium
 
@@ -587,6 +604,13 @@ Looks like your daily dietary intake is only 1600 mg (target is **3400 mg**)
 | [Banana](https://nutritiondata.self.com/facts/fruits-and-fruit-juices/1846/2)                                                                    |  0.45 |       500 |       1.92 |
 | [Apricot](https://nutritiondata.self.com/facts/fruits-and-fruit-juices/1838/2)                                                                   |  4.49 |     2,266 |       3.96 |
 
+### Pygeum
+
+| Product                                                                                                                      |                $ |     g |          $/500mg |
+| ---------------------------------------------------------------------------------------------------------------------------- | ---------------: | ----: | ---------------: |
+| [BulkSupplements pygeum 1 kg](https://www.amazon.com/Africanum-Extract-Bulksupplements-Prostate-Kilogram/dp/B07C32M646)      |            36.96 | 1,000 |             0.02 |
+| [Swanson Pygeum 125 mg x 100 capsules](https://www.swansonvitamins.com/swanson-premium-pygeum-500-mg-100-caps)<br>**(sale)** | 5.79<br>**2.90** |  12.5 | 0.23<br>**0.12** |
+
 ### Quercetin
 
 [**Quercetin**](https://pubchem.ncbi.nlm.nih.gov/compound/quercetin) is a [polyphenolic][polyphenol] antioxidant ubiquitous in plant food sources.
@@ -606,10 +630,10 @@ Looks like your daily dietary intake is only 1600 mg (target is **3400 mg**)
 Red wine contains less than 13 mg of resveratrol per liter. ([src](https://www.healthline.com/nutrition/6-anti-inflammatory-supplements#TOC_TITLE_HDR_6))
 It is confirmed as a powerful antioxidant and may potentially enhance cognitive performance. 
 
-- A systematic review found that supplementation with resveratrol does not have an anti-obesity effect. ([2021](https://pubmed.ncbi.nlm.nih.gov/33487308/ "What is the effect of resveratrol on obesity? A systematic review and meta-analysis")) 🖨
+- A systematic review found that supplementation with resveratrol does not have an anti-obesity effect. ([2021](https://pubmed.ncbi.nlm.nih.gov/33487308/ "What is the effect of resveratrol on obesity? A systematic review and meta-analysis")) :material-file-pdf:
     - In contrast, an earlier systematic review cited in this one **did** find that resveratrol supplementation had a positive effect on weight loss. ([2018](https://pubmed.ncbi.nlm.nih.gov/30421960/ "The effects of resveratrol intake on weight loss: a systematic review and meta-analysis of randomized controlled trials"))
 - A comprehensive review found that even moderate daily supplementation (0.5-1 g) is enough to inhibit estrogen metabolism and increase SHBG. ([2020](https://pubmed.ncbi.nlm.nih.gov/32744480/ "The estrogenic activity of resveratrol: a comprehensive review of in vitro and in vivo evidence and the potential for endocrine disruption"))
-- Resveratrol has poor bio-availability and a short half-life (1.5 hours). ([2019](https://pubmed.ncbi.nlm.nih.gov/30816367/ "Health benefits of resveratrol administration") 🖨).
+- Resveratrol has poor bio-availability and a short half-life (1.5 hours). ([2019](https://pubmed.ncbi.nlm.nih.gov/30816367/ "Health benefits of resveratrol administration") :material-file-pdf:).
 - Resveratrol upregulates SHBG expression in the liver. ([2017](https://pubmed.ncbi.nlm.nih.gov/28947831/))
 - A literature review found that resveratrol intervention lowered total cholesterol, systolic blood pressure, and fasting glucose with more significant reductions when doses were higher than 300mg/day. ([2016](https://pubmed.ncbi.nlm.nih.gov/27456934/))
 - A double-blind, randomized, placebo-controlled [crossover study][crossover trial] found that administration of resveratrol (150 mg/day) caused no changes in metabolic risk markers in overweight and obese subjects after 4 weeks with a 4-week washout period. ([2015](https://pubmed.ncbi.nlm.nih.gov/25790328/))
@@ -629,7 +653,7 @@ It is confirmed as a powerful antioxidant and may potentially enhance cognitive 
 
 **Rhodiola rosea** is an adaptogenic herb used in traditional medicine in Europe and Asia.
 
-- A [2018 meta study](https://pubmed.ncbi.nlm.nih.gov/30564123/ "Rhodiola rosea L. Improves Learning and Memory Function: Preclinical Evidence and Possible Mechanisms") 🖨 examined 36 animal studies and concluded that rhodiola can improve learning and memory function, despite an earlier [2012 review](https://pubmed.ncbi.nlm.nih.gov/22643043/ "Rhodiola rosea for physical and mental fatigue: a systematic review") that found that methodological problems with earlier experiments brought these findings into question.
+- A [2018 meta study](https://pubmed.ncbi.nlm.nih.gov/30564123/ "Rhodiola rosea L. Improves Learning and Memory Function: Preclinical Evidence and Possible Mechanisms") :material-file-pdf: examined 36 animal studies and concluded that rhodiola can improve learning and memory function, despite an earlier [2012 review](https://pubmed.ncbi.nlm.nih.gov/22643043/ "Rhodiola rosea for physical and mental fatigue: a systematic review") that found that methodological problems with earlier experiments brought these findings into question.
 - A [clinical trial in 2000](https://pubmed.ncbi.nlm.nih.gov/11081987/) found that young physicians experienced improvement in cognitive performance on a battery of cognitive tests called the Fatigue Test. The study concluded that rhodiola could reduce general fatigue under stressful conditions.
 - A [similar 2003 study](https://pubmed.ncbi.nlm.nih.gov/12725561/) found that young military cadets were able to resist fatigue better with rhodiola.
 
@@ -668,9 +692,20 @@ The studies on rosemary in particular were motivated by [traditional association
 
 ### Saffron
 
-**Saffron** (Crocus sativus L.)
+**Saffron** (*Crocus sativus L.*)
 
 A [2020 review](https://pubmed.ncbi.nlm.nih.gov/32445136/) found that there was some evidence that associated saffron with improvement in cognitive performance, especially in subjects with neurodegenerative disease.
+
+### Saw palmetto
+
+Saw palmetto (*Serenoa repens*) is a dwarf palm tree native to southeast North America that has long been used as a medicinal herb by Native Americans.
+Studies suggest that it blocks the conversion of testosterone to [DHT][DHT], and may be effective as a treatment for androgenic alopecia.
+([src](https://www.healthline.com/nutrition/saw-palmetto#male-pattern-baldness))
+
+| Product                                                                                                                                |                 $ |     g |          $/500mg |
+| -------------------------------------------------------------------------------------------------------------------------------------- | ----------------: | ----: | ---------------: |
+| [BulkSupplements Saw Palmetto 1 kg](https://www.amazon.com/Palmetto-Extract-BulkSupplements-Prostate-Kilogram/dp/B0748YMHJX)           |             43.96 | 1,000 |             0.02 |
+| [Swanson Saw Palmetto 540 mg x 250 capsules](https://www.swansonvitamins.com/swanson-premium-saw-palmetto-540-mg-250-caps)<br>**sale** | 15.99<br>**5.69** |   135 | 0.06<br>**0.02** |
 
 ### Taurine
 
@@ -691,7 +726,7 @@ Like [vitamin E](#vitamin-e), ubiquinol is a lipid-soluble antioxidant, which gi
 - Healthy and well-trained fireman given 200mg/day ubiquinol for two weeks experienced increases in the biomarkers of bone formation and energy mobilization, suggesting ergogenic effects. ([2020](https://pubmed.ncbi.nlm.nih.gov/32797125/))
 - CoQ10 was positively associated with antioxidant capacity, muscle mass, muscle strength, and muscle endurance in patients with osteoarthritis. ([2020](https://pubmed.ncbi.nlm.nih.gov/33327636/))
 - Subjects with mild cognitive impairment who received 200 mg/day ubiquinol for a year experienced improved cerebral [vasoreactivity](#-glossary) compared to baseline and placebo, but no significant neurological improvement. ([2021](https://pubmed.ncbi.nlm.nih.gov/33498250/))
-- In a double-blind, placebo-controlled study, ubiquinol supplementation increased physical perforrmance. ([2013](https://jissn.biomedcentral.com/articles/10.1186/1550-2783-10-24 "Ubiquinol supplementation enhances peak power production in trained athletes: a double-blind, placebo controlled study") 🖨)
+- In a double-blind, placebo-controlled study, ubiquinol supplementation increased physical perforrmance. ([2013](https://jissn.biomedcentral.com/articles/10.1186/1550-2783-10-24 "Ubiquinol supplementation enhances peak power production in trained athletes: a double-blind, placebo controlled study") :material-file-pdf:)
 - Ubiquinol supplementation to mice reduced a variety of markers associated with fatigue and increased muscle and liver glycogen content, which provide energy during exercise. ([2019](https://pubmed.ncbi.nlm.nih.gov/31652711/))
 - A systematic review and meta-analysis found that long-term supplementation with CoQ10 (most studies were 2-4 months while one was 13 months) at dosages varying from 34-225 mg/day can significantly reduce blood pressue. ([2007](https://www.nature.com/articles/1002138))
 
@@ -739,6 +774,11 @@ Like [vitamin E](#vitamin-e), ubiquinol is a lipid-soluble antioxidant, which gi
 **Vitamin E** (alpha-tocopherol) is a lipid soluble antioxidant that interferes with the propagation of lipid radicals. Its efficacy as an antioxidant has been closely associated with that of [Vitamin C](#vitmain-c).
 
 
+### Zinc
+
+Men who received 30 mg of zinc a day showed increased levels of free testosterone [:material-file-document-outline:](https://www.healthline.com/health/testosterone-and-zinc#research-and-studies).
+
+The tolerable upper intake level for adult men is 40 mg/day [:material-file-document-outline:](https://ods.od.nih.gov/factsheets/Zinc-HealthProfessional/).
 
 ## 📘 Glossary
 
@@ -763,6 +803,10 @@ relating to or denoting nerve cells in which acetylcholine acts as a neurotransm
 A trial where subjects are randomly assigned to study arms where each arm consists of two consecutive bouts of treatment separated by a washout period.
 A concern with crossover trials is that there is a chance that subsequent rounds of treatment may be influenced by earlier ones.
 
+### DHT
+
+**Dihydrotestosterone** is produced after testosterone is aromatized by 5-alpha-reductase.
+
 ### enantiomer                                             
 
 molecules that are mirror images of one another
@@ -786,6 +830,10 @@ intended to enhance physical performance, stamina, or recovery
 ### hepatic                                                
 
 related to the liver
+
+### hirsutism
+
+A condition causing male-pattern hair growth in women.
 
 ### Hypothalamic-pituitary-gonadal (HPG) axis              
 
@@ -863,6 +911,7 @@ a family of drugs used for treating hyperlipidaemia with a recognized capacity t
 ### vascular resistance                                    
 
 the resistance that must be overcome to push blood through the circulatory system                                                                                    
+
 ### vasoreactivity                                         
 
 a >= 30% decrease in pulmonary vascular resistance (PVR) with vasodilator compared to baseline
@@ -886,3 +935,5 @@ abnormally high deposition of **visceral adipose tissue (VAT)**
 [polyphenol]: #polyphenol "composed of multiple phenol units (C6H5OH)"
 [TDPM]: #-capsule-calculations "Total daily powder mass (g)"
 [TDD]: #-capsule-calculations "Total daily dosage (g)"
+[DHT]: #DHT "Dihydrotestosterone"
+[hirsutism]: #hirsutism "Hirsutism is a condition causing male-pattern hair growth in women."

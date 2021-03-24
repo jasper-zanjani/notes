@@ -4,23 +4,28 @@
 
 === ":fontawesome-solid-desktop: Compute "
 
-    | &nbsp;                                          |                                                                                                                                                                           :material-microsoft-azure:                                                                                                                                                                            |                                                                                                                        :fontawesome-brands-aws:                                                                                                                        |                                                                                                                                                        :fontawesome-brands-google:                                                                                                                                                         |
-    | ----------------------------------------------- | :-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-    | IaaS                                            |                                                  <figure><img src="/img/10021-icon-service-Virtual-Machine.svg" width="120px"/><figcaption>[Azure VMs :material-file-document-edit-outline:](#azure-vms) [:material-information-outline:](https://azure.microsoft.com/en-us/services/virtual-machines/)</figcaption></figure>                                                   |                             <figure><img src="/img/Arch_Amazon-EC2_64.svg" width="120px"/><figcaption>[EC2 :material-file-document-edit-outline:][EC2] [:material-information-outline:](https://aws.amazon.com/ec2)</figcaption></figure>                              |                            <figure><img src="/img/compute-engine-512-color.svg" width="120px"/><figcaption>[Compute Engine][Google Compute Engine]<br/>[:material-file-document-edit-outline:][Google Compute Engine] [:material-information-outline:](https://cloud.google.com/compute)</figcaption></figure>                             |
-    | PaaS                                            |                                                    <figure><img src="/img/10035-icon-service-App-Services.svg" width="120px" /><figcaption>[App Service :material-file-document-edit-outline:][App Service]  [:material-information-outline:](https://azure.microsoft.com/en-us/services/app-service/)</figcaption></figure>                                                    | <figure><img src="/img/Arch_AWS-Elastic-Beanstalk_64.svg" width="120px"/><figcaption>[Elastic Beanstalk<br/>:material-file-document-edit-outline:][Elastic Beanstalk] [:material-information-outline:](https://aws.amazon.com/elasticbeanstalk/)</figcaption></figure> |                                                    <figure><img src="/img/AppEngine-512-color.svg" width="120px"/><figcaption>[App Engine :material-file-document-edit-outline:][App Engine] [:material-information-outline:](https://cloud.google.com/appengine)</figcaption></figure>                                                    |
-    | Serverless                                      |  <figure><img src="/img/10029-icon-service-Function-Apps.svg" width="120px"/><figcaption>[Functions :material-file-document-edit-outline:][Azure Functions] [:material-information-outline:](https://azure.microsoft.com/en-us/services/functions/) [:material-file-document-multiple-outline:](https://docs.microsoft.com/en-us/azure/azure-functions/)</figcaption></figure>  |                         <figure><img src="/img/Arch_AWS-Lambda_64.svg" width="120px"/><figcaption>[Lambda :material-file-document-edit-outline:][Lambda] [:material-information-outline:](https://aws.amazon.com/lambda)</figcaption></figure>                         | <figure><img src="/img/cloud-functions-512-color.svg" width="120px"/><figcaption>[Cloud Functions :material-file-document-edit-outline:][Cloud Functions] [:material-information-outline:](https://cloud.google.com/functions)</figcaption></figure> [Cloud Run][Cloud Run] [:material-information-outline:](https://cloud.google.com/run) |
-    | :octicons-container-24: Containers              | <figure><img src="/img/10104-icon-service-Container-Instances.svg" width="120px"/><figcaption>[ACI :material-file-document-edit-outline:][ACI] [:material-information-outline:](https://azure.microsoft.com/en-us/services/container-instances/) [:material-file-document-multiple-outline:](https://docs.microsoft.com/en-us/azure/container-instances/)</figcaption></figure> |                  <figure><img src="/img/Arch_Amazon-Elastic-Container-Service_64.svg" width="120px"/><figcaption>[ECS :material-file-document-edit-outline:][ECS] [:material-information-outline:](https://aws.amazon.com/ecs)</figcaption></figure>                   |                                                                                                                                                                                                                                                                                                                                            |
-    | [:material-kubernetes: Kubernetes](/Kubernetes) |         <figure><img src="/img/10023-icon-service-Kubernetes-Services.svg" width="120px"/><figcaption>[AKS :material-file-document-edit-outline:][AKS] [:material-information-outline:](https://azure.microsoft.com/en-us/services/kubernetes-service/) [:material-file-document-multiple-outline:](https://docs.microsoft.com/en-us/azure/aks/)</figcaption></figure>          |                  <figure><img src="/img/Arch_Amazon-Elastic-Kubernetes-Service_64.svg" width="120px"/><figcaption>[EKS :material-file-document-edit-outline:][EKS] [:material-information-outline:](https://aws.amazon.com/eks)</figcaption></figure>                  |                                                          <figure><img src="/img/gke-512-color.png" width="120px"/><figcaption>[GKE :material-file-document-edit-outline:][GKE] [:material-information-outline:](https://cloud.google.com/kubernetes-engine)</figcaption></figure>                                                          |
-    | Container registry                              |                                                                                                                                                                                                                                                                                                                                                                                 |                                                                                                                                                                                                                                                                        |                                                                  <figure><img src="/img/artifact-registry-color.svg" width="120px" title="Artifact Registry"/><figcaption>Artifact Registry [:material-information-outline:](https://cloud.google.com/artifact-registry)                                                                   |
+    | &nbsp;     |                                                                                                                                                                          :material-microsoft-azure:                                                                                                                                                                           |                                                                                                                        :fontawesome-brands-aws:                                                                                                                        |                                                                                                                                                                             :fontawesome-brands-google:                                                                                                                                                                              |
+    | ---------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+    | IaaS       |                                                 <figure><img src="/img/10021-icon-service-Virtual-Machine.svg" width="120px"/><figcaption>[Azure VMs :material-file-document-edit-outline:](#azure-vms) [:material-information-outline:](https://azure.microsoft.com/en-us/services/virtual-machines/)</figcaption></figure>                                                  |                             <figure><img src="/img/Arch_Amazon-EC2_64.svg" width="120px"/><figcaption>[EC2 :material-file-document-edit-outline:][EC2] [:material-information-outline:](https://aws.amazon.com/ec2)</figcaption></figure>                              |                                                 <figure><img src="/img/compute-engine-512-color.svg" width="120px"/><figcaption>[Compute Engine][Google Compute Engine]<br/>[:material-file-document-edit-outline:][Google Compute Engine] [:material-information-outline:](https://cloud.google.com/compute)</figcaption></figure>                                                  |
+    | PaaS       |                                                   <figure><img src="/img/10035-icon-service-App-Services.svg" width="120px" /><figcaption>[App Service :material-file-document-edit-outline:][App Service]  [:material-information-outline:](https://azure.microsoft.com/en-us/services/app-service/)</figcaption></figure>                                                   | <figure><img src="/img/Arch_AWS-Elastic-Beanstalk_64.svg" width="120px"/><figcaption>[Elastic Beanstalk<br/>:material-file-document-edit-outline:][Elastic Beanstalk] [:material-information-outline:](https://aws.amazon.com/elasticbeanstalk/)</figcaption></figure> |                                                                         <figure><img src="/img/AppEngine-512-color.svg" width="120px"/><figcaption>[App Engine :material-file-document-edit-outline:][App Engine] [:material-information-outline:](https://cloud.google.com/appengine)</figcaption></figure>                                                                         |
+    | Serverless | <figure><img src="/img/10029-icon-service-Function-Apps.svg" width="120px"/><figcaption>[Functions :material-file-document-edit-outline:][Azure Functions] [:material-information-outline:](https://azure.microsoft.com/en-us/services/functions/) [:material-file-document-multiple-outline:](https://docs.microsoft.com/en-us/azure/azure-functions/)</figcaption></figure> |                         <figure><img src="/img/Arch_AWS-Lambda_64.svg" width="120px"/><figcaption>[Lambda :material-file-document-edit-outline:][Lambda] [:material-information-outline:](https://aws.amazon.com/lambda)</figcaption></figure>                         | <figure><img src="/img/cloud-functions-512-color.svg" width="120px"/><figcaption>[Cloud Functions :material-file-document-edit-outline:][Cloud Functions] [:material-information-outline:](https://cloud.google.com/functions)</figcaption></figure> <figure><figcaption>[Cloud Run][Cloud Run] [:material-information-outline:](https://cloud.google.com/run)</figcaption></figure> |
+
+=== ":octicons-container-24: Containers"
+
+    | &nbsp;                                          |                                                                                                                                                                           :material-microsoft-azure:                                                                                                                                                                            |                                                                                                       :fontawesome-brands-aws:                                                                                                       |                                                                                               :fontawesome-brands-google:                                                                                                |
+    | ----------------------------------------------- | :-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+    | Individual containers                           | <figure><img src="/img/10104-icon-service-Container-Instances.svg" width="120px"/><figcaption>[ACI :material-file-document-edit-outline:][ACI] [:material-information-outline:](https://azure.microsoft.com/en-us/services/container-instances/) [:material-file-document-multiple-outline:](https://docs.microsoft.com/en-us/azure/container-instances/)</figcaption></figure> | <figure><img src="/img/Arch_Amazon-Elastic-Container-Service_64.svg" width="120px"/><figcaption>[ECS :material-file-document-edit-outline:][ECS] [:material-information-outline:](https://aws.amazon.com/ecs)</figcaption></figure>  |                                                                                                                                                                                                                          |
+    | [:material-kubernetes: Kubernetes](/Kubernetes) |         <figure><img src="/img/10023-icon-service-Kubernetes-Services.svg" width="120px"/><figcaption>[AKS :material-file-document-edit-outline:][AKS] [:material-information-outline:](https://azure.microsoft.com/en-us/services/kubernetes-service/) [:material-file-document-multiple-outline:](https://docs.microsoft.com/en-us/azure/aks/)</figcaption></figure>          | <figure><img src="/img/Arch_Amazon-Elastic-Kubernetes-Service_64.svg" width="120px"/><figcaption>[EKS :material-file-document-edit-outline:][EKS] [:material-information-outline:](https://aws.amazon.com/eks)</figcaption></figure> | <figure><img src="/img/gke-512-color.png" width="120px"/><figcaption>[GKE :material-file-document-edit-outline:][GKE] [:material-information-outline:](https://cloud.google.com/kubernetes-engine)</figcaption></figure> |
+    | Container registry                              |                                                                                                                                                                                                                                                                                                                                                                                 |                                                                                                                                                                                                                                      |         <figure><img src="/img/artifact-registry-color.svg" width="120px" title="Artifact Registry"/><figcaption>Artifact Registry [:material-information-outline:](https://cloud.google.com/artifact-registry)          |
 
 
 === ":fontawesome-solid-save: Storage "
 
-    | &nbsp;         | :material-microsoft-azure: | :fontawesome-brands-aws: | :fontawesome-brands-google: |
-    | -------------- | :------------------------: | :----------------------: | :-------------------------: |
-    | Archive        |                            |    [Glacier][Glacier]    |                             |
-    | Backups        |                            |                          |                             |
-    | Physical media |                            |                          |                             |
+    | &nbsp;         |                                                                                                                                    :material-microsoft-azure:                                                                                                                                     |                                                                   :fontawesome-brands-aws:                                                                    |                                                               :fontawesome-brands-google:                                                               |
+    | -------------- | :-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------------------: |
+    | Archive        |                                                                                                                                                                                                                                                                                                   | <figure><img src="/img/Arch_Amazon-Simple-Storage-Service-Glacier_64.svg" width="120px" title="Glacier"/><figcaption>[Glacier][Glacier]</figcaption></figure> |                                                                                                                                                         |
+    | Backups        |                                                         <figure><img src="/img/00017-icon-service-Recovery-Services-Vaults.svg" width="120px" title="Recovery Services Vault"/><figcaption>Recovery Services Vault</figcaption></figure>                                                          |                       <figure><img src="/img/Arch_AWS-Backup_64.svg" width="120px" title="Backup"/><figcaption>Backup</figcaption></figure>                        |                                                                                                                                                         |
+    | Physical media | <figure><img src="/img/10094-icon-service-Data-Box.svg" width="120px" title="Data Box"/><figcaption>Data Box</figcaption></figure> <figure><img src="/img/10100-icon-service-Import-Export-Jobs.svg" width="120px" title="Import/Export"/><figcaption>Import/Export Service</figcaption></figure> |                  <figure><img src="/img/Arch_AWS-Snowball_64.svg" width="120px" title="Snowball"/><figcaption>Snowball</figcaption></figure>                  | <figure><img src="/img/transfer-appliance-512-color.svg" width="120px" title="Transfer Appliance"/><figcaption>Transfer Appliance</figcaption></figure> |
 
 
 === ":fontawesome-solid-network-wired: Network "
@@ -28,6 +33,7 @@
     | &nbsp;           |                                                                                                                                                                      :material-microsoft-azure:                                                                                                                                                                      |                                                                                                                                                       :fontawesome-brands-aws:                                                                                                                                                       |                                                                                                           :fontawesome-brands-google:                                                                                                            |
     | ---------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
     | Private networks |                                                                                                                        <figure><img src="/img/10061-icon-service-Virtual-Networks.svg" width="120px"/><figcaption>VNets</figcaption></figure>                                                                                                                        |                                                                                       <figure><img src="/img/Arch_Amazon-Virtual-Private-Cloud_64.svg" width="120px" title="AWS Virtual Private Cloud"/><figcaption>VPC</figcaption></figure>                                                                                        |                                                         <figure><img src="/img/virtual-private-cloud-512-color.svg" width="120px" title="GCP VPC"/><figcaption>VPC</figcaption></figure>                                                         |
+    | Security rules   |                                                                                      <figure><img src="/img/10067-icon-service-Network-Security-Groups.svg" width="120px" title="Network Security Group (NSG)"/><figcaption>Network Security Group (NSG)</figcaption></figure>                                                                                       |                                                                                                                                       <figure><figcaption>Security Group</figcaption></figure>                                                                                                                                       |                                                <figure><img src="/img/cloud-firewall-rules-512-color.svg" width="120px" title="Firewall Rules"/><figcaption>Firewall Rules</figcaption></figure>                                                 |
     | [DNS](#dns)      | <figure><img src="/img/10064-icon-service-DNS-Zones.svg" width="120px" title="Azure DNS"/><figcaption>[Azure DNS :material-file-document-edit-outline:](#azure-dns) [:material-information-outline:](https://azure.microsoft.com/en-us/services/dns/) [:material-file-document-multiple-outline:](https://docs.microsoft.com/en-us/azure/dns/)</figcaption></figure> | <figure><img src="/img/Arch_Amazon-Route-53_64.svg" width="120px"/><figcaption>[Route 53 :material-file-document-edit-outline:](#route-53) [:material-information-outline:](https://aws.amazon.com/route53/) [:material-file-document-multiple-outline:](https://docs.aws.amazon.com/route53/?id=docs_gateway)</figcaption></figure> | <figure><img src="/img/cloud-dns-512-color.svg" width="120px"/><figcaption>[Cloud DNS :material-information-outline:](https://cloud.google.com/dns) [:material-file-document-multiple-outline:](https://cloud.google.com/)</figcaption></figure> |
 
 
@@ -106,7 +112,7 @@ Managed applications create two resource groups to implement locks:
 
 Sources:
 
-- 📄 [Move resources to a new resource group or subscription](https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/move-resource-group-and-subscription)
+- :material-file-document-multiple-outline: [Move resources to a new resource group or subscription](https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/move-resource-group-and-subscription)
 - Some services have limitations or requirements when moving resources between groups ([src](https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/move-support-resources "Move operation support for resources"))
 - Source and destination subscriptions must be within the same [AAD][Azure AD] tenant
 - Destination subscription must be registered for the resource provider of the resource being moved
@@ -268,65 +274,55 @@ The policy can specify frequency of backups, and other settings. Using Backup se
 
 ### Physical media
 
-- Azure
-    - [Import/Export Service](#importexport-service)
-    - [Data Box](#data-box)
-- AWS
-    - [Snowball](#snowball)
-- GCP
-    - GCS Transfer appliance
+|                                                                                                                                    :material-microsoft-azure:                                                                                                                                     |                                                  :fontawesome-brands-aws:                                                   |                                                               :fontawesome-brands-google:                                                               |
+| :-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------------------: |
+| <figure><img src="/img/10094-icon-service-Data-Box.svg" width="120px" title="Data Box"/><figcaption>Data Box</figcaption></figure> <figure><img src="/img/10100-icon-service-Import-Export-Jobs.svg" width="120px" title="Import/Export"/><figcaption>Import/Export Service</figcaption></figure> | <figure><img src="/img/Arch_AWS-Snowball_64.svg" width="120px" title="Snowball"/><figcaption>Snowball</figcaption></figure> | <figure><img src="/img/transfer-appliance-512-color.svg" width="120px" title="Transfer Appliance"/><figcaption>Transfer Appliance</figcaption></figure> |
+
     
-    ▶ [Uploading files to GCS](https://youtu.be/nmZxfuFIP08 "YouTube - Uploading files to GCS (Cloud Storage Bytes)")
+▶ [Uploading files to GCS](https://youtu.be/nmZxfuFIP08 "YouTube - Uploading files to GCS (Cloud Storage Bytes)")
 
 ## 🏢 Networking
 
-In Azure, a **Virtual Network (VNet)** consists of one or more IP ranges and exists within a single subscription and region.
+All cloud providers offer an implementation of **software-defined networking (SDN)** that allows a logically isolated network to be defined as a block of IP addresses allocated from one of the private ranges (10.0.0.0/8, 192.168.0.0/16, or 172.16.0.0/12).
+In AWS and GCP, this network is referred to as a **Virtual Private Cloud (VPC)**, whereas in Azure it is called a **Virtual Network (VNet)**.
+In all providers, the network is confined to a single region and must have at least one IP segment called a **subnet** defined within it which must be a subset of the range used to define the virtual network itself.
 
-Every VNet must have at least one subnet with an IP range that is a subset of that of the parent VNet.
-The smallest possible CIDR range is 29, providing 3 addresses for use.
-Azure reserves 5 IP addresses from each subnet IP range:
-- The first and last IP addresses in each subnet are reserved for network identification and broadcast. 
-- An additional three addresses at the start (bottom) of the range are reserved. 
+The smallest possible CIDR range for a subnet in Azure is 29, which provides 3 addresses for use (Azure reserves 5).
+In AWS, the smallest possible CIDR range is 28.
+In AWS, VPCs have a default range of 172.31.0.0/16 and subnets have a default subnet mask of /20.
 
-For example, the first available IP address in range `192.168.1.0/24` is `192.168.1.4`.
+In Azure, subnets span Availability Zones, can only be deleted if empty, and their names, which are immutable, must be unique.
+In AWS, a subnet exists only within a single Availability Zone.
 
-Subnet names are immutable and must be unique within each VNet.
-Subnets span Availability Zones and can only be deleted if empty.
+### Peering
 
-**VNet peering** allows VMs in two separate virtual networks to communicate directly using their private IP addresses. It is not required for the peered networks to be in the same region (**Global VNet peering**), subscription, or tenant.
-But cross-tenant peering is only possible via Azure CLI, PowerShell, or ARM templates, **not** the Portal.
+Before the introduction of peering, virtual networks were connected using S2S VPN or by connecting to the same ExpressRoute circuit.
+**VNet peering** allows VMs in two separate virtual networks to communicate directly using their private IP addresses. 
+It is not required for the peered networks to be in the same region (**Global VNet peering**), subscription, or tenant, although
+cross-tenant peering is not available in the Portal but must be configured from the command-line or ARM templates.
+VNet peering has to be disabled before moving a VNet, and a VNet can **only** be moved within the same subscription.
 
-> VNet peering has to be disabled before moving a VNet, and a VNet can **only** be moved within the same subscription.
 
 - No gateways are required for peering, although each peering is one-way and not transitive (i.e. VNet A can be peered to both VNets B and C, allowing traffic to/from both. But without a peering directly between B and C they will not be able to communicate to each other.)
 - There is a maximum of 100 peering connections per VNet
 - Peerings cannot be moved to another resource group or subscription, so they must be disabled before moving peered VNets.
 
-Before the introduction of peering, virtual networks were connected using S2S VPN or by connecting to the same ExpressRoute circuit.
 
 **Service endpoints** facilitate restricting traffic from Azure services. 
 **Service endpoint policies** allow restricting traffic to the granularity of individual Azure service instances.
 
-**Virtual private cloud (VPC)** is a virtual network that is logically isolated from other VPCs.
-Default VPCs have the range 172.31.0.0/16, but any value between 16 and 28 can be chosen for the size of the range.
-
-A VPC is defined by a range of IP addresses and must have at least one subnet.
-A subnet exists only within a single Availability Zone, and its range must be a subset of that of the parent VPC.
-
 An **internet gateway** is a VPC resource that allows EC2 instances to obtain a public IP address and access the Internet.
 In order to access the Internet, instances must be in a **public subnet**, one that contains a default route to the VPC's internet gateway.
 
-**Security groups** are similar to firewall rules that regulate inbound and outbound traffic of an instance.
-Outbound traffic is unrestricted by default, and every VPC contains a default security group.
 
-A **network access control lists (NACLs)**, also like a firewall, contains inbound and outbound rules but operates on the subnet.
-By default, a NACL allows all inbound and outbound traffic.
 
-VPCs can be connected by means of a VPC **peering connection**.
-VPCs can be peered across regions.
 
 **ExpressRoute** is the main service used to connect Azure to on-premises networks, although P2S and S2S VPNs are also options.
 **Direct Connect** provides dedicated network connectivity to an AWS VPC through links offered through [APN](#apn) partners.
+
+Resources:
+
+- [▶ Migrating to GCP? First Things First: VPCs](https://www.youtube.com/watch?v=cNb7xKyya5c)
 
 ### User-defined routes
 
@@ -343,6 +339,10 @@ Alternatively, two peered networks can share a single virtual network gateway, s
 
 
 ### Network security
+
+|                                                                                :material-microsoft-azure:                                                                                 |                 :fontawesome-brands-aws:                 |                                                            :fontawesome-brands-google:                                                            |
+| :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------------: |
+| <figure><img src="/img/10067-icon-service-Network-Security-Groups.svg" width="120px" title="Network Security Group (NSG)"/><figcaption>Network Security Group (NSG)</figcaption></figure> | <figure><figcaption>Security Group</figcaption></figure> | <figure><img src="/img/cloud-firewall-rules-512-color.svg" width="120px" title="Firewall Rules"/><figcaption>Firewall Rules</figcaption></figure> |
 
 Azure **Network Security Groups (NSGs)** are assocated with **network interfaces** and contain an arbitrary number of **security rules**.
 Each rule has the following properties:
@@ -365,6 +365,19 @@ Each rule has the following properties:
 - **`Storage`**:
 
 NSG **flow logging** ,which saves the 5-tuple of all packets, is available as a low-cost way to monitor traffic. Flow logs record all IP flows going in and out of an NSG and are collected per NSG rule. They are charged per GB of logs collected and include a free tier of 5 GB/month.
+
+In AWS VPCs, **Security Groups** are similar to firewall rules that regulate inbound and outbound traffic of an instance.
+Outbound traffic is unrestricted by default, and every VPC contains a default security group.
+
+A **network access control lists (NACLs)**, also like a firewall, contains inbound and outbound rules but operates on the subnet.
+By default, a NACL allows all inbound and outbound traffic.
+
+In GCP, each VPC has a set of **firewall rules** that control traffic not only into and out of the VPC, but between instances in the same VPC.
+Each rule can be tagged, and individual instances with the same tags inherit those rules.
+
+Resources:
+
+- [▶ Protect your Google Cloud Instances with Firewall Rules](https://www.youtube.com/watch?v=HTVV9YzGw5k)
 
 ### DNS
 
@@ -462,11 +475,11 @@ A plan acts as a container for multiple web applications sharing the same server
 Resources
 
 - 💰 [Pricing](https://azure.microsoft.com/en-us/pricing/details/app-service/windows/)
-- 📄 [Tutorial: build and run a custom image in Azure App Service](https://docs.microsoft.com/en-us/azure/app-service/tutorial-custom-container?pivots=container-linux)
-- 📄 [Create an App Service app with deployment from GitHub using Azure CLI](https://docs.microsoft.com/en-us/azure/app-service/scripts/cli-deploy-github?toc=/cli/azure/toc.json)
-- 📄 [Create a web app with continuous deployment from GitHub](https://docs.microsoft.com/en-us/azure/app-service/scripts/powershell-continuous-deployment-github?toc=/powershell/module/toc.json)
-- 📄 [What is Azure Front Door?](https://docs.microsoft.com/en-us/azure/frontdoor/front-door-overview)
-- 📄 Create a Front Door - [PowerShell](https://docs.microsoft.com/en-us/azure/frontdoor/quickstart-create-front-door-powershell)
+- :material-file-document-multiple-outline: [Tutorial: build and run a custom image in Azure App Service](https://docs.microsoft.com/en-us/azure/app-service/tutorial-custom-container?pivots=container-linux)
+- :material-file-document-multiple-outline: [Create an App Service app with deployment from GitHub using Azure CLI](https://docs.microsoft.com/en-us/azure/app-service/scripts/cli-deploy-github?toc=/cli/azure/toc.json)
+- :material-file-document-multiple-outline: [Create a web app with continuous deployment from GitHub](https://docs.microsoft.com/en-us/azure/app-service/scripts/powershell-continuous-deployment-github?toc=/powershell/module/toc.json)
+- :material-file-document-multiple-outline: [What is Azure Front Door?](https://docs.microsoft.com/en-us/azure/frontdoor/front-door-overview)
+- :material-file-document-multiple-outline: Create a Front Door - [PowerShell](https://docs.microsoft.com/en-us/azure/frontdoor/quickstart-create-front-door-powershell)
 
 ### Application Gateway
 
@@ -521,8 +534,8 @@ Routing by IPv6 is also not supported, so load balancers have to be deployed.
 Sources
 
 - ▶ [Azure Virtual Network Overview](https://youtu.be/7rzawA--r20)
-- 📄 [Azure Bastion](https://docs.microsoft.com/en-us/azure/bastion/bastion-overview)
-- 📄 [Introduction to flow logging for NSGs](https://docs.microsoft.com/en-us/azure/network-watcher/network-watcher-nsg-flow-logging-overview)
+- :material-file-document-multiple-outline: [Azure Bastion](https://docs.microsoft.com/en-us/azure/bastion/bastion-overview)
+- :material-file-document-multiple-outline: [Introduction to flow logging for NSGs](https://docs.microsoft.com/en-us/azure/network-watcher/network-watcher-nsg-flow-logging-overview)
 
 ### Bicep
 
@@ -540,8 +553,8 @@ Container groups can be deployed to a subnet that already hosts a container grou
 
 Resources
 
-- 📄 [What is Azure Container Instances?](https://docs.microsoft.com/en-us/azure/container-instances/container-instances-overview)
-- 📄 [Container groups in ACI](https://docs.microsoft.com/en-us/azure/container-instances/container-instances-container-groups)
+- :material-file-document-multiple-outline: [What is Azure Container Instances?](https://docs.microsoft.com/en-us/azure/container-instances/container-instances-overview)
+- :material-file-document-multiple-outline: [Container groups in ACI](https://docs.microsoft.com/en-us/azure/container-instances/container-instances-container-groups)
 
 ### Azure Data Explorer
 
@@ -573,7 +586,7 @@ This allows these records to be automatically updated or deleted when the underl
 
 Sources
 
-- 📄 [Azure DNS alias records overview](https://docs.microsoft.com/en-us/azure/dns/dns-alias)
+- :material-file-document-multiple-outline: [Azure DNS alias records overview](https://docs.microsoft.com/en-us/azure/dns/dns-alias)
 
 ### Azure File Service
 
@@ -632,9 +645,9 @@ The order of evaluation of effects is: Disabled, Append, Deny, Audit ("DADA")
 
 Sources
 
-- 📄 [What is Azure Policy?](https://docs.microsoft.com/en-us/azure/governance/policy/overview)
-- 📄 [Azure Policy Samples](https://github.com/Azure/azure-policy)
-- 📄 [Understand Azure Policy effects](https://docs.microsoft.com/en-us/azure/governance/policy/concepts/effects)
+- :material-file-document-multiple-outline: [What is Azure Policy?](https://docs.microsoft.com/en-us/azure/governance/policy/overview)
+- :material-file-document-multiple-outline: [Azure Policy Samples](https://github.com/Azure/azure-policy)
+- :material-file-document-multiple-outline: [Understand Azure Policy effects](https://docs.microsoft.com/en-us/azure/governance/policy/concepts/effects)
 
 ### Azure VMs
 
@@ -754,7 +767,7 @@ BigTable doesn't support secondary indexes.
 
 Resources
 
-- 📄 [The Right Bigtable Index Makes All the Difference](https://www.youtube.com/watch?v=oxC_iTLGtLA "YouTube - The Right Bigtable Index Makes All the Difference") 
+- :material-file-document-multiple-outline: [The Right Bigtable Index Makes All the Difference](https://www.youtube.com/watch?v=oxC_iTLGtLA "YouTube - The Right Bigtable Index Makes All the Difference") 
 - ▶ [The Right Bigtable Index Makes All the Difference](https://medium.com/@duhroach/the-right-cloud-bigtable-index-makes-all-the-difference-3bcabe9bd65a "The right Cloud Bigtable index makes all the difference")
 - [Bigtable vs. Firestore](https://db-engines.com/en/system/Google+Cloud+Bigtable%3BGoogle+Cloud+Firestore "System Properties Comparison Google Cloud Bigtable vs. Google Cloud Firestore")</sup>
 
@@ -1134,7 +1147,7 @@ Sources:
 - ▶ [Firebase web application tutorial](https://youtu.be/9kRgVxULbag "YouTube - Firebase - Ultimate Beginner's guide")
 - ▶ [Firebase Realtime DB vs Firestore](https://youtu.be/TmXct7seeBY)
 - ▶ [How queries work in Firestore](https://youtu.be/Ofux_4c94FI "YouTube - How do queries work in Cloud Firestore? | Get to Know Cloud Firestore #2")
-- 📄 [Cloud Firestore vs the Realtime Database: Which one do I use?](https://firebase.googleblog.com/2017/10/cloud-firestore-for-rtdb-developers.html "Cloud Firestore vs the Realtime Database: Which one do I use?")
+- :material-file-document-multiple-outline: [Cloud Firestore vs the Realtime Database: Which one do I use?](https://firebase.googleblog.com/2017/10/cloud-firestore-for-rtdb-developers.html "Cloud Firestore vs the Realtime Database: Which one do I use?")
 - [Firebase blog](https://firebase.googleblog.com/2017/10/cloud-firestore-for-rtdb-developers.html "Cloud Firestore vs the Realtime Database: Which one do I use?") 
 
 
@@ -1668,3 +1681,4 @@ There are two types:
 [SNS]: #simple-notification-service "TODO"
 [Azure Batch]: #azure-batch "TODO"
 [Pub/Sub]: #pubsub "TODO"
+[Glacier]: #glacier "TODO"

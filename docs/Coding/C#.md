@@ -1227,20 +1227,20 @@ mock.Setup(x => x.Property).Returns("Hello, world!");
 ```
 
 Methods of mock objects also require setup using an identical syntax.
-Arguments passed to the method can be specified literally, but the [`It` class](https://documentation.help/Moq/FBE0FFA5.htm) can also be used to match any argument. 
-`It.IsAny<T>` is used like a type declaration. 
+Concrete arguments can be provided, but preferable is using [**argument matching**](https://documentation.help/Moq/FBE0FFA5.htm).
+In argument matching, `It.IsAny<T>` is used like a type declaration to fill the place of any concrete variable used as an argument. 
 ([src](https://app.pluralsight.com/course-player?clipId=b7d5385b-44c8-4632-80c6-2091b213eee4))
 
-=== "Literal"
-
-    ```csharp
-    mock.Setup(x => x.IsValid("Hello")).Returns(true);
-    ```
-
-=== "It class"
+=== "Argument matching"
 
     ```csharp
     mock.Setup(x => x.IsValid(It.IsAny<string>())).Returns(true);
+    ```
+
+=== "Concrete"
+
+    ```csharp
+    mock.Setup(x => x.IsValid("Hello, world!")).Returns(true);
     ```
 
 The mock object exposes an `Object` property that can be used to test assertions against properties of the mocked object.
@@ -1680,7 +1680,6 @@ This will allow a mock based on the same interface to be substituted in unit tes
 
 | Component           | XAML: Getting Started | Mocking with Moq and xUnit     | Starships          | Test Driven Development in C#         |
 | ------------------- | --------------------- | ------------------------------ | ------------------ | ------------------------------------- |
-| Model               | Customer              | CreditCardApplication          | Captain            | DeskBookingRequest, DeskBookingResult |
 | Contextual action   | ViewModel             | CreditCardApplicationEvaluator | StarshipDeployment | DeskBookingRequestProcessor           |
 | Provider            | CustomerDataProvider  | FrequentFlyerNumberValidator   | OfficerEvaluator   | DeskBookingRepository                 |
-| Provider interface  | ICustomerDataProvider | IFrequentFlyerNumberValidator  | ??                 | IDeskBookingRepository                |
+| Model               | Customer              | CreditCardApplication          | Captain            | DeskBookingRequest, DeskBookingResult |

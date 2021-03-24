@@ -2,6 +2,9 @@ TODO:
 
 Sales watch:
 
+- [Microsoft 70-484: Essentials of developing Windows Store Apps using C#](https://www.udemy.com/course/microsoft-70-484-essentials-of-developing-windows-store/)
+- [Programming in Microsoft C# - Exam 70-483](https://www.udemy.com/course/programming-in-microsoft-c-exam-70-483/)
+
 - pytest
 
     - [2.5-hour Udemy course](https://www.udemy.com/course/hands-on-test-driven-development-with-python/)

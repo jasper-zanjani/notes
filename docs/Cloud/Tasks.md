@@ -618,7 +618,7 @@ Create Kubernetes cluster
         -KubernetesVersion 1.16.7 
         # PowerShell does not offer an option to generate SSH keys for access to the cluster; `ssh-keygen` must be used.
     ```
-    - 📄 [Create a Windows Server container on an AKS cluster](https://docs.microsoft.com/en-us/azure/aks/windows-container-powershell)
+    - :material-file-document-multiple-outline: [Create a Windows Server container on an AKS cluster](https://docs.microsoft.com/en-us/azure/aks/windows-container-powershell)
 
 === "Azure CLI"
 
@@ -632,7 +632,7 @@ Create Kubernetes cluster
         --generate-ssh-keys 
         --enable-addons monitoring 
     ```
-    - 📄 [Create a Windows Server container on an AKS cluster](https://docs.microsoft.com/en-us/azure/aks/windows-container-cli) 
+    - :material-file-document-multiple-outline: [Create a Windows Server container on an AKS cluster](https://docs.microsoft.com/en-us/azure/aks/windows-container-cli) 
 
 Add a pool of nodes
 
@@ -669,7 +669,7 @@ Persistent volume claim
             requests:
                 storage: 5Gi
     ```
-    - 📄 [Source](https://docs.microsoft.com/en-us/azure/aks/concepts-storage#storage-classes)
+    - :material-file-document-multiple-outline: [Source](https://docs.microsoft.com/en-us/azure/aks/concepts-storage#storage-classes)
 
 Provision Azure Disk
 

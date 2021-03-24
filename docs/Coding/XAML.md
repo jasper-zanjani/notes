@@ -8,10 +8,10 @@ TODO:
     - [Win2D Example Gallery](https://www.microsoft.com/en-us/p/win2d-example-gallery/9nblgggxwt9f)
 - Extend Superheroes app with
     - [ListDetailsView](#listdetailsview)
-    - 📄 [NavigationView](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.navigationview?view=winrt-19041)
-    - 📄 [DataGrid](https://docs.microsoft.com/en-us/windows/communitytoolkit/controls/datagrid)
-    - 📄 [SplitView](https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/split-view)
-- Markdown browser using 📄 [MarkdownTextBlock](https://docs.microsoft.com/en-us/windows/communitytoolkit/controls/markdowntextblock)
+    - :material-file-document-multiple-outline: [NavigationView](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.navigationview?view=winrt-19041)
+    - :material-file-document-multiple-outline: [DataGrid](https://docs.microsoft.com/en-us/windows/communitytoolkit/controls/datagrid)
+    - :material-file-document-multiple-outline: [SplitView](https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/split-view)
+- Markdown browser using :material-file-document-multiple-outline: [MarkdownTextBlock](https://docs.microsoft.com/en-us/windows/communitytoolkit/controls/markdowntextblock)
 - Complete [interactive image gallery tutorial](https://docs.microsoft.com/en-us/windows/uwp/design/basics/xaml-basics-ui)
 - [UWP FPS using DirectX](https://docs.microsoft.com/en-us/windows/uwp/gaming/tutorial--create-your-first-uwp-directx-game)
 - Dependency properties
@@ -688,7 +688,7 @@ These templates modify the appxmanifest file by setting the **SupportsMultipleIn
 
 Resources:
 
-- 📄 [Create a multi-instance UWP app](https://docs.microsoft.com/en-us/windows/uwp/launch-resume/multi-instance-uwp)
+- :material-file-document-multiple-outline: [Create a multi-instance UWP app](https://docs.microsoft.com/en-us/windows/uwp/launch-resume/multi-instance-uwp)
 
 
 ## Patterns
@@ -1442,7 +1442,7 @@ Multiple `ResourceDictionary` objects can be placed as children of it.
 
 Sources
 
-- 📄 [ResourceDictionary](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.ResourceDictionary)
+- :material-file-document-multiple-outline: [ResourceDictionary](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.ResourceDictionary)
 - ▶ [YouTube](https://www.youtube.com/watch?v=Y9hElE-vx34 "XAML WPF - Styles Part 3, Resource Dictionaries")
 
 ### SplitView

@@ -9,7 +9,7 @@
 
 Compile a C++ to a DLL ([src](https://app.pluralsight.com/course-player?clipId=a1559ea6-7439-4ab5-b3ca-81faa1716cb7))
 
-Invoke 📄 [MSVC](https://docs.microsoft.com/en-us/cpp/build/reference/compiling-a-c-cpp-program?view=msvc-160), creating:
+Invoke :material-file-document-multiple-outline: [MSVC](https://docs.microsoft.com/en-us/cpp/build/reference/compiling-a-c-cpp-program?view=msvc-160), creating:
 
 - **Library.dll**
 - **Library.lib**
@@ -147,7 +147,7 @@ A **language projection** (or simply "projection") is a native adapter that enab
 
 Resources:
 
-- 📄 [C#/WinRT (MSDocs)](https://docs.microsoft.com/en-us/windows/uwp/csharp-winrt/)
+- :material-file-document-multiple-outline: [C#/WinRT (MSDocs)](https://docs.microsoft.com/en-us/windows/uwp/csharp-winrt/)
 - ▶ [Windows APIs Everywhere in .NET](https://www.youtube.com/watch?v=InQtHPumUyw)
 
 ### TFM
@@ -175,7 +175,7 @@ They use the same physical file format as CLR assemblies.
 
 Resources:
 
-- 📄 [Windows Metadata (WinMD) files](https://docs.microsoft.com/en-us/uwp/winrt-cref/winmd-files)
+- :material-file-document-multiple-outline: [Windows Metadata (WinMD) files](https://docs.microsoft.com/en-us/uwp/winrt-cref/winmd-files)
 
 ### Win32
 
