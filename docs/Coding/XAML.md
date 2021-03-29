@@ -1443,7 +1443,7 @@ Multiple `ResourceDictionary` objects can be placed as children of it.
 Sources
 
 - :material-file-document-multiple-outline: [ResourceDictionary](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.ResourceDictionary)
-- ▶ [YouTube](https://www.youtube.com/watch?v=Y9hElE-vx34 "XAML WPF - Styles Part 3, Resource Dictionaries")
+- :octicons-play-24: [YouTube](https://www.youtube.com/watch?v=Y9hElE-vx34 "XAML WPF - Styles Part 3, Resource Dictionaries")
 
 ### SplitView
 

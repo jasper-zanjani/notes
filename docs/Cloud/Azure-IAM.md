@@ -36,39 +36,12 @@ There are **four** scopes at which RBAC can be applied:
 
 ![](/img/rbac-scopes.png)
 
-RBAC roles can be used to grant rights to 2 types of principals:
+Azure RBAC roles can be used to grant rights to 2 types of principals:
 
-1. **User principal**: identity associated with a user or group of users.
-2. **Service principal**: identity associated with an application.
+- **User principal**: identity associated with a user or group of users.
+- **Service principal**: identity associated with an application.
 
 RBAC roles can also be applied to a subscription through **Management Groups**, which represent the recommended practice for ensuring consistent application of tenant-wide security. Management groups form a hierarchy where each child inherits policy from its single parent while having additional controls. There is a single Management Group at the root of the hierarchy, associated with the Azure AD tenant (which is associated, in turn, with a subscription) that cannot be moved or deleted. 
-
-
-### Built-in roles
-
-There are more than **70** built-in RBAC roles, allowing fine-grained access management, but **4** of them are foundational:
-
-- **Owner** has full access to all resources and **can** delegate access. Service Administrator and Co-Administrators are assigned this role at the subscription scope.
-- **Contributor** can create and manage all resources (full read/write privileges), but **cannot** delegate access.
-- **Reader** can view resources.
-- **User Access Administrator** only manages user access to resources.
-
-Other built-in roles include:
-
-- [**Cloud Device Administrator**](https://docs.microsoft.com/en-us/azure/active-directory/roles/permissions-reference#cloud-device-administrator-permissions) users have full access to manage devices in Azure AD.
-- **Resource Policy Contributor** includes access to most Policy operations and should be considered privileged.
-- [**User Administrator**](https://docs.microsoft.com/en-us/azure/active-directory/roles/permissions-reference#user-administrator-permissions) can manage all aspects of users and groups, including resetting passwords for limited admins.
-- **User Access Administrator** grants the `Microsoft.Authorization/roleAssignments/write` and `Microsoft.Authorization/roleAssignments/delete` permissions at the subscription scope, which are necessary to assign a user administrative access at the subscription scope 
-
-Specialized roles that grant access to the **Cost Management** blade include
-
-- Cost Management contributor
-- Cost Management reader
-
-### Permissions
-
-- Microsoft.Resources/subscriptions/resourceGroups/moveResources/action
-- Microsoft.Resources/subscriptions/resourceGroups/write
 
 
 ### Role assignments

@@ -1016,6 +1016,20 @@ public sealed partial class CustomerDetailControl : UserControl
 }
 ```
 
+## Files
+
+### Streams
+
+A [**Stream**](https://docs.microsoft.com/en-us/dotnet/api/system.io.stream?view=net-5.0) is an abstraction of a **backing store**, or sequence of bytes, which can be a file, an input/output device, a websocket, or an inter-process communication pipe. 
+The `Stream` class itself is an abstract base class that can't be instantiated.
+`FileStream` is the concrete class that uses files as its backing store.
+
+Streams can support seeking, although network streams do not support seeking.
+This can be checked by calling the stream's boolean `CanSeek` property.
+
+`Stream` implements [`IDisposable`](https://docs.microsoft.com/en-us/dotnet/api/system.idisposable?view=net-5.0), which means it can be disposed indirectly by being placed in a `using` block.
+
+A **bit bucket** is a stream with no backing store and is implemented as **`Stream.Null`**.
 
 ## Testing
 
@@ -1407,10 +1421,21 @@ Add a [project reference](https://docs.microsoft.com/en-us/dotnet/core/tools/dot
 ```sh
 dotnet add reference ./path/to/Project.csproj
 ```
-Install the Moq NuGet package
-```sh
-dotnet add package moq
-```
+Install a NuGet package and add a `PackageReference` in the project file
+
+=== "Moq"
+
+    ```sh
+    dotnet add package Moq
+    ```
+
+=== "System.CommandLine"
+
+    ```sh
+    dotnet add package System.CommandLine
+    ```
+
+
 Run the **dotnet try** web server that supports .NET Interactive-style markdown:
 
 ```md
@@ -1420,8 +1445,14 @@ Run the **dotnet try** web server that supports .NET Interactive-style markdown:
 
 ### Project files
 
-References to other projects can be made using the **`ProjectReference`** element, which are collected in `ItemGroup`.
-NuGet package dependencies are specified using **`PackageReference`** element, also in `ItemGroup`
+Project files are XML files that describe various metadata to the dotnet compiler.
+The root node is **`Project`** which has two subnodes that collect various information about the project:
+
+**PropertyGroup** contains various project settings
+
+- `RootNamespace` specifies the namespace that contains the `Main()` method for console applications
+
+**ItemGroup** contains references to NuGet packages (`PackageReference`) and other projects (`ProjectReference`).
 
 ```xml
 <ItemGroup>
@@ -1430,11 +1461,13 @@ NuGet package dependencies are specified using **`PackageReference`** element, a
 </ItemGroup>
 ```
 
-Adding a reference to another project is easily accomplished from the command-line.
+Adding a reference to another project is also easily accomplished from the command-line.
 
 ```sh
 dotnet add project /path/to/OtherProject.csproj
 ```
+
+
 
 - The **`LangVersion`** element can specify a version of C# for use by the compiler. [:material-dot-net:](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/configure-language-version)
 - Enabling or disabling nullable reference types at the project level can be done by declaring a **`Nullable`** element. [:material-dot-net:](https://docs.microsoft.com/en-us/dotnet/csharp/nullable-references#nullable-contexts)
@@ -1661,6 +1694,59 @@ namespace DynamoDBDemo
                     }
                 })
             })
+        }
+    }
+}
+```
+
+## Concurrency
+
+### Asynchronous programming
+
+Consuming APIs:
+
+- HttpClient [:material-file-document-multiple-outline:](https://docs.microsoft.com/en-us/dotnet/api/system.net.http.httpclient?view=net-5.0)
+
+### Multithreading
+
+The **Task Parallel Library** offers a high-level way to set up multiple threads.
+
+A **Task** represents an asynchronous operation.
+
+**Task.Run()** queues the work passed as the action to run on a different thread in the thread pool.
+**`Task.Run<T>()`** represents an asynchronous operation that returns a specific value type.
+
+```csharp
+Task.Run( () => 
+{
+    // ...
+});
+```
+
+Objects in other threads will be inaccessible without using an object like **Dispatcher** in WPF
+
+```csharp
+Task.Run( () =>
+{
+    Dispatcher.Invoke(() => 
+    {
+        // ...
+    });
+});
+```
+
+To avoid blocking, we can make it asynchronous
+
+```csharp
+private async void Search_Click(object sender, RoutedEventArgs e)
+{
+    await Task.Run() =>
+    {
+        // ...
+
+        Dispatcher.Invoke(() =>
+        {
+            // ...
         }
     }
 }

@@ -1,5 +1,31 @@
 # VS Code
 
+- Code can be folded by placing markers [:material-file-document-multiple-outline:](https://code.visualstudio.com/docs/editor/codebasics#_folding)
+
+=== "Markdown"
+
+    ```md
+    <!-- #region -->
+    ...
+    <!-- #endregion -->
+    ```
+
+=== "C#"
+
+    ```csharp
+    #region 
+    ...
+    #endregion
+    ```
+
+=== "Python"
+
+    ```python
+    #region
+    ...
+    #endregion
+    ```
+
 [Snippets](https://code.visualstudio.com/docs/editor/userdefinedsnippets)
 
 

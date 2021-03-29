@@ -212,7 +212,8 @@ CMD [ "powershell" ]
 
 ### ReplicaSet
 
-
+<!-- #region -->
 [Zacker]: # 'Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017'
 [pluralsight:70-740-containers]: https://app.pluralsight.com/library/courses/windows-server-2016-containers-implementing/table-of-contents "Implementing Containers on Windows Server 2016"
 [udemy]: https://www.udemy.com/course/docker-mastery-for-nodejs/ "Docker for Node.js Projects From a Docker Captain"
+<!-- #endregion -->

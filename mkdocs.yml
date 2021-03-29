@@ -1,14 +1,17 @@
 site_name: 🧠
 theme:
-    name: material
-    shortcuts:
-        search: 191
+  name: material
+  shortcuts:
+    search: 191
 
 markdown_extensions:
-    - attr_list
-    - md_in_html
-    - pymdownx.tabbed
-    - pymdownx.superfences
-    - pymdownx.emoji: # from https://squidfunk.github.io/mkdocs-material/reference/icons-emojis/#emoji
-        emoji_index: !!python/name:materialx.emoji.twemoji
-        emoji_generator: !!python/name:materialx.emoji.to_svg
+  - attr_list
+  - def_list
+  - md_in_html
+  - pymdownx.tabbed
+  - pymdownx.tasklist
+  - pymdownx.superfences
+  - pymdownx.emoji: # from https://squidfunk.github.io/mkdocs-material/reference/icons-emojis/#emoji
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+

@@ -1,10 +1,5 @@
 # 💊 Health 
 
-TODO:
-
-- [Print and read](https://www.ncbi.nlm.nih.gov/pubmed/25289259)
-- Develop a dosage of adaptogens to use when [sleep](#-sleep-deprivation) is disturbed.
-- Incorporate notes and research from [Reddit](https://www.reddit.com/r/nootropics/wiki/beginners)
 
 | Substance                                                                 | Effects                                                              | Lowest cost |
 | ------------------------------------------------------------------------- | -------------------------------------------------------------------- | ----------: |
@@ -25,14 +20,15 @@ TODO:
 | [Taurine :material-file-document-edit-outline:](#taurine)                 | [:athletic_shoe:][ergogenic]                                         |
 | [Ubiquinol :material-file-document-edit-outline:](#ubiquinol)             | [:athletic_shoe:][ergogenic] [:heart:][antioxidant]                  |        0.11 |
 
+## ✔️&#xfe0f; TODO
+
+- Develop a dosage of adaptogens to use when [sleep](#-sleep-deprivation) is disturbed.
+- Incorporate notes and research from [Reddit](https://www.reddit.com/r/nootropics/wiki/beginners)
+
 ### 💸 Sale
 
-| Product                                                             | Discount                                                                             |
-| ------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
-| [Maca :material-file-document-edit-outline:](#maca)                 | [50%](https://www.swansonvitamins.com/swanson-premium-maca-500-mg-100-caps)          |
-| [Saw palmetto :material-file-document-edit-outline:](#saw-palmetto) | [40%](https://www.swansonvitamins.com/swanson-premium-saw-palmetto-540-mg-250-caps)  |
-| [Zinc :material-file-document-edit-outline:](#zinc)                 | [30%](https://www.swansonvitamins.com/swanson-premium-zinc-gluconate-30-mg-250-tabs) |
-| [Curcumin :material-file-document-edit-outline:](#curcumin)         | 25%                                                                                  |
+| Product | Discount |
+| ------- | -------- |
 
 
 ### 💊 Capsule calculations

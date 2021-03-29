@@ -76,7 +76,7 @@ Now the libary can be used in an application
 
 Resources:
 
-- ▶ [Windows APIs Everywhere in .NET](https://www.youtube.com/watch?v=InQtHPumUyw)
+- :octicons-play-24: [Windows APIs Everywhere in .NET](https://www.youtube.com/watch?v=InQtHPumUyw)
 
 ### C#/WinRT [:material-dot-net:](https://www.nuget.org/packages/Microsoft.Windows.CsWinRT/) [:octicons-mark-github-16:](https://github.com/microsoft/CsWinRT)
 
@@ -91,7 +91,7 @@ It is used to create C# **runtime components** hosted in non-.NET languages by f
 
 Resources:
 
-- ▶ [How to call WinRT APIs from .NET5 applications](https://www.youtube.com/watch?v=wy5VB-2kF6I)
+- :octicons-play-24: [How to call WinRT APIs from .NET5 applications](https://www.youtube.com/watch?v=wy5VB-2kF6I)
 
 
 ### COM
@@ -148,7 +148,7 @@ A **language projection** (or simply "projection") is a native adapter that enab
 Resources:
 
 - :material-file-document-multiple-outline: [C#/WinRT (MSDocs)](https://docs.microsoft.com/en-us/windows/uwp/csharp-winrt/)
-- ▶ [Windows APIs Everywhere in .NET](https://www.youtube.com/watch?v=InQtHPumUyw)
+- :octicons-play-24: [Windows APIs Everywhere in .NET](https://www.youtube.com/watch?v=InQtHPumUyw)
 
 ### TFM
 
@@ -165,7 +165,7 @@ Example TMFs include:
 
 References:
 
-- ▶ [Windows APIs Everywhere in .NET](https://www.youtube.com/watch?v=InQtHPumUyw)
+- :octicons-play-24: [Windows APIs Everywhere in .NET](https://www.youtube.com/watch?v=InQtHPumUyw)
 
 ### WinMD
 
@@ -191,4 +191,4 @@ UWP XAML controls were included in WinRT until recently when they were moved to 
 
 Resources:
 
-- ▶ [Windows APIs Everywhere in .NET](https://www.youtube.com/watch?v=InQtHPumUyw)
+- :octicons-play-24: [Windows APIs Everywhere in .NET](https://www.youtube.com/watch?v=InQtHPumUyw)

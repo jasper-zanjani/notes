@@ -24,7 +24,7 @@
     | &nbsp;         |                                                                                                                                    :material-microsoft-azure:                                                                                                                                     |                                                                   :fontawesome-brands-aws:                                                                    |                                                               :fontawesome-brands-google:                                                               |
     | -------------- | :-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------------------: |
     | Archive        |                                                                                                                                                                                                                                                                                                   | <figure><img src="/img/Arch_Amazon-Simple-Storage-Service-Glacier_64.svg" width="120px" title="Glacier"/><figcaption>[Glacier][Glacier]</figcaption></figure> |                                                                                                                                                         |
-    | Backups        |                                                         <figure><img src="/img/00017-icon-service-Recovery-Services-Vaults.svg" width="120px" title="Recovery Services Vault"/><figcaption>Recovery Services Vault</figcaption></figure>                                                          |                       <figure><img src="/img/Arch_AWS-Backup_64.svg" width="120px" title="Backup"/><figcaption>Backup</figcaption></figure>                        |                                                                                                                                                         |
+    | Backups        |                                                         <figure><img src="/img/00017-icon-service-Recovery-Services-Vaults.svg" width="120px" title="Recovery Services Vault"/><figcaption>Recovery Services Vault</figcaption></figure>                                                          |                     <figure><img src="/img/Arch_AWS-Backup_64.svg" width="120px" title="Backup"/><figcaption>Backup</figcaption></figure>                     |                                                                                                                                                         |
     | Physical media | <figure><img src="/img/10094-icon-service-Data-Box.svg" width="120px" title="Data Box"/><figcaption>Data Box</figcaption></figure> <figure><img src="/img/10100-icon-service-Import-Export-Jobs.svg" width="120px" title="Import/Export"/><figcaption>Import/Export Service</figcaption></figure> |                  <figure><img src="/img/Arch_AWS-Snowball_64.svg" width="120px" title="Snowball"/><figcaption>Snowball</figcaption></figure>                  | <figure><img src="/img/transfer-appliance-512-color.svg" width="120px" title="Transfer Appliance"/><figcaption>Transfer Appliance</figcaption></figure> |
 
 
@@ -67,13 +67,6 @@ Links TODO:
 - Simple Notification Service
 
 ## 🛠&#xfe0f; Administration
-
-
-### :octicons-terminal-16: CLI
-
-- GCP
-    - [CLI for GCP](https://www.youtube.com/watch?v=D0x6B-4oUNM 'YouTube - Getting started: CLI for GCP')
-
 
 ### 💰 Cost management
 
@@ -123,15 +116,43 @@ Sources:
 
 ### IAM
 
+All cloud providers offer **Identity and Access Management (IAM)** systems that are used to control access to resources.
+**Role-based access control (RBAC)** is the universally recommended and modern approach, relying on bundles of specific permissions called **roles** that can be assigned to principals.
+All cloud providers offer the ability to define custom roles and come with many ready-to-use role definitions ("**predefined roles**" in GCP or "**built-in roles**" in Azure).
 
-**Roles** are collections of permissions
+Cloud providers also still support legacy IAM systems which are deprecated.
 
-- **Primitive roles** are basic privileges that can be applied to most resources and include Owner, Editor, and Viewer
-- **Predefined roles** are specific to GCP products. For example, App Engine roles include:
+- Azure **classic** administrator roles include "Account Administrator", "Service Administrator" and "Co-Administrator"
+- GCP **primitive roles**"owner", "editor", and "viewer" can still be applied to most GCP resources.
 
-Resources
 
-- [Group membership and hierarchy](https://www.youtube.com/watch?v=b33-gN0lidA&t=77s 'YouTube - Group membership and hierarchy')
+Important roles
+
+=== ":material-microsoft-azure:"
+
+    - **Owner** has full access to all resources and **can** delegate access. Service Administrator and Co-Administrators are assigned this role at the subscription scope.
+    - **Contributor** can create and manage all resources (full read/write privileges), but **cannot** delegate access.
+    - **Reader** can view resources.
+    - [Cost Management Contributor :material-file-document-edit-outline:][Cost Management Contributor]
+    - [Cost Management Reader :material-file-document-edit-outline:][Cost Management Reader]
+    - [Resource Policy Contributor :material-file-document-edit-outline:][Resource Policy Contributor]
+    - [User Administrator :material-file-document-edit-outline:][User Administrator]
+    - [User Access Administrator :material-file-document-edit-outline:][User Access Administrator]
+
+=== ":fontawesome-brands-google:"
+
+    - [Billing Account Administrator :material-file-document-edit-outline:][Billing Account Administrator]
+    - [Billing Account Creator :material-file-document-edit-outline:][Billing Account Creator]
+    - [Billing Account User :material-file-document-edit-outline:][Billing Account User]
+    - [Billing Account Viewer :material-file-document-edit-outline:][Billing Account Viewer]
+    - [Compute Engine Admin :material-file-document-edit-outline:][Compute Engine Admin]
+    - [Compute Engine Network Admin :material-file-document-edit-outline:][Compute Engine Network Admin]
+    - [Compute Engine Security Admin :material-file-document-edit-outline:][Compute Engine Security Admin]
+    - [Compute Engine Viewer :material-file-document-edit-outline:][Compute Engine Viewer]
+    - [Compute Service Agent :material-file-document-edit-outline:][Compute Service Agent]
+    - [Folder Admin :material-file-document-edit-outline:][Folder Admin]
+    - [Project Creator :material-file-document-edit-outline:][Project Creator]
+    - Shared VPC Admin
 
 ### Infrastructure
 
@@ -154,31 +175,24 @@ Resources
 
 ### 👁&#xfe0f; Monitoring
 
-- Azure
-    - [Azure Monitor](#monitor)
-    - [Network Performance Monitor](#npm)
-    - [Network Watcher](#network-watcher)
-- AWS
-    - [Cloudwatch][CloudWatch]
-- GCP    
-    - [Stackdriver][Stackdriver]
-    - [Trace][Trace]
-
-|                                                                                                                                                   :material-microsoft-azure:                                                                                                                                                    |                                                            :fontawesome-brands-aws:                                                             |                                                                                   :fontawesome-brands-google:                                                                                   |
-| :-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-| <figure><img src="/img/00001-icon-service-Monitor.svg" width="120px"><figcaption>Azure Monitor :material-file-document-edit-outline:</figcaption></figure><figure><img src="/img/10066-icon-service-Network-Watcher.svg" width="120px"/><figcaption>Network Watcher :material-file-document-edit-outline:</figcaption></figure> | <figure><img src="/img/Arch_Amazon-CloudWatch_64.svg" width="120px"/><figcaption>[CloudWatch :material-file-document-edit-outline:][CloudWatch] | <figure><img src="/img/Stackdriver-512-color.svg" width="120px"/><figcaption>[Stackdriver :material-file-document-edit-outline:][Stackdriver] :fontawesome-brands-google:</figcaption></figure> |
+|                                                                                                                                                   :material-microsoft-azure:                                                                                                                                                    |                                                            :fontawesome-brands-aws:                                                             |                                                                                                                                      :fontawesome-brands-google:                                                                                                                                       |
+| :-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| <figure><img src="/img/00001-icon-service-Monitor.svg" width="120px"><figcaption>Azure Monitor :material-file-document-edit-outline:</figcaption></figure><figure><img src="/img/10066-icon-service-Network-Watcher.svg" width="120px"/><figcaption>Network Watcher :material-file-document-edit-outline:</figcaption></figure> | <figure><img src="/img/Arch_Amazon-CloudWatch_64.svg" width="120px"/><figcaption>[CloudWatch :material-file-document-edit-outline:][CloudWatch] | <figure><img src="/img/Stackdriver-512-color.svg" width="120px"/><figcaption>[Stackdriver :material-file-document-edit-outline:][Stackdriver] :fontawesome-brands-google:</figcaption></figure>![](/img/trace-512-color.svg){: width='120px' }<figcaption>[Trace][Trace]</figcaption><figure></figure> |
 
 
 ### Resources
 
 Cloud providers exhibit some variety in how resources can be organized.
 
+All cloud providers support key-value **tags**, many of which can be applied to the same resource.
+
 Any Azure resource can only exist in a single **resource group**, which can contain resources from any region or subscription.
 However, resource groups may not contain other resource groups.
-AWS does not appear to have an equivalent method of organizing resources.
 
 GCP **projects** are equivalent to Azure resource groups, in that they are containers for and direct parents to resources.
 However, projects can be placed within **folders**, which do support nested hierarchies.
+
+AWS does not have an equivalent method of organizing resources.
 
 Azure **subscriptions** can be organized into **Management Groups**, and they **can** be nested in a hierarchy of management groups up to a maximum depth of six levels.
 In AWS the **Organizational Unit (OU)**, which can organize **user accounts** (subscriptions) and the resources they contain in a nested hierarchy, appears to be equivalent.
@@ -186,15 +200,15 @@ In AWS the **Organizational Unit (OU)**, which can organize **user accounts** (s
 A pattern common to Azure is that of a service being implemented in two resource types, one of which determines important configuration settings shared by all instances of the service which are contained within it.
 This is the case for [storage accounts](#storage-accounts), [App Service][App Service], Azure Data Explorer clusters, etc.
 
+
 | [:material-microsoft-azure:](https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-setup-guide/organize-resources?tabs=AzureManagementGroupsAndHierarchy) | [:fontawesome-brands-aws:](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html) | :fontawesome-brands-google: | Description                                                                   |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- | --------------------------- | ----------------------------------------------------------------------------- |
 | Tenant                                                                                                                                                                          | Organization                                                                                                              | Organization                | Corresponds to a company or organization                                      |
-| &nbsp;                                                                                                                                                                          | Root                                                                                                                      | &nbsp;                      | Parent container for all accounts in an Organization                          |
 | Management group                                                                                                                                                                | Organizational Unit                                                                                                       | &nbsp;                      | Logical container for user accounts and the resources created by that user    |
-| Subscription                                                                                                                                                                    | User account                                                                                                              | ?                           | ...                                                                           |
+| Subscription                                                                                                                                                                    | Member account                                                                                                            | ?                           | Credential associated with an individual                                      |
 | &nbsp;                                                                                                                                                                          | &nbsp;                                                                                                                    | Folder                      | Organize resources and their parents in a nested hierarchy                    |
 | Resource group                                                                                                                                                                  | &nbsp;                                                                                                                    | Project                     | Logical container that is the direct parent to any resource, tied to a Region |
-| Tag                                                                                                                                                                             | Tag                                                                                                                       | Label                       | Key-value pairs that are used to organize resources                           | s |
+| Tag                                                                                                                                                                             | Tag                                                                                                                       | Label                       | Key-value pairs that are used to organize resources                           |
 
 
 
@@ -243,19 +257,21 @@ Azure [ARM][ARM] templates are JSON, but [Bicep][Bicep] is a domain-specific lan
 
 ### IaaS
 
+All cloud providers offer **Infrastructure as a Service (IaaS)**, whereby virtual machines can be provisioned with specific compute resources and base operating systems.
+
 AWS also offers configuration management services like [OpsWorks][OpsWorks] and [Systems Manager][Systems Manager]
+
+GCP virtual machines are referred to as **instances**, and are available in three general machine family types: general-purpose, memory-optimized, and compute-optimized.
+**Machine type** describes the different packaged configurations representing allocated compute resources, or what is called a **SKU** in Azure.
 
 ### Containers
 
-- ▶ [Build and package container artifacts](https://www.youtube.com/watch?v=ysjCt3tNyV0 'YouTube - Getting started: Build and package container artifacts')
-- ▶ [Private container registry](https://www.youtube.com/watch?v=s46l_PmXBAQ 'YouTube - Getting started: Private container registry/storage')
+- :octicons-play-24: [Build and package container artifacts](https://www.youtube.com/watch?v=ysjCt3tNyV0 'YouTube - Getting started: Build and package container artifacts')
+- :octicons-play-24: [Private container registry](https://www.youtube.com/watch?v=s46l_PmXBAQ 'YouTube - Getting started: Private container registry/storage')
 
 ### Serverless
 
-- AWS
-    - [Lambda][Lambda]
-- GCP
-    - 
+
 
 ## 💾 Storage
 
@@ -279,7 +295,7 @@ The policy can specify frequency of backups, and other settings. Using Backup se
 | <figure><img src="/img/10094-icon-service-Data-Box.svg" width="120px" title="Data Box"/><figcaption>Data Box</figcaption></figure> <figure><img src="/img/10100-icon-service-Import-Export-Jobs.svg" width="120px" title="Import/Export"/><figcaption>Import/Export Service</figcaption></figure> | <figure><img src="/img/Arch_AWS-Snowball_64.svg" width="120px" title="Snowball"/><figcaption>Snowball</figcaption></figure> | <figure><img src="/img/transfer-appliance-512-color.svg" width="120px" title="Transfer Appliance"/><figcaption>Transfer Appliance</figcaption></figure> |
 
     
-▶ [Uploading files to GCS](https://youtu.be/nmZxfuFIP08 "YouTube - Uploading files to GCS (Cloud Storage Bytes)")
+:octicons-play-24: [Uploading files to GCS](https://youtu.be/nmZxfuFIP08 "YouTube - Uploading files to GCS (Cloud Storage Bytes)")
 
 ## 🏢 Networking
 
@@ -294,19 +310,16 @@ In AWS, VPCs have a default range of 172.31.0.0/16 and subnets have a default su
 In Azure, subnets span Availability Zones, can only be deleted if empty, and their names, which are immutable, must be unique.
 In AWS, a subnet exists only within a single Availability Zone.
 
-### Peering
 
-Before the introduction of peering, virtual networks were connected using S2S VPN or by connecting to the same ExpressRoute circuit.
-**VNet peering** allows VMs in two separate virtual networks to communicate directly using their private IP addresses. 
-It is not required for the peered networks to be in the same region (**Global VNet peering**), subscription, or tenant, although
-cross-tenant peering is not available in the Portal but must be configured from the command-line or ARM templates.
+**VNet peering** allows VMs in two separate virtual networks to communicate directly. 
+In all cloud providers, this is a one-way process which must be repeated in both directions in order to have two-way communication.
+
+In Azure, before the introduction of peering, virtual networks were connected using S2S VPN or by connecting to the same ExpressRoute circuit.
+It is not required for the peered networks to be in the same region (**Global VNet peering**), subscription, or tenant, although cross-tenant peering is not available in the Portal but must be configured from the command-line or ARM templates.
 VNet peering has to be disabled before moving a VNet, and a VNet can **only** be moved within the same subscription.
 
-
-- No gateways are required for peering, although each peering is one-way and not transitive (i.e. VNet A can be peered to both VNets B and C, allowing traffic to/from both. But without a peering directly between B and C they will not be able to communicate to each other.)
 - There is a maximum of 100 peering connections per VNet
 - Peerings cannot be moved to another resource group or subscription, so they must be disabled before moving peered VNets.
-
 
 **Service endpoints** facilitate restricting traffic from Azure services. 
 **Service endpoint policies** allow restricting traffic to the granularity of individual Azure service instances.
@@ -314,15 +327,14 @@ VNet peering has to be disabled before moving a VNet, and a VNet can **only** be
 An **internet gateway** is a VPC resource that allows EC2 instances to obtain a public IP address and access the Internet.
 In order to access the Internet, instances must be in a **public subnet**, one that contains a default route to the VPC's internet gateway.
 
+- **ExpressRoute** is the main service used to connect Azure to on-premises networks, although P2S and S2S VPNs are also options.
+- **Direct Connect** provides dedicated network connectivity to an AWS VPC through links offered through [APN](#apn) partners.
 
-
-
-**ExpressRoute** is the main service used to connect Azure to on-premises networks, although P2S and S2S VPNs are also options.
-**Direct Connect** provides dedicated network connectivity to an AWS VPC through links offered through [APN](#apn) partners.
+In GCP, in addition to peering, a **shared VPC** can be created that is associated with multiple projects.
 
 Resources:
 
-- [▶ Migrating to GCP? First Things First: VPCs](https://www.youtube.com/watch?v=cNb7xKyya5c)
+- [:octicons-play-24: Migrating to GCP? First Things First: VPCs](https://www.youtube.com/watch?v=cNb7xKyya5c)
 
 ### User-defined routes
 
@@ -377,7 +389,7 @@ Each rule can be tagged, and individual instances with the same tags inherit tho
 
 Resources:
 
-- [▶ Protect your Google Cloud Instances with Firewall Rules](https://www.youtube.com/watch?v=HTVV9YzGw5k)
+- [:octicons-play-24: Protect your Google Cloud Instances with Firewall Rules](https://www.youtube.com/watch?v=HTVV9YzGw5k)
 
 ### DNS
 
@@ -428,7 +440,7 @@ This is an advantage for databases that are optimized for reads as opposed to wr
 However, when changing information that is duplicated in several places, write operations will be more laborious and prone to error.
 NoSQL databases are also **horizontally scalable** because the information can be sharded horizontally more easily than relational database, which are only **vertically scalable** (meaning scaling them requires larger and larger computers) and can only be sharded vertically. ([src](https://youtu.be/v_hR4K4auoQ?t=620 "YouTube - What is a NoSQL Database? How is Cloud Firestore structured? | Get to Know Cloud Firestore #1"))
 
-## Big Data
+### Big Data
 
 ## History
 
@@ -444,6 +456,10 @@ In fact, references to the "classic" model predating the Azure Resource Manager 
 
 ## 📘 Glossary
 
+### Apigee
+
+The Apigee API platform is a management service that allows developers to deploy, monitor, and secure their APIs and generates API proxies.
+
 ### APN
 
 Amazon Partner Network
@@ -451,16 +467,31 @@ Amazon Partner Network
 ### App Engine
 
 App Engine allows developers to deploy applications developed in popular programming languages to a serverless environment.
-It is available in two environment types:
+It is available in two environment types: Standard and Flexible.
 
-- **Standard** where the application is run in a sandbox and isolated from the underlying server's OS.
-- **Flexible** where Docker containers are run in the environment, useful when third-party software or libraries are needed.
+- **Standard environment** is the original App Engine environment, consisting of a preconfigured, language-specific runtime like Java, Python, PHP, Node.js, or Go.
+- **Flexible environment** is similar to [GKE][GKE] in that it can run a customized container.
 
-Resources
+App Engine is designed to support applications implemented as a microservices architecture. There are four components:
 
-- ▶ [App Engine in a minute](https://youtu.be/Xuf3J6SKVV0 "YouTube - App Engine in a minute")
-- ▶ [Get to know GAE](https://youtu.be/2PRciDpqpko "YouTube - Get to know Google App Engine") 
-- ▶ [Introduction App Engine's new Python 3 runtime](https://youtu.be/qeSpDwA2qcU)
+- The **application** is the top-level container that houses all other components.
+- **Services** are versioned and provide a specific function.
+- **Versions** are produced every time a service is updated.
+- Every version runs on an **instance**.
+
+
+Each version of a service runs on its own instance, whose size can be determined by specifying the **instance class**.
+Instances can be dynamic or resident.
+
+- **Resident instances** run continually and can be added or removed manually.
+- **Dynamic instances** support autoscaling based on load.
+
+App Engine has three modes of scaling:
+
+- **Automatic** scaling creates an instance with a specified request rate, response latency, and application metrics.
+- **Basic** scaling creates instances only when requests are received
+- **Manual** scaling supports operational continuity regardless of load level.
+
 
 ### App Service
 
@@ -497,7 +528,7 @@ Before running for the first time, you must provide a path to a S3 bucket to sto
 
 Sources:
 
-- ▶ [How to use SQL to query S3 files with AWS Athena](https://youtu.be/M5ptG0YaqAs)
+- :octicons-play-24: [How to use SQL to query S3 files with AWS Athena](https://youtu.be/M5ptG0YaqAs)
 
 ### AWS CLI
 
@@ -533,15 +564,15 @@ Routing by IPv6 is also not supported, so load balancers have to be deployed.
 
 Sources
 
-- ▶ [Azure Virtual Network Overview](https://youtu.be/7rzawA--r20)
+- :octicons-play-24: [Azure Virtual Network Overview](https://youtu.be/7rzawA--r20)
 - :material-file-document-multiple-outline: [Azure Bastion](https://docs.microsoft.com/en-us/azure/bastion/bastion-overview)
 - :material-file-document-multiple-outline: [Introduction to flow logging for NSGs](https://docs.microsoft.com/en-us/azure/network-watcher/network-watcher-nsg-flow-logging-overview)
 
-### Bicep
+### Bicep [:material-github:](https://github.com/Azure/bicep)
 
-[**Project Bicep**](https://github.com/Azure/bicep) is a domain-specific language and command-line utility that can be used to generate [ARM][ARM] templates.
+Project Bicep is a domain-specific language and command-line utility that can be used to generate [ARM][ARM] templates.
 
-▶ [Project Bicep – Next generation ARM Templates](https://youtu.be/wkQIyenVfxc)
+:octicons-play-24: [Project Bicep – Next generation ARM Templates](https://youtu.be/wkQIyenVfxc)
 
 ### Azure Container Instances
 
@@ -564,7 +595,7 @@ Azure DevOps used to be known as **Visual Studio Team Services** and **Team Foun
 
 Sources
 
-- ▶ [DevOps Training Workshop](https://www.youtube.com/watch?v=H-R2bCXfz8I "Intro to Azure DevOps - Source Control, CI/CD, Automation, and more") [YouTube](https://youtu.be/Ruj_govRRa8 "DevOps Training Workshop")
+- :octicons-play-24: [DevOps Training Workshop](https://www.youtube.com/watch?v=H-R2bCXfz8I "Intro to Azure DevOps - Source Control, CI/CD, Automation, and more") [YouTube](https://youtu.be/Ruj_govRRa8 "DevOps Training Workshop")
 
 Install DevOps CLI
 ```sh
@@ -751,11 +782,11 @@ The most highly available arrangement would use multiple VPN devices with the VP
 
 ### Bigquery
 
-Petabyte-scale analytics database service for data warehousing
+Petabyte-scale analytics database service for data warehousing. BigQuery can be executed using the [**bq**][bq] command-line utility.
 
 ### BigTable
 
-**Cloud BigTable** is a GCP realtime database used for Big Data.
+**Cloud BigTable** is a GCP realtime database used for Big Data. BigTable can be executed using the [**cbt**][cbt] command-line utility.
 
 BigTable evolved out of Google's need to ensure access to petabytes of data in its web search business line.
 It was described in a 2006 research paper that ended up launching the entire NoSQL industry.
@@ -763,18 +794,35 @@ In 2015 it was made available as a service to cloud customers. <sup>[YouTube](ht
 
 BigTable doesn't support secondary indexes. 
 
-[cbt][cbt] is BigTable's CLI utility.
-
 Resources
 
 - :material-file-document-multiple-outline: [The Right Bigtable Index Makes All the Difference](https://www.youtube.com/watch?v=oxC_iTLGtLA "YouTube - The Right Bigtable Index Makes All the Difference") 
-- ▶ [The Right Bigtable Index Makes All the Difference](https://medium.com/@duhroach/the-right-cloud-bigtable-index-makes-all-the-difference-3bcabe9bd65a "The right Cloud Bigtable index makes all the difference")
+- :octicons-play-24: [The Right Bigtable Index Makes All the Difference](https://medium.com/@duhroach/the-right-cloud-bigtable-index-makes-all-the-difference-3bcabe9bd65a "The right Cloud Bigtable index makes all the difference")
 - [Bigtable vs. Firestore](https://db-engines.com/en/system/Google+Cloud+Bigtable%3BGoogle+Cloud+Firestore "System Properties Comparison Google Cloud Bigtable vs. Google Cloud Firestore")</sup>
 
+### Billing Account Administrator
+
+GCP predefined role that grants permissions to manage self-service accounts but not to create new ones.
+
+### Billing Account Creator
+
+Predefined GCP role that grants permissions to create new self-service accounts.
+
+### Billing Account User
+
+GCP predefined role that enables user to link projects to a billing account.
+
+### Billing Account Viewer
+
+GCP predefined role that grants permissions to view transactional and billing data associated to a GCP account.
 
 ### Cloud AutoML
 
 **Cloud AutoML** is a GCP service that allows developers without machine learning experience to develop machine learning models.
+
+### Cloud Device Administrator [:material-microsoft:](https://docs.microsoft.com/en-us/azure/active-directory/roles/permissions-reference#cloud-device-administrator-permissions)
+
+Azure built-in role that grants users full access to manage devices in Azure AD.
 
 ### Cloud Functions
 
@@ -804,7 +852,7 @@ However, resources like CPU, GPU, and other items can be customized.
 
 Resources:
 
-- ▶ [Cloud Run in a minute](https://youtu.be/lzQNjZIGKaM "YouTube - Cloud Run in a minute")
+- :octicons-play-24: [Cloud Run in a minute](https://youtu.be/lzQNjZIGKaM "YouTube - Cloud Run in a minute")
 - [Differences between Cloud Run and Cloud Run on GKE](https://youtu.be/RVdhyprptTQ)
 - [Cloud Run: deploy a prebuilt container](https://youtu.be/Xd-BNy1IqcQ)
 - [Build and deploy with Cloud Run](https://youtu.be/nJ0L28ZfmUA)
@@ -816,7 +864,7 @@ Image analysis platform for annotating images with metadata, extracting text, or
 
 Sources:
 
-- [▶ Getting started: Image recognition and classification](https://www.youtube.com/watch?v=BN8aO0LULyw 'YouTube - Getting started: Image recognition and classification')
+- [:octicons-play-24: Getting started: Image recognition and classification](https://www.youtube.com/watch?v=BN8aO0LULyw 'YouTube - Getting started: Image recognition and classification')
 
 ### CloudFormation
 
@@ -858,7 +906,7 @@ Events are also classified as management events and data events
 
 Resources
 
-- ▶️ [How can I use CloudTrail to review what API calls and actions have occurred in my AWS account?](https://youtu.be/4ztTv5rIRv8)
+- :octicons-play-24:️ [How can I use CloudTrail to review what API calls and actions have occurred in my AWS account?](https://youtu.be/4ztTv5rIRv8)
 
 ### CloudWatch
 
@@ -908,7 +956,28 @@ They provide high availability, healing, scaling, and automatic updates.
 - **Unmanaged** instance groups allow you to manually load balance a group of VMs.
 VMs can be added or removed at will.
 
-- ▶ [Getting started with GCE](https://youtu.be/1XH0gLlGDdk "YouTube - Getting Started with Google Cloud Compute Engine")
+- :octicons-play-24: [Getting started with GCE](https://youtu.be/1XH0gLlGDdk "YouTube - Getting Started with Google Cloud Compute Engine")
+
+### Compute Engine Admin
+
+Predefined GCP role that grants full control of Compute Engine resources.
+
+### Compute Engine Network Admin
+
+Predefined GCP role that grants full control of Compute Engine networking resources.
+
+
+### Compute Engine Security Admin
+
+Predefined GCP role that grants full control of Compute Engine security resources.
+
+### Compute Engine Viewer
+
+Predefined GCP role that grans read-only access to all Compute Engine resources, but exclusive of data stored on disks, images, and snapshots.
+
+### Compute Service Agent
+
+Predefined GCP role that grants Compute Engine Service Account access to assert service account authority.
 
 ### Computer Vision
 
@@ -1000,7 +1069,15 @@ There are several common partitioning patterns:
 
 Sources:
 
-- ▶ [**Learning Azure Cosmos DB**](https://app.pluralsight.com/courses/106da442-dfd4-4109-850d-efca92baae2b/table-of-contents)
+- :octicons-play-24: [**Learning Azure Cosmos DB**](https://app.pluralsight.com/courses/106da442-dfd4-4109-850d-efca92baae2b/table-of-contents)
+
+### Cost Management Contributor
+
+Azure built-in role that grants access to the **Cost Management** blade.
+
+### Cost Management Reader
+
+Azure built-in role that grants access to the **Cost Management** blade.
 
 ### Data Box
 
@@ -1029,7 +1106,7 @@ Workflow
 
 Resources
 
-- ▶ [What is Dataflow?](https://www.youtube.com/watch?v=KalJ0VuEM7s)
+- :octicons-play-24: [What is Dataflow?](https://www.youtube.com/watch?v=KalJ0VuEM7s)
 
 ### Dataprep
 
@@ -1037,7 +1114,7 @@ Dataprep is a GCP managed service that allows analysts to visually explore, clea
 
 Resources:
 
-- [▶ Dataprep: Qwik Start - Qwiklabs Preview](https://www.youtube.com/watch?v=K3K9X9VaThE)
+- [:octicons-play-24: Dataprep: Qwik Start - Qwiklabs Preview](https://www.youtube.com/watch?v=K3K9X9VaThE)
 
 ### Dataproc
 
@@ -1045,7 +1122,7 @@ Dataproc is a GCP service that manages the creation of data science clusters and
 
 Resources:
 
-- [▶ Dataproc in a minute](https://www.youtube.com/watch?v=Jj6mp7Sam10)
+- [:octicons-play-24: Dataproc in a minute](https://www.youtube.com/watch?v=Jj6mp7Sam10)
 
 ### DynamoDB
 
@@ -1142,14 +1219,17 @@ Unlike **Firebase**, which charges based on the volume of data stored, **Firesto
 
 Sources:
 
-- ▶ [What is a NoSQL Database?](https://youtu.be/v_hR4K4auoQ?t=620 "YouTube - What is a NoSQL Database? How is Cloud Firestore structured? | Get to Know Cloud Firestore #1")
-- ▶ [Introducing Firebase Realtime database](https://youtu.be/U5aeM5dvUpA "YouTube - Introducing Firebase Realtime Database")
-- ▶ [Firebase web application tutorial](https://youtu.be/9kRgVxULbag "YouTube - Firebase - Ultimate Beginner's guide")
-- ▶ [Firebase Realtime DB vs Firestore](https://youtu.be/TmXct7seeBY)
-- ▶ [How queries work in Firestore](https://youtu.be/Ofux_4c94FI "YouTube - How do queries work in Cloud Firestore? | Get to Know Cloud Firestore #2")
+- :octicons-play-24: [What is a NoSQL Database?](https://youtu.be/v_hR4K4auoQ?t=620 "YouTube - What is a NoSQL Database? How is Cloud Firestore structured? | Get to Know Cloud Firestore #1")
+- :octicons-play-24: [Introducing Firebase Realtime database](https://youtu.be/U5aeM5dvUpA "YouTube - Introducing Firebase Realtime Database")
+- :octicons-play-24: [Firebase web application tutorial](https://youtu.be/9kRgVxULbag "YouTube - Firebase - Ultimate Beginner's guide")
+- :octicons-play-24: [Firebase Realtime DB vs Firestore](https://youtu.be/TmXct7seeBY)
+- :octicons-play-24: [How queries work in Firestore](https://youtu.be/Ofux_4c94FI "YouTube - How do queries work in Cloud Firestore? | Get to Know Cloud Firestore #2")
 - :material-file-document-multiple-outline: [Cloud Firestore vs the Realtime Database: Which one do I use?](https://firebase.googleblog.com/2017/10/cloud-firestore-for-rtdb-developers.html "Cloud Firestore vs the Realtime Database: Which one do I use?")
 - [Firebase blog](https://firebase.googleblog.com/2017/10/cloud-firestore-for-rtdb-developers.html "Cloud Firestore vs the Realtime Database: Which one do I use?") 
 
+### Folder Admin
+
+Predefined GCP role that allows folders to be created at an Organization.
 
 ### Front Door
 
@@ -1207,6 +1287,10 @@ Glacier vaults can be created and deleted using the Glacier service console.
 But uploading, downloading, or deleting archives must be done through the [AWS CLI](#aws-cli) or an application using the SDK.
 Some third-party applications can also interact with Glacier.
 
+### Google Cloud Identity
+
+Google's Identity as a Service (IDaaS) provider.
+
 ### Import/Export Service
 
 **Azure Import/Export service** allows the physical shipment of disks procured by the user to Azure for import. 
@@ -1230,13 +1314,13 @@ Kinesis is an AWS service for ingestion and processing of streaming data, such a
 
 Resources:
 
-- ▶ [Kubeflow 101 (playlist)](https://www.youtube.com/playlist?list=PLIivdWyY5sqLS4lN75RPDEyBgTro_YX7x 'YouTube - KubeFlow 101')
-- ▶ [Talk - Kubeflow at Spotify](https://www.youtube.com/watch?v=m9XhsnNSMAI 'YouTube - Building and managing a centralized Kubeflow platform at Spotify')
-- ▶ [Talk - Kubeflow on Kubernetes](https://www.youtube.com/watch?v=I6iMznIYwM8 'YouTube - Kubeflow ML on Kubernetes')
+- :octicons-play-24: [Kubeflow 101 (playlist)](https://www.youtube.com/playlist?list=PLIivdWyY5sqLS4lN75RPDEyBgTro_YX7x 'YouTube - KubeFlow 101')
+- :octicons-play-24: [Talk - Kubeflow at Spotify](https://www.youtube.com/watch?v=m9XhsnNSMAI 'YouTube - Building and managing a centralized Kubeflow platform at Spotify')
+- :octicons-play-24: [Talk - Kubeflow on Kubernetes](https://www.youtube.com/watch?v=I6iMznIYwM8 'YouTube - Kubeflow ML on Kubernetes')
 
 
 
-### [Kusto](Kusto)
+### Kusto
 
 **Kusto** is a case-sensitive query language developed by Microsoft and used in several Azure services:
 
@@ -1263,7 +1347,7 @@ MARS can be configured to protect the entire system, volumes, or individual file
 
 Resources:
 
-- ▶ [Dashboards with Azure Monitor Data](https://www.youtube.com/watch?v=XS2b_rxkwMY "YouTube - Create Dashboards with Azure Monitor Data")
+- :octicons-play-24: [Dashboards with Azure Monitor Data](https://www.youtube.com/watch?v=XS2b_rxkwMY "YouTube - Create Dashboards with Azure Monitor Data")
 
 ### Neptune
 
@@ -1298,13 +1382,21 @@ Network Watcher monitoring and diagnostic tools:
 - **OpsWorks for Chef Automate**
 - **OpsWorks Stacks**
 
+### Project
+
+A **project** is the direct parent of all other GCP resources, and always consists of a project name, project ID, and project number.
+
+### Project Creator
+
+Predefined GCP role given to all users currently assigned to a project.
+
 ### Pub/Sub
 
 **Cloud Pub/Sub** is GCP's messaging service, allowing services and applications to communicate.
 
 Resources:
 
-- [▶ Cloud Pub/Sub Overview - ep. 1](https://youtu.be/cvu53CnZmGI)
+- [:octicons-play-24: Cloud Pub/Sub Overview - ep. 1](https://youtu.be/cvu53CnZmGI)
 
 ### Recovery Services Vault
 
@@ -1316,6 +1408,10 @@ A **Recovery Services Vault** is an Azure resource used to centrally manage the 
 ### Rekognition
 
 AWS deep learning-based image recognition service.
+
+### Resource Policy Contributor
+
+Azure built-in role that includes access to most Policy operations and should be considered privileged.
 
 ### Route 53
 
@@ -1387,7 +1483,7 @@ Infrequently accessed objects
     - **Cached volumes**: Data is stored in S3 and frequently used data is cached locally. A cached volume can range from 1 GB to 32 TB in size.
 - **Tape gateway** is configured as an iSCSI target by a backup application. Virtual tapes range from 100 GB to 2.5 TB in size. These tapes are asynchronously transferred to a **virtual tape library (VTL)** backed by S3 and removed when the upload is complete. Recovery requires downloading the virtual tape again.
 
-▶ [Cloud Storage in Minutes with AWS Storage Gateway](https://youtu.be/2I4CKdNESoQ)
+:octicons-play-24: [Cloud Storage in Minutes with AWS Storage Gateway](https://youtu.be/2I4CKdNESoQ)
 
 ### Sentinel
 
@@ -1431,6 +1527,10 @@ GCP managed scaleable database service.
 ### Stackdriver
 
 GCP service that collects metrics, logs, and event data from applications and infrastructure and integrates the data so DevOps engineers can monitor, assess, and diagnose operational problems.
+
+### Super administrator
+
+Unique GCP role associated with the root Organization which has powers that exceed that of other administrative users.
 
 ### Storage accounts
 
@@ -1505,6 +1605,19 @@ Systems Manager relies on several types of script:
 - Security
 - Fault tolerance
 - Service limits
+
+### User Access Administrator 
+
+Azure built-in role that grants the permissions necessary to assign a user administrative access at the subscription scope.
+
+Permissions:
+
+- `Microsoft.Authorization/roleAssignments/write`
+- `Microsoft.Authorization/roleAssignments/delete`
+
+### User Administrator [:material-microsoft:](https://docs.microsoft.com/en-us/azure/active-directory/roles/permissions-reference#user-administrator-permissions)
+
+Azure built-in role that grants the power to manage all aspects of users and groups, including resetting passwords for limited admins.
 
 ### VM Agent
 
@@ -1623,6 +1736,7 @@ There are two types:
 
 
 
+<!-- #region Links -->
 
 [ACI]: #container-instances "Azure Container Instances (ACI) is a PaaS service that facilitates deployment of individual containers."
 [AKS]: #aks "Azure Kubernetes Service (AKS) is Azure's managed Kubernetes offering."
@@ -1630,12 +1744,18 @@ There are two types:
 [App Service]: #app-service 'Azure App Service is an Azure PaaS offering for hosting websites.'
 [Athena]: #athena "AWS service that allows SQL queries to be run against data stored in a S3 bucket"
 [Azure Automation]: https://azure.microsoft.com/en-us/services/automation/ "cloud-based configuration management"
+[Azure Batch]: #azure-batch "TODO"
 [Azure Container Instances]: #azure-container-instances "Simpler way of deploying containers in Azure than Azure Kubernetes Service, where containers are deployed into container groups that share the same lifecycle"
 [Azure Functions]: # "TODO"
 [Azure Key Vault]: https://azure.microsoft.com/en-us/services/key-vault/  "helps safeguard cryptographic keys and secrets used by cloud applications and services"
 [BigTable]: #bigtable 'GCP realtime database used for Big Data'
 [Bigquery]: #bigquery 'Petabyte-scale analytics database service for data warehousing'
+[Billing Account Administrator]: #billing-account-administrator "GCP predefined role that grants permissions to manage self-service accounts but not to create new ones."
+[Billing Account Creator]: #billing-account-creator "Predefined GCP role that grants permissions to create new self-service accounts."
+[Billing Account User]: #billing-account-user "GCP predefined role that enables user to link projects to a billing account."
+[Billing Account Viewer]: #billing-account-viewer "GCP predefined role that grants permissions to view transactional and billing data associated to a GCP account."
 [Cloud AutoML]: #cloud-automl 'GCP service that allows developers without machine learning experience to develop machine learning models'
+[Cloud Device Administrator]: #cloud-device-administrator "Azure built-in role that grants users full access to manage devices in Azure AD."
 [Cloud Functions]: #cloud-functions 'GCP serverless compute offering'
 [Cloud Inference API]: # 'GCP service for computing correlations over time-series data'
 [Cloud Machine Learning Engine]: #cloud-machine-learning-engine 'Cloud Machine Learning Engine Platform for building and deploying scalable machine learning systems to production'
@@ -1649,7 +1769,14 @@ There are two types:
 [CodeCommit]: #codecommit 'CodeCommit is the AWS private git repo service.'
 [CodeDeploy]: #codedeploy 'CodeDeploy is an AWS service for automatically deploying applications to AWS compute resources or on-prem servers.'
 [CodePipeline]: #codepipeline 'CodePipeline is an AWS service for orchestrating and automating every stage of software development.'
+[Compute Engine Admin]: #compute-engine-admin "Predefined GCP role that grants full control of Compute Engine resources."
+[Compute Engine Network Admin]: #compute-engine-network-admin "GCP predefined role that grants full control of Compute Engine networking resources."
+[Compute Engine Security Admin]: #compute-engine-security-admin "GCP predefined role that grants full control of Compute Engine security resources."
+[Compute Engine Viewer]: #compute-engine-viewer "GCP predefined role that grans read-only access to all Compute Engine resources, but exclusive of data stored on disks, images, and snapshots."
+[Compute Service Agent]: #compute-service-agent "GCP predefined role that grants Compute Engine Service Account access to assert service account authority."
 [Cosmos DB]: #cosmosdb 'Azure NoSQL database service optimized for mobile and web applications that offers graph, document, and key-value APIs'
+[Cost Management Contributor]: #cost-management-contributor "Azure built-in role that grants access to the **Cost Management** blade."
+[Cost Management Reader]: #cost-management-reader "Azure built-in role that grants access to the **Cost Management** blade."
 [Dataflow]: #dataflow "Cloud Dataflow is a GCP streaming data framework for defining batch and stream processing pipelines."
 [Dataprep]: # 'Dataprep is a GCP managed service that allows analysts to visually explore, clean, and prepare data for later analysis.'
 [Dataproc]: #dataproc "Dataproc is a GCP service that manages the creation of data science clusters and data analysis jobs."
@@ -1659,7 +1786,9 @@ There are two types:
 [EMR]: #elastic-mapreduce "Elastic MapReduce (EMR) is AWS's managed Big Data analysis service."
 [Elastic Beanstalk]: #elastic-beanstalk "AWS Elastic Beanstalk is a PaaS offering."
 [Firestore]: #firestore 'Firestore GCP NoSQL document database service offering high performance and automatic horizontal scaling intended for serverless mobile and web application development with Cloud App Engine'
+[Folder Admin]: #folder-admin "Predefined GCP role that allows folders to be created at an Organization."
 [GKE]: # 'Google Kubernetes Engine (GKE) allows users to easily run containerized applications on a cluster of servers'
+[Glacier]: #glacier "TODO"
 [Google Cloud Functions]: # 'Cloud Functions lightweight computing option well-suited to event-driven processing'
 [Google Compute Engine]: # 'Compute Engine allows users to create VMs, attach persistent storage to them, and make use of other GCP services like Cloud Storage'
 [HDInsight]: #hdinsight "TODO"
@@ -1669,16 +1798,20 @@ There are two types:
 [Microsoft Azure Linux agent]: #waagent '...' 
 [Neptune]: #neptune "Neptune is an AWS graph database"
 [Project Bicep]: #bicep 'Azure domain-specific language and CLI utility that can generate ARM templates'
+[Project Creator]: #project-creator "Predefined GCP role given to all users currently assigned to a project."
+[Pub/Sub]: #pubsub "TODO"
 [Redshift]: # 'Redshift fast, fully managed petabyte-scale data warehouse that makes it simple and cost-effective to analyze all your data using your existing business intelligence tools'
 [Rekognition]: #rekognition 'Rekognition AWS deep learning-based image recognition service'
+[Resource Policy Contributor]: #resource-policy-contributor "Azure built-in role that grants access to most Policy operations."
+[SNS]: #simple-notification-service "TODO"
 [SQS]: #simple-queue-service "Simple Queue Service (SQS) is an AWS service that can broker messages between components of highly decoupled applications."
 [Spanner]: #spanner 'Spanner GCP managed scaleable database service'
 [Stackdriver]: #monitoring 'GCP monitoring service that collects and integrates metrics, logs, and event data from applications and infrastructure'
 [Trace]: #monitoring 'Distributed tracing service that captures latency data about an application to help identify performance problem areas'
+[User Access Administrator]: #user-access-administrator "Azure built-in role that grants the permissions necessary to assign a user administrative access at the subscription scope."
+[User Administrator]: #user-administrator "Azure built-in role that grants the power to manage all aspects of users and groups, including resetting passwords for limited admins."
 [VMSnapshot]: #vmsnapshot '...'
 [Volume Shadow Copy]: #volume-shadow-copy '...'
-[cbt]: #cbt 'Command-line interface for performing several different operations on Cloud Bigtable'
-[SNS]: #simple-notification-service "TODO"
-[Azure Batch]: #azure-batch "TODO"
-[Pub/Sub]: #pubsub "TODO"
-[Glacier]: #glacier "TODO"
+[bq]: #bigquery "Command-line operator used to execute BigQuery services."
+[cbt]: #bigtable 'Command-line interface for performing several different operations on Cloud Bigtable'
+<!-- #endregion -->

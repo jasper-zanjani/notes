@@ -4,13 +4,13 @@
 
 Display subscription ID
 
-=== "Azure PowerShell"
+=== ":material-microsoft-azure::material-powershell:"
 
     ```powershell
     Get-AzSubscription
     ```
     
-=== "Azure CLI"
+=== ":material-microsoft-azure::material-bash:"
 
     ```sh
     az account show
@@ -20,10 +20,51 @@ Display subscription ID
 
 Initialize CLI utility
 
-=== "GCP gcloud"
+=== ":material-google::material-bash:"
 
     ```sh
     gcloud init
+    ```
+
+### IAM
+
+Add guest user
+
+    
+
+=== ":material-microsoft-azure::material-powershell:"
+
+    ```powershell
+    New-AzureADMSInvitation 
+        -InvitedUserEmailAddress $EMAIL 
+        -SendInvitationMessage $True 
+        -InviteRedirectUrl "http://myapps.onmicrosoft.com"
+    ```
+
+=== ":material-microsoft-azure::fontawesome-solid-desktop:"
+
+    ![](/img/az-ad.jpg)
+    ![](/img/az-ad-guest.jpg)
+
+Assign a role
+
+=== ":material-google::material-bash:"
+
+    
+    ```sh
+    # At the organization level
+    gcloud organizations add-iam-policy-binding 
+        $ORG_ID
+        --member="user:$EMAIL"
+        --role="roles/compute.xpnAdmin"
+    ```
+
+    ```sh
+    # At the folder level
+    gcloud beta resource-manager-folders add-iam-policy-binding 
+        $FOLDER_ID
+        --member="user:$EMAIL"
+        --role="roles/compute.xpnAdmin"
     ```
 
 ### 💰 Cost management
@@ -32,7 +73,7 @@ To view resource quotas for a subscription, go to the subscription in Azure Port
 
 View current usage of vCPU quotas
 
-=== "Azure PowerShell"
+=== ":material-microsoft-azure::material-powershell:"
 
     ```powershell
     Get-AzVMUsage
@@ -40,7 +81,7 @@ View current usage of vCPU quotas
 
 View current usage of storage service
 
-=== "Azure PowerShell"
+=== ":material-microsoft-azure::material-powershell:"
 
     ```powershell
     Get-AzStorageUsage
@@ -64,13 +105,13 @@ PowerShell commands used with budgets:
 
 VM extension
 
-=== "Azure PowerShell"
+=== ":material-microsoft-azure::material-powershell:"
 
     ```powershell
     Set-AzVMExtension -ResourceGroupName ExamRefRG -Location "West Europe" -VMName VM1 -Name networkWatcherAgent -Publisher Microsoft.Azure.NetworkWatcher -Type NetworkWatcherAgentWindows -TypeHandlerVersion 1.4
     ```
     
-=== "Azure CLI"
+=== ":material-microsoft-azure::material-bash:"
     
     ```sh
     az vm extension set --vm-name VM1 --resource-group ExamRefRG --publisher Microsoft.Azure.NetworkWatcher --version 1.4 --name NetworkWatcherAgentWindows --extension-instance-name NetworkWatcherAgent
@@ -78,7 +119,7 @@ VM extension
 
 Start packet capture
     
-=== "Azure PowerShell"
+=== ":material-microsoft-azure::material-powershell:"
 
     ```powershell
     $nw = Get-AzResource | Where ResourceType -eq "Microsoft.Network/networkWatchers" -and Location -eq "WestEurope"
@@ -93,7 +134,7 @@ Start packet capture
     ```
     
 
-=== "Azure CLI"
+=== ":material-microsoft-azure::material-bash:"
 
     ```sh
     filter='[ { "protocol": "TCP", "remoteIPAddress": "1.1.1.1-255.255.255.255", "localIPAddress":"10.0.0.3", "remotePort":"20" } ]'
@@ -102,13 +143,13 @@ Start packet capture
 
 Check status of packet capture
 
-=== "Azure PowerShell"
+=== ":material-microsoft-azure::material-powershell:"
 
     ```powershell
     Get-AzNetworkWatcherPacketCapture -NetworkWatcher $networkWatcher -PacketCaptureName "PacketCaptureTest"
     ```
     
-=== "Azure CLI"
+=== ":material-microsoft-azure::material-bash:"
 
     ```sh
     az network watcher packet-capture show-status --name PacketCaptureTest --location WestEurope
@@ -116,13 +157,13 @@ Check status of packet capture
     
 Stop packet capture
 
-=== "Azure PowerShell"
+=== ":material-microsoft-azure::material-powershell:"
 
     ```powershell
     Stop-AzNetworkWatcherPacketCapture -NetworkWatcher $networkWatcher -PacketCaptureName "PacketCaptureTest"
     ```
     
-=== "Azure CLI"
+=== ":material-microsoft-azure::material-bash:"
 
     ```sh
     az network watcher packet-capture stop --name PacketCaptureTest --location WestEurope
@@ -131,13 +172,13 @@ Stop packet capture
 
 Use **IP Flow Verify** to test outbound connectivity from source VM and port to destination. If any configured filtering rules block traffic between the endpoints, it will return the name of the offending NSG.
 
-=== "Azure PowerShell"
+=== ":material-microsoft-azure::material-powershell:"
 
     ```powershell
     Test-AzNetworkWatcherIPFlow
     ```
 
-=== "Azure CLI"
+=== ":material-microsoft-azure::material-bash:"
 
     ```sh
     az network watcher test-ip-flow
@@ -145,13 +186,13 @@ Use **IP Flow Verify** to test outbound connectivity from source VM and port to 
 
 Next Hop
 
-=== "Azure PowerShell"
+=== ":material-microsoft-azure::material-powershell:"
 
     ```powershell
     Get-AzNetworkWatcherNextHop
     ```
     
-=== "Azure CLI"
+=== ":material-microsoft-azure::material-bash:"
 
     ```sh
     az network watcher show-next-hop
@@ -159,13 +200,13 @@ Next Hop
 
 Use Network Topology
 
-=== "Azure PowerShell"
+=== ":material-microsoft-azure::material-powershell:"
 
     ```powershell
     Get-AzNetworkWatcherTopology
     ```
     
-=== "Azure CLI"
+=== ":material-microsoft-azure::material-bash:"
 
     ```sh
     az network watcher show-topology
@@ -186,7 +227,7 @@ New-AzNetworkWatcherPacketCapture -NetworkWatcher $nw -TargetVirtualMachineId $v
 
 Assign a policy
 
-=== "Azure PowerShell"
+=== ":material-microsoft-azure::material-powershell:"
 
     ```powershell
     $scope = '/subscriptions/$subscriptionID'
@@ -200,7 +241,7 @@ Assign a policy
 
 Remove policy assignment and definition
 
-=== "Azure PowerShell"
+=== ":material-microsoft-azure::material-powershell:"
 
     ```powershell
     Remove-AzPolicyAssignment -Id $assignment.ResourceId
@@ -214,13 +255,13 @@ Create a policy definition
     (All Services) > Policy > Definitions: Both builtin and custom policies can be managed here.
     
 
-=== "Azure PowerShell"
+=== ":material-microsoft-azure::material-powershell:"
 
     ```powershell
     New-AzPolicyDefinition -Name 'appendEnvironmentTag' -DisplayName 'Append Environment Tag' -Policy 'AppendDefaultTag.json' -Parameter 'AppendDefaultTagParams.json'
     ```
 
-=== "Azure CLI"
+=== ":material-microsoft-azure::material-bash:"
 
     ```sh
     az policy definition create --name 'allowedVMs' --description 'Only allow virtual machines in the defined SKUs' --mode ALL --rules '{...}' --params '{...}'
@@ -228,7 +269,7 @@ Create a policy definition
     
 Apply policy to a scope
 
-=== "Azure CLI"
+=== ":material-microsoft-azure::material-bash:"
 
     ```sh
     az policy assignment create --policy allowedVMs --name 'deny-non-compliant-vms' --scope '/subscriptions/<Subscription ID>' -p
@@ -236,7 +277,7 @@ Apply policy to a scope
 
 Delete policy assignment
 
-=== "Azure CLI"
+=== ":material-microsoft-azure::material-bash:"
 
     ```sh
     az policy assignment delete --name deny-non-compliant-vms
@@ -247,13 +288,13 @@ Delete policy assignment
 
 Create resource group
 
-=== "Azure PowerShell"
+=== ":material-microsoft-azure::material-powershell:"
 
     ```powershell
     New-AzGroup -Location $location -Name $rgName
     ```
 
-=== "Azure CLI"
+=== ":material-microsoft-azure::material-bash:"
 
     ```sh
     az group create -l $location -n $rgName 
@@ -266,7 +307,7 @@ az provider register --namespace 'Microsoft.PolicyInsights'
 
 Move resources
 
-=== "Azure PowerShell"
+=== ":material-microsoft-azure::material-powershell:"
 
     ```powershell
     $webapp = Get-AzResource -ResourceGroupName OldRG -ResourceName ExampleSite
@@ -275,7 +316,7 @@ Move resources
     Move-AzResource -DestinationResourceGroupName NewRG -ResourceId $webapp.ResourceId, $plan.ResourceId
     ```
 
-=== "Azure CLI"
+=== ":material-microsoft-azure::material-bash:"
 
     ```sh
     webapp=$(az resource show -g OldRG -n ExampleSite --resource-type "Microsoft.Web/sites" --query id --output tsv)
@@ -286,7 +327,7 @@ Move resources
 
 Create lock on a resource
 
-=== "Azure PowerShell"
+=== ":material-microsoft-azure::material-powershell:"
 
     ```powershell
     New-AzResourceLock 
@@ -297,7 +338,7 @@ Create lock on a resource
         -ResourceType Microsoft.Web/sites 
     ```
 
-=== "Azure CLI"
+=== ":material-microsoft-azure::material-bash:"
 
     ```sh
     az lock create 
@@ -310,7 +351,7 @@ Create lock on a resource
 
 Create lock on a resource group
 
-=== "Azure PowerShell"
+=== ":material-microsoft-azure::material-powershell:"
 
     ```powershell
     New-AzResourceLock 
@@ -319,7 +360,7 @@ Create lock on a resource group
         -ResourceGroupName $rg
     ```
 
-=== "Azure CLI"
+=== ":material-microsoft-azure::material-bash:"
 
     ```sh
     az lock create 
@@ -331,13 +372,13 @@ Create lock on a resource group
 
 Display resource lock
 
-=== "Azure PowerShell"
+=== ":material-microsoft-azure::material-powershell:"
 
     ```powershell
     Get-AzResourceLock -ResourceName $r -ResourceType Microsoft.Web/sites -ResourceGroupName $rg
     ```
 
-=== "Azure CLI"
+=== ":material-microsoft-azure::material-bash:"
 
     ```sh
     az lock list --resource-group $rg --resource-name $r --namespace Microsoft.Web --resource-type sites --parent ""
@@ -345,7 +386,7 @@ Display resource lock
 
 Delete resource lock
 
-=== "Azure PowerShell"
+=== ":material-microsoft-azure::material-powershell:"
 
     ```powershell
     $lockId = (Get-AzResourceLock -ResourceGroupName $rg -ResourceName $r -ResourceType Microsoft.Web/sites).LockId
@@ -353,7 +394,7 @@ Delete resource lock
     Remove-AzResourceLock -LockId $lockId
     ```
 
-=== "Azure CLI"
+=== ":material-microsoft-azure::material-bash:"
 
     ```sh
     lockid=$(az lock show --name LockSite --resource-group $rg --resource-type Microsoft.Web/sites --resource-name $r --output tsv --query id)
@@ -373,7 +414,7 @@ Sources
 
 List all resources by tag
 
-=== "Azure PowerShell"
+=== ":material-microsoft-azure::material-powershell:"
 
     ```powershell
     (Get-AzResource -Tag @{ CostCode="1001"}).Name
@@ -381,7 +422,7 @@ List all resources by tag
     (Get-AzResource -TagName CostCode).Name
     ```
     
-=== "Azure CLI"
+=== ":material-microsoft-azure::material-bash:"
 
     ```sh
     az resource list --tag Dept=Finance
@@ -389,13 +430,13 @@ List all resources by tag
 
 List resource groups by tag
 
-=== "Azure PowerShell"
+=== ":material-microsoft-azure::material-powershell:"
 
     ```powershell
     (Get-AzResourceGroup -Tag @{ CostCode="1001" }).ResourceGroupName
     ```
     
-=== "Azure CLI"
+=== ":material-microsoft-azure::material-bash:"
 
     ```sh
     az group list --tag CostCode=1001
@@ -403,7 +444,7 @@ List resource groups by tag
 
 Enumerate a resource's tags
 
-=== "Azure PowerShell"
+=== ":material-microsoft-azure::material-powershell:"
 
     ```powershell
     $r = Get-AzResource -Name $resourceName -ResourceGroup rg
@@ -419,7 +460,7 @@ Enumerate a resource's tags
     ```
 
 
-=== "Azure CLI"
+=== ":material-microsoft-azure::material-bash:"
 
     ```sh
     az resource show -n $resourceName -g $rgName --query tags
@@ -430,7 +471,7 @@ Enumerate a resource's tags
 
 Tag resource
 
-=== "Azure PowerShell"
+=== ":material-microsoft-azure::material-powershell:"
 
     ```powershell
     $r = Get-AzResource -ResourceName hrvm1 -ResourceGroupName rg
@@ -452,7 +493,7 @@ Tag resource
     Set-AzResourceGroup -Tag $tags -Name rg
     ```
 
-=== "Azure CLI"
+=== ":material-microsoft-azure::material-bash:"
 
     ```sh
     jsonrtag=$(az group show -n rg --query tags)
@@ -464,7 +505,7 @@ Tag resource
 
 Remove specific tags
 
-=== "Azure PowerShell"
+=== ":material-microsoft-azure::material-powershell:"
 
     ```powershell
     $tags = @{"Project"="ECommerce"; "Team"="Web"}
@@ -473,7 +514,7 @@ Remove specific tags
 
 Remove all tags
 
-=== "Azure PowerShell"
+=== ":material-microsoft-azure::material-powershell:"
 
     ```powershell
     $s = (Get-AzSubscription -SubscriptionName "Example Subscription").Id
@@ -485,7 +526,7 @@ Remove all tags
 
 Apply tags to resource, overwriting
 
-=== "Azure PowerShell"
+=== ":material-microsoft-azure::material-powershell:"
 
     ```powershell
     $tags = @{"Dept"="Finance"; "Status"="Normal"}
@@ -495,7 +536,7 @@ Apply tags to resource, overwriting
     Set-AzResource -ResourceId $r.ResourceId -Tag @{ CostCode="1001"; Environment="Production" } -Force
     ```
     
-=== "Azure CLI"
+=== ":material-microsoft-azure::material-bash:"
 
     ```sh
     az resource tag --tags 'Dept=IT' 'Environment=Test' -g $rgName -n examplevnet --resource-type "Microsoft.Network/virtualNetworks"
@@ -503,13 +544,13 @@ Apply tags to resource, overwriting
     
 Apply tags to resource group
 
-=== "Azure PowerShell"
+=== ":material-microsoft-azure::material-powershell:"
 
     ```powershell
     Set-AzResourceGroup -Name rg -Tag @{CostCode=1001; Environment=Production}
     ```
     
-=== "Azure CLI"
+=== ":material-microsoft-azure::material-bash:"
 
     ```sh
     az group update -n $rgName --tags 'Environment=Test' 'Dept=IT'
@@ -548,14 +589,14 @@ runtime: python37
 In Azure, multiple web applications are organized under an **App Service Plan** resource.
 So if no such app service plan exists, it must be created.
 
-=== "Azure PowerShell"
+=== ":material-microsoft-azure::material-powershell:"
 
     ```powershell
     $p = New-AzAppServicePlan -Name $n -ResourceGroupName $g -Location $l -Tier "Basic" -NumberofWorkers 2 -WorkerSize "Small"
     New-AzWebApp -Name $n -Location $l -ResourceGroupName $g -AppServicePlan $p
     ```
 
-=== "Azure CLI"
+=== ":material-microsoft-azure::material-bash:"
 
     ```sh
     az appservice plan create -g $g -n $p --is-linux
@@ -568,7 +609,7 @@ So if no such app service plan exists, it must be created.
 
 Create a new source repository
 
-=== "GCP"
+=== ":material-google::material-bash:"
 
     These steps require:
 
@@ -589,13 +630,13 @@ Create a new source repository
 
 Create container registry
 
-=== "Azure PowerShell"
+=== ":material-microsoft-azure::material-powershell:"
 
     ```powershell
     New-AzContainerRegistry -ResourceGroupName $rg -Name $registry -Sku "Basic" -EnableAdminUser
     ```
 
-=== "Azure CLI"
+=== ":material-microsoft-azure::material-bash:"
 
     ```sh
     az acr create --name $registry --resource-group $rg --sku Basic --admin-enabled true
@@ -606,7 +647,7 @@ Create container registry
 
 Create Kubernetes cluster
 
-=== "Azure PowerShell"
+=== ":material-microsoft-azure::material-powershell:"
 
     ```powershell
     New-AzAKS -ResourceGroupName $g -Name $n
@@ -620,7 +661,7 @@ Create Kubernetes cluster
     ```
     - :material-file-document-multiple-outline: [Create a Windows Server container on an AKS cluster](https://docs.microsoft.com/en-us/azure/aks/windows-container-powershell)
 
-=== "Azure CLI"
+=== ":material-microsoft-azure::material-bash:"
 
     ```sh
     az aks create -g $g -n $n
@@ -636,7 +677,7 @@ Create Kubernetes cluster
 
 Add a pool of nodes
 
-=== "Azure PowerShell"
+=== ":material-microsoft-azure::material-powershell:"
 
     ```powershell
     New-AzAksNodePool -ResourceGroupName $rgName -Name npwin -ClusterName $clusterName 
@@ -644,7 +685,7 @@ Add a pool of nodes
         -KubernetesVersion 1.16.7
     ```
 
-=== "Azure CLI"
+=== ":material-microsoft-azure::material-bash:"
 
     ```sh
     az aks nodepool add -g $g -n $n --cluster-name $clusterName
@@ -654,7 +695,7 @@ Add a pool of nodes
 
 Persistent volume claim
 
-=== "Azure"
+=== ":material-microsoft-azure::material-code-json:"
 
     ```yaml
     apiVersion: v1
@@ -722,13 +763,13 @@ Create storage account
     
     Click **Create a resouce**, then **Storage**, then **Storage account**. Choose a **globally** unique name for the account, containing lower-case characters and digits only.
 
-=== "Azure PowerShell"
+=== ":material-microsoft-azure::material-powershell:"
 
     ```powershell
     New-AzStorageAccount -ResourceGroupName ExamRefRG -Name mystorage112300 -SkuName Standard_LRS -Location WestUS -Kind StorageV2 -AccessTier Hot
     ```
 
-=== "Azure CLI"
+=== ":material-microsoft-azure::material-bash:"
 
     ```sh
     az storage account create --name $accountName --resource-group $resourceGroup -location $location --sku $sku
@@ -756,7 +797,7 @@ Renew storage account keys
     New-AzStorageAccountKey
     ```
 
-=== "Azure CLI"
+=== ":material-microsoft-azure::material-bash:"
 
     ```sh
     az storage account keys renew
@@ -764,7 +805,7 @@ Renew storage account keys
 
 Create Azure Key Vault
 
-=== "Azure PowerShell"
+=== ":material-microsoft-azure::material-powershell:"
 
     ```powershell
     New-AzKeyVault -VaultName $vaultName -ResourceGroupName $g -Location $location 
@@ -774,7 +815,7 @@ Create Azure Key Vault
     $secret = Set-AzKeyVaultSecret -VaultName $vaultName -Name $secretName -SecretValue  $secretvalue
     ```
 
-=== "Azure CLI"
+=== ":material-microsoft-azure::material-bash:"
 
     ```sh
     az keyvault create --name $vaultName --resource-group $g --location $location
@@ -784,7 +825,7 @@ Create Azure Key Vault
 
 Create key in Azure Key Vault
 
-=== "Azure PowerShell"
+=== ":material-microsoft-azure::material-powershell:"
 
     ```powershell
     $key = Add-AzKeyVaultKey -VaultName $vaultName -Name $keyName -Destination 'Software'
@@ -794,7 +835,7 @@ Create key in Azure Key Vault
     $secret = Set-AzKeyVaultSecret -VaultName $vaultName -Name $secretName -SecretValue $secretvalue
     ```
 
-=== "Azure CLI"
+=== ":material-microsoft-azure::material-bash:"
 
     ```sh
     az keyvault key create --vault-name $vaultName --name $keyName --protection "software"
@@ -818,7 +859,7 @@ gsutil rewrite -s $STORAGE_CLASS gs://$PATH_TO_OBJECT
 
 Deploy Azure File Sync
 
-=== "Azure PowerShell"
+=== ":material-microsoft-azure::material-powershell:"
 
     ```powershell
     # Create Storage Sync Service
@@ -831,7 +872,7 @@ Deploy Azure File Sync
     New-AzStorageShare -Name $shareName -Context $context
     ```
 
-=== "Azure CLI"
+=== ":material-microsoft-azure::material-bash:"
 
     ```sh
     # Creating a Storage Sync Service resource is only possible in PowerShell or Portal
@@ -841,7 +882,7 @@ Deploy Azure File Sync
 
 Create sync group
 
-=== "Azure PowerShell"
+=== ":material-microsoft-azure::material-powershell:"
 
     ```powershell
     $syncgroup = New-AzStorageSyncGroup -Name $syncgroupname -ParentObject $storageSync
@@ -849,7 +890,7 @@ Create sync group
 
 Create cloud endpoint
 
-=== "Azure PowerShell"
+=== ":material-microsoft-azure::material-powershell:"
 
     ```powershell
     New-AzStorageSyncCloudEndpoint -Name $shareName -ParentObject $syncgroup -StorageAccountResourceId $storageAccount.Id -AzureFileShareName $shareName
@@ -859,13 +900,13 @@ Create cloud endpoint
 
 Display the status of the default NetworkRule for a storage account
 
-=== "Azure PowerShell"
+=== ":material-microsoft-azure::material-powershell:"
 
     ```powershell
     Get-AzStorageAccountNetworkRuleSet -ResourceGroupName $rgName -AccountName $n | Select-Object DefaultAction
     ```
 
-=== "Azure CLI"
+=== ":material-microsoft-azure::material-bash:"
 
     ```sh
     az storage account show -$rgName -n $n --query networkRuleSet.defaultAction
@@ -874,14 +915,14 @@ Display the status of the default NetworkRule for a storage account
 
 Set default rule
 
-=== "Azure PowerShell"
+=== ":material-microsoft-azure::material-powershell:"
 
     ```powershell
     Update-AzStorageAccountNetworkRuleSet -ResourceGroupName $g -Name $n -DefaultAction Deny
     Update-AzStorageAccountNetworkRuleSet -ResourceGroupName $g -Name $n -DefaultAction Allow
     ```
 
-=== "Azure CLI"
+=== ":material-microsoft-azure::material-bash:"
 
     ```sh
     az storage account update -g $g -n $n --default-action Deny
@@ -892,50 +933,97 @@ Set default rule
 
 Create virtual network with a specific prefix and subnet
 
-=== "Azure PowerShell"
+=== ":material-microsoft-azure::material-powershell:"
 
     ```powershell
-    $subnet = New-AzVirtualNetworkSubnetConfig -Name $subnetName -AddressPrefix "10.0.0.0/24"
-    $vnet = New-AzVirtualNetwork -Name $vnetName -ResourceGroupName $rgName -Location $l 
+    $subnet = New-AzVirtualNetworkSubnetConfig 
+        -Name $subnetName 
+        -AddressPrefix "10.0.0.0/24"
+    $vnet = New-AzVirtualNetwork -Name $name -ResourceGroupName $rgName -Location $l 
         -AddressPrefix "10.0.0.0/16" 
         -Subnet $subnet
     ```
     
-=== "Azure CLI"
+=== ":material-microsoft-azure::material-bash:"
 
     ```sh
-    az network vnet create -g $rgName -n $vnetName
-        --address-prefix 10.0.0.0/16
+    az network vnet create -g $rgName -n $name
+        --address-prefix "10.0.0.0/16"
         --subnet-name $subnetName
-        --subnet-prefix 10.0.0.0/24
+        --subnet-prefix "10.0.0.0/24"
     ```
 
+=== ":material-google::material-bash:"
+
+    ```sh
+    gcloud networks create $name --subnet-mode=custom
+    gcloud beta compute networks subnets create $subnetName
+        --network=$name
+        --region=$l
+        --range="10.0.0.0/16"
+        --enable-private-ip-google-access
+        --enable-flow-logs
+    ```
 
 Create peering
 
-=== "Azure PowerShell"
+=== ":material-microsoft-azure::material-powershell:"
 
     ```powershell
-    Add-AzVirtualNetworkPeering -Name 'VNet2-to-VNet1' -VirtualNetwork $vnet2 -RemoteVirtualNetworkId $vnet1.Id
-    Add-AzVirtualNetworkPeering -Name 'VNet1-to-VNet2' -VirtualNetwork $vnet1 -RemoteVirtualNetworkId $vnet2.Id
+    Add-AzVirtualNetworkPeering 
+        -Name 'peering1' 
+        -VirtualNetwork $net1 
+        -RemoteVirtualNetworkId $net2.Id
+    
+    Add-AzVirtualNetworkPeering 
+        -Name 'peering2' 
+        -VirtualNetwork $net2 
+        -RemoteVirtualNetworkId $net1.Id
     ```
     
-=== "Azure CLI"
+=== ":material-microsoft-azure::material-bash:"
 
     ```sh
-    az network vnet peering create --name 'VNet1-to-VNet2' --resource-group $rg --vnet-name VNet1 --allow-vnet-access --remote-vnet VNet2
-    az network vnet peering create --name 'VNet2-to-VNet1' --resource-group $rg --vnet-name VNet2 --allow-vnet-access --remote-vnet VNet1
-    ```
+    az network vnet peering create 
+        -n 'peering1' 
+        -g $g 
+        --vnet-name net1 
+        --allow-vnet-access 
+        --remote-vnet net2
     
+    az network vnet peering create 
+        -n 'peering2' 
+        -g $g 
+        --vnet-name net2 
+        --allow-vnet-access 
+        --remote-vnet net1
+    ```
+
+=== ":material-google::material-bash:"
+
+    ```sh
+    gcloud compute networks peerings create "peering1"
+        --network net1
+        --peer-project $p
+        --peer-network net2
+        --auto-create-routes
+    
+    gcloud compute networks peerings create "peering2"
+        --network net1
+        --peer-project $p
+        --peer-network net1
+        --auto-create-routes
+    ```
+
 Check peering
 
-=== "Azure PowerShell"
+=== ":material-microsoft-azure::material-powershell:"
 
     ```powershell
     Get-AzVirtualNetworkPeering -ResourceGroupName $rg -VirtualNetworkName $vnetName
     ```
     
-=== "Azure CLI"
+=== ":material-microsoft-azure::material-bash:"
 
     ```sh
     az network vnet peering list --resource-group $rg --vnet-name VNet1
@@ -945,7 +1033,7 @@ Check peering
 
 User-defined routes
 
-=== "Azure PowerShell"
+=== ":material-microsoft-azure::material-powershell:"
 
     ```powershell
     # Create the route table resource
@@ -972,7 +1060,7 @@ User-defined routes
     ```
     
 
-=== "Azure CLI"
+=== ":material-microsoft-azure::material-bash:"
 
     ```sh
     # Create route table resource
@@ -997,7 +1085,7 @@ User-defined routes
 
 Create NSG
 
-=== "Azure PowerShell"
+=== ":material-microsoft-azure::material-powershell:"
 
     ```powershell
     $nsgRules = @()
@@ -1008,13 +1096,13 @@ Create NSG
     
 View rules
 
-=== "Azure PowerShell"
+=== ":material-microsoft-azure::material-powershell:"
 
     ```powershell
     Get-AzEffectiveNetworkSecurityGroup -NetworkInterfaceName $nicName -ResourceGroupName $rgName
     ```
     
-=== "Azure CLI"
+=== ":material-microsoft-azure::material-bash:"
 
     ```sh
     az network nic list-effective-nsg --name $nicName --resource-group $rgName
@@ -1025,13 +1113,13 @@ Create Bastion
 
 Connecting to a VM requires at least Reader role privileges on the VM, its NIC, and on the Bastion itself.
 
-=== "Azure PowerShell"
+=== ":material-microsoft-azure::material-powershell:"
 
     ```powershell
     New-AzBastion -ResourceGroupName $rgName -Name $n -PublicIpAddress $pip -VirtualNetwork $vnet
     ```
     
-=== "Azure CLI"
+=== ":material-microsoft-azure::material-bash:"
 
     ```sh
     az network bastion create -g $rgName -n $n -l $l --public-ip-address $pip  --vnet-name $vnetName
@@ -1087,13 +1175,13 @@ Publish content in a CDN endpoint
 
 Create DNS zone
 
-=== "Azure PowerShell"
+=== ":material-microsoft-azure::material-powershell:"
 
     ```powershell
     New-AzDnsZone -Name examref.com -ResourceGroupName ExamRefRG
     ```
 
-=== "Azure CLI"
+=== ":material-microsoft-azure::material-bash:"
 
     ```sh
     az network dns zone create --name examref.com --resource-group ExamRefRG
@@ -1102,13 +1190,13 @@ Create DNS zone
 
 Create empty A record
 
-=== "Azure PowerShell"
+=== ":material-microsoft-azure::material-powershell:"
 
     ```powershell
     New-AzDnsRecordSet -Name www -RecordType A -ZoneName examref.com -ResourceGroupName ExamRefRG -Ttl 3600 -DnsRecords (New-AzDnsRecordConfig -IPv4Address "1.2.3.4")
     ```
 
-=== "Azure CLI"
+=== ":material-microsoft-azure::material-bash:"
 
     ```sh
     az network dns record-set a create --name www --zone-name examref.com --resource-group ExamRefRG --ttl 3600
@@ -1116,7 +1204,7 @@ Create empty A record
 
 Create multiple records
 
-=== "Azure PowerShell"
+=== ":material-microsoft-azure::material-powershell:"
 
     ```powershell
     $records = @()
@@ -1125,7 +1213,7 @@ Create multiple records
     New-AzDnsRecordSet -Name "@" -RecordType A -ZoneName examref.com -ResourceGroupName ExamRefRG -Ttl 3600 -DnsRecords $records
     ```
 
-=== "Azure CLI"
+=== ":material-microsoft-azure::material-bash:"
 
     ```sh
     az network dns record-set a add-record --record-set-name www --zone-name examref.com --resource-group ExamRefRG --ipv4-address 1.2.3.4
@@ -1134,7 +1222,7 @@ Create multiple records
 
 Remove record
 
-=== "Azure PowerShell"
+=== ":material-microsoft-azure::material-powershell:"
 
     ```powershell
     $recordset = Get-AzDnsRecordSet -Name www -RecordType A -ZoneName examref.com -ResourceGroupName ExamRefRG
@@ -1143,7 +1231,7 @@ Remove record
     Set-AzDnsRecordSet -RecordSet $recordset
     ```
 
-=== "Azure CLI"
+=== ":material-microsoft-azure::material-bash:"
 
     ```sh
     az network dns record-set a remove-record --record-set-name www --zone-name examref.com --resource-group ExamRefRG --ipv4-address 1.2.3.4
@@ -1151,13 +1239,13 @@ Remove record
 
 Read records
 
-=== "Azure PowerShell"
+=== ":material-microsoft-azure::material-powershell:"
 
     ```powershell
     Get-AzDnsRecordSet -ZoneName examref.com -ResourceGroupName ExamRefRG
     ```
 
-=== "Azure CLI"
+=== ":material-microsoft-azure::material-bash:"
 
     ```sh
     az network dns record-set list --zone-name examref.com --resource-group ExamRefRG -o table 
@@ -1165,7 +1253,7 @@ Read records
 
 Create a virtual network with custom DNS settings
 
-=== "Azure PowerShell"
+=== ":material-microsoft-azure::material-powershell:"
 
     ```powershell
     New-AzVirtualNetwork -Name VNet1 -ResourceGroupName $rgName -Location $location 
@@ -1173,7 +1261,7 @@ Create a virtual network with custom DNS settings
         -DNSServer 10.0.0.4,10.0.0.5 
     ```
 
-=== "Azure CLI"
+=== ":material-microsoft-azure::material-bash:"
 
     ```sh
     az network vnet create --name VNet1 --resource-group $rgName 
@@ -1185,7 +1273,7 @@ Create a virtual network with custom DNS settings
 
 Modify the DNS server configuration of an existing VNET
 
-=== "Azure PowerShell"
+=== ":material-microsoft-azure::material-powershell:"
 
     ```powershell
     $vnet = Get-AzVirtualNetwork -Name $vnetName -ResourceGroupName $rgName
@@ -1195,7 +1283,7 @@ Modify the DNS server configuration of an existing VNET
     Set-AzVirtualNetwork -VirtualNetwork $vnet
     ```
 
-=== "Azure CLI"
+=== ":material-microsoft-azure::material-bash:"
 
     ```sh
     az network vnet update --name $vnetName --resource-group $rgName 
@@ -1205,7 +1293,7 @@ Modify the DNS server configuration of an existing VNET
 
 Restart the VMs in the VNet to pick up the DNS change
 
-=== "Azure PowerShell"
+=== ":material-microsoft-azure::material-powershell:"
 
     ```powershell
     $vm = Get-AzVM -Name VNet1-VM -ResourceGroupName ExamRefRG
@@ -1231,7 +1319,7 @@ Set-AzNetworkInterface -NetworkInterface $nic
 
 Remove custom DNS servers from a VNET
 
-=== "Azure CLI"
+=== ":material-microsoft-azure::material-bash:"
 
     ```sh
     az network vnet update --name VNet1 --resource-group ExamRefRG --remove DHCPOptions.DNSServers
@@ -1239,7 +1327,7 @@ Remove custom DNS servers from a VNET
 
 Set custom DNS servers on a NIC
 
-=== "Azure CLI"
+=== ":material-microsoft-azure::material-bash:"
 
     ```sh
     az network nic update --name VM1-NIC --resource-group ExamRefRG --dns-servers 8.8.8.8 8.8.4.4
@@ -1261,7 +1349,7 @@ Creating a load balancer in PowerShell requires defining objects which are all p
 
 By contrast, in Azure CLI, the load balancer can be defined first with `az network lb create` before adding a probe and rule, passing the name of the load balancer to `--lb-name`.
 
-=== "Azure PowerShell"
+=== ":material-microsoft-azure::material-powershell:"
 
     ```powershell
     $publicIP = New-AzPublicIpAddress -Name ExamRefLB-IP -ResourceGroupName $g -Location $location -AllocationMethod Static 
@@ -1273,7 +1361,7 @@ By contrast, in Azure CLI, the load balancer can be defined first with `az netwo
     $lb = New-AzLoadBalancer -ResourceGroupName -Name -Location -FrontendIpConfiguration $frontendIP -LoadBalancingRule $lbrule -BackendAddressPool $beAddressPool -Probe $healthProbe
     ```
 
-=== "Azure CLI"
+=== ":material-microsoft-azure::material-bash:"
 
     ```sh
     az network public-ip create --name ExamRefLB-IP --resource-group ExamRefRG --location --allocation-method Static
@@ -1284,18 +1372,3 @@ By contrast, in Azure CLI, the load balancer can be defined first with `az netwo
     ```
 
 
-## IAM
-
-Add guest user
-
-=== "Azure Portal"
-
-    ![](/img/az-ad.jpg)
-    ![](/img/az-ad-guest.jpg)
-    
-
-=== "Azure PowerShell"
-
-    ```powershell
-    New-AzureADMSInvitation -InvitedUserEmailAddress someexternaluser@externaldomain.com -SendInvitationMessage $True -InviteRedirectUrl "http://myapps.onmicrosoft.com"
-    ```

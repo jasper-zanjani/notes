@@ -4,7 +4,7 @@
 
 ### Hello, world!
 
-=== "C#"
+=== ":material-language-csharp:"
 
     ```csharp
     using System;
@@ -18,7 +18,7 @@
     }
     ```
 
-=== "Python"
+=== ":material-language-python:"
 
     ```py
     def main():
@@ -33,7 +33,7 @@
 
 Parse a date string
 
-=== "C#"
+=== ":material-language-csharp:"
 
     ```csharp
     string rawDate = "07/04/1776";
@@ -55,9 +55,9 @@ Parse a date string
 
 ## File operations
 
-Write text to file
+### Write text file
 
-=== "C#"
+=== ":material-language-csharp:"
 
     ```csharp
     using (StreamWriter writer = File.CreateText("test.txt"))
@@ -66,24 +66,48 @@ Write text to file
     }
     ```
 
-=== "Python"
+=== ":material-language-python:"
 
     ```py
     with open('text', 'w') as f:
         f.write('Hello, world!')
     ```
 
-Read text from file
+### Read text file
 
-=== "C#"
+=== ":material-language-csharp:"
 
     ```csharp
+    using System.IO;
+
+    string raven = File.ReadAllText("raven");
+    ```
+
+=== ":material-language-csharp:"
+
+    ```csharp
+    using System.IO;
+
+    string[] raven = File.ReadAllLines("raven");
+    ```
+
+
+=== ":material-language-csharp:"
+
+    ```csharp
+    using System.IO;
+
     using (StreamReader reader = File.OpenText("raven"))
     {
         reader.ReadToEnd();
     }
+    ```
 
-    // Alternatively:
+=== ":material-language-csharp:"
+
+    ```csharp
+    using System.IO;
+
     using (StreamReader reader = File.OpenText("raven"))
     {
         string s;
@@ -94,16 +118,85 @@ Read text from file
     }
     ```
 
-=== "Python"
+=== ":material-language-python:"
 
     ```py
     with open('raven') as f:
         f.readlines()
     ```
 
+### Copy file
+
+=== ":material-language-csharp:"
+
+    ```csharp
+    using System.IO;
+
+    File.Copy('raven', 'raven.bak')
+    ```
+
+=== ":material-language-python:"
+
+    ```python
+    import shutil
+
+    shutil.copyfile('raven', 'raven.bak')
+    ```
+
+=== ":material-bash:"
+
+    ```sh
+    cp ./raven{,.bak}
+    ```
+
+=== ":material-powershell:"
+
+    ```powershell
+    Copy-Item .\raven .\raven.bak
+    ```
+
+### Copy file, overwriting
+
+=== ":material-language-csharp:"
+
+    ```csharp
+    using System.IO;
+
+    File.Copy('raven', 'raven.bak', true)
+    ```
+
+=== ":material-language-python:"
+
+    ```python
+    import shutil
+
+    shutil.copyfile('raven', 'raven.bak')
+    ```
+
+=== ":material-bash:"
+
+    ```sh
+    cp -f ./raven{,.bak}
+    ```
+
+=== ":material-powershell:"
+
+    ```powershell
+    Copy-Item -Force .\raven .\raven.bak
+    ```
+
+### Move file
+
+```csharp
+using System.IO;
+
+File.Move('raven', 'raven.bak');
+```
+
+
 ### CSV
 
-=== "C#"
+=== ":material-language-csharp:"
 
     ```csharp
     using System;
@@ -136,7 +229,7 @@ Read text from file
     }
     ```
 
-=== "Python"
+=== ":material-language-python:"
 
     ```py
     import csv
@@ -167,14 +260,14 @@ using (var stream = await storageFile.OpenAsync(FileAccessMode.Read))
 
 Integer
 
-=== "C#"
+=== ":material-language-csharp:"
 
     ```csharp
     Random r = new System.Random();
     int result = r.Next(1, 6);
     ```
 
-=== "Python"
+=== ":material-language-python:"
 
     ```py
     import random
@@ -183,14 +276,14 @@ Integer
 
 Real number
 
-=== "C#"
+=== ":material-language-csharp:"
 
     ```csharp
     Random r = new System.Random();
     int result = r.NextDouble();
     ```
 
-=== "Python"
+=== ":material-language-python:"
 
     ```py
     import random
@@ -200,7 +293,7 @@ Real number
 ### Double array
 
 
-=== "Python"
+=== ":material-language-python:"
 
     ```py
     primes = [1, 2, 3, 5, 7, 11, 13, 17, 19, 23]
@@ -224,7 +317,7 @@ Euclid     Alexandria     325 BC
 Pythagoras Samos          570 BC
 ```
 
-=== "C#"
+=== ":material-language-csharp:"
 
     ```csharp
     for (int i = 0; i <= greeks.GetUpperBound(0); i++)
@@ -233,7 +326,7 @@ Pythagoras Samos          570 BC
     }
     ```
 
-=== "Python"
+=== ":material-language-python:"
 
     ```py
     for r in greeks:
@@ -244,14 +337,14 @@ Pythagoras Samos          570 BC
 
 Currency formatting
 
-=== "C#"
+=== ":material-language-csharp:"
 
     ```csharp
     Console.WriteLine($"{123456.789:C }");          //  $123,456.79
     Console.WriteLine(123456.789d.ToString("C"));   //  $123,456.79
     ```
 
-=== "Python"
+=== ":material-language-python:"
 
     === "f-string"
 
@@ -280,7 +373,7 @@ Currency formatting
 
 Such a loop will continuously prompt for valid input, in this case an integer.
 
-=== "C#"
+=== ":material-language-csharp:"
 
     === "Parse"
 
@@ -311,7 +404,7 @@ Such a loop will continuously prompt for valid input, in this case an integer.
         }
         ```
 
-=== "Python"
+=== ":material-language-python:"
 
     ```py
     while True:
@@ -321,43 +414,115 @@ Such a loop will continuously prompt for valid input, in this case an integer.
             # Integer was not able to be parsed
     ```
 
-## CLI
+## Terminal
+
+### Color output
+
+=== ":material-language-csharp:"
+
+    === ":red_square:"
+
+        ```csharp
+        Console.Color = ConsoleColor.Red;
+        Console.WriteLine("Red!")
+        Console.ResetColor();
+        ```
+
+
+    === ":green_square:"
+
+        ```csharp
+        Console.Color = ConsoleColor.Green;
+        Console.WriteLine("Green!")
+        Console.ResetColor();
+        ```
+
+    === ":yellow_square:"
+
+        ```csharp
+        Console.Color = ConsoleColor.Yellow;
+        Console.WriteLine("Yellow!")
+        Console.ResetColor();
+        ```
+
+    === ":blue_square:"
+
+        ```csharp
+        Console.Color = ConsoleColor.Blue;
+        Console.WriteLine("Blue!")
+        Console.ResetColor();
+        ```
+
+    === ":purple_square:"
+
+        ```csharp
+        Console.Color = ConsoleColor.Magenta;
+        Console.WriteLine("Magenta!")
+        Console.ResetColor();
+        ```
+
+=== ":material-language-python: colorama"
+
+    === ":red_square:"
+
+        ```python
+        print(f"{colorama.Fore.RED} Red! {colorama.Style.RESET_ALL}")
+        ```
+
+    === ":green_square:"
+
+        ```python
+        print(f"{colorama.Fore.GREEN} Green! {colorama.Style.RESET_ALL}")
+        ```
+
+    === ":yellow_square:"
+
+        ```python
+        print(f"{colorama.Fore.YELLOW} Yellow! {colorama.Style.RESET_ALL}")
+        ```
+
+    === ":blue_square:"
+
+        ```python
+        print(f"{colorama.Fore.BLUE} Blue! {colorama.Style.RESET_ALL}")
+        ```
+
+    === ":purple_square:"
+
+        ```python
+        print(f"{colorama.Fore.MAGENTA} Magenta! {colorama.Style.RESET_ALL}")
+        ```
+
+
 
 ### Parameterized "Hello, world!"
 
-=== "C#"
+=== ":material-language-csharp:"
 
     ```csharp
-    using System;
     using System.CommandLine;
     using System.CommandLine.Invocation;
 
-    namespace CommandLine
+    static int Main(string[] args)
     {
-        class Program
+        var cmd = new RootCommand
         {
-            static int Main(string[] args)
-            {
-                var cmd = new RootCommand
-                {
-                    new Argument<string>("name"),//, "Your name"),
-                    new Option<string?>(new[] {"--greeting", "-g" },"The greeting to use"),
-                };
+            new Argument<string>("name"),//, "Your name"),
+            new Option<string?>(new[] {"--greeting", "-g" },"The greeting to use"),
+        };
 
-                cmd.Handler = CommandHandler.Create<string, string?>(HandleGreeting);
+        cmd.Handler = CommandHandler.Create<string, string?>(HandleGreeting);
 
-                return cmd.Invoke(args);
-            }
+        return cmd.Invoke(args);
+    }
 
-            static void HandleGreeting(string? greeting, string name)
-            {
-                Console.WriteLine($"{greeting}, {name}");
-            }
-        }
+    static void HandleGreeting(string? greeting, string name)
+    {
+        Console.WriteLine($"{greeting}, {name}");
     }
     ```
 
-=== "Python"
+=== ":material-language-python:"
 
     ```py
     import argparse
@@ -384,39 +549,32 @@ Such a loop will continuously prompt for valid input, in this case an integer.
 
 ### Oxford comma
 
-=== "C#"
+=== ":material-language-csharp:"
 
     ```csharp
-    using System;
     using System.CommandLine;
     using System.CommandLine.Invocation;
     using System.Linq;
 
-    namespace OxfordComma
+    static int Main(string[] args)
     {
-        class Program
+        var cmd = new RootCommand
         {
-            static int Main(string[] args)
-            {
-                var cmd = new RootCommand
-                {
-                    new Argument<string[]>("names")
-                };
+            new Argument<string[]>("names")
+        };
 
-                cmd.Handler = CommandHandler.Create<string[]>(Handler);
+        cmd.Handler = CommandHandler.Create<string[]>(Handler);
 
-                return cmd.Invoke(args);
-            }
+        return cmd.Invoke(args);
+    }
 
-            static void Handler(string[] names)
-            {
-                Console.WriteLine($"{String.Join(", ", names.Take(names.Length -1))}, and {names.Last<string>()}");
-            }
-        }
+    static void Handler(string[] names)
+    {
+        Console.WriteLine($"{String.Join(", ", names.Take(names.Length -1))}, and {names.Last<string>()}");
     }
     ```
 
-=== "Python"
+=== ":material-language-python:"
 
     ```py
     #!/usr/bin/env python3
@@ -452,7 +610,7 @@ Such a loop will continuously prompt for valid input, in this case an integer.
 
 ### Calculator
 
-=== "Python (argparse)"
+=== ":material-language-python: (argparse)"
 
     ```py
     import argparse
@@ -495,7 +653,7 @@ Such a loop will continuously prompt for valid input, in this case an integer.
 
 ### Input validation
 
-=== "C#"
+=== ":material-language-csharp:"
 
     ```csharp
     string input;
@@ -515,6 +673,34 @@ Such a loop will continuously prompt for valid input, in this case an integer.
     System.Console.WriteLine($"Number provided: {inputParsed}");
     ```
 
+### Subcommands
+
+```
+./app command subcommand argument
+```
+
+=== ":material-language-csharp:"
+
+    ```csharp
+    static int Main(string[] args)
+    {
+        var rootCommand = new RootCommand("command");
+        var command = new Command("subcommand")
+        {
+            new Argument<string>("argument");
+        };
+        command.Handler = new CommandHandler.Create<string>(argumentHandler);
+        rootCommand.Add(command);
+        rootCommand.Invoke(args);
+    }
+
+    private static void argumentHandler(string argument)
+    {
+        /* ... */
+    }
+    ```
+
+
 ## Object-oriented programming
 
 ### DnD character
@@ -522,7 +708,7 @@ Such a loop will continuously prompt for valid input, in this case an integer.
 
 
 
-=== "C#"
+=== ":material-language-csharp:"
 
     === "Constructor"
 
@@ -632,7 +818,7 @@ Such a loop will continuously prompt for valid input, in this case an integer.
         }
         ```
 
-=== "Python"
+=== ":material-language-python:"
 
     === "Constructor"
 
@@ -711,7 +897,7 @@ Such a loop will continuously prompt for valid input, in this case an integer.
 
 === "Player class"
 
-    === "C++"   
+    === ":material-language-cpp:"   
 
         ```cpp
         #include <string>
@@ -757,7 +943,7 @@ Such a loop will continuously prompt for valid input, in this case an integer.
         };
         ```
 
-    === "Python"
+    === ":material-language-python:"
 
         ```py
         class Player():
@@ -789,7 +975,7 @@ Such a loop will continuously prompt for valid input, in this case an integer.
 
 === "Subclasses"
 
-    === "C++"
+    === ":material-language-cpp:"
 
         ```cpp
         class Warrior : public Player {
@@ -811,7 +997,7 @@ Such a loop will continuously prompt for valid input, in this case an integer.
         };
         ```
 
-    === "Python"
+    === ":material-language-python:"
 
         ```py
         class Warrior(Player):
@@ -835,7 +1021,7 @@ Such a loop will continuously prompt for valid input, in this case an integer.
 
 === "Race"
 
-    === "C++"
+    === ":material-language-cpp:"
 
         ```cpp
         enum Race { 
@@ -845,7 +1031,7 @@ Such a loop will continuously prompt for valid input, in this case an integer.
         };
         ```
 
-    === "Python"
+    === ":material-language-python:"
     
         ```py
         import enum
@@ -870,7 +1056,7 @@ The **StarshipClass** enum defines the available starship types.
 
 === "Officer"
 
-    === "C#"
+    === ":material-language-csharp:"
 
         ```csharp
         public interface IOfficer
@@ -893,7 +1079,7 @@ The **StarshipClass** enum defines the available starship types.
         ```
 
 
-    === "PowerShell"
+    === ":material-powershell:"
 
         ```powershell
         class Captain
@@ -912,7 +1098,7 @@ The **StarshipClass** enum defines the available starship types.
         }
         ```
 
-    === "C++"
+    === ":material-language-cpp:"
 
         ```cpp
         #include <string>
@@ -927,11 +1113,11 @@ The **StarshipClass** enum defines the available starship types.
         }
         ```
 
-    === "Python"
+    === ":material-language-python:"
 
 === "Starship"
 
-    === "C#"
+    === ":material-language-csharp:"
 
         ```csharp
         public interface IStarship
@@ -954,9 +1140,9 @@ The **StarshipClass** enum defines the available starship types.
         }
         ```
 
-    === "PowerShell"
+    === ":material-powershell:"
 
-    === "C++"
+    === ":material-language-cpp:"
 
         ```cpp
         class Starship
@@ -994,7 +1180,7 @@ The **StarshipClass** enum defines the available starship types.
         #endif // STARSHIP_H
         ```
 
-    === "Python"
+    === ":material-language-python:"
 
         ```py
         class Starship:
@@ -1037,7 +1223,7 @@ The **StarshipClass** enum defines the available starship types.
 
 === "StarshipClass"
 
-    === "C#"
+    === ":material-language-csharp:"
 
         ```csharp
         public enum StarshipClass
@@ -1052,9 +1238,9 @@ The **StarshipClass** enum defines the available starship types.
         }
         ```
 
-    === "PowerShell"
+    === ":material-powershell:"
 
-    === "C++"
+    === ":material-language-cpp:"
 
         ```cpp
         enum StarshipClass 
@@ -1069,7 +1255,7 @@ The **StarshipClass** enum defines the available starship types.
         };
         ```
 
-    === "Python"
+    === ":material-language-python:"
 
         ```py
         from enum import Enum
@@ -1092,7 +1278,7 @@ And the **CaptainSelector** class is passed to StarshipDeployment by dependency 
 This boils down to a check on the Grade property, which is simple to test in testing frameworks where a mocked Officer object can be set up with unsatisfactory Grade values.
 
 
-=== "C#"
+=== ":material-language-csharp:"
 
     ```csharp
     public class CaptainSelector
@@ -1119,7 +1305,7 @@ These checks provide opportunities to mock Starship and Officer objects.
 - `ValidateRegistry()` makes sure the Starship's registry number begins with NCC or NX
 - `Evaluate()` runs all the other methods in the class and returns True only if all checks pass.
 
-=== "C#"
+=== ":material-language-csharp:"
 
     ```csharp
     public class StarshipValidator : IStarshipValidator
@@ -1147,7 +1333,7 @@ These checks provide opportunities to mock Starship and Officer objects.
 **StarshipDeployment** takes a [StarshipValidator](#starshipvalidator) object by dependency injection, which it uses to perform checks on a given Starship upon invocation of `Deploy`, which returns a StarshipMission object.
 This provides the opportunity to test a mocked validator for invocation of the `Evaluate()` method.
 
-=== "C#"
+=== ":material-language-csharp:"
 
     ```csharp
     public class StarshipDeployment
