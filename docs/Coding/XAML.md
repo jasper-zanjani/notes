@@ -7,11 +7,11 @@ TODO:
     - [Windows Community Toolkit Sample App](https://aka.ms/windowstoolkitapp)
     - [Win2D Example Gallery](https://www.microsoft.com/en-us/p/win2d-example-gallery/9nblgggxwt9f)
 - Extend Superheroes app with
-    - [ListDetailsView](#listdetailsview)
-    - :material-file-document-multiple-outline: [NavigationView](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.navigationview?view=winrt-19041)
-    - :material-file-document-multiple-outline: [DataGrid](https://docs.microsoft.com/en-us/windows/communitytoolkit/controls/datagrid)
-    - :material-file-document-multiple-outline: [SplitView](https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/split-view)
-- Markdown browser using :material-file-document-multiple-outline: [MarkdownTextBlock](https://docs.microsoft.com/en-us/windows/communitytoolkit/controls/markdowntextblock)
+    - [ ]  [DataGrid :material-file-document-edit-outline:](#datagrid)
+    - [ ]  [SplitView :material-file-document-multiple-outline:](https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/split-view)
+    - [x] [ListDetailsView :material-file-document-edit-outline:](#listdetailsview)
+    - [x] [NavigationView :material-file-document-edit-outline:](#navigationview)
+- Markdown browser using [MarkdownTextBlock :material-file-document-multiple-outline:](https://docs.microsoft.com/en-us/windows/communitytoolkit/controls/markdowntextblock)
 - Complete [interactive image gallery tutorial](https://docs.microsoft.com/en-us/windows/uwp/design/basics/xaml-basics-ui)
 - [UWP FPS using DirectX](https://docs.microsoft.com/en-us/windows/uwp/gaming/tutorial--create-your-first-uwp-directx-game)
 - Dependency properties
@@ -84,22 +84,22 @@ XAML namespaces apply only to the specific element on which they are declared an
 
 Most XAML files have two `xmlns` declarations
 
-- **`xmlns`** maps a default XAML namespace
-- **`xmlns:x`** maps a separate XAML namespace for XAML-defined **language elements** to the `x:` prefix:
-- **`xmlns:mc`** indicates and supports a markup compatibility mode for reading XAML.
+- **xmlns** maps a default XAML namespace
+- **xmlns:x** maps a separate XAML namespace for XAML-defined **language elements** to the `x:` prefix:
+- **xmlns:mc** indicates and supports a markup compatibility mode for reading XAML.
 ```xml
 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 mc:Ignorable="d"
 ```
 ### Directives
 
-- [**`x:Name`**](https://docs.microsoft.com/en-us/windows/uwp/xaml-platform/x-name-attribute "x:Name attribute") uniquely identifies object elements for access to the object from code-behind 
-- [**`x:Key`**](https://docs.microsoft.com/en-us/windows/uwp/xaml-platform/x-key-attribute "x:Key attribute") sets a unique key for each resource in a **ResourceDictionary** 
-- [**`x:Class`**](https://docs.microsoft.com/en-us/windows/uwp/xaml-platform/x-key-attribute) specifies the CLR namespace and class name for the class that provides code-behind 
+- [**x:Name**](https://docs.microsoft.com/en-us/windows/uwp/xaml-platform/x-name-attribute "x:Name attribute") uniquely identifies object elements for access to the object from code-behind 
+- [**x:Key**](https://docs.microsoft.com/en-us/windows/uwp/xaml-platform/x-key-attribute "x:Key attribute") sets a unique key for each resource in a **ResourceDictionary** 
+- [**x:Class**](https://docs.microsoft.com/en-us/windows/uwp/xaml-platform/x-key-attribute) specifies the CLR namespace and class name for the class that provides code-behind 
 for a XAML page. The `x:Class` directive configures XAML markup compilation to join partial classes 
 between markup and code-behind. In this example it can be seen how it refers to the `MainPage` 
 class within the `Project` namespace. ([src](https://app.pluralsight.com/course-player?clipId=392e67d1-49ec-4c5c-987a-cd83ff56623b))
-- [**`x:Bind`**](#data-binding) is a form of [data-binding](#data-binding)
+- [**x:Bind**](#data-binding) is a form of [data-binding](#data-binding)
 
 
 
@@ -130,7 +130,7 @@ For example, to join any code-behind to a XAML file through a partial class, you
 
 ### Attached property
 
-Attached properties can be modified or queried in C# code as well, as long as the XAML element has an **`x:Name`** defined, which gives that particular element an identifier.
+Attached properties can be modified or queried in C# code as well, as long as the XAML element has an **x:Name** defined, which gives that particular element an identifier.
 For the column property of `Grid`, the static methods `GetColumn` and `SetColumn` are available.
 
 Here a button press changes the column value of an enclosing Grid and toggles between two different [`Symbol`](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.symbol?view=winrt-19041) values. ([src](https://app.pluralsight.com/course-player?clipId=8e0d702e-1b6c-40ee-a3e6-5c999e2f9659))
@@ -347,7 +347,7 @@ The most basic method of adding mock data is by **hardcoding data in the XAML ma
 
 Somewhat more sophisticated is the option of **hardcoding data in the code-behind**.
 The `x:Bind` directive can be used to bind an `IEnumerable` data source to either the `Items` or `ItemsSource` attributes.
-An **`ObservableCollection<T>`** is preferred in WinUI programming because it raises events when properties are changed, but Lists and Arrays also work. 
+An **ObservableCollection<T>** is preferred in WinUI programming because it raises events when properties are changed, but Lists and Arrays also work. 
 If the collection is made of objects, the `DisplayMemberPath` allows the specification of a particular property on those objects to be displayed.
 Notably, **classes** specifically need to be used, and not structs, for the members of these collections.
 
@@ -514,7 +514,7 @@ There are two data binding types available in XAML ([src](https://app.pluralsigh
 - [**Binding markup extension**](https://docs.microsoft.com/en-us/dotnet/desktop/wpf/advanced/binding-markup-extension?view=netframeworkdesktop-4.8) resolves the binding path at runtime. It can accept data sources from the **binding properties**
 `ElementName`, `Source`, and `RelativeSource`.
 If none of these are defined, then the binding markup extension resolves to the DataContext property.
-- [**`x:Bind`**](https://docs.microsoft.com/en-us/windows/uwp/xaml-platform/x-bind-markup-extension) resolves the binding path at **compile-time**, generating C# code and offering better performance and compile-time errors. You can also step into the compiled code, providing a better debugging experience. `x:Bind` should generally be preferred, however it is available only in UWP.
+- [**x:Bind**](https://docs.microsoft.com/en-us/windows/uwp/xaml-platform/x-bind-markup-extension) resolves the binding path at **compile-time**, generating C# code and offering better performance and compile-time errors. You can also step into the compiled code, providing a better debugging experience. `x:Bind` should generally be preferred, however it is available only in UWP.
 
 
 `x:Bind`, in contrast, binds only to the parent `Page` or `UserControl` element. So any property of MainPage will be accessible, and any property of that object will also be accessible using dot notation.
@@ -555,7 +555,7 @@ Most bindings are easily translated between the two types:
     </ListView>
     ```
 
-Notably, the default binding mode of the binding markup extension is **`OneWay`**, whereas that of `x:Bind` is **`OneTime`**, although this can be changed by setting `x:DefaultBindMode` on the root element.
+Notably, the default binding mode of the binding markup extension is **OneWay`**, whereas that of `x:Bind` is **`OneTime**, although this can be changed by setting `x:DefaultBindMode` on the root element.
 
 === "Changing default bind mode"
 
@@ -695,7 +695,7 @@ Resources:
 
 ### Action on focus
 
-UI elements expose the **`GotFocus`** event hook for when a user clicks or tabs into a control.
+UI elements expose the **GotFocus** event hook for when a user clicks or tabs into a control.
 
 Example handler selecting all text in a TextBox: ([src](https://asp-net-example.blogspot.com/2016/12/uwp-select-textbox-all-text-when-get.html))
 
@@ -831,7 +831,7 @@ The selected item and the path to the string property are combined using dot not
 
 #### Custom control
 
-The textboxes can also be consolidated into a custom control using **`UserControl`**. 
+The textboxes can also be consolidated into a custom control using **UserControl**. 
 In this case, the custom control must expose a target property that will be bound to the ListView's SelectedItem property. 
 
 
@@ -936,7 +936,7 @@ Notably, the ListView does not reflect any changes made yet.
 #### ListView
 
 In order for the ListView to update, the **underlying model** must raise the **PropertyChanged** event.
-I really don't understand this very well, so here is the Observable class that implements the **`INotifyPropertyChanged`** interface.
+I really don't understand this very well, so here is the Observable class that implements the **INotifyPropertyChanged** interface.
 The model must inherit from this base class and the Set accessor of any property should fire `OnPropertyChanged()`.
 
 ```csharp
@@ -1154,7 +1154,7 @@ If not defined, no element will be selected.
 
 ### CommandBar
 
-[**`CommandBar`**](https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/app-bars) is a lightweight control that can organize a bar of buttons.
+[**CommandBar**](https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/app-bars) is a lightweight control that can organize a bar of buttons.
 
 ![](/img/GUI-WBC-CommandBar.jpg)
 
@@ -1174,10 +1174,14 @@ If not defined, no element will be selected.
 ```
 </details>
 
+### DataGrid [:material-file-document-multiple-outline:](https://docs.microsoft.com/en-us/windows/communitytoolkit/controls/datagrid)
+
+
+
 
 ### Dialog boxes
 
-In XAML, the **`MessageDialog`** object can be used to create a **modal** dialog box (i.e. one that does not allow interaction with the main window until the dialog box has been cleared).
+In XAML, the **MessageDialog** object can be used to create a **modal** dialog box (i.e. one that does not allow interaction with the main window until the dialog box has been cleared).
 
 The `MessageDialog` object can take a string argument containing the text of the dialog box.
 It is actually displayed by calling the object's `ShowAsync()` method.
@@ -1210,8 +1214,8 @@ namespace WiredBrainCoffee.UWP
 
 ### Grid
 
-The **`Grid`** layout panel is analogous to the **`grid`** geometry manager in tkinter.
-However, in XAML you are forced to explicitly declare **`RowDefinition`** and **`ColumnDefinition`** elements. 
+The **Grid`** layout panel is analogous to the **`grid** geometry manager in tkinter.
+However, in XAML you are forced to explicitly declare **RowDefinition`** and **`ColumnDefinition** elements. 
 Whereas in tkinter, the widget being placed declares its own grid position.
 If the grid is sparse, the empty rows and columns appear to be ignored.
 
@@ -1283,11 +1287,46 @@ Grid **star-sizing** works similar to `flex-grow` and `flex-shrink` CSS style st
 
 
 
-### ListDetailsView
+### ListDetailsView [:material-microsoft:](https://docs.microsoft.com/en-us/windows/communitytoolkit/controls/masterdetailsview "Microsoft Docs - ListDetailsView")
 
-![](/img/xaml-listdetailsview.gif)
 
-**ListDetailsView** is a custom control available from the [Windows Community Toolkit](https://docs.microsoft.com/en-us/windows/communitytoolkit/) (Nuget package Microsoft.Toolkit.UWP) that implements the [Master/Details pattern](#master-details-pattern).
+**ListDetailsView** is a custom control available from the [Windows Community Toolkit](https://docs.microsoft.com/en-us/windows/communitytoolkit/) (Nuget package `Microsoft.Toolkit.UWP`) that implements the [Master/Details pattern](#master-details-pattern).
+
+=== "Illustration"
+
+    ![](/img/ListDetailsView.gif)
+
+=== "Basic structure"
+
+    - `xmlns:toolkit="using:Microsoft.Toolkit.Uwp.UI.Controls`: namespace
+        - **toolkit:ListDetailsView**
+            - `toolkit:ListDetailsView.`**ItemTemplate** property-element for how items are rendered in sidebar
+            - `toolkit:ListDetailsView.`**DetailsTemplate** property-element for how items are rendered in the main pane
+            - `toolkit:ListDetailsView.`**NoSelectionContentTemplate** property-element for how the main pane is rendered with no item selected
+            - `toolkit:ListDetailsView.`**AppCommandBar**
+
+=== "XAML"
+
+    ```xml
+    <Page
+        <!-- ... -->
+        xmlns:toolkit="using:Microsoft.Toolkit.Uwp.UI.Controls">
+        <toolkit:ListDetailsView>
+            <toolkit:ListDetailsView.ItemTemplate>
+            </toolkit:ListDetailsView.ItemTemplate>
+
+            <toolkit:ListDetailsView.DetailsTemplate>
+            </toolkit:ListDetailsView.DetailsTemplate>
+
+            <toolkit:ListDetailsView.NoSelectionContentTemplate>
+            </toolkit:ListDetailsView.NoSelectionContentTemplate>
+
+            <toolkit:ListDetailsView.AppCommandBar>
+            </toolkit:ListDetailsView.AppCommandBar>
+        </toolkit:ListDetailsView>
+    </Page>
+    ```
+
 
 ### ListView
 
@@ -1372,6 +1411,109 @@ If not defined, no element will be selected.
     }
     ```
 
+### NavigationView [:material-microsoft:](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.navigationview?view=winrt-19041 "Microsoft Docs - NavigationView Class") [:material-file-document-multiple-outline:](https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/navigationview)
+
+**NavigationView** provides top-level navigation by implementing a collapsible navigation bar ("hamburger menu") that is reactive to window size.
+It organizes two areas - **Pane** and **Content** - into two layout options that differ in the placement of the Pane. 
+The **Header** content is placed above the Content in both layouts.
+
+
+=== "Left"
+
+    ![](/img/NavigationView-anatomy-Left.png)
+
+=== "Top"
+
+    ![](/img/NavigationView-anatomy-Top.png)
+
+
+
+It has various **display modes** that can be specified by setting **PaneDisplayMode**.
+By default, PaneDisplayMode is set to **Auto**, which enables **adaptive** (i.e. reactive) behavior, switching between Left, LeftCompact, and LeftMinimal display modes depending on window size.
+
+
+=== "Left"
+
+    ![](/img/NavigationView-Left.png)
+
+=== "LeftCompact"
+
+    ![](/img/NavigationView-LeftCompact.png)
+
+=== "LeftMinimal"
+
+    ![](/img/NavigationView-LeftMinimal.png)
+
+=== "Top"
+
+    ![](/img/NavigationView-Top.png)
+
+The Pane is the central feature of NavigationView, and it can contain many items organized into several sections.
+
+- [**MenuItems** :material-microsoft:](https://docs.microsoft.com/en-us/uwp/api/microsoft.ui.xaml.controls.navigationview.MenuItems) is the main section containing NavigationView items at the beginning of the control. 
+- [FooterMenuItems :material-microsoft:](https://docs.microsoft.com/en-us/uwp/api/microsoft.ui.xaml.controls.navigationview.FooterMenuItems) is similar but they are added to the end of the control.
+- [PaneTitle :material-microsoft:](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.navigationview.PaneTitle) can accept text, which will appear next to the menu button.
+- [PaneHeader :material-microsoft:](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.navigationview.PaneHeader) is similar but can accept non-text content.
+- [PaneFooter :material-microsoft:](https://docs.microsoft.com/en-us/uwp/api/microsoft.ui.xaml.controls.navigationview.PaneFooter) can also accept any content.
+
+NavigationView items can be of various types:
+
+1. **NavigationViewItemHeader** can visually organize other navigation items
+2. [**NavigationViewItem** :material-microsoft:](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.navigationviewitem) exposes Content and Icon properties.
+3. **NavigationViewItemSeparator**
+4. **AutoSuggestBox**
+5. **Settings button** visible by default but can be hidden by setting **IsSettingsVisible**
+
+=== "Left"
+
+    ![](/img/NavigationView-anatomy-items-Left.png)
+
+=== "Top"
+
+    ![](/img/NavigationView-anatomy-items-Top.png)
+
+=== "MenuItems"
+
+    ```xml
+    <Page>
+        <NavigationView>
+            <NavigationView.MenuItems/>
+        </NavigationView>
+    </Page>
+    ```
+
+
+Navigation using NavigationView is not automatically implemented but relies on event handling. 
+NavigationView raises an **ItemInvoked** event when selected, and if the selection has changed then **SelectionChanged** is also raised.
+
+NavigationView also feature a Back button, which can be disabled or removed by setting **IsBackButtonVisible** or **IsBackEnabled** to false.
+If enabled, this button raises the **BackRequested** event.
+
+Typical implementations pair NavigationView with a **Frame** nested within **ScrollViewer** to support navigating to different views while supporting the back button (see below).
+
+=== "XAML"
+
+    ```xml
+    <Page>
+        <Grid>
+            <NavigationView>
+                <ScrollViewer>
+                    <Frame x:Name="ContentFrame"/>
+                </ScrollViewer>
+            </NavigationView>
+        </Grid>
+    </Page>
+    ```
+
+=== "Code-behind"
+
+    ```csharp
+    private void Navigation_ItemInvoked(NavigationView sender, NavigationViewItemInvokedArgs args)
+    {
+        ContentFrame.Navigate(typeof(Page1));
+    }
+    ```
+
 ### Page
 
 The **Page** element in [UWP](#uwp) is equivalent to `Window` in WPF.
@@ -1382,7 +1524,7 @@ Page elements can only accept a single Content sub-element, necessitating the us
 
 ### RelativePanel
 
-**`RelativePanel`** allows children to declare attributes (e.g. `RelativePanel.RightOf` ) to specify position relative to the `x:Name` of other children. This is useful in building responsive layouts.
+**RelativePanel** allows children to declare attributes (e.g. `RelativePanel.RightOf` ) to specify position relative to the `x:Name` of other children. This is useful in building responsive layouts.
 
 Supports several attached properties that allow elements to be aligned with siblings or with the panel itself.
 
@@ -1424,7 +1566,7 @@ Here, [Buttons](#button) will now be able to be styled using a [ markup extensio
 Managing a consistent style will typically necessitate using multiple resource dictionaries.
 But some elements can only contain a single ResourceDictionary element.
 
-The solution is to place a **`ResourceDictionary.MergedDictionaries`** property element within the outermost `ResourceDictionary`.
+The solution is to place a **ResourceDictionary.MergedDictionaries** property element within the outermost `ResourceDictionary`.
 Multiple `ResourceDictionary` objects can be placed as children of it.
 
 ```xml
@@ -1453,14 +1595,14 @@ However, by setting the SplitView instance's `IsPaneOpen` attribute to True it c
 
 The `DisplayMode` attribute controls how the Pane interacts with Content with opened:
 
-- **`Overlay`**: Pane covers up Content
-- **`Inline`**: Pane pushes Content to the right.
-- **`CompactInline`**: Where Pane will fit Pane elements closely, if `CompactPaneLength` is not specified
-- **`CompactOverley`**: Pane's dimensions can be specified using `CompactPaneLength` and `OpenPaneLength`
+- **Overlay**: Pane covers up Content
+- **Inline**: Pane pushes Content to the right.
+- **CompactInline**: Where Pane will fit Pane elements closely, if `CompactPaneLength` is not specified
+- **CompactOverley**: Pane's dimensions can be specified using `CompactPaneLength` and `OpenPaneLength`
 
 ### StackPanel
 
-The **`StackPanel`** layout panel in XAML is similar in function to the **`pack()`** geometry manager, although its default behavior appears to horizontally center elements and stack them vertically.
+The **StackPanel`** layout panel in XAML is similar in function to the **`pack()** geometry manager, although its default behavior appears to horizontally center elements and stack them vertically.
 
 Notably, StackPanel does not support scroll bars. ([src](https://app.pluralsight.com/course-player?clipId=9600c619-e37a-445b-890e-d9da71d048cf))
 
@@ -1503,7 +1645,7 @@ Notably, StackPanel does not support scroll bars. ([src](https://app.pluralsight
 
 ### VariableSizedWrapGrid
 
-**`VariableSizedWrapGrid`** can be used to define a field of tiles similar to an HTML flex container (`display: flex;` with `flex-wrap: wrap;`). The `Orientation` property is similar to a flex container's `flex-direction`, in that the direction of alignment can be specified.
+**VariableSizedWrapGrid** can be used to define a field of tiles similar to an HTML flex container (`display: flex;` with `flex-wrap: wrap;`). The `Orientation` property is similar to a flex container's `flex-direction`, in that the direction of alignment can be specified.
 
 <details>
 <summary><img src="/img/GUI-VariableSizedWrapGrid.gif"/></summary>

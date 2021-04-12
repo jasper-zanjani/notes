@@ -1,0 +1,5604 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="http://localhost/Coding/C%2B%2B/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.0.6">
+    
+    
+      
+        <title>C++ - 🧠</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.2c0c5eaf.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.7fa14f5b.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#preprocessing" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="🧠" class="md-header__button md-logo" aria-label="🧠" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            🧠
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              C++
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="md-header__options">
+      
+    </div>
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="🧠" class="md-nav__button md-logo" aria-label="🧠" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    🧠
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        🏠 Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Certifications/" class="md-nav__link">
+        🥇 Certifications
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud/" class="md-nav__link">
+        ☁&#xfe0f; Cloud
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        👨‍💻 Coding
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Containers/" class="md-nav__link">
+        Containers
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Health/" class="md-nav__link">
+        💊 Health
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Intelligence/" class="md-nav__link">
+        🔎 Intelligence
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Kubernetes/" class="md-nav__link">
+        ⎈&#xfe0f; Kubernetes
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/" class="md-nav__link">
+        🐧 Linux
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" type="checkbox" id="__nav_10" >
+      
+      <label class="md-nav__link" for="__nav_10">
+        Cloud
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Cloud" data-md-level="1">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          Cloud
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud/ARM/" class="md-nav__link">
+        ARM
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud/Azure-AD/" class="md-nav__link">
+        Azure AD
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud/Azure-App-Service/" class="md-nav__link">
+        Azure App Service
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud/Azure-Backup/" class="md-nav__link">
+        Azure Backup
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud/Azure-File-Service/" class="md-nav__link">
+        Tasks
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud/Azure-IAM/" class="md-nav__link">
+        Azure IAM
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud/Azure-IaaS/" class="md-nav__link">
+        Azure IaaS
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud/Azure-Load-Balancer/" class="md-nav__link">
+        Azure Load Balancer
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud/Azure-Monitoring/" class="md-nav__link">
+        Azure Monitoring
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud/Azure-Policy/" class="md-nav__link">
+        Azure Policy
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud/Azure-Storage/" class="md-nav__link">
+        Azure Storage
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud/Azure-VPN/" class="md-nav__link">
+        Azure VPN
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud/Kusto/" class="md-nav__link">
+        Kusto
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud/Tasks/" class="md-nav__link">
+        Tasks
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11" type="checkbox" id="__nav_11" checked>
+      
+      <label class="md-nav__link" for="__nav_11">
+        Coding
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Coding" data-md-level="1">
+        <label class="md-nav__title" for="__nav_11">
+          <span class="md-nav__icon md-icon"></span>
+          Coding
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6502/" class="md-nav__link">
+        6502
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../C%23/" class="md-nav__link">
+        C&#35;
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          C++
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        C++
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#preprocessing" class="md-nav__link">
+    Preprocessing
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variables" class="md-nav__link">
+    Variables
+  </a>
+  
+    <nav class="md-nav" aria-label="Variables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#initialization" class="md-nav__link">
+    Initialization
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pointers" class="md-nav__link">
+    Pointers
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#containers" class="md-nav__link">
+    Containers
+  </a>
+  
+    <nav class="md-nav" aria-label="Containers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arrays" class="md-nav__link">
+    Arrays
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sequence-containers" class="md-nav__link">
+    Sequence containers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#container-adapters" class="md-nav__link">
+    Container adapters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#associate-containers" class="md-nav__link">
+    Associate containers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#standard-iterators" class="md-nav__link">
+    Standard iterators
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maps" class="md-nav__link">
+    Maps
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#classes" class="md-nav__link">
+    Classes
+  </a>
+  
+    <nav class="md-nav" aria-label="Classes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#member-variables" class="md-nav__link">
+    Member variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#initialization_1" class="md-nav__link">
+    Initialization
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#access" class="md-nav__link">
+    Access
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inheritance" class="md-nav__link">
+    Inheritance
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#polymorphism" class="md-nav__link">
+    Polymorphism
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enumerations" class="md-nav__link">
+    Enumerations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#templates" class="md-nav__link">
+    Templates
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#control-flow" class="md-nav__link">
+    Control flow
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#functions" class="md-nav__link">
+    Functions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recursion" class="md-nav__link">
+    Recursion
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#memory" class="md-nav__link">
+    Memory
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#namespaces" class="md-nav__link">
+    Namespaces
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operators" class="md-nav__link">
+    Operators
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#header-files" class="md-nav__link">
+    Header files
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#applications" class="md-nav__link">
+    Applications
+  </a>
+  
+    <nav class="md-nav" aria-label="Applications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gtkmm" class="md-nav__link">
+    gtkmm
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nes-emulator" class="md-nav__link">
+    NES emulator
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#courses" class="md-nav__link">
+    Courses
+  </a>
+  
+    <nav class="md-nav" aria-label="Courses">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#c-standard-template-library-in-practice" class="md-nav__link">
+    C++ Standard Template Library in Practice
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complete-c-developer-course" class="md-nav__link">
+    Complete C++ Developer Course
+  </a>
+  
+    <nav class="md-nav" aria-label="Complete C++ Developer Course">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rpgchargen" class="md-nav__link">
+    RPGCharGen
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Courses/" class="md-nav__link">
+        Courses
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DnD/" class="md-nav__link">
+        🐲&#xFE0F;  Dungeons & Dragons
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Dogfood/" class="md-nav__link">
+        🐶 Dogfood data
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GUI/" class="md-nav__link">
+        🖥&#xFE0F; GUI frameworks comparison
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Perl/" class="md-nav__link">
+        🦪 Perl
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Python/" class="md-nav__link">
+        🐍 Python
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Testing/" class="md-nav__link">
+        Testing
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Windows/" class="md-nav__link">
+        Windows programming
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Wired%20Brain%20Coffee/" class="md-nav__link">
+        ☕ Wired Brain Coffee
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../XAML/" class="md-nav__link">
+        🧠 XAML
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12" type="checkbox" id="__nav_12" >
+      
+      <label class="md-nav__link" for="__nav_12">
+        Linux
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Linux" data-md-level="1">
+        <label class="md-nav__title" for="__nav_12">
+          <span class="md-nav__icon md-icon"></span>
+          Linux
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/GRUB/" class="md-nav__link">
+        GRUB
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/SSH/" class="md-nav__link">
+        SSH
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/X/" class="md-nav__link">
+        X
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/Xorg/" class="md-nav__link">
+        Xorg
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/add-apt-repository/" class="md-nav__link">
+        add-apt-repository
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/amixer/" class="md-nav__link">
+        amixer
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/apt-key/" class="md-nav__link">
+        apt-key
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/apt/" class="md-nav__link">
+        apt
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/at/" class="md-nav__link">
+        at
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/ausearch/" class="md-nav__link">
+        ausearch
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/awk/" class="md-nav__link">
+        awk
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/bash/" class="md-nav__link">
+        bash
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/bluetoothctl/" class="md-nav__link">
+        bluetoothctl
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/chage/" class="md-nav__link">
+        chage
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/chgrp/" class="md-nav__link">
+        chgrp
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/chkconfig/" class="md-nav__link">
+        chkconfig
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/chmod/" class="md-nav__link">
+        chmod
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/chown/" class="md-nav__link">
+        chown
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/chpass/" class="md-nav__link">
+        chpass
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/chrony/" class="md-nav__link">
+        Chrony
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/chsh/" class="md-nav__link">
+        Chsh
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/cron/" class="md-nav__link">
+        Cron
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/cryptsetup/" class="md-nav__link">
+        Cryptsetup
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/curl/" class="md-nav__link">
+        Curl
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/dar/" class="md-nav__link">
+        Dar
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/date/" class="md-nav__link">
+        Date
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/dd/" class="md-nav__link">
+        Dd
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/dig/" class="md-nav__link">
+        Dig
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/dnf/" class="md-nav__link">
+        Dnf
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/dpkg-reconfigure/" class="md-nav__link">
+        Dpkg reconfigure
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/elvish/" class="md-nav__link">
+        elvish
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/exif/" class="md-nav__link">
+        Exif
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/fallocate/" class="md-nav__link">
+        Fallocate
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/file/" class="md-nav__link">
+        File
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/find/" class="md-nav__link">
+        Find
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/firewall-cmd/" class="md-nav__link">
+        Firewall cmd
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/fold/" class="md-nav__link">
+        Fold
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/free/" class="md-nav__link">
+        Free
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/gdb/" class="md-nav__link">
+        Gdb
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/gem/" class="md-nav__link">
+        Gem
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/getent/" class="md-nav__link">
+        Getent
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/git/" class="md-nav__link">
+        git
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/gpasswd/" class="md-nav__link">
+        Gpasswd
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/gpg/" class="md-nav__link">
+        Gpg
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/grep/" class="md-nav__link">
+        Grep
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/groupmod/" class="md-nav__link">
+        Groupmod
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/gsettings/" class="md-nav__link">
+        Gsettings
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/gzip/" class="md-nav__link">
+        Gzip
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/hostnamectl/" class="md-nav__link">
+        Hostnamectl
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/hwclock/" class="md-nav__link">
+        Hwclock
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/i3/" class="md-nav__link">
+        I3
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/ifconfig/" class="md-nav__link">
+        ifconfig
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/imagemagick/" class="md-nav__link">
+        imagemagick
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/init/" class="md-nav__link">
+        Init
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/initctl/" class="md-nav__link">
+        Initctl
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/install/" class="md-nav__link">
+        Install
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/ip/" class="md-nav__link">
+        Ip
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/iptables/" class="md-nav__link">
+        Iptables
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/irssi/" class="md-nav__link">
+        Irssi
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/iscsiadm/" class="md-nav__link">
+        Iscsiadm
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/iw/" class="md-nav__link">
+        Iw
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/journalctl/" class="md-nav__link">
+        Journalctl
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/kquitapp/" class="md-nav__link">
+        Kquitapp
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/kstart/" class="md-nav__link">
+        Kstart
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/ldd/" class="md-nav__link">
+        Ldd
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/lnewaliases/" class="md-nav__link">
+        Lnewaliases
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/localectl/" class="md-nav__link">
+        Localectl
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/lowriter/" class="md-nav__link">
+        Lowriter
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/lsb_release/" class="md-nav__link">
+        lsb_release
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/lsmod/" class="md-nav__link">
+        Lsmod
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/lsof/" class="md-nav__link">
+        Lsof
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/lvcreate/" class="md-nav__link">
+        Lvcreate
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/lvresize/" class="md-nav__link">
+        Lvresize
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/mail/" class="md-nav__link">
+        Mail
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/mailmerge/" class="md-nav__link">
+        Mailmerge
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/mailq/" class="md-nav__link">
+        Mailq
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/mailstats/" class="md-nav__link">
+        Mailstats
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/make/" class="md-nav__link">
+        Make
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/mkdir/" class="md-nav__link">
+        Mkdir
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/mkfs/" class="md-nav__link">
+        Mkfs
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/mongod/" class="md-nav__link">
+        Mongod
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/mpstat/" class="md-nav__link">
+        Mpstat
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/nc/" class="md-nav__link">
+        Nc
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/netstat/" class="md-nav__link">
+        Netstat
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/nginx/" class="md-nav__link">
+        nginx
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/nice/" class="md-nav__link">
+        Nice
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/nl/" class="md-nav__link">
+        Nl
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/nmap/" class="md-nav__link">
+        Nmap
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/nmcli/" class="md-nav__link">
+        Nmcli
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/nslookup/" class="md-nav__link">
+        Nslookup
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/ntpdate/" class="md-nav__link">
+        Ntpdate
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/pacman/" class="md-nav__link">
+        Pacman
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/partx/" class="md-nav__link">
+        Partx
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/passwd/" class="md-nav__link">
+        Passwd
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/paste/" class="md-nav__link">
+        Paste
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/pip/" class="md-nav__link">
+        Pip
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/polybar/" class="md-nav__link">
+        Polybar
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/postfix/" class="md-nav__link">
+        postfix
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/postqueue/" class="md-nav__link">
+        Postqueue
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/postsuper/" class="md-nav__link">
+        Postsuper
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/ps/" class="md-nav__link">
+        Ps
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/rename/" class="md-nav__link">
+        Rename
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/restorecon/" class="md-nav__link">
+        Restorecon
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/rfkill/" class="md-nav__link">
+        Rfkill
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/rpm/" class="md-nav__link">
+        Rpm
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/rsync/" class="md-nav__link">
+        Rsync
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/runlevel/" class="md-nav__link">
+        Runlevel
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/samba/" class="md-nav__link">
+        Samba
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/sed/" class="md-nav__link">
+        Sed
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/semanage/" class="md-nav__link">
+        Semanage
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/sendmail/" class="md-nav__link">
+        Sendmail
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/seq/" class="md-nav__link">
+        Seq
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/service/" class="md-nav__link">
+        Service
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/sestatus/" class="md-nav__link">
+        Sestatus
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/setenforce/" class="md-nav__link">
+        Setenforce
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/setfacl/" class="md-nav__link">
+        Setfacl
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/sfdisk/" class="md-nav__link">
+        Sfdisk
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/shred/" class="md-nav__link">
+        Shred
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/shuf/" class="md-nav__link">
+        Shuf
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/shutdown/" class="md-nav__link">
+        Shutdown
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/sort/" class="md-nav__link">
+        Sort
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/sosreport/" class="md-nav__link">
+        Sosreport
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/speaker-test/" class="md-nav__link">
+        Speaker test
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/ss/" class="md-nav__link">
+        Ss
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/ssmtp/" class="md-nav__link">
+        Ssmtp
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/stty/" class="md-nav__link">
+        Stty
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/su/" class="md-nav__link">
+        Su
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/sudo/" class="md-nav__link">
+        sudo
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/swapon/" class="md-nav__link">
+        Swapon
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/sysbench/" class="md-nav__link">
+        Sysbench
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/sysconfig/" class="md-nav__link">
+        sysconfig
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/sysctl/" class="md-nav__link">
+        Sysctl
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/systemctl/" class="md-nav__link">
+        Systemctl
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/systemd-delta/" class="md-nav__link">
+        Systemd delta
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/tail/" class="md-nav__link">
+        Tail
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/tar/" class="md-nav__link">
+        Tar
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/tcpdump/" class="md-nav__link">
+        Tcpdump
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/telinit/" class="md-nav__link">
+        Telinit
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/tput/" class="md-nav__link">
+        Tput
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/tr/" class="md-nav__link">
+        Tr
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/tune2fs/" class="md-nav__link">
+        Tune2fs
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/ufw/" class="md-nav__link">
+        Ufw
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/uname/" class="md-nav__link">
+        Uname
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/unshare/" class="md-nav__link">
+        unshare
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/useradd/" class="md-nav__link">
+        useradd
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/userdel/" class="md-nav__link">
+        userdel
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/usermod/" class="md-nav__link">
+        usermod
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/watch/" class="md-nav__link">
+        watch
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/weechat/" class="md-nav__link">
+        weechat
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/xhost/" class="md-nav__link">
+        xhost
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/xmodmap/" class="md-nav__link">
+        xmodmap
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/xrandr/" class="md-nav__link">
+        xrandr
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/xset/" class="md-nav__link">
+        xset
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13" type="checkbox" id="__nav_13" >
+      
+      <label class="md-nav__link" for="__nav_13">
+        Miscellany
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Miscellany" data-md-level="1">
+        <label class="md-nav__title" for="__nav_13">
+          <span class="md-nav__icon md-icon"></span>
+          Miscellany
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Miscellany/" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Miscellany/CI-CD/" class="md-nav__link">
+        CI/CD
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Miscellany/bittorrent/" class="md-nav__link">
+        BitTorrent
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Miscellany/cryptocurrency/" class="md-nav__link">
+        🪙 Cryptocurrency
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Miscellany/learn/" class="md-nav__link">
+        Learning
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_14" type="checkbox" id="__nav_14" >
+      
+      <label class="md-nav__link" for="__nav_14">
+        Text editors
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Text editors" data-md-level="1">
+        <label class="md-nav__title" for="__nav_14">
+          <span class="md-nav__icon md-icon"></span>
+          Text editors
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Text-editors/atom/" class="md-nav__link">
+        Atom
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Text-editors/code/" class="md-nav__link">
+        VS Code
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Text-editors/vim/" class="md-nav__link">
+        Vim
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_15" type="checkbox" id="__nav_15" >
+      
+      <label class="md-nav__link" for="__nav_15">
+        Web
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Web" data-md-level="1">
+        <label class="md-nav__title" for="__nav_15">
+          <span class="md-nav__icon md-icon"></span>
+          Web
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Web/" class="md-nav__link">
+        🌎 Web
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Web/CSS/" class="md-nav__link">
+        CSS
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Web/mkdocs/" class="md-nav__link">
+        Mkdocs
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_15_4" type="checkbox" id="__nav_15_4" >
+      
+      <label class="md-nav__link" for="__nav_15_4">
+        JavaScript
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="JavaScript" data-md-level="2">
+        <label class="md-nav__title" for="__nav_15_4">
+          <span class="md-nav__icon md-icon"></span>
+          JavaScript
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Web/JavaScript/" class="md-nav__link">
+        Axios
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Web/JavaScript/Express/" class="md-nav__link">
+        Express
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Web/JavaScript/React/" class="md-nav__link">
+        React
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Web/JavaScript/Web%20Components/" class="md-nav__link">
+        Web Components
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_16" type="checkbox" id="__nav_16" >
+      
+      <label class="md-nav__link" for="__nav_16">
+        Windows
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Windows" data-md-level="1">
+        <label class="md-nav__title" for="__nav_16">
+          <span class="md-nav__icon md-icon"></span>
+          Windows
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Windows/Active%20Directory/" class="md-nav__link">
+        Active Directory
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Windows/DNS-labs/" class="md-nav__link">
+        DNS labs
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Windows/Labs/" class="md-nav__link">
+        Labs
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Windows/PowerShell/" class="md-nav__link">
+        🐚 PowerShell
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Windows/WDS-lab/" class="md-nav__link">
+        WDS lab
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Windows/WS2016/" class="md-nav__link">
+        Windows Server
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Windows/diskpart/" class="md-nav__link">
+        Diskpart
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#preprocessing" class="md-nav__link">
+    Preprocessing
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variables" class="md-nav__link">
+    Variables
+  </a>
+  
+    <nav class="md-nav" aria-label="Variables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#initialization" class="md-nav__link">
+    Initialization
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pointers" class="md-nav__link">
+    Pointers
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#containers" class="md-nav__link">
+    Containers
+  </a>
+  
+    <nav class="md-nav" aria-label="Containers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arrays" class="md-nav__link">
+    Arrays
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sequence-containers" class="md-nav__link">
+    Sequence containers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#container-adapters" class="md-nav__link">
+    Container adapters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#associate-containers" class="md-nav__link">
+    Associate containers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#standard-iterators" class="md-nav__link">
+    Standard iterators
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maps" class="md-nav__link">
+    Maps
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#classes" class="md-nav__link">
+    Classes
+  </a>
+  
+    <nav class="md-nav" aria-label="Classes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#member-variables" class="md-nav__link">
+    Member variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#initialization_1" class="md-nav__link">
+    Initialization
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#access" class="md-nav__link">
+    Access
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inheritance" class="md-nav__link">
+    Inheritance
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#polymorphism" class="md-nav__link">
+    Polymorphism
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enumerations" class="md-nav__link">
+    Enumerations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#templates" class="md-nav__link">
+    Templates
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#control-flow" class="md-nav__link">
+    Control flow
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#functions" class="md-nav__link">
+    Functions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recursion" class="md-nav__link">
+    Recursion
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#memory" class="md-nav__link">
+    Memory
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#namespaces" class="md-nav__link">
+    Namespaces
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operators" class="md-nav__link">
+    Operators
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#header-files" class="md-nav__link">
+    Header files
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#applications" class="md-nav__link">
+    Applications
+  </a>
+  
+    <nav class="md-nav" aria-label="Applications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gtkmm" class="md-nav__link">
+    gtkmm
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nes-emulator" class="md-nav__link">
+    NES emulator
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#courses" class="md-nav__link">
+    Courses
+  </a>
+  
+    <nav class="md-nav" aria-label="Courses">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#c-standard-template-library-in-practice" class="md-nav__link">
+    C++ Standard Template Library in Practice
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complete-c-developer-course" class="md-nav__link">
+    Complete C++ Developer Course
+  </a>
+  
+    <nav class="md-nav" aria-label="Complete C++ Developer Course">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rpgchargen" class="md-nav__link">
+    RPGCharGen
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>C++</h1>
+                
+                <h2 id="preprocessing">Preprocessing</h2>
+<p><strong>Preprocessing</strong> is the phase of executing <strong>preprocessing directives</strong> in a source file, which are then removed from the resulting <strong>translation unit</strong>, which combines the pure C or C++ code of a source file with all its included header files. The translation unit is then compiled into an <strong>object file</strong>, and it is the <strong>linker</strong> that then forms <strong>linkages</strong> between object files to produce an executable module.</p>
+<ul>
+<li><a href="#define"><code>#define</code></a></li>
+<li><a href="#include"><code>#include</code></a></li>
+</ul>
+<p>The <strong><code>#define</code></strong> directive specifies a <strong>macro</strong> which can define a text replacement to occur in code before it is compiled. Macros are considered a holdover from C, and other constructs like <strong>variable templates</strong> and <strong>function templates</strong> are considered better suited in C++. In practice, <code>#define</code> statements are most commonly used to handle header files.</p>
+<p>Here, any instance of "<code>PI</code>" in the source code will be replaced by the string of digits "3.14159265", but it will not be replaced if it forms part of an identifier or appears in a string literal or comment.
+<div class="highlight"><pre><span></span><code><span class="cp">#define PI 3.14159265</span>
+</code></pre></div>
+If a substitution string isn't specified then any instance of the identifier will simply be removed.
+<div class="highlight"><pre><span></span><code><span class="cp">#define break</span>
+</code></pre></div>
+Macros may not span multiple lines without escaped line breaks, but during preprocessing these are removed and the substitution is made inline.
+<div class="highlight"><pre><span></span><code><span class="cp">#define PI 3.14\</span>
+<span class="cp">159265</span>
+</code></pre></div></p>
+<p><strong>Function-like macros</strong> are possible because the preprocessor can recognize a function call in the macro identifier and replace its arguments intelligently. Here any invocation of the <code>MAX()</code> function call will have its arguments incorporated into the substitution statement.
+<div class="highlight"><pre><span></span><code><span class="cp">#define MAX(A, B) A &gt;= B ? A : B</span>
+</code></pre></div></p>
+<p>All the lines following <code>#ifndef</code> (<code>#if !defined</code>) will be kept in the file as long as the identifier "MYHEADER_H" has not already been defined. This common is called an <strong><a href="#include"><code>#include</code></a> guard</strong>.
+<div class="highlight"><pre><span></span><code><span class="cp">#ifndef MYHEADER_H</span>
+<span class="cp">#define MYHEADER_H</span>
+<span class="c1">// ...</span>
+<span class="cp">#endif</span>
+</code></pre></div></p>
+<h2 id="variables">Variables</h2>
+<p>Since <strong>C++14</strong>, you can separate digits in a long integer with a single quote to make it more readable.
+<div class="highlight"><pre><span></span><code><span class="kt">int</span> <span class="n">num</span> <span class="p">{</span><span class="mi">12&#39;345</span><span class="p">};</span> <span class="c1">// 12,345</span>
+</code></pre></div>
+Hexadecimal literals are prefixed with "0x" and octals with "0":
+<div class="highlight"><pre><span></span><code><span class="kt">int</span> <span class="n">hex</span> <span class="p">{</span><span class="mh">0xabcdef</span><span class="p">};</span>
+<span class="kt">int</span> <span class="n">oct</span> <span class="p">{</span><span class="mo">0567</span><span class="p">};</span>
+</code></pre></div>
+<strong><code>constexpr</code></strong> is used in some situations I can't figure out yet.
+<div class="highlight"><pre><span></span><code><span class="k">static</span> <span class="k">constexpr</span> <span class="n">u32</span> <span class="n">MAX_MEM</span> <span class="o">=</span> <span class="mi">1024</span> <span class="o">*</span> <span class="mi">64</span><span class="p">;</span>
+</code></pre></div></p>
+<p><strong><code>size_t</code></strong> is a type alias defined in the Standard Library (in the <code>cstddef</code> header). It is an alias for an unsigned integer type.</p>
+<h3 id="initialization">Initialization</h3>
+<p>A <strong>braced initializer</strong> refers to placing the initial value of a variable in braces. 
+This is a novel style of initialization introduced in <strong>C++11</strong>. 
+Its main advantage is that it will raise a compile-time error if the compiler has to perform a <strong>narrowing conversion</strong> of the value to match the declared type.
+<div class="highlight"><pre><span></span><code><span class="kt">int</span> <span class="n">apples</span> <span class="p">{</span><span class="mi">15</span><span class="p">};</span>
+</code></pre></div></p>
+<p>Older but equally valid ways of initializing variables:
+<div class="highlight"><pre><span></span><code><span class="kt">int</span> <span class="n">oranges</span> <span class="o">=</span> <span class="mi">12</span><span class="p">;</span>
+<span class="kt">int</span> <span class="nf">kiwis</span><span class="p">(</span><span class="mi">13</span><span class="p">);</span> <span class="c1">// &quot;functional notation&quot;</span>
+</code></pre></div>
+<strong>Zero initialization</strong> refers to initializing a variable with empty braces. It works for any fundamental type, and numeric types initialize to zero.
+<div class="highlight"><pre><span></span><code><span class="kt">int</span> <span class="n">grapes</span> <span class="p">{};</span> <span class="c1">// 0</span>
+</code></pre></div></p>
+<p>Sequences, like this <a href="Arrays">array class</a> can be efficiently zero-initialized; the braces can contain any number of values up to the declared size of the array (remaining values will be zero-initialized).
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;array&gt;</span><span class="cp"></span>
+
+<span class="n">array</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="mi">5</span><span class="o">&gt;</span> <span class="n">myIntArray</span><span class="p">{};</span>
+</code></pre></div>
+<a href="Arrays#multi-dimensional-arrays">Multi-dimensional arrays</a> can be initialized with nested initializers:
+<div class="highlight"><pre><span></span><code><span class="kt">int</span> <span class="n">myNums</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span> 
+<span class="p">{</span>
+  <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">},</span>
+  <span class="p">{</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></p>
+<h3 id="pointers">Pointers</h3>
+<p><strong>Smart pointers</strong> (also called <strong>managed pointers</strong>) are pointers that manage their own memory. They were introduced in C++11, and there is no longer a reason to use the earlier <a href="#raw-pointers">raw pointers</a>. In older versions of C++, memory leaks were common because the programmer had to remember to release memory allocated dynamically from the heap/free store using the <code>delete</code> keyword. These older pointers are now called <a href="#raw-pointers"><strong>raw pointers</strong></a></p>
+<p>The most commonly used smart pointer is <a href="#unique_ptr"><strong><code>unique_ptr</code></strong></a>: others include <code>shared_ptr</code> and <code>weak_ptr</code>.</p>
+<p>Only a single <code>unique_ptr&lt;T&gt;</code> can point to any memory address, unless ownership is transfered with <code>move()</code>.
+Since C++14, it is recommended to create unique pointers using <code>makeunique&lt;T&gt;()</code>.
+<div class="highlight"><pre><span></span><code><span class="k">auto</span> <span class="n">pdbl</span> <span class="o">=</span> <span class="n">make_unique</span><span class="o">&lt;</span><span class="n">dbouble</span><span class="o">&gt;</span><span class="p">();</span>
+</code></pre></div></p>
+<p>When variables are declared with an asterisk <strong><code>*</code></strong> appended to the datatype or prepended to the identifier, the variable becomes a <strong>pointer</strong> to that type. 
+Pointer identifiers usually begin with "p", a convention known as <strong>Hungarian notation</strong>. 
+The size of pointers corresponds to the address space of available memory (4 bytes for 32-bit architectures, and 8 bytes for 64-bit).
+<div class="highlight"><pre><span></span><code><span class="c1">// The following statements are equivalent.</span>
+<span class="kt">long</span><span class="o">*</span> <span class="n">pnum</span> <span class="p">{};</span> 
+<span class="kt">long</span> <span class="o">*</span><span class="n">pnum</span> <span class="p">{</span><span class="k">nullptr</span><span class="p">};</span>
+</code></pre></div>
+<code>void *</code> is known as "pointer to void type", meaning variables defined as such are pointers to data of an unspecified type, making it similar to <code>var</code> in C#.</p>
+<p>The <strong>address-of</strong> operator <strong><code>&amp;</code></strong> obtains the address of a variable. The address-of operator typically also occurs with the <strong>indirection operator</strong> or <strong>dereference operator</strong> (also <strong><code>*</code></strong>) to access the data pointed to by a pointer. Using a dereferenced pointer is the same as using the variable to which it points.
+<div class="highlight"><pre><span></span><code><span class="kt">long</span> <span class="n">num</span> <span class="p">{</span><span class="mf">12345L</span><span class="p">};</span>
+<span class="kt">long</span><span class="o">*</span> <span class="n">pnum</span> <span class="p">{</span><span class="o">&amp;</span><span class="n">num</span><span class="p">};</span>
+<span class="kt">long</span> <span class="n">newnum</span> <span class="p">{</span><span class="o">*</span><span class="n">pnum</span> <span class="o">+</span> <span class="mi">1</span><span class="p">};</span>
+</code></pre></div>
+When a pointer points to an object with methods, like a <code>vector&lt;T&gt;</code> <a href="C++-containers"> container </a>, the <strong>indirect member selection operator</strong> (<strong><code>-&gt;</code></strong>) can be used to access the methods.
+<div class="highlight"><pre><span></span><code><span class="c1">// The following statements are equivalent.</span>
+<span class="k">auto</span><span class="o">*</span> <span class="n">pdata</span> <span class="p">{</span><span class="k">new</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">{}};</span>
+
+<span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">data</span><span class="p">;</span>
+<span class="k">auto</span><span class="o">*</span> <span class="n">pdata</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">data</span><span class="p">;</span>
+
+<span class="c1">// The following statements are equivalent.</span>
+<span class="p">(</span><span class="o">*</span><span class="n">pdata</span><span class="p">).</span><span class="n">push_back</span><span class="p">(</span><span class="mi">66</span><span class="p">);</span>
+<span class="n">pdata</span><span class="o">-&gt;</span><span class="n">push_back</span><span class="p">(</span><span class="mi">66</span><span class="p">);</span>
+</code></pre></div></p>
+<p>Pointers to classes can be recast with the following syntax:
+<div class="highlight"><pre><span></span><code><span class="n">Animal</span><span class="o">*</span> <span class="n">ptr</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">kitty</span><span class="p">;</span>
+<span class="p">((</span><span class="n">Cat</span><span class="o">*</span><span class="p">)</span><span class="n">ptr</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">chaseMouse</span><span class="p">();</span>
+
+<span class="c1">// newer, safer syntax</span>
+<span class="p">(</span><span class="k">reinterpret_cast</span><span class="o">&lt;</span><span class="n">Cat</span><span class="o">&gt;</span><span class="p">(</span><span class="n">ptr</span><span class="p">))</span><span class="o">-&gt;</span><span class="n">chaseMouse</span><span class="p">();</span>
+</code></pre></div></p>
+<h2 id="containers">Containers</h2>
+<p><strong>Containers</strong> are a type of data structure used to contain elements for various purposes. They are deeply tied to <strong>algorithms</strong> through <strong>iterators</strong>.</p>
+<p>Two array-like data structures defined in the <strong>Standard Library</strong> that are more typically used are <a href="#sequence-containers"><code>array&lt;T,N&gt;</code></a> and <a href="#sequence-containers"><code>vector&lt;T&gt;</code></a></p>
+<h3 id="arrays">Arrays</h3>
+<p>An array is a variable that represents a contiguous sequence of memory locations, each storing an item of data of the same data type, each of which are called <strong>elements</strong>. Arrays must be declared with a constant integer expression that is fixed at compile time. Built-in arrays in C++ are inherited from C. </p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span> <span class="n">primes</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">23</span><span class="p">}</span>
+</code></pre></div>
+<h3 id="sequence-containers">Sequence containers</h3>
+<p>The two most common sequence containers are <a href="#sequence-containers"><strong><code>array&lt;T,N&gt;</code></strong></a> and <a href="#sequence-containers"><strong><code>vector&lt;T&gt;</code></strong></a>. </p>
+<p>All sequence containers expose several of a family of related member functions:</p>
+<table>
+<thead>
+<tr>
+<th>Member function</th>
+<th>vector</th>
+<th>array</th>
+<th>list</th>
+<th>forward_list</th>
+<th>deque</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#" title="First element in the sequence"><code>front()</code></a></td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><a href="#" title="Last element in the sequence"><code>back()</code></a></td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>❌</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><a href="#" title="Add element to front of sequence"><code>push_front()</code></a></td>
+<td>❌</td>
+<td>❌</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><a href="#" title="Remove element from front of sequence"><code>pop_front()</code></a></td>
+<td>❌</td>
+<td>❌</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><a href="#" title="Add element to back of sequence"><code>push_back()</code></a></td>
+<td>✅</td>
+<td>❌</td>
+<td>✅</td>
+<td>❌</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><a href="#" title="Remove element from back of sequence"><code>pop_back()</code></a></td>
+<td>✅</td>
+<td>❌</td>
+<td>✅</td>
+<td>❌</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>insert()</code></td>
+<td>✅</td>
+<td>❌</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>erase()</code></td>
+<td>✅</td>
+<td>❌</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+</tbody>
+</table>
+<p><strong><code>array&lt;T,N&gt;</code></strong> (also "<a href="https://subscription.packtpub.com/video/programming/9781800564084/p4/video4_3/the-array-class"><strong>array class</strong></a>") is a fixed sequence defined with two <strong>template parameters</strong> to create an array of <code>N</code> elements of type <code>T</code>. Here it is zero initialized with an <a href="#initialization">empty braced initializer</a>.
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;array&gt;</span><span class="cp"></span>
+
+<span class="n">array</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="mi">5</span><span class="o">&gt;</span> <span class="n">myIntArray</span><span class="p">{};</span>
+</code></pre></div>
+Other methods:
+- <a href="#" title="Beginning C++ 17: p. 165"><code>fill()</code></a>: Set every element of the array to the same value
+- <a href="#" title="Beginning C++ 17: p. 165"><code>size()</code></a>: Return the number of elements as a type <code>size_t</code>
+- <a href="#" title="Beginning C++ 17: p. 166"><code>at()</code></a>: Access an element at a given index but testing for a valid range. Safer than using the built-in index method.</p>
+<p><strong>Vectors</strong> are sequential containers with typed elements like the <a href="#sequence-containers">array class</a>, but are not limited to fixed sizes. The <code>push_back()</code> method is similar to a Python <code>List.append()</code>. Other methods like <code>front()</code>, <code>back()</code>, and <code>pop_back()</code> can be used to manipulate the vector. 
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp"></span>
+<span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">vals</span><span class="p">;</span>
+</code></pre></div>
+The <a href="https://subscription.packtpub.com/video/programming/9781800564084/p4/video4_4/the-vector-class"><code>insert()</code></a> method takes two arguments, one is an <strong>iterator</strong>, here provided by yet another vector method - <code>begin()</code>, and the content to be inserted. This code will insert the string at index 2.
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">family</span><span class="p">;</span>
+  <span class="n">family</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="s">&quot;Plato&quot;</span><span class="p">);</span>
+  <span class="n">family</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="s">&quot;Aristotle&quot;</span><span class="p">);</span>
+  <span class="n">family</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="s">&quot;Socrates&quot;</span><span class="p">);</span>
+  <span class="n">family</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="s">&quot;Pythagoras&quot;</span><span class="p">);</span>
+  <span class="n">family</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="s">&quot;Aristarchos&quot;</span><span class="p">);</span>
+
+  <span class="n">family</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">family</span><span class="p">.</span><span class="n">begin</span><span class="p">()</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="s">&quot;Dgiapusccu&quot;</span><span class="p">);</span>
+  <span class="n">family</span><span class="p">.</span><span class="n">pop_back</span><span class="p">();</span>
+  <span class="k">for</span> <span class="p">(</span><span class="n">string</span> <span class="nl">i</span> <span class="p">:</span> <span class="n">family</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<p>A <code>forward_list&lt;T&gt;</code> is an implementation of the <strong>singly-linked list</strong> and is rarely used.</p>
+<p>A <code>list&lt;T&gt;</code> is an implementation of the <strong>doubly-linked list</strong> and is rarely used.</p>
+<p>The <strong>double-ended queue (deque)</strong> exposes <code>push_Front()</code> and <code>push_back()</code> methods.</p>
+<h3 id="container-adapters">Container adapters</h3>
+<p>A <code>stack&lt;T&gt;</code> implements <strong>last-in first-out (LIFO)</strong> semantics.</p>
+<p>Stacks support <code>push</code> and <code>pop</code> methods.</p>
+<p>A <code>queue&lt;T&gt;</code> implements <strong>first-in first-out (FIFO)</strong> semantics.</p>
+<h3 id="associate-containers">Associate containers</h3>
+<h3 id="standard-iterators">Standard iterators</h3>
+<p>There are three types of iterator supported by containers in the Standard Library:
+- <strong>random access iterator</strong> support the widest variety of operations: <code>vector&lt;T&gt;</code>, <code>array&lt;T,N&gt;</code>, and <code>deque&lt;T&gt;</code>
+- <strong>forward iterators</strong> do not support decrement operations ("going backwards"), and this describes the operation of a <a href="#forward_list"><code>forward_list&lt;T&gt;</code></a>
+- <strong>bidirectional iterators</strong> support both increment and decrement operations, but cannot jump more than one value, describing the operation of a <a href="#list"><code>list&lt;T&gt;</code></a></p>
+<p><code>stack&lt;T&gt;</code>, <code>queue&lt;T&gt;</code>, and <code>priority_queue&lt;T&gt;</code> do not have iterators whatsoever.</p>
+<p>Containers in the Standard Library expose a <strong><code>begin()</code></strong> member function, which is the most commonly used iterator.
+<div class="highlight"><pre><span></span><code><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">char</span><span class="o">&gt;</span> <span class="n">letters</span><span class="p">{</span><span class="sc">&#39;a&#39;</span><span class="p">,</span><span class="sc">&#39;b&#39;</span><span class="p">,</span><span class="sc">&#39;c&#39;</span><span class="p">,</span><span class="sc">&#39;d&#39;</span><span class="p">,</span><span class="sc">&#39;e&#39;</span><span class="p">}</span>
+<span class="k">auto</span> <span class="n">iter</span><span class="p">{</span><span class="n">letters</span><span class="p">.</span><span class="n">begin</span><span class="p">()};</span>
+
+<span class="c1">// Specifying type explicitly</span>
+<span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">::</span><span class="n">iterator</span> <span class="n">iter</span><span class="p">{</span><span class="n">letters</span><span class="p">.</span><span class="n">begin</span><span class="p">()};</span>
+</code></pre></div>
+At a deep level, iterators are pointers, so dereferencing them produces the element of the container being iterated.
+<div class="highlight"><pre><span></span><code><span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">iter</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span> <span class="n">endl</span><span class="p">;</span> <span class="c1">// a</span>
+</code></pre></div>
+The container can now be traversed by incrementing and (sometimes) decrementing the iterator.
+<div class="highlight"><pre><span></span><code><span class="o">++</span><span class="n">iter</span><span class="p">;</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">iter</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span> <span class="n">endl</span><span class="p">;</span> <span class="c1">// b</span>
+</code></pre></div></p>
+<p>A string can be reversed using the <strong><code>rbegin()</code></strong> and <strong><code>rend()</code></strong> iterators:
+<div class="highlight"><pre><span></span><code><span class="n">string</span> <span class="n">name</span><span class="p">{</span><span class="s">&quot;Lorem ipsum...&quot;</span><span class="p">};</span>
+<span class="n">string</span> <span class="nf">reverse</span><span class="p">(</span><span class="n">name</span><span class="p">.</span><span class="n">rbegin</span><span class="p">(),</span> <span class="n">name</span><span class="p">.</span><span class="n">rend</span><span class="p">());</span>
+</code></pre></div></p>
+<h3 id="maps">Maps</h3>
+<p>A syntactic sugar has been available since C++17:
+<div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="p">([</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">]</span> <span class="o">:</span> <span class="n">coords</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">x</span> <span class="o">&lt;&lt;</span> <span class="n">y</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+It is equivalent to:
+<div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">pair</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="nl">el</span> <span class="p">:</span> <span class="n">coords</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">el</span><span class="p">.</span><span class="n">first</span> <span class="o">&lt;&lt;</span> <span class="n">el</span><span class="p">.</span><span class="n">second</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+The <strong><code>pair</code></strong> type has two public fields:</p>
+<ul>
+<li><code>first</code></li>
+<li><code>second</code>## Math</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;math.h&gt;</span><span class="cp"></span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kt">int</span> <span class="n">num</span><span class="p">{</span><span class="mi">2</span><span class="p">};</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">pow</span><span class="p">(</span><span class="n">num</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="classes">Classes</h2>
+<p>New data types in C++ are created as <strong>classes</strong>, which can be composites of <strong>member variables</strong> of other types and <strong>member functions</strong>, allowing complex and intuitive models to be created.</p>
+<p>The three primary principles of OOP are:</p>
+<ul>
+<li><strong>Encapsulation</strong>: member variables and functions are packaged together<ul>
+<li><strong>Data hiding</strong> preserves the integrity of an object</li>
+</ul>
+</li>
+<li><a href="#inheritance"><strong>Inheritance</strong></a> allows one type to define another.</li>
+<li><a href="#polymorphism"><strong>Polymorphism</strong></a> (in C++ implemented by calling member functions using a pointer or reference) allow behavior of base classes to be exposed from objects of derived classes</li>
+</ul>
+<h3 id="member-variables">Member variables</h3>
+<p>Classes can contain <strong>member variables</strong> that are <code>public</code> or <code>private</code> ("<strong>access specifiers</strong>"), but it is best practice to make variables private while implementing <strong>accessor</strong> functions (getters and setters):
+- Hiding data preserves the integrity of objects
+- Loose coupling facilitates future change in codebase
+- Extra code can be injected for logging or data validation
+- Debuggers can set breakpoints on these getters and setters 
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Box</span>
+<span class="p">{</span>
+<span class="k">private</span><span class="o">:</span>
+  <span class="kt">double</span> <span class="n">length</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">};</span>
+  <span class="kt">double</span> <span class="n">width</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">};</span>
+  <span class="kt">double</span> <span class="n">height</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">};</span>
+<span class="k">public</span><span class="o">:</span>
+  <span class="kt">double</span> <span class="n">volume</span><span class="p">()</span>
+  <span class="p">{</span>
+    <span class="k">return</span> <span class="n">length</span> <span class="o">*</span> <span class="n">width</span> <span class="o">*</span> <span class="n">height</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></p>
+<h3 id="initialization_1">Initialization</h3>
+<p>A <strong>member initializer list</strong> can be used to initialize fields more efficiently than explicit assignment. 
+<div class="highlight"><pre><span></span><code><span class="n">Box</span><span class="o">::</span><span class="n">Box</span><span class="p">(</span><span class="kt">double</span> <span class="n">lv</span><span class="p">,</span> <span class="kt">double</span> <span class="n">wv</span><span class="p">,</span> <span class="kt">double</span> <span class="n">hv</span><span class="p">)</span> <span class="o">:</span> <span class="n">length</span> <span class="p">{</span><span class="n">lv</span><span class="p">},</span> <span class="n">width</span> <span class="p">{</span><span class="n">wv</span><span class="p">},</span> <span class="n">height</span> <span class="p">{</span><span class="n">hv</span><span class="p">}</span> <span class="p">{}</span>
+</code></pre></div>
+This technique <strong>must</strong> have an expression in braces, even if they are empty.
+<div class="highlight"><pre><span></span><code><span class="c1">// Compiler error</span>
+<span class="n">Box</span><span class="o">::</span><span class="n">Box</span><span class="p">(</span><span class="kt">double</span> <span class="n">lv</span><span class="p">,</span> <span class="kt">double</span> <span class="n">wv</span><span class="p">,</span> <span class="kt">double</span> <span class="n">hv</span><span class="p">)</span> <span class="o">:</span> <span class="n">length</span> <span class="p">{</span><span class="n">lv</span><span class="p">},</span> <span class="n">width</span> <span class="p">{</span><span class="n">wv</span><span class="p">},</span> <span class="n">height</span> <span class="p">{</span><span class="n">hv</span><span class="p">}</span> 
+</code></pre></div>
+Notably, this technique doesn't appear to work in derived class constructors.
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Animal</span> 
+<span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">_name</span><span class="p">{};</span>
+  <span class="n">Animal</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">n</span><span class="p">)</span> <span class="o">:</span> <span class="n">_name</span> <span class="p">{</span><span class="n">n</span><span class="p">}</span> <span class="p">{}</span>
+<span class="p">}</span>
+
+<span class="k">class</span> <span class="nc">Dog</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Animal</span>
+<span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+  <span class="n">Dog</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">n</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">b</span><span class="p">)</span> <span class="o">:</span> <span class="n">Animal</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="p">{</span><span class="n">_breed</span> <span class="o">=</span> <span class="n">b</span><span class="p">;};</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<p>A class <strong>constructor</strong> is called whenever a new instance of the class is defined. It always has the same name as the class itself and has no return data type because it returns no data.
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Box</span>
+<span class="p">{</span>
+<span class="k">private</span><span class="o">:</span>
+  <span class="c1">// ...</span>
+<span class="k">public</span><span class="o">:</span>
+  <span class="n">Box</span><span class="p">(</span> <span class="kt">double</span> <span class="n">l</span><span class="p">,</span> <span class="kt">double</span> <span class="n">w</span><span class="p">,</span> <span class="kt">double</span> <span class="n">h</span><span class="p">)</span>
+  <span class="p">{</span>
+    <span class="n">length</span> <span class="o">=</span> <span class="n">l</span><span class="p">;</span>
+    <span class="n">width</span> <span class="o">=</span> <span class="n">w</span><span class="p">;</span>
+    <span class="n">height</span> <span class="o">=</span> <span class="n">h</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></p>
+<p>If a constructor isn't defined, the compiler will supply a <strong>default default constructor</strong> when an object is instantiated without initial values.
+To define a default constructor:
+<div class="highlight"><pre><span></span><code><span class="n">Box</span><span class="p">()</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>
+</code></pre></div></p>
+<p>A <strong>destructor</strong> is a special member of a class executed to deal with cleanup upon use of the <code>delete</code> operator. A class can have only one destructor, and if one isn't defined then the compiler provides a default destructor that does nothing. The name of the destructor for a class is always the class name prefixed with a tilde, and similar to a constructor it cannot have a return type or parameters.
+<div class="highlight"><pre><span></span><code><span class="o">~</span><span class="n">Box</span><span class="p">()</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>
+<span class="n">Box</span><span class="o">::~</span><span class="n">Box</span><span class="p">()</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span> <span class="c1">// when defined outside the class</span>
+</code></pre></div></p>
+<p>Base class destructors should always be declared as <a href="#polymorphism"><code>virtual</code></a>.</p>
+<h3 id="access">Access</h3>
+<p>When variables of class types are instantiated with the <code>const</code> keyword, they are called <strong>const objects</strong>, and none of their member variables can be altered (member variables of const objects become immutable). The compiler will throw an error when attempting to invoke methods of const objects unless they are identified as <strong>const member functions</strong> by using the <code>const</code> keyword in the signature <strong>after</strong> the identifier ("attribute"?):
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Box</span> <span class="p">{</span>
+  <span class="kt">double</span> <span class="nf">volume</span> <span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="cm">/* ... */</span> <span class="p">}</span>
+  <span class="kt">double</span> <span class="nf">getLength</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">length</span><span class="p">;</span> <span class="p">}</span>
+  <span class="kt">double</span> <span class="nf">getWidth</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">width</span><span class="p">;</span> <span class="p">}</span>
+  <span class="kt">double</span> <span class="nf">getHeight</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">height</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<p><code>public</code>, <code>private</code>, and <code>protected</code> are <strong>access specifiers</strong> that determine how a member variables and functions can be accessed from the outside. When inheriting from a base class, an access specifier can also be used to determine how accessible that base class's members are within the derived class.
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Dog</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Animal</span> 
+<span class="p">{</span>
+  <span class="c1">// ...</span>
+<span class="p">}</span>
+</code></pre></div>
+- When the base class specifier is <code>public</code>, inherited members are unchanged
+- When the base class specifier is <code>protected</code>, inherited public and protected members become protected
+- When the base class specifier is private, all inherited members become private.</p>
+<p>A <strong>friend</strong> is a function to which a class grants access to its private internals. They may be useful in rare situations where a single function needs access to the internals of different kinds of objects.</p>
+<h3 id="inheritance">Inheritance</h3>
+<p>When creating subclasses, you must remember:
+- Private variables must be placed in the <strong><code>protected</code></strong> access specifier so that they are accessible to child classes.
+- The <strong>base class <a href="#access-specifiers">access specifier</a></strong> must allow access to the base class's private variables (<strong><code>public</code></strong> or <code>protected</code>)
+- Parent class must have a <a href="#default-constructor"><strong>default constructor</strong></a>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Animal</span> <span class="p">{</span>
+<span class="k">protected</span><span class="o">:</span> <span class="c1">// not `private:`!</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">_name</span><span class="p">;</span>
+<span class="k">public</span><span class="o">:</span>
+  <span class="n">Animal</span><span class="p">()</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">class</span> <span class="nc">Dog</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Animal</span> <span class="p">{</span> <span class="cm">/* ... */</span> <span class="p">}</span> <span class="c1">// </span>
+</code></pre></div></p>
+<h3 id="polymorphism">Polymorphism</h3>
+<p><strong>Polymorphism</strong> in C++ refers to the practice of invoking a base class's member function rather than the derived class. </p>
+<p>Because the compiler performs <strong>early binding</strong> by default, a pointer typed to a base class but initialized to a derived class will invoke the base class's member function. <strong>Late binding</strong> can be used to force the pointer to use the derived class's member function even when the type of the pointer is the base class. This is done by using the <strong><code>virtual</code></strong> keyword on the base class's member function. </p>
+<p>Classes with virtual functions are called <strong>abstract classes</strong> and may not be instantiated. Abstract classes that are made of <strong>only</strong> virtual functions are called <strong>interfaces</strong>.
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Base</span> 
+<span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+  <span class="k">virtual</span> <span class="kt">void</span> <span class="n">doStuff</span><span class="p">()</span> <span class="p">{</span> <span class="cm">/* ... */</span> <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">class</span> <span class="nc">Derived</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Base</span>
+<span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+  <span class="kt">void</span> <span class="n">doStuff</span><span class="p">()</span> <span class="p">{</span> <span class="cm">/* ... */</span> <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="n">main</span><span class="p">()</span> 
+<span class="p">{</span>
+  <span class="n">Derived</span> <span class="n">derived</span><span class="p">{};</span>
+  <span class="n">Base</span><span class="o">*</span> <span class="n">pointer</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">derived</span><span class="p">;</span> <span class="c1">// a pointer to an abstract class **may** be used</span>
+  <span class="n">pointer</span><span class="o">-&gt;</span><span class="n">doStuff</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
+Derived classes must then <strong>override</strong> this virtual function with the <strong><code>override</code></strong> keyword. 
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Derived</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Base</span> <span class="p">{</span>
+  <span class="k">override</span> <span class="n">doStuff</span><span class="p">()</span> <span class="c1">// ...</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<h3 id="enumerations">Enumerations</h3>
+<p>Enumerations can be specified with <strong><code>enum</code></strong>. Without specifying a value, each element of the enum is given a successively greater integer value starting with 0, like the indexes of an array (an <strong>ordinal value</strong>).
+<div class="highlight"><pre><span></span><code><span class="k">enum</span> <span class="nc">Choices</span> <span class="p">{</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">D</span> <span class="p">}</span>
+</code></pre></div>
+These elements can be specified with or without the <strong>scope resolution operator</strong> <code>::</code>
+<div class="highlight"><pre><span></span><code><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">A</span><span class="p">;</span>          <span class="c1">// 0</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">Choices</span><span class="o">::</span><span class="n">A</span><span class="p">;</span> <span class="c1">// 0</span>
+</code></pre></div></p>
+<h3 id="templates">Templates</h3>
+<p><strong>Templates</strong> are used to have the compiler generate code automatically for a given data type. This is to avoid highly repetitive overloaded function definitions which only differ in parameter lists. </p>
+<p>The <strong><code>template</code></strong> and <strong><code>typename</code></strong> keywords define a template. The placeholder <strong>"T"</strong> represents the data type that will be replaced by a specific type by the compiler.
+<div class="highlight"><pre><span></span><code><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span> <span class="n">T</span> <span class="n">larger</span> <span class="p">(</span><span class="n">T</span> <span class="n">a</span><span class="p">,</span> <span class="n">T</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="n">a</span><span class="o">&gt;</span><span class="n">b</span> <span class="o">?</span> <span class="nl">a</span> <span class="p">:</span> <span class="n">b</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+More than one data type can be used for the parameters, but in that case the return type must be explicitly specified:
+<div class="highlight"><pre><span></span><code><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T1</span><span class="p">,</span> <span class="k">typename</span> <span class="nc">T2</span><span class="o">&gt;</span> <span class="kt">bool</span> <span class="n">larger</span> <span class="p">(</span><span class="n">T1</span> <span class="n">a</span><span class="p">,</span> <span class="n">T2</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="n">a</span><span class="o">&gt;</span><span class="n">b</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<h2 id="control-flow">Control flow</h2>
+<p>The choices in a <strong><code>switch</code></strong> statement are called <strong>cases</strong>. You can only switch on constant expressions that can be evaluated at compile-time, typically literals but excluding strings. Each case must be followed by a <strong><code>break</code></strong> statement to prevent <strong>fallthrough</strong>, except for the <strong>default case</strong>.
+<div class="highlight"><pre><span></span><code><span class="k">switch</span> <span class="p">(</span><span class="n">choice</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="k">case</span> <span class="mi">1</span><span class="o">:</span>
+    <span class="c1">// ...</span>
+    <span class="k">break</span><span class="p">;</span>
+  <span class="k">case</span> <span class="mi">2</span><span class="o">:</span>
+    <span class="c1">// ...</span>
+    <span class="k">break</span><span class="p">;</span>
+  <span class="k">default</span><span class="o">:</span>
+    <span class="c1">// ...</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<p>Since C++11, the <strong>range-based for-loop</strong> is available, which works very similar to a Python for-in loop:
+<div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="p">(</span><span class="n">string</span> <span class="nl">num</span> <span class="p">:</span> <span class="n">nums</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">num</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<h2 id="functions">Functions</h2>
+<p><strong>Function prototypes</strong>, defining the <strong>function header</strong> (return data type, function name, and parameter list), describe a function sufficiently for the compiler to be able to compile calls to it and are required before using a function if the function declaration doesn't precede all the locations where it's called.
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="c1">// Without this prototype, there is a  compile-time error.</span>
+<span class="kt">void</span> <span class="nf">printSomething</span><span class="p">();</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">printSomething</span><span class="p">();</span>
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">printSomething</span><span class="p">()</span>
+<span class="p">{</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;something...&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<strong>Passing by reference</strong> allows variables to be changed in-place and works by using the reference to the argument. <strong>Passing by value</strong> is the default <strong>parameter passing scheme</strong>, which works by actually copying the argument.
+<div class="highlight"><pre><span></span><code><span class="kt">int</span> <span class="nf">func</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// Pass by value</span>
+<span class="p">}</span>
+<span class="kt">int</span> <span class="nf">func</span><span class="p">(</span><span class="kt">int</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// Pass by reference</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<h2 id="recursion">Recursion</h2>
+<p>Recursion requires a <strong>base case</strong> and at least one <strong>recursive case</strong>. The <strong>call stack</strong> is a <strong>stack</strong> data structure that figures prominently in recursive computing.## Home</p>
+<table>
+<thead>
+<tr>
+<th>Project</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>JamoftheMonthProject.cpp</td>
+<td>CLI application that calculates how much the user owes based on selected subscription tier and units purchased</td>
+</tr>
+<tr>
+<td>TicTacToe.cpp</td>
+<td></td>
+</tr>
+<tr>
+<td>RPGCharGen.cpp</td>
+<td>Multiple classes using inheritance, <a href="#polymorphism">virtual</a> member functions, <a href="Enum">enums</a></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Task</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Reverse a string</td>
+<td>...## Iterators</td>
+</tr>
+</tbody>
+</table>
+<p>An <strong>iterator</strong> is a classical and widespread design pattern that allows a wide variety of container-like objects to be traversed by exposing a uniform interface.</p>
+<p>However, loops based on iterators should only be used if access to the iterator is needed for advanced processing in the loop body. A <a href="Control-flow#for-loops">range-based for loop</a> is the recommended way to iterate over all elements of a container.</p>
+<ul>
+<li><a href="#standard-iterators">Standard iterators</a></li>
+<li><a href="#begin"><code>begin()</code></a></li>
+<li><a href="#end"><code>end()</code></a></li>
+<li><a href="#rbegin"><code>rbegin()</code></a></li>
+</ul>
+<h2 id="memory">Memory</h2>
+<p>Memory leaks can be detected using <strong>valgrind</strong>.</p>
+<h2 id="namespaces">Namespaces</h2>
+<p>A <strong>namespace</strong> is a block that attaches an extra name to every entity name that is declared or defined within it. The <strong>qualified name</strong> of each entity is the namespace name followed by the <strong>scope resolution operator</strong> <code>::</code> followed by the basic entity name. Namespaces can be used to partition large codebases into logical groupings to avoid name clashes. If a namespace isn't defined, the <strong>global namespace</strong>, where entities have no namespace name attached, applies by default.</p>
+<p>You can define a namespace using the <code>namespace</code> keyword.
+<div class="highlight"><pre><span></span><code><span class="k">namespace</span> <span class="n">foo</span> <span class="p">{</span>
+  <span class="c1">// ...</span>
+<span class="p">}</span>
+</code></pre></div>
+Namespaces can be nested..
+<div class="highlight"><pre><span></span><code><span class="k">namespace</span> <span class="n">outer</span> <span class="p">{</span>
+  <span class="k">namespace</span> <span class="n">inner</span> <span class="p">{</span>
+    <span class="kt">void</span> <span class="nf">foo</span><span class="p">()</span> <span class="p">{</span>
+      <span class="c1">// ...</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="n">outer</span><span class="o">::</span><span class="n">inner</span><span class="o">::</span><span class="n">foo</span><span class="p">()</span>
+</code></pre></div>
+Namespace aliases can be formed:
+<div class="highlight"><pre><span></span><code><span class="k">namespace</span> <span class="n">outin</span> <span class="o">=</span> <span class="n">outer</span><span class="o">::</span><span class="n">inner</span><span class="p">;</span>
+<span class="n">outin</span><span class="o">::</span><span class="n">foo</span><span class="p">()</span>
+</code></pre></div></p>
+<p>The <strong><code>using</code></strong> keyword allows you to reference any name from a namespace without qualifying it.
+<div class="highlight"><pre><span></span><code><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</code></pre></div>
+It can also be used specify a <strong>type alias</strong>, where an alternative name is used to refer to an existing data type.
+<div class="highlight"><pre><span></span><code><span class="k">using</span> <span class="n">BigOnes</span> <span class="o">=</span> <span class="kt">unsigned</span> <span class="kt">long</span> <span class="kt">long</span><span class="p">;</span>
+<span class="k">typedef</span> <span class="kt">unsigned</span> <span class="kt">long</span> <span class="kt">long</span> <span class="n">BigOnes</span><span class="p">;</span> <span class="c1">// Older, less intuitive syntax</span>
+</code></pre></div></p>
+<h2 id="operators">Operators</h2>
+<p>Each operator is associated with a particular named function. Operators can be overloaded by implementing that function.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">bool</span> <span class="n">Rectangle</span><span class="o">::</span><span class="k">operator</span><span class="o">==</span><span class="p">(</span><span class="k">const</span> <span class="n">Rectangle</span><span class="o">&amp;</span> <span class="n">other</span><span class="p">)</span> <span class="k">const</span>
+<span class="p">{</span>
+  <span class="k">return</span> <span class="n">_length</span> <span class="o">==</span> <span class="n">other</span><span class="p">.</span><span class="n">_length</span> <span class="o">&amp;&amp;</span> <span class="n">_width</span> <span class="o">==</span> <span class="n">other</span><span class="p">.</span><span class="n">_width</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="header-files">Header files</h2>
+<table>
+<thead>
+<tr>
+<th>Topic</th>
+<th>Header file</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#sequence-containers">array</a></td>
+<td><code>&lt;array&gt;</code></td>
+</tr>
+<tr>
+<td><a href="#dequet">deque</a></td>
+<td><code>&lt;deque&gt;</code></td>
+</tr>
+<tr>
+<td>exception</td>
+<td><code>&lt;exception&gt;</code></td>
+</tr>
+<tr>
+<td><a href="#maps">map</a></td>
+<td><code>&lt;map&gt;</code></td>
+</tr>
+<tr>
+<td><a href="Math">Mathematical functions</a></td>
+<td><code>&lt;math.h&gt;</code></td>
+</tr>
+<tr>
+<td><a href="#queue">queue</a></td>
+<td><code>&lt;queue&gt;</code></td>
+</tr>
+<tr>
+<td><a href="#stack">stack</a></td>
+<td><code>&lt;stack&gt;</code></td>
+</tr>
+<tr>
+<td><a href="#sequence-containers">vector</a></td>
+<td><code>&lt;vector&gt;</code></td>
+</tr>
+<tr>
+<td><a href="#smart-pointers">Smart pointers</a></td>
+<td><code>&lt;memory&gt;</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="applications">Applications</h2>
+<h3 id="gtkmm">gtkmm</h3>
+<p><a href="https://developer.gnome.org/gtkmm-tutorial/3.24/"><strong>gtkmm</strong></a> (historically "GTK--") is a C++ wrapper for an underlying GTK code base written in C. Compared to <strong>Qt</strong>, another GUI library, gtkmm uses more modern and native C++ features.</p>
+<p>In <a href="https://packages.ubuntu.com/focal/devel/gnome-devel">Ubuntu</a>, installing the development environment is done with the <code>gnome-devel</code> metapackage:
+<div class="highlight"><pre><span></span><code>sudo apt install gnome-devel
+</code></pre></div></p>
+<h3 id="nes-emulator"><a href="../6502/">NES emulator</a></h3>
+<h2 id="courses">Courses</h2>
+<h3 id="c-standard-template-library-in-practice">C++ Standard Template Library in Practice</h3>
+<table>
+<thead>
+<tr>
+<th>/#</th>
+<th>Topic</th>
+<th>Video</th>
+<th>Projects</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01.01</td>
+<td></td>
+<td><a href="#" title="video01_01.mp4">The Course Overview</a></td>
+<td></td>
+</tr>
+<tr>
+<td>01.02</td>
+<td><a href="#templates">Templates</a></td>
+<td><a href="#" title="video01_02.mp4">Introduction to the STL</a></td>
+<td>TemplateSTL.cpp</td>
+</tr>
+<tr>
+<td>01.03</td>
+<td></td>
+<td><a href="#" title="video01_03.mp4">General Concepts</a></td>
+<td>ExceptionSTL.cpp</td>
+</tr>
+<tr>
+<td>01.04</td>
+<td></td>
+<td><a href="#" title="video01_04.mp4">Utilities - Common Utilities</a></td>
+<td>StringSTL.cpp</td>
+</tr>
+<tr>
+<td>01.05</td>
+<td></td>
+<td><a href="#" title="video01_05.mp4">Utilities - Regex</a></td>
+<td>RegexSTL.cpp</td>
+</tr>
+<tr>
+<td>01.06</td>
+<td></td>
+<td><a href="#" title="video01_06.mp4">Project - Bitcoin Exchange Program</a></td>
+<td>BTCX.cpp</td>
+</tr>
+<tr>
+<td>01.07</td>
+<td></td>
+<td><a href="#" title="video01_07.mp4">Project - Coding</a></td>
+<td></td>
+</tr>
+<tr>
+<td>01.08</td>
+<td></td>
+<td><a href="#" title="video01_08.mp4">Project - Custom Writer Function</a></td>
+<td></td>
+</tr>
+<tr>
+<td>01.09</td>
+<td></td>
+<td><a href="#" title="video01_09.mp4">Review</a></td>
+<td></td>
+</tr>
+<tr>
+<td>02.01</td>
+<td></td>
+<td><a href="#" title="video02_01.mp4">Understanding Containers</a></td>
+<td></td>
+</tr>
+<tr>
+<td>02.02</td>
+<td></td>
+<td><a href="#" title="video02_02.mp4">Vectors</a></td>
+<td></td>
+</tr>
+<tr>
+<td>02.03</td>
+<td></td>
+<td><a href="#" title="video02_03.mp4">Standard Array</a></td>
+<td></td>
+</tr>
+<tr>
+<td>02.04</td>
+<td></td>
+<td><a href="#" title="video02_04.mp4">Lists</a></td>
+<td></td>
+</tr>
+<tr>
+<td>02.05</td>
+<td></td>
+<td><a href="#" title="video02_05.mp4">Stacks and Queues</a></td>
+<td></td>
+</tr>
+<tr>
+<td>02.06</td>
+<td></td>
+<td><a href="#" title="video02_06.mp4">Maps and Multimaps - Overview</a></td>
+<td></td>
+</tr>
+<tr>
+<td>02.07</td>
+<td></td>
+<td><a href="#" title="video02_07.mp4">Maps - Coding</a></td>
+<td></td>
+</tr>
+<tr>
+<td>02.08</td>
+<td></td>
+<td><a href="#" title="video02_08.mp4">Multimaps - Coding</a></td>
+<td></td>
+</tr>
+<tr>
+<td>02.09</td>
+<td></td>
+<td><a href="#" title="video02_09.mp4">Sets and Multisets</a></td>
+<td></td>
+</tr>
+<tr>
+<td>02.10</td>
+<td></td>
+<td><a href="#" title="video02_10.mp4">Project</a></td>
+<td></td>
+</tr>
+<tr>
+<td>02.11</td>
+<td></td>
+<td><a href="#" title="video02_11.mp4">Review</a></td>
+<td></td>
+</tr>
+<tr>
+<td>03.01</td>
+<td></td>
+<td><a href="#" title="video03_01.mp4">Iterators</a></td>
+<td></td>
+</tr>
+<tr>
+<td>03.02</td>
+<td></td>
+<td><a href="#" title="video03_02.mp4">Input Iterators</a></td>
+<td></td>
+</tr>
+<tr>
+<td>03.03</td>
+<td></td>
+<td><a href="#" title="video03_03.mp4">Output Iterators</a></td>
+<td></td>
+</tr>
+<tr>
+<td>03.04</td>
+<td></td>
+<td><a href="#" title="video03_04.mp4">Forward Iterators</a></td>
+<td></td>
+</tr>
+<tr>
+<td>03.05</td>
+<td></td>
+<td><a href="#" title="video03_05.mp4">Bidirectional Iterators</a></td>
+<td></td>
+</tr>
+<tr>
+<td>03.06</td>
+<td></td>
+<td><a href="#" title="video03_06.mp4">Random Access Iterators</a></td>
+<td></td>
+</tr>
+<tr>
+<td>03.07</td>
+<td></td>
+<td><a href="#" title="video03_07.mp4">Auxiliary Iterator Functions</a></td>
+<td></td>
+</tr>
+<tr>
+<td>03.08</td>
+<td></td>
+<td><a href="#" title="video03_08.mp4">Iterator Adaptors</a></td>
+<td></td>
+</tr>
+<tr>
+<td>03.09</td>
+<td></td>
+<td><a href="#" title="video03_09.mp4">Writing Generic Functions for Iterators</a></td>
+<td></td>
+</tr>
+<tr>
+<td>03.10</td>
+<td></td>
+<td><a href="#" title="video03_10.mp4">User - Defined Iterators</a></td>
+<td></td>
+</tr>
+<tr>
+<td>03.11</td>
+<td></td>
+<td><a href="#" title="video03_11.mp4">Project</a></td>
+<td></td>
+</tr>
+<tr>
+<td>03.12</td>
+<td></td>
+<td><a href="#" title="video03_12.mp4">Review</a></td>
+<td></td>
+</tr>
+<tr>
+<td>04.01</td>
+<td></td>
+<td><a href="#" title="video04_01.mp4">Introduction to Algorithms</a></td>
+<td></td>
+</tr>
+<tr>
+<td>04.02</td>
+<td></td>
+<td><a href="#" title="video04_02.mp4">Sequence Algorithms - for_each</a></td>
+<td></td>
+</tr>
+<tr>
+<td>04.03</td>
+<td></td>
+<td><a href="#" title="video04_03.mp4">Sequence Algorithms - equals</a></td>
+<td></td>
+</tr>
+<tr>
+<td>04.04</td>
+<td></td>
+<td><a href="#" title="video04_04.mp4">Copying</a></td>
+<td></td>
+</tr>
+<tr>
+<td>04.05</td>
+<td></td>
+<td><a href="#" title="video04_05.mp4">Moving</a></td>
+<td></td>
+</tr>
+<tr>
+<td>04.06</td>
+<td></td>
+<td><a href="#" title="video04_06.mp4">Removing</a></td>
+<td></td>
+</tr>
+<tr>
+<td>04.07</td>
+<td></td>
+<td><a href="#" title="video04_07.mp4">Sorting and Gathering - std::sort</a></td>
+<td></td>
+</tr>
+<tr>
+<td>04.08</td>
+<td></td>
+<td><a href="#" title="video04_08.mp4">Sorting and Gathering - std::partial_sort algorithm</a></td>
+<td></td>
+</tr>
+<tr>
+<td>04.09</td>
+<td></td>
+<td><a href="#" title="video04_09.mp4">Sorting and Gathering - std::partition</a></td>
+<td></td>
+</tr>
+<tr>
+<td>04.10</td>
+<td></td>
+<td><a href="#" title="video04_10.mp4">Sorting and Gathering - std::partition_copy</a></td>
+<td></td>
+</tr>
+<tr>
+<td>04.11</td>
+<td></td>
+<td><a href="#" title="video04_11.mp4">Searching and Finding - std::find</a></td>
+<td></td>
+</tr>
+<tr>
+<td>04.12</td>
+<td></td>
+<td><a href="#" title="video04_12.mp4">Sorting and Gathering - std::find_first_of, std::adjacent_find</a></td>
+<td></td>
+</tr>
+<tr>
+<td>04.13</td>
+<td></td>
+<td><a href="#" title="video04_13.mp4">Sorting and Gathering - std::search</a></td>
+<td></td>
+</tr>
+<tr>
+<td>04.14</td>
+<td></td>
+<td><a href="#" title="video04_14.mp4">Sorting and Gathering - std::binary_search</a></td>
+<td></td>
+</tr>
+<tr>
+<td>04.15</td>
+<td></td>
+<td><a href="#" title="video04_15.mp4">Counting</a></td>
+<td></td>
+</tr>
+<tr>
+<td>05.01</td>
+<td></td>
+<td><a href="#" title="video05_01.mp4">Replacing and Transforming - std::replace</a></td>
+<td></td>
+</tr>
+<tr>
+<td>05.02</td>
+<td></td>
+<td><a href="#" title="video05_02.mp4">Replacing and Transforming - std::replace_copy</a></td>
+<td></td>
+</tr>
+<tr>
+<td>05.03</td>
+<td></td>
+<td><a href="#" title="video05_03.mp4">Replacing and Transforming - equals</a></td>
+<td></td>
+</tr>
+<tr>
+<td>05.04</td>
+<td></td>
+<td><a href="#" title="video05_04.mp4">Swapping</a></td>
+<td></td>
+</tr>
+<tr>
+<td>05.05</td>
+<td></td>
+<td><a href="#" title="video05_05.mp4">Rotating</a></td>
+<td></td>
+</tr>
+<tr>
+<td>05.06</td>
+<td></td>
+<td><a href="#" title="video05_06.mp4">Randomizing</a></td>
+<td></td>
+</tr>
+<tr>
+<td>05.07</td>
+<td></td>
+<td><a href="#" title="video05_07.mp4">Permutations</a></td>
+<td></td>
+</tr>
+<tr>
+<td>05.08</td>
+<td></td>
+<td><a href="#" title="video05_08.mp4">Sampling</a></td>
+<td></td>
+</tr>
+<tr>
+<td>05.09</td>
+<td></td>
+<td><a href="#" title="video05_09.mp4">Min</a></td>
+<td></td>
+</tr>
+<tr>
+<td>05.10</td>
+<td></td>
+<td><a href="#" title="video05_10.mp4">Max</a></td>
+<td></td>
+</tr>
+<tr>
+<td>05.11</td>
+<td></td>
+<td><a href="#" title="video05_11.mp4">Clamp</a></td>
+<td></td>
+</tr>
+<tr>
+<td>05.12</td>
+<td></td>
+<td><a href="#" title="video05_12.mp4">Fill and Generate</a></td>
+<td></td>
+</tr>
+<tr>
+<td>05.13</td>
+<td></td>
+<td><a href="#" title="video05_13.mp4">Numeric Algorithms - std::accumulate</a></td>
+<td></td>
+</tr>
+<tr>
+<td>05.14</td>
+<td></td>
+<td><a href="#" title="video05_14.mp4">Numeric Algorithms - std::partial_sum and std::adjacent_difference</a></td>
+<td></td>
+</tr>
+<tr>
+<td>05.15</td>
+<td></td>
+<td><a href="#" title="video05_15.mp4">Numeric Algorithms - std::gcd, and std::lcm</a></td>
+<td></td>
+</tr>
+<tr>
+<td>05.16</td>
+<td></td>
+<td><a href="#" title="video05_16.mp4">Numeric Algorithms - std::inner_product and std::iota</a></td>
+<td></td>
+</tr>
+<tr>
+<td>05.17</td>
+<td></td>
+<td><a href="#" title="video05_17.mp4">Review</a></td>
+<td></td>
+</tr>
+<tr>
+<td>06.01</td>
+<td></td>
+<td><a href="#" title="video06_01.mp4">Basic Architecture of the I/O Stream Library</a></td>
+<td></td>
+</tr>
+<tr>
+<td>06.02</td>
+<td></td>
+<td><a href="#" title="video06_02.mp4">Console I/O - Interact with a User</a></td>
+<td></td>
+</tr>
+<tr>
+<td>06.03</td>
+<td></td>
+<td><a href="#" title="video06_03.mp4">Console I/O - Read Input</a></td>
+<td></td>
+</tr>
+<tr>
+<td>06.04</td>
+<td></td>
+<td><a href="#" title="video06_04.mp4">File I/O</a></td>
+<td></td>
+</tr>
+<tr>
+<td>06.05</td>
+<td></td>
+<td><a href="#" title="video06_05.mp4">String Streams</a></td>
+<td></td>
+</tr>
+<tr>
+<td>06.06</td>
+<td></td>
+<td><a href="#" title="video06_06.mp4">Manipulators and Formatters</a></td>
+<td></td>
+</tr>
+<tr>
+<td>06.07</td>
+<td></td>
+<td><a href="#" title="video06_07.mp4">Stream States</a></td>
+<td></td>
+</tr>
+<tr>
+<td>06.08</td>
+<td></td>
+<td><a href="#" title="video06_08.mp4">Low Level I/O</a></td>
+<td></td>
+</tr>
+<tr>
+<td>06.09</td>
+<td></td>
+<td><a href="#" title="video06_09.mp4">Overloading Stream Operators</a></td>
+<td></td>
+</tr>
+<tr>
+<td>06.10</td>
+<td></td>
+<td><a href="#" title="video06_10.mp4">Project - Overview</a></td>
+<td></td>
+</tr>
+<tr>
+<td>06.11</td>
+<td></td>
+<td><a href="#" title="video06_11.mp4">Project - Classes and structures</a></td>
+<td></td>
+</tr>
+<tr>
+<td>06.12</td>
+<td></td>
+<td><a href="#" title="video06_12.mp4">Project - Implementation</a></td>
+<td></td>
+</tr>
+<tr>
+<td>06.13</td>
+<td></td>
+<td><a href="#" title="video06_13.mp4">Review</a></td>
+<td></td>
+</tr>
+<tr>
+<td>07.01</td>
+<td></td>
+<td><a href="#" title="video07_01.mp4">Unique Pointers</a></td>
+<td></td>
+</tr>
+<tr>
+<td>07.02</td>
+<td></td>
+<td><a href="#" title="video07_02.mp4">Shared Pointers</a></td>
+<td></td>
+</tr>
+<tr>
+<td>07.03</td>
+<td></td>
+<td><a href="#" title="video07_03.mp4">Allocators</a></td>
+<td></td>
+</tr>
+<tr>
+<td>07.04</td>
+<td></td>
+<td><a href="#" title="video07_04.mp4">Defining an Allocator</a></td>
+<td></td>
+</tr>
+<tr>
+<td>07.05</td>
+<td></td>
+<td><a href="#" title="video07_05.mp4">Uninitialized Memory</a></td>
+<td></td>
+</tr>
+<tr>
+<td>07.06</td>
+<td></td>
+<td><a href="#" title="video07_06.mp4">Review</a></td>
+<td></td>
+</tr>
+<tr>
+<td>08.01</td>
+<td></td>
+<td><a href="#" title="video08_01.mp4">Introduction to Threading</a></td>
+<td></td>
+</tr>
+<tr>
+<td>08.02</td>
+<td></td>
+<td><a href="#" title="video08_02.mp4">Creating Threads</a></td>
+<td></td>
+</tr>
+<tr>
+<td>08.03</td>
+<td></td>
+<td><a href="#" title="video08_03.mp4">Locks</a></td>
+<td></td>
+</tr>
+<tr>
+<td>08.04</td>
+<td></td>
+<td><a href="#" title="video08_04.mp4">Shared Locks</a></td>
+<td></td>
+</tr>
+<tr>
+<td>08.05</td>
+<td></td>
+<td><a href="#" title="video08_05.mp4">Atomic Values</a></td>
+<td></td>
+</tr>
+<tr>
+<td>08.06</td>
+<td></td>
+<td><a href="#" title="video08_06.mp4">Async</a></td>
+<td></td>
+</tr>
+<tr>
+<td>08.07</td>
+<td></td>
+<td><a href="#" title="video08_07.mp4">Condition Variables</a></td>
+<td></td>
+</tr>
+<tr>
+<td>08.08</td>
+<td></td>
+<td><a href="#" title="video08_08.mp4">Project</a></td>
+<td></td>
+</tr>
+<tr>
+<td>08.09</td>
+<td></td>
+<td><a href="#" title="video08_09.mp4">Review</a></td>
+<td></td>
+</tr>
+<tr>
+<td>09.01</td>
+<td></td>
+<td><a href="#" title="video09_01.mp4">Concepts</a></td>
+<td></td>
+</tr>
+<tr>
+<td>09.02</td>
+<td></td>
+<td><a href="#" title="video09_02.mp4">Modules</a></td>
+<td></td>
+</tr>
+<tr>
+<td>09.03</td>
+<td></td>
+<td><a href="#" title="video09_03.mp4">Coroutines</a></td>
+<td></td>
+</tr>
+<tr>
+<td>09.04</td>
+<td></td>
+<td><a href="#" title="video09_04.mp4">Course Review</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="complete-c-developer-course">Complete C++ Developer Course</h3>
+<table>
+<thead>
+<tr>
+<th>/#</th>
+<th>Topic</th>
+<th>Video</th>
+<th>Projects</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.1</td>
+<td></td>
+<td><a href="#" title="video01_01.mp4">Section Overview</a></td>
+<td></td>
+</tr>
+<tr>
+<td>1.2</td>
+<td></td>
+<td><a href="#" title="video01_02.mp4">Getting Started on Windows with Visual Studio Integrated Development Environment (IDE)</a></td>
+<td></td>
+</tr>
+<tr>
+<td>1.3</td>
+<td></td>
+<td><a href="#" title="video01_03.mp4">Getting Started on macOS or Linux with CodeBlocks IDE</a></td>
+<td></td>
+</tr>
+<tr>
+<td>1.4</td>
+<td></td>
+<td><a href="#" title="video01_04.mp4">Getting Started with macOS Catalina or Higher with Visual Studio Code</a></td>
+<td></td>
+</tr>
+<tr>
+<td>1.5</td>
+<td></td>
+<td><a href="#" title="video01_05.mp4">Finding Answers to Your Questions</a></td>
+<td></td>
+</tr>
+<tr>
+<td>2.1</td>
+<td></td>
+<td><a href="#" title="video02_01.mp4">Section Overview</a></td>
+<td></td>
+</tr>
+<tr>
+<td>2.2</td>
+<td></td>
+<td><a href="#" title="video02_02.mp4">Saying "Hello" to C++</a></td>
+<td></td>
+</tr>
+<tr>
+<td>2.3</td>
+<td></td>
+<td><a href="#" title="video02_03.mp4">Variables and Data Types - Part 1</a></td>
+<td></td>
+</tr>
+<tr>
+<td>2.4</td>
+<td></td>
+<td><a href="#" title="video02_04.mp4">Variables and Data Types - Part Two</a></td>
+<td></td>
+</tr>
+<tr>
+<td>2.5</td>
+<td></td>
+<td><a href="#" title="video02_05.mp4">Variables and Data Types - Part Three</a></td>
+<td></td>
+</tr>
+<tr>
+<td>2.6</td>
+<td></td>
+<td><a href="#" title="video02_06.mp4">Comments</a></td>
+<td></td>
+</tr>
+<tr>
+<td>2.7</td>
+<td></td>
+<td><a href="#" title="video02_07.mp4">Arithmetic Operators</a></td>
+<td></td>
+</tr>
+<tr>
+<td>2.8</td>
+<td></td>
+<td><a href="#" title="video02_08.mp4">Relational Operators</a></td>
+<td></td>
+</tr>
+<tr>
+<td>2.9</td>
+<td></td>
+<td><a href="#" title="video02_09.mp4">Logical Operators</a></td>
+<td></td>
+</tr>
+<tr>
+<td>2.10</td>
+<td></td>
+<td><a href="#" title="video02_10.mp4">Symbolic Constants and Naming Conventions</a></td>
+<td></td>
+</tr>
+<tr>
+<td>2.11</td>
+<td></td>
+<td><a href="#" title="video02_11.mp4">User Input</a></td>
+<td></td>
+</tr>
+<tr>
+<td>2.12</td>
+<td></td>
+<td><a href="#" title="video02_12.mp4">Project - Average of Three</a></td>
+<td></td>
+</tr>
+<tr>
+<td>2.13</td>
+<td></td>
+<td><a href="#" title="video02_13.mp4">Project - MadLibs Clone</a></td>
+<td></td>
+</tr>
+<tr>
+<td>2.14</td>
+<td></td>
+<td><a href="#" title="video02_14.mp4">Section Wrap-Up</a></td>
+<td></td>
+</tr>
+<tr>
+<td>3.1</td>
+<td></td>
+<td><a href="#" title="video03_01.mp4">Section Overview</a></td>
+<td></td>
+</tr>
+<tr>
+<td>3.2</td>
+<td></td>
+<td><a href="#" title="video03_02.mp4">Introduction to Control Statements</a></td>
+<td></td>
+</tr>
+<tr>
+<td>3.3</td>
+<td></td>
+<td><a href="#" title="video03_03.mp4">Selection Control Statements</a></td>
+<td></td>
+</tr>
+<tr>
+<td>3.4</td>
+<td></td>
+<td><a href="#" title="video03_04.mp4">Repetition Control Statements</a></td>
+<td></td>
+</tr>
+<tr>
+<td>3.5</td>
+<td></td>
+<td><a href="#" title="video03_05.mp4">The Break and Continue Statements</a></td>
+<td></td>
+</tr>
+<tr>
+<td>3.6</td>
+<td></td>
+<td><a href="#" title="video03_06.mp4">Random Numbers</a></td>
+<td></td>
+</tr>
+<tr>
+<td>3.7</td>
+<td></td>
+<td><a href="#" title="video03_07.mp4">Project - Jam of the Month Club</a></td>
+<td></td>
+</tr>
+<tr>
+<td>3.8</td>
+<td></td>
+<td><a href="#" title="video03_08.mp4">Project - Odds and Evens</a></td>
+<td></td>
+</tr>
+<tr>
+<td>3.9</td>
+<td></td>
+<td><a href="#" title="video03_09.mp4">Project - Guess the Number</a></td>
+<td></td>
+</tr>
+<tr>
+<td>3.10</td>
+<td></td>
+<td><a href="#" title="video03_10.mp4">Section Wrap-Up</a></td>
+<td></td>
+</tr>
+<tr>
+<td>4.1</td>
+<td></td>
+<td><a href="#" title="video04_01.mp4">Section Overview</a></td>
+<td></td>
+</tr>
+<tr>
+<td>4.2</td>
+<td></td>
+<td><a href="#" title="video04_02.mp4">Built-in Arrays</a></td>
+<td></td>
+</tr>
+<tr>
+<td>4.3</td>
+<td></td>
+<td><a href="#" title="video04_03.mp4">The Array Class</a></td>
+<td></td>
+</tr>
+<tr>
+<td>4.4</td>
+<td></td>
+<td><a href="#" title="video04_04.mp4">The Vector Class</a></td>
+<td></td>
+</tr>
+<tr>
+<td>4.5</td>
+<td></td>
+<td><a href="#" title="video04_05.mp4">Multi-Dimensional Arrays</a></td>
+<td></td>
+</tr>
+<tr>
+<td>4.6</td>
+<td></td>
+<td><a href="#" title="video04_06.mp4">Project - Array Data</a></td>
+<td></td>
+</tr>
+<tr>
+<td>4.7</td>
+<td></td>
+<td><a href="#" title="video04_07.mp4">Project - Vector Data</a></td>
+<td></td>
+</tr>
+<tr>
+<td>4.8</td>
+<td></td>
+<td><a href="#" title="video04_08.mp4">Project - Parallel Arrays/Vectors</a></td>
+<td></td>
+</tr>
+<tr>
+<td>4.9</td>
+<td></td>
+<td><a href="#" title="video04_09.mp4">Section Wrap-Up</a></td>
+<td></td>
+</tr>
+<tr>
+<td>5.1</td>
+<td></td>
+<td><a href="#" title="video05_01.mp4">Section Overview</a></td>
+<td></td>
+</tr>
+<tr>
+<td>5.2</td>
+<td></td>
+<td><a href="#" title="video05_02.mp4">Function Prototypes and Definitions</a></td>
+<td>FunctionFun.cpp</td>
+</tr>
+<tr>
+<td>5.3</td>
+<td></td>
+<td><a href="#" title="video05_03.mp4">Function Return Types and Parameters</a></td>
+<td></td>
+</tr>
+<tr>
+<td>5.4</td>
+<td></td>
+<td><a href="#" title="video05_04.mp4">Parameter Passing: Pass-by-Value and Pass-by-Reference</a></td>
+<td>PassingSchemes.cpp</td>
+</tr>
+<tr>
+<td>5.5</td>
+<td></td>
+<td><a href="#" title="video05_05.mp4">Variable Scope and Lifetime</a></td>
+<td>ScopeFun</td>
+</tr>
+<tr>
+<td>5.6</td>
+<td></td>
+<td><a href="#" title="video05_06.mp4">Function Overloading</a></td>
+<td></td>
+</tr>
+<tr>
+<td>5.7</td>
+<td></td>
+<td><a href="#" title="video05_07.mp4">The    &lt;cmath&gt; Library</a></td>
+<td></td>
+</tr>
+<tr>
+<td>5.8</td>
+<td></td>
+<td><a href="#" title="video05_08.mp4">Recursion</a></td>
+<td></td>
+</tr>
+<tr>
+<td>5.9</td>
+<td></td>
+<td><a href="#" title="video05_09.mp4">Project - Return the Product of Three Parameters</a></td>
+<td></td>
+</tr>
+<tr>
+<td>5.10</td>
+<td></td>
+<td><a href="#" title="video05_10.mp4">Project - Return the Sum of Built-in Array Elements</a></td>
+<td></td>
+</tr>
+<tr>
+<td>5.11</td>
+<td></td>
+<td><a href="#" title="video05_11.mp4">Project - Return the Sum of Array Object Elements</a></td>
+<td></td>
+</tr>
+<tr>
+<td>5.12</td>
+<td></td>
+<td><a href="#" title="video05_12.mp4">Project - Retrieve the Sum of Array Object Elements by Reference</a></td>
+<td></td>
+</tr>
+<tr>
+<td>5.13</td>
+<td></td>
+<td><a href="#" title="video05_13.mp4">Project - Tic-Tac-Toe (ADVANCED)</a></td>
+<td></td>
+</tr>
+<tr>
+<td>5.14</td>
+<td></td>
+<td><a href="#" title="video05_14.mp4">Section Wrap-Up</a></td>
+<td></td>
+</tr>
+<tr>
+<td>6.1</td>
+<td></td>
+<td><a href="#" title="video06_01.mp4">Section Overview</a></td>
+<td></td>
+</tr>
+<tr>
+<td>6.2</td>
+<td></td>
+<td><a href="#" title="video06_02.mp4">Basics of Object Oriented Programming (OOP)</a></td>
+<td></td>
+</tr>
+<tr>
+<td>6.3</td>
+<td></td>
+<td><a href="#" title="video06_03.mp4">Encapsulation: Data Members and Member Functions</a></td>
+<td></td>
+</tr>
+<tr>
+<td>6.4</td>
+<td></td>
+<td><a href="#" title="video06_04.mp4">Separate Compilation</a></td>
+<td></td>
+</tr>
+<tr>
+<td>6.5</td>
+<td></td>
+<td><a href="#" title="video06_05.mp4">Constructors and Destructors</a></td>
+<td></td>
+</tr>
+<tr>
+<td>6.6</td>
+<td></td>
+<td><a href="#" title="video06_06.mp4">A Rectangle Class</a></td>
+<td>Rectangle.cpp</td>
+</tr>
+<tr>
+<td>6.7</td>
+<td></td>
+<td><a href="#" title="video06_07.mp4">A Book Class</a></td>
+<td></td>
+</tr>
+<tr>
+<td>6.8</td>
+<td></td>
+<td><a href="#" title="video06_08.mp4">Project - A Bank Account Class</a></td>
+<td></td>
+</tr>
+<tr>
+<td>6.9</td>
+<td></td>
+<td><a href="#" title="video06_09.mp4">Project - A Pizza Class</a></td>
+<td></td>
+</tr>
+<tr>
+<td>6.10</td>
+<td></td>
+<td><a href="#" title="video06_10.mp4">Project - A Circle Class</a></td>
+<td></td>
+</tr>
+<tr>
+<td>6.11</td>
+<td></td>
+<td><a href="#" title="video06_11.mp4">Section Wrap-Up</a></td>
+<td></td>
+</tr>
+<tr>
+<td>7.1</td>
+<td></td>
+<td><a href="#" title="video07_01.mp4">Section Overview</a></td>
+<td></td>
+</tr>
+<tr>
+<td>7.2</td>
+<td></td>
+<td><a href="#" title="video07_02.mp4">Exceptions and the Exception Hierarchy</a></td>
+<td></td>
+</tr>
+<tr>
+<td>7.3</td>
+<td></td>
+<td><a href="#" title="video07_03.mp4">Logic Errors</a></td>
+<td></td>
+</tr>
+<tr>
+<td>7.4</td>
+<td></td>
+<td><a href="#" title="video07_04.mp4">Runtime Errors and Throwing Exceptions</a></td>
+<td></td>
+</tr>
+<tr>
+<td>7.5</td>
+<td></td>
+<td><a href="#" title="video07_05.mp4">Rethrowing Exceptions</a></td>
+<td></td>
+</tr>
+<tr>
+<td>7.6</td>
+<td></td>
+<td><a href="#" title="video07_06.mp4">Custom Exceptions</a></td>
+<td></td>
+</tr>
+<tr>
+<td>7.7</td>
+<td></td>
+<td><a href="#" title="video07_07.mp4">Basic Testing and Debugging</a></td>
+<td></td>
+</tr>
+<tr>
+<td>7.8</td>
+<td></td>
+<td><a href="#" title="video07_08.mp4">Project - Throwing and Handling an Out_of_Range Exception</a></td>
+<td></td>
+</tr>
+<tr>
+<td>7.9</td>
+<td></td>
+<td><a href="#" title="video07_09.mp4">Project - Creating and Using Your Own Exception</a></td>
+<td></td>
+</tr>
+<tr>
+<td>7.10</td>
+<td></td>
+<td><a href="#" title="video07_10.mp4">Section Wrap-Up</a></td>
+<td></td>
+</tr>
+<tr>
+<td>8.1</td>
+<td></td>
+<td><a href="#" title="video08_01.mp4">Section Overview</a></td>
+<td></td>
+</tr>
+<tr>
+<td>8.2</td>
+<td></td>
+<td><a href="#" title="video08_02.mp4">Introduction to Pointers</a></td>
+<td></td>
+</tr>
+<tr>
+<td>8.3</td>
+<td></td>
+<td><a href="#" title="video08_03.mp4">Dynamic Memory - Part 1</a></td>
+<td></td>
+</tr>
+<tr>
+<td>8.4</td>
+<td></td>
+<td><a href="#" title="video08_04.mp4">Dynamic Memory (- Part 2</a></td>
+<td></td>
+</tr>
+<tr>
+<td>8.5</td>
+<td></td>
+<td><a href="#" title="video08_05.mp4">Const Correctness</a></td>
+<td></td>
+</tr>
+<tr>
+<td>8.6</td>
+<td></td>
+<td><a href="#" title="video08_06.mp4">Project - Dynamically Creating Rectangles</a></td>
+<td></td>
+</tr>
+<tr>
+<td>8.7</td>
+<td></td>
+<td><a href="#" title="video08_07.mp4">Project - Dynamically Creating Circles</a></td>
+<td></td>
+</tr>
+<tr>
+<td>8.8</td>
+<td></td>
+<td><a href="#" title="video08_08.mp4">Section Wrap-Up</a></td>
+<td></td>
+</tr>
+<tr>
+<td>9.1</td>
+<td></td>
+<td><a href="#" title="video09_01.mp4">Section Overview</a></td>
+<td></td>
+</tr>
+<tr>
+<td>9.2</td>
+<td></td>
+<td><a href="#" title="video09_02.mp4">Sequential File Output</a></td>
+<td></td>
+</tr>
+<tr>
+<td>9.3</td>
+<td></td>
+<td><a href="#" title="video09_03.mp4">Sequential File Input</a></td>
+<td></td>
+</tr>
+<tr>
+<td>9.4</td>
+<td></td>
+<td><a href="#" title="video09_04.mp4">More File Input/ Output (I/O)</a></td>
+<td></td>
+</tr>
+<tr>
+<td>9.5</td>
+<td></td>
+<td><a href="#" title="video09_05.mp4">Project - Reading Data from File and Printing Statistics</a></td>
+<td></td>
+</tr>
+<tr>
+<td>9.6</td>
+<td></td>
+<td><a href="#" title="video09_06.mp4">Project - Dynamically Creating Rectangles from File</a></td>
+<td></td>
+</tr>
+<tr>
+<td>9.7</td>
+<td></td>
+<td><a href="#" title="video09_07.mp4">Project - Shopping Item File</a></td>
+<td></td>
+</tr>
+<tr>
+<td>9.8</td>
+<td></td>
+<td><a href="#" title="video09_08.mp4">Section Wrap-Up</a></td>
+<td></td>
+</tr>
+<tr>
+<td>10.1</td>
+<td></td>
+<td><a href="#" title="video10_01.mp4">Section Overview</a></td>
+<td></td>
+</tr>
+<tr>
+<td>10.2</td>
+<td></td>
+<td><a href="#" title="video10_02.mp4">Inheritance - Part 1</a></td>
+<td></td>
+</tr>
+<tr>
+<td>10.3</td>
+<td></td>
+<td><a href="#" title="video10_03.mp4">Inheritance - Part 2)</a></td>
+<td></td>
+</tr>
+<tr>
+<td>10.4</td>
+<td></td>
+<td><a href="#" title="video10_04.mp4">Polymorphism and Late Binding</a></td>
+<td></td>
+</tr>
+<tr>
+<td>10.5</td>
+<td></td>
+<td><a href="#" title="video10_05.mp4">Enumerated Types This video explains enumerated types.</a></td>
+<td>EnumFun.cpp</td>
+</tr>
+<tr>
+<td>10.6</td>
+<td></td>
+<td><a href="#" title="video10_06.mp4">Project - Derived Cat Class</a></td>
+<td>Cat.cpp</td>
+</tr>
+<tr>
+<td>10.7</td>
+<td></td>
+<td><a href="#" title="video10_07.mp4">Project – Role Playing Game (RPG) Player Character Creation</a></td>
+<td><a href="#rpgchargen">RPGCharGen</a></td>
+</tr>
+<tr>
+<td>10.8</td>
+<td></td>
+<td><a href="#" title="video10_08.mp4">Section Wrap-Up</a></td>
+<td></td>
+</tr>
+<tr>
+<td>11.1</td>
+<td></td>
+<td><a href="#" title="video11_01.mp4">Section Overview</a></td>
+<td></td>
+</tr>
+<tr>
+<td>11.2</td>
+<td></td>
+<td><a href="#" title="video11_02.mp4">Templates - Standard Template Library (STL)</a></td>
+<td>TemplateFun.cpp</td>
+</tr>
+<tr>
+<td>11.3</td>
+<td><a href="#queue"><code>queue&lt;T&gt;</code></a> <a href="#stack"><code>stack&lt;T&gt;</code></a> <a href="#dequet"><code>deque&lt;T&gt;</code></a></td>
+<td><a href="#" title="video11_03.mp4">Standard Template Library (STL) - Part 1)</a></td>
+<td>DequeFun.cpp, StackFun.cpp, QueueProject.cpp</td>
+</tr>
+<tr>
+<td>11.4</td>
+<td><a href="Maps"><code>map&lt;T&gt;</code></a></td>
+<td><a href="#" title="video11_04.mp4">Standard Template Library (STL) - Part 2</a></td>
+<td>ContactsFun.cpp, AlgorithmFun.cpp</td>
+</tr>
+<tr>
+<td>11.5</td>
+<td><a href="Pointers#smart-pointers"><code>unique_ptr&lt;T&gt;</code></a></td>
+<td><a href="#" title="video11_05.mp4">Smart Pointers</a></td>
+<td>SmartPointerFun.cpp, Car.cpp</td>
+</tr>
+<tr>
+<td>11.6</td>
+<td><a href="#friends">Friend functions</a></td>
+<td><a href="#" title="video11_06.mp4">Friend Functions and Friend Classes</a></td>
+<td>FriendFunctions.cpp</td>
+</tr>
+<tr>
+<td>11.7</td>
+<td></td>
+<td><a href="#" title="video11_07.mp4">Operator Overloading</a></td>
+<td>OverloadingFun.cpp, Rectangle.h</td>
+</tr>
+<tr>
+<td>11.8</td>
+<td><a href="Maps"><code>map&lt;T&gt;</code></a></td>
+<td><a href="#" title="video11_08.mp4">Project - Dictionary of Terms</a></td>
+<td>DictionaryProject.cpp</td>
+</tr>
+<tr>
+<td>11.9</td>
+<td></td>
+<td><a href="#" title="video11_09.mp4">Project - Aliens</a></td>
+<td>Aliens.cpp</td>
+</tr>
+<tr>
+<td>11.10</td>
+<td></td>
+<td><a href="#" title="video11_10.mp4">Section Wrap-Up</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="rpgchargen">RPGCharGen</h4>
+<div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">cpp</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;RPGCharGen.h&quot;</span><span class="cp"></span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+
+<span class="n">Warrior</span> <span class="n">w</span><span class="p">{</span><span class="s">&quot;Doofus McGroober&quot;</span><span class="p">,</span> <span class="n">Race</span><span class="o">::</span><span class="n">HUMAN</span><span class="p">};</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Player name: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">w</span><span class="p">.</span><span class="n">getName</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Player HP:   &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">w</span><span class="p">.</span><span class="n">getHp</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Player MP:   &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">w</span><span class="p">.</span><span class="n">getMp</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Player race: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">w</span><span class="p">.</span><span class="n">getRace</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="n">w</span><span class="p">.</span><span class="n">attack</span><span class="p">();</span>
+
+<span class="n">Priest</span> <span class="n">m</span><span class="p">{</span><span class="s">&quot;Brother Tolkien&quot;</span><span class="p">,</span> <span class="n">Race</span><span class="o">::</span><span class="n">ELF</span><span class="p">};</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Player name: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">m</span><span class="p">.</span><span class="n">getName</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Player HP:   &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">m</span><span class="p">.</span><span class="n">getHp</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Player MP:   &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">m</span><span class="p">.</span><span class="n">getMp</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Player race: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">m</span><span class="p">.</span><span class="n">getRace</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="n">m</span><span class="p">.</span><span class="n">attack</span><span class="p">();</span>
+
+<span class="n">Mage</span> <span class="n">n</span><span class="p">{</span><span class="s">&quot;Smart Frodo&quot;</span><span class="p">,</span> <span class="n">Race</span><span class="o">::</span><span class="n">DWARF</span><span class="p">};</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Player name: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">n</span><span class="p">.</span><span class="n">getName</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Player HP:   &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">n</span><span class="p">.</span><span class="n">getHp</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Player MP:   &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">n</span><span class="p">.</span><span class="n">getMp</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Player race: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">n</span><span class="p">.</span><span class="n">getRace</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="n">n</span><span class="p">.</span><span class="n">attack</span><span class="p">();</span>
+<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">h</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="cp">#if !defined(RPGCHARGEN_H)</span>
+<span class="cp">#define RPGCHARGEN_H</span>
+<span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
+
+<span class="k">enum</span> <span class="nc">Race</span> <span class="p">{</span> <span class="n">HUMAN</span><span class="p">,</span> <span class="n">ELF</span><span class="p">,</span> <span class="n">DWARF</span> <span class="p">};</span>
+
+<span class="k">class</span> <span class="nc">Player</span> <span class="p">{</span>
+
+<span class="k">protected</span><span class="o">:</span>
+<span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">_name</span><span class="p">{</span> <span class="s">&quot;Johnny Bravo&quot;</span> <span class="p">};</span>
+<span class="n">Race</span> <span class="n">_race</span><span class="p">{</span><span class="n">Race</span><span class="o">::</span><span class="n">HUMAN</span> <span class="p">};</span>
+<span class="kt">int</span> <span class="n">_hp</span><span class="p">{</span> <span class="mi">100</span> <span class="p">};</span>
+<span class="kt">int</span> <span class="n">_mp</span><span class="p">{</span> <span class="mi">100</span> <span class="p">};</span>
+
+<span class="k">public</span><span class="o">:</span>
+<span class="n">Player</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">n</span><span class="p">,</span> <span class="n">Race</span> <span class="n">r</span><span class="p">,</span> <span class="kt">int</span> <span class="n">hp</span><span class="p">,</span> <span class="kt">int</span> <span class="n">mp</span><span class="p">)</span> <span class="o">:</span> <span class="n">_name</span><span class="p">{</span><span class="n">n</span><span class="p">},</span> <span class="n">_race</span><span class="p">{</span><span class="n">r</span><span class="p">},</span> <span class="n">_hp</span><span class="p">(</span><span class="n">hp</span><span class="p">),</span> <span class="n">_mp</span><span class="p">(</span><span class="n">mp</span><span class="p">)</span> <span class="p">{}</span>
+<span class="k">virtual</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">attack</span><span class="p">()</span><span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="kt">int</span> <span class="nf">getHp</span><span class="p">()</span>                 <span class="p">{</span> <span class="k">return</span> <span class="n">_hp</span><span class="p">;</span>   <span class="p">}</span>
+<span class="kt">int</span> <span class="nf">getMp</span><span class="p">()</span>                 <span class="p">{</span> <span class="k">return</span> <span class="n">_mp</span><span class="p">;</span>   <span class="p">}</span>
+
+<span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">getRace</span><span class="p">()</span>              
+<span class="p">{</span>
+    <span class="k">switch</span> <span class="p">(</span><span class="n">_race</span><span class="p">)</span>
+    <span class="p">{</span>
+    <span class="k">case</span> <span class="mi">0</span><span class="o">:</span>
+    <span class="k">return</span> <span class="s">&quot;human&quot;</span><span class="p">;</span>
+    <span class="k">break</span><span class="p">;</span>
+
+    <span class="k">case</span> <span class="mi">1</span><span class="o">:</span>
+    <span class="k">return</span> <span class="s">&quot;elf&quot;</span><span class="p">;</span>
+    <span class="k">break</span><span class="p">;</span>
+    <span class="k">case</span> <span class="mi">2</span><span class="o">:</span>
+    <span class="k">return</span> <span class="s">&quot;dwarf&quot;</span><span class="p">;</span>
+    <span class="k">break</span><span class="p">;</span>
+
+    <span class="k">default</span><span class="o">:</span>
+    <span class="k">return</span> <span class="s">&quot;none&quot;</span><span class="p">;</span>
+    <span class="k">break</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">getName</span><span class="p">()</span>       <span class="p">{</span> <span class="k">return</span> <span class="n">_name</span><span class="p">;</span> <span class="p">}</span>
+<span class="kt">void</span> <span class="n">setHp</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span>           <span class="p">{</span> <span class="n">_hp</span> <span class="o">=</span> <span class="n">n</span><span class="p">;</span>   <span class="p">}</span>
+<span class="kt">void</span> <span class="n">setMp</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span>           <span class="p">{</span> <span class="n">_mp</span> <span class="o">=</span> <span class="n">n</span><span class="p">;</span>   <span class="p">}</span>
+<span class="kt">void</span> <span class="n">setName</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">s</span><span class="p">)</span> <span class="p">{</span> <span class="n">_name</span> <span class="o">=</span> <span class="n">s</span><span class="p">;</span> <span class="p">}</span>
+<span class="kt">void</span> <span class="n">setRace</span><span class="p">(</span><span class="n">Race</span> <span class="n">r</span><span class="p">)</span>        <span class="p">{</span> <span class="n">_race</span> <span class="o">=</span> <span class="n">r</span><span class="p">;}</span>
+<span class="p">};</span>
+
+<span class="k">class</span> <span class="nc">Warrior</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Player</span> <span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+<span class="n">Warrior</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">n</span><span class="p">,</span> <span class="n">Race</span> <span class="n">r</span><span class="p">)</span> <span class="o">:</span> <span class="n">Player</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{}</span>
+<span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">attack</span><span class="p">()</span> <span class="p">{</span><span class="k">return</span> <span class="s">&quot;I will destroy you with my sword, foul demon!&quot;</span><span class="p">;}</span>
+<span class="p">};</span>
+
+<span class="k">class</span> <span class="nc">Priest</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Player</span> <span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+<span class="n">Priest</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">n</span><span class="p">,</span> <span class="n">Race</span> <span class="n">r</span><span class="p">)</span> <span class="o">:</span> <span class="n">Player</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span> <span class="p">{}</span>
+<span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">attack</span><span class="p">()</span> <span class="p">{</span><span class="k">return</span> <span class="s">&quot;Taste the wrath of the Two True Gods!&quot;</span><span class="p">;}</span>
+<span class="p">};</span>
+
+<span class="k">class</span> <span class="nc">Mage</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Player</span> <span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+<span class="n">Mage</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">n</span><span class="p">,</span> <span class="n">Race</span> <span class="n">r</span><span class="p">)</span> <span class="o">:</span> <span class="n">Player</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">150</span><span class="p">)</span> <span class="p">{}</span>
+<span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">attack</span><span class="p">()</span> <span class="p">{</span><span class="k">return</span> <span class="s">&quot;You are overmatched by my esoteric artifices!&quot;</span><span class="p">;}</span>
+<span class="p">};</span>
+
+<span class="cp">#endif </span><span class="c1">// RPGCHARGEN_H</span>
+</code></pre></div>
+</div>
+</div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        <a href="../C%23/" class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              C&#35;
+            </div>
+          </div>
+        </a>
+      
+      
+        <a href="../Courses/" class="md-footer__link md-footer__link--next" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Courses
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../assets/javascripts/workers/search.fb4a9340.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.a1c7c35e.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1378,7 +1378,7 @@ A mocked data provider also implementing that interface can then be used in test
 
 ## .NET
 
-[Assembly]: #net 'Assembly&#10;a reusable, versionable, and self-describing building block of a common language runtime application'
+
 [.NET Framework]: #net '.NET Framework&#10;set of APIs associated with the C# programming language that facilitate the management of Microsoft-based products and development of Windows applications&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2013.: 504'
 [.NET]: #net '.NET&#10;open-source development platform that includes languages and libraries'
 [NuGet]: #net 'NuGet&#10;.NET package manager'
@@ -1448,29 +1448,14 @@ Run the **dotnet try** web server that supports .NET Interactive-style markdown:
 Project files are XML files that describe various metadata to the dotnet compiler.
 The root node is **`Project`** which has two subnodes that collect various information about the project:
 
-**PropertyGroup** contains various project settings
+**PropertyGroup** can contain various elements that affect project settings:
 
 - `RootNamespace` specifies the namespace that contains the `Main()` method for console applications
+- `TargetFramework` specifies the targeted CLR framework: `net5.0`, `netcoreapp3.1`, etc
+- `LangVersion` C# version: `9.0`, etc [:material-dot-net:](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/configure-language-version)
+- `Nullable` Enable nullable reference types [:material-dot-net:](https://docs.microsoft.com/en-us/dotnet/csharp/nullable-references#nullable-contexts)
 
 **ItemGroup** contains references to NuGet packages (`PackageReference`) and other projects (`ProjectReference`).
-
-```xml
-<ItemGroup>
-    <ProjectReference Include="/path/to/OtherProject.csproj"/>
-    <PackageReference Include="xunit" Version="2.4.0"/>
-</ItemGroup>
-```
-
-Adding a reference to another project is also easily accomplished from the command-line.
-
-```sh
-dotnet add project /path/to/OtherProject.csproj
-```
-
-
-
-- The **`LangVersion`** element can specify a version of C# for use by the compiler. [:material-dot-net:](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/configure-language-version)
-- Enabling or disabling nullable reference types at the project level can be done by declaring a **`Nullable`** element. [:material-dot-net:](https://docs.microsoft.com/en-us/dotnet/csharp/nullable-references#nullable-contexts)
 
 === "LangVersion"
 
@@ -1487,6 +1472,22 @@ dotnet add project /path/to/OtherProject.csproj
         <Nullable>enable</Nullable>
     </PropertyGroup>
     ```
+
+=== "ItemGroup"
+
+    ```xml
+    <ItemGroup>
+        <ProjectReference Include="/path/to/OtherProject.csproj"/>
+        <PackageReference Include="xunit" Version="2.4.0"/>
+    </ItemGroup>
+    ```
+
+Adding a reference to another project is also easily accomplished from the command-line.
+
+```sh
+dotnet add project /path/to/OtherProject.csproj
+```
+
 
 ### Packages
 
@@ -1752,20 +1753,19 @@ private async void Search_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-## Patterns
+## 📘 Glossary
 
-### Provider pattern
+[Assembly]: #net 'Assembly&#10;a reusable, versionable, and self-describing building block of a .NET application'
+[Module]: #module 'Module&#10;A portable executable file (DLL or EXE) consisting of one or more classes and interfaces.'
+[Provider pattern]: #provider-pattern 'Provider pattern&#10;A favored development model in .NET, and a form of dependency injection where a class is passed as an argument to another class that uses it for some purpose.'
 
-The provider pattern is a favored design pattern in .NET.
-This pattern is a form of dependency injection where a class is passed as an argument to another class that uses it for some purpose.
-The key is that the provider **must derive from an abstract base class or an interface**.
-This will allow a mock based on the same interface to be substituted in unit testing.
+[Assembly][Assembly]{: #assembly}
+: A collection of types and resources that are built to work together and form a logical unit of functionality and which form the building blocks of .NET applications.
 
-- In the XAML: Getting Started course, the process of loading data either from disk or memory is abstracted in a DataProvider class which is passed as argument to the main ViewModel.
-- In the Mocking with Moq and xUnit course, the FrequentFlyerNumberValidator is mocked by using the interface it implements: IFrequentFlyerNumberValidator
+[Module][Module]{: #module}
+: A portable executable file (DLL or EXE) consisting of one or more classes and interfaces.
+  Although multiple modules can theoretically compose a single assembly, in practice an assembly and module can be considered one and the same for most .NET applications.
 
-| Component           | XAML: Getting Started | Mocking with Moq and xUnit     | Starships          | Test Driven Development in C#         |
-| ------------------- | --------------------- | ------------------------------ | ------------------ | ------------------------------------- |
-| Contextual action   | ViewModel             | CreditCardApplicationEvaluator | StarshipDeployment | DeskBookingRequestProcessor           |
-| Provider            | CustomerDataProvider  | FrequentFlyerNumberValidator   | OfficerEvaluator   | DeskBookingRepository                 |
-| Model               | Customer              | CreditCardApplication          | Captain            | DeskBookingRequest, DeskBookingResult |
+[Provider pattern][Provider pattern]{: #provider-pattern} [:material-wikipedia:](https://en.wikipedia.org/wiki/Provider_model)
+: A favored development model in .NET, and a form of dependency injection where a class is passed as an argument to another class that uses it for some purpose.
+  The key is that the provider must derive from an abstract base class or an interface to support mocks in unit testing.

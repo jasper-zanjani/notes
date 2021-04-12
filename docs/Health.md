@@ -31,33 +31,6 @@
 | ------- | -------- |
 
 
-### 💊 Capsule calculations
-
-
-| Substance                                                                   |                                     [TDD][TDD] |                                            Ratio |                                 [TDPM][TDPM] |                                      :brain: |                            :athletic_shoe: |
-| --------------------------------------------------------------------------- | ---------------------------------------------: | -----------------------------------------------: | -------------------------------------------: | -------------------------------------------: | -----------------------------------------: |
-| [Creatine :material-file-document-edit-outline:](#creatine)                 |                                            5.0 |                                              1:1 |                                          5.0 |                                          2.5 |                                        2.5 |
-| [LCLT :material-file-document-edit-outline:](#l-carnitine)                  |                                            5.0 |                                              1:1 |                                          5.0 |                                          1.5 |                                        3.5 |
-| [Potassium :material-file-document-edit-outline:](#potassium)               |                                            2.0 |                                          **2:1** |                                          4.0 |                                          2.0 |                                        2.0 |
-| [DAA :material-file-document-edit-outline:](#d-aspartic-acid)               |                                            3.0 |                                              1:1 |                                          3.0 |                                          1.0 |                                        2.0 |
-| [Taurine :material-file-document-edit-outline:](#taurine)                   |                                            3.0 |                                              1:1 |                                          3.0 |                                          1.0 |                                        2.0 |
-| [DMAE :material-file-document-edit-outline:](#dmae)                         |                                            1.0 |                                          **3:1** |                                          3.0 |                                          2.0 |                                        1.0 |
-| [Lion's Mane :material-file-document-edit-outline:](#lions-mane)            |                                            1.0 |                                              1:1 |                                          1.0 |                                          1.0 | <span style="color: lightgrey;">0.0</span> |
-| [Ashwagandha :material-file-document-edit-outline:](#ashwagandha)           |                                            3.0 |                                              1:1 |                                          3.0 |                                          1.0 |                                        2.0 |
-| [Alpha GPC :material-file-document-edit-outline:](#alpha-gpc)               |                                            0.6 |                                              1:1 |                                          0.6 |                                          0.6 | <span style="color: lightgrey;">0.0</span> |
-| [L-Theanine :material-file-document-edit-outline:](#l-theanine)             |                                            0.4 |                                              1:1 |                                          0.4 |                                          0.4 | <span style="color: lightgrey;">0.0</span> |
-| [L-Tyrosine :material-file-document-edit-outline:](#l-tyrosine) (planned)   |     <span style="color: lightgrey;">1.0</span> |                                              1:1 |   <span style="color: lightgrey;">1.0</span> |   <span style="color: lightgrey;">0.5</span> | <span style="color: lightgrey;">0.5</span> |
-| [Huperzine A :material-file-document-edit-outline:](#huperzine-a) (planned) | <span style="color: lightgrey;">200 mcg</span> | <span style="color: lightgrey;">**100:1**</span> | <span style="color: lightgrey;">20 mg</span> | <span style="color: lightgrey;">20 mg</span> | <span style="color: lightgrey;">0.0</span> |
-| **Total**                                                                   |                                       **24.0** |                                                  |                                     **28.0** |                                     **13.0** |                                   **15.0** |
-
-
-| Supplementation package | [TDD][TDD] (g) | Daily doses per 100-pill batch |
-| ----------------------- | -------------: | -----------------------------: |
-| :brain:                 |           13.0 |                            7.7 |
-| :athletic_shoe:         |           15.0 |                            6.6 |
-
-Multiply each package's ingredient dose by the last column to get the amount of product to use per batch.
-
 ### 🥗 Dietary deficiencies
 
 | Substance                                                     | Dosage (mg) | Cheapest cost per dose |
@@ -250,14 +223,15 @@ Most food sources of calcium are dairy.
 - A cup of edamame may contain about 100 mg
 - An ounce of almonds may contain 367 mg
 
-| Product                                                                                                                                                                    |     $ |        mg | $/1,000 mg |
-| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----: | --------: | ---------: |
-| [BulkSupplements Calcium citrate powder (1 kg)](https://www.amazon.com/BulkSupplements-Calcium-Citrate-Powder-Kilogram/dp/B00F8I5XPG)                                      | 17.96 | 1,000,000 |  **0.018** |
-| [Swanson Calcium Carbonate, Aspartate & Citrate 500 mg x 100 tablets](https://www.swansonvitamins.com/swanson-premium-calcium-carbonate-aspartate-citrate-500-mg-100-tabs) |  2.74 |    50,000 |       0.05 |
-| [Swanson Calcium Citrate & Vitamin D 315 mg x 250 tablets](https://www.swansonvitamins.com/swanson-premium-calcium-citrate-vitamin-d-250-tabs)                             |  7.14 |    78,750 |       0.09 |
-| [Swanson Liquid Calcium & Magnesium 300 mg x 100 softgels (35% off)](https://www.swansonvitamins.com/swanson-premium-liquid-calcium-magnesium-300-150-mg-100-sgels)        |  4.21 |    30,000 |       0.14 |
-| [Swanson Calcium Citrate Plus Magnesium 150 mg x 150 capsules](https://www.swansonvitamins.com/swanson-premium-calcium-citrate-plus-magnesium-150-caps)                    |  3.14 |    22,500 |       0.14 |
-| Blue Diamond Almonds (BOGO sale)                                                                                                                                           |  9.00 |     2,560 |       3.52 |
+| Product                                                                                                                                                                    |                 $ |       g |       $/1,000 mg |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------: | ------: | ---------------: |
+| [BulkSupplements Calcium citrate powder (1 kg)](https://www.amazon.com/BulkSupplements-Calcium-Citrate-Powder-Kilogram/dp/B00F8I5XPG)                                      |             17.96 | 1,000.0 |         **0.02** |
+| [Swanson Calcium Citrate & Vitamin D 315 mg x 250 tablets](https://www.swansonvitamins.com/swanson-premium-calcium-citrate-vitamin-d-250-tabs)                             | **6.59**<br>10.99 |    78.8 | **0.08**<br>0.14 |
+| [Swanson Liquid Calcium & Magnesium 300 mg x 100 softgels](https://www.swansonvitamins.com/swanson-premium-liquid-calcium-magnesium-300-150-mg-100-sgels)                  |  **3.89**<br>6.49 |    30.0 | **0.13**<br>0.21 |
+| [Swanson Calcium Citrate Plus Magnesium 150 mg x 150 capsules](https://www.swansonvitamins.com/swanson-premium-calcium-citrate-plus-magnesium-150-caps)                    |  **3.81**<br>4.49 |    22.5 | **0.17**<br>0.20 |
+| [Amazon Elements Calcium plus Vitamin D 500 mg x 65 tablets](https://www.amazon.com/Amazon-Elements-Calcium-Vitamin-Tablets/dp/B075DKVTKQ)                                 | **5.99**<br>10.99 |    32.5 | **0.19**<br>0.34 |
+| Blue Diamond Almonds (BOGO sale)                                                                                                                                           |              9.00 |     2.5 |             3.52 |
+| [Swanson Calcium Carbonate, Aspartate & Citrate 500 mg x 100 tablets](https://www.swansonvitamins.com/swanson-premium-calcium-carbonate-aspartate-citrate-500-mg-100-tabs) |              2.74 |    50.0 |             0.05 |
 
 ### Choline
 
@@ -523,7 +497,7 @@ A review found that it can improve sperm volume, and motility and the volume of 
 Another review found that maca can help alleviate hot flashes and anxiety in menopausal women.
 ([src](https://www.healthline.com/nutrition/benefits-of-maca-root))
 
-
+- Dosage varies 1.5-5.0 g/day [:material-file-document-multiple-outline:](https://www.healthline.com/nutrition/benefits-of-maca-root#TOC_TITLE_HDR_12)
 
 | Product                                                                                                    |     $ |     m | $/500 mg |
 | ---------------------------------------------------------------------------------------------------------- | ----: | ----: | -------: |
@@ -601,6 +575,8 @@ Looks like your daily dietary intake is only 1600 mg (target is **3400 mg**)
 | [Apricot](https://nutritiondata.self.com/facts/fruits-and-fruit-juices/1838/2)                                                                   |  4.49 |     2,266 |       3.96 |
 
 ### Pygeum
+
+[:material-file-document-multiple-outline:](https://www.healthline.com/health/food-nutrition/pygeum)
 
 | Product                                                                                                                      |                $ |     g |          $/500mg |
 | ---------------------------------------------------------------------------------------------------------------------------- | ---------------: | ----: | ---------------: |
@@ -698,10 +674,13 @@ Saw palmetto (*Serenoa repens*) is a dwarf palm tree native to southeast North A
 Studies suggest that it blocks the conversion of testosterone to [DHT][DHT], and may be effective as a treatment for androgenic alopecia.
 ([src](https://www.healthline.com/nutrition/saw-palmetto#male-pattern-baldness))
 
-| Product                                                                                                                                |                 $ |     g |          $/500mg |
-| -------------------------------------------------------------------------------------------------------------------------------------- | ----------------: | ----: | ---------------: |
-| [BulkSupplements Saw Palmetto 1 kg](https://www.amazon.com/Palmetto-Extract-BulkSupplements-Prostate-Kilogram/dp/B0748YMHJX)           |             43.96 | 1,000 |             0.02 |
-| [Swanson Saw Palmetto 540 mg x 250 capsules](https://www.swansonvitamins.com/swanson-premium-saw-palmetto-540-mg-250-caps)<br>**sale** | 15.99<br>**5.69** |   135 | 0.06<br>**0.02** |
+- Dosage may be 160-320 mg [:material-file-document-multiple-outline:](https://www.healthline.com/nutrition/saw-palmetto#dosage)
+
+| Product                                                                                                                                                |                 $ |     g |          $/500mg |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------: | ----: | ---------------: |
+| [BulkSupplements Saw Palmetto 1 kg](https://www.amazon.com/Palmetto-Extract-BulkSupplements-Prostate-Kilogram/dp/B0748YMHJX)                           |             43.96 | 1,000 |             0.02 |
+| [Swanson Saw Palmetto 540 mg x 250 capsules](https://www.swansonvitamins.com/swanson-premium-saw-palmetto-540-mg-250-caps)<br>**sale**                 | 15.99<br>**5.69** |   135 | 0.06<br>**0.02** |
+| [Swanson Saw Palmetto 540 mg x 100 capsules](https://www.swansonvitamins.com/swanson-premium-saw-palmetto-540-mg-250-caps?otherSize=SW909)<br>**sale** |  4.59<br>**2.75** |    54 | 0.04<br>**0.03** |
 
 ### Taurine
 
@@ -742,15 +721,22 @@ Like [vitamin E](#vitamin-e), ubiquinol is a lipid-soluble antioxidant, which gi
 - Even mild B12 deficiency was [associated](https://pubmed.ncbi.nlm.nih.gov/22788704/) with cognitive decline over 8 years.
 - The [BLAtwelve Study](https://pubmed.ncbi.nlm.nih.gov/33375429/) tested the effects of [Bacopa monnieri](#bacopa), [Lycopene](#lycopene), [Astaxanthin](#astaxanthin), and Vitamin B12, finding that a mix of the four compounds administered orally once a day to subjects aged 60 years old or more experienced improved cognitive performance after 8 weeks.
 
-
+| Product                                                                                                                              |     $ |   mg | $/5,000 mcg |
+| ------------------------------------------------------------------------------------------------------------------------------------ | ----: | ---: | ----------: |
+| [Amazon Elements B12 5000 mcg x 65 lozenges](https://www.amazon.com/Amazon-Elements-Methylcobalamin-Flavored-Lozenges/dp/B075DC51YC) | 12.99 |  325 |        0.20 |
 
 ### Vitamin C
 **Vitamin C** ( "ascorbic acid") is a water-soluble antioxidant that can interact directly with free radicals. Its efficacy as an antioxidant has been closely associated with that of [Vitamin E](#vitmain-e), which it may regenerate by reducing the Vitamin E radical.
 
-- A [2018 study](http://www.bslonline.org/journal/view.html?doi=10.15616/BSL.2018.24.4.311) suggested that Vitamin C could inhibit [visceral adipocyte](#-glossary) hypertrophy
+- A [2018 study](http://www.bslonline.org/journal/view.html?doi=10.15616/BSL.2018.24.4.311) suggested that Vitamin C could inhibit [visceral adipocyte](#vat) hypertrophy
 - A [long-term study published in 2008](https://jamanetwork.com/journals/jama/fullarticle/1028653) found that there was no significant effect of vitamin C on cardiovascular health.
+- The body tightly controls serum concentration of vitamin C. Dosages of 200-300 mg/day result in concentrations of 70 micromol/L, whereas dosages of 1.25 g/day produce concentrations of only 135 micromol/L.
 
-
+| Product                                                                                                                           |                 $ |    M |         $/1,000 mg |
+| --------------------------------------------------------------------------------------------------------------------------------- | ----------------: | ---: | -----------------: |
+| [Swanson Vitamin C 1,000 mg x 250 capsules](https://www.swansonvitamins.com/swanson-premium-vitamin-c-rose-hips-1000-mg-250-caps) | **8.04**<br>11.49 |  250 | **0.032**<br>0.045 |
+| [Swanson Vitamin C 500 mg x 400 capsules](https://www.swansonvitamins.com/swanson-premium-vitamin-c-rose-hips-500-mg-400-caps)    | **7.69**<br>10.99 |  200 | **0.039**<br>0.055 |
+| [Amazon Elements Vitamin C 1000 mg x 300 tablets](https://www.amazon.com/Amazon-Elements-Vitamin-1000mg-Tablets/dp/B07122C9VC)    |             17.99 |  300 |               0.06 |
 
 ### Vitamin D3
 
@@ -775,6 +761,10 @@ Like [vitamin E](#vitamin-e), ubiquinol is a lipid-soluble antioxidant, which gi
 Men who received 30 mg of zinc a day showed increased levels of free testosterone [:material-file-document-outline:](https://www.healthline.com/health/testosterone-and-zinc#research-and-studies).
 
 The tolerable upper intake level for adult men is 40 mg/day [:material-file-document-outline:](https://ods.od.nih.gov/factsheets/Zinc-HealthProfessional/).
+
+| Product                                                                                                                  |                $ |    M |          $/30 mg |
+| ------------------------------------------------------------------------------------------------------------------------ | ---------------: | ---: | ---------------: |
+| [Swanson Zinc Gluconate 30 mg a 250 tabs](https://www.swansonvitamins.com/swanson-premium-zinc-gluconate-30-mg-250-tabs) | **3.14**<br>4.49 |  7.5 | **0.01**<br>0.02 |
 
 ## 📘 Glossary
 
@@ -912,9 +902,9 @@ the resistance that must be overcome to push blood through the circulatory syste
 
 a >= 30% decrease in pulmonary vascular resistance (PVR) with vasodilator compared to baseline
 
-### visceral adipose tissue (VAT)                          
+### VAT
 
-fat surrounding the intra-abdominal organs which has been associated with various medical pathologies; alongside **subcutaneous adipose tissue (SAT)**, one of the two types of body fat tissue
+**Visceral adipose tissue (VAT)** is fat surrounding the intra-abdominal organs which has been associated with various medical pathologies; alongside **subcutaneous adipose tissue (SAT)**, one of the two types of body fat tissue
 
 ### visceral obesity                                       
 

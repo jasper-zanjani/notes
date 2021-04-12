@@ -387,6 +387,12 @@ Display computer name
     $Env:computername
     ```
 
+=== "Command prompt"
+
+    ```
+    hostname
+    ```
+
 Generate a random password 20 characters long ([src](https://adamtheautomator.com/powershell-random-password/))
 
 ```powershell
