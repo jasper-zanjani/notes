@@ -1,846 +1,846 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url>
-     <loc>http://localhost/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Certifications/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Certifications/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Cloud/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Cloud/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Coding/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Coding/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Containers/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Containers/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Health/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Health/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Intelligence/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Intelligence/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Kubernetes/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Kubernetes/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Cloud/ARM/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Cloud/ARM/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Cloud/Azure-AD/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Cloud/Azure-AD/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Cloud/Azure-App-Service/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Cloud/Azure-App-Service/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Cloud/Azure-Backup/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Cloud/Azure-Backup/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Cloud/Azure-File-Service/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Cloud/Azure-File-Service/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Cloud/Azure-IAM/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Cloud/Azure-IAM/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Cloud/Azure-IaaS/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Cloud/Azure-IaaS/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Cloud/Azure-Load-Balancer/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Cloud/Azure-Load-Balancer/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Cloud/Azure-Monitoring/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Cloud/Azure-Monitoring/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Cloud/Azure-Policy/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Cloud/Azure-Policy/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Cloud/Azure-Storage/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Cloud/Azure-Storage/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Cloud/Azure-VPN/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Cloud/Azure-VPN/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Cloud/Kusto/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Cloud/Kusto/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Cloud/Tasks/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Cloud/Tasks/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Coding/6502/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Coding/6502/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Coding/C%23/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Coding/C%23/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Coding/C%2B%2B/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Coding/C%2B%2B/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Coding/Courses/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Coding/Courses/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Coding/DnD/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Coding/DnD/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Coding/Dogfood/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Coding/Dogfood/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Coding/GUI/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Coding/GUI/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Coding/Perl/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Coding/Perl/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Coding/Python/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Coding/Python/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Coding/Testing/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Coding/Testing/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Coding/Windows/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Coding/Windows/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Coding/Wired%20Brain%20Coffee/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Coding/Wired%20Brain%20Coffee/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Coding/XAML/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Coding/XAML/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/GRUB/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/GRUB/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/SSH/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/SSH/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/X/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/X/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/Xorg/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/Xorg/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/add-apt-repository/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/add-apt-repository/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/amixer/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/amixer/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/apt-key/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/apt-key/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/apt/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/apt/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/at/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/at/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/ausearch/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/ausearch/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/awk/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/awk/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/bash/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/bash/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/bluetoothctl/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/bluetoothctl/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/chage/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/chage/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/chgrp/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/chgrp/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/chkconfig/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/chkconfig/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/chmod/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/chmod/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/chown/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/chown/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/chpass/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/chpass/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/chrony/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/chrony/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/chsh/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/chsh/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/cron/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/cron/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/cryptsetup/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/cryptsetup/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/curl/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/curl/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/dar/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/dar/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/date/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/date/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/dd/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/dd/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/dig/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/dig/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/dnf/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/dnf/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/dpkg-reconfigure/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/dpkg-reconfigure/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/elvish/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/elvish/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/exif/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/exif/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/fallocate/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/fallocate/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/file/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/file/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/find/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/find/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/firewall-cmd/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/firewall-cmd/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/fold/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/fold/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/free/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/free/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/gdb/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/gdb/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/gem/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/gem/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/getent/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/getent/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/git/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/git/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/gpasswd/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/gpasswd/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/gpg/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/gpg/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/grep/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/grep/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/groupmod/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/groupmod/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/gsettings/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/gsettings/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/gzip/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/gzip/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/hostnamectl/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/hostnamectl/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/hwclock/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/hwclock/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/i3/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/i3/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/ifconfig/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/ifconfig/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/imagemagick/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/imagemagick/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/init/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/init/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/initctl/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/initctl/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/install/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/install/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/ip/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/ip/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/iptables/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/iptables/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/irssi/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/irssi/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/iscsiadm/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/iscsiadm/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/iw/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/iw/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/journalctl/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/journalctl/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/kquitapp/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/kquitapp/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/kstart/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/kstart/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/ldd/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/ldd/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/lnewaliases/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/lnewaliases/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/localectl/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/localectl/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/lowriter/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/lowriter/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/lsb_release/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/lsb_release/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/lsmod/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/lsmod/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/lsof/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/lsof/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/lvcreate/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/lvcreate/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/lvresize/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/lvresize/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/mail/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/mail/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/mailmerge/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/mailmerge/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/mailq/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/mailq/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/mailstats/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/mailstats/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/make/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/make/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/mkdir/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/mkdir/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/mkfs/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/mkfs/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/mongod/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/mongod/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/mpstat/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/mpstat/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/nc/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/nc/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/netstat/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/netstat/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/nginx/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/nginx/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/nice/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/nice/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/nl/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/nl/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/nmap/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/nmap/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/nmcli/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/nmcli/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/nslookup/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/nslookup/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/ntpdate/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/ntpdate/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/pacman/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/pacman/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/partx/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/partx/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/passwd/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/passwd/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/paste/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/paste/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/pip/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/pip/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/polybar/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/polybar/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/postfix/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/postfix/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/postqueue/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/postqueue/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/postsuper/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/postsuper/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/ps/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/ps/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/rename/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/rename/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/restorecon/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/restorecon/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/rfkill/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/rfkill/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/rpm/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/rpm/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/rsync/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/rsync/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/runlevel/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/runlevel/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/samba/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/samba/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/sed/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/sed/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/semanage/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/semanage/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/sendmail/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/sendmail/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/seq/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/seq/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/service/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/service/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/sestatus/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/sestatus/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/setenforce/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/setenforce/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/setfacl/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/setfacl/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/sfdisk/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/sfdisk/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/shred/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/shred/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/shuf/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/shuf/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/shutdown/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/shutdown/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/sort/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/sort/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/sosreport/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/sosreport/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/speaker-test/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/speaker-test/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/ss/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/ss/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/ssmtp/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/ssmtp/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/stty/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/stty/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/su/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/su/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/sudo/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/sudo/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/swapon/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/swapon/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/sysbench/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/sysbench/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/sysconfig/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/sysconfig/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/sysctl/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/sysctl/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/systemctl/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/systemctl/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/systemd-delta/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/systemd-delta/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/tail/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/tail/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/tar/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/tar/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/tcpdump/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/tcpdump/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/telinit/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/telinit/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/tput/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/tput/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/tr/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/tr/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/tune2fs/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/tune2fs/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/ufw/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/ufw/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/uname/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/uname/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/unshare/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/unshare/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/useradd/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/useradd/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/userdel/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/userdel/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/usermod/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/usermod/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/watch/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/watch/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/weechat/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/weechat/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/xhost/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/xhost/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/xmodmap/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/xmodmap/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/xrandr/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/xrandr/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Linux/xset/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/xset/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Miscellany/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Miscellany/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Miscellany/CI-CD/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Miscellany/CI-CD/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Miscellany/bittorrent/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Miscellany/bittorrent/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Miscellany/cryptocurrency/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Miscellany/cryptocurrency/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Miscellany/learn/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Miscellany/learn/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Text-editors/atom/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Text-editors/atom/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Text-editors/code/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Text-editors/code/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Text-editors/vim/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Text-editors/vim/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Web/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Web/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Web/CSS/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Web/CSS/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Web/mkdocs/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Web/mkdocs/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Web/JavaScript/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Web/JavaScript/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Web/JavaScript/Express/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Web/JavaScript/Express/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Web/JavaScript/React/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Web/JavaScript/React/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Web/JavaScript/Web%20Components/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Web/JavaScript/Web%20Components/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Windows/Active%20Directory/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Windows/Active%20Directory/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Windows/DNS-labs/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Windows/DNS-labs/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Windows/Labs/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Windows/Labs/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Windows/PowerShell/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Windows/PowerShell/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Windows/WDS-lab/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Windows/WDS-lab/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Windows/WS2016/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Windows/WS2016/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://localhost/Windows/diskpart/</loc>
+     <loc>https://jasper-zanjani.github.io/notes/Windows/diskpart/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url>
