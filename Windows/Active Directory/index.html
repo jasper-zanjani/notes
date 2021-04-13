@@ -1,0 +1,3511 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="http://localhost/Windows/Active%20Directory/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.0.6">
+    
+    
+      
+        <title>Active Directory - 🧠</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.2c0c5eaf.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.7fa14f5b.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#active-directory" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="🧠" class="md-header__button md-logo" aria-label="🧠" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            🧠
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Active Directory
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="md-header__options">
+      
+    </div>
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="🧠" class="md-nav__button md-logo" aria-label="🧠" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    🧠
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        🏠 Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Certifications/" class="md-nav__link">
+        🥇 Certifications
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud/" class="md-nav__link">
+        ☁&#xfe0f; Cloud
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Coding/" class="md-nav__link">
+        👨‍💻 Coding
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Containers/" class="md-nav__link">
+        Containers
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Health/" class="md-nav__link">
+        💊 Health
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Intelligence/" class="md-nav__link">
+        🔎 Intelligence
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Kubernetes/" class="md-nav__link">
+        ⎈&#xfe0f; Kubernetes
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/" class="md-nav__link">
+        🐧 Linux
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" type="checkbox" id="__nav_10" >
+      
+      <label class="md-nav__link" for="__nav_10">
+        Cloud
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Cloud" data-md-level="1">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          Cloud
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud/ARM/" class="md-nav__link">
+        ARM
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud/Azure-AD/" class="md-nav__link">
+        Azure AD
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud/Azure-App-Service/" class="md-nav__link">
+        Azure App Service
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud/Azure-Backup/" class="md-nav__link">
+        Azure Backup
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud/Azure-File-Service/" class="md-nav__link">
+        Tasks
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud/Azure-IAM/" class="md-nav__link">
+        Azure IAM
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud/Azure-IaaS/" class="md-nav__link">
+        Azure IaaS
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud/Azure-Load-Balancer/" class="md-nav__link">
+        Azure Load Balancer
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud/Azure-Monitoring/" class="md-nav__link">
+        Azure Monitoring
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud/Azure-Policy/" class="md-nav__link">
+        Azure Policy
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud/Azure-Storage/" class="md-nav__link">
+        Azure Storage
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud/Azure-VPN/" class="md-nav__link">
+        Azure VPN
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud/Kusto/" class="md-nav__link">
+        Kusto
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud/Tasks/" class="md-nav__link">
+        Tasks
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11" type="checkbox" id="__nav_11" >
+      
+      <label class="md-nav__link" for="__nav_11">
+        Coding
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Coding" data-md-level="1">
+        <label class="md-nav__title" for="__nav_11">
+          <span class="md-nav__icon md-icon"></span>
+          Coding
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Coding/6502/" class="md-nav__link">
+        6502
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Coding/C%23/" class="md-nav__link">
+        C&#35;
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Coding/C%2B%2B/" class="md-nav__link">
+        C++
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Coding/Courses/" class="md-nav__link">
+        Courses
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Coding/DnD/" class="md-nav__link">
+        🐲&#xFE0F;  Dungeons & Dragons
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Coding/Dogfood/" class="md-nav__link">
+        🐶 Dogfood data
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Coding/GUI/" class="md-nav__link">
+        🖥&#xFE0F; GUI frameworks comparison
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Coding/Perl/" class="md-nav__link">
+        🦪 Perl
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Coding/Python/" class="md-nav__link">
+        🐍 Python
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Coding/Testing/" class="md-nav__link">
+        Testing
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Coding/Windows/" class="md-nav__link">
+        Windows programming
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Coding/Wired%20Brain%20Coffee/" class="md-nav__link">
+        ☕ Wired Brain Coffee
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Coding/XAML/" class="md-nav__link">
+        🧠 XAML
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12" type="checkbox" id="__nav_12" >
+      
+      <label class="md-nav__link" for="__nav_12">
+        Linux
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Linux" data-md-level="1">
+        <label class="md-nav__title" for="__nav_12">
+          <span class="md-nav__icon md-icon"></span>
+          Linux
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/GRUB/" class="md-nav__link">
+        GRUB
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/SSH/" class="md-nav__link">
+        SSH
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/X/" class="md-nav__link">
+        X
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/Xorg/" class="md-nav__link">
+        Xorg
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/add-apt-repository/" class="md-nav__link">
+        add-apt-repository
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/amixer/" class="md-nav__link">
+        amixer
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/apt-key/" class="md-nav__link">
+        apt-key
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/apt/" class="md-nav__link">
+        apt
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/at/" class="md-nav__link">
+        at
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/ausearch/" class="md-nav__link">
+        ausearch
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/awk/" class="md-nav__link">
+        awk
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/bash/" class="md-nav__link">
+        bash
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/bluetoothctl/" class="md-nav__link">
+        bluetoothctl
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/chage/" class="md-nav__link">
+        chage
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/chgrp/" class="md-nav__link">
+        chgrp
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/chkconfig/" class="md-nav__link">
+        chkconfig
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/chmod/" class="md-nav__link">
+        chmod
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/chown/" class="md-nav__link">
+        chown
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/chpass/" class="md-nav__link">
+        chpass
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/chrony/" class="md-nav__link">
+        Chrony
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/chsh/" class="md-nav__link">
+        Chsh
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/cron/" class="md-nav__link">
+        Cron
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/cryptsetup/" class="md-nav__link">
+        Cryptsetup
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/curl/" class="md-nav__link">
+        Curl
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/dar/" class="md-nav__link">
+        Dar
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/date/" class="md-nav__link">
+        Date
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/dd/" class="md-nav__link">
+        Dd
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/dig/" class="md-nav__link">
+        Dig
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/dnf/" class="md-nav__link">
+        Dnf
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/dpkg-reconfigure/" class="md-nav__link">
+        Dpkg reconfigure
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/elvish/" class="md-nav__link">
+        elvish
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/exif/" class="md-nav__link">
+        Exif
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/fallocate/" class="md-nav__link">
+        Fallocate
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/file/" class="md-nav__link">
+        File
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/find/" class="md-nav__link">
+        Find
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/firewall-cmd/" class="md-nav__link">
+        Firewall cmd
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/fold/" class="md-nav__link">
+        Fold
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/free/" class="md-nav__link">
+        Free
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/gdb/" class="md-nav__link">
+        Gdb
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/gem/" class="md-nav__link">
+        Gem
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/getent/" class="md-nav__link">
+        Getent
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/git/" class="md-nav__link">
+        git
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/gpasswd/" class="md-nav__link">
+        Gpasswd
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/gpg/" class="md-nav__link">
+        Gpg
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/grep/" class="md-nav__link">
+        Grep
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/groupmod/" class="md-nav__link">
+        Groupmod
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/gsettings/" class="md-nav__link">
+        Gsettings
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/gzip/" class="md-nav__link">
+        Gzip
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/hostnamectl/" class="md-nav__link">
+        Hostnamectl
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/hwclock/" class="md-nav__link">
+        Hwclock
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/i3/" class="md-nav__link">
+        I3
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/ifconfig/" class="md-nav__link">
+        ifconfig
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/imagemagick/" class="md-nav__link">
+        imagemagick
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/init/" class="md-nav__link">
+        Init
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/initctl/" class="md-nav__link">
+        Initctl
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/install/" class="md-nav__link">
+        Install
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/ip/" class="md-nav__link">
+        Ip
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/iptables/" class="md-nav__link">
+        Iptables
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/irssi/" class="md-nav__link">
+        Irssi
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/iscsiadm/" class="md-nav__link">
+        Iscsiadm
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/iw/" class="md-nav__link">
+        Iw
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/journalctl/" class="md-nav__link">
+        Journalctl
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/kquitapp/" class="md-nav__link">
+        Kquitapp
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/kstart/" class="md-nav__link">
+        Kstart
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/ldd/" class="md-nav__link">
+        Ldd
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/lnewaliases/" class="md-nav__link">
+        Lnewaliases
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/localectl/" class="md-nav__link">
+        Localectl
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/lowriter/" class="md-nav__link">
+        Lowriter
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/lsb_release/" class="md-nav__link">
+        lsb_release
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/lsmod/" class="md-nav__link">
+        Lsmod
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/lsof/" class="md-nav__link">
+        Lsof
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/lvcreate/" class="md-nav__link">
+        Lvcreate
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/lvresize/" class="md-nav__link">
+        Lvresize
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/mail/" class="md-nav__link">
+        Mail
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/mailmerge/" class="md-nav__link">
+        Mailmerge
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/mailq/" class="md-nav__link">
+        Mailq
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/mailstats/" class="md-nav__link">
+        Mailstats
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/make/" class="md-nav__link">
+        Make
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/mkdir/" class="md-nav__link">
+        Mkdir
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/mkfs/" class="md-nav__link">
+        Mkfs
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/mongod/" class="md-nav__link">
+        Mongod
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/mpstat/" class="md-nav__link">
+        Mpstat
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/nc/" class="md-nav__link">
+        Nc
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/netstat/" class="md-nav__link">
+        Netstat
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/nginx/" class="md-nav__link">
+        nginx
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/nice/" class="md-nav__link">
+        Nice
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/nl/" class="md-nav__link">
+        Nl
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/nmap/" class="md-nav__link">
+        Nmap
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/nmcli/" class="md-nav__link">
+        Nmcli
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/nslookup/" class="md-nav__link">
+        Nslookup
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/ntpdate/" class="md-nav__link">
+        Ntpdate
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/pacman/" class="md-nav__link">
+        Pacman
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/partx/" class="md-nav__link">
+        Partx
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/passwd/" class="md-nav__link">
+        Passwd
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/paste/" class="md-nav__link">
+        Paste
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/pip/" class="md-nav__link">
+        Pip
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/polybar/" class="md-nav__link">
+        Polybar
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/postfix/" class="md-nav__link">
+        postfix
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/postqueue/" class="md-nav__link">
+        Postqueue
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/postsuper/" class="md-nav__link">
+        Postsuper
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/ps/" class="md-nav__link">
+        Ps
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/rename/" class="md-nav__link">
+        Rename
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/restorecon/" class="md-nav__link">
+        Restorecon
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/rfkill/" class="md-nav__link">
+        Rfkill
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/rpm/" class="md-nav__link">
+        Rpm
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/rsync/" class="md-nav__link">
+        Rsync
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/runlevel/" class="md-nav__link">
+        Runlevel
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/samba/" class="md-nav__link">
+        Samba
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/sed/" class="md-nav__link">
+        Sed
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/semanage/" class="md-nav__link">
+        Semanage
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/sendmail/" class="md-nav__link">
+        Sendmail
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/seq/" class="md-nav__link">
+        Seq
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/service/" class="md-nav__link">
+        Service
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/sestatus/" class="md-nav__link">
+        Sestatus
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/setenforce/" class="md-nav__link">
+        Setenforce
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/setfacl/" class="md-nav__link">
+        Setfacl
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/sfdisk/" class="md-nav__link">
+        Sfdisk
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/shred/" class="md-nav__link">
+        Shred
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/shuf/" class="md-nav__link">
+        Shuf
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/shutdown/" class="md-nav__link">
+        Shutdown
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/sort/" class="md-nav__link">
+        Sort
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/sosreport/" class="md-nav__link">
+        Sosreport
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/speaker-test/" class="md-nav__link">
+        Speaker test
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/ss/" class="md-nav__link">
+        Ss
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/ssmtp/" class="md-nav__link">
+        Ssmtp
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/stty/" class="md-nav__link">
+        Stty
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/su/" class="md-nav__link">
+        Su
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/sudo/" class="md-nav__link">
+        sudo
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/swapon/" class="md-nav__link">
+        Swapon
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/sysbench/" class="md-nav__link">
+        Sysbench
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/sysconfig/" class="md-nav__link">
+        sysconfig
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/sysctl/" class="md-nav__link">
+        Sysctl
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/systemctl/" class="md-nav__link">
+        Systemctl
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/systemd-delta/" class="md-nav__link">
+        Systemd delta
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/tail/" class="md-nav__link">
+        Tail
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/tar/" class="md-nav__link">
+        Tar
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/tcpdump/" class="md-nav__link">
+        Tcpdump
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/telinit/" class="md-nav__link">
+        Telinit
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/tput/" class="md-nav__link">
+        Tput
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/tr/" class="md-nav__link">
+        Tr
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/tune2fs/" class="md-nav__link">
+        Tune2fs
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/ufw/" class="md-nav__link">
+        Ufw
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/uname/" class="md-nav__link">
+        Uname
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/unshare/" class="md-nav__link">
+        unshare
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/useradd/" class="md-nav__link">
+        useradd
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/userdel/" class="md-nav__link">
+        userdel
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/usermod/" class="md-nav__link">
+        usermod
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/watch/" class="md-nav__link">
+        watch
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/weechat/" class="md-nav__link">
+        weechat
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/xhost/" class="md-nav__link">
+        xhost
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/xmodmap/" class="md-nav__link">
+        xmodmap
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/xrandr/" class="md-nav__link">
+        xrandr
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/xset/" class="md-nav__link">
+        xset
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13" type="checkbox" id="__nav_13" >
+      
+      <label class="md-nav__link" for="__nav_13">
+        Miscellany
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Miscellany" data-md-level="1">
+        <label class="md-nav__title" for="__nav_13">
+          <span class="md-nav__icon md-icon"></span>
+          Miscellany
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Miscellany/" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Miscellany/CI-CD/" class="md-nav__link">
+        CI/CD
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Miscellany/bittorrent/" class="md-nav__link">
+        BitTorrent
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Miscellany/cryptocurrency/" class="md-nav__link">
+        🪙 Cryptocurrency
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Miscellany/learn/" class="md-nav__link">
+        Learning
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_14" type="checkbox" id="__nav_14" >
+      
+      <label class="md-nav__link" for="__nav_14">
+        Text editors
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Text editors" data-md-level="1">
+        <label class="md-nav__title" for="__nav_14">
+          <span class="md-nav__icon md-icon"></span>
+          Text editors
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Text-editors/atom/" class="md-nav__link">
+        Atom
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Text-editors/code/" class="md-nav__link">
+        VS Code
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Text-editors/vim/" class="md-nav__link">
+        Vim
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_15" type="checkbox" id="__nav_15" >
+      
+      <label class="md-nav__link" for="__nav_15">
+        Web
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Web" data-md-level="1">
+        <label class="md-nav__title" for="__nav_15">
+          <span class="md-nav__icon md-icon"></span>
+          Web
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Web/" class="md-nav__link">
+        🌎 Web
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Web/CSS/" class="md-nav__link">
+        CSS
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Web/mkdocs/" class="md-nav__link">
+        Mkdocs
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_15_4" type="checkbox" id="__nav_15_4" >
+      
+      <label class="md-nav__link" for="__nav_15_4">
+        JavaScript
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="JavaScript" data-md-level="2">
+        <label class="md-nav__title" for="__nav_15_4">
+          <span class="md-nav__icon md-icon"></span>
+          JavaScript
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Web/JavaScript/" class="md-nav__link">
+        Axios
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Web/JavaScript/Express/" class="md-nav__link">
+        Express
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Web/JavaScript/React/" class="md-nav__link">
+        React
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Web/JavaScript/Web%20Components/" class="md-nav__link">
+        Web Components
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_16" type="checkbox" id="__nav_16" checked>
+      
+      <label class="md-nav__link" for="__nav_16">
+        Windows
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Windows" data-md-level="1">
+        <label class="md-nav__title" for="__nav_16">
+          <span class="md-nav__icon md-icon"></span>
+          Windows
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Active Directory
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Active Directory
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    Table of Contents
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#terms" class="md-nav__link">
+    Terms
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fundamentals" class="md-nav__link">
+    Fundamentals
+  </a>
+  
+    <nav class="md-nav" aria-label="Fundamentals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#history" class="md-nav__link">
+    History
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#major-components" class="md-nav__link">
+    Major components
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#naming-contexts" class="md-nav__link">
+    Naming contexts
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#schema" class="md-nav__link">
+    Schema
+  </a>
+  
+    <nav class="md-nav" aria-label="Schema">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sid" class="md-nav__link">
+    SID
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ad-lds" class="md-nav__link">
+    AD LDS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#site-topology" class="md-nav__link">
+    Site topology
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wmi" class="md-nav__link">
+    WMI
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#net" class="md-nav__link">
+    .NET
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#searching-active-directory" class="md-nav__link">
+    Searching Active Directory
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DNS-labs/" class="md-nav__link">
+        DNS labs
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Labs/" class="md-nav__link">
+        Labs
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PowerShell/" class="md-nav__link">
+        🐚 PowerShell
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../WDS-lab/" class="md-nav__link">
+        WDS lab
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../WS2016/" class="md-nav__link">
+        Windows Server
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../diskpart/" class="md-nav__link">
+        Diskpart
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    Table of Contents
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#terms" class="md-nav__link">
+    Terms
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fundamentals" class="md-nav__link">
+    Fundamentals
+  </a>
+  
+    <nav class="md-nav" aria-label="Fundamentals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#history" class="md-nav__link">
+    History
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#major-components" class="md-nav__link">
+    Major components
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#naming-contexts" class="md-nav__link">
+    Naming contexts
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#schema" class="md-nav__link">
+    Schema
+  </a>
+  
+    <nav class="md-nav" aria-label="Schema">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sid" class="md-nav__link">
+    SID
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ad-lds" class="md-nav__link">
+    AD LDS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#site-topology" class="md-nav__link">
+    Site topology
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wmi" class="md-nav__link">
+    WMI
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#net" class="md-nav__link">
+    .NET
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#searching-active-directory" class="md-nav__link">
+    Searching Active Directory
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="active-directory">Active Directory</h1>
+<h4 id="table-of-contents">Table of Contents</h4>
+<p><code><a href="#history" title="A brief introduction&#10;---&#10;Reviews the evolution of the Microsoft NOS and some of the major features and benefits of Active Directory."><strong>01</strong></a></code> 
+<code><a href="#fundamentals" title="Active Directory fundamentals&#10;---&#10;Provides a high-level look at how objects are stored in Active Directory and explains some of the internal structures and concepts that it relies on."><strong>02</strong></a></code> 
+<code><a href="#naming-contexts" title="Naming contexts and application partisions&#10;---&#10;Reviews the predefined Naming Contexts within Active Directory, what is contained within each, and the purpose of Application Partitions"><strong>03</strong></a></code> 
+<code><a href="#schema" title="Active Directory Schema&#10;---&#10;Gives you information on how the blueprint for each object and each object's attributes are stored in Active Directory."><strong>04</strong></a></code> 
+<code><a href="#site-topology" title="Site topology and replication&#10;---&#10;Details how the actual replication process for data takes place between domain controllers."><strong>05</strong></a></code> 
+<code><a href="#" title="Active Directory and DNS&#10;---&#10;Describes the importance of the Domain Name System (DNS) and what it is used for within Active Directory.">06</a></code> 
+<code><a href="#" title="Read-Only Domain Controllers&#10;---&#10;Describes the deployment and operation of Read-Only Domain Controllers (RODCs).">07</a></code> 
+<code><a href="#" title="Group Policy primer&#10;---&#10;Gives you a detailed introduction to the capabilities of Group Policy Objects and how to manage them.">08</a></code> 
+<code><a href="#" title="Fine-grained password policies&#10;---&#10;Comprehensive coverage of how to design, implement, and manage fine-grained password policies.">09</a></code> 
+<code><a href="#" title="Designing the namespace&#10;---&#10;Introduces the steps and techniques involved in properly preparing a design that reduces the number of domains and increases administrative control through the use of Organizational Units.">10</a></code> 
+<code><a href="#" title="Creating a site topology&#10;---&#10;Shows you how to design a representation of your physical inrastructure within Active Diretory to gain very fine-grained control over intrasite and intersite replication.">11</a></code> 
+<code><a href="#" title="Designing organization-wide group policies&#10;---&#10;Explains how Group Policy Objects function in Active Directory and how you can properly design an Active Directory structure to make the most effective use of these functions.">12</a></code> 
+<code><a href="#" title="Active Dirctory Security: permissions and auditing&#10;---&#10;Describes how you can design effective security f0or all areas of your Active Directory, in terms of both access to objects and their properties; includes information on how to design effective security access logginging in any areas you choose.">13</a></code> 
+<code><a href="#" title="Designing and implementing Schema extensions&#10;---&#10;Covers procedures for extending the classes and attributes in the Active Directory schema.">14</a></code> 
+<code><a href="#" title="Backup, recovery, and maintenance&#10;---&#10;Describes how you can backup and restore Active Directory down to the object level or the entire directory.">15</a></code> 
+<code><a href="#" title="Upgrading to Windows Server 2003&#10;---&#10;Outlines how you can upgrade your existing Active Directory infrastructure to Windows Server 2003.">16</a></code> 
+<code><a href="#" title="Upgrading to Windows Server 2003 R2&#10;---&#10;Outlines the process to upgrade your existing Active Directory to Windows Server 2003 R2.">17</a></code> 
+<code><a href="#" title="Upgrading to Windows Server 2008&#10;---&#10;Outlines the process to upgrade your existing Active Directory to Windows Server 2008.">18</a></code> 
+<code><a href="#" title="Integrating Microsoft Exchange&#10;---&#10;Covers some of the important Active Directory-related issues when implementing Microsoft Exchange.">19</a></code> 
+<code><a href="#" title="Active Directory Lightweight Directory Service (a.k.a. ADAM)&#10;---&#10;Introduces Active Directory Lightweight Directory Services (AD LDS, formerly ADAM).">20</a> </code>\
+<code><a href="#" title="Scripting with ADSI&#10;---&#10;Introduces ADSI scripting by leading you through a series of step-by-step examples.">21</a></code> 
+<code><a href="#" title="IADs and the Property Cache&#10;---&#10;Delves into the concept of the property cache used extensively by ADSI and shows you how to properly manipulate any attribute of any object within it.">22</a></code> 
+<code><a href="#" title="Using ADO for searching&#10;---&#10;Demonstrates how to make use of a technology normally reserved for databases and now extended to allow rapid searching for objects in Active Directory.">23</a></code> 
+<code><a href="#" title="Users and groups&#10;---&#10;Gives you the lowdown on how to rapidly create users and groups, giving them whatever attributes you desire.">24</a></code> 
+<code><a href="#" title="Permissions and auditing&#10;---&#10;Describes how each object contains its own list of permissions and auditing entries that governs how it can be accessed and how access is logged.">25</a></code> 
+<code><a href="#" title="Extending the Schema and the Active Directory snap-ins&#10;---&#10;Covers the creation of new classes and attributes programmatically in the schema, and modification of the existing Active Directory snap-ins to perform additional customized functions.">26</a></code> 
+<code><a href="#wmi" title="Scripting with WMI&#10;---&#10;Gives a quick overview of WMI and goes through several examples for managing a system, including services, the registry, and the event log. Accessing AD with WMI is also covered, along with the TrustMon and Replication WMI Providers."><strong>27</strong></a></code> 
+<code><a href="#" title="Scripting DNS&#10;---&#10;Describes how to manipulate DNS server configuration, zones, and resource records with the WMI DNS Provider.">28</a></code> 
+<code><a href="#" title="Programming the Directory with the .NET framework&#10;---&#10;Starts off by providing some background information on the .NET Framework and then dives into several examples using the System.DirectoryServices namespaces with VB.NET.">29</a></code> 
+<code><a href="#" title="PowerShell Basics&#10;---&#10;Provides a jumpstart to Windows PowerShell and a quick reference for PowerShell scripting concepts.">30</a> </code> 
+<code><a href="#" title="Scripting Active Directory with PowerShell&#10;---&#10;Describes how to manage and manipulate Active Directory using Windows PowerShell.">31</a></code> 
+<code><a href="#" title="Scripting Basic Exchange 2003 tasks&#10;---&#10;Tackles common Active Directory-related user and group management tasks for Microsoft Exchange 2000/2003.">32</a></code> 
+<code><a href="#" title="Scripting Basic Exchange 2007 tasks&#10;---&#10;Tackles common Active Directory-related tasks for Microsoft Exchange 2007 using Windows PowerShell.">33</a></code> </p>
+<h4 id="terms">Terms</h4>
+<ul>
+<li>Active Directory components</li>
+<li><a href="#ad-lds" title="Active Directory Lightweight Directory Services (AD LDS)&#10;standalone LDAP service similar to full Active Directory, but without DNS, Group Policy, or Kerberos requirements (previously known as Active Directory Application Mode &quot;ADAM&quot;)&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 457">Active Directory Lightweight Directory Services (AD LDS))</a> <ul>
+<li>Instance</li>
+<li>Configuration set</li>
+<li>Replica</li>
+<li>Partition/naming context</li>
+<li>Application partition</li>
+<li>Configuration partition</li>
+<li>Schema partition</li>
+<li>Bindable object</li>
+<li>Bindable proxy object</li>
+</ul>
+</li>
+<li><a href="#" title="Active Directory Federated Services (ADFS)&#10;standards-based technology that enables distributed identification, authentication, and authorization across organizational and platform boundaries; used by the Web Application Proxy role service of Remote Access role to authenticate corporate users to allow access to intranet web applications from the outside&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.">Active Directory Federated Services (ADFS)</a> </li>
+<li><a href="#" title="Directory Information Tree (DIT)&#10;ESE database file that stores Active Directory objects in flat database rows and columns&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.">Directory Information Tree (DIT)</a> <ul>
+<li>Key tables:</li>
+<li><a href="#" title="Data table&#10;holds the bulk of data in the Active Directory DIT database&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2013.: 152">Data table</a></li>
+<li><a href="#" title="Link table&#10;Stores data stored in linked attributes, such as group membership&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2013.: 153">Link table</a></li>
+<li><a href="#" title="Hidden table&#10;single-row table AD uses at startup to find configuration-related information in the Data Table&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2013.: 152">Hidden table</a></li>
+<li><a href="#" title="Security descriptor table&#10;Delivers single-instance storage of ACLs in AD&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2013.: 155">Security descriptor table</a></li>
+</ul>
+</li>
+<li><a href="#" title="Extensible Storage Engine (ESE)&#10;Exchange database which provided the basis for Active Directory, developed to hold millions of objects with a maximum database size of 16 TB&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 8">Extensible Storage Engine (ESE)</a> </li>
+<li><a href="#" title="Identity Management for Unix (IMU)&#10;manage user accounts and passwords on Windows and Unix via NIS; automatically synchronize passwords between Windows and Unix&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.">Identity Management for Unix (IMU)</a> </li>
+<li><a href="#" title="Security Accounts Manager (SAM)&#10;Database used in Windows NT that had a maximum recommended size of 40 MB&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 7">Security Accounts Manager (SAM)</a></li>
+<li><a href="#" title="Global Catalog (GC)&#10;Read-only catalog of all objects in an Active Directory forest, used to perform forest-wide searches.&#10;Accessible via LDAP over port 3268.&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 25">Global Catalog</a></li>
+<li><a href="#" title="schema&#10;blueprint for data storage in Active Directory&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 53">Schema</a><ul>
+<li><a href="#" title="attribute&#10;defines the pieces of information that a class, and thus an instance of that class, can hold&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 53">attribute</a></li>
+<li><a href="#" title="syntax&#10;Define the type of data that can be placed into an Active Directory attribute&#10;For example, an attribute defined with a syntax of &quot;Boolean&quot; can store True, False, or null as its value.&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 53">syntax</a></li>
+</ul>
+</li>
+<li>Active Directory concepts</li>
+<li><a href="#" title="domain controller (DC)&#10;Server that responds to security authentication requests within a Windows Server domain&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 21">Domain Controller (DC)</a><ul>
+<li><a href="#" title="Flexible Single Master Operator (FSMO)&#10;Role that a server may own in an Active Directory domain that makes it the master for a particular function or role.&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 26">FSMO</a> roles:</li>
+<li><a href="#" title="Schema Master&#10;Forest-wide domain controller role allowing changes to be made to the Active Directory Schema&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 26">Schema Master</a></li>
+<li><a href="#" title="Domain Naming Master&#10;Forest-wide domain controller role that controls changes to the forest-wide namespace&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 26">Domain Naming Master</a></li>
+<li><a href="#" title="PDC Emulator&#10;Domain-wide domain controller role that replicates the NT SAM database to NT 4.0 and Windows 3.51 BDCs&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 26">PDC Emulator</a></li>
+<li><a href="#" title="RID Master&#10;Domain-wide domain controller role that maintains a pool of unique RID values to ensure that all SIDs in a domain are unique.&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 27">RID Master</a></li>
+<li><a href="#" title="Infrastructure Master&#10;Domain-wide domain controller role that maintains references to objects in other domains (&quot;phantoms&quot;)&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 28">Infrastructure Master</a></li>
+</ul>
+</li>
+<li><a href="#distinguished-names" title="distinguished name (DN)&#10;Hierarchical paths used to uniquely reference any object in LDAP or Active Directory which typically take the form of comma-delimited prefix-name pairs&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.">Distinguished Name (DN)</a></li>
+<li><a href="#" title="domain tree&#10;series of domains connected together hierarchically using a contiguous naming scheme&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 21">domain tree</a></li>
+<li><a href="#" title="forest&#10;collection of one or more domain trees which share a common Configuration container and Schema and are connected together through transitive trusts&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 21">forest</a></li>
+<li><a href="#" title="organizational unit (OU)&#10;Primary container type used to house objects in Active Directory&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 24">organizational unit</a></li>
+<li>Trust<ul>
+<li><a href="#" title="forest trust&#10;single transitive trust between two forest root domains&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 23">forest trust</a></li>
+<li><a href="#" title="simple trust&#10;trust model used by Windows NT where every domain had to have a manually set trust relationship with any other domain (cf. &quot;transitive trust&quot;)&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 9">simple trust</a> </li>
+<li><a href="#" title="transitive trust&#10;trust model used by Active Directory, whereby if A trusts B and B trusts C, then A also trusts C (cf &quot;simple trust)&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 9">transitive trust</a></li>
+</ul>
+</li>
+<li>Domain models: <ul>
+<li><a href="#" title="Multimaster&#10;Windows NT domain model with multiple user domains (each of which having two-way trust with the others), and multiple resource domains (each of which had one-way trust with every user domain); each trust had to be manually set&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 8">Multimaster</a></li>
+<li><a href="#" title="Single-domain&#10;Windows NT domain model with only one domain and no trusts&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 8">Single-domain</a> </li>
+<li><a href="#" title="Single-master&#10;Windows NT domain model with a single user (or account) domain and multiple resource domains, each of which had one-way trusts with the user domain&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 8">Single-master</a> </li>
+<li><a href="#" title="Complete-trust&#10;Windows NT domain model where any domain could create accounts, and each could access shared resources in any other domain&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 9">Complete trust</a></li>
+</ul>
+</li>
+<li>Groups:<ul>
+<li>Scopes</li>
+<li>[Domain local][domain local group]</li>
+<li>[Domain global][domain global group]</li>
+<li>[Universal][universal group]</li>
+<li>Types:</li>
+<li><a href="#" title="distribution group&#10;Active Directory group type used for mailing lists&#10;If a group is of type distribution, its SID is not added to a user security token during logon, so it cannot be used for logon purposes.&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 38">Distribution</a></li>
+<li><a href="#" title="security group&#10;&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 38">Security</a></li>
+</ul>
+</li>
+<li><a href="#site-topology" title="site topology&#10;map that describes the network connectivity, Active Directory Replication guidelines, and locations for resources as it relates to the Active Directory forest&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 85">Site topology</a></li>
+<li><a href="#site-topology" title="site&#10;a collection of well-connected AD subnets; typically used to group subnets together into a logical collection to help define replication flow and resource location boundaries&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 87">site</a> </li>
+<li><a href="#site-topology" title="subnet&#10;portion of the IP space of a network&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 86">subnet</a> </li>
+<li><a href="#site-topology" title="site link&#10;defines what sites are connected to each other and the relative cost of the connection&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 89">site link</a> </li>
+<li><a href="#site-topology" title="connection object&#10;specifies which domain controllers replicate with which other domain controllers, how often, and which naming contexts are involved&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 92">connection object</a> </li>
+<li><a href="#wmi" title="Windows Management Instrumentation (WMI)&#10;scriptable API developed by Microsoft in 1998 that allows management of operating system components&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 635">Windows Management Interface (WMI)</a></li>
+<li><a href="#wmi" title="Common Information Model (CIM)&#10;language used for describing management data in an object-oriented way&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 636">CIM</a> infrastructure<ul>
+<li>CIM Repository</li>
+<li>CIMOM</li>
+</ul>
+</li>
+<li><a href="#wmi" title="WMI provider&#10;provided by each individual managed component and associated with a namespace&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 637">WMI providers</a></li>
+</ul>
+<h4 id="fundamentals">Fundamentals</h4>
+<h6 id="history">History</h6>
+<p><a href="#" title="Active Directory (AD)&#10;Microsoft network operating system, built on top of Windows Server&#10;AD has origins in Windows NT 3.0, which combined features of the LAN Manager protocols with the OS/2 operating system.&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 3">Active Directory</a> has its origins in 1990 when Microsoft released Windows NT 3.0, its first Network Operating System (NOS).
+Limitations of NT led Microsoft to rearchitect their solution based on LDAP, a directory service that originated in 1993 as a lighter-weight alternative to <a href="#" title="X.500&#10;ITU and ISO-developed series of directory service standards based on OSI protocol stack; superceded by LDAP&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 5">X.500</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>NT</th>
+<th><a href="#" title="Active Directory (AD)&#10;Microsoft network operating system, built on top of Windows Server&#10;AD has origins in Windows NT 3.0, which combined features of the LAN Manager protocols with the OS/2 operating system.&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 3">AD</a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Database</td>
+<td><a href="#" title="Security Accounts Manager (SAM)&#10;Database used in Windows NT that had a maximum recommended size of 40 MB&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 7">SAM</a></td>
+<td><a href="#" title="Extensible Storage Engine (ESE)&#10;Exchange database which provided the basis for Active Directory, developed to hold millions of objects with a maximum database size of 16 TB&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 8">ESE</a></td>
+</tr>
+<tr>
+<td>Trust</td>
+<td><a href="#" title="simple trust&#10;trust model used by Windows NT where every domain had to have a manually set trust relationship with any other domain (cf. &quot;transitive trust&quot;)&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 9">Simple</a></td>
+<td><a href="#" title="transitive trust&#10;trust model used by Active Directory, whereby if A trusts B and B trusts C, then A also trusts C (cf &quot;simple trust)&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 9">Transitive</a></td>
+</tr>
+<tr>
+<td>Domain models</td>
+<td><a href="#" title="Multimaster&#10;Windows NT domain model with multiple user domains (each of which having two-way trust with the others), and multiple resource domains (each of which had one-way trust with every user domain); each trust had to be manually set&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 8">Multimaster</a> <a href="#" title="Single-domain&#10;Windows NT domain model with only one domain and no trusts&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 8">Single-domain</a> <a href="#" title="Single-master&#10;Windows NT domain model with a single user (or account) domain and multiple resource domains, each of which had one-way trusts with the user domain&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 8">Single-master</a> <a href="#" title="Complete-trust&#10;Windows NT domain model where any domain could create accounts, and each could access shared resources in any other domain&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 9">Complete trust</a></td>
+<td><a href="#" title="Complete-trust&#10;Windows NT domain model where any domain could create accounts, and each could access shared resources in any other domain&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 9">Complete trust</a></td>
+</tr>
+<tr>
+<td>Name resolution</td>
+<td><a href="#glossary" title="obsolete system that resolves NetBIOS names to IP addresses on Windows networks; required by Windows NT">WINS</a></td>
+<td>DNS</td>
+</tr>
+<tr>
+<td>Schemas</td>
+<td>Not extensible</td>
+<td>Extensible</td>
+</tr>
+</tbody>
+</table>
+<h6 id="major-components">Major components</h6>
+<p>AD objects, which can be <strong>containers</strong> or <strong>non-containers</strong> (leaf nodes), are stored in a <a href="#" title="Directory Information Tree (DIT)&#10;ESE database file that stores Active Directory objects in flat database rows and columns&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.">DIT</a> file. 
+Each object is identified by a <a href="#" title="Globally Unique Identifier (GUID)&#10;128-bit number assigned to Active Directory objects by the system at the time of their creation; Microsoft implementation of the UUID concept&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.">GUID</a> but also commonly referred to by <a href="#distinguished-names" title="distinguished name (DN)&#10;Hierarchical paths used to uniquely reference any object in LDAP or Active Directory which typically take the form of comma-delimited prefix-name pairs&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.">distinguished name</a> (i.e. <code>dc=mycorp,dc=com</code>)</p>
+<p>Active Directory's structure is based on the concept of a <strong>domain</strong>, based on the following components:
+- Hierarchical structure of containers and objects based on <a href="#" title="X.500&#10;ITU and ISO-developed series of directory service standards based on OSI protocol stack; superceded by LDAP&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 5">X.500</a>
+- DNS domain name
+- Security service to provide AAA
+- Policies to restrict functionality for users or machines</p>
+<p>Domains can be organized into <a href="#" title="domain tree&#10;series of domains connected together hierarchically using a contiguous naming scheme&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 21">domain trees</a>, and domain trees can be organized into <a href="#" title="forest&#10;collection of one or more domain trees which share a common Configuration container and Schema and are connected together through transitive trusts&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 21">forests</a>.</p>
+<p>The most common container type is the <a href="#" title="organizational unit (OU)&#10;Primary container type used to house objects in Active Directory&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 24">OU</a>.
+<a href="#" title="Global Catalog (GC)&#10;Read-only catalog of all objects in an Active Directory forest, used to perform forest-wide searches.&#10;Accessible via LDAP over port 3268.&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 25">Global Catalog</a> can be used to search for AD objects.</p>
+<p>Because Kerberos, which underlies AD, is sensitive to time differences all computers on a domain must have clocks synchronized to within 5 minutes.
+<a href="#" title="Network Time Protocol (NTP)&#10;facilitaties time synchronization&#10;Dulaney, Emmett. _CompTIA Network+ N10-007 Exam Cram, 6th Edition_.: 51-52">NTP</a> can be useful for this.</p>
+<h4 id="naming-contexts">Naming contexts</h4>
+<p>Predefined <a href="#" title="naming context (NC)&#10;data partition in Active Directory, each of which represents a different type of data&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 43">NCs</a> within AD:
+- <a href="#" title="Domain Naming Context&#10;contains data specific to the domain, like users, groups, and computers&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 43">Domain Naming Context</a> 
+- <a href="#" title="Schema Naming Context&#10;contains the set of object class and attribute definitions for the types of data that can be stored in AD&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 43">Schema Naming Context</a> 
+- <a href="#" title="Configuration Naming Context&#10;contains data pertaining to the configuration of the forest, like naming contexts, LDAP policies, sites, subnets, and Microsoft Exchange&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 43">Configuration Naming Context</a> </p>
+<h4 id="schema">Schema</h4>
+<p>Each object in AD is an instance of a class defined in the <a href="#" title="schema&#10;blueprint for data storage in Active Directory&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 53">schema</a>.
+The schema version can be queried from the command-line with [<code>adfind</code>][adfind]
+<a href="#" title="Object Identifier (OID)&#10;Sequence of integers that describe the unique path to the branch holding any schema object.&#10;Root branches are globally unique and maintained by IANA. OID namespaces are known as Enterprise Numbers.&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 55">OID</a></p>
+<h6 id="sid">SID</h6>
+<p>A Windows SID is generally composed of 2 fixed fields and up to 15 additional fields, all separated by dashes:</p>
+<p><code> S-v-<a href="#sid" title="identifier authority&#10;Component of a SID that follows `S-1` that uniquely identifies the authority involved&#10;Possible values include:&#10;  - 0, NULL&#10;  - 1, World&#10;  - 2, Local&#10;  - 5, NT Authority&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 28">id</a>-<a href="#sid" title="sub-authority&#10;Component of a SID that follows the identifier authority, the last of which is called the RID.&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 28">s1</a>-<a href="#sid" title="sub-authority&#10;Component of a SID that follows the identifier authority, the last of which is called the RID.&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 28">s2</a>-<a href="#sid" title="sub-authority&#10;Component of a SID that follows the identifier authority, the last of which is called the RID.&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 28">s3</a>-<a href="#sid" title="sub-authority&#10;Component of a SID that follows the identifier authority, the last of which is called the RID.&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 28">s4</a>-<a href="#sid" title="sub-authority&#10;Component of a SID that follows the identifier authority, the last of which is called the RID.&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 28">s5</a>-<a href="#sid" title="sub-authority&#10;Component of a SID that follows the identifier authority, the last of which is called the RID.&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 28">s6</a>-<a href="#sid" title="sub-authority&#10;Component of a SID that follows the identifier authority, the last of which is called the RID.&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 28">s7</a>-<a href="#sid" title="sub-authority&#10;Component of a SID that follows the identifier authority, the last of which is called the RID.&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 28">s8</a>-<a href="#sid" title="sub-authority&#10;Component of a SID that follows the identifier authority, the last of which is called the RID.&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 28">s9</a>-<a href="#sid" title="sub-authority&#10;Component of a SID that follows the identifier authority, the last of which is called the RID.&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 28">s10</a>-<a href="#sid" title="sub-authority&#10;Component of a SID that follows the identifier authority, the last of which is called the RID.&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 28">s11</a>-<a href="#sid" title="sub-authority&#10;Component of a SID that follows the identifier authority, the last of which is called the RID.&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 28">s12</a>-<a href="#sid" title="sub-authority&#10;Component of a SID that follows the identifier authority, the last of which is called the RID.&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 28">s13</a>-<a href="#sid" title="sub-authority&#10;Component of a SID that follows the identifier authority, the last of which is called the RID.&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 28">s14</a>-<a href="#sid" title="sub-authority&#10;Component of a SID that follows the identifier authority, the last of which is called the RID.&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 28">s15</a> </code></p>
+<h4 id="ad-lds">AD LDS</h4>
+<p><a href="#ad-lds" title="Active Directory Lightweight Directory Services (AD LDS)&#10;standalone LDAP service similar to full Active Directory, but without DNS, Group Policy, or Kerberos requirements (previously known as Active Directory Application Mode &quot;ADAM&quot;)&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 457">AD LDS</a> offers a pared-down version of AD that is easy to set up and tear down. It was first released in November 2003 as Active Directory Application Mode (ADAM) V1.0 and offers security benefits because it doesn't enable so many services by default. It was renamed AD LDS with the release of Windows Server 2008.</p>
+<p>Differences between AD and AD LDS
+- AD LDS is a standalone application run from a <code>dsamain.exe</code> process (rather than <code>lsass.exe</code>), which means it can be started or stopped on demand without rebooting and multiple instances can be run.
+- AD LDS lacks the <a href="#gc" title="read-only catalog of all objects in a forest which contains a subset of attributes for each object; used to perform forest-wide searches">global catalog</a> functionality (removing <a href="#" title="\&quot;Name Service Provider Interface\&quot;, feature supported by Active Directory's global catalog">NSPI</a> and <a href="#" title="\&quot;Address Book\&quot;, feature supported by Active Directory's global catalog">AB</a> as well)</p>
+<h4 id="site-topology">Site topology</h4>
+<p>A <a href="#site-topology" title="site topology&#10;map that describes the network connectivity, Active Directory Replication guidelines, and locations for resources as it relates to the Active Directory forest&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 85">site topology</a> is a map of the <a href="#site-topology" title="site&#10;a collection of well-connected AD subnets; typically used to group subnets together into a logical collection to help define replication flow and resource location boundaries&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 87">sites</a>, <a href="#site-topology" title="subnet&#10;portion of the IP space of a network&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 86">subnets</a>, <a href="#site-topology" title="site link&#10;defines what sites are connected to each other and the relative cost of the connection&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 89">site links</a>, site link bridges, and <a href="#site-topology" title="connection object&#10;specifies which domain controllers replicate with which other domain controllers, how often, and which naming contexts are involved&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 92">connection objects</a> as it relates to a forest.</p>
+<h4 id="wmi">WMI</h4>
+<p>An industry effort to develop a model for managing systems and devices for vendor use arose in the 1990s which resulted in <a href="#wmi" title="Common Information Model (CIM)&#10;language used for describing management data in an object-oriented way&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 636">CIM</a>, which provides the basis for <a href="#wmi" title="Windows Management Instrumentation (WMI)&#10;scriptable API developed by Microsoft in 1998 that allows management of operating system components&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 635">WMI</a>.
+The WMI architecture is composed of two main layers: the CIM infrastructure (<a href="#wmi" title="CIM Object Manager (CIMOM)&#10;handles requests from clients, retrieves data from the CIM Repository, and returns it to the client&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 637">CIMOM</a> and <a href="#wmi" title="CIM Repository&#10;primary warehouse for management data, containing the static data that does not change frequently (memory, disk size, etc)&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 637">CIM Repository</a>) and the <a href="#wmi" title="WMI provider&#10;provided by each individual managed component and associated with a namespace&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 637">WMI providers</a>
+Each provider is associated with a namespace, which is similar in concept to a filesystem.</p>
+<h4 id="net">.NET</h4>
+<p>The <a href="#.net" title=".NET Framework&#10;set of APIs associated with the C# programming language that facilitate the management of Microsoft-based products and development of Windows applications&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2013.: 504">.NET Framework</a> was developed with the intention of replacing the old Win32 and COM APIs. It has two major components:
+- Common Language Runtime (CLR)
+- .NET Framework class library</p>
+<h4 id="searching-active-directory">Searching Active Directory</h4>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        <a href="../../Web/JavaScript/Web%20Components/" class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Web Components
+            </div>
+          </div>
+        </a>
+      
+      
+        <a href="../DNS-labs/" class="md-footer__link md-footer__link--next" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              DNS labs
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../assets/javascripts/workers/search.fb4a9340.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.a1c7c35e.min.js"></script>
+      
+    
+  </body>
+</html>

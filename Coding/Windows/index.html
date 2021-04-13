@@ -1,0 +1,3483 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="http://localhost/Coding/Windows/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.0.6">
+    
+    
+      
+        <title>Windows programming - 🧠</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.2c0c5eaf.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.7fa14f5b.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#windows-programming" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="🧠" class="md-header__button md-logo" aria-label="🧠" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            🧠
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Windows programming
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="md-header__options">
+      
+    </div>
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="🧠" class="md-nav__button md-logo" aria-label="🧠" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    🧠
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        🏠 Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Certifications/" class="md-nav__link">
+        🥇 Certifications
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud/" class="md-nav__link">
+        ☁&#xfe0f; Cloud
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        👨‍💻 Coding
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Containers/" class="md-nav__link">
+        Containers
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Health/" class="md-nav__link">
+        💊 Health
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Intelligence/" class="md-nav__link">
+        🔎 Intelligence
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Kubernetes/" class="md-nav__link">
+        ⎈&#xfe0f; Kubernetes
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/" class="md-nav__link">
+        🐧 Linux
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" type="checkbox" id="__nav_10" >
+      
+      <label class="md-nav__link" for="__nav_10">
+        Cloud
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Cloud" data-md-level="1">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          Cloud
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud/ARM/" class="md-nav__link">
+        ARM
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud/Azure-AD/" class="md-nav__link">
+        Azure AD
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud/Azure-App-Service/" class="md-nav__link">
+        Azure App Service
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud/Azure-Backup/" class="md-nav__link">
+        Azure Backup
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud/Azure-File-Service/" class="md-nav__link">
+        Tasks
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud/Azure-IAM/" class="md-nav__link">
+        Azure IAM
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud/Azure-IaaS/" class="md-nav__link">
+        Azure IaaS
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud/Azure-Load-Balancer/" class="md-nav__link">
+        Azure Load Balancer
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud/Azure-Monitoring/" class="md-nav__link">
+        Azure Monitoring
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud/Azure-Policy/" class="md-nav__link">
+        Azure Policy
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud/Azure-Storage/" class="md-nav__link">
+        Azure Storage
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud/Azure-VPN/" class="md-nav__link">
+        Azure VPN
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud/Kusto/" class="md-nav__link">
+        Kusto
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud/Tasks/" class="md-nav__link">
+        Tasks
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11" type="checkbox" id="__nav_11" checked>
+      
+      <label class="md-nav__link" for="__nav_11">
+        Coding
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Coding" data-md-level="1">
+        <label class="md-nav__title" for="__nav_11">
+          <span class="md-nav__icon md-icon"></span>
+          Coding
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6502/" class="md-nav__link">
+        6502
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../C%23/" class="md-nav__link">
+        C&#35;
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../C%2B%2B/" class="md-nav__link">
+        C++
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Courses/" class="md-nav__link">
+        Courses
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DnD/" class="md-nav__link">
+        🐲&#xFE0F;  Dungeons & Dragons
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Dogfood/" class="md-nav__link">
+        🐶 Dogfood data
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GUI/" class="md-nav__link">
+        🖥&#xFE0F; GUI frameworks comparison
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Perl/" class="md-nav__link">
+        🦪 Perl
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Python/" class="md-nav__link">
+        🐍 Python
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Testing/" class="md-nav__link">
+        Testing
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Windows programming
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Windows programming
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#glossary" class="md-nav__link">
+    📘 Glossary
+  </a>
+  
+    <nav class="md-nav" aria-label="📘 Glossary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ccx" class="md-nav__link">
+    C++/CX
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cwinrt" class="md-nav__link">
+    C++/WinRT 
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cwin32" class="md-nav__link">
+    C#/Win32 
+  </a>
+  
+    <nav class="md-nav" aria-label="C#/Win32 ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cwinrt_1" class="md-nav__link">
+    C#/WinRT  
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#com" class="md-nav__link">
+    COM
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#core-application" class="md-nav__link">
+    Core application
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#directx" class="md-nav__link">
+    DirectX
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interop-assembly" class="md-nav__link">
+    Interop assembly
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#language-projection" class="md-nav__link">
+    Language projection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tfm" class="md-nav__link">
+    TFM
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#winmd" class="md-nav__link">
+    WinMD
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#win32" class="md-nav__link">
+    Win32
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#winrt" class="md-nav__link">
+    WinRT
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Wired%20Brain%20Coffee/" class="md-nav__link">
+        ☕ Wired Brain Coffee
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../XAML/" class="md-nav__link">
+        🧠 XAML
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12" type="checkbox" id="__nav_12" >
+      
+      <label class="md-nav__link" for="__nav_12">
+        Linux
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Linux" data-md-level="1">
+        <label class="md-nav__title" for="__nav_12">
+          <span class="md-nav__icon md-icon"></span>
+          Linux
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/GRUB/" class="md-nav__link">
+        GRUB
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/SSH/" class="md-nav__link">
+        SSH
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/X/" class="md-nav__link">
+        X
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/Xorg/" class="md-nav__link">
+        Xorg
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/add-apt-repository/" class="md-nav__link">
+        add-apt-repository
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/amixer/" class="md-nav__link">
+        amixer
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/apt-key/" class="md-nav__link">
+        apt-key
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/apt/" class="md-nav__link">
+        apt
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/at/" class="md-nav__link">
+        at
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/ausearch/" class="md-nav__link">
+        ausearch
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/awk/" class="md-nav__link">
+        awk
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/bash/" class="md-nav__link">
+        bash
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/bluetoothctl/" class="md-nav__link">
+        bluetoothctl
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/chage/" class="md-nav__link">
+        chage
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/chgrp/" class="md-nav__link">
+        chgrp
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/chkconfig/" class="md-nav__link">
+        chkconfig
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/chmod/" class="md-nav__link">
+        chmod
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/chown/" class="md-nav__link">
+        chown
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/chpass/" class="md-nav__link">
+        chpass
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/chrony/" class="md-nav__link">
+        Chrony
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/chsh/" class="md-nav__link">
+        Chsh
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/cron/" class="md-nav__link">
+        Cron
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/cryptsetup/" class="md-nav__link">
+        Cryptsetup
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/curl/" class="md-nav__link">
+        Curl
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/dar/" class="md-nav__link">
+        Dar
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/date/" class="md-nav__link">
+        Date
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/dd/" class="md-nav__link">
+        Dd
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/dig/" class="md-nav__link">
+        Dig
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/dnf/" class="md-nav__link">
+        Dnf
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/dpkg-reconfigure/" class="md-nav__link">
+        Dpkg reconfigure
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/elvish/" class="md-nav__link">
+        elvish
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/exif/" class="md-nav__link">
+        Exif
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/fallocate/" class="md-nav__link">
+        Fallocate
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/file/" class="md-nav__link">
+        File
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/find/" class="md-nav__link">
+        Find
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/firewall-cmd/" class="md-nav__link">
+        Firewall cmd
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/fold/" class="md-nav__link">
+        Fold
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/free/" class="md-nav__link">
+        Free
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/gdb/" class="md-nav__link">
+        Gdb
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/gem/" class="md-nav__link">
+        Gem
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/getent/" class="md-nav__link">
+        Getent
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/git/" class="md-nav__link">
+        git
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/gpasswd/" class="md-nav__link">
+        Gpasswd
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/gpg/" class="md-nav__link">
+        Gpg
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/grep/" class="md-nav__link">
+        Grep
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/groupmod/" class="md-nav__link">
+        Groupmod
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/gsettings/" class="md-nav__link">
+        Gsettings
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/gzip/" class="md-nav__link">
+        Gzip
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/hostnamectl/" class="md-nav__link">
+        Hostnamectl
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/hwclock/" class="md-nav__link">
+        Hwclock
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/i3/" class="md-nav__link">
+        I3
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/ifconfig/" class="md-nav__link">
+        ifconfig
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/imagemagick/" class="md-nav__link">
+        imagemagick
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/init/" class="md-nav__link">
+        Init
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/initctl/" class="md-nav__link">
+        Initctl
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/install/" class="md-nav__link">
+        Install
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/ip/" class="md-nav__link">
+        Ip
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/iptables/" class="md-nav__link">
+        Iptables
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/irssi/" class="md-nav__link">
+        Irssi
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/iscsiadm/" class="md-nav__link">
+        Iscsiadm
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/iw/" class="md-nav__link">
+        Iw
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/journalctl/" class="md-nav__link">
+        Journalctl
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/kquitapp/" class="md-nav__link">
+        Kquitapp
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/kstart/" class="md-nav__link">
+        Kstart
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/ldd/" class="md-nav__link">
+        Ldd
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/lnewaliases/" class="md-nav__link">
+        Lnewaliases
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/localectl/" class="md-nav__link">
+        Localectl
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/lowriter/" class="md-nav__link">
+        Lowriter
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/lsb_release/" class="md-nav__link">
+        lsb_release
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/lsmod/" class="md-nav__link">
+        Lsmod
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/lsof/" class="md-nav__link">
+        Lsof
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/lvcreate/" class="md-nav__link">
+        Lvcreate
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/lvresize/" class="md-nav__link">
+        Lvresize
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/mail/" class="md-nav__link">
+        Mail
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/mailmerge/" class="md-nav__link">
+        Mailmerge
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/mailq/" class="md-nav__link">
+        Mailq
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/mailstats/" class="md-nav__link">
+        Mailstats
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/make/" class="md-nav__link">
+        Make
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/mkdir/" class="md-nav__link">
+        Mkdir
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/mkfs/" class="md-nav__link">
+        Mkfs
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/mongod/" class="md-nav__link">
+        Mongod
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/mpstat/" class="md-nav__link">
+        Mpstat
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/nc/" class="md-nav__link">
+        Nc
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/netstat/" class="md-nav__link">
+        Netstat
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/nginx/" class="md-nav__link">
+        nginx
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/nice/" class="md-nav__link">
+        Nice
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/nl/" class="md-nav__link">
+        Nl
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/nmap/" class="md-nav__link">
+        Nmap
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/nmcli/" class="md-nav__link">
+        Nmcli
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/nslookup/" class="md-nav__link">
+        Nslookup
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/ntpdate/" class="md-nav__link">
+        Ntpdate
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/pacman/" class="md-nav__link">
+        Pacman
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/partx/" class="md-nav__link">
+        Partx
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/passwd/" class="md-nav__link">
+        Passwd
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/paste/" class="md-nav__link">
+        Paste
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/pip/" class="md-nav__link">
+        Pip
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/polybar/" class="md-nav__link">
+        Polybar
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/postfix/" class="md-nav__link">
+        postfix
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/postqueue/" class="md-nav__link">
+        Postqueue
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/postsuper/" class="md-nav__link">
+        Postsuper
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/ps/" class="md-nav__link">
+        Ps
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/rename/" class="md-nav__link">
+        Rename
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/restorecon/" class="md-nav__link">
+        Restorecon
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/rfkill/" class="md-nav__link">
+        Rfkill
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/rpm/" class="md-nav__link">
+        Rpm
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/rsync/" class="md-nav__link">
+        Rsync
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/runlevel/" class="md-nav__link">
+        Runlevel
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/samba/" class="md-nav__link">
+        Samba
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/sed/" class="md-nav__link">
+        Sed
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/semanage/" class="md-nav__link">
+        Semanage
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/sendmail/" class="md-nav__link">
+        Sendmail
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/seq/" class="md-nav__link">
+        Seq
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/service/" class="md-nav__link">
+        Service
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/sestatus/" class="md-nav__link">
+        Sestatus
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/setenforce/" class="md-nav__link">
+        Setenforce
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/setfacl/" class="md-nav__link">
+        Setfacl
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/sfdisk/" class="md-nav__link">
+        Sfdisk
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/shred/" class="md-nav__link">
+        Shred
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/shuf/" class="md-nav__link">
+        Shuf
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/shutdown/" class="md-nav__link">
+        Shutdown
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/sort/" class="md-nav__link">
+        Sort
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/sosreport/" class="md-nav__link">
+        Sosreport
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/speaker-test/" class="md-nav__link">
+        Speaker test
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/ss/" class="md-nav__link">
+        Ss
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/ssmtp/" class="md-nav__link">
+        Ssmtp
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/stty/" class="md-nav__link">
+        Stty
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/su/" class="md-nav__link">
+        Su
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/sudo/" class="md-nav__link">
+        sudo
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/swapon/" class="md-nav__link">
+        Swapon
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/sysbench/" class="md-nav__link">
+        Sysbench
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/sysconfig/" class="md-nav__link">
+        sysconfig
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/sysctl/" class="md-nav__link">
+        Sysctl
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/systemctl/" class="md-nav__link">
+        Systemctl
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/systemd-delta/" class="md-nav__link">
+        Systemd delta
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/tail/" class="md-nav__link">
+        Tail
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/tar/" class="md-nav__link">
+        Tar
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/tcpdump/" class="md-nav__link">
+        Tcpdump
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/telinit/" class="md-nav__link">
+        Telinit
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/tput/" class="md-nav__link">
+        Tput
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/tr/" class="md-nav__link">
+        Tr
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/tune2fs/" class="md-nav__link">
+        Tune2fs
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/ufw/" class="md-nav__link">
+        Ufw
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/uname/" class="md-nav__link">
+        Uname
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/unshare/" class="md-nav__link">
+        unshare
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/useradd/" class="md-nav__link">
+        useradd
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/userdel/" class="md-nav__link">
+        userdel
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/usermod/" class="md-nav__link">
+        usermod
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/watch/" class="md-nav__link">
+        watch
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/weechat/" class="md-nav__link">
+        weechat
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/xhost/" class="md-nav__link">
+        xhost
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/xmodmap/" class="md-nav__link">
+        xmodmap
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/xrandr/" class="md-nav__link">
+        xrandr
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/xset/" class="md-nav__link">
+        xset
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13" type="checkbox" id="__nav_13" >
+      
+      <label class="md-nav__link" for="__nav_13">
+        Miscellany
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Miscellany" data-md-level="1">
+        <label class="md-nav__title" for="__nav_13">
+          <span class="md-nav__icon md-icon"></span>
+          Miscellany
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Miscellany/" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Miscellany/CI-CD/" class="md-nav__link">
+        CI/CD
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Miscellany/bittorrent/" class="md-nav__link">
+        BitTorrent
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Miscellany/cryptocurrency/" class="md-nav__link">
+        🪙 Cryptocurrency
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Miscellany/learn/" class="md-nav__link">
+        Learning
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_14" type="checkbox" id="__nav_14" >
+      
+      <label class="md-nav__link" for="__nav_14">
+        Text editors
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Text editors" data-md-level="1">
+        <label class="md-nav__title" for="__nav_14">
+          <span class="md-nav__icon md-icon"></span>
+          Text editors
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Text-editors/atom/" class="md-nav__link">
+        Atom
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Text-editors/code/" class="md-nav__link">
+        VS Code
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Text-editors/vim/" class="md-nav__link">
+        Vim
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_15" type="checkbox" id="__nav_15" >
+      
+      <label class="md-nav__link" for="__nav_15">
+        Web
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Web" data-md-level="1">
+        <label class="md-nav__title" for="__nav_15">
+          <span class="md-nav__icon md-icon"></span>
+          Web
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Web/" class="md-nav__link">
+        🌎 Web
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Web/CSS/" class="md-nav__link">
+        CSS
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Web/mkdocs/" class="md-nav__link">
+        Mkdocs
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_15_4" type="checkbox" id="__nav_15_4" >
+      
+      <label class="md-nav__link" for="__nav_15_4">
+        JavaScript
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="JavaScript" data-md-level="2">
+        <label class="md-nav__title" for="__nav_15_4">
+          <span class="md-nav__icon md-icon"></span>
+          JavaScript
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Web/JavaScript/" class="md-nav__link">
+        Axios
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Web/JavaScript/Express/" class="md-nav__link">
+        Express
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Web/JavaScript/React/" class="md-nav__link">
+        React
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Web/JavaScript/Web%20Components/" class="md-nav__link">
+        Web Components
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_16" type="checkbox" id="__nav_16" >
+      
+      <label class="md-nav__link" for="__nav_16">
+        Windows
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Windows" data-md-level="1">
+        <label class="md-nav__title" for="__nav_16">
+          <span class="md-nav__icon md-icon"></span>
+          Windows
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Windows/Active%20Directory/" class="md-nav__link">
+        Active Directory
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Windows/DNS-labs/" class="md-nav__link">
+        DNS labs
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Windows/Labs/" class="md-nav__link">
+        Labs
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Windows/PowerShell/" class="md-nav__link">
+        🐚 PowerShell
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Windows/WDS-lab/" class="md-nav__link">
+        WDS lab
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Windows/WS2016/" class="md-nav__link">
+        Windows Server
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Windows/diskpart/" class="md-nav__link">
+        Diskpart
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#glossary" class="md-nav__link">
+    📘 Glossary
+  </a>
+  
+    <nav class="md-nav" aria-label="📘 Glossary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ccx" class="md-nav__link">
+    C++/CX
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cwinrt" class="md-nav__link">
+    C++/WinRT 
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cwin32" class="md-nav__link">
+    C#/Win32 
+  </a>
+  
+    <nav class="md-nav" aria-label="C#/Win32 ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cwinrt_1" class="md-nav__link">
+    C#/WinRT  
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#com" class="md-nav__link">
+    COM
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#core-application" class="md-nav__link">
+    Core application
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#directx" class="md-nav__link">
+    DirectX
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interop-assembly" class="md-nav__link">
+    Interop assembly
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#language-projection" class="md-nav__link">
+    Language projection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tfm" class="md-nav__link">
+    TFM
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#winmd" class="md-nav__link">
+    WinMD
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#win32" class="md-nav__link">
+    Win32
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#winrt" class="md-nav__link">
+    WinRT
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="windows-programming">Windows programming</h1>
+<h2 id="glossary">📘 Glossary</h2>
+<h3 id="ccx">C++/CX</h3>
+<p><strong>C++/CX</strong> is a legacy <a href="#language-projection">language projection</a> that uses nonstandard C++ (see <a href="#cwinrt">C++/WinRT</a>).</p>
+<p>Compile a C++ to a DLL (<a href="https://app.pluralsight.com/course-player?clipId=a1559ea6-7439-4ab5-b3ca-81faa1716cb7">src</a>)</p>
+<p>Invoke <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 0H8C6.9 0 6 .9 6 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V6l-6-6m4 18H8V2h7v5h5v11M4 4v18h16v2H4c-1.1 0-2-.9-2-2V4h2m6 6v2h8v-2h-8m0 4v2h5v-2h-5z"/></svg></span> <a href="https://docs.microsoft.com/en-us/cpp/build/reference/compiling-a-c-cpp-program?view=msvc-160">MSVC</a>, creating:</p>
+<ul>
+<li><strong>Library.dll</strong></li>
+<li><strong>Library.lib</strong></li>
+<li>Library.exp</li>
+<li>Library.obj</li>
+</ul>
+<div class="tabbed-set" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Command-line</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code>cl /w4 /ld Library.cpp Library.def
+</code></pre></div>
+</div>
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">Library.cpp</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&quot;Library.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+
+<span class="kt">void</span> <span class="nf">Cluck</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;C-style cluck!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><label for="__tabbed_1_3">Library.h</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="cp">#pragma once</span>
+
+<span class="kt">void</span> <span class="nf">Cluck</span><span class="p">();</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><label for="__tabbed_1_4">Library.def</label><div class="tabbed-content">
+<p>A definitions file is broken into sections, all of which are optional.
+<div class="highlight"><pre><span></span><code>EXPORTS
+
+Cluck
+</code></pre></div></p>
+</div>
+</div>
+<p>Now the libary can be used in an application</p>
+<div class="tabbed-set" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">Command-line</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code>cl /W4 Application.cpp /link Library.lib
+</code></pre></div>
+</div>
+<input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2">Application.cpp</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&quot;Library.h&quot;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Cluck</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+</div>
+<h3 id="cwinrt">C++/WinRT <a href="https://github.com/microsoft/cppwinrt"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg></span></a></h3>
+<h2 id="cwin32">C#/Win32 <a href="https://www.nuget.org/packages/Microsoft.Windows.CsWin32"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 15a1 1 0 0 1 1 1 1 1 0 0 1-1 1 1 1 0 0 1-1-1 1 1 0 0 1 1-1m19 2h-2V9h-2V7h6v2h-2v8M16 7v2h-2v2h2v2h-2v2h2v2h-4V7h4m-5 0v10H9l-3-6v6H4V7h2l3 6V7h2z"/></svg></span></a></h2>
+<p>Resources:</p>
+<ul>
+<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 15.584V8.416a.5.5 0 0 1 .77-.42l5.576 3.583a.5.5 0 0 1 0 .842l-5.576 3.584a.5.5 0 0 1-.77-.42z"/><path fill-rule="evenodd" d="M12 2.5a9.5 9.5 0 1 0 0 19 9.5 9.5 0 0 0 0-19zM1 12C1 5.925 5.925 1 12 1s11 4.925 11 11-4.925 11-11 11S1 18.075 1 12z"/></svg></span> <a href="https://www.youtube.com/watch?v=InQtHPumUyw">Windows APIs Everywhere in .NET</a></li>
+</ul>
+<h3 id="cwinrt_1">C#/WinRT <a href="https://www.nuget.org/packages/Microsoft.Windows.CsWinRT/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 15a1 1 0 0 1 1 1 1 1 0 0 1-1 1 1 1 0 0 1-1-1 1 1 0 0 1 1-1m19 2h-2V9h-2V7h6v2h-2v8M16 7v2h-2v2h2v2h-2v2h2v2h-4V7h4m-5 0v10H9l-3-6v6H4V7h2l3 6V7h2z"/></svg></span></a> <a href="https://github.com/microsoft/CsWinRT"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg></span></a></h3>
+<p>.NET Core 3 and .NET Framework ("NETFX") applications can continue to use the <strong>Microsoft.Windows.SDK.Contracts</strong> NuGet package.</p>
+<p><strong>C#/WinRT</strong> is the <a href="#winrt">WinRT</a> <a href="#language-projection">language projection</a> for C#, created after .NET5 removed WinRT projection support for C# out of the .NET compiler. 
+This represents a decoupling of the Windows-specific APIs from .NET</p>
+<p>It is used to create C# <strong>runtime components</strong> hosted in non-.NET languages by first building <a href="#interop-assembly">interop assemblies</a> from <a href="#winmd">Windows Metadata</a> files using  <strong>cswinrt.exe</strong>.</p>
+<p>Resources:</p>
+<ul>
+<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 15.584V8.416a.5.5 0 0 1 .77-.42l5.576 3.583a.5.5 0 0 1 0 .842l-5.576 3.584a.5.5 0 0 1-.77-.42z"/><path fill-rule="evenodd" d="M12 2.5a9.5 9.5 0 1 0 0 19 9.5 9.5 0 0 0 0-19zM1 12C1 5.925 5.925 1 12 1s11 4.925 11 11-4.925 11-11 11S1 18.075 1 12z"/></svg></span> <a href="https://www.youtube.com/watch?v=wy5VB-2kF6I">How to call WinRT APIs from .NET5 applications</a></li>
+</ul>
+<h3 id="com">COM</h3>
+<p><strong>Component Object Model</strong> was developed in the late 1980s by Microsoft.
+The <strong>Component Object Model</strong> is a binary standard interface specification for objects.
+It originated in 1993 as a renaming of OLE (Object Linking and Embedding) 2.0, used by Microsoft Office at the time to link data between applications.</p>
+<p>COM objects support a collection of interfaces, most importantly <strong><code>IUnknown</code></strong> which all COM objects must implement.
+IUnknown includes <code>QueryInteface()</code> which returns pointers to the other interfaces also implemented by the COM object.
+It also includes <code>AddRef()</code> and <code>Release()</code>, which manage the object's lifetime.</p>
+<p>COM uses <strong><code>HRESULT</code></strong>s, 32-bit longs, to indicate success or failure.
+Bit 31 indicates success (0) or failure (1).
+With .NET <a href="#interop-assembly">interop</a>, a failed <code>HRESULT</code> turns into a thrown COMException.
+Common <code>HRESULT</code>s include <code>S_OK</code>, <code>S_FALSE</code>, <code>E_FAIL</code>, and many other failure codes also beginning with <code>E_</code>.</p>
+<p>COM objects are created by calling <code>CoCreateInstance()</code>.
+This function, which is stored in <strong>ole32.dll</strong>, searches the Registry for the given class ID, then loads the apropriate <strong>COM Server</strong> DLL file.
+This DLL file then creates a class factory which then creates the COM instance, which is passed back to the client as an interface pointer.
+(<a href="https://app.pluralsight.com/course-player?clipId=741b49fc-646c-49ba-8ec3-497d046bbaf1">src</a>)</p>
+<p>COM classes must be registered in the Registry, at minimum by mapping the class ID (a GUID) to a DLL, in the <strong>HKEY_CLASSES_ROOT</strong> hive.
+This is done using the <strong>regsvr32.exe</strong> utility.
+(<a href="https://app.pluralsight.com/course-player?clipId=dc4cc210-1265-48c2-aafe-36da5481e544">src</a>)</p>
+<h3 id="core-application">Core application</h3>
+<p><strong>Core application</strong> refers to the lifecycle of a UWP application, through which Windows offers app-specific services relating to power management, security, etc and abstracts the app itself.
+It offers a level of control over graphical applications comparable to that available for apps as services. (<a href="https://app.pluralsight.com/course-player?clipId=b35aed5b-22a5-401d-82c8-75909092cab6">src</a>)</p>
+<h3 id="directx">DirectX</h3>
+<p>DirectX is a gaming API that was created by Eric Engstrom (d. 2020), Alex St. John, and Craig Eisler in 1994 to support game development on Windows 95.</p>
+<h3 id="interop-assembly">Interop assembly</h3>
+<p><strong>Interop assemblies</strong> allow .NET applications to call native code. 
+They can be distributed along with applications that reference them.</p>
+<p><a href="#language-projection">Language projections</a> like <a href="#cwinrt">C#/WinRT</a> produce interop assemblies composed in C# which can then be compiled into a <strong>projection assembly</strong>.</p>
+<h3 id="language-projection">Language projection</h3>
+<p>A <strong>language projection</strong> (or simply "projection") is a native adapter that enables programming APIs in a way that is idiomatic to a given language.</p>
+<table>
+<thead>
+<tr>
+<th>Framework</th>
+<th>C#</th>
+<th>C++</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#winrt">WinRT</a></td>
+<td><a href="#cwinrt_1">C#/WinRT</a></td>
+<td><a href="#cwinrt">C++/WinRT</a></td>
+</tr>
+<tr>
+<td>Win32</td>
+<td>C#/Win32</td>
+<td>?</td>
+</tr>
+</tbody>
+</table>
+<p>Resources:</p>
+<ul>
+<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 0H8C6.9 0 6 .9 6 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V6l-6-6m4 18H8V2h7v5h5v11M4 4v18h16v2H4c-1.1 0-2-.9-2-2V4h2m6 6v2h8v-2h-8m0 4v2h5v-2h-5z"/></svg></span> <a href="https://docs.microsoft.com/en-us/windows/uwp/csharp-winrt/">C#/WinRT (MSDocs)</a></li>
+<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 15.584V8.416a.5.5 0 0 1 .77-.42l5.576 3.583a.5.5 0 0 1 0 .842l-5.576 3.584a.5.5 0 0 1-.77-.42z"/><path fill-rule="evenodd" d="M12 2.5a9.5 9.5 0 1 0 0 19 9.5 9.5 0 0 0 0-19zM1 12C1 5.925 5.925 1 12 1s11 4.925 11 11-4.925 11-11 11S1 18.075 1 12z"/></svg></span> <a href="https://www.youtube.com/watch?v=InQtHPumUyw">Windows APIs Everywhere in .NET</a></li>
+</ul>
+<h3 id="tfm">TFM</h3>
+<p><strong>Target Framework Monikers (TFM)</strong> are used in NuGet packages and project files to refer to the flavor of .NET targeted by an application.</p>
+<p><a href="https://github.com/dotnet/designs/blob/main/accepted/2020/net5/net5.md">Only for .NET5</a>, Microsoft introduced new monikers that indicate the targeted OS after a hyphen, e.g. <code>net5.0-windows</code>, etc.
+These monikers will pull in the projection assemblies that are needed to access those APIs and replace earlier use of the Microsoft.Windows.SDK.Contracts package reference.</p>
+<p>Example TMFs include:</p>
+<ul>
+<li><code>net5.0-windows10.0.19041.0</code> Windows 10 version 2004</li>
+<li><code>net5.0-windows10.0.18362.0</code> Windows 10 version 1903</li>
+<li><code>net5.0-windows10.0.17763.0</code> Windows 10 version 1809</li>
+</ul>
+<p>References:</p>
+<ul>
+<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 15.584V8.416a.5.5 0 0 1 .77-.42l5.576 3.583a.5.5 0 0 1 0 .842l-5.576 3.584a.5.5 0 0 1-.77-.42z"/><path fill-rule="evenodd" d="M12 2.5a9.5 9.5 0 1 0 0 19 9.5 9.5 0 0 0 0-19zM1 12C1 5.925 5.925 1 12 1s11 4.925 11 11-4.925 11-11 11S1 18.075 1 12z"/></svg></span> <a href="https://www.youtube.com/watch?v=InQtHPumUyw">Windows APIs Everywhere in .NET</a></li>
+</ul>
+<h3 id="winmd">WinMD</h3>
+<p><strong>Windows metadata</strong> files (*.winmd) are machine-readable files that define <a href="#winrt">Windows Runtime</a> APIs.
+All public types in a .winmd file must be WinRT types.
+They use the same physical file format as CLR assemblies.</p>
+<p>Resources:</p>
+<ul>
+<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 0H8C6.9 0 6 .9 6 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V6l-6-6m4 18H8V2h7v5h5v11M4 4v18h16v2H4c-1.1 0-2-.9-2-2V4h2m6 6v2h8v-2h-8m0 4v2h5v-2h-5z"/></svg></span> <a href="https://docs.microsoft.com/en-us/uwp/winrt-cref/winmd-files">Windows Metadata (WinMD) files</a></li>
+</ul>
+<h3 id="win32">Win32</h3>
+<h3 id="winrt">WinRT</h3>
+<p>The <strong>Windows Runtime</strong> is a framework introduced with Windows 8 to provide access to system resources. 
+WinRT is separate from, although it is used by, .NET.
+Under the surface, WinRT is implemented as <a href="#com">COM</a> components.</p>
+<p>UWP XAML controls were included in WinRT until recently when they were moved to the WinUI NuGet package.</p>
+<p>Resources:</p>
+<ul>
+<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 15.584V8.416a.5.5 0 0 1 .77-.42l5.576 3.583a.5.5 0 0 1 0 .842l-5.576 3.584a.5.5 0 0 1-.77-.42z"/><path fill-rule="evenodd" d="M12 2.5a9.5 9.5 0 1 0 0 19 9.5 9.5 0 0 0 0-19zM1 12C1 5.925 5.925 1 12 1s11 4.925 11 11-4.925 11-11 11S1 18.075 1 12z"/></svg></span> <a href="https://www.youtube.com/watch?v=InQtHPumUyw">Windows APIs Everywhere in .NET</a></li>
+</ul>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        <a href="../Testing/" class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Testing
+            </div>
+          </div>
+        </a>
+      
+      
+        <a href="../Wired%20Brain%20Coffee/" class="md-footer__link md-footer__link--next" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              ☕ Wired Brain Coffee
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../assets/javascripts/workers/search.fb4a9340.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.a1c7c35e.min.js"></script>
+      
+    
+  </body>
+</html>
