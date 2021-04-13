@@ -1,5 +1,5 @@
 site_name: 🧠
-site_url: http://localhost
+site_url: https://jasper-zanjani.github.io/notes
 site_dir: site
 theme:
   name: material
