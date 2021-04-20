@@ -3,6 +3,8 @@
 
 **events**{: #events }
 :   Context that governs connection processing configuration.
+    Events can only be declared in the main context and there can only be a single events defined within the configuration.
+    
 
 **http**{: #http }
 :   Context that allows configuration of HTTP servers and typically serves as a container for the [**server**](#server) context.

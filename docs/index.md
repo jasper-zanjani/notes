@@ -2,6 +2,10 @@
 
 ## ✔&#xfe0f; TODO
 
+- Drums for Aliana
+
+    - [ ]: 🥁 [Learning to play the drums](https://www.udemy.com/course/learndrums/)
+
 - C#
     - [ ] :brain: [:octicons-play-24: Working with files and streams in C#](https://app.pluralsight.com/library/courses/csharp-working-files-streams)
     - [ ] :brain: [:octicons-play-24: Using HttpClient to consume APIs in .NET Core](https://app.pluralsight.com/library/courses/httpclient-consume-apis-dotnet-core/table-of-contents)

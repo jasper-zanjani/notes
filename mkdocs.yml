@@ -3,6 +3,12 @@ site_url: https://jasper-zanjani.github.io/notes
 site_dir: site
 theme:
   name: material
+  palette:
+    scheme: slate
+    primary: amber
+    accent: yellow
+
+  
   shortcuts:
     search: 191
 

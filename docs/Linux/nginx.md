@@ -1,18 +1,57 @@
-# nginx
+# Nginx
 
-**nginx**
+**Nginx** ("engine-x") is described as an *event-based reverse proxy server*.
+This refers to the fact that it has an asynchronous architecture, unlike its competitors Apache and IIS which create a new blocking thread per connection.
+Nginx is much newer than Apache which started in 1995, although it has seen widespread adoption since 2008, growing mostly at Apache's expense.
+A typical and favored deployment is to place Nginx in the front-end and Apache in the back-end to combine the advantages of both platforms.
 
-The default config for nginx may be at various paths (**/etc/nginx/nginx.conf**), depending on installation method, or a config can be explicitly specified with `--conf-path`/`-c`.
-Nginx can be interrogated for its default config with `-t`
+Nginx follows the convention of even version numbers being stable and odd numbers being mainline or development.
 
-Nginx config files resemble C# code files. 
 
-- **Simple directives** like `listen *:80;` are made of a name, multiple optional parameters, and a closing semicolon. 
+=== "CentOS"
+
+    ```sh
+    # /etc/yum.repos.d/nginx.repo
+
+    [nginx]
+    name=nginx repo
+    baseurl=http://nginx.org/packages/centos/7/$basearch/
+    gpgcheck=0
+    enabled=1
+    ```
+    ```sh
+    dnf install nginx
+    ```
+
+=== "Ubuntu"
+
+    ```sh
+    # /etc/apt/sources.list
+
+    deb http://nginx.org/packages/ubuntu/ trusty nginx
+    deb-src http://nginx.org/packages/ubuntu/ trusty nginx
+    ```
+    ```sh
+    curl -fsSL http://nginx.org/keys/nginx_signing.key
+    apt-key add nginx_signing.key
+    apt install nginx
+
+    ```
+
+Depending on installation method and distribution, configurations can exist in various directories.
+A config can be explicitly specified at runtime with `--conf-path`/`-c`.
+
+This option also appears in the output of `ps` for the Nginx master process, which is one way of interrogating which config is being used for the current Nginx instance.
+Nginx can also be interrogated for its default config with `-t`
+
+Nginx config files contain **directives**: 
+
+- **Simple directives** like `listen *:80;` contain a name, multiple optional parameters, and a closing semicolon. 
 Parameters themselves can pass a value after an equal sign, i.e. `backlog=511`.
-- **Context directives** or simply **contexts** like `events`, `http`, and `server` wrap a group of other directives in a pair of braces and can be nested.
+- **Context directives** (or simply "contexts", also "block directives") like `events`, `http`, and `server` wrap a group of other directives in a pair of braces and can be nested.
 Most simple directives can only be declared in specific contexts.
 - There is also an implied **main context** which wraps all the contents of the file, and putting a simple directive into the main context means making it a top-level statemtn.
-
+- Comments can be written using `#`
 
 ## Examples
 

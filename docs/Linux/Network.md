@@ -1,0 +1,2 @@
+--8<-- "includes/lx/nmap.md"
+--8<-- "includes/lx/tcpdump.md"
