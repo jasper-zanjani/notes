@@ -1,12 +1,5 @@
 **curl**{: #curl}
-:   [`#`][curl -&#35;]   <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`d`][curl -&#100;] <code>&nbsp;</code> [`f`][curl -&#102;] <code>&nbsp;</code> [`h`][curl -&#104;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`m`][curl -&#109;] <code>&nbsp;</code> [`o`][curl -&#111;] <code>&nbsp;</code> [`q`][curl -&#113;] <code>&nbsp;</code> [`s`][curl -&#115;] <code>&nbsp;</code> [`u`][curl -&#117;] [`v`][curl -&#118;] <code>&nbsp;</code> [`x`][curl -&#120;] <code>&nbsp;</code> <code>&nbsp;</code>  <br><code>&nbsp;</code>&nbsp;<code>&nbsp;</code> <code>&nbsp;</code> [`C`][curl -&#67;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`K`][curl -&#75;] [`L`][curl -&#76;] [`M`][curl -&#77;] <code>&nbsp;</code> [`O`][curl -&#79;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`S`][curl -&#83;] [`T`][curl -&#84;] [`U`][curl -&#85;] [`V`][curl -&#86;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code>\
-    [`connect-timeout`][curl --connect-timeout]
-    [`create-dirs`][curl --create-dirs]
-    [`disable-epsv`][curl --disable-epsv]
-    [`ftp-pasv`][curl --ftp-pasv]
-    [`limit-rate`][curl --limit-rate]
-    [`max-filesize`][curl --max-filesize]
-    [`url`][curl --url]
+:   [`#`][curl -&#35;]   <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`d`][curl -&#100;] <code>&nbsp;</code> [`f`][curl -&#102;] <code>&nbsp;</code> [`h`][curl -&#104;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`m`][curl -&#109;] <code>&nbsp;</code> [`o`][curl -&#111;] <code>&nbsp;</code> [`q`][curl -&#113;] <code>&nbsp;</code> [`s`][curl -&#115;] <code>&nbsp;</code> [`u`][curl -&#117;] [`v`][curl -&#118;] <code>&nbsp;</code> [`x`][curl -&#120;] <code>&nbsp;</code> <code>&nbsp;</code>  <br><code>&nbsp;</code>&nbsp;<code>&nbsp;</code> <code>&nbsp;</code> [`C`][curl -&#67;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`K`][curl -&#75;] [`L`][curl -&#76;] [`M`][curl -&#77;] <code>&nbsp;</code> [**`O`**][curl -&#79;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`S`][curl -&#83;] [`T`][curl -&#84;] [`U`][curl -&#85;] [`V`][curl -&#86;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code>
 
     Use the [ `dict` network protocol ](https://tools.ietf.org/html/rfc2229) to retrieve the definition of a word.
     [ref](https://fedoramagazine.org/set-up-an-offline-command-line-dictionary-in-fedora/)
@@ -35,13 +28,6 @@
 [curl -&#118;]: #curl '```&#10;$ curl -v&#10;$ curl --verbose&#10;```&#10;Be verbose during file retrieval.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 50'
 [curl -&#86;]: #curl '```&#10;$ curl -V&#10;$ curl --version&#10;```&#10;Print version and supported-feature information&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 50'
 [curl -&#120;]: #curl '```&#10;$ curl -x $PROXYHOST:$PORT&#10;$ curl --proxy $PROXYHOST:$PORT&#10;```&#10;Use `$PROXYHOST` (and the optional `$PORT` which is 1080 by default), as the HTTP proxy&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 50'
-[curl --connect-timeout]: #curl '```&#10;$ curl --connect-timeout $SECONDS&#10;```&#10;Limit connection phase to `$SECONDS` seconds&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 49'
-[curl --create-dirs]: #curl '```&#10;$ curl --create-dirs&#10;```&#10;When used with `-o`, create local directories as needed&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 49'
-[curl --disable-epsv]: #curl '```&#10;$ curl --disable-epsv&#10;```&#10;Do not use the `EPSV` FTP command for passive FTP transfer. Normally `curl` tries `EPSV` before `PASV`.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 49'
-[curl --ftp-pasv]: #curl '```&#10;$ curl --ftp-pasv&#10;```&#10;Use the FTP `PASV` command (default)&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 49'
-[curl --limit-rate]: #curl '```&#10;$ curl --limit-rate $SPEED&#10;```&#10;Limit transfers to `$SPEED` (bytes per second by default). Other possible units, placed at the end of the argument, include:&#10;  - `k`,`K`               kilboytes&#10;  - `m`,`M`               megabytes&#10;  - `g`,`G`               gigabytes&#10;&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 49'
-[curl --max-filesize]: #curl '```&#10;$ curl --max-filesize $BYTES&#10;```&#10;Do not download a file exceeding `$BYTES` in size.&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 49'
-[curl --url]: #curl '```&#10;$ curl --url $URL&#10;```&#10;Retrieve `$URL`&#10;Robbins, Arnold. _UNIX in a Nutshell_ 4th ed (2005): 50'
 [curl -&#79;]: #curl '```&#10;$ curl -O $URL&#10;$ curl --remote-name $URL&#10;```&#10;download `$URL` saving output under the filename indicated by `$URL` itself'
 [curl -&#100;]: #curl '```&#10;$ curl -d $NAME=$VALUE&#10;```&#10;Post form-encoded `$NAME` with value `$VALUE`'
 [curl -&#76;]: #curl '```&#10;$ curl -L&#10;$ curl --location&#10;```&#10;Follow redirects'

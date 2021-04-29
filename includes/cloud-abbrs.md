@@ -7,7 +7,9 @@
 *[EFS]: Elastic File System
 *[EKS]: Elastic Container Service for Kubernetes
 *[GCE]: Google Compute Engine
+*[IAM]: Identity and Access Management
 *[IDaaS]: Identity as a Service
 *[MARS]: Microsoft Azure Recovery Services
+*[RBAC]: Role-Based Access Control
 *[S3]: Simple Storage Service
 *[SQS]: Simple Queue Service

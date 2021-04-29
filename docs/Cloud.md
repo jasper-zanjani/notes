@@ -76,11 +76,9 @@ Azure **quotas** apply to subscriptions and are implemented with [tags](#tags).
 - **Spending quotas** trigger alarms when spending has reached a threshold.
 
 Azure **budgets** can be viewed and administered in the **Cost Management + Billing** blade. 
-Users must have at least the [**Reader**](RBAC#roles) role at the subscription scope to view, and Contributor to create and manage, budgets. 
+Users must have at least the [**Reader**](#iam) role at the subscription scope to view, and Contributor to create and manage, budgets. 
 
-### 🔒 Locks
-
-Azure **resource locks** are used to apply restrictions across **all users and roles** and can be applied at subscription, resource group, or resource scopes. 
+**Resource locks :material-microsoft-azure:** are used to apply restrictions across **all users and roles** and can be applied at subscription, resource group, or resource scopes. 
 
 - **CanNotDelete**
 - **ReadOnly** effectively restricts all authorized users to the permissions granted by the [**Reader**](RBAC#roles) role
@@ -116,43 +114,27 @@ Sources:
 
 ### IAM
 
-All cloud providers offer **Identity and Access Management (IAM)** systems that are used to control access to resources.
-**Role-based access control (RBAC)** is the universally recommended and modern approach, relying on bundles of specific permissions called **roles** that can be assigned to principals.
-All cloud providers offer the ability to define custom roles and come with many ready-to-use role definitions ("**predefined roles**" in GCP or "**built-in roles**" in Azure).
+All cloud providers offer IAM systems that are used to control access to resources, all of which establish a similar taxonomy of concepts.
 
-Cloud providers also still support legacy IAM systems which are deprecated.
+The type of user that is granted access to resources is referred to variously as a **member :material-google:** or a **security principal :material-microsoft-azure:**.
 
-- Azure **classic** administrator roles include "Account Administrator", "Service Administrator" and "Co-Administrator"
-- GCP **primitive roles**"owner", "editor", and "viewer" can still be applied to most GCP resources.
+Bundles of specific permissions that can be assigned to users are called **roles**.
+All cloud providers offer the ability to define custom roles and come with many ready-to-use role definitions: **predefined roles :material-google:** or **built-in roles :material-microsoft-azure:**.
+Roles form the basis of RBAC, which is the recommended model used by all cloud providers.
 
+Roles are associated to users by **policies :material-google:** and **role assignments :material-microsoft-azure:**.
 
-Important roles
+=== ":material-google: gcloud"
 
-=== ":material-microsoft-azure:"
+    ```sh
+    gcloud projects get-iam-policy $project
+    ```
 
-    - **Owner** has full access to all resources and **can** delegate access. Service Administrator and Co-Administrators are assigned this role at the subscription scope.
-    - **Contributor** can create and manage all resources (full read/write privileges), but **cannot** delegate access.
-    - **Reader** can view resources.
-    - [Cost Management Contributor :material-file-document-edit-outline:][Cost Management Contributor]
-    - [Cost Management Reader :material-file-document-edit-outline:][Cost Management Reader]
-    - [Resource Policy Contributor :material-file-document-edit-outline:][Resource Policy Contributor]
-    - [User Administrator :material-file-document-edit-outline:][User Administrator]
-    - [User Access Administrator :material-file-document-edit-outline:][User Access Administrator]
+The Cloud providers also still support legacy IAM systems which are deprecated.
 
-=== ":fontawesome-brands-google:"
+- **Classic :material-microsoft-azure:** administrator roles included Account Administrator, Service Administrator and Co-Administrator
+- **Primitive roles :material-google:** included Owner, Editor, and Viewer can still be applied to most GCP resources.
 
-    - [Billing Account Administrator :material-file-document-edit-outline:][Billing Account Administrator]
-    - [Billing Account Creator :material-file-document-edit-outline:][Billing Account Creator]
-    - [Billing Account User :material-file-document-edit-outline:][Billing Account User]
-    - [Billing Account Viewer :material-file-document-edit-outline:][Billing Account Viewer]
-    - [Compute Engine Admin :material-file-document-edit-outline:][Compute Engine Admin]
-    - [Compute Engine Network Admin :material-file-document-edit-outline:][Compute Engine Network Admin]
-    - [Compute Engine Security Admin :material-file-document-edit-outline:][Compute Engine Security Admin]
-    - [Compute Engine Viewer :material-file-document-edit-outline:][Compute Engine Viewer]
-    - [Compute Service Agent :material-file-document-edit-outline:][Compute Service Agent]
-    - [Folder Admin :material-file-document-edit-outline:][Folder Admin]
-    - [Project Creator :material-file-document-edit-outline:][Project Creator]
-    - Shared VPC Admin
 
 ### Infrastructure
 
@@ -160,8 +142,8 @@ All cloud providers divide their global services into a hierarchy of geographica
 
 Azure datacenters contain multiple availability zones, and every Azure region has at least **three** availability zones.
 
-Azure services are also divided into **geographies**, generally coterminous with countries.
-Azure geographies are further divided into **regional pairs**. Each regional pair receives rolling updates one member at a time.
+Azure services are also divided into **geographies :material-microsoft-azure:**, generally coterminous with countries.
+Azure geographies are further divided into **regional pairs :material-microsoft-azure:**. Each regional pair receives rolling updates one member at a time.
 
 Most services are regionally based, meaning the underlying hardware of that service's instance will exist in only a single Region.
 Some regions, like **AWS GovCloud**, have restricted access.
@@ -177,7 +159,7 @@ Resources
 
 |                                                                                                                                                   :material-microsoft-azure:                                                                                                                                                    |                                                            :fontawesome-brands-aws:                                                             |                                                                                                                                      :fontawesome-brands-google:                                                                                                                                       |
 | :-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-| <figure><img src="./img/00001-icon-service-Monitor.svg" width="120px"><figcaption>Azure Monitor :material-file-document-edit-outline:</figcaption></figure><figure><img src="./img/10066-icon-service-Network-Watcher.svg" width="120px"/><figcaption>Network Watcher :material-file-document-edit-outline:</figcaption></figure> | <figure><img src="./img/Arch_Amazon-CloudWatch_64.svg" width="120px"/><figcaption>[CloudWatch :material-file-document-edit-outline:][CloudWatch] | <figure><img src="./img/Stackdriver-512-color.svg" width="120px"/><figcaption>[Stackdriver :material-file-document-edit-outline:][Stackdriver] :fontawesome-brands-google:</figcaption></figure>![](./img/trace-512-color.svg){: width='120px' }<figcaption>[Trace][Trace]</figcaption><figure></figure> |
+| <figure><img src="./img/00001-icon-service-Monitor.svg" width="120px"><figcaption>Azure Monitor :material-file-document-edit-outline:</figcaption></figure><figure><img src="./img/10066-icon-service-Network-Watcher.svg" width="120px"/><figcaption>Network Watcher :material-file-document-edit-outline:</figcaption></figure> | <figure><img src="./img/Arch_Amazon-CloudWatch_64.svg" width="120px"/><figcaption>[CloudWatch :material-file-document-edit-outline:][CloudWatch] | <figure><img src="./img/Stackdriver-512-color.svg" width="120px"/><figcaption>[Stackdriver :material-file-document-edit-outline:][Stackdriver] :fontawesome-brands-google:</figcaption></figure>![](/Cloud/img/trace-512-color.svg){: width='120px' }<figcaption>[Trace][Trace]</figcaption><figure></figure> |
 
 
 ### Resources
@@ -209,8 +191,6 @@ This is the case for [storage accounts](#storage-accounts), [App Service][App Se
 | &nbsp;                                                                                                                                                                          | &nbsp;                                                                                                                    | Folder                      | Organize resources and their parents in a nested hierarchy                    |
 | Resource group                                                                                                                                                                  | &nbsp;                                                                                                                    | Project                     | Logical container that is the direct parent to any resource, tied to a Region |
 | Tag                                                                                                                                                                             | Tag                                                                                                                       | Label                       | Key-value pairs that are used to organize resources                           |
-
-
 
 The **resource hierarchy** organizes GCP resources in 3 levels below Domain
 
@@ -273,7 +253,7 @@ GCP virtual machines are referred to as **instances**, and are available in thre
 
 
 
-## 💾 Storage
+## :material-harddisk: Storage
 
 ### Archive
 
@@ -356,7 +336,7 @@ Alternatively, two peered networks can share a single virtual network gateway, s
 | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------------: |
 | <figure><img src="./img/10067-icon-service-Network-Security-Groups.svg" width="120px" title="Network Security Group (NSG)"/><figcaption>Network Security Group (NSG)</figcaption></figure> | <figure><figcaption>Security Group</figcaption></figure> | <figure><img src="./img/cloud-firewall-rules-512-color.svg" width="120px" title="Firewall Rules"/><figcaption>Firewall Rules</figcaption></figure> |
 
-Azure **Network Security Groups (NSGs)** are assocated with **network interfaces** and contain an arbitrary number of **security rules**.
+Azure **Network Security Groups (NSGs)** are associated with **network interfaces** and contain an arbitrary number of **security rules**.
 Each rule has the following properties:
 
 - **Name**

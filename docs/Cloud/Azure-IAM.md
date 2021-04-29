@@ -53,8 +53,9 @@ Access policy is applied to a **scope**, which includes subscriptions, resource 
 Policy can also be applied to Management Groups, which is an additional scope above subscription. 
 In this way, several subscriptions can inherit a single policy through a Management Group.
 
-RBAC roles can also be applied to a subscription through **Management Groups**, which represent the recommended practice for ensuring consistent application of tenant-wide security. Management groups form a hierarchy where each child inherits policy from its single parent while having additional controls. There is a single Management Group at the root of the hierarchy, associated with the Azure AD tenant (which is associated, in turn, with a subscription) that cannot be moved or deleted. 
-
+RBAC roles can also be applied to a subscription through **Management Groups**, which represent the recommended practice for ensuring consistent application of tenant-wide security. 
+Management groups form a hierarchy where each child inherits policy from its single parent while having additional controls. 
+There is a single Management Group at the root of the hierarchy, associated with the Azure AD tenant (which is associated, in turn, with a subscription) that cannot be moved or deleted. 
 
 ### Role definitions
 
@@ -87,8 +88,6 @@ Example role definitions:
 
 === "Contributor"
 
-    
-
     ```json
     {
       "Name": "Contributor",
@@ -113,8 +112,22 @@ Example role definitions:
     }
     ```
 
+Some built-in roles:
+
+- **Owner** has full access to all resources and **can** delegate access. Service Administrator and Co-Administrators are assigned this role at the subscription scope.
+- **Contributor** can create and manage all resources (full read/write privileges), but **cannot** delegate access.
+- **Reader** can view resources.
+- [Cost Management Contributor][Cost Management Contributor]
+- [Cost Management Reader][Cost Management Reader]
+- [Resource Policy Contributor][Resource Policy Contributor]
+- [User Administrator][User Administrator]
+- [User Access Administrator][User Access Administrator]
+
+
 # Tasks
+
 ### Create assignment
+
 Assign the Owner role to a user at the subscription scope
 
 - Navigate to resource group > Access Control (IAM) > Role Assignments tab > Add > Add Role Assignment

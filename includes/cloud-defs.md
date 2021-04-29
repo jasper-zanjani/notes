@@ -28,6 +28,12 @@
     - **Basic** scaling creates instances only when requests are received
     - **Manual** scaling supports operational continuity regardless of load level.
 
+**App Engine Deployer**{: #app-engine-deployer} [:material-google:](https://cloud.google.com/iam/docs/understanding-roles)
+:   Read-only access to all application configuration and settings.
+
+**App Engine Service Admin**{: #app-engine-service-admin} [:material-google:](https://cloud.google.com/iam/docs/understanding-roles)
+:   Read-only access to all application configuration and settings.
+    Write access to module-level and version-level settings. Cannot deploy a new version.
 
 **App Service**{: #app-service}
 :   An **App Service plan** resource determines the billable compute resources available for the App Services applications managed by it.
@@ -36,22 +42,22 @@
 
     App Service SSL certificates need to be deleted from each App Service before moving it to a new resource group.
 
-**Application Gateway**{: #Application Gateway }
+**Application Gateway**{: #application-gateway }
 :   **Azure Application Gateway** is used to load balance a large-scale set using more than 100 instances in place of [**Azure Load Balancer**](Azure-Load-Balancer). <sup>AZ-103: p. 223</sup>
 
     Application Gateway supports **session affinity** to save user state using browser cookies.
 
     Unlike Azure Load Balancer, which operates at OSI layer 4 and has limited security capabilities, Application Gateway operates at OSI layer 7 and provides Web Application Firewall (WAF) functioanlity to block attacks like SQL injection, cross-site scripting, and header injection. HTTPS is also only available with layer 7 load balancers like Application Gateway.
 
-**Athena**{: #Athena }
+**Athena**{: #athena }
 :   **Athena** is a serverless AWS service that allows SQL queries to be run against data stored in a [S3][S3] bucket.
     Athena works closely with [AWS Glue][AWS Glue] to extract schema information and crawl data sources.
     Before running for the first time, you must provide a path to a S3 bucket to store query results.
 
-**AWS CLI**{: #AWS CLI }
+**AWS CLI**{: #aws-cli }
 :   AWS CLI is version 1 is maintained for legacy compatibility purposes.
 
-**AWS Developer Tools**{: #AWS Developer Tools }
+**AWS Developer Tools**{: #aws-developer-tools }
 :   A collection of tools that provide CI services:
 
     - [CodeCommit][CodeCommit]
@@ -59,14 +65,17 @@
     - [CodeDeploy][CodeDeploy]
     - [CodePipeline][CodePipeline]
 
-**AWS Glue**{: #AWS Glue }
+**AWS Glue**{: #aws-glue }
 :   
 
-**AzCopy**{: #AzCopy }
+**AzCopy**{: #azcopy }
 :   **AzCopy** can be used to copy files to File storage.
 
-**Azure Bastion**{: #Azure Bastion }
-:   **Azure Bastion** is a PaaS service deployed within a VNet that allows connectivity to a VM from the Portal. Once deployed in a VNet, RDP/SSH is available to all VMs in that VNet. This session is streamed to your local device over an HTMLS session using the browser.
+**Azure Bastion**{: #azure-bastion }
+:   **Azure Bastion** is a PaaS service deployed within a VNet that allows connectivity to a VM from the Portal. 
+    Once deployed in a VNet, RDP/SSH is available to all VMs in that VNet. 
+    This session is streamed to your local device over an HTMLS session using the browser.
+
     - It is not deployed per VM, but once per VNet to its **own dedicated subnet**, at least /27 or larger
     - No public IP is necessary on the VM, the connection from Bastion to the VM is to the private IP. However, the Bastion itself does require a public IP.
     - Bastion can now span peered VNets
@@ -271,11 +280,39 @@
 **Cloud AutoML**{: #cloud-automl }
 : GCP service that allows developers without machine learning experience to develop machine learning models.
 
-**Cloud Device Administrator**{: #cloud-device-administrator} [:material-microsoft:](https://docs.microsoft.com/en-us/azure/active-directory/roles/permissions-reference#cloud-device-administrator-permissions): Azure built-in role that grants users full access to manage devices in Azure AD. 
-:   
+**Cloud Device Administrator**{: #cloud-device-administrator} [:material-microsoft:](https://docs.microsoft.com/en-us/azure/active-directory/roles/permissions-reference#cloud-device-administrator-permissions): 
+:   Azure built-in role that grants users full access to manage devices in Azure AD. 
 
-**Cloud Functions**{: #Cloud Functions }
+**Cloud Functions**{: #cloud-functions }
 : GCP serverless compute offering suited to running short-running logic, such as calling other APIs in response to an event.
+
+**Cloud IAM**{: #cloud-iam}
+:   GCP's identity and access management platform.
+
+    Permissions include:
+
+    - roles/container.admin
+    - roles/container.clusterAdmin
+    - roles/container.clusterViewer
+    - roles/container.developer
+    - roles/container.hostServiceAgentUser
+
+    Predefined roles include:
+
+    - [App Engine Deployer](#app-engine-deployer)
+    - [App Engine Service Admin](#app-engine-service-admin)
+    - [Billing Account Administrator][Billing Account Administrator]
+    - [Billing Account Creator][Billing Account Creator]
+    - [Billing Account User][Billing Account User]
+    - [Billing Account Viewer][Billing Account Viewer]
+    - [Compute Engine Admin][Compute Engine Admin]
+    - [Compute Engine Network Admin][Compute Engine Network Admin]
+    - [Compute Engine Security Admin][Compute Engine Security Admin]
+    - [Compute Engine Viewer][Compute Engine Viewer]
+    - [Compute Service Agent][Compute Service Agent]
+    - [Folder Admin][Folder Admin]
+    - [Project Creator][Project Creator]
+    - Shared VPC Admin
 
 **Cloud Machine Learning Engine**{: #cloud-machine-learning-engine }
 : Platform for building and deploying scalable machine learning systems to production.
