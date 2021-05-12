@@ -472,5 +472,7 @@ Because WSL2 uses virtualized ethernet adapters with a unique IP address, using 
 2. Windows Firewall must also allow connections to this port.
 3. The WSL2 distro must also have the SSH daemon running, as normal.
 
---8<-- "includes/linux-defs.md"
---8<-- "includes/linux-links.md"
+--8<-- "includes/Linux/abbrs.md"
+--8<-- "includes/Linux/links.md"
+
+--8<-- "includes/Linux/defs.md"

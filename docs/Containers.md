@@ -146,10 +146,16 @@ docker volume ls
 
 **Kubernetes** (Greek for "helmsman", "pilot", or "captain" and "k8s" for short) has emerged as the leading **container orchestrator** in the industry since 2018. It provides a layer that abstracts infrastructure, including computers, networks, and other computers, for applications deployed on top.
 
+### Concepts
+
 Kubernetes can be visualized as a system built from layers, with each higher layer abstracting the complexity of the lower levels.
 One server serves as the **master**, exposing an API for users and clients, assigning or **scheduling** work, and orchestrating communication between other components. 
-
 Other machines in the cluster are called [**nodes**](#node) or **workers** and accept and run workloads using available resources. 
+
+A [**pod**](#pod) is the most atomic unit of work which encompasses one or more tightly-coupled containers that will be deployed together on the same node.
+
+A Kubernetes configuration files is called a [kubeconfig](#kubeconfig).
+
 
 
 ### History
@@ -167,7 +173,7 @@ Internally, the project was framed as offering "Borg as a Service", although the
 Google ultimately donated iKubernetes to the **Cloud Native Computing Foundation**.
 
 
-### Azure
+### :material-microsoft-azure: Azure
 
 A volume represents a way to store, retrieve, and persist data across pods and through the application lifecycle. 
 In the context of Azure, Kubernetes can use two types of data volume:
@@ -175,5 +181,6 @@ In the context of Azure, Kubernetes can use two types of data volume:
 - **Azure Disks** using Azure Premium (SSDs) or Azure Standard (HDDs).
 - **Azure Files** using a SMB 3.0 share backed by an Azure Storage account.
 
+### :material-google: GCP
 
---8<-- "includes/containers-defs.md"
+--8<-- "includes/Containers/defs.md"

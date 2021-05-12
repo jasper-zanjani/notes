@@ -55,12 +55,12 @@ _**Withania somnifera**_ or **Ashwagandha** is a traditional [Ayurvedic herb](#a
 - In a double-blind, placebo-controlled [crossover study](#crossover-trial), healthy men administered Ashwagandha (500 mg/day) experienced improved cognitive performance outcomes. ([2014](https://www.ncbi.nlm.nih.gov/pubmed/24497737))
 - A study that compared the difference in effect of 250 and 600 mg/day found that the higher dosage was associated with significantly greater stress and anxiety reduction and increased sleep quality. ([2019](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6979308/))
 
-| Product                                                                                                                                                  |                $ |        mg |         $/250 mg |
-| -------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------: | --------: | ---------------: |
-| [Bulk Supplements Ashwagandha 1 kg](https://www.amazon.com/gp/product/B01MYBN67O)                                                                        |            34.96 | 1,000,000 |         &lt;0.01 |
-| [Swanson Ultimate Ashwagandha 250mg x 60 capsules](https://www.swansonvitamins.com/swanson-ultra-ultimate-ashwagandha-ksm-66-250-mg-60-veg-caps-SWU1003) | 7.99<br>**3.99** |    15,000 | 0.13<br>**0.07** |
-| [NOW Supplements Ashwagandha 450 mg x 180 capsules](https://www.amazon.com/NOW-Ashwagandha-Extract-Caps-SIZE/dp/B076H91FQG)                              |            28.99 |    81,000 |             0.09 |
-| [NOW supplements Ashwagandha 450 mg x 90 capsules](https://www.amazon.com/NOW-Foods-Ashwagandha-Extract-450mg/dp/B010MO5KCG)                             |            17.90 |    40,500 |             0.11 |
+| Product                                                                                                                                                  |                $ |       g |              $/g |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------: | ------: | ---------------: |
+| [Bulk Supplements Ashwagandha 1 kg](https://www.amazon.com/gp/product/B01MYBN67O)                                                                        |            34.96 | 1,000.0 |             0.04 |
+| [Swanson Ultimate Ashwagandha 250mg x 60 capsules](https://www.swansonvitamins.com/swanson-ultra-ultimate-ashwagandha-ksm-66-250-mg-60-veg-caps-SWU1003) | **3.99**<br>7.99 |    15.0 | **0.26**<br>0.53 |
+| [NOW Supplements Ashwagandha 450 mg x 180 capsules](https://www.amazon.com/NOW-Ashwagandha-Extract-Caps-SIZE/dp/B076H91FQG)                              |            28.99 |    81.0 |             0.35 |
+| [NOW supplements Ashwagandha 450 mg x 90 capsules](https://www.amazon.com/NOW-Foods-Ashwagandha-Extract-450mg/dp/B010MO5KCG)                             |            17.90 |    40.5 |             0.44 |
 
 
 #### Astragalus
@@ -702,6 +702,14 @@ A family of drugs used for treating hyperlipidaemia with a recognized capacity t
 #### Taurine
 
 Dosages of taurine in studies are commonly 500 - 2,000 mg /day, however higher doses appear to be well-tolerated.
+
+#### Thyroxine
+
+Thyroxine, called T4 because it contains 4 iodine atoms, is the major thyroid hormone secreted by the thryoid gland.
+
+It is converted to triiodothyronine (T3) by the removal of an iodine atom mainly in the liver but also in the brain.
+
+Thyroxine production is regulated by TSH.
 
 #### Tryptophan
 

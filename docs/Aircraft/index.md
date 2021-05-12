@@ -26,7 +26,7 @@ It achieved success in the export market:
 
 - **Su-30MKI**, jointly produced with Hindustan Aeronautics Limited, featured thrust vectoring.
 - **Su-30MKM**, designed for the Royal Malaysian Air Force, inherited the Su-30MKI's thrust vetoring and added avionics upgrades.
-- **Su-30MKK**, intended for China, spawned derivatives of its own that were purchased by Vietname and Venezuela.
+- **Su-30MKK**, intended for China, spawned derivatives of its own that were purchased by Vietnam and Venezuela.
 
 #### Su-30SM
 

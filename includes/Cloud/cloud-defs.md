@@ -97,7 +97,12 @@
     Container groups can be deployed to a subnet that already hosts a container group or an empty one, but it may not be deployed to a subnet that already has other resources like VMs.
 
 **Azure Data Explorer**{: #adx }
-:   
+:   **Azure Data Explorer (ADX)** has two architectural elements:
+
+    - **Data Management**
+    - **Engine**
+
+ADX does not hold large tables in a single table, rather it automatically shards them into **Extents**
 
 **Azure DevOps**{: #azure-devops }
 :   Azure DevOps used to be known as **Visual Studio Team Services** and **Team Foundation Server**.
@@ -621,13 +626,6 @@
 
 **Front Door**{: #front-door }: Azure offering that works like [Azure Load Balancer](Azure-Load-Balancer) for web apps.
 
-**gcloud**{: #gcloud }
-:   Google Cloud Source Control repositories
-    ```sh
-    gcloud source repos clone
-    gcloud source repos create
-    ```
-
 **Glacier**{: #glacier }: AWS storage service that offers long-term archival at low cost.
 :   One or more files are stored in an archive, typically a .zip or .tar file containing multiple files.
     Archives can range from 1 B to 40 TB in size.
@@ -642,9 +640,21 @@
 **Google Cloud Identity**{: #google-cloud-identity }
 : Google's IDaaS provider.
 
+#### GKE
+
+![](./img/gke-512-color.png){ align=left width=120px }
+
+Clusters have two [modes](https://cloud.google.com/kubernetes-engine/docs/concepts/types-of-clusters#modes) of operation, **Standard** and [**Autopilot** <sup>:material-google:</sup>](https://cloud.google.com/kubernetes-engine/docs/concepts/autopilot-overview), that offer a more configurable and a more managed experience respectively.
+
+In GKE, clusters are billed at a flat fee of [**$0.10 per cluster hour** <sup>:material-google:</sup>](https://cloud.google.com/kubernetes-engine/pricing#cluster_management_fee_and_free_tier). 
+The GKE free tier provides $74.40 in monthly credits per billing account, available to Autopilot and Standard zonal clusters but **not** [Standard regional <sup>:material-google:</sup>](https://cloud.google.com/kubernetes-engine/docs/concepts/types-of-clusters#regional_clusters) clusters.
+Note that there are 744 hours in a 31-day month, and the free tier monthly credit corresponds to exactly this amount of usage for a single cluster.
+
+
+
 **Import/Export Service**{: #import-export-service }
-:   Azure service that allows the physical shipment of disks procured by the user to Azure for import into a [storage account](#storage-account), which can be placed into blob or file storage.
-    This service requires the use of a Windows computer with BitLocker and .NET Framework and is dependent on the [WAImportExport.exe](#waimportexport) utility.
+:   Azure service that allows the physical shipment of disks procured by the user to Azure for import into a [storage account <sup>:material-file-document-edit-outline:</sup>](#storage-account), which can be placed into blob or file storage.
+    This service requires the use of a Windows computer with BitLocker and .NET Framework and is dependent on the [WAImportExport.exe <sup>:material-file-document-edit-outline:</sup>](#waimportexport) utility.
 
     1. Procure 2.5-inch or 3.5-inch SATA (not SAS) disks
     2. Connect the disks to a Windows machine.
@@ -659,14 +669,15 @@
 **Kubeflow**{: #kubeflow }
 : Cloud-native platform for machine learning based on Google’s internal machine learning pipelines.
 
-**Kusto**{: #kusto }
-:   Case-sensitive query language developed by Microsoft and used in several Azure services:
+#### [Kusto <sup>:material-file-document-edit-outline:</sup>](Kusto)
+Case-sensitive query language developed by Microsoft and used in several Azure services:
 
-    - [Azure Data Explorer](#azure-data-explorer)
-    - [Log Analytics](#log-analytics)
-    - [Sentinel](#sentinel)
-    - [Application Insights](#application-insights)
-    - Microsoft Defender ATP
+- [Azure Data Explorer <sup>:material-file-document-edit-outline:</sup>](#azure-data-explorer)
+- [Log Analytics <sup>:material-file-document-edit-outline:</sup>](#log-analytics)
+- [Sentinel <sup>:material-file-document-edit-outline:</sup>](#sentinel)
+- [Application Insights <sup>:material-file-document-edit-outline:</sup>](#application-insights)
+- Microsoft Defender ATP
+
 
 **Lightsail**{: #lightsail }
 : offers blueprints that will automatically provision all compute, storage, database, and network resources needed for a deployment.

@@ -54,6 +54,11 @@
 **kube-scheduler**{: #kube-scheduler} :material-kubernetes:
 :   One of the three processes run by a [master node](#master-node)
 
+**kubeconfig**{: #kubeconfig} [:material-kubernetes:](https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/)
+:   YAML configuration file located at **$HOME/.kube/config** by default.
+    A colon-delimited list of kubeconfigs can be specified by setting the **`KUBECONFIG`** environment variable.
+    A kubeconfig can be explicitly specified with the **--kubeconfig** flag.
+
 **Kubelet**{: #kubelet } :material-kubernetes:
 
 **Master node**{: #master-node } :material-kubernetes:

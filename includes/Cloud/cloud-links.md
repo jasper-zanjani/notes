@@ -47,7 +47,7 @@
 [Elastic Beanstalk]: #elastic-beanstalk "AWS Elastic Beanstalk is a PaaS offering."
 [Firestore]: #firestore 'Firestore GCP NoSQL document database service offering high performance and automatic horizontal scaling intended for serverless mobile and web application development with Cloud App Engine'
 [Folder Admin]: #folder-admin "Predefined GCP role that allows folders to be created at an Organization."
-[GKE]: # 'Google Kubernetes Engine (GKE) allows users to easily run containerized applications on a cluster of servers'
+[gcloud]: #gcloud "GCP command-line interface"
 [Glacier]: #glacier "TODO"
 [Google Cloud Functions]: # 'Cloud Functions lightweight computing option well-suited to event-driven processing'
 [Google Compute Engine]: # 'Compute Engine allows users to create VMs, attach persistent storage to them, and make use of other GCP services like Cloud Storage'

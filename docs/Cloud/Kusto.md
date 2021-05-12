@@ -1,22 +1,9 @@
-
-
-## ADX
-
-**Azure Data Explorer (ADX)** has two architectural elements
-- **Data Management**
-- **Engine**
-
-ADX does not hold large tables in a single table, rather it automatically shards them into **Extents**
-
-
-## Syntax
-In Kusto documentation `T` typically refers to the Table being queried, i.e.
+In Kusto documentation `T` typically refers to the Table being queried:
 ```kql
 T
 | where Predicate
 ```
 
-### where
 `<>` is equivalent to `!=`
 ```
 SecurityEvent
@@ -24,8 +11,8 @@ SecurityEvent
 | where EventID==4672
 ```
 
-### project
 Select columns to include, rename, or drop
+
 ```kusto
 T
 | project
@@ -35,7 +22,6 @@ T
     B=2*B                      // Calculate a new column B from the old B
 ```
 
-### case
 ```
 StormEvents
 | extend label = case (
@@ -45,9 +31,7 @@ StormEvents
 | summarize count() by label
 ```
 
-## Examples
-### SecurityEvent
-The SecurityEvent table provided as part of the Log Analytics workspace trainig dataset contains event viewer logs typical of what a security analyst would analyze, with the following columns:
+The SecurityEvent table provided as part of the [Log Analytics][Log Analytics] workspace trainingg dataset contains event viewer logs typical of what a security analyst would analyze, with the following columns:
 
 - TimeGenerated
 - Account
@@ -72,7 +56,6 @@ SecurityEvent
 | summarize count() by CommandLine, Computer
 ```
 
-### Movies
 | id   | title               | director       | year | length_minutes |
 | :--- | :------------------ | :------------- | :--- | :------------- |
 | 1    | Toy Story           | John Lasseter  | 1995 | 81             |
@@ -109,28 +92,33 @@ Event
 | summarize ErrorCount = count() by Computer
 | top 10 by ErrorCount desc
 ```
+
 Render a SQL query as KQL
+
 ```sql
 EXPLAIN
 SELECT name FROM greeks;
 ```
+
 Count instances of a value
+
 ```
 movies | summarize movies_directed = count() by director
 ```
+
 Create a new column dynamically from others
+
 ```js
 movies | extend age = 2020 - year | project name, age;
 ```
+
 Hide secrets from the queries log
+
 ```
 print h"Hello world!";
 .show 
 ```
 
-
-
-# Tasks
 Kusto clusters can be provisioned and Kusto databases created and manipulated using both PowerShell and Azure CLI.
 
 The Azure CLI `kusto` module will not be supported after 01/01/2021.
@@ -197,15 +185,13 @@ search in (SecurityEvent) "Cryptographic"
 | take 10;
 ```
 
-### Dates
-[Datetime](https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/scalar-data-types/datetime) values support a menagerie of functions
+[Datetime <sup>:material-microsoft:</sup>](https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/scalar-data-types/datetime) values support a menagerie of functions
 
 ```js
 print datetime(2015-01-01) # 2015-01-01 00:00:00.0000
 print format_datetime(datetime(2015-01-01), "yyyy") # 2015
 ```
 
-### Dynamically calculated columns
 Concatenate values from other columns.
 
 ```js
@@ -220,10 +206,10 @@ Export data
 
 Sources
 
-- [Azure Data Explorer documentation](https://docs.microsoft.com/en-us/azure/data-explorer/)
-- [How to start with Microsoft Azure Data Explorer](https://app.pluralsight.com/courses/2413d815-291e-4af4-a048-566402102229/table-of-contents)
-- [KQL quick reference](https://docs.microsoft.com/en-us/azure/data-explorer/kql-quick-reference)
-- [SQL to Kusto cheat sheet](https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/sqlcheatsheet)
-- [Kusto.Explorer](https://docs.microsoft.com/en-us/azure/data-explorer/kusto/tools/kusto-explorer)
-- **Azure Sentinel webinar** parts 1, [2](https://www.youtube.com/watch?v=YKD_OFLMpf8&t=883s), 3
+- [Azure Data Explorer documentation <sup>:material-microsoft:</sup>](https://docs.microsoft.com/en-us/azure/data-explorer/)
+- [How to start with Microsoft Azure Data Explorer  <sup>:material-play:</sup>](https://app.pluralsight.com/courses/2413d815-291e-4af4-a048-566402102229/table-of-contents)
+- [KQL quick reference <sup>:material-microsoft:</sup>](https://docs.microsoft.com/en-us/azure/data-explorer/kql-quick-reference)
+- [SQL to Kusto cheat sheet  <sup>:material-microsoft:</sup>](https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/sqlcheatsheet)
+- [Kusto.Explorer <sup>:material-microsoft:</sup>](https://docs.microsoft.com/en-us/azure/data-explorer/kusto/tools/kusto-explorer)
+- **Azure Sentinel webinar** parts 1, [2  <sup>:material-play:</sup>](https://www.youtube.com/watch?v=YKD_OFLMpf8&t=883s), 3
 - KQL syntax: [`count`](https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/countoperator), [`take`](https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/takeoperator)
