@@ -14,9 +14,11 @@ theme:
 
 markdown_extensions:
   - abbr
+  - admonition
   - attr_list
   - def_list
   - md_in_html
+  - pymdownx.details
   - pymdownx.emoji: # from https://squidfunk.github.io/mkdocs-material/reference/icons-emojis/#emoji
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg

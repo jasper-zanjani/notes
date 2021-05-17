@@ -1,36 +1,36 @@
-**chmod**{: #chmod }
-:   === "Sticky bit"
+#### chmod
+=== "Sticky bit"
 
-        ```sh
-        # set
-        chmod +t $FILE
+    ```sh
+    # set
+    chmod +t $FILE
 
-        # clear
-        chmod -t $FILE
-        ```
+    # clear
+    chmod -t $FILE
+    ```
 
-    === "SGID bit"
+=== "SGID bit"
 
-        ```sh
-        # set
-        chmod g+s file
+    ```sh
+    # set
+    chmod g+s file
 
-        # clear
-        chmod g-s file
-        ```
-    
-    === "SUID bit"
+    # clear
+    chmod g-s file
+    ```
 
-        ```sh
-        # set
-        chmod u+s file
+=== "SUID bit"
 
-        # clear
-        chmod u-s file
-        ```
+    ```sh
+    # set
+    chmod u+s file
 
-    === "setuid"
+    # clear
+    chmod u-s file
+    ```
 
-        ```sh
-        chmod +s file
-        ```
+=== "setuid"
+
+    ```sh
+    chmod +s file
+    ```

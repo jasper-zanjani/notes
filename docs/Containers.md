@@ -151,12 +151,17 @@ docker volume ls
 Kubernetes can be visualized as a system built from layers, with each higher layer abstracting the complexity of the lower levels.
 One server serves as the **master**, exposing an API for users and clients, assigning or **scheduling** work, and orchestrating communication between other components. 
 Other machines in the cluster are called [**nodes**](#node) or **workers** and accept and run workloads using available resources. 
+A Kubernetes configuration files is called a [kubeconfig](#kubeconfig).
 
 A [**pod**](#pod) is the most atomic unit of work which encompasses one or more tightly-coupled containers that will be deployed together on the same node.
 
-A Kubernetes configuration files is called a [kubeconfig](#kubeconfig).
+A **volume** is a directory accessible to containers in a pod.
+How the directory is formed, its contents, and the medium that backs it all inform the type of volume.
+Volumes are specified in **`.spec.volumes`**, and the mounting location is specified in **`.spec.containers[*].volumeMounts`**
 
-
+- **`emptyDir`** is created when a Pod is assigned to a node and exists as long as the Pod is running on that node. It is initially empty, and all containers in the Pod can read and write the same files in the volume, which can be mounted at the same or different paths in each container. `emptyDir` volumes are stored on whatever medium backs the node.
+If the `emptyDir.medium` field is set to `"Memory"`, Kubernetes mounts a tmpfs, which is cleared on node reboot.
+- **`persistentVolumeClaim`**  volume is used to mount a **PersistentVolume** into a Pod
 
 ### History
 
@@ -170,7 +175,7 @@ They created a ubiquitous abstraction that could run better than anyone else.
 At the time, Google had been trying to engage the Linux kernel team and trying to overcome their skepticism. 
 Internally, the project was framed as offering "Borg as a Service", although there were concerns that Google was in danger of revealing trade secrets.
 
-Google ultimately donated iKubernetes to the **Cloud Native Computing Foundation**.
+Google ultimately donated Kubernetes to the **Cloud Native Computing Foundation**.
 
 
 ### :material-microsoft-azure: Azure

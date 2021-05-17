@@ -1,4 +1,4 @@
-# chpass
+#### chpass
 
 Change default shell to Fish
 ```sh
