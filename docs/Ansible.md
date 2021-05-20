@@ -35,7 +35,7 @@ Playbooks, in turn, can be written in **two** styles:
         dnf: name=htop state=latest
     ```
 
-== "YAML"
+=== "YAML"
 
     ```yaml
     tasks:

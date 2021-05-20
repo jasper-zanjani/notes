@@ -642,7 +642,7 @@ ADX does not hold large tables in a single table, rather it automatically shards
 
 #### GKE
 
-![](./img/gke-512-color.png){ align=left width=120px }
+![](/Cloud/img/gke-512-color.png){ align=left width=120px }
 
 Clusters have two [modes](https://cloud.google.com/kubernetes-engine/docs/concepts/types-of-clusters#modes) of operation, **Standard** and [**Autopilot** <sup>:material-google:</sup>](https://cloud.google.com/kubernetes-engine/docs/concepts/autopilot-overview), that offer a more configurable and a more managed experience respectively.
 
