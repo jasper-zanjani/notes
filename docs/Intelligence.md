@@ -1,5 +1,8 @@
 
 # 🔎 Intelligence
+
+- [Inside the military's secret undercover army  :newspaper:](https://www.newsweek.com/exclusive-inside-militarys-secret-undercover-army-1591881)
+
 ## China
 
 Chinese writers often wrote on intelligence matters in contrast with Western writers[^1]
@@ -17,16 +20,12 @@ Works advocating covert action
 - Warring States period works on statecraft, e.g. Han Feizi
 
 Sunzi’s Five Types of Spy
-1. **Local Spy**  
-	Knowledgeable spies living outside their native habitat, including emigrants, travelers and exiles (e.g. defectors)
-2. **Internal spy**  
-	Officials
-3. **Turned spy**  
-	Double agent
-4. **Living spy**  
-	Talented people dispatched abroad to observe and then report back
-5. **Dead spy**  
-	Spies deliberately sent on suicide missions without their knowledge.  Enemy agents could also be deceived and provided with false information, causing them to be executed when they report false information to their masters.
+
+1. **Local Spy**: Knowledgeable spies living outside their native habitat, including emigrants, travelers and exiles (e.g. defectors)
+2. **Internal spy**: Officials
+3. **Turned spy**: Double agent
+4. **Living spy**: Talented people dispatched abroad to observe and then report back
+5. **Dead spy**: Spies deliberately sent on suicide missions without their knowledge.  Enemy agents could also be deceived and provided with false information, causing them to be executed when they report false information to their masters.
 
 ### Subversion
 
@@ -35,7 +34,7 @@ Six Secret Teachings compiled two chapters on systematic programs of subversion.
 Later military writers also devoted at least a few paragraphs to subversion: Le Quan’s Techniques for Secret Plots, Huqian Jing, Bingfa Baiyan. These took historical and semihistorical episodes as examples (Wu Yue Chunqua).
 Covert action and subversion used by Qin in the western hinterland. 
 
-### “Debauching” kings.
+### “Debauching” kings
 
 Sunzi: “You must first know the names of the defensive commander, his assistants, staff, door guards, and attendants for any armies that you want to strike, cities you want to attack, and men you want to assassinate.”
 

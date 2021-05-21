@@ -1,5 +1,10 @@
 #### gcloud
 
+Ubuntu repo
+```sh
+deb [signed-by=/usr/share/keyrings/cloud.google.gpg] http://packages.cloud.google.com/apt cloud-sdk main
+```
+
 In GCP, APIs are enabled per project.
 
 List all APIs

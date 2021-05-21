@@ -19,16 +19,46 @@ The [Powershell Docker module](https://github.com/microsoft/Docker-PowerShell "P
 
 ## :material-docker: Docker
 
+
 Docker **repositories** are associated with a single image, various versions of which can be specified with a **tag**.
 
-**Docker Desktop** is Docker's runtime for Windows which Docker integrates with WSL 2 since June 2019. 
-Docker historically distributed its own Linux kernel to use on Windows hosts.
+--8<-- "includes/Containers/repo.md"
+
+On Windows, **Docker Desktop** is Docker's runtime which has been integrated with WSL 2 since June 2019. 
+Previous to that, Docker distributed its own Linux kernel to use on Windows hosts.
+
+On Linux, Docker must be run as root, although a user can be added to the **docker** group to manage Docker as a [non-root user <sup>:material-docker:</sup>](https://docs.docker.com/engine/install/linux-postinstall/) for convenience.
+This is called [**rootless mode** <sup>:material-docker:</sup>](https://docs.docker.com/engine/security/rootless/), where both the daemon and containers run in a user namespace.
+
 
 Docker has several options for persistent storage:
 
-- **Volumes** are stored in a part of the host filesystem which is managed by Docker (/var/lib/docker/volumes/ on Docker).
-- **Bind mounts** may be stored anywhere on the host system and are specified by [docker run --volume][docker run -&#118;].
+- [**Volumes** <sup>:material-docker:</sup>](https://docs.docker.com/storage/volumes/) are stored in a part of the host filesystem which is managed by Docker (/var/lib/docker/volumes/ on Docker).
+- [**Bind mounts** <sup>:material-docker:</sup>](https://docs.docker.com/storage/bind-mounts/) map a file or directory on the host machine to a mount point in the container. They have less functionality than volumes.
 - **`tmpfs` mounts** are stored in the host system's memory only, and are available only on Linux.
+
+Volumes can be mounted using `-v`/`--volume` or `--mount`.
+
+- **`--volume`** syntax combines all options together in one field.
+- **`--mount`** is more explicit and verbose, with key-value pairs defined for the following keys:
+    - `type`
+    - `source`
+    - `destination` (also `dst`, `target`)
+    - `readonly`
+    - `volume-opt`
+
+
+On systems running SELinux, rootless containers must be explicitly allowed to access bind mounts.
+Containerized processes are not allowed to access files without a SELinux label.
+
+=== "Podman"
+
+    The **Z** option tells Podman to label the content with a private unshared label
+    ```sh
+    podman run -d --rm -p=8080:80 -v=/home/jasper/notes/site:/usr/share/nginx/html:Z --name=notes nginx
+    ```
+
+
 
 ### Networking
 

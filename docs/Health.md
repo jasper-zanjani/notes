@@ -102,6 +102,10 @@ Long-term effects on DNA from oxidative stress are similar to those caused by ra
 - After six weeks of administration with [l-theanine](#l-theanine) (400 mg/day), boys diagnosed with ADHD experienced significantly improved sleep. ([2011](https://pubmed.ncbi.nlm.nih.gov/22214254/))
 - Supplementation with [magnesium](#magnesium) (100 mg/day) was enough to eliminate the difference between the sleep-deprived arm and the control arm in subjects who were sleep-deprived for a month. ([1998](https://pubmed.ncbi.nlm.nih.gov/9626901/))
 
+### 💉 Bloodwork
+
+--8<-- "includes/Health/bloodwork.md"
+
 --8<-- "includes/Health/Health-glossary.md"
 
 --8<-- "includes/Health/Health-links.md"
