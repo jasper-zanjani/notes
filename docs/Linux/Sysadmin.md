@@ -1,8 +1,14 @@
 # System administration
 
---8<-- "includes/Linux/chage.md"
---8<-- "includes/Linux/chgrp.md"
---8<-- "includes/Linux/chmod.md"
---8<-- "includes/Linux/chown.md"
---8<-- "includes/Linux/chpass.md"
---8<-- "includes/Linux/sudo.md"
+--8<-- "includes/Linux/Commands/chage.md"
+
+--8<-- "includes/Linux/Commands/chgrp.md"
+
+--8<-- "includes/Linux/Commands/chmod.md"
+
+--8<-- "includes/Linux/Commands/chown.md"
+
+--8<-- "includes/Linux/Commands/chpass.md"
+
+--8<-- "includes/Linux/Commands/sudo.md"
+

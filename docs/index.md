@@ -2,10 +2,6 @@
 
 ## ✔&#xfe0f; TODO
 
-- Drums for Aliana
-
-    - [ ] 🥁 [Learning to play the drums](https://www.udemy.com/course/learndrums/)
-
 - C#
     - [ ] :brain: [:octicons-play-24: Working with files and streams in C#](https://app.pluralsight.com/library/courses/csharp-working-files-streams)
     - [ ] :brain: [:octicons-play-24: Using HttpClient to consume APIs in .NET Core](https://app.pluralsight.com/library/courses/httpclient-consume-apis-dotnet-core/table-of-contents)
@@ -16,13 +12,6 @@
     - [ ] :money_with_wings: [:octicons-play-24: 6-hour Udemy course](https://www.udemy.com/course/elegant-automation-frameworks-with-python-and-pytest/)
     - [x] :money_with_wings: [:material-amazon: _Python Testing With Pytest_](https://www.amazon.com/gp/product/B0773VRHWT)
 
-## 🥇 Certifications
-
-| Exam           | Name                                              | Links                                                                                                                                                                                                                                                                                                                                                                                                   |
-| -------------- | ------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 70-483<sup title="retired">&#x271D;</sup> | Programming in C#                                 | [:material-information-outline:](https://docs.microsoft.com/en-us/learn/certifications/exams/70-483 "Exam 70-483: Programming in C# - Landing page") [:material-file-pdf:](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4tiMh "Exam 70-483: Programming in C# -  Exam skills outline") [:material-amazon:](https://www.amazon.com/Exam-Ref-70-483-Programming-Miles/dp/1509306986) [:octicons-play-24:](https://www.udemy.com/course/programming-in-microsoft-c-exam-70-483/ "udemy.com - Programming in Microsoft C# - Exam 70-483") |
-| 70-484<sup title="retired">&#x271D;</sup> | Essentials of developing Windows Store apps in C# | [:material-information-outline:](https://docs.microsoft.com/en-us/learn/certifications/retired-certification-exams) [:material-amazon:](https://www.amazon.com/70-484-Essentials-Developing-Windows-Store/dp/0735676844) [:octicons-play-24:](https://www.udemy.com/course/microsoft-70-484-essentials-of-developing-windows-store/ "udemy.com - Microsoft 70-484: Essentials of developing Windows Store Apps using C#")                                                                                                                                                                          |
-| 70-485<sup title="retired">&#x271D;</sup> | Advanced Windows Store app development using C#   | [:material-information-outline:](https://docs.microsoft.com/en-us/learn/certifications/retired-certification-exams) [:material-amazon:](https://www.amazon.com/Exam-Ref-70-485-Advanced-Development/dp/8120349709)                                                                                                                                                                                |
 
 ## 🚀 Space
 

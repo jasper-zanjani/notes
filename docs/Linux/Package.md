@@ -2,17 +2,22 @@
 
 --8<-- "includes/Containers/repo.md"
 
+--8<-- "includes/Linux/Commands/snap.md"
+
 ### Debian
 
---8<-- "includes/Linux/add-apt-repository.md"
---8<-- "includes/Linux/apt-key.md"
---8<-- "includes/Linux/apt.md"
+--8<-- "includes/Linux/Commands/add-apt-repository.md"
+
+--8<-- "includes/Linux/Commands/apt-key.md"
+
+--8<-- "includes/Linux/Commands/apt.md"
 
 ### Arch
 
---8<-- "includes/Linux/pacman.md"
+--8<-- "includes/Linux/Commands/pacman.md"
 
 ### Red Hat
 
---8<-- "includes/Linux/dnf.md"
---8<-- "includes/Linux/rpm.md"
+--8<-- "includes/Linux/Commands/dnf.md"
+
+--8<-- "includes/Linux/Commands/rpm.md"

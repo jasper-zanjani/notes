@@ -387,10 +387,10 @@ In fact, references to the "classic" model predating the Azure Resource Manager 
 
 ## 📘 Glossary
 
---8<-- "includes/Cloud/cloud-abbrs.md"
+--8<-- "includes/Cloud/abbrs.md"
 
---8<-- "includes/Cloud/cloud-links.md"
+--8<-- "includes/Cloud/links.md"
 
---8<-- "includes/Cloud/cloud-defs.md"
+--8<-- "includes/Cloud/defs.md"
 
---8<-- "includes/Cloud/gcp-gcloud.md"
+--8<-- "includes/Cloud/GCP/gcloud.md"

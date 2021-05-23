@@ -1,3 +1,5 @@
+[hObzf9ppODJU]: https://youtu.be/Obzf9ppODJU "YouTube - \"A Comprehensive Guide to Tiling Window Managers\" (DistroTube)"
+[LXF 258]: https://www.linuxformat.com/archives?issue=258 '"Linux distribution reviews: Clear Linux 31530" _Linux Format_ 258'
 [Schatz]: http://www.volkerschatz.com/noise/alsa.html "www.volkerschatz.com: \"A close look at ALSA\""
 [alsamixer]: Linux/alsamixer 'Command-line mixer'
 [amixer]: Linux/amixer 'Command-line mixer for ALSA sound card driver'

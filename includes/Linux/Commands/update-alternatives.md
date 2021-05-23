@@ -8,25 +8,25 @@ These link groups can be enumerated with **--get-selections**
 update-alternatives --get-selections
 ```
 
-=== "Create"
+=== ":material-file-plus:"
 
     ```sh
     update-alternatives --install /usr/bin/new-link-group new-link-group /dev/null 1
     ```
 
-=== "Read"
+=== ":material-file-eye:"
 
     ```sh
     update-alternatives --list www-browser
     ```
 
-=== "Update"
+=== ":material-file-edit:"
 
     ```sh
     update-alternatives --set www-browser /usr/bin/wslview
     ```
 
-=== "Delete"
+=== ":material-file-remove:"
 
     ```sh
     update-alternatives --remove www-browser /usr/bin/lynx

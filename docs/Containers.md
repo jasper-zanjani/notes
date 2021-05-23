@@ -172,11 +172,9 @@ Display data volumes [PluralSight][pluralsight:70-740-containers]
 docker volume ls
 ```
 
-##  :material-kubernetes: Kubernetes
+## :material-kubernetes: Kubernetes
 
 **Kubernetes** (Greek for "helmsman", "pilot", or "captain" and "k8s" for short) has emerged as the leading **container orchestrator** in the industry since 2018. It provides a layer that abstracts infrastructure, including computers, networks, and other computers, for applications deployed on top.
-
-### Concepts
 
 Kubernetes can be visualized as a system built from layers, with each higher layer abstracting the complexity of the lower levels.
 One server serves as the **master**, exposing an API for users and clients, assigning or **scheduling** work, and orchestrating communication between other components. 
@@ -217,5 +215,8 @@ In the context of Azure, Kubernetes can use two types of data volume:
 - **Azure Files** using a SMB 3.0 share backed by an Azure Storage account.
 
 ### :material-google: GCP
+
+--8<-- "includes/Cloud/GCP/gcloud-container.md"
+
 
 --8<-- "includes/Containers/defs.md"
