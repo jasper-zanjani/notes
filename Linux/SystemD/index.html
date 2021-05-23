@@ -9,14 +9,14 @@
       
       
       
-        <link rel="canonical" href="https://jasper-zanjani.github.io/notes/Windows/DNS-labs/">
+        <link rel="canonical" href="https://jasper-zanjani.github.io/notes/Linux/SystemD/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.4">
     
     
       
-        <title>DNS labs - 🧠</title>
+        <title>SystemD - 🧠</title>
       
     
     
@@ -65,7 +65,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#configuring-dns-servers" class="md-skip">
+        <a href="#systemd" class="md-skip">
           Skip to content
         </a>
       
@@ -95,7 +95,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              DNS labs
+              SystemD
             
           </span>
         </div>
@@ -325,7 +325,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Linux/" class="md-nav__link">
+      <a href="../" class="md-nav__link">
         🐧 Linux
       </a>
     </li>
@@ -791,12 +791,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_16" type="checkbox" id="__nav_16" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_16" type="checkbox" id="__nav_16" checked>
       
       <label class="md-nav__link" for="__nav_16">
         Linux
@@ -814,7 +816,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Linux/Audio/" class="md-nav__link">
+      <a href="../Audio/" class="md-nav__link">
         Audio
       </a>
     </li>
@@ -826,7 +828,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Linux/GRUB/" class="md-nav__link">
+      <a href="../GRUB/" class="md-nav__link">
         GRUB
       </a>
     </li>
@@ -838,7 +840,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Linux/NGINX/" class="md-nav__link">
+      <a href="../NGINX/" class="md-nav__link">
         Nginx
       </a>
     </li>
@@ -850,7 +852,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Linux/Network/" class="md-nav__link">
+      <a href="../Network/" class="md-nav__link">
         Network
       </a>
     </li>
@@ -862,7 +864,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Linux/Package/" class="md-nav__link">
+      <a href="../Package/" class="md-nav__link">
         Package management
       </a>
     </li>
@@ -874,7 +876,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Linux/SELinux/" class="md-nav__link">
+      <a href="../SELinux/" class="md-nav__link">
         SELinux
       </a>
     </li>
@@ -886,7 +888,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Linux/SSH/" class="md-nav__link">
+      <a href="../SSH/" class="md-nav__link">
         SSH
       </a>
     </li>
@@ -898,7 +900,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Linux/Shell/" class="md-nav__link">
+      <a href="../Shell/" class="md-nav__link">
         Shell
       </a>
     </li>
@@ -910,7 +912,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Linux/Sysadmin/" class="md-nav__link">
+      <a href="../Sysadmin/" class="md-nav__link">
         System administration
       </a>
     </li>
@@ -920,11 +922,51 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../Linux/SystemD/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          SystemD
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         SystemD
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#others" class="md-nav__link">
+    Others
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -934,7 +976,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Linux/Ubuntu/" class="md-nav__link">
+      <a href="../Ubuntu/" class="md-nav__link">
         Ubuntu
       </a>
     </li>
@@ -946,7 +988,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Linux/X11/" class="md-nav__link">
+      <a href="../X11/" class="md-nav__link">
         X11
       </a>
     </li>
@@ -1250,14 +1292,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_20" type="checkbox" id="__nav_20" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_20" type="checkbox" id="__nav_20" >
       
       <label class="md-nav__link" for="__nav_20">
         Windows
@@ -1275,7 +1315,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Active%20Directory/" class="md-nav__link">
+      <a href="../../Windows/Active%20Directory/" class="md-nav__link">
         Active Directory
       </a>
     </li>
@@ -1285,88 +1325,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          DNS labs
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../Windows/DNS-labs/" class="md-nav__link">
         DNS labs
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#configuring-dns-servers" class="md-nav__link">
-    Configuring DNS servers
-  </a>
-  
-    <nav class="md-nav" aria-label="Configuring DNS servers">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#new-ad-forest" class="md-nav__link">
-    New AD forest
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#forwarding" class="md-nav__link">
-    Forwarding
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#create-new-zone" class="md-nav__link">
-    Create new zone
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#configuration" class="md-nav__link">
-    Configuration
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#manage-dns-zones-and-resource-records" class="md-nav__link">
-    Manage DNS zones and resource records
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1376,7 +1339,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Labs/" class="md-nav__link">
+      <a href="../../Windows/Labs/" class="md-nav__link">
         Labs
       </a>
     </li>
@@ -1388,7 +1351,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../PowerShell/" class="md-nav__link">
+      <a href="../../Windows/PowerShell/" class="md-nav__link">
         🐚 PowerShell
       </a>
     </li>
@@ -1400,7 +1363,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../WDS-lab/" class="md-nav__link">
+      <a href="../../Windows/WDS-lab/" class="md-nav__link">
         WDS lab
       </a>
     </li>
@@ -1412,7 +1375,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../WS2016/" class="md-nav__link">
+      <a href="../../Windows/WS2016/" class="md-nav__link">
         Windows Server
       </a>
     </li>
@@ -1424,7 +1387,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../diskpart/" class="md-nav__link">
+      <a href="../../Windows/diskpart/" class="md-nav__link">
         Diskpart
       </a>
     </li>
@@ -1453,6 +1416,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1461,50 +1426,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#configuring-dns-servers" class="md-nav__link">
-    Configuring DNS servers
+  <a href="#others" class="md-nav__link">
+    Others
   </a>
-  
-    <nav class="md-nav" aria-label="Configuring DNS servers">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#new-ad-forest" class="md-nav__link">
-    New AD forest
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#forwarding" class="md-nav__link">
-    Forwarding
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#create-new-zone" class="md-nav__link">
-    Create new zone
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#configuration" class="md-nav__link">
-    Configuration
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#manage-dns-zones-and-resource-records" class="md-nav__link">
-    Manage DNS zones and resource records
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1521,182 +1445,81 @@
               
                 
                 
-                  <h1>DNS labs</h1>
-                
-                <h2 id="configuring-dns-servers">Configuring DNS servers</h2>
+                <h1 id="systemd">SystemD</h1>
+<p><strong>SystemD</strong> is the de facto Linux init system since it has replaced the earlier <strong>Sysvinit</strong> in almost all Linux distributions of note a few years ago. </p>
+<p>In SysVinit, processes started serially and synchronously, wasting time and system resources.
+For years, a common hack was to run services in the background, simulating concurrency.</p>
+<p><strong>Upstart</strong> was another init system developed by Canonical for Ubuntu meant to replace SysVinit, but it was abandoned in 2014. </p>
+<p>It was designed by a pair of Red Hat developers in 2010 to be a general purpose system manager.
+It offers parallel execution, explicit dependencies between services, an escape from slow shell scripts, and per-daemon resource control and watchdogs.</p>
+<p>SystemD organizes resources into <strong>units</strong>, which can be managed by daemons and manipulated by SystemD utilities.
+Unit files are case-sensitive .ini files organized into sections.
+Unit files can be found in several directories:</p>
+<ul>
+<li><strong>/lib/systemd/system</strong> where the system's copy of unit files are placed by default</li>
+<li><strong>/etc/systemd/system</strong> where unit files override the system default</li>
+<li><strong>/run/systemd/system</strong> where run-time unit definitions are found and given a higher priority than the system default in /lib but lower than that in /etc. These unit files are created dynamically and lost on reboot.</li>
+</ul>
+<p>Unit files come in many different types which can be identified by their filename extension (i.e. <strong>.service</strong>, <strong>target</strong>, etc.).</p>
+<p>The first section found in most unit files is the <strong>[Unit]</strong> section, which may contain the following directives:</p>
+<ul>
+<li><strong>Description</strong></li>
+</ul>
+<p><strong>Service files</strong> are a type of unit file which have replaced earlier init scripts and describe how to manage a service or application on the server.</p>
+<p>Create a service file <a href="https://www.redhat.com/sysadmin/replacing-rclocal-systemd"><sup><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.34 13.16c1.32 0 3.22-.27 3.22-1.84.01-.12 0-.24-.03-.36l-.78-3.4c-.18-.75-.34-1.09-1.66-1.75-1.02-.52-3.24-1.38-3.9-1.38-.61 0-.79.79-1.52.79-.7 0-1.22-.59-1.88-.59-.63 0-1.04.43-1.36 1.31 0 0-.88 2.5-1 2.86-.01.07-.02.13-.02.2 0 .97 3.82 4.15 8.93 4.15m3.43-1.19c.18.86.18.95.18 1.04 0 1.5-1.66 2.31-3.83 2.31-4.92 0-9.23-2.88-9.23-4.78 0-.27.06-.53.16-.77-1.77.08-4.05.4-4.05 2.42 0 3.32 7.84 7.39 14.05 7.39 4.76 0 5.95-2.15 5.95-3.85 0-1.34-1.15-2.86-3.23-3.76"/></svg></span></sup></a>
+<div class="highlight"><pre><span></span><code><span class="k">[Unit]</span>
+<span class="na">Description</span><span class="o">=</span><span class="s">Runs /usr/local/bin/mystartup.sh</span>
+
+<span class="k">[Service]</span>
+<span class="na">ExecStart</span><span class="o">=</span><span class="s">/usr/local/bin/mystartup.sh</span>
+
+<span class="k">[Install]</span>
+<span class="na">WantedBy</span><span class="o">=</span><span class="s">multi-user.target</span>
+</code></pre></div></p>
+<p><strong>Target files</strong> are equivalent to SysVInit runlevels.</p>
 <table>
 <thead>
 <tr>
-<th align="left">Hostname</th>
-<th align="left">IP Address</th>
+<th>Target</th>
+<th>Runlevel</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left">PLABDC01</td>
-<td align="left">192.168.0.1</td>
+<td>poweroff.target</td>
+<td>0</td>
 </tr>
 <tr>
-<td align="left">PLABDM01</td>
-<td align="left">192.168.0.2</td>
+<td>rescue.target</td>
+<td>1</td>
 </tr>
 <tr>
-<td align="left">PLABSA01</td>
-<td align="left">192.168.0.4</td>
+<td>multi-user.target</td>
+<td>3</td>
+</tr>
+<tr>
+<td>graphical.target</td>
+<td>5</td>
+</tr>
+<tr>
+<td>reboot.target</td>
+<td>6</td>
+</tr>
+<tr>
+<td>emergency.target</td>
+<td>emergency</td>
 </tr>
 </tbody>
 </table>
-<ol>
-<li>Create a Domain Forest</li>
-<li>Create a <a href="#new-ad-forest">new domain and forest</a> on PLABSA01 named "PRACTICEIT.CO.UK".</li>
-<li>Configure PLABDC01 to <a href="#forwarding">forward</a> for the new domain, and PLABSA01 to forward for the old one.</li>
-<li><a href="#create-new-zone">Create a new DNS zone</a></li>
-<li>Set up alternate DNS server</li>
-<li>Configure DNS forwarders</li>
-</ol>
-<h4 id="new-ad-forest">New AD forest</h4>
-<p>Create a <a href="#new-ad-forest">new domain and forest</a> on PLABSA01 named "PRACTICEIT.CO.UK"
-<div class="highlight"><pre><span></span><code><span class="c"># PLABSA01</span>
-<span class="nb">Add-WindowsFeature</span> <span class="n">dns</span><span class="p">,</span> <span class="n">ad-domain-services</span> <span class="n">-IncludeManagementTools</span>
-<span class="nv">$pw</span> <span class="p">=</span> <span class="nb">ConvertTo-SecureString</span> <span class="n">-Force</span> <span class="n">-AsPlainText</span> <span class="s1">&#39;Passw0rd&#39;</span>
-<span class="nb">Install-ADDSForest</span> <span class="n">-DomainName</span> <span class="n">PRACTICEIT</span><span class="p">.</span><span class="n">CO</span><span class="p">.</span><span class="n">UK</span> <span class="n">-SafeModeAdministratorPassword</span> <span class="nv">$pw</span>
-</code></pre></div></p>
-<h4 id="forwarding">Forwarding</h4>
-<p>Forward DNS queries for the new domain to PLABSA01
-<div class="highlight"><pre><span></span><code><span class="c"># PLABDC01</span>
-<span class="c"># Equivalent to `netsh interface ipv4 add dns Ethernet 192.168.0.4 index=2`</span>
-<span class="nb">Set-DNSClientServerAddress</span> <span class="n">-InterfaceAlias</span> <span class="n">Ethernet</span> <span class="n">-ServerAddresses</span> <span class="p">(</span><span class="s1">&#39;192.168.0.1&#39;</span><span class="p">,</span><span class="s1">&#39;192.168.0.4&#39;</span><span class="p">)</span> 
-<span class="nb">Add-DnsServerConditionalForwarderZone</span> <span class="n">-Name</span> <span class="s1">&#39;practiceit.co.uk&#39;</span> <span class="n">-MasterServers</span> <span class="s1">&#39;192.168.0.4&#39;</span>
-<span class="nb">Add-DnsServerForwarder</span> <span class="n">-IpAddress</span> <span class="s1">&#39;192.168.0.4&#39;</span>
-<span class="nb">Test-NetConnection</span> <span class="n">plabsa01</span><span class="p">.</span><span class="n">practiceit</span><span class="p">.</span><span class="n">co</span><span class="p">.</span><span class="n">uk</span>
-</code></pre></div>
-Forward DNS queries for the old domain to PLABDC01
-<div class="highlight"><pre><span></span><code><span class="c"># PLABSA01</span>
-<span class="c"># Equivalent to `netsh interface ipv4 add dns Ethernet 192.168.0.1 index=2`</span>
-<span class="nb">Set-DnsClientServerAddress</span> <span class="n">-InterfaceIndex</span> <span class="n">13</span> <span class="n">-ServerAddresses</span> <span class="p">(</span><span class="s1">&#39;127.0.0.1&#39;</span><span class="p">,</span><span class="s1">&#39;192.168.0.1&#39;</span><span class="p">)</span> 
-<span class="nb">Add-DnsServerConditionalForwarderZone</span> <span class="n">-Name</span> <span class="s1">&#39;practicelabs.com&#39;</span> <span class="n">-MasterServers</span> <span class="s1">&#39;192.168.0.1&#39;</span>
-<span class="nb">Test-NetConnection</span> <span class="n">plabdc01</span><span class="p">.</span><span class="n">practicelabs</span><span class="p">.</span><span class="n">com</span>
-</code></pre></div></p>
-<h4 id="create-new-zone">Create new zone</h4>
-<p><div class="highlight"><pre><span></span><code><span class="c"># PLABDM01</span>
-<span class="nb">Add-WindowsFeature</span> <span class="n">dns</span> <span class="n">-IncludeManagementTools</span>
-<span class="nb">Add-DnsServerPrimaryZone</span> <span class="n">-ZoneFile</span> <span class="s1">&#39;apac.practicelabs.com.dns&#39;</span> <span class="n">-ZoneName</span> <span class="s1">&#39;apac.practicelabs.com&#39;</span> <span class="n">-DynamicUpdate</span> <span class="n">NonsecureAndSecure</span>
-</code></pre></div>
-Delegate to the new zone
-<div class="highlight"><pre><span></span><code><span class="c"># PLABDC01</span>
-<span class="nb">Add-DnsServerZoneDelegation</span> <span class="n">-Name</span> <span class="s1">&#39;practicelabs.com&#39;</span> <span class="n">-ChildZoneName</span> <span class="s1">&#39;apac&#39;</span> <span class="n">-NameServer</span> <span class="s1">&#39;plabdm01.practicelabs.com&#39;</span> <span class="n">-IPAddress</span> <span class="s1">&#39;192.168.0.2&#39;</span>
-<span class="nb">Add-DnsServerPrimaryZone</span> <span class="n">-ZoneName</span> <span class="n">PLTEST</span><span class="p">.</span><span class="n">com</span> <span class="n">-ReplicationScope</span> <span class="n">Domain</span>
-<span class="nb">Add-DnsServerResourceRecordA</span> <span class="n">-Name</span> <span class="n">www</span> <span class="n">-ZoneName</span> <span class="n">pltest</span><span class="p">.</span><span class="n">com</span> <span class="n">-IPv4Address</span> <span class="n">192</span><span class="p">.</span><span class="n">168</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">1</span>
-
-<span class="c"># Copying PowerShell commands from a script</span>
-<span class="nb">Add-DnsServerClientSubnet</span> <span class="n">-Name</span> <span class="n">EMEA</span> <span class="n">-IPv4Subnet</span> <span class="s1">&#39;192.168.0.0/24&#39;</span>
-<span class="nb">Add-DnsServerClientSubnet</span> <span class="n">-Name</span> <span class="n">APAC</span> <span class="n">-IPv4Subnet</span> <span class="s1">&#39;192.168.1.0/24&#39;</span>
-<span class="nb">Add-DnsServerZoneScope</span> <span class="n">-ZoneName</span> <span class="s2">&quot;PLTEST.com&quot;</span> <span class="n">-Name</span> <span class="s2">&quot;EMEAZoneScope&quot;</span>
-<span class="nb">Add-DnsServerZoneScope</span> <span class="n">-ZoneName</span> <span class="s2">&quot;PLTEST.com&quot;</span> <span class="n">-Name</span> <span class="s2">&quot;APACZoneScope&quot;</span>
-<span class="nb">Add-DnsServerResourceRecord</span> <span class="n">-A</span> <span class="n">-Name</span> <span class="n">www</span> <span class="n">-ZoneName</span> <span class="s1">&#39;PLTEST.com&#39;</span> <span class="n">-IPv4Address</span> <span class="s1">&#39;192.168.1.1&#39;</span> <span class="n">-ZoneScope</span> <span class="n">APACZoneScope</span>
-<span class="nb">Add-DnsServerResourceRecord</span> <span class="n">-A</span> <span class="n">-Name</span> <span class="n">www</span> <span class="n">-ZoneName</span> <span class="s1">&#39;PLTEST.com&#39;</span> <span class="n">-IPv4Address</span> <span class="s1">&#39;192.168.0.1&#39;</span> <span class="n">-ZoneScope</span> <span class="n">EMEAZoneScope</span>
-<span class="nb">Add-DnsServerQueryResolutionPolicy</span> <span class="n">-Name</span> <span class="n">EMEAPolicy</span> <span class="n">-Action</span> <span class="n">ALLOW</span> <span class="n">-ClientSubnet</span> <span class="s1">&#39;eq,EMEA&#39;</span> <span class="n">-ZoneScope</span> <span class="s1">&#39;EMEAZoneScope,1&#39;</span> <span class="n">-ZoneName</span> <span class="s1">&#39;PLTEST.com&#39;</span>
-<span class="nb">Add-DnsServerQueryResolutionPolicy</span> <span class="n">-Name</span> <span class="n">APACPolicy</span> <span class="n">-Action</span> <span class="n">ALLOW</span> <span class="n">-ClientSubnet</span> <span class="s1">&#39;eq,APAC&#39;</span> <span class="n">-ZoneScope</span> <span class="s1">&#39;APACZoneScope,1&#39;</span> <span class="n">-ZoneName</span> <span class="s1">&#39;PLTEST.com&#39;</span>
-
-<span class="c"># PLABWIN10</span>
-<span class="n">ipconfig</span> <span class="p">/</span><span class="n">flushdns</span>
-<span class="n">nslookup</span> <span class="n">www</span><span class="p">.</span><span class="n">pltest</span><span class="p">.</span><span class="n">com</span>
-
-<span class="c"># PLABDC01</span>
-<span class="nb">Add-DnsServerQueryResolutionPolicy</span> <span class="n">-Name</span> <span class="n">Blocklist</span> <span class="n">-Action</span> <span class="n">IGNORE</span> <span class="n">-Fqdn</span> <span class="s1">&#39;eq,*.pltest.com&#39;</span> <span class="n">-PassThru</span>
-
-<span class="c"># PLABWIN10</span>
-<span class="c"># Now the query does not work</span>
-<span class="n">nslookup</span> <span class="n">www</span><span class="p">.</span><span class="n">pltest</span><span class="p">.</span><span class="n">com</span>
-
-<span class="c"># PLABDC01</span>
-<span class="nb">Remove-DnsServerQueryResolutionPolicy</span> <span class="n">-Name</span> <span class="n">Blocklist</span> <span class="n">-Confirm</span>
-</code></pre></div></p>
-<h4 id="configuration">Configuration</h4>
-<p>Configure DNS socket pool
-<div class="highlight"><pre><span></span><code>::PLABDC01
-dnscmd /info /socketpoolsize
-dnscmd /config /socketpoolsize 3500
-net stop dns
-net start dns
-dnscmd /info /socketpoolsize
-</code></pre></div>
-Manage DNS cache locking
-<div class="highlight"><pre><span></span><code>dnscmd /info /cachelockingpercent
-dnscmd /config /cachelockingpercent 90
-dnscmd /info /cachelockingpercent
-net stop dns
-net start dns
-dnscmd /info /cachelockingpercent
-</code></pre></div>
-Create a GlobalNames zone
-<div class="highlight"><pre><span></span><code><span class="nb">Set-DnsServerGlobalNameZone</span> <span class="n">-AlwaysQueryServer</span> <span class="nv">$true</span>
-<span class="nb">Add-DnsServerPrimaryZone</span> <span class="n">-Name</span> <span class="n">GlobalNames</span> <span class="n">-ReplicationScope</span> <span class="n">Forest</span>
-<span class="n">dnscmd</span> <span class="p">.</span> <span class="p">/</span><span class="n">config</span> <span class="p">/</span><span class="n">enableglobalnamessupport</span> <span class="n">1</span>
-</code></pre></div>
-Create a resource record in the GlobalNames zone
-<div class="highlight"><pre><span></span><code><span class="nb">Add-DnsServerResourceRecordA</span> <span class="n">-Name</span> <span class="n">PLABDC01</span> <span class="n">-ZoneName</span> <span class="n">GlobalNames</span> <span class="n">-IPv4Address</span> <span class="n">192</span><span class="p">.</span><span class="n">168</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">1</span>
-</code></pre></div>
-Enable response rate limiting
-<div class="highlight"><pre><span></span><code><span class="nb">Get-DNSServerResponseRateLimiting</span>
-<span class="nb">Set-DNSServerResponseRateLimiting</span> <span class="n">-Mode</span> <span class="n">Enable</span> <span class="n">-Confirm</span>
-<span class="nb">Get-DNSServerResponseRateLimiting</span> <span class="c"># confirming</span>
-<span class="nb">Add-DNSServerResponseRateLimitingExceptionList</span> <span class="n">-Name</span> <span class="n">Whitelist1</span> <span class="n">-Fqdn</span> <span class="s1">&#39;eq, *.practicelabs.com&#39;</span>
-<span class="nb">Set-DNSServerResponseRateLimiting</span> <span class="n">-Mode</span> <span class="n">Enable</span> <span class="n">-Confirm</span>
-</code></pre></div>
-Manage DNS logging
-<div class="highlight"><pre><span></span><code><span class="nb">Add-WindowsFeature</span> <span class="n">dns</span> <span class="n">-IncludeManagementTools</span> <span class="n">-ComputerName</span> <span class="n">PLABDM01</span>
-<span class="nb">Set-DnsServerDiagnostics</span> <span class="n">-LogFilePath</span> <span class="n">C</span><span class="p">:\</span><span class="n">dnslog</span><span class="p">.</span><span class="n">txt</span>
-<span class="c"># Some additional settings appear necessary in order to begin logging</span>
-</code></pre></div>
-Enable zone transfers
-<div class="highlight"><pre><span></span><code><span class="nb">Set-DnsServerPrimaryZone</span> <span class="n">-SecureSecondaries</span> <span class="n">TransferAnyServer</span>
-</code></pre></div>
-Create a secondary DNS zone
-<div class="highlight"><pre><span></span><code><span class="c"># PLABDM01</span>
-<span class="nb">Add-DnsServerSecondaryZone</span> <span class="n">-ComputerNAme</span> <span class="n">PLABDM01</span> <span class="n">-MasterServers</span> <span class="n">192</span><span class="p">.</span><span class="n">168</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">1</span> <span class="n">-ZoneName</span> <span class="n">practicelabs</span><span class="p">.</span><span class="n">com</span> <span class="n">-ZoneFile</span> <span class="n">practicelabs</span><span class="p">.</span><span class="n">com</span><span class="p">.</span><span class="n">dns</span>
-</code></pre></div>
-Check DNS logs at text file and event viewer.</p>
-<h4 id="manage-dns-zones-and-resource-records">Manage DNS zones and resource records</h4>
-<p>Convert AD-integrated zone to file-based zone
-<div class="highlight"><pre><span></span><code><span class="nb">Get-DNSServerZone</span> <span class="n">-ZoneName</span> <span class="n">practicelabs</span><span class="p">.</span><span class="n">com</span> <span class="p">|</span> <span class="nb">ConvertTo-DnsServerPrimaryZone</span> <span class="n">-ZoneFile</span> <span class="n">practicelabs</span><span class="p">.</span><span class="n">com</span><span class="p">.</span><span class="n">dns</span>
-</code></pre></div>
-Manually add an A record
-<div class="highlight"><pre><span></span><code><span class="nb">Add-Content</span> <span class="n">-Path</span> <span class="n">C</span><span class="p">:\</span><span class="n">Windows</span><span class="p">\</span><span class="n">System32</span><span class="p">\</span><span class="n">dns</span><span class="p">\</span><span class="n">practicelabs</span><span class="p">.</span><span class="n">com</span><span class="p">.</span><span class="n">dns</span> <span class="n">-Value</span> <span class="s2">&quot;PLABSVR   1200   A  192.168.0.105&quot;</span>
-</code></pre></div>
-Re-integrate zone to AD
-<div class="highlight"><pre><span></span><code><span class="nb">ConvertTo-DnsServerPrimaryZone</span> <span class="n">-ZoneName</span> <span class="n">practicelabs</span><span class="p">.</span><span class="n">com</span> <span class="n">-ReplicationScope</span> <span class="n">Domain</span>
-</code></pre></div>
-Promote a new DC
-<div class="highlight"><pre><span></span><code><span class="c"># PLABDM01</span>
-<span class="nb">Add-WindowsFeature</span> <span class="n">dns</span><span class="p">,</span><span class="n">ad-domain-services</span> <span class="n">-IncludeManagementTools</span>
-<span class="nb">Install-ADDSDomainController</span> <span class="n">-Domain</span> <span class="n">practicelabs</span><span class="p">.</span><span class="n">com</span>
-</code></pre></div>
-Create a secondary zone
-<div class="highlight"><pre><span></span><code><span class="c"># PLABSA01</span>
-<span class="nb">Add-WindowsFeature</span> <span class="n">dns</span> <span class="n">-IncludeManagementTools</span>
-<span class="nb">Add-DnsServerSecondaryZone</span> <span class="n">-ZoneName</span> <span class="n">practicelabs</span><span class="p">.</span><span class="n">com</span> <span class="n">-ZoneFile</span> <span class="s2">&quot;practicelabs.com.dns&quot;</span> <span class="n">-MasterServers</span> <span class="n">192</span><span class="p">.</span><span class="n">168</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">1</span>
-</code></pre></div>
-Enable zone transfer from master
-<div class="highlight"><pre><span></span><code><span class="c"># PLABDC01</span>
-<span class="nb">Set-DnsServerPrimaryZone</span> <span class="n">-Name</span> <span class="n">practicelabs</span><span class="p">.</span><span class="n">com</span> <span class="n">-SecureSecondaries</span> <span class="n">TransferAnyServer</span>
-</code></pre></div>
-Manually initiate a zone transfer if needed
-<div class="highlight"><pre><span></span><code><span class="c"># PLABSA01</span>
-<span class="nb">Start-DnsServerZoneTransfer</span> <span class="n">-ZoneName</span> <span class="n">practicelabs</span><span class="p">.</span><span class="n">com</span>
-</code></pre></div>
-Remove secondary zone
-<div class="highlight"><pre><span></span><code><span class="c"># PLABSA01</span>
-<span class="nb">Remove-DnsServerZone</span> <span class="n">-ZoneName</span> <span class="n">practicelabs</span><span class="p">.</span><span class="n">com</span>
-<span class="nb">Add-DnsServerStubZone</span> <span class="n">-ZoneName</span> <span class="n">practicelabs</span><span class="p">.</span><span class="n">com</span> <span class="n">-ZoneFile</span> <span class="n">practicelabs</span><span class="p">.</span><span class="n">com</span><span class="p">.</span><span class="n">dns</span> <span class="n">-MasterServers</span> <span class="n">192</span><span class="p">.</span><span class="n">168</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">1</span>
-</code></pre></div>
-Create new resource records
-<div class="highlight"><pre><span></span><code><span class="c"># PLABDC01</span>
-<span class="nb">Add-DnsServerResourceRecord</span> <span class="n">-A</span> <span class="n">-Name</span> <span class="n">plabsa05</span> <span class="n">-IPv4Address</span> <span class="n">192</span><span class="p">.</span><span class="n">168</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">50</span> <span class="n">-ZoneName</span> <span class="n">practicelabs</span><span class="p">.</span><span class="n">com</span>
-<span class="nb">Add-DnsServerResourceRecord</span> <span class="n">-CName</span> <span class="n">-Name</span> <span class="n">plabdmsrv01</span> <span class="n">-ZoneName</span> <span class="n">practicelabs</span><span class="p">.</span><span class="n">com</span> <span class="n">-HostNameAlias</span> <span class="n">plabdm01</span><span class="p">.</span><span class="n">practicelabs</span><span class="p">.</span><span class="n">com</span>
-<span class="nb">Add-DnsServerResourceRecord</span> <span class="n">-MX</span> <span class="n">-Name</span> <span class="s2">&quot;.&quot;</span> <span class="n">-ZoneName</span> <span class="n">practicelabs</span><span class="p">.</span><span class="n">com</span> <span class="n">-MailExchange</span> <span class="n">mobilemail</span><span class="p">.</span><span class="n">practicelabs</span><span class="p">.</span><span class="n">com</span> <span class="n">-Preference</span> <span class="n">10</span>
-<span class="nb">Add-DnsServerResourceRecord</span> <span class="n">-A</span> <span class="n">-Name</span> <span class="n">mobilemail</span> <span class="n">-IPv4Address</span> <span class="n">192</span><span class="p">.</span><span class="n">168</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">21</span> <span class="n">-ZoneName</span> <span class="n">practicelabs</span><span class="p">.</span><span class="n">com</span>
-</code></pre></div></p>
+<h4 id="others">Others</h4>
+<ul>
+<li>[hostnamectl][hostnamectl]</li>
+<li>[journalctl][journalctl]</li>
+<li>[localectl][localectl]</li>
+<li>[loginctl][loginctl]</li>
+<li>[systemd-delta][systemd-delta]</li>
+<li>[timedatectl][timedatectl]</li>
+</ul>
                 
               
               
@@ -1715,7 +1538,7 @@ Create new resource records
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../Active%20Directory/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../Sysadmin/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1724,19 +1547,19 @@ Create new resource records
               <span class="md-footer__direction">
                 Previous
               </span>
-              Active Directory
+              System administration
             </div>
           </div>
         </a>
       
       
-        <a href="../Labs/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../Ubuntu/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Labs
+              Ubuntu
             </div>
           </div>
           <div class="md-footer__button md-icon">

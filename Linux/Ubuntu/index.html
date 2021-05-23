@@ -190,6 +190,21 @@
   
   
     <li class="md-nav__item">
+      <a href="../../Aircraft/" class="md-nav__link">
+        ✈&#xfe0f; Aircraft
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../Ansible/" class="md-nav__link">
         Ansible
       </a>
@@ -328,48 +343,6 @@
       <a href="../../Sources/" class="md-nav__link">
         Sources
       </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12" type="checkbox" id="__nav_12" >
-      
-      <label class="md-nav__link" for="__nav_12">
-        Aircraft
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="Aircraft" data-md-level="1">
-        <label class="md-nav__title" for="__nav_12">
-          <span class="md-nav__icon md-icon"></span>
-          Aircraft
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../Aircraft/" class="md-nav__link">
-        ✈&#xfe0f; Aircraft
-      </a>
-    </li>
-  
-
-          
-        </ul>
-      </nav>
     </li>
   
 
@@ -843,6 +816,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../Audio/" class="md-nav__link">
+        Audio
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../GRUB/" class="md-nav__link">
         GRUB
       </a>
@@ -915,8 +900,32 @@
   
   
     <li class="md-nav__item">
+      <a href="../Shell/" class="md-nav__link">
+        Shell
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../Sysadmin/" class="md-nav__link">
         System administration
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SystemD/" class="md-nav__link">
+        SystemD
       </a>
     </li>
   
@@ -1475,20 +1484,32 @@
                   <h1>Ubuntu</h1>
                 
                 <h4 id="add-apt-repository">add-apt-repository</h4>
-<div class="tabbed-set" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Docker</label><div class="tabbed-content">
-<div class="highlight"><pre><span></span><code>add-apt-repository <span class="s2">&quot;deb [arch=amd64] https://download.docker.com/linux/ubuntu </span><span class="k">$(</span>lsb_release -cs<span class="k">)</span><span class="s2"> stable&quot;</span>
-</code></pre></div>
-</div>
-<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">Ubuntu repo</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="1:6"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22 12a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10m-7.66-4.26c.58.33 1.31.13 1.66-.44.31-.57.12-1.3-.46-1.64-.57-.33-1.31-.16-1.64.44-.33.57-.13 1.31.44 1.64m-2.46 7.76c-.53 0-1.03-.11-1.47-.32l-.84 1.5c.7.32 1.48.54 2.31.54.49 0 .95-.07 1.4-.19.08-.49.36-.93.82-1.19.46-.27.98-.29 1.44-.12.89-.87 1.46-2.06 1.55-3.39l-1.71-.02a3.506 3.506 0 0 1-3.5 3.19m0-7c1.84 0 3.34 1.39 3.5 3.19l1.71-.03a5.209 5.209 0 0 0-1.55-3.38c-.46.17-.99.14-1.44-.12-.46-.26-.74-.71-.82-1.19-.45-.12-.91-.19-1.4-.19-.83 0-1.61.19-2.31.54l.84 1.5c.44-.21.94-.32 1.47-.32M8.37 12c0-1.19.59-2.24 1.49-2.87L9 7.65a5.217 5.217 0 0 0-2.17 3.04c.38.31.62.78.62 1.31s-.24 1-.62 1.31A5.195 5.195 0 0 0 9 16.34l.86-1.47c-.9-.63-1.49-1.68-1.49-2.87m5.97 4.26c-.57.33-.77 1.06-.44 1.64.33.57 1.07.77 1.64.44.58-.34.77-1.07.46-1.64-.35-.58-1.08-.77-1.66-.44M5.76 10.8c-.66 0-1.2.54-1.2 1.2 0 .66.54 1.2 1.2 1.2.67 0 1.2-.54 1.2-1.2 0-.66-.53-1.2-1.2-1.2z"/></svg></span> Ubuntu repo</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code>add-apt-repository <span class="s2">&quot;deb http://security.ubuntu.com/ubuntu trusty-security main universe&quot;</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><label for="__tabbed_1_3">Regolith Linux</label><div class="tabbed-content">
-<div class="highlight"><pre><span></span><code>add-apt-repository -y ppa:kgilmer/regolith-stable
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.81 10.25c-.06-.04-.56-.43-1.64-.43-.28 0-.56.03-.84.08-.21-1.4-1.38-2.11-1.43-2.14l-.29-.17-.18.27c-.24.36-.43.77-.51 1.19-.2.8-.08 1.56.33 2.21-.49.28-1.29.35-1.46.35H2.62c-.34 0-.62.28-.62.63 0 1.15.18 2.3.58 3.38.45 1.19 1.13 2.07 2 2.61.98.6 2.59.94 4.42.94.79 0 1.61-.07 2.42-.22 1.12-.2 2.2-.59 3.19-1.16A8.3 8.3 0 0 0 16.78 16c1.05-1.17 1.67-2.5 2.12-3.65h.19c1.14 0 1.85-.46 2.24-.85.26-.24.45-.53.59-.87l.08-.24-.19-.14m-17.96.99h1.76c.08 0 .16-.07.16-.16V9.5c0-.08-.07-.16-.16-.16H3.85c-.09 0-.16.07-.16.16v1.58c.01.09.07.16.16.16m2.43 0h1.76c.08 0 .16-.07.16-.16V9.5c0-.08-.07-.16-.16-.16H6.28c-.09 0-.16.07-.16.16v1.58c.01.09.07.16.16.16m2.47 0h1.75c.1 0 .17-.07.17-.16V9.5c0-.08-.06-.16-.17-.16H8.75c-.08 0-.15.07-.15.16v1.58c0 .09.06.16.15.16m2.44 0h1.77c.08 0 .15-.07.15-.16V9.5c0-.08-.06-.16-.15-.16h-1.77c-.08 0-.15.07-.15.16v1.58c0 .09.07.16.15.16M6.28 9h1.76c.08 0 .16-.09.16-.18V7.25c0-.09-.07-.16-.16-.16H6.28c-.09 0-.16.06-.16.16v1.57c.01.09.07.18.16.18m2.47 0h1.75c.1 0 .17-.09.17-.18V7.25c0-.09-.06-.16-.17-.16H8.75c-.08 0-.15.06-.15.16v1.57c0 .09.06.18.15.18m2.44 0h1.77c.08 0 .15-.09.15-.18V7.25c0-.09-.07-.16-.15-.16h-1.77c-.08 0-.15.06-.15.16v1.57c0 .09.07.18.15.18m0-2.28h1.77c.08 0 .15-.07.15-.16V5c0-.1-.07-.17-.15-.17h-1.77c-.08 0-.15.06-.15.17v1.56c0 .08.07.16.15.16m2.46 4.52h1.76c.09 0 .16-.07.16-.16V9.5c0-.08-.07-.16-.16-.16h-1.76c-.08 0-.15.07-.15.16v1.58c0 .09.07.16.15.16"/></svg></span> Docker</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code>add-apt-repository <span class="s2">&quot;deb [arch=amd64] https://download.docker.com/linux/ubuntu </span><span class="k">$(</span>lsb_release -cs<span class="k">)</span><span class="s2"> stable&quot;</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><label for="__tabbed_1_3"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.35 11.1h-9.17v2.73h6.51c-.33 3.81-3.5 5.44-6.5 5.44C8.36 19.27 5 16.25 5 12c0-4.1 3.2-7.27 7.2-7.27 3.09 0 4.9 1.97 4.9 1.97L19 4.72S16.56 2 12.1 2C6.42 2 2.03 6.8 2.03 12c0 5.05 4.13 10 10.22 10 5.35 0 9.25-3.67 9.25-9.09 0-1.15-.15-1.81-.15-1.81z"/></svg></span> gcloud</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code>add-apt-repository <span class="s2">&quot;deb [signed-by=/usr/share/keyrings/cloud.google.gpg] http://packages.cloud.google.com/apt cloud-sdk main&quot;</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><label for="__tabbed_1_4">mailx</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code>add-apt-repository <span class="s2">&quot;deb http://security.ubuntu.com/ubuntu trusty-security main universe&quot;</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_1_5" name="__tabbed_1" type="radio" /><label for="__tabbed_1_5">MongoDB repo</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code>add-apt-repository<span class="s2">&quot;deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.2 multiverse&quot;</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_1_6" name="__tabbed_1" type="radio" /><label for="__tabbed_1_6">Regolith Linux</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code>add-apt-repository <span class="s2">&quot;add-apt-repository -y ppa:kgilmer/regolith-stable&quot;</span>
 </code></pre></div>
 </div>
 </div>
-<p>APT repos (/etc/apt/sources.list) are made of three parts, delimited by whitespace: (<a href="https://kali.training/topic/introduction-to-apt/" title="Introduction to APT">src</a>)</p>
+<p>APT <strong>repositories</strong> (/etc/apt/sources.list) are made of three parts, delimited by whitespace: (<a href="https://kali.training/topic/introduction-to-apt/" title="Introduction to APT">src</a>)</p>
 <ul>
 <li>Source type: <code>deb</code> for binary packages or <code>deb-src</code> for source packages</li>
 <li>Base URL of the source: beginning with <code>http://</code>, <code>ftp://</code>, <code>file://</code>, or even <code>cdrom:</code></li>
@@ -1499,19 +1520,6 @@ deb http://us-central1.gce.archive.ubuntu.com/ubuntu/ bionic universe
 deb http://us-central1.gce.archive.ubuntu.com/ubuntu/ bionic-updates main restricted
 deb http://us-central1.gce.archive.ubuntu.com/ubuntu/ bionic-updates universe
 </code></pre></div>
-<div class="tabbed-set" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">MongoDB repo</label><div class="tabbed-content">
-<div class="highlight"><pre><span></span><code>deb <span class="o">[</span> <span class="nv">arch</span><span class="o">=</span>amd64 <span class="o">]</span> https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.2 multiverse 
-</code></pre></div>
-</div>
-<input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2">gcloud</label><div class="tabbed-content">
-<div class="highlight"><pre><span></span><code>deb <span class="o">[</span>signed-by<span class="o">=</span>/usr/share/keyrings/cloud.google.gpg<span class="o">]</span> http://packages.cloud.google.com/apt cloud-sdk main
-</code></pre></div>
-</div>
-<input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><label for="__tabbed_2_3">mailx</label><div class="tabbed-content">
-<div class="highlight"><pre><span></span><code>deb http://security.ubuntu.com/ubuntu trusty-security main universe
-</code></pre></div>
-</div>
-</div>
 <h4 id="apt-key">apt-key</h4>
 <p>Add a public GPG key to keyring
 <div class="highlight"><pre><span></span><code><span class="c1"># Google Cloud SDK</span>
@@ -1530,30 +1538,6 @@ Install key from Mono
 <div class="highlight"><pre><span></span><code>curl https://packages.cloud.google.com/apt/doc/apt-key.gpg <span class="p">|</span> https:// sudo apt-key --keyring /usr/share/keyrings/cloud.google.gpg add -
 </code></pre></div></p>
 <h4 id="apt">apt</h4>
-<p>APT repos (/etc/apt/sources.list) are made of three parts, delimited by whitespace: (<a href="https://kali.training/topic/introduction-to-apt/" title="Introduction to APT">src</a>)</p>
-<ul>
-<li>Source type: <code>deb</code> for binary packages or <code>deb-src</code> for source packages</li>
-<li>Base URL of the source: beginning with <code>http://</code>, <code>ftp://</code>, <code>file://</code>, or even <code>cdrom:</code></li>
-<li>Name of the chosen distribution followed by sections that differentiate packages by license. Kali, for example, contains <code>main</code>, <code>non-free</code>, and <code>contrib</code>.</li>
-</ul>
-<div class="highlight"><pre><span></span><code>deb http://us-central1.gce.archive.ubuntu.com/ubuntu/ bionic main restricted
-deb http://us-central1.gce.archive.ubuntu.com/ubuntu/ bionic universe
-deb http://us-central1.gce.archive.ubuntu.com/ubuntu/ bionic-updates main restricted
-deb http://us-central1.gce.archive.ubuntu.com/ubuntu/ bionic-updates universe
-</code></pre></div>
-<div class="tabbed-set" data-tabs="3:3"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><label for="__tabbed_3_1">MongoDB repo</label><div class="tabbed-content">
-<div class="highlight"><pre><span></span><code>deb <span class="o">[</span> <span class="nv">arch</span><span class="o">=</span>amd64 <span class="o">]</span> https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.2 multiverse 
-</code></pre></div>
-</div>
-<input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><label for="__tabbed_3_2">gcloud</label><div class="tabbed-content">
-<div class="highlight"><pre><span></span><code>deb <span class="o">[</span>signed-by<span class="o">=</span>/usr/share/keyrings/cloud.google.gpg<span class="o">]</span> http://packages.cloud.google.com/apt cloud-sdk main
-</code></pre></div>
-</div>
-<input id="__tabbed_3_3" name="__tabbed_3" type="radio" /><label for="__tabbed_3_3">mailx</label><div class="tabbed-content">
-<div class="highlight"><pre><span></span><code>deb http://security.ubuntu.com/ubuntu trusty-security main universe
-</code></pre></div>
-</div>
-</div>
 <p>Produce a curses-based interface where you can select a display manager
 <div class="highlight"><pre><span></span><code>dpkg-reconfigure gdm
 </code></pre></div>
@@ -1566,19 +1550,19 @@ update-alternatives manages various <strong>link groups</strong> that correspond
 These link groups can be enumerated with <strong>--get-selections</strong></p>
 <div class="highlight"><pre><span></span><code>update-alternatives --get-selections
 </code></pre></div>
-<div class="tabbed-set" data-tabs="4:4"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><label for="__tabbed_4_1">Create</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="2:4"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9h5.5L13 3.5V9M6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2m5 13v-3H9v3H6v2h3v3h2v-3h3v-2h-3z"/></svg></span></label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code>update-alternatives --install /usr/bin/new-link-group new-link-group /dev/null <span class="m">1</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><label for="__tabbed_4_2">Read</label><div class="tabbed-content">
+<input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5m-7.86-1.75L8.85 19l.29-.74C10.43 15.06 13.5 13 17 13c1.05 0 2.06.21 3 .56V8l-6-6H6c-1.11 0-2 .89-2 2v16a2 2 0 0 0 2 2h4.5c-.55-.66-1-1.42-1.36-2.25M13 3.5 18.5 9H13V3.5z"/></svg></span></label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code>update-alternatives --list www-browser
 </code></pre></div>
 </div>
-<input id="__tabbed_4_3" name="__tabbed_4" type="radio" /><label for="__tabbed_4_3">Update</label><div class="tabbed-content">
+<input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><label for="__tabbed_2_3"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-1.9l10-10V8l-6-6H6m7 1.5L18.5 9H13V3.5m7.1 9.5c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-2 1.8L12 20.9V23h2.1l6.1-6.1-2.1-2.1z"/></svg></span></label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code>update-alternatives --set www-browser /usr/bin/wslview
 </code></pre></div>
 </div>
-<input id="__tabbed_4_4" name="__tabbed_4" type="radio" /><label for="__tabbed_4_4">Delete</label><div class="tabbed-content">
+<input id="__tabbed_2_4" name="__tabbed_2" type="radio" /><label for="__tabbed_2_4"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2m7 7h5.5L13 3.5V9m-3 5.59-2.12-2.13-1.42 1.42L8.59 16l-2.13 2.12 1.42 1.42L10 17.41l2.12 2.13 1.42-1.42L11.41 16l2.13-2.12-1.42-1.42L10 14.59z"/></svg></span></label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code>update-alternatives --remove www-browser /usr/bin/lynx
 </code></pre></div>
 </div>
@@ -1601,7 +1585,7 @@ These link groups can be enumerated with <strong>--get-selections</strong></p>
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../Sysadmin/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../SystemD/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1610,7 +1594,7 @@ These link groups can be enumerated with <strong>--get-selections</strong></p>
               <span class="md-footer__direction">
                 Previous
               </span>
-              System administration
+              SystemD
             </div>
           </div>
         </a>

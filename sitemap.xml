@@ -1,287 +1,299 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url>
      <loc>https://jasper-zanjani.github.io/notes/</loc>
-     <lastmod>2021-05-21</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://jasper-zanjani.github.io/notes/Ansible/</loc>
-     <lastmod>2021-05-21</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://jasper-zanjani.github.io/notes/Certifications/</loc>
-     <lastmod>2021-05-21</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://jasper-zanjani.github.io/notes/Cloud/</loc>
-     <lastmod>2021-05-21</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://jasper-zanjani.github.io/notes/Coding/</loc>
-     <lastmod>2021-05-21</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://jasper-zanjani.github.io/notes/Computers/</loc>
-     <lastmod>2021-05-21</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://jasper-zanjani.github.io/notes/Containers/</loc>
-     <lastmod>2021-05-21</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://jasper-zanjani.github.io/notes/Health/</loc>
-     <lastmod>2021-05-21</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://jasper-zanjani.github.io/notes/Intelligence/</loc>
-     <lastmod>2021-05-21</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://jasper-zanjani.github.io/notes/Linux/</loc>
-     <lastmod>2021-05-21</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://jasper-zanjani.github.io/notes/Sources/</loc>
-     <lastmod>2021-05-21</lastmod>
+     <lastmod>2021-05-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://jasper-zanjani.github.io/notes/Aircraft/</loc>
-     <lastmod>2021-05-21</lastmod>
+     <lastmod>2021-05-23</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://jasper-zanjani.github.io/notes/Ansible/</loc>
+     <lastmod>2021-05-23</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://jasper-zanjani.github.io/notes/Certifications/</loc>
+     <lastmod>2021-05-23</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://jasper-zanjani.github.io/notes/Cloud/</loc>
+     <lastmod>2021-05-23</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://jasper-zanjani.github.io/notes/Coding/</loc>
+     <lastmod>2021-05-23</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://jasper-zanjani.github.io/notes/Computers/</loc>
+     <lastmod>2021-05-23</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://jasper-zanjani.github.io/notes/Containers/</loc>
+     <lastmod>2021-05-23</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://jasper-zanjani.github.io/notes/Health/</loc>
+     <lastmod>2021-05-23</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://jasper-zanjani.github.io/notes/Intelligence/</loc>
+     <lastmod>2021-05-23</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/</loc>
+     <lastmod>2021-05-23</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://jasper-zanjani.github.io/notes/Sources/</loc>
+     <lastmod>2021-05-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://jasper-zanjani.github.io/notes/Cloud/ARM/</loc>
-     <lastmod>2021-05-21</lastmod>
+     <lastmod>2021-05-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://jasper-zanjani.github.io/notes/Cloud/Azure-AD/</loc>
-     <lastmod>2021-05-21</lastmod>
+     <lastmod>2021-05-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://jasper-zanjani.github.io/notes/Cloud/Azure-App-Service/</loc>
-     <lastmod>2021-05-21</lastmod>
+     <lastmod>2021-05-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://jasper-zanjani.github.io/notes/Cloud/Azure-Backup/</loc>
-     <lastmod>2021-05-21</lastmod>
+     <lastmod>2021-05-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://jasper-zanjani.github.io/notes/Cloud/Azure-File-Service/</loc>
-     <lastmod>2021-05-21</lastmod>
+     <lastmod>2021-05-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://jasper-zanjani.github.io/notes/Cloud/Azure-IAM/</loc>
-     <lastmod>2021-05-21</lastmod>
+     <lastmod>2021-05-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://jasper-zanjani.github.io/notes/Cloud/Azure-IaaS/</loc>
-     <lastmod>2021-05-21</lastmod>
+     <lastmod>2021-05-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://jasper-zanjani.github.io/notes/Cloud/Azure-Load-Balancer/</loc>
-     <lastmod>2021-05-21</lastmod>
+     <lastmod>2021-05-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://jasper-zanjani.github.io/notes/Cloud/Azure-Monitoring/</loc>
-     <lastmod>2021-05-21</lastmod>
+     <lastmod>2021-05-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://jasper-zanjani.github.io/notes/Cloud/Azure-Policy/</loc>
-     <lastmod>2021-05-21</lastmod>
+     <lastmod>2021-05-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://jasper-zanjani.github.io/notes/Cloud/Azure-Storage/</loc>
-     <lastmod>2021-05-21</lastmod>
+     <lastmod>2021-05-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://jasper-zanjani.github.io/notes/Cloud/Azure-VPN/</loc>
-     <lastmod>2021-05-21</lastmod>
+     <lastmod>2021-05-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://jasper-zanjani.github.io/notes/Cloud/Kusto/</loc>
-     <lastmod>2021-05-21</lastmod>
+     <lastmod>2021-05-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://jasper-zanjani.github.io/notes/Cloud/Tasks/</loc>
-     <lastmod>2021-05-21</lastmod>
+     <lastmod>2021-05-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://jasper-zanjani.github.io/notes/Coding/6502/</loc>
-     <lastmod>2021-05-21</lastmod>
+     <lastmod>2021-05-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://jasper-zanjani.github.io/notes/Coding/C%23/</loc>
-     <lastmod>2021-05-21</lastmod>
+     <lastmod>2021-05-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://jasper-zanjani.github.io/notes/Coding/C%2B%2B/</loc>
-     <lastmod>2021-05-21</lastmod>
+     <lastmod>2021-05-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://jasper-zanjani.github.io/notes/Coding/Courses/</loc>
-     <lastmod>2021-05-21</lastmod>
+     <lastmod>2021-05-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://jasper-zanjani.github.io/notes/Coding/DnD/</loc>
-     <lastmod>2021-05-21</lastmod>
+     <lastmod>2021-05-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://jasper-zanjani.github.io/notes/Coding/Dogfood/</loc>
-     <lastmod>2021-05-21</lastmod>
+     <lastmod>2021-05-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://jasper-zanjani.github.io/notes/Coding/GUI/</loc>
-     <lastmod>2021-05-21</lastmod>
+     <lastmod>2021-05-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://jasper-zanjani.github.io/notes/Coding/Perl/</loc>
-     <lastmod>2021-05-21</lastmod>
+     <lastmod>2021-05-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://jasper-zanjani.github.io/notes/Coding/Python/</loc>
-     <lastmod>2021-05-21</lastmod>
+     <lastmod>2021-05-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://jasper-zanjani.github.io/notes/Coding/Tasks/</loc>
-     <lastmod>2021-05-21</lastmod>
+     <lastmod>2021-05-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://jasper-zanjani.github.io/notes/Coding/Testing/</loc>
-     <lastmod>2021-05-21</lastmod>
+     <lastmod>2021-05-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://jasper-zanjani.github.io/notes/Coding/Windows/</loc>
-     <lastmod>2021-05-21</lastmod>
+     <lastmod>2021-05-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://jasper-zanjani.github.io/notes/Coding/Wired%20Brain%20Coffee/</loc>
-     <lastmod>2021-05-21</lastmod>
+     <lastmod>2021-05-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://jasper-zanjani.github.io/notes/Coding/XAML/</loc>
-     <lastmod>2021-05-21</lastmod>
+     <lastmod>2021-05-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://jasper-zanjani.github.io/notes/Containers/kubectl/</loc>
-     <lastmod>2021-05-21</lastmod>
+     <lastmod>2021-05-23</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/Audio/</loc>
+     <lastmod>2021-05-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://jasper-zanjani.github.io/notes/Linux/GRUB/</loc>
-     <lastmod>2021-05-21</lastmod>
+     <lastmod>2021-05-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://jasper-zanjani.github.io/notes/Linux/NGINX/</loc>
-     <lastmod>2021-05-21</lastmod>
+     <lastmod>2021-05-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://jasper-zanjani.github.io/notes/Linux/Network/</loc>
-     <lastmod>2021-05-21</lastmod>
+     <lastmod>2021-05-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://jasper-zanjani.github.io/notes/Linux/Package/</loc>
-     <lastmod>2021-05-21</lastmod>
+     <lastmod>2021-05-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://jasper-zanjani.github.io/notes/Linux/SELinux/</loc>
-     <lastmod>2021-05-21</lastmod>
+     <lastmod>2021-05-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://jasper-zanjani.github.io/notes/Linux/SSH/</loc>
-     <lastmod>2021-05-21</lastmod>
+     <lastmod>2021-05-23</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/Shell/</loc>
+     <lastmod>2021-05-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://jasper-zanjani.github.io/notes/Linux/Sysadmin/</loc>
-     <lastmod>2021-05-21</lastmod>
+     <lastmod>2021-05-23</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://jasper-zanjani.github.io/notes/Linux/SystemD/</loc>
+     <lastmod>2021-05-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://jasper-zanjani.github.io/notes/Linux/Ubuntu/</loc>
-     <lastmod>2021-05-21</lastmod>
+     <lastmod>2021-05-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://jasper-zanjani.github.io/notes/Linux/X11/</loc>
-     <lastmod>2021-05-21</lastmod>
+     <lastmod>2021-05-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://jasper-zanjani.github.io/notes/Miscellany/</loc>
-     <lastmod>2021-05-21</lastmod>
+     <lastmod>2021-05-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://jasper-zanjani.github.io/notes/Miscellany/CI-CD/</loc>
-     <lastmod>2021-05-21</lastmod>
+     <lastmod>2021-05-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://jasper-zanjani.github.io/notes/Miscellany/bittorrent/</loc>
-     <lastmod>2021-05-21</lastmod>
+     <lastmod>2021-05-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://jasper-zanjani.github.io/notes/Miscellany/cryptocurrency/</loc>
-     <lastmod>2021-05-21</lastmod>
+     <lastmod>2021-05-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://jasper-zanjani.github.io/notes/Miscellany/learn/</loc>
-     <lastmod>2021-05-21</lastmod>
+     <lastmod>2021-05-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://jasper-zanjani.github.io/notes/Text-editors/code/</loc>
-     <lastmod>2021-05-21</lastmod>
+     <lastmod>2021-05-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://jasper-zanjani.github.io/notes/Text-editors/vim/</loc>
-     <lastmod>2021-05-21</lastmod>
+     <lastmod>2021-05-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://jasper-zanjani.github.io/notes/Web/</loc>
-     <lastmod>2021-05-21</lastmod>
+     <lastmod>2021-05-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://jasper-zanjani.github.io/notes/Web/CSS/</loc>
-     <lastmod>2021-05-21</lastmod>
+     <lastmod>2021-05-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://jasper-zanjani.github.io/notes/Web/mkdocs/</loc>
-     <lastmod>2021-05-21</lastmod>
+     <lastmod>2021-05-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://jasper-zanjani.github.io/notes/Web/JavaScript/</loc>
-     <lastmod>2021-05-21</lastmod>
+     <lastmod>2021-05-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://jasper-zanjani.github.io/notes/Web/JavaScript/Express/</loc>
-     <lastmod>2021-05-21</lastmod>
+     <lastmod>2021-05-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://jasper-zanjani.github.io/notes/Web/JavaScript/React/</loc>
-     <lastmod>2021-05-21</lastmod>
+     <lastmod>2021-05-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://jasper-zanjani.github.io/notes/Web/JavaScript/Web%20Components/</loc>
-     <lastmod>2021-05-21</lastmod>
+     <lastmod>2021-05-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://jasper-zanjani.github.io/notes/Windows/Active%20Directory/</loc>
-     <lastmod>2021-05-21</lastmod>
+     <lastmod>2021-05-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://jasper-zanjani.github.io/notes/Windows/DNS-labs/</loc>
-     <lastmod>2021-05-21</lastmod>
+     <lastmod>2021-05-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://jasper-zanjani.github.io/notes/Windows/Labs/</loc>
-     <lastmod>2021-05-21</lastmod>
+     <lastmod>2021-05-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://jasper-zanjani.github.io/notes/Windows/PowerShell/</loc>
-     <lastmod>2021-05-21</lastmod>
+     <lastmod>2021-05-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://jasper-zanjani.github.io/notes/Windows/WDS-lab/</loc>
-     <lastmod>2021-05-21</lastmod>
+     <lastmod>2021-05-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://jasper-zanjani.github.io/notes/Windows/WS2016/</loc>
-     <lastmod>2021-05-21</lastmod>
+     <lastmod>2021-05-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://jasper-zanjani.github.io/notes/Windows/diskpart/</loc>
-     <lastmod>2021-05-21</lastmod>
+     <lastmod>2021-05-23</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>

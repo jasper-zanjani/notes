@@ -190,6 +190,21 @@
   
   
     <li class="md-nav__item">
+      <a href="../Aircraft/" class="md-nav__link">
+        ✈&#xfe0f; Aircraft
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../Ansible/" class="md-nav__link">
         Ansible
       </a>
@@ -614,48 +629,6 @@
       <a href="../Sources/" class="md-nav__link">
         Sources
       </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12" type="checkbox" id="__nav_12" >
-      
-      <label class="md-nav__link" for="__nav_12">
-        Aircraft
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="Aircraft" data-md-level="1">
-        <label class="md-nav__title" for="__nav_12">
-          <span class="md-nav__icon md-icon"></span>
-          Aircraft
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Aircraft/" class="md-nav__link">
-        ✈&#xfe0f; Aircraft
-      </a>
-    </li>
-  
-
-          
-        </ul>
-      </nav>
     </li>
   
 
@@ -1127,6 +1100,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../Linux/Audio/" class="md-nav__link">
+        Audio
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../Linux/GRUB/" class="md-nav__link">
         GRUB
       </a>
@@ -1199,8 +1184,32 @@
   
   
     <li class="md-nav__item">
+      <a href="../Linux/Shell/" class="md-nav__link">
+        Shell
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../Linux/Sysadmin/" class="md-nav__link">
         System administration
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Linux/SystemD/" class="md-nav__link">
+        SystemD
       </a>
     </li>
   
@@ -3515,8 +3524,26 @@ There are two types:</p>
 </dd>
 </dl>
 <h4 id="gcloud">gcloud</h4>
-<p>Ubuntu repo
+<p>Adding repo</p>
+<div class="tabbed-set" data-tabs="8:2"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><label for="__tabbed_8_1">Ubuntu</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code>deb <span class="o">[</span>signed-by<span class="o">=</span>/usr/share/keyrings/cloud.google.gpg<span class="o">]</span> http://packages.cloud.google.com/apt cloud-sdk main
+</code></pre></div>
+</div>
+<input id="__tabbed_8_2" name="__tabbed_8" type="radio" /><label for="__tabbed_8_2">Fedora</label><div class="tabbed-content">
+<p>To be saved in /etc/yum.repos.d/google-cloud-sdk.repo
+<div class="highlight"><pre><span></span><code><span class="k">[google-cloud-sdk]</span>
+<span class="na">name</span><span class="o">=</span><span class="s">Google Cloud SDK</span>
+<span class="na">baseurl</span><span class="o">=</span><span class="s">https://packages.cloud.google.com/yum/repos/cloud-sdk-el7-x86_64</span>
+<span class="na">enabled</span><span class="o">=</span><span class="s">1</span>
+<span class="na">gpgcheck</span><span class="o">=</span><span class="s">1</span>
+<span class="na">repo_gpgcheck</span><span class="o">=</span><span class="s">0</span>
+<span class="na">gpgkey</span><span class="o">=</span><span class="s">https://packages.cloud.google.com/yum/doc/yum-key.gpg</span>
+    <span class="na">https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg</span>
+</code></pre></div></p>
+</div>
+</div>
+<p>Initialize <a href="https://cloud.google.com/sdk/docs/initializing"><sup><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.35 11.1h-9.17v2.73h6.51c-.33 3.81-3.5 5.44-6.5 5.44C8.36 19.27 5 16.25 5 12c0-4.1 3.2-7.27 7.2-7.27 3.09 0 4.9 1.97 4.9 1.97L19 4.72S16.56 2 12.1 2C6.42 2 2.03 6.8 2.03 12c0 5.05 4.13 10 10.22 10 5.35 0 9.25-3.67 9.25-9.09 0-1.15-.15-1.81-.15-1.81z"/></svg></span></sup></a>
+<div class="highlight"><pre><span></span><code>gcloud init
 </code></pre></div></p>
 <p>In GCP, APIs are enabled per project.</p>
 <p>List all APIs</p>
@@ -3537,18 +3564,6 @@ gcloud compute zones list
 <div class="highlight"><pre><span></span><code>gcloud config <span class="nb">set</span> compute/region us-east1 <span class="c1"># Moncks Corner, South Carolina</span>
 gcloud config <span class="nb">set</span> compute/zone us-east1-c
 </code></pre></div>
-<p>Create a Kubernetes cluster in <abbr title="Google Kubernetes Engine">GKE</abbr>.</p>
-<div class="highlight"><pre><span></span><code>gcloud container clusters create hello-cluster --num-nodes<span class="o">=</span><span class="m">1</span>    <span class="c1"># Standard cluster</span>
-</code></pre></div>
-<p>If a default zone is set, an <a href="#gke">Autopilot</a> cluster won't be able to be created without explicitly specifying <strong>--region</strong>.</p>
-<div class="highlight"><pre><span></span><code>gcloud container clusters create-auto hello-cluster
-</code></pre></div>
-<p>Interrogate a running cluster</p>
-<div class="highlight"><pre><span></span><code>gcloud container clusters describe hello-cluster
-</code></pre></div>
-<p>Save a Kubernetes cluster's credentials to a <a href="/Containers#kubeconfig">kubeconfig</a>.</p>
-<p><code>sh
-gcloud container clusters get-credentials my-cluster</code>-</p>
                 
               
               
