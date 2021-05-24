@@ -1,3 +1,5 @@
+#### journalctl
+
 Show current disk usage of all journal files
 ```sh
 journalctl --disk-usage

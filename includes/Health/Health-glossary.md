@@ -55,12 +55,13 @@ _**Withania somnifera**_ or **Ashwagandha** is a traditional [Ayurvedic herb](#a
 - In a double-blind, placebo-controlled [crossover study](#crossover-trial), healthy men administered Ashwagandha (500 mg/day) experienced improved cognitive performance outcomes. ([2014](https://www.ncbi.nlm.nih.gov/pubmed/24497737))
 - A study that compared the difference in effect of 250 and 600 mg/day found that the higher dosage was associated with significantly greater stress and anxiety reduction and increased sleep quality. ([2019](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6979308/))
 
-| Product                                                                                                                                                  |                $ |       g |              $/g |
-| -------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------: | ------: | ---------------: |
-| [Bulk Supplements Ashwagandha 1 kg](https://www.amazon.com/gp/product/B01MYBN67O)                                                                        |            34.96 | 1,000.0 |             0.04 |
-| [Swanson Ultimate Ashwagandha 250mg x 60 capsules](https://www.swansonvitamins.com/swanson-ultra-ultimate-ashwagandha-ksm-66-250-mg-60-veg-caps-SWU1003) | **3.99**<br>7.99 |    15.0 | **0.26**<br>0.53 |
-| [NOW Supplements Ashwagandha 450 mg x 180 capsules](https://www.amazon.com/NOW-Ashwagandha-Extract-Caps-SIZE/dp/B076H91FQG)                              |            28.99 |    81.0 |             0.35 |
-| [NOW supplements Ashwagandha 450 mg x 90 capsules](https://www.amazon.com/NOW-Foods-Ashwagandha-Extract-450mg/dp/B010MO5KCG)                             |            17.90 |    40.5 |             0.44 |
+| Product                                                                                                                                                  |                  $ |       g |              $/g |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------- | -----------------: | ------: | ---------------: |
+| [Bulk Supplements Ashwagandha 1 kg](https://www.amazon.com/gp/product/B01MYBN67O)                                                                        |              34.96 | 1,000.0 |             0.04 |
+| [Swanson Ashwagandha Extract 450 mg x 60 capsules](https://www.swansonvitamins.com/swanson-superior-herbs-ashwagandha-extract-450-mg-60-caps)            |   **3.21**<br>4.59 |    27.0 | **0.12**<br>0.17 |
+| [Swanson Ultimate Ashwagandha 250mg x 60 capsules](https://www.swansonvitamins.com/swanson-ultra-ultimate-ashwagandha-ksm-66-250-mg-60-veg-caps-SWU1003) |   **3.99**<br>7.99 |    15.0 | **0.26**<br>0.53 |
+| [NOW Supplements Ashwagandha 450 mg x 180 capsules](https://www.amazon.com/NOW-Ashwagandha-Extract-Caps-SIZE/dp/B076H91FQG)                              | **16.46**<br>28.99 |    81.0 | **0.20**<br>0.35 |
+| [NOW supplements Ashwagandha 450 mg x 90 capsules](https://www.amazon.com/NOW-Foods-Ashwagandha-Extract-450mg/dp/B010MO5KCG)                             |              17.90 |    40.5 |             0.44 |
 
 
 #### Astragalus
@@ -264,6 +265,9 @@ One of the [four basic types](https://en.wikipedia.org/wiki/Epithelium) of anima
 **Ergogenic**{: #ergogenic }
 
 Intended to enhance physical performance, stamina, or recovery
+
+**Excipient**{: #excipient }
+:   An inactive substance that serves as the vehicle or medium for a drug or other active substance.
 
 
 #### Finasteride

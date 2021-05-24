@@ -392,5 +392,3 @@ In fact, references to the "classic" model predating the Azure Resource Manager 
 --8<-- "includes/Cloud/links.md"
 
 --8<-- "includes/Cloud/defs.md"
-
---8<-- "includes/Cloud/GCP/gcloud.md"

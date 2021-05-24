@@ -1,6 +1,7 @@
 *[DHT]: Dihydrotestosterone
 *[TSH]: Thyroid-stimulating hormone
 *[MMSE]: Mini Mental State Examination
+*[TMAO]: Trimethylamine N-oxide
 
 [Gorilla Mind Smooth]: https://gorillamind.com/products/gorilla-mind-smooth "Gorilla Mind Smooth"
 [nootropic]: #nootropics "nootropic: a substance claimed to improve cognitive function, particular executive functions, memory, creativity, or motivation"

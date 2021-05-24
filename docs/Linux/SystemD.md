@@ -26,13 +26,13 @@ The first section found in most unit files is the **[Unit]** section, which may 
 
 **Service files** are a type of unit file which have replaced earlier init scripts and describe how to manage a service or application on the server.
 
-Create a service file [<sup>:material-redhat:</sup>](https://www.redhat.com/sysadmin/replacing-rclocal-systemd)
+Docker container as a service:
 ```ini
 [Unit]
-Description=Runs /usr/local/bin/mystartup.sh
+Description=Notes Container (Docker)
 
 [Service]
-ExecStart=/usr/local/bin/mystartup.sh
+ExecStart=/usr/bin/docker start notes
 
 [Install]
 WantedBy=multi-user.target
@@ -50,13 +50,15 @@ WantedBy=multi-user.target
 | emergency.target  | emergency |
 
 
---8<-- "includes/Linux/systemctl.md"
 
-#### Others
+--8<-- "includes/Linux/Commands/hostnamectl.md"
 
-- [hostnamectl][hostnamectl]
-- [journalctl][journalctl]
-- [localectl][localectl]
-- [loginctl][loginctl]
-- [systemd-delta][systemd-delta]
-- [timedatectl][timedatectl]
+--8<-- "includes/Linux/Commands/journalctl.md"
+
+--8<-- "includes/Linux/Commands/localectl.md"
+
+--8<-- "includes/Linux/Commands/systemctl.md"
+
+--8<-- "includes/Linux/Commands/systemd-delta.md"
+
+--8<-- "includes/Linux/Commands/timedatectl.md"
