@@ -48,6 +48,8 @@
     
       <link rel="stylesheet" href="../../style/admonitions-aws.css">
     
+      <link rel="stylesheet" href="../../style/admonitions-rust.css">
+    
     
       
     
@@ -368,7 +370,7 @@
   
     <li class="md-nav__item">
       <a href="../../Cloud/GCP/" class="md-nav__link">
-        :material-google: Google Cloud Platform
+        Google Cloud Platform
       </a>
     </li>
   
@@ -747,6 +749,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#ownership" class="md-nav__link">
+    Ownership
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#comments" class="md-nav__link">
     Comments
   </a>
@@ -754,16 +763,56 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#variables" class="md-nav__link">
-    Variables
+  <a href="#projects" class="md-nav__link">
+    Projects
   </a>
   
 </li>
       
         <li class="md-nav__item">
+  <a href="#data" class="md-nav__link">
+    Data
+  </a>
+  
+    <nav class="md-nav" aria-label="Data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#variables" class="md-nav__link">
+    Variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#typing" class="md-nav__link">
     Typing
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#control-flow" class="md-nav__link">
+    Control flow;
+  </a>
+  
+    <nav class="md-nav" aria-label="Control flow;">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#match" class="md-nav__link">
+    match
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1518,6 +1567,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#ownership" class="md-nav__link">
+    Ownership
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#comments" class="md-nav__link">
     Comments
   </a>
@@ -1525,16 +1581,56 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#variables" class="md-nav__link">
-    Variables
+  <a href="#projects" class="md-nav__link">
+    Projects
   </a>
   
 </li>
       
         <li class="md-nav__item">
+  <a href="#data" class="md-nav__link">
+    Data
+  </a>
+  
+    <nav class="md-nav" aria-label="Data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#variables" class="md-nav__link">
+    Variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#typing" class="md-nav__link">
     Typing
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#control-flow" class="md-nav__link">
+    Control flow;
+  </a>
+  
+    <nav class="md-nav" aria-label="Control flow;">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#match" class="md-nav__link">
+    match
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1552,43 +1648,63 @@
                 
                 
                 <h1 id="rust">Rust</h1>
+<h4 id="ownership">Ownership</h4>
+<p>One of the key and unique features of Rust is the concept of <strong>ownership</strong>, which achieves memory safety without the use of a garbage collector.</p>
+<p>The stack and heap are locations in memory that are available to the application at runtime.</p>
 <ul>
-<li>The <strong>!</strong> in <code>println!</code> indicates it is a <strong>macro</strong>.</li>
-<li><code>String::new()</code> is an "<strong>associated function</strong>" of the <code>String</code> type, a term that appears to be equivalent to "static method" in C#.</li>
-<li>Methods calls are conventionally indented after a newline.</li>
-<li>Methods like <code>read_line()</code> return <code>Result</code> enums, which can be <code>Ok</code> or <code>Err</code>. The <code>expect()</code> method call will display the message on the <code>Err</code> enum but not the <code>Ok</code> version.</li>
+<li>The <strong>stack</strong> is a <abbr title="Last-In First-Out">LIFO</abbr> that is used for sizes that are known at compile-time. Values are said to be "<strong>pushed onto</strong>" or "<strong>popped off</strong>" the stack.</li>
+<li>The <strong>heap</strong> is less organized and less efficient, and is used for sizes that are known only at runtime. The operating system must search for an appropriate memory location based on the application's request at runtime, returning a pointer, and this process makes the heap less efficient than the stack. Memory locations are said to be "<strong>allocated</strong>" on the heap. </li>
 </ul>
-<div class="tabbed-set" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Hello, world!</label><div class="tabbed-content">
+<p>Some complex data types like <code>String</code> are composed of a pointer, stored in the stack because its size is known at compile-time, that points to a location on the heap that holds the String's contents, which are known only at runtime.</p>
+<p>In other languages these statements would cause s2 to become a shallow copy of s1, pointing to the same location in memory where the String contents are stored.
+However, ownership rules in Rust cause s1 to be invalidated because s2 becomes the owner of the data contents on the heap, and this is called a <strong>move</strong>.
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="n">s1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">String</span>::<span class="n">from</span><span class="p">(</span><span class="s">&quot;Hello, world!&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="kd">let</span><span class="w"> </span><span class="n">s2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s1</span><span class="p">;</span><span class="w"></span>
+<span class="n">println</span><span class="p">(</span><span class="s">&quot;{}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">s1</span><span class="p">);</span><span class="w"> </span><span class="c1">// compiler error</span>
+</code></pre></div></p>
+<p>This allows Rust to avoid the <strong>double free</strong> error caused by attempting to free the same memory location twice, which can cause corruption and security issues.
+When the variable goes out of scope, its <strong>backing memory</strong> is freed.</p>
+<p>A deep copy is still possible with the common <code>clone</code> method:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="n">s2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s1</span><span class="p">.</span><span class="n">clone</span><span class="p">();</span><span class="w"></span>
+</code></pre></div>
+<p>This behavior is only for data that is stored on the heap, not the stack.
+The size of integers is known at compile-time, so they are stored entirely on the stack, and therefore copies of the values are efficiently made.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"></span>
+<span class="kd">let</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">;</span><span class="w"></span>
+<span class="fm">println!</span><span class="p">(</span><span class="s">&quot;{}&quot;</span><span class="p">,</span><span class="n">x</span><span class="p">);</span><span class="w"> </span><span class="c1">// no error</span>
+</code></pre></div>
+<p>More specifically, certain types have a special annotation called the <strong><code>Copy</code> trait</strong> which enable this behavior.
+For types that "are <code>Copy</code>", i.e. have the <code>Copy</code> trait, an older variable is still usable after assignment.
+<code>Copy</code> types include integers, booleans, chars, floats, and tuples containing only <code>Copy</code> types.</p>
+<p>Function calls also exhibit move behavior; after a variable is passed as argument to a function, the function owns it and it may not be used again in its original context unless ownership is returned.
+This is why most function calls in Rust use <strong>references</strong>, prefixing the variable identifier with <code>&amp;</code>, a process called <strong>borrowing</strong>.</p>
+<div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Compiler error</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;Hello, world!&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">String</span>::<span class="n">from</span><span class="p">(</span><span class="s">&quot;Dgiapusccu&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">hello_world</span><span class="p">(</span><span class="n">s</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;Hello again, {}!&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="p">);</span><span class="w"> </span><span class="c1">// compiler error</span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="k">fn</span> <span class="nf">hello_world</span><span class="p">(</span><span class="n">s</span>:<span class="nb">String</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;Hello, {}!&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="p">)</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 </div>
-<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">Parameterized</label><div class="tabbed-content">
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">Reference</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span>::<span class="n">env</span>::<span class="n">args</span><span class="p">().</span><span class="n">nth</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"></span>
-<span class="w">        </span><span class="p">.</span><span class="n">expect</span><span class="p">(</span><span class="s">&quot;Missing name. Usage: hello &lt;name&gt;&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;Hello, {name}!&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">name</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">String</span>::<span class="n">from</span><span class="p">(</span><span class="s">&quot;Dgiapusccu&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">hello_world</span><span class="p">(</span><span class="o">&amp;</span><span class="n">s</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;Hello again, {}!&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="p">);</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
-</code></pre></div>
-</div>
-<input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><label for="__tabbed_1_3">Interactive</label><div class="tabbed-content">
-<div class="highlight"><pre><span></span><code><span class="k">use</span><span class="w"> </span><span class="n">std</span>::<span class="n">io</span><span class="p">;</span><span class="w"></span>
 
-<span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;Enter name: &quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">String</span>::<span class="n">new</span><span class="p">();</span><span class="w"></span>
-
-<span class="w">    </span><span class="n">io</span>::<span class="n">stdin</span><span class="p">()</span><span class="w"></span>
-<span class="w">        </span><span class="p">.</span><span class="n">read_line</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="n">name</span><span class="p">)</span><span class="w"></span>
-<span class="w">        </span><span class="p">.</span><span class="n">expect</span><span class="p">(</span><span class="s">&quot;Didn&#39;t catch that...&quot;</span><span class="p">);</span><span class="w"></span>
-
-<span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;Hello, {}!&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">);</span><span class="w"></span>
+<span class="k">fn</span> <span class="nf">hello_world</span><span class="p">(</span><span class="n">s</span>:<span class="kp">&amp;</span><span class="nb">String</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;{}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="p">)</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 </div>
 </div>
-<hr />
+<p>References can also be made mutable, but to prevent <strong>data races</strong> only one mutable reference to a location in a scope can exist.
+Multiple immutable references are not a problem, but a mutable reference and an immutable one cannot coexist in the same scope.</p>
 <h4 id="comments">Comments</h4>
 <p>Rust uses C-style line comments using <code>//</code> and block comments using <code>/*</code>, <code>*/</code></p>
 <p><strong>Doc comments</strong> support markdown and are used to generate documentation.</p>
@@ -1596,36 +1712,66 @@
 <li><strong>Outer doc comments</strong> are preceded by <code>///</code> and are written outside of code blocks</li>
 <li><strong>Inner doc comments</strong> are preceded by <code>//!</code> and are writtenw within code blocks, similar to docstrings in Python</li>
 </ul>
+<h4 id="projects">Projects</h4>
+<p>Projects can be created with the <strong><code>cargo</code></strong> command-line utility.
+<div class="highlight"><pre><span></span><code><span class="n">cargo</span><span class="w"> </span><span class="n">new</span><span class="w"> </span><span class="n">hello_cargo</span><span class="w"></span>
+</code></pre></div></p>
+<p>This creates a <abbr title="Tom's Obvious Minimal Language">TOML</abbr> configuration file for the project.
+Rust refers to code dependencies as <strong>crates</strong>, what is equivalent to <strong>modules</strong> in Python.
+Open-source crates are stored in the <strong>registry</strong>.</p>
+<h3 id="data">Data</h3>
 <h4 id="variables">Variables</h4>
 <p>Variable declarations are called <strong>bindings</strong> in Rust, and by convention variable names are in <strong>snake_case</strong> (lower-case letters with words delimited by <code>_</code>).
 They are globally scoped by default unless they are declared in a code block.</p>
-<p>Variables are immutable by default, so if their values are to change they must be marked with <code>mut</code></p>
+<p>Variables are immutable by default, so if their values are to change they must be marked with <code>mut</code>.
+However, immutable variables are distinct from constants declared using <code>const</code>, which cannot be made mutable at all.
+<code>const</code> identifiers are conventionally written in capitalized snake_case.</p>
+<div class="tabbed-set" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">Immutable</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="n">language</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Rust&quot;</span><span class="p">;</span><span class="w"></span>
+</code></pre></div>
+</div>
+<input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2">Mutable</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">language</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Rust&quot;</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
-<p><strong>Shadowing</strong> and <strong>masking</strong> are terms that refer to using a locally scoped variable with the same identifier as a global variable.
+</div>
+<input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><label for="__tabbed_2_3">Constant</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="n">language</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Rust&quot;</span><span class="p">;</span><span class="w"></span>
+</code></pre></div>
+</div>
+</div>
+<p>Data type is specified on initialization after colon:</p>
+<p><div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="n">language</span>:<span class="nb">String</span> <span class="o">=</span><span class="w"> </span><span class="s">&quot;Rust&quot;</span><span class="p">;</span><span class="w"></span>
+</code></pre></div>
+<strong>Shadowing</strong> and <strong>masking</strong> are terms that refer to using a locally scoped variable with the same identifier as a global variable.
 When in the local variable's block, the local variable is said to be <strong>masking</strong> the global one, which conversely is <strong>shadowing</strong> the local.
 Once the local scope is exited, the global variable's variable is accessible again and the local variable is destroyed.</p>
-<p>Data type is specified on initialization after colon:</p>
-<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="n">language</span>:<span class="nb">String</span> <span class="o">=</span><span class="w"> </span><span class="s">&quot;Rust&quot;</span><span class="p">;</span><span class="w"></span>
-</code></pre></div>
+<p>Shadowing is used in the <a href="../#guessing-game">Guessing Game coding task</a> to parse the input string as an integer.</p>
 <h4 id="typing">Typing</h4>
+<p>Integers can be fixed-length or variable-length.
+Fixed-size integers can be signed (<code>i</code>) or unsigned (<code>u</code>) and 8, 16, 32, or 64 bits: i.e. <code>i8</code>, <code>u64</code> etc.
+Variable-size integers can be <strong>pointer-sized signed</strong> <code>isize</code> or <strong>pointer-sized unsigned</strong> <code>usize</code>, the size of both of which depend on the architecture of the host system.</p>
+<p>Type can be inferred by the compiler or explicitly annotated after a colon</p>
+<div class="tabbed-set" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><label for="__tabbed_3_1">Implicit</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="n">var</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+</code></pre></div>
+</div>
+<input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><label for="__tabbed_3_2">Explicit</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="n">var</span>:<span class="kt">u8</span> <span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+</code></pre></div>
+</div>
+</div>
 <p>Arrays and Tuples are considered primitive data types, albeit <strong>Compound</strong> ones.
 Integer and Float are considered <strong>Numeric Scalars</strong>, while Boolean and Chars are considered <strong>Non-Numeric Scalars</strong>.</p>
 <ul>
-<li>Integers can be fixed-length or variable-length.<ul>
-<li>Fixed-size integers can be signed (<code>i</code>) or unsigned (<code>u</code>) and 8, 16, 32, or 64 bits: i.e. <code>i8</code>, <code>u64</code> etc.</li>
-<li>Variable-size integers can be <strong>pointer-sized signed</strong> <code>isize</code> or <strong>pointer-sized unsigned</strong> <code>usize</code>, the size of both of which depend on the architecture of the host system.</li>
-</ul>
-</li>
 <li>Floating point numbers can be single-precision <code>f32</code> or double-precision <code>f64</code>.</li>
 <li>Booleans are <code>true</code> or <code>false</code> (lower-case).</li>
 </ul>
 <p>Arrays are <strong>homogeneous</strong> sequences of elements and must be of a fixed length, declared at initialization, although the type can be determined implicitly.</p>
-<div class="tabbed-set" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">Explicit</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><label for="__tabbed_4_1">Explicit</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="n">arr</span>:<span class="p">[</span><span class="kt">i32</span><span class="p">;</span><span class="w"> </span><span class="mi">4</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">];</span><span class="w"></span>
 </code></pre></div>
 </div>
-<input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2">Implicit</label><div class="tabbed-content">
+<input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><label for="__tabbed_4_2">Implicit</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="n">arr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mi">0</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="mi">4</span><span class="p">];</span><span class="w"></span>
 </code></pre></div>
 </div>
@@ -1638,11 +1784,11 @@ Integer and Float are considered <strong>Numeric Scalars</strong>, while Boolean
 <p>Tuples, like arrays, are fixed-length.
 But unlike arrays they are <strong>heterogeneous</strong> sequences of elements.</p>
 <p>Tuples can also be typed explicitly or implicitly</p>
-<div class="tabbed-set" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><label for="__tabbed_3_1">Explicit</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><label for="__tabbed_5_1">Explicit</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="n">person</span><span class="w"> </span>: <span class="p">(</span><span class="o">&amp;</span><span class="kt">str</span><span class="p">,</span><span class="w"> </span><span class="kt">i32</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="kt">str</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;John&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">35</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Doe&quot;</span><span class="p">);</span><span class="w"></span>
 </code></pre></div>
 </div>
-<input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><label for="__tabbed_3_2">Implicit</label><div class="tabbed-content">
+<input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><label for="__tabbed_5_2">Implicit</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="n">person</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;John&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">35</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Doe&quot;</span><span class="p">);</span><span class="w"></span>
 </code></pre></div>
 </div>
@@ -1652,6 +1798,9 @@ But unlike arrays they are <strong>heterogeneous</strong> sequences of elements.
 <span class="kd">let</span><span class="w"> </span><span class="p">(</span><span class="k">fn</span><span class="p">,</span><span class="w"> </span><span class="n">age</span><span class="p">,</span><span class="w"> </span><span class="n">ln</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">person</span><span class="p">;</span><span class="w"></span>
 </code></pre></div></p>
 <p>Tuples <strong>can</strong> be made mutable with the <code>mut</code> keyword.</p>
+<h3 id="control-flow">Control flow;</h3>
+<h4 id="match">match</h4>
+<p><strong><code>match</code></strong> is similar to the <code>switch</code> statement in C#.</p>
                 
               
               
