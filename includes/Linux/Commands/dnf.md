@@ -10,7 +10,7 @@ View all packages installed by user
 dnf history userinstalled
 ```
 
-[**Package group** <sup>:material-fedora:</sup>][https://docs.fedoraproject.org/en-US/quick-docs/getting-started-with-virtualization/]
+[**Package group** <sup>:material-fedora:</sup>](https://docs.fedoraproject.org/en-US/quick-docs/getting-started-with-virtualization/)
 
 === "Display information"
 
@@ -27,6 +27,13 @@ dnf history userinstalled
     # Include optional packages
     dnf group install --with-optional virtualization
     ```
+
+[**Modules** <sup>:material-fedora:</sup>](https://docs.fedoraproject.org/en-US/modularity/using-modules/) are special package groups representing an application, runtime, or a set of tools. 
+The [Node.js module](https://nodejs.org/en/download/package-manager/#centos-fedora-and-red-hat-enterprise-linux) allows you to select several **streams** corresponding to major versions.
+
+```sh
+dnf module install nodejs:12
+```
 
 Global dnf configuration is stored in either **/etc/yum.conf** or **/etc/dnf.conf**{: #dnf-config }.
 

@@ -32,14 +32,24 @@ A somewhat larger, more complicated dataset featuring some of history's battlies
 ## 🚀 Starships
 Ships famous, to varying degrees, for plying the inky black. If these interest you, check out my [**Starships**](https://github.com/jasper-zanjani/starships) repo too.
 
-| Name             | Class        | Registry   | Crew |
-| :--------------- | :----------- | :--------- | :--- |
-| USS Enterprise   | Constitution | NCC-1701   | 203  |
-| USS Constitution | Constitution | NCC-1700   | 204  |
-| USS Defiant      | Defiant      | NX-74205   | 50   |
-| USS Voyager      | Intrepid     | NCC-74656  | 141  |
-| USS Enterprise   | Galaxy       | NCC-1701-D | 6000 |
-| USS Reliant      | Miranda      | NCC-1864   | 35   |
+=== "Starships"
+
+    | Name             | Class        | Registry   | Crew |
+    | :--------------- | :----------- | :--------- | :--- |
+    | USS Enterprise   | Constitution | NCC-1701   | 203  |
+    | USS Constitution | Constitution | NCC-1700   | 204  |
+    | USS Defiant      | Defiant      | NX-74205   | 50   |
+    | USS Voyager      | Intrepid     | NCC-74656  | 141  |
+    | USS Enterprise   | Galaxy       | NCC-1701-D | 6000 |
+    | USS Reliant      | Miranda      | NCC-1864   | 35   |
+
+
+=== "Officers"
+
+    | Name             | Date of birth |
+    | ---------------- | ------------- |
+    | Kirk, James      | 2233-03-22    |
+    | Picard, Jean-Luc | 2305-07-13    |
 
 ## 🧔 Mathematicians
 An expanded assortment of smartypants from a different era.

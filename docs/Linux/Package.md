@@ -1,6 +1,6 @@
 # Package management
 
---8<-- "includes/Containers/repo.md"
+--8<-- "includes/Containers/Docker/repo.md"
 
 --8<-- "includes/Linux/Commands/snap.md"
 

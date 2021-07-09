@@ -2,16 +2,15 @@
 
 ## ✔&#xfe0f; TODO
 
-- C#
-    - [ ] :brain: [:octicons-play-24: Working with files and streams in C#](https://app.pluralsight.com/library/courses/csharp-working-files-streams)
-    - [ ] :brain: [:octicons-play-24: Using HttpClient to consume APIs in .NET Core](https://app.pluralsight.com/library/courses/httpclient-consume-apis-dotnet-core/table-of-contents)
-    - [ ] :brain: [:octicons-play-24: Programming in Microsoft C# - Exam 70-483](https://www.udemy.com/course/programming-in-microsoft-c-exam-70-483)
-    - [x] :money_with_wings: [:octicons-play-24: udemy.com - Programming in Microsoft C# - Exam 70-483](https://www.udemy.com/course/programming-in-microsoft-c-exam-70-483/ "udemy.com - Programming in Microsoft C# - Exam 70-483")
-- pytest
-    - [ ] :money_with_wings: [:octicons-play-24: 2.5-hour Udemy course](https://www.udemy.com/course/hands-on-test-driven-development-with-python/)
-    - [ ] :money_with_wings: [:octicons-play-24: 6-hour Udemy course](https://www.udemy.com/course/elegant-automation-frameworks-with-python-and-pytest/)
-    - [x] :money_with_wings: [:material-amazon: _Python Testing With Pytest_](https://www.amazon.com/gp/product/B0773VRHWT)
+- [ ] :material-language-rust: [Rust Udemy course](https://www.udemy.com/course/rust-fundamentals/)
+- [ ] :material-language-rust: The Rust Book
+- [ ] :material-language-rust: Practical Rust Projects
 
+## 💰 Sales watch:
+
+- [ ] [Hands-on Systems Programming with Rust](https://www.packtpub.com/product/hands-on-systems-programming-with-rust-video/9781838822132)
+- [ ] [Creative Projects for Rust Programmers](https://www.packtpub.com/product/creative-projects-for-rust-programmers/9781789346220)
+- [ ] [Practical System Programming for Rust Developers](https://www.packtpub.com/product/practical-system-programming-for-rust-developers/9781800560963)
 
 ## 🚀 Space
 

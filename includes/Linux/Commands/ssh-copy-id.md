@@ -1,4 +1,4 @@
-#### ssh-copy-id
+This command copies the SSH public key to a specified account's **~/.ssh/authorized_keys** file.
 
 In Windows, this command is not available, so a workaround is to simply [pipe the public key](https://www.chrisjhart.com/Windows-10-ssh-copy-id/) over SSH itself.
 

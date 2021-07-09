@@ -1,314 +1,335 @@
 # 👨‍💻 Coding
 
-## Simple structures
-
+## Text
 ### Hello, world!
 
-=== ":material-language-csharp:"
+=== "Hello, world!"
 
-    ```csharp
-    using System;
+    !!! rs "&nbsp;"
+        --8<-- "includes/Coding/Rust/hw.md"
 
-    class Program
-    {
-        static void Main()
-        {
-            Console.WriteLine("Hello World!");
-        }
-    }
-    ```
+    !!! cs "&nbsp;"
+        ```csharp
+        Console.WriteLine("Hello World!");
+        ```
 
-=== ":material-language-python:"
+    !!! py "&nbsp;"
+        ```py
+        "Hello, world!"
+        ```
 
-    ```py
-    def main():
-        "Hello, world!")
+=== "(parameterized)"
 
-    if __name__ == "__main__":
-        main()
-    ```
+    ??? rs "&nbsp;"
+        --8<-- "includes/Coding/Rust/hwp.md"
+
+    ??? cs "&nbsp;"
+        --8<-- "includes/Coding/C-Sharp/hwp.md"
+
+    ??? py "&nbsp;"
+
+        === "Simple"
+            --8<-- "includes/Coding/Python/hwp.md"
+
+        === "argparse"
+            --8<-- "includes/Coding/Python/hwp-argparse.md"
 
 
-### Dates and times
+=== "(interactive)"
+
+    ??? rs "&nbsp;"
+        --8<-- "includes/Coding/Rust/hwi.md"
+
+    ??? py "&nbsp;"
+        --8<-- "includes/Coding/Python/hwi.md"
+
+        
+
+## Numbers
+
+=== "Weight on Mars"
+
+    ??? rs "&nbsp;"
+        --8<-- "includes/Coding/Rust/mars.md"
+
+    ??? py "&nbsp;"
+        --8<-- "includes/Coding/Python/mars.md"
+
+=== "Double array"
+
+    ??? py "&nbsp;"
+
+        === "List comprehension"
+
+            ```py
+            [ 2 * el for el in primes ]
+            ```
+            
+        === "map()"
+
+            ```py
+            primes = [1, 2, 3, 5, 7, 11, 13, 17, 19, 23]
+            double = lambda x: 2*x
+            list(map(double, primes))
+            ```
+
 
 Parse a date string
 
-=== ":material-language-csharp:"
+??? cs "&nbsp;"
 
-    ```csharp
-    string rawDate = "07/04/1776";
-    try 
-    {
-        DateTime parsedDate = DateTime.Parse(rawDate);
-    }
-    catch (FormatException)
-    {
-        Console.WriteLine("Unparsable!")
-    }
 
-    // Alternatively:
-    DateTime.TryParse(rawDate, out parsedDate);
+    === "TryParse"
 
-    Console.WriteLine(parsedDate.ToLongDateString()); // => "July 4, 1776"
-    ```
+        ```csharp
+        string rawDate = "07/04/1776";
+        DateTime.TryParse(rawDate, out parsedDate);
 
+        Console.WriteLine(parsedDate.ToLongDateString()); // => "July 4, 1776"
+        ```
+
+    === "try/catch"
+    
+        ```csharp
+        string rawDate = "07/04/1776";
+        try 
+        {
+            DateTime parsedDate = DateTime.Parse(rawDate);
+        }
+        catch (FormatException)
+        {
+            Console.WriteLine("Unparsable!")
+        }
+        ```
 
 ## File operations
 
-### Write text file
-
-=== ":material-language-csharp:"
-
-    ```csharp
-    using (StreamWriter writer = File.CreateText("test.txt"))
-    {
-        writer.WriteLine("Hello, world!");
-    }
-    ```
-
-=== ":material-language-python:"
-
-    ```py
-    with open('text', 'w') as f:
-        f.write('Hello, world!')
-    ```
-
-### Read text file
-
-=== ":material-language-csharp:"
-
-    ```csharp
-    using System.IO;
-
-    string raven = File.ReadAllText("raven");
-    ```
-
-=== ":material-language-csharp:"
-
-    ```csharp
-    using System.IO;
-
-    string[] raven = File.ReadAllLines("raven");
-    ```
 
 
-=== ":material-language-csharp:"
+=== ":material-plus: Create"
 
-    ```csharp
-    using System.IO;
+    ??? cs "&nbsp;"
 
-    using (StreamReader reader = File.OpenText("raven"))
-    {
-        reader.ReadToEnd();
-    }
-    ```
-
-=== ":material-language-csharp:"
-
-    ```csharp
-    using System.IO;
-
-    using (StreamReader reader = File.OpenText("raven"))
-    {
-        string s;
-        while ((s = sr.ReadLine()) != null)
+        ```csharp
+        using (StreamWriter writer = File.CreateText("test.txt"))
         {
-            Console.WriteLine(s);
+            writer.WriteLine("Hello, world!");
         }
-    }
-    ```
+        ```
 
-=== ":material-language-python:"
+    ??? py "&nbsp;"
 
-    ```py
-    with open('raven') as f:
-        f.readlines()
-    ```
+        ```py
+        with open('text', 'w') as f:
+            f.write('Hello, world!')
+        ```
 
-### Copy file
+=== ":material-eye: Read"
 
-=== ":material-language-csharp:"
+    ??? cs "&nbsp;"
 
-    ```csharp
-    using System.IO;
+        === "ReadAllText"
 
-    File.Copy('raven', 'raven.bak')
-    ```
+            ```csharp
+            using System.IO;
 
-=== ":material-language-python:"
+            string raven = File.ReadAllText("raven");
+            ```
 
-    ```python
-    import shutil
+        === "ReadAllLines"
 
-    shutil.copyfile('raven', 'raven.bak')
-    ```
+            ```csharp
+            using System.IO;
 
-=== ":material-bash:"
+            string[] raven = File.ReadAllLines("raven");
+            ```
 
-    ```sh
-    cp ./raven{,.bak}
-    ```
+        Using `StreamReader` objects
 
-=== ":material-powershell:"
+        === "ReadToEnd"
 
-    ```powershell
-    Copy-Item .\raven .\raven.bak
-    ```
+            ```csharp
+            using System.IO;
 
-### Copy file, overwriting
-
-=== ":material-language-csharp:"
-
-    ```csharp
-    using System.IO;
-
-    File.Copy('raven', 'raven.bak', true)
-    ```
-
-=== ":material-language-python:"
-
-    ```python
-    import shutil
-
-    shutil.copyfile('raven', 'raven.bak')
-    ```
-
-=== ":material-bash:"
-
-    ```sh
-    cp -f ./raven{,.bak}
-    ```
-
-=== ":material-powershell:"
-
-    ```powershell
-    Copy-Item -Force .\raven .\raven.bak
-    ```
-
-### Move file
-
-```csharp
-using System.IO;
-
-File.Move('raven', 'raven.bak');
-```
-
-
-### CSV
-
-=== ":material-language-csharp:"
-
-    ```csharp
-    using System;
-    using System.IO;
-    using CsvHelper;
-
-    struct Greek
-    {
-        public string name { get; set; }
-        public string city { get; set; }
-        public string dob { get; set; }
-    }
-
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            using (StreamReader reader = new StreamReader("greeks.csv"))
+            using (StreamReader reader = File.OpenText("raven"))
             {
-                CsvReader csvreader = new CsvReader(reader, System.Globalization.CultureInfo.InvariantCulture);
-                
-                var data = csvreader.GetRecords<Greek>();
-                
-                foreach (Greek item in data)
+                reader.ReadToEnd();
+            }
+            ```
+
+        === "Loop"
+
+            ```csharp
+            using System.IO;
+
+            using (StreamReader reader = File.OpenText("raven"))
+            {
+                string s;
+                while ((s = sr.ReadLine()) != null)
                 {
-                    Console.WriteLine($"{item.name,-15} {item.city,-15} {item.dob,-15}");
+                    Console.WriteLine(s);
+                }
+            }
+            ```
+
+    ??? py "&nbsp;"
+
+        ```py
+        with open('raven') as f:
+            f.readlines()
+        ```
+
+
+=== ":material-content-copy: Copy"
+
+    ??? cs "&nbsp;"
+
+        ```csharp
+        using System.IO;
+
+        File.Copy('raven', 'raven.bak', true)
+        ```
+
+    ??? py "&nbsp;"
+
+        ```python
+        import shutil
+
+        shutil.copyfile('raven', 'raven.bak')
+        ```
+
+=== ":material-file-move: Move"
+
+    ??? cs "&nbsp;"
+
+        ```csharp
+        using System.IO;
+
+        File.Move('raven', 'raven.bak');
+        ```
+
+
+### Text output
+
+??? rs "&nbsp;"
+
+    ```rs
+    fn main() {
+        let args: Vec<String> = std::env::args().collect();
+
+        let filename = &args[1];
+
+        let contents = std::fs::read_to_string(filename)
+            .expect("Couldn't read file");
+
+        println!("{}", contents);
+    }
+    ```
+
+### Data file formats
+
+=== "CSV"
+
+    ??? cs "&nbsp;"
+
+        ```csharp
+        using System;
+        using System.IO;
+        using CsvHelper;
+
+        struct Greek
+        {
+            public string name { get; set; }
+            public string city { get; set; }
+            public string dob { get; set; }
+        }
+
+        class Program
+        {
+            static void Main(string[] args)
+            {
+                using (StreamReader reader = new StreamReader("greeks.csv"))
+                {
+                    CsvReader csvreader = new CsvReader(reader, System.Globalization.CultureInfo.InvariantCulture);
+                    
+                    var data = csvreader.GetRecords<Greek>();
+                    
+                    foreach (Greek item in data)
+                    {
+                        Console.WriteLine($"{item.name,-15} {item.city,-15} {item.dob,-15}");
+                    }
                 }
             }
         }
-    }
-    ```
+        ```
 
-=== ":material-language-python:"
+    ??? py "&nbsp;"
 
-    ```py
-    import csv
+        ```py
+        import csv
 
-    with open ("greeks.csv") as f:
-        r = csv.reader(f)
-        headers = next(r)
-        data = [row for row in r]
-    ```
+        with open ("greeks.csv") as f:
+            r = csv.reader(f)
+            headers = next(r)
+            data = [row for row in r]
+        ```
 
-### JSON
+=== "JSON"
 
-```csharp
+    ??? cs "&nbsp;"
 
-
-using (var stream = await storageFile.OpenAsync(FileAccessMode.Read))
-{
-    using (var dataReader = new DataReader(stream))
-    {
-        await dataReader.LoadAsync((uint)stream.Size);
-        var json = dataReader.ReadString((uint)stream.Size);
-        customerList = JsonConvert.DeserializeObject<List<Customer>>(json);
-    }
-}
-```
+        ```csharp
+        using (var stream = await storageFile.OpenAsync(FileAccessMode.Read))
+        {
+            using (var dataReader = new DataReader(stream))
+            {
+                await dataReader.LoadAsync((uint)stream.Size);
+                var json = dataReader.ReadString((uint)stream.Size);
+                customerList = JsonConvert.DeserializeObject<List<Customer>>(json);
+            }
+        }
+        ```
 
 ### Random numbers
 
-Integer
+=== "Integer"
 
-=== ":material-language-csharp:"
+    ??? cs "&nbsp;"
 
-    ```csharp
-    Random r = new System.Random();
-    int result = r.Next(1, 6);
-    ```
+        ```csharp
+        Random r = new System.Random();
+        int result = r.Next(1, 6);
+        ```
 
-=== ":material-language-python:"
+    ??? py "&nbsp;"
 
-    ```py
-    import random
-    random.randrange(1,6)
-    ```
+        ```py
+        import random
+        random.randrange(1,6)
+        ```
 
-Real number
+=== "Real number"
 
-=== ":material-language-csharp:"
+    ??? cs "&nbsp;"
 
-    ```csharp
-    Random r = new System.Random();
-    int result = r.NextDouble();
-    ```
+        ```csharp
+        Random r = new System.Random();
+        int result = r.NextDouble();
+        ```
 
-=== ":material-language-python:"
+    ??? py "&nbsp;"
 
-    ```py
-    import random
-    random.random()
-    ```
-
-### Double array
-
-
-=== ":material-language-python:"
-
-    ```py
-    primes = [1, 2, 3, 5, 7, 11, 13, 17, 19, 23]
-    double = lambda x: 2*x
-    list(map(double, primes))
-
-    # Alternatively: 
-    [ 2 * el for el in primes ]
-    ```
+        ```py
+        import random
+        random.random()
+        ```
 
 
 
 
 ### String formatting
-Desired output (10 spaces per column, with the third right-justified):
+
+
 ```
 Socrates   Athens         470 BC
 Plato      Athens         428 BC
@@ -317,7 +338,9 @@ Euclid     Alexandria     325 BC
 Pythagoras Samos          570 BC
 ```
 
-=== ":material-language-csharp:"
+??? cs "&nbsp;"
+
+    In C#, multidimensional arrays cannot be traversed with the `foreach` loops which appear to flatten its structure.
 
     ```csharp
     for (int i = 0; i <= greeks.GetUpperBound(0); i++)
@@ -326,25 +349,25 @@ Pythagoras Samos          570 BC
     }
     ```
 
-=== ":material-language-python:"
+??? py "&nbsp;"
 
     ```py
     for r in greeks:
         print("{0:10} {1:10} {2:>10}".format(r[0],r[1],r[2]))
     ```
     
-    In C#, multidimensional arrays cannot be traversed with the `foreach` loops which appear to flatten its structure.
+    
 
 Currency formatting
 
-=== ":material-language-csharp:"
+??? cs "&nbsp;"
 
     ```csharp
     Console.WriteLine($"{123456.789:C }");          //  $123,456.79
     Console.WriteLine(123456.789d.ToString("C"));   //  $123,456.79
     ```
 
-=== ":material-language-python:"
+??? py "&nbsp;"
 
     === "f-string"
 
@@ -354,28 +377,150 @@ Currency formatting
 
     === "locale module"
 
+        Formatting a number in currency requires use of the **locale** module, and for the locale environment variables to be set.
+
         ```py
         import locale
         
-        def main():
-            """
-            Formatting a number in currency requires use of the **locale** module, and 
-            for the locale environment variables to be set.
-            """
-            locale.setlocale(locale.LC_ALL, 'en_US.UTF-8')
-            locale.currency(123456.789)                 #   $123456.79
-
-        if __name__ == "__main__":
-            main()
+        locale.setlocale(locale.LC_ALL, 'en_US.UTF-8')
+        locale.currency(123456.789)                 #   $123456.79
         ```
 
-### TUI input validation loop
+## Network
+
+[**Berkeley sockets <sup>:material-wikipedia:</sup>**](https://en.wikipedia.org/wiki/Berkeley_sockets) have formed the basis of modern network communication since their introduction in the early 1980s. 
+The use of the term "socket" to refer to an endpoint for communication began as early as [1971 <sup>:material-wikipedia:</sup>](https://en.wikipedia.org/wiki/Network_socket#History) with ARPANET.
+As a concept it belongs in the Session layer of the OSI model.
+
+The original Berkeley sockets API, written in C, has been maintained in implementations of other languages
+
+- Python's [**socket module <sup>:material-language-python:</sup>**](https://docs.python.org/3/library/socket.html)
+- Rust's [**net** module <sup>:material-language-rust:</sup>](https://doc.rust-lang.org/std/net/index.html)
+
+The API:
+
+- **socket()** creates a new socket in the operating system, identified by an integer. It returns a file descriptor
+- **bind()** associates a socket with an *address structure*: IP address and port number
+- **listen()** blocks for incoming connections
+- **accept()** creates a new TCP connection from the remote client
+
+### Echo server
+
+An echo server simply reflects text sent to it over a TCP connection
+
+- Both Python's **socket** object and Rust's **TcpListener** object expose a `bind()` method, although in Rust host and port are combined in a string, whereas in Python they are passed as a `(str,int)` tuple.
+- Both implementations expose an `accept()` method that returns a tuple, but in Python the tuple returned contains the **socket** (named "conn") object and a nested tuple that contains the address of the client.
+In Rust, the equivalent to the connection object seems to be a **TcpStream** object ...
+    - This object contains binary data which must be put into a buffer. 
+    In Rust the buffer is passed as a mutable reference to the `read()` method (i.e. `read(&mut buffer)`). The buffer size is determined by the size of the initialized buffer.
+    - In Python the binary information is assigned to a variable using the `recv()` method, which does take an integer argument specifying the buffer size.
+
+```
+echo "Hello, world!" | netcat localhost 8080
+```
+
+??? rs "&nbsp;"
+
+    ```rs
+    use std::net::TcpListener;
+    use std::io::Read;
+
+    fn main() {
+        let server = Server::new("127.0.0.1:8000".to_string());
+        server.run();
+    }
+
+    pub struct Server {
+        addr: String,
+    }
+
+    impl Server {
+        pub fn new(addr: String) -> Self {
+            Self { addr }
+        }
+
+        pub fn run(self) {
+            println!("Listening on {}", self.addr);
+
+            let listener = TcpListener::bind(&self.addr).unwrap();
+
+            loop {
+                match listener.accept() {
+                    Ok((mut stream, _)) => {
+                        let mut buffer = [0; 1024];
+                        match stream.read(&mut buffer) {
+                            Ok(_) => {
+                                println!("Received request: {}", String::from_utf8_lossy(&buffer));
+                            },
+                            Err(e) => println!("Failed to read from connection: {}", e),
+                        }
+                    }
+                    Err(e) => println!("Failed to establish a connection: {}", e), 
+                }
+            }
+        }
+    }
+    ```
+
+??? py "&nbsp;"
+
+    ```py
+    import socket
+
+
+    class Echo_Server:
+        def __init__(self, address: str):
+            self.addr = address
+
+        def run(self):
+            HOST = self.addr[: self.addr.find(":")]
+            PORT = int(self.addr[self.addr.find(":") + 1 :])
+
+            with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+                s.bind((HOST, PORT))
+                s.listen()
+                conn, addr = s.accept()
+                with conn:
+                    print(f"Received connection from {addr}")
+                    while True:
+                        data = conn.recv(1024)
+                        if not data:
+                            break
+                        print(data.decode("utf-8"))
+                        # conn.sendall(data) # Echo server
+
+
+    def main():
+        server = Echo_Server("127.0.0.1:8000")
+        server.run()
+
+    if __name__ == '__main__':
+        main()
+    ```
+
+## Terminal
+### Input validation loop
 
 Such a loop will continuously prompt for valid input, in this case an integer.
 
-=== ":material-language-csharp:"
+??? cs "&nbsp;"
 
-    === "Parse"
+    === "TryParse"
+
+        ```csharp
+        while (true):
+        {
+            int option;
+            int.TryParse(Console.ReadLine(), out option);
+            if (option != null)
+            {
+                // ...
+            }
+            else {break;}
+        }
+        ```
+
+    === "try/catch"
 
         ```csharp
         while (true):
@@ -390,21 +535,10 @@ Such a loop will continuously prompt for valid input, in this case an integer.
                 // Number was too big
             }
         }
-
-        // Alternatively:
-        while (true):
-        {
-            int option;
-            int.TryParse(Console.ReadLine(), out option);
-            if (option != null)
-            {
-                // ...
-            }
-            else {break;}
-        }
         ```
 
-=== ":material-language-python:"
+
+??? py "&nbsp;"
 
     ```py
     while True:
@@ -414,142 +548,14 @@ Such a loop will continuously prompt for valid input, in this case an integer.
             # Integer was not able to be parsed
     ```
 
-## Terminal
+### Guessing game
 
-### Color output
-
-=== ":material-language-csharp:"
-
-    === ":red_square:"
-
-        ```csharp
-        Console.Color = ConsoleColor.Red;
-        Console.WriteLine("Red!")
-        Console.ResetColor();
-        ```
-
-
-    === ":green_square:"
-
-        ```csharp
-        Console.Color = ConsoleColor.Green;
-        Console.WriteLine("Green!")
-        Console.ResetColor();
-        ```
-
-    === ":yellow_square:"
-
-        ```csharp
-        Console.Color = ConsoleColor.Yellow;
-        Console.WriteLine("Yellow!")
-        Console.ResetColor();
-        ```
-
-    === ":blue_square:"
-
-        ```csharp
-        Console.Color = ConsoleColor.Blue;
-        Console.WriteLine("Blue!")
-        Console.ResetColor();
-        ```
-
-    === ":purple_square:"
-
-        ```csharp
-        Console.Color = ConsoleColor.Magenta;
-        Console.WriteLine("Magenta!")
-        Console.ResetColor();
-        ```
-
-=== ":material-language-python: colorama"
-
-    === ":red_square:"
-
-        ```python
-        print(f"{colorama.Fore.RED} Red! {colorama.Style.RESET_ALL}")
-        ```
-
-    === ":green_square:"
-
-        ```python
-        print(f"{colorama.Fore.GREEN} Green! {colorama.Style.RESET_ALL}")
-        ```
-
-    === ":yellow_square:"
-
-        ```python
-        print(f"{colorama.Fore.YELLOW} Yellow! {colorama.Style.RESET_ALL}")
-        ```
-
-    === ":blue_square:"
-
-        ```python
-        print(f"{colorama.Fore.BLUE} Blue! {colorama.Style.RESET_ALL}")
-        ```
-
-    === ":purple_square:"
-
-        ```python
-        print(f"{colorama.Fore.MAGENTA} Magenta! {colorama.Style.RESET_ALL}")
-        ```
-
-
-
-### Parameterized "Hello, world!"
-
-=== ":material-language-csharp:"
-
-    ```csharp
-    using System.CommandLine;
-    using System.CommandLine.Invocation;
-
-    static int Main(string[] args)
-    {
-        var cmd = new RootCommand
-        {
-            new Argument<string>("name"),//, "Your name"),
-            new Option<string?>(new[] {"--greeting", "-g" },"The greeting to use"),
-        };
-
-        cmd.Handler = CommandHandler.Create<string, string?>(HandleGreeting);
-
-        return cmd.Invoke(args);
-    }
-
-    static void HandleGreeting(string? greeting, string name)
-    {
-        Console.WriteLine($"{greeting}, {name}");
-    }
-    ```
-
-=== ":material-language-python:"
-
-    ```py
-    import argparse
-
-    def get_args():
-        parser = argparse.ArgumentParser(description="Say hello")
-        parser.add_argument(
-            dest="name",metavar="name", default="World", help="Name to greet"
-        )
-        parser.add_argument(
-            "--greeting","-g", dest="greeting", default="Hello", help="Greeting to use"
-        )
-        return parser.parse_args()
-
-
-    def main():
-        args = get_args()
-        print(f"{args.greeting}, {args.name}!")
-
-
-    if __name__ == "__main__":
-        main()
-    ```
+??? rs "&nbsp;"
+    --8<-- "includes/Coding/Rust/guess.md"
 
 ### Oxford comma
 
-=== ":material-language-csharp:"
+??? cs "&nbsp;"
 
     ```csharp
     using System.CommandLine;
@@ -574,11 +580,9 @@ Such a loop will continuously prompt for valid input, in this case an integer.
     }
     ```
 
-=== ":material-language-python:"
+??? py "&nbsp;"
 
     ```py
-    #!/usr/bin/env python3
-
     import argparse
 
 
@@ -607,6 +611,89 @@ Such a loop will continuously prompt for valid input, in this case an integer.
     if __name__ == "__main__":
         main()
     ```
+
+
+### Color output
+
+=== ":red_square:"
+    ??? cs "&nbsp;"
+
+        ```csharp
+        Console.Color = ConsoleColor.Red;
+        Console.WriteLine("Red!")
+        Console.ResetColor();
+        ```
+
+    ??? py "&nbsp;"
+
+        ```python
+        print(f"{colorama.Fore.RED} Red! {colorama.Style.RESET_ALL}")
+        ```
+
+
+=== ":green_square:"
+
+    ??? cs "&nbsp;"
+        ```csharp
+        Console.Color = ConsoleColor.Green;
+        Console.WriteLine("Green!")
+        Console.ResetColor();
+        ```
+
+    ??? py "&nbsp;"
+        ```python
+        print(f"{colorama.Fore.GREEN} Green! {colorama.Style.RESET_ALL}")
+        ```
+
+=== ":yellow_square:"
+
+    ??? cs "&nbsp;"
+
+        ```csharp
+        Console.Color = ConsoleColor.Yellow;
+        Console.WriteLine("Yellow!")
+        Console.ResetColor();
+        ```
+
+    ??? py "&nbsp;"
+
+        ```python
+        print(f"{colorama.Fore.YELLOW} Yellow! {colorama.Style.RESET_ALL}")
+        ```
+
+=== ":blue_square:"
+
+    ??? cs "&nbsp;"
+
+        ```csharp
+        Console.Color = ConsoleColor.Blue;
+        Console.WriteLine("Blue!")
+        Console.ResetColor();
+        ```
+
+    ??? py "&nbsp;"
+
+        ```python
+        print(f"{colorama.Fore.BLUE} Blue! {colorama.Style.RESET_ALL}")
+        ```
+
+=== ":purple_square:"
+
+    ??? cs "&nbsp;"
+
+        ```csharp
+        Console.Color = ConsoleColor.Magenta;
+        Console.WriteLine("Magenta!")
+        Console.ResetColor();
+        ```
+
+    ??? py "&nbsp;"
+
+        ```python
+        print(f"{colorama.Fore.MAGENTA} Magenta! {colorama.Style.RESET_ALL}")
+        ```
+
+
 
 ### Calculator
 
@@ -701,7 +788,13 @@ Such a loop will continuously prompt for valid input, in this case an integer.
     ```
 
 
-## Object-oriented programming
+## TDD
+
+Text fixture
+
+
+
+## OOP
 
 ### DnD character
 
@@ -1048,471 +1141,101 @@ Such a loop will continuously prompt for valid input, in this case an integer.
 
 This demonstration project provides a scenario for implementing OOP and TDD principles in a variety of languages and implementations.
 
-**Oficer** and **Starship** are simple classes with intuitive properties and fields.
-The **StarshipClass** enum defines the available starship types.
-**Fleet** serves as a container for Starships.
+- **Officer** and **Starship** are simple classes with intuitive properties and fields.
+- The **StarshipClass** is a simple enum that defines available starship types.
+- **Fleet** serves as a container for Starships.
+- A Captain is paired with a Starship to form a **StarshipDeployment**.
+    - **CaptainSelector**, which is passed to StarshipDeployment by dependency injection, evaluates whether the Officer provided has what it takes to ply the inky black.
+This boils down to a check on the Grade property, which is simple to test in testing frameworks where a mocked Officer object can be set up with unsatisfactory Grade values.
+    - StarshipDeployment also takes a **StarshipValidator** object by dependency injection, which it uses to perform checks on a given Starship.
+These checks provide opportunities to mock Starship and Officer objects in unit testing.
+        - `IsCaptained()` checks if the Starship has a Captain assigned
+        - `ValidateRegistry()` makes sure the Starship's registry number begins with NCC or NX
+        - `Evaluate()` runs all the other methods in the class and returns True only if all checks pass. This provides the opportunity to test a mocked validator for invocation of the `Evaluate()` method.
 
+=== "StarshipClass"
+
+    ??? py "&nbsp;"
+        --8<-- "includes/Coding/Python/Starships/StarshipClass.md"
+
+    ??? cs
+        --8<-- "includes/Coding/C-Sharp/Starships/StarshipClass.md"
 
 
 === "Officer"
 
-    === ":material-language-csharp:"
+    ??? rs "&nbsp;"
+        --8<-- "includes/Coding/Rust/Starships/Officer.md"
 
-        ```csharp
-        public interface IOfficer
-        {
-            string FirstName { get; set; }
-            string LastName { get; set; }
-            DateTime BirthDate { get; set; }
-            char Grade { get; set; }
-            string Name { get; }
-        }
+    ??? cs
+        --8<-- "includes/Coding/C-Sharp/Starships/Officer.md"
 
-        public class Officer : IOfficer
-        {
-            public string FirstName { get; set; }
-            public string LastName { get; set; }
-            public DateTime BirthDate { get; set; }
-            public string Name { get { return $"{FirstName} {LastName}"; } }
-            public char Grade { get; set; }
-        }
-        ```
-
-
-    === ":material-powershell:"
-
-        ```powershell
-        class Captain
-        {
-            [string]$FirstName
-            [string]$LastName
-            [DateTime]$BirthDate
-
-            Captain([string]$n1 [string]$n2)
-            {
-                $this.FirstName = $n1
-                $this.LastName = $n2
-            }
-
-            [string]Name() { return "$($this.FirstName) $($this.LastName)" }
-        }
-        ```
-
-    === ":material-language-cpp:"
-
-        ```cpp
-        #include <string>
-
-        class Officer
-        {
-        private: 
-            std::string _firstName {};
-            std::string _lastName {};
-            
-            std::string Name() { return _firstName + _lastName; }
-        }
-        ```
-
-    === ":material-language-python:"
 
 === "Starship"
 
-    === ":material-language-csharp:"
-
-        ```csharp
-        public interface IStarship
-        {
-            string Name { get; set; }
-            string Registry { get; set; }
-            int Crew { get; set; }
-            StarshipClass StarshipClass { get; set; }
-            IOfficer Captain { get; set; }
-        }
-
-        public class Starship : IStarship
-        {
-            public string Name { get; set; }
-            public string Registry { get; set; }
-            public int Crew { get; set; }
-            public StarshipClass StarshipClass { get; set; }
-            public IOfficer Captain { get; set; }
-
-        }
-        ```
-
-    === ":material-powershell:"
-
-    === ":material-language-cpp:"
-
-        ```cpp
-        class Starship
-        {
-        private:
-            std::string _name{};
-            std::string _reg{};
-            StarshipClass _starshipclass{};
-            int _crew{};
-
-        public:
-            Starship() = default;
-            Starship(std::string n, std::string r, StarshipClass cls) : _name {n}, _reg {r}, _starshipclass {cls} {};
-            ~Starship() = default;
-            int getCrew()             { return _crew; }
-            std::string getName()     { return _name; }
-            std::string getRegistry() { return _reg; }
-            std::string getClass();
-        };
-
-        std::string Starship::getClass() 
-        {
-            switch (_starshipclass)
-            {
-                case 2:
-                    return "Constitution";
-                    break;
-                
-                default:
-                    return "Other";
-                    break;
-            }
-        }
-
-        #endif // STARSHIP_H
-        ```
-
-    === ":material-language-python:"
-
-        ```py
-        class Starship:
-            def __init__(
-                self,
-                name=None,
-                starshipclass: StarshipClass = StarshipClass.NX,
-                registry=None,
-                crew=0,
-            ):
-                self.name = name
-                self.registry = registry
-                self._crew = crew
-                self.crew_on_leave = 0
-                self._starshipclass = starshipclass
-
-            @property
-            def crew(self):
-                return self._crew
-
-            @crew.setter
-            def crew(self, crew: int):
-                if crew < 0:
-                    raise Exception
-                else:
-                    self._crew = crew
-
-            @property
-            def starshipclass(self):
-                return self._starshipclass
-
-            @starshipclass.setter
-            def starshipclass(self, starshipclass: StarshipClass):
-                if starshipclass not in StarshipClass:
-                    raise Exception
-                else:
-                    self._starshipclass = starshipclass
-        ```
-
-
-=== "StarshipClass"
-
-    === ":material-language-csharp:"
-
-        ```csharp
-        public enum StarshipClass
-        {
-            NX,
-            GALAXY,
-            CONSTITUTION,
-            SOVEREIGN,
-            DEFIANT,
-            INTREPID,
-            MIRANDA
-        }
-        ```
+    ??? rs "&nbsp;"
+        --8<-- "includes/Coding/Rust/Starships/Starship.md"
 
-    === ":material-powershell:"
-
-    === ":material-language-cpp:"
+    ??? py "&nbsp;"
+        --8<-- "includes/Coding/Python/Starships/Starship.md"
 
-        ```cpp
-        enum StarshipClass 
-        {
-            NX = 0
-            GALAXY = 1,
-            CONSTITUTION = 2,
-            SOVEREIGN = 3,
-            DEFIANT = 4
-            INTREPID = 5
-            MIRANDA = 6
-        };
-        ```
-
-    === ":material-language-python:"
-
-        ```py
-        from enum import Enum
-        class StarshipClass(Enum):
-            NX = 'NX'
-            GALAXY = 'Galaxy'
-            CONSTITUTION = 'Constitution'
-            SOVEREIGN = 'Sovereign'
-            DEFIANT = 'Defiant'
-            INTREPID = 'Intrepid'
-            MIRANDA = 'Miranda'
-        ```
 
+=== "CaptainSelector"
 
+    ??? cs
+        --8<-- "includes/Coding/C-Sharp/Starships/CaptainSelector.md"
 
-A Captain is paired with a Starship to form a **StarshipDeployment**.
-And the **CaptainSelector** class is passed to StarshipDeployment by dependency injection.
 
-**CaptainSelector** evaluates whether the Officer provided has what it takes to ply the inky black.
-This boils down to a check on the Grade property, which is simple to test in testing frameworks where a mocked Officer object can be set up with unsatisfactory Grade values.
+=== "StarshipValidator"
 
+    ??? cs
+        --8<-- "includes/Coding/C-Sharp/Starships/StarshipValidator.md"
 
-=== ":material-language-csharp:"
 
-    ```csharp
-    public class CaptainSelector
-    {
-        public IOfficer Officer { get; set; }
+=== "StarshipDeployment"
 
-        public CaptainSelector(IOfficer officer)
-        {
-            Officer = officer;
-        }
-        public bool Evaluate()
-        {
-            return Officer.Grade == 'A' ? true : false;
-        }
-    }
-    ```
+    ??? cs "&nbsp;"
+        --8<-- "includes/Coding/C-Sharp/Starships/StarshipDeployment.md"
 
 
+## 📘 Glossary
 
-**StarshipValidator** makes a few key checks on the Starship object that is passed in upon instantiation.
-These checks provide opportunities to mock Starship and Officer objects.
+**C**
+:   
+    > "A programming language is low level when its programs require attention to the irrelevant." -Alan Perlis
 
-- `IsCaptained()` checks if the Starship has a Captain assigned
-- `ValidateRegistry()` makes sure the Starship's registry number begins with NCC or NX
-- `Evaluate()` runs all the other methods in the class and returns True only if all checks pass.
+    Despite C's reputation as a low-level programming language, in fact it merely emulates the ancient PDP-11, which is the only machine for which its abstract machine can be described as "close to the metal". 
+    In the age of parallel processes, C's serial nature...
 
-=== ":material-language-csharp:"
+    Sources:
 
-    ```csharp
-    public class StarshipValidator : IStarshipValidator
-    {
-        public IStarship Starship { get; set; }
+    - [C is not a low-level programming language](https://queue.acm.org/detail.cfm?id=3212479)
 
-        public bool IsCaptained()
-        {
-            return Starship.Captain != null ? true : false;
-        }
+**Enumeration**
+:   
+    In C# the term **enumeration** refers to the process of successively returning individual values. 
+    In Python, the term **iteration** is used to refer to the same thing, and **iterable** refers to an object that can be iterated, or parsed out into sub-elements.
 
-        public bool ValidateRegistry()
-        {
-            return Starship.Registry.StartsWith("NCC") || Starship.Registry.StartsWith("NX") ? true : false;
-        }
+    - In Python, any object that exposes the `__iter__()` and `__next__()` **dunder** methods are iterable.
+    - In C#, the `IEnumerable` interface implements enumeration.
 
-        public bool Evaluate()
-        {
-            return ValidateRegistry() && IsCaptained();
-        }
-    }
-    ```
+    Both languages feature a keyword that allows a subclass to access its direct parent.
+    Whereas in Python the terms **superclass** and **subclass** are used, in C# the terms **base class** and **derived class** are preferred.
 
+**Loop unswitching**
+:   
+    One of the core optimizations that a C compiler performs; transforms a loop containing a conditional into a conditional with a loop in both parts, which changes flow control
 
-**StarshipDeployment** takes a [StarshipValidator](#starshipvalidator) object by dependency injection, which it uses to perform checks on a given Starship upon invocation of `Deploy`, which returns a StarshipMission object.
-This provides the opportunity to test a mocked validator for invocation of the `Evaluate()` method.
 
-=== ":material-language-csharp:"
+**Register rename engine**
+:   
+    Component of modern high-end cores which is one of the largest consumers of die area and power
 
-    ```csharp
-    public class StarshipDeployment
-    {
-        public IStarshipValidator StarshipValidator { get; set; }
 
-        public StarshipDeployment(IStarshipValidator validator)
-        {
-            StarshipValidator = validator ?? throw new ArgumentNullException(nameof(validator));
-        }
+**Scalar Replacement Of Aggregates (SROA)**{: #sroa }
+:   
+    One of the core optimizations that a [C](#c) compiler performs; attempts to replace `struct`s and arrays with fixed lengths with individual variables, which allows the compiler to treat accesses as independent and elide operations entirely if it can prove the results are never visible, which also deletes padding sometimes.
 
-        public bool ValidateDestination(string destination)
-        {
-            return destination.Length > 1 ? true : false;
-        }
-
-        public StarshipMission Deploy(Starship starship, string destination)
-        {
-            bool destinationValidated = ValidateDestination(destination);
-            bool starshipValidated = StarshipValidator.Evaluate();
-
-            return destinationValidated && starshipValidated
-                ? new StarshipMission { Starship = starship as Starship, Destination = destination }
-                : throw new ArgumentException();
-        }
-    }
-    ```
-
-
-
-
-## Glossary
-
-
-#### C
-
-> "A programming language is low level when its programs require attention to the irrelevant." -Alan Perlis
-
-Despite C's reputation as a low-level programming language, in fact it merely emulates the ancient PDP-11, which is the only machine for which its abstract machine can be described as "close to the metal". 
-In the age of parallel processes, C's serial nature...
-
-Sources:
-
-- [C is not a low-level programming language](https://queue.acm.org/detail.cfm?id=3212479)
-
-
-
-#### Enumeration
-
-In C# the term **enumeration** refers to the process of successively returning individual values. In Python, the term **iteration** is used to refer to the same thing, and **iterable** refers to an object that can be iterated, or parsed out into sub-elements.
-
-- In Python, any object that exposes the `__iter__()` and `__next__()` **dunder** methods are iterable.
-- In C#, **`IEnumerable`**&#10;The `IEnumerable` interface implements enumeration.
-
-Both languages feature a keyword that allows a subclass to access its direct parent.
-Whereas in Python the terms **superclass** and **subclass** are used, in C# the terms **base class** and **derived class** are preferred.
-
-#### Go
-
-Golang or "**Go**" is a fast, high-performance, open-source, statically-typed compiled programming language. It was designed at Google by Rob Pike, Robert Giesemer, and Ken Thompson and first appeared in late 2009. Go has a syntax similar to C, but offers additional features such as memory safety, garbage collection, and others. [[2](#sources)]\
-Hello world
-```go
-package main
-import "fmt"
-func main() {
-  fmt.Println("Hello, Go World!")
-}
-```
-Compile code [[3](#sources)]
-```sh
-go build script.go # compiles to a binary executable in the same directory named "script"
-go run script.go   # compiles and runs the program
-```
-
-Mathematical function [[3](#sources)]
-```go
-package main
-
-import ("fmt" "math")
-
-func main() {
-  fmt.Println(math.Max(9, 5))
-}
-```
-Get a GitHub package named `$REPO` by `$AUTHOR`
-```sh
-go get github.com/$AUTHOR/$REPO
-go get gopkg.in/kyokomi/emoji.v1 # Emoji support
-```
-Evaluate type of data
-```go
-package main
-import ("fmt" "reflect")
-func main() {
-    fmt.Println(reflect.TypeOf(1))        // => int
-    fmt.Println(reflect.TypeOf(9.5))      // => float64
-    fmt.Println(reflect.TypeOf("string")) // => string
-    fmt.Println(reflect.TypeOf(true))     // => bool
-}
-```
-
-Sources:
-
-- [Go language for beginners in 16 parts](https://dzone.com/articles/go-language-for-beginners-in-16-parts)
-
-
-
-
-#### Loop unswitching
-
-One of the core optimizations that a C compiler performs; transforms a loop containing a conditional into a conditional with a loop in both parts, which changes flow control
-
-
-#### Register rename engine
-
-Component of modern high-end cores which is one of the largest consumers of die area and power
-
-#### Ruby
-
-REPL shell
-```sh
-irb
-```
-Begin a function definition
-```rb
-def
-```
-End a function definition
-```rb
-end
-```
-Import {package}, or 'gem'
-```rb
-require package
-```
-Write given objects to `ios`; writes newline after any that do not already have one
-```rb
-puts(*obj)
-```
-Write given objects to `ios`, with no newline
-```rb
-print(*obj)
-```
-Sort in-place
-```rb
-array.sort()
-```
-
-#### Rust 
-
-- `cargo` Rust's compilation manager, package manager, and general-purpose tool
-- `rustc` Rust compiler, usually invoked by `cargo`
-- `rustdoc` Rust documentation tool
-
-Start a new package directory `hello`
-```sh
-cargo new --bin hello
-```
-Load the locally-stored Rust book "The Rust Programming Language"
-```sh
-rustup doc --book
-```
-
-`->` precedes return data type
-
-`mut` mutable, when preceding variable identifiers, allows their values to be changed
-
-Data types include:
-- `u64` unsigned 64-bit integer
-- `i32` signed 32-bit integer
-- `u8` unsigned 8-bit integer (byte values)
-- `f32` single-precision floating point
-- `f64` double-precision floating point
-
-
-#### Scalar Replacement Of Aggregates
-
-**Scalar Replacement Of Aggregates (SROA)** is one of the core optimizations that a [C](#c) compiler performs; attempts to replace `struct`s and arrays with fixed lengths with individual variables, which allows the compiler to treat accesses as independent and elide operations entirely if it can prove the results are never visible, which also deletes padding sometimes.
-
-#### Segmented architecture
-
-Pointers might be segment IDs and an offset
+**Segmented architecture**
+:   
+    Pointers might be segment IDs and an offset

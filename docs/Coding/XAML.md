@@ -956,26 +956,24 @@ public class Observable : INotifyPropertyChanged
 
 Binding markup extensions are trivially changed to [compiled data bindings](#data-binding) by replacing `Binding` with `x:Bind`.
 
-<details>
-<summary>Note</summary>
-Note that ListView will enter an infinite loop if the SelectedHero property does not incorporate additional logic.
+!!!
+    Note that ListView will enter an infinite loop if the SelectedHero property does not incorporate additional logic.
 
-```csharp
-public Hero SelectedHero
-{
-    get { return _selectedHero; }
-    set
+    ```csharp
+    public Hero SelectedHero
     {
-        if (_selectedHero != value)
+        get { return _selectedHero; }
+        set
         {
-            _selectedHero = value;
-            OnPropertyChanged();
-            OnPropertyChanged(nameof(IsHeroSelected));
+            if (_selectedHero != value)
+            {
+                _selectedHero = value;
+                OnPropertyChanged();
+                OnPropertyChanged(nameof(IsHeroSelected));
+            }
         }
     }
-}
-```
-</details>
+    ```
 
 === "Binding markup extension"
     ```xml

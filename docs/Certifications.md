@@ -7,13 +7,13 @@
     <!-- AI -->
     <tr>
         <td align="center">
-            <a href="#ai-fundamentals">
-            <img src="/img/Badges/Microsoft/AI/azure-ai-fundamentals-600x600.png" width="80px"/>
+            <a href="#azure-ai-fundamentals">
+            <img src="./img/Microsoft/AI/azure-ai-fundamentals.svg" width="80px"/>
             </a>
         </td>
         <td align="center">
-            <a href="#ai-engineer">
-            <img src="/img/Badges/Microsoft/AI/azure-ai-engineer-600x600.png" width="80px"/>
+            <a href="#azure-ai-engineer">
+            <img src="./img/Microsoft/AI/azure-ai-engineer.svg" width="80px"/>
             </a>
         </td>
     </tr>    
@@ -21,62 +21,62 @@
     <tr>
         <td align="center">
                 <a href="#azure-fundamentals">
-                <img src="/img/Badges/Microsoft/Azure/azure-fundamentals-600x600.png" width="80px"/>
+                <img src="./img/Microsoft/Azure/azure-fundamentals.svg" width="80px"/>
                 </a>
         </td>
         <td align="center">
                 <a href="#azure-administrator-associate">
-                <img src="/img/Badges/Microsoft/Azure/azure-administrator-associate-600x600.png" width="80px"/>
+                <img src="./img/Microsoft/Azure/azure-administrator-associate.svg" width="80px"/>
                 </a>
         </td>
         <td align="center">
                 <a href="#azure-developer-associate">
-                <img src="/img/Badges/Microsoft/Azure/azure-developer-associate-600x600.png" width="80px"/>
+                <img src="./img/Microsoft/Azure/azure-developer-associate.svg" width="80px"/>
                 </a>
         </td>
         <td align="center">
                 <a href="#azure-solutions-architect-expert">
-                <img src="/img/Badges/Microsoft/Azure/azure-solutions-architect-expert-600x600.png" width="80px"/>
+                <img src="./img/Microsoft/Azure/azure-solutions-architect-expert.svg" width="80px"/>
                 </a>
         </td>
         <td align="center">
                 <a href="#devops-engineer-expert">
-                <img src="/img/Badges/Microsoft/Azure/CERT-Expert-DevOps-Engineer-600x600.png" width="80px"/>
+                <img src="./img/Microsoft/Azure/devops-engineer-expert.svg" width="80px"/>
         </td>
         <td align="center">
                 <a href="#azure-security-engineer-associate">
-                <img src="/img/Badges/Microsoft/Azure/azure-security-engineer-associate600x600.png" width="80px"/>
+                <img src="./img/Microsoft/Azure/azure-security-engineer-associate.svg" width="80px"/>
         </td>
         <td align="center">
                 <a href="#azure-stack-hub-operator-associate">
-                <img src="/img/Badges/Microsoft/Azure/azure-stack-hub-operator-associate-600x600.png" width="80px"/>
+                <img src="./img/Microsoft/Azure/azure-stack-hub-operator-associate.svg" width="80px"/>
         </td>
     </tr>
     <!-- Data -->
     <tr>
         <td align="center">
                 <a href="#azure-data-fundamentals">
-                <img src="/img/Badges/Microsoft/Data/azure-data-fundamentals-600x600.png" width="80px"/>
+                <img src="./img/Microsoft/Data/azure-data-fundamentals.svg" width="80px"/>
                 </a>
         </td>
         <td align="center">
             <a href="#azure-data-scientist-associate">
-            <img src="/img/Badges/Microsoft/Data/azure-data-scientist-associate-600x600.png" width="80px">
+            <img src="./img/Microsoft/Data/azure-data-scientist-associate.svg" width="80px">
             </a>
         </td>
         <td align="center">
             <a href="#azure-data-engineer-associate">
-            <img src="/img/Badges/Microsoft/Data/azure-data-engineer-associate-600x600.png" width="80px">
+            <img src="./img/Microsoft/Data/azure-data-engineer-associate.svg" width="80px">
             </a>
         </td>
         <td align="center">
             <a href="#azure-database-administrator-associate">
-            <img src="/img/Badges/Microsoft/Data/azure-database-administrator-associate-600x600.png" width="80px">
+            <img src="./img/Microsoft/Data/azure-database-administrator-associate.svg" width="80px">
             </a>
         </td>
         <td align="center">
-            <a href="#azure-data-analyst-associate">
-            <img src="/img/Badges/Microsoft/Data/CERT-Associate-Data-Analyst-600x600.png" width="80px">
+            <a href="#data-analyst-associate">
+            <img src="./img/Microsoft/Data/data-analyst-associate.svg" width="80px">
             </a>
         </td>
     </tr>
@@ -84,37 +84,37 @@
     <tr>
         <td align="center">
             <a href="#microsoft-365-fundamentals">
-            <img src="/img/Badges/Microsoft/M365/microsoft365-fundamentals-600x600.png" width="80px"/>
+            <img src="./img/Microsoft/M365/microsoft-365-fundamentals.svg" width="80px"/>
             </a>
         </td>
         <td align="center">
             <a href="#microsoft-365-enterprise-administrator-expert">
-            <img src="/img/Badges/Microsoft/M365/microsoft365-enterprise-adminstrator-expert-600x600.png" width="80px"/>
+            <img src="./img/Microsoft/M365/microsoft-365-enterprise-administrator-expert.svg" width="80px"/>
             </a>
         </td>
         <td align="center">
             <a href="#microsoft-365-messaging-administrator-associate">
-            <img src="/img/Badges/Microsoft/M365/microsoft365-messaging-administrator-associate-600x600.png" width="80px"/>
+            <img src="./img/Microsoft/M365/microsoft-365-messaging-administrator-associate.svg" width="80px"/>
             </a>
         </td>
         <td align="center">
             <a href="#microsoft-365-security-administrator-associate">
-            <img src="/img/Badges/Microsoft/M365/microsoft365-security-administrator-associate-600x600.png" width="80px"/>
+            <img src="./img/Microsoft/M365/microsoft-365-security-administrator-associate.svg" width="80px"/>
             </a>
         </td>
         <td align="center">
             <a href="#microsoft-365-developer-associate">
-            <img src="/img/Badges/Microsoft/M365/CERT-Associate-Microsoft365-Developer.png" width="80px"/>
+            <img src="./img/Microsoft/M365/microsoft-365-developer-associate.svg" width="80px"/>
             </a>
         </td>
         <td align="center">
             <a href="#microsoft-365-teams-administrator-associate">
-            <img src="/img/Badges/Microsoft/M365/CERT-Associate-Microsoft365-Teams-Administrator.png" width="80px"/>
+            <img src="./img/Microsoft/M365/microsoft-365-teams-administrator-associate.svg" width="80px"/>
             </a>
         </td>
         <td align="center">
             <a href="#microsoft-365-modern-desktop-administrator-associate">
-            <img src="/img/Badges/Microsoft/M365/microsoft365-modern-desktop-administrator-associate-600x600.png" width="80px"/>
+            <img src="./img/Microsoft/M365/microsoft-365-modern-desktop-administrator-associate.svg" width="80px"/>
             </a>
         </td>
     </tr>
@@ -122,27 +122,27 @@
     <tr>
         <td align="center">
             <a href="#power-platform-fundamentals">
-            <img src="/img/Badges/Microsoft/Power/CERT-Fundamentals-Power-Platform.png" width="80px"/>
+            <img src="./img/Microsoft/Power/power-platform-fundamentals.svg" width="80px"/>
             </a>
         </td>
         <td align="center">
             <a href="#power-platform-app-maker-associate">
-            <img src="/img/Badges/Microsoft/Power/power-platform-app-maker-600x600.png" width="80px"/>
+            <img src="./img/Microsoft/Power/power-platform-app-maker-associate.svg" width="80px"/>
             </a>
         </td>
         <td align="center">
             <a href="#power-platform-functional-consultant-associate">
-            <img src="/img/Badges/Microsoft/Power/power-platform-functional-consultant-600x600__1_.png" width="80px"/>
+            <img src="./img/Microsoft/Power/power-platform-functional-consultant-associate.svg" width="80px"/>
             </a>
         </td>
         <td align="center">
             <a href="#power-platform-developer-associate">
-            <img src="/img/Badges/Microsoft/Power/power-platform-developer-600x600.png" width="80px"/>
+            <img src="./img/Microsoft/Power/power-platform-developer-associate.svg" width="80px"/>
             </a>
         </td>
         <td align="center">
             <a href="#power-platform-solution-architect-expert">
-            <img src="/img/Badges/Microsoft/Power/CERT-Expert-Dynamics365-Power-Platform-Solution-Architect.png" width="80px"/>
+            <img src="./img/Microsoft/Power/power-platform-solution-architect-expert.svg" width="80px"/>
             </a>
         </td>
     </tr>
@@ -150,25 +150,31 @@
     <tr>
         <td align="center">
                 <a href="#security-compliance-and-identity-fundamentals">
-                <img src="/img/Badges/Microsoft/Security/security-compliance-and-identity-fundamentals-600x600.png" width="80px"/>
+                <img src="./img/Microsoft/Security/security-compliance-and-identity-fundamentals.svg" width="80px"/>
                 </a>
-        </td>
-        <td>
         </td>
         <td align="center">
                 <a href="#security-operations-analyst-associate">
-                <img src="/img/Badges/Microsoft/Security/security-operations-analyst-associate-600x600.png" width="80px"/>
+                <img src="./img/Microsoft/Security/security-operations-analyst-associate.svg" width="80px"/>
                 </a>
         </td>
         <td align="center">
                 <a href="#identity-and-access-administrator-associate">
-                <img src="/img/Badges/Microsoft/Security/identity-and-access-administrator-associate-600x600.png" width="80px"/>
+                <img src="./img/Microsoft/Security/identity-and-access-administrator-associate.svg" width="80px"/>
                 </a>
         </td>
         <td align="center">
                 <a href="#information-protection-administrator-associate">
-                <img src="/img/Badges/Microsoft/Security/information-protection-administrator-associate-600x600.png" width="80px"/>
+                <img src="./img/Microsoft/Security/information-protection-administrator-associate.svg" width="80px"/>
                 </a>
+        </td>
+    </tr>
+    <!-- Dynamics 365 -->
+    <tr>
+        <td align="center">
+            <a href="#dynamics-365-sales-functional-consultant-associate">
+            <img src="./img/Microsoft/D365/dynamics-365-sales-functional-consultant-associate.svg">
+            </a>
         </td>
     </tr>
 </tbody>
@@ -184,7 +190,7 @@
 
 #### [Azure Administrator Associate](https://docs.microsoft.com/en-us/learn/certifications/azure-administrator/)
 
-![](/img/Badges/Microsoft/Azure/azure-administrator-associate-600x600.png){: align=left width=80px }
+![](./img/Microsoft/Azure/azure-administrator-associate.svg){: align=right width=70px }
 
 Exams:
 
@@ -192,7 +198,7 @@ Exams:
 
 #### [Azure AI Fundamentals](https://docs.microsoft.com/en-us/learn/certifications/azure-ai-fundamentals/)
 
-![](/img/Badges/Microsoft/AI/azure-ai-fundamentals-600x600.png){: align=left width=80px }
+![](./img/Microsoft/AI/azure-ai-fundamentals.svg){: align=right width=70px }
 
 Exams:
 
@@ -200,32 +206,24 @@ Exams:
 
 #### [Azure AI Engineer](https://docs.microsoft.com/en-us/learn/certifications/azure-ai-engineer/)
 
-![](/img/Badges/Microsoft/AI/azure-ai-engineer-600x600.png){: align=left width=80px }
+![](./img/Microsoft/AI/azure-ai-engineer.svg){: align=right width=70px }
 
 Exams:
 
-- [AI-100 <sup>&#x271D</sup>](https://docs.microsoft.com/en-us/learn/certifications/exams/ai-100)
+- [AI-100 ](https://docs.microsoft.com/en-us/learn/certifications/exams/ai-100) &#x271D;
 - [AI-102](https://docs.microsoft.com/en-us/learn/certifications/exams/ai-102)
 
 #### [Azure Database Administrator Associate](https://docs.microsoft.com/en-us/learn/certifications/azure-database-administrator-associate/)
 
-![](/img/Badges/Microsoft/Data/azure-database-administrator-associate-600x600.png){: align=left width=80px }
+![](./img/Microsoft/Data/azure-database-administrator-associate.svg){: align=right width=70px }
 
 Exams:
 
 - [DP-300](https://docs.microsoft.com/en-us/learn/certifications/exams/dp-300)
 
-#### [Azure Data Analyst Associate](https://docs.microsoft.com/en-us/learn/certifications/data-analyst-associate/)
-
-![](/img/Badges/Microsoft/Data/CERT-Associate-Data-Analyst-600x600.png){: align=left width=80px }
-
-Exams:
-
-- [DA-100](https://docs.microsoft.com/en-us/learn/certifications/exams/da-100)
-
 #### [Azure Data Fundamentals](https://docs.microsoft.com/en-us/learn/certifications/azure-data-fundamentals/)
 
-![](/img/Badges/Microsoft/Data/azure-data-fundamentals-600x600.png){: align=left width=80px }
+![](./img/Microsoft/Data/azure-data-fundamentals.svg){: align=right width=70px }
 
 Exams: 
 
@@ -233,7 +231,7 @@ Exams:
 
 #### [Azure Data Engineer Associate](https://docs.microsoft.com/en-us/learn/certifications/azure-data-engineer/)
 
-![](/img/Badges/Microsoft/Data/azure-data-engineer-associate-600x600.png){: align=left width=80px }
+![](./img/Microsoft/Data/azure-data-engineer-associate.svg){: align=right width=70px }
 
 Exams:
 
@@ -242,7 +240,7 @@ Exams:
 
 #### [Azure Data Scientist Associate](https://docs.microsoft.com/en-us/learn/certifications/azure-data-scientist/)
 
-![](/img/Badges/Microsoft/Data/azure-data-scientist-associate-600x600.png){: align=left width=80px }
+![](./img/Microsoft/Data/azure-data-scientist-associate.svg){: align=right width=70px }
 
 Exams:
 
@@ -250,7 +248,7 @@ Exams:
 
 #### [Azure Developer Associate](https://docs.microsoft.com/en-us/learn/certifications/m365-developer-associate/)
 
-![](/img/Badges/Microsoft/Azure/azure-developer-associate-600x600.png){: align=left width=80px }
+![](./img/Microsoft/Azure/azure-developer-associate.svg){: align=right width=70px }
 
 Exams:
 
@@ -258,7 +256,7 @@ Exams:
 
 #### [Azure Fundamentals](https://docs.microsoft.com/en-us/learn/certifications/azure-fundamentals/)
 
-![](/img/Badges/Microsoft/Azure/azure-fundamentals-600x600.png){: align=left width=80px }
+![](./img/Microsoft/Azure/azure-fundamentals.svg){: align=right width=70px }
 
 Exams:
 
@@ -267,7 +265,7 @@ Exams:
 
 #### [Azure Security Engineer Associate](https://docs.microsoft.com/en-us/learn/certifications/azure-security-engineer/)
 
-![](/img/Badges/Microsoft/Azure/azure-security-engineer-associate600x600.png){: align=left width=80px}
+![](./img/Microsoft/Azure/azure-security-engineer-associate.svg){: align=right width=70px}
 
 Exams:
 
@@ -275,7 +273,7 @@ Exams:
 
 #### [Azure Solutions Architect Expert](https://docs.microsoft.com/en-us/learn/certifications/azure-solutions-architect/)
 
-![](/img/Badges/Microsoft/Azure/azure-solutions-architect-expert-600x600.png){: align=left width=80px }
+![](./img/Microsoft/Azure/azure-solutions-architect-expert.svg){: align=right width=70px }
 
 Exams:
 
@@ -284,15 +282,23 @@ Exams:
 
 #### [Azure Stack Hub Operator Associate](https://docs.microsoft.com/en-us/learn/certifications/azure-stack-hub-operator/)
 
-![](/img/Badges/Microsoft/Azure/azure-stack-hub-operator-associate-600x600.png){: align=left width=80px}
+![](./img/Microsoft/Azure/azure-stack-hub-operator-associate.svg){: align=right width=70px}
 
 Exams:
 
 - [AZ-600](https://docs.microsoft.com/en-us/learn/certifications/exams/az-600)
 
+#### [Data Analyst Associate](https://docs.microsoft.com/en-us/learn/certifications/data-analyst-associate/)
+
+![](./img/Microsoft/Data/data-analyst-associate.svg){: align=right width=70px }
+
+Exams:
+
+- [DA-100](https://docs.microsoft.com/en-us/learn/certifications/exams/da-100)
+
 #### [DevOps Engineer Expert](https://docs.microsoft.com/en-us/learn/certifications/devops-engineer/)
 
-![](/img/Badges/Microsoft/Azure/CERT-Expert-DevOps-Engineer-600x600.png){: align=left width=80px}
+![](./img/Microsoft/Azure/devops-engineer-expert.svg){: align=right width=70px}
 
 Exams:
 
@@ -300,7 +306,7 @@ Exams:
 
 #### [Identity and Access Administrator Associate](https://docs.microsoft.com/en-us/learn/certifications/identity-and-access-administrator/)
 
-![](/img/Badges/Microsoft/Security/identity-and-access-administrator-associate-600x600.png){: align=left width=80px }
+![](./img/Microsoft/Security/identity-and-access-administrator-associate.svg){: align=right width=70px }
 
 Exams:
 
@@ -308,15 +314,15 @@ Exams:
 
 #### [Information Protection Administrator Associate](https://docs.microsoft.com/en-us/learn/certifications/information-protection-administrator/)
 
-![](img/Badges/Microsoft/Security/information-protection-administrator-associate-600x600.png){: align=left width=80px}
+![](./img/Microsoft/Security/information-protection-administrator-associate.svg){: align=right width=70px}
 
 Exams:
 
 - [SC-400](https://docs.microsoft.com/en-us/learn/certifications/exams/sc-400)
 
-#### Microsoft 365 Developer Associate
+#### [Microsoft 365 Developer Associate](https://docs.microsoft.com/en-us/learn/certifications/m365-developer-associate/)
 
-![](/img/Badges/Microsoft/M365/CERT-Associate-Microsoft365-Developer.png){: width=80px align=left}
+![](./img/Microsoft/M365/microsoft-365-developer-associate.svg){: width=70px align=right}
 
 Exams:
 
@@ -324,7 +330,7 @@ Exams:
 
 #### [Microsoft 365 Enterprise Administrator Expert](https://docs.microsoft.com/en-us/learn/certifications/m365-enterprise-administrator/#certification-exams)
 
-![](/img/Badges/Microsoft/M365/microsoft365-enterprise-administrator-expert-600x600.png){: width=80px align=left }
+![](./img/Microsoft/M365/microsoft-365-enterprise-administrator-expert.svg){: width=70px align=right }
 
 Exams:
 
@@ -333,7 +339,7 @@ Exams:
 
 #### [Microsoft 365 Fundamentals](https://docs.microsoft.com/en-us/learn/certifications/microsoft-365-fundamentals/)
 
-![](/img/Badges/Microsoft/M365/microsoft365-fundamentals-600x600.png){: width=80px align=left}
+![](./img/Microsoft/M365/microsoft-365-fundamentals.svg){: width=70px align=right}
 
 Exams:
 
@@ -341,7 +347,7 @@ Exams:
 
 #### [Microsoft 365 Messaging Administrator Associate](https://docs.microsoft.com/en-us/learn/certifications/m365-messaging-administrator/)
 
-![](/img/Badges/Microsoft/M365/microsoft365-messaging-administrator-associate-600x600.png){: align=left width=80px }
+![](./img/Microsoft/M365/microsoft-365-messaging-administrator-associate.svg){: align=right width=70px }
 
 Exams:
 
@@ -349,7 +355,7 @@ Exams:
 
 #### [Microsoft 365 Modern Desktop Administrator](https://docs.microsoft.com/en-us/learn/certifications/modern-desktop/)
 
-![](/img/Badges/Microsoft/M365/microsoft365-modern-desktop-administrator-associate-600x600.png){: align=left width=80px }
+![](./img/Microsoft/M365/microsoft-365-modern-desktop-administrator-associate.svg){: align=right width=70px }
 
 Exams:
 
@@ -358,7 +364,7 @@ Exams:
 
 #### [Microsoft 365 Security Administrator Associate](https://docs.microsoft.com/en-us/learn/certifications/m365-security-administrator/)
 
-![](/img/Badges/Microsoft/M365/microsoft365-security-administrator-associate-600x600.png){: align=left width=80px }
+![](./img/Microsoft/M365/microsoft-365-security-administrator-associate.svg){: align=right width=70px }
 
 Exams:
 
@@ -366,7 +372,7 @@ Exams:
 
 #### [Microsoft 365 Teams Administrator Associate](https://docs.microsoft.com/en-us/learn/certifications/m365-teams-administrator-associate/)
 
-![](/img/Badges/Microsoft/M365/CERT-Associate-Microsoft365-Teams-Administrator.png){: align=left width=80px }
+![](./img/Microsoft/M365/microsoft-365-teams-administrator-associate){: align=right width=70px }
 
 Exams:
 
@@ -374,7 +380,7 @@ Exams:
 
 #### [Power Platform Fundamentals](https://docs.microsoft.com/en-us/learn/certifications/power-platform-fundamentals/)
 
-![](/img/Badges/Microsoft/Power/CERT-Fundamentals-Power-Platform.png){: width=80px align=left }
+![](./img/Microsoft/Power/power-platform-fundamentals.svg){: width=70px align=right }
 
 Exams:
 
@@ -382,7 +388,7 @@ Exams:
 
 #### [Power Platform App Maker Associate](https://docs.microsoft.com/en-us/learn/certifications/power-platform-app-maker/)
 
-![](/img/Badges/Microsoft/Power/power-platform-app-maker-600x600.png){: width=80px align=left}
+![](./img/Microsoft/Power/power-platform-app-maker-associate.svg){: width=70px align=right}
 
 Exams:
 
@@ -390,7 +396,7 @@ Exams:
 
 #### [Power Platform Developer Associate](https://docs.microsoft.com/en-us/learn/certifications/power-platform-developer-associate/)
 
-![](/img/Badges/Microsoft/Power/power-platform-developer-600x600.png){: align=left width=80px }
+![](./img/Microsoft/Power/power-platform-developer-associate.svg){: align=right width=70px }
 
 Exams:
 
@@ -398,7 +404,7 @@ Exams:
 
 #### [Power Platform Functional Consultant Associate](https://docs.microsoft.com/en-us/learn/certifications/power-platform-functional-consultant-associate/)
 
-![](/img/Badges/Microsoft/Power/power-platform-functional-consultant-600x600__1_.png){: align=left width=80px }
+![](./img/Microsoft/Power/power-platform-functional-consultant-associate.svg){: align=right width=70px }
 
 Exams:
 
@@ -406,7 +412,7 @@ Exams:
 
 #### [Power Platform Solution Architect Expert](https://docs.microsoft.com/en-us/learn/certifications/power-platform-solution-architect-expert/)
 
-![](/img/Badges/Microsoft/Power/CERT-Expert-Dynamics365-Power-Platform-Solution-Architect.png){: width=80px align=left }
+![](./img/Microsoft/Power/power-platform-solution-architect-expert.svg){: width=70px align=right }
 
 Exams:
 
@@ -414,7 +420,7 @@ Exams:
 
 #### [Security, Compliance, and Identity Fundamentals](https://docs.microsoft.com/en-us/learn/certifications/security-compliance-and-identity-fundamentals/)
 
-![](/img/Badges/Microsoft/Security/security-compliance-and-identity-fundamentals-600x600.png){: align=left width=80px}
+![](./img/Microsoft/Security/security-compliance-and-identity-fundamentals.svg){: align=right width=70px}
 
 Exams:
 
@@ -422,7 +428,7 @@ Exams:
 
 #### [Security Operations Analyst Associate](https://docs.microsoft.com/en-us/learn/certifications/security-operations-analyst/)
 
-![](/img/Badges/Microsoft/Security/security-operations-analyst-associate-600x600.png){: width=80px align=left}
+![](./img/Microsoft/Security/security-operations-analyst-associate.svg){: width=70px align=right}
 
 Exams:
 

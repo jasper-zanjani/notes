@@ -1,5 +1,3 @@
-#### endlessh
-
 Log verbosity can be configured from the command-line or the config
 
 === "Silent"

@@ -1,13 +1,13 @@
 Add the Docker repo
 
-=== "Ubuntu"
+=== ":material-ubuntu:"
 
     ```sh
     add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
     ```
 
-=== "Fedora"
+=== "":material-fedora:"
 
     ```sh
-    dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
+    dnf config-manager --add-repo "https://download.docker.com/linux/fedora/docker-ce.repo"
     ```

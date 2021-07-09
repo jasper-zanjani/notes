@@ -62,15 +62,18 @@ _**Withania somnifera**_ or **Ashwagandha** is a traditional [Ayurvedic herb](#a
 | [Swanson Ultimate Ashwagandha 250mg x 60 capsules](https://www.swansonvitamins.com/swanson-ultra-ultimate-ashwagandha-ksm-66-250-mg-60-veg-caps-SWU1003) |   **3.99**<br>7.99 |    15.0 | **0.26**<br>0.53 |
 | [NOW Supplements Ashwagandha 450 mg x 180 capsules](https://www.amazon.com/NOW-Ashwagandha-Extract-Caps-SIZE/dp/B076H91FQG)                              | **16.46**<br>28.99 |    81.0 | **0.20**<br>0.35 |
 | [NOW supplements Ashwagandha 450 mg x 90 capsules](https://www.amazon.com/NOW-Foods-Ashwagandha-Extract-450mg/dp/B010MO5KCG)                             |              17.90 |    40.5 |             0.44 |
-
+| [Nutricost Ashwagandha Extract KSM-66 600 mg x 180 capsules](https://www.amazon.com/Nutricost-KSM-66-Ashwagandha-Extract-Veggie/dp/B079K4MPVB/)          |              40.95 |     108 |             0.38 |
 
 #### Astragalus
 
-| Product                                                                                                                                          |     $ |     mg | $/500 mg |
-| ------------------------------------------------------------------------------------------------------------------------------------------------ | ----: | -----: | -------: |
-| [Gorilla Mind Astragalus extract 750mg x 90 capsules](https://gorillamind.com/products/astragalus)                                               | 20.00 |  67500 |     0.14 |
-| [Swanson Full Spectrum Astragalus 470 mg x 100 capsules (sale)](https://www.swansonvitamins.com/swanson-premium-astragalus-root-470-mg-100-caps) |  2.59 | 47,000 | **0.03** |
-| [Swanson Full Spectrum Astragalus 470 mg x 100 capsules ](https://www.swansonvitamins.com/swanson-premium-astragalus-root-470-mg-100-caps)       |  3.99 | 47,000 | **0.04** |
+
+
+| Product                                                                                                                                   |                $ |     g |              $/g |
+| ----------------------------------------------------------------------------------------------------------------------------------------- | ---------------: | ----: | ---------------: |
+| [Swanson Full Spectrum Astragalus 470 mg x 100 capsules](https://www.swansonvitamins.com/swanson-premium-astragalus-root-470-mg-100-caps) | **2.59**<br>3.99 |  47.0 | **0.03**<br>0.04 |
+| [Gorilla Mind Astragalus extract 750mg x 90 capsules](https://gorillamind.com/products/astragalus)                                        |            20.00 |  67.5 |             0.14 |
+| [Swanson Astragalus](https://www.swansonvitamins.com/swanson-superior-herbs-astragalus-standardized-500-mg-120-caps)                      |            20.39 | 120.0 |             0.17 |
+
 
 **Ayurveda**{: #ayurveda }
 
@@ -213,11 +216,11 @@ A late 2020 study found that mice given _Cucumis melo_ and _Citrullus lanatus_ s
 - Curcumin has very poor bioavailability without co-administration of piperine. ([1998](https://pubmed.ncbi.nlm.nih.gov/9619120/))
 - A systematic review and meta-analysis found that curcumin administration was associated with a significant reduction only in systeolic blood pressure, but not in diastolic, in studies with supplementation exceeding 12 weeks. ([2019](https://pubmed.ncbi.nlm.nih.gov/31647981/))
 
-| Product                                                                                                                                                            |                  $ |        mg |         $/300 mg |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -----------------: | --------: | ---------------: |
-| [BulkSupplements Curcumin 1 kg](https://www.amazon.com/BulkSupplements-Curcumin-Natural-Turmeric-Extract/dp/B00GHY364A)                                            |             249.96 | 1,000,000 |             0.07 |
-| [Swanson Curcumin Complex 350 mg x 120 capsules (sale)](https://www.swansonvitamins.com/swanson-superior-herbs-curcumin-complex-350-mg-120-veg-caps)<br>**(sale)** | 18.99<br>**14.24** |    42,000 | 0.13<br>**0.10** |
-| [Amazon Elements turmeric Complex 316 mg x 65 capsules](https://www.amazon.com/Amazon-Elements-Turmeric-Complex-Curcumin/dp/B08CFRLQ3K)                            |              14.99 |    20,540 |             0.22 |
+| Product                                                                                                                                              |                  $ |       g |              $/g |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------- | -----------------: | ------: | ---------------: |
+| [BulkSupplements Curcumin 1 kg](https://www.amazon.com/BulkSupplements-Curcumin-Natural-Turmeric-Extract/dp/B00GHY364A)                              |             249.96 | 1,000.0 |             0.25 |
+| [Swanson Curcumin Complex 350 mg x 120 capsules (sale)](https://www.swansonvitamins.com/swanson-superior-herbs-curcumin-complex-350-mg-120-veg-caps) | **14.24**<br>18.99 |    42.0 | **0.34**<br>0.45 |
+| [Amazon Elements turmeric Complex 316 mg x 65 capsules](https://www.amazon.com/Amazon-Elements-Turmeric-Complex-Curcumin/dp/B08CFRLQ3K)              |              14.99 |    20.5 |             0.73 |
 
 #### D-Aspartic acid
 
@@ -226,9 +229,10 @@ A late 2020 study found that mice given _Cucumis melo_ and _Citrullus lanatus_ s
 - A literature review concluded that exogenous D-Asp increases testosterone in animals. However, human studies which demonstrated conflicting results were noted for their short-term generation, small sample size, and other problems. ([2017](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5340133/ "The putative effects of D-Aspartic acid on blood testosterone levels: A systematic review") :material-file-pdf:)
 - Most studies used dosages of 2,600-3,000 mg/day ([Healthline](https://www.healthline.com/nutrition/d-aspartic-acid-and-testosterone))
 
-| Product                                                                                                                                      |    $ |   mg |     $/3g |
-| -------------------------------------------------------------------------------------------------------------------------------------------- | ---: | ---: | -------: |
-| [Swanson D-Aspartic Acid 100 g powder (Swanson sale)](https://www.swansonvitamins.com/swanson-premium-d-aspartic-acid-3-5-oz-100-grams-pwdr) | 4.99 |  100 | **0.15** |
+| Product                                                                                                                         |     $ |    g |  $/g |
+| ------------------------------------------------------------------------------------------------------------------------------- | ----: | ---: | ---: |
+| [Nutricost D-Aspartic Acid 750 mg x 180 capsules](https://www.amazon.com/Nutricost-D-Aspartic-Acid-Capsules-DAA/dp/B01N0ERIWT/) | 14.99 |  135 | 0.11 |
+
 
 **Dihydrotestosterone (DHT)**{: #dht }
 
@@ -269,6 +273,16 @@ Intended to enhance physical performance, stamina, or recovery
 **Excipient**{: #excipient }
 :   An inactive substance that serves as the vehicle or medium for a drug or other active substance.
 
+#### Fenugreek
+
+Several studies suggest that male subjects who took 500 mg fenugreek daily experienced increased testosterone and improved mood, energy, and libido.
+
+| Product                                                                                                                                    |                 $ |    g |              $/g |
+| ------------------------------------------------------------------------------------------------------------------------------------------ | ----------------: | ---: | ---------------: |
+| [Swanson Fenugreek seed 610 mg x 90 capsules](https://www.swansonvitamins.com/swanson-premium-fenugreek-seed-610-mg-90-caps)               |  **2.09**<br>3.49 | 54.9 | **0.04**<br>0.06 |
+| [Swanson Fenugreek extract 500 mg x 90 capsules](https://www.swansonvitamins.com/swanson-superior-herbs-fenugreek-extract-500-mg-90-caps)  | **6.95**<br>11.59 | 45.0 | **0.15**<br>0.25 |
+| [Swanson Fenugree extract featuring Testofen](https://www.swansonvitamins.com/swanson-ultra-testofen-fenugreek-extract-300-mg-60-veg-caps) |         **18.39** | 36.0 |             0.51 |
+
 
 #### Finasteride
 
@@ -298,12 +312,12 @@ It is endogenously produced in the liver and can also be found in various foods.
 
 
 **Hepatic**{: #hepatic }
-
-Related to the liver
+:   
+    Related to the liver
 
 **Hirsutism**{: #hirsutism }
-
-A condition causing male-pattern hair growth in women.
+:   
+    A condition causing male-pattern hair growth in women.
 
 
 #### Huperzine A
@@ -460,14 +474,14 @@ The process of mobilizing stored energy during fasting or exercise.
 The metabolic pathway through which lipid triglycerides are hydrolyzed into a glycerol and three fatty acids.
 
 
-#### Lutein
-
-Lutein is a carotenoid closely related to beta-carotene, which gives carrots and pumpkins their orange color.
+**Lutein**
+:   Lutein is a carotenoid closely related to beta-carotene, which gives carrots and pumpkins their orange color.
 
 
 
 **Luteinizing Hormone (LH)**{: #lh }   
-
+:   
+    n/a
 
 #### Maca
 
@@ -552,12 +566,10 @@ An aromatic organic compound with the molecular formula C<sub>6</sub>H<sub>5</su
 
 
 **Pleiotropic**{: #pleiotropic}
-
-Having more than one effect, especially having multiple phenotypic expressions
+:   Having more than one effect, especially having multiple phenotypic expressions
 
 **Polyphenol**{: #polyphenol }
-
-A large family of naturally occurring organic compounds composed of multiple [phenol](#phenol) units.
+:   A large family of naturally occurring organic compounds composed of multiple [phenol](#phenol) units.
 
 #### Potassium
 
@@ -647,11 +659,8 @@ It is confirmed as a powerful antioxidant and may potentially enhance cognitive 
 
 
 
-#### Ritalin
-
-**Ritalin** is the brand name for the stimulant methylphenidate.
-
-
+**Ritalin**
+:   Ritalin is the brand name for the stimulant methylphenidate.
 
 #### Rosemary
 
@@ -669,16 +678,14 @@ The studies on rosemary in particular were motivated by [traditional association
 | [Swanson Rosemary Extract 500 mg x 60 capules (Swanson)](https://www.swansonvitamins.com/swanson-superior-herbs-rosemary-extract-500-mg-60-caps)      | 7.19 | 30,000 |     0.12 |
 | [Swanson Rosemary Extract 500 mg x 60 capules (Amazon)](https://www.amazon.com/Swanson-Rosemary-Extract-Milligrams-Capsules/dp/B0017O94BY)            | 9.99 | 30,000 |     0.17 |
 
-#### Saffron
 
 **Saffron** (*Crocus sativus L.*)
-
-A [2020 review](https://pubmed.ncbi.nlm.nih.gov/32445136/) found that there was some evidence that associated saffron with improvement in cognitive performance, especially in subjects with neurodegenerative disease.
-
+:   
+    A [2020 review](https://pubmed.ncbi.nlm.nih.gov/32445136/) found that there was some evidence that associated saffron with improvement in cognitive performance, especially in subjects with neurodegenerative disease.
 
 **Sarcopenia**{: #sarcopenia}
-
-Age-related loss of muscle mass and function
+:   
+    Age-related loss of muscle mass and function
 
 #### Saw palmetto
 
@@ -695,29 +702,29 @@ Studies suggest that it blocks the conversion of testosterone to [DHT][DHT], and
 | [Swanson Saw Palmetto 540 mg x 100 capsules](https://www.swansonvitamins.com/swanson-premium-saw-palmetto-540-mg-250-caps?otherSize=SW909)<br>**sale** |  4.59<br>**2.75** |    54 | 0.04<br>**0.03** |
 
 
-**Squamous **{: #squamous}
-
-Referring to the shape of cells that are wide and flat, such as those found in the lining of the mouth, esophagus, and blood vessels (cf. cuboidal and columnar)
+**Squamous**{: #squamous}
+:   
+    Referring to the shape of cells that are wide and flat, such as those found in the lining of the mouth, esophagus, and blood vessels (cf. cuboidal and columnar)
 
 **Statin**{: #statin}
-
-A family of drugs used for treating hyperlipidaemia with a recognized capacity to prevent cardiovascular disease event
+:   
+    A family of drugs used for treating hyperlipidaemia with a recognized capacity to prevent cardiovascular disease event
 
 #### Taurine
 
 Dosages of taurine in studies are commonly 500 - 2,000 mg /day, however higher doses appear to be well-tolerated.
 
-#### Thyroxine
+**Thyroxine**
+:   
+    Thyroxine, called T4 because it contains 4 iodine atoms, is the major thyroid hormone secreted by the thryoid gland.
+    
+    It is converted to *triiodothyronine* (T3) by the removal of an iodine atom mainly in the liver but also in the brain.
 
-Thyroxine, called T4 because it contains 4 iodine atoms, is the major thyroid hormone secreted by the thryoid gland.
+    Thyroxine production is regulated by TSH.
 
-It is converted to triiodothyronine (T3) by the removal of an iodine atom mainly in the liver but also in the brain.
-
-Thyroxine production is regulated by TSH.
-
-#### Tryptophan
-
-**Tryptophan** is a precursor of the neurotransmitters serotonin and melatonin.
+**Tryptophan**
+:   
+    *Tryptophan* is a precursor of the neurotransmitters serotonin and melatonin.
 
 
 #### Ubiquinol
@@ -745,20 +752,20 @@ Like [vitamin E](#vitamin-e), ubiquinol is a lipid-soluble antioxidant, which gi
 
 
 **Vascular resistance**{: #vascular-resistance }
-
-The resistance that must be overcome to push blood through the circulatory system  
+:   
+    The resistance that must be overcome to push blood through the circulatory system  
 
 **Vasoreactivity**{: #vasoreactivity}
-
-A >= 30% decrease in pulmonary vascular resistance (PVR) with vasodilator compared to baseline
+:   
+    A >= 30% decrease in pulmonary vascular resistance (PVR) with vasodilator compared to baseline
 
 **VAT**{: #vat }
-
-**Visceral adipose tissue (VAT)** is fat surrounding the intra-abdominal organs which has been associated with various medical pathologies; alongside **subcutaneous adipose tissue (SAT)**, one of the two types of body fat tissue
+:   
+    *Visceral adipose tissue (VAT)* is fat surrounding the intra-abdominal organs which has been associated with various medical pathologies; alongside **subcutaneous adipose tissue (SAT)**, one of the two types of body fat tissue
 
 **Visceral obesity**{: #visceral-obesity}
-
-Abnormally high deposition of **visceral adipose tissue (VAT)**
+:
+    Abnormally high deposition of [**visceral adipose tissue (VAT)**](#vat)
 
 #### Vitamin B12
 
@@ -801,8 +808,8 @@ Abnormally high deposition of **visceral adipose tissue (VAT)**
 
 
 #### Vitamin E
-**Vitamin E** (alpha-tocopherol) is a lipid soluble antioxidant that interferes with the propagation of lipid radicals. Its efficacy as an antioxidant has been closely associated with that of [Vitamin C](#vitmain-c).
 
+**Vitamin E** (alpha-tocopherol) is a lipid soluble antioxidant that interferes with the propagation of lipid radicals. Its efficacy as an antioxidant has been closely associated with that of [Vitamin C](#vitmain-c).
 
 
 #### Zinc

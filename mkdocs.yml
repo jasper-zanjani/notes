@@ -15,6 +15,9 @@ extra_css:
 - style/admonitions-gcp.css
 - style/admonitions-azure.css
 - style/admonitions-aws.css
+- style/admonitions-rs.css
+- style/admonitions-cs.css
+- style/admonitions-py.css
 
 markdown_extensions:
   - abbr

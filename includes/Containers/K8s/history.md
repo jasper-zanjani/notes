@@ -11,3 +11,5 @@ At the time, Google had been trying to engage the Linux kernel team and trying t
 Internally, the project was framed as offering "Borg as a Service", although there were concerns that Google was in danger of revealing trade secrets.
 
 Google ultimately donated Kubernetes to the **Cloud Native Computing Foundation**.
+
+Kubernetes's heptagonal logo is an allusion to when it was called "Project 7" as a reference to Star Trek's Borg character 7 of 9.

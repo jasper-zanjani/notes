@@ -1,4 +1,4 @@
-# :material-google: Google Cloud Platform
+# Google Cloud Platform
 
 --8<-- "includes/Cloud/GCP/gcloud.md"
 
