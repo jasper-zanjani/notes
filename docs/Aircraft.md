@@ -10,6 +10,10 @@ Export variant of the MiG-29M2 with:
 - The ability to be armed with ground-attack weapons like bombs
 
 
+#### Su-27
+
+
+
 #### Su-30
 
 The Su-30 was originally called the Su-27PU and intended to be a long-range interceptor.

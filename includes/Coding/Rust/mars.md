@@ -1,11 +1,9 @@
 ```rs
-use std::io;
-
 fn main() {
     let mut input = String::new();
     println!("Enter weight in kilograms: ");
 
-    io::stdin().read_line(&mut input);
+    std::io::stdin().read_line(&mut input);
     
     let input: f32 = match input.trim().parse() {
         Ok(num) => num,

@@ -245,3 +245,31 @@ Mathematical consonants have their own keywords in Perl6: `pi`, `e`, and `tau` (
 ## Other topics
 #### rename function in Debian
 [The Rename Command](https://www.putorius.net/rename-command-linux.html)
+
+# Visual Basic
+
+VB script doing manual backup
+```vb
+On Error Resume Next 
+Set objNetwork = WScript.CreateObject("WScript.Network")
+objNetwork.RemoveNetworkDrive "P:"
+objNetwork.MapNetworkDrive "P:", "\\islfs02.hlm.ad.moffitt.usf.edu\research\lab_proteomics",, "hlm\proteomics_backup","orbitrap"
+
+Dim WSHShell
+Set WSHShell = WScript.CreateObject("WScript.Shell")
+q = """"
+sp = " "
+
+from = q & "c:\xcalibur\Data\*.*" & q
+dest = sp & q & "p:\backup\QE_FOCUS\data" & q
+cmd = "c:\windows\system32\xcopy " & from & dest & " /D /H /E /C /K /R /Y /I"
+WSHShell.Run cmd, 1, true
+
+from = q & "c:\xcalibur\methods\*.*" & q
+dest = sp & q & "p:\backup\QE_FOCUS\methods" & q
+cmd = "c:\windows\system32\xcopy " & from & dest & " /D /H /E /C /K /R /Y /I"
+WSHShell.Run cmd, 1, true
+
+Set WSHShell = Nothing
+WScript.Quit(0)
+```

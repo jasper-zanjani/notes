@@ -1,0 +1,19 @@
+:root {
+  --md-admonition-icon--cisco: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 9c-1.1 0-2 .9-2 2v4a2 2 0 0 0 2 2h6v2h-1c-.55 0-1 .45-1 1H2v2h7c0 .55.45 1 1 1h4c.55 0 1-.45 1-1h7v-2h-7c0-.55-.45-1-1-1h-1v-2h6c1.11 0 2-.89 2-2v-4a2 2 0 0 0-2-2H5m1 3h2v2H6v-2m3.5 0h2v2h-2v-2m3.5 0h2v2h-2v-2z"/></svg>')
+}
+.md-typeset .admonition.cisco,
+.md-typeset details.cisco {
+  border-color: #049FD9;
+}
+.md-typeset .cisco > .admonition-title,
+.md-typeset .cisco > summary {
+  background-color: #049FD910;
+  border-color: #049FD9;
+}
+.md-typeset .cisco > .admonition-title::before,
+.md-typeset .cisco > summary::before {
+  background-color: #049FD9;
+  -webkit-mask-image: var(--md-admonition-icon--cisco);
+          mask-image: var(--md-admonition-icon--cisco);
+}
+  

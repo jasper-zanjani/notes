@@ -79,26 +79,43 @@ Parse a date string
 ??? cs "&nbsp;"
 
 
-    === "TryParse"
+    === "`TryParse`"
 
-        ```csharp
-        string rawDate = "07/04/1776";
-        DateTime.TryParse(rawDate, out parsedDate);
-
-        Console.WriteLine(parsedDate.ToLongDateString()); // => "July 4, 1776"
+        ```csharp linenums="1" hl_lines="8"
+        namespace Program
+        {
+            class Program
+            {
+                static void Main()
+                {
+                    string rawDate = "07/04/1776";
+                    DateTime.TryParse(rawDate, out parsedDate);
+                    Console.WriteLine(parsedDate.ToLongDateString()); // => "July 4, 1776"
+                }
+            }
+        }
         ```
 
-    === "try/catch"
-    
-        ```csharp
-        string rawDate = "07/04/1776";
-        try 
+    === "`try/catch`"
+   
+        ```csharp linenums="1" hl_lines="8-15"
+        namespace Program
         {
-            DateTime parsedDate = DateTime.Parse(rawDate);
-        }
-        catch (FormatException)
-        {
-            Console.WriteLine("Unparsable!")
+            class Program
+            {
+                static void Main()
+                {
+                    string rawDate = "07/04/1776";
+                    try 
+                    {
+                        DateTime parsedDate = DateTime.Parse(rawDate);
+                    }
+                    catch (FormatException)
+                    {
+                        Console.WriteLine("Unparsable!")
+                    }
+                }
+            }
         }
         ```
 
@@ -790,7 +807,7 @@ Such a loop will continuously prompt for valid input, in this case an integer.
 
 ## TDD
 
-Text fixture
+Test fixture
 
 
 
@@ -798,15 +815,99 @@ Text fixture
 
 ### DnD character
 
+Generating a Dungeons 'n Dragons character provides the opportunity to exercise a variety of OOP techniques: public and private fields and properties and methods using simple arithmetic.
+
+!!! info ""
+
+    A Dungeons 'n Dragons character has six character attributes that can be randomly assigned.
+    This process, called an **ability roll**, is calculated by rolling four six-sided dice (d6) and summing the highest three values, discarding the lowest.
+    The raw ability score is then modified according to a [table](/Coding/DnD/#ability-modifiers) to produce a final ability score.
+
+    In the implementations below, all ability scores are dynamically calculated using getter functions that sum the raw ability score (stored as a private field) and modifier.
+    Both the ability roll and modifier lookup are implemented as public static functions.
 
 
+??? py "&nbsp;"
 
-=== ":material-language-csharp:"
+    === "Constructor"
+
+        ```python
+        class Character:
+            def __init__(self, race: Race = Race.HUMAN):
+                self._strength_ability = self.ability_roll()
+                self._dexterity_ability = self.ability_roll()
+                self._constitution_ability = self.ability_roll()
+                self._intelligence_ability = self.ability_roll()
+                self._wisdom_ability = self.ability_roll()
+                self._charisma_ability = self.ability_roll()
+                self._race = race
+        ```
+
+    === "Properties"
+
+        ```python
+        class Character:
+            @property
+            def Strength(self):
+                return self._strength_ability + self.get_modifier(self._strength_ability)
+
+            @property
+            def Dexterity(self):
+                return self._dexterity_ability + self.get_modifier(self._dexterity_ability)
+
+            @property
+            def Constitution(self):
+                return self._constitution_ability + self.get_modifier(
+                    self._constitution_ability
+                )
+
+            @property
+            def Intelligence(self):
+                return self._intelligence_ability + self.get_modifier(
+                    self._intelligence_ability
+                )
+
+            @property
+            def Wisdom(self):
+                return self._wisdom_ability + self.get_modifier(self._wisdom_ability)
+
+            @property
+            def Charisma(self):
+                return self._charisma_ability + self.get_modifier(self._charisma_ability)
+        ```
+
+    === "Methods"
+
+        ```python
+        @staticmethod
+        def Roll(range: int = 6):
+            return random.randrange(range) + 1
+
+        @staticmethod
+        def get_modifier(score: int):
+            return math.floor((score - 10) / 2)
+
+        @classmethod
+        def ability_roll(cls):
+            rolls = [cls.Roll(), cls.Roll(), cls.Roll(), cls.Roll()]
+            rolls.remove(min(rolls))
+            return sum(rolls)
+
+        def report(self):
+            print(f"Strength: {self.Strength}")
+            print(f"Dexterity: {self.Dexterity}")
+            print(f"Constitution: {self.Constitution}")
+            print(f"Intelligence: {self.Intelligence}")
+            print(f"Wisdom: {self.Wisdom}")
+            print(f"Charisma: {self.Charisma}")
+        ```
+
+??? cs "&nbsp;"
 
     === "Constructor"
 
         ```csharp
-        class Character
+        partial class Character
         {
             private int StrengthAbility;
             private int DexterityAbility;
@@ -834,163 +935,125 @@ Text fixture
     === "Properties"
 
         ```csharp
-        public int Strength
+        partial class Character
         {
-            get
-            {
-                return StrengthAbility + GetModifier(StrengthAbility) + GetRaceModifier(Abilities.STRENGTH);
-            }
-        }
-        public int Dexterity
-        {
-            get
-            {
-                return DexterityAbility + GetModifier(DexterityAbility) + GetRaceModifier(Abilities.DEXTERITY);
-            }
-        }
-        public int Constitution
-        {
-            get
-            {
-                return ConstitutionAbility + GetModifier(ConstitutionAbility) + GetRaceModifier(Abilities.CONSTITUTION);
-            }
-        }
-        public int Intelligence
-        {
-            get
-            {
-                return IntelligenceAbility + GetModifier(IntelligenceAbility) + GetRaceModifier(Abilities.INTELLIGENCE);
-            }
-        }
-        public int Wisdom
-        {
-            get
-            {
-                return WisdomAbility + GetModifier(WisdomAbility) + GetRaceModifier(Abilities.WISDOM);
-            }
-        }
-        public int Charisma
-        {
-            get
-            {
-                return CharismaAbility + GetModifier(CharismaAbility) + GetRaceModifier(Abilities.CHARISMA);
-            }
+            public int Strength     { get => StrengthAbility + GetModifier(StrengthAbility) + GetRaceModifier(Abilities.STRENGTH) }
+            public int Dexterity    { get => DexterityAbility + GetModifier(DexterityAbility) + GetRaceModifier(Abilities.DEXTERITY) }
+            public int Constitution { get => ConstitutionAbility + GetModifier(ConstitutionAbility) + GetRaceModifier(Abilities.CONSTITUTION) }
+            public int Intelligence { get => IntelligenceAbility + GetModifier(IntelligenceAbility) + GetRaceModifier(Abilities.INTELLIGENCE) }
+            public int Wisdom       { get => WisdomAbility + GetModifier(WisdomAbility) + GetRaceModifier(Abilities.WISDOM) }
+            public int Charisma     { get => CharismaAbility + GetModifier(CharismaAbility) + GetRaceModifier(Abilities.CHARISMA) }
         }
         ```
 
     === "Methods"
 
         ```csharp
-        public void Report()
+        partial class Character
         {
-            Console.Write($"Strength: {Strength,2}");
-            Console.Write($"Dexterity: {Dexterity,2}");
-            Console.Write($"Constitution: {Constitution,2}");
-            Console.Write($"Intelligence: {Intelligence,2}");
-            Console.Write($"Wisdom: {Wisdom,2}");
-            Console.Write($"Charisma: {Charisma,2}");
-        }
+            public void Report()
+            {
+                Console.Write($"Strength: {Strength,2}");
+                Console.Write($"Dexterity: {Dexterity,2}");
+                Console.Write($"Constitution: {Constitution,2}");
+                Console.Write($"Intelligence: {Intelligence,2}");
+                Console.Write($"Wisdom: {Wisdom,2}");
+                Console.Write($"Charisma: {Charisma,2}");
+            }
 
-        static int Roll(int ceiling)
-        {
-            Random rng = new Random();
-            return rng.Next(1, ceiling);
-        }
+            static int Roll(int ceiling)
+            {
+                Random rng = new Random();
+                return rng.Next(1, ceiling);
+            }
 
-        static int AbilityRoll()
-        {
-            List<int> rolls = new List<int> { Roll(6), Roll(6), Roll(6), Roll(6) };
-            rolls.Remove(rolls.Min());
+            static int AbilityRoll()
+            {
+                List<int> rolls = new List<int> { Roll(6), Roll(6), Roll(6), Roll(6) };
+                rolls.Remove(rolls.Min());
 
-            return rolls.Sum();
-        }
+                return rolls.Sum();
+            }
 
-        public static int GetModifier(int ability)
-        {
-            return (int)System.Math.Floor(((double)ability - 10) / 2);
+            public static int GetModifier(int ability)
+            {
+                return (int)System.Math.Floor(((double)ability - 10) / 2);
+            }
         }
         ```
 
-=== ":material-language-python:"
-
-    === "Constructor"
-
-        ```python
-        class Character:
-            def __init__(self, race: Race = Race.HUMAN):
-                self._strength_ability = self.ability_roll()
-                self._dexterity_ability = self.ability_roll()
-                self._constitution_ability = self.ability_roll()
-                self._intelligence_ability = self.ability_roll()
-                self._wisdom_ability = self.ability_roll()
-                self._charisma_ability = self.ability_roll()
-                self._race = race
-        ```
-
-
-    === "Properties"
-
-        ```python
-        @property
-        def Strength(self):
-            return self._strength_ability + self.get_modifier(self._strength_ability)
-
-        @property
-        def Dexterity(self):
-            return self._dexterity_ability + self.get_modifier(self._dexterity_ability)
-
-        @property
-        def Constitution(self):
-            return self._constitution_ability + self.get_modifier(
-                self._constitution_ability
-            )
-
-        @property
-        def Intelligence(self):
-            return self._intelligence_ability + self.get_modifier(
-                self._intelligence_ability
-            )
-
-        @property
-        def Wisdom(self):
-            return self._wisdom_ability + self.get_modifier(self._wisdom_ability)
-
-        @property
-        def Charisma(self):
-            return self._charisma_ability + self.get_modifier(self._charisma_ability)
-        ```
-        
-    === "Methods"
-
-        ```python
-        @staticmethod
-        def Roll(range: int = 6):
-            return random.randrange(range) + 1
-
-        @staticmethod
-        def get_modifier(score: int):
-            return math.floor((score - 10) / 2)
-
-        @classmethod
-        def ability_roll(cls):
-            rolls = [cls.Roll(), cls.Roll(), cls.Roll(), cls.Roll()]
-            rolls.remove(min(rolls))
-            return sum(rolls)
-
-        def report(self):
-            print(f"Strength: {self.Strength}")
-            print(f"Dexterity: {self.Dexterity}")
-            print(f"Constitution: {self.Constitution}")
-            print(f"Intelligence: {self.Intelligence}")
-            print(f"Wisdom: {self.Wisdom}")
-            print(f"Charisma: {self.Charisma}")
-        ```
 
 ### RPG character generator
 
-=== "Player class"
+??? py "&nbsp;"
 
-    === ":material-language-cpp:"   
+    === "Player class"
+
+        ```py
+        class Player():
+            def __init__(self, name : str, race: Race, hp : int, mp : int):
+                self._name = name
+                self._race = race
+                self._hp = hp
+                self._mp = mp
+            
+            @property
+            def getName(self):
+                return self._name
+            
+            @property
+            def getRace(self):
+                return self._race
+            
+            @property
+            def getHp(self):
+                return self._hp
+            
+            @property
+            def getMp(self):
+                return self._mp
+            
+            def attack(self):
+                return "Have at thee!"
+        ```
+
+    === "Subclasses"
+
+        ```py
+        class Warrior(Player):
+            def __init__(self, name : str, race: Race):
+                super().__init__(name, race, 200, 0)
+            def attack(self):
+                return "I will destroy with my sword, foul demon!"
+
+        class Priest(Player):
+            def __init__(self, name: str, race: Race):
+                super().__init__(name, race, 100, 200)
+            def attack(self):
+                return "Taste the wrath of the Two True Gods!"
+
+        class Mage(Player):
+            def __init__(self, name:str, race:Race):
+                super().__init__(name, race, 150, 150)
+            def attack(self):
+                return "You are overmatched by my esoteric artifices!"
+        ```
+
+    === "Race"
+
+        ```py
+        import enum
+
+        class Race(enum.Enum):
+            HUMAN = enum.auto(),
+            ELF = enum.auto(),
+            DWARF = enum.auto()
+        ```
+
+
+??? cpp "&nbsp;"
+
+    === "Player class"
 
         ```cpp
         #include <string>
@@ -1035,40 +1098,8 @@ Text fixture
         void setRace(Race r)        { _race = r;}
         };
         ```
-
-    === ":material-language-python:"
-
-        ```py
-        class Player():
-            def __init__(self, name : str, race: Race, hp : int, mp : int):
-                self._name = name
-                self._race = race
-                self._hp = hp
-                self._mp = mp
-            
-            @property
-            def getName(self):
-                return self._name
-            
-            @property
-            def getRace(self):
-                return self._race
-            
-            @property
-            def getHp(self):
-                return self._hp
-            
-            @property
-            def getMp(self):
-                return self._mp
-            
-            def attack(self):
-                return "Have at thee!"
-        ```
-
-=== "Subclasses"
-
-    === ":material-language-cpp:"
+    
+    === "Subclasses"
 
         ```cpp
         class Warrior : public Player {
@@ -1090,31 +1121,7 @@ Text fixture
         };
         ```
 
-    === ":material-language-python:"
-
-        ```py
-        class Warrior(Player):
-            def __init__(self, name : str, race: Race):
-                super().__init__(name, race, 200, 0)
-            def attack(self):
-                return "I will destroy with my sword, foul demon!"
-
-        class Priest(Player):
-            def __init__(self, name: str, race: Race):
-                super().__init__(name, race, 100, 200)
-            def attack(self):
-                return "Taste the wrath of the Two True Gods!"
-
-        class Mage(Player):
-            def __init__(self, name:str, race:Race):
-                super().__init__(name, race, 150, 150)
-            def attack(self):
-                return "You are overmatched by my esoteric artifices!"
-        ```
-
-=== "Race"
-
-    === ":material-language-cpp:"
+    === "Race"
 
         ```cpp
         enum Race { 
@@ -1124,79 +1131,46 @@ Text fixture
         };
         ```
 
-    === ":material-language-python:"
-    
-        ```py
-        import enum
-
-        class Race(enum.Enum):
-            HUMAN = enum.auto(),
-            ELF = enum.auto(),
-            DWARF = enum.auto()
-        ```
-
-
 
 ### Starships
 
-This demonstration project provides a scenario for implementing OOP and TDD principles in a variety of languages and implementations.
+This project provides a scenario for implementing OOP and TDD principles in a variety of languages and implementations.
 
-- **Officer** and **Starship** are simple classes with intuitive properties and fields.
-- The **StarshipClass** is a simple enum that defines available starship types.
-- **Fleet** serves as a container for Starships.
-- A Captain is paired with a Starship to form a **StarshipDeployment**.
-    - **CaptainSelector**, which is passed to StarshipDeployment by dependency injection, evaluates whether the Officer provided has what it takes to ply the inky black.
-This boils down to a check on the Grade property, which is simple to test in testing frameworks where a mocked Officer object can be set up with unsatisfactory Grade values.
+Simple classes with intuitive properties and fields include **Officer** and **Starship**, which also has a field containing a variant of the **StarshipClass** enum.
+**Fleet** serves as a container for Starships.
+An Officer is paired with a Starship to form a **StarshipDeployment**.
+
+**CaptainSelector**, which is passed to StarshipDeployment by dependency injection, evaluates whether the Officer provided has what it takes to ply the inky black.
+This boils down to a check on the Officer's Grade property, which is simple to test in testing frameworks where a mocked Officer object can be set up with unsatisfactory Grade values.
     - StarshipDeployment also takes a **StarshipValidator** object by dependency injection, which it uses to perform checks on a given Starship.
 These checks provide opportunities to mock Starship and Officer objects in unit testing.
         - `IsCaptained()` checks if the Starship has a Captain assigned
         - `ValidateRegistry()` makes sure the Starship's registry number begins with NCC or NX
         - `Evaluate()` runs all the other methods in the class and returns True only if all checks pass. This provides the opportunity to test a mocked validator for invocation of the `Evaluate()` method.
 
-=== "StarshipClass"
-
-    ??? py "&nbsp;"
-        --8<-- "includes/Coding/Python/Starships/StarshipClass.md"
-
-    ??? cs
-        --8<-- "includes/Coding/C-Sharp/Starships/StarshipClass.md"
-
-
-=== "Officer"
-
-    ??? rs "&nbsp;"
+??? rs "&nbsp;"
+    === "Officer"
         --8<-- "includes/Coding/Rust/Starships/Officer.md"
-
-    ??? cs
-        --8<-- "includes/Coding/C-Sharp/Starships/Officer.md"
-
-
-=== "Starship"
-
-    ??? rs "&nbsp;"
+    === "Starship"
         --8<-- "includes/Coding/Rust/Starships/Starship.md"
 
-    ??? py "&nbsp;"
+??? py "&nbsp;"
+    === "StarshipClass"
+        --8<-- "includes/Coding/Python/Starships/StarshipClass.md"
+    === "Starship"
         --8<-- "includes/Coding/Python/Starships/Starship.md"
 
-
-=== "CaptainSelector"
-
-    ??? cs
+??? cs "&nbsp;"
+    === "StarshipClass"
+        --8<-- "includes/Coding/C-Sharp/Starships/StarshipClass.md"
+    === "Officer"
+        --8<-- "includes/Coding/C-Sharp/Starships/Officer.md"
+    === "CaptainSelector"
         --8<-- "includes/Coding/C-Sharp/Starships/CaptainSelector.md"
-
-
-=== "StarshipValidator"
-
-    ??? cs
+    === "StarshipValidator"
         --8<-- "includes/Coding/C-Sharp/Starships/StarshipValidator.md"
-
-
-=== "StarshipDeployment"
-
-    ??? cs "&nbsp;"
+    === "StarshipDeployment"
         --8<-- "includes/Coding/C-Sharp/Starships/StarshipDeployment.md"
-
 
 ## 📘 Glossary
 

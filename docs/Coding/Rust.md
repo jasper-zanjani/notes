@@ -1,55 +1,90 @@
 *[TOML]: Tom's Obvious Minimal Language
 *[LIFO]: Last-In First-Out
 
+<!----------------------------------------------------------------------------
+TODO: 
+
+- Return to exercism and other code sites to find applications of iterator methods, i.e. finding odd or even numbers, etc
+
+----------------------------------------------------------------------------->
+
 # Rust
 
-#### Comments
+> Rust's distinguishing feature as a programming language is its ability to prevent invalid data access at compile time.
+> &#mdash;Tim McNamara
+
+Rust offers **zero-cost abstractions**, where using the abstraction imposes no addition runtime overhead.
+
+#### Documentation
 
 Rust uses C-style line comments using `//` and block comments using `/*`, `*/`
 
-**Doc comments** support markdown and are used to generate documentation.
+**Doc comments** support markdown and are used to generate documentation with the use of a built-in static site generator that can compile inline comments (**`--open`** opens the site in the default web browser).
 
-- **Outer doc comments** are preceded by `///` and are written outside of code blocks
-- **Inner doc comments** are preceded by `//!` and are writtenw within code blocks, similar to docstrings in Python
+```sh
+cargo doc --open
+```
+
+
+Markdown code blocks containing test cases are known as **doc tests** and can be run with `cargo test`, for library crates only.
+Note that markdown code blocks in Rust doc comments don't need a language annotation.
+
+- **Outer doc comments** are preceded by `///` and are written immediately preceding the code blocks they document
+- **Inner doc comments** are preceded by `//!` and are written within code blocks, similar to docstrings in Python
+
+---8<-- "includes/Coding/Rust/Starships/1/starship.rs.md"
+
 
 #### Organization
+
+Projects in Rust are called **crates**{:#crate}, and they can be created with the **`cargo`** command-line utility.
+By default, cargo will initiate a Git repo
+
+=== ":material-git: Default"
+    ```sh
+    cargo new hello_cargo
+    ```
+
+=== ":no_entry_sign: None"
+    ```sh
+    cargo new hello_cargo --vcs none
+    ```
+
+The **`add`** subcommand can be enabled by running `cargo install cargo-edit`.
+Now dependencies can be added thus:
+
+``` sh
+cargo add num
+```
+
+This creates a TOML configuration file for the project.
+Rust refers to code dependencies as **crates**, equivalent to **modules** in Python.
+Open-source crates are stored in the **registry**.
 
 A **package** contains one or more [**crates**](#crate) and contains a Cargo.toml file.
 
 **Modules** allow code to be organized within a crate into groups for readability.
-Modules, which can be nested, are declared with `mod`.
-```rs
-mod front_of_house {
-    mod hosting {
-        fn add_to_waitlist() {}
-        fn seat_at_table() {}
-    }
 
-    mod serving {
-        fn take_order() {}
-        fn serve_order() {}
-        fn take_payment() {}
-    }
-}
-```
-
-
+- **`mod`** declares a module, which can be nested
 - **`crate`** is the root of the module tree, equivalent to `cd /`
 - **`super`** moves up the module tree one node, similar to `cd ..`
 - **`use .. as`** is similar to creating a shortcut or symlink. Rust convention is to bring a function's parent into scope in order to mark function calls as unmistakeably belonging to external code. However, for structs and other data structures the full path is specified.
+- **`pub use`** statements are used to construct a convenient API by allowing the namespace to be flattened
 
+!!! rs "&nbsp;"
 
-#### Crates
+    === "lib.rs"
 
-Projects in Rust are called **crates**, and they can be created with the **`cargo`** command-line utility.
+        ---8<-- "includes/Coding/Rust/Starships/2/lib.rs.md"
 
-```rs
-cargo new hello_cargo
-```
+    === "starship.rs"
 
-This creates a TOML configuration file for the project.
-Rust refers to code dependencies as **crates**, what is equivalent to **modules** in Python.
-Open-source crates are stored in the **registry**.
+        ---8<-- "includes/Coding/Rust/Starships/2/starship.rs.md"
+
+    === "officer.rs"
+
+        ---8<-- "includes/Coding/Rust/Starships/2/officer.rs.md"
+
 
 ### Error handling
 
@@ -58,8 +93,6 @@ Recoverable errors can be handled by program logic, whereas unrecoverable errors
 
 A key data structure used in error handling in Rust is a [`match`](#match) statement with two arms to handle the two variants of a [`Result<T,E>`](#resultte) enum.
 However, `match` statements are also considered hard to read, and seasoned Rustaceans will be able to improve readability by using `Result<T,E>` helper methods like `unwrap()` and `expect()` when they are better.
-
-
 
 === "Idiomatic"
 
@@ -185,18 +218,13 @@ Type can be inferred by the compiler or explicitly annotated after a colon
     let var:u8 = 0;
     ```
 
-
-
 Arrays and Tuples are considered primitive data types, albeit **Compound** ones.
 Integer and Float are considered **Numeric Scalars**, while Boolean and Chars are considered **Non-Numeric Scalars**.
 
 - Floating point numbers can be single-precision `f32` or double-precision `f64`.
 - Booleans are `true` or `false` (lower-case).
 
-
-
 Arrays are **homogeneous** sequences of elements and must be of a fixed length, declared at initialization, although the type can be determined implicitly.
-
 
 === "Explicit"
 
@@ -293,18 +321,15 @@ For types that "are `Copy`" - i.e. have the `Copy` trait - an older variable is 
 `Copy` types include integers, booleans, chars, floats, and tuples containing only other `Copy` types.
 
 Function calls also exhibit move behavior; after a variable is passed as argument to a function, the function owns it and it may not be used again in its original context unless ownership is returned.
+If the value is not returned, the argument's contents are consumed and it may not be used again in the calling context.
+
 This is why most function calls in Rust use [**references**](#references), prefixing the variable identifier with `&`, a process called **borrowing**.
 
-#### References
+Passing a value to a function while transferring ownership is called "passing by value" or a **move**, whereas using a reference is called "passing by reference".
 
-Pointer types like **`Box<T>`** and those internal to [String](#string) and [Vec](#vector) are **owning pointers**: when the owner is dropped the referent is deallocated.
-Nonowning pointer types are called **references** and have no effect on their referents' lifetimes.
+=== "Passing by value"
 
-Passing a value to a function while transferring ownership is called passing "by value", whereas using a reference is called passing "by reference".
-
-=== "By value"
-
-    ```rs
+    ```rs linenums="1" hl_lines="4"
     fn main() {
         let s = String::from("Dgiapusccu");
         hello_world(s);
@@ -313,12 +338,28 @@ Passing a value to a function while transferring ownership is called passing "by
 
     fn hello_world(s:String) {
         println!("Hello, {}!", s)
+
+    }
+    ```
+
+=== "Returning value"
+
+    ```rs linenums="1" hl_lines="3 9"
+    fn main() {
+        let s = String::from("Dgiapusccu");
+        let s = hello_world(s);
+        println!("Hello again, {}!", s);
+    }
+
+    fn hello_world(s:String) -> String {
+        println!("Hello, {}!", s);
+        s
     }
     ```
 
 === "By reference"
 
-    ```rs
+    ```rs linenums="1" hl_lines="3 7"
     fn main() {
         let s = String::from("Dgiapusccu");
         hello_world(&s);
@@ -327,8 +368,14 @@ Passing a value to a function while transferring ownership is called passing "by
 
     fn hello_world(s:&String) {
         println!("Hello, {}!", s)
+
     }
     ```
+
+#### References
+
+Pointer types like [**`Box<T>`**](#box) and those internal to [String](#string) and [Vec](#vector) are **owning pointers**: when the owner is dropped the referent is deallocated.
+Nonowning pointer types are called **references** and have no effect on their referents' lifetimes.
 
 There are two types of reference:
 
@@ -336,6 +383,7 @@ There are two types of reference:
 Multiple shared references to the same value can be created.
 - **Mutable references** allow both reading and modifying of the referent
 To prevent **data races** only one mutable reference to a location in a scope can exist.
+
 A mutable reference and an immutable one cannot coexist in the same scope.
 Moves after a borrow are also forbidden, for this same reason.
 
@@ -414,6 +462,15 @@ Function definitions also take the lifetime annotation on the `impl` keyword, i.
     }
     ```
 
+### Collections
+
+Accessing tuple elements is done with the **`.`** operator
+
+``` rs
+let coord: (i8, i8) = (10, 20);
+println!("{}, {}", coord.0, coord.1);
+```
+
 ## Paradigms
 
 ### OOP
@@ -447,15 +504,193 @@ fn fails() {
 }
 ```
 
+Tests can also be incorporated in documentation as markdown code blocks.
+
+---8<-- "includes/Coding/Rust/Starships/1/starship.rs.md"
+
 ## 📘 Glossary
 
-**attribute**{: #attribute }
+**associated type**{: #associated-type }
+:   
+    Associated types connect a type placeholder with a trait such that the trait method definitions use these placeholder types in their signatures.
+
+    With generics, we must annotate the types in **each** implementation,
+    but using an associated type forces a **single** implementation.
+
+    === "Associated type"
+
+        ``` rs hl_lines="2"
+        pub trait Iterator {
+            type Item;
+
+            fn next(&mut self) -> Option<Self::Item>;
+        }
+        ```
+
+    === "Generic"
+
+        ``` rs
+        pub trait Iterator<T> {
+            fn next(&mut self) -> Option<T>;
+        }
+        ```
+
+#### Attribute
 :   
     metadata that decorates code.
 
+    - **`#![allow(unused_variables)]`** suppresses compiler warnings
+    - **`#[allow(dead_code)`** suppresses compiler warnings about unused functions
     - `#[cfg(test)]`
     - `#[test]`
     - `#[ignore]`
+
+#### `Box<T>`
+:   
+    The most straightforward and commonly used [smart pointer](#smart-pointer), allowing data to be stored on the heap rather than the stack.
+
+    ``` rs
+    let b = Box::new(5);
+    ```
+
+    Boxes can be dereferenced just like references.
+
+    === "Box"
+
+        ```rs hl_lines="2"
+        let x = 5;
+        let y = Box::new(x);
+        assert_eq!(5, *y);
+        ```
+
+    === "Reference"
+
+        ```rs
+        let x = 5;
+        let y = &x;
+        assert_eq!(5, *y);
+        ```
+
+#### Closure
+:   
+    Closures are anonymous functions that can be saved in a variable or passed as arguments to functions.
+    Closure definitions in Rust use pipe characters `|` to enclose the parameter list, followed by a code block. 
+    Because this code block is placed on the right side of a variable assignment statement, the closing curly bracket is followed by a semicolon.
+    Type annotations are optional with closures because the compiler is typically able to infer type information from the context.
+
+    === "Closure"
+    
+        ``` rs
+        let do_stuff = |arg| {
+            // ...
+        };
+        ```
+
+    === "Function"
+
+        ``` rs
+        fn do_stuff(arg: u8) -> u32 {
+            // ...
+        }
+        ```
+    
+    This variable is then called like a function.
+    ```rs
+    do_stuff("bla");
+    ```
+
+    Compute-expensive closures can be memoized by placing them in a struct that caches the resulting value:
+
+    ``` rs
+    struct Cacher<T>
+        where T: Fn(u32) -> u32 {
+            calculation: T,
+            value: Option<u32>,
+        }
+    
+    impl<T> Cacher<T>
+        where T: Fn(u32) -> u32
+    {
+        fn new(calculation: T) -> Cacher<T> {
+            Cacher {
+                calculation,
+                value: None,
+            }
+        }
+
+        fn value(&mut self, arg: u32) -> u32 {
+            match self.value {
+                Some(v) => v,
+                None => {
+                    let v = (self.calculation)(arg);
+                    self.value=Some(v);
+                    v
+                }
+            }
+        }
+    }
+    ```
+    
+    Closures can access variables from their **environment**, or enclosing scope, something which functions are forbidden to do.
+
+    Here, the compiler will raise an error when using the function and suggest the closure form in the error message.
+
+    === "Function"
+
+        ```rs
+        fn main() {
+            let x = 4;
+
+            fn equal_to_x(z: i8) -> bool { z == x }
+
+            let y = 4;
+
+            assert!(equal_to_x(y));
+        }
+        ```
+    
+    === "Closure"
+
+        ```rs
+        fn main() {
+            let x = 4;
+
+            let equal_to_x(z: i8) = |z| z == x;
+
+            let y = 4;
+
+            assert!(equal_to_x(y));
+        }
+        ```
+
+    The **`move`**{: #move } [:material-language-rust:](https://doc.rust-lang.org/std/keyword.move.html) keyword makes a closure take ownership of all captured variables
+
+    Here, using `move` produces a compile-time error because `println!()` attempts to borrow x after it is moved in the closure definition.
+    Commenting this line removes the error.
+
+    === "`move`"
+
+        ```rs hl_lines="3 4"
+        fn main() {
+            let x = vec![1, 2, 3];
+            let equal_to_x = move |z| z == x;
+            println!("can't use x here: {:?}", x);
+            let y = vec![1, 2, 3];
+            assert!(equal_to_x(y));
+        }
+        ```
+
+    === "Without `move`"
+
+        ```rs
+        fn main() {
+            let x = vec![1, 2, 3];
+            let equal_to_x = |z| z == x;
+
+            let y = vec![1, 2, 3];
+            assert!(equal_to_x(y));
+        }
+        ```
 
 **crate**{: #crate}
 :   
@@ -468,18 +703,28 @@ fn fails() {
 
     The **crate root** is the source file that the compiler uses to create the root module of the crate.
 
-**Custom derive**{: #custom-derive } is a feature where a default implementation of trait is generated by annotating a struct.
+**Custom derive**{: #custom-derive } 
 :   
+    Feature where the default implementation of a [trait](#trait) is generated by annotating a struct with an [attribute](#attribute).
 
     ```rs
-    #[derive(StructOpt)]
-    struct Options {
-        message: String
+    #[derive(Debug)]
+    struct Starship {
+        name: String,
+        registry: String,
+        crew: i16,
+        captain: Officer,
+        class: StarshipClass,
     }
     ```
 
 #### `dbg` [:material-language-rust:](https://doc.rust-lang.org/std/macro.dbg.html)
 :   
+
+    !!! info "&nbsp;"
+
+        Not to be confused with the [Debug trait](#trait), which is used with the normal [`println!()` macro](#macro)!
+
     Allows evaluation and printing of expressions during debugging or running with `cargo run`.
 
     === "Code"
@@ -540,28 +785,162 @@ fn fails() {
     ```
     For non-Copy types, the hash map becomes the new owner of data values on assignment.
 
+
+
 #### `if let`
 :   
+    **`if let`** is syntactic sugar for a pattern that matches one pattern while ignoring the rest.
+    Notably, the syntax takes the pattern before the expression similar to a [`match`](#match) arm.
+    
+    === "if let"
+
+        ``` rs
+        if let Some(3) = some_u8_value {
+            println!("three");
+        }
+        ```
+    
+    === "Naive"
+
+        ``` rs
+        let some_u8_value = Some(0u8);
+        match some_u8_value {
+            Some(3) => println!("three"),,
+            _ => (),
+        }
+        ```
+
+#### Iterator
+:   
+    The **iterator pattern** is one that allows logic to be performed on a sequence of items in turn.
+
+    An **iterator** in Rust is anything that implements the **`Iterator`** [trait](#trait).
+    This trait only requires implementation of a single method: `next()`, which returns one item of the iterator at a time wrapped in `Some` and `None` when the iterator is consumed.
+    
+    Many types return an iterator by calling the **`iter()`** method, which can then be iterated over using a **`for .. in`** loop.
+    Alternatively, the `next()` method can be called directly.
+
+    === "Loop"
+
+        ```rs
+        let v1 = vec![1, 2, 3];
+
+        for i in v1.iter() {
+            println!("{}", i);
+        }
+        ```
+
+    === "`next()`"
+
+        ```rs
+        let v1 = vec![1, 2, 3];
+        let v1_iter = v1.iter();
+
+        assert_eq!(v1_iter.next(),Some(&1));
+        assert_eq!(v1_iter.next(),Some(&2));
+        assert_eq!(v1_iter.next(),Some(&3));
+        assert_eq!(v1_iter.next(),None);
+        ```
+
+    Other methods are defined on the Iterator trait.
+    
+    - **Consuming iterators** are those that call `next()`, like `sum()`{: #sum }
+    - **Iterator adapters** change iterators into different kinds of iterators, like `map()`{: #map } and `filter()`{: #filter }
+
+    === "`sum()`"
+
+        ```rs hl_lines="4"
+        fn iterator_sum() {
+            let v1 = vec![1, 2, 3];
+
+            let total: i32 = v1.iter().sum();
+            assert_eq!(total, 6);
+        }
+        ```
+
+    === "`map()`"
+
+        ```rs hl_lines="3"
+        fn main() {
+            let v1 = vec![1, 2, 3];
+            let v2 : Vec<_> = v1.iter().map(|x| x + 1).collect();
+            let total: i32 = v2.iter().sum();
+            println!("{}", total);
+        }
+        ```
+
 
 
 #### macro
 :   
-  - [`assert!()` :material-language-rust:](https://doc.rust-lang.org/std/macro.assert.html) invokes `panic!()` if the provided expression cannot be evaluated to true at runtime
+  - `assert!()` [:material-language-rust:](https://doc.rust-lang.org/std/macro.assert.html) invokes `panic!()` if the provided expression cannot be evaluated to true at runtime
   - [`dbg!()`](#dbg)
-  - [`panic!()` :material-language-rust:](https://doc.rust-lang.org/std/macro.panic.html) terminates the program with code 101 and should be used when the program reaches an unrecoverable state
+  - `panic!()` [:material-language-rust:](https://doc.rust-lang.org/std/macro.panic.html) terminates the program with code 101 and should be used when the program reaches an unrecoverable state
   - `println!()`
+
 
 #### `match`
 :   
     **`match`** is a powerful control flow operator that resembles a `switch` statement.
+    `match` works on integers, ranges of integers, bools, enums, tuples, arrays, and structs.
     `match` allows a value to be compared against a series of patterns, which can be literal values as well as numerous other things.
     Each pattern is within a `match` **arm**, which is composed of the pattern and some code, here an expression.
+
+    Recursive Fibonacci sequence implementation:
+
+    === "if/else"
+
+        ```rs linenums="1"
+        const FIB_ZERO: u64 = 1;
+        const FIB_ONE: u64 = 1;
+
+        fn fib(n: u64) -> u64 {
+            if n == 0 {
+                FIB_ZERO
+            } else if n==1 {
+                FIB_ONE
+            } else {
+                fib(n-1) + fib(n-2)
+            }
+        }
+
+        fn main() {
+            let n: u64 = std::env::args().nth(1).unwrap().parse().unwrap();
+            for i in 1..n {
+                println!("{}: {}", i, fib(i));
+            }
+        }
+        ```
+
+    === "`match`"
+
+        ```rs linenums="1" hl_lines="4-10"
+        const FIB_ZERO: u64 = 1;
+        const FIB_ONE: u64 = 1;
+
+        fn fib(n: u64) -> u64 {
+            match n {
+                0 => FIB_ZERO,
+                1 => FIB_ONE,
+                _ => fib(n-1) + fib(n-2)
+            }
+        }
+
+
+
+        fn main() {
+            let n: u64 = std::env::args().nth(1).unwrap().parse().unwrap();
+            for i in 1..n {
+                println!("{}: {}", i, fib(i));
+            }
+        }
+        ```
 
     Patterns can also bind to parts of the values that match the pattern.
 
     === "Simple enum"
 
-        ```rs
+        ```rs linenums="1"
         enum Coin {
             Penny,
             Nickel,
@@ -581,13 +960,16 @@ fn fails() {
                 Coin::Nickel => 5,
                 Coin::Dime => 10,
                 Coin::Quarter => 25,
+
+
+
             }
         }
         ```
 
     === "Nested enum"
 
-        ```rs
+        ```rs linenums="1" hl_lines="5 8-12 19-22"
         enum Coin {
             Penny,
             Nickel,
@@ -614,20 +996,6 @@ fn fails() {
         }
         ```
 
-#### `Option<T>`
-:   
-    Rust doesn't have the same implementation of null values that other languages do because handling null values is complicated and when unexpected they cause bugs.
-    Rather than null values, Rust implements null as a variant **`None`** of the enum **`Option<T>`**
-    ```rs
-    enum Option<T> {
-        Some(T),
-        None
-    }
-    ```
-
-    The reason for this is because Rust conventionally handles enums in a [`match`](#match) statement, which requires **exhaustive** enumeration of all possible cases.
-    The compiler itself will raise an error if you compose a match statement which leaves some potential cases unhandled.
-
     In this example, the match statement only announces when a `Coin::Quarter(state)` is encountered, but all other cases are handled by the placeholder `_`.
     The `if let` syntax is equivalent:
 
@@ -651,6 +1019,20 @@ fn fails() {
             count += 1;
         }
         ```
+
+#### `Option<T>`
+:   
+    Rust doesn't have the same implementation of null values that other languages do because handling null values is complicated and when unexpected they cause bugs.
+    Rather than null values, Rust implements null as a variant **`None`** of the enum **`Option<T>`**
+    ```rs
+    enum Option<T> {
+        Some(T),
+        None
+    }
+    ```
+
+    The reason for this is because Rust conventionally handles enums in a [`match`](#match) statement, which requires **exhaustive** enumeration of all possible cases.
+    The compiler itself will raise an error if you compose a match statement which leaves some potential cases unhandled.
 
 #### `Result<T,E>`
 :   
@@ -702,7 +1084,6 @@ fn fails() {
             }
             Ok(s)
         }
-
         ```
 
     Helper methods:
@@ -710,6 +1091,81 @@ fn fails() {
     - [`expect()` :material-language-rust:](https://doc.rust-lang.org/std/result/enum.Result.html#method.expect) returns the contained `Ok` value or panics with the provided error message.
     - [`unwrap()` :material-language-rust:](https://doc.rust-lang.org/std/result/enum.Result.html#method.unwrap) returns the contained `Ok` value or panics.
     - [`unwrap_or_else()` :material-language-rust:](https://doc.rust-lang.org/std/result/enum.Result.html#method.unwrap_or_else) returns the contained `Ok` value or computes it from a [closure](#closure).
+
+**Smart pointer**{: #smart-pointer }
+:   
+    Smart pointers are data structures that act like references but provide additional functionality and metadata.
+    The smart pointer pattern is used frequently in Rust.
+
+    In Rust, smart pointers are structs that implement two [traits](#trait):
+    
+    - **`Deref`**{: #deref } allows an instance of the smart pointer struct to behave like a reference
+    - **`Drop`** allows you to run custom logic when the pointer goes out of scope
+
+    === "MyBox"
+
+        ``` rs
+        struct MyBox<T>(T) {
+            data: String,
+        }
+
+        impl<T> MyBox<T> {
+            fn new(x: T) -> MyBox<T> {
+                MyBox(x)
+            }
+        }
+        ```
+
+    === "Deref"
+
+        ``` rs
+        impl<T> std::ops::Deref for MyBox<T> {
+            // Define an **associated type** for the Deref trait to use
+            type Target = T; 
+
+            fn deref(&self) -> &T {
+                &self.0
+            }
+        }
+        ```
+
+    === "Drop"
+
+        ``` rs
+        impl<T> Drop for MyBox<T> {
+            fn drop(&mut self) {
+                println!("Dropping MyBox");
+            }
+        }
+        ```
+
+    Now the smart pointer supports the dereferencing operator `*` and a message is displayed when it goes out of scope.
+
+    ``` rs hl_lines="4"
+    fn main() {
+        let x = 5;
+        let y = MyBox::new(x);
+        assert_eq!(5, *y);
+    }
+    ```
+
+    Behind the scenes, the compiler is really dereferencing the value returned by `deref()`:
+
+    ``` rs
+    *(y.deref())
+    ```
+
+    The `drop()` method may not be called explicitly in order to avoid the **double free** error that would occur when the variable goes out of scope.
+    Alternatively, `std::mem::drop()` (already in the prelude) can be called explicitly.
+    
+    ``` rs
+    drop(y);
+    ```
+
+    Other smart pointers in the standard library include:
+
+    - **`Rc<T>`**w hich enables multiple owners of the same data and is used to count references, but only in single-threaded contexts
+    - **`RefCell<T>`** which enforces borrowing rules but only at runtime
 
 #### String
 :   
@@ -720,13 +1176,6 @@ fn fails() {
     String slices expose a `to_string()` method for conversion to a String.
     Alternatively, you can use `String::from()` to convert a string slice to a string.
 
-
-    === "to_string"
-
-        ```rs
-        let data = "initial contents";
-        let s = data.to_string();
-        ```
 
     === "to_string"
 
@@ -777,7 +1226,7 @@ fn fails() {
         let w2 = s[7..]; // equivalent to s[7..len]
         ```
 
-    ??? py "Python"
+    ??? py "&nbsp;"
 
         ```py
         s = "Hello, world!"
@@ -787,45 +1236,55 @@ fn fails() {
 
     Because the compiler implicitly converts String to `&str`, as a practical matter functions that accept strings should be refactored to accept string slices.
 
+    Strings must be initialized with the constructor.
+    In the following example, for some reason, the compiler produces a "borrow after move" error if the constructor is not called.
+    This might be because without the constructor, the `Copy` [trait](#trait) is not implemented in the initialized object.
+
+    === "Compiler error"
+
+        ```rs linenums="1" hl_lines="5"
+        fn main() {
+            let mut v: Vec<String> = Vec::new();
+            
+            loop {
+                let mut input: String;
+                println!("Enter to-do list item ('q' to quit): ");
+                std::io::stdin().read_line(&mut input).unwrap();
+                match input.trim() {
+                    "q" => break,
+                    s => v.push(s.trim().to_string()),
+                }
+            }
+            for i in v {
+                println!("{}", i);
+            }
+        }
+        ```
+
+    === "No error"
+
+        ```rs linenums="1" hl_lines="5"
+        fn main() {
+            let mut v: Vec<String> = Vec::new();
+            
+            loop {
+                let mut input: String = String::new();
+                println!("Enter to-do list item ('q' to quit): ");
+                std::io::stdin().read_line(&mut input).unwrap();
+                match input.trim() {
+                    "q" => break,
+                    s => v.push(s.trim().to_string()),
+                }
+            }
+            for i in v {
+                println!("{}", i);
+            }
+        }
+        ```
+
 #### Trait
 :   
-    Defines the signature of a method intended to be implemented by many types, similar to virtual methods or interfaces.
-
-    The syntax of a trait definition looks similar to the signature of a function with no code block.
-    Traits are implemented in `impl` blocks that specify the type.
-    **Default implementations** of a trait can be provided in the trait definition.
-
-    === "Simple definition"
-
-        ```rs
-        pub trait Summary {
-            fn summarize(&self) -> String;
-
-        }
-        ```
-
-    === "Default"
-
-        ```rs
-        pub trait Summary {
-            fn summarize(&self) -> String {
-                String::from("(Read more...)");
-            }
-        }
-        ```
-
-    === "Implementation"
-
-        ```rs
-        impl Summary for NewsArticle {
-            fn summarize(&self) -> &str {
-                format!("{}, by {} ({})", self.headline, self.author, self.location);
-            }
-        }
-        ```
-
-
-    Idiomatic functionality is implemented in Rust using traits in a way that recalls dunder methods in Python.
+    A trait defines functionality that can be shared with many types in a way that recalls dunder methods in Python.
     
     For example, default output to the terminal is implemented in the **Display** trait.
     A Rust Display object will output text to stdout using `println!()` in the same way that a Python object with the **`__str__`** method defined will output text when using `print()`.
@@ -863,6 +1322,85 @@ fn fails() {
             print(enterprise)
         ```
 
+    A trait defines the signature of a method intended to be implemented by many types, similar to virtual methods or interfaces.
+
+    The syntax of a trait definition looks similar to the signature of a function with no code block.
+    Traits are implemented in `impl` blocks that specify the type.
+    **Default implementations** of a trait can be provided in the trait definition.
+
+    === "Simple definition"
+
+        ```rs
+        pub trait Summary {
+            fn summarize(&self) -> String;
+
+        }
+        ```
+
+    === "Default"
+
+        ```rs
+        pub trait Summary {
+            fn summarize(&self) -> String {
+                String::from("(Read more...)");
+            }
+        }
+        ```
+
+    === "Implementation"
+
+        ```rs
+        impl Summary for NewsArticle {
+            fn summarize(&self) -> &str {
+                format!("{}, by {} ({})", self.headline, self.author, self.location);
+            }
+        }
+        ```
+
+    Common traits:
+
+    - `Copy`
+    - [`Deref`](#deref)
+    - [`Drop`](#drop)
+    - `Display`
+    - `Fn`
+    - [`Iterator`](#iterator)
+
+**trait bound**{: #trait-bound}
+:   
+    A trait bound allows functions to accept any type that implements a trait. 
+    Multiple traits by delimiting trait names with `+`.
+    A simpler syntax accommodates simple cases by specifying the `impl` keyword followed by the trait name, rather than a concrete type.
+
+    === "Trait bound"
+
+        ```rs
+        pub fn notify<T: Summary>(item: T) { // ...
+        pub fn notify<T: Summary + Display>(item: T) { // ...
+        ```
+
+    === "Syntactic sugar"
+
+        ```rs
+        pub fn notify(item: impl Summary) { // ...
+        pub fn notify(item: impl Summary + Display) { // ...
+        ```
+
+    Multiple trait bounds can clutter the function signature, reducing legibility.
+    In these cases, a `where` clause can be used:
+
+    ```rs
+    fn some_function<T, U>(t: T, u: U) -> i32
+        where T: Display + Clone,
+              U: Clone + Debug
+    { // ...
+    ```
+
+    The `impl Trait` syntax is also available for return values:
+
+    ```rs
+    fn returns_summarizable() -> impl Summary { // ...
+    ```
 
 #### Vector
 :   
@@ -924,76 +1462,182 @@ fn fails() {
 
 ## Projects
 
+### To-Do
+
+=== "1a"
+
+    !!! rs "&nbsp;"
+
+        ```rs linenums="1" hl_lines="6"
+        fn main() {
+            let mut v: Vec<String> = Vec::new();
+
+
+            loop {
+                let mut input: String = String::new();
+                println!("Enter to-do list item ('q' to quit): ");
+                std::io::stdin().read_line(&mut input).unwrap();
+                match input.trim() {
+                    "q" => break,
+                    s => v.push(s.trim().to_string()),
+                }
+
+            }
+            for i in v {
+                println!("{}", i);
+            }
+        }
+        ```
+
+    A simple [String](#string) [Vector](#vector) in a loop.
+
+    Note that `read_line()` must take a [String](#string) argument passed by mutable [reference](#references) - i.e. a [borrow](#ownership).
+
+    Here the `input` variable is instantiated and destroyed in each iteration of the loop.
+    
+=== "1b"
+
+    !!! rs "&nbsp;"
+
+        ```rs linenums="1" hl_lines="3 13"
+        fn main() {
+            let mut v: Vec<String> = Vec::new();
+            let mut input: String = String::new();
+
+            loop {
+
+                println!("Enter to-do list item ('q' to quit): ");
+                std::io::stdin().read_line(&mut input).unwrap();
+                match input.trim() {
+                    "q" => break,
+                    s => v.push(s.trim().to_string()),
+                }
+                input.clear();
+            }
+            for i in v {
+                println!("{}", i);
+            }
+        }
+        ```
+
+    Alternatively, `input` can be instantiated before the loop, but it must be cleared with every iteration. 
+    Otherwise, `read_line()` will continue to append data.
+
+
+### Fibonacci
+
+=== "Recursive"
+
+    ```rs
+    use std::collections::HashMap;
+
+    fn fib(n: u64) -> u64 {
+        match n {
+            0 | 1 => 1,
+            n => fib(n - 1) + fib(n - 2)
+        }
+    }
+
+    fn main() {
+        let n: u64 = std::env::args().nth(1).unwrap().parse().unwrap();
+        for i in 1..n {
+            println!("{}: {}", i, fib(i));
+        }
+    }
+    ```
+
+=== "Memoized"
+
+    ```rs
+    use std::collections::HashMap;
+
+    fn fib(n: u64, map: &mut HashMap<u64, u64>) -> u64 {
+        match n {
+            0 | 1 => 1,
+            n => {
+                if map.contains_key(&n) {
+                    *map.get(&n).unwrap()
+                } else {
+                    let val = fib(n-1, map) + fib(n-2, map);
+                    map.insert(n, val);
+                    val
+                }
+            }
+        }
+    }
+
+    fn main() {
+        let n: u64 = std::env::args().nth(1).unwrap().parse().unwrap();
+        let mut map = HashMap::new();
+        for i in 1..n {
+            println!("{}: {}", i, fib(i, &mut map));
+        }
+    }
+    ```
+
+### 
+
 ### Minigrep
 
 === "1"
-
-    !!! rs "main.rs" 
-    
-        --8<-- "includes/Coding/Rust/minigrep/1/main.rs.md"
+    !!! rs 
+        === "main.rs" 
+            --8<-- "includes/Coding/Rust/minigrep/1/main.rs.md"
 
     Read any command line arguments passed, collecting into a vector.
 
 === "2"
-
-    !!! rs "main.rs"
-    
-        --8<-- "includes/Coding/Rust/minigrep/2/main.rs.md"
+    !!! rs "&nbsp;"
+        === "main.rs"
+            --8<-- "includes/Coding/Rust/minigrep/2/main.rs.md"
 
 === "3"
-
-    !!! rs "main.rs"
-    
-        --8<-- "includes/Coding/Rust/minigrep/3/main.rs.md"
+    !!! rs "&nbsp;"
+        === "main.rs"
+            --8<-- "includes/Coding/Rust/minigrep/3/main.rs.md"
 
     `fs::read_to_string()` takes the filename, opens it, and returns a `Result<String>` of the file's contents.
 
 === "4"
-
-    !!! rs "main.rs"
-    
-        --8<-- "includes/Coding/Rust/minigrep/4/main.rs.md"
+    !!! rs "&nbsp;"
+        === "main.rs"
+            --8<-- "includes/Coding/Rust/minigrep/4/main.rs.md"
 
     Refactoring to abstract command-line argument parsing logic to its own function
 
 === "5"
-
-    !!! rs "main.rs"
-    
-        --8<-- "includes/Coding/Rust/minigrep/5/main.rs.md"
+    !!! rs "&nbsp;"
+        === "main.rs"
+            --8<-- "includes/Coding/Rust/minigrep/5/main.rs.md"
 
     Refactor the config parser into Config's constructor
 
 === "6"
-
-    !!! rs "main.rs"
-    
-        --8<-- "includes/Coding/Rust/minigrep/6/main.rs.md"
+    !!! rs "&nbsp;"
+        === "main.rs"
+            --8<-- "includes/Coding/Rust/minigrep/6/main.rs.md"
 
     Implement error message on invalid number of arguments 
 
 === "7"
-
-    !!! rs "main.rs"
-    
-        --8<-- "includes/Coding/Rust/minigrep/7/main.rs.md"
+    !!! rs "&nbsp;"
+        === "main.rs"
+            --8<-- "includes/Coding/Rust/minigrep/7/main.rs.md"
 
     Remove previous error message and incorporate error in the Err variant of a [`Result<T,E>`](#resultte).
     The argument passed to `unwrap_or_else()` is a [**closure**](#closure).
 
 === "8"
-
-    !!! rs "main.rs"
-    
-        --8<-- "includes/Coding/Rust/minigrep/8/main.rs.md"
+    !!! rs "&nbsp;"
+        === "main.rs"
+            --8<-- "includes/Coding/Rust/minigrep/8/main.rs.md"
 
     Abstract program logic into `run()`
 
 === "9"
-
-    !!! rs "main.rs"
-    
-        --8<-- "includes/Coding/Rust/minigrep/9/main.rs.md"
+    !!! rs "&nbsp;"
+        === "main.rs"
+            --8<-- "includes/Coding/Rust/minigrep/9/main.rs.md"
 
     Refactor `run()` to return a [`Result<T,E>`](#resultte) in the `Ok` case and the **trait object** `Box<dyn Error>` for the error type.
     This allows various error types to be returned.
@@ -1001,79 +1645,87 @@ fn fails() {
     Also, the `expect()` method is replaced by the `?` operator which returns the error type for the calling function to handle, rather than a boilerplate error message. 
 
 === "10"
-
-    !!! rs "main.rs"
-    
-        --8<-- "includes/Coding/Rust/minigrep/10/main.rs.md"
+    !!! rs "&nbsp;"
+        === "main.rs"
+            --8<-- "includes/Coding/Rust/minigrep/10/main.rs.md"
 
     Rather than `unwrap()`, we use [`if let`](#if-let) to check for and handle errors from `run()`.
 
 === "11"
+    !!! rs  "Abstract all elements except `main()` into a library module"
+        === "main.rs"
+            --8<-- "includes/Coding/Rust/minigrep/11/main.rs.md"
 
-    !!! rs "main.rs"
-
-        --8<-- "includes/Coding/Rust/minigrep/11/main.rs.md"
-
-    ??? rs "lib.rs"
-
-        --8<-- "includes/Coding/Rust/minigrep/11/lib.rs.md"
-
-    Abstract all elements except `main()` into a library module.
+        === "lib.rs"
+            --8<-- "includes/Coding/Rust/minigrep/11/lib.rs.md"
 
 === "12"
+    !!! rs "Implement `search()` function and a unit test"
+        === "main.rs"
+            --8<-- "includes/Coding/Rust/minigrep/12/main.rs.md"
 
-    ??? rs "main.rs"
+        === "lib.rs"
+            --8<-- "includes/Coding/Rust/minigrep/12/lib.rs.md"
 
-        --8<-- "includes/Coding/Rust/minigrep/12/main.rs.md"
+=== "13"
 
-    !!! rs "lib.rs"
+    !!! rs "Implementing iterators"
+        === "main.rs"
+            --8<-- "includes/Coding/Rust/minigrep/13/main.rs.md"
 
-        --8<-- "includes/Coding/Rust/minigrep/12/lib.rs.md"
-
-    Implement the `search()` function and a simple unit test.
+        === "lib.rs"
+            --8<-- "includes/Coding/Rust/minigrep/13/lib.rs.md"
 
 ### Server
 
-
 === "1"
 
-    !!! rs "main.rs"
+    !!! rs "&nbsp;"
 
-        --8<-- "includes/Coding/Rust/Server/1/main.rs.md"
+        === "main.rs"
+
+            --8<-- "includes/Coding/Rust/Server/1/main.rs.md"
 
     The Server can be started from a humble struct
 
 === "2"
 
-    !!! rs "main.rs"
+    !!! rs "&nbsp;"
+    
+        === "main.rs"
 
-        --8<-- "includes/Coding/Rust/Server/2/main.rs.md"
+            --8<-- "includes/Coding/Rust/Server/2/main.rs.md"
 
     Add another struct to represent the Request object, and define the available HTTP verbs
 
 === "3"
 
-    !!! rs "main.rs"
+    !!! rs "&nbsp;"
+    
+        === "main.rs"
 
-        --8<-- "includes/Coding/Rust/Server/3/main.rs.md"
+            --8<-- "includes/Coding/Rust/Server/3/main.rs.md"
 
     Accommodate the possibility that the Request object's `query_string` may be null (`None`) by changing its type to `Object<String>`
 
 === "4"
 
-    ??? rs "server.rs"
-        --8<-- "includes/Coding/Rust/Server/4/server.rs.md"
+    !!! rs "&nbsp;"
+    
+        === "server.rs"
+            --8<-- "includes/Coding/Rust/Server/4/server.rs.md"
 
-    !!! rs "main.rs"
-        --8<-- "includes/Coding/Rust/Server/4/main.rs.md"
+        ===  "main.rs"
+            --8<-- "includes/Coding/Rust/Server/4/main.rs.md"
 
-    !!! rs "http/"
-        === "mod.rs"
-            --8<-- "includes/Coding/Rust/Server/4/http/mod.rs.md"
-        === "method.rs"
-            --8<-- "includes/Coding/Rust/Server/4/http/method.rs.md"
-        === "request.rs"
-            --8<-- "includes/Coding/Rust/Server/4/http/request.rs.md"
+        === "http/"
+
+            === "mod.rs"
+                --8<-- "includes/Coding/Rust/Server/4/http/mod.rs.md"
+            === "method.rs"
+                --8<-- "includes/Coding/Rust/Server/4/http/method.rs.md"
+            === "request.rs"
+                --8<-- "includes/Coding/Rust/Server/4/http/request.rs.md"
 
     Organize code into modules. 
 
@@ -1083,53 +1735,56 @@ fn fails() {
 
 === "5"
 
-    !!! rs "server.rs"
-        --8<-- "includes/Coding/Rust/Server/5/server.rs.md"
+    !!! rs "&nbsp;"
+        === "server.rs"
+            --8<-- "includes/Coding/Rust/Server/5/server.rs.md"
 
-    ??? rs "main.rs"
-        --8<-- "includes/Coding/Rust/Server/5/main.rs.md"
+        === "main.rs"
+            --8<-- "includes/Coding/Rust/Server/5/main.rs.md"
 
-    ??? rs "http/"
-        === "mod.rs"
-            --8<-- "includes/Coding/Rust/Server/5/http/mod.rs.md"
-        === "method.rs"
-            --8<-- "includes/Coding/Rust/Server/5/http/method.rs.md"
-        === "request.rs"
-            --8<-- "includes/Coding/Rust/Server/5/http/request.rs.md"
+        === "http/"
+            === "mod.rs"
+                --8<-- "includes/Coding/Rust/Server/5/http/mod.rs.md"
+            === "method.rs"
+                --8<-- "includes/Coding/Rust/Server/5/http/method.rs.md"
+            === "request.rs"
+                --8<-- "includes/Coding/Rust/Server/5/http/request.rs.md"
 
     Implement a **TCPListener** object from the **net** module.
 
 === "6"
-    !!! rs "server.rs"
-        --8<-- "includes/Coding/Rust/Server/6/server.rs.md"
+    !!! rs "&nbsp;"
+        === "server.rs"
+            --8<-- "includes/Coding/Rust/Server/6/server.rs.md"
 
-    ??? rs "main.rs"
-        --8<-- "includes/Coding/Rust/Server/6/main.rs.md"
+        === "main.rs"
+            --8<-- "includes/Coding/Rust/Server/6/main.rs.md"
 
-    ??? rs "http/"
-        === "mod.rs"
-            --8<-- "includes/Coding/Rust/Server/6/http/mod.rs.md"
-        === "method.rs"
-            --8<-- "includes/Coding/Rust/Server/6/http/method.rs.md"
-        === "request.rs"
-            --8<-- "includes/Coding/Rust/Server/6/http/request.rs.md"
+        === "http/"
+            === "mod.rs"
+                --8<-- "includes/Coding/Rust/Server/6/http/mod.rs.md"
+            === "method.rs"
+                --8<-- "includes/Coding/Rust/Server/6/http/method.rs.md"
+            === "request.rs"
+                --8<-- "includes/Coding/Rust/Server/6/http/request.rs.md"
 
     Handle the [result](#resultte) object returned by the `TcpListener::bind` method
 
 === "7"
-    !!! rs "server.rs"
-        --8<-- "includes/Coding/Rust/Server/7/server.rs.md"
+    !!! rs "&nbsp;"
+        === "server.rs"
+            --8<-- "includes/Coding/Rust/Server/7/server.rs.md"
 
-    ??? rs "main.rs"
-        --8<-- "includes/Coding/Rust/Server/7/main.rs.md"
+        === "main.rs"
+            --8<-- "includes/Coding/Rust/Server/7/main.rs.md"
 
-    ??? rs "http/"
-        === "mod.rs"
-            --8<-- "includes/Coding/Rust/Server/7/http/mod.rs.md"
-        === "method.rs"
-            --8<-- "includes/Coding/Rust/Server/7/http/method.rs.md"
-        === "request.rs"
-            --8<-- "includes/Coding/Rust/Server/7/http/request.rs.md"
+        === "http/"
+            === "mod.rs"
+                --8<-- "includes/Coding/Rust/Server/7/http/mod.rs.md"
+            === "method.rs"
+                --8<-- "includes/Coding/Rust/Server/7/http/method.rs.md"
+            === "request.rs"
+                --8<-- "includes/Coding/Rust/Server/7/http/request.rs.md"
 
     Complete the main event loop.
 
@@ -1142,19 +1797,20 @@ fn fails() {
     ```
 
 === "8"
-    !!! rs "server.rs"
-        --8<-- "includes/Coding/Rust/Server/8/server.rs.md"
+    !!! rs "&nbsp;"
+        === "server.rs"
+            --8<-- "includes/Coding/Rust/Server/8/server.rs.md"
 
-    ??? rs "main.rs"
-        --8<-- "includes/Coding/Rust/Server/8/main.rs.md"
+        === "main.rs"
+            --8<-- "includes/Coding/Rust/Server/8/main.rs.md"
 
-    ??? rs "http/"
-        === "mod.rs"
-            --8<-- "includes/Coding/Rust/Server/8/http/mod.rs.md"
-        === "method.rs"
-            --8<-- "includes/Coding/Rust/Server/8/http/method.rs.md"
-        === "request.rs"
-            --8<-- "includes/Coding/Rust/Server/8/http/request.rs.md"
+        === "http/"
+            === "mod.rs"
+                --8<-- "includes/Coding/Rust/Server/8/http/mod.rs.md"
+            === "method.rs"
+                --8<-- "includes/Coding/Rust/Server/8/http/method.rs.md"
+            === "request.rs"
+                --8<-- "includes/Coding/Rust/Server/8/http/request.rs.md"
 
     Convert the byte array to a Request.
 
@@ -1166,19 +1822,20 @@ fn fails() {
     - The **crate** keyword allows access to the root of the project's namespace for importing the Request object.
 
 === "9"
-    ??? rs "server.rs"
-        --8<-- "includes/Coding/Rust/Server/9/server.rs.md"
+    !!! rs "&nbsp;"
+        === "server.rs"
+            --8<-- "includes/Coding/Rust/Server/9/server.rs.md"
 
-    ??? rs "main.rs"
-        --8<-- "includes/Coding/Rust/Server/9/main.rs.md"
+        === "main.rs"
+            --8<-- "includes/Coding/Rust/Server/9/main.rs.md"
 
-    !!! rs "http/"
-        === "mod.rs"
-            --8<-- "includes/Coding/Rust/Server/9/http/mod.rs.md"
-        === "method.rs"
-            --8<-- "includes/Coding/Rust/Server/9/http/method.rs.md"
-        === "request.rs"
-            --8<-- "includes/Coding/Rust/Server/9/http/request.rs.md"
+        === "http/"
+            === "mod.rs"
+                --8<-- "includes/Coding/Rust/Server/9/http/mod.rs.md"
+            === "method.rs"
+                --8<-- "includes/Coding/Rust/Server/9/http/method.rs.md"
+            === "request.rs"
+                --8<-- "includes/Coding/Rust/Server/9/http/request.rs.md"
 
 
     Create a **ParseError** custom error type as an enum and implement the **Error** trait for it. This trait requires the Debug and Display traits as well.
@@ -1190,3 +1847,44 @@ fn fails() {
     println!("{:?}", String::from("Hello, world!"));
     ```
     This finally allows us to change the Error type in TryFrom to our newly-defined ParseError.
+
+### Starships
+
+=== "1"
+
+    !!! rs "&nbsp;"
+
+        ---8<-- "includes/Coding/Rust/Starships/1/lib.rs.md"
+
+    - Using the Debug [trait](#trait), any Starship or Officer object can be pretty-printed.
+    - An example in the [doc comments](#documentation) can be run as a test case by running `cargo test`
+
+
+=== "2"
+
+    !!! rs "&nbsp;"
+
+        === "lib.rs"
+
+            ---8<-- "includes/Coding/Rust/Starships/2/lib.rs.md"
+
+        === "starship.rs"
+
+            ---8<-- "includes/Coding/Rust/Starships/2/starship.rs.md"
+
+        === "officer.rs"
+
+            ---8<-- "includes/Coding/Rust/Starships/2/officer.rs.md"
+
+### Emulator
+
+!!! rs  "Emulator"
+
+    === "1"
+
+        ```rs
+        struct CPU {
+            current_operation: u16,
+            registers: [u8; 2],
+        }
+        ```

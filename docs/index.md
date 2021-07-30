@@ -21,3 +21,15 @@ Missions to look forward to
 - [Jupiter Icy Moon Explorer (JUICE)](https://en.wikipedia.org/wiki/Jupiter_Icy_Moons_Explorer) to be launched **2022** and arrive 2029
 - [E-ELT](https://elt.eso.org/ "European Extremely Large Telescope") first light expected [November **2026**](https://optics.org/news/11/12/24)
 - Dragonfly mission to Titan scheduled to launch in **2027** and to arrive in 2036 
+
+## :medal: Lapel pin ideas
+
+- [Zeon](https://static.wikia.nocookie.net/gundam/images/a/ae/Zeon_alt.png) 
+- [Weyland-Yutani Corp](https://static.wikia.nocookie.net/avp/images/3/36/Weyland-Yutani_Coporation_Logo.jpg)
+- Tyrell Corporation
+- [OCP](https://seeklogo.com/images/O/ocp-logo-6C5544B0D6-seeklogo.com.png)
+- Homeworld
+- Mass Effect
+  - Renegade/Paragon
+  - N7
+- Mirror Universe

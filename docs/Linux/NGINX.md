@@ -59,7 +59,7 @@ A very simple representative config that creates an HTTP server listening on por
 
 === "Default"
 
-    ```nginx
+    ``` nginx linenums="1"
      
        
       
@@ -78,7 +78,7 @@ A very simple representative config that creates an HTTP server listening on por
 
 === "Expanded with explicit values"
 
-    ```nginx
+    ```nginx linenums="1" hl_lines="1 2 5 10-12
     user nobody nogroup;
     worker_processes 1;
 
@@ -97,7 +97,7 @@ A very simple representative config that creates an HTTP server listening on por
 
 
 
-```
+``` nginx
 http {
   server {
     listen 8080;
@@ -121,9 +121,11 @@ nginx restart
 
 ### Reverse proxy
 
-Each Nginx virtual server should be described by a file in the **/etc/nginx/sites-available** directory. These are linked to by symlinks placed in **/etc/nginx/sites-enabled**.
-Configuring a reverse proxy involves associating routes to proxied servers in these virtual server configs. [NGINX.org](https://docs.nginx.com/nginx/admin-guide/web-server/reverse-proxy/)
-```ini
+Each Nginx virtual server should be described by a file in the **/etc/nginx/sites-available** directory. 
+These are linked to by symlinks placed in **/etc/nginx/sites-enabled**.
+[Configuring a reverse proxy](https://docs.nginx.com/nginx/admin-guide/web-server/reverse-proxy/) involves associating routes to proxied servers in these virtual server configs. 
+
+``` nginx
 server {
   listen 80;
   location / {
@@ -133,7 +135,7 @@ server {
 ```
 
 The configuration to serve static files placed in the local directory **/path/to/staticfiles** from the URL **/static** is:
-```ini
+``` nginx
 location /static/ {
   root /path/to/staticfiles/
 }
@@ -148,7 +150,7 @@ A load balancer is similar to a reverse proxy, with the following differences.
 - Load balancers are expected to handle much higher scale.
 
 Load balancers themselves tend to be load balanced by DNS servers, which can serve multiple A records to clients which are supposed to choose one of the IP addresses at random.
-Some DNS providers like [AWS Route 53](/Cloud#route-53) randomize the order of these records per query.
+Some DNS providers like [AWS Route 53](/Cloud/#route-53) randomize the order of these records per query.
 
 ```nginx
 http {

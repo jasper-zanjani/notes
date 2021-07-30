@@ -44,12 +44,12 @@ Vitamin E requires vitamin C or [coenzyme Q](#coq10) to regenerate after being u
 **Anxiolytic**{: #anxiolytic }
 
 **Apoptosis**{: #apoptosis }
-
-Programmed or controlled cell death; cf. [necrosis](#necrosis)
+:   
+    Programmed or controlled cell death; cf. [necrosis](#necrosis)
 
 #### Ashwagandha
 
-_**Withania somnifera**_ or **Ashwagandha** is a traditional [Ayurvedic herb](#ayurveda) used as a memory aid. 
+***Withania somnifera*** or **Ashwagandha** is a traditional [Ayurvedic herb](#ayurveda) used as a memory aid. 
 
 - It has been shown to increase serum testosterone in infertile men. ([2009](https://pubmed.ncbi.nlm.nih.gov/19501822/))
 - In a double-blind, placebo-controlled [crossover study](#crossover-trial), healthy men administered Ashwagandha (500 mg/day) experienced improved cognitive performance outcomes. ([2014](https://www.ncbi.nlm.nih.gov/pubmed/24497737))
@@ -65,8 +65,6 @@ _**Withania somnifera**_ or **Ashwagandha** is a traditional [Ayurvedic herb](#a
 | [Nutricost Ashwagandha Extract KSM-66 600 mg x 180 capsules](https://www.amazon.com/Nutricost-KSM-66-Ashwagandha-Extract-Veggie/dp/B079K4MPVB/)          |              40.95 |     108 |             0.38 |
 
 #### Astragalus
-
-
 
 | Product                                                                                                                                   |                $ |     g |              $/g |
 | ----------------------------------------------------------------------------------------------------------------------------------------- | ---------------: | ----: | ---------------: |
@@ -144,13 +142,13 @@ Another product of choline is **betaine**. For individuals who have genetic poly
 
 
 **Cholinergic**{: #cholinergic }
-
-Relating to or denoting nerve cells in which acetylcholine acts as a neurotransmitter
+:   
+    relating to or denoting nerve cells in which acetylcholine acts as a neurotransmitter
 
 **Crossover trial**{: #crossover-trial }
-
-A trial where subjects are randomly assigned to study arms where each arm consists of two consecutive bouts of treatment separated by a washout period.
-A concern with crossover trials is that there is a chance that subsequent rounds of treatment may be influenced by earlier ones.
+:   
+    A trial where subjects are randomly assigned to study arms where each arm consists of two consecutive bouts of treatment separated by a washout period.
+    A concern with crossover trials is that there is a chance that subsequent rounds of treatment may be influenced by earlier ones.
 
 
 #### Citrullus lanatus
@@ -161,14 +159,14 @@ A concern with crossover trials is that there is a chance that subsequent rounds
 
 #### Citrus Bergamot
 
-Improves [lipid profile](#-glossary).
+Improves [lipid profile](#lipid-profile).
 
 
 
 #### CoQ10
 
-Ubiquinone, also called Coenzyme Q, is a coenzyme family ubiquitous to animals and bacteria. 
-**Coenzyme Q<sub>10</sub> (CoQ10)** is the most commonly found form in humans, an endogeneously produced lipid-soluble antioxidant that metabolizes into [ubiquinol](#ubiquinol). 
+Ubiquinone, also called **Coenzyme Q<sub>10</sub> (CoQ10)**, is a coenzyme family ubiquitous to animals and bacteria. 
+Ubiquinone is the most commonly found form in humans, an endogeneously produced lipid-soluble antioxidant that metabolizes into [ubiquinol](#ubiquinol). 
 It is one of the most popular supplements and renowned for being a powerful antioxidant. 
 Doses are usually 100-200 mg/day, although there is no established upper limit for tolerance.
 
@@ -235,89 +233,84 @@ A late 2020 study found that mice given _Cucumis melo_ and _Citrullus lanatus_ s
 
 
 **Dihydrotestosterone (DHT)**{: #dht }
-
-Produced after testosterone is aromatized by 5-alpha-reductase.
+:   
+    produced after testosterone is aromatized by 5-alpha-reductase.
 
 #### DMAE
+:   
+    **Dimethylaminoethanol** (marketed as DMAE but appearing more commonly as deanol in scientific literature) is not a precursor to [acetylcholine](#alpha-gpc) as is commonly asserted. 
+    However it is hypothesized that it may increase acetylcholine levels by inhibiting choline metabolism.
 
-**Dimethylaminoethanol** (marketed as DMAE but appearing more commonly as deanol in scientific literature) is not a precursor to [acetylcholine](#alpha-gpc) as is commonly asserted. However it is hypothesized that it may increase acetylcholine levels by inhibiting choline metabolism.
+    In a double-blind, placebo-controlled trial, children given 40 mg of [Ritalin](#ritalin) or 500 mg of deanol experienced [similar improvements in psychometric tests](https://pubmed.ncbi.nlm.nih.gov/1092513/).
+    Deanol appeared to be more effective for those with learning disabilities.
 
-- In a double-blind, placebo-controlled trial, children given 40 mg of [Ritalin](#ritalin) or 500 mg of deanol experienced similar improvements in psychometric tests. Deanol appeared to be more effective for those with learning disabilities. ([1975](https://pubmed.ncbi.nlm.nih.gov/1092513/))
-
-| Product                                                                                        |     $ |      mg | $/750 mg |
-| ---------------------------------------------------------------------------------------------- | ----: | ------: | -------: |
-| [BulkSupplements DMAE-bitartrate powder (500 g)](https://www.amazon.com/gp/product/B00EYD7MHI) | 20.96 | 500,000 | **0.03** |
-| [NOW Supplements DMAE 250 mg x 100 capsules](https://www.amazon.com/gp/product/B0019LTJ9C)     |  7.51 |  25,000 |    0.225 |
-
-
+    | Product                                                                                        |     $ |      mg | $/750 mg |
+    | ---------------------------------------------------------------------------------------------- | ----: | ------: | -------: |
+    | [BulkSupplements DMAE-bitartrate powder (500 g)](https://www.amazon.com/gp/product/B00EYD7MHI) | 20.96 | 500,000 | **0.03** |
+    | [NOW Supplements DMAE 250 mg x 100 capsules](https://www.amazon.com/gp/product/B0019LTJ9C)     |  7.51 |  25,000 |    0.225 |
 
 #### Dutasteride
 
 
 **Enantiomer**{: #enantiomer}
-
-Molecules that are mirror images of one another
+:   
+    molecules that are mirror images of one another
 
 **Endothelium**{: #endothelium}
+:   
+    cells that line the interior surface of blood vessels and lymphatic vessels
 
-Cells that line the interior surface of blood vessels and lymphatic vessels
+**epithelium** {: #epithelium}
+:   
+    one of the [four basic types](https://en.wikipedia.org/wiki/Epithelium) of animal tissue
 
-**Epithelium** {: #epithelium}
+**ergogenic**{: #ergogenic }
+:   
+    intended to enhance physical performance, stamina, or recovery
 
-One of the [four basic types](https://en.wikipedia.org/wiki/Epithelium) of animal tissue
-
-**Ergogenic**{: #ergogenic }
-
-Intended to enhance physical performance, stamina, or recovery
-
-**Excipient**{: #excipient }
-:   An inactive substance that serves as the vehicle or medium for a drug or other active substance.
+**excipient**{: #excipient }
+:   
+    an inactive substance that serves as the vehicle or medium for a drug or other active substance.
 
 #### Fenugreek
+:   
+    Several studies suggest that male subjects who took 500 mg fenugreek daily experienced increased testosterone and improved mood, energy, and libido.
 
-Several studies suggest that male subjects who took 500 mg fenugreek daily experienced increased testosterone and improved mood, energy, and libido.
-
-| Product                                                                                                                                    |                 $ |    g |              $/g |
-| ------------------------------------------------------------------------------------------------------------------------------------------ | ----------------: | ---: | ---------------: |
-| [Swanson Fenugreek seed 610 mg x 90 capsules](https://www.swansonvitamins.com/swanson-premium-fenugreek-seed-610-mg-90-caps)               |  **2.09**<br>3.49 | 54.9 | **0.04**<br>0.06 |
-| [Swanson Fenugreek extract 500 mg x 90 capsules](https://www.swansonvitamins.com/swanson-superior-herbs-fenugreek-extract-500-mg-90-caps)  | **6.95**<br>11.59 | 45.0 | **0.15**<br>0.25 |
-| [Swanson Fenugree extract featuring Testofen](https://www.swansonvitamins.com/swanson-ultra-testofen-fenugreek-extract-300-mg-60-veg-caps) |         **18.39** | 36.0 |             0.51 |
-
+    | Product                                                                                                                                    |                 $ |    g |              $/g |
+    | ------------------------------------------------------------------------------------------------------------------------------------------ | ----------------: | ---: | ---------------: |
+    | [Swanson Fenugreek seed 610 mg x 90 capsules](https://www.swansonvitamins.com/swanson-premium-fenugreek-seed-610-mg-90-caps)               |  **2.09**<br>3.49 | 54.9 | **0.04**<br>0.06 |
+    | [Swanson Fenugreek extract 500 mg x 90 capsules](https://www.swansonvitamins.com/swanson-superior-herbs-fenugreek-extract-500-mg-90-caps)  | **6.95**<br>11.59 | 45.0 | **0.15**<br>0.25 |
+    | [Swanson Fenugree extract featuring Testofen](https://www.swansonvitamins.com/swanson-ultra-testofen-fenugreek-extract-300-mg-60-veg-caps) |         **18.39** | 36.0 |             0.51 |
 
 #### Finasteride
-
-**Propecia** is the commercial brand name for finasteride.
-
+:   
+    **Propecia** is the commercial brand name for finasteride.
 
 **Follicle-Stimulating Hormone (FSH)**{: #fsh }
 
-
-
-**Free radical reaction**{: #free-radical-reaction}
-
+**free radical reaction**{: #free-radical-reaction}
 
 #### GABA
-
-**Gamma aminobutyric acid** (GABA) is considered an inhibitory neurotransmitter because it blocks certain brain signals and decreases activity in the nervous system.
-GABAergic receptors are targeted by clinically important drugs that treat anxiety, epilepsy, insomnia, and other pathophysiological disorders. ([2015](https://www.researchgate.net/publication/281780267_GABA_Receptors_Pharmacological_Potential_and_Pitfalls))
+:   
+    **Gamma aminobutyric acid** (GABA) is considered an inhibitory neurotransmitter because it blocks certain brain signals and decreases activity in the nervous system.
+    GABAergic receptors are targeted by clinically important drugs that treat anxiety, epilepsy, insomnia, and other pathophysiological disorders. ([2015](https://www.researchgate.net/publication/281780267_GABA_Receptors_Pharmacological_Potential_and_Pitfalls))
 
 
 #### Glutathione
-
-**Glutathione** is involved in many body processes and is a common therapy for patients with various ailments, including cancer, HIV, etc. 
-It is endogenously produced in the liver and can also be found in various foods.
-
+:   
+    **Glutathione** is involved in many body processes and is a common therapy for patients with various ailments, including cancer, HIV, etc. 
+    It is endogenously produced in the liver and can also be found in various foods.
 
 **Gonadotropin-Releasing Hormone (GnRH)**{: #gnrh }
 
 
-**Hepatic**{: #hepatic }
+**hepatic**{: #hepatic }
 :   
     Related to the liver
 
-**Hirsutism**{: #hirsutism }
+**hirsutism**{: #hirsutism }
 :   
-    A condition causing male-pattern hair growth in women.
+    a condition causing male-pattern hair growth in women.
 
 
 #### Huperzine A
@@ -475,44 +468,43 @@ The metabolic pathway through which lipid triglycerides are hydrolyzed into a gl
 
 
 **Lutein**
-:   Lutein is a carotenoid closely related to beta-carotene, which gives carrots and pumpkins their orange color.
-
-
+:   
+    Lutein is a carotenoid closely related to beta-carotene, which gives carrots and pumpkins their orange color.
 
 **Luteinizing Hormone (LH)**{: #lh }   
 :   
     n/a
 
 #### Maca
+:   
+    Maca root (*Lepidium meyenii*) is a Peruvian vegetable with a long history in South American cuisine, and as an herb it is traditionally used to enhance fertility and sex drive. 
+    Some studies suggest an ergogenic benefit to endurance activities.
+    Maca, in particular black maca, improved learning and memory in rodents with memory impairment.
+    A review found that it can improve sperm volume, and motility and the volume of semen in infertile and healthy men.
+    Another review found that maca can help alleviate hot flashes and anxiety in menopausal women.
+    ([src](https://www.healthline.com/nutrition/benefits-of-maca-root))
 
-Maca root (*Lepidium meyenii*) is a Peruvian vegetable with a long history in South American cuisine, and as an herb it is traditionally used to enhance fertility and sex drive. 
-Some studies suggest an ergogenic benefit to endurance activities.
-Maca, in particular black maca, improved learning and memory in rodents with memory impairment.
-A review found that it can improve sperm volume, and motility and the volume of semen in infertile and healthy men.
-Another review found that maca can help alleviate hot flashes and anxiety in menopausal women.
-([src](https://www.healthline.com/nutrition/benefits-of-maca-root))
+    - Dosage varies 1.5-5.0 g/day [:material-file-document-multiple-outline:](https://www.healthline.com/nutrition/benefits-of-maca-root#TOC_TITLE_HDR_12)
 
-- Dosage varies 1.5-5.0 g/day [:material-file-document-multiple-outline:](https://www.healthline.com/nutrition/benefits-of-maca-root#TOC_TITLE_HDR_12)
-
-| Product                                                                                                    |     $ |     m | $/500 mg |
-| ---------------------------------------------------------------------------------------------------------- | ----: | ----: | -------: |
-| [BulkSupplements Maca 1 kg](https://www.amazon.com/dp/B00F890Z5S)                                          | 29.96 | 1,000 |     0.02 |
-| [Swanson Maca 500 mg x 100 capsules](https://www.swansonvitamins.com/swanson-premium-maca-500-mg-100-caps) |  2.50 |    50 |     0.03 |
+    | Product                                                                                                    |     $ |     m | $/500 mg |
+    | ---------------------------------------------------------------------------------------------------------- | ----: | ----: | -------: |
+    | [BulkSupplements Maca 1 kg](https://www.amazon.com/dp/B00F890Z5S)                                          | 29.96 | 1,000 |     0.02 |
+    | [Swanson Maca 500 mg x 100 capsules](https://www.swansonvitamins.com/swanson-premium-maca-500-mg-100-caps) |  2.50 |    50 |     0.03 |
 
 #### Magnesium
+:   
+    Recommended daily intake of magnesium is 420 mg, and you are short by approximately 150 mg.
 
-Recommended daily intake of magnesium is 420 mg, and you are short by approximately 150 mg.
-
-| Product                                                                                                                                                 |     $ |      mg |  $/200 mg |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------- | ----: | ------: | --------: |
-| [BulkSupplements Magnesium Citrate powder (250 g)](https://www.amazon.com/gp/product/B01N3UIUB9)                                                        | 11.96 | 250,000 | **0.010** |
-| [Swanson Triple Magnesium Complex 400 mg x 300 caps (Amazon)](https://www.swansonvitamins.com/swanson-premium-triple-magnesium-complex-400-mg-300-caps) |  9.99 | 120,000 |     0.017 |
-| [Swanson Triple Magnesium Complex 400 mg x 300 caps](https://www.swansonvitamins.com/swanson-premium-triple-magnesium-complex-400-mg-300-caps)          | 11.99 | 120,000 |     0.020 |
+    | Product                                                                                                                                                 |     $ |      mg |  $/200 mg |
+    | ------------------------------------------------------------------------------------------------------------------------------------------------------- | ----: | ------: | --------: |
+    | [BulkSupplements Magnesium Citrate powder (250 g)](https://www.amazon.com/gp/product/B01N3UIUB9)                                                        | 11.96 | 250,000 | **0.010** |
+    | [Swanson Triple Magnesium Complex 400 mg x 300 caps (Amazon)](https://www.swansonvitamins.com/swanson-premium-triple-magnesium-complex-400-mg-300-caps) |  9.99 | 120,000 |     0.017 |
+    | [Swanson Triple Magnesium Complex 400 mg x 300 caps](https://www.swansonvitamins.com/swanson-premium-triple-magnesium-complex-400-mg-300-caps)          | 11.99 | 120,000 |     0.020 |
 
 
 **Mini Mental State Examination (MMSE) **{: #mmse }
-
-Scoring 20 or above corresponds to normal cognitive functions
+:   
+    Scoring 20 or above corresponds to normal cognitive functions
 
 #### Minoxidil
 
@@ -572,27 +564,22 @@ An aromatic organic compound with the molecular formula C<sub>6</sub>H<sub>5</su
 :   A large family of naturally occurring organic compounds composed of multiple [phenol](#phenol) units.
 
 #### Potassium
+:   
+    Recommended adequate intake for potassium was set by the Food and Nutrition Board of the Institute of Medicine at [4700 mg/day](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4963920 "Stone, Michael S. et al. \"Potassium Intake, Bioavailability, Hypertension, and Glucose Control\".").
+    Your daily dietary intake is only 1600 mg/day.
 
-- A systematic review and meta-analysis found that intervening to a point where potassium was 30 mmol/day produced the greatest decrease in systolic and diastolic blood pressure. ([2020](https://www.ahajournals.org/doi/10.1161/JAHA.119.015719))
+    - A [banana](https://nutritiondata.self.com/facts/fruits-and-fruit-juices/1846/2) may have 450 mg
+    - 100g of broccoli may have 250 mg
+    - A cup of [edamame](https://nutritiondata.self.com/facts/vegetables-and-vegetable-products/9873/2) (155 g) might have >600 mg
+    - 100g of [apricot](https://nutritiondata.self.com/facts/fruits-and-fruit-juices/1838/2) (~15 pieces) provide almost 1,162 mg (or ~80 mg a piece)
 
-Looks like your daily dietary intake is only 1600 mg (target is **3400 mg**)
+    - A systematic review and meta-analysis found that intervening to a point where potassium was 30 mmol/day produced the greatest decrease in systolic and diastolic blood pressure. ([2020](https://www.ahajournals.org/doi/10.1161/JAHA.119.015719))
 
-- A [banana](https://nutritiondata.self.com/facts/fruits-and-fruit-juices/1846/2) may have 450 mg
-- 100g of broccoli may have 250 mg
-- A cup of [edamame](https://nutritiondata.self.com/facts/vegetables-and-vegetable-products/9873/2) (155 g) might have >600 mg
-- 100g of [apricot](https://nutritiondata.self.com/facts/fruits-and-fruit-juices/1838/2) (~15 pieces) provide almost 1,162 mg (or ~80 mg a piece)
-- Might need to supplement with >1,000 mg of potassium
+    Both potassium bicarbonate and potassium citrate are alkaline sources of elemental potassium, found in dietary sources.
 
-| Product                                                                                                                                          |     $ |        mg | $/2,000 mg |
-| ------------------------------------------------------------------------------------------------------------------------------------------------ | ----: | --------: | ---------: |
-| [BulkSupplements Potassium Citrate powder (1 kg)](https://www.amazon.com/gp/product/B00ENSA93S/)                                                 | 18.96 | 1,000,000 |   **0.04** |
-| [Swanson Potassium Citrate 99 mg x 120 capsules](https://www.swansonvitamins.com/swanson-ultra-potassium-citrate-99-mg-120-caps)                 |  2.59 |    12,000 |       0.43 |
-| [NOW Supplements Potassium 99 mg x 180 capsules](https://www.amazon.com/NOW-Potassium-Citrate-180-Capsules/dp/B001AWWC1W)                        |  5.68 |    18,000 |       0.63 |
-| Swanson Albion Potassium 99mg x 90 capsules (2-pack)                                                                                             |  5.97 |    18,000 |       0.66 |
-| [Swanson Potassium Aspartate 99 mg x 60 capsules (BOGO sale)](https://www.swansonvitamins.com/swanson-premium-potassium-aspartate-99-mg-60-caps) |  6.99 |    12,000 |       1.16 |
-| Swanson Potassium Orotate 99 mg x 60 capsules                                                                                                    |  3.82 |     6,000 |       1.27 |
-| [Banana](https://nutritiondata.self.com/facts/fruits-and-fruit-juices/1846/2)                                                                    |  0.45 |       500 |       1.92 |
-| [Apricot](https://nutritiondata.self.com/facts/fruits-and-fruit-juices/1838/2)                                                                   |  4.49 |     2,266 |       3.96 |
+    | Product                                                                                                                                          |     $ |        mg | $/2,000 mg |
+    | ------------------------------------------------------------------------------------------------------------------------------------------------ | ----: | --------: | ---------: |
+    | [BulkSupplements Potassium Citrate powder (1 kg)](https://www.amazon.com/gp/product/B00ENSA93S/)                                                 | 18.96 | 1,000,000 |   **0.04** |
 
 #### Pygeum
 
@@ -623,8 +610,8 @@ Looks like your daily dietary intake is only 1600 mg (target is **3400 mg**)
 Red wine contains less than 13 mg of resveratrol per liter. ([src](https://www.healthline.com/nutrition/6-anti-inflammatory-supplements#TOC_TITLE_HDR_6))
 It is confirmed as a powerful antioxidant and may potentially enhance cognitive performance. 
 
-- A systematic review found that supplementation with resveratrol does not have an anti-obesity effect. ([2021](https://pubmed.ncbi.nlm.nih.gov/33487308/ "What is the effect of resveratrol on obesity? A systematic review and meta-analysis")) :material-file-pdf:
-    - In contrast, an earlier systematic review cited in this one **did** find that resveratrol supplementation had a positive effect on weight loss. ([2018](https://pubmed.ncbi.nlm.nih.gov/30421960/ "The effects of resveratrol intake on weight loss: a systematic review and meta-analysis of randomized controlled trials"))
+- A systematic review found that supplementation with resveratrol does [not have an anti-obesity effect](https://pubmed.ncbi.nlm.nih.gov/33487308/ "What is the effect of resveratrol on obesity? A systematic review and meta-analysis").
+In contrast, an [earlier systematic review](https://pubmed.ncbi.nlm.nih.gov/30421960/ "The effects of resveratrol intake on weight loss: a systematic review and meta-analysis of randomized controlled trials") cited in this one **did** find that resveratrol supplementation had a positive effect on weight loss.
 - A comprehensive review found that even moderate daily supplementation (0.5-1 g) is enough to inhibit estrogen metabolism and increase SHBG. ([2020](https://pubmed.ncbi.nlm.nih.gov/32744480/ "The estrogenic activity of resveratrol: a comprehensive review of in vitro and in vivo evidence and the potential for endocrine disruption"))
 - Resveratrol has poor bio-availability and a short half-life (1.5 hours). ([2019](https://pubmed.ncbi.nlm.nih.gov/30816367/ "Health benefits of resveratrol administration") :material-file-pdf:).
 - Resveratrol upregulates SHBG expression in the liver. ([2017](https://pubmed.ncbi.nlm.nih.gov/28947831/))
@@ -659,8 +646,9 @@ It is confirmed as a powerful antioxidant and may potentially enhance cognitive 
 
 
 
-**Ritalin**
-:   Ritalin is the brand name for the stimulant methylphenidate.
+**Ritalin**{: #ritalin }
+:   
+    Ritalin is the brand name for the stimulant methylphenidate.
 
 #### Rosemary
 
@@ -713,6 +701,14 @@ Studies suggest that it blocks the conversion of testosterone to [DHT][DHT], and
 #### Taurine
 
 Dosages of taurine in studies are commonly 500 - 2,000 mg /day, however higher doses appear to be well-tolerated.
+
+#### Theobromine
+:   
+    | Product                                                                     |     $ |    g |  $/g |
+    | --------------------------------------------------------------------------- | ----: | ---: | ---: |
+    | [BulkSupplements Theobromine](https://www.amazon.com/gp/product/B01LBN3I6C) | 46.96 |  250 | 0.19 |
+    | [BulkSupplements Theobromine](https://www.amazon.com/gp/product/B01LBN3I76) | 20.96 |  100 | 0.21 |
+
 
 **Thyroxine**
 :   
@@ -816,7 +812,7 @@ Like [vitamin E](#vitamin-e), ubiquinol is a lipid-soluble antioxidant, which gi
 
 Men who received 30 mg of zinc a day showed increased levels of free testosterone [:material-file-document-outline:](https://www.healthline.com/health/testosterone-and-zinc#research-and-studies).
 
-The tolerable upper intake level for adult men is 40 mg/day [:material-file-document-outline:](https://ods.od.nih.gov/factsheets/Zinc-HealthProfessional/).
+The tolerable upper intake level for adult men is [40 mg/day](https://ods.od.nih.gov/factsheets/Zinc-HealthProfessional/ "National Institutes of Health Zinc Fact Sheet for Consumers").
 
 | Product                                                                                                                  |                $ |    M |          $/30 mg |
 | ------------------------------------------------------------------------------------------------------------------------ | ---------------: | ---: | ---------------: |

@@ -180,7 +180,7 @@
     qmail was deprecated and removed from Arch repos in 2005.
 
 **thread**{: #thread }
-:   A **thread** is an execution context within a [process][#process].
+:   A **thread** is an execution context within a [process](#process).
 
 **Red Hat**{: #rhel }
 :   **Red Hat Enterprise Linux (RHEL)** is Red Hat's commercial Linux distribution.
@@ -225,5 +225,3 @@
     All monitors share the same pool of workspaces.
     Unusually for tiling window managers, when using multiple monitors, switching to another workspace actually switches the position of that workspace with the previous one. 
     That is, the workspace that had previously been on the active monitor is sent to the workspace being called.
-
-

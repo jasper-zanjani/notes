@@ -17,7 +17,10 @@ extra_css:
 - style/admonitions-aws.css
 - style/admonitions-rs.css
 - style/admonitions-cs.css
+- style/admonitions-cpp.css
+- style/admonitions-cisco.css
 - style/admonitions-py.css
+- style/admonitions-output.css
 
 markdown_extensions:
   - abbr
