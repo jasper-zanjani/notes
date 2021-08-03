@@ -1,4 +1,3 @@
-#### chmod
 === "Sticky bit"
 
     ```sh

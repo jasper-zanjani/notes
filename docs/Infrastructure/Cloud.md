@@ -1,5 +1,6 @@
-# ☁&#xfe0f; Cloud
+--8<-- "includes/Cloud/abbr.md"
 
+# ☁&#xfe0f; Cloud
 
 --8<-- "includes/Cloud/Table.md"
 
@@ -230,8 +231,7 @@ The policy can specify frequency of backups, and other settings. Using Backup se
 
 ## 🏢 Networking
 
-All cloud providers offer an implementation of **software-defined networking (SDN)** that allows a logically isolated network to be defined as a block of IP addresses allocated from one of the private ranges (10.0.0.0/8, 192.168.0.0/16, or 172.16.0.0/12).
-In AWS and GCP, this network is referred to as a **Virtual Private Cloud (VPC)**, whereas in Azure it is called a **Virtual Network (VNet)**.
+All cloud providers offer an implementation of **software-defined networking (SDN)** that allows a logically isolated network to be defined as a block of IP addresses allocated from one of the private ranges (10.0.0.0/8, 192.168.0.0/16, or 172.16.0.0/12), what in AWS and GCP is referred to as a VPC and in Azure a VNet.
 In all providers, the network is confined to a single region and must have at least one IP segment called a **subnet** defined within it which must be a subset of the range used to define the virtual network itself.
 
 The smallest possible CIDR range for a subnet in Azure is 29, which provides 3 addresses for use (Azure reserves 5).

@@ -1,4 +1,4 @@
-```py linenums="1"
+```py
 import sys
 
 

@@ -1,4 +1,4 @@
-```py linenums="1"
+```py
 def main():
     name: str = input("What is your name? ")
     print(f"Hello, {name}!")

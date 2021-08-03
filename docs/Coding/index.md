@@ -5,59 +5,64 @@
 
 === "Hello, world!"
 
-    !!! rs "&nbsp;"
-        --8<-- "includes/Coding/Rust/hw.md"
-
-    !!! cs "&nbsp;"
-        ```csharp
-        Console.WriteLine("Hello World!");
-        ```
-
     !!! py "&nbsp;"
         ```py
         "Hello, world!"
         ```
 
-=== "(parameterized)"
+    !!! rs "&nbsp;"
+        --8<-- "includes/Coding/Rust/hw.md"
 
-    ??? rs "&nbsp;"
+
+    ??? cs "&nbsp;"
+        ```csharp
+        Console.WriteLine("Hello World!");
+        ```
+
+=== "Parameterized"
+
+    !!! py "&nbsp;"
+        --8<-- "includes/Coding/Python/hwp.md"
+
+    !!! rs "&nbsp;"
         --8<-- "includes/Coding/Rust/hwp.md"
 
     ??? cs "&nbsp;"
         --8<-- "includes/Coding/C-Sharp/hwp.md"
 
-    ??? py "&nbsp;"
 
-        === "Simple"
-            --8<-- "includes/Coding/Python/hwp.md"
+=== "Interactive"
 
+    !!! py "&nbsp;"
+        --8<-- "includes/Coding/Python/hwi.md"
+
+    !!! rs "&nbsp;"
+        --8<-- "includes/Coding/Rust/hwi.md"
+
+        
+=== "CLI framework"
+
+    !!! py "&nbsp;"
         === "argparse"
             --8<-- "includes/Coding/Python/hwp-argparse.md"
 
-
-=== "(interactive)"
-
-    ??? rs "&nbsp;"
-        --8<-- "includes/Coding/Rust/hwi.md"
-
-    ??? py "&nbsp;"
-        --8<-- "includes/Coding/Python/hwi.md"
-
-        
+    !!! rs "&nbsp;"
+        === "clap"
+            --8<-- "includes/Coding/Rust/hw-clap.md"
 
 ## Numbers
 
 === "Weight on Mars"
 
-    ??? rs "&nbsp;"
+    !!! rs "&nbsp;"
         --8<-- "includes/Coding/Rust/mars.md"
 
-    ??? py "&nbsp;"
+    !!! py "&nbsp;"
         --8<-- "includes/Coding/Python/mars.md"
 
 === "Double array"
 
-    ??? py "&nbsp;"
+    !!! py "&nbsp;"
 
         === "List comprehension"
 
@@ -134,7 +139,7 @@ Parse a date string
         }
         ```
 
-    ??? py "&nbsp;"
+    !!! py "&nbsp;"
 
         ```py
         with open('text', 'w') as f:
@@ -189,7 +194,7 @@ Parse a date string
             }
             ```
 
-    ??? py "&nbsp;"
+    !!! py "&nbsp;"
 
         ```py
         with open('raven') as f:
@@ -207,7 +212,7 @@ Parse a date string
         File.Copy('raven', 'raven.bak', true)
         ```
 
-    ??? py "&nbsp;"
+    !!! py "&nbsp;"
 
         ```python
         import shutil
@@ -228,7 +233,7 @@ Parse a date string
 
 ### Text output
 
-??? rs "&nbsp;"
+!!! rs "&nbsp;"
 
     ```rs
     fn main() {
@@ -246,6 +251,18 @@ Parse a date string
 ### Data file formats
 
 === "CSV"
+
+
+    !!! py "&nbsp;"
+
+        ```py
+        import csv
+
+        with open ("greeks.csv") as f:
+            r = csv.reader(f)
+            headers = next(r)
+            data = [row for row in r]
+        ```
 
     ??? cs "&nbsp;"
 
@@ -280,17 +297,6 @@ Parse a date string
         }
         ```
 
-    ??? py "&nbsp;"
-
-        ```py
-        import csv
-
-        with open ("greeks.csv") as f:
-            r = csv.reader(f)
-            headers = next(r)
-            data = [row for row in r]
-        ```
-
 === "JSON"
 
     ??? cs "&nbsp;"
@@ -318,7 +324,7 @@ Parse a date string
         int result = r.Next(1, 6);
         ```
 
-    ??? py "&nbsp;"
+    !!! py "&nbsp;"
 
         ```py
         import random
@@ -334,7 +340,7 @@ Parse a date string
         int result = r.NextDouble();
         ```
 
-    ??? py "&nbsp;"
+    !!! py "&nbsp;"
 
         ```py
         import random
@@ -366,7 +372,7 @@ Pythagoras Samos          570 BC
     }
     ```
 
-??? py "&nbsp;"
+!!! py "&nbsp;"
 
     ```py
     for r in greeks:
@@ -384,7 +390,7 @@ Currency formatting
     Console.WriteLine(123456.789d.ToString("C"));   //  $123,456.79
     ```
 
-??? py "&nbsp;"
+!!! py "&nbsp;"
 
     === "f-string"
 
@@ -436,7 +442,7 @@ In Rust, the equivalent to the connection object seems to be a **TcpStream** obj
 echo "Hello, world!" | netcat localhost 8080
 ```
 
-??? rs "&nbsp;"
+!!! rs "&nbsp;"
 
     ```rs
     use std::net::TcpListener;
@@ -479,7 +485,7 @@ echo "Hello, world!" | netcat localhost 8080
     }
     ```
 
-??? py "&nbsp;"
+!!! py "&nbsp;"
 
     ```py
     import socket
@@ -555,7 +561,7 @@ Such a loop will continuously prompt for valid input, in this case an integer.
         ```
 
 
-??? py "&nbsp;"
+!!! py "&nbsp;"
 
     ```py
     while True:
@@ -567,7 +573,7 @@ Such a loop will continuously prompt for valid input, in this case an integer.
 
 ### Guessing game
 
-??? rs "&nbsp;"
+!!! rs "&nbsp;"
     --8<-- "includes/Coding/Rust/guess.md"
 
 ### Oxford comma
@@ -597,7 +603,7 @@ Such a loop will continuously prompt for valid input, in this case an integer.
     }
     ```
 
-??? py "&nbsp;"
+!!! py "&nbsp;"
 
     ```py
     import argparse
@@ -641,7 +647,7 @@ Such a loop will continuously prompt for valid input, in this case an integer.
         Console.ResetColor();
         ```
 
-    ??? py "&nbsp;"
+    !!! py "&nbsp;"
 
         ```python
         print(f"{colorama.Fore.RED} Red! {colorama.Style.RESET_ALL}")
@@ -657,7 +663,7 @@ Such a loop will continuously prompt for valid input, in this case an integer.
         Console.ResetColor();
         ```
 
-    ??? py "&nbsp;"
+    !!! py "&nbsp;"
         ```python
         print(f"{colorama.Fore.GREEN} Green! {colorama.Style.RESET_ALL}")
         ```
@@ -672,7 +678,7 @@ Such a loop will continuously prompt for valid input, in this case an integer.
         Console.ResetColor();
         ```
 
-    ??? py "&nbsp;"
+    !!! py "&nbsp;"
 
         ```python
         print(f"{colorama.Fore.YELLOW} Yellow! {colorama.Style.RESET_ALL}")
@@ -688,7 +694,7 @@ Such a loop will continuously prompt for valid input, in this case an integer.
         Console.ResetColor();
         ```
 
-    ??? py "&nbsp;"
+    !!! py "&nbsp;"
 
         ```python
         print(f"{colorama.Fore.BLUE} Blue! {colorama.Style.RESET_ALL}")
@@ -704,7 +710,7 @@ Such a loop will continuously prompt for valid input, in this case an integer.
         Console.ResetColor();
         ```
 
-    ??? py "&nbsp;"
+    !!! py "&nbsp;"
 
         ```python
         print(f"{colorama.Fore.MAGENTA} Magenta! {colorama.Style.RESET_ALL}")
@@ -827,7 +833,7 @@ Generating a Dungeons 'n Dragons character provides the opportunity to exercise 
     Both the ability roll and modifier lookup are implemented as public static functions.
 
 
-??? py "&nbsp;"
+!!! py "&nbsp;"
 
     === "Constructor"
 
@@ -985,7 +991,7 @@ Generating a Dungeons 'n Dragons character provides the opportunity to exercise 
 
 ### RPG character generator
 
-??? py "&nbsp;"
+!!! py "&nbsp;"
 
     === "Player class"
 
@@ -1148,13 +1154,13 @@ These checks provide opportunities to mock Starship and Officer objects in unit 
         - `ValidateRegistry()` makes sure the Starship's registry number begins with NCC or NX
         - `Evaluate()` runs all the other methods in the class and returns True only if all checks pass. This provides the opportunity to test a mocked validator for invocation of the `Evaluate()` method.
 
-??? rs "&nbsp;"
+!!! rs "&nbsp;"
     === "Officer"
         --8<-- "includes/Coding/Rust/Starships/Officer.md"
     === "Starship"
         --8<-- "includes/Coding/Rust/Starships/Starship.md"
 
-??? py "&nbsp;"
+!!! py "&nbsp;"
     === "StarshipClass"
         --8<-- "includes/Coding/Python/Starships/StarshipClass.md"
     === "Starship"

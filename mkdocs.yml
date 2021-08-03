@@ -7,7 +7,8 @@ theme:
     scheme: slate
     primary: amber
     accent: yellow
-
+  features:
+    - navigation.tabs
   
   shortcuts:
     search: 191

@@ -14,3 +14,5 @@
 *[RBAC]: Role-Based Access Control
 *[S3]: Simple Storage Service
 *[SQS]: Simple Queue Service
+*[VPC]: Virtual Private Cloud
+*[VNet]: Virtual Network

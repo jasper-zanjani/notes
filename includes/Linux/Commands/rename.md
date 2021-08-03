@@ -1,4 +1,4 @@
-`rename` uses regular expressions [Network World][https://www.networkworld.com/article/3433865/how-to-rename-a-group-of-files-on-linux.html#tk.rss_linux]
+`rename` uses regular expressions [:link:](https://www.networkworld.com/article/3433865/how-to-rename-a-group-of-files-on-linux.html#tk.rss_linux "Network World: How to rename a group of files on Linux")
 
 | Option | POSIX option | Effect                                                                            |
 | :----- | :----------- | :-------------------------------------------------------------------------------- |

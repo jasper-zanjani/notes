@@ -1,5 +1,5 @@
-**chgrp**{: #chgrp }
-:   Change ownership of `$FILE` to `$USER` and `$GROUP`
-    ```sh
-    chgrp $USER:$GROUP $FILE
-    ```
+Change ownership of `$FILE` to `$USER` and `$GROUP`
+
+```sh
+chgrp $USER:$GROUP $FILE
+```

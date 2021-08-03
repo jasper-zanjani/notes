@@ -1,5 +1,3 @@
-### sudo
-
 **/etc/sudoers**{: #sudoers }
 
 The sudoers file contains **user specifications** that define commands that users may execute.
