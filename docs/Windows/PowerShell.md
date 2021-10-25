@@ -367,31 +367,31 @@ Describe "Best airports in the USA" -Fixture
 
 ## Tasks
 
-Display computer name
+#### Download files
+
+URIs and filenames are built up as formatted strings
+
+```powershell
+1..24 | ForEach-Object {
+    Invoke-WebRequest -OutFile ("TGC_3466_Lect{0:d2}_FallPagansOriginsMedievalChristianity.m4v" -f $_) ("https://securedownloads.teach12.com/anon.eastbaymedia-drm/courses/3466/m4v/TGC_3466_Lect{0:d2}_FallPagansOriginsMedievalChristianity.m4v?userid=$USERID&orderid=$ORDERID&courseid=$COURSEID&FName=TGC_3466_Lect{0:d2}_FallPagansOriginsMedievalChristianity" -f $_)}
+```
+
+#### Display computer name
 
 === "Cmdlet"
 
     ```powershell
     Get-ComputerInfo -Property CsName
-    ```
-
-=== "Alias"
-
-    ```powershell
     gin.CsName
     ```
 
-=== "$Env"
+=== "`$Env`"
 
     ```powershell
     $Env:computername
     ```
 
-=== "Command prompt"
-
-    ```
-    hostname
-    ```
+#### Generate password
 
 Generate a random password 20 characters long ([src](https://adamtheautomator.com/powershell-random-password/))
 

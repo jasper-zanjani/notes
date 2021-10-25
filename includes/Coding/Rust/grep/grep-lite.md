@@ -9,10 +9,21 @@ Finally, file opening is incorporated into the business logic of the application
 The search logic itself is abstracted into a function. 
 If the `-` argument is received from the command-line, STDIN is treated just as a file.
 
+Files are modeled with structs (7).
+`read()` models reading a file by cloning the File struct's data Vector,  then `reserve`ing that clone's length and appending its values to a buffer struct.
+`open` and `close` functions are inert stubs (8).
+
+Refactoring `read()` into a method on `File` and implementing the `new` method using an `impl` blocks is more idiomatic and readable (9).
+
+`open()`, `close()`, and `read()` are refactored to use Results. 
+Also a [rand](#rand) function is used to model error generation on a random basis (10).
+
+Define a FileState enum (11). Implementing the Display [trait](#trait) allows us to use a standard template in a `println!` statement (12).
+
 === "1"
 
     ```rs
-    // RIA p. 68
+    // RIA 68
     fn main() {
         let search_term = "picture";
         let quote ="Once upon a midnight dreary\nWhile I pondered weak and weary\nOver many a quaint and curious volume of forgotten lore";
@@ -28,7 +39,7 @@ If the `-` argument is received from the command-line, STDIN is treated just as 
 === "2"
 
     ```rs hl_lines="2 5 8-11"
-    // RIA p. 69
+    // RIA 69
     use regex::Regex;
 
     fn main() {
@@ -47,7 +58,7 @@ If the `-` argument is received from the command-line, STDIN is treated just as 
 === "3"
 
     ```rs hl_lines="3 6-13 15"
-    // RIA p. 71-72
+    // RIA 71-72
     use regex::Regex;
     use clap::{App,Arg};
     
@@ -77,7 +88,7 @@ If the `-` argument is received from the command-line, STDIN is treated just as 
 === "4"
 
     ```rs
-    // RIA p. 73
+    // RIA 73
     use std::fs::File;
     use std::io::BufReader;
     use std::io::prelude::*;
@@ -106,7 +117,7 @@ If the `-` argument is received from the command-line, STDIN is treated just as 
 === "5"
 
     ```rs
-    // RIA p. 73
+    // RIA 73
     use std::fs::File;
     use std::io::BufReader;
     use std::io::prelude::*;
@@ -125,7 +136,7 @@ If the `-` argument is received from the command-line, STDIN is treated just as 
 === "6"
 
     ```rs hl_lines="2-5 27-30 39-40"
-    // RIA p. 74-75
+    // RIA 74-75
     use std::fs::File;
     use std::io;
     use std::io::BufReader;
@@ -174,16 +185,10 @@ If the `-` argument is received from the command-line, STDIN is treated just as 
     }
     ```
 
-Files are modeled with structs (7).
-`read()` models reading a file by cloning the File struct's data Vector,  then `reserve`ing that clone's length and appending its values to a buffer struct.
-`open` and `close` functions are inert stubs (8).
-
-Refactoring `read()` into a method on `File` and implementing the `new` method using an `impl` blocks is more idiomatic and readable (9).
-
 === "7"
 
     ```rs
-    // RIA p. 80
+    // RIA 80
     #[derive(Debug)]
     struct File {
         name: String,
@@ -207,7 +212,7 @@ Refactoring `read()` into a method on `File` and implementing the `new` method u
 === "8"
 
     ```rs hl_lines="10-19 34"
-    // RIA p. 82-83
+    // RIA 82-83
     #![allow(unused_variables)]
 
     #[derive(Debug)]
@@ -254,7 +259,7 @@ Refactoring `read()` into a method on `File` and implementing the `new` method u
 === "9"
 
     ```rs hl_lines="10-36 44"
-    // RIA p. 86
+    // RIA 86
     #![allow(unused_variables)]
 
     #[derive(Debug)]
@@ -310,6 +315,186 @@ Refactoring `read()` into a method on `File` and implementing the `new` method u
         println!("{:?}", f);
         println!("{} is {} bytes long", &f.name, f_length);
         println!("{}", text);
+    }
+    ```
+
+=== "10"
+
+    ``` rs hl_lines="36 45 53 62-64"
+    // RIA 93-94
+    use rand::prelude::*;
+
+    fn one_in(denominator: u32) -> bool {
+        thread_rng().gen_ratio(1, denominator)
+    }
+
+    #[derive(Debug)]
+    struct File {
+        name: String,
+        data: Vec<u8>,
+    }
+
+    impl File {
+        fn new(name: &str) -> File {
+            File {
+                name: String::from(name),
+                data: Vec::new(),
+            }
+        }
+
+        fn new_with_data(name: &str ,data: Vec<u8>) -> File {
+            let mut f = File::new(name);
+            f.data = data.clone();
+            f
+        }
+
+        fn read(
+            self: &File,
+            save_to: &mut Vec<u8>,
+        ) -> Result<usize, String> {
+            let mut tmp = self.data.clone();
+            let read_length = tmp.len();
+            save_to.reserve(read_length);
+            save_to.append(&mut tmp);
+            Ok(read_length)
+        }
+    }
+
+    fn open(f: File) -> Result<File, String> {
+        if one_in(10_000) {
+            let err_mag = String::from("Permission denied");
+            return Err(err_msg);
+        }
+        Ok(f)
+    }
+
+    fn close(f: File) -> Result<File, String> {
+        if one_in(100_000) {
+            let err_mag = String::from("Interrupted by signal!");
+            return Err(err_msg);
+        }
+        Ok(f)
+    }
+
+    fn main() {
+        let f_data: Vec<u8> = vec![1, 2, 3, 5, 7, 11, 13, 17, 19, 23, 29];
+        let mut f = File::new_with_data("4.txt", &f_data);
+
+        let mut buffer: Vec<u8> = vec![];
+
+        f = open(f).unwrap();
+        let f_length = f.read(&mut buffer).unwrap();
+        f = close(f).unwrap();
+
+        let text = String::from_utf8_lossy(&buffer);
+
+        println!("{:?}", f);
+        println!("{} is {} bytes long", &f.name, f_length);
+        println!("{}", text);
+    }
+    ```
+
+=== "11"
+
+    ```rs hl_lines="2-6 12 20 37 42 48"
+    // RIA 97-98
+    #[derive(Debug,PartialEq)]
+    enum FileState {
+        Open,
+        Closed,
+    }
+
+    #[derive(Debug)]
+    struct File {
+        name: String,
+        data: Vec<u8>,
+        state: FileState,
+    }
+
+    impl File {
+        fn new(name: &str) -> File {
+            File {
+                name: String::from(name),
+                data: Vec::new(),
+                state: FileState::Closed,
+            }
+        }
+
+        fn read(
+            self: &File,
+            save_to: &mut Vec<u8>,
+        ) -> Result<usize, String> {
+            let mut tmp = self.data.clone();
+            let read_length = tmp.len();
+            save_to.reserve(read_length);
+            save_to.append(&mut tmp);
+            Ok(read_length)
+        }
+    }
+
+    fn open(mut f: File) -> Result<File, String> {
+        f.state = FileState::Open;
+        Ok(f)
+    }
+
+    fn close(mut f: File) -> Result<File, String> {
+        f.state = FileState::Closed;
+        Ok(f)
+    }
+
+    fn main() {
+        let f_data: Vec<u8> = vec![1, 2, 3, 5, 7, 11, 13, 17, 19, 23, 29];
+        let mut f = File::new("4.txt");
+
+        let mut buffer: Vec<u8> = vec![];
+
+        f = open(f).unwrap();
+        let f_length = f.read(&mut buffer).unwrap();
+        f = close(f).unwrap();
+
+        let text = String::from_utf8_lossy(&buffer);
+
+        println!("{:?}", f);
+        println!("{} is {} bytes long", &f.name, f_length);
+        println!("{}", text);
+    }
+    ```
+
+=== "12"
+
+    ```rs
+    // RIA 101-102
+    #![allow(dead_code)]
+
+    use std::fmt;
+    use std::fmt::{Display};
+
+    #[derive(Debug,PartialEq)]
+    enum FileState {
+        Open,
+        Closed,
+    }
+
+    impl Display for FileState {
+        fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+            match *self {
+                FileState::Open => write!(f, "OPEN"),
+                FileState::Closed => write!(f, "CLOSED"),
+            }
+        }
+    }
+
+    impl Display for File {
+        fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+            write!(f, "<{} ({})>", self.name, self.state)
+        }
+    }
+
+    // --snip--
+
+    fn main() {
+        println!("{:?}", f);
+        println!("{}", f);
     }
     ```
 

@@ -1,5 +1,10 @@
-**curl**{: #curl}
+#### curl
 :   [`#`][curl -&#35;]   <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`d`][curl -&#100;] <code>&nbsp;</code> [`f`][curl -&#102;] <code>&nbsp;</code> [`h`][curl -&#104;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`m`][curl -&#109;] <code>&nbsp;</code> [`o`][curl -&#111;] <code>&nbsp;</code> [`q`][curl -&#113;] <code>&nbsp;</code> [`s`][curl -&#115;] <code>&nbsp;</code> [`u`][curl -&#117;] [`v`][curl -&#118;] <code>&nbsp;</code> [`x`][curl -&#120;] <code>&nbsp;</code> <code>&nbsp;</code>  <br><code>&nbsp;</code>&nbsp;<code>&nbsp;</code> <code>&nbsp;</code> [`C`][curl -&#67;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`K`][curl -&#75;] [`L`][curl -&#76;] [`M`][curl -&#77;] <code>&nbsp;</code> [**`O`**][curl -&#79;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`S`][curl -&#83;] [`T`][curl -&#84;] [`U`][curl -&#85;] [`V`][curl -&#86;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code>
+
+    Accept a self-signed certificate by skipping verification
+    ```sh
+    curl -k https://192.168.1.10
+    ```
 
     Use the [ `dict` network protocol ](https://tools.ietf.org/html/rfc2229) to retrieve the definition of a word.
     [ref](https://fedoramagazine.org/set-up-an-offline-command-line-dictionary-in-fedora/)

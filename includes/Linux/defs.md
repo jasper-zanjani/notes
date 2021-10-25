@@ -1,5 +1,13 @@
 ## 📘 Glossary
 
+*[DKMS]: Dynamic Kernel Module Support: a program/framework that enables generating Linux kernel modules whose sources generally reside outside the kernel source tree. DKMS modules are automatically rebuilt when a new kernel is installed.
+*[DSM]: Synology DiskStation: a web-based OS for managing Synology NASes
+*[KVM]: Kernel Virtual Machine
+*[MDA]: Mail Delivery Agent: service that downloads email from an MTA, such as procmail and fetchmail
+*[MTA]: Mail Transfer Agent: email server, such as sendmail, postfix, smail, and qmail
+*[MUA]: Mail User Agent: program that allows a user to view mail, such as mutt, pine, printmail, elm, mail, Thunderbird, Evolution, and Eudora
+*[SMB]: Server Message Block
+
 **address space**{: #address-space }
 :   
     An **address space** consists of a set of pages in memory allocated to the process. (ULSAH: 90)
@@ -9,6 +17,32 @@
 :   
     Security-oriented, lightweight Linux distribution used in containers and hardware.
 
+#### ALSA
+:   
+    **Advanced Linux Sound Architecture (ALSA)** replaced the earlier "Open Sound System". ([src][Schatz])
+
+    ALSA kernel modules are designed to offer an interface that "corresponds to that of the hardware" to keep the modules simple, and similar cards will offer a similar interface. 
+    ALSA kernel modules offer two interfaces: **operational** and **configuration**
+
+    **Operational interface** are exposed at /dev/, with 3 main types of devices:
+
+    - **PCM** devices, for recording or playing digitized sound samples, come in two varieties - **output** and **input** - and are numbered from 0, which is generally for analog multichannel sound.
+    - **CTL** or controls are for manipulating the internal mixer and routing of the card. Controls come in 3 types;
+        - **Playback** controls are associated with an output device or **copy (input-to-output)** routes
+        - **Capture** controls are associated with an input device or **copy (output-to-input)** routes
+        - **Feature** controls drive features of the card or mixer, usually just a switch to enable or disable the feature, though some also have levels. The **Master Volume** control is the most typical example, which allows control of the internal amplifier feature of the card. A more interesting example is that of a 3D spatializer that can be represented by a switch to enable or disable it as well as two levels.
+    - **MIDI** to control the MIDI port, if it exists
+    - Optionally, **sequencer** devices may also exist if the card has a builtin sound synthesizer with an associated **timer** device
+
+    **Configuration interfaces** are exposed at /proc/asound/ tree (ref [`amixer`][amixer])
+
+    Cards have input or output **sockets**, and the **mixer** is controlled by the CTL device and routes sound samples among devices and sockets.
+
+    Typical channel assignments
+    - **0**: front left
+    - **1**: front right
+    - **2**: rear left
+    - **3**: rear right
 
 **awesome**{: #awesome } [:material-play:][hObzf9ppODJU]
 :   
@@ -166,9 +200,25 @@
 :   
     Program that allows a user to view mail, such as mutt, pine, printmail, elm, mail, Thunderbird, Evolution, and Eudora
 
+#### Pipewire
+:   
+    **Pipewire** is a media server intended to facilitate audio and video handling in Linux as a replacement for [PulseAudio](#pulseaudio) and JACK.
+    It exposes a graph-based processing engine that abstracts audio and video devices.
+
 **Process**{: #process }
 :   
     A process consists of an [address space](#address-space) and a set of data structures within the kernel. 
+
+#### PulseAudio
+:   
+    **PulseAudio** is a sound server for POSIX OSes and a fixture on many Linux distributions.
+
+    PulseAudio is built around **sources** and **sinks** (i.e. devices) connected to **source outputs** and **sink inputs** (streams)
+
+    - **Source** is an input device that produces samples, usually running a thread with its own event loop, generating sample chunks which are posted to all connected source outputs
+    - **Source output** is a recording stream which consumes samples from a source
+    - **Sink** is an output device that consumes samples, usually running a thread with its own event loop mixing sample chunks from connect sink inputs
+    - **Sink input** is a playback stream, connected to a sink and producing samples for it
 
 **qmail**{: #qmail }
 :   
@@ -187,6 +237,10 @@
 
     After a shift in late 2020, CentOS Stream is no considered  upstream to RHEL (ahead by a point-release), but rather downstream from Fedora.
 
+**SMB**{: #smb }
+:   
+    Client/server protocol developed in the early 1980s by Intel, Microsoft, and IBM that has become the native protocol for file and printer sharing on Windows.
+    It is implemented in the **Samba**{: #samba } application suite.
 
 **SUSE**{: #suse }
 :   

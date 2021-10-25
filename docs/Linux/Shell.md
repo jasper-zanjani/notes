@@ -4,7 +4,7 @@
 
 Comparing bashrc files
 
-=== "Fedora"
+=== ":material-fedora: Fedora"
 
     ```sh
     # .bashrc

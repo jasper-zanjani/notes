@@ -1,0 +1,66 @@
+[
+  {
+    "name": "USS Enterprise",
+    "class": "Constitution",
+    "registry": "NCC-1701",
+    "series": "TOS"
+  },
+  {
+    "name": "USS Constitution",
+    "class": "Constitution",
+    "registry": "NCC-1700",
+    "series": "TOS"
+  },
+  {
+    "name": "USS Defiant",
+    "class": "Defiant",
+    "registry": "NX-74205",
+    "series": "DS9"
+  },
+  {
+    "name": "USS Voyager",
+    "class": "Intrepid",
+    "registry": "NCC-74656",
+    "series": "VOY"
+  },
+  {
+    "name": "USS Enterprise",
+    "class": "Galaxy",
+    "registry": "NCC-1701-D",
+    "series": "TNG"
+  },
+  {
+    "name": "USS Reliant",
+    "class": "Miranda",
+    "registry": "NCC-1864",
+    "series": "ST2"
+  },
+  {
+    "name": "SSV Normandy",
+    "registry": "SR-1",
+    "series": "ME"
+  },
+  {
+    "name": "Galactica",
+    "registry": "BS-75",
+    "series": "BSG"
+  },
+  {
+    "name": "USS Cerritos",
+    "class": "California",
+    "registry": "NCC-75567",
+    "series": "LD"
+  },
+  {
+    "name": "Enterprise",
+    "class": "NX",
+    "registry": "NX-01",
+    "series": "ENT"
+  },
+  {
+    "name": "USS Defiant",
+    "class": "Constitution",
+    "registry": "NCC-1764",
+    "series": "ENT"
+  }
+]

@@ -1,4 +1,14 @@
-# X11
+# Display
+
+## 🛠&#fe0f; Tasks
+
+--8<-- "includes/Linux/Tasks/custom-resolution.md"
+
+## 💻 Commands
+
+--8<-- "includes/Linux/Commands/cvt.md"
+
+### X11
 
 --8<-- "includes/Linux/Commands/X.md"
 

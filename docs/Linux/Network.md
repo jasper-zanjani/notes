@@ -1,40 +1,33 @@
 # Network
 
-**Curl** depends on piping and defaults to STDOUT in a manner similar to **cat**.
-**Wget** defaults to file operations in a way that is more natural for downloading.
+The Linux kernel supports several packet-filtering mechanisms.
 
-=== "wget"
+- [iptables](#iptables), introduced with kernel 2.4.0 (2001)
+- nftables subsystem, introduced with kernel 3.13 (2014), had been commonly assumed to eventually take the place of iptables. Firewall rules are implemented in an in-kernel VM.
+- bpfilter 
 
-    ```sh
-    wget $url
-    ```
+## Tasks
 
-=== "curl"
+--8<-- "includes/Linux/Tasks/download.md"
 
-    ```sh
-    curl -O $url 
-    ```
-
+## Commands
 
 --8<-- "includes/Linux/Commands/curl.md"
 
+--8<-- "includes/Linux/Commands/firewall-cmd.md"
+
+--8<-- "includes/Linux/Commands/iptables.md"
+
 --8<-- "includes/Linux/Commands/netcat.md"
 
-#### netplan [:material-link:](https://netplan.io/)
-
-netplan is a utility for network configuration using YAML files
-
-```yaml
-network:
-  version: 2
-  renderer: networkd
-  ethernets:
-    eth01:
-      dhcp4: yes
-```
+--8<-- "includes/Linux/Commands/netplan.md"
 
 --8<-- "includes/Linux/Commands/nmap.md"
 
+--8<-- "includes/Linux/Commands/nmcli.md"
+
 --8<-- "includes/Linux/Commands/tcpdump.md"
+
+--8<-- "includes/Linux/Commands/wg.md"
 
 --8<-- "includes/Linux/Commands/wget.md"

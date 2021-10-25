@@ -37,6 +37,9 @@ Gathering this type of information could be useful, not to me, but to others.
 
 How do I organize my thoughts and observations on the value of **sources** without doubling my effort?
 
+!!! info "Solution" 
+    Wikipedia-style links in a static site!
+
 #### Command-line syntax
 After several weeks of refining my note-taking technique with regard to syntax, I believe I have settled on an improved workflow.
 
@@ -46,7 +49,11 @@ For all command-line syntax:
 3. If commands form command groups (like `apt`, `docker`, `git`, `netsh`, etc), those command groups need to be broken out separately ("Group-style commands")
 4. If a command launches its own REPL (`bluetoothctl`, `diskpart`, `fdisk`...) those are broken out as well
 
+This turned out to be far too cumbersome.
+Better is the approach of learning syntax in the context of actual [tasks](#tasks).
+
 #### Finding magic numbers
+
 Before understanding the "lay of the land", or rather the best epistemology for a unit of information, you are first confronted with a list of information without context. This happened while studying for the Network+. On the topic of authentication, I learned a list of material, basically concepts associated with AAA. 
 
 - **Authentication** process of determining...
@@ -188,6 +195,7 @@ What I have settled on is a multilayered note-taking strategy. Every **lexeme** 
 
 These slugs and stubs can be presented in various ways. Most recently I have gotten into the habit of putting slugs into tooltips that appear when I hover over lexemes in my markdown notes. This is an especially elegant solution in tables, where I can provide a highly condensed and legible index of commands, each of which can be understood at a high level by hovering the mouse while still providing full details when clicked on. This is also an elegant solution in tables of contents, where I can use a tooltip to contain a synopsis of a chapter which still links to the full notes. It provides a way of rendering information of intermediary fidelity, between the mere title and fully developed notes.
 
+Actually, on second thought, notes themselves are not particularly useful once a topic has actually been learned...
 
 [Karpicke 2012]: http://learninglab.psych.purdue.edu/downloads/2012_Karpicke_CDPS.pdf "Karpicke, Jeffrey D. _Retrieval-Based Learning: Active Retrieval Promotes Meaningful Learning_. 2012."
 [Karpicke 2017]: http://learninglab.psych.purdue.edu/downloads/inpress_Karpicke_Retrieval_Based_Learning_Review.pdf "Karpicke, Jeffrey D. _Retrieval-Based Learning: A Decade of Progress_. 2017"

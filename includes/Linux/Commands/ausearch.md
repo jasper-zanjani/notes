@@ -1,5 +1,6 @@
 **ausearch**{: #ausearch }
-:   Display audit logs from `$STARTDATE` to `$ENDDATE`
+:   
+    Display audit logs from `$STARTDATE` to `$ENDDATE`
     ```sh
     ausearch --start $STARTDATE --end $ENDDATE
     ```

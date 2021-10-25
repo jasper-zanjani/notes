@@ -1,26 +1,48 @@
 # 🏠 Home
 
-## ✔&#xfe0f; TODO
 
-- [ ] :material-language-rust: [Rust Udemy course](https://www.udemy.com/course/rust-fundamentals/)
-- [ ] :material-language-rust: The Rust Book
-- [ ] :material-language-rust: Practical Rust Projects
+
+## TODO
+
+### :material-language-rust: Rust
+
+- [ ] Practical Rust Projects
+- [x] The Rust Book
 
 ## 💰 Sales watch:
 
-- [ ] [Hands-on Systems Programming with Rust](https://www.packtpub.com/product/hands-on-systems-programming-with-rust-video/9781838822132)
-- [ ] [Creative Projects for Rust Programmers](https://www.packtpub.com/product/creative-projects-for-rust-programmers/9781789346220)
-- [ ] [Practical System Programming for Rust Developers](https://www.packtpub.com/product/practical-system-programming-for-rust-developers/9781800560963)
+### :material-pill: Health
 
-## 🚀 Space
+- [ ] [Phosphatidylserine](https://www.swansonvitamins.com/swanson-ultra-phosphatidylserine-100-mg-90-sgels)
+- [ ] [Pygeum](https://www.amazon.com/Africanum-Extract-Bulksupplements-Prostate-Kilogram/dp/B07C32M646)
+- [x] [Iron](https://www.swansonvitamins.com/swanson-ultra-albion-chelated-ferrochel-iron-glycinate-18-mg-180-caps)
 
-Missions to look forward to 
+### :material-play: Videos
 
-- [James Webb Space Telescope (JWST)](https://www.jwst.nasa.gov/) to be launched ca. [October 31, **2021**](https://www.nasa.gov/press-release/nasa-announces-new-james-webb-space-telescope-target-launch-date)
-- [Artemis-1](https://www.nasa.gov/artemis-1) to be launched in [late **2021**](https://spacenews.com/first-sls-launch-now-expected-in-second-half-of-2021/), with first scientific observations after 6 months of testing
-- [Jupiter Icy Moon Explorer (JUICE)](https://en.wikipedia.org/wiki/Jupiter_Icy_Moons_Explorer) to be launched **2022** and arrive 2029
-- [E-ELT](https://elt.eso.org/ "European Extremely Large Telescope") first light expected [November **2026**](https://optics.org/news/11/12/24)
-- Dragonfly mission to Titan scheduled to launch in **2027** and to arrive in 2036 
+- [ ] [The Persian Empire](https://www.thegreatcourses.com/courses/the-persian-empire)
+- [ ] [Era of the Crusades](https://www.thegreatcourses.com/courses/era-of-the-crusades)
+- [ ] [Ancient Mesoamerica](https://www.thegreatcourses.com/courses/maya-to-aztec-ancient-mesoamerica-revealed)
+- [ ] [Ancient Civilizations of North America](https://www.thegreatcourses.com/courses/ancient-civilizations-of-north-america)
+- [ ] [Lost Worlds of South America](https://www.thegreatcourses.com/courses/lost-worlds-of-south-america)
+- [ ] [The Ottoman Empire](https://www.thegreatcourses.com/courses/the-ottoman-empire)
+- [ ] [Barbarian Empires of the Steppes](https://www.thegreatcourses.com/courses/the-barbarian-empires-of-the-steppes)
+
+### :material-language-rust: Rust
+
+- [ ] Hands-on Systems Programming with Rust :fontawesome-brands-amazon: [PacktPub](https://www.packtpub.com/product/hands-on-systems-programming-with-rust-video/9781838822132)
+- [ ] Creative Projects for Rust Programmers [:fontawesome-brands-amazon:](https://www.amazon.com/Creative-Projects-Rust-Programmers-WebAssembly-ebook/dp/B085P1MCXJ/) [PacktPub](https://www.packtpub.com/product/creative-projects-for-rust-programmers/9781789346220) 
+- [ ] Practical System Programming for Rust Developers [:fontawesome-brands-amazon:](https://www.amazon.com/Practical-System-Programming-Rust-Developers/dp/1800560966/) [PacktPub](https://www.packtpub.com/product/practical-system-programming-for-rust-developers/9781800560963) 
+- [ ] Rust projects [PacktPub](https://www.packtpub.com/product/rust-projects-video/9781788628549)
+
+### :material-microsoft-windows: Windows
+
+- [ ] Learn WinUI 3.0 [:fontawesome-brands-amazon:](https://www.amazon.com/Learn-WinUI-3-0-application-development/dp/1800208669/) [PacktPub](https://www.packtpub.com/product/learn-winui-3-0/9781800208667)
+
+### :material-language-python: Python
+
+- [ ] The Official Guide to Mermaid.js [:fontawesome-brands-amazon:](https://www.amazon.com/Official-Guide-Mermaid-js-beautiful-flowcharts/dp/1801078025/) [PacktPub](https://www.packtpub.com/product/the-official-guide-to-mermaid-js/9781801078023)
+- [ ] Python Object-Oriented Programming [PacktPub](https://www.packtpub.com/product/python-object-oriented-programming-fourth-edition/9781801077262) [:fontawesome-brands-amazon:](https://www.amazon.com/Python-Object-Oriented-Programming-maintainable-object-oriented/dp/1801077266/)
+
 
 ## :medal: Lapel pin ideas
 

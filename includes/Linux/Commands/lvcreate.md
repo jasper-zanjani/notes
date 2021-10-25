@@ -1,5 +1,6 @@
-**lvcreate**{ #lvcreate }
-:   Create a 20 gigabyte logical volume named "Marketing" from volume group {vg1}
+#### lvcreate
+:   
+    Create a 20 gigabyte logical volume named "Marketing" from volume group {vg1}
     ```sh
     lvcreate -L 20G vg1 -n Marketing
     ```

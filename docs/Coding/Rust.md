@@ -6,7 +6,8 @@
 TODO: 
 
 - Return to exercism and other code sites to find applications of iterator methods, i.e. finding odd or even numbers, etc
-
+- Number to Roman numeral
+- Math drills port
 ----------------------------------------------------------------------------->
 
 # Rust
@@ -15,7 +16,7 @@ TODO:
 > 
 > &mdash;Tim McNamara
 
-Rust offers **zero-cost abstractions**, where using the abstraction imposes no addition runtime overhead.
+Rust offers **zero-cost abstractions**, where using the abstraction imposes no additional runtime overhead.
 
 #### Documentation
 
@@ -70,7 +71,7 @@ A **package** contains one or more [**crates**](#crate) and contains a Cargo.tom
 - **`mod`** declares a module, which can be nested
 - **`crate`** is the root of the module tree, equivalent to `cd /`
 - **`super`** moves up the module tree one node, similar to `cd ..`
-- **`use .. as`** is similar to creating a shortcut or symlink. Rust convention is to bring a function's parent into scope in order to mark function calls as unmistakeably belonging to external code. However, for structs and other data structures the full path is specified.
+- **`use .. as`** is similar to creating a shortcut or symlink. Rust convention is to bring a function's parent into scope in order to mark function calls as unmistakeably belonging to external code. However, for structs and other data structures the full path is specified.sdfsdf
 - **`pub use`** statements are used to construct a convenient API by allowing the namespace to be flattened
 
 !!! rs "&nbsp;"
@@ -486,7 +487,8 @@ println!("{}, {}", coord.0, coord.1);
 
 ### OOP
 
-Objects are implemented in Rust as `struct`s and `impl`s.
+Strictly speaking, OOP is not actually implemented in Rust because there is no inheritance.
+However, objects that combine data with logic can be created `struct`s and `impl`s.
 
 A group of methods that are shared by multiple types can have their signatures defined by a [**trait**](#trait).
 Types then implement the trait, and functions can be defined that accept any type that does so by specifying the trait instead of a single concrete type.
@@ -734,6 +736,27 @@ Tests can also be incorporated in documentation as markdown code blocks.
     }
     ```
 
+**cfg`**{: #cfg } [:material-language-rust:](https://doc.rust-lang.org/std/macro.cfg.html)
+:   
+    The **`cfg`** [macro](#macro) is used for conditional compilation and evaluates configuration at compile-time.
+    
+
+    Debug-only code not to be used in release builds
+    
+    ```rs
+    if cfg!debug_assertions) {
+        eprintln!("debug: {:?} -> {:?}", record, fields);
+    }
+    ```
+
+    ```rs
+    let my_directory = if cfg!(windows) {
+        "windows-specific-directory"
+    } else {
+        "unix-directory"
+    };
+    ```
+
 #### `dbg` [:material-language-rust:](https://doc.rust-lang.org/std/macro.dbg.html)
 :   
 
@@ -777,6 +800,10 @@ Tests can also be incorporated in documentation as markdown code blocks.
     }
     ```
 
+**futures**
+:   
+    Rust's main mechanism for asynchronous programming, implemented in the **Tokio** crate
+
 #### `HashMap`
 :   
     ```rs
@@ -816,7 +843,7 @@ Tests can also be incorporated in documentation as markdown code blocks.
         }
         ```
     
-    === "Naive"
+    === "match"
 
         ``` rs
         let some_u8_value = Some(0u8);
@@ -902,6 +929,7 @@ Tests can also be incorporated in documentation as markdown code blocks.
         - **Function-like** macros that look like function calls but operate on the tokens specified as their argument
 
   - `assert` [:material-language-rust:](https://doc.rust-lang.org/std/macro.assert.html) invokes `panic` if the provided expression cannot be evaluated to true at runtime
+  - [`cfg`](#cfg) [:material-language-rust:](https://doc.rust-lang.org/std/macro.cfg.html) compiles code based on compile-time evaluation of configuration
   - [`dbg`](#dbg)
   - `panic` [:material-language-rust:](https://doc.rust-lang.org/std/macro.panic.html) terminates the program with code 101 and should be used when the program reaches an unrecoverable state
   - `println`
@@ -1119,6 +1147,10 @@ Tests can also be incorporated in documentation as markdown code blocks.
     - [`expect()` :material-language-rust:](https://doc.rust-lang.org/std/result/enum.Result.html#method.expect) returns the contained `Ok` value or panics with the provided error message.
     - [`unwrap()` :material-language-rust:](https://doc.rust-lang.org/std/result/enum.Result.html#method.unwrap) returns the contained `Ok` value or panics.
     - [`unwrap_or_else()` :material-language-rust:](https://doc.rust-lang.org/std/result/enum.Result.html#method.unwrap_or_else) returns the contained `Ok` value or computes it from a [closure](#closure).
+
+#### Rnd
+:   
+    - `gen_ratio` [:material-language-rust:](https://docs.rs/rand/0.8.4/rand/trait.Rng.html#method.gen_ratio) return true based on the probability defined by the fraction defined by the arguments (i.e. `gen_ratio(1,5)` returns true 20% of the time)
 
 **Smart pointer**{: #smart-pointer }
 :   
@@ -1798,14 +1830,14 @@ Tests can also be incorporated in documentation as markdown code blocks.
 
 ### Emulator
 
-    === "1"
+=== "1"
 
-        ```rs
-        struct CPU {
-            current_operation: u16,
-            registers: [u8; 2],
-        }
-        ```
+    ```rs
+    struct CPU {
+        current_operation: u16,
+        registers: [u8; 2],
+    }
+    ```
 
 
 ## grep ports

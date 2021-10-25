@@ -1,5 +1,6 @@
-**xmodmap**{: #xmodmap }
-:   Replacing Caps Lock with Escape
+#### xmodmap
+:   
+    Replacing Caps Lock with Escape
     ```
     ! Swap caps lock and escape
     remove Lock = Caps_Lock

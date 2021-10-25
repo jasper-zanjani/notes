@@ -146,32 +146,6 @@ private void ButtonMove_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-### UWP
-
-**Universal Windows Platform (UWP)** refers to both a UI framework incorporating the **Fluent Design System** as well as an [app model](#app-models).
-When the UWP XAML framework was released in 2012, UWP was touted as a means to develop for many different device platforms, including mobile and tablet. 
-Until recently, the UWP XAML framework was only available for applications using the UWP app model for apps destined for the Microsoft Store.
-
-However, UWP development has floundered over the past half decade as Microsoft has been unable to produce sufficient interest in its mobile and tablet devices or the Microsoft Store. 
-Microsoft itself has ceased development of UWP apps for Office or for Xbox, for which it has turned rather to Electron.
-
-### WinUI
-
-**Windows UI Library (WinUI) 3** is a native UI framework that represents a rebranding of the [UWP UI framework](#uwp), which had previously only been available for applications using the [UWP app model](#app-models), and a move to make it available for both app models.
-
-Still in development, it promises to deliver a unified framework and all the styles and controls previously distributed in WinUI 2, which in turn is a NuGet packaging containing the UWP XAML controls and styles.
-
-Unfortunately, because the UWP framework had been available only for the UWP [app model](#app-models), it did not experience wide adoption among developers who prefered the flexibility of the older Win32 "app model" (or rather, the lack of one). 
-
-### App models
-
-**App model** is a term Microsoft began using after the release of UWP in 2012 to refer to the hosting model, or the rigidly defined parameters for how an application is installed, stores state, manages versions, and integrates with the operating system and other apps, that generally define an application lifecycle. Specifically, the term was used in the context of describing the security sandbox and other restrictions of the **UWP app model** for Microsoft Store applications.
-
-Previous to UWP, there had been no definition of an "app model" per se and developers of a Win32 application were free to determine these parameters individually. 
-This caused wide disparity in implementation among applications, resulting in registry bloat and poorly managed uninstallations. 
-The **UWP App Model** was specifically introduced to answer these concerns which had plagued generations of Windows. ([src](https://www.developer.com/design/a-look-inside-the-windows-10-app-model-what-does-it-mean-for-developers.html))
-
-The failure of UWP as an app model resulted in **Project Reunion**, an effort to reunify the bifurcated Windows development landscape.
 
 
 ### Event handling
@@ -717,9 +691,11 @@ Example handler selecting all text in a TextBox: ([src](https://asp-net-example.
     }
     ```
 
-### Master/Details
+### List/Details
 
-The [**master/details pattern**](https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/master-details) has a master pane (usually a [ListView](#listview)) and a details pane for content.
+<figure><img src="/img/GUI/list-detail-pattern.png"/></figure>
+
+The [**list/details pattern**](https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/master-details) has a master pane (usually a [ListView](#listview)) and a details pane for content.
 
 ### MVVM
 

@@ -1,4 +1,4 @@
-# 🐧 Linux
+# Overview
 
 [**SystemD**](SystemD) is the de facto Linux **init**{: #init } system on modern distributions.
 
@@ -28,9 +28,11 @@ Every process has a parent; a process can **spawn** children in a process that i
 
 - allow you to allocate resources (CPU time, system memory, network bandwidth, or combinations thereof) among user-defined groups of processes
 - like processes, cgroups are hierarchical and inherit attributes from parents, but they from separate trees branching off from `subsystems` (also: `resource controller`, or just `controller`), each of which represent a single system resouce 
+
     - `blkio` sets limits on input/output access from block devices
     - `cpu` which provides access to the CPU
     - many more...
+
 - different from `namespaces`
     - good for limiting the resources available to a container
     - `systemd` uses cgroups
@@ -50,23 +52,6 @@ Microcontrollers may be listening when the system is nominally off; they typical
 - **System Management Mode (SMM)** launches UEFI software
 
 Linux kernel is typically named **vmlinux** (or **vmlinuz** when compressed). Kernel ring buffer contains messages related to the Linux kernel. A ring buffer is a data structure that is always the same size; old messages are discarded as new ones come in, once the buffer is full. `dmesg` is used to see its contents, and the messages are also stored in `/var/log/dmesg`
-
-
-**Index node (inode)** is a data structure that stores all the information about a file except its name and data
-Most modern Linux distributions use the `ext4` filesystem, which descends from `ext3` and `ext2`, and ultimately `ext`. Other filesystems in use include `btrfs`, `xfs`, and `zfs`
-Source: [ref](https://opensource.com/article/18/4/ext4-filesystem "opensource.com: \"Understanding Linux filesystems: ext4 and beyond\"")
-
-**Extended File System** was first implemented in 1992 by Remy Card to address limitations in the MINIX filesystem, which was used to develop the first Linux kernel. It could address up to 2GB of storage and handle 255-character filenames and had only one timestap per file.
-
-- **ext2** was developed by Remy Card only a year after `ext`'s release as a commercial-grade filesystem, influenced by BSD's Berkeley Fast File System. It was prone to corruption if the system crashed or lost power while data was being written and performance losses due to fragmentation. Nevertheless, it was quickly and widely adopted, and still used as a format for USB drives.
-- **ext3** was adopted by mainline Linux in 2001 and uses **journaling**, whereby disk writes are stored as transactions in a special allocation, which allows a rebooted system to roll back incomplete transactions. 3 journaling modes: [journal](#ext "lowest risk journaling mode in ext3, writes both data and metadata to journal before commiting it to filesystem"), [ordered](#ext "default journaling mode in ext3, writes metadata to journal but commits data directly to the filesystem"), and [writeback](#ext "least safe journaling mode in ext3, metadata is journaled but data is not")
-- **ext4** was added to mainline Linux in 2008, developed by Theodore Ts'o, and improves upon `ext3` but is still reliant on old technology.
-
-**ZFS** is a true next-generation filesystem with a problematic license.
-**ZFS on Linux (ZOL)** is considered the ugly stepchild of the ZFS community despite the fact that the Linux implementation has the most features and the most community support.
-ZFS is too tightly bound to the operation of the kernel to operate in true userspace, and that is why each implementation is different for operating systems.
-
-**B-Tree Filesystem "butter fs"** was adopted by [SUSE Enterprise Linux](#suse), but support was dropped by Red Hat in 2017.
 
 
 ## Security
@@ -90,8 +75,63 @@ FACL permissions will be indicated in a `ls -l` command by the presence of a "+"
 To enable it, add ",acl" to options in `fstab` file, then mount/unmount disk. If enabling FACL on root partition, system has to be rebooted.
 
 
---8<-- "includes/Linux/abbrs.md"
-
 --8<-- "includes/Linux/defs.md"
 
 --8<-- "includes/Linux/links.md"
+
+## Tasks
+
+--8<-- "includes/Linux/Tasks/custom-resolution.md"
+
+--8<-- "includes/Linux/Tasks/download.md"
+
+--8<-- "includes/Linux/Tasks/hdd-serial-numbers.md"
+
+--8<-- "includes/Linux/Tasks/KDE-tiling-window-manager.md"
+
+--8<-- "includes/Linux/Tasks/etc.md"
+
+--8<-- "includes/Linux/Tasks/NFS.md"
+
+--8<-- "includes/Linux/Tasks/Samba.md"
+
+--8<-- "includes/Linux/Tasks/X-forwarding.md"
+
+--8<-- "includes/Linux/Tasks/GRUB-rescue-prompt.md"
+
+## Commands
+
+### Applications
+
+--8<-- "includes/Linux/Commands/youtube-dl.md"
+
+--8<-- "includes/Linux/Applications/Rhythmbox.md"
+
+### GRUB
+
+--8<-- "includes/Linux/Commands/grub-install.md"
+
+--8<-- "includes/Linux/Commands/grub-mkconfig.md"
+
+--8<-- "includes/Linux/Commands/grub2-mkconfig.md"
+
+--8<-- "includes/Linux/Commands/grub2-editenv.md"
+
+--8<-- "includes/Linux/Commands/update-grub.md"
+
+
+### System administration
+
+--8<-- "includes/Linux/Commands/chage.md"
+
+--8<-- "includes/Linux/Commands/chgrp.md"
+
+--8<-- "includes/Linux/Commands/chmod.md"
+
+--8<-- "includes/Linux/Commands/chown.md"
+
+--8<-- "includes/Linux/Commands/chpass.md"
+
+--8<-- "includes/Linux/Commands/rename.md"
+
+--8<-- "includes/Linux/Commands/sudo.md"

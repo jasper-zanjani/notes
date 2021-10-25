@@ -27,13 +27,13 @@ This hash is then sent back to the server, which checks the calculation.
 
 The SSH server daemon has slightly different names on Debian and Red Hat systems
 
-=== "Debian"
+=== ":material-ubuntu: Ubuntu"
 
     ```sh
     service ssh start
     ```
 
-=== "Red Hat"
+=== ":material-redhat: Red Hat"
 
     ```sh
     service sshd start
@@ -41,28 +41,28 @@ The SSH server daemon has slightly different names on Debian and Red Hat systems
 
 ## 📘 Glossary
 
+**sshd_config**
+:   
+    **/etc/ssh/sshd_config** is the configuration for the SSH server daemon.
+    
+    Disable cleartext passwords
+    ```ini
+    PasswordAuthentication no
+    ```
+
+    Disable root login
+    ```ini
+    PermitRootLogin no
+    ```
+
 **Diffie-Hellman**{: #diffie-hellman }
 :   
     Asymmetric encryption protocol used for key-exchange in SSH.
 
 ## Commands
 
-**endlessh**{: #endlessh}
-:   
-    --8<-- "includes/Linux/Commands/endlessh.md"
+--8<-- "includes/Linux/Commands/endlessh.md"
 
-**ssh-copy-id**{: #ssh-copy-id }
-:   
-    --8<-- "includes/Linux/Commands/ssh-copy-id.md"
+--8<-- "includes/Linux/Commands/ssh-copy-id.md"
 
-**ssh-keygen**{: #ssh-keygen }
-:   
-    --8<-- "includes/Linux/Commands/ssh-keygen.md"
-
-**/etc/ssh/sshd_config**
-:   
-    Disable cleartext passwords
-    ```ini
-    PasswordAuthentication no
-    ```
-
+--8<-- "includes/Linux/Commands/ssh-keygen.md"

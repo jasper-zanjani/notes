@@ -4,6 +4,10 @@
 
 ### pdb <sup>:material-language-python:</sup>
 
+```sh
+python -m pdb script.py
+```
+
 --8<-- "includes/Coding/Python/hwp.md"
 
 Use debugging to intercept the value of the variable before the final string is displayed.

@@ -1,4 +1,4 @@
-**netcat**{: #netcat }
+#### netcat
 :   
     The netcat utility allows testing of a host's ports, similar to **ping**, but more versatile because **ping** only uses the portless ICMP protocol. 
     GNU and OpenBSD versions available

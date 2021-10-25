@@ -173,37 +173,28 @@ Several recommendations when using this framework:
 
 ## 📘 Glossary
 
-[mock]: #mock "A mock is a test double that emulates outgoing interactions, or calls the system under test makes to change the state of a dependency."
-[spike]: #spike "A spike is an experiment without tests to ensure that an idea will work."
-[spy]: #mock "A spy is sometimes used to refer to a mock that is handwritten, rather than one created using a mocking framework."
-[stub]: #stub "A stub is a test double that emulates incoming interactions, or calls the system under test makes to get data from a dependency."
-[test double]: #test-double "A test double is an object that looks and behaves like its production counterpart, but is simplified to facilitate testing."
-[test fixture]: # "A test fixture is code that supports a test case by setting up data, implementing the Arrange step."
-[test runner]: # "A test runner runs many test cases and reports the results."
-[test suite]: # "A test suite refers to a collection of test cases executed by a test runner."
+**Mock**{: #mock }
+:   
+    A **mock** is a test double that emulates outgoing interactions, or calls the system under test makes to change the state of a dependency.
 
-### Mock
+    Mocks include [spies][spy].
 
-A **mock** is a test double that emulates outgoing interactions, or calls the system under test makes to change the state of a dependency.
+**Spike**{: #spike }
+:   
+    A **spike** is an experiment without tests to ensure that an idea will work. Once the spike succeeds, the spike code is thrown away and the logic is recreated following TDD, starting with tests.
 
-Mocks include [spies][spy].
+**Stub**{: #stub }
+:   
+    A **stub** is a test double that emulates incoming interactions, or calls the system under test makes to get data from a dependency.
 
-### Spike
+    - **Fakes** provide a working implementation of the dependency, however one which is unsuitable for production (e.g. in-memory databases)
+    - **Dummies** are passed around like real implementations but never accessed or used.  These are used to satisfy the parameters of a method.
 
-A **spike** is an experiment without tests to ensure that an idea will work. Once the spike succeeds, the spike code is thrown away and the logic is recreated following TDD, starting with tests.
+**Test double**{: #test-double }
+:   
+    **Test double** include a variety of objects that facilitate unit testing by replacing a production object, usually a data dependency.
+    Test doubles can be classified  on what type of interaction the object emulates:
 
-### Stub
-
-A **stub** is a test double that emulates incoming interactions, or calls the system under test makes to get data from a dependency.
-
-- **Fakes** provide a working implementation of the dependency, however one which is unsuitable for production (e.g. in-memory databases)
-- **Dummies** are passed around like real implementations but never accessed or used.  These are used to satisfy the parameters of a method.
-
-### Test double
-
-**Test double** include a variety of objects that facilitate unit testing by replacing a production object, usually a data dependency.
-Test doubles can be classified  on what type of interaction the object emulates:
-
-- **Mocks** emulate outgoing interactions
-- **Stubs** emulate incoming interactions
+    - [**Mocks**](#mock) emulate outgoing interactions
+    - [**Stubs**](#stub) emulate incoming interactions
 

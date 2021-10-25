@@ -1,35 +1,17 @@
-=== "Sticky bit"
+#### chmod
+:   
+    === ":material-plus: Add permissions"
 
-    ```sh
-    # set
-    chmod +t $FILE
+        ```sh
+        chmod +t $FILE # Sticky bit
+        chmod g+s file # SGID
+        chmod u+s file # SUID
+        ```
 
-    # clear
-    chmod -t $FILE
-    ```
+    === ":material-trash-can: Remove permissions"
 
-=== "SGID bit"
-
-    ```sh
-    # set
-    chmod g+s file
-
-    # clear
-    chmod g-s file
-    ```
-
-=== "SUID bit"
-
-    ```sh
-    # set
-    chmod u+s file
-
-    # clear
-    chmod u-s file
-    ```
-
-=== "setuid"
-
-    ```sh
-    chmod +s file
-    ```
+        ```sh
+        chmod -t $FILE # Sticky bit
+        chmod g-s file # SGID
+        chmod u-s file # SUID
+        ```

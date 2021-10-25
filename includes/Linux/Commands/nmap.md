@@ -1,5 +1,6 @@
-**nmap**{: nmap }: scan hosts and ports on a network
-:   Scan hosts from a text file
+#### nmap
+:   
+    Scan hosts from a text file
     ```sh
     nmap -iL hosts.txt
     ```
