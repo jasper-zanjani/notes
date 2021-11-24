@@ -81,8 +81,10 @@
 
 **SMB**{: #smb }
 :   
-    Client/server protocol developed in the early 1980s by Intel, Microsoft, and IBM that has become the native protocol for file and printer sharing on Windows.
+    **Server Message Block** (**SMB**) is a client/server protocol developed in the early 1980s by Intel, Microsoft, and IBM that has become the native protocol for file and printer sharing on Windows.
     It is implemented in the **Samba**{: #samba } application suite.
+
+    **CIFS**{: #cifs } ("Common Internet File System") is a dialect and implementation of SMB whose acronym has survived despite the fact the protocol itself has fallen into disuse.
 
 **stripe**{: #stripe }
 :   

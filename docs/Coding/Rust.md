@@ -22,12 +22,7 @@ Rust offers **zero-cost abstractions**, where using the abstraction imposes no a
 
 Rust uses C-style line comments using `//` and block comments using `/*`, `*/`
 
-**Doc comments** support markdown and are used to generate documentation with the use of a built-in static site generator that can compile inline comments (**`--open`** opens the site in the default web browser).
-
-```sh
-cargo doc --open
-```
-
+**Doc comments** support markdown and are used to generate documentation with the use of [`cargo doc`](#cargo).
 
 Markdown code blocks containing test cases are known as **doc tests** and can be run with `cargo test`, for library crates only.
 Note that markdown code blocks in Rust doc comments don't need a language annotation.
@@ -74,19 +69,18 @@ A **package** contains one or more [**crates**](#crate) and contains a Cargo.tom
 - **`use .. as`** is similar to creating a shortcut or symlink. Rust convention is to bring a function's parent into scope in order to mark function calls as unmistakeably belonging to external code. However, for structs and other data structures the full path is specified.sdfsdf
 - **`pub use`** statements are used to construct a convenient API by allowing the namespace to be flattened
 
-!!! rs "&nbsp;"
 
-    === "lib.rs"
+=== "lib.rs"
 
-        ---8<-- "includes/Coding/Rust/Starships/2/lib.rs.md"
+    ---8<-- "includes/Coding/Rust/Starships/2/lib.rs.md"
 
-    === "starship.rs"
+=== "starship.rs"
 
-        ---8<-- "includes/Coding/Rust/Starships/2/starship.rs.md"
+    ---8<-- "includes/Coding/Rust/Starships/2/starship.rs.md"
 
-    === "officer.rs"
+=== "officer.rs"
 
-        ---8<-- "includes/Coding/Rust/Starships/2/officer.rs.md"
+    ---8<-- "includes/Coding/Rust/Starships/2/officer.rs.md"
 
 
 ### Error handling
@@ -97,44 +91,18 @@ Recoverable errors can be handled by program logic, whereas unrecoverable errors
 A key data structure used in error handling in Rust is a [`match`](#match) statement with two arms to handle the two variants of a [`Result<T,E>`](#resultte) enum.
 However, `match` statements are also considered hard to read, and seasoned Rustaceans will be able to improve readability by using `Result<T,E>` helper methods like `unwrap()` and `expect()` when they are better.
 
-=== "Idiomatic"
+The **`?`** operator performs a [`match`](#match) on the Result returned by `read_to_string()`
+```rs
+let cat_template = std::fs::read_to_string(path)?;
+```
+However it may not be used within a function that does not explicitly return an error type.
 
-    ```rs
-    use std::fs::File;
-    use std::io::ErrorKind;
-
-    fn main() {
-        let f = File::open("hello.txt").unwrap_or_else(|error| {
-            if error.kind() == ErrorKind::NotFound {
-                File::create("hello.txt").unwrap_or_else(|error| {
-                    panic!("Problem creating the file: {:?}", error);
-                })
-            } else {
-                panic!("Problem opening the file: {:?}", error);
-            }
-        });
-    }
-    ```
-
-=== "Naive"
-
-    ```rs
-    use std::fs::File;
-    use std::io::ErrorKind;
-
-    fn main() {
-        let f = match File::open("hello.txt") {
-            Ok(file) => file,
-            Err(e) => match error.kind() {
-                ErrorKind::NotFound => match File::create("hello.txt") {
-                    Ok(fc) => fc,
-                    Err(e) => panic!("Problem creating the file: {:?}", e),
-                },
-                other_error => panic!("Problem opening the file: {:?}", other_error)m
-            },
-        };
-    }
-    ```
+```rs
+fn main() -> Result<(), Box<dyn std::error::Error>> {
+    // ...
+    Ok(())
+}
+```
 
 
 ### Data
@@ -521,6 +489,39 @@ Tests can also be incorporated in documentation as markdown code blocks.
 
 ---8<-- "includes/Coding/Rust/Starships/1/starship.rs.md"
 
+### GUI
+
+```rs
+use gtk4 as gtk;
+use gtk::prelude::*;
+use gtk::{Application, ApplicationWindow};
+
+fn main() {
+    let app = Application::builder()
+        .application_id("org.example.HelloWorld")
+        .build();
+
+    app.connect_activate(|app| {
+        // We create the main window.
+        let window = ApplicationWindow::builder()
+            .application(app)
+            .default_width(320)
+            .default_height(200)
+            .title("Hello, World!")
+            .build();
+
+        // Show the window.
+        window.show();
+    });
+
+    app.run();
+}
+```
+
+## Tools
+
+
+
 ## 📘 Glossary
 
 **associated type**{: #associated-type }
@@ -552,12 +553,16 @@ Tests can also be incorporated in documentation as markdown code blocks.
 :   
     metadata that decorates code.
 
-    - **`#![allow(unused_variables)]`** suppresses compiler warnings
-    - **`#[allow(dead_code)`** suppresses compiler warnings about unused functions
-    - **`#[derive(Debug)]`** etc.
-    - `#[cfg(test)]`
-    - `#[test]`
-    - `#[ignore]`
+    ```rs
+    #![allow(unused_variables)] // suppress compiler warnings
+    #[allow(dead_code)          // suppress compiler warnings about unused functions
+    #[derive(Debug)]
+    #[cfg(test)]
+    #[test]
+    #[ignore]
+
+    #[structopt(default_value = "World")] // set a default value for a field
+    ```
 
 #### `Box<T>`
 :   
@@ -584,6 +589,33 @@ Tests can also be incorporated in documentation as markdown code blocks.
         let y = &x;
         assert_eq!(5, *y);
         ```
+
+#### cargo
+:   
+    Cargo is Rust's package manager.
+
+    If behind a corporate firewall, where SSL certificates are substituted, a [special flag](https://github.com/rust-lang/cargo/issues/8688) must be set in **~/.cargo/config.toml** to allow package downloads.
+
+    ```ini
+    [http]
+    check-revoke = false
+    ```
+
+    Generate [documentation](#documentation) from doc comments using a built-in static site generator, and then open it.
+    ```sh
+    cargo doc --open
+    ```
+
+    Run [doctests](#tdd)
+    ```sh
+    cargo test
+    ```
+
+#### clap
+:   
+    [clap](https://docs.rs/clap/) is a CLI framework.
+
+    Also see [structopt](#structopt).
 
 #### Closure
 :   
@@ -716,6 +748,24 @@ Tests can also be incorporated in documentation as markdown code blocks.
     - **Binary crates**, of which there may be many in a package
 
     The **crate root** is the source file that the compiler uses to create the root module of the crate.
+
+#### cursive
+:   
+    [cursive](https://docs.rs/cursive/) is a TUI framework.
+
+    Cursive widgets are called **Views** (i.e. TextView).
+
+    ```rs
+    use cursive::views::TextView;
+    use cursive::{Cursive, CursiveExt};
+
+    fn main() {
+        let mut siv = Cursive::new();
+        siv.add_layer(TextView::new("Hello World!\nPress q to quit."));
+        siv.add_global_callback('q', |s| s.quit());
+        siv.run();
+    }
+    ```
 
 **Custom derive**{: #custom-derive } 
 :   
@@ -928,12 +978,14 @@ Tests can also be incorporated in documentation as markdown code blocks.
         - **[Attribute](#attribute)-like** macros that define custom attributes usable on any item
         - **Function-like** macros that look like function calls but operate on the tokens specified as their argument
 
-  - `assert` [:material-language-rust:](https://doc.rust-lang.org/std/macro.assert.html) invokes `panic` if the provided expression cannot be evaluated to true at runtime
-  - [`cfg`](#cfg) [:material-language-rust:](https://doc.rust-lang.org/std/macro.cfg.html) compiles code based on compile-time evaluation of configuration
-  - [`dbg`](#dbg)
-  - `panic` [:material-language-rust:](https://doc.rust-lang.org/std/macro.panic.html) terminates the program with code 101 and should be used when the program reaches an unrecoverable state
-  - `println`
-  - `unimplemented` [:material-language-rust:](https://doc.rust-lang.org/core/macro.unimplemented.html)
+    - `assert` [:material-language-rust:](https://doc.rust-lang.org/std/macro.assert.html) invokes `panic` if the provided expression cannot be evaluated to true at runtime
+    - [`cfg`](#cfg) [:material-language-rust:](https://doc.rust-lang.org/std/macro.cfg.html) compiles code based on compile-time evaluation of configuration
+    - [`dbg`](#dbg)
+    - `eprintln` print to STDERR
+    - `panic` [:material-language-rust:](https://doc.rust-lang.org/std/macro.panic.html) terminates the program with code 101 and should be used when the program reaches an unrecoverable state
+    - `println` print to STDOUT
+    - `unimplemented` [:material-language-rust:](https://doc.rust-lang.org/core/macro.unimplemented.html)
+    - `try` for which the `?` operator is syntactic sugar
 
 #### `match`
 :   
@@ -1347,6 +1399,12 @@ Tests can also be incorporated in documentation as markdown code blocks.
     - **`push_str`** [:material-language-rust:](https://doc.rust-lang.org/std/string/struct.String.html#method.push_str) append a string slice
     - **`lines`** [:material-language-rust:](https://doc.rust-lang.org/std/string/struct.String.html#method.push_str) returns an iterator of string slices
 
+#### structopt
+:   
+    [structopt](https://docs.rs/structopt/) is a CLI framework.
+
+    Also see [clap](#clap).
+
 #### Trait
 :   
     A trait defines functionality that can be shared with many types in a way that recalls dunder methods in Python.
@@ -1529,7 +1587,20 @@ Tests can also be incorporated in documentation as markdown code blocks.
 
     - **reserve** [:material-language-rust:](https://doc.rust-lang.org/std/vec/struct.Vec.html#method.reserve) reserves space in memory for more elements, greater than or equal to `self.len()` + argument (`usize`)
 
-## Projects
+## Tasks
+
+### Hello, World!
+
+=== "CLI"
+
+    Using **structopt**
+
+    --8<-- "includes/Coding/Rust/hwcli-structopt.md"
+
+
+    Using **clap**
+
+    --8<-- "includes/Coding/Rust/hw-clap.md"
 
 ### To-Do
 
@@ -1839,8 +1910,7 @@ Tests can also be incorporated in documentation as markdown code blocks.
     }
     ```
 
-
-## grep ports
+### grep ports
 
 Porting grep to Rust provides the opportunity to explore various ways of using  [iterators](#iterator), evolving from a naive `for in` loop to the [**`filter()`**](#filter) iterator method using a [closure](#closure).
 
@@ -1872,10 +1942,10 @@ Porting grep to Rust provides the opportunity to explore various ways of using  
     }
     ```
 
-### grep-lite
+#### grep-lite
 
 --8<-- "includes/Coding/Rust/grep/grep-lite.md"
 
-### minigrep
+#### minigrep
 
 --8<-- "includes/Coding/Rust/grep/minigrep.md"

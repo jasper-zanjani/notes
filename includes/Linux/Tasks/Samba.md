@@ -58,3 +58,17 @@
     ```sh
     chmod o+w
     ```
+    Bizarrely, the ability to navigate into subdirectories appears to depend on the owner execute bit.
+    This may have something to do with anonymous guest access.
+    ```sh
+    chmod u+x
+    ```
+
+    Permanently mounting a Samba share in /etc/fstab
+    ```
+    //nas/Videos /home/jasper/Videos cifs guest,uid=1000,iocharset=utf8 0 0
+    ```
+    Then mount the fstab file
+    ```sh
+    mount -a
+    ```

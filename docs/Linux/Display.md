@@ -1,6 +1,6 @@
 # Display
 
-## 🛠&#fe0f; Tasks
+## 🛠&#xfe0f; Tasks
 
 --8<-- "includes/Linux/Tasks/custom-resolution.md"
 

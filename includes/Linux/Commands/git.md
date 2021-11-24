@@ -1,5 +1,13 @@
 #### git
 
+Git is a very complex utility with multiple commands and subcommands and a strong dependency on **version control system** concepts.
+
+The most basic useful command may be **clone** which simply downloads a repository.
+The depth of the tree can be specified, and various configuration parameters can be passed with **`-c`**
+```sh
+git clone https://gitlab.gnome.org/GNOME/gtk.git --depth 1 -c http.sslVerify=false
+```
+
 Add file, located in `$HOME` to the git repo at `$PATH`
 ```sh
 git --git-dir=$PATH.git --work-tree=$HOME add file
@@ -176,13 +184,17 @@ Apply changes in stash `$STASH`
 ```bash
 git stash apply stash@$STASH
 ```
+
 #### Rebasing
+
 Rebase changes committed to `branch` onto <master>
 ```sh
 git checkout $BRANCH
 git rebase $MASTER
 ```
+
 This will rewind $BRANCH to the commit shared by the two branches, then applying all changes made subsequently to $MASTER. 
+
 ```sh
 git checkout <master>
 git merge <branch>
@@ -233,6 +245,7 @@ git rebase --continue
 ```
 
 #### tig
+
 Provides a curses-based browser that allows you to navigate the commits in the current branch. 
 It is essentially a wrapper around `git log`, and therefore accepts the same arguments that can be passed to it.
 

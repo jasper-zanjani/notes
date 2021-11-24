@@ -1,7 +1,5 @@
 # 🏠 Home
 
-
-
 ## TODO
 
 ### :material-language-rust: Rust
@@ -10,6 +8,10 @@
 - [x] The Rust Book
 
 ## 💰 Sales watch:
+
+- [ ] [Automating Workflows with GitHub Actions](https://www.packtpub.com/product/automating-workflows-with-github-actions/9781800560406)
+- [ ] [RHEL 8 Administration](https://www.packtpub.com/product/red-hat-enterprise-linux-8-administration/9781800569829)
+- [ ] [The Official Guide to Mermaid.js](https://www.packtpub.com/product/the-official-guide-to-mermaid-js/9781801078023)
 
 ### :material-pill: Health
 
