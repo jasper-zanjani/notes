@@ -1202,6 +1202,11 @@ These checks provide opportunities to mock Starship and Officer objects in unit 
     Both languages feature a keyword that allows a subclass to access its direct parent.
     Whereas in Python the terms **superclass** and **subclass** are used, in C# the terms **base class** and **derived class** are preferred.
 
+**Garbage collector**
+:   
+    A garbage collector is a feature of some programming language runtimes that periodically pauses execution to remove data that is no longer used.
+    Such languages are considered unsuitable for use in database applications because of the unpredictable latency this garbage collection creates, despite the added memory safety.
+
 **Loop unswitching**
 :   
     One of the core optimizations that a C compiler performs; transforms a loop containing a conditional into a conditional with a loop in both parts, which changes flow control

@@ -1,5 +1,11 @@
 ## 📘 Glossary
 
+*[DHT]: Dihydrotestosterone
+*[TSH]: Thyroid-stimulating hormone
+*[MMSE]: Mini Mental State Examination
+*[TMAO]: Trimethylamine N-oxide
+*[GDA]: Glucose Disposal Agent
+
 #### Acetylcholine
 :   
     **Acetylcholine** (ACh) is an important neurotransmitter. 
@@ -106,6 +112,12 @@
     | [Swanson Bacopa Monnieri 250 mg x 90 capsules](https://www.swansonvitamins.com/swanson-superior-herbs-bacopa-monnieri-extract-bacognize-250-mg-90-caps)<br>**sale** | **5.57**<br>9.29 |    22.5 | **0.23**<br>0.41 |
     | [Bulk Supplements Bacopa 250 g](https://www.amazon.com/Bacopa-Extract-Powder-BulkSupplements-Support/dp/B07MQXXFG1)                                                 |            73.96 |   250.0 |             0.29 |
     | [NOW Supplements Bacoba Extract 450 mg x 90 capsules](https://www.amazon.com/gp/product/B07RFZ8TX2)                                                                 |            18.78 |    40.5 |             0.46 |
+
+#### Berberine
+:   
+    Berberine complexed with hydroxypropyl-&beta;-cyclodextrin was recommended by [MPMD](https://www.youtube.com/watch?v=iOjFNVpWjlI) to deal with carb-dense meals.
+    This is apparently a reference to the use of berberine as a GDA, a term that has recently gained currency in the fitness industry as a way to improve how glucose is processed in the body, or "nutrient partitioning".
+    The science on this topic appears to be [inconclusive at best](https://revivestronger.com/glucose-disposal-agents-a-thorough-review-of-the-evidence/#The_Claims_The_Evidence).
 
 #### Bioperine
 :   
@@ -607,8 +619,9 @@
 
     | Product                                                                                                                                            |     $ |     g |      $/g |
     | -------------------------------------------------------------------------------------------------------------------------------------------------- | ----: | ----: | -------: |
+    | [Nutricost Quercetin 440 mg x 240 capsules](https://www.amazon.com/Nutricost-Quercetin-Veggie-Capsules-Bromelain/dp/B01MU30S6Z)                    | 31.95 | 105.6 | **0.30** |
+    | [Swanson Quercetin 475 mg x 60 capsules (25% off sale)](https://www.swansonvitamins.com/swanson-premium-high-potency-quercetin-475-mg-60-veg-caps) |  9.74 |  28.5 |     0.34 |
     | [Jarrow Quercetin 500 mg x 100 capsules](https://www.swansonvitamins.com/jarrow-formulas-inc-quercetin-500-500-mg-100-caps)                        | 18.99 |  50.0 |     0.38 |
-    | [Swanson Quercetin 475 mg x 60 capsules (25% off sale)](https://www.swansonvitamins.com/swanson-premium-high-potency-quercetin-475-mg-60-veg-caps) |  9.74 |  28.5 | **0.34** |
     | [Swanson Quercetin 800 mg x 30 capsules (BOGO)](https://www.swansonvitamins.com/swanson-ultra-maximum-strength-quercetin-800-mg-30-veg-caps)       | 19.38 |  48.0 |     0.40 |
     | [Swanson Quercetin 475 mg x 60 capsules](https://www.swansonvitamins.com/swanson-premium-high-potency-quercetin-475-mg-60-veg-caps)                | 12.99 |  28.5 |     0.45 |
     | [Jarrow Quercetin 500 mg x 200 capsules](https://jarrowonline.com/products/quercetin-500-mg-200-veggie-caps?_pos=1&_sid=170e74097&_ss=r)           | 66.95 | 100.0 |     0.67 |

@@ -1,4 +1,4 @@
-``` rs linenums="1"
+``` rs
 pub use officer::Officer;
 pub use starship::Starship;
 pub use starship::StarshipClass;

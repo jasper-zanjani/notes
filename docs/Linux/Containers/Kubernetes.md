@@ -77,6 +77,6 @@ Kubernetes can monitor Pod health by using **probes**, which can be categorized 
 
 --8<-- "includes/Containers/K8s/history.md"
 
---8<-- "includes/Containers/K8s/kubectl.md
+--8<-- "includes/Containers/K8s/kubectl.md"
 
 --8<-- "includes/Containers/K8s/defs.md"

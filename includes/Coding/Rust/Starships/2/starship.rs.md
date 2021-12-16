@@ -1,4 +1,4 @@
-``` rs linenums="1"
+``` rs
 use crate::officer::Officer;
 
 #[derive(Debug)]

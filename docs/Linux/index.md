@@ -93,8 +93,6 @@ To enable it, add ",acl" to options in `fstab` file, then mount/unmount disk. If
 
 --8<-- "includes/Linux/Tasks/NFS.md"
 
---8<-- "includes/Linux/Tasks/Samba.md"
-
 --8<-- "includes/Linux/Tasks/X-forwarding.md"
 
 --8<-- "includes/Linux/Tasks/GRUB-rescue-prompt.md"
@@ -135,3 +133,13 @@ To enable it, add ",acl" to options in `fstab` file, then mount/unmount disk. If
 --8<-- "includes/Linux/Commands/rename.md"
 
 --8<-- "includes/Linux/Commands/sudo.md"
+
+### Process management
+
+--8<-- "includes/Linux/Commands/chrt.md"
+
+--8<-- "includes/Linux/Commands/nice.md"
+
+--8<-- "includes/Linux/Commands/ps.md"
+
+--8<-- "includes/Linux/Commands/taskset.md"

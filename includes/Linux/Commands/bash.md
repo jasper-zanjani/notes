@@ -47,16 +47,21 @@ Content of all loops is bracketed by `do` and `done`: `for i in ... do ...; done
 | `&&`                    | logical AND; run next command synchronously only if first command succeeds |
 | `||`                    | logical OR; run next command synchronously only if first command fails     |
 
+## Tasks
+
 Extracting audio from mp4 files in a directory
 ```sh
-# Using variable substitution to replace on file extension with another
-for f in *.mp4; do ffmpeg -i $f ${f/.mp4/.wav} 
+# Using variable substitution to replace one file extension with another
+for f in *.mp4
+do 
+  ffmpeg -i $f ${f/.mp4/.wav} 
+done
 ```
+
 Less gracefully:
 ```sh
 for f in *.mp4
 do 
-  # Find length of filename, removing 4 for the filename extension
   l=$(expr length "$f" - 4) 
   # Slice string to remove the file extension, then concatenate extensions again
   # using brace expansion to form two quoted strings from the original filename
@@ -64,9 +69,9 @@ do
 done
 ```
 
-Validating arguments 
+#### Validating arguments 
 
-=== "$#"
+=== "`$#`"
 
     ```sh 
     # From Sobell p. 548
@@ -77,21 +82,21 @@ Validating arguments
     fi
     ```
 
-=== "-z $1"
+=== "`-z $1`"
 
     ```sh
     #From https://youtu.be/ksAfmJfdub0
     [ -z "$1" ] && echo "..." && exit 1
     ```
 
-=== "! -z $2"
+=== "`! -z $2`"
 
     ```sh
     # From https://coderwall.com/p/kq9ghg/yakuake-scripting
     if [ ! -z "$2" ] ; then ...; fi
     ```
 
-=== "while ... break"
+=== "`while` ... `break`"
 
     Placed in a while loop, if user responds with anything except "y" (the read command will read only the first letter) the loop will terminate [Cannon][CLKF]
 
@@ -99,3 +104,10 @@ Validating arguments
     read -p "Backup another server? (y/n)" -n 1
     ["$BACKUP_AGAIN"="y"] || break
     ```
+
+#### Debugging
+
+With `-x` bash will produce the text of each line of a script being run.
+This can be placed in the shebang of the script so that it will always run in debugging mode.
+
+Debugging output can also be turned on ad hoc using `set -x` and `set +x` within the body of the code.

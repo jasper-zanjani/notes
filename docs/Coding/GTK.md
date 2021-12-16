@@ -8,22 +8,156 @@
 
 Because GTK+ class properties are implemented as Python properties, with few exceptions they can usually be set either at instantiation or using dedicated setter methods.
 
-=== "kwarg"
+```py
+window = Gtk.Window(title="Hello World")    # kwarg
+window.set_title(f"Hello, {name}!")         # setter
+window.props.title=f"Hello, {name}"         # property
+```
 
-    ```py
-    window = Gtk.Window(title="Hello World")
+## gtk-rs
+
+In the **gtk-rs** library for Rust, the API for building an Application uses the **`builder()`** method.
+
+This simple (nonfunctional) example produces an error that demands a handler be implemented for the **`activate`** signal.
+```rs
+use gtk::prelude::*;
+use gtk::Application;
+
+fn main() {
+    let app = Application::builder()
+        .application_id("org.gtk-rs.example")
+        .build();
+
+    app.run();
+}
+```
+
+Here the `activate` signal is bound to the `build_ui()` function.
+Alternatively, a [closure](../Rust#closure) can be used for simple windows.
+ApplicationWindow's `present()` and `show()` methods appear to be interchangeable.
+
+=== "Function"
+
+    ```rs hl_lines="9 13-19"
+    use gtk4 as gtk;
+    use gtk::prelude::*;
+    use gtk::{Application, ApplicationWindow};
+
+    fn main() {
+        let app = Application::builder()
+            .application_id("org.gtk-rs.example")
+            .build();
+        app.connect_activate(build_ui);
+        app.run();
+    }
+
+    fn build_ui(app: &Application) {
+        let window = ApplicationWindow::builder()
+            .application(app)
+            .title("My GTK App")
+            .build();
+        window.present();
+    }
     ```
 
-=== "setter"
+=== "Closure"
 
-    ```py
-    window.set_title(f"Hello, {name}!")
+    ```rs hl_lines="9-14"
+    use gtk4 as gtk;
+    use gtk::prelude::*;
+    use gtk::{Application, ApplicationWindow};
+
+    fn main() {
+        let app = Application::builder()
+            .application_id("org.gtk-rs.example")
+            .build();
+        app.connect_activate(|app| {
+            let window = ApplicationWindow::builder()
+                .application(app)
+                .title("Hello, World!")
+                .build();
+            window.show();
+        });
+
+        app.run();
+    }
     ```
 
-=== "Setting property"
+Widgets are added by instantiating objects using the `builder()` factory method, then assigning them as children of ApplicationWindow.
+This can be done using one of two ways:
 
-    ```py
-    window.props.title=f"Hello, {name}"
+- `child()` on instantiatiation, passing an immutable reference to the widget.
+- `set_child()` method after instantiation, but this time passing a [`Some()`](../Rust#result) result containing the immutable reference to the widget.
+
+=== "child()"
+
+
+    ```rs hl_lines="25"
+    use gtk4 as gtk;
+    use gtk::prelude::*;
+    use gtk::{Application,ApplicationWindow,Button};
+
+    fn main() {
+        let app = Application::builder()
+            .application_id("org.gtk-rs.example")
+            .build();
+        app.connect_activate(build_ui);
+        app.run();
+    }
+
+    fn build_ui(app: Application ) {
+        let button = Button::builder()
+            .label("Press me!")
+            .margin_top(12)
+            .margin_end(12)
+            .margin_bottom(12)
+            .margin_start(12)
+            .build();
+
+        let window = ApplicationWindow::builder()
+            .application(app)
+            .title("Hello, World!")
+            .child(&button)
+            .build();
+
+
+        window.show();
+    }
+    ```
+
+=== "set_child()"
+
+    ```rs hl_lines="27"
+    use gtk4 as gtk;
+    use gtk::prelude::*;
+    use gtk::{Application,ApplicationWindow,Button};
+
+    fn main() {
+        let app = Application::builder()
+            .application_id("org.gtk-rs.example")
+            .build();
+        app.connect_activate(build_ui);
+        app.run();
+    }
+
+    fn build_ui(app: Application ) {
+        let button = Button::builder()
+            .label("Press me!")
+            .margin_top(12)
+            .margin_end(12)
+            .margin_bottom(12)
+            .margin_start(12)
+            .build();
+
+        let window = ApplicationWindow::builder()
+            .application(app)
+            .title("Hello, World!")
+            .build();
+
+        window.set_child(Some(&button));
+
+        window.show();
+    }
     ```
 
 ## Tasks

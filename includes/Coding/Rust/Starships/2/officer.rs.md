@@ -1,4 +1,4 @@
-``` rs linenums="1"
+``` rs
 #[derive(Debug)]
 pub struct Officer {
     pub first_name: String,

@@ -1,11 +1,15 @@
 #### snap
+:   
+    Snap is one of several recent containerized application distribution solutions for Linux.
 
-[Installation <sup>:material-file-document-outline:</sup>](https://snapcraft.io/docs/installing-snap-on-fedora)
+    Snap apps are slow to start because data is stored in [squashfs](../Files#squashfs) images.
 
-=== ":material-redhat: Red Hat"
+    [Installation](https://snapcraft.io/docs/installing-snap-on-fedora)
 
-    ```sh
-    dnf install -y snapd
-    ln -s /var/lib/snapd/snap /snap
-    ```
+    === ":material-redhat: Red Hat"
+
+        ```sh
+        dnf install -y snapd
+        ln -s /var/lib/snapd/snap /snap
+        ```
 

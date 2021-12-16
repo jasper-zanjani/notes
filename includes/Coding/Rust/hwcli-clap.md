@@ -1,12 +1,15 @@
 ```rs
-use clap::{App,Arg};
+use clap::{App,Arg, crate_version, crate_authors};
 
 fn main() {
     let args = App::new("Say hello")
+        .version(crate_version!())
+        .author(crate_authors!())
         .arg(Arg::with_name("name")
             .help("Name to greet")
             .takes_value(true)
-            .default_value("World"))
+            .required(true)
+        )
         .get_matches();
 
     println!("Hello, {}!", args.value_of("name").unwrap());

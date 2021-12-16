@@ -19,6 +19,17 @@ SELinux extends existing utilities to handle SELinux contexts
     ls -Z
     ```
 
+## Tasks
+
+Enabling a Samba file share requires setting a specific SELinux context using `semanage`
+```sh
+semanage fcontext -a -t samba_share_t '/samba(/.*)?'
+```
+The context must then be restored
+```sh
+restorecon -vvFR /samba
+```
+
 ## Commands
 
 

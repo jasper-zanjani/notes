@@ -1,35 +1,16 @@
 #### rpm
-
-Query repos for information on a package
-
-=== ":material-bash:"
-
+:   
+    Query repos for information on a package
     ```sh
-    rpm -qi package
+    rpm -qi $PACKAGE # --query --info
     ```
 
-=== "POSIX"
-
+    Upgrade or install a package, with progress bars
     ```sh
-    rpm --query --info package
+    rpm -Uvh $PACKAGE # --upgrade --verbose --hash
     ```
 
-Upgrade or install a package, with progress bars
-
-=== ":material-bash:"
-
+    Display version of Fedora
     ```sh
-    rpm -Uvh package
+    rpm -E %fedora
     ```
-
-=== "POSIX"
-
-    ```sh
-    rpm --upgrade --verbose --hash package
-    ```
-
-Display version of Fedora
-
-```sh
-rpm -E %fedora
-```
