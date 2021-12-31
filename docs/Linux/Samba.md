@@ -23,6 +23,19 @@ Configure the main Samba config file at **/etc/samba/smb.conf**. The name in bra
     browsable = yes
 ```
 
+If only certain users are to be granted access:
+```ini
+[samba]
+    guest ok = no
+    valid users = mohsen
+```
+
+This user must already be a valid user in the host OS as well as in the Samba system
+```sh
+useradd mohsen
+smbpasswd -a mohsen
+```
+
 Verify configuration
 ```sh
 testparm
@@ -34,7 +47,8 @@ semanage fcontext -a -t samba_share_t '/samba(/.*)?'
 restorecon -vvFR /samba
 ```
 
-<!-- Allow SELinux to work with Samba
+<!--
+ Allow SELinux to work with Samba
 ```sh
 setsebool -P samba_export_all_ro on
 ```
@@ -47,7 +61,8 @@ smbpasswd -a $USER
 Restart Samba service
 ```sh
 systemctl restart smbd
-``` -->
+``` 
+-->
 
 Browse all available shares. If guest access is enabled then a blank username and password can be provided.
 ```sh

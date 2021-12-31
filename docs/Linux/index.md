@@ -105,6 +105,28 @@ To enable it, add ",acl" to options in `fstab` file, then mount/unmount disk. If
 
 --8<-- "includes/Linux/Applications/Rhythmbox.md"
 
+### Filters
+
+--8<-- "includes/Linux/Commands/awk.md"
+
+--8<-- "includes/Linux/Commands/cat.md"
+
+--8<-- "includes/Linux/Commands/cut.md"
+
+--8<-- "includes/Linux/Commands/grep.md"
+
+--8<-- "includes/Linux/Commands/head.md"
+
+--8<-- "includes/Linux/Commands/paste.md"
+
+--8<-- "includes/Linux/Commands/sed.md"
+
+--8<-- "includes/Linux/Commands/tail.md"
+
+--8<-- "includes/Linux/Commands/tr.md"
+
+--8<-- "includes/Linux/Commands/watch.md"
+
 ### GRUB
 
 --8<-- "includes/Linux/Commands/grub-install.md"
@@ -133,6 +155,8 @@ To enable it, add ",acl" to options in `fstab` file, then mount/unmount disk. If
 --8<-- "includes/Linux/Commands/rename.md"
 
 --8<-- "includes/Linux/Commands/sudo.md"
+
+--8<-- "includes/Linux/Commands/sysctl.md"
 
 ### Process management
 

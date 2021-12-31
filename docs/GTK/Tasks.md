@@ -1,25 +1,105 @@
+# Tasks
+
 #### Development environment
 
-=== ":material-ubuntu: Ubuntu"
+=== ":material-language-rust: Rust"
+
+    :material-fedora: Fedora
+
+    ```sh
+    dnf install gtk4-devel gcc
+    ```
+
+    :material-ubuntu: Ubuntu
+
+    ```sh
+    apt install libgtk-4-dev build-essential
+    ```
+
+=== ":material-language-python: Python"
+
+    :material-fedora: Fedora
+
+    ```sh
+    dnf install python3-venv python3-wheel
+    dnf install gcc zlib-devel bzip2 bzip2-devel readline-devel \
+        sqlite sqlite-devel openssl-devel tk-devel git python3-cairo-devel \
+        cairo-gobject-devel gobject-introspection-devel
+    pip install pygobject
+    ```
+
+    :material-ubuntu: Ubuntu
 
     ```sh
     apt install python3-gi python3-gi-cairo gir1.2-gtk-3.0 libgirepository1.0-dev
     pip install pygobject
     ```
 
-=== ":material-fedora: Fedora"
 
-    ```sh
-    dnf install -y python3-venv python3-wheel
-    dnf install -y gcc zlib-devel bzip2 bzip2-devel readline-devel \
-        sqlite sqlite-devel openssl-devel tk-devel git python3-cairo-devel \
-        cairo-gobject-devel gobject-introspection-devel
-    pip install pygobject
-    ```
+
 
 #### Boilerplate
 
-After installing dependencies, a PyGTK application starts by importing the **Gtk** module from **gi.repository**.
+<figure>
+    <img src="/img/GTK/GTK-boilerplate.png"/>
+</figure>
+
+=== ":material-language-rust: Rust"
+
+    ```rs
+    use gtk4::prelude::*;
+    use gtk4::{Application, ApplicationWindow};
+
+    fn main() {
+        let app = Application::builder()
+            .application_id("com.example.learning-gtk")
+            .build();
+
+        app.connect_activate(build_ui);
+        app.run();
+    }
+
+    fn build_ui(app: &Application) {
+        let window = ApplicationWindow::builder()
+            .application(app)
+            .default_width(300)
+            .default_height(300)
+            .title("My GTK App")
+            .build();
+        
+        window.present();
+    }
+    ```
+
+=== ":material-language-python: Python"
+
+    ```py
+    import gi
+    gi.require_version("Gtk", "3.0")
+    from gi.repository import Gtk
+
+    class ApplicationWindow(Gtk.ApplicationWindow):
+        def __init__(self, *args, **kwargs):
+            super().__init__(*args, **kwargs)
+            self.set_size_request(300,300)
+            self.set_title("My GTK App")
+            self.show_all()
+            self.present()
+
+
+    class Application(Gtk.Application):
+        def __init__(self):
+            super().__init__(application_id='org.example.learning-gtk')
+
+        def do_activate(self):
+            self.window = ApplicationWindow(application=self)
+
+    if __name__ == '__main__':
+        app = Application()
+        app.run()
+    ```
+
+<!-- After installing dependencies, a PyGTK application starts by importing the **Gtk** module from **gi.repository**.
 Note that the gi module's **require_version** function must be called before importing Gtk.
 
 The recommended way of using the PyGTK API is to subclass and modify the [**Application**](#application) and [**ApplicationWindow**](#applicationwindow) classes.
@@ -79,44 +159,96 @@ PyGTK also offers an alternative [**Gtk.Window**](#window) class, which like App
         window = Window()
         Gtk.main()
     ```
+ -->
 
 
 
-#### Hello, World!
+### Hello, World!
 
-=== "Empty window"
+#### Window frame
 
-    <figure><img src="/img/GUI/gui-gtk-hw.png"/></figure>
+<figure><img src="/img/GTK/GTK-hw-frame.png"/></figure>
 
-    ```py
-    import gi
-    gi.require_version("Gtk","3.0")
-    from gi.repository import Gtk
+=== ":material-language-rust: Rust"
+
+    At the moment, this example is broken because I don't know how to pass the string into the **Application** struct for string interpolation.
+
+    ```rs
     import sys
-
+    import gi
+    gi.require_version("Gtk", "3.0")
+    from gi.repository import Gtk
 
     class ApplicationWindow(Gtk.ApplicationWindow):
-        def __init__(self, *args, **kwargs):
+        def __init__(self, *args, name, **kwargs):
             super().__init__(*args, **kwargs)
+            self.connect("destroy", Gtk.main_quit)
+            self.set_default_size(300,300)
+            self.set_title(f"Hello, {name}!")
+            self.show_all()
+
 
     class Application(Gtk.Application):
-        def __init__(self, name, *args, **kwargs):
+        def __init__(self, name):
+            super().__init__(application_id="com.example.learning-gtk")
             self.name = name
-            super().__init__(*args, application_id="org.example.myapp", **kwargs)
-        
+            
         def do_activate(self):
-            self.window = ApplicationWindow(application=self, title = f"Hello, {self.name}!")
-            self.window.present()
+            self.window = ApplicationWindow(application=self, name=self.name)
+
 
     if __name__ == '__main__':
-        app = Application(sys.argv[-1])
+        if len(sys.argv) > 1:
+            app = Application(sys.argv[-1])
+        else:
+            app = Application("World")
+        app.run()
+    ```
+
+=== ":material-language-python: Python"
+
+    ```py
+    import sys
+    import gi
+    gi.require_version("Gtk", "3.0")
+    from gi.repository import Gtk
+
+    class ApplicationWindow(Gtk.ApplicationWindow):
+        def __init__(self, *args, name, **kwargs):
+            super().__init__(*args, **kwargs)
+            self.set_default_size(300,300)
+            self.set_title(f"Hello, {name}!")
+            self.show_all()
+
+
+    class Application(Gtk.Application):
+        def __init__(self, name):
+            super().__init__(application_id="com.example.learning-gtk")
+            self.name = name
+            
+        def do_activate(self):
+            self.window = ApplicationWindow(application=self, name=self.name)
+
+
+    if __name__ == '__main__':
+        if len(sys.argv) > 1:
+            app = Application(sys.argv[-1])
+        else:
+            app = Application("World")
         app.run()
     ```
 
 
-=== "Label"
+#### Label
 
-    <figure><img src="/img/GUI/gui-gtk-hwlabel.png"/></figure>
+<figure><img src="/img/GUI/gui-gtk-hwlabel.png"/></figure>
+
+=== ":material-language-rust: Rust"
+
+    ```rs
+    ```
+
+=== ":material-language-python: Python"
 
     ```py hl_lines="11"
     import gi
@@ -146,59 +278,16 @@ PyGTK also offers an alternative [**Gtk.Window**](#window) class, which like App
         app.run()
     ```
 
-#### Hello, World! (interactive)
+#### Interactive
 
+<figure><img src="/img/GUI/gui-gtk-messagedialog.png"/></figure>
 
-=== "print"
+=== ":material-language-rust: Rust"
 
-    ```py
-    import gi
-    gi.require_version('Gtk', '3.0')
-    from gi.repository import Gtk
-
-
-    class ApplicationWindow(Gtk.ApplicationWindow):
-        def __init__(self, name, *args, **kwargs):
-            super().__init__(*args, **kwargs)
-            self.name = name
-            box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=10)
-            self.add(box)
-
-            question = Gtk.Label.new("What is your name?")
-            box.add(question)
-
-            self.entry = Gtk.Entry(text=self.name)
-            box.add(self.entry)
-            
-            button = Gtk.Button.new_with_mnemonic("Greet")
-            button.connect("clicked", self.on_button_clicked)
-            box.add(button)
-
-        def on_button_clicked(self, button):
-            print(f"Hello, {self.entry.get_text()}!")
-
-    class Application(Gtk.Application):
-        def __init__(self, name = "World"):
-            super().__init__(application_id='org.example.myapp')
-            self.name = name
-
-        def do_activate(self):
-            self.window = ApplicationWindow(self.name, application=self)
-            self.window.show_all()
-            self.window.present()
-
-    if __name__ == '__main__':
-        try:
-            app = Application(sys.argv[1])
-        except IndexError:
-            app = Application()
-        app.run()
+    ```rs
     ```
 
-
-=== "Dialog"
-
-    <figure><img src="/img/GUI/gui-gtk-messagedialog.png"/></figure>
+=== ":material-language-python: Python"
 
     ```py hl_lines="22-30"
     import gi
@@ -248,9 +337,16 @@ PyGTK also offers an alternative [**Gtk.Window**](#window) class, which like App
 
 
 
-=== "HeaderBar"
+#### HeaderBar
 
-    <figure><img src="/img/GUI/gui-gtk-messagedialog-headerbar.png"/></figure>
+<figure><img src="/img/GUI/gui-gtk-messagedialog-headerbar.png"/></figure>
+
+=== ":material-language-rust: Rust"
+
+    ```rs
+    ```
+
+=== ":material-language-python: Python"
 
     ```py hl_lines="11-15"
     import gi
@@ -302,48 +398,65 @@ PyGTK also offers an alternative [**Gtk.Window**](#window) class, which like App
 
 #### Login
 
-```py
-import gi
-gi.require_version("Gtk", "3.0")
-from gi.repository import Gtk
+
+=== ":material-language-rust: Rust"
+
+    ```rs
+    ```
+
+=== ":material-language-python: Python"
+
+    ```py
+    import gi
+    gi.require_version("Gtk", "3.0")
+    from gi.repository import Gtk
 
 
-class ApplicationWindow(Gtk.ApplicationWindow):
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.set_size_request(300,300)
-        grid = Gtk.Grid.new()
-        image = Gtk.Image.new_from_icon_name("dialog-password", Gtk.IconSize.DIALOG)
-        grid.attach(image, 0, 0, 1, 1)
-        grid.attach(Gtk.Label(label="Enter your credentials."), 0, 1, 2, 1)
-        grid.attach(Gtk.Label(label="User name:"), 0, 2, 1, 1)
-        grid.attach(Gtk.Entry(), 1, 2, 1, 1)
-        grid.attach(Gtk.Label(label="Password:"), 0, 3, 1, 1)
-        grid.attach(Gtk.Entry(visibility=False), 1, 3, 1, 1)
+    class ApplicationWindow(Gtk.ApplicationWindow):
+        def __init__(self, *args, **kwargs):
+            super().__init__(*args, **kwargs)
+            self.set_size_request(300,300)
+            grid = Gtk.Grid.new()
+            image = Gtk.Image.new_from_icon_name("dialog-password", Gtk.IconSize.DIALOG)
+            grid.attach(image, 0, 0, 1, 1)
+            grid.attach(Gtk.Label(label="Enter your credentials."), 0, 1, 2, 1)
+            grid.attach(Gtk.Label(label="User name:"), 0, 2, 1, 1)
+            grid.attach(Gtk.Entry(), 1, 2, 1, 1)
+            grid.attach(Gtk.Label(label="Password:"), 0, 3, 1, 1)
+            grid.attach(Gtk.Entry(visibility=False), 1, 3, 1, 1)
 
 
-class Application(Gtk.Application):
-    def __init__(self):
-        super().__init__(application_id="org.example.myapp")
+    class Application(Gtk.Application):
+        def __init__(self):
+            super().__init__(application_id="org.example.myapp")
 
-    def do_activate(self):
-        self.window = ApplicationWindow(application=self, title="Hello, World!")
-        self.window.show_all()
-        self.window.present()
+        def do_activate(self):
+            self.window = ApplicationWindow(application=self, title="Hello, World!")
+            self.window.show_all()
+            self.window.present()
 
 
-if __name__ == "__main__":
-    app = Application()
-    app.run()
-```
+    if __name__ == "__main__":
+        app = Application()
+        app.run()
+    ```
 
-#### Starships
+### Starships
 
 This task implements the [list/details pattern](https://docs.microsoft.com/en-us/windows/apps/design/controls/list-details).
 
+
 <figure><img src="/img/GUI/gui-gtk-starships-messagedialog.gif"/></figure>
 
-=== "Hardcoded data"
+#### Hardcoded data
+
+
+=== ":material-language-rust: Rust"
+
+    ```rs
+    ```
+
+=== ":material-language-python: Python"
 
     ```py
     import gi
@@ -383,7 +496,16 @@ This task implements the [list/details pattern](https://docs.microsoft.com/en-us
         app.run()
     ```
 
-=== "CSV import"
+#### CSV import
+
+
+=== ":material-language-rust: Rust"
+
+    ```rs
+    ```
+
+=== ":material-language-python: Python"
+
 
     ```py hl_lines="4 11-14 18-20 22-23"
     import gi
@@ -430,7 +552,16 @@ This task implements the [list/details pattern](https://docs.microsoft.com/en-us
         app.run()
     ```
 
-=== "Sortable columns"
+#### Sortable columns
+
+
+=== ":material-language-rust: Rust"
+
+    ```rs
+    ```
+
+=== ":material-language-python: Python"
+
 
     ```py hl_lines="19"
     import gi
@@ -477,7 +608,16 @@ This task implements the [list/details pattern](https://docs.microsoft.com/en-us
         app.run()
     ```
 
-=== "Event handler"
+#### Event handler
+
+
+=== ":material-language-rust: Rust"
+
+    ```rs
+    ```
+
+=== ":material-language-python: Python"
+
 
     ```py hl_lines="30-32"
     import gi
@@ -528,7 +668,16 @@ This task implements the [list/details pattern](https://docs.microsoft.com/en-us
         app.run()
     ```
 
-=== "MessageDialog"
+#### MessageDialog
+
+
+=== ":material-language-rust: Rust"
+
+    ```rs
+    ```
+
+=== ":material-language-python: Python"
+
 
     ```py hl_lines="30-39"
     import gi
@@ -591,115 +740,129 @@ This task implements the [list/details pattern](https://docs.microsoft.com/en-us
 
 <figure><img src="/img/gui-dice.png"/></figure>
 
-```py
-import gi
-gi.require_version('Gtk', '3.0')
-from gi.repository import Gtk
-import random
-from math import floor
+=== ":material-language-rust: Rust"
 
-class ApplicationWindow(Gtk.ApplicationWindow):
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
+    ```rs
+    ```
 
-        scale_adj = Gtk.Adjustment.new(1, 0, 6, 1, 2, 0)
-        self.scale = Gtk.Scale.new(Gtk.Orientation.HORIZONTAL, scale_adj)
-        self.scale.set_digits(0)
-        
-        button = Gtk.Button.new_with_label("Throw")
-        button.connect("clicked", self.on_button_clicked)
-        self.label = Gtk.Label.new()
+=== ":material-language-python: Python"
 
+    ```py
+    import gi
+    gi.require_version('Gtk', '3.0')
+    from gi.repository import Gtk
+    import random
+    from math import floor
 
-        box = Gtk.Box.new(Gtk.Orientation.VERTICAL,5)
-        box.pack_start(self.scale, False, True, 0)
-        box.pack_start(button, False, True, 0)
-        box.pack_start(self.label, False, True, 0)
+    class ApplicationWindow(Gtk.ApplicationWindow):
+        def __init__(self, *args, **kwargs):
+            super().__init__(*args, **kwargs)
 
-        self.add(box)
-        self.set_size_request(200,200)
-
-    def on_button_clicked(self, button):
-        dice = floor(self.scale.get_value())
-        results = [random.randrange(6) for i in range(dice)]
-        self.label.set_text(str(results))
+            scale_adj = Gtk.Adjustment.new(1, 0, 6, 1, 2, 0)
+            self.scale = Gtk.Scale.new(Gtk.Orientation.HORIZONTAL, scale_adj)
+            self.scale.set_digits(0)
+            
+            button = Gtk.Button.new_with_label("Throw")
+            button.connect("clicked", self.on_button_clicked)
+            self.label = Gtk.Label.new()
 
 
-class Application(Gtk.Application):
-    def __init__(self):
-        super().__init__(application_id='org.example.myapp')
+            box = Gtk.Box.new(Gtk.Orientation.VERTICAL,5)
+            box.pack_start(self.scale, False, True, 0)
+            box.pack_start(button, False, True, 0)
+            box.pack_start(self.label, False, True, 0)
 
-    def do_activate(self):
-        self.window = ApplicationWindow(application=self)
-        self.window.show_all()
-        self.window.present()
+            self.add(box)
+            self.set_size_request(200,200)
 
-if __name__ == '__main__':
-    app = Application()
-    app.run()
-```
+        def on_button_clicked(self, button):
+            dice = floor(self.scale.get_value())
+            results = [random.randrange(6) for i in range(dice)]
+            self.label.set_text(str(results))
 
 
+    class Application(Gtk.Application):
+        def __init__(self):
+            super().__init__(application_id='org.example.myapp')
+
+        def do_activate(self):
+            self.window = ApplicationWindow(application=self)
+            self.window.show_all()
+            self.window.present()
+
+    if __name__ == '__main__':
+        app = Application()
+        app.run()
+    ```
 
 #### MenuBar
 
 <figure><img src="/img/GUI/gui-gtk-menubar.png"/></figure>
 
-```py
-import gi
-gi.require_version('Gtk', '3.0')
-from gi.repository import Gtk
 
-class AppWindow(Gtk.ApplicationWindow):
+=== ":material-language-rust: Rust"
 
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.set_size_request(250, -1)
-        menubar = Gtk.MenuBar.new()
-        self.add(menubar)
+    ```rs
+    ```
 
-        file = Gtk.MenuItem.new_with_label("File")
-        menubar.append(file)
-        filemenu = Gtk.Menu.new()
-        file.set_submenu(filemenu)
-        new = Gtk.MenuItem.new_with_label("New")
-        open = Gtk.MenuItem.new_with_label("Open")
-        filemenu.append(new)
-        filemenu.append(open)
+=== ":material-language-python: Python"
 
-        edit = Gtk.MenuItem.new_with_label("Edit")
-        menubar.append(edit)
-        editmenu = Gtk.Menu.new()
-        edit.set_submenu(editmenu)
-        cut = Gtk.MenuItem.new_with_label("Cut")
-        copy = Gtk.MenuItem.new_with_label("Copy")
-        paste = Gtk.MenuItem.new_with_label("Paste")
-        editmenu.append(cut)
-        editmenu.append(copy) 
-        editmenu.append(paste)
 
-        help = Gtk.MenuItem.new_with_label("Help")
-        menubar.append(help)
-        helpmenu = Gtk.Menu.new()
-        help.set_submenu(helpmenu)
-        contents = Gtk.MenuItem.new_with_label("Help")
-        about = Gtk.MenuItem.new_with_label("About")
-        helpmenu.append(contents)
-        helpmenu.append(about)
+    ```py
+    import gi
+    gi.require_version('Gtk', '3.0')
+    from gi.repository import Gtk
 
-class Application(Gtk.Application):
+    class AppWindow(Gtk.ApplicationWindow):
 
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, application_id="org.example.myapp", **kwargs)
-        self.window = None
+        def __init__(self, *args, **kwargs):
+            super().__init__(*args, **kwargs)
+            self.set_size_request(250, -1)
+            menubar = Gtk.MenuBar.new()
+            self.add(menubar)
 
-    def do_activate(self):
-        if not self.window:
-            self.window = AppWindow(application=self, title="Menu Bars")
-        self.window.show_all()
-        self.window.present()
+            file = Gtk.MenuItem.new_with_label("File")
+            menubar.append(file)
+            filemenu = Gtk.Menu.new()
+            file.set_submenu(filemenu)
+            new = Gtk.MenuItem.new_with_label("New")
+            open = Gtk.MenuItem.new_with_label("Open")
+            filemenu.append(new)
+            filemenu.append(open)
 
-if __name__ == "__main__":
-    app = Application()
-    app.run()
-```
+            edit = Gtk.MenuItem.new_with_label("Edit")
+            menubar.append(edit)
+            editmenu = Gtk.Menu.new()
+            edit.set_submenu(editmenu)
+            cut = Gtk.MenuItem.new_with_label("Cut")
+            copy = Gtk.MenuItem.new_with_label("Copy")
+            paste = Gtk.MenuItem.new_with_label("Paste")
+            editmenu.append(cut)
+            editmenu.append(copy) 
+            editmenu.append(paste)
+
+            help = Gtk.MenuItem.new_with_label("Help")
+            menubar.append(help)
+            helpmenu = Gtk.Menu.new()
+            help.set_submenu(helpmenu)
+            contents = Gtk.MenuItem.new_with_label("Help")
+            about = Gtk.MenuItem.new_with_label("About")
+            helpmenu.append(contents)
+            helpmenu.append(about)
+
+    class Application(Gtk.Application):
+
+        def __init__(self, *args, **kwargs):
+            super().__init__(*args, application_id="org.example.myapp", **kwargs)
+            self.window = None
+
+        def do_activate(self):
+            if not self.window:
+                self.window = AppWindow(application=self, title="Menu Bars")
+            self.window.show_all()
+            self.window.present()
+
+    if __name__ == "__main__":
+        app = Application()
+        app.run()
+    ```

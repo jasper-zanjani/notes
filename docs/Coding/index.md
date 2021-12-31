@@ -810,6 +810,9 @@ Such a loop will continuously prompt for valid input, in this case an integer.
     }
     ```
 
+### To-do app
+
+Notably, the [dstask](https://github.com/naggie/dstask) Go application is a very sophisticated evolution of a terminal-based to-do app featuring subcommands, YAML-formatted tasks, and Git integration.
 
 ## TDD
 

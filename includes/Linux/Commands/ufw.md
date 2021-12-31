@@ -1,8 +1,10 @@
-# ufw
+#### ufw
+:   
+    Program for managing a [Netfilter](#netfilter) firewall.
 
-Allow traffic associated with SSH, HTTP, and HTTP
-```sh
-ufw allow ssh
-ufw allow http
-ufw allow htts
-```
+    Allow traffic associated with various services
+    ```sh
+    ufw allow ssh
+    ufw allow http
+    ufw allow https
+    ```

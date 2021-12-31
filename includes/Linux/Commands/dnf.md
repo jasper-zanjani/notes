@@ -3,48 +3,47 @@
     View history of dnf commands
     ```sh
     dnf history
+    dnf history userinstalled # View all packages installed by user
     ```
 
-    View all packages installed by user
+    [**Package groups**](https://docs.fedoraproject.org/en-US/quick-docs/getting-started-with-virtualization/) can be specified using the **group** command or by prefixing the package group name with **`@`**
+
     ```sh
-    dnf history userinstalled
+    dnf info @virtualization # dnf group info virtualization
+    dnf install @virtualization # dnf group install virtualization
+    dnf install --with-optional @virtualization # Include optional packages
     ```
 
-    [**Package group** <sup>:material-fedora:</sup>](https://docs.fedoraproject.org/en-US/quick-docs/getting-started-with-virtualization/)
-
-    === "Display information"
-
-        ```sh
-        dnf group info virtualization
-        ```
-
-    === "Install"
-
-        ```sh
-        dnf group install virtualization
-        dnf install @virtualization
-
-        # Include optional packages
-        dnf group install --with-optional virtualization
-        ```
-
-    [**Modules** <sup>:material-fedora:</sup>](https://docs.fedoraproject.org/en-US/modularity/using-modules/) are special package groups representing an application, runtime, or a set of tools. 
+    [**Modules**](https://docs.fedoraproject.org/en-US/modularity/using-modules/) are special package groups representing an application, runtime, or a set of tools. 
     The [Node.js module](https://nodejs.org/en/download/package-manager/#centos-fedora-and-red-hat-enterprise-linux) allows you to select several **streams** corresponding to major versions.
-
     ```sh
     dnf module install nodejs:12
     ```
 
-    Global dnf configuration is stored in either **/etc/yum.conf** or **/etc/dnf.conf**{: #dnf-config }.
+    Global dnf configuration is stored in either **/etc/yum.conf** or **/etc/dnf.conf**.
 
-    Exclude packages from updates permanently
     ```ini
     [main]
+    ; Exclude packages from updates permanently
     exclude=kernel* php*
+    ; Suppress confirmation
+    assumeyes=True
     ```
 
-    Repositories are INI files placed in  **/etc/yum.repos.d/**, but they can also be added from the command-line using **dnf config-manager**.
-    The argument to **`--add-repo`** can be the repo file or the baseurl itself, although setting multiple options from the command-line does not appear to be supported.
+    Repositories are INI files placed in  **/etc/yum.repos.d/**, but they can also be added from the command-line.
+    ```sh
+    dnf config-manager --add-repo $REPO-URL
+    ```
+
+    They can be displayed:
+    ```sh
+    dnf repolist # -v
+    ```
+
+    They can also be disabled:
+    ```sh
+    dnf config-manager --set-disabled $REPO-NAME
+    ```
 
     === ":material-docker: Docker"
 
@@ -66,7 +65,8 @@
         enabled=1
         gpgcheck=1
         repo_gpgcheck=1
-        gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
+        gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg 
+               https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
         ```
 
     === ":material-google: gcloud"
@@ -79,5 +79,5 @@
         gpgcheck=1
         repo_gpgcheck=0
         gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg
-                https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
+               https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
         ```

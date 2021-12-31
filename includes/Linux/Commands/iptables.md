@@ -27,6 +27,10 @@
     ```sh
     iptables -A INPUT -p tcp --dport 80 -j ACCEPT
     ```
+    Change FORWARD [chain](#chains) policy
+    ```sh
+    iptables -P FORWARD ACCEPT
+    ```
     Reload configuration file
     ```sh
     iptables -F
@@ -35,3 +39,6 @@
     ```sh
     iptables -vnL --lines
     ```
+
+    Rules are saved in a **rulesfile** which once may have been found at **/etc/sysconfig/iptables**, but this file does not exist on recent Fedora installations.
+

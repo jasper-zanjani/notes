@@ -30,6 +30,7 @@ The SSH server daemon has slightly different names on Debian and Red Hat systems
 === ":material-ubuntu: Ubuntu"
 
     ```sh
+    apt install openssh-server
     service ssh start
     ```
 
@@ -62,26 +63,7 @@ The SSH server daemon has slightly different names on Debian and Red Hat systems
     ssh -L 81:192.168.1.1:80 ssh-server
     ```
 
-
-## 📘 Glossary
-
-**sshd_config**
-:   
-    **/etc/ssh/sshd_config** is the configuration for the SSH server daemon.
-    
-    Disable cleartext passwords
-    ```ini
-    PasswordAuthentication no
-    ```
-
-    Disable root login
-    ```ini
-    PermitRootLogin no
-    ```
-
-**Diffie-Hellman**{: #diffie-hellman }
-:   
-    Asymmetric encryption protocol used for key-exchange in SSH.
+--8<-- "includes/Linux/Tasks/X-forwarding.md"
 
 ## Commands
 
@@ -90,3 +72,5 @@ The SSH server daemon has slightly different names on Debian and Red Hat systems
 --8<-- "includes/Linux/Commands/ssh-copy-id.md"
 
 --8<-- "includes/Linux/Commands/ssh-keygen.md"
+
+--8<-- "includes/Linux/Commands/sshd_config.md"

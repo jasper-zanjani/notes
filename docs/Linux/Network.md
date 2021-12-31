@@ -18,21 +18,6 @@ By convention, table names are specified in lowercase and chain names in upperca
 Every packet starts at the top of a chain and is matched rule by rule.
 When a match is found the specified action, called the **target**, is triggered: i.e. "DROP" or "ACCEPT".
 
-There are five builtin netfilter chains, though user-defined chains are also possible:
-
-- **INPUT** used for filtering incoming packets where the host itself is the destination packet.
-- **OUTPUT** for outgoing packets, where the host is the source of the packet.
-- **FORWARD** for filtering routed packets, where the host is router.
-- **PREROUTING** used for DNAT or port forwarding
-- **POSTROUTING** used for SNAT
-
-Netfilter tables
-
-- **filter** default
-- **nat** for SNAT and DNAT
-- **mangle** for packet alteration
-- **raw** used only to mark packets that should not be handled by the connection tracking system using the NOTRACK target
-
 | Tables | INPUT     | OUTPUT    | FORWARD   | PREROUTING | POSTROUTING |
 | ------ | --------- | --------- | --------- | ---------- | ----------- |
 | filter | ✔&#xfe0f; | ✔&#xfe0f; | ✔&#xfe0f; |            |
@@ -40,9 +25,28 @@ Netfilter tables
 | mangle | ✔&#xfe0f; | ✔&#xfe0f; | ✔&#xfe0f; | ✔&#xfe0f;  | ✔&#xfe0f;   |
 | raw    |           | ✔&#xfe0f; |           | ✔&#xfe0f;  |
 
+#### Chains
+:   There are five builtin netfilter chains, though user-defined chains are also possible:
+
+    - **INPUT** used for filtering incoming packets where the host itself is the destination packet.
+    - **OUTPUT** for outgoing packets, where the host is the source of the packet.
+    - **FORWARD** for filtering routed packets, where the host is router.
+    - **PREROUTING** used for DNAT or port forwarding
+    - **POSTROUTING** used for SNAT
+
+#### Tables
+:   
+    - **filter** default
+    - **nat** for SNAT and DNAT
+    - **mangle** for packet alteration
+    - **raw** used only to mark packets that should not be handled by the connection tracking system using the NOTRACK target
+
+
 ## Tasks
 
 --8<-- "includes/Linux/Tasks/download.md"
+
+--8<-- "includes/Linux/Tasks/wireguard-tunnel.md"
 
 ## Commands
 
@@ -61,6 +65,8 @@ Netfilter tables
 --8<-- "includes/Linux/Commands/nmcli.md"
 
 --8<-- "includes/Linux/Commands/tcpdump.md"
+
+--8<-- "includes/Linux/Commands/ufw.md"
 
 --8<-- "includes/Linux/Commands/wg.md"
 

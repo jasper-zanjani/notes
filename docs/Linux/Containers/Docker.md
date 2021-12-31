@@ -151,4 +151,6 @@ Display data volumes [PluralSight][pluralsight:70-740-containers]
 docker volume ls
 ```
 
---8<-- "includes/Containers/Docker/defs.md"
+## Glossary
+
+--8<-- "includes/Containers/Docker/glossary.md"

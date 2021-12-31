@@ -1,7 +1,4 @@
-## :material-book: Glossary
-
-
-**Dockerfile**{: #dockerfile } :material-docker:
+#### Dockerfile
 :   A Docker image consists of read-only **layers**, each of which represents an **instruction** that incrementally the changes the image being built up. 
     Dockerfiles can be used to construct new images using `docker build`.
     The build process can be optimized by placing multiple commands in the same `RUN` instruction.
@@ -38,16 +35,15 @@
         CMD [ "powershell" ]
         ```
 
-**ENTRYPOINT**{: #entrypoint } :material-docker:
+**ENTRYPOINT**{: #entrypoint }
 :   Rarely used Docker declaration.
     When ENTRYPOINT is present, the [CMD](#cmd) declaration becomes the default argument passed to the command in ENTRYPOINT.
 
     The Kubernetes **--command** flag (**`pod.spec.containers.command`** resource) can override the contents of ENTRYPOINT.
 
 
-**tmpfs**{: #tmpfs } :material-docker:
+**tmpfs**{: #tmpfs }
 :   RAM-backed file system used in Docker containers
 
-**Volume**{: #volume } :material-docker:
+**Volume**{: #volume }
 :   A volume is a special directory in the Docker host that can be mounted to the container that is used to achieve persistent storage.
-

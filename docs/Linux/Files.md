@@ -12,7 +12,7 @@
 
 #### du
 :   
-    du does not double-cound hard-linked files, so it can be used to analyze deduplication in app distribution solutions like [Flatpak](../Package#flatpak).
+    du does not double-count hard-linked files, so it can be used to analyze deduplication in app distribution solutions like [Flatpak](../Package#flatpak).
 
     Here the second command will display a smaller value for the 21.08 version of the freedesktop Platform runtime, indicating that hard-linked files have not been double-counted.
     ```sh

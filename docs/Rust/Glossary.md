@@ -1,3 +1,11 @@
+# 📘 Glossary
+
+*[TOML]: Tom's Obvious Minimal Language
+*[LIFO]: Last-In First-Out
+*[RPL]: Klabnik, Steve and Nichols, Carol. <i>The Rust Programming Language</i>. 2019.
+*[FFI]: Foreign Function Interface, a way for a programming language to define functions and enable a different programming language to call them. <i>The Rust Programming Language</i>. 2019.
+
+
 **Associated type**{: #associated-type }
 :   
     Associated types connect a type placeholder with a trait such that the trait method definitions use these placeholder types in their signatures.
@@ -263,23 +271,6 @@
     Copy is a [trait](#trait) that is implemented on simple types that are allocated on the stack alone.
     These types include integer and floating-point number types, char, bool, and fixed-size arrays and tuples.
 
-#### Cursive
-:   
-    [cursive](https://docs.rs/cursive/) is a TUI framework.
-
-    Cursive widgets are called **Views** (i.e. TextView).
-
-    ```rs
-    use cursive::views::TextView;
-    use cursive::{Cursive, CursiveExt};
-
-    fn main() {
-        let mut siv = Cursive::new();
-        siv.add_layer(TextView::new("Hello World!\nPress q to quit."));
-        siv.add_global_callback('q', |s| s.quit());
-        siv.run();
-    }
-    ```
 
 **Custom derive**{: #custom-derive } 
 :   
@@ -1301,3 +1292,49 @@
     **Methods:**
 
     - **reserve** [:material-language-rust:](https://doc.rust-lang.org/std/vec/struct.Vec.html#method.reserve) reserves space in memory for more elements, greater than or equal to `self.len()` + argument (`usize`)
+
+
+#### Nightly build
+
+```sh
+rustup install nightly
+```
+The nightly build can be specified ad hoc or permanently for the crate
+
+=== "Ad hoc"
+
+    ```sh
+    cargo +nightly run
+    ```
+
+=== "Permanently"
+
+    ```sh
+    rustup override set nightly
+    ```
+
+#### Publishing
+
+Some additional fields of the Cargo.toml are required before publishing:
+```toml hl_lines="6-9"
+[package]
+name = "mdrend"
+version = "0.1.0"
+edition = "2018"
+authors= ["Johnny Appleseed <johnny@apple.com>"]
+license = "MIT"
+keywords = [ "Parse", "markdown"]
+repository = "https://github.com/..."
+description = "Read a markdown file and return parsed HTML"
+
+[dependencies]
+clap = "2.34.0"
+maud = "0.23.0"
+pulldown-cmark = "0.8.0"
+```
+```sh
+cargo login
+cargo publish
+```
+
+

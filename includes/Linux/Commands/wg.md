@@ -13,3 +13,4 @@
         ```sh
         apt install wireguard
         ```
+

@@ -28,6 +28,3 @@ In the context of Azure, Kubernetes can use two types of data volume:
 ### :material-google: GCP
 
 --8<-- "includes/Cloud/GCP/gcloud-container.md"
-
-
---8<-- "includes/Containers/defs.md"

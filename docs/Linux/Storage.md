@@ -27,11 +27,6 @@
     - [Understanding Linux filesystems: ext4 and beyond](https://opensource.com/article/18/4/ext4-filesystem)
 
 
-#### TrueNAS
-
-<figure><img src="/img/Logos/TrueNAS.svg"/></figure>
-
-There is a middleware client named [**midclt**](https://www.truenas.com/community/threads/no-way-to-start-stop-services.87322/)
 
 #### ZFS
 :   
@@ -68,120 +63,120 @@ There is a middleware client named [**midclt**](https://www.truenas.com/communit
 In ZFS documentation, zpools are conventionally named "tank".
 
 
-Create a storage pool
+#### Create a storage pool
+:   
+    === "ZFS"
 
-=== "ZFS"
+        ```sh
+        zpool create tank raidz /dev/sd{a,b,c}
+        ```
 
-    ```sh
-    zpool create tank raidz /dev/sd{a,b,c}
-    ```
+    === "BtrFS"
 
-=== "BtrFS"
+        Valid arguments to `--data`/`-d` include raid0, raid1, raid1c3, raid1c4, raid5, raid6, raid10, single, or dup.
 
-    Valid arguments to `--data`/`-d` include raid0, raid1, raid1c3, raid1c4, raid5, raid6, raid10, single, or dup.
+        ```sh
+        mkfs.btrfs --data raid0 /dev/sd{a,b,c}
+        ```
 
-    ```sh
-    mkfs.btrfs --data raid0 /dev/sd{a,b,c}
-    ```
+#### Display pools and associated data
+:   
+    === "ZFS"
 
-Display pools and associated data
+        `status` and verbose `list` show different data in a similar tabular format
 
-=== "ZFS"
+        ```sh
+        zpool status tank
+        ```
 
-    `status` and verbose `list` show different data in a similar tabular format
+        ```sh
+        zpool list -v
+        ```
 
-    ```sh
-    zpool status tank
-    ```
+        By default, disks are identified by UUID. Use `-L` to display real paths (i.e. device names).
 
-    ```sh
-    zpool list -v
-    ```
+    === "BtrFS"
 
-    By default, disks are identified by UUID. Use `-L` to display real paths (i.e. device names).
+        ```sh
+        ?
+        ```
 
-=== "BtrFS"
+#### Destroy a storage pool
+:   
+    === "ZFS"
 
-    ```sh
-    ?
-    ```
+        ```sh
+        zpool destroy tank
+        ```
 
-Destroy a storage pool
+    === "BtrFS"
 
-=== "ZFS"
+        ```sh
+        ?
+        ```
 
-    ```sh
-    zpool destroy tank
-    ```
+#### Add device
+:   
+    === "ZFS"
 
-=== "BtrFS"
+        ```sh
+        zpool add tank mirror /dev/sde /dev/sdf
+        ```
 
-    ```sh
-    ?
-    ```
+    === "BtrFS"
 
-Add a device
+        ```sh
+        btrfs device add /dev/sde /data
+        btrfs filesystem balance /data
+        ```
 
-=== "ZFS"
+#### Remove device
+:   
+    === "ZFS"
 
-    ```sh
-    zpool add tank mirror /dev/sde /dev/sdf
-    ```
+        ```sh
+        # In ZFS a disk may only be removed from a mirrored pool
+        zpool detach /dev/sdb
+        ```
 
-=== "BtrFS"
+    === "BtrFS"
 
-    ```sh
-    btrfs device add /dev/sde /data
-    btrfs filesystem balance /data
-    ```
+        ```sh
+        btrfs device delete /dev/sdb /data
+        btrfs filesystem balance /data
+        ```
 
-Remove a device
+#### Replace device
+:   
+    === "ZFS"
 
-=== "ZFS"
+        ```sh
+        zpool clear tank # Errors must be cleared first
+        zpool replace tank /dev/sdb /dev/sdc
+        ```
 
-    ```sh
-    # In ZFS a disk may only be removed from a mirrored pool
-    zpool detach /dev/sdb
-    ```
+        This will begin an automatic **resilvering** process, which can be monitored in realtime.
+        ```sh
+        watch -n 0.1 zpool status tank
+        ```
 
-=== "BtrFS"
+    === "BtrFS"
 
-    ```sh
-    btrfs device delete /dev/sdb /data
-    btrfs filesystem balance /data
-    ```
+        ```sh
+        btrfs device add /dev/sdc /data
+        btrfs device delete /dev/sdb /data
+        btrfs filesystem balance /data
+        ```
 
-Replace a disk
-
-=== "ZFS"
-
-    ```sh
-    zpool clear tank # Errors must be cleared first
-    zpool replace tank /dev/sdb /dev/sdc
-    ```
-
-    This will begin an automatic **resilvering** process, which can be monitored in realtime.
-    ```sh
-    watch -n 0.1 zpool status tank
-    ```
-
-=== "BtrFS"
-
-    ```sh
-    btrfs device add /dev/sdc /data
-    btrfs device delete /dev/sdb /data
-    btrfs filesystem balance /data
-    ```
-
-Tuning
-
-- Turn `atime` off
-- Set `ashift=12`, which sets block size to 4096 bytes, also called **Advanced Layout (AL)**
-- Disable deduplication, which can use excessive RAM and CPU. A dedup value of 1.00x in the output of `zpool` indicates no deduplication.
-- Enable compression, which saves space and adds speed. It can be enabled or disabled on individual datasets.
+#### Tuning
+:   
+    - Turn `atime` off
+    - Set `ashift=12`, which sets block size to 4096 bytes, also called **Advanced Layout (AL)**
+    - Disable deduplication, which can use excessive RAM and CPU. A dedup value of 1.00x in the output of `zpool` indicates no deduplication.
+    - Enable compression, which saves space and adds speed. It can be enabled or disabled on individual datasets.
 
 
-#### [Dataset](#dataset) management
+### [Dataset](#dataset) management
 
 A **subvolume** in BtrFS is defined as an independently mountable POSIX filetree, and appears to be equivalent to the ZFS **dataset**.
 
@@ -238,49 +233,49 @@ Setting configuration options for a ZFS dataset
     zfs set acme:disksource=vendorname
     ```
 
-#### Snapshots
+### Snapshots
 
-Create snapshot
+#### Create snapshot
+:   
+    === "ZFS"
 
-=== "ZFS"
+        ```sh
+        zfs snapshot tank@snapshot1
+        ```
 
-    ```sh
-    zfs snapshot tank@snapshot1
-    ```
+    === "BtrFS"
 
-=== "BtrFS"
+        ```sh
+        btrfs subvolume snapshot /data /data/snapshot1
+        ```
 
-    ```sh
-    btrfs subvolume snapshot /data /data/snapshot1
-    ```
+#### Rollback
+:   
+    === "ZFS"
 
-Rollback a snapshot
+        ```sh
+        zfs rollback tank@snapshot1
+        ```
 
-=== "ZFS"
+    === "BtrFS"
 
-    ```sh
-    zfs rollback tank@snapshot1
-    ```
+        ```sh
+        ?
+        ```
 
-=== "BtrFS"
+#### Delete
+:   
+    === "ZFS"
 
-    ```sh
-    ?
-    ```
+        ```sh
+        zfs destroy tank@snapshot1
+        ```
 
-Delete a snapshot
+    === "BtrFS"
 
-=== "ZFS"
-
-    ```sh
-    zfs destroy tank@snapshot1
-    ```
-
-=== "BtrFS"
-
-    ```sh
-    btrfs subvolume delete /data/snapshot1
-    ```
+        ```sh
+        btrfs subvolume delete /data/snapshot1
+        ```
 
 ### File sharing
 

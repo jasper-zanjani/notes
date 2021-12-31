@@ -1,3 +1,5 @@
+# Glade
+
 Glade files are XML **interfaces** that can be defined by strings inline or (more usually) in XML files, which are then loaded in the constructor for [Gtk.Builder](#builder).
 
 - The root node in these files is the **interface** element itself.

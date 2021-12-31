@@ -59,15 +59,26 @@ gsettings set org.gnome.desktop.input-sources xkb-options=['terminate:ctrl_alt_b
 
 ## Tasks
 
-Setting default background
+#### Desktop background
+:   
+    Create a keyfile for the local database in **/etc/dconf/db/local.d/01-background**
+    ```ini
+    [org/gnome/desktop/background]
 
-Create a keyfile for the local database in **/etc/dconf/db/local.d/01-background**
-```ini
-[org/gnome/desktop/background]
+    picture-uri='file:///usr/local/share/backgrounds/wallpaper.jpg'
+    picture-options='scaled'
+    primary-color='000000'
+    secondary-color='FFFFFF'
+    ```
 
-picture-uri='file:///usr/local/share/backgrounds/wallpaper.jpg'
-picture-options='scaled'
-primary-color='000000'
-secondary-color='FFFFFF'
-```
+#### Custom application shortcut
+:   
+    Custom shortcuts are stored in dconf using a ["relocatable schema"](https://wiki.ubuntu.com/Keybindings) which has three keys: **name**, **command**, and **binding**.
 
+    ```sh
+    gsettings set org.gnome.setting-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0 name 'Terminal'
+    gsettings set org.gnome.setting-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0 binding '<Super>Enter'
+    gsettings set org.gnome.setting-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0 command '/usr/bin/gnome-terminal'
+    ```
+
+    Note that this doesn't seem to work...

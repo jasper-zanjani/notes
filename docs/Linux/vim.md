@@ -4,11 +4,13 @@
 [https://youtu.be/wlR5gYd6um0]: https://youtu.be/wlR5gYd6um0 "Mastering the Vim Language"
 
 # vim
+
 Unlike WYSIWYG editors which optimize input for writing text, vim optimizes for editing it.
 Vim offers a **composable** language for expressing these editing changes whose syntax can be composed into two elements, **operations** and **text objects**, which are analogous to **verbs** and **nouns** in language.
 <sup>[YouTube][https://youtu.be/wlR5gYd6um0]</sup>
 
-The framework of understanding vim's syntax as a language appears to date back to an influential 2011 Stack Overflow [post](https://stackoverflow.com/questions/1218390/what-is-your-most-productive-shortcut-with-vim/1220118#1220118 "What is your most productive shortcut with Vim?").
+??? info "Resources"
+    The framework of understanding vim's syntax as a language appears to date back to an influential 2011 Stack Overflow [post](https://stackoverflow.com/questions/1218390/what-is-your-most-productive-shortcut-with-vim/1220118#1220118 "What is your most productive shortcut with Vim?").
 
 #### Commands
 
@@ -167,3 +169,24 @@ Vim 8 supports native loading of plugins (put in **~/.vim/pack/xx/start/** where
 - [Context-aware completion](https://youtu.be/3TX3kV3TICU?t=1005)
 - [<kbd>Ctrl</kbd><kbd>x</kbd> <kbd>Ctrl</kbd><kbd>l</kbd>](https://youtu.be/3TX3kV3TICU?t=1260)
 - [Omni completion <kbd>Ctrl</kbd><kbd>x</kbd><kbd>Ctrl</kbd><kbd>o</kbd>](https://youtu.be/3TX3kV3TICU?t=1350)
+
+#### Yanking STDOUT 
+:   
+    To run a shell command from the normal mode command line, you simply run the `!` (["bang"](https://learnvimscriptthehardway.stevelosh.com/chapters/52.html)) command in normal mode.
+    ```vim
+    :!env
+    ```
+
+    However to [store the output of that command into a register](https://stackoverflow.com/questions/1694392/vim-store-output-of-external-command-into-a-register), you must run a command like the following, which stores the output of the shell command into the **a** register.
+    ```vim
+    :let @a = system('env')
+    ```
+    The register signified by **`@"`** will be placed into the buffer by the **put** command (**`p`**).
+    ```vim
+    :let @" = system('env')
+    ```
+
+    Alternatively 
+    ```vim
+    :put =system('env')
+    ```

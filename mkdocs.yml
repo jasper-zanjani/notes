@@ -9,6 +9,8 @@ theme:
     accent: yellow
   features:
     - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.indexes
   
   shortcuts:
     search: 191
