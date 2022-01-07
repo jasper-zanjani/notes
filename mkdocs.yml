@@ -8,9 +8,13 @@ theme:
     primary: amber
     accent: yellow
   features:
-    - navigation.tabs
-    - navigation.tabs.sticky
-    - navigation.indexes
+    - navigation.tabs         # Render top-level sections as a menubar
+    - navigation.tabs.sticky  # Top-level menubar remains visible while scrolling down
+  # - navigation.indexes      # Integrate section index pages into sections as overview pages (incompatible with toc.integrate)
+    - navigation.sections     # Render sections as groups
+    - navigation.expand       # Expand all collapsible subsections by default
+    - toc.integrate           # Always render table of contents as part of the left navbar
+    - content.code.annotate
   
   shortcuts:
     search: 191
@@ -30,12 +34,14 @@ markdown_extensions:
   - admonition
   - attr_list
   - def_list
+  - md_in_html
+  - meta
   - pymdownx.details
   - pymdownx.emoji: # from https://squidfunk.github.io/mkdocs-material/reference/icons-emojis/#emoji
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
   - pymdownx.snippets
-  - md_in_html
   - pymdownx.superfences
-  - pymdownx.tabbed
+  - pymdownx.tabbed:
+      alternate_style: true
   - pymdownx.tasklist

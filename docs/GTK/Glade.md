@@ -1,73 +1,5 @@
 # Glade
 
-Glade files are XML **interfaces** that can be defined by strings inline or (more usually) in XML files, which are then loaded in the constructor for [Gtk.Builder](#builder).
-
-- The root node in these files is the **interface** element itself.
-- The first direct child of an interface is the **requires** element, with a version number that specifies the required version of GTK. It contains no children so it is self-closing.
-- Signals and callbacks are specified in the markup on the **signal** element, which is the direct child to the object emitting the signal and also self-closing. Callback method names are specified in the **handler** attribute
-- [Container](#container) widgets like [Gtk.Box](#box) wrap every child in a **child** element. Note that the interface element does not need a but is immediate parent to the outermost container of the UI.
-- Each property of an object is a **property** element with the name of the property provided in a **name** attribute and the value provided as the element's value.
-
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<interface>
-  <requires lib="gtk+" version="3.20"/>
-  <object class="GtkWindow" id="main_window">
-    <signal name="destroy" handler="on_main_window_destroy"/>
-    <child>
-      <object class="GtkBox">
-        <property name="orientation">vertical</property>
-        <child>
-          <object class="GtkEntry"/>
-        </child>
-      </object>
-    </child>
-  </object>
-</interface>
-```
-
-#### Hello, World!
-
-Here, a simple text message is displayed to to the user.
-The UI specified by the markup, which can be either [Gtk.Window](#window) or [Gtk.ApplicationWindow](#applicationwindow), is assigned to the window property of the Application object.
-Note that the required version must be greater than 3.4 when using ApplicationWindow because that is the version in which it was introduced.
-
-=== "Window"
-
-    ```xml hl_lines="3 4"
-    <?xml version="1.0" encoding="UTF-8"?>
-    <interface>
-      <requires lib="gtk+" version="3.00"/>
-      <object class="GtkWindow" id="window">
-        <property name="height-request">300</property>
-        <property name="width-request">300</property>
-        <child>
-          <object class="GtkLabel" id="label">
-            <property name="label">Hello, World!</property>
-          </object>
-        </child>
-      </object>
-    </interface>
-    ```
-
-=== "ApplicationWindow"
-
-    ```xml hl_lines="3 4"
-    <?xml version="1.0" encoding="UTF-8"?>
-    <interface>
-      <requires lib="gtk+" version="3.40"/>
-      <object class="GtkApplicationWindow" id="window">
-        <property name="height-request">300</property>
-        <property name="width-request">300</property>
-        <child>
-          <object class="GtkLabel" id="label">
-            <property name="label">Hello, World!</property>
-          </object>
-        </child>
-      </object>
-    </interface>
-    ```
-
 The application will not close correctly without explicitly binding the destroy signal.
 This is because signal handlers specified in the markup must be mapped to actual methods in the code. 
 This is done with the `connect_signals()` method, which can be used in two different ways depending on the object passed:
@@ -96,7 +28,7 @@ This is done with the `connect_signals()` method, which can be used in two diffe
     ```
 
 
-`Gtk.main()` must be explicitly called somewhere. Here it is called in `Application.run()`, but it can also be placed in the script's entrypoint.
+
 
 ```py
 import gi

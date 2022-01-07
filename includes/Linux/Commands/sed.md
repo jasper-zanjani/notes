@@ -1,47 +1,30 @@
 #### sed
-: 
-    [sed -&#110;]: #sed '```&#10;$ sed -n&#10;$ sed --quiet&#10;```&#10;Suppress automatic printing of pattern space'
-    [sed -&#101;]: #sed '```&#10;$ sed -e&#10;```&#10;When providing more than one instruction, this flag precedes each one'
-    [sed -&#102;]: #sed '```&#10;$ sed -f&#10;$ sed --file&#10;```&#10;Read from a "command file" or "program file" (i.e., a sed script)'
-    [sed -&#105;]: #sed '```&#10;$ sed -i&#10;```&#10;Edit the file in-place instead of outputting to STDOUT'
+:   
+    **sed** ("Stream-oriented editor") is typically used for applying repetitive edits across all lines of multiple files. In particular it is, alongside `awk` one of the two primary commands which accept regular expressions in Unix systems. 
+    
+    sed instructions can be defined **inline** or in a **command file** (i.e. script).
+    
+    ```sh title="Inline"
+    sed $OPTIONS $INSTRUCTION $FILE
+    ```
 
-    <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`e`][sed -&#101;] [`f`][sed -&#102;] <code>&nbsp;</code> <code>&nbsp;</code> [`i`][sed -&#105;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`n`][sed -&#110;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 
+    ```sh title="Command file"
+    sed $OPTIONS -f $SCRIPT $FILE
+    ```
+    
+
+    sed instructions are made of two components: **addresses** (i.e. patterns) and
+    **procedures** (i.e. actions).
 
     Run sed commands in `$SCRIPT` on `$FILE`
+
     ```sh
     sed -f $SCRIPT $FILE
     ```
     Suppress automatic printing of pattern space
     ```sh
-    sed -n
-    sed --quiet
-    sed --silent
+    sed -n # --quiet , --silent
     ```
-    `sed` ("Stream-oriented editor") is typically used for applying repetitive edits across all lines of multiple files. In particular it is, alongside `awk` one of the two primary commands which accept regular expressions in Unix systems. 
-
-    | Script syntax | Effect                                                                                            |
-    | ------------- | ------------------------------------------------------------------------------------------------- |
-    | `#`           | comments begin with **octothorpe**                                                                |
-    | `#n`          | If first line of script begins with these two characters, it is equivalent to using the `-n` flag |
-
-    Invocation syntax has two forms:
-
-    === "Inline"
-
-        ```sh
-        sed options 'instruction' $FILE
-        ```
-    
-    === "Command file"
-
-        ```sh
-        sed options -f $SCRIPT $FILE
-        ```
-    
-    Sed instructions are made of two components:
-
-    - **Addresses** or patterns
-    - **Procedures** (also called actions or instructions)
     
     Zero, one, or two addresses can precede a procedure. In the absence of an address, the procedure is executed over every line of input. With one address, the procedure will be executed over every line of input that matches.
 
@@ -57,50 +40,40 @@
     - **Line addressing**, specifying line numbers separated by a comma (e.g. `3,7p`); `$` represents the last line of input
     - **Context addressing**, using a regular expression enclosed by forward slashes (e.g. `/From:/p`)
 
-    | Procedure                     | Description                                                                                                                                                                                   |
-    | :---------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-    | `!c`                          | negation operator can be used with any procedure {c}                                                                                                                                          |
-    | `a`                           | append text to the addressed lines                                                                                                                                                            |
-    | `d`                           | cause sed not to display the addressed lines ("delete"); can emulate `grep -v`, which selects lines which do _not_ match the specified pattern                                                |
-    | `i`                           | prepend text to the addressed lines                                                                                                                                                           |
-    | `n`                           | write out the currently selected line if appropriate, read the next input line, and start processing the new line with the next instruction                                                   |
-    | `x`                           | where {x} is a number, specifying occurrence (e.g. `2` would replace only the second occurrence of each pattern per line)                                                                     |
-    | `g`                           | replace all occurrences                                                                                                                                                                       |
-    | `p`                           | print original content (e.g. `sed -n 's/test/another test/p' myfile`)                                                                                                                         |
-    | `w outputfile`                | write results to {outputfile} (e.g. `sed 's/test/another test/w output' myfile`)                                                                                                              |
-    | `s/pattern/replacement/flags` | replace regex {pattern} with {replacement} ("substitute")                                                                                                                                     |
-    | `g`                           | replace **all** instances of the search pattern with the replacement, rather than the first instance (global)                                                                                 |
-    | `&`                           | known as the **repeated pattern**, represents the represents the entire source string; the only special character used in the replacement string - all other characters are treated literally |
-
     Edit the file in-place, but save a backup copy of the original with {suffix} appended to - the filename
     ```sh
     -i=suffix
     ```
-    Display first 3 lines YUG: 450
+
+    In some circles, sed is recommended as a replacement for other filters like [head](/Linux/Filters/Commands#head).
+    Here, the first 10 lines of a file are displayed.
     ```sh
-    sed '3q' emp.lst
+    sed 10q $FILE
     ```
-    Display first 5 lines, similar to `head -5 emp.lst` PGL : 569
-    ```sh
-    sed '5q' new
-    ```
-    Pipe output of `ps` to `sed`, displaying top 10 memory-intensive processes
+
+    Display the top 10 processes by memory or cpu usage.
     ```sh
     ps axch -o cmd,%mem --sort=-%mem | sed 11q
-    ```
-    Pipe output of `ps` to `sed`, displaying top 10 CPU-intensive processes
-    ```sh
     ps axch -o cmd:15,%cpu --sort=-%cpu | sed 11q
     ```
+
+    Replace angle brackets with their HTML codes, piped in from a heredoc:
+    ```sh
+    sed -e 's/</\&lt;/g' -e 's/>/\&gt;/g' << EOF
+    ```
+
+    <!-- 
     Display first two lines of file
     Without `-n`, each line will be printed twice
     ```sh
     sed -n '1,2p' emp.lst
     ```
+
     Prepending `!` to the procedure reverses the sense of the command (YUG: 450)
     ```sh
     sed -n '3,$!p' emp.lst
     ```
+    
     Display a range of lines
     ```sh
     sed -n '9,11p' emp.lst
@@ -127,11 +100,12 @@
     ```sh
     sed '/test/d' myfile
     ```
+
     Suppress from the 3rd line to EOF
     ```sh
     sed '3,$d' myfile
     ```
-    Replace text
+    
     Replace the first instance of the `|` character with `:` and display the first two lines [YUG:455]
     ```sh
     sed 's/|/:/ emp.lst | head -2
@@ -154,8 +128,10 @@
     ```sh
     sed '/director/s//executive &/' emp.lst
     ```
-    [YUG: 456-457]
-    Searching for text\
+    
+    
+    Searching for text
+
     Equivalent to `grep MA *`
     ```sh
     sed -n '/MA/p' *
@@ -172,4 +148,5 @@
     Count the number of pipes replaced by piping output to `cmp`, which will use the `-l` option to output byte numbers of differing values, then counting the lines of output (YUG:456)
     ```sh
     sed 's/|/:/g' emp.lst | cmp -l - emp.lst | wc -l
-    ```
+    ``` 
+    -->

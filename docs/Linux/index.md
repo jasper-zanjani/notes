@@ -8,23 +8,12 @@ A **process**{: #process } runs in its own **user address space**, a protected s
 
 Every process has a parent; a process can **spawn** children in a process that is actually made of two separate system calls.
 
-1. `FORK` copy process invoking it as `fork()`
-2. `EXEC` parent then overwrites this copy with the program that has to be executed which replaces or **overlays** the text and data areas as `exec()` system call
-3. `WAIT` parent waits for `SIGTERM` signal which the child will send upon completion `wait()` system call
-4. **`TEXT SEGMENT`**: executable code
-5. **`DATA SEGMENT`**: variables and arrays the program uses during execution
-6. **`USER SEGMENT`**: process attributes
-     - process ID (PID)
-     - real user ID of user who created it (stored in /etc/passwd)
-     - real group ID
-     - priority
-
 - Internal commands (`cd`, `echo`, etc. and variable assignments) do not spawn child processes
 - Shell scripts are executed by spawning a sub-shell, which becomes the script's parent
 - External commands are spawned as children of the parent as described above
 
 
-**Control group (cgroups)**{: #cgroups } is a Linux kernel feature that isolates a collection of processes and is the concept behind [containers](/Containers).
+**Control group (cgroups)**{: #cgroups } is a Linux kernel feature that isolates a collection of processes and is the concept behind [containers](Containers).
 
 - allow you to allocate resources (CPU time, system memory, network bandwidth, or combinations thereof) among user-defined groups of processes
 - like processes, cgroups are hierarchical and inherit attributes from parents, but they from separate trees branching off from `subsystems` (also: `resource controller`, or just `controller`), each of which represent a single system resouce 
@@ -83,8 +72,6 @@ To enable it, add ",acl" to options in `fstab` file, then mount/unmount disk. If
 
 --8<-- "includes/Linux/Tasks/custom-resolution.md"
 
---8<-- "includes/Linux/Tasks/download.md"
-
 --8<-- "includes/Linux/Tasks/hdd-serial-numbers.md"
 
 --8<-- "includes/Linux/Tasks/KDE-tiling-window-manager.md"
@@ -98,46 +85,6 @@ To enable it, add ",acl" to options in `fstab` file, then mount/unmount disk. If
 --8<-- "includes/Linux/Tasks/GRUB-rescue-prompt.md"
 
 ## Commands
-
-### Applications
-
---8<-- "includes/Linux/Commands/youtube-dl.md"
-
---8<-- "includes/Linux/Applications/Rhythmbox.md"
-
-### Filters
-
---8<-- "includes/Linux/Commands/awk.md"
-
---8<-- "includes/Linux/Commands/cat.md"
-
---8<-- "includes/Linux/Commands/cut.md"
-
---8<-- "includes/Linux/Commands/grep.md"
-
---8<-- "includes/Linux/Commands/head.md"
-
---8<-- "includes/Linux/Commands/paste.md"
-
---8<-- "includes/Linux/Commands/sed.md"
-
---8<-- "includes/Linux/Commands/tail.md"
-
---8<-- "includes/Linux/Commands/tr.md"
-
---8<-- "includes/Linux/Commands/watch.md"
-
-### GRUB
-
---8<-- "includes/Linux/Commands/grub-install.md"
-
---8<-- "includes/Linux/Commands/grub-mkconfig.md"
-
---8<-- "includes/Linux/Commands/grub2-mkconfig.md"
-
---8<-- "includes/Linux/Commands/grub2-editenv.md"
-
---8<-- "includes/Linux/Commands/update-grub.md"
 
 
 ### System administration

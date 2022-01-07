@@ -409,23 +409,24 @@
     **`if let`** is syntactic sugar for a pattern that matches one pattern while ignoring the rest.
     Notably, the syntax takes the pattern before the expression similar to a [`match`](#match) arm.
     
-    === "if let"
 
-        ``` rs
-        if let Some(3) = some_u8_value {
-            println!("three");
-        }
-        ```
+    ``` rs title="if let"
+    if let Some(3) = some_u8_value {
+        println!("three");
+    }
+    ```
+    ``` rs title="match"
+    let some_u8_value = Some(0u8);
+    match some_u8_value {
+        Some(3) => println!("three"),,
+        _ => (),
+    }
+    ```
+
+
+    It is used to provide a default value for a string in the following example.
     
-    === "match"
-
-        ``` rs
-        let some_u8_value = Some(0u8);
-        match some_u8_value {
-            Some(3) => println!("three"),,
-            _ => (),
-        }
-        ```
+    --8<-- "includes/Rust/hwp.md"
 
 #### Iterator
 :   
@@ -489,6 +490,40 @@
             println!("{}", total);
         }
         ```
+
+    Notably, a **for loop** [consumes an iterator](https://doc.rust-lang.org/reference/expressions/loop-expr.html#iterator-loops) because it is implicitly converted to an iterator with **into\_iter()**.
+
+    === "Error"
+
+        ```rs hl_lines="3"
+        fn main () {
+            let v = vec!['H','e','l','l','o'];
+            for i in v {
+                print!("{}", i);
+            } 
+            println!();
+
+            println!("{:?}", v); // (1)
+        }
+        ```
+
+        1. Because each value of the vector is moved, it is consumed. The compiler will produce error E0382 at this line.
+
+    === "Correct"
+
+        ```rs hl_lines="3"
+        fn main () {
+            let v = vec!['H','e','l','l','o'];
+            for i in &v {
+                print!("{}", i);
+            } 
+            println!();
+
+            println!("{:?}", v);
+        }
+        ```
+
+
 
 #### Lifetimes
 :   
@@ -842,6 +877,42 @@
     }
     ```
 
+    I'm not sure what to make of this...
+
+    === "Vector"
+
+        ```rs
+        use std::cell::RefCell;
+        use std::rc::Rc;
+
+        fn main () {
+            let v = vec!['H','e','l','l','o'];
+
+            for i in v {
+                print!("{}", i);
+            }
+            println!("");
+        }
+        ```
+
+    === "RefCell"
+
+        ```rs
+        use std::cell::RefCell;
+        use std::rc::Rc;
+
+        fn main () {
+            let ptr = Rc::new(RefCell::new(vec!['H','e','l','l','o']));
+
+            for i in &*ptr.borrow() { // (1)
+                print!("{}", i);
+            }
+            println!("");
+        }
+        ```
+
+        1. A for loop in Rust consumes the iterable's elements because it is really a syntactic sugar for a call to IntoIterator, which [Vector](#vector) implements. In other words the values are moved.
+
 #### Result
 :   
     Appears to be similar to [Option](#option), in that it is a generic meant to wrap other values..
@@ -909,47 +980,36 @@
     Smart pointers are data structures that act like references (which is but one of and the simplest pointer) but provide additional functionality and metadata.
     The smart pointer pattern is used frequently in Rust.
 
-    In Rust, smart pointers are structs that implement two [traits](#trait):
-    
-    - **`Deref`**{: #deref } allows an instance of the smart pointer struct to behave like a reference
-    - **`Drop`** allows you to run custom logic when the pointer goes out of scope
+    In Rust, smart pointers are structs that implement two [traits](#trait): **Deref**{: #deref } (which allows an instance of the smart pointer struct to behave like a reference) and **Drop** (which allows you to run custom logic when the pointer goes out of scope)
 
-    === "MyBox"
+    Here a custom pointer is implemented.
 
-        ``` rs
-        struct MyBox<T>(T) {
-            data: String,
+    ``` rs
+    struct MyBox<T>(T) {
+        data: String,
+    }
+
+    impl<T> MyBox<T> {
+        fn new(x: T) -> MyBox<T> {
+            MyBox(x)
         }
+    }
 
-        impl<T> MyBox<T> {
-            fn new(x: T) -> MyBox<T> {
-                MyBox(x)
-            }
+    impl<T> std::ops::Deref for MyBox<T> {
+        // Define an **associated type** for the Deref trait to use
+        type Target = T; 
+
+        fn deref(&self) -> &T {
+            &self.0
         }
-        ```
+    }
 
-    === "Deref"
-
-        ``` rs
-        impl<T> std::ops::Deref for MyBox<T> {
-            // Define an **associated type** for the Deref trait to use
-            type Target = T; 
-
-            fn deref(&self) -> &T {
-                &self.0
-            }
+    impl<T> Drop for MyBox<T> {
+        fn drop(&mut self) {
+            println!("Dropping MyBox");
         }
-        ```
-
-    === "Drop"
-
-        ``` rs
-        impl<T> Drop for MyBox<T> {
-            fn drop(&mut self) {
-                println!("Dropping MyBox");
-            }
-        }
-        ```
+    }
+    ```
 
     Now the smart pointer supports the dereferencing operator `*` and a message is displayed when it goes out of scope.
 
@@ -957,17 +1017,16 @@
     fn main() {
         let x = 5;
         let y = MyBox::new(x);
-        assert_eq!(5, *y);
+        assert_eq!(5, *y); // (1)
     }
     ```
 
-    Behind the scenes, the compiler is really dereferencing the value returned by `deref()`:
-
+    1. Behind the scenes, the compiler is really dereferencing the value returned by `deref()`:
     ``` rs
     *(y.deref())
     ```
 
-    The `drop()` method may not be called explicitly in order to avoid the **double free** error that would occur when the variable goes out of scope.
+    The `drop()` method cannot be called explicitly in order to avoid the **double free** error that would occur when the variable eventually goes out of scope.
     Alternatively, `std::mem::drop()` (already in the prelude) can be called explicitly.
     
     ``` rs

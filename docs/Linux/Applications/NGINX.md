@@ -8,7 +8,7 @@ A typical and favored deployment is to place Nginx in the front-end and Apache i
 Nginx follows the convention of even version numbers being stable and odd numbers being mainline or development.
 
 
-=== "CentOS"
+=== ":material-redhat: Red Hat"
 
     ```sh
     # /etc/yum.repos.d/nginx.repo
@@ -23,7 +23,7 @@ Nginx follows the convention of even version numbers being stable and odd number
     dnf install nginx
     ```
 
-=== "Ubuntu"
+=== ":material-ubuntu: Ubuntu"
 
     ```sh
     # /etc/apt/sources.list
@@ -57,43 +57,32 @@ Most simple directives can only be declared in specific contexts.
 
 A very simple representative config that creates an HTTP server listening on port 80 of every network interface, with no HTTP Host specified, from the specified root path:
 
-=== "Default"
+  ``` nginx title="Default"
+  events {
+  }
 
-    ``` nginx linenums="1"
-     
-       
-      
-    events {
-
+  http {
+    server {
     }
+  }
+  ```
 
-    http {
-      server {
+  ```nginx title="Expanded with explicit values"
+  user nobody nogroup;
+  worker_processes 1;
 
+  events {
+    worker_connections 512;
+  }
 
-
-      }
+  http {
+    server {
+      listen *:80;
+      server_name "";
+      root /usr/share/nginx/html;
     }
-    ```
-
-=== "Expanded with explicit values"
-
-    ```nginx linenums="1" hl_lines="1 2 5 10-12
-    user nobody nogroup;
-    worker_processes 1;
-
-    events {
-      worker_connections 512;
-    }
-
-    http {
-      server {
-        listen *:80;
-        server_name "";
-        root /usr/share/nginx/html;
-      }
-    }
-    ```
+  }
+  ```
 
 
 

@@ -1,79 +1,29 @@
 #### awk
 :   
-    [awk -&#70;]: #awk '```&#10;$ awk -F $C&#10;```&#10;Set field separator to `$C`'
-    [awk -&#102;]: #awk '```&#10;$ awk -f $PROGRAMFILE&#10;```&#10;Specify awk program-file `$PROGRAMFILE`'
-    [awk -&#118;]: #awk '```&#10;$ awk -v $VAR=$VAL&#10;$ awk --assign $VAR=$VAL&#10;```&#10;Set variable `$VAR` to value `$VAL` before script is executed'
+    awk **programs** are equivalent to **sed** "instructions" can be defined **inline** or in a **program file** (also sometimes called source files). If no input files are specified awk can accept input from STDIN.
 
-    <code>&nbsp;</code>   <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`f`][awk -&#102;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`v`][awk -&#118;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code>  <br><code>&nbsp;</code>&nbsp;<code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`F`][awk -&#70;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 
+    ```sh title="Inline"
+    awk $OPTIONS $PROGRAM $INPUTFILES
+    ```
 
-    #### Variables
-    [awk ARGC]: #awk '```&#10;$ ARGC&#10;```&#10;&#10;Number of arguments in command line'
-    [awk ARGV]: #awk '```&#10;$ ARGV&#10;```&#10;&#10;List of arguments'
-    [awk FILENAME]: #awk '```&#10;$ FILENAME&#10;```&#10;&#10;Current input filename'
-    [awk FNR]: #awk '```&#10;$ FNR&#10;```&#10;&#10;Number of the current record relative to the current input file'
-    [awk FS]: #awk '```&#10;$ FS&#10;```&#10;&#10;Field separator (whitespace by default)'
-    [awk NF]: #awk '```&#10;$ NF&#10;```&#10;&#10;Number of fields for the current input record'
-    [awk NR]: #awk '```&#10;$ NR&#10;```&#10;&#10;Number of the current input record'
-    [awk OFS]: #awk '```&#10;$ OFS&#10;```&#10;&#10;Output field separator (space by default)'
-    [awk ORS]: #awk '```&#10;$ ORS&#10;```&#10;&#10;Output record separator'
-    [awk RS]: #awk '```&#10;$ RS&#10;```&#10;&#10;Record separator (newline by default)'
+    ```sh title="Program file"
+    awk $OPTIONS -f $PROGRAMFILE $INPUTFILES
+    ```
 
-    [`ARGC`][awk ARGC] 
-    [`ARGV`][AWK ARGV] 
-    [`FILENAME`][AWK FILENAME] 
-    [`FNR`][AWK FNR] 
-    [`FS`][AWK FS] 
-    [`NF`][AWK NF] 
-    [`NR`][AWK NR] 
-    [`OFS`][AWK OFS] 
-    [`ORS`][AWK ORS] 
-    [`RS`][AWK RS] 
-
-    #### Functions
-    [awk gsub()]: #gsub() '```&#10;$ gsub()&#10;$ gsub($PATTERN,$SUBSTITUTION,$STRING)&#10;```&#10;&#10;Replace all instances of `$PATTERN` with `$SUBSTITUTION` in `$STRING` (`$0` if not specified)'
-    [awk sub()]: #sub() '```&#10;$ sub()&#10;$ sub($PATTERN,$SUBSTITUTION,$STRING)&#10;```&#10;&#10;Replace first instance of `$PATTERN` with `$SUBSTITUTION` in `$STRING` (`$0` if not specified)'
-    [awk index()]: #index() '```&#10;$ index()&#10;$ index($SUBSTR,$STRING)&#10;```&#10;&#10;Return (1-indexed) position of `$SUBSTR` within `$STRING` (or `$0` if not specified)'
-    [awk length()]: #length() '```&#10;$ length()&#10;$ length($STRING)&#10;```&#10;&#10;Return length of `$STRING` (or `$0` if not specified)'
-    [awk match()]: #match() '```&#10;$ match()&#10;$ match($STRING,$PATTERN)&#10;```&#10;&#10;Return position in `$STRING` where `$PATTERN` begins, or 0 if not found'
-    [awk printf()]: #printf() '```&#10;$ printf()&#10;$ printf "$CTRLSTR", *args&#10;```&#10;&#10;The "control-string" `$CTRLSTR` is interpolated with expressions called **conversion specifications**, with the syntax `%[-][x[.y]]conv` where `x` represents minimum field width, `y` number of places to the right of a decimal point in a number, and `conv` can be one of the following values&#10;  - `d` integer&#10;  - `e` exponential notation&#10;  - `f` floating point number&#10;  - `g` use `f` or `e`, whichever is shorter&#10;  - `o` unsigned octal&#10;  - `s` string&#10;  - `x` unsigned hexadecimal&#10;Olushile, Paul. _Linux 5 Performance Monitoring and Tuning_.: 534'
-    [awk split()]: #split() '```&#10;$ split()&#10;$ split($STRING,$ARRAY,$DELIM)&#10;```&#10;&#10;Break up `$STRING` by `$DELIM` and store the fields in `$ARRAY`&#10;"Universal Windows Platform apps". _Wikipedia_.: 481'
-    [awk substr()]: #substr() '```&#10;$ substr()&#10;$ substr($STRING,$N,$M)&#10;```&#10;&#10;Extract a substring from `$STRING`, where `$N` represents the starting position and `$M` the number of characters to be extracted from that point'
-    [awk tolower()]: #tolower() '```&#10;$ tolower()&#10;$ tolower($STRING)&#10;```&#10;&#10;Convert `$STRING` to lowercase letters'
-    [awk toupper()]: #toupper() '```&#10;$ toupper()&#10;$ toupper($STRING)&#10;```&#10;&#10;Convert `$STRING` to uppercase letters'
-
-    [`gsub()`][awk gsub()] 
-    [`sub()`][awk sub()] 
-    [`index()`][awk index()] 
-    [`length()`][awk length()] 
-    [`match()`][awk match()] 
-    [`printf()`][awk printf()] 
-    [`split()`][awk split()] 
-    [`substr()`][awk substr()] 
-    [`tolower()`][awk tolower()] 
-    [`toupper()`][awk toupper()] 
-
-    >"The basic function of awk is to search files for lines that contain certain patterns." (GEAP: 17
-
-    Pattern-scanning utility and processing language, one of the two primary commands which accept regular expressions in Unix systems.
-
-    `awk` **programs** can be defined **inline** or in a **program-file** (PGL: 528)
-        - inline: `awk options 'program' input-files`
-        - **program-file**, also "source-file" (GEAP:18): `awk options -f program-file input-files` 
-
-    `awk` programs can be run without defining **input-files**, in which case awk will accept input from STDIN
-
-    `awk` **programs** are the equivalent of sed "instructions", and similarly combine **patterns** and **actions** (PGL: 530, GEAP: 17)
+    awk programs combine **patterns** and **actions**
 
     Patterns can be:
+
     - regular expressions or fixed strings
     - line numbers using builtin variable `NR`
     - predefined patterns `BEGIN` or `END`, whose actions are executed before and after processing any lines of the data file, respectively
 
-    change ":" to newlines in PATH variable; equivalent to `echo $PATH \| tr ":" "\n"` 
+    Convert ":" to newlines in **$PATH** environment variable
     ```sh
     echo $PATH | awk 'BEGIN {RS=":"} {print}'
     ```
-    print the first field of all files in the current directory, taking semicolon `;` as the field separator, outputting filename, line number, and first field of matches, with colon `:` between the filename and line number
+
+    Print the first field of all files in the current directory, taking semicolon `;` as the field separator, outputting filename, line number, and first field of matches, with colon `:` between the filename and line number
     ```sh
     awk 'BEGIN {FS=";"} /enable/ {print FILENAME ":" FNR,$1}' *
     ```

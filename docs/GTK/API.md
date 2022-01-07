@@ -67,34 +67,87 @@
 
 #### Builder
 :   
-    **Gtk.Builder** allows the use of [XML interfaces](#glade) to define widget layouts, either as strings or files.
+    **Gtk.Builder** allows the use of [interfaces](/GTK/#interfaces) to define widget layouts.
+    Individual UI elements can be bound if they have an **id** attribute assigned.
 
-    === "File"
+    === ":material-language-rust: Rust"
 
-        ```py
-        builder = Gtk.Builder.new_from_file('foo.xml')
+        ```rs hl_lines="11-13 15"
+        fn main() {
+            let app = gtk::Application::builder()
+                .application_id("org.example.gtk-app")
+                .build();
+
+            app.connect_activate(build_ui);
+            app.run();
+        }
+
+        fn build_ui(app: &Application):{
+            let builder = gtk::Builder::from_string(include_str!("window.ui"));
+            let window: ApplicationWindow = builder.object("window")
+                .expect("Error loading ApplicationWindow!");
+
+            window.set_application(Some(app));
+            window.show_all();
+            window.present();
+        }
         ```
-        
-    === "String"
 
-        ```py
-        builder = Gtk.Builder.new_from_string(MENU_XML)
+    === ":material-language-python: Python"
+
+        ```py hl_lines="6 7"
+        class Application(Gtk.Application):
+            def __init__(self, *args, **kwargs):
+                super().__init__(application_id = "org.example.gtk-app")
+            
+            def do_activate(self):
+                builder = Gtk.Builder.new_from_file("window.ui")
+                self.window = builder.get_object("window")
+                self.window.show_all()
+                self.window.present()
+
+            def run(self):
+                super().run()
+                Gtk.main()
         ```
-
-
-    An object which has its **id** attribute assigned can be used in code with the `get_object()` method.
-    
-    ```py
-    class Application(Gtk.Application):
-        def __init__(self):
-            # --8<-- snip
-            builder = Gtk.Builder.new_from_string(MENU_XML, -1)
-            self.set_app_menu(builder.get_object("app-menu"))
-    ```
 
 #### CheckButton
 :   
     **Gtk.CheckButton**s are checkboxes.
+
+#### clone
+:   
+    [**glib::clone!**](http://gtk-rs.org/gtk-rs-core/stable/latest/docs/glib/macro.clone.html) is used to facilitate passing strong or weak references into closures.
+
+    === "Strong"
+
+        ```rs hl_lines="6"
+        use glib;
+        use glib_macros::clone;
+        use std::rc::Rc;
+
+        let v = Rc::new(1);
+        let closure = clone!(@strong v => move |x| {
+            println!("v: {}, x: {}", v, x);
+        });
+
+        closure(2);
+        ```
+
+    === "Weak"
+
+        ```rs hl_lines="6"
+        use glib;
+        use glib_macros::clone;
+        use std::rc::Rc;
+
+        let u = Rc::new(2);
+        let closure = clone!(@weak u => move |x| {
+            println!("u: {}, x: {}", u, x);
+        });
+
+        closure(3);
+        ```
 
 #### Container
 :   
