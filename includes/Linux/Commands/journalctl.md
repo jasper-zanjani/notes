@@ -1,14 +1,23 @@
 #### journalctl
+:   
+    [Clean up](https://www.linuxuprising.com/2019/10/how-to-clean-up-systemd-journal-logs.html) old logs
 
-Show current disk usage of all journal files
-```sh
-journalctl --disk-usage
-```
-Continuously update the display as new log entries are created
-```sh
-journalctl -f
-```
-Display output in reverse (newest entries first)
-```sh
-journalctl -r
-```
+    ```sh
+    journalctl --disk-usage # (3)
+    journalctl --rotate # (1)
+    journalctl --vacuum-time=1d # (2)
+    ```
+
+    1. Ask journal daemon to rotate journal files, immediately archiving and renaming currently active journal files.
+    2. **--vacuum-size**, **--vacuum-time**, and **--vacuum-files** can be used singly or in combination to enforce limits on archived journal files.
+    3. Show current disk usage of all journal files
+
+    Display logs
+
+    ```sh
+    journalctl -r # --reverse (1)
+    journalctl -f # --follow (2)
+    ```
+
+    1. Display output in reverse (newest entries first)
+    2. Continuously update the display as new log entries are created

@@ -33,6 +33,23 @@
     - **Decorator containers** derive from **Gtk.Bin** and can hold only a single child, like [ApplicationWindow](#applicationwindow), and are so called because they add functionality to the child widget.
     - **Layout containers** derive directly from **Gtk.Container** and are used to arrange multiple child widgets.
 
+#### GLib
+:   
+    [GLib](https://en.wikipedia.org/wiki/GLib) is a bundle of three low-level system libraries written in C:
+
+    - GLib
+    - [GObject](#gobject)
+    - GIO
+    
+    It originated in the GTK+ project but was abstracted away before the release of GTK+ version 2.
+
+
+#### GObject
+:   
+    [GObject](https://en.wikipedia.org/wiki/GObject) ([GLib](#glib) Object System) is a library written in C that provides an object-oriented API.
+    Prior to being abstracted into its own library, the object system formed part of the GTK+ codebase.
+
+
 **Pop-up menu**
 :   
     Context menu

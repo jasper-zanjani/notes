@@ -11,6 +11,7 @@ The establishment of the **ERC-20** protocol allows new tokens to launch on Ethe
 **Crypto tokens** form one of the two categories of cryptocurrency and represent  a tradable asset or utility that is found on a blockchain. Cryptocurrency is a standard currency used for the sole purpose of making or receivng payments on the blockchain. Crypto tokens represent an underlying asset, customer loyalty points for example. [<sup>ref</sup>][https://www.investopedia.com/terms/c/crypto-token.asp]
 
 ## Blockchain
+
 Blockchain is a **distributed digital ledger** consisting of interlinked blocks, each of which stores information that cannot be retroactively tampered with or deleted. [<sup>ref</sup>][https://hackernoon.com/chain-reaction-what-will-the-next-decade-of-blockchain-look-like-fl2fd32r8]
 
 Blockchain is a database technology that uses hashes to ensure reliability and security of data stored across a network of computers, popularized by BitCoin. Records, containing information, are validated and then added to **Blocks**, or hashed containers, which are then concatenated in a **chain** by associating each block with the hash of both of its neighbors. [<sup>ref</sup>][https://graphics.reuters.com/TECHNOLOGY-BLOCKCHAIN/010070P11GN/index.html]

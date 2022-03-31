@@ -44,22 +44,6 @@
     - **2**: rear left
     - **3**: rear right
 
-**awesome**{: #awesome } [:material-play:][hObzf9ppODJU]
-:   
-    Originated as a fork of [dwm](#dwm), it offers creature comforts that make it the easiest to adjust to as a new user of tiling window managers. 
-    It is written in Lua, as its config must be. 
-    Like dwm, each monitor has an independent pool of workspaces. 
-
-**bspwm** ("Binary Space Partitioning Window Manager")[:material-play:][hObzf9ppODJU]
-:    
-    Tiling window manager that uses tree partitioning as the logic for organizing tiles, with the default being the "dwindle" pattern. 
-    Like [awesome](#awesome), bspwm uses a shared pool of workspaces, but they are individually assigned to monitors in the configuration file.
-    
-    Notably, it uses two config files: 
-    
-    - **.bspwmrc** which determines what programs to autoload but doesn't contain any key bindings
-    - **.sxhkdrc** which uses a syntax similar to [i3](#i3) or herbstluft.
-
 
 
 **Berkeley Software Distribution (BSD)**{: #bsd }
@@ -100,62 +84,74 @@
     Clear's update process also has the ability to do **delta downloads**, preserving bandwidth. 
     It does not provide access with unusual licenses, like ZFS, Chrome, or FFmpeg. [:material-link:][LXF 258]
 
+#### /dev/random
+:   
+    There are [two](https://lwn.net/SubscriberLink/884875/58f88e6eb7913686/) random-number devices in the kernel. Historically:
+
+    - **/dev/random**  blocked until it had sufficient entropy to return a random value
+    - **/dev/urandom**{: #-dev-urandom } never blocked but resorted to a pseudorandom number generator (PRNG) in the case of insufficient entropy
+
+    However, in 2020 the behavior of /dev/random was changed to make it behave more like the [**getrandom syscall**](/Coding/C/#getrandom), in that it blocks only on initialization and provides cryptographic-strength random numbers thereafter without blocking.
+    This has resulted in a blurring of the lines between the two random devices and an effort to remove /dev/urandom for good.
+
+
+
 **display manager**{: #display-manager }
 :   
     Basically display managers are the login screens, while the GUI manipulated during normal use represents the desktop environment (i.e. GNOME, KDE, XFCE, etc).
 
 
-**dwm**{: #dwm }  [:material-play:][hObzf9ppODJU]
+#### /etc/bluetooth
 :   
-    One of the oldest and lightest tiling window managers. 
-    Because suckless wants the source code not to exceed 2,000 lines of code, a lot of functionality is incorporated by means of **patches**, which modify the source code using diff files. 
-    Workspaces are called **tags**. 
-    A window can be associated with more than one tag, placing it on more than one workspace. 
-    Each monitor has a separate pool of workspaces. 
-
-
-**/etc/bluetooth/input.conf** :material-hammer-wrench:
-:   
-    Fix bluetooth mouse constantly disconnecting ([src](https://askubuntu.com/questions/1065335/bluetooth-mouse-constantly-disconnects-and-reconnects 'Ask Ubuntu: "Bluetooth mouse constantly disconnects and reconnects"'))
+    - **/etc/bluetooth/input.conf**
+    Fix bluetooth mouse [constantly disconnecting](https://askubuntu.com/questions/1065335/bluetooth-mouse-constantly-disconnects-and-reconnects)
     ```ini
     UserspaceHID=true
     ```
-
-**/etc/bluetooth/main.conf** :material-hammer-wrench:
-:   
-    Power on Bluetooth adapter at startup ([src](https://askubuntu.com/questions/1065335/bluetooth-mouse-constantly-disconnects-and-reconnects 'Ask Ubuntu: "Bluetooth mouse constantly disconnects and reconnects"'))
+    - **/etc/bluetooth/main.conf**
+    Power on Bluetooth adapter [at startup](https://askubuntu.com/questions/1065335/bluetooth-mouse-constantly-disconnects-and-reconnects)
     ```ini
     [Policy]
     AutoEnable=true
     ```
 
-**/etc/group** :material-hammer-wrench:
+#### /etc/group
 :   
     Colon-delimited file describing group membership
     ```
     $GROUP:$PASSWORD:$GID:$USER1:$USER2:$USER3...
     ```
-    /etc/resolv.conf
+
+#### /etc/resolv.conf
+:   
     Use DNS queries prior to consulting /etc/hosts
     ```sh
     nameserver dns
     nameserver files
     ```
 
-**/etc/shadow** :material-hammer-wrench:
-:   Colon-delimited file containing password hashes for every user listed in [/etc/passwd](#etc-passwd)
+#### /etc/shadow
+:   
+    Colon-delimited file containing password hashes for every user listed in [/etc/passwd](#etc-passwd)
+    
     ```
+    #  (1)       (2)         (3)      (4)  (5)  (6)     (7)      (8)
     $USERNAME:$PASSWORD:$LASTCHANGED:$MIN:$MAX:$WARN:$INACTIVE:$EXPIRE
     ```
 
-    - **$USERNAME** Login name
-    - **$PASSWORD** Encrypted password; dollar signs delimit encryption hash function ([`$1`](#etcshadow "MD5"), [`$2a`](#etcshadow "Blowfish"), [`$2y`](#etcshadow "Blowfish"), [`$5`](#etcshadow "SHA-256"), or [`$6`](#etcshaodw "SHA-512")), then salt, then hash value. After locking the account with `usermod -L`, an exclamation point `!` is placed in front of this field, making the password inoperable and locking the account.  When an account has not yet had a password set, this value is `!!`
-    - **$LASTCHANGED** Days since 01/01/1970 that password was last changed
-    - **$MIN** minimum number of days required between password changes
-    - **$MAX** maximum number of days the password is valid before user is forced to change password
-    - **$WARN** number of days the password is to expire that user is warned that password must be changed
-    - **$INACTIVE** number of days after password expires that account is disabled
-    - **$EXPIRE** days since 01/01/1970 that account is disabled
+    1. Login name
+    2. Encrypted password; dollar signs delimit encryption hash function then salt, then hash value. After locking the account with **usermod -L**, an exclamation point **!** is placed in front of this field, making the password inoperable and locking the account.  When an account has not yet had a password set, this value is **!!**
+        - $1: MD5
+        - $2a: Blowfish
+        - $2y: Blowfish
+        - $5: SHA-256
+        - $6: SHA-512, 
+    3. Days since 01/01/1970 that password was last changed
+    4. Minimum number of days required between password changes
+    5. Maximum number of days the password is valid before user is forced to change password
+    6. Number of days the password is to expire that user is warned that password must be changed
+    7. Number of days after password expires that account is disabled
+    8. Days since 01/01/1970 that account is disabled
 
 
 
@@ -173,16 +169,6 @@
 
     CoreOS automatically installs upgrades automatically without user intervention, although they can be stopped if a problem is found.
 
-
-
-**herbstluft**  [:material-play:][hObzf9ppODJU]
-:   
-    Tiling window manager with a single pool of workspaces that is shared across all monitors.
-
-
-**i3**{: #i3 }  [:material-play:][hObzf9ppODJU]
-:   
-    Perhaps the most popular tiling window manager, typically used with [polybar](polybar).
 
 **initrd**{: #initrd } ("initial RAM disk")
 :   
@@ -273,9 +259,3 @@
     By default, WSL appears to copy the Windows native hosts file at %SystemRoot%\System32\drivers\etc\hosts to the distro's /etc/hosts file.
 
 
-**xmonad**  [:material-play:][hObzf9ppODJU]
-:   
-    A tiling window manager made especially difficult to configure because the program and config is written in Haskell.
-    All monitors share the same pool of workspaces.
-    Unusually for tiling window managers, when using multiple monitors, switching to another workspace actually switches the position of that workspace with the previous one. 
-    That is, the workspace that had previously been on the active monitor is sent to the workspace being called.

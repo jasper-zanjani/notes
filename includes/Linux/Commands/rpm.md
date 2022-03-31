@@ -14,3 +14,8 @@
     ```sh
     rpm -E %fedora
     ```
+
+    Import a [keyring](#rpmkeys)
+    ```sh
+    rpm --import "https://build.opensuse.org/projects/home:manuelschneid3r/public_key"
+    ```

@@ -1,0 +1,3 @@
+- Tips for cramming: using cloze with **Unbury**
+- Using CSS classes to simulate prompts and to visually identify CSS classes with environments, like Command Prompt or Ubuntu
+- Use colors to set out various files in a project, i.e. Django
