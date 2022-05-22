@@ -14,6 +14,11 @@
     dnf install --with-optional @virtualization # Include optional packages
     ```
 
+    Remove the configuration backend supporting the use of legacy ifcfg files in NetworkManager.
+    ```sh
+    dnf remove NetworkManager-initscripts-ifcfg-rh
+    ```
+
     [**Modules**](https://docs.fedoraproject.org/en-US/modularity/using-modules/) are special package groups representing an application, runtime, or a set of tools. 
     The [Node.js module](https://nodejs.org/en/download/package-manager/#centos-fedora-and-red-hat-enterprise-linux) allows you to select several **streams** corresponding to major versions.
     ```sh

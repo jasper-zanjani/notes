@@ -48,7 +48,7 @@ The **Central Special Office (CSO)** was established in 1911 after the Coptic Pr
 When discontent exploded in 1919, and CSO couldn’t respond effectively, the Interior Ministry formed the **Special Section (SS)** to centralize intelligence collection. 
 CSO was closed and files transferred to SS in 1925.
 
-**Egyptian Military Intelligence** was being Egyptianized in the late 1930s. 
+**Egyptian Military Intelligence** was being indigenized in the late 1930s. 
 MI officers were complicit in the army coup of 23 July 1952. 
 Once the Free Officers were in power, they set about creating a new intelligence community. 
 The **Military Intelligence Directorate (MID)** as it was then called, became active in covert action and subversion across the Middle East and Africa.

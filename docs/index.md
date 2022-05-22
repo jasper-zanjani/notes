@@ -1,4 +1,5 @@
-- [C](/Coding/C/)
-- Python
-    - [PyGTK](/Python/Modules/Pygobject/)
-- [Rust](/Rust/)
+- [Rust](Rust)
+    - [Cursive](Rust/Crates/Cursive)
+- [C](Coding/C)
+- [Python](Python)
+    - [PyGTK](Python/Modules/Pygobject)

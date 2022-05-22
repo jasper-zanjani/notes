@@ -1,0 +1,1 @@
+<figure markdown style="display: block; float:right; ">![](img/Terminal.png){: width=300px}<figcaption markdown>**Focus on terminal commands**<br/>++alt+f12++</figcaption></figure>

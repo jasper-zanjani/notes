@@ -1,22 +1,20 @@
 #### gsettings
 :   
-    **gsettings** is the CLI frontend intended to support changes to GNOME application settings, stored in [dconf](#dconf-2) databases.
-    
-    Most useful subcommands require at least a "**schema**" or dconf path, like **`list-keys`**, **`list-recursively`**, **`monitor`** etc. 
-    Others like **`describe`**, **`get`**, and **`reset`** additionally require a key.
-    The subcommand **`set`** requires a key as well as a value.
+    **gsettings** is the CLI frontend intended to support changes to GNOME application settings, stored in [dconf](#dconf) databases.
 
-    Change function of [<kbd>Caps Lock</kbd>](https://superuser.com/questions/1196241/how-to-remap-caps-lock-on-wayland)
+    Change function of [++Caps Lock++](https://superuser.com/questions/1196241/how-to-remap-caps-lock-on-wayland)
     ```sh
     gsettings set org.gnome.desktop.input-sources xkb-options "['caps:ctrl_modifier']"
     ```
 
     Change [mouse cursor size](https://vitux.com/how-to-change-cursor-size-on-ubuntu-desktop/) to various sizes (valid sizes include 24, 32, 48, 64, and 96)
     ```sh
-    gsettings set org.gnome.desktop.interface cursor-size 24
+    gsettings set org.gnome.desktop.interface cursor-size 24 # (1)
     ```
 
-    Enable the GTK Inspector which can be run with <kbd>Ctrl</kbd><kbd>Shift</kbd><kbd>D</kbd>
+    1. This can also be done via GUI in **Settings** &gt; **Accessibility**.
+
+    Enable the GTK Inspector which can be run with ++Ctrl+Shift+D++
     ```sh
     gsettings set org.gtk.Settings.Debug enable-inspector-keybinding true
     ```

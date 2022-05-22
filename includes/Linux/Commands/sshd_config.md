@@ -1,4 +1,4 @@
-#### sshd_config
+#### /etc/sshd\_config
 :   
     **/etc/ssh/sshd_config** is the configuration for the SSH server daemon.
     

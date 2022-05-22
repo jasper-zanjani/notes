@@ -18,9 +18,12 @@
     Then the **showmount** command is used to confirm local shares
 
     ```sh
-    showmount -e # =>
-    # Export list for truenas.local:
-    # /public *
+    showmount -e # (1)
+    ```
+
+    1. 
+    ``` title="Export list for truenas.local"
+    /public *
     ```
 
     On TrueNAS, permissions need to be changed to allow writing.

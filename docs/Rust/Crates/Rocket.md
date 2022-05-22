@@ -1,7 +1,7 @@
 <!-- 
 
 The documentation for rocket uses some bizarre terminology which I haven't found properly explained, all of which is consistent
-with the project's astronautical theming (i.e. launch, ignite, fairing, etc).
+with the project's theme of rocketry: launch, ignite, fairing, etc.
 
 
 This includes the concept of guards, which appear to refer to using Rust types for data validation.
@@ -27,9 +27,16 @@ Other terms:
 -->
 # rocket
 
+```rs title="Boilerplate"
+use rocket::launch;
+
+#[launch]
+fn rocket() -> _ {
+    rocket::build()
+}
+```
+
 Rocket is a web framework for Rust, along the lines of Flask for Python.
-
-
 
 !!! bug "API changes"
 
@@ -38,6 +45,23 @@ Rocket is a web framework for Rust, along the lines of Flask for Python.
 
     These changes include a reorganization of some traits, such as FromForm from [request](https://docs.rs/rocket/0.4.10/rocket/request/index.html) to the new [form](https://docs.rs/rocket/0.5.0-rc.1/rocket/form/index.html) module.
 
+
+#### Fairing
+:   
+    [**Fairings**](https://rocket.rs/0.4/guide/fairings/) are Rocket's approach to structured middleware which hook into the request lifecycle and expose callbacks for events such as incoming requests and outgoing responses.
+
+    Fairings (callbacks) are **attached** (registered) to the application's Rocket instance with the `attach()` method.
+    Some structs like **Template** expose a **fairing()** method.
+
+    ```rs hl_lines="4"
+    #[launch]
+    fn rocket() -> _ {
+        rocket::build()
+            .attach(Template::fairing())
+    }
+    ```
+    
+    Fairings can be created from a function or closure using the [**AdHoc** struct](https://docs.rs/rocket/latest/rocket/fairing/struct.AdHoc.html).
 
 
 #### Pathing
@@ -106,14 +130,7 @@ Rocket is a web framework for Rust, along the lines of Flask for Python.
 
 #### Hello, World!
 :   
-    ```rs title="Boilerplate"
-    use rocket::launch;
 
-    #[launch]
-    fn rocket() -> _ {
-        rocket::build()
-    }
-    ```
 
     ```rs title="Index route"
     use rocket::{get, routes, launch}; // (3)
@@ -287,18 +304,18 @@ Rocket is a web framework for Rust, along the lines of Flask for Python.
     ```html title="index.html.hbs"
     <!doctype html>
     <html>
-    <head>
-        <title>{{msg}}</title>
-    </head>
-    <body>
-        <p>{{msg}}</p>
-    </body>
+        <head>
+            <title>{{msg}}</title>
+        </head>
+        <body>
+            <p>{{msg}}</p>
+        </body>
     </html>
     ```
 
     ```rs title="Styled template"
     use rocket::{get, routes, launch, };
-    use rocket_dyn_templates::Template;
+    use rocket_dyn_templates::Template; // (2)
     use rocket::fs::FileServer;
 
     #[derive(serde::Serialize)]
@@ -325,7 +342,7 @@ Rocket is a web framework for Rust, along the lines of Flask for Python.
     ```
 
     1. This template is themed using the Bulma CSS framework, which is served as a static file above.
-    ```html
+    ```html title="index.html.hbs"
     <!doctype html>
     <html>
       <head>
@@ -342,4 +359,8 @@ Rocket is a web framework for Rust, along the lines of Flask for Python.
         </section>
       </body>
     </html>
+    ```
+    2.  
+    ```toml title="Cargo.toml"
+    rocket_dyn_templates = { version = "0.1.0-rc.1", features = ["handlebars"], default-features = false }
     ```

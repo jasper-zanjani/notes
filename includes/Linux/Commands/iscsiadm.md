@@ -1,4 +1,6 @@
-Discover iSCSI targets
-```sh
-iscsiadm discovery
-```
+#### iscsiadm
+:   
+    Discover iSCSI targets
+    ```sh
+    iscsiadm discovery
+    ```

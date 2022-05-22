@@ -1,14 +1,11 @@
 # Django
 :   
-    <figure markdown>
-    ![](img/Explain.jpg){: align=left width=200px}
-    <figcaption>++Ctrl+F12++</figcaption>
-    </figure>
+    --8<-- "cues/Explain.md"
 
     Django is a web application framework written in Python. 
     Today I'm going to show you how to code a simple To-Do web application. 
     If you've found this video, that probably means you've already seen some of the many other popular YouTube tutorials that you how to do it. 
-    
+
     What I'll show you is how to integrate it with the Bulma CSS framework!
 
 ## Todo

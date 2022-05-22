@@ -40,6 +40,31 @@ The SSH server daemon has slightly different names on Debian and Red Hat systems
     service sshd start
     ```
 
+## Config
+
+#### $HOME/.ssh/config
+:   
+    ```yaml
+    Host home
+        HostName 192.168.1.1
+        User root
+        Port 50022
+        SetEnv BAT_THEME=OneHalfLight # (1)
+        LocalForward 8080 localhost:8080 # (2)
+    ```
+
+    1. **SetEnv** allows environment variables to be set in a remote session. However, these environment variables must be explicitly specified in the server's sshd\_config file.
+    This entry will set a specific syntax highlighting theme for use on the bat CLI utility.
+    ```ssh
+    AllowEnv BAT_THEME
+    ```
+    2. This is equivalent to the following command:
+    ```sh
+    ssh -L 8080:localhost:8080 $SERVER
+    ```
+
+--8<-- "includes/Linux/Commands/sshd_config.md"
+
 ## Tasks
 
 #### Port forwarding
@@ -73,4 +98,3 @@ The SSH server daemon has slightly different names on Debian and Red Hat systems
 
 --8<-- "includes/Linux/Commands/ssh-keygen.md"
 
---8<-- "includes/Linux/Commands/sshd_config.md"

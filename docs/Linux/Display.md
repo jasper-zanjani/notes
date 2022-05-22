@@ -1,23 +1,20 @@
 # Display
 
-## 🛠&#xfe0f; Tasks
+## Tasks
 
 --8<-- "includes/Linux/Tasks/custom-resolution.md"
 
-## 💻 Commands
+## Commands
 
 --8<-- "includes/Linux/Commands/cvt.md"
 
 ### X11
 
---8<-- "includes/Linux/Commands/X.md"
-
---8<-- "includes/Linux/Commands/xhost.md"
-
---8<-- "includes/Linux/Commands/xmodmap.md"
-
---8<-- "includes/Linux/Commands/Xorg.md"
-
---8<-- "includes/Linux/Commands/xrandr.md"
-
---8<-- "includes/Linux/Commands/xset.md"
+--8<--
+includes/Linux/Commands/X.md
+includes/Linux/Commands/xhost.md
+includes/Linux/Commands/xmodmap.md
+includes/Linux/Commands/Xorg.md
+includes/Linux/Commands/xrandr.md
+includes/Linux/Commands/xset.md
+--8<--

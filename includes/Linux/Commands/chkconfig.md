@@ -1,24 +1,21 @@
 **chkconfig**{: #chkconfig }
-:   Turn services on or off for runlevels
+:   
+    Turn services on or off for runlevels
     
-    Without arguments, `chkconfig` defaults to runlevels 3 or 5:
-    ```sh
-    chkconfig
-    ```
+    Without arguments, chkconfig defaults to runlevels 3 or 5:
+
     Display all services and runlevels
     ```sh
     chkconfig --list
     ```
-    Turn {daemon} on for runlevels 3 and 5
+
+    Turn NetworkManager on or off
     ```sh
-    chkconfig --level 35 daemon on
-    ```
-    Turn {daemon} off
-    ```sh
-    chkconfig daemon off
+    chkconfig NetworkManager on
     chkconfig NetworkManager off
     ```
-    Turn {daemon} service on
+    
+    Turn NetworkManager on for runlevels 3 and 5
     ```sh
-    chkconfig daemon on
+    chkconfig --level 35 NetworkManager on
     ```

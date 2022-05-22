@@ -114,10 +114,9 @@ Here, `enable apache` will be called if `this installs a package` makes a change
 - **/etc/ansible/hosts** defines the clients which are to be controlled by the server
 
 
-## Syntax
+## Commands
 
-
-All CLI tools use the same set of **modules**, which expose the same API.
+All CLI tools use the same set of [**modules**](#modules), which expose the same API.
 
 --8<-- "includes/Ansible/modules.md"
 
@@ -131,9 +130,27 @@ All CLI tools use the same set of **modules**, which expose the same API.
 
 --8<-- "includes/Ansible/ansible-playbook.md"
 
+## Modules
+
+--8<-- "includes/Ansible/Modules/archive.md"
+
+--8<-- "includes/Ansible/Modules/cli_config.md"
+
+--8<-- "includes/Ansible/Modules/command.md"
+
+--8<-- "includes/Ansible/Modules/copy.md"
+
+--8<-- "includes/Ansible/Modules/debug.md"
+
+--8<-- "includes/Ansible/Modules/file.md"
+
+--8<-- "includes/Ansible/Modules/git.md"
+
+--8<-- "includes/Ansible/Modules/template.md"
+
 ## Glossary
 
---8<-- "includes/Ansible/defs.md"
+--8<-- "includes/Ansible/glossary.md"
 
 ## Tasks
 

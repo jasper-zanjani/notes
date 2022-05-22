@@ -23,10 +23,9 @@
     }
     ```
 
-    1. The **derive** feature must be enabled.
+    1. **Parser** requires the **derive** and **std** features:
     ```toml title="Cargo.toml"
-    [dependencies]
-    clap = { version = "3.0.12", features = ["std", "derive"] }
+    clap = { version = "3.0.12", features = ["std", "derive"], default-features = false}
     ```
     2. Without providing arguments to version or author, the relevant values will be pulled from the crate itself, similar to the [crate\_authors](https://docs.rs/clap/latest/clap/macro.crate_version.html) and [crate\_version](https://docs.rs/clap/latest/clap/macro.crate_version.html) macros for the procedural API.
 

@@ -5,18 +5,22 @@
 
 # vim
 
+<!-- 
+
+It would be nice to develop a course about various vim configs and language definitions.
+Maybe I could extend the markdown language plugin to incorporate mkdocs and pymdownx syntax.
+
+-->
+
+
 Unlike WYSIWYG editors which optimize input for writing text, vim optimizes for editing it.
 Vim offers a **composable** language for expressing these editing changes whose syntax can be composed into two elements, **operations** and **text objects**, which are analogous to **verbs** and **nouns** in language.
 <sup>[YouTube][https://youtu.be/wlR5gYd6um0]</sup>
 
-??? info "Composability"
+The framework of understanding vim's syntax as a language appears to date back to an influential 2011 Stack Overflow [post](https://stackoverflow.com/questions/1218390/what-is-your-most-productive-shortcut-with-vim/1220118#1220118 "What is your most productive shortcut with Vim?").
 
-    The framework of understanding vim's syntax as a language appears to date back to an influential 2011 Stack Overflow [post](https://stackoverflow.com/questions/1218390/what-is-your-most-productive-shortcut-with-vim/1220118#1220118 "What is your most productive shortcut with Vim?").
-
-??? info "Config"
-
-    On Unix-derived operating systems the main config file for Vim is placed at **$HOME/.vimrc**.
-    On Windows it is placed at **$HOME/\_vimrc**.
+On Unix-derived operating systems the main config file for Vim is placed at **$HOME/.vimrc**.
+On Windows it is placed at **$HOME/\_vimrc**.
 
 ## Syntax
 
@@ -192,3 +196,17 @@ Clear custom color commands
     ```vim
     set mouse=a
     ```
+
+#### Language definition
+:   
+    Syntax highlighting for various languages are stored in **syntax files**, stored in **/usr/share/vim/vim82/syntax**.
+
+    Defining highlighting for pymdownx [snippets](https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/?h=snippet#snippets)
+
+    ```vim
+    syn match markdownPymdownxSnippet '^-\{2,}8<-\{2,} .*' " (1)
+    hi def link markdownPymdownxSnippet Error
+    ```
+
+    1. Note that the quantifier specifying at least two instances of the preceding hyphen requires the initial brace to be escaped.
+    However, the open angle bracket does not.

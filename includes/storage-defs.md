@@ -47,9 +47,9 @@
     Ext was first implemented in 1992 by Remy Card to address limitations in the MINIX filesystem, which was used to develop the first Linux kernel. 
     It could address up to 2GB of storage and handle 255-character filenames and had only one timestap per file.
 
-    - **Ext2**{ #ext2} was developed by Remy Card only a year after ext's release as a commercial-grade filesystem, influenced by BSD's Berkeley Fast File System. It was prone to corruption if the system crashed or lost power while data was being written and performance losses due to fragmentation. Nevertheless, it was quickly and widely adopted, and still used as a format for USB drives.
-    - **Ext3**{ #ext3 } was adopted by mainline Linux in 2001 and uses **journaling**, whereby disk writes are stored as transactions in a special allocation, which allows a rebooted system to roll back incomplete transactions.
-    - **Ext4**{ #ext4 } was added to mainline Linux in 2008, developed by Theodore Ts'o, and improves upon ext3 but is still reliant on old technology.
+    - **Ext2**{: #ext2} was developed by Remy Card only a year after ext's release as a commercial-grade filesystem, influenced by BSD's Berkeley Fast File System. It was prone to corruption if the system crashed or lost power while data was being written and performance losses due to fragmentation. Nevertheless, it was quickly and widely adopted, and still used as a format for USB drives.
+    - **Ext3**{: #ext3 } was adopted by mainline Linux in 2001 and uses **journaling**, whereby disk writes are stored as transactions in a special allocation, which allows a rebooted system to roll back incomplete transactions.
+    - **Ext4**{: #ext4 } was added to mainline Linux in 2008, developed by Theodore Ts'o, and improves upon ext3 but is still reliant on old technology.
 
 #### inode
 :   

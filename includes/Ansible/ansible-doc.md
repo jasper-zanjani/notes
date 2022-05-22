@@ -1,11 +1,11 @@
-Display a list of modules
+#### ansible-doc
+:   
+    Display a list of modules
+    ```sh
+    ansible-doc -l
+    ```
 
-```sh
-ansible-doc -l
-```
-
-Display information about module options
-
-```sh
-ansible-doc $MODULE
-```
+    Display information about module options
+    ```sh
+    ansible-doc $MODULE
+    ```

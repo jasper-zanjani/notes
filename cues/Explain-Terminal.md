@@ -1,0 +1,1 @@
+<figure markdown style="display: block; float:right; ">![](img/Explain-Terminal.png){: width=300px}<figcaption markdown>**Explaining terminal commands**<br/>++alt+f10++</figcaption></figure>

@@ -1,0 +1,1 @@
+<figure markdown style="display: block; float:right;">![](img/Explain.png){: width=300px}<figcaption markdown>**Explaining concepts**<br/>++f10++</figcaption></figure>

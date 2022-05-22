@@ -5,28 +5,20 @@
 
 ### PostgreSQL
 
-PostgreSQL configs **postgresql.conf** and **pg_hba.conf** are stored in various locations depending on disribution:
-
-- :material-fedora: /var/lib/pgsql/data
-- ...
+PostgreSQL configs **postgresql.conf** and **pg_hba.conf** are stored where the PostgreSQL database cluster was initialized with initdb.
+This directory can be initialized anywhere, but the default in Red Hat systems is **/var/lib/pgsql/data**.
 
 ## Tasks
 
-#### Setup PostgreSQL
+#### Setup PostgresQL
 :   
 
+    --8<-- "includes/Linux/Tasks/postgresql.md"
+
     ```sh
-    dnf install postgresql postgresql-server # (1)
-    postgresql-setup --initdb # (2)
     systemctl start postgresql
-    sudo -u postgres psql # (3)
+    sudo -u postgres psql
     ```
-
-    1. The [psql](#psql) utility is a frontend to the server, which is provided as a separate package.
-    2. This command writes to **/var/lib/pgsql/data**, so root access is certainly required.
-    Notably, the main PostgreSQL config is also located here, **/var/lib/pgql/data/postgresql.conf**.
-    3. The builtin role is named **postgres** not "postgresql".
-
 
     ```sql title="Role setup"
     CREATE ROLE username LOGIN INHERIT -- (1)
@@ -54,13 +46,19 @@ PostgreSQL configs **postgresql.conf** and **pg_hba.conf** are stored in various
 
 #### Starships
 :   
+
     ```sql
     CREATE TABLE starships (
-        name text,
-        registry text,
-        crew integer
+        name text, registry text, crew integer
     );
     ```
+
+    ```sql
+    INSERT INTO starships (name, registry, crew) 
+        VALUES ('USS Enterprise', 'NCC-1701', 400); -- (1)
+    ```
+
+    1. For some reason, a double-quote **"** produces an error, and only single-quotes are accepted.
 
 #### Cosmos DB
 :   

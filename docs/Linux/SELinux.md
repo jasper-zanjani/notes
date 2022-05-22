@@ -1,23 +1,36 @@
 # SELinux
 
-When mounting bind mount volumes to rootless containers, SELinux **labels** of the content [must be changed <sup>:material-redhat:</sup>](https://www.redhat.com/sysadmin/user-namespaces-selinux-rootless-containers).
+!!! info Resources
+
+    - [SELinux (Arch Linux Wiki)](https://wiki.archlinux.org/title/SELinux)
+
+SELinux implements **Mandatory Access Control (MAC)** in Linux, which is distinguished from traditional Linux access controls (file permission octets, the use of sudo, etc) which constitute **Discretionary Access Control (DAC)**.
+
+#### Security context
+:   
+    SELinux [**security contexts**](https://wiki.archlinux.org/title/SELinux) define access controls and are most easily understood by the linguistic paradigm in the terms **subject**, **verb**, and **object**.
+
+    ```
+    user:role:type[:level]
+    ``` 
+    
+    - **user** (subject) refers to the SELinux user identity, which can be associated with one or more roles that the SELinux user is allowed to use
+    - **role** (object) refers to the SELinux role, which can be associated to one or more types that the SELinux user is allowed to access
+    - **type** (verb) is associated with a process and defines what processes or domains the user can access
 
 
-SELinux extends existing utilities to handle SELinux contexts
-
-=== "ps"
-
-    Display SELinux contexts for processes
-    ```sh
-    ps auxZ
+    ```sh title="SELinux extends existing utilities to handle contexts"
+    ps auxZ # (1)
+    ls -Z # (2)
     ```
 
-=== "ls"
+    1. Display SELinux contexts for processes
+    2. Display SELinux context for files
 
-    Display SELinux context for files
-    ```sh
-    ls -Z
-    ```
+#### Labels
+:   
+    When mounting bind mount volumes to rootless containers, SELinux **labels** of the content [must be changed](https://www.redhat.com/sysadmin/user-namespaces-selinux-rootless-containers).
+
 
 ## Tasks
 
