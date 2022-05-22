@@ -1,0 +1,4513 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://jasper-zanjani.github.io/notes/Linux/Filters/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.9">
+    
+    
+      
+        <title>Commands - 🧠</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.120efc48.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.9647289d.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#ffc105">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../style/admonitions-gcp.css">
+    
+      <link rel="stylesheet" href="../../style/admonitions-azure.css">
+    
+      <link rel="stylesheet" href="../../style/admonitions-aws.css">
+    
+      <link rel="stylesheet" href="../../style/admonitions-rs.css">
+    
+      <link rel="stylesheet" href="../../style/admonitions-cs.css">
+    
+      <link rel="stylesheet" href="../../style/admonitions-cpp.css">
+    
+      <link rel="stylesheet" href="../../style/admonitions-cisco.css">
+    
+      <link rel="stylesheet" href="../../style/admonitions-py.css">
+    
+      <link rel="stylesheet" href="../../style/admonitions-output.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="amber" data-md-color-accent="yellow">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#commands" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="🧠" class="md-header__button md-logo" aria-label="🧠" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            🧠
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Commands
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Coding/" class="md-tabs__link">
+        Coding
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../GTK/" class="md-tabs__link">
+        GTK
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Health/" class="md-tabs__link">
+        Health
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Infrastructure/Ansible/" class="md-tabs__link">
+        Infrastructure
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../" class="md-tabs__link md-tabs__link--active">
+        Linux
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Misc/" class="md-tabs__link">
+        Misc
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Python/" class="md-tabs__link">
+        Python
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Rust/" class="md-tabs__link">
+        Rust
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Scripts/" class="md-tabs__link">
+        Scripts
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="🧠" class="md-nav__button md-logo" aria-label="🧠" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    🧠
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" data-md-state="indeterminate" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Coding
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Coding" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Coding
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Coding/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Coding/6502/" class="md-nav__link">
+        6502
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Coding/C%23/" class="md-nav__link">
+        C&#35;
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Coding/C%2B%2B/" class="md-nav__link">
+        C++
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Coding/C/" class="md-nav__link">
+        C
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Coding/CS/" class="md-nav__link">
+        MSCS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Coding/Courses/" class="md-nav__link">
+        Courses
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Coding/Debugging/" class="md-nav__link">
+        Debugging
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Coding/DnD/" class="md-nav__link">
+        🐲&#xFE0F;  Dungeons & Dragons
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Coding/Dogfood/" class="md-nav__link">
+        🐶 Dogfood data
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Coding/GUI/" class="md-nav__link">
+        🖥&#xFE0F; GUI frameworks comparison
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Coding/Others/" class="md-nav__link">
+        🦪 Perl
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Coding/Python/" class="md-nav__link">
+        🐍 Python
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Coding/Testing/" class="md-nav__link">
+        Testing
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Coding/Windows/" class="md-nav__link">
+        Windows programming
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Coding/Wired%20Brain%20Coffee/" class="md-nav__link">
+        ☕ Wired Brain Coffee
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_17" data-md-state="indeterminate" type="checkbox" id="__nav_2_17" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_17">
+          WinUI
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="WinUI" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_17">
+          <span class="md-nav__icon md-icon"></span>
+          WinUI
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Coding/WinUI/" class="md-nav__link">
+        WinUI
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Coding/WinUI/API/" class="md-nav__link">
+        API
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" data-md-state="indeterminate" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          GTK
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="GTK" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          GTK
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GTK/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GTK/API/" class="md-nav__link">
+        API
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GTK/Glade/" class="md-nav__link">
+        Glade
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GTK/Glossary/" class="md-nav__link">
+        📘 Glossary
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_5" data-md-state="indeterminate" type="checkbox" id="__nav_3_5" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_5">
+          Examples
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Examples" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_5">
+          <span class="md-nav__icon md-icon"></span>
+          Examples
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GTK/Examples/GNOME-Tweaks/" class="md-nav__link">
+        GNOME Tweaks
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_6" data-md-state="indeterminate" type="checkbox" id="__nav_3_6" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_6">
+          Tasks
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Tasks" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_6">
+          <span class="md-nav__icon md-icon"></span>
+          Tasks
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GTK/Tasks/Boilerplate/" class="md-nav__link">
+        Boilerplate
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GTK/Tasks/Environment/" class="md-nav__link">
+        Development environment
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GTK/Tasks/Hello-World/" class="md-nav__link">
+        Hello, World!
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GTK/Tasks/Image-Viewer/" class="md-nav__link">
+        Image Viewer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GTK/Tasks/Starships/" class="md-nav__link">
+        Starships
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GTK/Tasks/Tasks/" class="md-nav__link">
+        Tasks
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" data-md-state="indeterminate" type="checkbox" id="__nav_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Health
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Health" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Health
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Health/" class="md-nav__link">
+        💊 Health
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" data-md-state="indeterminate" type="checkbox" id="__nav_5" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Infrastructure
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Infrastructure" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Infrastructure
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Infrastructure/Ansible/" class="md-nav__link">
+        Ansible
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Infrastructure/Certifications/" class="md-nav__link">
+        🥇 Certifications
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Infrastructure/Cloud/" class="md-nav__link">
+        Cloud
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Infrastructure/Network/" class="md-nav__link">
+        Network
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_5" data-md-state="indeterminate" type="checkbox" id="__nav_5_5" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_5">
+          Cloud
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Cloud" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_5">
+          <span class="md-nav__icon md-icon"></span>
+          Cloud
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Infrastructure/Cloud/GCP/" class="md-nav__link">
+        Google Cloud Platform
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Infrastructure/Cloud/Tasks/" class="md-nav__link">
+        Tasks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_5_3" data-md-state="indeterminate" type="checkbox" id="__nav_5_5_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_5_3">
+          Azure
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Azure" data-md-level="3">
+        <label class="md-nav__title" for="__nav_5_5_3">
+          <span class="md-nav__icon md-icon"></span>
+          Azure
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Infrastructure/Cloud/Azure/ARM/" class="md-nav__link">
+        ARM
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Infrastructure/Cloud/Azure/Azure-AD/" class="md-nav__link">
+        Azure AD
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Infrastructure/Cloud/Azure/Azure-App-Service/" class="md-nav__link">
+        Azure App Service
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Infrastructure/Cloud/Azure/Azure-Backup/" class="md-nav__link">
+        Azure Backup
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Infrastructure/Cloud/Azure/Azure-File-Service/" class="md-nav__link">
+        Azure File Service
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Infrastructure/Cloud/Azure/Azure-IAM/" class="md-nav__link">
+        Azure IAM
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Infrastructure/Cloud/Azure/Azure-IaaS/" class="md-nav__link">
+        Azure IaaS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Infrastructure/Cloud/Azure/Azure-Load-Balancer/" class="md-nav__link">
+        Azure Load Balancer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Infrastructure/Cloud/Azure/Azure-Monitoring/" class="md-nav__link">
+        Azure Monitoring
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Infrastructure/Cloud/Azure/Azure-Policy/" class="md-nav__link">
+        Azure Policy
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Infrastructure/Cloud/Azure/Azure-Storage/" class="md-nav__link">
+        Azure Storage
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Infrastructure/Cloud/Azure/Azure-VPN/" class="md-nav__link">
+        Azure VPN
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Infrastructure/Cloud/Azure/Kusto/" class="md-nav__link">
+        Kusto
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          Linux
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Linux" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Linux
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Cgroups/" class="md-nav__link">
+        Cgroups
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Concurrency/" class="md-nav__link">
+        Concurrency
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Databases/" class="md-nav__link">
+        Databases
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Display/" class="md-nav__link">
+        Display
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Files/" class="md-nav__link">
+        Files
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Commands
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Commands
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#awk" class="md-nav__link">
+    awk
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grep" class="md-nav__link">
+    grep
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#head" class="md-nav__link">
+    head
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#paste" class="md-nav__link">
+    paste
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sed" class="md-nav__link">
+    sed
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#watch" class="md-nav__link">
+    watch
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GNOME/" class="md-nav__link">
+        GNOME
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GRUB/" class="md-nav__link">
+        Boot
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Kernel/" class="md-nav__link">
+        Kernel
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Package/" class="md-nav__link">
+        Package management
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Random/" class="md-nav__link">
+        Random
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Red-Hat/" class="md-nav__link">
+        Red Hat :material-redhat:
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Ricing/" class="md-nav__link">
+        Tiling window managers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SELinux/" class="md-nav__link">
+        SELinux
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Shell/" class="md-nav__link">
+        Shells
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Storage/" class="md-nav__link">
+        Storage
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SystemD/" class="md-nav__link">
+        SystemD
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Ubuntu/" class="md-nav__link">
+        Ubuntu
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Virtualization/" class="md-nav__link">
+        Virtualization
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_21" data-md-state="indeterminate" type="checkbox" id="__nav_6_21" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_21">
+          Applications
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Applications" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_21">
+          <span class="md-nav__icon md-icon"></span>
+          Applications
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Applications/Rhythmbox/" class="md-nav__link">
+        Rhythmbox
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Applications/ffmpeg/" class="md-nav__link">
+        ffmpeg
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Applications/nginx/" class="md-nav__link">
+        Nginx
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Applications/screen/" class="md-nav__link">
+        screen
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Applications/ssh/" class="md-nav__link">
+        SSH
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Applications/syncthing/" class="md-nav__link">
+        Syncthing
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Applications/vim/" class="md-nav__link">
+        Vim
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Applications/youtube-dl/" class="md-nav__link">
+        Youtube dl
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_22" data-md-state="indeterminate" type="checkbox" id="__nav_6_22" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_22">
+          Containers
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Containers" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_22">
+          <span class="md-nav__icon md-icon"></span>
+          Containers
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Containers/" class="md-nav__link">
+        Containers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Containers/Docker/" class="md-nav__link">
+        Docker
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Containers/Helm/" class="md-nav__link">
+        Helm
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Containers/Kubernetes/" class="md-nav__link">
+        Kubernetes
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_23" data-md-state="indeterminate" type="checkbox" id="__nav_6_23" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_23">
+          Networking
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Networking" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_23">
+          <span class="md-nav__icon md-icon"></span>
+          Networking
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Networking/" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Networking/Commands/" class="md-nav__link">
+        Commands
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Networking/Samba/" class="md-nav__link">
+        Samba
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Networking/Tasks/" class="md-nav__link">
+        Tasks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Networking/eBPF/" class="md-nav__link">
+        eBPF
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" data-md-state="indeterminate" type="checkbox" id="__nav_7" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          Misc
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Misc" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Misc
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Aircraft/" class="md-nav__link">
+        ✈&#xfe0f; Aircraft
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Akro-Mils/" class="md-nav__link">
+        Akro-Mils
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/CI-CD/" class="md-nav__link">
+        CI/CD
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Computers/" class="md-nav__link">
+        Computers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Diaz/" class="md-nav__link">
+        Joey Diaz
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Intelligence/" class="md-nav__link">
+        🔎 Intelligence
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Lab/" class="md-nav__link">
+        Home lab
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Military/" class="md-nav__link">
+        Military
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Space/" class="md-nav__link">
+        🚀 Space
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Storage/" class="md-nav__link">
+        Storage
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/TrueNAS/" class="md-nav__link">
+        TrueNAS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/bittorrent/" class="md-nav__link">
+        BitTorrent
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/cryptocurrency/" class="md-nav__link">
+        🪙 Cryptocurrency
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/learn/" class="md-nav__link">
+        Learning
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/pins/" class="md-nav__link">
+        Lapel pin ideas
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_17" data-md-state="indeterminate" type="checkbox" id="__nav_7_17" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_17">
+          Text editors
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Text editors" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_17">
+          <span class="md-nav__icon md-icon"></span>
+          Text editors
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Text-editors/code/" class="md-nav__link">
+        VS Code
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_18" data-md-state="indeterminate" type="checkbox" id="__nav_7_18" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_18">
+          Web
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Web" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_18">
+          <span class="md-nav__icon md-icon"></span>
+          Web
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Web/" class="md-nav__link">
+        🌎 Web
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Web/CSS/" class="md-nav__link">
+        CSS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Web/mkdocs/" class="md-nav__link">
+        Mkdocs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_18_4" data-md-state="indeterminate" type="checkbox" id="__nav_7_18_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_18_4">
+          JavaScript
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="JavaScript" data-md-level="3">
+        <label class="md-nav__title" for="__nav_7_18_4">
+          <span class="md-nav__icon md-icon"></span>
+          JavaScript
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Web/JavaScript/" class="md-nav__link">
+        Axios
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Web/JavaScript/Express/" class="md-nav__link">
+        Express
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Web/JavaScript/React/" class="md-nav__link">
+        React
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Web/JavaScript/Web%20Components/" class="md-nav__link">
+        Web Components
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_19" data-md-state="indeterminate" type="checkbox" id="__nav_7_19" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_19">
+          Windows
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Windows" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_19">
+          <span class="md-nav__icon md-icon"></span>
+          Windows
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Windows/" class="md-nav__link">
+        Windows
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Windows/Active%20Directory/" class="md-nav__link">
+        Active Directory
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Windows/DNS-labs/" class="md-nav__link">
+        DNS labs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Windows/Hyper-V/" class="md-nav__link">
+        Hyper-V
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Windows/Labs/" class="md-nav__link">
+        Labs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Windows/PowerShell/" class="md-nav__link">
+        🐚 PowerShell
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Windows/WDS-lab/" class="md-nav__link">
+        WDS lab
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Windows/WS2016/" class="md-nav__link">
+        Windows Server
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Windows/diskpart/" class="md-nav__link">
+        Diskpart
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" data-md-state="indeterminate" type="checkbox" id="__nav_8" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8">
+          Python
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Python" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Python
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/" class="md-nav__link">
+        🐍 Python
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_2" data-md-state="indeterminate" type="checkbox" id="__nav_8_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8_2">
+          Modules
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Modules" data-md-level="2">
+        <label class="md-nav__title" for="__nav_8_2">
+          <span class="md-nav__icon md-icon"></span>
+          Modules
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Argparse/" class="md-nav__link">
+        Argparse
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Asyncio/" class="md-nav__link">
+        Asyncio
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Azure.cosmos/" class="md-nav__link">
+        Azure.cosmos
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Bullet/" class="md-nav__link">
+        Bullet
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Click/" class="md-nav__link">
+        Click
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Collections/" class="md-nav__link">
+        Collections
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Colorama/" class="md-nav__link">
+        Colorama
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Csv/" class="md-nav__link">
+        Csv
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Datetime/" class="md-nav__link">
+        Datetime
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Discord_py/" class="md-nav__link">
+        discord.py
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Django/" class="md-nav__link">
+        Django
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Dotenv/" class="md-nav__link">
+        Dotenv
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/FastAPI/" class="md-nav__link">
+        FastAPI
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Functools/" class="md-nav__link">
+        Functools
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Glob/" class="md-nav__link">
+        Glob
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Heapq/" class="md-nav__link">
+        Heapq
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Http/" class="md-nav__link">
+        http
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Itertools/" class="md-nav__link">
+        itertools
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Json/" class="md-nav__link">
+        Json
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Logging/" class="md-nav__link">
+        Logging
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Npyscreen/" class="md-nav__link">
+        Npyscreen
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Optparse/" class="md-nav__link">
+        optparse
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Os/" class="md-nav__link">
+        os
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Pygobject/" class="md-nav__link">
+        Pygobject
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Pyinstaller/" class="md-nav__link">
+        Pyinstaller
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Pythonnet/" class="md-nav__link">
+        pythonnet
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Random/" class="md-nav__link">
+        random
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Scrapy/" class="md-nav__link">
+        scrapy
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Setuptools/" class="md-nav__link">
+        setuptools
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Socket/" class="md-nav__link">
+        socket
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Sqlite3/" class="md-nav__link">
+        sqlite3
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Subprocess/" class="md-nav__link">
+        subprocess
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Sys/" class="md-nav__link">
+        sys
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Tabulate/" class="md-nav__link">
+        Tabulate
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Termcolor/" class="md-nav__link">
+        termcolor
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Threading/" class="md-nav__link">
+        threading
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Weakref/" class="md-nav__link">
+        Weakref
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Winrm/" class="md-nav__link">
+        Winrm
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Xml/" class="md-nav__link">
+        xml
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Yaml/" class="md-nav__link">
+        Yaml
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" data-md-state="indeterminate" type="checkbox" id="__nav_9" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9">
+          Rust
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Rust" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Rust
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/Cargo/" class="md-nav__link">
+        Cargo
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/Combinators/" class="md-nav__link">
+        Combinators
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/Crates/" class="md-nav__link">
+        Modules
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/Error/" class="md-nav__link">
+        Error handling
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/Glossary/" class="md-nav__link">
+        Glossary
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/Scratchpad/" class="md-nav__link">
+        Scratchpad
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_8" data-md-state="indeterminate" type="checkbox" id="__nav_9_8" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9_8">
+          Crates
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Crates" data-md-level="2">
+        <label class="md-nav__title" for="__nav_9_8">
+          <span class="md-nav__icon md-icon"></span>
+          Crates
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/Crates/Actix/" class="md-nav__link">
+        actix
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/Crates/Clap/" class="md-nav__link">
+        clap
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/Crates/Failure/" class="md-nav__link">
+        failure
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/Crates/Gtk-rs/" class="md-nav__link">
+        gtk-rs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/Crates/Rnd/" class="md-nav__link">
+        rnd
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/Crates/Rocket/" class="md-nav__link">
+        Rocket
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/Crates/Rusqlite/" class="md-nav__link">
+        rusqlite
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/Crates/Serde/" class="md-nav__link">
+        serde
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/Crates/Structopt/" class="md-nav__link">
+        structopt
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_8_10" data-md-state="indeterminate" type="checkbox" id="__nav_9_8_10" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9_8_10">
+          Cursive
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Cursive" data-md-level="3">
+        <label class="md-nav__title" for="__nav_9_8_10">
+          <span class="md-nav__icon md-icon"></span>
+          Cursive
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/Crates/Cursive/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/Crates/Cursive/API/" class="md-nav__link">
+        API
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/Crates/Cursive/Tasks/" class="md-nav__link">
+        Tasks
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_8_11" data-md-state="indeterminate" type="checkbox" id="__nav_9_8_11" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9_8_11">
+          Diesel
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Diesel" data-md-level="3">
+        <label class="md-nav__title" for="__nav_9_8_11">
+          <span class="md-nav__icon md-icon"></span>
+          Diesel
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/Crates/Diesel/" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/Crates/Diesel/Tasks/" class="md-nav__link">
+        Tasks
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_9" data-md-state="indeterminate" type="checkbox" id="__nav_9_9" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9_9">
+          Tasks
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Tasks" data-md-level="2">
+        <label class="md-nav__title" for="__nav_9_9">
+          <span class="md-nav__icon md-icon"></span>
+          Tasks
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/Tasks/" class="md-nav__link">
+        Boilerplate
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/Tasks/Hello-World/" class="md-nav__link">
+        Hello, World!
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/Tasks/Mathematics/" class="md-nav__link">
+        Mathematics
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/Tasks/Porting-grep/" class="md-nav__link">
+        grep ports
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/Tasks/To-Do/" class="md-nav__link">
+        To-Do
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/Tasks/Transactions/" class="md-nav__link">
+        Transactions
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" data-md-state="indeterminate" type="checkbox" id="__nav_10" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_10">
+          Scripts
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Scripts" data-md-level="1">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          Scripts
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Scripts/" class="md-nav__link">
+        Video scripts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Scripts/Anki/" class="md-nav__link">
+        Anki
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Scripts/CSharp/" class="md-nav__link">
+        CSharp
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Scripts/Django/" class="md-nav__link">
+        Django
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Scripts/Kusto/" class="md-nav__link">
+        Kusto
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Scripts/Rust/" class="md-nav__link">
+        Rust
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Scripts/SQLite/" class="md-nav__link">
+        SQLite
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10_8" data-md-state="indeterminate" type="checkbox" id="__nav_10_8" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_10_8">
+          Discord
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Discord" data-md-level="2">
+        <label class="md-nav__title" for="__nav_10_8">
+          <span class="md-nav__icon md-icon"></span>
+          Discord
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Scripts/Discord/Discord.article/" class="md-nav__link">
+        Discord.article
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Scripts/Discord/Discord/" class="md-nav__link">
+        Discord
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="commands">Commands</h1>
+<h4 id="awk">awk</h4>
+<dl>
+<dd>
+<p>awk <strong>programs</strong> are equivalent to <strong>sed</strong> "instructions" can be defined <strong>inline</strong> or in a <strong>program file</strong> (also sometimes called source files). If no input files are specified awk can accept input from STDIN.</p>
+<div class="highlight"><span class="filename">Inline</span><pre><span></span><code>awk <span class="nv">$OPTIONS</span> <span class="nv">$PROGRAM</span> <span class="nv">$INPUTFILES</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">Program file</span><pre><span></span><code>awk <span class="nv">$OPTIONS</span> -f <span class="nv">$PROGRAMFILE</span> <span class="nv">$INPUTFILES</span>
+</code></pre></div>
+<p>awk programs combine <strong>patterns</strong> and <strong>actions</strong></p>
+<p>Patterns can be:</p>
+<ul>
+<li>regular expressions or fixed strings</li>
+<li>line numbers using builtin variable <code>NR</code></li>
+<li>predefined patterns <code>BEGIN</code> or <code>END</code>, whose actions are executed before and after processing any lines of the data file, respectively</li>
+</ul>
+<p>Convert ":" to newlines in <strong>$PATH</strong> environment variable
+<div class="highlight"><pre><span></span><code><span class="nb">echo</span> <span class="nv">$PATH</span> <span class="p">|</span> awk <span class="s1">&#39;BEGIN {RS=&quot;:&quot;} {print}&#39;</span>
+</code></pre></div></p>
+<p>Print the first field of all files in the current directory, taking semicolon <code>;</code> as the field separator, outputting filename, line number, and first field of matches, with colon <code>:</code> between the filename and line number
+<div class="highlight"><pre><span></span><code>awk <span class="s1">&#39;BEGIN {FS=&quot;;&quot;} /enable/ {print FILENAME &quot;:&quot; FNR,$1}&#39;</span> *
+</code></pre></div>
+search for string <code>MA</code> in all files, outputting filename, line, and line number for matches
+<div class="highlight"><pre><span></span><code>awk <span class="err">&#39;</span>/MA/ <span class="o">{</span><span class="nv">OFS</span><span class="o">=</span><span class="s2">&quot; &quot;</span> print FILENAME OFS FNR OFS <span class="nv">$0</span><span class="o">}</span> *
+</code></pre></div>
+change field separator (<code>FS</code>) to a colon (<code>:</code>) and run <code>awkscr</code>
+<div class="highlight"><pre><span></span><code>awk -F: -f awkscr /etc/passwd
+</code></pre></div>
+flag also works for awk
+<div class="highlight"><pre><span></span><code>awk -f script files<span class="sb">`</span> <span class="sb">`</span>-f
+</code></pre></div>
+print the first field of each line in the input file
+<div class="highlight"><pre><span></span><code>awk <span class="s1">&#39;{ print $1 }&#39;</span> list
+</code></pre></div>
+equivalent to <code>grep MA *</code> (<code>{print}</code> is implied)
+<div class="highlight"><pre><span></span><code>awk <span class="s1">&#39;/MA/&#39;</span> * <span class="p">|</span> awk <span class="s1">&#39;/MA/ {print}&#39;</span> *
+</code></pre></div>
+<code>-F</code> flag is followed by field separator
+<div class="highlight"><pre><span></span><code>awk -F, <span class="s1">&#39;/MA/ { print $1 }&#39;</span> list
+</code></pre></div>
+pipe output of <code>free</code> to <code>awk</code> to get free memory and total memory
+<div class="highlight"><pre><span></span><code>free -h <span class="p">|</span> awk <span class="err">&#39;</span>/^Mem<span class="p">|</span>/ <span class="o">{</span>print <span class="nv">$3</span> <span class="s2">&quot;/&quot;</span> <span class="nv">$2</span><span class="o">}</span>
+</code></pre></div>
+pipe output of <code>sensors</code> to <code>awk</code> to get CPU temperature
+<div class="highlight"><pre><span></span><code>sensors <span class="p">|</span> awk <span class="err">&#39;</span>/^temp1/ <span class="o">{</span>print <span class="nv">$2</span><span class="o">}</span>
+</code></pre></div>
+replace initial "fake." with "real;" in file <code>fake_isbn</code>
+<div class="highlight"><pre><span></span><code>awk <span class="s1">&#39;sub(^fake.,&quot;real;&quot;)&#39;</span> fake_isbn
+</code></pre></div>
+print all lines
+<div class="highlight"><pre><span></span><code>awk <span class="s1">&#39;1 { print }&#39;</span> file
+</code></pre></div>
+remove file header
+<div class="highlight"><pre><span></span><code>awk <span class="s1">&#39;NR&gt;1&#39;</span> file
+</code></pre></div>
+remove file header
+<div class="highlight"><pre><span></span><code>awk <span class="err">&#39;</span>NR&gt;1 <span class="o">{</span> print <span class="o">}</span> file
+</code></pre></div>
+print lines in a range
+<div class="highlight"><pre><span></span><code>awk <span class="s1">&#39;NR&gt;1 &amp;&amp; NR &lt; 4&#39;</span> file
+</code></pre></div>
+remove whitespace-only lines
+<div class="highlight"><pre><span></span><code>awk <span class="s1">&#39;NF&#39;</span> file
+</code></pre></div>
+remove all blank lines
+<div class="highlight"><pre><span></span><code>awk <span class="s1">&#39;1&#39;</span> <span class="nv">RS</span><span class="o">=</span><span class="s1">&#39;&#39;</span> file
+</code></pre></div>
+extract fields
+<div class="highlight"><pre><span></span><code>awk <span class="s1">&#39;{ print $1, $3}&#39;</span> <span class="nv">FS</span><span class="o">=</span>, <span class="nv">OFS</span><span class="o">=</span>, file
+</code></pre></div>
+perform column-wise calculations
+<div class="highlight"><pre><span></span><code>awk <span class="s1">&#39;{ SUM=SUM+$1 } END { print SUM }&#39;</span> <span class="nv">FS</span><span class="o">=</span>, <span class="nv">OFS</span><span class="o">=</span>, file
+</code></pre></div>
+count the number of nonempty lines
+<div class="highlight"><pre><span></span><code>awk <span class="s1">&#39;/./ { COUNT+=1 } END { print COUNT }&#39;</span> file
+</code></pre></div>
+count the number of nonempty lines
+<div class="highlight"><pre><span></span><code>awk <span class="s1">&#39;NF { COUNT+=1 } END { print COUNT }&#39;</span> file
+</code></pre></div>
+count the number of nonempty lines
+<div class="highlight"><pre><span></span><code>awk <span class="s1">&#39;+$1 { COUNT+=1 } END { print COUNT }&#39;</span> file
+</code></pre></div>
+Arrays
+<div class="highlight"><pre><span></span><code>awk <span class="s1">&#39;+$1 { CREDITS[$3]+=$1 } END { for (NAME in CREDITS) print NAME, CREDITS[NAME] }&#39;</span> <span class="nv">FS</span><span class="o">=</span>, file
+</code></pre></div>
+Identify duplicate lines
+<div class="highlight"><pre><span></span><code>awk <span class="s1">&#39;a[$0]++&#39;</span> file
+</code></pre></div>
+Remove duplicate lines
+<div class="highlight"><pre><span></span><code>awk <span class="s1">&#39;!a[$0]++&#39;</span> file
+</code></pre></div>
+Remove multiple spaces
+<div class="highlight"><pre><span></span><code>awk <span class="s1">&#39;$1=$1&#39;</span> file
+</code></pre></div>
+Join lines
+<div class="highlight"><pre><span></span><code>awk <span class="s1">&#39;{ print $3 }&#39;</span> <span class="nv">FS</span><span class="o">=</span>, <span class="nv">ORS</span><span class="o">=</span><span class="s1">&#39; &#39;</span> file<span class="p">;</span> <span class="nb">echo</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>awk <span class="s1">&#39;+$1 { SUM+=$1; NUM+=1 } END { printf(&quot;AVG=%f&quot;,SUM/NUM); }&#39;</span> <span class="nv">FS</span><span class="o">=</span>, file<span class="sb">`</span> <span class="p">|</span> format 
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>awk <span class="s1">&#39;+$1 { SUM+=$1; NUM+=1 } END { printf(&quot;AVG=%6.1f&quot;,SUM/NUM); }&#39;</span> <span class="nv">FS</span><span class="o">=</span>, file
+</code></pre></div>
+Convert to uppercase 
+<div class="highlight"><pre><span></span><code>awk <span class="s1">&#39;$3 { print toupper($0); }&#39;</span> file
+</code></pre></div>
+Change part of a string
+<div class="highlight"><pre><span></span><code>awk <span class="s1">&#39;{ $3 = toupper(substr($3,1,1)) substr($3,2) } $3&#39;</span> <span class="nv">FS</span><span class="o">=</span>, <span class="nv">OFS</span><span class="o">=</span>, file
+</code></pre></div>
+Split the second field ("EXPDATE") by spaces, storing the result into the array DATE; then print credits ($1) and username ($3) as well as the month (DATE[2]) and year (DATE[3]) 
+<div class="highlight"><pre><span></span><code>awk <span class="s1">&#39;+$1 { split($2, DATE, &quot; &quot;); print $1,$3, DATE[2], DATE[3] }&#39;</span> <span class="nv">FS</span><span class="o">=</span>, <span class="nv">OFS</span><span class="o">=</span>, file
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>awk <span class="s1">&#39;+$1 { split($4, GRP, &quot;:&quot;); print $3, GRP[1], GRP[2] }&#39;</span> <span class="nv">FS</span><span class="o">=</span>, file
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>awk <span class="s1">&#39;+$1 { split($4, GRP, /:+/); print $3, GRP[1], GRP[2] }&#39;</span> <span class="nv">FS</span><span class="o">=</span>, file
+</code></pre></div>
+Search and replace with comma 
+<div class="highlight"><pre><span></span><code>awk <span class="s1">&#39;+$1 { gsub(/ +/, &quot;-&quot;, $2); print }&#39;</span> <span class="nv">FS</span><span class="o">=</span>, file
+</code></pre></div>
+Adding date 
+<div class="highlight"><pre><span></span><code>awk <span class="s1">&#39;BEGIN { printf(&quot;UPDATED: &quot;); system(&quot;date&quot;) } /^UPDATED:/ { next } 1&#39;</span> file
+</code></pre></div>
+Modify a field externally 
+<div class="highlight"><pre><span></span><code>awk <span class="s1">&#39;+$1 { CMD | getline $5; close(CMD); print }&#39;</span> <span class="nv">CMD</span><span class="o">=</span><span class="s2">&quot;uuid -v4&quot;</span> <span class="nv">FS</span><span class="o">=</span>, <span class="nv">OFS</span><span class="o">=</span>, file
+</code></pre></div>
+Invoke dynamically generated command
+<div class="highlight"><pre><span></span><code>awk <span class="s1">&#39;+$1 { cmd = sprintf(FMT, $2); cmd | getline $2; close(cmd); print }&#39;</span> <span class="nv">FMT</span><span class="o">=</span><span class="s1">&#39;date -I -d &quot;%s&quot;&#39;</span>  <span class="nv">FS</span><span class="o">=</span>, file
+</code></pre></div>
+Join data
+<div class="highlight"><pre><span></span><code>awk <span class="s1">&#39;+$1 { CMD | getline $5; print }&#39;</span> <span class="nv">CMD</span><span class="o">=</span><span class="s1">&#39;od -vAn -w4 -t x /dev/urandom&#39;</span> <span class="nv">FS</span><span class="o">=</span>, file
+</code></pre></div>
+Add up all first records to {sum}, then print that number out at the end
+<div class="highlight"><pre><span></span><code>awk <span class="s1">&#39;{sum += $1} END {print sum}&#39;</span> file
+</code></pre></div></p>
+</dd>
+</dl>
+<h4 id="grep">grep</h4>
+<dl>
+<dd><div class="highlight"><pre><span></span><code>grep -R <span class="nv">$TEXT</span> <span class="nv">$DIRECTORY</span>
+</code></pre></div></dd>
+</dl>
+<h4 id="head">head</h4>
+<dl>
+<dd>Print first 8 characters of <code>$FILE</code>
+<div class="highlight"><pre><span></span><code>head -c8 <span class="nv">$FILE</span>
+</code></pre></div></dd>
+</dl>
+<h4 id="paste">paste</h4>
+<dl>
+<dd>
+<p>Merge lines of files</p>
+<p>Make a .csv file from two lists
+<div class="highlight"><pre><span></span><code>paste -d <span class="s1">&#39;,&#39;</span> file1 file2
+</code></pre></div>
+Transpose rows
+<div class="highlight"><pre><span></span><code>paste -s file1 file2
+</code></pre></div></p>
+</dd>
+</dl>
+<h4 id="sed">sed</h4>
+<dl>
+<dd>
+<p><strong>sed</strong> ("Stream-oriented editor") is typically used for applying repetitive edits across all lines of multiple files. In particular it is, alongside <code>awk</code> one of the two primary commands which accept regular expressions in Unix systems. </p>
+<p>sed instructions can be defined <strong>inline</strong> or in a <strong>command file</strong> (i.e. script).</p>
+<div class="highlight"><span class="filename">Inline</span><pre><span></span><code>sed <span class="nv">$OPTIONS</span> <span class="nv">$INSTRUCTION</span> <span class="nv">$FILE</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">Command file</span><pre><span></span><code>sed <span class="nv">$OPTIONS</span> -f <span class="nv">$SCRIPT</span> <span class="nv">$FILE</span>
+</code></pre></div>
+<p>sed instructions are made of two components: <strong>addresses</strong> (i.e. patterns) and
+<strong>procedures</strong> (i.e. actions).</p>
+<p>Run sed commands in <code>$SCRIPT</code> on <code>$FILE</code></p>
+<p><div class="highlight"><pre><span></span><code>sed -f <span class="nv">$SCRIPT</span> <span class="nv">$FILE</span>
+</code></pre></div>
+Suppress automatic printing of pattern space
+<div class="highlight"><pre><span></span><code>sed -n <span class="c1"># --quiet , --silent</span>
+</code></pre></div></p>
+<p>Zero, one, or two addresses can precede a procedure. In the absence of an address, the procedure is executed over every line of input. With one address, the procedure will be executed over every line of input that matches.</p>
+<p>With two addresses, the procedure will be executed over groups of lines whereby:</p>
+<ul>
+<li>The first address selects the first line in the first group</li>
+<li>The second address selects the next subsequent line that it matches, which becomes the last line in the first group</li>
+<li>If no match for the second address is found, it point to the end of the file</li>
+<li>After the match, the selection process for the next group begins by searching for a match to the first address</li>
+</ul>
+<p>Addressing can be done in one of two ways:</p>
+<ul>
+<li><strong>Line addressing</strong>, specifying line numbers separated by a comma (e.g. <code>3,7p</code>); <code>$</code> represents the last line of input</li>
+<li><strong>Context addressing</strong>, using a regular expression enclosed by forward slashes (e.g. <code>/From:/p</code>)</li>
+</ul>
+<p>Edit the file in-place, but save a backup copy of the original with {suffix} appended to - the filename
+<div class="highlight"><pre><span></span><code>-i<span class="o">=</span>suffix
+</code></pre></div></p>
+<p>In some circles, sed is recommended as a replacement for other filters like <a href="/Linux/Filters/Commands#head">head</a>.
+Here, the first 10 lines of a file are displayed.
+<div class="highlight"><pre><span></span><code>sed 10q <span class="nv">$FILE</span>
+</code></pre></div></p>
+<p>Display the top 10 processes by memory or cpu usage.
+<div class="highlight"><pre><span></span><code>ps axch -o cmd,%mem --sort<span class="o">=</span>-%mem <span class="p">|</span> sed 11q
+ps axch -o cmd:15,%cpu --sort<span class="o">=</span>-%cpu <span class="p">|</span> sed 11q
+</code></pre></div></p>
+<p>Replace angle brackets with their HTML codes, piped in from a heredoc:
+<div class="highlight"><pre><span></span><code>sed -e <span class="s1">&#39;s/&lt;/\&amp;lt;/g&#39;</span> -e <span class="s1">&#39;s/&gt;/\&amp;gt;/g&#39;</span> &lt;&lt; EOF
+</code></pre></div></p>
+<p>&lt;!-- 
+Display first two lines of file
+Without <code>-n</code>, each line will be printed twice
+<div class="highlight"><pre><span></span><code>sed -n <span class="s1">&#39;1,2p&#39;</span> emp.lst
+</code></pre></div></p>
+<p>Prepending <code>!</code> to the procedure reverses the sense of the command (YUG: 450)
+<div class="highlight"><pre><span></span><code>sed -n <span class="s1">&#39;3,$!p&#39;</span> emp.lst
+</code></pre></div></p>
+<p>Display a range of lines
+<div class="highlight"><pre><span></span><code>sed -n <span class="s1">&#39;9,11p&#39;</span> emp.lst
+</code></pre></div>
+Use the <code>-e</code> flag to precede multiple instructions
+<div class="highlight"><pre><span></span><code>sed -n -e <span class="s1">&#39;1,2p&#39;</span> -e <span class="s1">&#39;7,9p&#39;</span> -e <span class="s1">&#39;$p&#39;</span> emp.lst
+</code></pre></div>
+Delete lines
+Delete second line alone
+<div class="highlight"><pre><span></span><code>sed <span class="s1">&#39;2d&#39;</span> myfile
+</code></pre></div>
+Delete a range of lines: from the 2nd through the 3rd
+<div class="highlight"><pre><span></span><code>sed <span class="s1">&#39;2,3d&#39;</span> myfile
+</code></pre></div>
+Delete a range of lines, from the first occurrence of 'second' to the line with the first occurrence of 'fourth'
+<div class="highlight"><pre><span></span><code>sed <span class="s1">&#39;/second/,/fourth/d&#39;</span> myfile
+</code></pre></div>
+Print all of a file except for specific lines
+Suppress any line with 'test' in it
+<div class="highlight"><pre><span></span><code>sed <span class="s1">&#39;/test/d&#39;</span> myfile
+</code></pre></div></p>
+<p>Suppress from the 3rd line to EOF
+<div class="highlight"><pre><span></span><code>sed <span class="s1">&#39;3,$d&#39;</span> myfile
+</code></pre></div></p>
+<p>Replace the first instance of the <code>|</code> character with <code>:</code> and display the first two lines [YUG:455]
+<div class="highlight"><pre><span></span><code>sed <span class="err">&#39;</span>s/<span class="p">|</span>/:/ emp.lst <span class="p">|</span> head -2
+</code></pre></div>
+Replace all instances of the <code>|</code> character with <code>:</code>, displaying the first two lines [YUG:455]
+<div class="highlight"><pre><span></span><code>sed <span class="s1">&#39;s/|/:/g&#39;</span> emp.lst <span class="p">|</span> head -2
+</code></pre></div>
+Substitute HTML tags:
+<div class="highlight"><pre><span></span><code>sed <span class="s1">&#39;s/&lt;I&gt;/&lt;EM&gt;/g&#39;</span>
+</code></pre></div>
+These commands will replace "director" with "executive director"
+<div class="highlight"><pre><span></span><code>sed <span class="s1">&#39;s/director/executive director/&#39;</span> emp.lst
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>sed <span class="s1">&#39;s/director/executive &amp;/&#39;</span> emp.lst
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>sed <span class="s1">&#39;/director/s//executive &amp;/&#39;</span> emp.lst
+</code></pre></div></p>
+<p>Searching for text</p>
+<p>Equivalent to <code>grep MA *</code>
+<div class="highlight"><pre><span></span><code>sed -n <span class="s1">&#39;/MA/p&#39;</span> *
+</code></pre></div>
+Stringing sed statements together with pipe
+Take lines beginning with "fake" and remove all instances of "fake.", piping them... remove all parentheses with content and count lines of output (results)
+<div class="highlight"><pre><span></span><code>sed -n <span class="s1">&#39;/^fake/s/fake\.//p&#39;</span> * <span class="p">|</span> sed -nr <span class="s1">&#39;s/\(.*\)//p&#39;</span> <span class="p">|</span> wc -l
+</code></pre></div>
+Take lines of all files in CWD beginning with "fake" and remove all instances of string "fake." Then remove all parentheses with any content within them and print only the top 10 lines
+<div class="highlight"><pre><span></span><code>sed -ne <span class="s1">&#39;/^fake/p&#39;</span> * <span class="p">|</span> sed -n <span class="s1">&#39;s/fake\.//p&#39;</span> <span class="p">|</span> sed -nr <span class="s1">&#39;s/\(.*\)//p&#39;</span> <span class="p">|</span> sed 11q
+</code></pre></div>
+Count the number of pipes replaced by piping output to <code>cmp</code>, which will use the <code>-l</code> option to output byte numbers of differing values, then counting the lines of output (YUG:456)
+<div class="highlight"><pre><span></span><code>sed <span class="s1">&#39;s/|/:/g&#39;</span> emp.lst <span class="p">|</span> cmp -l - emp.lst <span class="p">|</span> wc -l
+</code></pre></div>
+--&gt;</p>
+</dd>
+</dl>
+<p>Output last lines beginning at 30th line from the start</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Short option</label><label for="__tabbed_1_2">POSIX</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>tail -n<span class="o">=</span>+30
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>tail --lines<span class="o">=</span>+30
+</code></pre></div>
+</div>
+</div>
+</div>
+<p><code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <a href="#tr" title="```&#10;$ tr -c&#10;```&#10;Use the complement of (or all characters not in) `$STRING`&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 88"><code>c</code></a> <a href="#tr" title="```&#10;$ tr -d&#10;```&#10;Delete characters in `$STRING` from the output&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 88"><code>d</code></a> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <a href="#tr" title="```&#10;$ tr -s&#10;```&#10;Squeeze out repeated output characters in `$STRING`&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 88"><code>s</code></a> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> </p>
+<p>Change the case of a string ]
+<div class="highlight"><pre><span></span><code>tr <span class="o">[</span>:upper:<span class="o">]</span> <span class="o">[</span>:lower:<span class="o">]</span>
+</code></pre></div>
+Remove a character or set of characters from a string or line of output
+<div class="highlight"><pre><span></span><code>tr -d <span class="s2">&quot;text&quot;</span>
+</code></pre></div></p>
+<h4 id="watch">watch</h4>
+<dl>
+<dd>Execute <code>$CMD</code> at periods of <code>$N</code> seconds, watching its output CLKF
+<div class="highlight"><pre><span></span><code>watch <span class="nv">$CMD</span> -n <span class="nv">$N</span>
+</code></pre></div>
+Check memory usage in megabytes (<code>-m</code>) every <code>5</code> seconds Enki
+<div class="highlight"><pre><span></span><code>watch -n <span class="m">5</span> free -m
+</code></pre></div></dd>
+</dl>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../Files/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Files" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Files
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../GNOME/" class="md-footer__link md-footer__link--next" aria-label="Next: GNOME" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              GNOME
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "toc.integrate", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.6e54b5cd.min.js"></script>
+      
+    
+  </body>
+</html>

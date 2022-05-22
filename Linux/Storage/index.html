@@ -1,0 +1,5112 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://jasper-zanjani.github.io/notes/Linux/Storage/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.9">
+    
+    
+      
+        <title>Storage - 🧠</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.120efc48.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.9647289d.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#ffc105">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../style/admonitions-gcp.css">
+    
+      <link rel="stylesheet" href="../../style/admonitions-azure.css">
+    
+      <link rel="stylesheet" href="../../style/admonitions-aws.css">
+    
+      <link rel="stylesheet" href="../../style/admonitions-rs.css">
+    
+      <link rel="stylesheet" href="../../style/admonitions-cs.css">
+    
+      <link rel="stylesheet" href="../../style/admonitions-cpp.css">
+    
+      <link rel="stylesheet" href="../../style/admonitions-cisco.css">
+    
+      <link rel="stylesheet" href="../../style/admonitions-py.css">
+    
+      <link rel="stylesheet" href="../../style/admonitions-output.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="amber" data-md-color-accent="yellow">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#storage" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="🧠" class="md-header__button md-logo" aria-label="🧠" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            🧠
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Storage
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Coding/" class="md-tabs__link">
+        Coding
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../GTK/" class="md-tabs__link">
+        GTK
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Health/" class="md-tabs__link">
+        Health
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Infrastructure/Ansible/" class="md-tabs__link">
+        Infrastructure
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../" class="md-tabs__link md-tabs__link--active">
+        Linux
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Misc/" class="md-tabs__link">
+        Misc
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Python/" class="md-tabs__link">
+        Python
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Rust/" class="md-tabs__link">
+        Rust
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Scripts/" class="md-tabs__link">
+        Scripts
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="🧠" class="md-nav__button md-logo" aria-label="🧠" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    🧠
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" data-md-state="indeterminate" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Coding
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Coding" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Coding
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Coding/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Coding/6502/" class="md-nav__link">
+        6502
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Coding/C%23/" class="md-nav__link">
+        C&#35;
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Coding/C%2B%2B/" class="md-nav__link">
+        C++
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Coding/C/" class="md-nav__link">
+        C
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Coding/CS/" class="md-nav__link">
+        MSCS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Coding/Courses/" class="md-nav__link">
+        Courses
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Coding/Debugging/" class="md-nav__link">
+        Debugging
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Coding/DnD/" class="md-nav__link">
+        🐲&#xFE0F;  Dungeons & Dragons
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Coding/Dogfood/" class="md-nav__link">
+        🐶 Dogfood data
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Coding/GUI/" class="md-nav__link">
+        🖥&#xFE0F; GUI frameworks comparison
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Coding/Others/" class="md-nav__link">
+        🦪 Perl
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Coding/Python/" class="md-nav__link">
+        🐍 Python
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Coding/Testing/" class="md-nav__link">
+        Testing
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Coding/Windows/" class="md-nav__link">
+        Windows programming
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Coding/Wired%20Brain%20Coffee/" class="md-nav__link">
+        ☕ Wired Brain Coffee
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_17" data-md-state="indeterminate" type="checkbox" id="__nav_2_17" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_17">
+          WinUI
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="WinUI" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_17">
+          <span class="md-nav__icon md-icon"></span>
+          WinUI
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Coding/WinUI/" class="md-nav__link">
+        WinUI
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Coding/WinUI/API/" class="md-nav__link">
+        API
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" data-md-state="indeterminate" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          GTK
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="GTK" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          GTK
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GTK/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GTK/API/" class="md-nav__link">
+        API
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GTK/Glade/" class="md-nav__link">
+        Glade
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GTK/Glossary/" class="md-nav__link">
+        📘 Glossary
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_5" data-md-state="indeterminate" type="checkbox" id="__nav_3_5" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_5">
+          Examples
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Examples" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_5">
+          <span class="md-nav__icon md-icon"></span>
+          Examples
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GTK/Examples/GNOME-Tweaks/" class="md-nav__link">
+        GNOME Tweaks
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_6" data-md-state="indeterminate" type="checkbox" id="__nav_3_6" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_6">
+          Tasks
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Tasks" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_6">
+          <span class="md-nav__icon md-icon"></span>
+          Tasks
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GTK/Tasks/Boilerplate/" class="md-nav__link">
+        Boilerplate
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GTK/Tasks/Environment/" class="md-nav__link">
+        Development environment
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GTK/Tasks/Hello-World/" class="md-nav__link">
+        Hello, World!
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GTK/Tasks/Image-Viewer/" class="md-nav__link">
+        Image Viewer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GTK/Tasks/Starships/" class="md-nav__link">
+        Starships
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GTK/Tasks/Tasks/" class="md-nav__link">
+        Tasks
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" data-md-state="indeterminate" type="checkbox" id="__nav_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Health
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Health" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Health
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Health/" class="md-nav__link">
+        💊 Health
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" data-md-state="indeterminate" type="checkbox" id="__nav_5" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Infrastructure
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Infrastructure" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Infrastructure
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Infrastructure/Ansible/" class="md-nav__link">
+        Ansible
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Infrastructure/Certifications/" class="md-nav__link">
+        🥇 Certifications
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Infrastructure/Cloud/" class="md-nav__link">
+        Cloud
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Infrastructure/Network/" class="md-nav__link">
+        Network
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_5" data-md-state="indeterminate" type="checkbox" id="__nav_5_5" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_5">
+          Cloud
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Cloud" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_5">
+          <span class="md-nav__icon md-icon"></span>
+          Cloud
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Infrastructure/Cloud/GCP/" class="md-nav__link">
+        Google Cloud Platform
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Infrastructure/Cloud/Tasks/" class="md-nav__link">
+        Tasks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_5_3" data-md-state="indeterminate" type="checkbox" id="__nav_5_5_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_5_3">
+          Azure
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Azure" data-md-level="3">
+        <label class="md-nav__title" for="__nav_5_5_3">
+          <span class="md-nav__icon md-icon"></span>
+          Azure
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Infrastructure/Cloud/Azure/ARM/" class="md-nav__link">
+        ARM
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Infrastructure/Cloud/Azure/Azure-AD/" class="md-nav__link">
+        Azure AD
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Infrastructure/Cloud/Azure/Azure-App-Service/" class="md-nav__link">
+        Azure App Service
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Infrastructure/Cloud/Azure/Azure-Backup/" class="md-nav__link">
+        Azure Backup
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Infrastructure/Cloud/Azure/Azure-File-Service/" class="md-nav__link">
+        Azure File Service
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Infrastructure/Cloud/Azure/Azure-IAM/" class="md-nav__link">
+        Azure IAM
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Infrastructure/Cloud/Azure/Azure-IaaS/" class="md-nav__link">
+        Azure IaaS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Infrastructure/Cloud/Azure/Azure-Load-Balancer/" class="md-nav__link">
+        Azure Load Balancer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Infrastructure/Cloud/Azure/Azure-Monitoring/" class="md-nav__link">
+        Azure Monitoring
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Infrastructure/Cloud/Azure/Azure-Policy/" class="md-nav__link">
+        Azure Policy
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Infrastructure/Cloud/Azure/Azure-Storage/" class="md-nav__link">
+        Azure Storage
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Infrastructure/Cloud/Azure/Azure-VPN/" class="md-nav__link">
+        Azure VPN
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Infrastructure/Cloud/Azure/Kusto/" class="md-nav__link">
+        Kusto
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          Linux
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Linux" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Linux
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Cgroups/" class="md-nav__link">
+        Cgroups
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Concurrency/" class="md-nav__link">
+        Concurrency
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Databases/" class="md-nav__link">
+        Databases
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Display/" class="md-nav__link">
+        Display
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Files/" class="md-nav__link">
+        Files
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Filters/" class="md-nav__link">
+        Commands
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GNOME/" class="md-nav__link">
+        GNOME
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GRUB/" class="md-nav__link">
+        Boot
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Kernel/" class="md-nav__link">
+        Kernel
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Package/" class="md-nav__link">
+        Package management
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Random/" class="md-nav__link">
+        Random
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Red-Hat/" class="md-nav__link">
+        Red Hat :material-redhat:
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Ricing/" class="md-nav__link">
+        Tiling window managers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SELinux/" class="md-nav__link">
+        SELinux
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Shell/" class="md-nav__link">
+        Shells
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Storage
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Storage
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#zfs" class="md-nav__link">
+    ZFS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#btrfs" class="md-nav__link">
+    btrfs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tasks" class="md-nav__link">
+    Tasks
+  </a>
+  
+    <nav class="md-nav" aria-label="Tasks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-virtual-disks" class="md-nav__link">
+    Create virtual disks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pool-management" class="md-nav__link">
+    Pool management
+  </a>
+  
+    <nav class="md-nav" aria-label="Pool management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-a-storage-pool" class="md-nav__link">
+    Create a storage pool
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#display-pools-and-associated-data" class="md-nav__link">
+    Display pools and associated data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#destroy-a-storage-pool" class="md-nav__link">
+    Destroy a storage pool
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-device" class="md-nav__link">
+    Add device
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remove-device" class="md-nav__link">
+    Remove device
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#replace-device" class="md-nav__link">
+    Replace device
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tuning" class="md-nav__link">
+    Tuning
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dataset-management" class="md-nav__link">
+    Dataset management
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#snapshots" class="md-nav__link">
+    Snapshots
+  </a>
+  
+    <nav class="md-nav" aria-label="Snapshots">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-snapshot" class="md-nav__link">
+    Create snapshot
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rollback" class="md-nav__link">
+    Rollback
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete" class="md-nav__link">
+    Delete
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file-sharing" class="md-nav__link">
+    File sharing
+  </a>
+  
+    <nav class="md-nav" aria-label="File sharing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nfs" class="md-nav__link">
+    NFS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#samba_1" class="md-nav__link">
+    Samba
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hdd-serial-numbers" class="md-nav__link">
+    HDD serial numbers
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#glossary" class="md-nav__link">
+    Glossary
+  </a>
+  
+    <nav class="md-nav" aria-label="Glossary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inode" class="md-nav__link">
+    inode
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vdev" class="md-nav__link">
+    vdev
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zpool" class="md-nav__link">
+    zpool
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commands" class="md-nav__link">
+    Commands
+  </a>
+  
+    <nav class="md-nav" aria-label="Commands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fallocate" class="md-nav__link">
+    fallocate
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hdparm" class="md-nav__link">
+    hdparm
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#losetup" class="md-nav__link">
+    losetup
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sfdisk" class="md-nav__link">
+    sfdisk
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shred" class="md-nav__link">
+    shred
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#btrfs_1" class="md-nav__link">
+    btrfs
+  </a>
+  
+    <nav class="md-nav" aria-label="btrfs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#btrfs_2" class="md-nav__link">
+    btrfs
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lvm" class="md-nav__link">
+    LVM
+  </a>
+  
+    <nav class="md-nav" aria-label="LVM">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lvcreate" class="md-nav__link">
+    lvcreate
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lvm_1" class="md-nav__link">
+    lvm
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lvresize" class="md-nav__link">
+    lvresize
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pvcreate" class="md-nav__link">
+    pvcreate
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pvsmd" class="md-nav__link">
+    pvs.md
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vgs" class="md-nav__link">
+    vgs
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SystemD/" class="md-nav__link">
+        SystemD
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Ubuntu/" class="md-nav__link">
+        Ubuntu
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Virtualization/" class="md-nav__link">
+        Virtualization
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_21" data-md-state="indeterminate" type="checkbox" id="__nav_6_21" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_21">
+          Applications
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Applications" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_21">
+          <span class="md-nav__icon md-icon"></span>
+          Applications
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Applications/Rhythmbox/" class="md-nav__link">
+        Rhythmbox
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Applications/ffmpeg/" class="md-nav__link">
+        ffmpeg
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Applications/nginx/" class="md-nav__link">
+        Nginx
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Applications/screen/" class="md-nav__link">
+        screen
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Applications/ssh/" class="md-nav__link">
+        SSH
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Applications/syncthing/" class="md-nav__link">
+        Syncthing
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Applications/vim/" class="md-nav__link">
+        Vim
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Applications/youtube-dl/" class="md-nav__link">
+        Youtube dl
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_22" data-md-state="indeterminate" type="checkbox" id="__nav_6_22" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_22">
+          Containers
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Containers" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_22">
+          <span class="md-nav__icon md-icon"></span>
+          Containers
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Containers/" class="md-nav__link">
+        Containers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Containers/Docker/" class="md-nav__link">
+        Docker
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Containers/Helm/" class="md-nav__link">
+        Helm
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Containers/Kubernetes/" class="md-nav__link">
+        Kubernetes
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_23" data-md-state="indeterminate" type="checkbox" id="__nav_6_23" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_23">
+          Networking
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Networking" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_23">
+          <span class="md-nav__icon md-icon"></span>
+          Networking
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Networking/" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Networking/Commands/" class="md-nav__link">
+        Commands
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Networking/Samba/" class="md-nav__link">
+        Samba
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Networking/Tasks/" class="md-nav__link">
+        Tasks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Networking/eBPF/" class="md-nav__link">
+        eBPF
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" data-md-state="indeterminate" type="checkbox" id="__nav_7" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          Misc
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Misc" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Misc
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Aircraft/" class="md-nav__link">
+        ✈&#xfe0f; Aircraft
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Akro-Mils/" class="md-nav__link">
+        Akro-Mils
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/CI-CD/" class="md-nav__link">
+        CI/CD
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Computers/" class="md-nav__link">
+        Computers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Diaz/" class="md-nav__link">
+        Joey Diaz
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Intelligence/" class="md-nav__link">
+        🔎 Intelligence
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Lab/" class="md-nav__link">
+        Home lab
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Military/" class="md-nav__link">
+        Military
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Space/" class="md-nav__link">
+        🚀 Space
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Storage/" class="md-nav__link">
+        Storage
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/TrueNAS/" class="md-nav__link">
+        TrueNAS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/bittorrent/" class="md-nav__link">
+        BitTorrent
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/cryptocurrency/" class="md-nav__link">
+        🪙 Cryptocurrency
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/learn/" class="md-nav__link">
+        Learning
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/pins/" class="md-nav__link">
+        Lapel pin ideas
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_17" data-md-state="indeterminate" type="checkbox" id="__nav_7_17" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_17">
+          Text editors
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Text editors" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_17">
+          <span class="md-nav__icon md-icon"></span>
+          Text editors
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Text-editors/code/" class="md-nav__link">
+        VS Code
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_18" data-md-state="indeterminate" type="checkbox" id="__nav_7_18" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_18">
+          Web
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Web" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_18">
+          <span class="md-nav__icon md-icon"></span>
+          Web
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Web/" class="md-nav__link">
+        🌎 Web
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Web/CSS/" class="md-nav__link">
+        CSS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Web/mkdocs/" class="md-nav__link">
+        Mkdocs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_18_4" data-md-state="indeterminate" type="checkbox" id="__nav_7_18_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_18_4">
+          JavaScript
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="JavaScript" data-md-level="3">
+        <label class="md-nav__title" for="__nav_7_18_4">
+          <span class="md-nav__icon md-icon"></span>
+          JavaScript
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Web/JavaScript/" class="md-nav__link">
+        Axios
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Web/JavaScript/Express/" class="md-nav__link">
+        Express
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Web/JavaScript/React/" class="md-nav__link">
+        React
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Web/JavaScript/Web%20Components/" class="md-nav__link">
+        Web Components
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_19" data-md-state="indeterminate" type="checkbox" id="__nav_7_19" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_19">
+          Windows
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Windows" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_19">
+          <span class="md-nav__icon md-icon"></span>
+          Windows
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Windows/" class="md-nav__link">
+        Windows
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Windows/Active%20Directory/" class="md-nav__link">
+        Active Directory
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Windows/DNS-labs/" class="md-nav__link">
+        DNS labs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Windows/Hyper-V/" class="md-nav__link">
+        Hyper-V
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Windows/Labs/" class="md-nav__link">
+        Labs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Windows/PowerShell/" class="md-nav__link">
+        🐚 PowerShell
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Windows/WDS-lab/" class="md-nav__link">
+        WDS lab
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Windows/WS2016/" class="md-nav__link">
+        Windows Server
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Windows/diskpart/" class="md-nav__link">
+        Diskpart
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" data-md-state="indeterminate" type="checkbox" id="__nav_8" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8">
+          Python
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Python" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Python
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/" class="md-nav__link">
+        🐍 Python
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_2" data-md-state="indeterminate" type="checkbox" id="__nav_8_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8_2">
+          Modules
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Modules" data-md-level="2">
+        <label class="md-nav__title" for="__nav_8_2">
+          <span class="md-nav__icon md-icon"></span>
+          Modules
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Argparse/" class="md-nav__link">
+        Argparse
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Asyncio/" class="md-nav__link">
+        Asyncio
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Azure.cosmos/" class="md-nav__link">
+        Azure.cosmos
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Bullet/" class="md-nav__link">
+        Bullet
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Click/" class="md-nav__link">
+        Click
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Collections/" class="md-nav__link">
+        Collections
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Colorama/" class="md-nav__link">
+        Colorama
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Csv/" class="md-nav__link">
+        Csv
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Datetime/" class="md-nav__link">
+        Datetime
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Discord_py/" class="md-nav__link">
+        discord.py
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Django/" class="md-nav__link">
+        Django
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Dotenv/" class="md-nav__link">
+        Dotenv
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/FastAPI/" class="md-nav__link">
+        FastAPI
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Functools/" class="md-nav__link">
+        Functools
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Glob/" class="md-nav__link">
+        Glob
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Heapq/" class="md-nav__link">
+        Heapq
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Http/" class="md-nav__link">
+        http
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Itertools/" class="md-nav__link">
+        itertools
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Json/" class="md-nav__link">
+        Json
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Logging/" class="md-nav__link">
+        Logging
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Npyscreen/" class="md-nav__link">
+        Npyscreen
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Optparse/" class="md-nav__link">
+        optparse
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Os/" class="md-nav__link">
+        os
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Pygobject/" class="md-nav__link">
+        Pygobject
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Pyinstaller/" class="md-nav__link">
+        Pyinstaller
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Pythonnet/" class="md-nav__link">
+        pythonnet
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Random/" class="md-nav__link">
+        random
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Scrapy/" class="md-nav__link">
+        scrapy
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Setuptools/" class="md-nav__link">
+        setuptools
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Socket/" class="md-nav__link">
+        socket
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Sqlite3/" class="md-nav__link">
+        sqlite3
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Subprocess/" class="md-nav__link">
+        subprocess
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Sys/" class="md-nav__link">
+        sys
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Tabulate/" class="md-nav__link">
+        Tabulate
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Termcolor/" class="md-nav__link">
+        termcolor
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Threading/" class="md-nav__link">
+        threading
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Weakref/" class="md-nav__link">
+        Weakref
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Winrm/" class="md-nav__link">
+        Winrm
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Xml/" class="md-nav__link">
+        xml
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Yaml/" class="md-nav__link">
+        Yaml
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" data-md-state="indeterminate" type="checkbox" id="__nav_9" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9">
+          Rust
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Rust" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Rust
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/Cargo/" class="md-nav__link">
+        Cargo
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/Combinators/" class="md-nav__link">
+        Combinators
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/Crates/" class="md-nav__link">
+        Modules
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/Error/" class="md-nav__link">
+        Error handling
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/Glossary/" class="md-nav__link">
+        Glossary
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/Scratchpad/" class="md-nav__link">
+        Scratchpad
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_8" data-md-state="indeterminate" type="checkbox" id="__nav_9_8" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9_8">
+          Crates
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Crates" data-md-level="2">
+        <label class="md-nav__title" for="__nav_9_8">
+          <span class="md-nav__icon md-icon"></span>
+          Crates
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/Crates/Actix/" class="md-nav__link">
+        actix
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/Crates/Clap/" class="md-nav__link">
+        clap
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/Crates/Failure/" class="md-nav__link">
+        failure
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/Crates/Gtk-rs/" class="md-nav__link">
+        gtk-rs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/Crates/Rnd/" class="md-nav__link">
+        rnd
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/Crates/Rocket/" class="md-nav__link">
+        Rocket
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/Crates/Rusqlite/" class="md-nav__link">
+        rusqlite
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/Crates/Serde/" class="md-nav__link">
+        serde
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/Crates/Structopt/" class="md-nav__link">
+        structopt
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_8_10" data-md-state="indeterminate" type="checkbox" id="__nav_9_8_10" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9_8_10">
+          Cursive
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Cursive" data-md-level="3">
+        <label class="md-nav__title" for="__nav_9_8_10">
+          <span class="md-nav__icon md-icon"></span>
+          Cursive
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/Crates/Cursive/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/Crates/Cursive/API/" class="md-nav__link">
+        API
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/Crates/Cursive/Tasks/" class="md-nav__link">
+        Tasks
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_8_11" data-md-state="indeterminate" type="checkbox" id="__nav_9_8_11" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9_8_11">
+          Diesel
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Diesel" data-md-level="3">
+        <label class="md-nav__title" for="__nav_9_8_11">
+          <span class="md-nav__icon md-icon"></span>
+          Diesel
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/Crates/Diesel/" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/Crates/Diesel/Tasks/" class="md-nav__link">
+        Tasks
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_9" data-md-state="indeterminate" type="checkbox" id="__nav_9_9" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9_9">
+          Tasks
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Tasks" data-md-level="2">
+        <label class="md-nav__title" for="__nav_9_9">
+          <span class="md-nav__icon md-icon"></span>
+          Tasks
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/Tasks/" class="md-nav__link">
+        Boilerplate
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/Tasks/Hello-World/" class="md-nav__link">
+        Hello, World!
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/Tasks/Mathematics/" class="md-nav__link">
+        Mathematics
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/Tasks/Porting-grep/" class="md-nav__link">
+        grep ports
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/Tasks/To-Do/" class="md-nav__link">
+        To-Do
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/Tasks/Transactions/" class="md-nav__link">
+        Transactions
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" data-md-state="indeterminate" type="checkbox" id="__nav_10" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_10">
+          Scripts
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Scripts" data-md-level="1">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          Scripts
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Scripts/" class="md-nav__link">
+        Video scripts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Scripts/Anki/" class="md-nav__link">
+        Anki
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Scripts/CSharp/" class="md-nav__link">
+        CSharp
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Scripts/Django/" class="md-nav__link">
+        Django
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Scripts/Kusto/" class="md-nav__link">
+        Kusto
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Scripts/Rust/" class="md-nav__link">
+        Rust
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Scripts/SQLite/" class="md-nav__link">
+        SQLite
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10_8" data-md-state="indeterminate" type="checkbox" id="__nav_10_8" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_10_8">
+          Discord
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Discord" data-md-level="2">
+        <label class="md-nav__title" for="__nav_10_8">
+          <span class="md-nav__icon md-icon"></span>
+          Discord
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Scripts/Discord/Discord.article/" class="md-nav__link">
+        Discord.article
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Scripts/Discord/Discord/" class="md-nav__link">
+        Discord
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="storage">Storage</h1>
+<details class="info">
+<summary>Resources</summary>
+<p>Unlike <abbr title="Zettabyte File System">ZFS</abbr> which has a lot of material in written and video form for potential users to learn from, BtrFS appears not to have much available.
+BtrFS does have an <a href="https://btrfs.wiki.kernel.org/index.php/Glossary">official wiki</a>, but written articles on FOSS blogs focus on operation from the command-line but don't do a good job of describing the taxonomy of concepts, aside from the <a href="https://btrfs.wiki.kernel.org/index.php/Glossary">glossary</a>.</p>
+<p>Users of <abbr title="Zettabyte File System">ZFS</abbr>, in contrast, have taken the trouble to create introductory material, including Ars Technica's <a href="https://arstechnica.com/information-technology/2020/05/zfs-101-understanding-zfs-storage-and-performance/"><abbr title="Zettabyte File System">ZFS</abbr> 101</a> article, and many talks by enthusiasts like <a href="https://youtu.be/Hjpqa_kjCOI">Philip Paeps</a>.</p>
+<p>This might be because btrfs's concepts seem less well thought-out, or at least more poorly described.
+For example, the term <a href="#subvolume">subvolume</a> is used in btrfs but the container for subvolumes is not "volume" but rather "top-level subvolume".</p>
+<p>Jim Salter from Ars Technica (who wrote the <abbr title="Zettabyte File System">ZFS</abbr> 101 article above) appears to have devoted some effort to fleshing out the topic:</p>
+<ul>
+<li>
+<p><a href="https://arstechnica.com/gadgets/2021/09/examining-btrfs-linuxs-perpetually-half-finished-filesystem/">Examining btrfs, Linux's perpetually half-finished filesystem</a></p>
+</li>
+<li>
+<p><a href="https://vitux.com/how-to-install-and-configure-samba-on-ubuntu/">Install and configure Samba server</a></p>
+</li>
+<li><a href="https://www.tecmint.com/install-samba-on-rhel-8-for-file-sharing-on-windows/">Install Samba4 on RHEL 8 for File Sharing on Windows</a></li>
+<li><a href="https://youtu.be/mCfX4sqDmzs">FreeNAS 11.3 - How to Set Up Windows SMB Shares</a></li>
+<li><a href="http://rkeene.org/projects/info/wiki/btrfs">BtrFS</a></li>
+<li><a href="https://docs.oracle.com/cd/E19253-01/819-5461/6n7ht6quu/index.html">Creating and Destroying <abbr title="Zettabyte File System">ZFS</abbr> Storage Pools</a></li>
+<li><a href="https://docs.oracle.com/cd/E19253-01/819-5461/gayrd/index.html">Managing devices in <abbr title="Zettabyte File System">ZFS</abbr> storage pools</a></li>
+<li><a href="https://opensource.com/article/20/11/btrfs-linux">Getting started with btrfs for Linux</a></li>
+<li><a href="https://opensource.com/article/18/4/ext4-filesystem">Understanding Linux filesystems: ext4 and beyond</a></li>
+</ul>
+</details>
+<h4 id="zfs"><abbr title="Zettabyte File System">ZFS</abbr></h4>
+<dl>
+<dd><strong><abbr title="Zettabyte File System">ZFS</abbr></strong> is a true next-generation filesystem with a problematic license.
+<strong><abbr title="Zettabyte File System">ZFS</abbr> on Linux (ZOL)</strong> is considered the ugly stepchild of the <abbr title="Zettabyte File System">ZFS</abbr> community despite the fact that the Linux implementation has the most features and the most community support.
+<abbr title="Zettabyte File System">ZFS</abbr> is too tightly bound to the operation of the kernel to operate in true userspace, and that is why each implementation is different for operating systems.</dd>
+</dl>
+<h4 id="btrfs">btrfs</h4>
+<dl>
+<dd>
+<p><strong>B-Tree Filesystem "butter fs"</strong> is an open-source <a href="#cow"><abbr title="Copy on Write">CoW</abbr></a> filesystem that offers many of the same features as <a href="#zfs"><abbr title="Zettabyte File System">ZFS</abbr></a>. It was founded by Chris Mason in 2007.
+By 2009, btrfs 1.0 was accepted into the mainline Linux kernel.</p>
+<p>Btrfs takes its name from the <a href="#btree">b-tree</a> data structure which it uses to manage filesystem metadata.
+The <a href="#superblock">superblock</a> holds pointers to the tree roots of the tree of tree roots and the chunk tree.</p>
+<p>Btrfs was adopted by <a href="#suse">SUSE Enterprise Linux</a>, but support was dropped by Red Hat in 2017.</p>
+</dd>
+</dl>
+<h2 id="tasks">Tasks</h2>
+<h4 id="create-virtual-disks">Create virtual disks</h4>
+<dl>
+<dd>
+<p>Sparse files can be created with <a href="#fallocate"><strong>fallocate</strong></a> and then used as virtual disks by creating loopback devices with <a href="#losetup"><strong>losetup</strong></a></p>
+<div class="highlight"><pre><span></span><code>fallocate -l 100M /tmp/disk0
+losetup -f /tmp/disk0
+</code></pre></div>
+</dd>
+</dl>
+<h3 id="pool-management"><a href="#zpool">Pool</a> management</h3>
+<p>In <abbr title="Zettabyte File System">ZFS</abbr> documentation, zpools are conventionally named "tank".</p>
+<h4 id="create-a-storage-pool">Create a storage pool</h4>
+<dl>
+<dd>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1"><abbr title="Zettabyte File System">ZFS</abbr></label><label for="__tabbed_1_2">BtrFS</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>zpool create tank raidz /dev/sd<span class="o">{</span>a,b,c<span class="o">}</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p>Valid arguments to <code>--data</code>/<code>-d</code> include raid0, raid1, raid1c3, raid1c4, raid5, raid6, raid10, single, or dup.</p>
+<div class="highlight"><pre><span></span><code>mkfs.btrfs --data raid0 /dev/sd<span class="o">{</span>a,b,c<span class="o">}</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+</dd>
+</dl>
+<h4 id="display-pools-and-associated-data">Display pools and associated data</h4>
+<dl>
+<dd>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1"><abbr title="Zettabyte File System">ZFS</abbr></label><label for="__tabbed_2_2">BtrFS</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><code>status</code> and verbose <code>list</code> show different data in a similar tabular format</p>
+<div class="highlight"><pre><span></span><code>zpool status tank
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>zpool list -v
+</code></pre></div>
+<p>By default, disks are identified by UUID. Use <code>-L</code> to display real paths (i.e. device names).</p>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>?
+</code></pre></div>
+</div>
+</div>
+</div>
+</dd>
+</dl>
+<h4 id="destroy-a-storage-pool">Destroy a storage pool</h4>
+<dl>
+<dd>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1"><abbr title="Zettabyte File System">ZFS</abbr></label><label for="__tabbed_3_2">BtrFS</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>zpool destroy tank
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>?
+</code></pre></div>
+</div>
+</div>
+</div>
+</dd>
+</dl>
+<h4 id="add-device">Add device</h4>
+<dl>
+<dd>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1"><abbr title="Zettabyte File System">ZFS</abbr></label><label for="__tabbed_4_2">BtrFS</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>zpool add tank mirror /dev/sde /dev/sdf
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>btrfs device add /dev/sde /data
+btrfs filesystem balance /data
+</code></pre></div>
+</div>
+</div>
+</div>
+</dd>
+</dl>
+<h4 id="remove-device">Remove device</h4>
+<dl>
+<dd>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1"><abbr title="Zettabyte File System">ZFS</abbr></label><label for="__tabbed_5_2">BtrFS</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="c1"># In ZFS a disk may only be removed from a mirrored pool</span>
+zpool detach /dev/sdb
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>btrfs device delete /dev/sdb /data
+btrfs filesystem balance /data
+</code></pre></div>
+</div>
+</div>
+</div>
+</dd>
+</dl>
+<h4 id="replace-device">Replace device</h4>
+<dl>
+<dd>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1"><abbr title="Zettabyte File System">ZFS</abbr></label><label for="__tabbed_6_2">BtrFS</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>zpool clear tank <span class="c1"># Errors must be cleared first</span>
+zpool replace tank /dev/sdb /dev/sdc
+</code></pre></div>
+<p>This will begin an automatic <strong>resilvering</strong> process, which can be monitored in realtime.
+<div class="highlight"><pre><span></span><code>watch -n <span class="m">0</span>.1 zpool status tank
+</code></pre></div></p>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>btrfs device add /dev/sdc /data
+btrfs device delete /dev/sdb /data
+btrfs filesystem balance /data
+</code></pre></div>
+</div>
+</div>
+</div>
+</dd>
+</dl>
+<h4 id="tuning">Tuning</h4>
+<dl>
+<dd>
+<ul>
+<li>Turn <code>atime</code> off</li>
+<li>Set <code>ashift=12</code>, which sets block size to 4096 bytes, also called <strong>Advanced Layout (AL)</strong></li>
+<li>Disable deduplication, which can use excessive RAM and CPU. A dedup value of 1.00x in the output of <code>zpool</code> indicates no deduplication.</li>
+<li>Enable compression, which saves space and adds speed. It can be enabled or disabled on individual datasets.</li>
+</ul>
+</dd>
+</dl>
+<h3 id="dataset-management"><a href="#dataset">Dataset</a> management</h3>
+<p>A <strong>subvolume</strong> in BtrFS is defined as an independently mountable POSIX filetree, and appears to be equivalent to the <abbr title="Zettabyte File System">ZFS</abbr> <strong>dataset</strong>.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="7:4"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><input id="__tabbed_7_3" name="__tabbed_7" type="radio" /><input id="__tabbed_7_4" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2Z"/></svg></span> Create</label><label for="__tabbed_7_2"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 14h6v6H2M16 8h-6v2h6M2 10h6V4H2m8 0v2h12V4M10 20h6v-2h-6m0-2h12v-2H10"/></svg></span> List</label><label for="__tabbed_7_3"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3v1H4v2h1v13a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V6h1V4h-5V3H9m0 5h2v9H9V8m4 0h2v9h-2V8Z"/></svg></span> Delete</label><label for="__tabbed_7_4"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 17h-7.5l2-2H18M6 17v-2.5l7.88-7.85c.19-.2.51-.2.71 0l1.76 1.76c.2.2.2.51 0 .71L8.47 17M19 3H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2Z"/></svg></span> Rename</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>zfs create tank/dataset
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>zfs list
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>btrfs filesystem show
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>zfs remove
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>zfs rename tank <span class="nv">$newname</span>
+</code></pre></div>
+<p>BtrFS appears to </p>
+<div class="highlight"><pre><span></span><code>btrfs filesystem label / <span class="nv">$newname</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<p>Setting configuration options for a <abbr title="Zettabyte File System">ZFS</abbr> dataset</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="8:3"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><input id="__tabbed_8_2" name="__tabbed_8" type="radio" /><input id="__tabbed_8_3" name="__tabbed_8" type="radio" /><div class="tabbed-labels"><label for="__tabbed_8_1">Compression</label><label for="__tabbed_8_2">Sync</label><label for="__tabbed_8_3">Tag</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>zfs <span class="nb">set</span> <span class="nv">compression</span><span class="o">=</span>on zroot/dataset
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>zfs <span class="nb">set</span> <span class="nv">sync</span><span class="o">=</span>disabled tank/share
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>zfs <span class="nb">set</span> acme:disksource<span class="o">=</span>vendorname
+</code></pre></div>
+</div>
+</div>
+</div>
+<h3 id="snapshots">Snapshots</h3>
+<h4 id="create-snapshot">Create snapshot</h4>
+<dl>
+<dd>
+<div class="tabbed-set tabbed-alternate" data-tabs="9:2"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><input id="__tabbed_9_2" name="__tabbed_9" type="radio" /><div class="tabbed-labels"><label for="__tabbed_9_1"><abbr title="Zettabyte File System">ZFS</abbr></label><label for="__tabbed_9_2">BtrFS</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>zfs snapshot tank@snapshot1
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>btrfs subvolume snapshot /data /data/snapshot1
+</code></pre></div>
+</div>
+</div>
+</div>
+</dd>
+</dl>
+<h4 id="rollback">Rollback</h4>
+<dl>
+<dd>
+<div class="tabbed-set tabbed-alternate" data-tabs="10:2"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio" /><input id="__tabbed_10_2" name="__tabbed_10" type="radio" /><div class="tabbed-labels"><label for="__tabbed_10_1"><abbr title="Zettabyte File System">ZFS</abbr></label><label for="__tabbed_10_2">BtrFS</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>zfs rollback tank@snapshot1
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>?
+</code></pre></div>
+</div>
+</div>
+</div>
+</dd>
+</dl>
+<h4 id="delete">Delete</h4>
+<dl>
+<dd>
+<div class="tabbed-set tabbed-alternate" data-tabs="11:2"><input checked="checked" id="__tabbed_11_1" name="__tabbed_11" type="radio" /><input id="__tabbed_11_2" name="__tabbed_11" type="radio" /><div class="tabbed-labels"><label for="__tabbed_11_1"><abbr title="Zettabyte File System">ZFS</abbr></label><label for="__tabbed_11_2">BtrFS</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>zfs destroy tank@snapshot1
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>btrfs subvolume delete /data/snapshot1
+</code></pre></div>
+</div>
+</div>
+</div>
+</dd>
+</dl>
+<h3 id="file-sharing">File sharing</h3>
+<h4 id="nfs"><abbr title="Network File System">NFS</abbr></h4>
+<dl>
+<dd>
+<p><abbr title="Network File System">NFS</abbr> is a distributed filesystem based on the RPC protocol that provides transparent access to remote disks.</p>
+<p>Traditionally, <abbr title="Network File System">NFS</abbr> shares are enabled using the <strong>/etc/exports</strong> file.</p>
+<div class="highlight"><pre><span></span><code>/public *(ro,sync)
+</code></pre></div>
+<p>The <strong>rpcbind</strong> service had to be enabled before starting the <strong>nfs</strong> service, but this service was no longer used as of <abbr title="Network File System">NFS</abbr> 4.0.</p>
+<div class="highlight"><pre><span></span><code>service rpcbind <span class="nb">enable</span>
+service nfs start
+</code></pre></div>
+<p>Then the <strong>showmount</strong> command is used to confirm local shares</p>
+<div class="highlight"><pre><span></span><code>showmount -e <span class="c1"># (1)</span>
+</code></pre></div>
+<ol>
+<li><div class="highlight"><span class="filename">Export list for truenas.local</span><pre><span></span><code>/public *
+</code></pre></div></li>
+</ol>
+<p>On TrueNAS, permissions need to be changed to allow writing.</p>
+<p>If sharing from a <abbr title="Zettabyte File System">ZFS</abbr> dataset, turn off sync to improve performance</p>
+<div class="highlight"><pre><span></span><code>zfs <span class="nb">set</span> <span class="nv">sync</span><span class="o">=</span>disabled tank/share
+</code></pre></div>
+<p>Once the <abbr title="Network File System">NFS</abbr> share is created, it is consumed on the client by mounting it to the filesystem.
+<div class="highlight"><pre><span></span><code>mkdir -p /mnt/share
+<span class="hll">mount nas:/share /mnt/share
+</span></code></pre></div></p>
+<details class="info">
+<summary>Resources</summary>
+<ul>
+<li><a href="https://youtu.be/c3dL0ULEH-s"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m10 15 5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73Z"/></svg></span> How to Share Files Using <abbr title="Network File System">NFS</abbr>: Linux Server Training 101</a></li>
+</ul>
+</details>
+</dd>
+</dl>
+<h4 id="samba_1">Samba</h4>
+<p>Configure Samba 
+<div class="highlight"><pre><span></span><code>mkdir /samba                   <span class="c1"># Create a directory for the share</span>
+chmod -R <span class="m">0777</span> /samba
+chown -R nobody:nobody /samba  <span class="c1"># Remove ownership, not necessary</span>
+</code></pre></div></p>
+<p>Open firewall rule (not strictly necessary)
+<div class="highlight"><pre><span></span><code>firewall-cmd --permanent --add-service<span class="o">=</span>samba
+firewall-cmd --reload
+firewall-cmd --list-services <span class="c1"># verify</span>
+</code></pre></div></p>
+<p>Configure the main Samba config file at <strong>/etc/samba/smb.conf</strong>. The name in brackets becomes the name of the share.
+<div class="highlight"><pre><span></span><code><span class="k">[samba]</span><span class="w"></span>
+<span class="w">    </span><span class="na">comment</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">Samba on Ubuntu</span><span class="w"></span>
+<span class="w">    </span><span class="na">path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">/samba</span><span class="w"></span>
+<span class="w">    </span><span class="na">read only</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">no</span><span class="w"></span>
+<span class="w">    </span><span class="na">browsable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">yes</span><span class="w"></span>
+</code></pre></div></p>
+<p>Verify configuration
+<div class="highlight"><pre><span></span><code>testparm
+</code></pre></div></p>
+<p>Set SELinux context of share directory
+<div class="highlight"><pre><span></span><code>semanage fcontext -a -t samba_share_t <span class="s1">&#39;/samba(/.*)?&#39;</span>
+restorecon -vvFR /samba
+</code></pre></div></p>
+<p>&lt;!-- Allow SELinux to work with Samba
+<div class="highlight"><pre><span></span><code>setsebool -P samba_export_all_ro on
+</code></pre></div></p>
+<p>Set up a Samba account for <code>$USER</code>
+<div class="highlight"><pre><span></span><code>smbpasswd -a <span class="nv">$USER</span>
+</code></pre></div></p>
+<p>Restart Samba service
+<div class="highlight"><pre><span></span><code>systemctl restart smbd
+<span class="sb">```</span> --&gt;
+
+Browse all available shares
+<span class="sb">```</span>sh
+smbclient -L <span class="nv">$HOST</span>
+</code></pre></div></p>
+<p>Access samba share at <code>$SHARE</code> at server <code>$HOST</code> using user credential <code>$USER</code>
+<div class="highlight"><pre><span></span><code>smbclient //<span class="nv">$HOST</span>/<span class="nv">$USER</span> -U <span class="nv">$USER</span>
+</code></pre></div></p>
+<p>This will display the Samba CLI
+<div class="highlight"><pre><span></span><code>smb: \&gt;
+</code></pre></div></p>
+<p>On TrueNAS, the option to "Allow Guest Access" should be turned on, unless password-based authentication for specific users is desired.
+Also, the directory must have write permissions enabled to allow uploading.
+<div class="highlight"><pre><span></span><code>chmod o+w
+</code></pre></div>
+Bizarrely, the ability to navigate into subdirectories appears to depend on the owner execute bit.
+This may have something to do with anonymous guest access.
+<div class="highlight"><pre><span></span><code>chmod u+x
+</code></pre></div></p>
+<p>Permanently mounting a Samba share in /etc/fstab
+<div class="highlight"><pre><span></span><code>//nas/Videos /home/jasper/Videos cifs guest,uid=1000,iocharset=utf8 0 0
+</code></pre></div>
+Then mount the fstab file
+<div class="highlight"><pre><span></span><code>mount -a
+</code></pre></div></p>
+<h4 id="hdd-serial-numbers">HDD serial numbers</h4>
+<dl>
+<dd>Produce a CSV of hard disk identifiers and their serial numbers using hdparm, grep, cut, and output redirection.
+<div class="highlight"><pre><span></span><code><span class="k">for</span> l <span class="k">in</span> <span class="o">{</span>a..w<span class="o">}</span> 
+<span class="k">do</span> 
+    <span class="nb">echo</span> -n <span class="s2">&quot;/dev/sd</span><span class="nv">$l</span><span class="s2">,&quot;</span> &gt;&gt; drives
+    hdparm -I /dev/sd<span class="nv">$l</span> <span class="p">|</span> 
+        grep <span class="s1">&#39;Serial Number&#39;</span> - <span class="p">|</span>
+        cut -d : -f <span class="m">2</span> <span class="p">|</span> 
+        tr -d <span class="s1">&#39;[:space:]&#39;</span> &gt;&gt; drives
+    <span class="nb">echo</span> <span class="s1">&#39;&#39;</span> &gt;&gt; drives<span class="p">;</span>
+<span class="k">done</span>
+</code></pre></div></dd>
+</dl>
+<h2 id="glossary">Glossary</h2>
+<dl>
+<dt><strong id="arc"><abbr title="Adaptive Replacement Cache">ARC</abbr></strong></dt>
+<dd><abbr title="Adaptive Replacement Cache">ARC</abbr> serves as <abbr title="Zettabyte File System">ZFS</abbr>'s read cache mechanism and avoids the <a href="#thrashing">thrashing</a> possible with standard OS page caches by using a more efficient algorithm.</dd>
+<dt><strong id="btree">B-tree</strong></dt>
+<dd>A <strong>B-tree</strong> is a self-balancing tree data structure used by <a href="#btrfs">btrfs</a> to organize and store metadata.</dd>
+<dt><strong id="block-group">block group</strong></dt>
+<dd>In <a href="#btrfs">btrfs</a> the fundamental unit of storage allocation consisting of one or more <strong>chunks</strong>, depending on RAID level, each stored on a different <strong>device</strong>.</dd>
+<dt><strong>boot environment</strong></dt>
+<dd>Allow changes to OS installations to be reverted</dd>
+<dt><strong id="cow">copy-on-write</strong></dt>
+<dd>In a <strong><abbr title="Copy on Write">CoW</abbr></strong> filesystem like <a href="#zfs"><abbr title="Zettabyte File System">ZFS</abbr></a> and <a href="#btrfs">btrfs</a>, when data on the filesystem is modified, that data is copied first before being modified and then written back to a different free location. 
+The main advantage of this method is that the original data <a href="#extent">extent</a> is not modified, so the risk of data corruption or partial update due to power failure is eliminated.
+This ensures that writes are atomic and the filesystem will always be in a consistent state.</dd>
+<dt><strong id="dataset">dataset</strong></dt>
+<dd>In <abbr title="Zettabyte File System">ZFS</abbr>, one or more <strong>datasets</strong> constitute a unified filesystem.
+Improves on the use of traditional use of partitions in, say, Linux installations where mount points are typically separate partitions.
+Datasets allow quotas and other rules to be enforced.</dd>
+<dt><strong id="extent">extent</strong></dt>
+<dd>In <a href="#btrfs">btrfs</a>, an <strong>extent</strong> is the fundamental storage unit corresponding to a contiguous sequence of bytes on disk that holds file data. 
+Files can be fragmented into multiple extents, and this fragmentation can be measured using the <code>filefrag</code> CLI utility.</dd>
+<dt><strong id="ext">Extended File System</strong></dt>
+<dd>
+<p>Ext was first implemented in 1992 by Remy Card to address limitations in the MINIX filesystem, which was used to develop the first Linux kernel. 
+It could address up to 2GB of storage and handle 255-character filenames and had only one timestap per file.</p>
+<ul>
+<li><strong id="ext2">Ext2</strong> was developed by Remy Card only a year after ext's release as a commercial-grade filesystem, influenced by BSD's Berkeley Fast File System. It was prone to corruption if the system crashed or lost power while data was being written and performance losses due to fragmentation. Nevertheless, it was quickly and widely adopted, and still used as a format for USB drives.</li>
+<li><strong id="ext3">Ext3</strong> was adopted by mainline Linux in 2001 and uses <strong>journaling</strong>, whereby disk writes are stored as transactions in a special allocation, which allows a rebooted system to roll back incomplete transactions.</li>
+<li><strong id="ext4">Ext4</strong> was added to mainline Linux in 2008, developed by Theodore Ts'o, and improves upon ext3 but is still reliant on old technology.</li>
+</ul>
+</dd>
+</dl>
+<h4 id="inode">inode</h4>
+<dl>
+<dd>An <strong>inode</strong> (index node) is a data structure that stores all the metadata about a file but not its name or data.</dd>
+<dt><strong id="subvolume">subvolume</strong></dt>
+<dd>A tree of files and directories inside a <a href="#btrfs">btrfs</a> that can be mounted as if it were an independent filesystem.
+Each btrfs filesystem has at least one subvolume that contains everything else in the filesystem, called the <strong>top-level subvolume</strong>.</dd>
+<dt><strong id="thrashing">thrashing</strong></dt>
+<dd>All OSes implement the page cache using the <abbr title="Least Recently Used">LRU</abbr> algorithm, which maintains a queue of the most recently read blocks.
+As more recent blocks are read, older blocks are evicted from the bottom of the queue even if they are more frequently accessed.
+This process is referred to as <strong>thrashing</strong>.</dd>
+<dt><strong id="raid-hole">RAID hole</strong></dt>
+<dd>Condition in which a stripe is only partially written before the system crashes, making the array inconsistent and corrupt after a restart</dd>
+<dt><strong id="raidz">RAIDz</strong></dt>
+<dd><strong>RAIDz1</strong>, <strong>RAIDz2</strong>, and <strong>RAIDz3</strong> are special varieties of parity RAID in <a href="#zfs"><abbr title="Zettabyte File System">ZFS</abbr></a>: the number indicates how many parity blocks are allocated to each data <strong>stripe</strong>.</dd>
+<dt><strong>Resilvering</strong></dt>
+<dd>Process of rebuilding redundant groups after disk replacement</dd>
+<dt><strong id="smb">SMB</strong></dt>
+<dd>
+<p><strong>Server Message Block</strong> (<strong>SMB</strong>) is a client/server protocol developed in the early 1980s by Intel, Microsoft, and IBM that has become the native protocol for file and printer sharing on Windows.
+It is implemented in the <strong id="samba">Samba</strong> application suite.</p>
+<p><strong id="cifs">CIFS</strong> ("Common Internet File System") is a dialect and implementation of SMB whose acronym has survived despite the fact the protocol itself has fallen into disuse.</p>
+</dd>
+<dt><strong id="stripe">stripe</strong></dt>
+<dd></dd>
+</dl>
+<h4 id="vdev">vdev</h4>
+<dl>
+<dd>
+<p>In <a href="#zfs"><abbr title="Zettabyte File System">ZFS</abbr></a> a <strong>vdev</strong> ("virtual device") is an abstraction of one or more storage devices.
+This is equivalent to a volume group in LVM.</p>
+<p>A collection of vdevs constitutes a <a href="#zpool"><strong>zpool</strong></a>.</p>
+<p>Vdevs support one of five <strong>topologies</strong>:</p>
+<ul>
+<li><strong>Single-device</strong> vdevs cannot survive any failure</li>
+<li><strong>Mirror</strong> vdevs duplicate every block on each of their devices</li>
+<li><a href="#raidz"><strong>RAIDz1</strong></a></li>
+<li><a href="#raidz"><strong>RAIDz2</strong></a></li>
+<li><a href="#raidz"><strong>RAIDz3</strong></a></li>
+</ul>
+<p>Special support classes of vdev:</p>
+<ul>
+<li><code>CACHE</code></li>
+<li><strong>LOG</strong> (also <abbr title="Secondary LOG device">SLOG</abbr>), because it usually has faster write performance, provides the pool with a separate vdev to store the <abbr title="ZFS Intent Log">ZIL</abbr> in.</li>
+<li><code>SPECIAL</code></li>
+</ul>
+</dd>
+<dt><strong id="zed"><abbr title="ZFS Event Daemon">ZED</abbr></strong></dt>
+<dd>Daemon that will listen to kernel events related to <abbr title="Zettabyte File System">ZFS</abbr>, conducting action defined in <strong>zedlets</strong>.</dd>
+<dt><strong>zfs-fuse</strong></dt>
+<dd><abbr title="Zettabyte File System">ZFS</abbr> filesystem daemon</dd>
+<dt><strong><abbr title="Zettabyte File System">ZFS</abbr></strong></dt>
+<dd>
+<p><abbr title="Zettabyte File System">ZFS</abbr> is a technology that combines the functions of a 128-bit <abbr title="Copy on Write">CoW</abbr> filesystem, a volume manager, and software RAID.</p>
+<p>Like RAID, <abbr title="Zettabyte File System">ZFS</abbr> attempts to achieve data reliability by abstracting <a href="#zpool">volumes</a> over <a href="#vdev">physical devices</a>. 
+But <abbr title="Zettabyte File System">ZFS</abbr> improves on RAID with error handling: it can use <a href="#metadata">checksum</a> information to correct corrupted files.
+This is unlike hardware RAID mirrors, where failures occur silently and are typically only detected upon reading a corrupt file.</p>
+<p><abbr title="Zettabyte File System">ZFS</abbr> writes use <abbr title="Copy on Write">CoW</abbr> meaning they are atomic and aren't affected by issues like <a href="#raid-hole">RAID holes</a>.</p>
+<p><abbr title="Zettabyte File System">ZFS</abbr> can also transparently compress data written to datasets</p>
+</dd>
+<dt><strong id="zil"><abbr title="ZFS Intent Log">ZIL</abbr></strong></dt>
+<dd>
+<p>The <abbr title="ZFS Intent Log">ZIL</abbr> is a special storage area used for <strong>synchronous</strong> writes.</p>
+<p>Most writes are <strong>asynchronous</strong>, where the filesystem is allowed to aggregate and commit them in batches to reduce fragmentation and increase throughput.</p>
+<p><strong>Synchronous</strong> writes in <abbr title="Zettabyte File System">ZFS</abbr> are committed to the <abbr title="ZFS Intent Log">ZIL</abbr> while also kept in memory.
+Writes saved to the <abbr title="ZFS Intent Log">ZIL</abbr> are committed to main storage in normal TXGs moments later.</p>
+<p>Normally, the <abbr title="ZFS Intent Log">ZIL</abbr> is written to and never read from again.
+Writes saved to <abbr title="ZFS Intent Log">ZIL</abbr> are committed to main storage from RAM in normal TXGs after a few moments and unlinked from the <abbr title="ZFS Intent Log">ZIL</abbr>.</p>
+<p>The <abbr title="ZFS Intent Log">ZIL</abbr> is only read during pool imports that occur after a crash and restart.</p>
+<p>The <abbr title="ZFS Intent Log">ZIL</abbr> can be placed on the LOG vdev to take advantage of higher write performance during sync writes.</p>
+<p>The <abbr title="ZFS Intent Log">ZIL</abbr> is typically mirrored because that is where data can be lost.</p>
+</dd>
+</dl>
+<h4 id="zpool">zpool</h4>
+<dl>
+<dd>
+<p>A <strong>zpool</strong> is the largest structure in the <abbr title="Zettabyte File System">ZFS</abbr> taxonomy, representing an independent collection of one or more <a href="#vdev"><strong>vdevs</strong></a>.
+Essentially, a zpool is a JBOD with special characteristics.</p>
+<p>Writes are distributed across available vdevs in accordance with their available free space, such that they fill more or less evenly.</p>
+<p>A <strong>utilization awareness mechanism</strong> built into <abbr title="Zettabyte File System">ZFS</abbr> also accounts for if one vdev is significantly more busy than another, i.e. reading.
+In such a case, writes to that busy vdev will be deferred in favor of less busy ones.</p>
+<p>Zpools are automatically mounted at root upon creation (without the need to edit fstab).</p>
+</dd>
+</dl>
+<h2 id="commands">Commands</h2>
+<h4 id="fallocate">fallocate</h4>
+<dl>
+<dd>
+<p>Create a file of a given size with the <code>--length</code>/<code>-l</code> option</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="12:2"><input checked="checked" id="__tabbed_12_1" name="__tabbed_12" type="radio" /><input id="__tabbed_12_2" name="__tabbed_12" type="radio" /><div class="tabbed-labels"><label for="__tabbed_12_1">1 gigabyte</label><label for="__tabbed_12_2">1 gibibyte</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>fallocate -l 1GB <span class="nv">$FILENAME</span> <span class="c1"># gigabyte</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>fallocate -l 1G <span class="nv">$FILENAME</span>  <span class="c1"># gibibyte</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+</dd>
+</dl>
+<h4 id="hdparm">hdparm</h4>
+<dl>
+<dd><div class="highlight"><pre><span></span><code>hdparm -I /dev/sda
+</code></pre></div></dd>
+</dl>
+<h4 id="losetup">losetup</h4>
+<dl>
+<dd>Create a loopback device (i.e. a virtual block device)
+<div class="highlight"><pre><span></span><code>losetup -f /tmp/file1
+</code></pre></div></dd>
+</dl>
+<h4 id="sfdisk">sfdisk</h4>
+<dl>
+<dd>
+<p>Script-based partition table editor, similar to <a href="#fdisk"><code>fdisk</code></a> and <a href="#gdisk"><code>gdisk</code></a>, which can be run interactively. It does not interface with GPT format, neither is it designed for large partitions. [ref][11]</p>
+<p>List partitions on all devices</p>
+<p>Display size of {partition} or {device}
+This command produces the size of {partition} (i.e. <code>/dev/sda1</code>) or even {device} (<code>/dev/sda</code>) in blocks
+<div class="highlight"><pre><span></span><code>sfdisk -s partition
+sfdisk -s device
+</code></pre></div>
+Apply consistency checks to {partition} or {device}
+<div class="highlight"><pre><span></span><code>sfdisk -V partition
+sfdisk --verify device
+</code></pre></div>
+Create a partition
+<div class="highlight"><pre><span></span><code>sfdisk device
+</code></pre></div>
+Save sectors changed
+This command will allow recovery using the following command
+<div class="highlight"><pre><span></span><code>sfdisk /dev/hdd -O hdd-partition-sectors.save
+</code></pre></div>
+Recovery
+Man page indicates this flag is no longer supported, and recommends use of <code>dd</code> instead.
+<div class="highlight"><pre><span></span><code>sfdisk /dev/hdd -I hdd-partition-sectors.save
+</code></pre></div></p>
+</dd>
+</dl>
+<h4 id="shred">shred</h4>
+<dl>
+<dd>Write random data to an unmounted disk for {n} passes
+<div class="highlight"><pre><span></span><code>shred --iterations<span class="o">=</span>n
+</code></pre></div></dd>
+</dl>
+<h3 id="btrfs_1">btrfs</h3>
+<h4 id="btrfs_2">btrfs</h4>
+<dl>
+<dd>
+<p>Show storage consumed, including how much is shared by all snapshots
+<div class="highlight"><pre><span></span><code>btrfs <span class="k">fi</span> du /home -s
+</code></pre></div></p>
+<div class="highlight"><pre><span></span><code>btrfs <span class="k">fi</span> df /home
+</code></pre></div>
+</dd>
+</dl>
+<h3 id="lvm">LVM</h3>
+<h4 id="lvcreate">lvcreate</h4>
+<dl>
+<dd>Create a 20 gigabyte logical volume named "Marketing" from volume group {vg1}
+<div class="highlight"><pre><span></span><code>lvcreate -L 20G vg1 -n Marketing
+</code></pre></div>
+Create logical volume named <code>lv1</code> of size 500G from volume group <code>vg1</code>
+<div class="highlight"><pre><span></span><code>lvcreate -L 500G vg1 -n lv1
+</code></pre></div></dd>
+</dl>
+<h4 id="lvm_1">lvm</h4>
+<dl>
+<dd><div class="highlight"><pre><span></span><code>lvm version
+</code></pre></div></dd>
+</dl>
+<h4 id="lvresize">lvresize</h4>
+<dl>
+<dd>Resize existent logical volume <strong>Marketing</strong> in volume group <strong>vg1</strong> to have an additional 10 gigabytes of space
+<div class="highlight"><pre><span></span><code>lvresize -L +10G /dev/vg1/Marketing
+</code></pre></div></dd>
+</dl>
+<h4 id="pvcreate">pvcreate</h4>
+<dl>
+<dd><div class="highlight"><pre><span></span><code>pvcreate /dev/loop0
+</code></pre></div></dd>
+</dl>
+<h4 id="pvsmd">pvs.md</h4>
+<dl>
+<dd>...</dd>
+</dl>
+<h4 id="vgs">vgs</h4>
+<dl>
+<dd>...</dd>
+</dl>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../Shell/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Shells" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Shells
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../SystemD/" class="md-footer__link md-footer__link--next" aria-label="Next: SystemD" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              SystemD
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "toc.integrate", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.6e54b5cd.min.js"></script>
+      
+    
+  </body>
+</html>

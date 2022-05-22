@@ -1,0 +1,4579 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://jasper-zanjani.github.io/notes/Scripts/Django/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.9">
+    
+    
+      
+        <title>Django - 🧠</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.120efc48.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.9647289d.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#ffc105">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../style/admonitions-gcp.css">
+    
+      <link rel="stylesheet" href="../../style/admonitions-azure.css">
+    
+      <link rel="stylesheet" href="../../style/admonitions-aws.css">
+    
+      <link rel="stylesheet" href="../../style/admonitions-rs.css">
+    
+      <link rel="stylesheet" href="../../style/admonitions-cs.css">
+    
+      <link rel="stylesheet" href="../../style/admonitions-cpp.css">
+    
+      <link rel="stylesheet" href="../../style/admonitions-cisco.css">
+    
+      <link rel="stylesheet" href="../../style/admonitions-py.css">
+    
+      <link rel="stylesheet" href="../../style/admonitions-output.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="amber" data-md-color-accent="yellow">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#django" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="🧠" class="md-header__button md-logo" aria-label="🧠" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            🧠
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Django
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Coding/" class="md-tabs__link">
+        Coding
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../GTK/" class="md-tabs__link">
+        GTK
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Health/" class="md-tabs__link">
+        Health
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Infrastructure/Ansible/" class="md-tabs__link">
+        Infrastructure
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Linux/" class="md-tabs__link">
+        Linux
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Misc/" class="md-tabs__link">
+        Misc
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Python/" class="md-tabs__link">
+        Python
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Rust/" class="md-tabs__link">
+        Rust
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../" class="md-tabs__link md-tabs__link--active">
+        Scripts
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="🧠" class="md-nav__button md-logo" aria-label="🧠" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    🧠
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" data-md-state="indeterminate" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Coding
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Coding" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Coding
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Coding/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Coding/6502/" class="md-nav__link">
+        6502
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Coding/C%23/" class="md-nav__link">
+        C&#35;
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Coding/C%2B%2B/" class="md-nav__link">
+        C++
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Coding/C/" class="md-nav__link">
+        C
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Coding/CS/" class="md-nav__link">
+        MSCS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Coding/Courses/" class="md-nav__link">
+        Courses
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Coding/Debugging/" class="md-nav__link">
+        Debugging
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Coding/DnD/" class="md-nav__link">
+        🐲&#xFE0F;  Dungeons & Dragons
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Coding/Dogfood/" class="md-nav__link">
+        🐶 Dogfood data
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Coding/GUI/" class="md-nav__link">
+        🖥&#xFE0F; GUI frameworks comparison
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Coding/Others/" class="md-nav__link">
+        🦪 Perl
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Coding/Python/" class="md-nav__link">
+        🐍 Python
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Coding/Testing/" class="md-nav__link">
+        Testing
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Coding/Windows/" class="md-nav__link">
+        Windows programming
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Coding/Wired%20Brain%20Coffee/" class="md-nav__link">
+        ☕ Wired Brain Coffee
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_17" data-md-state="indeterminate" type="checkbox" id="__nav_2_17" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_17">
+          WinUI
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="WinUI" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_17">
+          <span class="md-nav__icon md-icon"></span>
+          WinUI
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Coding/WinUI/" class="md-nav__link">
+        WinUI
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Coding/WinUI/API/" class="md-nav__link">
+        API
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" data-md-state="indeterminate" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          GTK
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="GTK" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          GTK
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GTK/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GTK/API/" class="md-nav__link">
+        API
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GTK/Glade/" class="md-nav__link">
+        Glade
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GTK/Glossary/" class="md-nav__link">
+        📘 Glossary
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_5" data-md-state="indeterminate" type="checkbox" id="__nav_3_5" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_5">
+          Examples
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Examples" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_5">
+          <span class="md-nav__icon md-icon"></span>
+          Examples
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GTK/Examples/GNOME-Tweaks/" class="md-nav__link">
+        GNOME Tweaks
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_6" data-md-state="indeterminate" type="checkbox" id="__nav_3_6" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_6">
+          Tasks
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Tasks" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_6">
+          <span class="md-nav__icon md-icon"></span>
+          Tasks
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GTK/Tasks/Boilerplate/" class="md-nav__link">
+        Boilerplate
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GTK/Tasks/Environment/" class="md-nav__link">
+        Development environment
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GTK/Tasks/Hello-World/" class="md-nav__link">
+        Hello, World!
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GTK/Tasks/Image-Viewer/" class="md-nav__link">
+        Image Viewer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GTK/Tasks/Starships/" class="md-nav__link">
+        Starships
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GTK/Tasks/Tasks/" class="md-nav__link">
+        Tasks
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" data-md-state="indeterminate" type="checkbox" id="__nav_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Health
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Health" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Health
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Health/" class="md-nav__link">
+        💊 Health
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" data-md-state="indeterminate" type="checkbox" id="__nav_5" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Infrastructure
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Infrastructure" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Infrastructure
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Infrastructure/Ansible/" class="md-nav__link">
+        Ansible
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Infrastructure/Certifications/" class="md-nav__link">
+        🥇 Certifications
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Infrastructure/Cloud/" class="md-nav__link">
+        Cloud
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Infrastructure/Network/" class="md-nav__link">
+        Network
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_5" data-md-state="indeterminate" type="checkbox" id="__nav_5_5" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_5">
+          Cloud
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Cloud" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_5">
+          <span class="md-nav__icon md-icon"></span>
+          Cloud
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Infrastructure/Cloud/GCP/" class="md-nav__link">
+        Google Cloud Platform
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Infrastructure/Cloud/Tasks/" class="md-nav__link">
+        Tasks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_5_3" data-md-state="indeterminate" type="checkbox" id="__nav_5_5_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_5_3">
+          Azure
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Azure" data-md-level="3">
+        <label class="md-nav__title" for="__nav_5_5_3">
+          <span class="md-nav__icon md-icon"></span>
+          Azure
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Infrastructure/Cloud/Azure/ARM/" class="md-nav__link">
+        ARM
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Infrastructure/Cloud/Azure/Azure-AD/" class="md-nav__link">
+        Azure AD
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Infrastructure/Cloud/Azure/Azure-App-Service/" class="md-nav__link">
+        Azure App Service
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Infrastructure/Cloud/Azure/Azure-Backup/" class="md-nav__link">
+        Azure Backup
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Infrastructure/Cloud/Azure/Azure-File-Service/" class="md-nav__link">
+        Azure File Service
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Infrastructure/Cloud/Azure/Azure-IAM/" class="md-nav__link">
+        Azure IAM
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Infrastructure/Cloud/Azure/Azure-IaaS/" class="md-nav__link">
+        Azure IaaS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Infrastructure/Cloud/Azure/Azure-Load-Balancer/" class="md-nav__link">
+        Azure Load Balancer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Infrastructure/Cloud/Azure/Azure-Monitoring/" class="md-nav__link">
+        Azure Monitoring
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Infrastructure/Cloud/Azure/Azure-Policy/" class="md-nav__link">
+        Azure Policy
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Infrastructure/Cloud/Azure/Azure-Storage/" class="md-nav__link">
+        Azure Storage
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Infrastructure/Cloud/Azure/Azure-VPN/" class="md-nav__link">
+        Azure VPN
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Infrastructure/Cloud/Azure/Kusto/" class="md-nav__link">
+        Kusto
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" data-md-state="indeterminate" type="checkbox" id="__nav_6" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          Linux
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Linux" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Linux
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/Cgroups/" class="md-nav__link">
+        Cgroups
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/Concurrency/" class="md-nav__link">
+        Concurrency
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/Databases/" class="md-nav__link">
+        Databases
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/Display/" class="md-nav__link">
+        Display
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/Files/" class="md-nav__link">
+        Files
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/Filters/" class="md-nav__link">
+        Commands
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/GNOME/" class="md-nav__link">
+        GNOME
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/GRUB/" class="md-nav__link">
+        Boot
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/Kernel/" class="md-nav__link">
+        Kernel
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/Package/" class="md-nav__link">
+        Package management
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/Random/" class="md-nav__link">
+        Random
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/Red-Hat/" class="md-nav__link">
+        Red Hat :material-redhat:
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/Ricing/" class="md-nav__link">
+        Tiling window managers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/SELinux/" class="md-nav__link">
+        SELinux
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/Shell/" class="md-nav__link">
+        Shells
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/Storage/" class="md-nav__link">
+        Storage
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/SystemD/" class="md-nav__link">
+        SystemD
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/Ubuntu/" class="md-nav__link">
+        Ubuntu
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/Virtualization/" class="md-nav__link">
+        Virtualization
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_21" data-md-state="indeterminate" type="checkbox" id="__nav_6_21" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_21">
+          Applications
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Applications" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_21">
+          <span class="md-nav__icon md-icon"></span>
+          Applications
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/Applications/Rhythmbox/" class="md-nav__link">
+        Rhythmbox
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/Applications/ffmpeg/" class="md-nav__link">
+        ffmpeg
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/Applications/nginx/" class="md-nav__link">
+        Nginx
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/Applications/screen/" class="md-nav__link">
+        screen
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/Applications/ssh/" class="md-nav__link">
+        SSH
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/Applications/syncthing/" class="md-nav__link">
+        Syncthing
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/Applications/vim/" class="md-nav__link">
+        Vim
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/Applications/youtube-dl/" class="md-nav__link">
+        Youtube dl
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_22" data-md-state="indeterminate" type="checkbox" id="__nav_6_22" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_22">
+          Containers
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Containers" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_22">
+          <span class="md-nav__icon md-icon"></span>
+          Containers
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/Containers/" class="md-nav__link">
+        Containers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/Containers/Docker/" class="md-nav__link">
+        Docker
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/Containers/Helm/" class="md-nav__link">
+        Helm
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/Containers/Kubernetes/" class="md-nav__link">
+        Kubernetes
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_23" data-md-state="indeterminate" type="checkbox" id="__nav_6_23" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_23">
+          Networking
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Networking" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_23">
+          <span class="md-nav__icon md-icon"></span>
+          Networking
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/Networking/" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/Networking/Commands/" class="md-nav__link">
+        Commands
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/Networking/Samba/" class="md-nav__link">
+        Samba
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/Networking/Tasks/" class="md-nav__link">
+        Tasks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/Networking/eBPF/" class="md-nav__link">
+        eBPF
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" data-md-state="indeterminate" type="checkbox" id="__nav_7" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          Misc
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Misc" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Misc
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Aircraft/" class="md-nav__link">
+        ✈&#xfe0f; Aircraft
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Akro-Mils/" class="md-nav__link">
+        Akro-Mils
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/CI-CD/" class="md-nav__link">
+        CI/CD
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Computers/" class="md-nav__link">
+        Computers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Diaz/" class="md-nav__link">
+        Joey Diaz
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Intelligence/" class="md-nav__link">
+        🔎 Intelligence
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Lab/" class="md-nav__link">
+        Home lab
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Military/" class="md-nav__link">
+        Military
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Space/" class="md-nav__link">
+        🚀 Space
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Storage/" class="md-nav__link">
+        Storage
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/TrueNAS/" class="md-nav__link">
+        TrueNAS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/bittorrent/" class="md-nav__link">
+        BitTorrent
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/cryptocurrency/" class="md-nav__link">
+        🪙 Cryptocurrency
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/learn/" class="md-nav__link">
+        Learning
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/pins/" class="md-nav__link">
+        Lapel pin ideas
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_17" data-md-state="indeterminate" type="checkbox" id="__nav_7_17" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_17">
+          Text editors
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Text editors" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_17">
+          <span class="md-nav__icon md-icon"></span>
+          Text editors
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Text-editors/code/" class="md-nav__link">
+        VS Code
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_18" data-md-state="indeterminate" type="checkbox" id="__nav_7_18" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_18">
+          Web
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Web" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_18">
+          <span class="md-nav__icon md-icon"></span>
+          Web
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Web/" class="md-nav__link">
+        🌎 Web
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Web/CSS/" class="md-nav__link">
+        CSS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Web/mkdocs/" class="md-nav__link">
+        Mkdocs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_18_4" data-md-state="indeterminate" type="checkbox" id="__nav_7_18_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_18_4">
+          JavaScript
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="JavaScript" data-md-level="3">
+        <label class="md-nav__title" for="__nav_7_18_4">
+          <span class="md-nav__icon md-icon"></span>
+          JavaScript
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Web/JavaScript/" class="md-nav__link">
+        Axios
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Web/JavaScript/Express/" class="md-nav__link">
+        Express
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Web/JavaScript/React/" class="md-nav__link">
+        React
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Web/JavaScript/Web%20Components/" class="md-nav__link">
+        Web Components
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_19" data-md-state="indeterminate" type="checkbox" id="__nav_7_19" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_19">
+          Windows
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Windows" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_19">
+          <span class="md-nav__icon md-icon"></span>
+          Windows
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Windows/" class="md-nav__link">
+        Windows
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Windows/Active%20Directory/" class="md-nav__link">
+        Active Directory
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Windows/DNS-labs/" class="md-nav__link">
+        DNS labs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Windows/Hyper-V/" class="md-nav__link">
+        Hyper-V
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Windows/Labs/" class="md-nav__link">
+        Labs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Windows/PowerShell/" class="md-nav__link">
+        🐚 PowerShell
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Windows/WDS-lab/" class="md-nav__link">
+        WDS lab
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Windows/WS2016/" class="md-nav__link">
+        Windows Server
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Windows/diskpart/" class="md-nav__link">
+        Diskpart
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" data-md-state="indeterminate" type="checkbox" id="__nav_8" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8">
+          Python
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Python" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Python
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/" class="md-nav__link">
+        🐍 Python
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_2" data-md-state="indeterminate" type="checkbox" id="__nav_8_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8_2">
+          Modules
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Modules" data-md-level="2">
+        <label class="md-nav__title" for="__nav_8_2">
+          <span class="md-nav__icon md-icon"></span>
+          Modules
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Argparse/" class="md-nav__link">
+        Argparse
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Asyncio/" class="md-nav__link">
+        Asyncio
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Azure.cosmos/" class="md-nav__link">
+        Azure.cosmos
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Bullet/" class="md-nav__link">
+        Bullet
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Click/" class="md-nav__link">
+        Click
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Collections/" class="md-nav__link">
+        Collections
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Colorama/" class="md-nav__link">
+        Colorama
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Csv/" class="md-nav__link">
+        Csv
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Datetime/" class="md-nav__link">
+        Datetime
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Discord_py/" class="md-nav__link">
+        discord.py
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Django/" class="md-nav__link">
+        Django
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Dotenv/" class="md-nav__link">
+        Dotenv
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/FastAPI/" class="md-nav__link">
+        FastAPI
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Functools/" class="md-nav__link">
+        Functools
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Glob/" class="md-nav__link">
+        Glob
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Heapq/" class="md-nav__link">
+        Heapq
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Http/" class="md-nav__link">
+        http
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Itertools/" class="md-nav__link">
+        itertools
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Json/" class="md-nav__link">
+        Json
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Logging/" class="md-nav__link">
+        Logging
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Npyscreen/" class="md-nav__link">
+        Npyscreen
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Optparse/" class="md-nav__link">
+        optparse
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Os/" class="md-nav__link">
+        os
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Pygobject/" class="md-nav__link">
+        Pygobject
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Pyinstaller/" class="md-nav__link">
+        Pyinstaller
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Pythonnet/" class="md-nav__link">
+        pythonnet
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Random/" class="md-nav__link">
+        random
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Scrapy/" class="md-nav__link">
+        scrapy
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Setuptools/" class="md-nav__link">
+        setuptools
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Socket/" class="md-nav__link">
+        socket
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Sqlite3/" class="md-nav__link">
+        sqlite3
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Subprocess/" class="md-nav__link">
+        subprocess
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Sys/" class="md-nav__link">
+        sys
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Tabulate/" class="md-nav__link">
+        Tabulate
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Termcolor/" class="md-nav__link">
+        termcolor
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Threading/" class="md-nav__link">
+        threading
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Weakref/" class="md-nav__link">
+        Weakref
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Winrm/" class="md-nav__link">
+        Winrm
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Xml/" class="md-nav__link">
+        xml
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Yaml/" class="md-nav__link">
+        Yaml
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" data-md-state="indeterminate" type="checkbox" id="__nav_9" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9">
+          Rust
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Rust" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Rust
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/Cargo/" class="md-nav__link">
+        Cargo
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/Combinators/" class="md-nav__link">
+        Combinators
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/Crates/" class="md-nav__link">
+        Modules
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/Error/" class="md-nav__link">
+        Error handling
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/Glossary/" class="md-nav__link">
+        Glossary
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/Scratchpad/" class="md-nav__link">
+        Scratchpad
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_8" data-md-state="indeterminate" type="checkbox" id="__nav_9_8" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9_8">
+          Crates
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Crates" data-md-level="2">
+        <label class="md-nav__title" for="__nav_9_8">
+          <span class="md-nav__icon md-icon"></span>
+          Crates
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/Crates/Actix/" class="md-nav__link">
+        actix
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/Crates/Clap/" class="md-nav__link">
+        clap
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/Crates/Failure/" class="md-nav__link">
+        failure
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/Crates/Gtk-rs/" class="md-nav__link">
+        gtk-rs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/Crates/Rnd/" class="md-nav__link">
+        rnd
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/Crates/Rocket/" class="md-nav__link">
+        Rocket
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/Crates/Rusqlite/" class="md-nav__link">
+        rusqlite
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/Crates/Serde/" class="md-nav__link">
+        serde
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/Crates/Structopt/" class="md-nav__link">
+        structopt
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_8_10" data-md-state="indeterminate" type="checkbox" id="__nav_9_8_10" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9_8_10">
+          Cursive
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Cursive" data-md-level="3">
+        <label class="md-nav__title" for="__nav_9_8_10">
+          <span class="md-nav__icon md-icon"></span>
+          Cursive
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/Crates/Cursive/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/Crates/Cursive/API/" class="md-nav__link">
+        API
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/Crates/Cursive/Tasks/" class="md-nav__link">
+        Tasks
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_8_11" data-md-state="indeterminate" type="checkbox" id="__nav_9_8_11" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9_8_11">
+          Diesel
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Diesel" data-md-level="3">
+        <label class="md-nav__title" for="__nav_9_8_11">
+          <span class="md-nav__icon md-icon"></span>
+          Diesel
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/Crates/Diesel/" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/Crates/Diesel/Tasks/" class="md-nav__link">
+        Tasks
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_9" data-md-state="indeterminate" type="checkbox" id="__nav_9_9" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9_9">
+          Tasks
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Tasks" data-md-level="2">
+        <label class="md-nav__title" for="__nav_9_9">
+          <span class="md-nav__icon md-icon"></span>
+          Tasks
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/Tasks/" class="md-nav__link">
+        Boilerplate
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/Tasks/Hello-World/" class="md-nav__link">
+        Hello, World!
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/Tasks/Mathematics/" class="md-nav__link">
+        Mathematics
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/Tasks/Porting-grep/" class="md-nav__link">
+        grep ports
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/Tasks/To-Do/" class="md-nav__link">
+        To-Do
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/Tasks/Transactions/" class="md-nav__link">
+        Transactions
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" type="checkbox" id="__nav_10" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_10">
+          Scripts
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Scripts" data-md-level="1">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          Scripts
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        Video scripts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Anki/" class="md-nav__link">
+        Anki
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CSharp/" class="md-nav__link">
+        CSharp
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Django
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Django
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#todo" class="md-nav__link">
+    Todo
+  </a>
+  
+    <nav class="md-nav" aria-label="Todo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    Setup
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#venv" class="md-nav__link">
+    Venv
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#project-skeleton" class="md-nav__link">
+    Project skeleton
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#project-structure" class="md-nav__link">
+    Project structure
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#settingspy" class="md-nav__link">
+    settings.py
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model" class="md-nav__link">
+    Model
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-data" class="md-nav__link">
+    Adding data
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#view" class="md-nav__link">
+    View
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#forms" class="md-nav__link">
+    Forms
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Kusto/" class="md-nav__link">
+        Kusto
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Rust/" class="md-nav__link">
+        Rust
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SQLite/" class="md-nav__link">
+        SQLite
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10_8" data-md-state="indeterminate" type="checkbox" id="__nav_10_8" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_10_8">
+          Discord
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Discord" data-md-level="2">
+        <label class="md-nav__title" for="__nav_10_8">
+          <span class="md-nav__icon md-icon"></span>
+          Discord
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Discord/Discord.article/" class="md-nav__link">
+        Discord.article
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Discord/Discord/" class="md-nav__link">
+        Discord
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="django">Django</h1>
+<dl>
+<dd>
+<p><figure markdown style="display: block; float:right;"><img alt="" src="../img/Explain.png" width="300px" /><figcaption markdown><strong>Explaining concepts</strong><br/><span class="keys"><kbd class="key-f10">F10</kbd></span></figcaption></figure></p>
+<p>Django is a web application framework written in Python. 
+Today I'm going to show you how to code a simple To-Do web application. 
+If you've found this video, that probably means you've already seen some of the many other popular YouTube tutorials that you how to do it. </p>
+<p>What I'll show you is how to integrate it with the Bulma CSS framework!</p>
+</dd>
+</dl>
+<h2 id="todo">Todo</h2>
+<h4 id="setup">Setup</h4>
+<dl>
+<dd>
+<p>I'm going to assume you have a working installation of Python. </p>
+<ul>
+<li><strong>Windows</strong> =&gt; Microsoft Store. </li>
+<li>If you're running Mac or Linux, you might already have a working Python installation, but if not there are many different ways of installing Python.</li>
+</ul>
+<p>Before we install Django we're going to set up a virtual environment.</p>
+</dd>
+</dl>
+<h4 id="venv">Venv</h4>
+<dl>
+<dd>
+<p><img align="left" alt="" src="../img/Code.jpg" width="200px" /></p>
+<p>Python only tolerates a single installed version of a package at any given point in time. This means that as you add packages to your installation, it's only a matter of time before you run into a conflict, where a package demands a  version of a dependency that conflicts with the one you have installed.</p>
+<p>The most common way to avoid this is by creating a virtual environment. A virtual environment is like a isolated copy of Python that is only activated when you need. Virtual environments let you install packages safely, keeping your system installation clutter-free.</p>
+<p>I have PowerShell open, and if you have a Windows computer you should have it too. I'm going to <code>cd</code> to the venv directory. This is the directory where I like to install all my virtual environments. But you're free to manage virtual environments however you choose. I run <code>ls</code> here and you can see I've already set up multiple virtual environments.</p>
+<p>Let's create a new virtual environment by running <code>python -m venv django</code>. After a few moments, the virtual environment will be created.</p>
+<p>Now let's run <code>ls</code> again, and we can see that <strong>this</strong> directory was created. Let's see what a virtual environment looks like.</p>
+<p>There are a few directories and a config file. If we inspect the config file <code>notepad pyvenv.cfg</code>, we see that it specifies the currently installed version of Python. It also points to the system installation of Python. If I run <strong><code>Get-Command python</code></strong> I can see that the system installation of Python points to this directory. Depending on how you installed Python, the directory that appears here may be different. And if you're watching this video in the future, your version of Python will be newer than this.</p>
+<p>The business end of the virtual environment is actually here, in <strong>Scripts</strong>. Let's navigate there and run <code>gci</code> again.</p>
+<p>Here we see activation scripts and some executable files. One of these is python.exe, which is the Python interpreter. We also have pip.exe.</p>
+<p>At the moment, this is just a directory - if we type python.exe we will be running the system installation of Python. I'll prove it.</p>
+<div class="highlight"><pre><span></span><code><span class="nb">gcm </span><span class="n">python</span> <span class="p">|</span> <span class="nb">select </span><span class="n">source</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>which python
+</code></pre></div>
+<p>In order to tell the system we want to use the virtual environment, we're going to run this activation script, Activate.ps1.</p>
+<p>Now we are in the virtual environment. We can confirm this by running <code>gcm python.exe</code>, and we can see that running Python now will run the interpreter that we just installed. What happens when we want to run <code>pip</code>? We can see that pip, too, now points to the version we just installed in the virtual environment. If we install a package now, it will be installed only to the virtual environment, and not the system installation.</p>
+<p>Let's install Django.
+<div class="highlight"><pre><span></span><code><span class="n">pip</span> <span class="n">install</span> <span class="n">django</span>
+</code></pre></div>
+In a few moments the installation will complete.</p>
+<p>We can confirm the installation completed by running <code>pip list</code>. Here is Django, version 3.xx. And if we run <code>gci</code> again, we can see that some new executable files have been installed to this directory.  But how can we be sure that Django wasn't installed to the system installation? We can exit the virtual environment by running <code>deactivate</code>.</p>
+<p>Now we have returned to the system installation of Python. We can confirm this again by running <code>gcm</code>. And now when we check the list of installed packages using <code>pip list</code>, we see that Django is not present. We successfully installed Django to the virtual environment alone, leaving our system installation untouched.</p>
+<p>This is the recommended way of installing Python packages.</p>
+</dd>
+</dl>
+<h4 id="project-skeleton">Project skeleton</h4>
+<dl>
+<dd>Before we leave the virtual environment and start coding, let's take another look at the Scripts directory. One of the executables that has been installed is <a href="https://docs.djangoproject.com/en/3.1/ref/django-admin/"><code>django-admin.exe</code></a>. This is Django’s command-line utility for administrative tasks. </dd>
+</dl>
+<p>Other languages have similar utilities that are used to facilitate common administrative tasks, for example building out the skeleton of a new project, which you would do like this:
+<div class="highlight"><pre><span></span><code>django-admin startproject project
+</code></pre></div>
+This is all I'm going to use django-admin for in this course, but there is a lot you can do with it.</p>
+<p>Once the project has been created, let's go into the directory and peek around.
+As we can see, a Django project has a <strong>manage.py</strong> script and contains a nested directory with the same name as that of the project.</p>
+<p>The <strong>manage.py</strong> is actually what you will use to do a lot of administration for your web application. For example, we can run <code>python manage.py runserver</code> to start the web application. If we open a web browser to the address and port used by the server, we can see Django's default landing page. Let's close the server by pressing <kbd>Ctrl</kbd><kbd>C</kbd></p>
+<p>Let's run another command
+<div class="highlight"><pre><span></span><code>python manage.py startapp application
+</code></pre></div>
+If we get the directory contents again, we see that, similar to the <code>django-admin</code> command we ran earlier, this command erects a directory of content. Let's take a look and see what it created.</p>
+<p>More Python scripts.. but what are these files for? Off the bat, we notice this directory has a <strong>urls.py</strong>. Is this similar to the <strong>urls.py</strong> created in the project directory?</p>
+<h4 id="project-structure">Project structure</h4>
+<dl>
+<dd>
+<p><img align="left" alt="" src="../img/Explain.jpg" width="200px" /></p>
+<p>Django web apps are structured into <strong>projects</strong> and <strong>applications</strong>. It's important to understand the distinction, because it is not immediately obvious to a novice.</p>
+<ul>
+<li>
+<p><strong>project</strong> describes a Django web application</p>
+<ul>
+<li>The project's root directory contains <strong>manage.py</strong>. </li>
+<li>The root directory contains a subdirectory with the same name as the root, but which contains other Python scripts, like urls.py and especially <strong>settings.py</strong>. </li>
+<li>This is called the <strong>project directory</strong>. </li>
+</ul>
+</li>
+<li>
+<p>An <strong>application</strong> refers to a Python package that provides some set of features. </p>
+<ul>
+<li>Applications are a component of projects. </li>
+<li>Application directories also contain a urls.py, but that's where the similarity ends.</li>
+</ul>
+</li>
+</ul>
+<p>For a person who's new to Django, this means that much of the core functionality of your <strong>project</strong> will actually be contained in an <strong>app</strong>, which can feel awkward at first. But bear with it for now.</p>
+</dd>
+</dl>
+<h4 id="settingspy">settings.py</h4>
+<dl>
+<dd>
+<p><img align="left" alt="" src="img/Code-Explain.jpg" width="200px" /></p>
+<p>Before we move any further, let's open the project folder and go to <strong>settings.py</strong>. </p>
+<p>If we scroll down to <strong><code>INSTALLED_APPS</code></strong> we need to make sure we add the name of the application that we just created in quotes to the list. This list is what Django uses to construct its namespace. </p>
+<p>Let's also take a look at this token value  (<code>SECRET_KEY</code>) that is provided in plaintext. Because I'm guessing you're just learning Django and not about to deploy your web application to production, doing this is okay. But for production systems, this is a no-no. I'm going to show you an easy and simple it is to protect your secrest. But if you don't want to spend time on this section, feel free to use the time-codes to skip ahead.</p>
+</dd>
+</dl>
+<h4 id="model">Model</h4>
+<p>In order to determine the shape of a web app's data, Django uses what is called a <strong>Model</strong>. If you're familiar with object-oriented programming, this will be the easiest part.</p>
+<p>Let's go into the application's <strong>models.py</strong> and create a Model. Models form the basis of how Django organizes data. </p>
+<p><div class="highlight"><span class="filename">models.py</span><pre><span></span><code><span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">models</span>
+
+<span class="k">class</span> <span class="nc">Task</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+  <span class="n">title</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+  <span class="c1"># done = models.BooleanField()</span>
+  <span class="c1"># created = models.DateTimeField(auto_now_add=True)</span>
+</code></pre></div>
+We're subclassing <code>models.Model</code>, and the model defines a series of named <strong>fields</strong> which are instances of each of these classes. Some of these fields require specific attributes to be defined. For example, <strong><code>CharField</code></strong> requires a <strong><code>max_length</code></strong> attribute to be defined. </p>
+<p>Defining a model is not permanent, so let's stick with just the one title field. We'll add to it in a moment. Let's move on to the topic of migrations.</p>
+<p>When you make even the slightest to the models used in your web application's, Django requires you to perform what's called a <strong>migration</strong>. A migration keeps the web application's database consistent with the model. This is a two-step process from the command-line.
+<div class="highlight"><pre><span></span><code>python manage.py makemigrations
+</code></pre></div>
+This command analyzes the Model classes you've defined for the web application, and then it actually codes Python scripts for you to change the database accordingly. You'll find them in the migrations directory, see? </p>
+<p>To run these scripts, run
+<div class="highlight"><pre><span></span><code>python manage.py migrate
+</code></pre></div>
+Because this is the first time I ran a migration, it created a database for me from scratch, here. We can see that it's a <strong>SQLite</strong> database, a lightweight option that is used a lot in Python development. In fact, the Python Standard Library includes a SQLite module, so every Python installation is able to create and manipulate SQLite databases.</p>
+<p>How did Django know to produce an SQLite database, and not another? Let me show you.</p>
+<p>In the <strong>settings.py</strong> there is a dictionary named <strong>DATABASES</strong></p>
+<p><div class="highlight"><pre><span></span><code><span class="n">DATABASES</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s1">&#39;default&#39;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s1">&#39;ENGINE&#39;</span><span class="p">:</span> <span class="s1">&#39;django.db.backends.sqlite3&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;NAME&#39;</span><span class="p">:</span> <span class="n">BASE_DIR</span> <span class="o">/</span> <span class="s1">&#39;db.sqlite3&#39;</span><span class="p">,</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+"ENGINE" specifies the driver to use with the database. Django supports four databases out of the box: PostgreSQL, MySQL, Oracle, and SQLite. The other 3 options are more involved and require a server to be set up, so if you ever want to use them, you'll have to define values for <code>HOST</code>, <code>PORT</code>, <code>USER</code>, and <code>PASSWORD</code> in this dictionary. But SQLite keeps the database in a local file - no need to mess with any of that. We don't have time for an in-depth discussion of SQLite, but what I will do is show you how we can quickly take a look at this database within VS Code.</p>
+<p>Open the Extensions Marketplace and search for sqlite. The top app, SQLite Explorer by "alex", is what we're looking for. Click the green install button. </p>
+<p>I already have this extension installed, so I'm going to return to the File Explorer. Now I right click on <strong>db.sqlite3</strong> and select open database. Another section named SQlite explorer should open in the file explorer. If you installed SQLite Explorer but don't see this section, check the hamburger menu in the top right and make sure it's enabled.</p>
+<p>SQLite Explorer allows you to view the schema and content of SQLite tables. Let's expand it. Each of these is a <strong>table</strong> -- the file is the database. All of these tables comes from an application in our Django project, and all but one of them were automatically implemented. The one we created is here, at the top - <strong>application_task</strong>.</p>
+<p>When we expand the table, we see Django added an integer id field, as well as the field we defined. "<code>varchar</code>" is SQL's equivalent of a string, more or less. </p>
+<p>Let's go back to the code and make another change to the Model. We're going to add a value so we can mark completed tasks off our to-do list.
+<div class="highlight"><pre><span></span><code><span class="c1"># models.py</span>
+<span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">models</span>
+
+<span class="k">class</span> <span class="nc">Task</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+  <span class="n">title</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+  <span class="n">done</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">BooleanField</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+  <span class="c1"># created = models.DateTimeField(auto_now_add=True)</span>
+</code></pre></div>
+<code>BooleanField</code> doesn't require a <code>max_length</code>, but it does require a default value.</p>
+<p>We changed the model, so the database will have to be updated, which means we have to run another migration. Again we run <code>python manage.py makemigrations</code>, and we see a new migration script has been generated. Let's run it using <code>python manage.py migrate</code>. Once it's complete let's return to the SQLite Explorer. Now we see that our change has taken effect in the schema of the task. Let's go back and make one final addition.
+<div class="highlight"><pre><span></span><code><span class="c1"># models.py</span>
+<span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">models</span>
+
+<span class="k">class</span> <span class="nc">Task</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+  <span class="n">title</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+  <span class="n">done</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">BooleanField</span><span class="p">()</span>
+  <span class="n">created</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateTimeField</span><span class="p">(</span><span class="n">auto_now_add</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+  <span class="c1"># def __str__(self):</span>
+  <span class="c1">#   return self.title</span>
+</code></pre></div>
+As you might guess, <code>DateTimeField</code> stores date and time information. The <code>auto_now_add</code> argument means that the web application will automatically associate the current date and time when a record is created. Let's make migrations and migrate one last time.</p>
+<h2 id="adding-data">Adding data</h2>
+<p>Now the foundation of our web app - the data model - is complete. Too bad we have to wait until we code the rest of the web app to know what it looks like... wouldn't it be great if we could test out some data right away? Well, we can. Actually, there are several ways.</p>
+<p>The most Pythonic way is by running the Python interpreter. In the integrated terminal, when we run <code>python manage.py shell</code> we are greeted by a Python REPL. Let's import the model and instantiate a new task
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">app.models</span> <span class="kn">import</span> <span class="n">Task</span>
+
+<span class="n">task</span> <span class="o">=</span> <span class="n">Task</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Shop for milk&quot;</span><span class="p">)</span>
+</code></pre></div>
+Now we can run the <code>save</code> method on this task object: <code>task.save()</code>. And that will save the task created into the database.</p>
+<p>Another way is by running the command-line client for the database itself. By running <code>python manage.py dbshell</code>, we're taken into the SQLite client. We can run <code>.tables</code>, and we'll see all the available tables in the database. The output of this command should correspond exactly with the what we see in the SQLite explorer by opening the database.</p>
+<p>A deeper discussion of SQL syntax is beyond the scope of this video, but it wouldn't hurt to learn a couple of tricks. One SQL command that everyone know is <code>select * from</code>. We can run <code>select * from app_task;</code> and we can see that the task we added is in the database, and will be served by the web server.</p>
+<p>But a more typical way to add data during development is to do it through the <strong>admin portal</strong>. </p>
+<p>Let me show you what that is. Let's run <code>.exit</code> to leave the SQLite client. Now let's run the server and open a web browser to "localhost/admin". Every Django server has an admin application at this URL, by default. But it wants a login. How do we login to our own server? Let's stop the server and create a user so that we can login.</p>
+<div class="highlight"><pre><span></span><code>python manage.py createsuperuser
+</code></pre></div>
+<p>I'm going to create a superuser named Jasper. The prompt asks for an email address, but you can leave it blank. I enter a password, then confirm that password. And because Django can detect that it's not as complex as it should be, it asks me if I'm sure I want to set that as the password. I confirm. Now we can use those credentials to login to the admin site. </p>
+<p>Let's stop the webserver one last time and go into the <strong>app/admin.py</strong> file. Here I'm going to register the model we just created. 
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">.models</span> <span class="kn">import</span> <span class="n">Task</span>
+
+<span class="n">admin</span><span class="o">.</span><span class="n">website</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">Task</span><span class="p">)</span>
+</code></pre></div>
+This will make that model appear in the admin app, allowing us to manipulate the data through the web browser.</p>
+<p>Now we run the web server, refresh the admin site in the web browser, and we can see that the Task model appears in the admin dashboard. If I click on it, I can see the entry we created from the command-line. Let's create a new task here. And now our database has some data in it. Let's flesh out our web application some more.</p>
+<h2 id="view">View</h2>
+<h2 id="forms">Forms</h2>
+<p>The <code>ModelForm</code> class can be used to quickly create a form from an existing model.
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">django.forms</span> <span class="kn">import</span> <span class="n">ModelForm</span>
+
+<span class="k">class</span> <span class="nc">TaskForm</span><span class="p">(</span><span class="n">ModelForm</span><span class="p">):</span>
+  <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">Task</span>
+    <span class="n">fields</span> <span class="o">=</span> <span class="s1">&#39;__all__&#39;</span>
+</code></pre></div>
+Alternatively, this class can be defined by instantiating the <code>modelform_factory</code> class generator. This can be placed within the <strong>views.py</strong> outside the view function for brevity, but it's typical to place this declaration within <strong>forms.py</strong>. 
+<div class="highlight"><pre><span></span><code><span class="c1"># forms.py</span>
+<span class="kn">from</span> <span class="nn">django.forms.models</span> <span class="kn">import</span> <span class="n">modelform_factory</span>
+<span class="kn">from</span> <span class="nn">.models</span> <span class="kn">import</span> <span class="n">Task</span>
+<span class="kn">from</span> <span class="nn">django.forms.widgets</span> <span class="kn">import</span> <span class="n">Input</span>
+
+<span class="n">TaskForm</span> <span class="o">=</span> <span class="n">modelform_factory</span><span class="p">(</span><span class="n">Task</span><span class="p">,</span> <span class="n">exclude</span><span class="o">=</span><span class="p">[])</span>
+</code></pre></div>
+In either case, this subclass is instantiated in <strong>views.py</strong> and passed in with the context object
+<div class="highlight"><span class="filename">views.py</span><pre><span></span><code><span class="kn">from</span> <span class="nn">.forms</span> <span class="kn">import</span> <span class="n">TaskForm</span>
+<span class="kn">from</span> <span class="nn">.models</span> <span class="kn">import</span> <span class="n">Task</span>
+
+<span class="k">def</span> <span class="nf">index</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+  <span class="n">tasks</span> <span class="o">=</span> <span class="n">Task</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+  <span class="n">form</span> <span class="o">=</span> <span class="n">TaskForm</span><span class="p">()</span>
+  <span class="n">context</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;form&#39;</span><span class="p">:</span> <span class="n">form</span><span class="p">}</span>
+  <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s1">&#39;website/list.html&#39;</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span>
+</code></pre></div>
+Let's take a look at the <strong><code>tasks</code></strong> variable. This is called a <code>QuerySet</code>. </p>
+<p>The key of the context object where the form was placed can then simply be used in a template tag:
+<div class="highlight"><pre><span></span><code><span class="o">&lt;</span><span class="n">form</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;POST&quot;</span><span class="o">&gt;</span>
+  <span class="p">{{</span><span class="n">form</span><span class="p">}}</span>
+<span class="o">&lt;/</span><span class="n">form</span><span class="o">&gt;</span>
+</code></pre></div>
+Without the <code>method="POST"</code> attribute set in the tag, the form will not send a POST request.</p>
+<p>A single field of the form can be specified as well:
+<div class="highlight"><pre><span></span><code><span class="o">&lt;</span><span class="n">form</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;POST&quot;</span><span class="o">&gt;</span>
+  <span class="p">{{</span><span class="n">form</span><span class="o">.</span><span class="n">title</span><span class="p">}}</span>
+<span class="o">&lt;/</span><span class="n">form</span><span class="o">&gt;</span>
+</code></pre></div>
+However, on the same page, the <code>csrf_token</code> must also be provided
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="o">%</span> <span class="n">csrf_token</span> <span class="o">%</span><span class="p">}</span>
+</code></pre></div>
+If the token appears in the text of the page, that is because you have used the template tag mustaches
+<div class="highlight"><pre><span></span><code><span class="c1"># Wrong!</span>
+<span class="p">{{</span> <span class="n">csrf_token</span> <span class="p">}}</span>
+</code></pre></div></p>
+<h1 id="django-starships-gallery">Django starships gallery</h1>
+<p><img alt="" src="img/Code-Explain.jpg" /></p>
+<p>Now that we've learned the basics of Django, let's make another web app that will do something more interesting.</p>
+<p>So we'll return to PowerShell and create a new directory for a new project. We're still working with the same virtual environment, so no need to create a new one.
+<div class="highlight"><pre><span></span><code>django-admin startproject starships
+python manage.py startapp app
+</code></pre></div></p>
+<p>...</p>
+<p>Bulma is a popular web design framework. You've probably heard of Bootstrap, which reigns supreme in this space, but Bulma is often brought up as an alternative because it is CSS only, whereas Bootstrap does incorporate some JavaScript. Because Bulma is CSS only, incorporating it involves basically downloading the CSS file, which you can do from the <a href="https://github.com/jgthms/bulma/releases/download/0.9.1/bulma-0.9.1.zip">website</a>.</p>
+<p>Where do we put it? Well, CSS files are typically considered static content, so we make a new folder in our app directory named "static" and place it there. Now we create a base template</p>
+<div class="highlight"><pre><span></span><code>| {% load static %}
+<span class="err">&lt;!</span><span class="nt">DOCTYPE</span> html&gt;
+<span class="nt">html</span>(<span class="na">lang=</span><span class="s">&quot;en&quot;</span>)
+<span class="w">  </span><span class="nt">head</span>
+<span class="w">    </span><span class="nt">meta</span>(<span class="na">charset=</span><span class="s">&quot;UTF-8&quot;</span>)
+<span class="w">    </span><span class="nt">meta</span>(<span class="na">name=</span><span class="s">&quot;viewport&quot;</span><span class="err">,</span> <span class="na">content=</span><span class="s">&quot;width=device-width, initial-scale=1.0&quot;</span>)
+<span class="w">    </span><span class="nt">link</span>(<span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span><span class="err">,</span> <span class="na">href=</span><span class="s">&quot;{% static &#39;bulma.css&#39;%}&quot;</span>)
+<span class="w">    </span><span class="nt">title</span> 🚀🐍 Django Starships
+<span class="w">    </span><span class="nt">style</span>
+<span class="w">      </span><span class="c">//- | .is-ancestor { flex-wrap: wrap; }</span>
+<span class="w">  </span><span class="nt">body</span>
+<span class="w">    </span><span class="nt">section</span><span class="nc">.hero.is-primary</span>
+<span class="w">      </span><span class="nc">.hero-body</span>
+<span class="w">        </span><span class="nc">.container</span>
+<span class="w">          </span><span class="nt">h1</span><span class="nc">.title</span> Starships
+<span class="w">    </span><span class="nt">section</span><span class="nc">.section</span> 
+<span class="w">      </span><span class="nc">.container</span> {% block content %}{% endblock content%}
+</code></pre></div>
+<p>The content page, including 
+<div class="highlight"><pre><span></span><code>| {% extends &#39;dist/base.html&#39; %}
+| {% load static %}
+| {% block content %}
+<span class="nc">.tile.is-ancestor</span> {% for ship in ships %}
+<span class="w">  </span><span class="nc">.tile.is-parent.is-6</span>
+<span class="w">    </span><span class="nt">article</span><span class="nc">.tile.is-child.notification.is-black</span>
+<span class="w">      </span><span class="nt">h1</span><span class="nc">.title</span> {{ship.Name}}
+<span class="w">      </span><span class="nt">h2</span><span class="nc">.subtitle</span> {{ship.Registry}}
+<span class="w">      </span><span class="nt">img</span>(<span class="na">src=</span><span class="s">&quot;{{ ship.Image.url }}&quot;</span>)
+<span class="w">  </span>| {% endfor %} 
+| {% endblock content %}
+</code></pre></div></p>
+<h2 id="basic-filter-table">Basic filter table</h2>
+<p>Using <a href="https://listjs.com"><strong>list.js</strong></a>
+<div class="highlight"><pre><span></span><code><span class="nt">body</span>
+<span class="w">  </span><span class="nc">.listy</span>
+<span class="w">    </span><span class="nt">input</span><span class="nc">.search</span>(<span class="na">type=</span><span class="s">&quot;text&quot;</span>)
+<span class="w">    </span><span class="nt">ul</span><span class="nc">.list</span>
+<span class="w">      </span><span class="nt">li</span>
+<span class="w">        </span><span class="nt">p</span><span class="nc">.name</span> USS Enterprise
+<span class="w">        </span><span class="nt">p</span><span class="nc">.reg</span> NCC-1701
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">valueNames</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;reg&#39;</span><span class="p">]</span> <span class="p">};</span>
+<span class="kd">var</span> <span class="nx">userList</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">List</span><span class="p">(</span><span class="s1">&#39;listy&#39;</span><span class="p">,</span> <span class="nx">options</span><span class="p">);</span>
+</code></pre></div></p>
+<h2 id="bulma-filter-table">Bulma filter table</h2>
+<p><div class="highlight"><pre><span></span><code><span class="nt">body</span>
+<span class="w">  </span><span class="nt">section</span><span class="nc">.section</span>
+<span class="w">    </span><span class="nc">.table-container</span><span class="nf">#list</span>
+<span class="w">      </span><span class="nt">input</span><span class="nc">.input.search</span>(<span class="na">placeholder=</span><span class="s">&quot;Search&quot;</span>)
+<span class="w">      </span><span class="nt">button</span><span class="nc">.sort</span>(<span class="na">data-sort=</span><span class="s">&quot;name&quot;</span>) Sort
+<span class="w">      </span><span class="nt">table</span><span class="nc">.table.is-bordered.is-striped.is-hoverable</span>
+<span class="w">        </span><span class="nt">thead</span>
+<span class="w">          </span><span class="nt">tr</span>
+<span class="w">            </span><span class="nt">th</span> Name
+<span class="w">            </span><span class="nt">th</span> Registry
+<span class="w">            </span><span class="nt">th</span> Crew
+<span class="w">            </span><span class="nt">th</span> Class
+<span class="w">        </span><span class="nt">tbody</span><span class="nc">.list</span>
+<span class="w">          </span><span class="nt">tr</span>
+<span class="w">            </span><span class="nt">td</span><span class="nc">.name</span> USS Enterprise
+<span class="w">            </span><span class="nt">td</span><span class="nc">.reg</span> NCC-1701
+<span class="w">            </span><span class="nt">td</span><span class="nc">.crew</span> 204
+<span class="w">            </span><span class="nt">td</span><span class="nc">.cls</span> Constitution
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">valueNames</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;reg&#39;</span><span class="p">,</span> <span class="s1">&#39;cls&#39;</span><span class="p">]</span> <span class="p">};</span>
+<span class="kd">var</span> <span class="nx">userList</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">List</span><span class="p">(</span><span class="s1">&#39;list&#39;</span><span class="p">,</span> <span class="nx">options</span><span class="p">);</span>
+</code></pre></div></p>
+<h2 id="bulma-filter-tile-gallery">Bulma filter tile gallery</h2>
+<p><div class="highlight"><pre><span></span><code><span class="nt">body</span>
+<span class="w">  </span><span class="nt">section</span><span class="nc">.section</span>
+<span class="w">    </span><span class="nc">.container</span><span class="nf">#foo</span>
+<span class="w">      </span><span class="nt">input</span><span class="nc">.search.input</span>(<span class="na">type=</span><span class="s">&quot;text&quot;</span>)
+<span class="w">      </span><span class="nc">.tile.is-ancestor.list</span>
+<span class="w">        </span><span class="nc">.tile.is-parent.is-3</span>
+<span class="w">          </span><span class="nt">article</span><span class="nc">.tile.is-child.notification.is-primary</span>
+<span class="w">            </span><span class="nt">h1</span><span class="nc">.name.subtitle</span> USS Enterprise
+<span class="w">            </span><span class="nt">p</span><span class="nc">.reg</span> NCC-1701
+<span class="w">            </span><span class="nt">p</span><span class="nc">.cls</span> Constitution
+<span class="w">        </span><span class="nc">.tile.is-parent.is-3</span>
+<span class="w">          </span><span class="nt">article</span><span class="nc">.tile.is-child.notification.is-primary</span>
+<span class="w">            </span><span class="nt">h1</span><span class="nc">.name.subtitle</span> USS Constitution
+<span class="w">            </span><span class="nt">p</span><span class="nc">.reg</span> NCC-1700
+<span class="w">            </span><span class="nt">p</span><span class="nc">.cls</span> Constitution
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">valueNames</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;reg&#39;</span><span class="p">,</span> <span class="s1">&#39;cls&#39;</span><span class="p">]</span> <span class="p">};</span>
+<span class="kd">var</span> <span class="nx">userList</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">List</span><span class="p">(</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="nx">options</span><span class="p">);</span>
+</code></pre></div>
+Bulma tiles do not wrap by default
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">is-ancestor</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">flex-wrap</span><span class="p">:</span><span class="w"> </span><span class="kc">wrap</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+</code></pre></div></p>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../CSharp/" class="md-footer__link md-footer__link--prev" aria-label="Previous: CSharp" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              CSharp
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../Kusto/" class="md-footer__link md-footer__link--next" aria-label="Next: Kusto" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Kusto
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "toc.integrate", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.6e54b5cd.min.js"></script>
+      
+    
+  </body>
+</html>

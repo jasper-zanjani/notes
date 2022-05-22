@@ -1,0 +1,5375 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://jasper-zanjani.github.io/notes/Coding/WinUI/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.9">
+    
+    
+      
+        <title>WinUI - 🧠</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.120efc48.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.9647289d.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#ffc105">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../style/admonitions-gcp.css">
+    
+      <link rel="stylesheet" href="../../style/admonitions-azure.css">
+    
+      <link rel="stylesheet" href="../../style/admonitions-aws.css">
+    
+      <link rel="stylesheet" href="../../style/admonitions-rs.css">
+    
+      <link rel="stylesheet" href="../../style/admonitions-cs.css">
+    
+      <link rel="stylesheet" href="../../style/admonitions-cpp.css">
+    
+      <link rel="stylesheet" href="../../style/admonitions-cisco.css">
+    
+      <link rel="stylesheet" href="../../style/admonitions-py.css">
+    
+      <link rel="stylesheet" href="../../style/admonitions-output.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="amber" data-md-color-accent="yellow">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#winui" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="🧠" class="md-header__button md-logo" aria-label="🧠" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            🧠
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              WinUI
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../" class="md-tabs__link md-tabs__link--active">
+        Coding
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../GTK/" class="md-tabs__link">
+        GTK
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Health/" class="md-tabs__link">
+        Health
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Infrastructure/Ansible/" class="md-tabs__link">
+        Infrastructure
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Linux/" class="md-tabs__link">
+        Linux
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Misc/" class="md-tabs__link">
+        Misc
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Python/" class="md-tabs__link">
+        Python
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Rust/" class="md-tabs__link">
+        Rust
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Scripts/" class="md-tabs__link">
+        Scripts
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="🧠" class="md-nav__button md-logo" aria-label="🧠" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    🧠
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Coding
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Coding" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Coding
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6502/" class="md-nav__link">
+        6502
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../C%23/" class="md-nav__link">
+        C&#35;
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../C%2B%2B/" class="md-nav__link">
+        C++
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../C/" class="md-nav__link">
+        C
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CS/" class="md-nav__link">
+        MSCS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Courses/" class="md-nav__link">
+        Courses
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Debugging/" class="md-nav__link">
+        Debugging
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DnD/" class="md-nav__link">
+        🐲&#xFE0F;  Dungeons & Dragons
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Dogfood/" class="md-nav__link">
+        🐶 Dogfood data
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GUI/" class="md-nav__link">
+        🖥&#xFE0F; GUI frameworks comparison
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Others/" class="md-nav__link">
+        🦪 Perl
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Python/" class="md-nav__link">
+        🐍 Python
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Testing/" class="md-nav__link">
+        Testing
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Windows/" class="md-nav__link">
+        Windows programming
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Wired%20Brain%20Coffee/" class="md-nav__link">
+        ☕ Wired Brain Coffee
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_17" type="checkbox" id="__nav_2_17" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_17">
+          WinUI
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="WinUI" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_17">
+          <span class="md-nav__icon md-icon"></span>
+          WinUI
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          WinUI
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        WinUI
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#syntax" class="md-nav__link">
+    Syntax
+  </a>
+  
+    <nav class="md-nav" aria-label="Syntax">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#namespaces" class="md-nav__link">
+    Namespaces
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#directives" class="md-nav__link">
+    Directives
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#attached-property" class="md-nav__link">
+    Attached property
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#event-handling" class="md-nav__link">
+    Event handling
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-controls" class="md-nav__link">
+    Custom controls
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mock-data" class="md-nav__link">
+    Mock data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#themes" class="md-nav__link">
+    Themes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#layout" class="md-nav__link">
+    Layout
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-binding" class="md-nav__link">
+    Data binding
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#type-conversion" class="md-nav__link">
+    Type conversion
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#markup-extensions" class="md-nav__link">
+    Markup Extensions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dependency-properties" class="md-nav__link">
+    Dependency properties
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multi-instance" class="md-nav__link">
+    Multi-instance
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#patterns" class="md-nav__link">
+    Patterns
+  </a>
+  
+    <nav class="md-nav" aria-label="Patterns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#action-on-focus" class="md-nav__link">
+    Action on focus
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#listdetails" class="md-nav__link">
+    List/Details
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mvvm" class="md-nav__link">
+    MVVM
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#navigation" class="md-nav__link">
+    Navigation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    Examples
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#list-and-details" class="md-nav__link">
+    List and details
+  </a>
+  
+    <nav class="md-nav" aria-label="List and details">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#custom-control" class="md-nav__link">
+    Custom control
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#listview" class="md-nav__link">
+    ListView
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#viewmodel" class="md-nav__link">
+    ViewModel
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xbind" class="md-nav__link">
+    x:Bind
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#history" class="md-nav__link">
+    History
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="API/" class="md-nav__link">
+        API
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" data-md-state="indeterminate" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          GTK
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="GTK" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          GTK
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GTK/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GTK/API/" class="md-nav__link">
+        API
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GTK/Glade/" class="md-nav__link">
+        Glade
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GTK/Glossary/" class="md-nav__link">
+        📘 Glossary
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_5" data-md-state="indeterminate" type="checkbox" id="__nav_3_5" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_5">
+          Examples
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Examples" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_5">
+          <span class="md-nav__icon md-icon"></span>
+          Examples
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GTK/Examples/GNOME-Tweaks/" class="md-nav__link">
+        GNOME Tweaks
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_6" data-md-state="indeterminate" type="checkbox" id="__nav_3_6" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_6">
+          Tasks
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Tasks" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_6">
+          <span class="md-nav__icon md-icon"></span>
+          Tasks
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GTK/Tasks/Boilerplate/" class="md-nav__link">
+        Boilerplate
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GTK/Tasks/Environment/" class="md-nav__link">
+        Development environment
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GTK/Tasks/Hello-World/" class="md-nav__link">
+        Hello, World!
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GTK/Tasks/Image-Viewer/" class="md-nav__link">
+        Image Viewer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GTK/Tasks/Starships/" class="md-nav__link">
+        Starships
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GTK/Tasks/Tasks/" class="md-nav__link">
+        Tasks
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" data-md-state="indeterminate" type="checkbox" id="__nav_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Health
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Health" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Health
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Health/" class="md-nav__link">
+        💊 Health
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" data-md-state="indeterminate" type="checkbox" id="__nav_5" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Infrastructure
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Infrastructure" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Infrastructure
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Infrastructure/Ansible/" class="md-nav__link">
+        Ansible
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Infrastructure/Certifications/" class="md-nav__link">
+        🥇 Certifications
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Infrastructure/Cloud/" class="md-nav__link">
+        Cloud
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Infrastructure/Network/" class="md-nav__link">
+        Network
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_5" data-md-state="indeterminate" type="checkbox" id="__nav_5_5" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_5">
+          Cloud
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Cloud" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_5">
+          <span class="md-nav__icon md-icon"></span>
+          Cloud
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Infrastructure/Cloud/GCP/" class="md-nav__link">
+        Google Cloud Platform
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Infrastructure/Cloud/Tasks/" class="md-nav__link">
+        Tasks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_5_3" data-md-state="indeterminate" type="checkbox" id="__nav_5_5_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_5_3">
+          Azure
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Azure" data-md-level="3">
+        <label class="md-nav__title" for="__nav_5_5_3">
+          <span class="md-nav__icon md-icon"></span>
+          Azure
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Infrastructure/Cloud/Azure/ARM/" class="md-nav__link">
+        ARM
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Infrastructure/Cloud/Azure/Azure-AD/" class="md-nav__link">
+        Azure AD
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Infrastructure/Cloud/Azure/Azure-App-Service/" class="md-nav__link">
+        Azure App Service
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Infrastructure/Cloud/Azure/Azure-Backup/" class="md-nav__link">
+        Azure Backup
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Infrastructure/Cloud/Azure/Azure-File-Service/" class="md-nav__link">
+        Azure File Service
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Infrastructure/Cloud/Azure/Azure-IAM/" class="md-nav__link">
+        Azure IAM
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Infrastructure/Cloud/Azure/Azure-IaaS/" class="md-nav__link">
+        Azure IaaS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Infrastructure/Cloud/Azure/Azure-Load-Balancer/" class="md-nav__link">
+        Azure Load Balancer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Infrastructure/Cloud/Azure/Azure-Monitoring/" class="md-nav__link">
+        Azure Monitoring
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Infrastructure/Cloud/Azure/Azure-Policy/" class="md-nav__link">
+        Azure Policy
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Infrastructure/Cloud/Azure/Azure-Storage/" class="md-nav__link">
+        Azure Storage
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Infrastructure/Cloud/Azure/Azure-VPN/" class="md-nav__link">
+        Azure VPN
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Infrastructure/Cloud/Azure/Kusto/" class="md-nav__link">
+        Kusto
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" data-md-state="indeterminate" type="checkbox" id="__nav_6" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          Linux
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Linux" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Linux
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/Cgroups/" class="md-nav__link">
+        Cgroups
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/Concurrency/" class="md-nav__link">
+        Concurrency
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/Databases/" class="md-nav__link">
+        Databases
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/Display/" class="md-nav__link">
+        Display
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/Files/" class="md-nav__link">
+        Files
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/Filters/" class="md-nav__link">
+        Commands
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/GNOME/" class="md-nav__link">
+        GNOME
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/GRUB/" class="md-nav__link">
+        Boot
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/Kernel/" class="md-nav__link">
+        Kernel
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/Package/" class="md-nav__link">
+        Package management
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/Random/" class="md-nav__link">
+        Random
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/Red-Hat/" class="md-nav__link">
+        Red Hat :material-redhat:
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/Ricing/" class="md-nav__link">
+        Tiling window managers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/SELinux/" class="md-nav__link">
+        SELinux
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/Shell/" class="md-nav__link">
+        Shells
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/Storage/" class="md-nav__link">
+        Storage
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/SystemD/" class="md-nav__link">
+        SystemD
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/Ubuntu/" class="md-nav__link">
+        Ubuntu
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/Virtualization/" class="md-nav__link">
+        Virtualization
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_21" data-md-state="indeterminate" type="checkbox" id="__nav_6_21" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_21">
+          Applications
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Applications" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_21">
+          <span class="md-nav__icon md-icon"></span>
+          Applications
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/Applications/Rhythmbox/" class="md-nav__link">
+        Rhythmbox
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/Applications/ffmpeg/" class="md-nav__link">
+        ffmpeg
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/Applications/nginx/" class="md-nav__link">
+        Nginx
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/Applications/screen/" class="md-nav__link">
+        screen
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/Applications/ssh/" class="md-nav__link">
+        SSH
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/Applications/syncthing/" class="md-nav__link">
+        Syncthing
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/Applications/vim/" class="md-nav__link">
+        Vim
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/Applications/youtube-dl/" class="md-nav__link">
+        Youtube dl
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_22" data-md-state="indeterminate" type="checkbox" id="__nav_6_22" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_22">
+          Containers
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Containers" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_22">
+          <span class="md-nav__icon md-icon"></span>
+          Containers
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/Containers/" class="md-nav__link">
+        Containers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/Containers/Docker/" class="md-nav__link">
+        Docker
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/Containers/Helm/" class="md-nav__link">
+        Helm
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/Containers/Kubernetes/" class="md-nav__link">
+        Kubernetes
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_23" data-md-state="indeterminate" type="checkbox" id="__nav_6_23" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_23">
+          Networking
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Networking" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_23">
+          <span class="md-nav__icon md-icon"></span>
+          Networking
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/Networking/" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/Networking/Commands/" class="md-nav__link">
+        Commands
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/Networking/Samba/" class="md-nav__link">
+        Samba
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/Networking/Tasks/" class="md-nav__link">
+        Tasks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/Networking/eBPF/" class="md-nav__link">
+        eBPF
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" data-md-state="indeterminate" type="checkbox" id="__nav_7" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          Misc
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Misc" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Misc
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Aircraft/" class="md-nav__link">
+        ✈&#xfe0f; Aircraft
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Akro-Mils/" class="md-nav__link">
+        Akro-Mils
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/CI-CD/" class="md-nav__link">
+        CI/CD
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Computers/" class="md-nav__link">
+        Computers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Diaz/" class="md-nav__link">
+        Joey Diaz
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Intelligence/" class="md-nav__link">
+        🔎 Intelligence
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Lab/" class="md-nav__link">
+        Home lab
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Military/" class="md-nav__link">
+        Military
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Space/" class="md-nav__link">
+        🚀 Space
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Storage/" class="md-nav__link">
+        Storage
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/TrueNAS/" class="md-nav__link">
+        TrueNAS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/bittorrent/" class="md-nav__link">
+        BitTorrent
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/cryptocurrency/" class="md-nav__link">
+        🪙 Cryptocurrency
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/learn/" class="md-nav__link">
+        Learning
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/pins/" class="md-nav__link">
+        Lapel pin ideas
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_17" data-md-state="indeterminate" type="checkbox" id="__nav_7_17" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_17">
+          Text editors
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Text editors" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_17">
+          <span class="md-nav__icon md-icon"></span>
+          Text editors
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Text-editors/code/" class="md-nav__link">
+        VS Code
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_18" data-md-state="indeterminate" type="checkbox" id="__nav_7_18" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_18">
+          Web
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Web" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_18">
+          <span class="md-nav__icon md-icon"></span>
+          Web
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Web/" class="md-nav__link">
+        🌎 Web
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Web/CSS/" class="md-nav__link">
+        CSS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Web/mkdocs/" class="md-nav__link">
+        Mkdocs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_18_4" data-md-state="indeterminate" type="checkbox" id="__nav_7_18_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_18_4">
+          JavaScript
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="JavaScript" data-md-level="3">
+        <label class="md-nav__title" for="__nav_7_18_4">
+          <span class="md-nav__icon md-icon"></span>
+          JavaScript
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Web/JavaScript/" class="md-nav__link">
+        Axios
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Web/JavaScript/Express/" class="md-nav__link">
+        Express
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Web/JavaScript/React/" class="md-nav__link">
+        React
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Web/JavaScript/Web%20Components/" class="md-nav__link">
+        Web Components
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_19" data-md-state="indeterminate" type="checkbox" id="__nav_7_19" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_19">
+          Windows
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Windows" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_19">
+          <span class="md-nav__icon md-icon"></span>
+          Windows
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Windows/" class="md-nav__link">
+        Windows
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Windows/Active%20Directory/" class="md-nav__link">
+        Active Directory
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Windows/DNS-labs/" class="md-nav__link">
+        DNS labs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Windows/Hyper-V/" class="md-nav__link">
+        Hyper-V
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Windows/Labs/" class="md-nav__link">
+        Labs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Windows/PowerShell/" class="md-nav__link">
+        🐚 PowerShell
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Windows/WDS-lab/" class="md-nav__link">
+        WDS lab
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Windows/WS2016/" class="md-nav__link">
+        Windows Server
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Windows/diskpart/" class="md-nav__link">
+        Diskpart
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" data-md-state="indeterminate" type="checkbox" id="__nav_8" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8">
+          Python
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Python" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Python
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/" class="md-nav__link">
+        🐍 Python
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_2" data-md-state="indeterminate" type="checkbox" id="__nav_8_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8_2">
+          Modules
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Modules" data-md-level="2">
+        <label class="md-nav__title" for="__nav_8_2">
+          <span class="md-nav__icon md-icon"></span>
+          Modules
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Argparse/" class="md-nav__link">
+        Argparse
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Asyncio/" class="md-nav__link">
+        Asyncio
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Azure.cosmos/" class="md-nav__link">
+        Azure.cosmos
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Bullet/" class="md-nav__link">
+        Bullet
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Click/" class="md-nav__link">
+        Click
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Collections/" class="md-nav__link">
+        Collections
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Colorama/" class="md-nav__link">
+        Colorama
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Csv/" class="md-nav__link">
+        Csv
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Datetime/" class="md-nav__link">
+        Datetime
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Discord_py/" class="md-nav__link">
+        discord.py
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Django/" class="md-nav__link">
+        Django
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Dotenv/" class="md-nav__link">
+        Dotenv
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/FastAPI/" class="md-nav__link">
+        FastAPI
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Functools/" class="md-nav__link">
+        Functools
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Glob/" class="md-nav__link">
+        Glob
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Heapq/" class="md-nav__link">
+        Heapq
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Http/" class="md-nav__link">
+        http
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Itertools/" class="md-nav__link">
+        itertools
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Json/" class="md-nav__link">
+        Json
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Logging/" class="md-nav__link">
+        Logging
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Npyscreen/" class="md-nav__link">
+        Npyscreen
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Optparse/" class="md-nav__link">
+        optparse
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Os/" class="md-nav__link">
+        os
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Pygobject/" class="md-nav__link">
+        Pygobject
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Pyinstaller/" class="md-nav__link">
+        Pyinstaller
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Pythonnet/" class="md-nav__link">
+        pythonnet
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Random/" class="md-nav__link">
+        random
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Scrapy/" class="md-nav__link">
+        scrapy
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Setuptools/" class="md-nav__link">
+        setuptools
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Socket/" class="md-nav__link">
+        socket
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Sqlite3/" class="md-nav__link">
+        sqlite3
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Subprocess/" class="md-nav__link">
+        subprocess
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Sys/" class="md-nav__link">
+        sys
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Tabulate/" class="md-nav__link">
+        Tabulate
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Termcolor/" class="md-nav__link">
+        termcolor
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Threading/" class="md-nav__link">
+        threading
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Weakref/" class="md-nav__link">
+        Weakref
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Winrm/" class="md-nav__link">
+        Winrm
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Xml/" class="md-nav__link">
+        xml
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Modules/Yaml/" class="md-nav__link">
+        Yaml
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" data-md-state="indeterminate" type="checkbox" id="__nav_9" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9">
+          Rust
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Rust" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Rust
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/Cargo/" class="md-nav__link">
+        Cargo
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/Combinators/" class="md-nav__link">
+        Combinators
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/Crates/" class="md-nav__link">
+        Modules
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/Error/" class="md-nav__link">
+        Error handling
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/Glossary/" class="md-nav__link">
+        Glossary
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/Scratchpad/" class="md-nav__link">
+        Scratchpad
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_8" data-md-state="indeterminate" type="checkbox" id="__nav_9_8" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9_8">
+          Crates
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Crates" data-md-level="2">
+        <label class="md-nav__title" for="__nav_9_8">
+          <span class="md-nav__icon md-icon"></span>
+          Crates
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/Crates/Actix/" class="md-nav__link">
+        actix
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/Crates/Clap/" class="md-nav__link">
+        clap
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/Crates/Failure/" class="md-nav__link">
+        failure
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/Crates/Gtk-rs/" class="md-nav__link">
+        gtk-rs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/Crates/Rnd/" class="md-nav__link">
+        rnd
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/Crates/Rocket/" class="md-nav__link">
+        Rocket
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/Crates/Rusqlite/" class="md-nav__link">
+        rusqlite
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/Crates/Serde/" class="md-nav__link">
+        serde
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/Crates/Structopt/" class="md-nav__link">
+        structopt
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_8_10" data-md-state="indeterminate" type="checkbox" id="__nav_9_8_10" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9_8_10">
+          Cursive
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Cursive" data-md-level="3">
+        <label class="md-nav__title" for="__nav_9_8_10">
+          <span class="md-nav__icon md-icon"></span>
+          Cursive
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/Crates/Cursive/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/Crates/Cursive/API/" class="md-nav__link">
+        API
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/Crates/Cursive/Tasks/" class="md-nav__link">
+        Tasks
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_8_11" data-md-state="indeterminate" type="checkbox" id="__nav_9_8_11" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9_8_11">
+          Diesel
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Diesel" data-md-level="3">
+        <label class="md-nav__title" for="__nav_9_8_11">
+          <span class="md-nav__icon md-icon"></span>
+          Diesel
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/Crates/Diesel/" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/Crates/Diesel/Tasks/" class="md-nav__link">
+        Tasks
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_9" data-md-state="indeterminate" type="checkbox" id="__nav_9_9" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9_9">
+          Tasks
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Tasks" data-md-level="2">
+        <label class="md-nav__title" for="__nav_9_9">
+          <span class="md-nav__icon md-icon"></span>
+          Tasks
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/Tasks/" class="md-nav__link">
+        Boilerplate
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/Tasks/Hello-World/" class="md-nav__link">
+        Hello, World!
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/Tasks/Mathematics/" class="md-nav__link">
+        Mathematics
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/Tasks/Porting-grep/" class="md-nav__link">
+        grep ports
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/Tasks/To-Do/" class="md-nav__link">
+        To-Do
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rust/Tasks/Transactions/" class="md-nav__link">
+        Transactions
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" data-md-state="indeterminate" type="checkbox" id="__nav_10" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_10">
+          Scripts
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Scripts" data-md-level="1">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          Scripts
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Scripts/" class="md-nav__link">
+        Video scripts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Scripts/Anki/" class="md-nav__link">
+        Anki
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Scripts/CSharp/" class="md-nav__link">
+        CSharp
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Scripts/Django/" class="md-nav__link">
+        Django
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Scripts/Kusto/" class="md-nav__link">
+        Kusto
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Scripts/Rust/" class="md-nav__link">
+        Rust
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Scripts/SQLite/" class="md-nav__link">
+        SQLite
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10_8" data-md-state="indeterminate" type="checkbox" id="__nav_10_8" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_10_8">
+          Discord
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Discord" data-md-level="2">
+        <label class="md-nav__title" for="__nav_10_8">
+          <span class="md-nav__icon md-icon"></span>
+          Discord
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Scripts/Discord/Discord.article/" class="md-nav__link">
+        Discord.article
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Scripts/Discord/Discord/" class="md-nav__link">
+        Discord
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="winui">WinUI</h1>
+<h2 id="syntax">Syntax</h2>
+<p>Every XAML <strong>element</strong> maps to a C# <strong>class</strong>, and every XAML <strong>attribute</strong> maps to a class <strong>property</strong> or an <a href="#event-handling"> <strong>event</strong> </a>. </p>
+<p>There are <a href="https://docs.microsoft.com/en-us/windows/uwp/xaml-platform/xaml-syntax-guide" title="XAML syntax guide">several syntaxes</a> available for use that correspond to various methods of declaring objects:</p>
+<ul>
+<li><strong>Object-element syntax</strong> has the type's name within angle brackets, similar to HTML.
+When the object contains other objects, it is called a <strong>container</strong>.
+If the object does not contain other objects, it can be declared with a self-closing tag:</li>
+<li><strong>Attribute syntax</strong> has the property value set by declaring an attribute.</li>
+<li>In <strong>property-element syntax</strong>, signified by a period in the element name, where the portion of the element following the dot representing the identifier of the property.</li>
+<li><strong>Content-property syntax</strong> is similar to the property element syntax in that a property's value is set by a child. 
+However, in this case the XAML processor interpolates the correct property element, typically Content. 
+Some controls can accept more than one child element. In the background, this is actually using the <strong>content-property syntax</strong> to assign to the <code>Children</code> property.</li>
+</ul>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:5"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><input id="__tabbed_1_5" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Object-element</label><label for="__tabbed_1_2">Attribute</label><label for="__tabbed_1_3">Property-element</label><label for="__tabbed_1_4">Content-property</label><label for="__tabbed_1_5">Multiple children</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;Canvas&gt;</span>
+    <span class="nt">&lt;Rectangle</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/Canvas&gt;</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;Rectangle</span> <span class="na">Name=</span><span class="s">&quot;rectangle1&quot;</span> <span class="na">Width=</span><span class="s">&quot;100&quot;</span> <span class="na">Height=</span><span class="s">&quot;100&quot;</span> <span class="na">Fill=</span><span class="s">&quot;Blue&quot;</span> <span class="nt">/&gt;</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;Rectangle</span> <span class="na">Name=</span><span class="s">&quot;rectangle1&quot;</span> <span class="na">Width=</span><span class="s">&quot;100&quot;</span> <span class="na">Height=</span><span class="s">&quot;100&quot;</span><span class="nt">&gt;</span> 
+    <span class="nt">&lt;Rectangle.Fill&gt;</span> 
+        <span class="nt">&lt;SolidColorBrush</span> <span class="na">Color=</span><span class="s">&quot;Blue&quot;</span><span class="nt">/&gt;</span> 
+    <span class="nt">&lt;/Rectangle.Fill&gt;</span>
+<span class="nt">&lt;/Rectangle&gt;</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;Button&gt;</span>
+    Add customer
+<span class="nt">&lt;/Button&gt;</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;StackPanel&gt;</span>
+    <span class="nt">&lt;TextBlock&gt;</span>Hello<span class="nt">&lt;/TextBlock&gt;</span>
+    <span class="nt">&lt;TextBlock&gt;</span>World<span class="nt">&lt;/TextBlock&gt;</span>
+<span class="nt">&lt;/StackPanel&gt;</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<h3 id="namespaces">Namespaces</h3>
+<p>A XAML file usually declares a <strong>default XAML namespace</strong> in its root element.
+This default namespace defines elements that can be declared without qualifying them by a prefix (e.g. <code>x:</code>).</p>
+<p>XAML namespaces apply only to the specific element on which they are declared and its children, which explains why they are typically placed on the root element.
+(<a href="https://docs.microsoft.com/en-us/windows/uwp/xaml-platform/xaml-namespaces-and-namespace-mapping" title="XAML namespaces and namespace mappings">src</a>)</p>
+<p>Most XAML files have two <code>xmlns</code> declarations</p>
+<ul>
+<li><strong>xmlns</strong> maps a default XAML namespace</li>
+<li><strong>xmlns:x</strong> maps a separate XAML namespace for XAML-defined <strong>language elements</strong> to the <code>x:</code> prefix:</li>
+<li><strong>xmlns:mc</strong> indicates and supports a markup compatibility mode for reading XAML.
+<div class="highlight"><pre><span></span><code>xmlns:mc=&quot;http://schemas.openxmlformats.org/markup-compatibility/2006&quot;
+mc:Ignorable=&quot;d&quot;
+</code></pre></div></li>
+</ul>
+<h3 id="directives">Directives</h3>
+<ul>
+<li><a href="https://docs.microsoft.com/en-us/windows/uwp/xaml-platform/x-name-attribute" title="x:Name attribute"><strong>x:Name</strong></a> uniquely identifies object elements for access to the object from code-behind </li>
+<li><a href="https://docs.microsoft.com/en-us/windows/uwp/xaml-platform/x-key-attribute" title="x:Key attribute"><strong>x:Key</strong></a> sets a unique key for each resource in a <strong>ResourceDictionary</strong> </li>
+<li><a href="https://docs.microsoft.com/en-us/windows/uwp/xaml-platform/x-key-attribute"><strong>x:Class</strong></a> specifies the CLR namespace and class name for the class that provides code-behind 
+for a XAML page. The <code>x:Class</code> directive configures XAML markup compilation to join partial classes 
+between markup and code-behind. In this example it can be seen how it refers to the <code>MainPage</code> 
+class within the <code>Project</code> namespace. (<a href="https://app.pluralsight.com/course-player?clipId=392e67d1-49ec-4c5c-987a-cd83ff56623b">src</a>)</li>
+<li><a href="#data-binding"><strong>x:Bind</strong></a> is a form of <a href="#data-binding">data-binding</a></li>
+</ul>
+<p><strong>Language elements</strong> are commonly used features necessary for Windows Runtime apps.
+For example, to join any code-behind to a XAML file through a partial class, you must name that class as the <code>x:Class</code> attribute in the root element of the XAML file.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">XAML</label><label for="__tabbed_2_2">Code-behind</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;Page</span> <span class="na">x:Class=</span><span class="s">&quot;Project.MainPage&quot;</span><span class="nt">/&gt;</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="k">namespace</span><span class="w"> </span><span class="nn">Project</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">sealed</span><span class="w"> </span><span class="k">partial</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MainPage</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Page</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="nf">MainPage</span><span class="p">()</span><span class="w"></span>
+<span class="w">        </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="k">this</span><span class="p">.</span><span class="n">InitializeComponent</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<h3 id="attached-property">Attached property</h3>
+<p>Attached properties can be modified or queried in C# code as well, as long as the XAML element has an <strong>x:Name</strong> defined, which gives that particular element an identifier.
+For the column property of <code>Grid</code>, the static methods <code>GetColumn</code> and <code>SetColumn</code> are available.</p>
+<p>Here a button press changes the column value of an enclosing Grid and toggles between two different <a href="https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.symbol?view=winrt-19041"><code>Symbol</code></a> values. (<a href="https://app.pluralsight.com/course-player?clipId=8e0d702e-1b6c-40ee-a3e6-5c999e2f9659">src</a>)</p>
+<div class="highlight"><pre><span></span><code><span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">ButtonMove_Click</span><span class="p">(</span><span class="kt">object</span><span class="w"> </span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">RoutedEventArgs</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">column</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">Grid</span><span class="p">.</span><span class="n">GetColumn</span><span class="p">(</span><span class="n">customerListGrid</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">newcolumn</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">column</span><span class="w"> </span><span class="p">==</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="p">?</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="m">0</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">Grid</span><span class="p">.</span><span class="n">SetColumn</span><span class="p">(</span><span class="n">customerListGrid</span><span class="p">,</span><span class="w"> </span><span class="n">newcolumn</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">moveSymbolIcon</span><span class="p">.</span><span class="n">Symbol</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">newcolumn</span><span class="w"> </span><span class="p">==</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="p">?</span><span class="w"> </span><span class="n">Symbol</span><span class="p">.</span><span class="n">Forward</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Symbol</span><span class="p">.</span><span class="n">Back</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<h3 id="event-handling">Event handling</h3>
+<p>Event hooks can be used to subscribe to events.
+For example, the <code>MainPage</code> class exposes a <code>Loaded</code> event that can be used to fill a prototype app with dogfood data, rather than putting hardcoding it in the XAML markup.
+Notably, these event handlers must return only <code>void</code> types.</p>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">sealed</span><span class="w"> </span><span class="k">partial</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MainPage</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Page</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="nf">MainPage</span><span class="p">()</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="n">InitializeComponent</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="n">Loaded</span><span class="w"> </span><span class="p">+=</span><span class="w"> </span><span class="n">MainPage_Loaded</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">MainPage_Loaded</span><span class="p">(</span><span class="kt">object</span><span class="w"> </span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">RoutedEventArgs</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="nf">NotImplementedException</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>Some XAML controls have attributes that map to events:</p>
+<table>
+<thead>
+<tr>
+<th>Element</th>
+<th>Property</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Button</code></td>
+<td><code>Click</code></td>
+</tr>
+<tr>
+<td><code>CheckBox</code></td>
+<td><code>Checked</code>, <code>Unchecked</code></td>
+</tr>
+<tr>
+<td><a href="#listview"><code>ListView</code></a></td>
+<td><code>SelectionChanged</code></td>
+</tr>
+<tr>
+<td><a href="#textbox"><code>TextBox</code></a></td>
+<td><code>TextChanged</code></td>
+</tr>
+</tbody>
+</table>
+<p>Defining an event handler in XAML is equivalent to doing so in C#.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">XAML</label><label for="__tabbed_3_2">C#</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;Button</span> <span class="na">Content=</span><span class="s">&quot;Add customer&quot;</span> <span class="na">Click=</span><span class="s">&quot;Button_ClickHandler&quot;</span><span class="nt">&gt;</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="kt">var</span><span class="w"> </span><span class="n">btn</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Button</span><span class="w"> </span>
+<span class="p">{</span><span class="w"> </span>
+<span class="w">    </span><span class="n">Content</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;Add customer&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="n">Click</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="c1">// No clue if this is right...</span>
+<span class="p">};</span><span class="w"></span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<hr />
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">SelectionChanged</label><label for="__tabbed_4_2">TextChanged</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">Markup</label><label for="__tabbed_5_2">Code-behind</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;ListView</span> 
+    <span class="na">x:Name=</span><span class="s">&quot;customerListView&quot;</span> 
+    <span class="na">SelectionChanged=</span><span class="s">&quot;CustomerListView_SelectionChanged&quot;</span><span class="nt">/&gt;</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">CustomerListView_SelectionChanged</span><span class="p">(</span><span class="kt">object</span><span class="w"> </span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">SelectionChangedEventArgs</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kt">var</span><span class="w"> </span><span class="n">customer</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">customerListView</span><span class="p">.</span><span class="n">SelectedItem</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">Customer</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">txtFirstName</span><span class="p">.</span><span class="n">Text</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">customer</span><span class="p">?.</span><span class="n">FirstName</span><span class="w"> </span><span class="p">??</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">;</span><span class="w"> </span>
+<span class="w">    </span><span class="n">txtLastName</span><span class="p">.</span><span class="n">Text</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">customer</span><span class="p">?.</span><span class="n">LastName</span><span class="w"> </span><span class="p">??</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">chkIsDeveloper</span><span class="p">.</span><span class="n">IsChecked</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">customer</span><span class="p">?.</span><span class="n">IsDeveloper</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="tabbed-block">
+<div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">Markup</label><label for="__tabbed_6_2">Code-behind</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;StackPanel&gt;</span>
+    <span class="nt">&lt;TextBox</span> 
+        <span class="na">x:Name=</span><span class="s">&quot;txtFirstName&quot;</span> 
+        <span class="na">Header=</span><span class="s">&quot;Firstname&quot;</span> 
+        <span class="na">TextChanged=</span><span class="s">&quot;TextBox_TextChanged&quot;</span>
+        <span class="na">Margin=</span><span class="s">&quot;10&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;TextBox</span> 
+        <span class="na">x:Name=</span><span class="s">&quot;txtLastName&quot;</span> 
+        <span class="na">Header=</span><span class="s">&quot;Lastname&quot;</span> 
+        <span class="na">TextChanged=</span><span class="s">&quot;TextBox_TextChanged&quot;</span>
+        <span class="na">Margin=</span><span class="s">&quot;10&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;CheckBox</span> 
+        <span class="na">x:Name=</span><span class="s">&quot;chkIsDeveloper&quot;</span>
+        <span class="na">Content=</span><span class="s">&quot;IsDeveloper&quot;</span> 
+        <span class="na">Margin=</span><span class="s">&quot;10&quot;</span> 
+        <span class="na">Checked=</span><span class="s">&quot;CheckBox_IsCheckedChanged&quot;</span> 
+        <span class="na">Unchecked=</span><span class="s">&quot;CheckBox_IsCheckedChanged&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/StackPanel&gt;</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">TextBox_TextChanged</span><span class="p">(</span><span class="kt">object</span><span class="w"> </span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">TextChangedEventArgs</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">UpdateCustomer</span><span class="p">();</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">CheckBox_IsCheckedChanged</span><span class="p">(</span><span class="kt">object</span><span class="w"> </span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">RoutedEventArgs</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">UpdateCustomer</span><span class="p">();</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">UpdateCustomer</span><span class="p">()</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kt">var</span><span class="w"> </span><span class="n">customer</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">customerListView</span><span class="p">.</span><span class="n">SelectedItem</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">Customer</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">customer</span><span class="w"> </span><span class="p">!=</span><span class="w"> </span><span class="k">null</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">customer</span><span class="p">.</span><span class="n">FirstName</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">txtFirstName</span><span class="p">.</span><span class="n">Text</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="n">customer</span><span class="p">.</span><span class="n">LastName</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">txtLastName</span><span class="p">.</span><span class="n">Text</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="n">customer</span><span class="p">.</span><span class="n">IsDeveloper</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">chkIsDeveloper</span><span class="p">.</span><span class="n">IsChecked</span><span class="p">.{{</span><span class="n">c4</span><span class="p">::</span><span class="n">GetValueOrDefault</span><span class="p">}}();</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>Handlers for Loaded and Unloaded are automatically attached to any <a href="#page">Page</a> that uses the <code>NavigationHelper</code> class.</p>
+<ul>
+<li><a href="https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.frameworkelement.loaded?view=winrt-19041">Loaded</a></li>
+<li><a href="https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.frameworkelement.unloaded?view=winrt-19041">Unloaded</a></li>
+</ul>
+<h3 id="custom-controls">Custom controls</h3>
+<p>You can take a group of controls and create a <a href="https://docs.microsoft.com/en-us/archive/msdn-magazine/2019/may/xaml-custom-xaml-controls">custom control</a> using what is called a <strong>namespace mapping</strong>, where a C# class is made available in the XAML markup.</p>
+<p>More specifically, a custom control defined in XAML along with its accompanying code-behind file must use <code>UserControl</code> as its base class.
+In this sense, a custom control is really a special case of a namespace mapping, which can also be used to populate an application with mock data during development.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="7:2"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">Markup</label><label for="__tabbed_7_2">Code-behind</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;UserControl</span>
+    <span class="na">x:Class=</span><span class="s">&quot;Project.Controls.CustomControl&quot;</span>
+    <span class="na">xmlns=</span><span class="s">&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;</span>
+    <span class="na">xmlns:x=</span><span class="s">&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;</span>
+    <span class="na">xmlns:local=</span><span class="s">&quot;using:WiredBrainCoffee.UWP.Controls&quot;</span>
+    <span class="na">xmlns:d=</span><span class="s">&quot;http://schemas.microsoft.com/expression/blend/2008&quot;</span>
+    <span class="na">xmlns:mc=</span><span class="s">&quot;http://schemas.openxmlformats.org/markup-compatibility/2006&quot;</span>
+    <span class="na">mc:Ignorable=</span><span class="s">&quot;d&quot;</span><span class="nt">&gt;</span>
+
+    <span class="nt">&lt;TextBlock</span> <span class="na">Text=</span><span class="s">&quot;Hello, world!&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/UserControl&gt;</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="k">namespace</span><span class="w"> </span><span class="nn">Project.Controls</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">sealed</span><span class="w"> </span><span class="k">partial</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">CustomControl</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">UserControl</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="nf">CustomControl</span><span class="p">()</span><span class="w"></span>
+<span class="w">        </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="k">this</span><span class="p">.</span><span class="n">InitializeComponent</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<h3 id="mock-data">Mock data</h3>
+<p>The most basic method of adding mock data is by <strong>hardcoding data in the XAML markup</strong>.</p>
+<p>Somewhat more sophisticated is the option of <strong>hardcoding data in the code-behind</strong>.
+The <code>x:Bind</code> directive can be used to bind an <code>IEnumerable</code> data source to either the <code>Items</code> or <code>ItemsSource</code> attributes.
+An <strong>ObservableCollection<T></strong> is preferred in WinUI programming because it raises events when properties are changed, but Lists and Arrays also work. 
+If the collection is made of objects, the <code>DisplayMemberPath</code> allows the specification of a particular property on those objects to be displayed.
+Notably, <strong>classes</strong> specifically need to be used, and not structs, for the members of these collections.</p>
+<p>With <strong>namespace mapping</strong>, classes within the C# namespace can be used in XAML markup. (<a href="https://app.pluralsight.com/course-player?clipId=67d02b8e-5dd4-4be1-8c3d-d89476e4448a">src</a>)</p>
+<p>Most robust of all is creating a Data Provider class which will fall back to mock data when the data source is not available. 
+This will allow any number of other data sources to be plugged in, such as databases or REST services. (<a href="https://app.pluralsight.com/course-player?clipId=769d2e57-0e51-45f1-960b-781509f5719b">src</a>)</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="8:4"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><input id="__tabbed_8_2" name="__tabbed_8" type="radio" /><input id="__tabbed_8_3" name="__tabbed_8" type="radio" /><input id="__tabbed_8_4" name="__tabbed_8" type="radio" /><div class="tabbed-labels"><label for="__tabbed_8_1">Hardcoding in XAML</label><label for="__tabbed_8_2">Hardcoding in C#</label><label for="__tabbed_8_3">Namespace mapping</label><label for="__tabbed_8_4">Data provider</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;ListView&gt;</span>
+    <span class="nt">&lt;ListViewItem&gt;</span>Aristotle<span class="nt">&lt;/ListViewItem&gt;</span>
+    <span class="nt">&lt;ListViewItem&gt;</span>Euclid<span class="nt">&lt;/ListViewItem&gt;</span>
+    <span class="nt">&lt;ListViewItem&gt;</span>Plato<span class="nt">&lt;/ListViewItem&gt;</span>
+    <span class="nt">&lt;ListViewItem&gt;</span>Socrates<span class="nt">&lt;/ListViewItem&gt;</span>
+<span class="nt">&lt;/ListView&gt;</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="tabbed-set tabbed-alternate" data-tabs="9:2"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><input id="__tabbed_9_2" name="__tabbed_9" type="radio" /><div class="tabbed-labels"><label for="__tabbed_9_1">Markup</label><label for="__tabbed_9_2">Code-behind</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;Page&gt;</span>
+
+
+    <span class="nt">&lt;ListView</span>
+        <span class="na">ItemsSource=</span><span class="s">&quot;{x:Bind Starships}&quot;</span> 
+        <span class="na">SelectedItem=</span><span class="s">&quot;{x:Bind Starships[0]}&quot;</span>
+        <span class="na">DisplayMemberPath=</span><span class="s">&quot;Display&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/Page&gt;</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="k">namespace</span><span class="w"> </span><span class="nn">Starships.Models</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">class</span><span class="w"> </span><span class="nc">Starship</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">Name</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">Registry</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">Crew</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">Display</span><span class="w"></span>
+<span class="w">        </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="k">get</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">Name</span><span class="w"> </span><span class="p">+</span><span class="w"> </span><span class="n">Registry</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w">            </span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="tabbed-block">
+<div class="tabbed-set tabbed-alternate" data-tabs="10:2"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio" /><input id="__tabbed_10_2" name="__tabbed_10" type="radio" /><div class="tabbed-labels"><label for="__tabbed_10_1">Markup</label><label for="__tabbed_10_2">Code-behind</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;Page</span> 
+    <span class="na">xmlns:model=</span><span class="s">&quot;using:Project.Models&quot;</span><span class="nt">&gt;</span>
+
+    <span class="nt">&lt;ListView</span> <span class="na">DisplayMemberPath=</span><span class="s">&quot;Display&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;model:Starship</span> <span class="na">Name=</span><span class="s">&quot;USS Enterprise&quot;</span> <span class="na">Registry=</span><span class="s">&quot;NCC-1701&quot;</span> <span class="na">Crew=</span><span class="s">&quot;140&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/ListView&gt;</span>
+<span class="nt">&lt;/Page&gt;</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="k">namespace</span><span class="w"> </span><span class="nn">Starships.Models</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">class</span><span class="w"> </span><span class="nc">Starship</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">Name</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">Registry</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">Crew</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">Display</span><span class="w"></span>
+<span class="w">        </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="k">get</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">Name</span><span class="w"> </span><span class="p">+</span><span class="w"> </span><span class="n">Registry</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="tabbed-block"></div>
+</div>
+</div>
+<hr />
+<h3 id="themes">Themes</h3>
+<p>Windows 10 <a href="https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/xaml-theme-resources" title="XAML theme resources">themes</a> (<a href="#light-theme"> "Light" </a>, <a href="#dark-theme"> "Dark" </a>, and "HighContrast" can be specified as a property of the 
+Application element:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="11:3"><input checked="checked" id="__tabbed_11_1" name="__tabbed_11" type="radio" /><input id="__tabbed_11_2" name="__tabbed_11" type="radio" /><input id="__tabbed_11_3" name="__tabbed_11" type="radio" /><div class="tabbed-labels"><label for="__tabbed_11_1">Light</label><label for="__tabbed_11_2">Dark</label><label for="__tabbed_11_3">Theme colors</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><img alt="" src="/img/GUI-WBC-01-Light.gif" />
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;Application</span>
+    <span class="na">x:Class=</span><span class="s">&quot;Scratchpad.App&quot;</span>
+    <span class="na">xmlns=</span><span class="s">&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;</span>
+    <span class="na">xmlns:x=</span><span class="s">&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;</span>
+    <span class="na">xmlns:local=</span><span class="s">&quot;using:Scratchpad&quot;</span>
+    <span class="na">RequestedTheme=</span><span class="s">&quot;Light&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;Application.Resources&gt;</span>
+        <span class="nt">&lt;ResourceDictionary&gt;</span>
+            <span class="nt">&lt;ResourceDictionary.MergedDictionaries&gt;</span>
+                <span class="nt">&lt;XamlControlsResources</span> <span class="na">xmlns=</span><span class="s">&quot;using:Microsoft.UI.Xaml.Controls&quot;</span> <span class="nt">/&gt;</span>
+                <span class="cm">&lt;!-- Other merged dictionaries here --&gt;</span>
+            <span class="nt">&lt;/ResourceDictionary.MergedDictionaries&gt;</span>
+            <span class="cm">&lt;!-- Other app resources here --&gt;</span>
+        <span class="nt">&lt;/ResourceDictionary&gt;</span>
+    <span class="nt">&lt;/Application.Resources&gt;</span>
+<span class="nt">&lt;/Application&gt;</span>
+</code></pre></div></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="/img/GUI-WBC-01.gif" />
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;Application</span>
+    <span class="na">x:Class=</span><span class="s">&quot;Scratchpad.App&quot;</span>
+    <span class="na">xmlns=</span><span class="s">&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;</span>
+    <span class="na">xmlns:x=</span><span class="s">&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;</span>
+    <span class="na">xmlns:local=</span><span class="s">&quot;using:Scratchpad&quot;</span>
+    <span class="na">RequestedTheme=</span><span class="s">&quot;Dark&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;Application.Resources&gt;</span>
+        <span class="nt">&lt;ResourceDictionary&gt;</span>
+            <span class="nt">&lt;ResourceDictionary.MergedDictionaries&gt;</span>
+                <span class="nt">&lt;XamlControlsResources</span> <span class="na">xmlns=</span><span class="s">&quot;using:Microsoft.UI.Xaml.Controls&quot;</span> <span class="nt">/&gt;</span>
+                <span class="cm">&lt;!-- Other merged dictionaries here --&gt;</span>
+            <span class="nt">&lt;/ResourceDictionary.MergedDictionaries&gt;</span>
+            <span class="cm">&lt;!-- Other app resources here --&gt;</span>
+        <span class="nt">&lt;/ResourceDictionary&gt;</span>
+    <span class="nt">&lt;/Application.Resources&gt;</span>
+<span class="nt">&lt;/Application&gt;</span>
+</code></pre></div></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="/img/light-base.png" />
+<img alt="" src="/img/light-alt.png" />
+<img alt="" src="/img/light-chrome.png" />
+<img alt="" src="/img/light-list.png" />
+<img alt="" src="/img/dark-base.png" />
+<img alt="" src="/img/dark-alt.png" />
+<img alt="" src="/img/dark-chrome.png" />
+<img alt="" src="/img/dark-list.png" /></p>
+</div>
+</div>
+</div>
+<h3 id="layout">Layout</h3>
+<p>The <strong>layout panels</strong> in XAML serve a similar function to the geometry manager methods in tkinter. 
+There are <a href="https://docs.microsoft.com/en-us/windows/uwp/design/layout/layouts-with-xaml#layout-panels">various</a> layout panels available.</p>
+<ul>
+<li><a href="#grid">Grid</a></li>
+<li><a href="#relativepanel">RelativePanel</a></li>
+<li><a href="#stackpanel">StackPanel</a></li>
+<li><a href="#variablesizedwrapgrid">VariableSizeWrapGrid</a></li>
+</ul>
+<h3 id="data-binding">Data binding</h3>
+<p>There are two data binding types available in XAML (<a href="https://app.pluralsight.com/course-player?clipId=5cfb0a48-8455-4217-a83e-f93fc4aa5c24">src</a>)</p>
+<ul>
+<li><a href="https://docs.microsoft.com/en-us/dotnet/desktop/wpf/advanced/binding-markup-extension?view=netframeworkdesktop-4.8"><strong>Binding markup extension</strong></a> resolves the binding path at runtime. It can accept data sources from the <strong>binding properties</strong>
+<code>ElementName</code>, <code>Source</code>, and <code>RelativeSource</code>.
+If none of these are defined, then the binding markup extension resolves to the DataContext property.</li>
+<li><a href="https://docs.microsoft.com/en-us/windows/uwp/xaml-platform/x-bind-markup-extension"><strong>x:Bind</strong></a> resolves the binding path at <strong>compile-time</strong>, generating C# code and offering better performance and compile-time errors. You can also step into the compiled code, providing a better debugging experience. <code>x:Bind</code> should generally be preferred, however it is available only in UWP.</li>
+</ul>
+<p><code>x:Bind</code>, in contrast, binds only to the parent <code>Page</code> or <code>UserControl</code> element. So any property of MainPage will be accessible, and any property of that object will also be accessible using dot notation.</p>
+<p>Most bindings are easily translated between the two types:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="12:2"><input checked="checked" id="__tabbed_12_1" name="__tabbed_12" type="radio" /><input id="__tabbed_12_2" name="__tabbed_12" type="radio" /><div class="tabbed-labels"><label for="__tabbed_12_1">Binding markup extension</label><label for="__tabbed_12_2">x:Bind</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="nf">MainPage</span><span class="p">()</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="n">InitializeComponent</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="n">ViewModel</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">MainViewModel</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="n">DataContext</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">ViewModel</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;ListView</span>
+    <span class="na">ItemsSource=</span><span class="s">&quot;{Binding Customers,Mode=OneWay}&quot;</span><span class="nt">&gt;</span>
+    <span class="cm">&lt;!-- ...--&gt;</span>
+<span class="nt">&lt;/ListView&gt;</span>
+</code></pre></div></p>
+</div>
+<div class="tabbed-block">
+<p><div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="nf">MainPage</span><span class="p">()</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="n">InitializeComponent</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="n">ViewModel</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">MainViewModel</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// DataContext = ViewModel;</span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;ListView</span>
+    <span class="na">ItemsSource=</span><span class="s">&quot;{x:Bind ViewModel.Customers,Mode=OneWay}&quot;</span><span class="nt">&gt;</span>
+    <span class="cm">&lt;!-- ...--&gt;</span>
+<span class="nt">&lt;/ListView&gt;</span>
+</code></pre></div></p>
+</div>
+</div>
+</div>
+<p>Notably, the default binding mode of the binding markup extension is <strong>OneWay<code>**, whereas that of</code>x:Bind<code>is **</code>OneTime</strong>, although this can be changed by setting <code>x:DefaultBindMode</code> on the root element.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="13:2"><input checked="checked" id="__tabbed_13_1" name="__tabbed_13" type="radio" /><input id="__tabbed_13_2" name="__tabbed_13" type="radio" /><div class="tabbed-labels"><label for="__tabbed_13_1">Changing default bind mode</label><label for="__tabbed_13_2">Set explicitly</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;Page</span>
+    <span class="na">x:DefaultBindMode=</span><span class="s">&quot;OneWay&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;Listview</span> <span class="na">ItemsSource=</span><span class="s">&quot;{x:Bind ViewModelCustomers}&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/Page&gt;</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;Page&gt;</span>
+    <span class="nt">&lt;Listview</span> <span class="na">ItemsSource=</span><span class="s">&quot;{x:Bind ViewModelCustomers,Mode=OneWay}&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/Page&gt;</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<h3 id="type-conversion">Type conversion</h3>
+<p>By default, XAML attribute values are strings. In order for the XAML processor to interpret them
+as objects, they must be converted.</p>
+<p><strong>Type converters</strong> can convert string representations of attribute values to property elements.
+For example, a type converter is what is used with the XAML declaration <code>HorizontalAlignment="Left"</code>, 
+which is mapped to a specific enumeration within the <strong>Windows.UI.XAML</strong> namespace.
+<sup><a href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/typeconverters-and-xaml" title="TypeConverters and XAML">ref</a></sup></p>
+<p>In UWP, the XAML processor integrates the conversion logic to convert the Margin declaration to a <code>Thickness</code> object. 
+But in <a href="WPF"> WPF </a>, TypeConverters are used.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="14:2"><input checked="checked" id="__tabbed_14_1" name="__tabbed_14" type="radio" /><input id="__tabbed_14_2" name="__tabbed_14" type="radio" /><div class="tabbed-labels"><label for="__tabbed_14_1">Markup</label><label for="__tabbed_14_2">Code-behind</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;Button</span> <span class="na">Margin=</span><span class="s">&quot;10,20,10,30&quot;</span> <span class="na">Content=</span><span class="s">&quot;Click me&quot;</span><span class="nt">/&gt;</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="kt">var</span><span class="w"> </span><span class="n">btn</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Button</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">Margin</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Thickness</span><span class="p">(</span><span class="m">10</span><span class="p">,</span><span class="w"> </span><span class="m">20</span><span class="p">,</span><span class="w"> </span><span class="m">10</span><span class="p">,</span><span class="w"> </span><span class="m">30</span><span class="p">);</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<h3 id="markup-extensions">Markup Extensions</h3>
+<p><strong>Markup extensions</strong> are placed between curly braces <code>{</code> and <code>}</code> and create a reference to a 
+<a href="Resource-dictionaries"> <strong>ResourceDictionary</strong> </a>.  They can be used to unify styling across an 
+application.</p>
+<p>The most common markup extensions are:</p>
+<ul>
+<li><code>StaticResource</code> refers to resources defined in <a href="#resourcedictionary"> resource dictionaries </a></li>
+<li><code>ThemeResource</code> for Windows native themeing <a href="#themes">colors</a></li>
+<li><code>Binding</code> for data binding expressions, which require the bound property to be a <a href="#dependency-properties">dependency property</a></li>
+</ul>
+<p>Here, the background of the grid is bound to a color from the Windows-native theming
+and the TextBlock's Foreground property is bound to a color defined in a resource dictionary
+defined on the same page.</p>
+<p>Multiple properties can be set at the same time by setting a <code>Style</code> property element.
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;Page&gt;</span>
+    <span class="nt">&lt;Page.Resources&gt;</span>
+        <span class="nt">&lt;Style</span> <span class="na">TargetType=</span><span class="s">&quot;Button&quot;</span> <span class="na">x:Key=</span><span class="s">&quot;MyButtonStyle&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;Setter</span> <span class="na">Property=</span><span class="s">&quot;Background&quot;</span> <span class="na">Value=</span><span class="s">&quot;Blue&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;Setter</span> <span class="na">Property=</span><span class="s">&quot;FontFamily&quot;</span> <span class="na">Value=</span><span class="s">&quot;Arial Black&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;Setter</span> <span class="na">Property=</span><span class="s">&quot;FontSize&quot;</span> <span class="na">Value=</span><span class="s">&quot;36&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/Style&gt;</span>
+    <span class="nt">&lt;/Page.Resources&gt;</span>
+
+    <span class="nt">&lt;Button</span> <span class="na">Content=</span><span class="s">&quot;Hello world&quot;</span> <span class="na">Style=</span><span class="s">&quot;{StaticResource MyButtonStyle}&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/Page&gt;</span>
+</code></pre></div></p>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;Page&gt;</span>
+    <span class="nt">&lt;Page.Resources&gt;</span>
+            <span class="nt">&lt;SolidColorBrush</span> <span class="na">x:Key=</span><span class="s">&quot;MyBrush&quot;</span> <span class="na">Color=</span><span class="s">&quot;Brown&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/Page.Resources&gt;</span>
+
+    <span class="nt">&lt;Grid</span> <span class="na">Background=</span><span class="s">&quot;{ThemeResource ApplicationPageBackgroundThemeBrush}&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;TextBlock</span> <span class="na">Text=</span><span class="s">&quot;Hello World&quot;</span> <span class="na">Foreground=</span><span class="s">&quot;{StaticResource MyBrush}&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/Grid&gt;</span>
+<span class="nt">&lt;/Page&gt;</span>
+</code></pre></div>
+<p><a href="https://channel9.msdn.com/Series/Windows-10-development-for-absolute-beginners/UWP-028-XAML-Styles" title="UWP course - XAML Styles">src</a></p>
+<h3 id="dependency-properties">Dependency properties</h3>
+<p>Only <a href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/dependency-properties-overview">dependency properties</a> can be targets for data binding in <a href="UWP">UWP</a> and <a href="WPF">WPF</a>.
+The <strong>propdp</strong> snippet in Visual Studio can be used to create one.</p>
+<p>The <strong>DependencyObject</strong> class, which is a base class of all UI elements in UWP and WPF, exposes the <code>GetValue</code> and <code>SetValue</code> methods, which are used to ...</p>
+<h3 id="multi-instance">Multi-instance</h3>
+<p>A <strong>multi-instance</strong> application is one that can run in several instances, which is necessary to allow users to open new windows.</p>
+<p>A collection of templates is available as a Visual Studio <a href="https://marketplace.visualstudio.com/items?itemName=AndrewWhitechapelMSFT.MultiInstanceApps">extension</a>.
+These templates modify the appxmanifest file by setting the <strong>SupportsMultipleInstances</strong> attribute to true:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;Package</span>
+  <span class="err">...</span>
+  <span class="na">xmlns:desktop4=</span><span class="s">&quot;http://schemas.microsoft.com/appx/manifest/desktop/windows10/4&quot;</span>
+  <span class="na">xmlns:iot2=</span><span class="s">&quot;http://schemas.microsoft.com/appx/manifest/iot/windows10/2&quot;</span>  
+  <span class="na">IgnorableNamespaces=</span><span class="s">&quot;uap mp desktop4 iot2&quot;</span><span class="nt">&gt;</span>
+  ...
+  <span class="nt">&lt;Applications&gt;</span>
+    <span class="nt">&lt;Application</span> <span class="na">Id=</span><span class="s">&quot;App&quot;</span>
+      <span class="err">...</span>
+      <span class="na">desktop4:SupportsMultipleInstances=</span><span class="s">&quot;true&quot;</span>
+      <span class="na">iot2:SupportsMultipleInstances=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>
+      ...
+    <span class="nt">&lt;/Application&gt;</span>
+  <span class="nt">&lt;/Applications&gt;</span>
+   ...
+<span class="nt">&lt;/Package&gt;</span>
+</code></pre></div>
+<p>Resources:</p>
+<ul>
+<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 0H8C6.9 0 6 .9 6 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V6l-6-6m4 18H8V2h7v5h5v11M4 4v18h16v2H4c-1.1 0-2-.9-2-2V4h2m6 6v2h8v-2h-8m0 4v2h5v-2h-5Z"/></svg></span> <a href="https://docs.microsoft.com/en-us/windows/uwp/launch-resume/multi-instance-uwp">Create a multi-instance UWP app</a></li>
+</ul>
+<h2 id="patterns">Patterns</h2>
+<h3 id="action-on-focus">Action on focus</h3>
+<p>UI elements expose the <strong>GotFocus</strong> event hook for when a user clicks or tabs into a control.</p>
+<p>Example handler selecting all text in a TextBox: (<a href="https://asp-net-example.blogspot.com/2016/12/uwp-select-textbox-all-text-when-get.html">src</a>)</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="15:2"><input checked="checked" id="__tabbed_15_1" name="__tabbed_15" type="radio" /><input id="__tabbed_15_2" name="__tabbed_15" type="radio" /><div class="tabbed-labels"><label for="__tabbed_15_1">Markup</label><label for="__tabbed_15_2">Code-behind</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;Page&gt;</span>
+    <span class="nt">&lt;TextBox</span> <span class="na">GotFocus=</span><span class="s">&quot;TextBox_GotFocus&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/Page&gt;</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="k">void</span><span class="w"> </span><span class="nf">TextBox_GotFocus</span><span class="p">(</span><span class="kt">object</span><span class="w"> </span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">RoutedEventArgs</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">TextBox</span><span class="w"> </span><span class="n">textBox</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">sender</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">TextBox</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">textBox</span><span class="p">.</span><span class="n">SelectAll</span><span class="p">();</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<h3 id="listdetails">List/Details</h3>
+<figure><img src="/img/GUI/list-detail-pattern.png"/></figure>
+
+<p>The <a href="https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/master-details"><strong>list/details pattern</strong></a> has a master pane (usually a <a href="#listview">ListView</a>) and a details pane for content.</p>
+<h3 id="mvvm">MVVM</h3>
+<p>In the <strong>Model, View, ViewModel (MVVM)</strong> pattern, which implicitly relies on OOP principles, the <strong>Model</strong> represents the data model for the objects being manipulated, 
+and the <strong>ViewModel</strong> is the model for the <strong>View</strong>, that is, the state of the application as represented in a class.</p>
+<p>In WinUI, the project that contains the Views (that is, the XAML files) must first add references to the projects where the Models and ViewModel are contained. 
+These will allow the code-behind file of the <strong>MainWindow</strong> to reference those classes.</p>
+<p>The class representing the ViewModel is instantiated and assigned to an attribute.
+That class's methods can then be called by using the <code>x:Bind</code> attribute syntax on, for instance, a <code>ListView</code> element.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="16:2"><input checked="checked" id="__tabbed_16_1" name="__tabbed_16" type="radio" /><input id="__tabbed_16_2" name="__tabbed_16" type="radio" /><div class="tabbed-labels"><label for="__tabbed_16_1">Markup</label><label for="__tabbed_16_2">Code-behind</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;Window&gt;</span>
+    <span class="nt">&lt;ListView</span> 
+        <span class="na">ItemsSource=</span><span class="s">&quot;{x:Bind ViewModel.Employees, Mode=OneWay}&quot;</span>
+        <span class="na">SelectedItem=</span><span class="s">&quot;{x:Bind ViewModel.SelectedEmployee, Mode=OneWay}&quot;</span>
+        <span class="na">DisplayMemberPath=</span><span class="s">&quot;FirstName&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/Window&gt;</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="nn">EmployeeManager.DataAccess</span><span class="p">;</span><span class="w"></span>
+<span class="k">using</span><span class="w"> </span><span class="nn">EmployeeManager.ViewModel</span><span class="p">;</span><span class="w"></span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Microsoft.UI.Xaml</span><span class="p">;</span><span class="w"></span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">EmployeeManager.WinUI</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">sealed</span><span class="w"> </span><span class="k">partial</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MainWindow</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Window</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="nf">MainWindow</span><span class="p">()</span><span class="w"></span>
+<span class="w">        </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">ViewModel</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">MainViewModel</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">EmployeeDataProvider</span><span class="p">());</span><span class="w"></span>
+<span class="w">            </span><span class="k">this</span><span class="p">.</span><span class="n">InitializeComponent</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="n">MainViewModel</span><span class="w"> </span><span class="n">ViewModel</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<h3 id="navigation">Navigation</h3>
+<p>App layout typically begins with the choice of <strong>navigation model</strong>, which defines how users navigate between pages in the app.
+There are two common navigation models: <strong>left nav</strong> and <strong>top nav</strong></p>
+<p><img alt="" src="/img/xaml-nav.svg" /></p>
+<h2 id="examples">Examples</h2>
+<h3 id="list-and-details">List and details</h3>
+<details>
+<summary><img src="/img/GUI-Heroes.gif"></summary>
+
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;Page</span>
+    <span class="na">x:Class=</span><span class="s">&quot;Superheroes.MainPage&quot;</span>
+    <span class="na">xmlns=</span><span class="s">&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;</span>
+    <span class="na">xmlns:x=</span><span class="s">&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;</span>
+    <span class="na">xmlns:local=</span><span class="s">&quot;using:Superheroes&quot;</span>
+    <span class="na">xmlns:d=</span><span class="s">&quot;http://schemas.microsoft.com/expression/blend/2008&quot;</span>
+    <span class="na">xmlns:mc=</span><span class="s">&quot;http://schemas.openxmlformats.org/markup-compatibility/2006&quot;</span>
+    <span class="na">mc:Ignorable=</span><span class="s">&quot;d&quot;</span>
+    <span class="na">Background=</span><span class="s">&quot;{ThemeResource ApplicationPageBackgroundThemeBrush}&quot;</span><span class="nt">&gt;</span>
+
+    <span class="nt">&lt;StackPanel&gt;</span>
+        <span class="nt">&lt;CommandBar&gt;</span>
+            <span class="nt">&lt;AppBarButton</span> <span class="na">x:Name=</span><span class="s">&quot;AddHero&quot;</span> <span class="na">Click=</span><span class="s">&quot;AddHero_Click&quot;</span> <span class="na">Label=</span><span class="s">&quot;Add hero&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;SymbolIcon</span> <span class="na">Symbol=</span><span class="s">&quot;Add&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;/AppBarButton&gt;</span>
+            <span class="nt">&lt;AppBarButton</span> <span class="na">x:Name=</span><span class="s">&quot;DelHero&quot;</span> <span class="na">Click=</span><span class="s">&quot;DelHero_Click&quot;</span> <span class="na">Label=</span><span class="s">&quot;Remove hero&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;SymbolIcon</span> <span class="na">Symbol=</span><span class="s">&quot;Delete&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;/AppBarButton&gt;</span>
+        <span class="nt">&lt;/CommandBar&gt;</span>
+
+        <span class="nt">&lt;TextBox</span> <span class="na">Header=</span><span class="s">&quot;First name&quot;</span> <span class="na">Text=</span><span class="s">&quot;{Binding ElementName=heroesListView,Path=SelectedItem.FirstName,Mode=TwoWay}&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;TextBox</span> <span class="na">Header=</span><span class="s">&quot;Last name&quot;</span> <span class="na">Text=</span><span class="s">&quot;{Binding ElementName=heroesListView,Path=SelectedItem.LastName,Mode=TwoWay}&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;TextBox</span> <span class="na">Header=</span><span class="s">&quot;Alias&quot;</span> <span class="na">Text=</span><span class="s">&quot;{Binding ElementName=heroesListView,Path=SelectedItem.Superhero,Mode=TwoWay}&quot;</span><span class="nt">/&gt;</span>
+
+        <span class="nt">&lt;ListView</span> 
+            <span class="na">x:Name=</span><span class="s">&quot;heroesListView&quot;</span> 
+            <span class="na">ItemsSource=</span><span class="s">&quot;{Binding Heroes,Mode=TwoWay}&quot;</span> 
+            <span class="na">SelectedItem=</span><span class="s">&quot;{Binding SelectedHero,Mode=TwoWay}&quot;</span><span class="nt">&gt;</span>
+
+            <span class="nt">&lt;ListView.ItemTemplate&gt;</span>
+                <span class="nt">&lt;DataTemplate&gt;</span>
+                    <span class="nt">&lt;StackPanel</span> <span class="na">Orientation=</span><span class="s">&quot;Horizontal&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;TextBlock</span> <span class="na">Text=</span><span class="s">&quot;{Binding Superhero}&quot;</span> <span class="na">FontWeight=</span><span class="s">&quot;Bold&quot;</span><span class="nt">/&gt;</span>
+                        <span class="nt">&lt;TextBlock</span> <span class="na">Text=</span><span class="s">&quot;{Binding FirstName}&quot;</span> <span class="na">Margin=</span><span class="s">&quot;5 0 0 0&quot;</span><span class="nt">/&gt;</span>
+                        <span class="nt">&lt;TextBlock</span> <span class="na">Text=</span><span class="s">&quot;{Binding LastName}&quot;</span> <span class="na">Margin=</span><span class="s">&quot;5 0 0 0&quot;</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;/StackPanel&gt;</span>
+                <span class="nt">&lt;/DataTemplate&gt;</span>
+            <span class="nt">&lt;/ListView.ItemTemplate&gt;</span>
+        <span class="nt">&lt;/ListView&gt;</span>
+
+    <span class="nt">&lt;/StackPanel&gt;</span>
+<span class="nt">&lt;/Page&gt;</span>
+</code></pre></div>
+</details>
+
+<p>In order to link two controls, some form of <a href="#data-binding">data binding</a> is necessary.
+Here, TextBox elements are individually bound to the string properties of the selected ListView element with the Binding markup extension using the <code>ElementName</code> binding property.
+The selected item and the path to the string property are combined using dot notation and assigned to the <code>Path</code> binding property. </p>
+<h4 id="custom-control">Custom control</h4>
+<p>The textboxes can also be consolidated into a custom control using <strong>UserControl</strong>. 
+In this case, the custom control must expose a target property that will be bound to the ListView's SelectedItem property. </p>
+<div class="tabbed-set tabbed-alternate" data-tabs="17:2"><input checked="checked" id="__tabbed_17_1" name="__tabbed_17" type="radio" /><input id="__tabbed_17_2" name="__tabbed_17" type="radio" /><div class="tabbed-labels"><label for="__tabbed_17_1">Individual TextBoxes bound to ListView</label><label for="__tabbed_17_2">UserControl</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;TextBox</span> <span class="na">Header=</span><span class="s">&quot;First name&quot;</span> <span class="na">Text=</span><span class="s">&quot;{Binding ElementName=heroesListView,Path=SelectedItem.FirstName,Mode=TwoWay}&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;TextBox</span> <span class="na">Header=</span><span class="s">&quot;Last name&quot;</span> <span class="na">Text=</span><span class="s">&quot;{Binding ElementName=heroesListView,Path=SelectedItem.LastName,Mode=TwoWay}&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;TextBox</span> <span class="na">Header=</span><span class="s">&quot;Alias&quot;</span> <span class="na">Text=</span><span class="s">&quot;{Binding ElementName=heroesListView,Path=SelectedItem.Superhero,Mode=TwoWay}&quot;</span><span class="nt">/&gt;</span>
+
+<span class="cm">&lt;!-- &lt;local:MyTextBoxes Hero=&quot;{Binding ElementName=heroesListView,Path=SelectedItem,Mode=TwoWay}&quot;/&gt; --&gt;</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="cm">&lt;!--&lt;TextBox Header=&quot;First name&quot; Text=&quot;{Binding ElementName=heroesListView,Path=SelectedItem.FirstName,Mode=TwoWay}&quot;/&gt;</span>
+<span class="cm">&lt;TextBox Header=&quot;Last name&quot; Text=&quot;{Binding ElementName=heroesListView,Path=SelectedItem.LastName,Mode=TwoWay}&quot;/&gt;</span>
+<span class="cm">&lt;TextBox Header=&quot;Alias&quot; Text=&quot;{Binding ElementName=heroesListView,Path=SelectedItem.Superhero,Mode=TwoWay}&quot;/&gt;--&gt;</span>
+
+<span class="nt">&lt;local:MyTextBoxes</span> <span class="na">Hero=</span><span class="s">&quot;{Binding ElementName=heroesListView,Path=SelectedItem,Mode=TwoWay}&quot;</span><span class="nt">/&gt;</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<p>In order to accept the data binding, the target property must be implemented as a <a href="#dependency-properties"><strong>dependency property</strong></a>.
+This dependency property works through a static callback function which sets the individual textbox values to the bound target property.</p>
+<p>Naively, the callback function can be made to change the individual TextBox elements, provided they have <code>x:Name</code> defined.
+But a better technique is using the Binding markup extension to bind the individual TextBoxes to the root node using the <code>ElementName</code> binding property.
+This requires the root node to have <code>x:Name</code> defined.</p>
+<p>Both MyTextBoxes's binding to heroesListView and the individual TextBox bindings to the Hero property of root need to be TwoWay in order for changes made in the TextBox to take effect.
+Notably, the ListView does not reflect any changes made yet.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="18:2"><input checked="checked" id="__tabbed_18_1" name="__tabbed_18" type="radio" /><input id="__tabbed_18_2" name="__tabbed_18" type="radio" /><div class="tabbed-labels"><label for="__tabbed_18_1">Callback</label><label for="__tabbed_18_2">Binding</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;TextBox</span> 
+    <span class="na">x:Name=</span><span class="s">&quot;FirstNameTextbox&quot;</span>
+    <span class="na">Header=</span><span class="s">&quot;First name&quot;</span> 
+    <span class="na">Margin=</span><span class="s">&quot;10&quot;</span>
+    <span class="nt">/&gt;</span>
+<span class="nt">&lt;TextBox</span> 
+    <span class="na">x:Name=</span><span class="s">&quot;LastNameTextbox&quot;</span>
+    <span class="na">Header=</span><span class="s">&quot;Last name&quot;</span> 
+    <span class="na">Margin=</span><span class="s">&quot;10&quot;</span>
+    <span class="nt">/&gt;</span>
+<span class="nt">&lt;TextBox</span> 
+    <span class="na">x:Name=</span><span class="s">&quot;SuperheroTextbox&quot;</span>
+    <span class="na">Header=</span><span class="s">&quot;Alias&quot;</span> 
+    <span class="na">Margin=</span><span class="s">&quot;10&quot;</span>
+    <span class="nt">/&gt;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">private</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">HeroChangedCallback</span><span class="p">(</span><span class="n">DependencyObject</span><span class="w"> </span><span class="n">d</span><span class="p">,</span><span class="w"> </span><span class="n">DependencyPropertyChangedEventArgs</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">d</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">MyTextBoxes</span><span class="w"> </span><span class="n">myTextBoxes</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kt">var</span><span class="w"> </span><span class="n">hero</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">NewValue</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">Hero</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">myTextBoxes</span><span class="p">.</span><span class="n">FirstNameTextbox</span><span class="p">.</span><span class="n">Text</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">hero</span><span class="p">.</span><span class="n">FirstName</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">myTextBoxes</span><span class="p">.</span><span class="n">LastNameTextbox</span><span class="p">.</span><span class="n">Text</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">hero</span><span class="p">.</span><span class="n">LastName</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">myTextBoxes</span><span class="p">.</span><span class="n">SuperheroTextbox</span><span class="p">.</span><span class="n">Text</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">hero</span><span class="p">.</span><span class="n">Superhero</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;TextBox</span> 
+    <span class="na">x:Name=</span><span class="s">&quot;FirstNameTextbox&quot;</span>
+    <span class="na">Header=</span><span class="s">&quot;First name&quot;</span> 
+    <span class="na">Margin=</span><span class="s">&quot;10&quot;</span>
+    <span class="na">Text=</span><span class="s">&quot;{Binding ElementName=root,Path=Hero.FirstName,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;TextBox</span> 
+    <span class="na">x:Name=</span><span class="s">&quot;LastNameTextbox&quot;</span>
+    <span class="na">Header=</span><span class="s">&quot;Last name&quot;</span> 
+    <span class="na">Margin=</span><span class="s">&quot;10&quot;</span>
+    <span class="na">Text=</span><span class="s">&quot;{Binding ElementName=root,Path=Hero.LastName,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;TextBox</span> 
+    <span class="na">x:Name=</span><span class="s">&quot;SuperheroTextbox&quot;</span>
+    <span class="na">Header=</span><span class="s">&quot;Alias&quot;</span> 
+    <span class="na">Margin=</span><span class="s">&quot;10&quot;</span>
+    <span class="na">Text=</span><span class="s">&quot;{Binding ElementName=root,Path=Hero.Superhero,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}&quot;</span><span class="nt">/&gt;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">private</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">HeroChangedCallback</span><span class="p">(</span><span class="n">DependencyObject</span><span class="w"> </span><span class="n">d</span><span class="p">,</span><span class="w"> </span><span class="n">DependencyPropertyChangedEventArgs</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">//if (d is MyTextBoxes myTextBoxes)</span>
+<span class="w">    </span><span class="c1">//{</span>
+<span class="w">    </span><span class="c1">//    var hero = e.NewValue as Hero;</span>
+
+<span class="w">    </span><span class="c1">//    myTextBoxes.FirstNameTextbox.Text = hero.FirstName;</span>
+<span class="w">    </span><span class="c1">//    myTextBoxes.LastNameTextbox.Text = hero.LastName;</span>
+<span class="w">    </span><span class="c1">//    myTextBoxes.SuperheroTextbox.Text = hero.Superhero;</span>
+<span class="w">    </span><span class="c1">//}</span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<h4 id="listview">ListView</h4>
+<p>In order for the ListView to update, the <strong>underlying model</strong> must raise the <strong>PropertyChanged</strong> event.
+I really don't understand this very well, so here is the Observable class that implements the <strong>INotifyPropertyChanged</strong> interface.
+The model must inherit from this base class and the Set accessor of any property should fire <code>OnPropertyChanged()</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">Observable</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">INotifyPropertyChanged</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">event</span><span class="w"> </span><span class="n">PropertyChangedEventHandler</span><span class="w"> </span><span class="n">PropertyChanged</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">protected</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnPropertyChanged</span><span class="p">([</span><span class="n">CallerMemberName</span><span class="p">]</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">propertyName</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="k">null</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">PropertyChanged</span><span class="p">?.</span><span class="n">Invoke</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PropertyChangedEventArgs</span><span class="p">(</span><span class="n">propertyName</span><span class="p">));</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<h4 id="viewmodel">ViewModel</h4>
+<h4 id="xbind">x:Bind</h4>
+<p>Binding markup extensions are trivially changed to <a href="#data-binding">compiled data bindings</a> by replacing <code>Binding</code> with <code>x:Bind</code>.</p>
+<p>!!!
+    Note that ListView will enter an infinite loop if the SelectedHero property does not incorporate additional logic.</p>
+<pre><code>```csharp
+public Hero SelectedHero
+{
+    get { return _selectedHero; }
+    set
+    {
+        if (_selectedHero != value)
+        {
+            _selectedHero = value;
+            OnPropertyChanged();
+            OnPropertyChanged(nameof(IsHeroSelected));
+        }
+    }
+}
+```
+</code></pre>
+<div class="tabbed-set tabbed-alternate" data-tabs="19:2"><input checked="checked" id="__tabbed_19_1" name="__tabbed_19" type="radio" /><input id="__tabbed_19_2" name="__tabbed_19" type="radio" /><div class="tabbed-labels"><label for="__tabbed_19_1">Binding markup extension</label><label for="__tabbed_19_2">Compiled data binding</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><div class="highlight"><pre><span></span><code><span class="nt">&lt;ListView</span> 
+    <span class="na">x:Name=</span><span class="s">&quot;heroesListView&quot;</span> 
+    <span class="na">ItemsSource=</span><span class="s">&quot;{Binding Heroes,Mode=OneWay}&quot;</span> 
+    <span class="na">SelectedItem=</span><span class="s">&quot;{Binding SelectedHero,Mode=TwoWay}&quot;</span>
+    <span class="na">Margin=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;TextBox</span> 
+    <span class="na">x:Name=</span><span class="s">&quot;FirstNameTextbox&quot;</span>
+    <span class="na">Header=</span><span class="s">&quot;First name&quot;</span> 
+    <span class="na">Margin=</span><span class="s">&quot;10&quot;</span>
+    <span class="na">Text=</span><span class="s">&quot;{Binding ElementName=root,Path=Hero.FirstName,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}&quot;</span>
+    <span class="na">GotFocus=</span><span class="s">&quot;Textbox_GotFocus&quot;</span>
+    <span class="nt">/&gt;</span>
+<span class="nt">&lt;TextBox</span> 
+    <span class="na">x:Name=</span><span class="s">&quot;LastNameTextbox&quot;</span>
+    <span class="na">Header=</span><span class="s">&quot;Last name&quot;</span> 
+    <span class="na">Margin=</span><span class="s">&quot;10&quot;</span>
+    <span class="na">Text=</span><span class="s">&quot;{Binding ElementName=root,Path=Hero.LastName,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}&quot;</span>
+    <span class="na">GotFocus=</span><span class="s">&quot;Textbox_GotFocus&quot;</span>
+    <span class="nt">/&gt;</span>
+<span class="nt">&lt;TextBox</span> 
+    <span class="na">x:Name=</span><span class="s">&quot;SuperheroTextbox&quot;</span>
+    <span class="na">Header=</span><span class="s">&quot;Alias&quot;</span> 
+    <span class="na">Margin=</span><span class="s">&quot;10&quot;</span>
+    <span class="na">Text=</span><span class="s">&quot;{Binding ElementName=root,Path=Hero.Superhero,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}&quot;</span>
+    <span class="na">GotFocus=</span><span class="s">&quot;Textbox_GotFocus&quot;</span>
+    <span class="nt">/&gt;</span>
+</code></pre></div></p>
+</div>
+<div class="tabbed-block">
+<p><div class="highlight"><pre><span></span><code><span class="nt">&lt;ListView</span> 
+    <span class="na">x:Name=</span><span class="s">&quot;heroesListView&quot;</span> 
+    <span class="na">ItemsSource=</span><span class="s">&quot;{x:Bind ViewModel.Heroes,Mode=OneWay}&quot;</span> 
+    <span class="na">SelectedItem=</span><span class="s">&quot;{x:Bind ViewModel.SelectedHero,Mode=TwoWay}&quot;</span>
+    <span class="na">Margin=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;TextBox</span> 
+    <span class="na">x:Name=</span><span class="s">&quot;FirstNameTextbox&quot;</span>
+    <span class="na">Header=</span><span class="s">&quot;First name&quot;</span> 
+    <span class="na">Margin=</span><span class="s">&quot;10&quot;</span>
+    <span class="na">Text=</span><span class="s">&quot;{x:Bind Hero.FirstName,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}&quot;</span>
+    <span class="na">GotFocus=</span><span class="s">&quot;Textbox_GotFocus&quot;</span>
+    <span class="nt">/&gt;</span>
+<span class="nt">&lt;TextBox</span> 
+    <span class="na">x:Name=</span><span class="s">&quot;LastNameTextbox&quot;</span>
+    <span class="na">Header=</span><span class="s">&quot;Last name&quot;</span> 
+    <span class="na">Margin=</span><span class="s">&quot;10&quot;</span>
+    <span class="na">Text=</span><span class="s">&quot;{x:Bind Hero.LastName,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}&quot;</span>
+    <span class="na">GotFocus=</span><span class="s">&quot;Textbox_GotFocus&quot;</span>
+    <span class="nt">/&gt;</span>
+<span class="nt">&lt;TextBox</span> 
+    <span class="na">x:Name=</span><span class="s">&quot;SuperheroTextbox&quot;</span>
+    <span class="na">Header=</span><span class="s">&quot;Alias&quot;</span> 
+    <span class="na">Margin=</span><span class="s">&quot;10&quot;</span>
+    <span class="na">Text=</span><span class="s">&quot;{x:Bind Hero.Superhero,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}&quot;</span>
+    <span class="na">GotFocus=</span><span class="s">&quot;Textbox_GotFocus&quot;</span>
+    <span class="nt">/&gt;</span>
+</code></pre></div></p>
+</div>
+</div>
+</div>
+<p>x:Bind can also be implemented in the ListView's ItemTemplate, so long as the <strong>x:DataType</strong> attribute is set on DataTemplate.
+We must also remember to set the Mode binding property, since x:Bind's default is OneTime!</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="20:2"><input checked="checked" id="__tabbed_20_1" name="__tabbed_20" type="radio" /><input id="__tabbed_20_2" name="__tabbed_20" type="radio" /><div class="tabbed-labels"><label for="__tabbed_20_1">Binding markup extension</label><label for="__tabbed_20_2">Compiled data binding</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;ListView.ItemTemplate&gt;</span>
+    <span class="nt">&lt;DataTemplate&gt;</span>
+        <span class="nt">&lt;StackPanel</span> <span class="na">Orientation=</span><span class="s">&quot;Horizontal&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;TextBlock</span> <span class="na">Text=</span><span class="s">&quot;{Binding Superhero}&quot;</span> <span class="na">FontWeight=</span><span class="s">&quot;Bold&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;TextBlock</span> <span class="na">Text=</span><span class="s">&quot;{Binding FirstName}&quot;</span> <span class="na">Margin=</span><span class="s">&quot;5 0 0 0&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;TextBlock</span> <span class="na">Text=</span><span class="s">&quot;{Binding LastName}&quot;</span> <span class="na">Margin=</span><span class="s">&quot;5 0 0 0&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/StackPanel&gt;</span>
+    <span class="nt">&lt;/DataTemplate&gt;</span>
+<span class="nt">&lt;/ListView.ItemTemplate&gt;</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;ListView.ItemTemplate&gt;</span>
+    <span class="nt">&lt;DataTemplate</span> <span class="na">x:DataType=</span><span class="s">&quot;local:Hero&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;StackPanel</span> <span class="na">Orientation=</span><span class="s">&quot;Horizontal&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;TextBlock</span> <span class="na">Text=</span><span class="s">&quot;{x:Bind Superhero}&quot;</span> <span class="na">FontWeight=</span><span class="s">&quot;Bold&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;TextBlock</span> <span class="na">Text=</span><span class="s">&quot;{x:Bind FirstName}&quot;</span> <span class="na">Margin=</span><span class="s">&quot;5 0 0 0&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;TextBlock</span> <span class="na">Text=</span><span class="s">&quot;{x:Bind LastName}&quot;</span> <span class="na">Margin=</span><span class="s">&quot;5 0 0 0&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/StackPanel&gt;</span>
+    <span class="nt">&lt;/DataTemplate&gt;</span>
+<span class="nt">&lt;/ListView.ItemTemplate&gt;</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<p>x:Bind can also hide or reveal controls depending on boolean value.
+A new boolean field is formed on the ViewModel.</p>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">ViewModel</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">IsHeroSelected</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="n">SelectedHero</span><span class="w"> </span><span class="p">!=</span><span class="w"> </span><span class="k">null</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="21:2"><input checked="checked" id="__tabbed_21_1" name="__tabbed_21" type="radio" /><input id="__tabbed_21_2" name="__tabbed_21" type="radio" /><div class="tabbed-labels"><label for="__tabbed_21_1">Before</label><label for="__tabbed_21_2">After</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;CommandBar&gt;</span>
+    <span class="nt">&lt;AppBarButton</span> <span class="na">x:Name=</span><span class="s">&quot;AddHero&quot;</span> <span class="na">Click=</span><span class="s">&quot;AddHero_Click&quot;</span> <span class="na">Label=</span><span class="s">&quot;Add hero&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;SymbolIcon</span> <span class="na">Symbol=</span><span class="s">&quot;Add&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/AppBarButton&gt;</span>
+    <span class="nt">&lt;AppBarButton</span> 
+        <span class="na">x:Name=</span><span class="s">&quot;DelHero&quot;</span> <span class="na">Click=</span><span class="s">&quot;DelHero_Click&quot;</span> <span class="na">Label=</span><span class="s">&quot;Remove hero&quot;</span> <span class="nt">&gt;</span>
+
+        <span class="nt">&lt;SymbolIcon</span> <span class="na">Symbol=</span><span class="s">&quot;Delete&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/AppBarButton&gt;</span>
+<span class="nt">&lt;/CommandBar&gt;</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;CommandBar&gt;</span>
+    <span class="nt">&lt;AppBarButton</span> <span class="na">x:Name=</span><span class="s">&quot;AddHero&quot;</span> <span class="na">Click=</span><span class="s">&quot;AddHero_Click&quot;</span> <span class="na">Label=</span><span class="s">&quot;Add hero&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;SymbolIcon</span> <span class="na">Symbol=</span><span class="s">&quot;Add&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/AppBarButton&gt;</span>
+    <span class="nt">&lt;AppBarButton</span> 
+        <span class="na">x:Name=</span><span class="s">&quot;DelHero&quot;</span> <span class="na">Click=</span><span class="s">&quot;DelHero_Click&quot;</span> <span class="na">Label=</span><span class="s">&quot;Remove hero&quot;</span> 
+        <span class="na">IsEnabled=</span><span class="s">&quot;{x:Bind ViewModel.IsHeroSelected,Mode=OneWay}&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;SymbolIcon</span> <span class="na">Symbol=</span><span class="s">&quot;Delete&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/AppBarButton&gt;</span>
+<span class="nt">&lt;/CommandBar&gt;</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<h2 id="history">History</h2>
+<p>Windows has a long history of introducing UI frameworks to facilitate the creation of GUI applications:</p>
+<ul>
+<li><strong>MFC</strong> (1992) was based on Native C++</li>
+<li><strong>WinForms</strong> (2002) was based on .NET Framework</li>
+<li><strong>WPF</strong> (2006) was also based on .NET Framework</li>
+<li><a href="#uwp"><strong>UWP XAML</strong></a> (2012) was based on C++ and .NET</li>
+<li><a href="#winui"><strong>WinUI 2</strong></a> is a NuGet package containing controls and styles for UWP Apps, intended to decouple UWP applications from the latest version of Windows</li>
+<li><a href="#winui"><strong>WinUI 3</strong></a> (2020) is meant to provide a UX framework for both Win32 and UWP applications</li>
+</ul>
+<p>XAML is a declarative markup language used to create UIs for .NET Core apps.
+The logic of the app is separated in <strong>code-behind</strong> files that are joined to the markup through partial class definitions.
+In Visual Studio this is emphasized by the fact that the code-behind file is literally presented as a child node of the XAML document.</p>
+<p>The root element (of which there must be only one in order to be a valid XAML file) contains attributes 
+that define the XAML <a href="#namespaces"> namespaces </a> for the program that will be parsing the XAML file, or a <a href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/wpf-xaml-namescopes"> <strong>namescope</strong> </a>.</p>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../Wired%20Brain%20Coffee/" class="md-footer__link md-footer__link--prev" aria-label="Previous: ☕ Wired Brain Coffee" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              ☕ Wired Brain Coffee
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="API/" class="md-footer__link md-footer__link--next" aria-label="Next: API" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              API
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "toc.integrate", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.6e54b5cd.min.js"></script>
+      
+    
+  </body>
+</html>

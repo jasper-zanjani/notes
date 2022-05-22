@@ -1,0 +1,4887 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://jasper-zanjani.github.io/notes/Infrastructure/Cloud/Azure/Azure-IaaS/">
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.9">
+    
+    
+      
+        <title>Azure IaaS - 🧠</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.120efc48.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.9647289d.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#ffc105">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../style/admonitions-gcp.css">
+    
+      <link rel="stylesheet" href="../../../../style/admonitions-azure.css">
+    
+      <link rel="stylesheet" href="../../../../style/admonitions-aws.css">
+    
+      <link rel="stylesheet" href="../../../../style/admonitions-rs.css">
+    
+      <link rel="stylesheet" href="../../../../style/admonitions-cs.css">
+    
+      <link rel="stylesheet" href="../../../../style/admonitions-cpp.css">
+    
+      <link rel="stylesheet" href="../../../../style/admonitions-cisco.css">
+    
+      <link rel="stylesheet" href="../../../../style/admonitions-py.css">
+    
+      <link rel="stylesheet" href="../../../../style/admonitions-output.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="amber" data-md-color-accent="yellow">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#high-availability" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="🧠" class="md-header__button md-logo" aria-label="🧠" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            🧠
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Azure IaaS
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../../.." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../Coding/" class="md-tabs__link">
+        Coding
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../GTK/" class="md-tabs__link">
+        GTK
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../Health/" class="md-tabs__link">
+        Health
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../Ansible/" class="md-tabs__link md-tabs__link--active">
+        Infrastructure
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../Linux/" class="md-tabs__link">
+        Linux
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../Misc/" class="md-tabs__link">
+        Misc
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../Python/" class="md-tabs__link">
+        Python
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../Rust/" class="md-tabs__link">
+        Rust
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../Scripts/" class="md-tabs__link">
+        Scripts
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="🧠" class="md-nav__button md-logo" aria-label="🧠" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    🧠
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" data-md-state="indeterminate" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Coding
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Coding" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Coding
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Coding/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Coding/6502/" class="md-nav__link">
+        6502
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Coding/C%23/" class="md-nav__link">
+        C&#35;
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Coding/C%2B%2B/" class="md-nav__link">
+        C++
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Coding/C/" class="md-nav__link">
+        C
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Coding/CS/" class="md-nav__link">
+        MSCS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Coding/Courses/" class="md-nav__link">
+        Courses
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Coding/Debugging/" class="md-nav__link">
+        Debugging
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Coding/DnD/" class="md-nav__link">
+        🐲&#xFE0F;  Dungeons & Dragons
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Coding/Dogfood/" class="md-nav__link">
+        🐶 Dogfood data
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Coding/GUI/" class="md-nav__link">
+        🖥&#xFE0F; GUI frameworks comparison
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Coding/Others/" class="md-nav__link">
+        🦪 Perl
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Coding/Python/" class="md-nav__link">
+        🐍 Python
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Coding/Testing/" class="md-nav__link">
+        Testing
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Coding/Windows/" class="md-nav__link">
+        Windows programming
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Coding/Wired%20Brain%20Coffee/" class="md-nav__link">
+        ☕ Wired Brain Coffee
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_17" data-md-state="indeterminate" type="checkbox" id="__nav_2_17" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_17">
+          WinUI
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="WinUI" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_17">
+          <span class="md-nav__icon md-icon"></span>
+          WinUI
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Coding/WinUI/" class="md-nav__link">
+        WinUI
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Coding/WinUI/API/" class="md-nav__link">
+        API
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" data-md-state="indeterminate" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          GTK
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="GTK" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          GTK
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../GTK/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../GTK/API/" class="md-nav__link">
+        API
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../GTK/Glade/" class="md-nav__link">
+        Glade
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../GTK/Glossary/" class="md-nav__link">
+        📘 Glossary
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_5" data-md-state="indeterminate" type="checkbox" id="__nav_3_5" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_5">
+          Examples
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Examples" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_5">
+          <span class="md-nav__icon md-icon"></span>
+          Examples
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../GTK/Examples/GNOME-Tweaks/" class="md-nav__link">
+        GNOME Tweaks
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_6" data-md-state="indeterminate" type="checkbox" id="__nav_3_6" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_6">
+          Tasks
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Tasks" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_6">
+          <span class="md-nav__icon md-icon"></span>
+          Tasks
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../GTK/Tasks/Boilerplate/" class="md-nav__link">
+        Boilerplate
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../GTK/Tasks/Environment/" class="md-nav__link">
+        Development environment
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../GTK/Tasks/Hello-World/" class="md-nav__link">
+        Hello, World!
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../GTK/Tasks/Image-Viewer/" class="md-nav__link">
+        Image Viewer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../GTK/Tasks/Starships/" class="md-nav__link">
+        Starships
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../GTK/Tasks/Tasks/" class="md-nav__link">
+        Tasks
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" data-md-state="indeterminate" type="checkbox" id="__nav_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Health
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Health" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Health
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Health/" class="md-nav__link">
+        💊 Health
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Infrastructure
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Infrastructure" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Infrastructure
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Ansible/" class="md-nav__link">
+        Ansible
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Certifications/" class="md-nav__link">
+        🥇 Certifications
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        Cloud
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Network/" class="md-nav__link">
+        Network
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_5" type="checkbox" id="__nav_5_5" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_5">
+          Cloud
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Cloud" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_5">
+          <span class="md-nav__icon md-icon"></span>
+          Cloud
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GCP/" class="md-nav__link">
+        Google Cloud Platform
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tasks/" class="md-nav__link">
+        Tasks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_5_3" type="checkbox" id="__nav_5_5_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_5_3">
+          Azure
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Azure" data-md-level="3">
+        <label class="md-nav__title" for="__nav_5_5_3">
+          <span class="md-nav__icon md-icon"></span>
+          Azure
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ARM/" class="md-nav__link">
+        ARM
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Azure-AD/" class="md-nav__link">
+        Azure AD
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Azure-App-Service/" class="md-nav__link">
+        Azure App Service
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Azure-Backup/" class="md-nav__link">
+        Azure Backup
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Azure-File-Service/" class="md-nav__link">
+        Azure File Service
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Azure-IAM/" class="md-nav__link">
+        Azure IAM
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Azure IaaS
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Azure IaaS
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#high-availability" class="md-nav__link">
+    High availability
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#load-balancers" class="md-nav__link">
+    Load balancers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tasks" class="md-nav__link">
+    Tasks
+  </a>
+  
+    <nav class="md-nav" aria-label="Tasks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#find-marketplace-image" class="md-nav__link">
+    Find Marketplace image
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#access" class="md-nav__link">
+    Access
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rdp" class="md-nav__link">
+    RDP
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backup" class="md-nav__link">
+    Backup
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssh" class="md-nav__link">
+    SSH
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#windows-server-core" class="md-nav__link">
+    Windows Server Core
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-nic" class="md-nav__link">
+    Add NIC
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create" class="md-nav__link">
+    Create
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vhd" class="md-nav__link">
+    VHD
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagnostics" class="md-nav__link">
+    Diagnostics
+  </a>
+  
+    <nav class="md-nav" aria-label="Diagnostics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enable-on-deployment" class="md-nav__link">
+    Enable on deployment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enable-after-deployment" class="md-nav__link">
+    Enable after deployment
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arm-templates" class="md-nav__link">
+    ARM templates
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#view-all-available-sizes-in-a-location" class="md-nav__link">
+    View all available sizes in a location
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dsc" class="md-nav__link">
+    DSC
+  </a>
+  
+    <nav class="md-nav" aria-label="DSC">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#package" class="md-nav__link">
+    Package
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apply" class="md-nav__link">
+    Apply
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vmss" class="md-nav__link">
+    VMSS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-script-extension" class="md-nav__link">
+    Custom script extension
+  </a>
+  
+    <nav class="md-nav" aria-label="Custom script extension">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#invoke-a-command-on-a-vm" class="md-nav__link">
+    Invoke a command on a VM
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dedicated-host" class="md-nav__link">
+    Dedicated host
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Azure-Load-Balancer/" class="md-nav__link">
+        Azure Load Balancer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Azure-Monitoring/" class="md-nav__link">
+        Azure Monitoring
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Azure-Policy/" class="md-nav__link">
+        Azure Policy
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Azure-Storage/" class="md-nav__link">
+        Azure Storage
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Azure-VPN/" class="md-nav__link">
+        Azure VPN
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Kusto/" class="md-nav__link">
+        Kusto
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" data-md-state="indeterminate" type="checkbox" id="__nav_6" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          Linux
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Linux" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Linux
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Linux/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Linux/Cgroups/" class="md-nav__link">
+        Cgroups
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Linux/Concurrency/" class="md-nav__link">
+        Concurrency
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Linux/Databases/" class="md-nav__link">
+        Databases
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Linux/Display/" class="md-nav__link">
+        Display
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Linux/Files/" class="md-nav__link">
+        Files
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Linux/Filters/" class="md-nav__link">
+        Commands
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Linux/GNOME/" class="md-nav__link">
+        GNOME
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Linux/GRUB/" class="md-nav__link">
+        Boot
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Linux/Kernel/" class="md-nav__link">
+        Kernel
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Linux/Package/" class="md-nav__link">
+        Package management
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Linux/Random/" class="md-nav__link">
+        Random
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Linux/Red-Hat/" class="md-nav__link">
+        Red Hat :material-redhat:
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Linux/Ricing/" class="md-nav__link">
+        Tiling window managers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Linux/SELinux/" class="md-nav__link">
+        SELinux
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Linux/Shell/" class="md-nav__link">
+        Shells
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Linux/Storage/" class="md-nav__link">
+        Storage
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Linux/SystemD/" class="md-nav__link">
+        SystemD
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Linux/Ubuntu/" class="md-nav__link">
+        Ubuntu
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Linux/Virtualization/" class="md-nav__link">
+        Virtualization
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_21" data-md-state="indeterminate" type="checkbox" id="__nav_6_21" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_21">
+          Applications
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Applications" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_21">
+          <span class="md-nav__icon md-icon"></span>
+          Applications
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Linux/Applications/Rhythmbox/" class="md-nav__link">
+        Rhythmbox
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Linux/Applications/ffmpeg/" class="md-nav__link">
+        ffmpeg
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Linux/Applications/nginx/" class="md-nav__link">
+        Nginx
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Linux/Applications/screen/" class="md-nav__link">
+        screen
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Linux/Applications/ssh/" class="md-nav__link">
+        SSH
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Linux/Applications/syncthing/" class="md-nav__link">
+        Syncthing
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Linux/Applications/vim/" class="md-nav__link">
+        Vim
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Linux/Applications/youtube-dl/" class="md-nav__link">
+        Youtube dl
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_22" data-md-state="indeterminate" type="checkbox" id="__nav_6_22" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_22">
+          Containers
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Containers" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_22">
+          <span class="md-nav__icon md-icon"></span>
+          Containers
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Linux/Containers/" class="md-nav__link">
+        Containers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Linux/Containers/Docker/" class="md-nav__link">
+        Docker
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Linux/Containers/Helm/" class="md-nav__link">
+        Helm
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Linux/Containers/Kubernetes/" class="md-nav__link">
+        Kubernetes
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_23" data-md-state="indeterminate" type="checkbox" id="__nav_6_23" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_23">
+          Networking
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Networking" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_23">
+          <span class="md-nav__icon md-icon"></span>
+          Networking
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Linux/Networking/" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Linux/Networking/Commands/" class="md-nav__link">
+        Commands
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Linux/Networking/Samba/" class="md-nav__link">
+        Samba
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Linux/Networking/Tasks/" class="md-nav__link">
+        Tasks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Linux/Networking/eBPF/" class="md-nav__link">
+        eBPF
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" data-md-state="indeterminate" type="checkbox" id="__nav_7" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          Misc
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Misc" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Misc
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Misc/" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Misc/Aircraft/" class="md-nav__link">
+        ✈&#xfe0f; Aircraft
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Misc/Akro-Mils/" class="md-nav__link">
+        Akro-Mils
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Misc/CI-CD/" class="md-nav__link">
+        CI/CD
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Misc/Computers/" class="md-nav__link">
+        Computers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Misc/Diaz/" class="md-nav__link">
+        Joey Diaz
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Misc/Intelligence/" class="md-nav__link">
+        🔎 Intelligence
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Misc/Lab/" class="md-nav__link">
+        Home lab
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Misc/Military/" class="md-nav__link">
+        Military
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Misc/Space/" class="md-nav__link">
+        🚀 Space
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Misc/Storage/" class="md-nav__link">
+        Storage
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Misc/TrueNAS/" class="md-nav__link">
+        TrueNAS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Misc/bittorrent/" class="md-nav__link">
+        BitTorrent
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Misc/cryptocurrency/" class="md-nav__link">
+        🪙 Cryptocurrency
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Misc/learn/" class="md-nav__link">
+        Learning
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Misc/pins/" class="md-nav__link">
+        Lapel pin ideas
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_17" data-md-state="indeterminate" type="checkbox" id="__nav_7_17" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_17">
+          Text editors
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Text editors" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_17">
+          <span class="md-nav__icon md-icon"></span>
+          Text editors
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Misc/Text-editors/code/" class="md-nav__link">
+        VS Code
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_18" data-md-state="indeterminate" type="checkbox" id="__nav_7_18" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_18">
+          Web
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Web" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_18">
+          <span class="md-nav__icon md-icon"></span>
+          Web
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Misc/Web/" class="md-nav__link">
+        🌎 Web
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Misc/Web/CSS/" class="md-nav__link">
+        CSS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Misc/Web/mkdocs/" class="md-nav__link">
+        Mkdocs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_18_4" data-md-state="indeterminate" type="checkbox" id="__nav_7_18_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_18_4">
+          JavaScript
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="JavaScript" data-md-level="3">
+        <label class="md-nav__title" for="__nav_7_18_4">
+          <span class="md-nav__icon md-icon"></span>
+          JavaScript
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Misc/Web/JavaScript/" class="md-nav__link">
+        Axios
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Misc/Web/JavaScript/Express/" class="md-nav__link">
+        Express
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Misc/Web/JavaScript/React/" class="md-nav__link">
+        React
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Misc/Web/JavaScript/Web%20Components/" class="md-nav__link">
+        Web Components
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_19" data-md-state="indeterminate" type="checkbox" id="__nav_7_19" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_19">
+          Windows
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Windows" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_19">
+          <span class="md-nav__icon md-icon"></span>
+          Windows
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Misc/Windows/" class="md-nav__link">
+        Windows
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Misc/Windows/Active%20Directory/" class="md-nav__link">
+        Active Directory
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Misc/Windows/DNS-labs/" class="md-nav__link">
+        DNS labs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Misc/Windows/Hyper-V/" class="md-nav__link">
+        Hyper-V
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Misc/Windows/Labs/" class="md-nav__link">
+        Labs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Misc/Windows/PowerShell/" class="md-nav__link">
+        🐚 PowerShell
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Misc/Windows/WDS-lab/" class="md-nav__link">
+        WDS lab
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Misc/Windows/WS2016/" class="md-nav__link">
+        Windows Server
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Misc/Windows/diskpart/" class="md-nav__link">
+        Diskpart
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" data-md-state="indeterminate" type="checkbox" id="__nav_8" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8">
+          Python
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Python" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Python
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Python/" class="md-nav__link">
+        🐍 Python
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_2" data-md-state="indeterminate" type="checkbox" id="__nav_8_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8_2">
+          Modules
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Modules" data-md-level="2">
+        <label class="md-nav__title" for="__nav_8_2">
+          <span class="md-nav__icon md-icon"></span>
+          Modules
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Python/Modules/Argparse/" class="md-nav__link">
+        Argparse
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Python/Modules/Asyncio/" class="md-nav__link">
+        Asyncio
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Python/Modules/Azure.cosmos/" class="md-nav__link">
+        Azure.cosmos
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Python/Modules/Bullet/" class="md-nav__link">
+        Bullet
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Python/Modules/Click/" class="md-nav__link">
+        Click
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Python/Modules/Collections/" class="md-nav__link">
+        Collections
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Python/Modules/Colorama/" class="md-nav__link">
+        Colorama
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Python/Modules/Csv/" class="md-nav__link">
+        Csv
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Python/Modules/Datetime/" class="md-nav__link">
+        Datetime
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Python/Modules/Discord_py/" class="md-nav__link">
+        discord.py
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Python/Modules/Django/" class="md-nav__link">
+        Django
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Python/Modules/Dotenv/" class="md-nav__link">
+        Dotenv
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Python/Modules/FastAPI/" class="md-nav__link">
+        FastAPI
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Python/Modules/Functools/" class="md-nav__link">
+        Functools
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Python/Modules/Glob/" class="md-nav__link">
+        Glob
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Python/Modules/Heapq/" class="md-nav__link">
+        Heapq
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Python/Modules/Http/" class="md-nav__link">
+        http
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Python/Modules/Itertools/" class="md-nav__link">
+        itertools
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Python/Modules/Json/" class="md-nav__link">
+        Json
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Python/Modules/Logging/" class="md-nav__link">
+        Logging
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Python/Modules/Npyscreen/" class="md-nav__link">
+        Npyscreen
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Python/Modules/Optparse/" class="md-nav__link">
+        optparse
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Python/Modules/Os/" class="md-nav__link">
+        os
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Python/Modules/Pygobject/" class="md-nav__link">
+        Pygobject
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Python/Modules/Pyinstaller/" class="md-nav__link">
+        Pyinstaller
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Python/Modules/Pythonnet/" class="md-nav__link">
+        pythonnet
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Python/Modules/Random/" class="md-nav__link">
+        random
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Python/Modules/Scrapy/" class="md-nav__link">
+        scrapy
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Python/Modules/Setuptools/" class="md-nav__link">
+        setuptools
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Python/Modules/Socket/" class="md-nav__link">
+        socket
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Python/Modules/Sqlite3/" class="md-nav__link">
+        sqlite3
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Python/Modules/Subprocess/" class="md-nav__link">
+        subprocess
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Python/Modules/Sys/" class="md-nav__link">
+        sys
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Python/Modules/Tabulate/" class="md-nav__link">
+        Tabulate
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Python/Modules/Termcolor/" class="md-nav__link">
+        termcolor
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Python/Modules/Threading/" class="md-nav__link">
+        threading
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Python/Modules/Weakref/" class="md-nav__link">
+        Weakref
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Python/Modules/Winrm/" class="md-nav__link">
+        Winrm
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Python/Modules/Xml/" class="md-nav__link">
+        xml
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Python/Modules/Yaml/" class="md-nav__link">
+        Yaml
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" data-md-state="indeterminate" type="checkbox" id="__nav_9" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9">
+          Rust
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Rust" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Rust
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Rust/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Rust/Cargo/" class="md-nav__link">
+        Cargo
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Rust/Combinators/" class="md-nav__link">
+        Combinators
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Rust/Crates/" class="md-nav__link">
+        Modules
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Rust/Error/" class="md-nav__link">
+        Error handling
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Rust/Glossary/" class="md-nav__link">
+        Glossary
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Rust/Scratchpad/" class="md-nav__link">
+        Scratchpad
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_8" data-md-state="indeterminate" type="checkbox" id="__nav_9_8" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9_8">
+          Crates
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Crates" data-md-level="2">
+        <label class="md-nav__title" for="__nav_9_8">
+          <span class="md-nav__icon md-icon"></span>
+          Crates
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Rust/Crates/Actix/" class="md-nav__link">
+        actix
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Rust/Crates/Clap/" class="md-nav__link">
+        clap
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Rust/Crates/Failure/" class="md-nav__link">
+        failure
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Rust/Crates/Gtk-rs/" class="md-nav__link">
+        gtk-rs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Rust/Crates/Rnd/" class="md-nav__link">
+        rnd
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Rust/Crates/Rocket/" class="md-nav__link">
+        Rocket
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Rust/Crates/Rusqlite/" class="md-nav__link">
+        rusqlite
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Rust/Crates/Serde/" class="md-nav__link">
+        serde
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Rust/Crates/Structopt/" class="md-nav__link">
+        structopt
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_8_10" data-md-state="indeterminate" type="checkbox" id="__nav_9_8_10" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9_8_10">
+          Cursive
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Cursive" data-md-level="3">
+        <label class="md-nav__title" for="__nav_9_8_10">
+          <span class="md-nav__icon md-icon"></span>
+          Cursive
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Rust/Crates/Cursive/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Rust/Crates/Cursive/API/" class="md-nav__link">
+        API
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Rust/Crates/Cursive/Tasks/" class="md-nav__link">
+        Tasks
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_8_11" data-md-state="indeterminate" type="checkbox" id="__nav_9_8_11" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9_8_11">
+          Diesel
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Diesel" data-md-level="3">
+        <label class="md-nav__title" for="__nav_9_8_11">
+          <span class="md-nav__icon md-icon"></span>
+          Diesel
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Rust/Crates/Diesel/" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Rust/Crates/Diesel/Tasks/" class="md-nav__link">
+        Tasks
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_9" data-md-state="indeterminate" type="checkbox" id="__nav_9_9" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9_9">
+          Tasks
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Tasks" data-md-level="2">
+        <label class="md-nav__title" for="__nav_9_9">
+          <span class="md-nav__icon md-icon"></span>
+          Tasks
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Rust/Tasks/" class="md-nav__link">
+        Boilerplate
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Rust/Tasks/Hello-World/" class="md-nav__link">
+        Hello, World!
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Rust/Tasks/Mathematics/" class="md-nav__link">
+        Mathematics
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Rust/Tasks/Porting-grep/" class="md-nav__link">
+        grep ports
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Rust/Tasks/To-Do/" class="md-nav__link">
+        To-Do
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Rust/Tasks/Transactions/" class="md-nav__link">
+        Transactions
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" data-md-state="indeterminate" type="checkbox" id="__nav_10" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_10">
+          Scripts
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Scripts" data-md-level="1">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          Scripts
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Scripts/" class="md-nav__link">
+        Video scripts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Scripts/Anki/" class="md-nav__link">
+        Anki
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Scripts/CSharp/" class="md-nav__link">
+        CSharp
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Scripts/Django/" class="md-nav__link">
+        Django
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Scripts/Kusto/" class="md-nav__link">
+        Kusto
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Scripts/Rust/" class="md-nav__link">
+        Rust
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Scripts/SQLite/" class="md-nav__link">
+        SQLite
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10_8" data-md-state="indeterminate" type="checkbox" id="__nav_10_8" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_10_8">
+          Discord
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Discord" data-md-level="2">
+        <label class="md-nav__title" for="__nav_10_8">
+          <span class="md-nav__icon md-icon"></span>
+          Discord
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Scripts/Discord/Discord.article/" class="md-nav__link">
+        Discord.article
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Scripts/Discord/Discord/" class="md-nav__link">
+        Discord
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h2 id="high-availability">High availability</h2>
+<p>These high-availability options are mutually exclusive:</p>
+<ul>
+<li><strong>Availability zones</strong> protect from datacenter-level failures by providing physical and logical separation between VM instances. Zones have independent power sources, network, and cooling, and there are at least 3 zones in every region.</li>
+<li><strong>Availability sets</strong> offer redundancy for VMs in the same application tier, ensuring at least one VM is available in the case of a host update or problem. Each VM is assigned a <strong>fault domain</strong> (representing separate physical racks in the datacenter) and an <strong>update domain</strong> (representing groups of VMs and underlying physical hardware that can be rebooted at the same time for host updates). Availability sets have a maximum of 20 update domains and 3 fault domains. </li>
+</ul>
+<p><strong>VM scale sets (VMSS)</strong> support the ability to dynamically add and remove instances. By default, a VMSS supports up to 100 instances or up to 1000 instances if deployed with the property <code>singlePlacementGroup</code> set to false (called a <strong>large-scale set</strong>). A <strong>placement group</strong> is a concept similar to an availability set in that it assigns fault and upgrade domains. By default, a scale set consists of only a single placement group, but disabling this setting allows the scale set to be composed of multiple placement groups. If a custom image is used instead of one in the gallery, the limit is actually 300 instances.</p>
+<h2 id="load-balancers">Load balancers</h2>
+<p>Load balancers redistribute traffic from a frontend pool to a backend pool using rules. 
+<strong>Health probes</strong> determine the health of the VMs in the backend pool: if they don't respond then new connections won't be sent. 
+By default, Azure Load Balancer stores rules in a 5-tuple:</p>
+<ol>
+<li>Source IP address</li>
+<li>Source port</li>
+<li>Destination IP address</li>
+<li>Destination ports</li>
+<li>IP Protocol number</li>
+</ol>
+<p>Azure Load Balancers come in 2 pricing tiers:</p>
+<ol>
+<li><strong>Basic</strong> which is free</li>
+<li><strong>Standard</strong> which is charged based on the number of rules and the data that is processed.</li>
+</ol>
+<p>Both boot and <strong>guest OS</strong> diagnostics can be enabled <a href="#enable-on-deployment">on</a> or <a href="#enable-after-deployment">after</a> VM creation.</p>
+<p>Azure VMs have built-in extensions that enable configuration management. 2 most common extensions for configuration management:</p>
+<ul>
+<li>Windows PowerShell <strong>Desired State Configuration (DSC)</strong> allows you to define the state of a VM using <strong>PowerShell Desired State Configuration language</strong> </li>
+</ul>
+<p>A VM may have more than one <strong>Network Interface Card (NIC)</strong>, but they must belong to the same region as the VM itself. All NICs on a VM must also be attached to the same VNet.</p>
+<h1 id="tasks">Tasks</h1>
+<h3 id="find-marketplace-image">Find Marketplace image</h3>
+<p>Produce the publisher (e.g. "MicrosoftWindowsServer") from Location
+<div class="highlight"><pre><span></span><code><span class="nb">Get-AzVMImagePublisher</span>
+</code></pre></div>
+Produce the offer (e.g. "WindowsServer") from Location and PublisherName
+<div class="highlight"><pre><span></span><code><span class="nb">Get-AzVMImageOffer</span>
+</code></pre></div>
+Produce the Sku from Location and PublisherName and Offer
+<div class="highlight"><pre><span></span><code><span class="nb">Get-AzVMImageSku</span> 
+</code></pre></div>
+Requires PublisherName, Offer, Location, Skus, and Version (<code>-Version *</code> will produce a list of available version numbers)
+<div class="highlight"><pre><span></span><code><span class="nb">Get-AzVMImage</span> 
+</code></pre></div></p>
+<p>Deploy from image</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Azure PowerShell</label><label for="__tabbed_1_2">Azure CLI</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Specify a managed image for use in a new virtual machine</p>
+<div class="highlight"><pre><span></span><code><span class="nv">$image</span> <span class="p">=</span> <span class="nb">Get-AzImage</span> <span class="n">-ImageName</span> <span class="nv">$imageName</span> <span class="n">-ResourceGroupName</span> <span class="nv">$g</span>
+<span class="nv">$vmConfig</span> <span class="p">=</span> <span class="nb">Set-AzVMSourceImage</span> <span class="n">-VM</span> <span class="nv">$vmConfig</span> <span class="n">-Id</span> <span class="nv">$image</span><span class="p">.</span><span class="n">Id</span>
+</code></pre></div>
+<p>Specify a legacy unmanaged image for use in a new virtual machine</p>
+<div class="highlight"><pre><span></span><code><span class="nv">$osDiskUri</span> <span class="p">=</span> <span class="s2">&quot;https://examrefstorage.blob.core.windows.net/vhd/os-disk&quot;</span>
+<span class="nv">$imageUri</span> <span class="p">=</span> <span class="s2">&quot;https://examrefstorage.blob.core.windows.net/images/legacy-image.vhd&quot;</span>
+<span class="nv">$vm</span> <span class="p">=</span> <span class="nb">Set-AzVMOSDisk</span> <span class="n">-VM</span> <span class="nv">$vm</span> <span class="n">-Name</span> <span class="nv">$osDiskName</span> <span class="n">-VhdUri</span> <span class="nv">$osDiskUri</span> <span class="n">-CreateOption</span> <span class="n">fromImage</span> <span class="n">-SourceImageUri</span> <span class="nv">$imageUri</span> <span class="n">-Windows</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p>Specify a managed image for use in a new virtual machine</p>
+<div class="highlight"><pre><span></span><code>az vm create -g <span class="nv">$g</span> -n <span class="nv">$vmName</span> --image <span class="nv">$imageName</span>
+</code></pre></div>
+<p>Specify a legacy unmanaged image for use in a new virtual machine</p>
+<div class="highlight"><pre><span></span><code>az vm create -g <span class="nv">$g</span> -n <span class="nv">$vmName</span> --image <span class="nv">$osDiskUri</span> --generate-ssh-keys
+</code></pre></div>
+</div>
+</div>
+</div>
+<h3 id="access">Access</h3>
+<p><div class="highlight"><pre><span></span><code><span class="nb">Enable-PSRemoting</span>
+<span class="c"># If a network connection is Public, this command will not work</span>
+<span class="nb">Enable-PSRemoting</span> <span class="n">-SkipNetworkProfileCheck</span> <span class="n">-Force</span>
+</code></pre></div>
+The remote computer must also have WinRM up and running. Azure can enable PowerShell on the target machine
+<div class="highlight"><pre><span></span><code><span class="nb">Invoke-AzVMRunCommand</span> <span class="n">-AsJob</span> <span class="n">-ResourceGroupName</span> <span class="s2">&quot;RG&quot;</span> <span class="n">-VMName</span> <span class="s2">&quot;Socrates&quot;</span> <span class="n">-CommandId</span> <span class="n">EnableRemotePS</span>
+</code></pre></div>
+Using Azure Cloud PowerShell
+<div class="highlight"><pre><span></span><code><span class="nb">Enable-AzVMPSRemoting</span> <span class="n">-Name</span> <span class="n">Socrates</span> <span class="n">-ResourceGroupName</span> <span class="s2">&quot;RG&quot;</span>
+</code></pre></div>
+Add the VM's public IP address <code>$IP</code> to the trusted hosts of the local workstation (must be run as administrator):
+<div class="highlight"><pre><span></span><code><span class="nb">Set-Item</span> <span class="n">WSMan</span><span class="p">:\</span><span class="n">localhost</span><span class="p">\</span><span class="n">Client</span><span class="p">\</span><span class="n">TrustedHosts</span> <span class="n">-Value</span> <span class="nv">$IP</span>
+</code></pre></div>
+Traffic to ports <strong>5985</strong> and <strong>5986</strong> must be allowed through <a href="#firewall">Windows firewall</a> and, if the computer is an Azure VM, the Network Security Group.
+<div class="highlight"><pre><span></span><code><span class="nb">Enter-PSSession</span> <span class="n">-ComputerName</span> <span class="n">123</span><span class="p">.</span><span class="n">47</span><span class="p">.</span><span class="n">78</span><span class="p">.</span><span class="n">90</span> <span class="n">-Credential</span> <span class="nv">$cred</span>
+<span class="nb">etsn </span><span class="n">123</span><span class="p">.</span><span class="n">45</span><span class="p">.</span><span class="n">67</span><span class="p">.</span><span class="n">89</span> <span class="n">-Credential</span> <span class="p">(</span><span class="nb">Get-Credential</span><span class="p">)</span>
+</code></pre></div></p>
+<div class="highlight"><pre><span></span><code><span class="nb">Invoke-AzVMRunCommand</span> <span class="n">-ResourceGroupName</span> <span class="n">RG</span> <span class="n">-VMName</span> <span class="n">VM</span> <span class="n">-CommandId</span> <span class="s1">&#39;RunPowerShellScript&#39;</span> <span class="n">-ScriptPath</span> <span class="n">C</span><span class="p">:\</span><span class="n">injectedscript</span><span class="p">.</span><span class="n">ps1</span>
+</code></pre></div>
+<p>Open firewall WinRM ports 5985 and 5986</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">PowerShell</label><label for="__tabbed_2_2">netsh</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="nb">New-NetFirewallRule</span> <span class="n">-DisplayName</span> <span class="s2">&quot;WinRMHTTP&quot;</span> <span class="n">-Direction</span> <span class="n">Inbound</span> <span class="n">-LocalPort</span> <span class="n">5985</span> <span class="n">-Protocol</span> <span class="n">TCP</span> <span class="n">-Action</span> <span class="n">Allow</span>
+<span class="nb">New-NetFirewallRule</span> <span class="n">-DisplayName</span> <span class="s2">&quot;WinRMHTTPS&quot;</span> <span class="n">-Direction</span> <span class="n">Inbound</span> <span class="n">-LocalPort</span> <span class="n">5986</span> <span class="n">-Protocol</span> <span class="n">TCP</span> <span class="n">-Action</span> <span class="n">Allow</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>netsh advfirewall firewall add rule name=WinRMHTTP dir=in action=allow protocol=TCP localport=5985
+netsh advfirewall firewall add rule name=WinRMHTTPS dir=in action=allow protocol=TCP localport=5986
+</code></pre></div>
+</div>
+</div>
+</div>
+<h3 id="rdp">RDP</h3>
+<p>Saving the .rdp file for later use
+<div class="highlight"><pre><span></span><code><span class="nv">$g</span> <span class="p">=</span> <span class="s2">&quot;ExamRefRG&quot;</span>
+<span class="nv">$vmName</span> <span class="p">=</span> <span class="s2">&quot;ExamRefVM&quot;</span>
+<span class="nv">$Path</span> <span class="p">=</span> <span class="s2">&quot;C:\path\to\ExamRefVM.rdp&quot;</span>
+
+<span class="nb">Get-AzRemoteDesktopFile</span> <span class="n">-ResourceGroupName</span> <span class="nv">$g</span> <span class="n">-Name</span> <span class="nv">$vmName</span> <span class="n">-LocalPath</span> <span class="nv">$path</span>
+</code></pre></div></p>
+<h3 id="backup">Backup</h3>
+<div class="highlight"><pre><span></span><code><span class="nv">$t</span> <span class="p">=</span> <span class="nb">Get-AzRecoveryServicesVault</span> <span class="n">-Name</span> <span class="n">t1</span>
+<span class="nb">Set-AzRecoveryServicesBackupProperties</span> <span class="n">-Vault</span> <span class="nv">$t</span> <span class="n">-BackupStorageRedundancy</span> <span class="n">GeoRedundant</span> 
+</code></pre></div>
+<h3 id="ssh">SSH</h3>
+<p><div class="highlight"><pre><span></span><code><span class="nv">$VirtualMachine</span> <span class="p">=</span> <span class="nb">Get-AzVM</span> <span class="n">-ResourceGroupName</span> <span class="s2">&quot;ResourceGroup11&quot;</span> <span class="n">-Name</span> <span class="s2">&quot;VirtualMachine07&quot;</span>
+<span class="nb">Add-AzVMSshPublicKey</span> <span class="n">-VM</span> <span class="nv">$VirtualMachine</span> <span class="n">-KeyData</span> <span class="s2">&quot;MIIDszCCApugAwIBAgIJALBV9YJCF/tAMA0GCSq12Ib3DQEB21QUAMEUxCzAJBgNV&quot;</span> <span class="n">-Path</span> <span class="s2">&quot;/home/admin/.ssh/authorized_keys&quot;</span>
+</code></pre></div>
+Resize VM</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">PowerShell</label><label for="__tabbed_3_2">Azure CLI</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="nv">$vm</span> <span class="p">=</span> <span class="nb">Get-AzVM</span> <span class="n">-ResourceGroupName</span> <span class="nv">$g</span> <span class="n">-VMName</span> <span class="nv">$n</span>
+<span class="nv">$vm</span><span class="p">.</span><span class="n">HardwareProfile</span><span class="p">.</span><span class="n">VMSize</span> <span class="p">=</span> <span class="s2">&quot;Standard_DS2_V2&quot;</span>
+<span class="nb">Update-AzVM</span> <span class="n">-VM</span> <span class="nv">$vm</span> <span class="n">-ResourceGroupName</span> <span class="nv">$g</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>az vm list-vm-resize-options --resource-group <span class="nv">$g</span> --name <span class="nv">$vmName</span> --output table
+az vm resize --resource-group <span class="nv">$g</span> --name <span class="nv">$vmName</span> --size Standard_DS3_v2
+</code></pre></div>
+</div>
+</div>
+</div>
+<h3 id="windows-server-core">Windows Server Core</h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">PowerShell</label><label for="__tabbed_4_2">Azure CLI</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Simply:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">New-AzVM</span> <span class="n">-ResourceGroupName</span> <span class="s2">&quot;RG&quot;</span> <span class="n">-Name</span> <span class="s2">&quot;VM&quot;</span> <span class="n">-Location</span> <span class="s2">&quot;EastUS&quot;</span> <span class="n">-Size</span> <span class="s2">&quot;Standard-B2s&quot;</span> <span class="n">-Credential</span> <span class="p">(</span><span class="nb">Get-Credential</span><span class="p">)</span>
+<span class="nb">New-AzVM</span> <span class="n">Greeks</span> <span class="n">Socrates</span> <span class="nv">$vm</span>
+</code></pre></div>
+<p>The VM's NIC has to be linked to an <strong>NSG</strong>, a <strong>Subnet</strong>, and a <strong>Public IP Address</strong>.</p>
+<div class="highlight"><pre><span></span><code><span class="c"># Create a VNet with a subnet</span>
+<span class="nv">$subnet</span> <span class="p">=</span> <span class="nb">New-AzVirtualNetworkSubnetConfig</span> <span class="n">-Name</span> <span class="s2">&quot;subnet1&quot;</span> <span class="n">-AddressPrefix</span> <span class="s2">&quot;10.0.0.0/24&quot;</span>
+<span class="nv">$vnet</span> <span class="p">=</span> <span class="nb">New-AzVirtualNetwork</span> <span class="n">-Name</span> <span class="s2">&quot;vnet&quot;</span> <span class="n">-ResourceGroupName</span> <span class="s2">&quot;RG&quot;</span> <span class="n">-Location</span> <span class="s2">&quot;East US&quot;</span> <span class="n">-AddressPrefix</span> <span class="s2">&quot;10.0.0.0/16&quot;</span> <span class="n">-Subnet</span> <span class="nv">$subnet</span>
+
+<span class="c"># Create a Network Interface from the IP and VNet</span>
+<span class="nv">$ip</span> <span class="p">=</span> <span class="nb">New-AzPublicIpAddress</span> <span class="n">-Name</span> <span class="s2">&quot;wscore-ip&quot;</span> <span class="n">-ResourceGroupName</span> <span class="s2">&quot;RG&quot;</span> <span class="n">-Location</span> <span class="s2">&quot;East US&quot;</span> <span class="n">-AllocationMethod</span> <span class="n">Dynamic</span>
+<span class="nv">$nic</span> <span class="p">=</span> <span class="nb">New-AzNetworkInterface</span> <span class="n">-Name</span> <span class="s2">&quot;wscore-nic&quot;</span> <span class="n">-ResourceGroupName</span> <span class="s2">&quot;RG&quot;</span> <span class="n">-Location</span> <span class="s2">&quot;East US&quot;</span> <span class="n">-SubnetId</span> <span class="nv">$vnet</span><span class="p">.</span><span class="n">Subnets</span><span class="p">[</span><span class="n">0</span><span class="p">].</span><span class="n">Id</span> <span class="n">-PublicIpAddressId</span> <span class="nv">$pip</span><span class="p">.</span><span class="n">Id</span> <span class="n">-NetworkSecurityGroupId</span> <span class="nv">$nsg</span><span class="p">.</span><span class="n">Id</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nv">$vm</span> <span class="p">=</span> <span class="nb">New-AzVMConfig</span> <span class="n">-VMName</span> <span class="s2">&quot;Socrates&quot;</span> <span class="n">-VMSize</span> <span class="s2">&quot;Standard_B1s&quot;</span>
+<span class="nb">Set-AzVMOperatingSystem</span> <span class="n">-VM</span> <span class="nv">$vm</span> <span class="n">-Windows</span> <span class="n">-ComputerName</span> <span class="n">Socrates</span> <span class="n">-Credential</span> <span class="nv">$aztestadmin</span>
+<span class="nb">Set-AzVMSourceImage</span> <span class="n">-VM</span> <span class="nv">$vm</span> <span class="n">-PublisherName</span> <span class="s2">&quot;MicrosoftWindowsServer&quot;</span> <span class="n">-Offer</span> <span class="s2">&quot;WindowsServer&quot;</span> <span class="n">-Skus</span> <span class="s2">&quot;2016-Datacenter-Server-Core&quot;</span> <span class="n">-Version</span> <span class="n">2016</span><span class="p">.</span><span class="n">127</span><span class="p">.</span><span class="n">20190603</span>
+<span class="nb">Set-AzVMOSDisk</span> <span class="n">-VM</span> <span class="nv">$vm</span> <span class="n">-CreateOption</span> <span class="n">fromImage</span>
+<span class="nb">Add-AzVMNetworkInterface</span> <span class="n">-VM</span> <span class="nv">$vm</span> <span class="n">-NetworkInterface</span> <span class="nv">$nic</span>
+
+<span class="c"># No `-Name`, since we set `-VMName` when initializing the PSVirtualMachine object with `New-AzVMConfig`</span>
+<span class="nb">New-AzVM</span> <span class="n">-AsJob</span> <span class="n">-VM</span> <span class="nv">$vm</span> <span class="n">-Location</span> <span class="s2">&quot;East US&quot;</span> <span class="n">-ResourceGroupName</span> <span class="s2">&quot;RG&quot;</span> 
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>az vm create -n Socrates -g RG -l <span class="s2">&quot;East US&quot;</span> 
+    --image <span class="s2">&quot;MicrosoftWindowsServer:WindowsServer:2016-Datacenter-Server-Core:2016.127.20190603&quot;</span> 
+    --admin-username aztestadmin
+    --admin-password <span class="nv">$password</span>
+    --nics socrates-nic
+</code></pre></div>
+</div>
+</div>
+</div>
+<p>Display status of VMs</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:1"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">Azure CLI</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>az vm list --resource-group <span class="nv">$RESOURCEGROUP</span> --output table
+</code></pre></div>
+</div>
+</div>
+</div>
+<p>Enable IIS using the <strong>Custom Script Extension</strong> to run a PowerShell script on the VM. </p>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:1"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">Azure CLI</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><div class="highlight"><pre><span></span><code>az vm extension <span class="nb">set</span> --resource-group <span class="nv">$RESOURCEGROUP</span> --vm-name SimpleWinVM --name CustomScriptExtension --publisher Microsoft.Compute --version <span class="m">1</span>.9 --settings <span class="s1">&#39;{&quot;fileUris&quot;:[&quot;https://raw.githubusercontent.com/MicrosoftDocs/mslearn-welcome-to-azure/master/configure-iis.ps1&quot;]}&#39;</span> --protected-settings <span class="s1">&#39;{&quot;commandToExecute&quot;: &quot;powershell -ExecutionPolicy Unrestricted -File configure-iis.ps1&quot;}&#39;</span>
+</code></pre></div>
+<a href="https://docs.microsoft.com/en-us/learn/modules/build-azure-vm-templates/5-add-a-resource?pivots=windows-cloud">Source</a></p>
+</div>
+</div>
+</div>
+<h3 id="add-nic">Add NIC</h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="7:2"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">PowerShell</label><label for="__tabbed_7_2">Azure CLI</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="nb">Stop-AzVM</span> <span class="n">-Name</span> <span class="nv">$vmName</span> <span class="n">-ResourceGroupName</span> <span class="nv">$g</span>
+<span class="nb">Add-AzVMNetworkInterface</span> <span class="n">-VM</span> <span class="nv">$vm</span> <span class="n">-Id</span> <span class="nv">$nicId</span> <span class="n">-Primary</span> 
+<span class="nb">Update-AzVm</span> <span class="n">-ResourceGroupName</span> <span class="nv">$g</span> <span class="n">-VM</span> <span class="nv">$vm</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>az network nic create --resource-group <span class="nv">$g</span> --name <span class="nv">$nicName</span> --vnet-name <span class="nv">$ExamRefVNET</span> --subnet <span class="nv">$subnetName</span>
+az vm nic add -g <span class="nv">$g</span> --vm-name <span class="nv">$vmName</span> --nics <span class="nv">$nicName</span> --primary-nic
+</code></pre></div>
+</div>
+</div>
+</div>
+<p>Redeploy</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="8:2"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><input id="__tabbed_8_2" name="__tabbed_8" type="radio" /><div class="tabbed-labels"><label for="__tabbed_8_1">PowerShell</label><label for="__tabbed_8_2">Azure CLI</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="nb">Set-AzVM</span> <span class="n">-Redeploy</span> <span class="n">-ResourceGroupName</span> <span class="n">ExamRefRG</span> <span class="n">-Name</span> <span class="n">ExamRefVM</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>az vm redeploy --resource-group ExamRefRG --name ExamRefVM
+</code></pre></div>
+</div>
+</div>
+</div>
+<p>Create managed VM</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="9:2"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><input id="__tabbed_9_2" name="__tabbed_9" type="radio" /><div class="tabbed-labels"><label for="__tabbed_9_1">PowerShell</label><label for="__tabbed_9_2">Azure CLI</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="nb">Set-AzVM</span> <span class="n">-ResourceGroupName</span>  <span class="nv">$g</span> <span class="n">-Name</span> <span class="nv">$vmName</span> <span class="n">-Generalized</span> 
+<span class="nv">$vm</span> <span class="p">=</span> <span class="nb">Get-AzVM</span> <span class="n">-ResourceGroupName</span> <span class="nv">$g</span> <span class="n">-Name</span> <span class="nv">$vmName</span>
+<span class="nv">$image</span> <span class="p">=</span> <span class="nb">New-AzImageConfig</span> <span class="n">-Location</span> <span class="nv">$location</span> <span class="n">-SourceVirtualMachineId</span> <span class="nv">$vm</span><span class="p">.</span><span class="n">ID</span> 
+<span class="nb">New-AzImage</span> <span class="n">-Image</span> <span class="nv">$image</span> <span class="n">-ImageName</span> <span class="nv">$imageName</span> <span class="n">-ResourceGroupName</span> <span class="nv">$g</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>az vm deallocate --resource-group <span class="nv">$g</span> --name <span class="nv">$vmName</span>
+az vm generalize --resource-group <span class="nv">$g</span> --name <span class="nv">$vmName</span>
+az image create --resource-group <span class="nv">$g</span> --name <span class="nv">$imageName</span> --source <span class="nv">$vmName</span> 
+</code></pre></div>
+</div>
+</div>
+</div>
+<h3 id="create">Create</h3>
+<p><div class="highlight"><pre><span></span><code><span class="nv">$subnets</span> <span class="p">=</span> <span class="p">@()</span>
+<span class="nv">$subnet1Name</span> <span class="p">=</span> <span class="s2">&quot;Subnet1&quot;</span>
+<span class="nv">$subnet2Name</span> <span class="p">=</span> <span class="s2">&quot;Subnet2&quot;</span>
+<span class="nv">$subnet1AddressPrefix</span> <span class="p">=</span> <span class="s2">&quot;10.0.0.0/24&quot;</span>
+<span class="nv">$subnet2AddressPrefix</span> <span class="p">=</span> <span class="s2">&quot;10.0.1.0/24&quot;</span>
+<span class="nv">$vnetAddressSpace</span> <span class="p">=</span> <span class="s2">&quot;10.0.0.0/16&quot;</span>
+<span class="nv">$vnetName</span> <span class="p">=</span> <span class="s2">&quot;ExamRefVNET&quot;</span>
+
+<span class="nb">New-AzResourceGroup</span> <span class="n">-Name</span> <span class="nv">$resourceGroupName</span> <span class="n">-Location</span> <span class="nv">$location</span>
+</code></pre></div>
+Create a virtual network
+<div class="highlight"><pre><span></span><code><span class="nv">$subnets</span> <span class="p">=</span> <span class="p">@()</span>
+<span class="nv">$subnets</span> <span class="p">+=</span> <span class="nb">New-AzVirtualNetworkSubnetConfig</span> <span class="n">-Name</span> <span class="nv">$subnet1Name</span> <span class="n">-AddressPrefix</span> <span class="nv">$subnet1AddressPrefix</span>
+<span class="nv">$subnets</span> <span class="p">+=</span> <span class="nb">New-AzVirtualNetworkSubnetConfig</span> <span class="n">-Name</span> <span class="nv">$subnet2Name</span> <span class="n">-AddressPrefix</span> <span class="nv">$subnet2AddressPrefix</span>
+<span class="nv">$vnet</span> <span class="p">=</span> <span class="nb">New-AzVirtualNetwork</span> <span class="n">-Name</span> <span class="nv">$vnetName</span> <span class="n">-Location</span> <span class="nv">$location</span> <span class="n">-AddressPrefix</span> <span class="nv">$vnetAddressSpace</span> <span class="n">-Subnet</span> <span class="nv">$subnets</span>
+<span class="nv">$pip</span> <span class="p">=</span> <span class="nb">New-AzPublicIpAddress</span> <span class="n">-Name</span> <span class="nv">$ipName</span> <span class="n">-ResourceGroupName</span> <span class="nv">$g</span> <span class="n">-Location</span> <span class="nv">$location</span> <span class="n">-AllocationMethod</span> <span class="n">Dynamic</span> <span class="n">-DomainNameLabel</span> <span class="nv">$dnsName</span>
+<span class="nv">$nsgRules</span> <span class="p">=</span> <span class="p">@()</span>
+<span class="nv">$nsgRules</span> <span class="p">+=</span> <span class="nb">New-AzNetworkSecurityRuleConfig</span> <span class="n">-Name</span> <span class="s2">&quot;RDP&quot;</span> <span class="n">-Description</span> <span class="s2">&quot;RemoteDesktop&quot;</span> <span class="n">-Protocol</span> <span class="n">Tcp</span> <span class="n">-SourcePortRange</span> <span class="s2">&quot;*&quot;</span> <span class="n">-DestinationPortRange</span> <span class="s2">&quot;3389&quot;</span> <span class="n">-SourceAddressPrefix</span> <span class="s2">&quot;*&quot;</span> <span class="n">-DestinationAddressPrefix</span> <span class="s2">&quot;*&quot;</span> <span class="n">-Access</span> <span class="n">Allow</span> <span class="n">-Priority</span> <span class="n">110</span> <span class="n">-Direction</span> <span class="n">Inbound</span>
+<span class="nv">$nsg</span> <span class="p">=</span> <span class="nb">New-AzNetworkSecurityGroup</span> <span class="n">-ResourceGroupName</span> <span class="nv">$resourceGroupName</span> <span class="n">-Name</span> <span class="s2">&quot;ExamREfNSG&quot;</span> <span class="n">-SecurityRules</span> <span class="nv">$nsgRules</span> <span class="n">-Location</span> <span class="nv">$location</span>
+<span class="nv">$nic</span> <span class="p">=</span> <span class="nb">New-AzNetworkInterface</span> <span class="n">-Name</span> <span class="nv">$nicNAme</span> <span class="n">-ResourceGroupName</span> <span class="nv">$resourceGroupName</span> <span class="n">-Location</span> <span class="nv">$location</span> <span class="n">-SubnetId</span> <span class="nv">$vnet</span><span class="p">.</span><span class="n">Subnets</span><span class="p">[</span><span class="n">0</span><span class="p">].</span><span class="n">Id</span> <span class="n">-PublicIpAddressId</span> <span class="nv">$pip</span><span class="p">.</span><span class="n">Id</span> <span class="n">-NetworkSecurityGroupId</span> <span class="nv">$nsg</span><span class="p">.</span><span class="n">Id</span>
+<span class="nb">Add-AzVMNetworkInterface</span> <span class="n">-VM</span> <span class="nv">$vm</span> <span class="n">-NetworkInterface</span> <span class="nv">$nic</span>
+<span class="nv">$vm</span> <span class="p">=</span> <span class="nb">New-AzVMConfig</span> <span class="n">-VMName</span> <span class="nv">$vmName</span> <span class="n">-VMSize</span> <span class="nv">$vmSize</span>
+<span class="nb">Set-AzVMOperatingSystem</span> <span class="n">-Windows</span> <span class="n">-ComputerName</span> <span class="nv">$vmName</span> <span class="n">-Credential</span> <span class="nv">$cred</span> <span class="n">-ProvisionVMAgent</span> <span class="n">-VM</span> <span class="nv">$vm</span>
+<span class="nb">Set-AzVMSourceImage</span> <span class="n">-PublisherName</span> <span class="nv">$pubName</span> <span class="n">-Offer</span> <span class="nv">$offerName</span> <span class="n">-Skus</span> <span class="nv">$skuName</span> <span class="n">-Version</span> <span class="s2">&quot;latest&quot;</span> <span class="n">-VM</span> <span class="nv">$vm</span>
+<span class="nb">Set-AzVMOSDisk</span> <span class="n">-CreateOption</span> <span class="n">fromImage</span> <span class="n">-VM</span> <span class="nv">$vm</span>
+<span class="nb">New-AzVM</span> <span class="n">-ResourceGroupName</span> <span class="nv">$resourceGroupName</span> <span class="n">-Location</span> <span class="nv">$location</span> <span class="n">-VM</span> <span class="nv">$vm</span>
+</code></pre></div></p>
+<p><div class="highlight"><pre><span></span><code>az group create --name <span class="nv">$g</span> --location <span class="nv">$location</span>
+<span class="nv">vmName</span><span class="o">=</span><span class="s2">&quot;myUbuntuVM&quot;</span>
+<span class="nv">imageName</span><span class="o">=</span><span class="s2">&quot;UbuntuLTS&quot;</span>
+az vm create --resource-group <span class="nv">$g</span> --name <span class="nv">$vmName</span> --image <span class="nv">$imageName</span> --generate-ssh-keys
+</code></pre></div>
+Create a virtual network
+<div class="highlight"><pre><span></span><code><span class="nv">vnetName</span><span class="o">=</span><span class="s2">&quot;ExamRefVNET&quot;</span>
+<span class="nv">vnetAddressPrefix</span><span class="o">=</span><span class="s2">&quot;10.0.0.0/16&quot;</span>
+az network vnet create --resource-group <span class="nv">$g</span> -n ExamRefVNET --address-prefixes <span class="nv">$vnetAddressPrefix</span> -l <span class="nv">$location</span>
+<span class="nv">dnsRecord</span><span class="o">=</span><span class="s2">&quot;examrefdns123123&quot;</span>
+<span class="nv">ipName</span><span class="o">=</span><span class="s2">&quot;ExamRefIP&quot;</span>
+az network public-ip create -n <span class="nv">$ipName</span> -g <span class="nv">$g</span> --allocation-method Dynamic --dns-name <span class="nv">$dnsRecord</span> -l <span class="nv">$location</span>
+<span class="nv">nsgName</span><span class="o">=</span><span class="s2">&quot;webnsg&quot;</span>
+az network nsg create -n <span class="nv">$nsgName</span> -g <span class="nv">$g</span> -l <span class="nv">$location</span>
+</code></pre></div>
+Create a NSG rules to allow inbound SSH and HTTP
+<div class="highlight"><pre><span></span><code>az network nsg rule create -n SSH --nsg-name ... --priority <span class="m">100</span> -g ... --access Allow --description <span class="s2">&quot;SSH Access&quot;</span> --direction Inbound --protocol Tcp --destination-address-prefix <span class="s2">&quot;*&quot;</span> --destination-port-range <span class="m">22</span> --source-address-prefix <span class="s2">&quot;*&quot;</span> --source-port-range <span class="s2">&quot;*&quot;</span>
+az network nsg rule create -n HTTP --nsg-name ... --priority <span class="m">101</span> -g ... --access Allow --description <span class="s2">&quot;Web Access&quot;</span> --direction Inbound --protocol Tcp --destination-address-prefix <span class="s2">&quot;*&quot;</span> --destination-port-range <span class="m">80</span> --source-address-prefix <span class="s2">&quot;*&quot;</span> --source-port-range <span class="s2">&quot;* </span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># Create a network interface</span>
+<span class="nv">nicname</span><span class="o">=</span><span class="s2">&quot;WebVMNic1&quot;</span>
+az network nic create -n <span class="nv">$nicname</span> -g <span class="nv">$g</span> --subnet <span class="nv">$Subnet1Name</span> --network-security-group <span class="nv">$nsgName</span> --vnet-name <span class="nv">$vnetName</span> --public-ip-address <span class="nv">$ipName</span> -l <span class="nv">$location</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># Retrieve a list of marketplace images</span>
+az vm image list --all
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># Retrieve form factors available in each region</span>
+az vm list-sizes --location ...
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># Create the VM</span>
+<span class="nv">imageName</span><span class="o">=</span><span class="s2">&quot;Canonical:UbuntuServer:16.04-LTS:latest&quot;</span>
+<span class="nv">vmSize</span><span class="o">=</span><span class="s2">&quot;Standard_DS1_V2&quot;</span>
+<span class="nv">user</span><span class="o">=</span>demouser
+<span class="nv">vmName</span><span class="o">=</span><span class="s2">&quot;WebVM&quot;</span>
+az vm create -n <span class="nv">$vmName</span> -g <span class="nv">$g</span> -l <span class="nv">$location</span> --size <span class="nv">$vmSize</span> --nics <span class="nv">$nicname</span> --image <span class="nv">$imageName</span> --generate-ssh-keys
+</code></pre></div></p>
+<h2 id="vhd">VHD</h2>
+<p>Add a new disk to a VM</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="10:2"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio" /><input id="__tabbed_10_2" name="__tabbed_10" type="radio" /><div class="tabbed-labels"><label for="__tabbed_10_1">PowerShell</label><label for="__tabbed_10_2">Azure CLI</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="nv">$dataDiskName</span> <span class="p">=</span> <span class="s2">&quot;MyDataDisk&quot;</span>
+<span class="nv">$location</span><span class="p">=</span><span class="s2">&quot;WestUS&quot;</span>
+<span class="nv">$diskConfig</span> <span class="p">=</span> <span class="nb">New-AzDiskConfig</span> <span class="n">-SkuName</span> <span class="n">Premium_LRS</span> <span class="n">-Location</span> <span class="nv">$location</span> <span class="n">-CreateOption</span> <span class="n">Empty</span> <span class="n">-DiskSizeGB</span> <span class="n">128</span>
+<span class="nv">$dataDisk1</span> <span class="p">=</span> <span class="nb">New-AzDisk</span> <span class="n">-DiskName</span> <span class="nv">$dataDiskName</span> <span class="n">-Disk</span> <span class="nv">$diskConfig</span> <span class="n">-ResourceGroupNAme</span> <span class="n">ExamRefRG</span>
+<span class="nv">$vm</span> <span class="p">=</span> <span class="nb">Get-AzVM</span> <span class="n">-Name</span> <span class="n">ExamRefVM</span> <span class="n">-ResourceGroupName</span> <span class="n">ExamRefRG</span>
+<span class="nv">$vm</span> <span class="p">=</span> <span class="nb">Add-AzVMDataDisk</span> <span class="n">-VM</span> <span class="nv">$vm</span> <span class="n">-Name</span> <span class="nv">$dataDiskName</span> <span class="n">-CreateOption</span> <span class="n">Attach</span> <span class="n">-ManagedDiskId</span> <span class="nv">$dataDisk1</span><span class="p">.</span><span class="n">Id</span> <span class="n">-Lun</span> <span class="n">1</span>
+
+<span class="nb">Update-AzVM</span> <span class="n">-VM</span> <span class="nv">$vm</span> <span class="n">-ResourceGroupName</span> <span class="n">ExamRefRG</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>az vm disk attach -g ExamRefRG --vm-name ExamRefVM --name myDataDisk --new --size-gb <span class="m">128</span> --sku Premium_LRS
+</code></pre></div>
+</div>
+</div>
+</div>
+<p>Modify host cache setting</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="11:2"><input checked="checked" id="__tabbed_11_1" name="__tabbed_11" type="radio" /><input id="__tabbed_11_2" name="__tabbed_11" type="radio" /><div class="tabbed-labels"><label for="__tabbed_11_1">PowerShell</label><label for="__tabbed_11_2">Azure CLI</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="nv">$vm</span> <span class="p">=</span> <span class="nb">Get-AzVM</span> <span class="n">-ResourceGroupName</span> <span class="nv">$g</span> <span class="n">-Name</span> <span class="nv">$vmName</span>
+<span class="nb">Set-AzVMDataDisk</span> <span class="n">-VM</span> <span class="nv">$vm</span> <span class="n">-Lun</span> <span class="n">0</span> <span class="n">-Caching</span> <span class="n">ReadOnly</span>
+<span class="nb">Update-AzVM</span> <span class="n">-ResourceGroupName</span> <span class="nv">$g</span> <span class="n">-VM</span> <span class="nv">$vm</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>az vm disk attach --vm-name <span class="nv">$vmName</span> --resource-group <span class="nv">$g</span> --size-gb <span class="m">128</span> --disk <span class="nv">$diskName</span> --caching ReadWrite -new
+az vm unmanaged-disk attach
+</code></pre></div>
+</div>
+</div>
+</div>
+<h2 id="diagnostics">Diagnostics</h2>
+<h3 id="enable-on-deployment">Enable on deployment</h3>
+<p><img alt="" src="/img/az-vm-diag.jpg" /></p>
+<h3 id="enable-after-deployment">Enable after deployment</h3>
+<p><img alt="👉" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f449.svg" title=":point_right:" /> <a href="https://docs.microsoft.com/en-us/powershell/module/az.compute/set-azvmdiagnosticsextension?view=azps-4.8.0"><code>Set-AzVmDiagnosticsExtension</code></a></p>
+<p>Enable diagnostics using a storage account specified in a XML configuration file
+<div class="highlight"><pre><span></span><code><span class="nb">Set-AzVMDiagnosticsExtension</span> <span class="n">-ResourceGroupName</span> <span class="s2">&quot;ResourceGroup01&quot;</span> <span class="n">-VMName</span> <span class="s2">&quot;VirtualMachine02&quot;</span> <span class="n">-DiagnosticsConfigurationPath</span> <span class="s2">&quot;diagnostics_publicconfig.xml&quot;</span>
+</code></pre></div>
+Providing storage account name absent in config, or overriding it if present
+<div class="highlight"><pre><span></span><code><span class="nb">Set-AzVMDiagnosticsExtension</span> <span class="n">-ResourceGroupName</span> <span class="s2">&quot;ResourceGroup1&quot;</span> <span class="n">-VMName</span> <span class="s2">&quot;VirtualMachine2&quot;</span> <span class="n">-DiagnosticsConfigurationPath</span> <span class="n">diagnostics_publicconfig</span><span class="p">.</span><span class="n">xml</span> <span class="n">-StorageAccountName</span> <span class="s2">&quot;MyStorageAccount&quot;</span>
+</code></pre></div>
+Explicitly providing storage account name and key
+<div class="highlight"><pre><span></span><code><span class="nb">Set-AzVMDiagnosticsExtension</span> <span class="n">-ResourceGroupName</span> <span class="s2">&quot;ResourceGroup01&quot;</span> <span class="n">-VMName</span> <span class="s2">&quot;VirtualMachine02&quot;</span> <span class="n">-DiagnosticsConfigurationPath</span> <span class="s2">&quot;diagnostics_publicconfig.xml&quot;</span> <span class="n">-StorageAccountName</span> <span class="s2">&quot;MyStorageAccount&quot;</span> <span class="n">-StorageAccountKey</span> <span class="nv">$storage_key</span>
+</code></pre></div></p>
+<h2 id="arm-templates">ARM templates</h2>
+<p>Deploy a named ARM template</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="12:2"><input checked="checked" id="__tabbed_12_1" name="__tabbed_12" type="radio" /><input id="__tabbed_12_2" name="__tabbed_12" type="radio" /><div class="tabbed-labels"><label for="__tabbed_12_1">PowerShell</label><label for="__tabbed_12_2">Azure CLI</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="nb">New-AzResourceGroupDeployment</span> <span class="n">-Mode</span> <span class="n">Complete</span> <span class="n">-Name</span> <span class="n">simpleVMDeployment</span> <span class="n">-ResourceGroupName</span> <span class="n">ExamRefRG</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>az group deployment create --name simpleVMDeployment --mode Complete --resource-group ExamRefRG
+</code></pre></div>
+</div>
+</div>
+</div>
+<p>Export a resource group to an ARM template</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="13:2"><input checked="checked" id="__tabbed_13_1" name="__tabbed_13" type="radio" /><input id="__tabbed_13_2" name="__tabbed_13" type="radio" /><div class="tabbed-labels"><label for="__tabbed_13_1">PowerShell</label><label for="__tabbed_13_2">Azure CLI</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="nb">Save-AzResourceGroupDeploymentTemplate</span> <span class="n">-ResourceGroupName</span> <span class="n">ExamRefRG</span> <span class="n">-DeploymentName</span> <span class="n">simpleVMDeployment</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>az group deployment <span class="nb">export</span> --name simpleVMDeployment --resource-group ExamRefRG
+</code></pre></div>
+</div>
+</div>
+</div>
+<p>Create from existing resource group</p>
+<div class="highlight"><pre><span></span><code><span class="nb">Export-AzResourceGroup</span> <span class="n">-ResourceGroupName</span> <span class="n">ExamRefRG</span>
+</code></pre></div>
+<p>Pass a template file during deployment</p>
+<div class="highlight"><pre><span></span><code><span class="nb">New-AzResourceGroupDeployment</span> <span class="n">-Name</span> <span class="n">MyDeployment</span> <span class="n">-ResourceGroupName</span> <span class="n">ExamRefRG</span> <span class="n">-TemplateFile</span> <span class="n">C</span><span class="p">:\</span><span class="n">MyTemplates</span><span class="p">\</span><span class="n">AppTemplate</span><span class="p">.</span><span class="n">json</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>az group <span class="nb">export</span> --name ExamRefRG
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>az group deployment create --name MyDeployment --resource-group ExamRefRG --template-file AppTemplate.json --parameters @dev-env.json
+</code></pre></div>
+<h2 id="view-all-available-sizes-in-a-location">View all available sizes in a location</h2>
+<p>Move a resource to another resource group or subscription (PowerShell)
+<div class="highlight"><pre><span></span><code><span class="nv">$resourceID</span> <span class="p">=</span> <span class="nb">Get-AzResource</span> <span class="n">-ResourceGroupName</span> <span class="n">ExamRefRG</span> <span class="p">|</span> <span class="nb">Format-Table</span> <span class="n">-Property</span> <span class="n">ResourceId</span>
+
+<span class="nb">Move-AzResource</span> <span class="n">-DestinationResourceGroupName</span> <span class="n">ExamRefDestRG</span> <span class="n">-ResourceId</span> <span class="nv">$resourceID</span>
+<span class="nb">Move-AzResource</span> <span class="n">-DestinationSubscriptionId</span> <span class="nv">$subscriptionID</span> <span class="n">-DestinationResourceGroupName</span> <span class="n">ExamRefDestRG</span> <span class="n">-ResourceId</span> <span class="nv">$resourceID</span>
+</code></pre></div></p>
+<p>Move a resource to another resource group or subscription (Azure CLI)
+<div class="highlight"><pre><span></span><code>az resource list -g ExamRefRG
+az resource move --destination-group ExamRefDestRG --ids <span class="nv">$resourceID</span>
+az resource move --destination-group ExamrefDestRG --destination-subscription-id <span class="nv">$subscriptionID</span> --ids <span class="nv">$resourceID</span>
+</code></pre></div></p>
+<h2 id="dsc">DSC</h2>
+<h3 id="package">Package</h3>
+<p>Package a DSC script into a zip file
+<div class="highlight"><pre><span></span><code><span class="nb">Publish-AzVMDscConfiguration</span> <span class="n">-ConfigurationPath</span> <span class="p">.\</span><span class="n">ContosoWeb</span><span class="p">.</span><span class="n">ps1</span> <span class="n">-OutputArchivePath</span> <span class="p">.\</span><span class="n">ContosoWeb</span><span class="p">.</span><span class="n">zip</span>
+</code></pre></div></p>
+<h3 id="apply">Apply</h3>
+<p>Publish a packaged DSC script to a storage account
+<div class="highlight"><pre><span></span><code><span class="nv">$g</span> <span class="p">=</span> <span class="s2">&quot;ExamRefRG&quot;</span>
+<span class="nv">$location</span> <span class="p">=-</span> <span class="s2">&quot;WestUS&quot;</span>
+<span class="nv">$vmName</span> <span class="p">=</span> <span class="s2">&quot;ExamRefVM&quot;</span>
+<span class="nv">$storageName</span> <span class="p">=</span> <span class="s2">&quot;dscstorageer1&quot;</span>
+<span class="nv">$configurationName</span> <span class="p">=</span> <span class="s2">&quot;Main&quot;</span>
+<span class="nv">$archiveBlob</span> <span class="p">=</span> <span class="s2">&quot;ContosoWeb.ps1.zip&quot;</span>
+<span class="nv">$configurationPath</span> <span class="p">=</span> <span class="s2">&quot;.\ContosoWeb.ps1&quot;</span>
+
+<span class="nb">Publish-AzVMDscConfiguration</span> <span class="n">-ConfigurationPath</span> <span class="nv">$configurationPath</span> <span class="n">-ResourceGroupName</span> <span class="nv">$g</span> <span class="n">-StorageAccountName</span> <span class="nv">$storageName</span>
+<span class="nb">Set-AzVmDscExtension</span> <span class="n">-Version</span> <span class="n">2</span><span class="p">.</span><span class="n">76</span> <span class="n">-ResourceGroupName</span> <span class="nv">$g</span> <span class="n">-VMName</span> <span class="nv">$vmName</span> <span class="n">-ArchiveStorageAccountNAme</span> <span class="nv">$storageName</span> <span class="n">-ArchiveBlobName</span> <span class="nv">$archiveBNlob</span> <span class="n">-AutoUpdate</span><span class="p">:</span><span class="nv">$false</span> <span class="n">-ConfigurationName</span> <span class="nv">$configurationName</span>
+</code></pre></div></p>
+<h2 id="vmss">VMSS</h2>
+<p>Create a VMSS with IIS installed from a custom script extension
+<div class="highlight"><pre><span></span><code><span class="nv">$g</span> <span class="p">=</span> <span class="s2">&quot;ExamRefRG&quot;</span>
+<span class="nv">$location</span> <span class="p">=</span> <span class="s2">&quot;WestUS&quot;</span>
+<span class="nv">$vmSize</span> <span class="p">=</span> <span class="s2">&quot;Standard_DS2_V2&quot;</span>
+<span class="nv">$capacity</span> <span class="p">=</span> <span class="n">2</span>
+
+<span class="nb">New-AzResourceGroup</span> <span class="n">-Name</span> <span class="nv">$g</span> <span class="n">-Location</span> <span class="nv">$location</span>
+<span class="nv">$vmssConfig</span> <span class="p">=</span> <span class="nb">New-AzVmssConfig</span> <span class="n">-Location</span> <span class="nv">$location</span> <span class="n">-SkuCapacity</span> <span class="nv">$capacity</span> <span class="n">-SkuName</span> <span class="nv">$vmSize</span> <span class="n">-UpgradePolicyMode</span> <span class="n">Automatic</span>
+<span class="nv">$publicIP</span> <span class="p">=</span> <span class="nb">New-AzPublicIpAddress</span> <span class="n">-ResourceGroupName</span> <span class="nv">$g</span> <span class="n">-Location</span> <span class="nv">$locaiton</span> <span class="n">-AllocationMethod</span> <span class="n">Static</span> <span class="n">-Name</span> <span class="nv">$publicIPName</span>
+<span class="nv">$frontendIP</span> <span class="p">=</span> <span class="nb">New-AzLoadBalancerFrontendIpConfig</span> <span class="n">-Name</span> <span class="s2">&quot;lbFrontEndPool&quot;</span> <span class="n">-PublicIpAddress</span> <span class="nv">$publicIP</span>
+<span class="nv">$backendPool</span> <span class="p">=</span> <span class="nb">New-AzLoadBalancerBackendAddressPoolConfig</span> <span class="n">-Name</span> <span class="s2">&quot;lbBackEndPool&quot;</span>
+<span class="nv">$lb</span> <span class="p">=</span> <span class="nb">New-AzLoadBalancer</span> <span class="n">-ResourceGroupName</span> <span class="nv">$g</span> <span class="n">-Name</span> <span class="s2">&quot;lbrule&quot;</span> <span class="n">-Location</span> <span class="nv">$location</span> <span class="n">-FrontendIPConfiguration</span> <span class="nv">$frontendIP</span> <span class="n">-BackendAddressPool</span> <span class="nv">$backendPool</span>
+
+<span class="nb">Add-AzLoadBalancerProbeConfig</span> <span class="n">-Name</span> <span class="s2">&quot;lbrule&quot;</span> <span class="n">-LoadBalancer</span> <span class="nv">$lb</span> <span class="n">-Protocol</span> <span class="n">http</span> <span class="n">-Port</span> <span class="n">80</span> <span class="n">-IntervalInSeconds</span> <span class="n">15</span> <span class="n">-ProbeCount</span> <span class="n">2</span> <span class="n">-RequestPath</span> <span class="s2">&quot;/&quot;</span>
+<span class="nb">Set-AzLoadBalancer</span> <span class="n">-LoadBalancer</span> <span class="nv">$lb</span>
+</code></pre></div>
+Reference a VM image from the gallery
+<div class="highlight"><pre><span></span><code><span class="nb">Set-AzVmssStorageProfile</span> <span class="nv">$vmssConfig</span> <span class="n">-ImageReferencePublisher</span> <span class="n">MicrosoftWindowsServer</span> <span class="n">-ImageReferenceOffer</span> <span class="n">WindowsServer</span> <span class="n">-ImageReferenceSku</span> <span class="n">2016-Datacenter</span> <span class="n">-ImageReferenceVersion</span> <span class="n">latest</span> <span class="n">-OsDiskCreateOption</span> <span class="n">FromImage</span>
+</code></pre></div>
+Set up information for authenticating with the VM
+<div class="highlight"><pre><span></span><code><span class="nb">Set-AzVmssOsProfile</span> <span class="nv">$vmssConfig</span> <span class="n">-AdminUsername</span> <span class="s2">&quot;azureuser&quot;</span> <span class="n">-AdminPassword</span> <span class="s2">&quot;P@ssword!&quot;</span> <span class="n">-ComputerNamePrefix</span> <span class="s2">&quot;ssVM&quot;</span>
+</code></pre></div>
+Create VNet resources
+<div class="highlight"><pre><span></span><code><span class="nv">$subnet</span> <span class="p">=</span> <span class="nb">New-AzVirtualNetworkSubnetConfig</span> <span class="n">-Name</span> <span class="s2">&quot;web&quot;</span> <span class="n">-AddressPrefix</span> <span class="n">10</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">0</span><span class="p">/</span><span class="n">24</span>
+<span class="nv">$vnet</span> <span class="p">=</span> <span class="nb">New-AzVirtualNetwork</span> <span class="n">-ResourceGroupName</span> <span class="nv">$g</span> <span class="n">-Name</span> <span class="nv">$ssName</span> <span class="n">-Location</span> <span class="nv">$location</span> <span class="n">-AddressPrefix</span> <span class="n">10</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">0</span><span class="p">/</span><span class="n">16</span> <span class="n">-Subnet</span> <span class="nv">$subnet</span>
+<span class="nv">$ipConfig</span> <span class="p">=</span> <span class="nb">New-AzVmssIpConfig</span> <span class="n">-Name</span> <span class="s2">&quot;vmssIPConfig&quot;</span> <span class="n">-LoadBalancerBackendAddressPoolsId</span> <span class="nv">$lb</span><span class="p">.</span><span class="n">BackendAddressPools</span><span class="p">[</span><span class="n">0</span><span class="p">].</span><span class="n">Id</span> <span class="n">-SubnetId</span> <span class="nv">$vnet</span><span class="p">.</span><span class="n">Subnets</span><span class="p">[</span><span class="n">0</span><span class="p">].</span><span class="n">Id</span>
+</code></pre></div>
+Attach the VNet to the config object
+<div class="highlight"><pre><span></span><code><span class="nb">Add-AzVmssNetworkInterfaceConfiguration</span> <span class="n">-VirtualMachineScaleSet</span> <span class="nv">$vmssConfig</span> <span class="n">-Name</span> <span class="s2">&quot;network-config&quot;</span> <span class="n">-Primary</span> <span class="nv">$true</span> <span class="n">-IPConfiguration</span> <span class="nv">$ipConfig</span> 
+</code></pre></div>
+Create the scale set with the config object
+<div class="highlight"><pre><span></span><code><span class="nb">New-AzVmss</span> <span class="n">-ResourceGroupName</span> <span class="nv">$g</span> <span class="n">-Name</span> <span class="nv">$scaleSetName</span> <span class="n">-VirtualMachineScaleSet</span> <span class="nv">$vmssConfig</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nv">g</span><span class="o">=</span><span class="s2">&quot;ExamRefRG&quot;</span>
+<span class="nv">ssName</span><span class="o">=</span><span class="s2">&quot;erscaleset&quot;</span>
+<span class="nv">userName</span><span class="o">=</span><span class="s2">&quot;azureuser&quot;</span>
+<span class="nv">password</span><span class="o">=</span><span class="s2">&quot;P@ssword!&quot;</span>
+<span class="nv">vmPrefix</span><span class="o">=</span><span class="s2">&quot;ssVM&quot;</span>
+<span class="nv">location</span><span class="o">=</span><span class="s2">&quot;WestUS&quot;</span>
+
+az group create --name <span class="nv">$g</span> --location <span class="nv">$location</span>
+az vmss create --resource-group <span class="nv">$g</span> --name <span class="nv">$ssName</span> --image UbuntuLTS --authentication-type password --admin-username <span class="nv">$userName</span> --admin-password <span class="nv">$password</span>
+</code></pre></div></p>
+<h2 id="custom-script-extension">Custom script extension</h2>
+<p>Use the custom script extension to install packages and Windows features and roles to VMs
+<div class="highlight"><pre><span></span><code><span class="c"># Deploy the Active Directory Domain Services role</span>
+<span class="nb">Install-WindowsFeature</span> <span class="n">-Name</span> <span class="s2">&quot;AD-Domain-Services&quot;</span> <span class="n">-IncludeManagementTools</span> <span class="n">-IncludeAllSubFeature</span>
+<span class="nb">Install-ADDSForest</span> <span class="n">-DomainName</span> <span class="nv">$domain</span> <span class="n">-DomainMode</span> <span class="n">Win2012</span> <span class="n">-ForestMode</span> <span class="n">Win2012</span> <span class="n">-Force</span> <span class="n">-SafeModeAdministratorPassword</span> <span class="nv">$smPassword</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c"># Use `Set-AzVMCustomScriptExtension` to run script on a VM</span>
+<span class="nv">$vmName</span> <span class="p">=</span> <span class="s2">&quot;ExamRefVM&quot;</span>
+<span class="nv">$scriptName</span> <span class="p">=</span> <span class="s2">&quot;deploy-ad.ps1&quot;</span>
+<span class="nv">$domain</span> <span class="p">=</span> <span class="s2">&quot;contoso.com&quot;</span>
+<span class="nv">$extensionName</span> <span class="p">=</span> <span class="s2">&quot;installAD&quot;</span>
+<span class="nv">$location</span> <span class="p">=</span> <span class="s2">&quot;WestUS&quot;</span>
+<span class="nv">$scriptUri</span> <span class="p">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/opsgility/lab-support-public/master/script-extensions/deploy-ad.ps1&quot;</span> 
+<span class="nv">$scriptArgument</span> <span class="p">=</span> <span class="s2">&quot;contoso.com $password&quot;</span>
+<span class="nb">Set-AzVMCustomScriptExtension</span> <span class="n">-ResourceGroupName</span> <span class="nv">$g</span> <span class="n">-VMName</span> <span class="nv">$vmName</span> <span class="n">-FileUri</span> <span class="nv">$scriptUri</span> <span class="n">-Argument</span> <span class="s2">&quot;$domain $password&quot;</span> <span class="n">-Run</span> <span class="nv">$scriptName</span> <span class="n">-Name</span> <span class="nv">$extensionName</span> <span class="n">-Location</span> <span class="nv">$location</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nv">vmName</span><span class="o">=</span><span class="s2">&quot;LinuxVM&quot;</span>
+<span class="nv">extensionName</span><span class="o">=</span><span class="s2">&quot;InstallApache&quot;</span>
+az vm extension <span class="nb">set</span> --resource-group <span class="nv">$g</span> --vm-name <span class="nv">$vmName</span> --name customScript --publisher Microsoft.Azure.Extensions --protected-settings ./cseconfig.json
+</code></pre></div></p>
+<p>Enable IIS using the <strong>Custom Script Extension</strong> to run a PowerShell script on the VM. <sup><a href="https://docs.microsoft.com/en-us/learn/modules/build-azure-vm-templates/5-add-a-resource?pivots=windows-cloud">?</a></sup>
+<div class="highlight"><pre><span></span><code>az vm extension <span class="nb">set</span> --resource-group <span class="nv">$RESOURCEGROUP</span> --vm-name SimpleWinVM --name CustomScriptExtension --publisher Microsoft.Compute --version <span class="m">1</span>.9 --settings <span class="s1">&#39;{&quot;fileUris&quot;:[&quot;https://raw.githubusercontent.com/MicrosoftDocs/mslearn-welcome-to-azure/master/configure-iis.ps1&quot;]}&#39;</span> --protected-settings <span class="s1">&#39;{&quot;commandToExecute&quot;: &quot;powershell -ExecutionPolicy Unrestricted -File configure-iis.ps1&quot;}&#39;</span>
+</code></pre></div></p>
+<p>Create availability set</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="14:2"><input checked="checked" id="__tabbed_14_1" name="__tabbed_14" type="radio" /><input id="__tabbed_14_2" name="__tabbed_14" type="radio" /><div class="tabbed-labels"><label for="__tabbed_14_1">Azure PowerShell</label><label for="__tabbed_14_2">Azure CLI</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="nb">New-AzavailabilitySet</span> <span class="n">-ResourceGroupName</span> <span class="nv">$g</span> <span class="n">-Name</span> <span class="nv">$n</span> <span class="n">-Location</span> <span class="nv">$l</span> <span class="n">-PlatformUpdateDomainCount</span> <span class="n">10</span> <span class="n">-PlatformFaultDomainCount</span> <span class="n">3</span> <span class="n">-Sku</span> <span class="s2">&quot;Aligned&quot;</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>az vm availability-set create -n <span class="nv">$n</span> -g <span class="nv">$g</span> --platform-fault-domain-count <span class="m">3</span> --platform-update-domain-count <span class="m">10</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<h3 id="invoke-a-command-on-a-vm">Invoke a command on a VM</h3>
+<p>Run a shell script, <code>$script</code> can be supplied inline
+<div class="highlight"><pre><span></span><code>az vm run-command invoke --command-id RunShellScript --scripts <span class="nv">$script</span>
+</code></pre></div>
+Parameters can be passed to the script argument
+<div class="highlight"><pre><span></span><code>az vm run-command invoke --command-id RunShellScript --scripts <span class="s1">&#39;echo $1 $2&#39;</span> --parameters hello world
+</code></pre></div>
+Run a PowerShell script
+<div class="highlight"><pre><span></span><code>az vm run-command invoke --command-id RunPowerShellScript -n Socrates -g RG 
+</code></pre></div>
+Run a script file
+<div class="highlight"><pre><span></span><code>az vm run-command invoke --command-id RunPowerShellScript -n Socrates -g RG --scripts @script.ps1 --parameters <span class="s1">&#39;arg1=somefoo&#39;</span> <span class="s1">&#39;arg2=somebar&#39;</span>
+</code></pre></div>
+Available values for <strong>command-id</strong> can be enumerated:
+<div class="highlight"><pre><span></span><code>az vm run-command list
+</code></pre></div></p>
+<h3 id="dedicated-host">Dedicated host</h3>
+<p><img alt="" src="/img/az-host-group-1.jpg" />
+<img alt="" src="/img/az-host-group-2.jpg" /></p>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../Azure-IAM/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Azure IAM" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Azure IAM
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../Azure-Load-Balancer/" class="md-footer__link md-footer__link--next" aria-label="Next: Azure Load Balancer" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Azure Load Balancer
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "toc.integrate", "content.code.annotate"], "search": "../../../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.6e54b5cd.min.js"></script>
+      
+    
+  </body>
+</html>

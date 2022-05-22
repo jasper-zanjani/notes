@@ -1,0 +1,8 @@
+<fleet>
+  <starship>
+    <class>Constitution</class>
+    <name>USS Enterprise</name>
+    <registry>NCC-1701</registry>
+    <series>TOS</series>
+  </starship>
+</fleet>

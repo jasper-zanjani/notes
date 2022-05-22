@@ -1,0 +1,5153 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://jasper-zanjani.github.io/notes/Misc/Windows/PowerShell/">
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.9">
+    
+    
+      
+        <title>🐚 PowerShell - 🧠</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.120efc48.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.9647289d.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#ffc105">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../style/admonitions-gcp.css">
+    
+      <link rel="stylesheet" href="../../../style/admonitions-azure.css">
+    
+      <link rel="stylesheet" href="../../../style/admonitions-aws.css">
+    
+      <link rel="stylesheet" href="../../../style/admonitions-rs.css">
+    
+      <link rel="stylesheet" href="../../../style/admonitions-cs.css">
+    
+      <link rel="stylesheet" href="../../../style/admonitions-cpp.css">
+    
+      <link rel="stylesheet" href="../../../style/admonitions-cisco.css">
+    
+      <link rel="stylesheet" href="../../../style/admonitions-py.css">
+    
+      <link rel="stylesheet" href="../../../style/admonitions-output.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="amber" data-md-color-accent="yellow">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#powershell" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="🧠" class="md-header__button md-logo" aria-label="🧠" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            🧠
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              🐚 PowerShell
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../.." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../Coding/" class="md-tabs__link">
+        Coding
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../GTK/" class="md-tabs__link">
+        GTK
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../Health/" class="md-tabs__link">
+        Health
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../Infrastructure/Ansible/" class="md-tabs__link">
+        Infrastructure
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../Linux/" class="md-tabs__link">
+        Linux
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../" class="md-tabs__link md-tabs__link--active">
+        Misc
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../Python/" class="md-tabs__link">
+        Python
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../Rust/" class="md-tabs__link">
+        Rust
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../Scripts/" class="md-tabs__link">
+        Scripts
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="🧠" class="md-nav__button md-logo" aria-label="🧠" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    🧠
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" data-md-state="indeterminate" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Coding
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Coding" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Coding
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Coding/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Coding/6502/" class="md-nav__link">
+        6502
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Coding/C%23/" class="md-nav__link">
+        C&#35;
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Coding/C%2B%2B/" class="md-nav__link">
+        C++
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Coding/C/" class="md-nav__link">
+        C
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Coding/CS/" class="md-nav__link">
+        MSCS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Coding/Courses/" class="md-nav__link">
+        Courses
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Coding/Debugging/" class="md-nav__link">
+        Debugging
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Coding/DnD/" class="md-nav__link">
+        🐲&#xFE0F;  Dungeons & Dragons
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Coding/Dogfood/" class="md-nav__link">
+        🐶 Dogfood data
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Coding/GUI/" class="md-nav__link">
+        🖥&#xFE0F; GUI frameworks comparison
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Coding/Others/" class="md-nav__link">
+        🦪 Perl
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Coding/Python/" class="md-nav__link">
+        🐍 Python
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Coding/Testing/" class="md-nav__link">
+        Testing
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Coding/Windows/" class="md-nav__link">
+        Windows programming
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Coding/Wired%20Brain%20Coffee/" class="md-nav__link">
+        ☕ Wired Brain Coffee
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_17" data-md-state="indeterminate" type="checkbox" id="__nav_2_17" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_17">
+          WinUI
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="WinUI" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_17">
+          <span class="md-nav__icon md-icon"></span>
+          WinUI
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Coding/WinUI/" class="md-nav__link">
+        WinUI
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Coding/WinUI/API/" class="md-nav__link">
+        API
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" data-md-state="indeterminate" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          GTK
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="GTK" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          GTK
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GTK/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GTK/API/" class="md-nav__link">
+        API
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GTK/Glade/" class="md-nav__link">
+        Glade
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GTK/Glossary/" class="md-nav__link">
+        📘 Glossary
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_5" data-md-state="indeterminate" type="checkbox" id="__nav_3_5" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_5">
+          Examples
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Examples" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_5">
+          <span class="md-nav__icon md-icon"></span>
+          Examples
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GTK/Examples/GNOME-Tweaks/" class="md-nav__link">
+        GNOME Tweaks
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_6" data-md-state="indeterminate" type="checkbox" id="__nav_3_6" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_6">
+          Tasks
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Tasks" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_6">
+          <span class="md-nav__icon md-icon"></span>
+          Tasks
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GTK/Tasks/Boilerplate/" class="md-nav__link">
+        Boilerplate
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GTK/Tasks/Environment/" class="md-nav__link">
+        Development environment
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GTK/Tasks/Hello-World/" class="md-nav__link">
+        Hello, World!
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GTK/Tasks/Image-Viewer/" class="md-nav__link">
+        Image Viewer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GTK/Tasks/Starships/" class="md-nav__link">
+        Starships
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GTK/Tasks/Tasks/" class="md-nav__link">
+        Tasks
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" data-md-state="indeterminate" type="checkbox" id="__nav_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Health
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Health" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Health
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Health/" class="md-nav__link">
+        💊 Health
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" data-md-state="indeterminate" type="checkbox" id="__nav_5" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Infrastructure
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Infrastructure" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Infrastructure
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Infrastructure/Ansible/" class="md-nav__link">
+        Ansible
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Infrastructure/Certifications/" class="md-nav__link">
+        🥇 Certifications
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Infrastructure/Cloud/" class="md-nav__link">
+        Cloud
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Infrastructure/Network/" class="md-nav__link">
+        Network
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_5" data-md-state="indeterminate" type="checkbox" id="__nav_5_5" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_5">
+          Cloud
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Cloud" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_5">
+          <span class="md-nav__icon md-icon"></span>
+          Cloud
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Infrastructure/Cloud/GCP/" class="md-nav__link">
+        Google Cloud Platform
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Infrastructure/Cloud/Tasks/" class="md-nav__link">
+        Tasks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_5_3" data-md-state="indeterminate" type="checkbox" id="__nav_5_5_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_5_3">
+          Azure
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Azure" data-md-level="3">
+        <label class="md-nav__title" for="__nav_5_5_3">
+          <span class="md-nav__icon md-icon"></span>
+          Azure
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Infrastructure/Cloud/Azure/ARM/" class="md-nav__link">
+        ARM
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Infrastructure/Cloud/Azure/Azure-AD/" class="md-nav__link">
+        Azure AD
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Infrastructure/Cloud/Azure/Azure-App-Service/" class="md-nav__link">
+        Azure App Service
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Infrastructure/Cloud/Azure/Azure-Backup/" class="md-nav__link">
+        Azure Backup
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Infrastructure/Cloud/Azure/Azure-File-Service/" class="md-nav__link">
+        Azure File Service
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Infrastructure/Cloud/Azure/Azure-IAM/" class="md-nav__link">
+        Azure IAM
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Infrastructure/Cloud/Azure/Azure-IaaS/" class="md-nav__link">
+        Azure IaaS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Infrastructure/Cloud/Azure/Azure-Load-Balancer/" class="md-nav__link">
+        Azure Load Balancer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Infrastructure/Cloud/Azure/Azure-Monitoring/" class="md-nav__link">
+        Azure Monitoring
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Infrastructure/Cloud/Azure/Azure-Policy/" class="md-nav__link">
+        Azure Policy
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Infrastructure/Cloud/Azure/Azure-Storage/" class="md-nav__link">
+        Azure Storage
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Infrastructure/Cloud/Azure/Azure-VPN/" class="md-nav__link">
+        Azure VPN
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Infrastructure/Cloud/Azure/Kusto/" class="md-nav__link">
+        Kusto
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" data-md-state="indeterminate" type="checkbox" id="__nav_6" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          Linux
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Linux" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Linux
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Linux/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Linux/Cgroups/" class="md-nav__link">
+        Cgroups
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Linux/Concurrency/" class="md-nav__link">
+        Concurrency
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Linux/Databases/" class="md-nav__link">
+        Databases
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Linux/Display/" class="md-nav__link">
+        Display
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Linux/Files/" class="md-nav__link">
+        Files
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Linux/Filters/" class="md-nav__link">
+        Commands
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Linux/GNOME/" class="md-nav__link">
+        GNOME
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Linux/GRUB/" class="md-nav__link">
+        Boot
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Linux/Kernel/" class="md-nav__link">
+        Kernel
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Linux/Package/" class="md-nav__link">
+        Package management
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Linux/Random/" class="md-nav__link">
+        Random
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Linux/Red-Hat/" class="md-nav__link">
+        Red Hat :material-redhat:
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Linux/Ricing/" class="md-nav__link">
+        Tiling window managers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Linux/SELinux/" class="md-nav__link">
+        SELinux
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Linux/Shell/" class="md-nav__link">
+        Shells
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Linux/Storage/" class="md-nav__link">
+        Storage
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Linux/SystemD/" class="md-nav__link">
+        SystemD
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Linux/Ubuntu/" class="md-nav__link">
+        Ubuntu
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Linux/Virtualization/" class="md-nav__link">
+        Virtualization
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_21" data-md-state="indeterminate" type="checkbox" id="__nav_6_21" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_21">
+          Applications
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Applications" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_21">
+          <span class="md-nav__icon md-icon"></span>
+          Applications
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Linux/Applications/Rhythmbox/" class="md-nav__link">
+        Rhythmbox
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Linux/Applications/ffmpeg/" class="md-nav__link">
+        ffmpeg
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Linux/Applications/nginx/" class="md-nav__link">
+        Nginx
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Linux/Applications/screen/" class="md-nav__link">
+        screen
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Linux/Applications/ssh/" class="md-nav__link">
+        SSH
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Linux/Applications/syncthing/" class="md-nav__link">
+        Syncthing
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Linux/Applications/vim/" class="md-nav__link">
+        Vim
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Linux/Applications/youtube-dl/" class="md-nav__link">
+        Youtube dl
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_22" data-md-state="indeterminate" type="checkbox" id="__nav_6_22" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_22">
+          Containers
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Containers" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_22">
+          <span class="md-nav__icon md-icon"></span>
+          Containers
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Linux/Containers/" class="md-nav__link">
+        Containers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Linux/Containers/Docker/" class="md-nav__link">
+        Docker
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Linux/Containers/Helm/" class="md-nav__link">
+        Helm
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Linux/Containers/Kubernetes/" class="md-nav__link">
+        Kubernetes
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_23" data-md-state="indeterminate" type="checkbox" id="__nav_6_23" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_23">
+          Networking
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Networking" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_23">
+          <span class="md-nav__icon md-icon"></span>
+          Networking
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Linux/Networking/" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Linux/Networking/Commands/" class="md-nav__link">
+        Commands
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Linux/Networking/Samba/" class="md-nav__link">
+        Samba
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Linux/Networking/Tasks/" class="md-nav__link">
+        Tasks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Linux/Networking/eBPF/" class="md-nav__link">
+        eBPF
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          Misc
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Misc" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Misc
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Aircraft/" class="md-nav__link">
+        ✈&#xfe0f; Aircraft
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Akro-Mils/" class="md-nav__link">
+        Akro-Mils
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CI-CD/" class="md-nav__link">
+        CI/CD
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computers/" class="md-nav__link">
+        Computers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Diaz/" class="md-nav__link">
+        Joey Diaz
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Intelligence/" class="md-nav__link">
+        🔎 Intelligence
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Lab/" class="md-nav__link">
+        Home lab
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Military/" class="md-nav__link">
+        Military
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Space/" class="md-nav__link">
+        🚀 Space
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Storage/" class="md-nav__link">
+        Storage
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TrueNAS/" class="md-nav__link">
+        TrueNAS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bittorrent/" class="md-nav__link">
+        BitTorrent
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cryptocurrency/" class="md-nav__link">
+        🪙 Cryptocurrency
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../learn/" class="md-nav__link">
+        Learning
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pins/" class="md-nav__link">
+        Lapel pin ideas
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_17" data-md-state="indeterminate" type="checkbox" id="__nav_7_17" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_17">
+          Text editors
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Text editors" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_17">
+          <span class="md-nav__icon md-icon"></span>
+          Text editors
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Text-editors/code/" class="md-nav__link">
+        VS Code
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_18" data-md-state="indeterminate" type="checkbox" id="__nav_7_18" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_18">
+          Web
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Web" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_18">
+          <span class="md-nav__icon md-icon"></span>
+          Web
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Web/" class="md-nav__link">
+        🌎 Web
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Web/CSS/" class="md-nav__link">
+        CSS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Web/mkdocs/" class="md-nav__link">
+        Mkdocs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_18_4" data-md-state="indeterminate" type="checkbox" id="__nav_7_18_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_18_4">
+          JavaScript
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="JavaScript" data-md-level="3">
+        <label class="md-nav__title" for="__nav_7_18_4">
+          <span class="md-nav__icon md-icon"></span>
+          JavaScript
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Web/JavaScript/" class="md-nav__link">
+        Axios
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Web/JavaScript/Express/" class="md-nav__link">
+        Express
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Web/JavaScript/React/" class="md-nav__link">
+        React
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Web/JavaScript/Web%20Components/" class="md-nav__link">
+        Web Components
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_19" type="checkbox" id="__nav_7_19" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_19">
+          Windows
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Windows" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_19">
+          <span class="md-nav__icon md-icon"></span>
+          Windows
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        Windows
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Active%20Directory/" class="md-nav__link">
+        Active Directory
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DNS-labs/" class="md-nav__link">
+        DNS labs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Hyper-V/" class="md-nav__link">
+        Hyper-V
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Labs/" class="md-nav__link">
+        Labs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          🐚 PowerShell
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        🐚 PowerShell
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#control-flow" class="md-nav__link">
+    Control flow
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variables" class="md-nav__link">
+    Variables
+  </a>
+  
+    <nav class="md-nav" aria-label="Variables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#typing" class="md-nav__link">
+    Typing
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hashtable" class="md-nav__link">
+    Hashtable
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentation" class="md-nav__link">
+    Documentation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#functions" class="md-nav__link">
+    Functions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remote-administration" class="md-nav__link">
+    Remote administration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing" class="md-nav__link">
+    Testing
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tasks" class="md-nav__link">
+    Tasks
+  </a>
+  
+    <nav class="md-nav" aria-label="Tasks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#download-files" class="md-nav__link">
+    Download files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#display-computer-name" class="md-nav__link">
+    Display computer name
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generate-password" class="md-nav__link">
+    Generate password
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#new-domain-controller" class="md-nav__link">
+    New domain controller
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#text-to-speech" class="md-nav__link">
+    Text-to-speech
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vhdx-file" class="md-nav__link">
+    VHDX file
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#restart-wi-fi-adapter" class="md-nav__link">
+    Restart Wi-Fi adapter
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-a-member-to-a-group" class="md-nav__link">
+    Add a member to a group
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-a-new-local-admin" class="md-nav__link">
+    Add a new local admin
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-secure-remoting-using-a-self-signed-certificate" class="md-nav__link">
+    Configure secure remoting using a self-signed certificate
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-virtual-switch-with-set-enabled" class="md-nav__link">
+    Create a virtual switch with SET enabled
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implement-nested-virtualization" class="md-nav__link">
+    Implement nested virtualization
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enable-credssp" class="md-nav__link">
+    Enable CredSSP
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-server-core" class="md-nav__link">
+    Configure Server Core
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-server-core-image" class="md-nav__link">
+    Update Server Core image
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implement-dda" class="md-nav__link">
+    Implement DDA
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-live-migration" class="md-nav__link">
+    Configure live migration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-s2d-cluster" class="md-nav__link">
+    Configure S2D cluster
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-docker-enterprise" class="md-nav__link">
+    Install Docker Enterprise
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#handle-xml-files" class="md-nav__link">
+    Handle XML files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-server-core-images" class="md-nav__link">
+    Update Server Core images
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pass-through-disk" class="md-nav__link">
+    Pass-through disk
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#site-aware-failover-cluster" class="md-nav__link">
+    Site-aware failover cluster
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filter-ad-account-information" class="md-nav__link">
+    Filter AD account information
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-vm-with-installation-media" class="md-nav__link">
+    Create VM with installation media
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#registry" class="md-nav__link">
+    Registry
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#winforms" class="md-nav__link">
+    WinForms
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modules" class="md-nav__link">
+    Modules
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sample-enumeration" class="md-nav__link">
+    Sample enumeration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#migrate-a-vm" class="md-nav__link">
+    Migrate a VM
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#storage-spaces-direct" class="md-nav__link">
+    Storage Spaces Direct
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scheduled-task" class="md-nav__link">
+    Scheduled task
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#network-connection-alert" class="md-nav__link">
+    Network connection alert
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../WDS-lab/" class="md-nav__link">
+        WDS lab
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../WS2016/" class="md-nav__link">
+        Windows Server
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../diskpart/" class="md-nav__link">
+        Diskpart
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" data-md-state="indeterminate" type="checkbox" id="__nav_8" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8">
+          Python
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Python" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Python
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Python/" class="md-nav__link">
+        🐍 Python
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_2" data-md-state="indeterminate" type="checkbox" id="__nav_8_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8_2">
+          Modules
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Modules" data-md-level="2">
+        <label class="md-nav__title" for="__nav_8_2">
+          <span class="md-nav__icon md-icon"></span>
+          Modules
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Python/Modules/Argparse/" class="md-nav__link">
+        Argparse
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Python/Modules/Asyncio/" class="md-nav__link">
+        Asyncio
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Python/Modules/Azure.cosmos/" class="md-nav__link">
+        Azure.cosmos
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Python/Modules/Bullet/" class="md-nav__link">
+        Bullet
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Python/Modules/Click/" class="md-nav__link">
+        Click
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Python/Modules/Collections/" class="md-nav__link">
+        Collections
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Python/Modules/Colorama/" class="md-nav__link">
+        Colorama
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Python/Modules/Csv/" class="md-nav__link">
+        Csv
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Python/Modules/Datetime/" class="md-nav__link">
+        Datetime
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Python/Modules/Discord_py/" class="md-nav__link">
+        discord.py
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Python/Modules/Django/" class="md-nav__link">
+        Django
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Python/Modules/Dotenv/" class="md-nav__link">
+        Dotenv
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Python/Modules/FastAPI/" class="md-nav__link">
+        FastAPI
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Python/Modules/Functools/" class="md-nav__link">
+        Functools
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Python/Modules/Glob/" class="md-nav__link">
+        Glob
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Python/Modules/Heapq/" class="md-nav__link">
+        Heapq
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Python/Modules/Http/" class="md-nav__link">
+        http
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Python/Modules/Itertools/" class="md-nav__link">
+        itertools
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Python/Modules/Json/" class="md-nav__link">
+        Json
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Python/Modules/Logging/" class="md-nav__link">
+        Logging
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Python/Modules/Npyscreen/" class="md-nav__link">
+        Npyscreen
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Python/Modules/Optparse/" class="md-nav__link">
+        optparse
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Python/Modules/Os/" class="md-nav__link">
+        os
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Python/Modules/Pygobject/" class="md-nav__link">
+        Pygobject
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Python/Modules/Pyinstaller/" class="md-nav__link">
+        Pyinstaller
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Python/Modules/Pythonnet/" class="md-nav__link">
+        pythonnet
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Python/Modules/Random/" class="md-nav__link">
+        random
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Python/Modules/Scrapy/" class="md-nav__link">
+        scrapy
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Python/Modules/Setuptools/" class="md-nav__link">
+        setuptools
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Python/Modules/Socket/" class="md-nav__link">
+        socket
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Python/Modules/Sqlite3/" class="md-nav__link">
+        sqlite3
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Python/Modules/Subprocess/" class="md-nav__link">
+        subprocess
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Python/Modules/Sys/" class="md-nav__link">
+        sys
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Python/Modules/Tabulate/" class="md-nav__link">
+        Tabulate
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Python/Modules/Termcolor/" class="md-nav__link">
+        termcolor
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Python/Modules/Threading/" class="md-nav__link">
+        threading
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Python/Modules/Weakref/" class="md-nav__link">
+        Weakref
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Python/Modules/Winrm/" class="md-nav__link">
+        Winrm
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Python/Modules/Xml/" class="md-nav__link">
+        xml
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Python/Modules/Yaml/" class="md-nav__link">
+        Yaml
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" data-md-state="indeterminate" type="checkbox" id="__nav_9" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9">
+          Rust
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Rust" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Rust
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Rust/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Rust/Cargo/" class="md-nav__link">
+        Cargo
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Rust/Combinators/" class="md-nav__link">
+        Combinators
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Rust/Crates/" class="md-nav__link">
+        Modules
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Rust/Error/" class="md-nav__link">
+        Error handling
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Rust/Glossary/" class="md-nav__link">
+        Glossary
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Rust/Scratchpad/" class="md-nav__link">
+        Scratchpad
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_8" data-md-state="indeterminate" type="checkbox" id="__nav_9_8" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9_8">
+          Crates
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Crates" data-md-level="2">
+        <label class="md-nav__title" for="__nav_9_8">
+          <span class="md-nav__icon md-icon"></span>
+          Crates
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Rust/Crates/Actix/" class="md-nav__link">
+        actix
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Rust/Crates/Clap/" class="md-nav__link">
+        clap
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Rust/Crates/Failure/" class="md-nav__link">
+        failure
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Rust/Crates/Gtk-rs/" class="md-nav__link">
+        gtk-rs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Rust/Crates/Rnd/" class="md-nav__link">
+        rnd
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Rust/Crates/Rocket/" class="md-nav__link">
+        Rocket
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Rust/Crates/Rusqlite/" class="md-nav__link">
+        rusqlite
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Rust/Crates/Serde/" class="md-nav__link">
+        serde
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Rust/Crates/Structopt/" class="md-nav__link">
+        structopt
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_8_10" data-md-state="indeterminate" type="checkbox" id="__nav_9_8_10" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9_8_10">
+          Cursive
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Cursive" data-md-level="3">
+        <label class="md-nav__title" for="__nav_9_8_10">
+          <span class="md-nav__icon md-icon"></span>
+          Cursive
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Rust/Crates/Cursive/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Rust/Crates/Cursive/API/" class="md-nav__link">
+        API
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Rust/Crates/Cursive/Tasks/" class="md-nav__link">
+        Tasks
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_8_11" data-md-state="indeterminate" type="checkbox" id="__nav_9_8_11" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9_8_11">
+          Diesel
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Diesel" data-md-level="3">
+        <label class="md-nav__title" for="__nav_9_8_11">
+          <span class="md-nav__icon md-icon"></span>
+          Diesel
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Rust/Crates/Diesel/" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Rust/Crates/Diesel/Tasks/" class="md-nav__link">
+        Tasks
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_9" data-md-state="indeterminate" type="checkbox" id="__nav_9_9" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9_9">
+          Tasks
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Tasks" data-md-level="2">
+        <label class="md-nav__title" for="__nav_9_9">
+          <span class="md-nav__icon md-icon"></span>
+          Tasks
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Rust/Tasks/" class="md-nav__link">
+        Boilerplate
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Rust/Tasks/Hello-World/" class="md-nav__link">
+        Hello, World!
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Rust/Tasks/Mathematics/" class="md-nav__link">
+        Mathematics
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Rust/Tasks/Porting-grep/" class="md-nav__link">
+        grep ports
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Rust/Tasks/To-Do/" class="md-nav__link">
+        To-Do
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Rust/Tasks/Transactions/" class="md-nav__link">
+        Transactions
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" data-md-state="indeterminate" type="checkbox" id="__nav_10" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_10">
+          Scripts
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Scripts" data-md-level="1">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          Scripts
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Scripts/" class="md-nav__link">
+        Video scripts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Scripts/Anki/" class="md-nav__link">
+        Anki
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Scripts/CSharp/" class="md-nav__link">
+        CSharp
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Scripts/Django/" class="md-nav__link">
+        Django
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Scripts/Kusto/" class="md-nav__link">
+        Kusto
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Scripts/Rust/" class="md-nav__link">
+        Rust
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Scripts/SQLite/" class="md-nav__link">
+        SQLite
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10_8" data-md-state="indeterminate" type="checkbox" id="__nav_10_8" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_10_8">
+          Discord
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Discord" data-md-level="2">
+        <label class="md-nav__title" for="__nav_10_8">
+          <span class="md-nav__icon md-icon"></span>
+          Discord
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Scripts/Discord/Discord.article/" class="md-nav__link">
+        Discord.article
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Scripts/Discord/Discord/" class="md-nav__link">
+        Discord
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="powershell">🐚 PowerShell</h1>
+<h2 id="control-flow">Control flow</h2>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">if</label><label for="__tabbed_1_2">switch</label><label for="__tabbed_1_3">while</label><label for="__tabbed_1_4">do while</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="p">(</span><span class="nv">$condition</span><span class="p">)</span> 
+<span class="p">{</span>
+    <span class="c"># ...</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="k">switch</span> <span class="p">(</span><span class="nv">$reference</span><span class="p">)</span> 
+<span class="p">{</span>
+    <span class="nv">$value1</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span>
+    <span class="nv">$value2</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="nv">$Values</span> <span class="p">=</span> <span class="k">while</span> <span class="p">(</span><span class="nv">$true</span><span class="p">)</span> 
+<span class="p">{</span>
+    <span class="p">(++</span><span class="nv">$Tick</span><span class="p">)</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nv">$Tick</span> <span class="o">-gt</span> <span class="n">2</span><span class="p">)</span> 
+    <span class="p">{</span> 
+        <span class="k">break</span> 
+    <span class="p">}</span> 
+<span class="p">}</span> <span class="c"># =&gt; @(1,2,3)</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="nv">$Values</span> <span class="p">=</span> <span class="k">do</span> 
+<span class="p">{</span> 
+    <span class="s1">&#39;Hello, world!&#39;</span> 
+<span class="p">}</span> <span class="k">while</span> <span class="p">(</span><span class="nv">$false</span><span class="p">)</span> <span class="c"># =&gt; @(&#39;Hello, world!&#39;)</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<p>Loops are implemented with <code>ForEach-Object</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="n">1</span><span class="p">..</span><span class="n">5</span> <span class="p">|</span> <span class="k">ForEach</span><span class="n">-Object</span> <span class="p">{</span><span class="nv">$_</span> <span class="p">+</span> <span class="n">2</span><span class="p">}</span> <span class="c"># =&gt; @(3,4,5,6,7)</span>
+</code></pre></div>
+<p>When values are stored in a variable at the end of a pipeline, it will create an array. <code>while</code> and <code>do while</code> loops are available, as well as <code>until</code> and <code>do until</code> loops which operate so long as their condition is <strong>false</strong>.</p>
+<h2 id="variables">Variables</h2>
+<p>Variables are accessed by prefixing the identifier with <code>$</code>.</p>
+<ul>
+<li><a href="#automatic-variables" title="Automatic variable&#10;Variables that store state information for PowerShell and are created and maintained by Powershell."><strong>Automatic variables</strong></a> (<code>PSVersionTable</code>, <code>$IsLinux</code>, etc) are PowerShell-specific.</li>
+<li>
+<p>Windows environment variables are actually accessed through the <strong><code>Env</code></strong> virtual drive the syntax <code>$Env:VARIABLE</code>.</p>
+</li>
+<li>
+<p><a href="#variables" title="```&#10;[PS] Write-Host $Env:APPDATA&#10;```&#10;The file-system directory that serves as a common repository for application-specific data (i.e. &quot;C:\Users\jsmith\AppData\Roaming&quot;)."><code>APPDATA</code></a></p>
+</li>
+<li><a href="#variables" title="```&#10;[PS] Write-Host $Env:LOCALAPPDATA&#10;```&#10;The file-system directory that serves as a data repository for local, non-roaming applications (i.e. &quot;C:\Users\jsmith\AppData\Local&quot;)."><code>LOCALAPPDATA</code></a> </li>
+<li><a href="#variables" title="```&#10;[PS] Write-Host $Env:USERNAME&#10;```&#10;Name of current user (i.e. &quot;jsmith&quot;)."><code>USERNAME</code></a> </li>
+<li><a href="#variables" title="```&#10;[PS] Write-Host $Env:USERPROFILE&#10;```&#10;Location of profile directory of current user (i.e. &quot;C:\Users\jsmith&quot;)"><code>USERPROFILE</code></a> </li>
+<li><a href="#variables" title="```&#10;[PS] Write-Host $Env:WINDIR&#10;```&#10;Windows folder in the system drive"><code>WINDIR</code></a></li>
+</ul>
+<h3 id="typing">Typing</h3>
+<p>Variables can be typed by preceding their identifier with the datatype in brackets
+<div class="highlight"><pre><span></span><code><span class="no">[double]</span><span class="nv">$Price</span>
+<span class="no">[int]</span><span class="nv">$Quantity</span>
+<span class="no">[string]</span><span class="nv">$Description</span>
+</code></pre></div></p>
+<p>Compatible data can be <strong>cast</strong> or converted by simply specifying the type in an assignment, but when the data cannot be converted the interpreter will throw an error.</p>
+<div class="highlight"><pre><span></span><code><span class="nv">$Number</span> <span class="p">=</span> <span class="no">[int]</span><span class="s1">&#39;04&#39;</span>
+<span class="nv">$FailedCast</span> <span class="p">=</span> <span class="no">[int]</span><span class="s1">&#39;Hello&#39;</span>
+</code></pre></div>
+<p>Filtering results can be done with 5 commands:</p>
+<ul>
+<li><code>Where-Object</code> (aliased to <code>where</code> and <code>?</code>): the most commonly used such command</li>
+<li><code>Select-Object</code> (aliased to <code>sc</code>ed to specify specific columns of information to be displayed</li>
+<li><code>Select-String</code> (aliased to <code>sls</code>)</li>
+<li><code>ForEach-Object</code> (aliased to <code>foreach</code> and <code>%</code>) There are two different ways to construct a <code>ForEach-Object</code> statement:<ol>
+<li><strong>Script block</strong>, within which the variable <code>$_</code> represents the current object</li>
+<li><strong>Operation statement</strong>, more naturalistic, where you specify a property value or call a method.</li>
+</ol>
+</li>
+</ul>
+<h3 id="hashtable">Hashtable</h3>
+<p>Build a <strong>hash table</strong> using literals or the <code>Add</code> method</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Literal</label><label for="__tabbed_2_2">Literal (inline)</label><label for="__tabbed_2_3">Add</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="nv">$fruit</span> <span class="p">=</span> <span class="p">@{</span>
+    <span class="n">Apple</span> <span class="p">=</span> <span class="s1">&#39;red&#39;</span>
+    <span class="n">Orange</span> <span class="p">=</span> <span class="s1">&#39;orange&#39;</span>
+    <span class="n">Eggplant</span> <span class="p">=</span> <span class="s1">&#39;purple&#39;</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="nv">$fruit</span> <span class="p">=</span> <span class="p">@{</span> <span class="n">Apple</span> <span class="p">=</span> <span class="s1">&#39;red&#39;</span><span class="p">;</span> <span class="n">Orange</span> <span class="p">=</span> <span class="s1">&#39;orange&#39;</span><span class="p">;</span> <span class="n">Eggplant</span> <span class="p">=</span> <span class="s1">&#39;purple&#39;</span> <span class="p">}</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="nv">$fruit</span> <span class="p">=</span> <span class="p">@{}</span>
+<span class="nv">$fruit</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="s1">&#39;Apple&#39;</span><span class="p">,</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+<span class="nv">$fruit</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="s1">&#39;Orange&#39;</span><span class="p">,</span><span class="s1">&#39;orange&#39;</span><span class="p">)</span>
+<span class="nv">$fruit</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="s1">&#39;Kiwi&#39;</span><span class="p">,</span><span class="s1">&#39;green&#39;</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<p>Hashtable methods</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:6"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><input id="__tabbed_3_3" name="__tabbed_3" type="radio" /><input id="__tabbed_3_4" name="__tabbed_3" type="radio" /><input id="__tabbed_3_5" name="__tabbed_3" type="radio" /><input id="__tabbed_3_6" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Add</label><label for="__tabbed_3_2">Clone</label><label for="__tabbed_3_3">Keys</label><label for="__tabbed_3_4">Values</label><label for="__tabbed_3_5">Count</label><label for="__tabbed_3_6">Remove</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="nv">$fruit</span> <span class="p">=</span> <span class="p">@{}</span>
+<span class="nv">$fruit</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="s1">&#39;Apple&#39;</span><span class="p">,</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+<span class="nv">$fruit</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="s1">&#39;Orange&#39;</span><span class="p">,</span><span class="s1">&#39;orange&#39;</span><span class="p">)</span>
+<span class="nv">$fruit</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="s1">&#39;Kiwi&#39;</span><span class="p">,</span><span class="s1">&#39;green&#39;</span><span class="p">)</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="c"># Deep copy or &quot;clone&quot; of a hashtable.</span>
+<span class="nv">$fruitclone</span> <span class="p">=</span> <span class="nv">$fruit</span><span class="p">.</span><span class="n">Clone</span><span class="p">()</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="nv">$fruit</span><span class="p">.</span><span class="n">Keys</span> <span class="c"># =&gt; @(&#39;Apple&#39;,&#39;Orange&#39;,&#39;Kiwi&#39;)</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="nv">$fruit</span><span class="p">.</span><span class="n">Values</span> <span class="c"># =&gt; @(&#39;red&#39;,&#39;orange&#39;,&#39;green&#39;)</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="nv">$fruit</span><span class="p">.</span><span class="n">Count</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="nv">$fruit</span><span class="p">.</span><span class="n">Remove</span><span class="p">(</span><span class="s1">&#39;One&#39;</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<p>Unlike Python, a hash table can be made ordered, changing its data type:</p>
+<div class="highlight"><pre><span></span><code><span class="nv">$fruit</span> <span class="p">=</span> <span class="no">[ordered]</span><span class="p">@{</span> <span class="n">Apple</span> <span class="p">=</span> <span class="s1">&#39;red&#39;</span><span class="p">;</span> <span class="n">Orange</span> <span class="p">=</span> <span class="s1">&#39;orange&#39;</span><span class="p">;</span> <span class="n">Eggplant</span> <span class="p">=</span> <span class="s1">&#39;purple&#39;</span> <span class="p">}</span>
+<span class="nv">$fruit</span><span class="p">.</span><span class="n">GetType</span><span class="p">().</span><span class="n">Name</span> <span class="c"># =&gt; OrderedDictionary</span>
+</code></pre></div>
+<h2 id="documentation">Documentation</h2>
+<p>Single-line comments are preceded by <code>#</code> and block quotes are enclosed between <code>&lt;#</code> and <code>#&gt;</code>.
+Such a block comment will be parsed by PowerShell when running <code>Get-Help</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="cm">&lt;#</span>
+<span class="sd">.SYNOPSIS</span><span class="cm"></span>
+<span class="cm">This script coordinates the process of creating new employees</span>
+
+<span class="sd">.DESCRIPTION</span><span class="cm"></span>
+<span class="cm">This script creates new users in Active Directory...</span>
+
+<span class="sd">.PARAMETER</span><span class="cm"> UserName</span>
+<span class="cm">The official logon name for the user...</span>
+
+<span class="sd">.PARAMETER</span><span class="cm"> HomeServer</span>
+<span class="cm">The server name where the user&#39;s home folder will live...</span>
+<span class="cm">#&gt;</span>
+
+<span class="cm">&lt;#</span>
+<span class="sd">.EXAMPLE</span><span class="cm"></span>
+<span class="cm">New-CorpEmployee -UserName John-Doe -HomeServer HOMESERVER1</span>
+<span class="cm">This example creates a single new employee...</span>
+<span class="cm">#&gt;</span>
+</code></pre></div>
+<h2 id="functions">Functions</h2>
+<p>Functions are declared with the <code>function</code> keyword and the body in braces, following this syntax:</p>
+<div class="highlight"><pre><span></span><code><span class="k">function</span> <span class="n">Verb-Noun</span>
+<span class="p">{</span>
+    <span class="c"># ...</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Positional parameters</strong> can be referenced using the <code>$args</code> array, which contains all arguments passed to the function on invocation.</p>
+<p><strong>Named parameters</strong> can be declared in one of two ways. </p>
+<ul>
+<li>Within the function body using the <code>param</code> keyword, followed by the name of the variable representing the parameter's value, enclosed in <code>$(...)</code>:</li>
+<li>Directly after the function name in parentheses, with each parameter separated by a comma.</li>
+</ul>
+<p>The name of the variable becomes the named parameter used when invoking the function.
+Default values for parameters can be specified by placing them within the parentheses.</p>
+<p>Parameters can be made mandatory by preceding the parameter name with <code>[Parameter(Mandatory=$true)]</code>. 
+Parameters can be static typed by preceding the parameter identifier with the data type in brackets.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:6"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><input id="__tabbed_4_3" name="__tabbed_4" type="radio" /><input id="__tabbed_4_4" name="__tabbed_4" type="radio" /><input id="__tabbed_4_5" name="__tabbed_4" type="radio" /><input id="__tabbed_4_6" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Positional parameter</label><label for="__tabbed_4_2">Named parameter</label><label for="__tabbed_4_3">Using param</label><label for="__tabbed_4_4">Default value</label><label for="__tabbed_4_5">Typed</label><label for="__tabbed_4_6">Invocation</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="k">function</span> <span class="nb">Get-LargeFiles</span> 
+<span class="p">{</span>
+    <span class="nb">Get-ChildItem</span> <span class="n">C</span><span class="p">:\</span><span class="n">Users</span><span class="p">\</span><span class="n">Michael</span><span class="p">\</span><span class="n">Documents</span> <span class="p">|</span>
+        <span class="nb">where </span><span class="p">{</span><span class="nv">$_</span><span class="p">.</span><span class="n">Length</span> <span class="o">-gt</span> <span class="nv">$args</span><span class="p">[</span><span class="n">0</span><span class="p">]</span> <span class="n">and</span> <span class="p">!</span><span class="nv">$_PSIscontainer</span><span class="p">}</span> <span class="p">|</span>
+        <span class="nb">Sort-Object</span> <span class="n">Length</span> <span class="n">-Descending</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="k">function</span> <span class="nb">Get-LargeFiles</span><span class="p">(</span><span class="nv">$Size</span><span class="p">)</span> 
+<span class="p">{</span>
+    <span class="c"># param ($Size)</span>
+    <span class="nb">Get-ChildItem</span> <span class="n">C</span><span class="p">:\</span><span class="n">Users</span><span class="p">\</span><span class="n">Michael</span><span class="p">\</span><span class="n">Documents</span> <span class="p">|</span>
+        <span class="nb">where </span><span class="p">{</span><span class="nv">$_</span><span class="p">.</span><span class="n">Length</span> <span class="o">-gt</span> <span class="nv">$Size</span> <span class="o">-and</span> <span class="p">!</span><span class="nv">$_</span><span class="p">.</span><span class="n">PSIsContainer</span><span class="p">}</span> <span class="p">|</span>
+        <span class="nb">Sort-Object</span> <span class="n">Length</span> <span class="n">-Descending</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="k">function</span> <span class="nb">Get-LargeFiles</span> 
+<span class="p">{</span>
+    <span class="k">param</span> <span class="p">(</span><span class="nv">$Size</span><span class="p">)</span>
+    <span class="nb">Get-ChildItem</span> <span class="n">C</span><span class="p">:\</span><span class="n">Users</span><span class="p">\</span><span class="n">Michael</span><span class="p">\</span><span class="n">Documents</span> <span class="p">|</span>
+        <span class="nb">where </span><span class="p">{</span><span class="nv">$_</span><span class="p">.</span><span class="n">Length</span> <span class="o">-gt</span> <span class="nv">$Size</span> <span class="o">-and</span> <span class="p">!</span><span class="nv">$_</span><span class="p">.</span><span class="n">PSIsContainer</span><span class="p">}</span> <span class="p">|</span>
+        <span class="nb">Sort-Object</span> <span class="n">Length</span> <span class="n">-Descending</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="k">function</span> <span class="nb">Get-LargeFiles</span> 
+<span class="p">{</span>
+    <span class="k">param</span> <span class="p">(</span><span class="nv">$Size</span><span class="p">=</span><span class="n">2000</span><span class="p">)</span>
+    <span class="nb">Get-ChildItem</span> <span class="n">C</span><span class="p">:\</span><span class="n">Users</span><span class="p">\</span><span class="n">Michael</span><span class="p">\</span><span class="n">Documents</span> <span class="p">|</span>
+        <span class="nb">where </span><span class="p">{</span><span class="nv">$_</span><span class="p">.</span><span class="n">Length</span> <span class="o">-gt</span> <span class="nv">$Size</span> <span class="o">-and</span> <span class="p">!</span><span class="nv">$_</span><span class="p">.</span><span class="n">PSIsContainer</span><span class="p">}</span> <span class="p">|</span>
+        <span class="nb">Sort-Object</span> <span class="n">Length</span> <span class="n">-Descending</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="k">function</span> <span class="nb">Get-LargeFiles</span> 
+<span class="p">{</span>
+    <span class="k">param</span> <span class="p">(</span><span class="no">[int]</span><span class="nv">$Size</span><span class="p">=</span><span class="n">2000</span><span class="p">)</span>
+    <span class="nb">Get-ChildItem</span> <span class="n">C</span><span class="p">:\</span><span class="n">Users</span><span class="p">\</span><span class="n">Michael</span><span class="p">\</span><span class="n">Documents</span> <span class="p">|</span>
+        <span class="nb">where </span><span class="p">{</span><span class="nv">$_</span><span class="p">.</span><span class="n">Length</span> <span class="o">-gt</span> <span class="nv">$Size</span> <span class="o">-and</span> <span class="p">!</span><span class="nv">$_</span><span class="p">.</span><span class="n">PSIsContainer</span><span class="p">}</span> <span class="p">|</span>
+        <span class="nb">Sort-Object</span> <span class="n">Length</span> <span class="n">-Descending</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="nb">Get-LargeFiles</span> <span class="n">-Size</span> <span class="n">2000</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<p><strong>Switch parameters</strong> are typed as a <strong><code>switch</code></strong> data type.
+Boolean values can be explicitly set upon invocation using this syntax:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">Switch-Item</label><label for="__tabbed_5_2">Invocation</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="k">function</span> <span class="k">Switch</span><span class="n">-Item</span> 
+<span class="p">{</span>
+    <span class="k">param</span> <span class="p">(</span><span class="no">[switch]</span><span class="nv">$on</span><span class="p">)</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nv">$on</span><span class="p">)</span> <span class="p">{</span> <span class="s2">&quot;Switch on&quot;</span> <span class="p">}</span>
+    <span class="k">else</span> <span class="p">{</span> <span class="s2">&quot;Switch off&quot;</span> <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="k">Switch</span><span class="n">-Item</span>             <span class="c"># =&gt; Switch off</span>
+<span class="k">Switch</span><span class="n">-Item</span> <span class="n">-On</span>         <span class="c"># =&gt; Switch on</span>
+<span class="k">Switch</span><span class="n">-Item</span> <span class="n">-On</span><span class="p">:</span><span class="nv">$false</span>  <span class="c"># =&gt; Switch off</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<p>Attach common parameters to a custom function by placing the <code>[CmdletBinding()]</code> within the body of a function. 
+This allows use of options like <code>-Verbose</code> or <code>-Debug</code> with custom functions.
+Now, using <code>Write-Verbose</code> and <code>Write-Debug</code> within the function body serve the dual purpose of outputting additional information at the time of execution, when needed, as well as documentation.</p>
+<h2 id="remote-administration">Remote administration</h2>
+<p>Powershell <a href="#" title="remoting&#10;term applied to the use of WinRM in Powershell over port 5985 (or 5986 for HTTPS)">remoting</a> can be done <a href="#" title="explicit remoting&#10;opening a temporary or persistent Powershell session to a remote system&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 176"><strong>explicitly</strong></a> or <a href="#" title="implicit remoting&#10;running a cmdlet specifying the `ComputerName` parameter, which directs its function to the remote system&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 177"><strong>implicitly</strong></a>.
+Remoting relies on <a href="#" title="Windows Remote Management (WinRM)&#10;Microsoft implementation of the WSMAN protocol, which handles communications and authentication for connections for many applications.&#10;Unlike MMCs, which are based on DCOM (legacy technology), WinRM is considered firewall-friendly and is the preferred option">WinRM</a>, which is Microsoft's implementation of WSMAN.</p>
+<ul>
+<li>Explicit remoting is also 1-to-1 remoting, where an interactive Powershell prompt is brought up on a remote computer.</li>
+<li>One-to-many or fan-out remoting is possible with implicit remoting, where a command is transmitted to many computers.</li>
+</ul>
+<h2 id="testing">Testing</h2>
+<p><a href="https://pester.dev/docs/quick-start"><strong>Pester</strong></a> tests are organized in a hierarchy of blocks and run with <a href="https://www.red-gate.com/simple-talk/sysadmin/powershell/introduction-to-testing-your-powershell-code-with-pester/"><code>Invoke-Pester</code></a>:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Describe</span>
+<span class="p">{</span>
+  <span class="n">Context</span> <span class="c"># optional</span>
+  <span class="p">{</span>
+    <span class="n">It</span>
+    <span class="p">{</span>
+      <span class="n">Should</span> <span class="c"># assertion statements accept a value passed in via pipe and **must** be called within a `Describe` block</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nb">New-Fixture</span> <span class="n">deploy</span> <span class="n">Foo</span>
+
+<span class="k">function</span> <span class="n">Foo</span> 
+<span class="p">{</span>
+  <span class="c"># ...</span>
+<span class="p">}</span>
+
+<span class="n">Describe</span> <span class="s1">&#39;Foo&#39;</span> 
+<span class="p">{</span>
+    <span class="nv">$true</span> <span class="p">|</span> <span class="n">Should</span> <span class="n">-Be</span> <span class="nv">$true</span> 
+<span class="p">}</span>
+</code></pre></div>
+<p>The block in braces is actually an argument pass to the <code>-Fixture</code> parameter.</p>
+<div class="highlight"><pre><span></span><code><span class="n">Describe</span> <span class="s2">&quot;Best airports in the USA&quot;</span> <span class="n">-Fixture</span> 
+<span class="p">{</span>
+    <span class="n">It</span> <span class="n">-Name</span> <span class="s2">&quot;RDU is one of the best airports&quot;</span> <span class="n">-Test</span> 
+    <span class="p">{</span>
+        <span class="nv">$Output</span> <span class="p">=</span> <span class="nb">Get-Airport</span> <span class="n">-City</span> <span class="s2">&quot;Raleigh&quot;</span>
+        <span class="nv">$Output</span> <span class="p">|</span> <span class="n">Should</span> <span class="n">-BeOfType</span> <span class="n">System</span><span class="p">.</span><span class="n">Collections</span><span class="p">.</span><span class="n">Hashtable</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="tasks">Tasks</h2>
+<h4 id="download-files">Download files</h4>
+<p>URIs and filenames are built up as formatted strings</p>
+<div class="highlight"><pre><span></span><code><span class="n">1</span><span class="p">..</span><span class="n">24</span> <span class="p">|</span> <span class="k">ForEach</span><span class="n">-Object</span> <span class="p">{</span>
+    <span class="nb">Invoke-WebRequest</span> <span class="n">-OutFile</span> <span class="p">(</span><span class="s2">&quot;TGC_3466_Lect{0:d2}_FallPagansOriginsMedievalChristianity.m4v&quot;</span> <span class="o">-f</span> <span class="nv">$_</span><span class="p">)</span> <span class="p">(</span><span class="s2">&quot;https://securedownloads.teach12.com/anon.eastbaymedia-drm/courses/3466/m4v/TGC_3466_Lect{0:d2}_FallPagansOriginsMedievalChristianity.m4v?userid=$USERID&amp;orderid=$ORDERID&amp;courseid=$COURSEID&amp;FName=TGC_3466_Lect{0:d2}_FallPagansOriginsMedievalChristianity&quot;</span> <span class="o">-f</span> <span class="nv">$_</span><span class="p">)}</span>
+</code></pre></div>
+<h4 id="display-computer-name">Display computer name</h4>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">Cmdlet</label><label for="__tabbed_6_2"><code>$Env</code></label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="nb">Get-ComputerInfo</span> <span class="n">-Property</span> <span class="n">CsName</span>
+<span class="n">gin</span><span class="p">.</span><span class="n">CsName</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="nv">$Env:computername</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<h4 id="generate-password">Generate password</h4>
+<p>Generate a random password 20 characters long (<a href="https://adamtheautomator.com/powershell-random-password/">src</a>)</p>
+<div class="highlight"><pre><span></span><code><span class="nb">Add-Type</span> <span class="n">-AssemblyName</span> <span class="s1">&#39;System.Web&#39;</span>
+<span class="no">[System.Web.Security.Membership]</span><span class="p">::</span><span class="n">GeneratePassword</span><span class="p">(</span><span class="n">20</span><span class="p">,</span> <span class="n">3</span><span class="p">)</span>
+</code></pre></div>
+<p>Store credential</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="7:2"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">Interactive</label><label for="__tabbed_7_2">Cmdlet</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="nv">$cred</span> <span class="p">=</span> <span class="nb">Get-Credential</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="nv">$pw</span> <span class="p">=</span> <span class="nb">ConvertTo-SecureString</span> <span class="s2">&quot;Password&quot;</span> <span class="n">-AsPlainText</span> <span class="n">-Force</span>
+<span class="nv">$cred</span> <span class="p">=</span> <span class="nb">New-Object</span> <span class="n">System</span><span class="p">.</span><span class="n">Management</span><span class="p">.</span><span class="n">Automation</span><span class="p">.</span><span class="n">PSCredential</span> <span class="p">(</span><span class="s2">&quot;FullerP&quot;</span><span class="p">,</span> <span class="nv">$pw</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<p>Create a new file in the current working directory named <code>filename</code></p>
+<div class="highlight"><pre><span></span><code><span class="nb">New-Item</span> <span class="n">-ItemType</span> <span class="n">File</span> <span class="n">-Name</span> <span class="n">filename</span>
+</code></pre></div>
+<p>Append <code>content</code> to <code>file</code></p>
+<div class="highlight"><pre><span></span><code><span class="nb">Add-Content</span> <span class="n">C</span><span class="p">:\</span><span class="n">path</span><span class="p">\</span><span class="n">to</span><span class="p">\</span><span class="n">file</span> <span class="nv">$content</span>
+</code></pre></div>
+<h4 id="new-domain-controller">New domain controller</h4>
+<p>[Jones][Jones]
+<div class="highlight"><pre><span></span><code><span class="nb">Install-WindowsFeature</span> <span class="n">AD-Domain-Services</span><span class="p">,</span><span class="n">DHCP</span> <span class="n">-IncludeManagementTools</span>
+<span class="nb">Install-ADDSForest</span> <span class="n">-DomainName</span> <span class="n">corp</span><span class="p">.</span><span class="n">packtlab</span><span class="p">.</span><span class="n">com</span>
+<span class="nb">Add-DhcpServerv4Scope</span> <span class="n">-Name</span> <span class="s2">&quot;PacktLabNet&quot;</span> <span class="n">-StartRange</span> <span class="n">10</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">50</span> <span class="n">-EndRange</span> <span class="n">10</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">100</span> <span class="n">-SubnetMask</span> <span class="n">255</span><span class="p">.</span><span class="n">255</span><span class="p">.</span><span class="n">255</span><span class="p">.</span><span class="n">0</span>
+<span class="nb">Set-DhcpServerv4OptionValue</span> <span class="n">-DnsDomain</span> <span class="n">corp</span><span class="p">.</span><span class="n">packtlab</span><span class="p">.</span><span class="n">com</span>
+<span class="nb">Add-DhcpServerInDC</span> <span class="n">-DnsName</span> <span class="n">dc</span><span class="p">.</span><span class="n">corp</span><span class="p">.</span><span class="n">packtlab</span><span class="p">.</span><span class="n">com</span>
+<span class="nb">New-AdUser</span> <span class="n">-SamAccountName</span> <span class="n">SysAdmin</span> <span class="n">-AccountPassword</span> <span class="p">(</span><span class="nb">Read-Host</span> <span class="s2">&quot;Set user password&quot;</span> <span class="n">-AsSecureString</span><span class="p">)</span> <span class="n">-Name</span> <span class="s2">&quot;SysAdmin&quot;</span> <span class="n">-Enabled</span> <span class="nv">$true</span> <span class="n">-PasswordNeverExpires</span> <span class="nv">$true</span> <span class="n">-ChangePasswordAtLogon</span> <span class="nv">$false</span>
+<span class="nb">Add-ADPrincipalGroupMembership</span> <span class="n">-Identity</span> <span class="s2">&quot;CN=SysAdmin,CN=Users,DC=corp,DC=packtlab,DC=com&quot;</span><span class="p">,</span><span class="s2">&quot;CN=Domain Admins,CN=Users,DC=corp,DC=packtlab,DC=com&quot;</span>
+<span class="nb">Get-ADPrincipalGroupMembership</span> <span class="n">sysadmin</span>
+</code></pre></div></p>
+<h4 id="text-to-speech">Text-to-speech</h4>
+<p>Initialize text-to-speech object <a href="https://www.scriptinglibrary.com/languages/powershell/powershell-text-to-speech/" title="Powershell: Text To Speech in 3 lines of code">scriptinglibrary.com</a>
+<div class="highlight"><pre><span></span><code><span class="nb">Add-Type</span> <span class="err">–</span><span class="n">AssemblyName</span> <span class="n">System</span><span class="p">.</span><span class="n">Speech</span>
+<span class="nv">$tts</span> <span class="p">=</span> <span class="nb">New-Object</span> <span class="err">–</span><span class="n">TypeName</span> <span class="n">System</span><span class="p">.</span><span class="n">Speech</span><span class="p">.</span><span class="n">Synthesis</span><span class="p">.</span><span class="n">SpeechSynthesizer</span>
+<span class="nv">$tts</span><span class="p">.</span><span class="n">Speak</span><span class="p">(</span><span class="s1">&#39;Hello, World!&#39;</span><span class="p">)</span>
+</code></pre></div>
+List available voices
+<div class="highlight"><pre><span></span><code><span class="k">Foreach</span> <span class="p">(</span><span class="nv">$voice</span> <span class="k">in</span> <span class="nv">$SpeechSynthesizer</span><span class="p">.</span><span class="n">GetInstalledVoices</span><span class="p">()){</span>
+    <span class="nv">$Voice</span><span class="p">.</span><span class="n">VoiceInfo</span> <span class="p">|</span> <span class="nb">Select-Object</span> <span class="n">Gender</span><span class="p">,</span> <span class="n">Name</span><span class="p">,</span> <span class="n">Culture</span><span class="p">,</span> <span class="n">Description</span>
+<span class="p">}</span>
+</code></pre></div>
+Change voice
+<div class="highlight"><pre><span></span><code><span class="nv">$tts</span><span class="p">.</span><span class="n">SelectVoice</span><span class="p">(</span><span class="s2">&quot;Microsoft Zira Desktop&quot;</span><span class="p">)</span>
+<span class="nv">$tts</span><span class="p">.</span><span class="n">Speak</span><span class="p">(</span><span class="s1">&#39;Hello, World!&#39;</span><span class="p">)</span>
+</code></pre></div>
+Set output to WAV file <a href="https://thinkpowershell.com/create-cortana-audio-files-from-text-using-powershell/" title="Create Cortana Audio Files From Text Using PowerShell">thinkpowershell.com</a>
+<div class="highlight"><pre><span></span><code><span class="nv">$WavFileOut</span> <span class="p">=</span> <span class="nb">Join-Path</span> <span class="n">-Path</span> <span class="nv">$env:USERPROFILE</span> <span class="n">-ChildPath</span> <span class="s2">&quot;Desktop\thinkpowershell-demo.wav&quot;</span>
+<span class="nv">$SpeechSynthesizer</span><span class="p">.</span><span class="n">SetOutputToWaveFile</span><span class="p">(</span><span class="nv">$WavFileOut</span><span class="p">)</span>
+</code></pre></div></p>
+<h4 id="vhdx-file">VHDX file</h4>
+<p>Create a new 256 GB dynamic <a href="#" title="VHDX&#10;Newer hard disk image format and file name extension.&#10;VHDX image files can be as large as 64 TB, and they also support 4 KB logical sector sizes to provide compatibility with 4 KB native drives. VHDX files can be read only by servers running Windows Server 2012 or later or workstations running Windows 8 or later.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 88">VHDX</a> file, mount it, initialize it, and create and format the partition [Zacker][Zacker]: 91
+<div class="highlight"><pre><span></span><code><span class="nb">New-VHD</span> <span class="n">-Path</span> <span class="n">C</span><span class="p">:\</span><span class="n">Data</span><span class="p">\</span><span class="n">disk1</span><span class="p">.</span><span class="n">vhdx</span> <span class="n">-SizeBytes</span> <span class="n">256GB</span> <span class="n">-Dynamic</span> <span class="p">|</span> 
+<span class="nb">Mount-VHD</span> <span class="n">-Passthru</span> <span class="p">|</span>
+<span class="nb">Initialize-Disk</span> <span class="n">-PassThru</span> <span class="p">|</span>
+<span class="nb">New-Partition</span> <span class="n">-DriveLetter</span> <span class="n">X</span> <span class="n">-UseMaximumSize</span> <span class="p">|</span> 
+<span class="nb">Format-Volume</span> <span class="n">-Filesystem</span> <span class="n">ntfs</span> <span class="n">-FileSystemLabel</span> <span class="n">data1</span> <span class="n">-Confirm</span><span class="p">:</span><span class="nv">$False</span> <span class="n">-Force</span>
+</code></pre></div></p>
+<h4 id="restart-wi-fi-adapter">Restart Wi-Fi adapter</h4>
+<div class="highlight"><pre><span></span><code><span class="nv">$adaptor</span> <span class="p">=</span> <span class="nb">Get-WmiObject</span> <span class="n">-Class</span> <span class="n">Win32_NetworkAdapter</span> <span class="p">|</span> <span class="nb">Where-Object</span> <span class="p">{</span><span class="nv">$_</span><span class="p">.</span><span class="n">Name</span> <span class="o">-like</span> <span class="s2">&quot;*Wireless*&quot;</span><span class="p">}</span>
+<span class="nv">$adaptor</span><span class="p">.</span><span class="n">Disable</span><span class="p">()</span>
+<span class="nv">$adaptor</span><span class="p">.</span><span class="n">Enable</span><span class="p">()</span>
+</code></pre></div>
+<h4 id="add-a-member-to-a-group">Add a member to a group</h4>
+<div class="highlight"><pre><span></span><code><span class="nb">Add-ADGroupMember</span> <span class="n">-Identity</span> <span class="nv">$group</span> <span class="n">-Members</span> <span class="nv">$user1</span><span class="p">,</span><span class="nv">$user2</span>
+</code></pre></div>
+<h4 id="add-a-new-local-admin">Add a new local admin</h4>
+<div class="highlight"><pre><span></span><code><span class="n">nlu</span> <span class="n">ansible</span>
+<span class="nb">Add-LocalGroupMember</span> <span class="n">Administrators</span> <span class="n">ansible</span>
+</code></pre></div>
+<h4 id="configure-secure-remoting-using-a-self-signed-certificate">Configure secure remoting using a self-signed certificate</h4>
+<h4 id="create-a-virtual-switch-with-set-enabled">Create a virtual switch with SET enabled</h4>
+<p>Create a virtual switch with <a href="#" title="Switch Embedded Teaming (SET)&#10;Hyper-V-only variation of NIC teaming that is implemented wholly within a virtual switch&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 253">SET</a> enabled. [Zacker][Zacker]: 254
+<div class="highlight"><pre><span></span><code><span class="nb">New-VMSwitch</span> <span class="n">-Name</span> <span class="n">SETSwitch</span> <span class="n">-NetAdapterName</span> <span class="s2">&quot;nic1&quot;</span><span class="p">,</span><span class="s2">&quot;nic2&quot;</span> <span class="n">-EnableEmbeddedTeaming</span> <span class="nv">$true</span>
+</code></pre></div>
+Add new virtual network adapters to VMs
+<div class="highlight"><pre><span></span><code><span class="nb">Add-VMNetworkAdapter</span> <span class="n">-VMName</span> <span class="n">server1</span> <span class="n">-SwitchName</span> <span class="n">setswitch</span> <span class="n">-Name</span> <span class="n">set1</span>
+</code></pre></div>
+Enable RDMA with [<code>Get-</code>][Get-NetAdapterRdma] and [<code>Enable-NetAdapterRdma</code>][Enable-NetAdapterRdma].</p>
+<h4 id="implement-nested-virtualization">Implement nested virtualization</h4>
+<p>Both the physical host and the nested virtual host must be running Windows Server 2016, but before installing Hyper-V on the nested host, the following configurations must be made. [Zacker][Zacker]: 181</p>
+<p>Provide nested host's processor with access to virtualization technology on the physical host
+<div class="highlight"><pre><span></span><code><span class="nb">Set-VMProcessor</span> <span class="n">-VMName</span> <span class="n">server1</span> <span class="n">-ExposeVirtualizationExtensions</span> <span class="nv">$true</span>
+</code></pre></div>
+Disable dynamic memory
+<div class="highlight"><pre><span></span><code><span class="nb">Set-VMMemory</span> <span class="n">-VMName</span> <span class="n">SRV01</span> <span class="n">-DynamicMemoryEnabled</span> <span class="nv">$false</span>
+</code></pre></div>
+Configure 2 virtual processors
+<div class="highlight"><pre><span></span><code><span class="nb">Set-VMProcessor</span> <span class="n">-VMName</span> <span class="n">SVR01</span> <span class="n">-Count</span> <span class="n">2</span>
+</code></pre></div>
+Turn on MAC address spoofing
+<div class="highlight"><pre><span></span><code><span class="nb">Set-VMNetworkAdapter</span> <span class="n">-VMName</span> <span class="n">SVR01</span> <span class="n">-Name</span> <span class="s2">&quot;NetworkAdapter&quot;</span> <span class="n">-MACAddressSpoofing</span> <span class="n">On</span>
+</code></pre></div></p>
+<h4 id="enable-credssp">Enable CredSSP</h4>
+<p>On the remote (managed) server [Zacker][Zacker]: 176
+<div class="highlight"><pre><span></span><code><span class="nb">Enable-PSRemoting</span>
+<span class="nb">Enable-WSManCredSSP</span>
+</code></pre></div>
+Add the fully-qualified domain name of the Hyper-V server to be managed to the local system's WSMan trusted hosts list
+<div class="highlight"><pre><span></span><code><span class="nb">Set-Item</span> <span class="n">WSMan</span><span class="p">:\</span><span class="n">localhost</span><span class="p">\</span><span class="n">client</span><span class="p">\</span><span class="n">trustedhosts</span> <span class="n">-Value</span> <span class="s2">&quot;hypervserver.domain.com&quot;</span>
+</code></pre></div>
+Enable the use of CredSSP on the client 
+<div class="highlight"><pre><span></span><code><span class="nb">Enable-WSManCredSSP</span> <span class="n">-Role</span> <span class="n">client</span> <span class="n">-DelegateComputer</span> <span class="s2">&quot;hypervserver.domain.com&quot;</span>
+</code></pre></div></p>
+<h4 id="configure-server-core">Configure Server Core</h4>
+<p>Manually configure network interface, if a DHCP server is unavailable [Zacker][Zacker]: 19
+<div class="highlight"><pre><span></span><code><span class="nb">New-NetIPAddress</span> <span class="n">10</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">3</span> <span class="n">-InterfaceAlias</span> <span class="s2">&quot;Ethernet&#39; -PrefixLength 24</span>
+</code></pre></div>
+Configure the DNS server addresses for the adapter
+<div class="highlight"><pre><span></span><code><span class="nb">Set-DnsClientServerAddress</span> <span class="n">-InterfaceIndex</span> <span class="n">6</span> <span class="n">-ServerAddresses</span> <span class="p">(</span><span class="s2">&quot;192.168.0.1&quot;</span><span class="p">,</span><span class="s2">&quot;192.168.0.2&quot;</span><span class="p">)</span>
+</code></pre></div>
+Rename the computer and join it to a domain
+<div class="highlight"><pre><span></span><code><span class="nb">Add-Computer</span> <span class="n">-DomainName</span> <span class="n">adatum</span><span class="p">.</span><span class="n">com</span> <span class="n">-NewName</span> <span class="n">Server8</span> <span class="n">-Credential</span> <span class="n">adatum</span><span class="p">\</span><span class="n">administrator</span>
+</code></pre></div></p>
+<h4 id="update-server-core-image">Update Server Core image</h4>
+<div class="highlight"><pre><span></span><code><span class="nb">Mount-WindowsImage</span> <span class="n">-ImagePath</span> <span class="p">.\</span><span class="n">CoreServer</span><span class="p">.</span><span class="n">vhdx</span> <span class="n">-Path</span> <span class="p">.\</span><span class="n">MountDir</span> <span class="n">-Index</span> <span class="n">1</span>
+<span class="nb">Add-WindowsPackage</span> <span class="n">-Path</span> <span class="p">.\</span><span class="n">MountDir</span> <span class="n">-PackagePath</span> <span class="n">C</span><span class="p">:\</span><span class="n">ServicingPackages_cabs</span>
+<span class="nb">Dismount-WindowsImage</span> <span class="n">-Path</span> <span class="p">.\</span><span class="n">MountDir</span> <span class="n">-Save</span>
+</code></pre></div>
+<h4 id="implement-dda">Implement DDA</h4>
+<p><a href="#" title="Discrete Device Assignment (DDA)&#10;Hyper-V feature that enables passthrough of any PCI Express device, including GPUs or network adapters&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 212">Discrete Device Assignment (DDA)</a> begins with finding the Instance ID of the device needed to be passed through. [Zacker][Zacker]: 212
+<div class="highlight"><pre><span></span><code><span class="nb">Get-PnpDevice</span> <span class="n">-PresentOnly</span>
+<span class="nb">Disable-PnpDevice</span> <span class="n">-InstanceId</span>                 <span class="c"># Remove host-installed drivers</span>
+<span class="nb">Get-PnpDeviceProperty</span>                         <span class="c"># Provide `InstanceId` and `KeyName` values in order to get value for `LocationPath` parameter in next command</span>
+<span class="nb">Dismount-VmHostAssignableDevice</span> <span class="n">-LocationPath</span> <span class="c"># Remove the device from host control</span>
+<span class="nb">Add-VMAssignableDevice</span> <span class="n">-VM</span> <span class="n">-LocationPath</span>      <span class="c"># Attach the device to a guest</span>
+</code></pre></div></p>
+<h4 id="configure-live-migration">Configure live migration</h4>
+<p>Live migration is possible between Hyper-V hosts that are not clustered, but they must be within the same (or trusted) domains. [Zacker][Zacker]: 306
+<div class="highlight"><pre><span></span><code><span class="nb">Enable-VMMigration</span>
+<span class="nb">Set-VMMigrationNetwork</span> <span class="n">192</span><span class="p">.</span><span class="n">168</span><span class="p">.</span><span class="n">4</span><span class="p">.</span><span class="n">0</span>
+<span class="nb">Set-VMHost</span> <span class="n">-VirtualMachineMigrationAuthenticationType</span> <span class="n">Kerberos</span>
+<span class="nb">Set-VMHost</span> <span class="n">-VirtualMachineMigrationPerformanceOption</span> <span class="n">smbtransport</span>
+</code></pre></div></p>
+<h4 id="configure-s2d-cluster">Configure S2D cluster</h4>
+<div class="highlight"><pre><span></span><code><span class="nb">New-Cluster</span> <span class="n">-Name</span> <span class="n">cluster1</span> <span class="n">-node</span> <span class="n">server1</span><span class="p">,</span><span class="n">server2</span><span class="p">,</span><span class="n">server3</span><span class="p">,</span><span class="n">server4</span> <span class="n">-NoStorage</span>
+<span class="nb">Enable-ClusterStorageSpacesDirect</span>
+</code></pre></div>
+<h4 id="install-docker-enterprise">Install Docker Enterprise</h4>
+<p>[Zacker][Zacker]: 266
+<div class="highlight"><pre><span></span><code><span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="n">dockermsftprovider</span> <span class="n">-repository</span> <span class="n">psgallery</span> <span class="n">-force</span>
+<span class="nb">Install-Package</span> <span class="n">-Name</span> <span class="n">docker</span> <span class="n">-ProviderName</span> <span class="n">dockermsftprovider</span>
+</code></pre></div></p>
+<h4 id="handle-xml-files">Handle XML files</h4>
+<p>Find a sample XML file <a href="https://docs.microsoft.com/en-us/previous-versions/windows/desktop/ms762271(v=vs.85)" title="books.xml">here</a></p>
+<p>Assign the output of [<code>gc</code>][Get-Content] to a variable
+<div class="highlight"><pre><span></span><code><span class="no">[xml]</span><span class="nv">$xdoc</span> <span class="p">=</span> <span class="nb">gc </span><span class="nv">$xmlfile</span>
+</code></pre></div>
+The XML tree can be viewed in VS Code using the <strong>XML Tools</strong> extension.
+The object itself can be treated as a first-class Powershell object using dot notation. <a href="https://www.red-gate.com/simple-talk/sysadmin/powershell/powershell-data-basics-xml/" title="Powershell Data Basics: XML">red-gate.com</a>
+<div class="highlight"><pre><span></span><code><span class="nv">$xdoc</span><span class="p">.</span><span class="n">catalog</span><span class="p">.</span><span class="n">book</span> <span class="p">|</span> <span class="nb">Format-Table</span> <span class="n">-Autosize</span>
+</code></pre></div>
+Arrays of elements can be accessed by their index
+<div class="highlight"><pre><span></span><code><span class="nv">$xdoc</span><span class="p">.</span><span class="n">catalog</span><span class="p">.</span><span class="n">book</span><span class="p">[</span><span class="n">0</span><span class="p">]</span>
+</code></pre></div>
+Nodes in the XML object can also be navigated using <strong>XPath</strong> notation with the <code>SelectNodes</code> and <code>SelectSingleNode</code> methods.
+<div class="highlight"><pre><span></span><code><span class="nv">$xdoc</span><span class="p">.</span><span class="n">SelectNodes</span><span class="p">(</span><span class="s1">&#39;//author&#39;</span><span class="p">)</span>
+<span class="n">This</span> <span class="n">produces</span> <span class="n">the</span> <span class="n">same</span> <span class="n">output</span> <span class="n">as</span> <span class="n">the</span> <span class="n">command</span> <span class="n">above</span> <span class="p">(</span><span class="k">in</span> <span class="n">XPath</span> <span class="n">nodes</span> <span class="n">are</span> <span class="n">1-indexed</span><span class="p">).</span>
+<span class="p">```</span><span class="n">powershell</span>
+<span class="nv">$xdoc</span><span class="p">.</span><span class="n">SelectSingleNode</span><span class="p">(</span><span class="s1">&#39;//book[1]&#39;</span><span class="p">)</span>
+</code></pre></div>
+[<code>Select-Xml</code>][Select-Xml] wraps the returned XML node with additional metadata, including the pattern searched.
+However, it can accept piped input.
+<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nb">Select-Xml</span> <span class="n">-Xml</span> <span class="nv">$xdoc</span> <span class="n">-Xpath</span> <span class="s1">&#39;//book[1]&#39;</span><span class="p">).</span><span class="n">Node</span>
+<span class="p">(</span><span class="nv">$xml</span> <span class="p">|</span> <span class="nb">Select-Xml</span> <span class="n">-Xpath</span> <span class="s1">&#39;//book[1]&#39;</span><span class="p">).</span><span class="n">Node</span>
+</code></pre></div></p>
+<h4 id="update-server-core-images">Update Server Core images</h4>
+<p>[MeasureUp Lab][pl:70-740]
+<div class="highlight"><pre><span></span><code><span class="nb">Mount-WindowsImage</span> <span class="n">-ImagePath</span> <span class="p">.\</span><span class="n">CoreServer</span><span class="p">.</span><span class="n">vhdx</span> <span class="n">-Path</span> <span class="p">.\</span><span class="n">MountDir</span> <span class="n">-Index</span> <span class="n">1</span>
+<span class="nb">Add-WindowsPackage</span> <span class="n">-Path</span> <span class="p">.\</span><span class="n">MountDir</span> <span class="n">PackagePath</span> <span class="n">C</span><span class="p">:\</span><span class="n">ServicingPackages_cabs</span>
+<span class="nb">Dismount-WindowsImage</span> <span class="n">-Path</span> <span class="p">.\</span><span class="n">MountDir</span> <span class="n">-Save</span>
+</code></pre></div></p>
+<h4 id="pass-through-disk">Pass-through disk</h4>
+<p>[Zacker][Zacker]: 226
+<div class="highlight"><pre><span></span><code><span class="nb">Set-Disk</span> <span class="n">-Number</span> <span class="n">2</span> <span class="n">-IsOffline</span> <span class="nv">$true</span>
+<span class="nb">Add-VMHardDiskDrive</span> <span class="n">-VMName</span> <span class="n">server1</span> <span class="n">-ControllerType</span> <span class="n">scsi</span> <span class="n">-DiskNumber</span> <span class="n">2</span>
+</code></pre></div></p>
+<h4 id="site-aware-failover-cluster">Site-aware failover cluster</h4>
+<p>Configure failover clusters for two offices [Zacker][Zacker]: 366
+<div class="highlight"><pre><span></span><code><span class="nb">New-ClusterFaultDomain</span> <span class="n">-Name</span> <span class="n">ny</span> <span class="n">-Type</span> <span class="n">site</span> <span class="n">-Description</span> <span class="s2">&quot;Primary&quot;</span> <span class="n">-Location</span> <span class="s2">&quot;New York, NY&quot;</span>
+<span class="nb">New-ClusterFaultDomain</span> <span class="n">-Name</span> <span class="n">sf</span> <span class="n">-Type</span> <span class="n">site</span> <span class="n">-Description</span> <span class="s2">&quot;Secondary&quot;</span> <span class="n">-Location</span> <span class="s2">&quot;San Francisco, CA&quot;</span>
+<span class="nb">Set-ClusterFaultDomain</span> <span class="n">-Name</span> <span class="n">node1</span> <span class="n">-Parent</span> <span class="n">ny</span>
+<span class="nb">Set-ClusterFaultDomain</span> <span class="n">-Name</span> <span class="n">node2</span> <span class="n">-Parent</span> <span class="n">ny</span>
+<span class="nb">Set-ClusterFaultDomain</span> <span class="n">-Name</span> <span class="n">node3</span> <span class="n">-Parent</span> <span class="n">sf</span>
+<span class="nb">Set-ClusterFaultDomain</span> <span class="n">-Name</span> <span class="n">node4</span> <span class="n">-Parent</span> <span class="n">sf</span>
+</code></pre></div></p>
+<h4 id="filter-ad-account-information">Filter AD account information</h4>
+<div class="highlight"><pre><span></span><code><span class="nb">Get-aduser</span> <span class="n">-filter</span> <span class="p">{(</span><span class="n">SamAccountName</span> <span class="o">-like</span> <span class="s2">&quot;*CA0*&quot;</span><span class="p">)}</span> <span class="n">-properties</span> <span class="n">Displayname</span><span class="p">,</span> <span class="n">SaMaccountName</span><span class="p">,</span> <span class="n">Enabled</span><span class="p">,</span> <span class="n">EmailAddress</span><span class="p">,</span> <span class="n">proxyaddresses</span> <span class="p">|</span> 
+<span class="nb">Where </span><span class="p">{(</span><span class="nv">$_</span><span class="p">.</span><span class="n">EmailAddress</span> <span class="o">-notlike</span> <span class="s2">&quot;*@*&quot;</span><span class="p">)}</span> <span class="p">|</span> 
+<span class="nb">Where </span><span class="p">{(</span><span class="nv">$_</span><span class="p">.</span><span class="n">Enabled</span> <span class="o">-eq</span> <span class="nv">$True</span><span class="p">)}</span> <span class="p">|</span> 
+<span class="nb">Select </span><span class="n">Displayname</span><span class="p">,</span> <span class="n">SaMaccountName</span><span class="p">,</span> <span class="n">Enabled</span><span class="p">,</span> <span class="n">EmailAddress</span><span class="p">,</span> <span class="p">@{</span><span class="n">L</span><span class="p">=</span><span class="err">’</span><span class="n">ProxyAddress_1</span><span class="s1">&#39;; E={$_.proxyaddresses[0]}}, @{L=’ProxyAddress_2&#39;</span><span class="p">;</span> <span class="n">E</span><span class="p">={</span><span class="nv">$_</span><span class="p">.</span><span class="n">ProxyAddresses</span><span class="p">[</span><span class="n">1</span><span class="p">]}}</span> <span class="p">|</span> 
+<span class="nb">Export-csv</span> <span class="p">.\</span><span class="n">usersnoemail2</span><span class="p">.</span><span class="n">csv</span> <span class="n">-notypeinformation</span>
+</code></pre></div>
+<h4 id="create-vm-with-installation-media">Create VM with installation media</h4>
+<p>[Practice Lab][pl:70-740]
+<div class="highlight"><pre><span></span><code><span class="nb">New-VM</span> <span class="n">PLABWIN102</span> <span class="n">1536mb</span> <span class="n">1</span> <span class="n">-SwitchName</span> <span class="s1">&#39;Private network 1&#39;</span> <span class="n">-NewVHDPath</span> <span class="s1">&#39;C:\Users\Public\Documents\Hyper-V\Virtual hard disks\PLABWIN102.vhdx&#39;</span> <span class="n">-NewVHDSizeBytes</span> <span class="n">127gb</span>
+<span class="nb">Set-VMDvdDrive</span> <span class="n">-VMName</span> <span class="n">PLABWIN102</span> <span class="n">-Path</span> <span class="n">C</span><span class="p">:\</span><span class="n">Users</span><span class="p">\</span><span class="n">Administrator</span><span class="p">.</span><span class="n">PRACTICELABS</span><span class="p">\</span><span class="n">Documents</span><span class="p">\</span><span class="n">Eval81</span><span class="p">.</span><span class="n">iso</span>
+</code></pre></div></p>
+<h4 id="registry">Registry</h4>
+<table>
+<thead>
+<tr>
+<th>Description</th>
+<th>Affected key</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fix Windows Search bar <a href="https://docs.microsoft.com/en-us/powershell/scripting/samples/working-with-registry-keys?view=powershell-7">docs.microsoft.com</a></td>
+<td>HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Search</td>
+</tr>
+<tr>
+<td>Remove 3D Objects <a href="https://www.howtogeek.com/331361/how-to-remove-the-3d-objects-folder-from-this-pc-on-windows-10/" title="How to Remove “3D Objects” From This PC on Windows 10">howtogeek.com</a></td>
+<td>HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace</td>
+</tr>
+<tr>
+<td>Display seconds in system clock <a href="https://www.howtogeek.com/325096/how-to-make-windows-10s-taskbar-clock-display-seconds/" title="How to Make Windows 10’s Taskbar Clock Display Seconds">howtogeek.com</a></td>
+<td>HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced</td>
+</tr>
+<tr>
+<td>Disable Aero Shake <a href="https://www.howtogeek.com/howto/windows-7/disable-aero-shake-in-windows-7/" title="How to Stop Aero Shake from Minimizing Your Windows">howtogeek.com</a></td>
+<td>HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced</td>
+</tr>
+</tbody>
+</table>
+<p>Remove <strong>3D Objects</strong> from <strong>This PC</strong> <a href="https://www.howtogeek.com/331361/how-to-remove-the-3d-objects-folder-from-this-pc-on-windows-10/" title="How to Remove “3D Objects” From This PC on Windows 10">howtogeek.com</a>
+<div class="highlight"><pre><span></span><code><span class="nb">Remove-Item</span> <span class="s1">&#39;HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{0DB7E03F-FC29-4DC6-9020-FF41B59E513A}&#39;</span>
+</code></pre></div>
+Add seconds to clock <a href="https://www.howtogeek.com/325096/how-to-make-windows-10s-taskbar-clock-display-seconds/" title="How to Make Windows 10’s Taskbar Clock Display Seconds">howtogeek.com</a>
+<div class="highlight"><pre><span></span><code><span class="nb">New-Item</span> <span class="n">-Path</span> <span class="n">HKCU</span><span class="p">:\</span><span class="n">Software</span><span class="p">\</span><span class="n">Microsoft</span><span class="p">\</span><span class="n">Windows</span><span class="p">\</span><span class="n">CurrentVersion</span><span class="p">\</span><span class="n">Explorer</span><span class="p">\</span><span class="n">Advanced</span> <span class="n">-Name</span> <span class="n">ShowSecondsInSystemClock</span> <span class="n">-Value</span> <span class="n">1</span>
+<span class="nb">Restart-Computer</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nb">New-Item</span> <span class="n">-Path</span> <span class="n">HKCU</span><span class="p">:\</span><span class="n">SOFTWARE</span><span class="p">\</span><span class="n">Microsoft</span><span class="p">\</span><span class="n">Windows</span><span class="p">\</span><span class="n">CurrentVersion</span><span class="p">\</span><span class="n">Search</span> <span class="n">-Name</span> <span class="n">BingSearchEnabled</span> <span class="n">-Value</span> <span class="n">0</span>
+<span class="nb">New-Item</span> <span class="n">-Path</span> <span class="n">HKCU</span><span class="p">:\</span><span class="n">SOFTWARE</span><span class="p">\</span><span class="n">Microsoft</span><span class="p">\</span><span class="n">Windows</span><span class="p">\</span><span class="n">CurrentVersion</span><span class="p">\</span><span class="n">Search</span> <span class="n">-Name</span> <span class="n">CortanaConsent</span> <span class="n">-Value</span> <span class="n">0</span>
+</code></pre></div>
+Safely combine related registry modifications using [<code>Start-Transaction</code>][Start-Transaction] and [<code>Complete-Transaction</code>][Complete-Transaction] [Holmes][Holmes]: 604
+<div class="highlight"><pre><span></span><code><span class="nb">Start-Transaction</span>
+<span class="nb">New-Item</span> <span class="n">TempKey</span> <span class="n">-UseTransaction</span>
+<span class="nb">Complete-Transaction</span>
+</code></pre></div>
+Remove User UAC for local users. <a href="https://www.wintips.org/fix-mmc-exe-this-app-has-been-blocked-for-your-protection/">ref</a>
+<div class="highlight"><pre><span></span><code><span class="nb">Set-ItemProperty</span> <span class="n">-Path</span> <span class="n">HKLM</span><span class="p">:\</span><span class="n">Software</span><span class="p">\</span><span class="n">Microsoft</span><span class="p">\</span><span class="n">Windows</span><span class="p">\</span><span class="n">CurrentVersion</span><span class="p">\</span><span class="n">Policies</span><span class="p">\</span><span class="n">System</span> <span class="n">-Name</span> <span class="n">EnableLUA</span> <span class="n">-Value</span> <span class="n">0</span>
+</code></pre></div></p>
+<h4 id="winforms">WinForms</h4>
+<p><a href="https://pastebin.com/v3KMc2ni">Pastebin</a>
+<div class="highlight"><pre><span></span><code><span class="c"># Load required assemblies</span>
+<span class="no">[void] [System.Reflection.Assembly]</span><span class="p">::</span><span class="n">LoadWithPartialName</span><span class="p">(</span><span class="s2">&quot;System.Windows.Forms&quot;</span><span class="p">)</span>
+
+<span class="c"># Drawing form and controls</span>
+<span class="nv">$Form_HelloWorld</span> <span class="p">=</span> <span class="nb">New-Object</span> <span class="n">System</span><span class="p">.</span><span class="n">Windows</span><span class="p">.</span><span class="n">Forms</span><span class="p">.</span><span class="n">Form</span>
+  <span class="nv">$Form_HelloWorld</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="s2">&quot;Hello World&quot;</span>
+  <span class="nv">$Form_HelloWorld</span><span class="p">.</span><span class="n">Size</span> <span class="p">=</span> <span class="nb">New-Object</span> <span class="n">System</span><span class="p">.</span><span class="n">Drawing</span><span class="p">.</span><span class="n">Size</span><span class="p">(</span><span class="n">272</span><span class="p">,</span><span class="n">160</span><span class="p">)</span>
+  <span class="nv">$Form_HelloWorld</span><span class="p">.</span><span class="n">FormBorderStyle</span> <span class="p">=</span> <span class="s2">&quot;FixedDialog&quot;</span>
+  <span class="nv">$Form_HelloWorld</span><span class="p">.</span><span class="n">TopMost</span> <span class="p">=</span> <span class="nv">$true</span>
+  <span class="nv">$Form_HelloWorld</span><span class="p">.</span><span class="n">MaximizeBox</span> <span class="p">=</span> <span class="nv">$false</span>
+  <span class="nv">$Form_HelloWorld</span><span class="p">.</span><span class="n">MinimizeBox</span> <span class="p">=</span> <span class="nv">$false</span>
+  <span class="nv">$Form_HelloWorld</span><span class="p">.</span><span class="n">ControlBox</span> <span class="p">=</span> <span class="nv">$true</span>
+  <span class="nv">$Form_HelloWorld</span><span class="p">.</span><span class="n">StartPosition</span> <span class="p">=</span> <span class="s2">&quot;CenterScreen&quot;</span>
+  <span class="nv">$Form_HelloWorld</span><span class="p">.</span><span class="n">Font</span> <span class="p">=</span> <span class="s2">&quot;Segoe UI&quot;</span>
+
+<span class="c"># adding a label to my form</span>
+<span class="nv">$label_HelloWorld</span> <span class="p">=</span> <span class="nb">New-Object</span> <span class="n">System</span><span class="p">.</span><span class="n">Windows</span><span class="p">.</span><span class="n">Forms</span><span class="p">.</span><span class="n">Label</span>
+  <span class="nv">$label_HelloWorld</span><span class="p">.</span><span class="n">Location</span> <span class="p">=</span> <span class="nb">New-Object</span> <span class="n">System</span><span class="p">.</span><span class="n">Drawing</span><span class="p">.</span><span class="n">Size</span><span class="p">(</span><span class="n">8</span><span class="p">,</span><span class="n">8</span><span class="p">)</span>
+  <span class="nv">$label_HelloWorld</span><span class="p">.</span><span class="n">Size</span> <span class="p">=</span> <span class="nb">New-Object</span> <span class="n">System</span><span class="p">.</span><span class="n">Drawing</span><span class="p">.</span><span class="n">Size</span><span class="p">(</span><span class="n">240</span><span class="p">,</span><span class="n">32</span><span class="p">)</span>
+  <span class="nv">$label_HelloWorld</span><span class="p">.</span><span class="n">TextAlign</span> <span class="p">=</span> <span class="s2">&quot;MiddleCenter&quot;</span>
+  <span class="nv">$label_HelloWorld</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="s2">&quot;Hello World&quot;</span>
+  <span class="nv">$Form_HelloWorld</span><span class="p">.</span><span class="n">Controls</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="nv">$label_HelloWorld</span><span class="p">)</span>
+
+<span class="c"># add a button</span>
+<span class="nv">$button_ClickMe</span> <span class="p">=</span> <span class="nb">New-Object</span> <span class="n">System</span><span class="p">.</span><span class="n">Windows</span><span class="p">.</span><span class="n">Forms</span><span class="p">.</span><span class="n">Button</span>
+  <span class="nv">$button_ClickMe</span><span class="p">.</span><span class="n">Location</span> <span class="p">=</span> <span class="nb">New-Object</span> <span class="n">System</span><span class="p">.</span><span class="n">Drawing</span><span class="p">.</span><span class="n">Size</span><span class="p">(</span><span class="n">8</span><span class="p">,</span><span class="n">80</span><span class="p">)</span>
+  <span class="nv">$button_ClickMe</span><span class="p">.</span><span class="n">Size</span> <span class="p">=</span> <span class="nb">New-Object</span> <span class="n">System</span><span class="p">.</span><span class="n">Drawing</span><span class="p">.</span><span class="n">Size</span><span class="p">(</span><span class="n">240</span><span class="p">,</span><span class="n">32</span><span class="p">)</span>
+  <span class="nv">$button_ClickMe</span><span class="p">.</span><span class="n">TextAlign</span> <span class="p">=</span> <span class="s2">&quot;MiddleCenter&quot;</span>
+  <span class="nv">$button_ClickMe</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="s2">&quot;Click Me!&quot;</span>
+  <span class="nv">$button_ClickMe</span><span class="p">.</span><span class="n">Add_Click</span><span class="p">({</span>
+    <span class="nv">$button_ClickMe</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="s2">&quot;You did click me!&quot;</span>
+    <span class="nb">Start-Process</span> <span class="n">calc</span><span class="p">.</span><span class="n">exe</span>
+  <span class="p">})</span>
+  <span class="nv">$Form_HelloWorld</span><span class="p">.</span><span class="n">Controls</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="nv">$button_ClickMe</span><span class="p">)</span>
+
+<span class="c"># show form</span>
+<span class="nv">$Form_HelloWorld</span><span class="p">.</span><span class="n">Add_Shown</span><span class="p">({</span><span class="nv">$Form_HelloWorld</span><span class="p">.</span><span class="n">Activate</span><span class="p">()})</span>
+<span class="no">[void]</span> <span class="nv">$Form_HelloWorld</span><span class="p">.</span><span class="n">ShowDialog</span><span class="p">()</span>
+</code></pre></div></p>
+<h4 id="modules">Modules</h4>
+<p>Create a new module by placing a .psm1 file in a directory of the same name
+<div class="highlight"><pre><span></span><code>.\Starship\Starship.psm1
+</code></pre></div>
+Functions defined within the module can be loaded with [<code>Import-Module</code>][Import-Module] (execution policy must allow this).
+<div class="highlight"><pre><span></span><code><span class="nb">ipmo </span><span class="p">.\</span><span class="n">Starship</span>
+</code></pre></div>
+To import classes, a different syntax must be used <a href="https://info.sapien.com/index.php/scripting/scripting-classes/import-powershell-classes-from-modules">source</a>
+<div class="highlight"><pre><span></span><code><span class="n">Using</span> <span class="n">module</span> <span class="p">.\</span><span class="n">Starship</span>
+</code></pre></div></p>
+<h4 id="sample-enumeration">Sample enumeration</h4>
+<p><a href="https://www.powershellmagazine.com/2013/01/18/pstip-get-a-random-item-from-an-enumeration/">PowerShellMagazine</a>
+<div class="highlight"><pre><span></span><code><span class="nb">Add-Type</span> <span class="n">-AssemblyName</span> <span class="n">System</span><span class="p">.</span><span class="n">Drawing</span>
+<span class="nv">$count</span> <span class="p">=</span> <span class="no">[Enum]</span><span class="p">::</span><span class="n">GetValues</span><span class="p">(</span><span class="no">[System.Drawing.KnownColor]</span><span class="p">).</span><span class="n">Count</span>
+<span class="no">[System.Drawing.KnownColor]</span><span class="p">(</span><span class="nb">Get-Random</span> <span class="n">-Minimum</span> <span class="n">1</span> <span class="n">-Maximum</span> <span class="nv">$count</span><span class="p">)</span>
+</code></pre></div></p>
+<h4 id="migrate-a-vm">Migrate a VM</h4>
+<div class="highlight"><pre><span></span><code><span class="nb">Enable-VMMigration</span>
+<span class="nb">Set-VMMigrationNetwork</span> <span class="n">192</span><span class="p">.</span><span class="n">168</span><span class="p">.</span><span class="n">10</span><span class="p">.</span><span class="n">1</span>
+<span class="nb">Set-VMHost</span> <span class="n">-VirtualMachineMigrationAuthenticationType</span> <span class="n">Kerberos</span>
+<span class="nb">Set-VMHost</span> <span class="n">-VirtualMachineMigrationPerformanceOption</span> <span class="n">SMBTransport</span>
+</code></pre></div>
+<h4 id="storage-spaces-direct">Storage Spaces Direct</h4>
+<p>[MeasureUp][mu:70-740]
+<div class="highlight"><pre><span></span><code><span class="nb">New-Cluster</span> <span class="n">-Name</span> <span class="n">HC-CLU1</span> <span class="n">-Node</span> <span class="n">node1</span><span class="p">,</span> <span class="n">node2</span><span class="p">,</span> <span class="n">node3</span><span class="p">,</span> <span class="n">node4</span> <span class="n">-NoStorage</span>
+<span class="nb">Enable-ClusterStorageSpacesDirect</span> <span class="n">-CacheMode</span> <span class="n">Disabled</span> <span class="n">-AutoConfig</span><span class="p">:</span><span class="n">0</span> <span class="n">-SkipEligibilityChecks</span>
+<span class="nb">New-StoragePool</span> <span class="n">-StorageSubSystemFriendlyName</span> <span class="p">*</span><span class="n">Cluster</span><span class="p">*</span> <span class="n">-FriendlyName</span> <span class="n">S2DPool</span> <span class="n">-ProvisioningTypeDefault</span> <span class="n">Fixed</span> <span class="n">-PhysicalDisk</span> <span class="p">(</span><span class="nb">Get-PhysicalDisk</span> <span class="p">|</span> <span class="nb">Where-Object</span> <span class="n">-Property</span> <span class="n">CanPool</span> <span class="o">-eq</span> <span class="nv">$true</span><span class="p">)</span>
+<span class="nv">$pool</span> <span class="p">=</span> <span class="nb">Get-StoragePool</span> <span class="n">S2DPool</span>
+<span class="nb">New-StorageTier</span> <span class="n">-StoragePoolUniqueID</span> <span class="p">(</span><span class="nv">$pool</span><span class="p">).</span><span class="n">UniqueID</span> <span class="n">-FriendlyName</span> <span class="n">Performance</span> <span class="n">-MediaType</span> <span class="n">HDD</span> <span class="n">-ResiliencySettingName</span> <span class="n">Mirror</span>
+<span class="nb">New-StorageTier</span> <span class="n">-StoragePoolUniqueID</span> <span class="p">(</span><span class="nv">$pool</span><span class="p">).</span><span class="n">UniqueID</span> <span class="n">-FriendlyName</span> <span class="n">Capacity</span> <span class="n">-MediaType</span> <span class="n">HDD</span> <span class="n">-ResiliencySettingName</span> <span class="n">Parity</span>
+</code></pre></div>
+The next step would be the creation of a new volume
+<div class="highlight"><pre><span></span><code><span class="nb">New-Volume</span> <span class="n">-StoragePool</span> <span class="nv">$pool</span> <span class="n">-FriendlyName</span> <span class="n">SharedVol1</span> <span class="n">-FileSystem</span> <span class="n">CSVFS_REFS</span> <span class="n">-StorageTiersFriendlyNames</span> <span class="n">Performance</span><span class="p">,</span> <span class="n">Capacity</span> <span class="n">-StorageTierSizes</span> <span class="n">2GB</span><span class="p">,</span> <span class="n">10GB</span>
+</code></pre></div></p>
+<h4 id="scheduled-task">Scheduled task</h4>
+<p>Automatically run SSH server in WSL on system start
+<div class="highlight"><pre><span></span><code><span class="nv">$action</span> <span class="p">=</span> <span class="nb">New-ScheduledTaskAction</span> <span class="n">-Execute</span> <span class="n">C</span><span class="p">:\</span><span class="n">WINDOWS</span><span class="p">\</span><span class="n">System32</span><span class="p">\</span><span class="n">bash</span><span class="p">.</span><span class="n">exe</span> <span class="n">-Argument</span> <span class="s1">&#39;-c sudo service ssh start&#39;</span>
+<span class="nv">$trigger</span> <span class="p">=</span> <span class="nb">New-ScheduledTaskTrigger</span> <span class="n">-AtLogon</span>
+
+<span class="nb">Register-ScheduledTask</span> <span class="n">-TaskName</span> <span class="s1">&#39;SSH server&#39;</span> <span class="n">-Trigger</span> <span class="nv">$trigger</span> <span class="n">-Action</span> <span class="nv">$action</span>
+</code></pre></div></p>
+<h4 id="network-connection-alert">Network connection alert</h4>
+<p>Play a tone when network connection has been (re)-established.
+<div class="highlight"><pre><span></span><code><span class="k">while</span> <span class="p">(</span><span class="nv">$true</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">((</span><span class="nb">Test-NetConnection</span> <span class="n">8</span><span class="p">.</span><span class="n">8</span><span class="p">.</span><span class="n">8</span><span class="p">.</span><span class="n">8</span> <span class="n">-WarningAction</span> <span class="n">SilentlyContinue</span><span class="p">).</span><span class="n">PingSucceeded</span> <span class="o">-eq</span> <span class="nv">$true</span><span class="p">)</span> <span class="p">{</span>
+    <span class="no">[System.Console]</span><span class="p">::</span><span class="n">Beep</span><span class="p">(</span><span class="n">1000</span><span class="p">,</span><span class="n">100</span><span class="p">)</span>
+    <span class="k">break</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">while</span> <span class="p">(</span><span class="nb">Test-NetConnection</span> <span class="n">8</span><span class="p">.</span><span class="n">8</span><span class="p">.</span><span class="n">8</span><span class="p">.</span><span class="n">8</span> <span class="n">-WarningAction</span> <span class="n">SilentlyContinue</span><span class="p">).</span><span class="n">PingSucceeded</span> <span class="o">-eq</span> <span class="nv">$false</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="k">continue</span>
+<span class="p">}</span>
+</code></pre></div></p>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../Labs/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Labs" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Labs
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../WDS-lab/" class="md-footer__link md-footer__link--next" aria-label="Next: WDS lab" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              WDS lab
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "toc.integrate", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.6e54b5cd.min.js"></script>
+      
+    
+  </body>
+</html>

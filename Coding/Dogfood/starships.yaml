@@ -1,0 +1,42 @@
+- class: Constitution
+  name: USS Enterprise
+  registry: NCC-1701
+  series: TOS
+- class: Constitution
+  name: USS Constitution
+  registry: NCC-1700
+  series: TOS
+- class: Defiant
+  name: USS Defiant
+  registry: NX-74205
+  series: DS9
+- class: Intrepid
+  name: USS Voyager
+  registry: NCC-74656
+  series: VOY
+- class: Galaxy
+  name: USS Enterprise
+  registry: NCC-1701-D
+  series: TNG
+- class: Miranda
+  name: USS Reliant
+  registry: NCC-1864
+  series: ST2
+- name: SSV Normandy
+  registry: SR-1
+  series: ME
+- name: Galactica
+  registry: BS-75
+  series: BSG
+- class: California
+  name: USS Cerritos
+  registry: NCC-75567
+  series: LD
+- class: NX
+  name: Enterprise
+  registry: NX-01
+  series: ENT
+- class: Constitution
+  name: USS Defiant
+  registry: NCC-1764
+  series: ENT
