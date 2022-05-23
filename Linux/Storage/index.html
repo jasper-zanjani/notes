@@ -1903,6 +1903,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#lsblk" class="md-nav__link">
+    lsblk
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#sfdisk" class="md-nav__link">
     sfdisk
   </a>
@@ -1943,13 +1950,6 @@
   
     <nav class="md-nav" aria-label="LVM">
       <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#lvcreate" class="md-nav__link">
-    lvcreate
-  </a>
-  
-</li>
         
           <li class="md-nav__item">
   <a href="#lvm_1" class="md-nav__link">
@@ -4739,9 +4739,9 @@ service nfs start
 <li><a href="https://youtu.be/c3dL0ULEH-s"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m10 15 5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73Z"/></svg></span> How to Share Files Using <abbr title="Network File System">NFS</abbr>: Linux Server Training 101</a></li>
 </ul>
 </details>
+<h4 id="samba_1">Samba</h4>
 </dd>
 </dl>
-<h4 id="samba_1">Samba</h4>
 <p>Configure Samba 
 <div class="highlight"><pre><span></span><code>mkdir /samba                   <span class="c1"># Create a directory for the share</span>
 chmod -R <span class="m">0777</span> /samba
@@ -4946,8 +4946,6 @@ In such a case, writes to that busy vdev will be deferred in favor of less busy 
 </div>
 </div>
 </div>
-</dd>
-</dl>
 <h4 id="hdparm">hdparm</h4>
 <dl>
 <dd><div class="highlight"><pre><span></span><code>hdparm -I /dev/sda
@@ -4957,6 +4955,13 @@ In such a case, writes to that busy vdev will be deferred in favor of less busy 
 <dl>
 <dd>Create a loopback device (i.e. a virtual block device)
 <div class="highlight"><pre><span></span><code>losetup -f /tmp/file1
+</code></pre></div></dd>
+</dl>
+</dd>
+</dl>
+<h4 id="lsblk">lsblk</h4>
+<dl>
+<dd><div class="highlight"><span class="filename">Display filesystems</span><pre><span></span><code>lsblk -f <span class="c1"># --fs</span>
 </code></pre></div></dd>
 </dl>
 <h4 id="sfdisk">sfdisk</h4>
@@ -4984,13 +4989,13 @@ Recovery
 Man page indicates this flag is no longer supported, and recommends use of <code>dd</code> instead.
 <div class="highlight"><pre><span></span><code>sfdisk /dev/hdd -I hdd-partition-sectors.save
 </code></pre></div></p>
-</dd>
-</dl>
 <h4 id="shred">shred</h4>
 <dl>
 <dd>Write random data to an unmounted disk for {n} passes
 <div class="highlight"><pre><span></span><code>shred --iterations<span class="o">=</span>n
 </code></pre></div></dd>
+</dl>
+</dd>
 </dl>
 <h3 id="btrfs_1">btrfs</h3>
 <h4 id="btrfs_2">btrfs</h4>
@@ -5004,15 +5009,6 @@ Man page indicates this flag is no longer supported, and recommends use of <code
 </dd>
 </dl>
 <h3 id="lvm">LVM</h3>
-<h4 id="lvcreate">lvcreate</h4>
-<dl>
-<dd>Create a 20 gigabyte logical volume named "Marketing" from volume group {vg1}
-<div class="highlight"><pre><span></span><code>lvcreate -L 20G vg1 -n Marketing
-</code></pre></div>
-Create logical volume named <code>lv1</code> of size 500G from volume group <code>vg1</code>
-<div class="highlight"><pre><span></span><code>lvcreate -L 500G vg1 -n lv1
-</code></pre></div></dd>
-</dl>
 <h4 id="lvm_1">lvm</h4>
 <dl>
 <dd><div class="highlight"><pre><span></span><code>lvm version

@@ -4319,22 +4319,20 @@ Have remote system use local computer {me.luna.edu}'s X display
 </div>
 </div>
 </div>
-</dd>
-</dl>
 <h4 id="ssh-copy-id">ssh-copy-id</h4>
 <dl>
-<dd>
-<p>This command copies the SSH public key to a specified account's <strong>~/.ssh/authorized_keys</strong> file.</p>
+<dd>This command copies the SSH public key to a specified account's <strong>~/.ssh/authorized_keys</strong> file.</dd>
+</dl>
 <p>In Windows, this command is not available, so a workaround is to simply <a href="https://www.chrisjhart.com/Windows-10-ssh-copy-id/">pipe the public key</a> over SSH itself.</p>
 <div class="highlight"><pre><span></span><code><span class="nb">type</span> <span class="nv">$env</span>:USERPROFILE<span class="se">\.</span>ssh<span class="se">\i</span>d_rsa.pub <span class="p">|</span> ssh <span class="o">{</span>IP-ADDRESS-OR-FQDN<span class="o">}</span> <span class="s2">&quot;cat &gt;&gt; .ssh/authorized_keys&quot;</span>
 </code></pre></div>
-</dd>
-</dl>
 <h4 id="ssh-keygen">ssh-keygen</h4>
 <dl>
 <dd>Before starting the SSH daemon, hostkeys must be generated:
 <div class="highlight"><pre><span></span><code>sudo ssh-keygen -A
 </code></pre></div></dd>
+</dl>
+</dd>
 </dl>
 
               

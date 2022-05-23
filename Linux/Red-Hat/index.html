@@ -1627,6 +1627,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#stratis" class="md-nav__link">
+    Stratis
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -4185,6 +4192,34 @@ It is enabled by changing a setting in TuneD's config at <strong>/etc/tuned/tune
 </code></pre></div></p>
 </dd>
 </dl>
+<h3 id="stratis">Stratis</h3>
+<p>Stratis is an open-source managed pooled storage solution in the vein of ZFS or btrfs.</p>
+<p>Stratis block devices can be disks, partitions, LUKS-encrypted volumes, LVM logical volumes, or DM multipath devices.
+Stratis pools are mounted under <strong>/stratis</strong> and, like other pooled storage systems, support multiple filesystems.
+Stratis file systems are thinly provisioned and formatted with <strong>xfs</strong>, although vanilla xfs utilities cannot be used on Stratis file systems.</p>
+<p><div class="highlight"><span class="filename">Install Stratis daemon and CLI utilities</span><pre><span></span><code>yum -y install stratisd stratis-cli
+</code></pre></div>
+<div class="highlight"><span class="filename">Create a pool</span><pre><span></span><code>stratis pool create pool /dev/sd0
+</code></pre></div>
+<div class="highlight"><span class="filename">Display block devices managed by Stratis</span><pre><span></span><code>stratis blockdev <span class="c1"># (1)</span>
+</code></pre></div></p>
+<ol>
+<li>This command is equivalent to <strong>pvs</strong> in LVM.</li>
+</ol>
+<div class="highlight"><span class="filename">Create filesystem</span><pre><span></span><code>stratis fs create pool files
+</code></pre></div>
+<div class="highlight"><span class="filename">Confirm</span><pre><span></span><code>stratis fs
+</code></pre></div>
+<div class="highlight"><span class="filename">/etc/fstab</span><pre><span></span><code>/stratis/pool/files /mnt/stratisfs xfs defaults,x-systemd.requires=stratisd.service 0 0
+</code></pre></div>
+<div class="highlight"><span class="filename">Expand pool</span><pre><span></span><code>stratis pool add-data pool /dev/sdb
+</code></pre></div>
+<div class="highlight"><span class="filename">Save snapshot</span><pre><span></span><code>stratis fs snapshot pool files files-snapshot
+</code></pre></div>
+<div class="highlight"><span class="filename">Restore from snapshot</span><pre><span></span><code>stratis fs rename files files-orig
+stratis fs rename files-snapshot files
+umount /mnt/files<span class="p">;</span> mount /mnt/files
+</code></pre></div>
 <h2 id="commands">Commands</h2>
 <h4 id="rpm">rpm</h4>
 <dl>
@@ -4201,12 +4236,10 @@ It is enabled by changing a setting in TuneD's config at <strong>/etc/tuned/tune
 <p>Import a <a href="#rpmkeys">keyring</a>
 <div class="highlight"><pre><span></span><code>rpm --import <span class="s2">&quot;https://build.opensuse.org/projects/home:manuelschneid3r/public_key&quot;</span>
 </code></pre></div></p>
-</dd>
-</dl>
 <h4 id="rpmkeys">rpmkeys</h4>
 <dl>
-<dd>
-<p>Manage RPM keyrings</p>
+<dd>Manage RPM keyrings</dd>
+</dl>
 <p>Import a keyring
 <div class="highlight"><pre><span></span><code>rpmkeys --import <span class="nv">$PUBKEY</span>
 </code></pre></div></p>
