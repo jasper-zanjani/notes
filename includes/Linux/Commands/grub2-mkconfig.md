@@ -1,6 +1,7 @@
 #### grub2-mkconfig
 :   
-    Send output of grub2-mkconfig to the correct location for booting
+    **grub2-mkconfig** is used to create a GRUB2 config file from the settings defined in /etc/default/grub
+
     ```sh
-    grub2-mkconfig --output=/boot/grub2/grub.cfg
+    grub2-mkconfig -o=/boot/grub2/grub.cfg
     ```

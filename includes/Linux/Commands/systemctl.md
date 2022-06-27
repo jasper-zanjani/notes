@@ -1,51 +1,26 @@
 #### systemctl
 :   
-    Configure iptables to start on boot and start it immediately
-    ```sh
-    systemctl enable --now iptables
-    ```
-    Disable `$SERVICE`, ensuring it does not run on boot
-    ```sh
-    systemctl disable $SERVICE
-    ```
-    Change signal type sent to process to be killed
-    ```sh
-    systemctl kill -s
-    ```
-    Equivalent to `chkconfig --list`
-    ```sh
-    systemctl list-unit-files --type=service
-    ```
-    Prevent firewalld from being started inadvertently by another process
-    ```sh
-    systemctl mask firewalld
-    ```
-    Restart `iptables.service`
-    ```sh
-    systemctl restart iptables
-    ```
-    Configure system to boot to a [GUI](#targets)
-    ```sh
-    systemctl set-default graphical.target
-    ```
-    Start `$SERVICE`
-    ```sh
-    systemctl start $SERVICE
-    ```
-    Check status of `$SERVICE`
-    ```sh
+    ```sh title="Services"
+    systemctl list-unit-files --type=service    # Display all services
+    systemctl enable --now $SERVICE             # Configure service to start on boot and start it immediately
     systemctl status $SERVICE
-    sudo systemctl is-active $SERVICE
+    systemctl is-active $SERVICE 
+    systemctl disable $SERVICE
+    systemctl mask $SERVICE                     # Prevent service from being started inadvertently by another process
+    systemctl restart $SERVICE
     ```
-    Suspend the system
+
+    ```sh title="Boot targets"
+    systemctl get-default
+    systemctl set-default graphical.target
+    systemctl isolate emergency.target          # Change target
+    systemctl suspend                           # Suspend system
+    ```
+
+    **--user** specifies the service manager of the calling user.
     ```sh
-    systemctl suspend
+    systemctl --user enable --now container-notes.service # (1)
+    systemctl --user status container-notes.service
     ```
-    Change target to runlevel emergency
-    ```sh
-    systemctl isolate emergency.target
-    ```
-    Enable systemd service for newly-installed `$DISPLAYMANAGER`; may require disabling previous display manager first
-    ```sh
-    systemctl enable $DISPLAYMANAGER.service -f
-    ```
+
+    1. Here, container-notes.service has been created at **~/.config/systemd/user**

@@ -1,16 +1,21 @@
 #### at
 :   
-    Execute a command at a given time
+    Execute a command at a given time.
 
-    === "Pipe"
+    Jobs can be created by piping strings or by using the interactive shell.
 
-        ```sh
-        echo "Hello, world!" | at time
-        ```
+    ```sh
+    at $TIME
+    at> echo "Hello, world!" # (1)
+    at>^D
+    ```
 
-    === "Shell"
+    1. Equivalent to:
+    ```sh
+    echo "Hello, world!" | at $TIME
+    ```
 
-        ```sh
-        at time
-        > echo "Hello, world!"
-        ```
+    There is considerable flexibility with regard to format of time specifications.
+    ```sh
+    at now + 1 min
+    ```

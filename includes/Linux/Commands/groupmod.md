@@ -1,4 +1,0 @@
-[groupmod -&#103;]:             #groupmod                      '```&#10;$ groupmod -g&#10;```&#10;Change GID&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 95'
-[groupmod -&#110;]:             #groupmod                      '```&#10;$ groupmod -n $NAME&#10;$ groupmod --newname $NAME&#10;```&#10;Change name of the group to `$NAME`&#10;Rothwell, William. _CompTIA Linux+ Portable Command Guide_.: 95'
-
-<code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`g`][groupmod -&#103;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> [`n`][groupmod -&#110;] <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> 

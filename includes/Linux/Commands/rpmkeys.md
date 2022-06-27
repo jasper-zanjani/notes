@@ -6,3 +6,4 @@
     ```sh
     rpmkeys --import $PUBKEY
     ```
+

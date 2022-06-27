@@ -27,25 +27,13 @@
 #### Change hostname 
 :   
     ```sh
-    sudo hostnamectl set-hostname $NEWHOSTNAME
+    hostnamectl set-hostname $NEWHOSTNAME
     ```
 
 #### Check kernel version 
 :   
-    === "uname"
-
-        ```bash
-        uname -srm
-        ```
-
-    === "hostnamectl"
-
-        ```bash
-        hostnamectl | grep "Kernel"
-        ```
-
-    === "/proc"
-
-        ```bash
-        cat /proc/version
-        ```
+    ```bash
+    uname -srm
+    hostnamectl | grep "Kernel"
+    cat /proc/version
+    ```

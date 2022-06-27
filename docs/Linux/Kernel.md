@@ -1,11 +1,10 @@
 # Kernel
 
-
-
 ## Commands
 
 --8<--
 includes/Linux/Commands/sysctl.md
+
 includes/Linux/Commands/uname.md
 --8<--
 
@@ -19,8 +18,12 @@ A family of commands exists to manipulate Linux modules, including:
 
 --8<--
 includes/Linux/Commands/insmod.md
+
 includes/Linux/Commands/lsmod.md
+
 includes/Linux/Commands/modinfo.md
+
 includes/Linux/Commands/modprobe.md
+
 includes/Linux/Commands/rmmod.md
 --8<--

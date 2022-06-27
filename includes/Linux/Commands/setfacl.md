@@ -1,26 +1,14 @@
 #### setfacl
 :   
-    [Clear](https://unix.stackexchange.com/questions/339765/how-to-remove-acl-from-a-directory-and-back-to-usual-access-control) FACL from a directory
+    The effect of ACLs can be illustrated with a web server.
+    This command removes read access from a file which would otherwise be served by the Apache/httpd web server daemon.
     ```sh
-    setfacl -bn foo
+    setfacl -m u:apache:- /var/www/html/index.html
     ```
-    Grant user {lisa} right to read $FILE
+
+    This can be resolved by granting read to the apache service account (or removing the entry altogether)
     ```sh
-    setfacl -m u:lisa:r $FILE
-    ```
-    Remove named group {staff} from $FILE's ACL
-    ```sh
-    setfacl -x g:staff $FILE
-    ```
-    Modify file access control list for $FILE to revoke write access from all groups and all named users
-    ```sh
-    setfacl -m m::rx $FILE
-    ```
-    Grant read access to **o**ther users
-    ```sh
-    setfacl -m o::rwx $FILE
-    ```
-    Add user {zach} to list of users of file4.txt
-    ```sh
-    setfacl -m u:zach:rw $FILE
+    setfacl -m u:apache:r /var/www/html/index.html
+    setfacl -x u:apache /var/www/html/index.html
+    setfacl -b /var/www/html/index.html
     ```

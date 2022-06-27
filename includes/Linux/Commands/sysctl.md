@@ -9,21 +9,28 @@
     sysctl kernel/hostname
     ```
 
-    The key name can be suppressed with `-n`
-    ```sh
+    ```sh title="Suppress 
     sysctl -n kernel.hostname
     ```
 
-    Kernel parameters can be set with sysctl, or settings can be defined in **/etc/sysctl.conf** or other 
-    .conf files placed in **/etc/sysctl.d/** and loaded with `sysctl -p` or `sysctl --load`:
-    
-    ```conf title="/etc/sysctl.conf"
-    net.ipv4.ip_forward = 1 # (1)
+    Kernel parameters are set persistently by defining values in **/etc/sysctl.conf** or other .conf files placed in **/etc/sysctl.d/**.
+    ```ini title="/etc/sysctl.conf"
+    net.ipv4.ip_forward=1
     ```
 
-    1. Equivalent to:
+    These values are then loaded into memory ad-hoc with:
+    ```sh
+    sysctl -p # --load
+    ```
+
+    The runtime can be manipulated directly from the command-line with a different flag"
     ```sh
     sysctl -w net.ipv4.ip_forward=1
+    ```
+
+    Alternatively, values can be echoed to the virtual filesystem exposed at **/proc/sys**
+    ```sh
+    echo 1 > /proc/sys/net/ipv4/ip_forward
     ```
 
     [Disable IPv6](https://www.techrepublic.com/article/how-to-disable-ipv6-on-linux/)

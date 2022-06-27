@@ -13,9 +13,16 @@
     ARC serves as ZFS's read cache mechanism and avoids the [thrashing](#thrashing) possible with standard OS page caches by using a more efficient algorithm.
 
 
-**B-tree**{: #btree }
+#### btrfs
 :   
-    A **B-tree** is a self-balancing tree data structure used by [btrfs](#btrfs) to organize and store metadata.
+    **B-Tree Filesystem "butter fs"** is an open-source [CoW](#cow) filesystem that offers many of the same features as [ZFS](#zfs). 
+    
+    It was founded by Chris Mason in 2007.
+    By 2009, btrfs 1.0 was accepted into the mainline Linux kernel.
+    Btrfs was adopted by [SUSE Enterprise Linux](#suse), but support was dropped by Red Hat in 2017.
+    
+    A **B-tree** is a self-balancing tree data structure used by btrfs to organize and store metadata.
+    The [superblock](#superblock) holds pointers to the tree roots of the tree of tree roots and the chunk tree.
 
 **block group**{: #block-group}
 :   
@@ -84,7 +91,7 @@
     **Server Message Block** (**SMB**) is a client/server protocol developed in the early 1980s by Intel, Microsoft, and IBM that has become the native protocol for file and printer sharing on Windows.
     It is implemented in the **Samba**{: #samba } application suite.
 
-    **CIFS**{: #cifs } ("Common Internet File System") is a dialect and implementation of SMB whose acronym has survived despite the fact the protocol itself has fallen into disuse.
+    **CIFS**{: #cifs } (Common Internet File System, pronounced "sifs") is a dialect and implementation of SMB whose acronym has survived despite the fact the protocol itself has fallen into disuse.
 
 **stripe**{: #stripe }
 :   
@@ -120,7 +127,8 @@
 :   
     ZFS filesystem daemon
 
-**ZFS**
+
+#### ZFS
 :   
     ZFS is a technology that combines the functions of a 128-bit CoW filesystem, a volume manager, and software RAID.
 
@@ -130,7 +138,10 @@
 
     ZFS writes use CoW meaning they are atomic and aren't affected by issues like [RAID holes](#raid-hole).
 
-    ZFS can also transparently compress data written to datasets
+    ZFS can also transparently compress data written to datasets.
+
+    **ZFS on Linux (ZOL)** is considered the ugly stepchild of the ZFS community despite the fact that the Linux implementation has the most features and the most community support.
+    ZFS is too tightly bound to the operation of the kernel to operate in true userspace, and that is why each implementation is different for operating systems.
 
 **ZIL**{: #zil }
 :   

@@ -1,8 +1,10 @@
-site_name: 🧠
+site_name: Notes
 site_url: https://jasper-zanjani.github.io/notes
 site_dir: site
 theme:
   name: material
+  favicon: img/brain.png
+  logo: img/brain.png
   palette:
     scheme: slate
     primary: amber

@@ -1,31 +1,55 @@
 # Files
 
+
+
 ## Glossary
 
 #### squashfs
 :   
     [Squashfs](https://www.kernel.org/doc/html/latest/filesystems/squashfs.html) is a compressed read-only filesystem for Linux using zlib compression for files, inodes, and directories.
 
+#### SGID
+:   
+    When the **set-group-ID** bit for a directory is set, all files *created* therein are assigned to the directory's group and not to the file owner's default group.
+    
+    This is intended to facilitate file sharing.
+    In this scenario, users are assigned to a group, and the group is assigned to shared directories with the SGID bit set.
+
+
+#### Sticky bit
+:   
+    When the sticky bit is set on a directory, only root, the directory owner and the owner of a file can remove files in that directory.
+
+#### SUID
+:   
+    The **set-user-ID** bit allows a file to be *executed* with the privileges of the file's owner.
+
+
+
 ## Commands
 
---8<-- "includes/Linux/Commands/cp.md"
 
-#### du
-:   
-    du does not double-count hard-linked files, so it can be used to analyze deduplication in app distribution solutions like [Flatpak](../Package#flatpak).
+--8<--
+includes/Linux/Commands/chage.md
 
-    Here the second command will display a smaller value for the 21.08 version of the freedesktop Platform runtime, indicating that hard-linked files have not been double-counted.
-    ```sh
-    du -sh /var/lib/flatpak/runtime/org.freedesktop.Platform/x86_64/21.08
-    du -sh /var/lib/flatpak/runtime/org.freedesktop.Platform/x86_64/21.08 /var/lib/flatpak/runtime/org.freedesktop.Platform/x86_64/20.08
-    ```
+includes/Linux/Commands/chgrp.md
 
---8<-- "includes/Linux/Commands/find.md"
+includes/Linux/Commands/chmod.md
 
---8<-- "includes/Linux/Commands/mv.md"
+includes/Linux/Commands/chown.md
 
---8<-- "includes/Linux/Commands/rename.md"
+includes/Linux/Commands/cp.md
 
---8<-- "includes/Linux/Commands/rsync.md"
+includes/Linux/Commands/du.md
 
---8<-- "includes/Linux/Commands/setfacl.md"
+includes/Linux/Commands/find.md
+
+includes/Linux/Commands/mv.md
+
+includes/Linux/Commands/rename.md
+
+includes/Linux/Commands/rsync.md
+
+includes/Linux/Commands/setfacl.md
+
+--8<--

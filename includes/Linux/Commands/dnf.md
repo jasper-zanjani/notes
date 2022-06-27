@@ -35,6 +35,11 @@
     assumeyes=True
     ```
 
+    The configuration can be dumped from the command-line (as root)
+    ```sh
+    dnf config-manager --dump
+    ```
+
     Repositories are INI files placed in  **/etc/yum.repos.d/**, but they can also be added from the command-line.
     ```sh
     dnf config-manager --add-repo $REPO-URL
@@ -50,39 +55,35 @@
     dnf config-manager --set-disabled $REPO-NAME
     ```
 
-    === ":material-docker: Docker"
+    ```ini title="Example repos"
+    [docker-ce-stable]
+    name=Docker CE Stable - $basearch
+    baseurl=https://download.docker.com/linux/fedora/$releasever/$basearch/stable
+    enabled=1
+    gpgcheck=1
+    gpgkey=https://download.docker.com/linux/fedora/gp
 
-        ```ini
-        [docker-ce-stable]
-        name=Docker CE Stable - $basearch
-        baseurl=https://download.docker.com/linux/fedora/$releasever/$basearch/stable
-        enabled=1
-        gpgcheck=1
-        gpgkey=https://download.docker.com/linux/fedora/gp
-        ```
+    [kubernetes]
+    name=Kubernetes
+    baseurl=https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64
+    enabled=1
+    gpgcheck=1
+    repo_gpgcheck=1
+    gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
 
-    === ":material-kubernetes: Kubernetes"
+    [google-cloud-sdk]
+    name=Google Cloud SDK
+    baseurl=https://packages.cloud.google.com/yum/repos/cloud-sdk-el7-x86_64
+    enabled=1
+    gpgcheck=1
+    repo_gpgcheck=0
+    gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
+    ```
 
-        ```ini
-        [kubernetes]
-        name=Kubernetes
-        baseurl=https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64
-        enabled=1
-        gpgcheck=1
-        repo_gpgcheck=1
-        gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg 
-               https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
-        ```
-
-    === ":material-google: gcloud"
-
-        ```ini
-        [google-cloud-sdk]
-        name=Google Cloud SDK
-        baseurl=https://packages.cloud.google.com/yum/repos/cloud-sdk-el7-x86_64
-        enabled=1
-        gpgcheck=1
-        repo_gpgcheck=0
-        gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg
-               https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
-        ```
+    **Modules** are collections of packages that are installed together.
+    They often also have **profiles** available, which are variants of the module: i.e. client, server, common, devel, etc.
+    ```sh
+    dnf module list php
+    dnf module install php:7.4/devel
+    dnf module reset php
+    ```

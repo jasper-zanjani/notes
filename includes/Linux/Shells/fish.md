@@ -28,3 +28,23 @@ case ":${PATH}:" in
         ;;
 esac
 ```
+
+```sh title="Setting environment variables"
+set -x EDITOR /usr/bin/vim # (1)
+```
+
+1. Without **-x** this variable will not be visible to applications.
+```sh title="Bash equivalent"
+export EDITOR=/usr/bin/vim
+```
+
+Fish [**for-in loops**](https://fishshell.com/docs/current/cmds/for.html) are concluded with **end**.
+```sh title="Set metadata in a loop"
+for i in $(exa Godfrey*)
+    echo Processing $i
+    set title $(string replace -r "\(.*mp3$" "" $i) # (1)
+    ffmpeg -i $i -metadata title="$title" -metadata album="Godfrey" -metadata artist="Vlad TV" -codec copy output/$i
+end
+```
+
+1. [**string replace**](https://fishshell.com/docs/current/cmds/string.html?highlight=string#replace-subcommand) is used here to remove the ending of a filename, including extension.

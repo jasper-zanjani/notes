@@ -116,13 +116,8 @@ It offers parallel execution, explicit dependencies between services, an escape 
     For each timer file, a matching unit file must exist describing the unit to activate when the timer elapses.
     By default, systemd will search for a service file with a filename matching that of the timer, but failing that a specific unit can be specified with the **Unit** key within the timer file itself.
 
-    Active timers can be displayed in a table
-    ```sh
+    ```sh title="Display timers"
     systemctl list-timers
-    ```
-
-    Their statuses can also be displayed in more detail:
-    ```sh
     systemctl status *timer
     ```
 
@@ -167,18 +162,22 @@ It offers parallel execution, explicit dependencies between services, an escape 
 
 ## Commands
 
---8<-- "includes/Linux/Commands/hostnamectl.md"
+--8<--
+includes/Linux/Commands/hostnamectl.md
 
---8<-- "includes/Linux/Commands/journalctl.md"
+includes/Linux/Commands/journalctl.md
 
---8<-- "includes/Linux/Commands/localectl.md"
+includes/Linux/Commands/localectl.md
 
---8<-- "includes/Linux/Commands/systemctl.md"
+includes/Linux/Commands/loginctl.md
 
---8<-- "includes/Linux/Commands/systemd-analyze.md"
+includes/Linux/Commands/systemctl.md
 
---8<-- "includes/Linux/Commands/systemd-cgls.md"
+includes/Linux/Commands/systemd-analyze.md
 
---8<-- "includes/Linux/Commands/systemd-delta.md"
+includes/Linux/Commands/systemd-cgls.md
 
---8<-- "includes/Linux/Commands/timedatectl.md"
+includes/Linux/Commands/systemd-delta.md
+
+includes/Linux/Commands/timedatectl.md
+--8<--
