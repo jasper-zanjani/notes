@@ -58,7 +58,7 @@ They are globally scoped by default unless they are declared in a code block.
 
 Variables are immutable by default, so if their values are to change they must be marked with `mut`.
 However, immutable variables are distinct from constants declared using `const`, which cannot be made mutable at all.
-`const` identifiers are conventionally written in capitalized snake_case.
+`const` identifiers are conventionally written in capitalized snake\_case.
 
 ```rs
 let language = "&nbsp;";        // Immutable
@@ -280,7 +280,7 @@ To prevent **data races** only one mutable reference to a location in a scope ca
 A mutable reference and an immutable one cannot coexist in the same scope.
 Moves after a borrow are also forbidden, for this same reason.
 
-Here, the call to `push()` causes the [vector](Glossary#vector) to be reallocated on the heap after an immutable borrow was made.
+Here, the call to **push()** causes the [vector](Glossary#vector) to be reallocated on the heap after an immutable borrow was made.
 ```rs
 let mut data = vec![1, 2, 3];
 let x = &data[0];

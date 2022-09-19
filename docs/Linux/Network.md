@@ -55,7 +55,7 @@ includes/Linux/Tasks/static-ip.md
 ## Commands
 
 --8<--
-includes/Linux/Commands/curl.md"
+includes/Linux/Commands/curl.md
 
 includes/Linux/Commands/firewall-cmd.md
 

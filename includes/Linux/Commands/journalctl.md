@@ -21,3 +21,12 @@
 
     1. Display output in reverse (newest entries first)
     2. Continuously update the display as new log entries are created
+
+    By default, SystemD logs to memory.
+    This can be changed by adjusting **/etc/systemd/journald.conf**. 
+    This requires the directory **/var/log/journal** to exist.
+    
+    ```ini title="Persistent logging"
+    [Journal]
+    Storage=persistent
+    ```

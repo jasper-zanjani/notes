@@ -30,11 +30,16 @@ This chain becomes the target of banned IPs, which are somehow added (although I
     bantime=3600
     ```
 
-    Fail2ban's list of banned IPs can also be manipulated with a CLI utility
+    Failed logins can be checked by running **lastb**, and connections are also logged to SystemD.
     ```sh
-    fail2ban-client status sshd
-    fail2ban-client get sshd banned
-    fail2ban-client unban 192.168.1.3
+    journalctl -ru sshd
+    ```
+    
+    ```sh title="Display banned IPs"
+    fail2ban-client banned
     ```
 
-    Failed logins can be checked by running **lastb**
+    ```sh title="Ban IP address manually"
+    fail2ban-client set sshd banip $IPADDRESS
+    ```
+

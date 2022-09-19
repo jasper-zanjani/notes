@@ -42,9 +42,7 @@
     }
     ```
 
-#### Separate files
-:   
-    Note that the filename of the module must match the name provided after **mod**.
+    When separating modules into their own files, the filename of the module must match the name provided after **mod**.
     Folders can also be used, in which case the folder name must match.
 
     ```rs title="main.rs" hl_lines="1-2 4-5"
@@ -75,3 +73,43 @@
         Ok(())
     }
     ```
+
+#### Caesar cipher
+:   
+    ''' rs
+    pub mod encryptor {
+        pub trait Encryptable {
+            fn encrypt(&self) -> String;
+        }
+
+        pub struct Rot13(pub String);
+
+        impl Encryptable for Rot13 {
+            fn encrypt(&self) -> String {
+                self.0
+                    .chars()
+                    .map(|ch| match ch {
+                        'a'..='m' | 'A'..='M' => (ch as u8 + 13) as char,
+                        'n'..='z' | 'N'..='Z' => (ch as u8 - 13) as char,
+                        _ => ch,
+                    })
+                    .collect()
+            }
+        }
+    }
+
+    use encryptor::Encryptable;
+
+    fn main() {
+        println!("Input the string you want to encrypt:");
+        let mut user_input = String::new();
+
+        std::io::stdin()
+            .read_line(&mut user_input)
+            .expect("Cannot read input!");
+        println!(
+            "Your encrypted string: {}",
+            encryptor::Rot13(user_input).encrypt()
+        );
+    }
+    '''

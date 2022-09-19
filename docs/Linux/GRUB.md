@@ -7,6 +7,16 @@ cat /proc/cmdline
 
 ## Tasks
 
+#### Resetting root password
+:   
+    Append **rd.break** to the list of command-line parameters to GRUB.
+    Once the shell is ready, run the following commands
+    ```sh
+    mount -o remount,rw /sysroot
+    chroot /sysroot
+    passwd root
+    ```
+
 #### Text-mode installation
 :   
     RHEL can be installed from the console by providing **inst.text** as a kernel parameter on boot by pressing ++Tab++ on the GRUB splash screen.

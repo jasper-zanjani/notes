@@ -18,7 +18,11 @@
     ```sh title="Create a VDO volume"
     vdo create --name=web_storage --device=/dev/xvdb --vdoLogicalSize=10G
     vdostats --human-readable
-    mkfs.xfs -K /dev/mapper/web_storage # (1)
+    mkfs.xfs -K /dev/mapper/web_storage
+    udevadm settle
     ```
 
-    1. **-K** option prevents discarding of blocks at mkfs time.
+    The fstab file requires a variety of options
+    ```sh
+    /dev/mapper/web_storage /mnt/web_storage xfs _netdev,x-systemd.device-timeout=0,x-systemd.requires=vdo.service 0 0
+    ```

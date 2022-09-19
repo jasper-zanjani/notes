@@ -38,9 +38,9 @@
     The main advantage of this method is that the original data [extent](#extent) is not modified, so the risk of data corruption or partial update due to power failure is eliminated.
     This ensures that writes are atomic and the filesystem will always be in a consistent state.
 
-**dataset**{: #dataset}
+#### dataset
 :   
-    In ZFS, one or more **datasets** constitute a unified filesystem.
+    In ZFS, **datasets** represent mountable filesystems.
     Improves on the use of traditional use of partitions in, say, Linux installations where mount points are typically separate partitions.
     Datasets allow quotas and other rules to be enforced.
 
@@ -93,10 +93,6 @@
 
     **CIFS**{: #cifs } (Common Internet File System, pronounced "sifs") is a dialect and implementation of SMB whose acronym has survived despite the fact the protocol itself has fallen into disuse.
 
-**stripe**{: #stripe }
-:   
-
-
 
 #### vdev
 :   
@@ -118,6 +114,15 @@
     - `CACHE`
     - **LOG** (also SLOG), because it usually has faster write performance, provides the pool with a separate vdev to store the ZIL in.
     - `SPECIAL`
+
+#### volume
+:   
+    A ZFS **volume** is a [dataset](#dataset) that [represents](https://docs.oracle.com/cd/E18752_01/html/819-5461/gaypf.html) a block device.
+    They are created with the **-V** option and can be found under **/dev/zvol**.
+    ```sh
+    zfs create -V 5gb tank/vol
+    ```
+    A volume can also be shared as an iSCSI target by setting the **shareiscsi** property on the volume.
 
 **ZED**{: #zed }
 :   

@@ -25,30 +25,329 @@ Other terms:
 - ignite ("Returns a Future that transitions this instance of Rocket into the ignite phase")
 
 -->
-# rocket
+# Rocket
 
-```rs title="Boilerplate"
-use rocket::launch;
-
-#[launch]
-fn rocket() -> _ {
-    rocket::build()
-}
-```
-
-Rocket is a web framework for Rust, along the lines of Flask for Python.
-
-!!! bug "API changes"
+??? bug "API changes"
 
     Major API changes are in store in the transition from 0.4.10 (current stable version as of the time of this writing) and 0.5.0-rc.1.
     The [guide](https://rocket.rs/0.4/guide/) is written for 0.4 and there is no 0.5 version published yet.
 
     These changes include a reorganization of some traits, such as FromForm from [request](https://docs.rs/rocket/0.4.10/rocket/request/index.html) to the new [form](https://docs.rs/rocket/0.5.0-rc.1/rocket/form/index.html) module.
 
+Rocket is a web framework for Rust, along the lines of Flask for Python.
+
+
+The lifecyle of a Rocket request is as follows: [Routing](#route) -> Validation -> Processing -> Response
+
+The process of building a Rocket application has several stages:
+
+- Mounting [routes](#route)
+- Managing **state**
+- Attach [**fairings**](#fairing)
+
+
+
+
+## Tasks
+
+#### Configuration
+:   
+    Rocket can be configured using a [Rocket.toml](https://rocket.rs/0.4/guide/configuration/#rockettoml) file placed at the crate root to specify host address, port, etc. 
+    Some of these settings appear to be necessary for certain REST clients.
+    ```toml title="Rocket.toml"
+    [development]
+    address = "127.0.0.1"
+    port = 8000
+    ```
+
+
+### Hello, World!
+
+#### Simple
+:   
+
+    ```rs
+    #[macro_use]
+    extern crate rocket;
+
+    #[launch] // (1)
+    fn rocket() -> _ {
+        rocket::build()
+            .mount("/", routes![index])
+    }
+
+    #[get("/")]
+    fn index() -> &'static str {
+        "Hello, World!"
+    }
+    ```
+
+    1. The [**#[launch]**](https://api.rocket.rs/v0.5-rc/rocket/attr.launch.html) attribute actually generates an async runtime. 
+    ```rs
+    #[macro_use]
+    extern crate rocket;
+
+    #[rocket::main]
+    async fn main() {
+        rocket::build()
+            .mount("/", routes![index])
+            .launch().await;
+    }
+
+    #[get("/")]
+    async fn index() -> &'static str {
+        "Hello, World!"
+    }
+    ```
+
+#### Parameterized
+:   
+    Parameterization is enabled by [dynamic routes](#route):
+
+    ```rs hl_lines="10-13"
+    #[macro_use]
+    extern crate rocket;
+
+    #[launch]
+    fn rocket() -> _ {
+        rocket::build()
+            .mount("/", routes![index])
+    }
+
+    #[get("/<name>")] // (1)
+    fn index(name: String) -> String {
+        format!["Hello, {}!", name]
+    }
+    ```
+
+    1. Alternatively, using a query segment:
+    ```rs hl_lines="1"
+    #[get("/?<name>)"]
+    ```
+    In which case the handler would only to the path "`/?name=...`", i.e.
+    ```sh
+    curl localhost:8000/?name=Jasper
+    ```
+
+    ```rs hl_lines="11 14-17" title="State"
+    use rocket::{get, routes, launch, State};
+
+    struct MyConfig {
+        msg: String
+    }
+
+    #[launch]
+    fn rocket() -> _ {
+        rocket::build()
+            .mount("/", routes![index,])
+            .manage(MyConfig { msg: "Hello, World!".to_string() })
+    }
+
+    #[get("/")]
+    fn index(state: &State<MyConfig>) -> String { // (1)
+        String::from(&state.msg)
+    }
+    ```
+
+    1. **State** generally appears only in the parameter list of route handlers as a reference which must be initialized in the rocket crate itself.
+
+    ```rs title="File server"
+    use rocket::launch; // (2)
+    use rocket::fs::FileServer;
+
+    #[launch]
+    fn rocket() -> _ {
+        rocket::build()
+            .mount("/", FileServer::from("site"))
+    }
+    ```
+
+    ```rs hl_lines="2 12 21" title="Template"
+    use rocket::{get, routes, launch, };
+    use rocket_dyn_templates::Template; // (3)
+
+    #[derive(serde::Serialize)] // (1)
+    struct Message {
+        msg: String
+    }
+
+    #[launch]
+    fn rocket() -> _ {
+        rocket::build()
+            .attach(Template::fairing()) // (2)
+            .mount("/", routes![index,])
+    }
+
+    #[get("/")]
+    fn index() -> Template {
+        let context = Message {
+            msg: String::from("Hello, World!")
+        };
+        Template::render("index", &context) // (4)
+    }
+    ```
+
+    1. The context struct used to insert information into the template must have the Serialize derive.
+    2. [**Template::fairing()**](https://api.rocket.rs/master/rocket_dyn_templates/struct.Template.html#method.fairing) must be attached to the running Rocket instance.
+    A [**fairing**](https://rocket.rs/v0.5-rc/guide/fairings/) in Rocket parlance refers to structured middleware which expose hooks that allow callbacks to be placed into the request lifecycle to rewrite incoming requests and outgoing responses.
+    1. Prior to 0.5, the Template struct was in the [**rocket\_contrib**](https://api.rocket.rs/v0.4/rocket_contrib/) crate. 
+    Since 0.5, the **rocket\_dyn\_templates** crate requires at least one of two features to be enabled to use Template.
+    ```toml title="Cargo.toml"
+    rocket_dyn_templates = {version = "0.1.0-rc.1", features = ["handlebars", "tera"]}
+    ```
+    1. Template names passed to Template::render() must correspond to files placed in the path set by the **template\_dir** configuration parameter.
+    The process of Rocket finding these templates is called [**discovery**](https://api.rocket.rs/master/rocket_dyn_templates/index.html#discovery).
+    ```html title="index.html.hbs"
+    <!doctype html>
+    <html>
+        <head>
+            <title>{{msg}}</title>
+        </head>
+        <body>
+            <p>{{msg}}</p>
+        </body>
+    </html>
+    ```
+
+    ```rs title="Styled template"
+    use rocket::{get, routes, launch, };
+    use rocket_dyn_templates::Template; // (2)
+    use rocket::fs::FileServer;
+
+    #[derive(serde::Serialize)]
+    struct Message {
+        msg: String
+    }
+
+    #[launch]
+    fn rocket() -> _ {
+        rocket::build()
+            .attach(Template::fairing())
+            .mount("/", FileServer::from("static"))
+            .mount("/", routes![index,])
+
+    }
+
+    #[get("/")]
+    fn index() -> Template {
+        let context = Message {
+            msg: String::from("Hello, World!")
+        };
+        Template::render("index", &context) // (1)
+    }
+    ```
+
+    1. This template is themed using the Bulma CSS framework, which is served as a static file above.
+    ```pug title="index"
+    head
+      head
+        link rel="stylesheet" href="bulma.css"
+        title {{msg}}
+      body
+        section.hero.is-primary
+          .hero-body
+            .container
+              h1.title {{msg}}
+    ```
+    1.  
+    ```toml title="Cargo.toml"
+    rocket_dyn_templates = { version = "0.1.0-rc.1", features = ["handlebars"], default-features = false }
+    ```
+
+### Starships
+
+A naive list-details application can be implemented using the [**lazy\_static**](../lazy_static) module to create a trivial in-memory database.
+
+```rs
+#[macro_use]
+extern crate rocket;
+
+use lazy_static::lazy_static;
+use std::collections::HashMap;
+
+lazy_static! {
+    static ref STARSHIPS: HashMap<&'static str, Starship> = {
+        let mut map = HashMap::new();
+        map.insert(
+            "NCC-1701",
+            Starship {
+                name: String::from("USS Enterprise"),
+                registry: String::from("NCC-1701"),
+                crew: 203,
+            },
+        );
+        map.insert(
+            "NX-74205",
+            Starship {
+                name: String::from("USS Defiant"),
+                registry: String::from("NX-74205"),
+                crew: 50,
+            }
+        );
+        map
+    };
+}
+
+#[derive(Debug)]
+struct Starship {
+    name: String,
+    registry: String,
+    crew: usize,
+}
+
+#[launch]
+fn rocket() -> _ {
+    rocket::build().mount("/", routes![ship,])
+}
+
+#[get("/<registry>")]
+fn ship(registry: &str) -> String {
+    let starship = STARSHIPS.get(registry); // (1)
+    match starship {
+        Some(s) => format!["Found starship: {:?}", s],
+        None => String::from("No starship found!"),
+    }
+}
+```
+
+1. TODO: This is a good opportunity to use simple string manipulation to make the query case-insensitive, but I can't seem to get it to work.
+I have to figure out a way to incorporate case-insensitivity here.
+Also potentially a place to implement regex..
+
+#### Benchmarking
+:   
+    Web applications can be benchmarked using the **benchrs** tool
+    ```sh
+    cargo install benchrs
+    benchrs -c 30 -n 3000 -k http://127.0.0.1:8000/
+    ```
+
+## Glossary
+
+#### Catcher
+:   
+    A route handler returning an Option will trigger the 404 error handler or [**catcher**](https://api.rocket.rs/v0.5-rc/rocket/struct.Catcher.html) when the None variant is returned.
+    ```rs
+    #[catch(404)]
+    fn not_found(req: &Request) -> String {
+        format!("{} not found", req.uri())
+    }
+    ```
+
+    Analogous to the **mount** method and **routes!** macro for routes, catchers are associated with a Rocket application using the **register** method and **catchers!** macro.
+    ```rs hl_lines="5"
+    #[launch]
+    fn rocket() -> _ {
+        rocket::build()
+            .mount("/", routes![index,])
+            .register("/", catchers![not_found,])
+    }
+    ```
 
 #### Fairing
 :   
     [**Fairings**](https://rocket.rs/0.4/guide/fairings/) are Rocket's approach to structured middleware which hook into the request lifecycle and expose callbacks for events such as incoming requests and outgoing responses.
+    The default builtin fairing is **Shield**, which injects HTTP security and privacy headers to all responses by default.
 
     Fairings (callbacks) are **attached** (registered) to the application's Rocket instance with the `attach()` method.
     Some structs like **Template** expose a **fairing()** method.
@@ -63,10 +362,6 @@ Rocket is a web framework for Rust, along the lines of Flask for Python.
     
     Fairings can be created from a function or closure using the [**AdHoc** struct](https://docs.rs/rocket/latest/rocket/fairing/struct.AdHoc.html).
 
-
-#### Pathing
-:   
-    **Dynamic paths** are possible by implementing the [**FromParam**](https://api.rocket.rs/0.4/rocket/request/trait.FromParam.html) trait on any type.
 
 
 #### Forms
@@ -114,253 +409,111 @@ Rocket is a web framework for Rust, along the lines of Flask for Python.
     rocket_sync_db_pools = {version = "0.1.0-rc.1", default-features = false, features = ["diesel_postgres_pool",]}
     ```
 
-## Tasks
-
-
-#### Configuration
+#### Launch
 :   
-    Rocket can be configured using a [Rocket.toml](https://rocket.rs/0.4/guide/configuration/#rockettoml) file placed at the crate root to specify host address, port, etc. 
-    Some of these settings appear to be necessary for certain REST clients.
-    ```toml title="Rocket.toml"
-    [development]
-    address = "127.0.0.1"
-    port = 8000
+    A Rocket instance represents a web server and its state, and occupies one of three [**phases**](https://api.rocket.rs/v0.5-rc/rocket/struct.Rocket.html#phases) during its lifecycle, each of which is identifiable with a trait:
+
+    - **Build** enables setting configuration, mounting and registering routes, managing state, and attaching [fairings](#fairing).
+    - **Ignite** represents finalized configuration.
+    - **Orbit** represents a running server.
+    
+    The boilerplate for a Rocket instance in fact returns the application in the Build phase
+
+    ```rs hl_lines="7"
+    #[macro_use]
+    extern crate rocket;
+
+    use rocket::{Rocket, Build};
+
+    #[launch]
+    fn rocket() -> Rocket<Build> {
+        rocket::build()
+    }
     ```
 
 
-#### Hello, World!
+    Rocket instance in either Build or Ignite phases can be [launched](#launch) by running **Rocket::launch()**
+
+
+#### Response
 :   
 
 
-    ```rs title="Index route"
-    use rocket::{get, routes, launch}; // (3)
 
-    #[launch]
-    fn rocket() -> _ {
-        rocket::build()
-            .mount("/", routes![index,]) // (2)
-    }
-
-    #[get("/")] // (1)
-    fn index() -> String {
-        String::from("Hello, World!")
-    }
-    ```
-
-    1. Create an index route by placing the [**get** attribute](https://docs.rs/rocket/latest/rocket/attr.get.html) on a route handler.
-    There are various attributes corresponding to HTTP methods: GET, PUT, POST, DELETE, etc.
-    An alternative syntax is also available:
-    ```rs hl_lines="1"
-    #[route(GET, path = "/")]
-    fn index() -> String {
-        String::from("Hello, World)
-    }
-    ```
-    2. [**mount**](https://docs.rs/rocket/latest/rocket/struct.Rocket.html#method.mount) takes a base path and the [**routes**](https://docs.rs/rocket/latest/rocket/macro.routes.html) macro containing a list of routes.
-    3. Note the use of "feature flag" inner attribute that allows use of two features from [unstable Rust](https://doc.rust-lang.org/unstable-book/index.html). 
-    ```rs title="0.4"
-    #![feature(proc_macro_hygiene, decl_macro)] // (1)
-
-    use rocket::{get, routes};
-
-    fn main() {
-        rocket::ignite()
-            .mount("/", routes![index])
-            .launch();
-    }
-
+#### Route
+:   
+    **Routes** are associated with handler functions and are typically composed of an HTTP method (GET, POST, etc) and a URI which is further composed of a **path** and a **query**. 
+    
+    ```rs
     #[get("/")]
-    fn index() -> String {
-        String::from("Hello, World!")
+    fn index() -> &'static str {
+        "Hello, World!"
     }
     ```
 
-    ```rs hl_lines="14-17" title="Dynamic route"
-    use rocket::{get, routes, launch};
+    Both paths and queries can be decomposed into segments, delimited by slashes in the path and ampersands in the query.
+    Any segment can be **static** or **dynamic**.
+    
+    Dynamic segments correspond with an eponymous variable that is passed to the route handler. The data type must implement [**FromParam**](https://api.rocket.rs/v0.5-rc/rocket/request/trait.FromParam.html).
+    Many common primitives, including numbers and Strings, already implement this trait by default.
 
-    #[launch]
+    === "Path segment"
+
+        ```rs
+        #[get("/<name>")]
+        fn index(name: String) -> String {
+            format!["Hello, {}!", name]
+        }
+        ```
+
+    === "Query segment"
+
+        ```rs
+        #[get("/?<name>")]
+        fn index(name: String) -> String {
+            format!["Hello, {}!", name]
+        }
+        ```
+
+    Another dynamic form exists with trailing **`..`** called **multiple segments**, i.e. `#[get("/<name..>)"]`.
+    Such types must implement [**FromSegments**](https://api.rocket.rs/v0.5-rc/rocket/request/trait.FromSegments.html).
+    The existing FromSegments implementation for **PathBuf** already prevents insecure traversal paths using `..`.
+
+    Finally the **ignored segment** **`<_>`** or **`<_..>`** is a special case which will not appear in the argument list.
+    ```rs
+    #[get("/<_>")]
+    ```
+
+    Multiple handlers can also be defined for the same route, in which case each must have a **rank**.
+
+    Routes can also define a **format**, which is useful in POST, PUT, and DELETE requests where there is a payload.
+    These formats are IANA media types (lowercase), as well as some aliases, such as "html" for "text/html; charset=utf-8" etc.
+
+#### State
+:   
+    A Rocket instance can manage any type that implements Send and Sync with the [**manage**](https://api.rocket.rs/v0.5-rc/rocket/struct.Rocket.html#method.manage) method.
+    A managed state is typically used to handle a persistent database connection.
+    ```rs
+    use std::sync::atomic::AtomicU64;
+
+    struct VisitorCounter { 
+        visitor: AtomicU64,
+    }
+
     fn rocket() -> _ {
-        rocket::build()
-            .mount("/", routes![index, greeting])
-    }
-
-    #[get("/")]
-    fn index() -> String {
-        String::from("Hello, World!")
-    }
-
-    #[get("/<name>")] // (1)
-    fn greeting(name: String) -> String {
-        format!("Hello, {}!", name)
-    }
-    ```
-
-    1. The word in angle brackets is known as a **dynamic parameter** and becomes the identifier of a variable that must appear as an argument in the function.
-
-
-    ```rs hl_lines="11 14-17" title="State"
-    use rocket::{get, routes, launch, State};
-
-    struct MyConfig {
-        msg: String
-    }
-
-    #[launch]
-    fn rocket() -> _ {
-        rocket::build()
-            .mount("/", routes![index,])
-            .manage(MyConfig { msg: "Hello, World!".to_string() })
-    }
-
-    #[get("/")]
-    fn index(state: &State<MyConfig>) -> String { // (1)
-        String::from(&state.msg)
-    }
-    ```
-
-    1. **State** generally appears only in the parameter list of route handlers as a reference which must be initialized in the rocket crate itself.
-
-    ```rs title="File server"
-    use rocket::launch; // (2)
-    use rocket::fs::FileServer;
-
-    #[launch]
-    fn rocket() -> _ {
-        rocket::build()
-            .mount("/", FileServer::from("site")) // (1)
-    }
-    ```
-
-    1. Since rocket 0.5, [**FileServer**](https://docs.rs/rocket/0.5.0-rc.1/rocket/fs/struct.FileServer.html) is recommended for building static file servers, although the API of 0.4 can be aped more directly with the following code:
-    ```rs hl_lines="4-7"
-    use rocket::{get, routes, launch};
-    use rocket::fs::NamedFile;
-
-    #[get("/")]
-    pub async fn index() -> Option<NamedFile> {
-        NamedFile::open("/site/index.html").await.ok()
-    }
-
-    #[launch]
-    fn rocket() -> _ {
-        rocket::build()
-            .mount("/", routes![index])
-    }
-    ```
-    2. 
-    ```rs title="0.4"
-    #![feature(proc_macro_hygiene, decl_macro)]
-
-    use rocket::{get, routes};
-    use rocket::response::{Responder, NamedFile};
-
-    #[get("/")]
-    fn index() -> Result<impl Responder<'static>, std::io::Error> {
-        NamedFile::open("/site/index.html")
-    }
-
-    fn main() {
-        rocket::ignite()
-            .mount("/", routes![index])
-            .launch();
-    }
-    ```
-
-    ```rs hl_lines="2 12 21" title="Template"
-    use rocket::{get, routes, launch, };
-    use rocket_dyn_templates::Template; // (3)
-
-    #[derive(serde::Serialize)] // (1)
-    struct Message {
-        msg: String
-    }
-
-    #[launch]
-    fn rocket() -> _ {
-        rocket::build()
-            .attach(Template::fairing()) // (2)
-            .mount("/", routes![index,])
-    }
-
-    #[get("/")]
-    fn index() -> Template {
-        let context = Message {
-            msg: String::from("Hello, World!")
+        let counter = VisitorCounter {
+            visitor: AtomicU64::new(0),
         };
-        Template::render("index", &context) // (4)
-    }
-    ```
-
-    1. The context struct used to insert information into the template must have the Serialize derive.
-    2. [**Template::fairing()**](https://api.rocket.rs/master/rocket_dyn_templates/struct.Template.html#method.fairing) must be attached to the running Rocket instance.
-    A [**fairing**](https://rocket.rs/v0.5-rc/guide/fairings/) in Rocket parlance refers to structured middleware which expose hooks that allow callbacks to be placed into the request lifecycle to rewrite incoming requests and outgoing responses.
-    3. Prior to 0.5, the Template struct was in the [**rocket\_contrib**](https://api.rocket.rs/v0.4/rocket_contrib/) crate. 
-    Since 0.5, the **rocket\_dyn\_templates** crate requires at least one of two features to be enabled to use Template.
-    ```toml title="Cargo.toml"
-    rocket_dyn_templates = {version = "0.1.0-rc.1", features = ["handlebars", "tera"]}
-    ```
-    4. Template names passed to Template::render() must correspond to files placed in the path set by the **template\_dir** configuration parameter.
-    The process of Rocket finding these templates is called [**discovery**](https://api.rocket.rs/master/rocket_dyn_templates/index.html#discovery).
-    ```html title="index.html.hbs"
-    <!doctype html>
-    <html>
-        <head>
-            <title>{{msg}}</title>
-        </head>
-        <body>
-            <p>{{msg}}</p>
-        </body>
-    </html>
-    ```
-
-    ```rs title="Styled template"
-    use rocket::{get, routes, launch, };
-    use rocket_dyn_templates::Template; // (2)
-    use rocket::fs::FileServer;
-
-    #[derive(serde::Serialize)]
-    struct Message {
-        msg: String
-    }
-
-    #[launch]
-    fn rocket() -> _ {
         rocket::build()
-            .attach(Template::fairing())
-            .mount("/", FileServer::from("static"))
-            .mount("/", routes![index,])
-
+            .manage(counter)
+            .mount("/", <!-- ... -->)
     }
-
+    ```
+    This state is exposed as the State request guard:
+    ```rs
     #[get("/")]
-    fn index() -> Template {
-        let context = Message {
-            msg: String::from("Hello, World!")
-        };
-        Template::render("index", &context) // (1)
+    fn route(counter: &State<VisitorCounter>,) {
+        counter.visitor.fetch_add(1, Ordering::Relaxed);
+        println!("The number of visitors is: {}", counter.visitor.load(Ordering::Relaxed));
     }
-    ```
-
-    1. This template is themed using the Bulma CSS framework, which is served as a static file above.
-    ```html title="index.html.hbs"
-    <!doctype html>
-    <html>
-      <head>
-        <link rel="stylesheet" href="bulma.css"/>
-        <title>{{msg}}</title>
-      </head>
-      <body>
-        <section class="hero is-primary">
-          <div class="hero-body">
-            <div class="container">
-              <h1 class="title">{{msg}}</h1>
-            </div>
-          </div>
-        </section>
-      </body>
-    </html>
-    ```
-    2.  
-    ```toml title="Cargo.toml"
-    rocket_dyn_templates = { version = "0.1.0-rc.1", features = ["handlebars"], default-features = false }
     ```

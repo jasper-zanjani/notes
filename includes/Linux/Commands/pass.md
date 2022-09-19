@@ -46,10 +46,14 @@
     tree ~/.password-store
     ```
 
-    Pass can also handle OTP generation for MFA, as long as you can retrieve the OTP URI (beginning with otpauth://). QR code images can be deciphered to retrieve these URIs.
+    Pass can also handle OTP generation for MFA, as long as you can retrieve the OTP URI (beginning with otpauth://). 
+    QR code images can be deciphered with **zbarimg** to retrieve these URIs.
     ```sh
-    pass otp add 
+    pass otp add mimecast # (1)
     ```
+
+    1. Note that otpauth URLs usually contain an embedded email address, which must match that of the intialized password store.
+    If this identity does not match, an error that read "There is no assurance this key belongs to the named user" is produced .
 
     ??? info "Resources"
 

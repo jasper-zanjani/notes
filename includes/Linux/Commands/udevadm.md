@@ -1,0 +1,5 @@
+#### udevadm
+:   
+    ```sh
+    udevadm settle
+    ```
