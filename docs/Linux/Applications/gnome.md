@@ -111,8 +111,13 @@ In GTK4 you can choose either a theming engine or CSS stylesheets.
 ## Applications
 
 --8<--
+
 includes/Linux/Commands/dconf.md"
+
 includes/Linux/Commands/gio.md
+
 includes/Linux/Commands/gsettings.md
+
 includes/Linux/Commands/notify-send.md
+
 --8<--

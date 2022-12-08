@@ -22,6 +22,10 @@
     btrfs filesystem balance /data
     ```
 
+#### Installation
+:   
+    
+
 #### Filesystem management
 :   
     Filesystems in btrfs are equivalent to ZFS datasets except that filesystems can be divided into "subvolumes".

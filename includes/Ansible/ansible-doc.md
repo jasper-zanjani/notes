@@ -1,11 +1,12 @@
 #### ansible-doc
 :   
-    Display a list of modules
     ```sh
+    # List currently installed modules
     ansible-doc -l
-    ```
 
-    Display information about module options
-    ```sh
+    # Get module-specific information
     ansible-doc $MODULE
+
+    # Get example code
+    ansible-doc -s $MODULE
     ```

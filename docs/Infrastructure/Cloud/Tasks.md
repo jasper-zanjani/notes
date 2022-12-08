@@ -1205,13 +1205,17 @@ Create DNS zone
 === ":material-microsoft-azure::material-powershell:"
 
     ```powershell
-    New-AzDnsZone -Name examref.com -ResourceGroupName ExamRefRG
+    New-AzDnsZone 
+        -Name examref.com 
+        -ResourceGroupName ExamRefRG
     ```
 
 === ":material-microsoft-azure::material-bash:"
 
     ```sh
-    az network dns zone create --name examref.com --resource-group ExamRefRG
+    az network dns zone create 
+        --name examref.com 
+        --resource-group ExamRefRG
     ```
 
 
@@ -1397,5 +1401,3 @@ By contrast, in Azure CLI, the load balancer can be defined first with `az netwo
 
     az network lb rule create --name ExamRefRule --lb-name ExamRefLB --resource-group ExamRefRG --protocol Tcp --frontend-port 80 --backend-port 80 --frontend-ip-name ExamRefFrontEnd --backend-pool-name backend --probe-name HealthProbe
     ```
-
-

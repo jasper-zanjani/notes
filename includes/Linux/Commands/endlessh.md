@@ -8,8 +8,7 @@
         endlessh
         ```
 
-        /etc/endlessh/config
-        ```
+        ``` title="/etc/endlessh/config"
         LogLevel 0
         ```
 
@@ -20,8 +19,7 @@
         endlessh -v
         ```
 
-        /etc/endlessh/config
-        ```
+        ``` title="/etc/endlessh/config"
         LogLevel 1
         ```
 
@@ -31,8 +29,7 @@
         ```sh
         endlessh -vv
         ```
-        
-        /etc/endlessh/config
-        ```
+                
+        ``` title="/etc/endlessh/config"
         LogLevel 2
         ```

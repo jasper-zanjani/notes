@@ -1,12 +1,8 @@
 #### netplan
 :   
-    **netplan** is a [utility for network configuration](https://netplan.io/) using YAML files
+    The **netplan** utility can be used to load the on-disk configuration.
 
-    ```yaml
-    network:
-      version: 2
-      renderer: networkd
-      ethernets:
-        eth01:
-          dhcp4: yes
+    ```sh title="Reload configuration temporarily"
+    netplan try
     ```
+    
