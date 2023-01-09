@@ -242,7 +242,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../Infrastructure/Ansible/" class="md-tabs__link">
+      <a href="../../Infrastructure/ADO/" class="md-tabs__link">
         Infrastructure
       </a>
     </li>
@@ -1054,6 +1054,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../Infrastructure/ADO/" class="md-nav__link">
+        Azure DevOps
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../Infrastructure/Ansible/" class="md-nav__link">
         Ansible
       </a>
@@ -1157,18 +1171,18 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5_8" type="checkbox" id="__nav_5_8" checked>
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5_9" type="checkbox" id="__nav_5_9" checked>
       
       
       
       
-        <label class="md-nav__link" for="__nav_5_8">
+        <label class="md-nav__link" for="__nav_5_9">
           Cloud
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Cloud" data-md-level="2">
-        <label class="md-nav__title" for="__nav_5_8">
+        <label class="md-nav__title" for="__nav_5_9">
           <span class="md-nav__icon md-icon"></span>
           Cloud
         </label>
@@ -1211,18 +1225,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5_8_3" type="checkbox" id="__nav_5_8_3" checked>
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5_9_3" type="checkbox" id="__nav_5_9_3" checked>
       
       
       
       
-        <label class="md-nav__link" for="__nav_5_8_3">
+        <label class="md-nav__link" for="__nav_5_9_3">
           Azure
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Azure" data-md-level="3">
-        <label class="md-nav__title" for="__nav_5_8_3">
+        <label class="md-nav__title" for="__nav_5_9_3">
           <span class="md-nav__icon md-icon"></span>
           Azure
         </label>
@@ -2572,7 +2586,7 @@
   
     <li class="md-nav__item">
       <a href="../../Misc/Languages/Spanish/" class="md-nav__link">
-        Dominican Spanish
+        Spanish
       </a>
     </li>
   
@@ -4830,15 +4844,16 @@ The <a href="https://nodejs.org/en/download/package-manager/#centos-fedora-and-r
 <p>The configuration can be dumped from the command-line (as root)
 <div class="highlight"><pre><span></span><code>dnf config-manager --dump
 </code></pre></div></p>
-<p>Repositories are INI files placed in  <strong>/etc/yum.repos.d/</strong>, but they can also be added from the command-line.
-<div class="highlight"><pre><span></span><code>dnf config-manager --add-repo <span class="nv">$REPO</span>-URL
-</code></pre></div></p>
-<p>They can be displayed:
-<div class="highlight"><pre><span></span><code>dnf repolist <span class="c1"># -v</span>
-</code></pre></div></p>
-<p>They can also be disabled:
-<div class="highlight"><pre><span></span><code>dnf config-manager --set-disabled <span class="nv">$REPO</span>-NAME
-</code></pre></div></p>
+<p>Repositories are INI files placed in  <strong>/etc/yum.repos.d/</strong>, but they can also be displayed and manipulated from the command-line.</p>
+<div class="highlight"><span class="filename">Repositories</span><pre><span></span><code><span class="c1"># Display repos</span>
+dnf repolist <span class="c1"># -v</span>
+
+<span class="c1"># Add repo</span>
+dnf config-manager --add-repo <span class="nv">$REPO</span>-URL
+
+<span class="c1"># Disable repo</span>
+dnf config-manager --set-disabled <span class="nv">$REPO</span>-NAME
+</code></pre></div>
 <div class="highlight"><span class="filename">Example repos</span><pre><span></span><code><span class="k">[docker-ce-stable]</span><span class="w"></span>
 <span class="na">name</span><span class="o">=</span><span class="s">Docker CE Stable - $basearch</span><span class="w"></span>
 <span class="na">baseurl</span><span class="o">=</span><span class="s">https://download.docker.com/linux/fedora/$releasever/$basearch/stable</span><span class="w"></span>

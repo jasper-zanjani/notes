@@ -242,7 +242,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../Infrastructure/Ansible/" class="md-tabs__link">
+      <a href="../../Infrastructure/ADO/" class="md-tabs__link">
         Infrastructure
       </a>
     </li>
@@ -1054,6 +1054,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../Infrastructure/ADO/" class="md-nav__link">
+        Azure DevOps
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../Infrastructure/Ansible/" class="md-nav__link">
         Ansible
       </a>
@@ -1157,18 +1171,18 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5_8" type="checkbox" id="__nav_5_8" checked>
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5_9" type="checkbox" id="__nav_5_9" checked>
       
       
       
       
-        <label class="md-nav__link" for="__nav_5_8">
+        <label class="md-nav__link" for="__nav_5_9">
           Cloud
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Cloud" data-md-level="2">
-        <label class="md-nav__title" for="__nav_5_8">
+        <label class="md-nav__title" for="__nav_5_9">
           <span class="md-nav__icon md-icon"></span>
           Cloud
         </label>
@@ -1211,18 +1225,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5_8_3" type="checkbox" id="__nav_5_8_3" checked>
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5_9_3" type="checkbox" id="__nav_5_9_3" checked>
       
       
       
       
-        <label class="md-nav__link" for="__nav_5_8_3">
+        <label class="md-nav__link" for="__nav_5_9_3">
           Azure
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Azure" data-md-level="3">
-        <label class="md-nav__title" for="__nav_5_8_3">
+        <label class="md-nav__title" for="__nav_5_9_3">
           <span class="md-nav__icon md-icon"></span>
           Azure
         </label>
@@ -2255,6 +2269,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#mkdocsyml" class="md-nav__link">
+    mkdocs.yml
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#audio" class="md-nav__link">
     Audio
   </a>
@@ -2319,7 +2340,7 @@
   
     <li class="md-nav__item">
       <a href="../Languages/Spanish/" class="md-nav__link">
-        Dominican Spanish
+        Spanish
       </a>
     </li>
   
@@ -4193,8 +4214,36 @@
 
 
 <h1 id="mkdocs-material">Mkdocs Material</h1>
+<h4 id="mkdocsyml">mkdocs.yml</h4>
+<div class="highlight"><pre><span></span><code>site_name: Notes
+theme:
+    name: material
+    features:
+        - content.code.annotate # (1)
+    palette:
+        scheme: default
+        primary: white
+markdown_extensions:
+    - admonition
+    - md_in_html
+    - pymdownx.snippets # (2)
+    - pymdownx.details
+    - pymdownx.tabbed: # (4)
+        alternate_style: true
+    - pymdownx.superfences: # (3)
+        custom_fences:
+            - name: mermaid
+              class: mermaid
+              format: !!python/name:pymdownx.superfences.fence_code_format
+</code></pre></div>
+<ol>
+<li>This is a <a href="https://squidfunk.github.io/mkdocs-material/reference/code-blocks/?h=content+code+annotate#code-annotations">code annotation</a></li>
+<li><a href="https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/?h=snippets#snippets">Snippets</a> allow inclusions to be made from other files.</li>
+<li><a href="https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/?h=snippets#superfences">Superfences</a> allow code blocks to be palced inside tabs and admonitions.</li>
+<li><a href="https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/?h=snippets#tabbed">Tabbed</a> allows tabs. Note that the <strong>alternate_style</strong> configuration is the only supported style and is required.</li>
+</ol>
 <h4 id="audio">Audio</h4>
-<p><a href="https://github.com/squidfunk/mkdocs-material/discussions/4149">Audio clips</a> require the <strong>md_in_html</strong> option.
+<p><a href="https://github.com/squidfunk/mkdocs-material/discussions/4149">Audio clips</a> require the <strong>md_in_html</strong> extension.
 Keep in mind that the filename of the audio will be appended to the route of the current page.</p>
 <p>'''md 
 <audio controls="controls"><source type="audio/mp4" src="gabriela.m4a"></source></audio>
