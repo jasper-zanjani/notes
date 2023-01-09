@@ -40,18 +40,16 @@
     dnf config-manager --dump
     ```
 
-    Repositories are INI files placed in  **/etc/yum.repos.d/**, but they can also be added from the command-line.
-    ```sh
-    dnf config-manager --add-repo $REPO-URL
-    ```
-
-    They can be displayed:
-    ```sh
+    Repositories are INI files placed in  **/etc/yum.repos.d/**, but they can also be displayed and manipulated from the command-line.
+    
+    ```sh title="Repositories"
+    # Display repos
     dnf repolist # -v
-    ```
 
-    They can also be disabled:
-    ```sh
+    # Add repo
+    dnf config-manager --add-repo $REPO-URL
+    
+    # Disable repo
     dnf config-manager --set-disabled $REPO-NAME
     ```
 

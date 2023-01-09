@@ -1,35 +1,16 @@
-#### endlessh
-:   
-    Log verbosity can be configured from the command-line or the config
+```sh title="Log verbosity"
+# Silent
+endlessh
 
-    === "Silent"
+# Normal
+endlessh -v
 
-        ```sh
-        endlessh
-        ```
+# Debug
+endlessh -vv
+```
 
-        ``` title="/etc/endlessh/config"
-        LogLevel 0
-        ```
-
-
-    === "Normal"
-
-        ```sh
-        endlessh -v
-        ```
-
-        ``` title="/etc/endlessh/config"
-        LogLevel 1
-        ```
-
-
-    === "Debug"
-
-        ```sh
-        endlessh -vv
-        ```
-                
-        ``` title="/etc/endlessh/config"
-        LogLevel 2
-        ```
+``` title="Log verbosity"
+LogLevel 0 # silent
+LogLevel 1 # normal
+LogLevel 2 # debug
+```

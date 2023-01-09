@@ -9,7 +9,11 @@ Ansible host management relies on an .ini-format **inventory** file containing a
 Ansible **roles** group content in a way that allows it to be shared.
 Roles also have a highly standardized directory structure.
 Folders named handlers, tasks, etc. contain those items.
-A skeleton directory can be created with [ansible-galaxy](#ansible-galaxy), although they can also be formed manaully of course. 
+A skeleton directory can be created with [ansible-galaxy](#ansible-galaxy). 
+
+```sh
+ansible-galaxy init $ROLENAME
+```
 
 Roles can then be called in a playbook:
 
@@ -44,8 +48,6 @@ Roles can then be called in a playbook:
     3. Use Ansible Tower to produce a GUI interface to restart certain services.
     4. Use Ansible Tower to look for files larger than a particular size in a directory.
     5. Debug a system performance problem. 
-:   - Standalone script that enables a particular task regardless of OS, service or application
-    - Discrete unit of code used in playbooks for executing commands
 
 
 **Variable substitution** is done by specifying the name of the placeholder variable and its value under `vars` as a sibling to `tasks` and `handlers` 
@@ -183,7 +185,9 @@ All CLI tools use the same set of [**modules**](#modules), which expose the same
 
 --8<-- "includes/Ansible/ansible-doc.md"
 
---8<-- "includes/Ansible/ansible-galaxy.md"
+#### ansible-galaxy
+:   
+    --8<-- "includes/Ansible/ansible-galaxy.md"
 
 --8<-- "includes/Ansible/ansible-playbook.md"
 
@@ -209,7 +213,7 @@ All CLI tools use the same set of [**modules**](#modules), which expose the same
 
 Ad Hoc
 :   
-    Type of command run in realtime by an administrator working at the terminal'
+    Type of command run in realtime by an administrator working at the terminal
 
 Ansible Galaxy
 :   Online portal where a gallery of roles made by the Ansible community can be found
@@ -299,7 +303,7 @@ Play
         ```
 
 Role
-:   Organize components of playbooks, allowing them to be reused'
+:   Organize components of playbooks, allowing them to be reused
 
 Task
 :   A single scripted action in a playbook, equivalent to an ad hoc command
@@ -315,16 +319,22 @@ Vault
 ## Tasks
 
 #### Setup
+:   
+    An Ansible service is account is created on each node and given the ability to sudo any command without a password.
+    ```sh
+    useradd ansible
+    passwd ansible
+    ```
+    ```sh title="/etc/sudoers.d/ansible"
+    ansible ALL=(ALL) NOPASSWD: ALL
+    ```
+    ```sh
+    su - ansible
+    ssh-keygen
+    ```
 
-An Ansible service is account is created on each node and given the ability to sudo any command without a password.
-```sh
-useradd ansible
-passwd ansible
-```
-```sh title="/etc/sudoers.d/ansible"
-ansible ALL=(ALL) NOPASSWD: ALL
-```
-```sh
-su - ansible
-ssh-keygen
-```
+#### httpd
+:   
+    ```yaml
+    --8<-- "includes/Ansible/tasks/httpd.yaml"
+    ```

@@ -57,23 +57,20 @@ git cherry-pick commit
 
 Provides a frontend to the INI formatted config files typically found within `.git/config` (or `~/.gitconfig` when using `--global`)
 
-Set up alias "br" for `branch`
 ```sh
-git config --global alias.br branch
+# Set up alias "br" for `branch`
+git config --global alias.br branch # (1)
+
+# Store authentication details in a cache
+git config --global credential.helper cache # (2)
 ```
 
-Equivalent to:
+1. Equivalent to:
 ```ini
 [alias]
 br = branch
 ```
-
-Store authentication details in a cache
-```sh
-git config --global credential.helper cache
-```
-
-Equivalent to 
+1. Equivalent to 
 ```ini
 [credential]
 helper = cache

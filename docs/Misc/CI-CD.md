@@ -30,6 +30,7 @@ jobs:
 
 ```
 #### on
+
 <sub>[src](https://github.com/JackMcKew/pandas_alive/blob/main/.github/workflows/update-readme.yml)</sub>
 ```yaml
 on:
@@ -37,7 +38,9 @@ on:
     branches:
       - main
 ```
+
 #### jobs
+
 <sub>[src](https://github.com/JackMcKew/pandas_alive/blob/main/.github/workflows/update-readme.yml)</sub>
 
 ```yaml

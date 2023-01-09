@@ -138,6 +138,12 @@ Clear custom color commands
 
 ## Tasks
 
+#### Line numbers
+:   
+    ```vimscript
+    :set rnu
+    ```
+
 #### Mapping keys
 :   
     Map ++alt+j++ and ++alt+k++ to move lines of text up or down

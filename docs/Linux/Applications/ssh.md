@@ -25,24 +25,9 @@ The client then decrypts the random number and combines it with the shared sessi
 This hash is then sent back to the server, which checks the calculation.
 
 
-The SSH server daemon has slightly different names on Debian and Red Hat systems
+Note that the SSH server is named **openssh-server** in Ubuntu repos and the service is named **ssh**, as opposed to **sshd** on Red Hat systems.
 
-=== ":material-ubuntu: Ubuntu"
-
-    ```sh
-    apt install openssh-server
-    service ssh start
-    ```
-
-=== ":material-redhat: Red Hat"
-
-    ```sh
-    service sshd start
-    ```
-
-## Config
-
-#### $HOME/.ssh/config
+#### Client config
 :   
     ```yaml
     Host home
@@ -80,11 +65,18 @@ includes/Linux/Tasks/fail2ban.md
 
 ## Commands
 
---8<--
+#### endlessh
+:   
+    --8<-- "includes/Linux/Commands/endlessh.md"
 
-includes/Linux/Commands/endlessh.md
+#### ssh-agent
+:   
+    --8<-- "includes/Linux/Commands/ssh-agent.md"
 
-includes/Linux/Commands/ssh-copy-id.md
+#### ssh-copy-id
+:   
+    --8<-- "includes/Linux/Commands/ssh-copy-id.md"
 
-includes/Linux/Commands/ssh-keygen.md
---8<--
+#### ssh-keygen
+:   
+    --8<-- "includes/Linux/Commands/ssh-keygen.md"

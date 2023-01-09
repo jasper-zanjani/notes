@@ -1,4 +1,5 @@
 # Active Directory
+
 [AD LDS]: #ad-lds 'Active Directory Lightweight Directory Services (AD LDS)&#10;standalone LDAP service similar to full Active Directory, but without DNS, Group Policy, or Kerberos requirements (previously known as Active Directory Application Mode "ADAM")&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 457'
 [ADFS]: # 'Active Directory Federated Services (ADFS)&#10;standards-based technology that enables distributed identification, authentication, and authorization across organizational and platform boundaries; used by the Web Application Proxy role service of Remote Access role to authenticate corporate users to allow access to intranet web applications from the outside&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.'
 [AD]: # 'Active Directory (AD)&#10;Microsoft network operating system, built on top of Windows Server&#10;AD has origins in Windows NT 3.0, which combined features of the LAN Manager protocols with the OS/2 operating system.&#10;Desmond, Brian et al. _Active Directory_. O\'Reilly Media, 2009.: 3'

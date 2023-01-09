@@ -1,0 +1,20 @@
+---
+- name: Install httpd
+  hosts: all
+  tasks:
+  - name: Install
+    ansible.builtin.dnf:
+      name: httpd
+      state: latest
+  - name: Enable service
+    ansible.builtin.systemd:
+      name: httpd
+      enabled: true
+      state: started
+  - name: Open firewall
+    ansible.posix.firewalld:
+      immediate: true
+      permanent: true
+      service: http
+      state: enabled
+...
