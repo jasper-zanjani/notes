@@ -95,72 +95,39 @@ Filtering results can be done with 5 commands:
 
 Build a **hash table** using literals or the `Add` method
 
-=== "Literal"
+```powershell
+$fruit = @{
+    Apple = 'red'
+    Orange = 'orange'
+    Eggplant = 'purple'
+}
 
-    ```powershell
-    $fruit = @{
-        Apple = 'red'
-        Orange = 'orange'
-        Eggplant = 'purple'
-    }
-    ```
+# Inline
+$fruit = @{ Apple = 'red'; Orange = 'orange'; Eggplant = 'purple' }
 
-=== "Literal (inline)"
+# Add method
+$fruit = @{}
+$fruit.Add('Apple','red')
+$fruit.Add('Orange','orange')
+$fruit.Add('Kiwi','green')
+```
 
-    ```powershell
-    $fruit = @{ Apple = 'red'; Orange = 'orange'; Eggplant = 'purple' }
-    ```
+```powershell title="Hashtable methods"
+$fruit = @{}
+$fruit.Add('Apple','red')
+$fruit.Add('Orange','orange')
+$fruit.Add('Kiwi','green')
 
-=== "Add"
+# Deep copy or "clone" of a hashtable.
+$fruitclone = $fruit.Clone()
 
-    ```powershell
-    $fruit = @{}
-    $fruit.Add('Apple','red')
-    $fruit.Add('Orange','orange')
-    $fruit.Add('Kiwi','green')
-    ```
+$fruit.Keys # => @('Apple','Orange','Kiwi')
+$fruit.Values # => @('red','orange','green')
 
-Hashtable methods
+$fruit.Count
 
-=== "Add"
-
-    ```powershell
-    $fruit = @{}
-    $fruit.Add('Apple','red')
-    $fruit.Add('Orange','orange')
-    $fruit.Add('Kiwi','green')
-    ```
-
-=== "Clone"
-
-    ```powershell
-    # Deep copy or "clone" of a hashtable.
-    $fruitclone = $fruit.Clone()
-    ```
-
-=== "Keys"
-
-    ```powershell
-    $fruit.Keys # => @('Apple','Orange','Kiwi')
-    ```
-
-=== "Values"
-
-    ```powershell
-    $fruit.Values # => @('red','orange','green')
-    ```
-
-=== "Count"
-
-    ```powershell
-    $fruit.Count
-    ```
-
-=== "Remove"
-
-    ```powershell
-    $fruit.Remove('One')
-    ```
+$fruit.Remove('One')
+```
 
 Unlike Python, a hash table can be made ordered, changing its data type:
 
@@ -169,13 +136,7 @@ $fruit = [ordered]@{ Apple = 'red'; Orange = 'orange'; Eggplant = 'purple' }
 $fruit.GetType().Name # => OrderedDictionary
 ```
 
-
-## Documentation
-
-Single-line comments are preceded by `#` and block quotes are enclosed between `<#` and `#>`.
-Such a block comment will be parsed by PowerShell when running `Get-Help`.
-
-```powershell
+```powershell title="Documentation"
 <#
 .SYNOPSIS
 This script coordinates the process of creating new employees
@@ -321,7 +282,7 @@ Remoting relies on [WinRM][WinRM], which is Microsoft's implementation of WSMAN.
 - Explicit remoting is also 1-to-1 remoting, where an interactive Powershell prompt is brought up on a remote computer.
 - One-to-many or fan-out remoting is possible with implicit remoting, where a command is transmitted to many computers.
 
-## Testing
+#### Unit testing
 
 [**Pester**](https://pester.dev/docs/quick-start) tests are organized in a hierarchy of blocks and run with [`Invoke-Pester`](https://www.red-gate.com/simple-talk/sysadmin/powershell/introduction-to-testing-your-powershell-code-with-pester/):
 
@@ -367,66 +328,35 @@ Describe "Best airports in the USA" -Fixture
 
 ## Tasks
 
-#### Download files
 
-URIs and filenames are built up as formatted strings
 
-```powershell
-1..24 | ForEach-Object {
-    Invoke-WebRequest -OutFile ("TGC_3466_Lect{0:d2}_FallPagansOriginsMedievalChristianity.m4v" -f $_) ("https://securedownloads.teach12.com/anon.eastbaymedia-drm/courses/3466/m4v/TGC_3466_Lect{0:d2}_FallPagansOriginsMedievalChristianity.m4v?userid=$USERID&orderid=$ORDERID&courseid=$COURSEID&FName=TGC_3466_Lect{0:d2}_FallPagansOriginsMedievalChristianity" -f $_)}
+```powershell title="Display hostname"
+Get-ComputerInfo -Property CsName # gin.CsName
+$Env:computername
 ```
 
-#### Display computer name
-
-=== "Cmdlet"
-
-    ```powershell
-    Get-ComputerInfo -Property CsName
-    gin.CsName
-    ```
-
-=== "`$Env`"
-
-    ```powershell
-    $Env:computername
-    ```
-
-#### Generate password
-
-Generate a random password 20 characters long ([src](https://adamtheautomator.com/powershell-random-password/))
-
-```powershell
+```powershell title="Generate password"
 Add-Type -AssemblyName 'System.Web'
 [System.Web.Security.Membership]::GeneratePassword(20, 3)
 ```
 
-Store credential
+```powershell title="Save credential in variable"
+$cred = Get-Credential
 
-=== "Interactive"
-
-    ```powershell
-    $cred = Get-Credential
-    ```
-
-=== "Cmdlet"
-
-    ```powershell
-    $pw = ConvertTo-SecureString "Password" -AsPlainText -Force
-    $cred = New-Object System.Management.Automation.PSCredential ("FullerP", $pw)
-    ```
-
-Create a new file in the current working directory named `filename`
-
-```powershell
-New-Item -ItemType File -Name filename
+$pw = ConvertTo-SecureString "Password" -AsPlainText -Force
+$cred = New-Object System.Management.Automation.PSCredential ("FullerP", $pw)
 ```
 
-Append `content` to `file`
+#### Loops
+:   
+    ```powershell title="Download files"
+    1..24 | ForEach-Object {
+        Invoke-WebRequest -OutFile ("TGC_3466_Lect{0:d2}_FallPagansOriginsMedievalChristianity.m4v" -f $_) ("https://securedownloads.teach12.com/anon.eastbaymedia-drm/courses/3466/m4v/TGC_3466_Lect{0:d2}_FallPagansOriginsMedievalChristianity.m4v?userid=$USERID&orderid=$ORDERID&courseid=$COURSEID&FName=TGC_3466_Lect{0:d2}_FallPagansOriginsMedievalChristianity" -f $_)}
+    ```
 
-```powershell
-Add-Content C:\path\to\file $content
-```
-
+    ```powershell title="Processing multiple files"
+    Get-ChildItem . | ForEach-Object { ffmpeg -i $_.Name $_.Name.Replace('m4a','mp3') }
+    ```
 
 #### New domain controller
 [Jones][Jones]
@@ -441,30 +371,33 @@ Add-ADPrincipalGroupMembership -Identity "CN=SysAdmin,CN=Users,DC=corp,DC=packtl
 Get-ADPrincipalGroupMembership sysadmin
 ```
 
-#### Text-to-speech
-Initialize text-to-speech object [scriptinglibrary.com](https://www.scriptinglibrary.com/languages/powershell/powershell-text-to-speech/ "Powershell: Text To Speech in 3 lines of code")
-```powershell
-Add-Type –AssemblyName System.Speech
-$tts = New-Object –TypeName System.Speech.Synthesis.SpeechSynthesizer
-$tts.Speak('Hello, World!')
-```
-List available voices
-```powershell
-Foreach ($voice in $SpeechSynthesizer.GetInstalledVoices()){
-    $Voice.VoiceInfo | Select-Object Gender, Name, Culture, Description
-}
-```
-Change voice
-```powershell
-$tts.SelectVoice("Microsoft Zira Desktop")
-$tts.Speak('Hello, World!')
-```
-Set output to WAV file [thinkpowershell.com](https://thinkpowershell.com/create-cortana-audio-files-from-text-using-powershell/ "Create Cortana Audio Files From Text Using PowerShell")
-```powershell
-$WavFileOut = Join-Path -Path $env:USERPROFILE -ChildPath "Desktop\thinkpowershell-demo.wav"
-$SpeechSynthesizer.SetOutputToWaveFile($WavFileOut)
-```
+#### Text to speech
+:   
+
+    ```powershell title="Text to speech"
+    Add-Type –AssemblyName System.Speech # (1)
+    $tts = New-Object –TypeName System.Speech.Synthesis.SpeechSynthesizer
+    $tts.Speak('Hello, World!')
+
+    # List available voices
+    Foreach ($voice in $SpeechSynthesizer.GetInstalledVoices()){
+        $Voice.VoiceInfo | Select-Object Gender, Name, Culture, Description
+    }
+
+    # Change voice
+    $tts.SelectVoice("Microsoft Zira Desktop")
+    $tts.Speak('Hello, World!')
+
+    # Save output
+    $WavFileOut = Join-Path -Path $env:USERPROFILE -ChildPath "Desktop\thinkpowershell-demo.wav" # (2)
+    $SpeechSynthesizer.SetOutputToWaveFile($WavFileOut)
+    ```
+
+    1. [Powershell: Text To Speech in 3 lines of code](https://www.scriptinglibrary.com/languages/powershell/powershell-text-to-speech/)
+    2. [Create Cortana Audio Files From Text Using PowerShell](https://thinkpowershell.com/create-cortana-audio-files-from-text-using-powershell/)
+
 #### VHDX file
+
 [VHDX]: # 'VHDX&#10;Newer hard disk image format and file name extension.&#10;VHDX image files can be as large as 64 TB, and they also support 4 KB logical sector sizes to provide compatibility with 4 KB native drives. VHDX files can be read only by servers running Windows Server 2012 or later or workstations running Windows 8 or later.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 88'
 
 Create a new 256 GB dynamic [VHDX][VHDX] file, mount it, initialize it, and create and format the partition [Zacker][Zacker]: 91
@@ -475,23 +408,30 @@ Initialize-Disk -PassThru |
 New-Partition -DriveLetter X -UseMaximumSize | 
 Format-Volume -Filesystem ntfs -FileSystemLabel data1 -Confirm:$False -Force
 ```
+
 #### Restart Wi-Fi adapter
+
 ```powershell
 $adaptor = Get-WmiObject -Class Win32_NetworkAdapter | Where-Object {$_.Name -like "*Wireless*"}
 $adaptor.Disable()
 $adaptor.Enable()
 ```
+
 #### Add a member to a group
+
 ```powershell
 Add-ADGroupMember -Identity $group -Members $user1,$user2
 ```
+
 #### Add a new local admin
+
 ```powershell
 nlu ansible
 Add-LocalGroupMember Administrators ansible
 ```
-#### Configure secure remoting using a self-signed certificate
+
 #### Create a virtual switch with SET enabled
+
 [SET]: # 'Switch Embedded Teaming (SET)&#10;Hyper-V-only variation of NIC teaming that is implemented wholly within a virtual switch&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 253'
 
 Create a virtual switch with [SET][SET] enabled. [Zacker][Zacker]: 254
@@ -503,7 +443,9 @@ Add new virtual network adapters to VMs
 Add-VMNetworkAdapter -VMName server1 -SwitchName setswitch -Name set1
 ```
 Enable RDMA with [`Get-`][Get-NetAdapterRdma] and [`Enable-NetAdapterRdma`][Enable-NetAdapterRdma].
+
 #### Implement nested virtualization
+
 Both the physical host and the nested virtual host must be running Windows Server 2016, but before installing Hyper-V on the nested host, the following configurations must be made. [Zacker][Zacker]: 181
 
 Provide nested host's processor with access to virtualization technology on the physical host
@@ -522,7 +464,9 @@ Turn on MAC address spoofing
 ```powershell
 Set-VMNetworkAdapter -VMName SVR01 -Name "NetworkAdapter" -MACAddressSpoofing On
 ```
+
 #### Enable CredSSP
+
 On the remote (managed) server [Zacker][Zacker]: 176
 ```powershell
 Enable-PSRemoting
@@ -536,7 +480,9 @@ Enable the use of CredSSP on the client
 ```powershell
 Enable-WSManCredSSP -Role client -DelegateComputer "hypervserver.domain.com"
 ```
+
 #### Configure Server Core
+
 Manually configure network interface, if a DHCP server is unavailable [Zacker][Zacker]: 19
 ```powershell
 New-NetIPAddress 10.0.0.3 -InterfaceAlias "Ethernet' -PrefixLength 24
@@ -549,13 +495,17 @@ Rename the computer and join it to a domain
 ```powershell
 Add-Computer -DomainName adatum.com -NewName Server8 -Credential adatum\administrator
 ```
+
 #### Update Server Core image
+
 ```powershell
 Mount-WindowsImage -ImagePath .\CoreServer.vhdx -Path .\MountDir -Index 1
 Add-WindowsPackage -Path .\MountDir -PackagePath C:\ServicingPackages_cabs
 Dismount-WindowsImage -Path .\MountDir -Save
 ```
+
 #### Implement DDA
+
 [DDA]: # 'Discrete Device Assignment (DDA)&#10;Hyper-V feature that enables passthrough of any PCI Express device, including GPUs or network adapters&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 212'
 
 [Discrete Device Assignment (DDA)][DDA] begins with finding the Instance ID of the device needed to be passed through. [Zacker][Zacker]: 212
@@ -566,7 +516,9 @@ Get-PnpDeviceProperty                         # Provide `InstanceId` and `KeyNam
 Dismount-VmHostAssignableDevice -LocationPath # Remove the device from host control
 Add-VMAssignableDevice -VM -LocationPath      # Attach the device to a guest
 ```
+
 #### Configure live migration
+
 Live migration is possible between Hyper-V hosts that are not clustered, but they must be within the same (or trusted) domains. [Zacker][Zacker]: 306
 ```powershell
 Enable-VMMigration
@@ -645,7 +597,9 @@ Where {($_.Enabled -eq $True)} |
 Select Displayname, SaMaccountName, Enabled, EmailAddress, @{L=’ProxyAddress_1'; E={$_.proxyaddresses[0]}}, @{L=’ProxyAddress_2'; E={$_.ProxyAddresses[1]}} | 
 Export-csv .\usersnoemail2.csv -notypeinformation
 ```
+
 #### Create VM with installation media
+
 [Practice Lab][pl:70-740]
 ```powershell
 New-VM PLABWIN102 1536mb 1 -SwitchName 'Private network 1' -NewVHDPath 'C:\Users\Public\Documents\Hyper-V\Virtual hard disks\PLABWIN102.vhdx' -NewVHDSizeBytes 127gb
@@ -653,12 +607,12 @@ Set-VMDvdDrive -VMName PLABWIN102 -Path C:\Users\Administrator.PRACTICELABS\Docu
 ```
 #### Registry
 
-Description | Affected key
----         | ---
-Fix Windows Search bar [docs.microsoft.com](https://docs.microsoft.com/en-us/powershell/scripting/samples/working-with-registry-keys?view=powershell-7) | HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Search
-Remove 3D Objects [howtogeek.com](https://www.howtogeek.com/331361/how-to-remove-the-3d-objects-folder-from-this-pc-on-windows-10/ "How to Remove “3D Objects” From This PC on Windows 10") | HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace
-Display seconds in system clock [howtogeek.com](https://www.howtogeek.com/325096/how-to-make-windows-10s-taskbar-clock-display-seconds/ "How to Make Windows 10’s Taskbar Clock Display Seconds") | HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced
-Disable Aero Shake [howtogeek.com](https://www.howtogeek.com/howto/windows-7/disable-aero-shake-in-windows-7/ "How to Stop Aero Shake from Minimizing Your Windows") | HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced
+| Description                                                                                                                                                                                       | Affected key                                                                  |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| Fix Windows Search bar [docs.microsoft.com](https://docs.microsoft.com/en-us/powershell/scripting/samples/working-with-registry-keys?view=powershell-7)                                           | HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Search                        |
+| Remove 3D Objects [howtogeek.com](https://www.howtogeek.com/331361/how-to-remove-the-3d-objects-folder-from-this-pc-on-windows-10/ "How to Remove “3D Objects” From This PC on Windows 10")       | HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace |
+| Display seconds in system clock [howtogeek.com](https://www.howtogeek.com/325096/how-to-make-windows-10s-taskbar-clock-display-seconds/ "How to Make Windows 10’s Taskbar Clock Display Seconds") | HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced             |
+| Disable Aero Shake [howtogeek.com](https://www.howtogeek.com/howto/windows-7/disable-aero-shake-in-windows-7/ "How to Stop Aero Shake from Minimizing Your Windows")                              | HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced             |
 
 Remove **3D Objects** from **This PC** [howtogeek.com](https://www.howtogeek.com/331361/how-to-remove-the-3d-objects-folder-from-this-pc-on-windows-10/ "How to Remove “3D Objects” From This PC on Windows 10")
 ```powershell
@@ -683,7 +637,9 @@ Remove User UAC for local users. [ref](https://www.wintips.org/fix-mmc-exe-this-
 ```powershell
 Set-ItemProperty -Path HKLM:\Software\Microsoft\Windows\CurrentVersion\Policies\System -Name EnableLUA -Value 0
 ```
+
 #### WinForms
+
 [Pastebin](https://pastebin.com/v3KMc2ni)
 ```powershell
 # Load required assemblies
@@ -725,7 +681,9 @@ $button_ClickMe = New-Object System.Windows.Forms.Button
 $Form_HelloWorld.Add_Shown({$Form_HelloWorld.Activate()})
 [void] $Form_HelloWorld.ShowDialog()
 ```
+
 #### Modules
+
 Create a new module by placing a .psm1 file in a directory of the same name
 ```
 .\Starship\Starship.psm1
@@ -738,21 +696,28 @@ To import classes, a different syntax must be used [source](https://info.sapien.
 ```powershell
 Using module .\Starship
 ```
+
 #### Sample enumeration
+
 [PowerShellMagazine](https://www.powershellmagazine.com/2013/01/18/pstip-get-a-random-item-from-an-enumeration/)
 ```powershell
 Add-Type -AssemblyName System.Drawing
 $count = [Enum]::GetValues([System.Drawing.KnownColor]).Count
 [System.Drawing.KnownColor](Get-Random -Minimum 1 -Maximum $count)
 ```
+
 #### Migrate a VM
+
 ```powershell
 Enable-VMMigration
 Set-VMMigrationNetwork 192.168.10.1
 Set-VMHost -VirtualMachineMigrationAuthenticationType Kerberos
 Set-VMHost -VirtualMachineMigrationPerformanceOption SMBTransport
 ```
+
+
 #### Storage Spaces Direct
+
 [MeasureUp][mu:70-740]
 ```powershell
 New-Cluster -Name HC-CLU1 -Node node1, node2, node3, node4 -NoStorage
@@ -767,6 +732,7 @@ The next step would be the creation of a new volume
 New-Volume -StoragePool $pool -FriendlyName SharedVol1 -FileSystem CSVFS_REFS -StorageTiersFriendlyNames Performance, Capacity -StorageTierSizes 2GB, 10GB
 ```
 #### Scheduled task
+
 Automatically run SSH server in WSL on system start
 ```powershell
 $action = New-ScheduledTaskAction -Execute C:\WINDOWS\System32\bash.exe -Argument '-c sudo service ssh start'
@@ -774,7 +740,9 @@ $trigger = New-ScheduledTaskTrigger -AtLogon
 
 Register-ScheduledTask -TaskName 'SSH server' -Trigger $trigger -Action $action
 ```
+
 #### Network connection alert
+
 Play a tone when network connection has been (re)-established.
 ```powershell
 while ($true) {
