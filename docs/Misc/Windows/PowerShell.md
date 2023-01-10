@@ -779,3 +779,11 @@ while (Test-NetConnection 8.8.8.8 -WarningAction SilentlyContinue).PingSucceeded
 [private virtual switch]: # 'private virtual switch&#10;Exists only in the Hyper-V server and is accessible only to the VMs running on it, and is inaccessible to the host operating system itself.&#10;Zacker, Craig. _Installation, Storage and Compute with Windows Server 2016: Exam Ref 70-740_. 2017: 241'
 [remoting]: # 'remoting&#10;term applied to the use of WinRM in Powershell over port 5985 (or 5986 for HTTPS)'
 [WinRM]: # 'Windows Remote Management (WinRM)&#10;Microsoft implementation of the WSMAN protocol, which handles communications and authentication for connections for many applications.&#10;Unlike MMCs, which are based on DCOM (legacy technology), WinRM is considered firewall-friendly and is the preferred option'
+
+## Cmdlets
+
+#### Select-String
+:   
+    ```powershell
+    Select-String -Path *.yml -Pattern 'ansible_host' -Context 2,3
+    ```

@@ -13,6 +13,7 @@ theme:
         primary: white
 markdown_extensions:
     - admonition
+    - attr_list # (5)
     - md_in_html
     - pymdownx.snippets # (2)
     - pymdownx.details
@@ -29,6 +30,7 @@ markdown_extensions:
 2. [Snippets](https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/?h=snippets#snippets) allow inclusions to be made from other files.
 3. [Superfences](https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/?h=snippets#superfences) allow code blocks to be palced inside tabs and admonitions.
 4. [Tabbed](https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/?h=snippets#tabbed) allows tabs. Note that the **alternate\_style** configuration is the only supported style and is required.
+5. [Attribute lists](https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown/#attribute-lists) are necessary for [image alignment](https://squidfunk.github.io/mkdocs-material/reference/images/#image-alignment).
 
 #### Audio
 

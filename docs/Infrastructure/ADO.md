@@ -50,13 +50,13 @@ az pipelines delete --id 1
 #### Agent
 
 An [**agent**](https://learn.microsoft.com/en-us/azure/devops/pipelines/agents/agents?view=azure-devops&tabs=browser) represents compute infrastructure with installed agent software. Agents can be Microsoft-hosted (i.e. Azure VMs created specifically for the job and discarded after use) or self-hosted.
-Agents are organized into **pools**; an agent can only belong to a single pool.
+Agents are organized into **pools**; an agent instance can only belong to a single pool, **unless** more than one agent is installed.
 
-The agent software package provides several shell scripts that provide various ways of running the agent.
+The agent software package contains several shell scripts that provide various ways of running and managing the agent.
 
+- **config.sh** must be run to configure the agent after installation by providing the server URL and PAT token.
 - **run.sh** allows manual, interactive execution of the agent software
 - **svc.sh** allows management of the agent software as a SystemD service. The service itself is named according to the pattern **vsts.agent.[ORGANIZATION].[AGENTPOOL].[AGENTNAME].service**.
-- **config.sh** must be run to configure the agent after installation by providing the server URL and PAT token.
 
 ??? info "Self-hosted agent setup"
 
@@ -132,6 +132,12 @@ jobs:
   - checkout: self  
   - bash: |
       echo "Hello, ${{ parameters.name  }}!" > ~/hello
+```
+
+#### extends
+
+```yaml title="hw-extends.yml"
+
 ```
 
 ## Wiki
