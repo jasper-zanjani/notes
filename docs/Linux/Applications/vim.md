@@ -138,11 +138,13 @@ Clear custom color commands
 
 ## Tasks
 
-#### Line numbers
-:   
-    ```vimscript
-    :set rnu
-    ```
+```vim title="Prevent vim from creating backups files"
+set nobackup
+```
+
+```vimscript title="Line numbers"
+:set rnu
+```
 
 #### Mapping keys
 :   

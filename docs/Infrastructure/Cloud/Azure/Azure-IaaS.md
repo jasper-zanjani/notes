@@ -7,6 +7,14 @@ These high-availability options are mutually exclusive:
 
 **VM scale sets (VMSS)** support the ability to dynamically add and remove instances. By default, a VMSS supports up to 100 instances or up to 1000 instances if deployed with the property `singlePlacementGroup` set to false (called a **large-scale set**). A **placement group** is a concept similar to an availability set in that it assigns fault and upgrade domains. By default, a scale set consists of only a single placement group, but disabling this setting allows the scale set to be composed of multiple placement groups. If a custom image is used instead of one in the gallery, the limit is actually 300 instances.
 
+```sh title="Create availability set"
+az vm availability-set create -n $n -g $g 
+    --platform-fault-domain-count 3 
+    --platform-update-domain-count 10
+```
+    
+
+
 ## Load balancers
 
 Load balancers redistribute traffic from a frontend pool to a backend pool using rules. 
@@ -34,257 +42,80 @@ A VM may have more than one **Network Interface Card (NIC)**, but they must belo
 
 # Tasks
 
-### Find Marketplace image
 
-Produce the publisher (e.g. "MicrosoftWindowsServer") from Location
-```powershell
-Get-AzVMImagePublisher
-```
-Produce the offer (e.g. "WindowsServer") from Location and PublisherName
-```powershell
-Get-AzVMImageOffer
-```
-Produce the Sku from Location and PublisherName and Offer
-```powershell
-Get-AzVMImageSku 
-```
-Requires PublisherName, Offer, Location, Skus, and Version (`-Version *` will produce a list of available version numbers)
-```powershell
-Get-AzVMImage 
+```sh title="Deploy VM from image"
+az vm create -g $g -n $n  
+    --image $imageName # (1)
 ```
 
-Deploy from image
-
-
-=== "Azure PowerShell"
-
-    Specify a managed image for use in a new virtual machine
-
-    ```powershell
-    $image = Get-AzImage -ImageName $imageName -ResourceGroupName $g
-    $vmConfig = Set-AzVMSourceImage -VM $vmConfig -Id $image.Id
-    ```
-
-    Specify a legacy unmanaged image for use in a new virtual machine
-
-    ```powershell
-    $osDiskUri = "https://examrefstorage.blob.core.windows.net/vhd/os-disk"
-    $imageUri = "https://examrefstorage.blob.core.windows.net/images/legacy-image.vhd"
-    $vm = Set-AzVMOSDisk -VM $vm -Name $osDiskName -VhdUri $osDiskUri -CreateOption fromImage -SourceImageUri $imageUri -Windows
-    ```
-    
-
-=== "Azure CLI"
-
-    Specify a managed image for use in a new virtual machine
-
-    ```sh
-    az vm create -g $g -n $vmName --image $imageName
-    ```
-
-    Specify a legacy unmanaged image for use in a new virtual machine
-
-    ```sh
-    az vm create -g $g -n $vmName --image $osDiskUri --generate-ssh-keys
-    ```
-    
-
-### Access
-
-
-```powershell
-Enable-PSRemoting
-# If a network connection is Public, this command will not work
-Enable-PSRemoting -SkipNetworkProfileCheck -Force
-```
-The remote computer must also have WinRM up and running. Azure can enable PowerShell on the target machine
-```powershell
-Invoke-AzVMRunCommand -AsJob -ResourceGroupName "RG" -VMName "Socrates" -CommandId EnableRemotePS
-```
-Using Azure Cloud PowerShell
-```powershell
-Enable-AzVMPSRemoting -Name Socrates -ResourceGroupName "RG"
-```
-Add the VM's public IP address `$IP` to the trusted hosts of the local workstation (must be run as administrator):
-```powershell
-Set-Item WSMan:\localhost\Client\TrustedHosts -Value $IP
-```
-Traffic to ports **5985** and **5986** must be allowed through [Windows firewall](#firewall) and, if the computer is an Azure VM, the Network Security Group.
-```powershell
-Enter-PSSession -ComputerName 123.47.78.90 -Credential $cred
-etsn 123.45.67.89 -Credential (Get-Credential)
+1. 
+```sh title="Specify a legacy unmanaged image" hl_lines="3"
+az vm create -g $g -n $n 
+    --image $osDiskUri 
+    --generate-ssh-keys
 ```
 
-```powershell
-Invoke-AzVMRunCommand -ResourceGroupName RG -VMName VM -CommandId 'RunPowerShellScript' -ScriptPath C:\injectedscript.ps1
+```sh title="Windows Server Core"
+az vm create -n $vmName -g $rg -l $vmLocation 
+    --image "MicrosoftWindowsServer:WindowsServer:2016-Datacenter-Server-Core:2016.127.20190603" 
+    --admin-username aztestadmin
+    --admin-password $password
+    --nics socrates-nic
 ```
 
-Open firewall WinRM ports 5985 and 5986
-
-=== "PowerShell"
-
-    ```powershell
-    New-NetFirewallRule -DisplayName "WinRMHTTP" -Direction Inbound -LocalPort 5985 -Protocol TCP -Action Allow
-    New-NetFirewallRule -DisplayName "WinRMHTTPS" -Direction Inbound -LocalPort 5986 -Protocol TCP -Action Allow
-    ```
-
-=== "netsh"
-
-    ```cmd
-    netsh advfirewall firewall add rule name=WinRMHTTP dir=in action=allow protocol=TCP localport=5985
-    netsh advfirewall firewall add rule name=WinRMHTTPS dir=in action=allow protocol=TCP localport=5986
-    ```
-
-### RDP
-
-Saving the .rdp file for later use
-```powershell
-$g = "ExamRefRG"
-$vmName = "ExamRefVM"
-$Path = "C:\path\to\ExamRefVM.rdp"
-
-Get-AzRemoteDesktopFile -ResourceGroupName $g -Name $vmName -LocalPath $path
+```sh title="Display status of VMs"
+az vm list -g $g -o table
 ```
-### Backup
-```powershell
-$t = Get-AzRecoveryServicesVault -Name t1
-Set-AzRecoveryServicesBackupProperties -Vault $t -BackupStorageRedundancy GeoRedundant 
+
+```sh title="Invoke a command on a VM"
+# Enumerate available values for command-id
+az vm run-command list
+
+az vm run-command invoke -g $g -n $n
+    --command-id RunPowerShellScript 
+    --scripts @script.ps1 
+    --parameters 'arg1=somefoo' 'arg2=somebar'
 ```
-### SSH
-```powershell
-$VirtualMachine = Get-AzVM -ResourceGroupName "ResourceGroup11" -Name "VirtualMachine07"
-Add-AzVMSshPublicKey -VM $VirtualMachine -KeyData "MIIDszCCApugAwIBAgIJALBV9YJCF/tAMA0GCSq12Ib3DQEB21QUAMEUxCzAJBgNV" -Path "/home/admin/.ssh/authorized_keys"
+
+```sh title="Resize VM"
+az vm list-vm-resize-options -g $g -n $n 
+    --output table
+
+az vm resize -g $g -n $n 
+    --size Standard_DS3_v2
 ```
-Resize VM
 
-=== "PowerShell"
+```sh title="Create container registry"
+az acr create -g $g -n $n
+    --sku Basic --admin-enabled true
+```
 
-    ```powershell
-    $vm = Get-AzVM -ResourceGroupName $g -VMName $n
-    $vm.HardwareProfile.VMSize = "Standard_DS2_V2"
-    Update-AzVM -VM $vm -ResourceGroupName $g
-    ```
+```sh title="Add NIC"
+az network nic create -g $g -n $n 
+    --vnet-name $ExamRefVNET 
+    --subnet $subnetName
 
-=== "Azure CLI"
-
-    ```sh
-    az vm list-vm-resize-options --resource-group $g --name $vmName --output table
-    az vm resize --resource-group $g --name $vmName --size Standard_DS3_v2
-    ```
-
-### Windows Server Core
-
-=== "PowerShell"
-
-    Simply:
-
-    ```powershell
-    New-AzVM -ResourceGroupName "RG" -Name "VM" -Location "EastUS" -Size "Standard-B2s" -Credential (Get-Credential)
-    New-AzVM Greeks Socrates $vm
-    ```
-
-    The VM's NIC has to be linked to an **NSG**, a **Subnet**, and a **Public IP Address**.
-
-    ```powershell
-    # Create a VNet with a subnet
-    $subnet = New-AzVirtualNetworkSubnetConfig -Name "subnet1" -AddressPrefix "10.0.0.0/24"
-    $vnet = New-AzVirtualNetwork -Name "vnet" -ResourceGroupName "RG" -Location "East US" -AddressPrefix "10.0.0.0/16" -Subnet $subnet
-
-    # Create a Network Interface from the IP and VNet
-    $ip = New-AzPublicIpAddress -Name "wscore-ip" -ResourceGroupName "RG" -Location "East US" -AllocationMethod Dynamic
-    $nic = New-AzNetworkInterface -Name "wscore-nic" -ResourceGroupName "RG" -Location "East US" -SubnetId $vnet.Subnets[0].Id -PublicIpAddressId $pip.Id -NetworkSecurityGroupId $nsg.Id
-    ```
-
-    ```powershell
-    $vm = New-AzVMConfig -VMName "Socrates" -VMSize "Standard_B1s"
-    Set-AzVMOperatingSystem -VM $vm -Windows -ComputerName Socrates -Credential $aztestadmin
-    Set-AzVMSourceImage -VM $vm -PublisherName "MicrosoftWindowsServer" -Offer "WindowsServer" -Skus "2016-Datacenter-Server-Core" -Version 2016.127.20190603
-    Set-AzVMOSDisk -VM $vm -CreateOption fromImage
-    Add-AzVMNetworkInterface -VM $vm -NetworkInterface $nic
-
-    # No `-Name`, since we set `-VMName` when initializing the PSVirtualMachine object with `New-AzVMConfig`
-    New-AzVM -AsJob -VM $vm -Location "East US" -ResourceGroupName "RG" 
-    ```
-
-=== "Azure CLI"
-
-    ```sh
-    az vm create -n Socrates -g RG -l "East US" 
-        --image "MicrosoftWindowsServer:WindowsServer:2016-Datacenter-Server-Core:2016.127.20190603" 
-        --admin-username aztestadmin
-        --admin-password $password
-        --nics socrates-nic
-    ```
-
-Display status of VMs
+az vm nic add -g $g --vm-name $vmName --nics $nicName --primary-nic
+```
 
 
-=== "Azure CLI"
+```sh
+az vm redeploy -g $g -n $n
+```
 
-    ```sh
-    az vm list --resource-group $RESOURCEGROUP --output table
-    ```
-    
-Enable IIS using the **Custom Script Extension** to run a PowerShell script on the VM. 
+```sh title="Create managed VM"
+az vm deallocate -g $g --name $vmName
+az vm generalize -g $g --name $vmName
+az image create -g $g --name $imageName --source $vmName 
+```
 
-=== "Azure CLI"
-
-    ```sh
-    az vm extension set --resource-group $RESOURCEGROUP --vm-name SimpleWinVM --name CustomScriptExtension --publisher Microsoft.Compute --version 1.9 --settings '{"fileUris":["https://raw.githubusercontent.com/MicrosoftDocs/mslearn-welcome-to-azure/master/configure-iis.ps1"]}' --protected-settings '{"commandToExecute": "powershell -ExecutionPolicy Unrestricted -File configure-iis.ps1"}'
-    ```
-    [Source](https://docs.microsoft.com/en-us/learn/modules/build-azure-vm-templates/5-add-a-resource?pivots=windows-cloud)
-    
-
-### Add NIC
-
-=== "PowerShell"
-
-    ```powershell
-    Stop-AzVM -Name $vmName -ResourceGroupName $g
-    Add-AzVMNetworkInterface -VM $vm -Id $nicId -Primary 
-    Update-AzVm -ResourceGroupName $g -VM $vm
-    ```
-
-=== "Azure CLI"
-
-    ```sh
-    az network nic create --resource-group $g --name $nicName --vnet-name $ExamRefVNET --subnet $subnetName
-    az vm nic add -g $g --vm-name $vmName --nics $nicName --primary-nic
-    ```
-
-Redeploy
-
-=== "PowerShell"
-
-    ```powershell
-    Set-AzVM -Redeploy -ResourceGroupName ExamRefRG -Name ExamRefVM
-    ```
-
-=== "Azure CLI"
-
-    ```sh
-    az vm redeploy --resource-group ExamRefRG --name ExamRefVM
-    ```
-
-Create managed VM
-
-=== "PowerShell"
-
-    ```powershell
-    Set-AzVM -ResourceGroupName  $g -Name $vmName -Generalized 
-    $vm = Get-AzVM -ResourceGroupName $g -Name $vmName
-    $image = New-AzImageConfig -Location $location -SourceVirtualMachineId $vm.ID 
-    New-AzImage -Image $image -ImageName $imageName -ResourceGroupName $g
-    ```
-
-=== "Azure CLI"
-
-    ```sh
-    az vm deallocate --resource-group $g --name $vmName
-    az vm generalize --resource-group $g --name $vmName
-    az image create --resource-group $g --name $imageName --source $vmName 
-    ```
-
+```sh title="Create scale set"
+az vmss create -g $g -n $n 
+    --image UbuntuLTS 
+    --authentication-type password 
+    --admin-username $userName 
+    --admin-password $password
+```
 
 ### Create
 ```powershell
@@ -323,7 +154,9 @@ vmName="myUbuntuVM"
 imageName="UbuntuLTS"
 az vm create --resource-group $g --name $vmName --image $imageName --generate-ssh-keys
 ```
+
 Create a virtual network
+
 ```sh
 vnetName="ExamRefVNET"
 vnetAddressPrefix="10.0.0.0/16"
@@ -334,11 +167,14 @@ az network public-ip create -n $ipName -g $g --allocation-method Dynamic --dns-n
 nsgName="webnsg"
 az network nsg create -n $nsgName -g $g -l $location
 ```
+
 Create a NSG rules to allow inbound SSH and HTTP
+
 ```sh
 az network nsg rule create -n SSH --nsg-name ... --priority 100 -g ... --access Allow --description "SSH Access" --direction Inbound --protocol Tcp --destination-address-prefix "*" --destination-port-range 22 --source-address-prefix "*" --source-port-range "*"
 az network nsg rule create -n HTTP --nsg-name ... --priority 101 -g ... --access Allow --description "Web Access" --direction Inbound --protocol Tcp --destination-address-prefix "*" --destination-port-range 80 --source-address-prefix "*" --source-port-range "* 
 ```
+
 ```sh
 # Create a network interface
 nicname="WebVMNic1"
@@ -512,124 +348,13 @@ Publish-AzVMDscConfiguration -ConfigurationPath $configurationPath -ResourceGrou
 Set-AzVmDscExtension -Version 2.76 -ResourceGroupName $g -VMName $vmName -ArchiveStorageAccountNAme $storageName -ArchiveBlobName $archiveBNlob -AutoUpdate:$false -ConfigurationName $configurationName
 ```
 
-## VMSS
-Create a VMSS with IIS installed from a custom script extension
-```powershell
-$g = "ExamRefRG"
-$location = "WestUS"
-$vmSize = "Standard_DS2_V2"
-$capacity = 2
-
-New-AzResourceGroup -Name $g -Location $location
-$vmssConfig = New-AzVmssConfig -Location $location -SkuCapacity $capacity -SkuName $vmSize -UpgradePolicyMode Automatic
-$publicIP = New-AzPublicIpAddress -ResourceGroupName $g -Location $locaiton -AllocationMethod Static -Name $publicIPName
-$frontendIP = New-AzLoadBalancerFrontendIpConfig -Name "lbFrontEndPool" -PublicIpAddress $publicIP
-$backendPool = New-AzLoadBalancerBackendAddressPoolConfig -Name "lbBackEndPool"
-$lb = New-AzLoadBalancer -ResourceGroupName $g -Name "lbrule" -Location $location -FrontendIPConfiguration $frontendIP -BackendAddressPool $backendPool
-
-Add-AzLoadBalancerProbeConfig -Name "lbrule" -LoadBalancer $lb -Protocol http -Port 80 -IntervalInSeconds 15 -ProbeCount 2 -RequestPath "/"
-Set-AzLoadBalancer -LoadBalancer $lb
-```
-Reference a VM image from the gallery
-```powershell
-Set-AzVmssStorageProfile $vmssConfig -ImageReferencePublisher MicrosoftWindowsServer -ImageReferenceOffer WindowsServer -ImageReferenceSku 2016-Datacenter -ImageReferenceVersion latest -OsDiskCreateOption FromImage
-```
-Set up information for authenticating with the VM
-```powershell
-Set-AzVmssOsProfile $vmssConfig -AdminUsername "azureuser" -AdminPassword "P@ssword!" -ComputerNamePrefix "ssVM"
-```
-Create VNet resources
-```powershell
-$subnet = New-AzVirtualNetworkSubnetConfig -Name "web" -AddressPrefix 10.0.0.0/24
-$vnet = New-AzVirtualNetwork -ResourceGroupName $g -Name $ssName -Location $location -AddressPrefix 10.0.0.0/16 -Subnet $subnet
-$ipConfig = New-AzVmssIpConfig -Name "vmssIPConfig" -LoadBalancerBackendAddressPoolsId $lb.BackendAddressPools[0].Id -SubnetId $vnet.Subnets[0].Id
-```
-Attach the VNet to the config object
-```powershell
-Add-AzVmssNetworkInterfaceConfiguration -VirtualMachineScaleSet $vmssConfig -Name "network-config" -Primary $true -IPConfiguration $ipConfig 
-```
-Create the scale set with the config object
-```powershell
-New-AzVmss -ResourceGroupName $g -Name $scaleSetName -VirtualMachineScaleSet $vmssConfig
-```
-```sh
-g="ExamRefRG"
-ssName="erscaleset"
-userName="azureuser"
-password="P@ssword!"
-vmPrefix="ssVM"
-location="WestUS"
-
-az group create --name $g --location $location
-az vmss create --resource-group $g --name $ssName --image UbuntuLTS --authentication-type password --admin-username $userName --admin-password $password
-```
-
-## Custom script extension
-Use the custom script extension to install packages and Windows features and roles to VMs
-```powershell
-# Deploy the Active Directory Domain Services role
-Install-WindowsFeature -Name "AD-Domain-Services" -IncludeManagementTools -IncludeAllSubFeature
-Install-ADDSForest -DomainName $domain -DomainMode Win2012 -ForestMode Win2012 -Force -SafeModeAdministratorPassword $smPassword
-```
-```powershell
-# Use `Set-AzVMCustomScriptExtension` to run script on a VM
-$vmName = "ExamRefVM"
-$scriptName = "deploy-ad.ps1"
-$domain = "contoso.com"
-$extensionName = "installAD"
-$location = "WestUS"
-$scriptUri = "https://raw.githubusercontent.com/opsgility/lab-support-public/master/script-extensions/deploy-ad.ps1" 
-$scriptArgument = "contoso.com $password"
-Set-AzVMCustomScriptExtension -ResourceGroupName $g -VMName $vmName -FileUri $scriptUri -Argument "$domain $password" -Run $scriptName -Name $extensionName -Location $location
-```
-```sh
-vmName="LinuxVM"
-extensionName="InstallApache"
-az vm extension set --resource-group $g --vm-name $vmName --name customScript --publisher Microsoft.Azure.Extensions --protected-settings ./cseconfig.json
-```
-
-Enable IIS using the **Custom Script Extension** to run a PowerShell script on the VM. <sup>[?](https://docs.microsoft.com/en-us/learn/modules/build-azure-vm-templates/5-add-a-resource?pivots=windows-cloud)</sup>
-```sh
-az vm extension set --resource-group $RESOURCEGROUP --vm-name SimpleWinVM --name CustomScriptExtension --publisher Microsoft.Compute --version 1.9 --settings '{"fileUris":["https://raw.githubusercontent.com/MicrosoftDocs/mslearn-welcome-to-azure/master/configure-iis.ps1"]}' --protected-settings '{"commandToExecute": "powershell -ExecutionPolicy Unrestricted -File configure-iis.ps1"}'
-```
-
-Create availability set
 
 
-=== "Azure PowerShell"
 
-    ```powershell
-    New-AzavailabilitySet -ResourceGroupName $g -Name $n -Location $l -PlatformUpdateDomainCount 10 -PlatformFaultDomainCount 3 -Sku "Aligned"
-    ```
-    
-=== "Azure CLI"
 
-    ```sh
-    az vm availability-set create -n $n -g $g --platform-fault-domain-count 3 --platform-update-domain-count 10
-    ```
-    
 
-### Invoke a command on a VM
-Run a shell script, `$script` can be supplied inline
-```sh
-az vm run-command invoke --command-id RunShellScript --scripts $script
-```
-Parameters can be passed to the script argument
-```sh
-az vm run-command invoke --command-id RunShellScript --scripts 'echo $1 $2' --parameters hello world
-```
-Run a PowerShell script
-```sh
-az vm run-command invoke --command-id RunPowerShellScript -n Socrates -g RG 
-```
-Run a script file
-```sh
-az vm run-command invoke --command-id RunPowerShellScript -n Socrates -g RG --scripts @script.ps1 --parameters 'arg1=somefoo' 'arg2=somebar'
-```
-Available values for **command-id** can be enumerated:
-```sh
-az vm run-command list
-```
+
 ### Dedicated host
+
 ![](/img/az-host-group-1.jpg)
 ![](/img/az-host-group-2.jpg)

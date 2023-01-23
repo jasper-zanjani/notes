@@ -1,0 +1,20 @@
+- name: Install Apache
+  hosts: all
+  vars: 
+    apache_package: httpd
+  tasks:
+  - name: Install {{ apache_package }} package
+    package:
+      name: "{{ apache_package }}"
+      state: latest
+  - name: Enable and start {{ apache_package }} service
+    service:
+      name: "{{ apache_package }}"
+      enabled: true
+      state: started
+  - name: Open firewall
+    ansible.posix.firewalld:
+      immediate: true
+      permanent: true
+      service: http
+      state: enabled

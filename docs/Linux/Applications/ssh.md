@@ -69,6 +69,10 @@ includes/Linux/Tasks/fail2ban.md
 :   
     --8<-- "includes/Linux/Commands/endlessh.md"
 
+#### ssh-add
+:   
+    --8<-- "includes/Linux/Commands/ssh-add.md"
+
 #### ssh-agent
 :   
     --8<-- "includes/Linux/Commands/ssh-agent.md"

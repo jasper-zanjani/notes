@@ -1,0 +1,14 @@
+- hosts: all
+  tasks:
+  - package:
+      name: httpd
+      state: latest
+  - service:
+      name: httpd
+      enabled: true
+      state: started
+  - ansible.posix.firewalld:
+      immediate: true
+      permanent: true
+      service: http
+      state: enabled

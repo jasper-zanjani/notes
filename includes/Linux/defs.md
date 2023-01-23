@@ -110,13 +110,16 @@
     WSL v1 is available on Azure VMs if **nested virtualization** is enabled. WSL2 support is forthcoming.
 
     VHDs for WSL distributions are available at `%LOCALAPPDATA%\Packages\<PackageFamilyName>\LocalState` where `<PackageFamilyName>` reflects the name of the Microsoft Store package of the distro, i.e.:
+    
     - CanonicalGroupLimited.Ubuntu20.04onWindows_79rhkp1fndgsc
     - TheDebianProject.DebianGNULinux_76v4gfsz19hv4
 
-    ```sh title="Remove a WSL distribution"
+    ```sh
+    # Install distro
+    wsl.exe --install -d Ubuntu-20.04
+
+    # Remove distro
     wsl.exe --unregister Ubuntu-20.04
     ```
 
     By default, WSL appears to copy the Windows native hosts file at **%SystemRoot%\System32\drivers\etc\hosts** to the distro's /etc/hosts file.
-
-

@@ -66,13 +66,17 @@ Ubuntu installations usually come with a single config in this location named **
 These are processed in **lexicographical order** regardless of subdirectory (unless there are multiple files with the same name).
 If a boolean or scalar parameter is defined in more than one config, the last value is assumed. Values that are sequences are concatenated.
 
-The default config may look something like this, with DHCP enabled.
-
-```yaml
+```yaml title="Default config"
 # Let NetworkManager manage all devices on this system
 network:
     version: 2
-    renderer: NetworkManager
+    renderer: NetworkManager # (1)
+```
+
+1. This may require the **python3-networkmanager** package to be installed first.
+
+```yaml title="Static IP configuration"
+--8<-- "includes/Linux/Tasks/netplan-static.yaml"
 ```
 
 --8<-- "includes/Linux/Commands/netplan.md"

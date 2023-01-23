@@ -250,66 +250,6 @@ $filter = New-AzPacketCaptureFilterConfig -Protocol TCP -RemoteIPAddress "1.1.1.
 New-AzNetworkWatcherPacketCapture -NetworkWatcher $nw -TargetVirtualMachineId $vm.ID -PacketCaptureName "Capture SFTP traffic" -StorageAccountId $s.Id -TimeLimitInSeconds 60 -Filter $filter
 ```
 
-### Policy
-
-Assign a policy
-
-=== ":material-microsoft-azure::material-powershell:"
-
-    ```powershell
-    $scope = '/subscriptions/$subscriptionID'
-    $policyparam = '{
-      "tagName" : {
-        "value": "Environment" },
-      "tagValue": {
-        "value" : "Production" } }'
-    $assignment = New-AzPolicyAssignment -Name 'append-environment-tag' -DisplayName 'Append Environment Tag' -Scope $scope -PolicyDefinition $definition -PolicyParameter $policyparam
-    ```
-
-Remove policy assignment and definition
-
-=== ":material-microsoft-azure::material-powershell:"
-
-    ```powershell
-    Remove-AzPolicyAssignment -Id $assignment.ResourceId
-    Remove-AzPolicyDefinition -Id $definition.ResourceId
-    ```
-    
-Create a policy definition
-
-=== "Azure Portal"
-
-    (All Services) > Policy > Definitions: Both builtin and custom policies can be managed here.
-    
-
-=== ":material-microsoft-azure::material-powershell:"
-
-    ```powershell
-    New-AzPolicyDefinition -Name 'appendEnvironmentTag' -DisplayName 'Append Environment Tag' -Policy 'AppendDefaultTag.json' -Parameter 'AppendDefaultTagParams.json'
-    ```
-
-=== ":material-microsoft-azure::material-bash:"
-
-    ```sh
-    az policy definition create --name 'allowedVMs' --description 'Only allow virtual machines in the defined SKUs' --mode ALL --rules '{...}' --params '{...}'
-    ```
-    
-Apply policy to a scope
-
-=== ":material-microsoft-azure::material-bash:"
-
-    ```sh
-    az policy assignment create --policy allowedVMs --name 'deny-non-compliant-vms' --scope '/subscriptions/<Subscription ID>' -p
-    ```
-
-Delete policy assignment
-
-=== ":material-microsoft-azure::material-bash:"
-
-    ```sh
-    az policy assignment delete --name deny-non-compliant-vms
-    ```
-
 
 ### Resources
 
@@ -589,85 +529,9 @@ Apply tags to resource group
 
 ## Compute
 
-### IaaS
-
-Create a VM
-
-([src](https://www.youtube.com/watch?v=j274vq9a2Rs))
-```sh
-gcloud compute instances create instance-1 --zone-uscentral1-a
-```
-
-### PaaS
-
-Deploy app in current working directory.
-```sh
-gcloud app deploy
-```
-View the deployed app
-```sh
-gcloud app browse
-```
-app.yaml allows configuration of the app in several ways
-```yaml
-runtime: python37
-```
-
-In Azure, multiple web applications are organized under an **App Service Plan** resource.
-So if no such app service plan exists, it must be created.
-
-=== ":material-microsoft-azure::material-powershell:"
-
-    ```powershell
-    $p = New-AzAppServicePlan -Name $n -ResourceGroupName $g -Location $l -Tier "Basic" -NumberofWorkers 2 -WorkerSize "Small"
-    New-AzWebApp -Name $n -Location $l -ResourceGroupName $g -AppServicePlan $p
-    ```
-
-=== ":material-microsoft-azure::material-bash:"
-
-    ```sh
-    az appservice plan create -g $g -n $p --is-linux
-    az webapp create -n $n -g $g --plan $p
-    ```
 
 
 
-### Containers
-
-Create a new source repository
-
-=== ":material-google::material-bash:"
-
-    These steps require:
-
-    1. Cloud SDK and Git to be installed
-    2. A GCP project with billing and the Cloud Source Repositories API enabled
-
-    ```sh
-    #Create a new repository
-    gcloud source repos create hello-world
-
-    #Clone it locally
-    gcloud source repos clone hello-world
-
-    # Create scripts, then add, commit and push them as usual.
-    git commit -am "Initial"
-    git push origin master
-    ```
-
-Create container registry
-
-=== ":material-microsoft-azure::material-powershell:"
-
-    ```powershell
-    New-AzContainerRegistry -ResourceGroupName $rg -Name $registry -Sku "Basic" -EnableAdminUser
-    ```
-
-=== ":material-microsoft-azure::material-bash:"
-
-    ```sh
-    az acr create --name $registry --resource-group $rg --sku Basic --admin-enabled true
-    ```
 
 
 ### ⚓ Kubernetes

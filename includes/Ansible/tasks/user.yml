@@ -1,0 +1,8 @@
+- hosts: all
+  vars:
+  - username: newuser
+  - password: password
+  tasks:
+  - user:
+      name: "{{ username }}"
+      password: "{{ password }}"

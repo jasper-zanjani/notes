@@ -13,9 +13,11 @@ A new internal virtual switch is created, with a gateway explicitly configured.
 
 ``` powershell
 New-VMSwitch -Name Ansible -Type Internal
-New-NetIPAddress -IPAddress 192.168.2.1 -PrefixLength 24 -InterfaceIndex 14
+New-NetIPAddress -IPAddress 192.168.2.1 -PrefixLength 24 -InterfaceIndex 14 # (1)
 New-NetNat -Name Ansible -InternalIPInterfaceAddressPrefix 192.168.2.0/24
 ```
+
+1. Only a single NetIPAddress can be assigned to the interface
 
 WinNAT does not allocate IP addresses to endpoints, so IP addresses must be statically configured within each individual guest.
 
