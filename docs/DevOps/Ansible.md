@@ -69,6 +69,8 @@ Variables can be passed as space-delimited or JSON format.
 ansible-playbook release.yml -e "version=1.23.45 other_variable=foo"
 ```
 
+Variables cane be [encrypted inline](https://docs.ansible.com/ansible/2.9/user_guide/playbooks_vault.html#single-encrypted-variable) in an otherwise cleartext vars file.
+
 #### Jinja2
 
 Various effects are possible using Jinja2 templates:
@@ -309,9 +311,9 @@ ansible-playbook --vault-password-file $pwfile playbooks/motd.yml
     1. Alma Linux 9 additionally requires the **libselinux-python** package to handle SELinux contexts. It is incorrectly identified as "libselinux-python" in the Ansible error message.
 
     ```yaml title="Delete file"
-   - file:
-       path: /etc/motd
-       state: absent
+    - file:
+        path: /etc/motd
+        state: absent
     ```
 
     ```yaml title="Create directory"
