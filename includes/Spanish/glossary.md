@@ -3,7 +3,9 @@
 - **bajarle dos** [to lower the intensity or speed of something](https://es.wiktionary.org/wiki/bajarle_dos) <audio controls="controls"><source type="audio/mp3" src="capricornio/truchitas-14.mp3"></source></audio>
 - **baquear**
     - Quién te tá baqueando ese poloché?
+- **boca abajo** prone
 - **brindar**{: #brindar } to present, offer
+- **bultero**{: #bultero } [flaky](https://casadecampoliving.com/dominican-english-dictionary/), someone who makes plans but does not follow through; a braggart, someone who exaggerates personal accomplishments
 - **chancear a alguien** [give somebody a chance](https://www.spanishdict.com/translate/chancear), [court](https://diccionariolibre.com/definicion/chancear) someone
 - **chin**{: #chin } a [little bit](https://diccionariolibre.com/definicion/Chin)
 - **chulo**{: #chulo }
@@ -19,6 +21,7 @@
 - **flow**{: #flow } swag, style, attractive manner of dress
 - **guayar** to bump, grind
 - **hacer diligencia** making money by exchanging sexual favors
+- **jablador**
 - **josear**{: #josear } (also [_josiar_](https://diccionariolibre.com/definicion/Josiar), _jociar_)  to [hustle](https://www.wordsense.eu/josear/#Spanish)
 - **jeva** [woman](https://diccionariolibre.com/definicion/jeva), partner
 - **laja**{: #laja } something highly used and worn out
@@ -27,8 +30,10 @@
 - **macorisano** someone from SFM
 - **mangar**{: #mangar } to pinch, grab, obtain; [have sexual relations](https://diccionariolibre.com/definicion/mangar) with someone
 - **molote** mob
+- **motoconcho**{: #motoconcho } small [motorcycle](https://www.urbandictionary.com/define.php?term=motoconcho) used for taxi service
 - **nama**{: #nama } only, merely, just (preverbal)
 - **nina**{: #nina } nothing more, nothing at all (sentence final)
+- **paquetero**{: #paquetero } a [liar](https://www.asale.org/damer/paquetero), braggart
 - **parar** to end up in a place without intending to do so
 - **pariguayo** [lame guy](https://diccionariolibre.com/definicion/Pariguayo) who can't get girls
 - **pasar trote** to pass a great [ordeal](https://diccionariolibre.com/definicion/trote)
@@ -41,12 +46,13 @@
 - **romper** to exceed expectations, to draw attention (?)
 - **rulay**{: #rulay } [loose](https://www.urbandictionary.com/define.php?term=Rulay)
 - **se fue la luz** end of discussion
+- **teteo**{: #teteo } [party](https://diccionariolibre.com/definicion/teteo), (cf. **tetear**)
 - **tigueraje** slang; [assertiveness](https://diccionariolibre.com/definicion/tigueraje)
 - **tiguere** a streetwise and [capable guy](https://diccionariolibre.com/definicion/tiguere); guy, dude (usage is similar to [vaina](#vaina) but with people)
 - **tirarse**{: #tirarse } send a text message
     - "Hay que tirarme por privado"
 
-- **toto** pussy
+- **toto** pussy (cf. **creta**{: #creta })
 - **vaca** "ven acá"
 - **vaina** stuff, thing; whatever; etc
 - **y eso?** "why?"

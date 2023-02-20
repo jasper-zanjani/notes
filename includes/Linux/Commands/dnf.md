@@ -1,4 +1,4 @@
-#### dnf
+### dnf
 :   
     View history of dnf commands
     ```sh
@@ -40,11 +40,19 @@
     dnf config-manager --dump
     ```
 
+#### Repos
+:   
     Repositories are INI files placed in  **/etc/yum.repos.d/**, but they can also be displayed and manipulated from the command-line.
     
     ```sh title="Repositories"
     # Display repos
     dnf repolist # -v
+
+    # Display enabled repos
+    dnf repolist --enabled
+
+    # Display a single repo
+    dnf repoinfo docker-ce-stable
 
     # Add repo
     dnf config-manager --add-repo $REPO-URL

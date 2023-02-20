@@ -142,6 +142,7 @@ The value of the role is interpreted as a path, appended to the project director
   - roles/motd
 ```
 
+
 ```yaml title="motd role"
 # motd/tasks/main.yml
 - copy:
@@ -154,6 +155,17 @@ greet_name: World # (1)
 
 1. Role variables defined in **vars** have a high precedence and cannot be overriden.
 Only values defined in **defaults** can be overriden.
+
+It appears that variables with values defined in the main.yml file located **vars** or **defaults** are automatically picked up.
+But if variables are defined in additional files they must be explicitly imported.
+
+```yaml title="motd/tasks/main.yml"
+- include_vars:
+    file: "{{ role_path }}/defaults/secure.yml"
+- copy:
+    content: Hello, {{ greet_name }}!
+    dest: /etc/motd
+```
 
 Normally, tasks in a role execute **before** the other tasks of a playbook. **pre\_tasks** and **post\_tasks** can be defined as well. 
 

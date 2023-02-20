@@ -1,5 +1,3 @@
-## fish
-
 Fish [switch statements](https://fishshell.com/docs/current/cmds/case.html) look completely different from bash case statements, with an incompatible syntax.
 
 ```sh title="Conditionally setting $PATH:"

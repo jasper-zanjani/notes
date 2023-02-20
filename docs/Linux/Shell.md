@@ -1,7 +1,10 @@
 # Shells
 
---8<--
-includes/Linux/Shells/fish.md
+## fish
 
-includes/Linux/Shells/bash.md
---8<--
+--8<-- "includes/Linux/Shells/fish.md"
+
+
+## bash
+
+--8<-- "includes/Linux/Shells/bash.md"
