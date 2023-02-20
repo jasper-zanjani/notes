@@ -210,7 +210,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../DevOps/ADO/" class="md-tabs__link">
+      <a href="../../DevOps/" class="md-tabs__link">
         DevOps
       </a>
     </li>
@@ -757,6 +757,20 @@
           DevOps
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DevOps/" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+            
           
             
               
@@ -1751,6 +1765,14 @@
     dnf
   </a>
   
+    <nav class="md-nav" aria-label="dnf">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#repos" class="md-nav__link">
+    Repos
+  </a>
+  
 </li>
         
           <li class="md-nav__item">
@@ -1778,6 +1800,11 @@
   <a href="#snap" class="md-nav__link">
     snap
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -2793,7 +2820,7 @@
   
     <li class="md-nav__item">
       <a href="../../Misc/Windows/PowerShell/" class="md-nav__link">
-        🐚 PowerShell
+        PowerShell
       </a>
     </li>
   
@@ -4377,7 +4404,7 @@ curl -fsSL https://download.docker.com/linux/ubuntu/gpg <span class="p">|</span>
 </dd>
 </dl>
 <h4 id="apt">apt</h4>
-<h4 id="dnf">dnf</h4>
+<h3 id="dnf">dnf</h3>
 <dl>
 <dd>
 <p>View history of dnf commands
@@ -4406,9 +4433,20 @@ The <a href="https://nodejs.org/en/download/package-manager/#centos-fedora-and-r
 <p>The configuration can be dumped from the command-line (as root)
 <div class="highlight"><pre><span></span><code>dnf config-manager --dump
 </code></pre></div></p>
+</dd>
+</dl>
+<h4 id="repos">Repos</h4>
+<dl>
+<dd>
 <p>Repositories are INI files placed in  <strong>/etc/yum.repos.d/</strong>, but they can also be displayed and manipulated from the command-line.</p>
 <div class="highlight"><span class="filename">Repositories</span><pre><span></span><code><span class="c1"># Display repos</span>
 dnf repolist <span class="c1"># -v</span>
+
+<span class="c1"># Display enabled repos</span>
+dnf repolist --enabled
+
+<span class="c1"># Display a single repo</span>
+dnf repoinfo docker-ce-stable
 
 <span class="c1"># Add repo</span>
 dnf config-manager --add-repo <span class="nv">$REPO</span>-URL

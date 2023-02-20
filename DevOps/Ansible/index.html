@@ -212,7 +212,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../ADO/" class="md-tabs__link md-tabs__link--active">
+      <a href="../" class="md-tabs__link md-tabs__link--active">
         DevOps
       </a>
     </li>
@@ -759,6 +759,20 @@
           DevOps
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+            
           
             
               
@@ -2938,7 +2952,7 @@
   
     <li class="md-nav__item">
       <a href="../../Misc/Windows/PowerShell/" class="md-nav__link">
-        🐚 PowerShell
+        PowerShell
       </a>
     </li>
   
@@ -4532,6 +4546,7 @@ The path for vars files appears to be interpreted relative to the location of th
 Variables can be passed as space-delimited or JSON format.</p>
 <div class="highlight"><pre><span></span><code>ansible-playbook release.yml -e <span class="s2">&quot;version=1.23.45 other_variable=foo&quot;</span>
 </code></pre></div>
+<p>Variables cane be <a href="https://docs.ansible.com/ansible/2.9/user_guide/playbooks_vault.html#single-encrypted-variable">encrypted inline</a> in an otherwise cleartext vars file.</p>
 <h4 id="jinja2">Jinja2</h4>
 <p>Various effects are possible using Jinja2 templates:</p>
 <p>Jinja2 <strong>control structures</strong> support control flow features like loops and conditionals inside <code>{% ... %}</code> blocks.
@@ -4598,6 +4613,14 @@ The value of the role is interpreted as a path, appended to the project director
 <li>Role variables defined in <strong>vars</strong> have a high precedence and cannot be overriden.
 Only values defined in <strong>defaults</strong> can be overriden.</li>
 </ol>
+<p>It appears that variables with values defined in the main.yml file located <strong>vars</strong> or <strong>defaults</strong> are automatically picked up.
+But if variables are defined in additional files they must be explicitly imported.</p>
+<div class="highlight"><span class="filename">motd/tasks/main.yml</span><pre><span></span><code><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">include_vars</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">file</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">role_path</span><span class="nv"> </span><span class="s">}}/defaults/secure.yml&quot;</span><span class="w"></span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">copy</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">content</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Hello, {{ greet_name }}!</span><span class="w"></span>
+<span class="w">    </span><span class="nt">dest</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/etc/motd</span><span class="w"></span>
+</code></pre></div>
 <p>Normally, tasks in a role execute <strong>before</strong> the other tasks of a playbook. <strong>pre_tasks</strong> and <strong>post_tasks</strong> can be defined as well. </p>
 <p>Roles can have dependencies on other dependencies, as defined in the <strong>meta</strong> directory.</p>
 <div class="highlight"><pre><span></span><code><span class="nt">dependencies</span><span class="p">:</span><span class="w"></span>
@@ -4747,16 +4770,15 @@ ssh-keygen -A
 <ol>
 <li>Alma Linux 9 additionally requires the <strong>libselinux-python</strong> package to handle SELinux contexts. It is incorrectly identified as "libselinux-python" in the Ansible error message.</li>
 </ol>
-<p>```yaml title="Delete file"
-   - file:
-   path: /etc/motd
-   state: absent
-<div class="highlight"><pre><span></span><code>```yaml title=&quot;Create directory&quot;
-- file:
-    path: /home/ansible/.vim/autoload
-    state: directory
-    mode: 0755
-</code></pre></div></p>
+<div class="highlight"><span class="filename">Delete file</span><pre><span></span><code><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">file</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/etc/motd</span><span class="w"></span>
+<span class="w">    </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">absent</span><span class="w"></span>
+</code></pre></div>
+<div class="highlight"><span class="filename">Create directory</span><pre><span></span><code><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">file</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/home/ansible/.vim/autoload</span><span class="w"></span>
+<span class="w">    </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">directory</span><span class="w"></span>
+<span class="w">    </span><span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0755</span><span class="w"></span>
+</code></pre></div>
 </dd>
 </dl>
 <h4 id="user-creation">User creation</h4>
@@ -4825,16 +4847,22 @@ ansible-galaxy init <span class="nv">$ROLENAME</span>
 ansible-galaxy import <span class="nv">$USERNAME</span> <span class="nv">$REPONAME</span>
 ansible-galaxy import --no-wait <span class="nv">$USERNAME</span> <span class="nv">$REPONAME</span> <span class="c1"># send job to background</span>
 </code></pre></div>
-<p>A <a href="https://galaxy.ansible.com/docs/using/installing.html#installing-multiple-roles-from-a-file">requirements file</a> can also be used
+<p>A <a href="https://galaxy.ansible.com/docs/using/installing.html#installing-multiple-roles-from-a-file">requirements file</a> can also be used.
 <div class="highlight"><pre><span></span><code>ansible-galaxy role install -r requirements.yml
+</code></pre></div>
+<div class="highlight"><span class="filename">requirements.yml</span><pre><span></span><code><span class="nt">roles</span><span class="p">:</span><span class="w"></span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">src</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">git+https://jasperzanjani@dev.azure.com/jasperzanjani/NewDevOpsProject/_git/motd-role</span><span class="w"> </span><span class="c1"># (1)</span><span class="w"></span>
+<span class="w">  </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">master</span><span class="w"></span>
 </code></pre></div></p>
-<p>As long as a public key is <a href="https://learn.microsoft.com/en-us/azure/devops/repos/git/use-ssh-keys-to-authenticate?view=azure-devops">registered</a> with Azure DevOps, the requirements file can use an SSH connection.
-<div class="highlight"><pre><span></span><code>roles:
-- src: git@ssh.dev.azure.com:v3/jasperzanjani/NewDevOpsProject/motd-role
-  version: master
-  scm: git
-  name: motd-role
+<ol>
+<li>By default, ansible-galaxy will expect a tarball, unless <code>git+</code> is prepended to the URL.</li>
+</ol>
+<p>As long as a public key is <a href="https://learn.microsoft.com/en-us/azure/devops/repos/git/use-ssh-keys-to-authenticate?view=azure-devops">registered</a> with Azure DevOps (and an outbound SSH connection isn't blocked by the firewall), the requirements file can use an SSH connection.
+<div class="highlight"><pre><span></span><code><span class="nt">roles</span><span class="p">:</span><span class="w"></span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">src</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">git@ssh.dev.azure.com:v3/jasperzanjani/NewDevOpsProject/motd-role</span><span class="w"></span>
+<span class="w">  </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">master</span><span class="w"></span>
 </code></pre></div></p>
+<p>Variables in </p>
 </dd>
 </dl>
 <h4 id="ansible-playbook">ansible-playbook</h4>

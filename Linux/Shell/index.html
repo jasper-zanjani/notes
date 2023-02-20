@@ -210,7 +210,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../DevOps/ADO/" class="md-tabs__link">
+      <a href="../../DevOps/" class="md-tabs__link">
         DevOps
       </a>
     </li>
@@ -757,6 +757,20 @@
           DevOps
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DevOps/" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+            
           
             
               
@@ -1806,18 +1820,12 @@
     fish
   </a>
   
-    <nav class="md-nav" aria-label="fish">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#bash" class="md-nav__link">
     bash
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2744,7 +2752,7 @@
   
     <li class="md-nav__item">
       <a href="../../Misc/Windows/PowerShell/" class="md-nav__link">
-        🐚 PowerShell
+        PowerShell
       </a>
     </li>
   
@@ -4327,10 +4335,42 @@ end
 <ol>
 <li><a href="https://fishshell.com/docs/current/cmds/string.html?highlight=string#replace-subcommand"><strong>string replace</strong></a> is used here to remove the ending of a filename, including extension.</li>
 </ol>
-<h4 id="bash">bash</h4>
-<dl>
-<dd>The systemwide config for bash is at <strong>/etc/profile</strong>.</dd>
-</dl>
+<h2 id="bash">bash</h2>
+<p>The systemwide config for bash is at <strong>/etc/profile</strong>.</p>
+<p>Command-line arguments are available as the positional arguments <strong><code>$1</code></strong>, <strong><code>$2</code></strong>, etc. with the script itself being <strong><code>$0</code></strong>.
+Handling command-line arguments is conventionally done with the <strong>shift</strong> command in a <code>while</code> loop.</p>
+<div class="highlight"><span class="filename">Conditionally setting $PATH</span><pre><span></span><code><span class="k">case</span> <span class="s2">&quot;:</span><span class="si">${</span><span class="nv">PATH</span><span class="si">}</span><span class="s2">:&quot;</span> <span class="k">in</span>
+    *:<span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/.cargo/bin&quot;</span>:*<span class="o">)</span>
+        <span class="p">;;</span>
+    *<span class="o">)</span>
+        <span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/.cargo/bin:</span><span class="nv">$PATH</span><span class="s2">&quot;</span>
+        <span class="p">;;</span>
+<span class="k">esac</span>
+</code></pre></div>
+<p>The <strong>shopt</strong> internal command is used to set (<strong>-s</strong>) or unset (<strong>-u</strong>) various shell settings.</p>
+<div class="highlight"><span class="filename">Disable case sensitivity</span><pre><span></span><code><span class="nb">shopt</span> -s nocasematch
+</code></pre></div>
+<div class="highlight"><span class="filename">Tag audio with metadata</span><pre><span></span><code><span class="ch">#!/bin/bash</span>
+tag <span class="o">()</span> <span class="o">{</span>
+    <span class="nv">TAG</span><span class="o">=</span><span class="nv">$1</span> <span class="p">;</span> <span class="nb">shift</span> <span class="c1"># First arg has to be a valid tag name.</span>
+    <span class="nb">shopt</span> -s nocasematch
+    <span class="k">case</span> <span class="nv">$TAG</span> <span class="k">in</span>
+        <span class="s2">&quot;amapiano&quot;</span><span class="o">)</span>
+            <span class="k">while</span> <span class="o">[</span> <span class="nv">$#</span> -gt <span class="m">0</span> <span class="o">]</span>
+            <span class="k">do</span>
+               <span class="nv">INPUTFILE</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span>
+               ffmpeg -i <span class="s2">&quot;</span><span class="nv">$INPUTFILE</span><span class="s2">&quot;</span> -metadata <span class="nv">genre</span><span class="o">=</span>Amapiano -c copy <span class="s2">&quot;</span><span class="si">${</span><span class="nv">INPUTFILE</span><span class="p">/./_tagged.</span><span class="si">}</span><span class="s2">&quot;</span>
+               <span class="nb">shift</span>
+            <span class="k">done</span>
+            <span class="p">;;</span>
+        *<span class="o">)</span>
+            <span class="nb">echo</span> <span class="s2">&quot;Invalid tag!&quot;</span>
+            <span class="p">;;</span>
+    <span class="k">esac</span>
+    <span class="nb">shopt</span> -u nocasematch
+<span class="o">}</span>
+</code></pre></div>
+<p>A more useful and less brittle version of this script may be possible using the <strong>getopts</strong> function to define a named parameter, rather than forcing the first positional argument to be one of a number of set values.</p>
 
               
             </article>
