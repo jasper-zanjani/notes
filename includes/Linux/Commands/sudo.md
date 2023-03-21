@@ -1,6 +1,6 @@
 #### sudo
 :   
-    The **/etc/sudoers**{: #etcsudoers } file contains **user specifications** that define commands that users may execute.
+    The **/etc/sudoers**{: #etcsudoers } file (or files placed under **/etc/sudoers.d/**) contains **user specifications** that define commands that users may execute.
 
     ```
     $USER $HOST = ($RUNAS) $CMD
@@ -13,12 +13,12 @@
 
     Any of these elements can be replaced with the keyword **ALL**.
 
-    Ansible service account
-    ```
+    
+    ``` title="Ansible service account"
     ansible ALL=(ALL) NOPASSWD: ALL
     ```
 
-    ``` title="Allow user to run only the mkdir command
+    ``` title="Allow user to run only the mkdir command"
     user ALL=/bin/mkdir
     ```
 

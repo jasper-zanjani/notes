@@ -5,7 +5,7 @@
 Subscriptions are managed through the Red Hat [entitlement service](https://access.redhat.com/solutions/3653861), integrated with the Customer Portal.
 Entitlement certificates are stored as X.509 PEM certificate files in **/etc/pki/entitlement** for [**Simple Content Access (SCA)**](https://access.redhat.com/articles/simple-content-access)-enabled accounts.
 
-```sh title="Inspect X.509 certificate
+```sh title="Inspect X.509 certificate"
 openssl x509 -text -in /etc/pki/entitlement/9012345678901234567.pem
 ```
 
@@ -40,6 +40,10 @@ openssl x509 -text -in /etc/pki/entitlement/9012345678901234567.pem
     ```ini title="/etc/tuned/tuned-main.conf"
     dynamic_tuning=1
     ```
+
+#### Cockpit
+:   
+    Cockpit is builtin to Red Hat distributions and, once started as a normal SystemD service, is available at port 9090.
 
 ## Storage
 

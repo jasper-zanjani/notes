@@ -39,46 +39,20 @@ When values are stored in a variable at the end of a pipeline, it will create an
 Variables are accessed by prefixing the identifier with `$`.
 
 - [**Automatic variables**][Automatic variable] (`PSVersionTable`, `$IsLinux`, etc) are PowerShell-specific.
-- Windows environment variables are actually accessed through the **`Env`** virtual drive the syntax `$Env:VARIABLE`.
+- Windows environment variables are actually accessed through the **`Env`** virtual drive using syntax like `$Env:APPDATA`, `$Env:USERNAME`, etc.
 
-- [`APPDATA`][APPDATA]
-- [`LOCALAPPDATA`][LOCALAPPDATA] 
-- [`USERNAME`][USERNAME] 
-- [`USERPROFILE`][USERPROFILE] 
-- [`WINDIR`][WINDIR]
-
-### Typing
-
-Variables can be typed by preceding their identifier with the datatype in brackets
-```powershell
+```powershell title="Typing"
 [double]$Price
 [int]$Quantity
 [string]$Description
 ```
 
-Compatible data can be **cast** or converted by simply specifying the type in an assignment, but when the data cannot be converted the interpreter will throw an error.
-
-```powershell
+```powershell title="Casting"
 $Number = [int]'04'
 $FailedCast = [int]'Hello'
 ```
 
-Filtering results can be done with 5 commands:
-
-- `Where-Object` (aliased to `where` and `?`): the most commonly used such command
-- `Select-Object` (aliased to `sc`ed to specify specific columns of information to be displayed
-- `Select-String` (aliased to `sls`)
-- `ForEach-Object` (aliased to `foreach` and `%`) There are two different ways to construct a `ForEach-Object` statement:
-    1. **Script block**, within which the variable `$_` represents the current object
-    2. **Operation statement**, more naturalistic, where you specify a property value or call a method.
-
-
-### Hashtable
-
-
-Build a **hash table** using literals or the `Add` method
-
-```powershell
+```powershell title="Hash tables"
 $fruit = @{
     Apple = 'red'
     Orange = 'orange'
@@ -329,6 +303,27 @@ $cred = Get-Credential
 $pw = ConvertTo-SecureString "Password" -AsPlainText -Force
 $cred = New-Object System.Management.Automation.PSCredential ("FullerP", $pw)
 ```
+
+#### Profile
+:   
+    Similar to a bashrc file, PowerShell has various profiles which can contain custom variable and function definitions, accessible through automatic variables like **$PROFILE**, etc.
+    These are loaded using syntax similar to that of bash:
+    ```powershell title="Reload profile"
+    . $PROFILE
+    ```
+
+#### Filtering
+:   
+    Filtering results can be done with 5 commands:
+
+    - `Where-Object` (aliased to `where` and `?`): the most commonly used such command
+    - `Select-Object` (aliased to `sc`ed to specify specific columns of information to be displayed
+    - `Select-String` (aliased to `sls`)
+    - `ForEach-Object` (aliased to `foreach` and `%`) There are two different ways to construct a `ForEach-Object` statement:
+        1. **Script block**, within which the variable `$_` represents the current object
+        2. **Operation statement**, more naturalistic, where you specify a property value or call a method.
+
+
 
 #### Loop examples
 :   

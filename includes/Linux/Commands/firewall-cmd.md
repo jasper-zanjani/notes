@@ -4,7 +4,7 @@
     
     ```sh
     firewall-cmd --state # "running"
-s    ```
+    ```
 
     Firewalld has a runtime configuration and a saved, persistent configuration.
     Only the runtime configuration will be consulted for any command, unless the persistent configuration is specified with **--permanent**.

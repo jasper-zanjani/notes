@@ -37,6 +37,6 @@ markdown_extensions:
 [Audio clips](https://github.com/squidfunk/mkdocs-material/discussions/4149) require the **md\_in\_html** extension.
 Keep in mind that the filename of the audio will be appended to the route of the current page.
 
-'''md 
+```html 
 <audio controls="controls"><source type="audio/mp4" src="gabriela.m4a"></source></audio>
-'''
+```

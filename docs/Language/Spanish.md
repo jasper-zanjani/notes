@@ -1,52 +1,97 @@
 # Spanish
 
-## Greetings
+??? info "Greetings"
 
+    ``` mermaid
+    graph TD
+    F[Saludos] --> A;
+    F --> C;
+    F --> E;
+    A[Qué lo que?] --> B[Tranquilo];
+    C[Dame luz?] --> B;
+    A --> D[Tó frio];
+    C --> D;
+    E[Como te sien?] --> B;
+    E --> D;
+    E --> G[Bacano];
+    A --> H[Normal];
+    C --> H;
+    E --> H;
+    A --> I[Manso];
+    C --> I;
+    E --> I;
+    ```
 
-``` mermaid
-graph TD
-  F[Saludos] --> A;
-  F --> C;
-  F --> E;
-  A[Qué lo que?] --> B[Tranquilo];
-  C[Dame luz?] --> B;
-  A --> D[Tó frio];
-  C --> D;
-  E[Como te sien?] --> B;
-  E --> D;
-  E --> G[Bacano];
-  A --> H[Normal];
-  C --> H;
-  E --> H;
-  A --> I[Manso];
-  C --> I;
-  E --> I;
-```
-
-Note that _Qué lo que_ often appears in chat as 'klk' or 'qlok'
-Both men and women can be addressed as _manito_/_manita_, _loco_/_loca_, i.e. "Qué lo que manito?", etc.
-
-
-??? info "Patterns"
-
-    | Spanish | Dominican | Example                                                                                          |
-    | ------- | --------- | ------------------------------------------------------------------------------------------------ |
-    | estoy   | tí        | <audio controls="controls"><source type="audio/mp3" src="capricornio-42.5.mp3"></source></audio> |
-    | estás   | tá        |
-    | está    | tá        |
-    | estámos | tamo      |
-    | están   | tan       |
-
-    | Change                               | Audio                                                                                                   | Transcription                                            |
-    | ------------------------------------ | ------------------------------------------------------------------------------------------------------- | -------------------------------------------------------- |
-    | Definite article dropped             | <audio controls="controls"><source type="audio/mp3" src="gerson/gerson1-popi2.mp3"></source></audio>    | van a **los** restaurantes finos                         |
-    | Initial _r_ become _h_               | <audio controls="controls"><source type="audio/mp3" src="gerson/gerson1-popi3.mp3"></source></audio>    | cultura muy **r**efinada                                 |
-    | Initial _r_ accepts interpolated _h_ | <audio controls="controls"><source type="audio/mp3" src="gerson/capricornio-42.3.mp3"></source></audio> | el dembow vuelva a **h**revivir con los tiempos de antes |
-    | Interpolated _h_ between _n_ and _l_ | <audio controls="controls"><source type="audio/mp3" src="gerson/gerson1-barrio1.mp3"></source></audio>  | a divertirse en **h**las noches                          |
+    Note that _Qué lo que_ often appears in chat as 'klk' or 'qlok'
+    Both men and women can be addressed as _manito_/_manita_, _loco_/_loca_, i.e. "Qué lo que manito?", etc.
 
 ## Vocabulary
 
---8<-- "includes/Spanish/glossary.md"
+*[SFM]: San Francisco de Macoris
+
+- **bajarle dos** [to lower the intensity or speed of something](https://es.wiktionary.org/wiki/bajarle_dos) <audio controls="controls"><source type="audio/mp3" src="capricornio/truchitas-14.mp3"></source></audio>
+- **baquear**
+    - Quién te tá baqueando ese poloché?
+- **boca abajo** prone
+- **brindar**{: #brindar } to present, offer
+- **bultero**{: #bultero } [flaky](https://casadecampoliving.com/dominican-english-dictionary/), someone who makes plans but does not follow through; a braggart, someone who exaggerates personal accomplishments
+- **chancear a alguien** [give somebody a chance](https://www.spanishdict.com/translate/chancear), [court](https://diccionariolibre.com/definicion/chancear) someone
+- **chin**{: #chin } a [little bit](https://diccionariolibre.com/definicion/Chin)
+- **chulo**{: #chulo }: very handsome; a man who is knowingly in a relationship with a woman who is a prostitute, and who is supported by her
+- **comer como una lima nueva**{: #comer-como-una-lima-nueva } describing someone who [eats a lot](https://12y2.com/2013/comer-mas-que-una-lima-nueva/)
+- **chuqui** to be [irritable, angry](https://wikidominicana.com/chucky/) (also _chucky_) i.e. _andar chuquí en la calle_ to party in the streets
+- **cocotazo** a [smack on the head](https://diccionariolibre.com/definicion/cocotazo)
+- **cualto** money, payment
+- **cuernos** _ponerse los cuernos_ [to cheat on a partner](https://spanish.stackexchange.com/questions/17904/why-in-spanish-putting-horns-means-to-cheat-your-partner) 
+- **dar galleta** [slap the face](https://www.urbandictionary.com/define.php?term=galleta)
+- **dar mente a algo** to mind, worry about something _Pero no le de mente a eso bebé_
+- **de día** _estar de día_ "to be daytime" (_Está de día en tu país?_)
+- **desodorante** deodorant
+- **domingo siete** pregnancy outside of marriage especially abandoned by the father, _[no] me dejes con un domingo 7 y te vallas por ray jjj_ "[Don't] knock me up and leave haha"
+- **diligencia** _hacer diligencia_ when said by a woman, euphemism for prostitution
+- **entre dos** _estar entre dos_ to be feeling poorly
+- **estuche** case, i.e. "contact lens case"
+- **flow**{: #flow } swag, style, attractive manner of dress _mangar este flow_
+- **fresco** a person who is cheeky or rude, typically regarding sexual topics, i.e. _lo bloqué por frescos_
+- **guayar** to bump, grind
+- **jablador**
+- **josear**{: #josear } (also [_josiar_](https://diccionariolibre.com/definicion/Josiar), _jociar_)  to [hustle](https://www.wordsense.eu/josear/#Spanish)
+- **jeva** [woman](https://diccionariolibre.com/definicion/jeva), partner
+- **laja**{: #laja } something highly used and worn out, i.e. _estoy buscando una laja de esas_
+- **llevarse** _son 17 que me llevas_ "You're 17 [years] older than me"
+- **Los Guandules** a [barrio](https://www.minube.com/rincon/barrio-los-guandules-a2181350) on the right bank of the Ozama River in Santo Domingo, location of the ruins of the Monastery of San Francisco
+- **macorisano** someone from SFM
+- **mangar**{: #mangar } to pinch, grab, obtain; [have sexual relations](https://diccionariolibre.com/definicion/mangar) with someone
+- **molote** mob
+- **motoconcho**{: #motoconcho } small [motorcycle](https://www.urbandictionary.com/define.php?term=motoconcho) used for taxi service
+- **nama**{: #nama } only, merely, just (preverbal)
+- **nevera** refrigerator
+- **nina**{: #nina } nothing more, nothing at all (sentence final)
+- **paquetero**{: #paquetero } a [liar](https://www.asale.org/damer/paquetero), braggart
+- **parar** to end up in a place without intending to do so
+- **pariguayo** [lame guy](https://diccionariolibre.com/definicion/Pariguayo) who can't get girls
+- **pasola** [scooter](https://diccionariolibre.com/definicion/pasola)
+- **pedazo** place, corner, or neighborhood of a city
+- **pica pollo** [fried chicken](https://diccionariolibre.com/definicion/pica-pollo)
+- **planta**{: #planta } compliment for a woman
+- **poloché**{: #poloche } [t-shirt](https://en.bab.la/dictionary/spanish-english/poloch%C3%A9)
+- **popola** pussy
+- **rebajar**{ #rebajar } to lose weight
+- **romper** to exceed expectations, to draw attention (?)
+- **rulay**{: #rulay } [loose](https://www.urbandictionary.com/define.php?term=Rulay)
+- **se fue la luz** end of discussion
+- **teteo**{: #teteo } [party](https://diccionariolibre.com/definicion/teteo), (cf. **tetear**)
+- **tigueraje** slang; [assertiveness](https://diccionariolibre.com/definicion/tigueraje)
+- **tiguere** a streetwise and [capable guy](https://diccionariolibre.com/definicion/tiguere); guy, dude (usage is similar to [vaina](#vaina) but with people)
+- **tirarse**{: #tirarse } to send a text message: "Hay que tirarme por privado."
+- **trote** _pasar trote_ to pass a great [ordeal](https://diccionariolibre.com/definicion/trote)
+- [**tollo**](https://diccionariolibre.com/definicion/tollo) a mismanaged mess due to incompetence "el dia de Carnaval en Monte Plata es un tollo"
+- **toto** pussy (cf. **creta**{: #creta })
+- **vaca** "ven acá"
+- **vaina** stuff, thing; whatever; etc
+- **vale** well, quite _Yo me sentí vale rara_ "I felt pretty weird"
+- **votar** to stop liking someone: *😌 Tengo que mantenerme para que no me votes 😂*
+- **y eso?** "why?"
 
 ## Resources
 
@@ -54,43 +99,6 @@ Both men and women can be addressed as _manito_/_manita_, _loco_/_loca_, i.e. "Q
 
     - [Qué causó la caída del Imperio otomano, la superpotencia que se expandió por tres continentes](https://www.youtube.com/watch?v=Vql52ievurk)
     - [Crisis en Haití: un país perdido en su laberinto](https://www.youtube.com/watch?v=Dx63hhmfEv0)
-
-
-### Mujeres del Bajo Mundo
-:   
-    | Audio                                                                                              | Transcription                                                                                                                                                                                                                                                                  |
-    | -------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-    | <audio controls="controls"><source type="audio/mp3" src="mujeres/mujeres-01.mp3"></source></audio> | A: Oye bro, estoy peleando con la mujer mía estoy buscando una [laja](#laja) de esas. Cuál tu me dejas?<br/>B: Bueno tu sabes que yo tengo calidad en mi producto, ve a ver cual te gusta ...<br/>A: Bueno.<br/>B: Y dependiendo del presupuesto que cargas.                   |
-    | <audio controls="controls"><source type="audio/mp3" src="mujeres/mujeres-02.mp3"></source></audio> | B: Por dos mil pesos, cuál tu me da de esas?<br/>A: Dos mil pesos?<br/>B: Claro viejo.<br/>A: Tú sabes que eso es muy poco viejo dos mil pesos, y tu sabes que es [planta](#planta) de mujeres lo que yo tengo.                                                                |
-    | <audio controls="controls"><source type="audio/mp3" src="mujeres/mujeres-03.mp3"></source></audio> | A: Oye la regla mía. En media hora que tu me la traigas. Si en media hora tu no me la traes, yo salgo y te levanto por el pescuezo donde quiera que tu estés.<br/>B: Pero viejo, media hora no da ni para quitarme el [poloché](#poloche).<br/>A: En media hora usted lo hace. |
-    | <audio controls="controls"><source type="audio/mp3" src="mujeres/mujeres-04.mp3"></source></audio> | C: Oye que lo que ... no he hecho nada, quiero estrenarme. Consígueme una chamaquita de esas, viejo.<br/>B: Aquí se habla con dinero, si usted no tiene dinero no disfruta de ese manjar.                                                                                      |
-
-
-### 42
-:   
-    | Audio                                                                                             | Transcription                                                                                                                                                                                                                                                                                          |
-    | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-    | <audio controls="controls"><source type="audio/mp3" src="capricornio/42-03.mp3"></source></audio> | C: tu tiene hijo? Tu no tiene hijo verdá<br/>E: ni un [chin](#chin)<br/>C: tiene pareja tu?<br/>E: ni un chin                                                                                                                                                                                          |
-    | <audio controls="controls"><source type="audio/mp3" src="capricornio/42-04.mp3"></source></audio> | C: Cómo te gustan los hombre moreno, blanco, alto, flaco ... como?<br>E: Como Dios me lo mande.<br/>C: Tu no tienes que ver como son?<br/>E: No como sea puede ser un gordo **Popolo** sin diente y en tembladera!                                                                                     |
-    | <audio controls="controls"><source type="audio/mp3" src="capricornio/42-05.mp3"></source></audio> | C: Cómo te gustan la mujeres a ti ... blanca morena?<br/>P: A mí me gustan todas que sean bandidas todas que tiren al DM Capri la bandida, haitianita, me gustan más la haitianita me entiende?                                                                                                        |
-    | <audio controls="controls"><source type="audio/mp3" src="capricornio/42-01.mp3"></source></audio> | C: Mira, ven acá.. si una gente lo quiere a ustedes en una discoteca cuánto hay que pasar?<br/>E: Bueno a mí que [tirame](#tirarse) por privado yo no sé cuánto.                                                                                                                                       |
-    | <audio controls="controls"><source type="audio/mp3" src="capricornio/42-02.mp3"></source></audio> | C: Mira ... hasta que curso tu llegaste, hasta que curso?<br/>E: Yo a tercero.<br/>C: A tercero de bachillel - por qué te desacataste y cogiste la calle? Qué te hizo desacatarte?<br/>E: qué tu crees e adivina.<br/> C: Yo no sé.<br/>E: Oye yo me vua poner ahora en la escuela.                    |
-    | <audio controls="controls"><source type="audio/mp3" src="capricornio/42-06.mp3"></source></audio> | P: No! Yo no ando en ná [dike](#dizque) que privado [ni na](#nina). A mi lo que hay e que invitarme venga camina que te vua pasá una vaina porque yo lo que ando e en mi diligencia<br/>C: Con una vaina ta bien<br/>P: Con una vaina ta bien y ello dike en privado                                   |
-    | <audio controls="controls"><source type="audio/mp3" src="capricornio/42-07.mp3"></source></audio> | C: Qué te hizo desacatarte, Perrote y cogé la calle?<br/>P: tú no sabes ... no había ni pa el pasaje. Pa ná ni pa ime tú sabes ya estaba [bobo](#bobo) pila de bola pila de to Capri. <br/>C: Tu que erre el perrote dime<br/>P: Y tú no sabe hubo que ladrá y embalase para la calle como un bandole! |
-
-
-### Truchitas
-
-??? info "Jenny de la Rosa"
-
-    --8<-- "includes/Spanish/capricornio/jenny.md"
-
-### Gerson
-
-??? info "Gerson"
-
-    --8<-- "includes/Spanish/gerson/gerson1.md"
-
 
 ## Counterfactuals
 
@@ -100,3 +108,14 @@ Both men and women can be addressed as _manito_/_manita_, _loco_/_loca_, i.e. "Q
 - Podría haberte pagado por tus salarios perdidos
 - Si te hubiera robado yo sería para ti una chica mala o buena?🤔
 - Cómo quisiera salir de acá y recostarme en tus brazos
+- I don't know if I told you this or not
+- (In response to a news story about a polaymorous man) hubiera esperado que un negrito con tanto dinero hubiera podido conseguir mujeres menos feas
+- (Responding to a request for money for a stranger) Qué yo gano con eso? ¿Esperabas que te regalara ese dinero?
+
+## Themes
+
+#### Body measurements
+
+- Cuanto mides en altura?
+- Cuanto pesas?
+- 

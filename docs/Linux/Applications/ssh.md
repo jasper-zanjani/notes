@@ -27,7 +27,28 @@ This hash is then sent back to the server, which checks the calculation.
 
 Note that the SSH server is named **openssh-server** in Ubuntu repos and the service is named **ssh**, as opposed to **sshd** on Red Hat systems.
 
-#### Client config
+
+
+
+## Tasks
+
+#### Port forwarding
+:   
+    --8<-- "includes/Linux/Tasks/ssh-port-forwarding.md"
+
+#### X forwarding
+:   
+    --8<-- "includes/Linux/Tasks/X-forwarding.md"
+
+#### fail2ban
+:   
+    --8<-- "includes/Linux/Tasks/fail2ban.md"
+
+### Configuration
+
+Server and client configuration both use the same set of [keywords](https://man.openbsd.org/ssh_config) that can be defined inline on invocation or in config files.
+
+### Client configuration
 :   
     ```yaml
     Host home
@@ -38,30 +59,47 @@ Note that the SSH server is named **openssh-server** in Ubuntu repos and the ser
         LocalForward 8080 localhost:8080 # (2)
     ```
 
-    1. **SetEnv** allows environment variables to be set in a remote session. However, these environment variables must be explicitly specified in the server's sshd\_config file.
+    1. [**SetEnv**](https://man.openbsd.org/ssh_config#SetEnv) allows environment variables to be set in a remote session. 
+    However, these same environment variables must be explicitly specified in [**AcceptEnv**](https://man.openbsd.org/sshd_config#AcceptEnv) key of the [server configuration](#server-configuration).
     This entry will set a specific syntax highlighting theme for use on the bat CLI utility.
-    ```ssh
-    AllowEnv BAT_THEME
     ```
-    2. This is equivalent to the following command:
+    AcceptEnv BAT_THEME
+    ```
+    2. The use of [**LocalForward**](https://man.openbsd.org/ssh_config#LocalForward) here is equivalent to the use of the **-L** option at the command-line:
     ```sh
     ssh -L 8080:localhost:8080 $SERVER
     ```
 
---8<-- "includes/Linux/Commands/sshd_config.md"
+#### SSH to a transient server
+:   
+    To prevent recording a transient server to the client's known hosts file, for example when SSHing to many hosts from a single client, say while managing a corporate environment.
+    ```
+    UserKnownHostsFile /dev/null # (1)
+    StrictHostKeyChecking no # (2)
+    ```
 
-## Tasks
+    1. [**UserKnownHostsFile**](https://man.openbsd.org/ssh_config#UserKnownHostsFile)
+    2. [**StrictHostKeyChecking**](https://man.openbsd.org/ssh_config#StrictHostKeyChecking)
 
---8<--
-includes/Linux/Tasks/ssh-port-forwarding.md
 
-includes/Linux/Tasks/X-forwarding.md
 
-includes/Linux/Tasks/ssh-cloud-user.md
+#### Canonical hostname
+:   
+    In [corporate environments with verbose domain names](https://serverfault.com/questions/363055/regular-expression-matching-in-ssh-config), [**canonical hostnames**](https://man.openbsd.org/ssh_config#CanonicalDomains) can be configured to automatically append repetitive domain names ("canonicalize") to destination hosts.
 
-includes/Linux/Tasks/fail2ban.md
+    In this example, any connection made to a hostname beginning with "server" will append "example.com".
+    ```
+    Host server*
+        CanonicalDomains example.com # (1)
+        CanonicalizeHostname always # (2)
+    ```
 
---8<--
+    1. [**CanonicalDomains**](https://man.openbsd.org/ssh_config#CanonicalDomains)
+    2. [**CanonicalizeHostname**](https://man.openbsd.org/ssh_config#CanonicalizeHostname)
+
+### Server configuration
+:   
+    --8<-- "includes/Linux/Commands/sshd_config.md"
 
 ## Commands
 
