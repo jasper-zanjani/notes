@@ -96,9 +96,7 @@
 
 #### vdev
 :   
-    In [ZFS](#zfs) a **vdev** ("virtual device") is an abstraction of one or more storage devices.
-    This is equivalent to a volume group in LVM.
-
+    In [ZFS](#zfs) a **vdev** ("virtual device") is an abstraction of one or more storage devices and therefore equivalent to a volume group in LVM.
     A collection of vdevs constitutes a [**zpool**](#zpool).
 
     Vdevs support one of five **topologies**:
@@ -109,7 +107,7 @@
     - [**RAIDz2**](#raidz)
     - [**RAIDz3**](#raidz)
 
-    Special support classes of vdev:
+    Special **support classes** of vdev:
 
     - `CACHE`
     - **LOG** (also SLOG), because it usually has faster write performance, provides the pool with a separate vdev to store the ZIL in.

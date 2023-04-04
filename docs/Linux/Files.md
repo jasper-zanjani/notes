@@ -28,28 +28,67 @@
 
 ## Commands
 
+#### chage
+:   
+    --8<-- "includes/Linux/Commands/chage.md"
 
---8<--
-includes/Linux/Commands/chage.md
+#### chgrp
+:   
+    --8<-- "includes/Linux/Commands/chgrp.md"
 
-includes/Linux/Commands/chgrp.md
+#### chmod
+:   
+    --8<-- "includes/Linux/Commands/chmod.md"
 
-includes/Linux/Commands/chmod.md
+#### chown
+:   
+    --8<-- "includes/Linux/Commands/chown.md"
 
-includes/Linux/Commands/chown.md
+#### cp
+:   
+    --8<-- "includes/Linux/Commands/cp.md"
 
-includes/Linux/Commands/cp.md
+#### du
+:   
+    --8<-- "includes/Linux/Commands/du.md"
 
-includes/Linux/Commands/du.md
+#### find
+:   
+    --8<-- "includes/Linux/Commands/find.md"
 
-includes/Linux/Commands/find.md
+#### mv
+:   
+    --8<-- "includes/Linux/Commands/mv.md"
 
-includes/Linux/Commands/mv.md
+#### rename
+:   
+    --8<-- "includes/Linux/Commands/rename.md"
 
-includes/Linux/Commands/rename.md
+#### rsync
+:   
+    --8<-- "includes/Linux/Commands/rsync.md"
 
-includes/Linux/Commands/rsync.md
+### facl
 
-includes/Linux/Commands/setfacl.md
 
---8<--
+
+#### getfacl
+:   
+    --8<-- "includes/Linux/Commands/getfacl.md"
+
+#### setfacl
+:   
+    --8<-- "includes/Linux/Commands/setfacl.md"
+
+### attr
+
+A family of commands exists to change **file attributes** on Linux file systems.
+
+
+#### lsattr
+:   
+    --8<-- "includes/Linux/Commands/lsattr.md"
+
+#### chattr
+:   
+    --8<-- "includes/Linux/Commands/chattr.md"

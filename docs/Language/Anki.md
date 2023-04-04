@@ -31,19 +31,22 @@ This CSS was found [here](https://codepen.io/AllThingsSmitty/pen/jommGQ).
 </div>
 ```
 
-![](oi.png)
 
 ```pug
 .imessage
     p.from-them Oi, td bem?
     p.from-me {{c1::Td}} sim
+// (1)
 ```
 
-![](translation.png)
+1. ![](oi.png)
 
 ```pug
 .imessages
     p.from-them Me dijiste que si esperaba ser pagada y te dije que no
     p.from-me {{c1::Podría}} {{c2::haberte}} pagado por tus salarios perdidos 
-        span.translation I could have paid your for your lost wages
+        span.translation I could have paid your for your lost wages  
+// (1)
 ```
+
+1. ![](translation.png)

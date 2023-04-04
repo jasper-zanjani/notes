@@ -1,58 +1,63 @@
-### ZFS
+### ZFS management
 :   
-    ```sh title="Create a storage pool"
-    zpool create tank raidz /dev/sd{a,b,c} # (1)
-    ```
 
-    1. In ZFS documentation, zpools are conventionally named "tank".
+    ```sh
+    # Create a storage pool, conventionally named "tank" in documentation
+    zpool create tank raidz /dev/sd{a,b,c}
+    
+    # By default, disks are identified by UUID
+    zpool status tank
+    zpool list
 
-    ```sh title="Display pools and associated data"
-    zpool status tank -L # (1)
+    # Display real paths (i.e. block device names)
+    zpool status tank -L 
     zpool list -v
-    ```
 
-    1. By default, disks are identified by UUID. Use **-L** to display real paths (i.e. block device names).
-
-
-    ```sh title="Destroy pool"
+    # Destroy pool
     zpool destroy tank
     ```
 
-    ```sh title="Add device"
-    zpool add tank mirror /dev/sde /dev/sdf
+    ```sh title="Mirrored arrays"
+    zpool add tank mirror sde sdf
+    zpool detach sdb
     ```
 
-    ```sh title="Remove device"
-    zpool detach /dev/sdb # (1)
+    
+    ```sh title="Hot spares"
+    zpool add tank spare sdg
+    zpool remove tank sdg # (1)
     ```
 
-    1. In ZFS a disk may only be removed from a mirrored pool
+    1. The [**zpool remove**](https://openzfs.github.io/openzfs-docs/man/8/zpool-remove.8.html) command is used to remove hot spares, as well as cache and log devices.
 
-    ```sh title="Replace device"
-    zpool clear tank # Errors must be cleared first
-    zpool replace tank /dev/sdb /dev/sdc # (1)
-    ```
-
-    1. This will begin an automatic **resilvering** process, which can be monitored in realtime.
+    [Replacing](https://docs.oracle.com/cd/E19253-01/819-5461/gazgd/index.html) a used disk with one that is unused uses **zpool replace**, initiating the [**resilvering**](#resilvering) process.
+    
     ```sh
+    zpool replace tank sdb sdc
+    ```
+    
+    Ongoing resilvers can be cancelled using **zpool detach**:
+    ```sh
+    zpool detach tank sdc
+    ```
+
+    If a disk has gone bad, it must first be taken offline (apparently requiring its UUID) before physically replacing it.
+
+    ```sh title="Replace disk"
+    zpool clear tank
+    zpool offline $UUID
+    zpool replace tank sdb sdc
     watch zpool status tank
     ```
 
 
-#### [Dataset](#dataset) management
-:   
-    ??? info "Terminology"
-    
-        A **subvolume** in BtrFS is defined as an independently mountable POSIX filetree, and appears to be equivalent to the ZFS **dataset**.
+    A [**dataset**](#dataset) in ZFS is equivalent to the [btrfs](#btrfs) [**subvolume**](#subvolume), defined as an independently mountable POSIX filetree.
 
     ```sh title="Create dataset"
-    zfs create tank/dataset # Create
-    zfs list                # Display
-    zfs remove tank/dataset # Delete
-    ```
-
-    ```sh title="Rename dataset"
+    zfs create tank/dataset
+    zfs list
     zfs rename tank zpool
+    zfs remove zpool/dataset
     ```
 
     ```sh title="Configure dataset"
@@ -61,16 +66,8 @@
     zfs set acme:disksource=vendorname  # Set tag
     ```
 
-#### Snapshot management
-:   
-    ```sh title="Create snapshot"
+    ```sh title="Snapshot management"
     zfs snapshot tank@snapshot1
-    ```
-
-    ```sh title="Roll back snapshot"
     zfs rollback tank@snapshot1
-    ```
-
-    ```sh title="Delete snapshot"
     zfs destroy tank@snapshot1
     ```

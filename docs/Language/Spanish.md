@@ -35,6 +35,7 @@
 - **boca abajo** prone
 - **brindar**{: #brindar } to present, offer
 - **bultero**{: #bultero } [flaky](https://casadecampoliving.com/dominican-english-dictionary/), someone who makes plans but does not follow through; a braggart, someone who exaggerates personal accomplishments
+- **celar** to become jealous (cf. _celoso_) _A veces me digo "no seas celosa Tatiana" pero como no me llamo Tatiana pues **celo** cuando me da mi gana_
 - **chancear a alguien** [give somebody a chance](https://www.spanishdict.com/translate/chancear), [court](https://diccionariolibre.com/definicion/chancear) someone
 - **chin**{: #chin } a [little bit](https://diccionariolibre.com/definicion/Chin)
 - **chulo**{: #chulo }: very handsome; a man who is knowingly in a relationship with a woman who is a prostitute, and who is supported by her
@@ -43,6 +44,7 @@
 - **cocotazo** a [smack on the head](https://diccionariolibre.com/definicion/cocotazo)
 - **cualto** money, payment
 - **cuernos** _ponerse los cuernos_ [to cheat on a partner](https://spanish.stackexchange.com/questions/17904/why-in-spanish-putting-horns-means-to-cheat-your-partner) 
+- [**dame banda**](https://casadecampoliving.com/dominican-english-dictionary-dar-banda/) expression used to end the current topic of discussion out of exasperation: "leave me alone, do what you want"
 - **dar galleta** [slap the face](https://www.urbandictionary.com/define.php?term=galleta)
 - **dar mente a algo** to mind, worry about something _Pero no le de mente a eso bebé_
 - **de día** _estar de día_ "to be daytime" (_Está de día en tu país?_)

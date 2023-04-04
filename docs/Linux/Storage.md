@@ -52,6 +52,8 @@ includes/Linux/Tasks/lvm.md
 includes/Linux/Tasks/vdo.md
 
 includes/Linux/Tasks/stratis.md
+
+includes/Linux/Tasks/zfs.md
 --8<--
 
 ## Glossary

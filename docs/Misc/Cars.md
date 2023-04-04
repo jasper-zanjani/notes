@@ -13,12 +13,97 @@ The **compact sedan** segment has been dominated recently by the [Mazda3](#mazda
 | Nissan      | Murano                    |
 | Toyota      | RAV4                      | C-HR                                     |
 
+### Hyundai
+
+| Dealership                                                  | Cars                                                                                                                                                                     |
+| ----------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [Brandon Hyundai](https://www.brandonhyundai.com)           | [Tucson](https://www.brandonhyundai.com/new-vehicles/tucson/), [Tucson Hybrid](https://www.brandonhyundai.com/new-vehicles/tucson-hybrids/)                              |
+| [Courtesy Hyundai of Tampa](https://www.tampahyundai.com/?) | [Tucson](https://www.tampahyundai.com/new-inventory/index.htm?model=Tucson), [Tucson Hybrid](https://www.tampahyundai.com/new-inventory/index.htm?model=Tucson%20Hybrid) |
+
+#### Hyundai Kona
+
+
+
+#### Hyundai Tucson
+
+| Year, Model                                                                                                                                             | Mileage (k mi) |                                     Cost (k USD) |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------: | -----------------------------------------------: |
+| [2018 Hyundai Tucson Limited](https://www.autotrader.com/cars-for-sale/vehicledetails.xhtml?listingId=674721068)                                        |           51.4 | 20.7<br/>+ Care Package 2.0<br/>+ Dealer Fee 1.0 |
+| [2018 Hyundai Tucson Value](https://www.carmax.com/car/23551687)                                                                                        |             14 |                                             25.0 |
+| [2023 Hyundai Tucson Hybrid Blue](https://www.tampahyundai.com/new/Hyundai/2023-Hyundai-Tucson+Hybrid-in+Tampa-0bd698ca0a0e0a901886b4a7364ba0a6.htm)    |            New |                                             33.6 |
+| [2022 Hyundai Tucson Hybrid SEL Convenience](https://www.carmax.com/car/23930807)                                                                       |             29 |                                               33 |
+| [2022 Hyundai Tucson Hybrid Blue](https://www.carmax.com/car/23057740)                                                                                  |             16 |                                               35 |
+| [2023 Hyundai Tucson Hybrid Blue](https://www.autotrader.com/cars-for-sale/vehicledetails.xhtml?listingId=675014543)                                    |            New |                                             33.6 |
+| [2023 Hyundai Tucson Hybrid Blue](https://www.brandonhyundai.com/inventory/new-2023-hyundai-tucson-hybrid-blue-awd-4d-sport-utility-km8jbca18pu103270/) |            New |                                             33.3 |
+
+The Tucson had a [refresh](https://www.cars.com/research/hyundai-tucson/) for the 2022 model that introduced a lot of new technology and made the Tucson one of the roomiest options in the segment.
+
+The [Tucson Hybrid](https://www.motortrend.com/cars/hyundai/tucson-hybrid/), which uses a 1.6L turbo GDI I-4, is not much more expensive than the gas, but offers much more torque and 30% better fuel economy in a stepped automatic transmission.
+This gives it segment-leading acceleration.
+Non-hybrid Tucson trims all use the same 2.5L engine, which was described as lethargic.
+It is a well-rounded car that feels like it's well put-together.
+
+Used models of the latest generation of the Tucson Hybrid are available in the 30s.
+Courtesy Hyundai offers 0% APR for 48 months on the Tucson (excluding the Hybrid).
+
+The **third generation (2005-2021)** was notable for being much smaller than competitors, almost the size of a [hatchback](https://www.youtube.com/watch?v=Rlp4Gfc0m0U).
+
+The most common engine for this generation was a 2.0L four-cylinder (164 hp/151 lb. ft.) paired with a 6-speed automatic transmission.
+But a powerful 1.6L turbocharged four-cyclinder engine (175 hp/195 lb. ft.) had been available to Value and Limited trims before being discontinued in [2019](https://cars.usnews.com/cars-trucks/hyundai/tucson/2019) along with the 7-speed dual-clutch which was paired with it.
+This turbocharged engine was replaced by a 2.4L naturally aspirated four-cylinder (184 hp/ 175 lb. ft.), the same as that available in the Kia Sportage.
+Performance with this naturally aspirated engine was noted for being anemic with poor gas mileage.
+
+Android Auto became available in [2017](https://cars.usnews.com/cars-trucks/hyundai/tucson/2017).
+
+Of the various trims, the Value has a panoramic sunroof and parking sensors, which are lacking in the Sport.
+
+
+### Infiniti
+
+#### Infiniti QX30
+
+The [Infiniti Q30](https://en.wikipedia.org/wiki/Infiniti_Q30) was sold between 2016 and 2019 as a premium hatchback.
+The [QX30](https://en.wikipedia.org/wiki/Infiniti_QX30), with higher ground clearance, is described as a subcompact luxury crossover that was designed to [straddle](https://www.youtube.com/watch?v=7EB5b1wQCRw) the border between hatchback, wagon, and crossover segments.
+The QX30 targets [premium city-dwelling customers or first-time luxury buyers](https://www.youtube.com/watch?v=_2dbiBlUXjc) who couldn't otherwise afford the Q50, which had been Infiniti's previous entry-level model.
+
+The QX30 is based on the third-generation Mercedes-Benz A-class chassis, and so uses many Mercedes-Benz parts. It is built in the QX30 factory in Tennessee.
+
+### Jaguar
+
+#### Jaguar F-PACE
+
+Introduced in 2017...
+
+
 ### Kia
 
 Two dealerships in the Tampa area:
 
 - [Century Kia](https://www.centurykia.com/)
 - [Courtesy Kia of Brandon](https://www.brandonkia.com)
+
+#### Kia Sportage
+
+| Year, Model                                                                                                                | Mileage (k mi) |                                                                Cost (k USD) |
+| -------------------------------------------------------------------------------------------------------------------------- | -------------: | --------------------------------------------------------------------------: |
+| [2019 Kia Sportage SX](https://www.autotrader.com/cars-for-sale/vehicledetails.xhtml?listingId=669646220)                  |           60.3 |                                        21.2<br>+ Dealer Fee 1.0<br>**22.2** |
+| [2020 Kia Sportage SX](https://www.autotrader.com/cars-for-sale/vehicledetails.xhtml?listingId=663195419)                  |           56.0 | 22.5<br>+ Dealer fee 1.2<br>+ Reconditioning 1.0<br>+ Paint 1.5<br>**26.2** |
+| [2023 Kia Sportage EX](https://www.brandonkia.com/new/Kia/2023-Kia-Sportage-in+Tampa-dea0e5bf0a0e0a920388662a5d262475.htm) |            New |                                                                        29.8 |
+| [2023 Kia Sportage EX](https://www.centurykia.com/new-Tampa-2023-Kia-Sportage-EX-5XYK33AF9PG109419)                        |            New |                                                                        30.2 |
+| [2020 Kia Sportage EX](https://www.carmax.com/car/23977715)                                                                |             39 |                                                                        28.0 |
+| [2018 Kia Sportage LX](https://www.carmax.com/car/23361829)                                                                |             25 |                                                                        21.0 |
+| [2019 Kia Sportage LX](https://www.carmax.com/car/23890860)                                                                |             23 |                                                                        22.0 |
+| [2020 Kia Sportage S](https://www.carmax.com/car/23061057)                                                                 |             24 |                                                                        26.0 |
+
+
+The [fifth-generation](https://www.motortrend.com/news/2023-kia-sportage-first-look-review/) refresh is built on the [N3 platform](https://www.youtube.com/watch?v=ycVPGHfknTw).
+It offers a hybrid 1.6L turbo 4-cylinder with 38 mpg city and highway.
+Unlike the [Tucson](#hyundai-tucson), Kia offers FWD.
+
+EX trims and up have a 12.3 inch display, whereas lower trims have only an 8 inch.
+
+SX trims since 2011 have offered a turbocharged 2.0L four-cylinder engine (237 hp/260 lb. ft.).
+
 
 #### [Kia Forte](https://www.youtube.com/watch?v=sK05YtWcwek)
 
@@ -73,85 +158,6 @@ The Kia Soul LX is available new from $22,000.
 | [2023 Kia Soul LX](https://www.brandonkia.com/new/Kia/2023-Kia-Soul-in+Tampa-e916a0540a0e0a993089ab4eccb95815.htm) |            New |         21.9 |
 
 
-#### Kia Sportage
-
-| Year, Model                                                                                                                | Mileage (k mi) | Cost (k USD) |
-| -------------------------------------------------------------------------------------------------------------------------- | -------------: | -----------: |
-| [2023 Kia Sportage EX](https://www.brandonkia.com/new/Kia/2023-Kia-Sportage-in+Tampa-dea0e5bf0a0e0a920388662a5d262475.htm) |            New |         29.8 |
-| [2023 Kia Sportage EX](https://www.centurykia.com/new-Tampa-2023-Kia-Sportage-EX-5XYK33AF9PG109419)                        |            New |         30.2 |
-| [2020 Kia Sportage EX](https://www.carmax.com/car/23977715)                                                                |             39 |         28.0 |
-| [2018 Kia Sportage LX](https://www.carmax.com/car/23361829)                                                                |             25 |         21.0 |
-| [2019 Kia Sportage LX](https://www.carmax.com/car/23890860)                                                                |             23 |         22.0 |
-| [2020 Kia Sportage S](https://www.carmax.com/car/23061057)                                                                 |             24 |         26.0 |
-
-
-
-The [fifth-generation](https://www.motortrend.com/news/2023-kia-sportage-first-look-review/) refresh is built on the [N3 platform](https://www.youtube.com/watch?v=ycVPGHfknTw).
-It offers a hybrid 1.6L turbo 4-cylinder with 38 mpg city and highway.
-Unlike the [Tucson](#hyundai-tucson), Kia offers FWD.
-
-EX trims and up have a 12.3 inch display, whereas lower trims have only an 8 inch.
-
-
-### Hyundai
-
-| Dealership                                                  | Cars                                                                                                                                                                     |
-| ----------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [Brandon Hyundai](https://www.brandonhyundai.com)           | [Tucson](https://www.brandonhyundai.com/new-vehicles/tucson/), [Tucson Hybrid](https://www.brandonhyundai.com/new-vehicles/tucson-hybrids/)                              |
-| [Courtesy Hyundai of Tampa](https://www.tampahyundai.com/?) | [Tucson](https://www.tampahyundai.com/new-inventory/index.htm?model=Tucson), [Tucson Hybrid](https://www.tampahyundai.com/new-inventory/index.htm?model=Tucson%20Hybrid) |
-
-#### Hyundai Kona
-
-
-
-#### Hyundai Tucson
-
-| Year, Model                                                                                                                                             | Mileage (k mi) | Cost (k USD) |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------: | -----------: |
-| [2018 Hyundai Tucson Value](https://www.carmax.com/car/23551687)                                                                                        |             14 |         25.0 |
-| [2023 Hyundai Tucson Hybrid Blue](https://www.tampahyundai.com/new/Hyundai/2023-Hyundai-Tucson+Hybrid-in+Tampa-0bd698ca0a0e0a901886b4a7364ba0a6.htm)    |            New |         33.6 |
-| [2022 Hyundai Tucson Hybrid SEL Convenience](https://www.carmax.com/car/23930807)                                                                       |             29 |           33 |
-| [2022 Hyundai Tucson Hybrid Blue](https://www.carmax.com/car/23057740)                                                                                  |             16 |           35 |
-| [2023 Hyundai Tucson Hybrid Blue](https://www.autotrader.com/cars-for-sale/vehicledetails.xhtml?listingId=675014543)                                    |            New |         33.6 |
-| [2023 Hyundai Tucson Hybrid Blue](https://www.brandonhyundai.com/inventory/new-2023-hyundai-tucson-hybrid-blue-awd-4d-sport-utility-km8jbca18pu103270/) |            New |         33.3 |
-
-The Tucson had a [refresh](https://www.cars.com/research/hyundai-tucson/) for the 2022 model that introduced a lot of new technology and made the Tucson one of the roomiest options in the segment.
-
-The [Tucson Hybrid](https://www.motortrend.com/cars/hyundai/tucson-hybrid/), which uses a 1.6L turbo GDI I-4, is not much more expensive than the gas, but offers much more torque and 30% better fuel economy in a stepped automatic transmission.
-This gives it segment-leading acceleration.
-Non-hybrid Tucson trims all use the same 2.5L engine, which was described as lethargic.
-It is a well-rounded car that feels like it's well put-together.
-
-Used models of the latest generation of the Tucson Hybrid are available in the 30s.
-Courtesy Hyundai offers 0% APR for 48 months on the Tucson (excluding the Hybrid).
-
-The **third generation (2005-2021)** was notable for being much smaller than competitors, almost the size of a [hatchback](https://www.youtube.com/watch?v=Rlp4Gfc0m0U).
-
-A powerful 1.6L turbo four-cyclinder engine (175 hp/195 lb. ft., available to Value and Limited trims) was discontinued in [2019](https://cars.usnews.com/cars-trucks/hyundai/tucson/2019) along with the 7-speed dual-clutch which was paired with it.
-
-This engine was replaced by a 2.4L naturally aspirated four-cylinder (184 hp/ 175 lb. ft.), the same as that available in the Kia Sportage.
-Performance with this naturally aspirated engine was noted for being anemic with poor gas mileage.
-
-Android Auto became available in [2017](https://cars.usnews.com/cars-trucks/hyundai/tucson/2017).
-
-Of the various trims, the Value has a panoramic sunroof and parking sensors, which are lacking in the Sport.
-
-
-### Infiniti
-
-#### Infiniti QX30
-
-The [Infiniti Q30](https://en.wikipedia.org/wiki/Infiniti_Q30) was sold between 2016 and 2019 as a premium hatchback.
-The [QX30](https://en.wikipedia.org/wiki/Infiniti_QX30), with higher ground clearance, is described as a subcompact luxury crossover that was designed to [straddle](https://www.youtube.com/watch?v=7EB5b1wQCRw) the border between hatchback, wagon, and crossover segments.
-The QX30 targets [premium city-dwelling customers or first-time luxury buyers](https://www.youtube.com/watch?v=_2dbiBlUXjc) who couldn't otherwise afford the Q50, which had been Infiniti's previous entry-level model.
-
-The QX30 is based on the third-generation Mercedes-Benz A-class chassis, and so uses many Mercedes-Benz parts. It is built in the QX30 factory in Tennessee.
-
-### Jaguar
-
-#### Jaguar F-PACE
-
-Introduced in 2017...
 
 
 ### Mazda
@@ -165,12 +171,13 @@ Introduced in 2017...
 
 #### Mazda CX-5
 
-| Year, Model                                                                                                                            | Mileage (k mi) | Cost (k USD) |
-| -------------------------------------------------------------------------------------------------------------------------------------- | -------------: | -----------: |
-| [2023 Mazda CX-5 2.5 S](https://www.mazdaofwesleychapel.com/new/Mazda/2023-Mazda-Mazda+CX-5-bd669a2c0a0e0a921f8b5e93cff021ee.htm)      |            New |         28.1 |
-| [2020 Mazda CX-5 Signature](https://www.carmax.com/car/24071314)                                                                       |           13.0 |         32.0 |
-| [2020 Mazda CX-5 Signature](https://www.mazdaofwesleychapel.com/used/Mazda/2020-Mazda-Mazda+CX-5-39b9d5000a0e0a996bfd62548d41b596.htm) |           23.5 |         28.9 |
-| [2020 Mazda CX-5 Signature](https://checkout.ruby-car.com/details/JM3KFBEY1L0854864)                                                   |           33.2 |         29.6 |
+| Year, Model                                                                                                                            | Mileage (k mi) |                                                                                            Cost (k USD) |
+| -------------------------------------------------------------------------------------------------------------------------------------- | -------------: | ------------------------------------------------------------------------------------------------------: |
+| [2019 Mazda CX-5 Signature](https://www.autotrader.com/cars-for-sale/vehicledetails.xhtml?listingId=674111020)                         |           62.6 | 23.5<br>- Financing 1.0<br>+ Dealer fee 0.9<br>+ Electronic filing fee 0.2<br>+ OPC Connect 0.5<br>**24.1** |
+| [2023 Mazda CX-5 2.5 S](https://www.mazdaofwesleychapel.com/new/Mazda/2023-Mazda-Mazda+CX-5-bd669a2c0a0e0a921f8b5e93cff021ee.htm)      |            New |                                                                                                    28.1 |
+| [2020 Mazda CX-5 Signature](https://www.carmax.com/car/24071314)                                                                       |           13.0 |                                                                                                    32.0 |
+| [2020 Mazda CX-5 Signature](https://www.mazdaofwesleychapel.com/used/Mazda/2020-Mazda-Mazda+CX-5-39b9d5000a0e0a996bfd62548d41b596.htm) |           23.5 |                                                                                                    28.9 |
+| [2020 Mazda CX-5 Signature](https://checkout.ruby-car.com/details/JM3KFBEY1L0854864)                                                   |           33.2 |                                                                                                    29.6 |
 
 
 The [sportiest](https://www.youtube.com/watch?v=fJY3nFKM3Qw) and [best trim](https://www.youtube.com/watch?v=CcOw6As0hSU) of the compact crossover segment (competing with the Honda CR-V and the Toyota RAV-4).

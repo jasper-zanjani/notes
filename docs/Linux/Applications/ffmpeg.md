@@ -7,6 +7,13 @@
     ffmpeg -i media.{mp3,m4a}
     ```
 
+#### Display metadata
+:   
+
+    ```sh
+    ffmpeg -hide_banner -i $INPUT
+    ```
+
 #### Specify metadata
 :   
 
