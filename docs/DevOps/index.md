@@ -17,27 +17,28 @@ jobs:
   steps:
   - checkout: self
   - bash: |
-      ansible-galaxy role install -r ansible/requirements.yml -p ansible/roles -f
-      ansible-playbook ansible/playbook.yml
+      ansible-galaxy role install -r ansible/requirements.yml -p ansible/roles -f # (2)!
+      ansible-playbook ansible/playbook.yml # (1)!
 ```
 
+1. 
 ```yaml title="ansible/playbook.yml"
 - name: Running motd role
   hosts: all
   roles:
   - role: 'motd-role'
 ```
-
+2. 
 ```yaml title="ansible/requirements.yml"
 roles:
 - src: git+https://jasperzanjani@dev.azure.com/jasperzanjani/NewDevOpsProject/_git/motd-role # (1)
 ```
 
-1. Additional parameters are available, but default values are probably good in most cases:
+<!-- 1. Additional parameters are available, but default values are probably good in most cases:
 ```yaml
   scm: git
   version: master
-```
+``` -->
 
 #### Secure variables
 
