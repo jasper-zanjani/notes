@@ -10,26 +10,28 @@
       
         <link rel="canonical" href="https://jasper-zanjani.github.io/notes/Linux/Filters/">
       
+      
+        <link rel="prev" href="../Files/">
+      
+      
+        <link rel="next" href="../GRUB/">
+      
       <link rel="icon" href="../../img/brain.png">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.8">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.6">
     
     
       
-        <title>Commands - Notes</title>
+        <title>Filters - Notes</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.1d29e8d0.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ded33207.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
-        
-          
-          
-          <meta name="theme-color" content="#ffc105">
-        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.a0c5b2b5.min.css">
       
       
+
     
     
     
@@ -42,28 +44,13 @@
       
     
     
-      <link rel="stylesheet" href="../../style/admonitions-gcp.css">
+      <link rel="stylesheet" href="../../style/tooltip-width.css">
     
-      <link rel="stylesheet" href="../../style/admonitions-azure.css">
-    
-      <link rel="stylesheet" href="../../style/admonitions-aws.css">
-    
-      <link rel="stylesheet" href="../../style/admonitions-rs.css">
-    
-      <link rel="stylesheet" href="../../style/admonitions-cs.css">
-    
-      <link rel="stylesheet" href="../../style/admonitions-cpp.css">
-    
-      <link rel="stylesheet" href="../../style/admonitions-cisco.css">
-    
-      <link rel="stylesheet" href="../../style/admonitions-py.css">
-    
-      <link rel="stylesheet" href="../../style/admonitions-output.css">
-    
-    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
+    
     
     
   </head>
@@ -84,7 +71,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#commands" class="md-skip">
+        <a href="#filters" class="md-skip">
           Skip to content
         </a>
       
@@ -116,7 +103,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Commands
+              Filters
             
           </span>
         </div>
@@ -139,7 +126,7 @@
       </label>
       <nav class="md-search__options" aria-label="Search">
         
-        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
         </button>
       </nav>
@@ -151,7 +138,7 @@
           <div class="md-search-result__meta">
             Initializing search
           </div>
-          <ol class="md-search-result__list"></ol>
+          <ol class="md-search-result__list" role="presentation"></ol>
         </div>
       </div>
     </div>
@@ -170,7 +157,7 @@
           
             
 <nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
-  <div class="md-tabs__inner md-grid">
+  <div class="md-grid">
     <ul class="md-tabs__list">
       
         
@@ -422,17 +409,20 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_2">
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
           Coding
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Coding" data-md-level="1">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_2">
           <span class="md-nav__icon md-icon"></span>
           Coding
@@ -688,17 +678,20 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_2_18" type="checkbox" id="__nav_2_18" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_18" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_2_18">
+        <label class="md-nav__link" for="__nav_2_18" id="__nav_2_18_label" tabindex="0">
           WinUI
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="WinUI" data-md-level="2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_18_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_2_18">
           <span class="md-nav__icon md-icon"></span>
           WinUI
@@ -757,17 +750,20 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_3">
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
           DevOps
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="DevOps" data-md-level="1">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
           DevOps
@@ -781,7 +777,7 @@
   
     <li class="md-nav__item">
       <a href="../../DevOps/" class="md-nav__link">
-        Index
+        Automation using Azure DevOps and Ansible
       </a>
     </li>
   
@@ -795,7 +791,7 @@
   
     <li class="md-nav__item">
       <a href="../../DevOps/ADO/" class="md-nav__link">
-        Azure DevOps
+        Azure Devops
       </a>
     </li>
   
@@ -833,17 +829,20 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_4">
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
           GTK
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="GTK" data-md-level="1">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_4">
           <span class="md-nav__icon md-icon"></span>
           GTK
@@ -917,17 +916,20 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_4_5" type="checkbox" id="__nav_4_5" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_5" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_4_5">
+        <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
           Examples
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Examples" data-md-level="2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_4_5">
           <span class="md-nav__icon md-icon"></span>
           Examples
@@ -966,17 +968,20 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_4_6" type="checkbox" id="__nav_4_6" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_6" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_4_6">
+        <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
           Tasks
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Tasks" data-md-level="2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_4_6">
           <span class="md-nav__icon md-icon"></span>
           Tasks
@@ -1091,17 +1096,20 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_5">
+        <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
           Health
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Health" data-md-level="1">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_5">
           <span class="md-nav__icon md-icon"></span>
           Health
@@ -1139,17 +1147,20 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_6">
+        <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
           Infrastructure
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Infrastructure" data-md-level="1">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_6">
           <span class="md-nav__icon md-icon"></span>
           Infrastructure
@@ -1251,17 +1262,20 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_6_7" type="checkbox" id="__nav_6_7" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_7" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_6_7">
+        <label class="md-nav__link" for="__nav_6_7" id="__nav_6_7_label" tabindex="0">
           Cloud
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Cloud" data-md-level="2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_7_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_6_7">
           <span class="md-nav__icon md-icon"></span>
           Cloud
@@ -1305,17 +1319,20 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_6_7_3" type="checkbox" id="__nav_6_7_3" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_7_3" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_6_7_3">
+        <label class="md-nav__link" for="__nav_6_7_3" id="__nav_6_7_3_label" tabindex="0">
           Azure
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Azure" data-md-level="3">
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_7_3_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_6_7_3">
           <span class="md-nav__icon md-icon"></span>
           Azure
@@ -1535,17 +1552,20 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_7">
+        <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
           Language
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Language" data-md-level="1">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_7">
           <span class="md-nav__icon md-icon"></span>
           Language
@@ -1627,17 +1647,18 @@
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" checked>
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
       
       
       
-      
-        <label class="md-nav__link" for="__nav_8">
+        <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
           Linux
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Linux" data-md-level="1">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_8">
           <span class="md-nav__icon md-icon"></span>
           Linux
@@ -1737,19 +1758,19 @@
   
     <li class="md-nav__item md-nav__item--active">
       
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
         
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Commands
+          Filters
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Commands
+        Filters
       </a>
       
         
@@ -1775,6 +1796,20 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#cat" class="md-nav__link">
+    cat
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cut" class="md-nav__link">
+    cut
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#grep" class="md-nav__link">
     grep
   </a>
@@ -1791,6 +1826,27 @@
         <li class="md-nav__item">
   <a href="#paste" class="md-nav__link">
     paste
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sed" class="md-nav__link">
+    sed
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tail" class="md-nav__link">
+    tail
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tr" class="md-nav__link">
+    tr
   </a>
   
 </li>
@@ -2018,17 +2074,20 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_8_22" type="checkbox" id="__nav_8_22" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8_22" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_8_22">
+        <label class="md-nav__link" for="__nav_8_22" id="__nav_8_22_label" tabindex="0">
           Applications
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Applications" data-md-level="2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_22_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_8_22">
           <span class="md-nav__icon md-icon"></span>
           Applications
@@ -2227,17 +2286,20 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_9">
+        <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
           Misc
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Misc" data-md-level="1">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_9">
           <span class="md-nav__icon md-icon"></span>
           Misc
@@ -2521,17 +2583,20 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_9_20" type="checkbox" id="__nav_9_20" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_20" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_9_20">
+        <label class="md-nav__link" for="__nav_9_20" id="__nav_9_20_label" tabindex="0">
           Text editors
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Text editors" data-md-level="2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_20_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_9_20">
           <span class="md-nav__icon md-icon"></span>
           Text editors
@@ -2570,17 +2635,20 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_9_21" type="checkbox" id="__nav_9_21" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_21" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_9_21">
+        <label class="md-nav__link" for="__nav_9_21" id="__nav_9_21_label" tabindex="0">
           Web
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Web" data-md-level="2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_21_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_9_21">
           <span class="md-nav__icon md-icon"></span>
           Web
@@ -2638,17 +2706,20 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_9_21_4" type="checkbox" id="__nav_9_21_4" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_21_4" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_9_21_4">
+        <label class="md-nav__link" for="__nav_9_21_4" id="__nav_9_21_4_label" tabindex="0">
           JavaScript
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="JavaScript" data-md-level="3">
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_9_21_4_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_9_21_4">
           <span class="md-nav__icon md-icon"></span>
           JavaScript
@@ -2736,17 +2807,20 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_9_22" type="checkbox" id="__nav_9_22" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_22" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_9_22">
+        <label class="md-nav__link" for="__nav_9_22" id="__nav_9_22_label" tabindex="0">
           Windows
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Windows" data-md-level="2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_22_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_9_22">
           <span class="md-nav__icon md-icon"></span>
           Windows
@@ -2903,17 +2977,20 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_10" type="checkbox" id="__nav_10" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_10">
+        <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
           Python
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Python" data-md-level="1">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_10">
           <span class="md-nav__icon md-icon"></span>
           Python
@@ -2945,17 +3022,20 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_10_2" type="checkbox" id="__nav_10_2" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10_2" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_10_2">
+        <label class="md-nav__link" for="__nav_10_2" id="__nav_10_2_label" tabindex="0">
           Modules
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Modules" data-md-level="2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_2_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_10_2">
           <span class="md-nav__icon md-icon"></span>
           Modules
@@ -3546,17 +3626,20 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_11" type="checkbox" id="__nav_11" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_11" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_11">
+        <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
           Rust
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Rust" data-md-level="1">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_11">
           <span class="md-nav__icon md-icon"></span>
           Rust
@@ -3672,17 +3755,20 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_11_8" type="checkbox" id="__nav_11_8" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_11_8" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_11_8">
+        <label class="md-nav__link" for="__nav_11_8" id="__nav_11_8_label" tabindex="0">
           Crates
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Crates" data-md-level="2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_11_8_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_11_8">
           <span class="md-nav__icon md-icon"></span>
           Crates
@@ -3838,17 +3924,20 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_11_8_11" type="checkbox" id="__nav_11_8_11" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_11_8_11" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_11_8_11">
+        <label class="md-nav__link" for="__nav_11_8_11" id="__nav_11_8_11_label" tabindex="0">
           Cursive
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Cursive" data-md-level="3">
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_11_8_11_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_11_8_11">
           <span class="md-nav__icon md-icon"></span>
           Cursive
@@ -3913,17 +4002,20 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_11_8_12" type="checkbox" id="__nav_11_8_12" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_11_8_12" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_11_8_12">
+        <label class="md-nav__link" for="__nav_11_8_12" id="__nav_11_8_12_label" tabindex="0">
           Diesel
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Diesel" data-md-level="3">
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_11_8_12_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_11_8_12">
           <span class="md-nav__icon md-icon"></span>
           Diesel
@@ -3983,17 +4075,20 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_11_9" type="checkbox" id="__nav_11_9" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_11_9" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_11_9">
+        <label class="md-nav__link" for="__nav_11_9" id="__nav_11_9_label" tabindex="0">
           Tasks
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Tasks" data-md-level="2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_11_9_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_11_9">
           <span class="md-nav__icon md-icon"></span>
           Tasks
@@ -4108,17 +4203,20 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_12" type="checkbox" id="__nav_12" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_12" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_12">
+        <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
           Scripts
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Scripts" data-md-level="1">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_12">
           <span class="md-nav__icon md-icon"></span>
           Scripts
@@ -4248,17 +4346,20 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_12_9" type="checkbox" id="__nav_12_9" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_12_9" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_12_9">
+        <label class="md-nav__link" for="__nav_12_9" id="__nav_12_9_label" tabindex="0">
           3rd
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="3rd" data-md-level="2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_9_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_12_9">
           <span class="md-nav__icon md-icon"></span>
           3rd
@@ -4297,17 +4398,20 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_12_10" type="checkbox" id="__nav_12_10" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_12_10" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_12_10">
+        <label class="md-nav__link" for="__nav_12_10" id="__nav_12_10_label" tabindex="0">
           Discord
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Discord" data-md-level="2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_10_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_12_10">
           <span class="md-nav__icon md-icon"></span>
           Discord
@@ -4363,20 +4467,24 @@
             
             
           
-          <div class="md-content" data-md-component="content">
-            <article class="md-content__inner md-typeset">
-              
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
                 
+                  
 
 
-<h1 id="commands">Commands</h1>
+<h1 id="filters">Filters</h1>
 <h4 id="awk">awk</h4>
 <dl>
 <dd>
-<p>awk <strong>programs</strong> are equivalent to <strong>sed</strong> "instructions" can be defined <strong>inline</strong> or in a <strong>program file</strong> (also sometimes called source files). If no input files are specified awk can accept input from STDIN.</p>
-<div class="highlight"><span class="filename">Inline</span><pre><span></span><code>awk <span class="nv">$OPTIONS</span> <span class="nv">$PROGRAM</span> <span class="nv">$INPUTFILES</span>
-</code></pre></div>
-<div class="highlight"><span class="filename">Program file</span><pre><span></span><code>awk <span class="nv">$OPTIONS</span> -f <span class="nv">$PROGRAMFILE</span> <span class="nv">$INPUTFILES</span>
+<p>Awk <strong>programs</strong> are equivalent to <a href="#sed"><strong>sed</strong></a> "instructions" and can be defined <strong>inline</strong> or in a <strong>program file</strong> (also "source files"). 
+If no input files are specified awk can accept input from standard input.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Inline</span>
+awk<span class="w"> </span><span class="nv">$OPTIONS</span><span class="w"> </span><span class="nv">$PROGRAM</span><span class="w"> </span><span class="nv">$INPUTFILES</span>
+
+<span class="c1"># Program file</span>
+awk<span class="w"> </span><span class="nv">$OPTIONS</span><span class="w"> </span>-f<span class="w"> </span><span class="nv">$PROGRAMFILE</span><span class="w"> </span><span class="nv">$INPUTFILES</span>
 </code></pre></div>
 <p>awk programs combine <strong>patterns</strong> and <strong>actions</strong></p>
 <p>Patterns can be:</p>
@@ -4386,132 +4494,140 @@
 <li>predefined patterns <code>BEGIN</code> or <code>END</code>, whose actions are executed before and after processing any lines of the data file, respectively</li>
 </ul>
 <p>Convert ":" to newlines in <strong>$PATH</strong> environment variable
-<div class="highlight"><pre><span></span><code><span class="nb">echo</span> <span class="nv">$PATH</span> <span class="p">|</span> awk <span class="s1">&#39;BEGIN {RS=&quot;:&quot;} {print}&#39;</span>
+<div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="nv">$PATH</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span><span class="s1">&#39;BEGIN {RS=&quot;:&quot;} {print}&#39;</span>
 </code></pre></div></p>
 <p>Print the first field of all files in the current directory, taking semicolon <code>;</code> as the field separator, outputting filename, line number, and first field of matches, with colon <code>:</code> between the filename and line number
-<div class="highlight"><pre><span></span><code>awk <span class="s1">&#39;BEGIN {FS=&quot;;&quot;} /enable/ {print FILENAME &quot;:&quot; FNR,$1}&#39;</span> *
+<div class="highlight"><pre><span></span><code>awk<span class="w"> </span><span class="s1">&#39;BEGIN {FS=&quot;;&quot;} /enable/ {print FILENAME &quot;:&quot; FNR,$1}&#39;</span><span class="w"> </span>*
 </code></pre></div>
 search for string <code>MA</code> in all files, outputting filename, line, and line number for matches
-<div class="highlight"><pre><span></span><code>awk <span class="err">&#39;</span>/MA/ <span class="o">{</span><span class="nv">OFS</span><span class="o">=</span><span class="s2">&quot; &quot;</span> print FILENAME OFS FNR OFS <span class="nv">$0</span><span class="o">}</span> *
+<div class="highlight"><pre><span></span><code>awk<span class="w"> </span><span class="err">&#39;</span>/MA/<span class="w"> </span><span class="o">{</span><span class="nv">OFS</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="w"> </span>print<span class="w"> </span>FILENAME<span class="w"> </span>OFS<span class="w"> </span>FNR<span class="w"> </span>OFS<span class="w"> </span><span class="nv">$0</span><span class="o">}</span><span class="w"> </span>*
 </code></pre></div>
 change field separator (<code>FS</code>) to a colon (<code>:</code>) and run <code>awkscr</code>
-<div class="highlight"><pre><span></span><code>awk -F: -f awkscr /etc/passwd
+<div class="highlight"><pre><span></span><code>awk<span class="w"> </span>-F:<span class="w"> </span>-f<span class="w"> </span>awkscr<span class="w"> </span>/etc/passwd
 </code></pre></div>
 flag also works for awk
-<div class="highlight"><pre><span></span><code>awk -f script files<span class="sb">`</span> <span class="sb">`</span>-f
+<div class="highlight"><pre><span></span><code>awk<span class="w"> </span>-f<span class="w"> </span>script<span class="w"> </span>files<span class="sb">`</span><span class="w"> </span><span class="sb">`</span>-f
 </code></pre></div>
 print the first field of each line in the input file
-<div class="highlight"><pre><span></span><code>awk <span class="s1">&#39;{ print $1 }&#39;</span> list
+<div class="highlight"><pre><span></span><code>awk<span class="w"> </span><span class="s1">&#39;{ print $1 }&#39;</span><span class="w"> </span>list
 </code></pre></div>
 equivalent to <code>grep MA *</code> (<code>{print}</code> is implied)
-<div class="highlight"><pre><span></span><code>awk <span class="s1">&#39;/MA/&#39;</span> * <span class="p">|</span> awk <span class="s1">&#39;/MA/ {print}&#39;</span> *
+<div class="highlight"><pre><span></span><code>awk<span class="w"> </span><span class="s1">&#39;/MA/&#39;</span><span class="w"> </span>*<span class="w"> </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span><span class="s1">&#39;/MA/ {print}&#39;</span><span class="w"> </span>*
 </code></pre></div>
 <code>-F</code> flag is followed by field separator
-<div class="highlight"><pre><span></span><code>awk -F, <span class="s1">&#39;/MA/ { print $1 }&#39;</span> list
+<div class="highlight"><pre><span></span><code>awk<span class="w"> </span>-F,<span class="w"> </span><span class="s1">&#39;/MA/ { print $1 }&#39;</span><span class="w"> </span>list
 </code></pre></div>
 pipe output of <code>free</code> to <code>awk</code> to get free memory and total memory
-<div class="highlight"><pre><span></span><code>free -h <span class="p">|</span> awk <span class="err">&#39;</span>/^Mem<span class="p">|</span>/ <span class="o">{</span>print <span class="nv">$3</span> <span class="s2">&quot;/&quot;</span> <span class="nv">$2</span><span class="o">}</span>
+<div class="highlight"><pre><span></span><code>free<span class="w"> </span>-h<span class="w"> </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span><span class="err">&#39;</span>/^Mem<span class="p">|</span>/<span class="w"> </span><span class="o">{</span>print<span class="w"> </span><span class="nv">$3</span><span class="w"> </span><span class="s2">&quot;/&quot;</span><span class="w"> </span><span class="nv">$2</span><span class="o">}</span>
 </code></pre></div>
 pipe output of <code>sensors</code> to <code>awk</code> to get CPU temperature
-<div class="highlight"><pre><span></span><code>sensors <span class="p">|</span> awk <span class="err">&#39;</span>/^temp1/ <span class="o">{</span>print <span class="nv">$2</span><span class="o">}</span>
+<div class="highlight"><pre><span></span><code>sensors<span class="w"> </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span><span class="err">&#39;</span>/^temp1/<span class="w"> </span><span class="o">{</span>print<span class="w"> </span><span class="nv">$2</span><span class="o">}</span>
 </code></pre></div>
 replace initial "fake." with "real;" in file <code>fake_isbn</code>
-<div class="highlight"><pre><span></span><code>awk <span class="s1">&#39;sub(^fake.,&quot;real;&quot;)&#39;</span> fake_isbn
+<div class="highlight"><pre><span></span><code>awk<span class="w"> </span><span class="s1">&#39;sub(^fake.,&quot;real;&quot;)&#39;</span><span class="w"> </span>fake_isbn
 </code></pre></div>
 print all lines
-<div class="highlight"><pre><span></span><code>awk <span class="s1">&#39;1 { print }&#39;</span> file
+<div class="highlight"><pre><span></span><code>awk<span class="w"> </span><span class="s1">&#39;1 { print }&#39;</span><span class="w"> </span>file
 </code></pre></div>
 remove file header
-<div class="highlight"><pre><span></span><code>awk <span class="s1">&#39;NR&gt;1&#39;</span> file
+<div class="highlight"><pre><span></span><code>awk<span class="w"> </span><span class="s1">&#39;NR&gt;1&#39;</span><span class="w"> </span>file
 </code></pre></div>
 remove file header
-<div class="highlight"><pre><span></span><code>awk <span class="err">&#39;</span>NR&gt;1 <span class="o">{</span> print <span class="o">}</span> file
+<div class="highlight"><pre><span></span><code>awk<span class="w"> </span><span class="err">&#39;</span>NR&gt;1<span class="w"> </span><span class="o">{</span><span class="w"> </span>print<span class="w"> </span><span class="o">}</span><span class="w"> </span>file
 </code></pre></div>
 print lines in a range
-<div class="highlight"><pre><span></span><code>awk <span class="s1">&#39;NR&gt;1 &amp;&amp; NR &lt; 4&#39;</span> file
+<div class="highlight"><pre><span></span><code>awk<span class="w"> </span><span class="s1">&#39;NR&gt;1 &amp;&amp; NR &lt; 4&#39;</span><span class="w"> </span>file
 </code></pre></div>
 remove whitespace-only lines
-<div class="highlight"><pre><span></span><code>awk <span class="s1">&#39;NF&#39;</span> file
+<div class="highlight"><pre><span></span><code>awk<span class="w"> </span><span class="s1">&#39;NF&#39;</span><span class="w"> </span>file
 </code></pre></div>
 remove all blank lines
-<div class="highlight"><pre><span></span><code>awk <span class="s1">&#39;1&#39;</span> <span class="nv">RS</span><span class="o">=</span><span class="s1">&#39;&#39;</span> file
+<div class="highlight"><pre><span></span><code>awk<span class="w"> </span><span class="s1">&#39;1&#39;</span><span class="w"> </span><span class="nv">RS</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="w"> </span>file
 </code></pre></div>
 extract fields
-<div class="highlight"><pre><span></span><code>awk <span class="s1">&#39;{ print $1, $3}&#39;</span> <span class="nv">FS</span><span class="o">=</span>, <span class="nv">OFS</span><span class="o">=</span>, file
+<div class="highlight"><pre><span></span><code>awk<span class="w"> </span><span class="s1">&#39;{ print $1, $3}&#39;</span><span class="w"> </span><span class="nv">FS</span><span class="o">=</span>,<span class="w"> </span><span class="nv">OFS</span><span class="o">=</span>,<span class="w"> </span>file
 </code></pre></div>
 perform column-wise calculations
-<div class="highlight"><pre><span></span><code>awk <span class="s1">&#39;{ SUM=SUM+$1 } END { print SUM }&#39;</span> <span class="nv">FS</span><span class="o">=</span>, <span class="nv">OFS</span><span class="o">=</span>, file
+<div class="highlight"><pre><span></span><code>awk<span class="w"> </span><span class="s1">&#39;{ SUM=SUM+$1 } END { print SUM }&#39;</span><span class="w"> </span><span class="nv">FS</span><span class="o">=</span>,<span class="w"> </span><span class="nv">OFS</span><span class="o">=</span>,<span class="w"> </span>file
 </code></pre></div>
 count the number of nonempty lines
-<div class="highlight"><pre><span></span><code>awk <span class="s1">&#39;/./ { COUNT+=1 } END { print COUNT }&#39;</span> file
+<div class="highlight"><pre><span></span><code>awk<span class="w"> </span><span class="s1">&#39;/./ { COUNT+=1 } END { print COUNT }&#39;</span><span class="w"> </span>file
 </code></pre></div>
 count the number of nonempty lines
-<div class="highlight"><pre><span></span><code>awk <span class="s1">&#39;NF { COUNT+=1 } END { print COUNT }&#39;</span> file
+<div class="highlight"><pre><span></span><code>awk<span class="w"> </span><span class="s1">&#39;NF { COUNT+=1 } END { print COUNT }&#39;</span><span class="w"> </span>file
 </code></pre></div>
 count the number of nonempty lines
-<div class="highlight"><pre><span></span><code>awk <span class="s1">&#39;+$1 { COUNT+=1 } END { print COUNT }&#39;</span> file
+<div class="highlight"><pre><span></span><code>awk<span class="w"> </span><span class="s1">&#39;+$1 { COUNT+=1 } END { print COUNT }&#39;</span><span class="w"> </span>file
 </code></pre></div>
 Arrays
-<div class="highlight"><pre><span></span><code>awk <span class="s1">&#39;+$1 { CREDITS[$3]+=$1 } END { for (NAME in CREDITS) print NAME, CREDITS[NAME] }&#39;</span> <span class="nv">FS</span><span class="o">=</span>, file
+<div class="highlight"><pre><span></span><code>awk<span class="w"> </span><span class="s1">&#39;+$1 { CREDITS[$3]+=$1 } END { for (NAME in CREDITS) print NAME, CREDITS[NAME] }&#39;</span><span class="w"> </span><span class="nv">FS</span><span class="o">=</span>,<span class="w"> </span>file
 </code></pre></div>
 Identify duplicate lines
-<div class="highlight"><pre><span></span><code>awk <span class="s1">&#39;a[$0]++&#39;</span> file
+<div class="highlight"><pre><span></span><code>awk<span class="w"> </span><span class="s1">&#39;a[$0]++&#39;</span><span class="w"> </span>file
 </code></pre></div>
 Remove duplicate lines
-<div class="highlight"><pre><span></span><code>awk <span class="s1">&#39;!a[$0]++&#39;</span> file
+<div class="highlight"><pre><span></span><code>awk<span class="w"> </span><span class="s1">&#39;!a[$0]++&#39;</span><span class="w"> </span>file
 </code></pre></div>
 Remove multiple spaces
-<div class="highlight"><pre><span></span><code>awk <span class="s1">&#39;$1=$1&#39;</span> file
+<div class="highlight"><pre><span></span><code>awk<span class="w"> </span><span class="s1">&#39;$1=$1&#39;</span><span class="w"> </span>file
 </code></pre></div>
 Join lines
-<div class="highlight"><pre><span></span><code>awk <span class="s1">&#39;{ print $3 }&#39;</span> <span class="nv">FS</span><span class="o">=</span>, <span class="nv">ORS</span><span class="o">=</span><span class="s1">&#39; &#39;</span> file<span class="p">;</span> <span class="nb">echo</span>
+<div class="highlight"><pre><span></span><code>awk<span class="w"> </span><span class="s1">&#39;{ print $3 }&#39;</span><span class="w"> </span><span class="nv">FS</span><span class="o">=</span>,<span class="w"> </span><span class="nv">ORS</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="w"> </span>file<span class="p">;</span><span class="w"> </span><span class="nb">echo</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>awk <span class="s1">&#39;+$1 { SUM+=$1; NUM+=1 } END { printf(&quot;AVG=%f&quot;,SUM/NUM); }&#39;</span> <span class="nv">FS</span><span class="o">=</span>, file<span class="sb">`</span> <span class="p">|</span> format 
+<div class="highlight"><pre><span></span><code>awk<span class="w"> </span><span class="s1">&#39;+$1 { SUM+=$1; NUM+=1 } END { printf(&quot;AVG=%f&quot;,SUM/NUM); }&#39;</span><span class="w"> </span><span class="nv">FS</span><span class="o">=</span>,<span class="w"> </span>file<span class="sb">`</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>format<span class="w"> </span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>awk <span class="s1">&#39;+$1 { SUM+=$1; NUM+=1 } END { printf(&quot;AVG=%6.1f&quot;,SUM/NUM); }&#39;</span> <span class="nv">FS</span><span class="o">=</span>, file
+<div class="highlight"><pre><span></span><code>awk<span class="w"> </span><span class="s1">&#39;+$1 { SUM+=$1; NUM+=1 } END { printf(&quot;AVG=%6.1f&quot;,SUM/NUM); }&#39;</span><span class="w"> </span><span class="nv">FS</span><span class="o">=</span>,<span class="w"> </span>file
 </code></pre></div>
 Convert to uppercase 
-<div class="highlight"><pre><span></span><code>awk <span class="s1">&#39;$3 { print toupper($0); }&#39;</span> file
+<div class="highlight"><pre><span></span><code>awk<span class="w"> </span><span class="s1">&#39;$3 { print toupper($0); }&#39;</span><span class="w"> </span>file
 </code></pre></div>
 Change part of a string
-<div class="highlight"><pre><span></span><code>awk <span class="s1">&#39;{ $3 = toupper(substr($3,1,1)) substr($3,2) } $3&#39;</span> <span class="nv">FS</span><span class="o">=</span>, <span class="nv">OFS</span><span class="o">=</span>, file
+<div class="highlight"><pre><span></span><code>awk<span class="w"> </span><span class="s1">&#39;{ $3 = toupper(substr($3,1,1)) substr($3,2) } $3&#39;</span><span class="w"> </span><span class="nv">FS</span><span class="o">=</span>,<span class="w"> </span><span class="nv">OFS</span><span class="o">=</span>,<span class="w"> </span>file
 </code></pre></div>
 Split the second field ("EXPDATE") by spaces, storing the result into the array DATE; then print credits ($1) and username ($3) as well as the month (DATE[2]) and year (DATE[3]) 
-<div class="highlight"><pre><span></span><code>awk <span class="s1">&#39;+$1 { split($2, DATE, &quot; &quot;); print $1,$3, DATE[2], DATE[3] }&#39;</span> <span class="nv">FS</span><span class="o">=</span>, <span class="nv">OFS</span><span class="o">=</span>, file
+<div class="highlight"><pre><span></span><code>awk<span class="w"> </span><span class="s1">&#39;+$1 { split($2, DATE, &quot; &quot;); print $1,$3, DATE[2], DATE[3] }&#39;</span><span class="w"> </span><span class="nv">FS</span><span class="o">=</span>,<span class="w"> </span><span class="nv">OFS</span><span class="o">=</span>,<span class="w"> </span>file
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>awk <span class="s1">&#39;+$1 { split($4, GRP, &quot;:&quot;); print $3, GRP[1], GRP[2] }&#39;</span> <span class="nv">FS</span><span class="o">=</span>, file
+<div class="highlight"><pre><span></span><code>awk<span class="w"> </span><span class="s1">&#39;+$1 { split($4, GRP, &quot;:&quot;); print $3, GRP[1], GRP[2] }&#39;</span><span class="w"> </span><span class="nv">FS</span><span class="o">=</span>,<span class="w"> </span>file
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>awk <span class="s1">&#39;+$1 { split($4, GRP, /:+/); print $3, GRP[1], GRP[2] }&#39;</span> <span class="nv">FS</span><span class="o">=</span>, file
+<div class="highlight"><pre><span></span><code>awk<span class="w"> </span><span class="s1">&#39;+$1 { split($4, GRP, /:+/); print $3, GRP[1], GRP[2] }&#39;</span><span class="w"> </span><span class="nv">FS</span><span class="o">=</span>,<span class="w"> </span>file
 </code></pre></div>
 Search and replace with comma 
-<div class="highlight"><pre><span></span><code>awk <span class="s1">&#39;+$1 { gsub(/ +/, &quot;-&quot;, $2); print }&#39;</span> <span class="nv">FS</span><span class="o">=</span>, file
+<div class="highlight"><pre><span></span><code>awk<span class="w"> </span><span class="s1">&#39;+$1 { gsub(/ +/, &quot;-&quot;, $2); print }&#39;</span><span class="w"> </span><span class="nv">FS</span><span class="o">=</span>,<span class="w"> </span>file
 </code></pre></div>
 Adding date 
-<div class="highlight"><pre><span></span><code>awk <span class="s1">&#39;BEGIN { printf(&quot;UPDATED: &quot;); system(&quot;date&quot;) } /^UPDATED:/ { next } 1&#39;</span> file
+<div class="highlight"><pre><span></span><code>awk<span class="w"> </span><span class="s1">&#39;BEGIN { printf(&quot;UPDATED: &quot;); system(&quot;date&quot;) } /^UPDATED:/ { next } 1&#39;</span><span class="w"> </span>file
 </code></pre></div>
 Modify a field externally 
-<div class="highlight"><pre><span></span><code>awk <span class="s1">&#39;+$1 { CMD | getline $5; close(CMD); print }&#39;</span> <span class="nv">CMD</span><span class="o">=</span><span class="s2">&quot;uuid -v4&quot;</span> <span class="nv">FS</span><span class="o">=</span>, <span class="nv">OFS</span><span class="o">=</span>, file
+<div class="highlight"><pre><span></span><code>awk<span class="w"> </span><span class="s1">&#39;+$1 { CMD | getline $5; close(CMD); print }&#39;</span><span class="w"> </span><span class="nv">CMD</span><span class="o">=</span><span class="s2">&quot;uuid -v4&quot;</span><span class="w"> </span><span class="nv">FS</span><span class="o">=</span>,<span class="w"> </span><span class="nv">OFS</span><span class="o">=</span>,<span class="w"> </span>file
 </code></pre></div>
 Invoke dynamically generated command
-<div class="highlight"><pre><span></span><code>awk <span class="s1">&#39;+$1 { cmd = sprintf(FMT, $2); cmd | getline $2; close(cmd); print }&#39;</span> <span class="nv">FMT</span><span class="o">=</span><span class="s1">&#39;date -I -d &quot;%s&quot;&#39;</span>  <span class="nv">FS</span><span class="o">=</span>, file
+<div class="highlight"><pre><span></span><code>awk<span class="w"> </span><span class="s1">&#39;+$1 { cmd = sprintf(FMT, $2); cmd | getline $2; close(cmd); print }&#39;</span><span class="w"> </span><span class="nv">FMT</span><span class="o">=</span><span class="s1">&#39;date -I -d &quot;%s&quot;&#39;</span><span class="w">  </span><span class="nv">FS</span><span class="o">=</span>,<span class="w"> </span>file
 </code></pre></div>
 Join data
-<div class="highlight"><pre><span></span><code>awk <span class="s1">&#39;+$1 { CMD | getline $5; print }&#39;</span> <span class="nv">CMD</span><span class="o">=</span><span class="s1">&#39;od -vAn -w4 -t x /dev/urandom&#39;</span> <span class="nv">FS</span><span class="o">=</span>, file
+<div class="highlight"><pre><span></span><code>awk<span class="w"> </span><span class="s1">&#39;+$1 { CMD | getline $5; print }&#39;</span><span class="w"> </span><span class="nv">CMD</span><span class="o">=</span><span class="s1">&#39;od -vAn -w4 -t x /dev/urandom&#39;</span><span class="w"> </span><span class="nv">FS</span><span class="o">=</span>,<span class="w"> </span>file
 </code></pre></div>
 Add up all first records to {sum}, then print that number out at the end
-<div class="highlight"><pre><span></span><code>awk <span class="s1">&#39;{sum += $1} END {print sum}&#39;</span> file
+<div class="highlight"><pre><span></span><code>awk<span class="w"> </span><span class="s1">&#39;{sum += $1} END {print sum}&#39;</span><span class="w"> </span>file
 </code></pre></div></p>
 </dd>
 </dl>
+<h4 id="cat">cat</h4>
+<dl>
+<dd></dd>
+</dl>
+<h4 id="cut">cut</h4>
+<dl>
+<dd></dd>
+</dl>
 <h4 id="grep">grep</h4>
 <dl>
-<dd><div class="highlight"><pre><span></span><code>grep -R <span class="nv">$TEXT</span> <span class="nv">$DIRECTORY</span>
+<dd><div class="highlight"><pre><span></span><code>grep<span class="w"> </span>-R<span class="w"> </span><span class="nv">$TEXT</span><span class="w"> </span><span class="nv">$DIRECTORY</span>
 </code></pre></div></dd>
 </dl>
 <h4 id="head">head</h4>
 <dl>
 <dd>Print first 8 characters of <code>$FILE</code>
-<div class="highlight"><pre><span></span><code>head -c8 <span class="nv">$FILE</span>
+<div class="highlight"><pre><span></span><code>head<span class="w"> </span>-c8<span class="w"> </span><span class="nv">$FILE</span>
 </code></pre></div></dd>
 </dl>
 <h4 id="paste">paste</h4>
@@ -4519,26 +4635,29 @@ Add up all first records to {sum}, then print that number out at the end
 <dd>
 <p>Merge lines of files</p>
 <p>Make a .csv file from two lists
-<div class="highlight"><pre><span></span><code>paste -d <span class="s1">&#39;,&#39;</span> file1 file2
+<div class="highlight"><pre><span></span><code>paste<span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39;,&#39;</span><span class="w"> </span>file1<span class="w"> </span>file2
 </code></pre></div>
 Transpose rows
-<div class="highlight"><pre><span></span><code>paste -s file1 file2
+<div class="highlight"><pre><span></span><code>paste<span class="w"> </span>-s<span class="w"> </span>file1<span class="w"> </span>file2
 </code></pre></div></p>
 </dd>
 </dl>
+<h4 id="sed">sed</h4>
+<dl>
+<dd>
 <p><strong>sed</strong> ("Stream-oriented editor") is typically used for applying repetitive edits across all lines of multiple files. In particular it is, alongside <code>awk</code> one of the two primary commands which accept regular expressions in Unix systems. </p>
 <p>sed instructions can be defined <strong>inline</strong> or in a <strong>command file</strong> (i.e. script).</p>
-<div class="highlight"><span class="filename">Inline</span><pre><span></span><code>sed <span class="nv">$OPTIONS</span> <span class="nv">$INSTRUCTION</span> <span class="nv">$FILE</span>
+<div class="highlight"><span class="filename">Inline</span><pre><span></span><code>sed<span class="w"> </span><span class="nv">$OPTIONS</span><span class="w"> </span><span class="nv">$INSTRUCTION</span><span class="w"> </span><span class="nv">$FILE</span>
 </code></pre></div>
-<div class="highlight"><span class="filename">Command file</span><pre><span></span><code>sed <span class="nv">$OPTIONS</span> -f <span class="nv">$SCRIPT</span> <span class="nv">$FILE</span>
+<div class="highlight"><span class="filename">Command file</span><pre><span></span><code>sed<span class="w"> </span><span class="nv">$OPTIONS</span><span class="w"> </span>-f<span class="w"> </span><span class="nv">$SCRIPT</span><span class="w"> </span><span class="nv">$FILE</span>
 </code></pre></div>
 <p>sed instructions are made of two components: <strong>addresses</strong> (i.e. patterns) and
 <strong>procedures</strong> (i.e. actions).</p>
 <p>Run sed commands in <code>$SCRIPT</code> on <code>$FILE</code></p>
-<p><div class="highlight"><pre><span></span><code>sed -f <span class="nv">$SCRIPT</span> <span class="nv">$FILE</span>
+<p><div class="highlight"><pre><span></span><code>sed<span class="w"> </span>-f<span class="w"> </span><span class="nv">$SCRIPT</span><span class="w"> </span><span class="nv">$FILE</span>
 </code></pre></div>
 Suppress automatic printing of pattern space
-<div class="highlight"><pre><span></span><code>sed -n <span class="c1"># --quiet , --silent</span>
+<div class="highlight"><pre><span></span><code>sed<span class="w"> </span>-n<span class="w"> </span><span class="c1"># --quiet , --silent</span>
 </code></pre></div></p>
 <p>Zero, one, or two addresses can precede a procedure. In the absence of an address, the procedure is executed over every line of input. With one address, the procedure will be executed over every line of input that matches.</p>
 <p>With two addresses, the procedure will be executed over groups of lines whereby:</p>
@@ -4558,160 +4677,133 @@ Suppress automatic printing of pattern space
 </code></pre></div></p>
 <p>In some circles, sed is recommended as a replacement for other filters like <a href="/Linux/Filters/Commands#head">head</a>.
 Here, the first 10 lines of a file are displayed.
-<div class="highlight"><pre><span></span><code>sed 10q <span class="nv">$FILE</span>
+<div class="highlight"><pre><span></span><code>sed<span class="w"> </span>10q<span class="w"> </span><span class="nv">$FILE</span>
 </code></pre></div></p>
 <p>Display the top 10 processes by memory or cpu usage.
-<div class="highlight"><pre><span></span><code>ps axch -o cmd,%mem --sort<span class="o">=</span>-%mem <span class="p">|</span> sed 11q
-ps axch -o cmd:15,%cpu --sort<span class="o">=</span>-%cpu <span class="p">|</span> sed 11q
+<div class="highlight"><pre><span></span><code>ps<span class="w"> </span>axch<span class="w"> </span>-o<span class="w"> </span>cmd,%mem<span class="w"> </span>--sort<span class="o">=</span>-%mem<span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span>11q
+ps<span class="w"> </span>axch<span class="w"> </span>-o<span class="w"> </span>cmd:15,%cpu<span class="w"> </span>--sort<span class="o">=</span>-%cpu<span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span>11q
 </code></pre></div></p>
 <p>Replace angle brackets with their HTML codes, piped in from a heredoc:
-<div class="highlight"><pre><span></span><code>sed -e <span class="s1">&#39;s/&lt;/\&amp;lt;/g&#39;</span> -e <span class="s1">&#39;s/&gt;/\&amp;gt;/g&#39;</span> &lt;&lt; EOF
+<div class="highlight"><pre><span></span><code>sed<span class="w"> </span>-e<span class="w"> </span><span class="s1">&#39;s/&lt;/\&amp;lt;/g&#39;</span><span class="w"> </span>-e<span class="w"> </span><span class="s1">&#39;s/&gt;/\&amp;gt;/g&#39;</span><span class="w"> </span>&lt;&lt;<span class="w"> </span>EOF
 </code></pre></div></p>
-<!-- 
+<p>&lt;!-- 
 Display first two lines of file
-Without `-n`, each line will be printed twice
-<div class="highlight"><pre><span></span><code>sed -n <span class="s1">&#39;1,2p&#39;</span> emp.lst
+Without <code>-n</code>, each line will be printed twice
+<div class="highlight"><pre><span></span><code>sed<span class="w"> </span>-n<span class="w"> </span><span class="s1">&#39;1,2p&#39;</span><span class="w"> </span>emp.lst
+</code></pre></div></p>
+<p>Prepending <code>!</code> to the procedure reverses the sense of the command (YUG: 450)
+<div class="highlight"><pre><span></span><code>sed<span class="w"> </span>-n<span class="w"> </span><span class="s1">&#39;3,$!p&#39;</span><span class="w"> </span>emp.lst
+</code></pre></div></p>
+<p>Display a range of lines
+<div class="highlight"><pre><span></span><code>sed<span class="w"> </span>-n<span class="w"> </span><span class="s1">&#39;9,11p&#39;</span><span class="w"> </span>emp.lst
 </code></pre></div>
-
-Prepending `!` to the procedure reverses the sense of the command (YUG: 450)
-<div class="highlight"><pre><span></span><code>sed -n <span class="s1">&#39;3,$!p&#39;</span> emp.lst
-</code></pre></div>
-
-Display a range of lines
-<div class="highlight"><pre><span></span><code>sed -n <span class="s1">&#39;9,11p&#39;</span> emp.lst
-</code></pre></div>
-Use the `-e` flag to precede multiple instructions
-<div class="highlight"><pre><span></span><code>sed -n -e <span class="s1">&#39;1,2p&#39;</span> -e <span class="s1">&#39;7,9p&#39;</span> -e <span class="s1">&#39;$p&#39;</span> emp.lst
+Use the <code>-e</code> flag to precede multiple instructions
+<div class="highlight"><pre><span></span><code>sed<span class="w"> </span>-n<span class="w"> </span>-e<span class="w"> </span><span class="s1">&#39;1,2p&#39;</span><span class="w"> </span>-e<span class="w"> </span><span class="s1">&#39;7,9p&#39;</span><span class="w"> </span>-e<span class="w"> </span><span class="s1">&#39;$p&#39;</span><span class="w"> </span>emp.lst
 </code></pre></div>
 Delete lines
 Delete second line alone
-<div class="highlight"><pre><span></span><code>sed <span class="s1">&#39;2d&#39;</span> myfile
+<div class="highlight"><pre><span></span><code>sed<span class="w"> </span><span class="s1">&#39;2d&#39;</span><span class="w"> </span>myfile
 </code></pre></div>
 Delete a range of lines: from the 2nd through the 3rd
-<div class="highlight"><pre><span></span><code>sed <span class="s1">&#39;2,3d&#39;</span> myfile
+<div class="highlight"><pre><span></span><code>sed<span class="w"> </span><span class="s1">&#39;2,3d&#39;</span><span class="w"> </span>myfile
 </code></pre></div>
 Delete a range of lines, from the first occurrence of 'second' to the line with the first occurrence of 'fourth'
-<div class="highlight"><pre><span></span><code>sed <span class="s1">&#39;/second/,/fourth/d&#39;</span> myfile
+<div class="highlight"><pre><span></span><code>sed<span class="w"> </span><span class="s1">&#39;/second/,/fourth/d&#39;</span><span class="w"> </span>myfile
 </code></pre></div>
 Print all of a file except for specific lines
 Suppress any line with 'test' in it
-<div class="highlight"><pre><span></span><code>sed <span class="s1">&#39;/test/d&#39;</span> myfile
+<div class="highlight"><pre><span></span><code>sed<span class="w"> </span><span class="s1">&#39;/test/d&#39;</span><span class="w"> </span>myfile
+</code></pre></div></p>
+<p>Suppress from the 3rd line to EOF
+<div class="highlight"><pre><span></span><code>sed<span class="w"> </span><span class="s1">&#39;3,$d&#39;</span><span class="w"> </span>myfile
+</code></pre></div></p>
+<p>Replace the first instance of the <code>|</code> character with <code>:</code> and display the first two lines [YUG:455]
+<div class="highlight"><pre><span></span><code>sed<span class="w"> </span><span class="err">&#39;</span>s/<span class="p">|</span>/:/<span class="w"> </span>emp.lst<span class="w"> </span><span class="p">|</span><span class="w"> </span>head<span class="w"> </span>-2
 </code></pre></div>
-
-Suppress from the 3rd line to EOF
-<div class="highlight"><pre><span></span><code>sed <span class="s1">&#39;3,$d&#39;</span> myfile
-</code></pre></div>
-
-Replace the first instance of the `|` character with `:` and display the first two lines [YUG:455]
-<div class="highlight"><pre><span></span><code>sed <span class="err">&#39;</span>s/<span class="p">|</span>/:/ emp.lst <span class="p">|</span> head -2
-</code></pre></div>
-Replace all instances of the `|` character with `:`, displaying the first two lines [YUG:455]
-<div class="highlight"><pre><span></span><code>sed <span class="s1">&#39;s/|/:/g&#39;</span> emp.lst <span class="p">|</span> head -2
+Replace all instances of the <code>|</code> character with <code>:</code>, displaying the first two lines [YUG:455]
+<div class="highlight"><pre><span></span><code>sed<span class="w"> </span><span class="s1">&#39;s/|/:/g&#39;</span><span class="w"> </span>emp.lst<span class="w"> </span><span class="p">|</span><span class="w"> </span>head<span class="w"> </span>-2
 </code></pre></div>
 Substitute HTML tags:
-<div class="highlight"><pre><span></span><code>sed <span class="s1">&#39;s/&lt;I&gt;/&lt;EM&gt;/g&#39;</span>
+<div class="highlight"><pre><span></span><code>sed<span class="w"> </span><span class="s1">&#39;s/&lt;I&gt;/&lt;EM&gt;/g&#39;</span>
 </code></pre></div>
 These commands will replace "director" with "executive director"
-<div class="highlight"><pre><span></span><code>sed <span class="s1">&#39;s/director/executive director/&#39;</span> emp.lst
+<div class="highlight"><pre><span></span><code>sed<span class="w"> </span><span class="s1">&#39;s/director/executive director/&#39;</span><span class="w"> </span>emp.lst
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>sed <span class="s1">&#39;s/director/executive &amp;/&#39;</span> emp.lst
+<div class="highlight"><pre><span></span><code>sed<span class="w"> </span><span class="s1">&#39;s/director/executive &amp;/&#39;</span><span class="w"> </span>emp.lst
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>sed <span class="s1">&#39;/director/s//executive &amp;/&#39;</span> emp.lst
-</code></pre></div>
-
-
-Searching for text
-
-Equivalent to `grep MA *`
-<div class="highlight"><pre><span></span><code>sed -n <span class="s1">&#39;/MA/p&#39;</span> *
+<div class="highlight"><pre><span></span><code>sed<span class="w"> </span><span class="s1">&#39;/director/s//executive &amp;/&#39;</span><span class="w"> </span>emp.lst
+</code></pre></div></p>
+<p>Searching for text</p>
+<p>Equivalent to <code>grep MA *</code>
+<div class="highlight"><pre><span></span><code>sed<span class="w"> </span>-n<span class="w"> </span><span class="s1">&#39;/MA/p&#39;</span><span class="w"> </span>*
 </code></pre></div>
 Stringing sed statements together with pipe
 Take lines beginning with "fake" and remove all instances of "fake.", piping them... remove all parentheses with content and count lines of output (results)
-<div class="highlight"><pre><span></span><code>sed -n <span class="s1">&#39;/^fake/s/fake\.//p&#39;</span> * <span class="p">|</span> sed -nr <span class="s1">&#39;s/\(.*\)//p&#39;</span> <span class="p">|</span> wc -l
+<div class="highlight"><pre><span></span><code>sed<span class="w"> </span>-n<span class="w"> </span><span class="s1">&#39;/^fake/s/fake\.//p&#39;</span><span class="w"> </span>*<span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span>-nr<span class="w"> </span><span class="s1">&#39;s/\(.*\)//p&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>wc<span class="w"> </span>-l
 </code></pre></div>
 Take lines of all files in CWD beginning with "fake" and remove all instances of string "fake." Then remove all parentheses with any content within them and print only the top 10 lines
-<div class="highlight"><pre><span></span><code>sed -ne <span class="s1">&#39;/^fake/p&#39;</span> * <span class="p">|</span> sed -n <span class="s1">&#39;s/fake\.//p&#39;</span> <span class="p">|</span> sed -nr <span class="s1">&#39;s/\(.*\)//p&#39;</span> <span class="p">|</span> sed 11q
+<div class="highlight"><pre><span></span><code>sed<span class="w"> </span>-ne<span class="w"> </span><span class="s1">&#39;/^fake/p&#39;</span><span class="w"> </span>*<span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span>-n<span class="w"> </span><span class="s1">&#39;s/fake\.//p&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span>-nr<span class="w"> </span><span class="s1">&#39;s/\(.*\)//p&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span>11q
 </code></pre></div>
-Count the number of pipes replaced by piping output to `cmp`, which will use the `-l` option to output byte numbers of differing values, then counting the lines of output (YUG:456)
-<div class="highlight"><pre><span></span><code>sed <span class="s1">&#39;s/|/:/g&#39;</span> emp.lst <span class="p">|</span> cmp -l - emp.lst <span class="p">|</span> wc -l
+Count the number of pipes replaced by piping output to <code>cmp</code>, which will use the <code>-l</code> option to output byte numbers of differing values, then counting the lines of output (YUG:456)
+<div class="highlight"><pre><span></span><code>sed<span class="w"> </span><span class="s1">&#39;s/|/:/g&#39;</span><span class="w"> </span>emp.lst<span class="w"> </span><span class="p">|</span><span class="w"> </span>cmp<span class="w"> </span>-l<span class="w"> </span>-<span class="w"> </span>emp.lst<span class="w"> </span><span class="p">|</span><span class="w"> </span>wc<span class="w"> </span>-l
 </code></pre></div>
--->
-
+--&gt;</p>
+</dd>
+</dl>
+<h4 id="tail">tail</h4>
+<dl>
+<dd>
 <p>Output last lines beginning at 30th line from the start</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Short option</label><label for="__tabbed_1_2">POSIX</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code>tail -n<span class="o">=</span>+30
+<div class="highlight"><pre><span></span><code>tail<span class="w"> </span>-n<span class="o">=</span>+30
 </code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code>tail --lines<span class="o">=</span>+30
+<div class="highlight"><pre><span></span><code>tail<span class="w"> </span>--lines<span class="o">=</span>+30
 </code></pre></div>
 </div>
 </div>
 </div>
+</dd>
+</dl>
+<h4 id="tr">tr</h4>
+<dl>
+<dd>
 <p><code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <a href="#tr" title="```&#10;$ tr -c&#10;```&#10;Use the complement of (or all characters not in) `$STRING`&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 88"><code>c</code></a> <a href="#tr" title="```&#10;$ tr -d&#10;```&#10;Delete characters in `$STRING` from the output&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 88"><code>d</code></a> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <a href="#tr" title="```&#10;$ tr -s&#10;```&#10;Squeeze out repeated output characters in `$STRING`&#10;Haeder, Adam. _LPI Linux Certification in a Nutshell_. 2010.: 88"><code>s</code></a> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> <code>&nbsp;</code> </p>
 <p>Change the case of a string ]
-<div class="highlight"><pre><span></span><code>tr <span class="o">[</span>:upper:<span class="o">]</span> <span class="o">[</span>:lower:<span class="o">]</span>
+<div class="highlight"><pre><span></span><code>tr<span class="w"> </span><span class="o">[</span>:upper:<span class="o">]</span><span class="w"> </span><span class="o">[</span>:lower:<span class="o">]</span>
 </code></pre></div>
 Remove a character or set of characters from a string or line of output
-<div class="highlight"><pre><span></span><code>tr -d <span class="s2">&quot;text&quot;</span>
+<div class="highlight"><pre><span></span><code>tr<span class="w"> </span>-d<span class="w"> </span><span class="s2">&quot;text&quot;</span>
 </code></pre></div></p>
+</dd>
+</dl>
 <h4 id="watch">watch</h4>
 <dl>
 <dd>Execute <code>$CMD</code> at periods of <code>$N</code> seconds, watching its output CLKF
-<div class="highlight"><pre><span></span><code>watch <span class="nv">$CMD</span> -n <span class="nv">$N</span>
+<div class="highlight"><pre><span></span><code>watch<span class="w"> </span><span class="nv">$CMD</span><span class="w"> </span>-n<span class="w"> </span><span class="nv">$N</span>
 </code></pre></div>
 Check memory usage in megabytes (<code>-m</code>) every <code>5</code> seconds Enki
-<div class="highlight"><pre><span></span><code>watch -n <span class="m">5</span> free -m
+<div class="highlight"><pre><span></span><code>watch<span class="w"> </span>-n<span class="w"> </span><span class="m">5</span><span class="w"> </span>free<span class="w"> </span>-m
 </code></pre></div></dd>
 </dl>
 
-              
-            </article>
-            
-          </div>
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
         </div>
         
       </main>
       
         <footer class="md-footer">
-  
-    
-    <nav class="md-footer__inner md-grid" aria-label="Footer" >
-      
-        
-        <a href="../Files/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Files" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              Files
-            </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="../GRUB/" class="md-footer__link md-footer__link--next" aria-label="Next: GRUB2" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              GRUB2
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -4733,10 +4825,11 @@ Check memory usage in megabytes (<code>-m</code>) every <code>5</code> seconds E
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "toc.integrate", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "toc.integrate", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.0238f547.min.js"></script>
+      <script src="../../assets/javascripts/bundle.51198bba.min.js"></script>
       
     
   </body>

@@ -10,8 +10,14 @@
       
         <link rel="canonical" href="https://jasper-zanjani.github.io/notes/Linux/Applications/ssh/">
       
+      
+        <link rel="prev" href="../selinux/">
+      
+      
+        <link rel="next" href="../syncthing/">
+      
       <link rel="icon" href="../../../img/brain.png">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.8">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.6">
     
     
       
@@ -19,17 +25,13 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.1d29e8d0.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ded33207.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.cbb835fc.min.css">
-        
-          
-          
-          <meta name="theme-color" content="#ffc105">
-        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.a0c5b2b5.min.css">
       
       
+
     
     
     
@@ -42,28 +44,13 @@
       
     
     
-      <link rel="stylesheet" href="../../../style/admonitions-gcp.css">
+      <link rel="stylesheet" href="../../../style/tooltip-width.css">
     
-      <link rel="stylesheet" href="../../../style/admonitions-azure.css">
-    
-      <link rel="stylesheet" href="../../../style/admonitions-aws.css">
-    
-      <link rel="stylesheet" href="../../../style/admonitions-rs.css">
-    
-      <link rel="stylesheet" href="../../../style/admonitions-cs.css">
-    
-      <link rel="stylesheet" href="../../../style/admonitions-cpp.css">
-    
-      <link rel="stylesheet" href="../../../style/admonitions-cisco.css">
-    
-      <link rel="stylesheet" href="../../../style/admonitions-py.css">
-    
-      <link rel="stylesheet" href="../../../style/admonitions-output.css">
-    
-    <script>__md_scope=new URL("../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
+    
     
     
   </head>
@@ -139,7 +126,7 @@
       </label>
       <nav class="md-search__options" aria-label="Search">
         
-        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
         </button>
       </nav>
@@ -151,7 +138,7 @@
           <div class="md-search-result__meta">
             Initializing search
           </div>
-          <ol class="md-search-result__list"></ol>
+          <ol class="md-search-result__list" role="presentation"></ol>
         </div>
       </div>
     </div>
@@ -170,7 +157,7 @@
           
             
 <nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
-  <div class="md-tabs__inner md-grid">
+  <div class="md-grid">
     <ul class="md-tabs__list">
       
         
@@ -422,17 +409,20 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_2">
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
           Coding
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Coding" data-md-level="1">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_2">
           <span class="md-nav__icon md-icon"></span>
           Coding
@@ -688,17 +678,20 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_2_18" type="checkbox" id="__nav_2_18" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_18" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_2_18">
+        <label class="md-nav__link" for="__nav_2_18" id="__nav_2_18_label" tabindex="0">
           WinUI
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="WinUI" data-md-level="2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_18_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_2_18">
           <span class="md-nav__icon md-icon"></span>
           WinUI
@@ -757,17 +750,20 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_3">
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
           DevOps
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="DevOps" data-md-level="1">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
           DevOps
@@ -781,7 +777,7 @@
   
     <li class="md-nav__item">
       <a href="../../../DevOps/" class="md-nav__link">
-        Index
+        Automation using Azure DevOps and Ansible
       </a>
     </li>
   
@@ -795,7 +791,7 @@
   
     <li class="md-nav__item">
       <a href="../../../DevOps/ADO/" class="md-nav__link">
-        Azure DevOps
+        Azure Devops
       </a>
     </li>
   
@@ -833,17 +829,20 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_4">
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
           GTK
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="GTK" data-md-level="1">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_4">
           <span class="md-nav__icon md-icon"></span>
           GTK
@@ -917,17 +916,20 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_4_5" type="checkbox" id="__nav_4_5" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_5" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_4_5">
+        <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
           Examples
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Examples" data-md-level="2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_4_5">
           <span class="md-nav__icon md-icon"></span>
           Examples
@@ -966,17 +968,20 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_4_6" type="checkbox" id="__nav_4_6" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_6" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_4_6">
+        <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
           Tasks
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Tasks" data-md-level="2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_4_6">
           <span class="md-nav__icon md-icon"></span>
           Tasks
@@ -1091,17 +1096,20 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_5">
+        <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
           Health
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Health" data-md-level="1">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_5">
           <span class="md-nav__icon md-icon"></span>
           Health
@@ -1139,17 +1147,20 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_6">
+        <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
           Infrastructure
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Infrastructure" data-md-level="1">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_6">
           <span class="md-nav__icon md-icon"></span>
           Infrastructure
@@ -1251,17 +1262,20 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_6_7" type="checkbox" id="__nav_6_7" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_7" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_6_7">
+        <label class="md-nav__link" for="__nav_6_7" id="__nav_6_7_label" tabindex="0">
           Cloud
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Cloud" data-md-level="2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_7_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_6_7">
           <span class="md-nav__icon md-icon"></span>
           Cloud
@@ -1305,17 +1319,20 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_6_7_3" type="checkbox" id="__nav_6_7_3" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_7_3" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_6_7_3">
+        <label class="md-nav__link" for="__nav_6_7_3" id="__nav_6_7_3_label" tabindex="0">
           Azure
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Azure" data-md-level="3">
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_7_3_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_6_7_3">
           <span class="md-nav__icon md-icon"></span>
           Azure
@@ -1535,17 +1552,20 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_7">
+        <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
           Language
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Language" data-md-level="1">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_7">
           <span class="md-nav__icon md-icon"></span>
           Language
@@ -1627,17 +1647,18 @@
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" checked>
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
       
       
       
-      
-        <label class="md-nav__link" for="__nav_8">
+        <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
           Linux
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Linux" data-md-level="1">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_8">
           <span class="md-nav__icon md-icon"></span>
           Linux
@@ -1735,7 +1756,7 @@
   
     <li class="md-nav__item">
       <a href="../../Filters/" class="md-nav__link">
-        Commands
+        Filters
       </a>
     </li>
   
@@ -1951,17 +1972,18 @@
     <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_22" type="checkbox" id="__nav_8_22" checked>
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_22" checked>
       
       
       
-      
-        <label class="md-nav__link" for="__nav_8_22">
+        <label class="md-nav__link" for="__nav_8_22" id="__nav_8_22_label" tabindex="0">
           Applications
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Applications" data-md-level="2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_22_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_8_22">
           <span class="md-nav__icon md-icon"></span>
           Applications
@@ -2089,7 +2111,7 @@
   
     <li class="md-nav__item md-nav__item--active">
       
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
         
@@ -2317,17 +2339,20 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_9">
+        <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
           Misc
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Misc" data-md-level="1">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_9">
           <span class="md-nav__icon md-icon"></span>
           Misc
@@ -2611,17 +2636,20 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_9_20" type="checkbox" id="__nav_9_20" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_20" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_9_20">
+        <label class="md-nav__link" for="__nav_9_20" id="__nav_9_20_label" tabindex="0">
           Text editors
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Text editors" data-md-level="2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_20_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_9_20">
           <span class="md-nav__icon md-icon"></span>
           Text editors
@@ -2660,17 +2688,20 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_9_21" type="checkbox" id="__nav_9_21" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_21" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_9_21">
+        <label class="md-nav__link" for="__nav_9_21" id="__nav_9_21_label" tabindex="0">
           Web
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Web" data-md-level="2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_21_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_9_21">
           <span class="md-nav__icon md-icon"></span>
           Web
@@ -2728,17 +2759,20 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_9_21_4" type="checkbox" id="__nav_9_21_4" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_21_4" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_9_21_4">
+        <label class="md-nav__link" for="__nav_9_21_4" id="__nav_9_21_4_label" tabindex="0">
           JavaScript
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="JavaScript" data-md-level="3">
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_9_21_4_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_9_21_4">
           <span class="md-nav__icon md-icon"></span>
           JavaScript
@@ -2826,17 +2860,20 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_9_22" type="checkbox" id="__nav_9_22" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_22" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_9_22">
+        <label class="md-nav__link" for="__nav_9_22" id="__nav_9_22_label" tabindex="0">
           Windows
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Windows" data-md-level="2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_22_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_9_22">
           <span class="md-nav__icon md-icon"></span>
           Windows
@@ -2993,17 +3030,20 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_10" type="checkbox" id="__nav_10" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_10">
+        <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
           Python
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Python" data-md-level="1">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_10">
           <span class="md-nav__icon md-icon"></span>
           Python
@@ -3035,17 +3075,20 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_10_2" type="checkbox" id="__nav_10_2" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10_2" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_10_2">
+        <label class="md-nav__link" for="__nav_10_2" id="__nav_10_2_label" tabindex="0">
           Modules
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Modules" data-md-level="2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_2_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_10_2">
           <span class="md-nav__icon md-icon"></span>
           Modules
@@ -3636,17 +3679,20 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_11" type="checkbox" id="__nav_11" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_11" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_11">
+        <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
           Rust
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Rust" data-md-level="1">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_11">
           <span class="md-nav__icon md-icon"></span>
           Rust
@@ -3762,17 +3808,20 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_11_8" type="checkbox" id="__nav_11_8" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_11_8" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_11_8">
+        <label class="md-nav__link" for="__nav_11_8" id="__nav_11_8_label" tabindex="0">
           Crates
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Crates" data-md-level="2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_11_8_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_11_8">
           <span class="md-nav__icon md-icon"></span>
           Crates
@@ -3928,17 +3977,20 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_11_8_11" type="checkbox" id="__nav_11_8_11" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_11_8_11" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_11_8_11">
+        <label class="md-nav__link" for="__nav_11_8_11" id="__nav_11_8_11_label" tabindex="0">
           Cursive
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Cursive" data-md-level="3">
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_11_8_11_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_11_8_11">
           <span class="md-nav__icon md-icon"></span>
           Cursive
@@ -4003,17 +4055,20 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_11_8_12" type="checkbox" id="__nav_11_8_12" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_11_8_12" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_11_8_12">
+        <label class="md-nav__link" for="__nav_11_8_12" id="__nav_11_8_12_label" tabindex="0">
           Diesel
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Diesel" data-md-level="3">
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_11_8_12_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_11_8_12">
           <span class="md-nav__icon md-icon"></span>
           Diesel
@@ -4073,17 +4128,20 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_11_9" type="checkbox" id="__nav_11_9" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_11_9" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_11_9">
+        <label class="md-nav__link" for="__nav_11_9" id="__nav_11_9_label" tabindex="0">
           Tasks
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Tasks" data-md-level="2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_11_9_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_11_9">
           <span class="md-nav__icon md-icon"></span>
           Tasks
@@ -4198,17 +4256,20 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_12" type="checkbox" id="__nav_12" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_12" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_12">
+        <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
           Scripts
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Scripts" data-md-level="1">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_12">
           <span class="md-nav__icon md-icon"></span>
           Scripts
@@ -4338,17 +4399,20 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_12_9" type="checkbox" id="__nav_12_9" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_12_9" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_12_9">
+        <label class="md-nav__link" for="__nav_12_9" id="__nav_12_9_label" tabindex="0">
           3rd
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="3rd" data-md-level="2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_9_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_12_9">
           <span class="md-nav__icon md-icon"></span>
           3rd
@@ -4387,17 +4451,20 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_12_10" type="checkbox" id="__nav_12_10" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_12_10" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_12_10">
+        <label class="md-nav__link" for="__nav_12_10" id="__nav_12_10_label" tabindex="0">
           Discord
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Discord" data-md-level="2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_10_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_12_10">
           <span class="md-nav__icon md-icon"></span>
           Discord
@@ -4453,10 +4520,11 @@
             
             
           
-          <div class="md-content" data-md-component="content">
-            <article class="md-content__inner md-typeset">
-              
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
                 
+                  
 
 
 <h1 id="ssh">SSH</h1>
@@ -4493,20 +4561,20 @@ This hash is then sent back to the server, which checks the calculation.</p>
 <p>Here, a private web application served locally on <strong>ssh-server</strong> will be served on the client at the same port.
 The first "localhost" can actually be omitted, since the connection will be exposed on localhost host by default and is almost universally.</p>
 <p>The confusing part is the second "localhost", because that is actually in reference to the ssh server itself.
-<div class="highlight"><pre><span></span><code>ssh -L localhost:80:localhost:80 ssh-server
+<div class="highlight"><pre><span></span><code>ssh<span class="w"> </span>-L<span class="w"> </span>localhost:80:localhost:80<span class="w"> </span>ssh-server
 </code></pre></div>
 It is actually possible to forward a request to another host on ssh-server's network, creating a jump box.
 Here a connection on the client's localhost:81 is forwarded to ssh-server, which then sends it to 192.168.1.1:80.
-<div class="highlight"><pre><span></span><code>ssh -L <span class="m">81</span>:192.168.1.1:80 ssh-server
+<div class="highlight"><pre><span></span><code>ssh<span class="w"> </span>-L<span class="w"> </span><span class="m">81</span>:192.168.1.1:80<span class="w"> </span>ssh-server
 </code></pre></div></p>
 </dd>
 </dl>
 <h4 id="x-forwarding">X forwarding</h4>
 <dl>
-<dd><div class="highlight"><pre><span></span><code>ssh -Y user@host
+<dd><div class="highlight"><pre><span></span><code>ssh<span class="w"> </span>-Y<span class="w"> </span>user@host
 </code></pre></div>
 Have remote system use local computer {me.luna.edu}'s X display
-<div class="highlight"><pre><span></span><code><span class="nb">export</span> <span class="nv">DISPLAY</span><span class="o">=</span>me.luna.edu:0
+<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">DISPLAY</span><span class="o">=</span>me.luna.edu:0
 </code></pre></div></dd>
 </dl>
 <h4 id="fail2ban">fail2ban</h4>
@@ -4514,7 +4582,7 @@ Have remote system use local computer {me.luna.edu}'s X display
 <dd>
 <p>&lt;!--
 On the first ban, f2b creates a new chain named <strong>f2b-name</strong> where "name" is the name of the jail, as defined in the config.</p>
-<div class="highlight"><span class="filename">/etc/fail2ban/action.d/iptables.conf</span><pre><span></span><code><span class="na">actionstart</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&lt;iptables&gt; -N f2b-&lt;name&gt;</span><span class="w"></span>
+<div class="highlight"><span class="filename">/etc/fail2ban/action.d/iptables.conf</span><pre><span></span><code><span class="na">actionstart</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&lt;iptables&gt; -N f2b-&lt;name&gt;</span>
 </code></pre></div>
 <p>This chain becomes the target of banned IPs, which are somehow added (although I don't know how).
 --&gt;</p>
@@ -4523,26 +4591,26 @@ It can be installed from most distributions' repos.</p>
 <p>The <strong>jail</strong> is a key concept in f2b that couples <strong>filters</strong> and <strong>actions</strong> definitions.</p>
 <p>Fail2ban is configured through .ini-format configs found in <strong>/etc/fail2ban</strong>.
 It is recommended not to edit the default configs ending in .config but rather to create a custom config called <strong>jail.local</strong> which will be automatically loaded by the service.</p>
-<div class="highlight"><span class="filename">Example jail</span><pre><span></span><code><span class="k">[sshd]</span><span class="w"></span>
-<span class="na">enabled</span><span class="o">=</span><span class="s">true</span><span class="w"></span>
-<span class="na">port</span><span class="o">=</span><span class="s">ssh</span><span class="w"></span>
-<span class="na">filter</span><span class="o">=</span><span class="s">sshd</span><span class="w"></span>
-<span class="na">logpath</span><span class="o">=</span><span class="s">/var/log/auth.log</span><span class="w"></span>
-<span class="na">maxretry</span><span class="o">=</span><span class="s">0</span><span class="w"></span>
-<span class="na">findtime</span><span class="o">=</span><span class="s">300</span><span class="w"></span>
-<span class="na">bantime</span><span class="o">=</span><span class="s">3600</span><span class="w"></span>
+<div class="highlight"><span class="filename">Example jail</span><pre><span></span><code><span class="k">[sshd]</span>
+<span class="na">enabled</span><span class="o">=</span><span class="s">true</span>
+<span class="na">port</span><span class="o">=</span><span class="s">ssh</span>
+<span class="na">filter</span><span class="o">=</span><span class="s">sshd</span>
+<span class="na">logpath</span><span class="o">=</span><span class="s">/var/log/auth.log</span>
+<span class="na">maxretry</span><span class="o">=</span><span class="s">0</span>
+<span class="na">findtime</span><span class="o">=</span><span class="s">300</span>
+<span class="na">bantime</span><span class="o">=</span><span class="s">3600</span>
 </code></pre></div>
 <p>Failed logins can be checked by running <strong>lastb</strong>, and connections are also logged to SystemD.
-<div class="highlight"><pre><span></span><code>journalctl -ru sshd
+<div class="highlight"><pre><span></span><code>journalctl<span class="w"> </span>-ru<span class="w"> </span>sshd
 </code></pre></div></p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Display banned IPs</span>
-fail2ban-client banned
+fail2ban-client<span class="w"> </span>banned
 
 <span class="c1"># Manually ban an IP</span>
-fail2ban-client <span class="nb">set</span> sshd banip <span class="nv">$IPADDRESS</span>
+fail2ban-client<span class="w"> </span><span class="nb">set</span><span class="w"> </span>sshd<span class="w"> </span>banip<span class="w"> </span><span class="nv">$IPADDRESS</span>
 
 <span class="c1"># Manually unban an IP</span>
-fail2ban-client unban <span class="nv">$IPADDRESS</span>
+fail2ban-client<span class="w"> </span>unban<span class="w"> </span><span class="nv">$IPADDRESS</span>
 </code></pre></div>
 </dd>
 </dl>
@@ -4551,12 +4619,12 @@ fail2ban-client unban <span class="nv">$IPADDRESS</span>
 <h3 id="client-configuration">Client configuration</h3>
 <dl>
 <dd>
-<div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">Host home</span><span class="w"></span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">HostName 192.168.1.1</span><span class="w"></span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">User root</span><span class="w"></span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">Port 50022</span><span class="w"></span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">SetEnv BAT_THEME=OneHalfLight</span><span class="w"> </span><span class="c1"># (1)</span><span class="w"></span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">LocalForward 8080 localhost:8080</span><span class="w"> </span><span class="c1"># (2)</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">Host home</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">HostName 192.168.1.1</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">User root</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">Port 50022</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">SetEnv BAT_THEME=OneHalfLight</span><span class="w"> </span><span class="c1"># (1)</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">LocalForward 8080 localhost:8080</span><span class="w"> </span><span class="c1"># (2)</span>
 </code></pre></div>
 <ol>
 <li><a href="https://man.openbsd.org/ssh_config#SetEnv"><strong>SetEnv</strong></a> allows environment variables to be set in a remote session. 
@@ -4565,7 +4633,7 @@ This entry will set a specific syntax highlighting theme for use on the bat CLI 
 <div class="highlight"><pre><span></span><code>AcceptEnv BAT_THEME
 </code></pre></div></li>
 <li>The use of <a href="https://man.openbsd.org/ssh_config#LocalForward"><strong>LocalForward</strong></a> here is equivalent to the use of the <strong>-L</strong> option at the command-line:
-<div class="highlight"><pre><span></span><code>ssh -L <span class="m">8080</span>:localhost:8080 <span class="nv">$SERVER</span>
+<div class="highlight"><pre><span></span><code>ssh<span class="w"> </span>-L<span class="w"> </span><span class="m">8080</span>:localhost:8080<span class="w"> </span><span class="nv">$SERVER</span>
 </code></pre></div></li>
 </ol>
 </dd>
@@ -4603,10 +4671,10 @@ StrictHostKeyChecking no # (2)
 <dd>
 <p><strong>/etc/ssh/sshd_config</strong> is the configuration for the SSH server daemon.</p>
 <p>Disable cleartext passwords
-<div class="highlight"><pre><span></span><code><span class="na">PasswordAuthentication no</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="na">PasswordAuthentication no</span>
 </code></pre></div></p>
 <p>Disable root login
-<div class="highlight"><pre><span></span><code><span class="na">PermitRootLogin no</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="na">PermitRootLogin no</span>
 </code></pre></div></p>
 </dd>
 </dl>
@@ -4618,10 +4686,10 @@ StrictHostKeyChecking no # (2)
 endlessh
 
 <span class="c1"># Normal</span>
-endlessh -v
+endlessh<span class="w"> </span>-v
 
 <span class="c1"># Debug</span>
-endlessh -vv
+endlessh<span class="w"> </span>-vv
 </code></pre></div>
 <div class="highlight"><span class="filename">Log verbosity</span><pre><span></span><code>LogLevel 0 # silent
 LogLevel 1 # normal
@@ -4643,7 +4711,7 @@ Notably, ssh-add requires the <strong>SSH_AUTH_SOCK</strong> environment variabl
 <li>id_ed25519</li>
 <li>id_ed25519_sk</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="nb">eval</span> <span class="k">$(</span>ssh-agent<span class="k">)</span><span class="p">;</span> ssh-add &lt;<span class="o">(</span>cat <span class="s2">&quot;</span><span class="k">$(</span>keyFile.secureFilePath<span class="k">)</span><span class="s2">&quot;</span><span class="o">)</span>
+<div class="highlight"><pre><span></span><code><span class="nb">eval</span><span class="w"> </span><span class="k">$(</span>ssh-agent<span class="k">)</span><span class="p">;</span><span class="w"> </span>ssh-add<span class="w"> </span>&lt;<span class="o">(</span>cat<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>keyFile.secureFilePath<span class="k">)</span><span class="s2">&quot;</span><span class="o">)</span>
 </code></pre></div>
 </dd>
 </dl>
@@ -4652,14 +4720,14 @@ Notably, ssh-add requires the <strong>SSH_AUTH_SOCK</strong> environment variabl
 <dd>
 <p>ssh-agent is a <a href="https://www.ssh.com/academy/ssh/agent">helper program</a> that keeps track of identity keys and passphrases, allowing them to be used without further interaction, similar to SSO.
 Running it produces output that is meant to be used with the <strong>eval</strong> command in order to set the environment variables <strong>SSH_AGENT_PID</strong> and <strong>SSH_AUTH_SOCK</strong>, which are needed by <a href="#ssh-add">ssh-add</a>.</p>
-<div class="highlight"><pre><span></span><code><span class="nb">eval</span> <span class="k">$(</span>ssh-agent<span class="k">)</span><span class="p">;</span> ssh-add &lt;<span class="o">(</span>cat <span class="s2">&quot;</span><span class="k">$(</span>keyFile.secureFilePath<span class="k">)</span><span class="s2">&quot;</span><span class="o">)</span>
+<div class="highlight"><pre><span></span><code><span class="nb">eval</span><span class="w"> </span><span class="k">$(</span>ssh-agent<span class="k">)</span><span class="p">;</span><span class="w"> </span>ssh-add<span class="w"> </span>&lt;<span class="o">(</span>cat<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>keyFile.secureFilePath<span class="k">)</span><span class="s2">&quot;</span><span class="o">)</span>
 </code></pre></div>
 <p>If only a single process is running, the <strong>-k</strong> option will kill it (although it is possible to fork multiple ssh-agent processes).
-<div class="highlight"><pre><span></span><code>ssh-agent -k <span class="c1"># (1)</span>
+<div class="highlight"><pre><span></span><code>ssh-agent<span class="w"> </span>-k<span class="w"> </span><span class="c1"># (1)</span>
 </code></pre></div></p>
 <ol>
 <li>Equivalent to
-<div class="highlight"><pre><span></span><code><span class="nb">kill</span> <span class="nv">$SSH_AGENT_PID</span>
+<div class="highlight"><pre><span></span><code><span class="nb">kill</span><span class="w"> </span><span class="nv">$SSH_AGENT_PID</span>
 </code></pre></div></li>
 </ol>
 </dd>
@@ -4669,61 +4737,30 @@ Running it produces output that is meant to be used with the <strong>eval</stron
 <dd>
 <p>This command copies the SSH public key to a specified account's <strong>~/.ssh/authorized_keys</strong> file.</p>
 <p>In Windows, this command is not available, so a workaround is to simply <a href="https://www.chrisjhart.com/Windows-10-ssh-copy-id/">pipe the public key</a> over SSH itself.</p>
-<div class="highlight"><pre><span></span><code><span class="nb">type</span> <span class="nv">$env</span>:USERPROFILE<span class="se">\.</span>ssh<span class="se">\i</span>d_rsa.pub <span class="p">|</span> ssh <span class="o">{</span>IP-ADDRESS-OR-FQDN<span class="o">}</span> <span class="s2">&quot;cat &gt;&gt; .ssh/authorized_keys&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="nb">type</span><span class="w"> </span><span class="nv">$env</span>:USERPROFILE<span class="se">\.</span>ssh<span class="se">\i</span>d_rsa.pub<span class="w"> </span><span class="p">|</span><span class="w"> </span>ssh<span class="w"> </span><span class="o">{</span>IP-ADDRESS-OR-FQDN<span class="o">}</span><span class="w"> </span><span class="s2">&quot;cat &gt;&gt; .ssh/authorized_keys&quot;</span>
 </code></pre></div>
 </dd>
 </dl>
 <h4 id="ssh-keygen">ssh-keygen</h4>
 <dl>
-<dd><div class="highlight"><span class="filename">Generate host keys</span><pre><span></span><code>sudo ssh-keygen -A
+<dd><div class="highlight"><span class="filename">Generate host keys</span><pre><span></span><code>sudo<span class="w"> </span>ssh-keygen<span class="w"> </span>-A
 </code></pre></div></dd>
 </dl>
 
-              
-            </article>
-            
-          </div>
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
         </div>
         
       </main>
       
         <footer class="md-footer">
-  
-    
-    <nav class="md-footer__inner md-grid" aria-label="Footer" >
-      
-        
-        <a href="../selinux/" class="md-footer__link md-footer__link--prev" aria-label="Previous: SELinux" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              SELinux
-            </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="../syncthing/" class="md-footer__link md-footer__link--next" aria-label="Next: Syncthing" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              Syncthing
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -4745,10 +4782,11 @@ Running it produces output that is meant to be used with the <strong>eval</stron
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "toc.integrate", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "toc.integrate", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.0238f547.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.51198bba.min.js"></script>
       
     
   </body>

@@ -10,8 +10,14 @@
       
         <link rel="canonical" href="https://jasper-zanjani.github.io/notes/Misc/Windows/PowerShell/">
       
+      
+        <link rel="prev" href="../Labs/">
+      
+      
+        <link rel="next" href="../WDS-lab/">
+      
       <link rel="icon" href="../../../img/brain.png">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.8">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.6">
     
     
       
@@ -19,17 +25,13 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.1d29e8d0.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ded33207.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.cbb835fc.min.css">
-        
-          
-          
-          <meta name="theme-color" content="#ffc105">
-        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.a0c5b2b5.min.css">
       
       
+
     
     
     
@@ -42,28 +44,13 @@
       
     
     
-      <link rel="stylesheet" href="../../../style/admonitions-gcp.css">
+      <link rel="stylesheet" href="../../../style/tooltip-width.css">
     
-      <link rel="stylesheet" href="../../../style/admonitions-azure.css">
-    
-      <link rel="stylesheet" href="../../../style/admonitions-aws.css">
-    
-      <link rel="stylesheet" href="../../../style/admonitions-rs.css">
-    
-      <link rel="stylesheet" href="../../../style/admonitions-cs.css">
-    
-      <link rel="stylesheet" href="../../../style/admonitions-cpp.css">
-    
-      <link rel="stylesheet" href="../../../style/admonitions-cisco.css">
-    
-      <link rel="stylesheet" href="../../../style/admonitions-py.css">
-    
-      <link rel="stylesheet" href="../../../style/admonitions-output.css">
-    
-    <script>__md_scope=new URL("../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
+    
     
     
   </head>
@@ -139,7 +126,7 @@
       </label>
       <nav class="md-search__options" aria-label="Search">
         
-        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
         </button>
       </nav>
@@ -151,7 +138,7 @@
           <div class="md-search-result__meta">
             Initializing search
           </div>
-          <ol class="md-search-result__list"></ol>
+          <ol class="md-search-result__list" role="presentation"></ol>
         </div>
       </div>
     </div>
@@ -170,7 +157,7 @@
           
             
 <nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
-  <div class="md-tabs__inner md-grid">
+  <div class="md-grid">
     <ul class="md-tabs__list">
       
         
@@ -422,17 +409,20 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_2">
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
           Coding
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Coding" data-md-level="1">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_2">
           <span class="md-nav__icon md-icon"></span>
           Coding
@@ -688,17 +678,20 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_2_18" type="checkbox" id="__nav_2_18" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_18" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_2_18">
+        <label class="md-nav__link" for="__nav_2_18" id="__nav_2_18_label" tabindex="0">
           WinUI
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="WinUI" data-md-level="2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_18_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_2_18">
           <span class="md-nav__icon md-icon"></span>
           WinUI
@@ -757,17 +750,20 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_3">
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
           DevOps
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="DevOps" data-md-level="1">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
           DevOps
@@ -781,7 +777,7 @@
   
     <li class="md-nav__item">
       <a href="../../../DevOps/" class="md-nav__link">
-        Index
+        Automation using Azure DevOps and Ansible
       </a>
     </li>
   
@@ -795,7 +791,7 @@
   
     <li class="md-nav__item">
       <a href="../../../DevOps/ADO/" class="md-nav__link">
-        Azure DevOps
+        Azure Devops
       </a>
     </li>
   
@@ -833,17 +829,20 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_4">
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
           GTK
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="GTK" data-md-level="1">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_4">
           <span class="md-nav__icon md-icon"></span>
           GTK
@@ -917,17 +916,20 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_4_5" type="checkbox" id="__nav_4_5" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_5" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_4_5">
+        <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
           Examples
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Examples" data-md-level="2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_4_5">
           <span class="md-nav__icon md-icon"></span>
           Examples
@@ -966,17 +968,20 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_4_6" type="checkbox" id="__nav_4_6" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_6" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_4_6">
+        <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
           Tasks
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Tasks" data-md-level="2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_4_6">
           <span class="md-nav__icon md-icon"></span>
           Tasks
@@ -1091,17 +1096,20 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_5">
+        <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
           Health
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Health" data-md-level="1">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_5">
           <span class="md-nav__icon md-icon"></span>
           Health
@@ -1139,17 +1147,20 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_6">
+        <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
           Infrastructure
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Infrastructure" data-md-level="1">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_6">
           <span class="md-nav__icon md-icon"></span>
           Infrastructure
@@ -1251,17 +1262,20 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_6_7" type="checkbox" id="__nav_6_7" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_7" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_6_7">
+        <label class="md-nav__link" for="__nav_6_7" id="__nav_6_7_label" tabindex="0">
           Cloud
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Cloud" data-md-level="2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_7_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_6_7">
           <span class="md-nav__icon md-icon"></span>
           Cloud
@@ -1305,17 +1319,20 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_6_7_3" type="checkbox" id="__nav_6_7_3" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_7_3" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_6_7_3">
+        <label class="md-nav__link" for="__nav_6_7_3" id="__nav_6_7_3_label" tabindex="0">
           Azure
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Azure" data-md-level="3">
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_7_3_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_6_7_3">
           <span class="md-nav__icon md-icon"></span>
           Azure
@@ -1535,17 +1552,20 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_7">
+        <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
           Language
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Language" data-md-level="1">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_7">
           <span class="md-nav__icon md-icon"></span>
           Language
@@ -1625,17 +1645,20 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_8">
+        <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
           Linux
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Linux" data-md-level="1">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_8">
           <span class="md-nav__icon md-icon"></span>
           Linux
@@ -1733,7 +1756,7 @@
   
     <li class="md-nav__item">
       <a href="../../../Linux/Filters/" class="md-nav__link">
-        Commands
+        Filters
       </a>
     </li>
   
@@ -1947,17 +1970,20 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_8_22" type="checkbox" id="__nav_8_22" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8_22" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_8_22">
+        <label class="md-nav__link" for="__nav_8_22" id="__nav_8_22_label" tabindex="0">
           Applications
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Applications" data-md-level="2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_22_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_8_22">
           <span class="md-nav__icon md-icon"></span>
           Applications
@@ -2158,17 +2184,18 @@
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" checked>
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" checked>
       
       
       
-      
-        <label class="md-nav__link" for="__nav_9">
+        <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
           Misc
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Misc" data-md-level="1">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_9">
           <span class="md-nav__icon md-icon"></span>
           Misc
@@ -2452,17 +2479,20 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_9_20" type="checkbox" id="__nav_9_20" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_20" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_9_20">
+        <label class="md-nav__link" for="__nav_9_20" id="__nav_9_20_label" tabindex="0">
           Text editors
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Text editors" data-md-level="2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_20_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_9_20">
           <span class="md-nav__icon md-icon"></span>
           Text editors
@@ -2501,17 +2531,20 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_9_21" type="checkbox" id="__nav_9_21" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_21" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_9_21">
+        <label class="md-nav__link" for="__nav_9_21" id="__nav_9_21_label" tabindex="0">
           Web
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Web" data-md-level="2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_21_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_9_21">
           <span class="md-nav__icon md-icon"></span>
           Web
@@ -2569,17 +2602,20 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_9_21_4" type="checkbox" id="__nav_9_21_4" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_21_4" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_9_21_4">
+        <label class="md-nav__link" for="__nav_9_21_4" id="__nav_9_21_4_label" tabindex="0">
           JavaScript
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="JavaScript" data-md-level="3">
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_9_21_4_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_9_21_4">
           <span class="md-nav__icon md-icon"></span>
           JavaScript
@@ -2669,17 +2705,18 @@
     <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_22" type="checkbox" id="__nav_9_22" checked>
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_22" checked>
       
       
       
-      
-        <label class="md-nav__link" for="__nav_9_22">
+        <label class="md-nav__link" for="__nav_9_22" id="__nav_9_22_label" tabindex="0">
           Windows
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Windows" data-md-level="2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_22_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_9_22">
           <span class="md-nav__icon md-icon"></span>
           Windows
@@ -2765,7 +2802,7 @@
   
     <li class="md-nav__item md-nav__item--active">
       
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
         
@@ -2796,16 +2833,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#control-flow" class="md-nav__link">
-    Control flow
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#variables" class="md-nav__link">
     Variables
   </a>
+  
+    <nav class="md-nav" aria-label="Variables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#typing" class="md-nav__link">
+    Typing
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hash-tables" class="md-nav__link">
+    Hash tables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#documentation" class="md-nav__link">
+    Documentation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -3168,17 +3225,20 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_10" type="checkbox" id="__nav_10" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_10">
+        <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
           Python
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Python" data-md-level="1">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_10">
           <span class="md-nav__icon md-icon"></span>
           Python
@@ -3210,17 +3270,20 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_10_2" type="checkbox" id="__nav_10_2" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10_2" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_10_2">
+        <label class="md-nav__link" for="__nav_10_2" id="__nav_10_2_label" tabindex="0">
           Modules
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Modules" data-md-level="2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_2_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_10_2">
           <span class="md-nav__icon md-icon"></span>
           Modules
@@ -3811,17 +3874,20 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_11" type="checkbox" id="__nav_11" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_11" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_11">
+        <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
           Rust
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Rust" data-md-level="1">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_11">
           <span class="md-nav__icon md-icon"></span>
           Rust
@@ -3937,17 +4003,20 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_11_8" type="checkbox" id="__nav_11_8" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_11_8" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_11_8">
+        <label class="md-nav__link" for="__nav_11_8" id="__nav_11_8_label" tabindex="0">
           Crates
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Crates" data-md-level="2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_11_8_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_11_8">
           <span class="md-nav__icon md-icon"></span>
           Crates
@@ -4103,17 +4172,20 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_11_8_11" type="checkbox" id="__nav_11_8_11" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_11_8_11" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_11_8_11">
+        <label class="md-nav__link" for="__nav_11_8_11" id="__nav_11_8_11_label" tabindex="0">
           Cursive
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Cursive" data-md-level="3">
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_11_8_11_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_11_8_11">
           <span class="md-nav__icon md-icon"></span>
           Cursive
@@ -4178,17 +4250,20 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_11_8_12" type="checkbox" id="__nav_11_8_12" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_11_8_12" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_11_8_12">
+        <label class="md-nav__link" for="__nav_11_8_12" id="__nav_11_8_12_label" tabindex="0">
           Diesel
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Diesel" data-md-level="3">
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_11_8_12_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_11_8_12">
           <span class="md-nav__icon md-icon"></span>
           Diesel
@@ -4248,17 +4323,20 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_11_9" type="checkbox" id="__nav_11_9" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_11_9" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_11_9">
+        <label class="md-nav__link" for="__nav_11_9" id="__nav_11_9_label" tabindex="0">
           Tasks
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Tasks" data-md-level="2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_11_9_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_11_9">
           <span class="md-nav__icon md-icon"></span>
           Tasks
@@ -4373,17 +4451,20 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_12" type="checkbox" id="__nav_12" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_12" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_12">
+        <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
           Scripts
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Scripts" data-md-level="1">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_12">
           <span class="md-nav__icon md-icon"></span>
           Scripts
@@ -4513,17 +4594,20 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_12_9" type="checkbox" id="__nav_12_9" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_12_9" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_12_9">
+        <label class="md-nav__link" for="__nav_12_9" id="__nav_12_9_label" tabindex="0">
           3rd
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="3rd" data-md-level="2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_9_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_12_9">
           <span class="md-nav__icon md-icon"></span>
           3rd
@@ -4562,17 +4646,20 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_12_10" type="checkbox" id="__nav_12_10" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_12_10" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_12_10">
+        <label class="md-nav__link" for="__nav_12_10" id="__nav_12_10_label" tabindex="0">
           Discord
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Discord" data-md-level="2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_10_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_12_10">
           <span class="md-nav__icon md-icon"></span>
           Discord
@@ -4628,15 +4715,53 @@
             
             
           
-          <div class="md-content" data-md-component="content">
-            <article class="md-content__inner md-typeset">
-              
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
                 
+                  
 
 
 <h1 id="powershell">PowerShell</h1>
-<h2 id="control-flow">Control flow</h2>
-<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="p">(</span><span class="nv">$condition</span><span class="p">)</span> <span class="p">{</span> <span class="cm">&lt;# ... #&gt;</span> <span class="p">}</span>
+<p>Functions are declared with the <strong>function</strong> keyword and the body in braces.</p>
+<div class="highlight"><pre><span></span><code><span class="k">function</span> <span class="n">Hello-World</span>
+<span class="p">{</span>
+    <span class="nb">Write-Output</span> <span class="s2">&quot;Hello, World!&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Positional parameters can be referenced using the <strong>$args</strong> array, which contains all arguments passed to the function on invocation.
+PowerShell appears to automatically handle arrays passed in as the first argument and interpolates spaces between each item this way.</p>
+<div class="highlight"><pre><span></span><code><span class="k">function</span> <span class="n">Hello-World</span>
+<span class="p">{</span>
+    <span class="nb">Write-Output</span> <span class="s2">&quot;Hello, </span><span class="p">$(</span><span class="nv">$args</span><span class="p">[</span><span class="n">0</span><span class="p">])</span><span class="s2">!&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>In order to set a default value, apparently a named parameter has to be used.
+There are two ways to do this, with or without the <strong>param</strong> keyword.
+These parameters are still usable as positional parameters, determined by the order in which they are defined (?), but note that the case of the identifier is preserved to define the option (i.e. "$name" becomes "-name", etc).</p>
+<div class="highlight"><pre><span></span><code><span class="k">function</span> <span class="n">Hello-World</span><span class="p">(</span><span class="nv">$Name</span><span class="p">=</span><span class="s1">&#39;World&#39;</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nb">Write-Output</span> <span class="s2">&quot;Hello, </span><span class="p">$(</span><span class="nv">$Name</span><span class="p">)</span><span class="s2">!&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Using param, multiple parameters can be defined in a <a href="https://adamtheautomator.com/powershell-parameter/#creating-a-simple-parameter"><strong>param block</strong></a>, which would probably make more sense for complicated functions using multiple parameters.
+Here the single parameter is also <a href="#typing">typed</a>.</p>
+<div class="highlight"><pre><span></span><code><span class="k">function</span> <span class="n">Hello-World</span>
+<span class="p">{</span>
+    <span class="k">param</span> <span class="p">(</span>
+        <span class="no">[string]</span><span class="nv">$Name</span><span class="p">=</span><span class="s1">&#39;World&#39;</span>
+    <span class="p">)</span>
+    <span class="nb">Write-Output</span> <span class="s2">&quot;Hello, </span><span class="p">$(</span><span class="nv">$Name</span><span class="p">)</span><span class="s2">!&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>&lt;!-- Documentation or <a href="https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_comment_based_help?view=powershell-7.3"><strong>comment-based help</strong></a> is incorporated by means of specially formatted comments within the body of the function.
+Even without comments, PowerShell will attempt to provide help to a user from the command-line using Get-Help.</p>
+<div class="highlight"><pre><span></span><code><span class="p">```</span> <span class="p">--&gt;</span>
+
+<span class="c">## Control flow</span>
+
+<span class="p">```</span><span class="n">powershell</span>
+<span class="k">if</span> <span class="p">(</span><span class="nv">$condition</span><span class="p">)</span> <span class="p">{</span> <span class="cm">&lt;# ... #&gt;</span> <span class="p">}</span>
 
 <span class="k">switch</span> <span class="p">(</span><span class="nv">$reference</span><span class="p">)</span> 
 <span class="p">{</span>
@@ -4665,9 +4790,10 @@
 <h2 id="variables">Variables</h2>
 <p>Variables are accessed by prefixing the identifier with <code>$</code>.</p>
 <ul>
-<li><a href="#automatic-variables" title="Automatic variable&#10;Variables that store state information for PowerShell and are created and maintained by Powershell."><strong>Automatic variables</strong></a> (<code>PSVersionTable</code>, <code>$IsLinux</code>, etc) are PowerShell-specific.</li>
+<li>[<strong>Automatic variables</strong>][<a href="https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-7.3">Automatic variable</a>] (<strong>$$</strong>, <strong>$_</strong>, <strong>$PSVersionTable</strong>, <strong>$IsLinux</strong>, etc) are PowerShell-specific.</li>
 <li>Windows environment variables are actually accessed through the <strong><code>Env</code></strong> virtual drive using syntax like <code>$Env:APPDATA</code>, <code>$Env:USERNAME</code>, etc.</li>
 </ul>
+<h4 id="typing">Typing</h4>
 <div class="highlight"><span class="filename">Typing</span><pre><span></span><code><span class="no">[double]</span><span class="nv">$Price</span>
 <span class="no">[int]</span><span class="nv">$Quantity</span>
 <span class="no">[string]</span><span class="nv">$Description</span>
@@ -4675,6 +4801,7 @@
 <div class="highlight"><span class="filename">Casting</span><pre><span></span><code><span class="nv">$Number</span> <span class="p">=</span> <span class="no">[int]</span><span class="s1">&#39;04&#39;</span>
 <span class="nv">$FailedCast</span> <span class="p">=</span> <span class="no">[int]</span><span class="s1">&#39;Hello&#39;</span>
 </code></pre></div>
+<h4 id="hash-tables">Hash tables</h4>
 <div class="highlight"><span class="filename">Hash tables</span><pre><span></span><code><span class="nv">$fruit</span> <span class="p">=</span> <span class="p">@{</span>
     <span class="n">Apple</span> <span class="p">=</span> <span class="s1">&#39;red&#39;</span>
     <span class="n">Orange</span> <span class="p">=</span> <span class="s1">&#39;orange&#39;</span>
@@ -4683,12 +4810,6 @@
 
 <span class="c"># Inline</span>
 <span class="nv">$fruit</span> <span class="p">=</span> <span class="p">@{</span> <span class="n">Apple</span> <span class="p">=</span> <span class="s1">&#39;red&#39;</span><span class="p">;</span> <span class="n">Orange</span> <span class="p">=</span> <span class="s1">&#39;orange&#39;</span><span class="p">;</span> <span class="n">Eggplant</span> <span class="p">=</span> <span class="s1">&#39;purple&#39;</span> <span class="p">}</span>
-
-<span class="c"># Add method</span>
-<span class="nv">$fruit</span> <span class="p">=</span> <span class="p">@{}</span>
-<span class="nv">$fruit</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="s1">&#39;Apple&#39;</span><span class="p">,</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
-<span class="nv">$fruit</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="s1">&#39;Orange&#39;</span><span class="p">,</span><span class="s1">&#39;orange&#39;</span><span class="p">)</span>
-<span class="nv">$fruit</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="s1">&#39;Kiwi&#39;</span><span class="p">,</span><span class="s1">&#39;green&#39;</span><span class="p">)</span>
 </code></pre></div>
 <div class="highlight"><span class="filename">Hashtable methods</span><pre><span></span><code><span class="nv">$fruit</span> <span class="p">=</span> <span class="p">@{}</span>
 <span class="nv">$fruit</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="s1">&#39;Apple&#39;</span><span class="p">,</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
@@ -4700,20 +4821,19 @@
 
 <span class="nv">$fruit</span><span class="p">.</span><span class="n">Keys</span> <span class="c"># =&gt; @(&#39;Apple&#39;,&#39;Orange&#39;,&#39;Kiwi&#39;)</span>
 <span class="nv">$fruit</span><span class="p">.</span><span class="n">Values</span> <span class="c"># =&gt; @(&#39;red&#39;,&#39;orange&#39;,&#39;green&#39;)</span>
-
 <span class="nv">$fruit</span><span class="p">.</span><span class="n">Count</span>
-
-<span class="nv">$fruit</span><span class="p">.</span><span class="n">Remove</span><span class="p">(</span><span class="s1">&#39;One&#39;</span><span class="p">)</span>
+<span class="nv">$fruit</span><span class="p">.</span><span class="n">Remove</span><span class="p">(</span><span class="s1">&#39;Apple&#39;</span><span class="p">)</span>
 </code></pre></div>
 <p>Unlike Python, a hash table can be made ordered, changing its data type:</p>
 <div class="highlight"><pre><span></span><code><span class="nv">$fruit</span> <span class="p">=</span> <span class="no">[ordered]</span><span class="p">@{</span> <span class="n">Apple</span> <span class="p">=</span> <span class="s1">&#39;red&#39;</span><span class="p">;</span> <span class="n">Orange</span> <span class="p">=</span> <span class="s1">&#39;orange&#39;</span><span class="p">;</span> <span class="n">Eggplant</span> <span class="p">=</span> <span class="s1">&#39;purple&#39;</span> <span class="p">}</span>
 <span class="nv">$fruit</span><span class="p">.</span><span class="n">GetType</span><span class="p">().</span><span class="n">Name</span> <span class="c"># =&gt; OrderedDictionary</span>
 </code></pre></div>
+<h4 id="documentation">Documentation</h4>
 <div class="highlight"><span class="filename">Documentation</span><pre><span></span><code><span class="cm">&lt;#</span>
-<span class="sd">.SYNOPSIS</span><span class="cm"></span>
+<span class="sd">.SYNOPSIS</span>
 <span class="cm">This script coordinates the process of creating new employees</span>
 
-<span class="sd">.DESCRIPTION</span><span class="cm"></span>
+<span class="sd">.DESCRIPTION</span>
 <span class="cm">This script creates new users in Active Directory...</span>
 
 <span class="sd">.PARAMETER</span><span class="cm"> UserName</span>
@@ -4724,22 +4844,15 @@
 <span class="cm">#&gt;</span>
 
 <span class="cm">&lt;#</span>
-<span class="sd">.EXAMPLE</span><span class="cm"></span>
+<span class="sd">.EXAMPLE</span>
 <span class="cm">New-CorpEmployee -UserName John-Doe -HomeServer HOMESERVER1</span>
 <span class="cm">This example creates a single new employee...</span>
 <span class="cm">#&gt;</span>
 </code></pre></div>
 <h2 id="functions">Functions</h2>
-<p>Functions are declared with the <code>function</code> keyword and the body in braces, following this syntax:</p>
-<div class="highlight"><pre><span></span><code><span class="k">function</span> <span class="n">Verb-Noun</span>
-<span class="p">{</span>
-    <span class="c"># ...</span>
-<span class="p">}</span>
-</code></pre></div>
-<p><strong>Positional parameters</strong> can be referenced using the <code>$args</code> array, which contains all arguments passed to the function on invocation.</p>
 <p><strong>Named parameters</strong> can be declared in one of two ways. </p>
 <ul>
-<li>Within the function body using the <code>param</code> keyword, followed by the name of the variable representing the parameter's value, enclosed in <code>$(...)</code>:</li>
+<li>Within the function body using the <strong>param</strong> keyword, followed by the name of the variable representing the parameter's value, enclosed in <strong><code>$(...)</code></strong>:</li>
 <li>Directly after the function name in parentheses, with each parameter separated by a comma.</li>
 </ul>
 <p>The name of the variable becomes the named parameter used when invoking the function.
@@ -5243,51 +5356,20 @@ The next step would be the creation of a new volume
 </code></pre></div></dd>
 </dl>
 
-              
-            </article>
-            
-          </div>
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
         </div>
         
       </main>
       
         <footer class="md-footer">
-  
-    
-    <nav class="md-footer__inner md-grid" aria-label="Footer" >
-      
-        
-        <a href="../Labs/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Labs" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              Labs
-            </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="../WDS-lab/" class="md-footer__link md-footer__link--next" aria-label="Next: WDS lab" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              WDS lab
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -5309,10 +5391,11 @@ The next step would be the creation of a new volume
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "toc.integrate", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "toc.integrate", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.0238f547.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.51198bba.min.js"></script>
       
     
   </body>

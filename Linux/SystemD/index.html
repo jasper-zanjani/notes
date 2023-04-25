@@ -10,8 +10,14 @@
       
         <link rel="canonical" href="https://jasper-zanjani.github.io/notes/Linux/SystemD/">
       
+      
+        <link rel="prev" href="../Storage/">
+      
+      
+        <link rel="next" href="../Virtualization/">
+      
       <link rel="icon" href="../../img/brain.png">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.8">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.6">
     
     
       
@@ -19,17 +25,13 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.1d29e8d0.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ded33207.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
-        
-          
-          
-          <meta name="theme-color" content="#ffc105">
-        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.a0c5b2b5.min.css">
       
       
+
     
     
     
@@ -42,28 +44,13 @@
       
     
     
-      <link rel="stylesheet" href="../../style/admonitions-gcp.css">
+      <link rel="stylesheet" href="../../style/tooltip-width.css">
     
-      <link rel="stylesheet" href="../../style/admonitions-azure.css">
-    
-      <link rel="stylesheet" href="../../style/admonitions-aws.css">
-    
-      <link rel="stylesheet" href="../../style/admonitions-rs.css">
-    
-      <link rel="stylesheet" href="../../style/admonitions-cs.css">
-    
-      <link rel="stylesheet" href="../../style/admonitions-cpp.css">
-    
-      <link rel="stylesheet" href="../../style/admonitions-cisco.css">
-    
-      <link rel="stylesheet" href="../../style/admonitions-py.css">
-    
-      <link rel="stylesheet" href="../../style/admonitions-output.css">
-    
-    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
+    
     
     
   </head>
@@ -139,7 +126,7 @@
       </label>
       <nav class="md-search__options" aria-label="Search">
         
-        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
         </button>
       </nav>
@@ -151,7 +138,7 @@
           <div class="md-search-result__meta">
             Initializing search
           </div>
-          <ol class="md-search-result__list"></ol>
+          <ol class="md-search-result__list" role="presentation"></ol>
         </div>
       </div>
     </div>
@@ -170,7 +157,7 @@
           
             
 <nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
-  <div class="md-tabs__inner md-grid">
+  <div class="md-grid">
     <ul class="md-tabs__list">
       
         
@@ -422,17 +409,20 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_2">
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
           Coding
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Coding" data-md-level="1">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_2">
           <span class="md-nav__icon md-icon"></span>
           Coding
@@ -688,17 +678,20 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_2_18" type="checkbox" id="__nav_2_18" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_18" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_2_18">
+        <label class="md-nav__link" for="__nav_2_18" id="__nav_2_18_label" tabindex="0">
           WinUI
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="WinUI" data-md-level="2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_18_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_2_18">
           <span class="md-nav__icon md-icon"></span>
           WinUI
@@ -757,17 +750,20 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_3">
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
           DevOps
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="DevOps" data-md-level="1">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
           DevOps
@@ -781,7 +777,7 @@
   
     <li class="md-nav__item">
       <a href="../../DevOps/" class="md-nav__link">
-        Index
+        Automation using Azure DevOps and Ansible
       </a>
     </li>
   
@@ -795,7 +791,7 @@
   
     <li class="md-nav__item">
       <a href="../../DevOps/ADO/" class="md-nav__link">
-        Azure DevOps
+        Azure Devops
       </a>
     </li>
   
@@ -833,17 +829,20 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_4">
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
           GTK
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="GTK" data-md-level="1">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_4">
           <span class="md-nav__icon md-icon"></span>
           GTK
@@ -917,17 +916,20 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_4_5" type="checkbox" id="__nav_4_5" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_5" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_4_5">
+        <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
           Examples
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Examples" data-md-level="2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_4_5">
           <span class="md-nav__icon md-icon"></span>
           Examples
@@ -966,17 +968,20 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_4_6" type="checkbox" id="__nav_4_6" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_6" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_4_6">
+        <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
           Tasks
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Tasks" data-md-level="2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_4_6">
           <span class="md-nav__icon md-icon"></span>
           Tasks
@@ -1091,17 +1096,20 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_5">
+        <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
           Health
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Health" data-md-level="1">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_5">
           <span class="md-nav__icon md-icon"></span>
           Health
@@ -1139,17 +1147,20 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_6">
+        <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
           Infrastructure
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Infrastructure" data-md-level="1">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_6">
           <span class="md-nav__icon md-icon"></span>
           Infrastructure
@@ -1251,17 +1262,20 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_6_7" type="checkbox" id="__nav_6_7" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_7" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_6_7">
+        <label class="md-nav__link" for="__nav_6_7" id="__nav_6_7_label" tabindex="0">
           Cloud
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Cloud" data-md-level="2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_7_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_6_7">
           <span class="md-nav__icon md-icon"></span>
           Cloud
@@ -1305,17 +1319,20 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_6_7_3" type="checkbox" id="__nav_6_7_3" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_7_3" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_6_7_3">
+        <label class="md-nav__link" for="__nav_6_7_3" id="__nav_6_7_3_label" tabindex="0">
           Azure
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Azure" data-md-level="3">
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_7_3_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_6_7_3">
           <span class="md-nav__icon md-icon"></span>
           Azure
@@ -1535,17 +1552,20 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_7">
+        <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
           Language
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Language" data-md-level="1">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_7">
           <span class="md-nav__icon md-icon"></span>
           Language
@@ -1627,17 +1647,18 @@
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" checked>
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
       
       
       
-      
-        <label class="md-nav__link" for="__nav_8">
+        <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
           Linux
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Linux" data-md-level="1">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_8">
           <span class="md-nav__icon md-icon"></span>
           Linux
@@ -1735,7 +1756,7 @@
   
     <li class="md-nav__item">
       <a href="../Filters/" class="md-nav__link">
-        Commands
+        Filters
       </a>
     </li>
   
@@ -1919,7 +1940,7 @@
   
     <li class="md-nav__item md-nav__item--active">
       
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
         
@@ -2141,17 +2162,20 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_8_22" type="checkbox" id="__nav_8_22" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8_22" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_8_22">
+        <label class="md-nav__link" for="__nav_8_22" id="__nav_8_22_label" tabindex="0">
           Applications
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Applications" data-md-level="2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_22_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_8_22">
           <span class="md-nav__icon md-icon"></span>
           Applications
@@ -2350,17 +2374,20 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_9">
+        <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
           Misc
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Misc" data-md-level="1">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_9">
           <span class="md-nav__icon md-icon"></span>
           Misc
@@ -2644,17 +2671,20 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_9_20" type="checkbox" id="__nav_9_20" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_20" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_9_20">
+        <label class="md-nav__link" for="__nav_9_20" id="__nav_9_20_label" tabindex="0">
           Text editors
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Text editors" data-md-level="2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_20_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_9_20">
           <span class="md-nav__icon md-icon"></span>
           Text editors
@@ -2693,17 +2723,20 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_9_21" type="checkbox" id="__nav_9_21" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_21" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_9_21">
+        <label class="md-nav__link" for="__nav_9_21" id="__nav_9_21_label" tabindex="0">
           Web
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Web" data-md-level="2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_21_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_9_21">
           <span class="md-nav__icon md-icon"></span>
           Web
@@ -2761,17 +2794,20 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_9_21_4" type="checkbox" id="__nav_9_21_4" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_21_4" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_9_21_4">
+        <label class="md-nav__link" for="__nav_9_21_4" id="__nav_9_21_4_label" tabindex="0">
           JavaScript
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="JavaScript" data-md-level="3">
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_9_21_4_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_9_21_4">
           <span class="md-nav__icon md-icon"></span>
           JavaScript
@@ -2859,17 +2895,20 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_9_22" type="checkbox" id="__nav_9_22" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_22" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_9_22">
+        <label class="md-nav__link" for="__nav_9_22" id="__nav_9_22_label" tabindex="0">
           Windows
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Windows" data-md-level="2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_22_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_9_22">
           <span class="md-nav__icon md-icon"></span>
           Windows
@@ -3026,17 +3065,20 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_10" type="checkbox" id="__nav_10" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_10">
+        <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
           Python
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Python" data-md-level="1">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_10">
           <span class="md-nav__icon md-icon"></span>
           Python
@@ -3068,17 +3110,20 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_10_2" type="checkbox" id="__nav_10_2" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10_2" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_10_2">
+        <label class="md-nav__link" for="__nav_10_2" id="__nav_10_2_label" tabindex="0">
           Modules
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Modules" data-md-level="2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_2_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_10_2">
           <span class="md-nav__icon md-icon"></span>
           Modules
@@ -3669,17 +3714,20 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_11" type="checkbox" id="__nav_11" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_11" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_11">
+        <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
           Rust
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Rust" data-md-level="1">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_11">
           <span class="md-nav__icon md-icon"></span>
           Rust
@@ -3795,17 +3843,20 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_11_8" type="checkbox" id="__nav_11_8" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_11_8" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_11_8">
+        <label class="md-nav__link" for="__nav_11_8" id="__nav_11_8_label" tabindex="0">
           Crates
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Crates" data-md-level="2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_11_8_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_11_8">
           <span class="md-nav__icon md-icon"></span>
           Crates
@@ -3961,17 +4012,20 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_11_8_11" type="checkbox" id="__nav_11_8_11" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_11_8_11" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_11_8_11">
+        <label class="md-nav__link" for="__nav_11_8_11" id="__nav_11_8_11_label" tabindex="0">
           Cursive
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Cursive" data-md-level="3">
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_11_8_11_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_11_8_11">
           <span class="md-nav__icon md-icon"></span>
           Cursive
@@ -4036,17 +4090,20 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_11_8_12" type="checkbox" id="__nav_11_8_12" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_11_8_12" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_11_8_12">
+        <label class="md-nav__link" for="__nav_11_8_12" id="__nav_11_8_12_label" tabindex="0">
           Diesel
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Diesel" data-md-level="3">
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_11_8_12_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_11_8_12">
           <span class="md-nav__icon md-icon"></span>
           Diesel
@@ -4106,17 +4163,20 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_11_9" type="checkbox" id="__nav_11_9" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_11_9" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_11_9">
+        <label class="md-nav__link" for="__nav_11_9" id="__nav_11_9_label" tabindex="0">
           Tasks
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Tasks" data-md-level="2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_11_9_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_11_9">
           <span class="md-nav__icon md-icon"></span>
           Tasks
@@ -4231,17 +4291,20 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_12" type="checkbox" id="__nav_12" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_12" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_12">
+        <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
           Scripts
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Scripts" data-md-level="1">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_12">
           <span class="md-nav__icon md-icon"></span>
           Scripts
@@ -4371,17 +4434,20 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_12_9" type="checkbox" id="__nav_12_9" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_12_9" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_12_9">
+        <label class="md-nav__link" for="__nav_12_9" id="__nav_12_9_label" tabindex="0">
           3rd
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="3rd" data-md-level="2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_9_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_12_9">
           <span class="md-nav__icon md-icon"></span>
           3rd
@@ -4420,17 +4486,20 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_12_10" type="checkbox" id="__nav_12_10" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_12_10" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_12_10">
+        <label class="md-nav__link" for="__nav_12_10" id="__nav_12_10_label" tabindex="0">
           Discord
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Discord" data-md-level="2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_10_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_12_10">
           <span class="md-nav__icon md-icon"></span>
           Discord
@@ -4486,10 +4555,11 @@
             
             
           
-          <div class="md-content" data-md-component="content">
-            <article class="md-content__inner md-typeset">
-              
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
                 
+                  
 
 
 <h1 id="systemd">SystemD</h1>
@@ -4502,26 +4572,26 @@ It offers parallel execution, explicit dependencies between services, an escape 
 <dl>
 <dd>
 <p>Services can be scheduled to start with <a href="#timers">timers</a>.
-<div class="highlight"><span class="filename">sshd.timer</span><pre><span></span><code><span class="k">[Unit]</span><span class="w"></span>
-<span class="na">Description</span><span class="o">=</span><span class="s">Starts sshd service at beginning of workday, and shuts it down at the end.</span><span class="w"></span>
+<div class="highlight"><span class="filename">sshd.timer</span><pre><span></span><code><span class="k">[Unit]</span>
+<span class="na">Description</span><span class="o">=</span><span class="s">Starts sshd service at beginning of workday, and shuts it down at the end.</span>
 
-<span class="k">[Timer]</span><span class="w"></span>
-<span class="na">Unit</span><span class="o">=</span><span class="s">sshd.service</span><span class="w"></span>
-<span class="na">OnCalendar</span><span class="o">=</span><span class="s">Mon..Fri *-*-* 09:00:00</span><span class="w"></span>
+<span class="k">[Timer]</span>
+<span class="na">Unit</span><span class="o">=</span><span class="s">sshd.service</span>
+<span class="na">OnCalendar</span><span class="o">=</span><span class="s">Mon..Fri *-*-* 09:00:00</span>
 
-<span class="k">[Install]</span><span class="w"></span>
-<span class="na">WantedBy</span><span class="o">=</span><span class="s">timers.target</span><span class="w"></span>
+<span class="k">[Install]</span>
+<span class="na">WantedBy</span><span class="o">=</span><span class="s">timers.target</span>
 </code></pre></div></p>
 <p>Now, when stopping sshd manually the following output is printed.
 <div class="highlight"><pre><span></span><code>Warning: Stopping sshd.service, but it can still be activated by:
   sshd.timer
 </code></pre></div></p>
 <p>The service can be scheduled to shutdown within the service file itself using the <strong>RuntimeMaxSec</strong> directive.
-<div class="highlight"><span class="filename">sshd.service</span><pre><span></span><code><span class="n">RuntimeMaxSec</span><span class="o">=</span><span class="mi">36000</span><span class="w"> </span><span class="c1"># i.e. 10 hours</span><span class="w"></span>
+<div class="highlight"><span class="filename">sshd.service</span><pre><span></span><code><span class="n">RuntimeMaxSec</span><span class="o">=</span><span class="mi">36000</span><span class="w"> </span><span class="c1"># i.e. 10 hours</span>
 </code></pre></div></p>
 <p>This unfortunately will result in the service being reported as <a href="https://unix.stackexchange.com/questions/265704/start-stop-a-systemd-service-at-specific-times">failed</a>.
 This failure can be cleared with this command:
-<div class="highlight"><pre><span></span><code>systemctl reset-failed
+<div class="highlight"><pre><span></span><code>systemctl<span class="w"> </span>reset-failed
 </code></pre></div></p>
 </dd>
 </dl>
@@ -4529,9 +4599,9 @@ This failure can be cleared with this command:
 <dl>
 <dd>On TrueNAS, the libvirtd socket is <a href="https://www.truenas.com/community/threads/21-02-alpha-1-virsh-commands-fail.91229/">masked</a> by default. 
 This means that <strong>virsh</strong> is not able to connect to the hypervisor until it is unmasked and the service restarted.
-<div class="highlight"><pre><span></span><code>systemctl unmask libvirtd.socket
-systemctl restart libvirtd.service
-virsh connect qemu:///system
+<div class="highlight"><pre><span></span><code>systemctl<span class="w"> </span>unmask<span class="w"> </span>libvirtd.socket
+systemctl<span class="w"> </span>restart<span class="w"> </span>libvirtd.service
+virsh<span class="w"> </span>connect<span class="w"> </span>qemu:///system
 </code></pre></div></dd>
 </dl>
 <h2 id="glossary">Glossary</h2>
@@ -4541,14 +4611,14 @@ virsh connect qemu:///system
 <p><strong>Service files</strong> are a type of unit file which have replaced earlier init scripts and describe how to manage a service or application on the server.
 Active services are placed in <strong>/etc/systemd/system</strong>, whereas inactive service files distributed with installed packages are placed in <strong>/usr/lib/systemd/system</strong>.</p>
 <p>Docker container as a service:
-<div class="highlight"><pre><span></span><code><span class="k">[Unit]</span><span class="w"></span>
-<span class="na">Description</span><span class="o">=</span><span class="s">Notes Container (Docker)</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">[Unit]</span>
+<span class="na">Description</span><span class="o">=</span><span class="s">Notes Container (Docker)</span>
 
-<span class="k">[Service]</span><span class="w"></span>
-<span class="na">ExecStart</span><span class="o">=</span><span class="s">/usr/bin/docker start notes</span><span class="w"></span>
+<span class="k">[Service]</span>
+<span class="na">ExecStart</span><span class="o">=</span><span class="s">/usr/bin/docker start notes</span>
 
-<span class="k">[Install]</span><span class="w"></span>
-<span class="na">WantedBy</span><span class="o">=</span><span class="s">multi-user.target</span><span class="w"></span>
+<span class="k">[Install]</span>
+<span class="na">WantedBy</span><span class="o">=</span><span class="s">multi-user.target</span>
 </code></pre></div></p>
 </dd>
 </dl>
@@ -4580,9 +4650,9 @@ SystemD slices implement and build on Linux <a href="../Cgroups"><strong>cgroups
 <p>Services can be assigned to specific slices explicitly by editing the value of the <strong>Slice</strong> key in the service file.
 Keys like <strong>CPUWeight</strong> can assign cgroup resource controls.
 Other such controls can be viewed in the <strong>systemd.resource-control(5)</strong> man page.
-<div class="highlight"><pre><span></span><code><span class="k">[Unit]</span><span class="w"></span>
-<span class="na">Slice</span><span class="o">=</span><span class="s">user.slice</span><span class="w"></span>
-<span class="na">CPUWeight</span><span class="o">=</span><span class="s">50</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">[Unit]</span>
+<span class="na">Slice</span><span class="o">=</span><span class="s">user.slice</span>
+<span class="na">CPUWeight</span><span class="o">=</span><span class="s">50</span>
 </code></pre></div></p>
 </dd>
 </dl>
@@ -4640,8 +4710,8 @@ For years, a common mitigation was to run services in the background, simulating
 <p>Timer files are systemd <a href="#unit-files">unit files</a> with names ending in .timer that control <a href="#service-files">service files</a>.
 For each timer file, a matching unit file must exist describing the unit to activate when the timer elapses.
 By default, systemd will search for a service file with a filename matching that of the timer, but failing that a specific unit can be specified with the <strong>Unit</strong> key within the timer file itself.</p>
-<div class="highlight"><span class="filename">Display timers</span><pre><span></span><code>systemctl list-timers
-systemctl status *timer
+<div class="highlight"><span class="filename">Display timers</span><pre><span></span><code>systemctl<span class="w"> </span>list-timers
+systemctl<span class="w"> </span>status<span class="w"> </span>*timer
 </code></pre></div>
 <p>Like other unit files, timer files may include Unit and Install sections, but must include the <strong>Timer</strong> section.</p>
 <p>Specifying time is done using <strong>timestamps</strong> which can be <strong>monotonic</strong> or <strong>realtime</strong>.</p>
@@ -4650,13 +4720,13 @@ systemctl status *timer
 <li>Realtime timers define timers according to <strong>calendar event expressions</strong>, denoting real-world dates and times as humans understand them. </li>
 </ul>
 <p>Validate timestamps:
-<div class="highlight"><pre><span></span><code>systemd-analyze calendar <span class="s1">&#39;*-*-* 00:00:00&#39;</span> --iterations
+<div class="highlight"><pre><span></span><code>systemd-analyze<span class="w"> </span>calendar<span class="w"> </span><span class="s1">&#39;*-*-* 00:00:00&#39;</span><span class="w"> </span>--iterations
 </code></pre></div></p>
 <p><strong>systemd-run</strong> can be used for one-off events as a substitute for anacron.
-<div class="highlight"><pre><span></span><code>systemd-run --on-active<span class="o">=</span>-30sec /bin/touch /home/user/file
+<div class="highlight"><pre><span></span><code>systemd-run<span class="w"> </span>--on-active<span class="o">=</span>-30sec<span class="w"> </span>/bin/touch<span class="w"> </span>/home/user/file
 </code></pre></div>
 This command creates a <strong>transient</strong> unit file, whose name is provided in the output.
-<div class="highlight"><pre><span></span><code>systemctl cat run-u97.service
+<div class="highlight"><pre><span></span><code>systemctl<span class="w"> </span>cat<span class="w"> </span>run-u97.service
 </code></pre></div></p>
 </dd>
 </dl>
@@ -4681,16 +4751,16 @@ Unit files can be found in several directories:</p>
 <h4 id="hostnamectl">hostnamectl</h4>
 <dl>
 <dd>Permanently change hostname
-<div class="highlight"><pre><span></span><code>hostnamectl set-hostname <span class="nv">$HOSTNAME</span>
+<div class="highlight"><pre><span></span><code>hostnamectl<span class="w"> </span>set-hostname<span class="w"> </span><span class="nv">$HOSTNAME</span>
 </code></pre></div></dd>
 </dl>
 <h4 id="journalctl">journalctl</h4>
 <dl>
 <dd>
 <p><a href="https://www.linuxuprising.com/2019/10/how-to-clean-up-systemd-journal-logs.html">Clean up</a> old logs</p>
-<div class="highlight"><pre><span></span><code>journalctl --disk-usage <span class="c1"># (3)</span>
-journalctl --rotate <span class="c1"># (1)</span>
-journalctl --vacuum-time<span class="o">=</span>1d <span class="c1"># (2)</span>
+<div class="highlight"><pre><span></span><code>journalctl<span class="w"> </span>--disk-usage<span class="w"> </span><span class="c1"># (3)</span>
+journalctl<span class="w"> </span>--rotate<span class="w"> </span><span class="c1"># (1)</span>
+journalctl<span class="w"> </span>--vacuum-time<span class="o">=</span>1d<span class="w"> </span><span class="c1"># (2)</span>
 </code></pre></div>
 <ol>
 <li>Ask journal daemon to rotate journal files, immediately archiving and renaming currently active journal files.</li>
@@ -4698,8 +4768,8 @@ journalctl --vacuum-time<span class="o">=</span>1d <span class="c1"># (2)</span>
 <li>Show current disk usage of all journal files</li>
 </ol>
 <p>Display logs</p>
-<div class="highlight"><pre><span></span><code>journalctl -r <span class="c1"># --reverse (1)</span>
-journalctl -f <span class="c1"># --follow (2)</span>
+<div class="highlight"><pre><span></span><code>journalctl<span class="w"> </span>-r<span class="w"> </span><span class="c1"># --reverse (1)</span>
+journalctl<span class="w"> </span>-f<span class="w"> </span><span class="c1"># --follow (2)</span>
 </code></pre></div>
 <ol>
 <li>Display output in reverse (newest entries first)</li>
@@ -4708,43 +4778,43 @@ journalctl -f <span class="c1"># --follow (2)</span>
 <p>By default, SystemD logs to memory.
 This can be changed by adjusting <strong>/etc/systemd/journald.conf</strong>. 
 This requires the directory <strong>/var/log/journal</strong> to exist.</p>
-<div class="highlight"><span class="filename">Persistent logging</span><pre><span></span><code><span class="k">[Journal]</span><span class="w"></span>
-<span class="na">Storage</span><span class="o">=</span><span class="s">persistent</span><span class="w"></span>
+<div class="highlight"><span class="filename">Persistent logging</span><pre><span></span><code><span class="k">[Journal]</span>
+<span class="na">Storage</span><span class="o">=</span><span class="s">persistent</span>
 </code></pre></div>
 </dd>
 </dl>
 <h4 id="localectl">localectl</h4>
 <dl>
 <dd>Change locale to French
-<div class="highlight"><pre><span></span><code>localectl set-locale <span class="nv">LANG</span><span class="o">=</span>fr_FR.utf8
+<div class="highlight"><pre><span></span><code>localectl<span class="w"> </span>set-locale<span class="w"> </span><span class="nv">LANG</span><span class="o">=</span>fr_FR.utf8
 </code></pre></div></dd>
 </dl>
 <h4 id="loginctl">loginctl</h4>
 <dl>
 <dd>Enable user <strong>lingering</strong>, which allows users that are not logged in to run long-running services.
-<div class="highlight"><pre><span></span><code>loginctl enable-linger
-loginctl show-user <span class="p">|</span> grep Linger - <span class="c1"># Confirm</span>
+<div class="highlight"><pre><span></span><code>loginctl<span class="w"> </span>enable-linger
+loginctl<span class="w"> </span>show-user<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>Linger<span class="w"> </span>-<span class="w"> </span><span class="c1"># Confirm</span>
 </code></pre></div></dd>
 </dl>
 <h4 id="systemctl">systemctl</h4>
 <dl>
 <dd>
-<div class="highlight"><span class="filename">Services</span><pre><span></span><code>systemctl list-unit-files --type<span class="o">=</span>service    <span class="c1"># Display all services</span>
-systemctl <span class="nb">enable</span> --now <span class="nv">$SERVICE</span>             <span class="c1"># Configure service to start on boot and start it immediately</span>
-systemctl status <span class="nv">$SERVICE</span>
-systemctl is-active <span class="nv">$SERVICE</span> 
-systemctl disable <span class="nv">$SERVICE</span>
-systemctl mask <span class="nv">$SERVICE</span>                     <span class="c1"># Prevent service from being started inadvertently by another process</span>
-systemctl restart <span class="nv">$SERVICE</span>
+<div class="highlight"><span class="filename">Services</span><pre><span></span><code>systemctl<span class="w"> </span>list-unit-files<span class="w"> </span>--type<span class="o">=</span>service<span class="w">    </span><span class="c1"># Display all services</span>
+systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>--now<span class="w"> </span><span class="nv">$SERVICE</span><span class="w">             </span><span class="c1"># Configure service to start on boot and start it immediately</span>
+systemctl<span class="w"> </span>status<span class="w"> </span><span class="nv">$SERVICE</span>
+systemctl<span class="w"> </span>is-active<span class="w"> </span><span class="nv">$SERVICE</span><span class="w"> </span>
+systemctl<span class="w"> </span>disable<span class="w"> </span><span class="nv">$SERVICE</span>
+systemctl<span class="w"> </span>mask<span class="w"> </span><span class="nv">$SERVICE</span><span class="w">                     </span><span class="c1"># Prevent service from being started inadvertently by another process</span>
+systemctl<span class="w"> </span>restart<span class="w"> </span><span class="nv">$SERVICE</span>
 </code></pre></div>
-<div class="highlight"><span class="filename">Boot targets</span><pre><span></span><code>systemctl get-default
-systemctl set-default graphical.target
-systemctl isolate emergency.target          <span class="c1"># Change target</span>
-systemctl <span class="nb">suspend</span>                           <span class="c1"># Suspend system</span>
+<div class="highlight"><span class="filename">Boot targets</span><pre><span></span><code>systemctl<span class="w"> </span>get-default
+systemctl<span class="w"> </span>set-default<span class="w"> </span>graphical.target
+systemctl<span class="w"> </span>isolate<span class="w"> </span>emergency.target<span class="w">          </span><span class="c1"># Change target</span>
+systemctl<span class="w"> </span><span class="nb">suspend</span><span class="w">                           </span><span class="c1"># Suspend system</span>
 </code></pre></div>
 <p><strong>--user</strong> specifies the service manager of the calling user.
-<div class="highlight"><pre><span></span><code>systemctl --user <span class="nb">enable</span> --now container-notes.service <span class="c1"># (1)</span>
-systemctl --user status container-notes.service
+<div class="highlight"><pre><span></span><code>systemctl<span class="w"> </span>--user<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>--now<span class="w"> </span>container-notes.service<span class="w"> </span><span class="c1"># (1)</span>
+systemctl<span class="w"> </span>--user<span class="w"> </span>status<span class="w"> </span>container-notes.service
 </code></pre></div></p>
 <ol>
 <li>Here, container-notes.service has been created at <strong>~/.config/systemd/user</strong></li>
@@ -4753,7 +4823,7 @@ systemctl --user status container-notes.service
 </dl>
 <h4 id="systemd-analyze">systemd-analyze</h4>
 <dl>
-<dd><div class="highlight"><span class="filename">Check security of a service</span><pre><span></span><code>systemd-analyze security sshd.service
+<dd><div class="highlight"><span class="filename">Check security of a service</span><pre><span></span><code>systemd-analyze<span class="w"> </span>security<span class="w"> </span>sshd.service
 </code></pre></div></dd>
 </dl>
 <h4 id="systemd-cgls">systemd-cgls</h4>
@@ -4765,56 +4835,25 @@ systemctl --user status container-notes.service
 <dd>
 <p>Show files that are overridden with systemd.</p>
 <p>Display differences among files when they are overridden
-<div class="highlight"><pre><span></span><code>systemd-delta --diff
+<div class="highlight"><pre><span></span><code>systemd-delta<span class="w"> </span>--diff
 </code></pre></div></p>
 </dd>
 </dl>
 
-              
-            </article>
-            
-          </div>
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
         </div>
         
       </main>
       
         <footer class="md-footer">
-  
-    
-    <nav class="md-footer__inner md-grid" aria-label="Footer" >
-      
-        
-        <a href="../Storage/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Storage" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              Storage
-            </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="../Virtualization/" class="md-footer__link md-footer__link--next" aria-label="Next: Virtualization" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              Virtualization
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -4836,10 +4875,11 @@ systemctl --user status container-notes.service
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "toc.integrate", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "toc.integrate", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.0238f547.min.js"></script>
+      <script src="../../assets/javascripts/bundle.51198bba.min.js"></script>
       
     
   </body>

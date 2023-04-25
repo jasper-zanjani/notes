@@ -10,8 +10,14 @@
       
         <link rel="canonical" href="https://jasper-zanjani.github.io/notes/Linux/Virtualization/">
       
+      
+        <link rel="prev" href="../SystemD/">
+      
+      
+        <link rel="next" href="../Applications/bind/">
+      
       <link rel="icon" href="../../img/brain.png">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.8">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.6">
     
     
       
@@ -19,17 +25,13 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.1d29e8d0.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ded33207.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
-        
-          
-          
-          <meta name="theme-color" content="#ffc105">
-        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.a0c5b2b5.min.css">
       
       
+
     
     
     
@@ -42,28 +44,13 @@
       
     
     
-      <link rel="stylesheet" href="../../style/admonitions-gcp.css">
+      <link rel="stylesheet" href="../../style/tooltip-width.css">
     
-      <link rel="stylesheet" href="../../style/admonitions-azure.css">
-    
-      <link rel="stylesheet" href="../../style/admonitions-aws.css">
-    
-      <link rel="stylesheet" href="../../style/admonitions-rs.css">
-    
-      <link rel="stylesheet" href="../../style/admonitions-cs.css">
-    
-      <link rel="stylesheet" href="../../style/admonitions-cpp.css">
-    
-      <link rel="stylesheet" href="../../style/admonitions-cisco.css">
-    
-      <link rel="stylesheet" href="../../style/admonitions-py.css">
-    
-      <link rel="stylesheet" href="../../style/admonitions-output.css">
-    
-    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
+    
     
     
   </head>
@@ -139,7 +126,7 @@
       </label>
       <nav class="md-search__options" aria-label="Search">
         
-        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
         </button>
       </nav>
@@ -151,7 +138,7 @@
           <div class="md-search-result__meta">
             Initializing search
           </div>
-          <ol class="md-search-result__list"></ol>
+          <ol class="md-search-result__list" role="presentation"></ol>
         </div>
       </div>
     </div>
@@ -170,7 +157,7 @@
           
             
 <nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
-  <div class="md-tabs__inner md-grid">
+  <div class="md-grid">
     <ul class="md-tabs__list">
       
         
@@ -422,17 +409,20 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_2">
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
           Coding
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Coding" data-md-level="1">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_2">
           <span class="md-nav__icon md-icon"></span>
           Coding
@@ -688,17 +678,20 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_2_18" type="checkbox" id="__nav_2_18" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_18" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_2_18">
+        <label class="md-nav__link" for="__nav_2_18" id="__nav_2_18_label" tabindex="0">
           WinUI
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="WinUI" data-md-level="2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_18_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_2_18">
           <span class="md-nav__icon md-icon"></span>
           WinUI
@@ -757,17 +750,20 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_3">
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
           DevOps
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="DevOps" data-md-level="1">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
           DevOps
@@ -781,7 +777,7 @@
   
     <li class="md-nav__item">
       <a href="../../DevOps/" class="md-nav__link">
-        Index
+        Automation using Azure DevOps and Ansible
       </a>
     </li>
   
@@ -795,7 +791,7 @@
   
     <li class="md-nav__item">
       <a href="../../DevOps/ADO/" class="md-nav__link">
-        Azure DevOps
+        Azure Devops
       </a>
     </li>
   
@@ -833,17 +829,20 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_4">
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
           GTK
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="GTK" data-md-level="1">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_4">
           <span class="md-nav__icon md-icon"></span>
           GTK
@@ -917,17 +916,20 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_4_5" type="checkbox" id="__nav_4_5" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_5" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_4_5">
+        <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
           Examples
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Examples" data-md-level="2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_4_5">
           <span class="md-nav__icon md-icon"></span>
           Examples
@@ -966,17 +968,20 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_4_6" type="checkbox" id="__nav_4_6" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_6" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_4_6">
+        <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
           Tasks
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Tasks" data-md-level="2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_4_6">
           <span class="md-nav__icon md-icon"></span>
           Tasks
@@ -1091,17 +1096,20 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_5">
+        <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
           Health
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Health" data-md-level="1">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_5">
           <span class="md-nav__icon md-icon"></span>
           Health
@@ -1139,17 +1147,20 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_6">
+        <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
           Infrastructure
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Infrastructure" data-md-level="1">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_6">
           <span class="md-nav__icon md-icon"></span>
           Infrastructure
@@ -1251,17 +1262,20 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_6_7" type="checkbox" id="__nav_6_7" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_7" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_6_7">
+        <label class="md-nav__link" for="__nav_6_7" id="__nav_6_7_label" tabindex="0">
           Cloud
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Cloud" data-md-level="2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_7_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_6_7">
           <span class="md-nav__icon md-icon"></span>
           Cloud
@@ -1305,17 +1319,20 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_6_7_3" type="checkbox" id="__nav_6_7_3" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_7_3" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_6_7_3">
+        <label class="md-nav__link" for="__nav_6_7_3" id="__nav_6_7_3_label" tabindex="0">
           Azure
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Azure" data-md-level="3">
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_7_3_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_6_7_3">
           <span class="md-nav__icon md-icon"></span>
           Azure
@@ -1535,17 +1552,20 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_7">
+        <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
           Language
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Language" data-md-level="1">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_7">
           <span class="md-nav__icon md-icon"></span>
           Language
@@ -1627,17 +1647,18 @@
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" checked>
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
       
       
       
-      
-        <label class="md-nav__link" for="__nav_8">
+        <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
           Linux
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Linux" data-md-level="1">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_8">
           <span class="md-nav__icon md-icon"></span>
           Linux
@@ -1735,7 +1756,7 @@
   
     <li class="md-nav__item">
       <a href="../Filters/" class="md-nav__link">
-        Commands
+        Filters
       </a>
     </li>
   
@@ -1933,7 +1954,7 @@
   
     <li class="md-nav__item md-nav__item--active">
       
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
         
@@ -2127,17 +2148,20 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_8_22" type="checkbox" id="__nav_8_22" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8_22" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_8_22">
+        <label class="md-nav__link" for="__nav_8_22" id="__nav_8_22_label" tabindex="0">
           Applications
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Applications" data-md-level="2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_22_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_8_22">
           <span class="md-nav__icon md-icon"></span>
           Applications
@@ -2336,17 +2360,20 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_9">
+        <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
           Misc
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Misc" data-md-level="1">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_9">
           <span class="md-nav__icon md-icon"></span>
           Misc
@@ -2630,17 +2657,20 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_9_20" type="checkbox" id="__nav_9_20" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_20" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_9_20">
+        <label class="md-nav__link" for="__nav_9_20" id="__nav_9_20_label" tabindex="0">
           Text editors
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Text editors" data-md-level="2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_20_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_9_20">
           <span class="md-nav__icon md-icon"></span>
           Text editors
@@ -2679,17 +2709,20 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_9_21" type="checkbox" id="__nav_9_21" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_21" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_9_21">
+        <label class="md-nav__link" for="__nav_9_21" id="__nav_9_21_label" tabindex="0">
           Web
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Web" data-md-level="2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_21_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_9_21">
           <span class="md-nav__icon md-icon"></span>
           Web
@@ -2747,17 +2780,20 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_9_21_4" type="checkbox" id="__nav_9_21_4" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_21_4" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_9_21_4">
+        <label class="md-nav__link" for="__nav_9_21_4" id="__nav_9_21_4_label" tabindex="0">
           JavaScript
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="JavaScript" data-md-level="3">
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_9_21_4_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_9_21_4">
           <span class="md-nav__icon md-icon"></span>
           JavaScript
@@ -2845,17 +2881,20 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_9_22" type="checkbox" id="__nav_9_22" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_22" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_9_22">
+        <label class="md-nav__link" for="__nav_9_22" id="__nav_9_22_label" tabindex="0">
           Windows
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Windows" data-md-level="2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_22_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_9_22">
           <span class="md-nav__icon md-icon"></span>
           Windows
@@ -3012,17 +3051,20 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_10" type="checkbox" id="__nav_10" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_10">
+        <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
           Python
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Python" data-md-level="1">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_10">
           <span class="md-nav__icon md-icon"></span>
           Python
@@ -3054,17 +3096,20 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_10_2" type="checkbox" id="__nav_10_2" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10_2" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_10_2">
+        <label class="md-nav__link" for="__nav_10_2" id="__nav_10_2_label" tabindex="0">
           Modules
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Modules" data-md-level="2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_2_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_10_2">
           <span class="md-nav__icon md-icon"></span>
           Modules
@@ -3655,17 +3700,20 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_11" type="checkbox" id="__nav_11" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_11" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_11">
+        <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
           Rust
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Rust" data-md-level="1">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_11">
           <span class="md-nav__icon md-icon"></span>
           Rust
@@ -3781,17 +3829,20 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_11_8" type="checkbox" id="__nav_11_8" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_11_8" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_11_8">
+        <label class="md-nav__link" for="__nav_11_8" id="__nav_11_8_label" tabindex="0">
           Crates
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Crates" data-md-level="2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_11_8_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_11_8">
           <span class="md-nav__icon md-icon"></span>
           Crates
@@ -3947,17 +3998,20 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_11_8_11" type="checkbox" id="__nav_11_8_11" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_11_8_11" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_11_8_11">
+        <label class="md-nav__link" for="__nav_11_8_11" id="__nav_11_8_11_label" tabindex="0">
           Cursive
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Cursive" data-md-level="3">
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_11_8_11_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_11_8_11">
           <span class="md-nav__icon md-icon"></span>
           Cursive
@@ -4022,17 +4076,20 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_11_8_12" type="checkbox" id="__nav_11_8_12" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_11_8_12" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_11_8_12">
+        <label class="md-nav__link" for="__nav_11_8_12" id="__nav_11_8_12_label" tabindex="0">
           Diesel
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Diesel" data-md-level="3">
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_11_8_12_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_11_8_12">
           <span class="md-nav__icon md-icon"></span>
           Diesel
@@ -4092,17 +4149,20 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_11_9" type="checkbox" id="__nav_11_9" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_11_9" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_11_9">
+        <label class="md-nav__link" for="__nav_11_9" id="__nav_11_9_label" tabindex="0">
           Tasks
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Tasks" data-md-level="2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_11_9_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_11_9">
           <span class="md-nav__icon md-icon"></span>
           Tasks
@@ -4217,17 +4277,20 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_12" type="checkbox" id="__nav_12" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_12" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_12">
+        <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
           Scripts
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Scripts" data-md-level="1">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_12">
           <span class="md-nav__icon md-icon"></span>
           Scripts
@@ -4357,17 +4420,20 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_12_9" type="checkbox" id="__nav_12_9" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_12_9" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_12_9">
+        <label class="md-nav__link" for="__nav_12_9" id="__nav_12_9_label" tabindex="0">
           3rd
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="3rd" data-md-level="2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_9_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_12_9">
           <span class="md-nav__icon md-icon"></span>
           3rd
@@ -4406,17 +4472,20 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_12_10" type="checkbox" id="__nav_12_10" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_12_10" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_12_10">
+        <label class="md-nav__link" for="__nav_12_10" id="__nav_12_10_label" tabindex="0">
           Discord
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Discord" data-md-level="2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_10_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_12_10">
           <span class="md-nav__icon md-icon"></span>
           Discord
@@ -4472,10 +4541,11 @@
             
             
           
-          <div class="md-content" data-md-component="content">
-            <article class="md-content__inner md-typeset">
-              
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
                 
+                  
 
 
 <h1 id="virtualization">Virtualization</h1>
@@ -4484,7 +4554,7 @@
 <h4 id="check-cpu-for-virtualization-support">Check CPU for virtualization support</h4>
 <dl>
 <dd>
-<div class="highlight"><pre><span></span><code>grep -E <span class="s1">&#39;svm|vmx&#39;</span> /proc/cpuinfo <span class="c1"># (1)</span>
+<div class="highlight"><pre><span></span><code>grep<span class="w"> </span>-E<span class="w"> </span><span class="s1">&#39;svm|vmx&#39;</span><span class="w"> </span>/proc/cpuinfo<span class="w"> </span><span class="c1"># (1)</span>
 </code></pre></div>
 <ol>
 <li>AMD CPUs will have <strong>svm</strong> in the flags section, whereas Intel CPUs will have <strong>vmx</strong>.</li>
@@ -4495,11 +4565,11 @@
 <dl>
 <dd>
 <p>The easiest way to create a VM is with the <a href="#boxes"><strong>Boxes</strong></a> GNOME Desktop Environment application or virt-manager.</p>
-<div class="highlight"><pre><span></span><code>virt-install <span class="se">\</span>
-    --cdrom<span class="o">=</span>/tmp/debian-9.0.0-amd64-netinst.iso <span class="se">\</span>
-    --vcpus<span class="o">=</span><span class="m">1</span> --memory<span class="o">=</span><span class="m">1024</span> --disk <span class="nv">size</span><span class="o">=</span><span class="m">5</span> <span class="se">\</span>
-    --os-variant<span class="o">=</span>debian8
-    --name<span class="o">=</span>linuxconfig-vm <span class="se">\</span>
+<div class="highlight"><pre><span></span><code>virt-install<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--cdrom<span class="o">=</span>/tmp/debian-9.0.0-amd64-netinst.iso<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--vcpus<span class="o">=</span><span class="m">1</span><span class="w"> </span>--memory<span class="o">=</span><span class="m">1024</span><span class="w"> </span>--disk<span class="w"> </span><span class="nv">size</span><span class="o">=</span><span class="m">5</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--os-variant<span class="o">=</span>debian8
+<span class="w">    </span>--name<span class="o">=</span>linuxconfig-vm<span class="w"> </span><span class="se">\</span>
 </code></pre></div>
 </dd>
 </dl>
@@ -4511,10 +4581,10 @@
 <dl>
 <dd>
 <p>In order to enable console access to a domain, the <strong>serial-gettty@.service</strong> service must be started.
-<div class="highlight"><pre><span></span><code>systemctl <span class="nb">enable</span> --now serial-getty@ttyS0.service
+<div class="highlight"><pre><span></span><code>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>--now<span class="w"> </span>serial-getty@ttyS0.service
 </code></pre></div>
 Now console access is available from the host
-<div class="highlight"><pre><span></span><code>virsh console <span class="nv">$DOMAIN</span>
+<div class="highlight"><pre><span></span><code>virsh<span class="w"> </span>console<span class="w"> </span><span class="nv">$DOMAIN</span>
 </code></pre></div></p>
 <p>Note that the console will remain at 24 lines by 80 columns no matter if the terminal window is resized.</p>
 </dd>
@@ -4530,45 +4600,45 @@ This appears to be impossible on btrfs, so disk images must be created on partit
 <p>A virtual disk can be created in various ways and in various formats (the sparse
 <a href="https://fileinfo.com/extension/qcow2">QCOW2</a> disk image format, associated with QEMU, is preferred).</p>
 <p>One way is to create the image using a utility like <strong>qemu-img</strong>.
-<div class="highlight"><span class="filename">Create qcow2 disk image</span><pre><span></span><code>qemu-img create -f qcow2 disk0.qcow2 5G <span class="c1"># (1)</span>
+<div class="highlight"><span class="filename">Create qcow2 disk image</span><pre><span></span><code>qemu-img<span class="w"> </span>create<span class="w"> </span>-f<span class="w"> </span>qcow2<span class="w"> </span>disk0.qcow2<span class="w"> </span>5G<span class="w"> </span><span class="c1"># (1)</span>
 </code></pre></div></p>
 <ol>
 <li>By omitting <strong>-f</strong>, qemu-img will create a RAW format file.</li>
 </ol>
 <p>Alternatively, and more circuitously, a volume can be created within a <a href="#storage-pool"><strong>storage pool</strong></a>.
-<div class="highlight"><pre><span></span><code>virsh pool-define-as --name Disks --type dir --target /disk/Disks <span class="c1"># (1)</span>
-virsh pool-start Disks <span class="c1"># (2)</span>
-virsh vol-create-as Disks disk0.qcow2 10G --format qcow2
+<div class="highlight"><pre><span></span><code>virsh<span class="w"> </span>pool-define-as<span class="w"> </span>--name<span class="w"> </span>Disks<span class="w"> </span>--type<span class="w"> </span>dir<span class="w"> </span>--target<span class="w"> </span>/disk/Disks<span class="w"> </span><span class="c1"># (1)</span>
+virsh<span class="w"> </span>pool-start<span class="w"> </span>Disks<span class="w"> </span><span class="c1"># (2)</span>
+virsh<span class="w"> </span>vol-create-as<span class="w"> </span>Disks<span class="w"> </span>disk0.qcow2<span class="w"> </span>10G<span class="w"> </span>--format<span class="w"> </span>qcow2
 </code></pre></div></p>
 <ol>
 <li>A pool is deleted by first making sure its contents are deleted (but not the containing folder, in the case of a directory-based storage pool)
-<div class="highlight"><pre><span></span><code>virsh pool-destroy Disks  <span class="c1"># Destroy the contents</span>
-virsh pool-delete Disks   <span class="c1"># Delete directory</span>
-virsh pool-undefine Disks <span class="c1"># Delete resource</span>
+<div class="highlight"><pre><span></span><code>virsh<span class="w"> </span>pool-destroy<span class="w"> </span>Disks<span class="w">  </span><span class="c1"># Destroy the contents</span>
+virsh<span class="w"> </span>pool-delete<span class="w"> </span>Disks<span class="w">   </span><span class="c1"># Delete directory</span>
+virsh<span class="w"> </span>pool-undefine<span class="w"> </span>Disks<span class="w"> </span><span class="c1"># Delete resource</span>
 </code></pre></div></li>
 <li>Alternatively, activate pool on boot
-<div class="highlight"><pre><span></span><code>virsh pool-autostart Disks
+<div class="highlight"><pre><span></span><code>virsh<span class="w"> </span>pool-autostart<span class="w"> </span>Disks
 </code></pre></div></li>
 </ol>
 <p>Regardless of the method, the disk image is then attached to the domain, whether or not it is running.</p>
-<div class="highlight"><pre><span></span><code>virsh attach-disk rhel <span class="se">\</span>
-    --source /tmp/Disks/disk0.qcow2 <span class="se">\</span>
-    --target vdb --cache none <span class="se">\</span>
-    --driver qemu --subdriver qcow2 <span class="se">\</span>
-    --persistent <span class="c1"># (1)</span>
+<div class="highlight"><pre><span></span><code>virsh<span class="w"> </span>attach-disk<span class="w"> </span>rhel<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--source<span class="w"> </span>/tmp/Disks/disk0.qcow2<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--target<span class="w"> </span>vdb<span class="w"> </span>--cache<span class="w"> </span>none<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--driver<span class="w"> </span>qemu<span class="w"> </span>--subdriver<span class="w"> </span>qcow2<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--persistent<span class="w"> </span><span class="c1"># (1)</span>
 </code></pre></div>
 <ol>
 <li><strong>--persistent</strong> is necessary for the disk to remain attached after a shutdown.
 If the domain is not running, <strong>--config</strong> is necessary.
-<div class="highlight"><pre><span></span><code>virsh attach-disk rhel <span class="se">\</span>
-    --source /tmp/Disks/disk0.qcow2 <span class="se">\</span>
-    --target vdb --cache none <span class="se">\</span>
-    --driver qemu --subdriver qcow2 <span class="se">\</span>
-<span class="hll">    --config
+<div class="highlight"><pre><span></span><code>virsh<span class="w"> </span>attach-disk<span class="w"> </span>rhel<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--source<span class="w"> </span>/tmp/Disks/disk0.qcow2<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--target<span class="w"> </span>vdb<span class="w"> </span>--cache<span class="w"> </span>none<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--driver<span class="w"> </span>qemu<span class="w"> </span>--subdriver<span class="w"> </span>qcow2<span class="w"> </span><span class="se">\</span>
+<span class="hll"><span class="w">    </span>--config
 </span></code></pre></div>
 This can be reversed with the following command.
-<div class="highlight"><pre><span></span><code>virsh detach-disk rhel /tmp/Disks/disk0.qcow2
-virhs detach-disk rhel vdb <span class="c1"># Specifying target instead</span>
+<div class="highlight"><pre><span></span><code>virsh<span class="w"> </span>detach-disk<span class="w"> </span>rhel<span class="w"> </span>/tmp/Disks/disk0.qcow2
+virhs<span class="w"> </span>detach-disk<span class="w"> </span>rhel<span class="w"> </span>vdb<span class="w"> </span><span class="c1"># Specifying target instead</span>
 </code></pre></div></li>
 </ol>
 </dd>
@@ -4577,16 +4647,16 @@ virhs detach-disk rhel vdb <span class="c1"># Specifying target instead</span>
 <dl>
 <dd>
 <p>Snapshots of VMs can be taken from within Boxes or via the command-line:
-<div class="highlight"><pre><span></span><code>virsh snapshot-create-as rhel --name <span class="s2">&quot;Disks added&quot;</span>
+<div class="highlight"><pre><span></span><code>virsh<span class="w"> </span>snapshot-create-as<span class="w"> </span>rhel<span class="w"> </span>--name<span class="w"> </span><span class="s2">&quot;Disks added&quot;</span>
 </code></pre></div></p>
 <p>These produce XML records that can then be viewed: note that the field that Boxes uses to identify each snapshot is actually "description".
-<div class="highlight"><pre><span></span><code>virsh snapshot-dumpxml rhel <span class="s2">&quot;Disks added&quot;</span>
+<div class="highlight"><pre><span></span><code>virsh<span class="w"> </span>snapshot-dumpxml<span class="w"> </span>rhel<span class="w"> </span><span class="s2">&quot;Disks added&quot;</span>
 </code></pre></div></p>
 <p>Snapshots can be renamed by changing the value of the <strong>name</strong> element in a text editor.
-<div class="highlight"><pre><span></span><code>virsh snapshot-edit rhel --snapshotname <span class="s2">&quot;Disks added&quot;</span> --rename
+<div class="highlight"><pre><span></span><code>virsh<span class="w"> </span>snapshot-edit<span class="w"> </span>rhel<span class="w"> </span>--snapshotname<span class="w"> </span><span class="s2">&quot;Disks added&quot;</span><span class="w"> </span>--rename
 </code></pre></div></p>
 <p>Revert to a snapshot
-<div class="highlight"><pre><span></span><code>virsh snapshot-revert rhel --snapshotname 
+<div class="highlight"><pre><span></span><code>virsh<span class="w"> </span>snapshot-revert<span class="w"> </span>rhel<span class="w"> </span>--snapshotname<span class="w"> </span>
 </code></pre></div></p>
 </dd>
 </dl>
@@ -4594,13 +4664,13 @@ virhs detach-disk rhel vdb <span class="c1"># Specifying target instead</span>
 <dl>
 <dd>
 <p>Specify a <a href="https://stafwag.github.io/blog/blog/2018/04/22/high-screen-resolution-on-a-kvm-virtual-machine-with-qxl/ 'stafwag.github.io:" title="High screen resolution on a KVM virtual machine with QXL">custom resolution</a> in a VM using <abbr title="Kernel-based Virtual Machine">KVM</abbr>
-<div class="highlight"><pre><span></span><code>cvt <span class="m">2560</span> <span class="m">1440</span>
-xrandr --newmode <span class="s2">&quot;2560x1440_60.00&quot;</span> <span class="m">312</span>.25 <span class="m">2560</span> <span class="m">2752</span> <span class="m">3024</span> <span class="m">3488</span>  <span class="m">1440</span> <span class="m">1443</span> <span class="m">1448</span> <span class="m">1493</span> -hsync +vsync
-xrandr --addmode Virtual-1 2560x1440_60.00
-xrandr --output Virtual-1 --mode 2560x1440_60.0
+<div class="highlight"><pre><span></span><code>cvt<span class="w"> </span><span class="m">2560</span><span class="w"> </span><span class="m">1440</span>
+xrandr<span class="w"> </span>--newmode<span class="w"> </span><span class="s2">&quot;2560x1440_60.00&quot;</span><span class="w"> </span><span class="m">312</span>.25<span class="w"> </span><span class="m">2560</span><span class="w"> </span><span class="m">2752</span><span class="w"> </span><span class="m">3024</span><span class="w"> </span><span class="m">3488</span><span class="w">  </span><span class="m">1440</span><span class="w"> </span><span class="m">1443</span><span class="w"> </span><span class="m">1448</span><span class="w"> </span><span class="m">1493</span><span class="w"> </span>-hsync<span class="w"> </span>+vsync
+xrandr<span class="w"> </span>--addmode<span class="w"> </span>Virtual-1<span class="w"> </span>2560x1440_60.00
+xrandr<span class="w"> </span>--output<span class="w"> </span>Virtual-1<span class="w"> </span>--mode<span class="w"> </span>2560x1440_60.0
 </code></pre></div></p>
 <p>On a Hyper-V VM, this method will not work, but a simple change to a line in <strong>/etc/default/grub</strong> will do the trick after running <a href="#update-grub">update-grub</a> and restarting</p>
-<div class="highlight"><pre><span></span><code><span class="na">GRUB_CMDLINE_LINUX_DEFAULT</span><span class="o">=</span><span class="s">&quot;quiet splash video=hyperv_fb:1920x1080&quot;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="na">GRUB_CMDLINE_LINUX_DEFAULT</span><span class="o">=</span><span class="s">&quot;quiet splash video=hyperv_fb:1920x1080&quot;</span>
 </code></pre></div>
 </dd>
 </dl>
@@ -4615,25 +4685,25 @@ xrandr --output Virtual-1 --mode 2560x1440_60.0
 <p>virsh is the main interface for managing libvirt <a href="#domain"><strong>guest domains</strong></a>.
 In virsh terminology, the word <strong>domain</strong> refers to a VM.</p>
 <p>virsh commands can be entered from the virsh shell or from the command-line.</p>
-<div class="highlight"><pre><span></span><code>virsh list --all
-virsh start rhel
-virsh shutdown rhel
-virsh destroy rhel  <span class="c1"># Forcefully</span>
-virsh undefine rhel
-virsh autostart rhel <span class="c1"># (1)</span>
+<div class="highlight"><pre><span></span><code>virsh<span class="w"> </span>list<span class="w"> </span>--all
+virsh<span class="w"> </span>start<span class="w"> </span>rhel
+virsh<span class="w"> </span>shutdown<span class="w"> </span>rhel
+virsh<span class="w"> </span>destroy<span class="w"> </span>rhel<span class="w">  </span><span class="c1"># Forcefully</span>
+virsh<span class="w"> </span>undefine<span class="w"> </span>rhel
+virsh<span class="w"> </span>autostart<span class="w"> </span>rhel<span class="w"> </span><span class="c1"># (1)</span>
 </code></pre></div>
 <ol>
 <li>Start domain at boot</li>
 </ol>
 <p>Inspect a running domain
-<div class="highlight"><pre><span></span><code>virsh dominfo <span class="nv">$DOMAIN</span>
-virsh domiflist <span class="nv">$DOMAIN</span>
-virsh domblklist <span class="nv">$DOMAIN</span>
-virsh domrename <span class="nv">$DOMAIN</span> <span class="nv">$NEWNAME</span><span class="sb">`</span>
+<div class="highlight"><pre><span></span><code>virsh<span class="w"> </span>dominfo<span class="w"> </span><span class="nv">$DOMAIN</span>
+virsh<span class="w"> </span>domiflist<span class="w"> </span><span class="nv">$DOMAIN</span>
+virsh<span class="w"> </span>domblklist<span class="w"> </span><span class="nv">$DOMAIN</span>
+virsh<span class="w"> </span>domrename<span class="w"> </span><span class="nv">$DOMAIN</span><span class="w"> </span><span class="nv">$NEWNAME</span><span class="sb">`</span>
 </code></pre></div></p>
 <p>Virsh uses XML documents to define domain resources.
-<div class="highlight"><pre><span></span><code>virsh dumpxml <span class="nv">$DOMAIN</span>
-virsh edit <span class="nv">$DOMAIN</span>
+<div class="highlight"><pre><span></span><code>virsh<span class="w"> </span>dumpxml<span class="w"> </span><span class="nv">$DOMAIN</span>
+virsh<span class="w"> </span>edit<span class="w"> </span><span class="nv">$DOMAIN</span>
 </code></pre></div></p>
 <p>Several virsh commands come in two varieties, one to handle XML documents that define resources and another to define them inline from the command-line.</p>
 <table>
@@ -4690,51 +4760,20 @@ It is a C toolkit to interact with the virtualization capabilities of the Linux 
 <dd>In libvirt, a <a href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/configuring_and_managing_virtualization/managing-storage-for-virtual-machines_configuring-and-managing-virtualization#understanding-storage-pools_understanding-virtual-machine-storage"><strong>storage pool</strong></a> is a file, directory, or storage device managed by libvirt to provide storage for <a href="#domain">domains</a>.</dd>
 </dl>
 
-              
-            </article>
-            
-          </div>
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
         </div>
         
       </main>
       
         <footer class="md-footer">
-  
-    
-    <nav class="md-footer__inner md-grid" aria-label="Footer" >
-      
-        
-        <a href="../SystemD/" class="md-footer__link md-footer__link--prev" aria-label="Previous: SystemD" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              SystemD
-            </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="../Applications/bind/" class="md-footer__link md-footer__link--next" aria-label="Next: BIND" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              BIND
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -4756,10 +4795,11 @@ It is a C toolkit to interact with the virtualization capabilities of the Linux 
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "toc.integrate", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "toc.integrate", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.0238f547.min.js"></script>
+      <script src="../../assets/javascripts/bundle.51198bba.min.js"></script>
       
     
   </body>
