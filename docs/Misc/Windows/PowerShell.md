@@ -1,5 +1,55 @@
 # PowerShell
 
+Functions are declared with the **function** keyword and the body in braces.
+
+```powershell
+function Hello-World
+{
+    Write-Output "Hello, World!"
+}
+```
+
+Positional parameters can be referenced using the **$args** array, which contains all arguments passed to the function on invocation.
+PowerShell appears to automatically handle arrays passed in as the first argument and interpolates spaces between each item this way.
+
+```powershell
+function Hello-World
+{
+    Write-Output "Hello, $($args[0])!"
+}
+```
+
+In order to set a default value, apparently a named parameter has to be used.
+There are two ways to do this, with or without the **param** keyword.
+These parameters are still usable as positional parameters, determined by the order in which they are defined (?), but note that the case of the identifier is preserved to define the option (i.e. "$name" becomes "-name", etc).
+
+```powershell
+function Hello-World($Name='World')
+{
+    Write-Output "Hello, $($Name)!"
+}
+```
+
+Using param, multiple parameters can be defined in a [**param block**](https://adamtheautomator.com/powershell-parameter/#creating-a-simple-parameter), which would probably make more sense for complicated functions using multiple parameters.
+Here the single parameter is also [typed](#typing).
+
+```powershell
+function Hello-World
+{
+    param (
+        [string]$Name='World'
+    )
+    Write-Output "Hello, $($Name)!"
+}
+```
+
+<!-- Documentation or [**comment-based help**](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_comment_based_help?view=powershell-7.3) is incorporated by means of specially formatted comments within the body of the function.
+Even without comments, PowerShell will attempt to provide help to a user from the command-line using Get-Help.
+
+```powershell
+
+``` -->
+
 ## Control flow
 
 ```powershell
@@ -34,12 +84,16 @@ Loops are implemented with `ForEach-Object`.
 
 When values are stored in a variable at the end of a pipeline, it will create an array. `while` and `do while` loops are available, as well as `until` and `do until` loops which operate so long as their condition is **false**.
 
+
+
 ## Variables
 
 Variables are accessed by prefixing the identifier with `$`.
 
-- [**Automatic variables**][Automatic variable] (`PSVersionTable`, `$IsLinux`, etc) are PowerShell-specific.
+- [**Automatic variables**][[Automatic variable](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-7.3)] (**$$**, **$\_**, **$PSVersionTable**, **$IsLinux**, etc) are PowerShell-specific.
 - Windows environment variables are actually accessed through the **`Env`** virtual drive using syntax like `$Env:APPDATA`, `$Env:USERNAME`, etc.
+
+#### Typing
 
 ```powershell title="Typing"
 [double]$Price
@@ -52,6 +106,8 @@ $Number = [int]'04'
 $FailedCast = [int]'Hello'
 ```
 
+#### Hash tables
+
 ```powershell title="Hash tables"
 $fruit = @{
     Apple = 'red'
@@ -61,12 +117,6 @@ $fruit = @{
 
 # Inline
 $fruit = @{ Apple = 'red'; Orange = 'orange'; Eggplant = 'purple' }
-
-# Add method
-$fruit = @{}
-$fruit.Add('Apple','red')
-$fruit.Add('Orange','orange')
-$fruit.Add('Kiwi','green')
 ```
 
 ```powershell title="Hashtable methods"
@@ -80,10 +130,8 @@ $fruitclone = $fruit.Clone()
 
 $fruit.Keys # => @('Apple','Orange','Kiwi')
 $fruit.Values # => @('red','orange','green')
-
 $fruit.Count
-
-$fruit.Remove('One')
+$fruit.Remove('Apple')
 ```
 
 Unlike Python, a hash table can be made ordered, changing its data type:
@@ -92,6 +140,8 @@ Unlike Python, a hash table can be made ordered, changing its data type:
 $fruit = [ordered]@{ Apple = 'red'; Orange = 'orange'; Eggplant = 'purple' }
 $fruit.GetType().Name # => OrderedDictionary
 ```
+
+#### Documentation
 
 ```powershell title="Documentation"
 <#
@@ -117,20 +167,12 @@ This example creates a single new employee...
 
 ## Functions
 
-Functions are declared with the `function` keyword and the body in braces, following this syntax:
 
-```powershell
-function Verb-Noun
-{
-    # ...
-}
-```
 
-**Positional parameters** can be referenced using the `$args` array, which contains all arguments passed to the function on invocation.
 
 **Named parameters** can be declared in one of two ways. 
 
-- Within the function body using the `param` keyword, followed by the name of the variable representing the parameter's value, enclosed in `$(...)`:
+- Within the function body using the **param** keyword, followed by the name of the variable representing the parameter's value, enclosed in **`$(...)`**:
 - Directly after the function name in parentheses, with each parameter separated by a comma.
 
 The name of the variable becomes the named parameter used when invoking the function.

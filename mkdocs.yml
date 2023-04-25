@@ -21,15 +21,7 @@ theme:
   shortcuts:
     search: 191
 extra_css:
-- style/admonitions-gcp.css
-- style/admonitions-azure.css
-- style/admonitions-aws.css
-- style/admonitions-rs.css
-- style/admonitions-cs.css
-- style/admonitions-cpp.css
-- style/admonitions-cisco.css
-- style/admonitions-py.css
-- style/admonitions-output.css
+- style/tooltip-width.css
 
 markdown_extensions:
   - abbr

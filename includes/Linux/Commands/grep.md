@@ -1,5 +1,3 @@
-#### grep
-:   
-    ```sh
-    grep -R $TEXT $DIRECTORY
-    ```
+```sh
+grep -R $TEXT $DIRECTORY
+```

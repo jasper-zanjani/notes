@@ -29,70 +29,123 @@
 
 *[SFM]: San Francisco de Macoris
 
+#### B
+
 - **bajarle dos** [to lower the intensity or speed of something](https://es.wiktionary.org/wiki/bajarle_dos) <audio controls="controls"><source type="audio/mp3" src="capricornio/truchitas-14.mp3"></source></audio>
 - **baquear**
     - Quién te tá baqueando ese poloché?
 - **boca abajo** prone
 - **brindar**{: #brindar } to present, offer
 - **bultero**{: #bultero } [flaky](https://casadecampoliving.com/dominican-english-dictionary/), someone who makes plans but does not follow through; a braggart, someone who exaggerates personal accomplishments
+
+#### C
+
 - **celar** to become jealous (cf. _celoso_) _A veces me digo "no seas celosa Tatiana" pero como no me llamo Tatiana pues **celo** cuando me da mi gana_
 - **chancear a alguien** [give somebody a chance](https://www.spanishdict.com/translate/chancear), [court](https://diccionariolibre.com/definicion/chancear) someone
+- [**cherchoso**](https://www.asale.org/damer/cherchoso) teasing or mocking person
 - **chin**{: #chin } a [little bit](https://diccionariolibre.com/definicion/Chin)
 - **chulo**{: #chulo }: very handsome; a man who is knowingly in a relationship with a woman who is a prostitute, and who is supported by her
-- **comer como una lima nueva**{: #comer-como-una-lima-nueva } describing someone who [eats a lot](https://12y2.com/2013/comer-mas-que-una-lima-nueva/)
 - **chuqui** to be [irritable, angry](https://wikidominicana.com/chucky/) (also _chucky_) i.e. _andar chuquí en la calle_ to party in the streets
 - **cocotazo** a [smack on the head](https://diccionariolibre.com/definicion/cocotazo)
+- **cogerse la llamada** to pick up a phone call: _Cogeme la llamada que tú eres mía todavía_
+- **comer como una lima nueva**{: #comer-como-una-lima-nueva } describing someone who [eats a lot](https://12y2.com/2013/comer-mas-que-una-lima-nueva/)
 - **cualto** money, payment
 - **cuernos** _ponerse los cuernos_ [to cheat on a partner](https://spanish.stackexchange.com/questions/17904/why-in-spanish-putting-horns-means-to-cheat-your-partner) 
+
+
+#### D
+
 - [**dame banda**](https://casadecampoliving.com/dominican-english-dictionary-dar-banda/) expression used to end the current topic of discussion out of exasperation: "leave me alone, do what you want"
 - **dar galleta** [slap the face](https://www.urbandictionary.com/define.php?term=galleta)
 - **dar mente a algo** to mind, worry about something _Pero no le de mente a eso bebé_
 - **de día** _estar de día_ "to be daytime" (_Está de día en tu país?_)
 - **desodorante** deodorant
-- **domingo siete** pregnancy outside of marriage especially abandoned by the father, _[no] me dejes con un domingo 7 y te vallas por ray jjj_ "[Don't] knock me up and leave haha"
 - **diligencia** _hacer diligencia_ when said by a woman, euphemism for prostitution
+- **domingo 7** pregnancy outside of marriage, especially one abandoned by the father, _no me dejes con un domingo 7 y te vallas por ray jjj_ "don't knock me up and leave haha"
+
+#### E
+
 - **entre dos** _estar entre dos_ to be feeling poorly
 - **estuche** case, i.e. "contact lens case"
+
+#### F
+
 - **flow**{: #flow } swag, style, attractive manner of dress _mangar este flow_
 - **fresco** a person who is cheeky or rude, typically regarding sexual topics, i.e. _lo bloqué por frescos_
+
+#### G
+
 - **guayar** to bump, grind
-- **jablador**
+
+#### J
+
+- **jablador** (also **hablador**) liar; boastful or braggart
 - **josear**{: #josear } (also [_josiar_](https://diccionariolibre.com/definicion/Josiar), _jociar_)  to [hustle](https://www.wordsense.eu/josear/#Spanish)
 - **jeva** [woman](https://diccionariolibre.com/definicion/jeva), partner
+
+#### L
+
 - **laja**{: #laja } something highly used and worn out, i.e. _estoy buscando una laja de esas_
 - **llevarse** _son 17 que me llevas_ "You're 17 [years] older than me"
-- **Los Guandules** a [barrio](https://www.minube.com/rincon/barrio-los-guandules-a2181350) on the right bank of the Ozama River in Santo Domingo, location of the ruins of the Monastery of San Francisco
-- **macorisano** someone from SFM
+
+#### M
+
+- **macorisano** someone from San Francisco de Macoris
 - **mangar**{: #mangar } to pinch, grab, obtain; [have sexual relations](https://diccionariolibre.com/definicion/mangar) with someone
 - **molote** mob
 - **motoconcho**{: #motoconcho } small [motorcycle](https://www.urbandictionary.com/define.php?term=motoconcho) used for taxi service
-- **nama**{: #nama } only, merely, just (preverbal)
+
+#### N
+
+- **nama**{: #nama } only, merely, just (preverbal): _Me quiere preña? Pa que salga bonito Tu no lo va a mantener ni naa **Nama** e paa que salga peluche_
 - **nevera** refrigerator
+- **ni modo** "no way", _ni modo que voy a decir_
 - **nina**{: #nina } nothing more, nothing at all (sentence final)
+
+#### P
+
 - **paquetero**{: #paquetero } a [liar](https://www.asale.org/damer/paquetero), braggart
 - **parar** to end up in a place without intending to do so
 - **pariguayo** [lame guy](https://diccionariolibre.com/definicion/Pariguayo) who can't get girls
 - **pasola** [scooter](https://diccionariolibre.com/definicion/pasola)
 - **pedazo** place, corner, or neighborhood of a city
+- **peluché** pretty, attractive: _Me quiere preña? Pa que salga bonito Tu no lo va a mantener ni naa Nama e paa que salga **peluche**_
 - **pica pollo** [fried chicken](https://diccionariolibre.com/definicion/pica-pollo)
 - **planta**{: #planta } compliment for a woman
 - **poloché**{: #poloche } [t-shirt](https://en.bab.la/dictionary/spanish-english/poloch%C3%A9)
-- **popola** pussy
+- **popola** pussy (cf. [**toto**](#toto), [**creta**](#creta))
+- **preñar** to impregnate: _Me quiere **preña**? Pa que salga bonito Tu no lo va a mantener ni naa Nama e paa que salga peluche_
+
+#### R
+
 - **rebajar**{ #rebajar } to lose weight
 - **romper** to exceed expectations, to draw attention (?)
 - **rulay**{: #rulay } [loose](https://www.urbandictionary.com/define.php?term=Rulay)
+
+#### S
+
 - **se fue la luz** end of discussion
+- **shi** (also **chi**) tisk ([dental click](https://en.wikipedia.org/wiki/Dental_click)), in DR an expression of tenderness: _yo no le digo shi a nadie, lo sient. soy un ser oscuro._
+
+#### T
+
 - **teteo**{: #teteo } [party](https://diccionariolibre.com/definicion/teteo), (cf. **tetear**)
 - **tigueraje** slang; [assertiveness](https://diccionariolibre.com/definicion/tigueraje)
 - **tiguere** a streetwise and [capable guy](https://diccionariolibre.com/definicion/tiguere); guy, dude (usage is similar to [vaina](#vaina) but with people)
 - **tirarse**{: #tirarse } to send a text message: "Hay que tirarme por privado."
 - **trote** _pasar trote_ to pass a great [ordeal](https://diccionariolibre.com/definicion/trote)
 - [**tollo**](https://diccionariolibre.com/definicion/tollo) a mismanaged mess due to incompetence "el dia de Carnaval en Monte Plata es un tollo"
-- **toto** pussy (cf. **creta**{: #creta })
+- **toto**{: #toto } pussy (cf. **creta**{: #creta })
+
+#### V
+
 - **vaca** "ven acá"
 - **vaina** stuff, thing; whatever; etc
 - **vale** well, quite _Yo me sentí vale rara_ "I felt pretty weird"
 - **votar** to stop liking someone: *😌 Tengo que mantenerme para que no me votes 😂*
+
+#### Y
+
 - **y eso?** "why?"
 
 ## Resources

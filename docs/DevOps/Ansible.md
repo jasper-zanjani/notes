@@ -62,7 +62,7 @@ The path for vars files appears to be interpreted relative to the location of th
 greet_name: World
 ```
 
-Variables can also be defined at runtime using the [**--extra-vars**/**-e**](https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_variables.html#defining-variables-at-runtime) option.
+Variables can also be defined at runtime using the [**--extra-vars**/**-e**](https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_variables.html#defining-variables-at-runtime){: #extra-vars} option.
 Variables can be passed as space-delimited or JSON format.
 
 ```sh
@@ -79,7 +79,7 @@ Jinja2 **control structures** support control flow features like loops and condi
 ```yaml hl_lines="3"
 - name: Find any YUM/DNF variables
   find:
-    paths: "/etc/{{ 'dnf' if ansible_distribution_major_version == '8' else 'yum' }}/vars"
+    paths: "/etc/{% 'dnf' if ansible_distribution_major_version == '8' else 'yum' %}/vars"
   register: _repository_vars_files
 ```
 
@@ -268,14 +268,6 @@ ansible-playbook --vault-password-file $pwfile playbooks/motd.yml
     ```ini title="ansible.cfg"
     [privilege_escalation]
     become=yes
-    # become_method=sudo
-    # become_user=root
-    # become_ask_pass=no
-    # remote_user=ansible
-
-    [defaults]
-    interpreter_python=auto_silent
-    deprecation_warnings=False
     ```
 
     An Ansible service account is created on each **managed node**.
@@ -287,8 +279,21 @@ ansible-playbook --vault-password-file $pwfile playbooks/motd.yml
     ```
 
     Now the service account is given the ability to sudo any command without a password.
+
     ```sh title="/etc/sudoers.d/ansible"
     ansible ALL=(ALL) NOPASSWD: ALL
+    # (1)!
+    ```
+
+    1. Without this line, plays will fail with the message "Missing sudo password" 
+    ``` hl_lines="4"
+    PLAY [Running motd role] *******************************************************
+
+    TASK [Gathering Facts] *********************************************************
+    fatal: [hyperv-centos9]: FAILED! => {"msg": "Missing sudo password"}
+
+    PLAY RECAP *********************************************************************
+    hyperv-centos9             : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
     ```
 
     The system inventory is an INI-format config located at **etc/ansible/hosts** and defines the clients which are to be controlled by the server.
@@ -337,14 +342,15 @@ ansible-playbook --vault-password-file $pwfile playbooks/motd.yml
 
 #### User creation
 :   
+
     ```yaml
-    --8<-- "includes/Ansible/tasks/user.yml
+    --8<-- "includes/Ansible/tasks/user.yml"
     ```
 
     More secure is using a separate vaulted variables file to keep the credential secure.
 
     ```yaml title="playbooks/user.yml"
-    --8<-- "includes/Ansible/tasks/user-vault.yml
+    --8<-- "includes/Ansible/tasks/user-vault.yml"
     ```
     ```yaml title="playbooks/vars/user.yml"
     username: newuser
@@ -395,6 +401,18 @@ ansible-playbook --vault-password-file $pwfile playbooks/motd.yml
 --8<-- "includes/Ansible/Modules/file.md"
 
 --8<-- "includes/Ansible/Modules/git.md"
+
+--8<-- "includes/Ansible/Modules/lineinfile.md"
+
+--8<-- "includes/Ansible/Modules/package.md"
+
+--8<-- "includes/Ansible/Modules/replace.md"
+
+--8<-- "includes/Ansible/Modules/service.md"
+
+--8<-- "includes/Ansible/Modules/setup.md"
+
+--8<-- "includes/Ansible/Modules/snap.md"
 
 --8<-- "includes/Ansible/Modules/template.md"
 

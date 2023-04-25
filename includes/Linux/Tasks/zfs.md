@@ -71,3 +71,10 @@
     zfs rollback tank@snapshot1
     zfs destroy tank@snapshot1
     ```
+
+    ZFS datasets are automatically mounted when created, but this behavior can be managed and changed.
+    
+    ```sh
+    zfs get mountpoint tank
+    zfs set mountpoint=/tank tank
+    ```

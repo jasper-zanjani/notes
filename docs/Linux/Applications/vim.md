@@ -76,45 +76,14 @@ augroup END
 
 #### Color
 
-**Elements**: 
-
-- [`Directory`](#elements "Directories in NERDTree sidebar")
-- [`Identifier`](# "Markdown: Bullets in ordered and unordered lists")
-- [`LineNr`](# "Line numbers")
-- [`NonText`](#elements "Characters that do not really exist in the text")
-- [`Normal`](#"Normal,unhighlightedtext")
-- [`String`](# "Code (text enclosed in backticks) in markdown")
-- [`Title`](# "Markdown: Headings (lines that begin with hashes)")
-- [`VertSplit`](#elements "Bar separating two windows")
-- `Comment` 
-- `Constant` 
-- `Cursor`
-- `Folded`
-- `Function`
-- `Keyword`
-- `Number`
-- `PreProc`
-- `SpecialKey`
-- `Special`
-- `Statement`
-- `StatusLineNC`
-- `StatusLine`
-- `Todo`
-- `Type`
-- `Visual`
-
-Change the color of ELEMENT
-```vim
+```vimscript
+; Change the color of ELEMENT
 highlight ELEMENT ctermfg=COLOR ctermbg=COLOR guifg=#abc123 guibg=#abc123
-```
 
-Select alternative colorschemes
-```vim
+; Select alternative colorschemes
 :colo[rscheme] <tab>
-```
 
-Display all available colorschemes
-```vim
+; Display all available colorschemes
 :colo <C-d>
 ```
 
@@ -138,13 +107,30 @@ Clear custom color commands
 
 ## Tasks
 
-```vim title="Prevent vim from creating backups files"
-set nobackup
-```
+#### Invoking to a specific line number
+:   
+    ```sh
+    # Open with cursor at line 13
+    vim .bashrc +13
+    ```
 
-```vimscript title="Line numbers"
-:set rnu
-```
+#### Configuration
+:   
+    ```vimscript title="Configuration"
+    " Prevent vim from creating backups files
+    set nobackup
+
+    " Set relative line numbers
+    set rnu
+    ```
+
+#### [Search and replace](https://vim.fandom.com/wiki/Search_and_replace)
+:   
+
+    ```vimscript
+    " Replace foo with bar across all lines, wherever they occur
+    %s/foo/bar/g
+    ```
 
 #### Mapping keys
 :   
@@ -175,7 +161,7 @@ set nobackup
     :let @" = system('env')
     ```
 
-    Alternatively 
+    Alternatively
     ```vim
     :put =system('env')
     ```

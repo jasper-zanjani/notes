@@ -19,6 +19,7 @@ Anki will autoplay these clips by default, though this behavior can be disabled 
 ## Message bubbles
 
 This CSS was found [here](https://codepen.io/AllThingsSmitty/pen/jommGQ).
+Some changes were incorporated to make it compatible with Anki [Night mode](https://docs.ankimobile.net/night-mode.html).
 
 ```html title="Basic pattern"
 <div class="imessage">
@@ -36,7 +37,7 @@ This CSS was found [here](https://codepen.io/AllThingsSmitty/pen/jommGQ).
 .imessage
     p.from-them Oi, td bem?
     p.from-me {{c1::Td}} sim
-// (1)
+// (1)!
 ```
 
 1. ![](oi.png)
@@ -46,7 +47,7 @@ This CSS was found [here](https://codepen.io/AllThingsSmitty/pen/jommGQ).
     p.from-them Me dijiste que si esperaba ser pagada y te dije que no
     p.from-me {{c1::Podría}} {{c2::haberte}} pagado por tus salarios perdidos 
         span.translation I could have paid your for your lost wages  
-// (1)
+// (1)!
 ```
 
 1. ![](translation.png)

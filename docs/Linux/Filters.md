@@ -1,22 +1,41 @@
-# Commands
+# Filters
 
+#### awk
+:   
+    --8<-- "includes/Linux/Commands/awk.md"
 
---8<-- "includes/Linux/Commands/awk.md"
+#### cat
+:   
+    --8<-- "includes/Linux/Commands/cat.md"
 
---8<-- "includes/Linux/Commands/cat.md"
+#### cut
+:   
+    --8<-- "includes/Linux/Commands/cut.md"
 
---8<-- "includes/Linux/Commands/cut.md"
+#### grep
+:   
+    --8<-- "includes/Linux/Commands/grep.md"
 
---8<-- "includes/Linux/Commands/grep.md"
+#### head
+:   
+    --8<-- "includes/Linux/Commands/head.md"
 
---8<-- "includes/Linux/Commands/head.md"
+#### paste
+:   
+    --8<-- "includes/Linux/Commands/paste.md"
 
---8<-- "includes/Linux/Commands/paste.md"
+#### sed
+:   
+    --8<-- "includes/Linux/Commands/sed.md"
 
---8<-- "includes/Linux/Commands/sed.md"
+#### tail
+:   
+    --8<-- "includes/Linux/Commands/tail.md"
 
---8<-- "includes/Linux/Commands/tail.md"
+#### tr
+:   
+    --8<-- "includes/Linux/Commands/tr.md"
 
---8<-- "includes/Linux/Commands/tr.md"
-
---8<-- "includes/Linux/Commands/watch.md"
+#### watch
+:   
+    --8<-- "includes/Linux/Commands/watch.md"
