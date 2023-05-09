@@ -303,7 +303,7 @@ greet_name: !vault |
   3137
 ```
 
-#### Triggers
+#### trigger
 
 A [push trigger](https://learn.microsoft.com/en-us/azure/devops/pipelines/yaml-schema/trigger?view=azure-pipelines#trigger-none) specifies which branches cause a continuous integration build to run. [**trigger: none**](https://learn.microsoft.com/en-us/azure/devops/pipelines/yaml-schema/trigger?view=azure-pipelines#trigger-none) disables CI triggers.
 

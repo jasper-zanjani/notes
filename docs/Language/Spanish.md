@@ -56,7 +56,6 @@
 #### D
 
 - [**dame banda**](https://casadecampoliving.com/dominican-english-dictionary-dar-banda/) expression used to end the current topic of discussion out of exasperation: "leave me alone, do what you want"
-- **dar galleta** [slap the face](https://www.urbandictionary.com/define.php?term=galleta)
 - **dar mente a algo** to mind, worry about something _Pero no le de mente a eso bebé_
 - **de día** _estar de día_ "to be daytime" (_Está de día en tu país?_)
 - **desodorante** deodorant
@@ -75,6 +74,7 @@
 
 #### G
 
+- dar **galleta** [to slap the face](https://www.urbandictionary.com/define.php?term=galleta)
 - **guayar** to bump, grind
 
 #### J
@@ -101,6 +101,10 @@
 - **nevera** refrigerator
 - **ni modo** "no way", _ni modo que voy a decir_
 - **nina**{: #nina } nothing more, nothing at all (sentence final)
+
+#### O
+
+- hacer **oficio** to do the chores or housework, to clean up: _hice oficio en la casa_, _ya termine de hacer lo oficio_
 
 #### P
 
