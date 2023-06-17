@@ -1,5 +1,9 @@
 #### sudo
 :   
+    ```sh title="Edit a file with elevated privileges"
+    sudo -e /etc/ssh/sshd_config
+    ```
+
     The **/etc/sudoers**{: #etcsudoers } file (or files placed under **/etc/sudoers.d/**) contains **user specifications** that define commands that users may execute.
 
     ```

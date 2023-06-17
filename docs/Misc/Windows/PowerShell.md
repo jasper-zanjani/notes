@@ -366,6 +366,11 @@ $cred = New-Object System.Management.Automation.PSCredential ("FullerP", $pw)
         2. **Operation statement**, more naturalistic, where you specify a property value or call a method.
 
 
+    ```powershell title="Filtering a CSV table"
+    $vms = Import-Csv decoms.csv
+    $lxvms = $vms | where Name -Like *VL*
+    ```
+
 
 #### Loop examples
 :   
