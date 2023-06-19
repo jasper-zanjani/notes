@@ -43,20 +43,18 @@ A VM may have more than one **Network Interface Card (NIC)**, but they must belo
 # Tasks
 
 
-```sh title="Deploy VM from image"
-az vm create -g $g -n $n  
-    --image $imageName # (1)
-```
+```sh title=
+# Deploy VM from image
+az vm create -g $rg  -n $vmName -l $vmLocation 
+    --image $imageName
 
-1. 
-```sh title="Specify a legacy unmanaged image" hl_lines="3"
-az vm create -g $g -n $n 
+# Specify a legacy unmanaged image
+az vm create -g $rg  -n $vmName -l $vmLocation 
     --image $osDiskUri 
     --generate-ssh-keys
-```
 
-```sh title="Windows Server Core"
-az vm create -n $vmName -g $rg -l $vmLocation 
+# Windows Server Core
+az vm create -g $rg  -n $vmName -l $vmLocation 
     --image "MicrosoftWindowsServer:WindowsServer:2016-Datacenter-Server-Core:2016.127.20190603" 
     --admin-username aztestadmin
     --admin-password $password
@@ -77,20 +75,20 @@ az vm run-command invoke -g $g -n $n
     --parameters 'arg1=somefoo' 'arg2=somebar'
 ```
 
-```sh title="Resize VM"
-az vm list-vm-resize-options -g $g -n $n 
+```sh title="
+# Resize VM
+az vm list-vm-resize-options 
+    -g $g -n $n 
     --output table
 
 az vm resize -g $g -n $n 
     --size Standard_DS3_v2
-```
 
-```sh title="Create container registry"
+# Create container registry
 az acr create -g $g -n $n
     --sku Basic --admin-enabled true
-```
 
-```sh title="Add NIC"
+# Add NIC
 az network nic create -g $g -n $n 
     --vnet-name $ExamRefVNET 
     --subnet $subnetName
@@ -129,8 +127,9 @@ $vnetName = "ExamRefVNET"
 
 New-AzResourceGroup -Name $resourceGroupName -Location $location
 ```
-Create a virtual network
+
 ```powershell
+# Create a virtual network
 $subnets = @()
 $subnets += New-AzVirtualNetworkSubnetConfig -Name $subnet1Name -AddressPrefix $subnet1AddressPrefix
 $subnets += New-AzVirtualNetworkSubnetConfig -Name $subnet2Name -AddressPrefix $subnet2AddressPrefix
@@ -242,6 +241,7 @@ Modify host cache setting
 ### Enable on deployment
 
 ![](/img/az-vm-diag.jpg)
+
 ### Enable after deployment
 
 
@@ -347,12 +347,6 @@ $configurationPath = ".\ContosoWeb.ps1"
 Publish-AzVMDscConfiguration -ConfigurationPath $configurationPath -ResourceGroupName $g -StorageAccountName $storageName
 Set-AzVmDscExtension -Version 2.76 -ResourceGroupName $g -VMName $vmName -ArchiveStorageAccountNAme $storageName -ArchiveBlobName $archiveBNlob -AutoUpdate:$false -ConfigurationName $configurationName
 ```
-
-
-
-
-
-
 
 ### Dedicated host
 

@@ -3,3 +3,5 @@ site/**
 makefile
 scratch
 docs/Girls/**
+docs/PODS/**
+includes/PODS/**

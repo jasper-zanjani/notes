@@ -75,7 +75,8 @@ Variables cane be [encrypted inline](https://docs.ansible.com/ansible/2.9/user_g
 
 Various effects are possible using Jinja2 templates:
 
-Jinja2 **control structures** support control flow features like loops and conditionals inside `{% ... %}` blocks.
+Jinja2 **control structures** support control flow features like loops and conditionals inside **`{% ... %}`** blocks.
+
 ```yaml hl_lines="3"
 - name: Find any YUM/DNF variables
   find:
@@ -364,71 +365,103 @@ ansible-playbook --vault-password-file $pwfile playbooks/motd.yml
 
 #### ansible
 :   
-    --8<-- "includes/Ansible/ansible.md"
+    --8<-- "includes/Ansible/Commands/ansible.md"
 
 #### ansible-config
 :   
-    --8<-- "includes/Ansible/ansible-config.md"
+    --8<-- "includes/Ansible/Commands/ansible-config.md"
 
 #### ansible-doc
 :   
-    --8<-- "includes/Ansible/ansible-doc.md"
+    --8<-- "includes/Ansible/Commands/ansible-doc.md"
 
 #### ansible-galaxy
 :   
-    --8<-- "includes/Ansible/ansible-galaxy.md"
+    --8<-- "includes/Ansible/Commands/ansible-galaxy.md"
 
 #### ansible-playbook
 :   
-    --8<-- "includes/Ansible/ansible-playbook.md"
+    --8<-- "includes/Ansible/Commands/ansible-playbook.md"
 
 #### ansible-vault
 :   
-    --8<-- "includes/Ansible/ansible-vault.md"
+    --8<-- "includes/Ansible/Commands/ansible-vault.md"
 
 ## Modules
 
---8<-- "includes/Ansible/Modules/archive.md"
+### Miscellaneous
+:   
+    --8<-- "includes/Ansible/Modules/archive.md"
 
---8<-- "includes/Ansible/Modules/cli_config.md"
+    --8<-- "includes/Ansible/Modules/cli_config.md"
 
---8<-- "includes/Ansible/Modules/command.md"
+    --8<-- "includes/Ansible/Modules/command.md"
 
---8<-- "includes/Ansible/Modules/copy.md"
+    --8<-- "includes/Ansible/Modules/copy.md"
 
---8<-- "includes/Ansible/Modules/debug.md"
+    --8<-- "includes/Ansible/Modules/debug.md"
 
---8<-- "includes/Ansible/Modules/file.md"
+    --8<-- "includes/Ansible/Modules/file.md"
 
---8<-- "includes/Ansible/Modules/git.md"
+    --8<-- "includes/Ansible/Modules/firewalld.md"
 
---8<-- "includes/Ansible/Modules/lineinfile.md"
+    --8<-- "includes/Ansible/Modules/git.md"
 
---8<-- "includes/Ansible/Modules/package.md"
+    --8<-- "includes/Ansible/Modules/group.md"
 
---8<-- "includes/Ansible/Modules/replace.md"
+    --8<-- "includes/Ansible/Modules/ini_file.md"
 
---8<-- "includes/Ansible/Modules/service.md"
+    --8<-- "includes/Ansible/Modules/lineinfile.md"
 
---8<-- "includes/Ansible/Modules/setup.md"
+    --8<-- "includes/Ansible/Modules/redhat_subscription.md"
 
---8<-- "includes/Ansible/Modules/snap.md"
+    --8<-- "includes/Ansible/Modules/replace.md"
 
---8<-- "includes/Ansible/Modules/template.md"
+    --8<-- "includes/Ansible/Modules/service.md"
+
+    --8<-- "includes/Ansible/Modules/setup.md"
+
+    --8<-- "includes/Ansible/Modules/systemd.md"
+
+    --8<-- "includes/Ansible/Modules/template.md"
+
+    --8<-- "includes/Ansible/Modules/user.md"
+
+### Package management
+
+#### apt
+:   
+    --8<-- "includes/Ansible/Modules/apt.md"
+
+#### package
+:   
+    --8<-- "includes/Ansible/Modules/package.md"
+
+#### snap
+:   
+    --8<-- "includes/Ansible/Modules/snap.md"
+
+#### yum
+:   
+    --8<-- "includes/Ansible/Modules/yum.md"
+
+#### yum_repository
+:   
+    --8<-- "includes/Ansible/Modules/yum_repository.md"
 
 ## Glossary
 
-- [Ad Hoc](#ad-hoc): type of command run in realtime by an administrator working at the terminal
-- Ansible Galaxy: online portal where a gallery of roles made by the Ansible community can be found
-- Ansible Tower: web-based RESTful API endpoint that provides the officially supported GUI frontend to Ansible configuration management, available in two versions: standard ($13,000/yr) and premium ($17,500/yr)
-- Ansible Vault: place to keep encrypted passwords
-- AWX: Open-source project upon which Ansible Tower was built
-- Fact: System property gathered by Ansible when it executes a playbook on a node
-- [Inventory](#inventory): INI-format file containing a list of servers or nodes that you are managing and configuring
-- [Module](#modules): standalone scripts that enable a particular task across many OSes, services, applications, etc. 
+- [**Ad Hoc**](#ad-hoc): type of command run in realtime by an administrator working at the terminal
+- **Ansible Galaxy**: online portal where a gallery of roles made by the Ansible community can be found
+- **Ansible Tower**: web-based RESTful API endpoint that provides the officially supported GUI frontend to Ansible configuration management, available in two versions: standard ($13,000/yr) and premium ($17,500/yr)
+- **Ansible Vault**: place to keep encrypted passwords
+- **AWX**: Open-source project upon which Ansible Tower was built
+- **Fact**: System property gathered by Ansible when it executes a playbook on a node
+- [**Inventory**](#inventory): INI-format file containing a list of servers or nodes that you are managing and configuring
+- [**Module**](#modules): standalone scripts that enable a particular task across many OSes, services, applications, etc. 
 Predefined modules are available in the **module library**, and new ones can be defined via Python or JSON.
-- Play: script or instruction that defines the task to be carried out in a server
-- [Playbook](#playbook):   
-- Role: organize components of playbooks, allowing them to be reused
-- [Task](#task): A single scripted action in a playbook, equivalent to an ad hoc command
-- [Vault](#vault): feature of Ansible that allows you to keep sensitive data such as passwords or keys protected at rest, rather than as plaintext in playbooks or roles.
+- **Play**: script or instruction that defines the task to be carried out in a server
+- [**Playbook**](#playbook):   
+- **Role**: organize components of playbooks, allowing them to be reused
+- [**Task**](#task): A single scripted action in a playbook, equivalent to an ad hoc command
+- [**Vault**](#vault): feature of Ansible that allows you to keep sensitive data such as passwords or keys protected at rest, rather than as plaintext in playbooks or roles.
