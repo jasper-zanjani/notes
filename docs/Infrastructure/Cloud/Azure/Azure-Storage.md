@@ -17,35 +17,21 @@ SAS tokens are generated from a storage account key; if the key is invalidated t
 1. Register a server to the sync group by installing **Azure File Sync agent** on each server. When installing, you sign in with your subscription's credentials, then register the server by providing the Subscription, Resource Group, and Storage Sync Service names.
 2. Click **Add Server Endpoint**. This will display a dropdown of all servers with the agent installed and associated with the sync service.
 
-Upload blob
-
-=== "Azure CLI"
-
-    ```sh
-    az storage blob upload --container-name $containerName --account-name $accountName --account-key $accountKey --file $file --name $blobName
-    ```
+```sh title="Upload blob"
+az storage blob upload --container-name $containerName --account-name $accountName --account-key $accountKey --file $file --name $blobName
     
-=== "Azure AzCopy"
-
-    ```cmd
-    AzCopy copy localFilePath https://storageAccount.blob.core.windows.net/destinationContainer/path/to/blob?SASToken
-    ```
+AzCopy copy localFilePath https://storageAccount.blob.core.windows.net/destinationContainer/path/to/blob?SASToken
+```
     
-Download a blob from a container
+```cmd
+:: Download a blob from a container
+AzCopy copy https://storageAccount.blob.core.windows.net/sourceContainer/path/to/blob?SASToken localFilePath
 
-=== "Azure AzCopy"
-
-    ```cmd
-    AzCopy copy https://storageAccount.blob.core.windows.net/sourceContainer/path/to/blob?SASToken localFilePath
-    ```
-
-Copy a blob from one container to another
-
-=== "Azure AzCopy"
-
-    ```cmd
-    AzCopy /Source:https://sourceblob.blob.core.windows.net/sourcecontainer/ /Dest:https://deststorage.blob.core.windows.net/destcontainer/ /SourceKey:sourcekey /DestKey:destkey /Pattern:disk1.vhd
-    ```
+:: Copy a blob from one container to another
+AzCopy /Source:https://sourceblob.blob.core.windows.net/sourcecontainer/ 
+    /Dest:https://deststorage.blob.core.windows.net/destcontainer/ 
+    /SourceKey:sourcekey /DestKey:destkey /Pattern:disk1.vhd
+```
     
 
 ```powershell
@@ -84,7 +70,9 @@ New-AzStorageBlobSASToken -Container $container -Blob $blob -Permission "rwd" -S
 ```sh
 az storage blob generate-sas --account-name "storageAccount" --account-key $storageAccountKey --container-name $container --name $blobName --permissions r --expiry "2019-05-31"
 ```
+
 ### Create container
+
 ```powershell
 $storageKey = Get-AzStorageAccountKey -Name $storageAccount -ResourceGroupName $resourceGroup
 $context = New-AzStorageContext -StorageAccountName $storageAccount -StorageAccountKey $storageKey.Value[0]
@@ -92,6 +80,7 @@ Set-AzCurrentStorageAccount -Context $context
 
 New-AzStorageContainer -Name $container -Permission Off
 ```
+
 Upload file as blob to new container
 
 === "Azure PowerShell"
@@ -119,7 +108,9 @@ Get-AzVirtualNetworkSubnetConfig -Name VSUBNET01
 Add-AzStorageAccountNetworkRule -ResourceGroupName VNET01 -Name Storage01 -VirtualNetworkResourceId $subnet.Id
 Update-AzStorageAccountNetworkRuleSet -ResourceGroupName RG01 -Name STORAGE01 -Bypass Azure.Services
 ```
+
 ### Troubleshoot Azure File Sync
+
 Several procedures to be used when Azure File Sync is having issues
 
 Collect logs to troubleshoot issues with Azure File Sync agent installation
@@ -142,6 +133,7 @@ Access Activity Log data (Portal)
 ### Storage account endpoints
 
 #### Virtual network service endpoint
+
 Sources
 - AZ-103 p. 112
 - [Configure Azure Storage firewalls and virtual networks](https://docs.microsoft.com/en-us/azure/storage/common/storage-network-security)

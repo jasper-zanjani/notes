@@ -1,6 +1,7 @@
 ### ZFS management
 :   
 
+
     ```sh
     # Create a storage pool, conventionally named "tank" in documentation
     zpool create tank raidz /dev/sd{a,b,c}
@@ -9,7 +10,7 @@
     zpool status tank
     zpool list
 
-    # Display real paths (i.e. block device names)
+    # Display block device names
     zpool status tank -L 
     zpool list -v
 
@@ -22,15 +23,28 @@
     zpool detach sdb
     ```
 
+#### Removing devices
+:   
+    [**zpool remove**](https://openzfs.github.io/openzfs-docs/man/8/zpool-remove.8.html) is used to remove spare, cache, log and top-level data devices that are **not** raidz (top-level raidz vdevs cannot be removed).
     
-    ```sh title="Hot spares"
+    ```sh
+    # Hot spares
     zpool add tank spare sdg
-    zpool remove tank sdg # (1)
+    zpool remove tank sdg
+    
+    # When incorrectly adding a device to a pool
+    zpool add tank sdh
+    zpool remove sdh
+    zpool add tank mirror sdh
     ```
 
-    1. The [**zpool remove**](https://openzfs.github.io/openzfs-docs/man/8/zpool-remove.8.html) command is used to remove hot spares, as well as cache and log devices.
+    Alternatively, [**zpool detach**](https://openzfs.github.io/openzfs-docs/man/8/zpool-detach.8.html) is used exclusively to remove a mirrored data device.
 
-    [Replacing](https://docs.oracle.com/cd/E19253-01/819-5461/gazgd/index.html) a used disk with one that is unused uses **zpool replace**, initiating the [**resilvering**](#resilvering) process.
+#### Disk replacement
+:   
+    If a disk has gone bad, it must first be taken offline using [**zpool offline**](https://openzfs.github.io/openzfs-docs/man/8/zpool-offline.8.html) before physically replacing it.
+    Then [**zpool replace**](https://openzfs.github.io/openzfs-docs/man/8/zpool-replace.8.html) is used, which initiates the [**resilvering**](#resilvering) process.
+    
     
     ```sh
     zpool replace tank sdb sdc
@@ -41,29 +55,86 @@
     zpool detach tank sdc
     ```
 
-    If a disk has gone bad, it must first be taken offline (apparently requiring its UUID) before physically replacing it.
-
     ```sh title="Replace disk"
+    # Clear errors first
     zpool clear tank
-    zpool offline $UUID
+
+    # Take disk offline
+    zpool offline tank sdb
+
+    # Replace disk physically
+    
+    # Begin the resilvering process
     zpool replace tank sdb sdc
+
+    # Monitor resilvering process
     watch zpool status tank
     ```
 
+    Sometimes the UUID must be provided to take a disk offline.
+    This can be retrieved using [**blkid**](#blkid).
 
+    ```sh
+    blkid /dev/sdb2
+    zpool offline $UUID
+    ```
+    
+    When simply moving a disk's physical location (from one bay to another), it must also be taken offline.
+
+    ```sh
+    zpool offline tank sdb
+
+    # Move disk physically
+
+    zpool online tank sdb
+    ```
+
+    [Replacing](https://docs.oracle.com/cd/E19253-01/819-5461/gazgd/index.html) a used disk with one that is unused similarly uses **zpool replace**, 
+
+### Dataset management
+:   
     A [**dataset**](#dataset) in ZFS is equivalent to the [btrfs](#btrfs) [**subvolume**](#subvolume), defined as an independently mountable POSIX filetree.
+
+    ```sh
+    # Display all datasets
+    zfs list
+
+    # Providing a pool name as argument alone will not display contained datasets.
+    zfs list -r tank
+    ```
 
     ```sh title="Create dataset"
     zfs create tank/dataset
-    zfs list
+    zfs list tank/dataset
     zfs rename tank zpool
     zfs remove zpool/dataset
     ```
 
     ```sh title="Configure dataset"
-    zfs set compression=on tank/dataset # Enable compression
-    zfs set sync=disabled tank/dataset  # Disable sync
-    zfs set acme:disksource=vendorname  # Set tag
+    # Enable compression
+    zfs set compression=on tank/dataset
+
+    # Disable sync
+    zfs set sync=disabled tank/dataset
+    
+    # Set tag
+    zfs set acme:disksource=vendorname  
+    ```
+
+#### Snapshots
+:   
+    [**Snapshots**](https://docs.oracle.com/cd/E19253-01/819-5461/gbciq/index.html) are read-only copies of file systems or volumes.
+    They are created using **zfs snapshot** and appear as directories at the root of the file system under **.zfs/snapshot**.
+
+    ```sh
+    # Create a snapshot of the tank pool, creating the directory /tank/.zfs/snapshot/now
+    zfs snapshot tank@now
+    ```
+
+    Snapshots are displayed using **zfs list**.
+
+    ```sh
+    zfs list -t snapshot
     ```
 
     ```sh title="Snapshot management"
@@ -77,4 +148,20 @@
     ```sh
     zfs get mountpoint tank
     zfs set mountpoint=/tank tank
+    ```
+
+#### Migration
+:   
+    [Migrating pools](https://serverfault.com/questions/88638/moving-a-zfs-filesystem-from-one-pool-to-another) is apparently done using snapshots as well.
+    A snapshot must first be taken before it is sent to the other pool using [**zfs send**](https://openzfs.github.io/openzfs-docs/man/8/zfs-send.8.html).
+
+    ```sh
+    # First take a snapshot
+    zfs snapshot source-tank@moving
+
+    # Send the snapshot
+    zfs send source-tank@moving | zfs receive -F receive-tank/Destination
+
+    # Use pv to monitor progress
+    zfs send source-tank@moving | pv | zfs receive -F receive-tank/
     ```

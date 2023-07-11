@@ -29,11 +29,18 @@
 
 ## Tasks
 
+#### /etc/fstab
+:   
+    --8<-- "includes/Linux/Configs/fstab.md"
+
 #### Create virtual disks
 :   
     ```sh
-    fallocate -l 100M /tmp/disk0    # Create sparse file
-    losetup -f /tmp/disk0           # Create loopback device
+    # Create sparse file
+    fallocate -l 100M /tmp/disk0    
+    
+    # Create loopback device
+    losetup -f /tmp/disk0           
     ```
 
 --8<--
@@ -63,6 +70,9 @@ includes/Linux/Tasks/zfs.md
 ## Commands
 
 --8<--
+
+includes/Linux/Commands/blkid.md
+
 includes/Linux/Commands/btrfs.md
 
 includes/Linux/Commands/fallocate.md

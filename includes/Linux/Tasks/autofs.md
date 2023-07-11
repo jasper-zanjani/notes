@@ -16,9 +16,11 @@
 
 
     Here is an example indirect map that will mount to /data/sales.
+
     ``` title="/etc/auto.master.d/data.autofs"
     /data /etc/auto.data
     ```
+    
     ``` title="/etc/auto.data"
     sales -rw,soft 192.168.33.101:/data/sales
     ```
